@@ -28,20 +28,19 @@ const pillars = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0, 0, 0.2, 1] as const } },
-};
-
 const WhyChooseUs = () => {
   return (
-    <section className="section-padding bg-secondary">
-      <div className="container-tight">
+    <section className="section-padding bg-secondary relative overflow-hidden">
+      {/* Decorative corner accent */}
+      <motion.div
+        className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/5 to-transparent"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      />
+
+      <div className="container-tight relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,35 +49,47 @@ const WhyChooseUs = () => {
           className="text-center mb-12 md:mb-16"
         >
           <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Why Highlander</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-            Not Just a Roofer.
-            <br /> Your Neighbor.
-          </h2>
+          <div className="overflow-hidden">
+            <motion.h2
+              initial={{ y: "100%" }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4"
+            >
+              Not Just a Roofer.
+              <br /> Your Neighbor.
+            </motion.h2>
+          </div>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
-        >
-          {pillars.map((pillar) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
-              variants={itemVariants}
-              className="group flex gap-4 md:gap-5"
+              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              whileHover={{ x: 8 }}
+              className="group flex gap-4 md:gap-5 cursor-default"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                <pillar.icon className="w-6 h-6 text-primary" />
-              </div>
+              <motion.div
+                className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center relative overflow-hidden"
+                whileHover={{ rotate: 10, scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {/* Radial pulse */}
+                <div className="absolute inset-0 bg-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-500" />
+                <pillar.icon className="w-6 h-6 text-primary relative z-10" />
+              </motion.div>
               <div>
                 <h3 className="text-lg font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{pillar.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{pillar.description}</p>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
