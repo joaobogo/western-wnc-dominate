@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import teamPhoto from "@/assets/team-photo.webp";
 
 const values = [
   { icon: Shield, title: "Integrity First", description: "We give honest assessments. If your roof doesn't need replacing, we'll tell you." },
@@ -32,8 +33,25 @@ const About = () => {
           </div>
         </section>
 
+        {/* Team Photo */}
+        <section className="bg-background">
+          <div className="container-tight px-4 md:px-8 lg:px-16">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <img
+                src={teamPhoto}
+                alt="The Highlander Roofing Services team — over 20 local professionals serving Western North Carolina"
+                className="w-full rounded-lg shadow-lg -mt-12 md:-mt-16"
+              />
+            </motion.div>
+          </div>
+        </section>
+
         <section className="section-padding bg-background">
           <div className="container-tight">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2">Meet the Team</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">Over 20 local roofing professionals — the people behind every inspection, install, and repair across Western North Carolina. 2024 Best of Macon County Reader's Choice Award winners.</p>
+            </div>
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">Our Story</h2>
