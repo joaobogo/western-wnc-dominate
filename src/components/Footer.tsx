@@ -79,6 +79,7 @@ const Footer = () => {
             <h4 className="font-heading font-semibold text-base mb-4">Company</h4>
             <nav className="flex flex-col gap-2">
               <Link to="/about" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">About Us</Link>
+              <Link to="/blog" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">Blog</Link>
               <Link to="/gallery" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">Gallery</Link>
               <Link to="/financing" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">Financing</Link>
               <Link to="/careers" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">Careers</Link>

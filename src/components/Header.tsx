@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "Commercial", href: "/commercial-roofing" },
+  { label: "Blog", href: "/blog" },
   { label: "Gallery", href: "/gallery" },
   { label: "Financing", href: "/financing" },
   { label: "About", href: "/about" },
