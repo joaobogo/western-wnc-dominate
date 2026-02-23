@@ -16,6 +16,7 @@ import Gallery from "./pages/Gallery";
 import Financing from "./pages/Financing";
 import Careers from "./pages/Careers";
 import RequestInspection from "./pages/RequestInspection";
+import FreeTools from "./pages/FreeTools";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/financing" element={<Financing />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/request-inspection" element={<RequestInspection />} />
+          <Route path="/free-tools" element={<FreeTools />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
