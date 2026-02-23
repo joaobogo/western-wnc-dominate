@@ -22,6 +22,16 @@ const reviews = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, rotateX: 8 },
+  visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.6, ease: [0, 0, 0.2, 1] as const } },
+};
+
 const Reviews = () => {
   return (
     <section className="section-padding bg-background">
@@ -30,6 +40,7 @@ const Reviews = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
           <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Reviews</p>
@@ -40,7 +51,15 @@ const Reviews = () => {
           <div className="flex items-center justify-center gap-2 mt-4">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.1, type: "spring", stiffness: 400 }}
+                >
+                  <Star className="w-5 h-5 fill-accent text-accent" />
+                </motion.div>
               ))}
             </div>
             <span className="font-semibold text-foreground">4.7</span>
@@ -48,15 +67,18 @@ const Reviews = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((review, i) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          {reviews.map((review) => (
             <motion.div
               key={review.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="bg-card border border-border rounded-lg p-6 md:p-8"
+              variants={cardVariants}
+              className="group bg-card border border-border rounded-lg p-6 md:p-8 hover:shadow-xl hover:-translate-y-1 hover:border-primary/20 transition-all duration-300"
             >
               <div className="flex mb-3">
                 {[...Array(review.rating)].map((_, j) => (
@@ -70,7 +92,7 @@ const Reviews = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

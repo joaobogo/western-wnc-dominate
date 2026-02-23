@@ -28,6 +28,16 @@ const pillars = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0, 0, 0.2, 1] as const } },
+};
+
 const WhyChooseUs = () => {
   return (
     <section className="section-padding bg-secondary">
@@ -36,6 +46,7 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
           <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Why Highlander</p>
@@ -45,26 +56,29 @@ const WhyChooseUs = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {pillars.map((pillar, i) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+        >
+          {pillars.map((pillar) => (
             <motion.div
               key={pillar.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="flex gap-4 md:gap-5"
+              variants={itemVariants}
+              className="group flex gap-4 md:gap-5"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                 <pillar.icon className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{pillar.title}</h3>
+                <h3 className="text-lg font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{pillar.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{pillar.description}</p>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
