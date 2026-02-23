@@ -1,0 +1,646 @@
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  category: string;
+  date: string;
+  readTime: string;
+  metaTitle: string;
+  metaDescription: string;
+  town?: string;
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "how-much-does-roof-cost-highlands-nc",
+    title: "How Much Does a New Roof Cost in Highlands, NC?",
+    excerpt: "A breakdown of real roofing costs for Highlands homeowners — from materials to labor to elevation factors that affect your bottom line.",
+    category: "Cost",
+    date: "2026-02-15",
+    readTime: "6 min",
+    town: "Highlands",
+    metaTitle: "How Much Does a New Roof Cost in Highlands, NC? | Highlander Roofing",
+    metaDescription: "Wondering about roof replacement costs in Highlands, NC? Here's what mountain homeowners actually pay and what factors affect your price.",
+    content: `If you're a homeowner in Highlands, NC, you've probably wondered what a new roof actually costs at 4,100+ feet elevation. The short answer: **$10,000 to $30,000+** for a typical residential roof — but several mountain-specific factors can shift that number significantly.
+
+## What Affects Roofing Costs in Highlands?
+
+**Elevation and accessibility.** Many Highlands homes sit on steep lots with limited access. Crews may need specialized equipment to reach your roof, which adds to labor costs.
+
+**Material choice.** Architectural shingles are the most popular choice ($350–$500/sq), while standing seam metal roofing ($600–$1,200/sq) is increasingly common for its longevity in mountain climates.
+
+**Roof complexity.** Dormers, valleys, skylights, and steep pitches all increase labor time and material waste.
+
+**Underlayment requirements.** At this elevation, ice and water shield underlayment isn't optional — it's essential for preventing ice dam damage.
+
+## Average Cost Ranges for Highlands Homes
+
+- **Minor repairs:** $300–$1,500
+- **Shingle roof replacement:** $10,000–$20,000
+- **Metal roof installation:** $18,000–$35,000
+- **Storm damage repair:** Varies (often covered by insurance)
+
+## Why Highlands Costs Run Higher Than Lowland NC
+
+The combination of elevation, weather exposure, material transport costs, and skilled labor demand means roofing in Highlands typically costs 15–25% more than comparable work in lower-elevation NC cities.
+
+## Get a Free Estimate
+
+The best way to know your actual cost is a free inspection. We'll assess your roof's condition, measure accurately, and provide a transparent estimate with no surprises.`,
+  },
+  {
+    slug: "metal-vs-shingle-roof-western-nc",
+    title: "Metal vs. Shingle Roofing: What's Best for WNC Mountain Homes?",
+    excerpt: "Comparing the two most popular roofing options for Western North Carolina — cost, durability, and performance at elevation.",
+    category: "Materials",
+    date: "2026-02-10",
+    readTime: "7 min",
+    metaTitle: "Metal vs Shingle Roof for WNC Homes | Highlander Roofing",
+    metaDescription: "Metal or shingle roof for your Western NC mountain home? Compare cost, durability, and weather performance to make the right choice.",
+    content: `Choosing between metal and shingle roofing is one of the biggest decisions WNC homeowners face. Both have real advantages — but mountain climates add factors that don't apply in flatland roofing.
+
+## Shingle Roofing Pros & Cons for WNC
+
+**Pros:** Lower upfront cost ($350–$500/sq), wide style selection, faster installation, easier repairs.
+
+**Cons:** 20–30 year lifespan, more vulnerable to wind uplift, can trap moisture leading to ice dam issues, requires more frequent maintenance.
+
+## Metal Roofing Pros & Cons for WNC
+
+**Pros:** 50+ year lifespan, superior wind resistance (140+ mph), sheds snow efficiently, energy-efficient, fire-resistant, minimal maintenance.
+
+**Cons:** Higher upfront cost ($600–$1,200/sq), requires skilled installation, can be dented by large hail, expansion noise in extreme temperature swings.
+
+## Our Recommendation for Mountain Homes
+
+For homes above 3,000 feet elevation with heavy snow loads and high wind exposure, **metal roofing delivers the best long-term value.** For budget-conscious homeowners or properties with simpler roof lines, **architectural shingles provide excellent protection** at a lower price point.
+
+## The Bottom Line
+
+There's no universal answer. We assess each home individually — considering elevation, exposure, budget, and long-term plans — then recommend the best option for your specific situation.`,
+  },
+  {
+    slug: "storm-damage-checklist-western-nc",
+    title: "Storm Damage Roof Checklist for Western NC Homeowners",
+    excerpt: "What to look for after a WNC storm — and the steps to take before calling your insurance company.",
+    category: "Storm",
+    date: "2026-02-05",
+    readTime: "5 min",
+    metaTitle: "Storm Damage Roof Checklist for WNC | Highlander Roofing",
+    metaDescription: "After a storm in Western NC, use this checklist to assess roof damage and protect your insurance claim. Free storm damage inspections available.",
+    content: `Western North Carolina sees severe storms year-round — from summer thunderstorms to winter ice events. Here's what every homeowner should do after a storm.
+
+## Immediate Steps (First 24 Hours)
+
+1. **Stay safe.** Don't climb on your roof. Look for damage from the ground.
+2. **Document everything.** Take photos and video of any visible damage from multiple angles.
+3. **Check inside.** Look for water stains, leaks, or daylight through the roof deck.
+4. **Call a roofer.** A professional inspection catches damage you can't see from the ground.
+
+## What to Look For (Exterior)
+
+- Missing, cracked, or curling shingles
+- Dents or punctures in metal roofing
+- Damaged or missing flashing around chimneys, vents, skylights
+- Granule accumulation in gutters (sign of shingle damage)
+- Fallen tree limbs or debris on the roof
+- Damaged soffit or fascia
+
+## What to Look For (Interior)
+
+- Water stains on ceilings or walls
+- Musty odors (moisture intrusion)
+- Daylight visible through roof boards in attic
+- Wet insulation in attic space
+
+## Insurance Claim Tips
+
+- **File promptly.** Most policies require timely reporting.
+- **Don't make permanent repairs** before the adjuster visits (temporary tarping is fine).
+- **Get a professional inspection.** Our documentation supports your claim with detailed photos and repair estimates.
+- **Be present** when the adjuster inspects.
+
+## Free Storm Damage Inspections
+
+We respond within 24–48 hours for storm inspections across all of Western NC. Call (828) 397-9211.`,
+  },
+  {
+    slug: "best-roofing-materials-highlands-nc",
+    title: "Best Roofing Materials for Highlands, NC Homes",
+    excerpt: "At 4,100+ feet, not every roofing material can handle Highlands weather. Here's what works — and what doesn't.",
+    category: "Materials",
+    date: "2026-01-28",
+    readTime: "6 min",
+    town: "Highlands",
+    metaTitle: "Best Roofing Materials for Highlands, NC | Highlander Roofing",
+    metaDescription: "Which roofing materials perform best in Highlands, NC? Expert guide on shingles, metal, and specialty options for high-elevation mountain homes.",
+    content: `Highlands sits at over 4,100 feet elevation with annual rainfall exceeding 80 inches and frequent ice events. That combination demands roofing materials that most lowland contractors don't think about.
+
+## Top Materials for Highlands Homes
+
+### 1. Standing Seam Metal Roofing
+**Best for:** Long-term value, snow shedding, wind resistance
+- 50+ year lifespan
+- Sheds snow and ice efficiently
+- Wind ratings up to 140+ mph
+- Energy-efficient reflective coatings
+
+### 2. Architectural (Dimensional) Shingles
+**Best for:** Budget-friendly durability
+- 30-year warranty options
+- Impact-resistant classes available
+- Wide style and color selection
+- Good wind resistance (110–130 mph)
+
+### 3. Synthetic Slate
+**Best for:** Premium aesthetics with modern performance
+- Lightweight compared to natural slate
+- Impact and weather resistant
+- Authentic mountain home appearance
+
+## Materials to Avoid in Highlands
+
+- **3-tab shingles:** Too lightweight for mountain winds
+- **Wood shake:** Moisture retention at this rainfall level creates rot risk
+- **Low-grade metal panels:** Corrosion risk without proper coatings
+
+## Underlayment Matters More at Elevation
+
+Regardless of surface material, **ice and water shield underlayment** is essential for Highlands homes. Standard felt paper isn't enough for this climate.
+
+## Get Expert Material Advice
+
+Every roof is different. We'll inspect your home and recommend the material that delivers the best protection and value for your specific situation.`,
+  },
+  {
+    slug: "insurance-claim-roof-damage-nc",
+    title: "How to File a Roof Damage Insurance Claim in North Carolina",
+    excerpt: "Step-by-step guide to navigating the insurance claim process for storm-damaged roofs in NC.",
+    category: "Insurance",
+    date: "2026-01-20",
+    readTime: "7 min",
+    metaTitle: "Roof Insurance Claim Guide for NC | Highlander Roofing",
+    metaDescription: "How to file a roof damage insurance claim in North Carolina. Step-by-step process, documentation tips, and how a roofer can help maximize your claim.",
+    content: `Filing a roof damage insurance claim in North Carolina doesn't have to be complicated — but mistakes can cost you thousands. Here's how to do it right.
+
+## Step 1: Document the Damage Immediately
+
+Take photos and video of all damage — exterior and interior. Include wide shots and close-ups. Note the date and time of the storm that caused the damage.
+
+## Step 2: Prevent Further Damage
+
+You're required to take reasonable steps to prevent additional damage. This includes emergency tarping — and yes, your insurance should cover this cost.
+
+## Step 3: Contact Your Insurance Company
+
+File your claim as soon as possible. Most NC policies require prompt reporting. Have your policy number ready and provide your documentation.
+
+## Step 4: Get a Professional Roof Inspection
+
+Before the adjuster visits, have a licensed roofing contractor inspect your roof. A professional inspection often identifies damage that homeowners miss — and provides documentation that strengthens your claim.
+
+## Step 5: Be Present for the Adjuster's Visit
+
+Walk the property with the adjuster. Share your contractor's inspection report and photos. Ask questions about anything that's excluded.
+
+## Step 6: Review the Estimate
+
+Compare the insurance estimate with your contractor's estimate. If there's a significant gap, your contractor can supplement the claim with additional documentation.
+
+## Common Mistakes That Reduce Claims
+
+- Waiting too long to file
+- Incomplete damage documentation
+- Making permanent repairs before adjuster visit
+- Not having a professional inspection
+- Accepting the first estimate without review
+
+## How We Help
+
+Highlander Roofing assists WNC homeowners through the entire claims process — from initial documentation to adjuster meetings to final repairs. Call us for a free storm damage inspection.`,
+  },
+  {
+    slug: "spring-roof-maintenance-checklist-wnc",
+    title: "Spring Roof Maintenance Checklist for WNC Homeowners",
+    excerpt: "After a mountain winter, your roof needs attention. Here's what to check every spring to prevent costly problems.",
+    category: "Maintenance",
+    date: "2026-01-15",
+    readTime: "5 min",
+    metaTitle: "Spring Roof Maintenance Checklist for WNC | Highlander Roofing",
+    metaDescription: "Spring roof maintenance checklist for Western NC homeowners. Prevent costly repairs after winter with these expert tips from Highlander Roofing.",
+    content: `WNC winters are tough on roofs. Spring is the ideal time to catch issues before they become expensive problems. Here's your annual checklist.
+
+## Exterior Inspection
+
+- **Check shingles:** Look for missing, cracked, or curling shingles — especially on wind-exposed slopes.
+- **Inspect flashing:** Check around chimneys, skylights, and vents for gaps or lifting.
+- **Clean gutters:** Remove debris accumulated over winter. Check for sagging or separation.
+- **Check for moss/algae:** Mountain moisture promotes growth that can damage shingles.
+- **Inspect ridge caps:** These take the most wind abuse and often fail first.
+
+## Interior Inspection
+
+- **Check attic:** Look for water stains, daylight, or damp insulation.
+- **Ventilation:** Ensure soffit and ridge vents are clear and functional.
+- **Moisture check:** Feel for dampness around roof penetrations.
+
+## Professional Inspection
+
+Even if everything looks fine from the ground, an annual professional inspection catches hidden damage that extends your roof's life. Prevention is always cheaper than emergency repair.
+
+## Schedule Your Spring Inspection
+
+Call (828) 397-9211 or request an inspection online. We serve all of Western NC.`,
+  },
+  {
+    slug: "ice-dam-prevention-mountain-homes",
+    title: "How to Prevent Ice Dams on Your Mountain Home Roof",
+    excerpt: "Ice dams cause thousands in damage to WNC homes every winter. Here's how to prevent them.",
+    category: "Maintenance",
+    date: "2026-01-08",
+    readTime: "5 min",
+    town: "Highlands",
+    metaTitle: "Ice Dam Prevention for WNC Mountain Homes | Highlander Roofing",
+    metaDescription: "Prevent ice dams on your Western NC mountain home. Learn causes, prevention methods, and when to call a professional roofer.",
+    content: `Ice dams are one of the most common — and expensive — roofing problems for WNC mountain homeowners. Understanding what causes them is the first step to prevention.
+
+## What Causes Ice Dams?
+
+Ice dams form when heat escapes through the roof, melting snow that refreezes at the colder eaves. This creates a dam that traps water, which backs up under shingles and into your home.
+
+## Prevention Methods
+
+### 1. Improve Attic Insulation
+Proper insulation prevents heat from reaching the roof deck. This is the #1 most effective ice dam prevention strategy.
+
+### 2. Ensure Proper Ventilation
+Ridge and soffit vents create airflow that keeps the roof deck cold and uniform, preventing uneven melting.
+
+### 3. Install Ice & Water Shield
+This self-adhering membrane under your shingles provides a waterproof barrier at vulnerable eave areas.
+
+### 4. Heat Cable Systems
+Electric heat cables along eaves and in gutters can melt ice before dams form. Best for problem areas.
+
+### 5. Keep Gutters Clean
+Clogged gutters accelerate ice dam formation by trapping water at the roof edge.
+
+## Signs of Ice Dam Damage
+
+- Icicles hanging from eaves (warning sign, not just decoration)
+- Water stains on interior walls or ceilings
+- Ice forming behind gutters
+- Sagging or bowed gutters
+
+## Get Professional Help
+
+If you've had ice dams before, we can assess your roof and attic to identify the root cause and install permanent solutions. Call (828) 397-9211.`,
+  },
+  {
+    slug: "when-to-replace-roof-highlands",
+    title: "5 Signs It's Time to Replace Your Roof in Highlands, NC",
+    excerpt: "Not sure if your roof needs repair or full replacement? Here are the warning signs Highlands homeowners should watch for.",
+    category: "Replacement",
+    date: "2025-12-28",
+    readTime: "5 min",
+    town: "Highlands",
+    metaTitle: "When to Replace Your Roof in Highlands, NC | Highlander Roofing",
+    metaDescription: "5 signs your Highlands, NC roof needs replacement. Age, damage, and performance indicators from local roofing experts.",
+    content: `Knowing when repair isn't enough — and replacement is the smarter investment — saves Highlands homeowners from escalating damage and costs.
+
+## Sign 1: Your Roof Is 20+ Years Old
+
+Shingle roofs in Highlands face accelerated aging due to UV, moisture, and temperature swings. A 30-year shingle at sea level may only last 20–25 years at elevation.
+
+## Sign 2: Multiple Leak Repairs
+
+If you've repaired the same areas multiple times, the underlying system is failing. Continued patching often costs more than a well-planned replacement.
+
+## Sign 3: Widespread Granule Loss
+
+Check your gutters. Heavy granule accumulation means shingles are losing their protective layer and won't last much longer.
+
+## Sign 4: Visible Sagging or Soft Spots
+
+Sagging indicates structural damage — potentially from prolonged moisture intrusion. This requires immediate professional assessment.
+
+## Sign 5: Rising Energy Bills
+
+A failing roof often means failing insulation and ventilation. If your heating costs are climbing despite a well-maintained HVAC system, your roof may be the culprit.
+
+## Repair vs. Replace: The Rule of Thumb
+
+If damage affects more than 30% of the roof area, or if the roof is past 75% of its expected lifespan, replacement usually delivers better long-term value.
+
+## Free Replacement Assessment
+
+We'll inspect your Highlands home, assess the full roof system, and give you an honest recommendation. No pressure, no upsell. Call (828) 397-9211.`,
+  },
+  {
+    slug: "roof-inspection-what-to-expect",
+    title: "What to Expect During a Free Roof Inspection in WNC",
+    excerpt: "Never had a professional roof inspection? Here's exactly what our team looks at — and what you'll receive afterward.",
+    category: "Inspections",
+    date: "2025-12-20",
+    readTime: "4 min",
+    metaTitle: "What to Expect During a Roof Inspection | Highlander Roofing WNC",
+    metaDescription: "What happens during a free roof inspection in Western NC? Learn what we check, how long it takes, and what you'll receive from Highlander Roofing.",
+    content: `A professional roof inspection is the smartest first step for any roofing concern. Here's what our free inspections include.
+
+## Before the Inspection
+
+We'll schedule a convenient time and ask a few basic questions about your roof's age, any known issues, and your concerns.
+
+## During the Inspection (30–60 Minutes)
+
+### Exterior Assessment
+- Shingle/metal panel condition
+- Flashing integrity (chimneys, vents, walls)
+- Gutter and drainage system
+- Soffit and fascia condition
+- Ridge cap and valley condition
+- Visible penetration sealing
+
+### Interior Assessment (if accessible)
+- Attic ventilation check
+- Insulation condition
+- Signs of moisture or leaks
+- Structural integrity of roof deck
+
+### Documentation
+We photograph everything — good and bad — so you have a complete record of your roof's current condition.
+
+## After the Inspection
+
+You'll receive:
+- **Written condition report** with photos
+- **Honest recommendation** — repair, maintain, or replace
+- **Transparent cost estimate** if work is needed
+- **No pressure.** The report is yours whether you hire us or not.
+
+## Schedule Your Free Inspection
+
+Call (828) 397-9211 or submit our online form. We respond within 24 hours and serve all of Western NC.`,
+  },
+  {
+    slug: "choosing-roofing-contractor-wnc",
+    title: "How to Choose a Roofing Contractor in Western North Carolina",
+    excerpt: "Not all roofers are equal. Here's what WNC homeowners should look for — and what red flags to avoid.",
+    category: "Tips",
+    date: "2025-12-12",
+    readTime: "6 min",
+    metaTitle: "How to Choose a Roofing Contractor in WNC | Highlander Roofing",
+    metaDescription: "Tips for choosing a trusted roofing contractor in Western NC. What to look for, red flags to avoid, and questions to ask before hiring.",
+    content: `Choosing the wrong roofing contractor can cost you thousands — or worse, leave you with a roof that fails prematurely. Here's how to find the right one in WNC.
+
+## Must-Have Qualifications
+
+1. **NC General Contractor License.** Required for roofing work in North Carolina. Ask for the license number and verify it.
+2. **Insurance.** Both general liability and workers' compensation. Ask for certificates.
+3. **Local presence.** A contractor who lives and works in WNC understands mountain roofing challenges that out-of-state storm chasers don't.
+4. **Manufacturer certifications.** CertainTeed Master Shingle Applicator or similar certifications indicate training and quality standards.
+
+## Red Flags to Avoid
+
+- **Door-to-door solicitation after storms.** Legitimate contractors don't chase storms.
+- **No written contract.** Everything should be documented before work begins.
+- **Large upfront deposits.** Never pay more than 30% before work starts.
+- **No physical address.** Fly-by-night contractors disappear after problems arise.
+- **Pressure to sign immediately.** Good contractors give you time to decide.
+
+## Questions to Ask
+
+- How long have you been roofing in WNC?
+- Can you provide local references?
+- What warranty do you offer on labor?
+- Will you handle the permit process?
+- Who will supervise the crew on site?
+
+## Why Homeowners Choose Highlander
+
+- Family-owned since 2017
+- Licensed NC General Contractor
+- CertainTeed Master Shingle Applicators
+- Based in Franklin & Sylva — not out of state
+- Free inspections with written reports
+- Financing available`,
+  },
+  {
+    slug: "emergency-roof-repair-wnc",
+    title: "Emergency Roof Repair in Western NC: What to Do When Disaster Strikes",
+    excerpt: "Fallen tree? Major leak? Here's your step-by-step emergency guide for WNC homeowners.",
+    category: "Storm",
+    date: "2025-12-05",
+    readTime: "5 min",
+    metaTitle: "Emergency Roof Repair in Western NC | Highlander Roofing",
+    metaDescription: "Emergency roof repair in Western NC. What to do after a tree fall, major leak, or storm damage. Fast response — call (828) 397-9211.",
+    content: `When your roof is compromised — whether by a fallen tree, severe storm, or sudden leak — fast action prevents thousands in additional damage. Here's what to do.
+
+## Immediate Steps
+
+1. **Ensure safety.** If there's structural damage, evacuate and call emergency services.
+2. **Stop water entry.** Place buckets under leaks. If safe, use tarps to cover exposed areas from inside.
+3. **Call a professional.** We respond within 24–48 hours for emergency situations.
+4. **Document everything.** Photos, videos, time stamps — this supports your insurance claim.
+5. **Don't attempt roof access.** Wet, damaged roofs are extremely dangerous.
+
+## What Emergency Repair Includes
+
+- **Emergency tarping** to prevent further water intrusion
+- **Debris removal** from the roof surface
+- **Temporary structural support** if needed
+- **Full damage assessment** with documentation
+- **Insurance coordination** from day one
+
+## When It's a True Emergency
+
+- Active water pouring into living spaces
+- Structural sagging or collapse risk
+- Tree on roof with ongoing damage potential
+- Complete shingle loss exposing roof deck
+
+## Our Response Commitment
+
+Highlander Roofing prioritizes emergency calls. We aim for same-day assessment when possible and 24–48 hour response for all emergency situations across Western NC.
+
+## Call Now: (828) 397-9211`,
+  },
+  {
+    slug: "roof-financing-options-western-nc",
+    title: "Roof Financing Options for Western NC Homeowners",
+    excerpt: "A new roof is a major investment. Here are the financing options available to make it affordable.",
+    category: "Financing",
+    date: "2025-11-28",
+    readTime: "5 min",
+    metaTitle: "Roof Financing Options in Western NC | Highlander Roofing",
+    metaDescription: "Affordable roof financing for Western NC homeowners. Payment plans, insurance claims, and flexible options from Highlander Roofing.",
+    content: `A new roof is one of the most important investments you'll make in your home — but that doesn't mean it has to strain your finances. Here's how WNC homeowners are making it work.
+
+## Financing Options We Offer
+
+### Monthly Payment Plans
+- Low monthly payments
+- Quick approval process
+- Competitive interest rates
+- No prepayment penalties
+
+### Insurance Claims
+If your roof damage is storm-related, your homeowner's insurance may cover most or all of the replacement cost. We handle the documentation and adjuster coordination.
+
+### Home Equity Options
+Many homeowners use home equity lines of credit for roof replacement. The interest may be tax-deductible — consult your tax advisor.
+
+## What Affects Your Roof Investment
+
+- **Roof size and complexity**
+- **Material choice** (shingle vs. metal)
+- **Existing damage requiring repair**
+- **Accessibility of your property**
+
+## Why Financing Makes Sense
+
+Delaying a roof replacement can lead to:
+- Interior water damage ($5,000–$20,000+)
+- Mold remediation ($3,000–$10,000+)
+- Structural damage (potentially tens of thousands)
+- Reduced home value
+
+## Get Your Options
+
+During your free inspection, ask about financing. We'll provide a complete cost breakdown and help you find the payment option that works for your budget.`,
+  },
+  {
+    slug: "vacation-rental-roof-maintenance-wnc",
+    title: "Roof Maintenance for WNC Vacation Rental Properties",
+    excerpt: "Your vacation rental's roof is a revenue asset. Here's how to protect it and avoid costly guest disruptions.",
+    category: "Maintenance",
+    date: "2025-11-20",
+    readTime: "5 min",
+    metaTitle: "Vacation Rental Roof Maintenance in WNC | Highlander Roofing",
+    metaDescription: "Protect your WNC vacation rental investment with professional roof maintenance. Prevent leaks, avoid guest disruptions, maintain property value.",
+    content: `In Western NC's booming vacation rental market, your roof isn't just protecting a building — it's protecting your income. A leak during peak season can mean refunds, bad reviews, and lost bookings.
+
+## Why Rental Properties Need Extra Attention
+
+- **Higher wear:** More occupants = more HVAC use = more attic stress
+- **Delayed detection:** You may not discover a leak for weeks if you're not on-site
+- **Guest expectations:** Modern travelers expect perfection — a water stain can earn a 3-star review
+- **Seasonal extremes:** Mountain rentals face harsh winters and humid summers
+
+## Recommended Maintenance Schedule
+
+### Spring (Pre-Season)
+- Full exterior inspection
+- Gutter cleaning and realignment
+- Flashing and sealant check
+- Attic ventilation verification
+
+### Fall (Post-Season)
+- Debris removal
+- Storm damage assessment
+- Ice dam prevention prep
+- Gutter guard installation or cleaning
+
+## Emergency Response for Rental Owners
+
+We understand that a rental roof emergency is a business emergency. We offer priority scheduling for rental property owners and can coordinate directly with your property manager.
+
+## Protect Your Investment
+
+A $500 maintenance visit prevents a $15,000 emergency repair — and the lost rental income that comes with it. Call (828) 397-9211 for rental property roofing services.`,
+  },
+  {
+    slug: "winter-roof-preparation-highlands",
+    title: "Preparing Your Highlands Home Roof for Winter",
+    excerpt: "Mountain winters punish unprepared roofs. Here's how to winterize your Highlands home before the first freeze.",
+    category: "Maintenance",
+    date: "2025-11-12",
+    readTime: "5 min",
+    town: "Highlands",
+    metaTitle: "Winter Roof Preparation for Highlands, NC | Highlander Roofing",
+    metaDescription: "Prepare your Highlands, NC roof for winter. Expert winterization tips for mountain homes from Highlander Roofing.",
+    content: `Highlands winters bring heavy snow, ice, freezing rain, and sustained low temperatures that test every roof. Preparation before the first freeze is critical.
+
+## Pre-Winter Checklist
+
+### Inspection Items
+- Check all shingles for damage or lifting
+- Inspect flashing around all penetrations
+- Verify ridge cap integrity
+- Check valley flashing for debris buildup
+- Assess chimney cap and crown condition
+
+### Maintenance Tasks
+- Clean all gutters and downspouts thoroughly
+- Install heat cables on problem eave areas
+- Trim overhanging branches (snow load + ice = branch falls)
+- Seal any visible gaps or cracks in flashing
+- Verify attic insulation depth (R-38 minimum recommended)
+
+### Ventilation Check
+- Ensure soffit vents are clear and unblocked
+- Verify ridge vent is functional
+- Check bathroom and kitchen exhaust venting
+
+## Common Winter Roof Problems in Highlands
+
+- **Ice dams** from inadequate insulation/ventilation
+- **Wind damage** from sustained mountain winds
+- **Snow load stress** on older structures
+- **Freeze-thaw cycling** that deteriorates sealants and flashing
+
+## Schedule Pre-Winter Inspection
+
+Don't wait for the first storm. Call (828) 397-9211 to schedule a pre-winter roof assessment for your Highlands home.`,
+  },
+  {
+    slug: "commercial-roof-maintenance-wnc",
+    title: "Why Every WNC Commercial Property Needs a Roof Maintenance Program",
+    excerpt: "Reactive roofing costs 3x more than preventative maintenance. Here's the business case for commercial roof care.",
+    category: "Commercial",
+    date: "2025-11-05",
+    readTime: "6 min",
+    metaTitle: "Commercial Roof Maintenance Programs in WNC | Highlander Roofing",
+    metaDescription: "Commercial roof maintenance programs for Western NC properties. Reduce costs, extend roof life, prevent emergencies. Highlander Roofing.",
+    content: `If you manage commercial property in Western NC, your roof is your first line of defense against one of the wettest, windiest climates in the Southeast. Waiting for problems to appear costs 3x more than preventing them.
+
+## The Business Case for Maintenance
+
+- **Roof lifespan extension:** 25–50% longer life with regular maintenance
+- **Emergency cost reduction:** Preventative fixes cost a fraction of emergency repairs
+- **Tenant satisfaction:** No leaks = no complaints = better retention
+- **Warranty compliance:** Many warranties require documented maintenance
+- **Insurance benefits:** Well-maintained roofs support claim credibility
+
+## What Our Maintenance Programs Include
+
+### Standard Program
+- Bi-annual inspections (spring + fall)
+- Written condition reports with photos
+- Minor repair inclusion (sealants, fasteners)
+- Debris and drainage clearing
+- Priority emergency scheduling
+
+### Premium Program
+- Everything in Standard
+- Quarterly inspections
+- Annual thermal imaging scan
+- Gutter system maintenance
+- Comprehensive annual report for ownership
+
+## Who Benefits Most
+
+- Property management companies
+- HOA boards managing community buildings
+- Retail and office property owners
+- Hospitality and vacation rental operators
+- Healthcare and education facilities
+
+## Get a Maintenance Proposal
+
+Contact us for a customized maintenance proposal based on your property type, roof system, and budget. Call (828) 397-9211 or request online.`,
+  },
+];
+
+export const getBlogBySlug = (slug: string) => blogPosts.find(b => b.slug === slug);
