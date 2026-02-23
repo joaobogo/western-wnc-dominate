@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, Tag } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import { getBlogBySlug, blogPosts } from "@/data/blogs";
 
 const BlogPostPage = () => {
@@ -66,6 +67,14 @@ const BlogPostPage = () => {
 
               <div className="prose-custom">
                 {renderContent(post.content)}
+              </div>
+
+              {/* Inline Lead Magnet */}
+              <div className="mt-10">
+                <GuideLeadMagnet
+                  variant="inline"
+                  guide={post.category === "Storm" ? "storm" : post.category === "Maintenance" ? "maintenance" : "checklist"}
+                />
               </div>
             </motion.div>
 
