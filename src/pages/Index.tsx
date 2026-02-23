@@ -1,13 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import TrustStrip from "@/components/TrustStrip";
+import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import ServicesGrid from "@/components/ServicesGrid";
+import TownGrid from "@/components/TownGrid";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Reviews from "@/components/Reviews";
+import InstagramGrid from "@/components/InstagramGrid";
+import CTABlock from "@/components/CTABlock";
+import InspectionForm from "@/components/InspectionForm";
+import Footer from "@/components/Footer";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <TrustStrip />
+        <BeforeAfterGallery />
+        <ServicesGrid />
+        <TownGrid />
+        <WhyChooseUs />
+        <Reviews />
+        <InstagramGrid />
+        <InspectionForm />
+        <CTABlock />
+      </main>
+      <Footer />
+      <StickyMobileCTA />
+    </>
   );
 };
 
