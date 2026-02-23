@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import logo from "@/assets/logo.webp";
 const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Service Areas", href: "/service-areas" },
@@ -34,13 +34,8 @@ const Header = () => {
 
       {/* Main nav */}
       <div className="flex items-center justify-between px-4 md:px-8 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl md:text-2xl font-heading font-bold text-primary tracking-tight">
-            HIGHLANDER
-          </span>
-          <span className="hidden sm:inline text-xs font-body text-muted-foreground uppercase tracking-[0.2em] border-l border-border pl-2">
-            Roofing Services
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Highlander Roofing Services" className="h-10 md:h-12 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
