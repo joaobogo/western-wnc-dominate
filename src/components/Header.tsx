@@ -35,8 +35,8 @@ const Header = () => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-card/98 backdrop-blur-xl shadow-lg border-b border-border"
-          : "bg-card/95 backdrop-blur-md border-b border-border"
+          ? "bg-background backdrop-blur-xl shadow-lg border-b border-border"
+          : "bg-background backdrop-blur-md border-b border-border"
       }`}
     >
       {/* Top bar */}
