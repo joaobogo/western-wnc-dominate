@@ -86,7 +86,7 @@ const BeforeAfterGallery = () => {
           {/* Main showcase */}
           <div className="relative rounded-xl overflow-hidden bg-card border border-border shadow-lg">
             {/* Image */}
-            <div className="relative aspect-[16/9] overflow-hidden">
+            <div className="relative aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.img
                   key={current}
@@ -102,15 +102,12 @@ const BeforeAfterGallery = () => {
                 />
               </AnimatePresence>
 
-              {/* Gradient overlay at bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
 
-              {/* Type badge */}
-              <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md z-10">
+              <div className="absolute top-4 left-4 md:top-5 md:left-5 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md z-10">
                 {projects[current].type}
               </div>
 
-              {/* Nav arrows over image */}
               <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 md:px-5 z-10">
                 <button
                   onClick={prev}
@@ -126,8 +123,7 @@ const BeforeAfterGallery = () => {
                 </button>
               </div>
 
-              {/* Project info overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 z-10">
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10">
                 <AnimatePresence mode="wait" custom={direction}>
                   <motion.div
                     key={current}
@@ -137,14 +133,14 @@ const BeforeAfterGallery = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <h3 className="font-heading font-bold text-xl md:text-2xl text-background mb-1">
+                    <h3 className="font-heading font-bold text-xl md:text-2xl text-background mb-2">
                       {projects[current].title}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-background/70 text-sm mb-2">
+                    <div className="flex items-center gap-1.5 text-background/70 text-sm mb-3">
                       <MapPin className="w-3.5 h-3.5" />
                       {projects[current].location}
                     </div>
-                    <p className="text-background/80 text-sm md:text-base max-w-xl">
+                    <p className="text-background/80 text-sm md:text-base max-w-xl leading-relaxed">
                       {projects[current].description}
                     </p>
                   </motion.div>
