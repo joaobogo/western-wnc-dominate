@@ -1,16 +1,25 @@
 import { motion } from "framer-motion";
-import { Camera } from "lucide-react";
+
+import asphalt001 from "@/assets/gallery/asphalt-001.jpg";
+import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
+import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
+import cedar001 from "@/assets/gallery/cedar-001.jpg";
+import cedar002 from "@/assets/gallery/cedar-002.jpg";
+import metal009 from "@/assets/gallery/metal-009.jpg";
+import metal010 from "@/assets/gallery/metal-010.jpg";
+import asphalt004 from "@/assets/gallery/asphalt-004.jpg";
+import asphalt005 from "@/assets/gallery/asphalt-005.jpg";
 
 const gridItems = [
-  { label: "Before & After", type: "before-after" },
-  { label: "Crew Photo", type: "crew" },
-  { label: "Roof Tip", type: "tip" },
-  { label: "Reel Cover", type: "reel" },
-  { label: "Material Detail", type: "material" },
-  { label: "Inspection Process", type: "inspection" },
-  { label: "Community Spotlight", type: "community" },
-  { label: "Storm Checklist", type: "storm" },
-  { label: "Project in Highlands", type: "project" },
+  { label: "Shingle Repair", image: asphalt001 },
+  { label: "Crew at Work", image: asphalt002 },
+  { label: "New Install", image: asphalt003 },
+  { label: "Cedar Shake", image: cedar001 },
+  { label: "Metal Roof", image: metal009 },
+  { label: "Inspection", image: asphalt004 },
+  { label: "Cedar Detail", image: cedar002 },
+  { label: "Storm Repair", image: metal010 },
+  { label: "Mountain Home", image: asphalt005 },
 ];
 
 const containerVariants = {
@@ -50,15 +59,21 @@ const InstagramGrid = () => {
         >
           {gridItems.map((item) => (
             <motion.div
-              key={item.type}
+              key={item.label}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -4 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="group relative aspect-square bg-primary/10 rounded-md overflow-hidden cursor-pointer"
+              className="group relative aspect-square rounded-md overflow-hidden cursor-pointer"
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-2 group-hover:bg-primary/20 transition-colors duration-300">
-                <Camera className="w-5 h-5 md:w-6 md:h-6 text-primary/50 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
-                <span className="text-[10px] md:text-xs text-center text-muted-foreground font-medium leading-tight group-hover:text-foreground transition-colors">
+              <img
+                src={item.image}
+                alt={item.label}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+              {/* Hover overlay with label */}
+              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex items-center justify-center">
+                <span className="text-primary-foreground text-xs md:text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-2">
                   {item.label}
                 </span>
               </div>

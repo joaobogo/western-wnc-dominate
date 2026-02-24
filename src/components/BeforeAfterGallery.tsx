@@ -2,18 +2,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import asphalt001 from "@/assets/gallery/asphalt-001.jpg";
+import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
+import metal009 from "@/assets/gallery/metal-009.jpg";
+import asphalt005 from "@/assets/gallery/asphalt-005.jpg";
+import metal010 from "@/assets/gallery/metal-010.jpg";
+import cedar001 from "@/assets/gallery/cedar-001.jpg";
+
 const projects = [
   {
     title: "Storm Damage Repair — Franklin, NC",
     description: "Complete shingle replacement after severe hail damage. Insurance-documented and warrantied.",
+    before: asphalt001,
+    after: asphalt003,
   },
   {
     title: "Metal Roof Installation — Highlands, NC",
     description: "Standing seam metal roof on a mountain lodge. Built for heavy snow loads and 50+ year lifespan.",
+    before: asphalt005,
+    after: metal009,
   },
   {
     title: "Full Replacement — Cashiers, NC",
     description: "Architectural shingle upgrade on a lakefront home. New underlayment, flashing, and ridge vents.",
+    before: metal010,
+    after: cedar001,
   },
 ];
 
@@ -54,22 +67,44 @@ const BeforeAfterGallery = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="relative bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
-            {/* Mock before/after area */}
-            <div className="grid grid-cols-2 aspect-[2/1]">
-              <div className="bg-muted flex items-center justify-center border-r border-border">
-                <div className="text-center">
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">Before</p>
-                  <div className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center mx-auto">
-                    <span className="text-2xl">🏚️</span>
-                  </div>
+            {/* Before / After images */}
+            <div className="grid grid-cols-2 aspect-[2/1] relative">
+              <div className="relative overflow-hidden border-r border-border">
+                <AnimatePresence mode="wait" custom={direction}>
+                  <motion.img
+                    key={`before-${current}`}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.4 }}
+                    src={projects[current].before}
+                    alt={`Before - ${projects[current].title}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+                <div className="absolute top-3 left-3 bg-destructive/80 text-destructive-foreground text-[10px] md:text-xs font-bold uppercase tracking-wider px-2 py-1 rounded z-10">
+                  Before
                 </div>
               </div>
-              <div className="bg-primary/5 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">After</p>
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                    <span className="text-2xl">🏠</span>
-                  </div>
+              <div className="relative overflow-hidden">
+                <AnimatePresence mode="wait" custom={direction}>
+                  <motion.img
+                    key={`after-${current}`}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.4 }}
+                    src={projects[current].after}
+                    alt={`After - ${projects[current].title}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+                <div className="absolute top-3 left-3 bg-primary/80 text-primary-foreground text-[10px] md:text-xs font-bold uppercase tracking-wider px-2 py-1 rounded z-10">
+                  After
                 </div>
               </div>
             </div>
