@@ -61,11 +61,13 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
 
       if (uploadError) throw uploadError;
 
-      const { data: urlData } = supabase.storage
+      const { data: urlData, error: signedUrlError } = await supabase.storage
         .from("roof-designs")
-        .getPublicUrl(fileName);
+        .createSignedUrl(fileName, 3600);
 
-      onImageUploaded(urlData.publicUrl);
+      if (signedUrlError || !urlData?.signedUrl) throw signedUrlError || new Error("Failed to get signed URL");
+
+      onImageUploaded(urlData.signedUrl);
       toast.success("Photo uploaded! Analyzing your roof...");
     } catch (err) {
       console.error("Upload error:", err);
