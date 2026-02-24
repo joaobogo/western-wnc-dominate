@@ -6,6 +6,7 @@ import RoofDesignerHero from "@/components/roof-designer/RoofDesignerHero";
 import RoofDesignerWorkspace from "@/components/roof-designer/RoofDesignerWorkspace";
 import LeadCaptureModal from "@/components/roof-designer/LeadCaptureModal";
 import { motion } from "framer-motion";
+import { FlaskConical } from "lucide-react";
 
 const RoofDesigner = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -26,7 +27,14 @@ const RoofDesigner = () => {
   return (
     <>
       <Header />
-      <main className="pt-16 md:pt-20">
+      <main className="pt-16 md:pt-20 relative">
+        {/* Beta banner */}
+        <div className="bg-accent/10 border-b border-accent/20 px-4 py-2 text-center">
+          <p className="text-sm text-accent-foreground/80 flex items-center justify-center gap-2">
+            <FlaskConical className="w-4 h-4 text-accent" />
+            <span><strong>Beta</strong> — This tool is in early access. Results are approximate.</span>
+          </p>
+        </div>
         {!uploadedImage ? (
           <RoofDesignerHero onImageUploaded={handleImageUploaded} />
         ) : (

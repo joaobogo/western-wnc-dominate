@@ -166,47 +166,39 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
     applyOverlay();
   }, []);
 
-  // Apply color overlay based on mask
+  // Apply color overlay based on mask (uses compositing instead of pixel loop)
   const applyOverlay = useCallback(() => {
     const overlayCanvas = overlayCanvasRef.current;
     const maskCanvas = maskCanvasRef.current;
     if (!overlayCanvas || !maskCanvas || !selectedMaterial) return;
 
     const ctx = overlayCanvas.getContext("2d")!;
-    const maskCtx = maskCanvas.getContext("2d")!;
-    const maskData = maskCtx.getImageData(0, 0, maskCanvas.width, maskCanvas.height);
-
     ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
-    // Create color overlay
+    // Step 1: Draw the mask onto the overlay canvas
+    ctx.globalAlpha = 1;
+    ctx.globalCompositeOperation = "source-over";
+    ctx.drawImage(maskCanvas, 0, 0);
+
+    // Step 2: Use "source-in" to paint color ONLY where the mask exists
+    ctx.globalCompositeOperation = "source-in";
     ctx.globalAlpha = opacity / 100;
     ctx.fillStyle = selectedMaterial.color_hex;
-    
-    // Apply only where mask is white
-    ctx.save();
-    ctx.beginPath();
-    for (let y = 0; y < maskData.height; y++) {
-      for (let x = 0; x < maskData.width; x++) {
-        const i = (y * maskData.width + x) * 4;
-        if (maskData.data[i] > 128) {
-          ctx.rect(x, y, 1, 1);
-        }
-      }
-    }
-    ctx.clip();
     ctx.fillRect(0, 0, overlayCanvas.width, overlayCanvas.height);
-    
-    // Add subtle texture effect based on finish
+
+    // Step 3: Add gloss gradient on top of existing content
     if (selectedMaterial.finish === "gloss") {
+      ctx.globalCompositeOperation = "source-atop";
+      ctx.globalAlpha = 0.15;
       const gradient = ctx.createLinearGradient(0, 0, overlayCanvas.width, overlayCanvas.height);
-      gradient.addColorStop(0, "rgba(255,255,255,0.08)");
-      gradient.addColorStop(0.5, "rgba(255,255,255,0.15)");
-      gradient.addColorStop(1, "rgba(255,255,255,0.05)");
+      gradient.addColorStop(0, "rgba(255,255,255,0.3)");
+      gradient.addColorStop(0.5, "rgba(255,255,255,0.6)");
+      gradient.addColorStop(1, "rgba(255,255,255,0.2)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, overlayCanvas.width, overlayCanvas.height);
     }
-    
-    ctx.restore();
+
+    ctx.globalCompositeOperation = "source-over";
     ctx.globalAlpha = 1;
   }, [selectedMaterial, opacity]);
 
