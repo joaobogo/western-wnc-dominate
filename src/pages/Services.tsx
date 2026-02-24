@@ -38,7 +38,7 @@ const Services = () => {
                   transition={{ delay: i * 0.08, duration: 0.4 }}
                 >
                   <Link
-                    to={service.slug.includes("commercial") ? `/${service.slug}` : `/services/${service.slug}`}
+                    to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(service.slug) ? `/${service.slug}` : `/services/${service.slug}`}
                     className="group block bg-card border border-border rounded-lg p-8 hover:border-primary/30 hover:shadow-lg transition-all h-full"
                   >
                     <service.icon className="w-10 h-10 text-primary mb-4" />

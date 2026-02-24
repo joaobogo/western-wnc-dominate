@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench } from "lucide-react";
+import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat } from "lucide-react";
 
 const services = [
   { icon: Hammer, title: "Roof Repair", description: "Leak fixes, shingle replacement, and damage repair for mountain homes.", href: "/services/roof-repair" },
   { icon: RotateCcw, title: "Roof Replacement", description: "Full tear-off and installation with premium materials built for WNC weather.", href: "/services/roof-replacement" },
   { icon: CloudLightning, title: "Storm Damage", description: "Emergency response and insurance documentation for storm-damaged roofs.", href: "/services/storm-damage" },
   { icon: Layers, title: "Metal Roofing", description: "Durable, energy-efficient metal roofing designed for mountain climates.", href: "/services/metal-roofing" },
+  { icon: Droplets, title: "Gutter Services", description: "Seamless gutters, gutter guards, and drainage solutions for mountain homes.", href: "/gutters" },
+  { icon: TreePine, title: "Outdoor Living", description: "Custom decks, porches, screened rooms, and pergolas for mountain living.", href: "/outdoor-living" },
+  { icon: HardHat, title: "Construction", description: "Siding, framing, additions, and exterior renovations by a licensed GC.", href: "/construction-services" },
   { icon: Building2, title: "Commercial Roofing", description: "Inspections, maintenance plans, and repairs for commercial properties.", href: "/commercial-roofing" },
   { icon: Wrench, title: "Maintenance Programs", description: "Preventative roof maintenance to extend your roof's life and avoid costly repairs.", href: "/commercial-maintenance" },
 ];
