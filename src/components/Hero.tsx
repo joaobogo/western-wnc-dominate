@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Phone, ArrowRight, Shield, Award, Banknote, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const trustItems = [
   { icon: Shield, label: "Licensed & Insured" },
@@ -29,11 +29,19 @@ const FloatingParticle = ({ delay, duration, x, y, size }: { delay: number; dura
 
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [loadVideo, setLoadVideo] = useState(false);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.85, 0.95]);
+
+  // Lazy-load video after initial paint
+  useEffect(() => {
+    const timer = requestAnimationFrame(() => setLoadVideo(true));
+    return () => cancelAnimationFrame(timer);
+  }, []);
 
   return (
     <section ref={ref} className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
@@ -45,33 +53,30 @@ const Hero = () => {
         animate={{ scale: 1 }}
         transition={{ duration: 2.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        {/* Fallback image (shows while video loads) */}
+        {/* Fallback image (shows instantly) */}
         <img
           src={heroImage}
           alt="Mountain home with premium roof in Western North Carolina"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
           loading="eager"
         />
-        {/* Video background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          // @ts-ignore - webkit attribute for older iOS
-          webkit-playsinline="true"
-          onCanPlay={() => setVideoLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
-          ref={(el) => {
-            // Force play on mobile - some browsers need this
-            if (el) {
-              el.play().catch(() => {});
-            }
-          }}
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        {/* Video background - lazy loaded */}
+        {loadVideo && (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            // @ts-ignore
+            webkit-playsinline="true"
+            onCanPlay={() => setVideoLoaded(true)}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        )}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.6)] to-[hsl(var(--hero-overlay)/0.3)]"
           style={{ opacity: overlayOpacity }}
