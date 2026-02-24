@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -51,17 +51,33 @@ const BeforeAfterGallery = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [paused, setPaused] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setInterval>>();
 
-  const next = () => { setDirection(1); setCurrent((c) => (c + 1) % projects.length); };
-  const prev = () => { setDirection(-1); setCurrent((c) => (c - 1 + projects.length) % projects.length); };
+  const next = useCallback(() => { setDirection(1); setCurrent((c) => (c + 1) % projects.length); }, []);
+  const prev = useCallback(() => { setDirection(-1); setCurrent((c) => (c - 1 + projects.length) % projects.length); }, []);
 
-  const handleTouchStart = (e: React.TouchEvent) => setTouchStart(e.touches[0].clientX);
+  // Auto-play: 5s interval, pauses on interaction
+  useEffect(() => {
+    if (paused) return;
+    timerRef.current = setInterval(next, 5000);
+    return () => clearInterval(timerRef.current);
+  }, [paused, next]);
+
+  const pauseTemporarily = useCallback(() => {
+    setPaused(true);
+    setTimeout(() => setPaused(false), 10000); // resume after 10s of no interaction
+  }, []);
+
+  const handleTouchStart = (e: React.TouchEvent) => { setTouchStart(e.touches[0].clientX); pauseTemporarily(); };
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStart === null) return;
     const diff = touchStart - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
     setTouchStart(null);
   };
+
+  const handleManualNav = (action: () => void) => { pauseTemporarily(); action(); };
 
   const slideVariants = {
     enter: (dir: number) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
@@ -119,13 +135,13 @@ const BeforeAfterGallery = () => {
 
               <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 md:px-5 z-10">
                 <button
-                  onClick={prev}
+                  onClick={() => handleManualNav(prev)}
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background/20 backdrop-blur-sm border border-background/20 flex items-center justify-center hover:bg-background/40 active:scale-95 transition-all"
                 >
                   <ChevronLeft className="w-5 h-5 text-background" />
                 </button>
                 <button
-                  onClick={next}
+                  onClick={() => handleManualNav(next)}
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background/20 backdrop-blur-sm border border-background/20 flex items-center justify-center hover:bg-background/40 active:scale-95 transition-all"
                 >
                   <ChevronRight className="w-5 h-5 text-background" />
@@ -163,7 +179,7 @@ const BeforeAfterGallery = () => {
                 {projects.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+                    onClick={() => { pauseTemporarily(); setDirection(i > current ? 1 : -1); setCurrent(i); }}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       i === current ? "bg-primary w-7" : "bg-border w-2 hover:bg-primary/30"
                     }`}
