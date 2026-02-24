@@ -58,8 +58,17 @@ const Hero = () => {
           muted
           loop
           playsInline
+          preload="auto"
+          // @ts-ignore - webkit attribute for older iOS
+          webkit-playsinline="true"
           onCanPlay={() => setVideoLoaded(true)}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+          ref={(el) => {
+            // Force play on mobile - some browsers need this
+            if (el) {
+              el.play().catch(() => {});
+            }
+          }}
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
