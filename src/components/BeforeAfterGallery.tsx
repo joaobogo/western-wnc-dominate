@@ -50,9 +50,18 @@ const projects = [
 const BeforeAfterGallery = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
 
   const next = () => { setDirection(1); setCurrent((c) => (c + 1) % projects.length); };
   const prev = () => { setDirection(-1); setCurrent((c) => (c - 1 + projects.length) % projects.length); };
+
+  const handleTouchStart = (e: React.TouchEvent) => setTouchStart(e.touches[0].clientX);
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const diff = touchStart - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+    setTouchStart(null);
+  };
 
   const slideVariants = {
     enter: (dir: number) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
@@ -86,7 +95,7 @@ const BeforeAfterGallery = () => {
           {/* Main showcase */}
           <div className="relative rounded-xl overflow-hidden bg-card border border-border shadow-lg">
             {/* Image */}
-            <div className="relative aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden">
+            <div className="relative aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.img
                   key={current}
