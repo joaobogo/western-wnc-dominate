@@ -1,4 +1,4 @@
-import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench } from "lucide-react";
+import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat } from "lucide-react";
 
 export interface ServiceData {
   slug: string;
@@ -163,6 +163,81 @@ export const services: ServiceData[] = [
     ],
     metaTitle: "Commercial Roof Maintenance Programs | Highlander Roofing WNC",
     metaDescription: "Preventative commercial roof maintenance in Western NC. Bi-annual inspections, condition reports, priority repairs. Protect your investment.",
+  },
+  {
+    slug: "gutters",
+    title: "Gutter Services",
+    headline: "Gutter Installation & Repair for Mountain Homes",
+    subheadline: "Seamless gutters, gutter guards, and drainage solutions engineered for WNC's heavy rainfall and mountain runoff.",
+    description: "Proper gutter systems are critical for mountain homes where heavy rainfall and steep terrain can cause severe water damage. Highlander installs seamless aluminum and copper gutters, gutter guards, and custom downspout solutions designed to handle Western NC's unique drainage demands.",
+    icon: Droplets,
+    features: [
+      "Seamless aluminum gutter installation",
+      "Copper gutter systems for premium homes",
+      "LeafGuard and micro-mesh gutter protection",
+      "Custom downspout routing and extensions",
+      "Gutter repair, resealing, and realignment",
+      "French drain and grading coordination",
+      "Free gutter inspection with every roof estimate",
+    ],
+    faqs: [
+      { question: "What size gutters do mountain homes need?", answer: "Most WNC homes benefit from 6-inch gutters with oversized 3x4 downspouts. The steep terrain and heavy rainfall here demand higher-capacity systems than standard 5-inch gutters provide." },
+      { question: "How much do new gutters cost in Western NC?", answer: "Seamless aluminum gutters typically range from $6–$12 per linear foot installed. Gutter guard systems add $3–$8 per foot. We provide free estimates tailored to your home's specific needs." },
+      { question: "Do you install gutter guards?", answer: "Yes. We install micro-mesh and reverse-curve gutter guards that prevent leaves, pine needles, and debris from clogging your gutters — especially important in WNC's heavily wooded areas." },
+      { question: "Can you repair existing gutters instead of replacing them?", answer: "Often, yes. We repair leaking seams, rehang sagging sections, and replace damaged segments. We'll recommend repair vs. replacement based on your gutter's age and overall condition." },
+    ],
+    metaTitle: "Gutter Installation & Repair in Western NC | Highlander Roofing",
+    metaDescription: "Seamless gutter installation, gutter guards, and repair for mountain homes in Highlands, Franklin, Sylva, Cashiers & WNC. Free estimates. Licensed & insured.",
+  },
+  {
+    slug: "outdoor-living",
+    title: "Outdoor Living",
+    headline: "Outdoor Living Spaces Built for the Mountains",
+    subheadline: "Custom decks, covered porches, screened-in rooms, and pergolas designed to complement your WNC mountain lifestyle.",
+    description: "Mountain living is about enjoying the outdoors. Highlander designs and builds custom outdoor living spaces — from covered porches and screened rooms to composite decks and timber-frame pergolas — all engineered for WNC's elevation, weather, and stunning views.",
+    icon: TreePine,
+    features: [
+      "Custom deck design and construction",
+      "Covered porches and pavilions",
+      "Screened-in porches and sunrooms",
+      "Timber-frame and aluminum pergolas",
+      "Composite and hardwood decking options",
+      "Integrated lighting and ceiling fans",
+      "View-optimized designs for mountain lots",
+    ],
+    faqs: [
+      { question: "What decking materials work best in WNC?", answer: "Composite decking (like Trex or TimberTech) performs best in mountain climates — it resists moisture, UV, and temperature swings without the maintenance of natural wood. We also install premium hardwoods like Ipe for a natural look." },
+      { question: "Do you handle permits for outdoor construction?", answer: "Yes. We manage the permitting process for all outdoor living projects, ensuring compliance with local building codes in Macon, Jackson, Swain, and surrounding counties." },
+      { question: "Can you build a covered porch on my existing home?", answer: "Absolutely. We specialize in adding covered porches, screened rooms, and pergolas to existing mountain homes. We match roofing materials and architectural style for a seamless addition." },
+      { question: "How long does an outdoor living project take?", answer: "Most deck and porch projects take 2–4 weeks from start to finish, depending on complexity, permits, and weather. We provide a detailed timeline before work begins." },
+    ],
+    metaTitle: "Outdoor Living Spaces in Western NC | Decks, Porches & Pergolas",
+    metaDescription: "Custom decks, covered porches, screened rooms & pergolas for WNC mountain homes. Highlands, Franklin, Sylva, Cashiers. Free consultation from Highlander.",
+  },
+  {
+    slug: "construction-services",
+    title: "Construction Services",
+    headline: "General Construction for Western NC Properties",
+    subheadline: "Licensed general contractor services including siding, framing, additions, and exterior renovations across Macon, Jackson, and Swain counties.",
+    description: "Beyond roofing, Highlander provides full general contracting services for Western NC homeowners. Our experienced crews handle siding installation, structural framing, home additions, and exterior renovations — all built to mountain-grade standards and backed by our quality guarantee.",
+    icon: HardHat,
+    features: [
+      "Vinyl, fiber cement, and board & batten siding",
+      "Structural framing and repairs",
+      "Home additions and bump-outs",
+      "Exterior trim, fascia, and soffit work",
+      "Window and door installation",
+      "Storm damage structural repairs",
+      "Licensed general contractor (#12345)",
+    ],
+    faqs: [
+      { question: "Are you a licensed general contractor?", answer: "Yes. Highlander is a fully licensed general contractor in North Carolina, authorized for residential and commercial construction projects across Western NC." },
+      { question: "What siding materials do you install?", answer: "We install James Hardie fiber cement, vinyl, engineered wood (LP SmartSide), and natural wood siding. We recommend materials based on your home's style, budget, and mountain exposure." },
+      { question: "Can you handle storm damage beyond the roof?", answer: "Yes. When storms damage siding, fascia, soffits, or structural elements, we handle the full scope of exterior repairs — not just the roof. This simplifies your insurance claim and reconstruction process." },
+      { question: "Do you build home additions?", answer: "Yes. We design and build home additions, bump-outs, and garage conversions. As a licensed GC, we manage the entire project from permitting through final inspection." },
+    ],
+    metaTitle: "Construction Services in Western NC | Siding, Framing & Additions",
+    metaDescription: "Licensed general contractor in Western NC. Siding, framing, additions, and exterior renovations in Highlands, Franklin, Sylva & beyond. Free estimates.",
   },
 ];
 

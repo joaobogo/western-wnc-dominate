@@ -41,7 +41,7 @@ const ServicePage = () => {
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">
-                {resolvedSlug.includes("commercial") ? "Commercial Services" : "Residential Services"}
+                {resolvedSlug.includes("commercial") ? "Commercial Services" : resolvedSlug === "outdoor-living" || resolvedSlug === "construction-services" ? "Building Services" : resolvedSlug === "gutters" ? "Exterior Services" : "Residential Services"}
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-balance">
                 {service.headline}
@@ -123,7 +123,7 @@ const ServicePage = () => {
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-8 text-center">Other Services</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {otherServices.map((s) => (
-                <Link key={s.slug} to={s.slug.includes("commercial") ? `/${s.slug}` : `/services/${s.slug}`} className="group bg-card border border-border rounded-lg p-6 hover:border-primary/30 hover:shadow-lg transition-all">
+                <Link key={s.slug} to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(s.slug) ? `/${s.slug}` : `/services/${s.slug}`} className="group bg-card border border-border rounded-lg p-6 hover:border-primary/30 hover:shadow-lg transition-all">
                   <s.icon className="w-8 h-8 text-primary mb-3" />
                   <h3 className="font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
                   <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn More <ArrowRight className="w-4 h-4" /></span>
