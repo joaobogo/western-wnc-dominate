@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Phone, ArrowRight, Shield, Award, Banknote, Clock, Play } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 
 const trustItems = [
   { icon: Shield, label: "Licensed & Insured" },
@@ -38,11 +38,39 @@ const Hero = () => {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.85, 0.95]);
 
+  const attemptVideoPlay = useCallback(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    el.muted = true;
+    el.defaultMuted = true;
+    el.playsInline = true;
+    el.setAttribute("muted", "");
+    el.setAttribute("playsinline", "");
+
+    el.play()
+      .then(() => {
+        setVideoFailed(false);
+      })
+      .catch(() => {
+        setVideoFailed(true);
+      });
+  }, []);
+
   // Lazy-load video after initial paint
   useEffect(() => {
     const timer = requestAnimationFrame(() => setLoadVideo(true));
     return () => cancelAnimationFrame(timer);
   }, []);
+
+  // If video hasn't started quickly on mobile networks, show play fallback
+  useEffect(() => {
+    if (!loadVideo || videoLoaded) return;
+    const timeoutId = window.setTimeout(() => {
+      setVideoFailed(true);
+    }, 4000);
+    return () => window.clearTimeout(timeoutId);
+  }, [loadVideo, videoLoaded]);
 
   return (
     <section ref={ref} className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
@@ -62,23 +90,20 @@ const Hero = () => {
           loading="eager"
         />
         {/* Video background - lazy loaded */}
-        {loadVideo && !videoFailed && (
+        {loadVideo && (
           <video
             ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
-            // @ts-ignore
-            webkit-playsinline="true"
-            onCanPlay={() => {
-              const el = videoRef.current;
-              if (el) {
-                el.play()
-                  .then(() => setVideoLoaded(true))
-                  .catch(() => setVideoFailed(true));
-              }
+            preload="metadata"
+            poster={heroImage}
+            onLoadedMetadata={attemptVideoPlay}
+            onCanPlay={attemptVideoPlay}
+            onPlaying={() => {
+              setVideoLoaded(true);
+              setVideoFailed(false);
             }}
             onError={() => setVideoFailed(true)}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
@@ -86,31 +111,23 @@ const Hero = () => {
             <source src={heroVideo} type="video/mp4" />
           </video>
         )}
-        {/* Play button fallback when autoplay blocked */}
-        {videoFailed && (
+
+        {/* Play button fallback when autoplay is blocked or delayed */}
+        {videoFailed && !videoLoaded && (
           <button
-            onClick={() => {
-              setVideoFailed(false);
-              setLoadVideo(false);
-              // Re-mount video with user gesture
-              requestAnimationFrame(() => {
-                setLoadVideo(true);
-                requestAnimationFrame(() => {
-                  videoRef.current?.play()
-                    .then(() => setVideoLoaded(true))
-                    .catch(() => setVideoFailed(true));
-                });
-              });
-            }}
+            onClick={attemptVideoPlay}
             className="absolute inset-0 z-10 flex items-center justify-center group"
             aria-label="Play background video"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="w-16 h-16 rounded-full bg-primary-foreground/20 backdrop-blur-sm border border-primary-foreground/30 flex items-center justify-center group-hover:bg-primary-foreground/30 transition-colors"
+              className="flex flex-col items-center gap-2"
             >
-              <Play className="w-6 h-6 text-primary-foreground ml-1" />
+              <div className="w-16 h-16 rounded-full bg-primary-foreground/20 backdrop-blur-sm border border-primary-foreground/30 flex items-center justify-center group-hover:bg-primary-foreground/30 transition-colors">
+                <Play className="w-6 h-6 text-primary-foreground ml-1" />
+              </div>
+              <span className="text-xs text-primary-foreground/80">Tap to play video</span>
             </motion.div>
           </button>
         )}
