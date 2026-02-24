@@ -86,7 +86,7 @@ const BeforeAfterGallery = () => {
           {/* Main showcase */}
           <div className="relative rounded-xl overflow-hidden bg-card border border-border shadow-lg">
             {/* Image */}
-            <div className="relative aspect-[16/9] overflow-hidden">
+            <div className="relative aspect-[4/5] sm:aspect-[16/9] overflow-hidden">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.img
                   key={current}
@@ -127,7 +127,7 @@ const BeforeAfterGallery = () => {
               </div>
 
               {/* Project info overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 z-10">
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 z-10">
                 <AnimatePresence mode="wait" custom={direction}>
                   <motion.div
                     key={current}
@@ -137,14 +137,14 @@ const BeforeAfterGallery = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <h3 className="font-heading font-bold text-xl md:text-2xl text-background mb-1">
+                    <h3 className="font-heading font-bold text-base sm:text-xl md:text-2xl text-background mb-1 leading-tight">
                       {projects[current].title}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-background/70 text-sm mb-2">
-                      <MapPin className="w-3.5 h-3.5" />
+                    <div className="flex items-center gap-1.5 text-background/70 text-xs sm:text-sm mb-1 sm:mb-2">
+                      <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                       {projects[current].location}
                     </div>
-                    <p className="text-background/80 text-sm md:text-base max-w-xl">
+                    <p className="text-background/80 text-xs sm:text-sm md:text-base max-w-xl line-clamp-2 sm:line-clamp-none">
                       {projects[current].description}
                     </p>
                   </motion.div>
