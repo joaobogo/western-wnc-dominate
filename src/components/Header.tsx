@@ -18,6 +18,7 @@ const serviceDropdown = [
 
 const navLinks = [
   { label: "Services", href: "/services", dropdown: serviceDropdown },
+  { label: "Roof Designer", href: "/roof-designer" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "Free Tools", href: "/free-tools" },
   { label: "Blog", href: "/blog" },
