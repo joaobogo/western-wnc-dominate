@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Phone, ArrowRight, Shield, Award, Banknote, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
-import { useRef } from "react";
+import heroVideo from "@/assets/hero-video.mp4";
+import { useRef, useState } from "react";
 
 const trustItems = [
   { icon: Shield, label: "Licensed & Insured" },
@@ -28,6 +29,7 @@ const FloatingParticle = ({ delay, duration, x, y, size }: { delay: number; dura
 
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
@@ -35,20 +37,32 @@ const Hero = () => {
 
   return (
     <section ref={ref} className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
-      {/* Parallax Background */}
+      {/* Parallax Background with Video */}
       <motion.div
         className="absolute inset-0"
         style={{ y: bgY }}
-        initial={{ scale: 1.2 }}
+        initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 2.5, ease: [0.25, 0.1, 0.25, 1] }}
       >
+        {/* Fallback image (shows while video loads) */}
         <img
           src={heroImage}
           alt="Mountain home with premium roof in Western North Carolina"
-          className="w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
           loading="eager"
         />
+        {/* Video background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          onCanPlay={() => setVideoLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.6)] to-[hsl(var(--hero-overlay)/0.3)]"
           style={{ opacity: overlayOpacity }}
