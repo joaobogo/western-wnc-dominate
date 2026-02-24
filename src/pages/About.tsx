@@ -33,24 +33,69 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Photo */}
-        <section className="bg-background">
+        {/* Team Photo — Editorial Hero Block */}
+        <section className="relative bg-background">
           <div className="container-tight px-4 md:px-8 lg:px-16">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <img
-                src={teamPhoto}
-                alt="The Highlander Roofing Services team — over 20 local professionals serving Western North Carolina"
-                className="w-full rounded-lg shadow-lg -mt-12 md:-mt-16"
-              />
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="relative -mt-16 md:-mt-24"
+            >
+              {/* Image container with decorative frame */}
+              <div className="relative">
+                {/* Decorative accent behind image */}
+                <div className="absolute -inset-3 md:-inset-4 bg-primary/10 rounded-2xl -z-10" />
+                <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3 w-24 h-24 md:w-32 md:h-32 bg-accent/20 rounded-xl -z-10" />
+
+                <div className="overflow-hidden rounded-xl shadow-2xl">
+                  <img
+                    src={teamPhoto}
+                    alt="The Highlander Roofing Services team — over 20 local professionals serving Western North Carolina"
+                    className="w-full object-cover"
+                  />
+                </div>
+
+                {/* Floating caption badge */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="absolute -bottom-6 left-4 md:left-8 bg-primary text-primary-foreground px-5 py-3 md:px-6 md:py-4 rounded-lg shadow-lg"
+                >
+                  <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">Est. 2017</p>
+                  <p className="text-sm md:text-base font-heading font-bold">20+ Local Professionals</p>
+                </motion.div>
+
+                {/* Award badge */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                  className="absolute -bottom-6 right-4 md:right-8 bg-card border border-border px-4 py-3 md:px-5 md:py-4 rounded-lg shadow-lg flex items-center gap-3"
+                >
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                    <Award className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">2024 Reader's Choice</p>
+                    <p className="text-xs md:text-sm font-semibold text-foreground">Best of Macon County</p>
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-background pt-20 md:pt-24">
           <div className="container-tight">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2">Meet the Team</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">Over 20 local roofing professionals — the people behind every inspection, install, and repair across Western North Carolina. 2024 Best of Macon County Reader's Choice Award winners.</p>
+              <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Meet the Team</p>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2">The People Behind Every Roof</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">Local roofers who live, work, and raise families across Western North Carolina — not storm chasers passing through.</p>
             </div>
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div>
