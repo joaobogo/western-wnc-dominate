@@ -14,6 +14,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RoofCostEstimator from "@/components/RoofCostEstimator";
 import RoofAssessmentQuiz from "@/components/RoofAssessmentQuiz";
 import GuideLeadMagnet from "@/components/GuideLeadMagnet";
+import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <Hero />
         <TrustStrip />
         <BeforeAfterGallery />
+        <RoofDesignerCTA />
         <ServicesGrid />
         <GuideLeadMagnet variant="banner" guide="storm" />
         <TownGrid />
