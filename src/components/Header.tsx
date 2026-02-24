@@ -1,13 +1,24 @@
-import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { useState } from "react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.webp";
 
+const serviceDropdown = [
+  { label: "Roof Repair", href: "/services/roof-repair" },
+  { label: "Roof Replacement", href: "/services/roof-replacement" },
+  { label: "Storm Damage", href: "/services/storm-damage" },
+  { label: "Metal Roofing", href: "/services/metal-roofing" },
+  { label: "Gutter Services", href: "/gutters" },
+  { label: "Outdoor Living", href: "/outdoor-living" },
+  { label: "Construction", href: "/construction-services" },
+  { label: "Commercial Roofing", href: "/commercial-roofing" },
+  { label: "Maintenance Programs", href: "/commercial-maintenance" },
+];
+
 const navLinks = [
-  { label: "Services", href: "/services" },
+  { label: "Services", href: "/services", dropdown: serviceDropdown },
   { label: "Service Areas", href: "/service-areas" },
-  { label: "Commercial", href: "/commercial-roofing" },
   { label: "Free Tools", href: "/free-tools" },
   { label: "Blog", href: "/blog" },
   { label: "Gallery", href: "/gallery" },
@@ -18,12 +29,13 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const { scrollY } = useScroll();
   const [lastY, setLastY] = useState(0);
 
   useMotionValueEvent(scrollY, "change", (y) => {
     setScrolled(y > 50);
-    // Hide on scroll down, show on scroll up
     if (y > lastY && y > 200) setHidden(true);
     else setHidden(false);
     setLastY(y);
@@ -83,13 +95,52 @@ const Header = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + i * 0.05, duration: 0.3 }}
+              className="relative"
+              onMouseEnter={() => link.dropdown && setOpenDropdown(link.label)}
+              onMouseLeave={() => setOpenDropdown(null)}
             >
               <Link
                 to={link.href}
-                className="relative text-sm font-medium text-foreground/80 hover:text-primary transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className="relative text-sm font-medium text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {link.label}
+                {link.dropdown && (
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === link.label ? "rotate-180" : ""}`} />
+                )}
               </Link>
+
+              {/* Dropdown */}
+              <AnimatePresence>
+                {link.dropdown && openDropdown === link.label && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                  >
+                    <div className="bg-card border border-border rounded-lg shadow-xl py-2 min-w-[220px] overflow-hidden">
+                      {link.dropdown.map((item, j) => (
+                        <Link
+                          key={item.href}
+                          to={item.href}
+                          className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-muted/60 transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                      <div className="border-t border-border mt-1 pt-1">
+                        <Link
+                          to={link.href}
+                          className="block px-4 py-2.5 text-sm font-semibold text-primary hover:bg-muted/60 transition-colors"
+                        >
+                          View All Services →
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </nav>
@@ -146,13 +197,56 @@ const Header = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.3 }}
                 >
-                  <Link
-                    to={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="py-3 px-3 text-base font-medium text-foreground hover:bg-muted rounded-md transition-colors block"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.dropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setMobileExpanded(mobileExpanded === link.label ? null : link.label)}
+                        className="w-full py-3 px-3 text-base font-medium text-foreground hover:bg-muted rounded-md transition-colors flex items-center justify-between"
+                      >
+                        {link.label}
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === link.label ? "rotate-180" : ""}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileExpanded === link.label && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pl-4 pb-2 space-y-1">
+                              {link.dropdown.map((item) => (
+                                <Link
+                                  key={item.href}
+                                  to={item.href}
+                                  onClick={() => setMobileOpen(false)}
+                                  className="py-2 px-3 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-md transition-colors block"
+                                >
+                                  {item.label}
+                                </Link>
+                              ))}
+                              <Link
+                                to={link.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="py-2 px-3 text-sm font-semibold text-primary hover:bg-muted rounded-md transition-colors block"
+                              >
+                                View All Services →
+                              </Link>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="py-3 px-3 text-base font-medium text-foreground hover:bg-muted rounded-md transition-colors block"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
               <motion.div
