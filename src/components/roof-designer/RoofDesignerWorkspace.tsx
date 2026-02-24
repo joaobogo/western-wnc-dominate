@@ -286,9 +286,8 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
         .from("roof-designs")
         .upload(resultPath, blob, { contentType: "image/jpeg" });
 
-      // Extract original path from signed URL (path is before the query params)
-      const urlPath = imageUrl.split("/roof-designs/")[1] || imageUrl;
-      const originalPath = urlPath.split("?")[0];
+      // Extract original path from URL
+      const originalPath = imageUrl.split("/roof-designs/")[1] || imageUrl;
 
       // Save design record
       const { data: design, error } = await supabase

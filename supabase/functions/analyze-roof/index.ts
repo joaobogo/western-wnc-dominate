@@ -6,38 +6,12 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-// Simple in-memory rate limiter: max 10 requests per IP per hour
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 10;
-const RATE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
-    return false;
-  }
-  entry.count++;
-  return entry.count > RATE_LIMIT;
-}
-
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    // Rate limit by IP
-    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-      req.headers.get("cf-connecting-ip") || "unknown";
-    if (isRateLimited(ip)) {
-      return new Response(
-        JSON.stringify({ error: "Too many requests. Please try again later." }),
-        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
     const { imageBase64 } = await req.json();
 
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
