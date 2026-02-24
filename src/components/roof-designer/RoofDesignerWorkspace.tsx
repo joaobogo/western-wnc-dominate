@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Paintbrush, Eraser, RotateCcw, Save, ChevronLeft, Loader2, Wand2 } from "lucide-react";
+import { Paintbrush, Eraser, RotateCcw, Save, ChevronLeft, Loader2, Wand2, Menu } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import MaterialPanel from "./MaterialPanel";
@@ -30,17 +31,19 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
   const overlayCanvasRef = useRef<HTMLCanvasElement>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   const [isAnalyzing, setIsAnalyzing] = useState(true);
   const [materials, setMaterials] = useState<RoofMaterial[]>([]);
   const [selectedMaterial, setSelectedMaterial] = useState<RoofMaterial | null>(null);
   const [tool, setTool] = useState<Tool>("brush");
-  const [brushSize, setBrushSize] = useState(30);
+  const [brushSize, setBrushSize] = useState(20);
   const [isDrawing, setIsDrawing] = useState(false);
   const [opacity, setOpacity] = useState(70);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [aiPolygon, setAiPolygon] = useState<number[][] | null>(null);
   const [isSaving, setIsSaving] = useState(false);
+  const [showMaterialPanel, setShowMaterialPanel] = useState(!isMobile);
 
   const sessionId = useRef(
     sessionStorage.getItem("roof-session") || (() => {
@@ -75,8 +78,8 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
       const container = containerRef.current;
       if (!container) return;
       
-      const maxW = container.clientWidth;
-      const maxH = window.innerHeight - 200;
+      const maxW = container.clientWidth - 16;
+      const maxH = isMobile ? window.innerHeight * 0.5 : window.innerHeight - 200;
       const ratio = Math.min(maxW / img.width, maxH / img.height, 1);
       const w = Math.round(img.width * ratio);
       const h = Math.round(img.height * ratio);
@@ -322,66 +325,77 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
   return (
     <div className="flex flex-col lg:flex-row min-h-[calc(100vh-5rem)] bg-muted/30">
       {/* Canvas area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-w-0">
         {/* Toolbar */}
-        <div className="flex items-center justify-between px-4 py-3 bg-background border-b border-border">
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" size="sm" onClick={onReset} className="gap-1.5 text-muted-foreground">
-              <ChevronLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">New Photo</span>
-            </Button>
-          </div>
+        <div className="flex items-center justify-between px-3 py-2 md:px-4 md:py-3 bg-background border-b border-border gap-1">
+          <Button variant="ghost" size="sm" onClick={onReset} className="gap-1 text-muted-foreground shrink-0 px-2">
+            <ChevronLeft className="w-4 h-4" />
+            <span className="hidden sm:inline">New</span>
+          </Button>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 flex-wrap justify-center">
             <Button
               variant={tool === "brush" ? "default" : "outline"}
               size="sm"
               onClick={() => setTool("brush")}
-              className="gap-1.5"
+              className="gap-1 px-2 md:px-3"
             >
               <Paintbrush className="w-4 h-4" />
-              <span className="hidden sm:inline">Paint Roof</span>
+              <span className="hidden md:inline">Paint</span>
             </Button>
             <Button
               variant={tool === "eraser" ? "default" : "outline"}
               size="sm"
               onClick={() => setTool("eraser")}
-              className="gap-1.5"
+              className="gap-1 px-2 md:px-3"
             >
               <Eraser className="w-4 h-4" />
-              <span className="hidden sm:inline">Erase</span>
+              <span className="hidden md:inline">Erase</span>
             </Button>
             {aiPolygon && (
-              <Button variant="outline" size="sm" onClick={redetect} className="gap-1.5">
+              <Button variant="outline" size="sm" onClick={redetect} className="gap-1 px-2 md:px-3">
                 <Wand2 className="w-4 h-4" />
-                <span className="hidden sm:inline">Re-detect</span>
+                <span className="hidden md:inline">Re-detect</span>
               </Button>
             )}
-            <Button variant="outline" size="sm" onClick={clearMask} className="gap-1.5">
+            <Button variant="outline" size="sm" onClick={clearMask} className="gap-1 px-2 md:px-3">
               <RotateCcw className="w-4 h-4" />
-              <span className="hidden sm:inline">Clear</span>
+              <span className="hidden md:inline">Clear</span>
             </Button>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground">
-              <span>Brush</span>
-              <Slider
-                value={[brushSize]}
-                onValueChange={([v]) => setBrushSize(v)}
-                min={5}
-                max={80}
-                step={1}
-                className="w-24"
-              />
-            </div>
+          <div className="flex items-center gap-1 shrink-0">
+            {isMobile && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowMaterialPanel(!showMaterialPanel)}
+                className="px-2"
+              >
+                <Menu className="w-4 h-4" />
+              </Button>
+            )}
           </div>
+        </div>
+
+        {/* Brush size slider - separate row on mobile for space */}
+        <div className="flex items-center gap-2 px-3 py-1.5 bg-background border-b border-border md:hidden text-sm text-muted-foreground">
+          <span>Brush</span>
+          <Slider
+            value={[brushSize]}
+            onValueChange={([v]) => setBrushSize(v)}
+            min={5}
+            max={80}
+            step={1}
+            className="flex-1"
+          />
+          <span className="w-6 text-right text-xs">{brushSize}</span>
         </div>
 
         {/* Canvas */}
         <div
           ref={containerRef}
-          className="flex-1 flex items-center justify-center p-4 overflow-auto relative"
+          className="flex-1 flex items-center justify-center p-2 md:p-4 overflow-auto relative"
         >
           {isAnalyzing && (
             <motion.div
@@ -403,8 +417,8 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
           )}
 
           <div
-            className="relative select-none touch-none"
-            style={{ width: canvasSize.width, height: canvasSize.height }}
+            className="relative select-none"
+            style={{ width: canvasSize.width, height: canvasSize.height, touchAction: "none" }}
           >
             <canvas
               ref={canvasRef}
@@ -418,51 +432,74 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
             />
             <canvas
               ref={maskCanvasRef}
-              className="absolute inset-0 rounded-lg opacity-0"
-              style={{ width: canvasSize.width, height: canvasSize.height, cursor: tool === "brush" ? "crosshair" : "cell" }}
+              className="absolute inset-0 rounded-lg"
+              style={{
+                width: canvasSize.width,
+                height: canvasSize.height,
+                cursor: tool === "brush" ? "crosshair" : "cell",
+                opacity: 0,
+              }}
               onMouseDown={startDrawing}
               onMouseMove={draw}
               onMouseUp={stopDrawing}
               onMouseLeave={stopDrawing}
-              onTouchStart={startDrawing}
-              onTouchMove={draw}
+              onTouchStart={(e) => { e.preventDefault(); startDrawing(e); }}
+              onTouchMove={(e) => { e.preventDefault(); draw(e); }}
               onTouchEnd={stopDrawing}
             />
-            {/* Visible mask outline - thin dashed border over the mask */}
           </div>
         </div>
 
-        {/* Opacity control */}
-        <div className="flex items-center justify-between px-4 py-3 bg-background border-t border-border">
-          <div className="flex items-center gap-3 text-sm text-muted-foreground">
-            <span>Color Intensity</span>
+        {/* Bottom bar: opacity + save */}
+        <div className="flex items-center justify-between px-3 py-2 md:px-4 md:py-3 bg-background border-t border-border gap-2">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground min-w-0">
+            <span className="shrink-0 text-xs md:text-sm">Intensity</span>
             <Slider
               value={[opacity]}
               onValueChange={([v]) => setOpacity(v)}
               min={20}
               max={100}
               step={5}
-              className="w-32"
+              className="w-20 md:w-32"
             />
-            <span className="w-8 text-right">{opacity}%</span>
+            <span className="w-7 text-right text-xs">{opacity}%</span>
+          </div>
+          {/* Desktop brush slider */}
+          <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground">
+            <span>Brush</span>
+            <Slider
+              value={[brushSize]}
+              onValueChange={([v]) => setBrushSize(v)}
+              min={5}
+              max={80}
+              step={1}
+              className="w-24"
+            />
           </div>
           <Button
             onClick={handleSave}
             disabled={isSaving || !selectedMaterial}
-            className="gap-2 cta-gradient text-accent-foreground border-0 font-semibold"
+            size={isMobile ? "sm" : "default"}
+            className="gap-1.5 cta-gradient text-accent-foreground border-0 font-semibold shrink-0"
           >
             {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-            Save & See Pricing
+            <span className="hidden sm:inline">Save & See Pricing</span>
+            <span className="sm:hidden">Save</span>
           </Button>
         </div>
       </div>
 
-      {/* Material panel */}
-      <MaterialPanel
-        materials={materials}
-        selectedMaterial={selectedMaterial}
-        onSelectMaterial={setSelectedMaterial}
-      />
+      {/* Material panel - toggleable on mobile */}
+      {(showMaterialPanel || !isMobile) && (
+        <MaterialPanel
+          materials={materials}
+          selectedMaterial={selectedMaterial}
+          onSelectMaterial={(mat) => {
+            setSelectedMaterial(mat);
+            if (isMobile) setShowMaterialPanel(false);
+          }}
+        />
+      )}
     </div>
   );
 };

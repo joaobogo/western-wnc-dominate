@@ -28,7 +28,7 @@ const MaterialPanel = ({ materials, selectedMaterial, onSelectMaterial }: Materi
   const [expandedCategory, setExpandedCategory] = useState<string>("shingle");
 
   return (
-    <aside className="w-full lg:w-80 bg-background border-t lg:border-t-0 lg:border-l border-border overflow-y-auto max-h-[40vh] lg:max-h-none">
+    <aside className="w-full lg:w-80 bg-background border-t lg:border-t-0 lg:border-l border-border overflow-y-auto max-h-[50vh] lg:max-h-none">
       <div className="p-4 border-b border-border">
         <h3 className="font-heading text-lg font-semibold text-foreground flex items-center gap-2">
           <Palette className="w-5 h-5 text-primary" />
