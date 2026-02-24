@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Phone, ArrowRight, Shield, Award, Banknote, Clock } from "lucide-react";
+import { Phone, ArrowRight, Shield, Award, Banknote, Clock, Play } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
 import { useRef, useState, useEffect } from "react";
@@ -31,6 +31,7 @@ const Hero = () => {
   const ref = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
   const [loadVideo, setLoadVideo] = useState(false);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
@@ -61,7 +62,7 @@ const Hero = () => {
           loading="eager"
         />
         {/* Video background - lazy loaded */}
-        {loadVideo && (
+        {loadVideo && !videoFailed && (
           <video
             ref={videoRef}
             autoPlay
@@ -71,11 +72,47 @@ const Hero = () => {
             preload="auto"
             // @ts-ignore
             webkit-playsinline="true"
-            onCanPlay={() => setVideoLoaded(true)}
+            onCanPlay={() => {
+              const el = videoRef.current;
+              if (el) {
+                el.play()
+                  .then(() => setVideoLoaded(true))
+                  .catch(() => setVideoFailed(true));
+              }
+            }}
+            onError={() => setVideoFailed(true)}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
+        )}
+        {/* Play button fallback when autoplay blocked */}
+        {videoFailed && (
+          <button
+            onClick={() => {
+              setVideoFailed(false);
+              setLoadVideo(false);
+              // Re-mount video with user gesture
+              requestAnimationFrame(() => {
+                setLoadVideo(true);
+                requestAnimationFrame(() => {
+                  videoRef.current?.play()
+                    .then(() => setVideoLoaded(true))
+                    .catch(() => setVideoFailed(true));
+                });
+              });
+            }}
+            className="absolute inset-0 z-10 flex items-center justify-center group"
+            aria-label="Play background video"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="w-16 h-16 rounded-full bg-primary-foreground/20 backdrop-blur-sm border border-primary-foreground/30 flex items-center justify-center group-hover:bg-primary-foreground/30 transition-colors"
+            >
+              <Play className="w-6 h-6 text-primary-foreground ml-1" />
+            </motion.div>
+          </button>
         )}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.6)] to-[hsl(var(--hero-overlay)/0.3)]"
