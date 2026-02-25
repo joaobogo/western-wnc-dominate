@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -57,12 +57,17 @@ const BeforeAfterGallery = () => {
   const next = useCallback(() => { setDirection(1); setCurrent((c) => (c + 1) % projects.length); }, []);
   const prev = useCallback(() => { setDirection(-1); setCurrent((c) => (c - 1 + projects.length) % projects.length); }, []);
 
+  const progress = useMotionValue(0);
+  const progressWidth = useTransform(progress, [0, 100], ["0%", "100%"]);
+
   // Auto-play: 5s interval, pauses on interaction
   useEffect(() => {
     if (paused) return;
-    timerRef.current = setInterval(next, 5000);
-    return () => clearInterval(timerRef.current);
-  }, [paused, next]);
+    progress.set(0);
+    const controls = animate(progress, 100, { duration: 5, ease: "linear" });
+    timerRef.current = setInterval(() => { progress.set(0); next(); }, 5000);
+    return () => { clearInterval(timerRef.current); controls.stop(); };
+  }, [paused, next, current]);
 
   const pauseTemporarily = useCallback(() => {
     setPaused(true);
@@ -171,6 +176,11 @@ const BeforeAfterGallery = () => {
                   </motion.div>
                 </AnimatePresence>
               </div>
+            </div>
+
+            {/* Progress bar */}
+            <div className="h-1 w-full bg-border/30">
+              <motion.div className="h-full bg-primary" style={{ width: progressWidth }} />
             </div>
 
             {/* Bottom bar: dots + CTA */}
