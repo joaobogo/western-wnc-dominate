@@ -8,3 +8,9 @@ export { ConstructionMidCTA, ConstructionClosingCTA, ConstructionTrustSidebar, C
 
 export { ConstructionServiceGrid, ConstructionComparison, GalleryIntro, constructionCategories } from "./ConstructionServices";
 export type { ConstructionCategory } from "./ConstructionServices";
+
+export { default as WNCRelevance, WNCRelevanceDark, wncInsights, compactWNCInsights, wncIntegrationGuide } from "./WNCRelevance";
+export type { LocalInsight } from "./WNCRelevance";
+
+export { default as ConstructionFAQs, constructionFAQLibrary, getConstructionFAQsByCategory } from "./ConstructionFAQs";
+export type { FAQ } from "./ConstructionFAQs";
