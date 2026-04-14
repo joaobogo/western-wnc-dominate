@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
+import GoldLine from "@/components/motion/GoldLine";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -71,7 +72,7 @@ const Reviews = () => {
     <section className="section-padding bg-background tartan-bg relative overflow-hidden">
       <div className="container-tight relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-14">
+        <div className="text-center mb-14 md:mb-16">
           <ScrollReveal variant="fade">
             <span className="eyebrow mb-3 block">Client Testimonials</span>
           </ScrollReveal>
@@ -80,17 +81,18 @@ const Reviews = () => {
               Trusted by Homeowners<br className="hidden md:block" /> Across Western NC.
             </h2>
           </HeadingReveal>
+          <GoldLine width="3rem" centered delay={0.25} className="mb-6" />
 
-          {/* Google badge */}
+          {/* Google badge — glass panel treatment */}
           <ScrollReveal variant="scale" delay={0.3}>
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-card border border-border rounded-sm">
+            <div className="inline-flex items-center gap-3 px-6 py-3 glass-panel rounded-none">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                 ))}
               </div>
-              <div className="h-4 w-px bg-border" />
-              <span className="font-semibold text-foreground text-sm">4.7</span>
+              <div className="h-5 w-px bg-border" />
+              <span className="font-heading font-bold text-foreground text-lg">4.7</span>
               <span className="text-muted-foreground text-sm font-body">from 122+ Google Reviews</span>
             </div>
           </ScrollReveal>
@@ -105,39 +107,37 @@ const Reviews = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.6, ease: HIGHLAND_EASE }}
-              className="relative bg-card border border-border rounded-sm p-7 md:p-9 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-sm transition-all duration-300"
+              className="relative bg-card border border-border rounded-none p-8 md:p-10 hover:border-[hsl(var(--highland-gold)/0.25)] hover:shadow-lg transition-all duration-400 quote-glyph"
             >
-              <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
+              <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />
 
-              <div className="flex items-center justify-between mb-5">
-                <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm ${categoryColors[t.category]}`}>
+              <div className="flex items-center justify-between mb-5 relative z-10">
+                <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-none ${categoryColors[t.category]}`}>
                   {t.category}
                 </span>
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, si) => (
-                    <Star key={si} className="w-3 h-3 fill-accent text-accent" />
+                    <Star key={si} className="w-3.5 h-3.5 fill-accent text-accent" />
                   ))}
                 </div>
               </div>
 
-              <Quote className="w-7 h-7 text-[hsl(var(--highland-gold)/0.15)] mb-4 rotate-180" />
-
-              <p className="text-foreground text-[15px] leading-relaxed mb-6 font-body">
+              <p className="text-foreground text-[15px] md:text-base leading-[1.8] mb-7 font-body relative z-10">
                 "{t.text}"
               </p>
 
-              <div className="bg-secondary/60 rounded-sm px-4 py-3 mb-6">
+              <div className="bg-secondary/50 rounded-none px-5 py-3.5 mb-7 relative z-10">
                 <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/50 mb-1">Project Outcome</p>
                 <p className="text-sm font-body font-medium text-foreground/80">{t.outcome}</p>
               </div>
 
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-sm bg-primary/8 flex items-center justify-center text-primary font-heading font-bold text-sm">
+                  <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center text-primary font-heading font-bold text-sm">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground text-sm">{t.name}</p>
+                    <p className="font-heading font-bold text-foreground text-sm">{t.name}</p>
                     <p className="text-muted-foreground text-xs font-body">{t.location}</p>
                   </div>
                 </div>
@@ -153,9 +153,9 @@ const Reviews = () => {
         <StaggerContainer stagger={0.07} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {standard.map((t) => (
             <StaggerItem key={t.name} variant="rise">
-              <div className="group bg-card border border-border rounded-sm p-5 hover:border-primary/15 hover:shadow-sm transition-all duration-300 h-full">
+              <div className="group bg-card border border-border rounded-none p-5 md:p-6 hover:border-primary/15 hover:shadow-md transition-all duration-400 h-full">
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[8px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm ${categoryColors[t.category]}`}>
+                  <span className={`text-[8px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-none ${categoryColors[t.category]}`}>
                     {t.category}
                   </span>
                   <div className="flex gap-0.5">
@@ -165,7 +165,7 @@ const Reviews = () => {
                   </div>
                 </div>
 
-                <p className="text-foreground/80 text-[13px] leading-relaxed mb-4 font-body line-clamp-4">
+                <p className="text-foreground/80 text-[13px] leading-[1.7] mb-4 font-body line-clamp-4">
                   "{t.text}"
                 </p>
 
@@ -174,11 +174,11 @@ const Reviews = () => {
                 </p>
 
                 <div className="flex items-center gap-2.5 pt-3 border-t border-border">
-                  <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-[10px]">
+                  <div className="w-8 h-8 rounded-none bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-[10px]">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground text-xs">{t.name}</p>
+                    <p className="font-heading font-bold text-foreground text-xs">{t.name}</p>
                     <p className="text-muted-foreground text-[10px] font-body">{t.location}</p>
                   </div>
                 </div>

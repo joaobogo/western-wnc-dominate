@@ -65,38 +65,40 @@ const MeetTheTeam = () => {
                 </p>
                 <Link
                   to="/about"
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body link-draw"
                 >
                   Learn Our Full Story
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
                 </Link>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Right — team cards with staggered slide-in */}
+          {/* Right — team cards */}
           <div className="space-y-4">
             {team.map((member, i) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, x: 24 }}
+                initial={{ opacity: 0, x: 28 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + i * 0.12, duration: 0.5, ease: HIGHLAND_EASE }}
-                className={`group flex gap-4 md:gap-5 p-4 md:p-5 rounded-sm border transition-all duration-300 ${
+                className={`group flex gap-4 md:gap-5 rounded-none border overflow-hidden transition-all duration-400 ${
                   member.featured
-                    ? "bg-card border-[hsl(var(--highland-gold)/0.2)] shadow-[0_4px_20px_-6px_hsl(var(--heritage-charcoal)/0.06)]"
-                    : "bg-card/60 border-border hover:border-[hsl(var(--highland-gold)/0.15)] hover:bg-card"
+                    ? "bg-card border-[hsl(var(--highland-gold)/0.25)] shadow-[0_6px_28px_-8px_hsl(var(--heritage-charcoal)/0.08)] p-0 flex-col sm:flex-row"
+                    : "bg-card/60 border-border hover:border-[hsl(var(--highland-gold)/0.15)] hover:bg-card p-4 md:p-5"
                 }`}
               >
-                {/* Photo with subtle scale on hover */}
-                <div className="flex-shrink-0 w-16 h-20 md:w-20 md:h-24 rounded-sm overflow-hidden">
+                {/* Photo — featured gets editorial treatment */}
+                <div className={`flex-shrink-0 overflow-hidden ${
+                  member.featured
+                    ? "w-full sm:w-36 md:w-44 aspect-[3/4] sm:aspect-auto"
+                    : "w-16 h-20 md:w-20 md:h-24 rounded-none"
+                }`}>
                   <motion.img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
+                    className={`w-full h-full object-cover ${member.featured ? 'img-zoom-dramatic' : 'team-card-photo'}`}
                     loading="lazy"
                     width={512}
                     height={640}
@@ -104,21 +106,21 @@ const MeetTheTeam = () => {
                 </div>
 
                 {/* Info */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-heading font-semibold text-base text-foreground leading-snug">
+                <div className={`flex-1 min-w-0 ${member.featured ? 'p-5 md:p-7 flex flex-col justify-center' : ''}`}>
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <h3 className={`font-heading font-bold text-foreground leading-snug ${member.featured ? 'text-lg md:text-xl' : 'text-base'}`}>
                       {member.name}
                     </h3>
                     {member.featured && (
-                      <span className="text-[8px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.08)] px-2 py-0.5 rounded-sm">
+                      <span className="text-[8px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.08)] px-2.5 py-1 rounded-none">
                         Leadership
                       </span>
                     )}
                   </div>
-                  <p className="text-[11px] font-body font-semibold uppercase tracking-[0.12em] text-accent mb-2">
+                  <p className="text-[11px] font-body font-semibold uppercase tracking-[0.14em] text-accent mb-2.5">
                     {member.role}
                   </p>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                  <p className={`text-muted-foreground leading-relaxed font-body ${member.featured ? 'text-sm' : 'text-[13px]'}`}>
                     {member.bio}
                   </p>
                 </div>

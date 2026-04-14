@@ -9,6 +9,9 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CRAFT_EASE = [0.25, 0.1, 0.25, 1] as any;
 
+/* Mountain silhouette path for background */
+const mountainBg = "M0,200 Q100,140 200,165 Q300,190 400,120 Q500,50 600,90 Q700,130 800,60 Q900,10 1000,50 Q1100,90 1200,30 L1200,200 Z";
+
 const CTABlock = () => {
   return (
     <section className="section-dark tartan-dark relative overflow-hidden">
@@ -21,6 +24,21 @@ const CTABlock = () => {
         viewport={{ once: true }}
         transition={{ duration: 1.2, ease: CRAFT_EASE }}
       />
+
+      {/* Mountain silhouette background — subtle depth */}
+      <svg className="absolute bottom-0 left-0 w-full h-[40%] opacity-[0.03] pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 200">
+        <motion.path
+          d={mountainBg}
+          fill="hsl(var(--highland-gold))"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, delay: 0.5 }}
+        />
+      </svg>
+
+      {/* Floating golden accent orb */}
+      <div className="absolute top-1/4 right-[15%] w-64 h-64 bg-[hsl(var(--highland-gold)/0.03)] rounded-full blur-[100px] pointer-events-none" style={{ animation: 'slowFloat 12s ease-in-out infinite' }} />
 
       <div className="section-padding">
         <div className="container-tight relative z-10">
@@ -36,7 +54,7 @@ const CTABlock = () => {
             </HeadingReveal>
 
             <ScrollReveal variant="rise-subtle" delay={0.3}>
-              <p className="text-dark-section-foreground/40 text-base md:text-lg max-w-xl mx-auto mb-12 font-body leading-[1.8]">
+              <p className="text-dark-section-foreground/40 text-base md:text-lg max-w-xl mx-auto mb-14 font-body leading-[1.8]">
                 From ridge caps to renovations, Highlander brings the same discipline, the same crews, 
                 and the same accountability to every property we touch. This is how mountain 
                 construction should be done.
@@ -45,7 +63,7 @@ const CTABlock = () => {
 
             {/* CTA buttons */}
             <ScrollReveal variant="rise" delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
                 <Link
                   to="/request-inspection"
                   className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-12 py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
@@ -56,7 +74,7 @@ const CTABlock = () => {
                 </Link>
                 <a
                   href="tel:8283979211"
-                  className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 hover:border-dark-section-foreground/20 transition-all duration-200"
+                  className="group border border-dark-section-foreground/10 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 hover:border-[hsl(var(--highland-gold)/0.2)] transition-all duration-300"
                 >
                   <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
                   (828) 397-9211
@@ -86,7 +104,7 @@ const CTABlock = () => {
                   transition={{ delay: 0.7 + i * 0.08 }}
                   className="flex items-center gap-2"
                 >
-                  <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                  <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.4)]" />
                   <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
                 </motion.div>
               ))}

@@ -653,6 +653,88 @@
   .group:hover .team-card-photo {
     transform: scale(1.05);
   }
+
+
+  /* === WOW-FACTOR INTERACTIONS === */
+
+  /* Cinematic image zoom — deeper on hover */
+  .img-zoom-dramatic {
+    @apply transition-transform duration-[900ms];
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .img-zoom-dramatic {
+    transform: scale(1.06);
+  }
+
+  /* Gold glow pulse ring — for key badges */
+  .glow-ring-gold {
+    box-shadow: 0 0 0 0 hsl(var(--highland-gold) / 0.3);
+    animation: glowRingPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Glass panel — frosted glass effect */
+  .glass-panel {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Spotlight hover — radial gold glow from cursor */
+  .spotlight-hover {
+    @apply relative overflow-hidden;
+  }
+  .spotlight-hover::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      hsl(var(--highland-gold) / 0.06) 0%,
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .spotlight-hover:hover::before {
+    opacity: 1;
+  }
+
+  /* Editorial large quote — for testimonial sections */
+  .quote-glyph {
+    position: relative;
+  }
+  .quote-glyph::before {
+    content: '"';
+    position: absolute;
+    top: -0.2em;
+    left: -0.05em;
+    font-family: 'Playfair Display', serif;
+    font-size: 6em;
+    line-height: 1;
+    color: hsl(var(--highland-gold) / 0.06);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Reveal mask — for cinematic image reveals */
+  .reveal-mask {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal-mask.from-bottom {
+    clip-path: inset(100% 0 0 0);
+  }
+  .reveal-mask.from-bottom.revealed {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Magnetic hover — subtle pull toward cursor */
+  .magnetic-hover {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 }
 
 @layer utilities {
@@ -719,5 +801,18 @@
   @keyframes baPulse {
     0%, 100% { box-shadow: 0 0 0 0 hsl(var(--highland-gold) / 0.4); }
     50% { box-shadow: 0 0 0 8px hsl(var(--highland-gold) / 0); }
+  }
+
+  /* Gold ring pulse — for process badges & key elements */
+  @keyframes glowRingPulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--highland-gold) / 0.25); }
+    50% { box-shadow: 0 0 0 6px hsl(var(--highland-gold) / 0); }
+  }
+
+  /* Slow float — for background decorative elements */
+  @keyframes slowFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-8px) rotate(0.5deg); }
+    66% { transform: translateY(4px) rotate(-0.3deg); }
   }
 }
