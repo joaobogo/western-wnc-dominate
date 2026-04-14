@@ -18,16 +18,16 @@ const roofingDropdown = [
 ];
 
 const constructionDropdown = [
-  { label: "Additions & Renovations", href: "/services/additions-renovations" },
-  { label: "Decks & Outdoor Living", href: "/services/decks-outdoor-living" },
-  { label: "Siding & Exteriors", href: "/services/siding-exteriors" },
-  { label: "Windows & Doors", href: "/services/windows-doors" },
-  { label: "Commercial Build-Outs", href: "/services/commercial-build-outs" },
+  { label: "Home Additions", href: "/construction/additions" },
+  { label: "Renovations", href: "/construction/renovations" },
+  { label: "Exterior Improvements", href: "/construction/exterior" },
+  { label: "Outdoor Living", href: "/construction/outdoor-living" },
+  { label: "Custom Projects", href: "/construction/custom" },
 ];
 
 const navLinks = [
   { label: "Roofing", href: "/roofing", dropdown: roofingDropdown },
-  { label: "Construction", href: "/services", dropdown: constructionDropdown },
+  { label: "Construction", href: "/construction", dropdown: constructionDropdown },
   { label: "Projects", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
