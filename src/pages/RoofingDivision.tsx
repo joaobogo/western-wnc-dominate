@@ -8,6 +8,7 @@ import {
   Target, Ruler, ClipboardCheck, Truck, BadgeCheck, HeartHandshake
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
