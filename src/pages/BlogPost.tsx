@@ -4,6 +4,7 @@ import {
   ArrowLeft, ArrowRight, Clock, Calendar, Tag, Mountain, CheckCircle,
   Quote, Star, Phone, Shield, BookOpen, Lightbulb, MapPin,
 } from "lucide-react";
+import SEOHead, { articleSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
