@@ -96,7 +96,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
           className="fixed inset-0 z-50 flex items-center justify-center"
           style={{ background: "hsl(var(--hero-overlay))" }}
           exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.35, ease: HIGHLAND_EASE as unknown as number[] }}
+          transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
         >
           {/* Grain overlay */}
           <div 
@@ -125,7 +125,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                 animate={{ pathLength: 1 }}
                 transition={{ 
                   duration: isMobile ? 0.5 : 0.8, 
-                  ease: CRAFT_EASE as unknown as number[] 
+                  ease: CRAFT_EASE 
                 }}
               />
 
@@ -145,7 +145,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                     transition={{ 
                       duration: 1.2, 
                       delay: 0.6, 
-                      ease: HIGHLAND_EASE as unknown as number[] 
+                      ease: HIGHLAND_EASE 
                     }}
                   />
                   
@@ -181,7 +181,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                   transition={{ 
                     duration: 0.7, 
                     delay: 0.5, 
-                    ease: HIGHLAND_EASE as unknown as number[] 
+                    ease: HIGHLAND_EASE 
                   }}
                 />
               )}
@@ -197,7 +197,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                 transition={{ 
                   duration: 0.5, 
                   delay: isMobile ? 1.2 : 1.5, 
-                  ease: HIGHLAND_EASE as unknown as number[] 
+                  ease: HIGHLAND_EASE 
                 }}
               >
                 Highlander
@@ -225,7 +225,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                 transition={{ 
                   duration: 0.4, 
                   delay: isMobile ? 1.6 : 2.2, 
-                  ease: CRAFT_EASE as unknown as number[] 
+                  ease: CRAFT_EASE 
                 }}
               />
             </div>
