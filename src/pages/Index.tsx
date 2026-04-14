@@ -5,14 +5,12 @@ import ProofStrip from "@/components/ProofStrip";
 import DualPathway from "@/components/DualPathway";
 import NotJustRoofing from "@/components/NotJustRoofing";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import ServicesGrid from "@/components/ServicesGrid";
 import OurProcess from "@/components/OurProcess";
 import MeetTheTeam from "@/components/MeetTheTeam";
 import Reviews from "@/components/Reviews";
 import SilentObjections from "@/components/SilentObjections";
-import TrustAndProof from "@/components/TrustAndProof";
-import ServicesGrid from "@/components/ServicesGrid";
 import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
-import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import BuiltForWNC from "@/components/BuiltForWNC";
 import TownGrid from "@/components/TownGrid";
 import BlogInsights from "@/components/BlogInsights";
@@ -28,75 +26,43 @@ const Index = () => {
     <>
       <Header />
       <main>
-        {/* 1. HOOK — Hero + stat bar */}
+        {/* ═══ ACT I: HOOK & CREDIBILITY ═══ */}
         <Hero />
         <TrustStrip />
-
-        {/* 2. PROVE SUBSTANCE — Why we're different */}
         <ProofStrip />
 
         <SectionDivider variant="diamond" />
 
-        {/* 3. SELF-IDENTIFY — Roofing vs Construction */}
+        {/* ═══ ACT II: IDENTITY & SCOPE ═══ */}
         <DualPathway />
-
-        {/* 4. EVOLUTION STORY — Not just roofing */}
         <NotJustRoofing />
 
-        <SectionDivider variant="gold-fade" />
-
-        {/* 5. VISUAL PROOF — Featured projects */}
+        {/* ═══ ACT III: PROOF & SERVICES ═══ */}
         <FeaturedProjects />
-
-        <SectionDivider variant="wave" />
-
-        {/* 6. HOW WE WORK — Process = professionalism */}
-        <OurProcess />
-
-        <SectionDivider variant="dot-line" />
-
-        {/* 7. HUMAN CONNECTION — Meet the team */}
-        <MeetTheTeam />
-
-        <SectionDivider variant="gold-fade" />
-
-        {/* 8. SOCIAL PROOF — Reviews close the trust gap */}
-        <Reviews />
-
-        <SectionDivider variant="diamond" />
-
-        {/* 9. OBJECTION HANDLING — Answer silent concerns */}
-        <SilentObjections />
-
-        {/* 10. TRUST & PROOF — Credentials + reviews + warranty */}
-        <TrustAndProof />
-
-        <SectionDivider variant="gold-fade" />
-
-        {/* 11. WHAT WE DO — Featured services */}
         <ServicesGrid />
 
-        {/* 12. INTERACTIVE TOOLS — Engagement + lead capture */}
-        <RoofDesignerCTA />
-        <GuideLeadMagnet variant="banner" guide="storm" />
+        <SectionDivider variant="gold-fade" />
+
+        {/* ═══ ACT IV: TRUST & PROCESS ═══ */}
+        <OurProcess />
+        <MeetTheTeam />
+        <Reviews />
 
         <SectionDivider variant="dot-line" />
 
-        {/* 13. LOCAL AUTHORITY — We know your region */}
+        {/* ═══ ACT V: OBJECTIONS & AUTHORITY ═══ */}
+        <SilentObjections />
         <BuiltForWNC />
-
-        {/* 14. LOCAL AUTHORITY — We know your town */}
         <TownGrid />
 
         <SectionDivider variant="gold-fade" />
 
-        {/* 15. EDITORIAL — Blog insights */}
+        {/* ═══ ACT VI: ENGAGE & EDUCATE ═══ */}
+        <RoofDesignerCTA />
         <BlogInsights />
-
-        {/* 16. VISUAL PROOF — Field work gallery */}
         <InstagramGrid />
 
-        {/* 17. CONVERT — Form + final CTA */}
+        {/* ═══ ACT VII: CONVERT ═══ */}
         <InspectionForm />
         <CTABlock />
       </main>

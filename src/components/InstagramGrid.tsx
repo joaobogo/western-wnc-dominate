@@ -44,9 +44,9 @@ const InstagramGrid = () => {
         >
           <span className="eyebrow mb-3 block">From the Field</span>
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2">
-            @HighlanderRoofing
+            Recent Roofing & Construction Work
           </h2>
-          <p className="text-muted-foreground font-body text-sm">Latest projects and mountain roofing work.</p>
+          <p className="text-muted-foreground font-body text-sm">Crew photos, project details, and mountain craftsmanship — straight from the jobsite.</p>
         </motion.div>
 
         <motion.div

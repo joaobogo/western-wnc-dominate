@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mountain, ShieldCheck, Hammer, FileText, Users, Zap, MessageSquare, Gem } from "lucide-react";
+import { Mountain, ShieldCheck, Hammer, MessageSquare, Gem } from "lucide-react";
 
 const pillars = [
   {
@@ -32,38 +32,16 @@ const pillars = [
   },
   {
     icon: Hammer,
-    title: "Roofing + Construction Under One Roof",
-    copy: "Shingles, metal, cedar, additions, decks, siding — one team, one process, one standard. No subcontractors you haven't met.",
+    title: "Roofing + Construction, One Team",
+    copy: "Shingles, metal, cedar, additions, decks, siding — one crew, one process, one standard. No subcontractors you haven't met.",
     stat: "40+",
     statLabel: "years combined",
-  },
-  {
-    icon: FileText,
-    title: "Documented Quality Control",
-    copy: "Photo documentation, progress reports, and a final walkthrough inspection. Every project closes with a warranty package in hand.",
-    stat: "100%",
-    statLabel: "documented projects",
-  },
-  {
-    icon: Users,
-    title: "Family-Operated. Locally Accountable.",
-    copy: "We live in these mountains. We drive past your project every week. That changes how you build — and how you stand behind it.",
-    stat: "2017",
-    statLabel: "established",
-  },
-  {
-    icon: Zap,
-    title: "Emergency Storm Response",
-    copy: "Tarping, insurance documentation, and priority scheduling within 24 hours. Local crews — not out-of-state chasers who vanish after the check clears.",
-    stat: "24hr",
-    statLabel: "storm response",
   },
 ];
 
 const ProofStrip = () => {
   return (
     <section className="section-padding bg-background relative overflow-hidden">
-      {/* Subtle top accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
 
       <div className="container-tight">
@@ -75,16 +53,16 @@ const ProofStrip = () => {
         >
           <span className="eyebrow mb-3 block">Why Highlander</span>
           <h2 className="section-heading mb-4">
-            Built Different.<br className="hidden md:block" /> On Purpose.
+            The Standard We Set<br className="hidden md:block" /> — and Hold.
           </h2>
           <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-            Premium roofing and construction demands more than tools and labor. It requires 
-            expertise, accountability, and the kind of care that only comes from a team with 
-            something to prove — every single project.
+            Premium results demand more than labor and materials. They require
+            expertise, accountability, and the kind of care that only comes
+            from a team that stakes its name on every project.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
@@ -92,24 +70,14 @@ const ProofStrip = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.5 }}
-              className="group relative bg-card border border-border rounded-sm p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.25)] transition-all duration-300 overflow-hidden"
+              className="group relative bg-card border border-border rounded-sm p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift overflow-hidden"
             >
-              {/* Gold top line — reveals on hover */}
-              <motion.div
-                className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))]"
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                style={{ transformOrigin: "left" }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              />
-
               {/* Stat watermark */}
               <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
                 {pillar.stat}
               </div>
 
               <div className="relative z-10">
-                {/* Icon with subtle scale on group hover */}
                 <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors duration-300">
                   <pillar.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
                 </div>
@@ -121,7 +89,6 @@ const ProofStrip = () => {
                   {pillar.copy}
                 </p>
 
-                {/* Stat badge */}
                 <div className="flex items-center gap-2 pt-3 border-t border-border/60">
                   <span className="text-base font-heading font-bold text-[hsl(var(--highland-gold))] leading-none">
                     {pillar.stat}

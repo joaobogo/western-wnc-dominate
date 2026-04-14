@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { DollarSign, Clock, Shield, MessageSquare, HardHat, Award } from "lucide-react";
+import { DollarSign, Clock, Shield, MessageSquare, HardHat } from "lucide-react";
 
 const objections = [
   {
@@ -28,11 +28,6 @@ const objections = [
     question: "Will I actually hear from you during the project, or will I be left wondering?",
     answer: "You'll have a named point of contact from day one. We provide a written scope before work begins, daily progress updates during the project, and a final walkthrough when it's complete. You'll never have to chase us for information — that's a promise, not a policy.",
   },
-  {
-    icon: Award,
-    question: "How do I know the materials and workmanship will actually last?",
-    answer: "We specify materials for your property's specific elevation, exposure, and climate zone — not generic recommendations. Every installation follows manufacturer specifications to maintain full warranty coverage. You'll receive a complete warranty package including material certificates, labor warranty, and maintenance guidance. We build for decades, not just inspections.",
-  },
 ];
 
 const SilentObjections = () => {
@@ -50,8 +45,8 @@ const SilentObjections = () => {
             Questions You're<br className="hidden md:block" /> Already Thinking About.
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto text-sm font-body leading-relaxed">
-            We know choosing a contractor is a serious decision. Here are the concerns we hear most
-            — and the straightforward answers we think you deserve.
+            Choosing a contractor is a serious decision. Here are the concerns we hear most
+            — and the straightforward answers you deserve.
           </p>
         </motion.div>
 
