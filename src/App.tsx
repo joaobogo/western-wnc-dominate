@@ -23,6 +23,7 @@ import RequestInspection from "./pages/RequestInspection";
 import FreeTools from "./pages/FreeTools";
 import RoofDesigner from "./pages/RoofDesigner";
 import RoofingDivision from "./pages/RoofingDivision";
+import StormCenter from "./pages/StormCenter";
 import ResidentialRoofing from "./pages/ResidentialRoofing";
 import RoofReplacement from "./pages/RoofReplacement";
 import RoofRepair from "./pages/RoofRepair";
@@ -75,6 +76,7 @@ const App = () => (
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/financing" element={<Financing />} />
+          <Route path="/storm-center" element={<StormCenter />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/request-inspection" element={<RequestInspection />} />
           <Route path="/free-tools" element={<FreeTools />} />
