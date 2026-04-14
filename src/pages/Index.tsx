@@ -61,14 +61,14 @@ const Index = () => {
         <FeaturedProjects />
         <ServicesGrid />
 
-        <SectionDivider variant="gold-fade" />
+        <SectionDivider variant="heritage-bar" />
 
         {/* ═══ ACT IV: TRUST & PROCESS ═══ */}
         <OurProcess />
         <MeetTheTeam />
         <Reviews />
 
-        <SectionDivider variant="dot-line" />
+        <SectionDivider variant="diamond" />
 
         {/* ═══ ACT V: OBJECTIONS & AUTHORITY ═══ */}
         <SilentObjections />

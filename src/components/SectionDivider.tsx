@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-type DividerVariant = "gold-fade" | "mountain-ridge" | "angled" | "dot-line" | "wave" | "diamond";
+type DividerVariant = "gold-fade" | "mountain-ridge" | "angled" | "dot-line" | "wave" | "diamond" | "heritage-bar";
 
 interface SectionDividerProps {
   variant?: DividerVariant;
@@ -10,22 +10,18 @@ interface SectionDividerProps {
 }
 
 const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", dark = false }: SectionDividerProps) => {
-  const base = dark
-    ? "text-dark-section-foreground"
-    : "text-foreground";
-
   if (variant === "gold-fade") {
     return (
       <div className={`relative h-px w-full ${className}`}>
         <motion.div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))",
+            background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))",
           }}
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         />
       </div>
     );
@@ -33,14 +29,14 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
 
   if (variant === "mountain-ridge") {
     return (
-      <div className={`relative w-full overflow-hidden ${flip ? "rotate-180" : ""} ${className}`} style={{ height: "40px" }}>
+      <div className={`relative w-full overflow-hidden ${flip ? "rotate-180" : ""} ${className}`} style={{ height: "48px" }}>
         <svg
-          viewBox="0 0 1440 40"
+          viewBox="0 0 1440 48"
           preserveAspectRatio="none"
           className="absolute inset-0 w-full h-full"
         >
           <motion.path
-            d="M0,40 L0,25 Q120,10 240,20 Q360,30 480,15 Q600,0 720,12 Q840,24 960,8 Q1080,0 1200,18 Q1320,30 1440,22 L1440,40 Z"
+            d="M0,48 L0,30 Q120,12 240,24 Q360,36 480,18 Q600,0 720,14 Q840,28 960,10 Q1080,0 1200,22 Q1320,36 1440,26 L1440,48 Z"
             fill="currentColor"
             className={dark ? "text-[hsl(var(--dark-section))]" : "text-background"}
             initial={{ opacity: 0 }}
@@ -49,15 +45,15 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
             transition={{ duration: 0.8 }}
           />
           <motion.path
-            d="M0,25 Q120,10 240,20 Q360,30 480,15 Q600,0 720,12 Q840,24 960,8 Q1080,0 1200,18 Q1320,30 1440,22"
+            d="M0,30 Q120,12 240,24 Q360,36 480,18 Q600,0 720,14 Q840,28 960,10 Q1080,0 1200,22 Q1320,36 1440,26"
             fill="none"
             stroke="hsl(var(--highland-gold))"
-            strokeWidth="0.5"
-            strokeOpacity="0.25"
+            strokeWidth="0.7"
+            strokeOpacity="0.3"
             initial={{ pathLength: 0 }}
             whileInView={{ pathLength: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 2, ease: "easeOut" }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
           />
         </svg>
       </div>
@@ -87,17 +83,19 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
 
   if (variant === "dot-line") {
     return (
-      <div className={`flex items-center justify-center gap-2 py-6 ${className}`}>
+      <div className={`flex items-center justify-center gap-3 py-8 ${className}`}>
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-border max-w-[80px]" />
         {[0, 1, 2, 3, 4].map((i) => (
           <motion.div
             key={i}
-            className={`rounded-full ${i === 2 ? "w-2 h-2 bg-[hsl(var(--highland-gold)/0.5)]" : "w-1 h-1 bg-border"}`}
+            className={`rounded-full ${i === 2 ? "w-2.5 h-2.5 bg-[hsl(var(--highland-gold)/0.5)]" : "w-1 h-1 bg-border"}`}
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.3 }}
           />
         ))}
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent to-border max-w-[80px]" />
       </div>
     );
   }
@@ -125,16 +123,41 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
 
   if (variant === "diamond") {
     return (
-      <div className={`flex items-center justify-center py-8 ${className}`}>
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-border max-w-[120px]" />
+      <div className={`flex items-center justify-center py-10 ${className}`}>
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[hsl(var(--highland-gold)/0.15)] max-w-[140px]" />
         <motion.div
-          className="w-3 h-3 rotate-45 border border-[hsl(var(--highland-gold)/0.4)] mx-4"
-          initial={{ opacity: 0, rotate: 0 }}
-          whileInView={{ opacity: 1, rotate: 45 }}
+          className="relative mx-5"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        />
-        <div className="flex-1 h-px bg-gradient-to-l from-transparent to-border max-w-[120px]" />
+          transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
+        >
+          {/* Outer ring */}
+          <div className="w-5 h-5 rotate-45 border border-[hsl(var(--highland-gold)/0.3)]" />
+          {/* Inner fill */}
+          <div className="absolute inset-[3px] rotate-45 bg-[hsl(var(--highland-gold)/0.08)]" />
+        </motion.div>
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[hsl(var(--highland-gold)/0.15)] max-w-[140px]" />
+      </div>
+    );
+  }
+
+  if (variant === "heritage-bar") {
+    return (
+      <div className={`flex items-center justify-center py-10 ${className}`}>
+        <motion.div
+          className="flex items-center gap-3"
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
+          <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.4)]" />
+          <div className="w-24 h-px bg-gradient-to-r from-[hsl(var(--highland-gold)/0.4)] to-[hsl(var(--highland-gold)/0.15)]" />
+          <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.4)]" />
+          <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
+        </motion.div>
       </div>
     );
   }

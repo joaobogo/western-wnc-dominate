@@ -19,9 +19,14 @@ const steps = [
 
 const OurProcess = () => {
   return (
-    <section className="section-padding bg-secondary/40">
-      <div className="container-tight">
-        <div className="text-center mb-12 md:mb-16">
+    <section className="section-padding bg-secondary/40 relative overflow-hidden">
+      {/* Background decorative number watermark */}
+      <div className="absolute top-20 right-0 text-[20rem] font-heading font-bold text-foreground/[0.015] leading-none select-none pointer-events-none hidden lg:block">
+        07
+      </div>
+
+      <div className="container-tight relative z-10">
+        <div className="text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade">
             <span className="eyebrow mb-3 block">Our Process</span>
           </ScrollReveal>
@@ -35,7 +40,7 @@ const OurProcess = () => {
               Every project follows the same disciplined process — because consistency is how you deliver quality at scale.
             </p>
           </ScrollReveal>
-          <GoldLine width="3rem" centered delay={0.35} className="mt-5" />
+          <GoldLine width="3rem" centered delay={0.35} className="mt-6" />
         </div>
 
         {/* Timeline */}
@@ -43,11 +48,11 @@ const OurProcess = () => {
           {/* Center line with animated draw */}
           <motion.div
             className="hidden md:block absolute left-1/2 top-0 w-px -translate-x-1/2"
-            style={{ background: "linear-gradient(to bottom, hsl(var(--border)), hsl(var(--highland-gold) / 0.2), hsl(var(--border)))" }}
+            style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold) / 0.15), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0.15))" }}
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             viewport={{ once: true }}
-            transition={{ duration: 2, ease: HIGHLAND_EASE }}
+            transition={{ duration: 2.5, ease: HIGHLAND_EASE }}
           />
 
           <div className="space-y-6 md:space-y-0">
@@ -60,34 +65,34 @@ const OurProcess = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ delay: i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
-                  className={`relative md:flex md:items-start md:gap-8 md:py-6 ${
+                  className={`relative md:flex md:items-start md:gap-8 md:py-7 ${
                     isLeft ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
                   <div className={`md:w-[calc(50%-2rem)] ${isLeft ? "md:text-right" : "md:text-left"}`}>
-                    <div className="bg-card border border-border rounded-sm p-5 md:p-6 shadow-sm hover:shadow-md hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-300">
-                      <div className={`flex items-center gap-3 mb-3 ${isLeft ? "md:justify-end" : ""}`}>
-                        <div className="w-9 h-9 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <step.icon className="w-4 h-4 text-primary" />
+                    <div className="bg-card border border-border rounded-none p-5 md:p-7 shadow-sm hover:shadow-md hover:border-[hsl(var(--highland-gold)/0.2)] transition-all duration-400 group spotlight-hover">
+                      <div className={`flex items-center gap-3.5 mb-3 ${isLeft ? "md:justify-end" : ""}`}>
+                        <div className="w-10 h-10 rounded-none bg-primary/8 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/14 transition-colors duration-300">
+                          <step.icon className="w-4.5 h-4.5 text-primary" />
                         </div>
-                        <h3 className="text-base font-heading font-semibold text-foreground">{step.title}</h3>
+                        <h3 className="text-base font-heading font-bold text-foreground tracking-tight">{step.title}</h3>
                       </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed font-body">{step.description}</p>
+                      <p className="text-muted-foreground text-sm leading-[1.75] font-body relative z-10">{step.description}</p>
                     </div>
                   </div>
 
-                  {/* Center number badge */}
+                  {/* Center number badge — gold ring pulse */}
                   <motion.div
-                    className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-6 w-10 h-10 rounded-full bg-primary text-primary-foreground items-center justify-center z-10"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
+                    className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-7 w-11 h-11 rounded-full bg-primary text-primary-foreground items-center justify-center z-10 glow-ring-gold"
+                    initial={{ scale: 0, rotate: -90 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 + 0.2, duration: 0.3, type: "spring", stiffness: 300 }}
+                    transition={{ delay: i * 0.1 + 0.2, duration: 0.4, type: "spring", stiffness: 280, damping: 18 }}
                   >
                     <span className="font-heading font-bold text-xs">{step.number}</span>
                   </motion.div>
 
-                  <div className="md:hidden absolute -left-1 top-5 w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+                  <div className="md:hidden absolute -left-1 top-5 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center glow-ring-gold">
                     <span className="font-heading font-bold text-[10px]">{step.number}</span>
                   </div>
 
