@@ -64,7 +64,10 @@ const Index = () => {
         {/* 10. LOCAL AUTHORITY — We know your town */}
         <TownGrid />
 
-        {/* 10. VISUAL PROOF — Field work gallery */}
+        {/* 11. EDITORIAL — Blog insights */}
+        <BlogInsights />
+
+        {/* 12. VISUAL PROOF — Field work gallery */}
         <InstagramGrid />
 
         {/* 11. CONVERT — Form + final CTA */}
