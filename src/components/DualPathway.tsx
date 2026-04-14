@@ -44,7 +44,7 @@ const pathways = [
       { icon: ShieldCheck, name: "Licensed GC Oversight" },
     ],
     cta: "Explore Construction",
-    href: "/construction-services",
+    href: "/construction",
     accent: "gold" as const,
     image: cedarRoof,
   },
