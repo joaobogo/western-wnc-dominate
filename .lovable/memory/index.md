@@ -54,6 +54,9 @@ Updated: now
 - [Widget Strategy](mem://features/widget-strategy) — 9 premium interactive widgets with placement, UX, trust value, and conversion goals
 - [Roofing Calculators](mem://features/roofing-calculators) — 5 roofing tools: scope estimator, readiness assessment, materials comparison, maintenance checker, storm assessment
 - [Construction Planning Tools](mem://features/construction-planning-tools) — 6 construction tools: readiness quiz, addition planner, timeline tool, outdoor selector, renovation builder, consultation prep
+- [Local SEO Strategy](mem://seo/local-seo-strategy) — Full local SEO: service+location pages, town targeting, GBP, review strategy, internal linking, anti-thin rules
+- [On-Page SEO Framework](mem://seo/on-page-seo-framework) — Heading structure, content depth, keyword coverage, intent alignment, image optimization, FAQ, meta templates
+- [Schema & Structured Data Strategy](mem://seo/schema-structured-data-strategy) — JSON-LD system: LocalBusiness, Service, FAQ, Article, Breadcrumb, Review, Organization per page type
 - [SEO Authority Page System](mem://seo/authority-page-system) — Authority page taxonomy with structure, conversion, trust, and linking per type
 - [Location & Service Area Strategy](mem://seo/location-strategy) — Town page framework, anti-thin rules, linking network, future towns
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
