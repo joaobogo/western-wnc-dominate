@@ -8,6 +8,7 @@ import {
   TrendingDown, DollarSign, Zap, FileText, MessageSquare
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -143,6 +144,16 @@ const faqs = [
 const RoofReplacement = () => {
   return (
     <>
+      <SEOHead
+        title="Roof Replacement | Full Tear-Off & Reinstall for Mountain Homes in WNC"
+        description="Complete roof replacement for Western North Carolina homes. Site-specific material specification, certified installation, transparent proposals, and warranties you can count on."
+        path="/roofing/roof-replacement"
+        jsonLd={[
+          serviceSchema({ name: "Roof Replacement", description: "Full roof replacement for mountain homes across Western North Carolina.", url: "/roofing/roof-replacement" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Roof Replacement", url: "/roofing/roof-replacement" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}
@@ -185,7 +196,7 @@ const RoofReplacement = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/request-inspection" className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Request a Quote Call</span>
+                   <span className="relative">Request a Roof Consultation</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a href="tel:8283979211" className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
