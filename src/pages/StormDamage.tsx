@@ -8,6 +8,7 @@ import {
   Replace, ShieldCheck, Layers, MessageSquare, Zap
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -134,6 +135,16 @@ const faqs = [
 const StormDamage = () => {
   return (
     <>
+      <SEOHead
+        title="Storm Damage Roofing | 24-Hour Emergency Response in Western NC"
+        description="24-hour storm response across Western North Carolina. Professional damage assessment, insurance documentation, and honest guidance from a trusted local team."
+        path="/roofing/storm-damage"
+        jsonLd={[
+          serviceSchema({ name: "Storm Damage Roofing", description: "24-hour storm damage response, assessment, and repair across Western North Carolina.", url: "/roofing/storm-damage" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Storm Damage", url: "/roofing/storm-damage" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}

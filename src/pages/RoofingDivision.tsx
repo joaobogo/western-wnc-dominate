@@ -28,42 +28,42 @@ const roofingServices = [
   {
     icon: Home,
     title: "Residential Roofing",
-    slug: "/services/roof-replacement",
+    slug: "/roofing/residential",
     description: "Complete roof systems for mountain homes — from material selection through final walkthrough. Engineered for your elevation, exposure, and decades of WNC weather.",
     features: ["Full replacements", "New construction", "Re-roofing", "Ventilation design"],
   },
   {
     icon: Wrench,
     title: "Roof Repair",
-    slug: "/services/roof-repair",
+    slug: "/roofing/roof-repair",
     description: "Targeted, warrantied repairs that stop leaks and prevent escalation. We diagnose accurately, fix permanently, and document everything.",
     features: ["Leak detection", "Flashing repair", "Shingle replacement", "Chimney seals"],
   },
   {
     icon: CloudLightning,
     title: "Storm Damage & Insurance",
-    slug: "/services/storm-damage",
+    slug: "/roofing/storm-damage",
     description: "24-hour emergency response with full damage documentation, insurance coordination, and priority scheduling — not storm chasing.",
     features: ["Emergency tarping", "Insurance documentation", "Adjuster meetings", "Priority repairs"],
   },
   {
     icon: Building2,
     title: "Commercial Roofing",
-    slug: "/commercial-roofing",
+    slug: "/roofing/commercial",
     description: "Inspections, maintenance programs, and full-scope solutions for property managers, HOAs, and facility owners across Western NC.",
     features: ["Flat & low-slope systems", "TPO & EPDM", "Maintenance programs", "Multi-property"],
   },
   {
     icon: Layers,
     title: "Metal Roofing",
-    slug: "/services/metal-roofing",
+    slug: "/roofing/specialty",
     description: "Standing seam and architectural metal systems rated for 140mph winds and 50+ years of mountain performance. The premium choice.",
     features: ["Standing seam", "Concealed fastener", "Snow guards", "Custom colors"],
   },
   {
     icon: TreePine,
     title: "Specialty Roofing",
-    slug: "/services/roof-replacement",
+    slug: "/roofing/specialty",
     description: "Cedar shake, slate, copper accents, and architectural details for properties that demand distinctive craftsmanship and heritage character.",
     features: ["Cedar shake", "Slate systems", "Copper work", "Historic restoration"],
   },
@@ -239,7 +239,7 @@ const RoofingDivision = () => {
     <>
       <SEOHead
         title="Roofing Services | Expert Roof Replacement, Repair & Storm Damage in Western NC"
-        description="Premium roofing in Western North Carolina. Shingle, metal & cedar roofing, storm damage, commercial systems. CertainTeed Master Applicator. Free assessment."
+        description="Premium roofing in Western North Carolina. Shingle, metal & cedar roofing, storm damage, commercial systems. CertainTeed Master Applicator. Schedule a consultation."
         path="/roofing"
         jsonLd={[
           serviceSchema({ name: "Roofing Services", description: "Expert residential and commercial roofing across Western North Carolina.", url: "/roofing" }),

@@ -8,6 +8,7 @@ import {
   Camera, Paintbrush, Landmark, ChevronRight, Sparkles
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -146,8 +147,18 @@ const faqs = [
    PAGE
    ═══════════════════════════════════════════ */
 const ResidentialRoofing = () => {
-  return (
+    return (
     <>
+      <SEOHead
+        title="Residential Roofing | Premium Roof Replacement & Repair for Mountain Homes"
+        description="Complete residential roofing for mountain homes across Highlands, Cashiers, Franklin & Sylva. CertainTeed certified installation, premium materials, and warranties that last."
+        path="/roofing/residential"
+        jsonLd={[
+          serviceSchema({ name: "Residential Roofing", description: "Premium residential roof replacement and repair for mountain homes across Western North Carolina.", url: "/roofing/residential" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Residential", url: "/roofing/residential" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}
