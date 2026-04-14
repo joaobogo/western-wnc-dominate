@@ -4,18 +4,22 @@ import {
   ArrowRight, ArrowLeft, Phone, MapPin, Calendar, Ruler, Mountain,
   CheckCircle, Star, Quote, Shield,
 } from "lucide-react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock, TrustSidebar } from "@/components/trust";
 import { BeforeAfterSlider } from "@/components/BeforeAfterShowcase";
-import { getProjectBySlug } from "@/data/projects";
+import { getProjectBySlug, projectDetails } from "@/data/projects";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true } as const,
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  transition: { duration: 0.6, ease: HIGHLAND_EASE },
 };
 
 const ProjectDetailPage = () => {
@@ -40,17 +44,35 @@ const ProjectDetailPage = () => {
     );
   }
 
+  // Related projects (same category, different slug)
+  const related = projectDetails
+    .filter((p) => p.category === project.category && p.slug !== project.slug)
+    .slice(0, 3);
+
   return (
     <>
+      <SEOHead
+        title={project.seo.title}
+        description={project.seo.description}
+        path={`/projects/${project.slug}`}
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Projects", url: "/gallery" },
+          { name: project.title, url: `/projects/${project.slug}` },
+        ])}
+      />
       <Header />
       <main>
         {/* ── HERO IMAGE ── */}
         <section className="relative pt-20 md:pt-24">
           <div className="relative h-[50vh] md:h-[65vh] overflow-hidden">
-            <img
+            <motion.img
               src={project.heroImage}
               alt={project.title}
               className="w-full h-full object-cover"
+              initial={{ scale: 1.08 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.6, ease: HIGHLAND_EASE }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-[hsl(var(--heritage-charcoal)/0.2)] to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 lg:p-16">
@@ -152,7 +174,7 @@ const ProjectDetailPage = () => {
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
                   <p className="text-primary-foreground/60 text-sm mb-4">Schedule a consultation and let's discuss your project.</p>
                   <Link to="/request-inspection" className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center">
-                    Schedule a Consultation <ArrowRight className="w-4 h-4" />
+                    Discuss Your Project <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -254,6 +276,28 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
+        {/* ── MID-CONTENT CONVERSION CTA ── */}
+        <section className="bg-primary py-10 md:py-12 relative overflow-hidden">
+          <div className="container-tight text-center px-5 md:px-8 relative z-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
+              <div className="text-center sm:text-left">
+                <p className="text-primary-foreground font-heading font-semibold text-lg mb-1">
+                  Inspired by this project?
+                </p>
+                <p className="text-primary-foreground/50 text-sm font-body">
+                  Let's discuss how we can deliver the same level of quality for your property.
+                </p>
+              </div>
+              <Link
+                to="/request-inspection"
+                className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 btn-primary-interactive flex-shrink-0"
+              >
+                <Phone className="w-4 h-4" /> Discuss Your Project
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── RESULT ── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
@@ -317,6 +361,57 @@ const ProjectDetailPage = () => {
                   <p className="font-heading font-semibold text-foreground">{project.testimonial.name}</p>
                   <p className="text-muted-foreground text-sm font-body">{project.testimonial.location}</p>
                 </motion.div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── RELATED PROJECTS ── */}
+        {related.length > 0 && (
+          <section className="section-padding bg-secondary tartan-bg">
+            <div className="container-tight">
+              <motion.div {...fadeUp} className="text-center mb-12">
+                <span className="eyebrow mb-3 block">More {project.category === "roofing" ? "Roofing" : "Construction"} Projects</span>
+                <h2 className="section-heading mb-4">Related Work</h2>
+                <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto" />
+              </motion.div>
+              <div className="grid md:grid-cols-3 gap-5">
+                {related.map((rel, i) => (
+                  <motion.div
+                    key={rel.slug}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Link to={`/projects/${rel.slug}`} className="group block">
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
+                        <img
+                          src={rel.heroImage}
+                          alt={rel.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          loading="lazy"
+                          style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.5)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute bottom-0 left-0 w-0 group-hover:w-1/2 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-transparent transition-all duration-700" />
+                      </div>
+                      <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-accent mb-1 block">{rel.type}</span>
+                      <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors mb-1">{rel.title}</h3>
+                      <p className="text-muted-foreground text-sm font-body flex items-center gap-1">
+                        <MapPin className="w-3 h-3" /> {rel.location}
+                      </p>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="text-center mt-10">
+                <Link
+                  to="/gallery"
+                  className="group inline-flex items-center gap-2 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
+                >
+                  View Full Portfolio <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
           </section>
