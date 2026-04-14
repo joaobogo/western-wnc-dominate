@@ -4,11 +4,12 @@ Updated: now
 # Project Memory
 
 ## Core
-- Visuals: Deep forest green, amber/gold accents, cream bg. Playfair Display (headings), DM Sans (body).
+- Visuals: Deep forest green, amber/gold accents, cream bg. Cormorant Garamond (headings), DM Sans (body).
 - UX/UI: Cinematic framer-motion animations. Mobile-first. No traditional scroll indicators in Hero.
 - Voice: "High Authority, Low Fluff". Focus on local mountain climate expertise & 24h response. No generic marketing phrases.
 - Security: `designer_leads` RLS (no public select). IP rate-limit `analyze-roof` (10/hr). Use signed URLs for `roof-designs` storage.
 - SEO/Architecture: Town + Service strategy. Strictly circular internal linking. Maintain 301 redirects for Hibu migration.
+- Brand: "Highlander Roofing & Construction" — dual-division (Roofing + Construction) under one identity. Scottish heritage influence kept subtle/refined.
 
 ## Memories
 - [Visual Identity](mem://style/visual-identity) — Brand colors, fonts, and hero section styling for Mountain Authority aesthetic
