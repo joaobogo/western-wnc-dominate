@@ -2,10 +2,10 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import ProofStrip from "@/components/ProofStrip";
+import DualPathway from "@/components/DualPathway";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import ServicesGrid from "@/components/ServicesGrid";
 import TownGrid from "@/components/TownGrid";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import Reviews from "@/components/Reviews";
 import InstagramGrid from "@/components/InstagramGrid";
 import CTABlock from "@/components/CTABlock";
@@ -28,32 +28,32 @@ const Index = () => {
         {/* 2. PROVE SUBSTANCE — Why we're different */}
         <ProofStrip />
 
-        {/* 3. VISUAL PROOF — Project showcase */}
+        {/* 3. SELF-IDENTIFY — Roofing vs Construction */}
+        <DualPathway />
+
+        {/* 4. VISUAL PROOF — Project showcase */}
         <BeforeAfterGallery />
 
-        {/* 3. WHAT WE DO — Dual roofing + construction */}
-        <ServicesGrid />
-
-        {/* 4. HOW WE WORK — Process = professionalism */}
+        {/* 5. HOW WE WORK — Process = professionalism */}
         <OurProcess />
-
-        {/* 5. WHY US — Differentiation pillars */}
-        <WhyChooseUs />
 
         {/* 6. SOCIAL PROOF — Reviews close the trust gap */}
         <Reviews />
 
-        {/* 7. INTERACTIVE TOOLS — Engagement + lead capture */}
+        {/* 7. WHAT WE DO — Featured services */}
+        <ServicesGrid />
+
+        {/* 8. INTERACTIVE TOOLS — Engagement + lead capture */}
         <RoofDesignerCTA />
         <GuideLeadMagnet variant="banner" guide="storm" />
 
-        {/* 8. LOCAL AUTHORITY — We know your town */}
+        {/* 9. LOCAL AUTHORITY — We know your town */}
         <TownGrid />
 
-        {/* 9. VISUAL PROOF — Field work gallery */}
+        {/* 10. VISUAL PROOF — Field work gallery */}
         <InstagramGrid />
 
-        {/* 10. CONVERT — Form + final CTA */}
+        {/* 11. CONVERT — Form + final CTA */}
         <InspectionForm />
         <CTABlock />
       </main>
