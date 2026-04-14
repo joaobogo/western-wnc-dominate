@@ -30,13 +30,13 @@ const CTABlock = () => {
             </ScrollReveal>
 
             <HeadingReveal delay={0.1}>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1]">
+              <h2 className="text-3xl md:text-[2.75rem] lg:text-5xl font-heading font-bold mb-7 leading-[1.08] tracking-[-0.02em]">
                 One Team. One Standard.<br className="hidden md:block" /> Every Project, Every Time.
               </h2>
             </HeadingReveal>
 
             <ScrollReveal variant="rise-subtle" delay={0.3}>
-              <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+              <p className="text-dark-section-foreground/40 text-base md:text-lg max-w-xl mx-auto mb-12 font-body leading-[1.8]">
                 From ridge caps to renovations, Highlander brings the same discipline, the same crews, 
                 and the same accountability to every property we touch. This is how mountain 
                 construction should be done.
@@ -48,7 +48,7 @@ const CTABlock = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Link
                   to="/request-inspection"
-                  className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
+                  className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-12 py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Begin Your Project</span>

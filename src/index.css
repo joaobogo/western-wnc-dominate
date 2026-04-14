@@ -6,54 +6,54 @@
 
 @layer base {
   :root {
-    /* Highlander Heritage Palette */
-    --background: 45 15% 96%;
-    --foreground: 210 18% 13%;
+    /* Highlander Heritage Palette — Refined */
+    --background: 42 18% 96%;
+    --foreground: 210 20% 11%;
 
-    --card: 45 12% 98%;
-    --card-foreground: 210 18% 13%;
+    --card: 42 14% 98%;
+    --card-foreground: 210 20% 11%;
 
-    --popover: 45 12% 98%;
-    --popover-foreground: 210 18% 13%;
+    --popover: 42 14% 98%;
+    --popover-foreground: 210 20% 11%;
 
-    /* Deep forest / heritage green */
-    --primary: 160 35% 16%;
-    --primary-foreground: 45 15% 95%;
+    /* Deep forest / heritage green — richer */
+    --primary: 158 38% 14%;
+    --primary-foreground: 42 18% 96%;
 
-    /* Warm stone */
-    --secondary: 40 14% 92%;
-    --secondary-foreground: 210 18% 13%;
+    /* Warm stone — warmer */
+    --secondary: 38 16% 93%;
+    --secondary-foreground: 210 20% 11%;
 
-    --muted: 40 10% 90%;
-    --muted-foreground: 210 8% 46%;
+    --muted: 38 12% 90%;
+    --muted-foreground: 210 10% 42%;
 
-    /* Muted highland gold */
-    --accent: 40 55% 48%;
-    --accent-foreground: 210 18% 10%;
+    /* Highland gold — richer, more saturated */
+    --accent: 38 62% 46%;
+    --accent-foreground: 210 20% 8%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 40 10% 86%;
-    --input: 40 10% 86%;
-    --ring: 160 35% 16%;
+    --border: 38 12% 88%;
+    --input: 38 12% 88%;
+    --ring: 158 38% 14%;
 
-    --radius: 0.25rem;
+    --radius: 0.125rem;
 
-    /* Heritage tokens */
-    --dark-section: 210 20% 10%;
-    --dark-section-foreground: 45 12% 92%;
-    --trust-badge: 160 28% 22%;
-    --cta-gradient-from: 40 55% 48%;
-    --cta-gradient-to: 34 50% 42%;
-    --hero-overlay: 210 22% 8%;
-    --heritage-green: 160 35% 16%;
-    --heritage-charcoal: 210 18% 13%;
-    --highland-gold: 40 55% 48%;
-    --highland-gold-light: 40 40% 72%;
-    --tartan-line: 160 25% 30%;
-    --tartan-accent: 0 45% 35%;
-    --warm-stone: 35 18% 88%;
+    /* Heritage tokens — refined */
+    --dark-section: 210 22% 8%;
+    --dark-section-foreground: 42 14% 93%;
+    --trust-badge: 158 30% 20%;
+    --cta-gradient-from: 38 62% 46%;
+    --cta-gradient-to: 32 55% 40%;
+    --hero-overlay: 210 24% 6%;
+    --heritage-green: 158 38% 14%;
+    --heritage-charcoal: 210 20% 11%;
+    --highland-gold: 38 62% 46%;
+    --highland-gold-light: 38 42% 70%;
+    --tartan-line: 158 25% 28%;
+    --tartan-accent: 0 40% 32%;
+    --warm-stone: 34 20% 87%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -95,16 +95,20 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.015em;
+    line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   /* Selection color */
@@ -116,7 +120,7 @@
 
 @layer components {
   .section-padding {
-    @apply px-5 py-16 md:px-8 md:py-24 lg:px-16 lg:py-32;
+    @apply px-6 py-20 md:px-10 md:py-28 lg:px-20 lg:py-36;
   }
 
   .section-dark {
@@ -130,6 +134,7 @@
 
   .cta-gradient {
     background: linear-gradient(135deg, hsl(var(--cta-gradient-from)), hsl(var(--cta-gradient-to)));
+    box-shadow: 0 4px 20px -4px hsl(var(--highland-gold) / 0.35);
   }
 
   .text-balance {
@@ -256,14 +261,15 @@
      PREMIUM CARD SYSTEM
      ────────────────────────────────────── */
   .card-premium {
-    @apply bg-card border border-border rounded-sm relative overflow-hidden;
-    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    @apply bg-card border border-border rounded-none relative overflow-hidden;
+    transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-premium:hover {
-    border-color: hsl(var(--highland-gold) / 0.3);
-    box-shadow: 0 8px 32px -8px hsl(var(--heritage-charcoal) / 0.08),
-                0 0 0 1px hsl(var(--highland-gold) / 0.08);
-    transform: translateY(-2px);
+    border-color: hsl(var(--highland-gold) / 0.35);
+    box-shadow: 0 16px 48px -12px hsl(var(--heritage-charcoal) / 0.1),
+                0 0 0 1px hsl(var(--highland-gold) / 0.1);
+    transform: translateY(-3px);
   }
   .card-premium::after {
     content: '';
@@ -272,8 +278,8 @@
     left: 0;
     width: 2px;
     height: 0;
-    background: hsl(var(--highland-gold));
-    transition: height 0.4s ease;
+    background: linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0.3));
+    transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-premium:hover::after {
     height: 100%;
@@ -283,7 +289,7 @@
      EYEBROW / LABEL STYLE
      ────────────────────────────────────── */
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+    @apply text-[11px] font-semibold uppercase tracking-[0.25em] text-accent;
     font-family: 'DM Sans', system-ui, sans-serif;
   }
 
@@ -291,7 +297,7 @@
      SECTION HEADING PATTERN
      ────────────────────────────────────── */
   .section-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-[1.08] tracking-tight;
   }
 
   /* ──────────────────────────────────────
@@ -305,12 +311,13 @@
 
   /* Card lift on hover — reusable */
   .card-lift {
-    @apply transition-all duration-300;
+    @apply transition-all duration-500;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-lift:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 36px -8px hsl(var(--heritage-charcoal) / 0.07),
-                0 0 0 1px hsl(var(--highland-gold) / 0.06);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px -12px hsl(var(--heritage-charcoal) / 0.08),
+                0 0 0 1px hsl(var(--highland-gold) / 0.08);
   }
 
   /* Image reveal on scroll — clip-path */

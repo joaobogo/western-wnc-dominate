@@ -70,7 +70,7 @@ const ProofStrip = () => {
         <StaggerContainer stagger={0.07} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
           {pillars.map((pillar) => (
             <StaggerItem key={pillar.title} variant="rise">
-              <div className="group relative bg-card border border-border rounded-sm p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift overflow-hidden h-full">
+              <div className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.3)] card-lift overflow-hidden h-full">
                 {/* Stat watermark */}
                 <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
                   {pillar.stat}
@@ -89,10 +89,10 @@ const ProofStrip = () => {
                     <pillar.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
 
-                  <h3 className="text-sm font-heading font-semibold text-foreground mb-2 leading-snug">
+                  <h3 className="text-sm font-heading font-bold text-foreground mb-2.5 leading-snug tracking-tight">
                     {pillar.title}
                   </h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-4">
+                  <p className="text-muted-foreground text-[13px] leading-[1.7] font-body mb-5">
                     {pillar.copy}
                   </p>
 
