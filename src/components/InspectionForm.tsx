@@ -89,10 +89,10 @@ const InspectionForm = () => {
               </p>
               <div className="space-y-5">
                 {[
-                  { icon: Clock, text: "We respond within 24 hours" },
-                  { icon: MapPin, text: "Serving all of Western North Carolina" },
-                  { icon: Award, text: "CertainTeed Master Shingle Applicator" },
-                  { icon: Shield, text: "Licensed, insured & warranty-backed" },
+                  { icon: Clock, text: "Personal response within 24 hours — not an auto-reply" },
+                  { icon: MapPin, text: "We serve every community in Western North Carolina" },
+                  { icon: Award, text: "CertainTeed Master Shingle Applicator certified" },
+                  { icon: Shield, text: "Fully licensed, insured & warranty-backed" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-sm bg-dark-section-foreground/5 flex items-center justify-center flex-shrink-0">
@@ -136,9 +136,10 @@ const InspectionForm = () => {
                       className={inputClasses("name")}
                       placeholder="First & last name"
                     />
+                    <p className="text-dark-section-foreground/15 text-[10px] font-body mt-1.5">So we know who we're speaking with.</p>
                   </div>
                   <div>
-                    <label htmlFor="phone" className={labelClasses}>Phone Number</label>
+                    <label htmlFor="phone" className={labelClasses}>Best Phone Number</label>
                     <input
                       id="phone" type="tel" required maxLength={20}
                       value={formData.phone}
@@ -148,13 +149,14 @@ const InspectionForm = () => {
                       className={inputClasses("phone")}
                       placeholder="(828) 555-1234"
                     />
+                    <p className="text-dark-section-foreground/15 text-[10px] font-body mt-1.5">We'll call — never text spam.</p>
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="mb-5">
                   <label htmlFor="email" className={labelClasses}>
-                    Email Address <span className="text-dark-section-foreground/20 normal-case tracking-normal font-normal">— optional</span>
+                    Email Address <span className="text-dark-section-foreground/20 normal-case tracking-normal font-normal">— for your written proposal</span>
                   </label>
                   <input
                     id="email" type="email" maxLength={255}
@@ -170,7 +172,7 @@ const InspectionForm = () => {
                 {/* Town + Project Type */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                   <div>
-                    <label htmlFor="town" className={labelClasses}>Property Location</label>
+                    <label htmlFor="town" className={labelClasses}>Where Is Your Property?</label>
                     <select
                       id="town" required value={formData.town}
                       onChange={(e) => setFormData({ ...formData, town: e.target.value })}
@@ -190,7 +192,7 @@ const InspectionForm = () => {
                     </select>
                   </div>
                   <div>
-                    <label htmlFor="projectType" className={labelClasses}>Project Type</label>
+                    <label htmlFor="projectType" className={labelClasses}>What Are You Looking to Do?</label>
                     <select
                       id="projectType" required value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
@@ -224,7 +226,7 @@ const InspectionForm = () => {
                 {/* Timeline */}
                 <div className="mb-5">
                   <label htmlFor="timeline" className={labelClasses}>
-                    Desired Timeline <span className="text-dark-section-foreground/20 normal-case tracking-normal font-normal">— optional</span>
+                    When Would You Like to Begin? <span className="text-dark-section-foreground/20 normal-case tracking-normal font-normal">— helps us plan</span>
                   </label>
                   <select
                     id="timeline" value={formData.timeline}
@@ -245,7 +247,7 @@ const InspectionForm = () => {
                 {/* Details */}
                 <div className="mb-8">
                   <label htmlFor="details" className={labelClasses}>
-                    Additional Details <span className="text-dark-section-foreground/20 normal-case tracking-normal font-normal">— optional</span>
+                    Anything Else We Should Know? <span className="text-dark-section-foreground/20 normal-case tracking-normal font-normal">— the more context, the better</span>
                   </label>
                   <textarea
                     id="details" rows={3} maxLength={1000}
@@ -254,7 +256,7 @@ const InspectionForm = () => {
                     onFocus={() => setFocusedField("details")}
                     onBlur={() => setFocusedField(null)}
                     className={`${inputClasses("details")} resize-none`}
-                    placeholder="Property details, concerns, access notes, or questions for our team…"
+                    placeholder="Age of roof, property access details, specific concerns, or anything you'd want us to know before calling…"
                   />
                 </div>
 
@@ -264,13 +266,13 @@ const InspectionForm = () => {
                   className="w-full cta-gradient text-accent-foreground font-heading font-bold text-base py-4 rounded-sm flex items-center justify-center gap-2.5 hover:opacity-90 transition-opacity relative overflow-hidden group tracking-wide"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Request a Project Consultation</span>
+                  <span className="relative">Start a Project Conversation</span>
                   <ArrowRight className="w-4 h-4 relative" />
                 </button>
 
                 {/* Bottom microcopy */}
                 <p className="text-center text-dark-section-foreground/25 text-[11px] font-body mt-4">
-                  No obligation · No spam · Your information stays private
+                  No obligation · No sales pressure · Your information is never shared
                 </p>
               </form>
             </motion.div>
