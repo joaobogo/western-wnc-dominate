@@ -34,30 +34,30 @@ const StickyMobileCTA = () => {
             <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-[0_-8px_32px_-12px_hsl(var(--heritage-charcoal)/0.12)]">
               {/* Two-column layout: primary CTA + secondary actions */}
               <div className="flex items-stretch">
-                {/* Primary CTA — full gold */}
+                {/* Primary CTA — full gold, generous touch target */}
                 <Link
                   to="/request-inspection"
-                  className="flex-1 flex items-center justify-center gap-2 py-4 px-3 cta-gradient text-accent-foreground active:opacity-90 active:scale-[0.98] transition-all"
+                  className="flex-1 flex items-center justify-center gap-2 py-[14px] px-3 cta-gradient text-accent-foreground active:opacity-90 active:scale-[0.98] transition-all min-h-[52px]"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span className="text-[11px] font-heading font-bold uppercase tracking-[0.08em]">Start Project</span>
                 </Link>
 
-                {/* Secondary actions */}
+                {/* Secondary actions — 48px min tap targets */}
                 <div className="flex items-stretch divide-x divide-border">
                   <a
                     href="tel:8283979211"
-                    className="flex flex-col items-center justify-center gap-0.5 px-5 py-3 text-primary active:bg-primary/5 active:scale-95 transition-all"
+                    className="flex flex-col items-center justify-center gap-1 px-5 py-3 text-primary active:bg-primary/5 active:scale-95 transition-all min-w-[60px] min-h-[52px]"
                   >
-                    <Phone className="w-4 h-4" />
-                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.08em]">Call</span>
+                    <Phone className="w-[18px] h-[18px]" />
+                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.06em]">Call</span>
                   </a>
                   <Link
                     to="/services"
-                    className="flex flex-col items-center justify-center gap-0.5 px-5 py-3 text-muted-foreground active:bg-secondary active:scale-95 transition-all"
+                    className="flex flex-col items-center justify-center gap-1 px-5 py-3 text-muted-foreground active:bg-secondary active:scale-95 transition-all min-w-[60px] min-h-[52px]"
                   >
-                    <Layers className="w-4 h-4" />
-                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.08em]">Services</span>
+                    <Layers className="w-[18px] h-[18px]" />
+                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.06em]">Services</span>
                   </Link>
                 </div>
               </div>
