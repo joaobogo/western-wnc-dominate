@@ -32,6 +32,8 @@ Updated: now
 - [Unified Content Engine Blueprint](mem://strategy/content-engine-blueprint) — Master blueprint combining all 11 content systems
 - [Lead Capture Architecture](mem://strategy/lead-capture-architecture) — Premium lead ecosystem with chatbot, smart forms, calculators, CTAs, anti-patterns
 - [Chatbot System](mem://strategy/chatbot-system) — AI project assistant with personality, 8 conversation paths, qualification, visual design
+- [Chatbot Conversation Library](mem://strategy/chatbot-conversation-library) — 11 scripted flows: welcome, routing, quote, urgency, storm, materials, area, commercial, budget, objections
+- [Quote Flow Architecture](mem://strategy/quote-flow-architecture) — 6-step premium consultation form with branching, microcopy, trust copy, confirmation UX
 - [SEO Authority Page System](mem://seo/authority-page-system) — Authority page taxonomy with structure, conversion, trust, and linking per type
 - [Location & Service Area Strategy](mem://seo/location-strategy) — Town page framework, anti-thin rules, linking network, future towns
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
