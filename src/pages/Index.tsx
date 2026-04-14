@@ -5,7 +5,7 @@ import TrustAndProof from "@/components/TrustAndProof";
 import TrustStrip from "@/components/TrustStrip";
 import ProofStrip from "@/components/ProofStrip";
 import DualPathway from "@/components/DualPathway";
-import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
 import TownGrid from "@/components/TownGrid";
 import Reviews from "@/components/Reviews";
@@ -34,8 +34,8 @@ const Index = () => {
         {/* 3. SELF-IDENTIFY — Roofing vs Construction */}
         <DualPathway />
 
-        {/* 4. VISUAL PROOF — Project showcase */}
-        <BeforeAfterGallery />
+        {/* 4. VISUAL PROOF — Featured projects */}
+        <FeaturedProjects />
 
         {/* 5. HOW WE WORK — Process = professionalism */}
         <OurProcess />
