@@ -14,6 +14,7 @@ Updated: now
 - [Visual Identity](mem://style/visual-identity) — Brand colors, fonts, and hero section styling for Mountain Authority aesthetic
 - [Motion Design](mem://style/motion-design) — Framer-motion cinematic animations and scroll indicator constraints
 - [Motion Strategy](mem://style/motion-strategy) — Full animation philosophy: easing curves, durations, scroll reveals, hover, mobile rules, performance budget
+- [Micro-Interactions](mem://style/micro-interactions) — Complete interaction system: buttons, cards, forms, tabs, accordions, division variants
 - [Loader Strategy](mem://style/loader-strategy) — Cinematic site loader with roofline assembly, mountain contour, brand reveal, skip logic
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
