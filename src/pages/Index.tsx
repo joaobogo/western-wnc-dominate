@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
+import ProofStrip from "@/components/ProofStrip";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import ServicesGrid from "@/components/ServicesGrid";
 import TownGrid from "@/components/TownGrid";
@@ -20,11 +21,14 @@ const Index = () => {
     <>
       <Header />
       <main>
-        {/* 1. HOOK — Hero + immediate credibility */}
+        {/* 1. HOOK — Hero + stat bar */}
         <Hero />
         <TrustStrip />
 
-        {/* 2. PROVE IT — Project proof before anything else */}
+        {/* 2. PROVE SUBSTANCE — Why we're different */}
+        <ProofStrip />
+
+        {/* 3. VISUAL PROOF — Project showcase */}
         <BeforeAfterGallery />
 
         {/* 3. WHAT WE DO — Dual roofing + construction */}
