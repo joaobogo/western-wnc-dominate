@@ -13,11 +13,9 @@ import MeetTheTeam from "@/components/MeetTheTeam";
 import Reviews from "@/components/Reviews";
 import SilentObjections from "@/components/SilentObjections";
 import ValueProposition from "@/components/ValueProposition";
-import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
 import BuiltForWNC from "@/components/BuiltForWNC";
 import TownGrid from "@/components/TownGrid";
 import BlogInsights from "@/components/BlogInsights";
-import InstagramGrid from "@/components/InstagramGrid";
 import InspectionForm from "@/components/InspectionForm";
 import CTABlock from "@/components/CTABlock";
 import Footer from "@/components/Footer";
@@ -47,44 +45,50 @@ const Index = () => {
       />
       <Header />
       <main>
-        {/* ═══ ACT I: HOOK & CREDIBILITY ═══ */}
+        {/* ═══ ACT I: HOOK ═══ */}
         <Hero />
+
+        {/* ═══ ACT II: PROOF ═══ */}
         <TrustStrip />
         <ProofStrip />
 
         <SectionDivider variant="diamond" />
 
-        {/* ═══ ACT II: IDENTITY & SCOPE ═══ */}
+        {/* ═══ ACT III: ROOFING vs CONSTRUCTION SPLIT ═══ */}
         <DualPathway />
-        <NotJustRoofing />
 
-        {/* ═══ ACT III: PROOF & SERVICES ═══ */}
-        <FeaturedProjects />
-        <ServicesGrid />
+        {/* ═══ ACT IV: WHY HIGHLANDER ═══ */}
+        <ValueProposition />
+        <SilentObjections />
 
         <SectionDivider variant="heritage-bar" />
 
-        {/* ═══ ACT IV: TRUST & PROCESS ═══ */}
+        {/* ═══ ACT V: FEATURED SERVICES ═══ */}
+        <ServicesGrid />
+        <NotJustRoofing />
+
+        {/* ═══ ACT VI: PROCESS ═══ */}
         <OurProcess />
-        <MeetTheTeam />
-        <Reviews />
 
         <SectionDivider variant="diamond" />
 
-        {/* ═══ ACT V: OBJECTIONS & AUTHORITY ═══ */}
-        <SilentObjections />
-        <ValueProposition />
-        <BuiltForWNC />
-        <TownGrid />
+        {/* ═══ ACT VII: FEATURED PROJECTS ═══ */}
+        <FeaturedProjects />
+
+        {/* ═══ ACT VIII: TEAM PREVIEW ═══ */}
+        <MeetTheTeam />
 
         <SectionDivider variant="gold-fade" />
 
-        {/* ═══ ACT VI: ENGAGE & EDUCATE ═══ */}
-        <RoofDesignerCTA />
+        {/* ═══ ACT IX: BLOG PREVIEW ═══ */}
         <BlogInsights />
-        <InstagramGrid />
 
-        {/* ═══ ACT VII: CONVERT ═══ */}
+        {/* ═══ ACT X: TRUST ═══ */}
+        <Reviews />
+        <BuiltForWNC />
+        <TownGrid />
+
+        {/* ═══ ACT XI: CLOSING CTA ═══ */}
         <InspectionForm />
         <CTABlock />
       </main>
