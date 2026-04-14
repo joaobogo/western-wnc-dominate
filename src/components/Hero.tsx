@@ -130,15 +130,15 @@ const Hero = () => {
             </motion.h1>
           </div>
 
-          {/* Subtext — mobile-optimized */}
+          {/* Subtext — premium authority positioning */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1 }}
             className="text-[14px] md:text-lg text-primary-foreground/45 max-w-lg mb-10 md:mb-12 leading-[1.7] font-body"
           >
-            500+ mountain roofs installed. Licensed GC. CertainTeed Master Applicator.
-            The same crews, the same standard — whether it's a standing seam roof or a full home renovation.
+            500+ roofs across Western NC. Licensed General Contractor. CertainTeed Master Applicator.
+            One company for your roof, your renovation, and your peace of mind — built for these mountains.
           </motion.p>
 
           {/* CTA Group — mobile: full-width stacked, larger touch targets */}

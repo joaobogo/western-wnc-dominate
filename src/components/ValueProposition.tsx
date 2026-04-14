@@ -32,14 +32,15 @@ const ValueProposition = () => {
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
               <p className="text-dark-section-foreground/55 text-sm md:text-base leading-relaxed font-body mb-4">
-                A lower quote almost always means lower-grade materials, less experienced crews, and
-                warranties that won't hold up when you actually need them. The real cost shows up
-                two winters later — in leaks, callbacks, and another round of repairs.
+                A lower number on paper almost always means lower-grade underlayment, less experienced 
+                crews, and warranty language that won't hold up when you actually need it. The real cost 
+                shows up two winters later — in ice dam leaks, flashing failures, and another round of repairs.
               </p>
               <p className="text-dark-section-foreground/55 text-sm md:text-base leading-relaxed font-body">
-                Highlander builds for the next 30 years, not the next inspection. We invest in certified 
-                materials, documented processes, and workmanship that doesn't need to be redone. 
-                That's not a higher price — it's a lower cost of ownership.
+                Highlander builds for the next 30 years, not the next inspection. We specify materials 
+                certified for your elevation and climate zone, document every phase of work, and stand behind 
+                craftsmanship that doesn't need to be redone. That's not a higher price — it's a lower 
+                total cost of ownership.
               </p>
             </motion.div>
 

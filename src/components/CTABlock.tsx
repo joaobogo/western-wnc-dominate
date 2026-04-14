@@ -49,15 +49,15 @@ const CTABlock = () => {
 
             <HeadingReveal delay={0.1}>
               <h2 className="text-3xl md:text-[2.75rem] lg:text-5xl font-heading font-bold mb-7 leading-[1.08] tracking-[-0.02em]">
-                Your Property Deserves<br className="hidden md:block" /> a Team That Shows Up.
+                Stop Comparing Quotes.<br className="hidden md:block" /> Start Choosing a Partner.
               </h2>
             </HeadingReveal>
 
             <ScrollReveal variant="rise-subtle" delay={0.3}>
               <p className="text-dark-section-foreground/40 text-base md:text-lg max-w-xl mx-auto mb-14 font-body leading-[1.8]">
-                One phone call. One honest assessment. One team that handles everything from ridge cap 
-                to renovation — with the same precision, the same accountability, and the same 
-                commitment to getting it right the first time.
+                The right contractor doesn't just give you a price — they protect your investment, 
+                manage every detail, and deliver work that holds up for decades. That conversation 
+                starts with one phone call.
               </p>
             </ScrollReveal>
 
