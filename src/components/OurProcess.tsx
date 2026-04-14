@@ -1,36 +1,54 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, Ruler, HardHat, FileCheck } from "lucide-react";
+import { Phone, Search, FileText, Layers, HardHat, CheckCircle, Shield } from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    icon: ClipboardCheck,
-    title: "Consultation & Site Assessment",
-    description: "We walk your property, document conditions, take measurements, and discuss your goals — roofing, construction, or both.",
+    icon: Phone,
+    title: "Initial Consultation",
+    description: "We listen first. Tell us about your project, your concerns, and your timeline — we'll outline next steps clearly.",
   },
   {
     number: "02",
-    icon: Ruler,
-    title: "Detailed Proposal & Material Selection",
-    description: "You receive a written scope of work, material options with samples, timeline, and transparent pricing. No surprises.",
+    icon: Search,
+    title: "On-Site Assessment",
+    description: "Our team walks every inch of your property — documenting conditions, taking precise measurements, and photographing key areas.",
   },
   {
     number: "03",
-    icon: HardHat,
-    title: "Precision Execution",
-    description: "Our crews follow documented procedures, protect your property, and maintain daily communication. We don't cut corners.",
+    icon: FileText,
+    title: "Scope & Proposal",
+    description: "You receive a detailed written proposal: full scope of work, realistic timeline, material specifications, and transparent pricing.",
   },
   {
     number: "04",
-    icon: FileCheck,
-    title: "Final Walkthrough & Warranty",
-    description: "We inspect every detail with you, document the completed work, and deliver your full warranty package.",
+    icon: Layers,
+    title: "Material & Design Alignment",
+    description: "We present material samples, color options, and product data so every decision is informed — no guesswork, no regrets.",
+  },
+  {
+    number: "05",
+    icon: HardHat,
+    title: "Precision Execution",
+    description: "Our crews follow documented procedures, protect your landscaping and property, and maintain daily communication throughout the build.",
+  },
+  {
+    number: "06",
+    icon: CheckCircle,
+    title: "Quality Review & Walkthrough",
+    description: "Before we call it done, we inspect every detail with you. If it doesn't meet our standard, it doesn't meet yours.",
+  },
+  {
+    number: "07",
+    icon: Shield,
+    title: "Warranty & Completion",
+    description: "You receive complete documentation — warranty certificates, material records, maintenance guidance, and direct access to our team.",
   },
 ];
 
 const OurProcess = () => {
   return (
-    <section className="section-padding bg-background tartan-bg">
+    <section className="section-padding bg-secondary/40">
       <div className="container-tight">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -47,33 +65,54 @@ const OurProcess = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-5">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="relative"
-            >
-              {/* Connector line (desktop) */}
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-border z-0" style={{ width: 'calc(100% - 2.5rem)' }} />
-              )}
-              
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-2xl leading-none">{step.number}</span>
-                  <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center">
-                    <step.icon className="w-4 h-4 text-primary" />
+        {/* Timeline layout */}
+        <div className="relative">
+          {/* Vertical center line — desktop only */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
+
+          <div className="space-y-6 md:space-y-0">
+            {steps.map((step, i) => {
+              const isLeft = i % 2 === 0;
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  className={`relative md:flex md:items-start md:gap-8 md:py-6 ${
+                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
+                >
+                  {/* Content card */}
+                  <div className={`md:w-[calc(50%-2rem)] ${isLeft ? "md:text-right" : "md:text-left"}`}>
+                    <div className="bg-card border border-border rounded-sm p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <div className={`flex items-center gap-3 mb-3 ${isLeft ? "md:justify-end" : ""}`}>
+                        <div className="w-9 h-9 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <step.icon className="w-4 h-4 text-primary" />
+                        </div>
+                        <h3 className="text-base font-heading font-semibold text-foreground">{step.title}</h3>
+                      </div>
+                      <p className="text-muted-foreground text-sm leading-relaxed font-body">{step.description}</p>
+                    </div>
                   </div>
-                </div>
-                <h3 className="text-base font-heading font-semibold text-foreground mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">{step.description}</p>
-              </div>
-            </motion.div>
-          ))}
+
+                  {/* Center node — desktop */}
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-6 w-10 h-10 rounded-full bg-primary text-primary-foreground items-center justify-center z-10">
+                    <span className="font-heading font-bold text-xs">{step.number}</span>
+                  </div>
+
+                  {/* Mobile number badge */}
+                  <div className="md:hidden absolute -left-1 top-5 w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+                    <span className="font-heading font-bold text-[10px]">{step.number}</span>
+                  </div>
+
+                  {/* Spacer for opposite side */}
+                  <div className="hidden md:block md:w-[calc(50%-2rem)]" />
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
