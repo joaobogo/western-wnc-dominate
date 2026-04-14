@@ -46,10 +46,10 @@ const Index = () => {
         {/* 7. SOCIAL PROOF — Reviews close the trust gap */}
         <Reviews />
 
-        {/* 8. VALUE — Quality over price */}
-        <ValueProposition />
+        {/* 9. TRUST & PROOF — Credentials + reviews + warranty */}
+        <TrustAndProof />
 
-        {/* 7. WHAT WE DO — Featured services */}
+        {/* 10. WHAT WE DO — Featured services */}
         <ServicesGrid />
 
         {/* 8. INTERACTIVE TOOLS — Engagement + lead capture */}
