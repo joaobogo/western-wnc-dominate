@@ -21,6 +21,7 @@ Updated: now
 - [Conversion Architecture](mem://strategy/conversion-architecture) — Mobile-first lead capture, sticky CTA, and interactive lead magnets
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
 - [Visual Proof Strategy](mem://strategy/visual-proof-strategy) — Photography direction, content modules, and page-level image recommendations
+- [Proof Architecture](mem://strategy/proof-architecture) — How proof layers across every page for cumulative trust building
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
 - [Migration Strategy](mem://seo/migration-strategy) — 301 redirects and URL structure for Hibu migration
 - [Service Categories](mem://features/service-expansion) — Building Services category expansion beyond core roofing
@@ -31,3 +32,4 @@ Updated: now
 - [Data Privacy & Security](mem://security/data-privacy) — RLS, signed URLs, and rate limiting rules
 - [Roofing Division Blueprint](mem://features/roofing-division-blueprint) — Roofing ecosystem architecture and shared components
 - [Construction Division Blueprint](mem://features/construction-division-blueprint) — Construction ecosystem architecture and shared components
+- [About/Team/Trust Blueprint](mem://features/about-team-trust-blueprint) — Unified blueprint for About, Team, Certs, Reviews, Gallery, Project Detail pages
