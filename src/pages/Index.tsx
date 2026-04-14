@@ -23,6 +23,7 @@ import SiteLoader from "@/components/SiteLoader";
 import ProofMoment from "@/components/ProofMoment";
 import BuiltForWNC from "@/components/BuiltForWNC";
 import ProjectConcierge from "@/components/ProjectConcierge";
+import ProjectPathfinder from "@/components/ProjectPathfinder";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -71,7 +72,10 @@ const Index = () => {
 
         <ProofMoment variant="social" />
 
-        {/* ═══ ACT VI: LOCAL AUTHORITY — Built for WNC ═══ */}
+        {/* ═══ ACT VI: PROJECT PATHFINDER — Interactive guide ═══ */}
+        <ProjectPathfinder />
+
+        {/* ═══ ACT VII: LOCAL AUTHORITY — Built for WNC ═══ */}
         <BuiltForWNC />
 
         {/* ═══ ACT VII: PROCESS — How Highlander thinks ═══ */}
