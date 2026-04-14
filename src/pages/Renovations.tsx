@@ -8,6 +8,7 @@ import {
   DoorOpen, Paintbrush, Wrench, Bath, UtensilsCrossed, Sofa, MessageSquare
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -65,6 +66,16 @@ const faqs = [
 const Renovations = () => {
   return (
     <>
+      <SEOHead
+        title="Renovations | Kitchen, Bathroom & Whole-Home Remodeling in Western NC"
+        description="Premium renovations for Western North Carolina homes. Kitchen remodels, bathroom renovations, basement finishing, and whole-home transformations with in-house crews."
+        path="/construction/renovations"
+        jsonLd={[
+          serviceSchema({ name: "Renovations", description: "Interior renovations and remodeling for Western North Carolina homeowners.", url: "/construction/renovations" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Renovations", url: "/construction/renovations" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}
@@ -107,12 +118,12 @@ const Renovations = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3">
                 <Link to="/request-inspection" className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-[14px] md:py-[16px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Start Your Renovation</span>
+                  <span className="relative">Schedule a Project Consultation</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:+18283550093" className="group border border-primary-foreground/15 text-primary-foreground font-heading font-bold text-[14px] px-8 py-[14px] md:py-[16px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-primary-foreground/5 transition-all duration-200 tracking-wide">
+                <a href="tel:8283979211" className="group border border-primary-foreground/15 text-primary-foreground font-heading font-bold text-[14px] px-8 py-[14px] md:py-[16px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-primary-foreground/5 transition-all duration-200 tracking-wide">
                   <Phone className="w-4 h-4 opacity-60" />
-                  <span>(828) 355-0093</span>
+                  <span>(828) 397-9211</span>
                 </a>
               </motion.div>
             </div>

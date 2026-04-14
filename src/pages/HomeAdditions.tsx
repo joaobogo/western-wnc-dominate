@@ -8,6 +8,7 @@ import {
   BedDouble, Car, Sofa, Baby, MessageSquare
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -81,6 +82,16 @@ const faqs = [
 const HomeAdditions = () => {
   return (
     <>
+      <SEOHead
+        title="Home Additions | Room Additions, Expansions & Guest Suites in Western NC"
+        description="Premium home additions for Western North Carolina. Guest suites, in-law apartments, room expansions, and second-story additions that integrate seamlessly with your existing home."
+        path="/construction/additions"
+        jsonLd={[
+          serviceSchema({ name: "Home Additions", description: "Home additions and expansions for Western North Carolina homeowners.", url: "/construction/additions" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Home Additions", url: "/construction/additions" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}

@@ -8,6 +8,7 @@ import {
   ClipboardCheck, Layers
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -87,6 +88,16 @@ const faqs = [
 const OutdoorLiving = () => {
   return (
     <>
+      <SEOHead
+        title="Outdoor Living | Covered Porches, Decks, Screened Rooms & Pavilions in WNC"
+        description="Premium outdoor living spaces for Western North Carolina. Covered porches, screened rooms, decks, pavilions, and outdoor kitchens designed for mountain weather and mountain life."
+        path="/construction/outdoor-living"
+        jsonLd={[
+          serviceSchema({ name: "Outdoor Living", description: "Premium outdoor living construction for Western North Carolina homeowners.", url: "/construction/outdoor-living" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Outdoor Living", url: "/construction/outdoor-living" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}
