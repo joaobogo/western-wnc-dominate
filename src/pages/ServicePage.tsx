@@ -8,12 +8,12 @@ import InspectionForm from "@/components/InspectionForm";
 import { getServiceBySlug, services } from "@/data/services";
 import { towns } from "@/data/towns";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { getDivisionTheme } from "@/lib/division-theme";
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
   
-  // Handle both /services/:slug and /commercial-roofing, /commercial-maintenance routes
   const resolvedSlug = slug || location.pathname.replace("/", "");
   const service = getServiceBySlug(resolvedSlug);
 
@@ -30,19 +30,35 @@ const ServicePage = () => {
     );
   }
 
+  const theme = getDivisionTheme(service.division);
+  const DivisionIcon = theme.icon;
   const otherServices = services.filter(s => s.slug !== resolvedSlug).slice(0, 3);
 
   return (
     <>
       <Header />
       <main>
+        {/* Division accent line */}
+        <div className={`h-[3px] w-full ${theme.heroAccentLine}`} />
+
         {/* Hero */}
         <section className="section-padding section-dark pt-32 md:pt-40">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">
-                {resolvedSlug.includes("commercial") ? "Commercial Services" : resolvedSlug === "outdoor-living" || resolvedSlug === "construction-services" ? "Building Services" : resolvedSlug === "gutters" ? "Exterior Services" : "Residential Services"}
-              </p>
+              {/* Division badge */}
+              <div className="flex items-center gap-2.5 mb-5">
+                <div className={`w-8 h-8 rounded-sm flex items-center justify-center ${theme.badgeBgClass}`}>
+                  <DivisionIcon className={`w-4 h-4 ${theme.badgeTextClass}`} />
+                </div>
+                <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.15em] ${theme.badgeTextClass}`}>
+                  {theme.label}
+                </span>
+                <span className="text-dark-section-foreground/30 text-[10px] font-body">—</span>
+                <span className="text-dark-section-foreground/40 text-[10px] font-body italic tracking-wide">
+                  {theme.tagline}
+                </span>
+              </div>
+
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-balance">
                 {service.headline}
               </h1>
@@ -77,7 +93,7 @@ const ServicePage = () => {
                 <ul className="space-y-3">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle className={`w-5 h-5 mt-0.5 flex-shrink-0 ${theme.checkClass}`} />
                       <span className="text-foreground">{feature}</span>
                     </li>
                   ))}
@@ -122,13 +138,21 @@ const ServicePage = () => {
           <div className="container-tight">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-8 text-center">Other Services</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {otherServices.map((s) => (
-                <Link key={s.slug} to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(s.slug) ? `/${s.slug}` : `/services/${s.slug}`} className="group bg-card border border-border rounded-lg p-6 hover:border-primary/30 hover:shadow-lg transition-all">
-                  <s.icon className="w-8 h-8 text-primary mb-3" />
-                  <h3 className="font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn More <ArrowRight className="w-4 h-4" /></span>
-                </Link>
-              ))}
+              {otherServices.map((s) => {
+                const sTheme = getDivisionTheme(s.division);
+                return (
+                  <Link key={s.slug} to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(s.slug) ? `/${s.slug}` : `/services/${s.slug}`} className={`group bg-card border border-border rounded-lg p-6 ${sTheme.borderHoverClass} hover:shadow-lg transition-all`}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <s.icon className={`w-8 h-8 ${sTheme.accentClass}`} />
+                      <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.12em] ${sTheme.badgeTextClass} opacity-60`}>
+                        {sTheme.label}
+                      </span>
+                    </div>
+                    <h3 className="font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+                    <span className={`${sTheme.accentClass} text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>Learn More <ArrowRight className="w-4 h-4" /></span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
