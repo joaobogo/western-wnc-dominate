@@ -1,42 +1,38 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const RoofDesignerCTA = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-primary/5 via-background to-accent/5 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
-      </div>
-
+    <section className="section-padding bg-secondary tartan-bg relative overflow-hidden">
       <div className="container-tight relative z-10">
         <motion.div
           className="max-w-3xl mx-auto text-center"
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            Try It Free — No Sign-Up Required
-          </span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-sm bg-primary/8 text-primary text-xs font-body font-semibold uppercase tracking-[0.15em] mb-6">
+            <Sparkles className="w-3.5 h-3.5" />
+            Interactive Tool — No Sign-Up Required
+          </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4 text-balance">
-            See Your New Roof <span className="text-primary">Before</span> You Install It
+          <h2 className="section-heading mb-4 text-balance">
+            Visualize Your New Roof <span className="text-accent">Before</span> Installation
           </h2>
 
-          <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-            Upload a photo of your home, choose your roof style and color, and get an instant AI-powered preview.
+          <p className="text-base text-muted-foreground mb-8 max-w-lg mx-auto font-body">
+            Upload a photo of your property, select a roofing material and color, and preview the result instantly.
           </p>
 
-          <Link to="/roof-designer">
-            <Button size="lg" className="gap-2 cta-gradient text-accent-foreground border-0 font-semibold text-base px-8 py-6 hover:scale-[1.03] active:scale-[0.97] transition-transform">
-              Try the Virtual Roof Designer
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+          <Link
+            to="/roof-designer"
+            className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative">Try the Virtual Roof Designer</span>
+            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
       </div>
