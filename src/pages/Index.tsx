@@ -21,6 +21,7 @@ import BuiltForWNC from "@/components/BuiltForWNC";
 import BlogInsights from "@/components/BlogInsights";
 import MeetTheTeam from "@/components/MeetTheTeam";
 import SilentObjections from "@/components/SilentObjections";
+import NotJustRoofing from "@/components/NotJustRoofing";
 
 const Index = () => {
   return (
@@ -37,7 +38,10 @@ const Index = () => {
         {/* 3. SELF-IDENTIFY — Roofing vs Construction */}
         <DualPathway />
 
-        {/* 4. VISUAL PROOF — Featured projects */}
+        {/* 4. EVOLUTION STORY — Not just roofing */}
+        <NotJustRoofing />
+
+        {/* 5. VISUAL PROOF — Featured projects */}
         <FeaturedProjects />
 
         {/* 5. HOW WE WORK — Process = professionalism */}
