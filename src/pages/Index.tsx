@@ -11,28 +11,45 @@ import CTABlock from "@/components/CTABlock";
 import InspectionForm from "@/components/InspectionForm";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import RoofCostEstimator from "@/components/RoofCostEstimator";
-import RoofAssessmentQuiz from "@/components/RoofAssessmentQuiz";
 import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
+import OurProcess from "@/components/OurProcess";
 
 const Index = () => {
   return (
     <>
       <Header />
       <main>
+        {/* 1. HOOK — Hero + immediate credibility */}
         <Hero />
         <TrustStrip />
+
+        {/* 2. PROVE IT — Project proof before anything else */}
         <BeforeAfterGallery />
-        <RoofDesignerCTA />
+
+        {/* 3. WHAT WE DO — Dual roofing + construction */}
         <ServicesGrid />
-        <GuideLeadMagnet variant="banner" guide="storm" />
-        <TownGrid />
-        <RoofCostEstimator />
+
+        {/* 4. HOW WE WORK — Process = professionalism */}
+        <OurProcess />
+
+        {/* 5. WHY US — Differentiation pillars */}
         <WhyChooseUs />
-        <RoofAssessmentQuiz />
+
+        {/* 6. SOCIAL PROOF — Reviews close the trust gap */}
         <Reviews />
+
+        {/* 7. INTERACTIVE TOOLS — Engagement + lead capture */}
+        <RoofDesignerCTA />
+        <GuideLeadMagnet variant="banner" guide="storm" />
+
+        {/* 8. LOCAL AUTHORITY — We know your town */}
+        <TownGrid />
+
+        {/* 9. VISUAL PROOF — Field work gallery */}
         <InstagramGrid />
+
+        {/* 10. CONVERT — Form + final CTA */}
         <InspectionForm />
         <CTABlock />
       </main>
