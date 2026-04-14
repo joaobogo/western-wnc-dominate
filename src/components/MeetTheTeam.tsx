@@ -59,10 +59,13 @@ const MeetTheTeam = () => {
                   where the owner answers the phone, walks your property, and personally signs off on 
                   every completed project.
                 </p>
-                <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body mb-8">
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body mb-4">
                   Every crew member is trained, vetted, and accountable to the same standard. When you 
                   hire Highlander, you know the names of the people on your property — and you know 
                   exactly who to call if you have a question.
+                </p>
+                <p className="text-foreground/70 text-sm font-body font-medium italic mb-8">
+                  "Our reputation rides on every roof, every renovation, every handshake."
                 </p>
                 <Link
                   to="/about"
@@ -84,11 +87,12 @@ const MeetTheTeam = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + i * 0.12, duration: 0.5, ease: HIGHLAND_EASE }}
-                className={`group flex gap-4 md:gap-5 rounded-none border overflow-hidden transition-all duration-400 ${
+                className={`group flex gap-4 md:gap-5 rounded-none border overflow-hidden transition-all duration-500 ${
                   member.featured
-                    ? "bg-card border-[hsl(var(--highland-gold)/0.25)] shadow-[0_6px_28px_-8px_hsl(var(--heritage-charcoal)/0.08)] p-0 flex-col sm:flex-row"
-                    : "bg-card/60 border-border hover:border-[hsl(var(--highland-gold)/0.15)] hover:bg-card p-4 md:p-5"
+                    ? "bg-card border-[hsl(var(--highland-gold)/0.2)] shadow-[0_6px_28px_-8px_hsl(var(--heritage-charcoal)/0.06)] p-0 flex-col sm:flex-row"
+                    : "bg-card/60 border-border hover:border-[hsl(var(--highland-gold)/0.12)] hover:bg-card hover:shadow-[0_6px_24px_-8px_hsl(var(--heritage-charcoal)/0.05)] p-4 md:p-5"
                 }`}
+                style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
               >
                 {/* Photo — featured gets editorial treatment */}
                 <div className={`flex-shrink-0 overflow-hidden ${
