@@ -4,6 +4,7 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
+import { useRef } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -51,7 +52,7 @@ const BuiltForWNC = () => {
 
             {/* Elevation callout with animated counter */}
             <ScrollReveal variant="scale" delay={0.5}>
-              <div className="mt-8 p-4 rounded-sm border border-border bg-card">
+              <div className="mt-8 p-4 rounded-none border border-border bg-card">
                 <div className="flex items-baseline gap-2 mb-1">
                   <AnimatedCounter
                     value="2,000"
@@ -71,34 +72,48 @@ const BuiltForWNC = () => {
             </ScrollReveal>
           </div>
 
-          {/* Right column — factor cards with alternating slide direction */}
+          {/* Right column — factor cards */}
           <div className="lg:col-span-3 space-y-4">
-            {factors.map((factor, i) => (
-              <motion.div
-                key={factor.title}
-                initial={{ opacity: 0, x: 24, y: 8 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ delay: i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
-                className="group flex gap-4 p-5 md:p-6 rounded-sm bg-card border border-border hover:border-primary/20 hover:shadow-sm transition-all duration-300"
-              >
+            {factors.map((factor, i) => {
+              const cardRef = useRef<HTMLDivElement>(null);
+              const handleMouseMove = (e: React.MouseEvent) => {
+                if (!cardRef.current) return;
+                const rect = cardRef.current.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                cardRef.current.style.setProperty('--mouse-x', `${x}%`);
+                cardRef.current.style.setProperty('--mouse-y', `${y}%`);
+              };
+
+              return (
                 <motion.div
-                  className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
+                  key={factor.title}
+                  ref={cardRef}
+                  onMouseMove={handleMouseMove}
+                  initial={{ opacity: 0, x: 24, y: 8 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ delay: i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
+                  className="group flex gap-4 p-5 md:p-6 rounded-none bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-sm transition-all duration-300 spotlight-hover"
                 >
-                  <factor.icon className="w-4.5 h-4.5 text-primary" />
+                  <motion.div
+                    className="w-10 h-10 rounded-none bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <factor.icon className="w-4.5 h-4.5 text-primary" />
+                  </motion.div>
+                  <div className="relative z-10">
+                    <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors duration-200">
+                      {factor.title}
+                    </h3>
+                    <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                      {factor.detail}
+                    </p>
+                  </div>
                 </motion.div>
-                <div>
-                  <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors duration-200">
-                    {factor.title}
-                  </h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
-                    {factor.detail}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import GoldLine from "@/components/motion/GoldLine";
 import HeadingReveal from "@/components/motion/HeadingReveal";
+import { useRef } from "react";
 
 const pillars = [
   {
@@ -68,47 +69,58 @@ const ProofStrip = () => {
         </div>
 
         <StaggerContainer stagger={0.07} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-          {pillars.map((pillar) => (
-            <StaggerItem key={pillar.title} variant="rise">
-              <div className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.3)] card-lift overflow-hidden h-full">
-                {/* Stat watermark */}
-                <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
-                  {pillar.stat}
-                </div>
+          {pillars.map((pillar) => {
+            const cardRef = useRef<HTMLDivElement>(null);
+            const handleMouseMove = (e: React.MouseEvent) => {
+              if (!cardRef.current) return;
+              const rect = cardRef.current.getBoundingClientRect();
+              const x = ((e.clientX - rect.left) / rect.width) * 100;
+              const y = ((e.clientY - rect.top) / rect.height) * 100;
+              cardRef.current.style.setProperty('--mouse-x', `${x}%`);
+              cardRef.current.style.setProperty('--mouse-y', `${y}%`);
+            };
 
-                {/* Gold left accent on hover */}
-                <motion.div
-                  className="absolute left-0 top-0 w-[2px] bg-[hsl(var(--highland-gold))]"
-                  initial={{ height: 0 }}
-                  whileHover={{ height: "100%" }}
-                  transition={{ duration: 0.4 }}
-                />
-
-                <div className="relative z-10">
-                  <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors duration-300">
-                    <pillar.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
+            return (
+              <StaggerItem key={pillar.title} variant="rise">
+                <div
+                  ref={cardRef}
+                  onMouseMove={handleMouseMove}
+                  className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.3)] card-lift overflow-hidden h-full spotlight-hover"
+                >
+                  {/* Stat watermark */}
+                  <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
+                    {pillar.stat}
                   </div>
 
-                  <h3 className="text-sm font-heading font-bold text-foreground mb-2.5 leading-snug tracking-tight">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-muted-foreground text-[13px] leading-[1.7] font-body mb-5">
-                    {pillar.copy}
-                  </p>
+                  {/* Gold left accent on hover */}
+                  <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-500" />
 
-                  <div className="flex items-center gap-2 pt-3 border-t border-border/60">
-                    <AnimatedCounter
-                      value={pillar.stat}
-                      className="text-base font-heading font-bold text-[hsl(var(--highland-gold))] leading-none"
-                    />
-                    <span className="text-[10px] font-body text-muted-foreground/60 uppercase tracking-[0.12em]">
-                      {pillar.statLabel}
-                    </span>
+                  <div className="relative z-10">
+                    <div className="w-9 h-9 rounded-none bg-primary/8 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors duration-300">
+                      <pillar.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+
+                    <h3 className="text-sm font-heading font-bold text-foreground mb-2.5 leading-snug tracking-tight">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-muted-foreground text-[13px] leading-[1.7] font-body mb-5">
+                      {pillar.copy}
+                    </p>
+
+                    <div className="flex items-center gap-2 pt-3 border-t border-border/60">
+                      <AnimatedCounter
+                        value={pillar.stat}
+                        className="text-base font-heading font-bold text-[hsl(var(--highland-gold))] leading-none"
+                      />
+                      <span className="text-[10px] font-body text-muted-foreground/60 uppercase tracking-[0.12em]">
+                        {pillar.statLabel}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </StaggerItem>
-          ))}
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
       </div>
     </section>

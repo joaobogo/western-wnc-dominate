@@ -53,9 +53,9 @@ const TrustAndProof = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group text-center p-5 md:p-6 bg-card border border-border rounded-sm hover:border-[hsl(var(--highland-gold)/0.2)] card-lift"
+              className="group text-center p-5 md:p-6 bg-card border border-border rounded-none hover:border-[hsl(var(--highland-gold)/0.2)] card-lift spotlight-hover"
             >
-              <div className="w-11 h-11 rounded-sm bg-primary/8 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/12 transition-colors">
+              <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/12 transition-colors">
                 <cert.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-heading font-bold text-sm text-foreground mb-0.5">{cert.label}</h3>
@@ -69,10 +69,10 @@ const TrustAndProof = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-2xl mx-auto bg-card border border-border rounded-sm p-6 md:p-8"
+          className="max-w-2xl mx-auto bg-card border border-border rounded-none p-6 md:p-8"
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
               <Handshake className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
             </div>
             <div>
@@ -91,7 +91,7 @@ const TrustAndProof = () => {
                 transition={{ delay: 0.2 + i * 0.08 }}
                 className="flex items-start gap-3"
               >
-                <div className="w-5 h-5 rounded-sm bg-primary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-5 h-5 rounded-none bg-primary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-[10px] font-heading font-bold text-primary">{i + 1}</span>
                 </div>
                 <span className="text-foreground/70 text-sm font-body leading-relaxed">{point}</span>
@@ -100,7 +100,7 @@ const TrustAndProof = () => {
           </div>
 
           {/* Warranty highlight */}
-          <div className="bg-secondary rounded-sm p-4 md:p-5 border border-border/60">
+          <div className="bg-secondary rounded-none p-4 md:p-5 border border-border/60">
             <div className="flex items-start gap-3">
               <Shield className="w-5 h-5 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-0.5" />
               <div>

@@ -3,6 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { DollarSign, Clock, Shield, MessageSquare, HardHat } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
+import GoldLine from "@/components/motion/GoldLine";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -34,6 +35,7 @@ const SilentObjections = () => {
               — and the straightforward answers you deserve.
             </p>
           </ScrollReveal>
+          <GoldLine width="3rem" centered delay={0.35} className="mt-6" />
         </div>
 
         <Accordion type="single" collapsible className="space-y-3">
@@ -47,11 +49,11 @@ const SilentObjections = () => {
             >
               <AccordionItem
                 value={`objection-${i}`}
-                className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300"
+                className="bg-card border border-border rounded-none px-5 md:px-7 data-[state=open]:border-[hsl(var(--highland-gold)/0.25)] data-[state=open]:shadow-[0_4px_20px_-6px_hsl(var(--highland-gold)/0.08)] transition-all duration-300 spotlight-hover"
               >
-                <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4 [&[data-state=open]>div>.obj-icon]:bg-primary/12 [&[data-state=open]>div>.obj-icon]:text-primary">
+                <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4 [&[data-state=open]>div>.obj-icon]:bg-[hsl(var(--highland-gold)/0.1)] [&[data-state=open]>div>.obj-icon]:text-[hsl(var(--highland-gold))]">
                   <div className="flex items-center gap-4 text-left">
-                    <div className="obj-icon w-9 h-9 rounded-sm bg-secondary flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                    <div className="obj-icon w-9 h-9 rounded-none bg-secondary flex items-center justify-center flex-shrink-0 transition-colors duration-300">
                       <item.icon className="w-4 h-4 text-muted-foreground transition-colors duration-300" />
                     </div>
                     <span className="font-heading font-semibold text-foreground text-[15px] leading-snug">

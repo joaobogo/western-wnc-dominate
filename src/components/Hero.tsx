@@ -12,17 +12,8 @@ const trustItems = [
   { icon: Clock, label: "24-Hour Response" },
 ];
 
-/* Mountain contour path — stylized WNC ridgeline */
-const mountainPath = "M0,180 Q80,120 160,145 Q220,160 300,100 Q380,40 460,80 Q520,110 600,60 Q680,10 760,50 Q840,90 920,35 Q980,0 1060,30 Q1120,55 1200,20 L1200,200 L0,200 Z";
-
-/* Roofline path — architectural gable forms */
-const rooflinePath = "M0,160 L100,80 L200,160 L280,60 L380,160 L440,90 L520,160 L620,40 L720,160 L800,70 L900,160 L980,50 L1080,160 L1200,80";
-
-/* Blueprint grid line positions */
-const gridLines = {
-  horizontal: [40, 80, 120, 160],
-  vertical: [0, 150, 300, 450, 600, 750, 900, 1050, 1200],
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
@@ -49,123 +40,12 @@ const Hero = () => {
           <source src={heroVideo} type="video/mp4" />
         </video>
 
-        {/* Cinematic overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.78)] to-[hsl(var(--hero-overlay)/0.35)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.1)] to-[hsl(var(--hero-overlay)/0.45)]" />
+        {/* Cinematic overlays — deeper, more dramatic */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.97)] via-[hsl(var(--hero-overlay)/0.82)] to-[hsl(var(--hero-overlay)/0.3)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.08)] to-[hsl(var(--hero-overlay)/0.5)]" />
 
         {/* Grain */}
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
-      </div>
-
-      {/* === ARCHITECTURAL SVG OVERLAYS === */}
-      <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-        {/* Blueprint grid — very subtle */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.025]" preserveAspectRatio="none" viewBox="0 0 1200 200">
-          {gridLines.horizontal.map((y) => (
-            <motion.line
-              key={`h-${y}`}
-              x1="0" y1={y} x2="1200" y2={y}
-              stroke="hsl(var(--highland-gold))"
-              strokeWidth="0.5"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 3, delay: 1.5 + y * 0.005, ease: "easeOut" }}
-            />
-          ))}
-          {gridLines.vertical.map((x) => (
-            <motion.line
-              key={`v-${x}`}
-              x1={x} y1="0" x2={x} y2="200"
-              stroke="hsl(var(--highland-gold))"
-              strokeWidth="0.5"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, delay: 2 + x * 0.001, ease: "easeOut" }}
-            />
-          ))}
-        </svg>
-
-        {/* Mountain contour — bottom right */}
-        <svg className="absolute bottom-0 right-0 w-[70%] h-[30%] opacity-[0.04]" preserveAspectRatio="none" viewBox="0 0 1200 200">
-          <motion.path
-            d={mountainPath}
-            fill="none"
-            stroke="hsl(var(--highland-gold))"
-            strokeWidth="1.5"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 4, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-          />
-          {/* Filled version — even more subtle */}
-          <motion.path
-            d={mountainPath}
-            fill="hsl(var(--highland-gold))"
-            fillOpacity="0.06"
-            stroke="none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 3.5 }}
-          />
-        </svg>
-
-        {/* Roofline architectural drawing — upper area */}
-        <svg className="absolute top-[15%] left-[10%] w-[50%] h-[25%] opacity-[0.03] hidden md:block" preserveAspectRatio="none" viewBox="0 0 1200 200">
-          <motion.path
-            d={rooflinePath}
-            fill="none"
-            stroke="hsl(var(--primary-foreground))"
-            strokeWidth="1"
-            strokeDasharray="4 6"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 5, delay: 2, ease: "easeOut" }}
-          />
-          {/* Measurement tick marks */}
-          {[100, 200, 280, 380, 440, 520, 620, 720, 800, 900].map((x, i) => (
-            <motion.line
-              key={x}
-              x1={x} y1="155" x2={x} y2="170"
-              stroke="hsl(var(--primary-foreground))"
-              strokeWidth="0.5"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
-              transition={{ delay: 3 + i * 0.1 }}
-            />
-          ))}
-        </svg>
-
-        {/* Angle notation — architectural detail */}
-        <svg className="absolute top-[20%] right-[15%] w-32 h-32 opacity-[0.04] hidden lg:block" viewBox="0 0 100 100">
-          <motion.path
-            d="M10,90 L50,20 L90,90"
-            fill="none"
-            stroke="hsl(var(--highland-gold))"
-            strokeWidth="0.8"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2, delay: 3 }}
-          />
-          <motion.path
-            d="M30,60 A25,25 0 0,1 42,42"
-            fill="none"
-            stroke="hsl(var(--highland-gold))"
-            strokeWidth="0.5"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1, delay: 4 }}
-          />
-          <motion.text
-            x="38" y="58"
-            fill="hsl(var(--highland-gold))"
-            fontSize="6"
-            fontFamily="monospace"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            transition={{ delay: 4.5 }}
-          >
-            22°
-          </motion.text>
-        </svg>
       </div>
 
       {/* === GOLD VERTICAL ACCENT === */}
@@ -228,37 +108,38 @@ const Hero = () => {
             </motion.span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline — stronger, more assertive */}
           <div className="overflow-hidden mb-1 md:mb-2">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.9, delay: 0.5, ease: HIGHLAND_EASE }}
               className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.02] tracking-[-0.02em]"
             >
-              Built for the Mountains.
+              Not Just Another Roofer.
             </motion.h1>
           </div>
           <div className="overflow-hidden mb-10 md:mb-12">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.9, delay: 0.65, ease: HIGHLAND_EASE }}
               className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.02] tracking-[-0.02em]"
             >
-              Crafted for Generations.
+              Not Just Another Contractor.
             </motion.h1>
           </div>
 
-          {/* Subtext */}
+          {/* Subtext — more specific, more persuasive */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1 }}
             className="text-[15px] md:text-lg text-primary-foreground/50 max-w-lg mb-12 leading-relaxed font-body"
           >
-            Expert roofing and construction across Highlands, Cashiers,
-            Franklin, Sylva & the surrounding mountain communities. Precision workmanship. Certified. Warranty-backed.
+            500+ mountain roofs installed. Licensed GC. CertainTeed Master Applicator.
+            The same crews, the same standard, whether it's a standing seam roof or a full home renovation.
+            Highlands · Cashiers · Franklin · Sylva & beyond.
           </motion.p>
 
           {/* CTA Group */}
@@ -273,7 +154,7 @@ const Hero = () => {
               className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative">Schedule a Quote Call</span>
+              <span className="relative">Get a Free Assessment</span>
               <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link

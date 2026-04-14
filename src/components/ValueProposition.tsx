@@ -50,7 +50,7 @@ const ValueProposition = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <div className="bg-dark-section-foreground/[0.04] border border-dark-section-foreground/8 rounded-sm p-6 md:p-8">
+              <div className="bg-dark-section-foreground/[0.04] border border-dark-section-foreground/8 rounded-none p-6 md:p-8">
                 <h3 className="text-base font-heading font-semibold text-dark-section-foreground mb-5">
                   What Your Investment Includes
                 </h3>
@@ -75,7 +75,7 @@ const ValueProposition = () => {
                 <div className="mt-7 pt-6 border-t border-dark-section-foreground/8">
                   <Link
                     to="/request-inspection"
-                    className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden w-full justify-center"
+                    className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden w-full justify-center"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <span className="relative">Discuss Your Project</span>

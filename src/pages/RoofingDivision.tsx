@@ -284,7 +284,7 @@ const RoofingDivision = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="flex items-center gap-3 mb-6"
               >
-                <div className="w-8 h-8 rounded-sm bg-primary/20 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-none bg-primary/20 flex items-center justify-center">
                   <Home className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">
@@ -333,7 +333,7 @@ const RoofingDivision = () => {
               >
                 <Link
                   to="/request-inspection"
-                  className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
+                  className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Roofing Consultation</span>
@@ -341,7 +341,7 @@ const RoofingDivision = () => {
                 </Link>
                 <a
                   href="tel:8283979211"
-                  className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all"
+                  className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all"
                 >
                   <Phone className="w-4 h-4" />
                   (828) 397-9211
@@ -446,7 +446,7 @@ const RoofingDivision = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="relative"
               >
-                <div className="aspect-[4/3] rounded-sm overflow-hidden">
+                <div className="aspect-[4/3] rounded-none overflow-hidden">
                   <img
                     src={cedarRoof}
                     alt="Cedar shake roof installation on a mountain home in Highlands, NC"
@@ -460,7 +460,7 @@ const RoofingDivision = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 }}
-                  className="absolute -bottom-6 -left-4 md:left-auto md:-right-6 bg-card border border-border rounded-sm p-5 shadow-lg max-w-[220px]"
+                  className="absolute -bottom-6 -left-4 md:left-auto md:-right-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[220px]"
                 >
                   <span className="text-3xl font-heading font-bold text-[hsl(var(--highland-gold))]">500+</span>
                   <p className="text-muted-foreground text-xs font-body mt-1 leading-snug">
@@ -502,13 +502,13 @@ const RoofingDivision = () => {
                 >
                   <Link
                     to={service.slug}
-                    className="group block h-full bg-card border border-border rounded-sm overflow-hidden hover:border-primary/20 card-lift"
+                    className="group block h-full bg-card border border-border rounded-none overflow-hidden hover:border-primary/20 card-lift spotlight-hover"
                   >
                     <div className="h-[2px] w-full bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.3)] to-[hsl(var(--heritage-green)/0)]" />
 
                     <div className="p-6 md:p-7 flex flex-col h-full">
                       <div className="flex items-center justify-between mb-5">
-                        <div className="w-11 h-11 rounded-sm bg-primary/8 flex items-center justify-center group-hover:bg-primary/14 transition-colors">
+                        <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center group-hover:bg-primary/14 transition-colors">
                           <service.icon className="w-5 h-5 text-primary" />
                         </div>
                         <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] text-primary/40 group-hover:text-primary/60 transition-opacity">
@@ -525,7 +525,7 @@ const RoofingDivision = () => {
 
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {service.features.map((f) => (
-                          <span key={f} className="text-[10px] font-body font-medium text-primary/60 bg-primary/5 px-2 py-0.5 rounded-sm">
+                          <span key={f} className="text-[10px] font-body font-medium text-primary/60 bg-primary/5 px-2 py-0.5 rounded-none">
                             {f}
                           </span>
                         ))}
@@ -578,9 +578,9 @@ const RoofingDivision = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.06, duration: 0.45 }}
-                    className="group p-6 md:p-7 rounded-sm border border-dark-section-foreground/6 hover:border-[hsl(var(--highland-gold)/0.15)] bg-dark-section-foreground/[0.02] hover:bg-dark-section-foreground/[0.04] transition-all duration-300"
+                    className="group p-6 md:p-7 rounded-none border border-dark-section-foreground/6 hover:border-[hsl(var(--highland-gold)/0.15)] bg-dark-section-foreground/[0.02] hover:bg-dark-section-foreground/[0.04] transition-all duration-300"
                   >
-                    <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
+                    <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.6)]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">
@@ -623,11 +623,11 @@ const RoofingDivision = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
+                  className="bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift spotlight-hover"
                 >
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-heading font-bold text-base text-foreground">{mat.name}</h3>
-                    <span className="text-[10px] font-body font-semibold text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.08)] px-2.5 py-1 rounded-sm">
+                    <span className="text-[10px] font-body font-semibold text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.08)] px-2.5 py-1 rounded-none">
                       {mat.lifespan}
                     </span>
                   </div>
@@ -678,14 +678,14 @@ const RoofingDivision = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07, duration: 0.45 }}
-                  className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
+                  className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift spotlight-hover"
                 >
                   {/* Step number watermark */}
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">
                     {step.number}
                   </span>
 
-                  <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
+                  <div className="w-10 h-10 rounded-none bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                     <step.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">
@@ -722,7 +722,7 @@ const RoofingDivision = () => {
                   Every Highlander roofing specification accounts for the actual conditions your
                   property faces — not generic manufacturer guidelines written for sea level.
                 </p>
-                <div className="p-4 rounded-sm border border-border bg-card">
+                <div className="p-4 rounded-none border border-border bg-card">
                   <span className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))]">2,000–5,000 ft</span>
                   <p className="text-muted-foreground text-xs font-body mt-1">
                     Elevation range across our service area — from Franklin's valley to Cashiers' ridgelines.
@@ -738,9 +738,9 @@ const RoofingDivision = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08, duration: 0.45 }}
-                    className="group flex gap-4 p-5 md:p-6 rounded-sm bg-card border border-border hover:border-primary/20 card-lift"
+                    className="group flex gap-4 p-5 md:p-6 rounded-none bg-card border border-border hover:border-primary/20 card-lift spotlight-hover"
                   >
-                    <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors">
+                    <div className="w-10 h-10 rounded-none bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors">
                       <factor.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
@@ -790,16 +790,16 @@ const RoofingDivision = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06, duration: 0.5 }}
-                  className="group relative aspect-[4/3] rounded-sm overflow-hidden"
+                  className="group relative aspect-[4/3] rounded-none overflow-hidden"
                 >
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-3 left-3 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">
+                  <div className="absolute top-3 left-3 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-none">
                     {item.category}
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -837,7 +837,7 @@ const RoofingDivision = () => {
                 >
                   <AccordionItem
                     value={`faq-${i}`}
-                    className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300"
+                    className="bg-card border border-border rounded-none px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300"
                   >
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
                       <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">
@@ -889,7 +889,7 @@ const RoofingDivision = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                     <Link
                       to="/request-inspection"
-                      className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide"
+                      className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide"
                     >
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                       <span className="relative">Request a Quote Call</span>
@@ -897,7 +897,7 @@ const RoofingDivision = () => {
                     </Link>
                     <a
                       href="tel:8283979211"
-                      className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all"
+                      className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all"
                     >
                       <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
                       (828) 397-9211
