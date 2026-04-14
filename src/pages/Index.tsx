@@ -41,6 +41,9 @@ const Index = () => {
         {/* 6. SOCIAL PROOF — Reviews close the trust gap */}
         <Reviews />
 
+        {/* 6.5. VALUE — Quality over price */}
+        <ValueProposition />
+
         {/* 7. WHAT WE DO — Featured services */}
         <ServicesGrid />
 
