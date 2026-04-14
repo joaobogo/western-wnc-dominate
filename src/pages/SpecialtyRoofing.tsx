@@ -7,6 +7,7 @@ import {
   BadgeCheck, Layers, Mountain, Sparkles
 } from "lucide-react";
 import Header from "@/components/Header";
+import SEOHead, { serviceSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
@@ -71,6 +72,15 @@ const processSteps = [
 const SpecialtyRoofing = () => {
   return (
     <>
+      <SEOHead
+        title="Specialty Roofing | Cedar, Copper, Standing Seam & Complex Rooflines in WNC"
+        description="Specialty roofing for custom homes and architecturally distinctive properties in Western North Carolina. Cedar shake, copper, standing seam metal, and complex roofline expertise."
+        path="/roofing/specialty"
+        jsonLd={[
+          serviceSchema({ name: "Specialty Roofing", description: "Specialty roofing for custom homes and architecturally distinctive properties across Western North Carolina.", url: "/roofing/specialty" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Specialty", url: "/roofing/specialty" }]),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}
