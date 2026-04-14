@@ -25,11 +25,11 @@ const NotJustRoofing = () => {
           <div>
             <ScrollReveal variant="fade">
               <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-8 h-8 rounded-sm bg-primary/8 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-none bg-primary/8 flex items-center justify-center">
                   <Home className="w-4 h-4 text-primary" />
                 </div>
                 <div className="w-6 h-px bg-border" />
-                <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
                   <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                 </div>
               </div>
@@ -73,7 +73,7 @@ const NotJustRoofing = () => {
 
           {/* Right — capabilities with visual treatment */}
           <ScrollReveal variant="slide-right" delay={0.15}>
-            <div className="bg-card border border-border rounded-sm overflow-hidden testimonial-hover">
+            <div className="bg-card border border-border rounded-none overflow-hidden testimonial-hover">
               {/* Header bar */}
               <div className="px-6 py-4 border-b border-border bg-secondary/30">
                 <p className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold))]">
@@ -92,7 +92,7 @@ const NotJustRoofing = () => {
                     transition={{ delay: 0.2 + i * 0.06, duration: 0.35, ease: HIGHLAND_EASE }}
                     className="group/row flex items-center gap-4 px-6 py-4 hover:bg-secondary/20 transition-colors duration-200 dropdown-item-premium"
                   >
-                    <div className="w-9 h-9 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center flex-shrink-0 group-hover/row:bg-[hsl(var(--highland-gold)/0.12)] transition-colors duration-200">
+                    <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center flex-shrink-0 group-hover/row:bg-[hsl(var(--highland-gold)/0.12)] transition-colors duration-200">
                       <cap.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)] group-hover/row:text-[hsl(var(--highland-gold))] transition-colors duration-200" />
                     </div>
                     <span className="text-sm font-body font-medium text-foreground/80 group-hover/row:text-foreground transition-colors duration-200">

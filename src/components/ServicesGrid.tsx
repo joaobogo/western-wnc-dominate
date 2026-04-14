@@ -73,7 +73,7 @@ const ServiceCard = ({ service }: { service: ServiceItem }) => {
           {/* Icon + division label row */}
           <div className="flex items-center justify-between mb-5">
             <motion.div
-              className={`w-11 h-11 rounded-sm flex items-center justify-center transition-colors duration-300 ${accent.iconBg}`}
+              className={`w-11 h-11 rounded-none flex items-center justify-center transition-colors duration-300 ${accent.iconBg}`}
               whileHover={{ scale: 1.08 }}
               transition={{ duration: 0.2 }}
             >
@@ -134,7 +134,7 @@ const ServicesGrid = () => {
         <div className="mb-10">
           <ScrollReveal variant="slide-left">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-sm bg-primary/8 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-none bg-primary/8 flex items-center justify-center">
                 <Home className="w-4 h-4 text-primary" />
               </div>
               <span className="eyebrow text-primary">Roofing Services</span>
@@ -156,7 +156,7 @@ const ServicesGrid = () => {
         <div className="mt-4">
           <ScrollReveal variant="slide-left">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
                 <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
               </div>
               <span className="eyebrow text-[hsl(var(--highland-gold))]">Building & Construction</span>

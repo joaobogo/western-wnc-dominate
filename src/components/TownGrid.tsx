@@ -40,7 +40,7 @@ const TownGrid = () => {
             <StaggerItem key={town.slug} variant="rise">
               <Link
                 to={`/service-areas/${town.slug}`}
-                className="group block bg-dark-section-foreground/4 border border-dark-section-foreground/8 rounded-sm p-4 md:p-5 hover:bg-dark-section-foreground/8 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift transition-all duration-300"
+                className="group block bg-dark-section-foreground/4 border border-dark-section-foreground/8 rounded-none p-4 md:p-5 hover:bg-dark-section-foreground/8 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift transition-all duration-300"
               >
                 <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))] mb-2 group-hover:scale-110 transition-transform duration-200" />
                 <h3 className="font-heading font-semibold text-base text-dark-section-foreground">

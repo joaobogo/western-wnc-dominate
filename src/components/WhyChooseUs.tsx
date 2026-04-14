@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="flex gap-5"
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-primary/8 flex items-center justify-center mt-0.5">
+              <div className="flex-shrink-0 w-10 h-10 rounded-none bg-primary/8 flex items-center justify-center mt-0.5">
                 <pillar.icon className="w-5 h-5 text-primary" />
               </div>
               <div>

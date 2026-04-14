@@ -81,7 +81,7 @@ const BlogInsights = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className={`text-[11px] font-body font-semibold uppercase tracking-[0.1em] px-3.5 py-1.5 rounded-sm btn-ghost-interactive ${
+                  className={`text-[11px] font-body font-semibold uppercase tracking-[0.1em] px-3.5 py-1.5 rounded-none btn-ghost-interactive ${
                     activeFilter === cat
                       ? "bg-primary text-primary-foreground"
                       : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"
@@ -110,7 +110,7 @@ const BlogInsights = () => {
             >
               <div className="p-7 md:p-9 flex flex-col h-full relative z-10">
                 <div className="flex items-center gap-3 mb-5">
-                  <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.12em] px-2.5 py-1 rounded-sm ${categoryAccent[featured.editorialCategory] || categoryAccent["Western NC News"]}`}>
+                  <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.12em] px-2.5 py-1 rounded-none ${categoryAccent[featured.editorialCategory] || categoryAccent["Western NC News"]}`}>
                     {featured.editorialCategory}
                   </span>
                   <span className="text-muted-foreground/50 text-xs font-body">
@@ -153,7 +153,7 @@ const BlogInsights = () => {
                   className="group flex gap-4 p-4 md:p-5 card-premium tartan-hover"
                 >
                   <div className="flex-1 min-w-0 relative z-10">
-                    <span className={`inline-block text-[9px] font-body font-semibold uppercase tracking-[0.12em] px-2 py-0.5 rounded-sm mb-2.5 ${categoryAccent[post.editorialCategory] || categoryAccent["Western NC News"]}`}>
+                    <span className={`inline-block text-[9px] font-body font-semibold uppercase tracking-[0.12em] px-2 py-0.5 rounded-none mb-2.5 ${categoryAccent[post.editorialCategory] || categoryAccent["Western NC News"]}`}>
                       {post.editorialCategory}
                     </span>
                     <h4 className="text-sm font-heading font-bold text-foreground leading-snug mb-1.5 group-hover:text-primary transition-colors line-clamp-2">
