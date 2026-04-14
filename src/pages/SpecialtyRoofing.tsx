@@ -89,6 +89,7 @@ const SpecialtyRoofing = () => {
         jsonLd={[
           serviceSchema({ name: "Specialty Roofing", description: "Specialty roofing for custom homes and architecturally distinctive properties across Western North Carolina.", url: "/roofing/specialty" }),
           breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Specialty", url: "/roofing/specialty" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
         ]}
       />
       <Header />
