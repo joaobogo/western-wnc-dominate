@@ -1,62 +1,83 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Shield, Hammer, MessageSquare, Mountain,
-  ClipboardCheck, Ruler, Users, type LucideIcon,
+  ClipboardCheck, Ruler, Users, Home, Clock,
+  ArrowRight, Eye, Sparkles, type LucideIcon,
 } from "lucide-react";
 
 /* ═══════════════════════════════════════════
-   TRUST DATA
+   TRUST DATA — Premium Construction Framework
+   Designed to overcome homeowner hesitation
    ═══════════════════════════════════════════ */
 
 export interface TrustPillar {
   icon: LucideIcon;
   title: string;
   detail: string;
+  /** The homeowner concern this pillar directly addresses */
+  overcomes?: string;
 }
 
 export const constructionTrustPillars: TrustPillar[] = [
   {
-    icon: Hammer,
-    title: "Craft Quality",
-    detail: "Every joint, connection, and finish is held to a standard that goes beyond code compliance. Our crews are trained, supervised, and committed to work they're proud to put their name on.",
-  },
-  {
-    icon: Shield,
-    title: "Material Integrity",
-    detail: "We specify materials rated for WNC conditions and install them to manufacturer specifications. No substitutions, no leftover inventory from other jobs, no shortcuts on what matters most.",
+    icon: ClipboardCheck,
+    title: "Project Clarity",
+    detail: "Before a single board is cut, you receive a written scope with defined deliverables, specified materials, a confirmed timeline, and line-item pricing. No vague allowances, no ambiguous language, no surprises buried in fine print. You know exactly what you're getting — and what you're paying — before you commit.",
+    overcomes: "\"I'm afraid the final cost will be way more than the estimate.\"",
   },
   {
     icon: MessageSquare,
-    title: "Transparent Communication",
-    detail: "You'll know what's happening, when, and why. Daily updates during active work, immediate notification if anything changes, and a single point of contact throughout your entire project.",
+    title: "Communication You Can Count On",
+    detail: "A single dedicated project manager who knows every detail of your scope. Daily updates during active work. Immediate notification if anything changes — with options, implications, and our recommendation. You never have to chase us for information or re-explain your project to a new person.",
+    overcomes: "\"Every contractor I've used disappears after signing the contract.\"",
+  },
+  {
+    icon: Eye,
+    title: "Planning Discipline",
+    detail: "We invest heavily in the front end — site assessment, engineering coordination, permitting, material sourcing, and detailed scheduling — so construction proceeds without the delays, change orders, and 'we didn't anticipate that' moments that derail most projects. The quality of the plan determines the quality of the build.",
+    overcomes: "\"I've heard too many stories about projects that drag on forever.\"",
+  },
+  {
+    icon: Hammer,
+    title: "Craftsmanship Standard",
+    detail: "Every joint, connection, and finish is held to a standard that goes beyond code compliance. Our crews are trained in-house, supervised daily, and committed to work they're proud to put their name on. We don't accept 'good enough' on any element — visible or hidden.",
+    overcomes: "\"How do I know the quality will actually be there?\"",
   },
   {
     icon: Mountain,
-    title: "Local Expertise",
-    detail: "We've built across Western North Carolina's unique terrain — slopes, elevations, microclimates, and soil conditions that out-of-area contractors don't anticipate until they're already behind.",
+    title: "Local Understanding",
+    detail: "We've built across Western North Carolina's unique terrain — slopes, rock, microclimates, soil conditions, and mountain-specific building requirements that out-of-area contractors don't anticipate until they're already behind schedule and over budget.",
+    overcomes: "\"Does this company actually understand mountain construction?\"",
   },
   {
-    icon: ClipboardCheck,
-    title: "Project Discipline",
-    detail: "Defined scope, written specifications, confirmed timelines, and documented quality checkpoints. Our project management systems prevent the scope creep, delays, and surprises that plague construction projects.",
+    icon: Home,
+    title: "Respect for Your Home",
+    detail: "Your home is where you live — during and after construction. We install dust barriers, protect finished surfaces, maintain clean work zones, coordinate noisy work around your schedule, and restore your property to pre-construction condition. We treat your home the way we'd want ours treated.",
+    overcomes: "\"I don't want my house torn apart for months.\"",
   },
   {
-    icon: Ruler,
-    title: "Detail Obsession",
-    detail: "Trim reveals, material transitions, caulk lines, and finish quality — the details that separate professional work from passable work. We treat every visible element as a quality indicator.",
+    icon: Clock,
+    title: "Timeline Transparency",
+    detail: "We provide a detailed construction schedule before work begins, update it proactively as the project progresses, and communicate immediately if any factor — weather, material delivery, discovery — affects the timeline. You always know where your project stands and when it will be complete.",
+    overcomes: "\"Will this actually be done when they say it will?\"",
   },
   {
-    icon: Users,
-    title: "In-House Crews",
-    detail: "Our construction crews are employed, trained, and supervised by Highlander. No anonymous subcontractor rotation. The same team that starts your project finishes it — and stands behind it.",
+    icon: Sparkles,
+    title: "Finish Quality",
+    detail: "The last 5% of a project is where most contractors lose interest — and where homeowners notice most. Trim reveals, paint edges, caulk lines, hardware alignment, and material transitions. We treat finish details as the signature of our work, not an afterthought.",
+    overcomes: "\"I'm worried about the little things being done right.\"",
   },
 ];
 
-/** Compact version for sidebars and smaller sections */
+/** Compact 4-pillar version for sidebars and smaller sections */
 export const compactConstructionTrust = constructionTrustPillars.slice(0, 4);
 
+/** 6-pillar version for mid-page sections */
+export const midConstructionTrust = constructionTrustPillars.slice(0, 6);
+
 /* ═══════════════════════════════════════════
-   TRUST SECTION COMPONENT
+   TRUST SECTION COMPONENT (standard grid)
    ═══════════════════════════════════════════ */
 
 interface ConstructionTrustProps {
@@ -67,16 +88,18 @@ interface ConstructionTrustProps {
   className?: string;
   variant?: "light" | "dark";
   columns?: 2 | 3 | 4;
+  showObjections?: boolean;
 }
 
 const ConstructionTrust = ({
   pillars = constructionTrustPillars,
   heading = "The Highlander\nConstruction Standard.",
-  subheading = "What separates a reliable construction partner from one you'd actually recommend — and hire again.",
+  subheading = "Construction projects are significant investments — financially and emotionally. Here's how we earn and protect your trust at every stage.",
   eyebrow = "Why Highlander",
   className = "",
   variant = "light",
   columns = 3,
+  showObjections = false,
 }: ConstructionTrustProps) => {
   const isDark = variant === "dark";
   const colClass =
@@ -106,6 +129,9 @@ const ConstructionTrust = ({
             <div className={`grid grid-cols-1 ${colClass} gap-4 md:gap-5`}>
               {pillars.map((pillar, i) => (
                 <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
+                  {showObjections && pillar.overcomes && (
+                    <p className="text-[hsl(var(--highland-gold)/0.4)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                  )}
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4">
                     <pillar.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
@@ -132,6 +158,9 @@ const ConstructionTrust = ({
         <div className={`grid grid-cols-1 ${colClass} gap-4 md:gap-5`}>
           {pillars.map((pillar, i) => (
             <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift">
+              {showObjections && pillar.overcomes && (
+                <p className="text-primary/30 text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+              )}
               <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
                 <pillar.icon className="w-5 h-5 text-primary" />
               </div>
@@ -146,3 +175,113 @@ const ConstructionTrust = ({
 };
 
 export default ConstructionTrust;
+
+/* ═══════════════════════════════════════════
+   OBJECTION-BUSTER SECTION
+   Shows each concern → response pair
+   ═══════════════════════════════════════════ */
+
+export const ConstructionObjectionBuster = ({
+  pillars = constructionTrustPillars,
+  heading = "We Know What\nHolds You Back.",
+  subheading = "Every homeowner has concerns before a major construction project. Here's how we address each one — with systems, not promises.",
+  eyebrow = "Your Concerns, Addressed",
+  className = "",
+}: {
+  pillars?: TrustPillar[];
+  heading?: string;
+  subheading?: string;
+  eyebrow?: string;
+  className?: string;
+}) => (
+  <section className={`section-padding bg-secondary tartan-bg ${className}`}>
+    <div className="container-tight max-w-4xl">
+      <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
+        <span className="eyebrow mb-3 block">{eyebrow}</span>
+        <h2 className="section-heading mb-4 whitespace-pre-line">{heading}</h2>
+        {subheading && <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">{subheading}</p>}
+      </motion.div>
+
+      <div className="space-y-4">
+        {pillars.filter(p => p.overcomes).map((pillar, i) => (
+          <motion.div
+            key={pillar.title}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05 }}
+            className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
+          >
+            <div className="grid md:grid-cols-5 gap-5 md:gap-8 items-start">
+              <div className="md:col-span-2">
+                <p className="text-primary/40 text-[12px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-sm bg-primary/6 flex items-center justify-center group-hover:bg-primary/12 transition-colors flex-shrink-0">
+                    <pillar.icon className="w-4 h-4 text-primary" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-sm group-hover:text-primary transition-colors">{pillar.title}</h3>
+                </div>
+              </div>
+              <div className="md:col-span-3">
+                <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ═══════════════════════════════════════════
+   COMPACT TRUST STRIP (inline, no cards)
+   ═══════════════════════════════════════════ */
+
+export const ConstructionTrustStrip = ({
+  pillars = compactConstructionTrust,
+  className = "",
+}: {
+  pillars?: TrustPillar[];
+  className?: string;
+}) => (
+  <div className={`flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-6 ${className}`}>
+    {pillars.map((p) => (
+      <div key={p.title} className="flex items-center gap-2">
+        <p.icon className="w-3.5 h-3.5 text-primary/30" />
+        <span className="text-muted-foreground text-xs font-body font-medium">{p.title}</span>
+      </div>
+    ))}
+  </div>
+);
+
+/* ═══════════════════════════════════════════
+   TRUST SIDEBAR WITH OBJECTIONS
+   ═══════════════════════════════════════════ */
+
+export const ConstructionTrustSidebarDetailed = ({
+  pillars = compactConstructionTrust,
+}: {
+  pillars?: TrustPillar[];
+}) => (
+  <div className="bg-card border border-border rounded-sm p-5 md:p-6 space-y-5">
+    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60 mb-1">Why Homeowners Trust Highlander</h4>
+    {pillars.map((p) => (
+      <div key={p.title} className="space-y-1.5">
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">
+            <p.icon className="w-3.5 h-3.5 text-primary" />
+          </div>
+          <span className="text-foreground text-xs font-heading font-bold">{p.title}</span>
+        </div>
+        {p.overcomes && (
+          <p className="text-muted-foreground/50 text-[11px] italic font-body pl-[calc(1.75rem+0.625rem)] leading-snug">{p.overcomes}</p>
+        )}
+      </div>
+    ))}
+    <div className="pt-3 border-t border-border">
+      <Link to="/request-inspection" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+        Discuss Your Project <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+      </Link>
+    </div>
+  </div>
+);
