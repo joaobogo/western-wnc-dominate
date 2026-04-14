@@ -12,6 +12,7 @@ import OurProcess from "@/components/OurProcess";
 import MeetTheTeam from "@/components/MeetTheTeam";
 import Reviews from "@/components/Reviews";
 import SilentObjections from "@/components/SilentObjections";
+import ValueProposition from "@/components/ValueProposition";
 import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
 import BuiltForWNC from "@/components/BuiltForWNC";
 import TownGrid from "@/components/TownGrid";
@@ -72,6 +73,7 @@ const Index = () => {
 
         {/* ═══ ACT V: OBJECTIONS & AUTHORITY ═══ */}
         <SilentObjections />
+        <ValueProposition />
         <BuiltForWNC />
         <TownGrid />
 

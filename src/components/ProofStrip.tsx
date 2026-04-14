@@ -10,37 +10,37 @@ const pillars = [
   {
     icon: Gem,
     title: "Mountain-Grade Craftsmanship",
-    copy: "Every cut, seam, and fastener is executed to a standard that outlasts the weather it was built for. No shortcuts at 4,000 feet.",
+    copy: "Every cut, seam, and fastener executed to outlast the weather it was built for. No shortcuts at any elevation.",
     stat: "500+",
-    statLabel: "projects completed",
+    statLabel: "roofs installed",
   },
   {
     icon: MessageSquare,
-    title: "Clear, Consistent Communication",
-    copy: "Named point of contact. Daily updates. Written scope before work begins. You'll never wonder what's happening on your project.",
+    title: "Radical Transparency",
+    copy: "Named project contact. Written scope before work begins. Daily updates — never a guessing game about your property.",
     stat: "24hr",
-    statLabel: "response time",
+    statLabel: "guaranteed response",
   },
   {
     icon: Mountain,
-    title: "Regional Climate Expertise",
-    copy: "Snow loads, wind exposure, elevation moisture — we specify every material and method for the actual conditions your property faces.",
+    title: "Climate-Specific Engineering",
+    copy: "Ice loads, wind exposure, elevation moisture — we specify every material for the actual conditions your property faces.",
     stat: "8",
-    statLabel: "counties served",
+    statLabel: "WNC counties",
   },
   {
     icon: ShieldCheck,
-    title: "Certified Materials & Warranties",
-    copy: "CertainTeed Master Applicator certified. Factory-backed warranties on materials. Full labor warranty on every installation.",
+    title: "Factory-Backed Warranties",
+    copy: "CertainTeed Master Applicator — top 1% nationally. Factory-backed material warranties plus full labor coverage on every job.",
     stat: "Top 1%",
     statLabel: "nationally certified",
   },
   {
     icon: Hammer,
-    title: "Roofing + Construction, One Team",
-    copy: "Shingles, metal, cedar, additions, decks, siding — one crew, one process, one standard. No subcontractors you haven't met.",
+    title: "One Team. Roof to Renovation.",
+    copy: "Shingle, metal, cedar, additions, decks, siding — one crew, one standard, one company accountable for everything.",
     stat: "40+",
-    statLabel: "years combined",
+    statLabel: "years combined exp.",
   },
 ];
 
@@ -52,18 +52,18 @@ const ProofStrip = () => {
       <div className="container-tight">
         <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade" delay={0.1}>
-            <span className="eyebrow mb-3 block">Why Highlander</span>
+            <span className="eyebrow mb-3 block">Why Property Owners Choose Highlander</span>
           </ScrollReveal>
           <HeadingReveal delay={0.15}>
             <h2 className="section-heading mb-4">
-              The Standard We Set<br className="hidden md:block" /> — and Hold.
+              The Standard We Set<br className="hidden md:block" /> — and Stake Our Name On.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.3}>
             <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-              Premium results demand more than labor and materials. They require
-              expertise, accountability, and the kind of care that only comes
-              from a team that stakes its name on every project.
+              Premium results require more than materials and labor. They demand
+              expertise, radical accountability, and the kind of care that only comes
+              from a team whose reputation rides on every project.
             </p>
           </ScrollReveal>
         </div>
@@ -85,7 +85,7 @@ const ProofStrip = () => {
                 <div
                   ref={cardRef}
                   onMouseMove={handleMouseMove}
-                  className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.3)] card-lift overflow-hidden h-full spotlight-hover"
+                  className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift overflow-hidden h-full spotlight-hover"
                 >
                   {/* Stat watermark */}
                   <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">

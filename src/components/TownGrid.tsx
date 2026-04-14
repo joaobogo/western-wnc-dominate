@@ -41,13 +41,19 @@ const TownGrid = () => {
             <StaggerItem key={town.slug} variant="rise">
               <Link
                 to={`/service-areas/${town.slug}`}
-                className="group block bg-dark-section-foreground/4 border border-dark-section-foreground/8 rounded-none p-4 md:p-5 hover:bg-dark-section-foreground/8 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift transition-all duration-300"
+                className="group block bg-dark-section-foreground/4 border border-dark-section-foreground/8 rounded-none p-5 md:p-6 hover:bg-dark-section-foreground/8 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all duration-500"
+                style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
               >
-                <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))] mb-2 group-hover:scale-110 transition-transform duration-200" />
-                <h3 className="font-heading font-semibold text-base text-dark-section-foreground">
+                <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))] mb-3 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-heading font-bold text-base text-dark-section-foreground mb-1">
                   {town.name}
                 </h3>
-                <p className="text-dark-section-foreground/40 text-xs mt-1 font-body">{town.county}</p>
+                <p className="text-dark-section-foreground/30 text-[11px] mt-1 font-body">{town.county}</p>
+                <div className="mt-3 pt-3 border-t border-dark-section-foreground/6">
+                  <span className="text-[hsl(var(--highland-gold)/0.5)] text-[10px] font-body font-semibold uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1">
+                    View Area <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
               </Link>
             </StaggerItem>
           ))}
