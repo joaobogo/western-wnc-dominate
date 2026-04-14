@@ -24,6 +24,8 @@ Updated: now
 - [Proof Architecture](mem://strategy/proof-architecture) — How proof layers across every page for cumulative trust building
 - [Content & Editorial Strategy](mem://strategy/content-strategy) — Blog content engine with 9 pillars, category taxonomy, editorial calendar
 - [Blog Category Architecture](mem://strategy/blog-category-architecture) — Category system with audience, intent, themes, linking, conversion
+- [6-Month Content Calendar](mem://strategy/content-calendar) — 48-article publishing plan by month, category, funnel stage, intent, and links
+- [Internal Linking Strategy](mem://strategy/internal-linking-strategy) — Journey maps, link placement rules, cluster architecture, reconvergence points
 - [WNC Content Strategy](mem://strategy/wnc-content-strategy) — Local content system with weather, maintenance, architecture, town relevance
 - [Storm Center Strategy](mem://strategy/storm-center-strategy) — Storm content cluster with hub structure, article types, conversion paths
 - [SEO Authority Page System](mem://seo/authority-page-system) — Authority page taxonomy with structure, conversion, trust, and linking per type
