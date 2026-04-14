@@ -17,6 +17,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
 import OurProcess from "@/components/OurProcess";
+import BuiltForWNC from "@/components/BuiltForWNC";
 import MeetTheTeam from "@/components/MeetTheTeam";
 
 const Index = () => {
@@ -56,7 +57,10 @@ const Index = () => {
         <RoofDesignerCTA />
         <GuideLeadMagnet variant="banner" guide="storm" />
 
-        {/* 9. LOCAL AUTHORITY — We know your town */}
+        {/* 9. LOCAL AUTHORITY — We know your region */}
+        <BuiltForWNC />
+
+        {/* 10. LOCAL AUTHORITY — We know your town */}
         <TownGrid />
 
         {/* 10. VISUAL PROOF — Field work gallery */}
