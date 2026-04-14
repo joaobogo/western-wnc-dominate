@@ -48,13 +48,13 @@ const CTABlock = () => {
             </ScrollReveal>
 
             <HeadingReveal delay={0.1}>
-              <h2 className="text-3xl md:text-[2.75rem] lg:text-5xl font-heading font-bold mb-7 leading-[1.08] tracking-[-0.02em]">
+              <h2 className="text-[1.75rem] md:text-[2.75rem] lg:text-5xl font-heading font-bold mb-6 md:mb-7 leading-[1.08] tracking-[-0.02em]">
                 Stop Comparing Quotes.<br className="hidden md:block" /> Start Choosing a Partner.
               </h2>
             </HeadingReveal>
 
             <ScrollReveal variant="rise-subtle" delay={0.3}>
-              <p className="text-dark-section-foreground/40 text-base md:text-lg max-w-xl mx-auto mb-14 font-body leading-[1.8]">
+              <p className="text-dark-section-foreground/40 text-[15px] md:text-lg max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.7]">
                 The right contractor doesn't just give you a price — they protect your investment, 
                 manage every detail, and deliver work that holds up for decades. That conversation 
                 starts with one phone call.
@@ -63,10 +63,10 @@ const CTABlock = () => {
 
             {/* CTA buttons */}
             <ScrollReveal variant="rise" delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 md:mb-14">
                 <Link
                   to="/request-inspection"
-                  className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-12 py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
+                  className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] md:text-[15px] px-10 md:px-12 py-[14px] md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide min-h-[52px]"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Start Your Project</span>
@@ -74,7 +74,7 @@ const CTABlock = () => {
                 </Link>
                 <a
                   href="tel:8283979211"
-                  className="group border border-dark-section-foreground/10 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 hover:border-[hsl(var(--highland-gold)/0.2)] transition-all duration-300"
+                  className="group border border-dark-section-foreground/10 text-dark-section-foreground font-medium text-[14px] md:text-base px-8 py-[14px] md:py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 hover:border-[hsl(var(--highland-gold)/0.2)] transition-all duration-300 min-h-[52px]"
                 >
                   <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
                   (828) 397-9211
@@ -88,7 +88,7 @@ const CTABlock = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.5, ease: HIGHLAND_EASE }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 pt-8 border-t border-dark-section-foreground/6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 pt-8 border-t border-dark-section-foreground/6">
             >
               {[
                 { icon: Shield, text: "Licensed & Insured" },
