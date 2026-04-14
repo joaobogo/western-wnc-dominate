@@ -3,7 +3,7 @@ import SEOHead, { localBusinessSchema, organizationSchema } from "@/components/S
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
-import ProofStrip from "@/components/ProofStrip";
+
 import DualPathway from "@/components/DualPathway";
 import NotJustRoofing from "@/components/NotJustRoofing";
 import FeaturedProjects from "@/components/FeaturedProjects";
@@ -50,7 +50,6 @@ const Index = () => {
 
         {/* ═══ ACT II: PROOF ═══ */}
         <TrustStrip />
-        <ProofStrip />
 
         <SectionDivider variant="diamond" />
 
