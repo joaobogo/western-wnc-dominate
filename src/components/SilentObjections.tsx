@@ -49,7 +49,8 @@ const SilentObjections = () => {
             >
               <AccordionItem
                 value={`objection-${i}`}
-                className="bg-card border border-border rounded-none px-5 md:px-7 data-[state=open]:border-[hsl(var(--highland-gold)/0.25)] data-[state=open]:shadow-[0_4px_20px_-6px_hsl(var(--highland-gold)/0.08)] transition-all duration-300 spotlight-hover"
+                className="bg-card border border-border rounded-none px-5 md:px-7 data-[state=open]:border-[hsl(var(--highland-gold)/0.18)] data-[state=open]:shadow-[0_6px_24px_-6px_hsl(var(--heritage-charcoal)/0.06)] transition-all duration-500 spotlight-hover"
+                style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
               >
                 <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4 [&[data-state=open]>div>.obj-icon]:bg-[hsl(var(--highland-gold)/0.1)] [&[data-state=open]>div>.obj-icon]:text-[hsl(var(--highland-gold))]">
                   <div className="flex items-center gap-4 text-left">
