@@ -37,6 +37,7 @@ Updated: now
 - [Tool Conversion Architecture](mem://strategy/tool-conversion-architecture) — Conversion mapping from all tools to pages and CTAs with result page design
 - [Lead Qualification Framework](mem://strategy/lead-qualification-framework) — Scoring system, qualification signals, collection methods, intent-based branching
 - [Scheduling Architecture](mem://strategy/scheduling-architecture) — 5 consultation types, scheduling UI, confirmation/reminder/follow-up email tone
+- [Unified Lead Capture Blueprint](mem://strategy/unified-lead-capture-blueprint) — Master blueprint combining chatbot, widgets, calcs, forms, quote flow, qualification, scheduling
 - [Smart Form System](mem://features/smart-form-system) — 7 form types with fields, tone, friction levels, placement map, and trust elements
 - [Widget Strategy](mem://features/widget-strategy) — 9 premium interactive widgets with placement, UX, trust value, and conversion goals
 - [Roofing Calculators](mem://features/roofing-calculators) — 5 roofing tools: scope estimator, readiness assessment, materials comparison, maintenance checker, storm assessment
