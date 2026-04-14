@@ -18,8 +18,8 @@ const TrustStrip = () => {
       {/* Top gold line — animated draw */}
       <GoldLine width="100%" centered delay={0.2} duration={1.2} className="absolute top-0 left-0 right-0 z-10" />
 
-      <div className="container-tight px-5 md:px-8 py-8 md:py-10 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-primary-foreground/8">
+      <div className="container-tight px-6 md:px-10 py-10 md:py-12 relative z-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-primary-foreground/[0.06]">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -27,17 +27,17 @@ const TrustStrip = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5, ease: HIGHLAND_EASE }}
-              className="flex flex-col items-center text-center md:px-6 lg:px-8"
+              className="flex flex-col items-center text-center md:px-8 lg:px-10"
             >
               <AnimatedCounter
                 value={stat.value}
-                className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5 tracking-tight"
+                className="text-3xl md:text-[2.5rem] font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-2 tracking-tight"
                 duration={1800}
               />
-              <span className="text-sm font-heading font-semibold text-primary-foreground/85 mb-1">
+              <span className="text-sm font-heading font-bold text-primary-foreground/80 mb-1.5 tracking-tight">
                 {stat.label}
               </span>
-              <span className="text-[11px] text-primary-foreground/35 font-body tracking-wide">
+              <span className="text-[10px] text-primary-foreground/30 font-body tracking-[0.15em] uppercase">
                 {stat.detail}
               </span>
             </motion.div>
