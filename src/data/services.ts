@@ -49,6 +49,7 @@ export const services: ServiceData[] = [
     subheadline: "Premium tear-off and installation with materials engineered for WNC's elevation, wind, and moisture — backed by manufacturer warranties.",
     description: "When repair isn't enough, our full replacement service delivers a new roof system designed for the unique demands of Western North Carolina. From tear-off to final inspection, we manage every detail with CertainTeed-certified craftsmanship.",
     icon: RotateCcw,
+    division: "roofing",
     features: [
       "Complete tear-off and disposal",
       "Ice & water shield underlayment for mountain climates",
@@ -74,6 +75,7 @@ export const services: ServiceData[] = [
     subheadline: "Wind, hail, and fallen trees don't wait — and neither do we. Emergency inspections, full documentation, and insurance support when you need it most.",
     description: "Western NC sees severe storms, high winds, and heavy snowfall that can devastate roofs. Our storm damage team responds quickly with emergency tarping, detailed damage documentation, and full insurance claim support to get your home protected fast.",
     icon: CloudLightning,
+    division: "roofing",
     features: [
       "24–48 hour emergency response",
       "Emergency tarping to prevent further damage",
@@ -99,6 +101,7 @@ export const services: ServiceData[] = [
     subheadline: "Durable, energy-efficient, and built to last 50+ years — metal roofing is the premium choice for WNC homeowners who want long-term protection.",
     description: "Metal roofing outperforms traditional shingles in virtually every category that matters for mountain living: wind resistance, snow shedding, energy efficiency, and lifespan. Our metal roofing installations are engineered specifically for Western NC conditions.",
     icon: Layers,
+    division: "roofing",
     features: [
       "Standing seam and exposed fastener options",
       "50+ year lifespan with minimal maintenance",
@@ -124,6 +127,7 @@ export const services: ServiceData[] = [
     subheadline: "Inspections, repairs, replacements, and maintenance programs for property managers, facility managers, and business owners across Western North Carolina.",
     description: "Commercial roofs have different demands — larger scale, stricter timelines, and compliance requirements. Highlander Roofing provides professional commercial roofing services tailored to WNC's property managers, HOAs, and business owners.",
     icon: Building2,
+    division: "roofing",
     features: [
       "Flat and low-slope roofing systems",
       "TPO, EPDM, and modified bitumen installations",
@@ -149,6 +153,7 @@ export const services: ServiceData[] = [
     subheadline: "Extend your roof's lifespan, avoid emergency repairs, and protect your investment with scheduled maintenance from a trusted WNC roofing contractor.",
     description: "Most commercial roof failures are preventable. Our maintenance programs catch small issues before they become expensive problems — saving you money, extending roof life, and giving you documentation for warranty and insurance compliance.",
     icon: Wrench,
+    division: "roofing",
     features: [
       "Bi-annual comprehensive roof inspections",
       "Debris removal and drainage clearing",
@@ -174,6 +179,7 @@ export const services: ServiceData[] = [
     subheadline: "Seamless gutters, gutter guards, and drainage solutions engineered for WNC's heavy rainfall and mountain runoff.",
     description: "Proper gutter systems are critical for mountain homes where heavy rainfall and steep terrain can cause severe water damage. Highlander installs seamless aluminum and copper gutters, gutter guards, and custom downspout solutions designed to handle Western NC's unique drainage demands.",
     icon: Droplets,
+    division: "roofing",
     features: [
       "Seamless aluminum gutter installation",
       "Copper gutter systems for premium homes",
@@ -199,6 +205,7 @@ export const services: ServiceData[] = [
     subheadline: "Custom decks, covered porches, screened-in rooms, and pergolas designed to complement your WNC mountain lifestyle.",
     description: "Mountain living is about enjoying the outdoors. Highlander designs and builds custom outdoor living spaces — from covered porches and screened rooms to composite decks and timber-frame pergolas — all engineered for WNC's elevation, weather, and stunning views.",
     icon: TreePine,
+    division: "construction",
     features: [
       "Custom deck design and construction",
       "Covered porches and pavilions",
@@ -224,6 +231,7 @@ export const services: ServiceData[] = [
     subheadline: "Licensed general contractor services including siding, framing, additions, and exterior renovations across Macon, Jackson, and Swain counties.",
     description: "Beyond roofing, Highlander provides full general contracting services for Western NC homeowners. Our experienced crews handle siding installation, structural framing, home additions, and exterior renovations — all built to mountain-grade standards and backed by our quality guarantee.",
     icon: HardHat,
+    division: "construction",
     features: [
       "Vinyl, fiber cement, and board & batten siding",
       "Structural framing and repairs",
