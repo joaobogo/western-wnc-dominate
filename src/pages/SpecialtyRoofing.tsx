@@ -67,6 +67,15 @@ const processSteps = [
   { number: "06", title: "Final Walk-Through", description: "Every detail is reviewed with you. Every transition, every accent, every line — verified for visual perfection and waterproofing integrity before we consider the project complete." },
 ];
 
+const faqs = [
+  { q: "What qualifies as specialty roofing?", a: "Specialty roofing includes any project involving premium or non-standard materials (cedar shake, natural slate, copper, custom metal), complex roof geometry (turrets, eyebrow dormers, steep pitches above 8:12), mixed-material transitions, or architecturally sensitive installations where visual outcome matters as much as weather performance." },
+  { q: "How much more does specialty roofing cost compared to standard?", a: "Specialty roofing typically costs 2–4x more than standard architectural shingle installation, depending on materials, complexity, and custom fabrication requirements. Cedar shake and standing seam metal are in the mid-premium range; copper accents and natural slate are at the higher end. We provide detailed proposals so you know exactly what you're investing in." },
+  { q: "Do you work with architects and builders?", a: "Yes. Many of our specialty projects involve coordination with architects, designers, and general contractors. We're comfortable reading plans, participating in design discussions, and integrating our scope with the broader construction schedule." },
+  { q: "How long does a specialty roofing project take?", a: "Specialty projects typically take longer than standard installations due to custom fabrication, material lead times, and the precision required. A complex cedar shake or standing seam project may take 2–4 weeks depending on size and geometry. We provide a detailed timeline during the proposal phase." },
+  { q: "Can you match existing specialty materials for repairs or additions?", a: "In most cases, yes. We source matching cedar grades, metal profiles, and slate to blend seamlessly with existing installations. For older or discontinued materials, we'll source the closest available match and discuss options before proceeding." },
+  { q: "Do specialty materials require more maintenance?", a: "Some do. Cedar shake benefits from periodic cleaning and treatment every 3–5 years. Copper develops a natural patina that most homeowners prefer to leave untreated. Standing seam metal is essentially maintenance-free. We'll provide material-specific maintenance guidance as part of your project documentation." },
+];
+
 /* ═══════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════ */
