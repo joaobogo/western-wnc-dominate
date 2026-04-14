@@ -52,9 +52,10 @@ const ProjectCard = ({ project, index, isFeatured }: { project: typeof projects[
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.6, ease: HIGHLAND_EASE }}
-      className={`group relative rounded-none overflow-hidden cursor-pointer spotlight-hover ${
+      className={`group relative rounded-none overflow-hidden cursor-pointer spotlight-hover transition-shadow duration-500 ${
         isFeatured ? "md:col-span-2" : ""
       }`}
+      style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
     >
       <div className={`relative overflow-hidden ${
         isFeatured ? "aspect-[16/7]" : "aspect-[4/3]"
@@ -71,7 +72,7 @@ const ProjectCard = ({ project, index, isFeatured }: { project: typeof projects[
         />
 
         {/* Cinematic gradient — deeper, more dramatic */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.15)] to-[hsl(var(--heritage-charcoal)/0.02)] group-hover:from-[hsl(var(--heritage-charcoal)/0.95)] transition-all duration-700" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.12)] to-[hsl(var(--heritage-charcoal)/0.02)] group-hover:from-[hsl(var(--heritage-charcoal)/0.92)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
 
         {/* Gold edge accent on hover */}
         <motion.div
