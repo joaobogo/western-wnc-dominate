@@ -476,6 +476,3 @@ function ContactQuickForm() {
   );
 }
 
-function useState<T>(initial: T): [T, React.Dispatch<React.SetStateAction<T>>] {
-  return (await import("react")).useState(initial);
-}
