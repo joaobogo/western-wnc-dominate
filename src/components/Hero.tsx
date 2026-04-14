@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, ArrowRight, Shield, Award, Banknote, Clock } from "lucide-react";
+import { ArrowRight, Shield, Award, Banknote, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
 import { useRef, useState } from "react";
@@ -12,6 +12,18 @@ const trustItems = [
   { icon: Clock, label: "24-Hour Response" },
 ];
 
+/* Mountain contour path — stylized WNC ridgeline */
+const mountainPath = "M0,180 Q80,120 160,145 Q220,160 300,100 Q380,40 460,80 Q520,110 600,60 Q680,10 760,50 Q840,90 920,35 Q980,0 1060,30 Q1120,55 1200,20 L1200,200 L0,200 Z";
+
+/* Roofline path — architectural gable forms */
+const rooflinePath = "M0,160 L100,80 L200,160 L280,60 L380,160 L440,90 L520,160 L620,40 L720,160 L800,70 L900,160 L980,50 L1080,160 L1200,80";
+
+/* Blueprint grid line positions */
+const gridLines = {
+  horizontal: [40, 80, 120, 160],
+  vertical: [0, 150, 300, 450, 600, 750, 900, 1050, 1200],
+};
+
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -20,14 +32,12 @@ const Hero = () => {
     <section ref={ref} className="relative min-h-[100svh] flex items-end overflow-hidden">
       {/* === BACKGROUND LAYERS === */}
       <div className="absolute inset-0">
-        {/* Base image (instant load) */}
         <img
           src={heroImage}
           alt="Mountain home with premium roof in Western North Carolina"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
           loading="eager"
         />
-        {/* Video layer */}
         <video
           autoPlay muted loop playsInline preload="auto"
           // @ts-ignore
@@ -39,22 +49,123 @@ const Hero = () => {
           <source src={heroVideo} type="video/mp4" />
         </video>
 
-        {/* Cinematic overlay system */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.75)] to-[hsl(var(--hero-overlay)/0.3)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.15)] to-[hsl(var(--hero-overlay)/0.4)]" />
+        {/* Cinematic overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.78)] to-[hsl(var(--hero-overlay)/0.35)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.1)] to-[hsl(var(--hero-overlay)/0.45)]" />
 
-        {/* Grain texture overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
+        {/* Grain */}
+        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
+      </div>
 
-        {/* Animated diagonal lines — subtle texture */}
-        <motion.div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 40px, hsl(var(--highland-gold) / 0.3) 40px, hsl(var(--highland-gold) / 0.3) 41px)',
-          }}
-          animate={{ backgroundPosition: ['0px 0px', '80px 80px'] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
+      {/* === ARCHITECTURAL SVG OVERLAYS === */}
+      <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+        {/* Blueprint grid — very subtle */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.025]" preserveAspectRatio="none" viewBox="0 0 1200 200">
+          {gridLines.horizontal.map((y) => (
+            <motion.line
+              key={`h-${y}`}
+              x1="0" y1={y} x2="1200" y2={y}
+              stroke="hsl(var(--highland-gold))"
+              strokeWidth="0.5"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 3, delay: 1.5 + y * 0.005, ease: "easeOut" }}
+            />
+          ))}
+          {gridLines.vertical.map((x) => (
+            <motion.line
+              key={`v-${x}`}
+              x1={x} y1="0" x2={x} y2="200"
+              stroke="hsl(var(--highland-gold))"
+              strokeWidth="0.5"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2, delay: 2 + x * 0.001, ease: "easeOut" }}
+            />
+          ))}
+        </svg>
+
+        {/* Mountain contour — bottom right */}
+        <svg className="absolute bottom-0 right-0 w-[70%] h-[30%] opacity-[0.04]" preserveAspectRatio="none" viewBox="0 0 1200 200">
+          <motion.path
+            d={mountainPath}
+            fill="none"
+            stroke="hsl(var(--highland-gold))"
+            strokeWidth="1.5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 4, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+          />
+          {/* Filled version — even more subtle */}
+          <motion.path
+            d={mountainPath}
+            fill="hsl(var(--highland-gold))"
+            fillOpacity="0.06"
+            stroke="none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 3.5 }}
+          />
+        </svg>
+
+        {/* Roofline architectural drawing — upper area */}
+        <svg className="absolute top-[15%] left-[10%] w-[50%] h-[25%] opacity-[0.03] hidden md:block" preserveAspectRatio="none" viewBox="0 0 1200 200">
+          <motion.path
+            d={rooflinePath}
+            fill="none"
+            stroke="hsl(var(--primary-foreground))"
+            strokeWidth="1"
+            strokeDasharray="4 6"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 5, delay: 2, ease: "easeOut" }}
+          />
+          {/* Measurement tick marks */}
+          {[100, 200, 280, 380, 440, 520, 620, 720, 800, 900].map((x, i) => (
+            <motion.line
+              key={x}
+              x1={x} y1="155" x2={x} y2="170"
+              stroke="hsl(var(--primary-foreground))"
+              strokeWidth="0.5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              transition={{ delay: 3 + i * 0.1 }}
+            />
+          ))}
+        </svg>
+
+        {/* Angle notation — architectural detail */}
+        <svg className="absolute top-[20%] right-[15%] w-32 h-32 opacity-[0.04] hidden lg:block" viewBox="0 0 100 100">
+          <motion.path
+            d="M10,90 L50,20 L90,90"
+            fill="none"
+            stroke="hsl(var(--highland-gold))"
+            strokeWidth="0.8"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 3 }}
+          />
+          <motion.path
+            d="M30,60 A25,25 0 0,1 42,42"
+            fill="none"
+            stroke="hsl(var(--highland-gold))"
+            strokeWidth="0.5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 1, delay: 4 }}
+          />
+          <motion.text
+            x="38" y="58"
+            fill="hsl(var(--highland-gold))"
+            fontSize="6"
+            fontFamily="monospace"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.6 }}
+            transition={{ delay: 4.5 }}
+          >
+            22°
+          </motion.text>
+        </svg>
       </div>
 
       {/* === GOLD VERTICAL ACCENT === */}
@@ -74,18 +185,13 @@ const Hero = () => {
           transition={{ delay: 2, duration: 0.8 }}
           className="flex flex-col items-center gap-6"
         >
-          {/* Roofing indicator */}
           <div className="flex flex-col items-center gap-2">
             <div className="w-px h-16 bg-gradient-to-b from-transparent to-primary-foreground/20" />
             <span className="text-[9px] font-body font-semibold uppercase tracking-[0.25em] text-primary-foreground/30 [writing-mode:vertical-lr] rotate-180">
               Roofing
             </span>
           </div>
-
-          {/* Divider */}
           <div className="w-6 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-
-          {/* Construction indicator */}
           <div className="flex flex-col items-center gap-2">
             <span className="text-[9px] font-body font-semibold uppercase tracking-[0.25em] text-primary-foreground/30 [writing-mode:vertical-lr] rotate-180">
               Construction
@@ -122,7 +228,7 @@ const Hero = () => {
             </motion.span>
           </motion.div>
 
-          {/* Headline — clip reveal, two lines */}
+          {/* Headline */}
           <div className="overflow-hidden mb-1 md:mb-2">
             <motion.h1
               initial={{ y: "110%" }}
@@ -202,7 +308,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* === BOTTOM EDGE — gold fade line === */}
+      {/* === BOTTOM EDGE === */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
         <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.3), hsl(var(--highland-gold) / 0))' }} />
       </div>
