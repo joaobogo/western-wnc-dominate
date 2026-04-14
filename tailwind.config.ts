@@ -86,6 +86,11 @@ export default {
           "gold-light": "hsl(var(--highland-gold-light))",
         },
         "warm-stone": "hsl(var(--warm-stone))",
+        slate: {
+          DEFAULT: "hsl(var(--slate))",
+          light: "hsl(var(--slate-light))",
+          dark: "hsl(var(--slate-dark))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
