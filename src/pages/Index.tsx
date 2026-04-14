@@ -18,6 +18,7 @@ import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
 import OurProcess from "@/components/OurProcess";
 import BuiltForWNC from "@/components/BuiltForWNC";
+import BlogInsights from "@/components/BlogInsights";
 import MeetTheTeam from "@/components/MeetTheTeam";
 
 const Index = () => {
@@ -63,7 +64,10 @@ const Index = () => {
         {/* 10. LOCAL AUTHORITY — We know your town */}
         <TownGrid />
 
-        {/* 10. VISUAL PROOF — Field work gallery */}
+        {/* 11. EDITORIAL — Blog insights */}
+        <BlogInsights />
+
+        {/* 12. VISUAL PROOF — Field work gallery */}
         <InstagramGrid />
 
         {/* 11. CONVERT — Form + final CTA */}
