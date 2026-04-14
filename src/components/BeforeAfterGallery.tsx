@@ -60,7 +60,6 @@ const BeforeAfterGallery = () => {
   const progress = useMotionValue(0);
   const progressWidth = useTransform(progress, [0, 100], ["0%", "100%"]);
 
-  // Auto-play: 5s interval, pauses on interaction
   useEffect(() => {
     if (paused) return;
     progress.set(0);
@@ -71,7 +70,7 @@ const BeforeAfterGallery = () => {
 
   const pauseTemporarily = useCallback(() => {
     setPaused(true);
-    setTimeout(() => setPaused(false), 10000); // resume after 10s of no interaction
+    setTimeout(() => setPaused(false), 10000);
   }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => { setTouchStart(e.touches[0].clientX); pauseTemporarily(); };
@@ -94,27 +93,19 @@ const BeforeAfterGallery = () => {
     <section className="section-padding bg-background">
       <div className="container-tight">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10 md:mb-12"
         >
-          <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Project Showcase</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground">
-            Real Results. Real Homes.
+          <span className="eyebrow mb-3 block">Project Showcase</span>
+          <h2 className="section-heading">
+            Craftsmanship You Can See
           </h2>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="max-w-5xl mx-auto"
-        >
-          {/* Main showcase */}
-          <div className="relative rounded-xl overflow-hidden bg-card border border-border shadow-lg">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative rounded-sm overflow-hidden bg-card border border-border">
             {/* Image */}
             <div className="relative aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
               <AnimatePresence mode="wait" custom={direction}>
@@ -132,45 +123,45 @@ const BeforeAfterGallery = () => {
                 />
               </AnimatePresence>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-[hsl(var(--heritage-charcoal)/0.2)] to-transparent" />
 
-              <div className="absolute top-4 left-4 md:top-5 md:left-5 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-md z-10">
+              <div className="absolute top-4 left-4 md:top-5 md:left-5 bg-primary/90 backdrop-blur-sm text-primary-foreground text-[10px] font-body font-semibold uppercase tracking-[0.15em] px-3 py-1.5 rounded-sm z-10">
                 {projects[current].type}
               </div>
 
               <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 md:px-5 z-10">
                 <button
                   onClick={() => handleManualNav(prev)}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background/20 backdrop-blur-sm border border-background/20 flex items-center justify-center hover:bg-background/40 active:scale-95 transition-all"
+                  className="w-10 h-10 md:w-11 md:h-11 rounded-sm bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all"
                 >
-                  <ChevronLeft className="w-5 h-5 text-background" />
+                  <ChevronLeft className="w-5 h-5 text-white" />
                 </button>
                 <button
                   onClick={() => handleManualNav(next)}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background/20 backdrop-blur-sm border border-background/20 flex items-center justify-center hover:bg-background/40 active:scale-95 transition-all"
+                  className="w-10 h-10 md:w-11 md:h-11 rounded-sm bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all"
                 >
-                  <ChevronRight className="w-5 h-5 text-background" />
+                  <ChevronRight className="w-5 h-5 text-white" />
                 </button>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10">
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 z-10">
                 <AnimatePresence mode="wait" custom={direction}>
                   <motion.div
                     key={current}
                     custom={direction}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
+                    exit={{ opacity: 0, y: -16 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <h3 className="font-heading font-bold text-xl md:text-2xl text-background mb-2">
+                    <h3 className="font-heading font-bold text-xl md:text-2xl text-white mb-1.5">
                       {projects[current].title}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-background/70 text-sm mb-3">
-                      <MapPin className="w-3.5 h-3.5" />
+                    <div className="flex items-center gap-1.5 text-white/60 text-sm mb-3 font-body">
+                      <MapPin className="w-3 h-3" />
                       {projects[current].location}
                     </div>
-                    <p className="text-background/80 text-sm md:text-base max-w-xl leading-relaxed">
+                    <p className="text-white/70 text-sm max-w-xl leading-relaxed font-body">
                       {projects[current].description}
                     </p>
                   </motion.div>
@@ -179,33 +170,33 @@ const BeforeAfterGallery = () => {
             </div>
 
             {/* Progress bar */}
-            <div className="h-1 w-full bg-border/30">
-              <motion.div className="h-full bg-primary" style={{ width: progressWidth }} />
+            <div className="h-[2px] w-full bg-border/30">
+              <motion.div className="h-full bg-[hsl(var(--highland-gold))]" style={{ width: progressWidth }} />
             </div>
 
-            {/* Bottom bar: dots + CTA */}
-            <div className="flex items-center justify-between px-5 md:px-8 py-4 bg-card">
-              <div className="flex gap-2">
+            {/* Bottom bar */}
+            <div className="flex items-center justify-between px-5 md:px-8 py-3.5 bg-card">
+              <div className="flex gap-1.5">
                 {projects.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => { pauseTemporarily(); setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      i === current ? "bg-primary w-7" : "bg-border w-2 hover:bg-primary/30"
+                    className={`h-1.5 rounded-sm transition-all duration-300 ${
+                      i === current ? "bg-accent w-6" : "bg-border w-1.5 hover:bg-accent/30"
                     }`}
                   />
                 ))}
               </div>
               <Link
                 to="/gallery"
-                className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1.5 group"
+                className="text-sm font-medium text-accent hover:text-accent/80 transition-colors inline-flex items-center gap-1.5 group font-body"
               >
                 View Full Gallery
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
