@@ -8,26 +8,25 @@ import logo from "@/assets/logo.png";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const roofingDropdown = [
-  { label: "Asphalt Shingles", href: "/services/asphalt-shingles" },
-  { label: "Metal Roofing", href: "/services/metal-roofing" },
-  { label: "Cedar Shake", href: "/services/cedar-shake" },
-  { label: "Flat & Low-Slope", href: "/services/flat-roofing" },
-  { label: "Roof Repair", href: "/services/roof-repair" },
-  { label: "Storm Damage & Insurance", href: "/services/storm-damage" },
-  { label: "Gutter Systems", href: "/services/gutters" },
+  { label: "Residential Roofing", href: "/roofing/residential" },
+  { label: "Roof Replacement", href: "/roofing/roof-replacement" },
+  { label: "Roof Repair", href: "/roofing/roof-repair" },
+  { label: "Storm Damage", href: "/roofing/storm-damage" },
+  { label: "Commercial Roofing", href: "/roofing/commercial" },
+  { label: "Specialty Roofing", href: "/roofing/specialty" },
 ];
 
 const constructionDropdown = [
-  { label: "Additions & Renovations", href: "/services/additions-renovations" },
-  { label: "Decks & Outdoor Living", href: "/services/decks-outdoor-living" },
-  { label: "Siding & Exteriors", href: "/services/siding-exteriors" },
-  { label: "Windows & Doors", href: "/services/windows-doors" },
-  { label: "Commercial Build-Outs", href: "/services/commercial-build-outs" },
+  { label: "Home Additions", href: "/construction/additions" },
+  { label: "Renovations", href: "/construction/renovations" },
+  { label: "Exterior Improvements", href: "/construction/exterior" },
+  { label: "Outdoor Living", href: "/construction/outdoor-living" },
+  { label: "Custom Projects", href: "/construction/custom" },
 ];
 
 const navLinks = [
   { label: "Roofing", href: "/roofing", dropdown: roofingDropdown },
-  { label: "Construction", href: "/services", dropdown: constructionDropdown },
+  { label: "Construction", href: "/construction", dropdown: constructionDropdown },
   { label: "Projects", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
