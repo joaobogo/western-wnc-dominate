@@ -261,14 +261,15 @@
      PREMIUM CARD SYSTEM
      ────────────────────────────────────── */
   .card-premium {
-    @apply bg-card border border-border rounded-sm relative overflow-hidden;
-    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    @apply bg-card border border-border rounded-none relative overflow-hidden;
+    transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-premium:hover {
-    border-color: hsl(var(--highland-gold) / 0.3);
-    box-shadow: 0 8px 32px -8px hsl(var(--heritage-charcoal) / 0.08),
-                0 0 0 1px hsl(var(--highland-gold) / 0.08);
-    transform: translateY(-2px);
+    border-color: hsl(var(--highland-gold) / 0.35);
+    box-shadow: 0 16px 48px -12px hsl(var(--heritage-charcoal) / 0.1),
+                0 0 0 1px hsl(var(--highland-gold) / 0.1);
+    transform: translateY(-3px);
   }
   .card-premium::after {
     content: '';
@@ -277,8 +278,8 @@
     left: 0;
     width: 2px;
     height: 0;
-    background: hsl(var(--highland-gold));
-    transition: height 0.4s ease;
+    background: linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0.3));
+    transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-premium:hover::after {
     height: 100%;
@@ -288,7 +289,7 @@
      EYEBROW / LABEL STYLE
      ────────────────────────────────────── */
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+    @apply text-[11px] font-semibold uppercase tracking-[0.25em] text-accent;
     font-family: 'DM Sans', system-ui, sans-serif;
   }
 
@@ -296,7 +297,7 @@
      SECTION HEADING PATTERN
      ────────────────────────────────────── */
   .section-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-[1.08] tracking-tight;
   }
 
   /* ──────────────────────────────────────
