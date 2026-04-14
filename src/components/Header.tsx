@@ -247,7 +247,7 @@ const Header = () => {
             to="/request-inspection"
             className="hidden sm:inline-flex cta-gradient text-accent-foreground font-semibold text-sm px-5 py-2.5 rounded-sm items-center gap-2 btn-primary-interactive"
           >
-            <span className="relative z-10">Schedule a Quote Call</span>
+                    <span className="relative z-10">Start a Project</span>
             <ArrowRight className="w-3.5 h-3.5 relative z-10 btn-arrow-icon" />
           </Link>
           {/* Hamburger — animated icon swap */}
@@ -408,12 +408,12 @@ const Header = () => {
                     onClick={() => setMobileOpen(false)}
                     className="cta-gradient text-accent-foreground font-semibold text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2 btn-primary-interactive"
                   >
-                    <span className="relative z-10">Schedule a Quote Call</span>
+                    <span className="relative z-10">Start Your Project</span>
                     <ArrowRight className="w-4 h-4 relative z-10" />
                   </Link>
                   <a
                     href="tel:8283979211"
-                    className="bg-primary text-primary-foreground font-medium text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2 font-body btn-ghost-interactive"
+                    className="bg-primary text-primary-foreground font-medium text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 font-body btn-ghost-interactive"
                   >
                     <Phone className="w-4 h-4" />
                     (828) 397-9211
