@@ -75,7 +75,8 @@ const DualPathway = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
-              className="group relative bg-card border border-border rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.25)] hover:shadow-[0_12px_40px_-10px_hsl(var(--heritage-charcoal)/0.08)] transition-all duration-300"
+              className="group relative bg-card border border-border rounded-none overflow-hidden hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_16px_48px_-12px_hsl(var(--heritage-charcoal)/0.1)] transition-all duration-400 spotlight-hover"
+            >
             >
               {/* Top accent line */}
               <div
@@ -94,7 +95,7 @@ const DualPathway = () => {
                 transition={{ duration: 0.4 }}
               />
 
-              <div className="p-7 md:p-9">
+              <div className="p-8 md:p-10 relative z-10">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-5">
                   <motion.div
@@ -115,10 +116,10 @@ const DualPathway = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug">
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug tracking-tight">
                   {path.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-7">
+                <p className="text-muted-foreground text-sm leading-[1.7] font-body mb-8">
                   {path.description}
                 </p>
 
