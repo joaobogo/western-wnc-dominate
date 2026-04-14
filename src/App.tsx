@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Team from "./pages/Team";
 import Certifications from "./pages/Certifications";
 import Gallery from "./pages/Gallery";
+import ReviewsPage from "./pages/ReviewsPage";
 import Financing from "./pages/Financing";
 import Careers from "./pages/Careers";
 import RequestInspection from "./pages/RequestInspection";
@@ -70,6 +71,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/financing" element={<Financing />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/request-inspection" element={<RequestInspection />} />
