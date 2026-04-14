@@ -56,6 +56,14 @@ export default {
           foreground: "hsl(var(--dark-section-foreground))",
         },
         "trust-badge": "hsl(var(--trust-badge))",
+        heritage: {
+          DEFAULT: "hsl(var(--heritage))",
+          foreground: "hsl(var(--heritage-foreground))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          muted: "hsl(var(--gold-muted))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
