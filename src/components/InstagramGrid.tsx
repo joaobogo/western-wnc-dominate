@@ -44,16 +44,17 @@ const InstagramGrid = () => {
       <div className="container-tight">
         <div className="text-center mb-12">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block">Straight from the Jobsite</span>
+            <span className="eyebrow mb-3 block">Documented Craftsmanship</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2">
-              Recent Work Across Western NC
+              Real Work. Real Mountains. Real Results.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.2}>
-            <p className="text-muted-foreground font-body text-sm">
-              Real crews, real projects, real craftsmanship — documented as it happens.
+            <p className="text-muted-foreground font-body text-sm max-w-md mx-auto">
+              Every image is from a Highlander jobsite across Western NC — 
+              no stock photos, no staged setups, just our crews and our craft.
             </p>
           </ScrollReveal>
           <GoldLine width="3rem" centered delay={0.3} className="mt-4" />
