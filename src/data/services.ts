@@ -1,4 +1,5 @@
 import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat } from "lucide-react";
+import type { Division } from "@/lib/division-theme";
 
 export interface ServiceData {
   slug: string;
@@ -7,6 +8,7 @@ export interface ServiceData {
   subheadline: string;
   description: string;
   icon: any;
+  division: Division;
   features: string[];
   faqs: { question: string; answer: string }[];
   metaTitle: string;
