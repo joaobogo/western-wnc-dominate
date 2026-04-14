@@ -8,3 +8,8 @@ export { default as RoofingFAQs, roofingFAQLibrary, getFAQsByCategory } from "./
 export type { FAQ } from "./RoofingFAQs";
 
 export { RoofingMidCTA, RoofingClosingCTA, TrustSidebar, CredentialStrip } from "./RoofingShared";
+
+export { default as RoofingGallery } from "./RoofingGallery";
+export type { GalleryProject } from "./RoofingGallery";
+
+export { default as RoofingLeadCapture } from "./RoofingLeadCapture";
