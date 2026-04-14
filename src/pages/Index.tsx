@@ -18,6 +18,7 @@ import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
 import OurProcess from "@/components/OurProcess";
 import BuiltForWNC from "@/components/BuiltForWNC";
+import BlogInsights from "@/components/BlogInsights";
 import MeetTheTeam from "@/components/MeetTheTeam";
 
 const Index = () => {
