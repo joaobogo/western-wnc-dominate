@@ -8,13 +8,12 @@ import logo from "@/assets/logo.png";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const roofingDropdown = [
-  { label: "Asphalt Shingles", href: "/services/asphalt-shingles" },
-  { label: "Metal Roofing", href: "/services/metal-roofing" },
-  { label: "Cedar Shake", href: "/services/cedar-shake" },
-  { label: "Flat & Low-Slope", href: "/services/flat-roofing" },
-  { label: "Roof Repair", href: "/services/roof-repair" },
-  { label: "Storm Damage & Insurance", href: "/services/storm-damage" },
-  { label: "Gutter Systems", href: "/services/gutters" },
+  { label: "Residential Roofing", href: "/roofing/residential" },
+  { label: "Roof Replacement", href: "/roofing/roof-replacement" },
+  { label: "Roof Repair", href: "/roofing/roof-repair" },
+  { label: "Storm Damage", href: "/roofing/storm-damage" },
+  { label: "Commercial Roofing", href: "/roofing/commercial" },
+  { label: "Specialty Roofing", href: "/roofing/specialty" },
 ];
 
 const constructionDropdown = [
