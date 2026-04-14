@@ -1,32 +1,35 @@
 import { useState } from "react";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.webp";
 
 const roofingDropdown = [
-  { label: "Roof Repair", href: "/services/roof-repair" },
-  { label: "Roof Replacement", href: "/services/roof-replacement" },
-  { label: "Storm Damage", href: "/services/storm-damage" },
+  { label: "Asphalt Shingles", href: "/services/asphalt-shingles" },
   { label: "Metal Roofing", href: "/services/metal-roofing" },
-  { label: "Commercial Roofing", href: "/commercial-roofing" },
-  { label: "Maintenance Programs", href: "/commercial-maintenance" },
+  { label: "Cedar Shake", href: "/services/cedar-shake" },
+  { label: "Flat & Low-Slope", href: "/services/flat-roofing" },
+  { label: "Roof Repair", href: "/services/roof-repair" },
+  { label: "Storm Damage & Insurance", href: "/services/storm-damage" },
+  { label: "Gutter Systems", href: "/services/gutters" },
 ];
 
 const constructionDropdown = [
-  { label: "Gutter Services", href: "/gutters" },
-  { label: "Outdoor Living", href: "/outdoor-living" },
-  { label: "Construction Services", href: "/construction-services" },
+  { label: "Additions & Renovations", href: "/services/additions-renovations" },
+  { label: "Decks & Outdoor Living", href: "/services/decks-outdoor-living" },
+  { label: "Siding & Exteriors", href: "/services/siding-exteriors" },
+  { label: "Windows & Doors", href: "/services/windows-doors" },
+  { label: "Commercial Build-Outs", href: "/services/commercial-build-outs" },
 ];
 
 const navLinks = [
   { label: "Roofing", href: "/services", dropdown: roofingDropdown },
-  { label: "Construction", href: "/construction-services", dropdown: constructionDropdown },
-  { label: "Roof Designer", href: "/roof-designer" },
-  { label: "Service Areas", href: "/service-areas" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "Construction", href: "/services", dropdown: constructionDropdown },
+  { label: "Projects", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
+  { label: "Service Areas", href: "/service-areas" },
+  { label: "Contact", href: "/request-inspection" },
 ];
 
 const Header = () => {
@@ -66,13 +69,13 @@ const Header = () => {
             className="hidden md:flex items-center justify-between px-8 py-1.5 bg-primary text-primary-foreground text-xs overflow-hidden"
           >
             <div className="flex items-center gap-5">
-              <span className="tracking-wide">Franklin & Sylva, NC</span>
+              <span className="tracking-wide font-body">Franklin & Sylva, NC</span>
               <span className="text-primary-foreground/25">|</span>
-              <span className="tracking-wide">CertainTeed Master Shingle Applicator</span>
+              <span className="tracking-wide font-body">CertainTeed Master Shingle Applicator</span>
               <span className="text-primary-foreground/25">|</span>
-              <span className="tracking-wide">Licensed General Contractor</span>
+              <span className="tracking-wide font-body">Licensed General Contractor</span>
             </div>
-            <a href="tel:8283979211" className="flex items-center gap-2 font-medium hover:text-accent transition-colors tracking-wide">
+            <a href="tel:8283979211" className="flex items-center gap-2 font-medium hover:text-accent transition-colors tracking-wide font-body">
               <Phone className="w-3 h-3" />
               (828) 397-9211
             </a>
@@ -92,8 +95,8 @@ const Header = () => {
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link, i) => (
+        <nav className="hidden lg:flex items-center gap-1">
+          {navLinks.map((link) => (
             <div
               key={link.label}
               className="relative"
@@ -102,7 +105,7 @@ const Header = () => {
             >
               <Link
                 to={link.href}
-                className="relative text-sm font-medium text-foreground/75 hover:text-foreground transition-colors inline-flex items-center gap-1 py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-accent after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className="relative text-[13px] font-medium text-foreground/70 hover:text-foreground transition-colors inline-flex items-center gap-1 px-3.5 py-2 rounded-sm hover:bg-secondary/60"
               >
                 {link.label}
                 {link.dropdown && (
@@ -113,28 +116,34 @@ const Header = () => {
               <AnimatePresence>
                 {link.dropdown && openDropdown === link.label && (
                   <motion.div
-                    initial={{ opacity: 0, y: 6 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 6 }}
-                    transition={{ duration: 0.2 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                   >
-                    <div className="bg-card border border-border rounded-sm shadow-xl py-1.5 min-w-[220px]">
+                    <div className="bg-card border border-border rounded-sm shadow-[0_12px_40px_-8px_hsl(var(--heritage-charcoal)/0.12)] py-2 min-w-[240px]">
+                      <div className="px-4 py-2 mb-1">
+                        <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+                          {link.label} Services
+                        </span>
+                      </div>
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.href}
                           to={item.href}
-                          className="block px-5 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary transition-colors"
+                          className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary transition-colors font-body"
                         >
                           {item.label}
                         </Link>
                       ))}
-                      <div className="border-t border-border mt-1 pt-1">
+                      <div className="border-t border-border mt-1.5 pt-1.5">
                         <Link
                           to={link.href}
-                          className="block px-5 py-2.5 text-sm font-medium text-accent hover:bg-secondary transition-colors"
+                          className="block px-4 py-2.5 text-sm font-medium text-accent hover:bg-secondary transition-colors font-body inline-flex items-center gap-1.5"
                         >
-                          View All {link.label} →
+                          All {link.label} Services
+                          <ArrowRight className="w-3 h-3" />
                         </Link>
                       </div>
                     </div>
@@ -148,16 +157,24 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <a
             href="tel:8283979211"
+            className="hidden md:flex items-center gap-2 text-foreground/60 hover:text-foreground text-sm font-body transition-colors mr-1"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span className="hidden xl:inline">(828) 397-9211</span>
+          </a>
+          <a
+            href="tel:8283979211"
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
           >
             <Phone className="w-4 h-4" />
           </a>
           <Link
             to="/request-inspection"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-semibold text-sm px-5 py-2.5 rounded-sm hover:opacity-90 transition-all duration-200 relative overflow-hidden group"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-semibold text-sm px-5 py-2.5 rounded-sm hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden group items-center gap-2"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative">Request a Consultation</span>
+            <span className="relative">Schedule a Quote Call</span>
+            <ArrowRight className="w-3.5 h-3.5 relative group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -221,7 +238,7 @@ const Header = () => {
                                   key={item.href}
                                   to={item.href}
                                   onClick={() => setMobileOpen(false)}
-                                  className="py-2.5 px-3 text-sm text-foreground/65 hover:text-foreground hover:bg-secondary rounded-sm transition-colors block"
+                                  className="py-2.5 px-3 text-sm text-foreground/65 hover:text-foreground hover:bg-secondary rounded-sm transition-colors block font-body"
                                 >
                                   {item.label}
                                 </Link>
@@ -242,17 +259,20 @@ const Header = () => {
                   )}
                 </motion.div>
               ))}
+
+              {/* Mobile CTA area */}
               <div className="pt-4 mt-3 border-t border-border space-y-2.5">
                 <Link
                   to="/request-inspection"
                   onClick={() => setMobileOpen(false)}
-                  className="cta-gradient text-accent-foreground font-semibold text-center py-3.5 px-4 rounded-sm block"
+                  className="cta-gradient text-accent-foreground font-semibold text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2"
                 >
-                  Request a Consultation
+                  Schedule a Quote Call
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href="tel:8283979211"
-                  className="bg-primary text-primary-foreground font-medium text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2"
+                  className="bg-primary text-primary-foreground font-medium text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2 font-body"
                 >
                   <Phone className="w-4 h-4" />
                   (828) 397-9211
