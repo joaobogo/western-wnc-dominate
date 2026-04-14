@@ -34,6 +34,10 @@ Updated: now
 - [Chatbot System](mem://strategy/chatbot-system) — AI project assistant with personality, 8 conversation paths, qualification, visual design
 - [Chatbot Conversation Library](mem://strategy/chatbot-conversation-library) — 11 scripted flows: welcome, routing, quote, urgency, storm, materials, area, commercial, budget, objections
 - [Quote Flow Architecture](mem://strategy/quote-flow-architecture) — 6-step premium consultation form with branching, microcopy, trust copy, confirmation UX
+- [Smart Form System](mem://features/smart-form-system) — 7 form types with fields, tone, friction levels, placement map, and trust elements
+- [Widget Strategy](mem://features/widget-strategy) — 9 premium interactive widgets with placement, UX, trust value, and conversion goals
+- [Roofing Calculators](mem://features/roofing-calculators) — 5 roofing tools: scope estimator, readiness assessment, materials comparison, maintenance checker, storm assessment
+- [Construction Planning Tools](mem://features/construction-planning-tools) — 6 construction tools: readiness quiz, addition planner, timeline tool, outdoor selector, renovation builder, consultation prep
 - [SEO Authority Page System](mem://seo/authority-page-system) — Authority page taxonomy with structure, conversion, trust, and linking per type
 - [Location & Service Area Strategy](mem://seo/location-strategy) — Town page framework, anti-thin rules, linking network, future towns
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
