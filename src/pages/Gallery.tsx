@@ -1,14 +1,17 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, MapPin, Calendar, Ruler } from "lucide-react";
+import { ArrowRight, MapPin, Calendar, Ruler, Eye, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
-import { PremiumLightbox, GalleryCard } from "@/components/gallery";
+import { ReassuranceBlock } from "@/components/trust";
+import { PremiumLightbox } from "@/components/gallery";
 import type { LightboxProject } from "@/components/gallery";
+import { ScrollReveal } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
+import GoldLine from "@/components/motion/GoldLine";
 import { MountainContours, ArchitecturalLines, TextureOverlay } from "@/components/motion/BackgroundTexture";
 
 import metal005 from "@/assets/gallery/metal-005.webp";
@@ -22,11 +25,14 @@ import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
 import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
 import cedar004 from "@/assets/gallery/cedar-004.webp";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true } as const,
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  transition: { duration: 0.6, ease: HIGHLAND_EASE },
 };
 
 interface Project extends LightboxProject {
@@ -34,19 +40,21 @@ interface Project extends LightboxProject {
   scope: string;
   duration: string;
   highlight: string;
+  slug?: string; // links to /projects/:slug if available
+  featured?: boolean;
 }
 
 const projects: Project[] = [
-  { title: "Standing Seam Metal — Dark Bronze", type: "Metal Roofing", description: "Complex multi-gable standing seam metal roof in dark bronze. Precision panel work on steep pitches with custom trim detailing and concealed fastener system throughout.", image: metal005, category: "roofing", location: "Highlands, NC", scope: "3,200 sq ft roof replacement", duration: "8 days", highlight: "Custom-fabricated panels for 12/12 pitch" },
+  { title: "Standing Seam Metal — Dark Bronze", type: "Metal Roofing", description: "Complex multi-gable standing seam metal roof in dark bronze. Precision panel work on steep pitches with custom trim detailing and concealed fastener system throughout.", image: metal005, category: "roofing", location: "Highlands, NC", scope: "3,200 sq ft roof replacement", duration: "8 days", highlight: "Custom-fabricated panels for 12/12 pitch", slug: "standing-seam-metal-dark-bronze-highlands", featured: true },
+  { title: "CertainTeed Landmark — Weathered Wood", type: "Asphalt Shingles", description: "CertainTeed Landmark shingles on a multi-level mountain home with screen porch. Premium materials installed by Master Shingle Applicator certified crew.", image: asphaltHero, category: "roofing", location: "Waynesville, NC", scope: "4,100 sq ft roof replacement", duration: "4 days", highlight: "CertainTeed SureStart PLUS™ warranty", slug: "certainteed-landmark-weathered-wood-waynesville" },
+  { title: "Cedar Shake — Estate Home", type: "Cedar Shake", description: "Stunning cedar shake roof on a luxury estate in Highlands. Intricate multi-gable design with copper ridge accents. Hand-selected premium cedar with natural preservative treatment.", image: cedar004, category: "roofing", location: "Highlands, NC", scope: "Premium cedar shake installation", duration: "14 days", highlight: "Hand-selected cedar with copper ridge accents", slug: "cedar-shake-estate-highlands" },
   { title: "Standing Seam Metal — Mountain Cabin", type: "Metal Roofing", description: "Green standing seam metal on a log cabin nestled in the WNC mountains. Engineered for decades of snow load, wind exposure, and UV at 4,200 feet elevation.", image: metal006, category: "roofing", location: "Cashiers, NC", scope: "Full roof replacement", duration: "6 days", highlight: "Engineered for 4,200 ft elevation exposure" },
   { title: "Metal Panel — Silver", type: "Metal Roofing", description: "Clean silver metal panel installation with complex hip-and-valley geometry. Every intersection precision-cut and sealed for permanent weather protection.", image: metal008, category: "roofing", location: "Franklin, NC", scope: "2,800 sq ft re-roof", duration: "7 days", highlight: "Complex hip-and-valley geometry" },
-  { title: "Metal Roof — Rural Home", type: "Metal Roofing", description: "Brown metal panel installation on a brick home in the WNC countryside. Material selected for longevity and visual harmony with the surrounding mountain landscape.", image: metal003, category: "roofing", location: "Sylva, NC", scope: "Full roof replacement", duration: "5 days", highlight: "50-year material warranty" },
-  { title: "Architectural Shingles — Weathered Wood", type: "Asphalt Shingles", description: "CertainTeed Landmark shingles on a multi-level mountain home with screen porch. Premium materials installed by Master Shingle Applicator certified crew.", image: asphaltHero, category: "roofing", location: "Waynesville, NC", scope: "4,100 sq ft roof replacement", duration: "4 days", highlight: "CertainTeed SureStart PLUS™ warranty" },
   { title: "Asphalt & Metal Combo — Highlands Estate", type: "Mixed Materials", description: "Craftsman mountain home featuring architectural shingles with standing seam metal accent roofing and natural stone exterior accents. Dual-material design for maximum curb appeal.", image: asphalt007, category: "roofing", location: "Highlands, NC", scope: "Dual-material roof system", duration: "10 days", highlight: "Architectural shingle + metal accent design" },
   { title: "Architectural Shingles — Slate Gray", type: "Asphalt Shingles", description: "Aerial drone view of a large residential shingle replacement in slate gray with complex roof intersections. Every valley and ridge executed to CertainTeed specifications.", image: asphalt006, category: "roofing", location: "Franklin, NC", scope: "3,500 sq ft complex roof", duration: "5 days", highlight: "12 roof intersections, zero callbacks" },
   { title: "Architectural Shingles — Brown", type: "Asphalt Shingles", description: "Full architectural shingle roof replacement with clean hip-and-ridge lines on a residential property. Ventilation upgraded during installation for improved attic performance.", image: asphalt008, category: "roofing", location: "Bryson City, NC", scope: "Complete re-roof + ventilation", duration: "4 days", highlight: "Ventilation system upgraded during install" },
+  { title: "Metal Roof — Rural Home", type: "Metal Roofing", description: "Brown metal panel installation on a brick home in the WNC countryside. Material selected for longevity and visual harmony with the surrounding mountain landscape.", image: metal003, category: "roofing", location: "Sylva, NC", scope: "Full roof replacement", duration: "5 days", highlight: "50-year material warranty" },
   { title: "Architectural Shingles — Hunter Green", type: "Asphalt Shingles", description: "Bird's-eye view of a large complex residential roof with hunter green CertainTeed architectural shingles. Precision work on multiple dormers and valleys.", image: asphalt002, category: "roofing", location: "Macon County, NC", scope: "5,200 sq ft multi-dormer roof", duration: "6 days", highlight: "Largest residential project of Q3 2024" },
-  { title: "Cedar Shake — Estate Home", type: "Cedar Shake", description: "Stunning cedar shake roof on a luxury estate in Highlands. Intricate multi-gable design with copper ridge accents. Hand-selected premium cedar with natural preservative treatment.", image: cedar004, category: "roofing", location: "Highlands, NC", scope: "Premium cedar shake installation", duration: "14 days", highlight: "Hand-selected cedar with copper ridge accents" },
 ];
 
 const categories = [
@@ -61,6 +69,116 @@ const projectStats = [
   { value: "Zero", label: "Unresolved Callbacks" },
   { value: "100%", label: "Owner-Inspected" },
 ];
+
+/* ── EDITORIAL PROJECT CARD ── */
+const EditorialCard = ({ project, index, isFeatured, onClick }: {
+  project: Project;
+  index: number;
+  isFeatured?: boolean;
+  onClick: () => void;
+}) => (
+  <motion.div
+    layout
+    initial={{ opacity: 0, y: 28 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -12, scale: 0.97 }}
+    transition={{ delay: index * 0.06, duration: 0.5, ease: HIGHLAND_EASE }}
+    className={`group relative rounded-none overflow-hidden cursor-pointer ${
+      isFeatured ? "md:col-span-2 md:row-span-2" : ""
+    }`}
+    onClick={onClick}
+  >
+    {/* Image */}
+    <div className={`relative overflow-hidden ${
+      isFeatured ? "aspect-[4/3] md:aspect-[16/10]" : "aspect-[4/3]"
+    }`}>
+      <motion.div
+        initial={{ clipPath: "inset(0 0 100% 0)" }}
+        whileInView={{ clipPath: "inset(0 0 0% 0)" }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 1.1, delay: index * 0.04, ease: HIGHLAND_EASE }}
+        className="absolute inset-0"
+      >
+        <motion.img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover"
+          loading={index < 3 ? "eager" : "lazy"}
+          initial={{ scale: 1.12 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.8, delay: index * 0.04 + 0.1, ease: HIGHLAND_EASE }}
+        />
+      </motion.div>
+
+      {/* Cinematic overlays */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.08)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.95)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+
+      {/* Gold bottom edge */}
+      <div className="absolute bottom-0 left-0 w-0 group-hover:w-2/3 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-[hsl(var(--highland-gold)/0)] transition-all duration-700 z-20" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+
+      {/* Category badge */}
+      <div className="absolute top-4 md:top-5 left-4 md:left-6 z-10">
+        <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] text-white/70 bg-white/[0.06] backdrop-blur-md border border-white/[0.08] px-3 py-1.5 group-hover:border-[hsl(var(--highland-gold)/0.2)] group-hover:text-white/90 transition-all duration-500">
+          {project.type}
+        </span>
+      </div>
+
+      {/* Case Study badge */}
+      {project.slug && (
+        <div className="absolute top-4 md:top-5 right-4 md:right-6 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0">
+          <span className="text-[8px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] backdrop-blur-md border border-[hsl(var(--highland-gold)/0.15)] px-2.5 py-1">
+            Case Study
+          </span>
+        </div>
+      )}
+
+      {/* Content overlay */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 z-10">
+        <div className="flex items-center gap-1.5 mb-2">
+          <MapPin className="w-2.5 h-2.5 text-[hsl(var(--highland-gold)/0.5)]" />
+          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/35">
+            {project.location}
+          </span>
+        </div>
+
+        <h3 className={`font-heading font-bold text-white leading-tight tracking-tight mb-0 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
+          isFeatured ? "text-xl md:text-2xl lg:text-3xl" : "text-base md:text-lg"
+        }`}>
+          {project.title}
+        </h3>
+
+        {/* Hover reveal: scope + duration + highlight */}
+        <div className="max-h-0 group-hover:max-h-32 overflow-hidden transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
+          <div className="flex items-center gap-4 text-white/40 text-[11px] font-body mt-2.5">
+            <span className="flex items-center gap-1"><Ruler className="w-3 h-3" /> {project.scope}</span>
+            <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {project.duration}</span>
+          </div>
+          <p className="text-white/40 text-[12px] font-body leading-relaxed mt-2 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
+            {project.highlight}
+          </p>
+          {project.slug && (
+            <Link
+              to={`/projects/${project.slug}`}
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
+            >
+              Read Full Case Study <ArrowRight className="w-3 h-3" />
+            </Link>
+          )}
+        </div>
+      </div>
+
+      {/* Arrow icon */}
+      <div className="absolute bottom-5 md:bottom-7 right-5 md:right-7 z-10">
+        <div className="w-10 h-10 rounded-none border border-white/0 group-hover:border-[hsl(var(--highland-gold)/0.3)] bg-transparent group-hover:bg-[hsl(var(--highland-gold)/0.08)] backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <Eye className="w-4 h-4 text-white/80 group-hover:text-[hsl(var(--highland-gold))] transition-colors" />
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
 
 const Gallery = () => {
   const [filter, setFilter] = useState("all");
@@ -124,46 +242,61 @@ const Gallery = () => {
           <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }} />
         </section>
 
-        {/* ── PROJECT GRID ── */}
+        {/* ── PROJECT GRID — EDITORIAL LAYOUT ── */}
         <section className="section-padding bg-background relative">
           <ArchitecturalLines variant="light" opacity={0.015} direction="right" />
           <div className="container-tight relative z-10">
-            {/* Filters */}
-            <div className="flex flex-wrap gap-2 justify-center mb-10">
-              {categories.map((cat) => (
-                <button
-                  key={cat.value}
-                  onClick={() => setFilter(cat.value)}
-                  className={`px-5 py-2 rounded-sm text-sm font-semibold btn-ghost-interactive ${
-                    filter === cat.value
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-[hsl(var(--highland-gold)/0.2)]"
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
+            {/* Header + Filters */}
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
+              <div>
+                <ScrollReveal variant="fade">
+                  <span className="eyebrow mb-3 block">Portfolio</span>
+                </ScrollReveal>
+                <HeadingReveal delay={0.1}>
+                  <h2 className="section-heading mb-3">
+                    Every Project,{" "}
+                    <span className="text-[hsl(var(--highland-gold))]">Documented.</span>
+                  </h2>
+                </HeadingReveal>
+                <ScrollReveal variant="rise-subtle" delay={0.2}>
+                  <p className="text-muted-foreground text-[15px] font-body max-w-md leading-relaxed">
+                    Click any project to view details. Projects with full case studies include materials, process highlights, and before-and-after documentation.
+                  </p>
+                </ScrollReveal>
+              </div>
+              <ScrollReveal variant="rise-subtle" delay={0.25}>
+                <div className="flex gap-1.5">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat.value}
+                      onClick={() => setFilter(cat.value)}
+                      className={`text-[10px] font-body font-bold uppercase tracking-[0.15em] px-5 py-2.5 rounded-none transition-all duration-300 ${
+                        filter === cat.value
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-transparent border border-border text-muted-foreground hover:border-foreground/20 hover:text-foreground"
+                      }`}
+                    >
+                      {cat.label}
+                    </button>
+                  ))}
+                </div>
+              </ScrollReveal>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <AnimatePresence mode="popLayout">
+            {/* Grid — 3-col editorial with featured card */}
+            <AnimatePresence mode="popLayout">
+              <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                 {filtered.map((project, i) => (
-                  <GalleryCard
+                  <EditorialCard
                     key={project.title}
-                    title={project.title}
-                    image={project.image}
-                    type={project.type!}
-                    description={project.description!}
-                    location={project.location!}
-                    scope={project.scope}
-                    duration={project.duration}
-                    highlight={project.highlight}
+                    project={project}
                     index={i}
+                    isFeatured={i === 0 && project.featured}
                     onClick={() => setLightbox(projects.indexOf(project))}
                   />
                 ))}
-              </AnimatePresence>
-            </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </section>
 
