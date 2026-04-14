@@ -38,7 +38,7 @@ const NotJustRoofing = () => {
             <HeadingReveal delay={0.1}>
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-snug">
                 You Hired Us for the Roof.<br className="hidden md:block" />
-                Now Let Us Show You What Else We Build.
+                Now See What Else We Build.
               </h2>
             </HeadingReveal>
             <GoldLine width="3rem" delay={0.3} className="mb-5" />
