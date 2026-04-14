@@ -1,27 +1,41 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Home, HardHat } from "lucide-react";
+import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings } from "lucide-react";
 
 const pathways = [
   {
     icon: Home,
-    label: "Roofing",
+    label: "Roofing Division",
     title: "Mountain-Grade Roofing",
-    description: "Engineered for elevation, wind, and heavy snow loads. Every installation is specified for your property's exposure and climate zone.",
-    services: ["Asphalt Shingles", "Standing Seam Metal", "Cedar Shake", "Flat & Low-Slope", "Storm Damage & Insurance", "Gutter Systems"],
+    description: "Engineered for elevation, wind, and heavy snow loads. From premium replacements to storm restoration, every system is specified for your property's exposure, climate zone, and long-term performance.",
+    services: [
+      { icon: Layers, name: "Full Roof Replacements" },
+      { icon: Wrench, name: "Targeted Repairs" },
+      { icon: CloudLightning, name: "Storm Damage & Insurance" },
+      { icon: Search, name: "Professional Inspections" },
+      { icon: PaintBucket, name: "Material Selection & Options" },
+      { icon: ShieldCheck, name: "Long-Term Roof Performance" },
+    ],
     cta: "Explore Roofing Services",
     href: "/services",
-    accent: "primary",
+    accent: "primary" as const,
   },
   {
     icon: HardHat,
-    label: "Construction",
+    label: "Construction Division",
     title: "Full-Scope Construction",
-    description: "The same precision and accountability we bring to roofing — applied to additions, exteriors, outdoor living, and commercial projects.",
-    services: ["Additions & Renovations", "Decks & Outdoor Living", "Siding & Exteriors", "Windows & Doors", "Commercial Build-Outs"],
+    description: "The same precision and accountability we bring to roofing — applied to renovations, additions, exterior transformations, and structural improvements. One team, one standard.",
+    services: [
+      { icon: Hammer, name: "Renovations & Remodels" },
+      { icon: PaintBucket, name: "Exterior Upgrades & Siding" },
+      { icon: PlusSquare, name: "Additions & Expansions" },
+      { icon: Ruler, name: "Structural Improvements" },
+      { icon: Settings, name: "Custom Project Work" },
+      { icon: ShieldCheck, name: "Quality-Controlled Execution" },
+    ],
     cta: "Explore Construction Services",
     href: "/services",
-    accent: "gold",
+    accent: "gold" as const,
   },
 ];
 
@@ -84,19 +98,32 @@ const DualPathway = () => {
                 <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug">
                   {path.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-6">
+                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-7">
                   {path.description}
                 </p>
 
-                {/* Service list */}
-                <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-8">
-                  {path.services.map((service) => (
-                    <div key={service} className="flex items-center gap-2 text-sm text-foreground/70 font-body">
-                      <div className={`w-1 h-1 rounded-full flex-shrink-0 ${
-                        path.accent === "gold" ? "bg-[hsl(var(--highland-gold))]" : "bg-primary"
-                      }`} />
-                      {service}
-                    </div>
+                {/* Service list with icons */}
+                <div className="space-y-3 mb-8">
+                  {path.services.map((service, si) => (
+                    <motion.div
+                      key={service.name}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 + si * 0.04, duration: 0.35 }}
+                      className="flex items-center gap-3 group/item"
+                    >
+                      <div className={`w-7 h-7 rounded-sm flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
+                        path.accent === "gold"
+                          ? "bg-[hsl(var(--highland-gold)/0.06)] group-hover/item:bg-[hsl(var(--highland-gold)/0.12)]"
+                          : "bg-primary/5 group-hover/item:bg-primary/10"
+                      }`}>
+                        <service.icon className={`w-3.5 h-3.5 ${
+                          path.accent === "gold" ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-primary/60"
+                        }`} />
+                      </div>
+                      <span className="text-sm text-foreground/80 font-body font-medium">{service.name}</span>
+                    </motion.div>
                   ))}
                 </div>
 
