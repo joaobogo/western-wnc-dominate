@@ -79,14 +79,14 @@ const InspectionForm = () => {
                 Start Your Project
               </span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark-section-foreground mb-5 leading-[1.15]">
-                Request a<br /> Project<br className="hidden lg:block" /> Consultation.
+                Let's Talk About<br /> Your Project.
               </h2>
               <p className="text-dark-section-foreground/50 font-body text-sm leading-relaxed mb-8">
-                Tell us about your property and goals. We'll review the details, then reach out to discuss scope,
-                materials, timing, and next steps — no obligation, no pressure.
+                This isn't a generic contact form — it's the start of a real project conversation.
+                Share a few details about your property and what you're looking to accomplish. A local
+                Highlander advisor will review everything and follow up personally to discuss scope,
+                materials, timing, and next steps.
               </p>
-
-              {/* Trust signals */}
               <div className="space-y-5">
                 {[
                   { icon: Clock, text: "We respond within 24 hours" },
