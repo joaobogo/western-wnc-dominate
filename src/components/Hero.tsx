@@ -40,9 +40,9 @@ const Hero = () => {
           <source src={heroVideo} type="video/mp4" />
         </video>
 
-        {/* Cinematic overlays — deeper, more dramatic */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.97)] via-[hsl(var(--hero-overlay)/0.82)] to-[hsl(var(--hero-overlay)/0.3)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.08)] to-[hsl(var(--hero-overlay)/0.5)]" />
+        {/* Cinematic overlays — optimized for mobile readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.97)] via-[hsl(var(--hero-overlay)/0.85)] to-[hsl(var(--hero-overlay)/0.35)] md:to-[hsl(var(--hero-overlay)/0.3)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.1)] to-[hsl(var(--hero-overlay)/0.5)]" />
 
         {/* Grain */}
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
@@ -57,7 +57,7 @@ const Hero = () => {
         transition={{ duration: 2.5, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       />
 
-      {/* === SPLIT VISUAL INDICATOR (right side) === */}
+      {/* === SPLIT VISUAL INDICATOR (right side — desktop only) === */}
       <div className="absolute right-0 top-0 bottom-0 hidden lg:flex flex-col items-center justify-center z-10 pr-8">
         <motion.div
           initial={{ opacity: 0, x: 20 }}
@@ -81,77 +81,76 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* === MAIN CONTENT === */}
-      <div className="relative z-10 w-full px-6 md:px-10 lg:px-20 pb-14 md:pb-20 pt-36 md:pt-44">
+      {/* === MAIN CONTENT — mobile-optimized spacing === */}
+      <div className="relative z-10 w-full px-5 md:px-10 lg:px-20 pb-28 md:pb-20 pt-32 md:pt-44">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex items-center gap-4 mb-10"
+            className="flex items-center gap-3 md:gap-4 mb-7 md:mb-10"
           >
             <motion.div
               className="h-px"
               style={{ background: 'hsl(var(--highland-gold))' }}
               initial={{ width: 0 }}
-              animate={{ width: 64 }}
+              animate={{ width: 48 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             />
             <motion.span
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]"
+              className="text-[9px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[hsl(var(--highland-gold))]"
             >
               Roofing & Construction · Western North Carolina
             </motion.span>
           </motion.div>
 
-          {/* Headline — stronger, more assertive */}
-          <div className="overflow-hidden mb-1 md:mb-2">
+          {/* Headline — responsive sizing */}
+          <div className="overflow-hidden mb-1">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.5, ease: HIGHLAND_EASE }}
-              className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.02] tracking-[-0.02em]"
+              className="text-[2.25rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.04] tracking-[-0.02em]"
             >
               Not Just Another Roofer.
             </motion.h1>
           </div>
-          <div className="overflow-hidden mb-10 md:mb-12">
+          <div className="overflow-hidden mb-8 md:mb-12">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.65, ease: HIGHLAND_EASE }}
-              className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.02] tracking-[-0.02em]"
+              className="text-[2.25rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.04] tracking-[-0.02em]"
             >
               Not Just Another Contractor.
             </motion.h1>
           </div>
 
-          {/* Subtext — more specific, more persuasive */}
+          {/* Subtext — mobile-optimized */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1 }}
-            className="text-[15px] md:text-lg text-primary-foreground/50 max-w-lg mb-12 leading-relaxed font-body"
+            className="text-[14px] md:text-lg text-primary-foreground/45 max-w-lg mb-10 md:mb-12 leading-[1.7] font-body"
           >
             500+ mountain roofs installed. Licensed GC. CertainTeed Master Applicator.
-            The same crews, the same standard, whether it's a standing seam roof or a full home renovation.
-            Highlands · Cashiers · Franklin · Sylva & beyond.
+            The same crews, the same standard — whether it's a standing seam roof or a full home renovation.
           </motion.p>
 
-          {/* CTA Group */}
+          {/* CTA Group — mobile: full-width stacked, larger touch targets */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-5 mb-16 md:mb-20"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 md:mb-20"
           >
             <Link
               to="/request-inspection"
-              className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
+              className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] md:text-[15px] px-8 md:px-10 py-4 md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <span className="relative">Get a Free Assessment</span>
@@ -159,19 +158,19 @@ const Hero = () => {
             </Link>
             <Link
               to="/services"
-              className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.12] text-primary-foreground font-medium text-[15px] px-10 py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.08] hover:border-white/[0.2] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.12] text-primary-foreground font-medium text-[14px] md:text-[15px] px-8 md:px-10 py-4 md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.08] hover:border-white/[0.2] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
               Explore Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
 
-          {/* Trust credentials */}
+          {/* Trust credentials — mobile: 2-column grid */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="flex flex-wrap gap-x-6 gap-y-3"
+            className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-5 gap-y-2.5 md:gap-x-6 md:gap-y-3"
           >
             {trustItems.map((item, i) => (
               <motion.div
@@ -179,10 +178,10 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 1.7 + i * 0.1 }}
-                className="flex items-center gap-2 text-primary-foreground/40 text-xs md:text-sm"
+                className="flex items-center gap-2 text-primary-foreground/35 text-[11px] md:text-sm"
               >
-                <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)]" />
-                <span className="font-body">{item.label}</span>
+                <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
+                <span className="font-body leading-tight">{item.label}</span>
               </motion.div>
             ))}
           </motion.div>
