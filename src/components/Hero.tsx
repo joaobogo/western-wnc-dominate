@@ -202,27 +202,27 @@ const Hero = () => {
       </div>
 
       {/* === MAIN CONTENT === */}
-      <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-12 md:pb-16 pt-32 md:pt-40">
+      <div className="relative z-10 w-full px-6 md:px-10 lg:px-20 pb-14 md:pb-20 pt-36 md:pt-44">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex items-center gap-4 mb-8"
+            className="flex items-center gap-4 mb-10"
           >
             <motion.div
               className="h-px"
               style={{ background: 'hsl(var(--highland-gold))' }}
               initial={{ width: 0 }}
-              animate={{ width: 56 }}
+              animate={{ width: 64 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             />
             <motion.span
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]"
+              className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]"
             >
               Roofing & Construction · Western North Carolina
             </motion.span>
@@ -234,17 +234,17 @@ const Hero = () => {
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
+              className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.02] tracking-[-0.02em]"
             >
               Built for the Mountains.
             </motion.h1>
           </div>
-          <div className="overflow-hidden mb-8 md:mb-10">
+          <div className="overflow-hidden mb-10 md:mb-12">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
+              className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.02] tracking-[-0.02em]"
             >
               Crafted for Generations.
             </motion.h1>
@@ -255,7 +255,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1 }}
-            className="text-base md:text-lg text-primary-foreground/55 max-w-lg mb-10 leading-relaxed font-body"
+            className="text-[15px] md:text-lg text-primary-foreground/50 max-w-lg mb-12 leading-relaxed font-body"
           >
             Expert roofing and construction across Highlands, Cashiers,
             Franklin, Sylva & the surrounding mountain communities. Precision workmanship. Certified. Warranty-backed.
