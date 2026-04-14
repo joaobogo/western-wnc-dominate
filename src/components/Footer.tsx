@@ -81,10 +81,10 @@ const Footer = () => {
           >
             <div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">
-                Ready to Start a Conversation?
+                Let's Discuss Your Property.
               </h3>
               <p className="text-primary-foreground/50 text-sm font-body max-w-md">
-                Roof replacement, construction project, or storm damage — we respond within 24 hours with an honest assessment and clear next steps.
+                Whether it's a roof, a renovation, or storm damage — you'll speak with a project advisor who knows these mountains, not a call center.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -121,8 +121,9 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/40 text-sm leading-relaxed mb-6 max-w-xs font-body">
-              Family-owned since 2017. Licensed General Contractor. CertainTeed Master Applicator. 
-              Serving Western North Carolina with mountain-grade craftsmanship and verifiable warranty protection.
+              Family-owned. Licensed General Contractor. CertainTeed Master Applicator. 
+              Protecting Western North Carolina properties with mountain-grade craftsmanship 
+              and verifiable warranty documentation since 2017.
             </p>
 
             {/* Contact info */}
