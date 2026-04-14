@@ -7,7 +7,7 @@ const pathways = [
     icon: Home,
     label: "Roofing Division",
     title: "Mountain-Grade Roofing",
-    description: "Engineered for elevation, wind, and heavy snow loads. From premium replacements to storm restoration, every system is specified for your property's exposure, climate zone, and long-term performance.",
+    description: "Your roof is the first line of defense against Western North Carolina's relentless weather — driving rain, heavy snow loads, high-altitude UV, and wind that tests every fastener. Highlander delivers roofing systems engineered for this climate, installed by crews who understand mountain construction, and backed by warranties we stand behind personally. From full replacements to storm restoration, every project is built for protection, craftsmanship, and decades of performance.",
     services: [
       { icon: Layers, name: "Full Roof Replacements" },
       { icon: Wrench, name: "Targeted Repairs" },
