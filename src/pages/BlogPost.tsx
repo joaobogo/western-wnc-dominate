@@ -277,6 +277,53 @@ const BlogPostPage = () => {
                   </motion.div>
                 )}
 
+                {/* FAQ Module */}
+                {post.faqs && post.faqs.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-10"
+                  >
+                    <div className="flex items-center gap-2 mb-5">
+                      <BookOpen className="w-4 h-4 text-primary" />
+                      <h3 className="font-heading font-semibold text-foreground">Frequently Asked Questions</h3>
+                    </div>
+                    <div className="space-y-4">
+                      {post.faqs.map((faq, i) => (
+                        <div key={i} className="bg-secondary/50 border border-border rounded-sm p-5">
+                          <h4 className="font-heading font-semibold text-foreground text-sm mb-2">{faq.question}</h4>
+                          <p className="text-muted-foreground text-sm leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Related Services — Internal Linking */}
+                {post.relatedServices && post.relatedServices.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-10 bg-primary/5 border border-primary/10 rounded-sm p-5 md:p-6"
+                  >
+                    <h4 className="font-heading font-semibold text-sm text-foreground mb-3">Related Services</h4>
+                    <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)] mb-4" />
+                    <div className="flex flex-wrap gap-2">
+                      {post.relatedServices.map((svc) => (
+                        <Link
+                          key={svc.path}
+                          to={svc.path}
+                          className="inline-flex items-center gap-1.5 text-sm font-body font-medium text-primary hover:text-primary/80 transition-colors bg-primary/8 px-3 py-1.5 rounded-sm"
+                        >
+                          {svc.label} <ArrowRight className="w-3 h-3" />
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+
                 {/* Inline Lead Magnet */}
                 <div className="mt-10">
                   <GuideLeadMagnet variant="inline" guide={getGuideType(post.category)} />
