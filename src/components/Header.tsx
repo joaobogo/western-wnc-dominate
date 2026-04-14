@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.png";
 
 const roofingDropdown = [
   { label: "Asphalt Shingles", href: "/services/asphalt-shingles" },
