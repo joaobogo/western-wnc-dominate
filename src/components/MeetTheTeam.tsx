@@ -63,15 +63,26 @@ const TeamCard = ({ member, index }: { member: typeof team[0]; index: number }) 
       {/* Left gold accent on hover */}
       <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-600 z-10" />
 
-      {/* Photo */}
+      {/* Photo — curtain reveal */}
       <div className="relative h-56 md:h-64 overflow-hidden">
-        <motion.img
-          src={member.image}
-          alt={member.name}
-          className="w-full h-full object-cover object-top transition-transform duration-[1.2s] group-hover:scale-[1.04]"
-          style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
-          loading="lazy"
-        />
+        <motion.div
+          initial={{ clipPath: "inset(100% 0 0 0)" }}
+          whileInView={{ clipPath: "inset(0 0 0 0)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: index * 0.1, ease: HIGHLAND_EASE }}
+          className="absolute inset-0"
+        >
+          <motion.img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover object-top"
+            loading="lazy"
+            initial={{ scale: 1.12 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.8, delay: index * 0.1 + 0.15, ease: HIGHLAND_EASE }}
+          />
+        </motion.div>
         {/* Cinematic gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
 

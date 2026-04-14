@@ -856,7 +856,7 @@
     position: absolute;
     top: -0.2em;
     left: -0.05em;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 6em;
     line-height: 1;
     color: hsl(var(--highland-gold) / 0.06);
@@ -879,6 +879,101 @@
   /* Magnetic hover — subtle pull toward cursor */
   .magnetic-hover {
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* === PREMIUM HOVER DEPTH === */
+  /* Cards with subtle shadow depth on hover */
+  .card-depth {
+    @apply transition-all;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-depth:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 60px -15px hsl(var(--heritage-charcoal) / 0.08),
+      0 0 0 1px hsl(var(--highland-gold) / 0.05);
+  }
+
+  /* Gold border draw — left edge draws down on hover */
+  .gold-border-draw {
+    @apply relative;
+  }
+  .gold-border-draw::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0.15));
+    transition: height 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .gold-border-draw:hover::after {
+    height: 100%;
+  }
+
+  /* Smooth image hover zoom inside card */
+  .img-hover-zoom {
+    transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .img-hover-zoom {
+    transform: scale(1.05);
+  }
+
+  /* CTA glow — ambient gold underglow on hover */
+  .cta-glow {
+    @apply relative;
+    transition: box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-glow:hover {
+    box-shadow:
+      0 8px 30px -6px hsl(var(--highland-gold) / 0.35),
+      0 0 0 1px hsl(var(--highland-gold) / 0.12);
+  }
+  .cta-glow:active {
+    transform: scale(0.98);
+    transition-duration: 0.08s;
+  }
+
+  /* Section entrance — fade up with slight blur clear */
+  .section-entrance {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .section-entrance.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  /* Stat number glow — subtle gold text shadow on counters */
+  .stat-glow {
+    text-shadow: 0 0 40px hsl(var(--highland-gold) / 0.15);
+  }
+
+  /* Border shimmer on dark cards */
+  .border-shimmer {
+    @apply relative overflow-hidden;
+  }
+  .border-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--highland-gold) / 0.4), transparent);
+    transition: left 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .border-shimmer:hover::after {
+    left: 100%;
   }
 }
 

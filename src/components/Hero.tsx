@@ -209,7 +209,7 @@ const Hero = () => {
             >
               <Link
                 to="/request-inspection"
-                className="group cta-gradient text-accent-foreground font-heading font-bold text-[13px] md:text-[15px] px-8 md:px-10 py-[14px] md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide min-h-[52px]"
+                className="group cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[13px] md:text-[15px] px-8 md:px-10 py-[14px] md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide min-h-[52px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Request a Consultation</span>
