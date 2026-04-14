@@ -23,6 +23,7 @@ Updated: now
 - [Visual Proof Strategy](mem://strategy/visual-proof-strategy) — Photography direction, content modules, and page-level image recommendations
 - [Proof Architecture](mem://strategy/proof-architecture) — How proof layers across every page for cumulative trust building
 - [Content & Editorial Strategy](mem://strategy/content-strategy) — Blog content engine with 9 pillars, category taxonomy, editorial calendar, SEO approach
+- [Blog Category Architecture](mem://strategy/blog-category-architecture) — Category system with audience, intent, themes, linking, conversion per category
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
 - [Migration Strategy](mem://seo/migration-strategy) — 301 redirects and URL structure for Hibu migration
 - [Service Categories](mem://features/service-expansion) — Building Services category expansion beyond core roofing
