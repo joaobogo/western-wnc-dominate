@@ -21,6 +21,7 @@ import RoofDesigner from "./pages/RoofDesigner";
 import RoofingDivision from "./pages/RoofingDivision";
 import ResidentialRoofing from "./pages/ResidentialRoofing";
 import RoofReplacement from "./pages/RoofReplacement";
+import RoofRepair from "./pages/RoofRepair";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/roofing" element={<RoofingDivision />} />
           <Route path="/roofing/residential" element={<ResidentialRoofing />} />
           <Route path="/roofing/roof-replacement" element={<RoofReplacement />} />
+          <Route path="/roofing/roof-repair" element={<RoofRepair />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/commercial-roofing" element={<ServicePage />} />
