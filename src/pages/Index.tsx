@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
@@ -20,10 +21,22 @@ import CTABlock from "@/components/CTABlock";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
+import SiteLoader from "@/components/SiteLoader";
 
 const Index = () => {
+  const [showLoader, setShowLoader] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !sessionStorage.getItem("hl_loader_seen");
+  });
+
+  const handleLoaderComplete = () => {
+    sessionStorage.setItem("hl_loader_seen", "1");
+    setShowLoader(false);
+  };
+
   return (
     <>
+      {showLoader && <SiteLoader onComplete={handleLoaderComplete} />}
       <Header />
       <main>
         {/* ═══ ACT I: HOOK & CREDIBILITY ═══ */}
