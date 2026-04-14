@@ -21,16 +21,17 @@ const TownGrid = () => {
       <div className="container-tight">
         <div className="text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Service Areas</span>
+            <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Where We Work</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
-              Serving Western<br className="hidden md:block" /> North Carolina
+              Rooted in Western<br className="hidden md:block" /> North Carolina.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-dark-section-foreground/55 max-w-xl mx-auto text-base font-body">
-              Locally operated with crews across the region. We know these mountains — and the properties that need protecting.
+              Locally owned with crews positioned across the region. We know these mountains, these 
+              microclimates, and the properties that need protecting at every elevation.
             </p>
           </ScrollReveal>
         </div>

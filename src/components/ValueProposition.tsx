@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const valuePoints = [
-  "Certified materials specified for your property's elevation and exposure",
-  "Written scope of work with transparent, line-item pricing",
-  "Full labor and material warranties — documented and delivered",
-  "Daily communication and a dedicated project point of contact",
-  "Final walkthrough inspection before any project is closed",
+  "Certified materials specified for your property's elevation, wind exposure, and climate zone",
+  "Written scope of work with transparent, line-item pricing — no hidden fees, no ambiguity",
+  "Full labor and material warranties — documented, delivered, and backed by our name",
+  "Named project contact with daily updates — you'll never chase us for information",
+  "Final walkthrough inspection before any project is considered complete",
 ];
 
 const ValueProposition = () => {
@@ -27,19 +27,19 @@ const ValueProposition = () => {
                 The Highlander Difference
               </span>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-snug mb-5">
-                The Lowest Bid<br />
-                Costs You More.
+                The Cheapest Bid<br />
+                Is the Most Expensive Mistake.
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
               <p className="text-dark-section-foreground/55 text-sm md:text-base leading-relaxed font-body mb-4">
-                A cheaper quote often means cheaper materials, inexperienced crews, and
-                warranties that don't hold up when you need them. The real cost shows up
+                A lower quote almost always means lower-grade materials, less experienced crews, and
+                warranties that won't hold up when you actually need them. The real cost shows up
                 two winters later — in leaks, callbacks, and another round of repairs.
               </p>
               <p className="text-dark-section-foreground/55 text-sm md:text-base leading-relaxed font-body">
-                Highlander builds for the long term. We invest in certified materials, documented
-                processes, and the kind of workmanship that doesn't need to be redone. That's not
-                a higher price — it's a lower cost of ownership.
+                Highlander builds for the next 30 years, not the next inspection. We invest in certified 
+                materials, documented processes, and workmanship that doesn't need to be redone. 
+                That's not a higher price — it's a lower cost of ownership.
               </p>
             </motion.div>
 

@@ -5,6 +5,7 @@ import { blogPosts } from "@/data/blogs";
 import { useState } from "react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
+import GoldLine from "@/components/motion/GoldLine";
 
 const categoryMap: Record<string, string> = {
   Cost: "Homeowner Guidance",
@@ -67,11 +68,11 @@ const BlogInsights = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div>
             <ScrollReveal variant="fade">
-              <span className="eyebrow mb-3 block">News & Insights</span>
+              <span className="eyebrow mb-3 block">Knowledge & Guidance</span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="section-heading">
-                Insights for Mountain<br className="hidden md:block" /> Property Owners.
+                Insights Built for<br className="hidden md:block" /> Mountain Property Owners.
               </h2>
             </HeadingReveal>
           </div>
@@ -179,7 +180,7 @@ const BlogInsights = () => {
             to="/blog"
             className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body link-draw"
           >
-            View All Articles
+            Browse All Articles
             <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
           </Link>
         </ScrollReveal>

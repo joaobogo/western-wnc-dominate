@@ -8,13 +8,13 @@ import GoldLine from "@/components/motion/GoldLine";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const steps = [
-  { number: "01", icon: Phone, title: "Initial Consultation", description: "We listen first. Tell us about your project, your concerns, and your timeline — we'll outline next steps clearly." },
-  { number: "02", icon: Search, title: "On-Site Assessment", description: "Our team walks every inch of your property — documenting conditions, taking precise measurements, and photographing key areas." },
-  { number: "03", icon: FileText, title: "Scope & Proposal", description: "You receive a detailed written proposal: full scope of work, realistic timeline, material specifications, and transparent pricing." },
-  { number: "04", icon: Layers, title: "Material & Design Alignment", description: "We present material samples, color options, and product data so every decision is informed — no guesswork, no regrets." },
-  { number: "05", icon: HardHat, title: "Precision Execution", description: "Our crews follow documented procedures, protect your landscaping and property, and maintain daily communication throughout the build." },
-  { number: "06", icon: CheckCircle, title: "Quality Review & Walkthrough", description: "Before we call it done, we inspect every detail with you. If it doesn't meet our standard, it doesn't meet yours." },
-  { number: "07", icon: Shield, title: "Warranty & Completion", description: "You receive complete documentation — warranty certificates, material records, maintenance guidance, and direct access to our team." },
+  { number: "01", icon: Phone, title: "Discovery Call", description: "We listen before we prescribe. Tell us about your property, your concerns, and your timeline — we'll outline exactly what happens next." },
+  { number: "02", icon: Search, title: "On-Site Property Assessment", description: "Our team walks every surface, documents conditions with photos and measurements, and identifies issues you may not see from the ground." },
+  { number: "03", icon: FileText, title: "Written Scope & Transparent Pricing", description: "You receive a detailed proposal: full scope of work, material specifications, realistic timeline, and line-item pricing — no hidden costs, no ambiguity." },
+  { number: "04", icon: Layers, title: "Material & Design Alignment", description: "We present samples, color options, and performance data so every choice is informed by your home's architecture, elevation, and long-term goals." },
+  { number: "05", icon: HardHat, title: "Precision Execution", description: "Our crews follow documented procedures, protect your property and landscaping, and provide daily progress updates throughout the build." },
+  { number: "06", icon: CheckCircle, title: "Final Walkthrough & Quality Review", description: "Before we consider a project complete, we inspect every detail with you. If it doesn't meet our standard, it doesn't meet yours." },
+  { number: "07", icon: Shield, title: "Warranty Delivery & Ongoing Support", description: "You receive complete documentation — manufacturer warranties, labor coverage, maintenance guidance, and direct access to our team for years to come." },
 ];
 
 const OurProcess = () => {
@@ -32,12 +32,12 @@ const OurProcess = () => {
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-4">
-              From First Call<br className="hidden md:block" /> to Final Walkthrough.
+              From Discovery Call<br className="hidden md:block" /> to Warranty Delivery.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground max-w-xl mx-auto text-base font-body">
-              Every project follows the same disciplined process — because consistency is how you deliver quality at scale.
+              Seven documented steps. Zero guesswork. Every project follows the same disciplined sequence — because consistent process is how you deliver consistent quality.
             </p>
           </ScrollReveal>
           <GoldLine width="3rem" centered delay={0.35} className="mt-6" />

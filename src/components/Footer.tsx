@@ -22,19 +22,19 @@ const constructionLinks = [
 ];
 
 const resourceLinks = [
-  { label: "Blog", href: "/blog" },
+  { label: "Blog & Insights", href: "/blog" },
   { label: "Storm Damage Guide", href: "/blog" },
   { label: "Virtual Roof Designer", href: "/roof-designer" },
-  { label: "Financing", href: "/financing" },
+  { label: "Financing Options", href: "/financing" },
   { label: "Free Tools", href: "/free-tools" },
 ];
 
 const companyLinks = [
   { label: "Our Story", href: "/about" },
   { label: "Our Process", href: "/about" },
-  { label: "Projects", href: "/gallery" },
+  { label: "Project Gallery", href: "/gallery" },
   { label: "Careers", href: "/careers" },
-  { label: "Contact", href: "/request-inspection" },
+  { label: "Start a Project", href: "/request-inspection" },
 ];
 
 const areaLinks = [
@@ -81,24 +81,24 @@ const Footer = () => {
           >
             <div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">
-                Ready to Discuss Your Project?
+                Ready to Start a Conversation?
               </h3>
               <p className="text-primary-foreground/50 text-sm font-body max-w-md">
-                Whether it's a roof replacement, new construction, or storm repair — we respond within 24 hours with clear next steps.
+                Roof replacement, construction project, or storm damage — we respond within 24 hours with an honest assessment and clear next steps.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/request-inspection"
-                className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap"
+                className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Schedule a Quote Call</span>
+                <span className="relative">Start Your Project</span>
                 <ArrowRight className="w-3.5 h-3.5 relative group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <a
                 href="tel:8283979211"
-                className="bg-primary-foreground/8 border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-7 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/12 transition-colors whitespace-nowrap"
+                className="bg-primary-foreground/8 border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-7 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/12 transition-colors whitespace-nowrap"
               >
                 <Phone className="w-3.5 h-3.5" />
                 (828) 397-9211
@@ -121,7 +121,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/40 text-sm leading-relaxed mb-6 max-w-xs font-body">
-              Family-owned and locally operated since 2017. Licensed General Contractor serving Western North Carolina with mountain-grade craftsmanship and warranty-backed results.
+              Family-owned since 2017. Licensed General Contractor. CertainTeed Master Applicator. 
+              Serving Western North Carolina with mountain-grade craftsmanship and verifiable warranty protection.
             </p>
 
             {/* Contact info */}

@@ -5,6 +5,9 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 
+import metalRoof from "@/assets/gallery/metal-005.webp";
+import cedarRoof from "@/assets/gallery/cedar-004.webp";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
@@ -13,24 +16,25 @@ const pathways = [
     icon: Home,
     label: "Roofing Division",
     title: "Mountain-Grade Roofing",
-    description: "Roof systems engineered for WNC's elevation, wind, and snow — installed by certified crews and backed by warranties we stand behind personally.",
+    description: "Roof systems specified for WNC's elevation, wind exposure, and freeze-thaw cycling — installed by certified crews who've built their careers on these ridgelines.",
     services: [
       { icon: Layers, name: "Full Roof Replacements" },
       { icon: Wrench, name: "Targeted Repairs" },
       { icon: CloudLightning, name: "Storm Damage & Insurance" },
       { icon: Search, name: "Professional Inspections" },
-      { icon: PaintBucket, name: "Material Selection & Options" },
+      { icon: PaintBucket, name: "Material Selection & Guidance" },
       { icon: ShieldCheck, name: "Long-Term Roof Performance" },
     ],
-    cta: "Explore Roofing Services",
+    cta: "Explore Roofing",
     href: "/services",
     accent: "primary" as const,
+    image: metalRoof,
   },
   {
     icon: HardHat,
     label: "Construction Division",
     title: "Full-Scope Construction",
-    description: "The same disciplined process, experienced crews, and quality standards that built our roofing reputation — applied to additions, renovations, and exterior work.",
+    description: "The same disciplined process and accountability that built our roofing reputation — now applied to additions, renovations, decks, siding, and complete exterior transformations.",
     services: [
       { icon: Hammer, name: "Renovations & Remodels" },
       { icon: PaintBucket, name: "Exterior Upgrades & Siding" },
@@ -39,9 +43,10 @@ const pathways = [
       { icon: Settings, name: "Custom Project Work" },
       { icon: ShieldCheck, name: "Quality-Controlled Execution" },
     ],
-    cta: "Explore Construction Services",
+    cta: "Explore Construction",
     href: "/services",
     accent: "gold" as const,
+    image: cedarRoof,
   },
 ];
 
@@ -60,8 +65,8 @@ const DualPathway = () => {
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-              Whether it's a roof replacement or a full renovation, every project follows the same
-              disciplined process — certified materials, transparent pricing, and warranty-backed results.
+              Whether it's a standing seam metal roof or a full home addition, every project follows the same
+              disciplined process — certified materials, documented scope, and warranty-backed results.
             </p>
           </ScrollReveal>
           <GoldLine width="4rem" centered delay={0.4} className="mt-6" />
@@ -77,6 +82,35 @@ const DualPathway = () => {
               transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
               className="group relative bg-card border border-border rounded-none overflow-hidden hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_16px_48px_-12px_hsl(var(--heritage-charcoal)/0.1)] transition-all duration-400 spotlight-hover"
             >
+              {/* Editorial image header */}
+              <div className="relative h-40 md:h-48 overflow-hidden">
+                <motion.img
+                  src={path.image}
+                  alt={path.title}
+                  className="w-full h-full object-cover img-zoom-dramatic"
+                  loading="lazy"
+                  initial={{ scale: 1.08 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.4, ease: HIGHLAND_EASE }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+                
+                {/* Floating label */}
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <div className={`w-8 h-8 rounded-none flex items-center justify-center backdrop-blur-sm ${
+                    path.accent === "gold" ? "bg-[hsl(var(--highland-gold)/0.2)]" : "bg-primary/20"
+                  }`}>
+                    <path.icon className={`w-4 h-4 ${
+                      path.accent === "gold" ? "text-white" : "text-white"
+                    }`} />
+                  </div>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/80 backdrop-blur-sm bg-black/20 px-2 py-1">
+                    {path.label}
+                  </span>
+                </div>
+              </div>
+
               {/* Top accent line */}
               <div
                 className={`h-[2px] w-full ${
@@ -95,26 +129,6 @@ const DualPathway = () => {
               />
 
               <div className="p-8 md:p-10 relative z-10">
-                {/* Header */}
-                <div className="flex items-center gap-3 mb-5">
-                  <motion.div
-                    className={`w-10 h-10 rounded-sm flex items-center justify-center ${
-                      path.accent === "gold" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8"
-                    }`}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <path.icon className={`w-5 h-5 ${
-                      path.accent === "gold" ? "text-[hsl(var(--highland-gold))]" : "text-primary"
-                    }`} />
-                  </motion.div>
-                  <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.15em] ${
-                    path.accent === "gold" ? "text-[hsl(var(--highland-gold))]" : "text-primary"
-                  }`}>
-                    {path.label}
-                  </span>
-                </div>
-
                 <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug tracking-tight">
                   {path.title}
                 </h3>
@@ -133,7 +147,7 @@ const DualPathway = () => {
                       transition={{ delay: 0.3 + i * 0.1 + si * 0.05, duration: 0.35, ease: HIGHLAND_EASE }}
                       className="flex items-center gap-3 group/item"
                     >
-                      <div className={`w-7 h-7 rounded-sm flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
+                      <div className={`w-7 h-7 rounded-none flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
                         path.accent === "gold"
                           ? "bg-[hsl(var(--highland-gold)/0.06)] group-hover/item:bg-[hsl(var(--highland-gold)/0.12)]"
                           : "bg-primary/5 group-hover/item:bg-primary/10"

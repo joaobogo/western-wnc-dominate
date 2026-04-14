@@ -49,15 +49,15 @@ const CTABlock = () => {
 
             <HeadingReveal delay={0.1}>
               <h2 className="text-3xl md:text-[2.75rem] lg:text-5xl font-heading font-bold mb-7 leading-[1.08] tracking-[-0.02em]">
-                One Team. One Standard.<br className="hidden md:block" /> Every Project, Every Time.
+                Your Property Deserves<br className="hidden md:block" /> a Team That Shows Up.
               </h2>
             </HeadingReveal>
 
             <ScrollReveal variant="rise-subtle" delay={0.3}>
               <p className="text-dark-section-foreground/40 text-base md:text-lg max-w-xl mx-auto mb-14 font-body leading-[1.8]">
-                From ridge caps to renovations, Highlander brings the same discipline, the same crews, 
-                and the same accountability to every property we touch. This is how mountain 
-                construction should be done.
+                One phone call. One honest assessment. One team that handles everything from ridge cap 
+                to renovation — with the same precision, the same accountability, and the same 
+                commitment to getting it right the first time.
               </p>
             </ScrollReveal>
 
@@ -69,7 +69,7 @@ const CTABlock = () => {
                   className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-12 py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Begin Your Project</span>
+                  <span className="relative">Start Your Project</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
@@ -94,7 +94,7 @@ const CTABlock = () => {
                 { icon: Shield, text: "Licensed & Insured" },
                 { icon: Award, text: "CertainTeed Certified" },
                 { icon: Clock, text: "24-Hour Response" },
-                { icon: Mountain, text: "Serving All of WNC" },
+                { icon: Mountain, text: "All of Western NC" },
               ].map((item, i) => (
                 <motion.div
                   key={item.text}

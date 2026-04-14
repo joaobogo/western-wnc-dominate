@@ -10,10 +10,10 @@ const certifications = [
 ];
 
 const processPoints = [
-  "Written scope of work before any project begins",
-  "Photo documentation at every phase",
-  "Daily progress communication",
-  "Final walkthrough with warranty package delivery",
+  "Written scope of work delivered before any project begins",
+  "Photo documentation at every construction phase",
+  "Daily progress communication with your named contact",
+  "Final walkthrough with complete warranty package delivery",
 ];
 
 const TrustAndProof = () => {
@@ -35,7 +35,7 @@ const TrustAndProof = () => {
             Verified. Certified.<br className="hidden md:block" /> Warranty-Backed.
           </h2>
           <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-            Every claim we make is documented, certified, or backed by a warranty you can hold in your hands.
+            Every claim we make is documented, certified, or backed by a warranty you can hold in your hands. No vague promises — just verifiable credentials.
           </p>
         </motion.div>
 
@@ -76,8 +76,8 @@ const TrustAndProof = () => {
               <Handshake className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
             </div>
             <div>
-              <h3 className="font-heading font-semibold text-base text-foreground mb-0.5">Our Promise</h3>
-              <p className="text-[11px] text-muted-foreground font-body tracking-wide">Documented on every project</p>
+              <h3 className="font-heading font-semibold text-base text-foreground mb-0.5">Our Accountability Promise</h3>
+              <p className="text-[11px] text-muted-foreground font-body tracking-wide">Documented and delivered on every project</p>
             </div>
           </div>
 
@@ -105,11 +105,12 @@ const TrustAndProof = () => {
               <Shield className="w-5 h-5 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-heading font-semibold text-sm text-foreground mb-1">
-                  Warranty Package Included
+                  Full Warranty Package Included
                 </h4>
                 <p className="text-[13px] text-muted-foreground font-body leading-relaxed">
                   Every completed project includes manufacturer material warranty plus
-                  Highlander's labor warranty, delivered at your final walkthrough.
+                  Highlander's labor warranty — physically delivered at your final walkthrough, 
+                  not buried in an email you'll never find.
                 </p>
               </div>
             </div>

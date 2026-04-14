@@ -21,37 +21,37 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     name: "Sarah M.", location: "Highlands, NC", rating: 5,
-    text: "Highlander replaced our entire roof after storm damage. They handled our insurance claim paperwork, kept us informed daily, and the crew was professional from start to finish. The roof looks better than the original.",
-    project: "Full Roof Replacement", category: "Storm",
-    outcome: "Insurance claim processed. New roof installed in 4 days.", featured: true,
+    text: "Highlander replaced our entire roof after storm damage. They handled the insurance paperwork, kept us informed daily, and finished in four days. The roof looks better than the original — and the warranty documentation was delivered at our walkthrough.",
+    project: "Full Roof Replacement — Storm Damage", category: "Storm",
+    outcome: "Insurance claim processed. New CertainTeed system installed in 4 days.", featured: true,
   },
   {
     name: "James T.", location: "Franklin, NC", rating: 5,
-    text: "Fast response when we had a leak during heavy rain. They came out the next morning, found the issue, and had it repaired by afternoon. Fair pricing and honest work — exactly what you want from a local contractor.",
+    text: "We had a leak during heavy rain. Highlander was on-site the next morning, found the problem, and had it permanently repaired by afternoon. No upsell, no drama — just honest, competent work at a fair price.",
     project: "Emergency Leak Repair", category: "Roofing",
-    outcome: "Leak identified and permanently repaired in one visit.",
+    outcome: "Root cause identified and permanently resolved in one visit.",
   },
   {
     name: "Linda K.", location: "Cashiers, NC", rating: 5,
-    text: "We've used Highlander for two properties now. Their standing seam metal work is exceptional and they genuinely understand the mountain climate challenges. Five stars every time.",
+    text: "We've used Highlander for two properties now. Their standing seam metalwork is exceptional — these are the only crews I'd trust at 3,800 feet. They genuinely understand what mountain weather demands.",
     project: "Standing Seam Metal — Two Properties", category: "Roofing",
     outcome: "Both properties re-roofed with 50-year metal systems.", featured: true,
   },
   {
     name: "Robert & Anne P.", location: "Sylva, NC", rating: 5,
-    text: "From the initial inspection to the final walkthrough, everything was documented and communicated clearly. The crew was respectful of our property and finished ahead of schedule. We couldn't be happier.",
-    project: "Roof Replacement & Gutters", category: "Roofing",
+    text: "From inspection to final walkthrough, everything was documented and communicated clearly. The crew was respectful of our landscaping and finished ahead of schedule. We have the warranty binder to prove the quality.",
+    project: "Roof Replacement & Gutter System", category: "Roofing",
     outcome: "Completed 2 days ahead of schedule. Full warranty package delivered.",
   },
   {
     name: "David R.", location: "Bryson City, NC", rating: 5,
-    text: "Highlander built a covered porch and replaced our deck — the craftsmanship is outstanding. Same attention to detail as their roofing work. Having one team handle both saved us time and hassle.",
+    text: "Highlander built our covered porch and replaced the deck — the craftsmanship is outstanding. Having one team handle roofing and construction meant a single point of contact, one timeline, and zero coordination headaches.",
     project: "Deck & Covered Porch Build", category: "Construction",
     outcome: "New outdoor living space completed in 3 weeks.",
   },
   {
     name: "Mountain Properties LLC", location: "Franklin, NC", rating: 5,
-    text: "We manage 14 rental properties across Macon County. Highlander handles all our roofing maintenance and emergency repairs. Their documentation and communication make our job easier.",
+    text: "We manage 14 rental properties across Macon County. Highlander handles all roofing maintenance, emergency repairs, and documentation. Their consistency and communication make our property management significantly easier.",
     project: "Multi-Property Maintenance Program", category: "Commercial",
     outcome: "14 properties under a single maintenance agreement.",
   },
@@ -74,11 +74,11 @@ const Reviews = () => {
         {/* Header */}
         <div className="text-center mb-14 md:mb-16">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block">Client Testimonials</span>
+            <span className="eyebrow mb-3 block">What Our Clients Say</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-5">
-              Trusted by Homeowners<br className="hidden md:block" /> Across Western NC.
+              The Work Speaks.<br className="hidden md:block" /> So Do the Homeowners.
             </h2>
           </HeadingReveal>
           <GoldLine width="3rem" centered delay={0.25} className="mb-6" />
@@ -93,7 +93,7 @@ const Reviews = () => {
               </div>
               <div className="h-5 w-px bg-border" />
               <span className="font-heading font-bold text-foreground text-lg">4.7</span>
-              <span className="text-muted-foreground text-sm font-body">from 122+ Google Reviews</span>
+              <span className="text-muted-foreground text-sm font-body">from 122+ verified reviews</span>
             </div>
           </ScrollReveal>
         </div>
@@ -153,7 +153,7 @@ const Reviews = () => {
         <StaggerContainer stagger={0.07} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {standard.map((t) => (
             <StaggerItem key={t.name} variant="rise">
-              <div className="group bg-card border border-border rounded-none p-5 md:p-6 hover:border-primary/15 hover:shadow-md transition-all duration-400 h-full">
+              <div className="group bg-card border border-border rounded-none p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.15)] hover:shadow-md transition-all duration-400 h-full">
                 <div className="flex items-center justify-between mb-3">
                   <span className={`text-[8px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-none ${categoryColors[t.category]}`}>
                     {t.category}
