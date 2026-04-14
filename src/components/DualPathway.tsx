@@ -24,7 +24,7 @@ const pathways = [
     icon: HardHat,
     label: "Construction Division",
     title: "Full-Scope Construction",
-    description: "The same precision and accountability we bring to roofing — applied to renovations, additions, exterior transformations, and structural improvements. One team, one standard.",
+    description: "Highlander was built on roofing — but our standards don't stop at the roofline. When your project calls for structural additions, exterior renovations, or custom build work, you get the same disciplined process, the same experienced crews, and the same accountability that earned our reputation on every roof we've installed. No subcontractor roulette. No scope drift. Just clear communication, quality materials, and work that holds up — year after year, in the toughest building environment in the Southeast.",
     services: [
       { icon: Hammer, name: "Renovations & Remodels" },
       { icon: PaintBucket, name: "Exterior Upgrades & Siding" },
