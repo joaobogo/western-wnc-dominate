@@ -8,6 +8,7 @@ import {
   DoorOpen, Paintbrush, Wrench, TrendingUp, Fence
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -74,6 +75,16 @@ const faqs = [
 const ExteriorImprovements = () => {
   return (
     <>
+      <SEOHead
+        title="Exterior Improvements | Siding, Windows, Trim & Structural Repairs in WNC"
+        description="Premium exterior renovations for Western North Carolina homes. Siding replacement, window upgrades, structural repairs, and complete exterior envelope improvements."
+        path="/construction/exterior"
+        jsonLd={[
+          serviceSchema({ name: "Exterior Improvements", description: "Exterior renovations and structural upgrades for Western North Carolina homes.", url: "/construction/exterior" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Exterior Improvements", url: "/construction/exterior" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}
