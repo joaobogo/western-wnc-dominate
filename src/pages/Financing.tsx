@@ -50,7 +50,7 @@ const Financing = () => {
               <ol className="space-y-4">
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
-                  <div><h4 className="font-semibold text-foreground">Schedule Your Free Inspection</h4><p className="text-muted-foreground text-sm">We assess your roof and provide a transparent cost estimate.</p></div>
+                  <div><h4 className="font-semibold text-foreground">Request a Roof Consultation</h4><p className="text-muted-foreground text-sm">We assess your roof and provide a transparent cost estimate.</p></div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>

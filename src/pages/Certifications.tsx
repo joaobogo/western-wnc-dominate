@@ -217,7 +217,7 @@ const Certifications = () => {
                 to="/request-inspection"
                 className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
               >
-                Schedule a Consultation <ArrowRight className="w-4 h-4" />
+                Talk With Our Team <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -310,8 +310,8 @@ const Certifications = () => {
         {/* ── CLOSING CTA ── */}
         <ReassuranceBlock
           headline={"Credentials That Translate\nInto Better Outcomes."}
-          subheadline="Schedule a consultation and see how our certifications, training, and quality standards translate into real results on your property."
-          ctaText="Schedule a Consultation"
+          subheadline="See how our certifications, training, and quality standards translate into real results on your property."
+          ctaText="Talk With Our Team"
         />
       </main>
       <Footer />

@@ -18,8 +18,8 @@ interface RoofingCTAProps {
 /** Mid-page CTA strip (primary bg) */
 export const RoofingMidCTA = ({
   headline = "Ready to discuss your roof?",
-  subheadline = "Schedule a consultation or call us directly. We respond within 24 hours.",
-  ctaText = "Schedule Consultation",
+  subheadline = "We respond within 24 hours with a direct call — not a form email.",
+  ctaText = "Talk With a Roofing Advisor",
   ctaLink = "/request-inspection",
 }: Omit<RoofingCTAProps, "variant">) => (
   <section className="bg-primary text-primary-foreground tartan-dark">
@@ -36,7 +36,7 @@ export const RoofingMidCTA = ({
             <ArrowRight className="w-4 h-4 relative" />
           </Link>
           <a href="tel:8283979211" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
-            <Phone className="w-4 h-4" /> Call Now
+            <Phone className="w-4 h-4" /> Call Direct
           </a>
         </div>
       </div>
@@ -48,8 +48,8 @@ export const RoofingMidCTA = ({
 export const RoofingClosingCTA = ({
   headline = "Let's Talk About\nYour Roof.",
   subheadline = "Whether you need a repair assessment, a replacement consultation, or just an honest opinion — we're here to help.",
-  eyebrow = "Get Started",
-  ctaText = "Schedule a Consultation",
+  eyebrow = "Your Roof, Our Expertise",
+  ctaText = "Request a Roof Consultation",
   ctaLink = "/request-inspection",
 }: Omit<RoofingCTAProps, "variant">) => (
   <section className="section-dark tartan-dark relative overflow-hidden">
@@ -133,7 +133,7 @@ export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSid
     ))}
     <div className="pt-3 border-t border-border">
       <Link to="/request-inspection" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-        Schedule Consultation <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+        Request a Consultation <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
       </Link>
     </div>
   </div>

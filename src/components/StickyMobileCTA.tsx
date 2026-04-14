@@ -40,7 +40,7 @@ const StickyMobileCTA = () => {
                   className="flex-1 flex items-center justify-center gap-2 py-[14px] px-3 cta-gradient text-accent-foreground active:opacity-90 active:scale-[0.98] transition-all min-h-[52px]"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  <span className="text-[11px] font-heading font-bold uppercase tracking-[0.08em]">Start Project</span>
+                  <span className="text-[11px] font-heading font-bold uppercase tracking-[0.08em]">Start a Project</span>
                 </Link>
 
                 {/* Secondary actions — 48px min tap targets */}
