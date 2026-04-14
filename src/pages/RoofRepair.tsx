@@ -268,6 +268,28 @@ const RoofRepair = () => {
           </div>
         </section>
 
+        {/* ─── MID CTA ─── */}
+        <section className="bg-primary text-primary-foreground tartan-dark">
+          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Noticed something on your roof?</h3>
+                <p className="text-primary-foreground/50 text-sm font-body">We diagnose accurately and recommend honestly — repair or replace, you'll know why.</p>
+              </div>
+              <div className="flex gap-3 flex-shrink-0">
+                <Link to="/request-inspection" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <span className="relative">Schedule a Repair Assessment</span>
+                  <ArrowRight className="w-4 h-4 relative" />
+                </Link>
+                <a href="tel:8283979211" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
+                  <Phone className="w-4 h-4" /> Call Direct
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ─── REPAIR PROCESS ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
