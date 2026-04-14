@@ -1,3 +1,8 @@
+export interface BlogFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -9,6 +14,9 @@ export interface BlogPost {
   metaTitle: string;
   metaDescription: string;
   town?: string;
+  faqs?: BlogFAQ[];
+  relatedServices?: Array<{ label: string; path: string }>;
+  relatedProjects?: string[]; // project slugs
 }
 
 export const blogPosts: BlogPost[] = [
@@ -641,6 +649,282 @@ Don't wait for the first storm. Call (828) 397-9211 to schedule a pre-winter roo
 
 Contact us for a customized maintenance proposal based on your property type, roof system, and budget. Call (828) 397-9211 or request online.`,
   },
+  // ── Construction Insights ──
+  {
+    slug: "why-hire-one-company-roof-and-construction",
+    title: "Why Hiring One Company for Roofing and Construction Makes Sense",
+    excerpt: "Coordinating separate roofing and construction contractors creates problems. Here's why a single team delivers better results.",
+    category: "Construction",
+    date: "2026-03-01",
+    readTime: "5 min",
+    metaTitle: "One Company for Roofing & Construction | Highlander",
+    metaDescription: "Why hiring one company for both roofing and construction saves time, money, and headaches. Highlander Roofing & Construction in WNC.",
+    content: `When a project involves both roofing and structural work — additions, exterior renovations, or storm damage repairs — homeowners often hire separate contractors. That almost always creates problems.
+
+## The Coordination Problem
+
+Separate contractors mean separate timelines, separate warranties, and separate accountability. When a leak appears six months later, who's responsible — the roofer or the framer?
+
+## Benefits of a Single Team
+
+- **One timeline.** No waiting for one contractor to finish before the next can start.
+- **Integrated warranty.** One company stands behind the entire project.
+- **Consistent quality.** The same standards apply to every aspect of the work.
+- **Better communication.** One project manager, one point of contact, one set of expectations.
+- **Cost efficiency.** Shared mobilization, equipment, and crew coordination reduces overhead.
+
+## When This Matters Most
+
+### Additions and Extensions
+Tying a new roof section into an existing system requires roofing expertise during the framing phase — not after.
+
+### Storm Damage
+Wind and water damage often affects both the roof and the structure below. A single team assesses and repairs everything.
+
+### Exterior Renovations
+Siding, fascia, soffit, and roofing all interact. Separating them creates gaps in weather protection.
+
+## The Highlander Approach
+
+We started as roofers and expanded into construction because our clients kept asking us to handle the whole project. That experience means our construction crews understand roof systems, and our roofing crews understand structural requirements.`,
+    relatedServices: [
+      { label: "Construction Division", path: "/construction" },
+      { label: "Home Additions", path: "/construction/additions" },
+      { label: "Exterior Improvements", path: "/construction/exterior" },
+    ],
+    faqs: [
+      { question: "Can Highlander handle both my roof and my addition?", answer: "Yes. We're a licensed NC General Contractor with dedicated roofing and construction crews. One contract, one timeline, one warranty." },
+      { question: "Is it cheaper to hire one company?", answer: "Usually yes. Shared mobilization costs, coordinated scheduling, and eliminated overlap typically save 10-15% compared to hiring separately." },
+    ],
+  },
+  {
+    slug: "planning-home-addition-western-nc",
+    title: "Planning a Home Addition in Western NC: What Mountain Homeowners Need to Know",
+    excerpt: "Building an addition in the mountains involves terrain, weather, and structural factors that flatland builders don't consider.",
+    category: "Construction",
+    date: "2026-02-20",
+    readTime: "7 min",
+    metaTitle: "Planning a Home Addition in Western NC | Highlander Construction",
+    metaDescription: "What to know before building a home addition in Western NC. Terrain, weather, permits, and structural considerations for mountain homes.",
+    content: `Home additions in Western North Carolina require planning that accounts for mountain-specific challenges. Terrain, weather exposure, soil conditions, and access constraints all affect design, timeline, and cost.
+
+## Terrain and Foundation Considerations
+
+Most WNC properties have slope. That means:
+- **Foundation engineering** is more complex than flatland construction
+- **Drainage planning** is critical to prevent water intrusion
+- **Access for equipment** may require creative solutions
+- **Retaining walls** may be needed to support the addition
+
+## Weather and Seasonal Planning
+
+Mountain weather dictates construction schedules:
+- **Spring and fall** are ideal building seasons
+- **Winter construction** is possible but adds cost for weather delays and protection
+- **Summer storms** can interrupt work but are manageable with proper planning
+
+## Matching the Existing Home
+
+The addition should feel like it was always part of the house:
+- **Roofline integration** — how the new roof ties into the existing system
+- **Material matching** — siding, trim, and exterior finishes that blend seamlessly
+- **Foundation alignment** — ensuring the new structure sits correctly relative to grade
+
+## Permit and Code Requirements
+
+WNC jurisdictions have specific requirements:
+- **Building permits** are required for all structural additions
+- **Setback requirements** vary by county and zoning
+- **Septic considerations** if expanding bathroom count
+- **Structural engineering** may be required for larger additions
+
+## Budget Planning
+
+Mountain additions typically cost $200–$400+ per square foot depending on complexity, access, and finish level. Get a detailed scope before committing to a budget.`,
+    town: "Franklin",
+    relatedServices: [
+      { label: "Home Additions", path: "/construction/additions" },
+      { label: "Custom Projects", path: "/construction/custom" },
+    ],
+    faqs: [
+      { question: "How long does a home addition take in WNC?", answer: "Most additions take 8-16 weeks depending on size, complexity, and weather. Larger additions with significant foundation work may take longer." },
+      { question: "Do I need an architect for my addition?", answer: "For simple additions, detailed construction plans may suffice. For complex or architecturally sensitive additions, an architect is recommended." },
+    ],
+  },
+  // ── Project Spotlights ──
+  {
+    slug: "project-spotlight-standing-seam-highlands-estate",
+    title: "Project Spotlight: Standing Seam Metal Roof on a Highlands Estate",
+    excerpt: "A deep look at our most complex metal roofing project — 3,200 sq ft, 12/12 pitch, 8 gable intersections, and custom-fabricated panels.",
+    category: "Spotlight",
+    date: "2026-03-10",
+    readTime: "6 min",
+    metaTitle: "Project Spotlight: Metal Roof — Highlands Estate | Highlander",
+    metaDescription: "Case study: custom standing seam metal roof on a Highlands estate. 3,200 sq ft, 12/12 pitch, 8 gable intersections. Full project story.",
+    content: `This project pushed our metal roofing capabilities to the highest standard. A luxury estate in Highlands with a complex multi-gable roofline, steep 12/12 pitch, and existing damage from years of mountain weather exposure.
+
+## The Challenge
+
+The existing metal roof had suffered through years of freeze-thaw cycling and UV degradation at 4,100 feet elevation. Multiple prior patch repairs had failed, and the homeowner needed a complete, permanent solution.
+
+## Our Approach
+
+### Pre-Project Planning
+We conducted a drone survey to map every roof intersection and calculate exact panel measurements. This eliminated guesswork during installation.
+
+### Custom Fabrication
+Every panel was fabricated at our shop — not cut on-site. This ensured precision fit on the steep pitch and complex geometry, and eliminated waste.
+
+### Installation Sequence
+We used a staggered installation approach to maintain weather protection throughout the 8-day project. At no point was the home exposed to the elements.
+
+## Materials Used
+
+- **24-gauge standing seam panels** in Kynar 500 Dark Bronze
+- **Grace Ice & Water Shield** on all valleys, eaves, and penetrations
+- **Custom ridge caps** fabricated for seamless geometry matching
+- **Copper accent details** on ridge caps
+
+## The Result
+
+The completed roof transformed the property and eliminated all leak issues. The homeowner reported zero problems through their first full winter — including a record-setting ice storm.
+
+## View the Full Project
+
+See the complete before-and-after gallery, process photos, and homeowner testimonial on our project page.`,
+    relatedServices: [
+      { label: "Residential Roofing", path: "/roofing/residential" },
+      { label: "Specialty Roofing", path: "/roofing/specialty" },
+    ],
+    relatedProjects: ["standing-seam-metal-dark-bronze-highlands"],
+    faqs: [
+      { question: "How long does a standing seam metal roof last?", answer: "With proper installation, 50+ years. Kynar 500 finishes carry 40-year color warranties." },
+      { question: "Can standing seam metal be installed on steep pitches?", answer: "Yes. Standing seam with concealed fasteners is actually ideal for steep pitches because the panels expand and contract without exposed fastener holes." },
+    ],
+  },
+  // ── WNC News ──
+  {
+    slug: "2026-spring-storm-season-wnc-preparation",
+    title: "2026 Spring Storm Season: What WNC Homeowners Should Prepare For",
+    excerpt: "Early forecasts suggest an active spring storm season for Western North Carolina. Here's how to prepare your roof and home.",
+    category: "Storm",
+    date: "2026-03-15",
+    readTime: "5 min",
+    metaTitle: "2026 Spring Storm Season Preparation for WNC | Highlander",
+    metaDescription: "Prepare your Western NC home for 2026 spring storms. Pre-storm checklist, emergency contacts, and what to do after severe weather.",
+    content: `Western North Carolina's spring storm season brings wind events, heavy rain, hail, and occasional tornado warnings. Early preparation protects your home and speeds recovery if damage occurs.
+
+## Pre-Storm Preparation Checklist
+
+- **Schedule a roof inspection** before storm season begins
+- **Clean gutters and downspouts** to handle heavy rainfall
+- **Trim overhanging branches** that could fall on your roof
+- **Document your roof's current condition** with dated photos
+- **Review your insurance policy** — know your deductible and coverage limits
+- **Save emergency contacts** including your roofer's number
+
+## WNC Storm Season Patterns
+
+### March–April
+Heavy rain events, occasional hail in higher elevations, wind gusts 50-70 mph
+
+### May–June
+Thunderstorm season, higher hail risk, tornado watches in valleys
+
+### July–August
+Afternoon thunderstorms, flash flooding risk, humidity-driven moisture issues
+
+## After a Storm
+
+1. Stay safe — don't climb on your roof
+2. Document visible damage from the ground
+3. Call Highlander at (828) 397-9211 for a free storm inspection
+4. File your insurance claim promptly
+5. Don't make permanent repairs until the adjuster has visited
+
+## Emergency Response
+
+Highlander responds within 24-48 hours for storm damage inspections across all of Western NC. We provide detailed documentation that supports your insurance claim.`,
+    relatedServices: [
+      { label: "Storm Damage Roofing", path: "/roofing/storm-damage" },
+      { label: "Storm Center", path: "/storm-center" },
+    ],
+    faqs: [
+      { question: "Does Highlander offer emergency tarping?", answer: "Yes. We provide emergency tarping to prevent further damage while you wait for insurance assessment and permanent repairs." },
+      { question: "How quickly can you inspect storm damage?", answer: "We aim for 24-48 hour response for storm damage inspections across all of Western NC." },
+    ],
+  },
+  // ── Roofing Education ──
+  {
+    slug: "understanding-roof-ventilation-mountain-homes",
+    title: "Understanding Roof Ventilation for Mountain Homes in WNC",
+    excerpt: "Proper ventilation prevents ice dams, reduces energy costs, and extends roof life. Here's how it works at elevation.",
+    category: "Materials",
+    date: "2026-02-25",
+    readTime: "6 min",
+    metaTitle: "Roof Ventilation for Mountain Homes | Highlander Roofing",
+    metaDescription: "Why roof ventilation matters more at elevation. Ice dam prevention, energy efficiency, and attic moisture control for WNC mountain homes.",
+    content: `Roof ventilation is more critical in mountain climates than anywhere else. The combination of temperature extremes, snow loads, and moisture creates conditions that punish poorly ventilated attics.
+
+## How Roof Ventilation Works
+
+A balanced ventilation system creates airflow from soffit vents (intake) through the attic space to ridge vents (exhaust). This keeps the roof deck temperature close to the outside air temperature.
+
+## Why It Matters at Elevation
+
+### Ice Dam Prevention
+When heat escapes into the attic, it melts snow on the roof. The melt-water refreezes at the colder eaves, creating ice dams. Proper ventilation keeps the entire roof deck cold, preventing this cycle.
+
+### Moisture Control
+Mountain humidity + temperature swings = condensation. Without ventilation, moisture accumulates in insulation and roof structure, causing rot and mold.
+
+### Energy Efficiency
+In summer, an unventilated attic can reach 150°F+, radiating heat into living spaces. In winter, trapped moisture reduces insulation effectiveness.
+
+## Ventilation Best Practices for WNC
+
+- **Balanced intake and exhaust.** Equal soffit and ridge vent capacity
+- **No mixing vent types.** Don't combine ridge vents with gable vents — it creates short-circuiting
+- **Minimum 1:150 ratio.** 1 square foot of vent area per 150 square feet of attic floor
+- **Baffles at eaves.** Prevent insulation from blocking soffit vents
+- **Sealed penetrations.** Bathroom fans, kitchen vents must exhaust outdoors — never into the attic
+
+## Signs of Ventilation Problems
+
+- Ice dams forming in winter
+- Excessive heat in upper floors during summer
+- Musty odor in attic
+- Moisture or staining on roof sheathing
+- Premature shingle deterioration from underside
+
+## Get a Ventilation Assessment
+
+During any roof inspection, we evaluate your attic ventilation system and recommend improvements. Call (828) 397-9211.`,
+    relatedServices: [
+      { label: "Residential Roofing", path: "/roofing/residential" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+    ],
+    faqs: [
+      { question: "Can you add ventilation to an existing roof?", answer: "Yes. Ridge vents, additional soffit vents, and powered ventilation can all be added to existing roofs, often without a full replacement." },
+      { question: "Does ventilation affect my energy bills?", answer: "Significantly. Proper ventilation can reduce cooling costs by 10-15% and prevent moisture-related insulation degradation that increases heating costs." },
+    ],
+  },
 ];
 
 export const getBlogBySlug = (slug: string) => blogPosts.find(b => b.slug === slug);
+
+export const getBlogsByCategory = (category: string) =>
+  blogPosts.filter(b => b.category === category);
+
+export const getRelatedBlogs = (slug: string, limit = 3) => {
+  const post = getBlogBySlug(slug);
+  if (!post) return [];
+  const related = blogPosts
+    .filter(p => p.slug !== slug && (p.category === post.category || p.town === post.town))
+    .slice(0, limit);
+  if (related.length < limit) {
+    const extra = blogPosts.filter(p => p.slug !== slug && !related.find(r => r.slug === p.slug)).slice(0, limit - related.length);
+    related.push(...extra);
+  }
+  return related;
+};
