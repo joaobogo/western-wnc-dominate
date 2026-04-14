@@ -123,28 +123,28 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
 
   if (variant === "diamond") {
     return (
-      <div className={`flex items-center justify-center py-10 ${className}`}>
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[hsl(var(--highland-gold)/0.15)] max-w-[140px]" />
+      <div className={`flex items-center justify-center py-14 ${className}`}>
+        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[hsl(var(--highland-gold)/0.12)] max-w-[160px]" />
         <motion.div
-          className="relative mx-5"
+          className="relative mx-6"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
         >
           {/* Outer ring */}
-          <div className="w-5 h-5 rotate-45 border border-[hsl(var(--highland-gold)/0.3)]" />
+          <div className="w-4 h-4 rotate-45 border border-[hsl(var(--highland-gold)/0.25)]" />
           {/* Inner fill */}
-          <div className="absolute inset-[3px] rotate-45 bg-[hsl(var(--highland-gold)/0.08)]" />
+          <div className="absolute inset-[3px] rotate-45 bg-[hsl(var(--highland-gold)/0.06)]" />
         </motion.div>
-        <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[hsl(var(--highland-gold)/0.15)] max-w-[140px]" />
+        <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[hsl(var(--highland-gold)/0.12)] max-w-[160px]" />
       </div>
     );
   }
 
   if (variant === "heritage-bar") {
     return (
-      <div className={`flex items-center justify-center py-10 ${className}`}>
+      <div className={`flex items-center justify-center py-14 ${className}`}>
         <motion.div
           className="flex items-center gap-3"
           initial={{ opacity: 0, scaleX: 0 }}
@@ -152,11 +152,11 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
-          <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.4)]" />
-          <div className="w-24 h-px bg-gradient-to-r from-[hsl(var(--highland-gold)/0.4)] to-[hsl(var(--highland-gold)/0.15)]" />
-          <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.4)]" />
-          <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
+          <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.2)]" />
+          <div className="w-1 h-1 rotate-45 bg-[hsl(var(--highland-gold)/0.35)]" />
+          <div className="w-28 h-px bg-gradient-to-r from-[hsl(var(--highland-gold)/0.35)] to-[hsl(var(--highland-gold)/0.1)]" />
+          <div className="w-1 h-1 rotate-45 bg-[hsl(var(--highland-gold)/0.35)]" />
+          <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.2)]" />
         </motion.div>
       </div>
     );
