@@ -95,6 +95,9 @@ const Index = () => {
         <HomepageTrust />
         <TownGrid />
 
+        {/* ── Proof: Warranty before final CTA ── */}
+        <ProofMoment variant="warranty" />
+
         {/* ═══ ACT XI: CLOSING CTA ═══ */}
         <InspectionForm />
         <CTABlock />
