@@ -20,6 +20,8 @@ Updated: now
 - [Navigation Animation System](mem://style/navigation-animation-system) — Header scroll, dropdown stagger, mobile panel, active states, CTA shimmer, floating trigger
 - [Conversion Motion System](mem://style/conversion-motion-system) — Multi-step forms, chatbot messages, result reveals, confirmations, schedule slots, input feedback
 - [Loader Strategy](mem://style/loader-strategy) — Cinematic site loader with roofline assembly, mountain contour, brand reveal, skip logic
+- [Performance Motion Framework](mem://style/performance-motion-framework) — Animation tiers, desktop/mobile rules, reduced-motion, lazy loading, timing hierarchy, slow-device fallbacks
+- [Unified Motion Blueprint](mem://style/unified-motion-blueprint) — Master blueprint combining all motion systems into one reference document
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
 - [Brand Authority Signals](mem://brand/authority-signals) — Key trust signals, awards, certifications, and business history
