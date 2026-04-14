@@ -311,12 +311,13 @@
 
   /* Card lift on hover — reusable */
   .card-lift {
-    @apply transition-all duration-300;
+    @apply transition-all duration-500;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-lift:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 36px -8px hsl(var(--heritage-charcoal) / 0.07),
-                0 0 0 1px hsl(var(--highland-gold) / 0.06);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px -12px hsl(var(--heritage-charcoal) / 0.08),
+                0 0 0 1px hsl(var(--highland-gold) / 0.08);
   }
 
   /* Image reveal on scroll — clip-path */
