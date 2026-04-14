@@ -21,6 +21,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
 import SiteLoader from "@/components/SiteLoader";
+import ProofMoment from "@/components/ProofMoment";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
