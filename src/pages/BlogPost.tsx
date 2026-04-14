@@ -4,6 +4,7 @@ import {
   ArrowLeft, ArrowRight, Clock, Calendar, Tag, Mountain, CheckCircle,
   Quote, Star, Phone, Shield, BookOpen, Lightbulb, MapPin,
 } from "lucide-react";
+import SEOHead, { articleSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -151,6 +152,16 @@ const BlogPostPage = () => {
 
   return (
     <>
+      <SEOHead
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        type="article"
+        jsonLd={[
+          articleSchema({ title: post.title, description: post.excerpt, url: `/blog/${post.slug}`, datePublished: post.date, author: "Highlander Team" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }, { name: post.title, url: `/blog/${post.slug}` }]),
+        ]}
+      />
       <Header />
       <main>
         {/* ═══ HERO ═══ */}

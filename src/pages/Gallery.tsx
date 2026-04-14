@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, MapPin, Calendar, Ruler } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -71,6 +72,12 @@ const Gallery = () => {
 
   return (
     <>
+      <SEOHead
+        title="Project Gallery | Roofing & Construction Portfolio in Western NC"
+        description="Browse 500+ completed roofing and construction projects across Western North Carolina. Metal, shingle, cedar shake roofs plus additions, renovations, and outdoor living."
+        path="/gallery"
+        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Projects", url: "/gallery" }])}
+      />
       <Header />
       <main>
         {/* ── HERO ── */}

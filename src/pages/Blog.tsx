@@ -5,6 +5,7 @@ import {
   ArrowRight, Clock, Tag, Search, BookOpen, Zap, Mountain,
   Shield, Wrench, Home, CloudLightning, DollarSign, Newspaper,
 } from "lucide-react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -54,6 +55,12 @@ const Blog = () => {
 
   return (
     <>
+      <SEOHead
+        title="Roofing & Construction Blog | Expert Guides for Western NC Homeowners"
+        description="Expert roofing and construction guidance for Western North Carolina. Material comparisons, storm damage guides, maintenance tips, cost breakdowns, and local insights."
+        path="/blog"
+        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }])}
+      />
       <Header />
       <main>
         {/* ═══ HERO ═══ */}
