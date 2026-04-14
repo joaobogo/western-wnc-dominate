@@ -17,6 +17,8 @@ Updated: now
 - [Micro-Interactions](mem://style/micro-interactions) — Complete interaction system: buttons, cards, forms, tabs, accordions, division variants
 - [Gallery Interaction System](mem://style/gallery-interaction-system) — Premium lightbox, gallery cards, before/after slider, mobile swipe gestures
 - [Background Texture System](mem://style/background-texture-system) — Mountain contours, blueprint grids, architectural lines, roofline patterns, noise overlay
+- [Navigation Animation System](mem://style/navigation-animation-system) — Header scroll, dropdown stagger, mobile panel, active states, CTA shimmer, floating trigger
+- [Conversion Motion System](mem://style/conversion-motion-system) — Multi-step forms, chatbot messages, result reveals, confirmations, schedule slots, input feedback
 - [Loader Strategy](mem://style/loader-strategy) — Cinematic site loader with roofline assembly, mountain contour, brand reveal, skip logic
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
