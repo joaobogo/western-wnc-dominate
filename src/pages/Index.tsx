@@ -80,6 +80,9 @@ const Index = () => {
         {/* ═══ ACT VII: FEATURED PROJECTS ═══ */}
         <FeaturedProjects />
 
+        {/* ── Proof: Stats after seeing the work ── */}
+        <ProofMoment variant="stats" />
+
         {/* ═══ ACT VIII: TEAM PREVIEW ═══ */}
         <MeetTheTeam />
 
