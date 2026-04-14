@@ -298,6 +298,31 @@ const SpecialtyRoofing = () => {
           </div>
         </section>
 
+        {/* ─── FAQS ─── */}
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight max-w-4xl">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
+              <span className="eyebrow mb-3 block">Specialty Roofing FAQs</span>
+              <h2 className="section-heading mb-4">Questions About<br className="hidden md:block" /> Premium Roofing Work.</h2>
+            </motion.div>
+
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
+                  <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
+                    <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
+                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-6 pr-2">
+                      <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
