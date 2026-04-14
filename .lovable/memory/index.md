@@ -15,6 +15,8 @@ Updated: now
 - [Motion Design](mem://style/motion-design) — Framer-motion cinematic animations and scroll indicator constraints
 - [Motion Strategy](mem://style/motion-strategy) — Full animation philosophy: easing curves, durations, scroll reveals, hover, mobile rules, performance budget
 - [Micro-Interactions](mem://style/micro-interactions) — Complete interaction system: buttons, cards, forms, tabs, accordions, division variants
+- [Gallery Interaction System](mem://style/gallery-interaction-system) — Premium lightbox, gallery cards, before/after slider, mobile swipe gestures
+- [Background Texture System](mem://style/background-texture-system) — Mountain contours, blueprint grids, architectural lines, roofline patterns, noise overlay
 - [Loader Strategy](mem://style/loader-strategy) — Cinematic site loader with roofline assembly, mountain contour, brand reveal, skip logic
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
