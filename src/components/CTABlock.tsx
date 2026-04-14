@@ -44,7 +44,7 @@ const CTABlock = () => {
         <div className="container-tight relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal variant="fade">
-              <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">Built for These Mountains. Built for You.</span>
+              <span className="eyebrow mb-6 block text-[hsl(var(--highland-gold))]">Built for These Mountains. Built for You.</span>
             </ScrollReveal>
 
             <HeadingReveal delay={0.1}>

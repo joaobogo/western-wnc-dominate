@@ -23,7 +23,7 @@ const ValueProposition = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] mb-4 block">
+              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))] mb-5 block">
                 The Highlander Difference
               </span>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-snug mb-5">
