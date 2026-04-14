@@ -101,6 +101,23 @@ const OurProcess = () => {
               );
             })}
           </div>
+
+          {/* Process promise — trust reinforcement at section close */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="mt-12 md:mt-16 text-center"
+          >
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-card border border-border rounded-none">
+              <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
+              <span className="text-muted-foreground text-[12px] font-body">
+                Every step documented. Every decision yours. Every detail accountable.
+              </span>
+              <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
