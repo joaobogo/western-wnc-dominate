@@ -7,6 +7,7 @@ Updated: now
 - Visuals: Deep forest green, charcoal, warm white, muted gold, slate, and restrained tartan accents. Playfair Display (headings), DM Sans (body).
 - UX/UI: Cinematic framer-motion animations. Mobile-first. No traditional scroll indicators in Hero.
 - Voice: "High Authority, Low Fluff". Focus on local mountain climate expertise & 24h response. No generic marketing phrases.
+- CTAs: Premium language only. No "free inspection/estimate", "get started", "book now", "call now". See cta-config.ts.
 - Security: `designer_leads` RLS (no public select). IP rate-limit `analyze-roof` (10/hr). Use signed URLs for `roof-designs` storage.
 - SEO/Architecture: Town + Service strategy. Strictly circular internal linking. Maintain 301 redirects for Hibu migration.
 - Brand: Ruggedly refined, locally rooted, architecturally aware. Never position around cheap/free/discounts.
@@ -21,6 +22,7 @@ Updated: now
 - [Brand Authority Signals](mem://brand/authority-signals) — Key trust signals, awards, certifications, and business history
 - [Brand Values Framework](mem://brand/values-framework) — Seven core values with reusable page sections and CTA support copy
 - [Brand Positioning System](mem://brand/positioning-system) — Brand promise, personality, pillars, emotional/rational promises, premium value prop
+- [CTA Language System](mem://strategy/cta-language-system) — Premium CTA labels per division, forbidden gimmicky language, config reference
 - [Homepage Architecture](mem://strategy/homepage-architecture) — Strict conversion sequence layout for the homepage
 - [Conversion Architecture](mem://strategy/conversion-architecture) — Mobile-first lead capture, sticky CTA, and interactive lead magnets
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
