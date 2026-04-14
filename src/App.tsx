@@ -19,6 +19,7 @@ import RequestInspection from "./pages/RequestInspection";
 import FreeTools from "./pages/FreeTools";
 import RoofDesigner from "./pages/RoofDesigner";
 import RoofingDivision from "./pages/RoofingDivision";
+import ResidentialRoofing from "./pages/ResidentialRoofing";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/roofing" element={<RoofingDivision />} />
+          <Route path="/roofing/residential" element={<ResidentialRoofing />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/commercial-roofing" element={<ServicePage />} />
