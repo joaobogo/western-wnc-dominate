@@ -5,6 +5,7 @@ import {
   Star, Quote, ArrowRight, Phone, CheckCircle, MessageSquare,
   Hammer, Clock, Heart, Shield, Users, ThumbsUp, Award,
 } from "lucide-react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
