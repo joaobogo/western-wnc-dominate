@@ -57,6 +57,12 @@ const craftsmanshipPrinciples = [
 const About = () => {
   return (
     <>
+      <SEOHead
+        title="About Highlander | Roofing & Construction in Western NC Since Day One"
+        description="Meet Highlander Roofing & Construction — a premium roofing and construction company serving Western North Carolina. Licensed, certified, locally owned."
+        path="/about"
+        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "About", url: "/about" }])}
+      />
       <Header />
       <main>
         {/* ── HERO ── */}
