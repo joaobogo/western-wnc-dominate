@@ -25,6 +25,7 @@ const constructionDropdown = [
 const navLinks = [
   { label: "Roofing", href: "/roofing", dropdown: roofingDropdown },
   { label: "Construction", href: "/services", dropdown: constructionDropdown },
+  { label: "Projects", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
   { label: "Blog", href: "/blog" },
