@@ -26,7 +26,7 @@ const resourceLinks = [
   { label: "Storm Damage Guide", href: "/blog" },
   { label: "Virtual Roof Designer", href: "/roof-designer" },
   { label: "Financing Options", href: "/financing" },
-  { label: "Free Tools", href: "/free-tools" },
+  { label: "Planning Tools", href: "/free-tools" },
 ];
 
 const companyLinks = [
