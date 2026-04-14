@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings } from "lucide-react";
+import { ScrollReveal } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
+import GoldLine from "@/components/motion/GoldLine";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const pathways = [
   {
@@ -43,30 +49,32 @@ const DualPathway = () => {
   return (
     <section className="section-padding bg-secondary tartan-bg relative overflow-hidden">
       <div className="container-tight">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-2xl mx-auto text-center mb-12 md:mb-14"
-        >
-          <span className="eyebrow mb-3 block">Two Disciplines. One Standard.</span>
-          <h2 className="section-heading mb-4">
-            Roofing & Construction,<br className="hidden md:block" /> Built the Highlander Way.
-          </h2>
-          <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-            Whether it's a roof replacement or a full renovation, every project follows the same
-            disciplined process — certified materials, transparent pricing, and warranty-backed results.
-          </p>
-        </motion.div>
+        <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
+          <ScrollReveal variant="fade" delay={0.05}>
+            <span className="eyebrow mb-3 block">Two Disciplines. One Standard.</span>
+          </ScrollReveal>
+          <HeadingReveal delay={0.1}>
+            <h2 className="section-heading mb-4">
+              Roofing & Construction,<br className="hidden md:block" /> Built the Highlander Way.
+            </h2>
+          </HeadingReveal>
+          <ScrollReveal variant="rise-subtle" delay={0.25}>
+            <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+              Whether it's a roof replacement or a full renovation, every project follows the same
+              disciplined process — certified materials, transparent pricing, and warranty-backed results.
+            </p>
+          </ScrollReveal>
+          <GoldLine width="4rem" centered delay={0.4} className="mt-6" />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto">
           {pathways.map((path, i) => (
             <motion.div
               key={path.label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 28, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.5 }}
+              transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
               className="group relative bg-card border border-border rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.25)] hover:shadow-[0_12px_40px_-10px_hsl(var(--heritage-charcoal)/0.08)] transition-all duration-300"
             >
               {/* Top accent line */}
@@ -78,16 +86,28 @@ const DualPathway = () => {
                 }`}
               />
 
+              {/* Gold left border draw on hover */}
+              <motion.div
+                className="absolute left-0 top-0 w-[2px] bg-[hsl(var(--highland-gold))] z-10"
+                initial={{ height: 0 }}
+                whileHover={{ height: "100%" }}
+                transition={{ duration: 0.4 }}
+              />
+
               <div className="p-7 md:p-9">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-5">
-                  <div className={`w-10 h-10 rounded-sm flex items-center justify-center ${
-                    path.accent === "gold" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8"
-                  }`}>
+                  <motion.div
+                    className={`w-10 h-10 rounded-sm flex items-center justify-center ${
+                      path.accent === "gold" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8"
+                    }`}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <path.icon className={`w-5 h-5 ${
                       path.accent === "gold" ? "text-[hsl(var(--highland-gold))]" : "text-primary"
                     }`} />
-                  </div>
+                  </motion.div>
                   <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.15em] ${
                     path.accent === "gold" ? "text-[hsl(var(--highland-gold))]" : "text-primary"
                   }`}>
@@ -102,15 +122,15 @@ const DualPathway = () => {
                   {path.description}
                 </p>
 
-                {/* Service list */}
+                {/* Service list with stagger */}
                 <div className="space-y-3 mb-8">
                   {path.services.map((service, si) => (
                     <motion.div
                       key={service.name}
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={{ opacity: 0, x: -12 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 + si * 0.04, duration: 0.35 }}
+                      transition={{ delay: 0.3 + i * 0.1 + si * 0.05, duration: 0.35, ease: HIGHLAND_EASE }}
                       className="flex items-center gap-3 group/item"
                     >
                       <div className={`w-7 h-7 rounded-sm flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${

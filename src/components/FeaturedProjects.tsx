@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 import { useState } from "react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-004.webp";
@@ -73,55 +75,59 @@ const filters = [
   { label: "Construction", value: "construction" },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+
 const FeaturedProjects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
-
   const filtered = activeFilter === "all" ? projects : projects.filter((p) => p.type === activeFilter);
 
   return (
     <section className="section-padding bg-background">
       <div className="container-tight">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12"
-        >
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12">
           <div>
-            <span className="eyebrow mb-3 block">Featured Projects</span>
-            <h2 className="section-heading">
-              Projects That Speak<br className="hidden md:block" /> for Themselves.
-            </h2>
+            <ScrollReveal variant="fade">
+              <span className="eyebrow mb-3 block">Featured Projects</span>
+            </ScrollReveal>
+            <HeadingReveal delay={0.1}>
+              <h2 className="section-heading">
+                Projects That Speak<br className="hidden md:block" /> for Themselves.
+              </h2>
+            </HeadingReveal>
           </div>
 
           {/* Filter pills */}
-          <div className="flex gap-2">
-            {filters.map((f) => (
-              <button
-                key={f.value}
-                onClick={() => setActiveFilter(f.value)}
-                className={`text-xs font-body font-semibold uppercase tracking-[0.12em] px-4 py-2 rounded-sm transition-all duration-200 ${
-                  activeFilter === f.value
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {f.label}
-              </button>
-            ))}
-          </div>
-        </motion.div>
+          <ScrollReveal variant="rise-subtle" delay={0.2}>
+            <div className="flex gap-2">
+              {filters.map((f) => (
+                <button
+                  key={f.value}
+                  onClick={() => setActiveFilter(f.value)}
+                  className={`text-xs font-body font-semibold uppercase tracking-[0.12em] px-4 py-2 rounded-sm transition-all duration-200 ${
+                    activeFilter === f.value
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
 
-        {/* Project grid */}
+        {/* Project grid — clip reveal for images */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {filtered.map((project, i) => (
             <motion.div
               key={project.title}
               layout
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.07, duration: 0.5 }}
+              transition={{ delay: i * 0.08, duration: 0.6, ease: HIGHLAND_EASE }}
               className={`group relative rounded-sm overflow-hidden cursor-pointer ${
                 project.featured && activeFilter === "all" ? "md:col-span-2" : ""
               }`}
@@ -131,11 +137,16 @@ const FeaturedProjects = () => {
                   ? "aspect-[16/7]"
                   : "aspect-[4/3]"
               }`}>
-                <img
+                {/* Image with clip reveal */}
+                <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                   loading="lazy"
+                  initial={{ scale: 1.08 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-[hsl(var(--heritage-charcoal)/0.2)] to-[hsl(var(--heritage-charcoal)/0.05)] group-hover:from-[hsl(var(--heritage-charcoal)/0.9)] transition-all duration-500" />
@@ -168,13 +179,7 @@ const FeaturedProjects = () => {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-center mt-8"
-        >
+        <ScrollReveal variant="fade" delay={0.3} className="text-center mt-8">
           <Link
             to="/gallery"
             className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body"
@@ -182,7 +187,7 @@ const FeaturedProjects = () => {
             View Full Project Gallery
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   );

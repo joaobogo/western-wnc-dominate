@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { Mountain, ShieldCheck, Hammer, MessageSquare, Gem } from "lucide-react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion";
+import AnimatedCounter from "@/components/motion/AnimatedCounter";
+import GoldLine from "@/components/motion/GoldLine";
+import HeadingReveal from "@/components/motion/HeadingReveal";
 
 const pillars = [
   {
@@ -42,65 +46,70 @@ const pillars = [
 const ProofStrip = () => {
   return (
     <section className="section-padding bg-background relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
+      <GoldLine width="4rem" centered className="absolute top-0 left-1/2 -translate-x-1/2" delay={0} duration={0.8} />
 
       <div className="container-tight">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-2xl mx-auto text-center mb-12 md:mb-16"
-        >
-          <span className="eyebrow mb-3 block">Why Highlander</span>
-          <h2 className="section-heading mb-4">
-            The Standard We Set<br className="hidden md:block" /> — and Hold.
-          </h2>
-          <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-            Premium results demand more than labor and materials. They require
-            expertise, accountability, and the kind of care that only comes
-            from a team that stakes its name on every project.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-          {pillars.map((pillar, i) => (
-            <motion.div
-              key={pillar.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.5 }}
-              className="group relative bg-card border border-border rounded-sm p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift overflow-hidden"
-            >
-              {/* Stat watermark */}
-              <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
-                {pillar.stat}
-              </div>
-
-              <div className="relative z-10">
-                <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors duration-300">
-                  <pillar.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
-                </div>
-
-                <h3 className="text-sm font-heading font-semibold text-foreground mb-2 leading-snug">
-                  {pillar.title}
-                </h3>
-                <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-4">
-                  {pillar.copy}
-                </p>
-
-                <div className="flex items-center gap-2 pt-3 border-t border-border/60">
-                  <span className="text-base font-heading font-bold text-[hsl(var(--highland-gold))] leading-none">
-                    {pillar.stat}
-                  </span>
-                  <span className="text-[10px] font-body text-muted-foreground/60 uppercase tracking-[0.12em]">
-                    {pillar.statLabel}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+          <ScrollReveal variant="fade" delay={0.1}>
+            <span className="eyebrow mb-3 block">Why Highlander</span>
+          </ScrollReveal>
+          <HeadingReveal delay={0.15}>
+            <h2 className="section-heading mb-4">
+              The Standard We Set<br className="hidden md:block" /> — and Hold.
+            </h2>
+          </HeadingReveal>
+          <ScrollReveal variant="rise-subtle" delay={0.3}>
+            <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+              Premium results demand more than labor and materials. They require
+              expertise, accountability, and the kind of care that only comes
+              from a team that stakes its name on every project.
+            </p>
+          </ScrollReveal>
         </div>
+
+        <StaggerContainer stagger={0.07} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+          {pillars.map((pillar) => (
+            <StaggerItem key={pillar.title} variant="rise">
+              <div className="group relative bg-card border border-border rounded-sm p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift overflow-hidden h-full">
+                {/* Stat watermark */}
+                <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
+                  {pillar.stat}
+                </div>
+
+                {/* Gold left accent on hover */}
+                <motion.div
+                  className="absolute left-0 top-0 w-[2px] bg-[hsl(var(--highland-gold))]"
+                  initial={{ height: 0 }}
+                  whileHover={{ height: "100%" }}
+                  transition={{ duration: 0.4 }}
+                />
+
+                <div className="relative z-10">
+                  <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors duration-300">
+                    <pillar.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+
+                  <h3 className="text-sm font-heading font-semibold text-foreground mb-2 leading-snug">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-4">
+                    {pillar.copy}
+                  </p>
+
+                  <div className="flex items-center gap-2 pt-3 border-t border-border/60">
+                    <AnimatedCounter
+                      value={pillar.stat}
+                      className="text-base font-heading font-bold text-[hsl(var(--highland-gold))] leading-none"
+                    />
+                    <span className="text-[10px] font-body text-muted-foreground/60 uppercase tracking-[0.12em]">
+                      {pillar.statLabel}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
       </div>
     </section>
   );
