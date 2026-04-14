@@ -7,7 +7,8 @@ import {
   BadgeCheck, Layers, Mountain, Sparkles
 } from "lucide-react";
 import Header from "@/components/Header";
-import SEOHead, { serviceSchema, breadcrumbSchema } from "@/components/SEOHead";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
@@ -66,6 +67,15 @@ const processSteps = [
   { number: "06", title: "Final Walk-Through", description: "Every detail is reviewed with you. Every transition, every accent, every line — verified for visual perfection and waterproofing integrity before we consider the project complete." },
 ];
 
+const faqs = [
+  { q: "What qualifies as specialty roofing?", a: "Specialty roofing includes any project involving premium or non-standard materials (cedar shake, natural slate, copper, custom metal), complex roof geometry (turrets, eyebrow dormers, steep pitches above 8:12), mixed-material transitions, or architecturally sensitive installations where visual outcome matters as much as weather performance." },
+  { q: "How much more does specialty roofing cost compared to standard?", a: "Specialty roofing typically costs 2–4x more than standard architectural shingle installation, depending on materials, complexity, and custom fabrication requirements. Cedar shake and standing seam metal are in the mid-premium range; copper accents and natural slate are at the higher end. We provide detailed proposals so you know exactly what you're investing in." },
+  { q: "Do you work with architects and builders?", a: "Yes. Many of our specialty projects involve coordination with architects, designers, and general contractors. We're comfortable reading plans, participating in design discussions, and integrating our scope with the broader construction schedule." },
+  { q: "How long does a specialty roofing project take?", a: "Specialty projects typically take longer than standard installations due to custom fabrication, material lead times, and the precision required. A complex cedar shake or standing seam project may take 2–4 weeks depending on size and geometry. We provide a detailed timeline during the proposal phase." },
+  { q: "Can you match existing specialty materials for repairs or additions?", a: "In most cases, yes. We source matching cedar grades, metal profiles, and slate to blend seamlessly with existing installations. For older or discontinued materials, we'll source the closest available match and discuss options before proceeding." },
+  { q: "Do specialty materials require more maintenance?", a: "Some do. Cedar shake benefits from periodic cleaning and treatment every 3–5 years. Copper develops a natural patina that most homeowners prefer to leave untreated. Standing seam metal is essentially maintenance-free. We'll provide material-specific maintenance guidance as part of your project documentation." },
+];
+
 /* ═══════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════ */
@@ -79,6 +89,7 @@ const SpecialtyRoofing = () => {
         jsonLd={[
           serviceSchema({ name: "Specialty Roofing", description: "Specialty roofing for custom homes and architecturally distinctive properties across Western North Carolina.", url: "/roofing/specialty" }),
           breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Specialty", url: "/roofing/specialty" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
         ]}
       />
       <Header />
@@ -284,6 +295,31 @@ const SpecialtyRoofing = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ─── FAQS ─── */}
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight max-w-4xl">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
+              <span className="eyebrow mb-3 block">Specialty Roofing FAQs</span>
+              <h2 className="section-heading mb-4">Questions About<br className="hidden md:block" /> Premium Roofing Work.</h2>
+            </motion.div>
+
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
+                  <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
+                    <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
+                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-6 pr-2">
+                      <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              ))}
+            </Accordion>
           </div>
         </section>
 
