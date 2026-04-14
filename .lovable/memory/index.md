@@ -28,6 +28,9 @@ Updated: now
 - [Brand Values Framework](mem://brand/values-framework) — Seven core values with reusable sections, CTA support copy, trust cards, team statements
 - [Homepage Architecture](mem://strategy/homepage-architecture) — Strict conversion sequence layout for the homepage
 - [Conversion Architecture](mem://strategy/conversion-architecture) — Mobile-first lead capture, sticky CTA, and interactive lead magnets
+- [CRO Framework](mem://strategy/cro-framework) — Full CRO strategy: page hierarchy, trust timing, user segments, lead capture pacing, measurement
+- [CTA Architecture](mem://strategy/cta-architecture) — CTA hierarchy, page-level mapping, styling system, timing/repetition rules, mobile behavior, support copy
+- [Objection Handling System](mem://strategy/objection-handling-system) — Pre-emptive objection handling through trust bars, side notes, FAQs, process blocks, testimonials, CTA support copy
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
 - [Visual Proof Strategy](mem://strategy/visual-proof-strategy) — Photography direction, content modules, and page-level image recommendations
 - [Proof Architecture](mem://strategy/proof-architecture) — How proof layers across every page for cumulative trust building
