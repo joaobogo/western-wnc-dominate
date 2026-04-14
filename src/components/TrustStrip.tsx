@@ -7,101 +7,123 @@ import { Shield, Award, Clock, Star, MapPin, CheckCircle2 } from "lucide-react";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const stats = [
-  { value: "500+", label: "Projects Completed", detail: "Across Western NC" },
-  { value: "40+", label: "Years Combined Exp.", detail: "Roofing & Construction" },
-  { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain" },
+  { value: "500+", label: "Projects", detail: "Across 8 WNC Counties" },
+  { value: "40+", label: "Years Combined", detail: "Roofing & Construction" },
   { value: "4.7★", label: "Google Rating", detail: "122+ Verified Reviews" },
 ];
 
-const certifications = [
-  { icon: Shield, label: "Licensed & Fully Insured" },
-  { icon: Award, label: "CertainTeed Master Applicator" },
-  { icon: CheckCircle2, label: "Licensed General Contractor" },
+const credentials = [
+  { icon: Award, label: "CertainTeed Master Shingle Applicator", emphasis: true },
+  { icon: Shield, label: "Licensed General Contractor" },
   { icon: Clock, label: "24-Hour Storm Response" },
-  { icon: MapPin, label: "Locally Owned Since 2017" },
+  { icon: MapPin, label: "Locally Owned · Franklin & Sylva" },
   { icon: Star, label: "Top-Rated on Google" },
+  { icon: CheckCircle2, label: "Fully Licensed & Insured" },
 ];
 
 const TrustStrip = () => {
   return (
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
-      {/* Tartan background texture */}
-      <div className="absolute inset-0 tartan-dark opacity-60" />
+      <div className="absolute inset-0 tartan-dark opacity-50" />
 
       {/* Top gold line */}
       <GoldLine width="100%" centered delay={0.2} duration={1.2} className="absolute top-0 left-0 right-0 z-10" />
 
       <div className="relative z-10">
-        {/* === ROW 1: Stats Bar === */}
-        <div className="container-tight px-6 md:px-10 pt-10 md:pt-14 pb-8 md:pb-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-primary-foreground/[0.06]">
-            {stats.map((stat, i) => (
+        {/* Editorial layout — stats + credentials side by side */}
+        <div className="container-tight px-6 md:px-10 py-10 md:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 items-center">
+
+            {/* Left: Stats — large, editorial typography */}
+            <div className="lg:col-span-5 lg:border-r lg:border-primary-foreground/[0.06] lg:pr-12">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-8"
+              >
+                By the Numbers
+              </motion.p>
+
+              <div className="space-y-6">
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, x: -16 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5, ease: HIGHLAND_EASE }}
+                    className="flex items-baseline gap-4"
+                  >
+                    <AnimatedCounter
+                      value={stat.value}
+                      className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none tracking-tight stat-glow min-w-[80px]"
+                      duration={1800}
+                    />
+                    <div>
+                      <span className="block text-sm font-heading font-bold text-primary-foreground/70 tracking-tight">
+                        {stat.label}
+                      </span>
+                      <span className="block text-[10px] text-primary-foreground/25 font-body tracking-wide">
+                        {stat.detail}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Credentials — clean grid */}
+            <div className="lg:col-span-7 lg:pl-12">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-8"
+              >
+                Credentials
+              </motion.p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5">
+                {credentials.map((cred, i) => (
+                  <motion.div
+                    key={cred.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 + i * 0.05, duration: 0.4, ease: HIGHLAND_EASE }}
+                    className="flex items-start gap-2.5"
+                  >
+                    <cred.icon className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${
+                      cred.emphasis
+                        ? "text-[hsl(var(--highland-gold)/0.7)]"
+                        : "text-[hsl(var(--highland-gold)/0.35)]"
+                    }`} />
+                    <span className={`text-[12px] font-body leading-tight ${
+                      cred.emphasis
+                        ? "font-semibold text-primary-foreground/60"
+                        : "font-medium text-primary-foreground/40"
+                    }`}>
+                      {cred.label}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Editorial quote */}
               <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5, ease: HIGHLAND_EASE }}
-                className="flex flex-col items-center text-center md:px-8 lg:px-10"
+                transition={{ delay: 0.4, duration: 0.6, ease: HIGHLAND_EASE }}
+                className="mt-8 pt-6 border-t border-primary-foreground/[0.05]"
               >
-                <AnimatedCounter
-                  value={stat.value}
-                  className="text-2xl md:text-[2.75rem] font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5 md:mb-2 tracking-tight stat-glow"
-                  duration={1800}
-                />
-                <span className="text-sm font-heading font-bold text-primary-foreground/80 mb-1 tracking-tight">
-                  {stat.label}
-                </span>
-                <span className="text-[10px] text-primary-foreground/30 font-body tracking-[0.15em] uppercase">
-                  {stat.detail}
-                </span>
+                <p className="text-primary-foreground/25 text-[12px] font-body italic leading-relaxed max-w-md">
+                  "The only company in Western NC that holds both a CertainTeed Master Applicator
+                  certification and a General Contractor license under the same roof."
+                </p>
               </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* === DIVIDER: thin gold rule === */}
-        <div className="container-tight px-6 md:px-10">
-          <motion.div
-            className="h-px w-full mx-auto"
-            style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.2), hsl(var(--highland-gold) / 0))' }}
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: HIGHLAND_EASE }}
-          />
-        </div>
-
-        {/* === ROW 2: Certifications & Trust Markers === */}
-        <div className="container-tight px-6 md:px-10 pt-8 md:pt-10 pb-10 md:pb-14">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-primary-foreground/25 mb-6 md:mb-8"
-          >
-            Credentials That Back Every Project
-          </motion.p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
-            {certifications.map((cert, i) => (
-              <motion.div
-                key={cert.label}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.15 + i * 0.06, duration: 0.45, ease: HIGHLAND_EASE }}
-                className="group flex flex-col items-center text-center gap-2.5 py-4 px-3 border border-primary-foreground/[0.04] hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors duration-300"
-              >
-                <div className="w-9 h-9 rounded-none border border-primary-foreground/[0.08] flex items-center justify-center group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
-                  <cert.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
-                </div>
-                <span className="text-[11px] md:text-xs font-body font-medium text-primary-foreground/50 leading-tight">
-                  {cert.label}
-                </span>
-              </motion.div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
