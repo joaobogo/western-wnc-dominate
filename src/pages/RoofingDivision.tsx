@@ -758,6 +758,155 @@ const RoofingDivision = () => {
           </div>
         </section>
 
+        {/* ─── REPAIR VS. REPLACEMENT GUIDANCE ─── */}
+        <section className="section-padding bg-background relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.015]">
+            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="roofline-pattern" x="0" y="0" width="120" height="60" patternUnits="userSpaceOnUse">
+                  <path d="M0,60 L60,20 L120,60" fill="none" stroke="hsl(var(--heritage-green))" strokeWidth="0.5" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#roofline-pattern)" />
+            </svg>
+          </div>
+          <div className="container-tight relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-2xl mx-auto text-center mb-12 md:mb-16"
+            >
+              <span className="eyebrow mb-3 block">Repair or Replace?</span>
+              <h2 className="section-heading mb-4">
+                An Honest Assessment.<br className="hidden md:block" /> Not a Sales Pitch.
+              </h2>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                Not every roof needs to be replaced. We'll tell you when a repair makes sense — and
+                explain clearly when it doesn't.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-5 md:gap-6">
+              {/* Repair column */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="group bg-card border border-border rounded-none overflow-hidden hover:border-primary/15 card-lift"
+              >
+                <div className="h-[3px] w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+                <div className="p-7 md:p-8">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-none bg-primary/8 flex items-center justify-center">
+                      <Wrench className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-bold text-xl text-foreground">Targeted Repair</h3>
+                      <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-primary/50">When it makes sense</span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      "Isolated leak from specific flashing or penetration failure",
+                      "Localized wind damage — fewer than 20% of shingles affected",
+                      "Roof is under 15 years old with otherwise sound condition",
+                      "Minor ridge cap or vent boot deterioration",
+                      "Budget constraint with plan to replace within 2–5 years",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground text-[13px] font-body leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-5 border-t border-border">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Typical range</span>
+                        <p className="text-lg font-heading font-bold text-foreground">$500 – $3,500</p>
+                      </div>
+                      <Link to="/roofing/roof-repair" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-primary font-body hover:gap-2.5 transition-all">
+                        Roof Repair <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Replacement column */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="group bg-card border border-border rounded-none overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] card-lift"
+              >
+                <div className="h-[3px] w-full bg-gradient-to-r from-[hsl(var(--highland-gold)/0.4)] via-[hsl(var(--highland-gold))] to-[hsl(var(--highland-gold)/0.4)]" />
+                <div className="p-7 md:p-8">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
+                      <Layers className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-bold text-xl text-foreground">Full Replacement</h3>
+                      <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold)/0.6)]">When it's time</span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      "Roof is 20+ years old with widespread granule loss or curling",
+                      "Multiple prior repairs without lasting improvement",
+                      "Storm damage affecting more than 30% of the roof surface",
+                      "Visible sagging, deck deterioration, or structural concerns",
+                      "Selling your home and roof condition affects value or insurability",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <Target className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground text-[13px] font-body leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-5 border-t border-border">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Typical range</span>
+                        <p className="text-lg font-heading font-bold text-foreground">$8,000 – $25,000+</p>
+                      </div>
+                      <Link to="/roofing/roof-replacement" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--highland-gold))] font-body hover:gap-2.5 transition-all">
+                        Roof Replacement <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Decision CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mt-8 text-center bg-primary/[0.03] border border-primary/10 rounded-none p-6 md:p-8"
+            >
+              <p className="text-foreground font-heading font-semibold text-base mb-2">
+                Not sure which you need?
+              </p>
+              <p className="text-muted-foreground text-sm font-body mb-5 max-w-md mx-auto">
+                We'll assess your roof honestly and recommend repair or replacement based on what's actually best for your property — not our revenue.
+              </p>
+              <Link
+                to="/request-inspection"
+                className="group inline-flex items-center gap-2 text-sm font-semibold text-primary font-body hover:gap-3 transition-all"
+              >
+                Request a Repair Assessment <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
