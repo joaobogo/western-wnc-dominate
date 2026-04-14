@@ -77,7 +77,6 @@ const DualPathway = () => {
               transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
               className="group relative bg-card border border-border rounded-none overflow-hidden hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_16px_48px_-12px_hsl(var(--heritage-charcoal)/0.1)] transition-all duration-400 spotlight-hover"
             >
-            >
               {/* Top accent line */}
               <div
                 className={`h-[2px] w-full ${
