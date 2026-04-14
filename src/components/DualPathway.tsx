@@ -54,9 +54,9 @@ const DualPathway = () => {
   return (
     <section className="section-padding bg-secondary tartan-bg relative overflow-hidden">
       <div className="container-tight">
-        <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
+        <div className="max-w-2xl mx-auto text-center mb-14 md:mb-16">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="eyebrow mb-3 block">Two Disciplines. One Standard.</span>
+            <span className="eyebrow mb-4 block">Two Disciplines. One Standard.</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-4">
