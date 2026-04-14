@@ -60,11 +60,17 @@ const Index = () => {
         <ValueProposition />
         <SilentObjections />
 
+        {/* ── Proof: Credentials after value proposition ── */}
+        <ProofMoment variant="credentials" />
+
         <SectionDivider variant="heritage-bar" />
 
         {/* ═══ ACT V: FEATURED SERVICES ═══ */}
         <ServicesGrid />
         <NotJustRoofing />
+
+        {/* ── Proof: Social after services ── */}
+        <ProofMoment variant="social" />
 
         {/* ═══ ACT VI: PROCESS ═══ */}
         <OurProcess />
