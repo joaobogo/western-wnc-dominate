@@ -324,7 +324,8 @@ export default function QuoteFlow() {
         <main className="pt-24 md:pt-32 pb-16">
           <div className="container-tight max-w-lg">
             <ConfirmationState
-              icon="check"
+              show={true}
+              icon={undefined}
               headline={isUrgent ? "We'll call you within 2 hours." : "We'll be in touch within 1 business day."}
               message={`Thank you, ${form.name}. A project advisor who specializes in ${form.serviceCategory === "construction" ? "construction" : "roofing"} will reach out to discuss your project in detail.`}
               secondaryMessage="In the meantime, feel free to explore our project gallery or learn more about our process."
