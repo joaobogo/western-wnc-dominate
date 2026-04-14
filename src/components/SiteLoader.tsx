@@ -1,10 +1,11 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Transition } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-type CubicBezier = [number, number, number, number];
-const CRAFT_EASE: CubicBezier = [0.25, 0.1, 0.25, 1];
-const HIGHLAND_EASE: CubicBezier = [0.22, 1, 0.36, 1];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CRAFT_EASE = [0.25, 0.1, 0.25, 1] as any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 /* Mountain contour — simplified WNC ridgeline */
 const mountainPathDesktop = "M0,140 Q60,110 120,125 Q180,140 250,100 Q320,60 400,90 Q460,110 520,70 Q580,35 640,60 Q700,85 760,45 Q820,15 880,40 Q940,65 1000,30";
