@@ -36,8 +36,8 @@ const services: FeaturedService[] = [
   {
     icon: RotateCcw,
     title: "Roof Replacement",
-    tagline: "Engineered for the next 30 years",
-    description: "Complete roof systems specified for your elevation, wind exposure, and freeze-thaw cycling. CertainTeed certified materials with full labor and product warranty.",
+    tagline: "Engineered for your elevation",
+    description: "Full tear-off and reinstall specified for your wind zone, ice load, and moisture exposure. CertainTeed-certified materials with manufacturer and labor warranty.",
     stat: "300+",
     statLabel: "replacements completed",
     href: "/services/roof-replacement",
@@ -47,8 +47,8 @@ const services: FeaturedService[] = [
   {
     icon: Layers,
     title: "Metal Roofing",
-    tagline: "50-year performance, zero compromise",
-    description: "Standing seam and exposed fastener systems built for serious mountain properties. Superior wind resistance, energy efficiency, and a lifespan that outlasts everything else.",
+    tagline: "50-year rated. Mountain-tested.",
+    description: "Standing seam and exposed fastener systems for properties above 2,500 feet. Superior wind uplift resistance, energy efficiency, and the longest-lasting roof you can install.",
     stat: "50yr",
     statLabel: "rated lifespan",
     href: "/services/metal-roofing",
@@ -58,10 +58,10 @@ const services: FeaturedService[] = [
   {
     icon: CloudLightning,
     title: "Storm Damage",
-    tagline: "24-hour response, full documentation",
-    description: "Emergency tarping, comprehensive damage assessment with drone photography, and direct insurance coordination — so you're covered, not left waiting.",
+    tagline: "24 hours. Fully documented.",
+    description: "Emergency tarping, drone-documented damage assessment, and direct insurance coordination. We handle the paperwork so you handle nothing.",
     stat: "24hr",
-    statLabel: "guaranteed response",
+    statLabel: "response time",
     href: "/services/storm-damage",
     image: stormImg,
     accent: "green",
@@ -69,8 +69,8 @@ const services: FeaturedService[] = [
   {
     icon: Hammer,
     title: "Roof Repair",
-    tagline: "Targeted fixes that prevent escalation",
-    description: "Leak tracing, flashing replacement, and structural repair — documented and warrantied. We diagnose the actual problem, not just the symptom.",
+    tagline: "Fix the cause, not the symptom",
+    description: "Leak tracing, flashing replacement, and structural repair — diagnosed accurately, documented fully, and warrantied in writing. One visit, one resolution.",
     stat: "1st",
     statLabel: "visit resolution",
     href: "/services/roof-repair",
@@ -80,8 +80,8 @@ const services: FeaturedService[] = [
   {
     icon: Building2,
     title: "Commercial Roofing",
-    tagline: "Asset protection at scale",
-    description: "Condition reporting, preventative maintenance programs, and full-scope solutions for property managers, HOAs, and facility owners across WNC.",
+    tagline: "Asset protection, not patchwork",
+    description: "Condition reporting, preventative maintenance, and full-scope solutions for property managers, HOAs, and facility owners across eight WNC counties.",
     stat: "8",
     statLabel: "counties served",
     href: "/commercial-roofing",
@@ -91,8 +91,8 @@ const services: FeaturedService[] = [
   {
     icon: HardHat,
     title: "Home Additions",
-    tagline: "New space, mountain-grade structure",
-    description: "Structural additions engineered for mountain terrain — permitted, inspected, and built under licensed GC oversight with the same precision as our roofing work.",
+    tagline: "Permitted, inspected, mountain-grade",
+    description: "Structural additions designed for mountain terrain and built under licensed GC oversight. Same documentation, same accountability, same warranty as our roofing work.",
     stat: "40+",
     statLabel: "years combined exp.",
     href: "/construction/additions",
@@ -102,8 +102,8 @@ const services: FeaturedService[] = [
   {
     icon: Hammer,
     title: "Renovations",
-    tagline: "Transform what you already have",
-    description: "Kitchens, bathrooms, and full interior remodels with disciplined project management, documented milestones, and warranty protection on every phase.",
+    tagline: "Documented milestones. No surprises.",
+    description: "Kitchen, bath, and full interior remodels with sequenced phases, written milestones, and warranty protection on every stage of work.",
     stat: "100%",
     statLabel: "licensed & insured",
     href: "/construction/renovations",
@@ -113,8 +113,8 @@ const services: FeaturedService[] = [
   {
     icon: Wrench,
     title: "Siding & Exteriors",
-    tagline: "Protection meets curb appeal",
-    description: "Fiber cement, engineered wood, and board-and-batten siding — installed to withstand WNC exposure while elevating your home's architectural presence.",
+    tagline: "Weather-rated curb appeal",
+    description: "Fiber cement, engineered wood, and board-and-batten — specified for WNC moisture and UV exposure. Protection and aesthetics in a single installation.",
     stat: "30yr",
     statLabel: "material warranty",
     href: "/construction/exterior",
@@ -124,8 +124,8 @@ const services: FeaturedService[] = [
   {
     icon: TreePine,
     title: "Outdoor Living",
-    tagline: "Frame the view, extend the home",
-    description: "Custom decks, covered porches, and pergolas designed for mountain views and year-round weather exposure. Built to the same standard as everything we do.",
+    tagline: "Four-season, mountain-engineered",
+    description: "Custom decks, covered porches, and pergolas designed for elevation views and year-round weather. Built to the same documented standard as every project we take on.",
     stat: "4-Season",
     statLabel: "engineered",
     href: "/construction/outdoor-living",
@@ -135,8 +135,8 @@ const services: FeaturedService[] = [
   {
     icon: HomeIcon,
     title: "Custom Projects",
-    tagline: "Concept to completion",
-    description: "Unique builds, design-build partnerships, and complete property transformations — from initial drawings through final walkthrough and warranty handoff.",
+    tagline: "Design-build. Single point of contact.",
+    description: "Complex builds, architectural partnerships, and complete property transformations — from initial drawings through final walkthrough and warranty handoff.",
     stat: "Full",
     statLabel: "design-build scope",
     href: "/construction/custom",
@@ -277,13 +277,14 @@ const ServicesGrid = () => {
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-4">
-              Services Engineered for<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Mountain Properties.</span>
+              Every Service Specified for<br className="hidden md:block" />
+              <span className="text-[hsl(var(--highland-gold))]"> Your Property's Conditions.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground max-w-xl mx-auto text-base font-body leading-relaxed">
-              From precision roof systems to full exterior renovations — every project is specified for your property's elevation, exposure, and architectural character.
+              Roof systems, additions, renovations, and exterior work — each project scoped
+              for your property's elevation, exposure, and architectural character.
             </p>
           </ScrollReveal>
           <GoldLine width="4rem" centered delay={0.35} className="mt-6" />

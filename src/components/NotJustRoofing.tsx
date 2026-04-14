@@ -53,15 +53,15 @@ const NotJustRoofing = () => {
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-4 leading-snug">
-              Roofing & Construction.<br className="hidden md:block" />
-              Both Built the Same Way.
+              Two Disciplines.<br className="hidden md:block" />
+              One Reputation on the Line.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-              Whether we're replacing your roof or adding a room, the standard is identical — certified
-              materials, documented scope, named project contact, and warranty-backed results. Same crew.
-              Same accountability. Two disciplines, one reputation.
+              Replacing your roof and renovating your kitchen shouldn't require two companies,
+              two schedules, and two sets of excuses. Same crew. Same process.
+              Same owner answering the phone.
             </p>
           </ScrollReveal>
           <GoldLine width="3rem" centered delay={0.35} className="mt-6" />
