@@ -72,6 +72,12 @@ const Gallery = () => {
 
   return (
     <>
+      <SEOHead
+        title="Project Gallery | Roofing & Construction Portfolio in Western NC"
+        description="Browse 500+ completed roofing and construction projects across Western North Carolina. Metal, shingle, cedar shake roofs plus additions, renovations, and outdoor living."
+        path="/gallery"
+        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Projects", url: "/gallery" }])}
+      />
       <Header />
       <main>
         {/* ── HERO ── */}
