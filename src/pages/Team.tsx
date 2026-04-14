@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Users, Hammer, MessageSquare, CheckCircle, Award } from "lucide-react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -91,6 +92,12 @@ const processSteps = [
 const Team = () => {
   return (
     <>
+      <SEOHead
+        title="Our Team | Meet the Highlander Roofing & Construction Crew"
+        description="Meet the people behind Highlander Roofing & Construction. Licensed owner, dedicated project coordinator, and in-house crews serving Western North Carolina."
+        path="/team"
+        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Our Team", url: "/team" }])}
+      />
       <Header />
       <main>
         {/* ── HERO ── */}
@@ -279,7 +286,7 @@ const Team = () => {
                   to="/request-inspection"
                   className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
-                  Schedule a Consultation <ArrowRight className="w-5 h-5" />
+                  Talk With Our Team <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:8283979211"
