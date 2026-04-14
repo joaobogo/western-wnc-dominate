@@ -85,17 +85,17 @@ const Reviews = () => {
 
           {/* Google badge — glass panel treatment */}
           <ScrollReveal variant="scale" delay={0.3}>
-            <div className="inline-flex items-center gap-4 px-7 py-3.5 glass-panel rounded-none">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                ))}
+            <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-5 sm:px-7 py-3 sm:py-3.5 glass-panel rounded-none">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <div className="h-5 w-px bg-border hidden sm:block" />
+                <span className="font-heading font-bold text-foreground text-lg">4.7</span>
+                <span className="text-muted-foreground text-xs sm:text-sm font-body">122+ verified reviews</span>
               </div>
-              <div className="h-5 w-px bg-border" />
-              <span className="font-heading font-bold text-foreground text-lg">4.7</span>
-              <span className="text-muted-foreground text-sm font-body">from 122+ verified reviews</span>
-              <div className="h-5 w-px bg-border hidden sm:block" />
-              <span className="text-muted-foreground text-[11px] font-body hidden sm:block">Google Verified</span>
             </div>
           </ScrollReveal>
         </div>
@@ -109,7 +109,7 @@ const Reviews = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.6, ease: HIGHLAND_EASE }}
-              className="relative bg-card border border-border rounded-none p-8 md:p-10 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-[0_12px_40px_-10px_hsl(var(--heritage-charcoal)/0.08)] transition-all duration-500 quote-glyph"
+              className="relative bg-card border border-border rounded-none p-6 md:p-10 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-[0_12px_40px_-10px_hsl(var(--heritage-charcoal)/0.08)] transition-all duration-500 quote-glyph"
               style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
               <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />
@@ -153,7 +153,7 @@ const Reviews = () => {
         </div>
 
         {/* Standard testimonials */}
-        <StaggerContainer stagger={0.07} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <StaggerContainer stagger={0.07} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {standard.map((t) => (
             <StaggerItem key={t.name} variant="rise">
               <div className="group bg-card border border-border rounded-none p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.12)] hover:shadow-[0_8px_28px_-8px_hsl(var(--heritage-charcoal)/0.06)] transition-all duration-500 h-full" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>

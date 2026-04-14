@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 
 const trustItems = [
   { icon: Shield, label: "Licensed & Insured" },
-  { icon: Award, label: "CertainTeed Master Applicator" },
+  { icon: Award, label: "CertainTeed Master" },
   { icon: Banknote, label: "Financing Available" },
   { icon: Clock, label: "24-Hour Response" },
 ];
@@ -40,8 +40,8 @@ const Hero = () => {
           <source src={heroVideo} type="video/mp4" />
         </video>
 
-        {/* Cinematic overlays — optimized for mobile readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.97)] via-[hsl(var(--hero-overlay)/0.85)] to-[hsl(var(--hero-overlay)/0.35)] md:to-[hsl(var(--hero-overlay)/0.3)]" />
+        {/* Cinematic overlays — heavier on mobile for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.98)] via-[hsl(var(--hero-overlay)/0.88)] to-[hsl(var(--hero-overlay)/0.5)] md:to-[hsl(var(--hero-overlay)/0.3)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.1)] to-[hsl(var(--hero-overlay)/0.5)]" />
 
         {/* Grain */}
@@ -82,20 +82,20 @@ const Hero = () => {
       </div>
 
       {/* === MAIN CONTENT — mobile-optimized spacing === */}
-      <div className="relative z-10 w-full px-5 md:px-10 lg:px-20 pb-28 md:pb-20 pt-32 md:pt-44">
+      <div className="relative z-10 w-full px-6 md:px-10 lg:px-20 pb-32 md:pb-20 pt-28 md:pt-44">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex items-center gap-3 md:gap-4 mb-7 md:mb-10"
+            className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10"
           >
             <motion.div
               className="h-px"
               style={{ background: 'hsl(var(--highland-gold))' }}
               initial={{ width: 0 }}
-              animate={{ width: 48 }}
+              animate={{ width: 40 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             />
             <motion.span
@@ -104,27 +104,27 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="text-[9px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] md:tracking-[0.25em] text-[hsl(var(--highland-gold))]"
             >
-              Roofing & Construction · Western North Carolina
+              Roofing & Construction · Western NC
             </motion.span>
           </motion.div>
 
-          {/* Headline — responsive sizing */}
+          {/* Headline — larger mobile sizing for impact */}
           <div className="overflow-hidden mb-1">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.5, ease: HIGHLAND_EASE }}
-              className="text-[2.25rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.04] tracking-[-0.02em]"
+              className="text-[2.5rem] leading-[1.02] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground md:leading-[1.04] tracking-[-0.02em]"
             >
               Not Just Another Roofer.
             </motion.h1>
           </div>
-          <div className="overflow-hidden mb-8 md:mb-12">
+          <div className="overflow-hidden mb-7 md:mb-12">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.65, ease: HIGHLAND_EASE }}
-              className="text-[2.25rem] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground leading-[1.04] tracking-[-0.02em]"
+              className="text-[2.5rem] leading-[1.02] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground md:leading-[1.04] tracking-[-0.02em]"
             >
               Not Just Another Contractor.
             </motion.h1>
@@ -135,22 +135,22 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1 }}
-            className="text-[14px] md:text-lg text-primary-foreground/45 max-w-lg mb-10 md:mb-12 leading-[1.7] font-body"
+            className="text-[15px] md:text-lg text-primary-foreground/50 max-w-lg mb-9 md:mb-12 leading-[1.65] font-body"
           >
             500+ roofs across Western NC. Licensed General Contractor. CertainTeed Master Applicator.
-            One company for your roof, your renovation, and your peace of mind — built for these mountains.
+            One company for your roof, your renovation, and your peace of mind.
           </motion.p>
 
-          {/* CTA Group — mobile: full-width stacked, larger touch targets */}
+          {/* CTA Group — mobile: full-width stacked, min 48px touch targets */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 md:mb-20"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 md:mb-20"
           >
             <Link
               to="/request-inspection"
-              className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] md:text-[15px] px-8 md:px-10 py-4 md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
+              className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] md:text-[15px] px-8 md:px-10 py-[14px] md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide min-h-[52px]"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <span className="relative">Get a Free Assessment</span>
@@ -158,19 +158,19 @@ const Hero = () => {
             </Link>
             <Link
               to="/services"
-              className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.12] text-primary-foreground font-medium text-[14px] md:text-[15px] px-8 md:px-10 py-4 md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.08] hover:border-white/[0.2] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.12] text-primary-foreground font-medium text-[14px] md:text-[15px] px-8 md:px-10 py-[14px] md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.08] hover:border-white/[0.2] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 min-h-[52px]"
             >
               Explore Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
 
-          {/* Trust credentials — mobile: 2-column grid */}
+          {/* Trust credentials — mobile: 2x2 grid with better spacing */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-5 gap-y-2.5 md:gap-x-6 md:gap-y-3"
+            className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-5 gap-y-3 md:gap-x-6 md:gap-y-3"
           >
             {trustItems.map((item, i) => (
               <motion.div
@@ -178,9 +178,9 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 1.7 + i * 0.1 }}
-                className="flex items-center gap-2 text-primary-foreground/35 text-[11px] md:text-sm"
+                className="flex items-center gap-2.5 text-primary-foreground/40 text-[11px] md:text-sm"
               >
-                <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
+                <item.icon className="w-3.5 md:w-3.5 h-3.5 md:h-3.5 text-[hsl(var(--highland-gold)/0.6)] flex-shrink-0" />
                 <span className="font-body leading-tight">{item.label}</span>
               </motion.div>
             ))}

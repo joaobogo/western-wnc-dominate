@@ -55,7 +55,7 @@ const OurProcess = () => {
             transition={{ duration: 2.5, ease: HIGHLAND_EASE }}
           />
 
-          <div className="space-y-6 md:space-y-0">
+          <div className="space-y-4 md:space-y-0 pl-10 md:pl-0">
             {steps.map((step, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -70,7 +70,7 @@ const OurProcess = () => {
                   }`}
                 >
                   <div className={`md:w-[calc(50%-2rem)] ${isLeft ? "md:text-right" : "md:text-left"}`}>
-                    <div className="bg-card border border-border rounded-none p-5 md:p-7 shadow-sm hover:shadow-[0_8px_28px_-8px_hsl(var(--heritage-charcoal)/0.06)] hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500 group spotlight-hover" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
+                    <div className="bg-card border border-border rounded-none p-4 md:p-7 shadow-sm hover:shadow-[0_8px_28px_-8px_hsl(var(--heritage-charcoal)/0.06)] hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500 group spotlight-hover" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
                       <div className={`flex items-center gap-3.5 mb-3 ${isLeft ? "md:justify-end" : ""}`}>
                         <div className="w-10 h-10 rounded-none bg-primary/8 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/14 transition-colors duration-300">
                           <step.icon className="w-4.5 h-4.5 text-primary" />
