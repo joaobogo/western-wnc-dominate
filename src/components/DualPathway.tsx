@@ -1,9 +1,11 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings } from "lucide-react";
+import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings, TrendingUp } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
+import AnimatedCounter from "@/components/motion/AnimatedCounter";
+import { useRef } from "react";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-004.webp";
@@ -11,173 +13,259 @@ import cedarRoof from "@/assets/gallery/cedar-004.webp";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-const pathways = [
-  {
-    icon: Home,
-    label: "Roofing Division",
-    title: "Mountain-Grade Roofing",
-    description: "Roof systems specified for WNC's elevation, wind exposure, and freeze-thaw cycling — installed by certified crews who've built their careers on these ridgelines.",
-    services: [
-      { icon: Layers, name: "Full Roof Replacements" },
-      { icon: Wrench, name: "Targeted Repairs" },
-      { icon: CloudLightning, name: "Storm Damage & Insurance" },
-      { icon: Search, name: "Professional Inspections" },
-      { icon: PaintBucket, name: "Material Selection & Guidance" },
-      { icon: ShieldCheck, name: "Long-Term Roof Performance" },
-    ],
-    cta: "Explore Roofing",
-    href: "/services",
-    accent: "primary" as const,
-    image: metalRoof,
-  },
-  {
-    icon: HardHat,
-    label: "Construction Division",
-    title: "Full-Scope Construction",
-    description: "Licensed general contractor services — additions, renovations, siding, decks, and complete exterior transformations. The same disciplined process and warranty protection that built our roofing reputation.",
-    services: [
-      { icon: Hammer, name: "Renovations & Remodels" },
-      { icon: PlusSquare, name: "Home Additions" },
-      { icon: PaintBucket, name: "Siding & Exterior Upgrades" },
-      { icon: Ruler, name: "Structural Improvements" },
-      { icon: Settings, name: "Decks & Outdoor Living" },
-      { icon: ShieldCheck, name: "Licensed GC Oversight" },
-    ],
-    cta: "Explore Construction",
-    href: "/construction",
-    accent: "gold" as const,
-    image: cedarRoof,
-  },
-];
+const roofingData = {
+  icon: Home,
+  label: "Roofing Division",
+  badge: "Est. 2017",
+  title: "Mountain-Grade Roofing",
+  subtitle: "Our Foundation",
+  description: "Roof systems specified for WNC's elevation, wind exposure, and freeze-thaw cycling — installed by certified crews who've built their careers on these ridgelines.",
+  stats: [
+    { value: "500+", label: "Roofs Installed" },
+    { value: "Top 1%", label: "Nationally Certified" },
+  ],
+  services: [
+    { icon: Layers, name: "Full Roof Replacements" },
+    { icon: Wrench, name: "Targeted Repairs" },
+    { icon: CloudLightning, name: "Storm Damage & Insurance" },
+    { icon: Search, name: "Professional Inspections" },
+    { icon: PaintBucket, name: "Material Selection" },
+    { icon: ShieldCheck, name: "Extended Warranty Coverage" },
+  ],
+  cta: "Explore Roofing Services",
+  href: "/services",
+  image: metalRoof,
+};
+
+const constructionData = {
+  icon: HardHat,
+  label: "Construction Division",
+  badge: "Now Expanding",
+  title: "Full-Scope Construction",
+  subtitle: "Our Evolution",
+  description: "Licensed general contractor services — additions, renovations, siding, decks, and complete exterior transformations. The same disciplined process that built our roofing reputation, applied to everything we build.",
+  stats: [
+    { value: "40+", label: "Years Combined Exp." },
+    { value: "8", label: "WNC Counties" },
+  ],
+  services: [
+    { icon: Hammer, name: "Renovations & Remodels" },
+    { icon: PlusSquare, name: "Home Additions" },
+    { icon: PaintBucket, name: "Siding & Exteriors" },
+    { icon: Ruler, name: "Structural Improvements" },
+    { icon: Settings, name: "Decks & Outdoor Living" },
+    { icon: ShieldCheck, name: "Licensed GC Oversight" },
+  ],
+  cta: "Explore Construction Services",
+  href: "/construction",
+  image: cedarRoof,
+};
+
+const DivisionCard = ({ data, accent, index }: {
+  data: typeof roofingData;
+  accent: "green" | "gold";
+  index: number;
+}) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isGold = accent === "gold";
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    cardRef.current.style.setProperty('--mouse-x', `${((e.clientX - rect.left) / rect.width) * 100}%`);
+    cardRef.current.style.setProperty('--mouse-y', `${((e.clientY - rect.top) / rect.height) * 100}%`);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.18, duration: 0.7, ease: HIGHLAND_EASE }}
+      className="group relative bg-card border border-border rounded-none overflow-hidden spotlight-hover flex flex-col"
+    >
+      {/* === IMAGE HEADER with overlay === */}
+      <div className="relative h-48 md:h-56 overflow-hidden">
+        <motion.img
+          src={data.image}
+          alt={data.title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          initial={{ scale: 1.1 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.8, ease: HIGHLAND_EASE }}
+        />
+        {/* Cinematic overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+        <div className={`absolute inset-0 mix-blend-multiply opacity-20 ${
+          isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
+        }`} />
+
+        {/* Division label + badge */}
+        <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className={`w-9 h-9 rounded-none flex items-center justify-center backdrop-blur-md border ${
+              isGold
+                ? "bg-[hsl(var(--highland-gold)/0.15)] border-[hsl(var(--highland-gold)/0.25)]"
+                : "bg-primary/15 border-primary-foreground/10"
+            }`}>
+              <data.icon className="w-4 h-4 text-white" />
+            </div>
+            <div>
+              <span className="block text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/90">
+                {data.label}
+              </span>
+              <span className="block text-[9px] font-body text-white/40 tracking-wide">
+                {data.subtitle}
+              </span>
+            </div>
+          </div>
+          <span className={`text-[9px] font-body font-bold uppercase tracking-[0.15em] px-2.5 py-1 backdrop-blur-md border ${
+            isGold
+              ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] border-[hsl(var(--highland-gold)/0.2)]"
+              : "text-white/70 bg-white/5 border-white/10"
+          }`}>
+            {isGold && <TrendingUp className="w-2.5 h-2.5 inline mr-1 -mt-px" />}
+            {data.badge}
+          </span>
+        </div>
+
+        {/* Stats overlay at bottom of image */}
+        <div className="absolute bottom-0 left-0 right-0 px-5 pb-4">
+          <div className="flex items-end gap-6">
+            {data.stats.map((stat) => (
+              <div key={stat.label}>
+                <AnimatedCounter
+                  value={stat.value}
+                  className={`text-xl md:text-2xl font-heading font-bold leading-none mb-0.5 ${
+                    isGold ? "text-[hsl(var(--highland-gold))]" : "text-white"
+                  }`}
+                  duration={1600}
+                />
+                <span className="text-[9px] font-body text-white/40 uppercase tracking-[0.12em]">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* === ACCENT LINE === */}
+      <div className={`h-[2px] w-full ${
+        isGold
+          ? "bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.5)] to-transparent"
+          : "bg-gradient-to-r from-transparent via-[hsl(var(--heritage-green)/0.4)] to-transparent"
+      }`} />
+
+      {/* === LEFT HOVER BORDER === */}
+      <div className={`absolute left-0 top-0 w-[2px] h-0 group-hover:h-full transition-all duration-700 z-20 ${
+        isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-primary"
+      }`} />
+
+      {/* === CONTENT === */}
+      <div className="p-7 md:p-9 flex flex-col flex-1">
+        <h3 className="text-xl md:text-[1.65rem] font-heading font-bold text-foreground mb-3 leading-tight tracking-tight">
+          {data.title}
+        </h3>
+        <p className="text-muted-foreground text-[13.5px] leading-[1.75] font-body mb-7">
+          {data.description}
+        </p>
+
+        {/* Service grid — 2 columns */}
+        <div className="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-8 flex-1">
+          {data.services.map((service, si) => (
+            <motion.div
+              key={service.name}
+              initial={{ opacity: 0, x: -8 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.35 + index * 0.1 + si * 0.04, duration: 0.3, ease: HIGHLAND_EASE }}
+              className="flex items-center gap-2 group/item"
+            >
+              <service.icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors duration-200 ${
+                isGold ? "text-[hsl(var(--highland-gold)/0.5)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/40 group-hover/item:text-primary/70"
+              }`} />
+              <span className="text-[12.5px] text-foreground/70 font-body font-medium leading-tight">
+                {service.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <Link
+          to={data.href}
+          className={`inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide group/cta transition-all duration-300 mt-auto ${
+            isGold
+              ? "text-accent-foreground cta-gradient px-7 py-3.5 hover:opacity-90"
+              : "text-primary-foreground bg-primary px-7 py-3.5 hover:bg-primary/90"
+          }`}
+        >
+          {data.cta}
+          <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
+        </Link>
+      </div>
+    </motion.div>
+  );
+};
 
 const DualPathway = () => {
   return (
-    <section className="section-padding bg-secondary tartan-bg relative overflow-hidden">
-      <div className="container-tight">
-        <div className="max-w-2xl mx-auto text-center mb-14 md:mb-16">
+    <section className="section-padding bg-secondary relative overflow-hidden">
+      {/* Subtle tartan */}
+      <div className="absolute inset-0 tartan-bg opacity-40" />
+
+      <div className="container-tight relative z-10">
+        {/* Section Header */}
+        <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="eyebrow mb-4 block">Two Disciplines. One Standard.</span>
+            <span className="eyebrow mb-4 block">Two Divisions. One Standard.</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
-            <h2 className="section-heading mb-4">
-              Roofing & Construction,<br className="hidden md:block" /> Built the Highlander Way.
+            <h2 className="section-heading mb-5">
+              Roofing & Construction,<br className="hidden md:block" />
+              <span className="text-[hsl(var(--highland-gold))]"> Built the Highlander Way.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+            <p className="text-muted-foreground text-base font-body max-w-xl mx-auto leading-relaxed">
               Whether it's a standing seam metal roof or a full home addition, every project follows the same
               disciplined process — certified materials, documented scope, and warranty-backed results.
             </p>
           </ScrollReveal>
-          <GoldLine width="4rem" centered delay={0.4} className="mt-6" />
+          <GoldLine width="4rem" centered delay={0.4} className="mt-7" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto">
-          {pathways.map((path, i) => (
-            <motion.div
-              key={path.label}
-              initial={{ opacity: 0, y: 28, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
-              className="group relative bg-card border border-border rounded-none overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-[0_12px_40px_-10px_hsl(var(--heritage-charcoal)/0.08)] transition-all duration-500 spotlight-hover"
-              style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
-            >
-              {/* Editorial image header */}
-              <div className="relative h-40 md:h-48 overflow-hidden">
-                <motion.img
-                  src={path.image}
-                  alt={path.title}
-                  className="w-full h-full object-cover img-zoom-dramatic"
-                  loading="lazy"
-                  initial={{ scale: 1.08 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.4, ease: HIGHLAND_EASE }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-                
-                {/* Floating label */}
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <div className={`w-8 h-8 rounded-none flex items-center justify-center backdrop-blur-sm ${
-                    path.accent === "gold" ? "bg-[hsl(var(--highland-gold)/0.2)]" : "bg-primary/20"
-                  }`}>
-                    <path.icon className={`w-4 h-4 ${
-                      path.accent === "gold" ? "text-white" : "text-white"
-                    }`} />
-                  </div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/80 backdrop-blur-sm bg-black/20 px-2 py-1">
-                    {path.label}
-                  </span>
-                </div>
-              </div>
-
-              {/* Top accent line */}
-              <div
-                className={`h-[2px] w-full ${
-                  path.accent === "gold"
-                    ? "bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.5)] to-[hsl(var(--highland-gold)/0)]"
-                    : "bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.4)] to-[hsl(var(--heritage-green)/0)]"
-                }`}
-              />
-
-              {/* Gold left border draw on hover */}
-              <motion.div
-                className="absolute left-0 top-0 w-[2px] bg-[hsl(var(--highland-gold))] z-10"
-                initial={{ height: 0 }}
-                whileHover={{ height: "100%" }}
-                transition={{ duration: 0.4 }}
-              />
-
-              <div className="p-8 md:p-10 relative z-10">
-                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug tracking-tight">
-                  {path.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-[1.7] font-body mb-8">
-                  {path.description}
-                </p>
-
-                {/* Service list with stagger */}
-                <div className="space-y-3 mb-8">
-                  {path.services.map((service, si) => (
-                    <motion.div
-                      key={service.name}
-                      initial={{ opacity: 0, x: -12 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 + i * 0.1 + si * 0.05, duration: 0.35, ease: HIGHLAND_EASE }}
-                      className="flex items-center gap-3 group/item"
-                    >
-                      <div className={`w-7 h-7 rounded-none flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
-                        path.accent === "gold"
-                          ? "bg-[hsl(var(--highland-gold)/0.06)] group-hover/item:bg-[hsl(var(--highland-gold)/0.12)]"
-                          : "bg-primary/5 group-hover/item:bg-primary/10"
-                      }`}>
-                        <service.icon className={`w-3.5 h-3.5 ${
-                          path.accent === "gold" ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-primary/60"
-                        }`} />
-                      </div>
-                      <span className="text-sm text-foreground/80 font-body font-medium">{service.name}</span>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* CTA */}
-                <Link
-                  to={path.href}
-                  className={`inline-flex items-center gap-2 font-semibold text-sm group/cta transition-colors ${
-                    path.accent === "gold"
-                      ? "text-[hsl(var(--highland-gold))] hover:text-[hsl(var(--highland-gold)/0.8)]"
-                      : "text-primary hover:text-primary/80"
-                  }`}
-                >
-                  {path.cta}
-                  <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+        {/* Division Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-7 max-w-5xl mx-auto">
+          <DivisionCard data={roofingData} accent="green" index={0} />
+          <DivisionCard data={constructionData} accent="gold" index={1} />
         </div>
+
+        {/* Bottom unifying message */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.6, ease: HIGHLAND_EASE }}
+          className="max-w-2xl mx-auto text-center mt-12 md:mt-16"
+        >
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-12 h-px bg-gradient-to-r from-transparent to-border" />
+            <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-muted-foreground/50">
+              One Company · One Process · One Warranty
+            </span>
+            <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
+          </div>
+          <p className="text-[13px] text-muted-foreground/60 font-body leading-relaxed max-w-md mx-auto">
+            Highlander is one of the few companies in Western NC that combines certified roofing expertise
+            with licensed general contractor capability — under one roof, one team, one standard of quality.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
