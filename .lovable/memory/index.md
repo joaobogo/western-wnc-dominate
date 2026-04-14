@@ -22,10 +22,12 @@ Updated: now
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
 - [Visual Proof Strategy](mem://strategy/visual-proof-strategy) — Photography direction, content modules, and page-level image recommendations
 - [Proof Architecture](mem://strategy/proof-architecture) — How proof layers across every page for cumulative trust building
-- [Content & Editorial Strategy](mem://strategy/content-strategy) — Blog content engine with 9 pillars, category taxonomy, editorial calendar, SEO approach
-- [Blog Category Architecture](mem://strategy/blog-category-architecture) — Category system with audience, intent, themes, linking, conversion per category
-- [WNC Content Strategy](mem://strategy/wnc-content-strategy) — Local content system with weather, maintenance, architecture, town relevance, modules
-- [Storm Center Strategy](mem://strategy/storm-center-strategy) — Storm content cluster with hub structure, article types, insurance education, conversion paths
+- [Content & Editorial Strategy](mem://strategy/content-strategy) — Blog content engine with 9 pillars, category taxonomy, editorial calendar
+- [Blog Category Architecture](mem://strategy/blog-category-architecture) — Category system with audience, intent, themes, linking, conversion
+- [WNC Content Strategy](mem://strategy/wnc-content-strategy) — Local content system with weather, maintenance, architecture, town relevance
+- [Storm Center Strategy](mem://strategy/storm-center-strategy) — Storm content cluster with hub structure, article types, conversion paths
+- [SEO Authority Page System](mem://seo/authority-page-system) — Authority page taxonomy with structure, conversion, trust, and linking per type
+- [Location & Service Area Strategy](mem://seo/location-strategy) — Town page framework, anti-thin rules, linking network, future towns
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
 - [Migration Strategy](mem://seo/migration-strategy) — 301 redirects and URL structure for Hibu migration
 - [Service Categories](mem://features/service-expansion) — Building Services category expansion beyond core roofing
@@ -36,4 +38,4 @@ Updated: now
 - [Data Privacy & Security](mem://security/data-privacy) — RLS, signed URLs, and rate limiting rules
 - [Roofing Division Blueprint](mem://features/roofing-division-blueprint) — Roofing ecosystem architecture and shared components
 - [Construction Division Blueprint](mem://features/construction-division-blueprint) — Construction ecosystem architecture and shared components
-- [About/Team/Trust Blueprint](mem://features/about-team-trust-blueprint) — Unified blueprint for About, Team, Certs, Reviews, Gallery, Project Detail pages
+- [About/Team/Trust Blueprint](mem://features/about-team-trust-blueprint) — Unified blueprint for About, Team, Certs, Reviews, Gallery, Project Detail
