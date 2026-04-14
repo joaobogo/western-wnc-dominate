@@ -266,11 +266,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-14 md:mb-16"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-5 mb-16 md:mb-20"
           >
             <Link
               to="/request-inspection"
-              className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
+              className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <span className="relative">Schedule a Quote Call</span>
@@ -278,7 +278,7 @@ const Hero = () => {
             </Link>
             <Link
               to="/services"
-              className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.12] text-primary-foreground font-medium text-[15px] px-10 py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.08] hover:border-white/[0.2] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
               Explore Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
