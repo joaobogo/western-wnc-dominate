@@ -12,6 +12,7 @@ import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/component
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import StormResponseGuide from "@/components/StormResponseGuide";
 
 import heroImg from "@/assets/gallery/asphalt-005.jpg";
 
@@ -471,6 +472,9 @@ const StormDamage = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* ─── INTERACTIVE STORM ASSESSMENT ─── */}
+        <StormResponseGuide />
 
         {/* ─── FAQS ─── */}
         <section className="section-padding bg-secondary tartan-bg">

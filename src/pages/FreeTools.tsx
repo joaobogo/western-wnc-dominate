@@ -5,6 +5,7 @@ import SEOHead from "@/components/SEOHead";
 import RoofCostEstimator from "@/components/RoofCostEstimator";
 import RoofAssessmentQuiz from "@/components/RoofAssessmentQuiz";
 import GuideLeadMagnet from "@/components/GuideLeadMagnet";
+import StormResponseGuide from "@/components/StormResponseGuide";
 import {
   RepairVsReplaceGuide,
   StormChecklist,
@@ -55,8 +56,11 @@ const FreeTools = () => {
           </div>
         </section>
 
-        {/* Storm Checklist */}
-        <section className="section-padding bg-background">
+        {/* Storm Response Guide */}
+        <StormResponseGuide />
+
+        {/* Storm Checklist (legacy) */}
+        <section className="section-padding bg-secondary">
           <div className="container-tight max-w-2xl">
             <StormChecklist />
           </div>
