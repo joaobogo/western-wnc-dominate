@@ -36,7 +36,7 @@ export const RoofingMidCTA = ({
             <ArrowRight className="w-4 h-4 relative" />
           </Link>
           <a href="tel:8283979211" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
-            <Phone className="w-4 h-4" /> Call Now
+            <Phone className="w-4 h-4" /> Call Direct
           </a>
         </div>
       </div>
