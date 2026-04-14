@@ -112,7 +112,11 @@ const ConstructionDivision = () => {
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Construction Division</span>
+                <div className="w-8 h-8 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center">
+                  <HardHat className="w-4 h-4 text-primary-foreground" />
+                </div>
+                <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Construction Division</span>
+                <div className="h-px flex-1 max-w-[60px] bg-[hsl(var(--highland-gold)/0.3)]" />
               </motion.div>
 
               <div className="overflow-hidden mb-2">
