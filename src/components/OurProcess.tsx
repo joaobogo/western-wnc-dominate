@@ -14,50 +14,50 @@ const steps = [
     number: "01",
     icon: Phone,
     title: "Initial Conversation",
-    description: "We listen before we prescribe. Tell us about your property, your concerns, and your timeline — we'll outline exactly what happens next.",
-    detail: "No obligation · No pressure · Typically 15 minutes",
+    description: "Tell us about your property, your timeline, and what's keeping you up at night. We listen first, recommend second. Fifteen minutes tells us everything we need to schedule a site visit.",
+    detail: "No obligation · No sales pressure · 15 minutes",
   },
   {
     number: "02",
     icon: Search,
-    title: "On-Site Assessment",
-    description: "Our team walks every surface, documents conditions with photos and measurements, and identifies issues you may not see from the ground.",
-    detail: "Full photo documentation · Drone inspection when needed",
+    title: "Property Assessment",
+    description: "We walk every surface, photograph existing conditions, take measurements, and identify issues invisible from the ground. Drone inspection included when necessary.",
+    detail: "Full photo documentation · Drone inspection when warranted",
   },
   {
     number: "03",
     icon: FileText,
     title: "Written Scope & Pricing",
-    description: "A detailed proposal with full scope of work, material specifications, realistic timeline, and line-item pricing. No hidden costs, no ambiguity.",
-    detail: "Line-item transparency · Material specs included",
+    description: "A detailed proposal with line-item pricing, material specifications, and a realistic timeline. You'll know exactly what you're paying for before a single nail is driven.",
+    detail: "Line-item transparency · Material specs · No hidden costs",
   },
   {
     number: "04",
     icon: Palette,
     title: "Material & Design Selection",
-    description: "Samples, color options, and performance data — so every choice is informed by your home's architecture, elevation, and long-term goals.",
+    description: "Physical samples, color consultation, and performance data for your elevation. Every choice informed by your home's architecture and WNC's specific weather conditions.",
     detail: "In-person samples · Climate-matched recommendations",
   },
   {
     number: "05",
     icon: HardHat,
     title: "Precision Execution",
-    description: "Our crews follow documented procedures, protect your property and landscaping, and provide daily progress updates throughout the build.",
-    detail: "Named project contact · Daily updates · Clean jobsite",
+    description: "Documented procedures, property protection, daily progress updates from your named contact. Your property stays clean, your neighbors stay happy, and you know what's happening every day.",
+    detail: "Named project contact · Daily updates · Jobsite maintained",
   },
   {
     number: "06",
     icon: CheckCircle,
     title: "Final Walkthrough",
-    description: "Before we consider a project complete, we inspect every detail with you. If it doesn't meet our standard, it doesn't meet yours.",
-    detail: "Joint inspection · Punch list resolution · Photo record",
+    description: "We inspect every detail together. If anything doesn't meet our standard, we fix it before we leave — not after you call to complain.",
+    detail: "Joint inspection · Same-day punch list · Photo record",
   },
   {
     number: "07",
     icon: Shield,
-    title: "Warranty & Support",
-    description: "Complete documentation — manufacturer warranties, labor coverage, maintenance guidance, and direct access to our team for years to come.",
-    detail: "Full warranty package · Ongoing support · Maintenance guidance",
+    title: "Warranty Delivery & Ongoing Support",
+    description: "Your warranty package is physically handed to you — manufacturer coverage, labor protection, and maintenance guidance. Plus direct access to our team for as long as you own the property.",
+    detail: "Physical warranty package · Ongoing access · Maintenance guidance",
   },
 ];
 
@@ -77,14 +77,14 @@ const OurProcess = () => {
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
-              Seven Steps. Zero Guesswork.<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Every Project, Every Time.</span>
+              From First Call to Warranty Handoff.<br className="hidden md:block" />
+              <span className="text-[hsl(var(--highland-gold))]"> Nothing Left to Chance.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-dark-section-foreground/40 max-w-xl mx-auto text-[15px] font-body leading-relaxed">
-              Consistent process is how you deliver consistent quality. From the first phone call
-              to your warranty handoff, every phase is documented and accountable.
+              Consistent quality requires a consistent process. Every phase is documented,
+              every decision is yours, and every detail is accountable to one standard.
             </p>
           </ScrollReveal>
           <GoldLine width="3rem" centered delay={0.35} className="mt-7" />
