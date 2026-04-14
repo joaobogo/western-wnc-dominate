@@ -37,6 +37,7 @@ import ExteriorImprovements from "./pages/ExteriorImprovements";
 import OutdoorLiving from "./pages/OutdoorLiving";
 import CustomConstruction from "./pages/CustomConstruction";
 import QuoteFlow from "./pages/QuoteFlow";
+import Contact from "./pages/Contact";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 
 const queryClient = new QueryClient();
