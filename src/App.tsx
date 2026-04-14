@@ -26,6 +26,8 @@ import StormDamage from "./pages/StormDamage";
 import CommercialRoofing from "./pages/CommercialRoofing";
 import SpecialtyRoofing from "./pages/SpecialtyRoofing";
 import ConstructionDivision from "./pages/ConstructionDivision";
+import HomeAdditions from "./pages/HomeAdditions";
+import Renovations from "./pages/Renovations";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +47,8 @@ const App = () => (
           <Route path="/roofing/commercial" element={<CommercialRoofing />} />
           <Route path="/roofing/specialty" element={<SpecialtyRoofing />} />
           <Route path="/construction" element={<ConstructionDivision />} />
+          <Route path="/construction/additions" element={<HomeAdditions />} />
+          <Route path="/construction/renovations" element={<Renovations />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/commercial-roofing" element={<ServicePage />} />
