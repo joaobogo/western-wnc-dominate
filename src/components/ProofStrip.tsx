@@ -68,7 +68,7 @@ const ProofStrip = () => {
           </ScrollReveal>
         </div>
 
-        <StaggerContainer stagger={0.07} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+        <StaggerContainer stagger={0.07} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-5">
           {pillars.map((pillar) => {
             const cardRef = useRef<HTMLDivElement>(null);
             const handleMouseMove = (e: React.MouseEvent) => {
@@ -85,7 +85,7 @@ const ProofStrip = () => {
                 <div
                   ref={cardRef}
                   onMouseMove={handleMouseMove}
-                  className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift overflow-hidden h-full spotlight-hover"
+                  className="group relative bg-card border border-border rounded-none p-5 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift overflow-hidden h-full spotlight-hover"
                 >
                   {/* Stat watermark */}
                   <div className="absolute -right-1 -top-2 text-[48px] font-heading font-bold text-foreground/[0.03] leading-none select-none pointer-events-none">
