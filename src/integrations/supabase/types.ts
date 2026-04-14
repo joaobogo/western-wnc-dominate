@@ -14,6 +14,75 @@ export type Database = {
   }
   public: {
     Tables: {
+      consultation_requests: {
+        Row: {
+          budget_range: string | null
+          conversation_log: Json | null
+          created_at: string
+          email: string | null
+          has_plans: boolean | null
+          id: string
+          insurance_status: string | null
+          lead_score: number | null
+          metadata: Json | null
+          name: string | null
+          phone: string | null
+          project_description: string | null
+          project_type: string | null
+          property_type: string | null
+          service_category: string | null
+          source: string | null
+          status: string | null
+          timeline: string | null
+          town: string | null
+          urgency: string | null
+        }
+        Insert: {
+          budget_range?: string | null
+          conversation_log?: Json | null
+          created_at?: string
+          email?: string | null
+          has_plans?: boolean | null
+          id?: string
+          insurance_status?: string | null
+          lead_score?: number | null
+          metadata?: Json | null
+          name?: string | null
+          phone?: string | null
+          project_description?: string | null
+          project_type?: string | null
+          property_type?: string | null
+          service_category?: string | null
+          source?: string | null
+          status?: string | null
+          timeline?: string | null
+          town?: string | null
+          urgency?: string | null
+        }
+        Update: {
+          budget_range?: string | null
+          conversation_log?: Json | null
+          created_at?: string
+          email?: string | null
+          has_plans?: boolean | null
+          id?: string
+          insurance_status?: string | null
+          lead_score?: number | null
+          metadata?: Json | null
+          name?: string | null
+          phone?: string | null
+          project_description?: string | null
+          project_type?: string | null
+          property_type?: string | null
+          service_category?: string | null
+          source?: string | null
+          status?: string | null
+          timeline?: string | null
+          town?: string | null
+          urgency?: string | null
+        }
+        Relationships: []
+      }
       designer_leads: {
         Row: {
           created_at: string
