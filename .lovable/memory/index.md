@@ -28,6 +28,8 @@ Updated: now
 - [Internal Linking Strategy](mem://strategy/internal-linking-strategy) — Journey maps, link placement rules, cluster architecture, reconvergence points
 - [WNC Content Strategy](mem://strategy/wnc-content-strategy) — Local content system with weather, maintenance, architecture, town relevance
 - [Storm Center Strategy](mem://strategy/storm-center-strategy) — Storm content cluster with hub structure, article types, conversion paths
+- [Author & Expertise System](mem://strategy/expertise-system) — Author bios, reviewed-by badges, expert callouts, editorial trust markers
+- [Unified Content Engine Blueprint](mem://strategy/content-engine-blueprint) — Master blueprint combining all 11 content systems into one reference
 - [SEO Authority Page System](mem://seo/authority-page-system) — Authority page taxonomy with structure, conversion, trust, and linking per type
 - [Location & Service Area Strategy](mem://seo/location-strategy) — Town page framework, anti-thin rules, linking network, future towns
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
