@@ -107,8 +107,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
   }
 
   /* Selection color */
@@ -120,7 +120,7 @@
 
 @layer components {
   .section-padding {
-    @apply px-5 py-16 md:px-10 md:py-28 lg:px-20 lg:py-36;
+    @apply px-5 py-20 md:px-10 md:py-32 lg:px-20 lg:py-40;
   }
 
   /* Safe bottom padding for sticky mobile CTA */
@@ -139,7 +139,7 @@
 
   .cta-gradient {
     background: linear-gradient(135deg, hsl(var(--cta-gradient-from)), hsl(var(--cta-gradient-to)));
-    box-shadow: 0 4px 20px -4px hsl(var(--highland-gold) / 0.35);
+    box-shadow: 0 4px 16px -4px hsl(var(--highland-gold) / 0.3);
   }
 
   .text-balance {
@@ -295,7 +295,7 @@
      EYEBROW / LABEL STYLE
      ────────────────────────────────────── */
   .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.25em] text-accent;
+    @apply text-[10px] font-semibold uppercase tracking-[0.28em] text-accent;
     font-family: 'DM Sans', system-ui, sans-serif;
   }
 
@@ -303,7 +303,7 @@
      SECTION HEADING PATTERN
      ────────────────────────────────────── */
   .section-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-[1.08] tracking-tight;
+    @apply text-3xl md:text-4xl lg:text-[3.25rem] font-heading font-bold text-foreground leading-[1.06] tracking-tight;
   }
 
   /* ──────────────────────────────────────
