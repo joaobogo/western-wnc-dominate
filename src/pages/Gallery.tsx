@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, X, ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, Eye } from "lucide-react";
+import { ArrowRight, MapPin, Calendar, Ruler } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
+import { PremiumLightbox, GalleryCard } from "@/components/gallery";
+import type { LightboxProject } from "@/components/gallery";
+import { MountainContours, ArchitecturalLines, TextureOverlay } from "@/components/motion/BackgroundTexture";
 
 import metal005 from "@/assets/gallery/metal-005.webp";
 import metal006 from "@/assets/gallery/metal-006.webp";
@@ -25,129 +28,24 @@ const fadeUp = {
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
 };
 
-interface Project {
-  title: string;
-  type: string;
-  description: string;
-  image: string;
+interface Project extends LightboxProject {
   category: string;
-  location: string;
   scope: string;
   duration: string;
   highlight: string;
 }
 
 const projects: Project[] = [
-  {
-    title: "Standing Seam Metal — Dark Bronze",
-    type: "Metal Roofing",
-    description: "Complex multi-gable standing seam metal roof in dark bronze. Precision panel work on steep pitches with custom trim detailing and concealed fastener system throughout.",
-    image: metal005,
-    category: "roofing",
-    location: "Highlands, NC",
-    scope: "3,200 sq ft roof replacement",
-    duration: "8 days",
-    highlight: "Custom-fabricated panels for 12/12 pitch",
-  },
-  {
-    title: "Standing Seam Metal — Mountain Cabin",
-    type: "Metal Roofing",
-    description: "Green standing seam metal on a log cabin nestled in the WNC mountains. Engineered for decades of snow load, wind exposure, and UV at 4,200 feet elevation.",
-    image: metal006,
-    category: "roofing",
-    location: "Cashiers, NC",
-    scope: "Full roof replacement",
-    duration: "6 days",
-    highlight: "Engineered for 4,200 ft elevation exposure",
-  },
-  {
-    title: "Metal Panel — Silver",
-    type: "Metal Roofing",
-    description: "Clean silver metal panel installation with complex hip-and-valley geometry. Every intersection precision-cut and sealed for permanent weather protection.",
-    image: metal008,
-    category: "roofing",
-    location: "Franklin, NC",
-    scope: "2,800 sq ft re-roof",
-    duration: "7 days",
-    highlight: "Complex hip-and-valley geometry",
-  },
-  {
-    title: "Metal Roof — Rural Home",
-    type: "Metal Roofing",
-    description: "Brown metal panel installation on a brick home in the WNC countryside. Material selected for longevity and visual harmony with the surrounding mountain landscape.",
-    image: metal003,
-    category: "roofing",
-    location: "Sylva, NC",
-    scope: "Full roof replacement",
-    duration: "5 days",
-    highlight: "50-year material warranty",
-  },
-  {
-    title: "Architectural Shingles — Weathered Wood",
-    type: "Asphalt Shingles",
-    description: "CertainTeed Landmark shingles on a multi-level mountain home with screen porch. Premium materials installed by Master Shingle Applicator certified crew.",
-    image: asphaltHero,
-    category: "roofing",
-    location: "Waynesville, NC",
-    scope: "4,100 sq ft roof replacement",
-    duration: "4 days",
-    highlight: "CertainTeed SureStart PLUS™ warranty",
-  },
-  {
-    title: "Asphalt & Metal Combo — Highlands Estate",
-    type: "Mixed Materials",
-    description: "Craftsman mountain home featuring architectural shingles with standing seam metal accent roofing and natural stone exterior accents. Dual-material design for maximum curb appeal.",
-    image: asphalt007,
-    category: "roofing",
-    location: "Highlands, NC",
-    scope: "Dual-material roof system",
-    duration: "10 days",
-    highlight: "Architectural shingle + metal accent design",
-  },
-  {
-    title: "Architectural Shingles — Slate Gray",
-    type: "Asphalt Shingles",
-    description: "Aerial drone view of a large residential shingle replacement in slate gray with complex roof intersections. Every valley and ridge executed to CertainTeed specifications.",
-    image: asphalt006,
-    category: "roofing",
-    location: "Franklin, NC",
-    scope: "3,500 sq ft complex roof",
-    duration: "5 days",
-    highlight: "12 roof intersections, zero callbacks",
-  },
-  {
-    title: "Architectural Shingles — Brown",
-    type: "Asphalt Shingles",
-    description: "Full architectural shingle roof replacement with clean hip-and-ridge lines on a residential property. Ventilation upgraded during installation for improved attic performance.",
-    image: asphalt008,
-    category: "roofing",
-    location: "Bryson City, NC",
-    scope: "Complete re-roof + ventilation",
-    duration: "4 days",
-    highlight: "Ventilation system upgraded during install",
-  },
-  {
-    title: "Architectural Shingles — Hunter Green",
-    type: "Asphalt Shingles",
-    description: "Bird's-eye view of a large complex residential roof with hunter green CertainTeed architectural shingles. Precision work on multiple dormers and valleys.",
-    image: asphalt002,
-    category: "roofing",
-    location: "Macon County, NC",
-    scope: "5,200 sq ft multi-dormer roof",
-    duration: "6 days",
-    highlight: "Largest residential project of Q3 2024",
-  },
-  {
-    title: "Cedar Shake — Estate Home",
-    type: "Cedar Shake",
-    description: "Stunning cedar shake roof on a luxury estate in Highlands. Intricate multi-gable design with copper ridge accents. Hand-selected premium cedar with natural preservative treatment.",
-    image: cedar004,
-    category: "roofing",
-    location: "Highlands, NC",
-    scope: "Premium cedar shake installation",
-    duration: "14 days",
-    highlight: "Hand-selected cedar with copper ridge accents",
-  },
+  { title: "Standing Seam Metal — Dark Bronze", type: "Metal Roofing", description: "Complex multi-gable standing seam metal roof in dark bronze. Precision panel work on steep pitches with custom trim detailing and concealed fastener system throughout.", image: metal005, category: "roofing", location: "Highlands, NC", scope: "3,200 sq ft roof replacement", duration: "8 days", highlight: "Custom-fabricated panels for 12/12 pitch" },
+  { title: "Standing Seam Metal — Mountain Cabin", type: "Metal Roofing", description: "Green standing seam metal on a log cabin nestled in the WNC mountains. Engineered for decades of snow load, wind exposure, and UV at 4,200 feet elevation.", image: metal006, category: "roofing", location: "Cashiers, NC", scope: "Full roof replacement", duration: "6 days", highlight: "Engineered for 4,200 ft elevation exposure" },
+  { title: "Metal Panel — Silver", type: "Metal Roofing", description: "Clean silver metal panel installation with complex hip-and-valley geometry. Every intersection precision-cut and sealed for permanent weather protection.", image: metal008, category: "roofing", location: "Franklin, NC", scope: "2,800 sq ft re-roof", duration: "7 days", highlight: "Complex hip-and-valley geometry" },
+  { title: "Metal Roof — Rural Home", type: "Metal Roofing", description: "Brown metal panel installation on a brick home in the WNC countryside. Material selected for longevity and visual harmony with the surrounding mountain landscape.", image: metal003, category: "roofing", location: "Sylva, NC", scope: "Full roof replacement", duration: "5 days", highlight: "50-year material warranty" },
+  { title: "Architectural Shingles — Weathered Wood", type: "Asphalt Shingles", description: "CertainTeed Landmark shingles on a multi-level mountain home with screen porch. Premium materials installed by Master Shingle Applicator certified crew.", image: asphaltHero, category: "roofing", location: "Waynesville, NC", scope: "4,100 sq ft roof replacement", duration: "4 days", highlight: "CertainTeed SureStart PLUS™ warranty" },
+  { title: "Asphalt & Metal Combo — Highlands Estate", type: "Mixed Materials", description: "Craftsman mountain home featuring architectural shingles with standing seam metal accent roofing and natural stone exterior accents. Dual-material design for maximum curb appeal.", image: asphalt007, category: "roofing", location: "Highlands, NC", scope: "Dual-material roof system", duration: "10 days", highlight: "Architectural shingle + metal accent design" },
+  { title: "Architectural Shingles — Slate Gray", type: "Asphalt Shingles", description: "Aerial drone view of a large residential shingle replacement in slate gray with complex roof intersections. Every valley and ridge executed to CertainTeed specifications.", image: asphalt006, category: "roofing", location: "Franklin, NC", scope: "3,500 sq ft complex roof", duration: "5 days", highlight: "12 roof intersections, zero callbacks" },
+  { title: "Architectural Shingles — Brown", type: "Asphalt Shingles", description: "Full architectural shingle roof replacement with clean hip-and-ridge lines on a residential property. Ventilation upgraded during installation for improved attic performance.", image: asphalt008, category: "roofing", location: "Bryson City, NC", scope: "Complete re-roof + ventilation", duration: "4 days", highlight: "Ventilation system upgraded during install" },
+  { title: "Architectural Shingles — Hunter Green", type: "Asphalt Shingles", description: "Bird's-eye view of a large complex residential roof with hunter green CertainTeed architectural shingles. Precision work on multiple dormers and valleys.", image: asphalt002, category: "roofing", location: "Macon County, NC", scope: "5,200 sq ft multi-dormer roof", duration: "6 days", highlight: "Largest residential project of Q3 2024" },
+  { title: "Cedar Shake — Estate Home", type: "Cedar Shake", description: "Stunning cedar shake roof on a luxury estate in Highlands. Intricate multi-gable design with copper ridge accents. Hand-selected premium cedar with natural preservative treatment.", image: cedar004, category: "roofing", location: "Highlands, NC", scope: "Premium cedar shake installation", duration: "14 days", highlight: "Hand-selected cedar with copper ridge accents" },
 ];
 
 const categories = [
@@ -169,11 +67,7 @@ const Gallery = () => {
 
   const filtered = filter === "all" ? projects : projects.filter((p) => p.category === filter);
 
-  const navigateLightbox = (dir: -1 | 1) => {
-    if (lightbox === null) return;
-    const newIdx = lightbox + dir;
-    if (newIdx >= 0 && newIdx < projects.length) setLightbox(newIdx);
-  };
+  const handleLightboxNav = useCallback((idx: number) => setLightbox(idx), []);
 
   return (
     <>
@@ -182,6 +76,8 @@ const Gallery = () => {
         {/* ── HERO ── */}
         <section className="relative section-dark pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
+          <MountainContours variant="dark" opacity={0.04} />
+          <TextureOverlay opacity={0.02} />
           <div className="container-tight relative z-10 px-5 md:px-8 lg:px-16">
             <motion.div {...fadeUp} className="max-w-3xl">
               <span className="eyebrow mb-4 block text-[hsl(var(--highland-gold))]">Project Showcase</span>
@@ -192,8 +88,7 @@ const Gallery = () => {
               <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
               <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-base md:text-lg leading-relaxed max-w-2xl">
                 Real projects across Western North Carolina. Every image represents a home we've 
-                protected, a space we've built, and a standard we refuse to lower. These aren't 
-                stock photos — they're our work.
+                protected, a space we've built, and a standard we refuse to lower.
               </p>
             </motion.div>
           </div>
@@ -223,15 +118,16 @@ const Gallery = () => {
         </section>
 
         {/* ── PROJECT GRID ── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
+        <section className="section-padding bg-background relative">
+          <ArchitecturalLines variant="light" opacity={0.015} direction="right" />
+          <div className="container-tight relative z-10">
             {/* Filters */}
             <div className="flex flex-wrap gap-2 justify-center mb-10">
               {categories.map((cat) => (
                 <button
                   key={cat.value}
                   onClick={() => setFilter(cat.value)}
-                  className={`px-5 py-2 rounded-sm text-sm font-semibold transition-all ${
+                  className={`px-5 py-2 rounded-sm text-sm font-semibold btn-ghost-interactive ${
                     filter === cat.value
                       ? "bg-primary text-primary-foreground"
                       : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-[hsl(var(--highland-gold)/0.2)]"
@@ -245,60 +141,19 @@ const Gallery = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <AnimatePresence mode="popLayout">
                 {filtered.map((project, i) => (
-                  <motion.div
+                  <GalleryCard
                     key={project.title}
-                    layout
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ delay: i * 0.04, duration: 0.4 }}
-                    className="group bg-card border border-border rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    title={project.title}
+                    image={project.image}
+                    type={project.type!}
+                    description={project.description!}
+                    location={project.location!}
+                    scope={project.scope}
+                    duration={project.duration}
+                    highlight={project.highlight}
+                    index={i}
                     onClick={() => setLightbox(projects.indexOf(project))}
-                  >
-                    {/* Image */}
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        loading="lazy"
-                      />
-                      {/* Gradient overlay on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      {/* Hover detail */}
-                      <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <div className="flex items-center gap-4 text-white/80 text-xs font-body">
-                          <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {project.location}</span>
-                          <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {project.duration}</span>
-                          <span className="flex items-center gap-1"><Eye className="w-3 h-3" /> View Details</span>
-                        </div>
-                      </div>
-                      {/* Category badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/90 text-primary-foreground backdrop-blur-sm">
-                          {project.type}
-                        </span>
-                      </div>
-                    </div>
-                    {/* Content */}
-                    <div className="p-5 md:p-6">
-                      <h3 className="font-heading font-semibold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2">{project.description}</p>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground font-body">
-                        <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {project.location}</span>
-                        <span className="flex items-center gap-1"><Ruler className="w-3 h-3" /> {project.scope}</span>
-                      </div>
-                      {/* Highlight badge */}
-                      <div className="mt-4 pt-4 border-t border-border">
-                        <p className="text-[11px] font-body font-medium text-accent flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                          {project.highlight}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
+                  />
                 ))}
               </AnimatePresence>
             </div>
@@ -306,25 +161,28 @@ const Gallery = () => {
         </section>
 
         {/* ── MID CTA ── */}
-        <section className="bg-primary py-10 md:py-12">
-          <div className="container-tight text-center px-5 md:px-8">
+        <section className="bg-primary py-10 md:py-12 relative overflow-hidden">
+          <TextureOverlay opacity={0.02} />
+          <div className="container-tight text-center px-5 md:px-8 relative z-10">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
               <p className="text-primary-foreground font-heading font-semibold text-lg">
                 Want results like these on your property?
               </p>
               <Link
                 to="/request-inspection"
-                className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
+                className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 btn-primary-interactive"
               >
-                Schedule a Consultation <ArrowRight className="w-4 h-4" />
+                Schedule a Consultation <ArrowRight className="w-4 h-4 btn-arrow-icon" />
               </Link>
             </div>
           </div>
         </section>
 
         {/* ── VISUAL STORYTELLING ── */}
-        <section className="section-padding section-dark tartan-dark">
-          <div className="container-tight">
+        <section className="section-padding section-dark relative overflow-hidden">
+          <div className="absolute inset-0 tartan-dark" />
+          <MountainContours variant="dark" opacity={0.03} />
+          <div className="container-tight relative z-10">
             <motion.div {...fadeUp} className="text-center mb-14">
               <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Our Approach</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
@@ -349,7 +207,7 @@ const Gallery = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="border border-[hsl(var(--highland-gold)/0.1)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)] text-center"
+                  className="border border-[hsl(var(--highland-gold)/0.1)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)] text-center process-connector"
                 >
                   <span className="text-3xl font-heading font-bold text-[hsl(var(--highland-gold)/0.2)] mb-3 block">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-2">{step.title}</h3>
@@ -368,65 +226,13 @@ const Gallery = () => {
         />
       </main>
 
-      {/* ── LIGHTBOX ── */}
-      <AnimatePresence>
-        {lightbox !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[70] bg-[hsl(var(--heritage-charcoal)/0.95)] flex items-center justify-center p-4"
-            onClick={() => setLightbox(null)}
-          >
-            <button onClick={() => setLightbox(null)} className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10">
-              <X className="w-8 h-8" />
-            </button>
-            {lightbox > 0 && (
-              <button
-                onClick={(e) => { e.stopPropagation(); navigateLightbox(-1); }}
-                className="absolute left-4 md:left-8 text-white/40 hover:text-white transition-colors z-10"
-              >
-                <ChevronLeft className="w-10 h-10" />
-              </button>
-            )}
-            {lightbox < projects.length - 1 && (
-              <button
-                onClick={(e) => { e.stopPropagation(); navigateLightbox(1); }}
-                className="absolute right-4 md:right-8 text-white/40 hover:text-white transition-colors z-10"
-              >
-                <ChevronRight className="w-10 h-10" />
-              </button>
-            )}
-            <div className="max-w-5xl w-full flex flex-col md:flex-row gap-6 items-center" onClick={(e) => e.stopPropagation()}>
-              <motion.img
-                key={lightbox}
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.95, opacity: 0 }}
-                src={projects[lightbox].image}
-                alt={projects[lightbox].title}
-                className="max-h-[70vh] w-full md:w-2/3 rounded-sm object-contain"
-              />
-              <div className="md:w-1/3 text-white/90">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[hsl(var(--highland-gold))] mb-2 block">
-                  {projects[lightbox].type}
-                </span>
-                <h3 className="font-heading font-bold text-xl mb-3">{projects[lightbox].title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-5">{projects[lightbox].description}</p>
-                <div className="space-y-2 text-sm text-white/50">
-                  <p className="flex items-center gap-2"><MapPin className="w-3.5 h-3.5" /> {projects[lightbox].location}</p>
-                  <p className="flex items-center gap-2"><Ruler className="w-3.5 h-3.5" /> {projects[lightbox].scope}</p>
-                  <p className="flex items-center gap-2"><Calendar className="w-3.5 h-3.5" /> {projects[lightbox].duration}</p>
-                </div>
-                <div className="mt-5 pt-5 border-t border-white/10">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[hsl(var(--highland-gold)/0.6)] mb-1">Project Highlight</p>
-                  <p className="text-white/70 text-sm">{projects[lightbox].highlight}</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* ── PREMIUM LIGHTBOX ── */}
+      <PremiumLightbox
+        projects={projects}
+        currentIndex={lightbox}
+        onClose={() => setLightbox(null)}
+        onNavigate={handleLightboxNav}
+      />
 
       <Footer />
       <StickyMobileCTA />
