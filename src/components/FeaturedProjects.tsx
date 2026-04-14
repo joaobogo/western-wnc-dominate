@@ -90,7 +90,7 @@ const FeaturedProjects = () => {
           <div>
             <span className="eyebrow mb-3 block">Featured Projects</span>
             <h2 className="section-heading">
-              Craftsmanship<br className="hidden md:block" /> You Can See.
+              Projects That Speak<br className="hidden md:block" /> for Themselves.
             </h2>
           </div>
 
@@ -112,7 +112,7 @@ const FeaturedProjects = () => {
           </div>
         </motion.div>
 
-        {/* Project grid — featured item spans 2 cols */}
+        {/* Project grid */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {filtered.map((project, i) => (
             <motion.div
@@ -126,7 +126,6 @@ const FeaturedProjects = () => {
                 project.featured && activeFilter === "all" ? "md:col-span-2" : ""
               }`}
             >
-              {/* Image */}
               <div className={`relative overflow-hidden ${
                 project.featured && activeFilter === "all"
                   ? "aspect-[16/7]"
@@ -139,15 +138,12 @@ const FeaturedProjects = () => {
                   loading="lazy"
                 />
 
-                {/* Overlay — stronger on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-[hsl(var(--heritage-charcoal)/0.2)] to-[hsl(var(--heritage-charcoal)/0.05)] group-hover:from-[hsl(var(--heritage-charcoal)/0.9)] transition-all duration-500" />
 
-                {/* Category badge */}
                 <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-[10px] font-body font-semibold uppercase tracking-[0.15em] px-3 py-1.5 rounded-sm z-10">
                   {project.category}
                 </div>
 
-                {/* Content overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 z-10">
                   <div className="flex items-center gap-1.5 text-white/50 text-xs mb-2 font-body">
                     <MapPin className="w-3 h-3" />
@@ -157,7 +153,6 @@ const FeaturedProjects = () => {
                     {project.title}
                   </h3>
 
-                  {/* Outcome — reveals on hover */}
                   <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 ease-out">
                     <p className="text-white/60 text-sm font-body leading-relaxed pt-1">
                       {project.outcome}
@@ -165,7 +160,6 @@ const FeaturedProjects = () => {
                   </div>
                 </div>
 
-                {/* Arrow indicator — hover */}
                 <div className="absolute bottom-5 right-5 md:bottom-7 md:right-7 w-10 h-10 rounded-sm bg-white/0 group-hover:bg-white/10 backdrop-blur-sm border border-white/0 group-hover:border-white/15 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
                   <ArrowRight className="w-4 h-4 text-white" />
                 </div>
@@ -174,7 +168,6 @@ const FeaturedProjects = () => {
           ))}
         </motion.div>
 
-        {/* View all link */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

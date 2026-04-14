@@ -58,16 +58,15 @@ const OurProcess = () => {
         >
           <span className="eyebrow mb-3 block">Our Process</span>
           <h2 className="section-heading mb-4">
-            How We Work.<br className="hidden md:block" /> What to Expect.
+            From First Call<br className="hidden md:block" /> to Final Walkthrough.
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-base font-body">
             Every project follows the same disciplined process — because consistency is how you deliver quality at scale.
           </p>
         </motion.div>
 
-        {/* Timeline layout */}
+        {/* Timeline */}
         <div className="relative">
-          {/* Vertical center line — desktop only */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
 
           <div className="space-y-6 md:space-y-0">
@@ -84,9 +83,8 @@ const OurProcess = () => {
                     isLeft ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
-                  {/* Content card */}
                   <div className={`md:w-[calc(50%-2rem)] ${isLeft ? "md:text-right" : "md:text-left"}`}>
-                    <div className="bg-card border border-border rounded-sm p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div className="bg-card border border-border rounded-sm p-5 md:p-6 shadow-sm hover:shadow-md hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-300">
                       <div className={`flex items-center gap-3 mb-3 ${isLeft ? "md:justify-end" : ""}`}>
                         <div className="w-9 h-9 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <step.icon className="w-4 h-4 text-primary" />
@@ -97,17 +95,14 @@ const OurProcess = () => {
                     </div>
                   </div>
 
-                  {/* Center node — desktop */}
                   <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-6 w-10 h-10 rounded-full bg-primary text-primary-foreground items-center justify-center z-10">
                     <span className="font-heading font-bold text-xs">{step.number}</span>
                   </div>
 
-                  {/* Mobile number badge */}
                   <div className="md:hidden absolute -left-1 top-5 w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
                     <span className="font-heading font-bold text-[10px]">{step.number}</span>
                   </div>
 
-                  {/* Spacer for opposite side */}
                   <div className="hidden md:block md:w-[calc(50%-2rem)]" />
                 </motion.div>
               );

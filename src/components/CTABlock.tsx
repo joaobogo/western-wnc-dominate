@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, Shield, Clock, Award } from "lucide-react";
+import { ArrowRight, Phone, Shield, Clock, Award, Mountain } from "lucide-react";
 
 const CTABlock = () => {
   return (
@@ -24,7 +24,7 @@ const CTABlock = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">The Right Team Makes the Difference</span>
+              <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">Built for These Mountains. Built for You.</span>
 
               <div className="overflow-hidden">
                 <motion.h2
@@ -34,18 +34,14 @@ const CTABlock = () => {
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1]"
                 >
-                  Your Property Deserves<br className="hidden md:block" /> a Team That Shows Up<br className="hidden md:block" /> and Stands Behind the Work.
+                  One Team. One Standard.<br className="hidden md:block" /> Every Project, Every Time.
                 </motion.h2>
               </div>
 
-              <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-5 font-body leading-relaxed">
-                We don't chase volume. We build relationships — one project, one property, one family at a time.
-                That's how we've earned the trust of homeowners across Western North Carolina since 2017.
-              </p>
-
-              <p className="text-dark-section-foreground/30 text-sm max-w-md mx-auto mb-10 font-body">
-                Whether you're planning a roof replacement, a renovation, or just need an honest assessment —
-                the conversation starts here.
+              <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                From ridge caps to renovations, Highlander brings the same discipline, the same crews, 
+                and the same accountability to every property we touch. This is how mountain 
+                construction should be done.
               </p>
 
               {/* CTA buttons */}
@@ -55,7 +51,7 @@ const CTABlock = () => {
                   className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Start a Project Conversation</span>
+                  <span className="relative">Begin Your Project</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
@@ -79,6 +75,7 @@ const CTABlock = () => {
                   { icon: Shield, text: "Licensed & Insured" },
                   { icon: Award, text: "CertainTeed Certified" },
                   { icon: Clock, text: "24-Hour Response" },
+                  { icon: Mountain, text: "Serving All of WNC" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-2">
                     <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />

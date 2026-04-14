@@ -7,7 +7,7 @@ const pathways = [
     icon: Home,
     label: "Roofing Division",
     title: "Mountain-Grade Roofing",
-    description: "Your roof is the first line of defense against Western North Carolina's relentless weather — driving rain, heavy snow loads, high-altitude UV, and wind that tests every fastener. Highlander delivers roofing systems engineered for this climate, installed by crews who understand mountain construction, and backed by warranties we stand behind personally. From full replacements to storm restoration, every project is built for protection, craftsmanship, and decades of performance.",
+    description: "Roof systems engineered for WNC's elevation, wind, and snow — installed by certified crews and backed by warranties we stand behind personally.",
     services: [
       { icon: Layers, name: "Full Roof Replacements" },
       { icon: Wrench, name: "Targeted Repairs" },
@@ -24,7 +24,7 @@ const pathways = [
     icon: HardHat,
     label: "Construction Division",
     title: "Full-Scope Construction",
-    description: "Highlander was built on roofing — but our standards don't stop at the roofline. When your project calls for structural additions, exterior renovations, or custom build work, you get the same disciplined process, the same experienced crews, and the same accountability that earned our reputation on every roof we've installed. No subcontractor roulette. No scope drift. Just clear communication, quality materials, and work that holds up — year after year, in the toughest building environment in the Southeast.",
+    description: "The same disciplined process, experienced crews, and quality standards that built our roofing reputation — applied to additions, renovations, and exterior work.",
     services: [
       { icon: Hammer, name: "Renovations & Remodels" },
       { icon: PaintBucket, name: "Exterior Upgrades & Siding" },
@@ -54,7 +54,7 @@ const DualPathway = () => {
             Roofing & Construction,<br className="hidden md:block" /> Built the Highlander Way.
           </h2>
           <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-            Whether it's a roof replacement or a full renovation, every project follows the same 
+            Whether it's a roof replacement or a full renovation, every project follows the same
             disciplined process — certified materials, transparent pricing, and warranty-backed results.
           </p>
         </motion.div>
@@ -102,7 +102,7 @@ const DualPathway = () => {
                   {path.description}
                 </p>
 
-                {/* Service list with icons */}
+                {/* Service list */}
                 <div className="space-y-3 mb-8">
                   {path.services.map((service, si) => (
                     <motion.div

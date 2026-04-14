@@ -68,10 +68,9 @@ const BlogInsights = () => {
           <div>
             <span className="eyebrow mb-3 block">News & Insights</span>
             <h2 className="section-heading">
-              Knowledge That<br className="hidden md:block" /> Protects Your Investment.
+              Insights for Mountain<br className="hidden md:block" /> Property Owners.
             </h2>
           </div>
-          {/* Filter pills */}
           <div className="flex flex-wrap gap-2">
             {editorialCategories.map((cat) => (
               <button
@@ -89,9 +88,8 @@ const BlogInsights = () => {
           </div>
         </motion.div>
 
-        {/* Editorial grid — featured left, stack right */}
+        {/* Editorial grid */}
         <div className="grid lg:grid-cols-5 gap-5">
-          {/* Featured post — large card */}
           <motion.div
             key={featured.slug}
             initial={{ opacity: 0, y: 20 }}
@@ -104,7 +102,6 @@ const BlogInsights = () => {
               className="group relative block bg-card border border-border rounded-sm overflow-hidden hover:border-primary/20 hover:shadow-md transition-all duration-300 h-full"
             >
               <div className="p-7 md:p-9 flex flex-col h-full">
-                {/* Category + date */}
                 <div className="flex items-center gap-3 mb-5">
                   <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.12em] px-2.5 py-1 rounded-sm ${categoryAccent[featured.editorialCategory] || categoryAccent["Western NC News"]}`}>
                     {featured.editorialCategory}
@@ -135,7 +132,6 @@ const BlogInsights = () => {
             </Link>
           </motion.div>
 
-          {/* Stacked posts — right column */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             {rest.map((post, i) => (
               <motion.div
@@ -150,7 +146,6 @@ const BlogInsights = () => {
                   className="group flex gap-4 p-4 md:p-5 bg-card border border-border rounded-sm hover:border-primary/15 hover:shadow-sm transition-all duration-300"
                 >
                   <div className="flex-1 min-w-0">
-                    {/* Category pill */}
                     <span className={`inline-block text-[9px] font-body font-semibold uppercase tracking-[0.12em] px-2 py-0.5 rounded-sm mb-2.5 ${categoryAccent[post.editorialCategory] || categoryAccent["Western NC News"]}`}>
                       {post.editorialCategory}
                     </span>
@@ -172,7 +167,6 @@ const BlogInsights = () => {
           </div>
         </div>
 
-        {/* View all */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
