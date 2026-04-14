@@ -1,3 +1,6 @@
+# Memory: index.md
+Updated: now
+
 # Project Memory
 
 ## Core
@@ -13,9 +16,11 @@
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
 - [Brand Authority Signals](mem://brand/authority-signals) — Key trust signals, awards, certifications, and business history
+- [Brand Values Framework](mem://brand/values-framework) — Seven core values with reusable sections, CTA support copy, trust cards, team statements
 - [Homepage Architecture](mem://strategy/homepage-architecture) — Strict conversion sequence layout for the homepage
 - [Conversion Architecture](mem://strategy/conversion-architecture) — Mobile-first lead capture, sticky CTA, and interactive lead magnets
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
+- [Visual Proof Strategy](mem://strategy/visual-proof-strategy) — Photography direction, content modules, and page-level image recommendations
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
 - [Migration Strategy](mem://seo/migration-strategy) — 301 redirects and URL structure for Hibu migration
 - [Service Categories](mem://features/service-expansion) — Building Services category expansion beyond core roofing
@@ -24,5 +29,5 @@
 - [Commercial Hub](mem://features/commercial-hub) — B2B commercial roofing section structure
 - [Social Proof Grid](mem://features/social-proof-grid) — Instagram 3x3 grid layout strategy
 - [Data Privacy & Security](mem://security/data-privacy) — RLS, signed URLs, and rate limiting rules
-- [Roofing Division Blueprint](mem://features/roofing-division-blueprint) — Full roofing ecosystem: 7 pages, shared components (Process, Trust, FAQs, CTAs, Materials), usage patterns
-- [Construction Division Blueprint](mem://features/construction-division-blueprint) — Full construction ecosystem: 5 pages, shared components (Process, Trust, FAQs, WNC Relevance, Services, CTAs), 8-pillar objection-mapped trust system, 32+ FAQs, page-by-page layouts
+- [Roofing Division Blueprint](mem://features/roofing-division-blueprint) — Roofing ecosystem architecture and shared components
+- [Construction Division Blueprint](mem://features/construction-division-blueprint) — Construction ecosystem architecture and shared components
