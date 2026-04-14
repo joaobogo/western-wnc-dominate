@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Playfair Display"', 'Georgia', 'serif'],
+        heading: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body: ['"DM Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
@@ -56,6 +56,15 @@ export default {
           foreground: "hsl(var(--dark-section-foreground))",
         },
         "trust-badge": "hsl(var(--trust-badge))",
+        heritage: {
+          green: "hsl(var(--heritage-green))",
+          charcoal: "hsl(var(--heritage-charcoal))",
+        },
+        highland: {
+          gold: "hsl(var(--highland-gold))",
+          "gold-light": "hsl(var(--highland-gold-light))",
+        },
+        "warm-stone": "hsl(var(--warm-stone))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
