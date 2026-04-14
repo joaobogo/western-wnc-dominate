@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.png";
 
 const roofingLinks = [
   { label: "Asphalt Shingles", href: "/services/asphalt-shingles" },
