@@ -16,15 +16,17 @@ import { blogPosts } from "@/data/blogs";
 const categoryConfig: Record<string, { icon: typeof BookOpen; label: string; description: string }> = {
   All: { icon: BookOpen, label: "All Articles", description: "Browse our complete resource library" },
   Materials: { icon: Shield, label: "Material Guides", description: "Compare roofing & construction materials for mountain performance" },
-  Storm: { icon: CloudLightning, label: "Storm & Weather", description: "Emergency guides, damage checklists, and insurance claim help" },
-  Maintenance: { icon: Wrench, label: "Maintenance", description: "Seasonal checklists and preventive care for WNC homes" },
+  Storm: { icon: CloudLightning, label: "Storm Updates", description: "Emergency guides, damage checklists, and insurance claim help" },
+  Maintenance: { icon: Wrench, label: "Seasonal Maintenance", description: "Seasonal checklists and preventive care for WNC homes" },
   Cost: { icon: DollarSign, label: "Cost & Planning", description: "Real numbers and transparent breakdowns for mountain projects" },
-  Insurance: { icon: Shield, label: "Insurance Claims", description: "Navigate the claims process with confidence" },
-  Replacement: { icon: Home, label: "Roof Replacement", description: "When to replace, what to expect, and how to plan" },
+  Insurance: { icon: Shield, label: "Homeowner Guidance", description: "Navigate the claims process with confidence" },
+  Replacement: { icon: Home, label: "Roofing Education", description: "When to replace, what to expect, and how to plan" },
   Tips: { icon: BookOpen, label: "Homeowner Tips", description: "Honest advice — no sales pitch, just guidance" },
   Inspections: { icon: Search, label: "Inspections", description: "What to expect and why inspections matter" },
   Financing: { icon: DollarSign, label: "Financing", description: "Affordable options for your roofing investment" },
   Commercial: { icon: Home, label: "Commercial", description: "Maintenance and solutions for commercial properties" },
+  Construction: { icon: Home, label: "Construction Insights", description: "Planning, process, and guidance for mountain building projects" },
+  Spotlight: { icon: Mountain, label: "Project Spotlights", description: "Deep dives into completed projects — materials, process, and results" },
 };
 
 const categories = ["All", ...Array.from(new Set(blogPosts.map((p) => p.category)))];
