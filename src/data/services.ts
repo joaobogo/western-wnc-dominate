@@ -23,6 +23,7 @@ export const services: ServiceData[] = [
     subheadline: "Leak fixes, shingle replacement, and damage repair — done right the first time by a local team that knows mountain roofing.",
     description: "Whether it's a small leak or significant storm damage, our repair crews respond fast and fix it properly. We serve homeowners across Franklin, Sylva, Highlands, Cashiers, and surrounding WNC communities with honest assessments and lasting repairs.",
     icon: Hammer,
+    division: "roofing",
     features: [
       "Same-week emergency repair scheduling",
       "Leak detection and waterproofing",
