@@ -16,21 +16,21 @@ const team = [
   {
     name: "James McAllister",
     role: "Owner & General Contractor",
-    bio: "20+ years in roofing and construction across Western NC. Licensed GC. CertainTeed Master Applicator. Leads every project estimate and final walkthrough personally.",
+    bio: "20+ years across Western NC. Licensed GC. CertainTeed Master Applicator. Leads every project estimate and final walkthrough personally — because the owner's name is on the warranty.",
     image: ownerPhoto,
     featured: true,
   },
   {
     name: "Sarah Coleman",
     role: "Project Coordinator",
-    bio: "Manages scheduling, client communication, and documentation. Your single point of contact from first call to warranty delivery.",
+    bio: "Your single point of contact from first call to warranty delivery. Manages scheduling, client communication, and documentation so nothing falls through the cracks.",
     image: pmPhoto,
     featured: false,
   },
   {
     name: "Marcus Rivera",
     role: "Crew Lead — Roofing",
-    bio: "12 years on mountain roofs. Specializes in metal standing seam and complex multi-gable installations. Runs the tightest crew in the region.",
+    bio: "12 years on mountain roofs. Specializes in standing seam metal and complex multi-gable work. Runs the most disciplined crew in the region — ask any homeowner who's watched them work.",
     image: crewLeadPhoto,
     featured: false,
   },
@@ -44,30 +44,31 @@ const MeetTheTeam = () => {
           {/* Left — narrative */}
           <div>
             <ScrollReveal variant="fade">
-              <span className="eyebrow mb-3 block">Our Team</span>
+              <span className="eyebrow mb-3 block">The People Behind the Work</span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="section-heading mb-5">
-                Real People.<br /> Real Accountability.
+                You'll Know Exactly<br /> Who's on Your Roof.
               </h2>
             </HeadingReveal>
             <GoldLine width="3rem" delay={0.3} className="mb-6" />
             <ScrollReveal variant="rise-subtle" delay={0.3}>
               <div>
                 <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body mb-4">
-                  Highlander isn't a franchise. It's a family-operated company where the owner answers 
-                  the phone, walks your property, and shows up at your final walkthrough. Every crew 
-                  member is trained, vetted, and accountable to the same standard.
+                  Highlander isn't a franchise with rotating subcontractors. It's a family-operated company
+                  where the owner answers the phone, walks your property, and personally signs off on 
+                  every completed project.
                 </p>
                 <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body mb-8">
-                  When you hire Highlander, you know exactly who's on your roof and who to call 
-                  if you have a question. That's not a policy — it's how we've always worked.
+                  Every crew member is trained, vetted, and accountable to the same standard. When you 
+                  hire Highlander, you know the names of the people on your property — and you know 
+                  exactly who to call if you have a question.
                 </p>
                 <Link
                   to="/about"
                   className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body link-draw"
                 >
-                  Learn Our Full Story
+                  Meet the Full Team
                   <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
                 </Link>
               </div>

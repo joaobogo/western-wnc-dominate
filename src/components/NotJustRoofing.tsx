@@ -9,11 +9,11 @@ import GoldLine from "@/components/motion/GoldLine";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const constructionCapabilities = [
-  { icon: PaintBucket, label: "Siding & Exteriors" },
-  { icon: PlusSquare, label: "Additions & Expansions" },
-  { icon: TreePine, label: "Decks & Outdoor Living" },
-  { icon: Layers, label: "Structural Improvements" },
-  { icon: HardHat, label: "Full Renovations" },
+  { icon: PaintBucket, label: "Siding & Exterior Upgrades" },
+  { icon: PlusSquare, label: "Additions & Home Expansions" },
+  { icon: TreePine, label: "Decks, Porches & Outdoor Living" },
+  { icon: Layers, label: "Structural & Framing Work" },
+  { icon: HardHat, label: "Complete Renovations" },
 ];
 
 const NotJustRoofing = () => {
@@ -37,8 +37,8 @@ const NotJustRoofing = () => {
 
             <HeadingReveal delay={0.1}>
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-snug">
-                You May Know Us for Roofing.<br className="hidden md:block" />
-                There's More to the Story.
+                You Hired Us for the Roof.<br className="hidden md:block" />
+                Now Let Us Show You What Else We Build.
               </h2>
             </HeadingReveal>
             <GoldLine width="3rem" delay={0.3} className="mb-5" />
@@ -50,14 +50,14 @@ const NotJustRoofing = () => {
                   the core of who we are, and the standard every project is measured against.
                 </p>
                 <p>
-                  But over the years, our clients started asking for more. A deck to match the new roof.
-                  Siding that could handle the same mountain weather. An addition that needed the same
-                  precision and project management we brought to their roof.
+                  But our clients started asking for more. A deck that could handle the same mountain 
+                  winters. Siding that matched the quality of the roof above it. An addition that needed 
+                  the same precision, project management, and warranty protection.
                 </p>
                 <p>
                   So we grew — carefully, deliberately — into a full-scope construction company. Same
-                  crews. Same process. Same accountability. Just a wider range of work, delivered with
-                  the craftsmanship you already trust.
+                  crews. Same documented process. Same accountability. Just a wider range of work, 
+                  delivered with the craftsmanship you already trust.
                 </p>
               </div>
 
@@ -77,7 +77,7 @@ const NotJustRoofing = () => {
               {/* Header bar */}
               <div className="px-6 py-4 border-b border-border bg-secondary/30">
                 <p className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold))]">
-                  Now Available — Construction Division
+                  Construction Division — Licensed GC
                 </p>
               </div>
 
@@ -105,8 +105,8 @@ const NotJustRoofing = () => {
               {/* Footer note */}
               <div className="px-6 py-4 border-t border-border bg-secondary/20">
                 <p className="text-[11px] text-muted-foreground/50 font-body leading-relaxed">
-                  All construction work is performed by Highlander's own crews under a licensed general contractor. 
-                  Same team, same standards, same warranty.
+                  All construction work is executed by Highlander's own crews under licensed general contractor 
+                  oversight. Same team, same process, same warranty protection.
                 </p>
               </div>
             </div>

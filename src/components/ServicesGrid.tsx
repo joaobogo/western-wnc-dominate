@@ -17,18 +17,18 @@ interface ServiceItem {
 }
 
 const roofingServices: ServiceItem[] = [
-  { icon: Hammer, title: "Roof Repair", outcome: "Targeted fixes that stop leaks and prevent escalation — documented, warrantied, done right the first time.", href: "/services/roof-repair", division: "roofing" },
+  { icon: Hammer, title: "Roof Repair", outcome: "Targeted fixes that stop leaks and prevent costly escalation — documented, warrantied, resolved on the first visit.", href: "/services/roof-repair", division: "roofing" },
   { icon: RotateCcw, title: "Roof Replacement", outcome: "A complete roof system engineered for your elevation, wind exposure, and the next 30+ years of mountain weather.", href: "/services/roof-replacement", division: "roofing" },
-  { icon: CloudLightning, title: "Storm Damage", outcome: "Fast response, full documentation, and insurance coordination so you're protected — not left waiting.", href: "/services/storm-damage", division: "roofing" },
-  { icon: Layers, title: "Metal Roofing", outcome: "50+ year performance, superior wind resistance, and energy savings — the premium choice for mountain homes.", href: "/services/metal-roofing", division: "roofing" },
-  { icon: Building2, title: "Commercial Roofing", outcome: "Condition reporting, maintenance programs, and full-scope solutions for property managers and facility owners.", href: "/commercial-roofing", division: "roofing" },
+  { icon: CloudLightning, title: "Storm Damage", outcome: "24-hour response, full photo documentation, and direct insurance coordination — so you're protected, not left waiting.", href: "/services/storm-damage", division: "roofing" },
+  { icon: Layers, title: "Metal Roofing", outcome: "50+ year performance, superior wind resistance, and energy savings — the definitive choice for serious mountain properties.", href: "/services/metal-roofing", division: "roofing" },
+  { icon: Building2, title: "Commercial Roofing", outcome: "Condition reporting, preventative maintenance, and full-scope solutions for property managers and facility owners.", href: "/commercial-roofing", division: "roofing" },
 ];
 
 const constructionServices: ServiceItem[] = [
-  { icon: Droplets, title: "Gutter Services", outcome: "High-capacity seamless gutters and leaf guard systems engineered for WNC's heavy rainfall and steep terrain.", href: "/gutters", division: "roofing" },
-  { icon: TreePine, title: "Outdoor Living", outcome: "Custom decks, covered porches, and pergolas designed to frame mountain views and handle year-round exposure.", href: "/outdoor-living", division: "construction" },
-  { icon: HardHat, title: "Construction", outcome: "Siding, framing, additions, and full exterior renovations — same crew, same standards, licensed GC execution.", href: "/construction-services", division: "construction" },
-  { icon: Wrench, title: "Maintenance Programs", outcome: "Scheduled inspections and preventative care that extend roof life and eliminate costly surprises.", href: "/commercial-maintenance", division: "roofing" },
+  { icon: Droplets, title: "Gutter Systems", outcome: "High-capacity seamless gutters and leaf guard systems engineered for WNC's 60+ inches of annual rainfall.", href: "/gutters", division: "roofing" },
+  { icon: TreePine, title: "Outdoor Living", outcome: "Custom decks, covered porches, and pergolas designed to frame mountain views and withstand year-round exposure.", href: "/outdoor-living", division: "construction" },
+  { icon: HardHat, title: "Construction", outcome: "Siding, framing, additions, and complete exterior transformations — same crew, same standards, licensed GC oversight.", href: "/construction-services", division: "construction" },
+  { icon: Wrench, title: "Maintenance Programs", outcome: "Scheduled inspections and preventative care that extend roof life and eliminate costly surprises before they happen.", href: "/commercial-maintenance", division: "roofing" },
 ];
 
 const containerVariants = {
@@ -97,7 +97,7 @@ const ServiceCard = ({ service }: { service: ServiceItem }) => {
           {/* CTA */}
           <div className="flex items-center justify-between">
             <span className={`inline-flex items-center gap-1.5 font-semibold text-sm font-body ${accent.ctaColor} group-hover:gap-2.5 transition-all duration-200`}>
-              View Service <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
+              Learn More <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
             </span>
             {/* Subtle arrow circle on hover */}
             <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:border-primary/20 transition-all duration-300">
@@ -116,16 +116,16 @@ const ServicesGrid = () => {
       <div className="container-tight">
         <div className="text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block">Our Expertise</span>
+            <span className="eyebrow mb-3 block">What We Do</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-4">
-              Roofing & Construction<br className="hidden md:block" /> for Mountain Properties
+              Roofing & Construction<br className="hidden md:block" /> Engineered for Mountain Properties.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg font-body">
-              From precision roof work to exterior construction — every project is executed with the craftsmanship WNC properties demand.
+              From precision roof systems to full exterior renovations — every project is specified for your property's elevation, exposure, and architectural character.
             </p>
           </ScrollReveal>
         </div>
