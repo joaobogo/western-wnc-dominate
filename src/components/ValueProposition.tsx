@@ -72,7 +72,7 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ delay: index * 0.07, duration: 0.55, ease: HIGHLAND_EASE }}
-      className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none overflow-hidden spotlight-hover hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
+      className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none overflow-hidden spotlight-hover border-shimmer hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
     >
       {/* Left gold accent on hover */}
       <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-600 z-10" />
