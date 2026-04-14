@@ -16,6 +16,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import RoofDesignerCTA from "@/components/roof-designer/RoofDesignerCTA";
 import OurProcess from "@/components/OurProcess";
+import MeetTheTeam from "@/components/MeetTheTeam";
 
 const Index = () => {
   return (
@@ -38,10 +39,13 @@ const Index = () => {
         {/* 5. HOW WE WORK — Process = professionalism */}
         <OurProcess />
 
-        {/* 6. SOCIAL PROOF — Reviews close the trust gap */}
+        {/* 6. HUMAN CONNECTION — Meet the team */}
+        <MeetTheTeam />
+
+        {/* 7. SOCIAL PROOF — Reviews close the trust gap */}
         <Reviews />
 
-        {/* 6.5. VALUE — Quality over price */}
+        {/* 8. VALUE — Quality over price */}
         <ValueProposition />
 
         {/* 7. WHAT WE DO — Featured services */}
