@@ -1,0 +1,377 @@
+import { useState, useCallback } from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { MultiStepForm, ConfirmationState } from "@/components/conversion";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+import {
+  Home, Building2, Hammer, CloudLightning, PlusCircle,
+  Paintbrush, TreePine, Wrench, MapPin, Clock, User, FileText
+} from "lucide-react";
+
+/* ─── Types ─── */
+interface FormData {
+  serviceCategory: string;
+  projectType: string;
+  town: string;
+  timeline: string;
+  description: string;
+  name: string;
+  email: string;
+  phone: string;
+  propertyType: string;
+}
+
+const INITIAL: FormData = {
+  serviceCategory: "", projectType: "", town: "", timeline: "",
+  description: "", name: "", email: "", phone: "", propertyType: "",
+};
+
+/* ─── Options ─── */
+const SERVICE_CATEGORIES = [
+  { id: "roofing", label: "Roofing", icon: Home, desc: "Repair, replacement, storm damage, or specialty roofing" },
+  { id: "construction", label: "Construction", icon: Hammer, desc: "Additions, renovations, exterior, or outdoor living" },
+  { id: "both", label: "Both", icon: Building2, desc: "A project that involves roofing and construction" },
+  { id: "not-sure", label: "Not Sure Yet", icon: Wrench, desc: "We'll help you figure out the right approach" },
+];
+
+const ROOFING_TYPES = [
+  { id: "replacement", label: "Roof Replacement" },
+  { id: "repair", label: "Roof Repair" },
+  { id: "storm-damage", label: "Storm Damage" },
+  { id: "commercial", label: "Commercial Roofing" },
+  { id: "specialty", label: "Metal / Cedar / Slate" },
+  { id: "inspection", label: "Roof Inspection" },
+];
+
+const CONSTRUCTION_TYPES = [
+  { id: "addition", label: "Home Addition" },
+  { id: "renovation", label: "Interior Renovation" },
+  { id: "exterior", label: "Exterior Improvements" },
+  { id: "outdoor-living", label: "Outdoor Living" },
+  { id: "custom", label: "Custom Project" },
+];
+
+const TOWNS = [
+  "Highlands", "Cashiers", "Franklin", "Sylva",
+  "Bryson City", "Waynesville", "Cullowhee", "Other WNC Area",
+];
+
+const TIMELINES = [
+  { id: "emergency", label: "Emergency — ASAP", urgency: "high" },
+  { id: "1-month", label: "Within 1 month", urgency: "medium" },
+  { id: "1-3-months", label: "1–3 months", urgency: "medium" },
+  { id: "3-6-months", label: "3–6 months", urgency: "low" },
+  { id: "planning", label: "Just planning ahead", urgency: "low" },
+];
+
+/* ─── Card Selector ─── */
+const CardSelect = ({ options, value, onChange, columns = 2 }: {
+  options: Array<{ id: string; label: string; icon?: any; desc?: string }>;
+  value: string;
+  onChange: (id: string) => void;
+  columns?: number;
+}) => (
+  <div className={`grid gap-3 ${columns === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-2 sm:grid-cols-3"}`}>
+    {options.map(opt => {
+      const Icon = opt.icon;
+      const selected = value === opt.id;
+      return (
+        <button
+          key={opt.id}
+          type="button"
+          onClick={() => onChange(opt.id)}
+          className={`text-left p-4 rounded-sm border transition-all ${
+            selected
+              ? "border-accent bg-accent/8 shadow-sm"
+              : "border-border bg-card hover:border-accent/30 hover:bg-secondary/50"
+          }`}
+        >
+          <div className="flex items-start gap-3">
+            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-accent" : "text-muted-foreground"}`} />}
+            <div>
+              <p className={`font-heading text-sm font-semibold ${selected ? "text-foreground" : "text-foreground/80"}`}>{opt.label}</p>
+              {opt.desc && <p className="text-xs text-muted-foreground mt-0.5 font-body">{opt.desc}</p>}
+            </div>
+          </div>
+        </button>
+      );
+    })}
+  </div>
+);
+
+const PillSelect = ({ options, value, onChange }: {
+  options: Array<{ id: string; label: string }>;
+  value: string;
+  onChange: (id: string) => void;
+}) => (
+  <div className="flex flex-wrap gap-2">
+    {options.map(opt => (
+      <button
+        key={opt.id}
+        type="button"
+        onClick={() => onChange(opt.id)}
+        className={`text-sm font-body font-medium px-4 py-2 rounded-sm border transition-all ${
+          value === opt.id
+            ? "border-accent bg-accent/10 text-foreground"
+            : "border-border bg-card text-muted-foreground hover:border-accent/30"
+        }`}
+      >
+        {opt.label}
+      </button>
+    ))}
+  </div>
+);
+
+/* ─── Main Component ─── */
+export default function QuoteFlow() {
+  const [form, setForm] = useState<FormData>(INITIAL);
+  const [step, setStep] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+
+  const update = useCallback((field: keyof FormData, value: string) => {
+    setForm(prev => ({ ...prev, [field]: value }));
+  }, []);
+
+  const projectTypes = form.serviceCategory === "construction" ? CONSTRUCTION_TYPES :
+    form.serviceCategory === "both" ? [...ROOFING_TYPES, ...CONSTRUCTION_TYPES] : ROOFING_TYPES;
+
+  const steps = [
+    {
+      id: "category",
+      label: "Service",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-heading text-lg font-semibold text-foreground">What kind of project are you considering?</h3>
+            <p className="text-sm text-muted-foreground font-body mt-1">This helps us assign the right advisor to your consultation.</p>
+          </div>
+          <CardSelect options={SERVICE_CATEGORIES} value={form.serviceCategory} onChange={v => update("serviceCategory", v)} />
+        </div>
+      ),
+    },
+    {
+      id: "type",
+      label: "Project",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-heading text-lg font-semibold text-foreground">What type of project?</h3>
+            <p className="text-sm text-muted-foreground font-body mt-1">Select the option closest to what you need. We'll refine the details on a call.</p>
+          </div>
+          <PillSelect options={projectTypes} value={form.projectType} onChange={v => update("projectType", v)} />
+        </div>
+      ),
+    },
+    {
+      id: "location",
+      label: "Location",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-heading text-lg font-semibold text-foreground">Where is your property?</h3>
+            <p className="text-sm text-muted-foreground font-body mt-1">We serve all of Western North Carolina. Knowing your location helps us plan for local conditions.</p>
+          </div>
+          <PillSelect options={TOWNS.map(t => ({ id: t, label: t }))} value={form.town} onChange={v => update("town", v)} />
+        </div>
+      ),
+    },
+    {
+      id: "timeline",
+      label: "Timeline",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-heading text-lg font-semibold text-foreground">When are you hoping to start?</h3>
+            <p className="text-sm text-muted-foreground font-body mt-1">No commitment — this helps us prioritize and plan our schedule.</p>
+          </div>
+          <PillSelect options={TIMELINES} value={form.timeline} onChange={v => update("timeline", v)} />
+        </div>
+      ),
+    },
+    {
+      id: "description",
+      label: "Details",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-heading text-lg font-semibold text-foreground">Tell us a bit about your project</h3>
+            <p className="text-sm text-muted-foreground font-body mt-1">A few sentences is perfect. What's prompting this project? What matters most to you?</p>
+          </div>
+          <textarea
+            value={form.description}
+            onChange={e => update("description", e.target.value)}
+            placeholder="Example: We had some shingles blow off during the last storm, and we're thinking it might be time for a full replacement rather than another repair..."
+            rows={4}
+            className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none"
+          />
+          <p className="text-xs text-muted-foreground font-body">Optional — but the more context you share, the more prepared we'll be for your call.</p>
+        </div>
+      ),
+    },
+    {
+      id: "contact",
+      label: "Contact",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-heading text-lg font-semibold text-foreground">How should we reach you?</h3>
+            <p className="text-sm text-muted-foreground font-body mt-1">We'll call you directly — typically within 24 hours — to discuss your project.</p>
+          </div>
+          <div className="space-y-3">
+            <div>
+              <label className="text-xs font-body font-medium text-foreground mb-1 block">Full Name *</label>
+              <input
+                value={form.name}
+                onChange={e => update("name", e.target.value)}
+                placeholder="Your name"
+                className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                required
+              />
+            </div>
+            <div>
+              <label className="text-xs font-body font-medium text-foreground mb-1 block">Email Address *</label>
+              <input
+                type="email"
+                value={form.email}
+                onChange={e => update("email", e.target.value)}
+                placeholder="you@email.com"
+                className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                required
+              />
+            </div>
+            <div>
+              <label className="text-xs font-body font-medium text-foreground mb-1 block">Phone Number <span className="text-muted-foreground">(optional — speeds up our response)</span></label>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={e => update("phone", e.target.value)}
+                placeholder="(828) 555-0123"
+                className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              />
+            </div>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const canAdvance = () => {
+    switch (step) {
+      case 0: return !!form.serviceCategory;
+      case 1: return !!form.projectType || form.serviceCategory === "not-sure";
+      case 2: return !!form.town;
+      case 3: return !!form.timeline;
+      case 4: return true; // description is optional
+      case 5: return !!form.name && !!form.email;
+      default: return false;
+    }
+  };
+
+  const handleNext = () => { if (canAdvance() && step < steps.length - 1) setStep(s => s + 1); };
+  const handlePrev = () => { if (step > 0) setStep(s => s - 1); };
+
+  const handleSubmit = async () => {
+    if (!form.name || !form.email) return;
+    setIsSubmitting(true);
+
+    // Calculate lead score
+    let score = 20; // base for submitting
+    if (form.phone) score += 15;
+    if (form.timeline === "emergency") score += 25;
+    else if (form.timeline === "1-month") score += 20;
+    else if (form.timeline === "1-3-months") score += 15;
+    if (form.description && form.description.length > 50) score += 10;
+    const primaryTowns = ["Highlands", "Cashiers", "Franklin", "Sylva"];
+    if (primaryTowns.includes(form.town)) score += 10;
+
+    try {
+      const { error } = await supabase.from("consultation_requests").insert({
+        name: form.name,
+        email: form.email,
+        phone: form.phone || null,
+        town: form.town,
+        project_type: form.projectType || null,
+        service_category: form.serviceCategory,
+        timeline: form.timeline,
+        urgency: TIMELINES.find(t => t.id === form.timeline)?.urgency || "low",
+        project_description: form.description || null,
+        source: "quote-flow",
+        lead_score: score,
+        property_type: form.propertyType || null,
+      });
+
+      if (error) throw error;
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submit error:", err);
+      toast({ title: "Something went wrong", description: "Please try again or call us at (828) 397-9211.", variant: "destructive" });
+    }
+    setIsSubmitting(false);
+  };
+
+  if (submitted) {
+    const isUrgent = form.timeline === "emergency" || form.timeline === "1-month";
+    return (
+      <>
+        <SEOHead title="Consultation Requested | Highlander Roofing & Construction" description="Your project consultation request has been received." path="/consultation" />
+        <Header />
+        <main className="pt-24 md:pt-32 pb-16">
+          <div className="container-tight max-w-lg">
+            <ConfirmationState
+              show={true}
+              icon={undefined}
+              headline={isUrgent ? "We'll call you within 2 hours." : "We'll be in touch within 1 business day."}
+              message={`Thank you, ${form.name}. A project advisor who specializes in ${form.serviceCategory === "construction" ? "construction" : "roofing"} will reach out to discuss your project in detail.`}
+              secondaryMessage="In the meantime, feel free to explore our project gallery or learn more about our process."
+              action={
+                <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                  <button onClick={() => navigate("/gallery")} className="btn-ghost-interactive text-sm px-5 py-2.5">View Our Work</button>
+                  <button onClick={() => navigate("/")} className="btn-ghost-interactive text-sm px-5 py-2.5">Back to Home</button>
+                </div>
+              }
+            />
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <SEOHead
+        title="Schedule a Project Consultation | Highlander Roofing & Construction"
+        description="Start a conversation about your roofing or construction project. Tell us what you're thinking, and we'll connect you with the right advisor."
+        path="/consultation"
+      />
+      <Header />
+      <main className="pt-24 md:pt-32 pb-16">
+        <div className="container-tight max-w-2xl">
+          <div className="text-center mb-8">
+            <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-accent mb-2">Project Consultation</p>
+            <h1 className="font-heading text-2xl md:text-3xl font-bold text-foreground">Let's Talk About Your Project</h1>
+            <p className="text-sm text-muted-foreground font-body mt-2 max-w-md mx-auto">
+              No obligation. No pressure. Just a straightforward conversation with someone who knows these mountains.
+            </p>
+          </div>
+          <MultiStepForm
+            steps={steps}
+            currentStep={step}
+            onNext={handleNext}
+            onPrev={handlePrev}
+            onSubmit={handleSubmit}
+            isSubmitting={isSubmitting}
+            submitLabel="Request Consultation"
+          />
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
