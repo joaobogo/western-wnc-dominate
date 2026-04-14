@@ -758,7 +758,29 @@ const RoofingDivision = () => {
           </div>
         </section>
 
-        {/* ─── GALLERY ─── */}
+        {/* ─── MID CTA ─── */}
+        <section className="bg-primary text-primary-foreground tartan-dark">
+          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to discuss your roof?</h3>
+                <p className="text-primary-foreground/50 text-sm font-body">We respond within 24 hours with a direct call — not a form email.</p>
+              </div>
+              <div className="flex gap-3 flex-shrink-0">
+                <Link to="/request-inspection" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <span className="relative">Talk With a Roofing Advisor</span>
+                  <ArrowRight className="w-4 h-4 relative" />
+                </Link>
+                <a href="tel:8283979211" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
+                  <Phone className="w-4 h-4" /> Call Direct
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── EDITORIAL GALLERY ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div
@@ -782,31 +804,44 @@ const RoofingDivision = () => {
               </Link>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {galleryItems.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06, duration: 0.5 }}
-                  className="group relative aspect-[4/3] rounded-none overflow-hidden"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-3 left-3 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-none">
-                    {item.category}
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-heading font-semibold text-white text-sm">{item.title}</h3>
-                  </div>
-                </motion.div>
-              ))}
+            {/* Editorial layout: large feature + grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {/* Featured large image */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="group relative aspect-[4/3] lg:aspect-auto lg:row-span-2 rounded-none overflow-hidden"
+              >
+                <img src={galleryItems[0].image} alt={galleryItems[0].title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-4 left-4 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-[hsl(var(--highland-gold))] text-accent-foreground px-3 py-1.5 rounded-none">Featured</div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/50 mb-1 block">{galleryItems[0].category}</span>
+                  <h3 className="font-heading font-bold text-white text-lg md:text-xl">{galleryItems[0].title}</h3>
+                </div>
+              </motion.div>
+
+              {/* Grid of smaller images */}
+              <div className="grid grid-cols-2 gap-4">
+                {galleryItems.slice(1, 5).map((item, i) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 + i * 0.06, duration: 0.5 }}
+                    className="group relative aspect-[4/3] rounded-none overflow-hidden"
+                  >
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute top-2 left-2 text-[8px] font-body font-semibold uppercase tracking-[0.12em] bg-primary/90 text-primary-foreground px-2 py-0.5 rounded-none">{item.category}</div>
+                    <div className="absolute bottom-0 left-0 right-0 p-3">
+                      <h3 className="font-heading font-semibold text-white text-xs">{item.title}</h3>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -892,7 +927,7 @@ const RoofingDivision = () => {
                       className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide"
                     >
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                      <span className="relative">Request a Quote Call</span>
+                      <span className="relative">Request a Roof Consultation</span>
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <a

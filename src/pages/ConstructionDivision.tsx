@@ -164,6 +164,54 @@ const ConstructionDivision = () => {
           </div>
         </section>
 
+        {/* ─── STANDARDS TRANSFER — Roofing credentials prove construction quality ─── */}
+        <section className="section-dark tartan-dark relative overflow-hidden">
+          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
+          <div className="section-padding">
+            <div className="container-tight">
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                  <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Proven Standards</span>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
+                    500+ Roofs Built Our<br className="hidden md:block" /> Construction Standards.
+                  </h2>
+                  <p className="text-dark-section-foreground/40 text-base leading-relaxed font-body mb-6">
+                    Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed Master Applicator status to every construction project we take on.
+                  </p>
+                  <p className="text-dark-section-foreground/30 text-sm leading-relaxed font-body mb-8">
+                    When you hire Highlander for construction, you get a company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { value: "500+", label: "Projects Completed" },
+                      { value: "Top 1%", label: "CertainTeed Certified" },
+                      { value: "4.7★", label: "Google Rating" },
+                      { value: "24hr", label: "Response Time" },
+                    ].map((stat, i) => (
+                      <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/6 rounded-none p-4">
+                        <span className="text-xl font-heading font-bold text-[hsl(var(--highland-gold))] block">{stat.value}</span>
+                        <span className="text-[10px] font-body text-dark-section-foreground/30 uppercase tracking-[0.1em]">{stat.label}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="relative">
+                  <div className="aspect-[4/3] rounded-none overflow-hidden">
+                    <img src={proj3} alt="Room addition with standing seam metal roof integration" className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                  <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[240px]">
+                    <span className="text-xs font-heading font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
+                    <p className="text-muted-foreground text-xs font-body leading-snug">
+                      Roof-to-structure coordination, weatherproofing continuity, and unified accountability — under one team.
+                    </p>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ─── CONSTRUCTION PHILOSOPHY ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
