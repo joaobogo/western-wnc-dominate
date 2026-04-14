@@ -10,10 +10,9 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
 import OurProcess from "@/components/OurProcess";
 import MeetTheTeam from "@/components/MeetTheTeam";
-import Reviews from "@/components/Reviews";
 import SilentObjections from "@/components/SilentObjections";
 import ValueProposition from "@/components/ValueProposition";
-import BuiltForWNC from "@/components/BuiltForWNC";
+import HomepageTrust from "@/components/HomepageTrust";
 import TownGrid from "@/components/TownGrid";
 import BlogInsights from "@/components/BlogInsights";
 import InspectionForm from "@/components/InspectionForm";
@@ -83,8 +82,7 @@ const Index = () => {
         <BlogInsights />
 
         {/* ═══ ACT X: TRUST ═══ */}
-        <Reviews />
-        <BuiltForWNC />
+        <HomepageTrust />
         <TownGrid />
 
         {/* ═══ ACT XI: CLOSING CTA ═══ */}
