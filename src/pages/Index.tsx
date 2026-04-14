@@ -3,7 +3,6 @@ import SEOHead, { localBusinessSchema, organizationSchema } from "@/components/S
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
-
 import DualPathway from "@/components/DualPathway";
 import NotJustRoofing from "@/components/NotJustRoofing";
 import FeaturedProjects from "@/components/FeaturedProjects";
@@ -22,6 +21,8 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
 import SiteLoader from "@/components/SiteLoader";
 import ProofMoment from "@/components/ProofMoment";
+import BuiltForWNC from "@/components/BuiltForWNC";
+import ProjectConcierge from "@/components/ProjectConcierge";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -45,60 +46,60 @@ const Index = () => {
       />
       <Header />
       <main>
-        {/* ═══ ACT I: HOOK ═══ */}
+        {/* ═══ ACT I: HOOK — Cinematic first impression ═══ */}
         <Hero />
 
-        {/* ═══ ACT II: PROOF ═══ */}
+        {/* ═══ ACT II: PROOF — Editorial trust strip ═══ */}
         <TrustStrip />
 
         <SectionDivider variant="diamond" />
 
-        {/* ═══ ACT III: ROOFING vs CONSTRUCTION SPLIT ═══ */}
+        {/* ═══ ACT III: CLARITY — Roofing vs Construction split ═══ */}
         <DualPathway />
 
-        {/* ═══ ACT IV: WHY HIGHLANDER ═══ */}
+        {/* ═══ ACT IV: VALUE — Why Highlander, silent objections ═══ */}
         <ValueProposition />
         <SilentObjections />
 
-        {/* ── Proof: Credentials after value proposition ── */}
         <ProofMoment variant="credentials" />
 
         <SectionDivider variant="heritage-bar" />
 
-        {/* ═══ ACT V: FEATURED SERVICES ═══ */}
+        {/* ═══ ACT V: SERVICES — What we do ═══ */}
         <ServicesGrid />
         <NotJustRoofing />
 
-        {/* ── Proof: Social after services ── */}
         <ProofMoment variant="social" />
 
-        {/* ═══ ACT VI: PROCESS ═══ */}
+        {/* ═══ ACT VI: LOCAL AUTHORITY — Built for WNC ═══ */}
+        <BuiltForWNC />
+
+        {/* ═══ ACT VII: PROCESS — How Highlander thinks ═══ */}
         <OurProcess />
 
         <SectionDivider variant="diamond" />
 
-        {/* ═══ ACT VII: FEATURED PROJECTS ═══ */}
+        {/* ═══ ACT VIII: VISUAL PROOF — Project showcase ═══ */}
         <FeaturedProjects />
 
-        {/* ── Proof: Stats after seeing the work ── */}
         <ProofMoment variant="stats" />
 
-        {/* ═══ ACT VIII: TEAM PREVIEW ═══ */}
+        {/* ═══ ACT IX: PEOPLE — Team preview ═══ */}
         <MeetTheTeam />
 
         <SectionDivider variant="gold-fade" />
 
-        {/* ═══ ACT IX: BLOG PREVIEW ═══ */}
+        {/* ═══ ACT X: EDITORIAL — Blog + local trust ═══ */}
         <BlogInsights />
-
-        {/* ═══ ACT X: TRUST ═══ */}
         <HomepageTrust />
         <TownGrid />
 
-        {/* ── Proof: Warranty before final CTA ── */}
         <ProofMoment variant="warranty" />
 
-        {/* ═══ ACT XI: CLOSING CTA ═══ */}
+        {/* ═══ ACT XI: PROJECT CONCIERGE — Premium CTA ═══ */}
+        <ProjectConcierge />
+
+        {/* ═══ ACT XII: CLOSING — Final capture ═══ */}
         <InspectionForm />
         <CTABlock />
       </main>
