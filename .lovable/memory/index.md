@@ -22,6 +22,7 @@ Updated: now
 - [Loader Strategy](mem://style/loader-strategy) — Cinematic site loader with roofline assembly, mountain contour, brand reveal, skip logic
 - [Performance Motion Framework](mem://style/performance-motion-framework) — Animation tiers, desktop/mobile rules, reduced-motion, lazy loading, timing hierarchy, slow-device fallbacks
 - [Unified Motion Blueprint](mem://style/unified-motion-blueprint) — Master blueprint combining all motion systems into one reference document
+- [Mobile-First Strategy](mem://style/mobile-first-strategy) — Full mobile UX: component adaptation, thumb zones, touch targets, typography scale, performance, conversion optimization
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
 - [Brand Authority Signals](mem://brand/authority-signals) — Key trust signals, awards, certifications, and business history
