@@ -221,14 +221,14 @@ const Hero = () => {
                 className="group cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[13px] md:text-[15px] px-8 md:px-10 py-[14px] md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide min-h-[52px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Start Your Project</span>
+                <span className="relative">Schedule a Quote Call</span>
                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                to="/gallery"
+                to="/services"
                 className="group bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] text-primary-foreground font-medium text-[13px] md:text-[15px] px-8 md:px-10 py-[14px] md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.07] hover:border-white/[0.16] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[52px]"
               >
-                View Our Work
+                Explore Roofing & Construction
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
