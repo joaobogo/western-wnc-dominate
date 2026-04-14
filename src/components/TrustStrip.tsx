@@ -46,7 +46,7 @@ const TrustStrip = () => {
               >
                 <AnimatedCounter
                   value={stat.value}
-                  className="text-2xl md:text-[2.75rem] font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5 md:mb-2 tracking-tight"
+                  className="text-2xl md:text-[2.75rem] font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5 md:mb-2 tracking-tight stat-glow"
                   duration={1800}
                 />
                 <span className="text-sm font-heading font-bold text-primary-foreground/80 mb-1 tracking-tight">

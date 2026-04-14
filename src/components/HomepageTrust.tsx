@@ -98,7 +98,7 @@ const HomepageTrust = () => {
               >
                 <AnimatedCounter
                   value={stat.value}
-                  className="text-2xl md:text-[2.5rem] font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5 tracking-tight"
+                  className="text-2xl md:text-[2.5rem] font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5 tracking-tight stat-glow"
                   duration={1800}
                 />
                 <span className="text-xs font-heading font-bold text-dark-section-foreground/60 tracking-tight">
