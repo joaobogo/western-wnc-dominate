@@ -34,6 +34,8 @@ Updated: now
 - [Objection Handling System](mem://strategy/objection-handling-system) — Pre-emptive objection handling through trust bars, side notes, FAQs, process blocks, testimonials, CTA support copy
 - [Performance Optimization Strategy](mem://strategy/performance-optimization-strategy) — Core Web Vitals targets, image/font/animation optimization, code splitting, caching, visual cost/benefit analysis
 - [Media & Asset Optimization](mem://strategy/media-asset-optimization-strategy) — Image categories with specs, naming conventions, processing pipeline, video policy, display patterns, page weight targets
+- [Analytics & Tracking Framework](mem://strategy/analytics-tracking-framework) — Conversion events, engagement signals, attribution model, reporting structure, iteration guidance, privacy rules
+- [CRO + SEO Integration](mem://strategy/cro-seo-integration-system) — Intent-structure mapping, trust layering, town page conversion, blog authority flow, FAQ dual-purpose, internal link funneling
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
 - [Visual Proof Strategy](mem://strategy/visual-proof-strategy) — Photography direction, content modules, and page-level image recommendations
 - [Proof Architecture](mem://strategy/proof-architecture) — How proof layers across every page for cumulative trust building
