@@ -1,4 +1,4 @@
-import { Phone, FileText } from "lucide-react";
+import { Phone, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -12,17 +12,17 @@ const StickyMobileCTA = () => {
     >
       <a
         href="tel:8283979211"
-        className="flex-1 bg-primary text-primary-foreground font-semibold text-sm py-3 rounded-md flex items-center justify-center gap-2 active:scale-95 transition-transform"
+        className="flex-1 bg-primary text-primary-foreground font-semibold text-sm py-3 rounded-sm flex items-center justify-center gap-2 active:scale-95 transition-transform"
       >
         <Phone className="w-4 h-4" />
-        Call Now
+        Call Us
       </a>
       <Link
         to="/request-inspection"
-        className="flex-1 cta-gradient text-accent-foreground font-semibold text-sm py-3 rounded-md flex items-center justify-center gap-2 active:scale-95 transition-transform"
+        className="flex-1 cta-gradient text-accent-foreground font-semibold text-sm py-3 rounded-sm flex items-center justify-center gap-2 active:scale-95 transition-transform"
       >
-        <FileText className="w-4 h-4" />
-        Free Inspection
+        <MessageSquare className="w-4 h-4" />
+        Get a Quote
       </Link>
     </motion.div>
   );

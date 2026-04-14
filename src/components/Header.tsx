@@ -4,26 +4,29 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.webp";
 
-const serviceDropdown = [
+const roofingDropdown = [
   { label: "Roof Repair", href: "/services/roof-repair" },
   { label: "Roof Replacement", href: "/services/roof-replacement" },
   { label: "Storm Damage", href: "/services/storm-damage" },
   { label: "Metal Roofing", href: "/services/metal-roofing" },
-  { label: "Gutter Services", href: "/gutters" },
-  { label: "Outdoor Living", href: "/outdoor-living" },
-  { label: "Construction", href: "/construction-services" },
   { label: "Commercial Roofing", href: "/commercial-roofing" },
   { label: "Maintenance Programs", href: "/commercial-maintenance" },
 ];
 
+const constructionDropdown = [
+  { label: "Gutter Services", href: "/gutters" },
+  { label: "Outdoor Living", href: "/outdoor-living" },
+  { label: "Construction Services", href: "/construction-services" },
+];
+
 const navLinks = [
-  { label: "Services", href: "/services", dropdown: serviceDropdown },
+  { label: "Roofing", href: "/services", dropdown: roofingDropdown },
+  { label: "Construction", href: "/construction-services", dropdown: constructionDropdown },
   { label: "Roof Designer", href: "/roof-designer" },
   { label: "Service Areas", href: "/service-areas" },
-  { label: "Free Tools", href: "/free-tools" },
-  { label: "Blog", href: "/blog" },
   { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const Header = () => {
@@ -48,11 +51,11 @@ const Header = () => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background backdrop-blur-xl shadow-lg border-b border-border"
-          : "bg-background backdrop-blur-md border-b border-border"
+          ? "bg-background/98 backdrop-blur-xl shadow-[0_1px_12px_-4px_hsl(var(--heritage-charcoal)/0.08)] border-b border-border"
+          : "bg-background border-b border-border/60"
       }`}
     >
-      {/* Top bar */}
+      {/* Top heritage bar */}
       <AnimatePresence>
         {!scrolled && (
           <motion.div
@@ -60,17 +63,17 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="hidden md:flex items-center justify-between px-8 py-2 bg-primary text-primary-foreground text-sm overflow-hidden"
+            className="hidden md:flex items-center justify-between px-8 py-1.5 bg-primary text-primary-foreground text-xs overflow-hidden"
           >
-            <div className="flex items-center gap-6">
-              <span>Franklin & Sylva, NC</span>
-              <span>•</span>
-              <span>4.7 ★ (122 Reviews)</span>
-              <span>•</span>
-              <span>Licensed & Insured</span>
+            <div className="flex items-center gap-5">
+              <span className="tracking-wide">Franklin & Sylva, NC</span>
+              <span className="text-primary-foreground/25">|</span>
+              <span className="tracking-wide">CertainTeed Master Shingle Applicator</span>
+              <span className="text-primary-foreground/25">|</span>
+              <span className="tracking-wide">Licensed General Contractor</span>
             </div>
-            <a href="tel:8283979211" className="flex items-center gap-2 font-semibold hover:opacity-90 transition-opacity">
-              <Phone className="w-3.5 h-3.5" />
+            <a href="tel:8283979211" className="flex items-center gap-2 font-medium hover:text-accent transition-colors tracking-wide">
+              <Phone className="w-3 h-3" />
               (828) 397-9211
             </a>
           </motion.div>
@@ -78,54 +81,50 @@ const Header = () => {
       </AnimatePresence>
 
       {/* Main nav */}
-      <div className={`flex items-center justify-between px-4 md:px-8 transition-all duration-300 ${scrolled ? "py-2" : "py-3"}`}>
+      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-300 ${scrolled ? "py-2" : "py-3"}`}>
         <Link to="/" className="flex items-center">
           <motion.img
             src={logo}
-            alt="Highlander Roofing Services"
+            alt="Highlander Roofing & Construction"
             className="w-auto"
-            animate={{ height: scrolled ? 36 : 48 }}
+            animate={{ height: scrolled ? 34 : 46 }}
             transition={{ duration: 0.3 }}
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((link, i) => (
-            <motion.div
+            <div
               key={link.label}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.05, duration: 0.3 }}
               className="relative"
               onMouseEnter={() => link.dropdown && setOpenDropdown(link.label)}
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <Link
                 to={link.href}
-                className="relative text-sm font-medium text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className="relative text-sm font-medium text-foreground/75 hover:text-foreground transition-colors inline-flex items-center gap-1 py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-accent after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {link.label}
                 {link.dropdown && (
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === link.label ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${openDropdown === link.label ? "rotate-180" : ""}`} />
                 )}
               </Link>
 
-              {/* Dropdown */}
               <AnimatePresence>
                 {link.dropdown && openDropdown === link.label && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.97 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                   >
-                    <div className="bg-card border border-border rounded-lg shadow-xl py-2 min-w-[220px] overflow-hidden">
-                      {link.dropdown.map((item, j) => (
+                    <div className="bg-card border border-border rounded-sm shadow-xl py-1.5 min-w-[220px]">
+                      {link.dropdown.map((item) => (
                         <Link
                           key={item.href}
                           to={item.href}
-                          className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-muted/60 transition-colors"
+                          className="block px-5 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary transition-colors"
                         >
                           {item.label}
                         </Link>
@@ -133,32 +132,32 @@ const Header = () => {
                       <div className="border-t border-border mt-1 pt-1">
                         <Link
                           to={link.href}
-                          className="block px-4 py-2.5 text-sm font-semibold text-primary hover:bg-muted/60 transition-colors"
+                          className="block px-5 py-2.5 text-sm font-medium text-accent hover:bg-secondary transition-colors"
                         >
-                          View All Services →
+                          View All {link.label} →
                         </Link>
                       </div>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
           <a
             href="tel:8283979211"
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground active:scale-95 transition-transform"
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
           >
             <Phone className="w-4 h-4" />
           </a>
           <Link
             to="/request-inspection"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-semibold text-sm px-5 py-2.5 rounded-md hover:opacity-90 hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 relative overflow-hidden group"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-semibold text-sm px-5 py-2.5 rounded-sm hover:opacity-90 transition-all duration-200 relative overflow-hidden group"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative">Request Inspection</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative">Request a Consultation</span>
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -190,19 +189,19 @@ const Header = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="lg:hidden bg-card border-t border-border overflow-hidden"
           >
-            <nav className="flex flex-col px-4 py-4 gap-1">
+            <nav className="flex flex-col px-5 py-5 gap-0.5">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.label}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05, duration: 0.3 }}
+                  transition={{ delay: i * 0.04, duration: 0.3 }}
                 >
                   {link.dropdown ? (
                     <div>
                       <button
                         onClick={() => setMobileExpanded(mobileExpanded === link.label ? null : link.label)}
-                        className="w-full py-3 px-3 text-base font-medium text-foreground hover:bg-muted rounded-md transition-colors flex items-center justify-between"
+                        className="w-full py-3 px-3 text-base font-medium text-foreground hover:bg-secondary rounded-sm transition-colors flex items-center justify-between"
                       >
                         {link.label}
                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === link.label ? "rotate-180" : ""}`} />
@@ -216,24 +215,17 @@ const Header = () => {
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden"
                           >
-                            <div className="pl-4 pb-2 space-y-1">
+                            <div className="pl-5 pb-2 space-y-0.5">
                               {link.dropdown.map((item) => (
                                 <Link
                                   key={item.href}
                                   to={item.href}
                                   onClick={() => setMobileOpen(false)}
-                                  className="py-2 px-3 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-md transition-colors block"
+                                  className="py-2.5 px-3 text-sm text-foreground/65 hover:text-foreground hover:bg-secondary rounded-sm transition-colors block"
                                 >
                                   {item.label}
                                 </Link>
                               ))}
-                              <Link
-                                to={link.href}
-                                onClick={() => setMobileOpen(false)}
-                                className="py-2 px-3 text-sm font-semibold text-primary hover:bg-muted rounded-md transition-colors block"
-                              >
-                                View All Services →
-                              </Link>
                             </div>
                           </motion.div>
                         )}
@@ -243,26 +235,29 @@ const Header = () => {
                     <Link
                       to={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="py-3 px-3 text-base font-medium text-foreground hover:bg-muted rounded-md transition-colors block"
+                      className="py-3 px-3 text-base font-medium text-foreground hover:bg-secondary rounded-sm transition-colors block"
                     >
                       {link.label}
                     </Link>
                   )}
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.3 }}
-              >
+              <div className="pt-4 mt-3 border-t border-border space-y-2.5">
                 <Link
                   to="/request-inspection"
                   onClick={() => setMobileOpen(false)}
-                  className="mt-2 cta-gradient text-accent-foreground font-semibold text-center py-3 px-4 rounded-md block"
+                  className="cta-gradient text-accent-foreground font-semibold text-center py-3.5 px-4 rounded-sm block"
                 >
-                  Request Free Inspection
+                  Request a Consultation
                 </Link>
-              </motion.div>
+                <a
+                  href="tel:8283979211"
+                  className="bg-primary text-primary-foreground font-medium text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  (828) 397-9211
+                </a>
+              </div>
             </nav>
           </motion.div>
         )}

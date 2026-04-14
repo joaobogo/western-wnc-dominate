@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,43 +6,54 @@
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
-    --foreground: 160 25% 12%;
+    /* Highlander Heritage Palette */
+    --background: 45 15% 96%;
+    --foreground: 210 18% 13%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 160 25% 12%;
+    --card: 45 12% 98%;
+    --card-foreground: 210 18% 13%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 160 25% 12%;
+    --popover: 45 12% 98%;
+    --popover-foreground: 210 18% 13%;
 
-    --primary: 142 40% 22%;
-    --primary-foreground: 40 20% 98%;
+    /* Deep forest / heritage green */
+    --primary: 160 35% 16%;
+    --primary-foreground: 45 15% 95%;
 
-    --secondary: 40 25% 94%;
-    --secondary-foreground: 160 25% 12%;
+    /* Warm stone */
+    --secondary: 40 14% 92%;
+    --secondary-foreground: 210 18% 13%;
 
-    --muted: 40 15% 92%;
-    --muted-foreground: 160 10% 45%;
+    --muted: 40 10% 90%;
+    --muted-foreground: 210 8% 46%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 160 25% 12%;
+    /* Muted highland gold */
+    --accent: 40 55% 48%;
+    --accent-foreground: 210 18% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 40 15% 88%;
-    --input: 40 15% 88%;
-    --ring: 142 40% 22%;
+    --border: 40 10% 86%;
+    --input: 40 10% 86%;
+    --ring: 160 35% 16%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    /* Custom tokens */
-    --dark-section: 160 25% 12%;
-    --dark-section-foreground: 40 20% 95%;
-    --trust-badge: 142 35% 30%;
-    --cta-gradient-from: 38 92% 50%;
-    --cta-gradient-to: 30 90% 45%;
-    --hero-overlay: 160 30% 8%;
+    /* Heritage tokens */
+    --dark-section: 210 20% 10%;
+    --dark-section-foreground: 45 12% 92%;
+    --trust-badge: 160 28% 22%;
+    --cta-gradient-from: 40 55% 48%;
+    --cta-gradient-to: 34 50% 42%;
+    --hero-overlay: 210 22% 8%;
+    --heritage-green: 160 35% 16%;
+    --heritage-charcoal: 210 18% 13%;
+    --highland-gold: 40 55% 48%;
+    --highland-gold-light: 40 40% 72%;
+    --tartan-line: 160 25% 30%;
+    --tartan-accent: 0 45% 35%;
+    --warm-stone: 35 18% 88%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -55,25 +66,25 @@
   }
 
   .dark {
-    --background: 160 25% 8%;
-    --foreground: 40 20% 95%;
-    --card: 160 20% 12%;
-    --card-foreground: 40 20% 95%;
-    --popover: 160 20% 12%;
-    --popover-foreground: 40 20% 95%;
-    --primary: 142 40% 45%;
-    --primary-foreground: 160 25% 8%;
-    --secondary: 160 15% 18%;
-    --secondary-foreground: 40 20% 95%;
-    --muted: 160 15% 18%;
-    --muted-foreground: 40 10% 60%;
-    --accent: 38 92% 55%;
-    --accent-foreground: 160 25% 8%;
+    --background: 210 20% 7%;
+    --foreground: 45 12% 92%;
+    --card: 210 18% 10%;
+    --card-foreground: 45 12% 92%;
+    --popover: 210 18% 10%;
+    --popover-foreground: 45 12% 92%;
+    --primary: 160 30% 38%;
+    --primary-foreground: 210 20% 7%;
+    --secondary: 210 12% 14%;
+    --secondary-foreground: 45 12% 92%;
+    --muted: 210 12% 14%;
+    --muted-foreground: 45 8% 55%;
+    --accent: 40 55% 52%;
+    --accent-foreground: 210 20% 7%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 160 15% 20%;
-    --input: 160 15% 20%;
-    --ring: 142 40% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 12% 18%;
+    --input: 210 12% 18%;
+    --ring: 160 30% 38%;
   }
 }
 
@@ -88,20 +99,29 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+    letter-spacing: -0.01em;
+  }
+
+  /* Selection color */
+  ::selection {
+    background: hsl(var(--highland-gold) / 0.25);
+    color: hsl(var(--heritage-charcoal));
   }
 }
 
 @layer components {
   .section-padding {
-    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16 lg:py-32;
+    @apply px-5 py-16 md:px-8 md:py-24 lg:px-16 lg:py-32;
   }
 
   .section-dark {
-    @apply bg-dark-section text-dark-section-foreground;
+    background: hsl(var(--dark-section));
+    color: hsl(var(--dark-section-foreground));
   }
 
   .container-tight {
@@ -114,6 +134,164 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* ──────────────────────────────────────
+     TARTAN PATTERN SYSTEM
+     Subtle, heritage-inspired textures
+     ────────────────────────────────────── */
+
+  /* Light tartan for section backgrounds */
+  .tartan-bg {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 40px,
+        hsl(var(--tartan-line) / 0.04) 40px,
+        hsl(var(--tartan-line) / 0.04) 41px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 40px,
+        hsl(var(--tartan-line) / 0.04) 40px,
+        hsl(var(--tartan-line) / 0.04) 41px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 120px,
+        hsl(var(--tartan-accent) / 0.02) 120px,
+        hsl(var(--tartan-accent) / 0.02) 122px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 120px,
+        hsl(var(--highland-gold) / 0.03) 120px,
+        hsl(var(--highland-gold) / 0.03) 122px
+      );
+  }
+
+  /* Darker tartan for dark sections */
+  .tartan-dark {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 40px,
+        hsl(45 12% 92% / 0.03) 40px,
+        hsl(45 12% 92% / 0.03) 41px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 40px,
+        hsl(45 12% 92% / 0.03) 40px,
+        hsl(45 12% 92% / 0.03) 41px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 120px,
+        hsl(var(--highland-gold) / 0.04) 120px,
+        hsl(var(--highland-gold) / 0.04) 122px
+      );
+  }
+
+  /* Tartan hover overlay for cards */
+  .tartan-hover {
+    position: relative;
+    overflow: hidden;
+  }
+  .tartan-hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 20px,
+        hsl(var(--tartan-line) / 0.05) 20px,
+        hsl(var(--tartan-line) / 0.05) 21px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        hsl(var(--tartan-line) / 0.05) 20px,
+        hsl(var(--tartan-line) / 0.05) 21px
+      );
+    pointer-events: none;
+    z-index: 1;
+  }
+  .tartan-hover:hover::before {
+    opacity: 1;
+  }
+
+  /* ──────────────────────────────────────
+     HERITAGE DIVIDER
+     Gold accent line with optional knot
+     ────────────────────────────────────── */
+  .heritage-line {
+    @apply relative;
+  }
+  .heritage-line::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-px;
+    width: 3rem;
+    background: linear-gradient(90deg, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0));
+  }
+  .heritage-line-center::after {
+    @apply left-1/2 -translate-x-1/2;
+    width: 4rem;
+    background: linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0));
+  }
+
+  /* ──────────────────────────────────────
+     PREMIUM CARD SYSTEM
+     ────────────────────────────────────── */
+  .card-premium {
+    @apply bg-card border border-border rounded-sm relative overflow-hidden;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .card-premium:hover {
+    border-color: hsl(var(--highland-gold) / 0.3);
+    box-shadow: 0 8px 32px -8px hsl(var(--heritage-charcoal) / 0.08),
+                0 0 0 1px hsl(var(--highland-gold) / 0.08);
+    transform: translateY(-2px);
+  }
+  .card-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: hsl(var(--highland-gold));
+    transition: height 0.4s ease;
+  }
+  .card-premium:hover::after {
+    height: 100%;
+  }
+
+  /* ──────────────────────────────────────
+     EYEBROW / LABEL STYLE
+     ────────────────────────────────────── */
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  /* ──────────────────────────────────────
+     SECTION HEADING PATTERN
+     ────────────────────────────────────── */
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-tight;
   }
 }
 
@@ -159,5 +337,11 @@
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
+  }
+
+  /* Gold line draw animation */
+  @keyframes drawLine {
+    from { width: 0; }
+    to { width: 100%; }
   }
 }
