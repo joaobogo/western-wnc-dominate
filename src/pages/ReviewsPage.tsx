@@ -383,8 +383,8 @@ const ReviewsPage = () => {
         {/* ── CLOSING CTA ── */}
         <ReassuranceBlock
           headline={"See Why Hundreds of WNC\nHomeowners Trust Highlander."}
-          subheadline="Schedule a free consultation and experience the communication, craftsmanship, and accountability our clients talk about."
-          ctaText="Schedule a Consultation"
+          subheadline="Experience the communication, craftsmanship, and accountability our clients talk about — start a conversation today."
+          ctaText="Talk With Our Team"
         />
       </main>
       <Footer />

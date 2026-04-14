@@ -20,7 +20,7 @@ interface ConstructionCTAProps {
 /** Mid-page CTA strip (primary bg) */
 export const ConstructionMidCTA = ({
   headline = "Ready to discuss your project?",
-  subheadline = "Schedule a consultation or call us directly. We respond within 24 hours.",
+  subheadline = "We respond within 24 hours with a direct call — not a form email.",
   ctaText = "Discuss Your Project",
   ctaLink = "/request-inspection",
 }: ConstructionCTAProps) => (
@@ -168,7 +168,7 @@ export const ConstructionCredentialStrip = ({ className = "" }: { className?: st
 export const PlanningCallout = ({
   headline = "Not sure where to start?",
   body = "We offer complimentary project consultations. Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.",
-  ctaText = "Schedule a Consultation",
+  ctaText = "Talk With Our Team",
   ctaLink = "/request-inspection",
 }: {
   headline?: string;

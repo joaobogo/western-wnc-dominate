@@ -34,7 +34,7 @@ const companyLinks = [
   { label: "Our Process", href: "/about" },
   { label: "Project Gallery", href: "/gallery" },
   { label: "Careers", href: "/careers" },
-  { label: "Start a Project", href: "/request-inspection" },
+  { label: "Request a Consultation", href: "/request-inspection" },
 ];
 
 const areaLinks = [
@@ -93,7 +93,7 @@ const Footer = () => {
                 className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Start Your Project</span>
+                <span className="relative">Discuss Your Project</span>
                 <ArrowRight className="w-3.5 h-3.5 relative group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <a

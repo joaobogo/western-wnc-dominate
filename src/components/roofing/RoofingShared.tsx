@@ -18,8 +18,8 @@ interface RoofingCTAProps {
 /** Mid-page CTA strip (primary bg) */
 export const RoofingMidCTA = ({
   headline = "Ready to discuss your roof?",
-  subheadline = "Schedule a consultation or call us directly. We respond within 24 hours.",
-  ctaText = "Schedule Consultation",
+  subheadline = "We respond within 24 hours with a direct call — not a form email.",
+  ctaText = "Talk With a Roofing Advisor",
   ctaLink = "/request-inspection",
 }: Omit<RoofingCTAProps, "variant">) => (
   <section className="bg-primary text-primary-foreground tartan-dark">
@@ -48,8 +48,8 @@ export const RoofingMidCTA = ({
 export const RoofingClosingCTA = ({
   headline = "Let's Talk About\nYour Roof.",
   subheadline = "Whether you need a repair assessment, a replacement consultation, or just an honest opinion — we're here to help.",
-  eyebrow = "Get Started",
-  ctaText = "Schedule a Consultation",
+  eyebrow = "Your Roof, Our Expertise",
+  ctaText = "Request a Roof Consultation",
   ctaLink = "/request-inspection",
 }: Omit<RoofingCTAProps, "variant">) => (
   <section className="section-dark tartan-dark relative overflow-hidden">

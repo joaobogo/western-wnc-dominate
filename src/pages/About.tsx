@@ -411,15 +411,15 @@ const About = () => {
                 Ready to Work With a Team<br /> That Builds Like It Matters?
               </h2>
               <p className="text-primary-foreground/70 mb-8 max-w-xl mx-auto">
-                Schedule a free consultation and see what it feels like to work with a company 
-                that treats your home the way we'd treat our own.
+                Start a conversation with our team — no pressure, no upselling. Just honest advice 
+                from people who build in these mountains every day.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/request-inspection"
                   className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
-                  Schedule a Consultation <ArrowRight className="w-5 h-5" />
+                  Talk With Our Team <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:8283979211"

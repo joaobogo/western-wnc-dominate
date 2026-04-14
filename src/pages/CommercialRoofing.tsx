@@ -287,7 +287,7 @@ const CommercialRoofing = () => {
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/request-inspection" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Schedule Consultation</span>
+                  <span className="relative">Discuss Your Building</span>
                   <ArrowRight className="w-4 h-4 relative" />
                 </Link>
                 <a href="tel:8283979211" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">

@@ -270,7 +270,7 @@ const BlogPostPage = () => {
                           to="/request-inspection"
                           className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm mt-3 hover:gap-2.5 transition-all"
                         >
-                          Schedule a Local Consultation <ArrowRight className="w-3.5 h-3.5" />
+                          Talk With Our Local Team <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                       </div>
                     </div>
@@ -300,7 +300,7 @@ const BlogPostPage = () => {
                       to="/request-inspection"
                       className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
                     >
-                      Schedule a Consultation <ArrowRight className="w-4 h-4" />
+                      Request a Consultation <ArrowRight className="w-4 h-4" />
                     </Link>
                     <a
                       href="tel:8283979211"
@@ -359,13 +359,13 @@ const BlogPostPage = () => {
                     Need Expert Advice?
                   </h4>
                   <p className="text-primary-foreground/60 text-xs mb-4">
-                    Schedule a consultation — no pressure, no upselling.
+                    No pressure, no upselling — just honest expert advice.
                   </p>
                   <Link
                     to="/request-inspection"
                     className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center"
                   >
-                    Get Started <ArrowRight className="w-4 h-4" />
+                    Request a Consultation <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>

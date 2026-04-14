@@ -117,7 +117,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
               <Link to="/request-inspection" className="block">
                 <Button className="w-full gap-2 cta-gradient text-accent-foreground border-0 font-semibold">
                   <CalendarCheck className="w-4 h-4" />
-                  Schedule Free Inspection
+                  Request a Project Consultation
                 </Button>
               </Link>
               <Link to="/financing" className="block">
