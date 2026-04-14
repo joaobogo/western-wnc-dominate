@@ -80,7 +80,8 @@ const DualPathway = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
-              className="group relative bg-card border border-border rounded-none overflow-hidden hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_16px_48px_-12px_hsl(var(--heritage-charcoal)/0.1)] transition-all duration-400 spotlight-hover"
+              className="group relative bg-card border border-border rounded-none overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-[0_12px_40px_-10px_hsl(var(--heritage-charcoal)/0.08)] transition-all duration-500 spotlight-hover"
+              style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
               {/* Editorial image header */}
               <div className="relative h-40 md:h-48 overflow-hidden">

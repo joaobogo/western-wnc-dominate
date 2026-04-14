@@ -49,21 +49,22 @@ const WhyChooseUs = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="flex gap-5"
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="group flex gap-5 p-5 md:p-6 bg-card border border-border rounded-none hover:border-[hsl(var(--highland-gold)/0.15)] hover:shadow-[0_8px_28px_-8px_hsl(var(--heritage-charcoal)/0.06)] transition-all duration-500 spotlight-hover"
+              style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-none bg-primary/8 flex items-center justify-center mt-0.5">
+              <div className="flex-shrink-0 w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center mt-0.5 group-hover:bg-primary/12 transition-colors duration-300">
                 <pillar.icon className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{pillar.title}</h3>
+                <h3 className="text-base font-heading font-bold text-foreground mb-1.5 tracking-tight">{pillar.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body">{pillar.description}</p>
               </div>
             </motion.div>
