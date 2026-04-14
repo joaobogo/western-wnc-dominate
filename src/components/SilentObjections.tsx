@@ -9,11 +9,11 @@ import GoldLine from "@/components/motion/GoldLine";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const objections = [
-  { icon: DollarSign, question: "Your prices seem higher than other contractors. Why should I pay more?", answer: "Because the lowest bid is rarely the best long-term decision. Our pricing reflects certified materials, experienced crews who work year-round in mountain conditions, documented processes, and warranties we actually stand behind. We've seen too many homeowners pay twice — once for the cheap job, and again to fix it. We'd rather do it right the first time and save you the second call." },
-  { icon: HardHat, question: "How much disruption will my family deal with during the project?", answer: "We take property protection seriously — drop cloths, debris containment, daily cleanup, and careful staging are standard on every job. We communicate start times, noise expectations, and access needs before work begins. Most residential roof projects are completed in 2–5 days. We work efficiently so your life gets back to normal as fast as possible." },
-  { icon: Shield, question: "How do I know I can trust you with a project this important?", answer: "We're a licensed general contractor, CertainTeed Master Shingle Applicator certified, and fully insured. We've completed 500+ projects across Western NC since 2017. But beyond credentials — we live here, we drive past your home every week, and our reputation is our business. We provide references, photo documentation, and written warranties on every project." },
-  { icon: Clock, question: "I'm not sure about timing. Is now really the right time to start?", answer: "That depends on your situation — and we'll tell you honestly. Some projects are urgent (active leaks, storm damage). Others benefit from strategic timing around weather windows. We'll assess your property, explain what's time-sensitive and what can wait, and help you plan around your schedule and budget. There's no pressure to start before you're ready." },
-  { icon: MessageSquare, question: "Will I actually hear from you during the project, or will I be left wondering?", answer: "You'll have a named point of contact from day one. We provide a written scope before work begins, daily progress updates during the project, and a final walkthrough when it's complete. You'll never have to chase us for information — that's a promise, not a policy." },
+  { icon: DollarSign, question: "Why is your pricing higher than the other bids I'm getting?", answer: "Because the lowest bid usually means the shortest-lasting work. Our pricing reflects CertainTeed-certified materials selected for your specific elevation, full-time crews — not day laborers — and warranties we personally stand behind. We've rebuilt too many projects that were 'done right' by the cheapest option. We'd rather earn your trust once than inherit someone else's problems." },
+  { icon: HardHat, question: "How much will this disrupt my family's daily life?", answer: "Less than you think. We stage materials carefully, contain debris daily, and communicate start times and noise windows before each phase. Most residential roofs are completed in 2–5 days. We treat your property like someone lives there — because someone does." },
+  { icon: Shield, question: "I've been burned by contractors before. How is this different?", answer: "We're a licensed General Contractor and CertainTeed Master Applicator — top 1% nationally. But credentials aside: we live in these counties. The owner answers your call, walks your property, and personally signs off on every completed project. We provide written scope, photo documentation at every phase, and a warranty package you hold in your hands — not buried in an email." },
+  { icon: Clock, question: "Is this actually urgent, or are you just trying to close a sale?", answer: "We'll tell you honestly. If you have an active leak or documented storm damage, waiting costs money. If it's cosmetic or preventative, we'll help you plan around weather windows, budget, and timing. There's no manufactured urgency here — just a candid assessment of what your property needs and when." },
+  { icon: MessageSquare, question: "Will I actually be able to reach someone during the project?", answer: "You'll have a named point of contact assigned before work begins. You'll receive a written scope, daily progress updates during the build, and a final walkthrough when we're done. You will never have to call twice to get an answer." },
 ];
 
 const SilentObjections = () => {
@@ -26,13 +26,13 @@ const SilentObjections = () => {
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-4">
-              Questions You're<br className="hidden md:block" /> Already Thinking About.
+              The Questions You Haven't<br className="hidden md:block" /> Asked Yet — Answered.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground max-w-lg mx-auto text-sm font-body leading-relaxed">
-              Choosing a contractor is a serious decision. Here are the concerns we hear most
-              — and the straightforward answers you deserve.
+              Hiring a contractor is a significant decision. Here are the concerns
+              most property owners have — and the direct answers we give every time.
             </p>
           </ScrollReveal>
           <GoldLine width="3rem" centered delay={0.35} className="mt-6" />

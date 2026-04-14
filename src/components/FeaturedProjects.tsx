@@ -207,7 +207,7 @@ const FeaturedProjects = () => {
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
               <p className="text-muted-foreground text-[15px] font-body max-w-md leading-relaxed">
-                A portfolio of precision — from estate metal roofs at 4,000 feet to full exterior renovations in the heart of WNC.
+                Estate metal roofs at 4,000 feet. Full exterior renovations in the valley. Every project photographed, documented, and warrantied.
               </p>
             </ScrollReveal>
           </div>

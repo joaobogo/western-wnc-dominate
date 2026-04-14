@@ -19,7 +19,7 @@ const team = [
     role: "Owner & General Contractor",
     credential: "Licensed GC · CertainTeed Master Applicator",
     years: "20+",
-    bio: "Leads every project estimate and final walkthrough personally. The owner's name is on the warranty — and that's not a figure of speech.",
+    bio: "Personally estimates every project and walks every completed surface. When your warranty has the owner's name on it, that means something different here.",
     image: ownerPhoto,
   },
   {
@@ -27,7 +27,7 @@ const team = [
     role: "Project Coordinator",
     credential: "Client Communication Lead",
     years: "8",
-    bio: "Your single point of contact from first call to warranty delivery. Manages scheduling, documentation, and daily updates so nothing falls through the cracks.",
+    bio: "Your single point of contact from first call to warranty delivery. Scheduling, documentation, daily updates — nothing falls through because one person owns the entire communication chain.",
     image: pmPhoto,
   },
   {
@@ -35,7 +35,7 @@ const team = [
     role: "Crew Lead — Roofing",
     credential: "Standing Seam & Complex Roof Specialist",
     years: "12",
-    bio: "Specializes in metal and multi-gable work at elevation. Runs the most disciplined crew in the region — ask any homeowner who's watched them work.",
+    bio: "Specializes in standing seam and complex multi-gable work above 3,000 feet. Runs the tightest crew in the region — ask any property owner who's watched them work.",
     image: crewLeadPhoto,
   },
 ];
@@ -129,16 +129,16 @@ const MeetTheTeam = () => {
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="section-heading mb-5">
-                You'll Know Exactly<br className="hidden md:block" />
-                <span className="text-[hsl(var(--highland-gold))]"> Who's on Your Property.</span>
+                Names, Not Nameplates.<br className="hidden md:block" />
+                <span className="text-[hsl(var(--highland-gold))]"> You'll Know Every Person on Your Property.</span>
               </h2>
             </HeadingReveal>
             <GoldLine width="3rem" delay={0.25} className="mb-5" />
             <ScrollReveal variant="rise-subtle" delay={0.3}>
               <p className="text-muted-foreground text-[15px] leading-relaxed font-body max-w-lg">
-                Highlander isn't a franchise with rotating subcontractors. It's a locally owned company
-                where the owner answers the phone, walks your property, and personally signs off on
-                every completed project.
+                We're not a franchise with interchangeable crews. The owner answers the phone,
+                walks your property, and personally signs off on every project. You'll work with
+                real people who live in these counties and stake their name on the result.
               </p>
             </ScrollReveal>
           </div>
@@ -154,7 +154,7 @@ const MeetTheTeam = () => {
             >
               <Quote className="absolute top-4 right-4 w-6 h-6 text-foreground/[0.04] rotate-180" />
               <p className="text-foreground/70 text-sm font-body italic leading-relaxed mb-4 relative z-10">
-                "Our reputation rides on every roof, every renovation, every handshake. That's not a tagline — it's how we built this company."
+                "I sign every warranty because my family's name is on this company. That's the only quality control that actually works."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-none overflow-hidden">

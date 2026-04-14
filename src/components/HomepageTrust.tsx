@@ -72,14 +72,14 @@ const HomepageTrust = () => {
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
-                Credentials You Can Check.<br className="hidden md:block" />
-                <span className="text-[hsl(var(--highland-gold))]"> Results You Can See.</span>
+                Every Claim Backed by<br className="hidden md:block" />
+                <span className="text-[hsl(var(--highland-gold))]"> Documentation You Can Hold.</span>
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.25}>
               <p className="text-dark-section-foreground/40 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
-                We don't ask you to take our word for it. Every claim is backed by
-                certifications, documented projects, and homeowners who'll vouch for the work.
+                Certifications are verifiable. Reviews are public. Project photos are real.
+                We don't ask for trust — we earn it with evidence.
               </p>
             </ScrollReveal>
             <GoldLine width="4rem" centered delay={0.35} className="mt-7" />
@@ -261,8 +261,8 @@ const HomepageTrust = () => {
                 </h3>
               </HeadingReveal>
               <p className="text-dark-section-foreground/35 text-[13.5px] font-body leading-relaxed max-w-md">
-                Elevation changes everything. Our crews live and work in these conditions year-round —
-                every recommendation is based on what actually performs at 2,000–5,000 feet.
+                Coastal specs don't work at 3,800 feet. Our crews live in these conditions —
+                every material recommendation comes from direct experience, not a manufacturer's data sheet.
               </p>
             </div>
 

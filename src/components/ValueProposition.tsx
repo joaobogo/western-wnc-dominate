@@ -13,44 +13,44 @@ const pillars = [
   {
     icon: Gem,
     number: "01",
-    title: "Craftsmanship Without Compromise",
-    copy: "Every cut, fastener, and flashing detail is executed to outlast the weather it was built for. We don't hire rotating subcontractor pools — our crews have built their careers on these ridgelines, and their names are on the work.",
-    detail: "Material-specific training · CertainTeed Master certification · Final walkthrough on every job",
+    title: "No Shortcuts at Any Elevation",
+    copy: "Every fastener, cut, and flashing detail is installed by full-time crews who've built their careers on WNC ridgelines. We don't rotate subcontractors — the people on your property are the same people who did the last 500 projects.",
+    detail: "Material-specific training · CertainTeed Master certification · Owner-inspected walkthroughs",
   },
   {
     icon: MessageSquare,
     number: "02",
-    title: "Communication as a Standard",
-    copy: "You'll have a named project contact, a written scope before any work begins, and daily progress updates — not when you ask, but before you need to. We believe the fastest way to earn trust is to never make you chase information.",
-    detail: "Named contact · Written scope · Daily updates · Pre-start documentation",
+    title: "You'll Never Chase Us for an Update",
+    copy: "Named project contact from day one. Written scope before work begins. Daily updates sent before you think to ask. If you've ever waited three days for a contractor to return a call — that doesn't happen here.",
+    detail: "Named contact · Written scope · Daily progress · Pre-start documentation",
   },
   {
     icon: TrendingUp,
     number: "03",
-    title: "Long-Term Value Over Low Bids",
-    copy: "The cheapest bid is the most expensive mistake. We specify certified materials for your elevation and climate zone, back every project with documented warranties, and build for the next 30 years — not the next inspection.",
-    detail: "Certified material specs · Full labor & material warranty · 30-year build philosophy",
+    title: "The Cheapest Bid Costs You Twice",
+    copy: "We don't compete on price — we compete on what your roof or renovation looks like in 15 years. Every material is specified for your actual elevation and climate zone. Every project carries a full written warranty.",
+    detail: "Climate-zone material specs · Full warranty package · 30-year build philosophy",
   },
   {
     icon: Mountain,
     number: "04",
-    title: "Built for This Terrain",
-    copy: "WNC isn't a standard building environment. Ice loads at 4,000 feet, horizontal rain on exposed slopes, freeze-thaw cycling 60+ days a year. We engineer every project for the actual conditions your property faces — not coastal averages.",
+    title: "Engineered for 2,000–5,000 Feet",
+    copy: "Ice loads that coastal specs ignore. Wind exposure that flatland data doesn't capture. Freeze-thaw cycling 60+ days a year. We don't use generic building assumptions — we specify for the actual conditions on your property.",
     detail: "Elevation-specific specs · 8 WNC counties · Climate-zone engineering",
   },
   {
     icon: ClipboardCheck,
     number: "05",
-    title: "Obsessive Quality Control",
-    copy: "No project is considered complete until it passes our internal inspection process. We photograph every phase, document material lots, and walk every finished surface before you see a final invoice. If something isn't right, we catch it first.",
-    detail: "Phase photography · Material lot tracking · Pre-invoice inspection protocol",
+    title: "We Find Problems Before You Do",
+    copy: "Every phase is photographed. Every material lot is documented. Every completed surface is walked by our team before you see a final invoice. If something isn't right, we catch it — and fix it — before you know it happened.",
+    detail: "Phase photography · Material lot tracking · Pre-invoice walkthrough",
   },
   {
     icon: Ruler,
     number: "06",
-    title: "Disciplined Project Management",
-    copy: "Defined timeline. Sequenced phases. No open-ended chaos. From permits to punch list, every project follows a structured workflow — because precision isn't just how we build, it's how we run.",
-    detail: "Structured timeline · Phase sequencing · Documented milestones · Clean jobsite policy",
+    title: "Structured Timeline. No Open-Ended Chaos.",
+    copy: "Permits, sequencing, milestones, punch list — every project follows a defined workflow with hard deadlines. Your property won't be an open construction site for weeks longer than planned.",
+    detail: "Structured timeline · Sequenced phases · Documented milestones · Clean jobsite",
   },
 ];
 
@@ -130,14 +130,14 @@ const ValueProposition = () => {
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
-              Six Principles That Separate<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Permanent Work</span> From Temporary Fixes.
+              What You Get When You<br className="hidden md:block" />
+              <span className="text-[hsl(var(--highland-gold))]"> Hire the Right Contractor.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-dark-section-foreground/40 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
-              We didn't build our reputation on being the cheapest option in Western NC.
-              We built it on being the one you don't have to call back.
+              We built our reputation on being the contractor you don't have to call back.
+              Here's exactly how we earn that.
             </p>
           </ScrollReveal>
           <GoldLine width="4rem" centered delay={0.4} className="mt-7" />

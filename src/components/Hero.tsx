@@ -150,7 +150,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 className="text-[9px] md:text-[11px] font-body font-semibold uppercase tracking-[0.22em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))]"
               >
-                Western North Carolina · Est. 2017
+                Roofing & Construction · Western North Carolina
               </motion.span>
             </motion.div>
 
@@ -195,8 +195,9 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 1.1 }}
               className="text-[14px] md:text-[17px] text-primary-foreground/45 max-w-xl mb-9 md:mb-12 leading-[1.7] font-body"
             >
-              CertainTeed Master Applicator. Licensed General Contractor. 500+ projects
-              across 8 WNC counties — from precision roof systems to full-scope home construction.
+              The only CertainTeed Master Applicator and licensed General Contractor
+              in Western NC offering roofing and construction under one company.
+              500+ projects. 8 counties. One standard of work.
             </motion.p>
 
             {/* CTA Group */}

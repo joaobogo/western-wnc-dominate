@@ -19,7 +19,7 @@ const roofingData = {
   badge: "Est. 2017",
   title: "Mountain-Grade Roofing",
   subtitle: "Our Foundation",
-  description: "Roof systems specified for WNC's elevation, wind exposure, and freeze-thaw cycling — installed by certified crews who've built their careers on these ridgelines.",
+  description: "Every material specified for your elevation, wind zone, and moisture exposure. Installed by crews who've spent their careers on WNC ridgelines — not a rotating subcontractor pool.",
   stats: [
     { value: "500+", label: "Roofs Installed" },
     { value: "Top 1%", label: "Nationally Certified" },
@@ -43,7 +43,7 @@ const constructionData = {
   badge: "Now Expanding",
   title: "Full-Scope Construction",
   subtitle: "Our Evolution",
-  description: "Licensed general contractor services — additions, renovations, siding, decks, and complete exterior transformations. The same disciplined process that built our roofing reputation, applied to everything we build.",
+  description: "Additions, renovations, siding, and outdoor living — executed under licensed GC oversight with the same documented process that earned our roofing reputation. One team handles everything.",
   stats: [
     { value: "40+", label: "Years Combined Exp." },
     { value: "8", label: "WNC Counties" },
@@ -233,8 +233,8 @@ const DualPathway = () => {
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground text-base font-body max-w-xl mx-auto leading-relaxed">
-              Whether it's a standing seam metal roof or a full home addition, every project follows the same
-              disciplined process — certified materials, documented scope, and warranty-backed results.
+              Standing seam at 4,000 feet or a ground-up addition in Franklin — the process
+              is identical. Certified materials, documented scope, named contact, warranty delivered at walkthrough.
             </p>
           </ScrollReveal>
           <GoldLine width="4rem" centered delay={0.4} className="mt-7" />
@@ -262,8 +262,8 @@ const DualPathway = () => {
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
           <p className="text-[13px] text-muted-foreground/60 font-body leading-relaxed max-w-md mx-auto">
-            Highlander is one of the few companies in Western NC that combines certified roofing expertise
-            with licensed general contractor capability — under one roof, one team, one standard of quality.
+            Most contractors do one thing. We do two — because your roof and your renovation
+            shouldn't require two companies, two timelines, and two standards.
           </p>
         </motion.div>
       </div>

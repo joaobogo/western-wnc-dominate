@@ -75,8 +75,8 @@ const BlogInsights = () => {
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug tracking-tight">
-                Insights Built for<br className="hidden md:block" />
-                <span className="text-[hsl(var(--highland-gold))]"> Mountain Property Owners.</span>
+                What Mountain Property Owners<br className="hidden md:block" />
+                <span className="text-[hsl(var(--highland-gold))]"> Actually Need to Know.</span>
               </h2>
             </HeadingReveal>
           </div>
