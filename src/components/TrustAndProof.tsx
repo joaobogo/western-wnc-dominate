@@ -53,7 +53,7 @@ const TrustAndProof = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group text-center p-5 md:p-6 bg-card border border-border rounded-none hover:border-[hsl(var(--highland-gold)/0.2)] card-lift"
+              className="group text-center p-5 md:p-6 bg-card border border-border rounded-none hover:border-[hsl(var(--highland-gold)/0.2)] card-lift spotlight-hover"
             >
               <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/12 transition-colors">
                 <cert.icon className="w-5 h-5 text-primary" />

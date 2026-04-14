@@ -502,7 +502,7 @@ const RoofingDivision = () => {
                 >
                   <Link
                     to={service.slug}
-                    className="group block h-full bg-card border border-border rounded-none overflow-hidden hover:border-primary/20 card-lift"
+                    className="group block h-full bg-card border border-border rounded-none overflow-hidden hover:border-primary/20 card-lift spotlight-hover"
                   >
                     <div className="h-[2px] w-full bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.3)] to-[hsl(var(--heritage-green)/0)]" />
 
@@ -623,7 +623,7 @@ const RoofingDivision = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift"
+                  className="bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift spotlight-hover"
                 >
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-heading font-bold text-base text-foreground">{mat.name}</h3>
@@ -678,7 +678,7 @@ const RoofingDivision = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07, duration: 0.45 }}
-                  className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift"
+                  className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift spotlight-hover"
                 >
                   {/* Step number watermark */}
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">
@@ -738,7 +738,7 @@ const RoofingDivision = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08, duration: 0.45 }}
-                    className="group flex gap-4 p-5 md:p-6 rounded-none bg-card border border-border hover:border-primary/20 card-lift"
+                    className="group flex gap-4 p-5 md:p-6 rounded-none bg-card border border-border hover:border-primary/20 card-lift spotlight-hover"
                   >
                     <div className="w-10 h-10 rounded-none bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors">
                       <factor.icon className="w-5 h-5 text-primary" />
@@ -795,7 +795,7 @@ const RoofingDivision = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />

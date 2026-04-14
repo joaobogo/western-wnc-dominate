@@ -173,7 +173,7 @@ const ConstructionDivision = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {philosophy.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift">
+                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift spotlight-hover">
                   <div className="w-10 h-10 rounded-none bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
@@ -198,7 +198,7 @@ const ConstructionDivision = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {services.map((svc, i) => (
-                <motion.div key={svc.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-none p-6 hover:border-primary/15 card-lift">
+                <motion.div key={svc.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-none p-6 hover:border-primary/15 card-lift spotlight-hover">
                   <div className="w-10 h-10 rounded-none bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
                     <svc.icon className="w-5 h-5 text-primary" />
                   </div>
@@ -270,7 +270,7 @@ const ConstructionDivision = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-none overflow-hidden">
-                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-xs font-body font-medium tracking-wide">{img.label}</p>
@@ -291,7 +291,7 @@ const ConstructionDivision = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {whyHighlander.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift">
+                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift spotlight-hover">
                   <div className="w-10 h-10 rounded-none bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
@@ -316,7 +316,7 @@ const ConstructionDivision = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {processSteps.map((step, i) => (
-                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift">
+                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-none p-6 md:p-7 hover:border-primary/15 card-lift spotlight-hover">
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
                   <div className="w-10 h-10 rounded-none bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                     <step.icon className="w-5 h-5 text-primary" />
