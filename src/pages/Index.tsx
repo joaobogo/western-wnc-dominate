@@ -5,7 +5,7 @@ import TrustAndProof from "@/components/TrustAndProof";
 import TrustStrip from "@/components/TrustStrip";
 import ProofStrip from "@/components/ProofStrip";
 import DualPathway from "@/components/DualPathway";
-import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
 import TownGrid from "@/components/TownGrid";
 import Reviews from "@/components/Reviews";
