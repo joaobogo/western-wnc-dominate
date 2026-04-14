@@ -37,6 +37,7 @@ import ExteriorImprovements from "./pages/ExteriorImprovements";
 import OutdoorLiving from "./pages/OutdoorLiving";
 import CustomConstruction from "./pages/CustomConstruction";
 import QuoteFlow from "./pages/QuoteFlow";
+import Contact from "./pages/Contact";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 
 const queryClient = new QueryClient();
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/free-tools" element={<FreeTools />} />
           <Route path="/roof-designer" element={<RoofDesigner />} />
           <Route path="/consultation" element={<QuoteFlow />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
