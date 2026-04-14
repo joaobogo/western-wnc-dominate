@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 import { useState } from "react";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion";
+import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
+import { ArchitecturalLines } from "@/components/motion/BackgroundTexture";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-004.webp";
@@ -13,60 +14,12 @@ import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
 import cedarDetail from "@/assets/gallery/cedar-003.jpg";
 
 const projects = [
-  {
-    title: "Standing Seam Metal — Estate Home",
-    location: "Cashiers, NC",
-    category: "Metal Roofing",
-    type: "roofing" as const,
-    outcome: "Complex multi-gable standing seam installation with concealed fasteners. Engineered for 140mph wind uplift at 3,800ft elevation.",
-    image: metalRoof,
-    featured: true,
-  },
-  {
-    title: "Cedar Shake — Luxury Mountain Estate",
-    location: "Highlands, NC",
-    category: "Cedar Shake",
-    type: "roofing" as const,
-    outcome: "Full cedar shake replacement with copper ridge accents and integrated ice & water shield system for heavy snow loads.",
-    image: cedarRoof,
-    featured: false,
-  },
-  {
-    title: "Architectural Shingles — Multi-Level Home",
-    location: "Franklin, NC",
-    category: "Asphalt Shingles",
-    type: "roofing" as const,
-    outcome: "CertainTeed Landmark PRO in Weathered Wood. 14 squares with 6 penetrations, completed in 3 days with zero property damage.",
-    image: asphaltRoof,
-    featured: false,
-  },
-  {
-    title: "Roof & Exterior Renovation",
-    location: "Sylva, NC",
-    category: "Construction",
-    type: "construction" as const,
-    outcome: "Complete roof replacement paired with new siding, fascia, and soffit rebuild. Single team, single timeline, seamless result.",
-    image: asphaltLarge,
-    featured: false,
-  },
-  {
-    title: "Mountain Cabin — Metal Roof & Deck",
-    location: "Bryson City, NC",
-    category: "Roofing + Construction",
-    type: "construction" as const,
-    outcome: "Standing seam metal roof with a new wraparound deck and railing system. Built for heavy snow and year-round mountain living.",
-    image: metalCabin,
-    featured: false,
-  },
-  {
-    title: "Cedar Restoration & Gutter System",
-    location: "Highlands, NC",
-    category: "Restoration",
-    type: "roofing" as const,
-    outcome: "Selective cedar shake repair with new seamless aluminum gutters and leaf guard system. Extended roof life by 15+ years.",
-    image: cedarDetail,
-    featured: false,
-  },
+  { title: "Standing Seam Metal — Estate Home", location: "Cashiers, NC", category: "Metal Roofing", type: "roofing" as const, outcome: "Complex multi-gable standing seam installation with concealed fasteners. Engineered for 140mph wind uplift at 3,800ft elevation.", image: metalRoof, featured: true },
+  { title: "Cedar Shake — Luxury Mountain Estate", location: "Highlands, NC", category: "Cedar Shake", type: "roofing" as const, outcome: "Full cedar shake replacement with copper ridge accents and integrated ice & water shield system for heavy snow loads.", image: cedarRoof, featured: false },
+  { title: "Architectural Shingles — Multi-Level Home", location: "Franklin, NC", category: "Asphalt Shingles", type: "roofing" as const, outcome: "CertainTeed Landmark PRO in Weathered Wood. 14 squares with 6 penetrations, completed in 3 days with zero property damage.", image: asphaltRoof, featured: false },
+  { title: "Roof & Exterior Renovation", location: "Sylva, NC", category: "Construction", type: "construction" as const, outcome: "Complete roof replacement paired with new siding, fascia, and soffit rebuild. Single team, single timeline, seamless result.", image: asphaltLarge, featured: false },
+  { title: "Mountain Cabin — Metal Roof & Deck", location: "Bryson City, NC", category: "Roofing + Construction", type: "construction" as const, outcome: "Standing seam metal roof with a new wraparound deck and railing system. Built for heavy snow and year-round mountain living.", image: metalCabin, featured: false },
+  { title: "Cedar Restoration & Gutter System", location: "Highlands, NC", category: "Restoration", type: "roofing" as const, outcome: "Selective cedar shake repair with new seamless aluminum gutters and leaf guard system. Extended roof life by 15+ years.", image: cedarDetail, featured: false },
 ];
 
 const filters = [
@@ -83,8 +36,9 @@ const FeaturedProjects = () => {
   const filtered = activeFilter === "all" ? projects : projects.filter((p) => p.type === activeFilter);
 
   return (
-    <section className="section-padding bg-background">
-      <div className="container-tight">
+    <section className="section-padding bg-background relative overflow-hidden">
+      <ArchitecturalLines variant="light" opacity={0.012} direction="left" />
+      <div className="container-tight relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12">
           <div>
@@ -105,7 +59,7 @@ const FeaturedProjects = () => {
                 <button
                   key={f.value}
                   onClick={() => setActiveFilter(f.value)}
-                  className={`text-xs font-body font-semibold uppercase tracking-[0.12em] px-4 py-2 rounded-sm transition-all duration-200 ${
+                  className={`text-xs font-body font-semibold uppercase tracking-[0.12em] px-4 py-2 rounded-sm btn-ghost-interactive ${
                     activeFilter === f.value
                       ? "bg-primary text-primary-foreground"
                       : "bg-secondary text-muted-foreground hover:text-foreground"
@@ -118,7 +72,7 @@ const FeaturedProjects = () => {
           </ScrollReveal>
         </div>
 
-        {/* Project grid — clip reveal for images */}
+        {/* Project grid */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {filtered.map((project, i) => (
             <motion.div
@@ -128,20 +82,17 @@ const FeaturedProjects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.6, ease: HIGHLAND_EASE }}
-              className={`group relative rounded-sm overflow-hidden cursor-pointer ${
+              className={`group relative rounded-sm overflow-hidden cursor-pointer card-lift ${
                 project.featured && activeFilter === "all" ? "md:col-span-2" : ""
               }`}
             >
               <div className={`relative overflow-hidden ${
-                project.featured && activeFilter === "all"
-                  ? "aspect-[16/7]"
-                  : "aspect-[4/3]"
+                project.featured && activeFilter === "all" ? "aspect-[16/7]" : "aspect-[4/3]"
               }`}>
-                {/* Image with clip reveal */}
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover img-zoom"
                   loading="lazy"
                   initial={{ scale: 1.08 }}
                   whileInView={{ scale: 1 }}
@@ -163,8 +114,7 @@ const FeaturedProjects = () => {
                   <h3 className="font-heading font-bold text-lg md:text-xl text-white mb-2 leading-snug">
                     {project.title}
                   </h3>
-
-                  <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 ease-out">
+                  <div className="proof-card-outcome">
                     <p className="text-white/60 text-sm font-body leading-relaxed pt-1">
                       {project.outcome}
                     </p>
@@ -182,10 +132,10 @@ const FeaturedProjects = () => {
         <ScrollReveal variant="fade" delay={0.3} className="text-center mt-8">
           <Link
             to="/gallery"
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body link-draw"
           >
             View Full Project Gallery
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
           </Link>
         </ScrollReveal>
       </div>
