@@ -86,18 +86,26 @@ const DivisionCard = ({ data, accent, index }: {
       transition={{ delay: index * 0.18, duration: 0.7, ease: HIGHLAND_EASE }}
       className="group relative bg-card border border-border rounded-none overflow-hidden spotlight-hover flex flex-col"
     >
-      {/* === IMAGE HEADER with overlay === */}
+      {/* === IMAGE HEADER with curtain reveal === */}
       <div className="relative h-48 md:h-56 overflow-hidden">
-        <motion.img
-          src={data.image}
-          alt={data.title}
-          className="w-full h-full object-cover"
-          loading="lazy"
-          initial={{ scale: 1.1 }}
-          whileInView={{ scale: 1 }}
+        <motion.div
+          initial={{ clipPath: "inset(0 0 100% 0)" }}
+          whileInView={{ clipPath: "inset(0 0 0% 0)" }}
           viewport={{ once: true }}
-          transition={{ duration: 1.8, ease: HIGHLAND_EASE }}
-        />
+          transition={{ duration: 1.1, delay: index * 0.15, ease: HIGHLAND_EASE }}
+          className="absolute inset-0"
+        >
+          <motion.img
+            src={data.image}
+            alt={data.title}
+            className="w-full h-full object-cover"
+            loading="lazy"
+            initial={{ scale: 1.18 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 2, delay: index * 0.15 + 0.1, ease: HIGHLAND_EASE }}
+          />
+        </motion.div>
         {/* Cinematic overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
         <div className={`absolute inset-0 mix-blend-multiply opacity-20 ${
