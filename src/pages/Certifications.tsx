@@ -4,6 +4,7 @@ import {
   ArrowRight, Phone, Shield, Award, FileCheck, BadgeCheck, CheckCircle,
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain,
 } from "lucide-react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -115,6 +116,12 @@ const warrantyTiers = [
 const Certifications = () => {
   return (
     <>
+      <SEOHead
+        title="Certifications & Credentials | Licensed, Certified, Warranty-Backed"
+        description="Highlander's certifications explained — CertainTeed Master Shingle Applicator, Licensed NC General Contractor, full insurance, and manufacturer-backed warranties."
+        path="/certifications"
+        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Certifications", url: "/certifications" }])}
+      />
       <Header />
       <main>
         {/* ── HERO ── */}

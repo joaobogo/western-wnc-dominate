@@ -5,6 +5,7 @@ import {
   Star, Quote, ArrowRight, Phone, CheckCircle, MessageSquare,
   Hammer, Clock, Heart, Shield, Users, ThumbsUp, Award,
 } from "lucide-react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -165,6 +166,12 @@ const ReviewsPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Reviews & Reputation | What Clients Say About Highlander"
+        description="Read verified reviews from Highlander Roofing & Construction clients across Western North Carolina. 4.9★ average rating from 150+ reviews."
+        path="/reviews"
+        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Reviews", url: "/reviews" }])}
+      />
       <Header />
       <main>
         {/* ── HERO ── */}
