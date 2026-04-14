@@ -32,13 +32,17 @@ const InspectionForm = () => {
             <div className="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-5">
               <CheckCircle className="w-7 h-7 text-primary" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-section-foreground mb-3">We've Received Your Request</h2>
-            <p className="text-dark-section-foreground/60 font-body mb-2">
-              A project advisor will reach out within 24 hours to discuss your goals and schedule a site visit.
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-section-foreground mb-3">Your Consultation Request Is In.</h2>
+            <p className="text-dark-section-foreground/60 font-body mb-4 leading-relaxed">
+              One of our project advisors — not a call center — will personally review your details and reach out within 24 hours to discuss your property, your goals, and the best path forward.
             </p>
-            <p className="text-dark-section-foreground/40 text-sm font-body">
-              Need to talk sooner?{" "}
+            <p className="text-dark-section-foreground/40 text-sm font-body mb-1">
+              You'll hear from someone who knows Western NC roofing and construction firsthand.
+            </p>
+            <p className="text-dark-section-foreground/30 text-xs font-body mt-4">
+              Can't wait?{" "}
               <a href="tel:8283979211" className="text-[hsl(var(--highland-gold))] font-semibold hover:underline">(828) 397-9211</a>
+              {" "}— we answer our own phone.
             </p>
           </motion.div>
         </div>
