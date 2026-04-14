@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield, Award, FileCheck, BadgeCheck, Handshake } from "lucide-react";
+import { BlueprintGrid } from "@/components/motion/BackgroundTexture";
 
 const certifications = [
   { icon: Award, label: "CertainTeed", detail: "Master Shingle Applicator" },
@@ -18,6 +19,7 @@ const processPoints = [
 const TrustAndProof = () => {
   return (
     <section className="section-padding bg-secondary/30 relative overflow-hidden">
+      <BlueprintGrid variant="light" opacity={0.018} animated={false} />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-px bg-[hsl(var(--highland-gold)/0.25)]" />
 
       <div className="container-tight">
