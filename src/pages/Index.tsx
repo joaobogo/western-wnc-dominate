@@ -34,8 +34,8 @@ const Index = () => {
         {/* 3. SELF-IDENTIFY — Roofing vs Construction */}
         <DualPathway />
 
-        {/* 4. VISUAL PROOF — Project showcase */}
-        <BeforeAfterGallery />
+        {/* 4. VISUAL PROOF — Featured projects */}
+        <FeaturedProjects />
 
         {/* 5. HOW WE WORK — Process = professionalism */}
         <OurProcess />
