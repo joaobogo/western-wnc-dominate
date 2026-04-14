@@ -14,11 +14,12 @@ const roofingLinks = [
 ];
 
 const constructionLinks = [
-  { label: "Additions & Renovations", href: "/services/additions-renovations" },
-  { label: "Decks & Outdoor Living", href: "/services/decks-outdoor-living" },
-  { label: "Siding & Exteriors", href: "/services/siding-exteriors" },
-  { label: "Windows & Doors", href: "/services/windows-doors" },
-  { label: "Commercial Build-Outs", href: "/services/commercial-build-outs" },
+  { label: "Home Additions", href: "/construction/additions" },
+  { label: "Renovations", href: "/construction/renovations" },
+  { label: "Siding & Exteriors", href: "/construction/exterior" },
+  { label: "Outdoor Living", href: "/construction/outdoor-living" },
+  { label: "Custom Projects", href: "/construction/custom" },
+  { label: "Construction Division", href: "/construction" },
 ];
 
 const resourceLinks = [

@@ -25,11 +25,11 @@ const roofingServices: ServiceItem[] = [
 ];
 
 const constructionServices: ServiceItem[] = [
-  { icon: Droplets, title: "Gutter Systems", outcome: "High-capacity seamless gutters and leaf guard systems engineered for WNC's 60+ inches of annual rainfall.", href: "/gutters", division: "roofing" },
-  { icon: TreePine, title: "Outdoor Living", outcome: "Custom decks, covered porches, and pergolas designed to frame mountain views and withstand year-round exposure.", href: "/outdoor-living", division: "construction" },
-  { icon: HardHat, title: "Renovations & Additions", outcome: "Structural additions, interior remodels, and complete home transformations — licensed GC oversight on every project.", href: "/construction-services", division: "construction" },
-  { icon: Wrench, title: "Siding & Exterior", outcome: "Fiber cement, engineered wood, and board-and-batten siding installed to protect and elevate your home's curb appeal.", href: "/siding", division: "construction" },
-  { icon: Home, title: "Maintenance Programs", outcome: "Scheduled inspections and preventative care that extend roof life and eliminate costly surprises before they happen.", href: "/commercial-maintenance", division: "roofing" },
+  { icon: HardHat, title: "Home Additions", outcome: "Structural additions and new living spaces — engineered for mountain terrain, permitted and built under licensed GC oversight.", href: "/construction/additions", division: "construction" },
+  { icon: Hammer, title: "Renovations", outcome: "Kitchens, bathrooms, and full interior remodels — same disciplined process and warranty protection as every roof we install.", href: "/construction/renovations", division: "construction" },
+  { icon: Wrench, title: "Siding & Exterior", outcome: "Fiber cement, engineered wood, and board-and-batten siding installed to protect and elevate your home's curb appeal.", href: "/construction/exterior", division: "construction" },
+  { icon: TreePine, title: "Outdoor Living", outcome: "Custom decks, covered porches, and pergolas designed to frame mountain views and withstand year-round exposure.", href: "/construction/outdoor-living", division: "construction" },
+  { icon: Home, title: "Custom Projects", outcome: "Unique builds, design-build partnerships, and complete property transformations — from concept through final walkthrough.", href: "/construction/custom", division: "construction" },
 ];
 
 const containerVariants = {

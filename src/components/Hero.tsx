@@ -116,7 +116,7 @@ const Hero = () => {
               transition={{ duration: 0.9, delay: 0.5, ease: HIGHLAND_EASE }}
               className="text-[2.5rem] leading-[1.02] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground md:leading-[1.04] tracking-[-0.02em]"
             >
-              Not Just Another Roofer.
+              Your Roof. Your Renovation.
             </motion.h1>
           </div>
           <div className="overflow-hidden mb-7 md:mb-12">
@@ -126,7 +126,7 @@ const Hero = () => {
               transition={{ duration: 0.9, delay: 0.65, ease: HIGHLAND_EASE }}
               className="text-[2.5rem] leading-[1.02] md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem] font-heading font-bold text-primary-foreground md:leading-[1.04] tracking-[-0.02em]"
             >
-              Not Just Another Contractor.
+              One Company. One Standard.
             </motion.h1>
           </div>
 
@@ -137,8 +137,8 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 1 }}
             className="text-[15px] md:text-lg text-primary-foreground/50 max-w-lg mb-9 md:mb-12 leading-[1.65] font-body"
           >
-            500+ roofs across Western NC. Licensed General Contractor. CertainTeed Master Applicator.
-            One company for your roof, your renovation, and your peace of mind.
+            500+ projects across Western NC. CertainTeed Master Applicator. Licensed General Contractor.
+            From standing seam metal roofs to full home additions — mountain-grade craftsmanship, every time.
           </motion.p>
 
           {/* CTA Group — mobile: full-width stacked, min 48px touch targets */}
