@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Shield, Clock, Phone, Award, MapPin } from "lucide-react";
+import { ScrollReveal } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
+import GoldLine from "@/components/motion/GoldLine";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const InspectionForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -13,7 +19,6 @@ const InspectionForm = () => {
     timeline: "",
     details: "",
   });
-  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,11 +32,17 @@ const InspectionForm = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: HIGHLAND_EASE }}
             className="p-10 md:p-14"
           >
-            <div className="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-5">
+            <motion.div
+              className="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-5"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 300 }}
+            >
               <CheckCircle className="w-7 h-7 text-primary" />
-            </div>
+            </motion.div>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-section-foreground mb-3">Your Consultation Request Is In.</h2>
             <p className="text-dark-section-foreground/60 font-body mb-4 leading-relaxed">
               One of our project advisors — not a call center — will personally review your details and reach out within 24 hours to discuss your property, your goals, and the best path forward.
@@ -50,75 +61,80 @@ const InspectionForm = () => {
     );
   }
 
-  const inputClasses = (field: string) =>
-    `w-full px-4 py-3.5 rounded-sm bg-[hsl(var(--dark-section))] border text-dark-section-foreground text-sm font-body placeholder:text-dark-section-foreground/25 focus:outline-none transition-all duration-300 ${
-      focusedField === field
-        ? "border-[hsl(var(--highland-gold)/0.5)] ring-1 ring-[hsl(var(--highland-gold)/0.15)]"
-        : "border-dark-section-foreground/10"
-    }`;
+  const inputClasses = "w-full px-4 py-3.5 rounded-sm text-dark-section-foreground text-sm font-body placeholder:text-dark-section-foreground/25 field-premium-dark";
 
   const labelClasses = "block text-[10px] font-semibold text-dark-section-foreground/50 mb-2 font-body uppercase tracking-[0.12em]";
 
   return (
-    <section className="section-dark tartan-dark relative overflow-hidden" id="request-inspection">
+    <section className="section-dark tartan-dark relative overflow-hidden interaction-quote" id="request-inspection">
       {/* Subtle gold accent line at top */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.2)] to-transparent" />
+      <GoldLine width="100%" centered delay={0} duration={1.2} className="absolute top-0 left-0 right-0 z-10" />
 
       <div className="section-padding">
         <div className="container-tight">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
 
             {/* Left — editorial trust content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="lg:col-span-2"
-            >
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] mb-4 block">
-                Start Your Project
-              </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark-section-foreground mb-5 leading-[1.15]">
-                Let's Talk About<br /> Your Project.
-              </h2>
-              <p className="text-dark-section-foreground/50 font-body text-sm leading-relaxed mb-8">
-                This isn't a generic contact form — it's the start of a real project conversation.
-                Share a few details about your property and what you're looking to accomplish. A local
-                Highlander advisor will review everything and follow up personally to discuss scope,
-                materials, timing, and next steps.
-              </p>
+            <div className="lg:col-span-2">
+              <ScrollReveal variant="fade">
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] mb-4 block">
+                  Start Your Project
+                </span>
+              </ScrollReveal>
+              <HeadingReveal delay={0.1}>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark-section-foreground mb-5 leading-[1.15]">
+                  Let's Talk About<br /> Your Project.
+                </h2>
+              </HeadingReveal>
+              <ScrollReveal variant="rise-subtle" delay={0.25}>
+                <p className="text-dark-section-foreground/50 font-body text-sm leading-relaxed mb-8">
+                  This isn't a generic contact form — it's the start of a real project conversation.
+                  Share a few details about your property and what you're looking to accomplish. A local
+                  Highlander advisor will review everything and follow up personally to discuss scope,
+                  materials, timing, and next steps.
+                </p>
+              </ScrollReveal>
               <div className="space-y-5">
                 {[
                   { icon: Clock, text: "Personal response within 24 hours — not an auto-reply" },
                   { icon: MapPin, text: "We serve every community in Western North Carolina" },
                   { icon: Award, text: "CertainTeed Master Shingle Applicator certified" },
                   { icon: Shield, text: "Fully licensed, insured & warranty-backed" },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-3">
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.text}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + i * 0.08, duration: 0.4, ease: HIGHLAND_EASE }}
+                    className="flex items-center gap-3 badge-trust"
+                  >
                     <div className="w-8 h-8 rounded-sm bg-dark-section-foreground/5 flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
                     </div>
                     <span className="text-dark-section-foreground/45 text-sm font-body">{item.text}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
               {/* Phone callout */}
-              <div className="mt-8 pt-8 border-t border-dark-section-foreground/8">
-                <p className="text-dark-section-foreground/30 text-xs font-body mb-2">Prefer to talk?</p>
-                <a href="tel:8283979211" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--highland-gold))] transition-colors">
-                  <Phone className="w-4 h-4" />
-                  (828) 397-9211
-                </a>
-              </div>
-            </motion.div>
+              <ScrollReveal variant="fade" delay={0.5}>
+                <div className="mt-8 pt-8 border-t border-dark-section-foreground/8">
+                  <p className="text-dark-section-foreground/30 text-xs font-body mb-2">Prefer to talk?</p>
+                  <a href="tel:8283979211" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--highland-gold))] transition-colors">
+                    <Phone className="w-4 h-4" />
+                    (828) 397-9211
+                  </a>
+                </div>
+              </ScrollReveal>
+            </div>
 
             {/* Right — the form */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.12 }}
+              transition={{ delay: 0.12, duration: 0.6, ease: HIGHLAND_EASE }}
               className="lg:col-span-3"
             >
               <form onSubmit={handleSubmit} className="bg-dark-section-foreground/[0.03] border border-dark-section-foreground/8 rounded-sm p-6 md:p-8 lg:p-10">
@@ -131,9 +147,7 @@ const InspectionForm = () => {
                       id="name" type="text" required maxLength={100}
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      onFocus={() => setFocusedField("name")}
-                      onBlur={() => setFocusedField(null)}
-                      className={inputClasses("name")}
+                      className={inputClasses}
                       placeholder="First & last name"
                     />
                     <p className="text-dark-section-foreground/15 text-[10px] font-body mt-1.5">So we know who we're speaking with.</p>
@@ -144,9 +158,7 @@ const InspectionForm = () => {
                       id="phone" type="tel" required maxLength={20}
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      onFocus={() => setFocusedField("phone")}
-                      onBlur={() => setFocusedField(null)}
-                      className={inputClasses("phone")}
+                      className={inputClasses}
                       placeholder="(828) 555-1234"
                     />
                     <p className="text-dark-section-foreground/15 text-[10px] font-body mt-1.5">We'll call — never text spam.</p>
@@ -162,9 +174,7 @@ const InspectionForm = () => {
                     id="email" type="email" maxLength={255}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    onFocus={() => setFocusedField("email")}
-                    onBlur={() => setFocusedField(null)}
-                    className={inputClasses("email")}
+                    className={inputClasses}
                     placeholder="you@email.com"
                   />
                 </div>
@@ -176,9 +186,7 @@ const InspectionForm = () => {
                     <select
                       id="town" required value={formData.town}
                       onChange={(e) => setFormData({ ...formData, town: e.target.value })}
-                      onFocus={() => setFocusedField("town")}
-                      onBlur={() => setFocusedField(null)}
-                      className={inputClasses("town")}
+                      className={inputClasses}
                     >
                       <option value="">Select your town</option>
                       <option value="highlands">Highlands</option>
@@ -196,9 +204,7 @@ const InspectionForm = () => {
                     <select
                       id="projectType" required value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      onFocus={() => setFocusedField("projectType")}
-                      onBlur={() => setFocusedField(null)}
-                      className={inputClasses("projectType")}
+                      className={inputClasses}
                     >
                       <option value="">What are you planning?</option>
                       <optgroup label="Roofing">
@@ -231,9 +237,7 @@ const InspectionForm = () => {
                   <select
                     id="timeline" value={formData.timeline}
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                    onFocus={() => setFocusedField("timeline")}
-                    onBlur={() => setFocusedField(null)}
-                    className={inputClasses("timeline")}
+                    className={inputClasses}
                   >
                     <option value="">When are you looking to start?</option>
                     <option value="urgent">As soon as possible</option>
@@ -253,9 +257,7 @@ const InspectionForm = () => {
                     id="details" rows={3} maxLength={1000}
                     value={formData.details}
                     onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                    onFocus={() => setFocusedField("details")}
-                    onBlur={() => setFocusedField(null)}
-                    className={`${inputClasses("details")} resize-none`}
+                    className={`${inputClasses} resize-none`}
                     placeholder="Age of roof, property access details, specific concerns, or anything you'd want us to know before calling…"
                   />
                 </div>
@@ -263,11 +265,10 @@ const InspectionForm = () => {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full cta-gradient text-accent-foreground font-heading font-bold text-base py-4 rounded-sm flex items-center justify-center gap-2.5 hover:opacity-90 transition-opacity relative overflow-hidden group tracking-wide"
+                  className="w-full cta-gradient text-accent-foreground font-heading font-bold text-base py-4 rounded-sm flex items-center justify-center gap-2.5 btn-primary-interactive tracking-wide"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Start a Project Conversation</span>
-                  <ArrowRight className="w-4 h-4 relative" />
+                  <ArrowRight className="w-4 h-4 relative btn-arrow-icon" />
                 </button>
 
                 {/* Bottom microcopy */}

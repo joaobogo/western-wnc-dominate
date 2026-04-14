@@ -1,7 +1,12 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Calendar, Ruler } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
+import { ScrollReveal } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 /* ──────────────────────────────────────
    BEFORE/AFTER SLIDER
@@ -24,6 +29,7 @@ export const BeforeAfterSlider = ({
   aspectRatio = "4/3",
 }: BeforeAfterSliderProps) => {
   const [position, setPosition] = useState(50);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
@@ -32,7 +38,8 @@ export const BeforeAfterSlider = ({
     const rect = containerRef.current.getBoundingClientRect();
     const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
     setPosition((x / rect.width) * 100);
-  }, []);
+    if (!hasInteracted) setHasInteracted(true);
+  }, [hasInteracted]);
 
   const handleMouseDown = () => { isDragging.current = true; };
   const handleMouseUp = () => { isDragging.current = false; };
@@ -75,8 +82,8 @@ export const BeforeAfterSlider = ({
         style={{ left: `${position}%`, transform: "translateX(-50%)" }}
       >
         <div className="w-0.5 h-full bg-white/90 shadow-[0_0_8px_rgba(0,0,0,0.3)]" />
-        {/* Handle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center">
+        {/* Handle — with attention pulse on first view */}
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center transition-shadow ${!hasInteracted ? "animate-ba-pulse" : ""}`}>
           <div className="flex items-center gap-0.5">
             <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-r-[5px] border-transparent border-r-[hsl(var(--heritage-charcoal))]" />
             <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-l-[5px] border-transparent border-l-[hsl(var(--heritage-charcoal))]" />
@@ -84,17 +91,29 @@ export const BeforeAfterSlider = ({
         </div>
       </div>
 
-      {/* Labels */}
-      <div className="absolute top-4 left-4 z-20">
+      {/* Labels — staggered fade in */}
+      <motion.div
+        className="absolute top-4 left-4 z-20"
+        initial={{ opacity: 0, x: -8 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.4 }}
+      >
         <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-white bg-[hsl(var(--heritage-charcoal)/0.7)] backdrop-blur-sm px-3 py-1.5 rounded-sm">
           {beforeLabel}
         </span>
-      </div>
-      <div className="absolute top-4 right-4 z-20">
+      </motion.div>
+      <motion.div
+        className="absolute top-4 right-4 z-20"
+        initial={{ opacity: 0, x: 8 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.4 }}
+      >
         <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-white bg-primary/80 backdrop-blur-sm px-3 py-1.5 rounded-sm">
           {afterLabel}
         </span>
-      </div>
+      </motion.div>
     </div>
   );
 };
@@ -131,56 +150,52 @@ export const BeforeAfterShowcase = ({
   highlanderDifference,
   projectSlug,
 }: BeforeAfterShowcaseProps) => (
-  <motion.div
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6 }}
-    className="card-premium overflow-hidden"
-  >
-    <BeforeAfterSlider
-      before={before}
-      after={after}
-      beforeLabel={beforeLabel}
-      afterLabel={afterLabel}
-    />
-    <div className="p-6 md:p-8">
-      <div className="flex items-center gap-3 mb-3">
-        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/10 text-primary">
-          {category}
-        </span>
-        <span className="text-muted-foreground text-xs font-body flex items-center gap-1">
-          <MapPin className="w-3 h-3" /> {location}
-        </span>
-      </div>
-      <h3 className="font-heading font-bold text-xl text-foreground mb-4">{title}</h3>
+  <ScrollReveal variant="rise">
+    <div className="card-premium overflow-hidden testimonial-hover">
+      <BeforeAfterSlider
+        before={before}
+        after={after}
+        beforeLabel={beforeLabel}
+        afterLabel={afterLabel}
+      />
+      <div className="p-6 md:p-8">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/10 text-primary">
+            {category}
+          </span>
+          <span className="text-muted-foreground text-xs font-body flex items-center gap-1">
+            <MapPin className="w-3 h-3" /> {location}
+          </span>
+        </div>
+        <h3 className="font-heading font-bold text-xl text-foreground mb-4">{title}</h3>
 
-      <div className="space-y-4 mb-6">
-        <div>
-          <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">What Changed</h4>
-          <p className="text-muted-foreground text-sm leading-relaxed">{whatChanged}</p>
+        <div className="space-y-4 mb-6">
+          <div>
+            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">What Changed</h4>
+            <p className="text-muted-foreground text-sm leading-relaxed">{whatChanged}</p>
+          </div>
+          <div>
+            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">Why It Mattered</h4>
+            <p className="text-muted-foreground text-sm leading-relaxed">{whyItMattered}</p>
+          </div>
+          <div>
+            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">The Highlander Difference</h4>
+            <p className="text-muted-foreground text-sm leading-relaxed">{highlanderDifference}</p>
+          </div>
         </div>
-        <div>
-          <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">Why It Mattered</h4>
-          <p className="text-muted-foreground text-sm leading-relaxed">{whyItMattered}</p>
-        </div>
-        <div>
-          <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">The Highlander Difference</h4>
-          <p className="text-muted-foreground text-sm leading-relaxed">{highlanderDifference}</p>
-        </div>
-      </div>
 
-      {projectSlug && (
-        <Link
-          to={`/projects/${projectSlug}`}
-          className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-        >
-          View Full Project Story
-          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-        </Link>
-      )}
+        {projectSlug && (
+          <Link
+            to={`/projects/${projectSlug}`}
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors link-draw"
+          >
+            View Full Project Story
+            <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
+          </Link>
+        )}
+      </div>
     </div>
-  </motion.div>
+  </ScrollReveal>
 );
 
 /* ──────────────────────────────────────
@@ -214,17 +229,20 @@ export const BeforeAfterGrid = ({
   subheading,
 }: BeforeAfterGridProps) => (
   <div>
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-12 md:mb-14"
-    >
-      <span className="eyebrow mb-3 block">{eyebrow}</span>
-      <h2 className="section-heading mb-4">{heading}</h2>
+    <div className="text-center mb-12 md:mb-14">
+      <ScrollReveal variant="fade">
+        <span className="eyebrow mb-3 block">{eyebrow}</span>
+      </ScrollReveal>
+      <HeadingReveal>
+        <h2 className="section-heading mb-4">{heading}</h2>
+      </HeadingReveal>
       <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
-      {subheading && <p className="text-muted-foreground max-w-2xl mx-auto">{subheading}</p>}
-    </motion.div>
+      {subheading && (
+        <ScrollReveal variant="rise-subtle" delay={0.2}>
+          <p className="text-muted-foreground max-w-2xl mx-auto">{subheading}</p>
+        </ScrollReveal>
+      )}
+    </div>
     <div className="grid md:grid-cols-2 gap-6">
       {items.map((item) => (
         <BeforeAfterShowcase key={item.title} {...item} />
@@ -255,22 +273,19 @@ export const CompactBeforeAfter = ({
   title,
   result,
 }: CompactBeforeAfterProps) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="card-premium overflow-hidden"
-  >
-    <BeforeAfterSlider
-      before={before}
-      after={after}
-      beforeLabel={beforeLabel}
-      afterLabel={afterLabel}
-      aspectRatio="16/9"
-    />
-    <div className="p-4 md:p-5">
-      <h4 className="font-heading font-semibold text-foreground mb-1">{title}</h4>
-      <p className="text-muted-foreground text-sm">{result}</p>
+  <ScrollReveal variant="scale">
+    <div className="card-premium overflow-hidden">
+      <BeforeAfterSlider
+        before={before}
+        after={after}
+        beforeLabel={beforeLabel}
+        afterLabel={afterLabel}
+        aspectRatio="16/9"
+      />
+      <div className="p-4 md:p-5">
+        <h4 className="font-heading font-semibold text-foreground mb-1">{title}</h4>
+        <p className="text-muted-foreground text-sm">{result}</p>
+      </div>
     </div>
-  </motion.div>
+  </ScrollReveal>
 );

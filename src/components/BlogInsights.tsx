@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Clock } from "lucide-react";
 import { blogPosts } from "@/data/blogs";
 import { useState } from "react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
 
 const categoryMap: Record<string, string> = {
   Cost: "Homeowner Guidance",
@@ -37,6 +39,9 @@ const categoryAccent: Record<string, string> = {
   "Western NC News": "bg-secondary text-muted-foreground",
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+
 const BlogInsights = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
@@ -56,37 +61,38 @@ const BlogInsights = () => {
   if (!featured) return null;
 
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background interaction-editorial">
       <div className="container-tight">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10"
-        >
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div>
-            <span className="eyebrow mb-3 block">News & Insights</span>
-            <h2 className="section-heading">
-              Insights for Mountain<br className="hidden md:block" /> Property Owners.
-            </h2>
+            <ScrollReveal variant="fade">
+              <span className="eyebrow mb-3 block">News & Insights</span>
+            </ScrollReveal>
+            <HeadingReveal delay={0.1}>
+              <h2 className="section-heading">
+                Insights for Mountain<br className="hidden md:block" /> Property Owners.
+              </h2>
+            </HeadingReveal>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {editorialCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className={`text-[11px] font-body font-semibold uppercase tracking-[0.1em] px-3.5 py-1.5 rounded-sm transition-all duration-200 ${
-                  activeFilter === cat
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </motion.div>
+          <ScrollReveal variant="rise-subtle" delay={0.2}>
+            <div className="flex flex-wrap gap-2">
+              {editorialCategories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveFilter(cat)}
+                  className={`text-[11px] font-body font-semibold uppercase tracking-[0.1em] px-3.5 py-1.5 rounded-sm btn-ghost-interactive ${
+                    activeFilter === cat
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
 
         {/* Editorial grid */}
         <div className="grid lg:grid-cols-5 gap-5">
@@ -95,13 +101,14 @@ const BlogInsights = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: HIGHLAND_EASE }}
             className="lg:col-span-3"
           >
             <Link
               to={`/blog/${featured.slug}`}
-              className="group relative block bg-card border border-border rounded-sm overflow-hidden hover:border-primary/20 hover:shadow-md transition-all duration-300 h-full"
+              className="group relative block card-premium tartan-hover h-full p-0"
             >
-              <div className="p-7 md:p-9 flex flex-col h-full">
+              <div className="p-7 md:p-9 flex flex-col h-full relative z-10">
                 <div className="flex items-center gap-3 mb-5">
                   <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.12em] px-2.5 py-1 rounded-sm ${categoryAccent[featured.editorialCategory] || categoryAccent["Western NC News"]}`}>
                     {featured.editorialCategory}
@@ -125,7 +132,7 @@ const BlogInsights = () => {
                     {featured.readTime} read
                   </div>
                   <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm font-body group-hover:gap-2.5 transition-all">
-                    Read Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    Read Article <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
                   </span>
                 </div>
               </div>
@@ -139,13 +146,13 @@ const BlogInsights = () => {
                 initial={{ opacity: 0, x: 16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
+                transition={{ delay: i * 0.06, duration: 0.4, ease: HIGHLAND_EASE }}
               >
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="group flex gap-4 p-4 md:p-5 bg-card border border-border rounded-sm hover:border-primary/15 hover:shadow-sm transition-all duration-300"
+                  className="group flex gap-4 p-4 md:p-5 card-premium tartan-hover"
                 >
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0 relative z-10">
                     <span className={`inline-block text-[9px] font-body font-semibold uppercase tracking-[0.12em] px-2 py-0.5 rounded-sm mb-2.5 ${categoryAccent[post.editorialCategory] || categoryAccent["Western NC News"]}`}>
                       {post.editorialCategory}
                     </span>
@@ -158,7 +165,7 @@ const BlogInsights = () => {
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                  <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center flex-shrink-0 self-center opacity-0 group-hover:opacity-100 transition-all duration-300 relative z-10">
                     <ArrowRight className="w-3 h-3 text-muted-foreground" />
                   </div>
                 </Link>
@@ -167,21 +174,15 @@ const BlogInsights = () => {
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-center mt-8"
-        >
+        <ScrollReveal variant="fade" delay={0.3} className="text-center mt-8">
           <Link
             to="/blog"
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body link-draw"
           >
             View All Articles
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
           </Link>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   );

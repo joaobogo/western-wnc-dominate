@@ -361,6 +361,291 @@
   .stagger-grid > *:nth-child(6) { animation-delay: 0.3s; }
   .stagger-grid > *:nth-child(7) { animation-delay: 0.36s; }
   .stagger-grid > *:nth-child(8) { animation-delay: 0.42s; }
+
+  /* ──────────────────────────────────────
+     MICRO-INTERACTION SYSTEM
+     Premium tactile feedback & division-aware
+     ────────────────────────────────────── */
+
+  /* === BUTTON INTERACTIONS === */
+  /* Primary CTA — shimmer + tactile press */
+  .btn-primary-interactive {
+    @apply relative overflow-hidden;
+    transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s, box-shadow 0.3s;
+  }
+  .btn-primary-interactive:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 24px -4px hsl(var(--highland-gold) / 0.25);
+  }
+  .btn-primary-interactive:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px -2px hsl(var(--highland-gold) / 0.2);
+  }
+  .btn-primary-interactive::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 30%, hsl(0 0% 100% / 0.12) 50%, transparent 70%);
+    transform: translateX(-150%);
+    transition: transform 0.7s ease;
+    pointer-events: none;
+  }
+  .btn-primary-interactive:hover::before {
+    transform: translateX(150%);
+  }
+
+  /* Secondary/Ghost — subtle fill reveal */
+  .btn-ghost-interactive {
+    transition: background-color 0.25s, border-color 0.25s, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s;
+  }
+  .btn-ghost-interactive:hover {
+    transform: scale(1.02);
+  }
+  .btn-ghost-interactive:active {
+    transform: scale(0.98);
+  }
+
+  /* Arrow icons inside CTAs — translate on hover */
+  .btn-arrow-icon {
+    @apply transition-transform duration-200;
+  }
+  .group:hover .btn-arrow-icon,
+  *:hover > .btn-arrow-icon {
+    transform: translateX(4px);
+  }
+
+  /* === LINK INTERACTIONS === */
+  /* Underline draw from left — for inline links */
+  .link-draw {
+    @apply relative inline-block;
+  }
+  .link-draw::after {
+    content: '';
+    @apply absolute left-0 bottom-0 h-[1px] w-full;
+    background: hsl(var(--highland-gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-draw:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* === IMAGE INTERACTIONS === */
+  /* Controlled zoom — within overflow-hidden container */
+  .img-zoom {
+    @apply transition-transform duration-700;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .img-zoom,
+  *:hover > .img-zoom {
+    transform: scale(1.03);
+  }
+
+  /* === FORM FIELD INTERACTIONS === */
+  /* Premium focus state — gold accent with glow */
+  .field-premium {
+    @apply transition-all duration-300;
+    border: 1px solid hsl(var(--border));
+    background: transparent;
+  }
+  .field-premium:focus {
+    border-color: hsl(var(--highland-gold) / 0.5);
+    box-shadow:
+      0 0 0 3px hsl(var(--highland-gold) / 0.08),
+      0 1px 2px hsl(var(--heritage-charcoal) / 0.04);
+    outline: none;
+  }
+  .field-premium::placeholder {
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .field-premium:focus::placeholder {
+    opacity: 0.4;
+    transform: translateX(4px);
+  }
+
+  /* Dark form variant */
+  .field-premium-dark {
+    @apply transition-all duration-300;
+    border: 1px solid hsl(var(--dark-section-foreground) / 0.1);
+    background: hsl(var(--dark-section));
+  }
+  .field-premium-dark:focus {
+    border-color: hsl(var(--highland-gold) / 0.5);
+    box-shadow:
+      0 0 0 3px hsl(var(--highland-gold) / 0.06),
+      0 1px 2px hsl(var(--heritage-charcoal) / 0.08);
+    outline: none;
+  }
+
+  /* Floating label effect (for enhanced forms) */
+  .field-label-float {
+    @apply transition-all duration-200;
+    transform-origin: left;
+  }
+  .field-label-float.active {
+    transform: translateY(-2px) scale(0.92);
+    color: hsl(var(--highland-gold));
+  }
+
+  /* === DROPDOWN INTERACTIONS === */
+  .dropdown-premium {
+    @apply transition-all duration-200;
+    transform-origin: top center;
+  }
+  .dropdown-premium[data-state="open"] {
+    animation: dropdownIn 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .dropdown-premium[data-state="closed"] {
+    animation: dropdownOut 0.15s ease-in;
+  }
+
+  /* Dropdown item hover — gold left accent draw */
+  .dropdown-item-premium {
+    @apply relative transition-colors duration-150;
+  }
+  .dropdown-item-premium::before {
+    content: '';
+    @apply absolute left-0 top-0 w-[2px] h-0;
+    background: hsl(var(--highland-gold));
+    transition: height 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .dropdown-item-premium:hover::before {
+    height: 100%;
+  }
+
+  /* === ACCORDION INTERACTIONS === */
+  .accordion-premium {
+    @apply transition-all duration-300;
+  }
+  .accordion-premium[data-state="open"] {
+    border-color: hsl(var(--highland-gold) / 0.15);
+    box-shadow: 0 4px 16px -4px hsl(var(--heritage-charcoal) / 0.04);
+  }
+  /* Smooth icon rotation */
+  .accordion-chevron {
+    @apply transition-transform duration-300;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-state="open"] > .accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* === TAB INTERACTIONS === */
+  .tab-premium {
+    @apply relative transition-all duration-200;
+  }
+  .tab-premium::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-[2px];
+    background: hsl(var(--highland-gold));
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tab-premium[data-state="active"]::after {
+    transform: scaleX(1);
+  }
+  .tab-premium:hover:not([data-state="active"])::after {
+    transform: scaleX(0.5);
+    opacity: 0.3;
+  }
+
+  /* === DIVISION-SPECIFIC INTERACTION ACCENTS === */
+
+  /* Roofing context — heritage green undertones */
+  .interaction-roofing .card-premium:hover::after {
+    background: hsl(var(--heritage-green));
+  }
+  .interaction-roofing .link-draw::after {
+    background: hsl(var(--heritage-green));
+  }
+
+  /* Construction context — gold undertones */
+  .interaction-construction .card-premium:hover::after {
+    background: hsl(var(--highland-gold));
+  }
+  .interaction-construction .link-draw::after {
+    background: hsl(var(--highland-gold));
+  }
+
+  /* Editorial context — muted, slower transitions */
+  .interaction-editorial .card-lift:hover {
+    transform: translateY(-2px);
+  }
+  .interaction-editorial .img-zoom:hover {
+    transform: scale(1.02);
+  }
+
+  /* Quote flow context — heightened trust signals */
+  .interaction-quote .field-premium:focus {
+    box-shadow:
+      0 0 0 3px hsl(var(--highland-gold) / 0.12),
+      0 2px 4px hsl(var(--heritage-charcoal) / 0.06);
+  }
+  .interaction-quote .btn-primary-interactive:hover {
+    box-shadow: 0 8px 32px -4px hsl(var(--highland-gold) / 0.3);
+  }
+
+  /* === TRUST BADGE INTERACTIONS === */
+  .badge-trust {
+    @apply transition-all duration-300;
+  }
+  .badge-trust:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px -3px hsl(var(--heritage-charcoal) / 0.06);
+  }
+
+  /* === PROOF ELEMENT HOVER SYSTEM === */
+  /* Project cards — reveal outcome text on hover */
+  .proof-card-outcome {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
+    opacity: 0;
+  }
+  .group:hover .proof-card-outcome {
+    max-height: 120px;
+    opacity: 1;
+  }
+
+  /* Before/after handle pulse — first-view attention */
+  .ba-handle-pulse {
+    animation: baPulse 2s ease-in-out 1;
+  }
+
+  /* Testimonial card — subtle border glow on hover */
+  .testimonial-hover {
+    @apply transition-all duration-300;
+  }
+  .testimonial-hover:hover {
+    border-color: hsl(var(--highland-gold) / 0.2);
+    box-shadow: 0 0 0 1px hsl(var(--highland-gold) / 0.06),
+                0 8px 24px -8px hsl(var(--heritage-charcoal) / 0.06);
+  }
+
+  /* Process step connector pulse */
+  .process-connector {
+    @apply relative;
+  }
+  .process-connector::after {
+    content: '';
+    @apply absolute left-1/2 -translate-x-1/2 top-full w-px;
+    height: 0;
+    background: linear-gradient(to bottom, hsl(var(--highland-gold) / 0.3), transparent);
+    transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .process-connector.active::after {
+    height: 2rem;
+  }
+
+  /* Team card — photo emphasis on hover */
+  .team-card-photo {
+    @apply transition-transform duration-500;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .team-card-photo {
+    transform: scale(1.05);
+  }
 }
 
 @layer utilities {
@@ -411,5 +696,21 @@
   @keyframes drawLine {
     from { width: 0; }
     to { width: 100%; }
+  }
+
+  /* Dropdown enter/exit */
+  @keyframes dropdownIn {
+    from { opacity: 0; transform: translateY(6px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes dropdownOut {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(4px) scale(0.98); }
+  }
+
+  /* Before/after handle attention pulse */
+  @keyframes baPulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--highland-gold) / 0.4); }
+    50% { box-shadow: 0 0 0 8px hsl(var(--highland-gold) / 0); }
   }
 }
