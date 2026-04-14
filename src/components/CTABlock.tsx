@@ -88,7 +88,7 @@ const CTABlock = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.5, ease: HIGHLAND_EASE }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 pt-8 border-t border-dark-section-foreground/6">
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 pt-8 border-t border-dark-section-foreground/6"
             >
               {[
                 { icon: Shield, text: "Licensed & Insured" },
