@@ -20,6 +20,7 @@ import OurProcess from "@/components/OurProcess";
 import BuiltForWNC from "@/components/BuiltForWNC";
 import BlogInsights from "@/components/BlogInsights";
 import MeetTheTeam from "@/components/MeetTheTeam";
+import SilentObjections from "@/components/SilentObjections";
 
 const Index = () => {
   return (
@@ -47,6 +48,9 @@ const Index = () => {
 
         {/* 7. SOCIAL PROOF — Reviews close the trust gap */}
         <Reviews />
+
+        {/* 8. OBJECTION HANDLING — Answer silent concerns */}
+        <SilentObjections />
 
         {/* 9. TRUST & PROOF — Credentials + reviews + warranty */}
         <TrustAndProof />
