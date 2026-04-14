@@ -7,7 +7,8 @@ import {
   BadgeCheck, Layers, Mountain, Sparkles
 } from "lucide-react";
 import Header from "@/components/Header";
-import SEOHead, { serviceSchema, breadcrumbSchema } from "@/components/SEOHead";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
