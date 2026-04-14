@@ -4,7 +4,7 @@ Updated: now
 # Project Memory
 
 ## Core
-- Visuals: Deep forest green, charcoal, warm white, muted gold, slate, and restrained tartan accents. Playfair Display (headings), DM Sans (body).
+- Visuals: Deep forest green, charcoal, warm white, muted gold, slate, and restrained tartan accents. Cormorant Garamond (headings), DM Sans (body).
 - UX/UI: Cinematic framer-motion animations. Mobile-first. No traditional scroll indicators in Hero.
 - Voice: "High Authority, Low Fluff". Focus on local mountain climate expertise & 24h response. No generic marketing phrases.
 - CTAs: Premium language only. No "free inspection/estimate", "get started", "book now", "call now". See cta-config.ts.
@@ -16,6 +16,7 @@ Updated: now
 ## Memories
 - [Design Philosophy](mem://style/design-philosophy) — Highland Forge visual philosophy: palette, tartan DNA, motion, spatial rhythm
 - [Visual Identity](mem://style/visual-identity) — Brand colors, fonts, and hero section styling for Mountain Authority aesthetic
+- [Component Language](mem://style/component-language) — Premium component library: PremiumCard, ServicePreview, TrustBlock, StatBar, ImageFrame, QuoteModule, TestimonialCard, Button variants
 - [Motion Design](mem://style/motion-design) — Framer-motion cinematic animations and scroll indicator constraints
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
