@@ -1055,4 +1055,126 @@
     33% { transform: translateY(-8px) rotate(0.5deg); }
     66% { transform: translateY(4px) rotate(-0.3deg); }
   }
+
+  /* ──────────────────────────────────────
+     PHASE 12: PREMIUM MICRO-DETAILS
+     Handcrafted polish layer
+     ────────────────────────────────────── */
+
+  /* Section title line-draw accent — gold underline reveals on scroll */
+  .heading-line-draw {
+    position: relative;
+    display: inline-block;
+  }
+  .heading-line-draw::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 1.5px;
+    width: 0;
+    background: linear-gradient(90deg, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0.2));
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .heading-line-draw.visible::after {
+    width: 48px;
+  }
+
+  /* Premium focus ring — replaces browser default */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--highland-gold) / 0.3),
+                0 0 0 4px hsl(var(--highland-gold) / 0.08);
+    border-radius: 2px;
+  }
+
+  /* Image soft edge highlight — subtle inner glow */
+  .img-edge-glow {
+    position: relative;
+  }
+  .img-edge-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 30px 0 hsl(var(--hero-overlay) / 0.15);
+    pointer-events: none;
+  }
+
+  /* Hover geometry — subtle corner brackets on cards */
+  .hover-brackets {
+    position: relative;
+  }
+  .hover-brackets::before,
+  .hover-brackets::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: hsl(var(--highland-gold) / 0);
+    border-style: solid;
+    border-width: 0;
+    transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .hover-brackets::before {
+    top: -1px;
+    left: -1px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
+  .hover-brackets::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+  }
+  .hover-brackets:hover::before,
+  .hover-brackets:hover::after {
+    border-color: hsl(var(--highland-gold) / 0.25);
+  }
+
+  /* Controlled CTA glow pulse — ambient attention */
+  .cta-ambient-glow {
+    animation: ctaAmbientPulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes ctaAmbientPulse {
+    0%, 100% { box-shadow: 0 4px 16px -4px hsl(var(--highland-gold) / 0.25); }
+    50% { box-shadow: 0 6px 24px -4px hsl(var(--highland-gold) / 0.35); }
+  }
+
+  /* Tactile form field response — subtle background shift */
+  .field-tactile {
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .field-tactile:focus {
+    background-color: hsl(var(--card));
+    border-color: hsl(var(--highland-gold) / 0.4);
+    box-shadow: 0 0 0 3px hsl(var(--highland-gold) / 0.06);
+  }
+
+  /* Elegant hover geometry for team/service cards */
+  .card-craft {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-craft::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0));
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-craft:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px -12px hsl(var(--heritage-charcoal) / 0.08);
+  }
+  .card-craft:hover::before {
+    transform: scaleX(1);
+  }
 }
