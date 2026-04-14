@@ -237,6 +237,16 @@ const RooflineSVG = ({ className = "" }: { className?: string }) => (
 const RoofingDivision = () => {
   return (
     <>
+      <SEOHead
+        title="Roofing Services | Expert Roof Replacement, Repair & Storm Damage in Western NC"
+        description="Premium roofing in Western North Carolina. Shingle, metal & cedar roofing, storm damage, commercial systems. CertainTeed Master Applicator. Free assessment."
+        path="/roofing"
+        jsonLd={[
+          serviceSchema({ name: "Roofing Services", description: "Expert residential and commercial roofing across Western North Carolina.", url: "/roofing" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}

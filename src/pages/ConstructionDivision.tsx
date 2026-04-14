@@ -8,6 +8,7 @@ import {
   Wrench, MessageSquare, CalendarCheck, Sparkles
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -85,6 +86,16 @@ const faqs = [
 const ConstructionDivision = () => {
   return (
     <>
+      <SEOHead
+        title="Construction Services | Additions, Renovations & Outdoor Living in Western NC"
+        description="Premium construction in Western North Carolina. Home additions, renovations, outdoor living, structural upgrades, and custom projects. Licensed general contractor."
+        path="/construction"
+        jsonLd={[
+          serviceSchema({ name: "Construction Services", description: "Home additions, renovations, outdoor living, and custom construction across Western NC.", url: "/construction" }),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }]),
+          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
+        ]}
+      />
       <Header />
       <main>
         {/* ─── HERO ─── */}
