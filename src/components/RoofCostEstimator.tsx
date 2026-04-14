@@ -98,7 +98,7 @@ const RoofCostEstimator = () => {
       <div className="container-tight max-w-2xl">
         <div className="text-center mb-8">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block">Free Tool</span>
+            <span className="eyebrow mb-3 block">Planning Tool</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
@@ -273,7 +273,7 @@ const RoofCostEstimator = () => {
                       <div>
                         <h4 className="font-heading font-semibold text-foreground text-sm mb-1">Want an Exact, Written Quote?</h4>
                         <p className="text-muted-foreground text-[13px] font-body leading-relaxed">
-                          Schedule a free on-site assessment. We'll walk your property, document conditions, and deliver a detailed proposal with line-item pricing within 24 hours.
+                          Schedule an on-site assessment. We'll walk your property, document conditions, and deliver a detailed proposal with line-item pricing within 24 hours.
                         </p>
                       </div>
                     </div>
@@ -281,7 +281,7 @@ const RoofCostEstimator = () => {
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a href="/request-inspection" className="cta-gradient text-accent-foreground font-heading font-bold px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 btn-primary-interactive">
-                      <span className="relative z-10">Schedule Free Assessment</span>
+                      <span className="relative z-10">Request a Consultation</span>
                       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
                     </a>
                     <a href="tel:8283979211" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">

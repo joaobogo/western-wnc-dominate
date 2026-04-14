@@ -41,7 +41,7 @@ const Index = () => {
       {showLoader && <SiteLoader onComplete={handleLoaderComplete} />}
       <SEOHead
         title="Highlander Roofing & Construction | Expert Roofing & Building in Western NC"
-        description="Premium roofing and construction in Western North Carolina. 500+ projects, 4.9★ rated. Shingle, metal & cedar roofing plus additions, renovations & outdoor living. Free assessment."
+        description="Premium roofing and construction in Western North Carolina. 500+ projects, 4.9★ rated. Shingle, metal & cedar roofing plus additions, renovations & outdoor living. Request a consultation."
         path="/"
         jsonLd={[localBusinessSchema(), organizationSchema()]}
       />
