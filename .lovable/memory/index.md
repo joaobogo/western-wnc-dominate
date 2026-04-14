@@ -25,3 +25,4 @@
 - [Social Proof Grid](mem://features/social-proof-grid) — Instagram 3x3 grid layout strategy
 - [Data Privacy & Security](mem://security/data-privacy) — RLS, signed URLs, and rate limiting rules
 - [Roofing Division Blueprint](mem://features/roofing-division-blueprint) — Full roofing ecosystem: 7 pages, shared components (Process, Trust, FAQs, CTAs, Materials), usage patterns
+- [Construction Division Blueprint](mem://features/construction-division-blueprint) — Full construction ecosystem: 5 pages, shared components (Process, Trust, FAQs, WNC Relevance, Services, CTAs), 8-pillar objection-mapped trust system, 32+ FAQs, page-by-page layouts
