@@ -115,13 +115,25 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         <div className={`relative overflow-hidden ${
           isHero ? "aspect-[4/3] md:aspect-[16/10]" : isWide ? "aspect-[21/9]" : "aspect-[4/3]"
         }`}>
-          <motion.img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-[1.2s]"
-            style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
-            loading="lazy"
-          />
+          {/* Curtain reveal */}
+          <motion.div
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            whileInView={{ clipPath: "inset(0 0 0% 0)" }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 1.1, delay: index * 0.05, ease: HIGHLAND_EASE }}
+            className="absolute inset-0"
+          >
+            <motion.img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              initial={{ scale: 1.15 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, delay: index * 0.05 + 0.15, ease: HIGHLAND_EASE }}
+            />
+          </motion.div>
 
           {/* Cinematic overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.08)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.95)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />

@@ -167,15 +167,26 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
       className="h-full"
     >
       <Link to={service.href} className="group relative block h-full bg-card border border-border rounded-none overflow-hidden spotlight-hover hover:border-[hsl(var(--highland-gold)/0.18)] transition-all duration-500">
-        {/* Image strip */}
+        {/* Image strip — curtain reveal */}
         <div className="relative h-36 md:h-40 overflow-hidden">
-          <motion.img
-            src={service.image}
-            alt={service.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
-            loading="lazy"
-          />
+          <motion.div
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            whileInView={{ clipPath: "inset(0 0 0% 0)" }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.9, delay: index * 0.04, ease: HIGHLAND_EASE }}
+            className="absolute inset-0"
+          >
+            <motion.img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              initial={{ scale: 1.12 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.6, delay: index * 0.04 + 0.1, ease: HIGHLAND_EASE }}
+            />
+          </motion.div>
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
           <div className={`absolute inset-0 mix-blend-multiply opacity-10 ${
