@@ -350,7 +350,13 @@
      EYEBROW / LABEL STYLE
      ────────────────────────────────────── */
   .eyebrow {
-    @apply text-[10px] font-semibold uppercase tracking-[0.28em] text-accent;
+    @apply text-eyebrow-size font-semibold uppercase text-accent;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  /* Section label — slightly larger than eyebrow, used above section headings */
+  .section-label {
+    @apply text-label uppercase text-accent;
     font-family: 'DM Sans', system-ui, sans-serif;
   }
 
@@ -358,7 +364,55 @@
      SECTION HEADING PATTERN
      ────────────────────────────────────── */
   .section-heading {
-    @apply text-3xl md:text-4xl lg:text-[3.25rem] font-heading font-bold text-foreground leading-[1.06] tracking-tight;
+    @apply text-display font-heading font-bold text-foreground;
+  }
+
+  .section-subheading {
+    @apply text-heading-lg font-heading font-bold text-foreground;
+  }
+
+  /* ──────────────────────────────────────
+     STAT / NUMBER TYPOGRAPHY
+     Large impact numbers for proof strips
+     ────────────────────────────────────── */
+  .stat-number {
+    @apply text-stat font-heading font-bold text-foreground;
+  }
+  .stat-number-sm {
+    @apply text-stat-sm font-heading font-bold text-foreground;
+  }
+  .stat-label {
+    @apply text-body-sm font-body font-medium uppercase tracking-widest text-muted-foreground;
+  }
+
+  /* ──────────────────────────────────────
+     CTA TYPOGRAPHY
+     Strong, compact, confident
+     ────────────────────────────────────── */
+  .cta-text {
+    @apply text-body-sm font-body font-semibold uppercase tracking-[0.08em];
+  }
+  .cta-text-lg {
+    @apply text-body font-body font-semibold uppercase tracking-[0.06em];
+  }
+
+  /* ──────────────────────────────────────
+     CONTENT TYPOGRAPHY HELPERS
+     ────────────────────────────────────── */
+  /* Pull quote — editorial emphasis */
+  .pull-quote {
+    @apply font-heading text-heading-lg font-medium italic text-foreground;
+    max-width: 48ch;
+  }
+
+  /* Caption — image labels, fine print */
+  .caption {
+    @apply text-body-sm font-body text-muted-foreground;
+  }
+
+  /* Kicker — small bold label inline with content */
+  .kicker {
+    @apply text-body-sm font-body font-bold text-foreground uppercase tracking-wider;
   }
 
   /* ──────────────────────────────────────
