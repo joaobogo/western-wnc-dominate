@@ -67,7 +67,7 @@ const questions: { step: QuizStep; question: string; options: { label: string; s
 
 const getResult = (score: number) => {
   if (score <= 4) return { level: "good", icon: CheckCircle, color: "text-primary", bg: "bg-primary/10", title: "Your Roof Looks Good.", description: "Based on your answers, your roof appears to be in reasonable condition. We recommend an annual professional inspection to keep it that way — especially given WNC's challenging mountain climate.", cta: "Schedule Preventative Inspection" };
-  if (score <= 9) return { level: "caution", icon: AlertTriangle, color: "text-accent", bg: "bg-accent/10", title: "Your Roof May Need Attention.", description: "Your answers suggest potential issues that should be evaluated by a professional. Early intervention often prevents costly full replacements — catching problems now could save thousands.", cta: "Schedule Free Inspection" };
+  if (score <= 9) return { level: "caution", icon: AlertTriangle, color: "text-accent", bg: "bg-accent/10", title: "Your Roof May Need Attention.", description: "Your answers suggest potential issues that should be evaluated by a professional. Early intervention often prevents costly full replacements — catching problems now could save thousands.", cta: "Schedule a Professional Inspection" };
   return { level: "urgent", icon: XCircle, color: "text-destructive", bg: "bg-destructive/10", title: "Your Roof Likely Needs Replacement.", description: "Based on your answers, your roof shows signs of significant wear or damage. We strongly recommend a professional assessment to evaluate your options before conditions worsen.", cta: "Request Priority Inspection" };
 };
 
@@ -122,7 +122,7 @@ const RoofAssessmentQuiz = () => {
       <div className="container-tight max-w-2xl">
         <div className="text-center mb-8">
           <ScrollReveal variant="fade">
-            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] mb-3 block">Free Assessment Tool</span>
+            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] mb-3 block">Roof Assessment Tool</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-section-foreground mb-3">

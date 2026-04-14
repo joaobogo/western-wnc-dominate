@@ -107,7 +107,7 @@ const StickyMobileCTA = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-heading font-semibold text-foreground">Request Consultation</p>
-                          <p className="text-[10px] text-muted-foreground font-body">Free project assessment</p>
+                          <p className="text-[10px] text-muted-foreground font-body">No-obligation consultation</p>
                         </div>
                         <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-muted-foreground btn-arrow-icon" />
                       </Link>
