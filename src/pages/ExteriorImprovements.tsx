@@ -71,7 +71,7 @@ const faqs = [
 ];
 
 /* ═══════════════════════════════════════════ */
-const Renovations = () => {
+const ExteriorImprovements = () => {
   return (
     <>
       <Header />
@@ -95,7 +95,7 @@ const Renovations = () => {
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Construction</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Renovations & Exterior</span>
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Exterior Improvements</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -367,4 +367,4 @@ const Renovations = () => {
   );
 };
 
-export default Renovations;
+export default ExteriorImprovements;
