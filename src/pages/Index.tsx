@@ -21,6 +21,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
 import SiteLoader from "@/components/SiteLoader";
+import ProofMoment from "@/components/ProofMoment";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -59,11 +60,17 @@ const Index = () => {
         <ValueProposition />
         <SilentObjections />
 
+        {/* ── Proof: Credentials after value proposition ── */}
+        <ProofMoment variant="credentials" />
+
         <SectionDivider variant="heritage-bar" />
 
         {/* ═══ ACT V: FEATURED SERVICES ═══ */}
         <ServicesGrid />
         <NotJustRoofing />
+
+        {/* ── Proof: Social after services ── */}
+        <ProofMoment variant="social" />
 
         {/* ═══ ACT VI: PROCESS ═══ */}
         <OurProcess />
@@ -72,6 +79,9 @@ const Index = () => {
 
         {/* ═══ ACT VII: FEATURED PROJECTS ═══ */}
         <FeaturedProjects />
+
+        {/* ── Proof: Stats after seeing the work ── */}
+        <ProofMoment variant="stats" />
 
         {/* ═══ ACT VIII: TEAM PREVIEW ═══ */}
         <MeetTheTeam />
@@ -84,6 +94,9 @@ const Index = () => {
         {/* ═══ ACT X: TRUST ═══ */}
         <HomepageTrust />
         <TownGrid />
+
+        {/* ── Proof: Warranty before final CTA ── */}
+        <ProofMoment variant="warranty" />
 
         {/* ═══ ACT XI: CLOSING CTA ═══ */}
         <InspectionForm />
