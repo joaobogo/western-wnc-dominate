@@ -66,11 +66,11 @@ const CTABlock = () => {
               <ScrollReveal variant="rise" delay={0.4}>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 md:mb-16">
                   <Link
-                    to="/request-inspection"
+                    to="/consultation"
                     className="group cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] md:text-[15px] px-10 md:px-14 py-[15px] md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide min-h-[54px]"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                    <span className="relative">Request Your Consultation</span>
+                    <span className="relative">Start Your Project</span>
                     <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a
@@ -155,14 +155,14 @@ const CTABlock = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/50 text-[13px] font-body text-center md:text-left">
               <span className="text-primary-foreground/80 font-heading font-bold">500+ projects.</span>{" "}
-              <span className="text-primary-foreground/80 font-heading font-bold">4.7★ rated.</span>{" "}
+              <span className="text-primary-foreground/80 font-heading font-bold">4.9★ rated.</span>{" "}
               Serving Western NC since 2017.
             </p>
             <Link
-              to="/request-inspection"
+              to="/consultation"
               className="group inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
             >
-              Get Started
+              Start Your Project
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

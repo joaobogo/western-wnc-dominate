@@ -34,8 +34,9 @@ const companyLinks = [
   { label: "Our Story", href: "/about" },
   { label: "Our Process", href: "/about" },
   { label: "Project Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
-  { label: "Request a Consultation", href: "/request-inspection" },
+  { label: "Request a Consultation", href: "/consultation" },
 ];
 
 const areaLinks = [
@@ -90,7 +91,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                to="/request-inspection"
+                to="/consultation"
                 className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

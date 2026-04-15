@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import DualPathway from "@/components/DualPathway";
-import NotJustRoofing from "@/components/NotJustRoofing";
+
 import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
 import OurProcess from "@/components/OurProcess";
@@ -68,7 +68,6 @@ const Index = () => {
 
         {/* ═══ ACT V: SERVICES — What we do ═══ */}
         <ServicesGrid />
-        <NotJustRoofing />
 
         <ProofMoment variant="social" />
 

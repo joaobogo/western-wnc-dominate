@@ -9,7 +9,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const stats = [
   { value: "500+", label: "Projects", detail: "Across 8 WNC Counties" },
   { value: "40+", label: "Years Combined", detail: "Roofing & Construction" },
-  { value: "4.7★", label: "Google Rating", detail: "122+ Verified Reviews" },
+  { value: "4.9★", label: "Google Rating", detail: "150+ Verified Reviews" },
 ];
 
 const credentials = [
