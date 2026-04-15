@@ -226,6 +226,9 @@ const ConstructionDivision = () => {
           </div>
         </section>
 
+        {/* ═══ DISCIPLINES BRIDGE — Roofing → Construction skill transfer ═══ */}
+        <DisciplinesBridge />
+
         {/* ═══ SERVICE GRID — Using shared component with detailed variant ═══ */}
         <ConstructionServiceGrid
           variant="detailed"
