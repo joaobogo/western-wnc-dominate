@@ -67,6 +67,8 @@ const ProofMoment = ({ variant, className = "" }: ProofMomentProps) => {
       transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
       className={`w-full py-5 md:py-6 bg-secondary/50 border-y border-border/50 relative ${className}`}
     >
+      {/* Subtle gold accent line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[1px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />
       <div className="container-tight">
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 md:gap-x-10">
           {items.map((item, i) => (
