@@ -21,7 +21,7 @@ const TownGrid = () => {
       <div className="container-tight">
         <div className="text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Where We Work</span>
+            <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Service Territory</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">

@@ -26,7 +26,7 @@ const BuiltForWNC = () => {
           {/* Left column — editorial intro (sticky on desktop) */}
           <div className="lg:col-span-2 lg:sticky lg:top-28">
             <ScrollReveal variant="fade">
-              <span className="eyebrow mb-3 block">Local Expertise</span>
+              <span className="eyebrow mb-3 block">Mountain-Specific Standards</span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="section-heading mb-5">
