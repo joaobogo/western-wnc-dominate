@@ -348,7 +348,7 @@ export default function ChatbotWidget() {
             <div className="bg-primary text-primary-foreground px-4 py-3 flex items-center justify-between shrink-0">
               <div>
                 <p className="font-heading text-sm font-semibold tracking-wide">Highlander Project Assistant</p>
-                <p className="text-[11px] opacity-60 font-body">Your guide to roofing & construction in WNC</p>
+                <p className="text-[11px] opacity-60 font-body">Roofing & Construction — your guide in WNC</p>
               </div>
               <button onClick={() => setIsOpen(false)} className="p-1.5 rounded-sm hover:bg-white/10 transition-colors" aria-label="Close chat">
                 <X className="w-4 h-4" />
@@ -362,7 +362,7 @@ export default function ChatbotWidget() {
                 <div className="space-y-3">
                   <div className="bg-secondary rounded-sm rounded-bl-none p-3 max-w-[85%]">
                     <p className="text-sm text-foreground font-body leading-relaxed">
-                      Welcome to Highlander. I'm here to help you think through your roofing or construction project — whether you're ready to start or just exploring. What's on your mind?
+                      Welcome to Highlander. Whether you're thinking about a <strong>roofing</strong> project or a <strong>construction</strong> project — additions, renovations, outdoor spaces, or something custom — I'm here to help you find the right path. What's on your mind?
                     </p>
                   </div>
                   {showStarters && (
