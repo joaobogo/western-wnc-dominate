@@ -15,6 +15,15 @@ export interface DivisionTheme {
   borderHoverClass: string;
   checkClass: string; // check icon color
   heroAccentLine: string; // gradient for top accent
+  /** Section texture class */
+  textureBg: string;
+  textureDark: string;
+  /** Card system class */
+  cardClass: string;
+  /** Form field focus class */
+  fieldClass: string;
+  /** Tone descriptor for UI copy */
+  tone: string;
 }
 
 export const divisionThemes: Record<Division, DivisionTheme> = {
@@ -31,6 +40,11 @@ export const divisionThemes: Record<Division, DivisionTheme> = {
     borderHoverClass: "hover:border-primary/30",
     checkClass: "text-primary",
     heroAccentLine: "bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.5)] to-[hsl(var(--heritage-green)/0)]",
+    textureBg: "tartan-bg",
+    textureDark: "tartan-dark",
+    cardClass: "card-premium",
+    fieldClass: "field-premium",
+    tone: "performance-driven",
   },
   construction: {
     division: "construction",
@@ -45,6 +59,11 @@ export const divisionThemes: Record<Division, DivisionTheme> = {
     borderHoverClass: "hover:border-[hsl(var(--highland-gold)/0.3)]",
     checkClass: "text-[hsl(var(--highland-gold))]",
     heroAccentLine: "bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.5)] to-[hsl(var(--highland-gold)/0)]",
+    textureBg: "blueprint-bg",
+    textureDark: "blueprint-dark",
+    cardClass: "card-construction",
+    fieldClass: "field-construction",
+    tone: "architectural",
   },
 };
 
