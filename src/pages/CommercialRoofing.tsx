@@ -162,27 +162,66 @@ const CommercialRoofing = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Professional credential badges — unique to Commercial */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.5 }}
+                className="mt-10 flex flex-wrap gap-2.5"
+              >
+                {["Licensed GC", "Fully Insured", "Multi-Property Programs", "24hr Emergency", "Maintenance Contracts"].map((badge) => (
+                  <span key={badge} className="px-3 py-1.5 text-[10px] uppercase tracking-wider font-body font-semibold text-primary-foreground/60 border border-white/12 rounded-sm bg-white/5">
+                    {badge}
+                  </span>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* ─── OPENING STATEMENT ─── */}
+        {/* ─── OPENING STATEMENT — Corporate split with stat sidebar ─── */}
         <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center">
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                A commercial roof is infrastructure. It should be managed like one — with planning, precision, and a partner who understands operations.
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
-                Highlander provides commercial roofing services for property owners, managers, and businesses across Western North Carolina. From new construction and full replacements to ongoing maintenance programs, we approach every commercial project with the coordination, documentation, and operational awareness that commercial clients require.
-              </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-            </motion.div>
+          <div className="container-tight max-w-5xl">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="lg:col-span-8"
+              >
+                <div className="w-12 h-[2px] mb-8 bg-primary/30" />
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6">
+                  A commercial roof is infrastructure. It should be managed like one — with planning, precision, and a partner who understands operations.
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body">
+                  Highlander provides commercial roofing services for property owners, managers, and businesses across Western North Carolina. From new construction and full replacements to ongoing maintenance programs, we approach every commercial project with the coordination, documentation, and operational awareness that commercial clients require.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+                className="lg:col-span-4 bg-secondary border border-border rounded-sm p-6 space-y-5"
+              >
+                {[
+                  { value: "15+", label: "Years Commercial Experience" },
+                  { value: "Multi", label: "Property Programs Active" },
+                  { value: "24hr", label: "Emergency Response" },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <div className="text-2xl font-heading font-bold text-primary">{stat.value}</div>
+                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-body mt-0.5">{stat.label}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* ─── CAPABILITIES ─── */}
+        {/* ─── CAPABILITIES — Structured grid with bottom accent ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">

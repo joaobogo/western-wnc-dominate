@@ -141,22 +141,49 @@ const SpecialtyRoofing = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Material preview thumbnails — unique to Specialty */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.5 }}
+                className="mt-10 flex gap-2"
+              >
+                {[cedar001, metal009, cedar002].map((img, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 1.7 + i * 0.15 }}
+                    className="w-16 h-16 md:w-20 md:h-20 rounded-sm overflow-hidden border border-white/15"
+                  >
+                    <img src={img} alt="" className="w-full h-full object-cover" />
+                  </motion.div>
+                ))}
+                <Link to="/gallery" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
+                  <span className="text-[10px] text-primary-foreground/40 font-body text-center leading-tight">View<br/>Portfolio</span>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* ─── OPENING ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
+        {/* ─── OPENING — Artisan editorial with generous whitespace ─── */}
+        <section className="py-20 md:py-28 bg-background">
+          <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
+              <Gem className="w-6 h-6 text-[hsl(var(--highland-gold)/0.4)] mx-auto mb-8" />
+              <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance tracking-tight">
                 Some roofs are meant to be noticed. They deserve a team that treats every line, every material, and every detail as a reflection of the home itself.
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
                 Highlander's specialty roofing work serves homeowners, architects, and builders who demand more than standard installation. Complex rooflines, premium materials, custom metalwork, and the kind of precision that only matters when you care deeply about the outcome.
               </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
+              <div className="flex items-center justify-center gap-2 mt-10">
+                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
+                <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.15)]" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
+              </div>
             </motion.div>
           </div>
         </section>

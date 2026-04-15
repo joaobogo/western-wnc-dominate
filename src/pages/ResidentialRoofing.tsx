@@ -260,6 +260,26 @@ const ResidentialRoofing = () => {
                   (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Trust micro-stats — unique to Residential */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.6 }}
+                className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-white/10"
+              >
+                {[
+                  { value: "500+", label: "Mountain Homes Protected" },
+                  { value: "4.9★", label: "Homeowner Rating" },
+                  { value: "Top 1%", label: "National Certification" },
+                  { value: "24hr", label: "Storm Response" },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center sm:text-left">
+                    <div className="text-lg md:text-xl font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
+                    <div className="text-[10px] uppercase tracking-wider text-primary-foreground/40 font-body mt-0.5">{stat.label}</div>
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
@@ -283,28 +303,52 @@ const ResidentialRoofing = () => {
           </div>
         </section>
 
-        {/* ─── OPENING STATEMENT ─── */}
+        {/* ─── OPENING STATEMENT — Editorial left-aligned with shield accent ─── */}
         <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                A roof replacement is one of the most significant investments you'll make in your mountain home. It should be handled with the seriousness it deserves.
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                At Highlander, residential roofing isn't a side service — it's our foundation. We've built our reputation one home at a time across Western North Carolina, earning trust through transparent communication, certified craftsmanship, and roofs that perform decade after decade at elevation.
-              </p>
-              <p className="text-muted-foreground/70 text-sm leading-relaxed font-body max-w-2xl mx-auto">
-                Every residential project receives the same standard: site-specific material specification, manufacturer-certified installation, daily communication, and a warranty package you can hold in your hands.
-              </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-            </motion.div>
+          <div className="container-tight max-w-5xl">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="lg:col-span-8"
+              >
+                <div className="w-10 h-[3px] mb-8 bg-[hsl(var(--heritage-green)/0.5)]" />
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6">
+                  A roof replacement is one of the most significant investments you'll make in your mountain home. It should be handled with the seriousness it deserves.
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
+                  At Highlander, residential roofing isn't a side service — it's our foundation. We've built our reputation one home at a time across Western North Carolina, earning trust through transparent communication, certified craftsmanship, and roofs that perform decade after decade at elevation.
+                </p>
+                <p className="text-muted-foreground/70 text-sm leading-relaxed font-body">
+                  Every residential project receives the same standard: site-specific material specification, manufacturer-certified installation, daily communication, and a warranty package you can hold in your hands.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="lg:col-span-4 flex flex-col gap-5"
+              >
+                {[
+                  { icon: ShieldCheck, label: "Licensed & Fully Insured", sub: "NC General Contractor" },
+                  { icon: Award, label: "CertainTeed Master Applicator", sub: "Top 1% nationally" },
+                  { icon: Camera, label: "Documented Everything", sub: "Before, during & after" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-sm">
+                    <div className="w-9 h-9 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-4.5 h-4.5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-heading font-bold text-foreground">{item.label}</p>
+                      <p className="text-[11px] text-muted-foreground font-body">{item.sub}</p>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </section>
 
