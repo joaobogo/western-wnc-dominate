@@ -43,9 +43,9 @@ const constructionData = {
   badge: "Licensed GC",
   title: "Full-Scope Construction",
   subtitle: "Our Expertise",
-  description: "Additions, renovations, siding, and outdoor living — executed under licensed General Contractor oversight with the same documented process, in-house crews, and warranty standards we bring to every roof.",
+  description: "Additions, renovations, siding, and outdoor living — built by the same in-house crews, under the same licensed GC oversight, with the same warranty you'd get on a Highlander roof. One team. One standard.",
   stats: [
-    { value: "100%", label: "Licensed & Insured" },
+    { value: "GC", label: "Licensed Contractor" },
     { value: "8", label: "WNC Counties" },
   ],
   services: [
@@ -54,7 +54,7 @@ const constructionData = {
     { icon: PaintBucket, name: "Siding & Exteriors" },
     { icon: Ruler, name: "Structural Improvements" },
     { icon: Settings, name: "Decks & Outdoor Living" },
-    { icon: ShieldCheck, name: "Licensed GC Oversight" },
+    { icon: ShieldCheck, name: "Design-Build Projects" },
   ],
   cta: "Explore Construction Services",
   href: "/construction",
@@ -230,12 +230,12 @@ const DualPathway = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="eyebrow mb-4 block">Two Divisions. One Standard.</span>
+            <span className="eyebrow mb-4 block">Two Divisions. Equal Standards.</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-5">
-              Roofing & Construction,<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Built the Highlander Way.</span>
+              Choose Your Division.<br className="hidden md:block" />
+              <span className="text-[hsl(var(--highland-gold))]"> The Standard Stays the Same.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>

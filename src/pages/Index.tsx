@@ -24,6 +24,7 @@ import ProofMoment from "@/components/ProofMoment";
 import BuiltForWNC from "@/components/BuiltForWNC";
 import ProjectConcierge from "@/components/ProjectConcierge";
 import ProjectPathfinder from "@/components/ProjectPathfinder";
+import ConstructionAuthority from "@/components/ConstructionAuthority";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -73,6 +74,9 @@ const Index = () => {
 
         {/* ═══ ACT VI: PROJECT PATHFINDER — Interactive guide ═══ */}
         <ProjectPathfinder />
+
+        {/* ═══ ACT VI-B: CONSTRUCTION AUTHORITY — Why we build ═══ */}
+        <ConstructionAuthority />
 
         {/* ═══ ACT VII: LOCAL AUTHORITY — Built for WNC ═══ */}
         <BuiltForWNC />
