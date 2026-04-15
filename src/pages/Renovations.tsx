@@ -6,7 +6,7 @@ import {
   ChevronRight, Eye, ClipboardCheck, Users,
   Mountain, Layers, CalendarCheck, Sparkles,
   DoorOpen, Paintbrush, Wrench, Bath, UtensilsCrossed, Sofa,
-  FileCheck, Gauge, Droplets, ThermometerSun
+  FileCheck, Gauge, Droplets, ThermometerSun, TrendingUp
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
