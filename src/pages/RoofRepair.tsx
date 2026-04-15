@@ -144,22 +144,48 @@ const RoofRepair = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Response guarantee — unique to Repair */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1.5 }}
+                className="mt-10 flex items-center gap-4"
+              >
+                <div className="w-12 h-12 rounded-full border-2 border-[hsl(var(--heritage-green)/0.4)] flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-[hsl(var(--heritage-green))]" />
+                </div>
+                <div>
+                  <div className="text-sm font-heading font-bold text-primary-foreground">48-Hour Assessment Guarantee</div>
+                  <div className="text-xs text-primary-foreground/40 font-body">Same-day for emergencies. We answer our own phone.</div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* ─── OPENING STATEMENT ─── */}
+        {/* ─── OPENING STATEMENT — Clinical diagnostic style ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center">
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
+                <div className="w-16 h-px bg-border" />
+                <Search className="w-4 h-4 text-muted-foreground/40" />
+                <div className="w-16 h-px bg-border" />
+                <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
+              </div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
                 A roof leak isn't just an inconvenience — it's your home telling you something needs attention before it becomes something worse.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
                 At Highlander, we don't treat repairs as small jobs. We treat them as diagnostic opportunities — a chance to find the real cause, fix it properly, and give you an honest picture of your roof's overall condition. Every repair is documented, warrantied, and built to the same standard as our full replacements.
               </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
+              <div className="flex items-center justify-center gap-3 mt-8">
+                <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
+                <div className="w-16 h-px bg-border" />
+                <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
+              </div>
             </motion.div>
           </div>
         </section>

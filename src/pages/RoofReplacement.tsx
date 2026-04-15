@@ -203,6 +203,21 @@ const RoofReplacement = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Investment callout — unique to Replacement */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 1.5 }}
+                className="mt-10 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm max-w-md"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <DollarSign className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-xs uppercase tracking-wider text-primary-foreground/50 font-body font-semibold">Typical Investment Range</span>
+                </div>
+                <div className="text-2xl font-heading font-bold text-primary-foreground">$8,000 – $25,000+</div>
+                <p className="text-xs text-primary-foreground/40 mt-1 font-body">Based on size, materials, and complexity. Exact pricing after on-site assessment.</p>
+              </motion.div>
             </div>
           </div>
         </section>
