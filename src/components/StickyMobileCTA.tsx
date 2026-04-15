@@ -36,7 +36,7 @@ const StickyMobileCTA = () => {
               <div className="flex items-stretch">
                 {/* Primary CTA — full gold, generous touch target */}
                 <Link
-                  to="/request-inspection"
+                  to="/consultation"
                   className="flex-1 flex items-center justify-center gap-2 py-[14px] px-3 cta-gradient text-accent-foreground active:opacity-90 active:scale-[0.98] transition-all min-h-[52px]"
                 >
                   <MessageSquare className="w-4 h-4" />
@@ -99,14 +99,14 @@ const StickyMobileCTA = () => {
                     </div>
                     <div className="p-2 space-y-0.5">
                       <Link
-                        to="/request-inspection"
+                        to="/consultation"
                         className="flex items-center gap-3 px-3 py-3 rounded-none hover:bg-secondary/60 transition-all group dropdown-item-premium"
                       >
                         <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center flex-shrink-0 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
                           <FileText className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-heading font-semibold text-foreground">Request Consultation</p>
+                          <p className="text-sm font-heading font-semibold text-foreground">Start a Project</p>
                           <p className="text-[10px] text-muted-foreground font-body">No-obligation consultation</p>
                         </div>
                         <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-muted-foreground btn-arrow-icon" />
