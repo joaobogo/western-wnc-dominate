@@ -113,16 +113,13 @@ const ConstructionDivision = () => {
                 <div className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-[hsl(var(--highland-gold)/0.4)] to-transparent" />
               </motion.div>
 
-              <div className="overflow-hidden mb-2">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Build With Intention.
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden mb-8">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold tracking-tight leading-[1.05]">
-                  <span className="text-[hsl(var(--highland-gold))]">Build to Last.</span>
-                </motion.h1>
-              </div>
+              {/* Horizontal slide-in (distinct from Roofing's curtain-reveal) */}
+              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight mb-2">
+                Build With Intention.
+              </motion.h1>
+              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold tracking-tight leading-[1.05] mb-8">
+                <span className="text-[hsl(var(--highland-gold))]">Build to Last.</span>
+              </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
                 Additions, renovations, outdoor living, and custom construction for Western North Carolina homeowners who value craftsmanship, planning, and doing the project right.
