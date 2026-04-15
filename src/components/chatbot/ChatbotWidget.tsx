@@ -14,22 +14,49 @@ const getQuickStarters = (path: string) => {
     { label: "Storm Damage", message: "I think my roof has storm damage. What should I do?", icon: CloudLightning },
     { label: "Schedule Consultation", message: "I'd like to schedule a roofing consultation.", icon: Calendar },
   ];
-  if (path.includes("construction") || path.includes("addition") || path.includes("renovation")) return [
-    { label: "Home Addition", message: "I'm thinking about adding onto my home.", icon: Home },
-    { label: "Renovation", message: "I want to renovate part of my house.", icon: Hammer },
-    { label: "Schedule Consultation", message: "I'd like to discuss a construction project.", icon: Calendar },
+  // Construction-specific starters per subpage
+  if (path.includes("construction/addition")) return [
+    { label: "Plan an Addition", message: "I'm thinking about expanding my home — what does that process look like with Highlander?", icon: Home },
+    { label: "Do I Need Plans?", message: "Do I need architect drawings before talking to you about an addition?", icon: HelpCircle },
+    { label: "Start a Conversation", message: "I'd like to discuss a home addition project with your construction team.", icon: Calendar },
+  ];
+  if (path.includes("construction/renovation")) return [
+    { label: "Kitchen or Bath", message: "I'm considering a kitchen or bathroom renovation. How does Highlander handle that?", icon: Hammer },
+    { label: "Whole-Home Remodel", message: "I want to renovate multiple rooms — can you manage a larger-scope project?", icon: Home },
+    { label: "Start a Conversation", message: "I'd like to discuss a renovation project with your construction team.", icon: Calendar },
+  ];
+  if (path.includes("construction/outdoor")) return [
+    { label: "Covered Porch", message: "I'd love a covered porch or screened room. What do you recommend for mountain weather?", icon: Home },
+    { label: "Deck or Pergola", message: "I'm interested in a deck or pergola — what materials work best at elevation?", icon: Hammer },
+    { label: "Start a Conversation", message: "I'd like to discuss an outdoor living project with your construction team.", icon: Calendar },
+  ];
+  if (path.includes("construction/exterior")) return [
+    { label: "Siding Options", message: "What siding options work best in WNC weather?", icon: Hammer },
+    { label: "Windows & Doors", message: "I need new windows and doors — do you handle that?", icon: Home },
+    { label: "Start a Conversation", message: "I'd like to discuss exterior improvements with your construction team.", icon: Calendar },
+  ];
+  if (path.includes("construction/custom")) return [
+    { label: "Complex Project", message: "I have a complex or multi-phase project — can Highlander handle something like that?", icon: Hammer },
+    { label: "Design-Build", message: "Do you offer design-build services where you help develop the plans?", icon: HelpCircle },
+    { label: "Start a Conversation", message: "I'd like to discuss a custom construction project.", icon: Calendar },
+  ];
+  if (path.includes("construction")) return [
+    { label: "Home Addition", message: "I'm thinking about adding onto my home — a master suite or extra living space.", icon: Home },
+    { label: "Renovation", message: "I want to renovate part of my house — kitchen, bathroom, or a larger remodel.", icon: Hammer },
+    { label: "Outdoor Living", message: "I'd like to build a covered porch, deck, or outdoor kitchen.", icon: Home },
+    { label: "Start a Conversation", message: "I'd like to discuss a construction project with your team.", icon: Calendar },
   ];
   if (path.includes("storm")) return [
     { label: "Report Damage", message: "I think my roof has storm damage. What should I do?", icon: AlertTriangle },
     { label: "Insurance Help", message: "How does the insurance claim process work?", icon: Shield },
     { label: "Emergency", message: "I have an active roof leak from storm damage — this is urgent.", icon: CloudLightning },
   ];
-  // Default
+  // Default — equal weight for both divisions
   return [
-    { label: "Roofing", message: "I need help with my roof.", icon: Home },
-    { label: "Construction", message: "I'm interested in a construction project.", icon: Hammer },
+    { label: "Roofing", message: "I need help with my roof — repair, replacement, or inspection.", icon: Home },
+    { label: "Construction", message: "I'm interested in a construction project — addition, renovation, or outdoor space.", icon: Hammer },
     { label: "Storm Damage", message: "I think my roof has storm damage.", icon: CloudLightning },
-    { label: "Not Sure", message: "I'm not sure where to start — can you help me figure out what I need?", icon: HelpCircle },
+    { label: "Not Sure", message: "I'm not sure where to start — can you help me figure out whether I need roofing or construction?", icon: HelpCircle },
   ];
 };
 
