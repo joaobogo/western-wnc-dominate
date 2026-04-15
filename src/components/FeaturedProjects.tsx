@@ -219,7 +219,7 @@ const FeaturedProjects = () => {
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
               <p className="text-muted-foreground text-[15px] font-body max-w-md leading-relaxed">
-                Estate metal roofs at 4,000 feet. Full exterior renovations in the valley. Every project photographed, documented, and warrantied.
+                Real roofs at real elevations. Every project photographed on completion, documented, and warrantied.
               </p>
             </ScrollReveal>
           </div>

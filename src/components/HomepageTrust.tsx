@@ -67,7 +67,7 @@ const HomepageTrust = () => {
           <div className="text-center mb-14 md:mb-18">
             <ScrollReveal variant="fade">
               <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
-                Trust, Verified
+                Credentials & Record
               </span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
