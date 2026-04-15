@@ -22,6 +22,7 @@ Updated: now
 - [Construction Visual System](mem://style/construction-visual-system) — Blueprint textures, gold accents, architectural cards, and dedicated construction lead flow
 - [Page Identity System](mem://style/page-identity-system) — Per-page strategic identity: purpose, tone, visual mood, sections, proof type, CTA tone, motion speed for all header pages
 - [Page Distinctness Rule](mem://style/page-distinctness-rule) — Every page must feel personalized, visually rich, locally relevant, and distinct — no thin templates
+- [Page Differentiation Rules](mem://style/page-differentiation-rules) — Strict rules: unique hero, section sequence, card style, proof layout, CTA treatment, background, and motion per page
 - [Motion Design](mem://style/motion-design) — Framer-motion cinematic animations and scroll indicator constraints
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
