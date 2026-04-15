@@ -230,12 +230,12 @@ const DualPathway = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="eyebrow mb-4 block">Two Divisions. One Standard.</span>
+            <span className="eyebrow mb-4 block">Two Divisions. Equal Standards.</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-5">
-              Roofing & Construction,<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Built the Highlander Way.</span>
+              Choose Your Division.<br className="hidden md:block" />
+              <span className="text-[hsl(var(--highland-gold))]"> The Standard Stays the Same.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
