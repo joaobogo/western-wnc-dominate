@@ -160,6 +160,25 @@ const HomeAdditions = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Architectural scope indicator — unique to Additions */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 1.5 }}
+                className="mt-10 grid grid-cols-3 gap-3 max-w-sm"
+              >
+                {[
+                  { value: "200–2,000", unit: "sq ft", label: "Typical Addition Size" },
+                  { value: "$40K", unit: "–$300K+", label: "Investment Range" },
+                  { value: "3–6", unit: "mo", label: "Typical Timeline" },
+                ].map((item) => (
+                  <div key={item.label} className="p-3 bg-white/5 border border-white/8 rounded-sm text-center">
+                    <div className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}<span className="text-[10px] text-primary-foreground/30 ml-0.5">{item.unit}</span></div>
+                    <div className="text-[9px] text-primary-foreground/30 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>

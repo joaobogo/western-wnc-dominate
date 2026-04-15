@@ -146,22 +146,47 @@ const Renovations = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Transformation indicator — unique to Renovations */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 1.5 }}
+                className="mt-10 flex items-center gap-4"
+              >
+                <div className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
+                  <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                  <span className="text-xs font-body text-primary-foreground/40">Avg. ROI: 60–80% at resale</span>
+                </div>
+                <div className="hidden sm:flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
+                  <Eye className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                  <span className="text-xs font-body text-primary-foreground/40">Hidden damage protocol included</span>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* ─── OPENING STATEMENT ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
+        {/* ─── OPENING — Lifestyle-focused with warm visual treatment ─── */}
+        <section className="py-20 md:py-28 bg-background">
+          <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
+                <Gauge className="w-4 h-4 text-[hsl(var(--highland-gold)/0.3)]" />
+                <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
+              </div>
+              <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">
                 Renovation isn't about tearing things apart. It's the discipline of improving what exists while preserving what works — structure, character, and the investment you've already made.
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
                 Highlander approaches renovation the way we approach every project: with documented scope, defined materials, honest timelines, and the same in-house crews who build our additions and install our roofs. The result is renovation work that feels intentional — not improvised.
               </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
+              <div className="flex items-center justify-center gap-2 mt-10">
+                <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.15)]" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.2)]" />
+                <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.15)]" />
+              </div>
             </motion.div>
           </div>
         </section>

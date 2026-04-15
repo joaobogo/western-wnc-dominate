@@ -139,19 +139,29 @@ const ConstructionDivision = () => {
                 </a>
               </motion.div>
 
-              {/* Hero credential strip */}
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }} className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-10 pt-6 border-t border-white/6">
-                {[
-                  "Licensed General Contractor",
-                  "In-House Crews",
-                  "WNC Specialists",
-                  "Design-Build Capable",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.4)]" />
-                    <span className="text-primary-foreground/25 text-[11px] font-body font-medium tracking-wide">{item}</span>
-                  </div>
-                ))}
+              {/* Division scope — unique to landing */}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }} className="mt-10 pt-8 border-t border-white/6">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-6">
+                  {[
+                    { value: "4", label: "Service Categories" },
+                    { value: "In-House", label: "Crew Model" },
+                    { value: "Design-Build", label: "Capability" },
+                    { value: "WNC", label: "Exclusive Focus" },
+                  ].map((stat) => (
+                    <div key={stat.label}>
+                      <div className="text-lg font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-primary-foreground/30 font-body mt-0.5">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
+                  {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Design-Build Capable"].map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.4)]" />
+                      <span className="text-primary-foreground/25 text-[11px] font-body font-medium tracking-wide">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           </div>
