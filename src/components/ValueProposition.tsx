@@ -81,14 +81,11 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
       <div className="absolute top-0 right-0 w-6 h-6 border-t border-r border-dark-section-foreground/[0.04] pointer-events-none" />
 
       <div className="relative z-10 p-6 md:p-8">
-        {/* Icon + number row */}
+        {/* Icon */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-10 h-10 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
             <pillar.icon className="w-4.5 h-4.5 text-[hsl(var(--highland-gold)/0.5)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
           </div>
-          <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold)/0.3)]">
-            {pillar.number}
-          </span>
         </div>
 
         {/* Title */}

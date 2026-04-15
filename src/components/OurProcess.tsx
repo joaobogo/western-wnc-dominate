@@ -181,11 +181,11 @@ const OurProcess = () => {
               className="group cta-gradient text-accent-foreground font-heading font-bold text-[13px] px-10 py-4 rounded-none inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative">Start With a Conversation</span>
+              <span className="relative">Start Your Project</span>
               <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="text-[11px] text-dark-section-foreground/20 font-body mt-4">
-              Step 01 begins with a 15-minute call. No commitment required.
+              It starts with a 15-minute call. No commitment required.
             </p>
           </div>
         </motion.div>
