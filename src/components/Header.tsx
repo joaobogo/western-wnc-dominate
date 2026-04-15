@@ -63,8 +63,9 @@ const divisions: DivisionDropdown[] = [
 const secondaryLinks = [
   { label: "Projects", href: "/gallery" },
   { label: "About", href: "/about" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },
-  { label: "Service Areas", href: "/service-areas" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const dropdownItemVariants = {
@@ -300,6 +301,13 @@ const Header = () => {
               }`}
             >
               {link.label}
+              {isActive(link.href) && (
+                <motion.div
+                  layoutId="nav-active-secondary"
+                  className="absolute -bottom-px left-3 right-3 h-[2px] bg-[hsl(var(--highland-gold))]"
+                  transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
+                />
+              )}
             </Link>
           ))}
         </nav>
