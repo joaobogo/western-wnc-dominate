@@ -25,6 +25,7 @@ import {
   ConstructionFAQs,
   ConstructionProcess, compactConstructionProcess,
   ConstructionTrust,
+  DisciplinesBridge,
 } from "@/components/construction";
 
 import heroImg from "@/assets/gallery/cedar-001.jpg";
@@ -224,6 +225,9 @@ const ConstructionDivision = () => {
             </div>
           </div>
         </section>
+
+        {/* ═══ DISCIPLINES BRIDGE — Roofing → Construction skill transfer ═══ */}
+        <DisciplinesBridge />
 
         {/* ═══ SERVICE GRID — Using shared component with detailed variant ═══ */}
         <ConstructionServiceGrid
