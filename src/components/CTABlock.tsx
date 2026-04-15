@@ -125,6 +125,7 @@ const CTABlock = () => {
                   {[
                     { icon: Shield, text: "Licensed & Fully Insured" },
                     { icon: Award, text: "CertainTeed Master Applicator" },
+                    { icon: Shield, text: "Licensed General Contractor" },
                     { icon: Clock, text: "24-Hour Storm Response" },
                     { icon: Mountain, text: "8 WNC Counties" },
                   ].map((item, i) => (
@@ -156,15 +157,25 @@ const CTABlock = () => {
             <p className="text-primary-foreground/50 text-[13px] font-body text-center md:text-left">
               <span className="text-primary-foreground/80 font-heading font-bold">500+ projects.</span>{" "}
               <span className="text-primary-foreground/80 font-heading font-bold">4.9★ rated.</span>{" "}
-              Serving Western NC since 2017.
+              Roofing & Construction across Western NC since 2017.
             </p>
-            <Link
-              to="/consultation"
-              className="group inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
-            >
-              Start Your Project
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                to="/consultation"
+                className="group inline-flex items-center gap-2 text-primary-foreground/50 font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-primary-foreground/70 transition-colors"
+              >
+                Roofing
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <div className="w-px h-3 bg-primary-foreground/10" />
+              <Link
+                to="/construction/consultation"
+                className="group inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
+              >
+                Construction
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
         {/* Gold bottom line */}

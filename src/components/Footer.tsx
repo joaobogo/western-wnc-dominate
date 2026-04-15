@@ -20,6 +20,7 @@ const constructionLinks = [
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
   { label: "Custom Projects", href: "/construction/custom" },
   { label: "Construction Division", href: "/construction" },
+  { label: "Construction Consultation", href: "/construction/consultation" },
 ];
 
 const resourceLinks = [
@@ -52,6 +53,7 @@ const areaLinks = [
 
 const certifications = [
   { icon: Award, label: "CertainTeed Master Shingle Applicator" },
+  { icon: Shield, label: "Licensed General Contractor" },
   { icon: Shield, label: "Licensed & Fully Insured" },
   { icon: Clock, label: "24-Hour Emergency Response" },
 ];
@@ -95,7 +97,7 @@ const Footer = () => {
                 Let's Discuss Your Property.
               </h3>
               <p className="text-primary-foreground/50 text-[15px] font-body max-w-md leading-relaxed">
-                Whether it's a roof, a renovation, or storm damage — you'll speak with a project advisor who knows these mountains, not a call center.
+                Whether it's a roof, an addition, a renovation, or storm damage — you'll speak with a project advisor who knows these mountains, not a call center.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
