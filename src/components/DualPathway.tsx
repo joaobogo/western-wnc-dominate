@@ -40,12 +40,12 @@ const roofingData = {
 const constructionData = {
   icon: HardHat,
   label: "Construction Division",
-  badge: "Now Expanding",
+  badge: "Licensed GC",
   title: "Full-Scope Construction",
-  subtitle: "Our Evolution",
-  description: "Additions, renovations, siding, and outdoor living — executed under licensed GC oversight with the same documented process that earned our roofing reputation. One team handles everything.",
+  subtitle: "Our Expertise",
+  description: "Additions, renovations, siding, and outdoor living — executed under licensed General Contractor oversight with the same documented process, in-house crews, and warranty standards we bring to every roof.",
   stats: [
-    { value: "40+", label: "Years Combined Exp." },
+    { value: "100%", label: "Licensed & Insured" },
     { value: "8", label: "WNC Counties" },
   ],
   services: [
