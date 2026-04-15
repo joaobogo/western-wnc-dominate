@@ -93,8 +93,8 @@ const Reviews = () => {
                   ))}
                 </div>
                 <div className="h-5 w-px bg-border hidden sm:block" />
-                <span className="font-heading font-bold text-foreground text-lg">4.7</span>
-                <span className="text-muted-foreground text-xs sm:text-sm font-body">122+ verified reviews</span>
+                <span className="font-heading font-bold text-foreground text-lg">4.9</span>
+                <span className="text-muted-foreground text-xs sm:text-sm font-body">150+ verified reviews</span>
               </div>
             </div>
           </ScrollReveal>

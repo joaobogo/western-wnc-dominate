@@ -22,7 +22,7 @@ const pathways = [
     title: "Schedule a Site Visit",
     desc: "We walk your property, photograph existing conditions, and deliver a written scope with line-item pricing. No obligation.",
     action: "Request a Consultation",
-    href: "/request-inspection",
+    href: "/consultation",
     external: false,
   },
   {

@@ -117,7 +117,7 @@ const HomepageTrust = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ delay: i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
-                className="group bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
+                className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
               >
                 <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-600 z-10" />
                 <div className="w-10 h-10 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center mb-4 group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">

@@ -65,7 +65,7 @@ const ProofMoment = ({ variant, className = "" }: ProofMomentProps) => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
-      className={`w-full py-4 md:py-5 bg-secondary/40 border-y border-border/40 ${className}`}
+      className={`w-full py-5 md:py-6 bg-secondary/50 border-y border-border/50 relative ${className}`}
     >
       <div className="container-tight">
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 md:gap-x-10">
