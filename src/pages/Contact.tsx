@@ -121,76 +121,76 @@ export default function Contact() {
       />
       <Header />
       <main>
-        {/* ── HERO — Welcoming, consultative, split layout ── */}
+        {/* ── HERO — Compact utility header (unique to Contact) ── */}
         <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
-          <MountainContours variant="dark" opacity={0.04} />
-          <div className="relative z-10 pt-32 md:pt-40 pb-16 md:pb-20 px-5 md:px-8 lg:px-16">
+          {/* No MountainContours — clean, functional */}
+          <div className="relative z-10 pt-32 md:pt-36 pb-10 md:pb-14 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
-              <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
-                {/* Left: welcoming copy */}
+              {/* Single row: headline left, contact actions right */}
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
                 <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
-                  className="lg:col-span-7"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+                  className="max-w-2xl"
                 >
-                  <div className="flex items-center gap-3 mb-5">
+                  <div className="flex items-center gap-3 mb-4">
                     <Handshake className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
                     <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Concierge</span>
                   </div>
-                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[1.06] tracking-tight">
-                    Every Great Project<br />
-                    Starts with a Real<br />
-                    <span className="text-[hsl(var(--highland-gold))]">Conversation.</span>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[1.08] tracking-tight">
+                    Start the Conversation.
                   </h1>
-                  <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.55)] text-base md:text-lg leading-relaxed max-w-lg mb-8">
-                    No call centers. No automated systems. Tell us about your project below,
-                    and a Highlander project advisor — not a salesperson — will personally
-                    reach out within 24 hours.
+                  <p className="text-[hsl(var(--dark-section-foreground)/0.5)] text-sm md:text-base leading-relaxed max-w-lg">
+                    No call centers. No automated systems. A Highlander project advisor — not a salesperson — will personally reach out within 24 hours.
                   </p>
-                  {/* Quick contact */}
-                  <div className="flex flex-wrap gap-4">
-                    <a href="tel:8283979211" className="group flex items-center gap-2.5 px-5 py-3 bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.08)] rounded-sm hover:border-[hsl(var(--highland-gold)/0.2)] transition-all">
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                      <span className="text-sm font-body font-semibold text-[hsl(var(--dark-section-foreground)/0.7)]">(828) 397-9211</span>
-                    </a>
-                    <a href="mailto:info@highlanderroofing.com" className="group flex items-center gap-2.5 px-5 py-3 bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.08)] rounded-sm hover:border-[hsl(var(--highland-gold)/0.2)] transition-all">
-                      <Mail className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                      <span className="text-sm font-body font-semibold text-[hsl(var(--dark-section-foreground)/0.7)]">info@highlanderroofing.com</span>
-                    </a>
-                  </div>
                 </motion.div>
 
-                {/* Right: what to expect card */}
+                {/* Right: direct contact cluster */}
                 <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.15, ease: HIGHLAND_EASE }}
-                  className="lg:col-span-5"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.15, ease: HIGHLAND_EASE }}
+                  className="flex flex-col gap-3 lg:items-end flex-shrink-0"
                 >
-                  <div className="border border-[hsl(var(--highland-gold)/0.12)] bg-[hsl(var(--dark-section-foreground)/0.03)] p-6">
-                    <div className="flex items-center gap-3 mb-5">
-                      <MessageSquare className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                      <h3 className="text-sm font-heading font-bold text-[hsl(var(--dark-section-foreground))]">What Happens Next</h3>
+                  <a href="tel:8283979211" className="group flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.2)] hover:bg-[hsl(var(--highland-gold)/0.15)] transition-all">
+                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <div>
+                      <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">(828) 397-9211</span>
+                      <span className="text-[10px] text-[hsl(var(--dark-section-foreground)/0.4)] font-body uppercase tracking-wider">Call Direct</span>
                     </div>
-                    {[
-                      { step: "1", title: "You tell us about your project", detail: "Service type, timeline, and any details you'd like to share." },
-                      { step: "2", title: "We assign the right advisor", detail: "Roofing or construction — matched to your project type." },
-                      { step: "3", title: "Personal follow-up within 24hr", detail: "A real conversation about your property, scope, and next steps." },
-                    ].map((item, i) => (
-                      <div key={item.step} className={`flex gap-4 py-3.5 ${i < 2 ? "border-b border-[hsl(var(--dark-section-foreground)/0.06)]" : ""}`}>
-                        <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold)/0.4)] w-6 flex-shrink-0">{item.step}</span>
-                        <div>
-                          <p className="text-sm font-heading font-semibold text-[hsl(var(--dark-section-foreground)/0.8)]">{item.title}</p>
-                          <p className="text-xs text-[hsl(var(--dark-section-foreground)/0.4)] font-body mt-0.5">{item.detail}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  </a>
+                  <a href="mailto:info@highlanderroofing.com" className="flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--dark-section-foreground)/0.04)] border border-[hsl(var(--dark-section-foreground)/0.08)] hover:border-[hsl(var(--highland-gold)/0.15)] transition-all">
+                    <Mail className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                    <span className="text-sm font-body text-[hsl(var(--dark-section-foreground)/0.6)]">info@highlanderroofing.com</span>
+                  </a>
                 </motion.div>
               </div>
+
+              {/* "What Happens Next" as inline horizontal strip (not sidebar card) */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3, ease: HIGHLAND_EASE }}
+                className="mt-8 pt-6 border-t border-[hsl(var(--dark-section-foreground)/0.06)]"
+              >
+                <div className="grid sm:grid-cols-3 gap-6">
+                  {[
+                    { step: "1", title: "Tell us about your project", detail: "Service type, timeline, and details." },
+                    { step: "2", title: "We assign the right advisor", detail: "Matched to your project type." },
+                    { step: "3", title: "Personal follow-up within 24hr", detail: "A real conversation about next steps." },
+                  ].map((item) => (
+                    <div key={item.step} className="flex items-start gap-3">
+                      <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold)/0.3)] flex-shrink-0">{item.step}</span>
+                      <div>
+                        <p className="text-sm font-heading font-semibold text-[hsl(var(--dark-section-foreground)/0.7)]">{item.title}</p>
+                        <p className="text-xs text-[hsl(var(--dark-section-foreground)/0.35)] font-body mt-0.5">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
