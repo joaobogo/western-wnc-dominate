@@ -20,8 +20,8 @@ const contourPaths = [
 
 /* ─── BLUEPRINT DIMENSION MARKS ─── */
 const dimensionMarks = [
-  { x1: 340, y1: 255, x2: 1160, y2: 255, label: "62'-0\"" },
-  { x1: 400, y1: 75, x2: 400, y2: 250, label: "28'-6\"" },
+  { x1: 340, y1: 255, x2: 1160, y2: 255, label: '62\'-0"' },
+  { x1: 400, y1: 75, x2: 400, y2: 250, label: '28\'-6"' },
 ];
 
 /* ─── CROSS-HAIR SURVEY MARKS ─── */
@@ -71,14 +71,29 @@ const tartanH = [85, 125, 165, 205, 245];
 const tartanV = [420, 540, 660, 780, 900, 1020, 1080];
 
 /* ─── FLOATING PARTICLES ─── */
-const particles = Array.from({ length: 12 }, (_, i) => ({
+const particles = Array.from({ length: 14 }, (_, i) => ({
   id: i,
-  x: 100 + Math.random() * 1300,
-  y: 30 + Math.random() * 240,
-  size: 0.8 + Math.random() * 1.2,
-  delay: Math.random() * 2,
-  drift: 15 + Math.random() * 30,
+  x: 80 + Math.random() * 1340,
+  y: 20 + Math.random() * 260,
+  size: 0.6 + Math.random() * 1.0,
+  delay: Math.random() * 2.5,
+  drift: 12 + Math.random() * 35,
 }));
+
+/* ─── COMPASS ROSE — architectural precision mark ─── */
+const CompassRose = () => (
+  <motion.g
+    initial={{ opacity: 0, scale: 0.8 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ delay: 0.3, duration: 0.8, ease: HIGHLAND_EASE }}
+  >
+    <circle cx={1380} cy={60} r={16} fill="none" stroke="hsl(var(--highland-gold))" strokeOpacity={0.06} strokeWidth={0.4} />
+    <circle cx={1380} cy={60} r={8} fill="none" stroke="hsl(var(--highland-gold))" strokeOpacity={0.04} strokeWidth={0.3} />
+    <line x1={1380} y1={42} x2={1380} y2={78} stroke="hsl(var(--highland-gold))" strokeOpacity={0.08} strokeWidth={0.3} />
+    <line x1={1362} y1={60} x2={1398} y2={60} stroke="hsl(var(--highland-gold))" strokeOpacity={0.08} strokeWidth={0.3} />
+    <text x={1380} y={38} textAnchor="middle" fill="hsl(var(--highland-gold))" fillOpacity={0.06} fontSize={4} fontFamily="monospace">N</text>
+  </motion.g>
+);
 
 interface SiteLoaderProps {
   onComplete: () => void;
@@ -93,7 +108,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
   const prefersReduced = typeof window !== "undefined"
     && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
-  const totalDuration = prefersReduced ? 800 : isMobile ? 3400 : 5200;
+  const totalDuration = prefersReduced ? 800 : isMobile ? 3600 : 5600;
 
   const dismiss = useCallback(() => {
     if (phase < 4) {
@@ -119,8 +134,8 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
 
     const timers = [
       setTimeout(() => setPhase(1), 80),
-      setTimeout(() => setPhase(2), isMobile ? 1000 : 1600),
-      setTimeout(() => setPhase(3), isMobile ? 2000 : 3200),
+      setTimeout(() => setPhase(2), isMobile ? 1000 : 1800),
+      setTimeout(() => setPhase(3), isMobile ? 2200 : 3600),
       setTimeout(() => setCanSkip(true), 600),
       setTimeout(() => dismiss(), totalDuration),
     ];
@@ -165,22 +180,33 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
         <motion.div
           className="fixed inset-0 z-[60] flex items-center justify-center overflow-hidden"
           style={{ background: "hsl(var(--hero-overlay))" }}
-          exit={{ opacity: 0, scale: 1.03, y: -8 }}
-          transition={{ duration: 0.65, ease: DRAMATIC_EASE }}
+          exit={{ opacity: 0, scale: 1.02 }}
+          transition={{ duration: 0.7, ease: DRAMATIC_EASE }}
         >
           {/* Film grain */}
           <div
-            className="absolute inset-0 opacity-[0.015] pointer-events-none mix-blend-overlay"
+            className="absolute inset-0 opacity-[0.018] pointer-events-none mix-blend-overlay"
             style={{
               backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")',
             }}
           />
 
-          {/* Radial vignette */}
+          {/* Radial vignette — deeper at edges */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: "radial-gradient(ellipse 70% 60% at 50% 45%, transparent 0%, hsl(var(--hero-overlay) / 0.4) 100%)",
+              background: "radial-gradient(ellipse 65% 55% at 50% 45%, transparent 0%, hsl(var(--hero-overlay) / 0.5) 100%)",
+            }}
+          />
+
+          {/* Warm golden-hour wash — top right corner */}
+          <motion.div
+            className="absolute inset-0 pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 2 }}
+            style={{
+              background: "radial-gradient(ellipse 40% 40% at 75% 25%, hsl(var(--highland-gold) / 0.02), transparent)",
             }}
           />
 
@@ -197,21 +223,24 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                 d={d}
                 fill="none"
                 stroke="hsl(var(--highland-gold))"
-                strokeOpacity={0.04 + i * 0.015}
-                strokeWidth={0.4 + i * 0.05}
+                strokeOpacity={0.035 + i * 0.012}
+                strokeWidth={0.35 + i * 0.05}
                 strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 1 }}
                 transition={{
-                  pathLength: { duration: isMobile ? 0.7 : 1.2, delay: i * 0.12, ease: CRAFT_EASE },
-                  opacity: { duration: 0.25, delay: i * 0.08 },
+                  pathLength: { duration: isMobile ? 0.8 : 1.4, delay: i * 0.14, ease: CRAFT_EASE },
+                  opacity: { duration: 0.3, delay: i * 0.08 },
                 }}
               />
             ))}
 
+            {/* Compass rose */}
+            {phase >= 1 && !isMobile && <CompassRose />}
+
             {/* Survey crosshair marks */}
             {phase >= 1 && !isMobile && surveyMarks.map((m, i) => (
-              <motion.g key={`sv-${i}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 + i * 0.1, duration: 0.2 }}>
+              <motion.g key={`sv-${i}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 + i * 0.1, duration: 0.2 }}>
                 <circle cx={m.cx} cy={m.cy} r={m.r} fill="none" stroke="hsl(var(--primary-foreground))" strokeOpacity={0.05} strokeWidth={0.3} />
                 <line x1={m.cx - m.r - 2} y1={m.cy} x2={m.cx + m.r + 2} y2={m.cy} stroke="hsl(var(--primary-foreground))" strokeOpacity={0.04} strokeWidth={0.25} />
                 <line x1={m.cx} y1={m.cy - m.r - 2} x2={m.cx} y2={m.cy + m.r + 2} stroke="hsl(var(--primary-foreground))" strokeOpacity={0.04} strokeWidth={0.25} />
@@ -232,8 +261,8 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{
-                  duration: isMobile ? 0.3 : 0.5,
-                  delay: seg.delay * (isMobile ? 0.6 : 1),
+                  duration: isMobile ? 0.35 : 0.55,
+                  delay: seg.delay * (isMobile ? 0.65 : 1),
                   ease: HIGHLAND_EASE,
                 }}
               />
@@ -241,7 +270,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
 
             {/* Dimension annotations */}
             {phase >= 2 && !isMobile && dimensionMarks.map((dm, i) => (
-              <motion.g key={`dm-${i}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 + i * 0.15, duration: 0.4 }}>
+              <motion.g key={`dm-${i}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 + i * 0.15, duration: 0.4 }}>
                 <line x1={dm.x1} y1={dm.y1} x2={dm.x2} y2={dm.y2} stroke="hsl(var(--highland-gold))" strokeOpacity={0.06} strokeWidth={0.3} strokeDasharray="4 4" />
                 {i === 0 && (
                   <text x={(dm.x1 + dm.x2) / 2} y={dm.y1 + 12} textAnchor="middle" fill="hsl(var(--highland-gold))" fillOpacity={0.08} fontSize={6} fontFamily="monospace">{dm.label}</text>
@@ -251,7 +280,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
 
             {/* Material texture — shingle pattern hint */}
             {phase >= 2 && !isMobile && (
-              <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9, duration: 0.5 }}>
+              <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 0.5 }}>
                 {[0, 1, 2, 3, 4, 5].map((i) => (
                   <line key={`sh-${i}`}
                     x1={460 + i * 50} y1={108 + i * 6}
@@ -265,10 +294,10 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
             {phase >= 2 && (
               <motion.g
                 initial={{ opacity: 0 }}
-                animate={{ opacity: [0, isMobile ? 0.08 : 0.1, isMobile ? 0.08 : 0.1, 0] }}
+                animate={{ opacity: [0, isMobile ? 0.07 : 0.09, isMobile ? 0.07 : 0.09, 0] }}
                 transition={{
-                  duration: isMobile ? 0.8 : 1.4,
-                  delay: isMobile ? 0.5 : 0.8,
+                  duration: isMobile ? 0.9 : 1.6,
+                  delay: isMobile ? 0.5 : 0.9,
                   times: [0, 0.15, 0.65, 1],
                   ease: "easeInOut",
                 }}
@@ -281,7 +310,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                     strokeWidth={i % 2 === 0 ? 0.5 : 0.25}
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.4, delay: (isMobile ? 0.5 : 0.8) + i * 0.04 }}
+                    transition={{ duration: 0.45, delay: (isMobile ? 0.5 : 0.9) + i * 0.04 }}
                   />
                 ))}
                 {tartanV.map((x, i) => (
@@ -292,7 +321,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                     strokeWidth={i % 3 === 0 ? 0.5 : 0.25}
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.35, delay: (isMobile ? 0.55 : 0.85) + i * 0.03 }}
+                    transition={{ duration: 0.4, delay: (isMobile ? 0.55 : 0.95) + i * 0.03 }}
                   />
                 ))}
               </motion.g>
@@ -302,13 +331,13 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
             {phase >= 1 && !isMobile && particles.map((p) => (
               <motion.circle
                 key={`p-${p.id}`}
-                cx={p.x} cy={p.y} r={p.size * 0.4}
+                cx={p.x} cy={p.y} r={p.size * 0.35}
                 fill="hsl(var(--highland-gold))"
-                fillOpacity={0.06}
+                fillOpacity={0.05}
                 initial={{ opacity: 0, y: 0 }}
-                animate={{ opacity: [0, 0.08, 0.04, 0], y: -p.drift }}
+                animate={{ opacity: [0, 0.07, 0.03, 0], y: -p.drift }}
                 transition={{
-                  duration: 3,
+                  duration: 3.5,
                   delay: p.delay,
                   ease: "easeOut",
                   repeat: 0,
@@ -330,7 +359,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
                   fill="none" stroke="hsl(var(--primary-foreground))" strokeOpacity={0.3} strokeWidth={1.2}
                   strokeLinecap="round" strokeLinejoin="round"
                   initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.7, delay: 0.1, ease: HIGHLAND_EASE }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: HIGHLAND_EASE }}
                 />
               </>
             )}
@@ -341,20 +370,20 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
             {/* Top gold line — draws before brand */}
             <motion.div
               className="h-px mb-7 md:mb-9"
-              style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.45), hsl(var(--highland-gold) / 0))" }}
+              style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }}
               initial={{ width: 0, opacity: 0 }}
-              animate={phase >= 3 ? { width: isMobile ? 100 : 180, opacity: 1 } : {}}
-              transition={{ duration: 0.7, ease: CRAFT_EASE }}
+              animate={phase >= 3 ? { width: isMobile ? 100 : 200, opacity: 1 } : {}}
+              transition={{ duration: 0.8, ease: CRAFT_EASE }}
             />
 
             {/* HIGHLANDER wordmark */}
             <div className="text-center overflow-hidden">
               <motion.h2
-                className="font-heading text-[1.6rem] md:text-3xl lg:text-[2.7rem] tracking-[0.14em] md:tracking-[0.18em] uppercase leading-none"
+                className="font-heading text-[1.7rem] md:text-[2rem] lg:text-[2.8rem] tracking-[0.16em] md:tracking-[0.2em] uppercase leading-none"
                 style={{ color: "hsl(var(--primary-foreground) / 0.92)" }}
                 initial={{ y: "120%", opacity: 0 }}
                 animate={phase >= 3 ? { y: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.8, ease: DRAMATIC_EASE }}
+                transition={{ duration: 0.9, ease: DRAMATIC_EASE }}
               >
                 Highlander
               </motion.h2>
@@ -365,14 +394,14 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
               className="overflow-hidden mt-2.5 md:mt-3.5"
               initial={{ height: 0 }}
               animate={phase >= 3 ? { height: "auto" } : {}}
-              transition={{ duration: 0.4, delay: 0.25, ease: CRAFT_EASE }}
+              transition={{ duration: 0.4, delay: 0.3, ease: CRAFT_EASE }}
             >
               <motion.p
                 className="font-body text-[9px] md:text-[11px] tracking-[0.28em] uppercase"
-                style={{ color: "hsl(var(--highland-gold) / 0.55)" }}
+                style={{ color: "hsl(var(--highland-gold) / 0.5)" }}
                 initial={{ opacity: 0, y: 8 }}
                 animate={phase >= 3 ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.3, ease: CRAFT_EASE }}
+                transition={{ duration: 0.5, delay: 0.35, ease: CRAFT_EASE }}
               >
                 Roofing & Construction
               </motion.p>
@@ -383,30 +412,30 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
               className="mt-6 md:mt-8 flex items-center gap-3"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={phase >= 3 ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.5, duration: 0.5, ease: HIGHLAND_EASE }}
+              transition={{ delay: 0.55, duration: 0.5, ease: HIGHLAND_EASE }}
             >
               <motion.div
-                className="h-px bg-[hsl(var(--highland-gold)/0.12)]"
+                className="h-px bg-[hsl(var(--highland-gold)/0.1)]"
                 initial={{ width: 0 }}
-                animate={phase >= 3 ? { width: 32 } : {}}
-                transition={{ delay: 0.55, duration: 0.4 }}
+                animate={phase >= 3 ? { width: 36 } : {}}
+                transition={{ delay: 0.6, duration: 0.4 }}
               />
-              <div className="w-1.5 h-1.5 rotate-45 border border-[hsl(var(--highland-gold)/0.25)] bg-[hsl(var(--highland-gold)/0.05)]" />
+              <div className="w-1.5 h-1.5 rotate-45 border border-[hsl(var(--highland-gold)/0.2)] bg-[hsl(var(--highland-gold)/0.04)]" />
               <motion.div
-                className="h-px bg-[hsl(var(--highland-gold)/0.12)]"
+                className="h-px bg-[hsl(var(--highland-gold)/0.1)]"
                 initial={{ width: 0 }}
-                animate={phase >= 3 ? { width: 32 } : {}}
-                transition={{ delay: 0.55, duration: 0.4 }}
+                animate={phase >= 3 ? { width: 36 } : {}}
+                transition={{ delay: 0.6, duration: 0.4 }}
               />
             </motion.div>
 
             {/* Tagline — appears last */}
             <motion.p
-              className="mt-5 font-body text-[8px] md:text-[9px] tracking-[0.18em] uppercase"
-              style={{ color: "hsl(var(--primary-foreground) / 0.15)" }}
+              className="mt-5 font-body text-[8px] md:text-[9px] tracking-[0.2em] uppercase"
+              style={{ color: "hsl(var(--primary-foreground) / 0.12)" }}
               initial={{ opacity: 0 }}
               animate={phase >= 3 ? { opacity: 1 } : {}}
-              transition={{ delay: 0.7, duration: 0.6 }}
+              transition={{ delay: 0.8, duration: 0.7 }}
             >
               Western North Carolina
             </motion.p>
@@ -415,7 +444,7 @@ const SiteLoader = ({ onComplete }: SiteLoaderProps) => {
           {/* Skip hint */}
           <motion.p
             className="absolute bottom-5 md:bottom-6 left-0 right-0 text-center font-body text-[8px] md:text-[9px] tracking-[0.12em] uppercase"
-            style={{ color: "hsl(var(--primary-foreground) / 0.08)" }}
+            style={{ color: "hsl(var(--primary-foreground) / 0.06)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.5 }}
