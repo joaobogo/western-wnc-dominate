@@ -89,12 +89,12 @@ const Blog = () => {
           <MountainContours variant="dark" opacity={0.04} />
           <div className="relative z-10 pt-32 md:pt-40 pb-16 md:pb-20 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
-              <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
-                  className="lg:col-span-7"
+                  className="lg:col-span-6"
                 >
                   <div className="flex items-center gap-3 mb-5">
                     <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
@@ -128,7 +128,7 @@ const Blog = () => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.15, ease: HIGHLAND_EASE }}
-                  className="lg:col-span-5"
+                  className="lg:col-span-6"
                 >
                   <div className="border border-[hsl(var(--highland-gold)/0.12)] bg-[hsl(var(--dark-section-foreground)/0.03)] p-6">
                     <div className="flex items-center gap-3 mb-4">
