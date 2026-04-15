@@ -47,7 +47,7 @@ const TownPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  to="/request-inspection"
+                  to="/consultation"
                   className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
                   Request a Consultation <ArrowRight className="w-5 h-5" />

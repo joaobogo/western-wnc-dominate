@@ -245,7 +245,7 @@ const ResidentialRoofing = () => {
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               >
                 <Link
-                  to="/request-inspection"
+                  to="/consultation"
                   className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -357,7 +357,7 @@ const ResidentialRoofing = () => {
               className="mt-10 text-center"
             >
               <Link
-                to="/request-inspection"
+                to="/consultation"
                 className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors font-body"
               >
                 Not sure? Let us assess your roof — no obligation
@@ -510,7 +510,7 @@ const ResidentialRoofing = () => {
                 <p className="text-primary-foreground/50 text-sm font-body">We'll assess your roof honestly and recommend based on what it actually needs.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
-                <Link to="/request-inspection" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
+                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Discuss Your Roof</span>
                   <ArrowRight className="w-4 h-4 relative" />
@@ -790,7 +790,7 @@ const ResidentialRoofing = () => {
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                     <Link
-                      to="/request-inspection"
+                      to="/consultation"
                       className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide"
                     >
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

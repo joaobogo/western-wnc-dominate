@@ -173,7 +173,7 @@ const ProjectDetailPage = () => {
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
                   <p className="text-primary-foreground/60 text-sm mb-4">Schedule a consultation and let's discuss your project.</p>
-                  <Link to="/request-inspection" className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center">
+                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center">
                     Discuss Your Project <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -289,7 +289,7 @@ const ProjectDetailPage = () => {
                 </p>
               </div>
               <Link
-                to="/request-inspection"
+                to="/consultation"
                 className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 btn-primary-interactive flex-shrink-0"
               >
                 <Phone className="w-4 h-4" /> Discuss Your Project
