@@ -34,6 +34,7 @@ const companyLinks = [
   { label: "Our Story", href: "/about" },
   { label: "Our Process", href: "/about" },
   { label: "Project Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
   { label: "Request a Consultation", href: "/consultation" },
 ];

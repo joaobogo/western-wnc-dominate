@@ -69,6 +69,8 @@ const Index = () => {
         {/* ═══ ACT V: SERVICES — What we do ═══ */}
         <ServicesGrid />
 
+        <ProofMoment variant="social" />
+
         {/* ═══ ACT VI: PROJECT PATHFINDER — Interactive guide ═══ */}
         <ProjectPathfinder />
 
