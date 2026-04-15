@@ -14,6 +14,7 @@ Updated: now
 - Design Philosophy: "Highland Forge" — permanence as beauty, tartan as structural DNA not wallpaper, gold ≤8% surface area.
 - Page Rule: Every page must feel personalized, visually rich, locally relevant, and distinct. No thin templates or clone layouts.
 - Divisions: Roofing=green/tartan/protective. Construction=gold/blueprint/architectural. Separate lead flows.
+- CTA Differentiation: Each page has unique CTA language matching its emotional tone — never repeat the same CTA across pages.
 
 ## Memories
 - [Design Philosophy](mem://style/design-philosophy) — Highland Forge visual philosophy: palette, tartan DNA, motion, spatial rhythm
@@ -23,6 +24,7 @@ Updated: now
 - [Page Identity System](mem://style/page-identity-system) — Per-page strategic identity: purpose, tone, visual mood, sections, proof type, CTA tone, motion speed for all header pages
 - [Page Distinctness Rule](mem://style/page-distinctness-rule) — Every page must feel personalized, visually rich, locally relevant, and distinct — no thin templates
 - [Page Differentiation Rules](mem://style/page-differentiation-rules) — Strict rules: unique hero, section sequence, card style, proof layout, CTA treatment, background, and motion per page
+- [Page CTA & Proof Differentiation](mem://strategy/page-cta-proof-differentiation) — Per-page CTA language, proof signals, trust badge variants, and section order documentation
 - [Motion Design](mem://style/motion-design) — Framer-motion cinematic animations and scroll indicator constraints
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
 - [Voice and Tone](mem://brand/voice-and-tone) — High Authority, Low Fluff messaging guidelines
@@ -31,6 +33,7 @@ Updated: now
 - [Brand Positioning System](mem://brand/positioning-system) — Brand promise, personality, pillars, emotional/rational promises, premium value prop
 - [Construction Messaging](mem://brand/construction-messaging-framework) — Construction division positioning copy: tone, headlines, intros, service lines, CTA language, anti-patterns
 - [CTA Language System](mem://strategy/cta-language-system) — Premium CTA labels per division, forbidden gimmicky language, config reference
+- [CTA Architecture](mem://strategy/cta-architecture) — CTA hierarchy, page mapping, timing/repetition rules, mobile behavior, support copy
 - [Homepage Architecture](mem://strategy/homepage-architecture) — Strict conversion sequence layout for the homepage
 - [Conversion Architecture](mem://strategy/conversion-architecture) — Mobile-first lead capture, sticky CTA, and interactive lead magnets
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
