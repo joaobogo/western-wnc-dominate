@@ -206,16 +206,25 @@ const ConstructionAuthority = () => {
             </div>
           </ScrollReveal>
 
-          {/* CTA */}
+          {/* CTAs — dual path */}
           <ScrollReveal variant="rise" delay={0.45}>
-            <Link
-              to="/construction"
-              className="group cta-gradient text-accent-foreground font-heading font-bold text-[13px] px-9 py-4 rounded-none inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative">Explore the Construction Division</span>
-              <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link
+                to="/construction"
+                className="group cta-gradient text-accent-foreground font-heading font-bold text-[13px] px-9 py-4 rounded-none inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <span className="relative">Explore the Construction Division</span>
+                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/construction/consultation"
+                className="group border border-dark-section-foreground/10 text-dark-section-foreground font-heading font-medium text-[13px] px-7 py-4 rounded-none inline-flex items-center gap-2.5 hover:bg-dark-section-foreground/[0.04] hover:border-[hsl(var(--highland-gold)/0.25)] transition-all duration-300"
+              >
+                <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                Schedule a Construction Consultation
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </div>
