@@ -416,7 +416,7 @@ const About = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/request-inspection"
+                  to="/consultation"
                   className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
                   Talk With Our Team <ArrowRight className="w-5 h-5" />

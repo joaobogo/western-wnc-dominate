@@ -265,7 +265,7 @@ const RoofAssessmentQuiz = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="/request-inspection" className="cta-gradient text-accent-foreground font-heading font-bold px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 btn-primary-interactive">
+                    <a href="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 btn-primary-interactive">
                       <span className="relative z-10">{result.cta}</span>
                       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
                     </a>

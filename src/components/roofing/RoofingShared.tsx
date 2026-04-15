@@ -132,7 +132,7 @@ export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSid
       </div>
     ))}
     <div className="pt-3 border-t border-border">
-      <Link to="/request-inspection" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+      <Link to="/consultation" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
         Request a Consultation <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
       </Link>
     </div>

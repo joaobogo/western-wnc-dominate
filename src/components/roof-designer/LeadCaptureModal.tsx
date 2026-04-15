@@ -114,7 +114,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
                 <Download className="w-4 h-4" />
                 Download Preview Image
               </Button>
-              <Link to="/request-inspection" className="block">
+              <Link to="/consultation" className="block">
                 <Button className="w-full gap-2 cta-gradient text-accent-foreground border-0 font-semibold">
                   <CalendarCheck className="w-4 h-4" />
                   Request a Project Consultation

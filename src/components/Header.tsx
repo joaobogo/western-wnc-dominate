@@ -320,7 +320,7 @@ const Header = () => {
             <Phone className="w-4 h-4" />
           </a>
           <Link
-            to="/request-inspection"
+            to="/consultation"
             className="hidden sm:inline-flex cta-gradient text-accent-foreground font-semibold text-sm px-5 py-2.5 rounded-sm items-center gap-2 btn-primary-interactive"
           >
             <span className="relative z-10">Start a Project</span>
@@ -514,7 +514,7 @@ const Header = () => {
                   className="pt-4 mt-2 border-t border-border space-y-2.5"
                 >
                   <Link
-                    to="/request-inspection"
+                    to="/consultation"
                     onClick={() => setMobileOpen(false)}
                     className="cta-gradient text-accent-foreground font-semibold text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2 btn-primary-interactive"
                   >

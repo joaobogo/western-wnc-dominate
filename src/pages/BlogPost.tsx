@@ -267,7 +267,7 @@ const BlogPostPage = () => {
                           with in-person consultations and local crews.
                         </p>
                         <Link
-                          to="/request-inspection"
+                          to="/consultation"
                           className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm mt-3 hover:gap-2.5 transition-all"
                         >
                           Talk With Our Local Team <ArrowRight className="w-3.5 h-3.5" />
@@ -344,7 +344,7 @@ const BlogPostPage = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link
-                      to="/request-inspection"
+                      to="/consultation"
                       className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
                     >
                       Request a Consultation <ArrowRight className="w-4 h-4" />
@@ -409,7 +409,7 @@ const BlogPostPage = () => {
                     No pressure, no upselling — just honest expert advice.
                   </p>
                   <Link
-                    to="/request-inspection"
+                    to="/consultation"
                     className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center"
                   >
                     Request a Consultation <ArrowRight className="w-4 h-4" />
