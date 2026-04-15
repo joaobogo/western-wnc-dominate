@@ -63,8 +63,9 @@ const divisions: DivisionDropdown[] = [
 const secondaryLinks = [
   { label: "Projects", href: "/gallery" },
   { label: "About", href: "/about" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },
-  { label: "Service Areas", href: "/service-areas" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const dropdownItemVariants = {
