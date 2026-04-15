@@ -174,23 +174,43 @@ const ReviewsPage = () => {
       />
       <Header />
       <main>
-        {/* ── HERO ── */}
-        <section className="relative section-dark pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
+        {/* ── HERO — Pull-quote led (unique to Reviews) ── */}
+        <section className="relative section-dark pt-32 md:pt-40 pb-14 md:pb-20 overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
           <div className="container-tight relative z-10 px-5 md:px-8 lg:px-16">
-            <motion.div {...fadeUp} className="max-w-3xl">
-              <span className="eyebrow mb-4 block text-[hsl(var(--highland-gold))]">Reviews & Reputation</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[1.1]">
-                Trust Is Earned.<br />
-                <span className="text-[hsl(var(--highland-gold))]">Here's How We've Earned It.</span>
-              </h1>
-              <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-base md:text-lg leading-relaxed max-w-2xl">
-                We don't ask you to trust us because we say we're trustworthy. We ask you to read 
-                what our clients say — the homeowners, property managers, and businesses who've 
-                experienced our work firsthand.
-              </p>
-            </motion.div>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+              <motion.div {...fadeUp} className="max-w-2xl">
+                <div className="flex items-center gap-2 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                  ))}
+                  <span className="ml-2 text-sm font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
+                  <span className="text-xs text-[hsl(var(--dark-section-foreground)/0.4)] font-body ml-1">from 150+ verified reviews</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[1.08] tracking-tight">
+                  Trust Is Earned.
+                </h1>
+                <p className="text-[hsl(var(--dark-section-foreground)/0.55)] text-base md:text-lg leading-relaxed max-w-xl">
+                  Read what our clients say — the homeowners, property managers, and businesses who've
+                  experienced our work firsthand.
+                </p>
+              </motion.div>
+              {/* Featured pull-quote — unique to Reviews hero */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="max-w-sm flex-shrink-0"
+              >
+                <div className="border-l-2 border-[hsl(var(--highland-gold)/0.3)] pl-5">
+                  <Quote className="w-5 h-5 text-[hsl(var(--highland-gold)/0.2)] mb-2 rotate-180" />
+                  <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm font-body italic leading-relaxed">
+                    "After three bad experiences with other contractors, Highlander changed everything completely."
+                  </p>
+                  <p className="text-xs text-[hsl(var(--highland-gold)/0.5)] font-body mt-2">— Karen W., Waynesville, NC</p>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
