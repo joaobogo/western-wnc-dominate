@@ -22,7 +22,7 @@ export const ConstructionMidCTA = ({
   headline = "Ready to discuss your project?",
   subheadline = "We respond within 24 hours with a direct call — not a form email.",
   ctaText = "Discuss Your Project",
-  ctaLink = "/request-inspection",
+  ctaLink = "/consultation",
 }: ConstructionCTAProps) => (
   <section className="bg-primary text-primary-foreground tartan-dark">
     <div className="container-tight px-5 md:px-8 py-10 md:py-12">
@@ -52,7 +52,7 @@ export const ConstructionClosingCTA = ({
   subheadline = "Whether you're planning an addition, a renovation, an outdoor space, or a custom build — we're here to help you think it through.",
   eyebrow = "Start Planning",
   ctaText = "Schedule a Project Consultation",
-  ctaLink = "/request-inspection",
+  ctaLink = "/consultation",
 }: ConstructionCTAProps) => (
   <section className="section-dark tartan-dark relative overflow-hidden">
     <motion.div
@@ -169,7 +169,7 @@ export const PlanningCallout = ({
   headline = "Not sure where to start?",
   body = "We offer complimentary project consultations. Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.",
   ctaText = "Talk With Our Team",
-  ctaLink = "/request-inspection",
+  ctaLink = "/consultation",
 }: {
   headline?: string;
   body?: string;

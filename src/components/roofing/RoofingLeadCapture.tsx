@@ -21,7 +21,7 @@ const CardCapture = ({
   headline = "Ready to discuss your roof?",
   subheadline = "Schedule a conversation with our team. No pressure, no obligation — just honest guidance from experienced local roofers.",
   ctaText = "Schedule a Roofing Consultation",
-  ctaLink = "/request-inspection",
+  ctaLink = "/consultation",
 }: InlineLeadCaptureProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ const EditorialCapture = ({
   headline = "Let's Talk About Your Roof.",
   subheadline = "Whether you're planning ahead or responding to an issue — a straightforward conversation is always the right first step.",
   ctaText = "Discuss Your Roof",
-  ctaLink = "/request-inspection",
+  ctaLink = "/consultation",
 }: InlineLeadCaptureProps) => (
   <section className="py-12 md:py-16 bg-background relative overflow-hidden">
     <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />

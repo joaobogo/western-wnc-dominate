@@ -73,19 +73,28 @@ const Footer = () => {
       <div className="h-[2px] w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))' }} />
 
       {/* CTA Strip */}
-      <div className="border-b border-primary-foreground/8">
-        <div className="container-tight py-10 md:py-14">
+      <div className="border-b border-primary-foreground/8 relative">
+        {/* Ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-[hsl(var(--highland-gold)/0.03)] rounded-full blur-[100px] pointer-events-none" />
+        <div className="container-tight py-12 md:py-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-center justify-between gap-6"
+            className="flex flex-col md:flex-row items-center justify-between gap-8"
           >
             <div>
-              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="w-10 h-[2px] bg-[hsl(var(--highland-gold)/0.4)] mb-5 origin-left"
+              />
+              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight">
                 Let's Discuss Your Property.
               </h3>
-              <p className="text-primary-foreground/50 text-sm font-body max-w-md">
+              <p className="text-primary-foreground/50 text-[15px] font-body max-w-md leading-relaxed">
                 Whether it's a roof, a renovation, or storm damage — you'll speak with a project advisor who knows these mountains, not a call center.
               </p>
             </div>

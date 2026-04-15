@@ -20,7 +20,7 @@ export const RoofingMidCTA = ({
   headline = "Ready to discuss your roof?",
   subheadline = "We respond within 24 hours with a direct call — not a form email.",
   ctaText = "Talk With a Roofing Advisor",
-  ctaLink = "/request-inspection",
+  ctaLink = "/consultation",
 }: Omit<RoofingCTAProps, "variant">) => (
   <section className="bg-primary text-primary-foreground tartan-dark">
     <div className="container-tight px-5 md:px-8 py-10 md:py-12">
@@ -50,7 +50,7 @@ export const RoofingClosingCTA = ({
   subheadline = "Whether you need a repair assessment, a replacement consultation, or just an honest opinion — we're here to help.",
   eyebrow = "Your Roof, Our Expertise",
   ctaText = "Request a Roof Consultation",
-  ctaLink = "/request-inspection",
+  ctaLink = "/consultation",
 }: Omit<RoofingCTAProps, "variant">) => (
   <section className="section-dark tartan-dark relative overflow-hidden">
     <motion.div

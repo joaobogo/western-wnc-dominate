@@ -37,7 +37,7 @@ const PATHWAYS = [
     icon: FileText,
     title: "Request a Roof Inspection",
     desc: "Need eyes on your roof? Start with a detailed property assessment from a certified inspector.",
-    link: "/request-inspection",
+    link: "/consultation",
     label: "Request Inspection",
     accent: false,
   },
