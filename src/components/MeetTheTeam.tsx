@@ -136,12 +136,12 @@ const MeetTheTeam = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-14 mb-14 md:mb-18">
           <div className="lg:col-span-3">
             <ScrollReveal variant="fade">
-              <span className="eyebrow mb-3 block">The People Behind the Work</span>
+              <span className="eyebrow mb-3 block">Who Shows Up</span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="section-heading mb-5">
-                Names, Not Nameplates.<br className="hidden md:block" />
-                <span className="text-[hsl(var(--highland-gold))]"> You'll Know Every Person on Your Property.</span>
+                The Same Crew.<br className="hidden md:block" />
+                <span className="text-[hsl(var(--highland-gold))]"> Every Project. No Subcontractors.</span>
               </h2>
             </HeadingReveal>
             <GoldLine width="3rem" delay={0.25} className="mb-5" />

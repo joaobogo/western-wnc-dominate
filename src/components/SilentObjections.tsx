@@ -22,17 +22,17 @@ const SilentObjections = () => {
       <div className="container-tight max-w-4xl">
         <div className="text-center mb-10 md:mb-14">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block">Honest Answers</span>
+            <span className="eyebrow mb-3 block">Before You Decide</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-4">
-              The Questions You Haven't<br className="hidden md:block" /> Asked Yet — Answered.
+              Five Concerns Every<br className="hidden md:block" /> Homeowner Has.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground max-w-lg mx-auto text-sm font-body leading-relaxed">
-              Hiring a contractor is a significant decision. Here are the concerns
-              most property owners have — and the direct answers we give every time.
+              We've heard these from hundreds of clients before signing.
+              Here's what we tell them — every time, unedited.
             </p>
           </ScrollReveal>
           <GoldLine width="3rem" centered delay={0.35} className="mt-6" />

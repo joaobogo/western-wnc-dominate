@@ -77,20 +77,15 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
       {/* Left gold accent on hover */}
       <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-600 z-10" />
 
-      {/* Number watermark */}
-      <div className="absolute -right-2 -top-4 text-[72px] font-heading font-bold text-dark-section-foreground/[0.025] leading-none select-none pointer-events-none">
-        {pillar.number}
-      </div>
+      {/* Structural corner mark */}
+      <div className="absolute top-0 right-0 w-6 h-6 border-t border-r border-dark-section-foreground/[0.04] pointer-events-none" />
 
       <div className="relative z-10 p-6 md:p-8">
-        {/* Icon + number row */}
+        {/* Icon */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-10 h-10 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
             <pillar.icon className="w-4.5 h-4.5 text-[hsl(var(--highland-gold)/0.5)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
           </div>
-          <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold)/0.3)]">
-            {pillar.number}
-          </span>
         </div>
 
         {/* Title */}
@@ -125,13 +120,13 @@ const ValueProposition = () => {
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
             <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
-              The Highlander Difference
+              How We Protect Your Investment
             </span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
-              What You Get When You<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Hire the Right Contractor.</span>
+              Six Things We Do That<br className="hidden md:block" />
+              <span className="text-[hsl(var(--highland-gold))]"> Most Contractors Won't.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
