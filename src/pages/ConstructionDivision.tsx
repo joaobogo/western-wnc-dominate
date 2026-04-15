@@ -25,6 +25,7 @@ import {
   ConstructionFAQs,
   ConstructionProcess, compactConstructionProcess,
   ConstructionTrust,
+  DisciplinesBridge,
 } from "@/components/construction";
 
 import heroImg from "@/assets/gallery/cedar-001.jpg";
