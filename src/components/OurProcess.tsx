@@ -72,13 +72,13 @@ const OurProcess = () => {
         <div className="text-center mb-14 md:mb-20">
           <ScrollReveal variant="fade">
             <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
-              How We Work
+              Our Process — 7 Phases
             </span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
-              From First Call to Warranty Handoff.<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Nothing Left to Chance.</span>
+              Every Project Follows<br className="hidden md:block" />
+              <span className="text-[hsl(var(--highland-gold))]"> the Same Documented Path.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
