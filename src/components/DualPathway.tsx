@@ -43,9 +43,9 @@ const constructionData = {
   badge: "Licensed GC",
   title: "Full-Scope Construction",
   subtitle: "Our Expertise",
-  description: "Additions, renovations, siding, and outdoor living — executed under licensed General Contractor oversight with the same documented process, in-house crews, and warranty standards we bring to every roof.",
+  description: "Additions, renovations, siding, and outdoor living — built by the same in-house crews, under the same licensed GC oversight, with the same warranty you'd get on a Highlander roof. One team. One standard.",
   stats: [
-    { value: "100%", label: "Licensed & Insured" },
+    { value: "GC", label: "Licensed Contractor" },
     { value: "8", label: "WNC Counties" },
   ],
   services: [
@@ -54,7 +54,7 @@ const constructionData = {
     { icon: PaintBucket, name: "Siding & Exteriors" },
     { icon: Ruler, name: "Structural Improvements" },
     { icon: Settings, name: "Decks & Outdoor Living" },
-    { icon: ShieldCheck, name: "Licensed GC Oversight" },
+    { icon: ShieldCheck, name: "Design-Build Projects" },
   ],
   cta: "Explore Construction Services",
   href: "/construction",
