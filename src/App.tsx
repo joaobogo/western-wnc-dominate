@@ -40,6 +40,7 @@ import ConstructionConsultation from "./pages/ConstructionConsultation";
 import QuoteFlow from "./pages/QuoteFlow";
 import Contact from "./pages/Contact";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/roofing" element={<RoofingDivision />} />
