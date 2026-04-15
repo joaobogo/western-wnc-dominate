@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, MapPin, Calendar, Ruler, Eye, ArrowUpRight } from "lucide-react";
+import { ArrowRight, MapPin, Calendar, Ruler, Eye, Camera, Award, Star, Filter } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -9,10 +9,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock } from "@/components/trust";
 import { PremiumLightbox } from "@/components/gallery";
 import type { LightboxProject } from "@/components/gallery";
-import { ScrollReveal } from "@/components/motion";
-import HeadingReveal from "@/components/motion/HeadingReveal";
-import GoldLine from "@/components/motion/GoldLine";
-import { MountainContours, ArchitecturalLines, TextureOverlay } from "@/components/motion/BackgroundTexture";
+import { MountainContours, TextureOverlay } from "@/components/motion/BackgroundTexture";
 
 import metal005 from "@/assets/gallery/metal-005.webp";
 import metal006 from "@/assets/gallery/metal-006.webp";
@@ -28,19 +25,12 @@ import cedar004 from "@/assets/gallery/cedar-004.webp";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true } as const,
-  transition: { duration: 0.6, ease: HIGHLAND_EASE },
-};
-
 interface Project extends LightboxProject {
   category: string;
   scope: string;
   duration: string;
   highlight: string;
-  slug?: string; // links to /projects/:slug if available
+  slug?: string;
   featured?: boolean;
 }
 
@@ -58,23 +48,80 @@ const projects: Project[] = [
 ];
 
 const categories = [
-  { label: "All Projects", value: "all" },
+  { label: "All", value: "all" },
   { label: "Roofing", value: "roofing" },
   { label: "Construction", value: "construction" },
 ];
 
-const projectStats = [
-  { value: "500+", label: "Projects Completed" },
-  { value: "8", label: "Counties Served" },
-  { value: "Zero", label: "Unresolved Callbacks" },
-  { value: "100%", label: "Owner-Inspected" },
-];
+const materialTypes = ["All Materials", "Metal", "Asphalt", "Cedar", "Mixed"];
 
-/* ── EDITORIAL PROJECT CARD ── */
-const EditorialCard = ({ project, index, isFeatured, onClick }: {
+/* ── CINEMATIC HERO CARD — used for the spotlight ── */
+const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => void }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, ease: HIGHLAND_EASE }}
+    className="group relative cursor-pointer overflow-hidden"
+    onClick={onClick}
+  >
+    <div className="relative aspect-[21/9] md:aspect-[21/8] overflow-hidden">
+      <motion.img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover"
+        loading="eager"
+        initial={{ scale: 1.1 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 2.5, ease: HIGHLAND_EASE }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.2)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.6)] to-transparent" />
+
+      {/* Bottom content */}
+      <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16 z-10">
+        <div className="max-w-3xl">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-[9px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.2)] px-3 py-1.5">
+              Featured Project
+            </span>
+            <span className="text-[9px] font-body font-bold uppercase tracking-[0.15em] text-white/50 bg-white/5 backdrop-blur-sm px-2.5 py-1.5">
+              {project.type}
+            </span>
+          </div>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-[1.08] mb-4 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500">
+            {project.title}
+          </h2>
+          <p className="text-white/50 text-sm md:text-base font-body max-w-xl leading-relaxed mb-5 hidden md:block">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap items-center gap-5 text-white/40 text-[11px] font-body">
+            <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3" /> {project.location}</span>
+            <span className="flex items-center gap-1.5"><Ruler className="w-3 h-3" /> {project.scope}</span>
+            <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {project.duration}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Arrow */}
+      <div className="absolute bottom-8 md:bottom-12 right-8 md:right-12 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <div className="w-12 h-12 border border-[hsl(var(--highland-gold)/0.3)] bg-[hsl(var(--highland-gold)/0.08)] backdrop-blur-sm flex items-center justify-center">
+          <Eye className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+        </div>
+      </div>
+
+      {/* Gold bottom edge */}
+      <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] via-[hsl(var(--highland-gold)/0.6)] to-[hsl(var(--highland-gold)/0)] transition-all duration-1000" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+    </div>
+  </motion.div>
+);
+
+/* ── EDITORIAL CARD — masonry variant ── */
+const EditorialCard = ({ project, index, size, onClick }: {
   project: Project;
   index: number;
-  isFeatured?: boolean;
+  size: "tall" | "wide" | "standard";
   onClick: () => void;
 }) => (
   <motion.div
@@ -82,15 +129,14 @@ const EditorialCard = ({ project, index, isFeatured, onClick }: {
     initial={{ opacity: 0, y: 28 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -12, scale: 0.97 }}
-    transition={{ delay: index * 0.06, duration: 0.5, ease: HIGHLAND_EASE }}
+    transition={{ delay: index * 0.05, duration: 0.5, ease: HIGHLAND_EASE }}
     className={`group relative rounded-none overflow-hidden cursor-pointer ${
-      isFeatured ? "md:col-span-2 md:row-span-2" : ""
+      size === "tall" ? "md:row-span-2" : size === "wide" ? "md:col-span-2" : ""
     }`}
     onClick={onClick}
   >
-    {/* Image */}
     <div className={`relative overflow-hidden ${
-      isFeatured ? "aspect-[4/3] md:aspect-[16/10]" : "aspect-[4/3]"
+      size === "tall" ? "aspect-[3/4] md:aspect-[3/5]" : size === "wide" ? "aspect-[4/3] md:aspect-[16/9]" : "aspect-[4/3]"
     }`}>
       <motion.div
         initial={{ clipPath: "inset(0 0 100% 0)" }}
@@ -111,81 +157,88 @@ const EditorialCard = ({ project, index, isFeatured, onClick }: {
         />
       </motion.div>
 
-      {/* Cinematic overlays */}
+      {/* Overlays */}
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.08)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.95)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
 
-      {/* Gold bottom edge */}
+      {/* Gold edge */}
       <div className="absolute bottom-0 left-0 w-0 group-hover:w-2/3 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-[hsl(var(--highland-gold)/0)] transition-all duration-700 z-20" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
 
-      {/* Category badge */}
-      <div className="absolute top-4 md:top-5 left-4 md:left-6 z-10">
+      {/* Badge */}
+      <div className="absolute top-4 md:top-5 left-4 md:left-5 z-10">
         <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] text-white/70 bg-white/[0.06] backdrop-blur-md border border-white/[0.08] px-3 py-1.5 group-hover:border-[hsl(var(--highland-gold)/0.2)] group-hover:text-white/90 transition-all duration-500">
           {project.type}
         </span>
       </div>
 
-      {/* Case Study badge */}
       {project.slug && (
-        <div className="absolute top-4 md:top-5 right-4 md:right-6 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0">
+        <div className="absolute top-4 md:top-5 right-4 md:right-5 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0">
           <span className="text-[8px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] backdrop-blur-md border border-[hsl(var(--highland-gold)/0.15)] px-2.5 py-1">
             Case Study
           </span>
         </div>
       )}
 
-      {/* Content overlay */}
-      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 z-10">
+      {/* Content */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 z-10">
         <div className="flex items-center gap-1.5 mb-2">
           <MapPin className="w-2.5 h-2.5 text-[hsl(var(--highland-gold)/0.5)]" />
-          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/35">
-            {project.location}
-          </span>
+          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/35">{project.location}</span>
         </div>
-
-        <h3 className={`font-heading font-bold text-white leading-tight tracking-tight mb-0 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
-          isFeatured ? "text-xl md:text-2xl lg:text-3xl" : "text-base md:text-lg"
+        <h3 className={`font-heading font-bold text-white leading-tight tracking-tight group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
+          size === "wide" ? "text-lg md:text-2xl" : "text-base md:text-lg"
         }`}>
           {project.title}
         </h3>
 
-        {/* Hover reveal: scope + duration + highlight */}
-        <div className="max-h-0 group-hover:max-h-32 overflow-hidden transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
-          <div className="flex items-center gap-4 text-white/40 text-[11px] font-body mt-2.5">
+        {/* Hover reveal */}
+        <div className="max-h-0 group-hover:max-h-36 overflow-hidden transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
+          <p className="text-white/40 text-[12px] font-body leading-relaxed mt-2 line-clamp-2">{project.description}</p>
+          <div className="flex items-center gap-4 text-white/35 text-[11px] font-body mt-2">
             <span className="flex items-center gap-1"><Ruler className="w-3 h-3" /> {project.scope}</span>
             <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {project.duration}</span>
           </div>
-          <p className="text-white/40 text-[12px] font-body leading-relaxed mt-2 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
+          <p className="text-[hsl(var(--highland-gold)/0.6)] text-[11px] font-body mt-2 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold)/0.4)]" />
             {project.highlight}
           </p>
           {project.slug && (
             <Link
               to={`/projects/${project.slug}`}
               onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
+              className="inline-flex items-center gap-1.5 mt-2.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
             >
-              Read Full Case Study <ArrowRight className="w-3 h-3" />
+              Full Case Study <ArrowRight className="w-3 h-3" />
             </Link>
           )}
         </div>
       </div>
 
-      {/* Arrow icon */}
-      <div className="absolute bottom-5 md:bottom-7 right-5 md:right-7 z-10">
-        <div className="w-10 h-10 rounded-none border border-white/0 group-hover:border-[hsl(var(--highland-gold)/0.3)] bg-transparent group-hover:bg-[hsl(var(--highland-gold)/0.08)] backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-          <Eye className="w-4 h-4 text-white/80 group-hover:text-[hsl(var(--highland-gold))] transition-colors" />
+      {/* Eye */}
+      <div className="absolute bottom-5 right-5 z-10">
+        <div className="w-9 h-9 border border-white/0 group-hover:border-[hsl(var(--highland-gold)/0.3)] bg-transparent group-hover:bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <Eye className="w-3.5 h-3.5 text-white/60 group-hover:text-[hsl(var(--highland-gold))]" />
         </div>
       </div>
     </div>
   </motion.div>
 );
 
+/* Size pattern for visual rhythm */
+const sizePattern: Array<"tall" | "wide" | "standard"> = [
+  "standard", "tall", "standard", "wide", "standard", "standard",
+  "standard", "standard", "tall", "standard",
+];
+
 const Gallery = () => {
   const [filter, setFilter] = useState("all");
+  const [materialFilter, setMaterialFilter] = useState("All Materials");
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const filtered = filter === "all" ? projects : projects.filter((p) => p.category === filter);
+  const filtered = projects
+    .filter((p) => filter === "all" || p.category === filter)
+    .filter((p) => materialFilter === "All Materials" || p.type.toLowerCase().includes(materialFilter.toLowerCase()));
 
+  const featuredProject = projects.find((p) => p.featured);
   const handleLightboxNav = useCallback((idx: number) => setLightbox(idx), []);
 
   return (
@@ -198,100 +251,142 @@ const Gallery = () => {
       />
       <Header />
       <main>
-        {/* ── HERO ── */}
-        <section className="relative section-dark pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
+        {/* ── HERO — immersive dark with editorial copy ── */}
+        <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
           <MountainContours variant="dark" opacity={0.04} />
-          <TextureOverlay opacity={0.02} />
-          <div className="container-tight relative z-10 px-5 md:px-8 lg:px-16">
-            <motion.div {...fadeUp} className="max-w-3xl">
-              <span className="eyebrow mb-4 block text-[hsl(var(--highland-gold))]">Project Showcase</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[1.1]">
-                Our Work Speaks.<br />
-                <span className="text-[hsl(var(--highland-gold))]">Every Detail Matters.</span>
-              </h1>
-              <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-base md:text-lg leading-relaxed max-w-2xl">
-                Real projects across Western North Carolina. Every image represents a home we've 
-                protected, a space we've built, and a standard we refuse to lower.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ── PROJECT STATS STRIP ── */}
-        <section className="relative overflow-hidden bg-primary text-primary-foreground">
-          <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }} />
-          <div className="container-tight px-5 md:px-8 py-8 md:py-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-primary-foreground/8">
-              {projectStats.map((stat, i) => (
+          <div className="relative z-10 pt-32 md:pt-40 pb-16 md:pb-20 px-5 md:px-8 lg:px-16">
+            <div className="container-tight">
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-end">
                 <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
-                  className="flex flex-col items-center text-center md:px-6"
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
+                  className="lg:col-span-7"
                 >
-                  <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5">{stat.value}</span>
-                  <span className="text-sm font-heading font-semibold text-primary-foreground/85">{stat.label}</span>
+                  <div className="flex items-center gap-3 mb-5">
+                    <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Portfolio</span>
+                  </div>
+                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[1.06] tracking-tight">
+                    Every Project Is<br />
+                    a Commitment<br />
+                    <span className="text-[hsl(var(--highland-gold))]">Made Visible.</span>
+                  </h1>
+                  <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
+                  <p className="text-[hsl(var(--dark-section-foreground)/0.55)] text-base md:text-lg leading-relaxed max-w-lg">
+                    These aren't stock photos. Every image here represents a real WNC home we've protected,
+                    a real space we've built, and a standard we refuse to lower.
+                  </p>
                 </motion.div>
-              ))}
+
+                {/* Stats column */}
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.15, ease: HIGHLAND_EASE }}
+                  className="lg:col-span-5"
+                >
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { value: "500+", label: "Projects", icon: Camera },
+                      { value: "8", label: "Counties", icon: MapPin },
+                      { value: "4.9★", label: "Avg Rating", icon: Star },
+                      { value: "100%", label: "Owner-Inspected", icon: Award },
+                    ].map((stat, i) => (
+                      <motion.div
+                        key={stat.label}
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
+                        className="border border-[hsl(var(--highland-gold)/0.08)] bg-[hsl(var(--dark-section-foreground)/0.03)] p-4 md:p-5"
+                      >
+                        <stat.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.3)] mb-2" />
+                        <p className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none">{stat.value}</p>
+                        <p className="text-[10px] uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.35)] font-body mt-1">{stat.label}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
-          <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }} />
         </section>
 
-        {/* ── PROJECT GRID — EDITORIAL LAYOUT ── */}
-        <section className="section-padding bg-background relative">
-          <ArchitecturalLines variant="light" opacity={0.015} direction="right" />
-          <div className="container-tight relative z-10">
-            {/* Header + Filters */}
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
-              <div>
-                <ScrollReveal variant="fade">
-                  <span className="eyebrow mb-3 block">Portfolio</span>
-                </ScrollReveal>
-                <HeadingReveal delay={0.1}>
-                  <h2 className="section-heading mb-3">
-                    Every Project,{" "}
-                    <span className="text-[hsl(var(--highland-gold))]">Documented.</span>
-                  </h2>
-                </HeadingReveal>
-                <ScrollReveal variant="rise-subtle" delay={0.2}>
-                  <p className="text-muted-foreground text-[15px] font-body max-w-md leading-relaxed">
-                    Click any project to view details. Projects with full case studies include materials, process highlights, and before-and-after documentation.
-                  </p>
-                </ScrollReveal>
-              </div>
-              <ScrollReveal variant="rise-subtle" delay={0.25}>
-                <div className="flex gap-1.5">
+        {/* ── FEATURED PROJECT SPOTLIGHT ── */}
+        {featuredProject && filter === "all" && materialFilter === "All Materials" && (
+          <section className="bg-[hsl(var(--heritage-charcoal))]">
+            <SpotlightCard
+              project={featuredProject}
+              onClick={() => setLightbox(projects.indexOf(featuredProject))}
+            />
+          </section>
+        )}
+
+        {/* ── FILTER BAR — elegant inline ── */}
+        <section className="bg-background border-b border-border sticky top-[72px] z-30">
+          <div className="container-tight px-5 md:px-8">
+            <div className="flex items-center justify-between py-4 gap-4 overflow-x-auto">
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <Filter className="w-3.5 h-3.5 text-muted-foreground" />
+                <div className="flex gap-1">
                   {categories.map((cat) => (
                     <button
                       key={cat.value}
                       onClick={() => setFilter(cat.value)}
-                      className={`text-[10px] font-body font-bold uppercase tracking-[0.15em] px-5 py-2.5 rounded-none transition-all duration-300 ${
+                      className={`text-[10px] font-body font-bold uppercase tracking-[0.15em] px-4 py-2 rounded-none transition-all duration-300 ${
                         filter === cat.value
                           ? "bg-primary text-primary-foreground"
-                          : "bg-transparent border border-border text-muted-foreground hover:border-foreground/20 hover:text-foreground"
+                          : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
                       {cat.label}
                     </button>
                   ))}
                 </div>
-              </ScrollReveal>
+              </div>
+              <div className="flex gap-1 flex-shrink-0">
+                {materialTypes.map((mat) => (
+                  <button
+                    key={mat}
+                    onClick={() => setMaterialFilter(mat)}
+                    className={`text-[10px] font-body font-semibold px-3 py-1.5 rounded-sm transition-all duration-200 ${
+                      materialFilter === mat
+                        ? "bg-secondary text-foreground border border-border"
+                        : "text-muted-foreground/60 hover:text-muted-foreground"
+                    }`}
+                  >
+                    {mat}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── MASONRY GRID ── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <span className="eyebrow mb-2 block">Portfolio</span>
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+                  {filtered.length} Project{filtered.length !== 1 ? "s" : ""}
+                </h2>
+              </div>
+              <p className="text-muted-foreground text-xs font-body hidden md:block">
+                Click any project to explore. Case studies include full documentation.
+              </p>
             </div>
 
-            {/* Grid — 3-col editorial with featured card */}
             <AnimatePresence mode="popLayout">
-              <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+              <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 auto-rows-auto">
                 {filtered.map((project, i) => (
                   <EditorialCard
                     key={project.title}
                     project={project}
                     index={i}
-                    isFeatured={i === 0 && project.featured}
+                    size={sizePattern[i % sizePattern.length]}
                     onClick={() => setLightbox(projects.indexOf(project))}
                   />
                 ))}
@@ -318,19 +413,24 @@ const Gallery = () => {
           </div>
         </section>
 
-        {/* ── VISUAL STORYTELLING ── */}
+        {/* ── PROCESS STORYTELLING ── */}
         <section className="section-padding section-dark relative overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
           <MountainContours variant="dark" opacity={0.03} />
           <div className="container-tight relative z-10">
-            <motion.div {...fadeUp} className="text-center mb-14">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Our Approach</span>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-14"
+            >
+              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Our Process</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
                 Every Project Tells a Story
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
               <p className="text-[hsl(var(--dark-section-foreground)/0.6)] max-w-2xl mx-auto">
-                Behind every completed project is a process — careful planning, precise execution, 
+                Behind every completed project is a process — careful planning, precise execution,
                 and personal accountability from the first conversation to the final walkthrough.
               </p>
             </motion.div>
@@ -347,7 +447,7 @@ const Gallery = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="border border-[hsl(var(--highland-gold)/0.1)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)] text-center process-connector"
+                  className="border border-[hsl(var(--highland-gold)/0.1)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)] text-center"
                 >
                   <span className="text-3xl font-heading font-bold text-[hsl(var(--highland-gold)/0.2)] mb-3 block">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-2">{step.title}</h3>
@@ -358,7 +458,6 @@ const Gallery = () => {
           </div>
         </section>
 
-        {/* ── CLOSING CTA ── */}
         <ReassuranceBlock
           headline={"Your Project Could Be\nOur Next Showcase."}
           subheadline="Schedule a consultation and let's discuss what's possible for your home. Every great project starts with a conversation."
@@ -366,7 +465,6 @@ const Gallery = () => {
         />
       </main>
 
-      {/* ── PREMIUM LIGHTBOX ── */}
       <PremiumLightbox
         projects={projects}
         currentIndex={lightbox}
