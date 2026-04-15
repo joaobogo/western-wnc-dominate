@@ -183,19 +183,37 @@ const HomeAdditions = () => {
           </div>
         </section>
 
-        {/* ─── OPENING STATEMENT ─── */}
+        {/* ─── OPENING — Architectural editorial with scope sidebar ─── */}
         <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                The best additions don't look like additions. They look like rooms your home always had — because they share the same rooflines, materials, and proportions.
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
-                Highlander builds home additions that integrate with your existing architecture — structurally, visually, and in the way the space flows. Every addition starts with understanding your home and ends with a space that elevates the entire property.
-              </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-            </motion.div>
+          <div className="container-tight max-w-5xl">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-8">
+                <div className="flex items-center gap-3 mb-8">
+                  <Compass className="w-5 h-5 text-[hsl(var(--highland-gold)/0.4)]" />
+                  <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.2)]" />
+                </div>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
+                  The best additions don't look like additions. They look like rooms your home always had — because they share the same rooflines, materials, and proportions.
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
+                  Highlander builds home additions that integrate with your existing architecture — structurally, visually, and in the way the space flows.
+                </p>
+                <p className="text-muted-foreground/60 text-sm leading-relaxed font-body italic">
+                  Every addition starts with understanding your home and ends with a space that elevates the entire property.
+                </p>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="lg:col-span-4">
+                <div className="border border-[hsl(var(--highland-gold)/0.15)] rounded-sm p-6 bg-secondary/30">
+                  <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold)/0.6)] mb-4">Addition Types We Build</h3>
+                  {["Guest Suites & In-Law Apartments", "Expanded Living Areas", "Main-Level Master Suites", "Garage Additions", "Sunrooms & Four-Season Rooms", "Second-Story Additions"].map((item) => (
+                    <div key={item} className="flex items-center gap-2.5 py-2 border-b border-border/50 last:border-0">
+                      <div className="w-1 h-1 rounded-full bg-[hsl(var(--highland-gold)/0.4)]" />
+                      <span className="text-sm text-muted-foreground font-body">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
