@@ -91,7 +91,7 @@ const ConstructionAuthority = () => {
                     The answer is now yes. Highlander Construction operates under the same licensed 
                     GC oversight, the same project documentation system, and the same crews that 
                     built our roofing reputation. No learning curve. No compromise. Just the 
-                    natural extension of a standard we've already proven.
+                    natural next step for a company that already proved it could deliver.
                   </p>
                 </div>
               </ScrollReveal>

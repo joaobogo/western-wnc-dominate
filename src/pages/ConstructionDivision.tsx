@@ -163,10 +163,10 @@ const ConstructionDivision = () => {
               <div className="text-center">
                 <GoldLine width="3rem" className="mx-auto mb-8" />
                 <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance">
-                  Highlander builds more than roofs. We build the spaces that define how you live — with the same craftsmanship, communication, and long-term thinking we bring to every project.
+                  Highlander builds more than roofs. We build the spaces that define how families live in these mountains — with the same planning depth, craft standards, and communication discipline we bring to every project we accept.
                 </h2>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                  Our Construction division serves homeowners across Western North Carolina who want thoughtful planning, skilled execution, and a contractor who treats their home with the same care they do.
+                  Our Construction division serves Western North Carolina homeowners who refuse to settle for "good enough" — people who value planning over rushing, documentation over handshakes, and craftsmanship that holds up at elevation.
                 </p>
                 <p className="text-muted-foreground/60 text-sm leading-relaxed font-body max-w-xl mx-auto">
                   We're selective about the projects we take on — because the work we do reflects who we are.
@@ -307,7 +307,7 @@ const ConstructionDivision = () => {
                 <span className="eyebrow mb-3 block">Why Highlander</span>
                 <h2 className="section-heading mb-4">What Makes This<br className="hidden md:block" /> Different.</h2>
                 <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
-                  Not just another contractor. A company built on systems, staffed with craftsmen, and rooted in Western North Carolina.
+                  Not just another name on a truck. A company built on documented systems, staffed with in-house craftsmen, and rooted in Western North Carolina's mountains.
                 </p>
               </div>
             </ScrollReveal>

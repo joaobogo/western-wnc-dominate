@@ -43,7 +43,7 @@ const constructionData = {
   badge: "Licensed GC",
   title: "Full-Scope Construction",
   subtitle: "Our Expertise",
-  description: "Additions, renovations, siding, and outdoor living — built by the same in-house crews, under the same licensed GC oversight, with the same warranty you'd get on a Highlander roof. One team. One standard.",
+  description: "Additions, renovations, exterior builds, and outdoor living — planned with the same discipline, built by the same in-house crews, and backed by the same warranty that earned our roofing reputation. One team. One standard.",
   stats: [
     { value: "GC", label: "Licensed Contractor" },
     { value: "8", label: "WNC Counties" },
