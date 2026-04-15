@@ -36,6 +36,7 @@ import Renovations from "./pages/Renovations";
 import ExteriorImprovements from "./pages/ExteriorImprovements";
 import OutdoorLiving from "./pages/OutdoorLiving";
 import CustomConstruction from "./pages/CustomConstruction";
+import ConstructionConsultation from "./pages/ConstructionConsultation";
 import QuoteFlow from "./pages/QuoteFlow";
 import Contact from "./pages/Contact";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
@@ -63,6 +64,7 @@ const App = () => (
           <Route path="/construction/exterior" element={<ExteriorImprovements />} />
           <Route path="/construction/outdoor-living" element={<OutdoorLiving />} />
           <Route path="/construction/custom" element={<CustomConstruction />} />
+          <Route path="/construction/consultation" element={<ConstructionConsultation />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/commercial-roofing" element={<ServicePage />} />
