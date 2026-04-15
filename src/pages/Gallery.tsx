@@ -251,64 +251,72 @@ const Gallery = () => {
       />
       <Header />
       <main>
-        {/* ── HERO — immersive dark with editorial copy ── */}
+        {/* ── HERO — Centered cinematic, no sidebar (unique to Gallery) ── */}
         <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
           <MountainContours variant="dark" opacity={0.04} />
-          <div className="relative z-10 pt-32 md:pt-40 pb-16 md:pb-20 px-5 md:px-8 lg:px-16">
+          {/* Horizontal gold line draws across top */}
+          <motion.div
+            className="absolute top-0 left-0 right-0 h-[2px] z-20"
+            style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1.8, delay: 0.3, ease: HIGHLAND_EASE }}
+          />
+          <div className="relative z-10 pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
-              <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-end">
-                <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
-                  className="lg:col-span-7"
+              {/* Centered hero — no grid, no sidebar */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
+                className="text-center max-w-3xl mx-auto"
+              >
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Portfolio</span>
+                </div>
+                <motion.h1
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.2, ease: HIGHLAND_EASE }}
+                  className="text-4xl md:text-5xl lg:text-[4rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[1.04] tracking-tight"
                 >
-                  <div className="flex items-center gap-3 mb-5">
-                    <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Portfolio</span>
-                  </div>
-                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[1.06] tracking-tight">
-                    Every Project Is<br />
-                    a Commitment<br />
-                    <span className="text-[hsl(var(--highland-gold))]">Made Visible.</span>
-                  </h1>
-                  <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.55)] text-base md:text-lg leading-relaxed max-w-lg">
-                    These aren't stock photos. Every image here represents a real WNC home we've protected,
-                    a real space we've built, and a standard we refuse to lower.
-                  </p>
-                </motion.div>
+                  Every Project Is a Commitment{" "}
+                  <span className="text-[hsl(var(--highland-gold))]">Made Visible.</span>
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="text-[hsl(var(--dark-section-foreground)/0.5)] text-base md:text-lg leading-relaxed max-w-xl mx-auto"
+                >
+                  These aren't stock photos. Every image here represents a real WNC home we've protected,
+                  a real space we've built, and a standard we refuse to lower.
+                </motion.p>
+              </motion.div>
 
-                {/* Stats column */}
-                <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.15, ease: HIGHLAND_EASE }}
-                  className="lg:col-span-5"
-                >
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { value: "500+", label: "Projects", icon: Camera },
-                      { value: "8", label: "Counties", icon: MapPin },
-                      { value: "4.9★", label: "Avg Rating", icon: Star },
-                      { value: "100%", label: "Owner-Inspected", icon: Award },
-                    ].map((stat, i) => (
-                      <motion.div
-                        key={stat.label}
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
-                        className="border border-[hsl(var(--highland-gold)/0.08)] bg-[hsl(var(--dark-section-foreground)/0.03)] p-4 md:p-5"
-                      >
-                        <stat.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.3)] mb-2" />
-                        <p className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none">{stat.value}</p>
-                        <p className="text-[10px] uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.35)] font-body mt-1">{stat.label}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
+              {/* Stats as horizontal strip below — not sidebar */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7, ease: HIGHLAND_EASE }}
+                className="mt-10 pt-8 border-t border-[hsl(var(--dark-section-foreground)/0.06)]"
+              >
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-[hsl(var(--dark-section-foreground)/0.08)]">
+                  {[
+                    { value: "500+", label: "Projects Completed" },
+                    { value: "8", label: "Counties Served" },
+                    { value: "4.9★", label: "Average Rating" },
+                    { value: "100%", label: "Owner-Inspected" },
+                  ].map((stat, i) => (
+                    <div key={stat.label} className="flex flex-col items-center text-center md:px-6">
+                      <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1">{stat.value}</span>
+                      <span className="text-[10px] uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.35)] font-body">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>

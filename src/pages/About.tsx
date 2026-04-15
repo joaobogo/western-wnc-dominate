@@ -45,45 +45,52 @@ const About = () => {
       />
       <Header />
       <main>
-        {/* ── HERO — Cinematic editorial with image overlap ── */}
+        {/* ── HERO — Warm editorial fade (unique to About — no text-reveal, no gold line) ── */}
         <section className="relative min-h-[55vh] md:min-h-[65vh] flex items-end overflow-hidden">
           <div className="absolute inset-0 section-dark tartan-dark" />
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.4)] to-[hsl(var(--highland-gold)/0)]" />
-          <motion.div className="absolute left-0 top-0 w-[2px]" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2.2, delay: 0.5, ease: HIGHLAND_EASE }} />
+          {/* Warm cream wash — no gold accent lines (About-only) */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--highland-gold)/0.04)] to-transparent" />
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
                 <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
                 <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Franklin & Sylva, North Carolina</span>
               </motion.div>
 
-              <div className="overflow-hidden mb-2">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-[1.05] tracking-tight">
-                  Built on Trust.
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden mb-8">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold tracking-tight leading-[1.05]">
-                  <span className="text-[hsl(var(--highland-gold))]">Rooted in These Mountains.</span>
-                </motion.h1>
-              </div>
+              {/* Slow fade-in (no curtain-reveal like Roofing/Construction) */}
+              <motion.h1
+                initial={{ opacity: 0, letterSpacing: "0.08em" }}
+                animate={{ opacity: 1, letterSpacing: "-0.02em" }}
+                transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-[1.05] mb-2"
+              >
+                Built on Trust.
+              </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, letterSpacing: "0.08em" }}
+                animate={{ opacity: 1, letterSpacing: "-0.02em" }}
+                transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold tracking-tight leading-[1.05] mb-8"
+              >
+                <span className="text-[hsl(var(--highland-gold))]">Rooted in These Mountains.</span>
+              </motion.h1>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-[hsl(var(--dark-section-foreground)/0.5)] max-w-xl mb-10 leading-relaxed font-body">
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-base md:text-lg text-[hsl(var(--dark-section-foreground)/0.5)] max-w-xl mb-10 leading-relaxed font-body">
                 Highlander Roofing & Construction is a family-owned company based in Franklin and Sylva, NC.
                 We protect homes and build spaces across Western North Carolina — with the kind of care,
                 craft, and accountability that only comes from people who live here.
               </motion.p>
 
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Talk With Our Team</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+              {/* Understated CTA — warm solid button, no gradient (About-only) */}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.5 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Link to="/consultation" className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide">
+                  <span>Talk With Our Team</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:8283979211" className="group bg-white/5 backdrop-blur-sm border border-white/15 text-[hsl(var(--dark-section-foreground))] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/10 transition-all">
-                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
-                </a>
+                <Link to="/gallery" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
+                  See What We've Built <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </motion.div>
             </div>
           </div>
