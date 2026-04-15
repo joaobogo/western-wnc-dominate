@@ -336,7 +336,7 @@ const RoofingDivision = () => {
                   className="group cta-gradient text-accent-foreground font-semibold text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Schedule a Roofing Consultation</span>
+                  <span className="relative">Plan Your Roof With Confidence</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
@@ -1060,14 +1060,14 @@ const RoofingDivision = () => {
                   viewport={{ once: true }}
                 >
                   <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">
-                    Discuss Your Roof With Our Team
+                    Your Roof, Our Expertise
                   </span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
-                    Your Roof Protects Everything<br className="hidden md:block" /> That Matters. Choose a Team<br className="hidden md:block" /> That Builds Accordingly.
+                    Your Roof Protects Everything<br className="hidden md:block" /> That Matters. Plan It With<br className="hidden md:block" /> a Team That Knows.
                   </h2>
                   <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     Whether it's time for a replacement, a repair, or an honest second opinion —
-                    the conversation starts with a local expert who knows mountain roofing firsthand.
+                    let's build a plan that gives you confidence for the next 30 years.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
@@ -1076,7 +1076,7 @@ const RoofingDivision = () => {
                       className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide"
                     >
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                      <span className="relative">Request a Roof Consultation</span>
+                      <span className="relative">Let's Protect What Matters Most</span>
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <a

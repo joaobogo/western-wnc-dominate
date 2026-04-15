@@ -522,9 +522,9 @@ const Blog = () => {
         </section>
 
         <ReassuranceBlock
-          headline={"Have a Question About\nYour Roof or Project?"}
-          subheadline="Our team is happy to answer questions — no commitment required. Just honest, expert advice."
-          ctaText="Discuss Your Project"
+          headline={"Have a Question About\nSomething You Read?"}
+          subheadline="This content is written by the team that builds in these mountains. If you have questions, we have answers — and there's no obligation."
+          ctaText="Talk to the Team That Wrote This"
         />
       </main>
       <Footer />
