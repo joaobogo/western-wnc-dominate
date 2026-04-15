@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings, TrendingUp } from "lucide-react";
+import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -40,12 +40,12 @@ const roofingData = {
 const constructionData = {
   icon: HardHat,
   label: "Construction Division",
-  badge: "Now Expanding",
+  badge: "Licensed GC",
   title: "Full-Scope Construction",
-  subtitle: "Our Evolution",
-  description: "Additions, renovations, siding, and outdoor living — executed under licensed GC oversight with the same documented process that earned our roofing reputation. One team handles everything.",
+  subtitle: "Our Expertise",
+  description: "Additions, renovations, siding, and outdoor living — executed under licensed General Contractor oversight with the same documented process, in-house crews, and warranty standards we bring to every roof.",
   stats: [
-    { value: "40+", label: "Years Combined Exp." },
+    { value: "100%", label: "Licensed & Insured" },
     { value: "8", label: "WNC Counties" },
   ],
   services: [
@@ -136,7 +136,6 @@ const DivisionCard = ({ data, accent, index }: {
               ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] border-[hsl(var(--highland-gold)/0.2)]"
               : "text-white/70 bg-white/5 border-white/10"
           }`}>
-            {isGold && <TrendingUp className="w-2.5 h-2.5 inline mr-1 -mt-px" />}
             {data.badge}
           </span>
         </div>

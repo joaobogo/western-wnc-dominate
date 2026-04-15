@@ -102,7 +102,7 @@ const services: FeaturedService[] = [
   {
     icon: Hammer,
     title: "Renovations",
-    tagline: "Documented milestones. No surprises.",
+    tagline: "Same standards. New spaces.",
     description: "Kitchen, bath, and full interior remodels with sequenced phases, written milestones, and warranty protection on every stage of work.",
     stat: "100%",
     statLabel: "licensed & insured",

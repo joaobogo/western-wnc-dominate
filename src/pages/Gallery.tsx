@@ -309,7 +309,7 @@ const Gallery = () => {
                 Want results like these on your property?
               </p>
               <Link
-                to="/request-inspection"
+                to="/consultation"
                 className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 btn-primary-interactive"
               >
                 Schedule a Consultation <ArrowRight className="w-4 h-4 btn-arrow-icon" />

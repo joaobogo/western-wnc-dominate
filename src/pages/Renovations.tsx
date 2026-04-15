@@ -116,7 +116,7 @@ const Renovations = () => {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3">
-                <Link to="/request-inspection" className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-[14px] md:py-[16px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
+                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-[14px] md:py-[16px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
@@ -261,7 +261,7 @@ const Renovations = () => {
                 Every renovation starts with a conversation about what you want, what's possible, and what it'll take. No pressure, no sales pitch.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Link to="/request-inspection" className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-10 py-[16px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
+                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-10 py-[16px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Request a Consultation</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
