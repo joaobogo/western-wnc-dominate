@@ -20,6 +20,7 @@ Updated: now
 - [Visual Identity](mem://style/visual-identity) — Brand colors, fonts, and hero section styling for Mountain Authority aesthetic
 - [Component Language](mem://style/component-language) — Premium component library: PremiumCard, ServicePreview, TrustBlock, StatBar, ImageFrame, QuoteModule, TestimonialCard, Button variants
 - [Construction Visual System](mem://style/construction-visual-system) — Blueprint textures, gold accents, architectural cards, and dedicated construction lead flow
+- [Page Identity System](mem://style/page-identity-system) — Per-page strategic identity: purpose, tone, visual mood, sections, proof type, CTA tone, motion speed for all header pages
 - [Page Distinctness Rule](mem://style/page-distinctness-rule) — Every page must feel personalized, visually rich, locally relevant, and distinct — no thin templates
 - [Motion Design](mem://style/motion-design) — Framer-motion cinematic animations and scroll indicator constraints
 - [Navigation UX](mem://style/navigation-ux) — Scroll-reactive header with hierarchical dropdowns
