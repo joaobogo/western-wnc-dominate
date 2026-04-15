@@ -44,7 +44,7 @@ const reviewHighlights = [
 const proofPoints = [
   { value: "500+", label: "Projects Completed" },
   { value: "8", label: "WNC Counties" },
-  { value: "4.7★", label: "Google Rating" },
+  { value: "4.9★", label: "Google Rating" },
   { value: "40+", label: "Years Combined Exp." },
 ];
 
@@ -154,8 +154,8 @@ const HomepageTrust = () => {
                 ))}
               </div>
               <div className="h-5 w-px bg-border" />
-              <span className="font-heading font-bold text-foreground text-lg">4.7</span>
-              <span className="text-muted-foreground text-xs font-body">on Google · 122+ reviews</span>
+              <span className="font-heading font-bold text-foreground text-lg">4.9</span>
+              <span className="text-muted-foreground text-xs font-body">on Google · 150+ reviews</span>
             </div>
           </motion.div>
 

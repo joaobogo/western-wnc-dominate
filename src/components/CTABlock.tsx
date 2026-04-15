@@ -155,14 +155,14 @@ const CTABlock = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/50 text-[13px] font-body text-center md:text-left">
               <span className="text-primary-foreground/80 font-heading font-bold">500+ projects.</span>{" "}
-              <span className="text-primary-foreground/80 font-heading font-bold">4.7★ rated.</span>{" "}
+              <span className="text-primary-foreground/80 font-heading font-bold">4.9★ rated.</span>{" "}
               Serving Western NC since 2017.
             </p>
             <Link
-              to="/request-inspection"
+              to="/consultation"
               className="group inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
             >
-              Get Started
+              Start Your Project
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
