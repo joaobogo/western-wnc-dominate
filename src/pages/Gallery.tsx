@@ -401,13 +401,13 @@ const Gallery = () => {
           <div className="container-tight text-center px-5 md:px-8 relative z-10">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
               <p className="text-primary-foreground font-heading font-semibold text-lg">
-                Want results like these on your property?
+                Imagine results like these on your property.
               </p>
               <Link
                 to="/consultation"
                 className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 btn-primary-interactive"
               >
-                Schedule a Consultation <ArrowRight className="w-4 h-4 btn-arrow-icon" />
+                Start a Similar Project <ArrowRight className="w-4 h-4 btn-arrow-icon" />
               </Link>
             </div>
           </div>
@@ -460,8 +460,8 @@ const Gallery = () => {
 
         <ReassuranceBlock
           headline={"Your Project Could Be\nOur Next Showcase."}
-          subheadline="Schedule a consultation and let's discuss what's possible for your home. Every great project starts with a conversation."
-          ctaText="Discuss Your Project"
+          subheadline="Every project here started the same way yours could — with a conversation about what's possible for your home."
+          ctaText="Your Project Could Be Next"
         />
       </main>
 

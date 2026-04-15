@@ -400,28 +400,28 @@ const About = () => {
           <div className="container-tight text-center">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
-                Ready to Work With a Team<br /> That Builds Like It Matters?
+                Now That You Know Us —<br /> Let's Talk About Your Project.
               </h2>
               <p className="text-primary-foreground/70 mb-8 max-w-xl mx-auto">
-                Start a conversation with our team — no pressure, no upselling. Just honest advice
-                from people who build in these mountains every day.
+                Browse our projects, read what homeowners say, or start a conversation.
+                We'll earn your trust the same way we've earned everyone else's.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <Link to="/gallery" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                  See What We've Built <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link to="/consultation" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
                   Talk With Our Team <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:8283979211" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
-                  <Phone className="w-5 h-5" /> (828) 397-9211
-                </a>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/50 text-xs font-medium uppercase tracking-wider">
-                <span>Licensed & Insured</span>
+                <span>Family-Owned Since 2017</span>
                 <span className="text-primary-foreground/20">•</span>
-                <span>CertainTeed Master Applicator</span>
+                <span>20+ Local Professionals</span>
                 <span className="text-primary-foreground/20">•</span>
-                <span>In-House Crews</span>
+                <span>2024 Best of Macon County</span>
                 <span className="text-primary-foreground/20">•</span>
-                <span>WNC Specialists</span>
+                <span>4.9★ Average Rating</span>
               </div>
             </motion.div>
           </div>
