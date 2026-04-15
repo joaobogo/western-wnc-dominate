@@ -136,7 +136,6 @@ const DivisionCard = ({ data, accent, index }: {
               ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] border-[hsl(var(--highland-gold)/0.2)]"
               : "text-white/70 bg-white/5 border-white/10"
           }`}>
-            {isGold && <TrendingUp className="w-2.5 h-2.5 inline mr-1 -mt-px" />}
             {data.badge}
           </span>
         </div>
