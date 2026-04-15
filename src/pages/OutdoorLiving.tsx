@@ -156,22 +156,45 @@ const OutdoorLiving = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Outdoor lifestyle badges — unique to Outdoor Living */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.5 }}
+                className="mt-10 flex items-center gap-3"
+              >
+                {[
+                  { icon: Sun, label: "3–4 Season Use" },
+                  { icon: Mountain, label: "View Optimization" },
+                  { icon: Shield, label: "Mountain-Rated" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/8 rounded-sm">
+                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
+                    <span className="text-[10px] font-body text-primary-foreground/35 uppercase tracking-wider">{item.label}</span>
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* ─── OPENING STATEMENT ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
+        {/* ─── OPENING — Experiential with generous whitespace ─── */}
+        <section className="py-20 md:py-28 bg-background">
+          <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
+              <Sun className="w-6 h-6 text-[hsl(var(--highland-gold)/0.3)] mx-auto mb-8" />
+              <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
                 Mountain living isn't indoor living. The best WNC properties extend into the landscape — with structures built to handle the weather, frame the views, and last.
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
-                Highlander builds outdoor living spaces scaled to your property, designed for the Western North Carolina climate, and finished with the same quality we bring to every roofing and construction project. From covered porches that handle afternoon storms to screened rooms that extend your evenings — we build spaces that work as hard as they look.
+              <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
+                Highlander builds outdoor living spaces scaled to your property, designed for the Western North Carolina climate, and finished with the same quality we bring to every roofing and construction project.
               </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
+              <div className="flex items-center justify-center gap-3 mt-10">
+                <TreePine className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.2)]" />
+                <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.12)]" />
+                <TreePine className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.2)]" />
+              </div>
             </motion.div>
           </div>
         </section>

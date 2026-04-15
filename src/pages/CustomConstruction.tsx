@@ -141,22 +141,42 @@ const CustomConstruction = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Selectivity indicator — unique to Custom */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 1.5 }}
+                className="mt-10 p-5 bg-white/5 backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.15)] rounded-sm max-w-md"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <Gem className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-xs uppercase tracking-wider text-primary-foreground/50 font-body font-semibold">By Selection Only</span>
+                </div>
+                <p className="text-sm text-primary-foreground/60 font-body leading-relaxed">
+                  We accept approximately 30% of custom project inquiries. Not every project is the right fit — and that selectivity protects your investment.
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* ─── OPENING ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
+        {/* ─── OPENING — Premium minimal with gem accent ─── */}
+        <section className="py-20 md:py-28 bg-background">
+          <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
+              <Gem className="w-5 h-5 text-[hsl(var(--highland-gold)/0.3)] mx-auto mb-8" />
+              <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
                 Some projects don't fit categories. They require more planning, more coordination, and more craft. Those are the projects we're built for.
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
                 Highlander takes on custom and specialty construction work where our planning discipline, in-house craft quality, and communication standards make a meaningful difference. We're selective about the projects we accept — and for the ones we take, we deliver execution that matches the ambition.
               </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
+              <div className="flex items-center justify-center gap-2 mt-10">
+                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
+                <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.15)]" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
+              </div>
             </motion.div>
           </div>
         </section>

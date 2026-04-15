@@ -123,12 +123,12 @@ const ExteriorImprovements = () => {
 
               <div className="overflow-hidden mb-2">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Refine What's There.
+                  Defend the Envelope.
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.05] tracking-tight">
-                  <span className="text-[hsl(var(--highland-gold))]">Protect What Matters.</span>
+                  <span className="text-[hsl(var(--highland-gold))]">Define the Character.</span>
                 </motion.h1>
               </div>
 
@@ -139,30 +139,65 @@ const ExteriorImprovements = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-9 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Schedule a Project Consultation</span>
+                  <span className="relative">Discuss Your Exterior Project</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a href="tel:8283979211" className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </motion.div>
+
+              {/* Weather resilience strip — unique to Exterior */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 1.5 }}
+                className="mt-10 flex flex-wrap gap-2"
+              >
+                {[
+                  { icon: CloudRain, label: "40–60\" Annual Rain" },
+                  { icon: Thermometer, label: "80+ Freeze Cycles/yr" },
+                  { icon: Wind, label: "Ridge Wind Exposure" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-1.5 px-3 py-2 bg-white/5 border border-white/8 rounded-sm">
+                    <item.icon className="w-3 h-3 text-primary-foreground/30" />
+                    <span className="text-[10px] font-body text-primary-foreground/30 uppercase tracking-wider">{item.label}</span>
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* ─── OPENING ─── */}
+        {/* ─── OPENING — Protection-focused with left-aligned editorial ─── */}
         <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                Your home's exterior is the first thing people see and the last line of defense against everything Western North Carolina throws at it.
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
-                Highlander approaches exterior work with the same project discipline, material standards, and quality verification we bring to roofing and new construction. Whether it's a full siding replacement or a targeted structural repair — we deliver results that hold up for decades.
-              </p>
-              <div className="w-12 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
-            </motion.div>
+          <div className="container-tight max-w-5xl">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-8">
+                <div className="w-10 h-[3px] mb-8 bg-[hsl(var(--highland-gold)/0.3)]" />
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
+                  Your home's exterior is the first thing people see and the last line of defense against everything Western North Carolina throws at it.
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body">
+                  Highlander approaches exterior work with the same project discipline, material standards, and quality verification we bring to roofing and new construction. Whether it's a full siding replacement or a targeted structural repair — we deliver results that hold up for decades.
+                </p>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="lg:col-span-4">
+                <div className="bg-secondary border border-border rounded-sm p-6 space-y-4">
+                  <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-3">Typical ROI</h3>
+                  {[
+                    { label: "Siding Replacement", value: "70–80%" },
+                    { label: "Window Upgrades", value: "60–70%" },
+                    { label: "Entry Enhancement", value: "75%+" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center justify-between py-2 border-b border-border/50 last:border-0">
+                      <span className="text-sm text-muted-foreground font-body">{item.label}</span>
+                      <span className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
