@@ -1,12 +1,70 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, HardHat, ShieldCheck, Ruler, Users, FileText, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight, HardHat, ShieldCheck, Ruler, Users, FileText, CheckCircle2,
+  Hammer, Cloud, Eye, Sparkles, type LucideIcon,
+} from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+
+/* ─── Discipline Bridge — 6 skills that transfer from roofing to construction ─── */
+
+interface DisciplineBridge {
+  icon: LucideIcon;
+  roofingLabel: string;
+  constructionLabel: string;
+  title: string;
+  desc: string;
+}
+
+const disciplines: DisciplineBridge[] = [
+  {
+    icon: Hammer,
+    roofingLabel: "Precision installation",
+    constructionLabel: "Craft-grade building",
+    title: "Craftsmanship",
+    desc: "The same hand-selected crews who install roofs to manufacturer-certified tolerances now frame additions, hang doors, and set trim with the same obsessive attention to fit and finish.",
+  },
+  {
+    icon: FileText,
+    roofingLabel: "Photo documentation",
+    constructionLabel: "Milestone tracking",
+    title: "Project Management",
+    desc: "Written scope, sequenced phases, daily oversight, and photo documentation at every milestone. The system that earned our roofing reputation now manages every framing, finishing, and structural phase.",
+  },
+  {
+    icon: Ruler,
+    roofingLabel: "Load & drainage engineering",
+    constructionLabel: "Structural design",
+    title: "Technical Understanding",
+    desc: "Roof engineering teaches you how structures bear loads, shed water, and handle thermal movement. That structural intelligence now informs every addition, opening, and connection we build.",
+  },
+  {
+    icon: Cloud,
+    roofingLabel: "Waterproofing mastery",
+    constructionLabel: "Envelope protection",
+    title: "Weather Protection",
+    desc: "Nobody understands how water finds its way into buildings better than roofers. We bring that hard-won knowledge to every flashing detail, wall transition, and exterior junction — because leaks start at transitions.",
+  },
+  {
+    icon: ShieldCheck,
+    roofingLabel: "Mountain-rated specs",
+    constructionLabel: "Elevation-calibrated building",
+    title: "Structural Thinking",
+    desc: "Load ratings, wind uplift, snow loads, and material specs calibrated for actual elevation and exposure. Coastal assumptions don't build mountain structures — and we've never used them.",
+  },
+  {
+    icon: Sparkles,
+    roofingLabel: "Clean walk-throughs",
+    constructionLabel: "Detail-perfect handoffs",
+    title: "Finish Quality",
+    desc: "The last 5% of every project gets the most attention, not the least. Trim reveals, caulk lines, hardware alignment, and material transitions — finished to the standard a homeowner notices every day.",
+  },
+];
 
 const principles = [
   {
@@ -40,9 +98,9 @@ const ConstructionAuthority = () => {
 
         {/* Ambient architectural line */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 700" preserveAspectRatio="none">
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="none">
             <motion.path
-              d="M0,600 L200,600 L400,450 L600,450 L800,350 L1000,350 L1200,450 L1440,450"
+              d="M0,750 L200,750 L400,550 L600,550 L800,400 L1000,400 L1200,550 L1440,550"
               fill="none"
               stroke="hsl(var(--highland-gold))"
               strokeOpacity={0.04}
@@ -56,110 +114,109 @@ const ConstructionAuthority = () => {
         </div>
 
         <div className="container-tight relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Left — editorial narrative (7 cols) */}
-            <div className="lg:col-span-7">
-              <ScrollReveal variant="fade">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                    <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  </div>
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold)/0.6)]">
-                    Why Construction
-                  </span>
-                </div>
-              </ScrollReveal>
-
-              <HeadingReveal delay={0.1}>
-                <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-[1.1] mb-6 tracking-tight">
-                  We Didn't Add Construction<br className="hidden md:block" />
-                  to Sell More.{" "}
-                  <span className="text-[hsl(var(--highland-gold))]">
-                    We Added It Because<br className="hidden md:block" />
-                    Clients Kept Asking.
-                  </span>
-                </h2>
-              </HeadingReveal>
-
-              <ScrollReveal variant="rise-subtle" delay={0.25}>
-                <div className="space-y-4 mb-8">
-                  <p className="text-dark-section-foreground/50 text-[15px] font-body leading-[1.8] max-w-2xl">
-                    After 500+ roofing projects, the most common question we heard was: 
-                    <em className="text-dark-section-foreground/70"> "Can you handle the rest of the house too?"</em>
-                  </p>
-                  <p className="text-dark-section-foreground/40 text-[15px] font-body leading-[1.8] max-w-2xl">
-                    The answer is now yes. Highlander Construction operates under the same licensed 
-                    GC oversight, the same project documentation system, and the same crews that 
-                    built our roofing reputation. No learning curve. No compromise. Just the 
-                    natural next step for a company that already proved it could deliver.
-                  </p>
-                </div>
-              </ScrollReveal>
-
-              <GoldLine width="3rem" delay={0.35} className="mb-8" />
-
-              {/* Proof strip */}
-              <ScrollReveal variant="rise-subtle" delay={0.4}>
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
-                  {[
-                    "Licensed General Contractor",
-                    "Full Liability & Workers' Comp",
-                    "8 WNC Counties",
-                  ].map((item) => (
-                    <div key={item} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
-                      <span className="text-dark-section-foreground/35 text-[12px] font-body font-medium">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </ScrollReveal>
-
-              {/* CTA */}
-              <ScrollReveal variant="rise" delay={0.45}>
-                <Link
-                  to="/construction"
-                  className="group cta-gradient text-accent-foreground font-heading font-bold text-[13px] px-9 py-4 rounded-none inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Explore the Construction Division</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </ScrollReveal>
+          {/* Header */}
+          <ScrollReveal variant="fade">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
+                <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+              </div>
+              <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold)/0.6)]">
+                Why Construction
+              </span>
             </div>
+          </ScrollReveal>
 
-            {/* Right — principle cards (5 cols) */}
-            <div className="lg:col-span-5 space-y-4">
-              {principles.map((p, i) => (
-                <motion.div
-                  key={p.title}
-                  initial={{ opacity: 0, x: 24 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
-                  className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none p-5 hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
-                >
-                  {/* Gold left accent on hover */}
-                  <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-600" />
+          <HeadingReveal delay={0.1}>
+            <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-[1.1] mb-6 tracking-tight max-w-3xl">
+              We Didn't Add Construction<br className="hidden md:block" />
+              to Sell More.{" "}
+              <span className="text-[hsl(var(--highland-gold))]">
+                We Added It Because<br className="hidden md:block" />
+                Clients Kept Asking.
+              </span>
+            </h2>
+          </HeadingReveal>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center flex-shrink-0 group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
-                      <p.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-heading font-bold text-dark-section-foreground/85 mb-1.5 tracking-tight">
-                        {p.title}
-                      </h3>
-                      <p className="text-dark-section-foreground/35 text-[12.5px] leading-[1.7] font-body">
-                        {p.desc}
-                      </p>
-                    </div>
+          <ScrollReveal variant="rise-subtle" delay={0.25}>
+            <div className="space-y-4 mb-10 max-w-2xl">
+              <p className="text-dark-section-foreground/50 text-[15px] font-body leading-[1.8]">
+                After 500+ roofing projects, the most common question we heard was:
+                <em className="text-dark-section-foreground/70"> "Can you handle the rest of the house too?"</em>
+              </p>
+              <p className="text-dark-section-foreground/40 text-[15px] font-body leading-[1.8]">
+                The answer is now yes. Every skill that makes us exceptional roofers — project management, structural understanding, weather protection, craftsmanship, and finish quality — transfers directly to construction. It's not a pivot. It's a natural extension.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <GoldLine width="3rem" delay={0.35} className="mb-10" />
+
+          {/* ─── 6-Point Discipline Bridge Grid ─── */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-10">
+            {disciplines.map((d, i) => (
+              <motion.div
+                key={d.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + i * 0.06, duration: 0.5, ease: HIGHLAND_EASE }}
+                className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none p-5 hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
+              >
+                {/* Gold left accent on hover */}
+                <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-600" />
+
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-9 h-9 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center flex-shrink-0 group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
+                    <d.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
                   </div>
-                </motion.div>
+                  <h3 className="text-sm font-heading font-bold text-dark-section-foreground/85 tracking-tight">
+                    {d.title}
+                  </h3>
+                </div>
+
+                {/* Skill transfer labels */}
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-dark-section-foreground/25 bg-dark-section-foreground/[0.04] px-2 py-0.5">{d.roofingLabel}</span>
+                  <ArrowRight className="w-3 h-3 text-[hsl(var(--highland-gold)/0.3)]" />
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold)/0.5)] bg-[hsl(var(--highland-gold)/0.06)] px-2 py-0.5">{d.constructionLabel}</span>
+                </div>
+
+                <p className="text-dark-section-foreground/35 text-[12.5px] leading-[1.7] font-body">
+                  {d.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Proof strip */}
+          <ScrollReveal variant="rise-subtle" delay={0.4}>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
+              {[
+                "Licensed General Contractor",
+                "Full Liability & Workers' Comp",
+                "8 WNC Counties",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
+                  <span className="text-dark-section-foreground/35 text-[12px] font-body font-medium">
+                    {item}
+                  </span>
+                </div>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
+
+          {/* CTA */}
+          <ScrollReveal variant="rise" delay={0.45}>
+            <Link
+              to="/construction"
+              className="group cta-gradient text-accent-foreground font-heading font-bold text-[13px] px-9 py-4 rounded-none inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <span className="relative">Explore the Construction Division</span>
+              <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </ScrollReveal>
         </div>
       </div>
     </section>
