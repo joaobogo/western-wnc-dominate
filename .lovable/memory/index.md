@@ -25,6 +25,7 @@ Updated: now
 - [Brand Authority Signals](mem://brand/authority-signals) — Key trust signals, awards, certifications, and business history
 - [Brand Values Framework](mem://brand/values-framework) — Seven core values with reusable page sections and CTA support copy
 - [Brand Positioning System](mem://brand/positioning-system) — Brand promise, personality, pillars, emotional/rational promises, premium value prop
+- [Construction Messaging](mem://brand/construction-messaging-framework) — Construction division positioning copy: tone, headlines, intros, service lines, CTA language, anti-patterns
 - [CTA Language System](mem://strategy/cta-language-system) — Premium CTA labels per division, forbidden gimmicky language, config reference
 - [Homepage Architecture](mem://strategy/homepage-architecture) — Strict conversion sequence layout for the homepage
 - [Conversion Architecture](mem://strategy/conversion-architecture) — Mobile-first lead capture, sticky CTA, and interactive lead magnets

@@ -43,7 +43,7 @@ const constructionData = {
   badge: "Licensed GC",
   title: "Full-Scope Construction",
   subtitle: "Our Expertise",
-  description: "Additions, renovations, siding, and outdoor living — built by the same in-house crews, under the same licensed GC oversight, with the same warranty you'd get on a Highlander roof. One team. One standard.",
+  description: "Additions, renovations, exterior builds, and outdoor living — planned with the same discipline, built by the same in-house crews, and backed by the same warranty that earned our roofing reputation. One team. One standard.",
   stats: [
     { value: "GC", label: "Licensed Contractor" },
     { value: "8", label: "WNC Counties" },
@@ -269,8 +269,8 @@ const DualPathway = () => {
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
           <p className="text-[13px] text-muted-foreground/60 font-body leading-relaxed max-w-md mx-auto">
-            Most contractors do one thing. We do two — because your roof and your renovation
-            shouldn't require two companies, two timelines, and two standards.
+            Your roof and your renovation shouldn't require two companies, two schedules,
+            and two definitions of quality. With Highlander, they don't.
           </p>
         </motion.div>
       </div>
