@@ -14,7 +14,8 @@ interface SEOHeadProps {
 
 const SITE_NAME = "Highlander Roofing & Construction";
 const BASE_URL = "https://western-wnc-dominate.lovable.app";
-const DEFAULT_IMAGE = `${BASE_URL}/favicon.png`;
+const FAVICON_VERSION = "2";
+const DEFAULT_IMAGE = `${BASE_URL}/favicon.png?v=${FAVICON_VERSION}`;
 const TWITTER_HANDLE = "@highlanderroof";
 const DEFAULT_KEYWORDS =
   "roofing Western NC, roofing Highlands NC, roofing Cashiers NC, roofing Franklin NC, roofing Sylva NC, metal roofing WNC, roof repair, roof replacement, storm damage, mountain home construction, home additions WNC, Highlander Roofing";

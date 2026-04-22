@@ -9,16 +9,17 @@ const HTML = resolve(ROOT, "index.html");
 
 // Required assets — must exist in /public AND be referenced somewhere reachable from index.html
 // (either directly in <head> OR transitively through site.webmanifest, which is itself linked from <head>)
+// Patterns allow optional ?v=N cache-busting query strings.
+const Q = `(?:\\?v=\\d+)?`;
 const REQUIRED = [
-  { file: "favicon.ico", inHtml: [/rel=["']icon["'][^>]*href=["']\/favicon\.ico["']/i] },
-  { file: "favicon-16.png", inHtml: [/href=["']\/favicon-16\.png["']/i] },
-  { file: "favicon-32.png", inHtml: [/href=["']\/favicon-32\.png["']/i] },
-  { file: "favicon.png", inHtml: [/href=["']\/favicon\.png["']/i] },
-  { file: "apple-touch-icon.png", inHtml: [/rel=["']apple-touch-icon["'][^>]*href=["']\/apple-touch-icon\.png["']/i] },
-  { file: "site.webmanifest", inHtml: [/rel=["']manifest["'][^>]*href=["']\/site\.webmanifest["']/i] },
-  // These can be referenced from EITHER index.html OR site.webmanifest
-  { file: "icon-192.png", inHtml: [/["']\/icon-192\.png["']/], allowManifest: true },
-  { file: "icon-512.png", inHtml: [/["']\/icon-512\.png["']/], allowManifest: true },
+  { file: "favicon.ico", inHtml: [new RegExp(`rel=["']icon["'][^>]*href=["']/favicon\\.ico${Q}["']`, "i")] },
+  { file: "favicon-16.png", inHtml: [new RegExp(`href=["']/favicon-16\\.png${Q}["']`, "i")] },
+  { file: "favicon-32.png", inHtml: [new RegExp(`href=["']/favicon-32\\.png${Q}["']`, "i")] },
+  { file: "favicon.png", inHtml: [new RegExp(`href=["']/favicon\\.png${Q}["']`, "i")] },
+  { file: "apple-touch-icon.png", inHtml: [new RegExp(`rel=["']apple-touch-icon["'][^>]*href=["']/apple-touch-icon\\.png${Q}["']`, "i")] },
+  { file: "site.webmanifest", inHtml: [new RegExp(`rel=["']manifest["'][^>]*href=["']/site\\.webmanifest${Q}["']`, "i")] },
+  { file: "icon-192.png", inHtml: [new RegExp(`["']/icon-192\\.png${Q}["']`)], allowManifest: true },
+  { file: "icon-512.png", inHtml: [new RegExp(`["']/icon-512\\.png${Q}["']`)], allowManifest: true },
 ];
 
 // Required <meta>/<link> tags in head (regex must match in index.html)
@@ -88,7 +89,7 @@ function main() {
       if (!manifest.icons || manifest.icons.length === 0) {
         errors.push("site.webmanifest has no icons");
       } else {
-        const srcs = manifest.icons.map((i) => i.src);
+        const srcs = manifest.icons.map((i) => i.src.split("?")[0]);
         for (const required of REQUIRED_MANIFEST_ICONS) {
           if (!srcs.includes(required)) {
             errors.push(`site.webmanifest missing icon reference: ${required}`);
