@@ -30,6 +30,7 @@ const SEOChecklist = lazy(() => import("./pages/SEOChecklist"));
 const InternalLinkingQA = lazy(() => import("./pages/InternalLinkingQA"));
 const KeywordMap = lazy(() => import("./pages/KeywordMap"));
 const SEOLaunchQA = lazy(() => import("./pages/SEOLaunchQA"));
+const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
 const RoofDesigner = lazy(() => import("./pages/RoofDesigner"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
 const StormCenter = lazy(() => import("./pages/StormCenter"));
@@ -107,6 +108,7 @@ const App = () => (
           <Route path="/internal-linking-qa" element={<InternalLinkingQA />} />
           <Route path="/keyword-map" element={<KeywordMap />} />
           <Route path="/seo-launch-qa" element={<SEOLaunchQA />} />
+          <Route path="/seo-monitoring" element={<SEOMonitoring />} />
           <Route path="/roof-designer" element={<RoofDesigner />} />
           <Route path="/consultation" element={<QuoteFlow />} />
           <Route path="/contact" element={<Contact />} />
