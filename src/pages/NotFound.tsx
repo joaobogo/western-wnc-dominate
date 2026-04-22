@@ -1,13 +1,41 @@
-import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
+import { supabase } from "@/integrations/supabase/client";
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
+    const path = `${location.pathname}${location.search}${location.hash}`;
+    const referrer = typeof document !== "undefined" ? document.referrer || null : null;
+    const userAgent = typeof navigator !== "undefined" ? navigator.userAgent : null;
+
+    console.error("404 Error: User attempted to access non-existent route:", path);
+
+    void supabase
+      .from("seo_404_log")
+      .insert({
+        path: location.pathname,
+        referrer,
+        user_agent: userAgent,
+        metadata: {
+          path,
+          pathname: location.pathname,
+          search: location.search || null,
+          hash: location.hash || null,
+          referrer,
+          userAgent,
+          href: typeof window !== "undefined" ? window.location.href : null,
+          loggedAt: new Date().toISOString(),
+        },
+      })
+      .then(({ error }) => {
+        if (error) {
+          console.warn("404 logging failed:", error.message);
+        }
+      });
+  }, [location.hash, location.pathname, location.search]);
 
   return (
     <>
