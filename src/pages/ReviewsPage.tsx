@@ -191,7 +191,7 @@ const ReviewsPage = () => {
             <div className="grid lg:grid-cols-3 gap-5 mb-5">
               {featured.map((r, i) => (
                 <motion.div
-                  key={r.name}
+                  key={r.authorName}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -210,17 +210,17 @@ const ReviewsPage = () => {
                     </div>
                   </div>
                   <Quote className="w-6 h-6 text-[hsl(var(--highland-gold)/0.15)] mb-3 rotate-180" />
-                  <p className="text-foreground text-[15px] leading-relaxed mb-5 font-body">"{r.text}"</p>
+                  <p className="text-foreground text-[15px] leading-relaxed mb-5 font-body">"{r.reviewBody}"</p>
                   <div className="bg-secondary/60 rounded-sm px-4 py-3 mb-5">
                     <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/50 mb-1">Project Outcome</p>
                     <p className="text-sm font-body font-medium text-foreground/80">{r.outcome}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center text-primary font-heading font-bold text-sm">
-                      {r.name.charAt(0)}
+                      {r.authorName.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-sm">{r.name}</p>
+                      <p className="font-semibold text-foreground text-sm">{r.authorName}</p>
                       <p className="text-muted-foreground text-xs font-body">{r.location} · {r.project}</p>
                     </div>
                   </div>
@@ -258,7 +258,7 @@ const ReviewsPage = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {filtered.map((r, i) => (
                 <motion.div
-                  key={r.name + r.project}
+                  key={r.authorName + r.project}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -275,14 +275,14 @@ const ReviewsPage = () => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-foreground/80 text-[13px] leading-relaxed mb-4 font-body">"{r.text}"</p>
+                  <p className="text-foreground/80 text-[13px] leading-relaxed mb-4 font-body">"{r.reviewBody}"</p>
                   <p className="text-[11px] text-primary/60 font-body font-medium mb-4 leading-snug">{r.outcome}</p>
                   <div className="flex items-center gap-2.5 pt-3 border-t border-border">
                     <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-[10px]">
-                      {r.name.charAt(0)}
+                      {r.authorName.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-xs">{r.name}</p>
+                      <p className="font-semibold text-foreground text-xs">{r.authorName}</p>
                       <p className="text-muted-foreground text-[10px] font-body">{r.location}</p>
                     </div>
                   </div>
