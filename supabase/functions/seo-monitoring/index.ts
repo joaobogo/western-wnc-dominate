@@ -30,7 +30,7 @@ serve(async (req) => {
         .limit(50),
       supabase
         .from("seo_reports")
-        .select("id, created_at, period_start, period_end, sitemap_status, sitemap_url_count, top_404_paths, total_404s, gsc_indexed_pages, gsc_top_pages, errors")
+        .select("id, created_at, period_start, period_end, sitemap_status, sitemap_url_count, top_404_paths, total_404s, gsc_indexed_pages, gsc_top_keywords, gsc_top_pages, errors")
         .order("period_end", { ascending: false })
         .limit(8),
     ]);
