@@ -1,7 +1,7 @@
 import { useParams, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle } from "lucide-react";
-import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -50,20 +50,21 @@ const ServicePage = () => {
         title={service.metaTitle}
         description={service.metaDescription}
         path={servicePath}
-        jsonLd={[
-          serviceSchema({
+        jsonLd={buildPageSchema({
+          type: "service",
+          service: {
             name: service.title,
             description: service.description,
             url: servicePath,
             areaServed: "Western North Carolina",
-          }),
-          faqSchema(service.faqs),
-          breadcrumbSchema([
+          },
+          breadcrumbs: [
             { name: "Home", url: "/" },
             { name: "Services", url: "/services" },
             { name: service.title, url: servicePath },
-          ]),
-        ]}
+          ],
+          faqs: service.faqs,
+        })}
       />
       <Header />
       <main>
