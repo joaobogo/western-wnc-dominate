@@ -33,6 +33,9 @@ const ResidentialRoofing = lazy(() => import("./pages/ResidentialRoofing"));
 const RoofReplacement = lazy(() => import("./pages/RoofReplacement"));
 const RoofRepair = lazy(() => import("./pages/RoofRepair"));
 const StormDamage = lazy(() => import("./pages/StormDamage"));
+const RoofReplacementAds = lazy(() => import("./pages/RoofReplacementAds"));
+const RoofRepairAds = lazy(() => import("./pages/RoofRepairAds"));
+const StormDamageAds = lazy(() => import("./pages/StormDamageAds"));
 const CommercialRoofing = lazy(() => import("./pages/CommercialRoofing"));
 const SpecialtyRoofing = lazy(() => import("./pages/SpecialtyRoofing"));
 const ConstructionDivision = lazy(() => import("./pages/ConstructionDivision"));
@@ -62,6 +65,9 @@ const App = () => (
           <Route path="/roofing/roof-replacement" element={<RoofReplacement />} />
           <Route path="/roofing/roof-repair" element={<RoofRepair />} />
           <Route path="/roofing/storm-damage" element={<StormDamage />} />
+          <Route path="/lp/roof-replacement" element={<RoofReplacementAds />} />
+          <Route path="/lp/roof-repair" element={<RoofRepairAds />} />
+          <Route path="/lp/storm-damage" element={<StormDamageAds />} />
           <Route path="/roofing/commercial" element={<CommercialRoofing />} />
           <Route path="/roofing/specialty" element={<SpecialtyRoofing />} />
           <Route path="/construction" element={<ConstructionDivision />} />
