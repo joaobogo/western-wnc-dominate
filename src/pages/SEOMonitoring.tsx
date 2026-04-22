@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { supabase } from "@/integrations/supabase/client";
 import { monitoringRoutes, buildSitemapCoverageReport, auditMonitoringPage, groupIssuesByType, fetchSitemapEntries, normalizePath, type MonitoringIssue, type MonitoringPageCheck } from "@/lib/seo-monitoring";
 
 const issueStyles = {
@@ -87,18 +88,12 @@ const SEOMonitoring = () => {
   const [indexIssues, setIndexIssues] = useState<MonitoringIssue[]>([]);
 
   useEffect(() => {
-    const loadLogged404s = async () => {
+    const loadMonitoringData = async () => {
       try {
-        const response = await fetch("https://qflrlebkswerlbqbuslx.supabase.co/rest/v1/seo_404_log?select=path,created_at&order=created_at.desc&limit=25", {
-          headers: {
-            apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-          },
-        });
+        const { data, error } = await supabase.functions.invoke("seo-monitoring");
+        if (error) throw error;
 
-        if (!response.ok) return;
-
-        const rows = (await response.json()) as Array<{ path: string; created_at: string }>;
+        const rows = ((data?.recent404s ?? []) as Array<{ path: string; created_at: string }>);
         const deduped = Array.from(new Map(rows.map((row) => [normalizePath(row.path), row])).values());
         setManual404s(deduped.map((row) => ({
           id: `404-${row.path}`,
@@ -109,12 +104,30 @@ const SEOMonitoring = () => {
           path: normalizePath(row.path),
           href: normalizePath(row.path),
         })));
+
+        const reports = (data?.latestReports ?? []) as Array<{ gsc_indexed_pages?: number | null; period_end: string; period_start: string; }>;
+        if (reports.length >= 2) {
+          const [latest, previous] = reports;
+          const latestPages = latest.gsc_indexed_pages ?? 0;
+          const previousPages = previous.gsc_indexed_pages ?? 0;
+          if (latestPages < previousPages) {
+            setIndexIssues([
+              {
+                id: `indexed-pages-drop-${latest.period_end}`,
+                type: "index",
+                severity: "critical",
+                title: "Indexed page count dropped",
+                detail: `Indexed pages fell from ${previousPages} to ${latestPages} between ${new Date(previous.period_start).toLocaleDateString()} and ${new Date(latest.period_end).toLocaleDateString()}.`,
+              },
+            ]);
+          }
+        }
       } catch {
         setManual404s([]);
       }
     };
 
-    void loadLogged404s();
+    void loadMonitoringData();
   }, []);
 
   useEffect(() => {
@@ -171,6 +184,8 @@ const SEOMonitoring = () => {
   }, []);
 
   useEffect(() => {
+    if (indexIssues.some((issue) => issue.id.startsWith("indexed-pages-drop-"))) return;
+
     const knownPaths = new Set(monitoringRoutes.map((route) => route.path));
     const dropped = pageChecks
       .filter((check) => !check.robots || !/noindex/i.test(check.robots))
@@ -185,9 +200,11 @@ const SEOMonitoring = () => {
         path: check.path,
         href: check.path,
       }));
-
-    setIndexIssues(dropped);
-  }, [pageChecks]);
+    setIndexIssues((prev) => {
+      const reportDriven = prev.filter((issue) => issue.id.startsWith("indexed-pages-drop-"));
+      return [...reportDriven, ...dropped];
+    });
+  }, [pageChecks, indexIssues]);
 
   const allIssues = useMemo(() => {
     const crawlIssues = pageChecks.flatMap((check) => check.issues);
