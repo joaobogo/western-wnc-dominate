@@ -38,6 +38,7 @@ Updated: now
 - [Conversion Architecture](mem://strategy/conversion-architecture) — Mobile-first lead capture, sticky CTA, and interactive lead magnets
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
+- [SEO Page Checklist](mem://seo/page-seo-checklist) — End-to-end SEO requirements (sections, schema, links, keywords) per page type
 - [Migration Strategy](mem://seo/migration-strategy) — 301 redirects and URL structure for Hibu migration
 - [Service Categories](mem://features/service-expansion) — Building Services category expansion beyond core roofing
 - [Virtual Roof Designer](mem://features/virtual-roof-designer) — AI visualization tool details and mobile UX optimizations
