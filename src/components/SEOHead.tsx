@@ -8,11 +8,16 @@ interface SEOHeadProps {
   image?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
+  keywords?: string;
+  locale?: string;
 }
 
 const SITE_NAME = "Highlander Roofing & Construction";
 const BASE_URL = "https://western-wnc-dominate.lovable.app";
-const DEFAULT_IMAGE = `${BASE_URL}/favicon.webp`;
+const DEFAULT_IMAGE = `${BASE_URL}/favicon.png`;
+const TWITTER_HANDLE = "@highlanderroof";
+const DEFAULT_KEYWORDS =
+  "roofing Western NC, roofing Highlands NC, roofing Cashiers NC, roofing Franklin NC, roofing Sylva NC, metal roofing WNC, roof repair, roof replacement, storm damage, mountain home construction, home additions WNC, Highlander Roofing";
 
 const setMeta = (attr: string, key: string, content: string) => {
   let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
@@ -24,7 +29,17 @@ const setMeta = (attr: string, key: string, content: string) => {
   el.setAttribute("content", content);
 };
 
-const SEOHead = ({ title, description, path, type = "website", image, jsonLd, noindex = false }: SEOHeadProps) => {
+const SEOHead = ({
+  title,
+  description,
+  path,
+  type = "website",
+  image,
+  jsonLd,
+  noindex = false,
+  keywords,
+  locale = "en_US",
+}: SEOHeadProps) => {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = `${BASE_URL}${path}`;
   const ogImage = image || DEFAULT_IMAGE;
@@ -32,7 +47,16 @@ const SEOHead = ({ title, description, path, type = "website", image, jsonLd, no
   useEffect(() => {
     document.title = fullTitle;
     setMeta("name", "description", description);
-    if (noindex) setMeta("name", "robots", "noindex,nofollow");
+    setMeta("name", "robots", noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
+    setMeta("name", "keywords", keywords || DEFAULT_KEYWORDS);
+    setMeta("name", "author", SITE_NAME);
+    setMeta("name", "publisher", SITE_NAME);
+    setMeta("name", "theme-color", "#1a4d2e");
+    // Geo tags for local SEO
+    setMeta("name", "geo.region", "US-NC");
+    setMeta("name", "geo.placename", "Franklin, North Carolina");
+    setMeta("name", "geo.position", "35.1821;-83.3807");
+    setMeta("name", "ICBM", "35.1821, -83.3807");
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) { link = document.createElement("link"); link.setAttribute("rel", "canonical"); document.head.appendChild(link); }
@@ -43,11 +67,18 @@ const SEOHead = ({ title, description, path, type = "website", image, jsonLd, no
     setMeta("property", "og:description", description);
     setMeta("property", "og:url", canonicalUrl);
     setMeta("property", "og:image", ogImage);
+    setMeta("property", "og:image:width", "1200");
+    setMeta("property", "og:image:height", "630");
+    setMeta("property", "og:image:alt", fullTitle);
+    setMeta("property", "og:locale", locale);
     setMeta("property", "og:site_name", SITE_NAME);
     setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:site", TWITTER_HANDLE);
+    setMeta("name", "twitter:creator", TWITTER_HANDLE);
     setMeta("name", "twitter:title", fullTitle);
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", ogImage);
+    setMeta("name", "twitter:image:alt", fullTitle);
 
     const existingLd = document.querySelector('script[data-seo-ld]');
     if (existingLd) existingLd.remove();
@@ -59,7 +90,7 @@ const SEOHead = ({ title, description, path, type = "website", image, jsonLd, no
       document.head.appendChild(script);
     }
     return () => { const ld = document.querySelector('script[data-seo-ld]'); if (ld) ld.remove(); };
-  }, [fullTitle, description, canonicalUrl, type, ogImage, noindex, jsonLd]);
+  }, [fullTitle, description, canonicalUrl, type, ogImage, noindex, jsonLd, keywords, locale]);
 
   return null;
 };
