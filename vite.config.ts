@@ -17,6 +17,20 @@ function sitemapPlugin() {
   };
 }
 
+function faviconVerifyPlugin() {
+  return {
+    name: "highlander-favicon-verify",
+    buildStart() {
+      try {
+        execSync("node scripts/verify-favicons.mjs", { stdio: "inherit" });
+      } catch (e) {
+        // Fail the build — favicon drift is a real bug we want to surface
+        throw new Error("Favicon verification failed. See logs above.");
+      }
+    },
+  };
+}
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
@@ -26,7 +40,7 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), sitemapPlugin(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), sitemapPlugin(), faviconVerifyPlugin(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
