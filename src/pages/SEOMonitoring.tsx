@@ -7,7 +7,7 @@ import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { supabase } from "@/integrations/supabase/client";
-import { monitoringRoutes, buildReportDrivenIssues, buildSitemapCoverageReport, auditMonitoringPage, groupIssuesByType, fetchSitemapEntries, normalizePath, type MonitoringIssue, type MonitoringPageCheck, type MonitoringReportSnapshot } from "@/lib/seo-monitoring";
+import { monitoringRoutes, buildReportDrivenIssues, buildSitemapCoverageReport, buildWeeklyPriorityMonitoringNarrative, buildWeeklyPriorityMonitoringSummary, auditMonitoringPage, groupIssuesByType, fetchSitemapEntries, normalizePath, type MonitoringIssue, type MonitoringPageCheck, type MonitoringReportSnapshot, type WeeklyPriorityMonitoringSummary } from "@/lib/seo-monitoring";
 
 const issueStyles = {
   critical: "bg-destructive text-destructive-foreground",
@@ -133,6 +133,85 @@ const AlertCenter = ({ items }: { items: MonitoringIssue[] }) => {
   );
 };
 
+const PriorityMonitoringPanel = ({ summary }: { summary: WeeklyPriorityMonitoringSummary | null }) => {
+  if (!summary) return null;
+
+  return (
+    <section className="rounded-sm border border-border bg-card p-6">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div className="max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Weekly priority monitoring</p>
+          <h2 className="mt-2 text-2xl font-heading font-bold text-foreground">Priority service + town page coverage</h2>
+          <p className="mt-2 text-sm leading-7 text-muted-foreground">
+            Tracking every service and town URL for keyword movement and internal-link impact so the weekly SEO report can flag rank shifts with supporting-link changes.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {[
+          { label: "Priority pages", value: summary.totals.monitoredPages },
+          { label: "Pages with keyword shifts", value: summary.totals.pagesWithKeywordMovement },
+          { label: "Link-count changes", value: summary.totals.pagesWithInternalLinkChanges },
+          { label: "Severity changes", value: summary.totals.pagesWithSeverityChanges },
+        ].map((item) => (
+          <div key={item.label} className="rounded-sm border border-border bg-background p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{item.label}</p>
+            <p className="mt-3 text-3xl font-heading font-bold text-foreground">{item.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-6 space-y-4">
+        {summary.pages.slice(0, 10).map((page) => (
+          <article key={page.path} className="rounded-sm border border-border bg-background p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{page.category}</p>
+                <h3 className="mt-2 text-lg font-heading font-bold text-foreground">{page.label}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{page.path}</p>
+              </div>
+              <Link to={page.path} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                Open page <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <div className="rounded-sm border border-border bg-card p-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Tracked keywords</p>
+                <p className="mt-2 text-xl font-heading font-bold text-foreground">{page.keywordCount}</p>
+                <p className="mt-2 text-xs leading-6 text-muted-foreground">
+                  {page.movedKeywords.length > 0
+                    ? page.movedKeywords.slice(0, 2).map((keyword) => `${keyword.keyword} ${keyword.change === null ? `entered at ${keyword.currentPosition}` : `${keyword.change > 0 ? "+" : ""}${keyword.change}`}`).join(" · ")
+                    : "No ±10+ position shifts in the latest window."}
+                </p>
+              </div>
+              <div className="rounded-sm border border-border bg-card p-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Internal-link count</p>
+                <p className="mt-2 text-xl font-heading font-bold text-foreground">{page.internalLinkCount}</p>
+                <p className="mt-2 text-xs leading-6 text-muted-foreground">
+                  {page.internalLinkDelta === null
+                    ? "Baseline captured this week."
+                    : page.internalLinkDelta === 0
+                      ? "No change from last report."
+                      : `${page.internalLinkDelta > 0 ? "+" : ""}${page.internalLinkDelta} vs prior week`}
+                </p>
+              </div>
+              <div className="rounded-sm border border-border bg-card p-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Internal-link severity</p>
+                <p className="mt-2 text-xl font-heading font-bold capitalize text-foreground">{page.internalLinkSeverity}</p>
+                <p className="mt-2 text-xs leading-6 text-muted-foreground">
+                  {page.previousInternalLinkSeverity ? `${page.previousInternalLinkSeverity} → ${page.internalLinkSeverity}` : "No prior weekly baseline yet."}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const SEOMonitoring = () => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [pageChecks, setPageChecks] = useState<MonitoringPageCheck[]>([]);
@@ -142,6 +221,8 @@ const SEOMonitoring = () => {
   const [sitemapIssues, setSitemapIssues] = useState<MonitoringIssue[]>([]);
   const [indexIssues, setIndexIssues] = useState<MonitoringIssue[]>([]);
   const [reportDrivenIssues, setReportDrivenIssues] = useState<MonitoringIssue[]>([]);
+  const [prioritySummary, setPrioritySummary] = useState<WeeklyPriorityMonitoringSummary | null>(null);
+  const [reports, setReports] = useState<MonitoringReportSnapshot[]>([]);
 
   useEffect(() => {
     const loadMonitoringData = async () => {
@@ -162,10 +243,14 @@ const SEOMonitoring = () => {
         })));
 
         const reports = (data?.latestReports ?? []) as MonitoringReportSnapshot[];
+        setReports(reports);
         setReportDrivenIssues(buildReportDrivenIssues(reports));
+        setPrioritySummary(buildWeeklyPriorityMonitoringSummary(reports));
       } catch {
         setManual404s([]);
         setReportDrivenIssues([]);
+        setPrioritySummary(null);
+        setReports([]);
       }
     };
 
@@ -253,6 +338,7 @@ const SEOMonitoring = () => {
     () => reportDrivenIssues.filter((issue) => ["404", "sitemap", "index", "keyword"].includes(issue.type)),
     [reportDrivenIssues],
   );
+  const weeklyNarrative = useMemo(() => buildWeeklyPriorityMonitoringNarrative(reports), [reports]);
 
   const statCards = [
     { label: "New 404 URLs", value: grouped.notFound.length, icon: Link2 },
@@ -307,6 +393,32 @@ const SEOMonitoring = () => {
             </section>
 
             <AlertCenter items={activeAlerts} />
+            <PriorityMonitoringPanel summary={prioritySummary} />
+
+            {weeklyNarrative.highlights.length > 0 && (
+              <section className="rounded-sm border border-border bg-card p-6">
+                <h2 className="text-2xl font-heading font-bold text-foreground">Weekly report preview</h2>
+                <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                  {weeklyNarrative.totals.monitoredPages} priority pages monitored · {weeklyNarrative.totals.pagesWithKeywordMovement} with keyword movement · {weeklyNarrative.totals.pagesWithInternalLinkChanges} with link-count changes · {weeklyNarrative.totals.pagesWithSeverityChanges} with severity changes.
+                </p>
+                <div className="mt-6 space-y-4">
+                  {weeklyNarrative.highlights.slice(0, 6).map((item) => (
+                    <article key={item.path} className="rounded-sm border border-border bg-background p-4">
+                      <div className="flex flex-wrap items-start justify-between gap-3">
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{item.category}</p>
+                          <h3 className="mt-2 text-lg font-heading font-bold text-foreground">{item.label}</h3>
+                        </div>
+                        <Link to={item.path} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                          Open page <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
+                      <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.summary}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
 
             <section className="rounded-sm border border-border bg-card p-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
@@ -353,7 +465,7 @@ const SEOMonitoring = () => {
               <div className="flex items-start gap-3">
                 <AlertTriangle className="mt-1 h-5 w-5 text-accent" />
                 <p className="text-sm leading-7 text-muted-foreground">
-                  This dashboard combines logged 404 hits with a live rendered-page crawl and sitemap diff. Once the external monitoring sources are connected, the same surface can be extended with search-engine crawl and index signals.
+                  This dashboard combines logged 404 hits with a live rendered-page crawl, sitemap diff, and weekly priority-page monitoring for all service and town URLs. Weekly reporting can now summarize keyword shifts alongside internal-link count and severity changes.
                 </p>
               </div>
             </section>
