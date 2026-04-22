@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, CheckCircle } from "lucide-react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -16,6 +17,15 @@ const benefits = [
 const Careers = () => {
   return (
     <>
+      <SEOHead
+        title="Careers at Highlander Roofing | Hiring Roofers & Crew in Western NC"
+        description="Join the Highlander team. Year-round roofing and construction work across Western North Carolina with competitive pay, paid training, and a family-owned culture."
+        path="/careers"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Careers", url: "/careers" },
+        ])}
+      />
       <Header />
       <main>
         <section className="section-padding section-dark pt-32 md:pt-40">

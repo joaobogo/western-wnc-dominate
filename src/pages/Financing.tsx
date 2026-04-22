@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, DollarSign, Shield, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -15,6 +16,15 @@ const benefits = [
 const Financing = () => {
   return (
     <>
+      <SEOHead
+        title="Roof Financing Options in Western NC | Highlander Roofing"
+        description="Affordable roof financing for Western NC homeowners. Low monthly payments, fast approval, no prepayment penalties. Don't delay protecting your home."
+        path="/financing"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Financing", url: "/financing" },
+        ])}
+      />
       <Header />
       <main>
         <section className="section-padding section-dark pt-32 md:pt-40">
