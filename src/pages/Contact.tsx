@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -115,9 +115,13 @@ export default function Contact() {
   return (
     <>
       <SEOHead
-        title="Contact Highlander Roofing & Construction | Start Your Project"
-        description="Start a conversation about your roofing or construction project. Guided consultation, 24-hour response, no pressure. Franklin & Sylva, NC."
+        title="Contact Highlander | Free Roofing & Construction Quote"
+        description="Talk to Highlander Roofing & Construction in Western NC. 24-hour response, free assessments, no pressure. Franklin & Sylva offices. Call (828) 397-9211."
         path="/contact"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Contact", url: "/contact" },
+        ])}
       />
       <Header />
       <main>

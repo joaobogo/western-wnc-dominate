@@ -1,4 +1,4 @@
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -8,9 +8,13 @@ const RequestInspection = () => {
   return (
     <>
       <SEOHead
-        title="Request a Free Roof Inspection | Highlander Roofing & Construction"
-        description="Schedule your free, no-obligation roof inspection or construction consultation. 24-hour response across Western North Carolina."
+        title="Free Roof Inspection in Western NC"
+        description="Schedule a free, no-obligation roof inspection or construction consultation. 24-hour response across Western North Carolina. Highlander Roofing."
         path="/request-inspection"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Request Inspection", url: "/request-inspection" },
+        ])}
       />
       <Header />
       <main className="pt-20 md:pt-28">
