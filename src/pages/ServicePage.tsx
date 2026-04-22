@@ -1,6 +1,7 @@
 import { useParams, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle } from "lucide-react";
+import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -20,6 +21,12 @@ const ServicePage = () => {
   if (!service) {
     return (
       <>
+        <SEOHead
+          title="Service Not Found | Highlander Roofing"
+          description="The requested service page was not found. Browse all roofing and construction services."
+          path={location.pathname}
+          noindex
+        />
         <Header />
         <main className="section-padding text-center pt-32">
           <h1 className="text-3xl font-heading font-bold">Service Not Found</h1>
@@ -33,9 +40,31 @@ const ServicePage = () => {
   const theme = getDivisionTheme(service.division);
   const DivisionIcon = theme.icon;
   const otherServices = services.filter(s => s.slug !== resolvedSlug).slice(0, 3);
+  const servicePath = ["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(resolvedSlug)
+    ? `/${resolvedSlug}`
+    : `/services/${resolvedSlug}`;
 
   return (
     <>
+      <SEOHead
+        title={service.metaTitle}
+        description={service.metaDescription}
+        path={servicePath}
+        jsonLd={[
+          serviceSchema({
+            name: service.title,
+            description: service.description,
+            url: servicePath,
+            areaServed: "Western North Carolina",
+          }),
+          faqSchema(service.faqs),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: service.title, url: servicePath },
+          ]),
+        ]}
+      />
       <Header />
       <main>
         {/* Division accent line */}

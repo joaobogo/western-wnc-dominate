@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
 import { blogPosts } from "@/data/blogs";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 
 const stormArticles = blogPosts.filter(
   (p) => p.category === "Storm" || p.category === "Insurance" || p.category === "Maintenance"

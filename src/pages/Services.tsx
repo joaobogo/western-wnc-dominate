@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -10,6 +11,15 @@ import { services } from "@/data/services";
 const Services = () => {
   return (
     <>
+      <SEOHead
+        title="Roofing & Construction Services in Western NC | Highlander"
+        description="Complete roofing and construction services across Western North Carolina — repair, replacement, metal roofing, additions, renovations & more. Free estimates."
+        path="/services"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Services", url: "/services" },
+        ])}
+      />
       <Header />
       <main>
         <section className="section-padding section-dark pt-32 md:pt-40">
