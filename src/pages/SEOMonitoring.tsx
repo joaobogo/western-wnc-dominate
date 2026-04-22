@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AlertTriangle, ArrowRight, Bot, FileWarning, Link2, LoaderCircle, SearchX, ShieldAlert } from "lucide-react";
+import { AlertTriangle, ArrowRight, Bot, FileWarning, Link2, LoaderCircle, SearchX, ShieldAlert, Siren, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -7,7 +7,7 @@ import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { supabase } from "@/integrations/supabase/client";
-import { monitoringRoutes, buildSitemapCoverageReport, auditMonitoringPage, groupIssuesByType, fetchSitemapEntries, normalizePath, type MonitoringIssue, type MonitoringPageCheck } from "@/lib/seo-monitoring";
+import { monitoringRoutes, buildReportDrivenIssues, buildSitemapCoverageReport, auditMonitoringPage, groupIssuesByType, fetchSitemapEntries, normalizePath, type MonitoringIssue, type MonitoringPageCheck, type MonitoringReportSnapshot } from "@/lib/seo-monitoring";
 
 const issueStyles = {
   critical: "bg-destructive text-destructive-foreground",
@@ -20,6 +20,7 @@ const tabConfig = [
   { key: "crawl", label: "Crawl & Robots", icon: ShieldAlert },
   { key: "sitemap", label: "Sitemap Gaps", icon: FileWarning },
   { key: "index", label: "Index Loss", icon: SearchX },
+  { key: "keyword", label: "Keyword Shifts", icon: TrendingDown },
 ] as const;
 
 const waitForReady = async (iframe: HTMLIFrameElement, path: string) => {
@@ -78,6 +79,60 @@ const IssueList = ({ items }: { items: MonitoringIssue[] }) => {
   );
 };
 
+const AlertCenter = ({ items }: { items: MonitoringIssue[] }) => {
+  if (items.length === 0) {
+    return (
+      <section className="rounded-sm border border-border bg-card p-6">
+        <div className="flex items-start gap-3">
+          <Siren className="mt-1 h-5 w-5 text-primary" />
+          <div>
+            <h2 className="text-2xl font-heading font-bold text-foreground">Alert center</h2>
+            <p className="mt-2 text-sm leading-7 text-muted-foreground">No active threshold-based alerts are firing right now.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="rounded-sm border border-border bg-card p-6">
+      <div className="flex items-start gap-3">
+        <Siren className="mt-1 h-5 w-5 text-destructive" />
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-2xl font-heading font-bold text-foreground">Alert center</h2>
+              <p className="mt-2 text-sm leading-7 text-muted-foreground">Dashboard alerts fire when indexation drops 10%, 404s rise 25% above baseline, sitemap signals go stale, or keyword rankings move ±10 positions.</p>
+            </div>
+            <span className="inline-flex items-center rounded-sm bg-destructive px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-destructive-foreground">
+              {items.length} active
+            </span>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {items.map((issue) => (
+              <article key={issue.id} className="rounded-sm border border-border bg-background p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{issue.type} alert</p>
+                    <h3 className="mt-2 text-lg font-heading font-bold text-foreground">{issue.title}</h3>
+                  </div>
+                  <SeverityBadge severity={issue.severity} />
+                </div>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">{issue.detail}</p>
+                {issue.href && issue.href.startsWith("/") && (
+                  <Link to={issue.href} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                    Open drill-down <ArrowRight className="h-4 w-4" />
+                  </Link>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const SEOMonitoring = () => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [pageChecks, setPageChecks] = useState<MonitoringPageCheck[]>([]);
@@ -86,7 +141,7 @@ const SEOMonitoring = () => {
   const [manual404s, setManual404s] = useState<MonitoringIssue[]>([]);
   const [sitemapIssues, setSitemapIssues] = useState<MonitoringIssue[]>([]);
   const [indexIssues, setIndexIssues] = useState<MonitoringIssue[]>([]);
-  const [reportIndexIssues, setReportIndexIssues] = useState<MonitoringIssue[]>([]);
+  const [reportDrivenIssues, setReportDrivenIssues] = useState<MonitoringIssue[]>([]);
 
   useEffect(() => {
     const loadMonitoringData = async () => {
@@ -106,25 +161,11 @@ const SEOMonitoring = () => {
           href: normalizePath(row.path),
         })));
 
-        const reports = (data?.latestReports ?? []) as Array<{ gsc_indexed_pages?: number | null; period_end: string; period_start: string; }>;
-        if (reports.length >= 2) {
-          const [latest, previous] = reports;
-          const latestPages = latest.gsc_indexed_pages ?? 0;
-          const previousPages = previous.gsc_indexed_pages ?? 0;
-          if (latestPages < previousPages) {
-            setReportIndexIssues([
-              {
-                id: `indexed-pages-drop-${latest.period_end}`,
-                type: "index",
-                severity: "critical",
-                title: "Indexed page count dropped",
-                detail: `Indexed pages fell from ${previousPages} to ${latestPages} between ${new Date(previous.period_start).toLocaleDateString()} and ${new Date(latest.period_end).toLocaleDateString()}.`,
-              },
-            ]);
-          }
-        }
+        const reports = (data?.latestReports ?? []) as MonitoringReportSnapshot[];
+        setReportDrivenIssues(buildReportDrivenIssues(reports));
       } catch {
         setManual404s([]);
+        setReportDrivenIssues([]);
       }
     };
 
@@ -204,16 +245,21 @@ const SEOMonitoring = () => {
 
   const allIssues = useMemo(() => {
     const crawlIssues = pageChecks.flatMap((check) => check.issues);
-    return [...manual404s, ...crawlIssues, ...sitemapIssues, ...reportIndexIssues, ...indexIssues];
-  }, [manual404s, pageChecks, sitemapIssues, reportIndexIssues, indexIssues]);
+    return [...manual404s, ...crawlIssues, ...sitemapIssues, ...reportDrivenIssues, ...indexIssues];
+  }, [manual404s, pageChecks, sitemapIssues, reportDrivenIssues, indexIssues]);
 
   const grouped = useMemo(() => groupIssuesByType(allIssues), [allIssues]);
+  const activeAlerts = useMemo(
+    () => reportDrivenIssues.filter((issue) => ["404", "sitemap", "index", "keyword"].includes(issue.type)),
+    [reportDrivenIssues],
+  );
 
   const statCards = [
     { label: "New 404 URLs", value: grouped.notFound.length, icon: Link2 },
     { label: "Crawl / robots issues", value: grouped.crawl.length, icon: ShieldAlert },
     { label: "Sitemap gaps", value: grouped.sitemap.length, icon: FileWarning },
     { label: "Potential index losses", value: grouped.index.length, icon: SearchX },
+    { label: "Keyword shifts", value: grouped.keyword.length, icon: TrendingDown },
   ];
 
   return (
@@ -260,6 +306,8 @@ const SEOMonitoring = () => {
               })}
             </section>
 
+            <AlertCenter items={activeAlerts} />
+
             <section className="rounded-sm border border-border bg-card p-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
@@ -276,7 +324,7 @@ const SEOMonitoring = () => {
             </section>
 
             <Tabs defaultValue="notFound" className="space-y-6">
-              <TabsList className="grid h-auto w-full grid-cols-2 gap-2 bg-secondary p-2 md:grid-cols-4">
+              <TabsList className="grid h-auto w-full grid-cols-2 gap-2 bg-secondary p-2 md:grid-cols-5">
                 {tabConfig.map((tab) => (
                   <TabsTrigger key={tab.key} value={tab.key} className="h-auto min-h-12 rounded-sm px-3 py-3 text-xs font-semibold uppercase tracking-[0.14em] md:text-sm">
                     {tab.label}
@@ -295,6 +343,9 @@ const SEOMonitoring = () => {
               </TabsContent>
               <TabsContent value="index" className="mt-0 space-y-4">
                 <IssueList items={grouped.index} />
+              </TabsContent>
+              <TabsContent value="keyword" className="mt-0 space-y-4">
+                <IssueList items={grouped.keyword} />
               </TabsContent>
             </Tabs>
 
