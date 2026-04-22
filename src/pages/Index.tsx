@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SEOHead, { localBusinessSchema, organizationSchema, websiteSchema, breadcrumbSchema, aggregateReviewSchema } from "@/components/SEOHead";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
@@ -45,22 +45,17 @@ const Index = () => {
         title="Roofing & Construction in Western NC"
         description="Premium roofing and construction in Western North Carolina. 500+ projects, 4.9★ rated. Shingle, metal & cedar roofing plus additions, renovations & outdoor living. Request a consultation."
         path="/"
-        jsonLd={[
-          localBusinessSchema(),
-          organizationSchema(),
-          websiteSchema(),
-          aggregateReviewSchema(
-            customerReviews.map((review) => ({
-              author: review.authorName,
-              rating: review.ratingValue,
-              body: review.reviewBody,
-              datePublished: review.datePublished,
-              location: review.location,
-            })),
-            GOOGLE_REVIEW_AGGREGATE,
-          ),
-          breadcrumbSchema([{ name: "Home", url: "/" }]),
-        ]}
+        jsonLd={buildPageSchema({
+          type: "home",
+          reviews: customerReviews.map((review) => ({
+            author: review.authorName,
+            rating: review.ratingValue,
+            body: review.reviewBody,
+            datePublished: review.datePublished,
+            location: review.location,
+          })),
+          aggregate: GOOGLE_REVIEW_AGGREGATE,
+        })}
       />
       <Header />
       <main>
