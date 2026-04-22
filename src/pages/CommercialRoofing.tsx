@@ -104,7 +104,7 @@ const CommercialRoofing = () => {
   return (
     <>
       <SEOHead
-        title="Commercial Roofing | TPO, EPDM, Metal & Maintenance Programs for WNC"
+        title="Commercial Roofing in WNC | TPO, EPDM & Metal"
         description="Commercial roofing for Western North Carolina property owners and managers. New installations, replacements, maintenance programs, and 24-hour emergency response."
         path="/roofing/commercial"
         jsonLd={[

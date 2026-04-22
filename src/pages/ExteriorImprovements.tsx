@@ -88,7 +88,7 @@ const ExteriorImprovements = () => {
   return (
     <>
       <SEOHead
-        title="Exterior Improvements | Siding, Windows, Trim & Structural Repairs in WNC"
+        title="Exterior Improvements in WNC | Siding & Windows"
         description="Premium exterior renovations for Western North Carolina homes. Siding replacement, window upgrades, structural repairs, and complete exterior envelope improvements with in-house crews."
         path="/construction/exterior"
         jsonLd={[

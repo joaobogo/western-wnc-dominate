@@ -137,7 +137,7 @@ const StormDamage = () => {
   return (
     <>
       <SEOHead
-        title="Storm Damage Roofing | 24-Hour Emergency Response in Western NC"
+        title="Storm Damage Roof Repair in Western NC"
         description="24-hour storm response across Western North Carolina. Professional damage assessment, insurance documentation, and honest guidance from a trusted local team."
         path="/roofing/storm-damage"
         jsonLd={[

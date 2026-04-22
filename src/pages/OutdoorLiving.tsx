@@ -98,7 +98,7 @@ const OutdoorLiving = () => {
   return (
     <>
       <SEOHead
-        title="Outdoor Living | Covered Porches, Decks, Screened Rooms & Pavilions in WNC"
+        title="Outdoor Living in WNC | Decks, Porches & Pergolas"
         description="Premium outdoor living spaces for Western North Carolina. Covered porches, screened rooms, decks, pavilions, and outdoor kitchens designed for mountain weather and mountain life."
         path="/construction/outdoor-living"
         jsonLd={[

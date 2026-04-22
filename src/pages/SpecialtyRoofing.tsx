@@ -83,7 +83,7 @@ const SpecialtyRoofing = () => {
   return (
     <>
       <SEOHead
-        title="Specialty Roofing | Cedar, Copper, Standing Seam & Complex Rooflines in WNC"
+        title="Specialty Roofing in WNC | Cedar & Standing Seam"
         description="Specialty roofing for custom homes and architecturally distinctive properties in Western North Carolina. Cedar shake, copper, standing seam metal, and complex roofline expertise."
         path="/roofing/specialty"
         jsonLd={[

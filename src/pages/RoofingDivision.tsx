@@ -238,7 +238,7 @@ const RoofingDivision = () => {
   return (
     <>
       <SEOHead
-        title="Roofing Services | Expert Roof Replacement, Repair & Storm Damage in Western NC"
+        title="Roofing Services in Western NC | Highlander"
         description="Premium roofing in Western North Carolina. Shingle, metal & cedar roofing, storm damage, commercial systems. CertainTeed Master Applicator. Schedule a consultation."
         path="/roofing"
         jsonLd={[

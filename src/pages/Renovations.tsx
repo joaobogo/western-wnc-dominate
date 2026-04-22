@@ -88,7 +88,7 @@ const Renovations = () => {
   return (
     <>
       <SEOHead
-        title="Renovations | Kitchen, Bathroom & Whole-Home Remodeling in Western NC"
+        title="Renovations in Western NC | Kitchen, Bath & Whole-Home"
         description="Premium renovations for Western North Carolina homes. Kitchen remodels, bathroom renovations, basement finishing, and whole-home transformations with in-house crews and documented quality."
         path="/construction/renovations"
         jsonLd={[

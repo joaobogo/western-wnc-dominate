@@ -18,7 +18,7 @@ const Careers = () => {
   return (
     <>
       <SEOHead
-        title="Careers at Highlander Roofing | Hiring Roofers & Crew in Western NC"
+        title="Careers | Hiring Roofers & Crew in Western NC"
         description="Join the Highlander team. Year-round roofing and construction work across Western North Carolina with competitive pay, paid training, and a family-owned culture."
         path="/careers"
         jsonLd={breadcrumbSchema([

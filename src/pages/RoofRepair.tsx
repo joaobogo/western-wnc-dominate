@@ -86,7 +86,7 @@ const RoofRepair = () => {
   return (
     <>
       <SEOHead
-        title="Roof Repair | Expert Leak Diagnosis & Permanent Repair in Western NC"
+        title="Roof Repair in Western NC | Leak Diagnosis & Repair"
         description="Targeted, warrantied roof repairs across Western North Carolina. We diagnose the real cause, fix it right the first time, and document everything."
         path="/roofing/roof-repair"
         jsonLd={[

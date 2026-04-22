@@ -28,7 +28,7 @@ const RoofDesigner = () => {
   return (
     <>
       <SEOHead
-        title="Virtual Roof Designer | Visualize Your New Roof Online (Free)"
+        title="Virtual Roof Designer | Free Online Tool"
         description="Upload a photo of your home and visualize different roofing materials and colors instantly. Free AI-powered tool from Highlander Roofing — Western NC."
         path="/roof-designer"
         jsonLd={breadcrumbSchema([
