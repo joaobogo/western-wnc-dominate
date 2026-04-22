@@ -1,5 +1,5 @@
 import { blogPosts } from "@/data/blogs";
-import { projects } from "@/data/projects";
+import { projectDetails } from "@/data/projects";
 import { services } from "@/data/services";
 import { towns } from "@/data/towns";
 
@@ -81,7 +81,7 @@ const dynamicRoutes: AuditRoute[] = [
   ...services.map((service) => ({ path: getServicePath(service.slug), label: service.title, pageType: service.slug.includes("commercial") ? "commercial" : "service" as SEOPageType })),
   ...towns.map((town) => ({ path: `/service-areas/${town.slug}`, label: `${town.name}, ${town.state}`, pageType: "town" as SEOPageType })),
   ...blogPosts.map((post) => ({ path: `/blog/${post.slug}`, label: post.title, pageType: "blog" as SEOPageType })),
-  ...projects.map((project) => ({ path: `/projects/${project.slug}`, label: project.title, pageType: "gallery" as SEOPageType })),
+  ...projectDetails.map((project) => ({ path: `/projects/${project.slug}`, label: project.title, pageType: "gallery" as SEOPageType })),
 ];
 
 export const seoAuditRoutes: AuditRoute[] = Array.from(
