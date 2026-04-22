@@ -98,20 +98,120 @@ const SEOHead = ({
 export default SEOHead;
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
-  "@context": "https://schema.org", "@type": "RoofingContractor", name: SITE_NAME, url: BASE_URL,
-  telephone: "+18283979211", email: "info@highlanderroofing.com",
-  address: [
-    { "@type": "PostalAddress", addressLocality: "Franklin", addressRegion: "NC", postalCode: "28734", addressCountry: "US" },
-    { "@type": "PostalAddress", addressLocality: "Sylva", addressRegion: "NC", postalCode: "28779", addressCountry: "US" },
+  "@context": "https://schema.org",
+  "@type": ["RoofingContractor", "GeneralContractor", "LocalBusiness"],
+  "@id": `${BASE_URL}/#business`,
+  name: SITE_NAME,
+  alternateName: "Highlander Roofing",
+  url: BASE_URL,
+  logo: DEFAULT_IMAGE,
+  image: DEFAULT_IMAGE,
+  telephone: "+1-828-397-9211",
+  email: "info@highlanderroofing.com",
+  description:
+    "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Franklin Office",
+    addressLocality: "Franklin",
+    addressRegion: "NC",
+    postalCode: "28734",
+    addressCountry: "US",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
+  areaServed: [
+    { "@type": "City", name: "Franklin", "@id": "https://en.wikipedia.org/wiki/Franklin,_North_Carolina" },
+    { "@type": "City", name: "Sylva" },
+    { "@type": "City", name: "Highlands" },
+    { "@type": "City", name: "Cashiers" },
+    { "@type": "City", name: "Brevard" },
+    { "@type": "City", name: "Waynesville" },
+    { "@type": "City", name: "Bryson City" },
+    { "@type": "City", name: "Cullowhee" },
+    { "@type": "City", name: "Dillsboro" },
+    { "@type": "AdministrativeArea", name: "Western North Carolina" },
   ],
-  areaServed: ["Franklin, NC", "Sylva, NC", "Highlands, NC", "Cashiers, NC", "Brevard, NC", "Waynesville, NC", "Bryson City, NC"],
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "500", bestRating: "5" },
-  priceRange: "$$-$$$", openingHours: "Mo-Fr 07:00-18:00", ...overrides,
+  serviceArea: {
+    "@type": "GeoCircle",
+    geoMidpoint: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
+    geoRadius: "80000",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Roofing & Construction Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Roof Replacement" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Roof Repair" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Storm Damage Restoration" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Metal Roofing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial Roofing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Home Additions" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Renovations" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Outdoor Living Spaces" } },
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "500",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  priceRange: "$$-$$$",
+  currenciesAccepted: "USD",
+  paymentAccepted: "Cash, Credit Card, Check, Financing",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "07:00",
+      closes: "18:00",
+    },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "08:00", closes: "14:00" },
+  ],
+  foundingDate: "2017",
+  slogan: "Built for the Mountains. Built for Life.",
+  sameAs: [
+    "https://www.facebook.com/highlanderroofing",
+    "https://www.instagram.com/highlanderroofing",
+    "https://www.google.com/maps?cid=highlanderroofing",
+  ],
+  ...overrides,
 });
 
 export const organizationSchema = () => ({
-  "@context": "https://schema.org", "@type": "Organization", name: SITE_NAME, url: BASE_URL, logo: DEFAULT_IMAGE,
-  contactPoint: { "@type": "ContactPoint", telephone: "+18283979211", contactType: "customer service", areaServed: "US", availableLanguage: "English" },
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${BASE_URL}/#organization`,
+  name: SITE_NAME,
+  url: BASE_URL,
+  logo: { "@type": "ImageObject", url: DEFAULT_IMAGE, width: 512, height: 512 },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-828-397-9211",
+    contactType: "customer service",
+    areaServed: "US-NC",
+    availableLanguage: "English",
+  },
+  sameAs: [
+    "https://www.facebook.com/highlanderroofing",
+    "https://www.instagram.com/highlanderroofing",
+  ],
+});
+
+export const websiteSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${BASE_URL}/#website`,
+  url: BASE_URL,
+  name: SITE_NAME,
+  publisher: { "@id": `${BASE_URL}/#organization` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${BASE_URL}/blog?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+  inLanguage: "en-US",
 });
 
 export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
