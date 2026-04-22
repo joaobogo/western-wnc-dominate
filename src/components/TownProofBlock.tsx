@@ -68,7 +68,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                         <p className="text-xs text-primary/80 font-body">{highlight.proof}</p>
                         {highlight.projectSlug ? (
                           <Link
-                            to={`/gallery/${highlight.projectSlug}`}
+                            to={`/projects/${highlight.projectSlug}`}
                             className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
                           >
                             View related project <ArrowRight className="w-3.5 h-3.5" />
