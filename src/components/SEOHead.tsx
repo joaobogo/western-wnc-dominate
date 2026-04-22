@@ -8,11 +8,16 @@ interface SEOHeadProps {
   image?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
+  keywords?: string;
+  locale?: string;
 }
 
 const SITE_NAME = "Highlander Roofing & Construction";
 const BASE_URL = "https://western-wnc-dominate.lovable.app";
-const DEFAULT_IMAGE = `${BASE_URL}/favicon.webp`;
+const DEFAULT_IMAGE = `${BASE_URL}/favicon.png`;
+const TWITTER_HANDLE = "@highlanderroof";
+const DEFAULT_KEYWORDS =
+  "roofing Western NC, roofing Highlands NC, roofing Cashiers NC, roofing Franklin NC, roofing Sylva NC, metal roofing WNC, roof repair, roof replacement, storm damage, mountain home construction, home additions WNC, Highlander Roofing";
 
 const setMeta = (attr: string, key: string, content: string) => {
   let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
@@ -24,7 +29,17 @@ const setMeta = (attr: string, key: string, content: string) => {
   el.setAttribute("content", content);
 };
 
-const SEOHead = ({ title, description, path, type = "website", image, jsonLd, noindex = false }: SEOHeadProps) => {
+const SEOHead = ({
+  title,
+  description,
+  path,
+  type = "website",
+  image,
+  jsonLd,
+  noindex = false,
+  keywords,
+  locale = "en_US",
+}: SEOHeadProps) => {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = `${BASE_URL}${path}`;
   const ogImage = image || DEFAULT_IMAGE;
@@ -32,7 +47,16 @@ const SEOHead = ({ title, description, path, type = "website", image, jsonLd, no
   useEffect(() => {
     document.title = fullTitle;
     setMeta("name", "description", description);
-    if (noindex) setMeta("name", "robots", "noindex,nofollow");
+    setMeta("name", "robots", noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
+    setMeta("name", "keywords", keywords || DEFAULT_KEYWORDS);
+    setMeta("name", "author", SITE_NAME);
+    setMeta("name", "publisher", SITE_NAME);
+    setMeta("name", "theme-color", "#1a4d2e");
+    // Geo tags for local SEO
+    setMeta("name", "geo.region", "US-NC");
+    setMeta("name", "geo.placename", "Franklin, North Carolina");
+    setMeta("name", "geo.position", "35.1821;-83.3807");
+    setMeta("name", "ICBM", "35.1821, -83.3807");
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) { link = document.createElement("link"); link.setAttribute("rel", "canonical"); document.head.appendChild(link); }
@@ -43,11 +67,18 @@ const SEOHead = ({ title, description, path, type = "website", image, jsonLd, no
     setMeta("property", "og:description", description);
     setMeta("property", "og:url", canonicalUrl);
     setMeta("property", "og:image", ogImage);
+    setMeta("property", "og:image:width", "1200");
+    setMeta("property", "og:image:height", "630");
+    setMeta("property", "og:image:alt", fullTitle);
+    setMeta("property", "og:locale", locale);
     setMeta("property", "og:site_name", SITE_NAME);
     setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:site", TWITTER_HANDLE);
+    setMeta("name", "twitter:creator", TWITTER_HANDLE);
     setMeta("name", "twitter:title", fullTitle);
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", ogImage);
+    setMeta("name", "twitter:image:alt", fullTitle);
 
     const existingLd = document.querySelector('script[data-seo-ld]');
     if (existingLd) existingLd.remove();
@@ -59,7 +90,7 @@ const SEOHead = ({ title, description, path, type = "website", image, jsonLd, no
       document.head.appendChild(script);
     }
     return () => { const ld = document.querySelector('script[data-seo-ld]'); if (ld) ld.remove(); };
-  }, [fullTitle, description, canonicalUrl, type, ogImage, noindex, jsonLd]);
+  }, [fullTitle, description, canonicalUrl, type, ogImage, noindex, jsonLd, keywords, locale]);
 
   return null;
 };
@@ -67,20 +98,120 @@ const SEOHead = ({ title, description, path, type = "website", image, jsonLd, no
 export default SEOHead;
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
-  "@context": "https://schema.org", "@type": "RoofingContractor", name: SITE_NAME, url: BASE_URL,
-  telephone: "+18283979211", email: "info@highlanderroofing.com",
-  address: [
-    { "@type": "PostalAddress", addressLocality: "Franklin", addressRegion: "NC", postalCode: "28734", addressCountry: "US" },
-    { "@type": "PostalAddress", addressLocality: "Sylva", addressRegion: "NC", postalCode: "28779", addressCountry: "US" },
+  "@context": "https://schema.org",
+  "@type": ["RoofingContractor", "GeneralContractor", "LocalBusiness"],
+  "@id": `${BASE_URL}/#business`,
+  name: SITE_NAME,
+  alternateName: "Highlander Roofing",
+  url: BASE_URL,
+  logo: DEFAULT_IMAGE,
+  image: DEFAULT_IMAGE,
+  telephone: "+1-828-397-9211",
+  email: "info@highlanderroofing.com",
+  description:
+    "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Franklin Office",
+    addressLocality: "Franklin",
+    addressRegion: "NC",
+    postalCode: "28734",
+    addressCountry: "US",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
+  areaServed: [
+    { "@type": "City", name: "Franklin", "@id": "https://en.wikipedia.org/wiki/Franklin,_North_Carolina" },
+    { "@type": "City", name: "Sylva" },
+    { "@type": "City", name: "Highlands" },
+    { "@type": "City", name: "Cashiers" },
+    { "@type": "City", name: "Brevard" },
+    { "@type": "City", name: "Waynesville" },
+    { "@type": "City", name: "Bryson City" },
+    { "@type": "City", name: "Cullowhee" },
+    { "@type": "City", name: "Dillsboro" },
+    { "@type": "AdministrativeArea", name: "Western North Carolina" },
   ],
-  areaServed: ["Franklin, NC", "Sylva, NC", "Highlands, NC", "Cashiers, NC", "Brevard, NC", "Waynesville, NC", "Bryson City, NC"],
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "500", bestRating: "5" },
-  priceRange: "$$-$$$", openingHours: "Mo-Fr 07:00-18:00", ...overrides,
+  serviceArea: {
+    "@type": "GeoCircle",
+    geoMidpoint: { "@type": "GeoCoordinates", latitude: 35.1821, longitude: -83.3807 },
+    geoRadius: "80000",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Roofing & Construction Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Roof Replacement" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Roof Repair" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Storm Damage Restoration" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Metal Roofing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial Roofing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Home Additions" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Renovations" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Outdoor Living Spaces" } },
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "500",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  priceRange: "$$-$$$",
+  currenciesAccepted: "USD",
+  paymentAccepted: "Cash, Credit Card, Check, Financing",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "07:00",
+      closes: "18:00",
+    },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "08:00", closes: "14:00" },
+  ],
+  foundingDate: "2017",
+  slogan: "Built for the Mountains. Built for Life.",
+  sameAs: [
+    "https://www.facebook.com/highlanderroofing",
+    "https://www.instagram.com/highlanderroofing",
+    "https://www.google.com/maps?cid=highlanderroofing",
+  ],
+  ...overrides,
 });
 
 export const organizationSchema = () => ({
-  "@context": "https://schema.org", "@type": "Organization", name: SITE_NAME, url: BASE_URL, logo: DEFAULT_IMAGE,
-  contactPoint: { "@type": "ContactPoint", telephone: "+18283979211", contactType: "customer service", areaServed: "US", availableLanguage: "English" },
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${BASE_URL}/#organization`,
+  name: SITE_NAME,
+  url: BASE_URL,
+  logo: { "@type": "ImageObject", url: DEFAULT_IMAGE, width: 512, height: 512 },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-828-397-9211",
+    contactType: "customer service",
+    areaServed: "US-NC",
+    availableLanguage: "English",
+  },
+  sameAs: [
+    "https://www.facebook.com/highlanderroofing",
+    "https://www.instagram.com/highlanderroofing",
+  ],
+});
+
+export const websiteSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${BASE_URL}/#website`,
+  url: BASE_URL,
+  name: SITE_NAME,
+  publisher: { "@id": `${BASE_URL}/#organization` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${BASE_URL}/blog?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+  inLanguage: "en-US",
 });
 
 export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
