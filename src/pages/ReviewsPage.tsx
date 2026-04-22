@@ -5,11 +5,12 @@ import {
   Star, Quote, ArrowRight, Phone, CheckCircle, MessageSquare,
   Hammer, Clock, Heart, Shield, Users, ThumbsUp, Award,
 } from "lucide-react";
-import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
+import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -20,93 +21,7 @@ const fadeUp = {
 
 /* ── Review Data ── */
 
-interface Review {
-  name: string;
-  location: string;
-  text: string;
-  project: string;
-  category: "roofing" | "construction" | "storm" | "commercial";
-  outcome: string;
-  featured?: boolean;
-}
-
-const reviews: Review[] = [
-  {
-    name: "Sarah M.",
-    location: "Highlands, NC",
-    text: "Highlander replaced our entire roof after storm damage. They handled our insurance claim paperwork, kept us informed daily, and the crew was professional from start to finish. The roof looks better than the original.",
-    project: "Full Roof Replacement",
-    category: "storm",
-    outcome: "Insurance claim processed. New roof installed in 4 days.",
-    featured: true,
-  },
-  {
-    name: "Linda K.",
-    location: "Cashiers, NC",
-    text: "We've used Highlander for two properties now. Their standing seam metal work is exceptional and they genuinely understand the mountain climate challenges. Five stars every time.",
-    project: "Standing Seam Metal — Two Properties",
-    category: "roofing",
-    outcome: "Both properties re-roofed with 50-year metal systems.",
-    featured: true,
-  },
-  {
-    name: "James T.",
-    location: "Franklin, NC",
-    text: "Fast response when we had a leak during heavy rain. They came out the next morning, found the issue, and had it repaired by afternoon. Fair pricing and honest work — exactly what you want from a local contractor.",
-    project: "Emergency Leak Repair",
-    category: "roofing",
-    outcome: "Leak identified and permanently repaired in one visit.",
-  },
-  {
-    name: "Robert & Anne P.",
-    location: "Sylva, NC",
-    text: "From the initial inspection to the final walkthrough, everything was documented and communicated clearly. The crew was respectful of our property and finished ahead of schedule. We couldn't be happier.",
-    project: "Roof Replacement & Gutters",
-    category: "roofing",
-    outcome: "Completed 2 days ahead of schedule. Full warranty package delivered.",
-  },
-  {
-    name: "David R.",
-    location: "Bryson City, NC",
-    text: "Highlander built a covered porch and replaced our deck — the craftsmanship is outstanding. Same attention to detail as their roofing work. Having one team handle both saved us time and hassle.",
-    project: "Deck & Covered Porch Build",
-    category: "construction",
-    outcome: "New outdoor living space completed in 3 weeks.",
-  },
-  {
-    name: "Mountain Properties LLC",
-    location: "Franklin, NC",
-    text: "We manage 14 rental properties across Macon County. Highlander handles all our roofing maintenance and emergency repairs. Their documentation and communication make our job easier.",
-    project: "Multi-Property Maintenance Program",
-    category: "commercial",
-    outcome: "14 properties under a single maintenance agreement.",
-  },
-  {
-    name: "Karen W.",
-    location: "Waynesville, NC",
-    text: "After three bad experiences with other contractors, we were skeptical. Highlander changed that completely. James came out personally, gave an honest assessment — no pressure, no upselling. The install crew was clean, fast, and meticulous.",
-    project: "Architectural Shingle Replacement",
-    category: "roofing",
-    outcome: "CertainTeed Landmark installed with enhanced warranty.",
-    featured: true,
-  },
-  {
-    name: "Tom & Jill H.",
-    location: "Franklin, NC",
-    text: "Our home addition was a big project and a big decision. Highlander made it manageable — clear timeline, daily updates, clean job site every evening. The finished space feels like it was always part of the house.",
-    project: "Home Addition — Master Suite",
-    category: "construction",
-    outcome: "600 sq ft addition completed on schedule and within budget.",
-  },
-  {
-    name: "Chris D.",
-    location: "Cullowhee, NC",
-    text: "Hired them after a hailstorm and they walked me through the entire insurance process. Professional adjustor coordination, quality materials, fast turnaround. Could not have been easier.",
-    project: "Storm Damage Roof Replacement",
-    category: "storm",
-    outcome: "Full roof replacement covered by insurance. Completed in 5 days.",
-  },
-];
+const reviews = customerReviews;
 
 const categoryLabels: Record<string, string> = {
   all: "All Reviews",
@@ -170,7 +85,17 @@ const ReviewsPage = () => {
         title="Reviews & Reputation | What Clients Say About Highlander"
         description="Read verified reviews from Highlander Roofing & Construction clients across Western North Carolina. 4.9★ average rating from 150+ reviews."
         path="/reviews"
-        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Reviews", url: "/reviews" }])}
+        jsonLd={buildPageSchema({
+          type: "reviews",
+          reviews: reviews.map((review) => ({
+            author: review.authorName,
+            rating: review.ratingValue,
+            body: review.reviewBody,
+            datePublished: review.datePublished,
+            location: review.location,
+          })),
+          aggregate: GOOGLE_REVIEW_AGGREGATE,
+        })}
       />
       <Header />
       <main>
@@ -185,7 +110,7 @@ const ReviewsPage = () => {
                     <Star key={i} className="w-5 h-5 fill-accent text-accent" />
                   ))}
                   <span className="ml-2 text-sm font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
-                  <span className="text-xs text-[hsl(var(--dark-section-foreground)/0.4)] font-body ml-1">from 150+ verified reviews</span>
+                  <span className="text-xs text-[hsl(var(--dark-section-foreground)/0.4)] font-body ml-1">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[1.08] tracking-tight">
                   Trust Is Earned.
@@ -258,15 +183,15 @@ const ReviewsPage = () => {
                   ))}
                 </div>
                 <div className="h-4 w-px bg-border" />
-                <span className="font-semibold text-foreground text-sm">4.9</span>
-                <span className="text-muted-foreground text-sm font-body">from 150+ Verified Reviews</span>
+                 <span className="font-semibold text-foreground text-sm">{GOOGLE_REVIEW_AGGREGATE.ratingValue}</span>
+                 <span className="text-muted-foreground text-sm font-body">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Verified Reviews</span>
               </motion.div>
             </motion.div>
 
             <div className="grid lg:grid-cols-3 gap-5 mb-5">
               {featured.map((r, i) => (
                 <motion.div
-                  key={r.name}
+                  key={r.authorName}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -285,17 +210,17 @@ const ReviewsPage = () => {
                     </div>
                   </div>
                   <Quote className="w-6 h-6 text-[hsl(var(--highland-gold)/0.15)] mb-3 rotate-180" />
-                  <p className="text-foreground text-[15px] leading-relaxed mb-5 font-body">"{r.text}"</p>
+                  <p className="text-foreground text-[15px] leading-relaxed mb-5 font-body">"{r.reviewBody}"</p>
                   <div className="bg-secondary/60 rounded-sm px-4 py-3 mb-5">
                     <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/50 mb-1">Project Outcome</p>
                     <p className="text-sm font-body font-medium text-foreground/80">{r.outcome}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center text-primary font-heading font-bold text-sm">
-                      {r.name.charAt(0)}
+                      {r.authorName.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-sm">{r.name}</p>
+                      <p className="font-semibold text-foreground text-sm">{r.authorName}</p>
                       <p className="text-muted-foreground text-xs font-body">{r.location} · {r.project}</p>
                     </div>
                   </div>
@@ -333,7 +258,7 @@ const ReviewsPage = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {filtered.map((r, i) => (
                 <motion.div
-                  key={r.name + r.project}
+                  key={r.authorName + r.project}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -350,14 +275,14 @@ const ReviewsPage = () => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-foreground/80 text-[13px] leading-relaxed mb-4 font-body">"{r.text}"</p>
+                  <p className="text-foreground/80 text-[13px] leading-relaxed mb-4 font-body">"{r.reviewBody}"</p>
                   <p className="text-[11px] text-primary/60 font-body font-medium mb-4 leading-snug">{r.outcome}</p>
                   <div className="flex items-center gap-2.5 pt-3 border-t border-border">
                     <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-[10px]">
-                      {r.name.charAt(0)}
+                      {r.authorName.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-xs">{r.name}</p>
+                      <p className="font-semibold text-foreground text-xs">{r.authorName}</p>
                       <p className="text-muted-foreground text-[10px] font-body">{r.location}</p>
                     </div>
                   </div>
