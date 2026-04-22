@@ -86,6 +86,7 @@ const SEOMonitoring = () => {
   const [manual404s, setManual404s] = useState<MonitoringIssue[]>([]);
   const [sitemapIssues, setSitemapIssues] = useState<MonitoringIssue[]>([]);
   const [indexIssues, setIndexIssues] = useState<MonitoringIssue[]>([]);
+  const [reportIndexIssues, setReportIndexIssues] = useState<MonitoringIssue[]>([]);
 
   useEffect(() => {
     const loadMonitoringData = async () => {
@@ -111,7 +112,7 @@ const SEOMonitoring = () => {
           const latestPages = latest.gsc_indexed_pages ?? 0;
           const previousPages = previous.gsc_indexed_pages ?? 0;
           if (latestPages < previousPages) {
-            setIndexIssues([
+            setReportIndexIssues([
               {
                 id: `indexed-pages-drop-${latest.period_end}`,
                 type: "index",
@@ -184,8 +185,6 @@ const SEOMonitoring = () => {
   }, []);
 
   useEffect(() => {
-    if (indexIssues.some((issue) => issue.id.startsWith("indexed-pages-drop-"))) return;
-
     const knownPaths = new Set(monitoringRoutes.map((route) => route.path));
     const dropped = pageChecks
       .filter((check) => !check.robots || !/noindex/i.test(check.robots))
@@ -200,16 +199,13 @@ const SEOMonitoring = () => {
         path: check.path,
         href: check.path,
       }));
-    setIndexIssues((prev) => {
-      const reportDriven = prev.filter((issue) => issue.id.startsWith("indexed-pages-drop-"));
-      return [...reportDriven, ...dropped];
-    });
-  }, [pageChecks, indexIssues]);
+    setIndexIssues(dropped);
+  }, [pageChecks]);
 
   const allIssues = useMemo(() => {
     const crawlIssues = pageChecks.flatMap((check) => check.issues);
-    return [...manual404s, ...crawlIssues, ...sitemapIssues, ...indexIssues];
-  }, [manual404s, pageChecks, sitemapIssues, indexIssues]);
+    return [...manual404s, ...crawlIssues, ...sitemapIssues, ...reportIndexIssues, ...indexIssues];
+  }, [manual404s, pageChecks, sitemapIssues, reportIndexIssues, indexIssues]);
 
   const grouped = useMemo(() => groupIssuesByType(allIssues), [allIssues]);
 
