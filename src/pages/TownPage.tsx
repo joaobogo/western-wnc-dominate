@@ -6,7 +6,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import TownProofBlock from "@/components/TownProofBlock";
 import { getTownBySlug, towns } from "@/data/towns";
+import { getTownProofContent } from "@/data/town-proof";
 import { services } from "@/data/services";
 
 const TownPage = () => {
@@ -33,6 +35,8 @@ const TownPage = () => {
   }
 
   const otherTowns = towns.filter(t => t.slug !== slug).slice(0, 4);
+  const townProof = getTownProofContent(town.slug);
+  const schemaFaqs = townProof?.faqs ?? [];
 
   return (
     <>
@@ -49,6 +53,7 @@ const TownPage = () => {
             state: town.state,
             description: town.description,
           },
+          faqs: schemaFaqs,
         })}
       />
       <Header />
@@ -120,6 +125,8 @@ const TownPage = () => {
             </div>
           </div>
         </section>
+
+        {townProof ? <TownProofBlock town={town} content={townProof} /> : null}
 
         {/* Services in this town */}
         <section className="section-padding section-dark">
