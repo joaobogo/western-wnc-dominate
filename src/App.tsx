@@ -26,6 +26,7 @@ const Financing = lazy(() => import("./pages/Financing"));
 const Careers = lazy(() => import("./pages/Careers"));
 const RequestInspection = lazy(() => import("./pages/RequestInspection"));
 const FreeTools = lazy(() => import("./pages/FreeTools"));
+const SEOChecklist = lazy(() => import("./pages/SEOChecklist"));
 const RoofDesigner = lazy(() => import("./pages/RoofDesigner"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
 const StormCenter = lazy(() => import("./pages/StormCenter"));
@@ -99,6 +100,7 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/request-inspection" element={<RequestInspection />} />
           <Route path="/free-tools" element={<FreeTools />} />
+          <Route path="/seo-checklist" element={<SEOChecklist />} />
           <Route path="/roof-designer" element={<RoofDesigner />} />
           <Route path="/consultation" element={<QuoteFlow />} />
           <Route path="/contact" element={<Contact />} />
