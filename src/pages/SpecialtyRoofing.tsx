@@ -157,7 +157,7 @@ const SpecialtyRoofing = () => {
                     transition={{ duration: 0.5, delay: 1.7 + i * 0.15 }}
                     className="w-16 h-16 md:w-20 md:h-20 rounded-sm overflow-hidden border border-white/15"
                   >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
+                    <img src={img} alt="" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
                   </motion.div>
                 ))}
                 <Link to="/gallery" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">

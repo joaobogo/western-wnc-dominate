@@ -127,7 +127,7 @@ const Footer = () => {
           {/* Brand column — spans 2 on lg */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
-              <img src={logo} alt="Highlander" className="h-10 w-auto" />
+              <img src={logo} alt="Highlander" className="h-10 w-auto"  loading="lazy" decoding="async" />
               <div>
                 <h3 className="text-lg font-heading font-bold tracking-wide leading-none">HIGHLANDER</h3>
                 <p className="text-[hsl(var(--highland-gold))] text-[9px] font-body font-semibold uppercase tracking-[0.2em] mt-0.5">Roofing & Construction</p>

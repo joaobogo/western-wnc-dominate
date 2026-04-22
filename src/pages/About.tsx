@@ -110,7 +110,7 @@ const About = () => {
                 <div className="absolute -inset-3 md:-inset-4 bg-primary/10 rounded-sm -z-10" />
                 <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3 w-24 h-24 md:w-32 md:h-32 bg-accent/20 rounded-sm -z-10" />
                 <div className="overflow-hidden rounded-sm shadow-2xl">
-                  <img src={teamPhoto} alt="The Highlander Roofing & Construction team — over 20 local professionals serving Western North Carolina" className="w-full object-cover" />
+                  <img src={teamPhoto} alt="The Highlander Roofing & Construction team — over 20 local professionals serving Western North Carolina" className="w-full object-cover"  loading="lazy" decoding="async" />
                 </div>
                 <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.5 }} className="absolute -bottom-6 left-4 md:left-8 bg-primary text-primary-foreground px-5 py-3 md:px-6 md:py-4 rounded-sm shadow-lg">
                   <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">Est. 2017</p>
