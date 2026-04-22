@@ -8,7 +8,7 @@ import {
   Settings, HeartHandshake, ShieldCheck
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -107,11 +107,21 @@ const CommercialRoofing = () => {
         title="Commercial Roofing in WNC | TPO, EPDM & Metal"
         description="Commercial roofing for Western North Carolina property owners and managers. New installations, replacements, maintenance programs, and 24-hour emergency response."
         path="/roofing/commercial"
-        jsonLd={[
-          serviceSchema({ name: "Commercial Roofing", description: "Commercial roofing services for property owners and managers across Western North Carolina.", url: "/roofing/commercial" }),
-          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Commercial", url: "/roofing/commercial" }]),
-          faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
-        ]}
+        jsonLd={buildPageSchema({
+          type: "commercial",
+          service: {
+            name: "Commercial Roofing",
+            description: "Commercial roofing services for property owners and managers across Western North Carolina.",
+            url: "/roofing/commercial",
+            areaServed: "Western North Carolina",
+          },
+          breadcrumbs: [
+            { name: "Home", url: "/" },
+            { name: "Roofing", url: "/roofing" },
+            { name: "Commercial", url: "/roofing/commercial" },
+          ],
+          faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
+        })}
       />
       <Header />
       <main>

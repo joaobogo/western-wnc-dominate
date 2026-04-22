@@ -394,10 +394,21 @@ export const contactPageSchema = (path: string) => ({
 // ============================================================
 
 export type PageSchemaInput =
-  | { type: "home" }
+  | { type: "home"; reviews?: ReviewInput[]; aggregate?: { ratingValue: number; reviewCount: number } }
   | { type: "town"; town: TownSchemaInput; faqs?: { question: string; answer: string }[] }
   | {
       type: "service";
+      service: { name: string; description: string; url: string; areaServed?: string };
+      breadcrumbs: { name: string; url: string }[];
+      faqs?: { question: string; answer: string }[];
+    }
+  | {
+      type: "blog";
+      article: Parameters<typeof articleSchema>[0];
+      breadcrumbs: { name: string; url: string }[];
+    }
+  | {
+      type: "commercial";
       service: { name: string; description: string; url: string; areaServed?: string };
       breadcrumbs: { name: string; url: string }[];
       faqs?: { question: string; answer: string }[];
@@ -422,8 +433,16 @@ export type PageSchemaInput =
 
 export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>[] => {
   switch (input.type) {
-    case "home":
-      return [organizationSchema(), websiteSchema(), localBusinessSchema()];
+    case "home": {
+      const out: Record<string, unknown>[] = [
+        organizationSchema(),
+        websiteSchema(),
+        localBusinessSchema(),
+        breadcrumbSchema([{ name: "Home", url: "/" }]),
+      ];
+      if (input.reviews?.length) out.push(aggregateReviewSchema(input.reviews, input.aggregate));
+      return out;
+    }
 
     case "town": {
       const out: Record<string, unknown>[] = [
@@ -439,6 +458,18 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     }
 
     case "service": {
+      const out: Record<string, unknown>[] = [
+        serviceSchema(input.service),
+        breadcrumbSchema(input.breadcrumbs),
+      ];
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
+
+    case "blog":
+      return [articleSchema(input.article), breadcrumbSchema(input.breadcrumbs)];
+
+    case "commercial": {
       const out: Record<string, unknown>[] = [
         serviceSchema(input.service),
         breadcrumbSchema(input.breadcrumbs),
