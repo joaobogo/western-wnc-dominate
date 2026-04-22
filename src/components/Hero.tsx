@@ -42,6 +42,8 @@ const Hero = () => {
           alt="Mountain home with premium roof in Western North Carolina"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
           initial={{ scale: 1.15 }}
           animate={{ scale: 1 }}
           transition={{ duration: 18, ease: "linear" }}
