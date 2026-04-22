@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SEOHead, { localBusinessSchema, organizationSchema, websiteSchema } from "@/components/SEOHead";
+import SEOHead, { localBusinessSchema, organizationSchema, websiteSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
@@ -41,10 +41,10 @@ const Index = () => {
     <>
       {showLoader && <SiteLoader onComplete={handleLoaderComplete} />}
       <SEOHead
-        title="Highlander Roofing & Construction | Expert Roofing & Building in Western NC"
+        title="Roofing & Construction in Western NC"
         description="Premium roofing and construction in Western North Carolina. 500+ projects, 4.9★ rated. Shingle, metal & cedar roofing plus additions, renovations & outdoor living. Request a consultation."
         path="/"
-        jsonLd={[localBusinessSchema(), organizationSchema(), websiteSchema()]}
+        jsonLd={[localBusinessSchema(), organizationSchema(), websiteSchema(), breadcrumbSchema([{ name: "Home", url: "/" }])]}
       />
       <Header />
       <main>
