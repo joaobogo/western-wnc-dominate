@@ -222,6 +222,7 @@ const SEOMonitoring = () => {
   const [indexIssues, setIndexIssues] = useState<MonitoringIssue[]>([]);
   const [reportDrivenIssues, setReportDrivenIssues] = useState<MonitoringIssue[]>([]);
   const [prioritySummary, setPrioritySummary] = useState<WeeklyPriorityMonitoringSummary | null>(null);
+  const [reports, setReports] = useState<MonitoringReportSnapshot[]>([]);
 
   useEffect(() => {
     const loadMonitoringData = async () => {
@@ -242,12 +243,14 @@ const SEOMonitoring = () => {
         })));
 
         const reports = (data?.latestReports ?? []) as MonitoringReportSnapshot[];
+        setReports(reports);
         setReportDrivenIssues(buildReportDrivenIssues(reports));
         setPrioritySummary(buildWeeklyPriorityMonitoringSummary(reports));
       } catch {
         setManual404s([]);
         setReportDrivenIssues([]);
         setPrioritySummary(null);
+        setReports([]);
       }
     };
 
@@ -335,7 +338,7 @@ const SEOMonitoring = () => {
     () => reportDrivenIssues.filter((issue) => ["404", "sitemap", "index", "keyword"].includes(issue.type)),
     [reportDrivenIssues],
   );
-  const weeklyNarrative = useMemo(() => buildWeeklyPriorityMonitoringNarrative(([] as MonitoringReportSnapshot[]).concat()), []);
+  const weeklyNarrative = useMemo(() => buildWeeklyPriorityMonitoringNarrative(reports), [reports]);
 
   const statCards = [
     { label: "New 404 URLs", value: grouped.notFound.length, icon: Link2 },
@@ -391,6 +394,31 @@ const SEOMonitoring = () => {
 
             <AlertCenter items={activeAlerts} />
             <PriorityMonitoringPanel summary={prioritySummary} />
+
+            {weeklyNarrative.highlights.length > 0 && (
+              <section className="rounded-sm border border-border bg-card p-6">
+                <h2 className="text-2xl font-heading font-bold text-foreground">Weekly report preview</h2>
+                <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                  {weeklyNarrative.totals.monitoredPages} priority pages monitored · {weeklyNarrative.totals.pagesWithKeywordMovement} with keyword movement · {weeklyNarrative.totals.pagesWithInternalLinkChanges} with link-count changes · {weeklyNarrative.totals.pagesWithSeverityChanges} with severity changes.
+                </p>
+                <div className="mt-6 space-y-4">
+                  {weeklyNarrative.highlights.slice(0, 6).map((item) => (
+                    <article key={item.path} className="rounded-sm border border-border bg-background p-4">
+                      <div className="flex flex-wrap items-start justify-between gap-3">
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{item.category}</p>
+                          <h3 className="mt-2 text-lg font-heading font-bold text-foreground">{item.label}</h3>
+                        </div>
+                        <Link to={item.path} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                          Open page <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
+                      <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.summary}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
 
             <section className="rounded-sm border border-border bg-card p-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
