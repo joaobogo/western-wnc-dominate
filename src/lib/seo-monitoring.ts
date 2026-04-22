@@ -1,3 +1,4 @@
+import { getPriorityInternalLinkImpact, type PriorityInternalLinkImpact } from "@/lib/internal-linking-qa";
 import { seoAuditRoutes, type AuditRoute } from "@/lib/seo-launch-qa";
 
 export type MonitoringIssueType = "404" | "crawl" | "robots" | "sitemap" | "index" | "keyword";
@@ -12,6 +13,37 @@ export interface MonitoringReportSnapshot {
   total_404s?: number | null;
   gsc_indexed_pages?: number | null;
   gsc_top_keywords?: unknown;
+  raw_data?: unknown;
+}
+
+export interface PriorityKeywordMovement {
+  keyword: string;
+  currentPosition: number;
+  previousPosition: number | null;
+  change: number | null;
+}
+
+export interface PriorityPageSummary {
+  path: string;
+  label: string;
+  category: "service" | "town";
+  keywordCount: number;
+  movedKeywords: PriorityKeywordMovement[];
+  internalLinkCount: number;
+  previousInternalLinkCount: number | null;
+  internalLinkDelta: number | null;
+  internalLinkSeverity: string;
+  previousInternalLinkSeverity: string | null;
+}
+
+export interface WeeklyPriorityMonitoringSummary {
+  pages: PriorityPageSummary[];
+  totals: {
+    monitoredPages: number;
+    pagesWithKeywordMovement: number;
+    pagesWithInternalLinkChanges: number;
+    pagesWithSeverityChanges: number;
+  };
 }
 
 export interface MonitoringIssue {
@@ -44,6 +76,8 @@ const INDEXATION_DROP_THRESHOLD = 0.1;
 const SPIKE_THRESHOLD = 0.25;
 const KEYWORD_MOVEMENT_THRESHOLD = 10;
 const SITEMAP_STALE_DAYS = 7;
+const PRIORITY_PAGE_TYPES = new Set<AuditRoute["pageType"]>(["service", "commercial", "town"]);
+const severityWeight: Record<string, number> = { fail: 0, warning: 1, pass: 2 };
 
 const INTERNAL_MONITORING_EXCLUSIONS = new Set([
   "/seo-checklist",
@@ -237,6 +271,111 @@ const parseKeywordRows = (value: unknown) => {
     .filter(Boolean) as Array<{ keyword: string; position: number; path?: string }>;
 };
 
+const parsePrioritySnapshot = (value: unknown) => {
+  const root = asRecord(value);
+  const priority = asRecord(root?.priorityMonitoring);
+  const pages = Array.isArray(priority?.pages) ? priority.pages : [];
+
+  return pages
+    .map((item) => {
+      const entry = asRecord(item);
+      if (!entry) return null;
+
+      const path = pickString(entry, ["path"]);
+      const internalLinkCount = pickNumber(entry, ["internalLinkCount", "supportingLinkCount"]);
+      const internalLinkSeverity = pickString(entry, ["internalLinkSeverity", "severity"]);
+
+      if (!path) return null;
+
+      return {
+        path: normalizePath(path),
+        internalLinkCount,
+        internalLinkSeverity,
+      };
+    })
+    .filter(Boolean) as Array<{ path: string; internalLinkCount: number | null; internalLinkSeverity: string | null }>;
+};
+
+export const priorityMonitoringRoutes = monitoringRoutes.filter((route) => PRIORITY_PAGE_TYPES.has(route.pageType));
+
+export const buildWeeklyPriorityMonitoringSummary = (reports: MonitoringReportSnapshot[]): WeeklyPriorityMonitoringSummary => {
+  const priorityLinkImpact = getPriorityInternalLinkImpact();
+  const routeMap = new Map(priorityMonitoringRoutes.map((route) => [route.path, route]));
+  const latest = reports[0];
+  const previous = reports[1];
+
+  const latestKeywordsByPath = new Map<string, Array<{ keyword: string; position: number }>>();
+  parseKeywordRows(latest?.gsc_top_keywords).forEach((entry) => {
+    const normalizedPath = normalizePath(entry.path);
+    if (!normalizedPath || !routeMap.has(normalizedPath)) return;
+
+    const list = latestKeywordsByPath.get(normalizedPath) ?? [];
+    list.push({ keyword: entry.keyword, position: entry.position });
+    latestKeywordsByPath.set(normalizedPath, list);
+  });
+
+  const previousKeywordIndex = new Map(
+    parseKeywordRows(previous?.gsc_top_keywords).map((entry) => [`${normalizePath(entry.path)}::${entry.keyword.toLowerCase()}`, entry.position]),
+  );
+
+  const previousPrioritySnapshot = new Map(
+    parsePrioritySnapshot(previous?.raw_data).map((entry) => [entry.path, entry]),
+  );
+
+  const pages = priorityLinkImpact
+    .map((page): PriorityPageSummary | null => {
+      const route = routeMap.get(page.path);
+      if (!route) return null;
+
+      const keywords = latestKeywordsByPath.get(page.path) ?? [];
+      const movedKeywords = keywords
+        .map((keyword) => {
+          const previousPosition = previousKeywordIndex.get(`${page.path}::${keyword.keyword.toLowerCase()}`) ?? null;
+          const change = previousPosition === null ? null : round(keyword.position - previousPosition);
+          return {
+            keyword: keyword.keyword,
+            currentPosition: round(keyword.position),
+            previousPosition: previousPosition === null ? null : round(previousPosition),
+            change,
+          };
+        })
+        .filter((entry) => entry.change === null || Math.abs(entry.change) >= KEYWORD_MOVEMENT_THRESHOLD)
+        .sort((a, b) => Math.abs(b.change ?? 0) - Math.abs(a.change ?? 0));
+
+      const previousPriority = previousPrioritySnapshot.get(page.path);
+      const previousInternalLinkCount = previousPriority?.internalLinkCount ?? null;
+      const previousInternalLinkSeverity = previousPriority?.internalLinkSeverity ?? null;
+      const internalLinkDelta = previousInternalLinkCount === null ? null : page.supportingLinkCount - previousInternalLinkCount;
+
+      return {
+        path: page.path,
+        label: page.name,
+        category: page.category,
+        keywordCount: keywords.length,
+        movedKeywords,
+        internalLinkCount: page.supportingLinkCount,
+        previousInternalLinkCount,
+        internalLinkDelta,
+        internalLinkSeverity: page.severity,
+        previousInternalLinkSeverity,
+      };
+    })
+    .filter(Boolean) as PriorityPageSummary[];
+
+  return {
+    pages,
+    totals: {
+      monitoredPages: pages.length,
+      pagesWithKeywordMovement: pages.filter((page) => page.movedKeywords.length > 0).length,
+      pagesWithInternalLinkChanges: pages.filter((page) => page.internalLinkDelta !== null && page.internalLinkDelta !== 0).length,
+      pagesWithSeverityChanges: pages.filter((page) => {
+        if (!page.previousInternalLinkSeverity) return false;
+        return severityWeight[page.previousInternalLinkSeverity] !== severityWeight[page.internalLinkSeverity];
+      }).length,
+    },
+  };
+};
+
 export const buildReportDrivenIssues = (reports: MonitoringReportSnapshot[]): MonitoringIssue[] => {
   if (reports.length === 0) return [];
 
@@ -343,4 +482,39 @@ export const buildReportDrivenIssues = (reports: MonitoringReportSnapshot[]): Mo
   }
 
   return issues;
+};
+
+export const buildWeeklyPriorityMonitoringNarrative = (reports: MonitoringReportSnapshot[]) => {
+  const summary = buildWeeklyPriorityMonitoringSummary(reports);
+
+  const highlights = summary.pages
+    .filter((page) => page.movedKeywords.length > 0 || page.internalLinkDelta !== null || page.previousInternalLinkSeverity)
+    .slice(0, 12)
+    .map((page) => {
+      const keywordSummary = page.movedKeywords.slice(0, 2).map((keyword) => {
+        if (keyword.change === null) return `${keyword.keyword} entered tracking at ${keyword.currentPosition}`;
+        return `${keyword.keyword} ${keyword.change > 0 ? "fell" : "rose"} ${Math.abs(keyword.change)} to ${keyword.currentPosition}`;
+      });
+
+      const linkSummary = [
+        page.internalLinkDelta === null
+          ? `internal-link baseline is ${page.internalLinkCount}`
+          : `internal links ${page.internalLinkDelta > 0 ? `increased by ${page.internalLinkDelta}` : page.internalLinkDelta < 0 ? `decreased by ${Math.abs(page.internalLinkDelta)}` : "held steady"} (${page.internalLinkCount})`,
+        page.previousInternalLinkSeverity
+          ? `severity ${page.previousInternalLinkSeverity} → ${page.internalLinkSeverity}`
+          : `severity ${page.internalLinkSeverity}`,
+      ];
+
+      return {
+        path: page.path,
+        label: page.label,
+        category: page.category,
+        summary: [...keywordSummary, ...linkSummary].join(" · "),
+      };
+    });
+
+  return {
+    totals: summary.totals,
+    highlights,
+  };
 };
