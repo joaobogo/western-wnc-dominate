@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, MapPin } from "lucide-react";
-import SEOHead, { localBusinessSchema, breadcrumbSchema } from "@/components/SEOHead";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -40,24 +40,16 @@ const TownPage = () => {
         title={town.metaTitle}
         description={town.metaDescription}
         path={`/service-areas/${town.slug}`}
-        jsonLd={[
-          localBusinessSchema({
-            name: `Highlander Roofing & Construction — ${town.name}, NC`,
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: town.name,
-              addressRegion: town.state,
-              addressCountry: "US",
-            },
-            areaServed: { "@type": "City", name: town.name, containedInPlace: { "@type": "AdministrativeArea", name: `${town.county}, ${town.state}` } },
+        jsonLd={buildPageSchema({
+          type: "town",
+          town: {
+            name: town.name,
+            slug: town.slug,
+            county: town.county,
+            state: town.state,
             description: town.description,
-          }),
-          breadcrumbSchema([
-            { name: "Home", url: "/" },
-            { name: "Service Areas", url: "/service-areas" },
-            { name: `${town.name}, ${town.state}`, url: `/service-areas/${town.slug}` },
-          ]),
-        ]}
+          },
+        })}
       />
       <Header />
       <main>
