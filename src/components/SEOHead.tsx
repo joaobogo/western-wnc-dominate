@@ -239,3 +239,234 @@ export const articleSchema = (article: { title: string; description: string; url
   author: { "@type": "Person", name: article.author || "Highlander Team" },
   publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: DEFAULT_IMAGE } },
 });
+
+// ============================================================
+// Reusable Schema Templates — town, review, product, how-to,
+// plus a buildPageSchema() orchestrator that auto-bundles the
+// correct structured data for each page type.
+// ============================================================
+
+export interface TownSchemaInput {
+  name: string;
+  slug: string;
+  county: string;
+  state: string;
+  description: string;
+  latitude?: number;
+  longitude?: number;
+}
+
+/**
+ * Town-scoped LocalBusiness schema. Reuses base localBusinessSchema
+ * and overrides name, address, areaServed, geo, and url for the town.
+ */
+export const townSchema = (town: TownSchemaInput) =>
+  localBusinessSchema({
+    "@id": `${BASE_URL}/service-areas/${town.slug}#business`,
+    name: `Highlander Roofing & Construction — ${town.name}, ${town.state}`,
+    url: `${BASE_URL}/service-areas/${town.slug}`,
+    description: town.description,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: town.name,
+      addressRegion: town.state,
+      addressCountry: "US",
+    },
+    areaServed: {
+      "@type": "City",
+      name: town.name,
+      containedInPlace: { "@type": "AdministrativeArea", name: `${town.county}, ${town.state}` },
+    },
+    ...(town.latitude && town.longitude
+      ? { geo: { "@type": "GeoCoordinates", latitude: town.latitude, longitude: town.longitude } }
+      : {}),
+  });
+
+export interface ReviewInput {
+  author: string;
+  rating: number;       // 1-5
+  body: string;
+  datePublished: string; // ISO YYYY-MM-DD
+  location?: string;
+}
+
+/** Single Review schema (use inside an itemReviewed wrapper if standalone). */
+export const reviewSchema = (review: ReviewInput) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  reviewRating: { "@type": "Rating", ratingValue: review.rating, bestRating: 5, worstRating: 1 },
+  author: { "@type": "Person", name: review.author },
+  reviewBody: review.body,
+  datePublished: review.datePublished,
+  itemReviewed: { "@type": "RoofingContractor", name: SITE_NAME, "@id": `${BASE_URL}/#business` },
+  ...(review.location ? { locationCreated: { "@type": "Place", name: review.location } } : {}),
+});
+
+/** AggregateRating + embedded Reviews for a reviews/testimonials page. */
+export const aggregateReviewSchema = (
+  reviews: ReviewInput[],
+  aggregate?: { ratingValue: number; reviewCount: number },
+) => {
+  const avg = aggregate?.ratingValue ?? (reviews.reduce((s, r) => s + r.rating, 0) / Math.max(reviews.length, 1));
+  const count = aggregate?.reviewCount ?? reviews.length;
+  return {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "@id": `${BASE_URL}/#business`,
+    name: SITE_NAME,
+    url: BASE_URL,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: Number(avg.toFixed(1)),
+      reviewCount: count,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+      author: { "@type": "Person", name: r.author },
+      reviewBody: r.body,
+      datePublished: r.datePublished,
+    })),
+  };
+};
+
+export interface ProductSchemaInput {
+  name: string;
+  description: string;
+  url: string;
+  image?: string;
+  category?: string;
+  brand?: string;
+}
+
+/** Product schema for materials (shingles, metal panels, etc.). */
+export const productSchema = (p: ProductSchemaInput) => ({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: p.name,
+  description: p.description,
+  url: `${BASE_URL}${p.url}`,
+  image: p.image || DEFAULT_IMAGE,
+  category: p.category || "Roofing Material",
+  brand: { "@type": "Brand", name: p.brand || SITE_NAME },
+});
+
+export interface HowToStep {
+  name: string;
+  text: string;
+  url?: string;
+  image?: string;
+}
+
+/** HowTo schema for tools, calculators, and process pages. */
+export const howToSchema = (howTo: { name: string; description: string; url: string; steps: HowToStep[]; totalTime?: string }) => ({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: howTo.name,
+  description: howTo.description,
+  url: `${BASE_URL}${howTo.url}`,
+  ...(howTo.totalTime ? { totalTime: howTo.totalTime } : {}),
+  step: howTo.steps.map((s, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: s.name,
+    text: s.text,
+    ...(s.url ? { url: `${BASE_URL}${s.url}` } : {}),
+    ...(s.image ? { image: s.image } : {}),
+  })),
+});
+
+/** ContactPage schema for /contact and similar. */
+export const contactPageSchema = (path: string) => ({
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  url: `${BASE_URL}${path}`,
+  about: { "@id": `${BASE_URL}/#business` },
+});
+
+// ============================================================
+// buildPageSchema — central orchestrator
+// Pass the page type + minimal inputs; returns the correct
+// JSON-LD bundle. Use in pages so structured data is consistent
+// and automatic across the site.
+// ============================================================
+
+export type PageSchemaInput =
+  | { type: "home" }
+  | { type: "town"; town: TownSchemaInput; faqs?: { question: string; answer: string }[] }
+  | {
+      type: "service";
+      service: { name: string; description: string; url: string; areaServed?: string };
+      breadcrumbs: { name: string; url: string }[];
+      faqs?: { question: string; answer: string }[];
+    }
+  | {
+      type: "article";
+      article: Parameters<typeof articleSchema>[0];
+      breadcrumbs: { name: string; url: string }[];
+    }
+  | { type: "reviews"; reviews: ReviewInput[]; aggregate?: { ratingValue: number; reviewCount: number } }
+  | { type: "contact"; path: string; breadcrumbs?: { name: string; url: string }[] }
+  | {
+      type: "tool";
+      howTo: Parameters<typeof howToSchema>[0];
+      breadcrumbs: { name: string; url: string }[];
+    }
+  | {
+      type: "generic";
+      breadcrumbs: { name: string; url: string }[];
+      faqs?: { question: string; answer: string }[];
+    };
+
+export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>[] => {
+  switch (input.type) {
+    case "home":
+      return [organizationSchema(), websiteSchema(), localBusinessSchema()];
+
+    case "town": {
+      const out: Record<string, unknown>[] = [
+        townSchema(input.town),
+        breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Service Areas", url: "/service-areas" },
+          { name: `${input.town.name}, ${input.town.state}`, url: `/service-areas/${input.town.slug}` },
+        ]),
+      ];
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
+
+    case "service": {
+      const out: Record<string, unknown>[] = [
+        serviceSchema(input.service),
+        breadcrumbSchema(input.breadcrumbs),
+      ];
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
+
+    case "article":
+      return [articleSchema(input.article), breadcrumbSchema(input.breadcrumbs)];
+
+    case "reviews":
+      return [aggregateReviewSchema(input.reviews, input.aggregate)];
+
+    case "contact": {
+      const out: Record<string, unknown>[] = [contactPageSchema(input.path), localBusinessSchema()];
+      if (input.breadcrumbs?.length) out.push(breadcrumbSchema(input.breadcrumbs));
+      return out;
+    }
+
+    case "tool": {
+      return [howToSchema(input.howTo), breadcrumbSchema(input.breadcrumbs)];
+    }
+
+    case "generic": {
+      const out: Record<string, unknown>[] = [breadcrumbSchema(input.breadcrumbs)];
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
+  }
+};
