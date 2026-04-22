@@ -251,6 +251,99 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_404_log: {
+        Row: {
+          created_at: string
+          id: string
+          metadata: Json | null
+          path: string
+          referrer: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          path: string
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          path?: string
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      seo_reports: {
+        Row: {
+          created_at: string
+          email_recipient: string | null
+          email_status: string | null
+          errors: Json | null
+          gsc_avg_ctr: number | null
+          gsc_avg_position: number | null
+          gsc_indexed_pages: number | null
+          gsc_top_keywords: Json | null
+          gsc_top_pages: Json | null
+          gsc_total_clicks: number | null
+          gsc_total_impressions: number | null
+          id: string
+          period_end: string
+          period_start: string
+          raw_data: Json | null
+          sitemap_status: string | null
+          sitemap_url_count: number | null
+          top_404_paths: Json | null
+          total_404s: number | null
+        }
+        Insert: {
+          created_at?: string
+          email_recipient?: string | null
+          email_status?: string | null
+          errors?: Json | null
+          gsc_avg_ctr?: number | null
+          gsc_avg_position?: number | null
+          gsc_indexed_pages?: number | null
+          gsc_top_keywords?: Json | null
+          gsc_top_pages?: Json | null
+          gsc_total_clicks?: number | null
+          gsc_total_impressions?: number | null
+          id?: string
+          period_end: string
+          period_start: string
+          raw_data?: Json | null
+          sitemap_status?: string | null
+          sitemap_url_count?: number | null
+          top_404_paths?: Json | null
+          total_404s?: number | null
+        }
+        Update: {
+          created_at?: string
+          email_recipient?: string | null
+          email_status?: string | null
+          errors?: Json | null
+          gsc_avg_ctr?: number | null
+          gsc_avg_position?: number | null
+          gsc_indexed_pages?: number | null
+          gsc_top_keywords?: Json | null
+          gsc_top_pages?: Json | null
+          gsc_total_clicks?: number | null
+          gsc_total_impressions?: number | null
+          id?: string
+          period_end?: string
+          period_start?: string
+          raw_data?: Json | null
+          sitemap_status?: string | null
+          sitemap_url_count?: number | null
+          top_404_paths?: Json | null
+          total_404s?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
