@@ -27,6 +27,17 @@ export interface InternalLinkingReport {
   items: QAAuditItem[];
 }
 
+export interface PriorityInternalLinkImpact {
+  id: string;
+  name: string;
+  path: string;
+  category: Extract<QACategory, "service" | "town">;
+  severity: QASeverity;
+  supportingLinkCount: number;
+  summary: string;
+  recommendation: string;
+}
+
 const directServiceRoutes = new Set([
   "commercial-roofing",
   "commercial-maintenance",
@@ -237,3 +248,18 @@ export const generateInternalLinkingReport = (): InternalLinkingReport => {
     items,
   };
 };
+
+export const getPriorityInternalLinkImpact = (): PriorityInternalLinkImpact[] =>
+  generateInternalLinkingReport()
+    .items
+    .filter((item): item is QAAuditItem & { category: "service" | "town" } => item.category === "service" || item.category === "town")
+    .map((item) => ({
+      id: item.id,
+      name: item.name,
+      path: item.path,
+      category: item.category,
+      severity: item.severity,
+      supportingLinkCount: item.supportingLinks.length,
+      summary: item.summary,
+      recommendation: item.recommendation,
+    }));
