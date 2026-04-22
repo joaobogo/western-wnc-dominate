@@ -7,16 +7,18 @@ const ROOT = resolve(__dirname, "..");
 const PUBLIC = resolve(ROOT, "public");
 const HTML = resolve(ROOT, "index.html");
 
-// Required favicon assets: { file in /public, must also be referenced in index.html via one of these patterns }
+// Required assets — must exist in /public AND be referenced somewhere reachable from index.html
+// (either directly in <head> OR transitively through site.webmanifest, which is itself linked from <head>)
 const REQUIRED = [
-  { file: "favicon.ico", patterns: [/rel=["']icon["'][^>]*href=["']\/favicon\.ico["']/i] },
-  { file: "favicon-16.png", patterns: [/href=["']\/favicon-16\.png["']/i] },
-  { file: "favicon-32.png", patterns: [/href=["']\/favicon-32\.png["']/i] },
-  { file: "favicon.png", patterns: [/href=["']\/favicon\.png["']/i] },
-  { file: "apple-touch-icon.png", patterns: [/rel=["']apple-touch-icon["'][^>]*href=["']\/apple-touch-icon\.png["']/i] },
-  { file: "icon-192.png", patterns: [/["']\/icon-192\.png["']/] },
-  { file: "icon-512.png", patterns: [/["']\/icon-512\.png["']/] },
-  { file: "site.webmanifest", patterns: [/rel=["']manifest["'][^>]*href=["']\/site\.webmanifest["']/i] },
+  { file: "favicon.ico", inHtml: [/rel=["']icon["'][^>]*href=["']\/favicon\.ico["']/i] },
+  { file: "favicon-16.png", inHtml: [/href=["']\/favicon-16\.png["']/i] },
+  { file: "favicon-32.png", inHtml: [/href=["']\/favicon-32\.png["']/i] },
+  { file: "favicon.png", inHtml: [/href=["']\/favicon\.png["']/i] },
+  { file: "apple-touch-icon.png", inHtml: [/rel=["']apple-touch-icon["'][^>]*href=["']\/apple-touch-icon\.png["']/i] },
+  { file: "site.webmanifest", inHtml: [/rel=["']manifest["'][^>]*href=["']\/site\.webmanifest["']/i] },
+  // These can be referenced from EITHER index.html OR site.webmanifest
+  { file: "icon-192.png", inHtml: [/["']\/icon-192\.png["']/], allowManifest: true },
+  { file: "icon-512.png", inHtml: [/["']\/icon-512\.png["']/], allowManifest: true },
 ];
 
 // Required <meta>/<link> tags in head (regex must match in index.html)
@@ -46,9 +48,12 @@ function main() {
     fail(["index.html not found at " + HTML]);
   }
   const html = readFileSync(HTML, "utf8");
+  const manifestPath = resolve(PUBLIC, "site.webmanifest");
+  let manifestRaw = "";
+  if (existsSync(manifestPath)) manifestRaw = readFileSync(manifestPath, "utf8");
 
   // 1. Each required asset must exist on disk AND be referenced in index.html
-  for (const { file, patterns } of REQUIRED) {
+  for (const { file, inHtml, allowManifest } of REQUIRED) {
     const filePath = resolve(PUBLIC, file);
     if (!existsSync(filePath)) {
       errors.push(`Missing asset: public/${file}`);
@@ -57,9 +62,13 @@ function main() {
     if (statSync(filePath).size < 100) {
       errors.push(`Asset is suspiciously small (<100 bytes): public/${file}`);
     }
-    const referenced = patterns.some((p) => p.test(html));
+    const inHead = inHtml.some((p) => p.test(html));
+    const inManifest = allowManifest && manifestRaw.includes(`/${file}`);
+    const referenced = inHead || inManifest;
     if (!referenced) {
-      errors.push(`Asset public/${file} exists but is NOT referenced in index.html`);
+      errors.push(
+        `Asset public/${file} exists but is NOT referenced in index.html${allowManifest ? " or site.webmanifest" : ""}`
+      );
     }
   }
 
@@ -71,10 +80,9 @@ function main() {
   }
 
   // 3. Validate site.webmanifest contents
-  const manifestPath = resolve(PUBLIC, "site.webmanifest");
   if (existsSync(manifestPath)) {
     try {
-      const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+      const manifest = JSON.parse(manifestRaw);
       if (!manifest.name) errors.push("site.webmanifest missing 'name'");
       if (!manifest.theme_color) errors.push("site.webmanifest missing 'theme_color'");
       if (!manifest.icons || manifest.icons.length === 0) {
