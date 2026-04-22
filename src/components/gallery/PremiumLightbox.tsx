@@ -264,7 +264,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                       : "border-transparent opacity-40 hover:opacity-70"
                   }`}
                 >
-                  <img src={p.image} alt="" className="w-full h-full object-cover" />
+                  <img src={p.image} alt="" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
                 </button>
               ))}
             </motion.div>

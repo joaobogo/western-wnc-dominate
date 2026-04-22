@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, MapPin } from "lucide-react";
+import SEOHead, { localBusinessSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -15,6 +16,12 @@ const TownPage = () => {
   if (!town) {
     return (
       <>
+        <SEOHead
+          title="Service Area Not Found | Highlander Roofing"
+          description="The requested service area was not found. Browse all Western North Carolina locations we serve."
+          path={`/service-areas/${slug || ""}`}
+          noindex
+        />
         <Header />
         <main className="section-padding text-center pt-32">
           <h1 className="text-3xl font-heading font-bold">Town Not Found</h1>
@@ -29,6 +36,29 @@ const TownPage = () => {
 
   return (
     <>
+      <SEOHead
+        title={town.metaTitle}
+        description={town.metaDescription}
+        path={`/service-areas/${town.slug}`}
+        jsonLd={[
+          localBusinessSchema({
+            name: `Highlander Roofing & Construction — ${town.name}, NC`,
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: town.name,
+              addressRegion: town.state,
+              addressCountry: "US",
+            },
+            areaServed: { "@type": "City", name: town.name, containedInPlace: { "@type": "AdministrativeArea", name: `${town.county}, ${town.state}` } },
+            description: town.description,
+          }),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Service Areas", url: "/service-areas" },
+            { name: `${town.name}, ${town.state}`, url: `/service-areas/${town.slug}` },
+          ]),
+        ]}
+      />
       <Header />
       <main>
         {/* Hero */}

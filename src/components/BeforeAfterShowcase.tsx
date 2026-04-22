@@ -69,11 +69,11 @@ export const BeforeAfterSlider = ({
       onTouchEnd={handleMouseUp}
     >
       {/* After image (full width, behind) */}
-      <img src={after} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover" />
+      <img src={after} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover"  loading="lazy" decoding="async" />
 
       {/* Before image (clipped) */}
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${position}%` }}>
-        <img src={before} alt={beforeLabel} className="absolute inset-0 w-full h-full object-cover" style={{ width: `${containerRef.current?.offsetWidth || 1000}px`, maxWidth: "none" }} />
+        <img src={before} alt={beforeLabel} className="absolute inset-0 w-full h-full object-cover" style={{ width: `${containerRef.current?.offsetWidth || 1000}px`, maxWidth: "none" }}  loading="lazy" decoding="async" />
       </div>
 
       {/* Divider line */}

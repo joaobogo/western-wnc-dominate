@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ConfirmationState } from "@/components/conversion";
@@ -416,9 +416,14 @@ export default function ConstructionConsultation() {
   return (
     <>
       <SEOHead
-        title="Schedule a Construction Consultation | Highlander Construction"
-        description="Start a project conversation about your home addition, renovation, outdoor living space, or custom construction project in Western North Carolina."
+        title="Construction Consultation in Western NC"
+        description="Start a conversation about your home addition, renovation, outdoor living space, or custom construction project in Western North Carolina."
         path="/construction/consultation"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Construction", url: "/construction" },
+          { name: "Consultation", url: "/construction/consultation" },
+        ])}
       />
       <Header />
       <main className="pt-24 md:pt-32 pb-16 blueprint-bg min-h-screen">

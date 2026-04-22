@@ -102,7 +102,7 @@ const HomeAdditions = () => {
   return (
     <>
       <SEOHead
-        title="Home Additions | Room Additions, Expansions & Guest Suites in Western NC"
+        title="Home Additions in Western NC | Suites & Expansions"
         description="Premium home additions for Western North Carolina. Guest suites, in-law apartments, room expansions, and second-story additions that integrate seamlessly with your existing home."
         path="/construction/additions"
         jsonLd={[

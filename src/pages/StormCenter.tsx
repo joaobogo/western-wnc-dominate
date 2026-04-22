@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
 import { blogPosts } from "@/data/blogs";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 
 const stormArticles = blogPosts.filter(
   (p) => p.category === "Storm" || p.category === "Insurance" || p.category === "Maintenance"
@@ -87,6 +88,15 @@ const StormCenter = () => {
 
   return (
     <>
+      <SEOHead
+        title="Storm Center | Roof Damage Response & Recovery in Western NC"
+        description="Storm preparedness, damage assessment, and insurance claim guidance for Western North Carolina homeowners. 24–48 hour storm response from Highlander Roofing."
+        path="/storm-center"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Storm Center", url: "/storm-center" },
+        ])}
+      />
       <Header />
       <main>
         {/* ═══ HERO ═══ */}

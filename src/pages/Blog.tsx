@@ -76,7 +76,7 @@ const Blog = () => {
   return (
     <>
       <SEOHead
-        title="Roofing & Construction Blog | Expert Guides for Western NC Homeowners"
+        title="Roofing & Construction Blog | Western NC Guides"
         description="Expert roofing and construction guidance for Western North Carolina. Material comparisons, storm damage guides, maintenance tips, cost breakdowns, and local insights."
         path="/blog"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }])}

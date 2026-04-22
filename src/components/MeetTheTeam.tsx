@@ -169,7 +169,7 @@ const MeetTheTeam = () => {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-none overflow-hidden">
-                  <img src={ownerPhoto} alt="James McAllister" className="w-full h-full object-cover" />
+                  <img src={ownerPhoto} alt="James McAllister" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
                 </div>
                 <div>
                   <span className="text-xs font-heading font-bold text-foreground">James McAllister</span>

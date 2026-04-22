@@ -1,46 +1,49 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import ServicePage from "./pages/ServicePage";
-import TownPage from "./pages/TownPage";
-import Blog from "./pages/Blog";
-import BlogPostPage from "./pages/BlogPost";
-import Services from "./pages/Services";
-import ServiceAreas from "./pages/ServiceAreas";
-import About from "./pages/About";
-import Team from "./pages/Team";
-import Certifications from "./pages/Certifications";
-import Gallery from "./pages/Gallery";
-import ReviewsPage from "./pages/ReviewsPage";
-import ProjectDetail from "./pages/ProjectDetail";
-import Financing from "./pages/Financing";
-import Careers from "./pages/Careers";
-import RequestInspection from "./pages/RequestInspection";
-import FreeTools from "./pages/FreeTools";
-import RoofDesigner from "./pages/RoofDesigner";
-import RoofingDivision from "./pages/RoofingDivision";
-import StormCenter from "./pages/StormCenter";
-import ResidentialRoofing from "./pages/ResidentialRoofing";
-import RoofReplacement from "./pages/RoofReplacement";
-import RoofRepair from "./pages/RoofRepair";
-import StormDamage from "./pages/StormDamage";
-import CommercialRoofing from "./pages/CommercialRoofing";
-import SpecialtyRoofing from "./pages/SpecialtyRoofing";
-import ConstructionDivision from "./pages/ConstructionDivision";
-import HomeAdditions from "./pages/HomeAdditions";
-import Renovations from "./pages/Renovations";
-import ExteriorImprovements from "./pages/ExteriorImprovements";
-import OutdoorLiving from "./pages/OutdoorLiving";
-import CustomConstruction from "./pages/CustomConstruction";
-import ConstructionConsultation from "./pages/ConstructionConsultation";
-import QuoteFlow from "./pages/QuoteFlow";
-import Contact from "./pages/Contact";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 import ScrollToTop from "./components/ScrollToTop";
+
+// Lazy-load all non-home routes for faster LCP on initial load
+const NotFound = lazy(() => import("./pages/NotFound"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
+const TownPage = lazy(() => import("./pages/TownPage"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPostPage = lazy(() => import("./pages/BlogPost"));
+const Services = lazy(() => import("./pages/Services"));
+const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
+const About = lazy(() => import("./pages/About"));
+const Team = lazy(() => import("./pages/Team"));
+const Certifications = lazy(() => import("./pages/Certifications"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const Financing = lazy(() => import("./pages/Financing"));
+const Careers = lazy(() => import("./pages/Careers"));
+const RequestInspection = lazy(() => import("./pages/RequestInspection"));
+const FreeTools = lazy(() => import("./pages/FreeTools"));
+const RoofDesigner = lazy(() => import("./pages/RoofDesigner"));
+const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
+const StormCenter = lazy(() => import("./pages/StormCenter"));
+const ResidentialRoofing = lazy(() => import("./pages/ResidentialRoofing"));
+const RoofReplacement = lazy(() => import("./pages/RoofReplacement"));
+const RoofRepair = lazy(() => import("./pages/RoofRepair"));
+const StormDamage = lazy(() => import("./pages/StormDamage"));
+const CommercialRoofing = lazy(() => import("./pages/CommercialRoofing"));
+const SpecialtyRoofing = lazy(() => import("./pages/SpecialtyRoofing"));
+const ConstructionDivision = lazy(() => import("./pages/ConstructionDivision"));
+const HomeAdditions = lazy(() => import("./pages/HomeAdditions"));
+const Renovations = lazy(() => import("./pages/Renovations"));
+const ExteriorImprovements = lazy(() => import("./pages/ExteriorImprovements"));
+const OutdoorLiving = lazy(() => import("./pages/OutdoorLiving"));
+const CustomConstruction = lazy(() => import("./pages/CustomConstruction"));
+const ConstructionConsultation = lazy(() => import("./pages/ConstructionConsultation"));
+const QuoteFlow = lazy(() => import("./pages/QuoteFlow"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 const queryClient = new QueryClient();
 
@@ -51,7 +54,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
+        <Suspense fallback={<div className="min-h-screen bg-background" />}>
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/roofing" element={<RoofingDivision />} />
           <Route path="/roofing/residential" element={<ResidentialRoofing />} />
@@ -94,7 +98,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
+          </Routes>
+        </Suspense>
         <ChatbotWidget />
       </BrowserRouter>
     </TooltipProvider>

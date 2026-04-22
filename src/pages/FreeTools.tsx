@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import RoofCostEstimator from "@/components/RoofCostEstimator";
 import RoofAssessmentQuiz from "@/components/RoofAssessmentQuiz";
 import GuideLeadMagnet from "@/components/GuideLeadMagnet";
@@ -20,9 +20,13 @@ const FreeTools = () => {
   return (
     <>
       <SEOHead
-        title="Roofing & Construction Tools | Highlander Roofing & Construction"
-        description="Interactive tools to help you plan your roofing or construction project. Compare materials, assess damage, estimate costs, and find the right service."
+        title="Free Roofing & Construction Planning Tools"
+        description="Free interactive tools to plan your roofing or construction project — material comparison, damage assessment, cost estimator, and a virtual roof designer."
         path="/free-tools"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Free Tools", url: "/free-tools" },
+        ])}
       />
       <Header />
       <main className="pt-20 md:pt-28">

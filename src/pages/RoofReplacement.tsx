@@ -145,7 +145,7 @@ const RoofReplacement = () => {
   return (
     <>
       <SEOHead
-        title="Roof Replacement | Full Tear-Off & Reinstall for Mountain Homes in WNC"
+        title="Roof Replacement for Mountain Homes in Western NC"
         description="Complete roof replacement for Western North Carolina homes. Site-specific material specification, certified installation, transparent proposals, and warranties you can count on."
         path="/roofing/roof-replacement"
         jsonLd={[

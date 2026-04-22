@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -26,6 +27,16 @@ const RoofDesigner = () => {
 
   return (
     <>
+      <SEOHead
+        title="Virtual Roof Designer | Free Online Tool"
+        description="Upload a photo of your home and visualize different roofing materials and colors instantly. Free AI-powered tool from Highlander Roofing — Western NC."
+        path="/roof-designer"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Free Tools", url: "/free-tools" },
+          { name: "Roof Designer", url: "/roof-designer" },
+        ])}
+      />
       <Header />
       <main className="pt-16 md:pt-20 relative">
         {/* Beta banner */}

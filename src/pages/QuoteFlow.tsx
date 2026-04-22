@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MultiStepForm, ConfirmationState } from "@/components/conversion";
@@ -346,9 +346,13 @@ export default function QuoteFlow() {
   return (
     <>
       <SEOHead
-        title="Schedule a Project Consultation | Highlander Roofing & Construction"
-        description="Start a conversation about your roofing or construction project. Tell us what you're thinking, and we'll connect you with the right advisor."
+        title="Project Consultation in Western NC"
+        description="Tell us about your roofing or construction project — we'll connect you with the right advisor. No pressure. Highlander Roofing & Construction, Western NC."
         path="/consultation"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Consultation", url: "/consultation" },
+        ])}
       />
       <Header />
       <main className="pt-24 md:pt-32 pb-16">

@@ -83,7 +83,7 @@ const CustomConstruction = () => {
   return (
     <>
       <SEOHead
-        title="Custom Construction | Specialty Projects & Complex Builds in Western NC"
+        title="Custom Construction in Western NC | Specialty Builds"
         description="Custom construction and specialty projects for architecturally distinctive Western North Carolina homes. Multi-phase renovations, structural modifications, and high-coordination builds."
         path="/construction/custom"
         jsonLd={[
