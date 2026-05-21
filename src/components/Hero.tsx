@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Shield, Award, Clock, HardHat, Home, Mountain, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
-import heroVideo from "@/assets/hero-video.mp4";
-import { useRef, useState } from "react";
+import heroLayer2 from "@/assets/gallery/metal-009.jpg";
+import heroLayer3 from "@/assets/gallery/asphalt-hero.webp";
+import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,8 +21,22 @@ const trustItems = [
 
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
-  const [videoLoaded, setVideoLoaded] = useState(false);
   const isMobile = useIsMobile();
+  const [layer, setLayer] = useState(0);
+
+  // Layered still imagery — slow cinematic cross-fade across 3 real WNC roof photos.
+  // 9s per layer, ease handled by CSS transition.
+  useEffect(() => {
+    const id = window.setInterval(() => setLayer((l) => (l + 1) % 3), 9000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const layers = [heroImage, heroLayer2, heroLayer3];
+  const layerAlts = [
+    "Premium mountain home roof in Western North Carolina",
+    "Standing seam metal roof on a WNC residence",
+    "Architectural asphalt roof on a Highlands-area home",
+  ];
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -37,30 +52,27 @@ const Hero = () => {
     <section ref={ref} className="relative min-h-[100svh] flex flex-col overflow-hidden">
       {/* === BACKGROUND — cinematic parallax + scale === */}
       <motion.div className="absolute inset-0" style={{ y: bgY, scale: bgScale }}>
-        <motion.img
-          src={heroImage}
-          alt="Mountain home with premium roof in Western North Carolina"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          initial={{ scale: 1.15 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 18, ease: "linear" }}
-        />
-        <motion.video
-          autoPlay muted loop playsInline preload="auto"
-          // @ts-ignore
-          webkit-playsinline="true"
-          onCanPlay={() => setVideoLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
-          ref={(el) => { if (el) el.play().catch(() => {}); }}
-          initial={{ scale: 1.08 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 12, ease: "linear" }}
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </motion.video>
+        {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
+            No video. All real WNC roof photography. */}
+        {layers.map((src, i) => (
+          <motion.img
+            key={src}
+            src={src}
+            alt={layerAlts[i]}
+            loading={i === 0 ? "eager" : "lazy"}
+            fetchPriority={i === 0 ? "high" : "low"}
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover will-change-[opacity,transform]"
+            style={{
+              opacity: layer === i ? 1 : 0,
+              transition: "opacity 2200ms cubic-bezier(0.22, 1, 0.36, 1)",
+              transformOrigin: i % 2 === 0 ? "30% 40%" : "70% 60%",
+            }}
+            initial={{ scale: 1.12 }}
+            animate={{ scale: layer === i ? 1.0 : 1.08 }}
+            transition={{ duration: 11, ease: "linear" }}
+          />
+        ))}
 
         {/* Multi-layer cinematic grading — deeper, moodier */}
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.97)] via-[hsl(var(--hero-overlay)/0.88)] to-[hsl(var(--hero-overlay)/0.35)] md:to-[hsl(var(--hero-overlay)/0.08)]" />
@@ -78,6 +90,22 @@ const Hero = () => {
         {/* Grain texture */}
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
       </motion.div>
+
+      {/* === LAYER INDICATOR — tiny premium ticks bottom-right of hero === */}
+      <div className="absolute right-6 md:right-10 lg:right-20 bottom-32 md:bottom-36 z-20 hidden sm:flex items-center gap-1.5">
+        {layers.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setLayer(i)}
+            aria-label={`Show hero image ${i + 1}`}
+            className="h-px transition-all duration-500"
+            style={{
+              width: layer === i ? 28 : 14,
+              background: layer === i ? "hsl(var(--highland-gold))" : "hsl(var(--highland-gold) / 0.25)",
+            }}
+          />
+        ))}
+      </div>
 
       {/* === GOLD VERTICAL ACCENT — left edge === */}
       <motion.div
