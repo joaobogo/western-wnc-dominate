@@ -47,7 +47,11 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
 
   const sessionId = useRef(
     sessionStorage.getItem("roof-session") || (() => {
-      const id = `session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      const id = `session-${
+        typeof crypto !== "undefined" && "randomUUID" in crypto
+          ? crypto.randomUUID()
+          : `${Date.now()}-${Math.random().toString(36).slice(2)}`
+      }`;
       sessionStorage.setItem("roof-session", id);
       return id;
     })()
