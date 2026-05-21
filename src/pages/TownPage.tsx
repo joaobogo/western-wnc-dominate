@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import TownProofBlock from "@/components/TownProofBlock";
+import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 import { services } from "@/data/services";
@@ -126,6 +127,13 @@ const TownPage = () => {
         </section>
 
         {townProof ? <TownProofBlock town={town} content={townProof} /> : null}
+
+        <BuilderPromoBlock
+          variant="band"
+          town={town.name}
+          title={`Build Your Roofing Project in ${town.name}`}
+          body={`An optional guided pathway for ${town.name}-area homeowners. Specify project type, material, and priorities — we use it to prepare a sharper on-site assessment with mountain-exposure detailing built in.`}
+        />
 
         {/* Services in this town */}
         <section className="section-padding section-dark">

@@ -12,6 +12,7 @@ import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/component
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-004.webp";
@@ -1039,6 +1040,9 @@ const RoofingDivision = () => {
             </Accordion>
           </div>
         </section>
+
+        {/* Optional advanced roofing builder */}
+        <BuilderPromoBlock variant="band" />
 
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
