@@ -11,7 +11,7 @@ type Props = {
   finalLabel?: string;
 };
 
-const BuilderControls = ({ step, total, canNext, submitting, onBack, onNext, nextLabel = "Continue", finalLabel = "Submit scope brief" }: Props) => {
+const BuilderControls = ({ step, total, canNext, submitting, onBack, onNext, nextLabel = "Continue", finalLabel = "Send scope brief" }: Props) => {
   const isLast = step === total - 1;
   return (
     <div className="flex items-center justify-between gap-3 mt-8 pt-6 border-t border-border/60">
@@ -19,7 +19,7 @@ const BuilderControls = ({ step, total, canNext, submitting, onBack, onNext, nex
         type="button"
         onClick={onBack}
         disabled={step === 0}
-        className="inline-flex items-center gap-1.5 text-[13px] font-body text-foreground/55 hover:text-foreground disabled:opacity-0 transition-all"
+        className="inline-flex items-center gap-1.5 text-[13px] font-body text-foreground/55 hover:text-foreground disabled:opacity-0 disabled:pointer-events-none transition-all"
       >
         <ArrowLeft className="w-3.5 h-3.5" /> Back
       </button>
@@ -27,7 +27,7 @@ const BuilderControls = ({ step, total, canNext, submitting, onBack, onNext, nex
         type="button"
         onClick={onNext}
         disabled={!canNext || submitting}
-        className="inline-flex items-center gap-2 cta-gradient text-accent-foreground font-heading font-semibold text-[13.5px] px-6 py-3 rounded-md disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 active:scale-[0.98] transition-all"
+        className="inline-flex items-center justify-center gap-2 cta-gradient text-accent-foreground font-heading font-semibold text-[13.5px] px-6 py-3 rounded-md disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 active:scale-[0.98] transition-all min-w-[170px] sm:min-w-0"
       >
         {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
         {submitting ? "Sending..." : isLast ? finalLabel : nextLabel}
