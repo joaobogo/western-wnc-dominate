@@ -126,7 +126,7 @@ const galleryItems = [
 ];
 
 const faqs = [
-  { q: "How much does a roof replacement cost in Western North Carolina?", a: "Residential roof replacements in our area typically range from $8,000 to $25,000+ depending on roof size, material choice, pitch complexity, and access conditions. We provide a detailed, transparent proposal after assessing your specific property — no ballpark figures, no surprises." },
+  { q: "How much does a roof replacement cost in Western North Carolina?", a: "Replacement pricing is scope-based — it depends on roof size, material choice, pitch complexity, and access conditions. Rather than publish a generic range, we provide a detailed, line-item proposal after assessing your specific property — no ballpark figures, no surprises." },
   { q: "How long does a full roof replacement take?", a: "Most residential replacements are completed in 2–5 days depending on size, complexity, and weather. Steep-pitch and complex multi-gable homes may take slightly longer. We'll provide a specific timeline in your proposal and communicate daily throughout the project." },
   { q: "Can I put a new roof over my existing shingles?", a: "We generally recommend full tear-off rather than layering. Overlay hides potential decking damage, adds excessive weight, voids many warranties, and shortens the new roof's lifespan. A clean tear-off lets us inspect every square foot of decking and install to full manufacturer specification." },
   { q: "What's the best roofing material for mountain homes?", a: "It depends on your property's elevation, wind exposure, architecture, and budget. CertainTeed Landmark PRO architectural shingles offer the best value-to-performance ratio for most WNC homes. Standing seam metal is the premium long-term choice. We'll recommend based on your specific conditions." },
@@ -213,10 +213,10 @@ const RoofReplacement = () => {
               >
                 <div className="flex items-center gap-3 mb-2">
                   <DollarSign className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-xs uppercase tracking-wider text-primary-foreground/50 font-body font-semibold">Typical Investment Range</span>
+                  <span className="text-xs uppercase tracking-wider text-primary-foreground/50 font-body font-semibold">How We Price Replacement</span>
                 </div>
-                <div className="text-2xl font-heading font-bold text-primary-foreground">$8,000 – $25,000+</div>
-                <p className="text-xs text-primary-foreground/40 mt-1 font-body">Based on size, materials, and complexity. Exact pricing after on-site assessment.</p>
+                <div className="text-2xl font-heading font-bold text-primary-foreground">Scope-based, line-item</div>
+                <p className="text-xs text-primary-foreground/40 mt-1 font-body">Every roof is priced from its real scope after on-site assessment — no generic ranges, no allowances disguised as estimates.</p>
               </motion.div>
             </div>
           </div>

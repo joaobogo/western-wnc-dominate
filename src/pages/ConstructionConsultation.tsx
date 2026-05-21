@@ -68,11 +68,11 @@ const PLAN_STATUS = [
 ];
 
 const BUDGET_RANGES = [
-  { id: "under-25k", label: "Under $25,000" },
-  { id: "25-50k", label: "$25,000 – $50,000" },
-  { id: "50-100k", label: "$50,000 – $100,000" },
-  { id: "100-200k", label: "$100,000 – $200,000" },
-  { id: "200k-plus", label: "$200,000+" },
+  { id: "small", label: "Focused scope — single room or detail" },
+  { id: "medium", label: "Mid-scope — addition, porch, or significant renovation" },
+  { id: "large", label: "Large scope — multi-room or full guest suite" },
+  { id: "estate", label: "Estate-level — whole-home or complex build" },
+  { id: "guidance", label: "I'd like guidance on the right scope" },
   { id: "not-sure", label: "Not sure yet" },
 ];
 

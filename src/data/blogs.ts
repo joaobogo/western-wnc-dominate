@@ -30,28 +30,21 @@ export const blogPosts: BlogPost[] = [
     town: "Highlands",
     metaTitle: "How Much Does a New Roof Cost in Highlands, NC? | Highlander Roofing",
     metaDescription: "Wondering about roof replacement costs in Highlands, NC? Here's what mountain homeowners actually pay and what factors affect your price.",
-    content: `If you're a homeowner in Highlands, NC, you've probably wondered what a new roof actually costs at 4,100+ feet elevation. The short answer: **$10,000 to $30,000+** for a typical residential roof — but several mountain-specific factors can shift that number significantly.
+    content: `If you're a homeowner in Highlands, NC, you've probably wondered what a new roof actually costs at 4,100+ feet elevation. The honest answer: **it depends on scope** — several mountain-specific factors shape every proposal, and we price each roof from its real conditions rather than publishing a generic range.
 
 ## What Affects Roofing Costs in Highlands?
 
 **Elevation and accessibility.** Many Highlands homes sit on steep lots with limited access. Crews may need specialized equipment to reach your roof, which adds to labor costs.
 
-**Material choice.** Architectural shingles are the most popular choice ($350–$500/sq), while standing seam metal roofing ($600–$1,200/sq) is increasingly common for its longevity in mountain climates.
+**Material choice.** Architectural shingles remain the most popular system for their balance of value and style, while standing seam metal roofing is increasingly common for its longevity in mountain climates.
 
 **Roof complexity.** Dormers, valleys, skylights, and steep pitches all increase labor time and material waste.
 
 **Underlayment requirements.** At this elevation, ice and water shield underlayment isn't optional — it's essential for preventing ice dam damage.
 
-## Average Cost Ranges for Highlands Homes
-
-- **Minor repairs:** $300–$1,500
-- **Shingle roof replacement:** $10,000–$20,000
-- **Metal roof installation:** $18,000–$35,000
-- **Storm damage repair:** Varies (often covered by insurance)
-
 ## Why Highlands Costs Run Higher Than Lowland NC
 
-The combination of elevation, weather exposure, material transport costs, and skilled labor demand means roofing in Highlands typically costs 15–25% more than comparable work in lower-elevation NC cities.
+Elevation, weather exposure, material transport, and skilled labor demand all push Highlands roofing investment above comparable work in lower-elevation NC towns. Rather than quoting a generic range, we price every project from its real scope.
 
 ## Get a Free Estimate
 
@@ -70,7 +63,7 @@ The best way to know your actual cost is a free inspection. We'll assess your ro
 
 ## Shingle Roofing Pros & Cons for WNC
 
-**Pros:** Lower upfront cost ($350–$500/sq), wide style selection, faster installation, easier repairs.
+**Pros:** Lower upfront investment, wide style selection, faster installation, easier repairs.
 
 **Cons:** 20–30 year lifespan, more vulnerable to wind uplift, can trap moisture leading to ice dam issues, requires more frequent maintenance.
 
@@ -78,7 +71,7 @@ The best way to know your actual cost is a free inspection. We'll assess your ro
 
 **Pros:** 50+ year lifespan, superior wind resistance (140+ mph), sheds snow efficiently, energy-efficient, fire-resistant, minimal maintenance.
 
-**Cons:** Higher upfront cost ($600–$1,200/sq), requires skilled installation, can be dented by large hail, expansion noise in extreme temperature swings.
+**Cons:** Higher upfront investment, requires skilled installation, can be dented by large hail, expansion noise in extreme temperature swings.
 
 ## Our Recommendation for Mountain Homes
 
@@ -509,9 +502,9 @@ Many homeowners use home equity lines of credit for roof replacement. The intere
 ## Why Financing Makes Sense
 
 Delaying a roof replacement can lead to:
-- Interior water damage ($5,000–$20,000+)
-- Mold remediation ($3,000–$10,000+)
-- Structural damage (potentially tens of thousands)
+- Interior water damage
+- Mold remediation
+- Structural damage to framing and decking
 - Reduced home value
 
 ## Get Your Options
@@ -556,7 +549,7 @@ We understand that a rental roof emergency is a business emergency. We offer pri
 
 ## Protect Your Investment
 
-A $500 maintenance visit prevents a $15,000 emergency repair — and the lost rental income that comes with it. Call (828) 397-9211 for rental property roofing services.`,
+A planned maintenance visit prevents an emergency repair — and the lost rental income that comes with it. Call (828) 397-9211 for rental property roofing services.`,
   },
   {
     slug: "winter-roof-preparation-highlands",
@@ -740,7 +733,7 @@ WNC jurisdictions have specific requirements:
 
 ## Budget Planning
 
-Mountain additions typically cost $200–$400+ per square foot depending on complexity, access, and finish level. Get a detailed scope before committing to a budget.`,
+Mountain additions are priced from the actual scope — complexity, access, finish level, and how the addition ties into the existing structure all shape the number. Get a detailed scope from a builder you trust before committing to a budget.`,
     town: "Franklin",
     relatedServices: [
       { label: "Home Additions", path: "/construction/additions" },

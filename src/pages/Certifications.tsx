@@ -45,7 +45,7 @@ const certifications = [
       "Legal authority to manage full-scope roofing and construction projects",
       "State-verified financial responsibility and insurance coverage",
       "Subject to NC Licensing Board oversight and accountability",
-      "Required for projects above $30,000 — many contractors operate without it",
+      "Required for larger projects — many contractors operate without it",
     ],
   },
   {

@@ -272,7 +272,6 @@ export function MaterialsComparison() {
                 <h4 className="font-heading font-bold text-foreground text-sm mb-3">{m.name}</h4>
                 <div className="space-y-2 text-xs font-body">
                   <div className="flex justify-between"><span className="text-muted-foreground">Lifespan</span><span className="font-medium text-foreground">{m.lifespan}</span></div>
-                  <div className="flex justify-between"><span className="text-muted-foreground">Price Range</span><span className="font-medium text-foreground">{m.priceRange}</span></div>
                   <div className="flex justify-between"><span className="text-muted-foreground">Wind Rating</span><span className="font-medium text-foreground">{m.windRating}</span></div>
                 </div>
                 <div className="mt-3 pt-3 border-t border-border">

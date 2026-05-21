@@ -40,13 +40,13 @@
 
     --radius: 0.125rem;
 
-    /* Heritage tokens — refined */
-    --dark-section: 210 22% 8%;
-    --dark-section-foreground: 42 14% 93%;
+    /* Heritage tokens — refined (deep forest, never pure black) */
+    --dark-section: 158 32% 13%;
+    --dark-section-foreground: 42 16% 94%;
     --trust-badge: 158 30% 20%;
     --cta-gradient-from: 38 62% 46%;
     --cta-gradient-to: 32 55% 40%;
-    --hero-overlay: 210 24% 6%;
+    --hero-overlay: 158 34% 10%;
     --heritage-green: 158 38% 14%;
     --heritage-charcoal: 210 20% 11%;
     --highland-gold: 38 62% 46%;
