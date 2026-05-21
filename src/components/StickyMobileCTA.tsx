@@ -2,6 +2,7 @@ import { Phone, MessageSquare, Layers, ArrowRight, FileText } from "lucide-react
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
