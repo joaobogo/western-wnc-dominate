@@ -22,7 +22,11 @@ serve(async (req) => {
       auth: { persistSession: false, autoRefreshToken: false },
     });
 
-    const [{ data: recent404s, error: recent404sError }, { data: latestReports, error: latestReportsError }] = await Promise.all([
+    const [
+      { data: recent404s, error: recent404sError }, 
+      { data: latestReports, error: latestReportsError },
+      { data: conversions, error: conversionsError }
+    ] = await Promise.all([
       supabase
         .from("seo_404_log")
         .select("path, created_at, referrer, metadata")
@@ -33,10 +37,16 @@ serve(async (req) => {
         .select("id, created_at, period_start, period_end, sitemap_status, sitemap_url_count, top_404_paths, total_404s, gsc_indexed_pages, gsc_top_keywords, gsc_top_pages, raw_data, errors")
         .order("period_end", { ascending: false })
         .limit(8),
+      supabase
+        .from("conversion_events")
+        .select("event_type, path, label, created_at")
+        .order("created_at", { ascending: false })
+        .limit(100),
     ]);
 
     if (recent404sError) throw recent404sError;
     if (latestReportsError) throw latestReportsError;
+    if (conversionsError) throw conversionsError;
 
     return new Response(
       JSON.stringify({
