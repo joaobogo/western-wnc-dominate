@@ -19,32 +19,32 @@ import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 import heroAddition from "@/assets/gallery/cedar-001.jpg";
 import heroDeck from "@/assets/gallery/cedar-002.jpg";
 import heroRenov from "@/assets/gallery/asphalt-005.jpg";
-import heroCustom from "@/assets/gallery/metal-010.jpg";
 import heroOutdoor from "@/assets/gallery/cedar-004.webp";
 import heroFlatwork from "@/assets/gallery/asphalt-006.webp";
 
 const PROJECT_TYPES: VisualChoice[] = [
   { value: "addition", label: "Addition / Extension", sub: "Expand the footprint of your home", image: heroAddition },
-  { value: "outdoor_living", label: "Outdoor Living", sub: "Decks, porches, pergolas", image: heroOutdoor },
-  { value: "renovation", label: "Interior Renovation", sub: "Whole-room or full-home", image: heroRenov },
-  { value: "custom_build", label: "Custom Build", sub: "Ground-up residence", image: heroCustom, badge: "Signature" },
-  { value: "flatwork", label: "Flatwork & Hardscape", sub: "Patios, walkways, fire pits", image: heroFlatwork },
-  { value: "exterior", label: "Exterior Improvements", sub: "Siding, trim, doors, windows", image: heroDeck },
+  { value: "porch", label: "Porch", sub: "Covered, screened, or 3-season", image: heroOutdoor },
+  { value: "deck", label: "Deck", sub: "New build, expansion, or rebuild", image: heroDeck },
+  { value: "outdoor_living", label: "Outdoor Living", sub: "Pergolas, kitchens, gathering spaces", image: heroOutdoor },
+  { value: "flatwork", label: "Fire Pit / Flatwork", sub: "Patios, walkways, hardscape", image: heroFlatwork },
+  { value: "renovation", label: "Targeted Remodel", sub: "Focused expansion or rework", image: heroRenov },
+  { value: "not_sure", label: "Not Sure Yet", sub: "Help us shape the right scope" },
 ];
 
 const SCOPE_ITEMS: VisualChoice[] = [
-  { value: "structural", label: "Structural framing" },
-  { value: "kitchen", label: "Kitchen build" },
-  { value: "primary_bath", label: "Primary bath" },
-  { value: "secondary_bath", label: "Secondary bath" },
-  { value: "deck_porch", label: "Deck or covered porch" },
+  { value: "attached_addition", label: "Attached to existing home" },
+  { value: "detached_structure", label: "Detached structure" },
+  { value: "covered_porch", label: "Covered or screened porch" },
+  { value: "open_deck", label: "Open deck" },
   { value: "pergola", label: "Pergola or pavilion" },
-  { value: "fireplace", label: "Stone fireplace / fire pit" },
-  { value: "siding", label: "Siding / exterior" },
-  { value: "windows_doors", label: "Windows & doors" },
-  { value: "roofing_included", label: "Includes roofing scope" },
+  { value: "outdoor_kitchen", label: "Outdoor kitchen / bar" },
+  { value: "fireplace", label: "Fire pit or stone fireplace" },
+  { value: "patio_walkway", label: "Patio / walkway flatwork" },
+  { value: "roof_tie_in", label: "Roofing tie-in required" },
   { value: "site_work", label: "Site work / grading" },
-  { value: "permits_design", label: "Permits & design assistance" },
+  { value: "permits_help", label: "Permitting help needed" },
+  { value: "guidance", label: "Open to recommendations" },
 ];
 
 const STYLE: VisualChoice[] = [
@@ -59,9 +59,9 @@ const PRIORITIES: VisualChoice[] = [
   { value: "quality_craft", label: "Premium Craftsmanship", sub: "No compromise on detail" },
   { value: "timeline_certainty", label: "Timeline Certainty", sub: "Clear schedule, hit dates" },
   { value: "value_engineering", label: "Smart Value", sub: "Highest impact per dollar" },
-  { value: "energy_efficiency", label: "Energy Efficiency", sub: "Long-term performance" },
+  { value: "indoor_outdoor", label: "Indoor / Outdoor Flow", sub: "Connect the home to the view" },
   { value: "resale", label: "Resale Value", sub: "Marketable specification" },
-  { value: "design_collab", label: "Design Collaboration", sub: "We work with your architect or ours" },
+  { value: "design_collab", label: "Design Guidance", sub: "We can collaborate with an architect" },
 ];
 
 const INVESTMENT: VisualChoice[] = [
