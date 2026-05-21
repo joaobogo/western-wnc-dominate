@@ -49,6 +49,7 @@ const StickyMobileCTA = () => {
                 <div className="flex items-stretch divide-x divide-border">
                   <a
                     href="tel:8283979211"
+                    onClick={() => trackEvent("phone_click", { label: "Call Now", elementId: "sticky-cta-mobile-call" })}
                     className="flex flex-col items-center justify-center gap-1 px-5 py-3 text-primary active:bg-primary/5 active:scale-95 transition-all min-w-[60px] min-h-[52px]"
                   >
                     <Phone className="w-[18px] h-[18px]" />
