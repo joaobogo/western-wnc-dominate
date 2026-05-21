@@ -120,6 +120,8 @@ const BeforeAfterGallery = () => {
                   src={projects[current].image}
                   alt={projects[current].title}
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </AnimatePresence>
 
