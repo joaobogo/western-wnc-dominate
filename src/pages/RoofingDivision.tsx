@@ -1041,6 +1041,9 @@ const RoofingDivision = () => {
           </div>
         </section>
 
+        {/* Optional advanced roofing builder */}
+        <BuilderPromoBlock variant="band" />
+
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div
