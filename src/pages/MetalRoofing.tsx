@@ -28,7 +28,12 @@ const MetalRoofing = () => {
         path="/roofing/metal"
         jsonLd={buildPageSchema({
           type: "service",
-          service: { name: "Metal Roofing", description: "Standing seam and exposed-fastener metal roofing across Western North Carolina." },
+          service: {
+            name: "Metal Roofing",
+            description: "Standing seam and exposed-fastener metal roofing across Western North Carolina.",
+            url: "https://western-wnc-dominate.lovable.app/roofing/metal",
+            areaServed: "Western North Carolina",
+          },
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
       />
