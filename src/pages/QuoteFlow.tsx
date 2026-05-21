@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { trackEvent } from "@/lib/analytics";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -307,6 +308,19 @@ export default function QuoteFlow() {
       });
 
       if (error) throw error;
+      
+      // Track successful submission
+      trackEvent("form_submit", {
+        label: "Quote Flow",
+        elementId: "quote-flow-submission",
+        metadata: {
+          serviceCategory: form.serviceCategory,
+          projectType: form.projectType,
+          town: form.town,
+          timeline: form.timeline,
+        }
+      });
+
       setSubmitted(true);
     } catch (err) {
       console.error("Submit error:", err);

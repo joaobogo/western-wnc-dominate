@@ -4,6 +4,7 @@ import { MessageCircle, X, Send, Phone, ArrowRight, Loader2, CheckCircle, AlertT
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { supabase } from "@/integrations/supabase/client";
+import { trackEvent } from "@/lib/analytics";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -77,6 +78,14 @@ function LeadCaptureCard({ onSubmit, onDismiss }: { onSubmit: () => void; onDism
         source: "chatbot-inline", lead_score: 30, status: "new",
       });
     } catch { /* continue anyway */ }
+    
+    // Track lead capture from chatbot
+    trackEvent("lead_capture", {
+      label: "Chatbot Inline Lead",
+      elementId: "chatbot-lead-capture",
+      metadata: { name }
+    });
+
     setSubmitted(true);
     setSubmitting(false);
     onSubmit();

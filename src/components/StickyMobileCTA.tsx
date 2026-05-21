@@ -2,6 +2,7 @@ import { Phone, MessageSquare, Layers, ArrowRight, FileText } from "lucide-react
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -37,6 +38,7 @@ const StickyMobileCTA = () => {
                 {/* Primary CTA — full gold, generous touch target */}
                 <Link
                   to="/consultation"
+                  onClick={() => trackEvent("cta_click", { label: "Start a Project", elementId: "sticky-cta-mobile-start" })}
                   className="flex-1 flex items-center justify-center gap-2 py-[14px] px-3 cta-gradient text-accent-foreground active:opacity-90 active:scale-[0.98] transition-all min-h-[52px]"
                 >
                   <MessageSquare className="w-4 h-4" />
@@ -47,6 +49,7 @@ const StickyMobileCTA = () => {
                 <div className="flex items-stretch divide-x divide-border">
                   <a
                     href="tel:8283979211"
+                    onClick={() => trackEvent("phone_click", { label: "Call Now", elementId: "sticky-cta-mobile-call" })}
                     className="flex flex-col items-center justify-center gap-1 px-5 py-3 text-primary active:bg-primary/5 active:scale-95 transition-all min-w-[60px] min-h-[52px]"
                   >
                     <Phone className="w-[18px] h-[18px]" />

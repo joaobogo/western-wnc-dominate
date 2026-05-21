@@ -7,6 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 import ScrollToTop from "./components/ScrollToTop";
+import { initPixels } from "./lib/analytics";
+
+// Initialize tracking pixels
+initPixels();
 
 // Lazy-load all non-home routes for faster LCP on initial load
 const NotFound = lazy(() => import("./pages/NotFound"));

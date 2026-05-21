@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AlertTriangle, ArrowRight, Bot, FileWarning, Link2, LoaderCircle, SearchX, ShieldAlert, Siren, TrendingDown } from "lucide-react";
+import { AlertTriangle, ArrowRight, Bot, FileWarning, Link2, LoaderCircle, SearchX, ShieldAlert, Siren, TrendingDown, Target, MousePointer2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -17,6 +17,7 @@ const issueStyles = {
 
 const tabConfig = [
   { key: "notFound", label: "New 404s", icon: Link2 },
+  { key: "conversions", label: "Conversions", icon: Target },
   { key: "crawl", label: "Crawl & Robots", icon: ShieldAlert },
   { key: "sitemap", label: "Sitemap Gaps", icon: FileWarning },
   { key: "index", label: "Index Loss", icon: SearchX },
@@ -222,6 +223,7 @@ const SEOMonitoring = () => {
   const [indexIssues, setIndexIssues] = useState<MonitoringIssue[]>([]);
   const [reportDrivenIssues, setReportDrivenIssues] = useState<MonitoringIssue[]>([]);
   const [prioritySummary, setPrioritySummary] = useState<WeeklyPriorityMonitoringSummary | null>(null);
+  const [conversions, setConversions] = useState<any[]>([]);
   const [reports, setReports] = useState<MonitoringReportSnapshot[]>([]);
 
   useEffect(() => {
@@ -244,6 +246,7 @@ const SEOMonitoring = () => {
 
         const reports = (data?.latestReports ?? []) as MonitoringReportSnapshot[];
         setReports(reports);
+        setConversions(data?.conversions ?? []);
         setReportDrivenIssues(buildReportDrivenIssues(reports));
         setPrioritySummary(buildWeeklyPriorityMonitoringSummary(reports));
       } catch {
@@ -436,7 +439,7 @@ const SEOMonitoring = () => {
             </section>
 
             <Tabs defaultValue="notFound" className="space-y-6">
-              <TabsList className="grid h-auto w-full grid-cols-2 gap-2 bg-secondary p-2 md:grid-cols-5">
+              <TabsList className="grid h-auto w-full grid-cols-2 gap-2 bg-secondary p-2 md:grid-cols-6">
                 {tabConfig.map((tab) => (
                   <TabsTrigger key={tab.key} value={tab.key} className="h-auto min-h-12 rounded-sm px-3 py-3 text-xs font-semibold uppercase tracking-[0.14em] md:text-sm">
                     {tab.label}
@@ -446,6 +449,31 @@ const SEOMonitoring = () => {
 
               <TabsContent value="notFound" className="mt-0 space-y-4">
                 <IssueList items={grouped.notFound} />
+              </TabsContent>
+              <TabsContent value="conversions" className="mt-0 space-y-4">
+                {conversions.length === 0 ? (
+                  <div className="rounded-sm border border-border bg-card p-6 text-sm text-muted-foreground">
+                    No conversion events logged in the last 100 hits.
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {conversions.map((event, i) => (
+                      <article key={i} className="rounded-sm border border-border bg-card p-5">
+                        <div className="flex flex-wrap items-start justify-between gap-3">
+                          <div className="flex items-start gap-3">
+                            <MousePointer2 className="mt-1 h-5 w-5 text-primary" />
+                            <div>
+                              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{event.event_type}</p>
+                              <h3 className="mt-1 text-lg font-heading font-bold text-foreground">{event.label || "Unnamed Action"}</h3>
+                              <p className="text-sm text-muted-foreground mt-1">{new Date(event.created_at).toLocaleString()}</p>
+                            </div>
+                          </div>
+                          <span className="rounded-sm border border-border bg-background px-3 py-1 text-[11px] font-semibold text-foreground uppercase tracking-wider">{event.path}</span>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                )}
               </TabsContent>
               <TabsContent value="crawl" className="mt-0 space-y-4">
                 <IssueList items={grouped.crawl} />

@@ -83,6 +83,39 @@ export type Database = {
         }
         Relationships: []
       }
+      conversion_events: {
+        Row: {
+          created_at: string
+          element_id: string | null
+          event_type: string
+          id: string
+          label: string | null
+          metadata: Json | null
+          path: string
+          session_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          element_id?: string | null
+          event_type: string
+          id?: string
+          label?: string | null
+          metadata?: Json | null
+          path: string
+          session_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          element_id?: string | null
+          event_type?: string
+          id?: string
+          label?: string | null
+          metadata?: Json | null
+          path?: string
+          session_id?: string | null
+        }
+        Relationships: []
+      }
       designer_leads: {
         Row: {
           created_at: string

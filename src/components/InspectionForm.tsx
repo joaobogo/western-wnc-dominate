@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Mail, MessageSquare } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -47,6 +48,18 @@ const InspectionForm = () => {
 
   const handleSubmit = () => {
     setIsSubmitting(true);
+    
+    // Track form submission
+    trackEvent("form_submit", {
+      label: "Inspection Request",
+      elementId: "inspection-form-main",
+      metadata: {
+        town: formData.town,
+        projectType: formData.projectType,
+        timeline: formData.timeline,
+      }
+    });
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
