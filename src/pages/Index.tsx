@@ -9,22 +9,14 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
 import OurProcess from "@/components/OurProcess";
 import MeetTheTeam from "@/components/MeetTheTeam";
-import SilentObjections from "@/components/SilentObjections";
-import ValueProposition from "@/components/ValueProposition";
-import HomepageTrust from "@/components/HomepageTrust";
 import TownGrid from "@/components/TownGrid";
-import BlogInsights from "@/components/BlogInsights";
 import InspectionForm from "@/components/InspectionForm";
-import CTABlock from "@/components/CTABlock";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
 import SiteLoader from "@/components/SiteLoader";
 import ProofMoment from "@/components/ProofMoment";
 import BuiltForWNC from "@/components/BuiltForWNC";
-import ProjectConcierge from "@/components/ProjectConcierge";
-import ProjectPathfinder from "@/components/ProjectPathfinder";
-import ConstructionAuthority from "@/components/ConstructionAuthority";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 
 const Index = () => {
@@ -59,67 +51,44 @@ const Index = () => {
       />
       <Header />
       <main>
-        {/* ═══ ACT I: HOOK — Cinematic first impression ═══ */}
+        {/* 1. Hero */}
         <Hero />
 
-        {/* ═══ ACT II: PROOF — Editorial trust strip ═══ */}
+        {/* 2. TrustStrip — proof anchors */}
         <TrustStrip />
 
         <SectionDivider variant="diamond" />
 
-        {/* ═══ ACT III: CLARITY — Roofing vs Construction split ═══ */}
+        {/* 3. DualPathway — Roofing | Construction */}
         <DualPathway />
 
-        {/* ═══ ACT IV: VALUE — Why Highlander, silent objections ═══ */}
-        <ValueProposition />
-        <SilentObjections />
+        {/* 4. PriorityServices — focused 6-card grid (using existing ServicesGrid for now) */}
+        <ServicesGrid />
 
-        <ProofMoment variant="credentials" />
+        {/* 5. FeaturedProjects — real WNC work */}
+        <FeaturedProjects />
 
         <SectionDivider variant="heritage-bar" />
 
-        {/* ═══ ACT V: SERVICES — What we do ═══ */}
-        <ServicesGrid />
-
-        <ProofMoment variant="social" />
-
-        {/* ═══ ACT VI: PROJECT PATHFINDER — Interactive guide ═══ */}
-        <ProjectPathfinder />
-
-        {/* ═══ ACT VI-B: CONSTRUCTION AUTHORITY — Why we build ═══ */}
-        <ConstructionAuthority />
-
-        {/* ═══ ACT VII: LOCAL AUTHORITY — Built for WNC ═══ */}
+        {/* 6. BuiltForWNC — local authority */}
         <BuiltForWNC />
 
-        {/* ═══ ACT VII: PROCESS — How Highlander thinks ═══ */}
+        {/* 7. OurProcess — how we work */}
         <OurProcess />
 
-        <SectionDivider variant="diamond" />
+        {/* 8. ProofMoment — single best testimonial block */}
+        <ProofMoment variant="social" />
 
-        {/* ═══ ACT VIII: VISUAL PROOF — Project showcase ═══ */}
-        <FeaturedProjects />
-
-        <ProofMoment variant="stats" />
-
-        {/* ═══ ACT IX: PEOPLE — Team preview ═══ */}
-        <MeetTheTeam />
+        {/* 9. TownGrid — service areas */}
+        <TownGrid />
 
         <SectionDivider variant="gold-fade" />
 
-        {/* ═══ ACT X: EDITORIAL — Blog + local trust ═══ */}
-        <BlogInsights />
-        <HomepageTrust />
-        <TownGrid />
+        {/* 10. MeetTheTeam — owner-led trust */}
+        <MeetTheTeam />
 
-        <ProofMoment variant="warranty" />
-
-        {/* ═══ ACT XI: PROJECT CONCIERGE — Premium CTA ═══ */}
-        <ProjectConcierge />
-
-        {/* ═══ ACT XII: CLOSING — Final capture ═══ */}
+        {/* 11. InspectionForm — primary lead capture */}
         <InspectionForm />
-        <CTABlock />
       </main>
       <Footer />
       <StickyMobileCTA />
