@@ -194,7 +194,7 @@ const RoofingBuilder = () => {
         source: "roofing_builder",
         lead_score: score,
         status: routing.lane === "emergency" ? "urgent" : "new",
-        metadata: {
+        metadata: ({
           builder: {
             material: data.material,
             features: data.features,
@@ -207,7 +207,7 @@ const RoofingBuilder = () => {
           upload_paths: uploadedPaths,
           referrer: typeof document !== "undefined" ? document.referrer : null,
           utm: Object.fromEntries(params.entries()),
-        },
+        } as any),
       });
       if (insertErr) throw insertErr;
       trackEvent("form_submit", {
