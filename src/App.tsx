@@ -45,6 +45,9 @@ const OutdoorLiving = lazy(() => import("./pages/OutdoorLiving"));
 const ConstructionConsultation = lazy(() => import("./pages/ConstructionConsultation"));
 const QuoteFlow = lazy(() => import("./pages/QuoteFlow"));
 const Contact = lazy(() => import("./pages/Contact"));
+const RoofingIntake = lazy(() => import("./pages/RoofingIntake"));
+const ConstructionIntake = lazy(() => import("./pages/ConstructionIntake"));
+const IntakeChooser = lazy(() => import("./pages/IntakeChooser"));
 
 const queryClient = new QueryClient();
 
@@ -121,7 +124,12 @@ const App = () => (
           <Route path="/roof-designer" element={<Navigate to="/" replace />} />
           <Route path="/free-tools" element={<Navigate to="/" replace />} />
 
-          <Route path="/consultation" element={<QuoteFlow />} />
+          <Route path="/consultation" element={<IntakeChooser />} />
+          <Route path="/roofing-intake" element={<RoofingIntake />} />
+          <Route path="/construction-intake" element={<ConstructionIntake />} />
+          <Route path="/construction/consultation" element={<Navigate to="/construction-intake" replace />} />
+          <Route path="/request-inspection" element={<Navigate to="/roofing-intake" replace />} />
+          <Route path="/quote-flow" element={<QuoteFlow />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
