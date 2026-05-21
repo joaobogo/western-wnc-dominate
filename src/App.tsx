@@ -48,6 +48,8 @@ const Contact = lazy(() => import("./pages/Contact"));
 const RoofingIntake = lazy(() => import("./pages/RoofingIntake"));
 const ConstructionIntake = lazy(() => import("./pages/ConstructionIntake"));
 const IntakeChooser = lazy(() => import("./pages/IntakeChooser"));
+const RoofingBuilder = lazy(() => import("./pages/RoofingBuilder"));
+const ConstructionBuilder = lazy(() => import("./pages/ConstructionBuilder"));
 
 const queryClient = new QueryClient();
 
@@ -127,6 +129,8 @@ const App = () => (
           <Route path="/consultation" element={<IntakeChooser />} />
           <Route path="/roofing-intake" element={<RoofingIntake />} />
           <Route path="/construction-intake" element={<ConstructionIntake />} />
+          <Route path="/roofing-builder" element={<RoofingBuilder />} />
+          <Route path="/construction-builder" element={<ConstructionBuilder />} />
           <Route path="/construction/consultation" element={<Navigate to="/construction-intake" replace />} />
           <Route path="/request-inspection" element={<Navigate to="/roofing-intake" replace />} />
           <Route path="/quote-flow" element={<QuoteFlow />} />
