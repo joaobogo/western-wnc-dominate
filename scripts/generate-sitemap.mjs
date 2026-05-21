@@ -11,7 +11,6 @@ const staticRoutes = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/roofing", priority: "0.95", changefreq: "weekly" },
   { path: "/construction", priority: "0.95", changefreq: "weekly" },
-  { path: "/services", priority: "0.9", changefreq: "monthly" },
   { path: "/service-areas", priority: "0.9", changefreq: "monthly" },
   { path: "/gallery", priority: "0.8", changefreq: "weekly" },
   { path: "/reviews", priority: "0.8", changefreq: "weekly" },
@@ -21,23 +20,18 @@ const staticRoutes = [
   { path: "/contact", priority: "0.85", changefreq: "monthly" },
   { path: "/blog", priority: "0.85", changefreq: "weekly" },
   { path: "/financing", priority: "0.7", changefreq: "monthly" },
-  { path: "/free-tools", priority: "0.75", changefreq: "monthly" },
-  { path: "/roof-designer", priority: "0.75", changefreq: "monthly" },
-  { path: "/storm-center", priority: "0.8", changefreq: "weekly" },
   { path: "/careers", priority: "0.5", changefreq: "monthly" },
-  // Roofing sub-services
-  { path: "/roofing/residential", priority: "0.85", changefreq: "monthly" },
+  // Roofing sub-services (focused set)
   { path: "/roofing/roof-replacement", priority: "0.85", changefreq: "monthly" },
   { path: "/roofing/roof-repair", priority: "0.85", changefreq: "monthly" },
+  { path: "/roofing/metal", priority: "0.9", changefreq: "monthly" },
+  { path: "/roofing/brava-synthetic", priority: "0.85", changefreq: "monthly" },
   { path: "/roofing/storm-damage", priority: "0.85", changefreq: "monthly" },
   { path: "/roofing/commercial", priority: "0.8", changefreq: "monthly" },
-  { path: "/roofing/specialty", priority: "0.75", changefreq: "monthly" },
-  // Construction sub-services
+  // Construction sub-services (focused set)
   { path: "/construction/additions", priority: "0.8", changefreq: "monthly" },
-  { path: "/construction/renovations", priority: "0.8", changefreq: "monthly" },
-  { path: "/construction/exterior", priority: "0.8", changefreq: "monthly" },
   { path: "/construction/outdoor-living", priority: "0.8", changefreq: "monthly" },
-  { path: "/construction/custom", priority: "0.8", changefreq: "monthly" },
+  { path: "/construction/flatwork", priority: "0.8", changefreq: "monthly" },
   { path: "/construction/consultation", priority: "0.7", changefreq: "monthly" },
 ];
 
@@ -57,10 +51,11 @@ async function buildSitemap() {
 
   const dynamicRoutes = [
     ...townSlugs.map((s) => ({ path: `/service-areas/${s}`, priority: "0.85", changefreq: "monthly" })),
-    ...serviceSlugs.map((s) => ({ path: `/services/${s}`, priority: "0.8", changefreq: "monthly" })),
     ...blogSlugs.map((s) => ({ path: `/blog/${s}`, priority: "0.7", changefreq: "monthly" })),
     ...projectSlugs.map((s) => ({ path: `/projects/${s}`, priority: "0.65", changefreq: "monthly" })),
   ];
+  // serviceSlugs intentionally unused — /services/:slug routes have been removed.
+  void serviceSlugs;
 
   const all = [...staticRoutes, ...dynamicRoutes];
 
