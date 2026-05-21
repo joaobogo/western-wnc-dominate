@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 /**
@@ -17,7 +17,7 @@ const ScrollToTop = () => {
     }
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // If there's a hash, let the browser handle anchor scrolling
     if (hash) {
       const el = document.getElementById(hash.slice(1));
@@ -30,8 +30,18 @@ const ScrollToTop = () => {
       }
     }
 
-    // Standard navigation: scroll to top instantly
-    window.scrollTo(0, 0);
+    // Standard navigation: scroll to top instantly.
+    // Run multiple times to defeat lazy-loaded Suspense content that
+    // mounts taller than the fallback and can leave the viewport offset.
+    const reset = () => {
+      window.scrollTo(0, 0);
+      if (document.documentElement) document.documentElement.scrollTop = 0;
+      if (document.body) document.body.scrollTop = 0;
+    };
+    reset();
+    requestAnimationFrame(reset);
+    const t = window.setTimeout(reset, 80);
+    return () => window.clearTimeout(t);
   }, [pathname, hash]);
 
   return null;
