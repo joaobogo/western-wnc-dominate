@@ -52,6 +52,7 @@ serve(async (req) => {
       JSON.stringify({
         recent404s: recent404s ?? [],
         latestReports: latestReports ?? [],
+        conversions: conversions ?? [],
       }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
