@@ -16,20 +16,18 @@ interface DropdownItem {
 }
 
 const roofingItems: DropdownItem[] = [
-  { label: "Residential Roofing", href: "/roofing/residential", desc: "Complete home roofing systems" },
   { label: "Roof Replacement", href: "/roofing/roof-replacement", desc: "Full tear-off and reinstall" },
   { label: "Roof Repair", href: "/roofing/roof-repair", desc: "Targeted damage restoration" },
+  { label: "Metal Roofing", href: "/roofing/metal", desc: "Standing seam built for the mountains" },
+  { label: "Brava / Synthetic", href: "/roofing/brava-synthetic", desc: "Premium composite slate & shake" },
   { label: "Storm Damage", href: "/roofing/storm-damage", desc: "Insurance claims & emergency work" },
   { label: "Commercial Roofing", href: "/roofing/commercial", desc: "Flat, metal & TPO systems" },
-  { label: "Specialty Roofing", href: "/roofing/specialty", desc: "Cedar, slate & copper" },
 ];
 
 const constructionItems: DropdownItem[] = [
-  { label: "Home Additions", href: "/construction/additions", desc: "Expand your living space" },
-  { label: "Renovations", href: "/construction/renovations", desc: "Kitchens, baths & interiors" },
-  { label: "Exterior Improvements", href: "/construction/exterior", desc: "Siding, windows & trim" },
+  { label: "Additions & Extensions", href: "/construction/additions", desc: "Expand your living space" },
   { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
-  { label: "Custom Projects", href: "/construction/custom", desc: "Unique builds & design" },
+  { label: "Flatwork & Fire Pits", href: "/construction/flatwork", desc: "Patios, walkways & hardscape" },
 ];
 
 interface DivisionDropdown {
@@ -62,9 +60,8 @@ const divisions: DivisionDropdown[] = [
 
 const secondaryLinks = [
   { label: "Projects", href: "/gallery" },
+  { label: "Service Areas", href: "/service-areas" },
   { label: "About", href: "/about" },
-  { label: "Reviews", href: "/reviews" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
