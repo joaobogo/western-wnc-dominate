@@ -135,8 +135,9 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
             />
           </motion.div>
 
-          {/* Cinematic overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.08)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.95)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+          {/* Cinematic overlays — strengthened for legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.55)] to-[hsl(var(--heritage-charcoal)/0.1)] group-hover:from-[hsl(var(--heritage-charcoal))] group-hover:via-[hsl(var(--heritage-charcoal)/0.75)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.35)] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.3)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
           {/* Hover image zoom */}
@@ -147,14 +148,14 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
           {/* Category pill — top left */}
           <div className="absolute top-4 md:top-5 left-4 md:left-6 z-10">
-            <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] text-white/70 bg-white/[0.06] backdrop-blur-md border border-white/[0.08] px-3 py-1.5 group-hover:border-[hsl(var(--highland-gold)/0.2)] group-hover:text-white/90 transition-all duration-500">
+            <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] text-white bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-md border border-white/20 px-3 py-1.5 group-hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-500">
               {project.category}
             </span>
           </div>
 
           {/* Elevation badge — top right */}
           <div className="absolute top-4 md:top-5 right-4 md:right-6 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0">
-            <span className="text-[9px] font-body font-semibold tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)]">
+            <span className="text-[9px] font-body font-semibold tracking-[0.12em] text-[hsl(var(--highland-gold))] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
               ▲ {project.elevation}
             </span>
           </div>
@@ -163,14 +164,14 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 z-10">
             {/* Location */}
             <div className="flex items-center gap-1.5 mb-2.5">
-              <MapPin className="w-2.5 h-2.5 text-[hsl(var(--highland-gold)/0.5)]" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/35">
+              <MapPin className="w-2.5 h-2.5 text-[hsl(var(--highland-gold))]" />
+              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                 {project.location}
               </span>
             </div>
 
             {/* Title */}
-            <h3 className={`font-heading font-bold text-white leading-tight tracking-tight mb-0 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
+            <h3 className={`font-heading font-bold text-white leading-tight tracking-tight mb-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)] group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
               isHero ? "text-xl md:text-2xl lg:text-3xl" : "text-base md:text-lg"
             }`}>
               {project.title}
@@ -178,7 +179,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
             {/* Outcome — reveal on hover */}
             <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
-              <p className="text-white/50 text-[13px] font-body leading-relaxed mt-3 pr-12">
+              <p className="text-white/90 text-[13px] font-body leading-relaxed mt-3 pr-12 drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
                 {project.outcome}
               </p>
             </div>

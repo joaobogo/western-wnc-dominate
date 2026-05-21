@@ -106,8 +106,9 @@ const DivisionCard = ({ data, accent, index }: {
             transition={{ duration: 2, delay: index * 0.15 + 0.1, ease: HIGHLAND_EASE }}
           />
         </motion.div>
-        {/* Cinematic overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+        {/* Cinematic overlay — strengthened for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-card/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.45)] via-transparent to-transparent" />
         <div className={`absolute inset-0 mix-blend-multiply opacity-20 ${
           isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
         }`} />
@@ -123,18 +124,18 @@ const DivisionCard = ({ data, accent, index }: {
               <data.icon className="w-4 h-4 text-white" />
             </div>
             <div>
-              <span className="block text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/90">
+              <span className="block text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                 {data.label}
               </span>
-              <span className="block text-[9px] font-body text-white/40 tracking-wide">
+              <span className="block text-[9px] font-body text-white/80 tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                 {data.subtitle}
               </span>
             </div>
           </div>
           <span className={`text-[9px] font-body font-bold uppercase tracking-[0.15em] px-2.5 py-1 backdrop-blur-md border ${
             isGold
-              ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] border-[hsl(var(--highland-gold)/0.2)]"
-              : "text-white/70 bg-white/5 border-white/10"
+              ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--heritage-charcoal)/0.55)] border-[hsl(var(--highland-gold)/0.4)]"
+              : "text-white bg-[hsl(var(--heritage-charcoal)/0.55)] border-white/25"
           }`}>
             {data.badge}
           </span>
@@ -152,7 +153,7 @@ const DivisionCard = ({ data, accent, index }: {
                   }`}
                   duration={1600}
                 />
-                <span className="text-[9px] font-body text-white/40 uppercase tracking-[0.12em]">
+                <span className="text-[9px] font-body text-white/85 uppercase tracking-[0.12em] drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                   {stat.label}
                 </span>
               </div>
