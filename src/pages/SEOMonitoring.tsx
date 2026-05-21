@@ -223,6 +223,7 @@ const SEOMonitoring = () => {
   const [indexIssues, setIndexIssues] = useState<MonitoringIssue[]>([]);
   const [reportDrivenIssues, setReportDrivenIssues] = useState<MonitoringIssue[]>([]);
   const [prioritySummary, setPrioritySummary] = useState<WeeklyPriorityMonitoringSummary | null>(null);
+  const [conversions, setConversions] = useState<any[]>([]);
   const [reports, setReports] = useState<MonitoringReportSnapshot[]>([]);
 
   useEffect(() => {
