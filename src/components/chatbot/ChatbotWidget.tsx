@@ -4,6 +4,7 @@ import { MessageCircle, X, Send, Phone, ArrowRight, Loader2, CheckCircle, AlertT
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { supabase } from "@/integrations/supabase/client";
+import { trackEvent } from "@/lib/analytics";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
