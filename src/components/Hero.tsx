@@ -15,7 +15,7 @@ const trustItems = [
   { icon: Shield, label: "Licensed & Insured" },
   { icon: Award, label: "CertainTeed Master Applicator" },
   { icon: HardHat, label: "Licensed General Contractor" },
-  { icon: Clock, label: "24-Hour Storm Response" },
+  { icon: Clock, label: "WNC · Since 2017" },
 ];
 
 const Hero = () => {
@@ -184,7 +184,7 @@ const Hero = () => {
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
                 className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
               >
-                Not Just a Roofer.
+                Roofing authority.
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-1 md:mb-2">
@@ -194,7 +194,7 @@ const Hero = () => {
                 transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
                 className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
               >
-                Not Just a Contractor.
+                Construction capability.
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-8 md:mb-12">
@@ -204,7 +204,7 @@ const Hero = () => {
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
                 className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold tracking-[-0.03em]"
               >
-                <span className="text-[hsl(var(--highland-gold))]">The Standard</span>
+                <span className="text-[hsl(var(--highland-gold))]">One owner-led team</span>
                 <span className="text-primary-foreground">.</span>
               </motion.h1>
             </div>
@@ -216,9 +216,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-[14px] md:text-[17px] text-primary-foreground/35 max-w-lg mb-10 md:mb-14 leading-[1.8] font-body"
             >
-              The only CertainTeed Master Applicator and licensed General Contractor
-              in Western NC. Roofing, construction, and exterior work —
-              under one company, one process, one warranty.
+              CertainTeed Master Applicator. Licensed General Contractor.
+              Roofing and residential construction across Western North Carolina,
+              led by the same owner on every project.
             </motion.p>
 
             {/* CTA Group — premium dual-action */}
