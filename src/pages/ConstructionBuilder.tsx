@@ -86,6 +86,20 @@ const PROPERTY: VisualChoice[] = [
   { value: "commercial", label: "Commercial property" },
 ];
 
+const PLANNING_STAGE: VisualChoice[] = [
+  { value: "just_exploring", label: "Just exploring" },
+  { value: "have_ideas", label: "Have ideas, no plans" },
+  { value: "concept_sketches", label: "Concept sketches" },
+  { value: "full_plans", label: "Full plans / drawings" },
+];
+
+const DECISION_MAKERS: VisualChoice[] = [
+  { value: "solo", label: "Just me" },
+  { value: "couple", label: "Me & partner" },
+  { value: "family", label: "Family / multi-owner" },
+  { value: "architect", label: "Working with an architect" },
+];
+
 const TOTAL = 7;
 
 const ConstructionBuilder = () => {
@@ -104,6 +118,8 @@ const ConstructionBuilder = () => {
     investment: "",
     timeline: "",
     propertyType: "",
+    planningStage: "",
+    decisionMakers: "",
     town: params.get("town") || "",
     description: "",
     name: "",
@@ -138,6 +154,8 @@ const ConstructionBuilder = () => {
     { label: "Priorities", value: labelsFor(PRIORITIES, data.priorities) },
     { label: "Investment tier", value: labelFor(INVESTMENT, data.investment) },
     { label: "Timeline", value: labelFor(TIMELINE, data.timeline) },
+    { label: "Planning stage", value: labelFor(PLANNING_STAGE, data.planningStage) },
+    { label: "Decision makers", value: labelFor(DECISION_MAKERS, data.decisionMakers) },
     { label: "Property", value: labelFor(PROPERTY, data.propertyType) },
     { label: "Town", value: data.town || null },
   ];
@@ -315,6 +333,14 @@ const ConstructionBuilder = () => {
                   <div className="mt-6">
                     <Label required>Ideal start window</Label>
                     <ChipGroup options={TIMELINE} value={data.timeline} onChange={(v) => set("timeline", v)} columns={3} />
+                  </div>
+                  <div className="mt-6">
+                    <Label>Where are you in planning?</Label>
+                    <ChipGroup options={PLANNING_STAGE} value={data.planningStage} onChange={(v) => set("planningStage", v)} columns={2} />
+                  </div>
+                  <div className="mt-6">
+                    <Label>Who else is involved in the decision?</Label>
+                    <ChipGroup options={DECISION_MAKERS} value={data.decisionMakers} onChange={(v) => set("decisionMakers", v)} columns={2} />
                   </div>
                   <div className="mt-6">
                     <Label required>Property town / area</Label>
