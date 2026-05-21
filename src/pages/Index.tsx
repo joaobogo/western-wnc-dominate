@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import DualPathway from "@/components/DualPathway";
+import TwoPillars from "@/components/TwoPillars";
 
 import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
@@ -59,7 +60,10 @@ const Index = () => {
 
         <SectionDivider variant="diamond" />
 
-        {/* 3. DualPathway — Roofing | Construction */}
+        {/* 3. Two Pillars · One Standard — resolves roofing+construction question */}
+        <TwoPillars />
+
+        {/* 4. DualPathway — Roofing | Construction */}
         <DualPathway />
 
         {/* 4. PriorityServices — focused 6-card grid (using existing ServicesGrid for now) */}
