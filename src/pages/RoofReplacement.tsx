@@ -12,6 +12,7 @@ import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/component
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
 import asphalt001 from "@/assets/gallery/asphalt-001.jpg";
@@ -262,6 +263,14 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
+
+        <BuilderPromoBlock
+          variant="band"
+          preset="replacement"
+          title="Plan your full replacement in detail"
+          body="Optional guided builder for homeowners ready to specify materials, system features, and priorities. We use it to prepare a sharper proposal before we walk the roof."
+          ctaLabel="Build Your Replacement Scope"
+        />
 
         {/* ─── RISKS OF WAITING ─── */}
         <section className="section-padding bg-background">
