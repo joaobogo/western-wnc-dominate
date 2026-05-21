@@ -117,7 +117,7 @@ const ServiceTownPage = () => {
               <p className="text-sm text-foreground/70 mb-4">
                 Tell us about the project. Most assessments are scheduled within 48 hours.
               </p>
-              <InspectionForm compact />
+              <InspectionForm />
             </aside>
           </div>
         </section>
