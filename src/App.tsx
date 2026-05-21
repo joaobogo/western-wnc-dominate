@@ -36,6 +36,9 @@ const RoofReplacementAds = lazy(() => import("./pages/RoofReplacementAds"));
 const RoofRepairAds = lazy(() => import("./pages/RoofRepairAds"));
 const StormDamageAds = lazy(() => import("./pages/StormDamageAds"));
 const CommercialRoofing = lazy(() => import("./pages/CommercialRoofing"));
+const MetalRoofing = lazy(() => import("./pages/MetalRoofing"));
+const SyntheticRoofing = lazy(() => import("./pages/SyntheticRoofing"));
+const ServiceTownPage = lazy(() => import("./pages/ServiceTownPage"));
 const ConstructionDivision = lazy(() => import("./pages/ConstructionDivision"));
 const HomeAdditions = lazy(() => import("./pages/HomeAdditions"));
 const OutdoorLiving = lazy(() => import("./pages/OutdoorLiving"));
@@ -65,9 +68,9 @@ const App = () => (
           {/* Redirects for retired roofing routes */}
           <Route path="/roofing/residential" element={<Navigate to="/roofing" replace />} />
           <Route path="/roofing/specialty" element={<Navigate to="/roofing" replace />} />
-          {/* Metal & Brava pages — placeholder redirect until dedicated pages ship */}
-          <Route path="/roofing/metal" element={<Navigate to="/roofing" replace />} />
-          <Route path="/roofing/brava-synthetic" element={<Navigate to="/roofing" replace />} />
+          {/* Tier 1 premium service pages */}
+          <Route path="/roofing/metal" element={<MetalRoofing />} />
+          <Route path="/roofing/brava-synthetic" element={<SyntheticRoofing />} />
 
           {/* ─── Paid landing pages (kept for ad spend, excluded from nav) ─── */}
           <Route path="/lp/roof-replacement" element={<RoofReplacementAds />} />
@@ -97,6 +100,7 @@ const App = () => (
           {/* ─── Company ─── */}
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/service-areas/:slug" element={<TownPage />} />
+          <Route path="/service-areas/:townSlug/:serviceSlug" element={<ServiceTownPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/about" element={<About />} />

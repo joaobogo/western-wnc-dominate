@@ -49,10 +49,21 @@ async function buildSitemap() {
   const blogSlugs = await loadDataModule(resolve(__dirname, "../src/data/blogs.ts"));
   const projectSlugs = await loadDataModule(resolve(__dirname, "../src/data/projects.ts"));
 
+  // Tier 1 service × town pairings — parsed from service-town-content.ts
+  const fs = await import("node:fs");
+  const stcSrc = fs.readFileSync(resolve(__dirname, "../src/data/service-town-content.ts"), "utf8");
+  const pairMatches = [...stcSrc.matchAll(/townSlug:\s*["']([^"']+)["'][\s\S]{0,120}?serviceSlug:\s*["']([^"']+)["']/g)];
+  const pairRoutes = pairMatches.map(([, t, s]) => ({
+    path: `/service-areas/${t}/${s}`,
+    priority: "0.85",
+    changefreq: "monthly",
+  }));
+
   const dynamicRoutes = [
     ...townSlugs.map((s) => ({ path: `/service-areas/${s}`, priority: "0.85", changefreq: "monthly" })),
     ...blogSlugs.map((s) => ({ path: `/blog/${s}`, priority: "0.7", changefreq: "monthly" })),
     ...projectSlugs.map((s) => ({ path: `/projects/${s}`, priority: "0.65", changefreq: "monthly" })),
+    ...pairRoutes,
   ];
   // serviceSlugs intentionally unused — /services/:slug routes have been removed.
   void serviceSlugs;
