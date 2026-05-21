@@ -308,6 +308,19 @@ export default function QuoteFlow() {
       });
 
       if (error) throw error;
+      
+      // Track successful submission
+      trackEvent("form_submit", {
+        label: "Quote Flow",
+        elementId: "quote-flow-submission",
+        metadata: {
+          serviceCategory: form.serviceCategory,
+          projectType: form.projectType,
+          town: form.town,
+          timeline: form.timeline,
+        }
+      });
+
       setSubmitted(true);
     } catch (err) {
       console.error("Submit error:", err);
