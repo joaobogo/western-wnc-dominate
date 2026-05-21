@@ -13,6 +13,7 @@ import FileDrop from "@/components/intake/FileDrop";
 import IntakeConfirmation from "@/components/intake/IntakeConfirmation";
 import { supabase } from "@/integrations/supabase/client";
 import { scoreLead } from "@/lib/lead-scoring";
+import { deriveRoofingRouting } from "@/lib/lead-routing";
 import { trackEvent } from "@/lib/analytics";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 
@@ -164,6 +165,21 @@ const RoofingBuilder = () => {
         description: data.description,
       }) + 12; // builder = higher-intent than basic intake
 
+      const { routing, jobtread } = deriveRoofingRouting({
+        source: "roofing_builder",
+        score,
+        contact: { name: data.name, email: data.email, phone: data.phone },
+        projectType: data.projectType,
+        material: data.material,
+        priorities: data.priorities,
+        features: data.features,
+        investment: data.investment,
+        timeline: data.timeline,
+        propertyType: data.propertyType,
+        town: data.town,
+        hasPhotos: uploadedPaths.length > 0,
+      });
+
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
         name: data.name,
         email: data.email,
@@ -177,6 +193,7 @@ const RoofingBuilder = () => {
         project_description: data.description || null,
         source: "roofing_builder",
         lead_score: score,
+        status: routing.lane === "emergency" ? "urgent" : "new",
         metadata: {
           builder: {
             material: data.material,
@@ -184,6 +201,8 @@ const RoofingBuilder = () => {
             priorities: data.priorities,
             investment_tier: data.investment,
           },
+          routing,
+          jobtread,
           upload_folder: folder,
           upload_paths: uploadedPaths,
           referrer: typeof document !== "undefined" ? document.referrer : null,
@@ -194,7 +213,7 @@ const RoofingBuilder = () => {
       trackEvent("form_submit", {
         label: "Roofing Builder",
         elementId: "roofing-builder",
-        metadata: { material: data.material, investment: data.investment, score, photos: uploadedPaths.length },
+        metadata: { material: data.material, investment: data.investment, score, lane: routing.lane, tier: routing.tier, photos: uploadedPaths.length },
       });
       setSubmitted(true);
     } catch (e: any) {
