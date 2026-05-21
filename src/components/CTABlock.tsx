@@ -42,24 +42,22 @@ const CTABlock = () => {
               {/* Eyebrow */}
               <ScrollReveal variant="fade">
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-6 block">
-                  Your Property Deserves This
+                  The Next Step
                 </span>
               </ScrollReveal>
 
               {/* Headline — emotional weight */}
               <HeadingReveal delay={0.1}>
                 <h2 className="text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-heading font-bold mb-6 md:mb-8 leading-[1.06] tracking-[-0.02em] text-dark-section-foreground">
-                  Stop Comparing Quotes.<br />
-                  <span className="text-[hsl(var(--highland-gold))]">Start Choosing a Partner.</span>
+                  One conversation.<br />
+                  <span className="text-[hsl(var(--highland-gold))]">One owner-led team.</span>
                 </h2>
               </HeadingReveal>
 
               {/* Subtext — calm authority */}
               <ScrollReveal variant="rise-subtle" delay={0.3}>
                 <p className="text-dark-section-foreground/38 text-[15px] md:text-[17px] max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
-                  The right contractor doesn't just give you a number — they protect your investment,
-                  manage every detail, and deliver work that holds up for decades.
-                  That conversation starts with one call.
+                  Tell us about your property. A project advisor — not a call center — responds within one business day with a clear next step.
                 </p>
               </ScrollReveal>
 
@@ -80,7 +78,7 @@ const CTABlock = () => {
                     className="group border border-dark-section-foreground/8 text-dark-section-foreground font-heading font-medium text-[14px] px-8 py-[15px] md:py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/[0.04] hover:border-[hsl(var(--highland-gold)/0.2)] transition-all duration-300 min-h-[54px]"
                   >
                     <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
-                    (828) 397-9211
+                    Speak With a Project Advisor
                   </a>
                 </div>
               </ScrollReveal>
