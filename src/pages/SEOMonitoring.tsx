@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AlertTriangle, ArrowRight, Bot, FileWarning, Link2, LoaderCircle, SearchX, ShieldAlert, Siren, TrendingDown } from "lucide-react";
+import { AlertTriangle, ArrowRight, Bot, FileWarning, Link2, LoaderCircle, SearchX, ShieldAlert, Siren, TrendingDown, Target, MousePointer2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
