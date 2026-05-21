@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { scoreLead } from "@/lib/lead-scoring";
+import { deriveConstructionRouting } from "@/lib/lead-routing";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots } from "./IntakeFieldKit";
 import FileDrop from "./FileDrop";
@@ -110,6 +111,20 @@ const ConstructionIntakeForm = () => {
         description: data.description,
       });
 
+      const { routing, jobtread } = deriveConstructionRouting({
+        source: "construction_intake",
+        score,
+        contact: { name: data.name, email: data.email, phone: data.phone },
+        projectType: data.projectType,
+        timeline: data.timeline,
+        propertyType: data.propertyType,
+        planningStage: hasPlansBool === true ? "full_plans" : hasPlansBool === false ? "have_ideas" : undefined,
+        decisionMakers: data.decisionMaker === "self" ? "solo" : data.decisionMaker === "couple" ? "couple" : data.decisionMaker === "architect" ? "architect" : undefined,
+        hasPlans: hasPlansBool === true,
+        hasPhotos: uploadedPaths.length > 0,
+        town: data.town,
+      });
+
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
         name: data.name,
         email: data.email,
@@ -118,13 +133,16 @@ const ConstructionIntakeForm = () => {
         project_type: data.projectType,
         service_category: "construction",
         timeline: data.timeline,
-        urgency: "low",
+        urgency: routing.priority === "P1" ? "high" : routing.priority === "P2" ? "medium" : "low",
         property_type: data.propertyType,
         has_plans: hasPlansBool,
         project_description: data.description,
         source: "construction_intake",
         lead_score: score,
-        metadata: {
+        status: routing.lane === "qualified" || routing.lane === "concierge" ? "qualified" : "new",
+        metadata: ({
+          routing,
+          jobtread,
           budget_readiness: data.budgetReadiness,
           plan_status: data.hasPlans,
           decision_maker: data.decisionMaker,
@@ -132,7 +150,7 @@ const ConstructionIntakeForm = () => {
           upload_paths: uploadedPaths,
           referrer: typeof document !== "undefined" ? document.referrer : null,
           utm: Object.fromEntries(params.entries()),
-        },
+        } as any),
       });
       if (insertErr) throw insertErr;
 

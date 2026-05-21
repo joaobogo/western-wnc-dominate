@@ -13,6 +13,7 @@ import FileDrop from "@/components/intake/FileDrop";
 import IntakeConfirmation from "@/components/intake/IntakeConfirmation";
 import { supabase } from "@/integrations/supabase/client";
 import { scoreLead } from "@/lib/lead-scoring";
+import { deriveConstructionRouting } from "@/lib/lead-routing";
 import { trackEvent } from "@/lib/analytics";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 
@@ -186,6 +187,24 @@ const ConstructionBuilder = () => {
         description: data.description,
       }) + 14; // builder leads carry more depth
 
+      const { routing, jobtread } = deriveConstructionRouting({
+        source: "construction_builder",
+        score,
+        contact: { name: data.name, email: data.email, phone: data.phone },
+        projectType: data.projectType,
+        scopeItems: data.scopeItems,
+        style: data.style,
+        priorities: data.priorities,
+        investment: data.investment,
+        timeline: data.timeline,
+        propertyType: data.propertyType,
+        planningStage: data.planningStage,
+        decisionMakers: data.decisionMakers,
+        hasPlans: data.planningStage === "full_plans",
+        hasPhotos: uploadedPaths.length > 0,
+        town: data.town,
+      });
+
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
         name: data.name,
         email: data.email,
@@ -199,7 +218,9 @@ const ConstructionBuilder = () => {
         project_description: data.description || null,
         source: "construction_builder",
         lead_score: score,
-        metadata: {
+        has_plans: data.planningStage === "full_plans",
+        status: routing.lane === "qualified" || routing.lane === "concierge" ? "qualified" : "new",
+        metadata: ({
           builder: {
             scope_items: data.scopeItems,
             style: data.style,
@@ -209,17 +230,19 @@ const ConstructionBuilder = () => {
             decision_makers: data.decisionMakers,
             has_plans: data.planningStage === "full_plans",
           },
+          routing,
+          jobtread,
           upload_folder: folder,
           upload_paths: uploadedPaths,
           referrer: typeof document !== "undefined" ? document.referrer : null,
           utm: Object.fromEntries(params.entries()),
-        },
+        } as any),
       });
       if (insertErr) throw insertErr;
       trackEvent("form_submit", {
         label: "Construction Builder",
         elementId: "construction-builder",
-        metadata: { project: data.projectType, investment: data.investment, score, plans: uploadedPaths.length },
+        metadata: { project: data.projectType, investment: data.investment, score, lane: routing.lane, tier: routing.tier, plans: uploadedPaths.length },
       });
       setSubmitted(true);
     } catch (e: any) {
