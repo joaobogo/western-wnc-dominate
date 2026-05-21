@@ -72,16 +72,16 @@ const ServiceTownPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  to="/start-project"
+                  to="/consultation"
                   className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
-                  Request an Assessment <ArrowRight className="w-5 h-5" />
+                  Request a {entry.serviceLabel} Assessment <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:8283979211"
                   className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors"
                 >
-                  <Phone className="w-5 h-5" /> (828) 397-9211
+                  <Phone className="w-5 h-5" /> Speak With a Project Advisor
                 </a>
               </div>
             </motion.div>
@@ -115,7 +115,7 @@ const ServiceTownPage = () => {
                 {entry.serviceLabel} in {town.name}
               </h3>
               <p className="text-sm text-foreground/70 mb-4">
-                Tell us about the project. Most assessments are scheduled within 48 hours.
+                Tell us the basics. A project advisor responds within one business day — most {town.name} assessments are on the calendar inside 48 hours.
               </p>
               <InspectionForm />
             </aside>

@@ -95,10 +95,10 @@ const Footer = () => {
                 className="w-10 h-[2px] bg-[hsl(var(--highland-gold)/0.4)] mb-5 origin-left"
               />
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight">
-                Let's Discuss Your Property.
+                Talk to a project advisor.
               </h3>
               <p className="text-primary-foreground/50 text-[15px] font-body max-w-md leading-relaxed">
-                Whether it's a roof, an addition, a renovation, or storm damage — you'll speak with a project advisor who knows these mountains, not a call center.
+                Roof, addition, storm damage, or a planning conversation — one local team, one named contact, one business day to respond.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -107,7 +107,7 @@ const Footer = () => {
                 className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Discuss Your Project</span>
+                <span className="relative">Start a Project</span>
                 <ArrowRight className="w-3.5 h-3.5 relative group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <a

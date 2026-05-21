@@ -67,23 +67,23 @@ const TownPage = () => {
                 <span className="font-semibold text-sm uppercase tracking-wider">{town.county}, {town.state}</span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-balance">
-                Roofing Services in {town.name}, NC
+                Premium Roofing in {town.name}, NC
               </h1>
               <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
-                {town.description}
+                Owner-led roofing built for {town.county.replace(' County','')} weather. Local crews, written scope, photo-documented work — no call centers, no high-pressure quotes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/consultation"
                   className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
-                  Request a Consultation <ArrowRight className="w-5 h-5" />
+                  Request a Roof Assessment <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:8283979211"
                   className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-dark-section-foreground/10 transition-colors"
                 >
-                  <Phone className="w-5 h-5" /> (828) 397-9211
+                  <Phone className="w-5 h-5" /> Speak With a Project Advisor
                 </a>
               </div>
             </motion.div>
@@ -110,15 +110,14 @@ const TownPage = () => {
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
                 <div className="bg-secondary rounded-lg p-8">
-                  <h3 className="text-lg font-heading font-semibold text-foreground mb-2">Why {town.name} Homeowners Choose Highlander</h3>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>✓ Family-owned since 2017</li>
-                    <li>✓ Licensed NC General Contractor</li>
-                    <li>✓ CertainTeed Master Shingle Applicators</li>
-                    <li>✓ Free inspections — no obligation</li>
-                    <li>✓ Insurance claim support</li>
-                    <li>✓ Financing available</li>
-                    <li>✓ English & Spanish speaking crews</li>
+                  <h3 className="text-lg font-heading font-semibold text-foreground mb-4">
+                    What working with us looks like in {town.name}
+                  </h3>
+                  <ul className="space-y-3 text-muted-foreground text-sm leading-relaxed">
+                    <li className="flex gap-3"><CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" /><span><strong className="text-foreground font-semibold">On-site within days.</strong> Local crews, not a dispatch line.</span></li>
+                    <li className="flex gap-3"><CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" /><span><strong className="text-foreground font-semibold">Written scope before work begins.</strong> You see the plan and the price, in writing.</span></li>
+                    <li className="flex gap-3"><CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" /><span><strong className="text-foreground font-semibold">Same crew, start to finish.</strong> No subcontracted install work.</span></li>
+                    <li className="flex gap-3"><CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" /><span><strong className="text-foreground font-semibold">Warranty documentation at walkthrough.</strong> Manufacturer-backed, hand-delivered.</span></li>
                   </ul>
                 </div>
               </motion.div>
