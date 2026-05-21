@@ -14,6 +14,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import heroImg from "@/assets/gallery/asphalt-004.jpg";
 import proj1 from "@/assets/gallery/cedar-001.jpg";
@@ -505,6 +506,15 @@ const HomeAdditions = () => {
             </Accordion>
           </div>
         </section>
+
+        <BuilderPromoBlock
+          mode="construction"
+          variant="band"
+          preset="addition"
+          title="Plan Your Addition or Extension"
+          body="Optional guided pathway for homeowners thinking through an addition. Scope, integration with the existing home, planning stage, timing — all in one place, before our first walkthrough."
+          ctaLabel="Build Your Addition Plan"
+        />
 
         {/* ─── CLOSING CTA ─── */}
         <ConstructionClosingCTA
