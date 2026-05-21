@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { scoreLead } from "@/lib/lead-scoring";
+import { deriveRoofingRouting } from "@/lib/lead-routing";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots } from "./IntakeFieldKit";
 import FileDrop from "./FileDrop";
@@ -99,6 +100,18 @@ const RoofingIntakeForm = () => {
         description: data.description,
       });
 
+      const { routing, jobtread } = deriveRoofingRouting({
+        source: "roofing_intake",
+        score,
+        contact: { name: data.name, email: data.email, phone: data.phone },
+        projectType: data.projectType,
+        timeline: data.timeline,
+        propertyType: data.propertyType,
+        town: data.town,
+        hasPhotos: uploadedPaths.length > 0,
+        insuranceStatus: data.insuranceStatus,
+      });
+
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
         name: data.name,
         email: data.email,
@@ -113,12 +126,15 @@ const RoofingIntakeForm = () => {
         project_description: data.description || null,
         source: "roofing_intake",
         lead_score: score,
-        metadata: {
+        status: routing.lane === "emergency" ? "urgent" : "new",
+        metadata: ({
+          routing,
+          jobtread,
           upload_folder: folder,
           upload_paths: uploadedPaths,
           referrer: typeof document !== "undefined" ? document.referrer : null,
           utm: Object.fromEntries(params.entries()),
-        },
+        } as any),
       });
       if (insertErr) throw insertErr;
 
