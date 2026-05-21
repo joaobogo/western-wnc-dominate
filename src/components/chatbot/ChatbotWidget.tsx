@@ -78,6 +78,14 @@ function LeadCaptureCard({ onSubmit, onDismiss }: { onSubmit: () => void; onDism
         source: "chatbot-inline", lead_score: 30, status: "new",
       });
     } catch { /* continue anyway */ }
+    
+    // Track lead capture from chatbot
+    trackEvent("lead_capture", {
+      label: "Chatbot Inline Lead",
+      elementId: "chatbot-lead-capture",
+      metadata: { name }
+    });
+
     setSubmitted(true);
     setSubmitting(false);
     onSubmit();
