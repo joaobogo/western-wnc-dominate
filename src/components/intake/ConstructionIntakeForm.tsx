@@ -13,36 +13,42 @@ import IntakeConfirmation from "./IntakeConfirmation";
 type Step = number;
 
 const PROJECT_OPTIONS = [
-  { value: "replacement", label: "Roof Replacement", sub: "Full system, end-of-life" },
-  { value: "repair",      label: "Roof Repair",      sub: "Active leak or known issue" },
-  { value: "storm",       label: "Storm Damage",     sub: "Recent weather event" },
-  { value: "metal",       label: "Metal Roofing",    sub: "Standing seam / metal system" },
-  { value: "synthetic",   label: "Brava / Synthetic", sub: "Premium synthetic shake or slate" },
-  { value: "inspection",  label: "Inspection Only",  sub: "Pre-purchase or peace-of-mind" },
+  { value: "addition",   label: "Home Addition",        sub: "Bedroom, master suite, in-law" },
+  { value: "outdoor",    label: "Outdoor Living",       sub: "Porch, deck, screened-in" },
+  { value: "renovation", label: "Renovation",           sub: "Kitchen, bath, whole-home" },
+  { value: "custom",     label: "Custom Build",         sub: "Ground-up new construction" },
+  { value: "exterior",   label: "Exterior Improvement", sub: "Siding, windows, facade" },
+  { value: "consult",    label: "Planning Conversation", sub: "Not sure yet — explore options" },
+];
+const READINESS_OPTIONS = [
+  { value: "ready",       label: "Ready to plan", sub: "Budget defined, want to start" },
+  { value: "exploring",   label: "Exploring",     sub: "Gathering scope and numbers" },
+  { value: "researching", label: "Researching",   sub: "Early stage" },
 ];
 const TIMELINE_OPTIONS = [
-  { value: "emergency", label: "Emergency",       sub: "Active leak now" },
-  { value: "30days",    label: "Within 30 days",  sub: "Ready to move" },
-  { value: "90days",    label: "Within 90 days",  sub: "Planning ahead" },
-  { value: "6months",   label: "3–6 months",      sub: "Researching" },
+  { value: "30days",  label: "30 days" },
+  { value: "90days",  label: "60–90 days" },
+  { value: "6months", label: "3–6 months" },
+  { value: "exploring", label: "6 + months" },
 ];
-const INSURANCE_OPTIONS = [
-  { value: "none",          label: "No claim", sub: "Out of pocket" },
-  { value: "considering",   label: "Considering filing" },
-  { value: "active_claim",  label: "Active claim", sub: "Adjuster involved" },
+const PLAN_OPTIONS = [
+  { value: "yes",     label: "Yes",        sub: "Architect / drawings ready" },
+  { value: "partial", label: "Partial",    sub: "Sketches or inspiration" },
+  { value: "no",      label: "No",         sub: "Need design input" },
 ];
-const PROPERTY_OPTIONS = [
-  { value: "primary",     label: "Primary residence" },
-  { value: "second_home", label: "Second home" },
-  { value: "rental",      label: "Rental / investment" },
-  { value: "commercial",  label: "Commercial building" },
+const DECISION_OPTIONS = [
+  { value: "self",   label: "It's just me / spouse" },
+  { value: "joint",  label: "Joint with partner" },
+  { value: "board",  label: "HOA / board involved" },
 ];
 
 const initial = {
   projectType: "",
+  budgetReadiness: "",
   timeline: "",
-  insuranceStatus: "",
-  propertyType: "",
+  hasPlans: "",
+  decisionMaker: "",
+  propertyType: "primary",
   town: "",
   description: "",
   name: "",
@@ -50,7 +56,7 @@ const initial = {
   phone: "",
 };
 
-const RoofingIntakeForm = () => {
+const ConstructionIntakeForm = () => {
   const [params] = useSearchParams();
   const [step, setStep] = useState<Step>(0);
   const [data, setData] = useState({
@@ -67,15 +73,15 @@ const RoofingIntakeForm = () => {
     setData((d) => ({ ...d, [k]: v }));
 
   const stepValid = useMemo(() => {
-    if (step === 0) return Boolean(data.projectType && data.timeline);
-    if (step === 1) return Boolean(data.propertyType && data.town.trim().length >= 2);
-    if (step === 2) return true; // photos + description optional
+    if (step === 0) return Boolean(data.projectType && data.budgetReadiness && data.timeline);
+    if (step === 1) return Boolean(data.hasPlans && data.decisionMaker && data.town.trim().length >= 2);
+    if (step === 2) return data.description.trim().length >= 20;
     if (step === 3) return Boolean(data.name.trim() && data.phone.trim() && /\S+@\S+\.\S+/.test(data.email));
     return false;
   }, [step, data]);
 
-  const next = () => stepValid && setStep((s) => Math.min(3, (s + 1) as Step));
-  const back = () => setStep((s) => Math.max(0, (s - 1) as Step));
+  const next = () => stepValid && setStep((s) => Math.min(3, s + 1));
+  const back = () => setStep((s) => Math.max(0, s - 1));
 
   const submit = async () => {
     setSubmitting(true);
@@ -88,11 +94,16 @@ const RoofingIntakeForm = () => {
         uploadedPaths = u.ok.map((f) => f.path);
       }
 
+      const hasPlansBool =
+        data.hasPlans === "yes" ? true : data.hasPlans === "no" ? false : null;
+
       const score = scoreLead({
-        serviceCategory: "roofing",
+        serviceCategory: "construction",
         projectType: data.projectType,
         timeline: data.timeline,
-        insuranceStatus: data.insuranceStatus,
+        budgetReadiness: data.budgetReadiness,
+        decisionMakerOnSite: data.decisionMaker === "self",
+        hasPlans: hasPlansBool,
         propertyType: data.propertyType,
         town: data.town,
         hasPhotos: uploadedPaths.length > 0,
@@ -105,15 +116,18 @@ const RoofingIntakeForm = () => {
         phone: data.phone,
         town: data.town,
         project_type: data.projectType,
-        service_category: "roofing",
+        service_category: "construction",
         timeline: data.timeline,
-        urgency: data.timeline === "emergency" ? "high" : data.timeline === "30days" ? "medium" : "low",
-        insurance_status: data.insuranceStatus || null,
+        urgency: "low",
         property_type: data.propertyType,
-        project_description: data.description || null,
-        source: "roofing_intake",
+        has_plans: hasPlansBool,
+        project_description: data.description,
+        source: "construction_intake",
         lead_score: score,
         metadata: {
+          budget_readiness: data.budgetReadiness,
+          plan_status: data.hasPlans,
+          decision_maker: data.decisionMaker,
           upload_folder: folder,
           upload_paths: uploadedPaths,
           referrer: typeof document !== "undefined" ? document.referrer : null,
@@ -123,9 +137,9 @@ const RoofingIntakeForm = () => {
       if (insertErr) throw insertErr;
 
       trackEvent("form_submit", {
-        label: "Roofing Intake",
-        elementId: "roofing-intake",
-        metadata: { project: data.projectType, timeline: data.timeline, score, photos: uploadedPaths.length },
+        label: "Construction Intake",
+        elementId: "construction-intake",
+        metadata: { project: data.projectType, readiness: data.budgetReadiness, score, files: uploadedPaths.length },
       });
 
       setSubmitted(true);
@@ -139,10 +153,13 @@ const RoofingIntakeForm = () => {
   if (submitted) {
     return (
       <IntakeConfirmation
-        title="Your request is in good hands."
-        body={data.timeline === "emergency"
-          ? "An advisor will contact you within hours. If you have active interior leaking, place a bucket and avoid touching ceiling drywall."
-          : "A Highlander project advisor will personally review your request and reach out within one business day."}
+        title="Thank you — we have what we need to start."
+        body="A project advisor will personally review your scope and reach out within one business day to schedule the planning conversation."
+        nextSteps={[
+          "An advisor reviews scope, readiness, and any plans you shared.",
+          "We schedule a 30-minute discovery call to align on direction and feasibility.",
+          "If it's a fit, we visit the property and prepare a written scope and pricing approach.",
+        ]}
       />
     );
   }
@@ -155,9 +172,9 @@ const RoofingIntakeForm = () => {
             Step {step + 1} of 4
           </p>
           <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight">
-            {step === 0 && "Tell us about the roof"}
-            {step === 1 && "Where & what type of property"}
-            {step === 2 && "Photos & details (optional)"}
+            {step === 0 && "Scope, readiness & timeline"}
+            {step === 1 && "Plans, decision-makers & location"}
+            {step === 2 && "Tell us about the project"}
             {step === 3 && "How should we reach you"}
           </h2>
         </div>
@@ -176,39 +193,52 @@ const RoofingIntakeForm = () => {
           {step === 0 && (
             <>
               <div>
-                <Label required>What kind of roofing project</Label>
+                <Label required>Project type</Label>
                 <ChipGroup options={PROJECT_OPTIONS} value={data.projectType} onChange={(v) => set("projectType", v)} columns={2} />
               </div>
               <div>
-                <Label required>Timeline</Label>
-                <ChipGroup options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={2} />
+                <Label required>Where are you in the process</Label>
+                <ChipGroup options={READINESS_OPTIONS} value={data.budgetReadiness} onChange={(v) => set("budgetReadiness", v)} columns={3} />
+                <Helper>We work best when both sides are honest about stage. No wrong answer.</Helper>
               </div>
-              {data.timeline === "emergency" && (
-                <p className="text-[12.5px] font-body text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] border border-[hsl(var(--highland-gold)/0.25)] rounded-md px-4 py-3">
-                  Emergency response: complete the form and we'll call you directly — or dial <a className="underline font-semibold" href="tel:8283979211">(828) 397-9211</a> now.
-                </p>
-              )}
+              <div>
+                <Label required>Ideal start window</Label>
+                <ChipGroup options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={4} />
+              </div>
             </>
           )}
 
           {step === 1 && (
             <>
               <div>
-                <Label required>Property type</Label>
-                <ChipGroup options={PROPERTY_OPTIONS} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
+                <Label required>Do you have plans or drawings yet</Label>
+                <ChipGroup options={PLAN_OPTIONS} value={data.hasPlans} onChange={(v) => set("hasPlans", v)} columns={3} />
+              </div>
+              <div>
+                <Label required>Who is the decision-maker</Label>
+                <ChipGroup options={DECISION_OPTIONS} value={data.decisionMaker} onChange={(v) => set("decisionMaker", v)} columns={3} />
               </div>
               <FieldRow>
                 <div>
                   <Label required>Town</Label>
                   <Input
-                    placeholder="e.g. Highlands"
+                    placeholder="e.g. Cashiers"
                     value={data.town}
                     onChange={(e) => set("town", e.target.value)}
                   />
                 </div>
                 <div>
-                  <Label>Insurance claim status</Label>
-                  <ChipGroup options={INSURANCE_OPTIONS} value={data.insuranceStatus} onChange={(v) => set("insuranceStatus", v)} columns={3} />
+                  <Label>Property</Label>
+                  <ChipGroup
+                    options={[
+                      { value: "primary", label: "Primary" },
+                      { value: "second_home", label: "Second home" },
+                      { value: "rental", label: "Rental" },
+                    ]}
+                    value={data.propertyType}
+                    onChange={(v) => set("propertyType", v)}
+                    columns={3}
+                  />
                 </div>
               </FieldRow>
             </>
@@ -217,23 +247,23 @@ const RoofingIntakeForm = () => {
           {step === 2 && (
             <>
               <div>
-                <Label>Roof photos</Label>
-                <FileDrop
-                  files={files}
-                  onChange={setFiles}
-                  accept="image/*"
-                  helper="A few photos help us prepare. Phone photos are fine. Max 8 files, 8MB each."
-                />
-              </div>
-              <div>
-                <Label>Anything specific we should know?</Label>
+                <Label required>Describe the project</Label>
                 <Textarea
-                  rows={5}
-                  placeholder="Roof age, known leaks, recent storm, prior repairs, architectural concerns…"
+                  rows={6}
+                  placeholder="Square footage, rooms involved, finish level, lot constraints, anything you've already explored…"
                   value={data.description}
                   onChange={(e) => set("description", e.target.value)}
                 />
-                <Helper>Optional. The more we know, the better-prepared your advisor will be.</Helper>
+                <Helper>Minimum a few sentences — this shapes the discovery conversation.</Helper>
+              </div>
+              <div>
+                <Label>Plans, sketches, inspiration, site photos</Label>
+                <FileDrop
+                  files={files}
+                  onChange={setFiles}
+                  accept="image/*,application/pdf"
+                  helper="PDFs of drawings or images of the property and inspiration. Max 8 files, 8MB each."
+                />
               </div>
             </>
           )}
@@ -253,7 +283,7 @@ const RoofingIntakeForm = () => {
               <div>
                 <Label required>Email</Label>
                 <Input type="email" value={data.email} onChange={(e) => set("email", e.target.value)} autoComplete="email" />
-                <Helper>Used for proposal documents and project updates. No marketing list.</Helper>
+                <Helper>Used for scope documents and scheduling. No marketing list.</Helper>
               </div>
             </>
           )}
@@ -289,7 +319,7 @@ const RoofingIntakeForm = () => {
             onClick={submit}
             className="cta-gradient text-accent-foreground font-heading font-bold text-[13.5px] px-7 py-3.5 rounded-md inline-flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
           >
-            {submitting ? <><Loader2 className="w-3.5 h-3.5 animate-spin" /> Sending…</> : <>Request Roof Assessment <ArrowRight className="w-3.5 h-3.5" /></>}
+            {submitting ? <><Loader2 className="w-3.5 h-3.5 animate-spin" /> Sending…</> : <>Request Planning Conversation <ArrowRight className="w-3.5 h-3.5" /></>}
           </button>
         )}
       </div>
@@ -297,4 +327,4 @@ const RoofingIntakeForm = () => {
   );
 };
 
-export default RoofingIntakeForm;
+export default ConstructionIntakeForm;
