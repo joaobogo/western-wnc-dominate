@@ -34,6 +34,11 @@ const MetalRoofing = () => {
             url: "https://western-wnc-dominate.lovable.app/roofing/metal",
             areaServed: "Western North Carolina",
           },
+          breadcrumbs: [
+            { name: "Home", url: "https://western-wnc-dominate.lovable.app/" },
+            { name: "Roofing", url: "https://western-wnc-dominate.lovable.app/roofing" },
+            { name: "Metal Roofing", url: "https://western-wnc-dominate.lovable.app/roofing/metal" },
+          ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
       />
