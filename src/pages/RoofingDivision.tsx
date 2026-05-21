@@ -825,7 +825,7 @@ const RoofingDivision = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Typical range</span>
-                        <p className="text-lg font-heading font-bold text-foreground">$500 – $3,500</p>
+                        <p className="text-lg font-heading font-bold text-foreground">Scope-based pricing</p>
                       </div>
                       <Link to="/roofing/roof-repair" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-primary font-body hover:gap-2.5 transition-all">
                         Roof Repair <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -872,7 +872,7 @@ const RoofingDivision = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Typical range</span>
-                        <p className="text-lg font-heading font-bold text-foreground">$8,000 – $25,000+</p>
+                        <p className="text-lg font-heading font-bold text-foreground">Detailed line-item proposal</p>
                       </div>
                       <Link to="/roofing/roof-replacement" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--highland-gold))] font-body hover:gap-2.5 transition-all">
                         Roof Replacement <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />

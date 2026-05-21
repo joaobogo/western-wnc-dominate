@@ -82,7 +82,7 @@ const whyHighlander = [
 ];
 
 const faqs = [
-  { q: "What's the typical cost range for an outdoor living project?", a: "Costs vary widely by scope. A basic deck starts around $15,000–$30,000. Screened porches range from $25,000–$60,000. Covered pavilions and outdoor kitchens typically run $40,000–$100,000+. We provide detailed, line-item proposals during the design phase so you know exactly what you're investing." },
+  { q: "How is an outdoor living project priced?", a: "Every project is priced from its own scope — structure type, footprint, roof system, finishes, and site access all shape the number. Rather than publish a generic range, we provide a detailed, line-item proposal during the design phase so you know exactly what you're investing in." },
   { q: "How long does an outdoor living project take to build?", a: "Most projects take 4–10 weeks from permit approval to completion, depending on complexity. A simple deck may be faster; a covered structure with electrical, ceiling, and finishes takes longer. We provide a specific timeline during the proposal phase." },
   { q: "Do outdoor structures need permits in WNC?", a: "Most covered structures, decks above a certain height, and anything with electrical or plumbing requires a permit. We handle the entire permitting process as part of our standard scope." },
   { q: "What decking material do you recommend for this area?", a: "For most WNC homeowners, composite decking offers the best balance of appearance, durability, and low maintenance. For clients who prefer natural wood, cedar and ipe are excellent choices with the understanding that they require periodic sealing and maintenance." },

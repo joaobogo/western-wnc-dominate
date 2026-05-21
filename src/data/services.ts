@@ -36,7 +36,7 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "How quickly can you repair my roof?", answer: "We typically schedule repair inspections within 24–48 hours and complete most repairs within a week, depending on scope and weather conditions." },
       { question: "Do you work with insurance companies?", answer: "Yes. We document all damage with photos and detailed reports to support your insurance claim process from start to finish." },
-      { question: "How much does a roof repair cost in WNC?", answer: "Repair costs vary based on damage extent, materials, and accessibility. Most minor repairs range from $300–$1,500. We provide a free inspection and transparent estimate before any work begins." },
+      { question: "How much does a roof repair cost in WNC?", answer: "Repair pricing is scope-based — it depends on damage extent, materials, and accessibility. We provide a free on-site inspection and a transparent, itemized estimate before any work begins." },
       { question: "Can you repair just a section of my roof?", answer: "Absolutely. We specialize in targeted repairs that address the problem area without unnecessary full replacements. We'll always recommend the most cost-effective solution." },
     ],
     metaTitle: "Roof Repair in Western NC | Highlander Roofing",
@@ -61,7 +61,7 @@ export const services: ServiceData[] = [
     ],
     faqs: [
       { question: "How long does a roof replacement take?", answer: "Most residential roof replacements are completed in 2–5 days depending on size, complexity, and weather. We keep you informed every step of the way." },
-      { question: "How much does a new roof cost in Western NC?", answer: "A typical residential roof replacement in WNC ranges from $8,000–$25,000+ depending on size, materials, and complexity. We provide detailed estimates after a free inspection." },
+      { question: "How much does a new roof cost in Western NC?", answer: "Replacement pricing depends on size, pitch, material system, and complexity. Rather than publish a generic range, we provide a detailed, line-item proposal after a free on-site inspection so you know exactly what you're investing in." },
       { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend architectural shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
       { question: "Do you offer financing for roof replacement?", answer: "Yes, we offer flexible financing options to make a new roof affordable. Ask us about payment plans during your free inspection." },
     ],
@@ -191,7 +191,7 @@ export const services: ServiceData[] = [
     ],
     faqs: [
       { question: "What size gutters do mountain homes need?", answer: "Most WNC homes benefit from 6-inch gutters with oversized 3x4 downspouts. The steep terrain and heavy rainfall here demand higher-capacity systems than standard 5-inch gutters provide." },
-      { question: "How much do new gutters cost in Western NC?", answer: "Seamless aluminum gutters typically range from $6–$12 per linear foot installed. Gutter guard systems add $3–$8 per foot. We provide free estimates tailored to your home's specific needs." },
+      { question: "How much do new gutters cost in Western NC?", answer: "Gutter pricing is based on linear footage, drop count, material, and whether guards are added. We provide a free, tailored estimate after measuring your home." },
       { question: "Do you install gutter guards?", answer: "Yes. We install micro-mesh and reverse-curve gutter guards that prevent leaves, pine needles, and debris from clogging your gutters — especially important in WNC's heavily wooded areas." },
       { question: "Can you repair existing gutters instead of replacing them?", answer: "Often, yes. We repair leaking seams, rehang sagging sections, and replace damaged segments. We'll recommend repair vs. replacement based on your gutter's age and overall condition." },
     ],

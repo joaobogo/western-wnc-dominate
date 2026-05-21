@@ -213,10 +213,10 @@ const RoofReplacement = () => {
               >
                 <div className="flex items-center gap-3 mb-2">
                   <DollarSign className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-xs uppercase tracking-wider text-primary-foreground/50 font-body font-semibold">Typical Investment Range</span>
+                  <span className="text-xs uppercase tracking-wider text-primary-foreground/50 font-body font-semibold">How We Price Replacement</span>
                 </div>
-                <div className="text-2xl font-heading font-bold text-primary-foreground">$8,000 – $25,000+</div>
-                <p className="text-xs text-primary-foreground/40 mt-1 font-body">Based on size, materials, and complexity. Exact pricing after on-site assessment.</p>
+                <div className="text-2xl font-heading font-bold text-primary-foreground">Scope-based, line-item</div>
+                <p className="text-xs text-primary-foreground/40 mt-1 font-body">Every roof is priced from its real scope after on-site assessment — no generic ranges, no allowances disguised as estimates.</p>
               </motion.div>
             </div>
           </div>

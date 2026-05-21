@@ -86,7 +86,7 @@ const wncChallenges = [
 ];
 
 const faqs = [
-  { q: "How much does a home addition typically cost?", a: "Addition costs in Western North Carolina typically range from $150–$350 per square foot depending on complexity, finishes, and site conditions. A simple bump-out may start around $40,000, while a full guest suite or second-story addition can range from $100,000–$300,000+. We provide detailed, line-item pricing during the proposal phase." },
+  { q: "How is a home addition priced?", a: "Additions are priced from the actual scope — square footage, structural complexity, finish level, site access, and how the addition ties into the existing home. Instead of a generic per-foot range, we provide a detailed, line-item proposal during the design phase so the number reflects your real project." },
   { q: "How long does an addition project take?", a: "Most residential additions take 3–6 months from permit approval to completion. Simple single-room additions may be faster; complex multi-room or second-story additions may take longer. We provide a detailed timeline during the proposal phase and communicate proactively about progress and any changes." },
   { q: "Will the addition match my existing home?", a: "This is one of our primary focuses. We match rooflines, siding profiles, trim details, window proportions, and exterior materials to ensure the addition looks like it was always part of the home. When exact material matches aren't available, we source the closest alternatives or recommend design approaches that create intentional, attractive transitions." },
   { q: "Do I need to move out during construction?", a: "In most cases, no. We plan construction to minimize disruption to your daily life, including dust barriers, dedicated access routes, and coordinated noisy-work schedules. For major whole-home renovations that affect essential living areas, we'll discuss temporary relocation options during planning." },
@@ -170,7 +170,7 @@ const HomeAdditions = () => {
               >
                 {[
                   { value: "200–2,000", unit: "sq ft", label: "Typical Addition Size" },
-                  { value: "$40K", unit: "–$300K+", label: "Investment Range" },
+                  { value: "Per", unit: "scope", label: "Detailed Proposal" },
                   { value: "3–6", unit: "mo", label: "Typical Timeline" },
                 ].map((item) => (
                   <div key={item.label} className="p-3 bg-white/5 border border-white/8 rounded-sm text-center">
