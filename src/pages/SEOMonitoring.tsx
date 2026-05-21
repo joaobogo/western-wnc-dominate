@@ -246,6 +246,7 @@ const SEOMonitoring = () => {
 
         const reports = (data?.latestReports ?? []) as MonitoringReportSnapshot[];
         setReports(reports);
+        setConversions(data?.conversions ?? []);
         setReportDrivenIssues(buildReportDrivenIssues(reports));
         setPrioritySummary(buildWeeklyPriorityMonitoringSummary(reports));
       } catch {
