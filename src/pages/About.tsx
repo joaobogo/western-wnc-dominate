@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Users, Mountain, Award, Heart, Eye, Hammer, TreePine, Home, CheckCircle, Star, MapPin, Calendar, Quote } from "lucide-react";
-import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema, organizationSchema, localBusinessSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -41,7 +41,11 @@ const About = () => {
         title="About Highlander Roofing & Construction"
         description="Meet Highlander Roofing & Construction — a premium roofing and construction company serving Western North Carolina. Licensed, certified, locally owned."
         path="/about"
-        jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "About", url: "/about" }])}
+        jsonLd={[
+          organizationSchema(),
+          localBusinessSchema(),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "About", url: "/about" }]),
+        ]}
       />
       <Header />
       <main>

@@ -13,6 +13,7 @@ interface SEOHeadProps {
 }
 
 const SITE_NAME = "Highlander Roofing & Construction";
+const BRAND_SUFFIX = "Highlander"; // short suffix to keep titles ≤60 chars
 const BASE_URL = "https://western-wnc-dominate.lovable.app";
 const FAVICON_VERSION = "2";
 const DEFAULT_IMAGE = `${BASE_URL}/favicon.png?v=${FAVICON_VERSION}`;
@@ -41,7 +42,7 @@ const SEOHead = ({
   keywords,
   locale = "en_US",
 }: SEOHeadProps) => {
-  const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+  const fullTitle = title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`;
   const canonicalUrl = `${BASE_URL}${path}`;
   const ogImage = image || DEFAULT_IMAGE;
 
