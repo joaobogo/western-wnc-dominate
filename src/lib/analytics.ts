@@ -22,7 +22,9 @@ const getSessionId = () => {
   if (typeof window === "undefined") return null;
   let id = sessionStorage.getItem(SESSION_KEY);
   if (!id) {
-    id = crypto.randomUUID();
+    id = typeof crypto !== "undefined" && "randomUUID" in crypto 
+      ? crypto.randomUUID() 
+      : `session-${Date.now()}-${Math.random().toString(36).slice(2)}`;
     sessionStorage.setItem(SESSION_KEY, id);
   }
   return id;
