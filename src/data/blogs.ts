@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     town: "Highlands",
     metaTitle: "How Much Does a New Roof Cost in Highlands, NC? | Highlander Roofing",
     metaDescription: "Wondering about roof replacement costs in Highlands, NC? Here's what mountain homeowners actually pay and what factors affect your price.",
-    content: `If you're a homeowner in Highlands, NC, you've probably wondered what a new roof actually costs at 4,100+ feet elevation. The short answer: **$10,000 to $30,000+** for a typical residential roof — but several mountain-specific factors can shift that number significantly.
+    content: `If you're a homeowner in Highlands, NC, you've probably wondered what a new roof actually costs at 4,100+ feet elevation. The honest answer: **it depends on scope** — several mountain-specific factors shape every proposal, and we price each roof from its real conditions rather than publishing a generic range.
 
 ## What Affects Roofing Costs in Highlands?
 
@@ -549,7 +549,7 @@ We understand that a rental roof emergency is a business emergency. We offer pri
 
 ## Protect Your Investment
 
-A $500 maintenance visit prevents a $15,000 emergency repair — and the lost rental income that comes with it. Call (828) 397-9211 for rental property roofing services.`,
+A planned maintenance visit prevents an emergency repair — and the lost rental income that comes with it. Call (828) 397-9211 for rental property roofing services.`,
   },
   {
     slug: "winter-roof-preparation-highlands",

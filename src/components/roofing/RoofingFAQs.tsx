@@ -31,7 +31,7 @@ export const roofingFAQLibrary: FAQ[] = [
 
   // ── ROOF REPAIR ──
   { q: "How quickly can you respond to a roof leak?", a: "For active leaks and storm damage, we offer 24-hour emergency response including temporary tarping. Non-emergency repair assessments are typically scheduled within 24–48 hours of your call.", categories: ["repair", "storm"] },
-  { q: "Will you try to sell me a full replacement when I only need a repair?", a: "No. We diagnose honestly and recommend based on what your roof actually needs. If a $400 repair will solve the problem, that's what we recommend — and we document our reasoning so you can verify our logic.", categories: ["repair"] },
+  { q: "Will you try to sell me a full replacement when I only need a repair?", a: "No. We diagnose honestly and recommend based on what your roof actually needs. If a targeted repair will solve the problem, that's what we recommend — and we document our reasoning so you can verify our logic.", categories: ["repair"] },
   { q: "Do you warranty repair work?", a: "Yes. Every repair we perform comes with a Highlander labor warranty. The duration depends on the scope of the repair, and we specify it clearly before work begins.", categories: ["repair"] },
 
   // ── STORM DAMAGE ──

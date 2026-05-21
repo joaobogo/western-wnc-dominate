@@ -473,8 +473,8 @@ const HomeAdditions = () => {
                 </div>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
                   <Home className="w-5 h-5 text-[hsl(var(--highland-gold))] mx-auto mb-2" />
-                  <span className="text-2xl font-heading font-bold text-foreground">$0</span>
-                  <p className="text-muted-foreground text-xs font-body mt-1">Realtor fees, moving costs, and disruption avoided</p>
+                  <span className="text-2xl font-heading font-bold text-foreground">None</span>
+                  <p className="text-muted-foreground text-xs font-body mt-1">No realtor fees, no moving costs, no community disruption</p>
                 </div>
               </div>
             </motion.div>

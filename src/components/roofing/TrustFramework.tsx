@@ -18,7 +18,7 @@ export const trustPillars: TrustPillar[] = [
   {
     icon: Hammer,
     title: "Craftsmanship First",
-    detail: "Every project is built to outlast the warranty — not just meet it. Our crews are trained, supervised, and held to the same quality standard whether it's a $500 repair or a $50,000 replacement.",
+    detail: "Every project is built to outlast the warranty — not just meet it. Our crews are trained, supervised, and held to the same quality standard whether it's a single-section repair or a full custom roof system.",
   },
   {
     icon: Shield,

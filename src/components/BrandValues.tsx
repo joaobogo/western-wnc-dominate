@@ -77,7 +77,7 @@ export const brandValues: BrandValue[] = [
     icon: Heart,
     name: "Project Care",
     tagline: "Every Project. Same Standard.",
-    statement: "Every project gets the same attention whether it's a $5,000 repair or a $50,000 installation.",
+    statement: "Every project gets the same attention whether it's a single-section repair or a full custom roof system.",
     teamQuote: "We don't have a B-team. Every crew operates to the same standard.",
     ctaSupport: "Your project gets the same crew quality and attention as our largest installations.",
     overcomes: "Will my small project get ignored?",
