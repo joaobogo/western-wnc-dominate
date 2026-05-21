@@ -13,6 +13,13 @@ const NotFound = () => {
     const userAgent = typeof navigator !== "undefined" ? navigator.userAgent : null;
 
     console.error("404 Error: User attempted to access non-existent route:", path);
+    
+    // Use unified tracking utility
+    trackEvent("page_view", {
+      label: "404 Not Found",
+      elementId: "not-found-page",
+      metadata: { path, referrer, userAgent }
+    });
 
     void supabase
       .from("seo_404_log")
