@@ -48,6 +48,18 @@ const InspectionForm = () => {
 
   const handleSubmit = () => {
     setIsSubmitting(true);
+    
+    // Track form submission
+    trackEvent("form_submit", {
+      label: "Inspection Request",
+      elementId: "inspection-form-main",
+      metadata: {
+        town: formData.town,
+        projectType: formData.projectType,
+        timeline: formData.timeline,
+      }
+    });
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
