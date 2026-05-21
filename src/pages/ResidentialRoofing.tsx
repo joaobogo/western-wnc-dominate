@@ -150,8 +150,8 @@ const ResidentialRoofing = () => {
     return (
     <>
       <SEOHead
-        title="Residential Roofing for Mountain Homes in Western NC"
-        description="Complete residential roofing for mountain homes across Highlands, Cashiers, Franklin & Sylva. CertainTeed certified installation, premium materials, and warranties that last."
+        title="Residential Roofing in Western NC"
+        description="Residential roofing for mountain homes across Highlands, Cashiers, Franklin & Sylva. CertainTeed certified installation and premium materials."
         path="/roofing/residential"
         jsonLd={[
           serviceSchema({ name: "Residential Roofing", description: "Premium residential roof replacement and repair for mountain homes across Western North Carolina.", url: "/roofing/residential" }),
