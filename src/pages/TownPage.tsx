@@ -135,6 +135,14 @@ const TownPage = () => {
           body={`An optional guided pathway for ${town.name}-area homeowners. Specify project type, material, and priorities — we use it to prepare a sharper on-site assessment with mountain-exposure detailing built in.`}
         />
 
+        <BuilderPromoBlock
+          mode="construction"
+          variant="band"
+          town={town.name}
+          title={`Plan Your ${town.name} Construction Project`}
+          body={`Optional guided pathway for ${town.name}-area additions, porches, decks, outdoor living, and flatwork projects. Sharpens the first conversation — never replaces it.`}
+        />
+
         {/* Services in this town */}
         <section className="section-padding section-dark">
           <div className="container-tight">

@@ -13,6 +13,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import heroImg from "@/assets/gallery/cedar-003.jpg";
 import proj1 from "@/assets/gallery/cedar-001.jpg";
@@ -471,6 +472,15 @@ const OutdoorLiving = () => {
             </Accordion>
           </div>
         </section>
+
+        <BuilderPromoBlock
+          mode="construction"
+          variant="band"
+          preset="outdoor_living"
+          title="Plan Your Outdoor Living Project"
+          body="Optional guided pathway for porches, decks, pergolas, outdoor kitchens, and fire features. Walk through scope, integration, and timing — we use it to prepare a sharper site conversation."
+          ctaLabel="Build Your Outdoor Plan"
+        />
 
         {/* ─── CLOSING CTA ─── */}
         <ConstructionClosingCTA

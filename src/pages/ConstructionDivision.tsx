@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
@@ -365,6 +366,8 @@ const ConstructionDivision = () => {
           eyebrow="Construction FAQs"
           maxItems={10}
         />
+
+        <BuilderPromoBlock mode="construction" variant="band" />
 
         {/* ═══ CLOSING CTA ═══ */}
         <ConstructionClosingCTA

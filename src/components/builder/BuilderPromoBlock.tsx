@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, SlidersHorizontal, Camera, Layers, Sparkles } from "lucide-react";
 
 interface BuilderPromoBlockProps {
+  /** Which builder to route to. Defaults to roofing for back-compat. */
+  mode?: "roofing" | "construction";
   /** Pre-select a project type when entering the builder */
-  preset?: "replacement" | "metal_upgrade" | "synthetic_upgrade" | "repair" | "";
+  preset?: string;
   /** Pre-fill the town field */
   town?: string;
   /** Visual variant — "panel" sits inside a section, "band" is a full-bleed band */
@@ -14,21 +16,68 @@ interface BuilderPromoBlockProps {
   title?: string;
   body?: string;
   ctaLabel?: string;
+  /** Override the secondary link */
+  secondaryHref?: string;
+  secondaryLabel?: string;
 }
 
 const BuilderPromoBlock = ({
+  mode = "roofing",
   preset = "",
   town = "",
   variant = "panel",
-  eyebrow = "Optional · Advanced Builder",
-  title = "Build Your Roofing Project",
-  body = "An optional, deeper pathway for homeowners who want to specify their roof in detail. Material, system features, priorities, photos — all in one guided flow. We respond personally with a written proposal, not an instant quote.",
-  ctaLabel = "Start the Builder",
+  eyebrow,
+  title,
+  body,
+  ctaLabel,
+  secondaryHref,
+  secondaryLabel,
 }: BuilderPromoBlockProps) => {
+  const isConstruction = mode === "construction";
+  const basePath = isConstruction ? "/construction-builder" : "/roofing-builder";
+  const defaults = isConstruction
+    ? {
+        eyebrow: "Optional · Advanced Builder",
+        title: "Build Your Construction Project",
+        body: "An optional, guided way to organize an addition, porch, deck, outdoor living space, or flatwork project before our first call. Not a quote tool — a sharper starting point for a real conversation.",
+        ctaLabel: "Start the Builder",
+        secondaryHref: "/construction-intake",
+        secondaryLabel: "Prefer the short intake form",
+        steps: [
+          { n: "01", t: "Choose a project type" },
+          { n: "02", t: "Define scope & integration" },
+          { n: "03", t: "Share planning stage & timing" },
+          { n: "04", t: "Upload plans, photos, or inspiration" },
+        ],
+        chips: ["Project type & scope", "Planning stage", "Plans & inspiration"],
+      }
+    : {
+        eyebrow: "Optional · Advanced Builder",
+        title: "Build Your Roofing Project",
+        body: "An optional, deeper pathway for homeowners who want to specify their roof in detail. Material, system features, priorities, photos — all in one guided flow. We respond personally with a written proposal, not an instant quote.",
+        ctaLabel: "Start the Builder",
+        secondaryHref: "/roofing-intake",
+        secondaryLabel: "Prefer the short intake form",
+        steps: [
+          { n: "01", t: "Choose a project path" },
+          { n: "02", t: "Pick a material system" },
+          { n: "03", t: "Set priorities & timeline" },
+          { n: "04", t: "Upload photos, share notes" },
+        ],
+        chips: ["Material & system", "Priorities & tier", "Photos & notes"],
+      };
+
   const qs = new URLSearchParams();
   if (preset) qs.set("type", preset);
   if (town) qs.set("town", town);
-  const href = `/roofing-builder${qs.toString() ? `?${qs.toString()}` : ""}`;
+  const href = `${basePath}${qs.toString() ? `?${qs.toString()}` : ""}`;
+
+  const _eyebrow = eyebrow ?? defaults.eyebrow;
+  const _title = title ?? defaults.title;
+  const _body = body ?? defaults.body;
+  const _cta = ctaLabel ?? defaults.ctaLabel;
+  const _secHref = secondaryHref ?? defaults.secondaryHref;
+  const _secLabel = secondaryLabel ?? defaults.secondaryLabel;
 
   const Wrapper = variant === "band" ? "section" : "div";
   const wrapperClass =
@@ -52,21 +101,19 @@ const BuilderPromoBlock = ({
             <div className="p-7 md:p-10">
               <div className="flex items-center gap-2 text-accent text-[11px] font-semibold uppercase tracking-[0.16em] mb-4">
                 <SlidersHorizontal className="w-3.5 h-3.5" />
-                {eyebrow}
+                {_eyebrow}
               </div>
               <h3 className="font-heading font-bold text-foreground text-[26px] md:text-[32px] leading-[1.1] tracking-tight mb-3">
-                {title}
+                {_title}
               </h3>
               <p className="text-foreground/65 text-[14.5px] md:text-[15px] font-body leading-relaxed max-w-xl mb-6">
-                {body}
+                {_body}
               </p>
 
               <ul className="grid sm:grid-cols-3 gap-3 mb-7">
-                {[
-                  { icon: Layers, label: "Material & system" },
-                  { icon: Sparkles, label: "Priorities & tier" },
-                  { icon: Camera, label: "Photos & notes" },
-                ].map(({ icon: Icon, label }) => (
+                {defaults.chips.map((label, i) => {
+                  const Icon = [Layers, Sparkles, Camera][i] ?? Layers;
+                  return (
                   <li
                     key={label}
                     className="flex items-center gap-2 text-[12.5px] font-body text-foreground/70 border border-border/60 rounded-sm px-3 py-2 bg-background/60"
@@ -74,7 +121,8 @@ const BuilderPromoBlock = ({
                     <Icon className="w-3.5 h-3.5 text-accent flex-shrink-0" />
                     {label}
                   </li>
-                ))}
+                  );
+                })}
               </ul>
 
               <div className="flex flex-wrap items-center gap-4">
@@ -82,14 +130,14 @@ const BuilderPromoBlock = ({
                   to={href}
                   className="group cta-gradient text-accent-foreground font-semibold text-[14px] px-7 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
-                  {ctaLabel}
+                  {_cta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <Link
-                  to="/roofing-intake"
+                  to={_secHref}
                   className="text-foreground/70 hover:text-accent text-[13px] font-semibold underline underline-offset-4 decoration-border hover:decoration-accent transition-colors"
                 >
-                  Prefer the short intake form
+                  {_secLabel}
                 </Link>
               </div>
 
@@ -100,12 +148,7 @@ const BuilderPromoBlock = ({
 
             <div className="hidden md:flex flex-col justify-between bg-gradient-to-br from-secondary/15 via-secondary/5 to-accent/10 border-l border-border/60 p-8">
               <div className="space-y-4">
-                {[
-                  { n: "01", t: "Choose a project path" },
-                  { n: "02", t: "Pick a material system" },
-                  { n: "03", t: "Set priorities & timeline" },
-                  { n: "04", t: "Upload photos, share notes" },
-                ].map(({ n, t }) => (
+                {defaults.steps.map(({ n, t }) => (
                   <div key={n} className="flex items-start gap-3">
                     <span className="font-heading text-accent text-[13px] font-bold tracking-wider mt-0.5">
                       {n}
