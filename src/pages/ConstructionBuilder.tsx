@@ -8,6 +8,7 @@ import BuilderShell from "@/components/builder/BuilderShell";
 import BuilderControls from "@/components/builder/BuilderControls";
 import ScopeSummary from "@/components/builder/ScopeSummary";
 import VisualChoiceGrid, { VisualChoice } from "@/components/builder/VisualChoiceGrid";
+import ReviewCard from "@/components/builder/ReviewCard";
 import { Input, Textarea, Label, ChipGroup, FieldRow } from "@/components/intake/IntakeFieldKit";
 import FileDrop from "@/components/intake/FileDrop";
 import IntakeConfirmation from "@/components/intake/IntakeConfirmation";
@@ -101,7 +102,8 @@ const DECISION_MAKERS: VisualChoice[] = [
   { value: "architect", label: "Working with an architect" },
 ];
 
-const TOTAL = 7;
+const STEP_NAMES = ["Project", "Scope", "Style", "Context", "Plans", "Review"];
+const TOTAL = STEP_NAMES.length;
 
 const ConstructionBuilder = () => {
   const [params] = useSearchParams();
@@ -137,10 +139,9 @@ const ConstructionBuilder = () => {
     if (step === 0) return !!data.projectType;
     if (step === 1) return data.scopeItems.length > 0;
     if (step === 2) return !!data.style && data.priorities.length > 0;
-    if (step === 3) return !!data.investment;
-    if (step === 4) return !!data.propertyType && !!data.timeline && data.town.trim().length >= 2;
-    if (step === 5) return true;
-    if (step === 6) return !!data.name.trim() && /\S+@\S+\.\S+/.test(data.email) && data.phone.trim().length >= 7;
+    if (step === 3) return !!data.investment && !!data.propertyType && !!data.timeline && data.town.trim().length >= 2;
+    if (step === 4) return true;
+    if (step === 5) return !!data.name.trim() && /\S+@\S+\.\S+/.test(data.email) && data.phone.trim().length >= 7;
     return false;
   }, [step, data]);
 
@@ -290,10 +291,12 @@ const ConstructionBuilder = () => {
       <main>
         <BuilderShell
           eyebrow="Advanced Builder · Construction"
-          title="Build a premium construction scope brief"
-          subhead="An optional, in-depth pathway. Tell us how you'd like the project to feel and what matters most — we'll bring it to the walkthrough."
+          title="Build your construction project brief"
+          subhead="A guided pathway so your walkthrough starts aligned with how you want the project to feel."
           step={step}
           totalSteps={TOTAL}
+          stepNames={STEP_NAMES}
+          shortFormHref="/construction-intake"
           switchHref="/roofing-builder"
           switchLabel="Switch to roofing builder"
           summary={<ScopeSummary rows={summaryRows} />}
@@ -308,28 +311,28 @@ const ConstructionBuilder = () => {
             >
               {step === 0 && (
                 <>
-                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     What kind of project is this?
                   </h2>
-                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">Pick the best match. You can detail the scope next.</p>
+                  <p className="text-foreground/55 text-[13px] font-body mb-6">Pick the best match — scope comes next.</p>
                   <VisualChoiceGrid options={PROJECT_TYPES} value={data.projectType} onChange={(v) => set("projectType", v)} columns={3} />
                 </>
               )}
               {step === 1 && (
                 <>
-                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     What's in the scope?
                   </h2>
-                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">Pick everything you're considering — even if you're undecided.</p>
+                  <p className="text-foreground/55 text-[13px] font-body mb-6">Pick anything you're considering.</p>
                   <VisualChoiceGrid options={SCOPE_ITEMS} value={data.scopeItems} onChange={(v) => toggleMulti("scopeItems", v)} multi columns={3} />
                 </>
               )}
               {step === 2 && (
                 <>
-                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Style & priorities
                   </h2>
-                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">Direction now — refined together later.</p>
+                  <p className="text-foreground/55 text-[13px] font-body mb-6">Direction now — refined together later.</p>
                   <Label required>Style direction</Label>
                   <VisualChoiceGrid options={STYLE} value={data.style} onChange={(v) => set("style", v)} columns={2} />
                   <div className="mt-7">
@@ -340,32 +343,26 @@ const ConstructionBuilder = () => {
               )}
               {step === 3 && (
                 <>
-                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
-                    Investment tier
+                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    Project context
                   </h2>
-                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">
-                    Qualitative — not a price. It calibrates the spec and detailing we bring to the walkthrough.
-                  </p>
+                  <p className="text-foreground/55 text-[13px] font-body mb-6">A few details so we route the right Highlander team lead.</p>
+                  <Label required>Investment tier <span className="font-normal text-foreground/45 text-[11px] normal-case tracking-normal">— qualitative, not a price</span></Label>
                   <VisualChoiceGrid options={INVESTMENT} value={data.investment} onChange={(v) => set("investment", v)} columns={2} />
-                </>
-              )}
-              {step === 4 && (
-                <>
-                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
-                    Property & timeline
-                  </h2>
-                  <Label required>Property type</Label>
-                  <ChipGroup options={PROPERTY} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
-                  <div className="mt-6">
+                  <div className="mt-7">
                     <Label required>Ideal start window</Label>
                     <ChipGroup options={TIMELINE} value={data.timeline} onChange={(v) => set("timeline", v)} columns={3} />
                   </div>
                   <div className="mt-6">
-                    <Label>Where are you in planning?</Label>
+                    <Label required>Property type</Label>
+                    <ChipGroup options={PROPERTY} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
+                  </div>
+                  <div className="mt-6">
+                    <Label>Planning stage</Label>
                     <ChipGroup options={PLANNING_STAGE} value={data.planningStage} onChange={(v) => set("planningStage", v)} columns={2} />
                   </div>
                   <div className="mt-6">
-                    <Label>Who else is involved in the decision?</Label>
+                    <Label>Decision makers</Label>
                     <ChipGroup options={DECISION_MAKERS} value={data.decisionMakers} onChange={(v) => set("decisionMakers", v)} columns={2} />
                   </div>
                   <div className="mt-6">
@@ -374,45 +371,50 @@ const ConstructionBuilder = () => {
                   </div>
                 </>
               )}
-              {step === 5 && (
+              {step === 4 && (
                 <>
-                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Plans, inspiration & notes
                   </h2>
-                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">Drop in plans, sketches, or inspiration photos — all optional, all useful.</p>
+                  <p className="text-foreground/55 text-[13px] font-body mb-6">Plans, sketches, or inspiration photos — all optional.</p>
                   <FileDrop files={files} onChange={setFiles} />
                   <div className="mt-6">
                     <Label>Anything else the advisor should know</Label>
                     <Textarea
-                      rows={5}
+                      rows={4}
                       value={data.description}
                       onChange={(e) => set("description", e.target.value)}
-                      placeholder="Lot details, HOA constraints, architect involvement, must-have features…"
+                      placeholder="Lot details, HOA, architect involvement, must-haves…"
                     />
                   </div>
                 </>
               )}
-              {step === 6 && (
+              {step === 5 && (
                 <>
-                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
-                    How should we reach you?
+                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    Review & send
                   </h2>
-                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">One named advisor. One business day. Owner-led from first call.</p>
-                  <FieldRow>
-                    <div>
-                      <Label required>Full name</Label>
-                      <Input value={data.name} onChange={(e) => set("name", e.target.value)} />
+                  <p className="text-foreground/55 text-[13px] font-body mb-6">A named advisor reviews your brief and responds within one business day.</p>
+                  <ReviewCard rows={summaryRows}>
+                    <div className="pt-1">
+                      <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/55 mb-3">Your contact</p>
+                      <FieldRow>
+                        <div>
+                          <Label required>Full name</Label>
+                          <Input value={data.name} onChange={(e) => set("name", e.target.value)} />
+                        </div>
+                        <div>
+                          <Label required>Phone</Label>
+                          <Input value={data.phone} onChange={(e) => set("phone", e.target.value)} placeholder="(828) 555-0100" />
+                        </div>
+                      </FieldRow>
+                      <div className="mt-4">
+                        <Label required>Email</Label>
+                        <Input value={data.email} onChange={(e) => set("email", e.target.value)} type="email" />
+                      </div>
                     </div>
-                    <div>
-                      <Label required>Phone</Label>
-                      <Input value={data.phone} onChange={(e) => set("phone", e.target.value)} placeholder="(828) 555-0100" />
-                    </div>
-                  </FieldRow>
-                  <div className="mt-4">
-                    <Label required>Email</Label>
-                    <Input value={data.email} onChange={(e) => set("email", e.target.value)} type="email" />
-                  </div>
-                  {error && <p className="mt-4 text-[12.5px] text-destructive font-body">{error}</p>}
+                    {error && <p className="text-[12.5px] text-destructive font-body">{error}</p>}
+                  </ReviewCard>
                 </>
               )}
             </motion.div>
@@ -425,6 +427,7 @@ const ConstructionBuilder = () => {
             submitting={submitting}
             onBack={back}
             onNext={next}
+            finalLabel="Send project brief"
           />
         </BuilderShell>
       </main>
