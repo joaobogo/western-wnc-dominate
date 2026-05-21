@@ -38,6 +38,7 @@ const StickyMobileCTA = () => {
                 {/* Primary CTA — full gold, generous touch target */}
                 <Link
                   to="/consultation"
+                  onClick={() => trackEvent("cta_click", { label: "Start a Project", elementId: "sticky-cta-mobile-start" })}
                   className="flex-1 flex items-center justify-center gap-2 py-[14px] px-3 cta-gradient text-accent-foreground active:opacity-90 active:scale-[0.98] transition-all min-h-[52px]"
                 >
                   <MessageSquare className="w-4 h-4" />
