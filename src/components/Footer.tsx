@@ -45,10 +45,6 @@ const areaLinks = [
   { label: "Waynesville", href: "/service-areas/waynesville-nc" },
   { label: "Cullowhee", href: "/service-areas/cullowhee-nc" },
   { label: "Dillsboro", href: "/service-areas/dillsboro-nc" },
-  { label: "Sapphire", href: "/service-areas/sapphire-nc" },
-  { label: "Lake Toxaway", href: "/service-areas/lake-toxaway-nc" },
-  { label: "Whittier", href: "/service-areas/whittier-nc" },
-  { label: "Balsam", href: "/service-areas/balsam-nc" },
 ];
 
 const certifications = [
