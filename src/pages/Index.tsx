@@ -18,6 +18,7 @@ import SectionDivider from "@/components/SectionDivider";
 import SiteLoader from "@/components/SiteLoader";
 import ProofMoment from "@/components/ProofMoment";
 import BuiltForWNC from "@/components/BuiltForWNC";
+import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 
 const Index = () => {
@@ -79,6 +80,9 @@ const Index = () => {
 
         {/* 7. OurProcess — how we work */}
         <OurProcess />
+
+        {/* 7b. Optional advanced roofing builder — premium guided path */}
+        <BuilderPromoBlock variant="band" />
 
         {/* 8. ProofMoment — single best testimonial block */}
         <ProofMoment variant="social" />
