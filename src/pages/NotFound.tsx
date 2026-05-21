@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
+import { trackEvent } from "@/lib/analytics";
 
 const NotFound = () => {
   const location = useLocation();
