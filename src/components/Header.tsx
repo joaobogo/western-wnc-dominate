@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.png";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
