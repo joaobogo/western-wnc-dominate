@@ -4,40 +4,36 @@ import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 const roofingLinks = [
-  { label: "Asphalt Shingles", href: "/services/asphalt-shingles" },
-  { label: "Metal Roofing", href: "/services/metal-roofing" },
-  { label: "Cedar Shake", href: "/services/cedar-shake" },
-  { label: "Flat & Low-Slope", href: "/services/flat-roofing" },
-  { label: "Roof Repair", href: "/services/roof-repair" },
-  { label: "Storm Damage & Insurance", href: "/services/storm-damage" },
-  { label: "Gutter Systems", href: "/services/gutters" },
+  { label: "Roof Replacement", href: "/roofing/roof-replacement" },
+  { label: "Roof Repair", href: "/roofing/roof-repair" },
+  { label: "Metal Roofing", href: "/roofing/metal" },
+  { label: "Brava / Synthetic", href: "/roofing/brava-synthetic" },
+  { label: "Storm Damage", href: "/roofing/storm-damage" },
+  { label: "Commercial Roofing", href: "/roofing/commercial" },
 ];
 
 const constructionLinks = [
-  { label: "Home Additions", href: "/construction/additions" },
-  { label: "Renovations", href: "/construction/renovations" },
-  { label: "Siding & Exteriors", href: "/construction/exterior" },
-  { label: "Outdoor Living", href: "/construction/outdoor-living" },
-  { label: "Custom Projects", href: "/construction/custom" },
   { label: "Construction Division", href: "/construction" },
-  { label: "Construction Consultation", href: "/construction/consultation" },
+  { label: "Home Additions", href: "/construction/additions" },
+  { label: "Outdoor Living", href: "/construction/outdoor-living" },
+  { label: "Start a Project", href: "/consultation" },
 ];
 
 const resourceLinks = [
+  { label: "Project Gallery", href: "/gallery" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Blog & Insights", href: "/blog" },
-  { label: "Storm Damage Guide", href: "/blog" },
-  { label: "Virtual Roof Designer", href: "/roof-designer" },
-  { label: "Financing Options", href: "/financing" },
-  { label: "Planning Tools", href: "/free-tools" },
+  { label: "Financing", href: "/financing" },
+  { label: "Certifications", href: "/certifications" },
 ];
 
 const companyLinks = [
   { label: "Our Story", href: "/about" },
-  { label: "Our Process", href: "/about" },
-  { label: "Project Gallery", href: "/gallery" },
+  { label: "Our Team", href: "/team" },
+  { label: "Service Areas", href: "/service-areas" },
   { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
-  { label: "Request a Consultation", href: "/consultation" },
+  { label: "Request Inspection", href: "/request-inspection" },
 ];
 
 const areaLinks = [
@@ -49,6 +45,10 @@ const areaLinks = [
   { label: "Waynesville", href: "/service-areas/waynesville-nc" },
   { label: "Cullowhee", href: "/service-areas/cullowhee-nc" },
   { label: "Dillsboro", href: "/service-areas/dillsboro-nc" },
+  { label: "Sapphire", href: "/service-areas/sapphire-nc" },
+  { label: "Lake Toxaway", href: "/service-areas/lake-toxaway-nc" },
+  { label: "Whittier", href: "/service-areas/whittier-nc" },
+  { label: "Balsam", href: "/service-areas/balsam-nc" },
 ];
 
 const certifications = [
