@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getServiceTownEntriesForService } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
@@ -145,6 +146,14 @@ const MetalRoofing = () => {
             </Accordion>
           </div>
         </section>
+
+        <BuilderPromoBlock
+          variant="band"
+          preset="metal_upgrade"
+          title="Configure your standing seam project"
+          body="An optional guided pathway for homeowners upgrading to metal. Specify profile, color direction, snow guards, and mountain-exposure detailing — we use it to prepare a precise on-site assessment."
+          ctaLabel="Build Your Metal Roof Plan"
+        />
       </main>
       <Footer />
       <StickyMobileCTA />
