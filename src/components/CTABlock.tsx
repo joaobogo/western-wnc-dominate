@@ -68,6 +68,7 @@ const CTABlock = () => {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 md:mb-16">
                   <Link
                     to="/consultation"
+                    onClick={() => trackEvent("cta_click", { label: "Start Your Project", elementId: "cta-block-start" })}
                     className="group cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] md:text-[15px] px-10 md:px-14 py-[15px] md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide min-h-[54px]"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
