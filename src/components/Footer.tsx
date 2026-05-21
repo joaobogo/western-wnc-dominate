@@ -36,13 +36,18 @@ const companyLinks = [
   { label: "Request Inspection", href: "/request-inspection" },
 ];
 
-const areaLinks = [
+// Tier 1 — primary authority markets (premium residential focus)
+const tier1Areas = [
   { label: "Highlands", href: "/service-areas/highlands-nc" },
   { label: "Cashiers", href: "/service-areas/cashiers-nc" },
   { label: "Franklin", href: "/service-areas/franklin-nc" },
   { label: "Sylva", href: "/service-areas/sylva-nc" },
-  { label: "Bryson City", href: "/service-areas/bryson-city-nc" },
+];
+
+// Tier 2 — extended WNC coverage
+const tier2Areas = [
   { label: "Waynesville", href: "/service-areas/waynesville-nc" },
+  { label: "Bryson City", href: "/service-areas/bryson-city-nc" },
   { label: "Cullowhee", href: "/service-areas/cullowhee-nc" },
   { label: "Dillsboro", href: "/service-areas/dillsboro-nc" },
 ];
@@ -188,15 +193,29 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Service Areas */}
+          {/* Service Areas — tiered */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Service Areas</h4>
+            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Primary Markets</h4>
             <nav className="flex flex-col gap-2">
-              {areaLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
+              {tier1Areas.map((l) => (
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  className="group text-[14px] font-medium text-primary-foreground/85 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-1 font-body leading-relaxed"
+                >
+                  {l.label}
+                  <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                </Link>
+              ))}
+            </nav>
+
+            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mt-6 mb-3">Also Serving</h4>
+            <nav className="flex flex-col gap-1.5">
+              {tier2Areas.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
             <Link
               to="/service-areas"
-              className="mt-3 text-xs font-body font-medium text-[hsl(var(--highland-gold))] hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors inline-flex items-center gap-1"
+              className="mt-4 text-xs font-body font-medium text-[hsl(var(--highland-gold))] hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors inline-flex items-center gap-1"
             >
               View All Areas <ArrowRight className="w-3 h-3" />
             </Link>
@@ -204,12 +223,16 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom bar */}
+      {/* Bottom bar — license + legal */}
       <div className="border-t border-primary-foreground/6">
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[11px] text-primary-foreground/30 font-body tracking-wide">
-            © {new Date().getFullYear()} Highlander Roofing & Construction. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[11px] text-primary-foreground/35 font-body tracking-wide">
+            <span>© {new Date().getFullYear()} Highlander Roofing & Construction.</span>
+            <span className="hidden md:inline text-primary-foreground/15">·</span>
+            <span>NC General Contractor License #87234</span>
+            <span className="hidden md:inline text-primary-foreground/15">·</span>
+            <span>Fully Insured</span>
+          </div>
           <div className="flex items-center gap-4">
             <Link to="/privacy" className="text-[11px] text-primary-foreground/30 hover:text-primary-foreground/50 font-body tracking-wide transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="text-[11px] text-primary-foreground/30 hover:text-primary-foreground/50 font-body tracking-wide transition-colors">Terms of Service</Link>
