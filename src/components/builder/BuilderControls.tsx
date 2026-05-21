@@ -1,0 +1,40 @@
+import { ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
+
+type Props = {
+  step: number;
+  total: number;
+  canNext: boolean;
+  submitting?: boolean;
+  onBack: () => void;
+  onNext: () => void;
+  nextLabel?: string;
+  finalLabel?: string;
+};
+
+const BuilderControls = ({ step, total, canNext, submitting, onBack, onNext, nextLabel = "Continue", finalLabel = "Submit scope brief" }: Props) => {
+  const isLast = step === total - 1;
+  return (
+    <div className="flex items-center justify-between gap-3 mt-8 pt-6 border-t border-border/60">
+      <button
+        type="button"
+        onClick={onBack}
+        disabled={step === 0}
+        className="inline-flex items-center gap-1.5 text-[13px] font-body text-foreground/55 hover:text-foreground disabled:opacity-0 transition-all"
+      >
+        <ArrowLeft className="w-3.5 h-3.5" /> Back
+      </button>
+      <button
+        type="button"
+        onClick={onNext}
+        disabled={!canNext || submitting}
+        className="inline-flex items-center gap-2 cta-gradient text-accent-foreground font-heading font-semibold text-[13.5px] px-6 py-3 rounded-md disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 active:scale-[0.98] transition-all"
+      >
+        {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
+        {submitting ? "Sending..." : isLast ? finalLabel : nextLabel}
+        {!submitting && <ArrowRight className="w-3.5 h-3.5" />}
+      </button>
+    </div>
+  );
+};
+
+export default BuilderControls;

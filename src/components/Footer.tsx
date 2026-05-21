@@ -10,6 +10,7 @@ const roofingLinks = [
   { label: "Brava / Synthetic", href: "/roofing/brava-synthetic" },
   { label: "Storm Damage", href: "/roofing/storm-damage" },
   { label: "Commercial Roofing", href: "/roofing/commercial" },
+  { label: "Build Your Roof", href: "/roofing-builder" },
 ];
 
 const constructionLinks = [
@@ -17,6 +18,7 @@ const constructionLinks = [
   { label: "Home Additions", href: "/construction/additions" },
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
   { label: "Start a Project", href: "/consultation" },
+  { label: "Build Your Project", href: "/construction-builder" },
 ];
 
 const resourceLinks = [

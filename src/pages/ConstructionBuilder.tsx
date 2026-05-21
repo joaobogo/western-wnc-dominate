@@ -1,0 +1,384 @@
+import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
+import BuilderShell from "@/components/builder/BuilderShell";
+import BuilderControls from "@/components/builder/BuilderControls";
+import ScopeSummary from "@/components/builder/ScopeSummary";
+import VisualChoiceGrid, { VisualChoice } from "@/components/builder/VisualChoiceGrid";
+import { Input, Textarea, Label, ChipGroup, FieldRow } from "@/components/intake/IntakeFieldKit";
+import FileDrop from "@/components/intake/FileDrop";
+import IntakeConfirmation from "@/components/intake/IntakeConfirmation";
+import { supabase } from "@/integrations/supabase/client";
+import { scoreLead } from "@/lib/lead-scoring";
+import { trackEvent } from "@/lib/analytics";
+import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
+
+import heroAddition from "@/assets/gallery/cedar-001.jpg";
+import heroDeck from "@/assets/gallery/cedar-002.jpg";
+import heroRenov from "@/assets/gallery/asphalt-005.jpg";
+import heroCustom from "@/assets/gallery/metal-010.jpg";
+import heroOutdoor from "@/assets/gallery/cedar-004.webp";
+import heroFlatwork from "@/assets/gallery/asphalt-006.webp";
+
+const PROJECT_TYPES: VisualChoice[] = [
+  { value: "addition", label: "Addition / Extension", sub: "Expand the footprint of your home", image: heroAddition },
+  { value: "outdoor_living", label: "Outdoor Living", sub: "Decks, porches, pergolas", image: heroOutdoor },
+  { value: "renovation", label: "Interior Renovation", sub: "Whole-room or full-home", image: heroRenov },
+  { value: "custom_build", label: "Custom Build", sub: "Ground-up residence", image: heroCustom, badge: "Signature" },
+  { value: "flatwork", label: "Flatwork & Hardscape", sub: "Patios, walkways, fire pits", image: heroFlatwork },
+  { value: "exterior", label: "Exterior Improvements", sub: "Siding, trim, doors, windows", image: heroDeck },
+];
+
+const SCOPE_ITEMS: VisualChoice[] = [
+  { value: "structural", label: "Structural framing" },
+  { value: "kitchen", label: "Kitchen build" },
+  { value: "primary_bath", label: "Primary bath" },
+  { value: "secondary_bath", label: "Secondary bath" },
+  { value: "deck_porch", label: "Deck or covered porch" },
+  { value: "pergola", label: "Pergola or pavilion" },
+  { value: "fireplace", label: "Stone fireplace / fire pit" },
+  { value: "siding", label: "Siding / exterior" },
+  { value: "windows_doors", label: "Windows & doors" },
+  { value: "roofing_included", label: "Includes roofing scope" },
+  { value: "site_work", label: "Site work / grading" },
+  { value: "permits_design", label: "Permits & design assistance" },
+];
+
+const STYLE: VisualChoice[] = [
+  { value: "mountain_modern", label: "Mountain Modern", sub: "Clean lines, natural materials" },
+  { value: "traditional_craftsman", label: "Traditional Craftsman", sub: "Stone, timber, exposed detail" },
+  { value: "rustic_lodge", label: "Rustic Lodge", sub: "Heavy timber, cedar, warm tones" },
+  { value: "transitional", label: "Transitional", sub: "Balanced between traditional & modern" },
+  { value: "guidance", label: "Open to recommendations", sub: "Help shape the direction" },
+];
+
+const PRIORITIES: VisualChoice[] = [
+  { value: "quality_craft", label: "Premium Craftsmanship", sub: "No compromise on detail" },
+  { value: "timeline_certainty", label: "Timeline Certainty", sub: "Clear schedule, hit dates" },
+  { value: "value_engineering", label: "Smart Value", sub: "Highest impact per dollar" },
+  { value: "energy_efficiency", label: "Energy Efficiency", sub: "Long-term performance" },
+  { value: "resale", label: "Resale Value", sub: "Marketable specification" },
+  { value: "design_collab", label: "Design Collaboration", sub: "We work with your architect or ours" },
+];
+
+const INVESTMENT: VisualChoice[] = [
+  { value: "foundational", label: "Foundational", sub: "Quality build, considered spec" },
+  { value: "elevated", label: "Elevated", sub: "Custom finishes, designer-grade detailing" },
+  { value: "signature", label: "Signature", sub: "Top-tier, fully custom, no compromise" },
+  { value: "guidance", label: "Need guidance", sub: "Help me understand the trade-offs" },
+];
+
+const TIMELINE: VisualChoice[] = [
+  { value: "30days", label: "Start within 30 days" },
+  { value: "90days", label: "Within 90 days" },
+  { value: "6months", label: "3–6 months" },
+  { value: "12months", label: "6–12 months" },
+  { value: "exploring", label: "Planning ahead" },
+];
+
+const PROPERTY: VisualChoice[] = [
+  { value: "primary", label: "Primary residence" },
+  { value: "second_home", label: "Second home" },
+  { value: "new_build", label: "New build / lot" },
+  { value: "commercial", label: "Commercial property" },
+];
+
+const TOTAL = 7;
+
+const ConstructionBuilder = () => {
+  const [params] = useSearchParams();
+  const [step, setStep] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [files, setFiles] = useState<File[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  const [data, setData] = useState({
+    projectType: params.get("type") || "",
+    scopeItems: [] as string[],
+    style: "",
+    priorities: [] as string[],
+    investment: "",
+    timeline: "",
+    propertyType: "",
+    town: params.get("town") || "",
+    description: "",
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const set = <K extends keyof typeof data>(k: K, v: (typeof data)[K]) =>
+    setData((d) => ({ ...d, [k]: v }));
+  const toggleMulti = (k: "scopeItems" | "priorities", v: string) =>
+    setData((d) => ({ ...d, [k]: d[k].includes(v) ? d[k].filter((x) => x !== v) : [...d[k], v] }));
+
+  const stepValid = useMemo(() => {
+    if (step === 0) return !!data.projectType;
+    if (step === 1) return data.scopeItems.length > 0;
+    if (step === 2) return !!data.style && data.priorities.length > 0;
+    if (step === 3) return !!data.investment;
+    if (step === 4) return !!data.propertyType && !!data.timeline && data.town.trim().length >= 2;
+    if (step === 5) return true;
+    if (step === 6) return !!data.name.trim() && /\S+@\S+\.\S+/.test(data.email) && data.phone.trim().length >= 7;
+    return false;
+  }, [step, data]);
+
+  const labelFor = (opts: VisualChoice[], v: string) => opts.find((o) => o.value === v)?.label;
+  const labelsFor = (opts: VisualChoice[], vs: string[]) =>
+    vs.map((v) => opts.find((o) => o.value === v)?.label).filter(Boolean) as string[];
+
+  const summaryRows = [
+    { label: "Project type", value: labelFor(PROJECT_TYPES, data.projectType) },
+    { label: "Scope includes", value: labelsFor(SCOPE_ITEMS, data.scopeItems) },
+    { label: "Style direction", value: labelFor(STYLE, data.style) },
+    { label: "Priorities", value: labelsFor(PRIORITIES, data.priorities) },
+    { label: "Investment tier", value: labelFor(INVESTMENT, data.investment) },
+    { label: "Timeline", value: labelFor(TIMELINE, data.timeline) },
+    { label: "Property", value: labelFor(PROPERTY, data.propertyType) },
+    { label: "Town", value: data.town || null },
+  ];
+
+  const back = () => setStep((s) => Math.max(0, s - 1));
+  const next = async () => {
+    if (!stepValid) return;
+    if (step < TOTAL - 1) {
+      setStep((s) => s + 1);
+      return;
+    }
+    setSubmitting(true);
+    setError(null);
+    try {
+      const folder = newSessionFolder();
+      let uploadedPaths: string[] = [];
+      if (files.length) {
+        const u = await uploadIntakeFiles(folder, files);
+        uploadedPaths = u.ok.map((f) => f.path);
+      }
+      const score = scoreLead({
+        serviceCategory: "construction",
+        projectType: data.projectType,
+        timeline: data.timeline,
+        propertyType: data.propertyType,
+        town: data.town,
+        hasPlans: uploadedPaths.length > 0,
+        description: data.description,
+      }) + 14; // builder leads carry more depth
+
+      const { error: insertErr } = await supabase.from("consultation_requests").insert({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        town: data.town,
+        project_type: data.projectType,
+        service_category: "construction",
+        timeline: data.timeline,
+        urgency: data.timeline === "30days" ? "high" : data.timeline === "90days" ? "medium" : "low",
+        property_type: data.propertyType,
+        project_description: data.description || null,
+        source: "construction_builder",
+        lead_score: score,
+        metadata: {
+          builder: {
+            scope_items: data.scopeItems,
+            style: data.style,
+            priorities: data.priorities,
+            investment_tier: data.investment,
+          },
+          upload_folder: folder,
+          upload_paths: uploadedPaths,
+          referrer: typeof document !== "undefined" ? document.referrer : null,
+          utm: Object.fromEntries(params.entries()),
+        },
+      });
+      if (insertErr) throw insertErr;
+      trackEvent("form_submit", {
+        label: "Construction Builder",
+        elementId: "construction-builder",
+        metadata: { project: data.projectType, investment: data.investment, score, plans: uploadedPaths.length },
+      });
+      setSubmitted(true);
+    } catch (e: any) {
+      setError(e?.message || "Something went wrong. Please call (828) 397-9211.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  if (submitted) {
+    return (
+      <>
+        <SEOHead title="Scope brief received | Highlander" description="Your construction scope brief has been received." path="/construction-builder" />
+        <Header />
+        <main className="pt-28 pb-20 bg-background">
+          <div className="max-w-2xl mx-auto px-6">
+            <IntakeConfirmation
+              title="Your project brief is in good hands."
+              body="A Highlander project advisor will personally review your scope brief and reach out within one business day."
+              nextSteps={[
+                "Your advisor reviews the brief and matches you to the right Highlander team lead.",
+                "We confirm scope on a brief call and schedule an on-site walkthrough.",
+                "You receive a written proposal aligned to your style, priorities, and investment tier — with a clear schedule and warranty terms.",
+              ]}
+            />
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <SEOHead
+        title="Build Your Construction Project | Highlander"
+        description="An optional guided builder for premium construction projects in Western North Carolina. Build a scope brief — not an instant quote."
+        path="/construction-builder"
+        jsonLd={breadcrumbSchema([
+          { name: "Home", url: "/" },
+          { name: "Build Your Construction Project", url: "/construction-builder" },
+        ])}
+      />
+      <Header />
+      <main>
+        <BuilderShell
+          eyebrow="Advanced Builder · Construction"
+          title="Build a premium construction scope brief"
+          subhead="An optional, in-depth pathway. Tell us how you'd like the project to feel and what matters most — we'll bring it to the walkthrough."
+          step={step}
+          totalSteps={TOTAL}
+          switchHref="/roofing-builder"
+          switchLabel="Switch to roofing builder"
+          summary={<ScopeSummary rows={summaryRows} />}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={step}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {step === 0 && (
+                <>
+                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    What kind of project is this?
+                  </h2>
+                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">Pick the best match. You can detail the scope next.</p>
+                  <VisualChoiceGrid options={PROJECT_TYPES} value={data.projectType} onChange={(v) => set("projectType", v)} columns={3} />
+                </>
+              )}
+              {step === 1 && (
+                <>
+                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    What's in the scope?
+                  </h2>
+                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">Pick everything you're considering — even if you're undecided.</p>
+                  <VisualChoiceGrid options={SCOPE_ITEMS} value={data.scopeItems} onChange={(v) => toggleMulti("scopeItems", v)} multi columns={3} />
+                </>
+              )}
+              {step === 2 && (
+                <>
+                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    Style & priorities
+                  </h2>
+                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">Direction now — refined together later.</p>
+                  <Label required>Style direction</Label>
+                  <VisualChoiceGrid options={STYLE} value={data.style} onChange={(v) => set("style", v)} columns={2} />
+                  <div className="mt-7">
+                    <Label required>What matters most</Label>
+                    <VisualChoiceGrid options={PRIORITIES} value={data.priorities} onChange={(v) => toggleMulti("priorities", v)} multi columns={3} />
+                  </div>
+                </>
+              )}
+              {step === 3 && (
+                <>
+                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    Investment tier
+                  </h2>
+                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">
+                    Qualitative — not a price. It calibrates the spec and detailing we bring to the walkthrough.
+                  </p>
+                  <VisualChoiceGrid options={INVESTMENT} value={data.investment} onChange={(v) => set("investment", v)} columns={2} />
+                </>
+              )}
+              {step === 4 && (
+                <>
+                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    Property & timeline
+                  </h2>
+                  <Label required>Property type</Label>
+                  <ChipGroup options={PROPERTY} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
+                  <div className="mt-6">
+                    <Label required>Ideal start window</Label>
+                    <ChipGroup options={TIMELINE} value={data.timeline} onChange={(v) => set("timeline", v)} columns={3} />
+                  </div>
+                  <div className="mt-6">
+                    <Label required>Property town / area</Label>
+                    <Input value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Highlands, Cashiers, Franklin, Sylva…" />
+                  </div>
+                </>
+              )}
+              {step === 5 && (
+                <>
+                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    Plans, inspiration & notes
+                  </h2>
+                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">Drop in plans, sketches, or inspiration photos — all optional, all useful.</p>
+                  <FileDrop files={files} onChange={setFiles} />
+                  <div className="mt-6">
+                    <Label>Anything else the advisor should know</Label>
+                    <Textarea
+                      rows={5}
+                      value={data.description}
+                      onChange={(e) => set("description", e.target.value)}
+                      placeholder="Lot details, HOA constraints, architect involvement, must-have features…"
+                    />
+                  </div>
+                </>
+              )}
+              {step === 6 && (
+                <>
+                  <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                    How should we reach you?
+                  </h2>
+                  <p className="text-foreground/55 text-[13.5px] font-body mb-6">One named advisor. One business day. Owner-led from first call.</p>
+                  <FieldRow>
+                    <div>
+                      <Label required>Full name</Label>
+                      <Input value={data.name} onChange={(e) => set("name", e.target.value)} />
+                    </div>
+                    <div>
+                      <Label required>Phone</Label>
+                      <Input value={data.phone} onChange={(e) => set("phone", e.target.value)} placeholder="(828) 555-0100" />
+                    </div>
+                  </FieldRow>
+                  <div className="mt-4">
+                    <Label required>Email</Label>
+                    <Input value={data.email} onChange={(e) => set("email", e.target.value)} type="email" />
+                  </div>
+                  {error && <p className="mt-4 text-[12.5px] text-destructive font-body">{error}</p>}
+                </>
+              )}
+            </motion.div>
+          </AnimatePresence>
+
+          <BuilderControls
+            step={step}
+            total={TOTAL}
+            canNext={stepValid}
+            submitting={submitting}
+            onBack={back}
+            onNext={next}
+          />
+        </BuilderShell>
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default ConstructionBuilder;

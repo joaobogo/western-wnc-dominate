@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Home, HardHat, Phone } from "lucide-react";
+import { ArrowRight, Home, HardHat, Phone, Sparkles } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -71,6 +71,42 @@ const IntakeChooser = () => (
               </Link>
             </motion.div>
           ))}
+        </div>
+
+        {/* Advanced builder pathway */}
+        <div className="mt-12 max-w-3xl mx-auto">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="flex-1 h-px bg-border" />
+            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.28em] text-foreground/45">Or go deeper</span>
+            <div className="flex-1 h-px bg-border" />
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link
+              to="/roofing-builder"
+              className="group flex items-center gap-3 text-left bg-[hsl(var(--heritage-green)/0.04)] border border-[hsl(var(--heritage-green)/0.2)] rounded-lg px-5 py-4 hover:border-[hsl(var(--heritage-green))] transition-all"
+            >
+              <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold))] flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <p className="text-[12.5px] font-heading font-bold text-foreground leading-tight">Build a roofing scope brief</p>
+                <p className="text-[11.5px] font-body text-foreground/55 leading-snug">Material, priorities, investment tier — guided</p>
+              </div>
+              <ArrowRight className="w-3.5 h-3.5 text-foreground/40 group-hover:text-[hsl(var(--highland-gold))] group-hover:translate-x-0.5 transition-all" />
+            </Link>
+            <Link
+              to="/construction-builder"
+              className="group flex items-center gap-3 text-left bg-[hsl(var(--highland-gold)/0.05)] border border-[hsl(var(--highland-gold)/0.25)] rounded-lg px-5 py-4 hover:border-[hsl(var(--highland-gold))] transition-all"
+            >
+              <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold))] flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <p className="text-[12.5px] font-heading font-bold text-foreground leading-tight">Build a construction scope brief</p>
+                <p className="text-[11.5px] font-body text-foreground/55 leading-snug">Scope, style, priorities — guided</p>
+              </div>
+              <ArrowRight className="w-3.5 h-3.5 text-foreground/40 group-hover:text-[hsl(var(--highland-gold))] group-hover:translate-x-0.5 transition-all" />
+            </Link>
+          </div>
+          <p className="text-[11px] font-body text-foreground/40 mt-3 text-center">
+            Advanced builders are optional. They organize your project — they are not instant quotes.
+          </p>
         </div>
 
         <div className="mt-10 pt-8 border-t border-border max-w-md mx-auto">
