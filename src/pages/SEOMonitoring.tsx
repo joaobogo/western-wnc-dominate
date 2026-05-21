@@ -17,6 +17,7 @@ const issueStyles = {
 
 const tabConfig = [
   { key: "notFound", label: "New 404s", icon: Link2 },
+  { key: "conversions", label: "Conversions", icon: Target },
   { key: "crawl", label: "Crawl & Robots", icon: ShieldAlert },
   { key: "sitemap", label: "Sitemap Gaps", icon: FileWarning },
   { key: "index", label: "Index Loss", icon: SearchX },
