@@ -54,11 +54,6 @@ const TwoPillars = () => {
             now lead our construction work —{" "}
             <span className="text-[hsl(var(--highland-gold))]">additions, porches, and outdoor living</span>.
           </p>
-
-          <p className="mt-6 text-sm md:text-base font-body text-foreground/55 max-w-xl mx-auto leading-relaxed">
-            We don&apos;t take on full custom new builds. We take on the work we can finish
-            to a Highlander standard.
-          </p>
         </motion.div>
       </div>
     </section>
