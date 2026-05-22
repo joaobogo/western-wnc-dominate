@@ -84,9 +84,6 @@ const Index = () => {
         {/* 7. OurProcess — how we work */}
         <OurProcess />
 
-        {/* 7b. Optional advanced builders — roofing + construction guided paths */}
-        <BuilderPromoBlock variant="band" />
-        <BuilderPromoBlock mode="construction" variant="band" />
 
         {/* 8. ProofMoment — single best testimonial block */}
         <ProofMoment variant="social" />
