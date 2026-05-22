@@ -92,8 +92,9 @@ const App = () => (
           <Route path="/construction/outdoor-living" element={<OutdoorLiving />} />
           <Route path="/construction/consultation" element={<ConstructionConsultation />} />
           {/* Redirects for retired construction routes */}
-          <Route path="/construction/renovations" element={<Navigate to="/construction" replace />} />
-          <Route path="/construction/exterior" element={<Navigate to="/construction" replace />} />
+          <Route path="/construction/renovations" element={<Renovations />} />
+          <Route path="/construction/siding" element={<Siding />} />
+          <Route path="/construction/exterior" element={<Navigate to="/construction/siding" replace />} />
           <Route path="/construction/custom" element={<Navigate to="/construction" replace />} />
           <Route path="/construction/flatwork" element={<Navigate to="/construction" replace />} />
 
