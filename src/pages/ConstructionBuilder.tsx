@@ -63,7 +63,7 @@ const PRIORITIES: VisualChoice[] = [
   { value: "value_engineering", label: "Smart Value", sub: "Highest impact per dollar" },
   { value: "indoor_outdoor", label: "Indoor / Outdoor Flow", sub: "Connect the home to the view" },
   { value: "resale", label: "Resale Value", sub: "Marketable specification" },
-  { value: "design_collab", label: "Design Guidance", sub: "We can collaborate with a designer" },
+  { value: "scoping_clarity", label: "Scoping Clarity", sub: "Defined written deliverables" },
 ];
 
 const INVESTMENT: VisualChoice[] = [

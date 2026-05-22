@@ -153,7 +153,7 @@ const ConstructionDivision = () => {
                   ))}
                 </div>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
-                  {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Design Guidance"].map((item) => (
+                  {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Scoping Clarity"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.4)]" />
                       <span className="text-primary-foreground/25 text-[11px] font-body font-medium tracking-wide">{item}</span>

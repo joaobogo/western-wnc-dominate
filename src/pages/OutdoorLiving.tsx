@@ -52,12 +52,6 @@ const materials = [
   { icon: Shield, title: "Metal Roofing on Outdoor Structures", detail: "Standing seam and exposed-fastener metal roofing for covered porches and pavilions. Excellent drainage, long lifespan, and clean aesthetic that pairs well with timber framing." },
 ];
 
-const designGuidance = [
-  { title: "Start With How You'll Use It", detail: "Before sketching layouts, define the activities. Cooking requires utilities. Entertaining requires flow. Relaxation requires privacy. The use case drives the design — not the other way around." },
-  { title: "Connect Inside and Outside", detail: "The transition from interior to exterior space should feel effortless. Door placement, floor-level alignment, sightlines, and material continuity all contribute to a connected experience." },
-  { title: "Plan for Evening & Off-Season", detail: "The best outdoor spaces work after sunset and beyond summer. Lighting design, heating options, wind protection, and enclosure flexibility extend your investment across more months and more hours." },
-  { title: "Think About Maintenance Honestly", detail: "Every material has a maintenance reality. We'll help you choose based on how much upkeep you're willing to do — not just how something looks in a catalog." },
-];
 
 const processSteps = [
   { number: "01", icon: Phone, title: "Vision & Lifestyle Discussion", description: "We learn how you want to live outdoors — activities, timing, entertaining style, and aesthetic preferences. This shapes every design decision." },
@@ -419,34 +413,6 @@ const OutdoorLiving = () => {
           </div>
         </section>
 
-        {/* ─── DESIGN GUIDANCE (dark) ─── */}
-        <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
-          <div className="section-padding">
-            <div className="container-tight">
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Planning Guidance</span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
-                  Before You Build,<br className="hidden md:block" /> Think About This.
-                </h2>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                {designGuidance.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <div className="flex items-start gap-4">
-                      <div className="w-1 h-8 bg-[hsl(var(--highland-gold)/0.3)] rounded-full mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2">{item.title}</h3>
-                        <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ─── FAQs ─── */}
         <section className="section-padding bg-secondary tartan-bg">
