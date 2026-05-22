@@ -54,7 +54,7 @@ const StormResponseGuide = () => {
 
   const urgencyConfig = {
     emergency: { color: "text-red-500", bg: "bg-red-500/10", label: "Emergency — Call Now", message: "You have multiple critical damage indicators. Contact us immediately for emergency response.", responseTime: "Same-day response" },
-    urgent: { color: "text-amber-500", bg: "bg-amber-500/10", label: "Urgent — Schedule Within 24hrs", message: "You have at least one critical indicator. Schedule a professional inspection within 24 hours.", responseTime: "24-hour response" },
+    urgent: { color: "text-amber-500", bg: "bg-amber-500/10", label: "Urgent — Schedule Within Rapids", message: "You have at least one critical indicator. Schedule a professional inspection rapidly.", responseTime: "Rapid response" },
     soon: { color: "text-[hsl(var(--highland-gold))]", bg: "bg-[hsl(var(--highland-gold)/0.1)]", label: "Schedule This Week", message: "You have warning signs that should be professionally assessed soon to prevent further damage.", responseTime: "48-hour response" },
     monitor: { color: "text-primary", bg: "bg-primary/10", label: "Monitor & Document", message: "No critical signs detected, but continue monitoring. Document anything that changes and consider a preventive inspection.", responseTime: "Scheduled at your convenience" },
   };

@@ -30,7 +30,7 @@ const presets: Record<string, { items: ProofItem[]; accent?: string }> = {
     items: [
       { icon: Star, text: "4.9★ Google Rating", stat: "4.9" },
       { icon: CheckCircle2, text: "150+ Verified Reviews" },
-      { icon: Phone, text: "24hr Response Guarantee" },
+      { icon: Phone, text: "Rapid Response Guarantee" },
     ],
   },
   stats: {

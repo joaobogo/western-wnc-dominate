@@ -140,7 +140,7 @@ const townProofMap: Record<string, TownProofContent> = {
   "sylva-nc": {
     stats: [
       { label: "Regional Hub", value: "Jackson Co.", detail: "Commercial and residential coverage" },
-      { label: "Response", value: "24hr", detail: "Storm and leak calls prioritized" },
+      { label: "Response", value: "Rapid", detail: "Storm and leak calls prioritized" },
       { label: "Coverage", value: "Mixed Use", detail: "Homes, rentals, and commercial roofs" },
     ],
     jobHighlights: [

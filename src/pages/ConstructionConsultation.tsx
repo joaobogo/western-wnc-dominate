@@ -284,7 +284,7 @@ export default function ConstructionConsultation() {
       label: "Contact",
       icon: DoorOpen,
       question: "How should we reach you?",
-      hint: "A project advisor will call you within 24 hours to discuss your project in detail — no sales scripts, just a real conversation.",
+      hint: "A project advisor will call you rapidly to discuss your project in detail — no sales scripts, just a real conversation.",
       content: (
         <div className="space-y-4">
           <div>
@@ -404,7 +404,7 @@ export default function ConstructionConsultation() {
               show={true}
               icon={<HardHat className="w-8 h-8 text-[hsl(var(--highland-gold))]" />}
               headline="Your project consultation is confirmed."
-              message={`Thank you, ${form.name}. A construction project advisor will reach out within 24 hours to discuss your ${form.projectType === "not-sure" ? "project" : form.projectType.replace(/-/g, " ")} in detail.`}
+              message={`Thank you, ${form.name}. A construction project advisor will reach out rapidly to discuss your ${form.projectType === "not-sure" ? "project" : form.projectType.replace(/-/g, " ")} in detail.`}
               secondaryMessage="We'll come prepared with relevant questions and initial thoughts based on what you've shared."
               action={
                 <div className="flex flex-col sm:flex-row gap-3 mt-4">

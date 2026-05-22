@@ -116,7 +116,7 @@ const InspectionForm = () => {
               className="text-dark-section-foreground/55 font-body text-sm leading-relaxed mb-5 max-w-md mx-auto"
             >
               A Highlander project advisor — not a call center, not an automated system — will
-              personally review your details and reach out within 24 hours to discuss your property,
+              personally review your details and reach out rapidly to discuss your property,
               scope, materials, and next steps.
             </motion.p>
 
@@ -130,7 +130,7 @@ const InspectionForm = () => {
               <div className="flex flex-col gap-3">
                 {[
                   { icon: User, text: "You'll speak with a local project advisor" },
-                  { icon: Clock, text: "Response within 24 hours — guaranteed" },
+                  { icon: Clock, text: "Response rapidly — guaranteed" },
                   { icon: Shield, text: "No obligation · No sales pressure" },
                 ].map((item, i) => (
                   <motion.div
@@ -204,7 +204,7 @@ const InspectionForm = () => {
               </ScrollReveal>
               <div className="space-y-5">
                 {[
-                  { icon: Clock, text: "Personal response within 24 hours — not an auto-reply" },
+                  { icon: Clock, text: "Personal response rapidly — not an auto-reply" },
                   { icon: MapPin, text: "We serve every community in Western North Carolina" },
                   { icon: Award, text: "CertainTeed Master Shingle Applicator certified" },
                   { icon: Shield, text: "Licensed GC · Fully insured · Warranty-backed" },
@@ -429,7 +429,7 @@ const InspectionForm = () => {
                             <div className="space-y-2.5">
                               {[
                                 "A local Highlander advisor reviews your details personally",
-                                "You'll receive a call (not a text, not a robo-dial) within 24 hours",
+                                "You'll receive a call (not a text, not a robo-dial) rapidly",
                                 "We'll discuss scope, materials, timeline & provide clear next steps",
                               ].map((point, i) => (
                                 <div key={i} className="flex items-start gap-2.5">

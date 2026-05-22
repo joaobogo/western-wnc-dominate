@@ -18,7 +18,7 @@ const pillars = [
     icon: MessageSquare,
     title: "Radical Transparency",
     copy: "Named project contact. Written scope before work begins. Daily updates — whether it's a roof replacement or a full renovation.",
-    stat: "24hr",
+    stat: "Rapid",
     statLabel: "guaranteed response",
   },
   {

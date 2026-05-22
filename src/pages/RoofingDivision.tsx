@@ -44,7 +44,7 @@ const roofingServices = [
     icon: CloudLightning,
     title: "Storm Damage & Insurance",
     slug: "/roofing/storm-damage",
-    description: "24-hour emergency response with full damage documentation, insurance coordination, and priority scheduling — not storm chasing.",
+    description: "Rapid emergency response with full damage documentation, insurance coordination, and priority scheduling — not storm chasing.",
     features: ["Emergency tarping", "Insurance documentation", "Adjuster meetings", "Priority repairs"],
   },
   {
@@ -132,7 +132,7 @@ const trustSignals = [
   { icon: Award, label: "CertainTeed Master Shingle Applicator", detail: "Top 1% nationally" },
   { icon: Shield, label: "Licensed General Contractor", detail: "State of North Carolina" },
   { icon: FileText, label: "Full Warranty Documentation", detail: "Material + labor coverage" },
-  { icon: Clock, label: "24-Hour Storm Response", detail: "Emergency priority service" },
+  { icon: Clock, label: "Rapid Storm Response", detail: "Emergency priority service" },
 ];
 
 const processSteps = [
@@ -914,7 +914,7 @@ const RoofingDivision = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to discuss your roof?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We respond within 24 hours with a direct call — not a form email.</p>
+                <p className="text-primary-foreground/50 text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -1096,7 +1096,7 @@ const RoofingDivision = () => {
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Award, text: "CertainTeed Certified" },
-                      { icon: Clock, text: "24-Hour Response" },
+                      { icon: Clock, text: "Rapid Response" },
                       { icon: Star, text: "4.7★ Google Rating" },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">

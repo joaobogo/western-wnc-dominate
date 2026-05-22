@@ -158,7 +158,7 @@ const RoofingIntakeForm = () => {
         title="Your request is in good hands."
         body={data.timeline === "emergency"
           ? "An advisor will contact you within hours. If you have active interior leaking, place a bucket and avoid touching ceiling drywall."
-          : "A Highlander project advisor will personally review your request and reach out within one business day."}
+          : "A Highlander project advisor will personally review your request and reach out as soon as possible."}
       />
     );
   }

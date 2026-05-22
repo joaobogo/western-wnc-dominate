@@ -92,7 +92,7 @@ There's no universal answer. We assess each home individually — considering el
     metaDescription: "After a storm in Western NC, use this checklist to assess roof damage and protect your insurance claim. Free storm damage inspections available.",
     content: `Western North Carolina sees severe storms year-round — from summer thunderstorms to winter ice events. Here's what every homeowner should do after a storm.
 
-## Immediate Steps (First 24 Hours)
+## Immediate Steps Post-Storm
 
 1. **Stay safe.** Don't climb on your roof. Look for damage from the ground.
 2. **Document everything.** Take photos and video of any visible damage from multiple angles.
@@ -382,7 +382,7 @@ You'll receive:
 
 ## Schedule Your Free Inspection
 
-Call (828) 397-9211 or submit our online form. We respond within 24 hours and serve all of Western NC.`,
+Call (828) 397-9211 or submit our online form. We respond rapidly and serve all of Western NC.`,
   },
   {
     slug: "choosing-roofing-contractor-wnc",

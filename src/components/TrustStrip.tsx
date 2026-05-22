@@ -16,7 +16,7 @@ const credentials = [
   { icon: Award, label: "CertainTeed Master Shingle Applicator", emphasis: true },
   { icon: Shield, label: "Licensed General Contractor", emphasis: true },
   { icon: Star, label: "Brava Preferred Installer", emphasis: true },
-  { icon: Clock, label: "24-Hour Storm Response" },
+  { icon: Clock, label: "Rapid Storm Response" },
   { icon: MapPin, label: "Locally Owned · Franklin & Sylva" },
   { icon: CheckCircle2, label: "Fully Licensed & Insured" },
 ];

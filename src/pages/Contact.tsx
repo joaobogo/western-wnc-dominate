@@ -49,7 +49,7 @@ const contactMethods = [
 ];
 
 const TRUST_POINTS = [
-  { icon: Clock, text: "24-hour personal response — guaranteed" },
+  { icon: Clock, text: "Personalized rapid response — guaranteed" },
   { icon: Shield, text: "Licensed GC · Fully insured · Warranty-backed" },
   { icon: Award, text: "CertainTeed Master Shingle Applicator" },
   { icon: Users, text: "In-house crews — never subcontracted" },
@@ -116,7 +116,7 @@ export default function Contact() {
     <>
       <SEOHead
         title="Contact Highlander | Free Roofing & Construction Quote"
-        description="Talk to Highlander Roofing & Construction in Western NC. 24-hour response, free assessments, no pressure. Franklin & Sylva offices. Call (828) 397-9211."
+        description="Talk to Highlander Roofing & Construction in Western NC. Rapid response, free assessments, no pressure. Franklin & Sylva offices. Call (828) 397-9211."
         path="/contact"
         jsonLd={buildPageSchema({
           type: "contact",
@@ -151,7 +151,7 @@ export default function Contact() {
                     Start the Conversation.
                   </h1>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.5)] text-sm md:text-base leading-relaxed max-w-lg">
-                    No call centers. No automated systems. A Highlander project advisor — not a salesperson — will personally reach out within 24 hours.
+                    No call centers. No automated systems. A Highlander project advisor — not a salesperson — will personally reach out rapidly.
                   </p>
                 </motion.div>
 
@@ -187,7 +187,7 @@ export default function Contact() {
                   {[
                     { step: "1", title: "Tell us about your project", detail: "Service type, timeline, and details." },
                     { step: "2", title: "We assign the right advisor", detail: "Matched to your project type." },
-                    { step: "3", title: "Personal follow-up within 24hr", detail: "A real conversation about next steps." },
+                    { step: "3", title: "Personal follow-up within Rapid", detail: "A real conversation about next steps." },
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-3">
                       <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold)/0.3)] flex-shrink-0">{item.step}</span>
@@ -441,7 +441,7 @@ export default function Contact() {
 
                       <div className="flex items-center justify-between pt-2">
                         <p className="text-[10px] text-muted-foreground/40 font-body">
-                          Personal response within 24 hours — guaranteed.
+                          Personal response rapidly — guaranteed.
                         </p>
                         <button
                           type="submit"
@@ -477,7 +477,7 @@ export default function Contact() {
                     </h2>
                     <p className="text-muted-foreground font-body max-w-md mx-auto mb-6">
                       A Highlander project advisor will personally review your project details and
-                      reach out within 24 hours. Thank you, {form.name.split(" ")[0] || "friend"}.
+                      reach out rapidly. Thank you, {form.name.split(" ")[0] || "friend"}.
                     </p>
                     <div className="border border-border bg-card p-5 rounded-sm max-w-sm mx-auto text-left">
                       <p className="text-[10px] font-body font-bold uppercase tracking-wider text-muted-foreground mb-3">Your Submission</p>
@@ -565,7 +565,7 @@ export default function Contact() {
                         <Mail className="w-4 h-4 text-primary" />
                         <div>
                           <p className="text-sm font-heading font-semibold text-foreground">info@highlanderroofing.com</p>
-                          <p className="text-[10px] text-muted-foreground font-body">Email — reply within 24 hours</p>
+                          <p className="text-[10px] text-muted-foreground font-body">Email — reply rapidly</p>
                         </div>
                       </a>
                       <Link to="/consultation" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-accent/20 transition-all">

@@ -57,7 +57,7 @@ const CTABlock = () => {
               {/* Subtext — calm authority */}
               <ScrollReveal variant="rise-subtle" delay={0.3}>
                 <p className="text-dark-section-foreground/38 text-[15px] md:text-[17px] max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
-                  Tell us about your property. A project advisor — not a call center — responds within one business day with a clear next step.
+                  Tell us about your property. A project advisor — not a call center — responds within as soon as possible with a clear next step.
                 </p>
               </ScrollReveal>
 
@@ -126,7 +126,7 @@ const CTABlock = () => {
                     { icon: Shield, text: "Licensed & Fully Insured" },
                     { icon: Award, text: "CertainTeed Master Applicator" },
                     { icon: Shield, text: "Licensed General Contractor" },
-                    { icon: Clock, text: "24-Hour Storm Response" },
+                    { icon: Clock, text: "Rapid Storm Response" },
                     { icon: Mountain, text: "8 WNC Counties" },
                   ].map((item, i) => (
                     <motion.div

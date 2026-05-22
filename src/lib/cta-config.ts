@@ -95,11 +95,11 @@ export const CTA_SUBTEXT = {
   blogClosing: "Written by the crew that builds in these mountains. If you have questions, we have answers — and there's no obligation.",
 
   /** Contact page */
-  contact: "No call centers. No automated systems. A Highlander project advisor will personally reach out within 24 hours.",
+  contact: "No call centers. No automated systems. A Highlander project advisor will personally reach out rapidly.",
 
   /** Under primary CTAs */
   noObligation: "No-obligation conversation about your property.",
-  response24h: "We respond within 24 hours with a direct call — not a form email.",
+  response24h: "We respond rapidly with a direct call — not a form email.",
   localTeam: "You'll speak with a project advisor who knows these mountains, not a call center.",
 
   /** Planning / not sure where to start */
@@ -128,7 +128,7 @@ export const PROOF_CONTEXT = {
   roofing: [
     "CertainTeed Master Shingle Applicator — Top 1%",
     "500+ mountain roofs installed",
-    "24-Hour storm response",
+    "Rapid storm response",
     "Full warranty documentation on every project",
   ],
   /** Construction: process + planning + finish quality */
@@ -161,7 +161,7 @@ export const PROOF_CONTEXT = {
   ],
   /** Contact: reassurance + professionalism */
   contact: [
-    "24-hour personal response",
+    "Rapid personal response",
     "Licensed & fully insured",
     "No automated systems",
     "Real advisor, not a salesperson",

@@ -20,7 +20,7 @@ interface ConstructionCTAProps {
 /** Mid-page CTA strip (primary bg) */
 export const ConstructionMidCTA = ({
   headline = "Ready to discuss your project?",
-  subheadline = "We respond within 24 hours with a direct call — not a form email.",
+  subheadline = "We respond rapidly with a direct call — not a form email.",
   ctaText = "Start Your Project Conversation",
   ctaLink = "/construction/consultation",
 }: ConstructionCTAProps) => (

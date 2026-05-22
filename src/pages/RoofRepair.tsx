@@ -69,7 +69,7 @@ const repairVsReplace = {
 };
 
 const faqs = [
-  { q: "How quickly can you respond to a roof leak?", a: "For active leaks and storm damage, we offer 24-hour emergency response including temporary tarping to prevent further water intrusion. Non-emergency repair assessments are typically scheduled within 24–48 hours of your call." },
+  { q: "How quickly can you respond to a roof leak?", a: "For active leaks and storm damage, we offer Rapid emergency response including temporary tarping to prevent further water intrusion. Non-emergency repair assessments are typically scheduled within 24–48 hours of your call." },
   { q: "How much does a roof repair cost?", a: "Repair pricing is scope-based — it depends on the type of damage, materials involved, and accessibility. Rather than publish a generic range, we provide exact, itemized pricing after an on-site assessment so the number reflects the actual work." },
   { q: "Will you try to sell me a full replacement when I only need a repair?", a: "No. We diagnose honestly and recommend based on what your roof actually needs. If a targeted repair will solve the problem, that's what we'll recommend — and we'll document our reasoning so you can verify our logic." },
   { q: "Do you warranty repair work?", a: "Yes. Every repair we perform comes with a Highlander labor warranty covering the work we completed. The duration depends on the scope of the repair, and we'll specify it clearly before work begins." },
@@ -461,7 +461,7 @@ const RoofRepair = () => {
                   <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
-                      { icon: Clock, text: "24-Hour Emergency Response" },
+                      { icon: Clock, text: "Rapid Emergency Response" },
                       { icon: Award, text: "CertainTeed Certified" },
                       { icon: Star, text: "Warrantied Repairs" },
                     ].map((item) => (

@@ -274,7 +274,7 @@ const Renovations = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to discuss your renovation?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We respond within 24 hours with a direct call — not a form email.</p>
+                <p className="text-primary-foreground/50 text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">

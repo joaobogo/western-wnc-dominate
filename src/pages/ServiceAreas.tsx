@@ -14,7 +14,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const serviceStats = [
   { value: "4.9★", label: "Google Rating", detail: "Verified reviews" },
   { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain · Haywood" },
-  { value: "24hr", label: "Response Time", detail: "Emergency & Standard" },
+  { value: "Rapid", label: "Response Time", detail: "Emergency & Standard" },
   { value: "4.9★", label: "Average Rating", detail: "150+ Verified Reviews" },
 ];
 
@@ -22,7 +22,7 @@ const whyLocal = [
   { icon: Mountain, title: "We Know the Terrain", detail: "Elevation, slope, soil composition, and microclimates affect every project. We've built across this region long enough to know what each town demands." },
   { icon: CloudLightning, title: "We Know the Weather", detail: "From Highlands' 80+ inches of annual rain to Waynesville's ice storms — we spec materials and methods for your area's exact exposure profile." },
   { icon: Users, title: "Local Crews, Not Subcontractors", detail: "Our teams live and work here. They know the roads, the building codes, and the inspectors. No anonymous subcontractor rotation." },
-  { icon: Clock, title: "Fast Response Anywhere in WNC", detail: "With offices in Franklin and Sylva, we reach every town in our service area within 45 minutes. Emergency response is 24 hours." },
+  { icon: Clock, title: "Fast Response Anywhere in WNC", detail: "With offices in Franklin and Sylva, we reach every town in our service area within 45 minutes. Emergency response is prioritized." },
 ];
 
 const primaryTowns = towns.slice(0, 4);
@@ -33,7 +33,7 @@ const ServiceAreas = () => {
     <>
       <SEOHead
         title="Service Areas | Roofing & Construction Across Western NC"
-        description="Highlander Roofing & Construction serves Highlands, Cashiers, Franklin, Sylva, Bryson City, Waynesville, Cullowhee, and Dillsboro. Local crews, 24-hour response."
+        description="Highlander Roofing & Construction serves Highlands, Cashiers, Franklin, Sylva, Bryson City, Waynesville, Cullowhee, and Dillsboro. Local crews, Rapid response."
         path="/service-areas"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }])}
       />
