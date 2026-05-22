@@ -31,8 +31,8 @@ const TrustStrip = () => {
 
       <div className="relative z-10">
         {/* Editorial layout — stats + credentials side by side */}
-        <div className="container-tight px-6 md:px-10 py-10 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 items-center">
+        <div className="container-tight px-6 md:px-10 py-6 md:py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-0 items-center">
 
             {/* Left: Stats — large, editorial typography */}
             <div className="lg:col-span-5 lg:border-r lg:border-primary-foreground/[0.06] lg:pr-12">
@@ -40,12 +40,12 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-8"
+                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-4"
               >
                 By the Numbers
               </motion.p>
 
-              <div className="space-y-6">
+              <div className="space-y-3">
                 {stats.map((stat, i) => (
                   <motion.div
                     key={stat.label}
@@ -79,12 +79,12 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-8"
+                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-4"
               >
                 Credentials
               </motion.p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3">
                 {credentials.map((cred, i) => (
                   <motion.div
                     key={cred.label}
@@ -116,7 +116,7 @@ const TrustStrip = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6, ease: HIGHLAND_EASE }}
-                className="mt-8 pt-6 border-t border-primary-foreground/[0.05]"
+                className="mt-6 pt-4 border-t border-primary-foreground/[0.05]"
               >
                 <p className="text-primary-foreground/25 text-[12px] font-body italic leading-relaxed max-w-md">
                   "The only company in Western NC that holds both a CertainTeed Master Applicator
