@@ -249,7 +249,14 @@ export default function ConstructionConsultation() {
       icon: Mountain,
       question: "What is the property address?",
       hint: "We serve all of Western North Carolina. A full address helps us account for elevation, terrain, and local conditions.",
-      content: <Input value={form.town} onChange={e => update("town", e.target.value)} placeholder="Street, city, and state" />,
+      content: (
+        <input 
+          value={form.town} 
+          onChange={e => update("town", e.target.value)} 
+          placeholder="Street, city, and state" 
+          className="w-full rounded-sm border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold)/0.3)]"
+        />
+      ),
       valid: !!form.town && form.town.length > 5,
     },
     {
