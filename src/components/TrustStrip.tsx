@@ -116,7 +116,7 @@ const TrustStrip = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6, ease: HIGHLAND_EASE }}
-                className="mt-8 pt-6 border-t border-primary-foreground/[0.05]"
+                className="mt-6 pt-4 border-t border-primary-foreground/[0.05]"
               >
                 <p className="text-primary-foreground/25 text-[12px] font-body italic leading-relaxed max-w-md">
                   "The only company in Western NC that holds both a CertainTeed Master Applicator
