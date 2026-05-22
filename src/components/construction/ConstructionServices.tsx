@@ -135,7 +135,7 @@ interface ServiceGridProps {
 export const ConstructionServiceGrid = ({
   categories = constructionCategories,
   heading = "What We Build.",
-  subheading = "Four focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards.",
+  subheading = "Six focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards.",
   eyebrow = "Construction Services",
   className = "",
   variant = "cards",
