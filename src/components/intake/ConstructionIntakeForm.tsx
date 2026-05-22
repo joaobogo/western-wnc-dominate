@@ -119,7 +119,7 @@ const ConstructionIntakeForm = () => {
         timeline: data.timeline,
         propertyType: data.propertyType,
         planningStage: hasPlansBool === true ? "full_plans" : hasPlansBool === false ? "have_ideas" : undefined,
-        decisionMakers: data.decisionMaker === "self" ? "solo" : data.decisionMaker === "couple" ? "couple" : data.decisionMaker === "architect" ? "professional_lead" : undefined,
+        decisionMakers: data.decisionMaker === "self" ? "solo" : data.decisionMaker === "couple" ? "couple" : data.decisionMaker === "architect" ? "professional_design_lead" : undefined,
         hasPlans: hasPlansBool === true,
         hasPhotos: uploadedPaths.length > 0,
         town: data.town,

@@ -9,7 +9,7 @@ Highlander is a family-operated roofing and construction firm built for the WNC 
 - [Home](/): Company overview, services, project proof, and lead capture.
 - [About](/about): Company history, leadership, and values.
 - [Team](/team): Owner, project managers, and crew leads.
-- [Certifications](/certifications): GAF Master Elite, manufacturer credentials, licensing.
+- [Certifications](/certifications): GAF Master Elite, manufacturer credentials, licensing (Licensed NC General Contractor).
 - [Reviews](/reviews): Verified customer reviews from across WNC.
 - [Financing](/financing): Financing options for roofing and construction projects.
 - [Careers](/careers): Open roles and hiring information.
