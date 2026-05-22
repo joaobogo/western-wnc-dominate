@@ -213,20 +213,21 @@ const RoofingIntakeForm = () => {
                 <Label required>Property type</Label>
                 <ChipGroup options={PROPERTY_OPTIONS} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
               </div>
-              <FieldRow>
+              <div className="space-y-4">
                 <div>
-                  <Label required>Town</Label>
+                  <Label required>Property address</Label>
                   <Input
-                    placeholder="e.g. Highlands"
+                    placeholder="Street, city, and state"
                     value={data.town}
                     onChange={(e) => set("town", e.target.value)}
                   />
+                  <Helper>Full address allows us to prepare a more accurate assessment.</Helper>
                 </div>
                 <div>
                   <Label>Insurance claim status</Label>
                   <ChipGroup options={INSURANCE_OPTIONS} value={data.insuranceStatus} onChange={(v) => set("insuranceStatus", v)} columns={3} />
                 </div>
-              </FieldRow>
+              </div>
             </>
           )}
 

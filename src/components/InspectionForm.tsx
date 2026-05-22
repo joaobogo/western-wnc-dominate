@@ -345,21 +345,17 @@ const InspectionForm = () => {
                       {currentStep === "project" && (
                         <div className="space-y-5">
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div>
-                              <label htmlFor="town" className={labelClasses}>Where Is Your Property?</label>
-                              <select
-                                id="town" required value={formData.town}
+                            <div className="sm:col-span-2">
+                              <label htmlFor="address" className={labelClasses}>Property Address</label>
+                              <input
+                                id="address" type="text" required maxLength={200}
+                                value={formData.town}
                                 onChange={(e) => setFormData({ ...formData, town: e.target.value })}
                                 className={inputClasses}
-                              >
-                                <option value="">Select your town</option>
-                                <option value="highlands">Highlands</option>
-                                <option value="cashiers">Cashiers</option>
-                                <option value="franklin">Franklin</option>
-                                <option value="sylva">Sylva</option>
-                                <option value="bryson-city">Bryson City</option>
-                                <option value="waynesville">Waynesville</option>
-                                <option value="cherokee">Cherokee</option>
+                                placeholder="Street, city, and state"
+                              />
+                              <p className={hintClasses}>So we can review the property on satellite before we call.</p>
+                            </div>
                                 <option value="other">Other WNC Area</option>
                               </select>
                             </div>

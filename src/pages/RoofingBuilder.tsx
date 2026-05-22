@@ -331,8 +331,8 @@ const RoofingBuilder = () => {
                     <ChipGroup options={PROPERTY} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
                   </div>
                   <div className="mt-6">
-                    <Label required>Property town / area</Label>
-                    <Input value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Highlands, Cashiers, Franklin, Sylva…" />
+                    <Label required>Property address</Label>
+                    <Input value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Street, city, and state…" />
                   </div>
                 </>
               )}

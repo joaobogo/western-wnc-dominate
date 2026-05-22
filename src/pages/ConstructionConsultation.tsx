@@ -245,12 +245,12 @@ export default function ConstructionConsultation() {
     },
     {
       id: "location",
-      label: "Location",
+      label: "Property Address",
       icon: Mountain,
-      question: "Where is your property located?",
-      hint: "We serve all of Western North Carolina. Location helps us account for elevation, terrain, and local conditions.",
-      content: <PillSelect options={WNC_TOWNS.map(t => ({ id: t, label: t }))} value={form.town} onChange={v => update("town", v)} />,
-      valid: !!form.town,
+      question: "What is the property address?",
+      hint: "We serve all of Western North Carolina. A full address helps us account for elevation, terrain, and local conditions.",
+      content: <Input value={form.town} onChange={e => update("town", e.target.value)} placeholder="Street, city, and state" />,
+      valid: !!form.town && form.town.length > 5,
     },
     {
       id: "vision",
