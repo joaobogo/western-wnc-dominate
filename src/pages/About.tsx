@@ -135,7 +135,15 @@ const About = () => {
         </section>
 
         {/* ── OWNER QUOTE — Personal, editorial, unique to About ── */}
-        <section className="py-20 md:py-28 bg-background">
+        <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+          <div 
+            className="absolute top-0 right-0 w-64 h-64 opacity-[0.04] pointer-events-none translate-x-1/2 -translate-y-1/2 rotate-12" 
+            style={{ 
+              backgroundImage: "url('/tartan.png')",
+              backgroundSize: "200px auto",
+              backgroundRepeat: "repeat"
+            }} 
+          />
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center">
               <Quote className="w-8 h-8 text-[hsl(var(--highland-gold)/0.2)] mx-auto mb-6 rotate-180" />
@@ -150,7 +158,15 @@ const About = () => {
         </section>
 
         {/* ── BRAND STORY — Two-column editorial ── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-secondary relative">
+          <div 
+            className="absolute inset-0 opacity-[0.05] pointer-events-none" 
+            style={{ 
+              backgroundImage: "url('/tartan.png')",
+              backgroundSize: "320px auto",
+              backgroundRepeat: "repeat"
+            }} 
+          />
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
@@ -231,7 +247,15 @@ const About = () => {
         </section>
 
         {/* ── VALUES ── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-secondary relative">
+          <div 
+            className="absolute inset-0 opacity-[0.05] pointer-events-none" 
+            style={{ 
+              backgroundImage: "url('/tartan.png')",
+              backgroundSize: "320px auto",
+              backgroundRepeat: "repeat"
+            }} 
+          />
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
               <span className="eyebrow mb-3 block">What We Stand For</span>

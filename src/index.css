@@ -218,64 +218,23 @@
 
   /* Light tartan for section backgrounds */
   .tartan-bg {
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 40px,
-        hsl(var(--tartan-line) / 0.04) 40px,
-        hsl(var(--tartan-line) / 0.04) 41px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 40px,
-        hsl(var(--tartan-line) / 0.04) 40px,
-        hsl(var(--tartan-line) / 0.04) 41px
-      ),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 120px,
-        hsl(var(--tartan-accent) / 0.02) 120px,
-        hsl(var(--tartan-accent) / 0.02) 122px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 120px,
-        hsl(var(--highland-gold) / 0.03) 120px,
-        hsl(var(--highland-gold) / 0.03) 122px
-      );
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+      url('/tartan.png');
+    background-size: 320px auto;
+    background-repeat: repeat;
   }
 
   /* Darker tartan for dark sections */
   .tartan-dark {
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 40px,
-        hsl(45 12% 92% / 0.03) 40px,
-        hsl(45 12% 92% / 0.03) 41px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 40px,
-        hsl(45 12% 92% / 0.03) 40px,
-        hsl(45 12% 92% / 0.03) 41px
-      ),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 120px,
-        hsl(var(--highland-gold) / 0.04) 120px,
-        hsl(var(--highland-gold) / 0.04) 122px
-      );
+    background-image: 
+      linear-gradient(rgba(24, 46, 39, 0.92), rgba(24, 46, 39, 0.92)),
+      url('/tartan.png');
+    background-size: 400px auto;
+    background-repeat: repeat;
   }
 
-  /* Tartan hover overlay for cards */
+  /* Subtle tartan for hover states */
   .tartan-hover {
     position: relative;
     overflow: hidden;
@@ -286,21 +245,11 @@
     inset: 0;
     opacity: 0;
     transition: opacity 0.4s ease;
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 20px,
-        hsl(var(--tartan-line) / 0.05) 20px,
-        hsl(var(--tartan-line) / 0.05) 21px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 20px,
-        hsl(var(--tartan-line) / 0.05) 20px,
-        hsl(var(--tartan-line) / 0.05) 21px
-      );
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)),
+      url('/tartan.png');
+    background-size: 160px auto;
+    background-repeat: repeat;
     pointer-events: none;
     z-index: 1;
   }

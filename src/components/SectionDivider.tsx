@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-type DividerVariant = "gold-fade" | "mountain-ridge" | "angled" | "dot-line" | "wave" | "diamond" | "heritage-bar";
+type DividerVariant = "gold-fade" | "mountain-ridge" | "angled" | "dot-line" | "wave" | "diamond" | "heritage-bar" | "tartan-trim";
 
 interface SectionDividerProps {
   variant?: DividerVariant;
@@ -158,6 +158,22 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
           <div className="w-1 h-1 rotate-45 bg-[hsl(var(--highland-gold)/0.35)]" />
           <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.2)]" />
         </motion.div>
+      </div>
+    );
+  }
+
+  if (variant === "tartan-trim") {
+    return (
+      <div className={`h-[4px] w-full relative overflow-hidden ${className}`}>
+        <div 
+          className="absolute inset-0 opacity-40" 
+          style={{ 
+            backgroundImage: "url('/tartan.png')",
+            backgroundSize: "80px auto",
+            backgroundRepeat: "repeat"
+          }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
       </div>
     );
   }

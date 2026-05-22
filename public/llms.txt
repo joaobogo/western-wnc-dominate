@@ -49,6 +49,10 @@ Highlander is a family-operated roofing and construction firm built for the WNC 
 - [Project Gallery](/gallery): Completed roofing and construction projects across WNC.
 - [Blog](/blog): Articles on mountain roofing, materials, storm prep, and construction.
 
+## Brand & Strategy
+
+- [Heritage & Tartan Strategy](/Heritage-Deliverables-Summary.md): Official rules and requirements for the Highlander heritage identity.
+
 ## Optional
 
 - [Storm Center](/storm-center): Storm response resources and post-storm guidance.
