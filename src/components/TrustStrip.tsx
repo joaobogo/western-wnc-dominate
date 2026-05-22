@@ -84,7 +84,7 @@ const TrustStrip = () => {
                 Credentials
               </motion.p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3">
                 {credentials.map((cred, i) => (
                   <motion.div
                     key={cred.label}
