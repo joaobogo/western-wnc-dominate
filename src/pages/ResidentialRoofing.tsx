@@ -576,7 +576,7 @@ const ResidentialRoofing = () => {
               viewport={{ once: true }}
               className="max-w-2xl mx-auto text-center mb-12"
             >
-              <span className="eyebrow mb-3 block">Roof Architecture</span>
+              <span className="eyebrow mb-3 block">Roof Systems</span>
               <h2 className="section-heading mb-4">
                 Choosing a Style That<br className="hidden md:block" /> Fits Your Home.
               </h2>

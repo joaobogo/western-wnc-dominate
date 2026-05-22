@@ -33,7 +33,7 @@ const PROJECT_TYPES: VisualChoice[] = [
 ];
 
 const MATERIALS: VisualChoice[] = [
-  { value: "architectural_asphalt", label: "Multi-Dimensional Asphalt", sub: "Most popular · long-term value", image: asphalt },
+  { value: "dimensional_asphalt", label: "Multi-Dimensional Asphalt", sub: "Most popular · long-term value", image: asphalt },
   { value: "premium_asphalt", label: "Designer Asphalt", sub: "Heavy-weight, dimensional profile", image: asphaltDark, badge: "Upgrade" },
   { value: "standing_seam_metal", label: "Standing Seam Metal", sub: "50+ year system, mountain-grade", image: metal, badge: "Premium" },
   { value: "stamped_metal", label: "Stamped Metal Shake", sub: "Cedar/slate look in steel", image: metalAlt },
@@ -349,7 +349,7 @@ const RoofingBuilder = () => {
                       rows={4}
                       value={data.description}
                       onChange={(e) => set("description", e.target.value)}
-                      placeholder="Roof age, known leaks, HOA, access notes…"
+                      placeholder="Roof age, known leaks, HOA, design notes…"
                     />
                   </div>
                 </>

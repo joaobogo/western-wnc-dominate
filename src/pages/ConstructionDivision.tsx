@@ -45,13 +45,13 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const philosophy = [
   { icon: Compass, title: "Design Sensitivity", detail: "Every project starts with understanding your home's design theme, its setting, and the visual language that connects them. We don't impose a style — we extend the one your home already speaks." },
   { icon: ClipboardCheck, title: "Planning Depth", detail: "We invest in planning because it eliminates surprises. Detailed scoping, material specifications, timeline mapping, and permit coordination happen before we break ground — not while we're building." },
-  { icon: HardHat, title: "Execution Quality", detail: "Our crews are trained craftsmen — not subcontracted labor rotated between contractors. They understand sequencing, tolerances, and the standard we hold. Every phase is supervised and verified." },
+  { icon: HardHat, title: "Execution Quality", detail: "Our crews are trained craftsmen — not subcontracted labor rotated between contractors. We understand sequencing, tolerances, and the standard we hold. Every phase is supervised and verified." },
   { icon: MessageSquare, title: "Communication Clarity", detail: "You'll have a single project manager, a defined communication schedule, and real-time updates on progress, decisions needed, and timeline changes. No guessing, no chasing for answers." },
 ];
 
 const whyHighlander = [
   { icon: Shield, title: "Licensed, Insured, and Established", detail: "We're a permanent, licensed construction company with comprehensive liability and workers' comp coverage — not a pickup-truck outfit that disappears after the check clears." },
-  { icon: Users, title: "In-House Crews", detail: "Our core crews work for Highlander. They're trained to our standards, familiar with our process, and accountable to our quality expectations. No anonymous subcontractor rotation." },
+  { icon: Users, title: "In-House Crews", detail: "Our core crews work for Highlander. We're trained to our standards, familiar with our process, and accountable to our quality expectations. No anonymous subcontractor rotation." },
   { icon: Mountain, title: "Built for WNC", detail: "We've worked across the region's unique terrain, microclimates, and building conditions for years. We don't learn on your project — we bring institutional knowledge of mountain construction." },
   { icon: BadgeCheck, title: "Unified Company", detail: "Because we also handle roofing, we coordinate roof-to-structure transitions, weatherproofing, and exterior envelope integrity better than any standalone contractor. One company, one standard, zero finger-pointing." },
 ];
