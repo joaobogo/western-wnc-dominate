@@ -18,7 +18,7 @@ interface MaterialPanelProps {
 }
 
 const CATEGORIES = [
-  { key: "shingle", label: "Architectural Shingles" },
+  { key: "shingle", label: "Premium Dimensional Shingles" },
   { key: "metal", label: "Metal Roofing" },
   { key: "standing_seam", label: "Standing Seam" },
   { key: "flat", label: "Flat Roofing" },

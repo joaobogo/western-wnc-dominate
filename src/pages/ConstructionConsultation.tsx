@@ -44,7 +44,7 @@ const PROJECT_TYPES = [
   { id: "renovation", label: "Renovation", icon: Paintbrush, desc: "Transforming existing spaces for better function and quality" },
   { id: "outdoor-living", label: "Outdoor Living", icon: TreePine, desc: "Porches, decks, patios, and outdoor structures" },
   { id: "exterior", label: "Exterior Improvements", icon: Building2, desc: "Siding, windows, trim, and building envelope upgrades" },
-  { id: "custom", label: "Custom / Complex Project", icon: Compass, desc: "Multi-phase, architecturally sensitive, or specialty work" },
+  { id: "custom", label: "Custom / Complex Project", icon: Compass, desc: "Multi-phase, design-sensitive, or specialty work" },
   { id: "not-sure", label: "I'd Like Guidance", icon: Lightbulb, desc: "We'll help you define the right scope and approach" },
 ];
 
@@ -61,7 +61,7 @@ const PROJECT_GOALS = [
 ];
 
 const PLAN_STATUS = [
-  { id: "yes-architect", label: "Yes — architect-drawn plans" },
+  { id: "yes-architect", label: "Yes — professionally drawn plans" },
   { id: "yes-sketches", label: "Yes — rough sketches or ideas" },
   { id: "no-need-help", label: "No — I need design-build help" },
   { id: "exploring", label: "Just exploring possibilities" },

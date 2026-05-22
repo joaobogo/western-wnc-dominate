@@ -5,7 +5,7 @@ export { default as HeadingReveal } from "./HeadingReveal";
 export { default as ImageReveal } from "./ImageReveal";
 export { default as SplitText } from "./SplitText";
 export { default as ParallaxSection } from "./ParallaxSection";
-export { MountainContours, BlueprintGrid, ArchitecturalLines, RooflinePattern, TextureOverlay } from "./BackgroundTexture";
+export { MountainContours, BlueprintGrid, DesignLines, RooflinePattern, TextureOverlay } from "./BackgroundTexture";
 export { default as AmbientBackground } from "./AmbientBackground";
 export { default as BrandMotif } from "./BrandMotif";
 export { default as PageTransition } from "./PageTransition";

@@ -185,8 +185,8 @@ export function StormChecklist() {
 /* ─── Materials Comparison ─── */
 const MATERIALS = [
   {
-    id: "architectural-shingle",
-    name: "Architectural Shingles",
+    id: "dimensional-shingle",
+    name: "Dimensional Shingles",
     lifespan: "25–30 years",
     priceRange: "$$",
     bestFor: "Most residential roofs, balanced value",
@@ -231,7 +231,7 @@ const MATERIALS = [
 ];
 
 export function MaterialsComparison() {
-  const [selected, setSelected] = useState<string[]>(["architectural-shingle", "standing-seam-metal"]);
+  const [selected, setSelected] = useState<string[]>(["dimensional-shingle", "standing-seam-metal"]);
 
   const toggle = (id: string) => {
     setSelected(prev => {

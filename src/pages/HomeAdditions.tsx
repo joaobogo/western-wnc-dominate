@@ -26,7 +26,7 @@ import proj4 from "@/assets/gallery/cedar-002.jpg";
 
 const whyAdditions = [
   { icon: Baby, title: "A Growing Family", detail: "More bedrooms, a playroom, an expanded kitchen — your family is growing and your home needs to grow with it, without the disruption and cost of moving." },
-  { icon: BedDouble, title: "Aging in Place", detail: "A main-level master suite, wider doorways, an accessible bathroom — additions that let you stay in the home you love as your needs evolve." },
+  { icon: BedDouble, title: "Aging in Place", detail: "A main-level primary suite, wider doorways, an accessible bathroom — additions that let you stay in the home you love as your needs evolve." },
   { icon: Users, title: "Multi-Generational Living", detail: "Guest suites, in-law apartments, and semi-independent living spaces that provide proximity and privacy for extended family under one roof." },
   { icon: Sofa, title: "Lifestyle & Function", detail: "A home office that's actually a room. A sunroom that captures the mountain view. A mudroom that handles real mountain life. Space designed for how you actually live." },
 ];
@@ -36,12 +36,12 @@ const expansionTypes = [
   { icon: DoorOpen, title: "Expanded Living Areas", detail: "Great room extensions, kitchen expansions, open-concept conversions, and family room additions that transform how your home flows and functions." },
   { icon: Car, title: "Garage Additions & Conversions", detail: "Attached or detached garages, workshops, and storage buildings. Also garage-to-living-space conversions for homes that need interior square footage more than parking." },
   { icon: Layers, title: "Bonus Rooms & Flex Spaces", detail: "Second-floor additions, attic conversions, and above-garage bonus rooms that maximize your property's footprint without expanding the foundation." },
-  { icon: Compass, title: "Main-Level Master Suites", detail: "Purpose-built master bedroom and bathroom additions on the main level — one of the most requested additions for WNC homeowners planning to age in place." },
+  { icon: Compass, title: "Main-Level Primary Suites", detail: "Purpose-built primary bedroom and bathroom additions on the main level — one of the most requested additions for WNC homeowners planning to age in place." },
   { icon: TreePine, title: "Sunrooms & Four-Season Rooms", detail: "Enclosed or semi-enclosed rooms that bring the mountain landscape inside. From screened porches to fully conditioned four-season living spaces." },
 ];
 
 const designContinuity = [
-  { icon: Compass, title: "Architectural Matching", detail: "Rooflines, pitch, overhang proportions, window rhythm, and exterior materials are matched to the existing home — not just approximated. The addition should look like it was part of the original plan." },
+  { icon: Compass, title: "Design Matching", detail: "Rooflines, pitch, overhang proportions, window rhythm, and exterior materials are matched to the existing home — not just approximated. The addition should look like it was part of the original design." },
   { icon: PenTool, title: "Interior Flow", detail: "The connection between existing space and new space matters as much as the addition itself. We design transitions — hallways, openings, floor level changes — so movement between old and new feels natural." },
   { icon: Layers, title: "Material Continuity", detail: "Matching siding profiles, trim details, roofing materials, and color palettes requires sourcing and sometimes custom fabrication. We don't accept 'close enough' on visible transitions." },
   { icon: Ruler, title: "Proportional Integrity", detail: "An addition that's too large overwhelms the original structure. One that's too small feels like an afterthought. We design to proportions that enhance the home's overall presence." },
@@ -53,7 +53,7 @@ const whyHighlander = [
   { icon: FileCheck, title: "Documented Process", detail: "Written scope, defined deliverables, specified materials, confirmed timeline, and transparent cost groupings before any commitment. You see exactly what you're getting." },
   { icon: Wrench, title: "Roofing-Proven Standards", detail: "500+ roofing projects built our construction discipline. The same material standards, crew training, and project documentation now apply to every addition we build." },
   { icon: Mountain, title: "WNC Site Expertise", detail: "Steep lots, rock outcroppings, variable soils, high-elevation wind exposure — we've built on the challenging terrain that defines Western North Carolina properties." },
-  { icon: Star, title: "Design-Build Capability", detail: "From concept through completion, we manage the full scope. For complex projects requiring an architect, we collaborate with local firms we've partnered with successfully." },
+  { icon: Star, title: "Design-Build Capability", detail: "From concept through completion, we manage the full scope. For complex projects requiring specialized design services, we collaborate with local professionals we've partnered with successfully." },
 ];
 
 const planningPermitting = [
@@ -76,7 +76,7 @@ const galleryImages = [
   { src: proj1, alt: "Room addition on mountain home", label: "Guest Suite Addition", location: "Mountain Residence, Asheville" },
   { src: proj2, alt: "Expanded living area with metal roof integration", label: "Great Room Expansion", location: "Ridgeline Property, Weaverville" },
   { src: proj3, alt: "Sunroom addition with mountain views", label: "Four-Season Room", location: "Valley Home, Black Mountain" },
-  { src: proj4, alt: "Garage addition matching existing architecture", label: "Detached Garage Build", location: "Custom Build, Fairview" },
+  { src: proj4, alt: "Garage addition matching existing design theme", label: "Detached Garage Build", location: "Custom Build, Fairview" },
 ];
 
 const wncChallenges = [
@@ -92,7 +92,7 @@ const faqs = [
   { q: "Will the addition match my existing home?", a: "This is one of our primary focuses. We match rooflines, siding profiles, trim details, window proportions, and exterior materials to ensure the addition looks like it was always part of the home. When exact material matches aren't available, we source the closest alternatives or recommend design approaches that create intentional, attractive transitions." },
   { q: "Do I need to move out during construction?", a: "In most cases, no. We plan construction to minimize disruption to your daily life, including dust barriers, dedicated access routes, and coordinated noisy-work schedules. For major whole-home renovations that affect essential living areas, we'll discuss temporary relocation options during planning." },
   { q: "Can you build on a steep or challenging lot?", a: "Yes. Many WNC properties have challenging terrain — steep slopes, rock outcroppings, limited access, and variable soil conditions. We have experience building on difficult sites and coordinate with structural engineers and excavation specialists as part of our standard process." },
-  { q: "Do you handle the architectural design?", a: "We offer design-build services for additions that don't require an independent architect. For more complex or architecturally significant projects, we collaborate with local architects and designers. We can recommend architects we've worked with successfully." },
+  { q: "Do you handle the project design?", a: "We offer design-build services for additions that don't require external planning. For more complex or design-sensitive projects, we collaborate with local designers and project planners. We can work with any design team you've already engaged." },
   { q: "Will an addition increase my home's value?", a: "Well-designed additions typically increase home value — often returning 50–70% of cost at resale, with primary suites and functional living space additions at the higher end. Beyond financial return, a well-executed addition eliminates the need to move and the associated costs and disruption." },
   { q: "How do you handle the connection between old and new construction?", a: "The connection point is the most critical detail in any addition. We tie into existing framing with proper structural connections, match floor levels precisely, integrate rooflines with proper flashing and waterproofing, and ensure the interior transition feels seamless — not like walking through a doorway into a different building." },
 ];
@@ -148,7 +148,7 @@ const HomeAdditions = () => {
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
-                Guest suites, expanded living areas, garages, and sunrooms — designed to integrate seamlessly with your existing home's architecture.
+                Guest suites, expanded living areas, garages, and sunrooms — designed to integrate seamlessly with your existing home's design theme.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -162,7 +162,7 @@ const HomeAdditions = () => {
                 </a>
               </motion.div>
 
-              {/* Architectural scope indicator — unique to Additions */}
+              {/* Project scope indicator — unique to Additions */}
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ const HomeAdditions = () => {
           </div>
         </section>
 
-        {/* ─── OPENING — Architectural editorial with scope sidebar ─── */}
+        {/* ─── OPENING — Design editorial with scope sidebar ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
@@ -197,7 +197,7 @@ const HomeAdditions = () => {
                   The best additions don't look like additions. They look like rooms your home always had — because they share the same rooflines, materials, and proportions.
                 </h2>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
-                  Highlander builds home additions that integrate with your existing architecture — structurally, visually, and in the way the space flows.
+                  Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <p className="text-muted-foreground/60 text-sm leading-relaxed font-body italic">
                   Every addition starts with understanding your home and ends with a space that elevates the entire property.
@@ -299,7 +299,7 @@ const HomeAdditions = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Thinking about adding on?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We'll help you evaluate what's possible — structurally, architecturally, and within your budget.</p>
+                <p className="text-primary-foreground/50 text-sm font-body">We'll help you evaluate what's possible — structurally, visually, and within your budget.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">

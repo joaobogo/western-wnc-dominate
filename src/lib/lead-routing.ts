@@ -12,7 +12,7 @@ const TIER_1_TOWNS = ["highlands", "cashiers", "franklin", "sylva"];
 export type Lane =
   | "emergency"     // active leak / storm — same-day call
   | "express"       // 30d timeline, hot score — 24h call
-  | "qualified"     // plans/photos/architect involvement — senior PM
+  | "qualified"     // plans/photos/designer involvement — senior PM
   | "concierge"     // signature tier, second home, ARB community
   | "standard"      // normal pipeline
   | "nurture";      // exploring, no urgency
@@ -182,7 +182,7 @@ function humanizeRoofingProject(type?: string, material?: string): string {
     standing_seam_metal: "Standing Seam",
     stamped_metal: "Stamped Metal Shake",
     synthetic_brava: "Brava",
-    architectural_asphalt: "Architectural Asphalt",
+    architectural_asphalt: "Dimensional Asphalt",
     premium_asphalt: "Designer Asphalt",
     cedar: "Cedar",
   };
@@ -214,7 +214,7 @@ export type ConstructionRoutingInput = {
   timeline?: string;
   propertyType?: string;
   planningStage?: string;           // just_exploring | have_ideas | concept_sketches | full_plans
-  decisionMakers?: string;          // solo | couple | family | architect
+  decisionMakers?: string;          // solo | couple | family | designer
   hasPlans?: boolean;
   hasPhotos?: boolean;
   town?: string;
@@ -234,7 +234,7 @@ export function deriveConstructionRouting(input: ConstructionRoutingInput): {
   }
 
   // Plans uploaded OR architect involvement = qualified — assign senior PM
-  const architectInvolved = input.decisionMakers === "architect";
+  const architectInvolved = input.decisionMakers === "architect"; // mapping 'architect' value from builder to 'designer' intent
   const hasFullPlans = input.planningStage === "full_plans" || input.hasPlans === true;
   if (architectInvolved || hasFullPlans) {
     lane = "qualified";
@@ -242,7 +242,7 @@ export function deriveConstructionRouting(input: ConstructionRoutingInput): {
     notes.push(
       hasFullPlans
         ? "Full plans / drawings uploaded — fast-track to senior PM for review before walkthrough."
-        : "Working with an architect — route to senior PM for design coordination.",
+        : "Working with a professional designer — route to senior PM for design coordination.",
     );
   }
 

@@ -58,21 +58,21 @@ const roofingServices = [
     icon: Layers,
     title: "Metal Roofing",
     slug: "/roofing/specialty",
-    description: "Standing seam and architectural metal systems rated for 140mph winds and 50+ years of mountain performance. The premium choice.",
+    description: "Standing seam and visually complex metal systems rated for 140mph winds and 50+ years of mountain performance. The premium choice.",
     features: ["Standing seam", "Concealed fastener", "Snow guards", "Custom colors"],
   },
   {
     icon: TreePine,
     title: "Specialty Roofing",
     slug: "/roofing/specialty",
-    description: "Cedar shake, slate, copper accents, and architectural details for properties that demand distinctive craftsmanship and heritage character.",
+    description: "Cedar shake, slate, copper accents, and custom details for properties that demand distinctive craftsmanship and heritage character.",
     features: ["Cedar shake", "Slate systems", "Copper work", "Historic restoration"],
   },
 ];
 
 const materials = [
   {
-    name: "Architectural Shingles",
+    name: "Dimensional Shingles",
     brand: "CertainTeed Landmark PRO",
     lifespan: "30–50 years",
     best: "Most residential projects",
@@ -111,7 +111,7 @@ const climateFactors = [
 const galleryItems = [
   { image: metalRoof, title: "Standing Seam — Cashiers", category: "Metal" },
   { image: cedarRoof, title: "Cedar Shake — Highlands", category: "Cedar" },
-  { image: asphaltRoof, title: "Architectural Shingles — Franklin", category: "Shingle" },
+  { image: asphaltRoof, title: "Dimensional Shingles — Franklin", category: "Shingle" },
   { image: metalCabin, title: "Metal + Deck — Bryson City", category: "Metal" },
   { image: asphaltLarge, title: "Full Renovation — Sylva", category: "Shingle" },
   { image: cedarDetail, title: "Cedar Restoration — Highlands", category: "Cedar" },
@@ -119,7 +119,7 @@ const galleryItems = [
 
 const faqs = [
   { q: "How long does a roof replacement take in WNC?", a: "Most residential replacements are completed in 2–5 days depending on size, complexity, and weather. We provide a clear timeline before work begins and communicate daily throughout the project." },
-  { q: "What roofing materials work best for mountain homes?", a: "It depends on your elevation, wind exposure, aesthetic preference, and budget. We typically recommend CertainTeed Landmark PRO architectural shingles or standing seam metal for WNC homes — both handle high winds, heavy rain, and snow loads exceptionally well." },
+  { q: "What roofing materials work best for mountain homes?", a: "It depends on your elevation, wind exposure, aesthetic preference, and budget. We typically recommend CertainTeed Landmark PRO dimensional shingles or standing seam metal for WNC homes — both handle high winds, heavy rain, and snow loads exceptionally well." },
   { q: "Do you handle insurance claims for storm damage?", a: "Yes. We provide complete damage documentation with photos and measurements, meet with your adjuster on-site, and coordinate the entire repair or replacement process through your insurance claim." },
   { q: "What does a new roof cost in Western North Carolina?", a: "Replacement pricing is scope-based — every proposal reflects size, material system, pitch complexity, and access conditions. We provide a detailed, grouped-cost proposal after assessing your specific property rather than publishing a generic range." },
   { q: "Are you certified to install specific roofing brands?", a: "Yes. We are CertainTeed Master Shingle Applicator certified — a designation held by fewer than 1% of roofing contractors nationally. This means enhanced warranties and factory-backed installation quality." },
@@ -146,7 +146,7 @@ const processSteps = [
     number: "02",
     title: "Material Specification",
     icon: Ruler,
-    description: "Based on your property's elevation, exposure, architecture, and budget, we recommend materials engineered for your specific conditions — not pulled from a generic catalog.",
+    description: "Based on your property's elevation, exposure, layout, and budget, we recommend materials engineered for your specific conditions — not pulled from a generic catalog.",
   },
   {
     number: "03",
@@ -208,7 +208,7 @@ const whyHighlander = [
 ];
 
 /* ═══════════════════════════════════════════
-   ROOFLINE SVG — architectural motif
+   ROOFLINE SVG — designer motif
    ═══════════════════════════════════════════ */
 const RooflineSVG = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className={className}>

@@ -65,7 +65,7 @@ const repairVsReplace = [
 
 const materialsComparison = [
   {
-    name: "Architectural Asphalt Shingles",
+    name: "Dimensional Asphalt Shingles",
     brand: "CertainTeed Landmark PRO",
     warranty: "Lifetime limited",
     lifespan: "30–50 years",
@@ -106,7 +106,7 @@ const roofStyles = [
 const processSteps = [
   { number: "01", title: "Initial Consultation", icon: Phone, description: "We start with a conversation about your roof, your concerns, and your goals. Then we schedule a convenient time for an on-site assessment — no pressure, no obligation." },
   { number: "02", title: "Property Assessment", icon: Eye, description: "We inspect every component — surface material, flashing, penetrations, ventilation, gutters, and visible decking. We photograph and document everything." },
-  { number: "03", title: "Material Specification", icon: Ruler, description: "Based on your property's elevation, exposure, architecture, and budget, we recommend materials engineered specifically for your conditions." },
+  { number: "03", title: "Material Specification", icon: Ruler, description: "Based on your property's elevation, exposure, layout, and budget, we recommend materials engineered specifically for your conditions." },
   { number: "04", title: "Transparent Proposal", icon: ClipboardCheck, description: "You receive a detailed, grouped-cost proposal with scope, materials, timeline, warranty details, and total cost. No hidden fees. No surprises." },
   { number: "05", title: "Precision Installation", icon: Hammer, description: "Our certified crews install to exact manufacturer specifications — every fastener pattern, ice shield placement, ventilation calculation, and flashing detail." },
   { number: "06", title: "Final Walkthrough & Warranty", icon: BadgeCheck, description: "We conduct a multi-point quality inspection, then walk the project with you. You receive a complete warranty package — documentation you can hold in your hands." },
@@ -125,14 +125,14 @@ const galleryItems = [
   { image: asphaltHero, title: "Full Replacement — Highlands Plateau", category: "Shingle" },
   { image: metalRoof, title: "Standing Seam — Cashiers Estate", category: "Metal" },
   { image: cedarRoof, title: "Cedar Shake — Highlands", category: "Cedar" },
-  { image: asphalt005, title: "Architectural Shingles — Franklin", category: "Shingle" },
+  { image: asphalt005, title: "Dimensional Shingles — Franklin", category: "Shingle" },
   { image: asphalt007, title: "Mountain Home — Sylva", category: "Shingle" },
   { image: cedarDetail, title: "Cedar Detail — Sapphire Valley", category: "Cedar" },
 ];
 
 const faqs = [
   { q: "How long does a residential roof replacement take?", a: "Most residential replacements are completed in 2–5 days depending on size, complexity, pitch, and weather conditions. We'll provide a specific timeline in your proposal and keep you updated daily throughout the project." },
-  { q: "What is your most popular residential roofing material?", a: "CertainTeed Landmark PRO architectural shingles are our most-installed residential product. They offer exceptional durability, impact resistance, algae protection, and a wide range of designer colors — all at a strong value point for WNC homeowners." },
+  { q: "What is your most popular residential roofing material?", a: "CertainTeed Landmark PRO dimensional shingles are our most-installed residential product. They offer exceptional durability, impact resistance, algae protection, and a wide range of designer colors — all at a strong value point for WNC homeowners." },
   { q: "How do I know if I need a repair or a full replacement?", a: "We'll assess your roof honestly and explain both options with their pros, cons, and costs. If a repair will solve the problem, we'll tell you. If replacement is the better long-term investment, we'll explain exactly why. You decide with full information." },
   { q: "What does a residential roof replacement cost in WNC?", a: "Replacement pricing is scope-based — it depends on size, material system, pitch complexity, and access conditions. Rather than publish a generic range, we provide a detailed, grouped-cost proposal after assessing your specific property." },
   { q: "Do you handle the full process or just the roofing?", a: "We handle everything — from initial assessment through final cleanup. That includes material delivery, old roof tear-off, decking inspection and repair, new installation, flashing, ventilation, gutters if needed, and complete debris removal." },

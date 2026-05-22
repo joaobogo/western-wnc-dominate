@@ -49,7 +49,7 @@ const townProofMap: Record<string, TownProofContent> = {
     faqs: [
       {
         question: "What roofing system holds up best at Highlands elevation?",
-        answer: "For most Highlands homes, we recommend architectural shingles with full ice-and-water protection or standing seam metal. The right choice depends on roof pitch, tree cover, wind exposure, and whether the home is occupied year-round.",
+        answer: "For most Highlands homes, we recommend dimensional shingles with full ice-and-water protection or standing seam metal. The right choice depends on roof pitch, tree cover, wind exposure, and whether the home is occupied year-round.",
       },
       {
         question: "Do Highlands roofs need extra ice-dam protection?",
@@ -129,7 +129,7 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         question: "What roofing option fits most Franklin homes best?",
-        answer: "Architectural shingles are the most common fit because they balance durability, appearance, and budget well. For homeowners wanting longer lifespan and stronger weather performance, metal is often the next step up.",
+        answer: "Dimensional shingles are the most common fit because they balance durability, appearance, and budget well. For homeowners wanting longer lifespan and stronger weather performance, metal is often the next step up.",
       },
       {
         question: "Can you help me decide between repair and replacement in Franklin?",
@@ -223,7 +223,7 @@ const townProofMap: Record<string, TownProofContent> = {
       ...buildProjectHighlight("Waynesville"),
       {
         title: "Historic-home detailing",
-        summary: "Waynesville homes often require careful flashing transitions, decking repairs, and material choices that respect older architecture while improving performance.",
+        summary: "Waynesville homes often require careful flashing transitions, decking repairs, and material choices that respect older design themes while improving performance.",
         proof: "Targeted decking repair, ventilation upgrades, and clean tie-ins",
       },
     ].slice(0, 3),
@@ -234,11 +234,11 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         question: "What roofing material fits Waynesville's weather best?",
-        answer: "Architectural shingles work very well for many homes, while metal is a strong fit for owners prioritizing lifespan and snow shedding. The right answer depends on roof pitch, exposure, and budget.",
+        answer: "Dimensional shingles work very well for many homes, while metal is a strong fit for owners prioritizing lifespan and snow shedding. The right answer depends on roof pitch, exposure, and budget.",
       },
       {
         question: "Can you match the look of a historic Waynesville home?",
-        answer: "Yes. We help homeowners choose profiles and colors that protect the home without making it look out of character with the neighborhood or architecture.",
+        answer: "Yes. We help homeowners choose profiles and colors that protect the home without making it look out of character with the neighborhood or original design.",
       },
     ],
   },
@@ -290,7 +290,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Preservation-sensitive reroofing",
         summary: "Dillsboro homes often need roofing choices that protect the structure without making the property feel out of place in a historic mountain village.",
-        proof: "Architectural shingle and detail packages selected for visual compatibility",
+        proof: "Dimensional shingle and detail packages selected for visual compatibility",
       },
       {
         title: "Small-footprint project execution",
@@ -300,7 +300,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Storm repair with character retention",
         summary: "When older Dillsboro roofs are damaged, the goal is usually to restore performance without losing the home's original feel.",
-        proof: "Repair scopes that balance protection, cost, and architectural character",
+        proof: "Repair scopes that balance protection, cost, and layout character",
       },
     ],
     faqs: [

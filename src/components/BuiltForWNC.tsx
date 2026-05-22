@@ -14,7 +14,7 @@ const factors = [
   { icon: Wind, title: "High-Altitude Wind Exposure", detail: "Ridge-top homes face sustained winds that test every fastener, flashing detail, and roof edge. Standard installations don't hold." },
   { icon: Droplets, title: "Heavy Rainfall & Snow Loads", detail: "60+ inches of annual rainfall and significant snowfall demand proper drainage engineering, ice and water shield, and load-rated framing." },
   { icon: Mountain, title: "Steep Terrain & Access", detail: "Mountain lots with steep grades and limited access require crews who plan logistics as carefully as they plan the build itself." },
-  { icon: TreePine, title: "Regional Architectural Character", detail: "Mountain homes aren't suburban homes. Material choices, color palettes, and design details must respect the landscape and local aesthetic." },
+  { icon: TreePine, title: "Regional Design Character", detail: "Mountain homes aren't suburban homes. Material choices, color palettes, and design details must respect the landscape and local aesthetic." },
   { icon: MapPin, title: "Local Code & Climate Knowledge", detail: "Every county has different permitting timelines, inspection requirements, and micro-climate realities. We know them because we work in them daily." },
 ];
 

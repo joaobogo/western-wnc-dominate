@@ -71,7 +71,7 @@ export const MountainContours = ({
 
 /* ──────────────────────────────────────
    BLUEPRINT GRID
-   Architectural drawing-style grid overlay
+   Design-led drawing-style grid overlay
    ────────────────────────────────────── */
 
 interface BlueprintGridProps {
@@ -136,24 +136,24 @@ export const BlueprintGrid = ({
 };
 
 /* ──────────────────────────────────────
-   ARCHITECTURAL LINES
+   DESIGN LINES
    Diagonal construction lines that
    subtly animate on scroll
    ────────────────────────────────────── */
 
-interface ArchitecturalLinesProps {
+interface DesignLinesProps {
   className?: string;
   variant?: "light" | "dark";
   direction?: "left" | "right";
   opacity?: number;
 }
 
-export const ArchitecturalLines = ({
+export const DesignLines = ({
   className = "",
   variant = "light",
   direction = "right",
   opacity = 0.025,
-}: ArchitecturalLinesProps) => {
+}: DesignLinesProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({

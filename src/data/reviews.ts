@@ -91,7 +91,7 @@ export const customerReviews: CustomerReview[] = [
     datePublished: "2025-03-05",
     reviewBody:
       "After three bad experiences with other contractors, we were skeptical. Highlander changed that completely. James came out personally, gave an honest assessment — no pressure, no upselling. The install crew was clean, fast, and meticulous.",
-    project: "Architectural Shingle Replacement",
+    project: "Dimensional Shingle Replacement",
     category: "roofing",
     outcome: "CertainTeed Landmark installed with enhanced warranty.",
     featured: true,

@@ -15,8 +15,8 @@ const faqs = [
   { q: "How long does a metal roof last in Western NC?", a: "A properly specified and installed standing seam system is a 40+ year roof. Failures we see in the field are almost always install-detail issues at flashings and terminations — not panel failures." },
   { q: "Is metal louder than asphalt inside the home?", a: "Properly installed metal over solid decking and underlayment is not noticeably louder than asphalt. The 'tin roof' sound comes from open framing, not residential metal systems." },
   { q: "Can metal go directly over my existing roof?", a: "Sometimes, but in the WNC mountains we almost always recommend a full tear-off so we can verify decking and install proper underlayment before panels go down." },
-  { q: "How is metal priced versus asphalt?", a: "Up front, metal is typically 1.5–2.5× the cost of architectural asphalt. Over 30+ years it is usually the cheaper roof per year once you include replacement cycles." },
-  { q: "What metal profile is right for a mountain home?", a: "Standing seam (concealed fastener) is the premium choice for most architectural homes. Exposed-fastener panels still have a place on outbuildings, simple gable roofs, and budget-driven projects." },
+  { q: "How is metal priced versus asphalt?", a: "Up front, metal is typically 1.5–2.5× the cost of dimensional asphalt. Over 30+ years it is usually the cheaper roof per year once you include replacement cycles." },
+  { q: "What metal profile is right for a mountain home?", a: "Standing seam (concealed fastener) is the premium choice for most designer mountain homes. Exposed-fastener panels still have a place on outbuildings, simple gable roofs, and budget-driven projects." },
 ];
 
 const MetalRoofing = () => {
@@ -24,7 +24,7 @@ const MetalRoofing = () => {
   return (
     <>
       <SEOHead
-        title="Metal Roofing in Western NC | Standing Seam & Architectural | Highlander"
+        title="Metal Roofing in Western NC | Standing Seam & Premium Metal | Highlander"
         description="Standing seam and exposed-fastener metal roofing across Franklin, Highlands, Cashiers, and Sylva. Engineered for mountain weather, installed by a licensed contractor."
         path="/roofing/metal"
         jsonLd={buildPageSchema({
@@ -91,7 +91,7 @@ const MetalRoofing = () => {
               <h2 className="text-2xl md:text-3xl font-heading font-bold">What we install</h2>
               <ul className="space-y-3">
                 {[
-                  "Standing seam metal (concealed fastener) — the premium choice for architectural mountain homes",
+                  "Standing seam metal (concealed fastener) — the premium choice for design-forward mountain homes",
                   "Exposed-fastener metal panels — appropriate for outbuildings and budget-driven projects",
                   "Full ice-and-water shield underlayment, well past code minimum at eaves and valleys",
                   "Snow retention designed for the specific roof, not stocked as a one-size accessory",

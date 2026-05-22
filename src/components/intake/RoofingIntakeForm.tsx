@@ -245,7 +245,7 @@ const RoofingIntakeForm = () => {
                 <Label>Anything specific we should know?</Label>
                 <Textarea
                   rows={5}
-                  placeholder="Roof age, known leaks, recent storm, prior repairs, architectural concerns…"
+                  placeholder="Roof age, known leaks, recent storm, prior repairs, specific design concerns…"
                   value={data.description}
                   onChange={(e) => set("description", e.target.value)}
                 />

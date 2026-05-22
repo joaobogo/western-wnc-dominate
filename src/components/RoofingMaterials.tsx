@@ -39,8 +39,8 @@ export const roofingMaterials: RoofMaterial[] = [
     priceRange: "$$$",
   },
   {
-    id: "architectural-shingles",
-    name: "Architectural Shingles",
+    id: "dimensional-shingles",
+    name: "Dimensional Shingles",
     subtitle: "The standard for premium residential roofing",
     icon: Layers,
     colorAccent: "hsl(var(--heritage-green))",
@@ -59,7 +59,7 @@ export const roofingMaterials: RoofMaterial[] = [
     subtitle: "Maximum lifespan, minimum maintenance",
     icon: Star,
     colorAccent: "hsl(var(--highland-gold))",
-    visualStyle: "Clean, linear profile with raised seams creating strong vertical lines. Available in a wide spectrum of factory-applied colors and finishes — from traditional mountain aesthetics to contemporary architectural statements.",
+    visualStyle: "Clean, linear profile with raised seams creating strong vertical lines. Available in a wide spectrum of factory-applied colors and finishes — from traditional mountain aesthetics to modern design statements.",
     durability: "Exceptional. Standing seam metal handles wind, hail, snow load, and UV exposure better than any other residential roofing material. No granule loss, no organic degradation, no moisture absorption.",
     lifespan: "40–70+ years. Many standing seam roofs outlast the buildings they're installed on. Factory finishes carry 35–40 year fade and chalk warranties.",
     maintenance: "Very low. No granules to lose, no tabs to lift. Occasional inspection of panel clips, sealant at penetrations, and gutter connections.",
@@ -78,7 +78,7 @@ export const roofingMaterials: RoofMaterial[] = [
     durability: "Good to excellent depending on grade, treatment, and ventilation. Premium hand-split shakes provide superior wind resistance through their thick, irregular profile.",
     lifespan: "30–40 years when properly installed with adequate ventilation and treated for moss and insect resistance. Fire-treated options available for areas with wildfire considerations.",
     maintenance: "Moderate. Cedar requires periodic treatment for moss, algae, and insect resistance. Annual inspection and cleaning recommended. Replacement of individual shakes is straightforward.",
-    idealFor: "Custom mountain homes, architecturally distinctive properties, and homeowners who want their roof to be a design statement — not just a weather barrier.",
+    idealFor: "Custom mountain homes, visually distinctive properties, and homeowners who want their roof to be a design statement — not just a weather barrier.",
     wncPerformance: "Well-suited to the mountain aesthetic and performs well with proper ventilation and maintenance. Cedar's natural insulation value provides thermal benefits in cold weather. Requires attention to moisture management in high-humidity microclimates.",
     highlights: ["Unmatched natural beauty", "Natural insulation properties", "Hand-split or precision-cut options", "Develops distinguished patina", "Renewable, sustainable material"],
     priceRange: "$$$$$",
@@ -92,7 +92,7 @@ export const roofingMaterials: RoofMaterial[] = [
     visualStyle: "Engineered to replicate the visual texture, color variation, and shadow profile of natural quarried slate — without the extreme weight. Available in multi-width blends that mimic authentic random-width slate installations.",
     durability: "Very high. Impact-rated (Class 4), wind-rated to 110+ mph, and engineered for UV stability. No delamination, no moisture absorption, no organic decay.",
     lifespan: "50+ years with manufacturer warranties up to 50 years on premium lines.",
-    maintenance: "Very low. Similar maintenance profile to architectural shingles — periodic visual inspection with no treatment or coating required.",
+    maintenance: "Very low. Similar maintenance profile to dimensional shingles — periodic visual inspection with no treatment or coating required.",
     idealFor: "Homeowners who love the look of natural slate but need a lighter-weight, more cost-effective, or more readily repairable alternative. Excellent for steep-slope applications where the roof is highly visible.",
     wncPerformance: "Excellent. Impact resistance handles hail well, wind ratings exceed mountain conditions, and the lightweight profile reduces structural load requirements on older homes.",
     highlights: ["Class 4 impact rating", "50-year manufacturer warranty", "75% lighter than natural slate", "Consistent quality, no delamination", "Environmentally recycled content"],
@@ -123,7 +123,7 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
               Choose the Right Material<br className="hidden md:block" /> for Your Home & Climate.
             </h2>
             <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-              Every material has strengths. The right choice depends on your home's architecture, your long-term plans, and how your specific location in Western North Carolina affects performance.
+              Every material has strengths. The right choice depends on your home's design theme, your long-term plans, and how your specific location in Western North Carolina affects performance.
             </p>
           </motion.div>
         )}

@@ -33,7 +33,7 @@ const TIMELINE_OPTIONS = [
   { value: "exploring", label: "6 + months" },
 ];
 const PLAN_OPTIONS = [
-  { value: "yes",     label: "Yes",        sub: "Architect / drawings ready" },
+  { value: "yes",     label: "Yes",        sub: "Professionally drawn plans ready" },
   { value: "partial", label: "Partial",    sub: "Sketches or inspiration" },
   { value: "no",      label: "No",         sub: "Need design input" },
 ];
@@ -119,7 +119,7 @@ const ConstructionIntakeForm = () => {
         timeline: data.timeline,
         propertyType: data.propertyType,
         planningStage: hasPlansBool === true ? "full_plans" : hasPlansBool === false ? "have_ideas" : undefined,
-        decisionMakers: data.decisionMaker === "self" ? "solo" : data.decisionMaker === "couple" ? "couple" : data.decisionMaker === "architect" ? "architect" : undefined,
+        decisionMakers: data.decisionMaker === "self" ? "solo" : data.decisionMaker === "couple" ? "couple" : data.decisionMaker === "architect" ? "professional_designer" : undefined,
         hasPlans: hasPlansBool === true,
         hasPhotos: uploadedPaths.length > 0,
         town: data.town,

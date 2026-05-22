@@ -31,8 +31,8 @@ const complexRooflines = [
 
 const premiumMaterials = [
   { title: "Natural Cedar Shake & Shingle", detail: "Hand-split cedar shakes and precision-cut shingles deliver a warmth and texture that no synthetic can replicate. We source premium grades and install with proper ventilation detailing to maximize the 30–40 year lifespan these materials can deliver in mountain conditions." },
-  { title: "Architectural Standing Seam Metal", detail: "Custom-fabricated standing seam panels in copper, zinc, galvalume, and painted steel. We work with panels formed on-site to exact measurements — no pre-cut compromises, no exposed fasteners, and clean lines that define the architecture." },
-  { title: "Synthetic Slate & Designer Shingles", detail: "For homes where the slate aesthetic matters but weight or budget constraints apply, we install premium synthetic slate and designer-class dimensional shingles that deliver genuine architectural presence." },
+  { title: "Design-Oriented Standing Seam Metal", detail: "Custom-fabricated standing seam panels in copper, zinc, galvalume, and painted steel. We work with panels formed on-site to exact measurements — no pre-cut compromises, no exposed fasteners, and clean lines that define your project's aesthetic." },
+  { title: "Synthetic Slate & Designer Shingles", detail: "For homes where the slate aesthetic matters but weight or budget constraints apply, we install premium synthetic slate and designer-class dimensional shingles that deliver genuine visual presence." },
   { title: "Copper Accents & Custom Metal Work", detail: "Copper ridge caps, finials, custom chimney shrouds, and decorative flashings add the kind of hand-crafted detail that separates exceptional roofing from standard installation. We fabricate in-house." },
 ];
 
@@ -40,7 +40,7 @@ const detailExecution = [
   { icon: PenTool, title: "Custom Flashing Fabrication", detail: "Every specialty roof requires custom-fabricated flashing — step flashing profiles, counter-flashing receivers, cricket assemblies, and transition details designed for the specific geometry of your roof." },
   { icon: Ruler, title: "Precision Layout & Coursing", detail: "On steep, visible rooflines, shingle coursing and panel alignment are immediately apparent. We lay out every course with string lines and laser reference to ensure visually perfect alignment across the entire plane." },
   { icon: Compass, title: "Valley & Transition Engineering", detail: "Valleys, hips, and transitions are where roofs succeed or fail. We engineer each transition for both waterproofing performance and visual continuity — because on a specialty roof, both matter equally." },
-  { icon: Palette, title: "Color & Material Coordination", detail: "We work with architects, designers, and homeowners to select materials, finishes, and accent metals that complement the home's architecture, landscaping, and site context — not just what's available at the supply house." },
+  { icon: Palette, title: "Color & Material Coordination", detail: "We work with designers, builders, and homeowners to select materials, finishes, and accent metals that complement the home's layout, landscaping, and site context — not just what's available at the supply house." },
 ];
 
 const whyHigherStandard = [
@@ -54,12 +54,12 @@ const whyHigherStandard = [
 const galleryImages = [
   { src: cedar001, alt: "Cedar shake roof on a custom mountain home", label: "Cedar Shake — Custom Mountain Residence" },
   { src: cedar002, alt: "Natural cedar shingle detail work", label: "Cedar Shingle — Precision Detail" },
-  { src: metal009, alt: "Standing seam metal on architectural home", label: "Standing Seam — Architectural Application" },
+  { src: metal009, alt: "Standing seam metal on a custom mountain home", label: "Standing Seam — Custom Application" },
   { src: metal010, alt: "Metal roof with mountain backdrop", label: "Metal Roof — Mountain Integration" },
 ];
 
 const processSteps = [
-  { number: "01", title: "Design Consultation", description: "We meet with you — and your architect or designer if involved — to understand the vision, review plans, and discuss material options that serve both the aesthetic and the environment." },
+  { number: "01", title: "Design Consultation", description: "We meet with you — and your designer or lead project planner if involved — to understand the vision, review plans, and discuss material options that serve both the aesthetic and the environment." },
   { number: "02", title: "Site & Structure Assessment", description: "We evaluate roof geometry, structural capacity, ventilation requirements, and access logistics. Complex rooflines require detailed planning before a single material is ordered." },
   { number: "03", title: "Material Selection & Sourcing", description: "Premium materials often require advance ordering and specification. We confirm colors, profiles, grades, and quantities — and coordinate delivery timing with the project schedule." },
   { number: "04", title: "Custom Fabrication", description: "Flashing, trim, accent metals, and transition components are fabricated to exact specifications before installation begins. Nothing is improvised on-site." },
@@ -68,9 +68,9 @@ const processSteps = [
 ];
 
 const faqs = [
-  { q: "What qualifies as specialty roofing?", a: "Specialty roofing includes any project involving premium or non-standard materials (cedar shake, natural slate, copper, custom metal), complex roof geometry (turrets, eyebrow dormers, steep pitches above 8:12), mixed-material transitions, or architecturally sensitive installations where visual outcome matters as much as weather performance." },
-  { q: "How much more does specialty roofing cost compared to standard?", a: "Specialty roofing typically costs 2–4x more than standard architectural shingle installation, depending on materials, complexity, and custom fabrication requirements. Cedar shake and standing seam metal are in the mid-premium range; copper accents and natural slate are at the higher end. We provide detailed proposals so you know exactly what you're investing in." },
-  { q: "Do you work with architects and builders?", a: "Yes. Many of our specialty projects involve coordination with architects, designers, and general contractors. We're comfortable reading plans, participating in design discussions, and integrating our scope with the broader construction schedule." },
+  { q: "What qualifies as specialty roofing?", a: "Specialty roofing includes any project involving premium or non-standard materials (cedar shake, natural slate, copper, custom metal), complex roof geometry (turrets, eyebrow dormers, steep pitches above 8:12), mixed-material transitions, or visually complex installations where the final look matters as much as weather performance." },
+  { q: "How much more does specialty roofing cost compared to standard?", a: "Specialty roofing typically costs 2–4x more than standard dimensional shingle installation, depending on materials, complexity, and custom fabrication requirements. Cedar shake and standing seam metal are in the mid-premium range; copper accents and natural slate are at the higher end. We provide detailed proposals so you know exactly what you're investing in." },
+  { q: "Do you work with designers and builders?", a: "Yes. Many of our specialty projects involve coordination with designers, project planners, and general contractors. We're comfortable reading plans, participating in planning discussions, and integrating our scope with the broader construction schedule." },
   { q: "How long does a specialty roofing project take?", a: "Specialty projects typically take longer than standard installations due to custom fabrication, material lead times, and the precision required. A complex cedar shake or standing seam project may take 2–4 weeks depending on size and geometry. We provide a detailed timeline during the proposal phase." },
   { q: "Can you match existing specialty materials for repairs or additions?", a: "In most cases, yes. We source matching cedar grades, metal profiles, and slate to blend seamlessly with existing installations. For older or discontinued materials, we'll source the closest available match and discuss options before proceeding." },
   { q: "Do specialty materials require more maintenance?", a: "Some do. Cedar shake benefits from periodic cleaning and treatment every 3–5 years. Copper develops a natural patina that most homeowners prefer to leave untreated. Standing seam metal is essentially maintenance-free. We'll provide material-specific maintenance guidance as part of your project documentation." },
@@ -83,11 +83,11 @@ const SpecialtyRoofing = () => {
   return (
     <>
       <SEOHead
-        title="Specialty Roofing in WNC | Cedar & Standing Seam"
-        description="Specialty roofing for custom homes and architecturally distinctive properties in Western North Carolina. Cedar shake, copper, standing seam metal, and complex roofline expertise."
+        title="Specialty Roofing in WNC | Custom & Designer Systems"
+        description="Specialty roofing for custom homes and visually distinctive properties in Western North Carolina. Cedar shake, copper, standing seam metal, and complex roofline expertise."
         path="/roofing/specialty"
         jsonLd={[
-          serviceSchema({ name: "Specialty Roofing", description: "Specialty roofing for custom homes and architecturally distinctive properties across Western North Carolina.", url: "/roofing/specialty" }),
+          serviceSchema({ name: "Specialty Roofing", description: "Specialty roofing for custom homes and visually distinctive properties across Western North Carolina.", url: "/roofing/specialty" }),
           breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Specialty", url: "/roofing/specialty" }]),
           faqSchema(faqs.map(f => ({ question: f.q, answer: f.a }))),
         ]}
@@ -123,12 +123,12 @@ const SpecialtyRoofing = () => {
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Meets Architecture.
+                  Meets Design.
                 </motion.h1>
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
-                Specialty roofing for custom homes, architecturally distinctive properties, and projects where precision and aesthetics matter as much as weather protection. Cedar, copper, standing seam, complex rooflines — built to be seen.
+                Specialty roofing for custom homes, visually distinctive properties, and projects where precision and aesthetics matter as much as weather protection. Cedar, copper, standing seam, complex rooflines — built to be seen.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -177,7 +177,7 @@ const SpecialtyRoofing = () => {
                 Some roofs are meant to be noticed. They deserve a team that treats every line, every material, and every detail as a reflection of the home itself.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
-                Highlander's specialty roofing work serves homeowners, architects, and builders who demand more than standard installation. Complex rooflines, premium materials, custom metalwork, and the kind of precision that only matters when you care deeply about the outcome.
+                Highlander's specialty roofing work serves homeowners, designers, and builders who demand more than standard installation. Complex rooflines, premium materials, custom metalwork, and the kind of precision that only matters when you care deeply about the outcome.
               </p>
               <div className="flex items-center justify-center gap-2 mt-10">
                 <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
@@ -215,7 +215,7 @@ const SpecialtyRoofing = () => {
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
               <span className="eyebrow mb-3 block">Premium Materials</span>
-              <h2 className="section-heading mb-4">Materials That Define<br className="hidden md:block" /> the Architecture.</h2>
+              <h2 className="section-heading mb-4">Materials That Define<br className="hidden md:block" /> Your Project's Aesthetic.</h2>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -232,7 +232,7 @@ const SpecialtyRoofing = () => {
           </div>
         </section>
 
-        {/* ─── ARCHITECTURAL DETAIL ─── */}
+        {/* ─── DESIGN DETAIL ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">

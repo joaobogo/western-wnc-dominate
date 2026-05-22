@@ -63,7 +63,7 @@ export const divisionThemes: Record<Division, DivisionTheme> = {
     textureDark: "blueprint-dark",
     cardClass: "card-construction",
     fieldClass: "field-construction",
-    tone: "architectural",
+    tone: "design-focused",
   },
 };
 

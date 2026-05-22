@@ -336,7 +336,7 @@ const About = () => {
               {[
                 { icon: TreePine, title: "Franklin & Sylva Based", detail: "Two local offices. Deep roots in Macon and Jackson counties. We're your neighbors." },
                 { icon: Mountain, title: "Elevation-Aware Building", detail: "From 2,000 to 5,000+ feet — we spec materials and methods for your property's specific exposure." },
-                { icon: Home, title: "Mountain Architecture", detail: "We understand WNC home styles, proportions, and materials. Our work enhances — never clashes." },
+                { icon: Home, title: "Mountain Design", detail: "We understand WNC home styles, proportions, and materials. Our work enhances — never clashes." },
               ].map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="text-center p-8">
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">

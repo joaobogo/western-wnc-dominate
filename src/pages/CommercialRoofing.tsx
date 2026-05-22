@@ -43,7 +43,7 @@ const roofingSystems = [
   },
   {
     title: "Standing Seam Metal",
-    description: "Architectural and structural standing seam panels for commercial applications requiring long-term performance, aesthetic quality, and superior wind resistance.",
+    description: "Concealed-fastener and structural standing seam panels for commercial applications requiring long-term performance, aesthetic quality, and superior wind resistance.",
     bestFor: "Mixed-use, hospitality, retail, and high-visibility commercial",
     highlights: ["50+ year material lifespan", "Class A fire rating", "Exceptional wind uplift resistance"],
   },

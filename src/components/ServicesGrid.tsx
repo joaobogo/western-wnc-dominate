@@ -136,7 +136,7 @@ const services: FeaturedService[] = [
     icon: HomeIcon,
     title: "Custom Projects",
     tagline: "Design-build. Single point of contact.",
-    description: "Complex builds, architectural partnerships, and complete property transformations — from initial drawings through final walkthrough and warranty handoff.",
+    description: "Complex builds, design partnerships, and complete property transformations — from initial drawings through final walkthrough and warranty handoff.",
     stat: "Full",
     statLabel: "design-build scope",
     href: "/construction/custom",
@@ -295,7 +295,7 @@ const ServicesGrid = () => {
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-muted-foreground max-w-xl mx-auto text-base font-body leading-relaxed">
               Roof systems, additions, renovations, and exterior work — each project scoped
-              for your property's elevation, exposure, and architectural character.
+              for your property's elevation, exposure, and layout character.
             </p>
           </ScrollReveal>
           <GoldLine width="4rem" centered delay={0.35} className="mt-6" />

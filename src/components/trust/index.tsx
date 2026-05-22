@@ -53,7 +53,7 @@ export const trustPillars = [
   {
     icon: Mountain,
     title: "Local Expertise",
-    short: "Built for WNC elevation, weather, and mountain architecture since 2017.",
+    short: "Built for WNC elevation, weather, and local design themes since 2017.",
     overcomes: "Do they understand mountain building?",
   },
   {

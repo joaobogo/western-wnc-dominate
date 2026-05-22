@@ -27,7 +27,7 @@ CRITICAL — TWO EQUAL DIVISIONS:
 Highlander has TWO major divisions that are EQUAL in importance. NEVER treat Construction as secondary or minor.
 
 ═══ ROOFING DIVISION ═══
-- Residential: Full replacement, repairs, maintenance. Asphalt architectural shingles, metal standing seam, cedar shake, synthetic slate, tile.
+- Residential: Full replacement, repairs, maintenance. Asphalt dimensional shingles, metal standing seam, cedar shake, synthetic slate, tile.
 - Commercial: Flat roof systems (TPO, EPDM, modified bitumen), metal, maintenance programs.
 - Storm Damage: Insurance claim assistance, emergency tarp service, full documentation for adjusters. We work with all major carriers.
 - Specialty: Metal roofing (standing seam, corrugated), cedar shake restoration, natural slate, copper accents.
@@ -39,7 +39,7 @@ This is a FULL construction operation — not a side offering. Treat it with equ
 HOME ADDITIONS:
 - Master suites, guest quarters, garage conversions, second stories, bonus rooms above garages
 - Mountain-specific: slope engineering, foundation work on grade changes, matching existing rooflines and materials
-- Design-build capable: we can develop plans with you or work from architect drawings
+- Design-build capable: we can develop plans with you or work from professionally drawn plans
 - Every addition requires structural engineering, permitting, and drainage planning at elevation
 - Common WNC scenario: families expanding vacation homes into primary residences need thoughtful additions
 
@@ -53,7 +53,7 @@ RENOVATIONS:
 EXTERIOR IMPROVEMENTS:
 - Siding: fiber cement (HardiePlank), engineered wood, board-and-batten, stone & timber accents
 - Windows & doors: energy-rated for elevation, proper flashing integration with building envelope
-- Trim & architectural details: mountain-appropriate proportions, weather-resistant materials
+- Trim & design details: mountain-appropriate proportions, weather-resistant materials
 - Focus on weather resilience: WNC gets 55-80" rain annually — exterior work must be watertight
 - Curb appeal + structural protection in one scope of work
 
@@ -65,8 +65,8 @@ OUTDOOR LIVING:
 - Mountain lifestyle integration: outdoor spaces designed for entertaining with mountain views
 
 CUSTOM & COMPLEX PROJECTS:
-- Multi-phase construction, architecturally sensitive work, timber frame elements
-- Design-build partnerships with local architects
+- Multi-phase construction, visually sensitive work, timber frame elements
+- Design-build partnerships with local designers and project planners
 - Properties requiring special engineering: steep grades, rock outcroppings, limited access
 - Higher-touch communication: weekly updates, dedicated project manager, photo documentation
 - We're selective — we take on projects that match our capabilities and standards

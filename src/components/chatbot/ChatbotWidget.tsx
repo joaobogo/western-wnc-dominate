@@ -18,7 +18,7 @@ const getQuickStarters = (path: string) => {
   // Construction-specific starters per subpage
   if (path.includes("construction/addition")) return [
     { label: "Plan an Addition", message: "I'm thinking about expanding my home — what does that process look like with Highlander?", icon: Home },
-    { label: "Do I Need Plans?", message: "Do I need architect drawings before talking to you about an addition?", icon: HelpCircle },
+    { label: "Do I Need Plans?", message: "Do I need professionally drawn plans before talking to you about an addition?", icon: HelpCircle },
     { label: "Start a Conversation", message: "I'd like to discuss a home addition project with your construction team.", icon: Calendar },
   ];
   if (path.includes("construction/renovation")) return [

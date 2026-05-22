@@ -54,7 +54,7 @@ export const services: ServiceData[] = [
       "Complete tear-off and disposal",
       "Ice & water shield underlayment for mountain climates",
       "CertainTeed Master Shingle Applicator quality",
-      "Architectural and designer shingle options",
+      "Premium dimensional and designer shingle options",
       "Ridge vent and attic ventilation optimization",
       "Manufacturer warranty registration",
       "Financing options available",
@@ -62,7 +62,7 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "How long does a roof replacement take?", answer: "Most residential roof replacements are completed in 2–5 days depending on size, complexity, and weather. We keep you informed every step of the way." },
       { question: "How much does a new roof cost in Western NC?", answer: "Replacement pricing depends on size, pitch, material system, and complexity. Rather than publish a generic range, we provide a detailed, grouped-cost proposal after a free on-site inspection so you know exactly what you're investing in." },
-      { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend architectural shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
+      { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend dimensional shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
       { question: "Do you offer financing for roof replacement?", answer: "Yes, we offer flexible financing options to make a new roof affordable. Ask us about payment plans during your free inspection." },
     ],
     metaTitle: "Roof Replacement in Western NC | Highlander Roofing",
@@ -218,7 +218,7 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "What decking materials work best in WNC?", answer: "Composite decking (like Trex or TimberTech) performs best in mountain climates — it resists moisture, UV, and temperature swings without the maintenance of natural wood. We also install premium hardwoods like Ipe for a natural look." },
       { question: "Do you handle permits for outdoor construction?", answer: "Yes. We manage the permitting process for all outdoor living projects, ensuring compliance with local building codes in Macon, Jackson, Swain, and surrounding counties." },
-      { question: "Can you build a covered porch on my existing home?", answer: "Absolutely. We specialize in adding covered porches, screened rooms, and pergolas to existing mountain homes. We match roofing materials and architectural style for a seamless addition." },
+      { question: "Can you build a covered porch on my existing home?", answer: "Absolutely. We specialize in adding covered porches, screened rooms, and pergolas to existing mountain homes. We match roofing materials and design style for a seamless addition." },
       { question: "How long does an outdoor living project take?", answer: "Most deck and porch projects take 2–4 weeks from start to finish, depending on complexity, permits, and weather. We provide a detailed timeline before work begins." },
     ],
     metaTitle: "Outdoor Living Spaces in Western NC | Decks, Porches & Pergolas",

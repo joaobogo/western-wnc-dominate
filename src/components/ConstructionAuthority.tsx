@@ -96,7 +96,7 @@ const ConstructionAuthority = () => {
       <div className="section-padding section-dark relative">
         <div className="absolute inset-0 tartan-dark opacity-30" />
 
-        {/* Ambient architectural line */}
+        {/* Ambient design line */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="none">
             <motion.path
