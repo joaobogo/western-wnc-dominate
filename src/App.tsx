@@ -43,6 +43,8 @@ const ServiceTownPage = lazy(() => import("./pages/ServiceTownPage"));
 const ConstructionDivision = lazy(() => import("./pages/ConstructionDivision"));
 const HomeAdditions = lazy(() => import("./pages/HomeAdditions"));
 const OutdoorLiving = lazy(() => import("./pages/OutdoorLiving"));
+const Renovations = lazy(() => import("./pages/Renovations"));
+const Siding = lazy(() => import("./pages/Siding"));
 const ConstructionConsultation = lazy(() => import("./pages/ConstructionConsultation"));
 const QuoteFlow = lazy(() => import("./pages/QuoteFlow"));
 const Contact = lazy(() => import("./pages/Contact"));
