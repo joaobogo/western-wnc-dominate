@@ -79,7 +79,7 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-8"
+                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-4"
               >
                 Credentials
               </motion.p>
