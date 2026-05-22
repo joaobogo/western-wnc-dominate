@@ -58,7 +58,7 @@ const certifications = [
   { icon: Award, label: "CertainTeed Master Applicator" },
   { icon: Shield, label: "VELUX Certified Installer" },
   { icon: Shield, label: "Licensed & Fully Insured" },
-  { icon: Clock, label: "24-Hour Emergency Response" },
+  { icon: Clock, label: "Rapid Emergency Response" },
 ];
 
 const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
@@ -100,7 +100,7 @@ const Footer = () => {
                 Talk to a project advisor.
               </h3>
               <p className="text-primary-foreground/50 text-[15px] font-body max-w-md leading-relaxed">
-                Roof, addition, storm damage, or a planning conversation — one local team, one named contact, one business day to respond.
+                Roof, addition, storm damage, or a planning conversation — one local team, one named contact, as soon as possible to respond.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">

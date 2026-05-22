@@ -222,7 +222,7 @@ export default function QuoteFlow() {
         <div className="space-y-4">
           <div>
             <h3 className="font-heading text-lg font-semibold text-foreground">How should we reach you?</h3>
-            <p className="text-sm text-muted-foreground font-body mt-1">We'll call you directly — typically within 24 hours — to discuss your project.</p>
+            <p className="text-sm text-muted-foreground font-body mt-1">We'll call you directly — typically rapidly — to discuss your project.</p>
           </div>
           <div className="space-y-3">
             <div>

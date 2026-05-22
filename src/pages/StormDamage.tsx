@@ -62,7 +62,7 @@ const afterStormSteps = [
   {
     number: "04",
     title: "Call a Trusted Local Roofer",
-    description: "Contact Highlander for a professional storm assessment. We respond within 24 hours for storm calls — and same-day for emergencies involving active water intrusion or structural compromise.",
+    description: "Contact Highlander for a professional storm assessment. We respond rapidly for storm calls — and same-day for emergencies involving active water intrusion or structural compromise.",
   },
   {
     number: "05",
@@ -138,7 +138,7 @@ const StormDamage = () => {
     <>
       <SEOHead
         title="Storm Damage Roof Repair in Western NC"
-        description="24-hour storm response across Western North Carolina. Professional damage assessment, insurance documentation, and honest guidance from a trusted local team."
+        description="Rapid storm response across Western North Carolina. Professional damage assessment, insurance documentation, and honest guidance from a trusted local team."
         path="/roofing/storm-damage"
         jsonLd={[
           serviceSchema({ name: "Storm Damage Roofing", description: "24-hour storm damage response, assessment, and repair across Western North Carolina.", url: "/roofing/storm-damage" }),
@@ -182,7 +182,7 @@ const StormDamage = () => {
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
-                24-hour storm response across Western North Carolina. Professional damage assessment, complete documentation, and honest guidance — from a local team that's been here through every storm season.
+                Rapid storm response across Western North Carolina. Professional damage assessment, complete documentation, and honest guidance — from a local team that's been here through every storm season.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -208,7 +208,7 @@ const StormDamage = () => {
                   <div className="absolute inset-0 w-3 h-3 bg-red-500 rounded-full animate-ping opacity-75" />
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-bold text-primary-foreground">24-Hour Emergency Response Active</div>
+                  <div className="text-sm font-heading font-bold text-primary-foreground">Rapid Emergency Response Active</div>
                   <div className="text-xs text-primary-foreground/40 font-body">Call (828) 397-9211 for immediate storm assistance</div>
                 </div>
               </motion.div>
@@ -293,7 +293,7 @@ const StormDamage = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm hit your area recently?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We respond within 24 hours. Same-day for emergencies with active water intrusion.</p>
+                <p className="text-primary-foreground/50 text-sm font-body">We respond rapidly. Same-day for emergencies with active water intrusion.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -447,7 +447,7 @@ const StormDamage = () => {
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm damage? We respond within 24 hours.</h3>
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm damage? We respond rapidly.</h3>
                 <p className="text-primary-foreground/50 text-sm font-body">Professional assessment, complete documentation, honest guidance — from a local team.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
@@ -476,7 +476,7 @@ const StormDamage = () => {
               <div className="grid md:grid-cols-2 gap-4 md:gap-5">
                 {[
                   { icon: Shield, title: "Licensed, Insured, and Permanent", detail: "We're not a storm-chasing crew that appears after weather events and disappears after cashing checks. Highlander is a licensed, insured, locally established roofing company with a permanent address in Western North Carolina." },
-                  { icon: Clock, title: "24-Hour Emergency Response", detail: "Active leaks and structural damage don't wait for business hours. Our emergency response team is available around the clock for tarping, water mitigation, and critical stabilization — because the next rain is always coming." },
+                  { icon: Clock, title: "Rapid Emergency Response", detail: "Active leaks and structural damage don't wait for business hours. Our emergency response team is available around the clock for tarping, water mitigation, and critical stabilization — because the next rain is always coming." },
                   { icon: BadgeCheck, title: "Manufacturer Certified", detail: "As CertainTeed certified installers, our repair and replacement work meets manufacturer standards — which matters when warranty coverage is part of the conversation after storm damage." },
                   { icon: Zap, title: "Hundreds of Storm Calls Answered", detail: "From the 2020 derecho to annual summer hail events, we've assessed and repaired storm damage on hundreds of roofs across the region. We know what WNC weather does to roofs — and how to fix it properly." },
                 ].map((item, i) => (
@@ -550,7 +550,7 @@ const StormDamage = () => {
                   <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
-                      { icon: Clock, text: "24-Hour Emergency Response" },
+                      { icon: Clock, text: "Rapid Emergency Response" },
                       { icon: Award, text: "CertainTeed Certified" },
                       { icon: Star, text: "Local WNC Team" },
                     ].map((item) => (

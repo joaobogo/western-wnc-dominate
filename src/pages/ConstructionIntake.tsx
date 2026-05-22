@@ -9,7 +9,7 @@ const ConstructionIntake = () => (
   <>
     <SEOHead
       title="Start a Construction Project | Highlander Construction"
-      description="Additions, outdoor living, renovations, and custom builds across Western North Carolina. Tell us about your project — a project advisor responds within one business day."
+      description="Additions, outdoor living, renovations, and custom builds across Western North Carolina. Tell us about your project — a project advisor responds within as soon as possible."
       path="/construction-intake"
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction Intake", url: "/construction-intake" }])}
     />
@@ -18,7 +18,7 @@ const ConstructionIntake = () => (
       <IntakeShell
         eyebrow="Construction Intake"
         title="Start the planning conversation."
-        subhead="Additions, layouts, floor plans, and outdoor living. Share scope, timeline, and any plans you have. A Highlander project advisor will personally review and respond within one business day."
+        subhead="Additions, layouts, floor plans, and outdoor living. Share scope, timeline, and any plans you have. A Highlander project advisor will personally review and respond within as soon as possible."
         sidebarBullets={[
           "Owner-led from discovery through final walkthrough.",
           "Written scope and pricing approach before commitment.",

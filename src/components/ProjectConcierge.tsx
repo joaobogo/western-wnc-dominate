@@ -28,7 +28,7 @@ const pathways = [
   {
     icon: FileText,
     title: "Share Your Project Vision",
-    desc: "Have plans, sketches, or a rough idea? Send it to us. We'll review it and call you with honest feedback within 24 hours.",
+    desc: "Have plans, sketches, or a rough idea? Send it to us. We'll review it and call you with honest feedback rapidly.",
     action: "Start the Conversation",
     href: "/consultation",
     external: false,
@@ -139,7 +139,7 @@ const ProjectConcierge = () => {
             {[
               "No sales pressure",
               "Owner-led consultations",
-              "24-hour response guaranteed",
+              "Rapid response guaranteed",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
                 <Shield className="w-3 h-3 text-[hsl(var(--highland-gold)/0.3)]" />

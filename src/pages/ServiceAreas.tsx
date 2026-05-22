@@ -14,7 +14,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const serviceStats = [
   { value: "4.9★", label: "Google Rating", detail: "Verified reviews" },
   { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain · Haywood" },
-  { value: "24hr", label: "Response Time", detail: "Emergency & Standard" },
+  { value: "Rapid", label: "Response Time", detail: "Emergency & Standard" },
   { value: "4.9★", label: "Average Rating", detail: "150+ Verified Reviews" },
 ];
 
@@ -33,7 +33,7 @@ const ServiceAreas = () => {
     <>
       <SEOHead
         title="Service Areas | Roofing & Construction Across Western NC"
-        description="Highlander Roofing & Construction serves Highlands, Cashiers, Franklin, Sylva, Bryson City, Waynesville, Cullowhee, and Dillsboro. Local crews, 24-hour response."
+        description="Highlander Roofing & Construction serves Highlands, Cashiers, Franklin, Sylva, Bryson City, Waynesville, Cullowhee, and Dillsboro. Local crews, Rapid response."
         path="/service-areas"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }])}
       />

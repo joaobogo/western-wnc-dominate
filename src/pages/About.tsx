@@ -418,7 +418,7 @@ const About = () => {
               {[
                 { stat: "4.9★", label: "Google Rating" },
                 { stat: "4.9★", label: "Average across Google & Facebook" },
-                { stat: "24hr", label: "Response time on every inquiry" },
+                { stat: "Rapid", label: "Response time on every inquiry" },
                 { stat: "In-House", label: "Crews — never subcontracted" },
               ].map((item, i) => (
                 <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="text-center p-6 border border-[hsl(var(--highland-gold)/0.1)] rounded-sm">

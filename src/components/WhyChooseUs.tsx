@@ -20,7 +20,7 @@ const pillars = [
   {
     icon: Clock,
     title: "Rapid Response, Clear Communication",
-    description: "We respond within 24 hours with clear next steps. Emergency tarping, insurance documentation, and priority scheduling when storms hit.",
+    description: "We respond rapidly with clear next steps. Emergency tarping, insurance documentation, and priority scheduling when storms hit.",
   },
 ];
 

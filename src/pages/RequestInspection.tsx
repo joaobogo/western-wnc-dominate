@@ -9,7 +9,7 @@ const RequestInspection = () => {
     <>
       <SEOHead
         title="Free Roof Inspection in Western NC"
-        description="Schedule a free, no-obligation roof inspection or construction consultation. 24-hour response across Western North Carolina. Highlander Roofing."
+        description="Schedule a free, no-obligation roof inspection or construction consultation. Rapid response across Western North Carolina. Highlander Roofing."
         path="/request-inspection"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },

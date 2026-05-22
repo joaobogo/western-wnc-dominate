@@ -272,7 +272,7 @@ const ResidentialRoofing = () => {
                   { value: "4.9★", label: "Google Rating" },
                   { value: "4.9★", label: "Homeowner Rating" },
                   { value: "Top 1%", label: "National Certification" },
-                  { value: "24hr", label: "Storm Response" },
+                  { value: "Rapid", label: "Storm Response" },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center sm:text-left">
                     <div className="text-lg md:text-xl font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
@@ -291,7 +291,7 @@ const ResidentialRoofing = () => {
               {[
                 { icon: Award, text: "CertainTeed Master Applicator" },
                 { icon: Shield, text: "Licensed & Insured" },
-                { icon: Clock, text: "24-Hour Storm Response" },
+                { icon: Clock, text: "Rapid Storm Response" },
                 { icon: Star, text: "4.7★ Google Rating" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
@@ -854,7 +854,7 @@ const ResidentialRoofing = () => {
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Award, text: "CertainTeed Certified" },
-                      { icon: Clock, text: "24-Hour Response" },
+                      { icon: Clock, text: "Rapid Response" },
                       { icon: Star, text: "Financing Available" },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">

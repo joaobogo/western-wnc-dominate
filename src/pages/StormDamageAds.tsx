@@ -15,7 +15,7 @@ const StormDamageAds = () => (
     ctaLabel="Request Storm Assessment"
     urgencyOptions={["Emergency today", "Within 24 hours", "This week", "Just need answers"]}
     trustStats={[
-      { value: "24hr", label: "Storm response", detail: "Same-day help for urgent leak situations" },
+      { value: "Rapid", label: "Storm response", detail: "Same-day help for urgent leak situations" },
       { value: "4.9★", label: "Google Rating", detail: "Over 50+ local reviews" },
       { value: "Local", label: "WNC team", detail: "Not out-of-town storm chasers" },
       { value: "4.9★", label: "Client rating", detail: "Built on responsiveness and follow-through" },

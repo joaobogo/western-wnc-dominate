@@ -60,7 +60,7 @@ const services: FeaturedService[] = [
     title: "Storm Damage",
     tagline: "24 hours. Fully documented.",
     description: "Emergency tarping, drone-documented damage assessment, and direct insurance coordination. We handle the paperwork so you handle nothing.",
-    stat: "24hr",
+    stat: "Rapid",
     statLabel: "response time",
     href: "/services/storm-damage",
     image: stormImg,
