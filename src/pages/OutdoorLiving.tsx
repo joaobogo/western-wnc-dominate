@@ -52,12 +52,6 @@ const materials = [
   { icon: Shield, title: "Metal Roofing on Outdoor Structures", detail: "Standing seam and exposed-fastener metal roofing for covered porches and pavilions. Excellent drainage, long lifespan, and clean aesthetic that pairs well with timber framing." },
 ];
 
-const designGuidance = [
-  { title: "Start With How You'll Use It", detail: "Before sketching layouts, define the activities. Cooking requires utilities. Entertaining requires flow. Relaxation requires privacy. The use case drives the design — not the other way around." },
-  { title: "Connect Inside and Outside", detail: "The transition from interior to exterior space should feel effortless. Door placement, floor-level alignment, sightlines, and material continuity all contribute to a connected experience." },
-  { title: "Plan for Evening & Off-Season", detail: "The best outdoor spaces work after sunset and beyond summer. Lighting design, heating options, wind protection, and enclosure flexibility extend your investment across more months and more hours." },
-  { title: "Think About Maintenance Honestly", detail: "Every material has a maintenance reality. We'll help you choose based on how much upkeep you're willing to do — not just how something looks in a catalog." },
-];
 
 const processSteps = [
   { number: "01", icon: Phone, title: "Vision & Lifestyle Discussion", description: "We learn how you want to live outdoors — activities, timing, entertaining style, and aesthetic preferences. This shapes every design decision." },
