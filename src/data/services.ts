@@ -54,7 +54,7 @@ export const services: ServiceData[] = [
       "Complete tear-off and disposal",
       "Ice & water shield underlayment for mountain climates",
       "CertainTeed Master Shingle Applicator quality",
-      "Architectural and designer shingle options",
+      "Premium dimensional and designer shingle options",
       "Ridge vent and attic ventilation optimization",
       "Manufacturer warranty registration",
       "Financing options available",
@@ -62,7 +62,7 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "How long does a roof replacement take?", answer: "Most residential roof replacements are completed in 2–5 days depending on size, complexity, and weather. We keep you informed every step of the way." },
       { question: "How much does a new roof cost in Western NC?", answer: "Replacement pricing depends on size, pitch, material system, and complexity. Rather than publish a generic range, we provide a detailed, grouped-cost proposal after a free on-site inspection so you know exactly what you're investing in." },
-      { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend architectural shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
+      { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend dimensional shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
       { question: "Do you offer financing for roof replacement?", answer: "Yes, we offer flexible financing options to make a new roof affordable. Ask us about payment plans during your free inspection." },
     ],
     metaTitle: "Roof Replacement in Western NC | Highlander Roofing",
