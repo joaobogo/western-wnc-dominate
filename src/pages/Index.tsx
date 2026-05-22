@@ -64,8 +64,10 @@ const Index = () => {
         {/* 3. Two Pillars · One Standard — resolves roofing+construction question */}
         <TwoPillars />
 
+        {/* Short intake form - moved higher up for better accessibility */}
+        <InspectionForm />
+
         {/* 4. DualPathway — Roofing | Construction */}
-        <DualPathway />
 
         {/* 4. PriorityServices — focused 6-card grid (using existing ServicesGrid for now) */}
         <ServicesGrid />
