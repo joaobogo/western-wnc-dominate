@@ -69,11 +69,11 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Metal Roofing",
     h1: "Metal Roofing in Franklin, NC",
     intro:
-      "Standing seam and exposed-fastener metal roofs are increasingly the right answer for Franklin homes — especially on farmhouses, cabins, and additions where the roof is part of the architectural statement.",
+      "Standing seam and exposed-fastener metal roofs are increasingly the right answer for Franklin homes — especially on farmhouses, cabins, and additions where the roof is part of the overall design statement.",
     localContext:
       "Franklin's mix of pasture-edge homes and forested lots means we plan around two things: snow shedding onto walkways below, and water-management at the eaves where metal panels meet older gutters. We design both into the system, not as an afterthought.",
     whoItsFor:
-      "Homeowners building a forever roof, anyone re-roofing a home with a steep architectural pitch, and clients pairing a new addition or porch with a unified metal system.",
+      "Homeowners building a forever roof, anyone re-roofing a home with a complex layout, and clients pairing a new addition or porch with a unified metal system.",
     proofNote:
       "We specify and install metal as a complete system — substrate, underlayment, panels, trims, and fasteners from compatible manufacturers — so the warranty actually holds together.",
     metaTitle: "Metal Roofing in Franklin, NC | Highlander Roofing",
@@ -105,7 +105,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Premium roof replacement in Highlands, NC. Elevation-rated systems for second homes and mountain residences. Owner-led, fully documented, licensed.",
     faqs: [
       { q: "Can you manage the project while we're not in Highlands?", a: "Yes. The majority of Highlands replacements we do are for owners not currently on-site. You get scheduled photo updates and a full project package on completion." },
-      { q: "What materials hold up best at Highlands' elevation?", a: "Heavy architectural asphalt, standing seam metal, and synthetic shake (Brava) all perform well here when paired with the correct underlayment and ventilation." },
+      { q: "What materials hold up best at Highlands' elevation?", a: "Heavy dimensional asphalt, standing seam metal, and synthetic shake (Brava) all perform well here when paired with the correct underlayment and ventilation." },
       { q: "Do you work inside the gates of club communities?", a: "Yes. We're familiar with the access, dumpster, and material-staging rules for the major Highlands club communities and coordinate directly with the gate and ARB." },
     ],
   }),
@@ -119,7 +119,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     localContext:
       "We pay particular attention to snow retention near walkways and entrances, ice-and-water shield coverage well past code minimum, and panel seaming detail at hips and valleys where Highlands homes see the most ice loading.",
     whoItsFor:
-      "Owners of architectural mountain homes, second-home owners specifying a true forever roof, and clients pairing a new addition or screened porch with a unified metal system.",
+      "Owners of custom mountain homes, second-home owners specifying a true forever roof, and clients pairing a new addition or screened porch with a unified metal system.",
     proofNote:
       "Specified as a system, installed by the same crew that did the estimate, and documented in writing so the warranty path is clean.",
     metaTitle: "Metal Roofing in Highlands, NC | Highlander Roofing",
@@ -141,7 +141,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     localContext:
       "Synthetic shake and slate hold their color and profile through Highlands' UV exposure and freeze-thaw cycles, where real cedar and asphalt both age aggressively. We pair Brava with proper underlayment and detail work appropriate to elevation.",
     whoItsFor:
-      "Second-home owners and architectural-home owners who want a true premium roof aesthetic, with the longevity and predictability of a manufactured system.",
+      "Second-home owners and custom-home owners who want a true premium roof aesthetic, with the longevity and predictability of a manufactured system.",
     proofNote:
       "We're set up to specify, source, and install Brava as a complete system — not stocked as a one-off material. Quote includes the trims, accessories, and warranty registration most contractors skip.",
     metaTitle: "Brava Synthetic Roofing in Highlands, NC | Highlander Roofing",
@@ -172,7 +172,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     metaDescription:
       "Full roof replacement in Cashiers, NC. Engineered for one of NC's wettest climates. Owner-led, fully documented, licensed contractor.",
     faqs: [
-      { q: "What's the right roof for Cashiers' rainfall?", a: "Heavy architectural asphalt, standing seam metal, and synthetic shake all perform well here — paired with full ice-and-water shield and proper drip-edge detailing." },
+      { q: "What's the right roof for Cashiers' rainfall?", a: "Heavy dimensional asphalt, standing seam metal, and synthetic shake all perform well here — paired with full ice-and-water shield and proper drip-edge detailing." },
       { q: "Can you work with my property manager?", a: "Yes. We routinely coordinate access and scheduling with property managers for Cashiers second-home projects." },
       { q: "How do you handle club-community ARB approvals?", a: "We prepare and submit the ARB package — materials, colors, project timeline — and adjust the plan to whatever the board requires." },
     ],
@@ -209,7 +209,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     localContext:
       "Cashiers' rainfall is brutal on natural cedar — it cups, splits, and develops moss within years. Brava holds its profile and color through the same conditions and is dramatically lighter than natural slate, which matters on older framing.",
     whoItsFor:
-      "Second-home owners and architectural-home owners who want a premium roof aesthetic that survives the climate rather than fights it.",
+      "Second-home owners and custom-home owners who want a premium roof aesthetic that survives the climate rather than fights it.",
     proofNote:
       "We specify and install Brava as a complete system — including the trims, accessories, and warranty registration that most contractors skip — so the system lasts as long as the warranty claims.",
     metaTitle: "Brava Synthetic Roofing in Cashiers, NC | Highlander Roofing",
@@ -217,7 +217,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Brava synthetic shake and slate roofing in Cashiers, NC. Premium look, climate-grade durability. Owner-led, licensed installation.",
     faqs: [
       { q: "Will Brava develop moss like cedar in Cashiers' rainfall?", a: "Brava's polymer composition doesn't absorb moisture the way cedar does, so it resists the moss and biological growth that shortens cedar roof life here." },
-      { q: "Is Brava heavy enough to need framing reinforcement?", a: "Brava is dramatically lighter than natural slate and similar to architectural asphalt. Existing framing almost always handles it without modification." },
+      { q: "Is Brava heavy enough to need framing reinforcement?", a: "Brava is dramatically lighter than natural slate and similar to standard dimensional shingles. Existing framing almost always handles it without modification." },
       { q: "How does the warranty work?", a: "Brava carries a 50-year limited material warranty. We handle registration as part of the install." },
     ],
   }),
@@ -231,7 +231,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     intro:
       "Sylva is one of our strongest year-round residential markets. Most replacements here are full-time homes in town, the Tuckasegee corridor, and the hillsides above Western Carolina — and the work needs to fit a real household's schedule.",
     localContext:
-      "We see a steady mix of aging 3-tab and early architectural asphalt that's reached end-of-life. Replacement here often includes attic ventilation correction, which is the single most common deficiency we find on Sylva homes built before 2005.",
+      "We see a steady mix of aging 3-tab and early dimensional shingles that have reached end-of-life. Replacement here often includes attic ventilation correction, which is the single most common deficiency we find on Sylva homes built before 2005.",
     whoItsFor:
       "Long-time Sylva homeowners, families, and owners of rental or income properties who need the project planned around tenants and turnover.",
     proofNote:
@@ -273,11 +273,11 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Metal Roofing",
     h1: "Metal Roofing in Sylva, NC",
     intro:
-      "Standing seam and exposed-fastener metal are increasingly popular on Sylva homes — especially farmhouse-style residences, additions, and hillside homes where the roof is a defining architectural element.",
+      "Standing seam and exposed-fastener metal are increasingly popular on Sylva homes — especially farmhouse-style residences, additions, and hillside homes where the roof is a defining design element.",
     localContext:
       "We design for two Sylva-specific realities: gutter capacity sized to handle the volume metal sheds during heavy spring rain, and snow-shedding planned around walkways and entries.",
     whoItsFor:
-      "Homeowners specifying a forever roof, anyone re-roofing an architectural home, and clients pairing a main house with outbuildings or an addition under one unified system.",
+      "Homeowners specifying a forever roof, anyone re-roofing a custom home, and clients pairing a main house with outbuildings or an addition under one unified system.",
     proofNote:
       "Specified as a system, installed by the same owner-led crew that estimated the project, with the trim and detail work that protects the warranty.",
     metaTitle: "Metal Roofing in Sylva, NC | Highlander Roofing",

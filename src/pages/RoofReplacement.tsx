@@ -80,7 +80,7 @@ const rightWayPillars = [
 const materials = [
   {
     name: "CertainTeed Landmark PRO",
-    type: "Architectural Asphalt",
+    type: "Dimensional Asphalt",
     lifespan: "30–50 years",
     detail: "Our most-installed residential shingle. Impact-resistant, algae-resistant, 20+ designer colors. The best value-to-performance ratio for WNC mountain homes.",
     image: asphalt006,
@@ -120,7 +120,7 @@ const trustProof = [
 const galleryItems = [
   { image: asphaltHero, title: "Complete Replacement — Highlands", category: "Shingle" },
   { image: metalRoof, title: "Standing Seam — Cashiers Estate", category: "Metal" },
-  { image: asphalt005, title: "Architectural Shingles — Franklin", category: "Shingle" },
+  { image: asphalt005, title: "Dimensional Shingles — Franklin", category: "Shingle" },
   { image: metalCabin, title: "Metal Roof — Bryson City", category: "Metal" },
   { image: asphalt007, title: "Re-Roof — Mountain Home", category: "Shingle" },
   { image: cedarRoof, title: "Cedar Shake — Highlands", category: "Cedar" },
@@ -130,7 +130,7 @@ const faqs = [
   { q: "How much does a roof replacement cost in Western North Carolina?", a: "Replacement pricing is scope-based — it depends on roof size, material choice, pitch complexity, and access conditions. Rather than publish a generic range, we provide a detailed, grouped-cost proposal after assessing your specific property — no ballpark figures, no surprises." },
   { q: "How long does a full roof replacement take?", a: "Most residential replacements are completed in 2–5 days depending on size, complexity, and weather. Steep-pitch and complex multi-gable homes may take slightly longer. We'll provide a specific timeline in your proposal and communicate daily throughout the project." },
   { q: "Can I put a new roof over my existing shingles?", a: "We generally recommend full tear-off rather than layering. Overlay hides potential decking damage, adds excessive weight, voids many warranties, and shortens the new roof's lifespan. A clean tear-off lets us inspect every square foot of decking and install to full manufacturer specification." },
-  { q: "What's the best roofing material for mountain homes?", a: "It depends on your property's elevation, wind exposure, architecture, and budget. CertainTeed Landmark PRO architectural shingles offer the best value-to-performance ratio for most WNC homes. Standing seam metal is the premium long-term choice. We'll recommend based on your specific conditions." },
+  { q: "What's the best roofing material for mountain homes?", a: "It depends on your property's elevation, wind exposure, design theme, and budget. CertainTeed Landmark PRO dimensional shingles offer the best value-to-performance ratio for most WNC homes. Standing seam metal is the premium long-term choice. We'll recommend based on your specific conditions." },
   { q: "Do you handle the old roof removal and disposal?", a: "Yes. We handle complete tear-off, debris removal, and disposal. Your property is cleaned daily with magnetic nail sweeps and full debris removal. We leave your property cleaner than we found it." },
   { q: "What warranties come with a roof replacement?", a: "Every replacement includes the manufacturer's material warranty (up to lifetime limited on CertainTeed products) plus Highlander's labor warranty. You receive a complete physical warranty package at your final walkthrough — documentation you can file and reference for decades." },
   { q: "Will my homeowner's insurance cover roof replacement?", a: "If your roof was damaged by a covered event (storm, hail, fallen tree), your insurance may cover part or all of the replacement. We provide complete damage documentation, meet with your adjuster on-site, and coordinate the claim process from start to finish." },

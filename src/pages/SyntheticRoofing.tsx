@@ -13,7 +13,7 @@ import { getTownBySlug } from "@/data/towns";
 
 const faqs = [
   { q: "How does Brava compare to real cedar shake?", a: "Brava holds color and profile dramatically longer than cedar in mountain climates. Real cedar cups, splits, and grows moss in the moisture and UV conditions across Highlands and Cashiers." },
-  { q: "Is Brava heavy enough to need framing reinforcement?", a: "No. Brava is significantly lighter than natural slate and roughly comparable to architectural asphalt. Existing framing almost always accepts it without modification." },
+  { q: "Is Brava heavy enough to need framing reinforcement?", a: "No. Brava is significantly lighter than natural slate and roughly comparable to standard asphalt shingles. Existing framing almost always accepts it without modification." },
   { q: "Will Brava be approved by my club community ARB?", a: "Most WNC club community ARBs approve Brava with documentation. We prepare and submit the package including profile and color samples." },
   { q: "What's the lead time on a Brava order?", a: "Brava is made-to-order in your specified color blend. We plan for several weeks of lead time and quote accordingly." },
   { q: "What warranty does Brava carry?", a: "Brava carries a 50-year limited material warranty. We handle registration as part of the install." },
