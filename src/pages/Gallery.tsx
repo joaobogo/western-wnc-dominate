@@ -245,7 +245,7 @@ const Gallery = () => {
     <>
       <SEOHead
         title="Project Gallery | Western NC Roofing & Construction"
-        description="Browse 500+ completed roofing and construction projects across Western North Carolina. Metal, shingle, cedar shake roofs plus additions, renovations, and outdoor living."
+        description="Browse completed roofing and construction projects across Western North Carolina. Metal, shingle, cedar shake roofs plus additions, renovations, and outdoor living."
         path="/gallery"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Projects", url: "/gallery" }])}
       />
@@ -307,7 +307,7 @@ const Gallery = () => {
                   {[
                     { value: "4.9★", label: "Google Rating" },
                     { value: "8", label: "Counties Served" },
-                    { value: "4.9★", label: "Average Rating" },
+                    { value: "10y", label: "Labor Warranty" },
                     { value: "100%", label: "Owner-Inspected" },
                   ].map((stat, i) => (
                     <div key={stat.label} className="flex flex-col items-center text-center md:px-6">
