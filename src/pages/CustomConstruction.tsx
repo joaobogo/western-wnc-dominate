@@ -25,7 +25,7 @@ import proj4 from "@/assets/gallery/metal-010.jpg";
 const complexProjects = [
   { icon: Gem, title: "Multi-Phase Renovations", detail: "Large-scale projects that must be executed in sequences — with the homeowner living in the home. Requires detailed phasing, temporary systems, and continuous communication about what's happening and when." },
   { icon: Layers, title: "Structural Modifications", detail: "Removing load-bearing walls, altering roof structures, reinforcing foundations, and creating large openings. Work where engineering, sequencing, and temporary shoring are critical to safety." },
-  { icon: Award, title: "Architecturally Significant Homes", detail: "Homes with distinctive character — Arts & Crafts, mid-century, mountain lodge, or contemporary — where modifications must honor the original design language while meeting modern performance standards." },
+  { icon: Award, title: "Visually Significant Homes", detail: "Homes with distinctive character — Arts & Crafts, mid-century, mountain lodge, or contemporary — where modifications must honor the original design language while meeting modern performance standards." },
   { icon: Lock, title: "High-Coordination Builds", detail: "Projects involving multiple specialty trades, custom fabrication, imported materials, or tight timelines where precise scheduling and proactive problem-solving prevent costly delays." },
 ];
 
@@ -37,7 +37,7 @@ const customPlanning = [
 ];
 
 const structuralDesign = [
-  { title: "Architectural Sensitivity", detail: "Custom projects often involve existing homes with architectural character worth preserving. We evaluate rooflines, material languages, proportions, and period details before proposing changes — ensuring new work respects and enhances the original design." },
+  { title: "Design Sensitivity", detail: "Custom projects often involve existing homes with design character worth preserving. We evaluate rooflines, material languages, proportions, and period details before proposing changes — ensuring new work respects and enhances the original intent." },
   { title: "Structural Complexity", detail: "Load paths, cantilevers, large openings, unusual spans, and connections to existing structures all require engineering attention. We coordinate with structural engineers as a standard part of custom project delivery." },
   { title: "Material Integration", detail: "When custom work meets existing construction, the interface must be invisible. We source matching materials, fabricate custom trim profiles when needed, and obsess over transition details that most contractors treat as afterthoughts." },
   { title: "Building Science", detail: "Vapor barriers, thermal bridging, moisture management, and ventilation design become more critical as projects become more complex. We design building envelope systems that perform — not just assemblies that pass inspection." },
@@ -67,8 +67,8 @@ const galleryImages = [
 ];
 
 const faqs = [
-  { q: "What makes a project 'custom' versus standard construction?", a: "Custom projects involve non-standard design requirements, unusual materials, complex structural work, architectural sensitivity, or high coordination demands. They require more planning, more communication, and more supervision than standard builds — and they're priced accordingly." },
-  { q: "Do you work with architects?", a: "Yes. For architecturally complex or design-forward projects, we collaborate with local architects and designers. We can recommend architects we've worked with successfully, or work from plans your architect has developed. Our design-build capability also handles many projects that don't require independent architectural services." },
+  { q: "What makes a project 'custom' versus standard construction?", a: "Custom projects involve non-standard design requirements, unusual materials, complex structural work, visually sensitive details, or high coordination demands. They require more planning, more communication, and more supervision than standard builds — and they're priced accordingly." },
+  { q: "Do you work with designers and project planners?", a: "Yes. For complex or design-forward projects, we collaborate with local designers and planners. We can work from plans you've developed with your design team or participate in the planning process from the beginning. Our design-build capability also handles many projects that don't require external design services." },
   { q: "How do you price custom work?", a: "Custom projects receive detailed, grouped-cost proposals with specified materials, defined scope, and clear inclusions/exclusions. We don't use vague allowances or cost-plus pricing. You know what you're paying for and what you're getting before work begins." },
   { q: "What's the typical timeline for a custom project?", a: "Timelines vary significantly — from 2 months for a focused specialty project to 6–12 months for a major multi-phase renovation. We provide detailed schedules during the proposal phase and update them proactively as the project progresses." },
   { q: "Can you handle projects while I'm living in the home?", a: "Yes — most of our custom projects involve occupied homes. We design phasing plans that maintain livable conditions, install dust barriers and temporary systems, and coordinate disruptive work around your schedule." },
@@ -84,7 +84,7 @@ const CustomConstruction = () => {
     <>
       <SEOHead
         title="Custom Construction in Western NC | Specialty Builds"
-        description="Custom construction and specialty projects for architecturally distinctive Western North Carolina homes. Multi-phase renovations, structural modifications, and high-coordination builds."
+        description="Custom construction and specialty projects for visually distinctive Western North Carolina homes. Multi-phase renovations, structural modifications, and high-coordination builds."
         path="/construction/custom"
         jsonLd={[
           serviceSchema({ name: "Custom Construction", description: "Custom and specialty construction projects for Western North Carolina homeowners.", url: "/construction/custom" }),

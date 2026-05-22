@@ -43,7 +43,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
    ═══════════════════════════════════════════ */
 
 const philosophy = [
-  { icon: Compass, title: "Architectural Sensitivity", detail: "Every project starts with understanding your home's architecture, its setting, and the design language that connects them. We don't impose a style — we extend the one your home already speaks." },
+  { icon: Compass, title: "Design Sensitivity", detail: "Every project starts with understanding your home's design theme, its setting, and the visual language that connects them. We don't impose a style — we extend the one your home already speaks." },
   { icon: ClipboardCheck, title: "Planning Depth", detail: "We invest in planning because it eliminates surprises. Detailed scoping, material specifications, timeline mapping, and permit coordination happen before we break ground — not while we're building." },
   { icon: HardHat, title: "Execution Quality", detail: "Our crews are trained craftsmen — not subcontracted labor rotated between contractors. They understand sequencing, tolerances, and the standard we hold. Every phase is supervised and verified." },
   { icon: MessageSquare, title: "Communication Clarity", detail: "You'll have a single project manager, a defined communication schedule, and real-time updates on progress, decisions needed, and timeline changes. No guessing, no chasing for answers." },
@@ -69,7 +69,7 @@ const faqsForSEO = [
   { question: "How long does a typical construction project take?", answer: "Timelines vary significantly by scope. A deck or porch project typically takes 2–4 weeks. A room addition may take 6–12 weeks. A major renovation can run 3–6 months." },
   { question: "Do you handle permits and inspections?", answer: "Yes. Permit acquisition, code compliance, and inspection scheduling are part of our standard project management." },
   { question: "How do you price construction projects?", answer: "We provide detailed, grouped-cost proposals with defined scope, material specifications, and labor costs. No vague allowances, no hidden fees." },
-  { question: "Can you work with my architect or designer?", answer: "Absolutely. We regularly collaborate with architects, designers, and engineers across Western North Carolina." },
+  { question: "Can you work with my designer or project planner?", answer: "Absolutely. We regularly collaborate with designers, project planners, and engineers across Western North Carolina." },
   { question: "What sets Highlander apart from other contractors in WNC?", answer: "Three things: planning depth, in-house crews, and communication standards." },
 ];
 
