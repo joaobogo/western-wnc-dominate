@@ -60,8 +60,8 @@ const processSteps = [
 ];
 
 const galleryImages = [
-  { src: proj1, alt: "Custom construction project with metal roofing", label: "Custom Exterior Build", location: "Mountain Contemporary, Asheville" },
-  { src: proj2, alt: "Architecturally sensitive renovation", label: "Structural Renovation", location: "Heritage Home, Weaverville" },
+  { src: proj1, alt: "Custom construction project with metal roofing", label: "Custom Exterior Build", location: "Mountain Modern, Asheville" },
+  { src: proj2, alt: "Visually sensitive renovation", label: "Structural Renovation", location: "Heritage Home, Weaverville" },
   { src: proj3, alt: "Complex addition with cedar integration", label: "Multi-Phase Addition", location: "Cedar & Stone, Black Mountain" },
   { src: proj4, alt: "High-coordination specialty build", label: "Specialty Build", location: "Custom Timber Frame, Fairview" },
 ];
@@ -242,11 +242,11 @@ const CustomConstruction = () => {
                 <span className="eyebrow mb-3 block">Structural & Design</span>
                 <h2 className="section-heading mb-5">Where Craft<br /> Meets Engineering.</h2>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body mb-6">
-                  Custom projects live at the intersection of architectural vision and structural reality. We navigate both — ensuring what's beautiful is also buildable, durable, and code-compliant.
+                  Custom projects live at the intersection of design vision and structural reality. We navigate both — ensuring what's beautiful is also buildable, durable, and code-compliant.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
-                  <h4 className="font-heading font-bold text-foreground text-sm mb-2">Working with an architect?</h4>
-                  <p className="text-muted-foreground text-xs leading-relaxed font-body mb-3">We collaborate with local architects regularly. We can work from your plans or recommend firms we've partnered with successfully.</p>
+                  <h4 className="font-heading font-bold text-foreground text-sm mb-2">Working with a designer?</h4>
+                  <p className="text-muted-foreground text-xs leading-relaxed font-body mb-3">We collaborate with local designers and project planners regularly. We can work from your plans or recommend firms we've partnered with successfully.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>

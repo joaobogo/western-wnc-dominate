@@ -26,7 +26,7 @@ import proj4 from "@/assets/gallery/cedar-002.jpg";
 
 const whyAdditions = [
   { icon: Baby, title: "A Growing Family", detail: "More bedrooms, a playroom, an expanded kitchen — your family is growing and your home needs to grow with it, without the disruption and cost of moving." },
-  { icon: BedDouble, title: "Aging in Place", detail: "A main-level master suite, wider doorways, an accessible bathroom — additions that let you stay in the home you love as your needs evolve." },
+  { icon: BedDouble, title: "Aging in Place", detail: "A main-level primary suite, wider doorways, an accessible bathroom — additions that let you stay in the home you love as your needs evolve." },
   { icon: Users, title: "Multi-Generational Living", detail: "Guest suites, in-law apartments, and semi-independent living spaces that provide proximity and privacy for extended family under one roof." },
   { icon: Sofa, title: "Lifestyle & Function", detail: "A home office that's actually a room. A sunroom that captures the mountain view. A mudroom that handles real mountain life. Space designed for how you actually live." },
 ];
@@ -36,7 +36,7 @@ const expansionTypes = [
   { icon: DoorOpen, title: "Expanded Living Areas", detail: "Great room extensions, kitchen expansions, open-concept conversions, and family room additions that transform how your home flows and functions." },
   { icon: Car, title: "Garage Additions & Conversions", detail: "Attached or detached garages, workshops, and storage buildings. Also garage-to-living-space conversions for homes that need interior square footage more than parking." },
   { icon: Layers, title: "Bonus Rooms & Flex Spaces", detail: "Second-floor additions, attic conversions, and above-garage bonus rooms that maximize your property's footprint without expanding the foundation." },
-  { icon: Compass, title: "Main-Level Master Suites", detail: "Purpose-built master bedroom and bathroom additions on the main level — one of the most requested additions for WNC homeowners planning to age in place." },
+  { icon: Compass, title: "Main-Level Primary Suites", detail: "Purpose-built primary bedroom and bathroom additions on the main level — one of the most requested additions for WNC homeowners planning to age in place." },
   { icon: TreePine, title: "Sunrooms & Four-Season Rooms", detail: "Enclosed or semi-enclosed rooms that bring the mountain landscape inside. From screened porches to fully conditioned four-season living spaces." },
 ];
 
