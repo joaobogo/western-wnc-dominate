@@ -15,7 +15,7 @@ const factors = [
   { icon: Droplets, title: "Heavy Rainfall & Snow Loads", detail: "60+ inches of annual rainfall and significant snowfall demand proper drainage engineering, ice and water shield, and load-rated framing." },
   { icon: Mountain, title: "Steep Terrain & Access", detail: "Mountain lots with steep grades and limited access require crews who plan logistics as carefully as they plan the build itself." },
   { icon: TreePine, title: "Regional Design Character", detail: "Mountain homes aren't suburban homes. Material choices, color palettes, and design details must respect the landscape and local aesthetic." },
-  { icon: MapPin, title: "Local Code & Climate Knowledge", detail: "Every county has different permitting timelines, inspection requirements, and micro-climate realities. We know them because we work in them daily." },
+  { icon: MapPin, title: "Local Code & Climate Knowledge", detail: "Focusing on 8 primary counties in Western NC, we know the permitting timelines, inspection requirements, and micro-climate realities of every mountain we serve." },
 ];
 
 const BuiltForWNC = () => {
@@ -30,7 +30,7 @@ const BuiltForWNC = () => {
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="section-heading mb-5">
-                Built for<br /> Western North<br className="hidden lg:block" /> Carolina.
+                Built for the<br /> Western NC<br className="hidden lg:block" /> Mountains.
               </h2>
             </HeadingReveal>
             <GoldLine width="3rem" delay={0.3} className="mb-5" />
