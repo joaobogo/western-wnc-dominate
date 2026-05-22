@@ -141,7 +141,7 @@ const ConstructionDivision = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }} className="mt-10 pt-8 border-t border-white/6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-6">
                   {[
-                    { value: "4", label: "Service Categories" },
+                    { value: "6", label: "Service Categories" },
                     { value: "In-House", label: "Crew Model" },
                     { value: "Design-Build", label: "Capability" },
                     { value: "WNC", label: "Exclusive Focus" },
