@@ -123,7 +123,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
 
   if (variant === "diamond") {
     return (
-      <div className={`flex items-center justify-center py-14 ${className}`}>
+      <div className={`flex items-center justify-center py-10 ${className}`}>
         <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[hsl(var(--highland-gold)/0.12)] max-w-[160px]" />
         <motion.div
           className="relative mx-6"
@@ -144,7 +144,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
 
   if (variant === "heritage-bar") {
     return (
-      <div className={`flex items-center justify-center py-14 ${className}`}>
+      <div className={`flex items-center justify-center py-10 ${className}`}>
         <motion.div
           className="flex items-center gap-3"
           initial={{ opacity: 0, scaleX: 0 }}

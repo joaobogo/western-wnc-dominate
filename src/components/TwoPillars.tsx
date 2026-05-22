@@ -12,7 +12,7 @@ import { Home, HardHat } from "lucide-react";
  */
 const TwoPillars = () => {
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section className="bg-background py-14 md:py-20">
       <div className="max-w-5xl mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
