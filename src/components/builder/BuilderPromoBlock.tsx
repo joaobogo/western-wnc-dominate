@@ -38,8 +38,8 @@ const BuilderPromoBlock = ({
   const defaults = isConstruction
     ? {
         eyebrow: "Optional · Advanced Builder",
-        title: "Build Your Construction Project",
-        body: "An optional, guided way to organize an addition, porch, deck, outdoor living space, or flatwork project before our first call. Not a quote tool — a sharper starting point for a real conversation.",
+        title: "Plan Your Construction Project",
+        body: "An optional, guided way to organize an addition, layout, floor plan, or outdoor living project before our first call. Not a quote tool — a sharper starting point for a real conversation.",
         ctaLabel: "Start the Builder",
         secondaryHref: "/construction-intake",
         secondaryLabel: "Prefer the short intake form",

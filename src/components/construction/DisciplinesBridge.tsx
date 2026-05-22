@@ -35,7 +35,7 @@ const disciplineItems: DisciplineItem[] = [
     icon: Ruler,
     title: "Technical Understanding",
     roofing: "Load ratings & drainage engineering",
-    construction: "Structural design & engineering coordination",
+    construction: "Layout planning & building science",
     detail: "Understanding how a roof distributes loads, sheds water, and manages thermal movement gave us structural intelligence that most general contractors never develop. We think in systems, not surfaces.",
   },
   {
