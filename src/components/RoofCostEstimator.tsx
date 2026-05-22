@@ -28,7 +28,7 @@ const sizeOptions = [
 ];
 
 const materialOptions = [
-  { label: "Architectural Shingles", value: "shingle", baseCost: 8500, description: "Most popular · 25–30 year lifespan" },
+  { label: "Dimensional Shingles", value: "shingle", baseCost: 8500, description: "Most popular · 25–30 year lifespan" },
   { label: "Standing Seam Metal", value: "metal", baseCost: 16000, description: "Premium durability · 50+ year lifespan" },
   { label: "Synthetic Slate", value: "slate", baseCost: 22000, description: "Luxury aesthetic · 50+ year lifespan" },
   { label: "Not Sure Yet", value: "unsure", baseCost: 12000, description: "We'll recommend the best option for your property" },

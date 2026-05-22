@@ -23,7 +23,7 @@ export const constructionCategories: ConstructionCategory[] = [
     icon: Home,
     title: "Home Additions & Expansions",
     slug: "/construction/additions",
-    description: "Guest suites, expanded living areas, garages, bonus rooms, main-level master suites, and sunrooms — designed to integrate seamlessly with your existing home's architecture.",
+    description: "Guest suites, expanded living areas, garages, bonus rooms, main-level master suites, and sunrooms — designed to integrate seamlessly with your existing home's design theme.",
     outcomes: [
       "More functional living space without moving",
       "Seamless architectural integration with existing home",
