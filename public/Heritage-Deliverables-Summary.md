@@ -45,5 +45,5 @@ This document tracks the integration of the Highlander Tartan heritage requireme
 ## 4. Intake Form Structure — Visual Reinforcement
 
 ### [NEW] Form Identity
-- **Header Accent:** Use a subtle `tartan-trim` (4px bar) at the top of multi-step intake forms (Roofing and Construction) to reinforce the "Highlander Standard" throughout the conversion funnel.
+- **Header Accent:** Use a subtle `tartan-trim` (4px bar) at the top of multi-step intake forms (Roofing and Construction) to reinforce the "Highlander Standard" throughout the planning funnel.
 - **Success States:** Use a very faint tartan watermark in the background of the "Thank You / Next Steps" confirmation page to anchor the brand identity as the project transitions to human contact.

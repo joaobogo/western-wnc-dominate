@@ -229,7 +229,7 @@ export const services: ServiceData[] = [
     title: "Construction Services",
     headline: "General Construction for Western NC Properties",
     subheadline: "Licensed general contractor services including siding, framing, additions, and exterior renovations across Macon, Jackson, and Swain counties.",
-    description: "Beyond roofing, Highlander provides full general contracting services for Western NC homeowners. Our experienced crews handle siding installation, structural framing, home additions, and exterior renovations — all built to mountain-grade standards and backed by our quality guarantee.",
+    description: "Beyond roofing, Highlander is a licensed NC General Contractor providing elite exterior construction and planning services. We specialize in additions, outdoor living, and facade improvements that require precise mountain-climate engineering and design-led execution.",
     icon: HardHat,
     division: "construction",
     features: [
@@ -245,7 +245,7 @@ export const services: ServiceData[] = [
       { question: "Are you a licensed general contractor?", answer: "Yes. Highlander is a fully licensed general contractor in North Carolina, authorized for residential and commercial construction projects across Western NC." },
       { question: "What siding materials do you install?", answer: "We install James Hardie fiber cement, vinyl, engineered wood (LP SmartSide), and natural wood siding. We recommend materials based on your home's style, budget, and mountain exposure." },
       { question: "Can you handle storm damage beyond the roof?", answer: "Yes. When storms damage siding, fascia, soffits, or structural elements, we handle the full scope of exterior repairs — not just the roof. This simplifies your insurance claim and reconstruction process." },
-      { question: "Do you build home additions?", answer: "Yes. We design and build home additions, bump-outs, and garage conversions. As a licensed GC, we manage the entire project from permitting through final inspection." },
+      { question: "Do you build home additions?", answer: "Yes. We plan and build home additions, bump-outs, and garage conversions. As a licensed GC, we manage the entire project from preconstruction through final inspection, including help with layouts and floor plans." },
     ],
     metaTitle: "Construction Services in Western NC | Siding, Framing & Additions",
     metaDescription: "Licensed general contractor in Western NC. Siding, framing, additions, and exterior renovations in Highlands, Franklin, Sylva & beyond. Free estimates.",
