@@ -218,7 +218,7 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "What decking materials work best in WNC?", answer: "Composite decking (like Trex or TimberTech) performs best in mountain climates — it resists moisture, UV, and temperature swings without the maintenance of natural wood. We also install premium hardwoods like Ipe for a natural look." },
       { question: "Do you handle permits for outdoor construction?", answer: "Yes. We manage the permitting process for all outdoor living projects, ensuring compliance with local building codes in Macon, Jackson, Swain, and surrounding counties." },
-      { question: "Can you build a covered porch on my existing home?", answer: "Absolutely. We specialize in adding covered porches, screened rooms, and pergolas to existing mountain homes. We match roofing materials and architectural style for a seamless addition." },
+      { question: "Can you build a covered porch on my existing home?", answer: "Absolutely. We specialize in adding covered porches, screened rooms, and pergolas to existing mountain homes. We match roofing materials and design style for a seamless addition." },
       { question: "How long does an outdoor living project take?", answer: "Most deck and porch projects take 2–4 weeks from start to finish, depending on complexity, permits, and weather. We provide a detailed timeline before work begins." },
     ],
     metaTitle: "Outdoor Living Spaces in Western NC | Decks, Porches & Pergolas",

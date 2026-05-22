@@ -290,7 +290,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Preservation-sensitive reroofing",
         summary: "Dillsboro homes often need roofing choices that protect the structure without making the property feel out of place in a historic mountain village.",
-        proof: "Architectural shingle and detail packages selected for visual compatibility",
+        proof: "Dimensional shingle and detail packages selected for visual compatibility",
       },
       {
         title: "Small-footprint project execution",
@@ -300,7 +300,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Storm repair with character retention",
         summary: "When older Dillsboro roofs are damaged, the goal is usually to restore performance without losing the home's original feel.",
-        proof: "Repair scopes that balance protection, cost, and architectural character",
+        proof: "Repair scopes that balance protection, cost, and layout character",
       },
     ],
     faqs: [
