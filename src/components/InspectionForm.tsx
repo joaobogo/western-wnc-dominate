@@ -172,7 +172,9 @@ const InspectionForm = () => {
   const canProceedStep2 = formData.town && formData.projectType;
 
   return (
-    <section className="section-dark tartan-dark relative overflow-hidden interaction-quote" id="request-inspection">
+    <section className="section-dark relative overflow-hidden interaction-quote" id="request-inspection">
+      <SectionDivider variant="tartan-trim" className="absolute top-0 left-0 right-0 z-20 opacity-30" />
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto", backgroundRepeat: "repeat" }} />
       <GoldLine width="100%" centered delay={0} duration={1.2} className="absolute top-0 left-0 right-0 z-10" />
 
       <div className="section-padding">

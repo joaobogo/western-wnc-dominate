@@ -219,7 +219,7 @@
   /* Light tartan for section backgrounds */
   .tartan-bg {
     background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+      linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)),
       url('/tartan.png');
     background-size: 320px auto;
     background-repeat: repeat;
@@ -228,9 +228,18 @@
   /* Darker tartan for dark sections */
   .tartan-dark {
     background-image: 
-      linear-gradient(rgba(24, 46, 39, 0.92), rgba(24, 46, 39, 0.92)),
+      linear-gradient(rgba(24, 46, 39, 0.95), rgba(24, 46, 39, 0.95)),
       url('/tartan.png');
     background-size: 400px auto;
+    background-repeat: repeat;
+  }
+
+  /* Very subtle watermark version */
+  .tartan-watermark {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.985), rgba(255, 255, 255, 0.985)),
+      url('/tartan.png');
+    background-size: 500px auto;
     background-repeat: repeat;
   }
 
@@ -246,7 +255,7 @@
     opacity: 0;
     transition: opacity 0.4s ease;
     background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)),
+      linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
       url('/tartan.png');
     background-size: 160px auto;
     background-repeat: repeat;
