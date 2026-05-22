@@ -124,40 +124,6 @@ const Header = () => {
           : "bg-background border-b border-border/60"
       }`}
     >
-      {/* ─── Heritage top bar ─── */}
-      <AnimatePresence>
-        {!scrolled && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-            className="hidden md:flex items-center justify-between px-8 py-1.5 text-primary-foreground text-xs overflow-hidden relative"
-          >
-            <div 
-              className="absolute inset-0 opacity-20 pointer-events-none" 
-              style={{ 
-                backgroundImage: "url('/tartan.png')",
-                backgroundSize: "120px auto",
-                backgroundRepeat: "repeat",
-                backgroundColor: "hsl(var(--primary))"
-              }} 
-            />
-            <div className="absolute inset-0 bg-primary/40 pointer-events-none" />
-            <div className="flex items-center gap-5">
-              <span className="tracking-wide font-body">Franklin & Sylva, NC</span>
-              <span className="text-primary-foreground/25">|</span>
-              <span className="tracking-wide font-body">CertainTeed Master Shingle Applicator</span>
-              <span className="text-primary-foreground/25">|</span>
-              <span className="tracking-wide font-body">Licensed General Contractor</span>
-            </div>
-            <a href="tel:8283979211" className="flex items-center gap-2 font-medium hover:text-accent transition-colors tracking-wide font-body">
-              <Phone className="w-3 h-3" />
-              (828) 397-9211
-            </a>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* ─── Main nav bar ─── */}
       <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-300 ${scrolled ? "py-2" : "py-3"}`}>
