@@ -35,7 +35,7 @@ const steps = [
     number: "04",
     icon: Palette,
     title: "Material & Design Selection",
-    description: "Physical samples, color consultation, and performance data for your elevation. Every choice informed by your home's architecture and WNC's specific weather conditions.",
+    description: "Physical samples, design consultation, and performance data for your elevation. Every choice informed by your home's layout and WNC's specific weather conditions.",
     detail: "In-person samples · Climate-matched recommendations",
   },
   {

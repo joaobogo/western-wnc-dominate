@@ -63,7 +63,7 @@ const PRIORITIES: VisualChoice[] = [
   { value: "value_engineering", label: "Smart Value", sub: "Highest impact per dollar" },
   { value: "indoor_outdoor", label: "Indoor / Outdoor Flow", sub: "Connect the home to the view" },
   { value: "resale", label: "Resale Value", sub: "Marketable specification" },
-  { value: "design_collab", label: "Design Guidance", sub: "We can collaborate with an architect" },
+  { value: "design_collab", label: "Design Guidance", sub: "We can collaborate with a designer" },
 ];
 
 const INVESTMENT: VisualChoice[] = [
@@ -99,7 +99,7 @@ const DECISION_MAKERS: VisualChoice[] = [
   { value: "solo", label: "Just me" },
   { value: "couple", label: "Me & partner" },
   { value: "family", label: "Family / multi-owner" },
-  { value: "architect", label: "Working with an architect" },
+  { value: "architect", label: "Working with a designer" },
 ];
 
 const STEP_NAMES = ["Project", "Scope", "Style", "Context", "Plans", "Review"];

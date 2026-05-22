@@ -35,7 +35,7 @@ const Hero = () => {
   const layerAlts = [
     "Premium mountain home roof in Western North Carolina",
     "Standing seam metal roof on a WNC residence",
-    "Architectural asphalt roof on a Highlands-area home",
+    "Premium dimensional asphalt roof on a Highlands-area home",
   ];
 
   const { scrollYProgress } = useScroll({
@@ -116,7 +116,7 @@ const Hero = () => {
         transition={{ duration: 4, delay: 0.5, ease: DRAMATIC_EASE }}
       />
 
-      {/* === ARCHITECTURAL PRECISION LINES — desktop only === */}
+      {/* === DESIGN PRECISION LINES — desktop only === */}
       <div className="absolute inset-0 hidden lg:block pointer-events-none z-[1]">
         {/* Thirds grid */}
         {[33.33, 66.66].map((pct, i) => (

@@ -59,7 +59,7 @@ export const brandValues: BrandValue[] = [
     icon: Mountain,
     name: "Regional Pride",
     tagline: "Built for These Mountains",
-    statement: "Born in Western North Carolina. Built for mountain weather, mountain architecture, and mountain communities.",
+    statement: "Born in Western North Carolina. Built for mountain weather, mountain aesthetics, and mountain communities.",
     teamQuote: "We live here. We build here. We're not passing through.",
     ctaSupport: "Work with a team that knows what 4,000 feet of elevation does to a roof.",
     overcomes: "Do they understand mountain building?",

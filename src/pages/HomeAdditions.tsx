@@ -197,7 +197,7 @@ const HomeAdditions = () => {
                   The best additions don't look like additions. They look like rooms your home always had — because they share the same rooflines, materials, and proportions.
                 </h2>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
-                  Highlander builds home additions that integrate with your existing architecture — structurally, visually, and in the way the space flows.
+                  Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <p className="text-muted-foreground/60 text-sm leading-relaxed font-body italic">
                   Every addition starts with understanding your home and ends with a space that elevates the entire property.
@@ -299,7 +299,7 @@ const HomeAdditions = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Thinking about adding on?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We'll help you evaluate what's possible — structurally, architecturally, and within your budget.</p>
+                <p className="text-primary-foreground/50 text-sm font-body">We'll help you evaluate what's possible — structurally, visually, and within your budget.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
