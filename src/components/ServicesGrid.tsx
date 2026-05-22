@@ -58,7 +58,7 @@ const services: FeaturedService[] = [
   {
     icon: CloudLightning,
     title: "Storm Damage",
-    tagline: "24 hours. Fully documented.",
+    tagline: "Rapid response. Fully documented.",
     description: "Emergency tarping, drone-documented damage assessment, and direct insurance coordination. We handle the paperwork so you handle nothing.",
     stat: "Rapid",
     statLabel: "response time",
