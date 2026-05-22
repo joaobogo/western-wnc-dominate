@@ -24,8 +24,8 @@ import proj4 from "@/assets/gallery/cedar-004.webp";
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
 const beautyFunctionDurability = [
-  { icon: PenTool, title: "Beauty That Belongs", detail: "Every outdoor structure should complement your home's architecture — not compete with it. We match materials, proportions, and rooflines so outdoor spaces feel like intentional extensions of the home." },
-  { icon: Ruler, title: "Function That Fits Your Life", detail: "How do you actually want to use the space? Cooking, entertaining, morning coffee, evening drinks, reading, watching the mountains? We design around real use — not showroom photos." },
+  { icon: PenTool, title: "Design That Belongs", detail: "Every outdoor structure should complement your home's layout and style — not compete with it. We match proportions and rooflines so outdoor spaces feel like intentional extensions of the home." },
+  { icon: Ruler, title: "Layouts That Fit Your Life", detail: "How do you actually want to use the space? Cooking, entertaining, morning coffee, evening drinks? We design layouts around real use — not showroom photos." },
   { icon: Shield, title: "Durability for Mountain Life", detail: "WNC outdoor structures face UV, rain, freeze-thaw cycles, wind, and occasional ice loads. We specify materials and fasteners rated for these conditions and build with drainage, ventilation, and long-term maintenance in mind." },
 ];
 
@@ -425,7 +425,7 @@ const OutdoorLiving = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Design Guidance</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Planning Guidance</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Before You Build,<br className="hidden md:block" /> Think About This.
                 </h2>

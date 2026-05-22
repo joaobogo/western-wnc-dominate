@@ -18,7 +18,7 @@ const ConstructionIntake = () => (
       <IntakeShell
         eyebrow="Construction Intake"
         title="Start the planning conversation."
-        subhead="Additions, outdoor living, renovations, custom builds. Share scope, timeline, and any plans you have. A Highlander project advisor will personally review and respond within one business day."
+        subhead="Additions, layouts, floor plans, and outdoor living. Share scope, timeline, and any plans you have. A Highlander project advisor will personally review and respond within one business day."
         sidebarBullets={[
           "Owner-led from discovery through final walkthrough.",
           "Written scope and pricing approach before commitment.",

@@ -69,7 +69,7 @@ const faqsForSEO = [
   { question: "How long does a typical construction project take?", answer: "Timelines vary significantly by scope. A deck or porch project typically takes 2–4 weeks. A room addition may take 6–12 weeks. A major renovation can run 3–6 months." },
   { question: "Do you handle permits and inspections?", answer: "Yes. Permit acquisition, code compliance, and inspection scheduling are part of our standard project management." },
   { question: "How do you price construction projects?", answer: "We provide detailed, grouped-cost proposals with defined scope, material specifications, and labor costs. No vague allowances, no hidden fees." },
-  { question: "Can you work with my designer or project planner?", answer: "Absolutely. We regularly collaborate with designers, project planners, and engineers across Western North Carolina." },
+  { question: "Can you work with my designer or project lead?", answer: "Absolutely. We regularly collaborate with designers, project planners, and engineering professionals across Western North Carolina." },
   { question: "What sets Highlander apart from other contractors in WNC?", answer: "Three things: planning depth, in-house crews, and communication standards." },
 ];
 
@@ -116,14 +116,14 @@ const ConstructionDivision = () => {
 
               {/* Horizontal slide-in (distinct from Roofing's curtain-reveal) */}
               <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight mb-2">
-                Build With Intention.
+                Plan With Intention.
               </motion.h1>
               <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold tracking-tight leading-[1.05] mb-8">
                 <span className="text-[hsl(var(--highland-gold))]">Build to Last.</span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
-                Additions, renovations, outdoor living, and custom construction for Western North Carolina homeowners who value craftsmanship, planning, and doing the project right.
+                Additions, layouts, floor plans, and custom construction for Western North Carolina homeowners who value craftsmanship, planning, and doing the project right.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -153,7 +153,7 @@ const ConstructionDivision = () => {
                   ))}
                 </div>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
-                  {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Design-Build Capable"].map((item) => (
+                  {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Design Guidance"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.4)]" />
                       <span className="text-primary-foreground/25 text-[11px] font-body font-medium tracking-wide">{item}</span>

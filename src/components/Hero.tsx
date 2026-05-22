@@ -212,7 +212,7 @@ const Hero = () => {
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
                 className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
               >
-                Roofing authority.
+                Roofing & Planning authority.
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-1 md:mb-2">
@@ -245,8 +245,8 @@ const Hero = () => {
               className="text-[14px] md:text-[17px] text-primary-foreground/35 max-w-lg mb-10 md:mb-14 leading-[1.8] font-body"
             >
               CertainTeed Master Applicator. Licensed General Contractor.
-              Roofing and residential construction across Western North Carolina,
-              led by the same owner on every project.
+              Roofing, layout planning, and residential construction across
+              Western North Carolina, led by the same owner on every project.
             </motion.p>
 
             {/* CTA Group — premium dual-action */}

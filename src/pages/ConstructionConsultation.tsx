@@ -61,9 +61,9 @@ const PROJECT_GOALS = [
 ];
 
 const PLAN_STATUS = [
-  { id: "yes-architect", label: "Yes — professionally drawn plans" },
+  { id: "yes-architect", label: "Yes — professionally drawn plans ready" },
   { id: "yes-sketches", label: "Yes — rough sketches or ideas" },
-  { id: "no-need-help", label: "No — I need design-build help" },
+  { id: "no-need-help", label: "No — I need planning & design help" },
   { id: "exploring", label: "Just exploring possibilities" },
 ];
 
