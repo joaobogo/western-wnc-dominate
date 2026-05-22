@@ -162,6 +162,22 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
     );
   }
 
+  if (variant === "tartan-trim") {
+    return (
+      <div className={`h-[4px] w-full relative overflow-hidden ${className}`}>
+        <div 
+          className="absolute inset-0 opacity-40" 
+          style={{ 
+            backgroundImage: "url('/tartan.png')",
+            backgroundSize: "80px auto",
+            backgroundRepeat: "repeat"
+          }} 
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
+      </div>
+    );
+  }
+
   return null;
 };
 

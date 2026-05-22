@@ -226,7 +226,15 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar — license + legal */}
-      <div className="border-t border-primary-foreground/6">
+      <div className="border-t border-primary-foreground/6 relative">
+        <div 
+          className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+          style={{ 
+            backgroundImage: "url('/tartan.png')",
+            backgroundSize: "100px auto",
+            backgroundRepeat: "repeat"
+          }} 
+        />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[11px] text-primary-foreground/35 font-body tracking-wide">
             <span>© {new Date().getFullYear()} Highlander Roofing & Construction.</span>

@@ -132,8 +132,18 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-            className="hidden md:flex items-center justify-between px-8 py-1.5 bg-primary text-primary-foreground text-xs overflow-hidden"
+            className="hidden md:flex items-center justify-between px-8 py-1.5 text-primary-foreground text-xs overflow-hidden relative"
           >
+            <div 
+              className="absolute inset-0 opacity-20 pointer-events-none" 
+              style={{ 
+                backgroundImage: "url('/tartan.png')",
+                backgroundSize: "120px auto",
+                backgroundRepeat: "repeat",
+                backgroundColor: "hsl(var(--primary))"
+              }} 
+            />
+            <div className="absolute inset-0 bg-primary/40 pointer-events-none" />
             <div className="flex items-center gap-5">
               <span className="tracking-wide font-body">Franklin & Sylva, NC</span>
               <span className="text-primary-foreground/25">|</span>
