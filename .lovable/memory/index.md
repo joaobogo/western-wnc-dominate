@@ -10,17 +10,17 @@ Updated: now
 - CTAs: Premium language only. No "free inspection/estimate", "get started", "book now", "call now". See cta-config.ts.
 - Security: `designer_leads` RLS (no public select). IP rate-limit `analyze-roof` (10/hr). Use signed URLs for `roof-designs` storage.
 - SEO/Architecture: Town + Service strategy. Strictly circular internal linking. Maintain 301 redirects for Hibu migration.
-- Brand: Ruggedly refined, locally rooted, architecturally aware. Never position around cheap/free/discounts.
+- Brand: Ruggedly refined, locally rooted, design-aware. Never position around cheap/free/discounts. Avoid protected title "architect".
 - Design Philosophy: "Highland Forge" — permanence as beauty, tartan as structural DNA not wallpaper, gold ≤8% surface area.
 - Page Rule: Every page must feel personalized, visually rich, locally relevant, and distinct. No thin templates or clone layouts.
-- Divisions: Roofing=green/tartan/protective. Construction=gold/blueprint/architectural. Separate lead flows.
+- Divisions: Roofing=green/tartan/protective. Construction=gold/blueprint/design-led. Separate lead flows.
 - CTA Differentiation: Each page has unique CTA language matching its emotional tone — never repeat the same CTA across pages.
 
 ## Memories
 - [Design Philosophy](mem://style/design-philosophy) — Highland Forge visual philosophy: palette, tartan DNA, motion, spatial rhythm
 - [Visual Identity](mem://style/visual-identity) — Brand colors, fonts, and hero section styling for Mountain Authority aesthetic
 - [Component Language](mem://style/component-language) — Premium component library: PremiumCard, ServicePreview, TrustBlock, StatBar, ImageFrame, QuoteModule, TestimonialCard, Button variants
-- [Construction Visual System](mem://style/construction-visual-system) — Blueprint textures, gold accents, architectural cards, and dedicated construction lead flow
+- [Construction Visual System](mem://style/construction-visual-system) — Blueprint textures, gold accents, planning-focused cards, and dedicated construction lead flow
 - [Page Identity System](mem://style/page-identity-system) — Per-page strategic identity: purpose, tone, visual mood, sections, proof type, CTA tone, motion speed for all header pages
 - [Page Distinctness Rule](mem://style/page-distinctness-rule) — Every page must feel personalized, visually rich, locally relevant, and distinct — no thin templates
 - [Page Differentiation Rules](mem://style/page-differentiation-rules) — Strict rules: unique hero, section sequence, card style, proof layout, CTA treatment, background, and motion per page

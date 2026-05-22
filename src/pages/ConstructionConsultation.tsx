@@ -61,7 +61,7 @@ const PROJECT_GOALS = [
 ];
 
 const PLAN_STATUS = [
-  { id: "yes-architect", label: "Yes — professionally drawn plans ready" },
+  { id: "yes-architect", label: "Yes — professionally drawn plans or drawings ready" },
   { id: "yes-sketches", label: "Yes — rough sketches or ideas" },
   { id: "no-need-help", label: "No — I need planning & design help" },
   { id: "exploring", label: "Just exploring possibilities" },
@@ -347,7 +347,7 @@ export default function ConstructionConsultation() {
     let score = 25;
     if (form.phone) score += 15;
     if (form.projectGoals.length >= 3) score += 10;
-    if (form.hasPlans === "yes-architect") score += 15;
+    if (form.hasPlans === "yes-architect") score += 15; // premium lead signal from plans
     else if (form.hasPlans === "yes-sketches") score += 10;
     if (form.budgetRange === "100-200k" || form.budgetRange === "200k-plus") score += 15;
     else if (form.budgetRange === "50-100k") score += 10;

@@ -99,7 +99,7 @@ const DECISION_MAKERS: VisualChoice[] = [
   { value: "solo", label: "Just me" },
   { value: "couple", label: "Me & partner" },
   { value: "family", label: "Family / multi-owner" },
-  { value: "architect", label: "Working with a designer or lead" },
+  { value: "architect", label: "Working with a designer or planning lead" },
 ];
 
 const STEP_NAMES = ["Project", "Scope", "Style", "Context", "Plans", "Review"];
