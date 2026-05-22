@@ -38,26 +38,26 @@ const certifications = [
   },
   {
     icon: Shield,
+    title: "VELUX Certified Installer",
+    badge: "Accredited Expert",
+    description: "A VELUX Certified Installer is an independent contractor or company trained and accredited by VELUX to install their skylights, ensuring high-quality, reliable service and adherence to VELUX standards.",
+    whatItMeans: [
+      "Trained and accredited by VELUX to install their full skylight line",
+      "High-quality, reliable service following strict VELUX standards",
+      "Ensures structural integrity and leak-proof performance",
+      "Direct access to VELUX technical support and warranty systems",
+    ],
+  },
+  {
+    icon: BadgeCheck,
     title: "Licensed NC General Contractor",
     badge: "State Licensed",
-    description: "Highlander holds a North Carolina General Contractor license, which means we've met the state's requirements for financial responsibility, experience, and competency. This license allows us to manage roofing and construction projects of any scope — and holds us to legal standards of accountability.",
+    description: "Highlander holds a North Carolina General Contractor license, which means we've met the state's requirements for financial responsibility, experience, and competency. This license allows us to manage roofing and construction projects of any scope.",
     whatItMeans: [
       "Legal authority to manage full-scope roofing and construction projects",
       "State-verified financial responsibility and insurance coverage",
       "Subject to NC Licensing Board oversight and accountability",
       "Required for larger projects — many contractors operate without it",
-    ],
-  },
-  {
-    icon: BadgeCheck,
-    title: "Fully Insured — Liability & Workers' Comp",
-    badge: "Complete Coverage",
-    description: "We carry full general liability insurance and workers' compensation coverage for every crew member. This protects you from personal liability if anyone is injured on your property during a project — something many contractors cut corners on.",
-    whatItMeans: [
-      "You are protected from liability if a worker is injured on your property",
-      "Coverage extends to property damage during construction",
-      "Workers' comp covers every crew member — not just some",
-      "Certificates of insurance available on request before any project",
     ],
   },
   {
