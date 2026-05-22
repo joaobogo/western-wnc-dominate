@@ -31,8 +31,8 @@ const TrustStrip = () => {
 
       <div className="relative z-10">
         {/* Editorial layout — stats + credentials side by side */}
-        <div className="container-tight px-6 md:px-10 py-10 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 items-center">
+        <div className="container-tight px-6 md:px-10 py-6 md:py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-0 items-center">
 
             {/* Left: Stats — large, editorial typography */}
             <div className="lg:col-span-5 lg:border-r lg:border-primary-foreground/[0.06] lg:pr-12">
