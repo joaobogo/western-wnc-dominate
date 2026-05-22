@@ -366,8 +366,8 @@ const ConstructionBuilder = () => {
                     <ChipGroup options={DECISION_MAKERS} value={data.decisionMakers} onChange={(v) => set("decisionMakers", v)} columns={2} />
                   </div>
                   <div className="mt-6">
-                    <Label required>Property town / area</Label>
-                    <Input value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Highlands, Cashiers, Franklin, Sylva…" />
+                    <Label required>Property address</Label>
+                    <Input value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Street, city, and state…" />
                   </div>
                 </>
               )}

@@ -55,7 +55,7 @@ const InspectionForm = () => {
       label: "Inspection Request",
       elementId: "inspection-form-main",
       metadata: {
-        town: formData.town,
+        address: formData.town,
         projectType: formData.projectType,
         timeline: formData.timeline,
       }
@@ -345,23 +345,16 @@ const InspectionForm = () => {
                       {currentStep === "project" && (
                         <div className="space-y-5">
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div>
-                              <label htmlFor="town" className={labelClasses}>Where Is Your Property?</label>
-                              <select
-                                id="town" required value={formData.town}
+                            <div className="sm:col-span-2">
+                              <label htmlFor="address" className={labelClasses}>Property Address</label>
+                              <input
+                                id="address" type="text" required maxLength={200}
+                                value={formData.town}
                                 onChange={(e) => setFormData({ ...formData, town: e.target.value })}
                                 className={inputClasses}
-                              >
-                                <option value="">Select your town</option>
-                                <option value="highlands">Highlands</option>
-                                <option value="cashiers">Cashiers</option>
-                                <option value="franklin">Franklin</option>
-                                <option value="sylva">Sylva</option>
-                                <option value="bryson-city">Bryson City</option>
-                                <option value="waynesville">Waynesville</option>
-                                <option value="cherokee">Cherokee</option>
-                                <option value="other">Other WNC Area</option>
-                              </select>
+                                placeholder="Street, city, and state"
+                              />
+                              <p className={hintClasses}>So we can review the property on satellite before we call.</p>
                             </div>
                             <div>
                               <label htmlFor="projectType" className={labelClasses}>What Are You Looking to Do?</label>
@@ -391,23 +384,23 @@ const InspectionForm = () => {
                                 </optgroup>
                               </select>
                             </div>
-                          </div>
-                          <div>
-                            <label htmlFor="timeline" className={labelClasses}>
-                              When Would You Like to Begin?
-                            </label>
-                            <select
-                              id="timeline" value={formData.timeline}
-                              onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                              className={inputClasses}
-                            >
-                              <option value="">Select timeline</option>
-                              <option value="urgent">As soon as possible</option>
-                              <option value="1-month">Within the next month</option>
-                              <option value="1-3-months">1–3 months</option>
-                              <option value="3-6-months">3–6 months</option>
-                              <option value="planning">Just planning ahead</option>
-                            </select>
+                            <div>
+                              <label htmlFor="timeline" className={labelClasses}>
+                                When Would You Like to Begin?
+                              </label>
+                              <select
+                                id="timeline" value={formData.timeline}
+                                onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                                className={inputClasses}
+                              >
+                                <option value="">Select timeline</option>
+                                <option value="urgent">As soon as possible</option>
+                                <option value="1-month">Within the next month</option>
+                                <option value="1-3-months">1–3 months</option>
+                                <option value="3-6-months">3–6 months</option>
+                                <option value="planning">Just planning ahead</option>
+                              </select>
+                            </div>
                           </div>
                         </div>
                       )}

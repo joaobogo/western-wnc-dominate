@@ -236,17 +236,18 @@ const ConstructionIntakeForm = () => {
                 <Label required>Who is the decision-maker</Label>
                 <ChipGroup options={DECISION_OPTIONS} value={data.decisionMaker} onChange={(v) => set("decisionMaker", v)} columns={3} />
               </div>
-              <FieldRow>
+              <div className="space-y-4">
                 <div>
-                  <Label required>Town</Label>
+                  <Label required>Property address</Label>
                   <Input
-                    placeholder="e.g. Cashiers"
+                    placeholder="Street, city, and state"
                     value={data.town}
                     onChange={(e) => set("town", e.target.value)}
                   />
+                  <Helper>Full address helps us account for terrain, slope, and local conditions.</Helper>
                 </div>
                 <div>
-                  <Label>Property</Label>
+                  <Label>Property type</Label>
                   <ChipGroup
                     options={[
                       { value: "primary", label: "Primary" },
@@ -258,7 +259,7 @@ const ConstructionIntakeForm = () => {
                     columns={3}
                   />
                 </div>
-              </FieldRow>
+              </div>
             </>
           )}
 
