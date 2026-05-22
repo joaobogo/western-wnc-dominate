@@ -1,4 +1,4 @@
-import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat } from "lucide-react";
+import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat, UtensilsCrossed, Home, Shield } from "lucide-react";
 import type { Division } from "@/lib/division-theme";
 
 export interface ServiceData {
@@ -225,10 +225,78 @@ export const services: ServiceData[] = [
     metaDescription: "Custom decks, covered porches, screened rooms & pergolas for WNC mountain homes. Highlands, Franklin, Sylva, Cashiers. Free consultation from Highlander.",
   },
   {
+    slug: "renovations",
+    title: "Kitchen & Bath Remodels",
+    headline: "Interior Renovations That Protect Your Investment",
+    subheadline: "Complete kitchen, bathroom, and living space transformations managed by one professional local team.",
+    description: "Highlander approaches renovation with the same planning discipline we bring to our roofing projects. From open-concept conversions to custom master baths, we handle the design-build process from demo to final finish.",
+    icon: UtensilsCrossed,
+    division: "construction",
+    features: [
+      "Custom kitchen layout & cabinetry",
+      "Master suite & bathroom renovations",
+      "Basement finishing & moisture management",
+      "Load-bearing wall removal & structural work",
+      "Flooring, tile, and interior finish work",
+      "Electrical & plumbing coordination",
+      "Detailed project timeline & fixed pricing",
+    ],
+    faqs: [
+      { question: "How long does a kitchen remodel take?", answer: "Most kitchen renovations take 4–8 weeks depending on layout changes and material lead times." },
+      { question: "Do I need to move out during renovation?", answer: "Usually not. We use dust barriers and staging to keep your home livable during construction." },
+    ],
+    metaTitle: "Kitchen & Bath Remodeling in Western NC | Highlander",
+    metaDescription: "Professional kitchen and bathroom remodeling across Highlands, Franklin, and Sylva. Fixed pricing, in-house crews, and documented quality.",
+  },
+  {
+    slug: "additions",
+    title: "Additions & Suites",
+    headline: "More Space, Integrated Perfectly",
+    subheadline: "Guest suites, in-law apartments, and room extensions that look like they were always part of your home.",
+    description: "The best additions don't look like additions. We match rooflines, siding, and proportions so your new space integrates seamlessly with your existing structure.",
+    icon: Home,
+    division: "construction",
+    features: [
+      "Master suite & guest wing additions",
+      "Second-story expansions",
+      "Garage-to-living-space conversions",
+      "Attached & detached garage builds",
+      "Full permit & zoning management",
+      "Structural engineering coordination",
+    ],
+    faqs: [
+      { question: "Do you handle the permits?", answer: "Yes, we manage the entire permitting and inspection process with the county." },
+    ],
+    metaTitle: "Home Additions in Western NC | Highlander Construction",
+    metaDescription: "Expand your mountain home with professional additions. Guest suites, in-law apartments, and room extensions. Licensed GC in WNC.",
+  },
+  {
+    slug: "siding",
+    title: "Siding & Exterior",
+    headline: "Mountain-Grade Exterior Protection",
+    subheadline: "Fiber cement, cedar, and premium trim systems engineered for Western NC's moisture and elevation.",
+    description: "Your home's exterior envelope is its first line of defense. We install premium siding systems like James Hardie fiber cement and natural cedar, ensuring proper moisture management and aesthetic continuity.",
+    icon: Shield,
+    division: "construction",
+    features: [
+      "James Hardie fiber cement installation",
+      "Natural cedar shake & lap siding",
+      "PVC and composite exterior trim",
+      "House wrap & moisture barrier systems",
+      "Soffit & fascia replacement",
+      "Exterior painting & staining",
+    ],
+    faqs: [
+      { question: "What siding lasts longest in the mountains?", answer: "Fiber cement (like James Hardie) is highly recommended for its resistance to moisture, rot, and fire." },
+    ],
+    metaTitle: "Siding & Exterior Trim in Western NC | Highlander",
+    metaDescription: "Premium siding installation in Highlands, Cashiers, and Franklin. Fiber cement, cedar, and moisture-proof trim systems. Free estimates.",
+  },
+  {
     slug: "construction-services",
-    title: "Construction Services",
-    headline: "General Construction for Western NC Properties",
-    subheadline: "Licensed general contractor services including siding, framing, additions, and exterior renovations across Macon, Jackson, and Swain counties.",
+    title: "General Construction",
+    headline: "Licensed General Contractor for Custom Projects",
+    subheadline: "Framing, structural repairs, and specialized construction projects across the WNC mountains.",
     description: "Beyond roofing, Highlander is a licensed NC General Contractor providing elite exterior construction and planning services. We specialize in additions, outdoor living, and facade improvements that require precise mountain-climate engineering and design-led execution.",
     icon: HardHat,
     division: "construction",

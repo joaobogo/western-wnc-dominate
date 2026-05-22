@@ -43,6 +43,8 @@ const ServiceTownPage = lazy(() => import("./pages/ServiceTownPage"));
 const ConstructionDivision = lazy(() => import("./pages/ConstructionDivision"));
 const HomeAdditions = lazy(() => import("./pages/HomeAdditions"));
 const OutdoorLiving = lazy(() => import("./pages/OutdoorLiving"));
+const Renovations = lazy(() => import("./pages/Renovations"));
+const Siding = lazy(() => import("./pages/Siding"));
 const ConstructionConsultation = lazy(() => import("./pages/ConstructionConsultation"));
 const QuoteFlow = lazy(() => import("./pages/QuoteFlow"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -90,8 +92,9 @@ const App = () => (
           <Route path="/construction/outdoor-living" element={<OutdoorLiving />} />
           <Route path="/construction/consultation" element={<ConstructionConsultation />} />
           {/* Redirects for retired construction routes */}
-          <Route path="/construction/renovations" element={<Navigate to="/construction" replace />} />
-          <Route path="/construction/exterior" element={<Navigate to="/construction" replace />} />
+          <Route path="/construction/renovations" element={<Renovations />} />
+          <Route path="/construction/siding" element={<Siding />} />
+          <Route path="/construction/exterior" element={<Navigate to="/construction/siding" replace />} />
           <Route path="/construction/custom" element={<Navigate to="/construction" replace />} />
           <Route path="/construction/flatwork" element={<Navigate to="/construction" replace />} />
 
