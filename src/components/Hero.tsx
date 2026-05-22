@@ -4,6 +4,7 @@ import { ArrowRight, Shield, Award, Clock, HardHat, Home, Mountain, Phone } from
 import heroImage from "@/assets/hero-roofing.jpg";
 import heroLayer2 from "@/assets/gallery/metal-009.jpg";
 import heroLayer3 from "@/assets/gallery/asphalt-hero.webp";
+import veluxLogo from "@/assets/velux-certified-logo.jpg";
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -289,6 +290,27 @@ const Hero = () => {
               <div className="w-px h-3 bg-primary-foreground/10" />
               <span className="text-primary-foreground/20 text-[10px] font-body">150+ Reviews</span>
             </motion.div>
+
+            {/* VELUX Certified Installer badge */}
+            <motion.a
+              href="/certifications"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.2, duration: 0.8 }}
+              className="mt-6 inline-flex items-center gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-2 pr-4 py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
+            >
+              <div className="w-9 h-9 bg-white rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain" />
+              </div>
+              <div className="flex flex-col leading-tight text-left">
+                <span className="text-[9px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))]">
+                  VELUX Certified
+                </span>
+                <span className="text-[11px] font-body font-medium text-primary-foreground/70">
+                  Skylight Installer · Pro Accredited
+                </span>
+              </div>
+            </motion.a>
           </div>
         </div>
       </motion.div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import veluxLogo from "@/assets/velux-certified-logo.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -33,6 +34,19 @@ const StickyMobileCTA = () => {
             <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))' }} />
             
             <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-[0_-8px_32px_-12px_hsl(var(--heritage-charcoal)/0.12)]">
+              {/* VELUX trust strip */}
+              <Link
+                to="/certifications"
+                className="flex items-center justify-center gap-2 py-1.5 px-3 bg-[hsl(var(--heritage-green))] border-b border-[hsl(var(--highland-gold)/0.25)]"
+              >
+                <div className="w-4 h-4 bg-white rounded-[1px] flex items-center justify-center overflow-hidden flex-shrink-0">
+                  <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain" />
+                </div>
+                <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold))]">
+                  VELUX Certified Skylight Installer
+                </span>
+              </Link>
+
               {/* Two-column layout: primary CTA + secondary actions */}
               <div className="flex items-stretch">
                 {/* Primary CTA — full gold, generous touch target */}
