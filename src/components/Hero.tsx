@@ -286,7 +286,7 @@ const Hero = () => {
                 <span className="text-primary-foreground/20 text-[10px] font-body">Google</span>
               </div>
               <div className="w-px h-3 bg-primary-foreground/10" />
-              <span className="text-primary-foreground/20 text-[10px] font-body">500+ Projects</span>
+              <span className="text-primary-foreground/20 text-[10px] font-body">Google Rated 4.9★</span>
               <div className="w-px h-3 bg-primary-foreground/10" />
               <span className="text-primary-foreground/20 text-[10px] font-body">150+ Reviews</span>
             </motion.div>

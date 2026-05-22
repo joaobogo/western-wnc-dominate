@@ -19,7 +19,7 @@ export const credentials = [
 ];
 
 export const trustStats = [
-  { value: "500+", label: "Projects Completed", detail: "Across Western NC" },
+  { value: "4.9★", label: "Google Rating", detail: "Across Western NC" },
   { value: "40+", label: "Years Combined Exp.", detail: "Roofing & Construction" },
   { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain" },
   { value: "4.9★", label: "Average Rating", detail: "Google & Facebook" },

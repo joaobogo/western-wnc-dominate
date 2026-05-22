@@ -416,7 +416,7 @@ const About = () => {
             </motion.div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { stat: "500+", label: "Projects completed across WNC" },
+                { stat: "4.9★", label: "Google Rating" },
                 { stat: "4.9★", label: "Average across Google & Facebook" },
                 { stat: "24hr", label: "Response time on every inquiry" },
                 { stat: "In-House", label: "Crews — never subcontracted" },

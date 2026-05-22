@@ -155,7 +155,7 @@ const CTABlock = () => {
         <div className="container-tight px-6 md:px-10 py-5 md:py-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/50 text-[13px] font-body text-center md:text-left">
-              <span className="text-primary-foreground/80 font-heading font-bold">500+ projects.</span>{" "}
+              <span className="text-primary-foreground/80 font-heading font-bold">4.9★ Rated.</span>{" "}
               <span className="text-primary-foreground/80 font-heading font-bold">4.9★ rated.</span>{" "}
               Roofing & Construction across Western NC since 2017.
             </p>

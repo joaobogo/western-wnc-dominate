@@ -140,7 +140,7 @@ const ConstructionAuthority = () => {
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <div className="space-y-4 mb-10 max-w-2xl">
               <p className="text-dark-section-foreground/50 text-[15px] font-body leading-[1.8]">
-                After 500+ roofing projects, the most common question we heard was:
+                After years of roofing and general construction, the most common question we heard was:
                 <em className="text-dark-section-foreground/70"> "Can you handle the rest of the house too?"</em>
               </p>
               <p className="text-dark-section-foreground/40 text-[15px] font-body leading-[1.8]">

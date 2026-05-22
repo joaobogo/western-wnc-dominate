@@ -18,7 +18,7 @@ const divisions = [
     iconColor: "text-primary",
     borderColor: "border-primary/15 hover:border-primary/25",
     stats: [
-      { value: "500+", label: "Roofs Installed" },
+      { value: "4.9★", label: "Google Rating" },
       { value: "Top 1%", label: "Nationally Certified" },
     ],
     href: "/roofing",
