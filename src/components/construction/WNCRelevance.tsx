@@ -38,9 +38,9 @@ export const wncInsights: LocalInsight[] = [
   },
   {
     icon: Home,
-    title: "Mountain Architecture",
+    title: "Mountain Design Theme",
     detail: "WNC homes range from 1920s bungalows and mid-century ranches to timber-frame lodges and contemporary mountain modern. Each style has distinct structural systems, material languages, and proportional rules.",
-    implication: "Additions and renovations must respect the original architectural vocabulary. Roofline pitch, overhang proportions, window rhythm, and material palette must be matched — not approximated.",
+    implication: "Additions and renovations must respect the original design vocabulary. Roofline pitch, overhang proportions, window rhythm, and material palette must be matched — not approximated.",
   },
   {
     icon: TreePine,
@@ -52,7 +52,7 @@ export const wncInsights: LocalInsight[] = [
     icon: Compass,
     title: "Property Expectations",
     detail: "WNC homeowners invest in their properties for long-term enjoyment, retirement, family legacy, and connection to the mountain landscape. Construction work must add lasting value — not just square footage.",
-    implication: "Quality, craftsmanship, and architectural sensitivity matter more here than in markets where speed and cost dominate. WNC clients expect work that honors their investment and their setting.",
+    implication: "Quality, craftsmanship, and design sensitivity matter more here than in markets where speed and cost dominate. WNC clients expect work that honors their investment and their setting.",
   },
 ];
 
@@ -77,7 +77,7 @@ interface WNCRelevanceProps {
 const WNCRelevance = ({
   insights = wncInsights,
   heading = "Built for Western\nNorth Carolina.",
-  subheading = "Local terrain, weather, architecture, and property expectations shape every construction decision we make. Here's what that means for your project.",
+  subheading = "Local terrain, weather, design themes, and property expectations shape every construction decision we make. Here's what that means for your project.",
   eyebrow = "Local Expertise",
   className = "",
   variant = "grid",
@@ -212,7 +212,7 @@ export const wncIntegrationGuide = {
     "Seasonal building guides specific to WNC (best months, weather windows, permit timing)",
     "Material performance comparisons at WNC elevations vs. lower-altitude expectations",
     "Mountain-specific construction challenges (slope building, rock excavation, access limitations)",
-    "WNC architectural style guides — what makes mountain homes distinctive and how to preserve it",
+    "WNC design style guides — what makes mountain homes distinctive and how to preserve it",
   ],
   faqIntegration: [
     "Address WNC-specific concerns (slope building, weather delays, material durability at elevation)",

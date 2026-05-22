@@ -112,7 +112,7 @@
 
   /* ──────────────────────────────────────
      HEADING HIERARCHY — Cormorant Garamond
-     Tight tracking, architectural line-height
+     Tight tracking, design-led line-height
      ────────────────────────────────────── */
   h1 {
     @apply font-heading font-bold;
@@ -1129,7 +1129,7 @@
 
   /* ──────────────────────────────────────
      CONSTRUCTION DIVISION VISUAL SYSTEM
-     Architectural, spatial, project-driven
+     Spatial, design-led, project-driven
      Distinct from Roofing's protective/weather tone
      ────────────────────────────────────── */
 
@@ -1213,7 +1213,7 @@
     transform: scaleX(1);
   }
 
-  /* Construction architectural line — corner accent */
+  /* Construction design line — corner accent */
   .arch-corners {
     position: relative;
   }
