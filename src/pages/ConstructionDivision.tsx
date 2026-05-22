@@ -68,7 +68,7 @@ const faqsForSEO = [
   { question: "Do you handle both roofing and construction on the same project?", answer: "Yes — and this is one of our key advantages. When a project involves both roof work and structural or exterior construction, having one company manage both eliminates coordination gaps." },
   { question: "How long does a typical construction project take?", answer: "Timelines vary significantly by scope. A deck or porch project typically takes 2–4 weeks. A room addition may take 6–12 weeks. A major renovation can run 3–6 months." },
   { question: "Do you handle permits and inspections?", answer: "Yes. Permit acquisition, code compliance, and inspection scheduling are part of our standard project management." },
-  { question: "How do you price construction projects?", answer: "We provide detailed, line-item proposals with defined scope, material specifications, and labor costs. No vague allowances, no hidden fees." },
+  { question: "How do you price construction projects?", answer: "We provide detailed, grouped-cost proposals with defined scope, material specifications, and labor costs. No vague allowances, no hidden fees." },
   { question: "Can you work with my architect or designer?", answer: "Absolutely. We regularly collaborate with architects, designers, and engineers across Western North Carolina." },
   { question: "What sets Highlander apart from other contractors in WNC?", answer: "Three things: planning depth, in-house crews, and communication standards." },
 ];

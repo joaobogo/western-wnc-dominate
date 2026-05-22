@@ -24,7 +24,7 @@ export const constructionTrustPillars: TrustPillar[] = [
   {
     icon: ClipboardCheck,
     title: "Project Clarity",
-    detail: "Before a single board is cut, you receive a written scope with defined deliverables, specified materials, a confirmed timeline, and line-item pricing. No vague allowances, no ambiguous language, no surprises buried in fine print. You know exactly what you're getting — and what you're paying — before you commit.",
+    detail: "Before a single board is cut, you receive a written scope with defined deliverables, specified materials, a confirmed timeline, and transparent cost groupings. No vague allowances, no ambiguous language, no surprises buried in fine print. You know exactly what you're getting — and what you're paying — before you commit.",
     overcomes: "\"I'm afraid the final cost will be way more than the estimate.\"",
   },
   {

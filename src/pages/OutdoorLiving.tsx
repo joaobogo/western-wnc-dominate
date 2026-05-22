@@ -78,12 +78,12 @@ const galleryImages = [
 const whyHighlander = [
   { icon: Shield, title: "Roofing Expertise Built In", detail: "Every covered outdoor structure needs a roof. As a roofing company first, we handle porch, pavilion, and enclosure roofing with the same materials, techniques, and warranty as our primary roofing work." },
   { icon: Users, title: "In-House Construction Crews", detail: "Our framing, decking, and finish crews are Highlander employees — not subcontracted labor. Accountability, communication, and consistent quality from start to finish." },
-  { icon: FileCheck, title: "Documented Scope & Pricing", detail: "Written proposals with line-item pricing, specified materials, defined timeline, and no vague allowances. You know exactly what you're getting before we mobilize." },
+  { icon: FileCheck, title: "Documented Scope & Pricing", detail: "Written proposals with transparent cost groupings, specified materials, defined timeline, and no vague allowances. You know exactly what you're getting before we mobilize." },
   { icon: Mountain, title: "WNC Terrain Experience", detail: "Steep lots, rock, variable soils, and complex drainage — we've built outdoor structures on the challenging terrain that defines Western North Carolina properties." },
 ];
 
 const faqs = [
-  { q: "How is an outdoor living project priced?", a: "Every project is priced from its own scope — structure type, footprint, roof system, finishes, and site access all shape the number. Rather than publish a generic range, we provide a detailed, line-item proposal during the design phase so you know exactly what you're investing in." },
+  { q: "How is an outdoor living project priced?", a: "Every project is priced from its own scope — structure type, footprint, roof system, finishes, and site access all shape the number. Rather than publish a generic range, we provide a detailed, grouped-cost proposal during the design phase so you know exactly what you're investing in." },
   { q: "How long does an outdoor living project take to build?", a: "Most projects take 4–10 weeks from permit approval to completion, depending on complexity. A simple deck may be faster; a covered structure with electrical, ceiling, and finishes takes longer. We provide a specific timeline during the proposal phase." },
   { q: "Do outdoor structures need permits in WNC?", a: "Most covered structures, decks above a certain height, and anything with electrical or plumbing requires a permit. We handle the entire permitting process as part of our standard scope." },
   { q: "What decking material do you recommend for this area?", a: "For most WNC homeowners, composite decking offers the best balance of appearance, durability, and low maintenance. For clients who prefer natural wood, cedar and ipe are excellent choices with the understanding that they require periodic sealing and maintenance." },

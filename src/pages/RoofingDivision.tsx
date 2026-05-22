@@ -121,7 +121,7 @@ const faqs = [
   { q: "How long does a roof replacement take in WNC?", a: "Most residential replacements are completed in 2–5 days depending on size, complexity, and weather. We provide a clear timeline before work begins and communicate daily throughout the project." },
   { q: "What roofing materials work best for mountain homes?", a: "It depends on your elevation, wind exposure, aesthetic preference, and budget. We typically recommend CertainTeed Landmark PRO architectural shingles or standing seam metal for WNC homes — both handle high winds, heavy rain, and snow loads exceptionally well." },
   { q: "Do you handle insurance claims for storm damage?", a: "Yes. We provide complete damage documentation with photos and measurements, meet with your adjuster on-site, and coordinate the entire repair or replacement process through your insurance claim." },
-  { q: "What does a new roof cost in Western North Carolina?", a: "Replacement pricing is scope-based — every proposal reflects size, material system, pitch complexity, and access conditions. We provide a detailed, line-item proposal after assessing your specific property rather than publishing a generic range." },
+  { q: "What does a new roof cost in Western North Carolina?", a: "Replacement pricing is scope-based — every proposal reflects size, material system, pitch complexity, and access conditions. We provide a detailed, grouped-cost proposal after assessing your specific property rather than publishing a generic range." },
   { q: "Are you certified to install specific roofing brands?", a: "Yes. We are CertainTeed Master Shingle Applicator certified — a designation held by fewer than 1% of roofing contractors nationally. This means enhanced warranties and factory-backed installation quality." },
   { q: "Do you offer warranties on your roofing work?", a: "Every project includes both the manufacturer's material warranty and Highlander's labor warranty. You receive a complete warranty package at your final walkthrough — documentation you can hold in your hands." },
   { q: "Can I finance a new roof?", a: "Yes. We offer flexible financing options to make roof replacement accessible. Ask about payment plans during your consultation — there's no obligation and no pressure." },
@@ -152,7 +152,7 @@ const processSteps = [
     number: "03",
     title: "Detailed Proposal & Timeline",
     icon: ClipboardCheck,
-    description: "You receive a transparent, line-item proposal with scope, materials, timeline, and warranty details. Everything documented. Everything explained.",
+    description: "You receive a transparent, grouped-cost proposal with scope, materials, timeline, and warranty details. Everything documented. Everything explained.",
   },
   {
     number: "04",
@@ -873,7 +873,7 @@ const RoofingDivision = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Typical range</span>
-                        <p className="text-lg font-heading font-bold text-foreground">Detailed line-item proposal</p>
+                        <p className="text-lg font-heading font-bold text-foreground">Detailed grouped-cost proposal</p>
                       </div>
                       <Link to="/roofing/roof-replacement" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--highland-gold))] font-body hover:gap-2.5 transition-all">
                         Roof Replacement <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
