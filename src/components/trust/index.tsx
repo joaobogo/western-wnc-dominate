@@ -399,7 +399,7 @@ export const TrustSidebar = () => (
       "CertainTeed Master Applicator",
       "Fully Insured — Liability & WC",
       "In-House Crews Only",
-      "24hr Response Time",
+      "Rapid Response Time",
       "Written Scope on Every Project",
     ].map((item) => (
       <div key={item} className="flex items-center gap-2">

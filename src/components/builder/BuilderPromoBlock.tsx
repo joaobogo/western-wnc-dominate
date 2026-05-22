@@ -142,7 +142,7 @@ const BuilderPromoBlock = ({
               </div>
 
               <p className="mt-5 text-[11.5px] text-foreground/45 font-body">
-                Not an instant quote. A real scope brief reviewed by a Highlander advisor within one business day.
+                Not an instant quote. A real scope brief reviewed by a Highlander advisor as soon as possible.
               </p>
             </div>
 

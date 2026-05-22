@@ -98,7 +98,7 @@ function LeadCaptureCard({ onSubmit, onDismiss }: { onSubmit: () => void; onDism
           <CheckCircle className="w-4 h-4 text-primary" />
           <p className="text-sm font-heading font-semibold text-foreground">We'll be in touch shortly.</p>
         </div>
-        <p className="text-xs text-muted-foreground font-body">A project advisor will call you within 24 hours.</p>
+        <p className="text-xs text-muted-foreground font-body">A project advisor will call you rapidly.</p>
       </motion.div>
     );
   }
@@ -125,7 +125,7 @@ function LeadCaptureCard({ onSubmit, onDismiss }: { onSubmit: () => void; onDism
         </button>
       </div>
       <p className="text-[10px] text-muted-foreground/50 font-body flex items-center gap-1">
-        <Shield className="w-3 h-3" /> 24-hour response · No sales pressure
+        <Shield className="w-3 h-3" /> Rapid response · No sales pressure
       </p>
     </motion.div>
   );

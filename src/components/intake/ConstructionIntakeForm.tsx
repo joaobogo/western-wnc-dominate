@@ -172,7 +172,7 @@ const ConstructionIntakeForm = () => {
     return (
       <IntakeConfirmation
         title="Thank you — we have what we need to start."
-        body="A project advisor will personally review your scope and reach out within one business day to schedule the planning conversation."
+        body="A project advisor will personally review your scope and reach out as soon as possible to schedule the planning conversation."
         nextSteps={[
           "An advisor reviews scope, readiness, and any plans you shared.",
           "We schedule a 30-minute discovery call to align on direction and feasibility.",

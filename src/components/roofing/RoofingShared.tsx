@@ -18,7 +18,7 @@ interface RoofingCTAProps {
 /** Mid-page CTA strip (primary bg) */
 export const RoofingMidCTA = ({
   headline = "Ready to discuss your roof?",
-  subheadline = "We respond within 24 hours with a direct call — not a form email.",
+  subheadline = "We respond rapidly with a direct call — not a form email.",
   ctaText = "Talk With a Roofing Advisor",
   ctaLink = "/consultation",
 }: Omit<RoofingCTAProps, "variant">) => (
@@ -87,7 +87,7 @@ export const RoofingClosingCTA = ({
             <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
               {[
                 { icon: Shield, text: "Licensed & Insured" },
-                { icon: Clock, text: "24-Hour Emergency Response" },
+                { icon: Clock, text: "Rapid Emergency Response" },
                 { icon: Award, text: "CertainTeed Certified" },
                 { icon: Star, text: "Warrantied Work" },
               ].map((item) => (
@@ -116,7 +116,7 @@ interface TrustSidebarItem {
 const defaultSidebarItems: TrustSidebarItem[] = [
   { icon: Shield, label: "Licensed & Fully Insured" },
   { icon: Award, label: "CertainTeed Certified" },
-  { icon: Clock, label: "24-Hour Emergency Response" },
+  { icon: Clock, label: "Rapid Emergency Response" },
   { icon: Star, label: "Warrantied Workmanship" },
 ];
 
@@ -147,7 +147,7 @@ export const CredentialStrip = ({ className = "" }: { className?: string }) => (
   <div className={`flex flex-wrap items-center justify-center gap-6 py-6 ${className}`}>
     {[
       { icon: Shield, text: "Licensed & Insured" },
-      { icon: Clock, text: "24-Hour Response" },
+      { icon: Clock, text: "Rapid Response" },
       { icon: Award, text: "CertainTeed Certified" },
       { icon: Star, text: "Warrantied Work" },
     ].map((item) => (

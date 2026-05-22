@@ -382,7 +382,7 @@ You'll receive:
 
 ## Schedule Your Free Inspection
 
-Call (828) 397-9211 or submit our online form. We respond within 24 hours and serve all of Western NC.`,
+Call (828) 397-9211 or submit our online form. We respond rapidly and serve all of Western NC.`,
   },
   {
     slug: "choosing-roofing-contractor-wnc",

@@ -11,7 +11,7 @@ type Props = {
 
 const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next", nextSteps }: Props) => {
   const steps = nextSteps ?? [
-    "A project advisor reviews your details — usually within one business day.",
+    "A project advisor reviews your details — usually as soon as possible.",
     "We confirm scope and schedule an on-site assessment at your property.",
     "You receive a written, itemized proposal with materials, scope, and warranty terms.",
   ];
