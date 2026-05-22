@@ -51,7 +51,7 @@ const whyHighlander = [
   { icon: Eye, title: "Same Quality Standards", detail: "Our renovation crews are held to the same quality checkpoints, material handling standards, and supervision protocols as our roofing and construction teams." },
   { icon: Users, title: "Same In-House Crews", detail: "The same trained, employed craftsmen who build our additions and install our roofs handle renovation work. No anonymous subcontractor rotation." },
   { icon: Ruler, title: "Same Attention to Detail", detail: "Trim reveals, caulk lines, material transitions, and tile work matter. We treat visible details as quality indicators — because you'll notice them every day." },
-  { icon: FileCheck, title: "Documented Everything", detail: "Written scope, line-item pricing, specified materials, confirmed timeline. You receive a complete proposal — not an estimate with vague allowances and 'to be determined' line items." },
+  { icon: FileCheck, title: "Documented Everything", detail: "Written scope, transparent cost groupings, specified materials, confirmed timeline. You receive a complete proposal — not an estimate with vague allowances and vague 'to be determined' items." },
   { icon: Mountain, title: "WNC Material Knowledge", detail: "Mountain humidity, temperature swings, and elevation affect material performance. We specify products rated for WNC conditions — not what's cheapest at the supply house." },
 ];
 
@@ -77,7 +77,7 @@ const faqs = [
   { q: "Can we live in our home during a renovation?", a: "In most cases, yes — with some inconvenience. Kitchen renovations are the most disruptive. We'll discuss staging, temporary solutions, and phasing options during planning to minimize daily-life impact." },
   { q: "How do you handle discovering hidden problems during demolition?", a: "It's common — especially in older WNC homes. When we find hidden water damage, outdated wiring, or structural issues behind walls, we stop, document, discuss scope and cost with you, and proceed only after approval. No surprise charges." },
   { q: "Do you handle design or just construction?", a: "We manage the construction scope, including layout and material recommendations. For complex design work, we collaborate with local architects and designers and manage the construction coordination so you don't have to." },
-  { q: "What's included in a renovation proposal?", a: "A written scope with line-item pricing, material specifications, timeline, and payment schedule. Every element is defined before work begins — no vague allowances or 'to be determined' line items." },
+  { q: "What's included in a renovation proposal?", a: "A written scope with transparent cost groupings, material specifications, timeline, and payment schedule. Every element is defined before work begins — no vague allowances or vague 'to be determined' items." },
   { q: "How do you protect the rest of our home during renovation?", a: "Dust barriers, floor protection, dedicated entry/exit routes for crews, and daily cleanup are standard. We treat the non-renovation areas of your home with the same care we'd want in our own." },
   { q: "Do renovations in older WNC homes require special considerations?", a: "Yes. Many mountain homes built before 2000 have unique framing methods, non-standard electrical, plaster instead of drywall, and moisture issues specific to elevation and terrain. We assess these factors before scoping work." },
 ];

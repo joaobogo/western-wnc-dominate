@@ -28,7 +28,7 @@ const steps = [
     number: "03",
     icon: FileText,
     title: "Written Scope & Pricing",
-    description: "A detailed proposal with line-item pricing, material specifications, and a realistic timeline. You'll know exactly what you're paying for before a single nail is driven.",
+    description: "A detailed proposal with transparent cost groupings, material specifications, and a realistic timeline. You'll know exactly what you're paying for before a single nail is driven.",
     detail: "Line-item transparency · Material specs · No hidden costs",
   },
   {

@@ -20,7 +20,7 @@ const pathways = [
   {
     icon: Calendar,
     title: "Schedule a Site Visit",
-    desc: "We walk your property, photograph existing conditions, and deliver a written scope with line-item pricing. No obligation.",
+    desc: "We walk your property, photograph existing conditions, and deliver a written scope with transparent cost groupings. No obligation.",
     action: "Request a Consultation",
     href: "/consultation",
     external: false,

@@ -58,7 +58,7 @@ const rightWayPillars = [
   {
     icon: FileText,
     title: "Transparent, Detailed Proposals",
-    detail: "You receive a line-item proposal that explains exactly what's included, what materials will be used, what the timeline looks like, and what the total cost will be. No ambiguity.",
+    detail: "You receive a grouped-cost proposal that explains exactly what's included, what materials will be used, what the timeline looks like, and what the total cost will be. No ambiguity.",
   },
   {
     icon: Users,
@@ -104,7 +104,7 @@ const materials = [
 const timelineSteps = [
   { number: "01", title: "Consultation Call", duration: "15–30 min", description: "We discuss your situation, answer initial questions, and schedule a convenient time for your property assessment." },
   { number: "02", title: "On-Site Assessment", duration: "60–90 min", description: "Complete roof evaluation with documentation — surface condition, flashing, ventilation, decking visibility, and measurements." },
-  { number: "03", title: "Proposal Delivery", duration: "2–5 business days", description: "Detailed, line-item proposal with material specifications, scope, timeline, warranty details, and total investment." },
+  { number: "03", title: "Proposal Delivery", duration: "2–5 business days", description: "Detailed, grouped-cost proposal with material specifications, scope, timeline, warranty details, and total investment." },
   { number: "04", title: "Material Ordering & Scheduling", duration: "1–3 weeks", description: "Once approved, materials are ordered to your specification and installation is scheduled at a date that works for you." },
   { number: "05", title: "Installation", duration: "2–5 days typical", description: "Complete tear-off, decking inspection, underlayment, new material installation, flashing, ventilation, and cleanup — daily." },
   { number: "06", title: "Final Walkthrough & Warranty", duration: "Same day", description: "Multi-point quality inspection followed by a personal walkthrough. You receive your complete warranty package before we leave." },
@@ -127,7 +127,7 @@ const galleryItems = [
 ];
 
 const faqs = [
-  { q: "How much does a roof replacement cost in Western North Carolina?", a: "Replacement pricing is scope-based — it depends on roof size, material choice, pitch complexity, and access conditions. Rather than publish a generic range, we provide a detailed, line-item proposal after assessing your specific property — no ballpark figures, no surprises." },
+  { q: "How much does a roof replacement cost in Western North Carolina?", a: "Replacement pricing is scope-based — it depends on roof size, material choice, pitch complexity, and access conditions. Rather than publish a generic range, we provide a detailed, grouped-cost proposal after assessing your specific property — no ballpark figures, no surprises." },
   { q: "How long does a full roof replacement take?", a: "Most residential replacements are completed in 2–5 days depending on size, complexity, and weather. Steep-pitch and complex multi-gable homes may take slightly longer. We'll provide a specific timeline in your proposal and communicate daily throughout the project." },
   { q: "Can I put a new roof over my existing shingles?", a: "We generally recommend full tear-off rather than layering. Overlay hides potential decking damage, adds excessive weight, voids many warranties, and shortens the new roof's lifespan. A clean tear-off lets us inspect every square foot of decking and install to full manufacturer specification." },
   { q: "What's the best roofing material for mountain homes?", a: "It depends on your property's elevation, wind exposure, architecture, and budget. CertainTeed Landmark PRO architectural shingles offer the best value-to-performance ratio for most WNC homes. Standing seam metal is the premium long-term choice. We'll recommend based on your specific conditions." },
@@ -216,7 +216,7 @@ const RoofReplacement = () => {
                   <DollarSign className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   <span className="text-xs uppercase tracking-wider text-primary-foreground/50 font-body font-semibold">How We Price Replacement</span>
                 </div>
-                <div className="text-2xl font-heading font-bold text-primary-foreground">Scope-based, line-item</div>
+                <div className="text-2xl font-heading font-bold text-primary-foreground">Scope-based, grouped-cost</div>
                 <p className="text-xs text-primary-foreground/40 mt-1 font-body">Every roof is priced from its real scope after on-site assessment — no generic ranges, no allowances disguised as estimates.</p>
               </motion.div>
             </div>

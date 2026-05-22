@@ -273,7 +273,7 @@ const RoofCostEstimator = () => {
                       <div>
                         <h4 className="font-heading font-semibold text-foreground text-sm mb-1">Want an Exact, Written Quote?</h4>
                         <p className="text-muted-foreground text-[13px] font-body leading-relaxed">
-                          Schedule an on-site assessment. We'll walk your property, document conditions, and deliver a detailed proposal with line-item pricing within 24 hours.
+                          Schedule an on-site assessment. We'll walk your property, document conditions, and deliver a detailed proposal with transparent cost groupings within 24 hours.
                         </p>
                       </div>
                     </div>

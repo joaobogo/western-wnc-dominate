@@ -41,7 +41,7 @@ const weatherResilience = [
 
 const approachPillars = [
   { icon: Shield, title: "Roofing-Construction Coordination", detail: "Exterior renovation frequently overlaps with roofing at fascia, soffit, and flashing transitions. Having one company manage both eliminates coordination gaps and ensures waterproofing continuity." },
-  { icon: ClipboardCheck, title: "Documented Scope & Pricing", detail: "Written proposals with line-item pricing, specified materials, defined timeline, and no vague allowances. You know exactly what you're getting before we mobilize." },
+  { icon: ClipboardCheck, title: "Documented Scope & Pricing", detail: "Written proposals with transparent cost groupings, specified materials, defined timeline, and no vague allowances. You know exactly what you're getting before we mobilize." },
   { icon: Users, title: "In-House Installation Crews", detail: "The same trained, employed craftsmen who build our additions and install our roofs handle exterior work. No anonymous subcontractor rotation." },
   { icon: FileCheck, title: "Hidden Damage Protocol", detail: "When we find rot, insect damage, or moisture issues behind siding — and we often do — we stop, document, discuss scope and cost, and proceed only after your approval. No surprise charges." },
   { icon: Mountain, title: "WNC Material Expertise", detail: "We specify materials rated for mountain conditions — not what's cheapest at the supply house. Fiber cement, engineered wood, and metal that handle elevation, UV, and moisture." },
@@ -58,7 +58,7 @@ const valueImpact = [
 const processSteps = [
   { number: "01", icon: Phone, title: "Initial Discussion", description: "You describe what you want to improve. We discuss scope, priorities, budget range, and whether a phased approach makes sense for your goals." },
   { number: "02", icon: Eye, title: "On-Site Assessment", description: "We evaluate the current condition of your exterior — identifying damage, underlying issues, and opportunities. Photographs and findings documented." },
-  { number: "03", icon: Ruler, title: "Detailed Proposal", description: "Written scope with material specifications, color/style selections, timeline, and line-item pricing. You know exactly what you're getting." },
+  { number: "03", icon: Ruler, title: "Detailed Proposal", description: "Written scope with material specifications, color/style selections, timeline, and transparent cost groupings. You know exactly what you're getting." },
   { number: "04", icon: CalendarCheck, title: "Material Sourcing & Scheduling", description: "Materials ordered, delivery coordinated, and your project locked into the production calendar." },
   { number: "05", icon: Hammer, title: "Execution", description: "Professional installation with daily quality verification, clean work zones, and proactive communication." },
   { number: "06", icon: Sparkles, title: "Walk-Through & Completion", description: "Final review, touch-ups, cleanup, and documentation. Your home's exterior, transformed." },

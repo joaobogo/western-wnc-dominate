@@ -50,7 +50,7 @@ const designContinuity = [
 const whyHighlander = [
   { icon: Shield, title: "Licensed General Contractor", detail: "Full GC oversight on every addition. Structural engineering, code compliance, and permit management handled as part of our standard scope." },
   { icon: Users, title: "In-House Crews", detail: "Our framing, roofing, and finish crews work for Highlander — not as subcontracted labor. That means accountability, communication, and consistent quality." },
-  { icon: FileCheck, title: "Documented Process", detail: "Written scope, defined deliverables, specified materials, confirmed timeline, and line-item pricing before any commitment. You see exactly what you're getting." },
+  { icon: FileCheck, title: "Documented Process", detail: "Written scope, defined deliverables, specified materials, confirmed timeline, and transparent cost groupings before any commitment. You see exactly what you're getting." },
   { icon: Wrench, title: "Roofing-Proven Standards", detail: "500+ roofing projects built our construction discipline. The same material standards, crew training, and project documentation now apply to every addition we build." },
   { icon: Mountain, title: "WNC Site Expertise", detail: "Steep lots, rock outcroppings, variable soils, high-elevation wind exposure — we've built on the challenging terrain that defines Western North Carolina properties." },
   { icon: Star, title: "Design-Build Capability", detail: "From concept through completion, we manage the full scope. For complex projects requiring an architect, we collaborate with local firms we've partnered with successfully." },
@@ -87,7 +87,7 @@ const wncChallenges = [
 ];
 
 const faqs = [
-  { q: "How is a home addition priced?", a: "Additions are priced from the actual scope — square footage, structural complexity, finish level, site access, and how the addition ties into the existing home. Instead of a generic per-foot range, we provide a detailed, line-item proposal during the design phase so the number reflects your real project." },
+  { q: "How is a home addition priced?", a: "Additions are priced from the actual scope — square footage, structural complexity, finish level, site access, and how the addition ties into the existing home. Instead of a generic per-foot range, we provide a detailed, grouped-cost proposal during the design phase so the number reflects your real project." },
   { q: "How long does an addition project take?", a: "Most residential additions take 3–6 months from permit approval to completion. Simple single-room additions may be faster; complex multi-room or second-story additions may take longer. We provide a detailed timeline during the proposal phase and communicate proactively about progress and any changes." },
   { q: "Will the addition match my existing home?", a: "This is one of our primary focuses. We match rooflines, siding profiles, trim details, window proportions, and exterior materials to ensure the addition looks like it was always part of the home. When exact material matches aren't available, we source the closest alternatives or recommend design approaches that create intentional, attractive transitions." },
   { q: "Do I need to move out during construction?", a: "In most cases, no. We plan construction to minimize disruption to your daily life, including dust barriers, dedicated access routes, and coordinated noisy-work schedules. For major whole-home renovations that affect essential living areas, we'll discuss temporary relocation options during planning." },
