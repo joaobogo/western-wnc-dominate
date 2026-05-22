@@ -21,8 +21,17 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="text-center py-6"
+      className="text-center py-6 relative overflow-hidden"
     >
+      {/* Subtle Heritage Watermark */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-[0.03] pointer-events-none rotate-12" 
+        style={{ 
+          backgroundImage: "url('/tartan.png')",
+          backgroundSize: "160px auto",
+          backgroundRepeat: "repeat"
+        }} 
+      />
       <div className="w-14 h-14 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-5">
         <CheckCircle className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
       </div>
