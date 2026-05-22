@@ -20,6 +20,7 @@ const roofingItems: DropdownItem[] = [
   { label: "Roof Repair", href: "/roofing/roof-repair", desc: "Targeted damage restoration" },
   { label: "Metal Roofing", href: "/roofing/metal", desc: "Standing seam built for the mountains" },
   { label: "Brava / Synthetic", href: "/roofing/brava-synthetic", desc: "Premium composite slate & shake" },
+  { label: "Skylights (VELUX)", href: "/roofing/skylights", desc: "Certified VELUX installer" },
   { label: "Storm Damage", href: "/roofing/storm-damage", desc: "Insurance claims & emergency work" },
   { label: "Commercial Roofing", href: "/roofing/commercial", desc: "Flat, metal & TPO systems" },
 ];
