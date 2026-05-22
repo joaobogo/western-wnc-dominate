@@ -445,7 +445,7 @@ const Gallery = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { title: "Site Assessment", detail: "Every project begins with a thorough property evaluation — understanding terrain, exposure, existing conditions, and your goals." },
-                { title: "Material Strategy", detail: "We spec materials for your property's specific conditions — elevation, weather exposure, architectural style, and long-term performance." },
+                { title: "Material Strategy", detail: "We spec materials for your property's specific conditions — elevation, weather exposure, home style, and long-term performance." },
                 { title: "Precision Execution", detail: "Our in-house crews follow manufacturer-exact protocols. Every detail is documented, inspected, and held to our standard." },
                 { title: "Owner Walkthrough", detail: "James personally inspects every completed project before handover. Nothing leaves our hands until it meets our standard." },
               ].map((step, i) => (
