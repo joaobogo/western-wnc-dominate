@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-type DividerVariant = "gold-fade" | "mountain-ridge" | "angled" | "dot-line" | "wave" | "diamond" | "heritage-bar";
+type DividerVariant = "gold-fade" | "mountain-ridge" | "angled" | "dot-line" | "wave" | "diamond" | "heritage-bar" | "tartan-trim";
 
 interface SectionDividerProps {
   variant?: DividerVariant;
