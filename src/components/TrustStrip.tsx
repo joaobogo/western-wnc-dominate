@@ -45,7 +45,7 @@ const TrustStrip = () => {
                 By the Numbers
               </motion.p>
 
-              <div className="space-y-6">
+              <div className="space-y-3">
                 {stats.map((stat, i) => (
                   <motion.div
                     key={stat.label}
