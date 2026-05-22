@@ -92,7 +92,7 @@ export const roofingMaterials: RoofMaterial[] = [
     visualStyle: "Engineered to replicate the visual texture, color variation, and shadow profile of natural quarried slate — without the extreme weight. Available in multi-width blends that mimic authentic random-width slate installations.",
     durability: "Very high. Impact-rated (Class 4), wind-rated to 110+ mph, and engineered for UV stability. No delamination, no moisture absorption, no organic decay.",
     lifespan: "50+ years with manufacturer warranties up to 50 years on premium lines.",
-    maintenance: "Very low. Similar maintenance profile to architectural shingles — periodic visual inspection with no treatment or coating required.",
+    maintenance: "Very low. Similar maintenance profile to dimensional shingles — periodic visual inspection with no treatment or coating required.",
     idealFor: "Homeowners who love the look of natural slate but need a lighter-weight, more cost-effective, or more readily repairable alternative. Excellent for steep-slope applications where the roof is highly visible.",
     wncPerformance: "Excellent. Impact resistance handles hail well, wind ratings exceed mountain conditions, and the lightweight profile reduces structural load requirements on older homes.",
     highlights: ["Class 4 impact rating", "50-year manufacturer warranty", "75% lighter than natural slate", "Consistent quality, no delamination", "Environmentally recycled content"],
@@ -123,7 +123,7 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
               Choose the Right Material<br className="hidden md:block" /> for Your Home & Climate.
             </h2>
             <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-              Every material has strengths. The right choice depends on your home's architecture, your long-term plans, and how your specific location in Western North Carolina affects performance.
+              Every material has strengths. The right choice depends on your home's design theme, your long-term plans, and how your specific location in Western North Carolina affects performance.
             </p>
           </motion.div>
         )}
