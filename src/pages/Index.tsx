@@ -72,8 +72,6 @@ const Index = () => {
         {/* 4. PriorityServices — focused 6-card grid (using existing ServicesGrid for now) */}
         <ServicesGrid />
 
-        {/* Short intake form - moved higher up for better accessibility */}
-        <InspectionForm />
 
         {/* 5. FeaturedProjects — real WNC work */}
         <FeaturedProjects />
