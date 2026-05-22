@@ -137,9 +137,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/40 text-sm leading-relaxed mb-6 max-w-xs font-body">
-              Family-owned. Licensed General Contractor. CertainTeed Master Applicator. 
-              Protecting Western North Carolina properties with mountain-grade craftsmanship 
-              and verifiable warranty documentation since 2017.
+              Premium roofing and construction across the mountains of Western NC. 
+              Serving 8 primary counties with localized crews and owner-led quality since 2017.
             </p>
 
             {/* Contact info */}

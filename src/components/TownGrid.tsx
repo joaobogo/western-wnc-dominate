@@ -29,9 +29,9 @@ const TownGrid = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-dark-section-foreground/55 max-w-xl mx-auto text-base font-body">
-              Locally owned with crews positioned across the region. We know these mountains, these 
-              microclimates, and the properties that need protecting at every elevation.
+            <p className="text-dark-section-foreground/55 max-w-2xl mx-auto text-base font-body">
+              Locally owned with crews positioned across all the mountains. We focus on Western North Carolina, 
+              covering 8 primary counties with a deep understanding of the unique microclimates and elevations that define mountain living.
             </p>
           </ScrollReveal>
         </div>

@@ -163,8 +163,8 @@ const Skylights = () => {
         {/* Service areas */}
         <section className="section-padding bg-muted/20">
           <div className="container-tight">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight service across Western NC</h2>
-            <p className="text-foreground/70 mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our Western North Carolina service area.</p>
+            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight service across the Western NC mountains</h2>
+            <p className="text-foreground/70 mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our 8-county service area in Western North Carolina.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {towns.map((t) => (
                 <Link
