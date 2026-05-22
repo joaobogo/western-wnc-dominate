@@ -81,7 +81,7 @@ const galleryImages = [
 
 const wncChallenges = [
   { title: "Steep & Variable Terrain", detail: "Many WNC lots present grade changes of 15–40%. Additions on slope require specialized foundation engineering, retaining systems, and drainage planning that flat-land builders don't encounter." },
-  { title: "Elevation & Weather Exposure", detail: "At 2,000–4,500 ft, mountain properties face higher wind loads, greater freeze-thaw cycling, and more moisture than piedmont homes. Every addition must be designed for this exposure." },
+  { title: "Elevation & Weather Exposure", detail: "At 2,000–5,000 ft, mountain properties face higher wind loads, greater freeze-thaw cycling, and more moisture than piedmont homes. Every addition must be designed for this exposure." },
   { title: "Aging Mountain Housing Stock", detail: "Many WNC homes were built in the 1970s–90s with construction methods and materials that differ from current code. Tying new construction to existing framing requires careful structural analysis." },
   { title: "Septic & Well Considerations", detail: "Unlike municipal systems, many mountain properties rely on wells and septic. Adding square footage and plumbing fixtures often requires system evaluation and potential upgrades." },
 ];
