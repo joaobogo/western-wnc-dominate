@@ -38,6 +38,7 @@ const StormDamageAds = lazy(() => import("./pages/StormDamageAds"));
 const CommercialRoofing = lazy(() => import("./pages/CommercialRoofing"));
 const MetalRoofing = lazy(() => import("./pages/MetalRoofing"));
 const SyntheticRoofing = lazy(() => import("./pages/SyntheticRoofing"));
+const Skylights = lazy(() => import("./pages/Skylights"));
 const ServiceTownPage = lazy(() => import("./pages/ServiceTownPage"));
 const ConstructionDivision = lazy(() => import("./pages/ConstructionDivision"));
 const HomeAdditions = lazy(() => import("./pages/HomeAdditions"));
@@ -76,6 +77,7 @@ const App = () => (
           {/* Tier 1 premium service pages */}
           <Route path="/roofing/metal" element={<MetalRoofing />} />
           <Route path="/roofing/brava-synthetic" element={<SyntheticRoofing />} />
+          <Route path="/roofing/skylights" element={<Skylights />} />
 
           {/* ─── Paid landing pages (kept for ad spend, excluded from nav) ─── */}
           <Route path="/lp/roof-replacement" element={<RoofReplacementAds />} />
