@@ -184,7 +184,7 @@ const HomeAdditions = () => {
           </div>
         </section>
 
-        {/* ─── OPENING — Architectural editorial with scope sidebar ─── */}
+        {/* ─── OPENING — Design editorial with scope sidebar ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
