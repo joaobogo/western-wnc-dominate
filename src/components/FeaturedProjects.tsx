@@ -38,7 +38,7 @@ const projects = [
     size: "standard" as const,
   },
   {
-    title: "Architectural Shingles — Multi-Level",
+    title: "Dimensional Shingles — Multi-Level",
     location: "Franklin, NC",
     elevation: "2,100 ft",
     category: "Asphalt",

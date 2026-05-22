@@ -11,7 +11,7 @@ import metal006 from "@/assets/gallery/metal-006.webp";
 
 const projects = [
   {
-    title: "Architectural Shingles — Weathered Wood",
+    title: "Dimensional Shingles — Weathered Wood",
     location: "Highlands, NC",
     type: "Asphalt Shingles",
     description: "CertainTeed Landmark shingles on a multi-level mountain home with screen porch. Premium materials, expert installation.",
@@ -32,7 +32,7 @@ const projects = [
     image: cedar004,
   },
   {
-    title: "Architectural Shingles — Slate Gray",
+    title: "Dimensional Shingles — Slate Gray",
     location: "Franklin, NC",
     type: "Asphalt Shingles",
     description: "Large residential shingle replacement in slate gray with complex roof intersections and ridge detail.",

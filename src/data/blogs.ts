@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
 
 **Elevation and accessibility.** Many Highlands homes sit on steep lots with limited access. Crews may need specialized equipment to reach your roof, which adds to labor costs.
 
-**Material choice.** Architectural shingles remain the most popular system for their balance of value and style, while standing seam metal roofing is increasingly common for its longevity in mountain climates.
+**Material choice.** Dimensional shingles remain the most popular system for their balance of value and style, while standing seam metal roofing is increasingly common for its longevity in mountain climates.
 
 **Roof complexity.** Dormers, valleys, skylights, and steep pitches all increase labor time and material waste.
 
@@ -75,7 +75,7 @@ The best way to know your actual cost is a free inspection. We'll assess your ro
 
 ## Our Recommendation for Mountain Homes
 
-For homes above 3,000 feet elevation with heavy snow loads and high wind exposure, **metal roofing delivers the best long-term value.** For budget-conscious homeowners or properties with simpler roof lines, **architectural shingles provide excellent protection** at a lower price point.
+For homes above 3,000 feet elevation with heavy snow loads and high wind exposure, **metal roofing delivers the best long-term value.** For budget-conscious homeowners or properties with simpler roof lines, **dimensional shingles provide excellent protection** at a lower price point.
 
 ## The Bottom Line
 
@@ -147,7 +147,7 @@ We respond within 24–48 hours for storm inspections across all of Western NC. 
 - Wind ratings up to 140+ mph
 - Energy-efficient reflective coatings
 
-### 2. Architectural (Dimensional) Shingles
+### 2. Premium Dimensional Shingles
 **Best for:** Budget-friendly durability
 - 30-year warranty options
 - Impact-resistant classes available
@@ -741,7 +741,7 @@ Mountain additions are priced from the actual scope — complexity, access, fini
     ],
     faqs: [
       { question: "How long does a home addition take in WNC?", answer: "Most additions take 8-16 weeks depending on size, complexity, and weather. Larger additions with significant foundation work may take longer." },
-      { question: "Do I need an architect for my addition?", answer: "For simple additions, detailed construction plans may suffice. For complex or architecturally sensitive additions, an architect is recommended." },
+      { question: "Do I need an external designer for my addition?", answer: "For simple additions, detailed construction plans may suffice. For complex or design-sensitive additions, a professional designer or project planner is recommended." },
     ],
   },
   // ── Project Spotlights ──
