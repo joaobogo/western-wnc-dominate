@@ -21,7 +21,7 @@ const roofingData = {
   subtitle: "Our Foundation",
   description: "Every material specified for your elevation, wind zone, and moisture exposure. Installed by crews who've spent their careers on WNC ridgelines — not a rotating subcontractor pool.",
   stats: [
-    { value: "500+", label: "Roofs Installed" },
+    { value: "4.9★", label: "Google Rating" },
     { value: "Top 1%", label: "Nationally Certified" },
   ],
   services: [

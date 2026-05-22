@@ -29,7 +29,7 @@ const disciplineItems: DisciplineItem[] = [
     title: "Project Management",
     roofing: "Documented scope, photo milestones",
     construction: "Multi-phase scheduling & oversight",
-    detail: "500+ roofing projects taught us that the quality of the plan determines the quality of the result. Every construction project gets the same written scope, sequenced phases, and daily accountability.",
+    detail: "Our extensive roofing background taught us that the quality of the plan determines the quality of the result. Every construction project gets the same written scope, sequenced phases, and daily accountability.",
   },
   {
     icon: Ruler,

@@ -271,7 +271,7 @@ const FeaturedProjects = () => {
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <p className="text-[11px] text-muted-foreground/50 font-body mt-2">
-            500+ projects across 8 WNC counties
+            Mountain-proven across 8 WNC counties
           </p>
         </motion.div>
       </div>

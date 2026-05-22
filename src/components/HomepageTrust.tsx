@@ -42,7 +42,7 @@ const reviewHighlights = [
 ];
 
 const proofPoints = [
-  { value: "500+", label: "Projects Completed" },
+  { value: "4.9★", label: "Google Rating" },
   { value: "8", label: "WNC Counties" },
   { value: "4.9★", label: "Google Rating" },
   { value: "40+", label: "Years Combined Exp." },

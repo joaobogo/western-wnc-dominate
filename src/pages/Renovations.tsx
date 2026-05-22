@@ -297,7 +297,7 @@ const Renovations = () => {
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">Renovation With<br className="hidden md:block" /> Roofing-Grade Standards.</h2>
               <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
-                500+ roofing projects built our construction discipline. The same documented process, the same in-house crews, the same material standards — now applied to every renovation we accept.
+                Our heritage in high-elevation roofing built our construction discipline. The same documented process, the same in-house crews, the same material standards — now applied to every renovation we accept.
               </p>
             </motion.div>
 

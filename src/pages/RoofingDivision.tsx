@@ -463,7 +463,7 @@ const RoofingDivision = () => {
                   transition={{ delay: 0.4 }}
                   className="absolute -bottom-6 -left-4 md:left-auto md:-right-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[220px]"
                 >
-                  <span className="text-3xl font-heading font-bold text-[hsl(var(--highland-gold))]">500+</span>
+                  <span className="text-3xl font-heading font-bold text-[hsl(var(--highland-gold))]">4.9★</span>
                   <p className="text-muted-foreground text-xs font-body mt-1 leading-snug">
                     Mountain roofs installed across Highlands, Cashiers, Franklin & Sylva.
                   </p>

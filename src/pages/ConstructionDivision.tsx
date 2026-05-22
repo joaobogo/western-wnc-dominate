@@ -195,7 +195,7 @@ const ConstructionDivision = () => {
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Proven Standards</span>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
-                    500+ Roofs Built Our<br className="hidden md:block" /> Construction Standards.
+                    Owner-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
                   <p className="text-dark-section-foreground/40 text-base leading-relaxed font-body mb-6">
                     Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed Master Applicator status to every construction project we take on.
@@ -205,7 +205,7 @@ const ConstructionDivision = () => {
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     {[
-                      { value: "500+", label: "Projects Completed" },
+                      { value: "4.9★", label: "Google Rating" },
                       { value: "Top 1%", label: "CertainTeed Certified" },
                       { value: "4.9★", label: "Google Rating" },
                       { value: "24hr", label: "Response Time" },
