@@ -95,7 +95,7 @@ export const towns: TownData[] = [
     state: "NC",
     description: "Dillsboro is a charming mountain village with historic buildings and homes that need careful roofing attention. Highlander Roofing provides preservation-sensitive roofing services that maintain the character of this beloved WNC community.",
     localProof: "Serving Dillsboro's historic and residential properties with roofing that respects the village's mountain heritage.",
-    features: ["Historic preservation roofing", "Small-town personalized service", "Architectural shingle options", "Storm damage repair", "Free consultations"],
+    features: ["Historic preservation roofing", "Small-town personalized service", "Premium dimensional shingle options", "Storm damage repair", "Free consultations"],
     metaTitle: "Roofing Services in Dillsboro, NC | Highlander Roofing",
     metaDescription: "Roofing services in Dillsboro, NC. Preservation-sensitive repairs, replacements, and storm damage restoration. Free inspections — (828) 397-9211.",
   },
