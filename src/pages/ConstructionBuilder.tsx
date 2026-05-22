@@ -99,7 +99,7 @@ const DECISION_MAKERS: VisualChoice[] = [
   { value: "solo", label: "Just me" },
   { value: "couple", label: "Me & partner" },
   { value: "family", label: "Family / multi-owner" },
-  { value: "architect", label: "Working with a designer or planning lead" },
+  { value: "pro_design", label: "Working with a designer or planning lead" },
 ];
 
 const STEP_NAMES = ["Project", "Scope", "Style", "Context", "Plans", "Review"];
@@ -384,7 +384,7 @@ const ConstructionBuilder = () => {
                       rows={4}
                       value={data.description}
                       onChange={(e) => set("description", e.target.value)}
-                      placeholder="Lot details, HOA, architect involvement, must-haves…"
+                      placeholder="Lot details, HOA, design involvement, must-haves…"
                     />
                   </div>
                 </>
