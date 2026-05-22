@@ -413,34 +413,6 @@ const OutdoorLiving = () => {
           </div>
         </section>
 
-        {/* ─── DESIGN GUIDANCE (dark) ─── */}
-        <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
-          <div className="section-padding">
-            <div className="container-tight">
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Planning Guidance</span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
-                  Before You Build,<br className="hidden md:block" /> Think About This.
-                </h2>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                {designGuidance.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <div className="flex items-start gap-4">
-                      <div className="w-1 h-8 bg-[hsl(var(--highland-gold)/0.3)] rounded-full mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2">{item.title}</h3>
-                        <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ─── FAQs ─── */}
         <section className="section-padding bg-secondary tartan-bg">
