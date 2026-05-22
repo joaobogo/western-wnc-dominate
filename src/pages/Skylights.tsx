@@ -5,7 +5,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import InspectionForm from "@/components/InspectionForm";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { towns } from "@/data/towns";
 import veluxLogo from "@/assets/velux-certified-logo.jpg";
@@ -92,8 +92,8 @@ const Skylights = () => {
 
         {/* What we install */}
         <section className="section-padding bg-background">
-          <div className="container-tight grid md:grid-cols-3 gap-10">
-            <div className="md:col-span-2 space-y-6">
+          <div className="container-tight space-y-6">
+            <div className="space-y-6">
               <div className="flex items-center gap-2 text-accent text-sm font-semibold uppercase tracking-wider">
                 <Award className="w-4 h-4" /> Manufacturer-Accredited Scope
               </div>
@@ -110,11 +110,6 @@ const Skylights = () => {
                 ))}
               </ul>
             </div>
-            <aside className="bg-secondary/40 border border-border rounded-lg p-6 h-fit">
-              <h3 className="font-heading font-bold text-xl mb-2">Request an Assessment</h3>
-              <p className="text-sm text-foreground/70 mb-4">Most skylight assessments are scheduled within 48 hours.</p>
-              <InspectionForm />
-            </aside>
           </div>
         </section>
 
