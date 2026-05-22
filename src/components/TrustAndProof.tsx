@@ -5,7 +5,7 @@ import { BlueprintGrid } from "@/components/motion/BackgroundTexture";
 const certifications = [
   { icon: Award, label: "CertainTeed", detail: "Master Shingle Applicator" },
   { icon: Shield, label: "Licensed GC", detail: "State of North Carolina" },
-  { icon: BadgeCheck, label: "Fully Insured", detail: "Liability & Workers' Comp" },
+  { icon: BadgeCheck, label: "VELUX Certified", detail: "Professional Installer" },
   { icon: FileCheck, label: "Warranty-Backed", detail: "Labor & Material Coverage" },
 ];
 
