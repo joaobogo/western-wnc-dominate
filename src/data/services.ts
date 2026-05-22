@@ -1,4 +1,4 @@
-import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat } from "lucide-react";
+import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat, UtensilsCrossed, Home, Shield } from "lucide-react";
 import type { Division } from "@/lib/division-theme";
 
 export interface ServiceData {
