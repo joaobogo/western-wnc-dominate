@@ -15,7 +15,7 @@ const RoofReplacementAds = () => (
     ctaLabel="Request Roof Consultation"
     urgencyOptions={["Need pricing soon", "Replacing this month", "Planning ahead", "Insurance-related"]}
     trustStats={[
-      { value: "500+", label: "Roofs completed", detail: "Across Western North Carolina" },
+      { value: "4.9★", label: "Google Rating", detail: "5-star roofing service" },
       { value: "Top 1%", label: "Certification", detail: "CertainTeed Master Applicator level" },
       { value: "2–5", label: "Typical install days", detail: "Most residential projects" },
       { value: "Warranty", label: "Protected work", detail: "Manufacturer plus Highlander labor coverage" },

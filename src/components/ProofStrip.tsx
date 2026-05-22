@@ -11,7 +11,7 @@ const pillars = [
     icon: Gem,
     title: "Mountain-Grade Craftsmanship",
     copy: "Every roof, addition, and renovation executed to outlast the weather it was built for. No shortcuts at any elevation.",
-    stat: "500+",
+    stat: "4.9★",
     statLabel: "projects completed",
   },
   {

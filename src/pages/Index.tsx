@@ -37,7 +37,7 @@ const Index = () => {
       {showLoader && <SiteLoader onComplete={handleLoaderComplete} />}
       <SEOHead
         title="Roofing & Construction in Western NC"
-        description="Premium roofing and construction in Western North Carolina. 500+ projects, 4.9★ rated. Shingle, metal & cedar roofing plus additions, renovations & outdoor living. Request a consultation."
+        description="Premium roofing and construction in Western North Carolina. Licensed, insured, and 4.9★ rated. Shingle, metal & cedar roofing plus additions, renovations & outdoor living. Request a consultation."
         path="/"
         jsonLd={buildPageSchema({
           type: "home",

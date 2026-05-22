@@ -12,7 +12,7 @@ import { towns } from "@/data/towns";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const serviceStats = [
-  { value: "500+", label: "Projects Completed", detail: "Across WNC" },
+  { value: "4.9★", label: "Google Rating", detail: "Verified reviews" },
   { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain · Haywood" },
   { value: "24hr", label: "Response Time", detail: "Emergency & Standard" },
   { value: "4.9★", label: "Average Rating", detail: "150+ Verified Reviews" },

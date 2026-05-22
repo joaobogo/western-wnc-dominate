@@ -51,7 +51,7 @@ const whyHighlander = [
   { icon: Shield, title: "Licensed General Contractor", detail: "Full GC oversight on every addition. Structural engineering, code compliance, and permit management handled as part of our standard scope." },
   { icon: Users, title: "In-House Crews", detail: "Our framing, roofing, and finish crews work for Highlander — not as subcontracted labor. That means accountability, communication, and consistent quality." },
   { icon: FileCheck, title: "Documented Process", detail: "Written scope, defined deliverables, specified materials, confirmed timeline, and transparent cost groupings before any commitment. You see exactly what you're getting." },
-  { icon: Wrench, title: "Roofing-Proven Standards", detail: "500+ roofing projects built our construction discipline. The same material standards, crew training, and project documentation now apply to every addition we build." },
+  { icon: Wrench, title: "Roofing-Proven Standards", detail: "Our extensive roofing background built our construction discipline. The same material standards, crew training, and project documentation now apply to every addition we build." },
   { icon: Mountain, title: "WNC Site Expertise", detail: "Steep lots, rock outcroppings, variable soils, high-elevation wind exposure — we've built on the challenging terrain that defines Western North Carolina properties." },
   { icon: Star, title: "Planning & Design Support", detail: "From concept through completion, we manage the full scope. For complex projects requiring specialized design services, we collaborate with local professionals we've partnered with successfully." },
 ];
@@ -322,7 +322,7 @@ const HomeAdditions = () => {
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">What Makes This Different.</h2>
               <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
-                500+ roofing projects built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
+                Years of high-elevation roofing experience built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
               </p>
             </motion.div>
 

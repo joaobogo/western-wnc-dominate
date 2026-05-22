@@ -269,7 +269,7 @@ const ResidentialRoofing = () => {
                 className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-white/10"
               >
                 {[
-                  { value: "500+", label: "Mountain Homes Protected" },
+                  { value: "4.9★", label: "Google Rating" },
                   { value: "4.9★", label: "Homeowner Rating" },
                   { value: "Top 1%", label: "National Certification" },
                   { value: "24hr", label: "Storm Response" },
