@@ -228,10 +228,10 @@ const Footer = () => {
       {/* Bottom bar — license + legal */}
       <div className="border-t border-primary-foreground/6 relative">
         <div 
-          className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+          className="absolute inset-0 opacity-[0.025] pointer-events-none" 
           style={{ 
             backgroundImage: "url('/tartan.png')",
-            backgroundSize: "100px auto",
+            backgroundSize: "120px auto",
             backgroundRepeat: "repeat"
           }} 
         />

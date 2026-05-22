@@ -166,10 +166,10 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
     return (
       <div className={`h-[4px] w-full relative overflow-hidden ${className}`}>
         <div 
-          className="absolute inset-0 opacity-40" 
+          className="absolute inset-0 opacity-[0.35]" 
           style={{ 
             backgroundImage: "url('/tartan.png')",
-            backgroundSize: "80px auto",
+            backgroundSize: "100px auto",
             backgroundRepeat: "repeat"
           }} 
         />
