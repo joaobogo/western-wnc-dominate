@@ -93,7 +93,9 @@ const TownPage = () => {
                 </div>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-primary-foreground tracking-tight max-w-4xl\">\n                Premium Roofing & Construction in <span className=\"text-[hsl(var(--highland-gold))]\">{town.name}, NC</span>\n              </h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-primary-foreground tracking-tight max-w-4xl">
+                Premium Roofing & Construction in <span className="text-[hsl(var(--highland-gold))]">{town.name}, NC</span>
+              </h1>
               
               <p className="text-primary-foreground/70 max-w-2xl text-base md:text-lg mb-10 leading-relaxed font-body">
                 Owner-led roofing and construction built for {town.county.replace(' County','')} weather. Local crews, written scope, photo-documented work — no call centers, no high-pressure quotes.
