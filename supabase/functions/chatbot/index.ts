@@ -1,4 +1,8 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.8";
+
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_MAX = 60; // messages per IP per hour
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -167,6 +171,33 @@ serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
+    // Per-IP rate limiting via designer_metrics
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    const clientIp =
+      (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "unknown";
+    if (supabaseUrl && serviceRoleKey) {
+      const admin = createClient(supabaseUrl, serviceRoleKey, {
+        auth: { persistSession: false, autoRefreshToken: false },
+      });
+      const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString();
+      const { count } = await admin
+        .from("designer_metrics")
+        .select("id", { count: "exact", head: true })
+        .eq("event_type", "chatbot_message")
+        .eq("metadata->>ip", clientIp)
+        .gte("created_at", since);
+      if ((count ?? 0) >= RATE_LIMIT_MAX) {
+        return new Response(
+          JSON.stringify({ error: "You've reached the message limit for now. Please call us at (828) 397-9211." }),
+          { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+        );
+      }
+      await admin
+        .from("designer_metrics")
+        .insert({ event_type: "chatbot_message", metadata: { ip: clientIp } });
+    }
+
     // Build contextual system addendum based on current page
     let contextNote = "";
     if (context?.page) {
@@ -227,7 +258,7 @@ serve(async (req) => {
     });
   } catch (e) {
     console.error("chatbot error:", e);
-    return new Response(JSON.stringify({ error: e instanceof Error ? e.message : "Unknown error" }), {
+    return new Response(JSON.stringify({ error: "Our assistant is temporarily unavailable. Please call us at (828) 397-9211." }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
