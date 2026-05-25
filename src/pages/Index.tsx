@@ -9,7 +9,7 @@ import TwoPillars from "@/components/TwoPillars";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
 import OurProcess from "@/components/OurProcess";
-import MeetTheTeam from "@/components/MeetTheTeam";
+
 import TownGrid from "@/components/TownGrid";
 import InspectionForm from "@/components/InspectionForm";
 import Footer from "@/components/Footer";
@@ -93,8 +93,6 @@ const Index = () => {
 
         <SectionDivider variant="gold-fade" />
 
-        {/* 10. MeetTheTeam — owner-led trust */}
-        <MeetTheTeam />
 
       </main>
       <Footer />
