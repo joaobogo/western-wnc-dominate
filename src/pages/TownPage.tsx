@@ -124,7 +124,9 @@ const TownPage = () => {
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12">
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">\n                  Roofing & Construction Expertise in {town.name}\n                </h2>
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
+                  Roofing & Construction Expertise in {town.name}
+                </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">{town.localProof}</p>
                 <ul className="space-y-3">
                   {town.features.map((f) => (
