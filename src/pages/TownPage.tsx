@@ -94,11 +94,11 @@ const TownPage = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-primary-foreground tracking-tight max-w-4xl">
-                Premium Roofing in <span className="text-[hsl(var(--highland-gold))]">{town.name}, NC</span>
+                Premium Roofing & Construction in <span className="text-[hsl(var(--highland-gold))]">{town.name}, NC</span>
               </h1>
               
               <p className="text-primary-foreground/70 max-w-2xl text-base md:text-lg mb-10 leading-relaxed font-body">
-                Owner-led roofing built for {town.county.replace(' County','')} weather. Local crews, written scope, photo-documented work — no call centers, no high-pressure quotes.
+                Owner-led roofing and construction built for {town.county.replace(' County','')} weather. Local crews, written scope, photo-documented work — no call centers, no high-pressure quotes.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -106,7 +106,7 @@ const TownPage = () => {
                   to="/consultation"
                   className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] px-10 py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide"
                 >
-                  Request a Roof Assessment <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Request a Project Assessment <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
                   href="tel:8283979211"
@@ -125,7 +125,7 @@ const TownPage = () => {
             <div className="grid md:grid-cols-2 gap-12">
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
-                  Local Roofing Expertise in {town.name}
+                  Roofing & Construction Expertise in {town.name}
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">{town.localProof}</p>
                 <ul className="space-y-3">
