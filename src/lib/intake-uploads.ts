@@ -34,7 +34,7 @@ export async function uploadIntakeFiles(
       continue;
     }
     const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const path = `${sessionFolder}/${Date.now()}-${safe}`;
+    const path = `submissions/${sessionFolder}/${Date.now()}-${safe}`;
     const { error } = await supabase.storage
       .from("lead-uploads")
       .upload(path, file, { upsert: false, cacheControl: "3600", contentType: file.type });
