@@ -100,62 +100,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* ── TEAM PHOTO — Overlapping editorial block ── */}
-        <section className="relative bg-background">
-          <div className="container-tight px-4 md:px-8 lg:px-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative -mt-12 md:-mt-20"
-            >
-              <div className="relative">
-                <div className="absolute -inset-3 md:-inset-4 bg-primary/10 rounded-sm -z-10" />
-                <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3 w-24 h-24 md:w-32 md:h-32 bg-accent/20 rounded-sm -z-10" />
-                <div className="overflow-hidden rounded-sm shadow-2xl">
-                  <img src={teamPhoto} alt="The Highlander Roofing & Construction team — over 20 local professionals serving Western North Carolina" className="w-full object-cover"  loading="lazy" decoding="async" />
-                </div>
-                <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.5 }} className="absolute -bottom-6 left-4 md:left-8 bg-primary text-primary-foreground px-5 py-3 md:px-6 md:py-4 rounded-sm shadow-lg">
-                  <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">Est. 2017</p>
-                  <p className="text-sm md:text-base font-heading font-bold">20+ Local Professionals</p>
-                </motion.div>
-                <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.5, duration: 0.5 }} className="absolute -bottom-6 right-4 md:right-8 bg-card border border-border px-4 py-3 md:px-5 md:py-4 rounded-sm shadow-lg flex items-center gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-accent/20 rounded-full flex items-center justify-center">
-                    <Award className="w-4 h-4 md:w-5 md:h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">2024 Reader's Choice</p>
-                    <p className="text-xs md:text-sm font-semibold text-foreground">Best of Macon County</p>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ── OWNER QUOTE — Personal, editorial, unique to About ── */}
-        <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-          <div 
-            className="absolute top-0 right-0 w-64 h-64 opacity-[0.04] pointer-events-none translate-x-1/2 -translate-y-1/2 rotate-12" 
-            style={{ 
-              backgroundImage: "url('/tartan.png')",
-              backgroundSize: "200px auto",
-              backgroundRepeat: "repeat"
-            }} 
-          />
-          <div className="container-tight max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center">
-              <Quote className="w-8 h-8 text-[hsl(var(--highland-gold)/0.2)] mx-auto mb-6 rotate-180" />
-              <blockquote className="text-xl md:text-2xl lg:text-[1.75rem] font-heading font-bold text-foreground leading-[1.3] mb-6 text-balance italic">
-                We didn't start this company to be the biggest contractor in the region. We started it because we believed homeowners in these mountains deserved better. Better communication. Better craft. Better follow-through. That's still what drives every project we accept.
-              </blockquote>
-              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.3)] mx-auto mb-4" />
-              <p className="text-sm font-heading font-bold text-foreground">James McAllister</p>
-              <p className="text-xs text-muted-foreground font-body">Owner & Licensed General Contractor</p>
-            </motion.div>
-          </div>
-        </section>
 
         {/* ── BRAND STORY — Two-column editorial ── */}
         <section className="section-padding bg-secondary relative">
@@ -200,7 +144,7 @@ const About = () => {
                   Macon, Jackson, Swain, Haywood, and surrounding counties.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Every project is led by our owner, James McAllister — a licensed NC General
+                  Every project is led by our owner — a licensed NC General
                   Contractor and CertainTeed Master Shingle Applicator who personally handles
                   estimates, approves every scope of work, and walks every final inspection.
                 </p>

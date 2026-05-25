@@ -31,7 +31,7 @@ const resourceLinks = [
 
 const companyLinks = [
   { label: "Our Story", href: "/about" },
-  { label: "Our Team", href: "/team" },
+  
   { label: "Service Areas", href: "/service-areas" },
   { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
