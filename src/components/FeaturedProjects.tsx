@@ -141,7 +141,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.3)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
           {/* Hover image zoom */}
-          <div className="absolute inset-0 group-hover:scale-[1.06] transition-transform duration-[1.4s]" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+          <div className="absolute inset-0 group-hover:scale-[1.06] transition-transform duration-&lsqb;1400ms&rsqb;" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
 
           {/* Gold bottom edge — draw on hover */}
           <div className="absolute bottom-0 left-0 w-0 group-hover:w-2/3 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-[hsl(var(--highland-gold)/0)] transition-all duration-700 z-20" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
