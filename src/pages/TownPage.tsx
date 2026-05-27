@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { 
   ArrowRight, Phone, CheckCircle, MapPin, Wind, CloudRain, Mountain, 
   Home, HardHat, BookOpen, Shield, Star, Hammer, RotateCcw, 
-  CloudLightning, Layers, TreePine, Paintbrush, Building, Wrench, Droplets
+  CloudLightning, Layers, TreePine, Paintbrush, Building, Wrench, Droplets,
+  Building2, Users, Compass
 } from "lucide-react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -102,13 +103,25 @@ const TownPage = () => {
                 Roofing & Construction Built for <span className="text-[hsl(var(--highland-gold))]">{town.name}</span>
               </h1>
               
-              <p className="text-primary-foreground/70 max-w-2xl text-lg md:text-xl mb-10 leading-relaxed font-body">
-                Premium roofing systems and custom construction for {town.name} homeowners. From emergency repairs to structural expansions, we build for the unique climate and character of your mountain property.
-              </p>
+              <div className="grid md:grid-cols-3 gap-6 mb-10 max-w-4xl">
+                {[
+                  { icon: Mountain, label: "Elevation", value: town.elevation },
+                  { icon: CloudRain, label: "Local Focus", value: town.housingProfile },
+                  { icon: HardHat, label: "Authority", value: "Licensed GC" }
+                ].map((stat, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-sm">
+                    <stat.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <div>
+                      <p className="text-[10px] uppercase tracking-wider text-primary-foreground/40 font-semibold">{stat.label}</p>
+                      <p className="text-sm font-heading font-bold text-primary-foreground">{stat.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] px-10 py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide">
-                  Request a Project Assessment <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Start a {town.name} Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a href="tel:8283979211" className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.12] text-primary-foreground font-semibold text-[14px] px-9 py-[17px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.08] hover:border-white/[0.2] transition-all duration-300">
                   <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
@@ -118,14 +131,14 @@ const TownPage = () => {
           </div>
         </section>
 
-        {/* 2. Why Highlander in this market */}
+        {/* 2. Localized Authority Section */}
         <section className="py-16 md:py-24 bg-card border-b border-border">
           <div className="container-tight">
             <div className="grid md:grid-cols-12 gap-12 items-center">
               <div className="md:col-span-7">
                 <h2 className="text-[11px] uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] font-bold mb-4">Market Authority</h2>
-                <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight">Serving the Homes & Estates of <span className="italic">{town.name}</span></h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8 font-body">{town.description}</p>
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight">Genuinely Local. Built for <span className="italic">{town.name}</span>.</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8 font-body">{town.marketAuthorityAngle}</p>
                 
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div className="flex gap-4 items-start">
@@ -142,8 +155,8 @@ const TownPage = () => {
                       <Wind className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-foreground mb-1 text-base uppercase tracking-wider">Elevation Focus</h4>
-                      <p className="text-muted-foreground leading-relaxed text-sm">We specify systems for {town.elevation || 'mountain altitude'}, accounting for higher UV and wind loads.</p>
+                      <h4 className="font-heading font-bold text-foreground mb-1 text-base uppercase tracking-wider">Climate Exposure</h4>
+                      <p className="text-muted-foreground leading-relaxed text-sm">{town.climateExposure}</p>
                     </div>
                   </div>
                 </div>
@@ -151,27 +164,27 @@ const TownPage = () => {
               <div className="md:col-span-5">
                 <div className="relative p-8 bg-secondary border border-border overflow-hidden rounded-sm">
                   <div className="absolute -right-8 -top-8 w-32 h-32 bg-[hsl(var(--highland-gold)/0.05)] rounded-full blur-3xl" />
-                  <h4 className="text-xs font-heading font-bold text-foreground mb-6 uppercase tracking-widest border-b border-border pb-4">Area Highlights</h4>
+                  <h4 className="text-xs font-heading font-bold text-foreground mb-6 uppercase tracking-widest border-b border-border pb-4">Area Realities</h4>
                   <ul className="space-y-5">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-bold text-foreground font-heading">Local Crews</p>
-                        <p className="text-xs text-muted-foreground mt-0.5 font-body">Based in {town.county}, serving {town.name} since 2017.</p>
+                        <p className="text-sm font-bold text-foreground font-heading">Common Demand</p>
+                        <p className="text-xs text-muted-foreground mt-0.5 font-body">Frequent requests for {town.serviceDemandMix.join(', ')}.</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-bold text-foreground font-heading">Elevation-Rated</p>
-                        <p className="text-xs text-muted-foreground mt-0.5 font-body">Materials specifically for {town.elevation || 'high-altitude'} conditions.</p>
+                        <p className="text-sm font-bold text-foreground font-heading">Style Tendencies</p>
+                        <p className="text-xs text-muted-foreground mt-0.5 font-body">A preference for {town.styleTendency} architectural details.</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-bold text-foreground font-heading">NC Licensed GC</p>
-                        <p className="text-xs text-muted-foreground mt-0.5 font-body">Full structural capability for both roofing and construction.</p>
+                        <p className="text-sm font-bold text-foreground font-heading">Neighborhoods</p>
+                        <p className="text-xs text-muted-foreground mt-0.5 font-body">Serving {town.notableNeighborhoods.join(', ')} and surrounding areas.</p>
                       </div>
                     </li>
                   </ul>
@@ -196,7 +209,7 @@ const TownPage = () => {
                 <div className="border-l-4 border-primary pl-8 py-2">
                   <h3 className="text-3xl font-heading font-bold text-foreground mb-4 uppercase tracking-tight">Roofing Excellence</h3>
                   <p className="text-muted-foreground leading-relaxed font-body">
-                    Protecting {town.name} homes from the plateau's unique weather cycles with high-velocity wind-rated shingles and seamless metal systems.
+                    Addressing the {town.climateExposure} concerns with high-performance systems. Our {town.name} crews specialize in {town.serviceDemandMix.filter(s => s.toLowerCase().includes('roof')).join(' and ')}.
                   </p>
                 </div>
                 
@@ -250,7 +263,7 @@ const TownPage = () => {
           </div>
         </section>
 
-        {/* 5, 6 & 7. Proof, Special Consideration & FAQ (Consolidated in TownProofBlock) */}
+        {/* 5, 6 & 7. Proof, Special Consideration & FAQ */}
         {townProof ? (
           <TownProofBlock 
             town={town} 
