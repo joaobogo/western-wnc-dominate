@@ -124,8 +124,8 @@ const Header = () => {
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/98 backdrop-blur-xl shadow-[0_1px_12px_-4px_hsl(var(--heritage-charcoal)/0.08)] border-b border-border"
-          : "bg-background border-b border-border/60"
+          ? "bg-white/98 backdrop-blur-xl shadow-[0_1px_12px_-4px_hsl(var(--heritage-charcoal)/0.08)] border-b border-border"
+          : "bg-white border-b border-border/60"
       }`}
     >
 
@@ -361,7 +361,7 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-              className="lg:hidden bg-card border-t border-border overflow-hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
+              className="lg:hidden bg-white border-t border-border overflow-hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
             >
               <nav className="flex flex-col px-5 py-5 gap-1">
                 {/* ─── Division sections ─── */}
