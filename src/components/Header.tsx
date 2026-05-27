@@ -124,7 +124,7 @@ const Header = () => {
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-[0_1px_12px_-4px_hsl(var(--heritage-charcoal)/0.08)] border-b border-border"
+          ? "bg-white/98 backdrop-blur-xl shadow-[0_1px_12px_-4px_hsl(var(--heritage-charcoal)/0.08)] border-b border-border"
           : "bg-white border-b border-border/60"
       }`}
     >
