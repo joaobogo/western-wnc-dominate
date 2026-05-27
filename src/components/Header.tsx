@@ -361,7 +361,7 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-              className="lg:hidden bg-card border-t border-border overflow-hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
+              className="lg:hidden bg-white border-t border-border overflow-hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
             >
               <nav className="flex flex-col px-5 py-5 gap-1">
                 {/* ─── Division sections ─── */}
