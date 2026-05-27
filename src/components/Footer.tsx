@@ -130,7 +130,7 @@ const Footer = () => {
           {/* Brand column — spans 2 on lg */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
-              <img src={logo} alt="Highlander" className="h-[100px] w-auto"  loading="lazy" decoding="async" />
+              <img src={logo} alt="Highlander" className="h-[100px] w-auto brightness-0 invert"  loading="lazy" decoding="async" />
             </div>
             <p className="text-primary-foreground/40 text-sm leading-relaxed mb-6 max-w-xs font-body">
               Premium roofing and construction across the mountains of Western NC. 
