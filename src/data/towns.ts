@@ -5,26 +5,19 @@ export interface TownData {
   state: string;
   elevation: string;
   population?: string;
-  // Metadata for SEO
+  description: string;
+  features: string[];
   metaTitle: string;
   metaDescription: string;
   
   // VARIABLE LOCALITY ELEMENTS
-  /** The specific property types common in this town (e.g., 'Club Communities', 'Historic Cottages') */
   housingProfile: string;
-  /** The primary local climate/exposure concern (e.g., '80+ inch rain cycle', 'High UV elevation') */
   climateExposure: string;
-  /** Narrative on the local vibe and architectural tendencies */
   localVibe: string;
-  /** Specific context for construction projects in this area */
   constructionContext: string;
-  /** What locals are actually asking for most frequently */
   serviceDemandMix: string[];
-  /** Truthful project style tendencies (e.g., 'Heavy timber', 'Modern mountain rustic') */
   styleTendency: string;
-  /** Mention of high-value communities or neighborhoods within/near the town */
   notableNeighborhoods: string[];
-  /** Why Highlander specifically is a fit for this market's owners */
   marketAuthorityAngle: string;
 }
 
@@ -36,6 +29,8 @@ export const towns: TownData[] = [
     state: "NC",
     elevation: "4,118 ft",
     population: "~1,100 (Full-time)",
+    description: "At over 4,118 feet elevation, Highlands estates face some of the Southeast's most aggressive weather patterns. We specialize in high-velocity wind protection and premium synthetic systems designed for the plateau's unique exposure.",
+    features: ["Elevation-rated systems", "Luxury master suites", "Storm damage recovery", "Premium Brava installers"],
     metaTitle: "Roofing & Construction Services in Highlands, NC | Highlander Roofing",
     metaDescription: "High-elevation roofing and construction in Highlands, NC. Protecting Highlands Plateau estates with elevation-rated systems since 2017.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities.",
@@ -53,6 +48,8 @@ export const towns: TownData[] = [
     county: "Jackson County",
     state: "NC",
     elevation: "3,484 ft",
+    description: "Cashiers sits in a temperate rainforest zone, demanding superior moisture management. Our systems are engineered to handle 80+ inches of rain while maintaining the high-end rustic aesthetic of the plateau.",
+    features: ["Waterproofing specialists", "Engineered deck expansions", "Moisture-resistant materials", "Gutter optimization"],
     metaTitle: "Roofing & Construction Services in Cashiers, NC | Highlander Roofing",
     metaDescription: "Waterproofing-focused roofing and construction in Cashiers, NC. Serving the wettest high-elevation town in the Southeast with engineered systems.",
     housingProfile: "Rustic luxury residences and expansive seasonal mountain estates.",
@@ -70,6 +67,8 @@ export const towns: TownData[] = [
     county: "Macon County",
     state: "NC",
     elevation: "2,119 ft",
+    description: "Our hometown market. Based in Franklin, we provide the region's fastest response times for family homes, valley farms, and ridge-top residences across Macon County.",
+    features: ["Locally based crews", "Fastest response time", "Residential specialists", "Family-owned authority"],
     metaTitle: "Roofing & Construction Services in Franklin, NC | Highlander Roofing",
     metaDescription: "Local roofing and construction in Franklin, NC. Family-owned, locally based crews for residential roofing and home additions.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and valley farmhouses.",
@@ -87,6 +86,8 @@ export const towns: TownData[] = [
     county: "Jackson County",
     state: "NC",
     elevation: "2,037 ft",
+    description: "From historic downtown renovations to commercial maintenance programs, our Sylva operations serve as a critical hub for Jackson County's diverse roofing and construction needs.",
+    features: ["Historic home expertise", "Commercial maintenance", "Jackson County hub", "Rental property service"],
     metaTitle: "Roofing & Construction Services in Sylva, NC | Highlander Roofing",
     metaDescription: "Expert roofing and construction in Sylva, NC. Serving downtown historic homes and Jackson County hillside residences since 2017.",
     housingProfile: "Historic downtown homes, university-proximate rentals, and hillside residential properties.",
@@ -104,6 +105,8 @@ export const towns: TownData[] = [
     county: "Swain County",
     state: "NC",
     elevation: "1,752 ft",
+    description: "The gateway to the Smokies. We specialize in fast-turnaround roofing and deck expansions for vacation rental owners who need reliability between guest stays.",
+    features: ["Vacation rental focus", "Fast turnaround work", "Smoky Mountain experts", "Deck safety upgrades"],
     metaTitle: "Roofing & Construction in Bryson City, NC | Highlander Roofing",
     metaDescription: "Durable roofing and construction for Bryson City homes and vacation rentals. Specialized services for the gateway to the Smokies.",
     housingProfile: "Log cabins, high-traffic vacation rentals, and traditional mountain bungalows.",
@@ -121,6 +124,8 @@ export const towns: TownData[] = [
     county: "Haywood County",
     state: "NC",
     elevation: "2,753 ft",
+    description: "Serving Waynesville's historic districts and established residential neighborhoods with expert roofing modernization and large-scale home additions.",
+    features: ["Historic district care", "Whole-home renovations", "Haywood County authority", "Structural modernization"],
     metaTitle: "Roofing & Construction in Waynesville, NC | Highlander Roofing",
     metaDescription: "Professional roofing and construction for Waynesville's historic districts and new residential builds. Haywood County expertise.",
     housingProfile: "Historic district estates, mid-century residential neighborhoods, and new hillside developments.",
@@ -131,6 +136,44 @@ export const towns: TownData[] = [
     styleTendency: "Elegant historic architecture (Queen Anne, Colonial) transitioning into contemporary mountain modern.",
     notableNeighborhoods: ["Main Street Historic District", "Frog Level", "Pigeon Street", "Hyatt Creek"],
     marketAuthorityAngle: "Our Haywood County projects balance the technical needs of structural modernization with the visual sensitivity required for Waynesville's historic character."
+  },
+  {
+    slug: "cullowhee-nc",
+    name: "Cullowhee",
+    county: "Jackson County",
+    state: "NC",
+    elevation: "2,100 ft",
+    description: "Home to WCU, our Cullowhee services prioritize fast, budget-conscious solutions for student housing, local staff residences, and commercial rental assets.",
+    features: ["Student housing timing", "Rental property repairs", "Budget-conscious plans", "Reliable maintenance"],
+    metaTitle: "Roofing & Construction in Cullowhee, NC | Highlander Roofing",
+    metaDescription: "Reliable roofing and construction for Cullowhee student housing and residential properties. Fast response for WCU area landlords.",
+    housingProfile: "Multi-unit rentals, student housing, and faculty residences.",
+    climateExposure: "Heavy valley fog and humidity typical of the Tuckasegee basin.",
+    localVibe: "A university-centric community where property maintenance windows are often tied to the academic calendar.",
+    constructionContext: "Repairs and expansions often focus on maximizing rental occupancy or updating older housing stock near the campus.",
+    serviceDemandMix: ["Rental roof repairs", "Deck safety inspections", "Exterior siding updates", "Multi-unit maintenance"],
+    styleTendency: "Functional residential and multi-unit architecture prioritizing longevity and value.",
+    notableNeighborhoods: ["WCU Campus Area", "Old Cullowhee Road", "Caney Fork", "Speedwell"],
+    marketAuthorityAngle: "We coordinate seamlessly with property managers and landlords in Cullowhee to ensure maintenance happens during vacancies."
+  },
+  {
+    slug: "dillsboro-nc",
+    name: "Dillsboro",
+    county: "Jackson County",
+    state: "NC",
+    elevation: "2,041 ft",
+    description: "A historic village where precision matters. We provide preservation-sensitive roofing and construction for Dillsboro's unique cottages and tourism properties.",
+    features: ["Historic village care", "Precision flashing", "Tourism-ready cleanup", "Mountain cottage charm"],
+    metaTitle: "Roofing & Construction in Dillsboro, NC | Highlander Roofing",
+    metaDescription: "Preservation-sensitive roofing and construction for Dillsboro. Expert care for historic mountain cottages and village properties.",
+    housingProfile: "Historic village cottages, artisan shops, and riverfront residences.",
+    climateExposure: "River-proximate moisture and seasonal flooding risks for low-lying exterior structures.",
+    localVibe: "A walkable, historic artisan community where the aesthetic impact of every project is carefully considered.",
+    constructionContext: "Preservation-focused renovations and small-scale additions that must integrate with 100-year-old mountain architecture.",
+    serviceDemandMix: ["Designer shingle systems", "Artisan porch detailing", "Historic exterior repairs", "Gutter copper accents"],
+    styleTendency: "Quaint Appalachian village style with a focus on charm and historic accuracy.",
+    notableNeighborhoods: ["Historic Village Center", "Tuckasegee Riverfront", "Monteith Park area"],
+    marketAuthorityAngle: "Dillsboro projects require a lighter touch and a focus on detail. We ensure our job sites stay tourism-ready while protecting the village's historic character."
   }
 ];
 
