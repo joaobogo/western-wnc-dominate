@@ -3,7 +3,7 @@
 
 export interface ServiceTownEntry {
   townSlug: string;       // matches src/data/towns.ts
-  serviceSlug: string;    // roof-replacement | roof-repair | metal-roofing | synthetic-brava
+  serviceSlug: string;    // roof-replacement | roof-repair | metal-roofing | synthetic-brava | additions | renovations | outdoor-living
   serviceLabel: string;
   h1: string;
   intro: string;          // 2–3 sentences, unique
@@ -151,6 +151,50 @@ export const serviceTownContent: ServiceTownEntry[] = [
       { q: "How does Brava compare to real cedar shake at Highlands' elevation?", a: "Brava holds color and profile much longer at elevation than cedar, which dries, cups, and splits aggressively in mountain UV and freeze-thaw cycles." },
       { q: "Will Brava be approved by my club community ARB?", a: "Most Highlands-area ARBs approve Brava with documentation. We handle the submission package including color samples and profile cuts." },
       { q: "What's the lead time on a Brava order?", a: "Brava is made-to-order in your specified color blend. We plan for several weeks of lead time and quote accordingly — it's not a stock-and-go product." },
+    ],
+  }),
+  E({
+    townSlug: "highlands-nc",
+    serviceSlug: "additions",
+    serviceLabel: "Home Additions",
+    h1: "Home Additions & Master Suites in Highlands, NC",
+    intro:
+      "Expanding a Highlands home requires more than just framing — it's about structural integration with mountain slopes and elevation-rated building envelopes. We specialize in design-build additions that look like they were part of the original mountain architecture.",
+    localContext:
+      "Most Highlands additions focus on transforming seasonal cabins into year-round residences by adding luxury master suites, guest wings, or gourmet kitchen expansions that take advantage of plateau views.",
+    whoItsFor:
+      "Homeowners in Highlands country clubs and mountain estates who need more square footage without sacrificing the historic or rustic aesthetic of their property.",
+    proofNote:
+      "Licensed NC General Contractor with specialized experience in steep-slope foundations and heavy timber integration common on the Highlands Plateau.",
+    metaTitle: "Home Additions in Highlands, NC | Highlander Construction",
+    metaDescription:
+      "Custom home additions and master suites in Highlands, NC. Design-build expertise for mountain homes. Licensed, insured, owner-led.",
+    faqs: [
+      { q: "How do you handle building on steep Highlands slopes?", a: "We work with local engineers to design foundation systems specifically for your site's topography and drainage requirements." },
+      { q: "Can you match my existing cedar or stone siding?", a: "Yes. Matching historic or aged materials is one of our primary strengths in the Highlands market." },
+      { q: "Do you manage the full permit process for Macon County?", a: "Yes. We handle all architectural coordination, permitting, and inspections." },
+    ],
+  }),
+  E({
+    townSlug: "highlands-nc",
+    serviceSlug: "outdoor-living",
+    serviceLabel: "Outdoor Living",
+    h1: "Outdoor Living & Screened Porches in Highlands, NC",
+    intro:
+      "In Highlands, outdoor living isn't just a deck — it's a 'mountain room' that must handle 90 inches of rain and freezing winter cycles. We build engineered outdoor spaces that expand your living area into the natural environment.",
+    localContext:
+      "Screened porches with outdoor fireplaces are the gold standard in Highlands. We design these spaces with oversized timber framing and integrated drainage to ensure they stay dry through the plateau's frequent afternoon showers.",
+    whoItsFor:
+      "Families who want to enjoy the Highlands climate without the insects or rain, and anyone looking to maximize their mountain views with a high-end deck or porch expansion.",
+    proofNote:
+      "From multi-level composite decks to heavy-timber screened rooms, our outdoor projects are built to withstand Highlands' unique moisture profile.",
+    metaTitle: "Outdoor Living & Decks in Highlands, NC | Highlander Construction",
+    metaDescription:
+      "Custom screened porches, decks, and outdoor living spaces in Highlands, NC. Engineered for mountain weather. Free design consultations.",
+    faqs: [
+      { q: "What materials work best for decks in Highlands?", a: "We recommend high-end composites or thermally modified wood that won't rot or cup in Highlands' persistent moisture." },
+      { q: "Can you add an outdoor fireplace to an existing porch?", a: "Yes, provided the structure is engineered to support the load. We can assess and retrofit your current porch." },
+      { q: "How long does a typical porch project take?", a: "Most custom porches in Highlands take 4-8 weeks from foundation to finish, depending on complexity and materials." },
     ],
   }),
 
