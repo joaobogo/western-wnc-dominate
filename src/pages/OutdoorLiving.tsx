@@ -15,7 +15,11 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
-import heroImg from "@/assets/gallery/cedar-003.jpg";
+const heroImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=2000";
+const porchContextImg = "https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&q=80&w=1000";
+const timberFrameImg = "https://images.unsplash.com/photo-1615873968403-89e068629275?auto=format&fit=crop&q=80&w=1000";
+const terrainSlopeImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
+
 import proj1 from "@/assets/gallery/cedar-001.jpg";
 import proj2 from "@/assets/gallery/metal-006.webp";
 import proj3 from "@/assets/gallery/asphalt-005.jpg";
@@ -184,15 +188,14 @@ const OutdoorLiving = () => {
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <Sun className="w-6 h-6 text-[hsl(var(--highland-gold)/0.3)] mx-auto mb-8" />
               <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
-                Mountain living isn't indoor living. The best WNC properties extend into the landscape — with structures built to handle the weather, frame the views, and last.
+                Mountain living isn't indoor living. The best WNC properties extend into the landscape — with structures built to handle the weather and frame the views.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
-                Highlander builds outdoor living spaces scaled to your property, designed for the Western North Carolina climate, and finished with the same quality we bring to every roofing and construction project.
+                Highlander builds outdoor living spaces scaled to your property, designed for the Western North Carolina climate, and finished with the same quality we bring to every project.
               </p>
-              <div className="flex items-center justify-center gap-3 mt-10">
-                <TreePine className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.2)]" />
-                <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.12)]" />
-                <TreePine className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.2)]" />
+              <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
+                <img src={porchContextImg} alt="Mountain porch extension" className="w-full h-full object-cover grayscale opacity-40 hover:opacity-60 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
               </div>
             </motion.div>
           </div>

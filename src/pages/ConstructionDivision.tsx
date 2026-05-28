@@ -30,6 +30,11 @@ import {
 } from "@/components/construction";
 
 import heroImg from "@/assets/gallery/cedar-001.jpg";
+const divisionContextImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
+const constructionDetailImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000";
+const siteCoordinationImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000";
+const wncTerrainImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
+
 import proj1 from "@/assets/gallery/asphalt-006.webp";
 import proj2 from "@/assets/gallery/cedar-002.jpg";
 import proj3 from "@/assets/gallery/metal-008.webp";
@@ -168,7 +173,7 @@ const ConstructionDivision = () => {
         {/* ═══ OPENING STATEMENT — Premium editorial positioning ═══ */}
         <section className="section-padding bg-background relative overflow-hidden">
           <div className="absolute right-0 top-0 w-1/2 h-full opacity-[0.02] pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200" alt="Mountain home background" className="w-full h-full object-cover" />
+            <img src={divisionContextImg} alt="Mountain home background" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight max-w-4xl">
@@ -248,6 +253,16 @@ const ConstructionDivision = () => {
           subheading="Four focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards."
           eyebrow="Construction Services"
         />
+
+        {/* ═══ ARCHITECTURAL DETAIL — Visual break ═══ */}
+        <section className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
+          <img src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover grayscale opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+          <div className="absolute bottom-10 left-10 flex items-center gap-4">
+             <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
+             <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60">Craftsmanship in Detail</span>
+          </div>
+        </section>
 
         {/* ═══ PHILOSOPHY — How we approach construction ═══ */}
         <section className="section-padding bg-background">

@@ -16,7 +16,11 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
-import heroImg from "@/assets/gallery/asphalt-004.jpg";
+const heroImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
+const expansionContextImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
+const structuralTieImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000";
+const mountainSiteImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
+
 import proj1 from "@/assets/gallery/cedar-001.jpg";
 import proj2 from "@/assets/gallery/metal-008.webp";
 import proj3 from "@/assets/gallery/asphalt-006.webp";
@@ -199,6 +203,10 @@ const HomeAdditions = () => {
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
                   Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
+                <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
+                  <img src={expansionContextImg} alt="Integrated home expansion" className="w-full h-full object-cover grayscale opacity-40 hover:opacity-60 transition-opacity duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                </div>
                 <p className="text-muted-foreground/60 text-sm leading-relaxed font-body italic">
                   Every addition starts with understanding your home and ends with a space that elevates the entire property.
                 </p>

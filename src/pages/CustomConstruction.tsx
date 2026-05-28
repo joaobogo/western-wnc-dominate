@@ -14,7 +14,11 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
-import heroImg from "@/assets/gallery/metal-009.jpg";
+const heroImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
+const specialtyContextImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
+const detailOversightImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000";
+const complexityImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000";
+
 import proj1 from "@/assets/gallery/metal-003.webp";
 import proj2 from "@/assets/gallery/asphalt-002.jpg";
 import proj3 from "@/assets/gallery/cedar-002.jpg";
@@ -170,12 +174,11 @@ const CustomConstruction = () => {
                 Some projects don't fit categories. They require more planning, more coordination, and more craft. Those are the projects we're built for.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
-                Highlander takes on custom and specialty construction work where our planning discipline, in-house craft quality, and communication standards make a meaningful difference. We're selective about the projects we accept — and for the ones we take, we deliver execution that matches the ambition.
+                Highlander takes on custom and specialty construction work where our planning discipline, in-house craft quality, and communication standards make a meaningful difference.
               </p>
-              <div className="flex items-center justify-center gap-2 mt-10">
-                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
-                <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.15)]" />
-                <div className="w-1.5 h-1.5 rotate-45 bg-[hsl(var(--highland-gold)/0.3)]" />
+              <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
+                <img src={specialtyContextImg} alt="Specialty construction detail" className="w-full h-full object-cover grayscale opacity-40 hover:opacity-60 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
               </div>
             </motion.div>
           </div>
