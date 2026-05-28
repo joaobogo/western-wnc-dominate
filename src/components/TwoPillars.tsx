@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Home, HardHat } from "lucide-react";
+
 
 /**
  * Two Pillars. One Standard.
