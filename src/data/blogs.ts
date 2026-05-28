@@ -390,7 +390,11 @@ Standard pressure-treated lumber has its place, but for low-maintenance mountain
 Extending your outdoor season into November is a top request. We integrate recessed ceiling heaters, stone hearths, and fire features directly into the project plan.
 
 ## Lighting for Atmosphere
-Subtle LED lighting integrated into railings and stair treads isn't just for safety — it transforms your space after the sun sets behind the ridges.`
+Subtle LED lighting integrated into railings and stair treads isn't just for safety — it transforms your space after the sun sets behind the ridges.`,
+    relatedServices: [
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Design & Planning", path: "/layouts-planning" }
+    ],
   },
   {
     slug: "why-design-planning-matters",
@@ -398,6 +402,7 @@ Subtle LED lighting integrated into railings and stair treads isn't just for saf
     excerpt: "Most construction delays happen because of poor planning, not poor building. Discover the Highlander pre-construction process.",
     category: "Construction",
     date: "2026-02-18",
+
     readTime: "5 min",
     metaTitle: "Importance of Pre-Construction Planning | Highlander",
     metaDescription: "Why detailed design and planning is critical for mountain construction. Avoid budget creep and timeline delays with our disciplined approach.",
