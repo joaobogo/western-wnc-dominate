@@ -90,14 +90,15 @@ const About = () => {
 
               {/* Understated CTA — warm solid button, no gradient (About-only) */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.5 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide">
-                  <span>Talk With Our Team</span>
+                <Link to="/team" className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide">
+                  <span>Meet Our People</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/gallery" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
-                  See What We've Built <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Link to="/consultation" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
+                  Start a Conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
+
             </div>
           </div>
         </section>
