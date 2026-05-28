@@ -128,14 +128,14 @@ const Header = () => {
     >
 
       {/* ─── Main nav bar ─── */}
-      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-1.5" : "py-3 md:py-4"}`}>
+      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-1" : "py-1.5 md:py-2"}`}>
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
             className="w-auto transition-all duration-500"
-            animate={{ height: scrolled ? 92 : 124 }}
+            animate={{ height: scrolled ? 72 : 92 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>
