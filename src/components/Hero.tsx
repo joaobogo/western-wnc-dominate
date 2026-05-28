@@ -213,7 +213,7 @@ const Hero = () => {
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
                 className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
               >
-                Roofing & Planning authority.
+                Premium Roofing &
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-1 md:mb-2">
@@ -223,7 +223,7 @@ const Hero = () => {
                 transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
                 className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
               >
-                Construction capability.
+                Mountain Construction.
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-8 md:mb-12">
@@ -238,6 +238,7 @@ const Hero = () => {
               </motion.h1>
             </div>
 
+
             {/* Subtext — refined positioning statement */}
             <motion.p
               initial={{ opacity: 0, y: 24 }}
@@ -245,10 +246,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-[14px] md:text-[17px] text-primary-foreground/35 max-w-lg mb-10 md:mb-14 leading-[1.8] font-body"
             >
-              CertainTeed Master Applicator. Licensed General Contractor.
-              Roofing, layout planning, and residential construction across
-              Western North Carolina, led by the same owner on every project.
+              Owner-led craftsmanship for the terrain, the weather, and the legacy of Western North Carolina. Licensed General Contractor and CertainTeed Master Applicator serving Highlands, Cashiers, and Franklin.
             </motion.p>
+
 
             {/* CTA Group — premium dual-action */}
             <motion.div
