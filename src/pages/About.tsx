@@ -307,8 +307,38 @@ const About = () => {
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
                 <p className="text-[hsl(var(--dark-section-foreground)/0.7)] leading-relaxed mb-4">
                   In an industry where "quality craftsmanship" is printed on every business card,
-                  we understand why that phrase means nothing anymore. So we don't rely on words.
-                  We rely on systems.
+        {/* ── COMMUNITY ROOTS — Family business warmth ── */}
+        <section className="section-padding bg-secondary/20 relative">
+          <div className="container-tight max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <ScrollReveal variant="slide-left">
+                <span className="eyebrow mb-3 block">Our Heritage</span>
+                <h2 className="section-heading mb-6">A Family Business That<br />Grew with WNC.</h2>
+                <div className="space-y-6 text-muted-foreground font-body leading-relaxed">
+                  <p>
+                    Highlander started as a local response to a regional problem: homeowners in Western North Carolina weren't getting the specialized roofing care their mountain homes demanded.
+                  </p>
+                  <p>
+                    Since 2017, we've remained owner-led and family-driven. We don't have board members or out-of-state headquarters. Our decisions are made on front porches and ridgelines, with the long-term reputation of our family name at stake.
+                  </p>
+                  <p className="italic font-medium text-foreground">
+                    "When we put our name on a project, we're making a promise to a neighbor."
+                  </p>
+                </div>
+              </ScrollReveal>
+              <div className="relative">
+                <div className="aspect-[4/5] bg-muted overflow-hidden">
+                  <img src={heritageImg} alt="Western North Carolina heritage" className="w-full h-full object-cover grayscale opacity-80" />
+                </div>
+                {/* Visual badge */}
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary flex items-center justify-center p-6 text-center border border-white/10 shadow-xl">
+                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-xs uppercase tracking-widest leading-tight">Macon & Jackson County Specialists</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
                 </p>
                 <p className="text-[hsl(var(--dark-section-foreground)/0.7)] leading-relaxed">
                   Every Highlander project follows the same discipline: careful material selection,
