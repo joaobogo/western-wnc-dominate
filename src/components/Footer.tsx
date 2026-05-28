@@ -36,6 +36,8 @@ const companyLinks = [
   { label: "Service Areas", href: "/service-areas" },
   { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
+  { label: "Meet the Team", href: "/team" },
+
   { label: "Request Inspection", href: "/request-inspection" },
 ];
 

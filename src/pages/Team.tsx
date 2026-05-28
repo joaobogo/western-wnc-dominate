@@ -6,7 +6,9 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Link } from "react-router-dom";
 
-const HIGHLAND_EASE = [0.22, 1, 0.36, 1];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+
 
 const leadership = [
   {
