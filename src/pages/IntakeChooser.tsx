@@ -40,7 +40,7 @@ const IntakeChooser = () => (
               accent: false,
             },
             {
-              to: "/design-intake",
+              to: "/design-intake?mode=short",
               icon: Sparkles,
               eyebrow: "Design",
               title: "Project Planning",
