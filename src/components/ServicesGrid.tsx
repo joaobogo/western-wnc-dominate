@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, HardHat, Wrench, TreePine, Home as HomeIcon } from "lucide-react";
+import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, HardHat, Wrench, TreePine, Home as HomeIcon, Ruler } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
