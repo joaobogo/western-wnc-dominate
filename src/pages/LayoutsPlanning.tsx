@@ -362,12 +362,12 @@ const LayoutsPlanning = () => {
                 Talk with our team to define your layout, clarify your scope, and prepare for a predictable construction experience.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-2 group text-lg">
-                  Request Planning Support <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-2 group hover:scale-[1.02] transition-transform duration-300">
+                  Start Planning Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/construction" className="bg-background border border-border text-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors text-lg">
-                  View Construction Services
-                </Link>
+                <a href="tel:8283979211" className="bg-background border border-border text-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors">
+                  Discuss Your Layout or Floor Plan
+                </a>
               </div>
             </ScrollReveal>
           </div>
