@@ -125,7 +125,7 @@ const LayoutsPlanning = () => {
                   <div className="w-8 h-8 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)]">
                     <Compass className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                   </div>
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Highlander Construction Branch</span>
+                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Pre-Construction Capability</span>
                 </motion.div>
                 <motion.h1 
                   initial={{ opacity: 0, y: 20 }} 
@@ -133,8 +133,9 @@ const LayoutsPlanning = () => {
                   transition={{ duration: 0.7, delay: 0.1, ease: HIGHLAND_EASE }}
                   className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight"
                 >
-                  Intelligent <span className="text-[hsl(var(--highland-gold))]">Design & Planning</span> for Your Home.
+                  Intelligent <span className="text-[hsl(var(--highland-gold))]">Design & Planning</span>.
                 </motion.h1>
+
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }} 
                   animate={{ opacity: 1, y: 0 }} 
