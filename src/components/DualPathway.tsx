@@ -54,7 +54,7 @@ const constructionData = {
     { icon: PaintBucket, name: "Siding & Exteriors" },
     { icon: Ruler, name: "Structural Improvements" },
     { icon: Settings, name: "Decks & Outdoor Living" },
-    { icon: ShieldCheck, name: "Design-Build Projects" },
+    { icon: ShieldCheck, name: "Layouts & Planning" },
   ],
   cta: "Explore Construction Services",
   href: "/construction",
