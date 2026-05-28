@@ -27,15 +27,25 @@ const Financing = () => {
       />
       <Header />
       <main>
-        <section className="section-padding section-dark pt-32 md:pt-40">
-          <div className="container-tight text-center">
+        <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=2000" 
+              alt="Beautiful mountain home with premium roofing"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent" />
+          </div>
+          
+          <div className="container-tight relative z-10 pt-32 md:pt-40">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Financing</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
-                Affordable Roofing Financing Options
+              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.2em] mb-4">Investment Support</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1]">
+                Affordable <span className="text-[hsl(var(--highland-gold))]">Financing</span> Options
               </h1>
-              <p className="text-dark-section-foreground/70 max-w-2xl mx-auto text-base md:text-lg">
-                A new roof is a smart investment. Our financing options make it affordable — so you don't have to delay protecting your home.
+              <p className="text-white/60 max-w-2xl text-base md:text-lg font-body leading-relaxed">
+                A new roof is a smart investment in your property&apos;s permanence. Our financing options make it manageable — so you don&apos;t have to delay protecting your home.
               </p>
             </motion.div>
           </div>
