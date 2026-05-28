@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, HardHat, Wrench, TreePine, Home as HomeIcon } from "lucide-react";
+import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, HardHat, Wrench, TreePine, Home as HomeIcon, Ruler } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -133,14 +133,14 @@ const services: FeaturedService[] = [
     accent: "gold",
   },
   {
-    icon: HomeIcon,
-    title: "Custom Projects",
-    tagline: "Design-build. Single point of contact.",
-    description: "Complex builds, design partnerships, and complete property transformations — from initial drawings through final walkthrough and warranty handoff.",
-    stat: "Full",
-    statLabel: "design-build scope",
-    href: "/construction/custom",
-    image: metal10,
+    icon: Ruler,
+    title: "Design & Planning",
+    tagline: "Preconstruction thinking",
+    description: "Floor plans, layouts, and scope development that bridge the gap between initial idea and actual construction. Intelligent planning for higher-value projects.",
+    stat: "Concept",
+    statLabel: "to construction",
+    href: "/layouts-planning",
+    image: asphaltImg, // Placeholder - consider if a more 'planning' oriented image exists
     accent: "gold",
   },
 ];

@@ -51,10 +51,10 @@ const constructionData = {
   services: [
     { icon: Hammer, name: "Renovations & Remodels" },
     { icon: PlusSquare, name: "Home Additions" },
+    { icon: Ruler, name: "Design & Planning" },
     { icon: PaintBucket, name: "Siding & Exteriors" },
-    { icon: Ruler, name: "Structural Improvements" },
     { icon: Settings, name: "Decks & Outdoor Living" },
-    { icon: ShieldCheck, name: "Layouts & Planning" },
+    { icon: ShieldCheck, name: "Structural Improvements" },
   ],
   cta: "Explore Construction Services",
   href: "/construction",
