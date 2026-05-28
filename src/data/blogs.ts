@@ -362,7 +362,11 @@ Don't assume your current system can handle another 500 square feet. We evaluate
 Every county — Macon, Jackson, Haywood — has unique rules for setbacks, impervious surface limits, and mountain-ridge protections. We handle the coordination to ensure your plan is fully compliant before work starts.
 
 ## How Highlander Helps
-Our Design & Planning branch exists to solve these hurdles before they become expensive change orders. We bridge the gap between your vision and a buildable project roadmap.`
+Our Design & Planning branch exists to solve these hurdles before they become expensive change orders. We bridge the gap between your vision and a buildable project roadmap.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Home Additions", path: "/construction/additions" }
+    ],
   },
   {
     slug: "outdoor-living-trends-wnc",
@@ -373,6 +377,7 @@ Our Design & Planning branch exists to solve these hurdles before they become ex
     readTime: "6 min",
     metaTitle: "WNC Outdoor Living Trends 2026 | Highlander Construction",
     metaDescription: "Design the perfect mountain outdoor space. Trends in decks, screened porches, and pergolas for Western NC homes.",
+
     content: `Outdoor living is why we live in Western North Carolina. But a deck in Sylva needs to handle different conditions than one in Highlands. Here's how we design for mountain longevity.
 
 ## Screened-In vs. Open Air
@@ -385,7 +390,11 @@ Standard pressure-treated lumber has its place, but for low-maintenance mountain
 Extending your outdoor season into November is a top request. We integrate recessed ceiling heaters, stone hearths, and fire features directly into the project plan.
 
 ## Lighting for Atmosphere
-Subtle LED lighting integrated into railings and stair treads isn't just for safety — it transforms your space after the sun sets behind the ridges.`
+Subtle LED lighting integrated into railings and stair treads isn't just for safety — it transforms your space after the sun sets behind the ridges.`,
+    relatedServices: [
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Design & Planning", path: "/layouts-planning" }
+    ],
   },
   {
     slug: "why-design-planning-matters",
@@ -393,6 +402,7 @@ Subtle LED lighting integrated into railings and stair treads isn't just for saf
     excerpt: "Most construction delays happen because of poor planning, not poor building. Discover the Highlander pre-construction process.",
     category: "Construction",
     date: "2026-02-18",
+
     readTime: "5 min",
     metaTitle: "Importance of Pre-Construction Planning | Highlander",
     metaDescription: "Why detailed design and planning is critical for mountain construction. Avoid budget creep and timeline delays with our disciplined approach.",
@@ -975,7 +985,225 @@ During any roof inspection, we evaluate your attic ventilation system and recomm
       { question: "Does ventilation affect my energy bills?", answer: "Significantly. Proper ventilation can reduce cooling costs by 10-15% and prevent moisture-related insulation degradation that increases heating costs." },
     ],
   },
+  {
+    slug: "master-suite-layouts-wnc",
+    title: "Optimizing Your Master Suite Layout for Mountain Living",
+    excerpt: "Thinking about a master wing addition? Here is how to plan the perfect flow between sleep, storage, and views.",
+    category: "Construction",
+    date: "2026-03-05",
+    readTime: "6 min",
+    metaTitle: "Master Suite Layout Planning WNC | Highlander",
+    metaDescription: "How to plan a master suite addition in Western NC. Layout tips for walk-in closets, luxury baths, and mountain view optimization.",
+    content: `A master suite addition is about more than just square footage—it's about creating a sanctuary. In Western North Carolina, the terrain and views should dictate your layout.
+
+## Prioritizing the View
+We always start with window placement. A well-planned master wing should frame the ridgetops or forest from the bed and the bath.
+
+## The 'Morning Flow' Layout
+We help you map out the transition from bed to bath to closet. Intelligent floor plans ensure you don't have to walk across the bedroom to reach your coffee or your clothes.
+
+## Integration with Outdoor Spaces
+Many of our favorite Highlands and Cashiers projects include a private deck access directly from the master wing. This requires careful structural planning to ensure the rooflines and elevations match up.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Home Additions", path: "/construction/additions" }
+    ],
+  },
+  {
+    slug: "cost-saving-layout-tips-wnc",
+    title: "Cost-Saving Layout Tips for Your Next Home Improvement",
+    excerpt: "How intelligent project planning can save you thousands in construction costs before the first hammer swings.",
+    category: "Cost",
+    date: "2026-03-12",
+    readTime: "7 min",
+    metaTitle: "Cost-Saving Construction Layout Tips | Highlander",
+    metaDescription: "Discover how smart layout planning reduces construction costs. Tips on plumbing stacks, load-bearing walls, and mountain terrain.",
+    content: `Most construction budget blowouts happen because of poor planning. Here is how our Design & Planning branch helps you build smarter for less.
+
+## Plumbing Stacks & Wet Walls
+Moving a bathroom across the house is expensive. We help you plan layouts that utilize existing plumbing infrastructure where possible, significantly reducing labor and material costs.
+
+## Respecting the Load-Bearing Skeleton
+Removing a wall for an open-concept kitchen? We identify which walls are carrying the weight of your roof early on. Planning around the structural bones of your home saves thousands in steel beams and engineering.
+
+## Terrain-Responsive Building
+In WNC, fighting the slope is expensive. We help you design layouts that work *with* the topography of your lot, minimizing costly excavation and massive retaining walls.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Construction Division", path: "/construction" }
+    ],
+  },
+  {
+    slug: "phased-renovation-planning-wnc",
+    title: "The Homeowner's Guide to Phased Renovation Planning",
+    excerpt: "Want to renovate but can't do it all at once? Learn how to build a multi-year master plan for your WNC home.",
+    category: "Construction",
+    date: "2026-03-20",
+    readTime: "8 min",
+    metaTitle: "Master Plan for Phased Renovations | Highlander",
+    metaDescription: "How to plan your home improvements in phases. Build a multi-year roadmap for additions, outdoor living, and interior updates.",
+    content: `Not every mountain estate transformation happens in a single season. Many Highlands and Cashiers homeowners prefer to build in phases. The secret to success is having a cohesive master plan from day one.
+
+## Phase 1: The Foundation & Infrastructure
+If you plan on adding a guest wing in two years, we should plan your septic and electrical capacity today. Our planning support ensures you don't have to undo work later.
+
+## Cohesive Design Theme
+A deck added in 2026 should look like it belongs to the porch you build in 2028. We help you define a consistent visual language—materials, colors, and trim profiles—that spans all project phases.
+
+## Logical Sequencing
+Don't renovate your kitchen right before you tear out the wall behind it for an addition. We help you sequence projects to minimize disruption and maximize your budget.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Outdoor Living", path: "/construction/outdoor-living" }
+    ],
+  },
+  {
+    slug: "kitchen-layout-trends-mountain-homes",
+    title: "Kitchen Layout Trends for Modern Mountain Living",
+    excerpt: "From open-concept 'Great Rooms' to hidden pantries. Discover how to plan a kitchen that works for WNC life.",
+    category: "Construction",
+    date: "2026-04-02",
+    readTime: "6 min",
+    metaTitle: "Mountain Kitchen Layout Trends 2026 | Highlander",
+    metaDescription: "Plan your kitchen renovation with these layout trends. Open-concept designs, island optimization, and mountain view integration.",
+    content: `The kitchen is the heart of the mountain home. But in WNC, 'modern mountain' means more than just stainless steel. It's about how the space connects to the rest of your life.
+
+## The 'View-Centric' Sink
+In flatland homes, the sink often faces a wall. In the mountains, we plan layouts that put the primary prep area facing the view. It makes every meal preparation a better experience.
+
+## Island Dynamics
+Is your island for prep, dining, or both? We help you define the dimensions and 'zones' of your kitchen island before we order a single cabinet.
+
+## Seamless Indoor-Outdoor Flow
+Many of our clients want the kitchen to open directly onto a screened porch or deck. We plan these transitions meticulously to ensure the floor levels and thresholds are safe and weatherproof.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Renovations", path: "/construction/renovations" }
+    ],
+  },
+  {
+    slug: "deck-vs-porch-planning-wnc",
+    title: "Deck vs. Screened Porch: Which Layout is Right for You?",
+    excerpt: "Trying to decide how to expand your outdoor space? Compare the layout benefits of open decks and covered porches.",
+    category: "Construction",
+    date: "2026-04-10",
+    readTime: "5 min",
+    metaTitle: "Deck or Porch Layout Comparison | Highlander",
+    metaDescription: "Choose the right outdoor space layout. Compare open-air decks and screened-in porches for your Western NC home.",
+    content: `WNC homeowners often ask: 'Should I build a deck or a porch?' The answer depends entirely on your lifestyle and your lot.
+
+## The Deck: Maximum Sunlight & Views
+Decks are perfect for grilling, stargazing, and long-range vistas. They offer the most flexibility for layout but are exposed to the elements.
+
+## The Porch: Three-Season Protection
+A screened or covered porch provides a roof over your head and protection from WNC's afternoon thunderstorms. It creates a 'second living room' that feels more like an interior space.
+
+## The Hybrid Approach
+The best layouts often combine both. A smaller covered 'mountain room' for dining, transitioning into an expansive open deck for sun and views.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Outdoor Living", path: "/construction/outdoor-living" }
+    ],
+  },
+  {
+    slug: "floor-plan-modernization-older-homes",
+    title: "Modernizing Older WNC Floor Plans for Today's Lifestyle",
+    excerpt: "How to transform a traditional mountain home layout into a bright, open space without losing its character.",
+    category: "Construction",
+    date: "2026-04-18",
+    readTime: "7 min",
+    metaTitle: "Modernizing Old Mountain Floor Plans | Highlander",
+    metaDescription: "Layout transformation tips for older WNC homes. Open-concept planning, wall removals, and adding natural light.",
+    content: `Many older homes in Franklin and Sylva have 'choppy' layouts—small rooms and dark corridors. We specialize in floor plan modernization that respects the history of your home.
+
+## Opening the 'Great Room'
+By identifying which walls aren't structural, we can often combine kitchen, dining, and living areas into one continuous space. This changes how your home feels and how much light it captures.
+
+## Re-Imagining Dead Space
+Those oversized hallways and awkward closets can often be reclaimed. We help you find the 'hidden square footage' in your existing floor plan.
+
+## Adding Natural Light
+Floor plan modernization isn't just about moving walls; it's about adding glass. We plan window and door placements that pull the outdoors into every room.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Renovations", path: "/construction/renovations" }
+    ],
+  },
+  {
+    slug: "mountain-room-addition-trends",
+    title: "The Rise of the 'Mountain Room' Addition in WNC",
+    excerpt: "Discover the most popular room addition type for Highlands and Cashiers homeowners in 2026.",
+    category: "Construction",
+    date: "2026-04-25",
+    readTime: "5 min",
+    metaTitle: "Mountain Room Addition Trends 2026 | Highlander",
+    metaDescription: "Why 'mountain rooms' are the top addition choice in Highlands and Cashiers. Layout, heating, and view optimization tips.",
+    content: `The 'Mountain Room' is a uniquely WNC architectural trend. It's a space that bridges the gap between an interior sunroom and an exterior porch.
+
+## Multi-Slide Glass Walls
+The layout of a mountain room is defined by transparency. We utilize large-format sliding door systems that disappear into the walls, completely opening the room to the forest.
+
+## The Integrated Hearth
+A mountain room isn't complete without a fireplace. We help you plan the structural requirements for a stone hearth that anchors the space and extends your usability into the winter months.
+
+## High-Elevation Engineering
+These rooms often project out from the main home. We ensure the structural planning accounts for wind loads and heavy ice accumulation common on the plateau.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Home Additions", path: "/construction/additions" }
+    ],
+  },
+  {
+    slug: "construction-scope-development-guide",
+    title: "Scope Development: How to Define Your Project Before It Starts",
+    excerpt: "Learn the step-by-step process of turning your ideas into a buildable construction scope of work.",
+    category: "Construction",
+    date: "2026-05-05",
+    readTime: "6 min",
+    metaTitle: "Construction Scope Development Guide | Highlander",
+    metaDescription: "How to define your home improvement scope. Avoid budget creep with documented materials, layouts, and timelines.",
+    content: `A 'vague scope' is the most dangerous part of any construction project. At Highlander, our Design & Planning branch is dedicated to specificity.
+
+## Listing Your 'Non-Negotiables'
+We start by defining what your project *must* achieve. Is it a third bedroom? A 200-square-foot deck? A walk-in shower? Documenting these goals keeps the project focused.
+
+## Material Specifications
+Scope isn't just about 'where' you build, but 'what' you build with. We help you pick siding, flooring, and finishes before the quote is finalized.
+
+## The Production Timeline
+A real scope includes a schedule. We help you plan for seasonal weather events in WNC and lead times for premium materials like cedar and composite.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Construction Division", path: "/construction" }
+    ],
+  },
+  {
+    slug: "terrain-responsive-floor-plans-wnc",
+    title: "Terrain-Responsive Floor Plans for Highlands and Cashiers",
+    excerpt: "Building on a cliff? Learn how to plan floor plans that work with extreme slopes and rock formations.",
+    category: "Construction",
+    date: "2026-05-12",
+    readTime: "7 min",
+    town: "Highlands",
+    metaTitle: "Sloped Lot Floor Plan Planning WNC | Highlander",
+    metaDescription: "Floor plan planning for steep mountain lots. Layout tips for stepped foundations, walk-out basements, and view optimization.",
+    content: `The Plateau terrain is some of the most challenging in North America. A 'flatland' floor plan simply won't work here. Here's how we plan for the slope.
+
+## Stepped Foundation Layouts
+Rather than fighting the grade, we plan floor plans that 'step' down the mountain. This reduces the need for massive retaining walls and creates interesting interior level changes.
+
+## The Walk-Out Basement Logic
+We help you design layouts that utilize the lower level of your home as a primary living space. In sloped lots, the basement can have the best views and most natural light.
+
+## Erosion and Drainage Planning
+Your floor plan should dictate where the water goes. We integrate drainage paths into the early design phase to protect your home and your landscaping from mountain runoff.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Home Additions", path: "/construction/additions" }
+    ],
+  },
 ];
+
 
 export const getBlogBySlug = (slug: string) => blogPosts.find(b => b.slug === slug);
 
