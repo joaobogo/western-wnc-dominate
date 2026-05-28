@@ -125,7 +125,7 @@ const Header = () => {
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || mobileOpen
-          ? "bg-white/98 backdrop-blur-xl shadow-[0_1px_12px_-4px_hsl(var(--heritage-charcoal)/0.08)] border-b border-border"
+          ? "bg-heritage-charcoal/95 backdrop-blur-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)] border-b border-white/5"
           : "bg-transparent border-b border-white/5"
       }`}
     >
@@ -137,7 +137,7 @@ const Header = () => {
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className={`w-auto transition-all duration-500 ${!scrolled && !mobileOpen ? "brightness-0 invert" : ""}`}
+            className="w-auto transition-all duration-500"
             animate={{ height: scrolled ? 92 : 124 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
@@ -157,8 +157,8 @@ const Header = () => {
                 to={div.href}
                 className={`relative text-[13px] font-semibold transition-all duration-300 inline-flex items-center gap-1 px-3.5 py-2 rounded-sm font-body ${
                   isActive(div.href)
-                    ? (scrolled || mobileOpen ? "text-foreground bg-secondary/50" : "text-white bg-white/10")
-                    : (scrolled || mobileOpen ? "text-foreground/70 hover:text-foreground hover:bg-secondary/40" : "text-white/80 hover:text-white hover:bg-white/10")
+                    ? "text-white bg-white/10"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {div.label}
@@ -265,7 +265,7 @@ const Header = () => {
           ))}
 
           {/* Separator dot */}
-          <span className={`w-px h-4 mx-1 transition-colors duration-300 ${scrolled || mobileOpen ? "bg-border" : "bg-white/20"}`} />
+          <span className={`w-px h-4 mx-1 transition-colors duration-300 bg-white/20`} />
 
           {/* Secondary links */}
           {secondaryLinks.map((link) => (
@@ -274,8 +274,8 @@ const Header = () => {
               to={link.href}
               className={`relative text-[13px] font-medium transition-all duration-300 px-3 py-2 rounded-sm font-body ${
                 isActive(link.href)
-                  ? (scrolled || mobileOpen ? "text-foreground bg-secondary/50" : "text-white bg-white/10")
-                  : (scrolled || mobileOpen ? "text-foreground/55 hover:text-foreground hover:bg-secondary/40" : "text-white/60 hover:text-white hover:bg-white/10")
+                  ? "text-white bg-white/10"
+                  : "text-white/60 hover:text-white hover:bg-white/10"
               }`}
             >
               {link.label}
@@ -294,9 +294,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <a
             href="tel:8283979211"
-            className={`hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 ${
-              scrolled || mobileOpen ? "text-foreground/55 hover:text-foreground" : "text-white/60 hover:text-white"
-            }`}
+            className={`hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 text-white/60 hover:text-white`}
           >
             <Phone className="w-3.5 h-3.5" />
             <span className="hidden xl:inline">(828) 397-9211</span>
@@ -316,9 +314,7 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 active:scale-90 transition-all duration-300 ${
-              scrolled || mobileOpen ? "text-foreground" : "text-white"
-            }`}
+            className="lg:hidden p-2 active:scale-90 transition-all duration-300 text-white"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
@@ -366,7 +362,7 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-              className="lg:hidden bg-white border-t border-border overflow-hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
+              className="lg:hidden bg-heritage-charcoal border-t border-white/5 overflow-hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
             >
               <nav className="flex flex-col px-5 py-5 gap-1">
                 {/* ─── Division sections ─── */}
@@ -381,8 +377,8 @@ const Header = () => {
                       onClick={() => setMobileExpanded(mobileExpanded === div.label ? null : div.label)}
                       className={`w-full py-3 px-3 rounded-sm transition-all duration-200 flex items-center justify-between ${
                         isActive(div.href)
-                          ? "text-foreground bg-secondary/50"
-                          : "text-foreground hover:bg-secondary/30"
+                          ? "text-white bg-white/10"
+                          : "text-white/90 hover:bg-white/5"
                       }`}
                     >
                       <div className="flex items-center gap-3">
@@ -394,15 +390,15 @@ const Header = () => {
                           }`} />
                         </div>
                         <div className="text-left">
-                          <span className="text-base font-heading font-semibold block leading-tight">{div.label}</span>
-                          <span className="text-[10px] font-body text-muted-foreground/50 uppercase tracking-wider">{div.tagline}</span>
+                          <span className="text-base font-heading font-semibold block leading-tight text-white">{div.label}</span>
+                          <span className="text-[10px] font-body text-white/40 uppercase tracking-wider">{div.tagline}</span>
                         </div>
                       </div>
                       <motion.div
                         animate={{ rotate: mobileExpanded === div.label ? 180 : 0 }}
                         transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
                       >
-                        <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                        <ChevronDown className="w-4 h-4 text-white/40" />
                       </motion.div>
                     </button>
 
@@ -432,14 +428,14 @@ const Header = () => {
                                   onClick={() => setMobileOpen(false)}
                                   className={`py-2.5 px-3 rounded-sm transition-all block ${
                                     isActive(item.href)
-                                      ? "bg-secondary/50"
-                                      : "hover:bg-secondary/30"
+                                      ? "bg-white/10"
+                                      : "hover:bg-white/5"
                                   }`}
                                 >
                                   <span className={`text-sm font-body block leading-tight ${
-                                    isActive(item.href) ? "font-medium text-foreground" : "text-foreground/65"
+                                    isActive(item.href) ? "font-medium text-white" : "text-white/70"
                                   }`}>{item.label}</span>
-                                  <span className="text-[11px] font-body text-muted-foreground/40">{item.desc}</span>
+                                  <span className="text-[11px] font-body text-white/30">{item.desc}</span>
                                 </Link>
                               </motion.div>
                             ))}
@@ -466,9 +462,9 @@ const Header = () => {
                   transition={{ delay: 0.2, duration: 0.3 }}
                   className="flex items-center gap-3 py-2 px-3"
                 >
-                  <div className="flex-1 h-px bg-border/60" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.2em] text-muted-foreground/30">Company</span>
-                  <div className="flex-1 h-px bg-border/60" />
+                  <div className="flex-1 h-px bg-white/10" />
+                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.2em] text-white/30">Company</span>
+                  <div className="flex-1 h-px bg-white/10" />
                 </motion.div>
 
                 {/* ─── Secondary links ─── */}
@@ -484,8 +480,8 @@ const Header = () => {
                       onClick={() => setMobileOpen(false)}
                       className={`py-3 px-3 text-base font-medium rounded-sm transition-all flex items-center gap-2 font-body ${
                         isActive(link.href)
-                          ? "text-foreground bg-secondary/50"
-                          : "text-foreground/65 hover:text-foreground hover:bg-secondary/30"
+                          ? "text-white bg-white/10"
+                          : "text-white/70 hover:text-white hover:bg-white/5"
                       }`}
                     >
                       {link.label}
@@ -501,7 +497,7 @@ const Header = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35, duration: 0.3, ease: HIGHLAND_EASE }}
-                  className="pt-4 mt-2 border-t border-border space-y-2.5"
+                  className="pt-4 mt-2 border-t border-white/10 space-y-2.5"
                 >
                   <Link
                     to="/consultation"
