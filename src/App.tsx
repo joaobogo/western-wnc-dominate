@@ -58,7 +58,6 @@ const RoofingBuilder = lazy(() => import("./pages/RoofingBuilder"));
 const ConstructionBuilder = lazy(() => import("./pages/ConstructionBuilder"));
 const DesignIntake = lazy(() => import("./pages/DesignIntake"));
 
-const DesignIntake = lazy(() => import("./pages/DesignIntake"));
 
 
 const queryClient = new QueryClient();
