@@ -314,9 +314,7 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 active:scale-90 transition-all duration-300 ${
-              scrolled || mobileOpen ? "text-foreground" : "text-white"
-            }`}
+            className="lg:hidden p-2 active:scale-90 transition-all duration-300 text-white"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
