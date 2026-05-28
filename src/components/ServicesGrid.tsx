@@ -136,7 +136,7 @@ const services: FeaturedService[] = [
     icon: Ruler,
     title: "Design & Planning",
     tagline: "Preconstruction thinking",
-    description: "Floor plans, layouts, and scope development that bridge the gap between initial idea and actual construction. Intelligent planning for higher-value projects.",
+    description: "Layouts, floor plans, and project planning support for additions, outdoor living, and scoped residential work.",
     stat: "Concept",
     statLabel: "to construction",
     href: "/layouts-planning",
