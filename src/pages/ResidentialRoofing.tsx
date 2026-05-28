@@ -310,6 +310,34 @@ const ResidentialRoofing = () => {
              </div>
           </div>
         </section>
+        {/* Dual-Division Hub Bridge */}
+        <section className="py-16 bg-secondary/30 border-b border-border">
+          <div className="container-tight">
+             <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                   <h3 className="text-2xl font-heading font-bold text-foreground mb-4">Beyond Roofing Excellence</h3>
+                   <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
+                      Highlander’s project discipline extends into custom additions and renovations. If your roofing project is part of a larger home expansion, our construction team coordinates the entire structural envelope.
+                   </p>
+                   <Link to="/construction" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold uppercase tracking-widest text-[11px] hover:gap-3 transition-all">
+                      Explore Construction Division <ArrowRight className="w-4 h-4" />
+                   </Link>
+                </div>
+                <div className="bg-card border border-border p-8 rounded-sm">
+                   <h4 className="font-heading font-bold text-foreground mb-4 flex items-center gap-2">
+                      <Compass className="w-5 h-5 text-primary" />
+                      Plan Before You Build
+                   </h4>
+                   <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
+                      Avoid surprises with our pre-construction support. We help Western North Carolina homeowners define layout, floor plans, and project scope before breaking ground.
+                   </p>
+                   <Link to="/layouts-planning" className="text-sm font-bold text-primary hover:underline">
+                      Design & Planning Support &rarr;
+                   </Link>
+                </div>
+             </div>
+          </div>
+        </section>
 
         {/* ─── TRUST STRIP ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
