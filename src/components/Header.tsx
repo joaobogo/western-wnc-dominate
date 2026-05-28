@@ -433,9 +433,9 @@ const Header = () => {
                                   }`}
                                 >
                                   <span className={`text-sm font-body block leading-tight ${
-                                    isActive(item.href) ? "font-medium text-foreground" : "text-foreground/65"
+                                    isActive(item.href) ? "font-medium text-white" : "text-white/70"
                                   }`}>{item.label}</span>
-                                  <span className="text-[11px] font-body text-muted-foreground/40">{item.desc}</span>
+                                  <span className="text-[11px] font-body text-white/30">{item.desc}</span>
                                 </Link>
                               </motion.div>
                             ))}
