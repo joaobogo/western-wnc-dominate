@@ -339,7 +339,80 @@ If damage affects more than 30% of the roof area, or if the roof is past 75% of 
 We'll inspect your Highlands home, assess the full roof system, and give you an honest recommendation. No pressure, no upsell. Call (828) 397-9211.`,
   },
   {
+    slug: "mountain-home-addition-planning",
+    title: "Planning a Home Addition in WNC: Technical Hurdles to Solve First",
+    excerpt: "Building on a mountain slope requires more than just a footprint. Learn the unique engineering and permitting steps for WNC additions.",
+    category: "Construction",
+    date: "2026-03-01",
+    readTime: "8 min",
+    metaTitle: "WNC Home Addition Planning Guide | Highlander Construction",
+    metaDescription: "Planning an addition in Western NC? Learn about terrain engineering, permitting, and structural integration from mountain building experts.",
+    content: `Adding square footage to a mountain home is one of the most rewarding investments you can make — but it's also one of the most technically demanding. Unlike building on flat land, WNC additions require a deeper level of planning before the first board is cut.
+
+## 1. Terrain and Soil Engineering
+Highlands and Cashiers terrain often means building on significant slopes. We start by assessing the structural feasibility of your lot. Will you need a daylight basement foundation? A pier system? Soil stability is the silent driver of your addition's budget.
+
+## 2. Integrating with Existing Structures
+An addition shouldn't look like an after-thought. We focus on 'structural flow' — ensuring the new rooflines tie in perfectly and the interior layout makes logical sense with your current floor plan.
+
+## 3. HVAC and Utility Capacity
+Don't assume your current system can handle another 500 square feet. We evaluate your septic capacity (critical for bedroom additions in WNC) and HVAC load early in the design phase.
+
+## 4. Permitting and Zoning
+Every county — Macon, Jackson, Haywood — has unique rules for setbacks, impervious surface limits, and mountain-ridge protections. We handle the coordination to ensure your plan is fully compliant before work starts.
+
+## How Highlander Helps
+Our Design & Planning branch exists to solve these hurdles before they become expensive change orders. We bridge the gap between your vision and a buildable project roadmap.`
+  },
+  {
+    slug: "outdoor-living-trends-wnc",
+    title: "Mountain-Grade Outdoor Living: Decks, Porches & Pergolas in 2026",
+    excerpt: "The best outdoor spaces in WNC prioritize three things: view, weather protection, and material longevity. Explore what's working now.",
+    category: "Construction",
+    date: "2026-02-25",
+    readTime: "6 min",
+    metaTitle: "WNC Outdoor Living Trends 2026 | Highlander Construction",
+    metaDescription: "Design the perfect mountain outdoor space. Trends in decks, screened porches, and pergolas for Western NC homes.",
+    content: `Outdoor living is why we live in Western North Carolina. But a deck in Sylva needs to handle different conditions than one in Highlands. Here's how we design for mountain longevity.
+
+## Screened-In vs. Open Air
+WNC weather can be unpredictable. Many clients are opting for 'hybrid' spaces — large open decks for grilling combined with timber-frame screened porches for bug-free evenings.
+
+## High-Performance Materials
+Standard pressure-treated lumber has its place, but for low-maintenance mountain living, we're seeing a massive shift toward capped composites and Ipe (Brazilian Walnut) that can handle WNC's moisture levels without rotting.
+
+## Heating the Outdoors
+Extending your outdoor season into November is a top request. We integrate recessed ceiling heaters, stone hearths, and fire features directly into the project plan.
+
+## Lighting for Atmosphere
+Subtle LED lighting integrated into railings and stair treads isn't just for safety — it transforms your space after the sun sets behind the ridges.`
+  },
+  {
+    slug: "why-design-planning-matters",
+    title: "Why 'Design & Planning' is the Secret to a Stress-Free Build",
+    excerpt: "Most construction delays happen because of poor planning, not poor building. Discover the Highlander pre-construction process.",
+    category: "Construction",
+    date: "2026-02-18",
+    readTime: "5 min",
+    metaTitle: "Importance of Pre-Construction Planning | Highlander",
+    metaDescription: "Why detailed design and planning is critical for mountain construction. Avoid budget creep and timeline delays with our disciplined approach.",
+    content: `At Highlander, we say: 'Measure twice, plan once, build forever.' The Design & Planning branch is our commitment to eliminating the 'surprises' that give the construction industry a bad name.
+
+## The Gap Between 'Idea' and 'Estimate'
+Most contractors give a quote based on a verbal description. We give a scope based on a documented plan. By defining floor plans and layouts first, we ensure everyone is looking at the same target.
+
+## Eliminating Decision Fatigue
+Our planning process helps you pick materials, finishes, and structural directions before the noise of construction starts. This keeps your project on schedule because the roadmap is already signed off.
+
+## Structural Logic
+Especially in additions, we solve the 'how does this tie in' question early. We account for load-bearing walls, roof pitches, and drainage paths before they become an issue on-site.
+
+## A Better Way to Build
+If you're planning a project in WNC, don't just ask for a plan. It's the difference between a project that finishes on time and one that lingers for months.`
+  },
+  {
     slug: "roof-inspection-what-to-expect",
+
     title: "What to Expect During a Free Roof Inspection in WNC",
     excerpt: "Never had a professional roof inspection? Here's exactly what our team looks at — and what you'll receive afterward.",
     category: "Inspections",

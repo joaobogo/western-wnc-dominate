@@ -84,8 +84,11 @@ const Index = () => {
 
         <SectionDivider variant="heritage-bar" />
 
-        {/* 6. BuiltForWNC — local authority */}
-        <BuiltForWNC />
+        <div className="relative overflow-hidden">
+          <TartanBackground opacity={0.02} patternSize="600px auto" />
+          <BuiltForWNC />
+        </div>
+
 
         {/* 7. OurProcess — how we work */}
         <OurProcess />
