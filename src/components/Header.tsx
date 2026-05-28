@@ -64,6 +64,7 @@ const divisions: DivisionDropdown[] = [
   },
 ];
 
+
 const secondaryLinks = [
   { label: "Projects", href: "/gallery" },
   { label: "Service Areas", href: "/service-areas" },
