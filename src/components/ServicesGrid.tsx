@@ -133,14 +133,14 @@ const services: FeaturedService[] = [
     accent: "gold",
   },
   {
-    icon: HomeIcon,
-    title: "Custom Projects",
-    tagline: "Design-build. Single point of contact.",
-    description: "Complex builds, design partnerships, and complete property transformations — from initial drawings through final walkthrough and warranty handoff.",
-    stat: "Full",
-    statLabel: "design-build scope",
-    href: "/construction/custom",
-    image: metal10,
+    icon: Ruler,
+    title: "Design & Planning",
+    tagline: "Preconstruction thinking",
+    description: "Floor plans, layouts, and scope development that bridge the gap between initial idea and actual construction. Intelligent planning for higher-value projects.",
+    stat: "Concept",
+    statLabel: "to construction",
+    href: "/layouts-planning",
+    image: asphaltImg, // Placeholder - consider if a more 'planning' oriented image exists
     accent: "gold",
   },
 ];
