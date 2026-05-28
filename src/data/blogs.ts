@@ -352,7 +352,29 @@ We'll inspect your Highlands home, assess the full roof system, and give you an 
 ## 1. Terrain and Soil Engineering
 Highlands and Cashiers terrain often means building on significant slopes. We start by assessing the structural feasibility of your lot. Will you need a daylight basement foundation? A pier system? Soil stability is the silent driver of your addition's budget.
 
-## 2. Integrating with Existing Structures
+  {
+    slug: "mountain-porch-deck-design-wnc",
+    title: "Mountain Porch & Deck Design: Maximize Your WNC View",
+    excerpt: "How to choose the right orientation, materials, and layout for outdoor living spaces that survive mountain weather.",
+    category: "Construction",
+    date: "2026-03-15",
+    readTime: "6 min",
+    metaTitle: "Porch & Deck Design for WNC Homes | Highlander Construction",
+    metaDescription: "Expert tips for designing porches and decks in Western NC. Orientation, materials, and mountain-view optimization.",
+    content: `Outdoor living in the Blue Ridge Mountains is about more than just square footage — it's about framing the view while protecting your investment from harsh seasonal changes.`
+  },
+  {
+    slug: "planning-your-mountain-home-layout",
+    title: "Planning Your Mountain Home Layout: Flow, Views, and Function",
+    excerpt: "A guide to project planning and layout design for additions and renovations in Western North Carolina.",
+    category: "Construction",
+    date: "2026-03-20",
+    readTime: "7 min",
+    metaTitle: "Mountain Home Layout Planning | Highlander Design",
+    metaDescription: "Plan your mountain home addition layout for better flow and views. Expert design guidance from Highlander.",
+    content: `Before you build, you must plan. Designing a layout for a mountain home requires balancing the natural topography with your family's daily flow.`
+  },
+
 An addition shouldn't look like an after-thought. We focus on 'structural flow' — ensuring the new rooflines tie in perfectly and the interior layout makes logical sense with your current floor plan.
 
 ## 3. HVAC and Utility Capacity
