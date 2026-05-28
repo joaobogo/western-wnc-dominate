@@ -377,8 +377,8 @@ const Header = () => {
                       onClick={() => setMobileExpanded(mobileExpanded === div.label ? null : div.label)}
                       className={`w-full py-3 px-3 rounded-sm transition-all duration-200 flex items-center justify-between ${
                         isActive(div.href)
-                          ? "text-foreground bg-secondary/50"
-                          : "text-foreground hover:bg-secondary/30"
+                          ? "text-white bg-white/10"
+                          : "text-white/90 hover:bg-white/5"
                       }`}
                     >
                       <div className="flex items-center gap-3">
