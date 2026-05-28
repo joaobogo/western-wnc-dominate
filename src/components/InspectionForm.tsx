@@ -384,6 +384,7 @@ const InspectionForm = () => {
                                   <option value="not-sure">Not Sure Yet — Need Guidance</option>
                                 </optgroup>
                               </select>
+
                             </div>
                             <div>
                               <label htmlFor="timeline" className={labelClasses}>

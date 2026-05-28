@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
-import { Phone, Shield, Award, Clock, MapPin } from "lucide-react";
+import { Phone, Shield, Award, Clock, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+
 
 type Props = {
   eyebrow: string;
@@ -66,26 +67,46 @@ const IntakeShell = ({
             </div>
 
             {/* Phone alt path */}
-            <a
-              href="tel:8283979211"
-              className="inline-flex items-center gap-2.5 text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-semibold text-[14px]"
-            >
-              <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-              Prefer to talk? (828) 397-9211
-            </a>
-
-            {/* Cross-link to the other intake */}
             <div className="mt-8 pt-6 border-t border-border/60">
               <p className="text-[11px] font-body uppercase tracking-[0.18em] text-foreground/40 mb-2">
-                Wrong form?
+                Prefer to talk?
               </p>
-              <Link
-                to={otherIntakeHref}
-                className="text-[13px] font-body font-medium text-foreground/70 hover:text-[hsl(var(--highland-gold))] transition-colors"
+              <a
+                href="tel:8283979211"
+                className="inline-flex items-center gap-2.5 text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-semibold text-[14px]"
               >
-                Switch to {otherIntakeLabel} →
-              </Link>
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                (828) 397-9211
+              </a>
             </div>
+
+            {/* Cross-link to other intakes */}
+            <div className="mt-6 pt-6 border-t border-border/60">
+              <p className="text-[11px] font-body uppercase tracking-[0.18em] text-foreground/40 mb-3">
+                Need a different form?
+              </p>
+              <div className="flex flex-col gap-2">
+                <Link
+                  to="/roofing-intake"
+                  className="text-[13px] font-body font-medium text-foreground/70 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-2"
+                >
+                  Roofing Intake <ArrowRight className="w-3 h-3" />
+                </Link>
+                <Link
+                  to="/construction-intake"
+                  className="text-[13px] font-body font-medium text-foreground/70 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-2"
+                >
+                  Construction Intake <ArrowRight className="w-3 h-3" />
+                </Link>
+                <Link
+                  to="/design-intake?mode=long"
+                  className="text-[13px] font-body font-medium text-foreground/70 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-2"
+                >
+                  Design & Planning Intake <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+
           </aside>
 
           {/* === Form column === */}
