@@ -123,11 +123,8 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled || mobileOpen
-          ? "bg-white/95 backdrop-blur-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] border-b border-black/5"
-          : "bg-transparent border-b border-white/5"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] border-b border-black/5"
+
     >
 
       {/* ─── Main nav bar ─── */}
@@ -157,9 +154,10 @@ const Header = () => {
                 to={div.href}
                 className={`relative text-[13px] font-semibold transition-all duration-300 inline-flex items-center gap-1 px-3.5 py-2 rounded-sm font-body ${
                   isActive(div.href)
-                    ? (scrolled ? "text-heritage-charcoal bg-black/5" : "text-white bg-white/10")
-                    : (scrolled ? "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5" : "text-white/80 hover:text-white hover:bg-white/10")
+                    ? "text-heritage-charcoal bg-black/5"
+                    : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"
                 }`}
+
               >
                 {div.label}
                 <motion.div
@@ -265,7 +263,7 @@ const Header = () => {
           ))}
 
           {/* Separator dot */}
-          <span className={`w-px h-4 mx-1 transition-colors duration-300 ${scrolled ? "bg-black/10" : "bg-white/20"}`} />
+          <span className="w-px h-4 mx-1 transition-colors duration-300 bg-black/10" />
 
           {/* Secondary links */}
           {secondaryLinks.map((link) => (
@@ -274,9 +272,10 @@ const Header = () => {
               to={link.href}
               className={`relative text-[13px] font-medium transition-all duration-300 px-3 py-2 rounded-sm font-body ${
                 isActive(link.href)
-                  ? (scrolled ? "text-heritage-charcoal bg-black/5" : "text-white bg-white/10")
-                  : (scrolled ? "text-heritage-charcoal/60 hover:text-heritage-charcoal hover:bg-black/5" : "text-white/60 hover:text-white hover:bg-white/10")
+                  ? "text-heritage-charcoal bg-black/5"
+                  : "text-heritage-charcoal/60 hover:text-heritage-charcoal hover:bg-black/5"
               }`}
+
             >
               {link.label}
               {isActive(link.href) && (
@@ -294,7 +293,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <a
             href="tel:8283979211"
-            className={`hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 ${scrolled ? "text-heritage-charcoal/60 hover:text-heritage-charcoal" : "text-white/60 hover:text-white"}`}
+            className="hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 text-heritage-charcoal/60 hover:text-heritage-charcoal"
           >
             <Phone className="w-3.5 h-3.5" />
             <span className="hidden xl:inline">(828) 397-9211</span>
@@ -314,7 +313,7 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 active:scale-90 transition-all duration-300 ${scrolled || mobileOpen ? "text-heritage-charcoal" : "text-white"}`}
+            className="lg:hidden p-2 active:scale-90 transition-all duration-300 text-heritage-charcoal"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
