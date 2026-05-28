@@ -40,8 +40,16 @@ const ServiceAreas = () => {
       <Header />
       <main>
         {/* ═══ HERO — Map-centric, local pride ═══ */}
-        <section className="relative section-dark overflow-hidden">
-          <div className="absolute inset-0 tartan-dark" />
+        <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0 section-dark">
+            <img 
+              src="https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" 
+              alt="The mountains of Western North Carolina"
+              className="w-full h-full object-cover opacity-30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+            <div className="absolute inset-0 tartan-dark opacity-10" />
+          </div>
           <MountainContours variant="dark" opacity={0.05} />
           <div className="relative z-10 pt-32 md:pt-40 pb-16 md:pb-20 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
