@@ -103,6 +103,59 @@ const About = () => {
           </div>
         </section>
 
+        {/* ── MEET THE TEAM — Personal & Accountable ── */}
+        <section className="section-padding bg-background relative overflow-hidden">
+          <div className="container-tight">
+            <div className="grid lg:grid-cols-12 gap-12 items-end mb-16">
+              <div className="lg:col-span-7">
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                  <span className="eyebrow mb-3 block">Highlander People</span>
+                  <h2 className="section-heading mb-6">Local People.<br />Mountain Standards.</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed font-body max-w-xl">
+                    A family-owned company is only as strong as the people who show up on your property. 
+                    Meet the specialists dedicated to protecting and improving Western North Carolina homes.
+                  </p>
+                </motion.div>
+              </div>
+              <div className="lg:col-span-5 flex lg:justify-end">
+                <Link to="/team" className="group inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors duration-300">
+                  Meet the Entire Team
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { name: "Luke", role: "Owner & Lead Advisor", desc: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values." },
+                { name: "Christy", role: "Director of Operations", desc: "The engine behind the scenes, ensuring the 'Highlander Standard' is met from first call to final walkthrough." },
+                { name: "Javier", role: "Roofing Division Lead", desc: "Leads our roofing crews with manufacturer-exact precision, specializing in complex metal and synthetic systems." },
+                { name: "Miguel", role: "Construction Foreman", desc: "Translates design layouts into buildable reality for additions and outdoor living spaces." },
+              ].map((person, i) => (
+                <motion.div 
+                  key={person.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className="group bg-secondary/30 border border-border p-6 rounded-none hover:border-[hsl(var(--highland-gold)/0.3)] transition-all duration-300"
+                >
+                  <div className="aspect-square mb-6 bg-muted flex items-center justify-center relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <Users className="w-10 h-10 text-muted-foreground/20" />
+                    <div className="absolute bottom-3 left-0 right-0 text-center">
+                      <span className="text-[8px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/30">Photo Coming Soon</span>
+                    </div>
+                  </div>
+                  <h3 className="font-heading font-bold text-lg mb-1">{person.name}</h3>
+                  <p className="text-[hsl(var(--highland-gold))] font-heading font-semibold text-[11px] uppercase tracking-wider mb-3">{person.role}</p>
+                  <p className="text-muted-foreground text-[13px] leading-relaxed line-clamp-3 font-body">{person.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
 
         {/* ── BRAND STORY — Two-column editorial ── */}
         <section className="section-padding bg-secondary relative">

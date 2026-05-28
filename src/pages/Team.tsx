@@ -12,51 +12,38 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const leadership = [
   {
-    name: "Caleb R.",
-    role: "Owner & General Contractor",
-    bio: "With over a decade of experience in WNC construction, Caleb leads Highlander with a focus on mountain building science and client accountability.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
-    credentials: ["NC Licensed GC", "CertainTeed Master Applicator", "VELUX Certified"]
+    name: "Luke",
+    role: "Owner & Lead Advisor",
+    bio: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values. Luke oversees the strategic direction of both Roofing and Construction divisions.",
+    image: "", // Placeholder treatment will handle empty string
+    credentials: ["NC Licensed GC", "CertainTeed Master Applicator", "WNC Native"]
   },
   {
-    name: "Sarah R.",
+    name: "Christy",
     role: "Director of Operations",
-    bio: "Sarah ensures the 'Highlander Standard' is met behind the scenes, managing project timelines and family-business values since day one.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
-    credentials: ["Client Experience Lead", "Accounting", "Strategic Planning"]
+    bio: "The engine behind the scenes. Christy manages project sequencing, client coordination, and ensures the 'Highlander Standard' is met from first call to final walkthrough.",
+    image: "",
+    credentials: ["Project Coordination", "Client Experience", "Operational Excellence"]
   }
 ];
 
 const teamMembers = [
   {
-    name: "Jason M.",
+    name: "Javier",
     role: "Roofing Division Lead",
-    specialty: "Metal & Synthetic Specialist",
-    bio: "Jason oversees every roofing project in Franklin and Highlands, ensuring manufacturer-exact installation protocols are followed.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800"
+    specialty: "System Installation & QC",
+    bio: "With years of ridgetop experience, Javier leads our roofing crews with manufacturer-exact precision, specializing in complex metal and synthetic slate systems.",
+    image: ""
   },
   {
-    name: "Dustin S.",
-    role: "Construction Project Manager",
-    specialty: "Additions & Outdoor Living",
-    bio: "Dustin manages our complex builds, coordinating between design intent and structural execution on the ground.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    name: "Maria G.",
-    role: "Design & Planning Advisor",
-    specialty: "Layouts & Scope Definition",
-    bio: "Maria helps clients bridge the gap between initial ideas and a buildable project roadmap.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    name: "Travis H.",
-    role: "Storm Response Coordinator",
-    specialty: "Insurance Claims & Emergency Repairs",
-    bio: "Travis is the first on-site after weather events, helping homeowners navigate the insurance process with technical proof.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800"
+    name: "Miguel",
+    role: "Construction Foreman",
+    specialty: "Framing & Structural Execution",
+    bio: "Miguel translates design layouts into buildable reality. He manages on-site construction for additions and outdoor living spaces with obsessive attention to detail.",
+    image: ""
   }
 ];
+
 
 const Team = () => {
   return (
@@ -125,9 +112,17 @@ const Team = () => {
                   transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
                   className="flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <div className="w-full md:w-48 lg:w-56 aspect-square overflow-hidden bg-secondary border border-border">
-                    <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                  <div className="w-full md:w-48 lg:w-56 aspect-square overflow-hidden bg-muted flex items-center justify-center border border-border relative">
+                    {person.image ? (
+                      <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                    ) : (
+                      <div className="text-center p-4">
+                        <Users className="w-8 h-8 text-muted-foreground/30 mx-auto mb-2" />
+                        <span className="text-[9px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground/40">Waiting for<br />Team Photo</span>
+                      </div>
+                    )}
                   </div>
+
                   <div className="flex-1">
                     <h3 className="text-2xl font-heading font-bold mb-1">{person.name}</h3>
                     <p className="text-[hsl(var(--highland-gold))] font-heading font-semibold text-sm mb-4 uppercase tracking-wider">{person.role}</p>
@@ -167,9 +162,17 @@ const Team = () => {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="group bg-card border border-border overflow-hidden hover:border-primary/20 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                  <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center relative">
+                    {person.image ? (
+                      <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                    ) : (
+                      <div className="text-center p-6">
+                        <Users className="w-10 h-10 text-muted-foreground/20 mx-auto mb-3" />
+                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/30">Photo Coming Soon</span>
+                      </div>
+                    )}
                   </div>
+
                   <div className="p-6">
                     <h3 className="text-lg font-heading font-bold mb-1">{person.name}</h3>
                     <p className="text-primary font-heading font-bold text-[11px] uppercase tracking-[0.15em] mb-4">{person.role}</p>
