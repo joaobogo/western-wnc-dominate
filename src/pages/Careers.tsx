@@ -1,18 +1,27 @@
-import { motion } from "framer-motion";
-import { Phone, CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Phone, CheckCircle, Upload, Send, Users, ShieldCheck, Mountain, HardHat, Briefcase } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const benefits = [
-  "Competitive pay",
-  "Year-round work",
-  "Paid training and certifications",
-  "Growth opportunities",
-  "Family-owned culture",
-  "Work in the beautiful WNC mountains",
+  { title: "Competitive Pay", desc: "Industry-leading wages based on skill and local mountain experience.", icon: ShieldCheck },
+  { title: "Year-Round Work", desc: "No seasonal layoffs. We keep our core crews busy 12 months a year.", icon: Mountain },
+  { title: "Training & Certs", desc: "Paid manufacturer certifications (GAF, CertainTeed) to advance your career.", icon: HardHat },
+  { title: "Family Culture", desc: "Work for a local owner who knows your name and values your time.", icon: Users },
 ];
+
+const openRoles = [
+  "Roofing Crew / Installer (Asphalt & Metal)",
+  "Crew Lead / Roofing Foreman",
+  "Construction Lead (Additions & Decks)",
+  "Project Manager / Coordinator",
+  "Sales Advisor / Estimator",
+];
+
 
 const Careers = () => {
   return (
