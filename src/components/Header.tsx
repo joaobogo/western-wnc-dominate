@@ -294,9 +294,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <a
             href="tel:8283979211"
-            className={`hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 ${
-              scrolled || mobileOpen ? "text-foreground/55 hover:text-foreground" : "text-white/60 hover:text-white"
-            }`}
+            className={`hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 text-white/60 hover:text-white`}
           >
             <Phone className="w-3.5 h-3.5" />
             <span className="hidden xl:inline">(828) 397-9211</span>
