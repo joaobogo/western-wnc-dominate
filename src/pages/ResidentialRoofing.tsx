@@ -266,6 +266,51 @@ const ResidentialRoofing = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
+                className="mt-10 flex items-center gap-6"
+              >
+                {[
+                  { icon: Award, label: "CertainTeed Master Applicator" },
+                  { icon: ShieldCheck, label: "Licensed & Insured" },
+                  { icon: Star, label: "4.9★ Local Rating" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-2">
+                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
+                    <span className="text-[10px] font-body text-primary-foreground/40 uppercase tracking-widest">{item.label}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Local Markets Navigation — SEO Expansion */}
+        <section className="py-12 bg-background border-b border-border">
+          <div className="container-tight">
+             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-3">
+                   <div className="w-10 h-[1px] bg-primary/20" />
+                   <span className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground/60">Serving Local Markets</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                   {[
+                      { name: "Highlands", slug: "highlands-nc" },
+                      { name: "Cashiers", slug: "cashiers-nc" },
+                      { name: "Franklin", slug: "franklin-nc" },
+                      { name: "Sylva", slug: "sylva-nc" },
+                      { name: "Waynesville", slug: "waynesville-nc" }
+                   ].map(town => (
+                      <Link key={town.slug} to={`/service-areas/${town.slug}`} className="text-xs font-bold text-foreground/60 hover:text-primary transition-colors uppercase tracking-widest underline underline-offset-4 decoration-border">
+                         {town.name}
+                      </Link>
+                   ))}
+                </div>
+                <Link to="/service-areas" className="text-xs font-bold text-primary flex items-center gap-1.5 uppercase tracking-widest">
+                   All Areas <ArrowRight className="w-3 h-3" />
+                </Link>
+             </div>
+          </div>
+        </section>
+
                 className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-white/10"
               >
                 {[
