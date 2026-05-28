@@ -15,7 +15,7 @@ import TownProofBlock from "@/components/TownProofBlock";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
-const marketVisualImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000";
+const marketVisualImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
 const localPlanningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000";
 
 import { services } from "@/data/services";
