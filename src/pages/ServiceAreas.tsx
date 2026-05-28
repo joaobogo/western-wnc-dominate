@@ -4,6 +4,8 @@ import { MapPin, ArrowRight, Phone, Shield, Award, Mountain, Compass, Users, Sta
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TartanBackground from "@/components/TartanBackground";
+
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { MountainContours } from "@/components/motion/BackgroundTexture";
 import { towns } from "@/data/towns";
@@ -48,8 +50,9 @@ const ServiceAreas = () => {
               className="w-full h-full object-cover opacity-30"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
-            <div className="absolute inset-0 tartan-dark opacity-10" />
+            <TartanBackground opacity={0.15} variant="dark" />
           </div>
+
           <MountainContours variant="dark" opacity={0.05} />
           <div className="relative z-10 pt-32 md:pt-40 pb-16 md:pb-20 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
