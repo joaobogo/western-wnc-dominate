@@ -137,7 +137,7 @@ const Header = () => {
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className={`w-auto transition-all duration-500 ${!scrolled && !mobileOpen ? "brightness-0 invert" : ""}`}
+            className="w-auto transition-all duration-500"
             animate={{ height: scrolled ? 92 : 124 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
