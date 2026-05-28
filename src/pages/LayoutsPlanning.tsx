@@ -281,9 +281,21 @@ const LayoutsPlanning = () => {
               <p className="text-white/60 text-lg leading-relaxed font-body mx-auto max-w-2xl">
                 This branch exists to strengthen our construction work. By defining layout, floor plans, and project scope before build scope is finalized, we eliminate the ambiguities that typically cause delays or budget creep. You get a clearer plan, and our build teams get a meticulous roadmap for execution.
               </p>
+              <div className="mt-10 flex flex-wrap justify-center gap-6">
+                 <Link to="/construction/additions" className="group flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">
+                    Additions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all" />
+                 </Link>
+                 <Link to="/construction/outdoor-living" className="group flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">
+                    Outdoor Living <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all" />
+                 </Link>
+                 <Link to="/construction/renovations" className="group flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">
+                    Renovations <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all" />
+                 </Link>
+              </div>
             </ScrollReveal>
           </div>
         </section>
+
 
         {/* 6. The process */}
         <section className="section-padding bg-background">
