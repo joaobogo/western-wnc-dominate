@@ -265,7 +265,7 @@ const Header = () => {
           ))}
 
           {/* Separator dot */}
-          <span className={`w-px h-4 mx-1 transition-colors duration-300 bg-white/20`} />
+          <span className={`w-px h-4 mx-1 transition-colors duration-300 ${scrolled ? "bg-black/10" : "bg-white/20"}`} />
 
           {/* Secondary links */}
           {secondaryLinks.map((link) => (
@@ -274,8 +274,8 @@ const Header = () => {
               to={link.href}
               className={`relative text-[13px] font-medium transition-all duration-300 px-3 py-2 rounded-sm font-body ${
                 isActive(link.href)
-                  ? "text-white bg-white/10"
-                  : "text-white/60 hover:text-white hover:bg-white/10"
+                  ? (scrolled ? "text-heritage-charcoal bg-black/5" : "text-white bg-white/10")
+                  : (scrolled ? "text-heritage-charcoal/60 hover:text-heritage-charcoal hover:bg-black/5" : "text-white/60 hover:text-white hover:bg-white/10")
               }`}
             >
               {link.label}
