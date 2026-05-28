@@ -123,23 +123,23 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled || mobileOpen
           ? "bg-white/98 backdrop-blur-xl shadow-[0_1px_12px_-4px_hsl(var(--heritage-charcoal)/0.08)] border-b border-border"
-          : "bg-white border-b border-border/60"
+          : "bg-transparent border-b border-white/5"
       }`}
     >
 
       {/* ─── Main nav bar ─── */}
-      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-300 ${scrolled ? "py-1.5" : "py-2"}`}>
+      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-1.5" : "py-3 md:py-4"}`}>
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className="w-auto"
-            animate={{ height: scrolled ? 98 : 132 }}
-            transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
+            className={`w-auto transition-all duration-500 ${!scrolled && !mobileOpen ? "brightness-0 invert" : ""}`}
+            animate={{ height: scrolled ? 92 : 124 }}
+            transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>
 
