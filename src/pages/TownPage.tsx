@@ -16,6 +16,7 @@ import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 const marketVisualImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
+const localPlanningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000";
 
 import { services } from "@/data/services";
 import { localBlogTopics } from "@/data/local-blog-topics";
@@ -270,9 +271,14 @@ const TownPage = () => {
                    </div>
                 </div>
 
-                <Link to="/layouts-planning" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.2)] pb-1">
+                <Link to="/layouts-planning" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.2)] pb-1 mb-8">
                   Design & Planning Support <ArrowRight className="w-4 h-4" />
                 </Link>
+                
+                <div className="relative aspect-[16/5] overflow-hidden border border-border">
+                   <img src={localPlanningImg} alt="Local project design and planning" className="w-full h-full object-cover grayscale opacity-20 hover:opacity-40 transition-opacity duration-700" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                </div>
               </div>
             </div>
           </div>

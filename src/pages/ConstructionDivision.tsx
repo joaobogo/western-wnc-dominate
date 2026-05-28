@@ -31,7 +31,8 @@ import {
 
 import heroImg from "@/assets/gallery/cedar-001.jpg";
 const divisionContextImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
-const constructionDetailImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000";
+const constructionDetailImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000"; // Measured drawing / planning detail
+const planningFocusImg = "https://images.unsplash.com/photo-1581439645268-ad7bb4cfcebb?auto=format&fit=crop&q=80&w=2000"; // Scope/planning table
 const siteCoordinationImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000";
 const wncTerrainImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
 
@@ -234,8 +235,11 @@ const ConstructionDivision = () => {
                   <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[240px]">
                     <span className="text-xs font-heading font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
                     <p className="text-muted-foreground text-xs font-body leading-snug">
-                      Roof-to-structure coordination, weatherproofing continuity, and unified accountability — under one team.
+                      Design-first coordination, layout verification, and unified accountability — under one team.
                     </p>
+                    <div className="mt-4 relative aspect-video overflow-hidden border border-border">
+                       <img src={planningFocusImg} alt="Project scoping and planning" className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
+                    </div>
                   </motion.div>
                 </motion.div>
               </div>
