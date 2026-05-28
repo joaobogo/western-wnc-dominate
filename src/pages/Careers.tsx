@@ -54,20 +54,54 @@ const Careers = () => {
               ))}
             </ul>
 
-            <div className="bg-secondary rounded-lg p-8">
-              <h3 className="text-xl font-heading font-bold text-foreground mb-4">Get in Touch</h3>
-              <p className="text-muted-foreground mb-4">
-                We're hiring experienced roofers, laborers, and crew leads. Call us or email to learn about current openings.
+            <div className="bg-secondary p-8 mb-16 border border-border">
+              <h3 className="text-xl font-heading font-bold text-foreground mb-6">Apply Now</h3>
+              <form className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Full Name</label>
+                    <input type="text" className="w-full bg-background border border-border p-3 text-sm focus:border-primary outline-none" placeholder="John Doe" />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Phone Number</label>
+                    <input type="tel" className="w-full bg-background border border-border p-3 text-sm focus:border-primary outline-none" placeholder="(828) 000-0000" />
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Position of Interest</label>
+                  <select className="w-full bg-background border border-border p-3 text-sm focus:border-primary outline-none appearance-none">
+                    <option>Roofing Crew / Installer</option>
+                    <option>Crew Lead / Foreman</option>
+                    <option>Construction Lead</option>
+                    <option>Project Manager</option>
+                    <option>Sales / Estimator</option>
+                  </select>
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Experience Summary</label>
+                  <textarea rows={3} className="w-full bg-background border border-border p-3 text-sm focus:border-primary outline-none" placeholder="Briefly describe your years of experience and relevant skills." />
+                </div>
+                <button type="button" onClick={() => {}} className="w-full bg-primary text-primary-foreground font-bold py-4 hover:opacity-95 transition-opacity">
+                  Submit Application
+                </button>
+              </form>
+            </div>
+
+            <div className="bg-card border border-border p-8">
+              <h3 className="text-xl font-heading font-bold text-foreground mb-4">Other Ways to Connect</h3>
+              <p className="text-muted-foreground mb-6 font-body">
+                We're always hiring experienced roofers, laborers, and crew leads. Call us or visit our Franklin office to learn about current openings.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:8283979211" className="bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <a href="tel:8283979211" className="bg-secondary text-foreground font-semibold px-6 py-3 border border-border inline-flex items-center justify-center gap-2 hover:bg-muted transition-colors">
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
-                <a href="mailto:info@highlandernc.com" className="border border-border text-foreground font-semibold px-6 py-3 rounded-md inline-flex items-center justify-center hover:bg-muted transition-colors">
+                <a href="mailto:info@highlandernc.com" className="border border-border text-foreground font-semibold px-6 py-3 inline-flex items-center justify-center hover:bg-muted transition-colors">
                   info@highlandernc.com
                 </a>
               </div>
             </div>
+
           </div>
         </section>
       </main>
