@@ -462,9 +462,9 @@ const Header = () => {
                   transition={{ delay: 0.2, duration: 0.3 }}
                   className="flex items-center gap-3 py-2 px-3"
                 >
-                  <div className="flex-1 h-px bg-white/10" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.2em] text-white/30">Company</span>
-                  <div className="flex-1 h-px bg-white/10" />
+                  <div className="flex-1 h-px bg-black/10" />
+                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/30">Company</span>
+                  <div className="flex-1 h-px bg-black/10" />
                 </motion.div>
 
                 {/* ─── Secondary links ─── */}
