@@ -266,6 +266,8 @@ const LayoutsPlanning = () => {
         {/* 5. How it connects to construction */}
         <section className="section-padding bg-primary tartan-dark relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-[0.05] mix-blend-overlay" />
+
           <div className="container-tight max-w-4xl text-center relative z-10">
             <ScrollReveal>
               <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] mb-6 block">The Build Connection</span>

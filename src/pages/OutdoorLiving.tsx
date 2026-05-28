@@ -175,7 +175,11 @@ const OutdoorLiving = () => {
         </section>
 
         {/* ─── OPENING — Experiential with generous whitespace ─── */}
-        <section className="py-20 md:py-28 bg-background">
+        <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Timber frame detail" className="w-full h-full object-cover" />
+          </div>
+
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <Sun className="w-6 h-6 text-[hsl(var(--highland-gold)/0.3)] mx-auto mb-8" />

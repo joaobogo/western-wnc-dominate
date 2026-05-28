@@ -242,7 +242,11 @@ const HomeAdditions = () => {
         </section>
 
         {/* ─── EXPANSION TYPES ─── */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-background relative overflow-hidden">
+          <div className="absolute right-0 top-0 w-1/3 h-full opacity-[0.03] pointer-events-none hidden lg:block">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="Home architecture" className="w-full h-full object-cover" />
+          </div>
+
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Addition Types</span>
