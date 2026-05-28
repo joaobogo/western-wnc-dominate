@@ -363,6 +363,21 @@ const InspectionForm = () => {
                                 onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                                 className={inputClasses}
                               >
+                                <option value="">Select an option</option>
+                                <option value="replacement">Roof Replacement</option>
+                                <option value="repair">Roof Repair</option>
+                                <option value="storm">Storm Damage Assessment</option>
+                                <option value="metal">Metal Roofing</option>
+                                <option value="synthetic">Brava / Synthetic</option>
+                                <option value="addition">Home Addition</option>
+                                <option value="outdoor">Outdoor Living / Deck / Porch</option>
+                                <option value="planning">Design & Planning Support</option>
+                                <option value="other">Other / Custom</option>
+                              </select>
+
+                                onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                                className={inputClasses}
+                              >
                                 <option value="">Select project type</option>
                                 <optgroup label="Roofing">
                                   <option value="roof-assessment">Roof Assessment</option>
