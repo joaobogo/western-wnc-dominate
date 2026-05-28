@@ -299,9 +299,9 @@ const RoofingDivision = () => {
                   initial={{ y: "110%" }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight"
                 >
-                  Mountain-Grade Roofing.
+                  Premium Roofing.
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
@@ -309,9 +309,9 @@ const RoofingDivision = () => {
                   initial={{ y: "110%" }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight"
                 >
-                  Built to Outlast the Weather.
+                  Built for the <span className="text-[hsl(var(--highland-gold))]">High Country.</span>
                 </motion.h1>
               </div>
 
@@ -319,11 +319,9 @@ const RoofingDivision = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1 }}
-                className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body"
+                className="text-base md:text-xl text-primary-foreground/45 max-w-2xl mb-12 leading-relaxed font-body"
               >
-                Residential, commercial, and specialty roofing systems engineered for
-                Western North Carolina's elevation, wind, and climate — installed by
-                certified crews and backed by warranties we stand behind personally.
+                Owner-led roofing systems engineered for Western North Carolina's ridgelines. From GAF Master Elite® shingle replacements to architectural standing seam metal, we deliver structural security with family-business integrity.
               </motion.p>
 
               <motion.div
