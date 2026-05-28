@@ -102,8 +102,8 @@ const TownPage = () => {
                 </div>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6 text-primary-foreground tracking-tight max-w-5xl leading-[1.1]">
-                Roofing & Construction Built for <span className="text-[hsl(var(--highland-gold))]">{town.name}</span>
+              <h1 className="text-4xl md:text-5xl lg:text-8xl font-heading font-bold mb-6 text-primary-foreground tracking-tight max-w-5xl leading-[1.0]">
+                Built for the <span className="text-[hsl(var(--highland-gold))]">{town.name} Peaks.</span>
               </h1>
               
               <div className="grid md:grid-cols-3 gap-6 mb-10 max-w-4xl">
