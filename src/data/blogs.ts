@@ -362,7 +362,11 @@ Don't assume your current system can handle another 500 square feet. We evaluate
 Every county — Macon, Jackson, Haywood — has unique rules for setbacks, impervious surface limits, and mountain-ridge protections. We handle the coordination to ensure your plan is fully compliant before work starts.
 
 ## How Highlander Helps
-Our Design & Planning branch exists to solve these hurdles before they become expensive change orders. We bridge the gap between your vision and a buildable project roadmap.`
+Our Design & Planning branch exists to solve these hurdles before they become expensive change orders. We bridge the gap between your vision and a buildable project roadmap.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Home Additions", path: "/construction/additions" }
+    ],
   },
   {
     slug: "outdoor-living-trends-wnc",
@@ -373,6 +377,7 @@ Our Design & Planning branch exists to solve these hurdles before they become ex
     readTime: "6 min",
     metaTitle: "WNC Outdoor Living Trends 2026 | Highlander Construction",
     metaDescription: "Design the perfect mountain outdoor space. Trends in decks, screened porches, and pergolas for Western NC homes.",
+
     content: `Outdoor living is why we live in Western North Carolina. But a deck in Sylva needs to handle different conditions than one in Highlands. Here's how we design for mountain longevity.
 
 ## Screened-In vs. Open Air
