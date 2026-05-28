@@ -123,23 +123,23 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled || mobileOpen
           ? "bg-white/98 backdrop-blur-xl shadow-[0_1px_12px_-4px_hsl(var(--heritage-charcoal)/0.08)] border-b border-border"
-          : "bg-white border-b border-border/60"
+          : "bg-transparent border-b border-white/5"
       }`}
     >
 
       {/* ─── Main nav bar ─── */}
-      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-300 ${scrolled ? "py-1.5" : "py-2"}`}>
+      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-1.5" : "py-3 md:py-4"}`}>
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className="w-auto"
-            animate={{ height: scrolled ? 98 : 132 }}
-            transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
+            className={`w-auto transition-all duration-500 ${!scrolled && !mobileOpen ? "brightness-0 invert" : ""}`}
+            animate={{ height: scrolled ? 92 : 124 }}
+            transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>
 
@@ -155,10 +155,10 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[13px] font-semibold transition-colors inline-flex items-center gap-1 px-3.5 py-2 rounded-sm font-body ${
+                className={`relative text-[13px] font-semibold transition-all duration-300 inline-flex items-center gap-1 px-3.5 py-2 rounded-sm font-body ${
                   isActive(div.href)
-                    ? "text-foreground bg-secondary/50"
-                    : "text-foreground/70 hover:text-foreground hover:bg-secondary/40"
+                    ? (scrolled || mobileOpen ? "text-foreground bg-secondary/50" : "text-white bg-white/10")
+                    : (scrolled || mobileOpen ? "text-foreground/70 hover:text-foreground hover:bg-secondary/40" : "text-white/80 hover:text-white hover:bg-white/10")
                 }`}
               >
                 {div.label}
@@ -265,17 +265,17 @@ const Header = () => {
           ))}
 
           {/* Separator dot */}
-          <span className="w-px h-4 bg-border mx-1" />
+          <span className={`w-px h-4 mx-1 transition-colors duration-300 ${scrolled || mobileOpen ? "bg-border" : "bg-white/20"}`} />
 
           {/* Secondary links */}
           {secondaryLinks.map((link) => (
             <Link
               key={link.label}
               to={link.href}
-              className={`relative text-[13px] font-medium transition-colors px-3 py-2 rounded-sm font-body ${
+              className={`relative text-[13px] font-medium transition-all duration-300 px-3 py-2 rounded-sm font-body ${
                 isActive(link.href)
-                  ? "text-foreground bg-secondary/50"
-                  : "text-foreground/55 hover:text-foreground hover:bg-secondary/40"
+                  ? (scrolled || mobileOpen ? "text-foreground bg-secondary/50" : "text-white bg-white/10")
+                  : (scrolled || mobileOpen ? "text-foreground/55 hover:text-foreground hover:bg-secondary/40" : "text-white/60 hover:text-white hover:bg-white/10")
               }`}
             >
               {link.label}
@@ -294,7 +294,9 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <a
             href="tel:8283979211"
-            className="hidden md:flex items-center gap-2 text-foreground/55 hover:text-foreground text-sm font-body transition-colors mr-1"
+            className={`hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 ${
+              scrolled || mobileOpen ? "text-foreground/55 hover:text-foreground" : "text-white/60 hover:text-white"
+            }`}
           >
             <Phone className="w-3.5 h-3.5" />
             <span className="hidden xl:inline">(828) 397-9211</span>
@@ -314,7 +316,9 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 active:scale-90 transition-transform"
+            className={`lg:hidden p-2 active:scale-90 transition-all duration-300 ${
+              scrolled || mobileOpen ? "text-foreground" : "text-white"
+            }`}
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
