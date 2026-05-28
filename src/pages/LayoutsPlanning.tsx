@@ -131,18 +131,18 @@ const LayoutsPlanning = () => {
                   initial={{ opacity: 0, y: 20 }} 
                   animate={{ opacity: 1, y: 0 }} 
                   transition={{ duration: 0.7, delay: 0.1, ease: HIGHLAND_EASE }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white mb-6 leading-[1.0] tracking-tight"
                 >
-                  Intelligent <span className="text-[hsl(var(--highland-gold))]">Design & Planning</span>.
+                  Master Your <span className="text-[hsl(var(--highland-gold))]">Project Strategy</span>.
                 </motion.h1>
 
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }} 
                   animate={{ opacity: 1, y: 0 }} 
                   transition={{ duration: 0.7, delay: 0.2, ease: HIGHLAND_EASE }}
-                  className="text-lg text-white/50 mb-10 max-w-xl leading-relaxed font-body"
+                  className="text-lg md:text-xl text-white/45 mb-10 max-w-xl leading-relaxed font-body"
                 >
-                  Before the first board is cut, we ensure the logic is sound. Supporting Highlander’s construction division with detailed layouts, floor plans, and project planning support.
+                  Intelligent layout support and project scoping for Western North Carolina homes. We help you think through structural logic, flow, and feasibility before construction begins.
                 </motion.p>
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }} 
