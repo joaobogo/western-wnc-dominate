@@ -32,14 +32,13 @@ const resourceLinks = [
 
 const companyLinks = [
   { label: "Our Story", href: "/about" },
-  
-  { label: "Service Areas", href: "/service-areas" },
-  { label: "Contact", href: "/contact" },
-  { label: "Careers", href: "/careers" },
   { label: "Meet the Team", href: "/team" },
-
+  { label: "Work With Us", href: "/careers" },
+  { label: "Service Areas", href: "/service-areas" },
+  { label: "Contact Us", href: "/contact" },
   { label: "Request Inspection", href: "/request-inspection" },
 ];
+
 
 // Tier 1 — primary authority markets (premium residential focus)
 const tier1Areas = [
@@ -141,18 +140,44 @@ const Footer = () => {
             </p>
 
             {/* Contact info */}
-            <div className="flex flex-col gap-2.5 mb-8">
-              <a href="tel:8283979211" className="flex items-center gap-2.5 text-sm hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-primary-foreground/60">
-                <Phone className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
-              </a>
-              <a href="mailto:info@highlandernc.com" className="flex items-center gap-2.5 text-sm hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-primary-foreground/60">
-                <Mail className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" /> info@highlandernc.com
-              </a>
-              <div className="flex items-center gap-2.5 text-sm text-primary-foreground/35 font-body">
-                <MapPin className="w-3.5 h-3.5 text-primary-foreground/25" /> 167 Highlands Rd, Franklin · 28 North St, Sylva
+            <div className="flex flex-col gap-4 mb-8">
+              <div className="space-y-3">
+                <a href="tel:8283979211" className="flex items-center gap-3 text-[14px] hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-primary-foreground/80">
+                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
+                </a>
+                <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 text-[13px] hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-primary-foreground/50">
+                  <Mail className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> info@highlandernc.com
+                </a>
               </div>
 
+              <div className="space-y-4 pt-2 border-t border-primary-foreground/5">
+                <div className="flex gap-3">
+                  <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
+                  <div className="text-[12.5px] text-primary-foreground/45 font-body leading-relaxed">
+                    <span className="block font-bold text-primary-foreground/60 mb-0.5">Franklin Office</span>
+                    1511 Highlands Road<br />
+                    Franklin, NC 28734
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
+                  <div className="text-[12.5px] text-primary-foreground/45 font-body leading-relaxed">
+                    <span className="block font-bold text-primary-foreground/60 mb-0.5">Sylva / Waynesville</span>
+                    28 Cross Stitch Mountain Rd<br />
+                    Sylva, NC 20779
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
+                  <div className="text-[12.5px] text-primary-foreground/45 font-body leading-relaxed">
+                    <span className="block font-bold text-primary-foreground/60 mb-0.5">Asheville / Buncombe</span>
+                    900 Hendersonville Rd, Ste 303-D<br />
+                    Asheville, NC 28803
+                  </div>
+                </div>
+              </div>
             </div>
+
 
             {/* Certifications */}
             <div className="flex flex-col gap-2">
