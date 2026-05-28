@@ -24,11 +24,25 @@ const openRoles = [
 
 
 const Careers = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      toast.success("Application submitted successfully!");
+    }, 1500);
+  };
+
   return (
     <>
       <SEOHead
-        title="Careers | Hiring Roofers & Crew in Western NC"
-        description="Join the Highlander team. Year-round roofing and construction work across Western North Carolina with competitive pay, paid training, and a family-owned culture."
+        title="Careers | Join the Highlander Team in Western NC"
+        description="Build your career with Highlander Roofing & Construction. Family-owned, year-round work, and a commitment to mountain-grade craftsmanship. Apply now."
         path="/careers"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
@@ -37,80 +51,162 @@ const Careers = () => {
       />
       <Header />
       <main>
-        <section className="section-padding section-dark pt-32 md:pt-40">
-          <div className="container-tight">
+        {/* Hero Section */}
+        <section className="section-padding section-dark pt-32 md:pt-48 relative overflow-hidden">
+          <div className="absolute inset-0 tartan-dark opacity-[0.05]" />
+          <div className="container-tight relative z-10">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-              <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Careers</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
-                Join the Highlander Team
+              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work With Us</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-white tracking-tight">
+                Build Something <br />
+                <span className="text-[hsl(var(--highland-gold))]">That Lasts.</span>
               </h1>
-              <p className="text-dark-section-foreground/70 text-base md:text-lg">
-                We're always looking for skilled, reliable people who take pride in their work. If you want to build a career in roofing with a company that values quality and integrity, we'd like to hear from you.
+              <p className="text-dark-section-foreground/60 text-lg md:text-xl font-body leading-relaxed max-w-2xl">
+                Highlander isn't just a roofing company. We're a family-owned team of craftsmen dedicated to protecting and improving WNC homes. We're looking for reliable people who take pride in doing the job right.
               </p>
             </motion.div>
           </div>
         </section>
 
+        {/* Benefits Grid */}
         <section className="section-padding bg-background">
-          <div className="container-tight max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">Why Work With Us</h2>
-            <ul className="space-y-3 mb-10">
+          <div className="container-tight">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((b) => (
-                <li key={b} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">{b}</span>
-                </li>
+                <div key={b.title} className="p-8 bg-secondary/30 border border-border group hover:border-[hsl(var(--highland-gold)/0.3)] transition-all duration-300">
+                  <div className="w-12 h-12 bg-primary/5 flex items-center justify-center mb-6 transition-colors group-hover:bg-[hsl(var(--highland-gold)/0.1)]">
+                    <b.icon className="w-6 h-6 text-primary group-hover:text-[hsl(var(--highland-gold))] transition-colors" />
+                  </div>
+                  <h3 className="text-lg font-heading font-bold text-foreground mb-3">{b.title}</h3>
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed">{b.desc}</p>
+                </div>
               ))}
-            </ul>
-
-            <div className="bg-secondary p-8 mb-16 border border-border">
-              <h3 className="text-xl font-heading font-bold text-foreground mb-6">Apply Now</h3>
-              <form className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Full Name</label>
-                    <input type="text" className="w-full bg-background border border-border p-3 text-sm focus:border-primary outline-none" placeholder="John Doe" />
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Phone Number</label>
-                    <input type="tel" className="w-full bg-background border border-border p-3 text-sm focus:border-primary outline-none" placeholder="(828) 000-0000" />
-                  </div>
-                </div>
-                <div className="space-y-1">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Position of Interest</label>
-                  <select className="w-full bg-background border border-border p-3 text-sm focus:border-primary outline-none appearance-none">
-                    <option>Roofing Crew / Installer</option>
-                    <option>Crew Lead / Foreman</option>
-                    <option>Construction Lead</option>
-                    <option>Project Manager</option>
-                    <option>Sales / Estimator</option>
-                  </select>
-                </div>
-                <div className="space-y-1">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Experience Summary</label>
-                  <textarea rows={3} className="w-full bg-background border border-border p-3 text-sm focus:border-primary outline-none" placeholder="Briefly describe your years of experience and relevant skills." />
-                </div>
-                <button type="button" onClick={() => {}} className="w-full bg-primary text-primary-foreground font-bold py-4 hover:opacity-95 transition-opacity">
-                  Submit Application
-                </button>
-              </form>
             </div>
+          </div>
+        </section>
 
-            <div className="bg-card border border-border p-8">
-              <h3 className="text-xl font-heading font-bold text-foreground mb-4">Other Ways to Connect</h3>
-              <p className="text-muted-foreground mb-6 font-body">
-                We're always hiring experienced roofers, laborers, and crew leads. Call us or visit our Franklin office to learn about current openings.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:8283979211" className="bg-secondary text-foreground font-semibold px-6 py-3 border border-border inline-flex items-center justify-center gap-2 hover:bg-muted transition-colors">
-                  <Phone className="w-4 h-4" /> (828) 397-9211
-                </a>
-                <a href="mailto:info@highlandernc.com" className="border border-border text-foreground font-semibold px-6 py-3 inline-flex items-center justify-center hover:bg-muted transition-colors">
-                  info@highlandernc.com
-                </a>
+        {/* Roles & Form */}
+        <section className="section-padding bg-secondary/20">
+          <div className="container-tight">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+              {/* Info Column */}
+              <div className="lg:col-span-5 space-y-10">
+                <div>
+                  <h2 className="text-3xl font-heading font-bold mb-6">Who We're Looking For</h2>
+                  <p className="text-muted-foreground font-body leading-relaxed mb-8">
+                    We hire for attitude and train for skill. If you're honest, hardworking, and local to Western North Carolina, we'd like to hear from you—even if you don't see a specific opening that fits.
+                  </p>
+                  <div className="space-y-4">
+                    {openRoles.map((role) => (
+                      <div key={role} className="flex items-center gap-3 p-4 bg-background border border-border">
+                        <Briefcase className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                        <span className="text-sm font-heading font-bold text-foreground">{role}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-primary/5 p-8 border border-primary/10">
+                  <h3 className="text-xl font-heading font-bold mb-4">Questions?</h3>
+                  <p className="text-sm text-muted-foreground font-body mb-6">
+                    Call our Franklin office directly to discuss current crew openings or subcontracting opportunities.
+                  </p>
+                  <a href="tel:8283979211" className="inline-flex items-center gap-3 text-primary font-bold hover:text-[hsl(var(--highland-gold))] transition-colors">
+                    <Phone className="w-4 h-4" /> (828) 397-9211
+                  </a>
+                </div>
+              </div>
+
+              {/* Form Column */}
+              <div className="lg:col-span-7">
+                <AnimatePresence mode="wait">
+                  {!isSubmitted ? (
+                    <motion.div
+                      key="form"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      className="bg-card border border-border p-8 md:p-12 shadow-xl relative overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-[hsl(var(--highland-gold)/0.03)] translate-x-16 -translate-y-16 rotate-45" />
+                      
+                      <h3 className="text-2xl font-heading font-bold mb-8">Direct Application</h3>
+                      
+                      <form onSubmit={handleSubmit} className="space-y-6">
+                        <div className="grid sm:grid-cols-2 gap-6">
+                          <div className="space-y-1.5">
+                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Full Name</label>
+                            <input required type="text" className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="John Doe" />
+                          </div>
+                          <div className="space-y-1.5">
+                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Phone Number</label>
+                            <input required type="tel" className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
+                          </div>
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Position of Interest</label>
+                          <select className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors appearance-none">
+                            {openRoles.map(role => (
+                              <option key={role}>{role}</option>
+                            ))}
+                            <option>Other / General Inquiry</option>
+                          </select>
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Relevant Experience</label>
+                          <textarea rows={4} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Resume / CV (Optional)</label>
+                          <div className="relative group cursor-pointer">
+                            <input type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                            <div className="w-full bg-secondary/30 border border-dashed border-border p-6 text-center group-hover:border-primary/50 transition-colors">
+                              <Upload className="w-6 h-6 text-muted-foreground mx-auto mb-2" />
+                              <p className="text-xs text-muted-foreground">Click or drag to upload file</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button 
+                          disabled={isSubmitting}
+                          className="w-full bg-primary text-primary-foreground font-bold py-5 rounded-none flex items-center justify-center gap-3 hover:bg-primary/95 transition-all active:scale-[0.98] disabled:opacity-50"
+                        >
+                          {isSubmitting ? "Sending..." : (
+                            <>
+                              Submit Application <Send className="w-4 h-4" />
+                            </>
+                          )}
+                        </button>
+                      </form>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="success"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="bg-card border border-border p-12 text-center shadow-xl"
+                    >
+                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <CheckCircle className="w-10 h-10 text-primary" />
+                      </div>
+                      <h3 className="text-2xl font-heading font-bold mb-4">Application Received</h3>
+                      <p className="text-muted-foreground font-body leading-relaxed mb-8">
+                        Thank you for your interest in joining Highlander. Luke or Christy will personally review your application and get back to you within 2-3 business days.
+                      </p>
+                      <button 
+                        onClick={() => setIsSubmitted(false)}
+                        className="text-primary font-bold border-b border-primary/20 pb-1 hover:border-primary transition-all"
+                      >
+                        Submit another application
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
-
           </div>
         </section>
       </main>
@@ -119,5 +215,6 @@ const Careers = () => {
     </>
   );
 };
+
 
 export default Careers;
