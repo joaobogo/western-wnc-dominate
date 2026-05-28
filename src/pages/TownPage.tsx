@@ -271,9 +271,10 @@ const TownPage = () => {
                    </div>
                 </div>
 
-                <Link to="/layouts-planning" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.2)] pb-1 mb-8">
-                  Design & Planning Support <ArrowRight className="w-4 h-4" />
+                <Link to="/layouts-planning" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.2)] pb-1">
+                  Design & Planning in {town.name} <ArrowRight className="w-4 h-4" />
                 </Link>
+
                 
                 <div className="relative aspect-[16/5] overflow-hidden border border-border">
                    <img src={localPlanningImg} alt="Local project design and planning" className="w-full h-full object-cover grayscale opacity-20 hover:opacity-40 transition-opacity duration-700" />

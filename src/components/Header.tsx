@@ -25,6 +25,7 @@ const roofingItems: DropdownItem[] = [
   { label: "Commercial Roofing", href: "/roofing/commercial", desc: "Flat, metal & TPO systems" },
 ];
 
+
 const constructionItems: DropdownItem[] = [
   { label: "Design & Planning", href: "/layouts-planning", desc: "Layouts, floor plans, and pre-construction support" },
   { label: "Additions & Suites", href: "/construction/additions", desc: "Expand your home's footprint" },
@@ -63,6 +64,7 @@ const divisions: DivisionDropdown[] = [
     accent: "gold",
   },
 ];
+
 
 const secondaryLinks = [
   { label: "Projects", href: "/gallery" },

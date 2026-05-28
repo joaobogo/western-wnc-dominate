@@ -41,22 +41,30 @@ const TwoPillars = () => {
                 Roofing
               </span>
             </div>
-            <div className="w-12 md:w-20 h-px bg-foreground/15" />
+            <div className="w-8 md:w-16 h-px bg-foreground/15" />
             <div className="flex flex-col items-center gap-2">
               <HardHat className="w-5 h-5 md:w-6 md:h-6 text-foreground/60" />
               <span className="text-[10px] md:text-xs font-body font-semibold uppercase tracking-[0.18em] text-foreground/60">
                 Construction
               </span>
             </div>
+            <div className="w-8 md:w-16 h-px bg-foreground/15 hidden sm:block" />
+            <div className="hidden sm:flex flex-col items-center gap-2 opacity-60">
+              <div className="w-5 h-5 md:w-6 md:h-6 flex items-center justify-center border border-foreground/30 rounded-full">
+                <span className="text-[8px] font-bold">DP</span>
+              </div>
+              <span className="text-[10px] md:text-xs font-body font-semibold uppercase tracking-[0.18em]">
+                Design Support
+              </span>
+            </div>
           </div>
 
           {/* Statement */}
           <p className="font-heading text-[1.35rem] md:text-[1.75rem] lg:text-[2rem] leading-[1.35] tracking-[-0.01em] text-foreground max-w-3xl mx-auto">
-            Highlander began as a roofing company and remains Western North Carolina&apos;s
-            most disciplined roofing team. The same crew, same owner, and same standard
-            now lead our construction work —{" "}
-            <span className="text-[hsl(var(--highland-gold))]">additions, outdoor living, and our Design & Planning branch</span>.
+            Highlander is built on mountain-grade roofing authority. We carry that same owner-led discipline into additions, outdoor living, and our{" "}
+            <span className="text-[hsl(var(--highland-gold))]">Design & Planning branch</span> — ensuring every project is intelligently mapped before the first board is cut.
           </p>
+
         </motion.div>
       </div>
     </section>

@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight, Home, Paintbrush, TreePine, Gem,
   UtensilsCrossed, Shield, Layers, HardHat,
-  type LucideIcon,
+  Compass, type LucideIcon,
 } from "lucide-react";
+
 
 /* ═══════════════════════════════════════════
    SERVICE CATEGORY DATA
@@ -21,6 +22,22 @@ export interface ConstructionCategory {
 
 export const constructionCategories: ConstructionCategory[] = [
   {
+    icon: Compass,
+    title: "Design & Planning",
+    slug: "/layouts-planning",
+    description: "Detailed pre-construction support including layouts, floor plans, and project scope definition before you build.",
+    outcomes: [
+      "Cohesive project vision",
+      "Fixed construction scope",
+      "Accurate budget expectations",
+    ],
+    trustPoints: [
+      "Mountain building science",
+      "Terrain-specific planning",
+      "Disciplined pre-build process",
+    ],
+  },
+  {
     icon: Home,
     title: "Home Additions & Suites",
     slug: "/construction/additions",
@@ -36,6 +53,7 @@ export const constructionCategories: ConstructionCategory[] = [
       "Full permit management",
     ],
   },
+
   {
     icon: UtensilsCrossed,
     title: "Kitchen & Bath Remodels",
