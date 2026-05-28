@@ -129,8 +129,9 @@ const ConstructionDivision = () => {
               </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
-                Additions, layouts, floor plans, and custom construction for Western North Carolina homeowners who value craftsmanship, Design & Planning, and doing the project right.
+                Additions, layouts, floor plans, and custom construction for Western North Carolina homeowners who value craftsmanship, <Link to="/layouts-planning" className="text-[hsl(var(--highland-gold))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)]">Design & Planning</Link>, and doing the project right.
               </motion.p>
+
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
