@@ -132,7 +132,11 @@ const TownPage = () => {
         </section>
 
         {/* 2. Localized Authority Section */}
-        <section className="py-16 md:py-24 bg-card border-b border-border">
+        <section className="py-16 md:py-24 bg-card border-b border-border relative overflow-hidden">
+          <div className="absolute left-0 top-0 w-1/4 h-full opacity-[0.02] pointer-events-none grayscale">
+            <img src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Mountain architecture detail" className="w-full h-full object-cover" />
+          </div>
+
           <div className="container-tight">
             <div className="grid md:grid-cols-12 gap-12 items-center">
               <div className="md:col-span-7">
