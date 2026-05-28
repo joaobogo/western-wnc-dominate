@@ -300,6 +300,75 @@ const TownPage = () => {
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                 <div className="max-w-xl">
                   <h2 className="text-[11px] uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] font-bold mb-4">Local Knowledge</h2>
+                  <h3 className="text-3xl font-heading font-bold text-foreground">Insights for {town.name} Homeowners</h3>
+                </div>
+                <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all">
+                  Browse All Resources <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                {existingBlogs.length > 0 ? (
+                  existingBlogs.map((post) => (
+                    <Link 
+                      key={post.slug} 
+                      to={`/blog/${post.slug}`}
+                      className="group bg-card border border-border p-6 hover:border-primary/20 transition-all rounded-sm flex flex-col"
+                    >
+                      <div className="flex items-center gap-2 mb-4">
+                        <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                        <span className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">{post.category}</span>
+                      </div>
+                      <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-6 line-clamp-2 font-body flex-grow">{post.excerpt}</p>
+                      <span className="text-xs font-bold text-primary flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                        Read Local Guide <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </Link>
+                  ))
+                ) : (
+                  // Fallback to construction/design blogs if no town-specific blogs yet
+                  blogPosts.filter(b => b.category === "Construction" || b.category === "Design").slice(0, 3).map((post) => (
+                    <Link 
+                      key={post.slug} 
+                      to={`/blog/${post.slug}`}
+                      className="group bg-card border border-border p-6 hover:border-primary/20 transition-all rounded-sm flex flex-col"
+                    >
+                      <div className="flex items-center gap-2 mb-4">
+                        <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                        <span className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">{post.category}</span>
+                      </div>
+                      <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-6 line-clamp-2 font-body flex-grow">{post.excerpt}</p>
+                      <span className="text-xs font-bold text-primary flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                        Read Planning Guide <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </Link>
+                  ))
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Builder Promo - Link to Interactive Tools */}
+        <section className="py-12 bg-background border-y border-border">
+          <div className="container-tight">
+            <div className="bg-secondary/50 p-8 md:p-12 border border-border flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-xl text-center md:text-left">
+                <h3 className="text-2xl font-heading font-bold text-foreground mb-3 tracking-tight">Try Our Interactive Builders</h3>
+                <p className="text-muted-foreground text-sm font-body leading-relaxed">
+                  Visualize your new roof or plan your construction project budget in minutes using our custom {town.name} building tools.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/roofing-builder" className="text-xs font-bold bg-primary text-primary-foreground px-6 py-3 hover:bg-primary/90 transition-colors uppercase tracking-widest text-center">Roof Builder</Link>
+                <Link to="/construction-builder" className="text-xs font-bold border border-primary text-primary px-6 py-3 hover:bg-primary/5 transition-colors uppercase tracking-widest text-center">Project Builder</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
                   <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground">Factual Insights for {town.name} Homeowners</h3>
                 </div>
                 <Link to="/blog" className="text-primary font-bold inline-flex items-center gap-2 hover:underline font-heading text-sm uppercase tracking-wider">
