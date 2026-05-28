@@ -327,7 +327,6 @@ const TownPage = () => {
                     </Link>
                   ))
                 ) : (
-                  // Fallback to construction/design blogs if no town-specific blogs yet
                   blogPosts.filter(b => b.category === "Construction" || b.category === "Design").slice(0, 3).map((post) => (
                     <Link 
                       key={post.slug} 
@@ -367,65 +366,6 @@ const TownPage = () => {
               </div>
             </div>
           </div>
-        </section>
-
-                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground">Factual Insights for {town.name} Homeowners</h3>
-                </div>
-                <Link to="/blog" className="text-primary font-bold inline-flex items-center gap-2 hover:underline font-heading text-sm uppercase tracking-wider">
-                  View All Insights <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                {existingBlogs.map((post) => (
-                  <Link key={post.slug} to={`/blog/${post.slug}`} className="group bg-card border border-border p-6 rounded-sm hover:border-primary/30 transition-all flex flex-col h-full">
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-4">
-                      <BookOpen className="w-3 h-3" />
-                      {post.category}
-                    </div>
-                    <h4 className="text-lg font-heading font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow font-body">{post.excerpt}</p>
-                    <span className="text-[11px] font-bold text-primary flex items-center gap-1.5 uppercase tracking-wider font-heading">
-                      Read Guide <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Link>
-                ))}
-                
-                {/* Proposed Local Topics */}
-                {existingBlogs.length < 3 && localBlogs.map((topic, i) => (
-                  <div key={i} className="bg-background/50 border border-dashed border-border p-6 rounded-sm flex flex-col">
-                    <div className="text-[10px] uppercase tracking-widest text-muted-foreground/60 font-bold mb-4 flex items-center gap-2">
-                      <span className="px-1.5 py-0.5 rounded-sm bg-secondary text-[8px]">{topic.serviceCategory}</span>
-                      Upcoming Guide
-                    </div>
-                    <h4 className="text-lg font-heading font-bold text-foreground/60 mb-3 leading-snug">{topic.title}</h4>
-                    <p className="text-sm text-muted-foreground/60 leading-relaxed mb-6 flex-grow font-body">{topic.description}</p>
-                    <span className="text-[11px] font-bold text-muted-foreground/40 flex items-center gap-1.5 uppercase tracking-wider font-heading">
-                      In Development
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* 9. Next Steps / Advanced Builders */}
-        <section className="bg-background">
-          <BuilderPromoBlock
-            variant="band"
-            town={town.name}
-            title={`Build Your Roofing Project in ${town.name}`}
-            body={`An optional guided pathway for ${town.name}-area homeowners. Specify project type, material, and priorities — we use it to prepare a sharper on-site assessment with mountain-exposure detailing built in.`}
-          />
-
-          <BuilderPromoBlock
-            mode="construction"
-            variant="band"
-            town={town.name}
-            title={`Plan Your ${town.name} Construction Project`}
-            body={`Optional guided pathway for ${town.name}-area additions, porches, decks, outdoor living, and flatwork projects. Sharpens the first conversation — never replaces it.`}
-          />
         </section>
 
         {/* 8. Service area / nearby communities */}
