@@ -22,7 +22,7 @@ import {
 
 const planningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000";
 const sketchImg = "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?auto=format&fit=crop&q=80&w=2000";
-const scopeImg = "https://images.unsplash.com/photo-1581439645268-ad7bb4cfcebb?auto=format&fit=crop&q=80&w=2000";
+const scopeImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
