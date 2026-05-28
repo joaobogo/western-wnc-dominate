@@ -311,24 +311,6 @@ const ResidentialRoofing = () => {
           </div>
         </section>
 
-                className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-white/10"
-              >
-                {[
-                  { value: "4.9★", label: "Google Rating" },
-                  { value: "4.9★", label: "Homeowner Rating" },
-                  { value: "Top 1%", label: "National Certification" },
-                  { value: "Rapid", label: "Storm Response" },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center sm:text-left">
-                    <div className="text-lg md:text-xl font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
-                    <div className="text-[10px] uppercase tracking-wider text-primary-foreground/40 font-body mt-0.5">{stat.label}</div>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* ─── TRUST STRIP ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-5 md:py-6">
