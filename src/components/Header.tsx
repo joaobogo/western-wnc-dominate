@@ -26,14 +26,15 @@ const roofingItems: DropdownItem[] = [
 ];
 
 const constructionItems: DropdownItem[] = [
+  { label: "Design & Planning", href: "/layouts-planning", desc: "Layouts, floor plans, and pre-construction support" },
   { label: "Additions & Suites", href: "/construction/additions", desc: "Expand your home's footprint" },
   { label: "Kitchen & Bath", href: "/construction/renovations", desc: "Interior transformations" },
   { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
-  { label: "Design & Planning", href: "/layouts-planning", desc: "Layouts, floor plans, and project planning support" },
   { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
   { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
 ];
+
 
 interface DivisionDropdown {
   label: string;
@@ -67,6 +68,8 @@ const secondaryLinks = [
   { label: "Projects", href: "/gallery" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "About", href: "/about" },
+  { label: "Team", href: "/team" },
+
   { label: "Contact", href: "/contact" },
 ];
 

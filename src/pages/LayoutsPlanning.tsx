@@ -149,9 +149,10 @@ const LayoutsPlanning = () => {
                   transition={{ duration: 0.7, delay: 0.3, ease: HIGHLAND_EASE }}
                   className="flex flex-col sm:flex-row gap-4"
                 >
-                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 group hover:scale-[1.02] transition-transform duration-300">
+                  <Link to="/design-intake" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 group hover:scale-[1.02] transition-transform duration-300">
                     Start Your Project Plan <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
+
                   <a href="tel:8283979211" className="bg-white/5 border border-white/10 text-white font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
                     Talk With Highlander
                   </a>

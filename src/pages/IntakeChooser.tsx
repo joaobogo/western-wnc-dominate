@@ -28,27 +28,37 @@ const IntakeChooser = () => (
           Two intake paths so the right advisor reaches out with the right questions.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-3 gap-5">
           {[
             {
               to: "/roofing-intake",
               icon: Home,
               eyebrow: "Roofing",
-              title: "Roof assessment",
+              title: "Roof Assessment",
               body: "Replacement, repair, storm, metal, or synthetic. Photo upload supported.",
               cta: "Start roofing intake",
               accent: false,
             },
             {
+              to: "/design-intake",
+              icon: Sparkles,
+              eyebrow: "Design",
+              title: "Project Planning",
+              body: "Layouts, floor plans, and pre-construction scope definition support.",
+              cta: "Start design intake",
+              accent: true,
+            },
+            {
               to: "/construction-intake",
               icon: HardHat,
               eyebrow: "Construction",
-              title: "Project planning",
+              title: "Build Inquiry",
               body: "Additions, outdoor living, renovations, custom builds. Plans and files supported.",
-              cta: "Start construction intake",
-              accent: true,
+              cta: "Start build intake",
+              accent: false,
             },
           ].map((c, i) => (
+
             <motion.div
               key={c.to}
               initial={{ opacity: 0, y: 16 }}

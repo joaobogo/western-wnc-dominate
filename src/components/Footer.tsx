@@ -36,6 +36,8 @@ const companyLinks = [
   { label: "Service Areas", href: "/service-areas" },
   { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
+  { label: "Meet the Team", href: "/team" },
+
   { label: "Request Inspection", href: "/request-inspection" },
 ];
 
@@ -147,8 +149,9 @@ const Footer = () => {
                 <Mail className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" /> info@highlandernc.com
               </a>
               <div className="flex items-center gap-2.5 text-sm text-primary-foreground/35 font-body">
-                <MapPin className="w-3.5 h-3.5 text-primary-foreground/25" /> Franklin & Sylva, NC
+                <MapPin className="w-3.5 h-3.5 text-primary-foreground/25" /> 167 Highlands Rd, Franklin · 28 North St, Sylva
               </div>
+
             </div>
 
             {/* Certifications */}
