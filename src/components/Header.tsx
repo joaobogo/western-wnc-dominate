@@ -265,7 +265,7 @@ const Header = () => {
           ))}
 
           {/* Separator dot */}
-          <span className={`w-px h-4 mx-1 transition-colors duration-300 ${scrolled || mobileOpen ? "bg-border" : "bg-white/20"}`} />
+          <span className={`w-px h-4 mx-1 transition-colors duration-300 bg-white/20`} />
 
           {/* Secondary links */}
           {secondaryLinks.map((link) => (
