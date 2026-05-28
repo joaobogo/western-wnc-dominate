@@ -36,6 +36,7 @@ const SERVICE_CATEGORIES = [
   { id: "roofing", label: "Roofing", icon: Home, desc: "Repair, replacement, storm damage, or specialty roofing" },
   { id: "construction", label: "Construction", icon: Hammer, desc: "Additions, renovations, exterior, or outdoor living" },
   { id: "both", label: "Both", icon: Building2, desc: "A project that involves roofing and construction" },
+  { id: "planning", label: "Design & Planning", icon: Paintbrush, desc: "Layouts, floor plans, and project planning support" },
   { id: "not-sure", label: "Not Sure Yet", icon: Wrench, desc: "We'll help you figure out the right approach" },
 ];
 
@@ -54,6 +55,14 @@ const CONSTRUCTION_TYPES = [
   { id: "exterior", label: "Exterior Improvements" },
   { id: "outdoor-living", label: "Outdoor Living" },
   { id: "custom", label: "Custom Project" },
+];
+
+const PLANNING_TYPES = [
+  { id: "layouts", label: "Layouts & Floor Plans" },
+  { id: "scope", label: "Scope Development" },
+  { id: "design-guidance", label: "Design Guidance" },
+  { id: "preconstruction", label: "Preconstruction Review" },
+  { id: "site-planning", label: "Site & Project Planning" },
 ];
 
 const TOWNS = [
@@ -140,7 +149,8 @@ export default function QuoteFlow() {
   }, []);
 
   const projectTypes = form.serviceCategory === "construction" ? CONSTRUCTION_TYPES :
-    form.serviceCategory === "both" ? [...ROOFING_TYPES, ...CONSTRUCTION_TYPES] : ROOFING_TYPES;
+    form.serviceCategory === "planning" ? PLANNING_TYPES :
+    form.serviceCategory === "both" ? [...ROOFING_TYPES, ...CONSTRUCTION_TYPES, ...PLANNING_TYPES] : ROOFING_TYPES;
 
   const steps = [
     {
@@ -341,7 +351,7 @@ export default function QuoteFlow() {
               show={true}
               icon={undefined}
               headline={isUrgent ? "We'll call you within 2 hours." : "We'll be in touch within 1 business day."}
-              message={`Thank you, ${form.name}. A project advisor who specializes in ${form.serviceCategory === "construction" ? "construction" : "roofing"} will reach out to discuss your project in detail.`}
+              message={`Thank you, ${form.name}. A project advisor who specializes in ${form.serviceCategory === "construction" || form.serviceCategory === "planning" ? "construction and planning" : "roofing"} will reach out to discuss your project in detail.`}
               secondaryMessage="In the meantime, feel free to explore our project gallery or learn more about our process."
               action={
                 <div className="flex flex-col sm:flex-row gap-3 mt-4">
