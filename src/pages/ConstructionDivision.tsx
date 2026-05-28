@@ -166,7 +166,11 @@ const ConstructionDivision = () => {
         </section>
 
         {/* ═══ OPENING STATEMENT — Premium editorial positioning ═══ */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-background relative overflow-hidden">
+          <div className="absolute right-0 top-0 w-1/2 h-full opacity-[0.02] pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200" alt="Mountain home background" className="w-full h-full object-cover" />
+          </div>
+
           <div className="container-tight max-w-4xl">
             <ScrollReveal variant="fade">
               <div className="text-center">

@@ -132,6 +132,11 @@ export default function Contact() {
         {/* ── HERO — Compact utility header (unique to Contact) ── */}
         <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--highland-gold)/0.03)] to-transparent pointer-events-none" />
+          <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-[0.02] pointer-events-none hidden lg:block">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200" alt="Mountain texture" className="w-full h-full object-cover" />
+          </div>
+
           {/* No MountainContours — clean, functional */}
           <div className="relative z-10 pt-32 md:pt-36 pb-10 md:pb-14 px-5 md:px-8 lg:px-16">
             <div className="container-tight">

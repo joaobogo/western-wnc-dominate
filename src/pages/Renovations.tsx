@@ -168,7 +168,11 @@ const Renovations = () => {
         </section>
 
         {/* ─── OPENING — Lifestyle-focused with warm visual treatment ─── */}
-        <section className="py-20 md:py-28 bg-background">
+        <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
+            <img src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Interior detail" className="w-full h-full object-cover" />
+          </div>
+
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <div className="flex items-center justify-center gap-2 mb-8">

@@ -12,7 +12,10 @@ import { Home, HardHat } from "lucide-react";
  */
 const TwoPillars = () => {
   return (
-    <section className="bg-background py-14 md:py-20">
+    <section className="bg-background py-14 md:py-24 relative overflow-hidden">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
+        <img src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Mountain architecture" className="w-full h-full object-cover grayscale" />
+      </div>
       <div className="max-w-5xl mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

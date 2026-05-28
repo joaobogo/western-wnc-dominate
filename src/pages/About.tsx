@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import teamPhoto from "@/assets/team-photo.webp";
+const storyImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
+const heritageImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -155,6 +157,21 @@ const About = () => {
                 </p>
               </motion.div>
             </div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
+              className="mt-16 relative aspect-[21/9] md:aspect-[3/1] overflow-hidden border border-border"
+            >
+              <img src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover grayscale opacity-40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-8 flex items-center gap-3">
+                <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
+                <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60">Our Horizon — Western North Carolina</span>
+              </div>
+            </motion.div>
           </div>
         </section>
 

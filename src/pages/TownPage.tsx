@@ -76,7 +76,7 @@ const TownPage = () => {
         <section className="relative min-h-[70svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000" 
+              src="https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" 
               alt={`${town.name}, NC landscapes`}
               className="w-full h-full object-cover"
             />
@@ -132,7 +132,11 @@ const TownPage = () => {
         </section>
 
         {/* 2. Localized Authority Section */}
-        <section className="py-16 md:py-24 bg-card border-b border-border">
+        <section className="py-16 md:py-24 bg-card border-b border-border relative overflow-hidden">
+          <div className="absolute left-0 top-0 w-1/4 h-full opacity-[0.02] pointer-events-none grayscale">
+            <img src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Mountain architecture detail" className="w-full h-full object-cover" />
+          </div>
+
           <div className="container-tight">
             <div className="grid md:grid-cols-12 gap-12 items-center">
               <div className="md:col-span-7">
