@@ -135,7 +135,7 @@ const services: FeaturedService[] = [
   {
     icon: Ruler,
     title: "Design & Planning",
-    tagline: "Preconstruction thinking",
+    tagline: "Layouts & project planning",
     description: "Layouts, floor plans, and project planning support for additions, outdoor living, and scoped residential work.",
     stat: "Concept",
     statLabel: "to construction",
