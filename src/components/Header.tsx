@@ -428,8 +428,8 @@ const Header = () => {
                                   onClick={() => setMobileOpen(false)}
                                   className={`py-2.5 px-3 rounded-sm transition-all block ${
                                     isActive(item.href)
-                                      ? "bg-secondary/50"
-                                      : "hover:bg-secondary/30"
+                                      ? "bg-white/10"
+                                      : "hover:bg-white/5"
                                   }`}
                                 >
                                   <span className={`text-sm font-body block leading-tight ${
