@@ -24,7 +24,7 @@ import proj4 from "@/assets/gallery/cedar-004.webp";
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
 const beautyFunctionDurability = [
-  { icon: PenTool, title: "Design That Belongs", detail: "Every outdoor structure should complement your home's layout and style — not compete with it. We match proportions and rooflines so outdoor spaces feel like intentional extensions of the home." },
+  { icon: PenTool, title: "Design That Belongs", detail: "Every outdoor structure should complement your home's layout and style — not compete with it. We use the Highlander Design & Planning standard to match proportions and rooflines so outdoor spaces feel like intentional extensions of the home." },
   { icon: Ruler, title: "Layouts That Fit Your Life", detail: "How do you actually want to use the space? Cooking, entertaining, morning coffee, evening drinks? We design layouts around real use — not showroom photos." },
   { icon: Shield, title: "Durability for Mountain Life", detail: "WNC outdoor structures face UV, rain, freeze-thaw cycles, wind, and occasional ice loads. We specify materials and fasteners rated for these conditions and build with drainage, ventilation, and long-term maintenance in mind." },
 ];

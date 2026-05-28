@@ -139,7 +139,7 @@ const LayoutsPlanning = () => {
                   transition={{ duration: 0.7, delay: 0.2, ease: HIGHLAND_EASE }}
                   className="text-lg text-white/50 mb-10 max-w-xl leading-relaxed font-body"
                 >
-                  Before the first board is cut, we ensure the logic is sound. Supporting Highlander’s construction division with detailed layouts, floor plans, and preconstruction thinking.
+                  Before the first board is cut, we ensure the logic is sound. Supporting Highlander’s construction division with detailed layouts, floor plans, and project planning support.
                 </motion.p>
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }} 

@@ -101,7 +101,7 @@ const Footer = () => {
                 Plan Before You Build.
               </h3>
               <p className="text-primary-foreground/50 text-[15px] font-body max-w-md leading-relaxed">
-                Roof, addition, storm damage, or layouts & planning — one local team, one named contact, as soon as possible to respond.
+                Roof, addition, storm damage, or Design & Planning — one local team, one named contact, as soon as possible to respond.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">

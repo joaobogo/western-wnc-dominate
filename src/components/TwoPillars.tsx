@@ -52,7 +52,7 @@ const TwoPillars = () => {
             Highlander began as a roofing company and remains Western North Carolina&apos;s
             most disciplined roofing team. The same crew, same owner, and same standard
             now lead our construction work —{" "}
-            <span className="text-[hsl(var(--highland-gold))]">additions, outdoor living, and project design support</span>.
+            <span className="text-[hsl(var(--highland-gold))]">additions, outdoor living, and our Design & Planning branch</span>.
           </p>
         </motion.div>
       </div>

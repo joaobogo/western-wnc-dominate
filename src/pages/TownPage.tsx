@@ -256,7 +256,7 @@ const TownPage = () => {
                 </div>
 
                 <Link to="/layouts-planning" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.2)] pb-1">
-                  Explore Your Project Scope <ArrowRight className="w-4 h-4" />
+                  Design & Planning Support <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
