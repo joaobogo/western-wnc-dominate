@@ -211,9 +211,9 @@ const Hero = () => {
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
-                Premium Roofing &
+                Owner-Led Quality,
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-1 md:mb-2">
@@ -221,9 +221,9 @@ const Hero = () => {
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
-                Mountain Construction.
+                Built for the Peaks.
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-8 md:mb-12">
@@ -231,9 +231,9 @@ const Hero = () => {
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.5rem] xl:text-[5.4rem] font-heading font-bold tracking-[-0.03em]"
+                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.035em]"
               >
-                <span className="text-[hsl(var(--highland-gold))]">One owner-led team</span>
+                <span className="text-[hsl(var(--highland-gold))]">Roofing & Construction</span>
                 <span className="text-primary-foreground">.</span>
               </motion.h1>
             </div>
@@ -244,9 +244,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[14px] md:text-[17px] text-primary-foreground/35 max-w-lg mb-10 md:mb-14 leading-[1.8] font-body"
+              className="text-[15px] md:text-[18px] text-primary-foreground/45 max-w-xl mb-10 md:mb-14 leading-[1.75] font-body"
             >
-              Owner-led craftsmanship for the terrain, the weather, and the legacy of Western North Carolina. Licensed General Contractor and CertainTeed Master Applicator serving Highlands, Cashiers, and Franklin.
+              The premium standard for Western North Carolina homes. From storm-grade roofing to custom mountain additions, we combine family-business values with master-class craftsmanship. 
+              <span className="block mt-4 text-[hsl(var(--highland-gold)/0.8)] font-semibold">Licensed, Insured, and GAF Master Elite® Accredited.</span>
             </motion.p>
 
 
