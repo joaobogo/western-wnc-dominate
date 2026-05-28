@@ -480,8 +480,8 @@ const Header = () => {
                       onClick={() => setMobileOpen(false)}
                       className={`py-3 px-3 text-base font-medium rounded-sm transition-all flex items-center gap-2 font-body ${
                         isActive(link.href)
-                          ? "text-white bg-white/10"
-                          : "text-white/70 hover:text-white hover:bg-white/5"
+                          ? "text-heritage-charcoal bg-black/5"
+                          : "text-heritage-charcoal/70 hover:text-heritage-charcoal hover:bg-black/5"
                       }`}
                     >
                       {link.label}
