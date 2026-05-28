@@ -61,9 +61,10 @@ const TwoPillars = () => {
 
           {/* Statement */}
           <p className="font-heading text-[1.35rem] md:text-[1.75rem] lg:text-[2rem] leading-[1.35] tracking-[-0.01em] text-foreground max-w-3xl mx-auto">
-            Highlander is built on mountain-grade roofing authority. We carry that same owner-led discipline into additions, outdoor living, and our{" "}
-            <span className="text-[hsl(var(--highland-gold))]">Design & Planning branch</span> — ensuring every project is intelligently mapped before the first board is cut.
+            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/20 underline-offset-4">roofing authority</Link>. We carry that same owner-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.2)] underline-offset-4">additions, outdoor living</Link>, and our{" "}
+            <Link to="/layouts-planning" className="text-[hsl(var(--highland-gold))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)] transition-all">Design & Planning branch</Link> — ensuring every project is intelligently mapped before the first board is cut.
           </p>
+
 
         </motion.div>
       </div>
