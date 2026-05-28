@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight, Home, Paintbrush, TreePine, Gem,
   UtensilsCrossed, Shield, Layers, HardHat,
-  type LucideIcon,
+  Compass, type LucideIcon,
 } from "lucide-react";
+
 
 /* ═══════════════════════════════════════════
    SERVICE CATEGORY DATA

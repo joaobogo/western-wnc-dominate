@@ -18,6 +18,16 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const projects = [
   {
+    title: "Project Design & Planning",
+    location: "Highlands, NC",
+    elevation: "4,118 ft",
+    category: "Design & Planning",
+    type: "construction" as const,
+    outcome: "Complete layout planning and scope definition for a significant multi-level addition. Resolved terrain challenges before build.",
+    image: asphaltLarge,
+    size: "hero" as const,
+  },
+  {
     title: "Standing Seam Metal — Estate Home",
     location: "Cashiers, NC",
     elevation: "3,800 ft",
@@ -25,8 +35,9 @@ const projects = [
     type: "roofing" as const,
     outcome: "Complex multi-gable standing seam installation with concealed fasteners. Engineered for 140mph wind uplift.",
     image: metalRoof,
-    size: "hero" as const,
+    size: "standard" as const,
   },
+
   {
     title: "Cedar Shake — Mountain Estate",
     location: "Highlands, NC",
