@@ -76,7 +76,7 @@ const TownPage = () => {
         <section className="relative min-h-[70svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000" 
+              src="https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" 
               alt={`${town.name}, NC landscapes`}
               className="w-full h-full object-cover"
             />

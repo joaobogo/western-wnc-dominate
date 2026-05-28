@@ -20,7 +20,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import planningImg from "@/assets/gallery/asphalt-hero.webp"; // Using as premium visual anchor
+const planningImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
+const sketchImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
@@ -163,7 +164,7 @@ const LayoutsPlanning = () => {
               >
                 <div className="aspect-[4/3] relative">
                   <div className="absolute inset-0 border border-white/10 translate-x-4 translate-y-4" />
-                  <img src={planningImg} alt="Project Planning" className="w-full h-full object-cover relative z-10" />
+                  <img src={planningImg} alt="Modern mountain project layout" className="w-full h-full object-cover relative z-10" />
                   <div className="absolute inset-0 bg-primary/20 mix-blend-multiply z-20" />
                 </div>
               </motion.div>
@@ -307,7 +308,7 @@ const LayoutsPlanning = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <ScrollReveal variant="slide-right">
                 <div className="aspect-square bg-card border border-border p-1 md:p-2 rotate-1 relative">
-                  <img src={planningImg} alt="For WNC Homeowners" className="w-full h-full object-cover grayscale opacity-50" />
+                  <img src={sketchImg} alt="Conceptual design and floor planning for WNC homeowners" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
                   <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
                 </div>
               </ScrollReveal>
