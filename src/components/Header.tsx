@@ -428,14 +428,14 @@ const Header = () => {
                                   onClick={() => setMobileOpen(false)}
                                   className={`py-2.5 px-3 rounded-sm transition-all block ${
                                     isActive(item.href)
-                                      ? "bg-white/10"
-                                      : "hover:bg-white/5"
+                                      ? "bg-black/5"
+                                      : "hover:bg-black/5"
                                   }`}
                                 >
                                   <span className={`text-sm font-body block leading-tight ${
-                                    isActive(item.href) ? "font-medium text-white" : "text-white/70"
+                                    isActive(item.href) ? "font-medium text-heritage-charcoal" : "text-heritage-charcoal/70"
                                   }`}>{item.label}</span>
-                                  <span className="text-[11px] font-body text-white/30">{item.desc}</span>
+                                  <span className="text-[11px] font-body text-heritage-charcoal/30">{item.desc}</span>
                                 </Link>
                               </motion.div>
                             ))}
