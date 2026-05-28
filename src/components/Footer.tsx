@@ -19,6 +19,7 @@ const constructionLinks = [
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
   { label: "Start a Project", href: "/consultation" },
   { label: "Build Your Project", href: "/construction-builder" },
+  { label: "Layouts & Planning", href: "/layouts-planning" },
 ];
 
 const resourceLinks = [

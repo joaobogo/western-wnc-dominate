@@ -32,6 +32,7 @@ const constructionItems: DropdownItem[] = [
   { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
   { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
+  { label: "Layouts & Planning", href: "/layouts-planning", desc: "Preconstruction thinking" },
 ];
 
 interface DivisionDropdown {
