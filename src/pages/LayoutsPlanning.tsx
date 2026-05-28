@@ -265,6 +265,40 @@ const LayoutsPlanning = () => {
               </ScrollReveal>
             </div>
           </div>
+        {/* Visual Support Cluster — Premium imagery showing planning value */}
+        <section className="py-24 bg-secondary/30 relative overflow-hidden">
+          <div className="container-tight">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { 
+                  img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
+                  label: "Addition Planning",
+                  desc: "Visualizing structural ties and footprint expansion for a mountain estate."
+                },
+                { 
+                  img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000",
+                  label: "Scope Development",
+                  desc: "Meticulous documentation of every board cut and material specification."
+                },
+                { 
+                  img: "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?auto=format&fit=crop&q=80&w=1000",
+                  label: "Layout Support",
+                  desc: "Drafting the flow and functionality of new mountain living spaces."
+                }
+              ].map((item, i) => (
+                <ScrollReveal key={i} delay={i * 0.1} variant="rise-subtle" className="group">
+                  <div className="relative aspect-[4/5] overflow-hidden mb-5">
+                    <img src={item.img} alt={item.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] mb-2 block">{item.label}</span>
+                      <h4 className="text-white text-lg font-heading font-bold">{item.desc}</h4>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* 5. How it connects to construction */}
