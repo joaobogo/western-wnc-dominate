@@ -36,6 +36,10 @@ const PROJECT_TYPES: VisualChoice[] = [
 ];
 
 const SCOPE_ITEMS: VisualChoice[] = [
+  { value: "layouts_plans", label: "Layouts & Floor Plans" },
+  { value: "project_planning", label: "Project Planning" },
+  { value: "design_guidance", label: "Design Guidance" },
+  { value: "scope_development", label: "Scope Development" },
   { value: "attached_addition", label: "Attached to existing home" },
   { value: "detached_structure", label: "Detached structure" },
   { value: "covered_porch", label: "Covered or screened porch" },
