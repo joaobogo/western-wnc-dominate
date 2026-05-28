@@ -69,17 +69,17 @@ const About = () => {
                 initial={{ opacity: 0, letterSpacing: "0.08em" }}
                 animate={{ opacity: 1, letterSpacing: "-0.02em" }}
                 transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-[1.05] mb-2"
+                className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-[1.0] mb-2 tracking-tight"
               >
-                Built on Trust.
+                Rooted in the Mountains.
               </motion.h1>
               <motion.h1
                 initial={{ opacity: 0, letterSpacing: "0.08em" }}
                 animate={{ opacity: 1, letterSpacing: "-0.02em" }}
                 transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold tracking-tight leading-[1.05] mb-8"
+                className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.0] mb-8"
               >
-                <span className="text-[hsl(var(--highland-gold))]">Rooted in These Mountains.</span>
+                <span className="text-[hsl(var(--highland-gold))]">Built on Family Integrity.</span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-base md:text-lg text-[hsl(var(--dark-section-foreground)/0.5)] max-w-xl mb-10 leading-relaxed font-body">
