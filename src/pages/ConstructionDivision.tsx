@@ -186,7 +186,8 @@ const ConstructionDivision = () => {
                   Highlander builds more than roofs. We build the spaces that define how families live in these mountains — with the same planning depth, craft standards, and communication discipline we bring to every project we accept.
                 </h2>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                  Our Construction division serves Western North Carolina homeowners who refuse to settle for "good enough" — people who value planning over rushing, documentation over handshakes, and craftsmanship that holds up at elevation.
+                  Our Construction division serves Western North Carolina homeowners who refuse to settle for "good enough" — people who value <Link to="/layouts-planning" className="text-primary font-bold hover:underline">planning over rushing</Link>, documentation over handshakes, and craftsmanship that holds up at elevation.
+
                 </p>
                 <p className="text-muted-foreground/60 text-sm leading-relaxed font-body max-w-xl mx-auto">
                   We're selective about the projects we take on — because the work we do reflects who we are.
