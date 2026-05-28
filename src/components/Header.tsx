@@ -155,10 +155,10 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[13px] font-semibold transition-colors inline-flex items-center gap-1 px-3.5 py-2 rounded-sm font-body ${
+                className={`relative text-[13px] font-semibold transition-all duration-300 inline-flex items-center gap-1 px-3.5 py-2 rounded-sm font-body ${
                   isActive(div.href)
-                    ? "text-foreground bg-secondary/50"
-                    : "text-foreground/70 hover:text-foreground hover:bg-secondary/40"
+                    ? (scrolled || mobileOpen ? "text-foreground bg-secondary/50" : "text-white bg-white/10")
+                    : (scrolled || mobileOpen ? "text-foreground/70 hover:text-foreground hover:bg-secondary/40" : "text-white/80 hover:text-white hover:bg-white/10")
                 }`}
               >
                 {div.label}
