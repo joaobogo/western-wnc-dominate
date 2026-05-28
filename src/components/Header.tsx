@@ -294,7 +294,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <a
             href="tel:8283979211"
-            className={`hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 text-white/60 hover:text-white`}
+            className={`hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 ${scrolled ? "text-heritage-charcoal/60 hover:text-heritage-charcoal" : "text-white/60 hover:text-white"}`}
           >
             <Phone className="w-3.5 h-3.5" />
             <span className="hidden xl:inline">(828) 397-9211</span>
@@ -314,7 +314,7 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 active:scale-90 transition-all duration-300 text-white"
+            className={`lg:hidden p-2 active:scale-90 transition-all duration-300 ${scrolled || mobileOpen ? "text-heritage-charcoal" : "text-white"}`}
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
