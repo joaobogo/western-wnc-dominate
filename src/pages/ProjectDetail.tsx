@@ -158,26 +158,35 @@ const ProjectDetailPage = () => {
                   <h4 className="font-heading font-semibold text-sm text-foreground mb-4">Project Details</h4>
                   <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)] mb-4" />
                   <div className="space-y-3 text-sm">
-                    <div className="flex justify-between"><span className="text-muted-foreground">Location</span><span className="font-medium text-foreground">{project.location}</span></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Location</span><Link to={`/service-areas/${project.location.toLowerCase().replace(', nc', '').replace(' ', '-')}`} className="font-medium text-primary hover:underline">{project.location}</Link></div>
                     <div className="flex justify-between"><span className="text-muted-foreground">County</span><span className="font-medium text-foreground">{project.county}</span></div>
                     {project.elevation && <div className="flex justify-between"><span className="text-muted-foreground">Elevation</span><span className="font-medium text-foreground">{project.elevation}</span></div>}
                     <div className="flex justify-between"><span className="text-muted-foreground">Scope</span><span className="font-medium text-foreground">{project.scope}</span></div>
                     <div className="flex justify-between"><span className="text-muted-foreground">Duration</span><span className="font-medium text-foreground">{project.duration}</span></div>
-                    <div className="flex justify-between"><span className="text-muted-foreground">Category</span><span className="font-medium text-foreground capitalize">{project.category}</span></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Category</span><Link to={project.category === 'roofing' ? '/roofing' : '/construction'} className="font-medium text-primary hover:underline capitalize">{project.category}</Link></div>
                   </div>
                 </motion.div>
 
                 <TrustSidebar />
 
+                {/* Service Link Card */}
+                <motion.div {...fadeUp} className="bg-secondary/50 border border-border rounded-sm p-5">
+                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-3">Service Expertise</h4>
+                   <Link to={project.category === 'roofing' ? '/roofing/roof-replacement' : '/construction/additions'} className="group flex items-center justify-between text-sm font-heading font-bold text-foreground hover:text-primary transition-colors">
+                      View {project.type} Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                   </Link>
+                </motion.div>
+
                 {/* CTA card */}
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
-                  <p className="text-primary-foreground/60 text-sm mb-4">Schedule a consultation and let's discuss your project.</p>
+                  <p className="text-primary-foreground/60 text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
                   <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center">
                     Discuss Your Project <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
+
             </div>
           </div>
         </section>

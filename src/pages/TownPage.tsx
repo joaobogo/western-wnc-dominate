@@ -300,63 +300,72 @@ const TownPage = () => {
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                 <div className="max-w-xl">
                   <h2 className="text-[11px] uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] font-bold mb-4">Local Knowledge</h2>
-                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground">Factual Insights for {town.name} Homeowners</h3>
+                  <h3 className="text-3xl font-heading font-bold text-foreground">Insights for {town.name} Homeowners</h3>
                 </div>
-                <Link to="/blog" className="text-primary font-bold inline-flex items-center gap-2 hover:underline font-heading text-sm uppercase tracking-wider">
-                  View All Insights <ArrowRight className="w-4 h-4" />
+                <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all">
+                  Browse All Resources <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
-                {existingBlogs.map((post) => (
-                  <Link key={post.slug} to={`/blog/${post.slug}`} className="group bg-card border border-border p-6 rounded-sm hover:border-primary/30 transition-all flex flex-col h-full">
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-4">
-                      <BookOpen className="w-3 h-3" />
-                      {post.category}
-                    </div>
-                    <h4 className="text-lg font-heading font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow font-body">{post.excerpt}</p>
-                    <span className="text-[11px] font-bold text-primary flex items-center gap-1.5 uppercase tracking-wider font-heading">
-                      Read Guide <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Link>
-                ))}
-                
-                {/* Proposed Local Topics */}
-                {existingBlogs.length < 3 && localBlogs.map((topic, i) => (
-                  <div key={i} className="bg-background/50 border border-dashed border-border p-6 rounded-sm flex flex-col">
-                    <div className="text-[10px] uppercase tracking-widest text-muted-foreground/60 font-bold mb-4 flex items-center gap-2">
-                      <span className="px-1.5 py-0.5 rounded-sm bg-secondary text-[8px]">{topic.serviceCategory}</span>
-                      Upcoming Guide
-                    </div>
-                    <h4 className="text-lg font-heading font-bold text-foreground/60 mb-3 leading-snug">{topic.title}</h4>
-                    <p className="text-sm text-muted-foreground/60 leading-relaxed mb-6 flex-grow font-body">{topic.description}</p>
-                    <span className="text-[11px] font-bold text-muted-foreground/40 flex items-center gap-1.5 uppercase tracking-wider font-heading">
-                      In Development
-                    </span>
-                  </div>
-                ))}
+                {existingBlogs.length > 0 ? (
+                  existingBlogs.map((post) => (
+                    <Link 
+                      key={post.slug} 
+                      to={`/blog/${post.slug}`}
+                      className="group bg-card border border-border p-6 hover:border-primary/20 transition-all rounded-sm flex flex-col"
+                    >
+                      <div className="flex items-center gap-2 mb-4">
+                        <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                        <span className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">{post.category}</span>
+                      </div>
+                      <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-6 line-clamp-2 font-body flex-grow">{post.excerpt}</p>
+                      <span className="text-xs font-bold text-primary flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                        Read Local Guide <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </Link>
+                  ))
+                ) : (
+                  blogPosts.filter(b => b.category === "Construction" || b.category === "Design").slice(0, 3).map((post) => (
+                    <Link 
+                      key={post.slug} 
+                      to={`/blog/${post.slug}`}
+                      className="group bg-card border border-border p-6 hover:border-primary/20 transition-all rounded-sm flex flex-col"
+                    >
+                      <div className="flex items-center gap-2 mb-4">
+                        <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                        <span className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">{post.category}</span>
+                      </div>
+                      <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-6 line-clamp-2 font-body flex-grow">{post.excerpt}</p>
+                      <span className="text-xs font-bold text-primary flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                        Read Planning Guide <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </Link>
+                  ))
+                )}
               </div>
             </div>
           </section>
         )}
 
-        {/* 9. Next Steps / Advanced Builders */}
-        <section className="bg-background">
-          <BuilderPromoBlock
-            variant="band"
-            town={town.name}
-            title={`Build Your Roofing Project in ${town.name}`}
-            body={`An optional guided pathway for ${town.name}-area homeowners. Specify project type, material, and priorities — we use it to prepare a sharper on-site assessment with mountain-exposure detailing built in.`}
-          />
-
-          <BuilderPromoBlock
-            mode="construction"
-            variant="band"
-            town={town.name}
-            title={`Plan Your ${town.name} Construction Project`}
-            body={`Optional guided pathway for ${town.name}-area additions, porches, decks, outdoor living, and flatwork projects. Sharpens the first conversation — never replaces it.`}
-          />
+        {/* Builder Promo - Link to Interactive Tools */}
+        <section className="py-12 bg-background border-y border-border">
+          <div className="container-tight">
+            <div className="bg-secondary/50 p-8 md:p-12 border border-border flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-xl text-center md:text-left">
+                <h3 className="text-2xl font-heading font-bold text-foreground mb-3 tracking-tight">Try Our Interactive Builders</h3>
+                <p className="text-muted-foreground text-sm font-body leading-relaxed">
+                  Visualize your new roof or plan your construction project budget in minutes using our custom {town.name} building tools.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/roofing-builder" className="text-xs font-bold bg-primary text-primary-foreground px-6 py-3 hover:bg-primary/90 transition-colors uppercase tracking-widest text-center">Roof Builder</Link>
+                <Link to="/construction-builder" className="text-xs font-bold border border-primary text-primary px-6 py-3 hover:bg-primary/5 transition-colors uppercase tracking-widest text-center">Project Builder</Link>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* 8. Service area / nearby communities */}

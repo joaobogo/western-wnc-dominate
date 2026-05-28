@@ -5,7 +5,7 @@ import {
   CheckCircle, AlertTriangle, Wrench, Replace, Layers,
   Eye, Ruler, ClipboardCheck, Hammer, BadgeCheck,
   Droplets, Wind, Thermometer, Mountain, ShieldCheck,
-  Camera, Paintbrush, Landmark, ChevronRight, Sparkles
+  Camera, Paintbrush, Landmark, ChevronRight, Sparkles, Compass
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
@@ -266,21 +266,76 @@ const ResidentialRoofing = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
-                className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-white/10"
+                className="mt-10 flex items-center gap-6"
               >
                 {[
-                  { value: "4.9★", label: "Google Rating" },
-                  { value: "4.9★", label: "Homeowner Rating" },
-                  { value: "Top 1%", label: "National Certification" },
-                  { value: "Rapid", label: "Storm Response" },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center sm:text-left">
-                    <div className="text-lg md:text-xl font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
-                    <div className="text-[10px] uppercase tracking-wider text-primary-foreground/40 font-body mt-0.5">{stat.label}</div>
+                  { icon: Award, label: "CertainTeed Master Applicator" },
+                  { icon: ShieldCheck, label: "Licensed & Insured" },
+                  { icon: Star, label: "4.9★ Local Rating" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-2">
+                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
+                    <span className="text-[10px] font-body text-primary-foreground/40 uppercase tracking-widest">{item.label}</span>
                   </div>
                 ))}
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Local Markets Navigation — SEO Expansion */}
+        <section className="py-12 bg-background border-b border-border">
+          <div className="container-tight">
+             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-3">
+                   <div className="w-10 h-[1px] bg-primary/20" />
+                   <span className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground/60">Serving Local Markets</span>
+                </div>
+                <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                   {[
+                      { name: "Highlands", slug: "highlands-nc" },
+                      { name: "Cashiers", slug: "cashiers-nc" },
+                      { name: "Franklin", slug: "franklin-nc" },
+                      { name: "Sylva", slug: "sylva-nc" },
+                      { name: "Waynesville", slug: "waynesville-nc" }
+                   ].map(town => (
+                      <Link key={town.slug} to={`/service-areas/${town.slug}`} className="text-xs font-bold text-foreground/60 hover:text-primary transition-colors uppercase tracking-widest underline underline-offset-4 decoration-border">
+                         {town.name}
+                      </Link>
+                   ))}
+                </div>
+                <Link to="/service-areas" className="text-xs font-bold text-primary flex items-center gap-1.5 uppercase tracking-widest">
+                   All Areas <ArrowRight className="w-3 h-3" />
+                </Link>
+             </div>
+          </div>
+        </section>
+        {/* Dual-Division Hub Bridge */}
+        <section className="py-16 bg-secondary/30 border-b border-border">
+          <div className="container-tight">
+             <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                   <h3 className="text-2xl font-heading font-bold text-foreground mb-4">Beyond Roofing Excellence</h3>
+                   <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
+                      Highlander’s project discipline extends into custom additions and renovations. If your roofing project is part of a larger home expansion, our construction team coordinates the entire structural envelope.
+                   </p>
+                   <Link to="/construction" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold uppercase tracking-widest text-[11px] hover:gap-3 transition-all">
+                      Explore Construction Division <ArrowRight className="w-4 h-4" />
+                   </Link>
+                </div>
+                <div className="bg-card border border-border p-8 rounded-sm">
+                   <h4 className="font-heading font-bold text-foreground mb-4 flex items-center gap-2">
+                      <Compass className="w-5 h-5 text-primary" />
+                      Plan Before You Build
+                   </h4>
+                   <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
+                      Avoid surprises with our pre-construction support. We help Western North Carolina homeowners define layout, floor plans, and project scope before breaking ground.
+                   </p>
+                   <Link to="/layouts-planning" className="text-sm font-bold text-primary hover:underline">
+                      Design & Planning Support &rarr;
+                   </Link>
+                </div>
+             </div>
           </div>
         </section>
 

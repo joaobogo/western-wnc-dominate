@@ -335,6 +335,21 @@ const BlogPostPage = () => {
                   </motion.div>
                 )}
 
+                {/* Local Town Bridge */}
+                {post.town && (
+                  <div className="mt-10 pt-8 border-t border-border">
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-4">Market Context</h4>
+                    <Link to={`/service-areas/${post.town.toLowerCase()}-nc`} className="group flex items-center justify-between p-6 bg-secondary/40 border border-border rounded-sm hover:border-primary/20 transition-all">
+                      <div>
+                        <p className="text-sm font-heading font-bold text-foreground mb-1">Roofing & Construction in {post.town}</p>
+                        <p className="text-xs text-muted-foreground font-body">Explore localized standards and proven projects in your area.</p>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                )}
+
+
                 {/* Inline Lead Magnet */}
                 <div className="mt-10">
                   <GuideLeadMagnet variant="inline" guide={getGuideType(post.category)} />
