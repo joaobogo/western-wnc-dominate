@@ -265,6 +265,8 @@ const LayoutsPlanning = () => {
               </ScrollReveal>
             </div>
           </div>
+        </section>
+
         {/* Visual Support Cluster — Premium imagery showing planning value */}
         <section className="py-24 bg-secondary/30 relative overflow-hidden">
           <div className="container-tight">
