@@ -312,21 +312,23 @@ const LayoutsPlanning = () => {
           <div className="container-tight">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <ScrollReveal variant="slide-right">
-                <div className="aspect-square bg-card border border-border p-1 md:p-2 rotate-1 relative">
+                <div className="aspect-square bg-card border border-border p-1 md:p-2 rotate-1 relative group">
                   <img src={sketchImg} alt="Initial project layout and floor-plan support" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
-                  <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-primary/10 mix-blend-multiply transition-opacity group-hover:opacity-0" />
                 </div>
               </ScrollReveal>
-              <ScrollReveal>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8 leading-tight">Who this service is for.</h2>
-                <div className="space-y-6">
+              <ScrollReveal variant="slide-left" delay={0.2}>
+                <h2 className="text-3xl font-heading font-bold mb-8">Supporting Your Vision.</h2>
+                <ul className="space-y-6">
                   {audiences.map((audience, i) => (
-                    <div key={i} className="flex gap-4 p-5 bg-card border border-border/60 hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] shrink-0 mt-2" />
-                      <p className="text-base text-foreground font-body leading-relaxed">{audience}</p>
-                    </div>
+                    <li key={i} className="flex items-start gap-4">
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckCircle className="w-3.5 h-3.5 text-primary" />
+                      </div>
+                      <span className="text-foreground font-medium font-body">{audience}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </ScrollReveal>
             </div>
           </div>
@@ -335,51 +337,53 @@ const LayoutsPlanning = () => {
         {/* 8. FAQ */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-3xl">
-            <div className="text-center mb-12">
-              <HelpCircle className="w-10 h-10 text-[hsl(var(--highland-gold)/0.5)] mx-auto mb-6" />
-              <h2 className="text-3xl font-heading font-bold mb-4">Planning Questions</h2>
-              <p className="text-muted-foreground font-body">Common questions about our layout and planning support.</p>
+            <div className="text-center mb-16">
+              <HelpCircle className="w-10 h-10 text-[hsl(var(--highland-gold)/0.3)] mx-auto mb-4" />
+              <h2 className="section-heading">Common Questions</h2>
             </div>
-            <ScrollReveal variant="fade">
-              <Accordion type="single" collapsible className="w-full border-t border-border">
-                {faqs.map((faq, i) => (
-                  <AccordionItem key={i} value={`item-${i}`} className="border-b border-border py-2 px-1">
-                    <AccordionTrigger className="text-base font-heading font-bold text-left hover:text-primary transition-colors py-4">
-                      {faq.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground leading-relaxed font-body pt-2 pb-6">
-                      {faq.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </ScrollReveal>
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`item-${i}`} className="border-border">
+                  <AccordionTrigger className="text-left font-heading font-bold py-6 hover:text-primary transition-colors">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6 font-body">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
 
-        {/* 9. Final CTA Block */}
-        <section className="section-padding bg-secondary tartan-bg relative border-y border-border">
-          <div className="container-tight text-center relative z-10">
+        {/* 9. Final CTA */}
+        <section className="section-padding bg-secondary relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "320px auto" }} />
+          <div className="container-tight max-w-4xl text-center relative z-10">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 tracking-tight">
-                Ready to Start <span className="text-[hsl(var(--highland-gold))]">Thinking Through Your Project?</span>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 leading-tight">
+                Ready to Organize <br />
+                <span className="text-[hsl(var(--highland-gold))]">Your Next Step?</span>
               </h2>
-              <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto font-body">
-                Talk with our team to define your layout, clarify your scope, and prepare for a predictable construction experience.
+              <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto font-body">
+                Whether you're starting a master suite addition or a multi-phase outdoor living project, let's clarify the layout and scope first.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-2 group hover:scale-[1.02] transition-transform duration-300">
-                  Start Planning Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Link to="/design-intake" className="cta-gradient text-accent-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 group hover:scale-[1.02] transition-transform duration-300 shadow-lg">
+                  Start Your Project Plan <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:8283979211" className="bg-background border border-border text-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors">
-                  Discuss Your Layout or Floor Plan
+                <a href="tel:8283979211" className="bg-white border border-border text-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-muted transition-colors">
+                  <Phone className="w-5 h-5" /> (828) 397-9211
                 </a>
               </div>
+              <p className="mt-8 text-[11px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/40">
+                Supporting Western North Carolina Homeowners
+              </p>
             </ScrollReveal>
           </div>
         </section>
       </main>
-
+      
       <Footer />
       <StickyMobileCTA />
     </div>
