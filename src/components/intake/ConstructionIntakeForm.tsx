@@ -19,8 +19,9 @@ const PROJECT_OPTIONS = [
   { value: "renovation", label: "Renovation",           sub: "Kitchen, bath, whole-home" },
   { value: "custom",     label: "Custom Build",         sub: "Ground-up new construction" },
   { value: "exterior",   label: "Exterior Improvement", sub: "Siding, windows, facade" },
-  { value: "consult",    label: "Planning Conversation", sub: "Explore layouts & floor plans" },
+  { value: "planning",   label: "Design & Planning",    sub: "Explore layouts & floor plans" },
 ];
+
 const READINESS_OPTIONS = [
   { value: "ready",       label: "Ready to plan", sub: "Budget defined, want to start" },
   { value: "exploring",   label: "Exploring",     sub: "Gathering scope and numbers" },
