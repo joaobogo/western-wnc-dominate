@@ -57,9 +57,9 @@ const Careers = () => {
           <div className="container-tight relative z-10">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
               <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work With Us</p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-white tracking-tight">
-                Build Something <br />
-                <span className="text-[hsl(var(--highland-gold))]">That Lasts.</span>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6 text-white tracking-tight leading-[1.0]">
+                Build a Career <br />
+                <span className="text-[hsl(var(--highland-gold))]">on Higher Ground.</span>
               </h1>
               <p className="text-dark-section-foreground/60 text-lg md:text-xl font-body leading-relaxed max-w-2xl">
                 Highlander isn't just a roofing company. We're a family-owned team of craftsmen dedicated to protecting and improving WNC homes. We're looking for reliable people who take pride in doing the job right.

@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import teamPhoto from "@/assets/team-photo.webp";
+import { ScrollReveal } from "@/components/motion";
 const storyImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
 const heritageImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
 
@@ -69,17 +70,17 @@ const About = () => {
                 initial={{ opacity: 0, letterSpacing: "0.08em" }}
                 animate={{ opacity: 1, letterSpacing: "-0.02em" }}
                 transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-[1.05] mb-2"
+                className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-[1.0] mb-2 tracking-tight"
               >
-                Built on Trust.
+                Rooted in the Mountains.
               </motion.h1>
               <motion.h1
                 initial={{ opacity: 0, letterSpacing: "0.08em" }}
                 animate={{ opacity: 1, letterSpacing: "-0.02em" }}
                 transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-5xl lg:text-[3.75rem] font-heading font-bold tracking-tight leading-[1.05] mb-8"
+                className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.0] mb-8"
               >
-                <span className="text-[hsl(var(--highland-gold))]">Rooted in These Mountains.</span>
+                <span className="text-[hsl(var(--highland-gold))]">Built on Family Integrity.</span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-base md:text-lg text-[hsl(var(--dark-section-foreground)/0.5)] max-w-xl mb-10 leading-relaxed font-body">
@@ -306,15 +307,10 @@ const About = () => {
                 </h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
                 <p className="text-[hsl(var(--dark-section-foreground)/0.7)] leading-relaxed mb-4">
-                  In an industry where "quality craftsmanship" is printed on every business card,
-                  we understand why that phrase means nothing anymore. So we don't rely on words.
-                  We rely on systems.
+                  In an industry where "quality craftsmanship" is printed on every business card, we've learned to let our work do the talking. Every Highlander project follows the same discipline: careful material selection, manufacturer-exact installation, detailed inspection, and personal accountability from start to finish.
                 </p>
                 <p className="text-[hsl(var(--dark-section-foreground)/0.7)] leading-relaxed">
-                  Every Highlander project follows the same discipline: careful material selection,
-                  manufacturer-exact installation, detailed inspection, and personal accountability
-                  from start to finish. The result isn't a promise — it's a pattern you can see
-                  in every project we've ever completed.
+                  The result isn't a promise — it's a pattern you can see in every project we've ever completed across the ridgelines of Western North Carolina.
                 </p>
               </motion.div>
               <div className="space-y-4">
@@ -474,6 +470,38 @@ const About = () => {
                 <span>4.9★ Average Rating</span>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* ── COMMUNITY ROOTS — Family business warmth ── */}
+        <section className="section-padding bg-secondary/20 relative">
+          <div className="container-tight max-w-5xl">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <ScrollReveal variant="slide-left">
+                <span className="eyebrow mb-3 block">Our Heritage</span>
+                <h2 className="section-heading mb-6">A Family Business That<br />Grew with WNC.</h2>
+                <div className="space-y-6 text-muted-foreground font-body leading-relaxed">
+                  <p>
+                    Highlander started as a local response to a regional problem: homeowners in Western North Carolina weren't getting the specialized roofing care their mountain homes demanded.
+                  </p>
+                  <p>
+                    Since 2017, we've remained owner-led and family-driven. We don't have board members or out-of-state headquarters. Our decisions are made on front porches and ridgelines, with the long-term reputation of our family name at stake.
+                  </p>
+                  <p className="italic font-medium text-foreground">
+                    "When we put our name on a project, we're making a promise to a neighbor."
+                  </p>
+                </div>
+              </ScrollReveal>
+              <div className="relative">
+                <div className="aspect-[4/5] bg-muted overflow-hidden">
+                  <img src={heritageImg} alt="Western North Carolina heritage" className="w-full h-full object-cover grayscale opacity-80" />
+                </div>
+                {/* Visual badge */}
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary flex items-center justify-center p-6 text-center border border-white/10 shadow-xl">
+                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-xs uppercase tracking-widest leading-tight">Macon & Jackson County Specialists</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

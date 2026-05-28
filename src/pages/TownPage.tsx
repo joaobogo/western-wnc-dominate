@@ -102,8 +102,8 @@ const TownPage = () => {
                 </div>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6 text-primary-foreground tracking-tight max-w-5xl leading-[1.1]">
-                Roofing & Construction Built for <span className="text-[hsl(var(--highland-gold))]">{town.name}</span>
+              <h1 className="text-4xl md:text-5xl lg:text-8xl font-heading font-bold mb-6 text-primary-foreground tracking-tight max-w-5xl leading-[1.0]">
+                Built for the <span className="text-[hsl(var(--highland-gold))]">{town.name} Peaks.</span>
               </h1>
               
               <div className="grid md:grid-cols-3 gap-6 mb-10 max-w-4xl">
@@ -284,6 +284,27 @@ const TownPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Local Design & Planning Bridge — Town-specific intelligence */}
+        <section className="py-12 bg-secondary/20">
+          <div className="container-tight">
+            <div className="bg-white border border-[hsl(var(--highland-gold)/0.15)] p-6 md:p-8 flex flex-col md:flex-row items-center gap-8 group/bridge">
+              <div className="w-14 h-14 rounded-full bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)] group-hover/bridge:scale-110 transition-transform duration-500">
+                <Compass className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h4 className="text-lg font-heading font-bold text-foreground mb-2">Planning Your {town.name} Addition?</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                  We provide localized Design & Planning support for {town.name} homeowners. From navigating local {town.county} County building codes to mountain-responsive layouts, we ensure your project is build-ready.
+                </p>
+              </div>
+              <Link to="/layouts-planning" className="group/btn inline-flex items-center gap-2 text-[12px] font-heading font-bold uppercase tracking-wider text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors">
+                View Planning Services <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
 
         {/* 5, 6 & 7. Proof, Special Consideration & FAQ */}
         {townProof ? (

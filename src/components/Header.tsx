@@ -128,19 +128,17 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] border-b border-black/5"
-
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_2px_15px_-5px_rgba(0,0,0,0.08)] border-b border-black/[0.03]"
     >
-
       {/* ─── Main nav bar ─── */}
-      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-1" : "py-1.5 md:py-2"}`}>
+      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-0.5" : "py-1 md:py-1.5"}`}>
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
             className="w-auto transition-all duration-500"
-            animate={{ height: scrolled ? 72 : 92 }}
+            animate={{ height: scrolled ? 68 : 84 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>

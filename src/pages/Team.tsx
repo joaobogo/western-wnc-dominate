@@ -77,9 +77,9 @@ const Team = () => {
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.7, delay: 0.1, ease: HIGHLAND_EASE }}
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight tracking-tight"
+              className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white mb-6 leading-[1.0] tracking-tight"
             >
-              Local People. <span className="text-[hsl(var(--highland-gold))]">Mountain Standards.</span>
+              The People Behind <span className="text-[hsl(var(--highland-gold))]">the Heritage.</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }} 

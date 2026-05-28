@@ -131,18 +131,18 @@ const LayoutsPlanning = () => {
                   initial={{ opacity: 0, y: 20 }} 
                   animate={{ opacity: 1, y: 0 }} 
                   transition={{ duration: 0.7, delay: 0.1, ease: HIGHLAND_EASE }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white mb-6 leading-[1.0] tracking-tight"
                 >
-                  Intelligent <span className="text-[hsl(var(--highland-gold))]">Design & Planning</span>.
+                  Master Your <span className="text-[hsl(var(--highland-gold))]">Project Strategy</span>.
                 </motion.h1>
 
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }} 
                   animate={{ opacity: 1, y: 0 }} 
                   transition={{ duration: 0.7, delay: 0.2, ease: HIGHLAND_EASE }}
-                  className="text-lg text-white/50 mb-10 max-w-xl leading-relaxed font-body"
+                  className="text-lg md:text-xl text-white/45 mb-10 max-w-xl leading-relaxed font-body"
                 >
-                  Before the first board is cut, we ensure the logic is sound. Supporting Highlander’s construction division with detailed layouts, floor plans, and project planning support.
+                  Intelligent layout support and project scoping for Western North Carolina homes. We help you think through structural logic, flow, and feasibility before construction begins.
                 </motion.p>
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }} 
@@ -263,6 +263,42 @@ const LayoutsPlanning = () => {
                   </Link>
                 </div>
               </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Visual Support Cluster — Premium imagery showing planning value */}
+        <section className="py-24 bg-secondary/30 relative overflow-hidden">
+          <div className="container-tight">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { 
+                  img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
+                  label: "Addition Planning",
+                  desc: "Visualizing structural ties and footprint expansion for a mountain estate."
+                },
+                { 
+                  img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000",
+                  label: "Scope Development",
+                  desc: "Meticulous documentation of every board cut and material specification."
+                },
+                { 
+                  img: "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?auto=format&fit=crop&q=80&w=1000",
+                  label: "Layout Support",
+                  desc: "Drafting the flow and functionality of new mountain living spaces."
+                }
+              ].map((item, i) => (
+                <ScrollReveal key={i} delay={i * 0.1} variant="rise-subtle" className="group">
+                  <div className="relative aspect-[4/5] overflow-hidden mb-5">
+                    <img src={item.img} alt={item.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] mb-2 block">{item.label}</span>
+                      <h4 className="text-white text-lg font-heading font-bold">{item.desc}</h4>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </section>

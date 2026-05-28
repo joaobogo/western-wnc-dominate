@@ -41,20 +41,20 @@ const constructionData = {
   icon: HardHat,
   label: "Construction Division",
   badge: "Licensed GC",
-  title: "Full-Scope Construction",
-  subtitle: "Our Expertise",
-  description: "Additions, renovations, and outdoor living — supported by intelligent Design & Planning to ensure every board cut aligns with your structural vision.",
+  title: "Premium Home Construction",
+  subtitle: "Our Craftsmanship",
+  description: "Additions, outdoor living, and whole-home renovations. We treat every construction project with the same structural precision as our roofing division, ensuring your investment is built to last in the WNC environment.",
   stats: [
     { value: "GC", label: "Licensed Contractor" },
-    { value: "8", label: "WNC Counties" },
+    { value: "5/5", label: "Client Satisfaction" },
   ],
   services: [
-    { icon: Hammer, name: "Renovations & Remodels" },
-    { icon: PlusSquare, name: "Home Additions" },
-    { icon: Ruler, name: "Design & Planning" },
-    { icon: PaintBucket, name: "Siding & Exteriors" },
-    { icon: Settings, name: "Decks & Outdoor Living" },
-    { icon: ShieldCheck, name: "Structural Improvements" },
+    { icon: PlusSquare, name: "Mountain Additions" },
+    { icon: Settings, name: "Premium Decks & Porches" },
+    { icon: Hammer, name: "Kitchen & Bath Remodels" },
+    { icon: PaintBucket, name: "Siding & Exterior Wraps" },
+    { icon: Ruler, name: "Structural Reinforcement" },
+    { icon: ShieldCheck, name: "Custom Mountain Living" },
   ],
   cta: "Explore Construction Services",
   href: "/construction",
@@ -254,12 +254,56 @@ const DualPathway = () => {
           <DivisionCard data={constructionData} accent="gold" index={1} />
         </div>
 
+        {/* Design & Planning Bridge — the "Intelligence" layer */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.8, ease: HIGHLAND_EASE }}
+          className="max-w-4xl mx-auto mt-12 md:mt-16 bg-white border border-[hsl(var(--highland-gold)/0.2)] p-6 md:p-8 relative overflow-hidden group/bridge"
+        >
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[hsl(var(--highland-gold)/0.03)] -mr-16 -mt-16 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-[hsl(var(--heritage-green)/0.03)] -ml-16 -mb-16 rounded-full blur-3xl" />
+          
+          <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
+            <div className="flex-shrink-0">
+              <div className="w-16 h-16 rounded-full bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)] group-hover/bridge:scale-110 transition-transform duration-500">
+                <Ruler className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
+              </div>
+            </div>
+            
+            <div className="flex-1 text-center md:text-left">
+              <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2 justify-center md:justify-start">
+                <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
+                  Intelligence Layer
+                </span>
+                <span className="hidden md:block text-muted-foreground/30">•</span>
+                <h4 className="text-lg md:text-xl font-heading font-bold text-foreground">
+                  Design & Planning Support
+                </h4>
+              </div>
+              <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body max-w-2xl">
+                Before the first board is cut or the first shingle is laid, we offer specialized planning support. From layouts and floor plans to project scoping, we ensure your construction or roofing project is intentional and efficient.
+              </p>
+            </div>
+            
+            <Link
+              to="/layouts-planning"
+              className="group/btn inline-flex items-center gap-2 text-[13px] font-heading font-bold uppercase tracking-wider text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors"
+            >
+              Start Planning
+              <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </motion.div>
+
         {/* Bottom unifying message */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.6, ease: HIGHLAND_EASE }}
+          transition={{ delay: 0.7, duration: 0.6, ease: HIGHLAND_EASE }}
           className="max-w-2xl mx-auto text-center mt-12 md:mt-16"
         >
           <div className="flex items-center justify-center gap-4 mb-4">
