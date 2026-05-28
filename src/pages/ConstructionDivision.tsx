@@ -123,7 +123,7 @@ const ConstructionDivision = () => {
               </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
-                Additions, layouts, floor plans, and custom construction for Western North Carolina homeowners who value craftsmanship, planning, and doing the project right.
+                Additions, layouts, floor plans, and custom construction for Western North Carolina homeowners who value craftsmanship, Plan Before You Build, and doing the project right.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">

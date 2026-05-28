@@ -148,10 +148,10 @@ const LayoutsPlanning = () => {
                   className="flex flex-col sm:flex-row gap-4"
                 >
                   <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 group hover:scale-[1.02] transition-transform duration-300">
-                    Discuss Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    Start Your Project Plan <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a href="tel:8283979211" className="bg-white/5 border border-white/10 text-white font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
-                    <Phone className="w-4 h-4" /> (828) 397-9211
+                    Talk With Highlander
                   </a>
                 </motion.div>
               </div>
@@ -254,7 +254,7 @@ const LayoutsPlanning = () => {
                     ))}
                   </ul>
                   <Link to="/consultation" className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-[hsl(var(--highland-gold))] transition-colors group">
-                    Learn more about our process <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    Plan Your Addition or Outdoor Project <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </Link>
                 </div>
               </ScrollReveal>

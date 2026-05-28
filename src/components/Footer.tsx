@@ -98,7 +98,7 @@ const Footer = () => {
                 className="w-10 h-[2px] bg-[hsl(var(--highland-gold)/0.4)] mb-5 origin-left"
               />
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight">
-                Talk to a project advisor.
+                Plan Before You Build.
               </h3>
               <p className="text-primary-foreground/50 text-[15px] font-body max-w-md leading-relaxed">
                 Roof, addition, storm damage, or layouts & planning — one local team, one named contact, as soon as possible to respond.
