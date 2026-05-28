@@ -15,6 +15,8 @@ import TownProofBlock from "@/components/TownProofBlock";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
+const marketVisualImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
+
 import { services } from "@/data/services";
 import { localBlogTopics } from "@/data/local-blog-topics";
 import { blogPosts } from "@/data/blogs";
@@ -257,6 +259,15 @@ const TownPage = () => {
                       <p className="text-xs text-muted-foreground mt-2 line-clamp-2 font-body">{service.description}</p>
                     </Link>
                   ))}
+                </div>
+
+                <div className="relative aspect-[16/6] overflow-hidden border border-border">
+                   <img src={marketVisualImg} alt="Local construction market authority" className="w-full h-full object-cover grayscale opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                   <div className="absolute bottom-4 left-6 flex items-center gap-2">
+                      <div className="w-6 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
+                      <span className="text-[9px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/50">Local Project Scope</span>
+                   </div>
                 </div>
 
                 <Link to="/layouts-planning" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.2)] pb-1">
