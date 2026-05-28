@@ -274,8 +274,8 @@ const Header = () => {
               to={link.href}
               className={`relative text-[13px] font-medium transition-all duration-300 px-3 py-2 rounded-sm font-body ${
                 isActive(link.href)
-                  ? (scrolled || mobileOpen ? "text-foreground bg-secondary/50" : "text-white bg-white/10")
-                  : (scrolled || mobileOpen ? "text-foreground/55 hover:text-foreground hover:bg-secondary/40" : "text-white/60 hover:text-white hover:bg-white/10")
+                  ? "text-white bg-white/10"
+                  : "text-white/60 hover:text-white hover:bg-white/10"
               }`}
             >
               {link.label}
