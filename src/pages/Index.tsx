@@ -3,6 +3,8 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
+import TartanBackground from "@/components/TartanBackground";
+
 import DualPathway from "@/components/DualPathway";
 import TwoPillars from "@/components/TwoPillars";
 
@@ -59,7 +61,11 @@ const Index = () => {
         {/* 2. TrustStrip — proof anchors */}
         <TrustStrip />
 
-        <SectionDivider variant="diamond" />
+        <div className="relative overflow-hidden">
+          <TartanBackground opacity={0.03} />
+          <SectionDivider variant="diamond" />
+        </div>
+
 
         {/* 3. Two Pillars · One Standard — resolves roofing+construction question */}
         <TwoPillars />
