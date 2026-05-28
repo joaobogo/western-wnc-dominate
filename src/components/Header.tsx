@@ -497,7 +497,7 @@ const Header = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35, duration: 0.3, ease: HIGHLAND_EASE }}
-                  className="pt-4 mt-2 border-t border-border space-y-2.5"
+                  className="pt-4 mt-2 border-t border-white/10 space-y-2.5"
                 >
                   <Link
                     to="/consultation"
