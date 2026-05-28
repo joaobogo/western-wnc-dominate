@@ -398,7 +398,7 @@ const Header = () => {
                         animate={{ rotate: mobileExpanded === div.label ? 180 : 0 }}
                         transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
                       >
-                        <ChevronDown className="w-4 h-4 text-white/40" />
+                        <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" />
                       </motion.div>
                     </button>
 
