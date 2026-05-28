@@ -5,7 +5,7 @@ import {
   CheckCircle, AlertTriangle, Wrench, Replace, Layers,
   Eye, Ruler, ClipboardCheck, Hammer, BadgeCheck,
   Droplets, Wind, Thermometer, Mountain, ShieldCheck,
-  Camera, Paintbrush, Landmark, ChevronRight, Sparkles
+  Camera, Paintbrush, Landmark, ChevronRight, Sparkles, Compass
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
