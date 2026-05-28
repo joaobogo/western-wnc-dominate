@@ -19,6 +19,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPostPage = lazy(() => import("./pages/BlogPost"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
 const About = lazy(() => import("./pages/About"));
+const LayoutsPlanning = lazy(() => import("./pages/LayoutsPlanning"));
 
 const Certifications = lazy(() => import("./pages/Certifications"));
 const Gallery = lazy(() => import("./pages/Gallery"));
@@ -97,6 +98,9 @@ const App = () => (
           <Route path="/construction/exterior" element={<Navigate to="/construction/siding" replace />} />
           <Route path="/construction/custom" element={<Navigate to="/construction" replace />} />
           <Route path="/construction/flatwork" element={<Navigate to="/construction" replace />} />
+
+          {/* ─── Layouts & Planning (Supporting Branch) ─── */}
+          <Route path="/layouts-planning" element={<LayoutsPlanning />} />
 
           {/* ─── Legacy service routes → canonical division pages ─── */}
           <Route path="/services" element={<Navigate to="/roofing" replace />} />
