@@ -390,8 +390,8 @@ const Header = () => {
                           }`} />
                         </div>
                         <div className="text-left">
-                          <span className="text-base font-heading font-semibold block leading-tight">{div.label}</span>
-                          <span className="text-[10px] font-body text-muted-foreground/50 uppercase tracking-wider">{div.tagline}</span>
+                          <span className="text-base font-heading font-semibold block leading-tight text-white">{div.label}</span>
+                          <span className="text-[10px] font-body text-white/40 uppercase tracking-wider">{div.tagline}</span>
                         </div>
                       </div>
                       <motion.div
