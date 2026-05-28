@@ -22,7 +22,7 @@ import {
 
 import planningImg from "@/assets/gallery/asphalt-hero.webp"; // Using as premium visual anchor
 
-const HIGHLAND_EASE = [0.22, 1, 0.36, 1];
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const supports = [
   {
