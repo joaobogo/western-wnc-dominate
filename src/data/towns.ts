@@ -362,7 +362,7 @@ export const towns: TownData[] = [
     styleTendency: "Lakefront Rustic and Traditional Mountain styles emphasizing views and outdoor living.",
     notableNeighborhoods: ["Lake Chatuge", "Tusquittee", "Shooting Creek", "Hayesville Center"],
     marketAuthorityAngle: "Hayesville homes are for living. We build systems that protect your investment so you can focus on the lake.",
-    heroImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000"
   }
 ];
 
