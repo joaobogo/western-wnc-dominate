@@ -11,6 +11,7 @@ import {
   getServiceTownEntry,
   getServiceTownEntriesForTown,
 } from "@/data/service-town-content";
+import { blogPosts } from "@/data/blogs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const ServiceTownPage = () => {
