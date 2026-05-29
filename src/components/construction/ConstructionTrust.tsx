@@ -184,7 +184,7 @@ const ConstructionTrust = ({
                 <pillar.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
               </div>
               <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{pillar.title}</h3>
-              <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+              <p className="text-foreground/70 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
             </motion.div>
           ))}
         </div>
