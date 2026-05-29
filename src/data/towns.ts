@@ -202,7 +202,7 @@ export const towns: TownData[] = [
     styleTendency: "Eclectic mix of Tudor, Craftsman, and ultra-modern mountain architecture featuring glass and steel.",
     notableNeighborhoods: ["Biltmore Forest", "Town Mountain", "Montford", "Grove Park", "Kenilworth"],
     marketAuthorityAngle: "Asheville projects demand a higher level of design sensitivity and structural precision. We build for the city's most discerning homeowners.",
-    heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "hendersonville-nc",
