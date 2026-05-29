@@ -109,8 +109,8 @@ const ReviewsPage = () => {
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-accent text-accent" />
                   ))}
-                  <span className="ml-2 text-sm font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
-                  <span className="text-xs text-[hsl(var(--dark-section-foreground)/0.4)] font-body ml-1">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
+                  <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
+                  <span className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
                 </div>
                 <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                   Trust Is Earned.
@@ -129,10 +129,10 @@ const ReviewsPage = () => {
               >
                 <div className="border-l-2 border-[hsl(var(--highland-gold)/0.3)] pl-5">
                   <Quote className="w-5 h-5 text-[hsl(var(--highland-gold)/0.2)] mb-2 rotate-180" />
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm font-body italic leading-relaxed">
+                  <p className="text-[hsl(var(--dark-section-foreground)/0.8)] text-base font-body italic leading-relaxed">
                     "After three bad experiences with other contractors, Highlander changed everything completely."
                   </p>
-                  <p className="text-xs text-[hsl(var(--highland-gold)/0.5)] font-body mt-2">— Karen W., Waynesville, NC</p>
+                  <p className="text-sm text-[hsl(var(--highland-gold)/0.7)] font-body font-bold mt-2">— Karen W., Waynesville, NC</p>
                 </div>
               </motion.div>
             </div>
@@ -155,7 +155,7 @@ const ReviewsPage = () => {
                 >
                   <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5">{stat.value}</span>
                   <span className="text-sm font-heading font-semibold text-primary-foreground/85 mb-1">{stat.label}</span>
-                  <span className="text-[11px] text-primary-foreground/35 font-body tracking-wide">{stat.detail}</span>
+                  <span className="text-[13px] text-primary-foreground/50 font-body tracking-wide font-bold">{stat.detail}</span>
                 </motion.div>
               ))}
             </div>
@@ -183,8 +183,8 @@ const ReviewsPage = () => {
                   ))}
                 </div>
                 <div className="h-4 w-px bg-border" />
-                 <span className="font-semibold text-foreground text-sm">{GOOGLE_REVIEW_AGGREGATE.ratingValue}</span>
-                 <span className="text-muted-foreground text-sm font-body">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Verified Reviews</span>
+                 <span className="font-bold text-foreground text-base">{GOOGLE_REVIEW_AGGREGATE.ratingValue}</span>
+                 <span className="text-muted-foreground text-base font-body font-medium">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Verified Reviews</span>
               </motion.div>
             </motion.div>
 
@@ -200,7 +200,7 @@ const ReviewsPage = () => {
                 >
                   <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm ${categoryColors[r.category]}`}>
+                    <span className={`text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1.5 rounded-sm ${categoryColors[r.category]}`}>
                       {categoryLabels[r.category]}
                     </span>
                     <div className="flex gap-0.5">
@@ -210,18 +210,18 @@ const ReviewsPage = () => {
                     </div>
                   </div>
                   <Quote className="w-6 h-6 text-[hsl(var(--highland-gold)/0.15)] mb-3 rotate-180" />
-                  <p className="text-foreground text-[15px] leading-relaxed mb-5 font-body">"{r.reviewBody}"</p>
-                  <div className="bg-secondary/60 rounded-sm px-4 py-3 mb-5">
-                    <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/50 mb-1">Project Outcome</p>
-                    <p className="text-sm font-body font-medium text-foreground/80">{r.outcome}</p>
+                  <p className="text-foreground text-[16px] leading-relaxed mb-5 font-body font-medium">"{r.reviewBody}"</p>
+                  <div className="bg-secondary/70 rounded-sm px-4 py-3 mb-5">
+                    <p className="text-[12px] font-body font-bold uppercase tracking-[0.1em] text-muted-foreground/70 mb-1">Project Outcome</p>
+                    <p className="text-[15px] font-body font-bold text-foreground/80">{r.outcome}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center text-primary font-heading font-bold text-sm">
                       {r.authorName.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-sm">{r.authorName}</p>
-                      <p className="text-muted-foreground text-xs font-body">{r.location} · {r.project}</p>
+                      <p className="font-bold text-foreground text-[15px]">{r.authorName}</p>
+                      <p className="text-muted-foreground text-[13px] font-body font-semibold">{r.location} · {r.project}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -266,7 +266,7 @@ const ReviewsPage = () => {
                   className="group bg-card border border-border rounded-sm p-5 md:p-6 hover:border-primary/15 hover:shadow-sm transition-all duration-300"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <span className={`text-[8px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm ${categoryColors[r.category]}`}>
+                    <span className={`text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm ${categoryColors[r.category]}`}>
                       {categoryLabels[r.category]}
                     </span>
                     <div className="flex gap-0.5">
@@ -275,15 +275,15 @@ const ReviewsPage = () => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-foreground/80 text-[13px] leading-relaxed mb-4 font-body">"{r.reviewBody}"</p>
-                  <p className="text-[11px] text-primary/60 font-body font-medium mb-4 leading-snug">{r.outcome}</p>
+                  <p className="text-foreground/85 text-[15px] leading-relaxed mb-4 font-body font-medium">"{r.reviewBody}"</p>
+                  <p className="text-[12px] text-primary/70 font-body font-bold mb-4 leading-snug">{r.outcome}</p>
                   <div className="flex items-center gap-2.5 pt-3 border-t border-border">
                     <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-[10px]">
                       {r.authorName.charAt(0)}
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-xs">{r.authorName}</p>
-                      <p className="text-muted-foreground text-[10px] font-body">{r.location}</p>
+                      <p className="font-bold text-foreground text-[14px]">{r.authorName}</p>
+                      <p className="text-muted-foreground text-[12px] font-body font-semibold">{r.location}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -322,7 +322,7 @@ const ReviewsPage = () => {
                   <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-2">{theme.title}</h3>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm leading-relaxed mb-4">{theme.description}</p>
                   <div className="border-t border-[hsl(var(--highland-gold)/0.08)] pt-3">
-                    <p className="text-[hsl(var(--dark-section-foreground)/0.4)] text-[12px] italic font-body">
+                    <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-[14px] italic font-body font-medium">
                       "{theme.quote}"
                     </p>
                   </div>

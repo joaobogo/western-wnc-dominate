@@ -207,17 +207,17 @@ const BlogPostPage = () => {
 
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm ${getCategoryColor(post.category)}`}>
+                <span className={`text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-sm ${getCategoryColor(post.category)}`}>
                   {post.category}
                 </span>
-                <span className="text-[hsl(var(--dark-section-foreground)/0.4)] text-xs font-body flex items-center gap-1">
+                <span className="text-[hsl(var(--dark-section-foreground)/0.6)] text-[13px] font-body font-bold flex items-center gap-1.5">
                   <Calendar className="w-3 h-3" /> {formattedDate}
                 </span>
-                <span className="text-[hsl(var(--dark-section-foreground)/0.4)] text-xs font-body flex items-center gap-1">
+                <span className="text-[hsl(var(--dark-section-foreground)/0.6)] text-[13px] font-body font-bold flex items-center gap-1.5">
                   <Clock className="w-3 h-3" /> {post.readTime} read
                 </span>
                 {post.town && (
-                  <span className="text-[hsl(var(--dark-section-foreground)/0.4)] text-xs font-body flex items-center gap-1">
+                  <span className="text-[hsl(var(--dark-section-foreground)/0.6)] text-[13px] font-body font-bold flex items-center gap-1.5">
                     <MapPin className="w-3 h-3" /> {post.town}, NC
                   </span>
                 )}
@@ -355,7 +355,7 @@ const BlogPostPage = () => {
                 {/* Local Town Bridge */}
                 {post.town && (
                   <div className="mt-10 pt-8 border-t border-border">
-                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-4">Market Context</h4>
+                    <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground/80 mb-4">Market Context</h4>
                     <Link to={`/service-areas/${post.town.toLowerCase()}-nc`} className="group flex items-center justify-between p-6 bg-secondary/40 border border-border rounded-sm hover:border-primary/20 transition-all">
                       <div>
                         <p className="text-sm font-heading font-bold text-foreground mb-1">Roofing & Construction in {post.town}</p>

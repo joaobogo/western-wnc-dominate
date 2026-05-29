@@ -69,7 +69,7 @@ const BlogInsights = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
           <div>
             <ScrollReveal variant="fade">
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
+              <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.8)] mb-4 block">
                 Knowledge & Guidance
               </span>
             </ScrollReveal>
@@ -88,7 +88,7 @@ const BlogInsights = () => {
                 <button
                   key={cat.value}
                   onClick={() => setActiveFilter(cat.value)}
-                  className={`text-[10px] font-body font-bold uppercase tracking-[0.15em] px-4 py-2.5 rounded-none transition-all duration-300 flex items-center gap-1.5 ${
+                  className={`text-[11px] font-body font-bold uppercase tracking-[0.15em] px-4 py-2.5 rounded-none transition-all duration-300 flex items-center gap-1.5 ${
                     activeFilter === cat.value
                       ? "bg-[hsl(var(--highland-gold))] text-accent-foreground"
                       : "bg-dark-section-foreground/[0.04] border border-dark-section-foreground/[0.06] text-dark-section-foreground/40 hover:border-dark-section-foreground/[0.12] hover:text-dark-section-foreground/60"
@@ -135,12 +135,12 @@ const BlogInsights = () => {
           <GoldLine width="3rem" centered delay={0.2} className="mb-6" />
           <Link
             to="/blog"
-            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide text-dark-section-foreground/70 hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
+            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[15px] tracking-wide text-dark-section-foreground/80 hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
           >
             Browse All Articles
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <p className="text-[11px] text-dark-section-foreground/20 font-body mt-2">
+          <p className="text-[13px] text-dark-section-foreground/40 font-body font-bold mt-2">
             Roofing education · Construction insights · WNC weather & building updates
           </p>
         </motion.div>
@@ -193,10 +193,10 @@ const FeaturedCard = ({ post }: { post: PostWithCategory }) => {
         <div className="p-7 md:p-9 flex flex-col h-full relative z-10">
           {/* Category + date */}
           <div className="flex items-center gap-3 mb-6">
-            <span className={`text-[9px] font-body font-bold uppercase tracking-[0.15em] px-2.5 py-1 ${accent.bg} ${accent.text}`}>
+            <span className={`text-[11px] font-body font-bold uppercase tracking-[0.15em] px-3 py-1.5 ${accent.bg} ${accent.text}`}>
               {post.editorialCategory}
             </span>
-            <span className="text-dark-section-foreground/25 text-[11px] font-body">
+            <span className="text-dark-section-foreground/50 text-[13px] font-body font-bold">
               {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
             </span>
           </div>

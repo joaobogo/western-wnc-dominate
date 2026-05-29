@@ -113,7 +113,7 @@ const Footer = () => {
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight">
                 Plan Before You Build.
               </h3>
-              <p className="text-primary-foreground/75 text-[15px] md:text-lg font-body max-w-md leading-relaxed">
+              <p className="text-primary-foreground/85 text-[17px] md:text-lg font-body max-w-md leading-relaxed">
                 Roof, addition, storm damage, or Design & Planning — one local team, one named contact, as soon as possible to respond.
               </p>
             </div>
@@ -156,7 +156,7 @@ const Footer = () => {
                 <div className="absolute inset-0 bg-[hsl(var(--highland-gold)/0.15)] blur-[30px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
             </Link>
-            <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6 max-w-xs font-body">
+            <p className="text-primary-foreground/70 text-base leading-relaxed mb-6 max-w-xs font-body">
               Premium roofing and construction across the mountains of Western NC. 
               Serving 8 primary counties with localized crews and owner-led quality since 2017.
             </p>
@@ -164,10 +164,10 @@ const Footer = () => {
             {/* Contact info */}
             <div className="flex flex-col gap-4 mb-8">
               <div className="space-y-3">
-                <a href="tel:8283979211" className="flex items-center gap-3 text-[14px] hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-primary-foreground/80">
+                <a href="tel:8283979211" className="flex items-center gap-3 text-lg hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-primary-foreground/90">
                   <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                 </a>
-                <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 text-[13px] hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-primary-foreground/50">
+                <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 text-base hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-primary-foreground/70">
                   <Mail className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> info@highlandernc.com
                 </a>
               </div>
@@ -175,24 +175,24 @@ const Footer = () => {
               <div className="space-y-4 pt-2 border-t border-primary-foreground/5">
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[12.5px] text-primary-foreground/65 font-body leading-relaxed">
-                    <span className="block font-bold text-primary-foreground/60 mb-0.5">Franklin Office</span>
+                  <div className="text-[15px] text-primary-foreground/75 font-body leading-relaxed">
+                    <span className="block font-bold text-primary-foreground/80 mb-0.5 text-base">Franklin Office</span>
                     1511 Highlands Road<br />
                     Franklin, NC 28734
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[12.5px] text-primary-foreground/45 font-body leading-relaxed">
-                    <span className="block font-bold text-primary-foreground/60 mb-0.5">Sylva / Waynesville</span>
+                  <div className="text-[15px] text-primary-foreground/75 font-body leading-relaxed">
+                    <span className="block font-bold text-primary-foreground/80 mb-0.5 text-base">Sylva / Waynesville</span>
                     28 Cross Stitch Mountain Rd<br />
                     Sylva, NC 20779
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[12.5px] text-primary-foreground/45 font-body leading-relaxed">
-                    <span className="block font-bold text-primary-foreground/60 mb-0.5">Asheville / Buncombe</span>
+                  <div className="text-[15px] text-primary-foreground/75 font-body leading-relaxed">
+                    <span className="block font-bold text-primary-foreground/80 mb-0.5 text-base">Asheville / Buncombe</span>
                     900 Hendersonville Rd, Ste 303-D<br />
                     Asheville, NC 28803
                   </div>
@@ -206,33 +206,33 @@ const Footer = () => {
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <Award className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80 ml-2">GAF Master Elite®</span>
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-primary-foreground/90 ml-2">GAF Master Elite®</span>
                 </div>
-                <span className="text-[9px] text-primary-foreground/30 font-body leading-tight">Top 2% of Roofing Contractors Nationally</span>
+                <span className="text-[11px] text-primary-foreground/50 font-body leading-tight">Top 2% of Roofing Contractors Nationally</span>
               </div>
               
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <Shield className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80 ml-2">Licensed GC</span>
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-primary-foreground/90 ml-2">Licensed GC</span>
                 </div>
-                <span className="text-[9px] text-primary-foreground/30 font-body leading-tight">North Carolina License #87234 · Fully Insured</span>
+                <span className="text-[11px] text-primary-foreground/50 font-body leading-tight">North Carolina License #87234 · Fully Insured</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <BadgeCheck className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80 ml-2">CertainTeed Master</span>
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-primary-foreground/90 ml-2">CertainTeed Master</span>
                 </div>
-                <span className="text-[9px] text-primary-foreground/30 font-body leading-tight">Factory-Certified Professional Installer</span>
+                <span className="text-[11px] text-primary-foreground/50 font-body leading-tight">Factory-Certified Professional Installer</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <Star className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80 ml-2">4.9★ Rated</span>
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-primary-foreground/90 ml-2">4.9★ Rated</span>
                 </div>
-                <span className="text-[9px] text-primary-foreground/30 font-body leading-tight">Highest Rated in Franklin & Highlands</span>
+                <span className="text-[11px] text-primary-foreground/50 font-body leading-tight">Highest Rated in Franklin & Highlands</span>
               </div>
             </div>
           </div>
@@ -307,16 +307,16 @@ const Footer = () => {
           }} 
         />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[11px] text-primary-foreground/60 font-body tracking-wide">
+          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[13px] text-primary-foreground/70 font-body tracking-wide">
             <span>© {new Date().getFullYear()} Highlander Roofing & Construction.</span>
-            <span className="hidden md:inline text-primary-foreground/15">·</span>
+            <span className="hidden md:inline text-primary-foreground/20">·</span>
             <span>NC General Contractor License #87234</span>
-            <span className="hidden md:inline text-primary-foreground/15">·</span>
+            <span className="hidden md:inline text-primary-foreground/20">·</span>
             <span>Fully Insured</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/privacy" className="text-[11px] text-primary-foreground/30 hover:text-primary-foreground/50 font-body tracking-wide transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-[11px] text-primary-foreground/30 hover:text-primary-foreground/50 font-body tracking-wide transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="text-[13px] text-primary-foreground/50 hover:text-primary-foreground/70 font-body tracking-wide transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-[13px] text-primary-foreground/50 hover:text-primary-foreground/70 font-body tracking-wide transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

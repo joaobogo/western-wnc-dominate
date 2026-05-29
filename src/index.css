@@ -161,7 +161,7 @@
   p {
     @apply font-body text-foreground/95;
     max-width: 65ch; /* Optimal reading measure */
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
   }
   p + p {
     margin-top: 1.5rem;

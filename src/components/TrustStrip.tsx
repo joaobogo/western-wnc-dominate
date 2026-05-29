@@ -40,7 +40,7 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/35 mb-4"
+                className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/50 mb-4"
               >
                 By the Numbers
               </motion.p>
@@ -64,7 +64,7 @@ const TrustStrip = () => {
                       <span className="block text-base font-heading font-bold text-primary-foreground/85 tracking-tight">
                         {stat.label}
                       </span>
-                      <span className="block text-[11px] md:text-[12px] text-primary-foreground/40 font-body tracking-wide font-medium">
+                      <span className="block text-[13px] md:text-[14px] text-primary-foreground/50 font-body tracking-wide font-medium">
                         {stat.detail}
                       </span>
                     </div>
@@ -79,7 +79,7 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/35 mb-4"
+                className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/50 mb-4"
               >
                 Credentials
               </motion.p>
@@ -99,10 +99,10 @@ const TrustStrip = () => {
                         ? "text-[hsl(var(--highland-gold)/0.7)]"
                         : "text-[hsl(var(--highland-gold)/0.35)]"
                     }`} />
-                    <span className={`text-[13px] md:text-[14px] font-body leading-snug font-medium ${
+                    <span className={`text-[14px] md:text-[15px] font-body leading-snug font-medium ${
                       cred.emphasis
                         ? "font-bold text-white"
-                        : "text-primary-foreground/60"
+                        : "text-primary-foreground/75"
                     }`}>
                       {cred.label}
                     </span>

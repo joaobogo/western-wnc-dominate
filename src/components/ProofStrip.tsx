@@ -103,7 +103,7 @@ const ProofStrip = () => {
                     <h3 className="text-sm font-heading font-bold text-foreground mb-2.5 leading-snug tracking-tight">
                       {pillar.title}
                     </h3>
-                    <p className="text-muted-foreground text-[13px] leading-[1.7] font-body mb-5">
+                    <p className="text-muted-foreground text-[15px] leading-[1.7] font-body mb-5">
                       {pillar.copy}
                     </p>
 
@@ -112,7 +112,7 @@ const ProofStrip = () => {
                         value={pillar.stat}
                         className="text-base font-heading font-bold text-[hsl(var(--highland-gold))] leading-none"
                       />
-                      <span className="text-[10px] font-body text-muted-foreground/60 uppercase tracking-[0.12em]">
+                      <span className="text-[11px] font-body text-muted-foreground/70 uppercase tracking-[0.12em]">
                         {pillar.statLabel}
                       </span>
                     </div>

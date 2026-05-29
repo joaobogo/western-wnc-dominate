@@ -149,15 +149,15 @@ export const ValuesPillarGrid = ({
             <h3 className={`font-heading font-semibold text-sm mb-1 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
               {v.name}
             </h3>
-            <p className={`text-[10px] font-body font-semibold uppercase tracking-wider mb-3 ${
-              isDark ? "text-[hsl(var(--highland-gold)/0.6)]" : "text-accent"
+            <p className={`text-[12px] md:text-[13px] font-body font-bold uppercase tracking-wider mb-3 ${
+              isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-accent"
             }`}>{v.tagline}</p>
-            <p className={`text-[13px] leading-relaxed font-body ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
+            <p className={`text-[14px] md:text-[15px] leading-relaxed font-body font-medium ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.8)]" : "text-muted-foreground"}`}>
               {v.statement}
             </p>
             {showObjections && (
-              <div className={`text-[11px] font-body italic pt-3 mt-3 border-t ${
-                isDark ? "border-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--dark-section-foreground)/0.4)]" : "border-border text-muted-foreground/50"
+              <div className={`text-[12px] font-body font-bold italic pt-3 mt-3 border-t ${
+                isDark ? "border-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--dark-section-foreground)/0.6)]" : "border-border text-muted-foreground/60"
               }`}>
                 Overcomes: "{v.overcomes}"
               </div>
@@ -200,18 +200,18 @@ export const ValuesEditorial = ({ values: customValues, variant = "light" }: Val
             }`}>
               <v.icon className={`w-6 h-6 ${isDark ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`} />
             </div>
-            <span className={`text-[10px] font-body font-semibold uppercase tracking-wider block mb-2 ${
-              isDark ? "text-[hsl(var(--highland-gold)/0.6)]" : "text-accent"
+            <span className={`text-[12px] font-body font-bold uppercase tracking-wider block mb-2 ${
+              isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-accent"
             }`}>{v.tagline}</span>
             <h3 className={`text-2xl md:text-3xl font-heading font-bold mb-4 ${
               isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"
             }`}>{v.name}</h3>
             <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-4" />
-            <p className={`leading-relaxed mb-4 ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-muted-foreground"}`}>
+            <p className={`text-[17px] md:text-lg leading-relaxed mb-4 font-body font-medium ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.85)]" : "text-muted-foreground"}`}>
               {v.statement}
             </p>
-            <blockquote className={`text-sm italic border-l-2 border-[hsl(var(--highland-gold)/0.3)] pl-4 ${
-              isDark ? "text-[hsl(var(--dark-section-foreground)/0.5)]" : "text-muted-foreground/70"
+            <blockquote className={`text-[15px] md:text-base italic border-l-2 border-[hsl(var(--highland-gold)/0.4)] pl-4 ${
+              isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-muted-foreground/80"
             }`}>
               "{v.teamQuote}"
             </blockquote>
@@ -237,7 +237,7 @@ export const ValuesEditorial = ({ values: customValues, variant = "light" }: Val
 export const ValuesTrustBar = ({ className = "", count = 7 }: { className?: string; count?: number }) => (
   <div className={`flex flex-wrap justify-center gap-x-6 gap-y-2 ${className}`}>
     {brandValues.slice(0, count).map((v, i) => (
-      <span key={v.name} className="flex items-center gap-1.5 text-xs font-body font-medium uppercase tracking-wider">
+      <span key={v.name} className="flex items-center gap-1.5 text-[13px] font-body font-bold uppercase tracking-wider">
         {i > 0 && <span className="text-current opacity-20 mr-1">•</span>}
         <v.icon className="w-3.5 h-3.5 opacity-60" />
         {v.name}
@@ -261,7 +261,7 @@ export const ValuesCTASupport = ({
   const value = brandValues.find((v) => v.name === valueName);
   if (!value) return null;
   return (
-    <p className={`text-sm italic opacity-60 mt-3 ${className}`}>
+    <p className={`text-[15px] italic font-medium opacity-80 mt-3 ${className}`}>
       {value.ctaSupport}
     </p>
   );
@@ -299,16 +299,16 @@ export const ValuesTeamOverlay = ({ name, role, valueName, image }: ValuesTeamOv
           </div>
         )}
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] to-transparent">
-          <p className="font-heading font-semibold text-white text-sm">{name}</p>
-          <p className="text-white/60 text-xs font-body">{role}</p>
+          <p className="font-heading font-bold text-white text-[15px]">{name}</p>
+          <p className="text-white/80 text-[13px] font-body font-semibold">{role}</p>
         </div>
       </div>
       <div className="p-4">
         <div className="flex items-center gap-2 mb-2">
           <value.icon className="w-3.5 h-3.5 text-accent" />
-          <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-accent">{value.name}</span>
+          <span className="text-[12px] font-body font-bold uppercase tracking-wider text-accent">{value.name}</span>
         </div>
-        <p className="text-muted-foreground text-[13px] font-body italic leading-relaxed">
+        <p className="text-muted-foreground text-[14px] font-body font-medium italic leading-relaxed">
           "{value.teamQuote}"
         </p>
       </div>
