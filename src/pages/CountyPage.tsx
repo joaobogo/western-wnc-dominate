@@ -47,8 +47,8 @@ const CountyPage = () => {
               alt={`${county.name} mountain construction context`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.45)] via-[hsl(var(--hero-overlay)/0.25)] to-[hsl(var(--hero-overlay)/0.05)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.3)] via-transparent to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.35)] via-[hsl(var(--hero-overlay)/0.15)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.2)] via-transparent to-transparent opacity-40" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
             <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
@@ -90,7 +90,7 @@ const CountyPage = () => {
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{county.name}.</span>
                 </h1>
 
-                <p className="text-body-lg md:text-body-xl text-white/85 mb-12 max-w-2xl leading-relaxed font-body font-medium drop-shadow-sm">
+                <p className="text-body-lg md:text-body-xl text-white/95 mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
                   {county.description}
                 </p>
                 
@@ -98,7 +98,7 @@ const CountyPage = () => {
                   <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-xl border border-[hsl(var(--highland-gold)/0.4)]">
                     Start a {county.name} Project <ArrowRight className="w-5 h-5" />
                   </Link>
-                  <a href="tel:8283979211" className="bg-white/[0.04] backdrop-blur-md border border-white/[0.12] text-primary-foreground font-semibold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3">
+                  <a href="tel:8283979211" className="bg-white/[0.06] backdrop-blur-md border border-white/[0.2] text-primary-foreground font-bold text-[16px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.1] hover:border-white/[0.3] transition-all duration-300 shadow-lg">
                     <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
                   </a>
                 </div>
