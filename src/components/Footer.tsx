@@ -66,10 +66,10 @@ const certifications = [
 const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
   <Link
     to={to}
-    className="group text-[15px] text-primary-foreground/80 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-0.5"
+    className="group text-[16px] text-primary-foreground/90 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-0.5"
   >
     {children}
-    <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
   </Link>
 );
 
@@ -113,8 +113,8 @@ const Footer = () => {
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight">
                 Plan Before You Build.
               </h3>
-              <p className="text-primary-foreground/85 text-[17px] md:text-lg font-body max-w-md leading-relaxed">
-                Roof, addition, storm damage, or Design & Planning — one local team, one named contact, as soon as possible to respond.
+              <p className="text-primary-foreground/90 text-lg md:text-xl font-body max-w-md leading-relaxed font-medium">
+                Roof, addition, storm damage, or Design & Planning — one local team, one named contact, fast response time.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -156,8 +156,8 @@ const Footer = () => {
                 <div className="absolute inset-0 bg-[hsl(var(--highland-gold)/0.15)] blur-[30px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
             </Link>
-            <p className="text-primary-foreground/70 text-base leading-relaxed mb-6 max-w-xs font-body">
-              Premium roofing and construction across the mountains of Western NC. 
+            <p className="text-primary-foreground/80 text-lg leading-relaxed mb-6 max-w-xs font-body">
+              Premium roofing and construction across Western NC. 
               Serving 8 primary counties with localized crews and owner-led quality since 2017.
             </p>
 
@@ -175,8 +175,8 @@ const Footer = () => {
               <div className="space-y-4 pt-2 border-t border-primary-foreground/5">
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[15px] text-primary-foreground/75 font-body leading-relaxed">
-                    <span className="block font-bold text-primary-foreground/80 mb-0.5 text-base">Franklin Office</span>
+                  <div className="text-[16px] text-primary-foreground/85 font-body leading-relaxed">
+                    <span className="block font-bold text-primary-foreground mb-0.5 text-[17px]">Franklin Office</span>
                     1511 Highlands Road<br />
                     Franklin, NC 28734
                   </div>
@@ -206,9 +206,9 @@ const Footer = () => {
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <Award className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-primary-foreground/90 ml-2">GAF Master Elite®</span>
+                  <span className="text-[13px] font-bold uppercase tracking-wider text-primary-foreground ml-2">GAF Master Elite®</span>
                 </div>
-                <span className="text-[11px] text-primary-foreground/50 font-body leading-tight">Top 2% of Roofing Contractors Nationally</span>
+                <span className="text-[12px] text-primary-foreground/60 font-body leading-tight">Top 2% of Roofing Contractors Nationally</span>
               </div>
               
               <div className="flex flex-col gap-2 group/cert">
