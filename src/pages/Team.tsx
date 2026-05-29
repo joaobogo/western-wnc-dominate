@@ -178,7 +178,7 @@ const Team = () => {
                     ) : (
                       <div className="text-center p-6">
                         <Users className="w-10 h-10 text-muted-foreground/20 mx-auto mb-3" />
-                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/30">Photo Coming Soon</span>
+                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60 bg-white/10 px-3 py-1.5 backdrop-blur-sm border border-white/5 rounded-sm">Profile Image Pending</span>
                       </div>
                     )}
                   </div>
