@@ -179,27 +179,24 @@ const ConstructionDivision = () => {
           </div>
         </section>
 
-        {/* ═══ OPENING STATEMENT — Premium editorial positioning ═══ */}
+        {/* ═══ OPENING STATEMENT — Bright, premium, reader-focused ═══ */}
         <section className="section-padding bg-background relative overflow-hidden">
-          <div className="absolute right-0 top-0 w-1/2 h-full opacity-[0.02] pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200" alt="Mountain home background" className="w-full h-full object-cover" />
-          </div>
-
           <div className="container-tight max-w-4xl">
             <ScrollReveal variant="fade">
               <div className="text-center">
                 <GoldLine width="3rem" className="mx-auto mb-8" />
-                <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance">
-                  Highlander builds more than roofs. We build the spaces that define how families live in these mountains — with the same planning depth, craft standards, and communication discipline we bring to every project we accept.
+                <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
+                  Highlander builds more than roofs. We build the mountain homes and outdoor spaces that define your WNC lifestyle — with a level of planning, craft, and transparency that is rare in our industry.
                 </h2>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                  Our Construction division serves Western North Carolina homeowners who refuse to settle for "good enough" — people who value <Link to="/layouts-planning" className="text-primary font-bold hover:underline">planning over rushing</Link>, documentation over handshakes, and craftsmanship that holds up at elevation.
-
-                </p>
-                <p className="text-muted-foreground/60 text-sm leading-relaxed font-body max-w-xl mx-auto">
-                  We're selective about the projects we take on — because the work we do reflects who we are.
-                </p>
-                <GoldLine width="3rem" className="mx-auto mt-8" delay={0.3} />
+                <div className="max-w-2xl mx-auto space-y-6">
+                  <p className="text-foreground/80 text-lg leading-relaxed font-body">
+                    Our Construction division serves homeowners who value <Link to="/layouts-planning" className="text-primary font-bold hover:underline">meticulous planning</Link> over rushing, and craftsmanship that is engineered to endure our unique mountain climate.
+                  </p>
+                  <p className="text-muted-foreground text-base leading-relaxed font-body">
+                    We are highly selective about the projects we accept because we believe every project deserves our full attention, institutional knowledge, and unwavering standards.
+                  </p>
+                </div>
+                <GoldLine width="3rem" className="mx-auto mt-10" delay={0.3} />
               </div>
             </ScrollReveal>
           </div>
