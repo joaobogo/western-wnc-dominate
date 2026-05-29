@@ -202,6 +202,26 @@ const CountyPage = () => {
               </div>
             </div>
           </div>
+        {/* 4. Conversion Block — Premium and Direct */}
+        <section className="py-24 bg-primary text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="container-tight relative z-10 text-center">
+            <span className="eyebrow mb-6 block text-[hsl(var(--highland-gold))]">Start Your Project</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">
+              Ready to Discuss Your <br className="hidden md:block" /> {county.name} Property?
+            </h2>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 font-body leading-relaxed">
+              From historic roof replacement to engineered home additions, we provide the highest standard of craftsmanship in {county.name}.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg px-12 py-6 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[280px] justify-center">
+                Request an Assessment <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center gap-3 hover:bg-white/20 transition-all min-w-[240px] justify-center">
+                <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
+              </a>
+            </div>
+          </div>
         </section>
       </main>
       <Footer />
