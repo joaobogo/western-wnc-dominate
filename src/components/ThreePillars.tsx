@@ -12,7 +12,7 @@ import { Home, HardHat, Mountain } from "lucide-react";
  *
  * Placement: between TrustStrip and DualPathway on the homepage.
  */
-const TwoPillars = () => {
+const ThreePillars = () => {
   return (
     <section className="bg-background py-14 md:py-24 relative overflow-hidden">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
@@ -78,4 +78,4 @@ const TwoPillars = () => {
   );
 };
 
-export default TwoPillars;
+export default ThreePillars;
