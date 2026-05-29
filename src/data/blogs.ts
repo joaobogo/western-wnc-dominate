@@ -34,6 +34,7 @@ export const blogPosts: BlogPost[] = [
     category: "Cost",
     date: "2026-02-15",
     readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000",
     town: "Highlands",
     metaTitle: "How Much Does a New Roof Cost in Highlands, NC? | Highlander Roofing",
     metaDescription: "Wondering about roof replacement costs in Highlands, NC? Here's what mountain homeowners actually pay and what factors affect your price.",
@@ -64,6 +65,7 @@ The best way to know your actual cost is a free inspection. We'll assess your ro
     category: "Materials",
     date: "2026-02-10",
     readTime: "7 min",
+    image: metalBenefitsStock,
     metaTitle: "Metal vs Shingle Roof for WNC Homes | Highlander Roofing",
     metaDescription: "Metal or shingle roof for your Western NC mountain home? Compare cost, durability, and weather performance to make the right choice.",
     content: `Choosing between metal and shingle roofing is one of the biggest decisions WNC homeowners face. Both have real advantages — but mountain climates add factors that don't apply in flatland roofing.
@@ -95,6 +97,7 @@ There's no universal answer. We assess each home individually — considering el
     category: "Storm",
     date: "2026-02-05",
     readTime: "5 min",
+    image: roofRepairStock,
     metaTitle: "Storm Damage Roof Checklist for WNC | Highlander Roofing",
     metaDescription: "After a storm in Western NC, use this checklist to assess roof damage and protect your insurance claim. Free storm damage inspections available.",
     content: `Western North Carolina sees severe storms year-round — from summer thunderstorms to winter ice events. Here's what every homeowner should do after a storm.
@@ -133,6 +136,7 @@ There's no universal answer. We assess each home individually — considering el
 
 We respond within 24–48 hours for storm inspections across all of Western NC. Call (828) 397-9211.`,
   },
+
   {
     slug: "best-roofing-materials-highlands-nc",
     title: "Best Roofing Materials for Highlands, NC Homes",
