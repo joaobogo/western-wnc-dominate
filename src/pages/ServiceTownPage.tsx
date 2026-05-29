@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import NearbyTowns from "@/components/NearbyTowns";
 import { getTownBySlug, towns } from "@/data/towns";
 import {
   getServiceTownEntry,
@@ -253,29 +254,8 @@ const ServiceTownPage = () => {
           </section>
         )}
 
-        {/* Other towns */}
-        <section className="section-padding bg-muted/20">
-          <div className="container-tight">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">
-              Other Western NC towns we serve
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {otherTowns.map((t) => (
-                <Link
-                  key={t.slug}
-                  to={`/service-areas/${t.slug}`}
-                  className="border border-border rounded-lg p-5 hover:border-accent transition-colors"
-                >
-                  <div className="flex items-center gap-2 text-accent mb-1 text-sm">
-                    <MapPin className="w-4 h-4" />
-                    <span>{t.county}</span>
-                  </div>
-                  <div className="font-heading font-bold">{t.name}, NC</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* 8. Internal Linking Engine - Nearby Areas */}
+        <NearbyTowns currentTown={town} />
 
         {/* Final Conversion Pathway */}
         <section className="py-24 bg-primary text-white relative overflow-hidden">
