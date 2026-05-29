@@ -242,7 +242,7 @@ export const ConstructionObjectionBuster = ({
                 </div>
               </div>
               <div className="md:col-span-3">
-                <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+                <p className="text-foreground/70 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
               </div>
             </div>
           </motion.div>
