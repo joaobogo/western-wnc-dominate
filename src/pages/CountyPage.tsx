@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, Phone, MapPin, Mountain, 
-  Shield, Star, Hammer, Home, Wind, CloudLightning
+  Shield, Star, Hammer, Home, Wind, CloudLightning, Compass
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
