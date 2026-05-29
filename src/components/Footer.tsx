@@ -83,20 +83,20 @@ const FooterLink = ({ to, children }: { to: string; children: React.ReactNode })
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground relative overflow-hidden">
+    <footer className="bg-white text-foreground relative overflow-hidden border-t border-border">
       {/* Background Tartan Watermark — Ultra subtle */}
-      <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ 
+      <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ 
         backgroundImage: "url('/tartan.png')",
         backgroundSize: "600px auto"
       }} />
 
       {/* Top Heritage Accent Bar */}
       <div className="h-[4px] w-full relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30" style={{ 
+        <div className="absolute inset-0 opacity-20" style={{ 
           backgroundImage: "url('/tartan.png')",
           backgroundSize: "120px auto"
         }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-transparent to-primary" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white" />
       </div>
 
       {/* CTA Strip */}
