@@ -266,27 +266,28 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Budget-focused repair plans",
-        summary: "Rental properties in Cullowhee often need phased recommendations — what must be fixed now, what can be planned, and what affects leasing risk.",
-        proof: "Repair prioritization with clear near-term vs. long-term scope guidance",
+        summary: "Rental properties in Cullowhee often need prioritized recommendations — what affects interior lease risk and what can be planned for next summer.",
+        proof: "Repair prioritization with clear near-term vs. long-term Jackson County code guidance",
+        image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Multi-building service support",
-        summary: "Landlords and managers with more than one property need consistent communication and predictable scope language, not one-off contractor guesswork.",
-        proof: "Portfolio-friendly documentation and repeatable inspection standards",
+        summary: "Landlords with multi-building assets near WCU need consistent scope language and predictable inspection windows.",
+        proof: "Portfolio-friendly documentation and repeatable, documented inspection standards",
       },
     ],
     faqs: [
       {
-        question: "Can you work around tenants in Cullowhee rentals?",
-        answer: "Yes. We routinely coordinate with property managers and tenants so repairs or replacements can happen with minimal disruption and clear notice.",
+        question: "How do you coordinate roof repairs around Cullowhee tenants?",
+        answer: "We routinely coordinate with property managers and tenants so repairs or replacements happen with minimal disruption. We provide clear notice windows and prioritize site cleanliness.",
       },
       {
-        question: "What roof issues matter most for Cullowhee landlords?",
-        answer: "The biggest issues are active leaks, ventilation problems, and deferred maintenance that can quickly turn into interior damage during the school year. We help owners prioritize by urgency and budget.",
+        question: "Do you offer algae-resistant roofing for Cullowhee rentals?",
+        answer: "Yes. Due to the high humidity and fog in the Tuckasegee basin, we recommend algae-resistant shingle systems that keep roofs looking clean and performing longer.",
       },
       {
-        question: "Do you offer fast turnaround estimates for Cullowhee properties?",
-        answer: "Yes. Because rental timing matters in Cullowhee, we aim to move quickly on inspections and scopes so owners can make decisions before vacancies close.",
+        question: "Can you handle deck code compliance for student housing?",
+        answer: "Absolutely. We provide professional deck safety inspections and structural repairs to ensure student housing properties meet Jackson County safety codes.",
       },
     ],
   },
