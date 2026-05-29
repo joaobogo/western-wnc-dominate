@@ -191,6 +191,11 @@ const BlogPostPage = () => {
 
           <div className="container-tight max-w-4xl relative z-10 py-24 md:py-32">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="mb-10 inline-flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
+                <span className="text-[11px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Insight</span>
+                <div className="h-px w-12 bg-white/10" />
+              </div>
               {/* Breadcrumb */}
               <nav className="flex items-center gap-2 text-[hsl(var(--dark-section-foreground)/0.4)] text-sm font-body mb-6">
                 <Link to="/blog" className="hover:text-[hsl(var(--dark-section-foreground)/0.7)] transition-colors flex items-center gap-1">

@@ -283,15 +283,23 @@ const RoofingDivision = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex items-center gap-3 mb-6"
+                className="flex flex-col gap-6 mb-8"
               >
-                <div className="w-8 h-8 rounded-none bg-primary/20 flex items-center justify-center">
-                  <Home className="w-4 h-4 text-primary-foreground" />
+                <div className="inline-flex items-center gap-4">
+                  <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
+                  <div className="flex flex-col">
+                    <span className="text-[14px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
+                    <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Roofing Division</span>
+                  </div>
                 </div>
-                <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">
-                  Roofing Division
-                </span>
-                <div className="h-px flex-1 max-w-[60px] bg-[hsl(var(--highland-gold)/0.3)]" />
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-none bg-primary/20 flex items-center justify-center">
+                    <Home className="w-4 h-4 text-primary-foreground" />
+                  </div>
+                  <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">
+                    Authority Since 2017
+                  </span>
+                </div>
               </motion.div>
 
               <div className="overflow-hidden mb-2">

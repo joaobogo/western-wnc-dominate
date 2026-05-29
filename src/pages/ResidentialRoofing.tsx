@@ -190,20 +190,29 @@ const ResidentialRoofing = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex items-center gap-3 mb-6"
+                className="flex flex-col gap-6 mb-8"
               >
-                <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
-                    <Home className="w-3.5 h-3.5 text-primary-foreground" />
+                <div className="inline-flex items-center gap-4">
+                  <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
+                  <div className="flex flex-col">
+                    <span className="text-[14px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
+                    <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
                   </div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">
-                    Roofing Division
+                </div>
+                <div className="flex items-center gap-3">
+                  <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
+                      <Home className="w-3.5 h-3.5 text-primary-foreground" />
+                    </div>
+                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">
+                      Roofing
+                    </span>
+                  </Link>
+                  <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
+                    Residential
                   </span>
-                </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
-                  Residential
-                </span>
+                </div>
               </motion.div>
 
               <div className="overflow-hidden mb-2">

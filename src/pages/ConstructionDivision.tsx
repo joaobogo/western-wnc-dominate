@@ -112,12 +112,20 @@ const ConstructionDivision = () => {
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
-                <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)]">
-                  <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col gap-8 mb-10">
+                <div className="inline-flex items-center gap-4">
+                  <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
+                  <div className="flex flex-col">
+                    <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
+                    <span className="text-[10px] font-body font-bold text-[hsl(var(--highland-gold)/0.9)] uppercase tracking-[0.3em] -mt-1">Construction Division</span>
+                  </div>
                 </div>
-                <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Construction Division</span>
-                <div className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-[hsl(var(--highland-gold)/0.4)] to-transparent" />
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)]">
+                    <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                  </div>
+                  <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Mountain Quality Since 2017</span>
+                </div>
               </motion.div>
 
               <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight mb-2">
