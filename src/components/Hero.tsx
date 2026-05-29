@@ -213,7 +213,7 @@ const Hero = () => {
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
                 className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
-                Owner-Led Quality,
+                High-Elevation,
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-1 md:mb-2">
