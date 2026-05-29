@@ -46,6 +46,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Plateau leak response planning",
         summary: "Highlands homes often need phased work scheduling because steep drives, estate layouts, and sudden weather shifts can slow standard crews.",
         proof: "Daily weather sequencing, custom staging, and high-temp waterproofing details",
+        image: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=600",
       },
     ].slice(0, 3),
     faqs: [
