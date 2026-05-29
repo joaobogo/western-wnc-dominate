@@ -174,7 +174,7 @@ const ConstructionDivision = () => {
         {/* ═══ OPENING STATEMENT — Premium editorial positioning ═══ */}
         <section className="section-padding bg-background relative overflow-hidden">
           <div className="absolute right-0 top-0 w-1/2 h-full opacity-[0.02] pointer-events-none">
-            <img src={divisionContextImg} alt="Mountain home background" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200" alt="Mountain home background" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight max-w-4xl">
