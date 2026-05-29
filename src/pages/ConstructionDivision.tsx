@@ -117,7 +117,7 @@ const ConstructionDivision = () => {
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
                     <span className="text-[20px] md:text-[22px] font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
-                    <span className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction Division</span>
+                    <span className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction, Design & Planning</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -189,11 +189,11 @@ const ConstructionDivision = () => {
                   Highlander builds more than roofs. We build the mountain homes and outdoor spaces that define your WNC lifestyle — with a level of planning, craft, and transparency that is rare in our industry.
                 </h2>
                 <div className="max-w-2xl mx-auto space-y-6">
-                  <p className="text-foreground/80 text-lg leading-relaxed font-body">
-                    Our Construction division serves homeowners who value <Link to="/layouts-planning" className="text-primary font-bold hover:underline">meticulous planning</Link> over rushing, and craftsmanship that is engineered to endure our unique mountain climate.
+                  <p className="text-foreground text-lg md:text-xl leading-relaxed font-body font-medium">
+                    Highlander builds more than roofs. We build the mountain homes and outdoor spaces that define your WNC lifestyle — with a level of planning, craft, and transparency that is rare in our industry.
                   </p>
-                  <p className="text-muted-foreground text-base leading-relaxed font-body">
-                    We are highly selective about the projects we accept because we believe every project deserves our full attention, institutional knowledge, and unwavering standards.
+                  <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body">
+                    Our Construction division serves homeowners who value <Link to="/layouts-planning" className="text-primary font-bold hover:underline">meticulous planning</Link> over rushing, and craftsmanship that is engineered to endure our unique mountain climate.
                   </p>
                 </div>
                 <GoldLine width="3rem" className="mx-auto mt-10" delay={0.3} />
@@ -213,10 +213,10 @@ const ConstructionDivision = () => {
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
                     Owner-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
-                  <p className="text-dark-section-foreground text-base leading-relaxed font-body mb-6">
+                  <p className="text-dark-section-foreground text-base md:text-lg leading-relaxed font-body mb-6">
                     Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed Master Applicator status to every construction project we take on.
                   </p>
-                  <p className="text-dark-section-foreground/70 text-sm leading-relaxed font-body mb-8">
+                  <p className="text-dark-section-foreground/85 text-sm md:text-base leading-relaxed font-body mb-8">
                     When you hire Highlander for construction, you get a company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
