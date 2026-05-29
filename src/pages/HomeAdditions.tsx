@@ -285,7 +285,7 @@ const HomeAdditions = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Making It Look Like<br className="hidden md:block" /> It Was Always There.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
                   The hardest part of any addition isn't building the new space — it's making it belong.
                 </p>
               </motion.div>
