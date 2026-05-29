@@ -10,7 +10,7 @@ import { Home, HardHat, Mountain } from "lucide-react";
  * Roofing is framed as the proven authority. Construction is framed as the
  * disciplined extension of the same team, owner, and standard.
  *
- * Placement: between TrustStrip and DualPathway on the homepage.
+ * Placement: between TrustStrip and ThreeDivisionPathway on the homepage.
  */
 const ThreePillars = () => {
   return (
