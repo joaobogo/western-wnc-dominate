@@ -120,17 +120,17 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/consultation"
-                className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap"
+                className="group cta-gradient text-accent-foreground font-bold text-base px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap uppercase tracking-[0.1em] shadow-lg min-h-[56px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Start a Project</span>
-                <ArrowRight className="w-3.5 h-3.5 relative group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="tel:8283979211"
-                className="bg-primary-foreground/8 border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-7 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/12 transition-colors whitespace-nowrap"
+                className="bg-primary-foreground/10 border-2 border-primary-foreground/20 text-primary-foreground font-bold text-base px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-primary-foreground/15 hover:border-primary-foreground/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
               >
-                <Phone className="w-3.5 h-3.5" />
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                 (828) 397-9211
               </a>
             </div>
