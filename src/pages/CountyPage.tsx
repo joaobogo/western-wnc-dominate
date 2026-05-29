@@ -202,6 +202,7 @@ const CountyPage = () => {
               </div>
             </div>
           </div>
+        </section>
         {/* 4. Conversion Block — Premium and Direct */}
         <section className="py-24 bg-primary text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
