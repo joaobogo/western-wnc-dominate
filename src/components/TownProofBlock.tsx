@@ -60,20 +60,33 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
               <div className="space-y-5">
                 {content.jobHighlights.map((highlight) => (
                   <div key={highlight.title} className="border-b border-border/70 pb-5 last:border-b-0 last:pb-0">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-heading font-semibold text-foreground mb-1">{highlight.title}</h3>
-                        <p className="text-sm text-muted-foreground font-body leading-relaxed mb-2">{highlight.summary}</p>
-                        <p className="text-xs text-primary/80 font-body">{highlight.proof}</p>
-                        {highlight.projectSlug ? (
-                          <Link
-                            to={`/projects/${highlight.projectSlug}`}
-                            className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
-                          >
-                            View related project <ArrowRight className="w-3.5 h-3.5" />
-                          </Link>
-                        ) : null}
+                    <div className="flex flex-col md:flex-row gap-5">
+                      {highlight.image && (
+                        <div className="w-full md:w-32 h-32 shrink-0 overflow-hidden border border-border">
+                          <img 
+                            src={highlight.image} 
+                            alt={highlight.title} 
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                          />
+                        </div>
+                      )}
+                      <div className="flex-1">
+                        <div className="flex items-start gap-3">
+                          <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                          <div>
+                            <h3 className="font-heading font-semibold text-foreground mb-1">{highlight.title}</h3>
+                            <p className="text-sm text-muted-foreground font-body leading-relaxed mb-2">{highlight.summary}</p>
+                            <p className="text-xs text-primary/80 font-body">{highlight.proof}</p>
+                            {highlight.projectSlug ? (
+                              <Link
+                                to={`/projects/${highlight.projectSlug}`}
+                                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                              >
+                                View related project <ArrowRight className="w-3.5 h-3.5" />
+                              </Link>
+                            ) : null}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
