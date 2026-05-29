@@ -98,6 +98,13 @@ const Blog = () => {
                   transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
                   className="lg:col-span-6"
                 >
+                  <div className="flex items-center gap-5 mb-8">
+                    <div className="flex flex-col">
+                      <span className="text-[12px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
+                      <span className="text-[8px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em]">Knowledge Base</span>
+                    </div>
+                    <div className="h-px w-12 bg-white/20" />
+                  </div>
                   <div className="flex items-center gap-3 mb-5">
                     <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
                     <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Insights & Resources</span>

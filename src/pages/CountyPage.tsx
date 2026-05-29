@@ -58,6 +58,18 @@ const CountyPage = () => {
           </div>
 
           <div className="container-tight relative z-10 px-6 py-24">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.1 }}
+              className="mb-10 inline-flex items-center gap-4"
+            >
+              <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
+              <div className="flex flex-col">
+                <span className="text-[14px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
+                <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Roofing & Construction</span>
+              </div>
+            </motion.div>
             <div className="max-w-4xl">
               <motion.div 
                 initial={{ opacity: 0, x: -20 }} 

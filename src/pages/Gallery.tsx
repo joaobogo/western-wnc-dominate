@@ -267,6 +267,16 @@ const Gallery = () => {
             <div className="container-tight">
               {/* Centered hero — no grid, no sidebar */}
               <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="mb-10 flex flex-col items-center"
+              >
+                <div className="h-12 w-px bg-gradient-to-b from-[hsl(var(--highland-gold)/0)] to-[hsl(var(--highland-gold)/0.5)] mb-4" />
+                <span className="text-[13px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Heritage</span>
+              </motion.div>
+
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2, ease: HIGHLAND_EASE }}

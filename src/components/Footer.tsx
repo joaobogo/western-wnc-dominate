@@ -143,9 +143,19 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-6">
           {/* Brand column — spans 2 on lg */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <img src={logo} alt="Highlander" className="h-[84px] w-auto transition-all duration-500" loading="lazy" decoding="async" />
-            </div>
+            <Link to="/" className="inline-flex items-center gap-4 mb-8 group/footer-logo">
+              <div className="relative">
+                <img 
+                  src={logo} 
+                  alt="Highlander" 
+                  className="h-[96px] md:h-[110px] w-auto transition-all duration-500 brightness-0 invert opacity-90 group-hover:opacity-100" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+                {/* Subtle gold glow behind logo for premium feel */}
+                <div className="absolute inset-0 bg-[hsl(var(--highland-gold)/0.15)] blur-[30px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              </div>
+            </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6 max-w-xs font-body">
               Premium roofing and construction across the mountains of Western NC. 
               Serving 8 primary counties with localized crews and owner-led quality since 2017.
