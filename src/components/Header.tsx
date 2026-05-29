@@ -151,7 +151,7 @@ const Header = () => {
             src={logo}
             alt="Highlander Roofing & Construction"
             className="w-auto transition-all duration-500"
-            animate={{ height: scrolled ? 90 : 120 }}
+            animate={{ height: scrolled ? 100 : 140 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>
