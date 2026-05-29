@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock, BadgeCheck, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 
