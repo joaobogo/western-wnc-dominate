@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Home, HardHat, Mountain } from "lucide-react";
+import { Home, HardHat } from "lucide-react";
 
 
 /**
- * Three Pillars. One Standard.
+ * Two Pillars. One Standard.
  *
  * Resolves the roofing-vs-construction question for visitors in a single block.
  * Roofing is framed as the proven authority. Construction is framed as the
  * disciplined extension of the same team, owner, and standard.
  *
- * Placement: between TrustStrip and ThreeDivisionPathway on the homepage.
+ * Design & Planning is framed as the supporting foundation that ensures 
+ * success for both pillars.
  */
-const ThreePillars = () => {
+const TwoPillars = () => {
   return (
     <section className="bg-background py-20 md:py-32 relative overflow-hidden">
       {/* Subtle Heritage Tartan Watermark */}
@@ -35,46 +36,38 @@ const ThreePillars = () => {
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
             <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
-              Roofing · Construction · Design & Planning
+              Roofing · Construction · Design Support
             </span>
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
           </div>
 
           {/* Pillar icons */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16 mb-10">
             <div className="flex flex-col items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mb-1">
-                <Home className="w-5 h-5 text-primary" />
+              <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-1">
+                <Home className="w-6 h-6 text-primary" />
               </div>
-              <span className="text-[12px] md:text-sm font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
+              <span className="text-[14px] md:text-base font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
                 Roofing
               </span>
             </div>
-            <div className="w-6 md:w-12 h-px bg-foreground/10" />
+            
+            <div className="w-12 md:w-24 h-px bg-foreground/10" />
+            
             <div className="flex flex-col items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full bg-[hsl(var(--highland-gold)/0.05)] flex items-center justify-center mb-1">
-                <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+              <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.05)] flex items-center justify-center mb-1">
+                <HardHat className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
               </div>
-              <span className="text-[12px] md:text-sm font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
+              <span className="text-[14px] md:text-base font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
                 Construction
-              </span>
-            </div>
-            <div className="w-6 md:w-12 h-px bg-foreground/10" />
-            <div className="flex flex-col items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full bg-accent/5 flex items-center justify-center mb-1 text-accent">
-                <Mountain className="w-5 h-5" />
-              </div>
-              <span className="text-[12px] md:text-sm font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
-                Design & Planning
               </span>
             </div>
           </div>
 
           {/* Statement */}
           <p className="font-heading text-[1.85rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.15] tracking-tight text-foreground max-w-5xl mx-auto font-bold text-balance">
-            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same owner-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions and outdoor living</Link> and <Link to="/layouts-planning" className="hover:text-accent transition-colors underline decoration-accent/30 underline-offset-[6px]">Design & Planning</Link> — ensuring every project is intelligently mapped before the first board is cut.
+            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same owner-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions and outdoor living</Link> — with <Link to="/layouts-planning" className="hover:text-accent transition-colors underline decoration-accent/30 underline-offset-[6px]">Design Support</Link> ensuring every project is intelligently mapped before the first board is cut.
           </p>
-
 
         </motion.div>
       </div>
@@ -82,4 +75,4 @@ const ThreePillars = () => {
   );
 };
 
-export default ThreePillars;
+export default TwoPillars;
