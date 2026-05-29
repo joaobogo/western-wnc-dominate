@@ -1241,6 +1241,296 @@ Your floor plan should dictate where the water goes. We integrate drainage paths
       { label: "Home Additions", path: "/construction/additions" }
     ],
   },
+  {
+    slug: "plan-multi-phase-home-addition-wnc",
+    title: "How to Plan a Multi-Phase Home Addition in WNC",
+    excerpt: "Breaking a large project into manageable phases requires master planning. Learn how to sequence your addition for budget and lifestyle.",
+    category: "Design",
+    date: "2026-05-18",
+    readTime: "8 min",
+    metaTitle: "Multi-Phase Home Addition Planning WNC | Highlander",
+    metaDescription: "Master planning for large WNC home additions. How to phase your construction project for better cash flow and minimal lifestyle disruption.",
+    content: `A 2,000-square-foot expansion doesn't have to happen all at once. Phasing is a strategic way to manage budget and construction fatigue.
+
+## Phase 0: The Master Plan
+Even if you're only building the first 500 feet now, we design the *entire* footprint first. This ensures structural ties, plumbing lines, and roof transitions are positioned correctly for future growth.
+
+## Logical Sequencing
+Typically, we recommend starting with the 'envelope' or 'structural core'. Getting the shell dried-in allows interior work to continue during WNC's winter months without delaying the next phase.
+
+## Budgeting for the Future
+By planning now, you avoid 're-work' costs later. We help you install 'sleeves' for future electrical and HVAC so you don't have to tear down new walls when Phase 2 begins.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Construction Division", path: "/construction" }
+    ],
+  },
+  {
+    slug: "maximizing-natural-light-skylight-strategies",
+    title: "Maximizing Natural Light: Skylight and Floor-Plan Strategies",
+    excerpt: "Mountain homes often have deep porches that darken the interior. Learn how to pull light back into your living space.",
+    category: "Design",
+    date: "2026-05-22",
+    readTime: "6 min",
+    metaTitle: "Natural Light Layout Strategies WNC | Highlander",
+    metaDescription: "How to maximize natural light in mountain homes. Layout tips for skylight placement, window orientation, and porch design.",
+    content: `WNC's dense tree canopy and wide roof overhangs can make interiors feel dark. Here's how our design team solves for light.
+
+## VELUX Skylight Placement
+As a VELUX Certified Installer, we don't just 'drop in' skylights. We calculate the solar orientation of your roof to place them where they provide consistent, indirect light without creating 'hot spots'.
+
+## Visual Sightlines
+We plan layouts that align interior hallways with mountain-facing windows. This 'borrows' light from the exterior and pulls it deep into the center of the home.
+
+## The Glass-to-Wall Ratio
+In new additions, we balance thermal efficiency with light gain. Using premium WNC-grade windows allows for larger glass areas that don't compromise your heating bills.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Skylights (VELUX)", path: "/roofing/skylights" }
+    ],
+  },
+  {
+    slug: "permitting-additions-macon-vs-jackson-county",
+    title: "Permitting for Additions: Macon vs. Jackson County",
+    excerpt: "The rules change at the county line. A guide to building codes and permit timelines in Franklin, Highlands, and Sylva.",
+    category: "Local",
+    date: "2026-05-25",
+    readTime: "7 min",
+    town: "Franklin",
+    metaTitle: "Macon and Jackson County Building Permits | Highlander",
+    metaDescription: "Navigating building permits in Macon and Jackson County, NC. Code requirements for Franklin, Highlands, and Sylva additions.",
+    content: `Building in the Blue Ridge means navigating specific county-level requirements. Here's what we've learned working across Macon and Jackson.
+
+## Macon County Standards (Franklin/Highlands)
+Macon has specific rules regarding steep-slope construction and setbacks, especially in the Highlands Plateau area. We handle the technical submittals to ensure your plan meets all local ordnances.
+
+## Jackson County Nuances (Sylva/Cashiers)
+Jackson County's permitting process focuses heavily on erosion control and watershed protection. Because we live and work here, we maintain relationships with the inspectors who review these projects.
+
+## Why We Handle It For You
+Permitting isn't just paperwork; it's a structural safeguard. Our team manages the entire submittal and inspection cycle so you don't have to learn the code manual.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Construction Division", path: "/construction" }
+    ],
+  },
+  {
+    slug: "outdoor-kitchen-layouts-high-elevation",
+    title: "Outdoor Kitchen Layouts Built for High Elevation",
+    excerpt: "Designing an outdoor kitchen at 4,000 feet requires different materials and layout logic than a lowland patio.",
+    category: "Construction",
+    date: "2026-05-28",
+    readTime: "6 min",
+    town: "Highlands",
+    metaTitle: "Mountain Outdoor Kitchen Design | Highlander",
+    metaDescription: "Planning an outdoor kitchen for WNC homes. Layout tips for wind protection, winterization, and durable mountain materials.",
+    content: `An outdoor kitchen in Highlands or Cashiers faces 140mph gusts and 0°F winters. Your layout needs to account for the physics of the plateau.
+
+## Wind-Screened Cooking Zones
+We design layouts that place the grill and prep areas in 'lee' zones — protected from the prevailing winds that sweep across ridgelines.
+
+## Material Durability
+Forget standard cabinetry. We recommend masonry bases, stainless steel, or high-density polymers that won't warp or rot in WNC's 80+ inches of annual rainfall.
+
+## Winterization Logic
+Your layout should include easy-access shut-off valves for plumbing. We plan these so you can drain the system in minutes before the first freeze.`,
+    relatedServices: [
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Design & Planning", path: "/layouts-planning" }
+    ],
+  },
+  {
+    slug: "structural-feasibility-second-story-wnc",
+    title: "Structural Feasibility: Can Your WNC Home Support a Second Story?",
+    excerpt: "Thinking of building up? Learn how we evaluate foundations and framing to determine if a vertical addition is possible.",
+    category: "Design",
+    date: "2026-06-02",
+    readTime: "9 min",
+    metaTitle: "Second Story Addition Feasibility WNC | Highlander",
+    metaDescription: "Can your mountain home support a second story? Learn about foundation checks, point-load analysis, and structural planning.",
+    content: `Building up is often more cost-effective than building out on a steep lot — but only if your current structure can take the weight.
+
+## Foundation Verification
+We start at the bottom. Our team inspects your footings and crawlspace to ensure they were built to support more than just a single level.
+
+## Point-Load Analysis
+A second story isn't just about weight; it's about *where* that weight lands. We map out how the new floor will transfer its load through your existing walls to the foundation.
+
+## The Staircase Challenge
+A vertical addition requires a new layout for the floor below. We help you find the most efficient spot for a staircase that doesn't ruin your existing flow.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Home Additions", path: "/construction/additions" }
+    ],
+  },
+  {
+    slug: "modern-mountain-design-trends-2026",
+    title: "Design Trends: Modern Mountain Rusticity in 2026",
+    excerpt: "What's shaping WNC home design this year? From mixed-material exteriors to floor plans that prioritize 'wellness' spaces.",
+    category: "Design",
+    date: "2026-06-05",
+    readTime: "7 min",
+    metaTitle: "2026 Mountain Home Design Trends | Highlander",
+    metaDescription: "What's trending in Western NC architecture and design. Mixed materials, dark exteriors, and flexible mountain layouts.",
+    content: `Mountain design is evolving. Homeowners in Highlands and Cashiers are moving away from 'heavy log' styles toward something cleaner and more integrated.
+
+## Mixed Material Envelopes
+We're seeing a shift toward combining standing seam metal roofing with cedar shake and dark-toned board-and-batten siding. It creates a layered, architectural look.
+
+## The 'Mud-to-Mountain' Flow
+Modern layouts now prioritize high-function mudrooms and transition spaces. When you come in from a hike or a snowy day, you need a space designed for the gear.
+
+## Dark Exteriors, Light Interiors
+Deep charcols and 'Iron Ore' tones are popular for exteriors as they help homes disappear into the forest canopy, while interiors are staying bright and airy.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Exterior Improvements", path: "/construction/siding" }
+    ],
+  },
+  {
+    slug: "budgeting-for-preconstruction-planning",
+    title: "Budgeting for Pre-Construction: Why Planning Saves 15% on Build Costs",
+    excerpt: "Spending $2,000 on planning can save $20,000 in mistakes. Learn the ROI of the Design & Planning phase.",
+    category: "Cost",
+    date: "2026-06-10",
+    readTime: "6 min",
+    metaTitle: "Pre-Construction Planning ROI | Highlander",
+    metaDescription: "How professional project planning reduces construction costs. Avoid change orders and material waste with better pre-build logic.",
+    content: `At Highlander, we treat 'Design & Planning' as an investment, not an expense. Here is how that investment pays for itself.
+
+## Eliminating 'Field Figuring'
+When a crew has to stop and 'figure out' a detail on-site, it costs you hourly labor and wasted materials. A good plan solves those details on paper first.
+
+## Accurate Material Ordering
+We calculate exact quantities for premium materials like metal panels and custom siding. This reduces over-ordering and eliminates the 'shortage' delays that stall projects.
+
+## Preventing Change Orders
+Most change orders come from a lack of clarity in the initial scope. By documenting every detail now, you lock in your price and protect your budget.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Construction Division", path: "/construction" }
+    ],
+  },
+  {
+    slug: "transforming-screened-porch-sunroom",
+    title: "Case Study: Transforming a Screened Porch into a Year-Round Sunroom",
+    excerpt: "Learn the structural and layout steps needed to turn a seasonal space into a heated living area.",
+    category: "Construction",
+    date: "2026-06-14",
+    readTime: "8 min",
+    metaTitle: "Sunroom Conversion Case Study WNC | Highlander",
+    metaDescription: "How to convert a screened porch into a sunroom. Structural, insulation, and glass considerations for WNC homes.",
+    content: `Screened porches are WNC staples, but many homeowners want more use out of them. Converting to a sunroom adds conditioned square footage to your home.
+
+## Structural Load Verification
+A screened porch wasn't built to hold the weight of glass windows. We often start by reinforcing the joists and headers to handle the new load.
+
+## Thermal Break Layouts
+A sunroom needs to be comfortable in January. We plan for insulated floors and high-performance glass, ensuring the space doesn't become a 'heat leak' for the rest of your home.
+
+## Integrating the Roofline
+The most complex part is the roof transition. We often use this opportunity to upgrade the porch roof to metal, ensuring a seamless, leak-proof tie-in to the main house.`,
+    relatedServices: [
+      { label: "Home Additions", path: "/construction/additions" },
+      { label: "Outdoor Living", path: "/construction/outdoor-living" }
+    ],
+  },
+  {
+    slug: "designing-for-drainage-foundation-safety",
+    title: "Designing for Drainage: Why Hardscape Planning Matters for Foundation Safety",
+    excerpt: "Your deck or addition is only as safe as the ground beneath it. Learn why water management is a design priority.",
+    category: "Construction",
+    date: "2026-06-18",
+    readTime: "7 min",
+    metaTitle: "Mountain Home Drainage Planning | Highlander",
+    metaDescription: "Why water management is critical for WNC foundations. How to design hardscapes and additions that protect your property.",
+    content: `In a region with 60+ inches of rain, water is the primary enemy of your foundation. Our layouts always prioritize drainage.
+
+## Diverting the Mountain
+If your home is on a slope, water is running *at* you. We design additions with integrated 'curtain drains' and grading plans that move water safely around the structure.
+
+## Gutter Integration
+We don't just 'slap on' gutters. We calculate the volume your roof will shed during a downpour and plan downspout locations that discharge far away from your footings.
+
+## Permeable Hardscapes
+When planning new patios or walkways, we favor layouts that allow water to soak into the ground rather than sheeting off toward your basement walls.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Construction Division", path: "/construction" }
+    ],
+  },
+  {
+    slug: "protecting-your-view-window-layout-strategies",
+    title: "Protecting Your View: Layout Strategies for Window Placement",
+    excerpt: "You bought your WNC home for the view. Learn how to plan additions that enhance, not block, your mountain horizon.",
+    category: "Design",
+    date: "2026-06-22",
+    readTime: "6 min",
+    metaTitle: "Mountain View Layout Strategies | Highlander",
+    metaDescription: "How to plan home additions that maximize mountain views. Window placement, room orientation, and sightline planning.",
+    content: `A poorly planned addition can 'kill' the view that made you fall in love with your home. We use sightline analysis to protect your horizon.
+
+## Corner Window Logic
+We often plan additions with 'butt-glazed' or minimal-frame corner windows. This creates a panoramic feel that 'erases' the corner of the room.
+
+## Ceiling Height and View Angle
+The height of your windows matters as much as the width. We calculate the 'dip' of the mountain view to ensure the header doesn't cut off the peak when you're sitting down.
+
+## Furniture Layout vs. Viewports
+We don't just draw walls; we plan where your sofa or bed will go. This ensures your primary living zones are perfectly aligned with the property's best assets.`,
+    relatedServices: [
+      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Home Additions", path: "/construction/additions" }
+    ],
+  },
+  {
+    slug: "guest-suite-vs-mother-in-law-flat",
+    title: "Guest Suite vs. Mother-in-Law Flat: Design Differences for WNC Homes",
+    excerpt: "Planning for long-term visitors? Learn the layout differences between a temporary guest wing and a full secondary living suite.",
+    category: "Design",
+    date: "2026-06-26",
+    readTime: "8 min",
+    metaTitle: "Guest Suite vs MIL Suite Design WNC | Highlander",
+    metaDescription: "Layout differences for guest additions. How to plan for accessibility, privacy, and long-term utility in your WNC home.",
+    content: `As more families move to Western NC, multi-generational additions are on the rise. But 'Guest' and 'Suite' aren't interchangeable terms.
+
+## The Guest Wing (Short Term)
+A guest wing prioritizes privacy but assumes shared living zones. We plan these with en-suite baths but focus the square footage on the bedroom and closet space.
+
+## The Living Suite (Long Term)
+A true 'In-Law' suite is a self-contained home. We plan these with kitchenette capability, separate entries, and widened door frames for future accessibility (Aging in Place).
+
+## Noise Isolation Layouts
+Regardless of use, privacy is about sound. We design these additions with 'buffer zones' like closets or bathrooms between the new suite and the main living area.`,
+    relatedServices: [
+      { label: "Home Additions", path: "/construction/additions" },
+      { label: "Design & Planning", path: "/layouts-planning" }
+    ],
+  },
+  {
+    slug: "mountain-roof-ventilation-science",
+    title: "The Science of Mountain Roof Ventilation: Why standard codes aren't enough",
+    excerpt: "Deep snow and high humidity create unique ventilation challenges. Learn how we prevent mold and ice dams with better airflow design.",
+    category: "Materials",
+    date: "2026-07-01",
+    readTime: "7 min",
+    metaTitle: "Mountain Roof Ventilation Science | Highlander",
+    metaDescription: "Why standard roof venting fails in WNC. Expert guide on ridge vents, soffit intake, and attic moisture management.",
+    content: `Standard building code works for 80% of the country. But at 4,000 feet, you're in the other 20%. Here is how we design ventilation for the ridge.
+
+## The Balanced Flow Rule
+Ventilation only works if air is moving. We calculate the exact 'Net Free Area' needed for your specific roof volume, ensuring intake (soffit) matches exhaust (ridge).
+
+## Dealing with Deep Snow
+A standard ridge vent can be covered by a heavy WNC snow. We use high-profile venting systems that stay clear even when the roof is white, preventing heat buildup.
+
+## Moisture and Mold Prevention
+WNC is a temperate rainforest. Without aggressive ventilation, mountain humidity can trap moisture in your attic. Our designs prioritize 'constant wash' airflow to keep your decking dry.`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" }
+    ],
+  },
 ];
 
 
