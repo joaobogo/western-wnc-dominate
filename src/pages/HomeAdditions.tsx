@@ -122,8 +122,8 @@ const HomeAdditions = () => {
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImg} alt="Home addition project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.45)] via-[hsl(var(--hero-overlay)/0.25)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.25)] via-[hsl(var(--hero-overlay)/0.1)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.15)] via-transparent to-transparent" />
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.6)] to-[hsl(var(--highland-gold)/0)] z-10" />
@@ -151,7 +151,7 @@ const HomeAdditions = () => {
                 </motion.h1>
               </div>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-[18px] md:text-[20px] text-primary-foreground max-w-xl mb-12 leading-relaxed font-body font-medium drop-shadow-sm">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-xl md:text-2xl text-white mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
                 Guest suites, layout changes, floor plans, and sunrooms — supported by our Design & Planning branch to integrate seamlessly with your existing home's design theme.
               </motion.p>
 
