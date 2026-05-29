@@ -11,6 +11,7 @@ import {
   getServiceTownEntry,
   getServiceTownEntriesForTown,
 } from "@/data/service-town-content";
+import { blogPosts } from "@/data/blogs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const ServiceTownPage = () => {
@@ -86,18 +87,18 @@ const ServiceTownPage = () => {
               <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {entry.intro}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-16">
+              <div className="flex flex-col sm:flex-row gap-5 mb-16">
                 <Link
                   to="/consultation"
-                  className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                  className="cta-gradient text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[280px]"
                 >
                   Request a {entry.serviceLabel} Assessment <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:8283979211"
-                  className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-xl min-w-[240px]"
                 >
-                  <Phone className="w-5 h-5" /> Speak With a Project Advisor
+                  <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                 </a>
               </div>
             </motion.div>
@@ -176,6 +177,46 @@ const ServiceTownPage = () => {
           </div>
         </section>
 
+        {/* Knowledge Base Integration */}
+        <section className="section-padding bg-muted/10 border-t border-border">
+          <div className="container-tight">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+              <div>
+                <span className="eyebrow mb-3 block">Expertise</span>
+                <h3 className="text-3xl font-heading font-bold">{entry.serviceLabel} Insights</h3>
+                <p className="text-muted-foreground mt-2 font-body">Expert guidance on {entry.serviceLabel.toLowerCase()} in {town.name}.</p>
+              </div>
+              <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/20 pb-1 group">
+                Full Knowledge Base <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {blogPosts
+                .filter(b => b.category.toLowerCase().includes(entry.serviceLabel.toLowerCase().split(' ')[0]) || b.town === town.name)
+                .slice(0, 3)
+                .map((post) => (
+                  <Link 
+                    key={post.slug} 
+                    to={`/blog/${post.slug}`}
+                    className="group bg-card border border-border p-6 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-lg"
+                  >
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-6 h-6 rounded-none bg-primary/5 flex items-center justify-center">
+                        <ArrowRight className="w-3 h-3 text-primary rotate-[-45deg]" />
+                      </div>
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground/60">{post.category}</span>
+                    </div>
+                    <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
+                    <p className="text-sm text-muted-foreground mb-6 line-clamp-3 font-body flex-grow">{post.excerpt}</p>
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
+                      Read Article <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </section>
+
         {/* Related — same town */}
         {relatedForTown.length > 0 && (
           <section className="section-padding bg-background">
@@ -232,6 +273,28 @@ const ServiceTownPage = () => {
                   <div className="font-heading font-bold">{t.name}, NC</div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Final Conversion Pathway */}
+        <section className="py-24 bg-primary text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="container-tight relative z-10 text-center">
+            <span className="eyebrow mb-6 block text-[hsl(var(--highland-gold))]">Start Your Project</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 leading-tight">
+              Ready to Upgrade Your <br className="hidden md:block" /> {town.name} Property?
+            </h2>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 font-body leading-relaxed">
+              Our {town.name} division specializes in {entry.serviceLabel} and residential construction. Let's discuss your scope and timing today.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg px-12 py-6 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[280px] justify-center">
+                Request a {entry.serviceLabel} Assessment <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px]">
+                <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
+              </a>
             </div>
           </div>
         </section>

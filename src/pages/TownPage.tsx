@@ -126,11 +126,11 @@ const TownPage = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-2xl border border-[hsl(var(--highland-gold)/0.4)]">
-                    Start a {town.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
+                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[280px]">
+                    Request a {town.name} Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
-                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-xl">
-                    <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
+                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-xl min-w-[240px]">
+                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                   </a>
                 </div>
 
@@ -614,6 +614,56 @@ const TownPage = () => {
               <Link to="/service-areas" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px]">
                 View All Service Areas <ArrowRight className="w-4 h-4" />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Final Conversion Pathway — High Visual, High Impact */}
+        <section className="py-24 bg-primary text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="container-tight relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] mb-4 block">Ready to Begin?</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-[0.95]">
+                  Start Your <br />
+                  <span className="italic text-[hsl(var(--highland-gold))]">{town.name} Project.</span>
+                </h2>
+                <p className="text-xl text-white/80 leading-relaxed mb-10 font-body">
+                  Whether you need a specialized mountain roof assessment or you're planning a significant residential addition, our {town.name} division is ready to discuss your scope and timing.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-5">
+                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:scale-105 transition-all shadow-2xl">
+                    Request an Assessment <ArrowRight className="w-5 h-5" />
+                  </Link>
+                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all">
+                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
+                  </a>
+                </div>
+              </div>
+              <div className="relative hidden lg:block">
+                <div className="bg-white/5 border border-white/10 p-12 backdrop-blur-sm">
+                  <h4 className="text-xl font-heading font-bold mb-6 flex items-center gap-3">
+                    <Shield className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                    The Highlander Standard
+                  </h4>
+                  <ul className="space-y-6">
+                    {[
+                      { title: "Rapid Response", desc: "Local {town.name} project advisors reply personally." },
+                      { title: "Mountain Expertise", desc: "Materials and engineering rated for {town.elevation}." },
+                      { title: "Licensed & Insured", desc: "Full GC licensing for both roofing and construction." }
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] shrink-0 mt-2" />
+                        <div>
+                          <p className="font-heading font-bold text-sm uppercase tracking-wide mb-1">{item.title.replace('{town.name}', town.name)}</p>
+                          <p className="text-white/60 text-sm font-body">{item.desc.replace('{town.elevation}', town.elevation)}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
