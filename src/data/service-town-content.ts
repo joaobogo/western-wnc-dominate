@@ -333,7 +333,6 @@ export const serviceTownContent: ServiceTownEntry[] = [
       { q: "Can you match an existing metal roof on an addition?", a: "In most cases yes. Match success depends on age and weathering of the existing panels — we'll quote it honestly after inspection." },
     ],
   }),
-  },
   // ─────────── ASHEVILLE ───────────
   E({
     townSlug: "asheville-nc",
