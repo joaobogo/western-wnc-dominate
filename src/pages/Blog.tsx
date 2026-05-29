@@ -195,8 +195,14 @@ const Blog = () => {
                   className="lg:col-span-7"
                 >
                   <Link to={`/blog/${heroFeatured.slug}`} className="group block card-premium overflow-hidden h-full">
-                    <div className="relative bg-primary/5 p-1">
-                      <div className="bg-gradient-to-br from-primary/8 to-accent/5 p-8 md:p-10 lg:p-12">
+                    <div className="relative aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
+                      <img 
+                        src={heroFeatured.image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000"} 
+                        alt={heroFeatured.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.4)] to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 lg:p-12">
                         <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] px-3 py-1.5 mb-4 inline-block">
                           {heroFeatured.category}
                         </span>
