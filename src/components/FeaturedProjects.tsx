@@ -208,9 +208,14 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   );
 };
 
-const FeaturedProjects = () => {
+const FeaturedProjects = ({ location }: { location?: string }) => {
   const [activeFilter, setActiveFilter] = useState("all");
-  const filtered = activeFilter === "all" ? projects : projects.filter((p) => p.type === activeFilter);
+  const filtered = activeFilter === "all" 
+    ? (location ? projects.filter(p => p.location.includes(location) || p.location.includes(location.split(',')[0])) : projects) 
+    : projects.filter((p) => p.type === activeFilter && (!location || p.location.includes(location) || p.location.includes(location.split(',')[0])));
+  
+  // If no localized projects found, fallback to all projects but show local ones first if available
+  const displayProjects = filtered.length > 0 ? filtered : projects;
 
   return (
     <section className="section-padding bg-background relative overflow-hidden">
