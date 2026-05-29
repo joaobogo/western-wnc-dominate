@@ -433,24 +433,58 @@ const TownPage = () => {
         ) : null}
 
         {/* 10. Supporting content / local insights */}
-        {(existingBlogs.length > 0 || localBlogs.length > 0) && (
-          <section className="section-padding bg-card border-t border-border relative overflow-hidden">
-            <div className="container-tight relative z-10">
-              <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div className="max-w-xl">
-                  <span className="eyebrow mb-4 block">Local Knowledge</span>
-                  <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight">Insights for {town.name} Homeowners</h3>
-                </div>
-                <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/20 pb-1">
-                  Browse All Resources <ArrowRight className="w-4 h-4" />
-                </Link>
+        <section className="section-padding bg-card border-t border-border relative overflow-hidden">
+          {/* Subtle pattern background for the insights section */}
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+          
+          <div className="container-tight relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <div className="max-w-xl text-center md:text-left mx-auto md:mx-0">
+                <span className="eyebrow mb-4 block">Local Authority</span>
+                <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight">Expert Insights for {town.name}</h3>
+                <p className="text-muted-foreground mt-4 font-body text-lg">
+                  Factual guidance on roofing, construction, and mountain living specifically for the {town.name} plateau.
+                </p>
               </div>
+              <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/20 pb-1 group shrink-0">
+                Browse Full Knowledge Base <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {existingBlogs.length > 0 ? (
-                  existingBlogs.map((post) => (
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Combine local topics and existing blogs for maximum relevance */}
+              {[
+                ...localBlogs.map((topic, i) => ({
+                  slug: "#local-topic-" + i,
+                  title: topic.title,
+                  excerpt: topic.description,
+                  category: topic.serviceCategory === 'roofing' ? 'Roofing' : topic.serviceCategory === 'construction' ? 'Construction' : 'Planning',
+                  isLocal: true
+                })),
+                ...existingBlogs
+              ].slice(0, 3).map((post, i) => (
+                <div key={i} className="flex flex-col h-full">
+                  {post.slug.startsWith('#') ? (
+                    <div className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 -rotate-45 translate-x-12 -translate-y-12" />
+                      <div className="flex items-center gap-3 mb-6 relative z-10">
+                        <div className="w-8 h-8 rounded-none bg-primary/5 flex items-center justify-center">
+                          <BookOpen className="w-4 h-4 text-primary" />
+                        </div>
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground/60">{post.category}</span>
+                        <span className="text-[9px] bg-[hsl(var(--highland-gold)/0.1)] text-[hsl(var(--highland-gold))] px-2 py-0.5 font-bold uppercase tracking-wider ml-auto">Local Topic</span>
+                      </div>
+                      <h4 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-4 leading-tight relative z-10">{post.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-8 line-clamp-3 font-body flex-grow leading-relaxed relative z-10">{post.excerpt}</p>
+                      <Link 
+                        to="/consultation"
+                        className="text-[11px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all relative z-10"
+                      >
+                        Request Local Guide <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  ) : (
                     <Link 
-                      key={post.slug} 
                       to={`/blog/${post.slug}`}
                       className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl"
                     >
@@ -466,32 +500,36 @@ const TownPage = () => {
                         Read Local Guide <ArrowRight className="w-4 h-4" />
                       </span>
                     </Link>
-                  ))
-                ) : (
-                  blogPosts.filter(b => b.category === "Construction" || b.category === "Design").slice(0, 3).map((post) => (
-                    <Link 
-                      key={post.slug} 
-                      to={`/blog/${post.slug}`}
-                      className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl"
-                    >
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-8 h-8 rounded-none bg-primary/5 flex items-center justify-center">
-                          <BookOpen className="w-4 h-4 text-primary" />
-                        </div>
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground/60">{post.category}</span>
+                  )}
+                </div>
+              ))}
+              
+              {/* Fallback if no specific content found for this town */}
+              {[...localBlogs, ...existingBlogs].length === 0 && (
+                blogPosts.filter(b => b.category === "Materials" || b.category === "Maintenance").slice(0, 3).map((post) => (
+                  <Link 
+                    key={post.slug} 
+                    to={`/blog/${post.slug}`}
+                    className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl"
+                  >
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-8 h-8 rounded-none bg-primary/5 flex items-center justify-center">
+                        <BookOpen className="w-4 h-4 text-primary" />
                       </div>
-                      <h4 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-4 leading-tight">{post.title}</h4>
-                      <p className="text-sm text-muted-foreground mb-8 line-clamp-3 font-body flex-grow leading-relaxed">{post.excerpt}</p>
-                      <span className="text-[11px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
-                        Read Planning Guide <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </Link>
-                  ))
-                )}
-              </div>
+                      <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground/60">{post.category}</span>
+                    </div>
+                    <h4 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-4 leading-tight">{post.title}</h4>
+                    <p className="text-sm text-muted-foreground mb-8 line-clamp-3 font-body flex-grow leading-relaxed">{post.excerpt}</p>
+                    <span className="text-[11px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
+                      Read Planning Guide <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                ))
+              )}
             </div>
-          </section>
-        )}
+          </div>
+        </section>
+
 
         {/* Builder Promo - Link to Interactive Tools */}
         <section className="py-12 bg-background border-y border-border">
