@@ -126,10 +126,10 @@ const TownPage = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[300px]">
+                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] md:text-[16px] px-8 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[300px]">
                     Request a {town.name} Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
-                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-xl min-w-[240px]">
+                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[14px] md:text-[16px] px-8 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-xl min-w-[240px]">
                     <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                   </a>
                 </div>
