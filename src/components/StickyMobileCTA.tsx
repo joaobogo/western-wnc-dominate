@@ -40,7 +40,7 @@ const StickyMobileCTA = () => {
                 className="flex items-center justify-center gap-2 py-1.5 px-3 bg-[hsl(var(--heritage-green))] border-b border-[hsl(var(--highland-gold)/0.25)]"
               >
                 <div className="w-6 h-6 flex items-center justify-center overflow-hidden flex-shrink-0">
-                  <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain invert brightness-[1.5] mix-blend-screen" />
+                  <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain filter grayscale invert brightness-[2] mix-blend-screen" />
                 </div>
                 <span className="text-[11px] font-body font-bold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold))]">
                   VELUX Certified Skylight Installer
