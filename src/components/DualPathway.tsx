@@ -294,9 +294,9 @@ const DualPathway = () => {
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
-          <p className="text-[13px] text-muted-foreground/60 font-body leading-relaxed max-w-md mx-auto">
-            Your roof and your renovation shouldn't require two companies, two schedules,
-            and two definitions of quality. With Highlander, they don't.
+          <p className="text-[14px] text-muted-foreground/60 font-body leading-relaxed max-w-md mx-auto">
+            Your project shouldn't be split across multiple companies and conflicting schedules.
+            With Highlander, you get one standard across all three divisions.
           </p>
         </motion.div>
       </div>
