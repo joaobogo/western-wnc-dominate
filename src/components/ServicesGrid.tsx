@@ -274,7 +274,8 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
 
 const ServicesGrid = () => {
   const roofing = services.filter(s => s.accent === "green");
-  const construction = services.filter(s => s.accent === "gold");
+  const construction = services.filter(s => s.accent === "gold" && s.title !== "Design & Planning");
+  const design = services.filter(s => s.title === "Design & Planning");
 
   return (
     <section className="section-padding bg-background relative overflow-hidden">
@@ -334,6 +335,24 @@ const ServicesGrid = () => {
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {construction.map((s, i) => <ServiceCard key={s.title} service={s} index={i} />)}
+          </div>
+        </div>
+
+        {/* Design Division — The 3rd Pillar */}
+        <div>
+          <ScrollReveal variant="slide-left">
+            <div className="flex items-center gap-3 mb-7">
+              <div className="w-8 h-8 rounded-none bg-accent/10 flex items-center justify-center">
+                <Ruler className="w-4 h-4 text-accent" />
+              </div>
+              <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.22em] text-accent/90">
+                Design & Planning Branch
+              </span>
+              <div className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {design.map((s, i) => <ServiceCard key={s.title} service={s} index={i} />)}
           </div>
         </div>
       </div>
