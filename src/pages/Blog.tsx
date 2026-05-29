@@ -42,7 +42,10 @@ const featuredSlugs = [
   "metal-vs-shingle-roof-western-nc",
   "storm-damage-checklist-western-nc",
   "how-much-does-roof-cost-highlands-nc",
+  "mountain-home-addition-planning",
+  "mountain-porch-deck-design-wnc",
 ];
+
 
 /* Seasonal awareness */
 const getSeasonalContext = () => {
