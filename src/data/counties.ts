@@ -154,7 +154,7 @@ export const counties: CountyData[] = [
     housingContext: "Cherokee County features a blend of traditional residential homes, seasonal cabins, and a growing influx of retirees building custom mountain retreats.",
     climateRealities: "Western humidity and valley wind patterns demand durable materials and high-quality flashing at all structural transitions."
   }
-  },
+  ,
   {
     slug: "madison-county",
     name: "Madison County",
