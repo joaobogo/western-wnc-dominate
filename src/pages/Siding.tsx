@@ -20,14 +20,15 @@ const Siding = () => {
       />
       <Header />
       <main>
-        <section className="relative min-h-[50vh] flex items-center overflow-hidden">
-          <div className="absolute inset-0 section-dark">
+        <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0">
             <img 
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" 
               alt="Mountain home with premium siding and exterior finishes"
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.7)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.4)] via-transparent to-transparent" />
           </div>
           <div className="container-tight relative z-10 pt-32 md:pt-40">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
