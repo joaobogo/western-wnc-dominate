@@ -189,12 +189,13 @@ const Header = () => {
                     className="absolute top-full left-0 pt-2.5"
                   >
                     <div className="bg-card border border-border rounded-sm shadow-[0_20px_60px_-15px_hsl(var(--heritage-charcoal)/0.15)] min-w-[340px] relative overflow-hidden">
-                      {/* Top accent line */}
-                      <div className={`absolute top-0 left-0 right-0 h-[2px] ${
-                        div.accent === "green"
-                          ? "bg-gradient-to-r from-[hsl(var(--heritage-green))] via-[hsl(var(--heritage-green)/0.6)] to-transparent"
-                          : "bg-gradient-to-r from-[hsl(var(--highland-gold))] via-[hsl(var(--highland-gold)/0.6)] to-transparent"
-                      }`} />
+                      {/* Top accent line — Tartan */}
+                      <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
+                        <div className="absolute inset-0 opacity-40 bg-[hsl(var(--highland-gold)/0.1)]" style={{ 
+                          backgroundImage: "url('/tartan.png')",
+                          backgroundSize: "80px auto"
+                        }} />
+                      </div>
 
                       {/* Division header */}
                       <div className="px-5 pt-5 pb-3">
