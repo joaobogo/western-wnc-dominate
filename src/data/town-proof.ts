@@ -90,16 +90,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Why do Cashiers roofs fail faster from moisture?",
-        answer: "Cashiers gets extreme rainfall and long damp periods, so weak valleys, worn flashing, and poor ventilation show up faster here. Materials alone are not enough — installation detail is what protects the house.",
+        question: "Why do Cashiers roofs face unique moisture failure risks?",
+        answer: "With 80+ inches of rain, Cashiers roofs rarely dry out completely. This accelerates algae growth and exposes weak flashing details. We use algae-resistant materials and engineered drainage to combat these Plateau conditions.",
       },
       {
-        question: "Should Cashiers homeowners prioritize gutters with a roof project?",
-        answer: "Often, yes. In Cashiers, roof and gutter performance are closely linked. When runoff is not controlled, it can back up at eaves, oversaturate grade lines, and create repeat leak issues.",
+        question: "Is composite decking better for Cashiers' climate?",
+        answer: "Yes. Due to the high moisture levels in Jackson County, natural wood decks require constant maintenance. We recommend premium composite systems that resist rot and moisture in rainforest conditions.",
       },
       {
-        question: "Can you manage premium roofing projects for second homes in Cashiers?",
-        answer: "Yes. We regularly work with seasonal homeowners and can manage remote communication, progress photos, and schedule coordination while protecting high-end finishes and landscaping.",
+        question: "Do you provide project management for seasonal Cashiers estates?",
+        answer: "Yes. Many of our Cashiers clients live out of town. We provide full project coordination, from design/planning to construction, with frequent photo and video updates.",
       },
     ],
   },
