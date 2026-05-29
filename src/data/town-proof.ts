@@ -29,6 +29,7 @@ const buildProjectHighlight = (townName: string): TownJobHighlight[] => {
       summary: project.summary,
       proof: `${project.scope} • ${project.duration} • ${project.highlight}`,
       projectSlug: project.slug,
+      image: project.heroImage,
     }));
 };
 
