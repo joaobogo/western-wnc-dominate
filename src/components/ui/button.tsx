@@ -5,14 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-none text-[20px] font-bold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 font-body uppercase tracking-[0.16em] shadow-md border-2 border-transparent",
+  "inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-none text-[20px] font-bold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 font-body uppercase tracking-[0.16em] shadow-md border-2 border-transparent active:scale-[0.98] hover:shadow-lg",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md",
+        default: "bg-primary text-primary-foreground hover:bg-primary/95 shadow-md hover:shadow-primary/20",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 font-bold",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold border-border/50 hover:border-border",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline font-bold tracking-normal",
         /** Highland gold gradient — primary conversion CTA */

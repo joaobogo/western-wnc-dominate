@@ -1,40 +1,39 @@
-I will perform a comprehensive sitewide audit and repair pass to address all the issues mentioned in the prompts, focusing on visual brightness, typography, broken images, and branding consistency.
+The user wants a global audit and repair pass across the whole site, focusing on typography, readability, brightness, branding consistency, and fixing broken images. I have audited the codebase and identified several areas for improvement based on the specific prompts provided.
 
-### 1. Global Readability & Typography
-- **Increase Font Sizes**: Ensure all body text, navigation items, and labels are legible for older users.
-- **Contrast Pass**: Audit all dark sections to ensure text contrast meets accessibility standards (WCAG).
-- **Mobile Readability**: Optimize spacing and font sizes specifically for mobile devices.
+### Technical Details
+- **Typography & Readability**: Standardize font sizes and contrast. Increase `body` font size (already 24px in `index.css`, but need to ensure it applies well). Fix dark text on dark backgrounds.
+- **Brightness & Image Clarity**: Reduce excessive dark overlays in hero sections and background gradients.
+- **Three Pillars Consistency**: Ensure all references to Highlander's service structure include Roofing, Construction, and Design & Planning.
+- **Button & CTA Visibility**: Improve button contrast, size, and hover states globally.
+- **Branding Consistency**: Standardize logo usage and tartan/plaid accents.
+- **Broken Image Fixes**: Identify and replace broken image URLs with high-quality fallbacks.
 
-### 2. Visual Brightness & Image Clarity
-- **Reduce Overlays**: Lighten the `--hero-overlay` and other dark gradients that obscure images.
-- **Hero Brightness**: Adjust hero components to ensure background images are the primary focus, not the overlays.
-- **Section Rebalancing**: Lighten sections that feel "muddy" or "too dark," especially on construction pages.
+### Implementation Plan
 
-### 3. Broken Image Audit & Repair
-- **Waynesville Page**: Fix the logo/image issue in the hero.
-- **Construction & About Heroes**: Add high-quality images where they are currently missing or blank.
-- **Team Section**: Replace "Photo Coming Soon" placeholders with professional fallbacks or refined treatments.
-- **Sitewide Check**: Use an automated scan to identify and fix any other broken image paths.
+#### 1. Global Styles & Typography (`src/index.css`)
+- Refine the typography system for better readability on mobile.
+- Adjust accent colors (Highland Gold) for better accessibility.
+- Reduce default hero overlay opacities.
 
-### 4. Branding & Logo Consistency
-- **Standardize Logo**: Ensure the premium Highlander logo is used consistently across all pages.
-- **Logo Sizing**: Enlarge logos in the header and hero sections as requested.
-- **Tartan/Plaid Accents**: Reposition tartan/plaid as a subtle, premium secondary accent (trim, dividers) rather than a dominant background.
+#### 2. Three Pillars Alignment
+- Audit and update `src/components/ThreePillars.tsx` and any other component mentioning "2 pillars".
+- Ensure consistent naming: Roofing, Construction, Design & Planning.
 
-### 5. Messaging & Structural Alignment
-- **3 Pillars Correction**: Audit the site to ensure all references to the service structure reflect the 3 pillars: Roofing, Construction, and Design & Planning.
-- **Pillar Hierarchy**: Maintain the brand hierarchy where Roofing and Construction are primary, and Design is a supporting branch.
+#### 3. Component Visibility & CTA Pass
+- Update `src/components/ui/button.tsx` or global button classes to "pop" more.
+- Increase button text size and contrast.
 
-### 6. CTA & Button Visibility
-- **Pop & Contrast**: Enhance button colors and contrast ratios.
-- **Button Sizing**: Increase button text size and padding for better tap targets and visibility.
+#### 4. Page-Specific Readability & Brightness Fixes
+- **Construction Pages**: Lighten backgrounds and improve text contrast in `src/pages/ConstructionDivision.tsx` and related components.
+- **County/Town Pages**: Ensure hero images are clear and overlays aren't too dark in `src/pages/CountyPage.tsx` and `src/pages/TownPage.tsx`.
 
-### Technical Implementation Details:
-- **CSS Variables**: Update `index.css` to refine the global color palette and typography system.
-- **Hero Component**: Refactor the `Hero` component and location-specific heroes to be more flexible and image-led.
-- **Image Fallbacks**: Implement a robust fallback system for images that fail to load.
+#### 5. Image Audit & Fallbacks
+- Replace known broken URLs with reliable Unsplash placeholders or local assets if available.
+- Specifically check `ConstructionDivision.tsx`, `About.tsx`, and `TownPage.tsx`.
 
-### QA Pass:
-- **Responsive Testing**: Verify all fixes on desktop, tablet, and mobile.
-- **Readability Score**: Ensure all major pages are "Strong" for older-user readability.
-- **Image Load Verification**: Confirm every page is free of broken images.
+#### 6. Branding & Logo Consistency
+- Ensure logo sizing is consistent across header and footer.
+- Apply tartan accents subtly in appropriate sections.
+
+#### 7. Final QA Report
+- Prepare a summary of changes as requested in the prompts.

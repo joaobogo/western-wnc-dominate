@@ -41,18 +41,18 @@
     --radius: 0rem; 
 
     /* Heritage tokens — refined for brightness and readability */
-    --dark-section: 158 25% 18%; /* Dark but readable */
-    --dark-section-foreground: 42 16% 99%;
-    --trust-badge: 158 30% 22%; 
-    --cta-gradient-from: 38 98% 52%; 
-    --cta-gradient-to: 32 95% 45%;
-    --hero-overlay: 158 20% 8%; /* Dark base, but we will use lower opacities */
+    --dark-section: 158 35% 15%; /* Slightly more saturated but dark enough for contrast */
+    --dark-section-foreground: 42 20% 99%;
+    --trust-badge: 158 35% 20%; 
+    --cta-gradient-from: 38 98% 54%; /* Slightly brighter gold */
+    --cta-gradient-to: 32 95% 48%;
+    --hero-overlay: 158 30% 6%; /* Deep but we will use lower opacities */
     --heritage-green: 158 38% 18%;
     --heritage-charcoal: 210 25% 10%;
-    --highland-gold: 38 98% 46%;
-    --highland-gold-light: 38 45% 72%;
-    --tartan-line: 158 25% 25%;
-    --tartan-accent: 0 40% 30%;
+    --highland-gold: 38 98% 48%; /* Improved contrast gold */
+    --highland-gold-light: 38 55% 75%;
+    --tartan-line: 158 30% 28%;
+    --tartan-accent: 0 45% 35%;
     --warm-stone: 34 20% 92%;
     --slate: 210 14% 50%;
     --slate-light: 210 12% 70%;
@@ -105,9 +105,15 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    font-size: 1.5rem; /* Increased to 24px for better readability for older ICPs */
-    letter-spacing: 0.015em;
-    line-height: 1.85;
+    font-size: 1.125rem; /* Base 18px for better readability */
+    letter-spacing: 0.01em;
+    line-height: 1.75;
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.25rem; /* 20px on desktop */
+    }
   }
 
   /* ──────────────────────────────────────
@@ -160,8 +166,15 @@
      ────────────────────────────────────── */
   p {
     @apply font-body text-foreground/95;
-    max-width: 65ch; /* Optimal reading measure */
-    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    max-width: 70ch; 
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+  
+  @media (min-width: 768px) {
+    p {
+      font-size: 1.25rem;
+    }
   }
   p + p {
     margin-top: 1.5rem;

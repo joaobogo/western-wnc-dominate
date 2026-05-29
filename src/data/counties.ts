@@ -62,7 +62,7 @@ export const counties: CountyData[] = [
     towns: ["Waynesville"],
     metaTitle: "Roofing & Construction Services in Haywood County, NC | Highlander Roofing",
     metaDescription: "Professional roofing and construction across Haywood County, NC. Serving Waynesville with expert care for historic and modern properties.",
-    heroImage: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000",
+    heroImage: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Service Area", value: "Full County" },
       { label: "Specialty", value: "Historic Modernization" },

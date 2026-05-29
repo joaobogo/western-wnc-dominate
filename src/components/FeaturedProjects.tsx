@@ -146,10 +146,10 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
             />
           </motion.div>
 
-          {/* Cinematic overlays — strengthened for legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.2)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.8)] group-hover:via-[hsl(var(--heritage-charcoal)/0.4)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.1)] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.3)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          {/* Cinematic overlays — refined for clarity */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.5)] via-[hsl(var(--heritage-charcoal)/0.1)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.6)] group-hover:via-[hsl(var(--heritage-charcoal)/0.3)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.05)] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.15)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
           {/* Hover image zoom */}
           <div className="absolute inset-0 group-hover:scale-[1.06] transition-transform duration-&lsqb;1400ms&rsqb;" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
@@ -182,15 +182,15 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
             </div>
 
             {/* Title */}
-            <h3 className={`font-heading font-bold text-white leading-tight tracking-tight mb-0 drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)] group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
-              isHero ? "text-2xl md:text-3xl lg:text-4xl" : "text-lg md:text-xl"
+            <h3 className={`font-heading font-bold text-white leading-[1.1] tracking-tight mb-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
+              isHero ? "text-2xl md:text-3xl lg:text-4xl" : "text-xl md:text-2xl"
             }`}>
               {project.title}
             </h3>
 
             {/* Outcome — reveal on hover */}
             <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
-              <p className="text-white/90 text-[13px] font-body leading-relaxed mt-3 pr-12 drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
+              <p className="text-white text-[15px] md:text-[16px] font-body leading-relaxed mt-3 pr-12 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] font-medium">
                 {project.outcome}
               </p>
             </div>

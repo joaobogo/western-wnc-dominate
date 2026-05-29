@@ -29,7 +29,7 @@ export const ConstructionMidCTA = ({
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">{headline}</h3>
-          <p className="text-primary-foreground/70 text-base font-body">{subheadline}</p>
+          <p className="text-primary-foreground/90 text-base md:text-lg font-body">{subheadline}</p>
         </div>
         <div className="flex gap-3 flex-shrink-0">
           <Link to={ctaLink} className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -71,7 +71,7 @@ export const ConstructionClosingCTA = ({
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground whitespace-pre-line">
               {headline}
             </h2>
-            <p className="text-dark-section-foreground/70 text-base md:text-xl max-w-xl mx-auto mb-10 font-body leading-relaxed">
+            <p className="text-dark-section-foreground/90 text-base md:text-xl max-w-xl mx-auto mb-10 font-body leading-relaxed">
               {subheadline}
             </p>
 

@@ -16,7 +16,7 @@ const ThreePillars = () => {
   return (
     <section className="bg-background py-20 md:py-32 relative overflow-hidden">
       {/* Subtle Heritage Tartan Watermark */}
-      <div className="absolute inset-0 opacity-[0.035] pointer-events-none" style={{ 
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ 
         backgroundImage: "url('/tartan.png')",
         backgroundSize: "400px auto"
       }} />
@@ -35,7 +35,7 @@ const ThreePillars = () => {
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
             <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
-              Roofing · Construction · Design
+              Roofing · Construction · Design & Planning
             </span>
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
           </div>
@@ -71,7 +71,7 @@ const ThreePillars = () => {
           </div>
 
           {/* Statement */}
-          <p className="font-heading text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] leading-[1.2] tracking-[-0.015em] text-foreground max-w-4xl mx-auto font-bold">
+          <p className="font-heading text-[1.85rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.15] tracking-tight text-foreground max-w-5xl mx-auto font-bold text-balance">
             Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same owner-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions and outdoor living</Link> and <Link to="/layouts-planning" className="hover:text-accent transition-colors underline decoration-accent/30 underline-offset-[6px]">Design & Planning</Link> — ensuring every project is intelligently mapped before the first board is cut.
           </p>
 

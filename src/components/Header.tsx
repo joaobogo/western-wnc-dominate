@@ -150,8 +150,8 @@ const Header = () => {
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className="w-auto transition-all duration-500 max-w-[160px] md:max-w-none"
-            animate={{ height: scrolled ? 140 : 180 }}
+            className="w-auto transition-all duration-500 max-w-[180px] md:max-w-none"
+            animate={{ height: scrolled ? 150 : 200 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>
@@ -494,10 +494,10 @@ const Header = () => {
                     <Link
                       to={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className={`py-3 px-3 text-base font-medium rounded-sm transition-all flex items-center gap-2 font-body ${
+                      className={`py-3 px-3 text-lg font-bold rounded-sm transition-all flex items-center gap-2 font-body ${
                         isActive(link.href)
                           ? "text-heritage-charcoal bg-black/5"
-                          : "text-heritage-charcoal/70 hover:text-heritage-charcoal hover:bg-black/5"
+                          : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"
                       }`}
                     >
                       {link.label}
@@ -518,16 +518,16 @@ const Header = () => {
                   <Link
                     to="/consultation"
                     onClick={() => setMobileOpen(false)}
-                    className="cta-gradient text-accent-foreground font-semibold text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2 btn-primary-interactive"
+                    className="cta-gradient text-accent-foreground font-bold text-center py-4.5 px-4 rounded-none flex items-center justify-center gap-2.5 text-[17px] uppercase tracking-wider shadow-lg"
                   >
                     <span className="relative z-10">Start Your Project</span>
-                    <ArrowRight className="w-4 h-4 relative z-10" />
+                    <ArrowRight className="w-5 h-5 relative z-10" />
                   </Link>
                   <a
                     href="tel:8283979211"
-                    className="bg-primary text-primary-foreground font-medium text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 font-body btn-ghost-interactive"
+                    className="bg-primary text-primary-foreground font-bold text-center py-4.5 px-4 rounded-none flex items-center justify-center gap-2.5 text-[17px] font-body shadow-md active:scale-95 transition-all"
                   >
-                    <Phone className="w-4 h-4" />
+                    <Phone className="w-5 h-5" />
                     (828) 397-9211
                   </a>
                 </motion.div>

@@ -108,7 +108,7 @@ const DivisionCard = ({ data, accent, index }: {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.18, duration: 0.7, ease: HIGHLAND_EASE }}
-      className="group relative bg-card border border-border rounded-none overflow-hidden spotlight-hover flex flex-col"
+      className="group relative bg-card border border-border rounded-none overflow-hidden spotlight-hover flex flex-col hover:border-[hsl(var(--highland-gold)/0.3)] transition-all duration-500"
     >
       {/* === IMAGE HEADER with curtain reveal === */}
       <div className="relative h-48 md:h-56 overflow-hidden">
@@ -130,10 +130,10 @@ const DivisionCard = ({ data, accent, index }: {
             transition={{ duration: 2, delay: index * 0.15 + 0.1, ease: HIGHLAND_EASE }}
           />
         </motion.div>
-        {/* Cinematic overlay — strengthened for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-card/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.45)] via-transparent to-transparent" />
-        <div className={`absolute inset-0 mix-blend-multiply opacity-20 ${
+        {/* Cinematic overlay — refined for clarity */}
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.3)] via-transparent to-transparent" />
+        <div className={`absolute inset-0 mix-blend-multiply opacity-15 ${
           isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
         }`} />
 
@@ -203,7 +203,7 @@ const DivisionCard = ({ data, accent, index }: {
         <h3 className="text-xl md:text-[1.65rem] font-heading font-bold text-foreground mb-3 leading-tight tracking-tight">
           {data.title}
         </h3>
-        <p className="text-muted-foreground text-[13.5px] leading-[1.75] font-body mb-7">
+        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-7 font-medium">
           {data.description}
         </p>
 
@@ -221,7 +221,7 @@ const DivisionCard = ({ data, accent, index }: {
               <service.icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors duration-200 ${
                 isGold ? "text-[hsl(var(--highland-gold)/0.5)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/40 group-hover/item:text-primary/70"
               }`} />
-              <span className="text-[12.5px] text-foreground/70 font-body font-medium leading-tight">
+              <span className="text-[14px] md:text-[15px] text-foreground/80 font-body font-bold leading-tight">
                 {service.name}
               </span>
             </motion.div>
