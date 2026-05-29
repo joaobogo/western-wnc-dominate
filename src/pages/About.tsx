@@ -73,16 +73,13 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="mb-10 inline-flex items-center gap-6"
+              className="mb-8 inline-flex items-center gap-4 md:gap-6"
             >
-              <div className="h-14 w-px bg-white/20" />
-              <Link to="/">
-                <img 
-                  src={logo} 
-                  alt="Highlander Roofing & Construction" 
-                  className="h-14 md:h-16 w-auto transition-transform hover:scale-105" 
-                />
-              </Link>
+              <div className="h-10 md:h-12 w-px bg-white/30" />
+              <div className="flex flex-col">
+                <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1">Heritage & Story</span>
+              </div>
             </motion.div>
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
@@ -169,7 +166,7 @@ const About = () => {
                   <div className="aspect-square mb-6 bg-muted flex items-center justify-center relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                     <Users className="w-10 h-10 text-muted-foreground/20" />
                     <div className="absolute bottom-4 left-0 right-0 text-center">
-                      <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80 bg-white/15 px-3 py-1.5 backdrop-blur-sm border border-white/10">Photo Coming Soon</span>
+                      <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.2em] text-white bg-[hsl(var(--primary)/0.6)] px-3 py-1.5 backdrop-blur-sm border border-white/10">In-House Expert</span>
                     </div>
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-1">{person.name}</h3>

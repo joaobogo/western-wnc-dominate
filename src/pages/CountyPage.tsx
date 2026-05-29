@@ -63,16 +63,13 @@ const CountyPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="mb-10 inline-flex items-center gap-6"
+              className="mb-8 inline-flex items-center gap-4 md:gap-6"
             >
-              <div className="h-14 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
-              <Link to="/">
-                <img 
-                  src={logo} 
-                  alt="Highlander Roofing & Construction" 
-                  className="h-16 md:h-20 w-auto transition-transform hover:scale-105" 
-                />
-              </Link>
+              <div className="h-10 md:h-12 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
+              <div className="flex flex-col">
+                <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1">County Authority</span>
+              </div>
             </motion.div>
             <div className="max-w-4xl">
               <motion.div 
