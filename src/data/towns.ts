@@ -19,6 +19,7 @@ export interface TownData {
   styleTendency: string;
   notableNeighborhoods: string[];
   marketAuthorityAngle: string;
+  heroImage: string;
 }
 
 export const towns: TownData[] = [
