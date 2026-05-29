@@ -131,9 +131,6 @@ const ServiceTownPage = () => {
             </div>
           </div>
         </section>
-            </motion.div>
-          </div>
-        </section>
 
         {/* Local context */}
         <section className="section-padding bg-background">
