@@ -224,12 +224,12 @@ const BlogPostPage = () => {
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-tight text-balance">
+              <h1 className="text-display font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[1.0] tracking-tightest text-balance">
                 {post.title}
               </h1>
 
               {/* Excerpt */}
-              <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-base md:text-lg max-w-2xl leading-relaxed">
+              <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl leading-relaxed font-medium drop-shadow-sm">
                 {post.excerpt}
               </p>
             </motion.div>
