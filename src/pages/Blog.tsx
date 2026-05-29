@@ -236,7 +236,15 @@ const Blog = () => {
                       transition={{ delay: i * 0.08 }}
                     >
                       <Link to={`/blog/${post.slug}`} className="group block card-premium overflow-hidden">
-                        <div className="p-6 md:p-7">
+                        <div className="flex flex-col sm:flex-row h-full">
+                          <div className="sm:w-32 md:w-40 shrink-0 overflow-hidden">
+                            <img 
+                              src={post.image || "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=600"} 
+                              alt={post.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                          <div className="p-5 md:p-6 flex-1">
                           <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
                             <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/10 text-primary">
                               {post.category}
