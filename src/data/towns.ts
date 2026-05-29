@@ -63,7 +63,7 @@ export const towns: TownData[] = [
     styleTendency: "Elevated rustic featuring bark siding, cedar shingles, and massive window walls for indoor-outdoor integration.",
     notableNeighborhoods: ["High Hampton", "Cedar Creek", "Lonesome Valley", "Chinquapin"],
     marketAuthorityAngle: "In a town with 80+ inches of rain, we treat every roof as a complex water-management system rather than just a surface covering.",
-    heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&q=80&w=2000"
 
   },
   {
@@ -105,7 +105,7 @@ export const towns: TownData[] = [
     styleTendency: "Historic preservation mixed with functional modern mountain design.",
     notableNeighborhoods: ["Historic Downtown", "Tuckasegee River Corridor", "Cope Creek", "Fisher Creek"],
     marketAuthorityAngle: "From Jackson County commercial buildings to historic Main Street residences, we coordinate complex projects around busy downtown schedules and tenants.",
-    heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1518173946687-a4c8a9b749f5?auto=format&fit=crop&q=80&w=2000"
 
   },
   {
@@ -147,7 +147,7 @@ export const towns: TownData[] = [
     styleTendency: "Elegant historic architecture (Queen Anne, Colonial) transitioning into contemporary mountain modern.",
     notableNeighborhoods: ["Main Street Historic District", "Frog Level", "Pigeon Street", "Hyatt Creek"],
     marketAuthorityAngle: "Our Haywood County projects balance the technical needs of structural modernization with the visual sensitivity required for Waynesville's historic character.",
-    heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000"
 
   },
   {
@@ -168,7 +168,7 @@ export const towns: TownData[] = [
     styleTendency: "Functional residential and multi-unit architecture prioritizing longevity and value.",
     notableNeighborhoods: ["WCU Campus Area", "Old Cullowhee Road", "Caney Fork", "Speedwell"],
     marketAuthorityAngle: "We coordinate seamlessly with property managers and landlords in Cullowhee to ensure maintenance happens during vacancies.",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000"
 
   },
   {
@@ -189,7 +189,7 @@ export const towns: TownData[] = [
     styleTendency: "Quaint Appalachian village style with a focus on charm and historic accuracy.",
     notableNeighborhoods: ["Historic Village Center", "Tuckasegee Riverfront", "Monteith Park area"],
     marketAuthorityAngle: "Dillsboro projects require a lighter touch and a focus on detail. We ensure our job sites stay tourism-ready while protecting the village's historic character.",
-    heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2000"
 
   }
 ];

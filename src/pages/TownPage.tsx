@@ -18,8 +18,8 @@ import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 const marketVisualImg = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1200";
 const localPlanningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200";
-const highElevationDetailImg = "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=1200";
-const mountainStructureImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200";
+const highElevationDetailImg = "https://images.unsplash.com/photo-1626264290769-61d0d3a8301f?auto=format&fit=crop&q=80&w=1200";
+const mountainStructureImg = "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=1200";
 
 import { services } from "@/data/services";
 import { localBlogTopics } from "@/data/local-blog-topics";
@@ -265,9 +265,13 @@ const TownPage = () => {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* Roofing Column */}
-              <div className="flex flex-col h-full">
-                <div className="bg-primary p-10 md:p-14 text-white flex-1 relative overflow-hidden group">
+              <div className="flex flex-col h-full group/col">
+                <div className="bg-primary p-10 md:p-14 text-white flex-1 relative overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1635424710928-0544e8512eca?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Mountain roofing authority"
+                    className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover/col:scale-105 transition-transform duration-[3s]"
+                  />
                   {/* Subtle Pattern */}
                   <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
                   
@@ -276,11 +280,11 @@ const TownPage = () => {
                       <div className="w-12 h-12 bg-white/10 flex items-center justify-center border border-white/20">
                         <Home className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
                       </div>
-                      <h3 className="text-3xl font-heading font-bold uppercase tracking-tightest">Roofing Division</h3>
+                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Roofing Division</h3>
                     </div>
 
                     <p className="text-white/60 text-lg mb-10 leading-relaxed font-body">
-                      Addressing the {town.climateExposure.toLowerCase()} with high-performance systems. Our {town.name} crews specialize in {town.serviceDemandMix.filter(s => s.toLowerCase().includes('roof')).join(' and ')}.
+                      Addressing the {town.climateExposure.toLowerCase()} with high-performance systems. Our {town.name} crews specialize in {town.serviceDemandMix.filter(s => s.toLowerCase().includes('roof') || s.toLowerCase().includes('brava')).join(' and ')}.
                     </p>
 
                     <div className="grid sm:grid-cols-2 gap-4 mb-12">
@@ -305,15 +309,19 @@ const TownPage = () => {
                 </div>
               </div>
 
-              {/* Construction Column */}
-              <div className="flex flex-col h-full">
-                <div className="bg-card p-10 md:p-14 border border-border flex-1 relative overflow-hidden group">
+              <div className="flex flex-col h-full group/col">
+                <div className="bg-card p-10 md:p-14 border border-border flex-1 relative overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Mountain construction craftsmanship"
+                    className="absolute inset-0 w-full h-full object-cover opacity-[0.03] group-hover/col:scale-105 transition-transform duration-[3s]"
+                  />
                   <div className="relative z-10 h-full flex flex-col">
                     <div className="flex items-center gap-4 mb-8">
                       <div className="w-12 h-12 bg-primary/5 flex items-center justify-center border border-primary/10">
                         <Hammer className="w-6 h-6 text-primary" />
                       </div>
-                      <h3 className="text-3xl font-heading font-bold uppercase tracking-tightest">Construction Division</h3>
+                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Construction Division</h3>
                     </div>
 
                     <p className="text-muted-foreground text-lg mb-10 leading-relaxed font-body">
