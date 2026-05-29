@@ -28,7 +28,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative px-8 py-4 bg-white/5 border border-black/5 rounded-sm"
+            className="relative"
           >
             <img 
               src={logo} 
