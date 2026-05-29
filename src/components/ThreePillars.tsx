@@ -4,7 +4,7 @@ import { Home, HardHat, Mountain } from "lucide-react";
 
 
 /**
- * Two Pillars. One Standard.
+ * Three Pillars. One Standard.
  *
  * Resolves the roofing-vs-construction question for visitors in a single block.
  * Roofing is framed as the proven authority. Construction is framed as the

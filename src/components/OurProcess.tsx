@@ -142,13 +142,13 @@ const OurProcess = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-[1.75] font-body mb-4">
+                    <p className="text-dark-section-foreground/65 text-[13px] md:text-sm leading-[1.75] font-body mb-4">
                       {step.description}
                     </p>
 
                     {/* Detail strip */}
                     <div className="pt-3 border-t border-dark-section-foreground/[0.04]">
-                      <span className="text-[10px] font-body text-dark-section-foreground/20 tracking-wide">
+                      <span className="text-[10px] font-body text-dark-section-foreground/40 tracking-wide">
                         {step.detail}
                       </span>
                     </div>

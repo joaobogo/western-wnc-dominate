@@ -113,7 +113,7 @@ const Footer = () => {
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight">
                 Plan Before You Build.
               </h3>
-              <p className="text-primary-foreground/50 text-[15px] font-body max-w-md leading-relaxed">
+              <p className="text-primary-foreground/75 text-[15px] md:text-lg font-body max-w-md leading-relaxed">
                 Roof, addition, storm damage, or Design & Planning — one local team, one named contact, as soon as possible to respond.
               </p>
             </div>
@@ -146,7 +146,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-5">
               <img src={logo} alt="Highlander" className="h-[84px] w-auto transition-all duration-500" loading="lazy" decoding="async" />
             </div>
-            <p className="text-primary-foreground/40 text-sm leading-relaxed mb-6 max-w-xs font-body">
+            <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6 max-w-xs font-body">
               Premium roofing and construction across the mountains of Western NC. 
               Serving 8 primary counties with localized crews and owner-led quality since 2017.
             </p>
@@ -165,7 +165,7 @@ const Footer = () => {
               <div className="space-y-4 pt-2 border-t border-primary-foreground/5">
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[12.5px] text-primary-foreground/45 font-body leading-relaxed">
+                  <div className="text-[12.5px] text-primary-foreground/65 font-body leading-relaxed">
                     <span className="block font-bold text-primary-foreground/60 mb-0.5">Franklin Office</span>
                     1511 Highlands Road<br />
                     Franklin, NC 28734
@@ -297,7 +297,7 @@ const Footer = () => {
           }} 
         />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[11px] text-primary-foreground/35 font-body tracking-wide">
+          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[11px] text-primary-foreground/60 font-body tracking-wide">
             <span>© {new Date().getFullYear()} Highlander Roofing & Construction.</span>
             <span className="hidden md:inline text-primary-foreground/15">·</span>
             <span>NC General Contractor License #87234</span>
