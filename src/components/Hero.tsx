@@ -76,9 +76,9 @@ const Hero = () => {
         ))}
 
         {/* Multi-layer cinematic grading — deeper, moodier */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.75)] via-[hsl(var(--hero-overlay)/0.5)] to-[hsl(var(--hero-overlay)/0.15)] md:to-[hsl(var(--hero-overlay)/0.02)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-[hsl(var(--hero-overlay)/0.2)]" />
-        <div className="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.6)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.4)] to-[hsl(var(--hero-overlay)/0.1)] md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.4)] via-transparent to-[hsl(var(--hero-overlay)/0.1)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] to-transparent" />
 
         {/* Warm highlight wash — top-right, like golden hour light */}
         <div

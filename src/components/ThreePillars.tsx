@@ -35,7 +35,7 @@ const ThreePillars = () => {
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
             <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
-              Three Pillars · One Standard
+              Three Divisions · One Standard
             </span>
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
           </div>

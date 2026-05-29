@@ -105,9 +105,9 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    font-size: 1.125rem;
-    letter-spacing: 0.01em;
-    line-height: 1.75;
+    font-size: 1.1875rem; /* Increased from 1.125rem for older ICPs */
+    letter-spacing: 0.015em;
+    line-height: 1.8;
   }
 
   /* ──────────────────────────────────────
@@ -161,7 +161,7 @@
   p {
     @apply font-body text-foreground/95;
     max-width: 65ch; /* Optimal reading measure */
-    font-size: 1.125rem;
+    font-size: 1.1875rem;
   }
   p + p {
     margin-top: 1.5rem;

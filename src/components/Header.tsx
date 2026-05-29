@@ -80,8 +80,8 @@ const divisions: DivisionDropdown[] = [
 
 
 const secondaryLinks = [
-  { label: "Projects", href: "/gallery" },
   { label: "Blog", href: "/blog" },
+  { label: "Projects", href: "/gallery" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
@@ -151,7 +151,7 @@ const Header = () => {
             src={logo}
             alt="Highlander Roofing & Construction"
             className="w-auto transition-all duration-500"
-            animate={{ height: scrolled ? 68 : 84 }}
+            animate={{ height: scrolled ? 68 : 88 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>

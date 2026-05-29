@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings } from "lucide-react";
+import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings, Compass } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -32,7 +32,7 @@ const roofingData = {
     { icon: PaintBucket, name: "Material Selection" },
     { icon: ShieldCheck, name: "Extended Warranty Coverage" },
   ],
-  cta: "Explore Roofing Services",
+  cta: "Explore Roofing",
   href: "/services",
   image: metalRoof,
 };
@@ -56,9 +56,33 @@ const constructionData = {
     { icon: Ruler, name: "Structural Reinforcement" },
     { icon: ShieldCheck, name: "Custom Mountain Living" },
   ],
-  cta: "Explore Construction Services",
+  cta: "Explore Construction",
   href: "/construction",
   image: cedarRoof,
+};
+
+const designData = {
+  icon: Ruler,
+  label: "Design Division",
+  badge: "Pre-Con Support",
+  title: "Design & Planning",
+  subtitle: "Our Intelligence",
+  description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and ensure architectural integrity.",
+  stats: [
+    { value: "100%", label: "Pre-Con Clarity" },
+    { value: "Site", label: "Optimized Plans" },
+  ],
+  services: [
+    { icon: Ruler, name: "Floor Plan Layouts" },
+    { icon: Search, name: "Site Feasibility" },
+    { icon: Layers, name: "Material Selection" },
+    { icon: HardHat, name: "Permit Coordination" },
+    { icon: Compass, name: "Architectural Prep" },
+    { icon: ShieldCheck, name: "Scope Definition" },
+  ],
+  cta: "Explore Design",
+  href: "/layouts-planning",
+  image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200",
 };
 
 const DivisionCard = ({ data, accent, index }: {
@@ -249,54 +273,11 @@ const DualPathway = () => {
         </div>
 
         {/* Division Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-7 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 max-w-7xl mx-auto">
           <DivisionCard data={roofingData} accent="green" index={0} />
           <DivisionCard data={constructionData} accent="gold" index={1} />
+          <DivisionCard data={designData} accent="gold" index={2} />
         </div>
-
-        {/* Design & Planning Bridge — the "Intelligence" layer */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.8, ease: HIGHLAND_EASE }}
-          className="max-w-4xl mx-auto mt-12 md:mt-16 bg-white border border-[hsl(var(--highland-gold)/0.2)] p-6 md:p-8 relative overflow-hidden group/bridge"
-        >
-          {/* Accent decoration */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[hsl(var(--highland-gold)/0.03)] -mr-16 -mt-16 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-[hsl(var(--heritage-green)/0.03)] -ml-16 -mb-16 rounded-full blur-3xl" />
-          
-          <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
-            <div className="flex-shrink-0">
-              <div className="w-16 h-16 rounded-full bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)] group-hover/bridge:scale-110 transition-transform duration-500">
-                <Ruler className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
-              </div>
-            </div>
-            
-            <div className="flex-1 text-center md:text-left">
-              <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2 justify-center md:justify-start">
-                <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
-                  Intelligence Layer
-                </span>
-                <span className="hidden md:block text-muted-foreground/30">•</span>
-                <h4 className="text-lg md:text-xl font-heading font-bold text-foreground">
-                  Design & Planning Support
-                </h4>
-              </div>
-              <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body max-w-2xl">
-                Before the first board is cut or the first shingle is laid, we offer specialized planning support. From layouts and floor plans to project scoping, we ensure your construction or roofing project is intentional and efficient.
-              </p>
-            </div>
-            
-            <Link
-              to="/layouts-planning"
-              className="group/btn inline-flex items-center gap-2 text-[13px] font-heading font-bold uppercase tracking-wider text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors"
-            >
-              Start Planning
-              <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </motion.div>
 
         {/* Bottom unifying message */}
         <motion.div
@@ -313,9 +294,9 @@ const DualPathway = () => {
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
-          <p className="text-[13px] text-muted-foreground/60 font-body leading-relaxed max-w-md mx-auto">
-            Your roof and your renovation shouldn't require two companies, two schedules,
-            and two definitions of quality. With Highlander, they don't.
+          <p className="text-[14px] text-muted-foreground/60 font-body leading-relaxed max-w-md mx-auto">
+            Your project shouldn't be split across multiple companies and conflicting schedules.
+            With Highlander, you get one standard across all three divisions.
           </p>
         </motion.div>
       </div>
