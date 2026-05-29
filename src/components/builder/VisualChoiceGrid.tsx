@@ -63,7 +63,7 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
             )}
             <div className="p-4 bg-card">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[13.5px] font-heading font-bold text-foreground tracking-tight leading-tight">
+                <span className="text-[16px] md:text-[18px] font-heading font-bold text-foreground tracking-tight leading-tight">
                   {o.label}
                 </span>
                 {!o.image && active && (

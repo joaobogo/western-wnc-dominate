@@ -147,8 +147,8 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           </motion.div>
 
           {/* Cinematic overlays — strengthened for legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.75)] via-[hsl(var(--heritage-charcoal)/0.25)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.85)] group-hover:via-[hsl(var(--heritage-charcoal)/0.45)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.15)] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.2)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.8)] group-hover:via-[hsl(var(--heritage-charcoal)/0.4)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.1)] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.3)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
           {/* Hover image zoom */}
@@ -182,8 +182,8 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
             </div>
 
             {/* Title */}
-            <h3 className={`font-heading font-bold text-white leading-tight tracking-tight mb-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)] group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
-              isHero ? "text-xl md:text-2xl lg:text-3xl" : "text-base md:text-lg"
+            <h3 className={`font-heading font-bold text-white leading-tight tracking-tight mb-0 drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)] group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
+              isHero ? "text-2xl md:text-3xl lg:text-4xl" : "text-lg md:text-xl"
             }`}>
               {project.title}
             </h3>

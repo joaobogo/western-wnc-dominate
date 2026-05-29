@@ -57,7 +57,7 @@ const BuilderShell = ({
                 {eyebrow}
               </span>
             </div>
-            <h1 className="text-[22px] md:text-4xl font-heading font-bold text-foreground tracking-[-0.02em] leading-[1.1] mb-2 max-w-2xl">
+            <h1 className="text-[26px] md:text-5xl font-heading font-bold text-foreground tracking-[-0.02em] leading-[1.1] mb-2 max-w-2xl">
               {title}
             </h1>
             <p className="text-foreground/60 text-[13.5px] md:text-[15px] font-body max-w-xl leading-relaxed">
