@@ -176,6 +176,46 @@ const ServiceTownPage = () => {
           </div>
         </section>
 
+        {/* Knowledge Base Integration */}
+        <section className="section-padding bg-muted/10 border-t border-border">
+          <div className="container-tight">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+              <div>
+                <span className="eyebrow mb-3 block">Expertise</span>
+                <h3 className="text-3xl font-heading font-bold">{entry.serviceLabel} Insights</h3>
+                <p className="text-muted-foreground mt-2 font-body">Expert guidance on {entry.serviceLabel.toLowerCase()} in {town.name}.</p>
+              </div>
+              <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/20 pb-1 group">
+                Full Knowledge Base <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {blogPosts
+                .filter(b => b.category.toLowerCase().includes(entry.serviceLabel.toLowerCase().split(' ')[0]) || b.town === town.name)
+                .slice(0, 3)
+                .map((post) => (
+                  <Link 
+                    key={post.slug} 
+                    to={`/blog/${post.slug}`}
+                    className="group bg-card border border-border p-6 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-lg"
+                  >
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-6 h-6 rounded-none bg-primary/5 flex items-center justify-center">
+                        <ArrowRight className="w-3 h-3 text-primary rotate-[-45deg]" />
+                      </div>
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground/60">{post.category}</span>
+                    </div>
+                    <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
+                    <p className="text-sm text-muted-foreground mb-6 line-clamp-3 font-body flex-grow">{post.excerpt}</p>
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
+                      Read Article <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </section>
+
         {/* Related — same town */}
         {relatedForTown.length > 0 && (
           <section className="section-padding bg-background">

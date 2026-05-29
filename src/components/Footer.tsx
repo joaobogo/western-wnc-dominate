@@ -18,7 +18,7 @@ const constructionLinks = [
   { label: "Construction Division", href: "/construction" },
   { label: "Home Additions", href: "/construction/additions" },
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
-  { label: "Design Support", href: "/layouts-planning" },
+  { label: "Design & Planning", href: "/layouts-planning" },
   { label: "Start a Project", href: "/consultation" },
   { label: "Build Your Project", href: "/construction-builder" },
 ];
@@ -149,7 +149,7 @@ const Footer = () => {
                 <img 
                   src={logo} 
                   alt="Highlander Roofing & Construction" 
-                  className="h-[120px] md:h-[160px] w-auto transition-all duration-500 group-hover:scale-105" 
+                  className="h-[100px] md:h-[120px] w-auto transition-all duration-500 group-hover:scale-105" 
                   loading="lazy" 
                   decoding="async" 
                 />
