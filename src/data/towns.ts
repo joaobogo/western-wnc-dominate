@@ -322,7 +322,7 @@ export const towns: TownData[] = [
     styleTendency: "Modern Craftsman and Transitional Mountain styles featuring clean lines and durable exterior finishes.",
     notableNeighborhoods: ["Reems Creek", "Vantage Point", "Ox Creek", "Downtown Weaverville"],
     marketAuthorityAngle: "Weaverville's growth requires a contractor who understands modern building envelopes and ridgetop physics. We build for the next generation.",
-    heroImage: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1434082033009-b81d41d32e1c?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "marshall-nc",
