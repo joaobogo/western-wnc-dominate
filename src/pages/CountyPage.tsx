@@ -48,8 +48,8 @@ const CountyPage = () => {
               alt={`${county.name} mountain construction context`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.25)] via-[hsl(var(--hero-overlay)/0.08)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.15)] via-transparent to-transparent opacity-30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent opacity-20" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />

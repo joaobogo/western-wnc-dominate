@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
+import { 
   ArrowRight, Phone, Shield, Award, Clock, Star, Home,
   CheckCircle, Hammer, Ruler, PenTool, Compass, Mountain,
   ChevronRight, Eye, ClipboardCheck, Layers, Users,
@@ -101,8 +101,8 @@ const ConstructionDivision = () => {
         <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.25)] via-[hsl(var(--hero-overlay)/0.08)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.15)] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent" />
           </div>
 
           {/* Gold accent lines */}

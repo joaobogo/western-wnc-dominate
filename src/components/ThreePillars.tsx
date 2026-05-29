@@ -35,7 +35,7 @@ const ThreePillars = () => {
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
             <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
-              Roofing · Construction · Design
+              Roofing · Construction · Design & Planning
             </span>
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
           </div>
