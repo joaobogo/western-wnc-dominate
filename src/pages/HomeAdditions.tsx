@@ -200,7 +200,7 @@ const HomeAdditions = () => {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
                   The best additions don't look like additions. We build rooms that look like your home always had them — because we match the rooflines, materials, and proportions.
                 </h2>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
+                <p className="text-foreground/70 text-base md:text-lg leading-relaxed font-body mb-4">
                   Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
