@@ -24,6 +24,7 @@ const mountainStructureImg = "https://images.unsplash.com/photo-1600585154340-be
 import { services } from "@/data/services";
 import { localBlogTopics } from "@/data/local-blog-topics";
 import { blogPosts } from "@/data/blogs";
+import logo from "@/assets/logo.png";
 
 const TownPage = () => {
   const { slug } = useParams<{ slug: string }>();

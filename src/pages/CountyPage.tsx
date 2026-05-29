@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { getCountyBySlug } from "@/data/counties";
 import { towns } from "@/data/towns";
+import logo from "@/assets/logo.png";
 
 const CountyPage = () => {
   const { slug } = useParams<{ slug: string }>();
