@@ -85,6 +85,74 @@ export const counties: CountyData[] = [
     ],
     housingContext: "Haywood County features established historic districts in Waynesville and significant ridgetop development requiring complex structural engineering.",
     climateRealities: "Waynesville's elevation brings significant winter snow accumulation and regular freeze-thaw cycles that test attic ventilation and roof deck integrity."
+  },
+  {
+    slug: "buncombe-county",
+    name: "Buncombe County",
+    description: "Serving the vibrant mountain hub of Asheville and its surrounding towns. We specialize in everything from historic district preservation to modern architectural roofing systems.",
+    towns: ["Asheville", "Black Mountain", "Weaverville"],
+    metaTitle: "Roofing & Construction Services in Buncombe County, NC | Highlander Roofing",
+    metaDescription: "Professional roofing and construction across Buncombe County, NC. Serving Asheville, Black Mountain, and Weaverville with premium local service.",
+    heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000",
+    facts: [
+      { label: "Market Hub", value: "Asheville Region" },
+      { label: "Specialty", value: "Historic + Modern" },
+      { label: "Credentials", value: "Licensed GC" },
+      { label: "Rating", value: "4.9/5 Stars" }
+    ],
+    housingContext: "Buncombe County features a high-density mix of historic urban estates, modern ridgetop architecture, and rapidly growing residential suburbs.",
+    climateRealities: "Buncombe's varied topography creates significant microclimates, from urban heat islands to high-wind exposure on the surrounding peaks."
+  },
+  {
+    slug: "henderson-county",
+    name: "Henderson County",
+    description: "Providing Hendersonville and the surrounding plateau with high-reliability roofing and residential construction designed for longevity.",
+    towns: ["Hendersonville", "Fletcher", "Mills River"],
+    metaTitle: "Roofing & Construction Services in Henderson County, NC | Highlander Roofing",
+    metaDescription: "Expert roofing and construction for Henderson County, NC. Serving Hendersonville, Fletcher, and Mills River with locally based crews.",
+    heroImage: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=2000",
+    facts: [
+      { label: "Regional Center", value: "Hendersonville" },
+      { label: "Service", value: "Dual Division" },
+      { label: "Status", value: "Active Local Crew" },
+      { label: "Rating", value: "5.0/5 Stars" }
+    ],
+    housingContext: "Henderson County is characterized by established retirement communities, historic downtown residential districts, and new multi-generational developments.",
+    climateRealities: "The Hendersonville plateau experiences significant afternoon thunderhead development and localized hail events that test roof integrity year-round."
+  },
+  {
+    slug: "transylvania-county",
+    name: "Transylvania County",
+    description: "The 'Land of Waterfalls' demands superior moisture management. We serve Brevard and the high-end private communities of Lake Toxaway.",
+    towns: ["Brevard", "Lake Toxaway", "Rosman"],
+    metaTitle: "Roofing & Construction Services in Transylvania County, NC | Highlander Roofing",
+    metaDescription: "Specialized roofing and construction for Transylvania County, NC. Moisture-resistant systems for Brevard and Lake Toxaway estates.",
+    heroImage: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000",
+    facts: [
+      { label: "Climate", value: "High Moisture" },
+      { label: "Top Material", value: "Synthetic / Metal" },
+      { label: "Focus", value: "Lake Toxaway Estates" },
+      { label: "Credentials", value: "Licensed GC" }
+    ],
+    housingContext: "Transylvania County ranges from high-traffic tourism gateways in Brevard to some of the Southeast's most exclusive private lakefront estates.",
+    climateRealities: "As part of the temperate rainforest belt, this county sees extreme annual rainfall that requires engineered drainage and high-performance waterproofing."
+  },
+  {
+    slug: "cherokee-county",
+    name: "Cherokee County",
+    description: "Serving the westernmost corner of North Carolina with reliable, owner-led roofing and residential home improvements.",
+    towns: ["Murphy", "Andrews"],
+    metaTitle: "Roofing & Construction Services in Cherokee County, NC | Highlander Roofing",
+    metaDescription: "Professional roofing and construction across Cherokee County, NC. Serving Murphy and Andrews with local accountability.",
+    heroImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000",
+    facts: [
+      { label: "Market Hub", value: "Murphy" },
+      { label: "Primary Need", value: "Replacement" },
+      { label: "Response", value: "Priority Support" },
+      { label: "Rating", value: "4.9/5 Stars" }
+    ],
+    housingContext: "Cherokee County features a blend of traditional residential homes, seasonal cabins, and a growing influx of retirees building custom mountain retreats.",
+    climateRealities: "Western humidity and valley wind patterns demand durable materials and high-quality flashing at all structural transitions."
   }
 ];
 
