@@ -305,9 +305,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar — license + legal */}
-      <div className="border-t border-primary-foreground/6 relative">
+      <div className="border-t border-border relative">
         <div 
-          className="absolute inset-0 opacity-[0.025] pointer-events-none" 
+          className="absolute inset-0 opacity-[0.015] pointer-events-none" 
           style={{ 
             backgroundImage: "url('/tartan.png')",
             backgroundSize: "120px auto",
@@ -315,16 +315,16 @@ const Footer = () => {
           }} 
         />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[13px] text-primary-foreground/70 font-body tracking-wide">
+          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[13px] text-muted-foreground font-body tracking-wide">
             <span>© {new Date().getFullYear()} Highlander Roofing & Construction.</span>
-            <span className="hidden md:inline text-primary-foreground/20">·</span>
+            <span className="hidden md:inline text-border">·</span>
             <span>NC General Contractor License #87234</span>
-            <span className="hidden md:inline text-primary-foreground/20">·</span>
+            <span className="hidden md:inline text-border">·</span>
             <span>Fully Insured</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/privacy" className="text-[13px] text-primary-foreground/50 hover:text-primary-foreground/70 font-body tracking-wide transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-[13px] text-primary-foreground/50 hover:text-primary-foreground/70 font-body tracking-wide transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
