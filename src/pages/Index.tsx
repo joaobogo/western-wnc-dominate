@@ -23,7 +23,6 @@ import BuiltForWNC from "@/components/BuiltForWNC";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import ProjectConcierge from "@/components/ProjectConcierge";
-import BrandValues from "@/components/BrandValues";
 import VeluxProof from "@/components/VeluxProof";
 
 const Index = () => {
