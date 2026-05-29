@@ -153,6 +153,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Sylva-area commercial maintenance",
         summary: "Sylva gives us a strategic base for Jackson County commercial service, especially for occupied buildings that need organized maintenance rather than reactive repairs.",
         proof: "Tenant-sensitive scheduling and recurring condition reporting",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Valley weather repair strategy",
