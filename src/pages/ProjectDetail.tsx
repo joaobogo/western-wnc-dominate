@@ -85,10 +85,10 @@ const ProjectDetailPage = () => {
                   <span className="text-white/70">{project.type}</span>
                 </nav>
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.15)] backdrop-blur-sm px-3 py-1 rounded-sm">
+                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
                     {project.type}
                   </span>
-                  <span className="text-white/60 text-xs font-body flex items-center gap-1">
+                  <span className="text-white/80 text-sm font-body flex items-center gap-1.5 font-medium">
                     <MapPin className="w-3 h-3" /> {project.location}
                   </span>
                 </div>
@@ -144,7 +144,7 @@ const ProjectDetailPage = () => {
                         className="flex items-start gap-3"
                       >
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-                        <span className="text-foreground/80 text-sm leading-relaxed">{item}</span>
+                        <span className="text-foreground/90 text-base leading-relaxed font-medium">{item}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -171,7 +171,7 @@ const ProjectDetailPage = () => {
 
                 {/* Service Link Card */}
                 <motion.div {...fadeUp} className="bg-secondary/50 border border-border rounded-sm p-5">
-                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-3">Service Expertise</h4>
+                   <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground/80 mb-3">Service Expertise</h4>
                    <Link to={project.category === 'roofing' ? '/roofing/roof-replacement' : '/construction/additions'} className="group flex items-center justify-between text-sm font-heading font-bold text-foreground hover:text-primary transition-colors">
                       View {project.type} Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                    </Link>
@@ -278,7 +278,7 @@ const ProjectDetailPage = () => {
                   <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold)/0.3)] flex-shrink-0 w-8 text-center">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-sm leading-relaxed">{item}</p>
+                  <p className="text-[hsl(var(--dark-section-foreground)/0.85)] text-base md:text-lg leading-relaxed font-medium">{item}</p>
                 </motion.div>
               ))}
             </div>
