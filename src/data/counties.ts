@@ -32,7 +32,7 @@ export const counties: CountyData[] = [
     towns: ["Cashiers", "Sylva", "Cullowhee", "Dillsboro"],
     metaTitle: "Roofing & Construction Services in Jackson County, NC | Highlander Roofing",
     metaDescription: "Expert roofing and construction for Jackson County, NC. Serving Sylva, Cashiers, Cullowhee, and Dillsboro with specialized mountain-rated systems.",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
+    heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Service Area", value: "Full County" },
       { label: "Office Location", value: "Sylva, NC" },
