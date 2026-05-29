@@ -170,8 +170,8 @@ const About = () => {
                     </div>
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-1">{person.name}</h3>
-                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] md:text-[13px] uppercase tracking-wider mb-3">{person.role}</p>
-                  <p className="text-muted-foreground text-[14px] md:text-[15px] leading-relaxed line-clamp-3 font-body font-medium">{person.desc}</p>
+                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-sm md:text-base uppercase tracking-wider mb-3">{person.role}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed line-clamp-3 font-body font-medium">{person.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -249,7 +249,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Our Horizon — Western North Carolina</span>
+                <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/90">Our Horizon — Western North Carolina</span>
               </div>
             </motion.div>
           </div>

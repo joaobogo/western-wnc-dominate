@@ -154,13 +154,13 @@ const Hero = () => {
             <div className="w-7 h-7 rounded-none border border-primary-foreground/10 flex items-center justify-center">
               <Home className="w-3 h-3 text-primary-foreground/25" />
             </div>
-            <span className="text-[8px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/20 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/30 [writing-mode:vertical-lr] rotate-180">
               Roofing
             </span>
           </div>
           <div className="w-5 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[8px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/20 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/30 [writing-mode:vertical-lr] rotate-180">
               Construction
             </span>
             <div className="w-7 h-7 rounded-none border border-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center">
@@ -341,7 +341,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 2.2 + i * 0.1 }}
-                    className="flex items-center gap-2 text-primary-foreground/60 text-[12px] md:text-sm"
+                    className="flex items-center gap-2 text-primary-foreground/75 text-[13px] md:text-base"
                   >
                     <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
                     <span className="font-body font-medium leading-tight">{item.label}</span>
