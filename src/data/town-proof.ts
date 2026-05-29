@@ -544,6 +544,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "Standing seam metal, reinforced fastening, and lifetime warranty",
         image: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Modern craftsman master addition",
+        summary: "Structural addition for a North Buncombe family home, providing a new master wing with vaulted ceilings and premium exterior integration.",
+        proof: "Engineered timber framing, matching siding, and high-performance glass",
+        image: "https://images.unsplash.com/photo-1434082033009-b81d41d32e1c?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Ridgetop UV & wind protection",
+        summary: "Installation of high-durability dimensional shingles for a Weaverville residence on an exposed ridge, featuring enhanced sealant technology.",
+        proof: "Category 4 impact rating, 130mph wind warranty, and high-temp underlayment",
+      },
     ],
     faqs: [
       {
