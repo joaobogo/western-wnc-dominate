@@ -235,8 +235,8 @@ const TownPage = () => {
 
         <SectionDivider variant="diamond" />
 
-        {/* 5. Featured Projects */}
-        <FeaturedProjects />
+        {/* 5. Featured Projects - Filtered for Town Relevance */}
+        <FeaturedProjects location={town.name} />
 
         {/* 6. Built for WNC Factors */}
         <BuiltForWNC />
