@@ -52,16 +52,17 @@ const ServiceTownPage = () => {
           <div className="absolute inset-0">
             <img 
               src={
-                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a57?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a57?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1600585154526-990dcea4db0d?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1513584684374-8bdb7483fe8f?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1449156001437-3a166a6cb7f2?auto=format&fit=crop&q=80&w=2000" :
                 "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
               } 
+
               alt={`${entry.serviceLabel} in ${town.name}, NC — Highlander roofing and construction`}
               className="w-full h-full object-cover"
             />
