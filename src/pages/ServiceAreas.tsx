@@ -301,7 +301,7 @@ const ServiceAreas = () => {
                 <span className="text-primary-foreground/15">•</span>
                 <span>45-Min Max Response</span>
                 <span className="text-primary-foreground/15">•</span>
-                <span>Both Divisions Available</span>
+                <span>All Three Divisions Available</span>
               </div>
             </motion.div>
           </div>
