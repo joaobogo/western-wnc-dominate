@@ -90,7 +90,51 @@ const DivisionCard = ({ data, accent, index }: {
   accent: "green" | "gold";
   index: number;
 }) => {
-...
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isGold = accent === "gold";
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    cardRef.current.style.setProperty('--mouse-x', `${((e.clientX - rect.left) / rect.width) * 100}%`);
+    cardRef.current.style.setProperty('--mouse-y', `${((e.clientY - rect.top) / rect.height) * 100}%`);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.18, duration: 0.7, ease: HIGHLAND_EASE }}
+      className="group relative bg-card border border-border rounded-none overflow-hidden spotlight-hover flex flex-col"
+    >
+      {/* === IMAGE HEADER with curtain reveal === */}
+      <div className="relative h-48 md:h-56 overflow-hidden">
+        <motion.div
+          initial={{ clipPath: "inset(0 0 100% 0)" }}
+          whileInView={{ clipPath: "inset(0 0 0% 0)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.1, delay: index * 0.15, ease: HIGHLAND_EASE }}
+          className="absolute inset-0"
+        >
+          <motion.img
+            src={data.image}
+            alt={data.title}
+            className="w-full h-full object-cover"
+            loading="lazy"
+            initial={{ scale: 1.18 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 2, delay: index * 0.15 + 0.1, ease: HIGHLAND_EASE }}
+          />
+        </motion.div>
+        {/* Cinematic overlay — strengthened for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-card/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.45)] via-transparent to-transparent" />
+        <div className={`absolute inset-0 mix-blend-multiply opacity-20 ${
+          isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
         }`} />
 
         {/* Division label + badge */}
