@@ -145,16 +145,14 @@ const Footer = () => {
           {/* Brand column — spans 2 on lg */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-4 mb-8 group/footer-logo">
-              <div className="relative p-4 bg-white/5 border border-white/10 rounded-sm">
+              <div className="relative">
                 <img 
                   src={logo} 
                   alt="Highlander Roofing & Construction" 
-                  className="h-[220px] md:h-[240px] w-auto transition-all duration-500 group-hover:scale-105" 
+                  className="h-[120px] md:h-[160px] w-auto transition-all duration-500 group-hover:scale-105" 
                   loading="lazy" 
                   decoding="async" 
                 />
-                {/* Subtle gold glow behind logo for premium feel */}
-                <div className="absolute inset-0 bg-[hsl(var(--highland-gold)/0.15)] blur-[30px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
             </Link>
             <p className="text-primary-foreground/80 text-lg leading-relaxed mb-6 max-w-xs font-body">
