@@ -125,42 +125,75 @@ const CountyPage = () => {
           </div>
         </section>
 
-        {/* 2. Key Communities in County */}
-        <section className="py-24 bg-background">
-          <div className="container-tight">
-            <div className="text-center mb-16">
-              <span className="eyebrow mb-4 block">Regional Coverage</span>
-              <h2 className="text-4xl font-heading font-bold text-foreground mb-6">Communities We Serve in {county.name}</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-                We provide full roofing, construction, and design services to every corner of {county.name}, with specialized teams for each micro-climate.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {countyTowns.map((town) => (
-                <Link 
-                  key={town.slug} 
-                  to={`/service-areas/${town.slug}`}
-                  className="group block bg-card border border-border p-8 hover:border-primary/30 transition-all duration-300"
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-5 h-5 text-primary" />
-                      <h3 className="text-2xl font-heading font-bold text-foreground group-hover:text-primary transition-colors">{town.name}</h3>
+        {/* 2. County Intelligence — New Authority Section */}
+        <section className="py-24 bg-background border-b border-border relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="container-tight relative z-10">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              <div>
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                  <span className="eyebrow mb-4 block">{county.name} Authority</span>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-8 leading-tight">
+                    Regional knowledge. <br />
+                    <span className="italic text-primary">Master-class execution.</span>
+                  </h2>
+                  <p className="text-xl text-muted-foreground leading-relaxed mb-10 font-body">
+                    Highlander is more than a regional contractor. We are a specialized mountain defense team. In <span className="text-foreground font-bold">{county.name}</span>, we account for the specific atmospheric and structural realities that lowland builders miss.
+                  </p>
+                  
+                  <div className="space-y-8">
+                    <div className="flex gap-6 items-start group">
+                      <div className="w-12 h-12 bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                        <Home className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Housing Profile</h4>
+                        <p className="text-muted-foreground leading-relaxed font-body">{county.housingContext}</p>
+                      </div>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:translate-x-1 transition-transform" />
+                    
+                    <div className="flex gap-6 items-start group">
+                      <div className="w-12 h-12 bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                        <Wind className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Climate Realities</h4>
+                        <p className="text-muted-foreground leading-relaxed font-body">{county.climateRealities}</p>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground mb-6 line-clamp-2 font-body">{town.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {town.features.slice(0, 3).map(f => (
-                      <span key={f} className="text-[10px] font-bold uppercase tracking-wider bg-secondary px-2 py-1 rounded">{f}</span>
-                    ))}
+                </motion.div>
+              </div>
+
+              <div className="relative">
+                <div className="bg-secondary p-1 md:p-2 border border-border relative z-10">
+                  <div className="bg-white p-8 md:p-12">
+                    <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
+                      <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                      Key Communities
+                    </h4>
+                    <div className="grid gap-4">
+                      {countyTowns.map((town) => (
+                        <Link 
+                          key={town.slug} 
+                          to={`/service-areas/${town.slug}`}
+                          className="group block p-4 bg-secondary/30 border border-border hover:border-primary/30 transition-all"
+                        >
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{town.name}</span>
+                            <ArrowRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                          </div>
+                          <p className="text-xs text-muted-foreground font-body line-clamp-1">{town.description}</p>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </Link>
-              ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
 
         {/* 3. Division Callouts */}
         <section className="py-24 bg-secondary/30 relative overflow-hidden">
