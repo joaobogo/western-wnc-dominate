@@ -333,6 +333,33 @@ const About = () => {
           </div>
         </section>
 
+        {/* ── WORK WITH US ── */}
+        <section className="section-padding bg-secondary/20 relative overflow-hidden">
+          <div className="absolute inset-0 tartan-dark opacity-[0.02]" />
+          <div className="container-tight">
+            <div className="bg-primary p-8 md:p-16 relative overflow-hidden text-center max-w-5xl mx-auto">
+              <div className="absolute inset-0 tartan-dark opacity-[0.08]" />
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative z-10">
+                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[11px] uppercase tracking-[0.25em] mb-6 block">Join the Team</span>
+                <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+                  Build a Career <br className="md:hidden" /> <span className="text-[hsl(var(--highland-gold))] italic">on Higher Ground.</span>
+                </h2>
+                <p className="text-white/50 text-base md:text-lg mb-10 max-w-2xl mx-auto font-body leading-relaxed">
+                  We're always looking for skilled craftsmen and dedicated professionals who share our values. If you're local, honest, and take pride in your work, we want to hear from you.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Link to="/careers" className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 transition-all shadow-lg">
+                    View Open Positions <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <a href="tel:8283979211" className="text-white/70 hover:text-white font-bold text-[14px] flex items-center gap-2 transition-colors">
+                    <Phone className="w-4 h-4" /> (828) 397-9211
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* ── WNC ROOTS ── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
