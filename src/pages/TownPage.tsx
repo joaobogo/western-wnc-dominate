@@ -334,6 +334,34 @@ const TownPage = () => {
           </div>
         </section>
 
+        {/* Local Visual Details — Adding more mountain flavor */}
+        <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+          <div className="container-tight">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              <ScrollReveal variant="slide-right">
+                <div className="relative aspect-[16/10] overflow-hidden border border-border group">
+                  <img src={highElevationDetailImg} alt={`${town.name} high-elevation building detail`} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
+                  <div className="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:opacity-0 transition-opacity" />
+                  <div className="absolute bottom-6 left-6 z-20">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/70 block mb-2">High-Altitude Detail</span>
+                    <h4 className="text-white font-heading font-bold text-lg">Engineering for the Plateau</h4>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal variant="slide-left" delay={0.2}>
+                <div className="relative aspect-[16/10] overflow-hidden border border-border group">
+                  <img src={mountainStructureImg} alt={`${town.name} mountain structure detail`} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
+                  <div className="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:opacity-0 transition-opacity" />
+                  <div className="absolute bottom-6 left-6 z-20">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/70 block mb-2">Structural Integrity</span>
+                    <h4 className="text-white font-heading font-bold text-lg">Built for {town.elevation}</h4>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
         {/* Local Design & Planning Bridge — Town-specific intelligence */}
         <section className="py-20 bg-background">
           <div className="container-tight">
