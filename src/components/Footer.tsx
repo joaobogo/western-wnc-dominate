@@ -74,7 +74,7 @@ const certifications = [
 const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
   <Link
     to={to}
-    className="group text-[16px] text-primary-foreground/90 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-0.5"
+    className="group text-[16px] text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-0.5"
   >
     {children}
     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
