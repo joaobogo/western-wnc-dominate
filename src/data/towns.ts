@@ -84,7 +84,7 @@ export const towns: TownData[] = [
     styleTendency: "Classic Appalachian residential styles, including craftsman bungalows and modern farmhouses.",
     notableNeighborhoods: ["Cartoogechaye", "Iotla", "Holly Springs", "Burningtown"],
     marketAuthorityAngle: "Based in Franklin, our crews live here. We offer the fastest response times for Macon County homeowners because our staging yards are minutes away.",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=2000"
 
   },
   {

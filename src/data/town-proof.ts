@@ -11,6 +11,7 @@ export interface TownJobHighlight {
   summary: string;
   proof: string;
   projectSlug?: string;
+  image?: string;
 }
 
 export interface TownProofContent {
@@ -28,6 +29,7 @@ const buildProjectHighlight = (townName: string): TownJobHighlight[] => {
       summary: project.summary,
       proof: `${project.scope} • ${project.duration} • ${project.highlight}`,
       projectSlug: project.slug,
+      image: project.heroImage,
     }));
 };
 
@@ -44,6 +46,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Plateau leak response planning",
         summary: "Highlands homes often need phased work scheduling because steep drives, estate layouts, and sudden weather shifts can slow standard crews.",
         proof: "Daily weather sequencing, custom staging, and high-temp waterproofing details",
+        image: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=600",
       },
     ].slice(0, 3),
     faqs: [
@@ -72,6 +75,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Steep-slope moisture management",
         summary: "Cashiers projects demand stronger valley waterproofing, better gutter capacity, and clean ventilation strategy because roofs stay wet longer here than in most WNC towns.",
         proof: "Oversized drainage design, premium underlayment, and ridge-to-eave airflow planning",
+        image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Estate home reroof planning",
@@ -110,6 +114,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Rapid-response repair scheduling",
         summary: "Because Franklin is one of our core operating bases, we can move quickly on leak calls, storm damage inspections, and replacement planning.",
         proof: "Local crews, local staging, and shorter lead times for Macon County homeowners",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Family-home reroof coordination",
@@ -148,6 +153,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Sylva-area commercial maintenance",
         summary: "Sylva gives us a strategic base for Jackson County commercial service, especially for occupied buildings that need organized maintenance rather than reactive repairs.",
         proof: "Tenant-sensitive scheduling and recurring condition reporting",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Valley weather repair strategy",
@@ -186,6 +192,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Rental-turnover roof planning",
         summary: "Bryson City owners often need roofing work scheduled around guest occupancy, turnover windows, and limited maintenance access.",
         proof: "Condensed schedules and communication for remote property owners",
+        image: "https://images.unsplash.com/photo-1510627489930-0c1b0ba0546c?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Tree-impact and branch-damage response",
@@ -225,6 +232,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Historic-home detailing",
         summary: "Waynesville homes often require careful flashing transitions, decking repairs, and material choices that respect older design themes while improving performance.",
         proof: "Targeted decking repair, ventilation upgrades, and clean tie-ins",
+        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600",
       },
     ].slice(0, 3),
     faqs: [
@@ -253,6 +261,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Student-housing roof coordination",
         summary: "Cullowhee property owners often need roof work timed around tenant transitions, occupied units, and academic calendar pressure.",
         proof: "Fast estimating, tenant-aware scheduling, and property manager communication",
+        image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Budget-focused repair plans",
@@ -291,6 +300,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Preservation-sensitive reroofing",
         summary: "Dillsboro homes often need roofing choices that protect the structure without making the property feel out of place in a historic mountain village.",
         proof: "Dimensional shingle and detail packages selected for visual compatibility",
+        image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Small-footprint project execution",

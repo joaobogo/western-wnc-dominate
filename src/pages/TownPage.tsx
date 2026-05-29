@@ -4,7 +4,7 @@ import {
   ArrowRight, Phone, CheckCircle, MapPin, Wind, CloudRain, Mountain, 
   Home, HardHat, BookOpen, Shield, Star, Hammer, RotateCcw, 
   CloudLightning, Layers, TreePine, Paintbrush, Building, Wrench, Droplets,
-  Building2, Users, Compass, ArrowUpRight
+  Building2, Users, Compass, ArrowUpRight, Camera
 } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
@@ -16,14 +16,15 @@ import TownProofBlock from "@/components/TownProofBlock";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
-const marketVisualImg = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1200";
-const localPlanningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200";
-const highElevationDetailImg = "https://images.unsplash.com/photo-1626264290769-61d0d3a8301f?auto=format&fit=crop&q=80&w=1200";
-const mountainStructureImg = "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=1200";
+const marketVisualImg = "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=1200"; // Mountain valley
+const localPlanningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200"; // Blueprints
+const highElevationDetailImg = "https://images.unsplash.com/photo-1626264290769-61d0d3a8301f?auto=format&fit=crop&q=80&w=1200"; // Wood detail
+const mountainStructureImg = "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=1200"; // Mountain structure
 
 import { services } from "@/data/services";
 import { localBlogTopics } from "@/data/local-blog-topics";
 import { blogPosts } from "@/data/blogs";
+import { projectDetails } from "@/data/projects";
 import logo from "@/assets/logo.png";
 
 const TownPage = () => {
@@ -511,6 +512,48 @@ const TownPage = () => {
                 <Link to="/roofing-builder" className="text-xs font-bold bg-primary text-primary-foreground px-6 py-3 hover:bg-primary/90 transition-colors uppercase tracking-widest text-center">Roof Builder</Link>
                 <Link to="/construction-builder" className="text-xs font-bold border border-primary text-primary px-6 py-3 hover:bg-primary/5 transition-colors uppercase tracking-widest text-center">Project Builder</Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Real Proof: Project Showcase Strip */}
+        <section className="py-16 bg-background border-t border-border overflow-hidden">
+          <div className="container-tight">
+            <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-6">
+              <div>
+                <span className="eyebrow mb-2 block">Real Results</span>
+                <h3 className="text-3xl font-heading font-bold">Recent Projects Near {town.name}</h3>
+              </div>
+              <Link to="/gallery" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all">
+                View Full Gallery <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projectDetails
+                .filter(p => p.location.includes(town.name) || p.county === town.county)
+                .slice(0, 3)
+                .map((project, i) => (
+                  <Link 
+                    key={project.slug} 
+                    to={`/projects/${project.slug}`}
+                    className="group relative aspect-[4/3] overflow-hidden border border-border"
+                  >
+                    <img 
+                      src={project.heroImage} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
+                    <div className="absolute bottom-5 left-5 right-5">
+                      <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-1">
+                        <Camera className="w-3 h-3" />
+                        <span className="text-[10px] font-bold uppercase tracking-widest">{project.type}</span>
+                      </div>
+                      <h4 className="text-white font-heading font-bold text-lg leading-tight">{project.title}</h4>
+                    </div>
+                  </Link>
+                ))}
             </div>
           </div>
         </section>
