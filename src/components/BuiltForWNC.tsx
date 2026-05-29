@@ -29,14 +29,14 @@ const BuiltForWNC = () => {
               <span className="eyebrow mb-3 block">Mountain-Specific Standards</span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
-              <h2 className="section-heading mb-5">
+              <h2 className="text-display font-heading font-bold mb-5 leading-[0.95] tracking-tightest">
                 Built for the<br /> Western NC<br className="hidden lg:block" /> Mountains.
               </h2>
             </HeadingReveal>
             <GoldLine width="3rem" delay={0.3} className="mb-5" />
             <ScrollReveal variant="rise-subtle" delay={0.3}>
               <div>
-                <p className="text-foreground/80 text-lg leading-relaxed font-body mb-6">
+                <p className="text-foreground text-body-lg leading-relaxed font-bold mb-6">
                   Roofing and construction in the mountains isn't the same as roofing in the
                   Piedmont or the coast. Elevation changes everything — the weather, the materials,
                   the engineering, the logistics.
