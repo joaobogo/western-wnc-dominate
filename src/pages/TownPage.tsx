@@ -265,9 +265,13 @@ const TownPage = () => {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* Roofing Column */}
-              <div className="flex flex-col h-full">
-                <div className="bg-primary p-10 md:p-14 text-white flex-1 relative overflow-hidden group">
+              <div className="flex flex-col h-full group/col">
+                <div className="bg-primary p-10 md:p-14 text-white flex-1 relative overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1635424710928-0544e8512eca?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Mountain roofing authority"
+                    className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover/col:scale-105 transition-transform duration-[3s]"
+                  />
                   {/* Subtle Pattern */}
                   <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
                   
@@ -305,9 +309,13 @@ const TownPage = () => {
                 </div>
               </div>
 
-              {/* Construction Column */}
-              <div className="flex flex-col h-full">
-                <div className="bg-card p-10 md:p-14 border border-border flex-1 relative overflow-hidden group">
+              <div className="flex flex-col h-full group/col">
+                <div className="bg-card p-10 md:p-14 border border-border flex-1 relative overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Mountain construction craftsmanship"
+                    className="absolute inset-0 w-full h-full object-cover opacity-[0.03] group-hover/col:scale-105 transition-transform duration-[3s]"
+                  />
                   <div className="relative z-10 h-full flex flex-col">
                     <div className="flex items-center gap-4 mb-8">
                       <div className="w-12 h-12 bg-primary/5 flex items-center justify-center border border-primary/10">
