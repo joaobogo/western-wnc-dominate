@@ -93,33 +93,44 @@ const ServiceTownPage = () => {
               <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
                 {entry.intro}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <Link
                   to="/consultation"
                   className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
                   Request a {entry.serviceLabel} Assessment <ArrowRight className="w-5 h-5" />
                 </Link>
-                <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/5 bg-black/20 backdrop-blur-md">
-                  <div className="container-tight px-6 py-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                      {[
-                        { label: "Service Area", value: `${town.name}, NC` },
-                        { label: "Response", value: "Priority" },
-                        { label: "Warranty", value: "Highlander Certified" },
-                        { label: "Status", value: "Active Division" }
-                      ].map((stat, i) => (
-                        <div key={i} className="flex flex-col">
-                          <span className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-1">{stat.label}</span>
-                          <span className="text-sm font-heading font-bold text-white uppercase tracking-tight">
-                            {stat.value}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <a
+                  href="tel:8283979211"
+                  className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors"
+                >
+                  <Phone className="w-5 h-5" /> Speak With a Project Advisor
+                </a>
               </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom Trust bar */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/5 bg-black/20 backdrop-blur-md">
+            <div className="container-tight px-6 py-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {[
+                  { label: "Service Area", value: `${town.name}, NC` },
+                  { label: "Response", value: "Priority" },
+                  { label: "Warranty", value: "Highlander Certified" },
+                  { label: "Status", value: "Active Division" }
+                ].map((stat, i) => (
+                  <div key={i} className="flex flex-col">
+                    <span className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-1">{stat.label}</span>
+                    <span className="text-sm font-heading font-bold text-white uppercase tracking-tight">
+                      {stat.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
             </motion.div>
           </div>
         </section>
