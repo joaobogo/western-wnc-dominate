@@ -45,7 +45,78 @@ export const localBlogTopics: LocalBlogTopic[] = [
         title: "Franklin Home Additions: Macon County Permitting and Process",
         description: "A local's guide to expanding your footprint in the Little Tennessee River Valley.",
         serviceCategory: "construction"
+      },
+      {
+        title: "Storm Ready: Common Roof Weak Points in Franklin Valley Homes",
+        description: "How valley wind patterns affect shingle lifespan and how to prepare for seasonal storms.",
+        serviceCategory: "roofing"
+      }
+    ]
+  },
+  {
+    townSlug: "sylva-nc",
+    topics: [
+      {
+        title: "Historic Preservation in Sylva: Roofing & Facade Standards",
+        description: "Navigating Jackson County's historic district requirements while modernizing your property.",
+        serviceCategory: "both"
+      },
+      {
+        title: "Combating Algae: Why Sylva Valley Roofs Turn Black",
+        description: "Understanding the science of roof streaks in humid valley environments and how to prevent them.",
+        serviceCategory: "roofing"
+      }
+    ]
+  },
+  {
+    townSlug: "bryson-city-nc",
+    topics: [
+      {
+        title: "The Rental-Ready Roof: Bryson City Maintenance Strategies",
+        description: "How to minimize guest disruption with proactive inspections between Smoky Mountain booking seasons.",
+        serviceCategory: "roofing"
+      },
+      {
+        title: "Smoky Mountain Porch Upgrades: Safety & Durability for Rentals",
+        description: "Ensuring your high-traffic vacation home meets structural safety standards for mountain terrain.",
+        serviceCategory: "construction"
+      }
+    ]
+  },
+  {
+    townSlug: "waynesville-nc",
+    topics: [
+      {
+        title: "Waynesville Winter Prep: Attic Ventilation and Ice Damming",
+        description: "Why Haywood County winters demand specialized attic airflow to prevent interior water damage.",
+        serviceCategory: "roofing"
+      },
+      {
+        title: "Master Suite Additions in Waynesville's Historic Neighborhoods",
+        description: "Expanding your square footage while honoring the unique architectural DNA of Waynesville.",
+        serviceCategory: "construction"
+      }
+    ]
+  },
+  {
+    townSlug: "cullowhee-nc",
+    topics: [
+      {
+        title: "Cullowhee Multi-Unit Maintenance: Maximizing Asset Longevity",
+        description: "A property manager's guide to roofing and deck safety in university-proximate rental markets.",
+        serviceCategory: "both"
+      }
+    ]
+  },
+  {
+    townSlug: "dillsboro-nc",
+    topics: [
+      {
+        title: "Cottage Charm & Structural Integrity: Dillsboro Renovation Tips",
+        description: "Balancing artisan village aesthetics with modern moisture-management systems.",
+        serviceCategory: "both"
       }
     ]
   }
 ];
+
