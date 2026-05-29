@@ -245,19 +245,20 @@ const Blog = () => {
                             />
                           </div>
                           <div className="p-5 md:p-6 flex-1">
-                          <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                            <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/10 text-primary">
-                              {post.category}
+                            <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                              <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/10 text-primary">
+                                {post.category}
+                              </span>
+                              <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                            </div>
+                            <h3 className="font-heading font-bold text-foreground text-lg mb-2 group-hover:text-primary transition-colors leading-snug">
+                              {post.title}
+                            </h3>
+                            <p className="text-muted-foreground text-sm line-clamp-2 mb-4 leading-relaxed">{post.excerpt}</p>
+                            <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
+                              Read Article <ArrowRight className="w-3.5 h-3.5" />
                             </span>
-                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
                           </div>
-                          <h3 className="font-heading font-bold text-foreground text-lg mb-2 group-hover:text-primary transition-colors leading-snug">
-                            {post.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm line-clamp-2 mb-4 leading-relaxed">{post.excerpt}</p>
-                          <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
-                            Read Article <ArrowRight className="w-3.5 h-3.5" />
-                          </span>
                         </div>
                       </Link>
                     </motion.div>
