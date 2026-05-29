@@ -130,9 +130,13 @@ const EditorialCard = ({ project, index, size, onClick }: {
   index: number;
   size: "tall" | "wide" | "standard";
   onClick: () => void;
-}) => (
-  <motion.div
-    layout
+}) => {
+  // Define fallback images for missing gallery assets or specific project aesthetics
+  const displayImage = project.image;
+
+  return (
+    <motion.div
+      layout
     initial={{ opacity: 0, y: 28 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -12, scale: 0.97 }}
