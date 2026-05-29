@@ -208,7 +208,7 @@ const LayoutsPlanning = () => {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Short Path */}
-              <ScrollReveal variant="slide-up">
+              <ScrollReveal variant="rise">
                 <div className="bg-card border border-border p-10 h-full flex flex-col hover:border-primary/20 transition-all duration-500 group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-primary/[0.02] -translate-x-12 -translate-y-12 rotate-45" />
                   
