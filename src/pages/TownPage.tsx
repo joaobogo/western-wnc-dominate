@@ -159,68 +159,77 @@ const TownPage = () => {
           </div>
         </section>
 
-        {/* 2. Localized Authority Section */}
-        <section className="py-16 md:py-24 bg-card border-b border-border relative overflow-hidden">
-          <div className="absolute left-0 top-0 w-1/4 h-full opacity-[0.02] pointer-events-none grayscale">
-            <img src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Mountain architecture detail" className="w-full h-full object-cover" />
-          </div>
-
-          <div className="container-tight">
-            <div className="grid md:grid-cols-12 gap-12 items-center">
-              <div className="md:col-span-7">
-                <h2 className="text-[11px] uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] font-bold mb-4">Market Authority</h2>
-                <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6 leading-tight">Genuinely Local. Built for <span className="italic">{town.name}</span>.</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8 font-body">{town.marketAuthorityAngle}</p>
-                
-                <div className="grid sm:grid-cols-2 gap-8">
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-none bg-primary/5 flex items-center justify-center shrink-0 mt-1 border border-primary/10">
-                      <Shield className="w-5 h-5 text-primary" />
+        {/* 2. Localized Authority Section — Detailed Market Insights */}
+        <section className="py-24 bg-background border-b border-border relative overflow-hidden">
+          {/* Subtle watermark background */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          
+          <div className="container-tight relative z-10">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              <div>
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                  <span className="eyebrow mb-4 block">Regional Intelligence</span>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-8 leading-tight">
+                    More than a zip code. <br />
+                    <span className="italic text-primary">A specific set of physics.</span>
+                  </h2>
+                  <p className="text-xl text-muted-foreground leading-relaxed mb-10 font-body">
+                    Western North Carolina roofing and construction aren't generic. In <span className="text-foreground font-bold">{town.name}</span>, we account for {town.climateExposure.toLowerCase()} which demands a higher caliber of material selection and installation discipline.
+                  </p>
+                  
+                  <div className="space-y-8">
+                    <div className="flex gap-6 items-start group">
+                      <div className="w-12 h-12 bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                        <Shield className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Local Insight</h4>
+                        <p className="text-muted-foreground leading-relaxed font-body">{town.localVibe}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-heading font-bold text-foreground mb-1 text-base uppercase tracking-wider">Local Insight</h4>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{town.localVibe}</p>
+                    
+                    <div className="flex gap-6 items-start group">
+                      <div className="w-12 h-12 bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                        <Wind className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Climate Exposure</h4>
+                        <p className="text-muted-foreground leading-relaxed font-body">{town.climateExposure}</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-none bg-primary/5 flex items-center justify-center shrink-0 mt-1 border border-primary/10">
-                      <Wind className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-bold text-foreground mb-1 text-base uppercase tracking-wider">Climate Exposure</h4>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{town.climateExposure}</p>
-                    </div>
-                  </div>
-                </div>
+                </motion.div>
               </div>
-              <div className="md:col-span-5">
-                <div className="relative p-8 bg-secondary border border-border overflow-hidden rounded-sm">
-                  <div className="absolute -right-8 -top-8 w-32 h-32 bg-[hsl(var(--highland-gold)/0.05)] rounded-full blur-3xl" />
-                  <h4 className="text-xs font-heading font-bold text-foreground mb-6 uppercase tracking-widest border-b border-border pb-4">Area Realities</h4>
-                  <ul className="space-y-5">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <div>
-                        <p className="text-sm font-bold text-foreground font-heading">Common Demand</p>
-                        <p className="text-xs text-muted-foreground mt-0.5 font-body">Frequent requests for {town.serviceDemandMix.join(', ')}.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <div>
-                        <p className="text-sm font-bold text-foreground font-heading">Style Tendencies</p>
-                        <p className="text-xs text-muted-foreground mt-0.5 font-body">A preference for {town.styleTendency} architectural details.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <div>
-                        <p className="text-sm font-bold text-foreground font-heading">Neighborhoods</p>
-                        <p className="text-xs text-muted-foreground mt-0.5 font-body">Serving {town.notableNeighborhoods.join(', ')} and surrounding areas.</p>
-                      </div>
-                    </li>
-                  </ul>
+
+              <div className="relative">
+                <div className="bg-secondary p-1 md:p-2 border border-border relative z-10">
+                  <div className="bg-white p-8 md:p-12">
+                    <h4 className="text-xs font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
+                      <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                      {town.name} Site Realities
+                    </h4>
+                    <ul className="space-y-8">
+                      {[
+                        { label: "Service Demand", value: town.serviceDemandMix.join(', ') },
+                        { label: "Style Tendency", value: town.styleTendency },
+                        { label: "Notable Areas", value: town.notableNeighborhoods.join(', ') }
+                      ].map((item, i) => (
+                        <li key={i} className="group">
+                          <p className="text-[10px] font-bold text-[hsl(var(--highland-gold))] uppercase tracking-widest mb-1">{item.label}</p>
+                          <p className="text-base text-foreground font-heading font-bold leading-tight group-hover:text-primary transition-colors">{item.value}</p>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-12 pt-8 border-t border-border">
+                      <p className="text-sm font-body italic text-muted-foreground leading-relaxed">
+                        "{town.marketAuthorityAngle}"
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                {/* Visual Accent */}
+                <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
               </div>
             </div>
           </div>
