@@ -281,7 +281,7 @@ const ConstructionDivision = () => {
               <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
                 <span className="eyebrow mb-3 block">Our Approach</span>
                 <h2 className="section-heading mb-4">How Highlander<br className="hidden md:block" /> Approaches Construction.</h2>
-                <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
                   Every project begins with four commitments that define how we work — and why the outcome is different.
                 </p>
               </div>
