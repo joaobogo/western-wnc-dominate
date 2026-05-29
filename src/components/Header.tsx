@@ -144,7 +144,7 @@ const Header = () => {
             alt="Highlander Roofing & Construction"
             className="w-auto transition-all duration-500"
             animate={{ 
-              height: scrolled ? 80 : 120,
+              height: scrolled ? 70 : 100,
               scale: scrolled ? 0.95 : 1
             }}
             style={{ originX: 0, originY: 0.5 }}
