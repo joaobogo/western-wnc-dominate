@@ -22,6 +22,8 @@ import ProofMoment from "@/components/ProofMoment";
 import BuiltForWNC from "@/components/BuiltForWNC";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
+import ProjectConcierge from "@/components/ProjectConcierge";
+import VeluxProof from "@/components/VeluxProof";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -38,7 +40,7 @@ const Index = () => {
     <>
       {showLoader && <SiteLoader onComplete={handleLoaderComplete} />}
       <SEOHead
-        title="Roofing & Construction in Western NC"
+        title="Roofing & Construction in Western NC | Highlander"
         description="Premium roofing and construction in Western North Carolina. Licensed, insured, and 4.9★ rated. Shingle, metal & cedar roofing plus additions, renovations & outdoor living. Request a consultation."
         path="/"
         jsonLd={buildPageSchema({
@@ -49,60 +51,61 @@ const Index = () => {
             body: review.reviewBody,
             datePublished: review.datePublished,
             location: review.location,
-          })),
+            })),
           aggregate: GOOGLE_REVIEW_AGGREGATE,
         })}
       />
       <Header />
       <main>
-        {/* 1. Hero */}
+        {/* 1. Hero — The Highland standard */}
         <Hero />
 
-        {/* 2. TrustStrip — proof anchors */}
+        {/* 2. TrustStrip — Immediate proof anchors */}
         <TrustStrip />
 
-        <div className="relative overflow-hidden">
-          <TartanBackground opacity={0.03} />
+        <div className="relative overflow-hidden bg-background">
+          <TartanBackground opacity={0.02} />
           <SectionDivider variant="diamond" />
         </div>
 
-
-        {/* 3. Two Pillars · One Standard — resolves roofing+construction question */}
+        {/* 3. Two Pillars — Roofing | Construction | Design */}
         <TwoPillars />
 
-        {/* Short intake form - moved higher up for better accessibility */}
+        {/* 4. Inspection Form — Fast lead capture */}
         <InspectionForm />
 
-        {/* 4. DualPathway — Roofing | Construction */}
-
-        {/* 4. PriorityServices — focused 6-card grid (using existing ServicesGrid for now) */}
+        {/* 5. Services Grid — Detailed pathways */}
         <ServicesGrid />
 
+        <SectionDivider variant="tartan-trim" />
 
-        {/* 5. FeaturedProjects — real WNC work */}
+        {/* 6. Velux Proof — Specialty authority */}
+        <VeluxProof />
+
+        {/* 7. Featured Projects — Visual proof */}
         <FeaturedProjects />
 
         <SectionDivider variant="heritage-bar" />
 
+        {/* 8. Built for WNC — Local relevance */}
         <div className="relative overflow-hidden">
-          <TartanBackground opacity={0.02} patternSize="600px auto" />
+          <TartanBackground opacity={0.015} patternSize="600px auto" />
           <BuiltForWNC />
         </div>
 
-
-        {/* 7. OurProcess — how we work */}
+        {/* 9. Our Process — How we work */}
         <OurProcess />
 
-
-        {/* 8. ProofMoment — single best testimonial block */}
+        {/* 10. Proof Moment — Highest impact review */}
         <ProofMoment variant="social" />
 
-        {/* 9. TownGrid — service areas */}
+        {/* 11. Project Concierge — Guidance for new clients */}
+        <ProjectConcierge />
+
+        {/* 12. Town Grid — Service area footprint */}
         <TownGrid />
 
         <SectionDivider variant="gold-fade" />
-
-
       </main>
       <Footer />
       <StickyMobileCTA />
