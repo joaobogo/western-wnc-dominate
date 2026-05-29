@@ -58,7 +58,7 @@ const VeluxProof = () => {
           className="max-w-3xl mb-12"
         >
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-16 h-16 flex items-center justify-center overflow-hidden flex-shrink-0">
+            <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0">
               <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain brightness-0 invert" />
             </div>
             <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
