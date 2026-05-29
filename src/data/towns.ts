@@ -147,7 +147,7 @@ export const towns: TownData[] = [
     styleTendency: "Elegant historic architecture (Queen Anne, Colonial) transitioning into contemporary mountain modern.",
     notableNeighborhoods: ["Main Street Historic District", "Frog Level", "Pigeon Street", "Hyatt Creek"],
     marketAuthorityAngle: "Our Haywood County projects balance the technical needs of structural modernization with the visual sensitivity required for Waynesville's historic character.",
-    heroImage: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=2000"
 
   },
   {
