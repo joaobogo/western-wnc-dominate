@@ -119,12 +119,12 @@ const WNCRelevance = ({
   }
 
   return (
-    <section className={`section-padding bg-secondary tartan-bg ${className}`}>
+    <section className={`section-padding bg-background/50 ${className}`}>
       <div className="container-tight">
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
           <span className="eyebrow mb-3 block">{eyebrow}</span>
           <h2 className="section-heading mb-4 whitespace-pre-line">{heading}</h2>
-          {subheading && <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">{subheading}</p>}
+          {subheading && <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">{subheading}</p>}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">

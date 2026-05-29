@@ -122,8 +122,8 @@ const HomeAdditions = () => {
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImg} alt="Home addition project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-[hsl(var(--hero-overlay)/0.4)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.15)] to-[hsl(var(--hero-overlay)/0.3)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] via-transparent to-transparent" />
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.6)] to-[hsl(var(--highland-gold)/0)] z-10" />
@@ -151,7 +151,7 @@ const HomeAdditions = () => {
                 </motion.h1>
               </div>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
                 Guest suites, layout changes, floor plans, and sunrooms — supported by our Design & Planning branch to integrate seamlessly with your existing home's design theme.
               </motion.p>
 
@@ -200,7 +200,7 @@ const HomeAdditions = () => {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
                   The best additions don't look like additions. We build rooms that look like your home always had them — because we match the rooflines, materials, and proportions.
                 </h2>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
+                <p className="text-foreground/70 text-base md:text-lg leading-relaxed font-body mb-4">
                   Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
@@ -227,12 +227,12 @@ const HomeAdditions = () => {
         </section>
 
         {/* ─── WHY HOMEOWNERS BUILD ADDITIONS ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Add On</span>
               <h2 className="section-heading mb-4">The Reasons<br className="hidden md:block" /> Homeowners Expand.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">Every addition project starts with a real need — not a trend. These are the situations that bring homeowners to us.</p>
+              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">Every addition project starts with a real need — not a trend. These are the situations that bring homeowners to us.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -242,7 +242,7 @@ const HomeAdditions = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -268,7 +268,7 @@ const HomeAdditions = () => {
                     <type.icon className="w-4.5 h-4.5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{type.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{type.detail}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{type.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -285,7 +285,7 @@ const HomeAdditions = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Making It Look Like<br className="hidden md:block" /> It Was Always There.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
                   The hardest part of any addition isn't building the new space — it's making it belong.
                 </p>
               </motion.div>
@@ -297,7 +297,7 @@ const HomeAdditions = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -333,7 +333,7 @@ const HomeAdditions = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">What Makes This Different.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
+              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
                 Years of high-elevation roofing experience built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
               </p>
             </motion.div>
@@ -345,7 +345,7 @@ const HomeAdditions = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -353,18 +353,18 @@ const HomeAdditions = () => {
         </section>
 
         {/* ─── PLANNING & PERMITTING ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background/50 relative">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
                 <span className="eyebrow mb-3 block">Planning & Permits</span>
                 <h2 className="section-heading mb-5">We Handle the<br /> Complexity.</h2>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-6">
+                <p className="text-foreground/70 text-base font-body mb-6 leading-relaxed">
                   Home additions involve zoning, structural engineering, permits, inspections, and utility coordination. We manage all of it as part of our standard process — so you focus on the vision while we navigate the logistics.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h4 className="font-heading font-bold text-foreground text-sm mb-2">Not sure where to start?</h4>
-                  <p className="text-muted-foreground text-xs leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
+                  <p className="text-foreground/60 text-[13px] leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -375,7 +375,7 @@ const HomeAdditions = () => {
                 {planningPermitting.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group p-5 md:p-6 rounded-sm bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                     <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                    <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -393,7 +393,7 @@ const HomeAdditions = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Building Additions in WNC<br className="hidden md:block" /> Is Different.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
                   The Western North Carolina landscape demands more from every build. Not every contractor understands why.
                 </p>
               </motion.div>
@@ -405,7 +405,7 @@ const HomeAdditions = () => {
                       <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
                       <h3 className="font-heading font-bold text-dark-section-foreground text-sm">{item.title}</h3>
                     </div>
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>

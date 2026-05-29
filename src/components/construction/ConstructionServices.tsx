@@ -158,7 +158,7 @@ export const ConstructionServiceGrid = ({
   className = "",
   variant = "cards",
 }: ServiceGridProps) => (
-  <section className={`section-padding bg-secondary tartan-bg ${className}`}>
+  <section className={`section-padding bg-background/50 ${className}`}>
     <div className="container-tight">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -168,7 +168,7 @@ export const ConstructionServiceGrid = ({
       >
         <span className="eyebrow mb-3 block">{eyebrow}</span>
         <h2 className="section-heading mb-4">{heading}</h2>
-        {subheading && <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">{subheading}</p>}
+        {subheading && <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">{subheading}</p>}
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -187,7 +187,7 @@ export const ConstructionServiceGrid = ({
             <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">
               {cat.title}
             </h3>
-            <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-4">
+            <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body mb-4 group-hover:text-foreground transition-colors">
               {cat.description}
             </p>
 

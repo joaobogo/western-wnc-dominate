@@ -101,8 +101,8 @@ const ConstructionDivision = () => {
         <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-[hsl(var(--hero-overlay)/0.35)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.1)] to-[hsl(var(--hero-overlay)/0.25)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] via-transparent to-transparent" />
           </div>
 
           {/* Gold accent lines */}
@@ -116,15 +116,15 @@ const ConstructionDivision = () => {
                 <div className="inline-flex items-center gap-4">
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
-                    <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                    <span className="text-[10px] font-body font-bold text-[hsl(var(--highland-gold)/0.9)] uppercase tracking-[0.3em] -mt-1">Construction Division</span>
+                    <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
+                    <span className="text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)]">
-                    <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                  <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.4)] shadow-[0_0_15px_-3px_hsl(var(--highland-gold)/0.3)]">
+                    <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
-                  <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Mountain Quality Since 2017</span>
+                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))] drop-shadow-sm">Mountain Quality Since 2017</span>
                 </div>
               </motion.div>
 
@@ -135,7 +135,7 @@ const ConstructionDivision = () => {
                 <span className="text-[hsl(var(--highland-gold))]">Masterfully Planned.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-xl text-primary-foreground/45 max-w-2xl mb-12 leading-relaxed font-body">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-xl text-primary-foreground max-w-2xl mb-12 leading-relaxed font-body font-medium drop-shadow-sm">
                 From home additions to luxury outdoor living, we combine architectural sensitivity with Western North Carolina's highest construction standards. Licensed, insured, and owner-led.
               </motion.p>
 
@@ -179,27 +179,24 @@ const ConstructionDivision = () => {
           </div>
         </section>
 
-        {/* ═══ OPENING STATEMENT — Premium editorial positioning ═══ */}
+        {/* ═══ OPENING STATEMENT — Bright, premium, reader-focused ═══ */}
         <section className="section-padding bg-background relative overflow-hidden">
-          <div className="absolute right-0 top-0 w-1/2 h-full opacity-[0.02] pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200" alt="Mountain home background" className="w-full h-full object-cover" />
-          </div>
-
           <div className="container-tight max-w-4xl">
             <ScrollReveal variant="fade">
               <div className="text-center">
                 <GoldLine width="3rem" className="mx-auto mb-8" />
-                <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance">
-                  Highlander builds more than roofs. We build the spaces that define how families live in these mountains — with the same planning depth, craft standards, and communication discipline we bring to every project we accept.
+                <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
+                  Highlander builds more than roofs. We build the mountain homes and outdoor spaces that define your WNC lifestyle — with a level of planning, craft, and transparency that is rare in our industry.
                 </h2>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                  Our Construction division serves Western North Carolina homeowners who refuse to settle for "good enough" — people who value <Link to="/layouts-planning" className="text-primary font-bold hover:underline">planning over rushing</Link>, documentation over handshakes, and craftsmanship that holds up at elevation.
-
-                </p>
-                <p className="text-muted-foreground/60 text-sm leading-relaxed font-body max-w-xl mx-auto">
-                  We're selective about the projects we take on — because the work we do reflects who we are.
-                </p>
-                <GoldLine width="3rem" className="mx-auto mt-8" delay={0.3} />
+                <div className="max-w-2xl mx-auto space-y-6">
+                  <p className="text-foreground/80 text-lg leading-relaxed font-body">
+                    Our Construction division serves homeowners who value <Link to="/layouts-planning" className="text-primary font-bold hover:underline">meticulous planning</Link> over rushing, and craftsmanship that is engineered to endure our unique mountain climate.
+                  </p>
+                  <p className="text-muted-foreground text-base leading-relaxed font-body">
+                    We are highly selective about the projects we accept because we believe every project deserves our full attention, institutional knowledge, and unwavering standards.
+                  </p>
+                </div>
+                <GoldLine width="3rem" className="mx-auto mt-10" delay={0.3} />
               </div>
             </ScrollReveal>
           </div>
@@ -216,10 +213,10 @@ const ConstructionDivision = () => {
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
                     Owner-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
-                  <p className="text-dark-section-foreground/40 text-base leading-relaxed font-body mb-6">
+                  <p className="text-dark-section-foreground text-base leading-relaxed font-body mb-6">
                     Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed Master Applicator status to every construction project we take on.
                   </p>
-                  <p className="text-dark-section-foreground/30 text-sm leading-relaxed font-body mb-8">
+                  <p className="text-dark-section-foreground/70 text-sm leading-relaxed font-body mb-8">
                     When you hire Highlander for construction, you get a company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
@@ -229,9 +226,9 @@ const ConstructionDivision = () => {
                       { value: "4.9★", label: "Google Rating" },
                       { value: "Rapid", label: "Response Time" },
                     ].map((stat, i) => (
-                      <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/6 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                      <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/15 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
                         <span className="text-xl font-heading font-bold text-[hsl(var(--highland-gold))] block">{stat.value}</span>
-                        <span className="text-[10px] font-body text-dark-section-foreground/30 uppercase tracking-[0.1em]">{stat.label}</span>
+                        <span className="text-[10px] font-body text-dark-section-foreground/70 uppercase tracking-[0.1em]">{stat.label}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -263,7 +260,7 @@ const ConstructionDivision = () => {
         <ConstructionServiceGrid
           variant="detailed"
           heading="What We Build."
-          subheading="Four focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards."
+          subheading="Six focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards."
           eyebrow="Construction Services"
         />
 
@@ -284,7 +281,7 @@ const ConstructionDivision = () => {
               <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
                 <span className="eyebrow mb-3 block">Our Approach</span>
                 <h2 className="section-heading mb-4">How Highlander<br className="hidden md:block" /> Approaches Construction.</h2>
-                <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
                   Every project begins with four commitments that define how we work — and why the outcome is different.
                 </p>
               </div>
@@ -297,7 +294,7 @@ const ConstructionDivision = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -319,7 +316,7 @@ const ConstructionDivision = () => {
         />
 
         {/* ═══ FEATURED PROJECTS ═══ */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <ScrollReveal variant="fade">
               <div className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
@@ -350,7 +347,7 @@ const ConstructionDivision = () => {
               <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
                 <span className="eyebrow mb-3 block">Why Highlander</span>
                 <h2 className="section-heading mb-4">What Makes This<br className="hidden md:block" /> Different.</h2>
-                <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
+                <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
                   Not just another name on a truck. A company built on documented systems, staffed with in-house craftsmen, and rooted in Western North Carolina's mountains.
                 </p>
               </div>
@@ -363,7 +360,7 @@ const ConstructionDivision = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>

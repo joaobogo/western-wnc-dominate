@@ -112,8 +112,8 @@ const OutdoorLiving = () => {
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImg} alt="Outdoor living space in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-[hsl(var(--hero-overlay)/0.4)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.15)] to-[hsl(var(--hero-overlay)/0.3)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] via-transparent to-transparent" />
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.6)] to-[hsl(var(--highland-gold)/0)] z-10" />
@@ -141,7 +141,7 @@ const OutdoorLiving = () => {
                 </motion.h1>
               </div>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
                 Decks, covered porches, screened rooms, and outdoor kitchens — strengthened by our <Link to="/layouts-planning" className="text-[hsl(var(--highland-gold))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)]">Design & Planning branch</Link> to handle mountain weather and maximize mountain life.
               </motion.p>
 
@@ -191,9 +191,9 @@ const OutdoorLiving = () => {
               <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
                 Mountain living isn't indoor living. The best WNC properties extend into the landscape — with structures built to handle the weather and frame the views.
               </h2>
-              <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
-                Highlander builds outdoor living spaces scaled to your property, designed for the Western North Carolina climate, and finished with the same quality we bring to every project.
-              </p>
+                <p className="text-foreground/70 text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
+                  Highlander builds outdoor living spaces scaled to your property, designed for the Western North Carolina climate, and finished with the same quality we bring to every project.
+                </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
                 <img src={porchContextImg} alt="Mountain porch extension" className="w-full h-full object-cover grayscale opacity-40 hover:opacity-60 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
@@ -212,7 +212,7 @@ const OutdoorLiving = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Beauty. Function.<br className="hidden md:block" /> Durability.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
                   Great outdoor spaces deliver all three — and compromising on any one undermines the other two.
                 </p>
               </motion.div>
@@ -224,7 +224,7 @@ const OutdoorLiving = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -233,7 +233,7 @@ const OutdoorLiving = () => {
         </section>
 
         {/* ─── OUTDOOR TYPES ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">What We Build</span>
@@ -247,7 +247,7 @@ const OutdoorLiving = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -261,12 +261,12 @@ const OutdoorLiving = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
                 <span className="eyebrow mb-3 block">WNC Living</span>
                 <h2 className="section-heading mb-5">Designed for<br /> Mountain Property.</h2>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-6">
+                <p className="text-foreground/70 text-base font-body mb-6 leading-relaxed">
                   Western North Carolina properties come with unique advantages — and unique challenges. We design outdoor spaces that leverage your views, work with your terrain, and handle your weather.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h4 className="font-heading font-bold text-foreground text-sm mb-2">Wondering what's possible on your lot?</h4>
-                  <p className="text-muted-foreground text-xs leading-relaxed font-body mb-3">We evaluate terrain, views, drainage, and access as part of every outdoor project consultation.</p>
+                  <p className="text-foreground/60 text-[13px] leading-relaxed font-body mb-3">We evaluate terrain, views, drainage, and access as part of every outdoor project consultation.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -282,7 +282,7 @@ const OutdoorLiving = () => {
                       </div>
                       <div>
                         <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                        <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                        <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -315,12 +315,12 @@ const OutdoorLiving = () => {
         </section>
 
         {/* ─── MATERIALS ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Materials & Durability</span>
               <h2 className="section-heading mb-4">Built for This Climate.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">Materials that look great in a showroom don't always hold up at 3,500 feet. We specify for WNC conditions.</p>
+              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">Materials that look great in a showroom don't always hold up at 3,500 feet. We specify for WNC conditions.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -330,7 +330,7 @@ const OutdoorLiving = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -347,7 +347,7 @@ const OutdoorLiving = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   A Roofing Company That<br className="hidden md:block" /> Builds Outdoor Structures.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
                   Every covered porch, pavilion, and screened room needs a roof. We don't subcontract that part — we built the company on it.
                 </p>
               </motion.div>
@@ -359,7 +359,7 @@ const OutdoorLiving = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -383,7 +383,7 @@ const OutdoorLiving = () => {
                     <step.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -391,12 +391,12 @@ const OutdoorLiving = () => {
         </section>
 
         {/* ─── GALLERY ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
               <span className="eyebrow mb-3 block">Featured Projects</span>
               <h2 className="section-heading mb-3">Outdoor Spaces We've Built.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-md mx-auto">Each project was designed for its specific property, climate exposure, and the way the homeowner lives.</p>
+              <p className="text-foreground/70 text-base font-body max-w-md mx-auto leading-relaxed">Each project was designed for its specific property, climate exposure, and the way the homeowner lives.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
