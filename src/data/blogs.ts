@@ -96,8 +96,8 @@ There's no universal answer. We assess each home individually — considering el
     excerpt: "What to look for after a WNC storm — and the steps to take before calling your insurance company.",
     category: "Storm",
     date: "2026-02-05",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     image: roofRepairStock,
+    readTime: "5 min",
     metaTitle: "Storm Damage Roof Checklist for WNC | Highlander Roofing",
     metaDescription: "After a storm in Western NC, use this checklist to assess roof damage and protect your insurance claim. Free storm damage inspections available.",
     content: `Western North Carolina sees severe storms year-round — from summer thunderstorms to winter ice events. Here's what every homeowner should do after a storm.
