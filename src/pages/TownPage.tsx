@@ -24,6 +24,7 @@ const mountainStructureImg = "https://images.unsplash.com/photo-1499696010180-02
 import { services } from "@/data/services";
 import { localBlogTopics } from "@/data/local-blog-topics";
 import { blogPosts } from "@/data/blogs";
+import { projectDetails } from "@/data/projects";
 import logo from "@/assets/logo.png";
 
 const TownPage = () => {
