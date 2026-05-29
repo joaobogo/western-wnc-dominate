@@ -202,7 +202,7 @@ export const towns: TownData[] = [
     styleTendency: "Eclectic mix of Tudor, Craftsman, and ultra-modern mountain architecture featuring glass and steel.",
     notableNeighborhoods: ["Biltmore Forest", "Town Mountain", "Montford", "Grove Park", "Kenilworth"],
     marketAuthorityAngle: "Asheville projects demand a higher level of design sensitivity and structural precision. We build for the city's most discerning homeowners.",
-    heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "hendersonville-nc",
@@ -322,7 +322,7 @@ export const towns: TownData[] = [
     styleTendency: "Modern Craftsman and Transitional Mountain styles featuring clean lines and durable exterior finishes.",
     notableNeighborhoods: ["Reems Creek", "Vantage Point", "Ox Creek", "Downtown Weaverville"],
     marketAuthorityAngle: "Weaverville's growth requires a contractor who understands modern building envelopes and ridgetop physics. We build for the next generation.",
-    heroImage: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1434082033009-b81d41d32e1c?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "marshall-nc",
@@ -362,7 +362,7 @@ export const towns: TownData[] = [
     styleTendency: "Lakefront Rustic and Traditional Mountain styles emphasizing views and outdoor living.",
     notableNeighborhoods: ["Lake Chatuge", "Tusquittee", "Shooting Creek", "Hayesville Center"],
     marketAuthorityAngle: "Hayesville homes are for living. We build systems that protect your investment so you can focus on the lake.",
-    heroImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000"
   }
 ];
 

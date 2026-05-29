@@ -348,6 +348,12 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Town Mountain ridgetop roofing",
         summary: "High-wind exposure on Asheville's surrounding ridgetops requires high-velocity rated systems and reinforced perimeter fastening.",
         proof: "Category 4 impact ratings and 130mph wind warranties",
+        image: "https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Modern mountain suite addition",
+        summary: "Structural footprint expansion for a luxury Asheville residence, integrating a new master suite with existing ridgetop architecture.",
+        proof: "Engineered foundation, floor-to-ceiling glass, and seamless roof tie-in",
       },
     ],
     faqs: [
@@ -378,6 +384,12 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Historic downtown residential reroof",
         summary: "Traditional Hendersonville architecture requires careful attention to attic ventilation and chimney flashing to ensure another 30+ years of performance.",
         proof: "Oversized ridge vents and custom step-flashing detailing",
+        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Age-in-place exterior modernization",
+        summary: "Phased exterior renovation including deck safety upgrades and low-maintenance siding for a long-term Hendersonville resident.",
+        proof: "Composite decking, vinyl cedar-shake siding, and accessible ramp integration",
       },
     ],
     faqs: [
@@ -404,6 +416,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "Double-layered ice-and-water shield and oversized 6-inch gutter systems",
         image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Pisgah Forest area cabin reroof",
+        summary: "Installation of a high-durability standing seam metal roof for a residence bordering the national forest, designed to shed debris and handle high humidity.",
+        proof: "24-gauge steel, debris-resistant valley shields, and lifetime warranty",
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Custom mountain deck expansion",
+        summary: "Engineering and construction of a multi-level outdoor living space for a Brevard home, maximizing forest views while ensuring structural moisture resistance.",
+        proof: "Pressure-treated framing, composite decking, and integrated lighting",
+      },
     ],
     faqs: [
       {
@@ -424,6 +447,17 @@ const townProofMap: Record<string, TownProofContent> = {
         summary: "Toxaway projects require precision, high-end material sourcing, and coordination with community security and architectural boards.",
         proof: "Brava synthetic shake blends, copper accents, and gated-community logistics",
         image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Lakefront master suite expansion",
+        summary: "Design-build addition for a premier Toxaway estate, providing a new luxury suite with expansive views and high-end exterior finishes.",
+        proof: "Structural lake-view engineering, matching stone masonry, and premium trim",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Premium gutter & drainage system",
+        summary: "Installation of oversized copper gutter systems and underground drainage for a large Lake Toxaway residence to manage lake-effect precipitation.",
+        proof: "6-inch half-round copper gutters, decorative downspouts, and site-graded drainage",
       },
     ],
     faqs: [
@@ -446,6 +480,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "CertainTeed dimensional systems and local Madison County crew support",
         image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Far-west rental property maintenance",
+        summary: "Responsive repair and inspection program for a portfolio of Murphy-area vacation rentals, ensuring roofs are guest-ready year-round.",
+        proof: "Scheduled inspections, photo-backed reporting, and prioritized repairs",
+        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Structural porch and deck rebuild",
+        summary: "Rebuilding a weathered deck for a Murphy residence with modern materials and improved structural integrity for long-term safety.",
+        proof: "Reinforced post-to-beam connections, premium decking, and code-compliant railing",
+      },
     ],
     faqs: [
       {
@@ -466,6 +511,17 @@ const townProofMap: Record<string, TownProofContent> = {
         summary: "Custom timber-frame porch addition designed to integrate with a Black Mountain historic cottage while expanding outdoor living space.",
         proof: "Heavy timber framing, custom railing, and integrated metal roofing",
         image: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Artisan shingle restoration",
+        summary: "Premium dimensional shingle installation for a Black Mountain residence, focusing on aesthetic fit and superior water management.",
+        proof: "Designer shingles, copper-finish flashing, and enhanced ventilation",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Historic cottage roof & trim repair",
+        summary: "Meticulous repair and restoration of a historic Black Mountain cottage roof, matching original profiles while upgrading structural performance.",
+        proof: "Historic material matching, specialized flashing details, and owner-led QA",
       },
     ],
     faqs: [
@@ -488,6 +544,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "Standing seam metal, reinforced fastening, and lifetime warranty",
         image: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Modern craftsman master addition",
+        summary: "Structural addition for a North Buncombe family home, providing a new master wing with vaulted ceilings and premium exterior integration.",
+        proof: "Engineered timber framing, matching siding, and high-performance glass",
+        image: "https://images.unsplash.com/photo-1434082033009-b81d41d32e1c?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Ridgetop UV & wind protection",
+        summary: "Installation of high-durability dimensional shingles for a Weaverville residence on an exposed ridge, featuring enhanced sealant technology.",
+        proof: "Category 4 impact rating, 130mph wind warranty, and high-temp underlayment",
+      },
     ],
     faqs: [
       {
@@ -509,6 +576,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "24-gauge steel, high-temp underlayment, and ridgetop fastening pattern",
         image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Historic riverfront exterior stabilization",
+        summary: "Structural repair and exterior restoration for a historic Marshall residence, preserving riverside character while upgrading performance.",
+        proof: "Foundation reinforcement, historic trim matching, and specialized masonry work",
+        image: "https://images.unsplash.com/photo-1518173946687-a4c8a9b749f5?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Madison County hillside addition",
+        summary: "Engineering and construction of a new guest wing for a Marshall home, designed to integrate with the steep terrain and maximize valley views.",
+        proof: "Steep-slope foundation, timber-frame architecture, and matching metal roof",
+      },
     ],
     faqs: [
       {
@@ -528,7 +606,18 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Lake Chatuge deck and roof modernization",
         summary: "Phased project involving a full roof replacement and a custom composite deck expansion for a premier Hayesville lakefront residence.",
         proof: "Timberline UHDZ shingles and moisture-shield composite decking",
+        image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Lakefront outdoor kitchen addition",
+        summary: "Design and construction of an outdoor entertaining area for a Lake Chatuge home, including custom stone work and integrated grill station.",
+        proof: "Natural stone masonry, weather-proof cabinetry, and timber-frame roofing",
         image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Clay County storm damage mitigation",
+        summary: "Rapid response and full roof replacement for a Hayesville residence following a localized high-wind event on Lake Chatuge.",
+        proof: "Emergency tarping, insurance documentation, and class-4 rated shingle install",
       },
     ],
     faqs: [

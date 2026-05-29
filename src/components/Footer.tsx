@@ -74,7 +74,7 @@ const certifications = [
 const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
   <Link
     to={to}
-    className="group text-[16px] text-primary-foreground/90 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-0.5"
+    className="group text-[16px] text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-0.5"
   >
     {children}
     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -83,26 +83,26 @@ const FooterLink = ({ to, children }: { to: string; children: React.ReactNode })
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground relative overflow-hidden">
+    <footer className="bg-white text-foreground relative overflow-hidden border-t border-border">
       {/* Background Tartan Watermark — Ultra subtle */}
-      <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ 
+      <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ 
         backgroundImage: "url('/tartan.png')",
         backgroundSize: "600px auto"
       }} />
 
       {/* Top Heritage Accent Bar */}
       <div className="h-[4px] w-full relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30" style={{ 
+        <div className="absolute inset-0 opacity-20" style={{ 
           backgroundImage: "url('/tartan.png')",
           backgroundSize: "120px auto"
         }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-transparent to-primary" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white" />
       </div>
 
       {/* CTA Strip */}
-      <div className="border-b border-primary-foreground/8 relative">
+      <div className="border-b border-border relative">
         {/* Ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-[hsl(var(--highland-gold)/0.03)] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="container-tight py-12 md:py-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -116,12 +116,12 @@ const Footer = () => {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="w-10 h-[2px] bg-[hsl(var(--highland-gold)/0.4)] mb-5 origin-left"
+                className="w-10 h-[2px] bg-primary/40 mb-5 origin-left"
               />
-              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight text-foreground">
                 Plan Before You Build.
               </h3>
-              <p className="text-primary-foreground/90 text-lg md:text-xl font-body max-w-md leading-relaxed font-medium">
+              <p className="text-muted-foreground text-lg md:text-xl font-body max-w-md leading-relaxed font-medium">
                 Roof, addition, or storm damage — supported by expert Design & Planning. One local team, one named contact.
               </p>
             </div>
@@ -136,9 +136,9 @@ const Footer = () => {
               </Link>
               <a
                 href="tel:8283979211"
-                className="bg-primary-foreground/10 border-2 border-primary-foreground/20 text-primary-foreground font-bold text-[14px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-primary-foreground/15 hover:border-primary-foreground/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
+                className="bg-secondary border-2 border-border text-foreground font-bold text-[14px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-secondary/80 hover:border-primary/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
               >
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                <Phone className="w-4 h-4 text-primary" />
                 (828) 397-9211
               </a>
             </div>
@@ -156,13 +156,13 @@ const Footer = () => {
                 <img 
                   src={logo} 
                   alt="Highlander Roofing & Construction" 
-                  className="h-[120px] md:h-[140px] w-auto transition-all duration-500 group-hover:scale-105" 
+                  className="h-[120px] md:h-[140px] w-auto transition-all duration-500 group-hover:scale-105 mix-blend-multiply" 
                   loading="lazy" 
                   decoding="async" 
                 />
               </div>
             </Link>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed mb-6 max-w-xs font-body">
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6 max-w-xs font-body">
               Premium roofing and construction across Western NC. 
               Serving 10+ primary counties with localized crews and owner-led quality since 2017.
             </p>
@@ -170,35 +170,35 @@ const Footer = () => {
             {/* Contact info */}
             <div className="flex flex-col gap-4 mb-8">
               <div className="space-y-3">
-                <a href="tel:8283979211" className="flex items-center gap-3 text-lg hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-primary-foreground/90">
-                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
+                <a href="tel:8283979211" className="flex items-center gap-3 text-lg hover:text-primary transition-colors font-heading font-bold text-foreground">
+                  <Phone className="w-4 h-4 text-primary" /> (828) 397-9211
                 </a>
-                <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 text-base hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-primary-foreground/70">
-                  <Mail className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> info@highlandernc.com
+                <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 text-base hover:text-primary transition-colors font-body text-muted-foreground">
+                  <Mail className="w-4 h-4 text-primary" /> info@highlandernc.com
                 </a>
               </div>
 
-              <div className="space-y-4 pt-2 border-t border-primary-foreground/5">
+              <div className="space-y-4 pt-2 border-t border-border">
                 <div className="flex gap-3">
-                  <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[16px] text-primary-foreground/85 font-body leading-relaxed">
-                    <span className="block font-bold text-primary-foreground mb-0.5 text-[17px]">Franklin Office</span>
+                  <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <div className="text-[16px] text-foreground/80 font-body leading-relaxed">
+                    <span className="block font-bold text-foreground mb-0.5 text-[17px]">Franklin Office</span>
                     1511 Highlands Road<br />
                     Franklin, NC 28734
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[15px] text-primary-foreground/75 font-body leading-relaxed">
-                    <span className="block font-bold text-primary-foreground/80 mb-0.5 text-base">Sylva / Waynesville</span>
+                  <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <div className="text-[15px] text-muted-foreground leading-relaxed">
+                    <span className="block font-bold text-foreground/80 mb-0.5 text-base">Sylva / Waynesville</span>
                     28 Cross Stitch Mountain Rd<br />
                     Sylva, NC 20779
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[15px] text-primary-foreground/75 font-body leading-relaxed">
-                    <span className="block font-bold text-primary-foreground/80 mb-0.5 text-base">Asheville / Buncombe</span>
+                  <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <div className="text-[15px] text-muted-foreground leading-relaxed">
+                    <span className="block font-bold text-foreground/80 mb-0.5 text-base">Asheville / Buncombe</span>
                     900 Hendersonville Rd, Ste 303-D<br />
                     Asheville, NC 28803
                   </div>
@@ -208,46 +208,46 @@ const Footer = () => {
 
 
             {/* Certifications & Authority */}
-            <div className="grid grid-cols-2 gap-3 pt-8 mt-8 border-t border-primary-foreground/5">
+            <div className="grid grid-cols-2 gap-3 pt-8 mt-8 border-t border-border">
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <div className="w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain filter brightness-[10] contrast-[100] grayscale" />
+                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain grayscale opacity-80" />
                   </div>
-                  <span className="text-[13px] font-bold uppercase tracking-wider text-primary-foreground ml-2">VELUX Certified</span>
+                  <span className="text-[13px] font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
                 </div>
-                <span className="text-[12px] text-primary-foreground/60 font-body leading-tight">Master Installer & Pro Accredited</span>
+                <span className="text-[12px] text-muted-foreground font-body leading-tight">Master Installer & Pro Accredited</span>
               </div>
               
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <Shield className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-primary-foreground/90 ml-2">Licensed GC</span>
+                  <Shield className="w-5 h-5 text-primary" />
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">Licensed GC</span>
                 </div>
-                <span className="text-[11px] text-primary-foreground/50 font-body leading-tight">North Carolina License #87234 · Fully Insured</span>
+                <span className="text-[11px] text-muted-foreground font-body leading-tight">North Carolina License #87234 · Fully Insured</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <BadgeCheck className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-primary-foreground/90 ml-2">CertainTeed Master</span>
+                  <BadgeCheck className="w-5 h-5 text-primary" />
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">CertainTeed Master</span>
                 </div>
-                <span className="text-[11px] text-primary-foreground/50 font-body leading-tight">Factory-Certified Professional Installer</span>
+                <span className="text-[11px] text-muted-foreground font-body leading-tight">Factory-Certified Professional Installer</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <Star className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-primary-foreground/90 ml-2">4.9★ Rated</span>
+                  <Star className="w-5 h-5 text-primary" />
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">4.9★ Rated</span>
                 </div>
-                <span className="text-[11px] text-primary-foreground/50 font-body leading-tight">Highest Rated in Franklin & Highlands</span>
+                <span className="text-[11px] text-muted-foreground font-body leading-tight">Highest Rated in Franklin & Highlands</span>
               </div>
             </div>
           </div>
 
           {/* Roofing */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Roofing</h4>
+            <h4 className="eyebrow text-primary mb-4">Roofing</h4>
             <nav className="flex flex-col gap-2">
               {roofingLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
@@ -255,7 +255,7 @@ const Footer = () => {
 
           {/* Construction */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Construction</h4>
+            <h4 className="eyebrow text-primary mb-4">Construction</h4>
             <nav className="flex flex-col gap-2">
               {constructionLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
@@ -263,12 +263,12 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Resources</h4>
+            <h4 className="eyebrow text-primary mb-4">Resources</h4>
             <nav className="flex flex-col gap-2">
               {resourceLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
 
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mt-6 mb-4">Company</h4>
+            <h4 className="eyebrow text-primary mt-6 mb-4">Company</h4>
             <nav className="flex flex-col gap-2">
               {companyLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
@@ -276,13 +276,13 @@ const Footer = () => {
 
           {/* Service Areas — tiered */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Primary Markets</h4>
+            <h4 className="eyebrow text-primary mb-4">Primary Markets</h4>
             <nav className="flex flex-col gap-2">
               {tier1Areas.map((l) => (
                 <Link
                   key={l.href}
                   to={l.href}
-                  className="group text-[16px] font-medium text-primary-foreground/90 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-2 font-body leading-relaxed py-1"
+                  className="group text-[16px] font-medium text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-2 font-body leading-relaxed py-1"
                 >
                   {l.label}
                   <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -290,13 +290,13 @@ const Footer = () => {
               ))}
             </nav>
 
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mt-6 mb-3">Also Serving</h4>
+            <h4 className="eyebrow text-primary mt-6 mb-3">Also Serving</h4>
             <nav className="flex flex-col gap-1.5">
               {tier2Areas.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
             <Link
               to="/service-areas"
-              className="mt-4 text-xs font-body font-medium text-[hsl(var(--highland-gold))] hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors inline-flex items-center gap-1"
+              className="mt-4 text-xs font-body font-medium text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
             >
               View All Areas <ArrowRight className="w-3 h-3" />
             </Link>
@@ -305,9 +305,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar — license + legal */}
-      <div className="border-t border-primary-foreground/6 relative">
+      <div className="border-t border-border relative">
         <div 
-          className="absolute inset-0 opacity-[0.025] pointer-events-none" 
+          className="absolute inset-0 opacity-[0.015] pointer-events-none" 
           style={{ 
             backgroundImage: "url('/tartan.png')",
             backgroundSize: "120px auto",
@@ -315,16 +315,16 @@ const Footer = () => {
           }} 
         />
         <div className="container-tight py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[13px] text-primary-foreground/70 font-body tracking-wide">
+          <div className="flex flex-col md:flex-row items-center gap-x-4 gap-y-1 text-[13px] text-muted-foreground font-body tracking-wide">
             <span>© {new Date().getFullYear()} Highlander Roofing & Construction.</span>
-            <span className="hidden md:inline text-primary-foreground/20">·</span>
+            <span className="hidden md:inline text-border">·</span>
             <span>NC General Contractor License #87234</span>
-            <span className="hidden md:inline text-primary-foreground/20">·</span>
+            <span className="hidden md:inline text-border">·</span>
             <span>Fully Insured</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/privacy" className="text-[13px] text-primary-foreground/50 hover:text-primary-foreground/70 font-body tracking-wide transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-[13px] text-primary-foreground/50 hover:text-primary-foreground/70 font-body tracking-wide transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
