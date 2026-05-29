@@ -116,8 +116,8 @@ const ConstructionDivision = () => {
                 <div className="inline-flex items-center gap-4">
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
-                    <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                    <span className="text-[10px] font-body font-bold text-[hsl(var(--highland-gold)/0.9)] uppercase tracking-[0.3em] -mt-1">Construction Division</span>
+                    <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
+                    <span className="text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
