@@ -90,7 +90,7 @@ const ConstructionProcess = ({
           <span className="eyebrow mb-3 block">{eyebrow}</span>
           <h2 className="section-heading mb-4 whitespace-pre-line">{heading}</h2>
           {subheading && (
-            <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">{subheading}</p>
+            <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">{subheading}</p>
           )}
         </motion.div>
 
