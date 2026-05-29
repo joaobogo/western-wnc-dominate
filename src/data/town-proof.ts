@@ -576,6 +576,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "24-gauge steel, high-temp underlayment, and ridgetop fastening pattern",
         image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Historic riverfront exterior stabilization",
+        summary: "Structural repair and exterior restoration for a historic Marshall residence, preserving riverside character while upgrading performance.",
+        proof: "Foundation reinforcement, historic trim matching, and specialized masonry work",
+        image: "https://images.unsplash.com/photo-1518173946687-a4c8a9b749f5?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Madison County hillside addition",
+        summary: "Engineering and construction of a new guest wing for a Marshall home, designed to integrate with the steep terrain and maximize valley views.",
+        proof: "Steep-slope foundation, timber-frame architecture, and matching metal roof",
+      },
     ],
     faqs: [
       {
