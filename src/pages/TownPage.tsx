@@ -42,6 +42,39 @@ const TownPage = () => {
 
   const townProof = getTownProofContent(town.slug);
   const existingBlogs = blogPosts.filter(b => b.town === town.name).slice(0, 3);
+  
+  // Logical Fallback Strategy:
+  // 1. Posts specifically tagged for this town
+  // 2. Posts relevant to this town's elevation/climate if no town-specific posts
+  // 3. High-authority general posts
+  const getRelevantBlogs = () => {
+    if (existingBlogs.length >= 3) return existingBlogs;
+    
+    const elevationValue = parseInt(town.elevation.replace(/[^0-9]/g, ''));
+    const isHighElevation = elevationValue > 3000;
+    
+    const secondaryBlogs = blogPosts.filter(b => {
+      if (existingBlogs.find(eb => eb.slug === b.slug)) return false;
+      
+      // High elevation towns get high elevation content
+      if (isHighElevation && b.title.toLowerCase().includes('highlands')) return true;
+      if (isHighElevation && b.slug.includes('high-elevation')) return true;
+      
+      // Construction focus
+      if (town.serviceDemandMix.includes("Luxury Additions") && b.category === "Construction") return true;
+      
+      return false;
+    });
+
+    const combined = [...existingBlogs, ...secondaryBlogs];
+    if (combined.length >= 3) return combined.slice(0, 3);
+    
+    // Final filler with high-value general content
+    const generalBlogs = blogPosts.filter(b => !combined.find(c => c.slug === b.slug)).slice(0, 3 - combined.length);
+    return [...combined, ...generalBlogs];
+  };
+
+  const relevantBlogs = getRelevantBlogs();
 
   return (
     <>
