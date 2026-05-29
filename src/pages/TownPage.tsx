@@ -83,22 +83,23 @@ const TownPage = () => {
           <div className="absolute inset-0">
             <img 
               src={
-                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a57?auto=format&fit=crop&q=80&w=2000" : // Luxury mountain estate with prominent roof/timber
-                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" : // High-end mountain home with moisture-prone wooded setting
-                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=2000" : // Residential home in valley/ridgetop style
-                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1600585154526-990dcea4db0d?auto=format&fit=crop&q=80&w=2000" : // Historic character mountain home
-                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000" : // Mix of modern and residential hillside
-                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=2000" : // Cabin/vacation rental focus
-                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1513584684374-8bdb7483fe8f?auto=format&fit=crop&q=80&w=2000" : // Residential/multi-unit context
-                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1449156001437-3a166a6cb7f2?auto=format&fit=crop&q=80&w=2000" : // Historic cottage village feel
+                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" : // Authentic mountain estate with slate-style roof
+                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000" : // Believable ridgetop residence
+                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=2000" : // Grounded family home construction
+                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1600585154526-990dcea4db0d?auto=format&fit=crop&q=80&w=2000" : // Premium craftsman ridgetop
+                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a57?auto=format&fit=crop&q=80&w=2000" : // Real residential renovation context
+                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1449156001437-3a166a6cb7f2?auto=format&fit=crop&q=80&w=2000" : // Authentic cabin siding/roofing
+                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1513584684374-8bdb7483fe8f?auto=format&fit=crop&q=80&w=2000" : // Modern residential structure
+                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=2000" : // Believable village cottage
                 "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
+
 
               } 
               alt={`${town.name}, NC mountain roofing and construction context`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.92)] via-[hsl(var(--hero-overlay)/0.75)] to-[hsl(var(--hero-overlay)/0.1)]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent opacity-80" />
             
             {/* Subtle Tartan Overlay */}
             <div className="absolute inset-0 opacity-[0.15] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
@@ -126,7 +127,7 @@ const TownPage = () => {
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-heading font-bold mb-8 text-primary-foreground tracking-tightest leading-[0.92]">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-primary-foreground tracking-tightest leading-[0.92] drop-shadow-sm">
                   Built for the <br />
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{town.name} Peaks.</span>
                 </h1>
