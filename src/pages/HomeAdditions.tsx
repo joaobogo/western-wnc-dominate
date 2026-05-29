@@ -393,7 +393,7 @@ const HomeAdditions = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Building Additions in WNC<br className="hidden md:block" /> Is Different.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
                   The Western North Carolina landscape demands more from every build. Not every contractor understands why.
                 </p>
               </motion.div>
