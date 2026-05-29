@@ -1357,3 +1357,20 @@
     box-shadow: 0 4px 20px -8px hsl(var(--highland-gold) / 0.12);
   }
 }
+
+/* Quantum Lovable - watermark removal */
+#lovable-badge {
+  display: none !important;
+}
+a[href*="lovable.dev"],
+iframe[src*="lovable.dev"],
+div[style*="Edit with Lovable"],
+.lovable-badge {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
+
