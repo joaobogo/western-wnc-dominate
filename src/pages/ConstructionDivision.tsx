@@ -261,7 +261,7 @@ const ConstructionDivision = () => {
 
         {/* ═══ ARCHITECTURAL DETAIL — Visual break ═══ */}
         <section className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
-          <img src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover grayscale opacity-60" />
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200" alt="Construction detail and craftsmanship" className="w-full h-full object-cover grayscale opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
           <div className="absolute bottom-10 left-10 flex items-center gap-4">
              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
