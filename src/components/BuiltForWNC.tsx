@@ -36,12 +36,12 @@ const BuiltForWNC = () => {
             <GoldLine width="3rem" delay={0.3} className="mb-5" />
             <ScrollReveal variant="rise-subtle" delay={0.3}>
               <div>
-                <p className="text-muted-foreground text-base leading-relaxed font-body mb-4">
+                <p className="text-foreground/80 text-lg leading-relaxed font-body mb-6">
                   Roofing and construction in the mountains isn't the same as roofing in the
                   Piedmont or the coast. Elevation changes everything — the weather, the materials,
                   the engineering, the logistics.
                 </p>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                <p className="text-foreground/70 text-base leading-relaxed font-body">
                   Highlander was founded here. Our crews live and work in these conditions year-round.
                   That means every recommendation we make and every system we install is based on what
                   actually performs at 2,000–5,000 feet — not what a manufacturer's brochure says
