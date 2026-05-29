@@ -157,7 +157,7 @@ const Header = () => {
           {/* Division dropdowns */}
           <Link
             to="/"
-            className="lg:hidden"
+            className="hidden"
           />
 
           {divisions.map((div) => (
