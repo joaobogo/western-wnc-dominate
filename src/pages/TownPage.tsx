@@ -2,9 +2,11 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, Phone, MapPin, Mountain, 
-  Shield, Star, CloudLightning, Home, HardHat
+  Shield, Star, CloudLightning, Home, HardHat,
+  BookOpen
 } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
