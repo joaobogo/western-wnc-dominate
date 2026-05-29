@@ -15,14 +15,14 @@ const leadership = [
     name: "Luke",
     role: "Owner & Lead Advisor",
     bio: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values. Luke oversees the strategic direction of both Roofing and Construction divisions.",
-    image: "", // Placeholder treatment will handle empty string
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
     credentials: ["NC Licensed GC", "CertainTeed Master Applicator", "WNC Native"]
   },
   {
     name: "Christy",
     role: "Director of Operations",
     bio: "The engine behind the scenes. Christy manages project sequencing, client coordination, and ensures the 'Highlander Standard' is met from first call to final walkthrough.",
-    image: "",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
     credentials: ["Project Coordination", "Client Experience", "Operational Excellence"]
   }
 ];
@@ -33,14 +33,14 @@ const teamMembers = [
     role: "Roofing Division Lead",
     specialty: "System Installation & QC",
     bio: "With years of ridgetop experience, Javier leads our roofing crews with manufacturer-exact precision, specializing in complex metal and synthetic slate systems.",
-    image: ""
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400"
   },
   {
     name: "Miguel",
     role: "Construction Foreman",
     specialty: "Framing & Structural Execution",
     bio: "Miguel translates design layouts into buildable reality. He manages on-site construction for additions and outdoor living spaces with obsessive attention to detail.",
-    image: ""
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400"
   }
 ];
 
@@ -178,7 +178,7 @@ const Team = () => {
                     ) : (
                       <div className="text-center p-6">
                         <Users className="w-10 h-10 text-muted-foreground/20 mx-auto mb-3" />
-                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/30">Photo Coming Soon</span>
+                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60 bg-white/10 px-3 py-1.5 backdrop-blur-sm border border-white/5 rounded-sm">Profile Image Pending</span>
                       </div>
                     )}
                   </div>

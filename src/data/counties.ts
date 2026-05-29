@@ -17,7 +17,7 @@ export const counties: CountyData[] = [
     towns: ["Highlands", "Franklin"],
     metaTitle: "Roofing & Construction Services in Macon County, NC | Highlander Roofing",
     metaDescription: "Professional roofing and home construction across Macon County, NC. Serving Franklin and Highlands with local crews and premium materials since 2017.",
-    heroImage: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&q=80&w=2000", // Authentic construction site / mountain residential context
+    heroImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Service Area", value: "Full County" },
       { label: "Office Location", value: "Franklin, NC" },
@@ -32,7 +32,7 @@ export const counties: CountyData[] = [
     towns: ["Cashiers", "Sylva", "Cullowhee", "Dillsboro"],
     metaTitle: "Roofing & Construction Services in Jackson County, NC | Highlander Roofing",
     metaDescription: "Expert roofing and construction for Jackson County, NC. Serving Sylva, Cashiers, Cullowhee, and Dillsboro with specialized mountain-rated systems.",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000", // Natural mountain home architecture
+    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Service Area", value: "Full County" },
       { label: "Office Location", value: "Sylva, NC" },
@@ -47,7 +47,7 @@ export const counties: CountyData[] = [
     towns: ["Bryson City"],
     metaTitle: "Roofing & Construction Services in Swain County, NC | Highlander Roofing",
     metaDescription: "Reliable roofing and construction in Swain County, NC. Specialized services for Bryson City homes and vacation rentals near the Smokies.",
-    heroImage: "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=2000", // Grounded Smoky Mountain cabin aesthetic
+    heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Service Area", value: "Full County" },
       { label: "Market Focus", value: "Vacation Rentals" },
@@ -62,7 +62,7 @@ export const counties: CountyData[] = [
     towns: ["Waynesville"],
     metaTitle: "Roofing & Construction Services in Haywood County, NC | Highlander Roofing",
     metaDescription: "Professional roofing and construction across Haywood County, NC. Serving Waynesville with expert care for historic and modern properties.",
-    heroImage: "https://images.unsplash.com/photo-1600585154526-990dcea4db0d?auto=format&fit=crop&q=80&w=2000", // Stately but realistic mountain residence
+    heroImage: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Service Area", value: "Full County" },
       { label: "Specialty", value: "Historic Modernization" },
