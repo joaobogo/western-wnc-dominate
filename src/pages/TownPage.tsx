@@ -4,7 +4,7 @@ import {
   ArrowRight, Phone, CheckCircle, MapPin, Wind, CloudRain, Mountain, 
   Home, HardHat, BookOpen, Shield, Star, Hammer, RotateCcw, 
   CloudLightning, Layers, TreePine, Paintbrush, Building, Wrench, Droplets,
-  Building2, Users, Compass, ArrowUpRight
+  Building2, Users, Compass, ArrowUpRight, Camera
 } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
