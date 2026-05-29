@@ -117,6 +117,112 @@ export const localBlogTopics: LocalBlogTopic[] = [
         serviceCategory: "both"
       }
     ]
+  },
+  {
+    townSlug: "asheville-nc",
+    topics: [
+      {
+        title: "Asheville's Historic Districts: A Guide to ARB-Approved Roofing",
+        description: "Navigating the complexities of Biltmore Forest and Montford architectural reviews for your next roof project.",
+        serviceCategory: "roofing"
+      },
+      {
+        title: "Mountain Modern Additions: Expanding Your Asheville Estate",
+        description: "How to integrate sleek, modern footprints with the rugged topography of Western North Carolina.",
+        serviceCategory: "construction"
+      }
+    ]
+  },
+  {
+    townSlug: "hendersonville-nc",
+    topics: [
+      {
+        title: "Hail-Resistant Roofing for the Hendersonville Plateau",
+        description: "Why Class 4 shingles are the smartest investment for homes in Henderson County's storm-prone corridors.",
+        serviceCategory: "roofing"
+      },
+      {
+        title: "Aging in Place: Accessibility Renovations for Hendersonville Homes",
+        description: "Transforming established residences into long-term accessible spaces without losing craftsman charm.",
+        serviceCategory: "construction"
+      }
+    ]
+  },
+  {
+    townSlug: "brevard-nc",
+    topics: [
+      {
+        title: "The 90-Inch Reality: Waterproofing for the Land of Waterfalls",
+        description: "Advanced underlayment and drainage strategies for Transylvania County's extreme rainfall profile.",
+        serviceCategory: "roofing"
+      },
+      {
+        title: "Trailside Living: Designing the Perfect Brevard Mudroom Addition",
+        description: "Creating functional transitions for active Pisgah Forest mountain bikers and hikers.",
+        serviceCategory: "construction"
+      }
+    ]
+  },
+  {
+    townSlug: "lake-toxaway-nc",
+    topics: [
+      {
+        title: "Luxury Roofing Systems for Lake Toxaway Estates",
+        description: "Why Brava synthetic slate and copper accents are the preferred choice for premier private lake communities.",
+        serviceCategory: "roofing"
+      }
+    ]
+  },
+  {
+    townSlug: "murphy-nc",
+    topics: [
+      {
+        title: "Durable Roofing for Western NC: Murphy's Best Material Choices",
+        description: "A guide to selecting low-maintenance, high-performance systems for Cherokee County residences.",
+        serviceCategory: "roofing"
+      }
+    ]
+  },
+  {
+    townSlug: "black-mountain-nc",
+    topics: [
+      {
+        title: "Artisan Construction: The Black Mountain Timber-Frame Legacy",
+        description: "How we incorporate traditional joinery and heavy timber into modern mountain home expansions.",
+        serviceCategory: "construction"
+      }
+    ]
+  },
+  {
+    townSlug: "weaverville-nc",
+    topics: [
+      {
+        title: "North Buncombe Ridgetop Roofing: Defending Against High Winds",
+        description: "Engineering your roof for the specific physics of Weaverville's exposed ridgelines.",
+        serviceCategory: "roofing"
+      }
+    ]
+  },
+  {
+    townSlug: "marshall-nc",
+    topics: [
+      {
+        title: "Preserving Madison County: Historic Riverside Renovations",
+        description: "Challenges and strategies for structural modernization in Marshall's historic downtown core.",
+        serviceCategory: "both"
+      }
+    ]
+  },
+  {
+    townSlug: "hayesville-nc",
+    topics: [
+      {
+        title: "Lakefront Life: Decking and Roofing for the Chatuge Basin",
+        description: "Preventing rot and biological growth in Hayesville's high-humidity lake environments.",
+        serviceCategory: "both"
+      }
+    ]
   }
 ];
+
 

@@ -331,6 +331,214 @@ const townProofMap: Record<string, TownProofContent> = {
       },
     ],
   },
+  "asheville-nc": {
+    stats: [
+      { label: "Market", value: "Premium", detail: "Historic and modern luxury focus" },
+      { label: "Elevation", value: "2,100+ ft", detail: "Ridgetop and valley microclimates" },
+      { label: "Project Mix", value: "High-End", detail: "Brava, Metal, and Custom Additions" },
+    ],
+    jobHighlights: [
+      {
+        title: "Biltmore Forest historic restoration",
+        summary: "Asheville's historic districts require meticulous material matching and ARB coordination. we specialize in modernizing performance without losing historic soul.",
+        proof: "Copper flashing details, synthetic slate systems, and historic trim matching",
+        image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Town Mountain ridgetop roofing",
+        summary: "High-wind exposure on Asheville's surrounding ridgetops requires high-velocity rated systems and reinforced perimeter fastening.",
+        proof: "Category 4 impact ratings and 130mph wind warranties",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you handle Asheville's historic district requirements?",
+        answer: "We are experts in Asheville ARB submissions. We provide detailed material samples, historic color matching, and structural plans that meet Buncombe County's preservation standards.",
+      },
+      {
+        question: "What is the best roof for Asheville's modern mountain homes?",
+        answer: "For modern architecture in areas like Town Mountain, we recommend standing seam metal or synthetic slate (Brava). These systems offer clean lines, superior wind resistance, and a 50+ year service life.",
+      },
+    ],
+  },
+  "hendersonville-nc": {
+    stats: [
+      { label: "Focus", value: "Reliability", detail: "Long-term maintenance for established homes" },
+      { label: "Elevation", value: "2,152 ft", detail: "Plateau thunderstorms and hail risk" },
+      { label: "Credentials", value: "Licensed GC", detail: "Whole-home structural improvements" },
+    ],
+    jobHighlights: [
+      {
+        title: "Retirement community roof management",
+        summary: "Hendersonville projects often center on longevity, budget predictability, and clean, non-disruptive job site management.",
+        proof: "Transparent pricing, extended warranties, and daily site cleanup",
+        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Historic downtown residential reroof",
+        summary: "Traditional Hendersonville architecture requires careful attention to attic ventilation and chimney flashing to ensure another 30+ years of performance.",
+        proof: "Oversized ridge vents and custom step-flashing detailing",
+      },
+    ],
+    faqs: [
+      {
+        question: "Why should Hendersonville homeowners choose impact-resistant shingles?",
+        answer: "The Hendersonville plateau experiences frequent afternoon hail. We recommend Class 4 impact-rated shingles to protect your investment and potentially lower your insurance premiums.",
+      },
+      {
+        question: "Can you help with accessibility renovations in Hendersonville?",
+        answer: "Yes. As a licensed GC, we specialize in home additions and renovations that improve accessibility while maintaining your home's aesthetic value.",
+      },
+    ],
+  },
+  "brevard-nc": {
+    stats: [
+      { label: "Rainfall", value: "90+ in", detail: "Extreme moisture management priorities" },
+      { label: "Elevation", value: "2,231 ft", detail: "Gateway to high-elevation forest peaks" },
+      { label: "Specialty", value: "Moisture-Ready", detail: "Advanced drainage and waterproofing" },
+    ],
+    jobHighlights: [
+      {
+        title: "Transylvania County moisture protection",
+        summary: "In the Land of Waterfalls, we double-underlay every eave and valley to prevent moisture intrusion during the region's intense tropical deluges.",
+        proof: "Double-layered ice-and-water shield and oversized 6-inch gutter systems",
+        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you handle Brevard's record-breaking rainfall?",
+        answer: "We specify oversized drainage systems and double-underlayment strategies designed specifically for Transylvania County's moisture profile. We build systems that actually stay dry.",
+      },
+    ],
+  },
+  "lake-toxaway-nc": {
+    stats: [
+      { label: "Setting", value: "Private Lake", detail: "Ultra-high-end estate focus" },
+      { label: "Service", value: "White-Glove", detail: "Premium project management for remote owners" },
+      { label: "Specialty", value: "Brava", detail: "Certified luxury synthetic installers" },
+    ],
+    jobHighlights: [
+      {
+        title: "Lake Toxaway estate reroofing",
+        summary: "Toxaway projects require precision, high-end material sourcing, and coordination with community security and architectural boards.",
+        proof: "Brava synthetic shake blends, copper accents, and gated-community logistics",
+        image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you manage Toxaway estate projects for out-of-town owners?",
+        answer: "Yes. Most of our Lake Toxaway clients are remote. We provide a full-service experience including daily photo updates, material logistics, and ARB coordination.",
+      },
+    ],
+  },
+  "murphy-nc": {
+    stats: [
+      { label: "Hub", value: "Cherokee Co.", detail: "Fast response for the far west" },
+      { label: "Response", value: "Local", detail: "Crews staged for Western NC service" },
+      { label: "Rating", value: "5.0 Stars", detail: "Trusted by Murphy families and rental owners" },
+    ],
+    jobHighlights: [
+      {
+        title: "Hiwassee valley residential reroof",
+        summary: "Reliable, owner-led roof replacement for Murphy families who need a roofer who answers the phone and stands by the warranty.",
+        proof: "CertainTeed dimensional systems and local Madison County crew support",
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is Highlander local to Murphy?",
+        answer: "Yes. We have a dedicated crew presence in Western NC, allowing us to offer the most reliable scheduling and warranties in Cherokee County.",
+      },
+    ],
+  },
+  "black-mountain-nc": {
+    stats: [
+      { label: "Elevation", value: "2,405 ft", detail: "High wind and ice loading exposure" },
+      { label: "Market", value: "Artisan", detail: "Creative and craftsman-focused community" },
+      { label: "Project Mix", value: "Custom", detail: "Timber porches and designer roofing" },
+    ],
+    jobHighlights: [
+      {
+        title: "Swannanoa valley deck expansion",
+        summary: "Custom timber-frame porch addition designed to integrate with a Black Mountain historic cottage while expanding outdoor living space.",
+        proof: "Heavy timber framing, custom railing, and integrated metal roofing",
+        image: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=600",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you handle historic cottage renovations in Black Mountain?",
+        answer: "Yes. We specialize in preserving the artisan character of Black Mountain homes while upgrading their structural and thermal performance for modern standards.",
+      },
+    ],
+  },
+  "weaverville-nc": {
+    stats: [
+      { label: "Location", value: "North Buncombe", detail: "Strategically based for rapid service" },
+      { label: "Specialty", value: "Ridgetop", detail: "High-wind and UV rated systems" },
+      { label: "Rating", value: "4.9 Stars", detail: "Highest rated roofer in North Buncombe" },
+    ],
+    jobHighlights: [
+      {
+        title: "Reems Creek ridgetop reroof",
+        summary: "Replacement of an aging shingle system with a high-velocity metal roof designed to handle the exposed winds of the Weaverville ridges.",
+        proof: "Standing seam metal, reinforced fastening, and lifetime warranty",
+        image: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=600",
+      },
+    ],
+    faqs: [
+      {
+        question: "Are your crews local to Weaverville?",
+        answer: "Yes. Our Buncombe County crews are based in the region, ensuring fast response times for estimates and projects in North Buncombe and Madison County.",
+      },
+    ],
+  },
+  "marshall-nc": {
+    stats: [
+      { label: "Service", value: "Madison Co.", detail: "The region's most reliable contractor" },
+      { label: "Elevation", value: "1,647 ft", detail: "River-valley and ridgetop variables" },
+      { label: "Mix", value: "Rugged", detail: "High-performance metal and structural fixes" },
+    ],
+    jobHighlights: [
+      {
+        title: "Madison County ridgetop farm roofing",
+        summary: "Heavy-duty metal roofing system installed on an exposed Madison County ridgetop to replace a wind-damaged asphalt roof.",
+        proof: "24-gauge steel, high-temp underlayment, and ridgetop fastening pattern",
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you serve all of Madison County?",
+        answer: "Yes. From the Marshall riverfront to the ridgetops of Mars Hill and Walnut, we provide the county's most reliable roofing and general contracting services.",
+      },
+    ],
+  },
+  "hayesville-nc": {
+    stats: [
+      { label: "Market", value: "Lake Life", detail: "High-end vacation and retirement homes" },
+      { label: "Climate", value: "Humidity", detail: "Lake-proximate moisture management" },
+      { label: "Rating", value: "5.0 Stars", detail: "Trusted for lakefront asset protection" },
+    ],
+    jobHighlights: [
+      {
+        title: "Lake Chatuge deck and roof modernization",
+        summary: "Phased project involving a full roof replacement and a custom composite deck expansion for a premier Hayesville lakefront residence.",
+        proof: "Timberline UHDZ shingles and moisture-shield composite decking",
+        image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you protect Hayesville lakefront homes from humidity?",
+        answer: "We use algae-resistant materials and optimized attic ventilation to prevent moisture build-up and biological growth common to lake-proximate properties.",
+      },
+    ],
+  },
 };
+
 
 export const getTownProofContent = (slug: string): TownProofContent | undefined => townProofMap[slug];
