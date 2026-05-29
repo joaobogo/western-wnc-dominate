@@ -52,7 +52,7 @@ const getQuickStarters = (path: string) => {
     { label: "Insurance Help", message: "How does the insurance claim process work?", icon: Shield },
     { label: "Emergency", message: "I have an active roof leak from storm damage — this is urgent.", icon: CloudLightning },
   ];
-  // Default — equal weight for both divisions
+  // Default — equal weight for all three divisions
   return [
     { label: "Roofing", message: "I need help with my roof — repair, replacement, or inspection.", icon: Home },
     { label: "Construction", message: "I'm interested in a construction project — addition, renovation, or outdoor space.", icon: Hammer },
