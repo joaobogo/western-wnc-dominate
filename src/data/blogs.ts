@@ -356,7 +356,7 @@ We'll inspect your Highlands home, assess the full roof system, and give you an 
     excerpt: "Building on a mountain slope requires more than just a footprint. Learn the unique engineering and permitting steps for WNC additions.",
     category: "Construction",
     date: "2026-03-01",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
     metaTitle: "WNC Home Addition Planning Guide | Highlander Construction",
     metaDescription: "Planning an addition in Western NC? Learn about terrain engineering, permitting, and structural integration from mountain building experts.",
     content: `Adding square footage to a mountain home is one of the most rewarding investments you can make — but it's also one of the most technically demanding. Unlike building on flat land, WNC additions require a deeper level of planning before the first board is cut.
@@ -386,7 +386,7 @@ Our Design & Planning branch exists to solve these hurdles before they become ex
     excerpt: "How to choose the right orientation, materials, and layout for outdoor living spaces that survive mountain weather.",
     category: "Construction",
     date: "2026-03-15",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Porch & Deck Design for WNC Homes | Highlander Construction",
     metaDescription: "Expert tips for designing porches and decks in Western NC. Orientation, materials, and mountain-view optimization.",
     content: `Outdoor living in the Blue Ridge Mountains is about more than just square footage — it's about framing the view while protecting your investment from harsh seasonal changes.
@@ -407,7 +407,7 @@ High moisture and UV at elevation can destroy standard wood decks. We recommend 
     excerpt: "A guide to project planning and layout design for additions and renovations in Western North Carolina.",
     category: "Construction",
     date: "2026-03-20",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "Mountain Home Layout Planning | Highlander Design",
     metaDescription: "Plan your mountain home addition layout for better flow and views. Expert design guidance from Highlander.",
     content: `Before you build, you must plan. Designing a layout for a mountain home requires balancing the natural topography with your family's daily flow.
@@ -425,7 +425,7 @@ Adding a suite or an extension shouldn't create a 'maze.' Our design guidance fo
     excerpt: "The best outdoor spaces in WNC prioritize three things: view, weather protection, and material longevity. Explore what's working now.",
     category: "Construction",
     date: "2026-02-25",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1615873968403-89e068629275?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "WNC Outdoor Living Trends 2026 | Highlander Construction",
     metaDescription: "Design the perfect mountain outdoor space. Trends in decks, screened porches, and pergolas for Western NC homes.",
 
