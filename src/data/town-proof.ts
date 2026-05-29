@@ -11,6 +11,7 @@ export interface TownJobHighlight {
   summary: string;
   proof: string;
   projectSlug?: string;
+  image?: string;
 }
 
 export interface TownProofContent {
