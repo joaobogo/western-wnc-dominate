@@ -416,6 +416,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "Double-layered ice-and-water shield and oversized 6-inch gutter systems",
         image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Pisgah Forest area cabin reroof",
+        summary: "Installation of a high-durability standing seam metal roof for a residence bordering the national forest, designed to shed debris and handle high humidity.",
+        proof: "24-gauge steel, debris-resistant valley shields, and lifetime warranty",
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Custom mountain deck expansion",
+        summary: "Engineering and construction of a multi-level outdoor living space for a Brevard home, maximizing forest views while ensuring structural moisture resistance.",
+        proof: "Pressure-treated framing, composite decking, and integrated lighting",
+      },
     ],
     faqs: [
       {
