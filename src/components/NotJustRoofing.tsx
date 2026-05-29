@@ -74,7 +74,7 @@ const NotJustRoofing = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+            <p className="text-foreground text-lg md:text-xl font-body max-w-lg mx-auto font-bold leading-relaxed">
               Replacing your roof and renovating your kitchen shouldn't require two companies,
               two schedules, and two sets of excuses. Same crew. Same process.
               Same owner answering the phone.

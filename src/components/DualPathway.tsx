@@ -264,7 +264,7 @@ const DualPathway = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-muted-foreground text-base font-body max-w-xl mx-auto leading-relaxed">
+            <p className="text-foreground text-lg md:text-xl font-body max-w-xl mx-auto leading-relaxed font-bold">
               Standing seam at 4,000 feet or a ground-up addition in Franklin — the process
               is identical. Certified materials, documented scope, named contact, warranty delivered at walkthrough.
             </p>
