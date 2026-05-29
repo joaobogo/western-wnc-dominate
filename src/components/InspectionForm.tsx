@@ -113,7 +113,7 @@ const InspectionForm = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-dark-section-foreground/55 font-body text-sm leading-relaxed mb-5 max-w-md mx-auto"
+              className="text-dark-section-foreground/75 font-body text-base leading-relaxed mb-5 max-w-md mx-auto"
             >
               A Highlander project advisor — not a call center, not an automated system — will
               personally review your details and reach out rapidly to discuss your property,
@@ -141,7 +141,7 @@ const InspectionForm = () => {
                     className="flex items-center gap-2.5"
                   >
                     <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)] flex-shrink-0" />
-                    <span className="text-dark-section-foreground/40 text-xs font-body">{item.text}</span>
+                    <span className="text-dark-section-foreground/60 text-[13px] font-body font-bold">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -151,7 +151,7 @@ const InspectionForm = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="text-dark-section-foreground/25 text-xs font-body"
+              className="text-dark-section-foreground/40 text-[13px] font-body font-bold"
             >
               Can't wait?{" "}
               <a href="tel:8283979211" className="text-[hsl(var(--highland-gold))] font-semibold hover:underline">
@@ -185,7 +185,7 @@ const InspectionForm = () => {
             {/* Left — editorial trust content */}
             <div className="lg:col-span-2">
               <ScrollReveal variant="fade">
-                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] mb-4 block">
+                <span className="text-[12px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] mb-4 block">
                   Begin Your Project
                 </span>
               </ScrollReveal>
@@ -220,19 +220,19 @@ const InspectionForm = () => {
                     <div className="w-8 h-8 rounded-none bg-dark-section-foreground/[0.04] flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
                     </div>
-                    <span className="text-white/80 text-body font-bold">{item.text}</span>
+                    <span className="text-white/90 text-body font-bold text-lg">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
 
               <ScrollReveal variant="fade" delay={0.5}>
                 <div className="mt-8 pt-8 border-t border-dark-section-foreground/6">
-                  <p className="text-dark-section-foreground/25 text-xs font-body mb-2">Prefer to talk directly?</p>
+                  <p className="text-dark-section-foreground/50 text-sm font-body font-bold mb-2">Prefer to talk directly?</p>
                   <a href="tel:8283979211" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--highland-gold))] transition-colors">
                     <Phone className="w-4 h-4" />
                     (828) 397-9211
                   </a>
-                  <p className="text-dark-section-foreground/15 text-[10px] font-body mt-1">We answer our own phone — always a real person.</p>
+                  <p className="text-dark-section-foreground/40 text-[12px] font-body font-bold mt-1">We answer our own phone — always a real person.</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -259,7 +259,7 @@ const InspectionForm = () => {
                               : "hsl(var(--dark-section-foreground) / 0.1)",
                           }}
                           transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
-                          className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-body font-bold"
+                          className="w-8 h-8 rounded-full flex items-center justify-center text-[12px] font-body font-bold"
                         >
                           {i < currentIndex ? (
                             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 400, damping: 15 }}>
@@ -282,10 +282,10 @@ const InspectionForm = () => {
                     ))}
                   </div>
                   <div className="flex items-center justify-between">
-                    <p className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)]">
+                    <p className="text-[12px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.8)]">
                       Step {currentIndex + 1} of {stepOrder.length}
                     </p>
-                    <p className="text-[10px] text-dark-section-foreground/25 font-body">{stepLabels[currentStep]}</p>
+                    <p className="text-[12px] text-dark-section-foreground/50 font-body font-bold">{stepLabels[currentStep]}</p>
                   </div>
                 </div>
 
