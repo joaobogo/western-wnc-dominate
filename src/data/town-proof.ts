@@ -261,6 +261,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Student-housing roof coordination",
         summary: "Cullowhee property owners often need roof work timed around tenant transitions, occupied units, and academic calendar pressure.",
         proof: "Fast estimating, tenant-aware scheduling, and property manager communication",
+        image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Budget-focused repair plans",
