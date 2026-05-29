@@ -68,18 +68,10 @@ const divisions: DivisionDropdown[] = [
     tagline: "Licensed General Contractor",
     accent: "gold",
   },
-  {
-    label: "Design",
-    href: "/layouts-planning",
-    items: designItems,
-    icon: Ruler,
-    tagline: "Pre-Construction & Layouts",
-    accent: "gold",
-  },
 ];
 
-
 const secondaryLinks = [
+  { label: "Design", href: "/layouts-planning" },
   { label: "Our Work", href: "/gallery" },
   { label: "Blog", href: "/blog" },
   { label: "Service Areas", href: "/service-areas" },
