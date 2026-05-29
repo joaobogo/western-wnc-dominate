@@ -247,7 +247,7 @@ const Footer = () => {
 
           {/* Roofing */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Roofing</h4>
+            <h4 className="eyebrow text-primary mb-4">Roofing</h4>
             <nav className="flex flex-col gap-2">
               {roofingLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
@@ -255,7 +255,7 @@ const Footer = () => {
 
           {/* Construction */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Construction</h4>
+            <h4 className="eyebrow text-primary mb-4">Construction</h4>
             <nav className="flex flex-col gap-2">
               {constructionLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
@@ -263,12 +263,12 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Resources</h4>
+            <h4 className="eyebrow text-primary mb-4">Resources</h4>
             <nav className="flex flex-col gap-2">
               {resourceLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
 
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mt-6 mb-4">Company</h4>
+            <h4 className="eyebrow text-primary mt-6 mb-4">Company</h4>
             <nav className="flex flex-col gap-2">
               {companyLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
@@ -276,13 +276,13 @@ const Footer = () => {
 
           {/* Service Areas — tiered */}
           <div>
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mb-4">Primary Markets</h4>
+            <h4 className="eyebrow text-primary mb-4">Primary Markets</h4>
             <nav className="flex flex-col gap-2">
               {tier1Areas.map((l) => (
                 <Link
                   key={l.href}
                   to={l.href}
-                  className="group text-[16px] font-medium text-primary-foreground/90 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-2 font-body leading-relaxed py-1"
+                  className="group text-[16px] font-medium text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-2 font-body leading-relaxed py-1"
                 >
                   {l.label}
                   <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -290,13 +290,13 @@ const Footer = () => {
               ))}
             </nav>
 
-            <h4 className="eyebrow text-[hsl(var(--highland-gold))] mt-6 mb-3">Also Serving</h4>
+            <h4 className="eyebrow text-primary mt-6 mb-3">Also Serving</h4>
             <nav className="flex flex-col gap-1.5">
               {tier2Areas.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
             <Link
               to="/service-areas"
-              className="mt-4 text-xs font-body font-medium text-[hsl(var(--highland-gold))] hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors inline-flex items-center gap-1"
+              className="mt-4 text-xs font-body font-medium text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
             >
               View All Areas <ArrowRight className="w-3 h-3" />
             </Link>
