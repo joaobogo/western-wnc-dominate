@@ -150,7 +150,7 @@ const Header = () => {
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className="w-auto transition-all duration-500 max-w-[160px] md:max-w-none"
+            className="w-auto transition-all duration-500 max-w-[180px] md:max-w-none"
             animate={{ height: scrolled ? 150 : 200 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
