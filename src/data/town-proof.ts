@@ -192,6 +192,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Rental-turnover roof planning",
         summary: "Bryson City owners often need roofing work scheduled around guest occupancy, turnover windows, and limited maintenance access.",
         proof: "Condensed schedules and communication for remote property owners",
+        image: "https://images.unsplash.com/photo-1510627489930-0c1b0ba0546c?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Tree-impact and branch-damage response",
