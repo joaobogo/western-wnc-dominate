@@ -197,7 +197,7 @@ const Blog = () => {
                   <Link to={`/blog/${heroFeatured.slug}`} className="group block card-premium overflow-hidden h-full">
                     <div className="relative aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
                       <img 
-                        src={heroFeatured.image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000"} 
+                        src={heroFeatured.image || "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000"} 
                         alt={heroFeatured.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
@@ -239,7 +239,7 @@ const Blog = () => {
                         <div className="flex flex-col sm:flex-row h-full">
                           <div className="sm:w-32 md:w-40 shrink-0 overflow-hidden">
                             <img 
-                              src={post.image || "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=600"} 
+                              src={post.image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600"} 
                               alt={post.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
@@ -436,7 +436,7 @@ const Blog = () => {
                       <div className="grid md:grid-cols-12 gap-0 min-h-[300px]">
                         <div className="md:col-span-5 h-64 md:h-auto overflow-hidden">
                           <img 
-                            src={filtered[0].image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000"} 
+                            src={filtered[0].image || "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000"} 
                             alt={filtered[0].title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />
@@ -475,7 +475,7 @@ const Blog = () => {
                       <Link to={`/blog/${post.slug}`} className="group block h-full card-premium overflow-hidden flex flex-col">
                         <div className="aspect-[16/10] overflow-hidden">
                           <img 
-                            src={post.image || "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800"} 
+                            src={post.image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800"} 
                             alt={post.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />

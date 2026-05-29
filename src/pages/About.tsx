@@ -144,7 +144,7 @@ const About = () => {
                   <div className="aspect-square mb-6 bg-muted flex items-center justify-center relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                     <Users className="w-10 h-10 text-muted-foreground/20" />
                     <div className="absolute bottom-3 left-0 right-0 text-center">
-                      <span className="text-[8px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/30">Photo Coming Soon</span>
+                      <span className="text-[8px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60 bg-white/10 px-2 py-1 backdrop-blur-sm">Photo Coming Soon</span>
                     </div>
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-1">{person.name}</h3>
