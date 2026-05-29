@@ -409,10 +409,10 @@
      Strong, compact, confident
      ────────────────────────────────────── */
   .cta-text {
-    @apply text-body font-body font-bold uppercase tracking-[0.1em];
+    @apply text-[13px] font-body font-bold uppercase tracking-[0.1em];
   }
   .cta-text-lg {
-    @apply text-body-lg font-body font-bold uppercase tracking-[0.08em];
+    @apply text-[15px] font-body font-bold uppercase tracking-[0.08em];
   }
 
   /* ──────────────────────────────────────

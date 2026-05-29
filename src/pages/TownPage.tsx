@@ -141,7 +141,7 @@ const TownPage = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-xl border border-[hsl(var(--highland-gold)/0.4)]">
+                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-base px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-xl border border-[hsl(var(--highland-gold)/0.4)]">
                     Start a {town.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                   <a href="tel:8283979211" className="bg-white/[0.06] backdrop-blur-md border border-white/[0.2] text-primary-foreground font-bold text-[16px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.1] hover:border-white/[0.3] transition-all duration-300 shadow-lg">
