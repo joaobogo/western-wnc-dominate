@@ -182,7 +182,7 @@ const EditorialCard = ({ project, index, size, onClick }: {
       <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 z-10">
         <div className="flex items-center gap-1.5 mb-2">
           <MapPin className="w-2.5 h-2.5 text-[hsl(var(--highland-gold)/0.5)]" />
-          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/35">{project.location}</span>
+          <span className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-white/50">{project.location}</span>
         </div>
         <h3 className={`font-heading font-bold text-white leading-tight tracking-tight group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
           size === "wide" ? "text-lg md:text-2xl" : "text-base md:text-lg"
