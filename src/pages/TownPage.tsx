@@ -434,243 +434,154 @@ const TownPage = () => {
           </div>
         ) : null}
 
-        {/* 10. Supporting content / local insights */}
-        <section className="section-padding bg-card border-t border-border relative overflow-hidden">
-          {/* Subtle pattern background for the insights section */}
-          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
-          
-          <div className="container-tight relative z-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-              <div className="max-w-xl text-center md:text-left mx-auto md:mx-0">
-                <span className="eyebrow mb-4 block">Local Authority</span>
-                <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight">Expert Insights for {town.name}</h3>
-                <p className="text-muted-foreground mt-4 font-body text-lg">
-                  Factual guidance on roofing, construction, and mountain living specifically for the {town.name} plateau.
-                </p>
-              </div>
-              <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/20 pb-1 group shrink-0">
-                Browse Full Knowledge Base <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+        {/* 6. Local Proof & Projects Section — Real-world local impact */}
+        <TownProofBlock town={town} content={townProof} />
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Combine local topics and existing blogs for maximum relevance */}
-              {[
-                ...localBlogs.map((topic, i) => ({
-                  slug: "#local-topic-" + i,
-                  title: topic.title,
-                  excerpt: topic.description,
-                  category: topic.serviceCategory === 'roofing' ? 'Roofing' : topic.serviceCategory === 'construction' ? 'Construction' : 'Planning',
-                  isLocal: true
-                })),
-                ...existingBlogs
-              ].slice(0, 3).map((post, i) => (
-                <div key={i} className="flex flex-col h-full">
-                  {post.slug.startsWith('#') ? (
-                    <div className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 -rotate-45 translate-x-12 -translate-y-12" />
-                      <div className="flex items-center gap-3 mb-6 relative z-10">
-                        <div className="w-8 h-8 rounded-none bg-primary/5 flex items-center justify-center">
-                          <BookOpen className="w-4 h-4 text-primary" />
-                        </div>
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground/60">{post.category}</span>
-                        <span className="text-[9px] bg-[hsl(var(--highland-gold)/0.1)] text-[hsl(var(--highland-gold))] px-2 py-0.5 font-bold uppercase tracking-wider ml-auto">Local Topic</span>
-                      </div>
-                      <h4 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-4 leading-tight relative z-10">{post.title}</h4>
-                      <p className="text-sm text-muted-foreground mb-8 line-clamp-3 font-body flex-grow leading-relaxed relative z-10">{post.excerpt}</p>
-                      <Link 
-                        to="/consultation"
-                        className="text-[11px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all relative z-10"
-                      >
-                        Request Local Guide <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  ) : (
-                    <Link 
-                      to={`/blog/${post.slug}`}
-                      className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl"
-                    >
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-8 h-8 rounded-none bg-primary/5 flex items-center justify-center">
-                          <BookOpen className="w-4 h-4 text-primary" />
-                        </div>
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground/60">{post.category}</span>
-                      </div>
-                      <h4 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-4 leading-tight">{post.title}</h4>
-                      <p className="text-sm text-muted-foreground mb-8 line-clamp-3 font-body flex-grow leading-relaxed">{post.excerpt}</p>
-                      <span className="text-[11px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
-                        Read Local Guide <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </Link>
-                  )}
+        {/* 7. Strategic Local Articles — Blog Integration */}
+        {localBlogs.length > 0 && (
+          <section className="py-24 bg-background border-t border-border overflow-hidden">
+            <div className="container-tight">
+              <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div className="max-w-2xl">
+                  <span className="eyebrow mb-4 block">Knowledge Base</span>
+                  <h2 className="text-4xl font-heading font-bold text-foreground">Local Homeowner Intelligence</h2>
+                  <p className="text-lg text-muted-foreground font-body mt-4">Specific guidance for {town.name} climate and structural realities.</p>
                 </div>
-              ))}
-              
-              {/* Fallback if no specific content found for this town */}
-              {[...localBlogs, ...existingBlogs].length === 0 && (
-                blogPosts.filter(b => b.category === "Materials" || b.category === "Maintenance").slice(0, 3).map((post) => (
-                  <Link 
-                    key={post.slug} 
-                    to={`/blog/${post.slug}`}
-                    className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl"
+                <Link to="/blog" className="inline-flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all">
+                  View Full Library <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {localBlogs.map((blog, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="group bg-card border border-border p-8 hover:border-primary/20 transition-all duration-500 relative flex flex-col"
                   >
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-8 h-8 rounded-none bg-primary/5 flex items-center justify-center">
-                        <BookOpen className="w-4 h-4 text-primary" />
-                      </div>
-                      <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground/60">{post.category}</span>
+                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                      <BookOpen className="w-12 h-12" />
                     </div>
-                    <h4 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-4 leading-tight">{post.title}</h4>
-                    <p className="text-sm text-muted-foreground mb-8 line-clamp-3 font-body flex-grow leading-relaxed">{post.excerpt}</p>
-                    <span className="text-[11px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
-                      Read Planning Guide <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </Link>
-                ))
-              )}
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 ${
+                        blog.serviceCategory === 'roofing' ? 'bg-primary/10 text-primary' : 
+                        blog.serviceCategory === 'construction' ? 'bg-accent/10 text-accent' : 
+                        'bg-secondary text-muted-foreground'
+                      }`}>
+                        {blog.serviceCategory}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-heading font-bold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors">
+                      {blog.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm font-body mb-8 flex-1 leading-relaxed">
+                      {blog.description}
+                    </p>
+                    <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all">
+                      Read Article <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </motion.div>
+                ))}
+                
+                {/* Fallback to recent blogs if local list is short */}
+                {localBlogs.length < 3 && existingBlogs.map((blog, idx) => (
+                  <motion.div 
+                    key={blog.slug}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (localBlogs.length + idx) * 0.1 }}
+                    className="group bg-card border border-border p-8 hover:border-primary/20 transition-all duration-500 relative flex flex-col"
+                  >
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-secondary text-muted-foreground">
+                        Featured Case Study
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-heading font-bold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors">
+                      {blog.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm font-body mb-8 flex-1 leading-relaxed line-clamp-2">
+                      {blog.excerpt}
+                    </p>
+                    <Link to={`/blog/${blog.slug}`} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all">
+                      Read Case Study <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-
-        {/* Builder Promo - Link to Interactive Tools */}
-        <section className="py-12 bg-background border-y border-border">
+        {/* 8. Nearby Areas — Internal Linking Network */}
+        <section className="py-24 bg-secondary/30 border-t border-border">
           <div className="container-tight">
-            <div className="bg-secondary/50 p-8 md:p-12 border border-border flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="max-w-xl text-center md:text-left">
-                <h3 className="text-2xl font-heading font-bold text-foreground mb-3 tracking-tight">Try Our Interactive Builders</h3>
-                <p className="text-muted-foreground text-sm font-body leading-relaxed">
-                  Visualize your new roof or plan your construction project budget in minutes using our custom {town.name} building tools.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/roofing-builder" className="text-xs font-bold bg-primary text-primary-foreground px-6 py-3 hover:bg-primary/90 transition-colors uppercase tracking-widest text-center">Roof Builder</Link>
-                <Link to="/construction-builder" className="text-xs font-bold border border-primary text-primary px-6 py-3 hover:bg-primary/5 transition-colors uppercase tracking-widest text-center">Project Builder</Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Real Proof: Project Showcase Strip */}
-        <section className="py-16 bg-background border-t border-border overflow-hidden">
-          <div className="container-tight">
-            <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-6">
-              <div>
-                <span className="eyebrow mb-2 block">Real Results</span>
-                <h3 className="text-3xl font-heading font-bold">Recent Projects Near {town.name}</h3>
-              </div>
-              <Link to="/gallery" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all">
-                View Full Gallery <ArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="text-center mb-16">
+              <span className="eyebrow mb-4 block">Regional Network</span>
+              <h2 className="text-3xl font-heading font-bold text-foreground">Also Defending These Mountain Towns</h2>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projectDetails
-                .filter(p => p.location.includes(town.name) || p.county === town.county)
-                .slice(0, 3)
-                .map((project, i) => (
-                  <Link 
-                    key={project.slug} 
-                    to={`/projects/${project.slug}`}
-                    className="group relative aspect-[4/3] overflow-hidden border border-border"
-                  >
-                    <img 
-                      src={project.heroImage} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
-                    <div className="absolute bottom-5 left-5 right-5">
-                      <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-1">
-                        <Camera className="w-3 h-3" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest">{project.type}</span>
-                      </div>
-                      <h4 className="text-white font-heading font-bold text-lg leading-tight">{project.title}</h4>
-                    </div>
-                  </Link>
-                ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 8. Service area / nearby communities */}
-        <section className="section-padding bg-secondary/10">
-          <div className="container-tight">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-8 text-center">
-              Nearby Service Areas in {town.county}
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {otherTowns.map((t) => (
-                <Link
-                  key={t.slug}
+                <Link 
+                  key={t.slug} 
                   to={`/service-areas/${t.slug}`}
-                  className="bg-card border border-border rounded-sm p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all"
+                  className="group bg-card border border-border p-6 hover:border-primary/30 transition-all text-center"
                 >
-                  <MapPin className="w-5 h-5 text-primary mx-auto mb-2" />
-                  <span className="font-heading font-semibold text-foreground text-sm">{t.name}</span>
-                  <p className="text-muted-foreground text-[10px] mt-1 uppercase tracking-wider">{t.county}</p>
+                  <MapPin className="w-5 h-5 text-primary mx-auto mb-3 opacity-50 group-hover:opacity-100" />
+                  <span className="font-heading font-bold text-foreground group-hover:text-primary block">{t.name}</span>
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-widest">{t.county}</span>
                 </Link>
               ))}
             </div>
-            <div className="text-center mt-8">
-              <Link to="/service-areas" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px]">
-                View All Service Areas <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
           </div>
         </section>
 
-        {/* Final Conversion Pathway — High Visual, High Impact */}
+        {/* 9. Final Strategic CTA — High Conversion focus */}
         <section className="py-24 bg-primary text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          
           <div className="container-tight relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] mb-4 block">Ready to Begin?</span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-[0.95]">
-                  Start Your <br />
-                  <span className="italic text-[hsl(var(--highland-gold))]">{town.name} Project.</span>
-                </h2>
-                <p className="text-xl text-white/80 leading-relaxed mb-10 font-body">
-                  Whether you need a specialized mountain roof assessment or you're planning a significant residential addition, our {town.name} division is ready to discuss your scope and timing.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:scale-105 transition-all shadow-2xl">
-                    Request an Assessment <ArrowRight className="w-5 h-5" />
-                  </Link>
-                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all">
-                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
-                  </a>
-                </div>
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-16 text-center max-w-4xl mx-auto">
+              <span className="eyebrow mb-6 block text-[hsl(var(--highland-gold))] tracking-[0.2em]">{town.name} Project Activation</span>
+              <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">
+                Secure your {town.name} <br className="hidden md:block" /> property today.
+              </h2>
+              <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 font-body leading-relaxed">
+                Whether you're planning a custom home addition or need an authority-grade roof replacement, our local crews are ready to deploy.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-lg px-12 py-6 rounded-none inline-flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-2xl min-w-[300px] justify-center">
+                  Request {town.name} Assessment <ArrowRight className="w-5 h-5" />
+                </Link>
+                <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[260px] justify-center group">
+                  <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
+                </a>
               </div>
-              <div className="relative hidden lg:block">
-                <div className="bg-white/5 border border-white/10 p-12 backdrop-blur-sm">
-                  <h4 className="text-xl font-heading font-bold mb-6 flex items-center gap-3">
-                    <Shield className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
-                    The Highlander Standard
-                  </h4>
-                  <ul className="space-y-6">
-                    {[
-                      { title: "Rapid Response", desc: "Local {town.name} project advisors reply personally." },
-                      { title: "Mountain Expertise", desc: "Materials and engineering rated for {town.elevation}." },
-                      { title: "Licensed & Insured", desc: "Full GC licensing for both roofing and construction." }
-                    ].map((item, i) => (
-                      <li key={i} className="flex gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] shrink-0 mt-2" />
-                        <div>
-                          <p className="font-heading font-bold text-sm uppercase tracking-wide mb-1">{item.title.replace('{town.name}', town.name)}</p>
-                          <p className="text-white/60 text-sm font-body">{item.desc.replace('{town.elevation}', town.elevation)}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+              
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-12 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <BadgeCheck className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-sm font-bold uppercase tracking-wider text-white/70">GAF Master Elite</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <BadgeCheck className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-sm font-bold uppercase tracking-wider text-white/70">Licensed GC</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <BadgeCheck className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-sm font-bold uppercase tracking-wider text-white/70">Fully Insured</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Final CTA Form */}
+        
         <InspectionForm />
       </main>
       <Footer />
