@@ -154,6 +154,42 @@ export const counties: CountyData[] = [
     housingContext: "Cherokee County features a blend of traditional residential homes, seasonal cabins, and a growing influx of retirees building custom mountain retreats.",
     climateRealities: "Western humidity and valley wind patterns demand durable materials and high-quality flashing at all structural transitions."
   }
+  },
+  {
+    slug: "madison-county",
+    name: "Madison County",
+    description: "Rugged and authentic. We serve Madison County's ridgetop farms and historic riverside towns with specialized roofing and structural construction.",
+    towns: ["Marshall", "Mars Hill"],
+    metaTitle: "Roofing & Construction Services in Madison County, NC | Highlander Roofing",
+    metaDescription: "Professional roofing and construction across Madison County, NC. Serving Marshall and Mars Hill with rugged, reliable mountain service.",
+    heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000",
+    facts: [
+      { label: "Dispatch", value: "Madison Hub" },
+      { label: "Top Material", value: "Metal Roofing" },
+      { label: "Focus", value: "Historic + Ridgetop" },
+      { label: "Status", value: "Active Service" }
+    ],
+    housingContext: "Madison County is known for its historic riverfront architecture in Marshall and expansive, high-elevation agricultural and residential ridgetops.",
+    climateRealities: "Significant ridgetop wind exposure and winter icing events require commercial-grade flashing and heavy-duty metal roofing systems."
+  },
+  {
+    slug: "clay-county",
+    name: "Clay County",
+    description: "Serving Hayesville and the Lake Chatuge area with premium roofing and lakefront residential improvements.",
+    towns: ["Hayesville"],
+    metaTitle: "Roofing & Construction Services in Clay County, NC | Highlander Roofing",
+    metaDescription: "Expert roofing and construction for Clay County, NC. Serving Hayesville and Lake Chatuge with durable, high-end mountain systems.",
+    heroImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000",
+    facts: [
+      { label: "Regional Hub", value: "Hayesville" },
+      { label: "Specialty", value: "Lakefront Life" },
+      { label: "Response", value: "Priority Support" },
+      { label: "Rating", value: "5.0/5 Stars" }
+    ],
+    housingContext: "Clay County centers on high-end lakefront residences, vacation rentals, and stable rural communities around Hayesville.",
+    climateRealities: "Lake-effect humidity and seasonal storms across the Chatuge basin demand moisture-resistant materials and superior ventilation."
+  }
 ];
 
 export const getCountyBySlug = (slug: string) => counties.find(c => c.slug === slug);
+
