@@ -238,16 +238,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ].slice(0, 3),
     faqs: [
       {
-        question: "Do older Waynesville homes need extra decking repair during reroofing?",
-        answer: "Often, yes. Older homes in Waynesville can hide soft decking, outdated ventilation, or flashing details that need correction once the roof is opened up. We inspect and document those conditions as part of the replacement process.",
+        question: "How do you handle historic roofing requirements in Waynesville?",
+        answer: "We help homeowners select materials and colors that respect the historic district's character while modernizing the ventilation and underlayment systems to meet current mountain weather standards.",
       },
       {
-        question: "What roofing material fits Waynesville's weather best?",
-        answer: "Dimensional shingles work very well for many homes, while metal is a strong fit for owners prioritizing lifespan and snow shedding. The right answer depends on roof pitch, exposure, and budget.",
+        question: "Why is attic ventilation critical for Waynesville homes?",
+        answer: "Waynesville's winter freeze-thaw cycles can cause ice damming on poorly ventilated roofs. We optimize airflow during every project to protect your roof deck and reduce heating costs.",
       },
       {
-        question: "Can you match the look of a historic Waynesville home?",
-        answer: "Yes. We help homeowners choose profiles and colors that protect the home without making it look out of character with the neighborhood or original design.",
+        question: "Can you manage whole-home additions in Haywood County?",
+        answer: "Yes. From design and layouts to final framing, we manage significant home additions and footprint expansions for established Waynesville residential properties.",
       },
     ],
   },
