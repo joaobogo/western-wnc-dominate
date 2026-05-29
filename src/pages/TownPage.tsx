@@ -121,12 +121,12 @@ const TownPage = () => {
                   <span className="text-[hsl(var(--highland-gold))]">{town.name} Peaks.</span>
                 </h1>
 
-                <p className="text-lg md:text-2xl text-white/95 mb-10 max-w-2xl leading-relaxed font-body font-medium drop-shadow-md">
+                <p className="text-lg md:text-2xl text-white/95 mb-10 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
                   Premium roofing authority and residential construction for {town.name} homeowners. We combine hometown standards with master-class craftsmanship built for the actual physics of the WNC plateau.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
-                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[280px]">
+                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[300px]">
                     Request a {town.name} Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                   <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-xl min-w-[240px]">
