@@ -384,6 +384,12 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Historic downtown residential reroof",
         summary: "Traditional Hendersonville architecture requires careful attention to attic ventilation and chimney flashing to ensure another 30+ years of performance.",
         proof: "Oversized ridge vents and custom step-flashing detailing",
+        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Age-in-place exterior modernization",
+        summary: "Phased exterior renovation including deck safety upgrades and low-maintenance siding for a long-term Hendersonville resident.",
+        proof: "Composite decking, vinyl cedar-shake siding, and accessible ramp integration",
       },
     ],
     faqs: [
