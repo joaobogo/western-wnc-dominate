@@ -19,24 +19,24 @@ export default {
       },
       fontSize: {
         /* Display scale — hero & statement moments */
-        'display-xl': ['clamp(3rem, 6vw + 1rem, 5.5rem)', { lineHeight: '1.04', letterSpacing: '-0.03em', fontWeight: '700' }],
-        'display-lg': ['clamp(2.5rem, 5vw + 0.5rem, 4.25rem)', { lineHeight: '1.06', letterSpacing: '-0.025em', fontWeight: '700' }],
-        'display': ['clamp(2rem, 4vw + 0.5rem, 3.25rem)', { lineHeight: '1.08', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-xl': ['clamp(3rem, 7vw + 1rem, 6rem)', { lineHeight: '1.02', letterSpacing: '-0.035em', fontWeight: '700' }],
+        'display-lg': ['clamp(2.5rem, 6vw + 0.5rem, 4.5rem)', { lineHeight: '1.04', letterSpacing: '-0.03em', fontWeight: '700' }],
+        'display': ['clamp(2.125rem, 5vw + 0.5rem, 3.5rem)', { lineHeight: '1.06', letterSpacing: '-0.025em', fontWeight: '700' }],
         /* Section headings */
-        'heading-xl': ['clamp(1.75rem, 3vw + 0.25rem, 2.75rem)', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
-        'heading-lg': ['clamp(1.5rem, 2.5vw + 0.25rem, 2.25rem)', { lineHeight: '1.12', letterSpacing: '-0.015em', fontWeight: '700' }],
-        'heading': ['clamp(1.25rem, 2vw + 0.25rem, 1.75rem)', { lineHeight: '1.15', letterSpacing: '-0.01em', fontWeight: '600' }],
-        'heading-sm': ['clamp(1.125rem, 1.5vw + 0.125rem, 1.375rem)', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '600' }],
-        /* Body scale */
-        'body-xl': ['1.375rem', { lineHeight: '1.7', letterSpacing: '0.01em' }],
-        'body-lg': ['1.25rem', { lineHeight: '1.75', letterSpacing: '0.015em' }],
-        'body': ['1.125rem', { lineHeight: '1.75', letterSpacing: '0.015em' }],
-        'body-sm': ['1rem', { lineHeight: '1.7', letterSpacing: '0.02em' }],
+        'heading-xl': ['clamp(1.875rem, 3.5vw + 0.25rem, 3rem)', { lineHeight: '1.08', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'heading-lg': ['clamp(1.625rem, 3vw + 0.25rem, 2.5rem)', { lineHeight: '1.1', letterSpacing: '-0.015em', fontWeight: '700' }],
+        'heading': ['clamp(1.375rem, 2.5vw + 0.25rem, 2rem)', { lineHeight: '1.12', letterSpacing: '-0.01em', fontWeight: '600' }],
+        'heading-sm': ['clamp(1.25rem, 2vw + 0.125rem, 1.5rem)', { lineHeight: '1.15', letterSpacing: '-0.01em', fontWeight: '600' }],
+        /* Body scale — enlarged for older ICPs */
+        'body-xl': ['clamp(1.25rem, 1.5vw, 1.5rem)', { lineHeight: '1.65', letterSpacing: '0.01em' }],
+        'body-lg': ['clamp(1.125rem, 1.25vw, 1.375rem)', { lineHeight: '1.7', letterSpacing: '0.015em' }],
+        'body': ['clamp(1.0625rem, 1vw, 1.25rem)', { lineHeight: '1.75', letterSpacing: '0.015em' }],
+        'body-sm': ['clamp(1rem, 0.9vw, 1.125rem)', { lineHeight: '1.7', letterSpacing: '0.02em' }],
         /* Utility scale */
-        'label': ['0.875rem', { lineHeight: '1.4', letterSpacing: '0.06em', fontWeight: '600' }],
-        'eyebrow-size': ['0.75rem', { lineHeight: '1.3', letterSpacing: '0.3em', fontWeight: '700' }],
-        'stat': ['clamp(2.5rem, 5vw, 4rem)', { lineHeight: '1', letterSpacing: '-0.03em', fontWeight: '700' }],
-        'stat-sm': ['clamp(1.75rem, 3vw, 2.5rem)', { lineHeight: '1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'label': ['0.9375rem', { lineHeight: '1.4', letterSpacing: '0.06em', fontWeight: '600' }],
+        'eyebrow-size': ['0.8125rem', { lineHeight: '1.3', letterSpacing: '0.3em', fontWeight: '700' }],
+        'stat': ['clamp(2.75rem, 6vw, 4.5rem)', { lineHeight: '1', letterSpacing: '-0.035em', fontWeight: '700' }],
+        'stat-sm': ['clamp(2rem, 4vw, 2.75rem)', { lineHeight: '1', letterSpacing: '-0.025em', fontWeight: '700' }],
       },
       colors: {
         border: "hsl(var(--border))",

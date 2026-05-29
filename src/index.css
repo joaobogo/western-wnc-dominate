@@ -28,7 +28,7 @@
     --muted-foreground: 210 10% 38%;
 
     /* Highland gold — richer, more saturated */
-    --accent: 38 75% 52%;
+    --accent: 38 90% 55%;
     --accent-foreground: 210 20% 8%;
 
     --destructive: 0 72% 51%;
@@ -159,8 +159,8 @@
      Generous line-height, comfortable measure
      ────────────────────────────────────── */
   p {
-    @apply font-body text-foreground/85;
-    max-width: 68ch; /* Optimal reading measure */
+    @apply font-body text-foreground/95;
+    max-width: 65ch; /* Optimal reading measure */
     font-size: 1.125rem;
   }
   p + p {
