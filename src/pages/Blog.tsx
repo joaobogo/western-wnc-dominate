@@ -433,58 +433,67 @@ const Blog = () => {
                     viewport={{ once: true }}
                   >
                     <Link to={`/blog/${filtered[0].slug}`} className="group block card-premium overflow-hidden">
-                      <div className="grid md:grid-cols-12 gap-0">
-                        <div className="md:col-span-5 bg-gradient-to-br from-primary/8 to-accent/5 p-6 md:p-8 flex items-center">
-                          <div className="w-full text-center md:text-left">
-                            <span className="text-[9px] font-body font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-primary/10 text-primary inline-block mb-3">
-                              {filtered[0].category}
-                            </span>
-                            <h3 className="font-heading font-bold text-foreground text-xl md:text-2xl mb-3 group-hover:text-primary transition-colors leading-snug">
-                              {filtered[0].title}
-                            </h3>
-                            <div className="flex items-center justify-center md:justify-start gap-3 text-xs text-muted-foreground">
-                              <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {filtered[0].readTime}</span>
-                              {filtered[0].town && <span className="flex items-center gap-1"><Mountain className="w-3 h-3" /> {filtered[0].town}</span>}
-                            </div>
-                          </div>
+                      <div className="grid md:grid-cols-12 gap-0 min-h-[300px]">
+                        <div className="md:col-span-5 h-64 md:h-auto overflow-hidden">
+                          <img 
+                            src={filtered[0].image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000"} 
+                            alt={filtered[0].title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
                         </div>
-                        <div className="md:col-span-7 p-6 md:p-8">
-                          <p className="text-muted-foreground text-sm leading-relaxed mb-5">{filtered[0].excerpt}</p>
-                          <span className="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm group-hover:gap-3 transition-all">
-                            Read Full Article <ArrowRight className="w-4 h-4" />
+                        <div className="md:col-span-7 p-6 md:p-8 flex flex-col justify-center bg-card">
+                          <span className="text-[9px] font-body font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-primary/10 text-primary inline-block mb-3 w-fit">
+                            {filtered[0].category}
                           </span>
+                          <h3 className="font-heading font-bold text-foreground text-xl md:text-3xl mb-4 group-hover:text-primary transition-colors leading-snug">
+                            {filtered[0].title}
+                          </h3>
+                          <p className="text-muted-foreground text-base mb-6 line-clamp-3 leading-relaxed">
+                            {filtered[0].excerpt}
+                          </p>
+                          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {filtered[0].readTime}</span>
+                            <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {filtered[0].date}</span>
+                            {filtered[0].town && <span className="flex items-center gap-1.5"><Mountain className="w-3.5 h-3.5" /> {filtered[0].town}</span>}
+                          </div>
                         </div>
                       </div>
                     </Link>
                   </motion.div>
                 )}
 
-                {/* Remaining articles */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {/* Subgrid for remaining articles */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filtered.slice(1).map((post, i) => (
                     <motion.div
                       key={post.slug}
                       initial={{ opacity: 0, y: 16 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.04, duration: 0.4 }}
+                      transition={{ delay: i * 0.05 }}
                     >
-                      <Link to={`/blog/${post.slug}`} className="group block card-premium overflow-hidden h-full">
-                        <div className="p-5 md:p-6 flex flex-col h-full">
-                          <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                            <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm bg-primary/8 text-primary">
-                              {post.category}
-                            </span>
-                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
-                            {post.town && <span className="flex items-center gap-1"><Mountain className="w-3 h-3" /> {post.town}</span>}
-                          </div>
-                          <h3 className="font-heading font-semibold text-foreground text-base mb-2 group-hover:text-primary transition-colors leading-snug line-clamp-2">
+                      <Link to={`/blog/${post.slug}`} className="group block h-full card-premium overflow-hidden flex flex-col">
+                        <div className="aspect-[16/10] overflow-hidden">
+                          <img 
+                            src={post.image || "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800"} 
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                        </div>
+                        <div className="p-6 flex-1 flex flex-col bg-card">
+                          <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 bg-primary/10 text-primary mb-3 w-fit">
+                            {post.category}
+                          </span>
+                          <h3 className="font-heading font-bold text-foreground text-lg mb-3 group-hover:text-primary transition-colors leading-tight">
                             {post.title}
                           </h3>
-                          <p className="text-muted-foreground text-sm line-clamp-3 mb-4 flex-grow leading-relaxed">{post.excerpt}</p>
-                          <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
-                            Read Article <ArrowRight className="w-3.5 h-3.5" />
-                          </span>
+                          <p className="text-muted-foreground text-[13px] line-clamp-2 mb-5 leading-relaxed font-body">
+                            {post.excerpt}
+                          </p>
+                          <div className="mt-auto pt-4 border-t border-border flex items-center justify-between text-[11px] text-muted-foreground font-body">
+                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                            <span className="font-semibold text-primary group-hover:gap-1.5 transition-all flex items-center gap-1 uppercase tracking-wider text-[10px]">Read More <ArrowRight className="w-3 h-3" /></span>
+                          </div>
                         </div>
                       </Link>
                     </motion.div>
