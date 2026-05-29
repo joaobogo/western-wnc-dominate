@@ -165,7 +165,7 @@ const InspectionForm = () => {
     );
   }
 
-  const inputClasses = "w-full px-5 py-5 md:py-6 rounded-none text-white text-[18px] font-body placeholder:text-white/30 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.03]";
+  const inputClasses = "w-full px-5 py-5 md:py-6 rounded-none text-white text-[19px] md:text-[21px] font-body placeholder:text-white/30 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.05] border border-white/10";
   const labelClasses = "block text-[14px] md:text-[15px] font-bold text-white/80 mb-3 font-body uppercase tracking-[0.16em]";
   const hintClasses = "text-dark-section-foreground/45 text-[12px] md:text-[13px] font-body mt-2.5 leading-relaxed";
 
@@ -195,7 +195,7 @@ const InspectionForm = () => {
                 </h2>
               </HeadingReveal>
               <ScrollReveal variant="rise-subtle" delay={0.25}>
-                <p className="text-white/85 font-body text-body-lg md:text-body-xl leading-relaxed mb-10 font-bold drop-shadow-sm">
+                <p className="text-white font-body text-xl md:text-2xl leading-relaxed mb-10 font-bold drop-shadow-md">
                   Share a few details about your property and what you're looking to accomplish. 
                   A Highlander advisor — someone who knows these mountains, these materials, and these 
                   building conditions — will review everything and follow up personally to discuss 
@@ -220,7 +220,7 @@ const InspectionForm = () => {
                     <div className="w-8 h-8 rounded-none bg-dark-section-foreground/[0.04] flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
                     </div>
-                    <span className="text-white/90 text-body font-bold text-lg">{item.text}</span>
+                    <span className="text-white text-body font-bold text-lg md:text-xl">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
