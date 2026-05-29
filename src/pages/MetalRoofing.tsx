@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Shield, Wind, Snowflake } from "lucide-react";
+import metalImg from "@/assets/gallery/metal-005.webp";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
