@@ -100,14 +100,14 @@ const Blog = () => {
                 >
                   <div className="flex items-center gap-5 mb-8">
                     <div className="flex flex-col">
-                      <span className="text-[12px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
-                      <span className="text-[8px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em]">Knowledge Base</span>
+                      <span className="text-[15px] md:text-[17px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
+                      <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em]">Knowledge Base</span>
                     </div>
                     <div className="h-px w-12 bg-white/20" />
                   </div>
                   <div className="flex items-center gap-3 mb-5">
                     <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Insights & Resources</span>
+                    <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Insights & Resources</span>
                   </div>
                   <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[1.06] tracking-tight">
                     Mountain-Specific<br />
@@ -127,7 +127,7 @@ const Blog = () => {
                       placeholder="Search articles..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-11 pr-4 py-3 bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.1)] text-[hsl(var(--dark-section-foreground))] placeholder:text-[hsl(var(--dark-section-foreground)/0.3)] text-sm font-body focus:outline-none focus:border-[hsl(var(--highland-gold)/0.3)] transition-colors rounded-sm"
+                      className="w-full pl-11 pr-4 py-4 bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground))] placeholder:text-[hsl(var(--dark-section-foreground)/0.45)] text-base font-body focus:outline-none focus:border-[hsl(var(--highland-gold)/0.4)] transition-colors rounded-sm shadow-inner"
                     />
                   </div>
                 </motion.div>

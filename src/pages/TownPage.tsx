@@ -111,8 +111,8 @@ const TownPage = () => {
             >
               <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
               <div className="flex flex-col">
-                <span className="text-[14px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Roofing & Construction</span>
+                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em] -mt-1">Roofing & Construction</span>
               </div>
             </motion.div>
             <div className="max-w-4xl">
@@ -130,7 +130,7 @@ const TownPage = () => {
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 md:mb-8 text-primary-foreground tracking-tightest leading-[1.1] md:leading-[0.92] drop-shadow-sm">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-bold mb-8 md:mb-12 text-primary-foreground tracking-tightest leading-[1.0] md:leading-[0.9] drop-shadow-md">
                   Built for the <br />
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{town.name} Peaks.</span>
                 </h1>
