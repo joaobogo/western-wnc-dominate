@@ -98,11 +98,11 @@ const RoofRepair = () => {
       <Header />
       <main>
         {/* ─── HERO ─── */}
-        <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={asphalt003} alt="Roof repair on a residential home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-[hsl(var(--hero-overlay)/0.4)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.15)] to-[hsl(var(--hero-overlay)/0.3)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
@@ -130,7 +130,7 @@ const RoofRepair = () => {
                 </motion.h1>
               </div>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
                 Targeted, warrantied roof repairs across Western North Carolina. We diagnose the real cause, fix it right the first time, and document everything — so you know exactly what was done and why.
               </motion.p>
 
