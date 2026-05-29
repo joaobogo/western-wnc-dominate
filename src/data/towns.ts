@@ -177,18 +177,17 @@ export const towns: TownData[] = [
     elevation: "2,041 ft",
     description: "A historic village where precision matters. We provide preservation-sensitive roofing and construction for Dillsboro's unique cottages and tourism properties.",
     features: ["Historic village care", "Precision flashing", "Tourism-ready cleanup", "Mountain cottage charm"],
-    metaTitle: "Roofing & Construction in Dillsboro, NC | Highlander Roofing",
-    metaDescription: "Preservation-sensitive roofing and construction for Dillsboro. Expert care for historic mountain cottages and village properties.",
-    housingProfile: "Historic village cottages, artisan shops, and riverfront residences.",
-    climateExposure: "River-proximate moisture and seasonal flooding risks for low-lying exterior structures.",
-    localVibe: "A walkable, historic artisan community where the aesthetic impact of every project is carefully considered.",
-    constructionContext: "Preservation-focused renovations and small-scale additions that must integrate with 100-year-old mountain architecture.",
-    serviceDemandMix: ["Designer shingle systems", "Artisan porch detailing", "Historic exterior repairs", "Gutter copper accents"],
-    styleTendency: "Quaint Appalachian village style with a focus on charm and historic accuracy.",
+    metaTitle: "Roofing & Construction in Dillsboro, NC | Jackson County Historic Experts",
+    metaDescription: "Preservation-sensitive roofing and construction for Dillsboro. Expert care for historic mountain cottages and village properties. Licensed & Insured.",
+    housingProfile: "Historic village cottages, artisan shops, and riverfront residences in Dillsboro.",
+    climateExposure: "River-proximate moisture and valley fog that demands algae-resistant materials and precise flashing.",
+    localVibe: "A walkable, historic artisan community where the aesthetic impact of every project is carefully considered by neighbors and visitors.",
+    constructionContext: "We specialize in preservation-focused renovations and small-scale additions that integrate with 100-year-old mountain architecture.",
+    serviceDemandMix: ["Designer Shingle Systems", "Artisan Porch Detailing", "Historic Exterior Repairs", "Gutter Copper Accents"],
+    styleTendency: "Quaint Appalachian village style with a focus on charm, historic accuracy, and river-resistant structural details.",
     notableNeighborhoods: ["Historic Village Center", "Tuckasegee Riverfront", "Monteith Park area"],
-    marketAuthorityAngle: "Dillsboro projects require a lighter touch and a focus on detail. We ensure our job sites stay tourism-ready while protecting the village's historic character.",
-    heroImage: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2000"
-
+    marketAuthorityAngle: "Dillsboro is a destination. We keep our job sites tourism-ready and our craftsmanship village-compliant to protect Dillsboro's unique mountain character.",
+    heroImage: "https://images.unsplash.com/photo-1518173946687-a4c8a9b749f5?auto=format&fit=crop&q=80&w=2000"
   }
 ];
 
