@@ -516,6 +516,48 @@ const TownPage = () => {
           </div>
         </section>
 
+        {/* Real Proof: Project Showcase Strip */}
+        <section className="py-16 bg-background border-t border-border overflow-hidden">
+          <div className="container-tight">
+            <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-6">
+              <div>
+                <span className="eyebrow mb-2 block">Real Results</span>
+                <h3 className="text-3xl font-heading font-bold">Recent Projects Near {town.name}</h3>
+              </div>
+              <Link to="/gallery" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all">
+                View Full Gallery <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projectDetails
+                .filter(p => p.location.includes(town.name) || p.county === town.county)
+                .slice(0, 3)
+                .map((project, i) => (
+                  <Link 
+                    key={project.slug} 
+                    to={`/projects/${project.slug}`}
+                    className="group relative aspect-[4/3] overflow-hidden border border-border"
+                  >
+                    <img 
+                      src={project.heroImage} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
+                    <div className="absolute bottom-5 left-5 right-5">
+                      <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-1">
+                        <Camera className="w-3 h-3" />
+                        <span className="text-[10px] font-bold uppercase tracking-widest">{project.type}</span>
+                      </div>
+                      <h4 className="text-white font-heading font-bold text-lg leading-tight">{project.title}</h4>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </section>
+
         {/* 8. Service area / nearby communities */}
         <section className="section-padding bg-secondary/10">
           <div className="container-tight">
