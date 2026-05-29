@@ -64,8 +64,8 @@ The best way to know your actual cost is a free inspection. We'll assess your ro
     excerpt: "Comparing the two most popular roofing options for Western North Carolina — cost, durability, and performance at elevation.",
     category: "Materials",
     date: "2026-02-10",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     image: metalBenefitsStock,
+    readTime: "7 min",
     metaTitle: "Metal vs Shingle Roof for WNC Homes | Highlander Roofing",
     metaDescription: "Metal or shingle roof for your Western NC mountain home? Compare cost, durability, and weather performance to make the right choice.",
     content: `Choosing between metal and shingle roofing is one of the biggest decisions WNC homeowners face. Both have real advantages — but mountain climates add factors that don't apply in flatland roofing.
