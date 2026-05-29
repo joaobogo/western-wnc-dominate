@@ -168,16 +168,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Do you handle both residential and commercial roofing in Sylva?",
-        answer: "Yes. Sylva is one of the towns where we regularly serve both homeowners and commercial properties, which means we can handle everything from leak repairs to maintenance programs and full replacements.",
+        question: "Do you handle both historic and commercial roofing in Sylva?",
+        answer: "Yes. Sylva is our strategic hub for both historic home preservation and Jackson County commercial roof maintenance. We coordinate complex schedules to protect both private residents and active business tenants.",
       },
       {
-        question: "Why can roof leaks be harder to diagnose in Sylva?",
-        answer: "The surrounding terrain creates variable wind and rain patterns, so water can move in ways that are not obvious from the stain inside. We inspect the full roof system instead of guessing at the nearest shingle.",
+        question: "Why do Sylva roofs develop more black streaks (algae)?",
+        answer: "The Sylva valley traps morning fog and high humidity. We use algae-resistant shingle systems and optimized ventilation to prevent biological growth and keep your home's historic look pristine.",
       },
       {
-        question: "Can you coordinate work around tenants or business hours in Sylva?",
-        answer: "Absolutely. We build schedules around occupancy needs and access constraints so residential rentals and commercial properties can stay operational during the work.",
+        question: "Can you help with whole-home renovations in Sylva?",
+        answer: "Yes. We specialize in structural modernization, transforming older Jackson County properties into modern living spaces while maintaining their original historic charm and character.",
       },
     ],
   },
