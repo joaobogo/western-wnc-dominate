@@ -119,7 +119,7 @@ const CountyPage = () => {
               <span className="eyebrow mb-4 block">Regional Coverage</span>
               <h2 className="text-4xl font-heading font-bold text-foreground mb-6">Communities We Serve in {county.name}</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-                We provide full roofing and construction services to every corner of {county.name}, with specialized teams for each micro-climate.
+                We provide full roofing, construction, and design services to every corner of {county.name}, with specialized teams for each micro-climate.
               </p>
             </div>
 
@@ -153,27 +153,38 @@ const CountyPage = () => {
         <section className="py-24 bg-secondary/30 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div className="bg-primary p-12 text-white relative overflow-hidden group">
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="bg-primary p-10 text-white relative overflow-hidden group">
                 <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
-                <Home className="w-12 h-12 text-[hsl(var(--highland-gold))] mb-6" />
-                <h3 className="text-3xl font-heading font-bold mb-4 uppercase tracking-tighter">Roofing Division</h3>
-                <p className="text-white/70 mb-8 font-body leading-relaxed">
-                  Specialized in mountain roofing systems designed for the unique weather patterns of {county.name}. From emergency storm repairs to premium Brava synthetic shake installations.
+                <Home className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
+                <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Roofing</h3>
+                <p className="text-white/70 text-sm mb-8 font-body leading-relaxed">
+                  Specialized mountain systems designed for {county.name} weather. Shingle, metal, and premium Brava synthetic installations.
                 </p>
-                <Link to="/roofing" className="inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all">
-                  Explore Roofing Solutions <ArrowRight className="w-4 h-4" />
+                <Link to="/roofing" className="inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm">
+                  Roofing Solutions <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
-              <div className="bg-card border border-border p-12 relative overflow-hidden group">
-                <Hammer className="w-12 h-12 text-primary mb-6" />
-                <h3 className="text-3xl font-heading font-bold mb-4 uppercase tracking-tighter">Construction Division</h3>
-                <p className="text-muted-foreground mb-8 font-body leading-relaxed">
-                  Expanding and enhancing {county.name} properties with engineered home additions, premium outdoor living spaces, and whole-home structural modernization.
+              <div className="bg-card border border-border p-10 relative overflow-hidden group">
+                <Hammer className="w-10 h-10 text-primary mb-6" />
+                <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Construction</h3>
+                <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
+                  Expanding {county.name} homes with engineered additions, premium outdoor living, and structural modernization.
                 </p>
-                <Link to="/construction" className="inline-flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all">
-                  Explore Construction Services <ArrowRight className="w-4 h-4" />
+                <Link to="/construction" className="inline-flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all text-sm">
+                  Construction Services <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="bg-secondary p-10 relative overflow-hidden group border border-border">
+                <Compass className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
+                <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Design Support</h3>
+                <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
+                  Pre-construction planning, layouts, and site-specific guidance to ensure your {county.name} project is built right from the start.
+                </p>
+                <Link to="/layouts-planning" className="inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm">
+                  Planning Services <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
