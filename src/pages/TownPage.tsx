@@ -318,40 +318,48 @@ const TownPage = () => {
               </div>
 
               <div className="flex flex-col h-full group/col">
-                <div className="bg-card p-10 md:p-14 border border-border flex-1 relative overflow-hidden">
+                <div className="bg-card p-8 md:p-12 border border-border flex-1 relative overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
                     alt="Mountain construction craftsmanship"
                     className="absolute inset-0 w-full h-full object-cover opacity-[0.03] group-hover/col:scale-105 transition-transform duration-[3s]"
                   />
                   <div className="relative z-10 h-full flex flex-col">
-                    <div className="flex items-center gap-4 mb-8">
+                    <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 bg-primary/5 flex items-center justify-center border border-primary/10">
                         <Hammer className="w-6 h-6 text-primary" />
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Construction Division</h3>
+                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Residential Construction</h3>
                     </div>
 
-                    <p className="text-muted-foreground text-lg mb-10 leading-relaxed font-body">
-                      {town.constructionContext}
+                    <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed font-body">
+                      {town.constructionContext} We build porches, additions, and outdoor spaces that expand your living footprint.
                     </p>
 
-                    <div className="grid sm:grid-cols-2 gap-4 mb-12">
-                      {constructionServices.map((service) => (
+                    <div className="space-y-3 mb-10">
+                      {[
+                        { title: "Home Additions", href: "/construction/additions", desc: "Master suites, garage apartments, and footprint expansions." },
+                        { title: "Outdoor Living", href: "/construction/outdoor-living", desc: "Custom decks, screened porches, and timber-frame pavilions." },
+                        { title: "Mountain Porches", href: "/construction/outdoor-living", desc: "High-end screened enclosures for the WNC lifestyle." },
+                        { title: "Fire Pits & Flatwork", href: "/construction", desc: "Functional stone spaces and scoped residential concrete." }
+                      ].map((s) => (
                         <Link 
-                          key={service.slug} 
-                          to={service.slug === 'outdoor-living' ? '/construction/outdoor-living' : '/construction'}
-                          className="group/item flex items-center justify-between p-5 bg-secondary/50 border border-border hover:border-primary/30 transition-all duration-300"
+                          key={s.title} 
+                          to={s.href}
+                          className="group/item block p-4 bg-secondary/50 border border-border hover:border-primary/30 transition-all duration-300"
                         >
-                          <span className="font-heading font-bold text-sm tracking-wide text-foreground">{service.title}</span>
-                          <ArrowUpRight className="w-4 h-4 text-primary/30 group-hover/item:text-primary transition-colors" />
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="font-heading font-bold text-sm tracking-wide text-foreground">{s.title}</span>
+                            <ArrowUpRight className="w-4 h-4 text-primary/30 group-hover/item:text-primary transition-colors" />
+                          </div>
+                          <p className="text-[12px] text-muted-foreground leading-tight">{s.desc}</p>
                         </Link>
                       ))}
                     </div>
 
-                    <div className="mt-auto">
-                      <Link to="/layouts-planning" className="inline-flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all uppercase tracking-widest text-[11px] border-b border-primary/20 pb-2">
-                        Design & Planning in {town.name} <ArrowRight className="w-4 h-4" />
+                    <div className="mt-auto pt-6 border-t border-border">
+                      <Link to="/construction" className="inline-flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all uppercase tracking-widest text-[11px]">
+                        View Construction Services <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </div>
