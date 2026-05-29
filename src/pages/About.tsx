@@ -61,8 +61,8 @@ const About = () => {
               alt="Western North Carolina mountains" 
               className="w-full h-full object-cover" 
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.3)] via-[hsl(var(--hero-overlay)/0.1)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.2)] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent" />
             {/* Subtle tartan accent */}
             <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
           </div>
@@ -105,7 +105,7 @@ const About = () => {
                 <span className="text-[hsl(var(--highland-gold))]">Built on Family Integrity.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-body-lg md:text-body-xl text-[hsl(var(--dark-section-foreground)/0.75)] max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-xl md:text-2xl text-[hsl(var(--dark-section-foreground)/0.9)] max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-md">
                 Highlander Roofing & Construction is a family-owned company based in Franklin and Sylva, NC.
                 We protect homes and build spaces across Western North Carolina — with the kind of care,
                 craft, and accountability that only comes from people who live here.
