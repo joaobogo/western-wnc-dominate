@@ -79,7 +79,7 @@ const ConstructionProcess = ({
   const colClass = columns === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section className={`section-padding ${bgClass} ${className}`}>
+    <section className={`section-padding bg-background/50 ${className}`}>
       <div className="container-tight">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
