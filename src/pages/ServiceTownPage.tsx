@@ -55,8 +55,8 @@ const ServiceTownPage = () => {
               alt={`${entry.serviceLabel} in ${town.name}, NC — Highlander roofing and construction`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
             <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
@@ -67,16 +67,16 @@ const ServiceTownPage = () => {
 
           <div className="container-tight relative z-10 pt-32 md:pt-40 pb-20">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="flex items-center gap-2 text-accent mb-3 text-sm">
+              <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-4 text-sm font-body font-bold uppercase tracking-wider">
                 <Link to="/service-areas" className="hover:underline">Service Areas</Link>
                 <span>/</span>
                 <Link to={`/service-areas/${town.slug}`} className="hover:underline">{town.name}</Link>
                 <span>/</span>
-                <span className="text-dark-section-foreground/70">{entry.serviceLabel}</span>
+                <span className="text-white/70">{entry.serviceLabel}</span>
               </div>
-              <div className="flex items-center gap-2 text-accent mb-3">
+              <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-6">
                 <MapPin className="w-4 h-4" />
-                <span className="font-semibold text-sm uppercase tracking-wider">
+                <span className="font-bold text-sm uppercase tracking-[0.2em]">
                   {town.county}, {town.state}
                 </span>
               </div>
@@ -114,7 +114,7 @@ const ServiceTownPage = () => {
                   { label: "Status", value: "Active Division" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/40 font-bold mb-0.5 md:mb-1">{stat.label}</span>
+                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest text-white/60 font-bold mb-0.5 md:mb-1">{stat.label}</span>
                     <span className="text-xs md:text-sm font-heading font-bold text-white uppercase tracking-tight">
                       {stat.value}
                     </span>

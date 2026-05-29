@@ -170,8 +170,8 @@ const ResidentialRoofing = () => {
               className="w-full h-full object-cover"
               loading="eager"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
@@ -195,8 +195,8 @@ const ResidentialRoofing = () => {
                 <div className="inline-flex items-center gap-4">
                   <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
                   <div className="flex flex-col">
-                    <span className="text-[14px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                    <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
+                    <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                    <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -204,12 +204,12 @@ const ResidentialRoofing = () => {
                     <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
                       <Home className="w-3.5 h-3.5 text-primary-foreground" />
                     </div>
-                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">
+                    <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/75">
                       Roofing
                     </span>
                   </Link>
                   <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
+                  <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
                     Residential
                   </span>
                 </div>
