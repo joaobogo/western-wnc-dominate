@@ -138,12 +138,16 @@ const Header = () => {
       {/* ─── Main nav bar ─── */}
       <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-0.5" : "py-1 md:py-1.5"}`}>
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center -ml-4 md:-ml-6">
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className="w-auto transition-all duration-500 max-w-[180px] md:max-w-none"
-            animate={{ height: scrolled ? 150 : 200 }}
+            className="w-auto transition-all duration-500"
+            animate={{ 
+              height: scrolled ? 160 : 220,
+              scale: scrolled ? 0.85 : 1
+            }}
+            style={{ originX: 0, originY: 0.5 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>
@@ -151,6 +155,11 @@ const Header = () => {
         {/* ─── Desktop Navigation ─── */}
         <nav className="hidden lg:flex items-center gap-0.5">
           {/* Division dropdowns */}
+          <Link
+            to="/"
+            className="lg:hidden"
+          />
+
           {divisions.map((div) => (
             <div
               key={div.label}
@@ -315,7 +324,7 @@ const Header = () => {
           </a>
           <Link
             to="/consultation"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] md:text-base px-8 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.12em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] md:text-base px-10 py-5 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.12em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
           >
             <span className="relative z-10">Start a Project</span>
             <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
