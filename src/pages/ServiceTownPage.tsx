@@ -62,7 +62,7 @@ const ServiceTownPage = () => {
                 town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" :
                 "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
               } 
-              alt={`${entry.serviceLabel} in ${town.name}, NC`}
+              alt={`${entry.serviceLabel} in ${town.name}, NC — Highlander roofing and construction`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-transparent" />
