@@ -135,7 +135,7 @@ const ConstructionDivision = () => {
                 <span className="text-[hsl(var(--highland-gold))]">Masterfully Planned.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-xl text-primary-foreground/45 max-w-2xl mb-12 leading-relaxed font-body">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-xl text-primary-foreground max-w-2xl mb-12 leading-relaxed font-body font-medium drop-shadow-sm">
                 From home additions to luxury outdoor living, we combine architectural sensitivity with Western North Carolina's highest construction standards. Licensed, insured, and owner-led.
               </motion.p>
 
