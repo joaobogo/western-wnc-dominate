@@ -80,74 +80,69 @@ const TownPage = () => {
       />
       <Header />
       <main>
-        {/* 1. Localized Hero — Highly Improved with mountain backgrounds */}
-        <section className="relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden">
+        {/* 1. Localized Hero — High Impact, Catch Attention Immediately */}
+        <section className="relative min-h-[90svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img 
               src={town.heroImage} 
               alt={`${town.name}, NC mountain roofing and construction context`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent opacity-20" />
+            {/* Optimized overlays for contrast and readability */}
+            <div className="absolute inset-0 bg-black/40 md:bg-transparent md:bg-gradient-to-r md:from-black/70 md:via-black/30 md:to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
-            
-            {/* Design Datum Lines */}
-            <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
-              <div className="absolute left-[8%] top-0 bottom-0 w-px bg-white/20" />
-              <div className="absolute right-[8%] top-0 bottom-0 w-px bg-white/20" />
-            </div>
-
-            {/* Subtle Bottom Heritage Trim */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.png')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
           </div>
 
-          <div className="container-tight relative z-10 px-6 md:px-10 lg:px-20 py-24">
+          <div className="container-tight relative z-10 px-6 md:px-10 lg:px-20 py-24 w-full">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              className="mb-8 inline-flex items-center gap-4 md:gap-6"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-8 flex items-center gap-4"
             >
-              <div className="h-10 md:h-12 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
+              <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
-                <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1">Regional Division</span>
+                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">Official {town.name} Division</span>
               </div>
             </motion.div>
+
             <div className="max-w-4xl">
               <motion.div 
-                initial={{ opacity: 0, x: -20 }} 
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }} 
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="flex items-center gap-4 text-[hsl(var(--highland-gold))] mb-8">
-                  <div className="flex items-center gap-2 px-3 py-1 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.2)]">
-                    <MapPin className="w-3.5 h-3.5" />
-                    <Link to={`/service-areas/county/${town.county.toLowerCase().replace(' ', '-')}`} className="font-bold text-[11px] md:text-[12px] uppercase tracking-[0.3em] hover:text-white transition-colors">{town.county}</Link>
-                  </div>
-                  <div className="h-px w-12 bg-[hsl(var(--highland-gold)/0.4)]" />
-                  <span className="text-[11px] md:text-[12px] font-bold uppercase tracking-[0.3em] text-white/60">Market Authority</span>
-                </div>
-
-                <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-8 md:mb-12 text-primary-foreground tracking-tightest leading-[0.95] drop-shadow-md">
+                <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.9] drop-shadow-lg">
                   Built for the <br />
-                  <span className="text-[hsl(var(--highland-gold))] italic font-medium">{town.name} Peaks.</span>
+                  <span className="text-[hsl(var(--highland-gold))]">{town.name} Peaks.</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl text-white mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
-                  {town.description}
+                <p className="text-lg md:text-2xl text-white/95 mb-10 max-w-2xl leading-relaxed font-body font-medium drop-shadow-md">
+                  Premium roofing authority and residential construction for {town.name} homeowners. We combine hometown standards with master-class craftsmanship built for the actual physics of the WNC plateau.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-base px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-xl border border-[hsl(var(--highland-gold)/0.4)]">
+                <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-2xl border border-[hsl(var(--highland-gold)/0.4)]">
                     Start a {town.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
-                  <a href="tel:8283979211" className="bg-white/[0.06] backdrop-blur-md border border-white/[0.2] text-primary-foreground font-bold text-[16px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.1] hover:border-white/[0.3] transition-all duration-300 shadow-lg">
-                    <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
+                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-xl">
+                    <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                   </a>
+                </div>
+
+                <div className="mt-12 flex items-center gap-6">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--highland-gold))]" />
+                    <span className="text-[11px] md:text-[12px] font-bold text-white/80 uppercase tracking-widest">Licensed GC</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--highland-gold))]" />
+                    <span className="text-[11px] md:text-[12px] font-bold text-white/80 uppercase tracking-widest">4.9★ Google Rating</span>
+                  </div>
                 </div>
               </motion.div>
             </div>
