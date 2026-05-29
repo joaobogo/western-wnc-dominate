@@ -299,7 +299,7 @@ const TownPage = () => {
                             <span className="font-heading font-bold text-sm tracking-wide">{s.title}</span>
                             <ArrowUpRight className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover/item:text-[hsl(var(--highland-gold))] transition-colors" />
                           </div>
-                          <p className="text-[12px] text-white/50 leading-tight">{s.desc}</p>
+                          <p className="text-[12px] text-white/50 leading-tight mt-1">{s.desc}</p>
                         </Link>
                       ))}
                     </div>
@@ -314,40 +314,46 @@ const TownPage = () => {
               </div>
 
               <div className="flex flex-col h-full group/col">
-                <div className="bg-card p-8 md:p-12 border border-border flex-1 relative overflow-hidden">
+                <div className="bg-white border border-border p-8 md:p-12 flex-1 relative overflow-hidden shadow-sm">
                   <img 
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
-                    alt="Mountain construction craftsmanship"
-                    className="absolute inset-0 w-full h-full object-cover opacity-[0.03] group-hover/col:scale-105 transition-transform duration-[3s]"
+                    src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Mountain construction and additions"
+                    className="absolute inset-0 w-full h-full object-cover opacity-5 group-hover/col:scale-105 transition-transform duration-[3s]"
                   />
+                  
                   <div className="relative z-10 h-full flex flex-col">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 bg-primary/5 flex items-center justify-center border border-primary/10">
                         <Hammer className="w-6 h-6 text-primary" />
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Residential Construction</h3>
+                      <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground uppercase tracking-tightest">Construction & Design</h3>
                     </div>
 
                     <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed font-body">
-                      {town.constructionContext} We build porches, additions, and outdoor spaces that expand your living footprint.
+                      {town.constructionContext} From initial layouts and planning to final framing and interior finish.
                     </p>
 
                     <div className="space-y-3 mb-10">
                       {[
-                        { title: "Home Additions", href: "/construction/additions", desc: "Master suites, garage apartments, and footprint expansions." },
-                        { title: "Outdoor Living", href: "/construction/outdoor-living", desc: "Custom decks, screened porches, and timber-frame pavilions." },
-                        { title: "Mountain Porches", href: "/construction/outdoor-living", desc: "High-end screened enclosures for the WNC lifestyle." },
-                        { title: "Fire Pits & Flatwork", href: "/construction", desc: "Functional stone spaces and scoped residential concrete." }
+                        { title: "Home Additions", href: "/construction/additions", desc: "Suites, second stories, and footprint expansions." },
+                        { title: "Outdoor Living", href: "/construction/outdoor-living", desc: "Custom decks, screened porches, and pavilions." },
+                        { title: "Kitchen & Bath", href: "/construction/renovations", desc: "Whole-home interior transformations." },
+                        { title: "Design & Planning", href: "/layouts-planning", desc: "Pre-construction layouts and project scoping." }
                       ].map((s) => (
                         <Link 
                           key={s.title} 
                           to={s.href}
-                          className="group/item block p-4 bg-secondary/50 border border-border hover:border-primary/30 transition-all duration-300"
+                          className="group/item block p-4 bg-secondary/50 border border-border hover:bg-white hover:border-primary/30 transition-all duration-300"
                         >
                           <div className="flex items-center justify-between mb-1">
                             <span className="font-heading font-bold text-sm tracking-wide text-foreground">{s.title}</span>
                             <ArrowUpRight className="w-4 h-4 text-primary/30 group-hover/item:text-primary transition-colors" />
                           </div>
+                          <p className="text-[12px] text-muted-foreground leading-tight mt-1">{s.desc}</p>
+                        </Link>
+                      ))}
+                    </div>
+
                           <p className="text-[12px] text-muted-foreground leading-tight">{s.desc}</p>
                         </Link>
                       ))}
