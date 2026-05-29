@@ -121,7 +121,7 @@ const Header = () => {
   }, [mobileOpen]);
 
   useMotionValueEvent(scrollY, "change", (y) => {
-    setScrolled(y > 50);
+    setScrolled(y > 30);
     if (y > lastYRef.current && y > 200) setHidden(true);
     else setHidden(false);
     lastYRef.current = y;
@@ -151,7 +151,7 @@ const Header = () => {
             src={logo}
             alt="Highlander Roofing & Construction"
             className="w-auto transition-all duration-500"
-            animate={{ height: scrolled ? 100 : 140 }}
+            animate={{ height: scrolled ? 120 : 160 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>
