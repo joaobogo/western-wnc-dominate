@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-none text-[18px] font-bold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 font-body uppercase tracking-[0.14em] shadow-sm",
+  "inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-none text-[20px] font-bold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 font-body uppercase tracking-[0.16em] shadow-md border-2 border-transparent",
   {
     variants: {
       variant: {
@@ -16,7 +16,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline font-bold tracking-normal",
         /** Highland gold gradient — primary conversion CTA */
-        highland: "cta-gradient text-accent-foreground font-bold tracking-[0.08em] btn-primary-interactive relative overflow-hidden shadow-[0_8px_25px_-4px_hsl(var(--highland-gold)/0.4)] hover:shadow-[0_12px_30px_-4px_hsl(var(--highland-gold)/0.5)] border border-[hsl(var(--highland-gold)/0.3)]",
+        highland: "cta-gradient text-accent-foreground font-extrabold tracking-[0.1em] btn-primary-interactive relative overflow-hidden shadow-[0_10px_30px_-5px_hsl(var(--highland-gold)/0.5)] hover:shadow-[0_15px_35px_-5px_hsl(var(--highland-gold)/0.6)] border border-[hsl(var(--highland-gold)/0.4)] hover:scale-[1.02] active:scale-[0.98]",
         /** Gold outline — secondary premium action */
         gold: "border-2 border-[hsl(var(--highland-gold)/0.5)] text-[hsl(var(--highland-gold))] bg-transparent hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold)/0.8)] font-bold btn-ghost-interactive shadow-sm",
         /** Ghost premium — dark section secondary */
@@ -25,10 +25,10 @@ const buttonVariants = cva(
         heritage: "bg-primary text-primary-foreground font-bold hover:bg-primary/90 btn-ghost-interactive shadow-lg",
       },
       size: {
-        default: "h-14 px-10 text-[18px] md:text-[20px]",
-        sm: "h-12 px-8 text-[16px] md:text-[17px]",
-        lg: "h-18 px-12 text-[20px] md:text-[22px] tracking-[0.1em]",
-        xl: "h-22 px-14 md:px-20 text-[24px] md:text-[26px] tracking-[0.12em]",
+        default: "h-16 px-12 text-[20px] md:text-[22px]",
+        sm: "h-14 px-10 text-[18px] md:text-[19px]",
+        lg: "h-20 px-14 text-[22px] md:text-[24px] tracking-[0.12em]",
+        xl: "h-24 px-16 md:px-24 text-[26px] md:text-[28px] tracking-[0.14em]",
         icon: "h-12 w-12",
       },
     },
