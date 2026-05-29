@@ -136,9 +136,9 @@ const Footer = () => {
               </Link>
               <a
                 href="tel:8283979211"
-                className="bg-primary-foreground/10 border-2 border-primary-foreground/20 text-primary-foreground font-bold text-[14px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-primary-foreground/15 hover:border-primary-foreground/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
+                className="bg-secondary border-2 border-border text-foreground font-bold text-[14px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-secondary/80 hover:border-primary/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
               >
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                <Phone className="w-4 h-4 text-primary" />
                 (828) 397-9211
               </a>
             </div>
