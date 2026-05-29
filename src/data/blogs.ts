@@ -602,6 +602,82 @@ Highlander Roofing prioritizes emergency calls. We aim for same-day assessment w
 ## Call Now: (828) 397-9211`,
   },
   {
+    slug: "mountain-roofing-maintenance-checklist",
+    title: "The Ultimate Mountain Roofing Maintenance Checklist",
+    excerpt: "Living at elevation means different wear patterns. Use this checklist to stay ahead of mountain-specific roofing issues.",
+    category: "Maintenance",
+    date: "2026-04-05",
+    image: "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000",
+    readTime: "5 min",
+    metaTitle: "Mountain Roof Maintenance Checklist | Highlander Roofing",
+    metaDescription: "A comprehensive maintenance checklist for WNC mountain roofs. Learn how to spot issues early and extend your roof's life.",
+    content: `Mountain roofing isn't a 'set it and forget it' system. The higher you live, the more active you need to be with maintenance.
+
+## Seasonal Inspections are Non-Negotiable
+In Western NC, we recommend a thorough check twice a year — once in late fall before the first freeze, and once in early spring after the last snow melt.
+
+## The Mountain Checklist:
+- **Ridge Cap Integrity:** Wind tunneling between ridges can lift ridge caps. Check for loose or cracked pieces.
+- **Flashing at Gables:** The transition between your roof and vertical walls is where most mountain leaks start. Ensure the sealant is pliable, not cracked.
+- **Gutter Pitch:** Heavy snow can slightly bend gutter hangers. Verify that water still flows toward the downspouts.
+- **Organic Growth:** Moss and algae thrive in shaded mountain valleys. If you see green, it's time for a professional cleaning.
+- **Debris in Valleys:** Pine needles and leaves trap moisture against shingles. Clear these to prevent rot.
+
+## Professional Eyes
+A ground-level check is great, but a professional roofer can spot 'stress fractures' in shingles that a homeowner might miss. Regular maintenance adds 5-10 years to a roof's life.`
+  },
+  {
+    slug: "wnc-construction-permitting-guide",
+    title: "Navigating WNC Construction Permits: Macon, Jackson, and Beyond",
+    excerpt: "Don't let paperwork stall your project. A guide to permitting for additions and renovations in Western North Carolina.",
+    category: "Construction",
+    date: "2026-04-12",
+    image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000",
+    readTime: "7 min",
+    metaTitle: "WNC Construction Permitting Guide | Highlander",
+    metaDescription: "How to navigate building permits in Western NC. Information for Macon, Jackson, and Haywood counties.",
+    content: `The most common reason for construction delays isn't weather — it's paperwork. Understanding the permitting landscape in WNC is critical for staying on schedule.
+
+## County-Specific Realities
+While North Carolina has a state building code, how it's enforced and what extra 'mountain rules' apply varies by county.
+
+### Macon County (Franklin/Highlands)
+Macon has specific requirements for ridgetop protection and erosion control, especially on the Highlands Plateau.
+
+### Jackson County (Sylva/Cashiers)
+Jackson County is particularly focused on steep-slope regulations. If your lot has more than a certain percentage of grade, you may need additional engineering stamps.
+
+### Haywood County (Waynesville)
+Haywood often requires more detailed site plans for additions in historic districts.
+
+## Why We Handle It For You
+At Highlander, our Design & Planning team handles the permitting process from start to finish. We know the inspectors, we know the codes, and we know how to submit a clean plan that gets approved the first time.`
+  },
+  {
+    slug: "choosing-materials-for-high-elevation",
+    title: "Choosing Materials for High-Elevation Builds",
+    excerpt: "UV, wind, and ice change the rules for material selection. Learn what to pick for homes above 3,500 feet.",
+    category: "Materials",
+    date: "2026-04-20",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
+    readTime: "6 min",
+    metaTitle: "High-Elevation Building Materials Guide | Highlander",
+    metaDescription: "The best materials for mountain homes at high elevation. Guide to roofing, siding, and decking choices.",
+    content: `When you build at 4,000 feet, you're building in a different climate than the valley floor. Materials that look great in a showroom might fail in three years on a ridgetop.
+
+## UV Resistance is Priority One
+At elevation, the sun is more intense. Standard vinyl siding can warp, and low-grade shingles can become brittle. We recommend fiber-cement siding and high-temp rated underlayments.
+
+## Wind-Rated Everything
+Gaps in mountains create 'wind tunnels.' Every material — from your roof shingles to your window units — needs to be rated for high-velocity gusts.
+
+## The Moisture Battle
+High-elevation clouds often 'sit' on the ridges, creating 100% humidity for days. We prioritize materials that don't absorb moisture, like synthetic slate or composite decking.
+
+## Expert Guidance
+Don't pick materials based on looks alone. Let us help you select a palette that is both beautiful and 'mountain-proof.'`
+  },
+  {
     slug: "roof-financing-options-western-nc",
     title: "Roof Financing Options for Western NC Homeowners",
     excerpt: "A new roof is a major investment. Here are the financing options available to make it affordable.",
