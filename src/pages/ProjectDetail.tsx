@@ -256,11 +256,12 @@ const ProjectDetailPage = () => {
         )}
 
         {/* ── PROCESS HIGHLIGHTS ── */}
-        <section className="section-padding section-dark tartan-dark">
+        <section className="section-padding bg-background relative overflow-hidden">
+          <div className="absolute inset-0 tartan-bg opacity-20" />
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-12">
               <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Process Highlights</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
                 How We Executed This Project
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto" />
@@ -273,12 +274,12 @@ const ProjectDetailPage = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="flex items-start gap-4 p-4 border border-[hsl(var(--highland-gold)/0.1)] rounded-sm bg-[hsl(var(--dark-section-foreground)/0.03)]"
+                  className="flex items-start gap-4 p-4 border border-border rounded-sm bg-card spotlight-hover"
                 >
                   <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold)/0.3)] flex-shrink-0 w-8 text-center">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.85)] text-base md:text-lg leading-relaxed font-medium">{item}</p>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-medium">{item}</p>
                 </motion.div>
               ))}
             </div>
@@ -322,7 +323,7 @@ const ProjectDetailPage = () => {
         </section>
 
         {/* ── GALLERY ── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-12">
               <span className="eyebrow mb-3 block">Project Gallery</span>
