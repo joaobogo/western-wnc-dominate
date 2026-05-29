@@ -75,6 +75,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Steep-slope moisture management",
         summary: "Cashiers projects demand stronger valley waterproofing, better gutter capacity, and clean ventilation strategy because roofs stay wet longer here than in most WNC towns.",
         proof: "Oversized drainage design, premium underlayment, and ridge-to-eave airflow planning",
+        image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Estate home reroof planning",
