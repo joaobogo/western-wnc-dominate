@@ -333,64 +333,73 @@ const TownPage = () => {
         </section>
 
         {/* Local Design & Planning Bridge — Town-specific intelligence */}
-        <section className="py-12 bg-secondary/20">
+        <section className="py-20 bg-background">
           <div className="container-tight">
-            <div className="bg-white border border-[hsl(var(--highland-gold)/0.15)] p-6 md:p-8 flex flex-col md:flex-row items-center gap-8 group/bridge">
-              <div className="w-14 h-14 rounded-full bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)] group-hover/bridge:scale-110 transition-transform duration-500">
-                <Compass className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+            <div className="bg-secondary/40 border border-border p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 group/bridge relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+              
+              <div className="w-20 h-20 rounded-none bg-primary text-white flex items-center justify-center shrink-0 shadow-xl relative z-10">
+                <Compass className="w-10 h-10" />
               </div>
-              <div className="flex-1 text-center md:text-left">
-                <h4 className="text-lg font-heading font-bold text-foreground mb-2">Planning Your {town.name} Addition?</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  We provide localized Design & Planning support for {town.name} homeowners. From navigating local {town.county} County building codes to mountain-responsive layouts, we ensure your project is build-ready.
+              
+              <div className="flex-1 text-center lg:text-left relative z-10">
+                <h4 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Planning Your {town.name} Addition?</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed font-body max-w-2xl">
+                  We provide localized Design & Planning support for {town.name} homeowners. From navigating {town.county} building codes to mountain-responsive layouts, we ensure your project is built with intention.
                 </p>
               </div>
-              <Link to="/layouts-planning" className="group/btn inline-flex items-center gap-2 text-[12px] font-heading font-bold uppercase tracking-wider text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors">
-                View Planning Services <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-              </Link>
+              
+              <div className="shrink-0 relative z-10">
+                <Link to="/layouts-planning" className="cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-10 py-5 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all">
+                  View Planning Services <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-
         {/* 5, 6 & 7. Proof, Special Consideration & FAQ */}
         {townProof ? (
-          <TownProofBlock 
-            town={town} 
-            content={townProof} 
-          />
+          <div className="border-t border-border">
+            <TownProofBlock 
+              town={town} 
+              content={townProof} 
+            />
+          </div>
         ) : null}
 
         {/* 10. Supporting content / local insights */}
         {(existingBlogs.length > 0 || localBlogs.length > 0) && (
-          <section className="section-padding bg-secondary/30">
-            <div className="container-tight">
-              <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <section className="section-padding bg-card border-t border-border relative overflow-hidden">
+            <div className="container-tight relative z-10">
+              <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div className="max-w-xl">
-                  <h2 className="text-[11px] uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] font-bold mb-4">Local Knowledge</h2>
-                  <h3 className="text-3xl font-heading font-bold text-foreground">Insights for {town.name} Homeowners</h3>
+                  <span className="eyebrow mb-4 block">Local Knowledge</span>
+                  <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight">Insights for {town.name} Homeowners</h3>
                 </div>
-                <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all">
+                <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/20 pb-1">
                   Browse All Resources <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-8">
                 {existingBlogs.length > 0 ? (
                   existingBlogs.map((post) => (
                     <Link 
                       key={post.slug} 
                       to={`/blog/${post.slug}`}
-                      className="group bg-card border border-border p-6 hover:border-primary/20 transition-all rounded-sm flex flex-col"
+                      className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl"
                     >
-                      <div className="flex items-center gap-2 mb-4">
-                        <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                        <span className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">{post.category}</span>
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-8 h-8 rounded-none bg-primary/5 flex items-center justify-center">
+                          <BookOpen className="w-4 h-4 text-primary" />
+                        </div>
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground/60">{post.category}</span>
                       </div>
-                      <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
-                      <p className="text-sm text-muted-foreground mb-6 line-clamp-2 font-body flex-grow">{post.excerpt}</p>
-                      <span className="text-xs font-bold text-primary flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-                        Read Local Guide <ArrowRight className="w-3.5 h-3.5" />
+                      <h4 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-4 leading-tight">{post.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-8 line-clamp-3 font-body flex-grow leading-relaxed">{post.excerpt}</p>
+                      <span className="text-[11px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
+                        Read Local Guide <ArrowRight className="w-4 h-4" />
                       </span>
                     </Link>
                   ))
@@ -399,16 +408,18 @@ const TownPage = () => {
                     <Link 
                       key={post.slug} 
                       to={`/blog/${post.slug}`}
-                      className="group bg-card border border-border p-6 hover:border-primary/20 transition-all rounded-sm flex flex-col"
+                      className="group bg-background border border-border p-8 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-xl"
                     >
-                      <div className="flex items-center gap-2 mb-4">
-                        <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                        <span className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">{post.category}</span>
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-8 h-8 rounded-none bg-primary/5 flex items-center justify-center">
+                          <BookOpen className="w-4 h-4 text-primary" />
+                        </div>
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground/60">{post.category}</span>
                       </div>
-                      <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
-                      <p className="text-sm text-muted-foreground mb-6 line-clamp-2 font-body flex-grow">{post.excerpt}</p>
-                      <span className="text-xs font-bold text-primary flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-                        Read Planning Guide <ArrowRight className="w-3.5 h-3.5" />
+                      <h4 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-4 leading-tight">{post.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-8 line-clamp-3 font-body flex-grow leading-relaxed">{post.excerpt}</p>
+                      <span className="text-[11px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
+                        Read Planning Guide <ArrowRight className="w-4 h-4" />
                       </span>
                     </Link>
                   ))
