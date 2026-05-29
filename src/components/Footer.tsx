@@ -100,9 +100,9 @@ const Footer = () => {
       </div>
 
       {/* CTA Strip */}
-      <div className="border-b border-primary-foreground/8 relative">
+      <div className="border-b border-border relative">
         {/* Ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-[hsl(var(--highland-gold)/0.03)] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="container-tight py-12 md:py-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -116,12 +116,12 @@ const Footer = () => {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="w-10 h-[2px] bg-[hsl(var(--highland-gold)/0.4)] mb-5 origin-left"
+                className="w-10 h-[2px] bg-primary/40 mb-5 origin-left"
               />
-              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight text-foreground">
                 Plan Before You Build.
               </h3>
-              <p className="text-primary-foreground/90 text-lg md:text-xl font-body max-w-md leading-relaxed font-medium">
+              <p className="text-muted-foreground text-lg md:text-xl font-body max-w-md leading-relaxed font-medium">
                 Roof, addition, or storm damage — supported by expert Design & Planning. One local team, one named contact.
               </p>
             </div>
