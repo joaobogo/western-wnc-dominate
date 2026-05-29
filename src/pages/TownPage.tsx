@@ -354,11 +354,6 @@ const TownPage = () => {
                       ))}
                     </div>
 
-                          <p className="text-[12px] text-muted-foreground leading-tight">{s.desc}</p>
-                        </Link>
-                      ))}
-                    </div>
-
                     <div className="mt-auto pt-6 border-t border-border">
                       <Link to="/construction" className="inline-flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all uppercase tracking-widest text-[11px]">
                         View Construction Services <ArrowRight className="w-4 h-4" />
@@ -373,6 +368,7 @@ const TownPage = () => {
             </div>
           </div>
         </section>
+
 
         {/* Local Visual Details — Adding more mountain flavor */}
         <section className="py-20 md:py-32 bg-background relative overflow-hidden">
