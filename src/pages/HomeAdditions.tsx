@@ -232,7 +232,7 @@ const HomeAdditions = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Add On</span>
               <h2 className="section-heading mb-4">The Reasons<br className="hidden md:block" /> Homeowners Expand.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">Every addition project starts with a real need — not a trend. These are the situations that bring homeowners to us.</p>
+              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">Every addition project starts with a real need — not a trend. These are the situations that bring homeowners to us.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
