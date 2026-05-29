@@ -90,7 +90,7 @@ const TownPage = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.2)] via-transparent to-transparent opacity-40" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
-            <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+            <div className="absolute inset-0 opacity-[0.035] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
             
             {/* Design Datum Lines */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
@@ -107,13 +107,16 @@ const TownPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="mb-10 inline-flex items-center gap-4"
+              className="mb-10 inline-flex items-center gap-6"
             >
-              <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
-              <div className="flex flex-col">
-                <span className="text-[17px] md:text-[19px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                <span className="text-[11px] md:text-[12px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em] -mt-1">Roofing & Construction</span>
-              </div>
+              <div className="h-14 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
+              <Link to="/">
+                <img 
+                  src={logo} 
+                  alt="Highlander Roofing & Construction" 
+                  className="h-20 md:h-24 w-auto transition-transform hover:scale-105" 
+                />
+              </Link>
             </motion.div>
             <div className="max-w-4xl">
               <motion.div 

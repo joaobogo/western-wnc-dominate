@@ -51,7 +51,7 @@ const CountyPage = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.2)] via-transparent to-transparent opacity-40" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
-            <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+            <div className="absolute inset-0 opacity-[0.035] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
             
             {/* Subtle Bottom Heritage Trim */}
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.png')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
@@ -62,13 +62,16 @@ const CountyPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="mb-10 inline-flex items-center gap-4"
+              className="mb-10 inline-flex items-center gap-6"
             >
-              <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
-              <div className="flex flex-col">
-                <span className="text-[14px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Roofing & Construction</span>
-              </div>
+              <div className="h-14 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
+              <Link to="/">
+                <img 
+                  src={logo} 
+                  alt="Highlander Roofing & Construction" 
+                  className="h-16 md:h-20 w-auto transition-transform hover:scale-105" 
+                />
+              </Link>
             </motion.div>
             <div className="max-w-4xl">
               <motion.div 

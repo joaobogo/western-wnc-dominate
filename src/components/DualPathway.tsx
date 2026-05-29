@@ -245,11 +245,11 @@ const DivisionCard = ({ data, accent, index }: {
   );
 };
 
-const DualPathway = () => {
+const ThreeDivisionPathway = () => {
   return (
     <section className="section-padding bg-secondary relative overflow-hidden">
       {/* Subtle tartan */}
-      <div className="absolute inset-0 tartan-bg opacity-40" />
+      <div className="absolute inset-0 tartan-bg opacity-[0.035]" />
 
       <div className="container-tight relative z-10">
         {/* Section Header */}
@@ -304,4 +304,4 @@ const DualPathway = () => {
   );
 };
 
-export default DualPathway;
+export default ThreeDivisionPathway;

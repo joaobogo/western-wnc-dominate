@@ -83,7 +83,7 @@ const NotJustRoofing = () => {
           <GoldLine width="3rem" centered delay={0.35} className="mt-6" />
         </div>
 
-        {/* Two equal division cards */}
+        {/* Three equal division cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {divisions.map((div, i) => (
             <motion.div
