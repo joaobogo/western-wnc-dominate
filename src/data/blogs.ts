@@ -1,3 +1,9 @@
+import roofRepairStock from "@/assets/blog/roof-repair-stock.jpg";
+import metalBenefitsStock from "@/assets/blog/metal-roof-benefits-stock.jpg";
+import metalInstallStock from "@/assets/blog/metal-roof-install-stock.jpg";
+import homeValueStock from "@/assets/blog/home-value-stock.jpg";
+import shingleRoofsStock from "@/assets/blog/shingle-roofs-stock.jpg";
+
 export interface BlogFAQ {
   question: string;
   answer: string;
@@ -11,6 +17,7 @@ export interface BlogPost {
   category: string;
   date: string;
   readTime: string;
+  image: string;
   metaTitle: string;
   metaDescription: string;
   town?: string;
