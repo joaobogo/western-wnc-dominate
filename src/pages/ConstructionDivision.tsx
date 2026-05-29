@@ -316,7 +316,7 @@ const ConstructionDivision = () => {
         />
 
         {/* ═══ FEATURED PROJECTS ═══ */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <ScrollReveal variant="fade">
               <div className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
