@@ -199,7 +199,7 @@ const Hero = () => {
                 className="flex items-center gap-2"
               >
                 <Mountain className="w-3 h-3 text-[hsl(var(--highland-gold)/0.6)]" />
-                <span className="text-[9px] md:text-[11px] font-body font-semibold uppercase tracking-[0.22em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))]">
+                <span className="text-[12px] md:text-[13px] font-body font-semibold uppercase tracking-[0.22em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))]">
                   Western North Carolina · Since 2017
                 </span>
               </motion.div>
@@ -283,13 +283,11 @@ const Hero = () => {
               className="mt-7 md:mt-9 flex items-center gap-6"
             >
               <div className="flex items-center gap-1.5">
-                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-sm">4.9★</span>
-                <span className="text-primary-foreground/20 text-[10px] font-body">Google</span>
+                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-base">4.9★</span>
+                <span className="text-primary-foreground/40 text-[12px] font-body uppercase tracking-wider">Google Rating</span>
               </div>
-              <div className="w-px h-3 bg-primary-foreground/10" />
-              <span className="text-primary-foreground/20 text-[10px] font-body">Google Rated 4.9★</span>
-              <div className="w-px h-3 bg-primary-foreground/10" />
-              <span className="text-primary-foreground/20 text-[10px] font-body">150+ Reviews</span>
+              <div className="w-px h-3 bg-primary-foreground/20" />
+              <span className="text-primary-foreground/40 text-[12px] font-body uppercase tracking-wider">150+ Verified Reviews</span>
             </motion.div>
 
             {/* VELUX Certified Installer badge */}
@@ -304,10 +302,10 @@ const Hero = () => {
                 <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col leading-tight text-left">
-                <span className="text-[9px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))]">
+                <span className="text-[11px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))]">
                   VELUX Certified
                 </span>
-                <span className="text-[11px] font-body font-medium text-primary-foreground/70">
+                <span className="text-[13px] font-body font-medium text-primary-foreground/80">
                   Skylight Installer · Pro Accredited
                 </span>
               </div>
@@ -343,7 +341,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 2.2 + i * 0.1 }}
-                    className="flex items-center gap-2 text-primary-foreground/30 text-[10px] md:text-xs"
+                    className="flex items-center gap-2 text-primary-foreground/60 text-[12px] md:text-sm"
                   >
                     <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
                     <span className="font-body font-medium leading-tight">{item.label}</span>
