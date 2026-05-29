@@ -29,8 +29,7 @@ const TownGrid = () => {
         </div>
 
         <div className="relative">
-          <StaggerContainer 
-            stagger={0.05} 
+          <div 
             className="flex overflow-x-auto pb-10 gap-4 snap-x snap-mandatory scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0"
             style={{ 
               scrollbarWidth: 'none', 
@@ -38,6 +37,10 @@ const TownGrid = () => {
               WebkitOverflowScrolling: 'touch' 
             }}
           >
+            <StaggerContainer 
+              stagger={0.05} 
+              className="flex gap-4"
+            >
             {displayedTowns.map((town) => (
               <div key={town.slug} className="flex-shrink-0 w-[240px] md:w-[280px] snap-start">
                 <StaggerItem variant="rise">
@@ -60,7 +63,8 @@ const TownGrid = () => {
                 </StaggerItem>
               </div>
             ))}
-          </StaggerContainer>
+            </StaggerContainer>
+          </div>
           
           {/* Subtle fade edges to indicate more content */}
           <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-primary to-transparent pointer-events-none z-10 hidden md:block" />

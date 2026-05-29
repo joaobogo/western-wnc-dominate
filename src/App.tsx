@@ -21,7 +21,7 @@ const BlogPostPage = lazy(() => import("./pages/BlogPost"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
 const About = lazy(() => import("./pages/About"));
 const LayoutsPlanning = lazy(() => import("./pages/LayoutsPlanning"));
-const Team = lazy(() => import("./pages/Team"));
+
 
 
 const Certifications = lazy(() => import("./pages/Certifications"));
