@@ -16,10 +16,10 @@ import TownProofBlock from "@/components/TownProofBlock";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
-const marketVisualImg = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1200";
-const localPlanningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200";
-const highElevationDetailImg = "https://images.unsplash.com/photo-1626264290769-61d0d3a8301f?auto=format&fit=crop&q=80&w=1200";
-const mountainStructureImg = "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=1200";
+const marketVisualImg = "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=1200"; // Mountain valley
+const localPlanningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200"; // Blueprints
+const highElevationDetailImg = "https://images.unsplash.com/photo-1626264290769-61d0d3a8301f?auto=format&fit=crop&q=80&w=1200"; // Wood detail
+const mountainStructureImg = "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=1200"; // Mountain structure
 
 import { services } from "@/data/services";
 import { localBlogTopics } from "@/data/local-blog-topics";
