@@ -185,7 +185,7 @@ const InspectionForm = () => {
             {/* Left — editorial trust content */}
             <div className="lg:col-span-2">
               <ScrollReveal variant="fade">
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] mb-4 block">
+                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] mb-4 block">
                   Begin Your Project
                 </span>
               </ScrollReveal>
