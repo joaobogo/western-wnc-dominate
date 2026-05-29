@@ -189,7 +189,7 @@ const Team = () => {
                     <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed font-body mb-4 font-medium">{person.bio}</p>
                     <div className="pt-4 border-t border-border flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
-                      <span className="text-[10px] font-body font-bold uppercase tracking-wider text-muted-foreground/60">{person.specialty}</span>
+                      <span className="text-[11px] font-body font-bold uppercase tracking-wider text-muted-foreground/80">{person.specialty}</span>
                     </div>
                   </div>
                 </motion.div>
