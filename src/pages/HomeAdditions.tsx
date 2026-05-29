@@ -353,7 +353,7 @@ const HomeAdditions = () => {
         </section>
 
         {/* ─── PLANNING & PERMITTING ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background/50 relative">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
