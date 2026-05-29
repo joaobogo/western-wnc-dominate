@@ -15,7 +15,18 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const serviceStats = [
   { value: "4.9★", label: "Google Rating", detail: "Verified reviews" },
-  { value: "8", label: "Counties Served", detail: "Macon · Jackson · Swain · Haywood" },
+  { 
+    value: "8", 
+    label: "Counties Served", 
+    detail: (
+      <span className="flex gap-1.5 flex-wrap">
+        <Link to="/service-areas/county/macon-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Macon</Link> · 
+        <Link to="/service-areas/county/jackson-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Jackson</Link> · 
+        <Link to="/service-areas/county/swain-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Swain</Link> · 
+        <Link to="/service-areas/county/haywood-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Haywood</Link>
+      </span>
+    ) 
+  },
   { value: "Rapid", label: "Response Time", detail: "Emergency & Standard" },
   { value: "4.9★", label: "Average Rating", detail: "150+ Verified Reviews" },
 ];
