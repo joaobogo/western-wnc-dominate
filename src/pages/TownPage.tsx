@@ -6,6 +6,7 @@ import {
   CloudLightning, Layers, TreePine, Paintbrush, Building, Wrench, Droplets,
   Building2, Users, Compass, ArrowUpRight
 } from "lucide-react";
+import { ScrollReveal } from "@/components/motion";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
