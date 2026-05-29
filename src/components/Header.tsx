@@ -281,6 +281,28 @@ const Header = () => {
           ))}
 
           {/* Separator dot */}
+          <span className="w-px h-4 mx-2 transition-colors duration-300 bg-black/10" />
+
+          {/* Design Link */}
+          <Link 
+            to="/layouts-planning" 
+            className={`relative text-[16px] md:text-[17px] font-bold transition-all duration-300 px-4 py-3 rounded-sm font-body ${
+              isActive('/layouts-planning')
+                ? "text-heritage-charcoal bg-black/5"
+                : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
+            }`}
+          >
+            Design
+            {isActive('/layouts-planning') && (
+              <motion.div
+                layoutId="nav-active-design"
+                className="absolute -bottom-px left-3 right-3 h-[2px] bg-[hsl(var(--highland-gold))]"
+                transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
+              />
+            )}
+          </Link>
+
+          {/* Separator dot */}
           <span className="w-px h-4 mx-1 transition-colors duration-300 bg-black/10" />
 
           {/* Secondary links */}
