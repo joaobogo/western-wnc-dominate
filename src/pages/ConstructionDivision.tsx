@@ -347,7 +347,7 @@ const ConstructionDivision = () => {
               <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
                 <span className="eyebrow mb-3 block">Why Highlander</span>
                 <h2 className="section-heading mb-4">What Makes This<br className="hidden md:block" /> Different.</h2>
-                <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
+                <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
                   Not just another name on a truck. A company built on documented systems, staffed with in-house craftsmen, and rooted in Western North Carolina's mountains.
                 </p>
               </div>
