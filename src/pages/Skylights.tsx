@@ -65,8 +65,8 @@ const Skylights = () => {
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
-                  <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain filter invert brightness-[2] contrast-[1.2] mix-blend-screen" />
+                <div className="w-20 h-20 flex items-center justify-center overflow-hidden">
+                  <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain filter brightness-[10] contrast-[100] grayscale" />
                 </div>
                 <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
                   VELUX Certified Installer
@@ -164,7 +164,7 @@ const Skylights = () => {
         <section className="section-padding bg-muted/20">
           <div className="container-tight">
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight service across the Western NC mountains</h2>
-            <p className="text-foreground/70 mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our 8-county service area in Western North Carolina.</p>
+            <p className="text-foreground/70 mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our 10-county service area in Western North Carolina.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {towns.map((t) => (
                 <Link
