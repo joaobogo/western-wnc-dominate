@@ -59,6 +59,9 @@ const tier2Areas = [
   { label: "Bryson City", href: "/service-areas/bryson-city-nc" },
   { label: "Black Mountain", href: "/service-areas/black-mountain-nc" },
   { label: "Weaverville", href: "/service-areas/weaverville-nc" },
+  { label: "Murphy", href: "/service-areas/murphy-nc" },
+  { label: "Marshall", href: "/service-areas/marshall-nc" },
+  { label: "Hayesville", href: "/service-areas/hayesville-nc" },
 ];
 
 const certifications = [

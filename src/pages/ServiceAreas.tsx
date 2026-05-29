@@ -39,8 +39,8 @@ const whyLocal = [
   { icon: Clock, title: "Fast Response Anywhere in WNC", detail: "With offices in Franklin and Sylva, we reach every town in our service area within 45 minutes. Emergency response is prioritized." },
 ];
 
-const primaryTowns = towns.slice(0, 4);
-const secondaryTowns = towns.slice(4);
+const primaryTowns = towns.slice(0, 6);
+const secondaryTowns = towns.slice(6);
 
 const ServiceAreas = () => {
   return (
