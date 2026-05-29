@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Home, HardHat, Shield, Hammer, Layers } from "lucide-react";
+import { ArrowRight, Home, HardHat, Shield, Hammer, Layers, Ruler } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
