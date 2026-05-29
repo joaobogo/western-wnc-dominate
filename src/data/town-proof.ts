@@ -300,6 +300,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Preservation-sensitive reroofing",
         summary: "Dillsboro homes often need roofing choices that protect the structure without making the property feel out of place in a historic mountain village.",
         proof: "Dimensional shingle and detail packages selected for visual compatibility",
+        image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Small-footprint project execution",
