@@ -200,7 +200,7 @@ const About = () => {
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Highlander is a family-owned and operated company with two locations — Franklin and
-                  Sylva, NC. We've completed hundreds of roofing and construction projects across
+                  Sylva, NC. We've completed hundreds of roofing, construction, and design projects across
                   Macon, Jackson, Swain, Haywood, and surrounding counties.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">

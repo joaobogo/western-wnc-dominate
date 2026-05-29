@@ -27,13 +27,18 @@ const roofingItems: DropdownItem[] = [
 
 
 const constructionItems: DropdownItem[] = [
-  { label: "Design & Planning", href: "/layouts-planning", desc: "Layouts, floor plans, and pre-construction support" },
   { label: "Additions & Suites", href: "/construction/additions", desc: "Expand your home's footprint" },
   { label: "Kitchen & Bath", href: "/construction/renovations", desc: "Interior transformations" },
   { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
   { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
   { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
+];
+
+const designItems: DropdownItem[] = [
+  { label: "Design & Planning", href: "/layouts-planning", desc: "Pre-construction support" },
+  { label: "Project Brief", href: "/design-intake?mode=long", desc: "Start a detailed planning brief" },
+  { label: "Consultation", href: "/design-intake?mode=short", desc: "Quick planning inquiry" },
 ];
 
 
