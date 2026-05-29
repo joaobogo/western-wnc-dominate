@@ -75,8 +75,7 @@ const secondaryLinks = [
   { label: "Our Work", href: "/gallery" },
   { label: "Blog", href: "/blog" },
   { label: "Service Areas", href: "/service-areas" },
-  { label: "Story", href: "/about" },
-  { label: "Team", href: "/team" },
+  { label: "Our Story", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 

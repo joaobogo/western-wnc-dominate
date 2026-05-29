@@ -28,28 +28,48 @@ const TownGrid = () => {
           </ScrollReveal>
         </div>
 
-        <StaggerContainer stagger={0.05} className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          {displayedTowns.map((town) => (
-            <StaggerItem key={town.slug} variant="rise">
-              <Link
-                to={`/service-areas/${town.slug}`}
-                className="group block bg-dark-section-foreground/[0.06] border border-dark-section-foreground/[0.15] rounded-none p-6 md:p-8 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.3)] card-lift transition-all duration-500 shadow-sm"
-                style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
-              >
-                <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))] mb-3 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-heading font-bold text-lg text-dark-section-foreground mb-1.5">
-                  {town.name}
-                </h3>
-                <p className="text-dark-section-foreground/45 text-[13px] mt-1 font-body font-medium">{town.county}</p>
-                <div className="mt-3 pt-3 border-t border-dark-section-foreground/6">
-                  <span className="text-[hsl(var(--highland-gold)/0.85)] text-[12px] font-body font-bold uppercase tracking-[0.12em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5">
-                    View Area <ArrowRight className="w-3 h-3" />
-                  </span>
-                </div>
-              </Link>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        <div className="relative">
+          <div 
+            className="flex overflow-x-auto pb-10 gap-4 snap-x snap-mandatory scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0"
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch' 
+            }}
+          >
+            <StaggerContainer 
+              stagger={0.05} 
+              className="flex gap-4"
+            >
+            {displayedTowns.map((town) => (
+              <div key={town.slug} className="flex-shrink-0 w-[240px] md:w-[280px] snap-start">
+                <StaggerItem variant="rise">
+                  <Link
+                    to={`/service-areas/${town.slug}`}
+                    className="group block bg-dark-section-foreground/[0.06] border border-dark-section-foreground/[0.15] rounded-none p-6 md:p-8 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.3)] card-lift transition-all duration-500 shadow-sm h-full"
+                    style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
+                  >
+                    <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))] mb-3 group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="font-heading font-bold text-lg text-dark-section-foreground mb-1.5">
+                      {town.name}
+                    </h3>
+                    <p className="text-dark-section-foreground/45 text-[13px] mt-1 font-body font-medium">{town.county}</p>
+                    <div className="mt-3 pt-3 border-t border-dark-section-foreground/6">
+                      <span className="text-[hsl(var(--highland-gold)/0.85)] text-[12px] font-body font-bold uppercase tracking-[0.12em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5">
+                        View Area <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </Link>
+                </StaggerItem>
+              </div>
+            ))}
+            </StaggerContainer>
+          </div>
+          
+          {/* Subtle fade edges to indicate more content */}
+          <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-primary to-transparent pointer-events-none z-10 hidden md:block" />
+          <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-primary to-transparent pointer-events-none z-10 hidden md:block" />
+        </div>
 
         <ScrollReveal variant="fade" delay={0.4} className="text-center mt-8">
           <Link

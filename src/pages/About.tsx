@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
-import { ArrowRight, Phone, Shield, Users, Mountain, Award, Heart, Eye, Hammer, TreePine, Home, CheckCircle, Star, MapPin, Calendar, Quote } from "lucide-react";
+import { ArrowRight, Phone, Shield, Users, Mountain, Award, Heart, Eye, Hammer, TreePine, Home, CheckCircle, Star, MapPin, Calendar, Quote, Mail } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema, localBusinessSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import teamPhoto from "@/assets/team-photo.webp";
 import { ScrollReveal } from "@/components/motion";
+
 const storyImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
 const heritageImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
 
@@ -21,6 +22,40 @@ const values = [
   { icon: Mountain, title: "Mountain-Built Knowledge", description: "We understand what elevation, weather exposure, and WNC terrain demand from a roof and a structure. That knowledge is earned, not taught." },
   { icon: Users, title: "Accountability You Can See", description: "The owner walks your property. Your crew lead is on-site daily. When you call, a real person answers. That's how it should work." },
   { icon: Shield, title: "Licensed, Insured, Certified", description: "Licensed NC General Contractor. CertainTeed Master Shingle Applicator. Fully insured. We carry the credentials because we've earned them." },
+];
+
+const leadership = [
+  {
+    name: "Luke",
+    role: "Owner & Lead Advisor",
+    bio: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values. Luke oversees the strategic direction of all three divisions: Roofing, Construction, and Design Support.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+    credentials: ["NC Licensed GC", "CertainTeed Master Applicator", "WNC Native"]
+  },
+  {
+    name: "Christy",
+    role: "Director of Operations",
+    bio: "The engine behind the scenes. Christy manages project sequencing, client coordination, and ensures the 'Highlander Standard' is met from first call to final walkthrough.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
+    credentials: ["Project Coordination", "Client Experience", "Operational Excellence"]
+  }
+];
+
+const teamMembers = [
+  {
+    name: "Javier",
+    role: "Roofing Division Lead",
+    specialty: "System Installation & QC",
+    bio: "With years of ridgetop experience, Javier leads our roofing crews with manufacturer-exact precision, specializing in complex metal and synthetic slate systems.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Miguel",
+    role: "Construction Foreman",
+    specialty: "Framing & Structural Execution",
+    bio: "Miguel translates design layouts into buildable reality. He manages on-site construction for additions and outdoor living spaces with obsessive attention to detail.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400"
+  }
 ];
 
 const craftsmanshipPrinciples = [
@@ -113,10 +148,13 @@ const About = () => {
 
               {/* Understated CTA — warm solid button, no gradient (About-only) */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.5 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/team" className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[16px] md:text-[18px] px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-lg">
+                <button 
+                  onClick={() => document.getElementById('team-section')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[16px] md:text-[18px] px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-lg"
+                >
                   <span>Meet Our People</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </button>
                 <Link to="/consultation" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
                   Start a Conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -126,52 +164,90 @@ const About = () => {
           </div>
         </section>
 
-        {/* ── MEET THE TEAM — Personal & Accountable ── */}
-        <section className="section-padding bg-background relative overflow-hidden">
+        {/* ── MEET THE TEAM — Integrated Team Content ── */}
+        <section id="team-section" className="section-padding bg-background relative overflow-hidden">
           <div className="container-tight">
-            <div className="grid lg:grid-cols-12 gap-12 items-end mb-16">
-              <div className="lg:col-span-7">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-3 block">Highlander People</span>
-                  <h2 className="section-heading mb-6">Local People.<br />Mountain Standards.</h2>
-                  <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed font-body max-w-xl">
-                    A family-owned company is only as strong as the people who show up on your property. 
-                    Meet the specialists dedicated to protecting and improving Western North Carolina homes.
-                  </p>
+            <div className="text-center mb-16 relative">
+              <span className="eyebrow mb-3 block">Family Ownership</span>
+              <h2 className="section-heading">Owner-Led Accountability</h2>
+              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mt-4" />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-20 mb-24">
+              {leadership.map((person, i) => (
+                <motion.div 
+                  key={person.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
+                  className="flex flex-col md:flex-row gap-8 items-start"
+                >
+                  <div className="w-full md:w-48 lg:w-56 aspect-square overflow-hidden bg-muted flex items-center justify-center border border-border relative">
+                    {person.image ? (
+                      <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                    ) : (
+                      <div className="text-center p-4">
+                        <Users className="w-8 h-8 text-muted-foreground/40 mx-auto mb-2" />
+                        <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground/75">Photo<br />Coming Soon</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-heading font-bold mb-1">{person.name}</h3>
+                    <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[14px] mb-4 uppercase tracking-wider">{person.role}</p>
+                    <p className="text-muted-foreground text-[16px] md:text-[18px] leading-relaxed mb-6 font-body font-medium">{person.bio}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {person.credentials.map(cred => (
+                        <span key={cred} className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-none">
+                          {cred}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </motion.div>
-              </div>
-              <div className="lg:col-span-5 flex lg:justify-end">
-                <Link to="/team" className="group inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors duration-300">
-                  Meet the Entire Team
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
+              ))}
+            </div>
+
+            <div className="text-center mb-16">
+              <span className="eyebrow mb-3 block">Division Experts</span>
+              <h2 className="section-heading">Your Project Specialists</h2>
+              <p className="text-muted-foreground max-w-xl mx-auto mt-4 font-body">
+                From first consultation to final inspection, these are the professionals leading our crews and coordinating your build.
+              </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { name: "Luke", role: "Owner & Lead Advisor", desc: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values." },
-                { name: "Christy", role: "Director of Operations", desc: "The engine behind the scenes, ensuring the 'Highlander Standard' is met from first call to final walkthrough." },
-                { name: "Javier", role: "Roofing Division Lead", desc: "Leads our roofing crews with manufacturer-exact precision, specializing in complex metal and synthetic systems." },
-                { name: "Miguel", role: "Construction Foreman", desc: "Translates design layouts into buildable reality for additions and outdoor living spaces." },
-              ].map((person, i) => (
+              {teamMembers.map((person, i) => (
                 <motion.div 
                   key={person.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="group bg-secondary/30 border border-border p-6 rounded-none hover:border-[hsl(var(--highland-gold)/0.3)] transition-all duration-300"
+                  className="group bg-card border border-border overflow-hidden hover:border-primary/20 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="aspect-square mb-6 bg-muted flex items-center justify-center relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                    <Users className="w-10 h-10 text-muted-foreground/20" />
-                    <div className="absolute bottom-4 left-0 right-0 text-center">
-                      <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.2em] text-white bg-[hsl(var(--primary)/0.6)] px-3 py-1.5 backdrop-blur-sm border border-white/10">In-House Expert</span>
+                  <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center relative">
+                    {person.image ? (
+                      <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                    ) : (
+                      <div className="text-center p-6">
+                        <Users className="w-10 h-10 text-muted-foreground/30 mx-auto mb-3" />
+                        <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/90 bg-white/20 px-4 py-2 backdrop-blur-sm border border-white/20 rounded-none">In-House Specialist</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-lg font-heading font-bold mb-1">{person.name}</h3>
+                    <p className="text-primary font-heading font-bold text-[13px] uppercase tracking-[0.15em] mb-4">{person.role}</p>
+                    <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed font-body mb-4 font-medium">{person.bio}</p>
+                    <div className="pt-4 border-t border-border flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
+                      <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground/90">{person.specialty}</span>
                     </div>
                   </div>
-                  <h3 className="font-heading font-bold text-lg mb-1">{person.name}</h3>
-                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-sm md:text-base uppercase tracking-wider mb-3">{person.role}</p>
-                  <p className="text-muted-foreground text-base leading-relaxed line-clamp-3 font-body font-medium">{person.desc}</p>
                 </motion.div>
               ))}
             </div>

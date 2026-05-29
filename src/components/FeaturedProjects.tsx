@@ -261,11 +261,21 @@ const FeaturedProjects = ({ location }: { location?: string }) => {
           </ScrollReveal>
         </div>
 
-        {/* Project grid — editorial layout */}
+        {/* Project grid — horizontal scroll on mobile, scrollable on desktop */}
         <AnimatePresence mode="popLayout">
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+          <motion.div 
+            layout 
+            className="flex overflow-x-auto pb-8 gap-4 snap-x snap-mandatory scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0"
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch' 
+            }}
+          >
             {displayProjects.map((project, i) => (
-              <ProjectCard key={project.title} project={project} index={i} />
+              <div key={project.title} className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw] snap-start">
+                <ProjectCard project={project} index={i} />
+              </div>
             ))}
           </motion.div>
         </AnimatePresence>
