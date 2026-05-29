@@ -187,7 +187,7 @@ export const ConstructionServiceGrid = ({
             <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">
               {cat.title}
             </h3>
-            <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-4">
+            <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body mb-4 group-hover:text-foreground transition-colors">
               {cat.description}
             </p>
 
