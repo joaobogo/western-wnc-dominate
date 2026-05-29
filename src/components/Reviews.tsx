@@ -83,7 +83,7 @@ const Reviews = () => {
                 </div>
               </div>
 
-              <p className="text-foreground text-[15px] md:text-base leading-[1.8] mb-7 font-body relative z-10">
+              <p className="text-foreground text-base md:text-lg lg:text-xl leading-[1.8] mb-7 font-body relative z-10 font-medium">
                  "{t.reviewBody}"
               </p>
 
@@ -126,7 +126,7 @@ const Reviews = () => {
                   </div>
                 </div>
 
-                <p className="text-foreground/80 text-[13px] leading-[1.7] mb-4 font-body line-clamp-4">
+                <p className="text-foreground/90 text-sm md:text-[15px] leading-[1.7] mb-4 font-body line-clamp-4">
                    "{t.reviewBody}"
                 </p>
 
