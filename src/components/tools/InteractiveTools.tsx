@@ -357,7 +357,7 @@ export function ConstructionFitGuide() {
     <ScrollReveal>
       <div className="bg-card border border-border rounded-sm p-6 md:p-8">
         <h3 className="font-heading text-xl font-bold text-foreground mb-1">Find the Right Construction Service</h3>
-        <p className="text-sm text-muted-foreground font-body mb-6">Two questions to point you in the right direction.</p>
+        <p className="text-sm text-muted-foreground font-body mb-6">A few questions to point you in the right direction.</p>
 
         {!showResult ? (
           <AnimatePresence mode="wait">

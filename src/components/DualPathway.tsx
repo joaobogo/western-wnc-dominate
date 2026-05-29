@@ -231,7 +231,7 @@ const DualPathway = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="eyebrow mb-4 block">Two Divisions. Equal Standards.</span>
+            <span className="eyebrow mb-4 block">Three Branches. Equal Standards.</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-5">

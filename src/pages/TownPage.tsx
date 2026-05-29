@@ -238,16 +238,16 @@ const TownPage = () => {
           </div>
         </section>
 
-        {/* 3 & 4. Roofing & Construction Dual Division Section — Highly Visual */}
+        {/* 3, 4 & 5. Roofing, Construction & Design Three-Pillar Section — Highly Visual */}
         <section className="section-padding bg-secondary/30 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto", backgroundRepeat: "repeat" }} />
           
           <div className="container-tight relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="eyebrow mb-4 block">Dual Division Strategy</span>
-              <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">Expertise across the <br className="hidden md:block" /> full exterior envelope.</h2>
+              <span className="eyebrow mb-4 block">Three-Branch Strategy</span>
+              <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">Mastery across the <br className="hidden md:block" /> full project lifecycle.</h2>
               <p className="text-xl text-muted-foreground font-body leading-relaxed">
-                In {town.name}, roofing and construction aren't separate concerns. We treat the structure and its covering as a single unified system built to handle the peaks.
+                In {town.name}, roofing, construction, and design aren't separate concerns. We treat the property as a single unified system — from initial layout to final inspection.
               </p>
             </div>
 

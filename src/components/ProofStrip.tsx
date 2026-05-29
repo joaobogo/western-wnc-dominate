@@ -37,8 +37,8 @@ const pillars = [
   },
   {
     icon: Hammer,
-    title: "Two Divisions. One Standard.",
-    copy: "Roofing and construction under one roof — same crews, same process, same accountability. One company for your entire property.",
+    title: "Three Pillars. One Standard.",
+    copy: "Roofing, construction, and design under one roof — same crews, same process, same accountability. One company for your entire property.",
     stat: "40+",
     statLabel: "years combined exp.",
   },

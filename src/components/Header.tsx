@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield, Ruler } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -27,13 +27,18 @@ const roofingItems: DropdownItem[] = [
 
 
 const constructionItems: DropdownItem[] = [
-  { label: "Design & Planning", href: "/layouts-planning", desc: "Layouts, floor plans, and pre-construction support" },
   { label: "Additions & Suites", href: "/construction/additions", desc: "Expand your home's footprint" },
   { label: "Kitchen & Bath", href: "/construction/renovations", desc: "Interior transformations" },
   { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
   { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
   { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
+];
+
+const designItems: DropdownItem[] = [
+  { label: "Design & Planning", href: "/layouts-planning", desc: "Pre-construction support" },
+  { label: "Project Brief", href: "/design-intake?mode=long", desc: "Start a detailed planning brief" },
+  { label: "Consultation", href: "/design-intake?mode=short", desc: "Quick planning inquiry" },
 ];
 
 
@@ -61,6 +66,14 @@ const divisions: DivisionDropdown[] = [
     items: constructionItems,
     icon: Hammer,
     tagline: "Licensed General Contractor",
+    accent: "gold",
+  },
+  {
+    label: "Design",
+    href: "/layouts-planning",
+    items: designItems,
+    icon: Ruler,
+    tagline: "Pre-Construction & Layouts",
     accent: "gold",
   },
 ];

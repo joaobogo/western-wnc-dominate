@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Home, HardHat, Shield, Hammer, Layers } from "lucide-react";
+import { ArrowRight, Home, HardHat, Shield, Hammer, Layers, Ruler } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
@@ -41,6 +41,22 @@ const divisions = [
     cta: "Explore Construction",
     ctaColor: "text-[hsl(var(--highland-gold))]",
   },
+  {
+    icon: Ruler,
+    label: "Design Support",
+    tagline: "Pre-Construction · Layouts · Planning",
+    color: "gold",
+    iconBg: "bg-accent/5",
+    iconColor: "text-accent",
+    borderColor: "border-accent/15 hover:border-accent/25",
+    stats: [
+      { value: "Layout", label: "Professional support" },
+      { value: "Plan", label: "Before you build" },
+    ],
+    href: "/layouts-planning",
+    cta: "Explore Design",
+    ctaColor: "text-accent",
+  },
 ];
 
 const NotJustRoofing = () => {
@@ -49,11 +65,11 @@ const NotJustRoofing = () => {
       <div className="container-tight">
         <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block">Two Divisions. One Name Behind Both.</span>
+            <span className="eyebrow mb-3 block">Three Pillars. One Name Behind Them All.</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-4 leading-snug">
-              Two Disciplines.<br className="hidden md:block" />
+              Three Disciplines.<br className="hidden md:block" />
               One Reputation on the Line.
             </h2>
           </HeadingReveal>
@@ -68,7 +84,7 @@ const NotJustRoofing = () => {
         </div>
 
         {/* Two equal division cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {divisions.map((div, i) => (
             <motion.div
               key={div.label}

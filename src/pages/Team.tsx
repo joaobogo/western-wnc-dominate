@@ -14,7 +14,7 @@ const leadership = [
   {
     name: "Luke",
     role: "Owner & Lead Advisor",
-    bio: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values. Luke oversees the strategic direction of both Roofing and Construction divisions.",
+    bio: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values. Luke oversees the strategic direction of all three divisions: Roofing, Construction, and Design Support.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
     credentials: ["NC Licensed GC", "CertainTeed Master Applicator", "WNC Native"]
   },
