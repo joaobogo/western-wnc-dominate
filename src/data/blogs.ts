@@ -1,3 +1,9 @@
+import roofRepairStock from "@/assets/blog/roof-repair-stock.jpg";
+import metalBenefitsStock from "@/assets/blog/metal-roof-benefits-stock.jpg";
+import metalInstallStock from "@/assets/blog/metal-roof-install-stock.jpg";
+import homeValueStock from "@/assets/blog/home-value-stock.jpg";
+import shingleRoofsStock from "@/assets/blog/shingle-roofs-stock.jpg";
+
 export interface BlogFAQ {
   question: string;
   answer: string;
@@ -11,6 +17,7 @@ export interface BlogPost {
   category: string;
   date: string;
   readTime: string;
+  image: string;
   metaTitle: string;
   metaDescription: string;
   town?: string;
@@ -26,6 +33,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "A breakdown of real roofing costs for Highlands homeowners — from materials to labor to elevation factors that affect your bottom line.",
     category: "Cost",
     date: "2026-02-15",
+    image: "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000",
     readTime: "6 min",
     town: "Highlands",
     metaTitle: "How Much Does a New Roof Cost in Highlands, NC? | Highlander Roofing",
@@ -56,6 +64,7 @@ The best way to know your actual cost is a free inspection. We'll assess your ro
     excerpt: "Comparing the two most popular roofing options for Western North Carolina — cost, durability, and performance at elevation.",
     category: "Materials",
     date: "2026-02-10",
+    image: metalBenefitsStock,
     readTime: "7 min",
     metaTitle: "Metal vs Shingle Roof for WNC Homes | Highlander Roofing",
     metaDescription: "Metal or shingle roof for your Western NC mountain home? Compare cost, durability, and weather performance to make the right choice.",
@@ -87,6 +96,7 @@ There's no universal answer. We assess each home individually — considering el
     excerpt: "What to look for after a WNC storm — and the steps to take before calling your insurance company.",
     category: "Storm",
     date: "2026-02-05",
+    image: roofRepairStock,
     readTime: "5 min",
     metaTitle: "Storm Damage Roof Checklist for WNC | Highlander Roofing",
     metaDescription: "After a storm in Western NC, use this checklist to assess roof damage and protect your insurance claim. Free storm damage inspections available.",
@@ -126,12 +136,14 @@ There's no universal answer. We assess each home individually — considering el
 
 We respond within 24–48 hours for storm inspections across all of Western NC. Call (828) 397-9211.`,
   },
+
   {
     slug: "best-roofing-materials-highlands-nc",
     title: "Best Roofing Materials for Highlands, NC Homes",
     excerpt: "At 4,100+ feet, not every roofing material can handle Highlands weather. Here's what works — and what doesn't.",
     category: "Materials",
     date: "2026-01-28",
+    image: metalInstallStock,
     readTime: "6 min",
     town: "Highlands",
     metaTitle: "Best Roofing Materials for Highlands, NC | Highlander Roofing",
@@ -180,7 +192,7 @@ Every roof is different. We'll inspect your home and recommend the material that
     excerpt: "Step-by-step guide to navigating the insurance claim process for storm-damaged roofs in NC.",
     category: "Insurance",
     date: "2026-01-20",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "Roof Insurance Claim Guide for NC | Highlander Roofing",
     metaDescription: "How to file a roof damage insurance claim in North Carolina. Step-by-step process, documentation tips, and how a roofer can help maximize your claim.",
     content: `Filing a roof damage insurance claim in North Carolina doesn't have to be complicated — but mistakes can cost you thousands. Here's how to do it right.
@@ -227,7 +239,7 @@ Highlander Roofing assists WNC homeowners through the entire claims process — 
     excerpt: "After a mountain winter, your roof needs attention. Here's what to check every spring to prevent costly problems.",
     category: "Maintenance",
     date: "2026-01-15",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "Spring Roof Maintenance Checklist for WNC | Highlander Roofing",
     metaDescription: "Spring roof maintenance checklist for Western NC homeowners. Prevent costly repairs after winter with these expert tips from Highlander Roofing.",
     content: `WNC winters are tough on roofs. Spring is the ideal time to catch issues before they become expensive problems. Here's your annual checklist.
@@ -260,7 +272,7 @@ Call (828) 397-9211 or request an inspection online. We serve all of Western NC.
     excerpt: "Ice dams cause thousands in damage to WNC homes every winter. Here's how to prevent them.",
     category: "Maintenance",
     date: "2026-01-08",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     town: "Highlands",
     metaTitle: "Ice Dam Prevention for WNC Mountain Homes | Highlander Roofing",
     metaDescription: "Prevent ice dams on your Western NC mountain home. Learn causes, prevention methods, and when to call a professional roofer.",
@@ -304,7 +316,7 @@ If you've had ice dams before, we can assess your roof and attic to identify the
     excerpt: "Not sure if your roof needs repair or full replacement? Here are the warning signs Highlands homeowners should watch for.",
     category: "Replacement",
     date: "2025-12-28",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     town: "Highlands",
     metaTitle: "When to Replace Your Roof in Highlands, NC | Highlander Roofing",
     metaDescription: "5 signs your Highlands, NC roof needs replacement. Age, damage, and performance indicators from local roofing experts.",
@@ -344,7 +356,7 @@ We'll inspect your Highlands home, assess the full roof system, and give you an 
     excerpt: "Building on a mountain slope requires more than just a footprint. Learn the unique engineering and permitting steps for WNC additions.",
     category: "Construction",
     date: "2026-03-01",
-    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
     metaTitle: "WNC Home Addition Planning Guide | Highlander Construction",
     metaDescription: "Planning an addition in Western NC? Learn about terrain engineering, permitting, and structural integration from mountain building experts.",
     content: `Adding square footage to a mountain home is one of the most rewarding investments you can make — but it's also one of the most technically demanding. Unlike building on flat land, WNC additions require a deeper level of planning before the first board is cut.
@@ -374,7 +386,7 @@ Our Design & Planning branch exists to solve these hurdles before they become ex
     excerpt: "How to choose the right orientation, materials, and layout for outdoor living spaces that survive mountain weather.",
     category: "Construction",
     date: "2026-03-15",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Porch & Deck Design for WNC Homes | Highlander Construction",
     metaDescription: "Expert tips for designing porches and decks in Western NC. Orientation, materials, and mountain-view optimization.",
     content: `Outdoor living in the Blue Ridge Mountains is about more than just square footage — it's about framing the view while protecting your investment from harsh seasonal changes.
@@ -395,7 +407,7 @@ High moisture and UV at elevation can destroy standard wood decks. We recommend 
     excerpt: "A guide to project planning and layout design for additions and renovations in Western North Carolina.",
     category: "Construction",
     date: "2026-03-20",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "Mountain Home Layout Planning | Highlander Design",
     metaDescription: "Plan your mountain home addition layout for better flow and views. Expert design guidance from Highlander.",
     content: `Before you build, you must plan. Designing a layout for a mountain home requires balancing the natural topography with your family's daily flow.
@@ -413,7 +425,7 @@ Adding a suite or an extension shouldn't create a 'maze.' Our design guidance fo
     excerpt: "The best outdoor spaces in WNC prioritize three things: view, weather protection, and material longevity. Explore what's working now.",
     category: "Construction",
     date: "2026-02-25",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "WNC Outdoor Living Trends 2026 | Highlander Construction",
     metaDescription: "Design the perfect mountain outdoor space. Trends in decks, screened porches, and pergolas for Western NC homes.",
 
@@ -442,7 +454,7 @@ Subtle LED lighting integrated into railings and stair treads isn't just for saf
     category: "Construction",
     date: "2026-02-18",
 
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "Importance of Pre-Construction Planning | Highlander",
     metaDescription: "Why detailed design and planning is critical for mountain construction. Avoid budget creep and timeline delays with our disciplined approach.",
     content: `At Highlander, we say: 'Measure twice, plan once, build forever.' The Design & Planning branch is our commitment to eliminating the 'surprises' that give the construction industry a bad name.
@@ -466,7 +478,7 @@ If you're planning a project in WNC, don't just ask for a plan. It's the differe
     excerpt: "Never had a professional roof inspection? Here's exactly what our team looks at — and what you'll receive afterward.",
     category: "Inspections",
     date: "2025-12-20",
-    readTime: "4 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "4 min",
     metaTitle: "What to Expect During a Roof Inspection | Highlander Roofing WNC",
     metaDescription: "What happens during a free roof inspection in Western NC? Learn what we check, how long it takes, and what you'll receive from Highlander Roofing.",
     content: `A professional roof inspection is the smartest first step for any roofing concern. Here's what our free inspections include.
@@ -512,7 +524,7 @@ Call (828) 397-9211 or submit our online form. We respond rapidly and serve all 
     excerpt: "Not all roofers are equal. Here's what WNC homeowners should look for — and what red flags to avoid.",
     category: "Tips",
     date: "2025-12-12",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "How to Choose a Roofing Contractor in WNC | Highlander Roofing",
     metaDescription: "Tips for choosing a trusted roofing contractor in Western NC. What to look for, red flags to avoid, and questions to ask before hiring.",
     content: `Choosing the wrong roofing contractor can cost you thousands — or worse, leave you with a roof that fails prematurely. Here's how to find the right one in WNC.
@@ -555,7 +567,7 @@ Call (828) 397-9211 or submit our online form. We respond rapidly and serve all 
     excerpt: "Fallen tree? Major leak? Here's your step-by-step emergency guide for WNC homeowners.",
     category: "Storm",
     date: "2025-12-05",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "Emergency Roof Repair in Western NC | Highlander Roofing",
     metaDescription: "Emergency roof repair in Western NC. What to do after a tree fall, major leak, or storm damage. Fast response — call (828) 397-9211.",
     content: `When your roof is compromised — whether by a fallen tree, severe storm, or sudden leak — fast action prevents thousands in additional damage. Here's what to do.
@@ -595,7 +607,7 @@ Highlander Roofing prioritizes emergency calls. We aim for same-day assessment w
     excerpt: "A new roof is a major investment. Here are the financing options available to make it affordable.",
     category: "Financing",
     date: "2025-11-28",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "Roof Financing Options in Western NC | Highlander Roofing",
     metaDescription: "Affordable roof financing for Western NC homeowners. Payment plans, insurance claims, and flexible options from Highlander Roofing.",
     content: `A new roof is one of the most important investments you'll make in your home — but that doesn't mean it has to strain your finances. Here's how WNC homeowners are making it work.
@@ -639,7 +651,7 @@ During your free inspection, ask about financing. We'll provide a complete cost 
     excerpt: "Your vacation rental's roof is a revenue asset. Here's how to protect it and avoid costly guest disruptions.",
     category: "Maintenance",
     date: "2025-11-20",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "Vacation Rental Roof Maintenance in WNC | Highlander Roofing",
     metaDescription: "Protect your WNC vacation rental investment with professional roof maintenance. Prevent leaks, avoid guest disruptions, maintain property value.",
     content: `In Western NC's booming vacation rental market, your roof isn't just protecting a building — it's protecting your income. A leak during peak season can mean refunds, bad reviews, and lost bookings.
@@ -679,7 +691,7 @@ A planned maintenance visit prevents an emergency repair — and the lost rental
     excerpt: "Mountain winters punish unprepared roofs. Here's how to winterize your Highlands home before the first freeze.",
     category: "Maintenance",
     date: "2025-11-12",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     town: "Highlands",
     metaTitle: "Winter Roof Preparation for Highlands, NC | Highlander Roofing",
     metaDescription: "Prepare your Highlands, NC roof for winter. Expert winterization tips for mountain homes from Highlander Roofing.",
@@ -723,7 +735,7 @@ Don't wait for the first storm. Call (828) 397-9211 to schedule a pre-winter roo
     excerpt: "Reactive roofing costs 3x more than preventative maintenance. Here's the business case for commercial roof care.",
     category: "Commercial",
     date: "2025-11-05",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Commercial Roof Maintenance Programs in WNC | Highlander Roofing",
     metaDescription: "Commercial roof maintenance programs for Western NC properties. Reduce costs, extend roof life, prevent emergencies. Highlander Roofing.",
     content: `If you manage commercial property in Western NC, your roof is your first line of defense against one of the wettest, windiest climates in the Southeast. Waiting for problems to appear costs 3x more than preventing them.
@@ -771,7 +783,7 @@ Contact us for a customized maintenance proposal based on your property type, ro
     excerpt: "Coordinating separate roofing and construction contractors creates problems. Here's why a single team delivers better results.",
     category: "Construction",
     date: "2026-03-01",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "One Company for Roofing & Construction | Highlander",
     metaDescription: "Why hiring one company for both roofing and construction saves time, money, and headaches. Highlander Roofing & Construction in WNC.",
     content: `When a project involves both roofing and structural work — additions, exterior renovations, or storm damage repairs — homeowners often hire separate contractors. That almost always creates problems.
@@ -818,7 +830,7 @@ We started as roofers and expanded into construction because our clients kept as
     excerpt: "Building an addition in the mountains involves terrain, weather, and structural factors that flatland builders don't consider.",
     category: "Construction",
     date: "2026-02-20",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "Planning a Home Addition in Western NC | Highlander Construction",
     metaDescription: "What to know before building a home addition in Western NC. Terrain, weather, permits, and structural considerations for mountain homes.",
     content: `Home additions in Western North Carolina require planning that accounts for mountain-specific challenges. Terrain, weather exposure, soil conditions, and access constraints all affect design, timeline, and cost.
@@ -873,7 +885,7 @@ Mountain additions are priced from the actual scope — complexity, access, fini
     excerpt: "A deep look at our most complex metal roofing project — 3,200 sq ft, 12/12 pitch, 8 gable intersections, and custom-fabricated panels.",
     category: "Spotlight",
     date: "2026-03-10",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Project Spotlight: Metal Roof — Highlands Estate | Highlander",
     metaDescription: "Case study: custom standing seam metal roof on a Highlands estate. 3,200 sq ft, 12/12 pitch, 8 gable intersections. Full project story.",
     content: `This project pushed our metal roofing capabilities to the highest standard. A luxury estate in Highlands with a complex multi-gable roofline, steep 12/12 pitch, and existing damage from years of mountain weather exposure.
@@ -924,7 +936,7 @@ See the complete before-and-after gallery, process photos, and homeowner testimo
     excerpt: "Early forecasts suggest an active spring storm season for Western North Carolina. Here's how to prepare your roof and home.",
     category: "Storm",
     date: "2026-03-15",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "2026 Spring Storm Season Preparation for WNC | Highlander",
     metaDescription: "Prepare your Western NC home for 2026 spring storms. Pre-storm checklist, emergency contacts, and what to do after severe weather.",
     content: `Western North Carolina's spring storm season brings wind events, heavy rain, hail, and occasional tornado warnings. Early preparation protects your home and speeds recovery if damage occurs.
@@ -976,7 +988,7 @@ Highlander responds within 24-48 hours for storm damage inspections across all o
     excerpt: "Proper ventilation prevents ice dams, reduces energy costs, and extends roof life. Here's how it works at elevation.",
     category: "Materials",
     date: "2026-02-25",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Roof Ventilation for Mountain Homes | Highlander Roofing",
     metaDescription: "Why roof ventilation matters more at elevation. Ice dam prevention, energy efficiency, and attic moisture control for WNC mountain homes.",
     content: `Roof ventilation is more critical in mountain climates than anywhere else. The combination of temperature extremes, snow loads, and moisture creates conditions that punish poorly ventilated attics.
@@ -1030,7 +1042,7 @@ During any roof inspection, we evaluate your attic ventilation system and recomm
     excerpt: "Thinking about a master wing addition? Here is how to plan the perfect flow between sleep, storage, and views.",
     category: "Construction",
     date: "2026-03-05",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Master Suite Layout Planning WNC | Highlander",
     metaDescription: "How to plan a master suite addition in Western NC. Layout tips for walk-in closets, luxury baths, and mountain view optimization.",
     content: `A master suite addition is about more than just square footage—it's about creating a sanctuary. In Western North Carolina, the terrain and views should dictate your layout.
@@ -1054,7 +1066,7 @@ Many of our favorite Highlands and Cashiers projects include a private deck acce
     excerpt: "How intelligent project planning can save you thousands in construction costs before the first hammer swings.",
     category: "Cost",
     date: "2026-03-12",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "Cost-Saving Construction Layout Tips | Highlander",
     metaDescription: "Discover how smart layout planning reduces construction costs. Tips on plumbing stacks, load-bearing walls, and mountain terrain.",
     content: `Most construction budget blowouts happen because of poor planning. Here is how our Design & Planning branch helps you build smarter for less.
@@ -1078,7 +1090,7 @@ In WNC, fighting the slope is expensive. We help you design layouts that work *w
     excerpt: "Want to renovate but can't do it all at once? Learn how to build a multi-year master plan for your WNC home.",
     category: "Construction",
     date: "2026-03-20",
-    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
     metaTitle: "Master Plan for Phased Renovations | Highlander",
     metaDescription: "How to plan your home improvements in phases. Build a multi-year roadmap for additions, outdoor living, and interior updates.",
     content: `Not every mountain estate transformation happens in a single season. Many Highlands and Cashiers homeowners prefer to build in phases. The secret to success is having a cohesive master plan from day one.
@@ -1102,7 +1114,7 @@ Don't renovate your kitchen right before you tear out the wall behind it for an 
     excerpt: "From open-concept 'Great Rooms' to hidden pantries. Discover how to plan a kitchen that works for WNC life.",
     category: "Construction",
     date: "2026-04-02",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Mountain Kitchen Layout Trends 2026 | Highlander",
     metaDescription: "Plan your kitchen renovation with these layout trends. Open-concept designs, island optimization, and mountain view integration.",
     content: `The kitchen is the heart of the mountain home. But in WNC, 'modern mountain' means more than just stainless steel. It's about how the space connects to the rest of your life.
@@ -1126,7 +1138,7 @@ Many of our clients want the kitchen to open directly onto a screened porch or d
     excerpt: "Trying to decide how to expand your outdoor space? Compare the layout benefits of open decks and covered porches.",
     category: "Construction",
     date: "2026-04-10",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "Deck or Porch Layout Comparison | Highlander",
     metaDescription: "Choose the right outdoor space layout. Compare open-air decks and screened-in porches for your Western NC home.",
     content: `WNC homeowners often ask: 'Should I build a deck or a porch?' The answer depends entirely on your lifestyle and your lot.
@@ -1150,7 +1162,7 @@ The best layouts often combine both. A smaller covered 'mountain room' for dinin
     excerpt: "How to transform a traditional mountain home layout into a bright, open space without losing its character.",
     category: "Construction",
     date: "2026-04-18",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "Modernizing Old Mountain Floor Plans | Highlander",
     metaDescription: "Layout transformation tips for older WNC homes. Open-concept planning, wall removals, and adding natural light.",
     content: `Many older homes in Franklin and Sylva have 'choppy' layouts—small rooms and dark corridors. We specialize in floor plan modernization that respects the history of your home.
@@ -1174,7 +1186,7 @@ Floor plan modernization isn't just about moving walls; it's about adding glass.
     excerpt: "Discover the most popular room addition type for Highlands and Cashiers homeowners in 2026.",
     category: "Construction",
     date: "2026-04-25",
-    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
     metaTitle: "Mountain Room Addition Trends 2026 | Highlander",
     metaDescription: "Why 'mountain rooms' are the top addition choice in Highlands and Cashiers. Layout, heating, and view optimization tips.",
     content: `The 'Mountain Room' is a uniquely WNC architectural trend. It's a space that bridges the gap between an interior sunroom and an exterior porch.
@@ -1198,7 +1210,7 @@ These rooms often project out from the main home. We ensure the structural plann
     excerpt: "Learn the step-by-step process of turning your ideas into a buildable construction scope of work.",
     category: "Construction",
     date: "2026-05-05",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Construction Scope Development Guide | Highlander",
     metaDescription: "How to define your home improvement scope. Avoid budget creep with documented materials, layouts, and timelines.",
     content: `A 'vague scope' is the most dangerous part of any construction project. At Highlander, our Design & Planning branch is dedicated to specificity.
@@ -1222,7 +1234,7 @@ A real scope includes a schedule. We help you plan for seasonal weather events i
     excerpt: "Building on a cliff? Learn how to plan floor plans that work with extreme slopes and rock formations.",
     category: "Construction",
     date: "2026-05-12",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     town: "Highlands",
     metaTitle: "Sloped Lot Floor Plan Planning WNC | Highlander",
     metaDescription: "Floor plan planning for steep mountain lots. Layout tips for stepped foundations, walk-out basements, and view optimization.",
@@ -1247,7 +1259,7 @@ Your floor plan should dictate where the water goes. We integrate drainage paths
     excerpt: "Breaking a large project into manageable phases requires master planning. Learn how to sequence your addition for budget and lifestyle.",
     category: "Design",
     date: "2026-05-18",
-    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
     metaTitle: "Multi-Phase Home Addition Planning WNC | Highlander",
     metaDescription: "Master planning for large WNC home additions. How to phase your construction project for better cash flow and minimal lifestyle disruption.",
     content: `A 2,000-square-foot expansion doesn't have to happen all at once. Phasing is a strategic way to manage budget and construction fatigue.
@@ -1271,7 +1283,7 @@ By planning now, you avoid 're-work' costs later. We help you install 'sleeves' 
     excerpt: "Mountain homes often have deep porches that darken the interior. Learn how to pull light back into your living space.",
     category: "Design",
     date: "2026-05-22",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Natural Light Layout Strategies WNC | Highlander",
     metaDescription: "How to maximize natural light in mountain homes. Layout tips for skylight placement, window orientation, and porch design.",
     content: `WNC's dense tree canopy and wide roof overhangs can make interiors feel dark. Here's how our design team solves for light.
@@ -1295,7 +1307,7 @@ In new additions, we balance thermal efficiency with light gain. Using premium W
     excerpt: "The rules change at the county line. A guide to building codes and permit timelines in Franklin, Highlands, and Sylva.",
     category: "Local",
     date: "2026-05-25",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     town: "Franklin",
     metaTitle: "Macon and Jackson County Building Permits | Highlander",
     metaDescription: "Navigating building permits in Macon and Jackson County, NC. Code requirements for Franklin, Highlands, and Sylva additions.",
@@ -1320,7 +1332,7 @@ Permitting isn't just paperwork; it's a structural safeguard. Our team manages t
     excerpt: "Designing an outdoor kitchen at 4,000 feet requires different materials and layout logic than a lowland patio.",
     category: "Construction",
     date: "2026-05-28",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     town: "Highlands",
     metaTitle: "Mountain Outdoor Kitchen Design | Highlander",
     metaDescription: "Planning an outdoor kitchen for WNC homes. Layout tips for wind protection, winterization, and durable mountain materials.",
@@ -1345,7 +1357,7 @@ Your layout should include easy-access shut-off valves for plumbing. We plan the
     excerpt: "Thinking of building up? Learn how we evaluate foundations and framing to determine if a vertical addition is possible.",
     category: "Design",
     date: "2026-06-02",
-    readTime: "9 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "9 min",
     metaTitle: "Second Story Addition Feasibility WNC | Highlander",
     metaDescription: "Can your mountain home support a second story? Learn about foundation checks, point-load analysis, and structural planning.",
     content: `Building up is often more cost-effective than building out on a steep lot — but only if your current structure can take the weight.
@@ -1369,7 +1381,7 @@ A vertical addition requires a new layout for the floor below. We help you find 
     excerpt: "What's shaping WNC home design this year? From mixed-material exteriors to floor plans that prioritize 'wellness' spaces.",
     category: "Design",
     date: "2026-06-05",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "2026 Mountain Home Design Trends | Highlander",
     metaDescription: "What's trending in Western NC architecture and design. Mixed materials, dark exteriors, and flexible mountain layouts.",
     content: `Mountain design is evolving. Homeowners in Highlands and Cashiers are moving away from 'heavy log' styles toward something cleaner and more integrated.
@@ -1393,7 +1405,7 @@ Deep charcols and 'Iron Ore' tones are popular for exteriors as they help homes 
     excerpt: "Spending $2,000 on planning can save $20,000 in mistakes. Learn the ROI of the Design & Planning phase.",
     category: "Cost",
     date: "2026-06-10",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Pre-Construction Planning ROI | Highlander",
     metaDescription: "How professional project planning reduces construction costs. Avoid change orders and material waste with better pre-build logic.",
     content: `At Highlander, we treat 'Design & Planning' as an investment, not an expense. Here is how that investment pays for itself.
@@ -1417,7 +1429,7 @@ Most change orders come from a lack of clarity in the initial scope. By document
     excerpt: "Learn the structural and layout steps needed to turn a seasonal space into a heated living area.",
     category: "Construction",
     date: "2026-06-14",
-    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
     metaTitle: "Sunroom Conversion Case Study WNC | Highlander",
     metaDescription: "How to convert a screened porch into a sunroom. Structural, insulation, and glass considerations for WNC homes.",
     content: `Screened porches are WNC staples, but many homeowners want more use out of them. Converting to a sunroom adds conditioned square footage to your home.
@@ -1441,7 +1453,7 @@ The most complex part is the roof transition. We often use this opportunity to u
     excerpt: "Your deck or addition is only as safe as the ground beneath it. Learn why water management is a design priority.",
     category: "Construction",
     date: "2026-06-18",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "Mountain Home Drainage Planning | Highlander",
     metaDescription: "Why water management is critical for WNC foundations. How to design hardscapes and additions that protect your property.",
     content: `In a region with 60+ inches of rain, water is the primary enemy of your foundation. Our layouts always prioritize drainage.
@@ -1465,7 +1477,7 @@ When planning new patios or walkways, we favor layouts that allow water to soak 
     excerpt: "You bought your WNC home for the view. Learn how to plan additions that enhance, not block, your mountain horizon.",
     category: "Design",
     date: "2026-06-22",
-    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
     metaTitle: "Mountain View Layout Strategies | Highlander",
     metaDescription: "How to plan home additions that maximize mountain views. Window placement, room orientation, and sightline planning.",
     content: `A poorly planned addition can 'kill' the view that made you fall in love with your home. We use sightline analysis to protect your horizon.
@@ -1489,7 +1501,7 @@ We don't just draw walls; we plan where your sofa or bed will go. This ensures y
     excerpt: "Planning for long-term visitors? Learn the layout differences between a temporary guest wing and a full secondary living suite.",
     category: "Design",
     date: "2026-06-26",
-    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
     metaTitle: "Guest Suite vs MIL Suite Design WNC | Highlander",
     metaDescription: "Layout differences for guest additions. How to plan for accessibility, privacy, and long-term utility in your WNC home.",
     content: `As more families move to Western NC, multi-generational additions are on the rise. But 'Guest' and 'Suite' aren't interchangeable terms.
@@ -1513,7 +1525,7 @@ Regardless of use, privacy is about sound. We design these additions with 'buffe
     excerpt: "Deep snow and high humidity create unique ventilation challenges. Learn how we prevent mold and ice dams with better airflow design.",
     category: "Materials",
     date: "2026-07-01",
-    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
     metaTitle: "Mountain Roof Ventilation Science | Highlander",
     metaDescription: "Why standard roof venting fails in WNC. Expert guide on ridge vents, soffit intake, and attic moisture management.",
     content: `Standard building code works for 80% of the country. But at 4,000 feet, you're in the other 20%. Here is how we design ventilation for the ridge.
