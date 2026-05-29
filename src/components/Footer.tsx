@@ -45,16 +45,20 @@ const companyLinks = [
 const tier1Areas = [
   { label: "Highlands", href: "/service-areas/highlands-nc" },
   { label: "Cashiers", href: "/service-areas/cashiers-nc" },
+  { label: "Asheville", href: "/service-areas/asheville-nc" },
+  { label: "Hendersonville", href: "/service-areas/hendersonville-nc" },
   { label: "Franklin", href: "/service-areas/franklin-nc" },
   { label: "Sylva", href: "/service-areas/sylva-nc" },
 ];
 
 // Tier 2 — extended WNC coverage
 const tier2Areas = [
+  { label: "Brevard", href: "/service-areas/brevard-nc" },
+  { label: "Lake Toxaway", href: "/service-areas/lake-toxaway-nc" },
   { label: "Waynesville", href: "/service-areas/waynesville-nc" },
   { label: "Bryson City", href: "/service-areas/bryson-city-nc" },
-  { label: "Cullowhee", href: "/service-areas/cullowhee-nc" },
-  { label: "Dillsboro", href: "/service-areas/dillsboro-nc" },
+  { label: "Black Mountain", href: "/service-areas/black-mountain-nc" },
+  { label: "Weaverville", href: "/service-areas/weaverville-nc" },
 ];
 
 const certifications = [
@@ -157,7 +161,7 @@ const Footer = () => {
             </Link>
             <p className="text-primary-foreground/80 text-lg leading-relaxed mb-6 max-w-xs font-body">
               Premium roofing and construction across Western NC. 
-              Serving 8 primary counties with localized crews and owner-led quality since 2017.
+              Serving 10+ primary counties with localized crews and owner-led quality since 2017.
             </p>
 
             {/* Contact info */}
@@ -204,8 +208,8 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-3 pt-8 mt-8 border-t border-primary-foreground/5">
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <div className="w-8 h-8 flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain filter invert brightness-[2] mix-blend-screen" />
+                  <div className="w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain filter brightness-[10] contrast-[100] grayscale" />
                   </div>
                   <span className="text-[13px] font-bold uppercase tracking-wider text-primary-foreground ml-2">VELUX Certified</span>
                 </div>
