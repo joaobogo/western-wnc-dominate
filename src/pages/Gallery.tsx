@@ -231,8 +231,9 @@ const EditorialCard = ({ project, index, size, onClick }: {
         </div>
       </div>
     </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 /* Size pattern for visual rhythm - mapped to project indices */
 const sizePattern: Array<"tall" | "wide" | "standard"> = [
