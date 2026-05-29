@@ -207,14 +207,14 @@ const DivisionCard = ({ data, accent, index }: {
         {/* CTA */}
         <Link
           to={data.href}
-          className={`inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide group/cta transition-all duration-300 mt-auto ${
+          className={`inline-flex items-center justify-center gap-3 font-body font-bold text-base tracking-[0.08em] uppercase group/cta transition-all duration-300 mt-auto min-h-[56px] shadow-lg ${
             isGold
-              ? "text-accent-foreground cta-gradient px-7 py-3.5 hover:opacity-90"
-              : "text-primary-foreground bg-primary px-7 py-3.5 hover:bg-primary/90"
+              ? "text-accent-foreground cta-gradient px-10 py-4 hover:opacity-95 hover:scale-[1.02]"
+              : "text-primary-foreground bg-primary px-10 py-4 hover:bg-primary/95 hover:scale-[1.02]"
           }`}
         >
           {data.cta}
-          <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
+          <ArrowRight className="w-5 h-5 group-hover/cta:translate-x-1.5 transition-transform" />
         </Link>
       </div>
     </motion.div>
