@@ -127,7 +127,7 @@ const BeforeAfterGallery = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.15)] to-transparent" />
 
-              <div className="absolute top-4 left-4 md:top-5 md:left-5 bg-primary/90 backdrop-blur-sm text-primary-foreground text-[10px] font-body font-semibold uppercase tracking-[0.15em] px-3 py-1.5 rounded-sm z-10">
+              <div className="absolute top-4 left-4 md:top-5 md:left-5 bg-primary/95 backdrop-blur-sm text-primary-foreground text-[12px] font-body font-bold uppercase tracking-[0.15em] px-3.5 py-2 rounded-sm z-10">
                 {projects[current].type}
               </div>
 
