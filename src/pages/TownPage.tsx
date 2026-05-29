@@ -269,8 +269,7 @@ const TownPage = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-              {/* Local Post if exists, otherwise general relevant ones */}
-              {(existingBlogs.length > 0 ? existingBlogs : blogPosts.slice(0, 3)).map((post, i) => (
+              {relevantBlogs.map((post, i) => (
                 <ScrollReveal key={post.slug} variant="rise-subtle" delay={i * 0.1}>
                   <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-background border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
                     {/* Subtle category badge */}
