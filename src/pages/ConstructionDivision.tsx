@@ -121,10 +121,10 @@ const ConstructionDivision = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)]">
-                    <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                  <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.4)] shadow-[0_0_15px_-3px_hsl(var(--highland-gold)/0.3)]">
+                    <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
-                  <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Mountain Quality Since 2017</span>
+                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))] drop-shadow-sm">Mountain Quality Since 2017</span>
                 </div>
               </motion.div>
 
