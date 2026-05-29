@@ -50,8 +50,11 @@ const CountyPage = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.92)] via-[hsl(var(--hero-overlay)/0.75)] to-[hsl(var(--hero-overlay)/0.1)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent opacity-80" />
             
-            {/* Subtle Tartan Overlay */}
-            <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+            {/* Heritage Tartan Accent — Restrained and Subtle */}
+            <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+            
+            {/* Subtle Bottom Heritage Trim */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.png')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
           </div>
 
           <div className="container-tight relative z-10 px-6 py-24">
@@ -70,7 +73,7 @@ const CountyPage = () => {
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">County Authority</span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-primary-foreground tracking-tightest leading-[0.92]">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 md:mb-8 text-primary-foreground tracking-tightest leading-[1.1] md:leading-[0.92]">
                   Defending <br />
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{county.name}.</span>
                 </h1>
@@ -91,15 +94,15 @@ const CountyPage = () => {
             </div>
           </div>
 
-          {/* Bottom Trust bar */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/5 bg-black/20 backdrop-blur-md">
-            <div className="container-tight px-6 py-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Bottom Trust bar — Balanced for all devices */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-black/40 backdrop-blur-lg">
+            <div className="container-tight px-4 sm:px-6 py-4 md:py-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {county.facts.map((fact, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-1">{fact.label}</span>
-                    <span className="text-sm font-heading font-bold text-white flex items-center gap-2">
-                      <Shield className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
+                    <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/40 font-bold mb-0.5 md:mb-1">{fact.label}</span>
+                    <span className="text-xs md:text-sm font-heading font-bold text-white flex items-center gap-1.5 md:gap-2">
+                      <Shield className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold))]" />
                       {fact.value}
                     </span>
                   </div>

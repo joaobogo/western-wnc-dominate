@@ -101,14 +101,17 @@ const TownPage = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.92)] via-[hsl(var(--hero-overlay)/0.75)] to-[hsl(var(--hero-overlay)/0.1)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent opacity-80" />
             
-            {/* Subtle Tartan Overlay */}
-            <div className="absolute inset-0 opacity-[0.15] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+            {/* Heritage Tartan Accent — Restrained and Subtle */}
+            <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
             
             {/* Design Datum Lines */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
-              <div className="absolute left-[10%] top-0 bottom-0 w-px bg-white" />
-              <div className="absolute right-[10%] top-0 bottom-0 w-px bg-white" />
+              <div className="absolute left-[8%] top-0 bottom-0 w-px bg-white/20" />
+              <div className="absolute right-[8%] top-0 bottom-0 w-px bg-white/20" />
             </div>
+
+            {/* Subtle Bottom Heritage Trim */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.png')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
           </div>
 
           <div className="container-tight relative z-10 px-6 md:px-10 lg:px-20 py-24">
@@ -127,7 +130,7 @@ const TownPage = () => {
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-primary-foreground tracking-tightest leading-[0.92] drop-shadow-sm">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 md:mb-8 text-primary-foreground tracking-tightest leading-[1.1] md:leading-[0.92] drop-shadow-sm">
                   Built for the <br />
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{town.name} Peaks.</span>
                 </h1>
@@ -148,10 +151,10 @@ const TownPage = () => {
             </div>
           </div>
 
-          {/* Bottom Trust bar inside hero */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/5 bg-black/20 backdrop-blur-md">
-            <div className="container-tight px-6 py-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Bottom Trust bar inside hero — Balanced for all devices */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-black/40 backdrop-blur-lg">
+            <div className="container-tight px-4 sm:px-6 py-4 md:py-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 {[
                   { icon: Mountain, label: "Peak Elevation", value: town.elevation },
                   { icon: CloudLightning, label: "Storm Ready", value: "Class 4 Rated" },
@@ -159,9 +162,9 @@ const TownPage = () => {
                   { icon: Star, label: "Local Trust", value: "4.9★ Rated" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-1">{stat.label}</span>
-                    <span className="text-sm font-heading font-bold text-white flex items-center gap-2">
-                      <stat.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
+                    <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/40 font-bold mb-0.5 md:mb-1">{stat.label}</span>
+                    <span className="text-xs md:text-sm font-heading font-bold text-white flex items-center gap-1.5 md:gap-2">
+                      <stat.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold))]" />
                       {stat.value}
                     </span>
                   </div>
