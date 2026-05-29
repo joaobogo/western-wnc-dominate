@@ -180,6 +180,7 @@ const BlogPostPage = () => {
           <div className="absolute inset-0">
             <img 
               src={post.image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"} 
+
               alt={post.title}
               className="w-full h-full object-cover"
             />
