@@ -22,6 +22,7 @@ import TownProofBlock from "@/components/TownProofBlock";
 import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 import { blogPosts } from "@/data/blogs";
+import { getRelevantBlogsForTown } from "@/data/content-support";
 
 const TownPage = () => {
   const { slug } = useParams<{ slug: string }>();
