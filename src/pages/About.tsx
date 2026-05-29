@@ -54,10 +54,19 @@ const About = () => {
       <Header />
       <main>
         {/* ── HERO — Warm editorial fade (unique to About — no text-reveal, no gold line) ── */}
-        <section className="relative min-h-[55vh] md:min-h-[65vh] flex items-end overflow-hidden">
-          <div className="absolute inset-0 section-dark tartan-dark" />
-          {/* Warm cream wash — no gold accent lines (About-only) */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--highland-gold)/0.04)] to-transparent" />
+        <section className="relative min-h-[55vh] md:min-h-[75vh] flex items-end overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src={storyImg} 
+              alt="Western North Carolina mountains" 
+              className="w-full h-full object-cover" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.3)] via-[hsl(var(--hero-overlay)/0.1)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.2)] via-transparent to-transparent" />
+            {/* Subtle tartan accent */}
+            <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+          </div>
+          {/* Warm cream wash removed for clarity per client request */}
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <motion.div

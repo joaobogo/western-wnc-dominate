@@ -87,11 +87,11 @@ const TownPage = () => {
               alt={`${town.name}, NC mountain roofing and construction context`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.35)] via-[hsl(var(--hero-overlay)/0.15)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.2)] via-transparent to-transparent opacity-40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.25)] via-[hsl(var(--hero-overlay)/0.08)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.15)] via-transparent to-transparent opacity-30" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
-            <div className="absolute inset-0 opacity-[0.035] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
             
             {/* Design Datum Lines */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
