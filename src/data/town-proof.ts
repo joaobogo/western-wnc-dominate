@@ -348,6 +348,12 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Town Mountain ridgetop roofing",
         summary: "High-wind exposure on Asheville's surrounding ridgetops requires high-velocity rated systems and reinforced perimeter fastening.",
         proof: "Category 4 impact ratings and 130mph wind warranties",
+        image: "https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Modern mountain suite addition",
+        summary: "Structural footprint expansion for a luxury Asheville residence, integrating a new master suite with existing ridgetop architecture.",
+        proof: "Engineered foundation, floor-to-ceiling glass, and seamless roof tie-in",
       },
     ],
     faqs: [
