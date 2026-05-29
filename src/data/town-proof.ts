@@ -311,22 +311,23 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Storm repair with character retention",
-        summary: "When older Dillsboro roofs are damaged, the goal is usually to restore performance without losing the home's original feel.",
-        proof: "Repair scopes that balance protection, cost, and layout character",
+        summary: "When older Dillsboro roofs are damaged, our goal is to restore performance without losing the home's original village aesthetic.",
+        proof: "Repair scopes that balance modern protection with historic Jackson County layout character",
+        image: "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=600",
       },
     ],
     faqs: [
       {
-        question: "Can you keep a Dillsboro home's roof looking appropriate for the village?",
-        answer: "Yes. We help homeowners choose materials and details that fit the home's style while still improving waterproofing, ventilation, and durability.",
+        question: "How do you maintain Dillsboro's historic look during a roof project?",
+        answer: "We help you choose designer shingles and copper accents that complement Dillsboro's historic mountain cottage style while providing modern waterproofing and ventilation.",
       },
       {
-        question: "Are older Dillsboro homes harder to reroof?",
-        answer: "They can be. Older homes often have hidden decking issues, irregular framing, or outdated flashing details that need careful correction during the project.",
+        question: "Are Dillsboro cottages harder to reroof than newer homes?",
+        answer: "They require more detail. Older framing and river-proximate moisture mean we often need to address decking integrity and use specialized flashing transitions that newer builds don't require.",
       },
       {
-        question: "Do you handle small-town projects with the same level of detail as larger towns?",
-        answer: "Absolutely. Dillsboro projects may be smaller in scale, but they often require more precision because every visual detail is more noticeable.",
+        question: "Can you work on tight village lots in Dillsboro?",
+        answer: "Yes. We specialize in 'small-footprint' execution, keeping job sites organized and ensuring our presence doesn't interfere with village tourism or neighboring artisan shops.",
       },
     ],
   },
