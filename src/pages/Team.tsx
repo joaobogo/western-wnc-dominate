@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -65,13 +66,19 @@ const Team = () => {
           <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10 text-center">
             <motion.div 
-              initial={{ opacity: 0, y: 16 }} 
-              animate={{ opacity: 1, y: 0 }} 
+              initial={{ opacity: 0, scale: 0.95 }} 
+              animate={{ opacity: 1, scale: 1 }} 
               transition={{ duration: 0.6, ease: HIGHLAND_EASE }}
-              className="flex items-center justify-center gap-3 mb-6"
+              className="flex items-center justify-center gap-6 mb-8"
             >
-              <Users className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-              <span className="text-[14px] md:text-[15px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Highlander People</span>
+              <div className="h-12 w-px bg-white/20" />
+              <Link to="/">
+                <img 
+                  src={logo} 
+                  alt="Highlander Roofing & Construction" 
+                  className="h-16 md:h-20 w-auto transition-transform hover:scale-105" 
+                />
+              </Link>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }} 

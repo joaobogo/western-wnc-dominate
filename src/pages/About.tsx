@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 import { ArrowRight, Phone, Shield, Users, Mountain, Award, Heart, Eye, Hammer, TreePine, Home, CheckCircle, Star, MapPin, Calendar, Quote } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema, localBusinessSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -60,16 +61,19 @@ const About = () => {
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="mb-10 inline-flex items-center gap-4"
+              className="mb-10 inline-flex items-center gap-6"
             >
-              <div className="flex flex-col">
-                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">Our Story</span>
-              </div>
-              <div className="h-px w-10 bg-white/20" />
+              <div className="h-14 w-px bg-white/20" />
+              <Link to="/">
+                <img 
+                  src={logo} 
+                  alt="Highlander Roofing & Construction" 
+                  className="h-14 md:h-16 w-auto transition-transform hover:scale-105" 
+                />
+              </Link>
             </motion.div>
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
