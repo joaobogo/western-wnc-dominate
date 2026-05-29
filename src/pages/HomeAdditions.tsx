@@ -333,7 +333,7 @@ const HomeAdditions = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">What Makes This Different.</h2>
-              <p className="text-muted-foreground text-sm font-body max-w-lg mx-auto">
+              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
                 Years of high-elevation roofing experience built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
               </p>
             </motion.div>
