@@ -100,8 +100,8 @@ const Blog = () => {
                 >
                   <div className="flex items-center gap-5 mb-8">
                     <div className="flex flex-col">
-                      <span className="text-[15px] md:text-[17px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
-                      <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em]">Knowledge Base</span>
+                      <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
+                      <span className="text-[11px] md:text-[12px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em]">Knowledge Base</span>
                     </div>
                     <div className="h-px w-12 bg-white/20" />
                   </div>
@@ -145,11 +145,11 @@ const Blog = () => {
                         <seasonal.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-body font-bold uppercase tracking-wider text-[hsl(var(--highland-gold))]">{seasonal.season} Advisory</p>
-                        <p className="text-xs text-[hsl(var(--dark-section-foreground)/0.5)] font-body">Timely for WNC homeowners</p>
+                        <p className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--highland-gold))]">{seasonal.season} Advisory</p>
+                        <p className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body font-medium">Timely for WNC homeowners</p>
                       </div>
                     </div>
-                    <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-sm font-body leading-relaxed mb-4">{seasonal.tip}</p>
+                    <p className="text-[hsl(var(--dark-section-foreground)/0.8)] text-base font-body leading-relaxed mb-4 font-medium">{seasonal.tip}</p>
                     <div className="space-y-2">
                       {seasonalPosts.map((post) => (
                         <Link
@@ -157,13 +157,13 @@ const Blog = () => {
                           to={`/blog/${post.slug}`}
                           className="group flex items-center justify-between py-2 border-b border-[hsl(var(--dark-section-foreground)/0.06)] last:border-0"
                         >
-                          <span className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body group-hover:text-[hsl(var(--highland-gold))] transition-colors line-clamp-1 pr-2">{post.title}</span>
+                          <span className="text-[15px] text-[hsl(var(--dark-section-foreground)/0.7)] font-body font-bold group-hover:text-[hsl(var(--highland-gold))] transition-colors line-clamp-1 pr-2">{post.title}</span>
                           <ChevronRight className="w-3 h-3 text-[hsl(var(--dark-section-foreground)/0.2)] flex-shrink-0" />
                         </Link>
                       ))}
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 mt-4 text-[hsl(var(--dark-section-foreground)/0.35)] text-xs font-body">
+                  <div className="flex items-center gap-4 mt-4 text-[hsl(var(--dark-section-foreground)/0.5)] text-[13px] font-body font-bold">
                     <span>{blogPosts.length} articles</span>
                     <span>·</span>
                     <span>{categories.length - 1} categories</span>
@@ -210,7 +210,7 @@ const Blog = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.4)] to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 lg:p-12">
-                        <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] px-3 py-1.5 mb-4 inline-block">
+                        <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.15)] px-3 py-1.5 mb-4 inline-block">
                           {heroFeatured.category}
                         </span>
                         <h3 className="font-heading font-bold text-foreground text-2xl md:text-3xl mb-4 group-hover:text-primary transition-colors leading-snug">
@@ -219,7 +219,7 @@ const Blog = () => {
                         <p className="text-muted-foreground text-base leading-relaxed mb-6 max-w-lg">
                           {heroFeatured.excerpt}
                         </p>
-                        <div className="flex items-center gap-5 text-xs text-muted-foreground mb-6">
+                        <div className="flex items-center gap-5 text-sm text-white/70 font-bold mb-6">
                           <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {heroFeatured.readTime}</span>
                           <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {heroFeatured.date}</span>
                           {heroFeatured.town && <span className="flex items-center gap-1"><Mountain className="w-3 h-3" /> {heroFeatured.town}</span>}
@@ -253,10 +253,10 @@ const Blog = () => {
                           </div>
                           <div className="p-5 md:p-6 flex-1">
                             <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                              <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/10 text-primary">
+                              <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/15 text-primary">
                                 {post.category}
                               </span>
-                              <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                              <span className="flex items-center gap-1 font-bold"><Clock className="w-3 h-3" /> {post.readTime}</span>
                             </div>
                             <h3 className="font-heading font-bold text-foreground text-lg mb-2 group-hover:text-primary transition-colors leading-snug">
                               {post.title}
