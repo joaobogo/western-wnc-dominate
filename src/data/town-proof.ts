@@ -480,6 +480,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "CertainTeed dimensional systems and local Madison County crew support",
         image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Far-west rental property maintenance",
+        summary: "Responsive repair and inspection program for a portfolio of Murphy-area vacation rentals, ensuring roofs are guest-ready year-round.",
+        proof: "Scheduled inspections, photo-backed reporting, and prioritized repairs",
+        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Structural porch and deck rebuild",
+        summary: "Rebuilding a weathered deck for a Murphy residence with modern materials and improved structural integrity for long-term safety.",
+        proof: "Reinforced post-to-beam connections, premium decking, and code-compliant railing",
+      },
     ],
     faqs: [
       {
