@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock, BadgeCheck, Star } from "lucide-react";
+import veluxLogo from "@/assets/velux-certified-logo.jpg";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 
@@ -205,10 +206,12 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-3 pt-8 mt-8 border-t border-primary-foreground/5">
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <Award className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  <span className="text-[13px] font-bold uppercase tracking-wider text-primary-foreground ml-2">GAF Master Elite®</span>
+                  <div className="w-8 h-8 flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain filter invert brightness-[2] mix-blend-screen" />
+                  </div>
+                  <span className="text-[13px] font-bold uppercase tracking-wider text-primary-foreground ml-2">VELUX Certified</span>
                 </div>
-                <span className="text-[12px] text-primary-foreground/60 font-body leading-tight">Top 2% of Roofing Contractors Nationally</span>
+                <span className="text-[12px] text-primary-foreground/60 font-body leading-tight">Master Installer & Pro Accredited</span>
               </div>
               
               <div className="flex flex-col gap-2 group/cert">
