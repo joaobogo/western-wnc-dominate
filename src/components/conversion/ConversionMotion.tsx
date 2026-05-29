@@ -122,26 +122,26 @@ export const MultiStepForm = ({
         <button
           onClick={handlePrev}
           disabled={currentStep === 0}
-          className={`inline-flex items-center gap-2 text-sm font-body font-medium btn-ghost-interactive px-4 py-2.5 rounded-sm ${
+          className={`inline-flex items-center gap-2 text-base font-body font-bold btn-ghost-interactive px-6 py-3 rounded-none ${
             currentStep === 0 ? "opacity-30 cursor-not-allowed" : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          <ArrowLeft className="w-3.5 h-3.5" /> Back
+          <ArrowLeft className="w-4 h-4" /> Back
         </button>
         <button
           onClick={isLast ? onSubmit : handleNext}
           disabled={isSubmitting}
-          className="cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3 rounded-sm inline-flex items-center gap-2 btn-primary-interactive"
+          className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-lg"
         >
           {isSubmitting ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin relative z-10" />
+              <Loader2 className="w-5 h-5 animate-spin relative z-10" />
               <span className="relative z-10">Submitting...</span>
             </>
           ) : (
             <>
               <span className="relative z-10">{isLast ? submitLabel : "Continue"}</span>
-              <ArrowRight className="w-3.5 h-3.5 relative z-10 btn-arrow-icon" />
+              <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
             </>
           )}
         </button>
