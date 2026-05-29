@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-none text-base font-semibold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 font-body uppercase tracking-[0.12em]",
+  "inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-none text-[18px] font-bold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 font-body uppercase tracking-[0.14em] shadow-sm",
   {
     variants: {
       variant: {
@@ -25,10 +25,10 @@ const buttonVariants = cva(
         heritage: "bg-primary text-primary-foreground font-bold hover:bg-primary/90 btn-ghost-interactive shadow-lg",
       },
       size: {
-        default: "h-14 px-8 text-[17px] md:text-[18px]",
-        sm: "h-11 px-6 text-[15px] md:text-[16px]",
-        lg: "h-16 px-10 text-[19px] md:text-[21px] tracking-[0.1em]",
-        xl: "h-20 px-12 md:px-16 text-[22px] md:text-[24px] tracking-[0.12em]",
+        default: "h-14 px-10 text-[18px] md:text-[20px]",
+        sm: "h-12 px-8 text-[16px] md:text-[17px]",
+        lg: "h-18 px-12 text-[20px] md:text-[22px] tracking-[0.1em]",
+        xl: "h-22 px-14 md:px-20 text-[24px] md:text-[26px] tracking-[0.12em]",
         icon: "h-12 w-12",
       },
     },

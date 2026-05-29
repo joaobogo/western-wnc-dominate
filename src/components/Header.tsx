@@ -151,7 +151,7 @@ const Header = () => {
             src={logo}
             alt="Highlander Roofing & Construction"
             className="w-auto transition-all duration-500"
-            animate={{ height: scrolled ? 68 : 88 }}
+            animate={{ height: scrolled ? 80 : 100 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
         </Link>
@@ -168,7 +168,7 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[14px] md:text-[15px] font-semibold transition-all duration-300 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-sm font-body ${
+                className={`relative text-[16px] md:text-[17px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-5 py-3 rounded-sm font-body ${
                   isActive(div.href)
                     ? "text-heritage-charcoal bg-black/5"
                     : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
@@ -287,7 +287,7 @@ const Header = () => {
             <Link
               key={link.label}
               to={link.href}
-              className={`relative text-[14px] md:text-[15px] font-medium transition-all duration-300 px-3.5 py-2.5 rounded-sm font-body ${
+              className={`relative text-[16px] md:text-[17px] font-bold transition-all duration-300 px-4 py-3 rounded-sm font-body ${
                 isActive(link.href)
                   ? "text-heritage-charcoal bg-black/5"
                   : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
@@ -323,7 +323,7 @@ const Header = () => {
           </a>
           <Link
             to="/consultation"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[13px] md:text-sm px-6 py-3 rounded-sm items-center gap-2.5 btn-primary-interactive uppercase tracking-widest shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] md:text-base px-8 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.12em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
           >
             <span className="relative z-10">Start a Project</span>
             <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
