@@ -120,6 +120,7 @@ const App = () => (
           {/* ─── Company ─── */}
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/service-areas/:slug" element={<TownPage />} />
+          <Route path="/service-areas/county/:slug" element={<CountyPage />} />
           <Route path="/service-areas/:townSlug/:serviceSlug" element={<ServiceTownPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
