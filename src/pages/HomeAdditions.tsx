@@ -405,7 +405,7 @@ const HomeAdditions = () => {
                       <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
                       <h3 className="font-heading font-bold text-dark-section-foreground text-sm">{item.title}</h3>
                     </div>
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
