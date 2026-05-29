@@ -162,7 +162,7 @@ const Footer = () => {
                 />
               </div>
             </Link>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed mb-6 max-w-xs font-body">
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6 max-w-xs font-body">
               Premium roofing and construction across Western NC. 
               Serving 10+ primary counties with localized crews and owner-led quality since 2017.
             </p>
@@ -170,19 +170,19 @@ const Footer = () => {
             {/* Contact info */}
             <div className="flex flex-col gap-4 mb-8">
               <div className="space-y-3">
-                <a href="tel:8283979211" className="flex items-center gap-3 text-lg hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-primary-foreground/90">
-                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
+                <a href="tel:8283979211" className="flex items-center gap-3 text-lg hover:text-primary transition-colors font-heading font-bold text-foreground">
+                  <Phone className="w-4 h-4 text-primary" /> (828) 397-9211
                 </a>
-                <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 text-base hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-primary-foreground/70">
-                  <Mail className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> info@highlandernc.com
+                <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 text-base hover:text-primary transition-colors font-body text-muted-foreground">
+                  <Mail className="w-4 h-4 text-primary" /> info@highlandernc.com
                 </a>
               </div>
 
-              <div className="space-y-4 pt-2 border-t border-primary-foreground/5">
+              <div className="space-y-4 pt-2 border-t border-border">
                 <div className="flex gap-3">
-                  <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)] flex-shrink-0 mt-0.5" />
-                  <div className="text-[16px] text-primary-foreground/85 font-body leading-relaxed">
-                    <span className="block font-bold text-primary-foreground mb-0.5 text-[17px]">Franklin Office</span>
+                  <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <div className="text-[16px] text-foreground/80 font-body leading-relaxed">
+                    <span className="block font-bold text-foreground mb-0.5 text-[17px]">Franklin Office</span>
                     1511 Highlands Road<br />
                     Franklin, NC 28734
                   </div>
