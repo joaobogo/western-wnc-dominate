@@ -256,21 +256,21 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.35 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6"
             >
               <Link
                 to="/consultation"
-                className="group cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[13px] md:text-[15px] px-9 md:px-12 py-[15px] md:py-[19px] rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide min-h-[54px]"
+                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-base md:text-lg px-10 md:px-14 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-xl min-h-[60px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Start Your Project</span>
-                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1.5 transition-transform" />
               </Link>
               <a
                 href="tel:+18287029876"
-                className="group bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] text-primary-foreground font-medium text-[13px] md:text-[15px] px-8 md:px-10 py-[14px] md:py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.07] hover:border-white/[0.16] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[52px]"
+                className="group bg-white/[0.05] backdrop-blur-md border-2 border-white/[0.12] text-primary-foreground font-body font-bold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.1] hover:border-white/[0.2] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[58px] tracking-wide"
               >
-                <Phone className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                 (828) 702-9876
               </a>
             </motion.div>

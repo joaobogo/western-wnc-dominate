@@ -303,18 +303,18 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
             type="button"
             disabled={!stepValid}
             onClick={next}
-            className="cta-gradient text-accent-foreground font-heading font-bold text-[13.5px] px-7 py-3.5 rounded-md inline-flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
+            className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-lg"
           >
-            Continue <ArrowRight className="w-3.5 h-3.5" />
+            Continue <ArrowRight className="w-5 h-5" />
           </button>
         ) : (
           <button
             type="button"
             disabled={!stepValid || submitting}
             onClick={submit}
-            className="cta-gradient text-accent-foreground font-heading font-bold text-[13.5px] px-7 py-3.5 rounded-md inline-flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
+            className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-lg"
           >
-            {submitting ? <><Loader2 className="w-3.5 h-3.5 animate-spin" /> Sending…</> : <>Submit Planning Brief <ArrowRight className="w-3.5 h-3.5" /></>}
+            {submitting ? <><Loader2 className="w-5 h-5 animate-spin" /> Sending…</> : <>Submit Planning Brief <ArrowRight className="w-5 h-5" /></>}
           </button>
         )}
       </div>

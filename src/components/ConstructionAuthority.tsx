@@ -211,7 +211,7 @@ const ConstructionAuthority = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 to="/construction"
-                className="group cta-gradient text-accent-foreground font-heading font-bold text-[13px] px-9 py-4 rounded-none inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide"
+                className="group cta-gradient text-accent-foreground font-body font-bold text-base md:text-lg px-10 py-4.5 rounded-none inline-flex items-center gap-3 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 relative overflow-hidden tracking-[0.1em] uppercase shadow-xl"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Explore the Construction Division</span>

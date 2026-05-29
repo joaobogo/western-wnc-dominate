@@ -53,28 +53,28 @@ const StickyMobileCTA = () => {
                 <Link
                   to="/consultation"
                   onClick={() => trackEvent("cta_click", { label: "Start a Project", elementId: "sticky-cta-mobile-start" })}
-                  className="flex-1 flex items-center justify-center gap-2 py-[14px] px-3 cta-gradient text-accent-foreground active:opacity-90 active:scale-[0.98] transition-all min-h-[52px]"
+                  className="flex-[1.5] flex items-center justify-center gap-2.5 py-4 px-3 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[64px]"
                 >
-                  <MessageSquare className="w-4 h-4" />
-                  <span className="text-[11px] font-heading font-bold uppercase tracking-[0.08em]">Start a Project</span>
+                  <MessageSquare className="w-5 h-5" />
+                  <span className="text-sm font-body font-bold uppercase tracking-[0.1em]">Start a Project</span>
                 </Link>
-
-                {/* Secondary actions — 48px min tap targets */}
-                <div className="flex items-stretch divide-x divide-border">
+                
+                {/* Secondary actions — generous touch targets */}
+                <div className="flex items-stretch divide-x divide-border flex-1">
                   <a
                     href="tel:8283979211"
                     onClick={() => trackEvent("phone_click", { label: "Call Now", elementId: "sticky-cta-mobile-call" })}
-                    className="flex flex-col items-center justify-center gap-1 px-5 py-3 text-primary active:bg-primary/5 active:scale-95 transition-all min-w-[60px] min-h-[52px]"
+                    className="flex-1 flex flex-col items-center justify-center gap-1.5 px-4 py-3 text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[64px]"
                   >
-                    <Phone className="w-[18px] h-[18px]" />
-                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.06em]">Call</span>
+                    <Phone className="w-5 h-5" />
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.06em]">Call</span>
                   </a>
                   <Link
                     to="/services"
-                    className="flex flex-col items-center justify-center gap-1 px-5 py-3 text-muted-foreground active:bg-secondary active:scale-95 transition-all min-w-[60px] min-h-[52px]"
+                    className="flex-1 flex flex-col items-center justify-center gap-1.5 px-4 py-3 text-muted-foreground active:bg-secondary active:scale-95 transition-all min-h-[64px]"
                   >
-                    <Layers className="w-[18px] h-[18px]" />
-                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.06em]">Services</span>
+                    <Layers className="w-5 h-5" />
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.06em]">Services</span>
                   </Link>
                 </div>
               </div>

@@ -75,7 +75,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
           <p className="text-muted-foreground text-sm mb-5 font-body">Your {g.title} is on its way — along with a few bonus tips for WNC homeowners.</p>
           <a
             href="#"
-            className="cta-gradient text-accent-foreground font-heading font-semibold px-6 py-3 rounded-none inline-flex items-center gap-2 btn-primary-interactive"
+            className="cta-gradient text-accent-foreground font-body font-bold text-base px-8 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-lg"
             onClick={(e) => e.preventDefault()}
           >
             <Download className="w-4 h-4 relative z-10" /> <span className="relative z-10">Download Now</span>
@@ -91,8 +91,8 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
             <label className={labelClass}>Email</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
           </div>
-          <button type="submit" className="w-full cta-gradient text-accent-foreground font-heading font-bold py-3.5 rounded-none flex items-center justify-center gap-2 btn-primary-interactive">
-            <Download className="w-4 h-4 relative z-10" /> <span className="relative z-10">{g.cta}</span>
+          <button type="submit" className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase">
+            <Download className="w-5 h-5 relative z-10" /> <span className="relative z-10">{g.cta}</span>
           </button>
           <p className="text-[10px] text-muted-foreground/50 text-center font-body">No spam · Unsubscribe anytime.</p>
         </form>
@@ -132,9 +132,9 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
       <>
         <button
           onClick={() => setShowPopup(true)}
-          className="cta-gradient text-accent-foreground font-heading font-semibold px-6 py-3 rounded-none inline-flex items-center gap-2 btn-primary-interactive"
+          className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-xl"
         >
-          <Download className="w-4 h-4 relative z-10" /> <span className="relative z-10">{g.cta}</span>
+          <Download className="w-5 h-5 relative z-10" /> <span className="relative z-10">{g.cta}</span>
         </button>
         <AnimatePresence>
           {showPopup && (

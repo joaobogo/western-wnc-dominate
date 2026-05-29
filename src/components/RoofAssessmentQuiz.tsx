@@ -169,7 +169,7 @@ const RoofAssessmentQuiz = () => {
                   </p>
                   <button
                     onClick={() => goTo("q1")}
-                    className="cta-gradient text-accent-foreground font-heading font-bold px-8 py-4 rounded-none inline-flex items-center gap-2 btn-primary-interactive"
+                    className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-xl"
                   >
                     <span className="relative z-10">Start Assessment</span>
                     <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
@@ -221,9 +221,9 @@ const RoofAssessmentQuiz = () => {
                         <input type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-1234" />
                       </div>
                     </div>
-                    <button type="submit" className="w-full cta-gradient text-accent-foreground font-heading font-bold py-3.5 rounded-none flex items-center justify-center gap-2 btn-primary-interactive">
+                    <button type="submit" className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase">
                       <span className="relative z-10">See My Results</span>
-                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                      <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                     </button>
                     <p className="text-[10px] text-muted-foreground/50 text-center font-body">No spam · Your information stays private.</p>
                   </form>
@@ -265,9 +265,9 @@ const RoofAssessmentQuiz = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 btn-primary-interactive">
+                    <a href="/consultation" className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-xl">
                       <span className="relative z-10">{result.cta}</span>
-                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                      <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                     </a>
                     <a href="tel:8283979211" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">
                       Call (828) 397-9211

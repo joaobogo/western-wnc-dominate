@@ -323,10 +323,10 @@ const Header = () => {
           </a>
           <Link
             to="/consultation"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-semibold text-sm px-5 py-2.5 rounded-sm items-center gap-2 btn-primary-interactive"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[13px] md:text-sm px-6 py-3 rounded-sm items-center gap-2.5 btn-primary-interactive uppercase tracking-widest shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
           >
             <span className="relative z-10">Start a Project</span>
-            <ArrowRight className="w-3.5 h-3.5 relative z-10 btn-arrow-icon" />
+            <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

@@ -164,7 +164,7 @@ const StormResponseGuide = () => {
                 </p>
                 <button
                   onClick={() => setShowResult(true)}
-                  className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden"
+                  className="group cta-gradient text-accent-foreground font-bold text-base px-8 py-4 rounded-none inline-flex items-center gap-2.5 hover:opacity-95 hover:scale-[1.02] transition-all relative overflow-hidden uppercase tracking-widest shadow-lg"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">See My Assessment</span>
