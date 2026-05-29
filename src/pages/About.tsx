@@ -235,7 +235,7 @@ const About = () => {
               transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
               className="mt-16 relative aspect-[21/9] md:aspect-[3/1] overflow-hidden border border-border"
             >
-              <img src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover grayscale opacity-40" />
+              <img src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover grayscale opacity-60 hover:opacity-80 transition-opacity duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />

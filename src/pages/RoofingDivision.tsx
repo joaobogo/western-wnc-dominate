@@ -259,8 +259,8 @@ const RoofingDivision = () => {
               className="w-full h-full object-cover"
               loading="eager"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-[hsl(var(--hero-overlay)/0.4)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.15)] to-[hsl(var(--hero-overlay)/0.3)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.1)]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.4)] via-transparent to-transparent opacity-80" />
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 z-[1] text-background">
@@ -327,7 +327,7 @@ const RoofingDivision = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1 }}
-                className="text-base md:text-xl text-primary-foreground/45 max-w-2xl mb-12 leading-relaxed font-body"
+                className="text-[19px] md:text-[22px] text-primary-foreground/90 max-w-2xl mb-12 leading-relaxed font-body font-medium"
               >
                 Owner-led roofing systems engineered for Western North Carolina's ridgelines. From GAF Master Elite® shingle replacements to architectural standing seam metal, we deliver structural security with family-business integrity.
               </motion.p>

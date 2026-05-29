@@ -76,9 +76,9 @@ const Hero = () => {
         ))}
 
         {/* Multi-layer cinematic grading — deeper, moodier */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.4)] to-[hsl(var(--hero-overlay)/0.1)] md:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.4)] via-transparent to-[hsl(var(--hero-overlay)/0.1)]" />
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.45)] via-[hsl(var(--hero-overlay)/0.25)] to-[hsl(var(--hero-overlay)/0.05)] md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.3)] via-transparent to-[hsl(var(--hero-overlay)/0.05)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] to-transparent" />
 
         {/* Warm highlight wash — top-right, like golden hour light */}
         <div
@@ -244,7 +244,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[17px] md:text-[20px] text-primary-foreground/75 max-w-xl mb-12 md:mb-16 leading-[1.7] font-body"
+              className="text-[19px] md:text-[22px] text-primary-foreground/90 max-w-xl mb-12 md:mb-16 leading-[1.7] font-body font-medium"
             >
               The premium standard for Western North Carolina homes. From storm-grade roofing to custom mountain additions, we combine family-business values with master-class craftsmanship. 
               <span className="block mt-5 text-[hsl(var(--highland-gold))] font-bold text-lg md:text-xl">Licensed, Insured, and GAF Master Elite® Accredited.</span>

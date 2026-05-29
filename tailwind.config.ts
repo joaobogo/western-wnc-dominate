@@ -28,10 +28,10 @@ export default {
         'heading': ['clamp(1.75rem, 3.5vw + 0.25rem, 2.5rem)', { lineHeight: '1.12', letterSpacing: '-0.01em', fontWeight: '600' }],
         'heading-sm': ['clamp(1.5rem, 3vw + 0.125rem, 2rem)', { lineHeight: '1.15', letterSpacing: '-0.01em', fontWeight: '600' }],
         /* Body scale — enlarged for older ICPs */
-        'body-xl': ['clamp(1.5rem, 1.8vw, 1.75rem)', { lineHeight: '1.7', letterSpacing: '0.01em' }],
-        'body-lg': ['clamp(1.375rem, 1.6vw, 1.625rem)', { lineHeight: '1.75', letterSpacing: '0.015em' }],
-        'body': ['clamp(1.25rem, 1.3vw, 1.5rem)', { lineHeight: '1.8', letterSpacing: '0.015em' }],
-        'body-sm': ['clamp(1.125rem, 1.1vw, 1.25rem)', { lineHeight: '1.75', letterSpacing: '0.02em' }],
+        'body-xl': ['clamp(1.625rem, 2vw, 1.875rem)', { lineHeight: '1.7', letterSpacing: '0.01em' }],
+        'body-lg': ['clamp(1.5rem, 1.8vw, 1.75rem)', { lineHeight: '1.75', letterSpacing: '0.015em' }],
+        'body': ['clamp(1.375rem, 1.5vw, 1.625rem)', { lineHeight: '1.8', letterSpacing: '0.015em' }],
+        'body-sm': ['clamp(1.25rem, 1.3vw, 1.375rem)', { lineHeight: '1.75', letterSpacing: '0.02em' }],
         /* Utility scale */
         'label': ['1rem', { lineHeight: '1.4', letterSpacing: '0.06em', fontWeight: '700' }],
         'eyebrow-size': ['0.875rem', { lineHeight: '1.3', letterSpacing: '0.3em', fontWeight: '800' }],
