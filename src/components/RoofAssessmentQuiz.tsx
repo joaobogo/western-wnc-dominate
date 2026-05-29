@@ -169,7 +169,7 @@ const RoofAssessmentQuiz = () => {
                   </p>
                   <button
                     onClick={() => goTo("q1")}
-                    className="cta-gradient text-accent-foreground font-heading font-bold px-8 py-4 rounded-none inline-flex items-center gap-2 btn-primary-interactive"
+                    className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-xl"
                   >
                     <span className="relative z-10">Start Assessment</span>
                     <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
