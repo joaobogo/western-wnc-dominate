@@ -119,7 +119,7 @@ const TownPage = () => {
                 <div className="flex items-center gap-4 text-[hsl(var(--highland-gold))] mb-8">
                   <div className="flex items-center gap-2 px-3 py-1 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.2)]">
                     <MapPin className="w-3.5 h-3.5" />
-                    <span className="font-bold text-[10px] uppercase tracking-[0.3em]">{town.county}</span>
+                    <Link to={`/service-areas/county/${town.county.toLowerCase().replace(' ', '-')}`} className="font-bold text-[10px] uppercase tracking-[0.3em] hover:text-white transition-colors">{town.county}</Link>
                   </div>
                   <div className="h-px w-12 bg-[hsl(var(--highland-gold)/0.3)]" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>
