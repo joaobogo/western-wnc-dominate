@@ -359,7 +359,7 @@ const HomeAdditions = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
                 <span className="eyebrow mb-3 block">Planning & Permits</span>
                 <h2 className="section-heading mb-5">We Handle the<br /> Complexity.</h2>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-6">
+                <p className="text-foreground/70 text-base font-body mb-6 leading-relaxed">
                   Home additions involve zoning, structural engineering, permits, inspections, and utility coordination. We manage all of it as part of our standard process — so you focus on the vision while we navigate the logistics.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
