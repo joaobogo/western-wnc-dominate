@@ -606,7 +606,18 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Lake Chatuge deck and roof modernization",
         summary: "Phased project involving a full roof replacement and a custom composite deck expansion for a premier Hayesville lakefront residence.",
         proof: "Timberline UHDZ shingles and moisture-shield composite decking",
+        image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Lakefront outdoor kitchen addition",
+        summary: "Design and construction of an outdoor entertaining area for a Lake Chatuge home, including custom stone work and integrated grill station.",
+        proof: "Natural stone masonry, weather-proof cabinetry, and timber-frame roofing",
         image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Clay County storm damage mitigation",
+        summary: "Rapid response and full roof replacement for a Hayesville residence following a localized high-wind event on Lake Chatuge.",
+        proof: "Emergency tarping, insurance documentation, and class-4 rated shingle install",
       },
     ],
     faqs: [
