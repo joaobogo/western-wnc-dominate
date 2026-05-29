@@ -31,9 +31,9 @@ import {
 
 import heroImg from "@/assets/gallery/cedar-001.jpg";
 const divisionContextImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000";
-const constructionDetailImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
+const constructionDetailImg = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200";
 const planningFocusImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
-const siteCoordinationImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
+const siteCoordinationImg = "https://images.unsplash.com/photo-1590069230002-70cc6a97da21?auto=format&fit=crop&q=80&w=1200";
 const wncTerrainImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
 
 import proj1 from "@/assets/gallery/asphalt-006.webp";

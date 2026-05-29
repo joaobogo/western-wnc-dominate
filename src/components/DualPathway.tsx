@@ -32,7 +32,7 @@ const roofingData = {
     { icon: PaintBucket, name: "Material Selection" },
     { icon: ShieldCheck, name: "Extended Warranty Coverage" },
   ],
-  cta: "Explore Roofing Services",
+  cta: "Explore Roofing",
   href: "/services",
   image: metalRoof,
 };
@@ -56,9 +56,33 @@ const constructionData = {
     { icon: Ruler, name: "Structural Reinforcement" },
     { icon: ShieldCheck, name: "Custom Mountain Living" },
   ],
-  cta: "Explore Construction Services",
+  cta: "Explore Construction",
   href: "/construction",
   image: cedarRoof,
+};
+
+const designData = {
+  icon: Ruler,
+  label: "Design Division",
+  badge: "Pre-Con Support",
+  title: "Design & Planning",
+  subtitle: "Our Intelligence",
+  description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and ensure architectural integrity.",
+  stats: [
+    { value: "100%", label: "Pre-Con Clarity" },
+    { value: "Site", label: "Optimized Plans" },
+  ],
+  services: [
+    { icon: Ruler, name: "Floor Plan Layouts" },
+    { icon: Search, name: "Site Feasibility" },
+    { icon: Layers, name: "Material Selection" },
+    { icon: HardHat, name: "Permit Coordination" },
+    { icon: Compass, name: "Architectural Prep" },
+    { icon: ShieldCheck, name: "Scope Definition" },
+  ],
+  cta: "Explore Design",
+  href: "/layouts-planning",
+  image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200",
 };
 
 const DivisionCard = ({ data, accent, index }: {
@@ -66,51 +90,7 @@ const DivisionCard = ({ data, accent, index }: {
   accent: "green" | "gold";
   index: number;
 }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const isGold = accent === "gold";
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    cardRef.current.style.setProperty('--mouse-x', `${((e.clientX - rect.left) / rect.width) * 100}%`);
-    cardRef.current.style.setProperty('--mouse-y', `${((e.clientY - rect.top) / rect.height) * 100}%`);
-  };
-
-  return (
-    <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.18, duration: 0.7, ease: HIGHLAND_EASE }}
-      className="group relative bg-card border border-border rounded-none overflow-hidden spotlight-hover flex flex-col"
-    >
-      {/* === IMAGE HEADER with curtain reveal === */}
-      <div className="relative h-48 md:h-56 overflow-hidden">
-        <motion.div
-          initial={{ clipPath: "inset(0 0 100% 0)" }}
-          whileInView={{ clipPath: "inset(0 0 0% 0)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.1, delay: index * 0.15, ease: HIGHLAND_EASE }}
-          className="absolute inset-0"
-        >
-          <motion.img
-            src={data.image}
-            alt={data.title}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            initial={{ scale: 1.18 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 2, delay: index * 0.15 + 0.1, ease: HIGHLAND_EASE }}
-          />
-        </motion.div>
-        {/* Cinematic overlay — strengthened for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-card/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.45)] via-transparent to-transparent" />
-        <div className={`absolute inset-0 mix-blend-multiply opacity-20 ${
-          isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
+...
         }`} />
 
         {/* Division label + badge */}
@@ -249,54 +229,11 @@ const DualPathway = () => {
         </div>
 
         {/* Division Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-7 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 max-w-7xl mx-auto">
           <DivisionCard data={roofingData} accent="green" index={0} />
           <DivisionCard data={constructionData} accent="gold" index={1} />
+          <DivisionCard data={designData} accent="gold" index={2} />
         </div>
-
-        {/* Design & Planning Bridge — the "Intelligence" layer */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.8, ease: HIGHLAND_EASE }}
-          className="max-w-4xl mx-auto mt-12 md:mt-16 bg-white border border-[hsl(var(--highland-gold)/0.2)] p-6 md:p-8 relative overflow-hidden group/bridge"
-        >
-          {/* Accent decoration */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[hsl(var(--highland-gold)/0.03)] -mr-16 -mt-16 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-[hsl(var(--heritage-green)/0.03)] -ml-16 -mb-16 rounded-full blur-3xl" />
-          
-          <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
-            <div className="flex-shrink-0">
-              <div className="w-16 h-16 rounded-full bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.2)] group-hover/bridge:scale-110 transition-transform duration-500">
-                <Ruler className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
-              </div>
-            </div>
-            
-            <div className="flex-1 text-center md:text-left">
-              <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2 justify-center md:justify-start">
-                <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
-                  Intelligence Layer
-                </span>
-                <span className="hidden md:block text-muted-foreground/30">•</span>
-                <h4 className="text-lg md:text-xl font-heading font-bold text-foreground">
-                  Design & Planning Support
-                </h4>
-              </div>
-              <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body max-w-2xl">
-                Before the first board is cut or the first shingle is laid, we offer specialized planning support. From layouts and floor plans to project scoping, we ensure your construction or roofing project is intentional and efficient.
-              </p>
-            </div>
-            
-            <Link
-              to="/layouts-planning"
-              className="group/btn inline-flex items-center gap-2 text-[13px] font-heading font-bold uppercase tracking-wider text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors"
-            >
-              Start Planning
-              <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </motion.div>
 
         {/* Bottom unifying message */}
         <motion.div
