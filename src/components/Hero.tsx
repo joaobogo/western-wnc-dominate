@@ -298,8 +298,8 @@ const Hero = () => {
               transition={{ delay: 2.2, duration: 0.8 }}
               className="mt-6 inline-flex items-center gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-2 pr-4 py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
             >
-              <div className="w-20 h-20 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain filter invert brightness-[2] mix-blend-screen" />
+              <div className="w-16 h-16 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain filter invert brightness-[2] contrast-[1.2] mix-blend-screen" />
               </div>
               <div className="flex flex-col leading-tight text-left">
                 <span className="text-[11px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))]">
