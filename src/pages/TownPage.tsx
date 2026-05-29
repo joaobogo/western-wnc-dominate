@@ -75,62 +75,87 @@ const TownPage = () => {
       />
       <Header />
       <main>
-        {/* 1. Localized Hero */}
-        <section className="relative min-h-[70svh] flex flex-col items-center justify-center overflow-hidden">
+        {/* 1. Localized Hero — Highly Improved with mountain backgrounds */}
+        <section className="relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" 
-              alt={`${town.name}, NC landscapes`}
+              src={
+                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1439396087961-99bc12bd8830?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=2000" :
+                "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000"
+              } 
+              alt={`${town.name}, NC mountain landscapes`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.85)] to-[hsl(var(--hero-overlay)/0.4)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent" />
-            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
+            
+            {/* Design Datum Lines */}
+            <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
+              <div className="absolute left-[10%] top-0 bottom-0 w-px bg-white" />
+              <div className="absolute right-[10%] top-0 bottom-0 w-px bg-white" />
+            </div>
           </div>
 
           <div className="container-tight relative z-10 px-6 md:px-10 lg:px-20 py-24">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }} 
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="flex items-center gap-3 text-[hsl(var(--highland-gold))] mb-6">
-                <motion.div initial={{ width: 0 }} animate={{ width: 40 }} className="h-px bg-[hsl(var(--highland-gold))]" />
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  <span className="font-semibold text-[11px] uppercase tracking-[0.25em]">{town.county}, {town.state}</span>
+            <div className="max-w-4xl">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }} 
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="flex items-center gap-4 text-[hsl(var(--highland-gold))] mb-8">
+                  <div className="flex items-center gap-2 px-3 py-1 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.2)]">
+                    <MapPin className="w-3.5 h-3.5" />
+                    <span className="font-bold text-[10px] uppercase tracking-[0.3em]">{town.county}</span>
+                  </div>
+                  <div className="h-px w-12 bg-[hsl(var(--highland-gold)/0.3)]" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>
                 </div>
-              </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-8xl font-heading font-bold mb-6 text-primary-foreground tracking-tight max-w-5xl leading-[1.0]">
-                Built for the <span className="text-[hsl(var(--highland-gold))]">{town.name} Peaks.</span>
-              </h1>
-              
-              <div className="grid md:grid-cols-3 gap-6 mb-10 max-w-4xl">
+                <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-heading font-bold mb-8 text-primary-foreground tracking-tightest leading-[0.92]">
+                  Built for the <br />
+                  <span className="text-[hsl(var(--highland-gold))] italic font-medium">{town.name} Peaks.</span>
+                </h1>
+
+                <p className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl leading-relaxed font-body font-light">
+                  {town.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-5">
+                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide">
+                    Start a {town.name} Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <a href="tel:8283979211" className="bg-white/[0.04] backdrop-blur-md border border-white/[0.12] text-primary-foreground font-semibold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.08] hover:border-white/[0.2] transition-all duration-300">
+                    <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Bottom Trust bar inside hero */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/5 bg-black/20 backdrop-blur-md">
+            <div className="container-tight px-6 py-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {[
-                  { icon: Mountain, label: "Elevation", value: town.elevation },
-                  { icon: CloudRain, label: "Local Focus", value: town.housingProfile },
-                  { icon: HardHat, label: "Authority", value: "Licensed GC" }
+                  { icon: Mountain, label: "Peak Elevation", value: town.elevation },
+                  { icon: CloudLightning, label: "Storm Ready", value: "Class 4 Rated" },
+                  { icon: Shield, label: "Credential", value: "Licensed GC" },
+                  { icon: Star, label: "Local Trust", value: "4.9★ Rated" }
                 ].map((stat, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-sm">
-                    <stat.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                    <div>
-                      <p className="text-[10px] uppercase tracking-wider text-primary-foreground/40 font-semibold">{stat.label}</p>
-                      <p className="text-sm font-heading font-bold text-primary-foreground">{stat.value}</p>
-                    </div>
+                  <div key={i} className="flex flex-col">
+                    <span className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-1">{stat.label}</span>
+                    <span className="text-sm font-heading font-bold text-white flex items-center gap-2">
+                      <stat.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
+                      {stat.value}
+                    </span>
                   </div>
                 ))}
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] px-10 py-[18px] rounded-none inline-flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide">
-                  Start a {town.name} Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a href="tel:8283979211" className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.12] text-primary-foreground font-semibold text-[14px] px-9 py-[17px] rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.08] hover:border-white/[0.2] transition-all duration-300">
-                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
-                </a>
-              </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
