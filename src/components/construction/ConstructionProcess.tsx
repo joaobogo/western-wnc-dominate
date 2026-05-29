@@ -113,7 +113,7 @@ const ConstructionProcess = ({
               <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">
                 {step.title}
               </h3>
-              <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+              <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">
                 {step.description}
               </p>
             </motion.div>
