@@ -192,7 +192,8 @@ const ProjectDetailPage = () => {
         </section>
 
         {/* ── MATERIALS ── */}
-        <section className="section-padding bg-secondary tartan-bg">
+        <section className="section-padding bg-background relative overflow-hidden">
+          <div className="absolute inset-0 tartan-bg opacity-10" />
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-12">
               <span className="eyebrow mb-3 block">Materials & Systems</span>

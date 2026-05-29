@@ -82,7 +82,7 @@ const Hero = () => {
 
         {/* Warm highlight wash — top-right, like golden hour light */}
         <div
-          className="absolute inset-0 mix-blend-soft-light opacity-[0.06]"
+          className="absolute inset-0 mix-blend-soft-light opacity-[0.08]"
           style={{
             background: "radial-gradient(ellipse 50% 50% at 80% 20%, hsl(var(--highland-gold)), transparent)",
           }}

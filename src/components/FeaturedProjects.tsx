@@ -214,7 +214,7 @@ const FeaturedProjects = () => {
 
   return (
     <section className="section-padding bg-background relative overflow-hidden">
-      <div className="absolute inset-0 tartan-bg opacity-20" />
+      <div className="absolute inset-0 tartan-bg opacity-10" />
 
       <div className="container-tight relative z-10">
         {/* Header row */}
