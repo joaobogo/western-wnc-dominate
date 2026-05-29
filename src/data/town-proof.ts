@@ -51,16 +51,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ].slice(0, 3),
     faqs: [
       {
-        question: "What roofing system holds up best at Highlands elevation?",
-        answer: "For most Highlands homes, we recommend dimensional shingles with full ice-and-water protection or standing seam metal. The right choice depends on roof pitch, tree cover, wind exposure, and whether the home is occupied year-round.",
+        question: "What roofing system holds up best at Highlands' 4,118 ft elevation?",
+        answer: "For Highlands plateau estates, we recommend Brava synthetic shake or 24-gauge standing seam metal. These systems are engineered for the high UV intensity and extreme wind speeds common inWildcat Cliffs and surrounding clubs.",
       },
       {
-        question: "Do Highlands roofs need extra ice-dam protection?",
-        answer: "Yes. Highlands sees enough freeze-thaw cycling that eaves, valleys, and penetrations need stronger waterproofing than a standard low-elevation install. We build those details into the scope from day one.",
+        question: "Do Highlands roofs need specialized ice-dam protection?",
+        answer: "Yes. Due to the high rain and frequent freeze-thaw cycles on the plateau, we install high-temp ice-and-water shield at eaves and valleys to prevent moisture intrusion from ice damming.",
       },
       {
-        question: "Can you coordinate around second-home schedules in Highlands?",
-        answer: "Absolutely. Many Highlands clients are seasonal homeowners, so we handle photo updates, remote approvals, and tight scheduling windows to keep projects moving even when the owner is out of town.",
+        question: "Can you manage large additions for seasonal Highlands owners?",
+        answer: "Absolutely. We routinely manage luxury master suite and 'mountain room' expansions for remote owners, providing daily photo updates and remote project coordination.",
       },
     ],
   },
