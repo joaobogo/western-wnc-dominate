@@ -192,33 +192,37 @@ const Footer = () => {
 
 
             {/* Certifications & Authority */}
-            <div className="flex flex-col gap-3 pt-6 mt-6 border-t border-primary-foreground/5">
-              <div className="flex items-center gap-2 group/cert">
-                <div className="w-8 h-8 rounded-none bg-primary-foreground/5 flex items-center justify-center border border-primary-foreground/10 group-hover/cert:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
-                  <Award className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+            <div className="grid grid-cols-2 gap-3 pt-8 mt-8 border-t border-primary-foreground/5">
+              <div className="flex flex-col gap-2 group/cert">
+                <div className="h-10 w-auto flex items-center">
+                  <Award className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80 ml-2">GAF Master Elite®</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80">GAF Master Elite®</span>
-                  <span className="text-[9px] text-primary-foreground/30 font-body">Top 2% of Roofing Contractors</span>
-                </div>
+                <span className="text-[9px] text-primary-foreground/30 font-body leading-tight">Top 2% of Roofing Contractors Nationally</span>
               </div>
-              <div className="flex items-center gap-2 group/cert">
-                <div className="w-8 h-8 rounded-none bg-primary-foreground/5 flex items-center justify-center border border-primary-foreground/10 group-hover/cert:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
-                  <Shield className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+              
+              <div className="flex flex-col gap-2 group/cert">
+                <div className="h-10 w-auto flex items-center">
+                  <Shield className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80 ml-2">Licensed GC</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80">Licensed GC</span>
-                  <span className="text-[9px] text-primary-foreground/30 font-body">North Carolina License #87234</span>
-                </div>
+                <span className="text-[9px] text-primary-foreground/30 font-body leading-tight">North Carolina License #87234 · Fully Insured</span>
               </div>
-              <div className="flex items-center gap-2 group/cert">
-                <div className="w-8 h-8 rounded-none bg-primary-foreground/5 flex items-center justify-center border border-primary-foreground/10 group-hover/cert:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
-                  <Clock className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+
+              <div className="flex flex-col gap-2 group/cert">
+                <div className="h-10 w-auto flex items-center">
+                  <BadgeCheck className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80 ml-2">CertainTeed Master</span>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80">Est. 2017</span>
-                  <span className="text-[9px] text-primary-foreground/30 font-body">Locally Owned & Operated</span>
+                <span className="text-[9px] text-primary-foreground/30 font-body leading-tight">Factory-Certified Professional Installer</span>
+              </div>
+
+              <div className="flex flex-col gap-2 group/cert">
+                <div className="h-10 w-auto flex items-center">
+                  <Star className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary-foreground/80 ml-2">4.9★ Rated</span>
                 </div>
+                <span className="text-[9px] text-primary-foreground/30 font-body leading-tight">Highest Rated in Franklin & Highlands</span>
               </div>
             </div>
           </div>
