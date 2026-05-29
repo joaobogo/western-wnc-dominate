@@ -129,16 +129,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Do you have faster availability in Franklin than other towns?",
-        answer: "Usually yes. Franklin is one of our core service hubs, so inspections, smaller repairs, and project starts are often easier to schedule here than in farther satellite markets.",
+        question: "Why is Highlander the top-rated roofer in Franklin?",
+        answer: "As a Franklin-based family business, we provide the fastest dispatch times and most reliable warranties in Macon County. Our crews live here and build to the standard our neighbors deserve.",
       },
       {
-        question: "What roofing option fits most Franklin homes best?",
-        answer: "Dimensional shingles are the most common fit because they balance durability, appearance, and budget well. For homeowners wanting longer lifespan and stronger weather performance, metal is often the next step up.",
+        question: "Do you handle small roof repairs in Franklin?",
+        answer: "Yes. From leak detection to minor shingle repairs, we prioritize our hometown clients with fast scheduling and honest, transparent pricing for any size job.",
       },
       {
-        question: "Can you help me decide between repair and replacement in Franklin?",
-        answer: "Yes. We inspect the actual failure points, decking condition, roof age, and repair history first. Then we give you a straight answer on whether repair is still a smart spend.",
+        question: "Can you help with additions for older Franklin homes?",
+        answer: "Absolutely. We specialize in home additions and interior renovations that modernize older Franklin residences while adding structural value for growing families.",
       },
     ],
   },
