@@ -77,6 +77,15 @@ const ProjectDetailPage = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.15)] to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 lg:p-16">
               <div className="container-tight">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  className="mb-6 flex items-center gap-3"
+                >
+                  <div className="h-px w-8 bg-[hsl(var(--highland-gold)/0.4)]" />
+                  <span className="text-[10px] font-heading font-bold text-white tracking-[0.2em] uppercase">Highlander Project</span>
+                </motion.div>
                 <nav className="flex items-center gap-2 text-white/50 text-sm font-body mb-4">
                   <Link to="/gallery" className="hover:text-white transition-colors flex items-center gap-1">
                     <ArrowLeft className="w-3 h-3" /> Projects
