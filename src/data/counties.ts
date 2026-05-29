@@ -1,3 +1,9 @@
+export interface CountyFact {
+  label: string;
+  value: string;
+  icon?: string;
+}
+
 export interface CountyData {
   slug: string;
   name: string;
@@ -6,7 +12,9 @@ export interface CountyData {
   metaTitle: string;
   metaDescription: string;
   heroImage: string;
-  facts: { label: string; value: string }[];
+  facts: CountyFact[];
+  housingContext: string;
+  climateRealities: string;
 }
 
 export const counties: CountyData[] = [
