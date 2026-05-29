@@ -48,8 +48,31 @@ const ServiceTownPage = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="section-padding section-dark pt-32 md:pt-40">
-          <div className="container-tight">
+        <section className="relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src={
+                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a57?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" :
+                "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
+              } 
+              alt={`${entry.serviceLabel} in ${town.name}, NC — Highlander roofing and construction`}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent" />
+            
+            {/* Subtle Tartan Overlay */}
+            <div className="absolute inset-0 opacity-[0.1] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          </div>
+
+          <div className="container-tight relative z-10 pt-32 md:pt-40 pb-20">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="flex items-center gap-2 text-accent mb-3 text-sm">
                 <Link to="/service-areas" className="hover:underline">Service Areas</Link>
@@ -70,7 +93,7 @@ const ServiceTownPage = () => {
               <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
                 {entry.intro}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <Link
                   to="/consultation"
                   className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
@@ -85,6 +108,27 @@ const ServiceTownPage = () => {
                 </a>
               </div>
             </motion.div>
+          </div>
+
+          {/* Bottom Trust bar */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/5 bg-black/20 backdrop-blur-md">
+            <div className="container-tight px-6 py-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {[
+                  { label: "Service Area", value: `${town.name}, NC` },
+                  { label: "Response", value: "Priority" },
+                  { label: "Warranty", value: "Highlander Certified" },
+                  { label: "Status", value: "Active Division" }
+                ].map((stat, i) => (
+                  <div key={i} className="flex flex-col">
+                    <span className="text-[9px] uppercase tracking-widest text-white/30 font-bold mb-1">{stat.label}</span>
+                    <span className="text-sm font-heading font-bold text-white uppercase tracking-tight">
+                      {stat.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

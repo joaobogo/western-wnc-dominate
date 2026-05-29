@@ -83,15 +83,15 @@ const TownPage = () => {
           <div className="absolute inset-0">
             <img 
               src={
-                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1439396087961-99bc12bd8830?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=2000" :
-                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000" :
-                "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000"
+                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" : // Luxury mountain home
+                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=2000" : // Modern architecture detail
+                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a57?auto=format&fit=crop&q=80&w=2000" : // Residential construction
+                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000" : // Historic/Mountain landscape
+                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=2000" : // Home exterior
+                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2000" : // Cabin in woods
+                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000" : // Structural detail
+                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" : // Mountain structure
+                "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
               } 
               alt={`${town.name}, NC mountain roofing and construction context`}
               className="w-full h-full object-cover"
@@ -119,7 +119,7 @@ const TownPage = () => {
                 <div className="flex items-center gap-4 text-[hsl(var(--highland-gold))] mb-8">
                   <div className="flex items-center gap-2 px-3 py-1 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.2)]">
                     <MapPin className="w-3.5 h-3.5" />
-                    <span className="font-bold text-[10px] uppercase tracking-[0.3em]">{town.county}</span>
+                    <Link to={`/service-areas/county/${town.county.toLowerCase().replace(' ', '-')}`} className="font-bold text-[10px] uppercase tracking-[0.3em] hover:text-white transition-colors">{town.county}</Link>
                   </div>
                   <div className="h-px w-12 bg-[hsl(var(--highland-gold)/0.3)]" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>

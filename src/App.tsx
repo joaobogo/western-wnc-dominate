@@ -15,6 +15,7 @@ initPixels();
 // Lazy-load all non-home routes for faster LCP on initial load
 const NotFound = lazy(() => import("./pages/NotFound"));
 const TownPage = lazy(() => import("./pages/TownPage"));
+const CountyPage = lazy(() => import("./pages/CountyPage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPostPage = lazy(() => import("./pages/BlogPost"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
@@ -119,6 +120,7 @@ const App = () => (
           {/* ─── Company ─── */}
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/service-areas/:slug" element={<TownPage />} />
+          <Route path="/service-areas/county/:slug" element={<CountyPage />} />
           <Route path="/service-areas/:townSlug/:serviceSlug" element={<ServiceTownPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
