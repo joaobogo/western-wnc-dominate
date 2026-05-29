@@ -114,6 +114,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Rapid-response repair scheduling",
         summary: "Because Franklin is one of our core operating bases, we can move quickly on leak calls, storm damage inspections, and replacement planning.",
         proof: "Local crews, local staging, and shorter lead times for Macon County homeowners",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Family-home reroof coordination",
