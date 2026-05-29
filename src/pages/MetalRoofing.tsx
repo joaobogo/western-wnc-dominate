@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Shield, Wind, Snowflake } from "lucide-react";
+import metalImg from "@/assets/gallery/metal-005.webp";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -45,8 +46,13 @@ const MetalRoofing = () => {
       />
       <Header />
       <main>
-        <section className="section-padding section-dark pt-32 md:pt-40">
-          <div className="container-tight">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={metalImg} alt="Metal roofing in WNC" className="w-full h-full object-cover" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
+          </div>
+          <div className="container-tight relative z-10 pb-16 md:pb-24">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="text-accent text-sm font-semibold uppercase tracking-wider mb-3">
                 Roofing · Metal

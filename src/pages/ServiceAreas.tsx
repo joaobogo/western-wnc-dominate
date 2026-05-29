@@ -52,20 +52,20 @@ const ServiceAreas = () => {
       />
       <Header />
       <main>
-        {/* ═══ HERO — Map-centric, local pride ═══ */}
-        <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0 section-dark">
             <img 
               src="https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" 
               alt="Highlander construction projects across Western North Carolina mountains"
-              className="w-full h-full object-cover opacity-50"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
-            <TartanBackground opacity={0.15} variant="dark" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
+            <TartanBackground opacity={0.1} variant="dark" />
           </div>
 
           <MountainContours variant="dark" opacity={0.05} />
-          <div className="relative z-10 pt-32 md:pt-40 pb-16 md:pb-20 px-5 md:px-8 lg:px-16">
+          <div className="relative z-10 pb-16 md:pb-24 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
                 <motion.div
@@ -82,13 +82,12 @@ const ServiceAreas = () => {
                     <Compass className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
                     <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Service Areas</span>
                   </div>
-                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[1.06] tracking-tight">
+                  <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                     We Don't Just Serve<br />
                     These Towns — We<br />
                     <span className="text-[hsl(var(--highland-gold))]">Build in Them Every Week.</span>
                   </h1>
-                  <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.55)] text-base md:text-lg leading-relaxed max-w-lg">
+                  <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-lg mb-10 font-medium drop-shadow-sm">
                     Locally operated with offices in Franklin and Sylva. Our crews know the roads,
                     the building codes, the inspectors, and the weather patterns that make every
                     town in Western North Carolina unique.

@@ -100,11 +100,11 @@ const Renovations = () => {
       <Header />
       <main>
         {/* ─── HERO ─── */}
-        <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImg} alt="Home renovation in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.6)] to-[hsl(var(--highland-gold)/0)] z-10" />
@@ -177,7 +177,7 @@ const Renovations = () => {
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <div className="flex items-center justify-center gap-2 mb-8">
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
-                <Gauge className="w-4 h-4 text-[hsl(var(--highland-gold)/0.3)]" />
+                <Gauge className="w-6 h-6 text-[hsl(var(--highland-gold)/0.4)]" />
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">

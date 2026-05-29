@@ -101,7 +101,7 @@ const TrustStrip = () => {
                     }`} />
                     <span className={`text-[13px] md:text-[14px] font-body leading-snug font-medium ${
                       cred.emphasis
-                        ? "font-bold text-primary-foreground/90"
+                        ? "font-bold text-white"
                         : "text-primary-foreground/60"
                     }`}>
                       {cred.label}

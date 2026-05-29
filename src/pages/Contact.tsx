@@ -152,10 +152,10 @@ export default function Contact() {
                     <Handshake className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
                     <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Concierge</span>
                   </div>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[1.08] tracking-tight">
+                  <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[0.95] tracking-tightest">
                     Start the Conversation.
                   </h1>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.5)] text-sm md:text-base leading-relaxed max-w-lg">
+                  <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-lg font-medium drop-shadow-sm">
                     No call centers. No automated systems. A Highlander project advisor — not a salesperson — will personally reach out rapidly.
                   </p>
                 </motion.div>

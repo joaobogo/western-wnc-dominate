@@ -7,13 +7,13 @@
 @layer base {
   :root {
     /* Highlander Heritage Palette — Refined */
-    --background: 42 18% 96%;
+    --background: 42 18% 98%; /* Lightened slightly */
     --foreground: 210 20% 11%;
 
-    --card: 42 14% 98%;
+    --card: 42 14% 100%;
     --card-foreground: 210 20% 11%;
 
-    --popover: 42 14% 98%;
+    --popover: 42 14% 100%;
     --popover-foreground: 210 20% 11%;
 
     /* Deep forest / heritage green — richer */
@@ -21,39 +21,39 @@
     --primary-foreground: 42 18% 96%;
 
     /* Warm stone — warmer */
-    --secondary: 38 16% 93%;
+    --secondary: 38 16% 95%; /* Lightened */
     --secondary-foreground: 210 20% 11%;
 
-    --muted: 38 12% 91%;
+    --muted: 38 12% 93%; /* Lightened */
     --muted-foreground: 210 10% 38%;
 
-    /* Highland gold — richer, more saturated */
-    --accent: 38 90% 55%;
+    /* Highland gold — brighter and more legible */
+    --accent: 38 95% 48%; /* Slightly darker for better contrast on light backgrounds */
     --accent-foreground: 210 20% 8%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 38 12% 88%;
-    --input: 38 12% 88%;
+    --border: 38 12% 85%;
+    --input: 38 12% 85%;
     --ring: 158 38% 14%;
 
-    --radius: 0.125rem;
+    --radius: 0rem; /* Hard edges for premium feel */
 
     /* Heritage tokens — refined (deep forest, never pure black) */
-    --dark-section: 158 30% 18%;
+    --dark-section: 158 25% 15%; /* Slightly deeper but more neutral */
     --dark-section-foreground: 42 16% 98%;
     --trust-badge: 158 30% 22%;
-    --cta-gradient-from: 38 75% 52%;
-    --cta-gradient-to: 32 65% 45%;
-    --hero-overlay: 158 25% 15%;
+    --cta-gradient-from: 38 95% 55%; /* Brighter gold */
+    --cta-gradient-to: 32 85% 45%;
+    --hero-overlay: 158 20% 12%; /* Deeper overlay for better text contrast */
     --heritage-green: 158 38% 15%;
     --heritage-charcoal: 210 20% 12%;
-    --highland-gold: 38 75% 52%;
-    --highland-gold-light: 38 42% 70%;
+    --highland-gold: 38 95% 48%;
+    --highland-gold-light: 38 42% 75%;
     --tartan-line: 158 25% 28%;
     --tartan-accent: 0 40% 32%;
-    --warm-stone: 34 20% 87%;
+    --warm-stone: 34 20% 90%;
     --slate: 210 16% 52%;
     --slate-light: 210 12% 72%;
     --slate-dark: 210 18% 36%;
@@ -105,8 +105,8 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    font-size: 1.1875rem; /* Increased from 1.125rem for older ICPs */
-    letter-spacing: 0.015em;
+    font-size: 1.25rem; /* Increased to 20px for better readability */
+    letter-spacing: 0.01em;
     line-height: 1.8;
   }
 
@@ -161,7 +161,7 @@
   p {
     @apply font-body text-foreground/95;
     max-width: 65ch; /* Optimal reading measure */
-    font-size: 1.1875rem;
+    font-size: 1.25rem;
   }
   p + p {
     margin-top: 1.5rem;

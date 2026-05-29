@@ -130,12 +130,12 @@ const Certifications = () => {
           <div className="container-tight relative z-10 px-5 md:px-8 lg:px-16">
             <motion.div {...fadeUp} className="max-w-3xl">
               <span className="eyebrow mb-4 block text-[hsl(var(--highland-gold))]">Credentials & Standards</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[1.1]">
+              <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                 Credentials That Mean<br />
                 <span className="text-[hsl(var(--highland-gold))]">Something to Your Project.</span>
               </h1>
               <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-base md:text-lg leading-relaxed max-w-2xl">
+              <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-2xl font-medium drop-shadow-sm">
                 Every contractor says they're qualified. We'd rather show you what our certifications, 
                 licenses, and manufacturer relationships actually mean — and how they translate into 
                 better outcomes for your roofing or construction project.

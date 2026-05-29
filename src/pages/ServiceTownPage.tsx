@@ -55,8 +55,8 @@ const ServiceTownPage = () => {
               alt={`${entry.serviceLabel} in ${town.name}, NC — Highlander roofing and construction`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.92)] via-[hsl(var(--hero-overlay)/0.75)] to-[hsl(var(--hero-overlay)/0.1)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
             
             {/* Heritage Tartan Accent — Restrained and Subtle */}
             <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
@@ -80,10 +80,10 @@ const ServiceTownPage = () => {
                   {town.county}, {town.state}
                 </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-balance leading-[1.1]">
+              <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-4 text-balance leading-[0.95] tracking-tightest text-white">
                 {entry.h1}
               </h1>
-              <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
+              <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {entry.intro}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-16">

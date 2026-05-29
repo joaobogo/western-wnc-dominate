@@ -71,9 +71,13 @@ const ServicePage = () => {
         {/* Division accent line */}
         <div className={`h-[3px] w-full ${theme.heroAccentLine}`} />
 
-        {/* Hero */}
-        <section className="section-padding section-dark pt-32 md:pt-40">
-          <div className="container-tight">
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+          <div className="absolute inset-0 section-dark">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" alt={service.title} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
+          </div>
+          <div className="container-tight relative z-10 pb-16 md:pb-24">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               {/* Division badge */}
               <div className="flex items-center gap-2.5 mb-5">
@@ -89,10 +93,10 @@ const ServicePage = () => {
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-balance">
+              <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-4 text-balance text-white leading-[0.95] tracking-tightest">
                 {service.headline}
               </h1>
-              <p className="text-dark-section-foreground/75 max-w-2xl text-base md:text-lg mb-8 leading-relaxed">
+              <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {service.subheadline}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">

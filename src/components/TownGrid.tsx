@@ -24,12 +24,12 @@ const TownGrid = () => {
             <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Service Territory</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
+            <h2 className="text-display font-heading font-bold mb-6 text-white leading-[0.95] tracking-tightest">
               Rooted in Western<br className="hidden md:block" /> North Carolina.
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-dark-section-foreground/75 max-w-2xl mx-auto text-lg md:text-xl font-body leading-relaxed">
+            <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm">
               Locally owned with crews positioned across all the mountains. We focus on Western North Carolina, 
               covering 8 primary counties with a deep understanding of the unique microclimates and elevations that define mountain living.
             </p>

@@ -3,33 +3,33 @@ import { ReactNode } from "react";
 /* Small typed primitives so both intake forms feel identical. */
 
 export const Label = ({ children, required }: { children: ReactNode; required?: boolean }) => (
-  <label className="block text-[12.5px] font-body font-semibold text-foreground/80 mb-2 tracking-wide">
+  <label className="block text-[14px] md:text-[15px] font-body font-bold text-foreground/90 mb-2 tracking-wide">
     {children} {required && <span className="text-[hsl(var(--highland-gold))]">*</span>}
   </label>
 );
 
 export const Helper = ({ children }: { children: ReactNode }) => (
-  <p className="text-[11.5px] text-foreground/50 mt-1.5 font-body leading-snug">{children}</p>
+  <p className="text-[13px] md:text-[14px] text-foreground/60 mt-1.5 font-body leading-snug">{children}</p>
 );
 
 export const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
   <input
     {...props}
-    className="w-full bg-background border border-border rounded-md px-4 py-3 text-[14px] font-body text-foreground placeholder:text-foreground/35 focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors"
+    className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-foreground/35 focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors"
   />
 );
 
 export const Textarea = (props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
   <textarea
     {...props}
-    className="w-full bg-background border border-border rounded-md px-4 py-3 text-[14px] font-body text-foreground placeholder:text-foreground/35 focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors resize-none"
+    className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-foreground/35 focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors resize-none"
   />
 );
 
 export const Select = (props: React.SelectHTMLAttributes<HTMLSelectElement>) => (
   <select
     {...props}
-    className="w-full bg-background border border-border rounded-md px-4 py-3 text-[14px] font-body text-foreground focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors"
+    className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors"
   />
 );
 
@@ -53,13 +53,13 @@ export const ChipGroup = ({
             key={o.value}
             type="button"
             onClick={() => onChange(o.value)}
-            className={`text-left rounded-md border px-4 py-3 transition-all ${
+            className={`text-left rounded-none border px-5 py-4 transition-all ${
               active
                 ? "border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] text-foreground"
-                : "border-border bg-background text-foreground/70 hover:border-foreground/30"
+                : "border-border bg-background text-foreground/75 hover:border-foreground/30"
             }`}
           >
-            <div className="text-[13.5px] font-body font-semibold leading-tight">{o.label}</div>
+            <div className="text-[15px] md:text-[16px] font-body font-bold leading-tight">{o.label}</div>
             {o.sub && <div className="text-[11.5px] text-foreground/50 mt-0.5 font-body">{o.sub}</div>}
           </button>
         );

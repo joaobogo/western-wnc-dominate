@@ -255,7 +255,7 @@ const DualPathway = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="eyebrow mb-4 block">Three Branches. Equal Standards.</span>
+            <span className="eyebrow mb-4 block">Roofing · Construction · Design & Planning</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-5">
@@ -264,7 +264,7 @@ const DualPathway = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-muted-foreground text-base font-body max-w-xl mx-auto leading-relaxed">
+            <p className="text-foreground text-lg md:text-xl font-body max-w-xl mx-auto leading-relaxed font-bold">
               Standing seam at 4,000 feet or a ground-up addition in Franklin — the process
               is identical. Certified materials, documented scope, named contact, warranty delivered at walkthrough.
             </p>
@@ -290,7 +290,7 @@ const DualPathway = () => {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-border" />
             <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-muted-foreground/50">
-              One Company · One Process · One Warranty
+              Roofing · Construction · Design & Planning
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>

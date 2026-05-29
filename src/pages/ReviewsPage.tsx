@@ -112,10 +112,10 @@ const ReviewsPage = () => {
                   <span className="ml-2 text-sm font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
                   <span className="text-xs text-[hsl(var(--dark-section-foreground)/0.4)] font-body ml-1">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[1.08] tracking-tight">
+                <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                   Trust Is Earned.
                 </h1>
-                <p className="text-[hsl(var(--dark-section-foreground)/0.55)] text-base md:text-lg leading-relaxed max-w-xl">
+                <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-xl font-medium drop-shadow-sm">
                   Read what our clients say — the homeowners, property managers, and businesses who've
                   experienced our work firsthand.
                 </p>

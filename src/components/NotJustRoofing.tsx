@@ -65,7 +65,7 @@ const NotJustRoofing = () => {
       <div className="container-tight">
         <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block">Three Pillars. One Name Behind Them All.</span>
+            <span className="eyebrow mb-3 block">Roofing · Construction · Design & Planning</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-4 leading-snug">
@@ -74,7 +74,7 @@ const NotJustRoofing = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+            <p className="text-foreground text-lg md:text-xl font-body max-w-lg mx-auto font-bold leading-relaxed">
               Replacing your roof and renovating your kitchen shouldn't require two companies,
               two schedules, and two sets of excuses. Same crew. Same process.
               Same owner answering the phone.

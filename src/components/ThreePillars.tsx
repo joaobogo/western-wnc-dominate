@@ -34,8 +34,8 @@ const ThreePillars = () => {
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
-            <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
-              Three Divisions · One Standard
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
+              Roofing · Construction · Design
             </span>
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
           </div>
@@ -71,9 +71,8 @@ const ThreePillars = () => {
           </div>
 
           {/* Statement */}
-          <p className="font-heading text-[1.5rem] md:text-[2rem] lg:text-[2.25rem] leading-[1.3] tracking-[-0.015em] text-foreground max-w-4xl mx-auto">
-            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same owner-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions, outdoor living</Link>, and our{" "}
-            <Link to="/layouts-planning" className="text-[hsl(var(--highland-gold))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)] transition-all">Design & Planning branch</Link> — ensuring every project is intelligently mapped before the first board is cut.
+          <p className="font-heading text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] leading-[1.2] tracking-[-0.015em] text-foreground max-w-4xl mx-auto font-bold">
+            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same owner-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions and outdoor living</Link> — ensuring every project is intelligently mapped before the first board is cut.
           </p>
 
 

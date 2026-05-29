@@ -293,7 +293,7 @@ const ServicesGrid = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-muted-foreground max-w-xl mx-auto text-base font-body leading-relaxed">
+            <p className="text-foreground max-w-xl mx-auto text-lg md:text-xl font-body leading-relaxed font-bold">
               Roof systems, additions, renovations, and Design & Planning — each project scoped
               for your property's elevation, exposure, and layout character.
             </p>

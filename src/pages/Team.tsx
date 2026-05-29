@@ -77,7 +77,7 @@ const Team = () => {
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.7, delay: 0.1, ease: HIGHLAND_EASE }}
-              className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white mb-6 leading-[1.0] tracking-tight"
+              className="text-display-lg md:text-display-xl font-heading font-bold text-white mb-6 leading-[0.95] tracking-tightest"
             >
               The People Behind <span className="text-[hsl(var(--highland-gold))]">the Heritage.</span>
             </motion.h1>
@@ -85,7 +85,7 @@ const Team = () => {
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.7, delay: 0.2, ease: HIGHLAND_EASE }}
-              className="text-lg text-white/50 mb-10 max-w-2xl mx-auto leading-relaxed font-body"
+              className="text-body-lg md:text-body-xl text-white/85 mb-10 max-w-2xl mx-auto leading-relaxed font-body font-medium drop-shadow-sm"
             >
               A family-owned company is only as strong as the people who show up on your property. 
               Meet the specialists dedicated to protecting and improving WNC homes.
