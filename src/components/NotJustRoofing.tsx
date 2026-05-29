@@ -65,7 +65,7 @@ const NotJustRoofing = () => {
       <div className="container-tight">
         <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block">Three Pillars. One Name Behind Them All.</span>
+            <span className="eyebrow mb-3 block">Roofing · Construction · Design & Planning</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-4 leading-snug">

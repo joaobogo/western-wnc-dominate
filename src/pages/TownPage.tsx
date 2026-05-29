@@ -256,7 +256,7 @@ const TownPage = () => {
           
           <div className="container-tight relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="eyebrow mb-4 block">Three-Branch Strategy</span>
+              <span className="eyebrow mb-4 block">Roofing · Construction · Design & Planning</span>
               <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">Mastery across the <br className="hidden md:block" /> full project lifecycle.</h2>
               <p className="text-xl text-muted-foreground font-body leading-relaxed">
                 In {town.name}, roofing, construction, and design aren't separate concerns. We treat the property as a single unified system — from initial layout to final inspection.

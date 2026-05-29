@@ -170,7 +170,7 @@ const OurProcess = () => {
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-[hsl(var(--highland-gold)/0.3)]" />
             <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-dark-section-foreground/25">
-              Every step documented · Every decision yours · Every detail accountable
+              Roofing · Construction · Design & Planning
             </span>
             <div className="w-8 h-px bg-gradient-to-l from-transparent to-[hsl(var(--highland-gold)/0.3)]" />
           </div>

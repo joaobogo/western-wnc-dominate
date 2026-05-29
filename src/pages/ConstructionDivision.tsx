@@ -158,7 +158,7 @@ const ConstructionDivision = () => {
                     { value: "6", label: "Service Categories" },
                     { value: "In-House", label: "Crew Model" },
                     { value: "Design-Build", label: "Capability" },
-                    { value: "WNC", label: "Exclusive Focus" },
+                    { value: "Full", label: "Design-Build" },
                   ].map((stat) => (
                     <div key={stat.label}>
                       <div className="text-lg font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
