@@ -228,7 +228,7 @@ const ConstructionDivision = () => {
                     ].map((stat, i) => (
                       <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/15 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
                         <span className="text-xl font-heading font-bold text-[hsl(var(--highland-gold))] block">{stat.value}</span>
-                        <span className="text-[10px] font-body text-dark-section-foreground/70 uppercase tracking-[0.1em]">{stat.label}</span>
+                        <span className="text-[12px] md:text-[13px] font-body text-dark-section-foreground/75 uppercase tracking-[0.15em]">{stat.label}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -239,8 +239,8 @@ const ConstructionDivision = () => {
                     <img src={proj3} alt="Room addition with standing seam metal roof integration" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[240px]">
-                    <span className="text-xs font-heading font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
-                    <p className="text-muted-foreground text-xs font-body leading-snug">
+                    <span className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
+                    <p className="text-muted-foreground text-sm font-body leading-snug">
                       Design-first coordination, layout verification, and unified accountability — under one team.
                     </p>
                     <div className="mt-4 relative aspect-video overflow-hidden border border-border">
@@ -270,7 +270,7 @@ const ConstructionDivision = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
           <div className="absolute bottom-10 left-10 flex items-center gap-4">
              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-             <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60">Craftsmanship in Detail</span>
+             <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Craftsmanship in Detail</span>
           </div>
         </section>
 
@@ -294,7 +294,7 @@ const ConstructionDivision = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/80 text-base leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -332,7 +332,7 @@ const ConstructionDivision = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                     <div className="w-6 h-px bg-[hsl(var(--highland-gold)/0.5)] mb-2" />
-                    <p className="text-white text-xs md:text-sm font-body font-medium tracking-wide">{img.label}</p>
+                    <p className="text-white text-sm md:text-base font-body font-medium tracking-wide">{img.label}</p>
                   </div>
                 </motion.div>
               ))}
@@ -360,7 +360,7 @@ const ConstructionDivision = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/80 text-base leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
