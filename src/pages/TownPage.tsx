@@ -101,14 +101,17 @@ const TownPage = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.92)] via-[hsl(var(--hero-overlay)/0.75)] to-[hsl(var(--hero-overlay)/0.1)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent opacity-80" />
             
-            {/* Subtle Tartan Overlay */}
-            <div className="absolute inset-0 opacity-[0.15] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+            {/* Heritage Tartan Accent — Restrained and Subtle */}
+            <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
             
             {/* Design Datum Lines */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
-              <div className="absolute left-[10%] top-0 bottom-0 w-px bg-white" />
-              <div className="absolute right-[10%] top-0 bottom-0 w-px bg-white" />
+              <div className="absolute left-[8%] top-0 bottom-0 w-px bg-white/20" />
+              <div className="absolute right-[8%] top-0 bottom-0 w-px bg-white/20" />
             </div>
+
+            {/* Subtle Bottom Heritage Trim */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.png')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
           </div>
 
           <div className="container-tight relative z-10 px-6 md:px-10 lg:px-20 py-24">
@@ -127,7 +130,7 @@ const TownPage = () => {
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-primary-foreground tracking-tightest leading-[0.92] drop-shadow-sm">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 md:mb-8 text-primary-foreground tracking-tightest leading-[1.1] md:leading-[0.92] drop-shadow-sm">
                   Built for the <br />
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{town.name} Peaks.</span>
                 </h1>
