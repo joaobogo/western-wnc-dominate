@@ -448,6 +448,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "Brava synthetic shake blends, copper accents, and gated-community logistics",
         image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Lakefront master suite expansion",
+        summary: "Design-build addition for a premier Toxaway estate, providing a new luxury suite with expansive views and high-end exterior finishes.",
+        proof: "Structural lake-view engineering, matching stone masonry, and premium trim",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Premium gutter & drainage system",
+        summary: "Installation of oversized copper gutter systems and underground drainage for a large Lake Toxaway residence to manage lake-effect precipitation.",
+        proof: "6-inch half-round copper gutters, decorative downspouts, and site-graded drainage",
+      },
     ],
     faqs: [
       {
