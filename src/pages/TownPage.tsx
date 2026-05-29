@@ -18,8 +18,8 @@ import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 const marketVisualImg = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1200";
 const localPlanningImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200";
-const highElevationDetailImg = "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=1200";
-const mountainStructureImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200";
+const highElevationDetailImg = "https://images.unsplash.com/photo-1626264290769-61d0d3a8301f?auto=format&fit=crop&q=80&w=1200";
+const mountainStructureImg = "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=1200";
 
 import { services } from "@/data/services";
 import { localBlogTopics } from "@/data/local-blog-topics";
@@ -280,11 +280,11 @@ const TownPage = () => {
                       <div className="w-12 h-12 bg-white/10 flex items-center justify-center border border-white/20">
                         <Home className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
                       </div>
-                      <h3 className="text-3xl font-heading font-bold uppercase tracking-tightest">Roofing Division</h3>
+                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Roofing Division</h3>
                     </div>
 
                     <p className="text-white/60 text-lg mb-10 leading-relaxed font-body">
-                      Addressing the {town.climateExposure.toLowerCase()} with high-performance systems. Our {town.name} crews specialize in {town.serviceDemandMix.filter(s => s.toLowerCase().includes('roof')).join(' and ')}.
+                      Addressing the {town.climateExposure.toLowerCase()} with high-performance systems. Our {town.name} crews specialize in {town.serviceDemandMix.filter(s => s.toLowerCase().includes('roof') || s.toLowerCase().includes('brava')).join(' and ')}.
                     </p>
 
                     <div className="grid sm:grid-cols-2 gap-4 mb-12">
@@ -321,7 +321,7 @@ const TownPage = () => {
                       <div className="w-12 h-12 bg-primary/5 flex items-center justify-center border border-primary/10">
                         <Hammer className="w-6 h-6 text-primary" />
                       </div>
-                      <h3 className="text-3xl font-heading font-bold uppercase tracking-tightest">Construction Division</h3>
+                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Construction Division</h3>
                     </div>
 
                     <p className="text-muted-foreground text-lg mb-10 leading-relaxed font-body">
