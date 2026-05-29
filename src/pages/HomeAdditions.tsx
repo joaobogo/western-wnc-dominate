@@ -345,7 +345,7 @@ const HomeAdditions = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
