@@ -290,7 +290,7 @@ const Gallery = () => {
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 0.2, ease: HIGHLAND_EASE }}
-                  className="text-4xl md:text-5xl lg:text-[4rem] font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[1.04] tracking-tight"
+                  className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest"
                 >
                   Every Project Is a Commitment{" "}
                   <span className="text-[hsl(var(--highland-gold))]">Made Visible.</span>
@@ -299,7 +299,7 @@ const Gallery = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="text-[hsl(var(--dark-section-foreground)/0.5)] text-base md:text-lg leading-relaxed max-w-xl mx-auto"
+                  className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-xl mx-auto font-medium drop-shadow-sm"
                 >
                   These aren't stock photos. Every image here represents a real WNC home we've protected,
                   a real space we've built, and a standard we refuse to lower.
