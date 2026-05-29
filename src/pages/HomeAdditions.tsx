@@ -375,7 +375,7 @@ const HomeAdditions = () => {
                 {planningPermitting.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group p-5 md:p-6 rounded-sm bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                     <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                    <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
