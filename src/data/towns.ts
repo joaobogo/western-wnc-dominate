@@ -116,18 +116,17 @@ export const towns: TownData[] = [
     elevation: "1,752 ft",
     description: "The gateway to the Smokies. We specialize in fast-turnaround roofing and deck expansions for vacation rental owners who need reliability between guest stays.",
     features: ["Vacation rental focus", "Fast turnaround work", "Smoky Mountain experts", "Deck safety upgrades"],
-    metaTitle: "Roofing & Construction in Bryson City, NC | Highlander Roofing",
-    metaDescription: "Durable roofing and construction for Bryson City homes and vacation rentals. Specialized services for the gateway to the Smokies.",
+    metaTitle: "Roofing & Construction in Bryson City, NC | Swain County Authority",
+    metaDescription: "Durable roofing and construction for Bryson City homes and vacation rentals. Specialized services for the gateway to the Smokies. Licensed & Insured.",
     housingProfile: "Log cabins, high-traffic vacation rentals, and traditional mountain bungalows.",
     climateExposure: "Sudden Smoky Mountain deluges and high humidity that requires superior flashing at all wood-to-metal transitions.",
     localVibe: "Outdoor-centric tourism hub where property owners need low-maintenance materials that can withstand heavy seasonal usage.",
-    constructionContext: "High volume of porch repairs and deck expansions for short-term rental properties that must meet rigorous safety and durability standards.",
-    serviceDemandMix: ["Metal roofing (Standing Seam)", "Deck & porch expansions", "Tree-damage emergency repairs", "Vacation rental maintenance"],
+    constructionContext: "We specialize in porch repairs and deck expansions for short-term rental properties that must meet rigorous safety and durability standards.",
+    serviceDemandMix: ["Standing Seam Metal Roofing", "Deck & Porch expansions", "Tree-Damage Repair", "Vacation Rental Maintenance"],
     styleTendency: "Classic Smoky Mountain log and timber styles emphasizing durability and natural finishes.",
     notableNeighborhoods: ["Alarka", "Deep Creek", "Lands Creek", "Fontana Lake area"],
-    marketAuthorityAngle: "We specialize in the fast-turnaround schedules required by vacation rental owners, completing major work between guest stays whenever possible.",
+    marketAuthorityAngle: "We understand that in Bryson City, your home is often your business. We complete major projects in the tight windows between guest stays.",
     heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000"
-
   },
   {
     slug: "waynesville-nc",

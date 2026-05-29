@@ -196,8 +196,9 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Tree-impact and branch-damage response",
-        summary: "Heavy canopy coverage near the Smokies creates a different damage profile than open ridge homes — more punctures, gutter failures, and debris-related leaks.",
-        proof: "Storm response with photo documentation and mitigation planning",
+        summary: "Heavy canopy coverage near the Smokies creates a different damage profile than open ridge homes — more punctures and debris-related leaks.",
+        proof: "Swift response with photo documentation and immediate tree-removal coordination",
+        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Mountain cabin material matching",
@@ -207,16 +208,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Can you work on Bryson City vacation rentals between guest stays?",
-        answer: "Yes. We frequently coordinate inspections and project timing around turnover windows so owners can protect revenue while still taking care of the roof properly.",
+        question: "How do you handle roof work for vacation rentals in Bryson City?",
+        answer: "We coordinate timing around guest turnover windows, ensuring that large-scale work like roof replacement or deck repair doesn't interfere with your rental income. We can also handle site updates for remote owners.",
       },
       {
-        question: "What roof issues are most common near Bryson City?",
-        answer: "We see a lot of storm damage, tree-related impact, wet-debris buildup, and gutter overflow from wooded lots. That combination can shorten roof life if it is not addressed early.",
+        question: "Which roofing material is best for Swain County cabins?",
+        answer: "Standing seam metal is our top recommendation for Bryson City cabins. It sheds debris and heavy rainfall effectively, resists the high humidity of the Smokies, and provides a 50-year service life.",
       },
       {
-        question: "Do you provide documentation for out-of-town Bryson City owners?",
-        answer: "Absolutely. We can handle photo updates, written findings, and scope summaries so remote owners have what they need to make decisions quickly.",
+        question: "Do you handle deck safety inspections in Bryson City?",
+        answer: "Yes. With the high volume of vacation rentals in Swain County, we provide professional deck and porch safety inspections to ensure your structures meet code and are safe for guest usage.",
       },
     ],
   },
