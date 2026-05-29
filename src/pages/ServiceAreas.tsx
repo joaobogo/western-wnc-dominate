@@ -46,8 +46,8 @@ const ServiceAreas = () => {
           <div className="absolute inset-0 section-dark">
             <img 
               src="https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" 
-              alt="The mountains of Western North Carolina"
-              className="w-full h-full object-cover opacity-30"
+              alt="Highlander construction projects across Western North Carolina mountains"
+              className="w-full h-full object-cover opacity-50"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
             <TartanBackground opacity={0.15} variant="dark" />

@@ -87,13 +87,20 @@ const TownPage = () => {
                 town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1439396087961-99bc12bd8830?auto=format&fit=crop&q=80&w=2000" :
                 town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000" :
                 town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=2000" :
+                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000" :
                 "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000"
               } 
-              alt={`${town.name}, NC mountain landscapes`}
+              alt={`${town.name}, NC mountain roofing and construction context`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent" />
+            
+            {/* Subtle Tartan Overlay */}
+            <div className="absolute inset-0 opacity-[0.15] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
             
             {/* Design Datum Lines */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
