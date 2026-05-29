@@ -512,6 +512,17 @@ const townProofMap: Record<string, TownProofContent> = {
         proof: "Heavy timber framing, custom railing, and integrated metal roofing",
         image: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=600",
       },
+      {
+        title: "Artisan shingle restoration",
+        summary: "Premium dimensional shingle installation for a Black Mountain residence, focusing on aesthetic fit and superior water management.",
+        proof: "Designer shingles, copper-finish flashing, and enhanced ventilation",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600",
+      },
+      {
+        title: "Historic cottage roof & trim repair",
+        summary: "Meticulous repair and restoration of a historic Black Mountain cottage roof, matching original profiles while upgrading structural performance.",
+        proof: "Historic material matching, specialized flashing details, and owner-led QA",
+      },
     ],
     faqs: [
       {
