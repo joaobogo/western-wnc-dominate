@@ -116,8 +116,8 @@ const ConstructionDivision = () => {
                 <div className="inline-flex items-center gap-4">
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
-                    <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
-                    <span className="text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction Division</span>
+                    <span className="text-[20px] md:text-[22px] font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
+                    <span className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -135,7 +135,7 @@ const ConstructionDivision = () => {
                 <span className="text-[hsl(var(--highland-gold))]">Masterfully Planned.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-xl text-primary-foreground max-w-2xl mb-12 leading-relaxed font-body font-medium drop-shadow-sm">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-[18px] md:text-[22px] text-primary-foreground max-w-2xl mb-12 leading-relaxed font-body font-medium drop-shadow-sm">
                 From home additions to luxury outdoor living, we combine architectural sensitivity with Western North Carolina's highest construction standards. Licensed, insured, and owner-led.
               </motion.p>
 

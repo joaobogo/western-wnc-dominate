@@ -130,7 +130,7 @@ const OurProcess = () => {
 
                 {/* Card content */}
                 <div className="flex-1 pb-6 md:pb-8">
-                  <div className="bg-dark-section-foreground/[0.04] border border-dark-section-foreground/[0.08] rounded-none p-5 md:p-7 group-hover:border-[hsl(var(--highland-gold)/0.25)] group-hover:bg-dark-section-foreground/[0.08] transition-all duration-500 border-shimmer overflow-hidden">
+                  <div className="bg-dark-section-foreground/[0.06] border border-dark-section-foreground/[0.12] rounded-none p-6 md:p-8 group-hover:border-[hsl(var(--highland-gold)/0.35)] group-hover:bg-dark-section-foreground/[0.08] transition-all duration-500 border-shimmer overflow-hidden">
                     {/* Icon + title */}
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-8 h-8 rounded-none bg-dark-section-foreground/[0.06] flex items-center justify-center group-hover:bg-[hsl(var(--highland-gold)/0.08)] transition-colors duration-300">

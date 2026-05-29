@@ -71,7 +71,7 @@ const Team = () => {
               className="flex items-center justify-center gap-3 mb-6"
             >
               <Users className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-              <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Highlander People</span>
+              <span className="text-[14px] md:text-[15px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Highlander People</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }} 
@@ -128,7 +128,7 @@ const Team = () => {
                     ) : (
                       <div className="text-center p-4">
                         <Users className="w-8 h-8 text-muted-foreground/30 mx-auto mb-2" />
-                        <span className="text-[9px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground/40">Waiting for<br />Team Photo</span>
+                        <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground/50">Waiting for<br />Team Photo</span>
                       </div>
                     )}
                   </div>
@@ -178,7 +178,7 @@ const Team = () => {
                     ) : (
                       <div className="text-center p-6">
                         <Users className="w-10 h-10 text-muted-foreground/20 mx-auto mb-3" />
-                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60 bg-white/10 px-3 py-1.5 backdrop-blur-sm border border-white/5 rounded-sm">Profile Image Pending</span>
+                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80 bg-white/15 px-4 py-2 backdrop-blur-sm border border-white/10 rounded-sm">Profile Image Pending</span>
                       </div>
                     )}
                   </div>

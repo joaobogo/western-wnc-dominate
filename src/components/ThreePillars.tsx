@@ -14,7 +14,7 @@ import { Home, HardHat, Mountain } from "lucide-react";
  */
 const ThreePillars = () => {
   return (
-    <section className="bg-background py-14 md:py-24 relative overflow-hidden">
+    <section className="bg-background py-20 md:py-32 relative overflow-hidden">
       {/* Subtle Heritage Tartan Watermark */}
       <div className="absolute inset-0 opacity-[0.035] pointer-events-none" style={{ 
         backgroundImage: "url('/tartan.png')",
@@ -71,8 +71,8 @@ const ThreePillars = () => {
           </div>
 
           {/* Statement */}
-          <p className="font-heading text-[1.35rem] md:text-[1.75rem] lg:text-[2rem] leading-[1.35] tracking-[-0.01em] text-foreground max-w-3xl mx-auto">
-            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/20 underline-offset-4">roofing authority</Link>. We carry that same owner-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.2)] underline-offset-4">additions, outdoor living</Link>, and our{" "}
+          <p className="font-heading text-[1.5rem] md:text-[2rem] lg:text-[2.25rem] leading-[1.3] tracking-[-0.015em] text-foreground max-w-4xl mx-auto">
+            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same owner-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions, outdoor living</Link>, and our{" "}
             <Link to="/layouts-planning" className="text-[hsl(var(--highland-gold))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)] transition-all">Design & Planning branch</Link> — ensuring every project is intelligently mapped before the first board is cut.
           </p>
 

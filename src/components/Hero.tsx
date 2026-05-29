@@ -244,10 +244,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[15px] md:text-[18px] text-primary-foreground/45 max-w-xl mb-10 md:mb-14 leading-[1.75] font-body"
+              className="text-[17px] md:text-[20px] text-primary-foreground/75 max-w-xl mb-12 md:mb-16 leading-[1.7] font-body"
             >
               The premium standard for Western North Carolina homes. From storm-grade roofing to custom mountain additions, we combine family-business values with master-class craftsmanship. 
-              <span className="block mt-4 text-[hsl(var(--highland-gold)/0.8)] font-semibold">Licensed, Insured, and GAF Master Elite® Accredited.</span>
+              <span className="block mt-5 text-[hsl(var(--highland-gold))] font-bold text-lg md:text-xl">Licensed, Insured, and GAF Master Elite® Accredited.</span>
             </motion.p>
 
 
@@ -268,10 +268,10 @@ const Hero = () => {
               </Link>
               <a
                 href="tel:+18287029876"
-                className="group bg-white/[0.05] backdrop-blur-md border-2 border-white/[0.12] text-primary-foreground font-body font-bold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.1] hover:border-white/[0.2] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[58px] tracking-wide"
+                className="group bg-white/[0.08] backdrop-blur-md border-2 border-white/[0.15] text-primary-foreground font-body font-bold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[60px] tracking-wide"
               >
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-                (828) 702-9876
+                <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                (828) 397-9211
               </a>
             </motion.div>
 

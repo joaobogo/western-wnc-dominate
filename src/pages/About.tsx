@@ -66,8 +66,8 @@ const About = () => {
               className="mb-10 inline-flex items-center gap-4"
             >
               <div className="flex flex-col">
-                <span className="text-[15px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
-                <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">Our Story</span>
+                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">Our Story</span>
               </div>
               <div className="h-px w-10 bg-white/20" />
             </motion.div>
@@ -103,9 +103,9 @@ const About = () => {
 
               {/* Understated CTA — warm solid button, no gradient (About-only) */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.5 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/team" className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide">
+                <Link to="/team" className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[16px] md:text-[18px] px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-lg">
                   <span>Meet Our People</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link to="/consultation" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
                   Start a Conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -155,8 +155,8 @@ const About = () => {
                 >
                   <div className="aspect-square mb-6 bg-muted flex items-center justify-center relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                     <Users className="w-10 h-10 text-muted-foreground/20" />
-                    <div className="absolute bottom-3 left-0 right-0 text-center">
-                      <span className="text-[8px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60 bg-white/10 px-2 py-1 backdrop-blur-sm">Photo Coming Soon</span>
+                    <div className="absolute bottom-4 left-0 right-0 text-center">
+                      <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80 bg-white/15 px-3 py-1.5 backdrop-blur-sm border border-white/10">Photo Coming Soon</span>
                     </div>
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-1">{person.name}</h3>

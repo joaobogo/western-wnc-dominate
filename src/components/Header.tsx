@@ -168,10 +168,10 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[13px] font-semibold transition-all duration-300 inline-flex items-center gap-1 px-3.5 py-2 rounded-sm font-body ${
+                className={`relative text-[14px] md:text-[15px] font-semibold transition-all duration-300 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-sm font-body ${
                   isActive(div.href)
                     ? "text-heritage-charcoal bg-black/5"
-                    : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"
+                    : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
                 }`}
 
               >
@@ -287,10 +287,10 @@ const Header = () => {
             <Link
               key={link.label}
               to={link.href}
-              className={`relative text-[13px] font-medium transition-all duration-300 px-3 py-2 rounded-sm font-body ${
+              className={`relative text-[14px] md:text-[15px] font-medium transition-all duration-300 px-3.5 py-2.5 rounded-sm font-body ${
                 isActive(link.href)
                   ? "text-heritage-charcoal bg-black/5"
-                  : "text-heritage-charcoal/60 hover:text-heritage-charcoal hover:bg-black/5"
+                  : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
               }`}
 
             >
