@@ -152,7 +152,7 @@ const Header = () => {
         </Link>
 
         {/* ─── Desktop Navigation ─── */}
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav className="hidden lg:flex items-center gap-0 whitespace-nowrap">
           {/* Division dropdowns */}
           <Link
             to="/"
@@ -168,7 +168,7 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[16px] md:text-[17px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-5 py-3 rounded-sm font-body ${
+                className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 inline-flex items-center gap-1 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
                   isActive(div.href)
                     ? "text-heritage-charcoal bg-black/5"
                     : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
@@ -280,12 +280,12 @@ const Header = () => {
           ))}
 
           {/* Separator dot */}
-          <span className="w-px h-4 mx-2 transition-colors duration-300 bg-black/10" />
+          <span className="w-px h-4 mx-1.5 transition-colors duration-300 bg-black/10" />
 
           {/* Design Link */}
           <Link 
             to="/layouts-planning" 
-            className={`relative text-[16px] md:text-[17px] font-bold transition-all duration-300 px-4 py-3 rounded-sm font-body ${
+            className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
               isActive('/layouts-planning')
                 ? "text-heritage-charcoal bg-black/5"
                 : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
@@ -302,14 +302,14 @@ const Header = () => {
           </Link>
 
           {/* Separator dot */}
-          <span className="w-px h-4 mx-1 transition-colors duration-300 bg-black/10" />
+          <span className="w-px h-4 mx-1.5 transition-colors duration-300 bg-black/10" />
 
           {/* Secondary links */}
           {secondaryLinks.map((link) => (
             <Link
               key={link.label}
               to={link.href}
-              className={`relative text-[16px] md:text-[17px] font-bold transition-all duration-300 px-4 py-3 rounded-sm font-body ${
+              className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
                 isActive(link.href)
                   ? "text-heritage-charcoal bg-black/5"
                   : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
