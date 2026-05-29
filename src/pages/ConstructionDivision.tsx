@@ -226,9 +226,9 @@ const ConstructionDivision = () => {
                       { value: "4.9★", label: "Google Rating" },
                       { value: "Rapid", label: "Response Time" },
                     ].map((stat, i) => (
-                      <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/6 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                      <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/15 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
                         <span className="text-xl font-heading font-bold text-[hsl(var(--highland-gold))] block">{stat.value}</span>
-                        <span className="text-[10px] font-body text-dark-section-foreground/30 uppercase tracking-[0.1em]">{stat.label}</span>
+                        <span className="text-[10px] font-body text-dark-section-foreground/70 uppercase tracking-[0.1em]">{stat.label}</span>
                       </motion.div>
                     ))}
                   </div>
