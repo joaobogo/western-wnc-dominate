@@ -59,6 +59,18 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--highland-gold)/0.04)] to-transparent" />
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.1 }}
+              className="mb-10 inline-flex items-center gap-4"
+            >
+              <div className="flex flex-col">
+                <span className="text-[15px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
+                <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">Our Story</span>
+              </div>
+              <div className="h-px w-10 bg-white/20" />
+            </motion.div>
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
                 <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
