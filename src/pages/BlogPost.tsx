@@ -176,8 +176,19 @@ const BlogPostPage = () => {
       <Header />
       <main>
         {/* ═══ HERO ═══ */}
-        <section className="section-dark tartan-dark pt-28 md:pt-36 pb-12 md:pb-16">
-          <div className="container-tight max-w-4xl">
+        <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src={post.image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"} 
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 tartan-dark opacity-[0.08] pointer-events-none" />
+          </div>
+
+          <div className="container-tight max-w-4xl relative z-10 py-24 md:py-32">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               {/* Breadcrumb */}
               <nav className="flex items-center gap-2 text-[hsl(var(--dark-section-foreground)/0.4)] text-sm font-body mb-6">
