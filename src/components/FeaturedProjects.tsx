@@ -264,7 +264,7 @@ const FeaturedProjects = ({ location }: { location?: string }) => {
         {/* Project grid — editorial layout */}
         <AnimatePresence mode="popLayout">
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-            {filtered.map((project, i) => (
+            {displayProjects.map((project, i) => (
               <ProjectCard key={project.title} project={project} index={i} />
             ))}
           </motion.div>
