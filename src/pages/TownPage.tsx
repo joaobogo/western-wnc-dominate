@@ -424,18 +424,16 @@ const TownPage = () => {
           </div>
         </section>
 
-        {/* 5, 6 & 7. Proof, Special Consideration & FAQ */}
-        {townProof ? (
+        {/* 6. Local Proof & Projects Section — Real-world local impact */}
+        {townProof && (
           <div className="border-t border-border">
             <TownProofBlock 
               town={town} 
               content={townProof} 
             />
           </div>
-        ) : null}
+        )}
 
-        {/* 6. Local Proof & Projects Section — Real-world local impact */}
-        <TownProofBlock town={town} content={townProof} />
 
         {/* 7. Strategic Local Articles — Blog Integration */}
         {localBlogs.length > 0 && (
