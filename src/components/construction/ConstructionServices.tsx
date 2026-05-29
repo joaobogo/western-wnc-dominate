@@ -187,14 +187,14 @@ export const ConstructionServiceGrid = ({
             <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">
               {cat.title}
             </h3>
-            <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body mb-4 group-hover:text-foreground transition-colors">
+            <p className="text-foreground/80 text-base leading-relaxed font-body mb-4 group-hover:text-foreground transition-colors">
               {cat.description}
             </p>
 
             {variant === "detailed" && (
               <div className="mb-4 space-y-1.5">
                 {cat.outcomes.map((outcome) => (
-                  <div key={outcome} className="flex items-start gap-2 text-[12px] text-muted-foreground/70 font-body">
+                  <div key={outcome} className="flex items-start gap-2 text-[14px] text-muted-foreground/80 font-body font-medium">
                     <span className="text-primary/40 mt-0.5">•</span>
                     <span>{outcome}</span>
                   </div>
@@ -260,14 +260,14 @@ export const ConstructionComparison = ({
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm group-hover:text-primary transition-colors">{cat.title}</h3>
                 </div>
-                <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{cat.description}</p>
+                <p className="text-muted-foreground text-[15px] leading-relaxed font-body">{cat.description}</p>
               </div>
 
               <div>
-                <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/50 mb-3">Client Outcomes</h4>
+                <h4 className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-primary/70 mb-3">Client Outcomes</h4>
                 <div className="space-y-1.5">
                   {cat.outcomes.map((o) => (
-                    <div key={o} className="flex items-start gap-2 text-[12px] text-muted-foreground font-body">
+                    <div key={o} className="flex items-start gap-2 text-[14px] text-muted-foreground/80 font-body font-medium">
                       <span className="text-primary/40 mt-0.5">✓</span>
                       <span>{o}</span>
                     </div>
@@ -276,10 +276,10 @@ export const ConstructionComparison = ({
               </div>
 
               <div>
-                <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/50 mb-3">Why Highlander</h4>
+                <h4 className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-primary/70 mb-3">Why Highlander</h4>
                 <div className="space-y-1.5">
                   {cat.trustPoints.map((t) => (
-                    <div key={t} className="flex items-start gap-2 text-[12px] text-muted-foreground font-body">
+                    <div key={t} className="flex items-start gap-2 text-[14px] text-muted-foreground/80 font-body font-medium">
                       <span className="text-primary/40 mt-0.5">•</span>
                       <span>{t}</span>
                     </div>

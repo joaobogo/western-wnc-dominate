@@ -111,8 +111,8 @@ const TownPage = () => {
             >
               <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
               <div className="flex flex-col">
-                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em] -mt-1">Roofing & Construction</span>
+                <span className="text-[17px] md:text-[19px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
+                <span className="text-[11px] md:text-[12px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em] -mt-1">Roofing & Construction</span>
               </div>
             </motion.div>
             <div className="max-w-4xl">
@@ -124,10 +124,10 @@ const TownPage = () => {
                 <div className="flex items-center gap-4 text-[hsl(var(--highland-gold))] mb-8">
                   <div className="flex items-center gap-2 px-3 py-1 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.2)]">
                     <MapPin className="w-3.5 h-3.5" />
-                    <Link to={`/service-areas/county/${town.county.toLowerCase().replace(' ', '-')}`} className="font-bold text-[10px] uppercase tracking-[0.3em] hover:text-white transition-colors">{town.county}</Link>
+                    <Link to={`/service-areas/county/${town.county.toLowerCase().replace(' ', '-')}`} className="font-bold text-[11px] md:text-[12px] uppercase tracking-[0.3em] hover:text-white transition-colors">{town.county}</Link>
                   </div>
-                  <div className="h-px w-12 bg-[hsl(var(--highland-gold)/0.3)]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>
+                  <div className="h-px w-12 bg-[hsl(var(--highland-gold)/0.4)]" />
+                  <span className="text-[11px] md:text-[12px] font-bold uppercase tracking-[0.3em] text-white/60">Market Authority</span>
                 </div>
 
                 <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-8 md:mb-12 text-primary-foreground tracking-tightest leading-[0.95] drop-shadow-md">
@@ -162,9 +162,9 @@ const TownPage = () => {
                   { icon: Star, label: "Local Trust", value: "4.9★ Rated" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest text-white/50 font-bold mb-1 md:mb-1.5">{stat.label}</span>
-                    <span className="text-sm md:text-base font-heading font-bold text-white flex items-center gap-2 md:gap-3">
-                      <stat.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold))]" />
+                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/60 font-bold mb-1 md:mb-1.5">{stat.label}</span>
+                    <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2 md:gap-3">
+                      <stat.icon className="w-3.5 md:w-4 h-3.5 md:h-4 text-[hsl(var(--highland-gold))]" />
                       {stat.value}
                     </span>
                   </div>
@@ -219,7 +219,7 @@ const TownPage = () => {
               <div className="relative">
                 <div className="bg-secondary p-1 md:p-2 border border-border relative z-10">
                   <div className="bg-white p-8 md:p-12">
-                    <h4 className="text-xs font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
+                    <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
                       <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                       {town.name} Site Realities
                     </h4>
@@ -230,8 +230,8 @@ const TownPage = () => {
                         { label: "Notable Areas", value: town.notableNeighborhoods.join(', ') }
                       ].map((item, i) => (
                         <li key={i} className="group">
-                          <p className="text-[10px] font-bold text-[hsl(var(--highland-gold))] uppercase tracking-widest mb-1">{item.label}</p>
-                          <p className="text-base text-foreground font-heading font-bold leading-tight group-hover:text-primary transition-colors">{item.value}</p>
+                          <p className="text-[11px] md:text-[12px] font-bold text-[hsl(var(--highland-gold))] uppercase tracking-widest mb-1.5">{item.label}</p>
+                          <p className="text-lg text-foreground font-heading font-bold leading-tight group-hover:text-primary transition-colors">{item.value}</p>
                         </li>
                       ))}
                     </ul>
@@ -296,7 +296,7 @@ const TownPage = () => {
                     </div>
 
                     <div className="mt-auto">
-                      <Link to="/roofing" className="inline-flex items-center gap-3 text-[hsl(var(--highland-gold))] font-bold hover:gap-5 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.3)] pb-2">
+                      <Link to="/roofing" className="inline-flex items-center gap-3 text-[hsl(var(--highland-gold))] font-bold hover:gap-5 transition-all uppercase tracking-widest text-[13px] border-b border-[hsl(var(--highland-gold)/0.3)] pb-2">
                         View All Roofing Solutions <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>

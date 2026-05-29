@@ -29,7 +29,7 @@ export const ConstructionMidCTA = ({
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">{headline}</h3>
-          <p className="text-primary-foreground/50 text-sm font-body">{subheadline}</p>
+          <p className="text-primary-foreground/70 text-base font-body">{subheadline}</p>
         </div>
         <div className="flex gap-3 flex-shrink-0">
           <Link to={ctaLink} className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -71,7 +71,7 @@ export const ConstructionClosingCTA = ({
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground whitespace-pre-line">
               {headline}
             </h2>
-            <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+            <p className="text-dark-section-foreground/70 text-base md:text-xl max-w-xl mx-auto mb-10 font-body leading-relaxed">
               {subheadline}
             </p>
 
@@ -95,7 +95,7 @@ export const ConstructionClosingCTA = ({
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
                   <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                  <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
+                  <span className="text-dark-section-foreground/50 text-[13px] font-body font-bold">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -124,13 +124,13 @@ const defaultItems: TrustSidebarItem[] = [
 
 export const ConstructionTrustSidebar = ({ items = defaultItems }: { items?: TrustSidebarItem[] }) => (
   <div className="bg-card border border-border rounded-sm p-5 md:p-6 space-y-4">
-    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60 mb-2">Why Highlander</h4>
+    <h4 className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-primary/70 mb-3">Why Highlander</h4>
     {items.map((item) => (
       <div key={item.label} className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">
           <item.icon className="w-4 h-4 text-primary" />
         </div>
-        <span className="text-foreground text-xs font-body font-medium">{item.label}</span>
+        <span className="text-foreground text-sm font-body font-bold">{item.label}</span>
       </div>
     ))}
     <div className="pt-3 border-t border-border">

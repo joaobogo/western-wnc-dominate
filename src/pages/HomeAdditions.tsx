@@ -134,10 +134,10 @@ const HomeAdditions = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" /></div>
-                  <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">Construction</span>
+                  <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/80">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
-                <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Home Additions</span>
+                <ChevronRight className="w-3 h-3 text-primary-foreground/30" />
+                <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Home Additions</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">

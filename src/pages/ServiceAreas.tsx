@@ -80,7 +80,7 @@ const ServiceAreas = () => {
                   </div>
                   <div className="flex items-center gap-3 mb-5">
                     <Compass className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Service Areas</span>
+                    <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Service Areas</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                     We Don't Just Serve<br />
@@ -112,7 +112,7 @@ const ServiceAreas = () => {
                       >
                         <span className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none block mb-1">{stat.value}</span>
                         <span className="text-xs font-heading font-semibold text-[hsl(var(--dark-section-foreground)/0.7)] block">{stat.label}</span>
-                        <span className="text-[10px] text-[hsl(var(--dark-section-foreground)/0.35)] font-body">{stat.detail}</span>
+                        <span className="text-[12px] text-[hsl(var(--dark-section-foreground)/0.5)] font-body font-bold">{stat.detail}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -160,17 +160,17 @@ const ServiceAreas = () => {
                           <MapPin className="w-4 h-4 text-primary" />
                           <h3 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                         </div>
-                        <p className="text-muted-foreground/50 text-xs font-body">{town.county}</p>
+                        <p className="text-muted-foreground/60 text-[13px] font-body font-bold">{town.county}</p>
                       </div>
                       <div className="flex gap-1">
-                        <span className="text-[8px] font-body font-bold uppercase tracking-[0.12em] px-2 py-0.5 bg-primary/8 text-primary rounded-sm">Roofing</span>
-                        <span className="text-[8px] font-body font-bold uppercase tracking-[0.12em] px-2 py-0.5 bg-[hsl(var(--highland-gold)/0.1)] text-[hsl(var(--highland-gold))] rounded-sm">Construction</span>
+                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.12em] px-2 py-1 bg-primary/8 text-primary rounded-sm">Roofing</span>
+                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.12em] px-2 py-1 bg-[hsl(var(--highland-gold)/0.1)] text-[hsl(var(--highland-gold))] rounded-sm">Construction</span>
                       </div>
                     </div>
                     <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4 line-clamp-3">{town.description}</p>
                     <div className="flex flex-wrap gap-2 mb-5">
                       {town.features.slice(0, 3).map((f) => (
-                        <span key={f} className="text-[10px] font-body text-muted-foreground/60 bg-secondary px-2 py-1 rounded-sm">{f}</span>
+                        <span key={f} className="text-[12px] font-body font-bold text-muted-foreground/70 bg-secondary px-3 py-1 rounded-sm">{f}</span>
                       ))}
                     </div>
                     <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all font-body">
@@ -299,7 +299,7 @@ const ServiceAreas = () => {
                   <Phone className="w-4 h-4" /> (828) 397-9211
                 </a>
               </div>
-              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/35 text-xs font-medium uppercase tracking-wider">
+              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/50 text-sm font-bold uppercase tracking-wider">
                 <span>Franklin & Sylva Offices</span>
                 <span className="text-primary-foreground/15">•</span>
                 <span>45-Min Max Response</span>
