@@ -51,16 +51,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ].slice(0, 3),
     faqs: [
       {
-        question: "What roofing system holds up best at Highlands elevation?",
-        answer: "For most Highlands homes, we recommend dimensional shingles with full ice-and-water protection or standing seam metal. The right choice depends on roof pitch, tree cover, wind exposure, and whether the home is occupied year-round.",
+        question: "What roofing system holds up best at Highlands' 4,118 ft elevation?",
+        answer: "For Highlands plateau estates, we recommend Brava synthetic shake or 24-gauge standing seam metal. These systems are engineered for the high UV intensity and extreme wind speeds common inWildcat Cliffs and surrounding clubs.",
       },
       {
-        question: "Do Highlands roofs need extra ice-dam protection?",
-        answer: "Yes. Highlands sees enough freeze-thaw cycling that eaves, valleys, and penetrations need stronger waterproofing than a standard low-elevation install. We build those details into the scope from day one.",
+        question: "Do Highlands roofs need specialized ice-dam protection?",
+        answer: "Yes. Due to the high rain and frequent freeze-thaw cycles on the plateau, we install high-temp ice-and-water shield at eaves and valleys to prevent moisture intrusion from ice damming.",
       },
       {
-        question: "Can you coordinate around second-home schedules in Highlands?",
-        answer: "Absolutely. Many Highlands clients are seasonal homeowners, so we handle photo updates, remote approvals, and tight scheduling windows to keep projects moving even when the owner is out of town.",
+        question: "Can you manage large additions for seasonal Highlands owners?",
+        answer: "Absolutely. We routinely manage luxury master suite and 'mountain room' expansions for remote owners, providing daily photo updates and remote project coordination.",
       },
     ],
   },
@@ -90,16 +90,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Why do Cashiers roofs fail faster from moisture?",
-        answer: "Cashiers gets extreme rainfall and long damp periods, so weak valleys, worn flashing, and poor ventilation show up faster here. Materials alone are not enough — installation detail is what protects the house.",
+        question: "Why do Cashiers roofs face unique moisture failure risks?",
+        answer: "With 80+ inches of rain, Cashiers roofs rarely dry out completely. This accelerates algae growth and exposes weak flashing details. We use algae-resistant materials and engineered drainage to combat these Plateau conditions.",
       },
       {
-        question: "Should Cashiers homeowners prioritize gutters with a roof project?",
-        answer: "Often, yes. In Cashiers, roof and gutter performance are closely linked. When runoff is not controlled, it can back up at eaves, oversaturate grade lines, and create repeat leak issues.",
+        question: "Is composite decking better for Cashiers' climate?",
+        answer: "Yes. Due to the high moisture levels in Jackson County, natural wood decks require constant maintenance. We recommend premium composite systems that resist rot and moisture in rainforest conditions.",
       },
       {
-        question: "Can you manage premium roofing projects for second homes in Cashiers?",
-        answer: "Yes. We regularly work with seasonal homeowners and can manage remote communication, progress photos, and schedule coordination while protecting high-end finishes and landscaping.",
+        question: "Do you provide project management for seasonal Cashiers estates?",
+        answer: "Yes. Many of our Cashiers clients live out of town. We provide full project coordination, from design/planning to construction, with frequent photo and video updates.",
       },
     ],
   },
@@ -129,16 +129,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Do you have faster availability in Franklin than other towns?",
-        answer: "Usually yes. Franklin is one of our core service hubs, so inspections, smaller repairs, and project starts are often easier to schedule here than in farther satellite markets.",
+        question: "Why is Highlander the top-rated roofer in Franklin?",
+        answer: "As a Franklin-based family business, we provide the fastest dispatch times and most reliable warranties in Macon County. Our crews live here and build to the standard our neighbors deserve.",
       },
       {
-        question: "What roofing option fits most Franklin homes best?",
-        answer: "Dimensional shingles are the most common fit because they balance durability, appearance, and budget well. For homeowners wanting longer lifespan and stronger weather performance, metal is often the next step up.",
+        question: "Do you handle small roof repairs in Franklin?",
+        answer: "Yes. From leak detection to minor shingle repairs, we prioritize our hometown clients with fast scheduling and honest, transparent pricing for any size job.",
       },
       {
-        question: "Can you help me decide between repair and replacement in Franklin?",
-        answer: "Yes. We inspect the actual failure points, decking condition, roof age, and repair history first. Then we give you a straight answer on whether repair is still a smart spend.",
+        question: "Can you help with additions for older Franklin homes?",
+        answer: "Absolutely. We specialize in home additions and interior renovations that modernize older Franklin residences while adding structural value for growing families.",
       },
     ],
   },
@@ -168,16 +168,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Do you handle both residential and commercial roofing in Sylva?",
-        answer: "Yes. Sylva is one of the towns where we regularly serve both homeowners and commercial properties, which means we can handle everything from leak repairs to maintenance programs and full replacements.",
+        question: "Do you handle both historic and commercial roofing in Sylva?",
+        answer: "Yes. Sylva is our strategic hub for both historic home preservation and Jackson County commercial roof maintenance. We coordinate complex schedules to protect both private residents and active business tenants.",
       },
       {
-        question: "Why can roof leaks be harder to diagnose in Sylva?",
-        answer: "The surrounding terrain creates variable wind and rain patterns, so water can move in ways that are not obvious from the stain inside. We inspect the full roof system instead of guessing at the nearest shingle.",
+        question: "Why do Sylva roofs develop more black streaks (algae)?",
+        answer: "The Sylva valley traps morning fog and high humidity. We use algae-resistant shingle systems and optimized ventilation to prevent biological growth and keep your home's historic look pristine.",
       },
       {
-        question: "Can you coordinate work around tenants or business hours in Sylva?",
-        answer: "Absolutely. We build schedules around occupancy needs and access constraints so residential rentals and commercial properties can stay operational during the work.",
+        question: "Can you help with whole-home renovations in Sylva?",
+        answer: "Yes. We specialize in structural modernization, transforming older Jackson County properties into modern living spaces while maintaining their original historic charm and character.",
       },
     ],
   },
@@ -196,8 +196,9 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Tree-impact and branch-damage response",
-        summary: "Heavy canopy coverage near the Smokies creates a different damage profile than open ridge homes — more punctures, gutter failures, and debris-related leaks.",
-        proof: "Storm response with photo documentation and mitigation planning",
+        summary: "Heavy canopy coverage near the Smokies creates a different damage profile than open ridge homes — more punctures and debris-related leaks.",
+        proof: "Swift response with photo documentation and immediate tree-removal coordination",
+        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Mountain cabin material matching",
@@ -207,16 +208,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Can you work on Bryson City vacation rentals between guest stays?",
-        answer: "Yes. We frequently coordinate inspections and project timing around turnover windows so owners can protect revenue while still taking care of the roof properly.",
+        question: "How do you handle roof work for vacation rentals in Bryson City?",
+        answer: "We coordinate timing around guest turnover windows, ensuring that large-scale work like roof replacement or deck repair doesn't interfere with your rental income. We can also handle site updates for remote owners.",
       },
       {
-        question: "What roof issues are most common near Bryson City?",
-        answer: "We see a lot of storm damage, tree-related impact, wet-debris buildup, and gutter overflow from wooded lots. That combination can shorten roof life if it is not addressed early.",
+        question: "Which roofing material is best for Swain County cabins?",
+        answer: "Standing seam metal is our top recommendation for Bryson City cabins. It sheds debris and heavy rainfall effectively, resists the high humidity of the Smokies, and provides a 50-year service life.",
       },
       {
-        question: "Do you provide documentation for out-of-town Bryson City owners?",
-        answer: "Absolutely. We can handle photo updates, written findings, and scope summaries so remote owners have what they need to make decisions quickly.",
+        question: "Do you handle deck safety inspections in Bryson City?",
+        answer: "Yes. With the high volume of vacation rentals in Swain County, we provide professional deck and porch safety inspections to ensure your structures meet code and are safe for guest usage.",
       },
     ],
   },
@@ -237,16 +238,16 @@ const townProofMap: Record<string, TownProofContent> = {
     ].slice(0, 3),
     faqs: [
       {
-        question: "Do older Waynesville homes need extra decking repair during reroofing?",
-        answer: "Often, yes. Older homes in Waynesville can hide soft decking, outdated ventilation, or flashing details that need correction once the roof is opened up. We inspect and document those conditions as part of the replacement process.",
+        question: "How do you handle historic roofing requirements in Waynesville?",
+        answer: "We help homeowners select materials and colors that respect the historic district's character while modernizing the ventilation and underlayment systems to meet current mountain weather standards.",
       },
       {
-        question: "What roofing material fits Waynesville's weather best?",
-        answer: "Dimensional shingles work very well for many homes, while metal is a strong fit for owners prioritizing lifespan and snow shedding. The right answer depends on roof pitch, exposure, and budget.",
+        question: "Why is attic ventilation critical for Waynesville homes?",
+        answer: "Waynesville's winter freeze-thaw cycles can cause ice damming on poorly ventilated roofs. We optimize airflow during every project to protect your roof deck and reduce heating costs.",
       },
       {
-        question: "Can you match the look of a historic Waynesville home?",
-        answer: "Yes. We help homeowners choose profiles and colors that protect the home without making it look out of character with the neighborhood or original design.",
+        question: "Can you manage whole-home additions in Haywood County?",
+        answer: "Yes. From design and layouts to final framing, we manage significant home additions and footprint expansions for established Waynesville residential properties.",
       },
     ],
   },
@@ -265,27 +266,28 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Budget-focused repair plans",
-        summary: "Rental properties in Cullowhee often need phased recommendations — what must be fixed now, what can be planned, and what affects leasing risk.",
-        proof: "Repair prioritization with clear near-term vs. long-term scope guidance",
+        summary: "Rental properties in Cullowhee often need prioritized recommendations — what affects interior lease risk and what can be planned for next summer.",
+        proof: "Repair prioritization with clear near-term vs. long-term Jackson County code guidance",
+        image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Multi-building service support",
-        summary: "Landlords and managers with more than one property need consistent communication and predictable scope language, not one-off contractor guesswork.",
-        proof: "Portfolio-friendly documentation and repeatable inspection standards",
+        summary: "Landlords with multi-building assets near WCU need consistent scope language and predictable inspection windows.",
+        proof: "Portfolio-friendly documentation and repeatable, documented inspection standards",
       },
     ],
     faqs: [
       {
-        question: "Can you work around tenants in Cullowhee rentals?",
-        answer: "Yes. We routinely coordinate with property managers and tenants so repairs or replacements can happen with minimal disruption and clear notice.",
+        question: "How do you coordinate roof repairs around Cullowhee tenants?",
+        answer: "We routinely coordinate with property managers and tenants so repairs or replacements happen with minimal disruption. We provide clear notice windows and prioritize site cleanliness.",
       },
       {
-        question: "What roof issues matter most for Cullowhee landlords?",
-        answer: "The biggest issues are active leaks, ventilation problems, and deferred maintenance that can quickly turn into interior damage during the school year. We help owners prioritize by urgency and budget.",
+        question: "Do you offer algae-resistant roofing for Cullowhee rentals?",
+        answer: "Yes. Due to the high humidity and fog in the Tuckasegee basin, we recommend algae-resistant shingle systems that keep roofs looking clean and performing longer.",
       },
       {
-        question: "Do you offer fast turnaround estimates for Cullowhee properties?",
-        answer: "Yes. Because rental timing matters in Cullowhee, we aim to move quickly on inspections and scopes so owners can make decisions before vacancies close.",
+        question: "Can you handle deck code compliance for student housing?",
+        answer: "Absolutely. We provide professional deck safety inspections and structural repairs to ensure student housing properties meet Jackson County safety codes.",
       },
     ],
   },
@@ -309,22 +311,23 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Storm repair with character retention",
-        summary: "When older Dillsboro roofs are damaged, the goal is usually to restore performance without losing the home's original feel.",
-        proof: "Repair scopes that balance protection, cost, and layout character",
+        summary: "When older Dillsboro roofs are damaged, our goal is to restore performance without losing the home's original village aesthetic.",
+        proof: "Repair scopes that balance modern protection with historic Jackson County layout character",
+        image: "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=600",
       },
     ],
     faqs: [
       {
-        question: "Can you keep a Dillsboro home's roof looking appropriate for the village?",
-        answer: "Yes. We help homeowners choose materials and details that fit the home's style while still improving waterproofing, ventilation, and durability.",
+        question: "How do you maintain Dillsboro's historic look during a roof project?",
+        answer: "We help you choose designer shingles and copper accents that complement Dillsboro's historic mountain cottage style while providing modern waterproofing and ventilation.",
       },
       {
-        question: "Are older Dillsboro homes harder to reroof?",
-        answer: "They can be. Older homes often have hidden decking issues, irregular framing, or outdated flashing details that need careful correction during the project.",
+        question: "Are Dillsboro cottages harder to reroof than newer homes?",
+        answer: "They require more detail. Older framing and river-proximate moisture mean we often need to address decking integrity and use specialized flashing transitions that newer builds don't require.",
       },
       {
-        question: "Do you handle small-town projects with the same level of detail as larger towns?",
-        answer: "Absolutely. Dillsboro projects may be smaller in scale, but they often require more precision because every visual detail is more noticeable.",
+        question: "Can you work on tight village lots in Dillsboro?",
+        answer: "Yes. We specialize in 'small-footprint' execution, keeping job sites organized and ensuring our presence doesn't interfere with village tourism or neighboring artisan shops.",
       },
     ],
   },
