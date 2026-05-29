@@ -1,19 +1,26 @@
-I will demote the "Design & Planning" pillar to a supporting service role while adding it as a top-level tab in the header.
+# Local Town Page Optimization
 
-**1. Demote Design from the "Three Pillars" system**
-- Rename `src/components/ThreePillars.tsx` to `src/components/TwoPillars.tsx` (or update its internal naming) to reflect only Roofing and Construction as the core pillars.
-- Update the UI to show only two icons/columns for Roofing and Construction, with Design & Planning mentioned as a supporting service or a "how we start" phase.
-- Update the homepage (`src/pages/Index.tsx`) to use the updated component.
+1. **Town Data Cleanup (`src/data/towns.ts`):** 
+   - Update `heroImage` for all towns to high-quality, realistic, mountain-home focused Unsplash URLs. 
+   - Ensure all towns have complete fields for `marketAuthorityAngle`, `constructionContext`, etc.
 
-**2. Update Navigation**
-- Move "Design & Planning" (currently a dropdown in `Header.tsx`) to be its own top-level tab in the `secondaryLinks` or a dedicated "Design" link in the main nav.
-- Update the `Footer.tsx` to ensure "Design & Planning" is listed under a "Services" or "Support" category rather than appearing as a third primary division if it was previously grouped that way.
+2. **Town Proof Expansion (`src/data/town-proof.ts`):**
+   - Ensure every town has exactly 3 `jobHighlights`.
+   - Update `jobHighlights` to ensure they all have valid `image` URLs.
+   - Improve FAQ content for depth.
 
-**3. Visual Consistency**
-- Ensure the "Two Pillars" language is used consistently across the site where it previously said "Three Pillars".
-- Maintain the "Design Support" narrative—it is how projects are "intelligently mapped" but not one of the two main physical labor divisions.
+3. **New UI Component (`src/components/TownServiceSections.tsx`):**
+   - Create a component that renders dedicated "Roofing in [Town]" and "Construction in [Town]" sections.
+   - Each section will contain: 
+     - Localized copy referencing specific geography/challenges.
+     - A high-quality visual representation (placeholder or dynamic).
+     - A relevant CTA.
 
-**Technical Details**
-- Use `lucide-react` icons (Shield for Roofing, Hammer for Construction).
-- Ensure mobile responsiveness for the new "Two Pillars" layout (likely 1x2 or 2x1 grid).
-- Verify all links to `/layouts-planning` and `/design-intake` remain functional.
+4. **Template Update (`src/pages/TownPage.tsx`):**
+   - Replace or augment `TwoPillars` with the new `TownServiceSections`.
+   - Ensure the hero section is visually premium and fully responsive.
+   - Ensure all town pages are internally linked via `NearbyTowns` and properly supported by `relevantBlogs`.
+
+5. **QA & Audit:**
+   - Review each town page to ensure no broken imagery.
+   - Final audit table in the report.

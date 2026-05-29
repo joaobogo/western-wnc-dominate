@@ -12,7 +12,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
-import TwoPillars from "@/components/TwoPillars";
+import TownServiceSections from "@/components/TownServiceSections";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import SectionDivider from "@/components/SectionDivider";
 import TartanBackground from "@/components/TartanBackground";
@@ -197,7 +197,7 @@ const TownPage = () => {
         </section>
 
         {/* 3. Dual Pathway */}
-        <TwoPillars />
+        <TownServiceSections town={town} />
 
         {/* 4. Local Proof */}
         {townProof && <TownProofBlock town={town} content={townProof} />}

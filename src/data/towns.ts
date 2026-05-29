@@ -42,7 +42,7 @@ export const towns: TownData[] = [
     styleTendency: "Traditional mountain rustic with heavy timber accents, natural stone, and premium shake/slate aesthetics.",
     notableNeighborhoods: ["Wildcat Cliffs", "Highlands Country Club", "Cullasaja Club", "Mounttop"],
     marketAuthorityAngle: "Highlands estates require commercial-grade flashing details and high-velocity wind ratings. We build to the standard the Plateau demands.",
-    heroImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "cashiers-nc",
@@ -62,7 +62,7 @@ export const towns: TownData[] = [
     styleTendency: "Elevated rustic featuring bark siding, cedar shingles, and massive window walls for indoor-outdoor integration.",
     notableNeighborhoods: ["High Hampton", "Cedar Creek", "Lonesome Valley", "Chinquapin", "Lake Glenville"],
     marketAuthorityAngle: "In the Southeast's wettest high-elevation town, we treat every project as a complex water-management system rather than just a build.",
-    heroImage: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "franklin-nc",
@@ -82,7 +82,7 @@ export const towns: TownData[] = [
     styleTendency: "Classic Appalachian styles, including craftsman bungalows and modern farmhouses built for local conditions.",
     notableNeighborhoods: ["Cartoogechaye", "Iotla", "Holly Springs", "Burningtown", "Otto"],
     marketAuthorityAngle: "Franklin is our home. Our crews live here, meaning we offer the fastest response times and local accountability for Macon County neighbors.",
-    heroImage: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "sylva-nc",
@@ -102,7 +102,7 @@ export const towns: TownData[] = [
     styleTendency: "Historic preservation mixed with functional modern mountain design tailored for Jackson County's valleys.",
     notableNeighborhoods: ["Historic Downtown", "Tuckasegee River Corridor", "Cope Creek", "Fisher Creek", "Webster"],
     marketAuthorityAngle: "From Jackson County commercial centers to Main Street historic estates, we manage complex projects that balance modernization with preservation.",
-    heroImage: "https://images.unsplash.com/photo-1518173946687-a4c8a9b749f5?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "bryson-city-nc",
@@ -122,7 +122,7 @@ export const towns: TownData[] = [
     styleTendency: "Classic Smoky Mountain log and timber styles emphasizing durability and natural finishes.",
     notableNeighborhoods: ["Alarka", "Deep Creek", "Lands Creek", "Fontana Lake area"],
     marketAuthorityAngle: "We understand that in Bryson City, your home is often your business. We complete major projects in the tight windows between guest stays.",
-    heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1449156001437-3a144f0073bc?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "waynesville-nc",
@@ -142,7 +142,7 @@ export const towns: TownData[] = [
     styleTendency: "Elegant historic architecture (Queen Anne, Colonial) transitioning into contemporary mountain modern styles.",
     notableNeighborhoods: ["Main Street Historic District", "Frog Level", "Pigeon Street", "Hyatt Creek", "Lake Junaluska"],
     marketAuthorityAngle: "Haywood County projects require a balance of technical modernization and visual sensitivity. We protect Waynesville's historic integrity.",
-    heroImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "cullowhee-nc",
@@ -367,5 +367,3 @@ export const towns: TownData[] = [
 ];
 
 export const getTownBySlug = (slug: string) => towns.find(t => t.slug === slug);
-
-
