@@ -407,15 +407,19 @@ const Gallery = () => {
 
             <AnimatePresence mode="popLayout">
               <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 auto-rows-auto">
-                {filtered.map((project, i) => (
-                  <EditorialCard
-                    key={project.title}
-                    project={project}
-                    index={i}
-                    size={sizePattern[i % sizePattern.length]}
-                    onClick={() => setLightbox(projects.indexOf(project))}
-                  />
-                ))}
+                {filtered.map((project, i) => {
+                  // Find original index to get the correct size from pattern
+                  const originalIndex = projects.indexOf(project);
+                  return (
+                    <EditorialCard
+                      key={project.title}
+                      project={project}
+                      index={i}
+                      size={sizePattern[originalIndex % sizePattern.length] || "standard"}
+                      onClick={() => setLightbox(originalIndex)}
+                    />
+                  );
+                })}
               </motion.div>
             </AnimatePresence>
           </div>
