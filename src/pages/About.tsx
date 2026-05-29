@@ -159,15 +159,18 @@ const About = () => {
 
 
         {/* ── BRAND STORY — Two-column editorial ── */}
-        <section className="section-padding bg-secondary relative">
-          <div 
-            className="absolute inset-0 opacity-[0.05] pointer-events-none" 
-            style={{ 
-              backgroundImage: "url('/tartan.png')",
-              backgroundSize: "320px auto",
-              backgroundRepeat: "repeat"
-            }} 
-          />
+        <section className="section-padding bg-secondary relative overflow-hidden">
+          {/* Subtle Tartan Watermark — Section Level */}
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ 
+            backgroundImage: "url('/tartan.png')",
+            backgroundSize: "400px auto"
+          }} />
+          
+          {/* Accent Band at top */}
+          <div className="absolute top-0 left-0 w-full h-1 opacity-20" style={{ 
+            backgroundImage: "url('/tartan.png')",
+            backgroundSize: "100px auto"
+          }} />
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
