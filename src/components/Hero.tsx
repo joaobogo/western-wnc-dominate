@@ -76,13 +76,13 @@ const Hero = () => {
         ))}
 
         {/* Multi-layer cinematic grading — deeper, moodier */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.85)] via-[hsl(var(--hero-overlay)/0.7)] to-[hsl(var(--hero-overlay)/0.25)] md:to-[hsl(var(--hero-overlay)/0.05)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.6)] via-transparent to-[hsl(var(--hero-overlay)/0.3)]" />
-        <div className="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.8)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.75)] via-[hsl(var(--hero-overlay)/0.5)] to-[hsl(var(--hero-overlay)/0.15)] md:to-[hsl(var(--hero-overlay)/0.02)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-[hsl(var(--hero-overlay)/0.2)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.6)] to-transparent" />
 
         {/* Warm highlight wash — top-right, like golden hour light */}
         <div
-          className="absolute inset-0 mix-blend-soft-light opacity-[0.06]"
+          className="absolute inset-0 mix-blend-soft-light opacity-[0.08]"
           style={{
             background: "radial-gradient(ellipse 50% 50% at 80% 20%, hsl(var(--highland-gold)), transparent)",
           }}

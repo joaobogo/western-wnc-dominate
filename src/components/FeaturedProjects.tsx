@@ -147,8 +147,8 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           </motion.div>
 
           {/* Cinematic overlays — strengthened for legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-[hsl(var(--heritage-charcoal)/0.45)] to-[hsl(var(--heritage-charcoal)/0.05)] group-hover:from-[hsl(var(--heritage-charcoal)/0.9)] group-hover:via-[hsl(var(--heritage-charcoal)/0.65)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.25)] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.75)] via-[hsl(var(--heritage-charcoal)/0.25)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.85)] group-hover:via-[hsl(var(--heritage-charcoal)/0.45)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.15)] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.3)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
           {/* Hover image zoom */}
@@ -214,7 +214,7 @@ const FeaturedProjects = () => {
 
   return (
     <section className="section-padding bg-background relative overflow-hidden">
-      <div className="absolute inset-0 tartan-bg opacity-20" />
+      <div className="absolute inset-0 tartan-bg opacity-10" />
 
       <div className="container-tight relative z-10">
         {/* Header row */}

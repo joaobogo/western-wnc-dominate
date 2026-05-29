@@ -188,7 +188,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
             />
           </motion.div>
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/20 to-transparent" />
           <div className={`absolute inset-0 mix-blend-multiply opacity-10 ${
             isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
           }`} />

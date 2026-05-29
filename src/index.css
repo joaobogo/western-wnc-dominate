@@ -28,7 +28,7 @@
     --muted-foreground: 210 10% 38%;
 
     /* Highland gold — richer, more saturated */
-    --accent: 38 62% 46%;
+    --accent: 38 75% 52%;
     --accent-foreground: 210 20% 8%;
 
     --destructive: 0 72% 51%;
@@ -41,15 +41,15 @@
     --radius: 0.125rem;
 
     /* Heritage tokens — refined (deep forest, never pure black) */
-    --dark-section: 158 32% 16%;
+    --dark-section: 158 30% 18%;
     --dark-section-foreground: 42 16% 98%;
     --trust-badge: 158 30% 22%;
-    --cta-gradient-from: 38 62% 48%;
-    --cta-gradient-to: 32 55% 42%;
-    --hero-overlay: 158 30% 12%;
+    --cta-gradient-from: 38 75% 52%;
+    --cta-gradient-to: 32 65% 45%;
+    --hero-overlay: 158 25% 15%;
     --heritage-green: 158 38% 15%;
     --heritage-charcoal: 210 20% 12%;
-    --highland-gold: 38 62% 46%;
+    --highland-gold: 38 75% 52%;
     --highland-gold-light: 38 42% 70%;
     --tartan-line: 158 25% 28%;
     --tartan-accent: 0 40% 32%;
