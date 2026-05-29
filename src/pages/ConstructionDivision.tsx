@@ -260,7 +260,7 @@ const ConstructionDivision = () => {
         <ConstructionServiceGrid
           variant="detailed"
           heading="What We Build."
-          subheading="Four focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards."
+          subheading="Six focused construction capabilities — each backed by the same project discipline, craft quality, and communication standards."
           eyebrow="Construction Services"
         />
 
