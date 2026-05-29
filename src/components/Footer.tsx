@@ -144,11 +144,11 @@ const Footer = () => {
           {/* Brand column — spans 2 on lg */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-4 mb-8 group/footer-logo">
-              <div className="relative">
+              <div className="relative p-3 bg-white/5 border border-white/10 rounded-sm">
                 <img 
                   src={logo} 
                   alt="Highlander" 
-                  className="h-[110px] md:h-[130px] w-auto transition-all duration-500 group-hover:scale-105" 
+                  className="h-[100px] md:h-[120px] w-auto transition-all duration-500 group-hover:scale-105" 
                   loading="lazy" 
                   decoding="async" 
                 />
