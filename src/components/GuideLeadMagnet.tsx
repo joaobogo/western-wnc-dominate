@@ -75,7 +75,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
           <p className="text-muted-foreground text-sm mb-5 font-body">Your {g.title} is on its way — along with a few bonus tips for WNC homeowners.</p>
           <a
             href="#"
-            className="cta-gradient text-accent-foreground font-heading font-semibold px-6 py-3 rounded-none inline-flex items-center gap-2 btn-primary-interactive"
+            className="cta-gradient text-accent-foreground font-body font-bold text-base px-8 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-lg"
             onClick={(e) => e.preventDefault()}
           >
             <Download className="w-4 h-4 relative z-10" /> <span className="relative z-10">Download Now</span>

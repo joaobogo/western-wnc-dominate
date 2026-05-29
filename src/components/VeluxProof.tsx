@@ -159,7 +159,7 @@ const VeluxProof = () => {
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <Link
               to="/consultation"
-              className="cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide"
+              className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-[0.1em] uppercase shadow-xl"
             >
               Request Skylight Inspection <ArrowRight className="w-4 h-4" />
             </Link>

@@ -467,7 +467,7 @@ const InspectionForm = () => {
                     <button
                       onClick={goNext}
                       disabled={currentIndex === 0 ? !canProceedStep1 : !canProceedStep2}
-                      className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 rounded-none inline-flex items-center gap-2 btn-primary-interactive disabled:opacity-40 disabled:cursor-not-allowed"
+                      className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive tracking-[0.1em] uppercase shadow-lg disabled:opacity-50"
                     >
                       <span className="relative z-10">Continue</span>
                       <ArrowRight className="w-3.5 h-3.5 relative z-10 btn-arrow-icon" />
