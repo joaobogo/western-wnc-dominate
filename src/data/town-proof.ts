@@ -232,6 +232,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Historic-home detailing",
         summary: "Waynesville homes often require careful flashing transitions, decking repairs, and material choices that respect older design themes while improving performance.",
         proof: "Targeted decking repair, ventilation upgrades, and clean tie-ins",
+        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600",
       },
     ].slice(0, 3),
     faqs: [
