@@ -82,19 +82,7 @@ const TownPage = () => {
         <section className="relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src={
-                town.slug === 'highlands-nc' ? "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" : // Authentic mountain estate with slate-style roof
-                town.slug === 'cashiers-nc' ? "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000" : // Believable ridgetop residence
-                town.slug === 'franklin-nc' ? "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=2000" : // Grounded family home construction
-                town.slug === 'waynesville-nc' ? "https://images.unsplash.com/photo-1600585154526-990dcea4db0d?auto=format&fit=crop&q=80&w=2000" : // Premium craftsman ridgetop
-                town.slug === 'sylva-nc' ? "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a57?auto=format&fit=crop&q=80&w=2000" : // Real residential renovation context
-                town.slug === 'bryson-city-nc' ? "https://images.unsplash.com/photo-1449156001437-3a166a6cb7f2?auto=format&fit=crop&q=80&w=2000" : // Authentic cabin siding/roofing
-                town.slug === 'cullowhee-nc' ? "https://images.unsplash.com/photo-1513584684374-8bdb7483fe8f?auto=format&fit=crop&q=80&w=2000" : // Modern residential structure
-                town.slug === 'dillsboro-nc' ? "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=2000" : // Believable village cottage
-                "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
-
-
-              } 
+              src={town.heroImage} 
               alt={`${town.name}, NC mountain roofing and construction context`}
               className="w-full h-full object-cover"
             />

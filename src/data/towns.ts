@@ -19,6 +19,7 @@ export interface TownData {
   styleTendency: string;
   notableNeighborhoods: string[];
   marketAuthorityAngle: string;
+  heroImage: string;
 }
 
 export const towns: TownData[] = [
@@ -40,7 +41,9 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Standing seam metal roofing", "Brava synthetic shake", "Luxury master suite additions", "Storm damage documentation"],
     styleTendency: "Traditional mountain rustic with heavy timber accents, natural stone, and premium shake/slate aesthetics.",
     notableNeighborhoods: ["Wildcat Cliffs", "Highlands Country Club", "Cullasaja Club", "Mounttop"],
-    marketAuthorityAngle: "We understand that Highlands homes require commercial-grade flashing details and high-velocity wind ratings that standard lowland contractors often miss."
+    marketAuthorityAngle: "We understand that Highlands homes require commercial-grade flashing details and high-velocity wind ratings that standard lowland contractors often miss.",
+    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000"
+
   },
   {
     slug: "cashiers-nc",
@@ -59,7 +62,9 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Synthetic slate roofing", "Complex moisture management", "Engineered deck expansions", "Gutter system optimization"],
     styleTendency: "Elevated rustic featuring bark siding, cedar shingles, and massive window walls for indoor-outdoor integration.",
     notableNeighborhoods: ["High Hampton", "Cedar Creek", "Lonesome Valley", "Chinquapin"],
-    marketAuthorityAngle: "In a town with 80+ inches of rain, we treat every roof as a complex water-management system rather than just a surface covering."
+    marketAuthorityAngle: "In a town with 80+ inches of rain, we treat every roof as a complex water-management system rather than just a surface covering.",
+    heroImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000"
+
   },
   {
     slug: "franklin-nc",
@@ -78,7 +83,9 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Dimensional asphalt replacement", "Residential roof repairs", "Home additions & garage conversions", "Interior renovations"],
     styleTendency: "Classic Appalachian residential styles, including craftsman bungalows and modern farmhouses.",
     notableNeighborhoods: ["Cartoogechaye", "Iotla", "Holly Springs", "Burningtown"],
-    marketAuthorityAngle: "Based in Franklin, our crews live here. We offer the fastest response times for Macon County homeowners because our staging yards are minutes away."
+    marketAuthorityAngle: "Based in Franklin, our crews live here. We offer the fastest response times for Macon County homeowners because our staging yards are minutes away.",
+    heroImage: "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=2000"
+
   },
   {
     slug: "sylva-nc",
@@ -97,7 +104,9 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Commercial roof maintenance", "Algae-resistant shingle systems", "Historic home renovations", "Student-housing roof coordination"],
     styleTendency: "Historic preservation mixed with functional modern mountain design.",
     notableNeighborhoods: ["Historic Downtown", "Tuckasegee River Corridor", "Cope Creek", "Fisher Creek"],
-    marketAuthorityAngle: "From Jackson County commercial buildings to historic Main Street residences, we coordinate complex projects around busy downtown schedules and tenants."
+    marketAuthorityAngle: "From Jackson County commercial buildings to historic Main Street residences, we coordinate complex projects around busy downtown schedules and tenants.",
+    heroImage: "https://images.unsplash.com/photo-1600607687920-4e2a12cf1a57?auto=format&fit=crop&q=80&w=2000"
+
   },
   {
     slug: "bryson-city-nc",
@@ -116,7 +125,9 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Metal roofing (Standing Seam)", "Deck & porch expansions", "Tree-damage emergency repairs", "Vacation rental maintenance"],
     styleTendency: "Classic Smoky Mountain log and timber styles emphasizing durability and natural finishes.",
     notableNeighborhoods: ["Alarka", "Deep Creek", "Lands Creek", "Fontana Lake area"],
-    marketAuthorityAngle: "We specialize in the fast-turnaround schedules required by vacation rental owners, completing major work between guest stays whenever possible."
+    marketAuthorityAngle: "We specialize in the fast-turnaround schedules required by vacation rental owners, completing major work between guest stays whenever possible.",
+    heroImage: "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=2000"
+
   },
   {
     slug: "waynesville-nc",
@@ -135,7 +146,9 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Historic roof detailing", "Hillside home additions", "Attic ventilation correction", "Metal roofing"],
     styleTendency: "Elegant historic architecture (Queen Anne, Colonial) transitioning into contemporary mountain modern.",
     notableNeighborhoods: ["Main Street Historic District", "Frog Level", "Pigeon Street", "Hyatt Creek"],
-    marketAuthorityAngle: "Our Haywood County projects balance the technical needs of structural modernization with the visual sensitivity required for Waynesville's historic character."
+    marketAuthorityAngle: "Our Haywood County projects balance the technical needs of structural modernization with the visual sensitivity required for Waynesville's historic character.",
+    heroImage: "https://images.unsplash.com/photo-1600585154526-990dcea4db0d?auto=format&fit=crop&q=80&w=2000"
+
   },
   {
     slug: "cullowhee-nc",
@@ -154,7 +167,9 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Rental roof repairs", "Deck safety inspections", "Exterior siding updates", "Multi-unit maintenance"],
     styleTendency: "Functional residential and multi-unit architecture prioritizing longevity and value.",
     notableNeighborhoods: ["WCU Campus Area", "Old Cullowhee Road", "Caney Fork", "Speedwell"],
-    marketAuthorityAngle: "We coordinate seamlessly with property managers and landlords in Cullowhee to ensure maintenance happens during vacancies."
+    marketAuthorityAngle: "We coordinate seamlessly with property managers and landlords in Cullowhee to ensure maintenance happens during vacancies.",
+    heroImage: "https://images.unsplash.com/photo-1513584684374-8bdb7483fe8f?auto=format&fit=crop&q=80&w=2000"
+
   },
   {
     slug: "dillsboro-nc",
@@ -173,7 +188,9 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Designer shingle systems", "Artisan porch detailing", "Historic exterior repairs", "Gutter copper accents"],
     styleTendency: "Quaint Appalachian village style with a focus on charm and historic accuracy.",
     notableNeighborhoods: ["Historic Village Center", "Tuckasegee Riverfront", "Monteith Park area"],
-    marketAuthorityAngle: "Dillsboro projects require a lighter touch and a focus on detail. We ensure our job sites stay tourism-ready while protecting the village's historic character."
+    marketAuthorityAngle: "Dillsboro projects require a lighter touch and a focus on detail. We ensure our job sites stay tourism-ready while protecting the village's historic character.",
+    heroImage: "https://images.unsplash.com/photo-1449156001437-3a166a6cb7f2?auto=format&fit=crop&q=80&w=2000"
+
   }
 ];
 
