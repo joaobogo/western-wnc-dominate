@@ -212,7 +212,7 @@ const OutdoorLiving = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Beauty. Function.<br className="hidden md:block" /> Durability.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
                   Great outdoor spaces deliver all three — and compromising on any one undermines the other two.
                 </p>
               </motion.div>
