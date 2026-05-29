@@ -71,7 +71,7 @@ const Team = () => {
               className="flex items-center justify-center gap-3 mb-6"
             >
               <Users className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-              <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Highlander People</span>
+              <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Highlander People</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }} 
@@ -135,11 +135,11 @@ const Team = () => {
 
                   <div className="flex-1">
                     <h3 className="text-2xl font-heading font-bold mb-1">{person.name}</h3>
-                    <p className="text-[hsl(var(--highland-gold))] font-heading font-semibold text-sm mb-4 uppercase tracking-wider">{person.role}</p>
-                    <p className="text-muted-foreground text-[15px] leading-relaxed mb-6 font-body">{person.bio}</p>
+                    <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[14px] mb-4 uppercase tracking-wider">{person.role}</p>
+                    <p className="text-muted-foreground text-[16px] md:text-[18px] leading-relaxed mb-6 font-body font-medium">{person.bio}</p>
                     <div className="flex flex-wrap gap-2">
                       {person.credentials.map(cred => (
-                        <span key={cred} className="text-[10px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/5 text-primary border border-primary/10 rounded-none">
+                        <span key={cred} className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/5 text-primary border border-primary/15 rounded-none">
                           {cred}
                         </span>
                       ))}
@@ -185,11 +185,11 @@ const Team = () => {
 
                   <div className="p-6">
                     <h3 className="text-lg font-heading font-bold mb-1">{person.name}</h3>
-                    <p className="text-primary font-heading font-bold text-[11px] uppercase tracking-[0.15em] mb-4">{person.role}</p>
-                    <p className="text-[13px] text-muted-foreground leading-relaxed font-body mb-4">{person.bio}</p>
+                    <p className="text-primary font-heading font-bold text-[13px] uppercase tracking-[0.15em] mb-4">{person.role}</p>
+                    <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed font-body mb-4 font-medium">{person.bio}</p>
                     <div className="pt-4 border-t border-border flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
-                      <span className="text-[10px] font-body font-bold uppercase tracking-wider text-muted-foreground/60">{person.specialty}</span>
+                      <span className="text-[11px] font-body font-bold uppercase tracking-wider text-muted-foreground/80">{person.specialty}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -204,7 +204,7 @@ const Team = () => {
           <div className="container-tight max-w-5xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[11px] uppercase tracking-[0.2em] mb-6 block">The Highlander Standard</span>
+                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] md:text-[13px] uppercase tracking-[0.2em] mb-6 block">The Highlander Standard</span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-8 leading-tight tracking-tight">
                   Accountability You Can <span className="text-[hsl(var(--highland-gold))]">Identify by Name.</span>
                 </h2>
@@ -219,7 +219,7 @@ const Team = () => {
                       <div className="w-5 h-5 rounded-full bg-[hsl(var(--highland-gold)/0.2)] flex items-center justify-center mt-1">
                         <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold))]" />
                       </div>
-                      <p className="text-white/70 text-base font-body">{text}</p>
+                      <p className="text-white/85 text-lg font-body font-medium">{text}</p>
                     </div>
                   ))}
                 </div>

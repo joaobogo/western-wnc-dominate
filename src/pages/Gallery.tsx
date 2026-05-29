@@ -83,20 +83,20 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
       <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16 z-10">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[9px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.2)] px-3 py-1.5">
+            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.15)] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.3)] px-3 py-1.5">
               Featured Project
             </span>
-            <span className="text-[9px] font-body font-bold uppercase tracking-[0.15em] text-white/50 bg-white/5 backdrop-blur-sm px-2.5 py-1.5">
+            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.15em] text-white/85 bg-white/10 backdrop-blur-sm px-2.5 py-1.5">
               {project.type}
             </span>
           </div>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-[1.08] mb-4 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500">
             {project.title}
           </h2>
-          <p className="text-white/50 text-sm md:text-base font-body max-w-xl leading-relaxed mb-5 hidden md:block">
+          <p className="text-white/65 text-base md:text-lg font-body max-w-xl leading-relaxed mb-5 hidden md:block font-medium">
             {project.description}
           </p>
-          <div className="flex flex-wrap items-center gap-5 text-white/40 text-[11px] font-body">
+          <div className="flex flex-wrap items-center gap-5 text-white/60 text-[13px] md:text-[14px] font-body font-medium">
             <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3" /> {project.location}</span>
             <span className="flex items-center gap-1.5"><Ruler className="w-3 h-3" /> {project.scope}</span>
             <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {project.duration}</span>
@@ -165,14 +165,14 @@ const EditorialCard = ({ project, index, size, onClick }: {
 
       {/* Badge */}
       <div className="absolute top-4 md:top-5 left-4 md:left-5 z-10">
-        <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] text-white/70 bg-white/[0.06] backdrop-blur-md border border-white/[0.08] px-3 py-1.5 group-hover:border-[hsl(var(--highland-gold)/0.2)] group-hover:text-white/90 transition-all duration-500">
+        <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-white/90 bg-white/[0.1] backdrop-blur-md border border-white/[0.2] px-3 py-1.5 group-hover:border-[hsl(var(--highland-gold)/0.4)] group-hover:text-white transition-all duration-500">
           {project.type}
         </span>
       </div>
 
       {project.slug && (
         <div className="absolute top-4 md:top-5 right-4 md:right-5 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0">
-          <span className="text-[8px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.1)] backdrop-blur-md border border-[hsl(var(--highland-gold)/0.15)] px-2.5 py-1">
+          <span className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] px-2.5 py-1.5">
             Case Study
           </span>
         </div>
@@ -182,7 +182,7 @@ const EditorialCard = ({ project, index, size, onClick }: {
       <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 z-10">
         <div className="flex items-center gap-1.5 mb-2">
           <MapPin className="w-2.5 h-2.5 text-[hsl(var(--highland-gold)/0.5)]" />
-          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/35">{project.location}</span>
+          <span className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-white/50">{project.location}</span>
         </div>
         <h3 className={`font-heading font-bold text-white leading-tight tracking-tight group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500 ${
           size === "wide" ? "text-lg md:text-2xl" : "text-base md:text-lg"

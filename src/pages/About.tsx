@@ -62,7 +62,7 @@ const About = () => {
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
                 <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
-                <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Franklin & Sylva, North Carolina</span>
+                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Franklin & Sylva, North Carolina</span>
               </motion.div>
 
               {/* Slow fade-in (no curtain-reveal like Roofing/Construction) */}
@@ -83,7 +83,7 @@ const About = () => {
                 <span className="text-[hsl(var(--highland-gold))]">Built on Family Integrity.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-base md:text-lg text-[hsl(var(--dark-section-foreground)/0.5)] max-w-xl mb-10 leading-relaxed font-body">
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-lg md:text-xl text-[hsl(var(--dark-section-foreground)/0.65)] max-w-xl mb-10 leading-relaxed font-body">
                 Highlander Roofing & Construction is a family-owned company based in Franklin and Sylva, NC.
                 We protect homes and build spaces across Western North Carolina — with the kind of care,
                 craft, and accountability that only comes from people who live here.
@@ -112,7 +112,7 @@ const About = () => {
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <span className="eyebrow mb-3 block">Highlander People</span>
                   <h2 className="section-heading mb-6">Local People.<br />Mountain Standards.</h2>
-                  <p className="text-muted-foreground text-lg leading-relaxed font-body max-w-xl">
+                  <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed font-body max-w-xl">
                     A family-owned company is only as strong as the people who show up on your property. 
                     Meet the specialists dedicated to protecting and improving Western North Carolina homes.
                   </p>
@@ -148,8 +148,8 @@ const About = () => {
                     </div>
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-1">{person.name}</h3>
-                  <p className="text-[hsl(var(--highland-gold))] font-heading font-semibold text-[11px] uppercase tracking-wider mb-3">{person.role}</p>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed line-clamp-3 font-body">{person.desc}</p>
+                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] md:text-[13px] uppercase tracking-wider mb-3">{person.role}</p>
+                  <p className="text-muted-foreground text-[14px] md:text-[15px] leading-relaxed line-clamp-3 font-body font-medium">{person.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -227,7 +227,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-                <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/60">Our Horizon — Western North Carolina</span>
+                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Our Horizon — Western North Carolina</span>
               </div>
             </motion.div>
           </div>

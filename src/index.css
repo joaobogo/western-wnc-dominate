@@ -395,10 +395,10 @@
      Strong, compact, confident
      ────────────────────────────────────── */
   .cta-text {
-    @apply text-body-sm font-body font-semibold uppercase tracking-[0.08em];
+    @apply text-body font-body font-bold uppercase tracking-[0.1em];
   }
   .cta-text-lg {
-    @apply text-body font-body font-semibold uppercase tracking-[0.06em];
+    @apply text-body-lg font-body font-bold uppercase tracking-[0.08em];
   }
 
   /* ──────────────────────────────────────
