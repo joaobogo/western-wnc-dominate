@@ -333,7 +333,76 @@ export const serviceTownContent: ServiceTownEntry[] = [
       { q: "Can you match an existing metal roof on an addition?", a: "In most cases yes. Match success depends on age and weathering of the existing panels — we'll quote it honestly after inspection." },
     ],
   }),
+  },
+  // ─────────── ASHEVILLE ───────────
+  E({
+    townSlug: "asheville-nc",
+    serviceSlug: "roof-replacement",
+    serviceLabel: "Roof Replacement",
+    h1: "Roof Replacement in Asheville, NC",
+    intro:
+      "Asheville projects require a balance of architectural precision and ridgetop engineering. Whether it's a Biltmore Forest estate or a Town Mountain ridgetop home, we deliver owner-led replacement projects with zero-compromise quality.",
+    localContext:
+      "Asheville's topography means a 'standard' roof doesn't exist. We plan for high UV intensity on south-facing ridges and extreme wind uplift on exposed slopes. Our Asheville replacement packages include reinforced perimeter fastening and high-performance underlayment as the baseline.",
+    whoItsFor:
+      "Homeowners in historic districts, ridgetop estate owners, and Buncombe County residents who want a permanent, high-performance solution rather than a temporary fix.",
+    proofNote:
+      "We are experts in Asheville ARB submissions and historic district compliance. We handle the paperwork and the precision detailing so you don't have to.",
+    metaTitle: "Roof Replacement in Asheville, NC | Highlander Roofing",
+    metaDescription:
+      "Premium roof replacement for Asheville's historic and modern mountain homes. Expert Buncombe County crews, owner-led, licensed GC.",
+    faqs: [
+      { q: "Do you handle historic district ARB approvals in Asheville?", a: "Yes. We prepare and submit all required documentation for Biltmore Forest, Montford, and other Asheville historic boards." },
+      { q: "What's the best roof for a Town Mountain ridgetop home?", a: "We recommend standing seam metal or synthetic slate for high-exposure Asheville ridges to ensure maximum wind and UV resistance." },
+      { q: "Do you offer financing for large Asheville projects?", a: "Yes. We offer flexible financing options for both roofing and construction projects in the Asheville market." },
+    ],
+  }),
+  E({
+    townSlug: "asheville-nc",
+    serviceSlug: "additions",
+    serviceLabel: "Home Additions",
+    h1: "Home Additions & Modernization in Asheville, NC",
+    intro:
+      "Expanding an Asheville home is an exercise in mountain modern design and structural precision. We specialize in footprint expansions and master suite additions that honor Asheville's unique architectural landscape.",
+    localContext:
+      "In the Asheville market, we focus on integrating new structural volume with existing historic or modern profiles. We specialize in 'mountain modern' aesthetics — high glass-to-wall ratios, clean lines, and durable mountain materials.",
+    whoItsFor:
+      "Homeowners looking to add square footage, modernize older Buncombe County assets, or create specialized spaces like home studios or luxury outdoor rooms.",
+    proofNote:
+      "Licensed NC General Contractor with a deep portfolio of Asheville-area renovations and footprint expansions.",
+    metaTitle: "Home Additions in Asheville, NC | Highlander Construction",
+    metaDescription:
+      "Custom home additions and structural modernizations in Asheville, NC. Design-build expertise for Buncombe County homeowners.",
+    faqs: [
+      { q: "How long is the permitting process in Asheville?", a: "Asheville and Buncombe County permitting can take 4-8 weeks. We manage the entire process from structural plans to final sign-off." },
+      { q: "Can you build on steep Asheville slopes?", a: "Yes. We work with specialized engineers to design foundations for steep-slope Asheville sites." },
+    ],
+  }),
+
+  // ─────────── HENDERSONVILLE ───────────
+  E({
+    townSlug: "hendersonville-nc",
+    serviceSlug: "roof-replacement",
+    serviceLabel: "Roof Replacement",
+    h1: "Roof Replacement in Hendersonville, NC",
+    intro:
+      "Hendersonville projects prioritize longevity and reliability. We serve established neighborhoods and retirement communities with clean, organized, and owner-led roof replacement services.",
+    localContext:
+      "The Hendersonville plateau sees significant afternoon thunderstorms and localized hail. We recommend Class 4 impact-rated shingles for Henderson County homes to ensure the longest possible service life and storm resistance.",
+    whoItsFor:
+      "Established homeowners, retirement community residents, and anyone looking for a highly reliable, warrantied roof system in the Hendersonville area.",
+    proofNote:
+      "Locally based crews and thousands of documented successful projects across the Hendersonville plateau.",
+    metaTitle: "Roof Replacement in Hendersonville, NC | Highlander Roofing",
+    metaDescription:
+      "Reliable roof replacement for Hendersonville homes. Local crews, impact-resistant options, and owner-led quality. Licensed & Insured.",
+    faqs: [
+      { q: "Do you work in Hendersonville retirement communities?", a: "Yes. we are familiar with the scheduling and staging requirements of many Hendersonville-area active adult and retirement communities." },
+      { q: "Why should I choose impact-resistant shingles in Hendersonville?", a: "Hendersonville is a hail-prone corridor. Class 4 shingles are designed to survive these events and often provide insurance discounts." },
+    ],
+  }),
 ];
+
 
 export function getServiceTownEntry(townSlug: string, serviceSlug: string) {
   return serviceTownContent.find(
