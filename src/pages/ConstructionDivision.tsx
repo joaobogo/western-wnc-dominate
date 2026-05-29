@@ -213,10 +213,10 @@ const ConstructionDivision = () => {
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
                     Owner-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
-                  <p className="text-dark-section-foreground/40 text-base leading-relaxed font-body mb-6">
+                  <p className="text-dark-section-foreground text-base leading-relaxed font-body mb-6">
                     Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed Master Applicator status to every construction project we take on.
                   </p>
-                  <p className="text-dark-section-foreground/30 text-sm leading-relaxed font-body mb-8">
+                  <p className="text-dark-section-foreground/70 text-sm leading-relaxed font-body mb-8">
                     When you hire Highlander for construction, you get a company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
