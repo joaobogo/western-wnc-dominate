@@ -85,18 +85,18 @@ const CountyPage = () => {
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">County Authority</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 md:mb-8 text-primary-foreground tracking-tightest leading-[1.1] md:leading-[0.92]">
+                <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 md:mb-10 text-primary-foreground tracking-tightest leading-[0.95]">
                   Defending <br />
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{county.name}.</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl text-white/75 mb-12 max-w-2xl leading-relaxed font-body font-light">
+                <p className="text-body-lg md:text-body-xl text-white/85 mb-12 max-w-2xl leading-relaxed font-body font-medium drop-shadow-sm">
                   {county.description}
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
-                    Start a {county.name} Project <ArrowRight className="w-4 h-4" />
+                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-xl border border-[hsl(var(--highland-gold)/0.4)]">
+                    Start a {county.name} Project <ArrowRight className="w-5 h-5" />
                   </Link>
                   <a href="tel:8283979211" className="bg-white/[0.04] backdrop-blur-md border border-white/[0.12] text-primary-foreground font-semibold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3">
                     <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
@@ -112,8 +112,8 @@ const CountyPage = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {county.facts.map((fact, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/40 font-bold mb-0.5 md:mb-1">{fact.label}</span>
-                    <span className="text-xs md:text-sm font-heading font-bold text-white flex items-center gap-1.5 md:gap-2">
+                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest text-white/50 font-bold mb-1 md:mb-1.5">{fact.label}</span>
+                    <span className="text-sm md:text-base font-heading font-bold text-white flex items-center gap-2 md:gap-3">
                       <Shield className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold))]" />
                       {fact.value}
                     </span>

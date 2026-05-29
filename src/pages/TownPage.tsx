@@ -130,18 +130,18 @@ const TownPage = () => {
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Market Authority</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-bold mb-8 md:mb-12 text-primary-foreground tracking-tightest leading-[1.0] md:leading-[0.9] drop-shadow-md">
+                <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-8 md:mb-12 text-primary-foreground tracking-tightest leading-[0.95] drop-shadow-md">
                   Built for the <br />
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{town.name} Peaks.</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl text-white/75 mb-12 max-w-2xl leading-relaxed font-body font-light">
+                <p className="text-body-lg md:text-body-xl text-white/85 mb-12 max-w-2xl leading-relaxed font-body font-medium drop-shadow-sm">
                   {town.description}
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide">
-                    Start a {town.name} Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-wide shadow-xl border border-[hsl(var(--highland-gold)/0.4)]">
+                    Start a {town.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                   <a href="tel:8283979211" className="bg-white/[0.04] backdrop-blur-md border border-white/[0.12] text-primary-foreground font-semibold text-[15px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.08] hover:border-white/[0.2] transition-all duration-300">
                     <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
@@ -162,8 +162,8 @@ const TownPage = () => {
                   { icon: Star, label: "Local Trust", value: "4.9★ Rated" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/40 font-bold mb-0.5 md:mb-1">{stat.label}</span>
-                    <span className="text-xs md:text-sm font-heading font-bold text-white flex items-center gap-1.5 md:gap-2">
+                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest text-white/50 font-bold mb-1 md:mb-1.5">{stat.label}</span>
+                    <span className="text-sm md:text-base font-heading font-bold text-white flex items-center gap-2 md:gap-3">
                       <stat.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold))]" />
                       {stat.value}
                     </span>
