@@ -134,8 +134,8 @@ const Team = () => {
                       <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-4">
-                        <Users className="w-8 h-8 text-muted-foreground/30 mx-auto mb-2" />
-                        <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground/50">Waiting for<br />Team Photo</span>
+                        <Users className="w-8 h-8 text-muted-foreground/40 mx-auto mb-2" />
+                        <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground/75">Photo<br />Coming Soon</span>
                       </div>
                     )}
                   </div>
@@ -146,7 +146,7 @@ const Team = () => {
                     <p className="text-muted-foreground text-[16px] md:text-[18px] leading-relaxed mb-6 font-body font-medium">{person.bio}</p>
                     <div className="flex flex-wrap gap-2">
                       {person.credentials.map(cred => (
-                        <span key={cred} className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/5 text-primary border border-primary/15 rounded-none">
+                        <span key={cred} className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-none">
                           {cred}
                         </span>
                       ))}
@@ -184,8 +184,8 @@ const Team = () => {
                       <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-6">
-                        <Users className="w-10 h-10 text-muted-foreground/20 mx-auto mb-3" />
-                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80 bg-white/15 px-4 py-2 backdrop-blur-sm border border-white/10 rounded-sm">Profile Image Pending</span>
+                        <Users className="w-10 h-10 text-muted-foreground/30 mx-auto mb-3" />
+                        <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/90 bg-white/20 px-4 py-2 backdrop-blur-sm border border-white/20 rounded-none">In-House Specialist</span>
                       </div>
                     )}
                   </div>
@@ -196,7 +196,7 @@ const Team = () => {
                     <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed font-body mb-4 font-medium">{person.bio}</p>
                     <div className="pt-4 border-t border-border flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
-                      <span className="text-[11px] font-body font-bold uppercase tracking-wider text-muted-foreground/80">{person.specialty}</span>
+                      <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground/90">{person.specialty}</span>
                     </div>
                   </div>
                 </motion.div>

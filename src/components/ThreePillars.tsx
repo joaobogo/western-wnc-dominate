@@ -34,7 +34,7 @@ const ThreePillars = () => {
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
-            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
+            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
               Roofing · Construction · Design
             </span>
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
@@ -46,7 +46,7 @@ const ThreePillars = () => {
               <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mb-1">
                 <Home className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/90">
+              <span className="text-[12px] md:text-sm font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
                 Roofing
               </span>
             </div>
@@ -55,7 +55,7 @@ const ThreePillars = () => {
               <div className="w-10 h-10 rounded-full bg-[hsl(var(--highland-gold)/0.05)] flex items-center justify-center mb-1">
                 <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
               </div>
-              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/90">
+              <span className="text-[12px] md:text-sm font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
                 Construction
               </span>
             </div>
@@ -64,7 +64,7 @@ const ThreePillars = () => {
               <div className="w-10 h-10 rounded-full bg-accent/5 flex items-center justify-center mb-1 text-accent">
                 <Mountain className="w-5 h-5" />
               </div>
-              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/90">
+              <span className="text-[12px] md:text-sm font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
                 Design & Planning
               </span>
             </div>

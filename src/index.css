@@ -7,56 +7,56 @@
 @layer base {
   :root {
     /* Highlander Heritage Palette — Refined */
-    --background: 42 18% 98%; /* Lightened slightly */
-    --foreground: 210 20% 11%;
+    --background: 42 20% 99%; /* Even brighter for clarity */
+    --foreground: 210 20% 12%;
 
     --card: 42 14% 100%;
-    --card-foreground: 210 20% 11%;
+    --card-foreground: 210 20% 12%;
 
     --popover: 42 14% 100%;
-    --popover-foreground: 210 20% 11%;
+    --popover-foreground: 210 20% 12%;
 
-    /* Deep forest / heritage green — richer */
-    --primary: 158 38% 14%;
-    --primary-foreground: 42 18% 96%;
+    /* Deep forest / heritage green — richer but lighter */
+    --primary: 158 38% 18%; 
+    --primary-foreground: 42 18% 98%;
 
-    /* Warm stone — warmer */
-    --secondary: 38 16% 95%; /* Lightened */
-    --secondary-foreground: 210 20% 11%;
+    /* Warm stone — much cleaner and brighter */
+    --secondary: 42 20% 97%; 
+    --secondary-foreground: 210 20% 12%;
 
-    --muted: 38 12% 93%; /* Lightened */
-    --muted-foreground: 210 10% 38%;
+    --muted: 42 15% 94%; 
+    --muted-foreground: 210 10% 42%;
 
-    /* Highland gold — brighter and more legible */
-    --accent: 38 95% 48%; /* Slightly darker for better contrast on light backgrounds */
-    --accent-foreground: 210 20% 8%;
+    /* Highland gold — adjusted for better accessibility/contrast */
+    --accent: 38 98% 46%; 
+    --accent-foreground: 210 20% 10%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 38 12% 85%;
-    --input: 38 12% 85%;
-    --ring: 158 38% 14%;
+    --border: 38 12% 88%;
+    --input: 38 12% 88%;
+    --ring: 158 38% 18%;
 
-    --radius: 0rem; /* Hard edges for premium feel */
+    --radius: 0rem; 
 
-    /* Heritage tokens — refined (deep forest, never pure black) */
-    --dark-section: 158 20% 22%; /* Lightened significantly to improve readability */
-    --dark-section-foreground: 42 16% 98%;
-    --trust-badge: 158 30% 25%; /* Lightened slightly */
-    --cta-gradient-from: 38 98% 58%; /* Even brighter gold */
-    --cta-gradient-to: 32 90% 48%;
-    --hero-overlay: 158 15% 10%; /* Lightened significantly for clarity */
+    /* Heritage tokens — refined for brightness and readability */
+    --dark-section: 158 25% 18%; /* Dark but readable */
+    --dark-section-foreground: 42 16% 99%;
+    --trust-badge: 158 30% 22%; 
+    --cta-gradient-from: 38 98% 52%; 
+    --cta-gradient-to: 32 95% 45%;
+    --hero-overlay: 158 20% 8%; /* Dark base, but we will use lower opacities */
     --heritage-green: 158 38% 18%;
-    --heritage-charcoal: 210 20% 12%;
-    --highland-gold: 38 95% 48%;
-    --highland-gold-light: 38 42% 75%;
-    --tartan-line: 158 25% 28%;
-    --tartan-accent: 0 40% 32%;
-    --warm-stone: 34 20% 90%;
-    --slate: 210 16% 52%;
-    --slate-light: 210 12% 72%;
-    --slate-dark: 210 18% 36%;
+    --heritage-charcoal: 210 25% 10%;
+    --highland-gold: 38 98% 46%;
+    --highland-gold-light: 38 45% 72%;
+    --tartan-line: 158 25% 25%;
+    --tartan-accent: 0 40% 30%;
+    --warm-stone: 34 20% 92%;
+    --slate: 210 14% 50%;
+    --slate-light: 210 12% 70%;
+    --slate-dark: 210 16% 34%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

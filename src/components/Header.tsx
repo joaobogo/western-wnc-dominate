@@ -150,7 +150,7 @@ const Header = () => {
           <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className="w-auto transition-all duration-500 max-w-[140px] md:max-w-none"
+            className="w-auto transition-all duration-500 max-w-[160px] md:max-w-none"
             animate={{ height: scrolled ? 140 : 180 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
           />
@@ -406,8 +406,8 @@ const Header = () => {
                           }`} />
                         </div>
                         <div className="text-left">
-                          <span className="text-base font-heading font-semibold block leading-tight text-heritage-charcoal">{div.label}</span>
-                          <span className="text-[10px] font-body text-heritage-charcoal/40 uppercase tracking-wider">{div.tagline}</span>
+                          <span className="text-[17px] md:text-[18px] font-heading font-bold block leading-tight text-heritage-charcoal">{div.label}</span>
+                          <span className="text-[11px] md:text-[12px] font-body text-heritage-charcoal/60 uppercase tracking-wider">{div.tagline}</span>
                         </div>
                       </div>
                       <motion.div

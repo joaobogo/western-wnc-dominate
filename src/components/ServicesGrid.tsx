@@ -200,16 +200,16 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
             }`}>
               {service.stat}
             </span>
-            <span className="block text-[11px] font-body text-white/65 uppercase tracking-[0.12em] mt-0.5 font-medium">
+            <span className="block text-[13px] md:text-[14px] font-body text-white/85 uppercase tracking-[0.12em] mt-0.5 font-bold">
               {service.statLabel}
             </span>
           </div>
 
           {/* Division tag */}
-          <div className={`absolute top-3 right-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] px-2.5 py-1.5 backdrop-blur-md ${
+          <div className={`absolute top-3 right-3 text-[12px] font-body font-bold uppercase tracking-[0.15em] px-3 py-1.5 backdrop-blur-md ${
             isGold
-              ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.25)]"
-              : "text-white bg-white/10 border border-white/15"
+              ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.25)] border border-[hsl(var(--highland-gold)/0.35)]"
+              : "text-white bg-primary/40 border border-white/25"
           }`}>
             {isGold ? "Construction" : "Roofing"}
           </div>
@@ -242,8 +242,8 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
               <h3 className="text-base font-heading font-bold text-foreground leading-tight tracking-tight group-hover:text-foreground/90 transition-colors">
                 {service.title}
               </h3>
-              <span className={`text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.12em] mt-0.5 block ${
-                isGold ? "text-[hsl(var(--highland-gold)/0.6)]" : "text-primary/40"
+              <span className={`text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.12em] mt-0.5 block ${
+                isGold ? "text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/60"
               }`}>
                 {service.tagline}
               </span>
@@ -251,7 +251,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
           </div>
 
           {/* Description */}
-          <p className="text-muted-foreground text-[14px] md:text-[15px] leading-[1.7] font-body mb-6 flex-1">
+          <p className="text-foreground/80 text-base leading-relaxed font-body mb-6 flex-1">
             {service.description}
           </p>
 
@@ -309,7 +309,7 @@ const ServicesGrid = () => {
               <div className="w-8 h-8 rounded-none bg-primary/8 flex items-center justify-center">
                 <HomeIcon className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.22em] text-primary/85">
+              <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.22em] text-primary/95">
                 Roofing Division
               </span>
               <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent" />
@@ -345,8 +345,8 @@ const ServicesGrid = () => {
               <div className="w-8 h-8 rounded-none bg-accent/10 flex items-center justify-center">
                 <Ruler className="w-4 h-4 text-accent" />
               </div>
-              <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.22em] text-accent/90">
-                Design & Planning Branch
+              <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.22em] text-accent/95">
+                Design & Planning Pillar
               </span>
               <div className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
             </div>

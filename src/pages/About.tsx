@@ -54,26 +54,32 @@ const About = () => {
       <Header />
       <main>
         {/* ── HERO — Warm editorial fade (unique to About — no text-reveal, no gold line) ── */}
-        <section className="relative min-h-[55vh] md:min-h-[65vh] flex items-end overflow-hidden">
-          <div className="absolute inset-0 section-dark tartan-dark" />
-          {/* Warm cream wash — no gold accent lines (About-only) */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--highland-gold)/0.04)] to-transparent" />
+        <section className="relative min-h-[55vh] md:min-h-[75vh] flex items-end overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src={storyImg} 
+              alt="Western North Carolina mountains" 
+              className="w-full h-full object-cover" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.3)] via-[hsl(var(--hero-overlay)/0.1)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.2)] via-transparent to-transparent" />
+            {/* Subtle tartan accent */}
+            <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
+          </div>
+          {/* Warm cream wash removed for clarity per client request */}
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="mb-10 inline-flex items-center gap-6"
+              className="mb-8 inline-flex items-center gap-4 md:gap-6"
             >
-              <div className="h-14 w-px bg-white/20" />
-              <Link to="/">
-                <img 
-                  src={logo} 
-                  alt="Highlander Roofing & Construction" 
-                  className="h-14 md:h-16 w-auto transition-transform hover:scale-105" 
-                />
-              </Link>
+              <div className="h-10 md:h-12 w-px bg-white/30" />
+              <div className="flex flex-col">
+                <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1">Heritage & Story</span>
+              </div>
             </motion.div>
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
@@ -160,12 +166,12 @@ const About = () => {
                   <div className="aspect-square mb-6 bg-muted flex items-center justify-center relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                     <Users className="w-10 h-10 text-muted-foreground/20" />
                     <div className="absolute bottom-4 left-0 right-0 text-center">
-                      <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80 bg-white/15 px-3 py-1.5 backdrop-blur-sm border border-white/10">Photo Coming Soon</span>
+                      <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.2em] text-white bg-[hsl(var(--primary)/0.6)] px-3 py-1.5 backdrop-blur-sm border border-white/10">In-House Expert</span>
                     </div>
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-1">{person.name}</h3>
-                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] md:text-[13px] uppercase tracking-wider mb-3">{person.role}</p>
-                  <p className="text-muted-foreground text-[14px] md:text-[15px] leading-relaxed line-clamp-3 font-body font-medium">{person.desc}</p>
+                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-sm md:text-base uppercase tracking-wider mb-3">{person.role}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed line-clamp-3 font-body font-medium">{person.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -243,7 +249,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Our Horizon — Western North Carolina</span>
+                <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/90">Our Horizon — Western North Carolina</span>
               </div>
             </motion.div>
           </div>

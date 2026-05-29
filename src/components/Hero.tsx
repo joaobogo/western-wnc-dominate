@@ -76,9 +76,9 @@ const Hero = () => {
         ))}
 
         {/* Multi-layer cinematic grading — lightened for clarity */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.35)] via-[hsl(var(--hero-overlay)/0.15)] to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.2)] via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.25)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.25)] via-[hsl(var(--hero-overlay)/0.08)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.15)] via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.18)] to-transparent" />
 
         {/* Warm highlight wash — top-right, like golden hour light */}
         <div
@@ -154,13 +154,13 @@ const Hero = () => {
             <div className="w-7 h-7 rounded-none border border-primary-foreground/10 flex items-center justify-center">
               <Home className="w-3 h-3 text-primary-foreground/25" />
             </div>
-            <span className="text-[8px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/20 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/30 [writing-mode:vertical-lr] rotate-180">
               Roofing
             </span>
           </div>
           <div className="w-5 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[8px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/20 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/30 [writing-mode:vertical-lr] rotate-180">
               Construction
             </span>
             <div className="w-7 h-7 rounded-none border border-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center">
@@ -173,10 +173,10 @@ const Hero = () => {
 
       {/* === MAIN CONTENT === */}
       <motion.div
-        className="relative z-10 flex-1 flex items-end w-full"
+        className="relative z-10 flex-1 flex items-center md:items-end w-full"
         style={{ opacity: contentOpacity, y: contentY }}
       >
-        <div className="w-full px-6 md:px-10 lg:px-20 pb-48 md:pb-44 pt-32 md:pt-48">
+        <div className="w-full px-6 md:px-10 lg:px-20 pb-20 md:pb-44 pt-32 md:pt-48">
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <motion.div
@@ -341,7 +341,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 2.2 + i * 0.1 }}
-                    className="flex items-center gap-2 text-primary-foreground/60 text-[12px] md:text-sm"
+                    className="flex items-center gap-2 text-primary-foreground/75 text-[13px] md:text-base"
                   >
                     <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
                     <span className="font-body font-medium leading-tight">{item.label}</span>

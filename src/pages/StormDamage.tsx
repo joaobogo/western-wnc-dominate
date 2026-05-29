@@ -164,10 +164,10 @@ const StormDamage = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Roofing</span>
+                  <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/75">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Storm Damage</span>
+                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Storm Damage</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -209,7 +209,7 @@ const StormDamage = () => {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">Rapid Emergency Response Active</div>
-                  <div className="text-xs text-primary-foreground/40 font-body">Call (828) 397-9211 for immediate storm assistance</div>
+                  <div className="text-[11px] text-primary-foreground/60 font-body uppercase tracking-wider">Call (828) 397-9211 for immediate storm assistance</div>
                 </div>
               </motion.div>
             </div>

@@ -1,38 +1,40 @@
-I will implement the "Design & Planning" branch as a secondary, supporting capability that strengthens Highlander’s construction offering. This includes selecting a final branch name, updating the site navigation, footer, and landing page, and integrating supporting copy across key pages.
+I will perform a comprehensive sitewide audit and repair pass to address all the issues mentioned in the prompts, focusing on visual brightness, typography, broken images, and branding consistency.
 
-### Final Decisions
-- **Branch Name**: Design & Planning
-- **Nav Label**: Design & Planning
-- **Dropdown Wording**: "Design & Planning: Layouts, floor plans, and project planning support"
-- **Landing Page URL**: `/layouts-planning` (existing)
-- **Landing Page H1**: "Intelligent **Design & Planning** for Your Home."
-- **CTAs**:
-    - Primary: "Start Your Project Plan"
-    - Secondary: "Talk With Highlander"
+### 1. Global Readability & Typography
+- **Increase Font Sizes**: Ensure all body text, navigation items, and labels are legible for older users.
+- **Contrast Pass**: Audit all dark sections to ensure text contrast meets accessibility standards (WCAG).
+- **Mobile Readability**: Optimize spacing and font sizes specifically for mobile devices.
 
-### Technical Section
+### 2. Visual Brightness & Image Clarity
+- **Reduce Overlays**: Lighten the `--hero-overlay` and other dark gradients that obscure images.
+- **Hero Brightness**: Adjust hero components to ensure background images are the primary focus, not the overlays.
+- **Section Rebalancing**: Lighten sections that feel "muddy" or "too dark," especially on construction pages.
 
-**1. Site Navigation (Header)**
-- Update `src/components/Header.tsx` to ensure "Design & Planning" is clearly nested under the Construction division but with its own distinct identity.
-- Ensure the label is "Design & Planning" with the description "Layouts, floor plans, and project planning support".
+### 3. Broken Image Audit & Repair
+- **Waynesville Page**: Fix the logo/image issue in the hero.
+- **Construction & About Heroes**: Add high-quality images where they are currently missing or blank.
+- **Team Section**: Replace "Photo Coming Soon" placeholders with professional fallbacks or refined treatments.
+- **Sitewide Check**: Use an automated scan to identify and fix any other broken image paths.
 
-**2. Footer Structure**
-- Update `src/components/Footer.tsx` to place "Design & Planning" under the Construction column.
-- Update the bottom CTA to include "layouts & planning" in the list of services.
+### 4. Branding & Logo Consistency
+- **Standardize Logo**: Ensure the premium Highlander logo is used consistently across all pages.
+- **Logo Sizing**: Enlarge logos in the header and hero sections as requested.
+- **Tartan/Plaid Accents**: Reposition tartan/plaid as a subtle, premium secondary accent (trim, dividers) rather than a dominant background.
 
-**3. Landing Page Refinement**
-- Update `src/pages/LayoutsPlanning.tsx` to align with the "secondary support" hierarchy.
-- Ensure no "architectural" or "design-build" language is used.
-- Finalize section order: 1. Hero, 2. Intro Block, 3. Core Support Areas, 4. Early Guidance, 5. Build Connection, 6. The Process, 7. Who This Is For, 8. FAQ.
+### 5. Messaging & Structural Alignment
+- **3 Pillars Correction**: Audit the site to ensure all references to the service structure reflect the 3 pillars: Roofing, Construction, and Design & Planning.
+- **Pillar Hierarchy**: Maintain the brand hierarchy where Roofing and Construction are primary, and Design is a supporting branch.
 
-**4. Supporting Copy Integration**
-- **Homepage (`src/pages/Index.tsx`)**: Add a reference to Design & Planning in the TwoPillars or Services section.
-- **Construction Hub (`src/pages/ConstructionDivision.tsx`)**: Integrate a copy block explaining how Design & Planning supports the build.
-- **Additions (`src/pages/HomeAdditions.tsx`)**: Add a link/note about pre-construction planning support.
-- **Outdoor Living (`src/pages/OutdoorLiving.tsx`)**: Add a section on layout and terrain-responsive planning.
-- **Town Pages (`src/pages/TownPage.tsx`)**: Ensure the "Construction" column mentions project planning as an available local service.
+### 6. CTA & Button Visibility
+- **Pop & Contrast**: Enhance button colors and contrast ratios.
+- **Button Sizing**: Increase button text size and padding for better tap targets and visibility.
 
-**5. Intake & Builder Flow**
-- Update `src/components/InspectionForm.tsx` to include "Project Planning & Layouts" in the project type dropdown.
-- Update confirmation messages to reflect "project planning" terminology.
-- Update `src/data/services.ts` (if it exists) to include the new branch details for dynamic rendering.
+### Technical Implementation Details:
+- **CSS Variables**: Update `index.css` to refine the global color palette and typography system.
+- **Hero Component**: Refactor the `Hero` component and location-specific heroes to be more flexible and image-led.
+- **Image Fallbacks**: Implement a robust fallback system for images that fail to load.
+
+### QA Pass:
+- **Responsive Testing**: Verify all fixes on desktop, tablet, and mobile.
+- **Readability Score**: Ensure all major pages are "Strong" for older-user readability.
+- **Image Load Verification**: Confirm every page is free of broken images.

@@ -98,8 +98,8 @@ const SpecialtyRoofing = () => {
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImg} alt="Specialty cedar roof on a custom home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-[hsl(var(--hero-overlay)/0.4)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.15)] to-[hsl(var(--hero-overlay)/0.3)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
@@ -109,11 +109,13 @@ const SpecialtyRoofing = () => {
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Roofing</span>
+                  <div className="flex flex-col">
+                    <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                    <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1">Specialty Division</span>
+                  </div>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Specialty Roofing</span>
+                <ChevronRight className="w-3 h-3 text-white/30" />
+                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Specialty Roofing</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -127,7 +129,7 @@ const SpecialtyRoofing = () => {
                 </motion.h1>
               </div>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-primary-foreground/50 max-w-xl mb-10 leading-relaxed font-body">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
                 Specialty roofing for custom homes, visually distinctive properties, and projects where precision and aesthetics matter as much as weather protection. Cedar, copper, standing seam, complex rooflines — built to be seen.
               </motion.p>
 
