@@ -1,8 +1,8 @@
-import roofRepairStock from "@/assets/blog/roof-repair-stock.jpg";
-import metalBenefitsStock from "@/assets/blog/metal-roof-benefits-stock.jpg";
-import metalInstallStock from "@/assets/blog/metal-roof-install-stock.jpg";
-import homeValueStock from "@/assets/blog/home-value-stock.jpg";
-import shingleRoofsStock from "@/assets/blog/shingle-roofs-stock.jpg";
+const roofRepairStock = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000";
+const metalBenefitsStock = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
+const metalInstallStock = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1000";
+const homeValueStock = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000";
+const shingleRoofsStock = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
 
 export interface BlogFAQ {
   question: string;
