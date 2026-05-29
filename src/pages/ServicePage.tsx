@@ -92,7 +92,7 @@ const ServicePage = () => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-balance">
                 {service.headline}
               </h1>
-              <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
+              <p className="text-dark-section-foreground/75 max-w-2xl text-base md:text-lg mb-8 leading-relaxed">
                 {service.subheadline}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">

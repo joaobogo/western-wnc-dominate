@@ -65,7 +65,7 @@ const OurProcess = () => {
   return (
     <section className="section-padding section-dark relative overflow-hidden">
       {/* Tartan texture */}
-      <div className="absolute inset-0 tartan-dark opacity-40" />
+      <div className="absolute inset-0 tartan-dark opacity-25" />
 
       <div className="container-tight relative z-10">
         {/* Header */}
@@ -82,7 +82,7 @@ const OurProcess = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-dark-section-foreground/40 max-w-xl mx-auto text-[15px] font-body leading-relaxed">
+            <p className="text-dark-section-foreground/60 max-w-xl mx-auto text-[15px] md:text-lg font-body leading-relaxed">
               Consistent quality requires a consistent process. Every phase is documented,
               every decision is yours, and every detail is accountable to one standard.
             </p>
@@ -130,7 +130,7 @@ const OurProcess = () => {
 
                 {/* Card content */}
                 <div className="flex-1 pb-6 md:pb-8">
-                  <div className="bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.05] rounded-none p-5 md:p-7 group-hover:border-[hsl(var(--highland-gold)/0.12)] group-hover:bg-dark-section-foreground/[0.05] transition-all duration-500 border-shimmer overflow-hidden">
+                  <div className="bg-dark-section-foreground/[0.04] border border-dark-section-foreground/[0.08] rounded-none p-5 md:p-7 group-hover:border-[hsl(var(--highland-gold)/0.25)] group-hover:bg-dark-section-foreground/[0.08] transition-all duration-500 border-shimmer overflow-hidden">
                     {/* Icon + title */}
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-8 h-8 rounded-none bg-dark-section-foreground/[0.06] flex items-center justify-center group-hover:bg-[hsl(var(--highland-gold)/0.08)] transition-colors duration-300">
@@ -142,13 +142,13 @@ const OurProcess = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-[1.75] font-body mb-4">
+                    <p className="text-dark-section-foreground/65 text-[13px] md:text-sm leading-[1.75] font-body mb-4">
                       {step.description}
                     </p>
 
                     {/* Detail strip */}
                     <div className="pt-3 border-t border-dark-section-foreground/[0.04]">
-                      <span className="text-[10px] font-body text-dark-section-foreground/20 tracking-wide">
+                      <span className="text-[10px] font-body text-dark-section-foreground/40 tracking-wide">
                         {step.detail}
                       </span>
                     </div>
