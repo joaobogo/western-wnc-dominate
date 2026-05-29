@@ -94,9 +94,19 @@ const Team = () => {
         </section>
 
         {/* 2. Leadership Section */}
-        <section className="section-padding bg-background relative">
+        <section className="section-padding bg-background relative overflow-hidden">
+          {/* Subtle Side Tartan Accents */}
+          <div className="absolute top-0 left-0 w-2 h-full opacity-[0.08]" style={{ 
+            backgroundImage: "url('/tartan.png')",
+            backgroundSize: "60px auto"
+          }} />
+          <div className="absolute top-0 right-0 w-2 h-full opacity-[0.08]" style={{ 
+            backgroundImage: "url('/tartan.png')",
+            backgroundSize: "60px auto"
+          }} />
+
           <div className="container-tight">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 relative">
               <span className="eyebrow mb-3 block">Family Ownership</span>
               <h2 className="section-heading">Owner-Led Accountability</h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mt-4" />
