@@ -74,7 +74,7 @@ const ProjectDetailPage = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 1.6, ease: HIGHLAND_EASE }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-[hsl(var(--heritage-charcoal)/0.2)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.15)] to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 lg:p-16">
               <div className="container-tight">
                 <nav className="flex items-center gap-2 text-white/50 text-sm font-body mb-4">

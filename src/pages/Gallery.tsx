@@ -76,8 +76,8 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
         viewport={{ once: true }}
         transition={{ duration: 2.5, ease: HIGHLAND_EASE }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.2)] to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.6)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.15)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.5)] to-transparent" />
 
       {/* Bottom content */}
       <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16 z-10">
@@ -158,7 +158,7 @@ const EditorialCard = ({ project, index, size, onClick }: {
       </motion.div>
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.08)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.95)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
+      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.9)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
 
       {/* Gold edge */}
       <div className="absolute bottom-0 left-0 w-0 group-hover:w-2/3 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-[hsl(var(--highland-gold)/0)] transition-all duration-700 z-20" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
