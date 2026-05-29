@@ -165,9 +165,9 @@ const InspectionForm = () => {
     );
   }
 
-  const inputClasses = "w-full px-5 py-4 md:py-5 rounded-none text-dark-section-foreground text-base font-body placeholder:text-dark-section-foreground/30 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0";
-  const labelClasses = "block text-[11px] md:text-[12px] font-bold text-dark-section-foreground/60 mb-2.5 font-body uppercase tracking-[0.14em]";
-  const hintClasses = "text-dark-section-foreground/30 text-[11px] md:text-[12px] font-body mt-2 leading-relaxed";
+  const inputClasses = "w-full px-5 py-5 md:py-6 rounded-none text-dark-section-foreground text-lg font-body placeholder:text-dark-section-foreground/35 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-dark-section-foreground/[0.02]";
+  const labelClasses = "block text-[13px] md:text-[14px] font-bold text-dark-section-foreground/70 mb-3 font-body uppercase tracking-[0.14em]";
+  const hintClasses = "text-dark-section-foreground/45 text-[12px] md:text-[13px] font-body mt-2.5 leading-relaxed";
 
   const canProceedStep1 = formData.name && formData.phone;
   const canProceedStep2 = formData.town && formData.projectType;

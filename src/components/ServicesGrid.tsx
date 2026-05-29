@@ -166,7 +166,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
       transition={{ delay: index * 0.06, duration: 0.55, ease: HIGHLAND_EASE }}
       className="h-full"
     >
-      <Link to={service.href} className="group relative block h-full bg-card border border-border rounded-none overflow-hidden spotlight-hover hover:border-[hsl(var(--highland-gold)/0.18)] transition-all duration-500">
+      <Link to={service.href} className="group relative block h-full bg-card border border-border rounded-none overflow-hidden spotlight-hover hover:border-[hsl(var(--highland-gold)/0.25)] transition-all duration-500 shadow-sm hover:shadow-md">
         {/* Image strip — curtain reveal */}
         <div className="relative h-36 md:h-40 overflow-hidden">
           <motion.div
@@ -228,7 +228,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
         }`} />
 
         {/* Content */}
-        <div className="p-5 md:p-6 flex flex-col flex-1">
+        <div className="p-6 md:p-8 flex flex-col flex-1">
           {/* Icon + title */}
           <div className="flex items-start gap-3 mb-3">
             <div className={`w-9 h-9 rounded-none flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
