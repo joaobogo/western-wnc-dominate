@@ -206,24 +206,92 @@ const TownPage = () => {
         {/* 6. Built for WNC Factors */}
         <BuiltForWNC />
 
-        {/* 7. Localized Blog Section */}
-        {existingBlogs.length > 0 && (
-          <section className="py-24 bg-background">
-            <div className="container-tight text-center mb-16">
-              <span className="eyebrow mb-4 block">Knowledge Base</span>
-              <h2 className="text-4xl font-heading font-bold">Researching for {town.name}?</h2>
-            </div>
-            <div className="container-tight grid md:grid-cols-3 gap-8">
-              {existingBlogs.map((post) => (
-                <Link key={post.slug} to={`/blog/${post.slug}`} className="group block border border-border p-6 hover:border-primary transition-colors">
-                  <h3 className="font-heading font-bold text-xl mb-3 group-hover:text-primary transition-colors">{post.title}</h3>
-                  <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{post.excerpt}</p>
-                  <span className="text-primary text-sm font-bold flex items-center gap-2">Read Article <ArrowRight className="w-4 h-4" /></span>
+        {/* 7. Localized Blog & Knowledge Base */}
+        <section className="py-24 bg-secondary/30 relative overflow-hidden">
+          <TartanBackground opacity={0.015} />
+          <div className="container-tight relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+              <div className="max-w-2xl">
+                <ScrollReveal variant="fade">
+                  <span className="eyebrow mb-4 block">Knowledge Base</span>
+                </ScrollReveal>
+                <HeadingReveal delay={0.1}>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight">
+                    Researching in <span className="text-primary italic">{town.name}?</span>
+                  </h2>
+                </HeadingReveal>
+                <ScrollReveal variant="rise-subtle" delay={0.2}>
+                  <p className="text-lg text-muted-foreground mt-4 font-body leading-relaxed">
+                    Mountain projects require specific knowledge. Explore our field guides on roofing, construction, and local conditions.
+                  </p>
+                </ScrollReveal>
+              </div>
+              <ScrollReveal variant="fade" delay={0.3}>
+                <Link to="/blog" className="group inline-flex items-center gap-2 text-primary font-heading font-bold text-sm tracking-wide hover:text-primary/80 transition-all border-b border-primary/20 pb-1">
+                  Browse All Resources <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
+              </ScrollReveal>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+              {/* Local Post if exists, otherwise general relevant ones */}
+              {(existingBlogs.length > 0 ? existingBlogs : blogPosts.slice(0, 3)).map((post, i) => (
+                <ScrollReveal key={post.slug} variant="rise-subtle" delay={i * 0.1}>
+                  <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-background border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
+                    {/* Subtle category badge */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/60 bg-primary/5 px-2.5 py-1">
+                        {post.category}
+                      </span>
+                      <div className="h-px flex-1 bg-border/40" />
+                    </div>
+                    
+                    <h3 className="font-heading font-bold text-xl lg:text-2xl mb-4 group-hover:text-primary transition-colors leading-tight">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-8 line-clamp-3 font-body">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="mt-auto pt-6 border-t border-border/40 flex items-center justify-between">
+                      <span className="text-primary text-[13px] font-heading font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Read Guide <ArrowRight className="w-4 h-4" />
+                      </span>
+                      {post.town === town.name && (
+                        <span className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground/40 uppercase tracking-widest">
+                          <MapPin className="w-3 h-3" /> Local Info
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Background accent */}
+                    <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+                      <BookOpen className="w-16 h-16 -rotate-12" />
+                    </div>
+                  </Link>
+                </ScrollReveal>
               ))}
             </div>
-          </section>
-        )}
+
+            {/* Content Depth Bridge */}
+            <ScrollReveal variant="fade" delay={0.4}>
+              <div className="mt-16 p-8 bg-primary/[0.02] border border-primary/10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary/5 flex items-center justify-center rounded-none border border-primary/10">
+                    <Mountain className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-heading font-bold text-foreground">Established in {town.name}</h4>
+                    <p className="text-sm text-muted-foreground font-body leading-relaxed">We support every service area with real project data and mountain-proven advice.</p>
+                  </div>
+                </div>
+                <Link to="/gallery" className="text-sm font-heading font-bold text-foreground hover:text-primary transition-colors flex items-center gap-2">
+                  View {town.name} Portfolio <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
 
         <ProjectConcierge />
         <InspectionForm />
