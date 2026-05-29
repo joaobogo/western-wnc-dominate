@@ -138,11 +138,11 @@ const Header = () => {
       {/* ─── Main nav bar ─── */}
       <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-0.5" : "py-1 md:py-1.5"}`}>
         {/* Logo */}
-        <Link to="/" className="flex items-center -ml-4 md:-ml-6">
+        <Link to="/" className="flex items-center -ml-4 md:-ml-6 bg-transparent hover:bg-transparent">
             <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className="w-auto transition-all duration-500"
+            className="w-auto transition-all duration-500 mix-blend-multiply"
             animate={{ 
               height: scrolled ? 90 : 130,
               scale: scrolled ? 0.95 : 1
@@ -157,7 +157,7 @@ const Header = () => {
           {/* Division dropdowns */}
           <Link
             to="/"
-            className="lg:hidden"
+            className="hidden"
           />
 
           {divisions.map((div) => (
