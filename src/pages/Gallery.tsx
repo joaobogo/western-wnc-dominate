@@ -230,10 +230,11 @@ const EditorialCard = ({ project, index, size, onClick }: {
   </motion.div>
 );
 
-/* Size pattern for visual rhythm */
+/* Size pattern for visual rhythm - mapped to project indices */
 const sizePattern: Array<"tall" | "wide" | "standard"> = [
-  "standard", "tall", "standard", "wide", "standard", "standard",
-  "standard", "standard", "tall", "standard",
+  "tall", "tall",      // 1, 2 (CertainTeed, Cedar Shake)
+  "wide", "wide",      // 3, 4 (Mountain Cabin, Highlands Estate)
+  "standard", "standard", "standard", "standard", "standard" // 5-9
 ];
 
 const Gallery = () => {
