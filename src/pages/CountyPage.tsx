@@ -78,7 +78,7 @@ const CountyPage = () => {
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{county.name}.</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl text-white/60 mb-12 max-w-2xl leading-relaxed font-body font-light">
+                <p className="text-xl md:text-2xl text-white/75 mb-12 max-w-2xl leading-relaxed font-body font-light">
                   {county.description}
                 </p>
                 

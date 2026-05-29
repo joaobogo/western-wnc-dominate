@@ -41,7 +41,7 @@ const ThreePillars = () => {
               <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mb-1">
                 <Home className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/80">
+              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/90">
                 Roofing
               </span>
             </div>
@@ -50,7 +50,7 @@ const ThreePillars = () => {
               <div className="w-10 h-10 rounded-full bg-[hsl(var(--highland-gold)/0.05)] flex items-center justify-center mb-1">
                 <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
               </div>
-              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/80">
+              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/90">
                 Construction
               </span>
             </div>
@@ -59,7 +59,7 @@ const ThreePillars = () => {
               <div className="w-10 h-10 rounded-full bg-accent/5 flex items-center justify-center mb-1 text-accent">
                 <Mountain className="w-5 h-5" />
               </div>
-              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/80">
+              <span className="text-[11px] md:text-xs font-body font-bold uppercase tracking-[0.2em] text-foreground/90">
                 Design & Planning
               </span>
             </div>

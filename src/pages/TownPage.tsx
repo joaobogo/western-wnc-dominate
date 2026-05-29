@@ -123,7 +123,7 @@ const TownPage = () => {
                   <span className="text-[hsl(var(--highland-gold))] italic font-medium">{town.name} Peaks.</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl leading-relaxed font-body font-light">
+                <p className="text-xl md:text-2xl text-white/75 mb-12 max-w-2xl leading-relaxed font-body font-light">
                   {town.description}
                 </p>
                 
