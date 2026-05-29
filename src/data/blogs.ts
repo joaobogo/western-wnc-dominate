@@ -17,7 +17,7 @@ export interface BlogPost {
   category: string;
   date: string;
   readTime: string;
-  image?: string;
+  image: string;
   metaTitle: string;
   metaDescription: string;
   town?: string;
