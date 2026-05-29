@@ -266,7 +266,7 @@ const TownPage = () => {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
               <div className="flex flex-col h-full group/col">
-                <div className="bg-primary p-10 md:p-14 text-white flex-1 relative overflow-hidden">
+                <div className="bg-primary p-8 md:p-12 text-white flex-1 relative overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1635424710928-0544e8512eca?auto=format&fit=crop&q=80&w=1200" 
                     alt="Mountain roofing authority"
@@ -276,33 +276,41 @@ const TownPage = () => {
                   <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
                   
                   <div className="relative z-10 h-full flex flex-col">
-                    <div className="flex items-center gap-4 mb-8">
+                    <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 bg-white/10 flex items-center justify-center border border-white/20">
                         <Home className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Roofing Division</h3>
+                      <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tightest">Roofing Mastery</h3>
                     </div>
 
-                    <p className="text-white/60 text-lg mb-10 leading-relaxed font-body">
-                      Addressing the {town.climateExposure.toLowerCase()} with high-performance systems. Our {town.name} crews specialize in {town.serviceDemandMix.filter(s => s.toLowerCase().includes('roof') || s.toLowerCase().includes('brava')).join(' and ')}.
+                    <p className="text-white/70 text-base md:text-lg mb-8 leading-relaxed font-body">
+                      The primary defense for {town.name} homes. We specialize in high-elevation roof systems designed for {town.climateExposure.toLowerCase()}.
                     </p>
 
-                    <div className="grid sm:grid-cols-2 gap-4 mb-12">
-                      {roofingServices.map((service) => (
+                    <div className="space-y-3 mb-10">
+                      {[
+                        { title: "Roof Replacement", href: "/services/roof-replacement", desc: "Full-system upgrades with mountain-rated materials." },
+                        { title: "Metal Roofing", href: "/services/metal-roofing", desc: "Lifetime protection for ridgeline and forest lots." },
+                        { title: "Roof Repair", href: "/services/roof-repair", desc: "Targeted leak detection and storm damage fixes." },
+                        { title: "Brava / Synthetic", href: "/roofing/brava-synthetic", desc: "Luxury slate and shake aesthetics with composite durability." }
+                      ].map((s) => (
                         <Link 
-                          key={service.slug} 
-                          to={`/services/${service.slug}`}
-                          className="group/item flex items-center justify-between p-5 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--highland-gold)/0.4)] transition-all duration-300"
+                          key={s.title} 
+                          to={s.href}
+                          className="group/item block p-4 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--highland-gold)/0.4)] transition-all duration-300"
                         >
-                          <span className="font-heading font-bold text-sm tracking-wide">{service.title}</span>
-                          <ArrowUpRight className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover/item:text-[hsl(var(--highland-gold))] transition-colors" />
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="font-heading font-bold text-sm tracking-wide">{s.title}</span>
+                            <ArrowUpRight className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover/item:text-[hsl(var(--highland-gold))] transition-colors" />
+                          </div>
+                          <p className="text-[12px] text-white/50 leading-tight">{s.desc}</p>
                         </Link>
                       ))}
                     </div>
 
-                    <div className="mt-auto">
-                      <Link to="/roofing" className="inline-flex items-center gap-3 text-[hsl(var(--highland-gold))] font-bold hover:gap-5 transition-all uppercase tracking-widest text-[13px] border-b border-[hsl(var(--highland-gold)/0.3)] pb-2">
-                        View All Roofing Solutions <ArrowRight className="w-4 h-4" />
+                    <div className="mt-auto pt-6 border-t border-white/10">
+                      <Link to="/roofing" className="inline-flex items-center gap-3 text-[hsl(var(--highland-gold))] font-bold hover:gap-5 transition-all uppercase tracking-widest text-[11px]">
+                        Explore Our Roofing Division <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </div>
