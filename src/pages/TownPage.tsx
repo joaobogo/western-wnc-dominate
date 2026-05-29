@@ -235,84 +235,97 @@ const TownPage = () => {
           </div>
         </section>
 
-        {/* 3 & 4. Roofing & Construction Dual Division Section */}
-        <section className="section-padding bg-background relative overflow-hidden">
+        {/* 3 & 4. Roofing & Construction Dual Division Section — Highly Visual */}
+        <section className="section-padding bg-secondary/30 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto", backgroundRepeat: "repeat" }} />
+          
           <div className="container-tight relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">A Dual-Division Strategy for {town.name}</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">We treat Roofing and Construction with equal importance, ensuring every project integrates perfectly with your home's structure and the mountain landscape.</p>
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <span className="eyebrow mb-4 block">Dual Division Strategy</span>
+              <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">Expertise across the <br className="hidden md:block" /> full exterior envelope.</h2>
+              <p className="text-xl text-muted-foreground font-body leading-relaxed">
+                In {town.name}, roofing and construction aren't separate concerns. We treat the structure and its covering as a single unified system built to handle the peaks.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
               {/* Roofing Column */}
-              <div className="space-y-10">
-                <div className="border-l-4 border-primary pl-8 py-2">
-                  <h3 className="text-3xl font-heading font-bold text-foreground mb-4 uppercase tracking-tight">Roofing Excellence</h3>
-                  <p className="text-muted-foreground leading-relaxed font-body">
-                    Addressing the {town.climateExposure} concerns with high-performance systems. Our {town.name} crews specialize in {town.serviceDemandMix.filter(s => s.toLowerCase().includes('roof')).join(' and ')}.
-                  </p>
+              <div className="flex flex-col h-full">
+                <div className="bg-primary p-10 md:p-14 text-white flex-1 relative overflow-hidden group">
+                  {/* Subtle Pattern */}
+                  <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
+                  
+                  <div className="relative z-10 h-full flex flex-col">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="w-12 h-12 bg-white/10 flex items-center justify-center border border-white/20">
+                        <Home className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                      </div>
+                      <h3 className="text-3xl font-heading font-bold uppercase tracking-tightest">Roofing Division</h3>
+                    </div>
+
+                    <p className="text-white/60 text-lg mb-10 leading-relaxed font-body">
+                      Addressing the {town.climateExposure.toLowerCase()} with high-performance systems. Our {town.name} crews specialize in {town.serviceDemandMix.filter(s => s.toLowerCase().includes('roof')).join(' and ')}.
+                    </p>
+
+                    <div className="grid sm:grid-cols-2 gap-4 mb-12">
+                      {roofingServices.map((service) => (
+                        <Link 
+                          key={service.slug} 
+                          to={`/services/${service.slug}`}
+                          className="group/item flex items-center justify-between p-5 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[hsl(var(--highland-gold)/0.4)] transition-all duration-300"
+                        >
+                          <span className="font-heading font-bold text-sm tracking-wide">{service.title}</span>
+                          <ArrowUpRight className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover/item:text-[hsl(var(--highland-gold))] transition-colors" />
+                        </Link>
+                      ))}
+                    </div>
+
+                    <div className="mt-auto">
+                      <Link to="/roofing" className="inline-flex items-center gap-3 text-[hsl(var(--highland-gold))] font-bold hover:gap-5 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.3)] pb-2">
+                        View All Roofing Solutions <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                
-                <div className="grid sm:grid-cols-2 gap-6">
-                  {roofingServices.map((service) => (
-                    <Link 
-                      key={service.slug} 
-                      to={`/services/${service.slug}`}
-                      className="group p-6 bg-card border border-border hover:border-primary/30 transition-all rounded-sm"
-                    >
-                      <service.icon className="w-6 h-6 text-primary mb-4" />
-                      <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{service.title}</h4>
-                      <p className="text-xs text-muted-foreground mt-2 line-clamp-2 font-body">{service.description}</p>
-                    </Link>
-                  ))}
-                </div>
-                
-                <Link to="/roofing" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px] border-b border-primary/20 pb-1">
-                  All Roofing Solutions <ArrowRight className="w-4 h-4" />
-                </Link>
               </div>
 
               {/* Construction Column */}
-              <div className="space-y-10">
-                <div className="border-l-4 border-[hsl(var(--highland-gold))] pl-8 py-2">
-                  <h3 className="text-3xl font-heading font-bold text-foreground mb-4 uppercase tracking-tight">Custom Construction</h3>
-                  <p className="text-muted-foreground leading-relaxed font-body">
-                    {town.constructionContext}
-                  </p>
-                </div>
+              <div className="flex flex-col h-full">
+                <div className="bg-card p-10 md:p-14 border border-border flex-1 relative overflow-hidden group">
+                  <div className="relative z-10 h-full flex flex-col">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="w-12 h-12 bg-primary/5 flex items-center justify-center border border-primary/10">
+                        <Hammer className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-3xl font-heading font-bold uppercase tracking-tightest">Construction Division</h3>
+                    </div>
 
-                <div className="grid sm:grid-cols-2 gap-6">
-                  {constructionServices.map((service) => (
-                    <Link 
-                      key={service.slug} 
-                      to={service.slug === 'outdoor-living' ? '/construction/outdoor-living' : '/construction'}
-                      className="group p-6 bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.3)] transition-all rounded-sm"
-                    >
-                      <service.icon className="w-6 h-6 text-[hsl(var(--highland-gold))] mb-4" />
-                      <h4 className="font-heading font-bold text-foreground group-hover:text-[hsl(var(--highland-gold))] transition-colors">{service.title}</h4>
-                      <p className="text-xs text-muted-foreground mt-2 line-clamp-2 font-body">{service.description}</p>
-                    </Link>
-                  ))}
-                </div>
+                    <p className="text-muted-foreground text-lg mb-10 leading-relaxed font-body">
+                      {town.constructionContext}
+                    </p>
 
-                <div className="relative aspect-[16/6] overflow-hidden border border-border">
-                   <img src={marketVisualImg} alt="Local construction market authority" className="w-full h-full object-cover grayscale opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
-                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                   <div className="absolute bottom-4 left-6 flex items-center gap-2">
-                      <div className="w-6 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-                      <span className="text-[9px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/50">Local Project Scope</span>
-                   </div>
-                </div>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-12">
+                      {constructionServices.map((service) => (
+                        <Link 
+                          key={service.slug} 
+                          to={service.slug === 'outdoor-living' ? '/construction/outdoor-living' : '/construction'}
+                          className="group/item flex items-center justify-between p-5 bg-secondary/50 border border-border hover:border-primary/30 transition-all duration-300"
+                        >
+                          <span className="font-heading font-bold text-sm tracking-wide text-foreground">{service.title}</span>
+                          <ArrowUpRight className="w-4 h-4 text-primary/30 group-hover/item:text-primary transition-colors" />
+                        </Link>
+                      ))}
+                    </div>
 
-                <Link to="/layouts-planning" className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold hover:gap-3 transition-all uppercase tracking-widest text-[11px] border-b border-[hsl(var(--highland-gold)/0.2)] pb-1">
-                  Design & Planning in {town.name} <ArrowRight className="w-4 h-4" />
-                </Link>
-
-                
-                <div className="relative aspect-[16/5] overflow-hidden border border-border">
-                   <img src={localPlanningImg} alt="Local project design and planning" className="w-full h-full object-cover grayscale opacity-20 hover:opacity-40 transition-opacity duration-700" />
-                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                    <div className="mt-auto">
+                      <Link to="/layouts-planning" className="inline-flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all uppercase tracking-widest text-[11px] border-b border-primary/20 pb-2">
+                        Design & Planning in {town.name} <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                  
+                  {/* Decorative Construction Background Detail */}
+                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rotate-45 translate-x-16 translate-y-16" />
                 </div>
               </div>
             </div>
