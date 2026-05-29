@@ -159,11 +159,11 @@ const BeforeAfterGallery = () => {
                     <h3 className="font-heading font-bold text-xl md:text-2xl text-white mb-1.5">
                       {projects[current].title}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-white/60 text-sm mb-3 font-body">
-                      <MapPin className="w-3 h-3" />
+                    <div className="flex items-center gap-1.5 text-white/80 text-[15px] mb-3 font-body font-medium">
+                      <MapPin className="w-3.5 h-3.5" />
                       {projects[current].location}
                     </div>
-                    <p className="text-white/70 text-sm max-w-xl leading-relaxed font-body">
+                    <p className="text-white/90 text-[15px] md:text-base max-w-xl leading-relaxed font-body font-medium">
                       {projects[current].description}
                     </p>
                   </motion.div>
