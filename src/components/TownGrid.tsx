@@ -3,17 +3,9 @@ import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
+import { towns } from "@/data/towns";
 
-const towns = [
-  { name: "Highlands", slug: "highlands-nc", county: "Macon County" },
-  { name: "Cashiers", slug: "cashiers-nc", county: "Jackson County" },
-  { name: "Franklin", slug: "franklin-nc", county: "Macon County" },
-  { name: "Sylva", slug: "sylva-nc", county: "Jackson County" },
-  { name: "Bryson City", slug: "bryson-city-nc", county: "Swain County" },
-  { name: "Waynesville", slug: "waynesville-nc", county: "Haywood County" },
-  { name: "Cullowhee", slug: "cullowhee-nc", county: "Jackson County" },
-  { name: "Dillsboro", slug: "dillsboro-nc", county: "Jackson County" },
-];
+const displayedTowns = towns.slice(0, 12); // Show top 12 on homepage grid
 
 const TownGrid = () => {
   return (
@@ -37,7 +29,7 @@ const TownGrid = () => {
         </div>
 
         <StaggerContainer stagger={0.05} className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          {towns.map((town) => (
+          {displayedTowns.map((town) => (
             <StaggerItem key={town.slug} variant="rise">
               <Link
                 to={`/service-areas/${town.slug}`}

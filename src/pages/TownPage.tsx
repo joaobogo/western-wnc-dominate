@@ -19,6 +19,7 @@ import TartanBackground from "@/components/TartanBackground";
 import BuiltForWNC from "@/components/BuiltForWNC";
 import ProjectConcierge from "@/components/ProjectConcierge";
 import TownProofBlock from "@/components/TownProofBlock";
+import NearbyTowns from "@/components/NearbyTowns";
 import { getTownBySlug, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 import { blogPosts } from "@/data/blogs";
@@ -296,6 +297,10 @@ const TownPage = () => {
         </section>
 
         <ProjectConcierge />
+        
+        {/* 8. Internal Linking Engine - Nearby Areas */}
+        <NearbyTowns currentTown={town} />
+
         <InspectionForm />
       </main>
       <Footer />
