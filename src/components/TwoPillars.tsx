@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Home, HardHat } from "lucide-react";
+import { Home, HardHat, Mountain } from "lucide-react";
 
 
 /**

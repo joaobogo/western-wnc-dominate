@@ -159,8 +159,9 @@
      Generous line-height, comfortable measure
      ────────────────────────────────────── */
   p {
-    @apply font-body;
+    @apply font-body text-foreground/85;
     max-width: 68ch; /* Optimal reading measure */
+    font-size: 1.125rem;
   }
   p + p {
     margin-top: 1.5rem;
@@ -168,7 +169,7 @@
 
   /* Lead paragraph — opening statements, hero subtitles */
   .lead {
-    @apply font-body text-lg md:text-xl text-muted-foreground leading-relaxed;
+    @apply font-body text-xl md:text-2xl text-muted-foreground leading-relaxed;
     max-width: 60ch;
   }
 
@@ -199,6 +200,7 @@
   .section-dark {
     background: hsl(var(--dark-section));
     color: hsl(var(--dark-section-foreground));
+    @apply py-20 md:py-32;
   }
 
   .container-tight {
