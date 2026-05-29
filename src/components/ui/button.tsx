@@ -16,11 +16,11 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         /** Highland gold gradient — primary conversion CTA */
-        highland: "cta-gradient text-accent-foreground font-heading font-bold tracking-wide btn-primary-interactive relative overflow-hidden",
+        highland: "cta-gradient text-accent-foreground font-heading font-bold tracking-wide btn-primary-interactive relative overflow-hidden shadow-[0_8px_20px_-4px_hsl(var(--highland-gold)/0.3)] hover:shadow-[0_12px_25px_-4px_hsl(var(--highland-gold)/0.4)] border border-[hsl(var(--highland-gold)/0.2)]",
         /** Gold outline — secondary premium action */
-        gold: "border border-[hsl(var(--highland-gold)/0.3)] text-[hsl(var(--highland-gold))] bg-transparent hover:bg-[hsl(var(--highland-gold)/0.06)] hover:border-[hsl(var(--highland-gold)/0.5)] font-body font-semibold btn-ghost-interactive",
+        gold: "border border-[hsl(var(--highland-gold)/0.4)] text-[hsl(var(--highland-gold))] bg-transparent hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold)/0.6)] font-body font-bold btn-ghost-interactive shadow-sm",
         /** Ghost premium — dark section secondary */
-        "ghost-dark": "border border-[hsl(var(--dark-section-foreground)/0.12)] text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.05)] hover:border-[hsl(var(--highland-gold)/0.2)] font-body font-medium btn-ghost-interactive",
+        "ghost-dark": "border border-[hsl(var(--dark-section-foreground)/0.2)] text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.08)] hover:border-[hsl(var(--highland-gold)/0.3)] font-body font-semibold btn-ghost-interactive",
         /** Heritage — deep green filled */
         heritage: "bg-primary text-primary-foreground font-body font-semibold hover:bg-primary/90 btn-ghost-interactive",
       },
