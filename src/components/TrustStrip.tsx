@@ -40,7 +40,7 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-4"
+                className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/35 mb-4"
               >
                 By the Numbers
               </motion.p>
@@ -61,10 +61,10 @@ const TrustStrip = () => {
                       duration={1800}
                     />
                     <div>
-                      <span className="block text-sm font-heading font-bold text-primary-foreground/70 tracking-tight">
+                      <span className="block text-base font-heading font-bold text-primary-foreground/85 tracking-tight">
                         {stat.label}
                       </span>
-                      <span className="block text-[10px] text-primary-foreground/25 font-body tracking-wide">
+                      <span className="block text-[11px] md:text-[12px] text-primary-foreground/40 font-body tracking-wide font-medium">
                         {stat.detail}
                       </span>
                     </div>
@@ -79,7 +79,7 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[9px] font-body font-semibold uppercase tracking-[0.3em] text-primary-foreground/20 mb-4"
+                className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/35 mb-4"
               >
                 Credentials
               </motion.p>
@@ -99,10 +99,10 @@ const TrustStrip = () => {
                         ? "text-[hsl(var(--highland-gold)/0.7)]"
                         : "text-[hsl(var(--highland-gold)/0.35)]"
                     }`} />
-                    <span className={`text-[12px] font-body leading-tight ${
+                    <span className={`text-[13px] md:text-[14px] font-body leading-snug font-medium ${
                       cred.emphasis
-                        ? "font-semibold text-primary-foreground/60"
-                        : "font-medium text-primary-foreground/40"
+                        ? "font-bold text-primary-foreground/90"
+                        : "text-primary-foreground/60"
                     }`}>
                       {cred.label}
                     </span>
@@ -118,7 +118,7 @@ const TrustStrip = () => {
                 transition={{ delay: 0.4, duration: 0.6, ease: HIGHLAND_EASE }}
                 className="mt-6 pt-4 border-t border-primary-foreground/[0.05]"
               >
-                <p className="text-primary-foreground/25 text-[12px] font-body italic leading-relaxed max-w-md">
+                <p className="text-primary-foreground/45 text-[14px] md:text-[15px] font-body italic leading-relaxed max-w-md">
                   "The only company in Western NC that holds both a CertainTeed Master Applicator
                   certification and a General Contractor license under the same roof."
                 </p>

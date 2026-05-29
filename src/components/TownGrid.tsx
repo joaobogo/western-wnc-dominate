@@ -29,7 +29,7 @@ const TownGrid = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-dark-section-foreground/55 max-w-2xl mx-auto text-base font-body">
+            <p className="text-dark-section-foreground/75 max-w-2xl mx-auto text-lg md:text-xl font-body leading-relaxed">
               Locally owned with crews positioned across all the mountains. We focus on Western North Carolina, 
               covering 8 primary counties with a deep understanding of the unique microclimates and elevations that define mountain living.
             </p>
@@ -45,12 +45,12 @@ const TownGrid = () => {
                 style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
               >
                 <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))] mb-3 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-heading font-bold text-base text-dark-section-foreground mb-1">
+                <h3 className="font-heading font-bold text-lg text-dark-section-foreground mb-1.5">
                   {town.name}
                 </h3>
-                <p className="text-dark-section-foreground/30 text-[11px] mt-1 font-body">{town.county}</p>
+                <p className="text-dark-section-foreground/45 text-[13px] mt-1 font-body font-medium">{town.county}</p>
                 <div className="mt-3 pt-3 border-t border-dark-section-foreground/6">
-                  <span className="text-[hsl(var(--highland-gold)/0.5)] text-[10px] font-body font-semibold uppercase tracking-[0.1em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1">
+                  <span className="text-[hsl(var(--highland-gold)/0.85)] text-[12px] font-body font-bold uppercase tracking-[0.12em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5">
                     View Area <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>

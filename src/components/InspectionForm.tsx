@@ -165,9 +165,9 @@ const InspectionForm = () => {
     );
   }
 
-  const inputClasses = "w-full px-4 py-3.5 md:py-4 rounded-none text-dark-section-foreground text-sm font-body placeholder:text-dark-section-foreground/20 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.5)] focus:ring-0";
-  const labelClasses = "block text-[10px] font-semibold text-dark-section-foreground/45 mb-2 font-body uppercase tracking-[0.12em]";
-  const hintClasses = "text-dark-section-foreground/15 text-[10px] font-body mt-1.5 leading-relaxed";
+  const inputClasses = "w-full px-5 py-4 md:py-5 rounded-none text-dark-section-foreground text-base font-body placeholder:text-dark-section-foreground/30 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0";
+  const labelClasses = "block text-[11px] md:text-[12px] font-bold text-dark-section-foreground/60 mb-2.5 font-body uppercase tracking-[0.14em]";
+  const hintClasses = "text-dark-section-foreground/30 text-[11px] md:text-[12px] font-body mt-2 leading-relaxed";
 
   const canProceedStep1 = formData.name && formData.phone;
   const canProceedStep2 = formData.town && formData.projectType;
@@ -195,7 +195,7 @@ const InspectionForm = () => {
                 </h2>
               </HeadingReveal>
               <ScrollReveal variant="rise-subtle" delay={0.25}>
-                <p className="text-dark-section-foreground/45 font-body text-sm leading-relaxed mb-8">
+                <p className="text-dark-section-foreground/65 font-body text-base md:text-lg leading-relaxed mb-8">
                   Share a few details about your property and what you're looking to accomplish. 
                   A Highlander advisor — someone who knows these mountains, these materials, and these 
                   building conditions — will review everything and follow up personally to discuss 
@@ -220,7 +220,7 @@ const InspectionForm = () => {
                     <div className="w-8 h-8 rounded-none bg-dark-section-foreground/[0.04] flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
                     </div>
-                    <span className="text-dark-section-foreground/40 text-sm font-body">{item.text}</span>
+                    <span className="text-dark-section-foreground/60 text-base font-body font-medium">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
