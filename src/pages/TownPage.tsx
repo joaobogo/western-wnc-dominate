@@ -197,7 +197,7 @@ const TownPage = () => {
         </section>
 
         {/* 3. Dual Pathway */}
-        <TwoPillars />
+        <TownServiceSections town={town} />
 
         {/* 4. Local Proof */}
         {townProof && <TownProofBlock town={town} content={townProof} />}
