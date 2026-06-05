@@ -819,7 +819,7 @@ Don't wait for the first storm. Call (828) 397-9211 to schedule a pre-winter roo
     excerpt: "Reactive roofing costs 3x more than preventative maintenance. Here's the business case for commercial roof care.",
     category: "Commercial",
     date: "2025-11-05",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: commercialRoofStock, readTime: "6 min",
     metaTitle: "Commercial Roof Maintenance Programs in WNC | Highlander Roofing",
     metaDescription: "Commercial roof maintenance programs for Western NC properties. Reduce costs, extend roof life, prevent emergencies. Highlander Roofing.",
     content: `If you manage commercial property in Western NC, your roof is your first line of defense against one of the wettest, windiest climates in the Southeast. Waiting for problems to appear costs 3x more than preventing them.
