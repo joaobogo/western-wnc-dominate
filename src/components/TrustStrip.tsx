@@ -19,7 +19,7 @@ const credentials = [
   { icon: Clock, label: "Rapid Storm Response" },
   { icon: MapPin, label: "Locally Owned · Franklin & Sylva" },
   { icon: CheckCircle2, label: "Fully Licensed & Insured" },
-  { icon: Award, label: "Military Friendly · Veteran Support" },
+  { icon: Award, label: "Military Friendly Company", emphasis: true },
 ];
 
 const TrustStrip = () => {
