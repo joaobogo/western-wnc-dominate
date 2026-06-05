@@ -914,7 +914,7 @@ We started as roofers and expanded into construction because our clients kept as
     excerpt: "Building an addition in the mountains involves terrain, weather, and structural factors that flatland builders don't consider.",
     category: "Construction",
     date: "2026-02-20",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: homeValueStock, readTime: "7 min",
     metaTitle: "Planning a Home Addition in Western NC | Highlander Construction",
     metaDescription: "What to know before building a home addition in Western NC. Terrain, weather, permits, and structural considerations for mountain homes.",
     content: `Home additions in Western North Carolina require planning that accounts for mountain-specific challenges. Terrain, weather exposure, soil conditions, and access constraints all affect design, timeline, and cost.
