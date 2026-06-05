@@ -1585,7 +1585,7 @@ We don't just draw walls; we plan where your sofa or bed will go. This ensures y
     excerpt: "Planning for long-term visitors? Learn the layout differences between a temporary guest wing and a full secondary living suite.",
     category: "Design",
     date: "2026-06-26",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
+    image: masterSuiteStock, readTime: "8 min",
     metaTitle: "Guest Suite vs MIL Suite Design WNC | Highlander",
     metaDescription: "Layout differences for guest additions. How to plan for accessibility, privacy, and long-term utility in your WNC home.",
     content: `As more families move to Western NC, multi-generational additions are on the rise. But 'Guest' and 'Suite' aren't interchangeable terms.
