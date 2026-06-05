@@ -88,7 +88,7 @@ const ServiceAreas = () => {
                     These Towns — We<br />
                     <span className="text-[hsl(var(--highland-gold))]">Build in Them Every Week.</span>
                   </h1>
-                  <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-lg mb-10 font-medium drop-shadow-sm">
+                  <p className="text-body-lg md:text-2xl text-white max-w-xl mb-10 leading-relaxed font-bold drop-shadow-md">
                     Locally operated with offices in Franklin and Sylva. Our crews know the roads,
                     the building codes, the inspectors, and the weather patterns that make every
                     town in Western North Carolina unique.
@@ -281,23 +281,23 @@ const ServiceAreas = () => {
                 Wherever You Are in WNC,<br />
                 We're Already Nearby.
               </h2>
-              <p className="text-primary-foreground/50 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+              <p className="text-primary-foreground/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-body leading-relaxed font-bold drop-shadow-sm">
                 Tell us about your property and we'll connect you with the right team for your area.
                 Same standards, same warranty, same crew accountability — regardless of which town you're in.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   to="/consultation"
-                  className="group cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 btn-primary-interactive"
+                  className="group cta-gradient text-accent-foreground font-bold text-lg md:text-xl px-12 py-6 rounded-sm inline-flex items-center justify-center gap-3 btn-primary-interactive shadow-2xl min-w-[320px] uppercase tracking-wider"
                 >
                   <span className="relative z-10">Discuss Your Property</span>
-                  <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                  <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                 </Link>
                 <a
                   href="tel:8283979211"
-                  className="bg-primary-foreground/8 border border-primary-foreground/15 text-primary-foreground font-medium px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/12 transition-colors"
+                  className="bg-primary-foreground/8 border-2 border-primary-foreground/20 text-primary-foreground font-bold text-lg md:text-xl px-12 py-6 rounded-sm inline-flex items-center justify-center gap-3 hover:bg-primary-foreground/12 transition-all min-w-[240px]"
                 >
-                  <Phone className="w-4 h-4" /> (828) 397-9211
+                  <Phone className="w-5 h-5" /> (828) 397-9211
                 </a>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/50 text-sm font-bold uppercase tracking-wider">

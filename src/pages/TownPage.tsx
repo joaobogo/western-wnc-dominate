@@ -118,10 +118,10 @@ const TownPage = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 md:gap-6"
               >
-                <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] md:text-[16px] px-8 py-5 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px]">
+                <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
                   Request a {town.name} Assessment <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[14px] md:text-[16px] px-8 py-5 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px]">
+                <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 transition-all">
                   <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                 </a>
               </motion.div>
@@ -284,12 +284,12 @@ const TownPage = () => {
                     <Mountain className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-heading font-bold text-foreground">Established in {town.name}</h4>
-                    <p className="text-sm text-muted-foreground font-body leading-relaxed">We support every service area with real project data and mountain-proven advice.</p>
+                    <h4 className="font-heading font-bold text-foreground text-lg mb-1">Established in {town.name}</h4>
+                    <p className="text-base text-muted-foreground font-body leading-relaxed max-w-xl">We support every service area with real project data and mountain-proven advice.</p>
                   </div>
                 </div>
-                <Link to="/gallery" className="text-sm font-heading font-bold text-foreground hover:text-primary transition-colors flex items-center gap-2">
-                  View {town.name} Portfolio <ArrowRight className="w-4 h-4" />
+                <Link to="/gallery" className="text-sm md:text-base font-heading font-bold text-foreground hover:text-primary transition-colors flex items-center gap-2 group whitespace-nowrap">
+                  View {town.name} Portfolio <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </ScrollReveal>

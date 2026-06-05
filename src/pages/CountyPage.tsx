@@ -90,10 +90,10 @@ const CountyPage = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] md:text-[16px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px]">
+                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] md:text-[17px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[320px] hover:scale-[1.02] active:scale-[0.98] transition-all">
                     Start a {county.name} Project <ArrowRight className="w-5 h-5" />
                   </Link>
-                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[14px] md:text-[16px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px]">
+                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 transition-all">
                     <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                   </a>
                 </div>
@@ -313,11 +313,13 @@ const CountyPage = () => {
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight text-white text-balance">
               Ready to Discuss Your <br className="hidden md:block" /> {county.name} Property?
             </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 font-body leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/85 max-w-2xl mx-auto mb-12 font-body leading-relaxed font-bold drop-shadow-sm">
               From historic roof replacement to engineered home additions, we provide the highest standard of craftsmanship in {county.name}.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-lg px-12 py-6 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[300px] justify-center">
+              <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-lg md:text-xl px-12 py-6 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[320px] justify-center uppercase tracking-wider">
+                Start a {county.name} Assessment <ArrowRight className="w-6 h-6" />
+              </Link>
                 Request an Assessment <ArrowRight className="w-5 h-5" />
               </Link>
               <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px] justify-center shadow-xl">
