@@ -170,8 +170,8 @@ const ResidentialRoofing = () => {
               className="w-full h-full object-cover"
               loading="eager"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.3)] via-[hsl(var(--hero-overlay)/0.15)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.25)] via-transparent to-transparent" />
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
