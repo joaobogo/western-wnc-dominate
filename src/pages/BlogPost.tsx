@@ -12,7 +12,7 @@ import GuideLeadMagnet from "@/components/GuideLeadMagnet";
 import { TrustSidebar } from "@/components/trust";
 import { getBlogBySlug, blogPosts } from "@/data/blogs";
 import { projectDetails } from "@/data/projects";
-import { FeaturedProjects } from "@/components/FeaturedProjects";
+import FeaturedProjects from "@/components/FeaturedProjects";
 
 /* ─── Author data ─── */
 const authors: Record<string, { name: string; role: string; bio: string }> = {
