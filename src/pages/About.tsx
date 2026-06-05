@@ -22,7 +22,7 @@ const values = [
   { icon: Mountain, title: "Mountain-Built Knowledge", description: "We understand what elevation, weather exposure, and WNC terrain demand from a roof and a structure. That knowledge is earned, not taught." },
   { icon: Users, title: "Accountability You Can See", description: "The owner walks your property. Your crew lead is on-site daily. When you call, a real person answers. That's how it should work." },
   { icon: Shield, title: "Licensed, Insured, Certified", description: "Licensed NC General Contractor. CertainTeed Master Shingle Applicator. Fully insured. We carry the credentials because we've earned them." },
-  { icon: Award, title: "Military Friendly Company", description: "We are proud to be a military-friendly company, offering dedicated support and discounts to those who have served. Honor and integrity guide every project we undertake." },
+  { icon: Award, title: "Military Friendly Company", description: "We are proud to be a military-friendly company, offering dedicated support and special considerations to those who have served. Honor and integrity guide every project we undertake." },,
 ];
 
 const leadership = [
