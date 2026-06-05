@@ -119,9 +119,9 @@ const TownPage = () => {
                 className="flex flex-col sm:flex-row gap-4 md:gap-6"
               >
                 <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
-                  Request a {town.name} Assessment <ArrowRight className="w-5 h-5" />
+                  Request a {town.name} Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 transition-all">
+                <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
                   <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                 </a>
               </motion.div>
@@ -258,7 +258,7 @@ const TownPage = () => {
                     
                     <div className="mt-auto pt-6 border-t border-border/40 flex items-center justify-between">
                       <span className="text-primary text-[13px] font-heading font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                        Read Guide <ArrowRight className="w-4 h-4" />
+                        Read Guide <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                       </span>
                       {post.town === town.name && (
                         <span className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground/40 uppercase tracking-widest">

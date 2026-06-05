@@ -91,7 +91,7 @@ const CountyPage = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-5">
                   <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] md:text-[17px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[320px] hover:scale-[1.02] active:scale-[0.98] transition-all">
-                    Start a {county.name} Project <ArrowRight className="w-5 h-5" />
+                    Start a {county.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 transition-all">
                     <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
@@ -210,7 +210,7 @@ const CountyPage = () => {
                     Specialized mountain systems designed for {county.name} weather. Shingle, metal, and premium Brava synthetic installations.
                   </p>
                   <Link to="/roofing" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
-                    Roofing Solutions <ArrowRight className="w-4 h-4" />
+                    Roofing Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -223,7 +223,7 @@ const CountyPage = () => {
                     Expanding {county.name} homes with engineered additions, premium outdoor living, and structural modernization.
                   </p>
                   <Link to="/construction" className="mt-auto inline-flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all text-sm uppercase tracking-widest">
-                    Construction Services <ArrowRight className="w-4 h-4" />
+                    Construction Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -236,7 +236,7 @@ const CountyPage = () => {
                     Pre-construction planning, layouts, and site-specific guidance to ensure your {county.name} project is built right from the start.
                   </p>
                   <Link to="/layouts-planning" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
-                    Planning Services <ArrowRight className="w-4 h-4" />
+                    Planning Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                 </div>
               </ScrollReveal>

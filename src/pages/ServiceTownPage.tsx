@@ -93,11 +93,11 @@ const ServiceTownPage = () => {
                   to="/consultation"
                   className="cta-gradient text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[300px]"
                 >
-                  Request a {entry.serviceLabel} Assessment <ArrowRight className="w-5 h-5" />
+                  Request a {entry.serviceLabel} Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
                   href="tel:8283979211"
-                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-xl min-w-[240px]"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/40 transition-all duration-300 shadow-xl min-w-[240px]"
                 >
                   <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                 </a>
@@ -210,7 +210,7 @@ const ServiceTownPage = () => {
                     <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
                     <p className="text-sm text-muted-foreground mb-6 line-clamp-3 font-body flex-grow">{post.excerpt}</p>
                     <span className="text-[10px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
-                      Read Article <ArrowRight className="w-3.5 h-3.5" />
+                      Read Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
                     </span>
                   </Link>
                 ))}
