@@ -8,7 +8,8 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
 import TartanBackground from "@/components/TartanBackground";
 
-const HIGHLAND_EASE = [0.22, 1, 0.36, 1];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const initiatives = [
   {
