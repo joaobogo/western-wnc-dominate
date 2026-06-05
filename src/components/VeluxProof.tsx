@@ -68,7 +68,7 @@ const VeluxProof = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-5 text-balance">
             Manufacturer-accredited. Locally accountable.
           </h2>
-          <p className="text-dark-section-foreground/70 text-base md:text-lg leading-relaxed">
+          <p className="text-dark-section-foreground/90 text-[18px] md:text-[22px] leading-relaxed font-bold">
             A VELUX Certified Installer is a contractor trained and accredited by VELUX to install their skylights to specification. That accreditation is what unlocks VELUX's installation warranty — not just the product warranty.
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ const VeluxProof = () => {
                   <h3 className="text-base font-heading font-bold text-dark-section-foreground mb-1.5 leading-tight">
                     {b.title}
                   </h3>
-                  <p className="text-sm text-dark-section-foreground/65 leading-relaxed">{b.body}</p>
+                  <p className="text-[16px] text-dark-section-foreground/80 leading-relaxed font-medium">{b.body}</p>
                 </div>
               ))}
             </div>
@@ -128,8 +128,8 @@ const VeluxProof = () => {
                     key={w.label}
                     className="flex items-baseline justify-between gap-4 pb-3 border-b border-dark-section-foreground/10 last:border-0 last:pb-0"
                   >
-                    <span className="text-sm text-dark-section-foreground/70 font-body">{w.label}</span>
-                    <span className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))] whitespace-nowrap">
+                    <span className="text-[16px] text-dark-section-foreground/85 font-body font-medium">{w.label}</span>
+                    <span className="text-[16px] font-heading font-bold text-[hsl(var(--highland-gold))] whitespace-nowrap">
                       {w.value}
                     </span>
                   </li>
@@ -152,7 +152,7 @@ const VeluxProof = () => {
         >
           <div className="max-w-xl">
             <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">Schedule a skylight inspection.</h3>
-            <p className="text-dark-section-foreground/65 text-sm md:text-base">
+            <p className="text-dark-section-foreground/80 text-[17px] md:text-[20px] font-bold">
               Free, no-pressure assessment of your existing skylights — leak diagnosis, flashing review, and replacement recommendations in writing.
             </p>
           </div>

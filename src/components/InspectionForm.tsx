@@ -113,7 +113,7 @@ const InspectionForm = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-dark-section-foreground/75 font-body text-base leading-relaxed mb-5 max-w-md mx-auto"
+              className="text-dark-section-foreground font-body text-[18px] md:text-[21px] leading-relaxed mb-5 max-w-md mx-auto font-bold"
             >
               A Highlander project advisor — not a call center, not an automated system — will
               personally review your details and reach out rapidly to discuss your property,
@@ -141,7 +141,7 @@ const InspectionForm = () => {
                     className="flex items-center gap-2.5"
                   >
                     <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)] flex-shrink-0" />
-                    <span className="text-dark-section-foreground/60 text-[13px] font-body font-bold">{item.text}</span>
+                    <span className="text-dark-section-foreground text-[15px] md:text-[16px] font-body font-bold">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -151,7 +151,7 @@ const InspectionForm = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="text-dark-section-foreground/40 text-[13px] font-body font-bold"
+              className="text-dark-section-foreground/60 text-[15px] md:text-[16px] font-body font-bold"
             >
               Can't wait?{" "}
               <a href="tel:8283979211" className="text-[hsl(var(--highland-gold))] font-semibold hover:underline">
@@ -165,9 +165,9 @@ const InspectionForm = () => {
     );
   }
 
-  const inputClasses = "w-full px-5 py-5 md:py-6 rounded-none text-white text-[19px] md:text-[21px] font-body placeholder:text-white/30 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.05] border border-white/10";
-  const labelClasses = "block text-[14px] md:text-[15px] font-bold text-white/80 mb-3 font-body uppercase tracking-[0.16em]";
-  const hintClasses = "text-dark-section-foreground/45 text-[12px] md:text-[13px] font-body mt-2.5 leading-relaxed";
+  const inputClasses = "w-full px-6 py-6 md:py-7 rounded-none text-white text-[20px] md:text-[22px] font-body placeholder:text-white/40 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.08] border border-white/20";
+  const labelClasses = "block text-[16px] md:text-[17px] font-bold text-white mb-3 font-body uppercase tracking-[0.18em]";
+  const hintClasses = "text-dark-section-foreground/75 text-[15px] md:text-[16px] font-body mt-3 leading-relaxed font-bold";
 
   const canProceedStep1 = formData.name && formData.phone;
   const canProceedStep2 = formData.town && formData.projectType;
@@ -282,10 +282,10 @@ const InspectionForm = () => {
                     ))}
                   </div>
                   <div className="flex items-center justify-between">
-                    <p className="text-[12px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.8)]">
+                    <p className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold))]">
                       Step {currentIndex + 1} of {stepOrder.length}
                     </p>
-                    <p className="text-[12px] text-dark-section-foreground/50 font-body font-bold">{stepLabels[currentStep]}</p>
+                    <p className="text-[13px] md:text-[14px] text-dark-section-foreground/80 font-body font-bold">{stepLabels[currentStep]}</p>
                   </div>
                 </div>
 

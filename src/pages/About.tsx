@@ -141,7 +141,7 @@ const About = () => {
                 <span className="text-[hsl(var(--highland-gold))]">Built on Family Integrity.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-lg md:text-xl text-[hsl(var(--dark-section-foreground)/0.9)] max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-md">
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-[19px] md:text-[22px] text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
                 Highlander Roofing & Construction is a family-owned company based in Franklin and Sylva, NC.
                 We protect homes and build spaces across Western North Carolina — with the kind of care,
                 craft, and accountability that only comes from people who live here.
@@ -229,11 +229,11 @@ const About = () => {
 
                   <div className="flex-1">
                     <h3 className="text-2xl font-heading font-bold mb-1">{person.name}</h3>
-                    <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[14px] mb-4 uppercase tracking-wider">{person.role}</p>
-                    <p className="text-muted-foreground text-[16px] md:text-[18px] leading-relaxed mb-6 font-body font-bold">{person.bio}</p>
+                    <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[16px] mb-4 uppercase tracking-wider">{person.role}</p>
+                    <p className="text-muted-foreground text-[18px] md:text-[20px] leading-relaxed mb-6 font-body font-bold">{person.bio}</p>
                     <div className="flex flex-wrap gap-2">
                       {person.credentials.map(cred => (
-                        <span key={cred} className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-none">
+                        <span key={cred} className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-none">
                           {cred}
                         </span>
                       ))}
@@ -246,7 +246,7 @@ const About = () => {
             <div className="text-center mb-16">
               <span className="eyebrow mb-3 block">Division Experts</span>
               <h2 className="section-heading">Your Project Specialists</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mt-4 font-body">
+              <p className="text-muted-foreground max-w-xl mx-auto mt-4 font-body text-[17px] md:text-[19px] font-bold">
                 From first consultation to final inspection, these are the professionals leading our crews and coordinating your build.
               </p>
             </div>
@@ -274,8 +274,8 @@ const About = () => {
 
                   <div className="p-6">
                     <h3 className="text-lg font-heading font-bold mb-1">{person.name}</h3>
-                    <p className="text-primary font-heading font-bold text-[13px] uppercase tracking-[0.15em] mb-4">{person.role}</p>
-                    <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed font-body mb-4 font-bold">{person.bio}</p>
+                    <p className="text-primary font-heading font-bold text-[15px] uppercase tracking-[0.15em] mb-4">{person.role}</p>
+                    <p className="text-[16px] md:text-[18px] text-muted-foreground leading-relaxed font-body mb-4 font-bold">{person.bio}</p>
                     <div className="pt-4 border-t border-border flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
                       <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground/90">{person.specialty}</span>
