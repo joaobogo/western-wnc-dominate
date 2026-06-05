@@ -1246,7 +1246,7 @@ The best layouts often combine both. A smaller covered 'mountain room' for dinin
     excerpt: "How to transform a traditional mountain home layout into a bright, open space without losing its character.",
     category: "Construction",
     date: "2026-04-18",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: homeValueStock, readTime: "7 min",
     metaTitle: "Modernizing Old Mountain Floor Plans | Highlander",
     metaDescription: "Layout transformation tips for older WNC homes. Open-concept planning, wall removals, and adding natural light.",
     content: `Many older homes in Franklin and Sylva have 'choppy' layouts—small rooms and dark corridors. We specialize in floor plan modernization that respects the history of your home.
