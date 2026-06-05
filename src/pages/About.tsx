@@ -164,6 +164,28 @@ const About = () => {
           </div>
         </section>
 
+        {/* ── VIDEO SPOTLIGHT ── */}
+        <section className="bg-heritage-charcoal py-0">
+          <div className="container-tight px-0 sm:px-5 md:px-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-video w-full shadow-2xl"
+            >
+              <iframe 
+                src="https://www.youtube.com/embed/partp5ENQVg?si=uCeB6zNWjmwrKhm8&autoplay=1&mute=1&loop=1&playlist=partp5ENQVg" 
+                title="Highlander Story Video"
+                className="absolute inset-0 w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+              ></iframe>
+              {/* Subtle gold frame on desktop */}
+              <div className="hidden lg:block absolute -inset-4 border border-[hsl(var(--highland-gold)/0.15)] pointer-events-none z-[-1]" />
+            </motion.div>
+          </div>
+        </section>
+
         {/* ── MEET THE TEAM — Integrated Team Content ── */}
         <section id="team-section" className="section-padding bg-background relative overflow-hidden">
           <div className="container-tight">
