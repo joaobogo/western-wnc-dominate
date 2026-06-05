@@ -110,7 +110,7 @@ const qualityStandards = [
   {
     icon: Users,
     title: "In-House Crew Standards",
-    detail: "Every crew member is hired, trained, and supervised by Highlander. We don't subcontract. Your project team is our team.",
+    detail: "Every project team is hired, trained, and supervised by Highlander. We don't use anonymous subcontractor rotations. Your project team is our team.",
   },
   {
     icon: Clock,
@@ -125,7 +125,7 @@ const qualityStandards = [
   {
     icon: CheckCircle,
     title: "Owner Walkthrough",
-    detail: "James personally inspects every completed project before handover. Flashing, trim, cleanup, function — nothing is approved until it meets our standard.",
+    detail: "The owner personally inspects every completed project before handover. Flashing, trim, cleanup, function — nothing is approved until it meets our standard.",
   },
 ];
 
