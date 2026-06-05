@@ -365,7 +365,7 @@ We'll inspect your Highlands home, assess the full roof system, and give you an 
     excerpt: "Building on a mountain slope requires more than just a footprint. Learn the unique engineering and permitting steps for WNC additions.",
     category: "Construction",
     date: "2026-03-01",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
+    image: homeValueStock, readTime: "8 min",
     metaTitle: "WNC Home Addition Planning Guide | Highlander Construction",
     metaDescription: "Planning an addition in Western NC? Learn about terrain engineering, permitting, and structural integration from mountain building experts.",
     content: `Adding square footage to a mountain home is one of the most rewarding investments you can make — but it's also one of the most technically demanding. Unlike building on flat land, WNC additions require a deeper level of planning before the first board is cut.
