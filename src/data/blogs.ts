@@ -1318,7 +1318,7 @@ A real scope includes a schedule. We help you plan for seasonal weather events i
     excerpt: "Building on a cliff? Learn how to plan floor plans that work with extreme slopes and rock formations.",
     category: "Construction",
     date: "2026-05-12",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: blueRidgeViewStock, readTime: "7 min",
     town: "Highlands",
     metaTitle: "Sloped Lot Floor Plan Planning WNC | Highlander",
     metaDescription: "Floor plan planning for steep mountain lots. Layout tips for stepped foundations, walk-out basements, and view optimization.",
