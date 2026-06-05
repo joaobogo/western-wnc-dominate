@@ -93,7 +93,7 @@ const CountyPage = () => {
                   <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] md:text-[17px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[320px] hover:scale-[1.02] active:scale-[0.98] transition-all">
                     Start a {county.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 transition-all">
+                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
                     <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                   </a>
                 </div>
