@@ -8,6 +8,10 @@ import {
 import logoGaf from "@/assets/logo-gaf.png";
 import logoCertainteed from "@/assets/logo-certainteed.png";
 import logoVelux from "@/assets/logo-velux.png";
+import badgeGafMasterElite from "@/assets/badge-gaf-master-elite.png";
+import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
+import badgeJamesHardie from "@/assets/badge-james-hardie.png";
+import badgeHaag from "@/assets/badge-haag.png";
 import { ReactNode } from "react";
 
 /* ──────────────────────────────────────
@@ -15,10 +19,10 @@ import { ReactNode } from "react";
    ────────────────────────────────────── */
 
 export const credentials = [
-  { icon: Award, label: "CertainTeed", detail: "Master Shingle Applicator", image: logoCertainteed },
-  { icon: Shield, label: "GAF Master Elite", detail: "Top 2% Nationally", image: logoGaf },
-  { icon: BadgeCheck, label: "VELUX Certified", detail: "Professional Installer", image: logoVelux },
-  { icon: FileCheck, label: "Warranty-Backed", detail: "Labor & Material Coverage" },
+  { icon: Award, label: "CertainTeed Master", detail: "Shingle Applicator", image: badgeCertainteedMaster },
+  { icon: Shield, label: "GAF Master Elite", detail: "Top 2% Nationally", image: badgeGafMasterElite },
+  { icon: BadgeCheck, label: "James Hardie", detail: "Preferred Remodeler", image: badgeJamesHardie },
+  { icon: FileCheck, label: "HAAG Certified", detail: "Residential Inspector", image: badgeHaag },
 ];
 
 export const trustStats = [

@@ -4,6 +4,11 @@ import {
   ArrowRight, Phone, Shield, Award, FileCheck, BadgeCheck, CheckCircle,
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain,
 } from "lucide-react";
+import badgeGafMasterElite from "@/assets/badge-gaf-master-elite.png";
+import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
+import badgeJamesHardie from "@/assets/badge-james-hardie.png";
+import badgeHaag from "@/assets/badge-haag.png";
+import badgeVelux from "@/assets/logo-velux.png";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -28,6 +33,7 @@ const certifications = [
     icon: Award,
     title: "CertainTeed Master Shingle Applicator",
     badge: "Top 1% Nationally",
+    image: badgeCertainteedMaster,
     description: "This is the highest credential CertainTeed offers to roofing contractors. It means our installers have been trained, tested, and certified to install CertainTeed roofing systems to the manufacturer's exact specifications — unlocking the strongest warranty coverage available.",
     whatItMeans: [
       "Access to CertainTeed's highest warranty tiers — SureStart PLUS™",
@@ -38,8 +44,22 @@ const certifications = [
   },
   {
     icon: Shield,
+    title: "GAF Master Elite® Contractor",
+    badge: "Top 2% Nationally",
+    image: badgeGafMasterElite,
+    description: "Highlander is a GAF Master Elite® roofing contractor, a credential held by only 2% of all roofing contractors in the country. This status ensures you receive the highest level of craftsmanship and exclusive access to GAF's strongest warranties.",
+    whatItMeans: [
+      "Exclusive access to GAF's Golden Pledge® Limited Warranty",
+      "GAF-verified insurance, licensing, and credit standing",
+      "Continuous training on the latest roofing technologies",
+      "Independent GAF inspectors verify our project quality",
+    ],
+  },
+  {
+    icon: Shield,
     title: "VELUX Certified Installer",
     badge: "Accredited Expert",
+    image: badgeVelux,
     description: "A VELUX Certified Installer is an independent contractor or company trained and accredited by VELUX to install their skylights, ensuring high-quality, reliable service and adherence to VELUX standards.",
     whatItMeans: [
       "Trained and accredited by VELUX to install their full skylight line",
@@ -50,26 +70,28 @@ const certifications = [
   },
   {
     icon: BadgeCheck,
-    title: "Licensed NC General Contractor",
-    badge: "State Licensed",
-    description: "Highlander holds a North Carolina General Contractor license, which means we've met the state's requirements for financial responsibility, experience, and competency. This license allows us to manage roofing and construction projects of any scope.",
+    title: "James Hardie Preferred Remodeler",
+    badge: "Siding Experts",
+    image: badgeJamesHardie,
+    description: "As a James Hardie Preferred Remodeler, we are certified to install the nation's #1 brand of fiber cement siding according to their rigorous 'Best Practices' manual.",
     whatItMeans: [
-      "Legal authority to manage full-scope roofing and construction projects",
-      "State-verified financial responsibility and insurance coverage",
-      "Subject to NC Licensing Board oversight and accountability",
-      "Required for larger projects — many contractors operate without it",
+      "Expert installation of James Hardie fiber cement products",
+      "Adherence to James Hardie's strict installation standards",
+      "Verified liability insurance and professional conduct",
+      "Access to specialized James Hardie support and warranty backing",
     ],
   },
   {
-    icon: FileCheck,
-    title: "Manufacturer-Backed Warranties",
-    badge: "Labor & Material",
-    description: "Every Highlander project includes a manufacturer material warranty plus our own labor warranty. Because of our CertainTeed Master Applicator status, we can offer enhanced warranty packages that cover both materials and workmanship — something most contractors can't provide.",
+    icon: BadgeCheck,
+    title: "HAAG Certified Inspector",
+    badge: "Storm Experts",
+    image: badgeHaag,
+    description: "HAAG certification is the gold standard in roofing inspection. It means we have the advanced training to accurately assess damage and represent your interests correctly during insurance claims.",
     whatItMeans: [
-      "Material warranty direct from the manufacturer — not just the contractor",
-      "Labor warranty from Highlander covering installation workmanship",
-      "Enhanced warranty tiers available through our CertainTeed certification",
-      "Warranty package delivered at your final walkthrough with documentation",
+      "Scientifically-based damage assessment protocols",
+      "Credibility with insurance adjusters and providers",
+      "Expertise in identifying functional vs. cosmetic damage",
+      "More accurate estimates and faster claim processing",
     ],
   },
 ];
@@ -185,8 +207,14 @@ const Certifications = () => {
                   <div className="grid md:grid-cols-3 gap-6 md:gap-8">
                     <div className="md:col-span-1">
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="w-11 h-11 rounded-sm bg-primary/8 flex items-center justify-center">
-                          <cert.icon className="w-5 h-5 text-primary" />
+                        <div className="w-16 h-12 flex items-center justify-center">
+                          {cert.image ? (
+                            <img src={cert.image} alt={cert.title} className="w-full h-full object-contain mix-blend-multiply" />
+                          ) : (
+                            <div className="w-11 h-11 rounded-sm bg-primary/8 flex items-center justify-center">
+                              <cert.icon className="w-5 h-5 text-primary" />
+                            </div>
+                          )}
                         </div>
                         <span className="text-[10px] font-semibold uppercase tracking-wider text-accent bg-accent/10 px-2.5 py-1 rounded-sm">
                           {cert.badge}
