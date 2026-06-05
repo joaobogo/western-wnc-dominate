@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock, BadgeCheck, Star } from "lucide-react";
 import veluxLogo from "@/assets/logo-velux.png";
 import logoCertainteed from "@/assets/logo-certainteed.png";
+import badgeGafMasterElite from "@/assets/badge-gaf-master-elite.png";
+import badgeHaag from "@/assets/badge-haag.png";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 
@@ -221,10 +223,18 @@ const Footer = () => {
               
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <Shield className="w-5 h-5 text-primary" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">Licensed GC</span>
+                  <img src={badgeGafMasterElite} alt="GAF Master Elite" className="h-8 w-auto mix-blend-multiply" />
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">Master Elite</span>
                 </div>
-                <span className="text-[11px] text-muted-foreground font-body leading-tight">North Carolina License #87234 · Fully Insured</span>
+                <span className="text-[11px] text-muted-foreground font-body leading-tight">Top 2% of Roofers Nationally · GAF Verified</span>
+              </div>
+
+              <div className="flex flex-col gap-2 group/cert">
+                <div className="h-10 w-auto flex items-center">
+                  <img src={badgeHaag} alt="HAAG Certified" className="h-8 w-auto mix-blend-multiply" />
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">HAAG Certified</span>
+                </div>
+                <span className="text-[11px] text-muted-foreground font-body leading-tight">Expert Storm Damage Assessment</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
