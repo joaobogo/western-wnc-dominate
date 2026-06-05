@@ -416,7 +416,7 @@ High moisture and UV at elevation can destroy standard wood decks. We recommend 
     excerpt: "A guide to project planning and layout design for additions and renovations in Western North Carolina.",
     category: "Construction",
     date: "2026-03-20",
-    image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: planningDeskStock, readTime: "7 min",
     metaTitle: "Mountain Home Layout Planning | Highlander Design",
     metaDescription: "Plan your mountain home addition layout for better flow and views. Expert design guidance from Highlander.",
     content: `Before you build, you must plan. Designing a layout for a mountain home requires balancing the natural topography with your family's daily flow.
