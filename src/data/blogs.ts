@@ -486,7 +486,7 @@ If you're planning a project in WNC, don't just ask for a plan. It's the differe
     excerpt: "Never had a professional roof inspection? Here's exactly what our team looks at — and what you'll receive afterward.",
     category: "Inspections",
     date: "2025-12-20",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "4 min",
+    image: roofRepairStock, readTime: "4 min",
     metaTitle: "What to Expect During a Roof Inspection | Highlander Roofing WNC",
     metaDescription: "What happens during a free roof inspection in Western NC? Learn what we check, how long it takes, and what you'll receive from Highlander Roofing.",
     content: `A professional roof inspection is the smartest first step for any roofing concern. Here's what our free inspections include.
