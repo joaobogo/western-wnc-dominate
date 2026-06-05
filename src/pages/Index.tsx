@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import TartanBackground from "@/components/TartanBackground";
 
-import ThreeDivisionPathway from "@/components/ThreeDivisionPathway";
+import ThreeDivisionPathway from "@/components/DualPathway";
 
 import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
