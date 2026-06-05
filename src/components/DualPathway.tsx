@@ -33,7 +33,7 @@ const roofingData = {
     { icon: ShieldCheck, name: "Extended Warranty Coverage" },
   ],
   cta: "Explore Roofing",
-  href: "/services",
+  href: "/roofing",
   image: metalRoof,
 };
 
