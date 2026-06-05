@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mountain, Users, ShieldCheck, Clock } from "lucide-react";
+import { Mountain, Users, ShieldCheck, Clock, Award } from "lucide-react";
 
 const pillars = [
   {
@@ -21,6 +21,11 @@ const pillars = [
     icon: Clock,
     title: "Rapid Response, Clear Communication",
     description: "We respond rapidly with clear next steps. Emergency tarping, insurance documentation, and priority scheduling when storms hit.",
+  },
+  {
+    icon: Award,
+    title: "Military Friendly Company",
+    description: "We are proud to support our veterans and active-duty service members with dedicated discounts and priority support.",
   },
 ];
 
