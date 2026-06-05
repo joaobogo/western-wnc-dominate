@@ -42,7 +42,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "A breakdown of real roofing costs for Highlands homeowners — from materials to labor to elevation factors that affect your bottom line.",
     category: "Cost",
     date: "2026-02-15",
-    image: "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000",
+    image: shingleRoofsStock,
     readTime: "6 min",
     town: "Highlands",
     metaTitle: "How Much Does a New Roof Cost in Highlands, NC? | Highlander Roofing",
