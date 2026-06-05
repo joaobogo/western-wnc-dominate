@@ -20,6 +20,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPostPage = lazy(() => import("./pages/BlogPost"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
 const About = lazy(() => import("./pages/About"));
+const GivingBack = lazy(() => import("./pages/GivingBack"));
 const LayoutsPlanning = lazy(() => import("./pages/LayoutsPlanning"));
 
 
@@ -125,6 +126,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/giving-back" element={<GivingBack />} />
           <Route path="/team" element={<Navigate to="/about" replace />} />
 
           

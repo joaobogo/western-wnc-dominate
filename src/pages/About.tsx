@@ -156,8 +156,8 @@ const About = () => {
                   <span>Meet Our People</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <Link to="/consultation" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
-                  Start a Conversation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Link to="/giving-back" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
+                  Community Impact <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
 
