@@ -18,7 +18,6 @@ import { towns } from "@/data/towns";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import logo from "@/assets/logo.png";
 
-
 const CountyPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const county = getCountyBySlug(slug || "");
@@ -71,7 +70,7 @@ const CountyPage = () => {
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
                 <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">{county.name} Authority</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">{county.name} Division</span>
               </div>
             </motion.div>
 
@@ -108,7 +107,9 @@ const CountyPage = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {county.facts.map((fact, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/60 font-bold mb-1">{fact.label}</span>
+                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/60 font-bold mb-1">
+                      {fact.label}
+                    </span>
                     <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
                       <Shield className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
                       {fact.value}
@@ -120,16 +121,15 @@ const CountyPage = () => {
           </div>
         </section>
 
-
-        {/* 2. County Intelligence — New Authority Section */}
-        <section className="py-24 bg-background border-b border-border relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+        {/* 2. County Intelligence — Authority Section */}
+        <section className="py-24 bg-background relative overflow-hidden">
+          <TartanBackground opacity={0.02} />
           <div className="container-tight relative z-10">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-4 block">{county.name} Authority</span>
-                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-8 leading-tight">
+                <ScrollReveal variant="fade">
+                  <span className="eyebrow mb-4 block">{county.name} Intelligence</span>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-8 leading-tight text-balance">
                     Regional knowledge. <br />
                     <span className="italic text-primary">Master-class execution.</span>
                   </h2>
@@ -139,7 +139,7 @@ const CountyPage = () => {
                   
                   <div className="space-y-8">
                     <div className="flex gap-6 items-start group">
-                      <div className="w-12 h-12 bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                      <div className="w-12 h-12 bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10">
                         <Home className="w-6 h-6" />
                       </div>
                       <div>
@@ -149,8 +149,8 @@ const CountyPage = () => {
                     </div>
                     
                     <div className="flex gap-6 items-start group">
-                      <div className="w-12 h-12 bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                        <Wind className="w-6 h-6" />
+                      <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center shrink-0 border border-[hsl(var(--highland-gold)/0.2)]">
+                        <Wind className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
                       </div>
                       <div>
                         <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Climate Realities</h4>
@@ -158,31 +158,29 @@ const CountyPage = () => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </ScrollReveal>
               </div>
 
               <div className="relative">
-                <div className="bg-secondary p-1 md:p-2 border border-border relative z-10">
-                  <div className="bg-white p-8 md:p-12">
-                    <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
-                      <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-                      Key Communities
-                    </h4>
-                    <div className="grid gap-4">
-                      {countyTowns.map((town) => (
-                        <Link 
-                          key={town.slug} 
-                          to={`/service-areas/${town.slug}`}
-                          className="group block p-4 bg-secondary/30 border border-border hover:border-primary/30 transition-all"
-                        >
-                          <div className="flex justify-between items-center mb-1">
-                            <span className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{town.name}</span>
-                            <ArrowRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                          </div>
-                          <p className="text-xs text-muted-foreground font-body line-clamp-1">{town.description}</p>
-                        </Link>
-                      ))}
-                    </div>
+                <div className="bg-secondary p-8 border border-border relative z-10 shadow-sm">
+                  <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
+                    <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                    {county.name} Communities
+                  </h4>
+                  <div className="grid gap-4">
+                    {countyTowns.map((town) => (
+                      <Link 
+                        key={town.slug} 
+                        to={`/service-areas/${town.slug}`}
+                        className="group block p-5 bg-background border border-border hover:border-primary/30 transition-all shadow-sm hover:shadow-md"
+                      >
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="font-heading font-bold text-foreground group-hover:text-primary transition-colors uppercase tracking-tight">{town.name}</span>
+                          <ArrowRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                        </div>
+                        <p className="text-xs text-muted-foreground font-body line-clamp-1">{town.description}</p>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -190,64 +188,139 @@ const CountyPage = () => {
           </div>
         </section>
 
+        <SectionDivider variant="diamond" />
 
         {/* 3. Division Callouts */}
         <section className="py-24 bg-secondary/30 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <TartanBackground opacity={0.015} />
           <div className="container-tight relative z-10">
+            <div className="flex flex-col items-center text-center mb-16">
+              <span className="eyebrow mb-4 block">Division Overview</span>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">Complete local service.</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl font-body leading-relaxed">We maintain local crews across {county.name} to ensure priority response and mountain-grade craftsmanship.</p>
+            </div>
+
             <div className="grid lg:grid-cols-3 gap-8">
-              <div className="bg-primary p-10 text-white relative overflow-hidden group">
-                <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
-                <Home className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
-                <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Roofing</h3>
-                <p className="text-white/70 text-sm mb-8 font-body leading-relaxed">
-                  Specialized mountain systems designed for {county.name} weather. Shingle, metal, and premium Brava synthetic installations.
-                </p>
-                <Link to="/roofing" className="inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm">
-                  Roofing Solutions <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+              <ScrollReveal variant="rise-subtle">
+                <div className="bg-primary p-10 text-white h-full flex flex-col group relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
+                  <Home className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
+                  <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Roofing</h3>
+                  <p className="text-white/70 text-sm mb-8 font-body leading-relaxed">
+                    Specialized mountain systems designed for {county.name} weather. Shingle, metal, and premium Brava synthetic installations.
+                  </p>
+                  <Link to="/roofing" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
+                    Roofing Solutions <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </ScrollReveal>
 
-              <div className="bg-card border border-border p-10 relative overflow-hidden group">
-                <Hammer className="w-10 h-10 text-primary mb-6" />
-                <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Construction</h3>
-                <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
-                  Expanding {county.name} homes with engineered additions, premium outdoor living, and structural modernization.
-                </p>
-                <Link to="/construction" className="inline-flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all text-sm">
-                  Construction Services <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+              <ScrollReveal variant="rise-subtle" delay={0.1}>
+                <div className="bg-background border border-border p-10 h-full flex flex-col group shadow-sm relative overflow-hidden">
+                  <Hammer className="w-10 h-10 text-primary mb-6" />
+                  <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter text-foreground">Construction</h3>
+                  <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
+                    Expanding {county.name} homes with engineered additions, premium outdoor living, and structural modernization.
+                  </p>
+                  <Link to="/construction" className="mt-auto inline-flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all text-sm uppercase tracking-widest">
+                    Construction Services <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </ScrollReveal>
 
-              <div className="bg-secondary p-10 relative overflow-hidden group border border-border">
-                <Compass className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
-                <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Design Support</h3>
-                <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
-                  Pre-construction planning, layouts, and site-specific guidance to ensure your {county.name} project is built right from the start.
-                </p>
-                <Link to="/layouts-planning" className="inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm">
-                  Planning Services <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+              <ScrollReveal variant="rise-subtle" delay={0.2}>
+                <div className="bg-secondary p-10 h-full flex flex-col group border border-border shadow-sm relative overflow-hidden">
+                  <Compass className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
+                  <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter text-foreground">Design Support</h3>
+                  <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
+                    Pre-construction planning, layouts, and site-specific guidance to ensure your {county.name} project is built right from the start.
+                  </p>
+                  <Link to="/layouts-planning" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
+                    Planning Services <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
-        {/* 4. Conversion Block — Premium and Direct */}
+
+        {/* 4. Localized Blog & Knowledge Base */}
+        <section className="py-24 bg-background relative overflow-hidden">
+          <TartanBackground opacity={0.015} />
+          <div className="container-tight relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+              <div className="max-w-2xl">
+                <ScrollReveal variant="fade">
+                  <span className="eyebrow mb-4 block">Regional Intelligence</span>
+                </ScrollReveal>
+                <HeadingReveal delay={0.1}>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight text-balance">
+                    Expertise in <span className="text-primary italic">{county.name}.</span>
+                  </h2>
+                </HeadingReveal>
+                <ScrollReveal variant="rise-subtle" delay={0.2}>
+                  <p className="text-lg text-muted-foreground mt-4 font-body leading-relaxed">
+                    Explore our field guides on mountain roofing, construction, and local conditions specifically for {county.name} property owners.
+                  </p>
+                </ScrollReveal>
+              </div>
+              <ScrollReveal variant="fade" delay={0.3}>
+                <Link to="/blog" className="group inline-flex items-center gap-2 text-primary font-heading font-bold text-sm tracking-wide hover:text-primary/80 transition-all border-b border-primary/20 pb-1">
+                  Browse All Resources <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </ScrollReveal>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+              {relevantBlogs.map((post, i) => (
+                <ScrollReveal key={post.slug} variant="rise-subtle" delay={i * 0.1}>
+                  <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-card border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/60 bg-primary/5 px-2.5 py-1">
+                        {post.category}
+                      </span>
+                      <div className="h-px flex-1 bg-border/40" />
+                    </div>
+                    
+                    <h3 className="font-heading font-bold text-xl lg:text-2xl mb-4 group-hover:text-primary transition-colors leading-tight">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-8 line-clamp-3 font-body">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="mt-auto pt-6 border-t border-border/40 flex items-center justify-between">
+                      <span className="text-primary text-[13px] font-heading font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Read Guide <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+
+                    <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+                      <BookOpen className="w-16 h-16 -rotate-12" />
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Final Conversion Pathway */}
         <section className="py-24 bg-primary text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10 text-center">
-            <span className="eyebrow mb-6 block text-[hsl(var(--highland-gold))]">Start Your Project</span>
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">
+            <span className="eyebrow mb-6 block text-[hsl(var(--highland-gold))] uppercase tracking-widest">Start Your Project</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight text-white text-balance">
               Ready to Discuss Your <br className="hidden md:block" /> {county.name} Property?
             </h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 font-body leading-relaxed">
               From historic roof replacement to engineered home additions, we provide the highest standard of craftsmanship in {county.name}.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg px-12 py-6 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[280px] justify-center">
+              <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-lg px-12 py-6 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[300px] justify-center">
                 Request an Assessment <ArrowRight className="w-5 h-5" />
               </Link>
-              <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center gap-3 hover:bg-white/20 transition-all min-w-[240px] justify-center">
+              <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px] justify-center shadow-xl">
                 <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
               </a>
             </div>
