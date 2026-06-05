@@ -532,7 +532,7 @@ Call (828) 397-9211 or submit our online form. We respond rapidly and serve all 
     excerpt: "Not all roofers are equal. Here's what WNC homeowners should look for — and what red flags to avoid.",
     category: "Tips",
     date: "2025-12-12",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: planningDeskStock, readTime: "6 min",
     metaTitle: "How to Choose a Roofing Contractor in WNC | Highlander Roofing",
     metaDescription: "Tips for choosing a trusted roofing contractor in Western NC. What to look for, red flags to avoid, and questions to ask before hiring.",
     content: `Choosing the wrong roofing contractor can cost you thousands — or worse, leave you with a roof that fails prematurely. Here's how to find the right one in WNC.
