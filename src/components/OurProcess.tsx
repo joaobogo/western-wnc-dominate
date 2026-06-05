@@ -142,7 +142,7 @@ const OurProcess = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-dark-section-foreground/65 text-[13px] md:text-sm leading-[1.75] font-body mb-4 font-bold">
+                    <p className="text-dark-section-foreground/90 text-[17px] md:text-[19px] leading-[1.7] font-body mb-4 font-bold">
                       {step.description}
                     </p>
 

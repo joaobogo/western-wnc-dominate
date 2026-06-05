@@ -36,12 +36,12 @@ const BuiltForWNC = () => {
             <GoldLine width="3rem" delay={0.3} className="mb-5" />
             <ScrollReveal variant="rise-subtle" delay={0.3}>
               <div>
-                <p className="text-foreground text-body-lg leading-relaxed font-bold mb-6">
+                <p className="text-foreground text-[20px] md:text-[24px] leading-relaxed font-bold mb-6">
                   Roofing and construction in the mountains isn't the same as roofing in the
                   Piedmont or the coast. Elevation changes everything — the weather, the materials,
                   the engineering, the logistics.
                 </p>
-                <p className="text-foreground/70 text-base leading-relaxed font-body font-bold">
+                <p className="text-foreground/90 text-[17px] md:text-[20px] leading-relaxed font-body font-bold">
                   Highlander was founded here. Our crews live and work in these conditions year-round.
                   That means every recommendation we make and every system we install is based on what
                   actually performs at 2,000–5,000 feet — not what a manufacturer's brochure says
@@ -105,10 +105,10 @@ const BuiltForWNC = () => {
                     <factor.icon className="w-4.5 h-4.5 text-primary" />
                   </motion.div>
                   <div className="relative z-10">
-                    <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors duration-200">
+                    <h3 className="text-[17px] md:text-[19px] font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors duration-200">
                       {factor.title}
                     </h3>
-                    <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                    <p className="text-muted-foreground text-[16px] md:text-[18px] leading-relaxed font-body font-medium">
                       {factor.detail}
                     </p>
                   </div>

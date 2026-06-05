@@ -168,7 +168,7 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[14px] font-bold transition-all duration-300 inline-flex items-center gap-1 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+                className={`relative text-[16px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-3 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
                   isActive(div.href)
                     ? "text-heritage-charcoal bg-black/5"
                     : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
@@ -249,8 +249,8 @@ const Header = () => {
                               }`}
                             >
                               <div>
-                                <span className="text-[14px] font-body font-bold block leading-tight">{item.label}</span>
-                                <span className="text-[12px] font-body text-muted-foreground/70 leading-tight">{item.desc}</span>
+                                <span className="text-[16px] font-body font-bold block leading-tight">{item.label}</span>
+                                <span className="text-[14px] font-body text-muted-foreground/80 leading-tight font-medium">{item.desc}</span>
                               </div>
                               <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
                             </Link>

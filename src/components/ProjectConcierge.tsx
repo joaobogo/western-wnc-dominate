@@ -74,7 +74,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
-              <p className="text-dark-section-foreground/35 text-[15px] font-body leading-relaxed max-w-lg mx-auto font-bold">
+              <p className="text-dark-section-foreground/80 text-[18px] md:text-[22px] leading-relaxed max-w-lg mx-auto font-bold">
                 We don't do online quotes. Every project starts with a genuine
                 conversation about your property, your goals, and what "done right" means to you.
               </p>
@@ -103,7 +103,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
                 <h3 className="text-base font-heading font-bold text-dark-section-foreground/85 mb-3 tracking-tight">
                   {path.title}
                 </h3>
-                <p className="text-dark-section-foreground/35 text-[13px] leading-[1.75] font-body mb-6">
+                <p className="text-dark-section-foreground/80 text-[16px] md:text-[18px] leading-[1.7] font-body mb-6 font-medium">
                   {path.desc}
                 </p>
 
