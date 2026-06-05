@@ -505,7 +505,7 @@ const BlogPostPage = () => {
                         {p.excerpt}
                       </p>
                       <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
-                        Read Article <ArrowRight className="w-3.5 h-3.5" />
+                        Read Guide <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
                   </Link>
