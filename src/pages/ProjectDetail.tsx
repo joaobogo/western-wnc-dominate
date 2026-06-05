@@ -126,7 +126,7 @@ const ProjectDetailPage = () => {
                   <span className="eyebrow mb-3 block">Project Summary</span>
                   <h2 className="section-heading mb-5">{project.highlight}</h2>
                   <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
-                  <p className="text-muted-foreground leading-relaxed text-base">{project.summary}</p>
+                  <p className="text-muted-foreground leading-relaxed text-base font-bold">{project.summary}</p>
                 </motion.div>
 
                 {/* Challenge */}
@@ -134,7 +134,7 @@ const ProjectDetailPage = () => {
                   <span className="eyebrow mb-3 block">The Challenge</span>
                   <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-4">What We Were Working With</h3>
                   <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-4" />
-                  <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
+                  <p className="text-muted-foreground leading-relaxed font-bold">{project.challenge}</p>
                 </motion.div>
 
                 {/* Scope of Work */}

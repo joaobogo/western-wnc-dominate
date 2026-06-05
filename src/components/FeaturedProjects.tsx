@@ -192,6 +192,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
             <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
               <p className="text-white text-[15px] md:text-[16px] font-body leading-relaxed mt-3 pr-12 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] font-medium">
                 {project.outcome}
+
               </p>
             </div>
           </div>

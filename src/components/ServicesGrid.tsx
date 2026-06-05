@@ -251,7 +251,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
           </div>
 
           {/* Description */}
-          <p className="text-foreground/80 text-base leading-relaxed font-body mb-6 flex-1">
+          <p className="text-foreground/80 text-base leading-relaxed font-body mb-6 flex-1 font-bold">
             {service.description}
           </p>
 

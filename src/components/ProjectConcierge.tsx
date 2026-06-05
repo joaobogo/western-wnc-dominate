@@ -74,7 +74,7 @@ const ProjectConcierge = () => {
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
-              <p className="text-dark-section-foreground/35 text-[15px] font-body leading-relaxed max-w-lg mx-auto">
+              <p className="text-dark-section-foreground/35 text-[15px] font-body leading-relaxed max-w-lg mx-auto font-bold">
                 We don't do online quotes. Every project starts with a genuine
                 conversation about your property, your goals, and what "done right" means to you.
               </p>
