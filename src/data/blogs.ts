@@ -1465,7 +1465,7 @@ A vertical addition requires a new layout for the floor below. We help you find 
     excerpt: "What's shaping WNC home design this year? From mixed-material exteriors to floor plans that prioritize 'wellness' spaces.",
     category: "Design",
     date: "2026-06-05",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: blueRidgeViewStock, readTime: "7 min",
     metaTitle: "2026 Mountain Home Design Trends | Highlander",
     metaDescription: "What's trending in Western NC architecture and design. Mixed materials, dark exteriors, and flexible mountain layouts.",
     content: `Mountain design is evolving. Homeowners in Highlands and Cashiers are moving away from 'heavy log' styles toward something cleaner and more integrated.
