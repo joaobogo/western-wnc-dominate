@@ -325,7 +325,7 @@ If you've had ice dams before, we can assess your roof and attic to identify the
     excerpt: "Not sure if your roof needs repair or full replacement? Here are the warning signs Highlands homeowners should watch for.",
     category: "Replacement",
     date: "2025-12-28",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: shingleRoofsStock, readTime: "5 min",
     town: "Highlands",
     metaTitle: "When to Replace Your Roof in Highlands, NC | Highlander Roofing",
     metaDescription: "5 signs your Highlands, NC roof needs replacement. Age, damage, and performance indicators from local roofing experts.",
