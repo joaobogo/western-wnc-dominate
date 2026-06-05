@@ -1126,7 +1126,7 @@ During any roof inspection, we evaluate your attic ventilation system and recomm
     excerpt: "Thinking about a master wing addition? Here is how to plan the perfect flow between sleep, storage, and views.",
     category: "Construction",
     date: "2026-03-05",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: masterSuiteStock, readTime: "6 min",
     metaTitle: "Master Suite Layout Planning WNC | Highlander",
     metaDescription: "How to plan a master suite addition in Western NC. Layout tips for walk-in closets, luxury baths, and mountain view optimization.",
     content: `A master suite addition is about more than just square footage—it's about creating a sanctuary. In Western North Carolina, the terrain and views should dictate your layout.
