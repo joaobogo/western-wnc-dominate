@@ -209,7 +209,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   );
 };
 
-const FeaturedProjects = ({ location }: { location?: string }) => {
+export const FeaturedProjects = ({ location }: { location?: string }) => {
   const [activeFilter, setActiveFilter] = useState("all");
   const filtered = activeFilter === "all" 
     ? (location ? projects.filter(p => p.location.includes(location) || p.location.includes(location.split(',')[0])) : projects) 
