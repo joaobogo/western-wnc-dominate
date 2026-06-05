@@ -55,7 +55,7 @@ const GivingBack = () => {
             <img 
               src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000" 
               alt="Community support" 
-              className="w-full h-full object-cover opacity-40" 
+              className="w-full h-full object-cover opacity-60" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-heritage-charcoal via-heritage-charcoal/40 to-transparent" />
             <TartanBackground opacity={0.03} />

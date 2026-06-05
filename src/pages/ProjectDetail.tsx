@@ -376,7 +376,7 @@ const ProjectDetailPage = () => {
                     ))}
                   </div>
                   <p className="text-foreground text-base md:text-lg leading-relaxed mb-6 font-body italic">
-                    "{project.testimonial.quote}"
+                    {project.testimonial.quote}
                   </p>
                   <p className="font-heading font-semibold text-foreground">{project.testimonial.name}</p>
                   <p className="text-muted-foreground text-sm font-body">{project.testimonial.location}</p>

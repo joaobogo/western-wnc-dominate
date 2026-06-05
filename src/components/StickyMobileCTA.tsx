@@ -70,11 +70,11 @@ const StickyMobileCTA = () => {
                     <span className="text-sm font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
                   </a>
                   <Link
-                    to="/services"
+                    to="/roofing"
                     className="flex-1 flex flex-col items-center justify-center gap-2 px-5 py-4 text-muted-foreground active:bg-secondary active:scale-95 transition-all min-h-[72px]"
                   >
                     <Layers className="w-6 h-6" />
-                    <span className="text-sm font-body font-extrabold uppercase tracking-[0.06em]">Menu</span>
+                    <span className="text-sm font-body font-extrabold uppercase tracking-[0.06em]">Services</span>
                   </Link>
                 </div>
               </div>
