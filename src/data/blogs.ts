@@ -3,6 +3,15 @@ const metalBenefitsStock = "https://images.unsplash.com/photo-1464822759023-fed6
 const metalInstallStock = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1000";
 const homeValueStock = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000";
 const shingleRoofsStock = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
+const kitchenModernStock = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=1000";
+const masterSuiteStock = "https://images.unsplash.com/photo-1616594111350-474246a4d55b?auto=format&fit=crop&q=80&w=1000";
+const outdoorLivingStock = "https://images.unsplash.com/photo-1615873968403-89e068629275?auto=format&fit=crop&q=80&w=1000";
+const planningDeskStock = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000";
+const blueRidgeViewStock = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
+const financeCalcStock = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000";
+const commercialRoofStock = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000";
+const stormCloudsStock = "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&q=80&w=1000";
+const skylightStock = "https://images.unsplash.com/photo-1513584684374-8bdb74838a0f?auto=format&fit=crop&q=80&w=1000";
 
 export interface BlogFAQ {
   question: string;
