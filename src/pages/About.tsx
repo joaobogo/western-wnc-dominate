@@ -9,7 +9,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import teamPhoto from "@/assets/team-photo.webp";
 import { ScrollReveal } from "@/components/motion";
 
-const storyImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
+const storyImg = "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?auto=format&fit=crop&q=80&w=1920"; // Smoky Mountains focused picture
 const heritageImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
