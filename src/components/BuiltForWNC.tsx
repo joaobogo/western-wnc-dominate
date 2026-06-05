@@ -21,7 +21,7 @@ const factors = [
 const BuiltForWNC = () => {
   return (
     <section className="section-padding bg-secondary tartan-bg relative overflow-hidden">
-      <div className="container-tight">
+      <div className="container-tight" id="mountain-built">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
           {/* Left column — editorial intro (sticky on desktop) */}
           <div className="lg:col-span-2 lg:sticky lg:top-28">
@@ -41,7 +41,7 @@ const BuiltForWNC = () => {
                   Piedmont or the coast. Elevation changes everything — the weather, the materials,
                   the engineering, the logistics.
                 </p>
-                <p className="text-foreground/70 text-base leading-relaxed font-body">
+                <p className="text-foreground/70 text-base leading-relaxed font-body font-bold">
                   Highlander was founded here. Our crews live and work in these conditions year-round.
                   That means every recommendation we make and every system we install is based on what
                   actually performs at 2,000–5,000 feet — not what a manufacturer's brochure says

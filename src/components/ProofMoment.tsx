@@ -16,6 +16,7 @@ interface ProofItem {
 interface ProofMomentProps {
   variant: "credentials" | "social" | "stats" | "local" | "warranty";
   className?: string;
+  id?: string;
 }
 
 const presets: Record<string, { items: ProofItem[]; accent?: string }> = {
@@ -56,7 +57,7 @@ const presets: Record<string, { items: ProofItem[]; accent?: string }> = {
   },
 };
 
-const ProofMoment = ({ variant, className = "" }: ProofMomentProps) => {
+const ProofMoment = ({ variant, className = "", id }: ProofMomentProps) => {
   const { items } = presets[variant];
 
   return (
@@ -66,6 +67,7 @@ const ProofMoment = ({ variant, className = "" }: ProofMomentProps) => {
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
       className={`w-full py-5 md:py-6 bg-secondary/50 border-y border-border/50 relative ${className}`}
+      id={id}
     >
       {/* Subtle gold accent line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[1px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />

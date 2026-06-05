@@ -190,8 +190,9 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
             {/* Outcome — reveal on hover */}
             <div className="max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
-              <p className="text-white text-[15px] md:text-[16px] font-body leading-relaxed mt-3 pr-12 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] font-medium">
+              <p className="text-white text-[15px] md:text-[16px] font-body leading-relaxed mt-3 pr-12 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] font-bold">
                 {project.outcome}
+
               </p>
             </div>
           </div>
@@ -221,7 +222,7 @@ const FeaturedProjects = ({ location }: { location?: string }) => {
     <section className="section-padding bg-background relative overflow-hidden">
       <div className="absolute inset-0 tartan-bg opacity-10" />
 
-      <div className="container-tight relative z-10">
+      <div className="container-tight relative z-10" id="projects">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
           <div>

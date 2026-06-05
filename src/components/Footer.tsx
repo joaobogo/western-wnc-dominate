@@ -77,7 +77,7 @@ const certifications = [
 const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
   <Link
     to={to}
-    className="group text-[16px] text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-0.5"
+    className="group text-[15px] text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-0.5"
   >
     {children}
     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -159,7 +159,7 @@ const Footer = () => {
                 <img 
                   src={logo} 
                   alt="Highlander Roofing & Construction" 
-                  className="h-[120px] md:h-[140px] w-auto transition-all duration-500 group-hover:scale-105 mix-blend-multiply" 
+                  className="h-[100px] md:h-[120px] w-auto transition-all duration-500 group-hover:scale-105" 
                   loading="lazy" 
                   decoding="async" 
                 />
@@ -303,7 +303,7 @@ const Footer = () => {
                 <Link
                   key={l.href}
                   to={l.href}
-                  className="group text-[16px] font-medium text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-2 font-body leading-relaxed py-1"
+                  className="group text-[15px] font-bold text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-2 font-body leading-relaxed py-1"
                 >
                   {l.label}
                   <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />

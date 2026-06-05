@@ -58,10 +58,14 @@ const Index = () => {
       <Header />
       <main>
         {/* 1. Hero — The Highland standard */}
-        <Hero />
+        <section id="hero">
+          <Hero />
+        </section>
 
         {/* 2. TrustStrip — Immediate proof anchors */}
-        <TrustStrip />
+        <section id="trust">
+          <TrustStrip />
+        </section>
 
         <div className="relative overflow-hidden bg-background">
           <TartanBackground opacity={0.02} />
@@ -97,13 +101,13 @@ const Index = () => {
         <OurProcess />
 
         {/* 10. Proof Moment — Highest impact review */}
-        <ProofMoment variant="social" />
+        <ProofMoment variant="social" id="proof" />
 
         {/* 11. Project Concierge — Guidance for new clients */}
-        <ProjectConcierge />
+        <ProjectConcierge id="concierge" />
 
         {/* 12. Town Grid — Service area footprint */}
-        <TownGrid />
+        <TownGrid id="areas" />
 
         <SectionDivider variant="gold-fade" />
       </main>

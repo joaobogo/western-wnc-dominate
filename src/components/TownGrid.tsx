@@ -7,9 +7,9 @@ import { towns } from "@/data/towns";
 
 const displayedTowns = towns.slice(0, 12); // Show top 12 on homepage grid
 
-const TownGrid = () => {
+const TownGrid = ({ id }: { id?: string }) => {
   return (
-    <section className="section-padding section-dark tartan-dark">
+    <section className="section-padding section-dark tartan-dark" id={id}>
       <div className="container-tight">
         <div className="text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade">

@@ -7,10 +7,10 @@
 @layer base {
   :root {
     /* Highlander Heritage Palette — Refined */
-    --background: 42 20% 99%; /* Even brighter for clarity */
+    --background: 0 0% 100%; /* Pure white for maximum clarity */
     --foreground: 210 20% 12%;
 
-    --card: 42 14% 100%;
+    --card: 0 0% 100%;
     --card-foreground: 210 20% 12%;
 
     --popover: 42 14% 100%;
@@ -105,14 +105,14 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    font-size: 1.125rem; /* Base 18px for better readability */
+    font-size: 1rem; /* Base 16px */
     letter-spacing: 0.01em;
-    line-height: 1.75;
+    line-height: 1.65;
   }
   
   @media (min-width: 768px) {
     body {
-      font-size: 1.25rem; /* 20px on desktop */
+      font-size: 1.125rem; /* 18px on desktop */
     }
   }
 
@@ -167,13 +167,13 @@
   p {
     @apply font-body text-foreground/95;
     max-width: 70ch; 
-    font-size: 1.125rem;
-    line-height: 1.75;
+    font-size: 1rem;
+    line-height: 1.65;
   }
   
   @media (min-width: 768px) {
     p {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
   }
   p + p {

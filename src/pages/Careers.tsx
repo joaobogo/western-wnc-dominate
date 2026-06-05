@@ -93,7 +93,8 @@ const Careers = () => {
               <div className="lg:col-span-5 space-y-10">
                 <div>
                   <h2 className="text-3xl font-heading font-bold mb-6">Who We're Looking For</h2>
-                  <p className="text-muted-foreground font-body leading-relaxed mb-8">
+                  <p className="text-muted-foreground font-body leading-relaxed mb-8 font-bold">
+
                     We hire for attitude and train for skill. If you're honest, hardworking, and local to Western North Carolina, we'd like to hear from you—even if you don't see a specific opening that fits.
                   </p>
                   <div className="space-y-4">

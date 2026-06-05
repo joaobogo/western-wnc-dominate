@@ -195,7 +195,7 @@ const InspectionForm = () => {
                 </h2>
               </HeadingReveal>
               <ScrollReveal variant="rise-subtle" delay={0.25}>
-                <p className="text-white font-body text-xl md:text-2xl leading-relaxed mb-10 font-bold drop-shadow-md">
+                <p className="text-white font-body text-lg md:text-xl leading-relaxed mb-10 font-bold drop-shadow-md">
                   Share a few details about your property and what you're looking to accomplish. 
                   A Highlander advisor — someone who knows these mountains, these materials, and these 
                   building conditions — will review everything and follow up personally to discuss 

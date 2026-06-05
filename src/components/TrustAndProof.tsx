@@ -94,7 +94,7 @@ const TrustAndProof = () => {
                 <div className="w-5 h-5 rounded-none bg-primary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-[10px] font-heading font-bold text-primary">{i + 1}</span>
                 </div>
-                <span className="text-foreground/70 text-sm font-body leading-relaxed">{point}</span>
+                <span className="text-foreground/70 text-sm font-body leading-relaxed font-bold">{point}</span>
               </motion.div>
             ))}
           </div>

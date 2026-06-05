@@ -251,7 +251,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
           </div>
 
           {/* Description */}
-          <p className="text-foreground/80 text-base leading-relaxed font-body mb-6 flex-1">
+          <p className="text-foreground/80 text-base leading-relaxed font-body mb-6 flex-1 font-bold">
             {service.description}
           </p>
 
@@ -281,7 +281,7 @@ const ServicesGrid = () => {
     <section className="section-padding bg-background relative overflow-hidden">
       <div className="absolute inset-0 tartan-bg opacity-30" />
 
-      <div className="container-tight relative z-10">
+      <div className="container-tight relative z-10" id="services">
         {/* Header */}
         <div className="text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade">

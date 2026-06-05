@@ -203,7 +203,7 @@ const DivisionCard = ({ data, accent, index }: {
         <h3 className="text-xl md:text-[1.65rem] font-heading font-bold text-foreground mb-3 leading-tight tracking-tight">
           {data.title}
         </h3>
-        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-7 font-medium">
+        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-7 font-bold">
           {data.description}
         </p>
 
@@ -265,6 +265,7 @@ const ThreeDivisionPathway = () => {
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-foreground text-lg md:text-xl font-body max-w-xl mx-auto leading-relaxed font-bold">
+
               Standing seam at 4,000 feet or a ground-up addition in Franklin — the process
               is identical. Certified materials, documented scope, named contact, warranty delivered at walkthrough.
             </p>

@@ -254,7 +254,7 @@ const ServiceAreas = () => {
                       <h3 className="font-heading font-semibold text-base text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                     </div>
                     <p className="text-muted-foreground/50 text-xs font-body mb-3">{town.county}</p>
-                    <p className="text-muted-foreground text-[13px] font-body leading-relaxed line-clamp-2 mb-4">{town.description.slice(0, 100)}…</p>
+                    <p className="text-muted-foreground text-[13px] font-body leading-relaxed line-clamp-2 mb-4 font-bold">{town.description.slice(0, 100)}…</p>
                     <span className="inline-flex items-center gap-1 text-primary/70 font-medium text-xs group-hover:gap-2 group-hover:text-primary transition-all font-body">
                       View Details <ArrowRight className="w-3 h-3" />
                     </span>

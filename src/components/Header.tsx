@@ -132,7 +132,7 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_25px_-10px_rgba(0,0,0,0.12)] border-b border-black/[0.04]"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_25px_-10px_rgba(0,0,0,0.12)] border-b border-black/[0.04] md:border-b-0"
     >
       {/* ─── Main nav bar ─── */}
       <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-0.5" : "py-1 md:py-1.5"}`}>
@@ -141,10 +141,10 @@ const Header = () => {
             <motion.img
             src={logo}
             alt="Highlander Roofing & Construction"
-            className="w-auto transition-all duration-500 mix-blend-multiply"
+            className="w-auto transition-all duration-500"
             animate={{ 
-              height: scrolled ? 90 : 130,
-              scale: scrolled ? 0.95 : 1
+              height: scrolled ? 60 : 100,
+              scale: scrolled ? 0.9 : 1
             }}
             style={{ originX: 0, originY: 0.5 }}
             transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
@@ -168,7 +168,7 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 inline-flex items-center gap-1 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+                className={`relative text-[14px] font-bold transition-all duration-300 inline-flex items-center gap-1 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
                   isActive(div.href)
                     ? "text-heritage-charcoal bg-black/5"
                     : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
@@ -285,7 +285,8 @@ const Header = () => {
           {/* Design Link */}
           <Link 
             to="/layouts-planning" 
-            className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+            className={`relative text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+
               isActive('/layouts-planning')
                 ? "text-heritage-charcoal bg-black/5"
                 : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
@@ -309,7 +310,7 @@ const Header = () => {
             <Link
               key={link.label}
               to={link.href}
-              className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+              className={`relative text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
                 isActive(link.href)
                   ? "text-heritage-charcoal bg-black/5"
                   : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
@@ -345,7 +346,7 @@ const Header = () => {
           </a>
           <Link
             to="/consultation"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[12px] px-8 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.12em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[12px] px-6 py-3.5 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.12em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
           >
             <span className="relative z-10">Start a Project</span>
             <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />

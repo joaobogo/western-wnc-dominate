@@ -96,7 +96,7 @@ const ConstructionDivision = () => {
         ]}
       />
       <Header />
-      <main>
+      <main className="md:pt-0">
         {/* ═══ HERO — Cinematic construction hero with gold accents ═══ */}
         <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
