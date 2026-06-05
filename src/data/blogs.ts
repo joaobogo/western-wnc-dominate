@@ -1343,7 +1343,7 @@ Your floor plan should dictate where the water goes. We integrate drainage paths
     excerpt: "Breaking a large project into manageable phases requires master planning. Learn how to sequence your addition for budget and lifestyle.",
     category: "Design",
     date: "2026-05-18",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
+    image: planningDeskStock, readTime: "8 min",
     metaTitle: "Multi-Phase Home Addition Planning WNC | Highlander",
     metaDescription: "Master planning for large WNC home additions. How to phase your construction project for better cash flow and minimal lifestyle disruption.",
     content: `A 2,000-square-foot expansion doesn't have to happen all at once. Phasing is a strategic way to manage budget and construction fatigue.
