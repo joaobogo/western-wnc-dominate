@@ -1198,7 +1198,7 @@ Don't renovate your kitchen right before you tear out the wall behind it for an 
     excerpt: "From open-concept 'Great Rooms' to hidden pantries. Discover how to plan a kitchen that works for WNC life.",
     category: "Construction",
     date: "2026-04-02",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: kitchenModernStock, readTime: "6 min",
     metaTitle: "Mountain Kitchen Layout Trends 2026 | Highlander",
     metaDescription: "Plan your kitchen renovation with these layout trends. Open-concept designs, island optimization, and mountain view integration.",
     content: `The kitchen is the heart of the mountain home. But in WNC, 'modern mountain' means more than just stainless steel. It's about how the space connects to the rest of your life.
