@@ -395,7 +395,7 @@ Our Design & Planning branch exists to solve these hurdles before they become ex
     excerpt: "How to choose the right orientation, materials, and layout for outdoor living spaces that survive mountain weather.",
     category: "Construction",
     date: "2026-03-15",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: outdoorLivingStock, readTime: "6 min",
     metaTitle: "Porch & Deck Design for WNC Homes | Highlander Construction",
     metaDescription: "Expert tips for designing porches and decks in Western NC. Orientation, materials, and mountain-view optimization.",
     content: `Outdoor living in the Blue Ridge Mountains is about more than just square footage — it's about framing the view while protecting your investment from harsh seasonal changes.
