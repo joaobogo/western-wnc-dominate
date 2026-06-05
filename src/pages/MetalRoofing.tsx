@@ -64,7 +64,7 @@ const MetalRoofing = () => {
                 Standing seam and exposed-fastener metal systems engineered for Western NC elevation, wind, snow load, and rainfall. Specified and installed as a complete system by an owner-led, licensed contractor.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/start-project" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                   Start Your Metal Roof Project <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a href="tel:8283979211" className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors">
