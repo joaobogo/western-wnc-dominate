@@ -186,14 +186,14 @@ const ConstructionDivision = () => {
               <div className="text-center">
                 <GoldLine width="3rem" className="mx-auto mb-8" />
                 <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
-                  Highlander builds more than roofs. We build the mountain homes and outdoor spaces that define your WNC lifestyle — with a level of planning, craft, and transparency that is rare in our industry.
+                  Highlander builds more than structures. We build the mountain homes and outdoor spaces that define your WNC lifestyle—backed by a master-class standard of roofing authority and architectural planning.
                 </h2>
                 <div className="max-w-2xl mx-auto space-y-6">
                   <p className="text-foreground text-lg md:text-xl leading-relaxed font-body font-medium">
-                    Highlander builds more than roofs. We build the mountain homes and outdoor spaces that define your WNC lifestyle — with a level of planning, craft, and transparency that is rare in our industry.
+                    Our Construction division serves homeowners who value meticulous planning and a design-first approach to mountain building.
                   </p>
                   <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body">
-                    Our Construction division serves homeowners who value <Link to="/layouts-planning" className="text-primary font-bold hover:underline">meticulous planning</Link> over rushing, and craftsmanship that is engineered to endure our unique mountain climate.
+                    We bridge the gap between architectural vision and buildable reality, supported by our expert <Link to="/layouts-planning" className="text-primary font-bold hover:underline">Design & Planning</Link> branch.
                   </p>
                 </div>
                 <GoldLine width="3rem" className="mx-auto mt-10" delay={0.3} />

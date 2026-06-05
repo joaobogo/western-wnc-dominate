@@ -319,7 +319,7 @@ const RoofingDivision = () => {
                   transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
                   className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight"
                 >
-                  Built for the <span className="text-[hsl(var(--highland-gold))]">High Country.</span>
+                  Masterfully <span className="text-[hsl(var(--highland-gold))]">Executed.</span>
                 </motion.h1>
               </div>
 

@@ -130,7 +130,7 @@ const About = () => {
                 transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-[1.0] mb-2 tracking-tight"
               >
-                Rooted in the Mountains.
+                Elevating WNC Standards.
               </motion.h1>
               <motion.h1
                 initial={{ opacity: 0, letterSpacing: "0.08em" }}
@@ -138,13 +138,11 @@ const About = () => {
                 transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.0] mb-8"
               >
-                <span className="text-[hsl(var(--highland-gold))]">Built on Family Integrity.</span>
+                <span className="text-[hsl(var(--highland-gold))]">Built on Family Values.</span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-[19px] md:text-[22px] text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
-                Highlander Roofing & Construction is a family-owned company based in Franklin and Sylva, NC.
-                We protect homes and build spaces across Western North Carolina — with the kind of care,
-                craft, and accountability that only comes from people who live here.
+                Highlander is a family-owned company rooted in Franklin and Sylva, NC. We provide premium roofing, construction, and design support across Western North Carolina—delivering the craft, care, and local accountability your home deserves.
               </motion.p>
 
               {/* Understated CTA — warm solid button, no gradient (About-only) */}
