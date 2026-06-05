@@ -969,7 +969,7 @@ Mountain additions are priced from the actual scope — complexity, access, fini
     excerpt: "A deep look at our most complex metal roofing project — 3,200 sq ft, 12/12 pitch, 8 gable intersections, and custom-fabricated panels.",
     category: "Spotlight",
     date: "2026-03-10",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: metalInstallStock, readTime: "6 min",
     metaTitle: "Project Spotlight: Metal Roof — Highlands Estate | Highlander",
     metaDescription: "Case study: custom standing seam metal roof on a Highlands estate. 3,200 sq ft, 12/12 pitch, 8 gable intersections. Full project story.",
     content: `This project pushed our metal roofing capabilities to the highest standard. A luxury estate in Highlands with a complex multi-gable roofline, steep 12/12 pitch, and existing damage from years of mountain weather exposure.
