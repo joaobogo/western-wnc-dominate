@@ -43,10 +43,16 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
                 Highlander Roofing & Construction maintains local crews throughout Western North Carolina. If you're near {currentTown.name}, we're likely in your neighborhood this week.
               </p>
             </div>
-            <Link to="/service-areas" className="text-primary font-heading font-bold text-sm tracking-wide flex items-center gap-2 group border-b border-primary/20 pb-1 hover:text-primary/80 transition-all">
-              View All Areas <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="flex flex-col gap-3">
+              <Link to={`/service-areas/county/${currentTown.county.toLowerCase().replace(' ', '-')}`} className="text-primary font-heading font-bold text-sm tracking-wide flex items-center gap-2 group border-b border-primary/20 pb-1 hover:text-primary/80 transition-all">
+                {currentTown.county} Overview <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link to="/service-areas" className="text-muted-foreground font-heading font-bold text-[11px] tracking-[0.1em] flex items-center gap-2 group hover:text-primary transition-all uppercase">
+                All Areas <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
+
         </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
