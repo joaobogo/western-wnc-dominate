@@ -354,11 +354,53 @@ const BlogPostPage = () => {
                   </motion.div>
                 )}
 
+                {/* Localized Proof Moment - Dynamic connection to Gallery */}
+                <div className="mt-16 pt-12 border-t border-border">
+                  <div className="flex items-center justify-between mb-8">
+                    <div>
+                      <span className="eyebrow mb-2 block">Project Proof</span>
+                      <h3 className="text-2xl font-heading font-bold text-foreground">
+                        {post.town ? `Real Work in ${post.town}` : "Mountain-Proven Results"}
+                      </h3>
+                    </div>
+                    <Link to="/gallery" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
+                      View All Projects <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {projectDetails
+                      .filter(p => !post.town || p.location.includes(post.town))
+                      .slice(0, 2)
+                      .map(project => (
+                        <Link 
+                          key={project.slug} 
+                          to={`/projects/${project.slug}`}
+                          className="group block card-premium overflow-hidden"
+                        >
+                          <div className="aspect-[16/9] overflow-hidden">
+                            <img 
+                              src={project.heroImage} 
+                              alt={project.title} 
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                          <div className="p-5">
+                            <div className="flex items-center gap-2 mb-2">
+                              <MapPin className="w-3 h-3 text-[hsl(var(--highland-gold))]" />
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{project.location}</span>
+                            </div>
+                            <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h4>
+                          </div>
+                        </Link>
+                      ))}
+                  </div>
+                </div>
+
                 {/* Local Town Bridge */}
                 {post.town && (
                   <div className="mt-10 pt-8 border-t border-border">
                     <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground/80 mb-4">Market Context</h4>
-                    <Link to={`/service-areas/${post.town.toLowerCase()}-nc`} className="group flex items-center justify-between p-6 bg-secondary/40 border border-border rounded-sm hover:border-primary/20 transition-all">
+                    <Link to={`/service-areas/${post.town.toLowerCase().replace(/\s+/g, '-')}-nc`} className="group flex items-center justify-between p-6 bg-secondary/40 border border-border rounded-sm hover:border-primary/20 transition-all">
                       <div>
                         <p className="text-sm font-heading font-bold text-foreground mb-1">Roofing & Construction in {post.town}</p>
                         <p className="text-xs text-muted-foreground font-body">Explore localized standards and proven projects in your area.</p>
