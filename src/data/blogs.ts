@@ -281,7 +281,7 @@ Call (828) 397-9211 or request an inspection online. We serve all of Western NC.
     excerpt: "Ice dams cause thousands in damage to WNC homes every winter. Here's how to prevent them.",
     category: "Maintenance",
     date: "2026-01-08",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: blueRidgeViewStock, readTime: "5 min",
     town: "Highlands",
     metaTitle: "Ice Dam Prevention for WNC Mountain Homes | Highlander Roofing",
     metaDescription: "Prevent ice dams on your Western NC mountain home. Learn causes, prevention methods, and when to call a professional roofer.",
