@@ -1150,7 +1150,7 @@ Many of our favorite Highlands and Cashiers projects include a private deck acce
     excerpt: "How intelligent project planning can save you thousands in construction costs before the first hammer swings.",
     category: "Cost",
     date: "2026-03-12",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: financeCalcStock, readTime: "7 min",
     metaTitle: "Cost-Saving Construction Layout Tips | Highlander",
     metaDescription: "Discover how smart layout planning reduces construction costs. Tips on plumbing stacks, load-bearing walls, and mountain terrain.",
     content: `Most construction budget blowouts happen because of poor planning. Here is how our Design & Planning branch helps you build smarter for less.
