@@ -5,6 +5,9 @@ import {
   Star, CheckCircle, Clock, Users, MessageSquare, Mountain, Hammer,
   Eye, Heart, Home, Wrench,
 } from "lucide-react";
+import logoGaf from "@/assets/logo-gaf.png";
+import logoCertainteed from "@/assets/logo-certainteed.png";
+import logoVelux from "@/assets/logo-velux.png";
 import { ReactNode } from "react";
 
 /* ──────────────────────────────────────
@@ -12,9 +15,9 @@ import { ReactNode } from "react";
    ────────────────────────────────────── */
 
 export const credentials = [
-  { icon: Award, label: "CertainTeed", detail: "Master Shingle Applicator" },
-  { icon: Shield, label: "Licensed GC", detail: "State of North Carolina" },
-  { icon: BadgeCheck, label: "VELUX Certified", detail: "Professional Installer" },
+  { icon: Award, label: "CertainTeed", detail: "Master Shingle Applicator", image: logoCertainteed },
+  { icon: Shield, label: "GAF Master Elite", detail: "Top 2% Nationally", image: logoGaf },
+  { icon: BadgeCheck, label: "VELUX Certified", detail: "Professional Installer", image: logoVelux },
   { icon: FileCheck, label: "Warranty-Backed", detail: "Labor & Material Coverage" },
 ];
 
@@ -106,16 +109,24 @@ export const CredentialCards = ({ variant = "light" }: { variant?: "light" | "da
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: i * 0.08 }}
-        className={`group text-center p-5 md:p-6 rounded-sm card-lift ${
+        className={`group text-center p-5 md:p-6 rounded-sm card-lift flex flex-col items-center justify-center ${
           variant === "dark"
             ? "border border-[hsl(var(--highland-gold)/0.1)] bg-[hsl(var(--dark-section-foreground)/0.03)]"
             : "bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)]"
         }`}
       >
-        <div className={`w-11 h-11 rounded-sm flex items-center justify-center mx-auto mb-3 transition-colors ${
-          variant === "dark" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8 group-hover:bg-primary/12"
+        <div className={`mb-3 flex items-center justify-center transition-transform group-hover:scale-105 duration-300 ${
+          cert.image ? "w-20 h-16" : "w-11 h-11 rounded-sm " + (variant === "dark" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8 group-hover:bg-primary/12")
         }`}>
-          <cert.icon className={`w-5 h-5 ${variant === "dark" ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`} />
+          {cert.image ? (
+            <img 
+              src={cert.image} 
+              alt={cert.label} 
+              className={`w-full h-full object-contain mix-blend-multiply ${variant === "dark" ? "brightness-200 contrast-125" : ""}`} 
+            />
+          ) : (
+            <cert.icon className={`w-5 h-5 ${variant === "dark" ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`} />
+          )}
         </div>
         <h3 className={`font-heading font-bold text-sm mb-0.5 ${
           variant === "dark" ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"

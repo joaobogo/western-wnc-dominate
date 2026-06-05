@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ShieldCheck, FileCheck, Wrench, BadgeCheck, ArrowRight, Phone } from "lucide-react";
-import veluxLogo from "@/assets/velux-certified-logo.jpg";
+import veluxLogo from "@/assets/logo-velux.png";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -59,7 +59,7 @@ const VeluxProof = () => {
         >
           <div className="flex items-center gap-3 mb-5">
             <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0">
-              <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain filter invert brightness-[2] contrast-[1.2] mix-blend-screen" />
+              <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain mix-blend-screen brightness-200" />
             </div>
             <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
               VELUX Certified Installer
