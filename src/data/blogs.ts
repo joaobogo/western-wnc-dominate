@@ -1222,7 +1222,7 @@ Many of our clients want the kitchen to open directly onto a screened porch or d
     excerpt: "Trying to decide how to expand your outdoor space? Compare the layout benefits of open decks and covered porches.",
     category: "Construction",
     date: "2026-04-10",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: outdoorLivingStock, readTime: "5 min",
     metaTitle: "Deck or Porch Layout Comparison | Highlander",
     metaDescription: "Choose the right outdoor space layout. Compare open-air decks and screened-in porches for your Western NC home.",
     content: `WNC homeowners often ask: 'Should I build a deck or a porch?' The answer depends entirely on your lifestyle and your lot.
