@@ -691,7 +691,7 @@ Don't pick materials based on looks alone. Let us help you select a palette that
     excerpt: "A new roof is a major investment. Here are the financing options available to make it affordable.",
     category: "Financing",
     date: "2025-11-28",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: financeCalcStock, readTime: "5 min",
     metaTitle: "Roof Financing Options in Western NC | Highlander Roofing",
     metaDescription: "Affordable roof financing for Western NC homeowners. Payment plans, insurance claims, and flexible options from Highlander Roofing.",
     content: `A new roof is one of the most important investments you'll make in your home — but that doesn't mean it has to strain your finances. Here's how WNC homeowners are making it work.
