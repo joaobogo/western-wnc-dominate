@@ -1020,7 +1020,7 @@ See the complete before-and-after gallery, process photos, and homeowner testimo
     excerpt: "Early forecasts suggest an active spring storm season for Western North Carolina. Here's how to prepare your roof and home.",
     category: "Storm",
     date: "2026-03-15",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: stormCloudsStock, readTime: "5 min",
     metaTitle: "2026 Spring Storm Season Preparation for WNC | Highlander",
     metaDescription: "Prepare your Western NC home for 2026 spring storms. Pre-storm checklist, emergency contacts, and what to do after severe weather.",
     content: `Western North Carolina's spring storm season brings wind events, heavy rain, hail, and occasional tornado warnings. Early preparation protects your home and speeds recovery if damage occurs.
