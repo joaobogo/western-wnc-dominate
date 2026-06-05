@@ -575,7 +575,7 @@ Call (828) 397-9211 or submit our online form. We respond rapidly and serve all 
     excerpt: "Fallen tree? Major leak? Here's your step-by-step emergency guide for WNC homeowners.",
     category: "Storm",
     date: "2025-12-05",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: stormCloudsStock, readTime: "5 min",
     metaTitle: "Emergency Roof Repair in Western NC | Highlander Roofing",
     metaDescription: "Emergency roof repair in Western NC. What to do after a tree fall, major leak, or storm damage. Fast response — call (828) 397-9211.",
     content: `When your roof is compromised — whether by a fallen tree, severe storm, or sudden leak — fast action prevents thousands in additional damage. Here's what to do.
