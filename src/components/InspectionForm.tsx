@@ -167,7 +167,7 @@ const InspectionForm = () => {
 
   const inputClasses = "w-full px-6 py-6 md:py-7 rounded-none text-white text-[20px] md:text-[22px] font-body placeholder:text-white/40 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.08] border border-white/20";
   const labelClasses = "block text-[16px] md:text-[17px] font-bold text-white mb-3 font-body uppercase tracking-[0.18em]";
-  const hintClasses = "text-dark-section-foreground/60 text-[14px] md:text-[15px] font-body mt-3 leading-relaxed font-medium";
+  const hintClasses = "text-dark-section-foreground/75 text-[15px] md:text-[16px] font-body mt-3 leading-relaxed font-bold";
 
   const canProceedStep1 = formData.name && formData.phone;
   const canProceedStep2 = formData.town && formData.projectType;
