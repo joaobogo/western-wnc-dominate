@@ -132,7 +132,7 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_25px_-10px_rgba(0,0,0,0.12)] border-b border-black/[0.04] md:border-b-0"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_30px_-10px_rgba(0,0,0,0.15)] border-b border-black/[0.08] md:border-b-0"
     >
       {/* ─── Main nav bar ─── */}
       <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-0.5" : "py-1 md:py-1.5"}`}>
@@ -285,7 +285,7 @@ const Header = () => {
           {/* Design Link */}
           <Link 
             to="/layouts-planning" 
-            className={`relative text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+            className={`relative text-[16px] font-bold transition-all duration-300 px-3 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
 
               isActive('/layouts-planning')
                 ? "text-heritage-charcoal bg-black/5"
@@ -310,7 +310,7 @@ const Header = () => {
             <Link
               key={link.label}
               to={link.href}
-              className={`relative text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+              className={`relative text-[16px] font-bold transition-all duration-300 px-3 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
                 isActive(link.href)
                   ? "text-heritage-charcoal bg-black/5"
                   : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
@@ -346,7 +346,7 @@ const Header = () => {
           </a>
           <Link
             to="/consultation"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[12px] px-6 py-3.5 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.12em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] px-8 py-4.5 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.12em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
           >
             <span className="relative z-10">Start a Project</span>
             <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />

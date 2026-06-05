@@ -100,10 +100,10 @@ const TrustStrip = () => {
                         ? "text-[hsl(var(--highland-gold)/0.7)]"
                         : "text-[hsl(var(--highland-gold)/0.35)]"
                     }`} />
-                    <span className={`text-[14px] md:text-[15px] font-body leading-snug font-medium ${
+                    <span className={`text-[16px] md:text-[18px] font-body leading-snug font-bold ${
                       cred.emphasis
-                        ? "font-bold text-white"
-                        : "text-primary-foreground/75"
+                        ? "text-white"
+                        : "text-primary-foreground/90"
                     }`}>
                       {cred.label}
                     </span>

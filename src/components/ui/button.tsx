@@ -25,11 +25,11 @@ const buttonVariants = cva(
         heritage: "bg-primary text-primary-foreground font-bold hover:bg-primary/90 btn-ghost-interactive shadow-lg",
       },
       size: {
-        default: "h-16 px-12 text-[20px] md:text-[22px]",
-        sm: "h-14 px-10 text-[18px] md:text-[19px]",
-        lg: "h-20 px-14 text-[22px] md:text-[24px] tracking-[0.12em]",
-        xl: "h-24 px-16 md:px-24 text-[26px] md:text-[28px] tracking-[0.14em]",
-        icon: "h-12 w-12",
+        default: "h-16 px-12 text-[22px] md:text-[24px]",
+        sm: "h-14 px-10 text-[20px] md:text-[21px]",
+        lg: "h-20 px-14 text-[24px] md:text-[26px] tracking-[0.12em]",
+        xl: "h-24 px-16 md:px-24 text-[28px] md:text-[30px] tracking-[0.14em]",
+        icon: "h-14 w-14",
       },
     },
     defaultVariants: {

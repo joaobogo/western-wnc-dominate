@@ -56,7 +56,7 @@ const StickyMobileCTA = () => {
                   className="flex-[1.8] flex items-center justify-center gap-3 py-5 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[72px]"
                 >
                   <MessageSquare className="w-6 h-6" />
-                  <span className="text-base font-body font-bold uppercase tracking-[0.1em]">Start Project</span>
+                  <span className="text-lg font-body font-extrabold uppercase tracking-[0.1em]">Start Project</span>
                 </Link>
                 
                 {/* Secondary actions — generous touch targets */}
@@ -67,14 +67,14 @@ const StickyMobileCTA = () => {
                     className="flex-1 flex flex-col items-center justify-center gap-2 px-5 py-4 text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[72px]"
                   >
                     <Phone className="w-6 h-6" />
-                    <span className="text-xs font-body font-bold uppercase tracking-[0.06em]">Call</span>
+                    <span className="text-sm font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
                   </a>
                   <Link
                     to="/services"
                     className="flex-1 flex flex-col items-center justify-center gap-2 px-5 py-4 text-muted-foreground active:bg-secondary active:scale-95 transition-all min-h-[72px]"
                   >
                     <Layers className="w-6 h-6" />
-                    <span className="text-xs font-body font-bold uppercase tracking-[0.06em]">Menu</span>
+                    <span className="text-sm font-body font-extrabold uppercase tracking-[0.06em]">Menu</span>
                   </Link>
                 </div>
               </div>

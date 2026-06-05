@@ -105,14 +105,14 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    font-size: 1rem; /* Base 16px */
+    font-size: 1.125rem; /* Base 18px for better readability */
     letter-spacing: 0.01em;
-    line-height: 1.65;
+    line-height: 1.7; /* Increased line-height */
   }
   
   @media (min-width: 768px) {
     body {
-      font-size: 1.125rem; /* 18px on desktop */
+      font-size: 1.25rem; /* 20px on desktop */
     }
   }
 
@@ -166,14 +166,14 @@
      ────────────────────────────────────── */
   p {
     @apply font-body text-foreground/95;
-    max-width: 70ch; 
-    font-size: 1rem;
-    line-height: 1.65;
+    max-width: 65ch; /* Slightly shorter line length for focus */
+    font-size: 1.125rem;
+    line-height: 1.7;
   }
   
   @media (min-width: 768px) {
     p {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
     }
   }
   p + p {
