@@ -248,7 +248,7 @@ Highlander Roofing assists WNC homeowners through the entire claims process — 
     excerpt: "After a mountain winter, your roof needs attention. Here's what to check every spring to prevent costly problems.",
     category: "Maintenance",
     date: "2026-01-15",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: blueRidgeViewStock, readTime: "5 min",
     metaTitle: "Spring Roof Maintenance Checklist for WNC | Highlander Roofing",
     metaDescription: "Spring roof maintenance checklist for Western NC homeowners. Prevent costly repairs after winter with these expert tips from Highlander Roofing.",
     content: `WNC winters are tough on roofs. Spring is the ideal time to catch issues before they become expensive problems. Here's your annual checklist.
