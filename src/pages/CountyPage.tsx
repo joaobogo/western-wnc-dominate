@@ -27,7 +27,7 @@ const CountyPage = () => {
     return (
       <>
         <Header />
-        <main className="section-padding text-center pt-32">
+        <main className="section-padding text-center pt-32 min-h-[60vh] flex flex-col items-center justify-center">
           <h1 className="text-3xl font-heading font-bold text-foreground">County Not Found</h1>
           <Link to="/service-areas" className="text-primary underline mt-4 inline-block">View All Service Areas</Link>
         </main>
@@ -37,77 +37,65 @@ const CountyPage = () => {
   }
 
   const countyTowns = towns.filter(t => county.towns.includes(t.name));
+  const relevantBlogs = getRelevantBlogsForTown(countyTowns[0]?.name || "Highlands");
 
   return (
     <>
       <SEOHead
         title={county.metaTitle}
         description={county.metaDescription}
-        path={`/service-areas/${county.slug}`}
+        path={`/service-areas/county/${county.slug}`}
       />
       <Header />
       <main>
         {/* 1. County Hero — Premium Mountain Visual */}
-        <section className="relative min-h-[70svh] flex flex-col items-center justify-center overflow-hidden">
+        <section className="relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img 
               src={county.heroImage} 
               alt={`${county.name} mountain construction context`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent opacity-20" />
-            
-            {/* Heritage Tartan Accent — Restrained and Subtle */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
-            
-            {/* Subtle Bottom Heritage Trim */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[url('/tartan.png')] bg-repeat-x bg-[length:100px_auto] opacity-30 z-30" />
+            <div className="absolute inset-0 bg-black/45 md:bg-transparent md:bg-gradient-to-r md:from-black/80 md:via-black/40 md:to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+            <TartanBackground opacity={0.03} />
           </div>
 
-          <div className="container-tight relative z-10 px-6 py-24">
+          <div className="container-tight relative z-10 px-6 py-24 w-full">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              className="mb-8 inline-flex items-center gap-4 md:gap-6"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-8 flex items-center gap-4"
             >
-              <div className="h-10 md:h-12 w-px bg-[hsl(var(--highland-gold)/0.4)]" />
+              <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
-                <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1">County Authority</span>
+                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">{county.name} Authority</span>
               </div>
             </motion.div>
+
             <div className="max-w-4xl">
               <motion.div 
                 initial={{ opacity: 0, x: -20 }} 
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="flex items-center gap-4 text-[hsl(var(--highland-gold))] mb-8">
-                  <div className="flex items-center gap-2 px-3 py-1 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.2)]">
-                    <MapPin className="w-3.5 h-3.5" />
-                    <span className="font-bold text-[10px] uppercase tracking-[0.3em]">Western North Carolina</span>
-                  </div>
-                  <div className="h-px w-12 bg-[hsl(var(--highland-gold)/0.3)]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">County Authority</span>
-                </div>
-
-                <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 md:mb-10 text-primary-foreground tracking-tightest leading-[0.95]">
-                  Defending <br />
-                  <span className="text-[hsl(var(--highland-gold))] italic font-medium">{county.name}.</span>
+                <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 md:mb-10 text-white tracking-tightest leading-[0.9] drop-shadow-lg">
+                  Built for the <br />
+                  <span className="text-[hsl(var(--highland-gold))] italic">{county.name} Corridor.</span>
                 </h1>
 
-                <p className="text-body-lg md:text-body-xl text-white/95 mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
+                <p className="text-lg md:text-2xl text-white/95 mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
                   {county.description}
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-xl border border-[hsl(var(--highland-gold)/0.4)]">
+                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[14px] md:text-[16px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px]">
                     Start a {county.name} Project <ArrowRight className="w-5 h-5" />
                   </Link>
-                  <a href="tel:8283979211" className="bg-white/[0.06] backdrop-blur-md border border-white/[0.2] text-primary-foreground font-bold text-[16px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.1] hover:border-white/[0.3] transition-all duration-300 shadow-lg">
-                    <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 397-9211
+                  <a href="tel:8283979211" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[14px] md:text-[16px] px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px]">
+                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 397-9211
                   </a>
                 </div>
               </motion.div>
@@ -120,9 +108,9 @@ const CountyPage = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {county.facts.map((fact, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest text-white/50 font-bold mb-1 md:mb-1.5">{fact.label}</span>
-                    <span className="text-sm md:text-base font-heading font-bold text-white flex items-center gap-2 md:gap-3">
-                      <Shield className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold))]" />
+                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/60 font-bold mb-1">{fact.label}</span>
+                    <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
+                      <Shield className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
                       {fact.value}
                     </span>
                   </div>
@@ -131,6 +119,7 @@ const CountyPage = () => {
             </div>
           </div>
         </section>
+
 
         {/* 2. County Intelligence — New Authority Section */}
         <section className="py-24 bg-background border-b border-border relative overflow-hidden">
