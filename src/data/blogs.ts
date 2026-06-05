@@ -1537,7 +1537,7 @@ The most complex part is the roof transition. We often use this opportunity to u
     excerpt: "Your deck or addition is only as safe as the ground beneath it. Learn why water management is a design priority.",
     category: "Construction",
     date: "2026-06-18",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: blueRidgeViewStock, readTime: "7 min",
     metaTitle: "Mountain Home Drainage Planning | Highlander",
     metaDescription: "Why water management is critical for WNC foundations. How to design hardscapes and additions that protect your property.",
     content: `In a region with 60+ inches of rain, water is the primary enemy of your foundation. Our layouts always prioritize drainage.
