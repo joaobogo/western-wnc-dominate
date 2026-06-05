@@ -1072,7 +1072,7 @@ Highlander responds within 24-48 hours for storm damage inspections across all o
     excerpt: "Proper ventilation prevents ice dams, reduces energy costs, and extends roof life. Here's how it works at elevation.",
     category: "Materials",
     date: "2026-02-25",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: blueRidgeViewStock, readTime: "6 min",
     metaTitle: "Roof Ventilation for Mountain Homes | Highlander Roofing",
     metaDescription: "Why roof ventilation matters more at elevation. Ice dam prevention, energy efficiency, and attic moisture control for WNC mountain homes.",
     content: `Roof ventilation is more critical in mountain climates than anywhere else. The combination of temperature extremes, snow loads, and moisture creates conditions that punish poorly ventilated attics.
