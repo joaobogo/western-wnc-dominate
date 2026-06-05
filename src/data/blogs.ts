@@ -1174,7 +1174,7 @@ In WNC, fighting the slope is expensive. We help you design layouts that work *w
     excerpt: "Want to renovate but can't do it all at once? Learn how to build a multi-year master plan for your WNC home.",
     category: "Construction",
     date: "2026-03-20",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
+    image: planningDeskStock, readTime: "8 min",
     metaTitle: "Master Plan for Phased Renovations | Highlander",
     metaDescription: "How to plan your home improvements in phases. Build a multi-year roadmap for additions, outdoor living, and interior updates.",
     content: `Not every mountain estate transformation happens in a single season. Many Highlands and Cashiers homeowners prefer to build in phases. The secret to success is having a cohesive master plan from day one.
