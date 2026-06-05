@@ -1416,7 +1416,7 @@ Permitting isn't just paperwork; it's a structural safeguard. Our team manages t
     excerpt: "Designing an outdoor kitchen at 4,000 feet requires different materials and layout logic than a lowland patio.",
     category: "Construction",
     date: "2026-05-28",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: kitchenModernStock, readTime: "6 min",
     town: "Highlands",
     metaTitle: "Mountain Outdoor Kitchen Design | Highlander",
     metaDescription: "Planning an outdoor kitchen for WNC homes. Layout tips for wind protection, winterization, and durable mountain materials.",
