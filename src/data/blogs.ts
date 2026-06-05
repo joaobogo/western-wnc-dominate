@@ -1441,7 +1441,7 @@ Your layout should include easy-access shut-off valves for plumbing. We plan the
     excerpt: "Thinking of building up? Learn how we evaluate foundations and framing to determine if a vertical addition is possible.",
     category: "Design",
     date: "2026-06-02",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "9 min",
+    image: homeValueStock, readTime: "9 min",
     metaTitle: "Second Story Addition Feasibility WNC | Highlander",
     metaDescription: "Can your mountain home support a second story? Learn about foundation checks, point-load analysis, and structural planning.",
     content: `Building up is often more cost-effective than building out on a steep lot — but only if your current structure can take the weight.
