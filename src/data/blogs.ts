@@ -1609,7 +1609,7 @@ Regardless of use, privacy is about sound. We design these additions with 'buffe
     excerpt: "Deep snow and high humidity create unique ventilation challenges. Learn how we prevent mold and ice dams with better airflow design.",
     category: "Materials",
     date: "2026-07-01",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: blueRidgeViewStock, readTime: "7 min",
     metaTitle: "Mountain Roof Ventilation Science | Highlander",
     metaDescription: "Why standard roof venting fails in WNC. Expert guide on ridge vents, soffit intake, and attic moisture management.",
     content: `Standard building code works for 80% of the country. But at 4,000 feet, you're in the other 20%. Here is how we design ventilation for the ridge.
