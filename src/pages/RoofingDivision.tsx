@@ -57,7 +57,7 @@ const roofingServices = [
   {
     icon: Layers,
     title: "Metal Roofing",
-    slug: "/roofing/specialty",
+    slug: "/roofing/metal",
     description: "Standing seam and visually complex metal systems rated for 140mph winds and 50+ years of mountain performance. The premium choice.",
     features: ["Standing seam", "Concealed fastener", "Snow guards", "Custom colors"],
   },
