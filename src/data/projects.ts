@@ -213,3 +213,9 @@ export const projectDetails: ProjectDetail[] = [
 
 export const getProjectBySlug = (slug: string): ProjectDetail | undefined =>
   projectDetails.find((p) => p.slug === slug);
+
+export const getProjectsByCategory = (category: "roofing" | "construction"): ProjectDetail[] =>
+  projectDetails.filter((p) => p.category === category);
+
+export const getProjectsByLocation = (location: string): ProjectDetail[] =>
+  projectDetails.filter((p) => p.location.includes(location));

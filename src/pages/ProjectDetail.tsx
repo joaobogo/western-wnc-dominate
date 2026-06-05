@@ -11,6 +11,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock, TrustSidebar } from "@/components/trust";
 import { BeforeAfterSlider } from "@/components/BeforeAfterShowcase";
 import { getProjectBySlug, projectDetails } from "@/data/projects";
+import { blogPosts } from "@/data/blogs";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -326,6 +327,63 @@ const ProjectDetailPage = () => {
                 <span className="eyebrow mb-3 block">The Result</span>
                 <h2 className="section-heading mb-5">Final Outcome</h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-6" />
+                <p className="text-muted-foreground leading-relaxed text-base mb-10">{project.result}</p>
+              </motion.div>
+
+              {/* Related Knowledge Hub Links */}
+              <div className="mt-20 pt-12 border-t border-border text-left">
+                <div className="flex items-center justify-between mb-8">
+                  <div>
+                    <span className="eyebrow mb-2 block text-primary">Mountain Guidance</span>
+                    <h3 className="text-2xl font-heading font-bold text-foreground">Related Knowledge Hub</h3>
+                  </div>
+                  <Link to="/blog" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
+                    Knowledge Hub <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {blogPosts
+                    .filter(b => b.category.toLowerCase().includes(project.type.toLowerCase()) || 
+                               (project.location.includes(b.town || "") && b.town !== undefined) ||
+                               b.category === (project.category === "roofing" ? "Materials" : "Construction"))
+                    .slice(0, 3)
+                    .map(post => (
+                      <Link 
+                        key={post.slug} 
+                        to={`/blog/${post.slug}`}
+                        className="group block p-6 bg-secondary/30 border border-border hover:border-primary/20 transition-all"
+                      >
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-3 block">{post.category}</span>
+                        <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3">{post.title}</h4>
+                        <span className="text-xs text-muted-foreground flex items-center gap-1">
+                          Read Guidance <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </Link>
+                    ))}
+                </div>
+              </div>
+
+              {/* Local Area Context */}
+              <div className="mt-16 p-8 bg-secondary/50 border border-border text-left">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div>
+                    <h4 className="font-heading font-bold text-foreground text-lg mb-2">Serving {project.location} and {project.county}</h4>
+                    <p className="text-muted-foreground text-sm max-w-xl">
+                      We've completed numerous projects in this area. Our crews understand the local building codes, 
+                      elevation challenges, and weather patterns unique to this part of Western North Carolina.
+                    </p>
+                  </div>
+                  <Link 
+                    to={`/service-areas/${project.location.split(',')[0].toLowerCase().trim().replace(/\s+/g, '-')}-nc`}
+                    className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm whitespace-nowrap"
+                  >
+                    View Local Service Page
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
                 <p className="text-muted-foreground leading-relaxed text-base md:text-lg">{project.result}</p>
               </motion.div>
             </div>
