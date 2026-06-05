@@ -143,7 +143,7 @@ const Header = () => {
             alt="Highlander Roofing & Construction"
             className="w-auto transition-all duration-500"
             animate={{ 
-              height: scrolled ? 60 : 100,
+              height: scrolled ? 60 : 90,
               scale: scrolled ? 0.9 : 1
             }}
             style={{ originX: 0, originY: 0.5 }}
@@ -222,7 +222,7 @@ const Header = () => {
                           </div>
                           <span className="text-base font-heading font-bold text-foreground">{div.label} Division</span>
                         </div>
-                        <p className="text-[12px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/60 ml-[38px]">
+                        <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/60 ml-[38px]">
                           {div.tagline}
                         </p>
                       </div>
@@ -346,7 +346,7 @@ const Header = () => {
           </a>
           <Link
             to="/consultation"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] px-8 py-4.5 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.12em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
           >
             <span className="relative z-10">Start a Project</span>
             <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />

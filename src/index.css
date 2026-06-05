@@ -340,16 +340,16 @@
      PREMIUM CARD SYSTEM
      ────────────────────────────────────── */
   .card-premium {
-    @apply bg-card border border-border rounded-none relative overflow-hidden;
+    @apply bg-card border border-border rounded-none relative overflow-hidden shadow-sm;
     transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                 box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-premium:hover {
     border-color: hsl(var(--highland-gold) / 0.25);
-    box-shadow: 0 12px 40px -10px hsl(var(--heritage-charcoal) / 0.08),
-                0 0 0 1px hsl(var(--highland-gold) / 0.06);
-    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px hsl(var(--heritage-charcoal) / 0.1),
+                0 0 0 1px hsl(var(--highland-gold) / 0.1);
+    transform: translateY(-4px);
   }
   .card-premium::after {
     content: '';

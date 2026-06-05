@@ -17,9 +17,10 @@ const TwoPillars = () => {
   return (
     <section className="bg-background py-20 md:py-32 relative overflow-hidden">
       {/* Subtle Heritage Tartan Watermark */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ 
+      <div className="absolute inset-0 pointer-events-none" style={{ 
         backgroundImage: "url('/tartan.png')",
-        backgroundSize: "400px auto"
+        backgroundSize: "400px auto",
+        opacity: "0.03"
       }} />
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200" alt="Mountain architecture" className="w-full h-full object-cover grayscale opacity-50" />
@@ -35,7 +36,7 @@ const TwoPillars = () => {
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
-            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">
+            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
               Roofing · Construction · Design Support
             </span>
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
