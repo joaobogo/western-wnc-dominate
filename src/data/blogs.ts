@@ -667,7 +667,7 @@ At Highlander, our Design & Planning team handles the permitting process from st
     excerpt: "UV, wind, and ice change the rules for material selection. Learn what to pick for homes above 3,500 feet.",
     category: "Materials",
     date: "2026-04-20",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
+    image: metalBenefitsStock,
     readTime: "6 min",
     metaTitle: "High-Elevation Building Materials Guide | Highlander",
     metaDescription: "The best materials for mountain homes at high elevation. Guide to roofing, siding, and decking choices.",
