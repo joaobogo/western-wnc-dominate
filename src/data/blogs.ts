@@ -735,7 +735,7 @@ During your free inspection, ask about financing. We'll provide a complete cost 
     excerpt: "Your vacation rental's roof is a revenue asset. Here's how to protect it and avoid costly guest disruptions.",
     category: "Maintenance",
     date: "2025-11-20",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: blueRidgeViewStock, readTime: "5 min",
     metaTitle: "Vacation Rental Roof Maintenance in WNC | Highlander Roofing",
     metaDescription: "Protect your WNC vacation rental investment with professional roof maintenance. Prevent leaks, avoid guest disruptions, maintain property value.",
     content: `In Western NC's booming vacation rental market, your roof isn't just protecting a building — it's protecting your income. A leak during peak season can mean refunds, bad reviews, and lost bookings.
