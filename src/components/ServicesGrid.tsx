@@ -281,7 +281,7 @@ const ServicesGrid = () => {
     <section className="section-padding bg-background relative overflow-hidden">
       <div className="absolute inset-0 tartan-bg opacity-30" />
 
-      <div className="container-tight relative z-10">
+      <div className="container-tight relative z-10" id="services">
         {/* Header */}
         <div className="text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade">

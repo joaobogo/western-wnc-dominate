@@ -21,7 +21,7 @@ const factors = [
 const BuiltForWNC = () => {
   return (
     <section className="section-padding bg-secondary tartan-bg relative overflow-hidden">
-      <div className="container-tight">
+      <div className="container-tight" id="mountain-built">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
           {/* Left column — editorial intro (sticky on desktop) */}
           <div className="lg:col-span-2 lg:sticky lg:top-28">

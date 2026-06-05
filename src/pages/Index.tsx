@@ -101,13 +101,13 @@ const Index = () => {
         <OurProcess />
 
         {/* 10. Proof Moment — Highest impact review */}
-        <ProofMoment variant="social" />
+        <ProofMoment variant="social" id="proof" />
 
         {/* 11. Project Concierge — Guidance for new clients */}
-        <ProjectConcierge />
+        <ProjectConcierge id="concierge" />
 
         {/* 12. Town Grid — Service area footprint */}
-        <TownGrid />
+        <TownGrid id="areas" />
 
         <SectionDivider variant="gold-fade" />
       </main>

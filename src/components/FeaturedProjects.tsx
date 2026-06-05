@@ -222,7 +222,7 @@ const FeaturedProjects = ({ location }: { location?: string }) => {
     <section className="section-padding bg-background relative overflow-hidden">
       <div className="absolute inset-0 tartan-bg opacity-10" />
 
-      <div className="container-tight relative z-10">
+      <div className="container-tight relative z-10" id="projects">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
           <div>

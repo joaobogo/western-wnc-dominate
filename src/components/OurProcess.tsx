@@ -67,7 +67,7 @@ const OurProcess = () => {
       {/* Tartan texture */}
       <div className="absolute inset-0 tartan-dark opacity-25" />
 
-      <div className="container-tight relative z-10">
+      <div className="container-tight relative z-10" id="process">
         {/* Header */}
         <div className="text-center mb-14 md:mb-20">
           <ScrollReveal variant="fade">
