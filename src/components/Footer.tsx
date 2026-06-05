@@ -252,6 +252,16 @@ const Footer = () => {
                 </div>
                 <span className="text-[11px] text-muted-foreground font-body leading-tight">Highest Rated in Franklin & Highlands</span>
               </div>
+
+              <div className="flex flex-col gap-2 group/cert">
+                <div className="h-10 w-auto flex items-center">
+                  <div className="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
+                    <Award className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">Military Friendly</span>
+                </div>
+                <span className="text-[11px] text-muted-foreground font-body leading-tight">Proudly supporting our veterans & active duty</span>
+              </div>
             </div>
           </div>
 
