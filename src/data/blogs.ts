@@ -1367,7 +1367,7 @@ By planning now, you avoid 're-work' costs later. We help you install 'sleeves' 
     excerpt: "Mountain homes often have deep porches that darken the interior. Learn how to pull light back into your living space.",
     category: "Design",
     date: "2026-05-22",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: skylightStock, readTime: "6 min",
     metaTitle: "Natural Light Layout Strategies WNC | Highlander",
     metaDescription: "How to maximize natural light in mountain homes. Layout tips for skylight placement, window orientation, and porch design.",
     content: `WNC's dense tree canopy and wide roof overhangs can make interiors feel dark. Here's how our design team solves for light.
