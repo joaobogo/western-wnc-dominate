@@ -275,7 +275,7 @@ const ReviewsPage = () => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-foreground/85 text-[15px] leading-relaxed mb-4 font-body font-medium">"{r.reviewBody}"</p>
+                  <p className="text-foreground/85 text-[15px] leading-relaxed mb-4 font-body font-bold">"{r.reviewBody}"</p>
                   <p className="text-[12px] text-primary/70 font-body font-bold mb-4 leading-snug">{r.outcome}</p>
                   <div className="flex items-center gap-2.5 pt-3 border-t border-border">
                     <div className="w-7 h-7 rounded-sm bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-[10px]">

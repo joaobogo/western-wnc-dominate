@@ -60,7 +60,7 @@ const Financing = () => {
                     <b.icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="font-heading font-semibold text-foreground mb-2">{b.title}</h3>
-                  <p className="text-muted-foreground text-sm">{b.description}</p>
+                  <p className="text-muted-foreground text-sm font-bold">{b.description}</p>
                 </div>
               ))}
             </div>
@@ -70,15 +70,15 @@ const Financing = () => {
               <ol className="space-y-4">
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
-                  <div><h4 className="font-semibold text-foreground">Request a Roof Consultation</h4><p className="text-muted-foreground text-sm">We assess your roof and provide a transparent cost estimate.</p></div>
+                  <div><h4 className="font-bold text-foreground">Request a Roof Consultation</h4><p className="text-muted-foreground text-sm font-bold">We assess your roof and provide a transparent cost estimate.</p></div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
-                  <div><h4 className="font-semibold text-foreground">Apply for Financing</h4><p className="text-muted-foreground text-sm">Quick application with fast approval. We'll walk you through the options.</p></div>
+                  <div><h4 className="font-bold text-foreground">Apply for Financing</h4><p className="text-muted-foreground text-sm font-bold">Quick application with fast approval. We'll walk you through the options.</p></div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
-                  <div><h4 className="font-semibold text-foreground">Get Your New Roof</h4><p className="text-muted-foreground text-sm">We complete the work while you enjoy manageable monthly payments.</p></div>
+                  <div><h4 className="font-bold text-foreground">Get Your New Roof</h4><p className="text-muted-foreground text-sm font-bold">We complete the work while you enjoy manageable monthly payments.</p></div>
                 </li>
               </ol>
             </div>

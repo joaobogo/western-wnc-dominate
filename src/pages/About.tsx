@@ -319,7 +319,7 @@ const About = () => {
                   roll in after every weather event, do questionable work, and disappear before the
                   first leak showed up.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed font-bold">
                   We're different. We live here. Our kids go to school here. When we put a roof on
                   your home, we drive past it every day. That accountability isn't a policy —
                   it's a way of life.
@@ -329,7 +329,7 @@ const About = () => {
                 <span className="eyebrow mb-3 block">Who We Are</span>
                 <h2 className="section-heading mb-6">Family Roots.<br /> Mountain Standards.</h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
-                <p className="text-muted-foreground leading-relaxed mb-4">
+                <p className="text-muted-foreground leading-relaxed mb-4 font-bold">
                   Highlander is a family-owned and operated company with two locations — Franklin and
                   Sylva, NC. We've completed hundreds of roofing, construction, and design projects across
                   Macon, Jackson, Swain, Haywood, and surrounding counties.

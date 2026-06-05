@@ -152,7 +152,7 @@ export const ValuesPillarGrid = ({
             <p className={`text-[12px] md:text-[13px] font-body font-bold uppercase tracking-wider mb-3 ${
               isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-accent"
             }`}>{v.tagline}</p>
-            <p className={`text-[14px] md:text-[15px] leading-relaxed font-body font-medium ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.8)]" : "text-muted-foreground"}`}>
+            <p className={`text-[14px] md:text-[15px] leading-relaxed font-body font-bold ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.8)]" : "text-muted-foreground"}`}>
               {v.statement}
             </p>
             {showObjections && (
