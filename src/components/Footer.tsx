@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock, BadgeCheck, Star } from "lucide-react";
-import veluxLogo from "@/assets/velux-certified-logo.jpg";
+import veluxLogo from "@/assets/logo-velux.png";
+import logoCertainteed from "@/assets/logo-certainteed.png";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 
@@ -211,7 +212,7 @@ const Footer = () => {
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <div className="w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain grayscale opacity-80" />
+                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain mix-blend-multiply" />
                   </div>
                   <span className="text-[13px] font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
                 </div>
@@ -228,7 +229,7 @@ const Footer = () => {
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <BadgeCheck className="w-5 h-5 text-primary" />
+                  <img src={logoCertainteed} alt="CertainTeed" className="h-6 w-auto mix-blend-multiply" />
                   <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">CertainTeed Master</span>
                 </div>
                 <span className="text-[11px] text-muted-foreground font-body leading-tight">Factory-Certified Professional Installer</span>
