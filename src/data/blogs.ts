@@ -462,8 +462,7 @@ Subtle LED lighting integrated into railings and stair treads isn't just for saf
     excerpt: "Most construction delays happen because of poor planning, not poor building. Discover the Highlander pre-construction process.",
     category: "Construction",
     date: "2026-02-18",
-
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: planningDeskStock, readTime: "5 min",
     metaTitle: "Importance of Pre-Construction Planning | Highlander",
     metaDescription: "Why detailed design and planning is critical for mountain construction. Avoid budget creep and timeline delays with our disciplined approach.",
     content: `At Highlander, we say: 'Measure twice, plan once, build forever.' The Design & Planning branch is our commitment to eliminating the 'surprises' that give the construction industry a bad name.
