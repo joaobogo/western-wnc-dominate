@@ -41,7 +41,7 @@ const categoryAccent: Record<string, { bg: string; text: string; border: string 
   "Homeowner Guidance": { bg: "bg-accent/8", text: "text-accent-foreground", border: "border-accent/15" },
 };
 
-const BlogInsights = () => {
+export const BlogInsights = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const enriched = blogPosts.map((post) => ({

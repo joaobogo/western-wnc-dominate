@@ -39,9 +39,9 @@ const categoryConfig: Record<string, { icon: typeof BookOpen; label: string; des
 const categories = ["All", ...Array.from(new Set(blogPosts.map((p) => p.category)))];
 
 const featuredSlugs = [
+  "how-much-does-roof-cost-highlands-nc",
   "metal-vs-shingle-roof-western-nc",
   "storm-damage-checklist-western-nc",
-  "how-much-does-roof-cost-highlands-nc",
   "mountain-home-addition-planning",
   "mountain-porch-deck-design-wnc",
 ];
