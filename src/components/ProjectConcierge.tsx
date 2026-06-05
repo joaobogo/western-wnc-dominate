@@ -35,9 +35,9 @@ const pathways = [
   },
 ];
 
-const ProjectConcierge = () => {
+const ProjectConcierge = ({ id }: { id?: string }) => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" id={id}>
       {/* Dark premium background */}
       <div className="section-padding section-dark relative">
         <div className="absolute inset-0 tartan-dark opacity-30" />
