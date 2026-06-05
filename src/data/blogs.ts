@@ -1294,7 +1294,7 @@ These rooms often project out from the main home. We ensure the structural plann
     excerpt: "Learn the step-by-step process of turning your ideas into a buildable construction scope of work.",
     category: "Construction",
     date: "2026-05-05",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: planningDeskStock, readTime: "6 min",
     metaTitle: "Construction Scope Development Guide | Highlander",
     metaDescription: "How to define your home improvement scope. Avoid budget creep with documented materials, layouts, and timelines.",
     content: `A 'vague scope' is the most dangerous part of any construction project. At Highlander, our Design & Planning branch is dedicated to specificity.
