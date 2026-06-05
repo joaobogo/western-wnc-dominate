@@ -867,7 +867,7 @@ Contact us for a customized maintenance proposal based on your property type, ro
     excerpt: "Coordinating separate roofing and construction contractors creates problems. Here's why a single team delivers better results.",
     category: "Construction",
     date: "2026-03-01",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: planningDeskStock, readTime: "5 min",
     metaTitle: "One Company for Roofing & Construction | Highlander",
     metaDescription: "Why hiring one company for roofing, construction, and design saves time, money, and headaches. Highlander Roofing & Construction in WNC.",
     content: `When a project involves both roofing and structural work — additions, exterior renovations, or storm damage repairs — homeowners often hire separate contractors. That almost always creates problems.
