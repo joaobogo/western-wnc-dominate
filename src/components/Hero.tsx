@@ -244,7 +244,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[19px] md:text-[22px] text-primary-foreground/90 max-w-xl mb-12 md:mb-16 leading-[1.7] font-body font-medium"
+              className="text-[17px] md:text-[20px] text-primary-foreground/90 max-w-xl mb-12 md:mb-16 leading-[1.7] font-body font-medium"
             >
               The premium standard for Western North Carolina homes. From storm-grade roofing to custom mountain additions, we combine family-business values with master-class craftsmanship. 
               <span className="block mt-5 text-[hsl(var(--highland-gold))] font-bold text-lg md:text-xl">Licensed, Insured, and GAF Master Elite® Accredited.</span>
