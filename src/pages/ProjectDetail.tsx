@@ -384,11 +384,6 @@ const ProjectDetailPage = () => {
             </div>
           </div>
         </section>
-                <p className="text-muted-foreground leading-relaxed text-base md:text-lg">{project.result}</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
         {/* ── GALLERY ── */}
         <section className="section-padding bg-background">
