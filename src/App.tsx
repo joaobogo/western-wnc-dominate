@@ -82,8 +82,8 @@ const App = () => (
           <Route path="/roofing/storm-damage" element={<StormDamage />} />
           <Route path="/roofing/commercial" element={<CommercialRoofing />} />
           {/* Redirects for retired roofing routes */}
-          <Route path="/roofing/residential" element={<Navigate to="/roofing" replace />} />
-          <Route path="/roofing/specialty" element={<Navigate to="/roofing" replace />} />
+          <Route path="/roofing/residential" element={<ResidentialRoofing />} />
+          <Route path="/roofing/specialty" element={<SpecialtyRoofing />} />
           {/* Tier 1 premium service pages */}
           <Route path="/roofing/metal" element={<MetalRoofing />} />
           <Route path="/roofing/brava-synthetic" element={<SyntheticRoofing />} />
