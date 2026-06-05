@@ -166,7 +166,7 @@ const About = () => {
                   <span>Meet Our People</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <Link to="/giving-back" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
+                <Link to="/giving-back" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-bold text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
                   Community Impact <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -230,7 +230,7 @@ const About = () => {
                   <div className="flex-1">
                     <h3 className="text-2xl font-heading font-bold mb-1">{person.name}</h3>
                     <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[14px] mb-4 uppercase tracking-wider">{person.role}</p>
-                    <p className="text-muted-foreground text-[16px] md:text-[18px] leading-relaxed mb-6 font-body font-medium">{person.bio}</p>
+                    <p className="text-muted-foreground text-[16px] md:text-[18px] leading-relaxed mb-6 font-body font-bold">{person.bio}</p>
                     <div className="flex flex-wrap gap-2">
                       {person.credentials.map(cred => (
                         <span key={cred} className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-wider px-3 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-none">
@@ -275,7 +275,7 @@ const About = () => {
                   <div className="p-6">
                     <h3 className="text-lg font-heading font-bold mb-1">{person.name}</h3>
                     <p className="text-primary font-heading font-bold text-[13px] uppercase tracking-[0.15em] mb-4">{person.role}</p>
-                    <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed font-body mb-4 font-medium">{person.bio}</p>
+                    <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed font-body mb-4 font-bold">{person.bio}</p>
                     <div className="pt-4 border-t border-border flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
                       <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground/90">{person.specialty}</span>

@@ -168,7 +168,7 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 inline-flex items-center gap-1 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+                className={`relative text-[14px] font-bold transition-all duration-300 inline-flex items-center gap-1 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
                   isActive(div.href)
                     ? "text-heritage-charcoal bg-black/5"
                     : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
@@ -285,7 +285,8 @@ const Header = () => {
           {/* Design Link */}
           <Link 
             to="/layouts-planning" 
-            className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+            className={`relative text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+
               isActive('/layouts-planning')
                 ? "text-heritage-charcoal bg-black/5"
                 : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
@@ -309,7 +310,7 @@ const Header = () => {
             <Link
               key={link.label}
               to={link.href}
-              className={`relative text-[13px] xl:text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
+              className={`relative text-[14px] font-bold transition-all duration-300 px-2.5 xl:px-3 py-3 rounded-sm font-body whitespace-nowrap ${
                 isActive(link.href)
                   ? "text-heritage-charcoal bg-black/5"
                   : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
