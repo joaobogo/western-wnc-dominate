@@ -2,15 +2,22 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, Phone, MapPin, Mountain, 
-  Shield, Star, Hammer, Home, Wind, CloudLightning, Compass
+  Shield, Star, Hammer, Home, Wind, CloudLightning, Compass,
+  BookOpen
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import TartanBackground from "@/components/TartanBackground";
+import SectionDivider from "@/components/SectionDivider";
+import { ScrollReveal } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
 import { getCountyBySlug } from "@/data/counties";
 import { towns } from "@/data/towns";
+import { getRelevantBlogsForTown } from "@/data/content-support";
 import logo from "@/assets/logo.png";
+
 
 const CountyPage = () => {
   const { slug } = useParams<{ slug: string }>();
