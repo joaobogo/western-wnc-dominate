@@ -434,7 +434,7 @@ Adding a suite or an extension shouldn't create a 'maze.' Our design guidance fo
     excerpt: "The best outdoor spaces in WNC prioritize three things: view, weather protection, and material longevity. Explore what's working now.",
     category: "Construction",
     date: "2026-02-25",
-    image: "https://images.unsplash.com/photo-1615873968403-89e068629275?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: outdoorLivingStock, readTime: "6 min",
     metaTitle: "WNC Outdoor Living Trends 2026 | Highlander Construction",
     metaDescription: "Design the perfect mountain outdoor space. Trends in decks, screened porches, and pergolas for Western NC homes.",
 
