@@ -1513,7 +1513,7 @@ Most change orders come from a lack of clarity in the initial scope. By document
     excerpt: "Learn the structural and layout steps needed to turn a seasonal space into a heated living area.",
     category: "Construction",
     date: "2026-06-14",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "8 min",
+    image: outdoorLivingStock, readTime: "8 min",
     metaTitle: "Sunroom Conversion Case Study WNC | Highlander",
     metaDescription: "How to convert a screened porch into a sunroom. Structural, insulation, and glass considerations for WNC homes.",
     content: `Screened porches are WNC staples, but many homeowners want more use out of them. Converting to a sunroom adds conditioned square footage to your home.
