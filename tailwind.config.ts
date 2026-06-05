@@ -19,9 +19,9 @@ export default {
       },
       fontSize: {
         /* Display scale — hero & statement moments */
-        'display-xl': ['clamp(3.5rem, 8vw + 1rem, 7rem)', { lineHeight: '1.02', letterSpacing: '-0.035em', fontWeight: '700' }],
+        'display-xl': ['clamp(3rem, 7vw + 1rem, 6rem)', { lineHeight: '1.02', letterSpacing: '-0.03em', fontWeight: '700' }],
         'display-lg': ['clamp(3rem, 7vw + 0.5rem, 5rem)', { lineHeight: '1.04', letterSpacing: '-0.03em', fontWeight: '700' }],
-        'display': ['clamp(2.5rem, 6vw + 0.5rem, 4rem)', { lineHeight: '1.06', letterSpacing: '-0.025em', fontWeight: '700' }],
+        'display': ['clamp(2.25rem, 5vw + 0.5rem, 3.75rem)', { lineHeight: '1.06', letterSpacing: '-0.02em', fontWeight: '700' }],
         /* Section headings */
         'heading-xl': ['clamp(2.25rem, 4.5vw + 0.25rem, 3.5rem)', { lineHeight: '1.08', letterSpacing: '-0.02em', fontWeight: '700' }],
         'heading-lg': ['clamp(2rem, 4vw + 0.25rem, 3rem)', { lineHeight: '1.1', letterSpacing: '-0.015em', fontWeight: '700' }],
