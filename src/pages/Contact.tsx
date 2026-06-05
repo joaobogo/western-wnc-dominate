@@ -128,7 +128,7 @@ export default function Contact() {
         })}
       />
       <Header />
-      <main>
+      <main className="md:pt-0">
         {/* ── HERO — Compact utility header (unique to Contact) ── */}
         <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />

@@ -132,7 +132,7 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_25px_-10px_rgba(0,0,0,0.12)] border-b border-black/[0.04]"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_25px_-10px_rgba(0,0,0,0.12)] border-b border-black/[0.04] md:border-b-0"
     >
       {/* ─── Main nav bar ─── */}
       <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-0.5" : "py-1 md:py-1.5"}`}>

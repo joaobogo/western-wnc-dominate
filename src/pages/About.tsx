@@ -150,7 +150,17 @@ const About = () => {
               {/* Understated CTA — warm solid button, no gradient (About-only) */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.5 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button 
-                  onClick={() => document.getElementById('team-section')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => {
+                    const el = document.getElementById('team-section');
+                    if (el) {
+                      const offset = 80;
+                      const bodyRect = document.body.getBoundingClientRect().top;
+                      const elementRect = el.getBoundingClientRect().top;
+                      const elementPosition = elementRect - bodyRect;
+                      const offsetPosition = elementPosition - offset;
+                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                  }}
                   className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-[16px] md:text-[18px] px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-lg"
                 >
                   <span>Meet Our People</span>

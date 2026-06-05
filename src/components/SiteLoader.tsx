@@ -20,7 +20,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-white"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >

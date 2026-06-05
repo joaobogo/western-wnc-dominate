@@ -249,7 +249,7 @@ const RoofingDivision = () => {
         ]}
       />
       <Header />
-      <main>
+      <main className="md:pt-0">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
