@@ -1489,7 +1489,7 @@ Deep charcols and 'Iron Ore' tones are popular for exteriors as they help homes 
     excerpt: "Spending $2,000 on planning can save $20,000 in mistakes. Learn the ROI of the Design & Planning phase.",
     category: "Cost",
     date: "2026-06-10",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: financeCalcStock, readTime: "6 min",
     metaTitle: "Pre-Construction Planning ROI | Highlander",
     metaDescription: "How professional project planning reduces construction costs. Avoid change orders and material waste with better pre-build logic.",
     content: `At Highlander, we treat 'Design & Planning' as an investment, not an expense. Here is how that investment pays for itself.
