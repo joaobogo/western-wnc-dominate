@@ -115,7 +115,7 @@ const LayoutsPlanning = () => {
                 transition={{ duration: 0.9, delay: 0.2, ease: HIGHLAND_EASE }}
                 className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl leading-relaxed font-body font-light"
               >
-                Highlander's Design & Planning branch provides the technical bridge between a vision and a buildable reality. We solve for flow, terrain, and structural logic before the first board is cut.
+                The foundational step for every successful build. Our Design & Planning branch provides the technical bridge between a vision and a buildable reality—mapping every detail before construction begins.
               </motion.p>
 
               <motion.div 
