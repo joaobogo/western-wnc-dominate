@@ -775,7 +775,7 @@ A planned maintenance visit prevents an emergency repair — and the lost rental
     excerpt: "Mountain winters punish unprepared roofs. Here's how to winterize your Highlands home before the first freeze.",
     category: "Maintenance",
     date: "2025-11-12",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: blueRidgeViewStock, readTime: "5 min",
     town: "Highlands",
     metaTitle: "Winter Roof Preparation for Highlands, NC | Highlander Roofing",
     metaDescription: "Prepare your Highlands, NC roof for winter. Expert winterization tips for mountain homes from Highlander Roofing.",
