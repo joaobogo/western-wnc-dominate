@@ -1391,7 +1391,7 @@ In new additions, we balance thermal efficiency with light gain. Using premium W
     excerpt: "The rules change at the county line. A guide to building codes and permit timelines in Franklin, Highlands, and Sylva.",
     category: "Local",
     date: "2026-05-25",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: blueRidgeViewStock, readTime: "7 min",
     town: "Franklin",
     metaTitle: "Macon and Jackson County Building Permits | Highlander",
     metaDescription: "Navigating building permits in Macon and Jackson County, NC. Code requirements for Franklin, Highlands, and Sylva additions.",
