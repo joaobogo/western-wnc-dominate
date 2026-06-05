@@ -400,6 +400,136 @@ export const serviceTownContent: ServiceTownEntry[] = [
       { q: "Why should I choose impact-resistant shingles in Hendersonville?", a: "Hendersonville is a hail-prone corridor. Class 4 shingles are designed to survive these events and often provide insurance discounts." },
     ],
   }),
+  // ─────────── WAYNESVILLE ───────────
+  E({
+    townSlug: "waynesville-nc",
+    serviceSlug: "roof-replacement",
+    serviceLabel: "Roof Replacement",
+    h1: "Roof Replacement in Waynesville, NC",
+    intro:
+      "Waynesville's historic districts and hillside developments require a contractor who understands the balance between architectural preservation and mountain performance.",
+    localContext:
+      "In Waynesville, we focus on attic ventilation correction and high-temp underlayment. The town's elevation and winter snow cycles mean that standard roofing installs often fail prematurely due to ice damming.",
+    whoItsFor:
+      "Homeowners in historic Main Street areas, hillside residents in Haywood County, and families looking for a high-performance roof that respects their home's character.",
+    proofNote:
+      "Documented successful projects across Haywood County, featuring historic-district material matching and modern ventilation upgrades.",
+    metaTitle: "Roof Replacement in Waynesville, NC | Highlander Roofing",
+    metaDescription:
+      "Premium roof replacement for Waynesville homes. Specialized in historic district care and mountain-grade performance. Licensed & Insured.",
+    faqs: [
+      { q: "How do you handle historic requirements in Waynesville?", a: "We coordinate with local guidelines to select shingles and details that maintain the home's historic integrity while providing modern protection." },
+      { q: "Does Waynesville's elevation affect roof longevity?", a: "Yes. Higher UV and heavier snow loading mean materials must be specified for mountain conditions, not just valley averages." },
+    ],
+  }),
+  E({
+    townSlug: "waynesville-nc",
+    serviceSlug: "additions",
+    serviceLabel: "Home Additions",
+    h1: "Home Additions in Waynesville, NC",
+    intro:
+      "Expanding a Waynesville residence requires structural precision and a deep understanding of Haywood County's mountain topography.",
+    localContext:
+      "We specialize in 'seamless' additions for Waynesville homes — ensuring that new master suites or kitchen expansions match the existing architectural DNA and foundation requirements of the site.",
+    whoItsFor:
+      "Families needing more space, owners of historic properties looking to modernize, and anyone adding specialized rooms like home offices or guest wings.",
+    proofNote:
+      "Licensed GC with local experience in structural footprints and steep-slope foundations throughout Haywood County.",
+    metaTitle: "Home Additions in Waynesville, NC | Highlander Construction",
+    metaDescription:
+      "Custom home additions and structural modernization in Waynesville, NC. Design-build expertise for mountain homes. Licensed & Insured.",
+    faqs: [
+      { q: "Can you match the siding on an older Waynesville home?", a: "Yes. We source high-quality matches for historic cedar, stone, and traditional lap siding common in Waynesville." },
+      { q: "Do you manage the full Haywood County permit process?", a: "Yes. We handle all architectural coordination and county inspections." },
+    ],
+  }),
+  // ─────────── BREVARD ───────────
+  E({
+    townSlug: "brevard-nc",
+    serviceSlug: "roof-replacement",
+    serviceLabel: "Roof Replacement",
+    h1: "Roof Replacement in Brevard, NC",
+    intro:
+      "In the 'Land of Waterfalls,' a roof replacement is a waterproofing project first. We design systems for Transylvania County's record-setting rainfall.",
+    localContext:
+      "Brevard roofs face 90+ inches of rain annually. We specify double-underlayment at eaves and valleys and oversized drainage systems to ensure these homes stay dry through tropical deluges.",
+    whoItsFor:
+      "Homeowners near Pisgah Forest, Brevard families, and residents of the surrounding rain-belt plateau needing the region's best moisture protection.",
+    proofNote:
+      "Owner-led crews with specialized experience in high-moisture climate engineering and oversized gutter integration.",
+    metaTitle: "Roof Replacement in Brevard, NC | Highlander Roofing",
+    metaDescription:
+      "Moisture-ready roof replacement in Brevard, NC. Engineered for Transylvania County's extreme rainfall. Licensed contractor, owner-led.",
+    faqs: [
+      { q: "How do you handle Brevard's extreme rainfall?", a: "We use high-performance ice-and-water shield coverage and 6-inch gutter systems as the standard for Brevard projects." },
+      { q: "Is standing seam metal better for Brevard?", a: "Metal sheds high volumes of water exceptionally well, making it a top-tier choice for Transylvania County homes." },
+    ],
+  }),
+  E({
+    townSlug: "brevard-nc",
+    serviceSlug: "outdoor-living",
+    serviceLabel: "Outdoor Living",
+    h1: "Outdoor Living & Decks in Brevard, NC",
+    intro:
+      "Maximize your connection to Pisgah Forest with an engineered outdoor space designed for Brevard's active, outdoor-centric lifestyle.",
+    localContext:
+      "We specialize in 'trail-ready' mudroom additions and multi-level deck expansions that handle Brevard's moisture while providing a clean transition to the outdoors.",
+    whoItsFor:
+      "Outdoor enthusiasts, mountain bikers, and homeowners who want to enjoy the forest views without the maintenance burden of natural wood.",
+    proofNote:
+      "From composite decks to screened mountain rooms, we build for durability in the wettest county in the state.",
+    metaTitle: "Outdoor Living & Decks in Brevard, NC | Highlander Construction",
+    metaDescription:
+      "Custom decks and outdoor living spaces in Brevard, NC. Engineered for moisture resistance and mountain views. Licensed & Insured.",
+    faqs: [
+      { q: "What decking material is best for Brevard's humidity?", a: "We recommend premium capped composites that won't rot, warp, or grow algae in high-moisture environments." },
+      { q: "Can you build a screened porch that handles heavy rain?", a: "Yes. Our designs include integrated drainage and structural overhangs to keep your mountain room dry." },
+    ],
+  }),
+  // ─────────── BRYSON CITY ───────────
+  E({
+    townSlug: "bryson-city-nc",
+    serviceSlug: "metal-roofing",
+    serviceLabel: "Metal Roofing",
+    h1: "Metal Roofing in Bryson City, NC",
+    intro:
+      "Standing seam metal is the gold standard for Bryson City cabins and vacation rentals — durable, debris-shedding, and designed to last 50+ years.",
+    localContext:
+      "Swain County's heavy tree cover and high humidity make metal the best choice for shedding leaves and resisting the biological growth that shortens shingle life.",
+    whoItsFor:
+      "Vacation rental owners, cabin owners near the Smokies, and anyone looking for a low-maintenance 'forever' roof system.",
+    proofNote:
+      "Owner-led crews with specialized expertise in metal-system design and fast-turnaround scheduling for rental properties.",
+    metaTitle: "Metal Roofing in Bryson City, NC | Highlander Roofing",
+    metaDescription:
+      "Premium metal roofing in Bryson City, NC. Ideal for cabins and vacation rentals. Sheds debris and moisture. Licensed & Insured.",
+    faqs: [
+      { q: "Is metal better for wooded lots in Bryson City?", a: "Yes. Metal sheds leaves and needles much better than shingles, preventing the debris buildup that leads to rot." },
+      { q: "How fast can you reroof a rental property?", a: "We coordinate with guest turnover windows to complete projects with minimal impact on your rental income." },
+    ],
+  }),
+  // ─────────── MURPHY ───────────
+  E({
+    townSlug: "murphy-nc",
+    serviceSlug: "roof-replacement",
+    serviceLabel: "Roof Replacement",
+    h1: "Roof Replacement in Murphy, NC",
+    intro:
+      "Serving the far west with reliable, owner-led roof replacement. We provide Murphy families with the same standard of quality we bring to Asheville and Highlands.",
+    localContext:
+      "In Murphy and Cherokee County, we focus on durability and local accountability. Our crews are staged to provide responsive service and honor long-term warranties in the westernmost corner of NC.",
+    whoItsFor:
+      "Full-time residents, retirees building custom retreats, and vacation home owners needing a dependable local contractor.",
+    proofNote:
+      "Documented successful projects across Cherokee County, featuring high-quality shingle and metal systems.",
+    metaTitle: "Roof Replacement in Murphy, NC | Highlander Roofing",
+    metaDescription:
+      "Reliable roof replacement in Murphy, NC. Locally based crews, durable materials, and owner-led quality. Licensed & Insured.",
+    faqs: [
+      { q: "Do you have local crews in Murphy?", a: "Yes. We maintain a local crew presence to ensure responsive service and local accountability for our Murphy clients." },
+      { q: "What's the best roof for a Murphy mountain cabin?", a: "Dimensional shingles or standing seam metal both perform exceptionally well in Murphy's climate." },
+    ],
+  }),
 ];
 
 
