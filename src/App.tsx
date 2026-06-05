@@ -34,6 +34,8 @@ const Careers = lazy(() => import("./pages/Careers"));
 const RequestInspection = lazy(() => import("./pages/RequestInspection"));
 const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
+const ResidentialRoofing = lazy(() => import("./pages/ResidentialRoofing"));
+const SpecialtyRoofing = lazy(() => import("./pages/SpecialtyRoofing"));
 const RoofReplacement = lazy(() => import("./pages/RoofReplacement"));
 const RoofRepair = lazy(() => import("./pages/RoofRepair"));
 const StormDamage = lazy(() => import("./pages/StormDamage"));
@@ -82,8 +84,8 @@ const App = () => (
           <Route path="/roofing/storm-damage" element={<StormDamage />} />
           <Route path="/roofing/commercial" element={<CommercialRoofing />} />
           {/* Redirects for retired roofing routes */}
-          <Route path="/roofing/residential" element={<Navigate to="/roofing" replace />} />
-          <Route path="/roofing/specialty" element={<Navigate to="/roofing" replace />} />
+          <Route path="/roofing/residential" element={<ResidentialRoofing />} />
+          <Route path="/roofing/specialty" element={<SpecialtyRoofing />} />
           {/* Tier 1 premium service pages */}
           <Route path="/roofing/metal" element={<MetalRoofing />} />
           <Route path="/roofing/brava-synthetic" element={<SyntheticRoofing />} />

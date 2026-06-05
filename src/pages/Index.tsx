@@ -6,7 +6,6 @@ import TrustStrip from "@/components/TrustStrip";
 import TartanBackground from "@/components/TartanBackground";
 
 import ThreeDivisionPathway from "@/components/DualPathway";
-import TwoPillars from "@/components/TwoPillars";
 
 import FeaturedProjects from "@/components/FeaturedProjects";
 import ServicesGrid from "@/components/ServicesGrid";
@@ -72,8 +71,8 @@ const Index = () => {
           <SectionDivider variant="diamond" />
         </div>
 
-        {/* Two Pillars — Roofing | Construction */}
-        <TwoPillars />
+        {/* Three Division Pathway — Roofing | Construction | Design */}
+        <ThreeDivisionPathway />
 
         {/* 4. Inspection Form — Fast lead capture */}
         <InspectionForm />

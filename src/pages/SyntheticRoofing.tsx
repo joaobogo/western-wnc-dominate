@@ -63,7 +63,7 @@ const SyntheticRoofing = () => {
                 The look of cedar or natural slate, without the weight, the splitting, or the maintenance cycle. Specified and installed as a complete system across Western NC's premium homes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/start-project" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                   Start Your Brava Project <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a href="tel:8283979211" className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors">

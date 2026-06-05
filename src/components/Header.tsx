@@ -16,13 +16,13 @@ interface DropdownItem {
 }
 
 const roofingItems: DropdownItem[] = [
+  { label: "Residential Roofing", href: "/roofing/residential", desc: "Premium mountain home systems" },
   { label: "Roof Replacement", href: "/roofing/roof-replacement", desc: "Full tear-off and reinstall" },
   { label: "Roof Repair", href: "/roofing/roof-repair", desc: "Targeted damage restoration" },
   { label: "Metal Roofing", href: "/roofing/metal", desc: "Standing seam built for the mountains" },
   { label: "Brava / Synthetic", href: "/roofing/brava-synthetic", desc: "Premium composite slate & shake" },
-  { label: "Skylights (VELUX)", href: "/roofing/skylights", desc: "Certified VELUX installer" },
+  { label: "Specialty Roofing", href: "/roofing/specialty", desc: "Cedar, copper & custom work" },
   { label: "Storm Damage", href: "/roofing/storm-damage", desc: "Insurance claims & emergency work" },
-  { label: "Commercial Roofing", href: "/roofing/commercial", desc: "Flat, metal & TPO systems" },
 ];
 
 
@@ -168,7 +168,7 @@ const Header = () => {
             >
               <Link
                 to={div.href}
-                className={`relative text-[16px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-3 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+                className={`relative text-[15px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
                   isActive(div.href)
                     ? "text-heritage-charcoal bg-black/5"
                     : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
@@ -285,7 +285,7 @@ const Header = () => {
           {/* Design Link */}
           <Link 
             to="/layouts-planning" 
-            className={`relative text-[16px] font-bold transition-all duration-300 px-3 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+            className={`relative text-[15px] font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
 
               isActive('/layouts-planning')
                 ? "text-heritage-charcoal bg-black/5"
@@ -310,7 +310,7 @@ const Header = () => {
             <Link
               key={link.label}
               to={link.href}
-              className={`relative text-[16px] font-bold transition-all duration-300 px-3 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+              className={`relative text-[15px] font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
                 isActive(link.href)
                   ? "text-heritage-charcoal bg-black/5"
                   : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"

@@ -93,7 +93,9 @@ export const initPixels = () => {
 
   const gaId = import.meta.env.VITE_GA_ID;
   const fbId = import.meta.env.VITE_FB_PIXEL_ID;
+  const ttId = "D8GTVURC77UDLID67QSG"; // TikTok Pixel ID from user
 
+  // 1. Google Analytics
   if (gaId) {
     const script1 = document.createElement("script");
     script1.async = true;
@@ -110,6 +112,7 @@ export const initPixels = () => {
     document.head.appendChild(script2);
   }
 
+  // 2. Meta Pixel
   if (fbId) {
     const script = document.createElement("script");
     script.innerHTML = `
@@ -123,6 +126,32 @@ export const initPixels = () => {
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '${fbId}');
       fbq('track', 'PageView');
+    `;
+    document.head.appendChild(script);
+  }
+
+  // 3. TikTok Pixel
+  if (ttId) {
+    const script = document.createElement("script");
+    script.innerHTML = `
+      !function (w, d, t) {
+        w.ttq = w.ttq || [];
+        w.ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
+        w.ttq.setAndLog = function (t, e) {
+          t.set = e;
+        };
+        w.ttq.load = function (e, n) {
+          var r = "https://analytics.tiktok.com/i18n/pixel/events.js",
+            o = n && n.partner;
+          ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+          n = document.createElement("script");
+          n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t;
+          e = document.getElementsByTagName("script")[0];
+          e.parentNode.insertBefore(n, e)
+        };
+        ttq.load('${ttId}');
+        ttq.page();
+      }(window, document, 'ttq');
     `;
     document.head.appendChild(script);
   }
