@@ -201,7 +201,7 @@ Every roof is different. We'll inspect your home and recommend the material that
     excerpt: "Step-by-step guide to navigating the insurance claim process for storm-damaged roofs in NC.",
     category: "Insurance",
     date: "2026-01-20",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "7 min",
+    image: financeCalcStock, readTime: "7 min",
     metaTitle: "Roof Insurance Claim Guide for NC | Highlander Roofing",
     metaDescription: "How to file a roof damage insurance claim in North Carolina. Step-by-step process, documentation tips, and how a roofer can help maximize your claim.",
     content: `Filing a roof damage insurance claim in North Carolina doesn't have to be complicated — but mistakes can cost you thousands. Here's how to do it right.
