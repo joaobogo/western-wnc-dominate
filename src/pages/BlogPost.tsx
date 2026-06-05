@@ -15,7 +15,7 @@ import { getBlogBySlug, blogPosts } from "@/data/blogs";
 /* ─── Author data ─── */
 const authors: Record<string, { name: string; role: string; bio: string }> = {
   default: {
-    name: "Highlander Team",
+    name: "Highlander Editorial Team",
     role: "Highlander Roofing & Construction",
     bio: "Expert roofing and construction guidance from the team that builds in Western North Carolina's mountains every day.",
   },
