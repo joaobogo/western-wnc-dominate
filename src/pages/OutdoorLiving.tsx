@@ -15,9 +15,9 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
-const heroImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000";
-const porchContextImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
-const timberFrameImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
+const heroImg = "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&q=80&w=2000";
+const porchContextImg = "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=1200";
+const timberFrameImg = "https://images.unsplash.com/photo-1590069230002-70cc6a97da21?auto=format&fit=crop&q=80&w=1200";
 const terrainSlopeImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
 
 import proj1 from "@/assets/gallery/cedar-001.jpg";

@@ -215,7 +215,7 @@ const Footer = () => {
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <div className="w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain mix-blend-multiply" />
+                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain" />
                   </div>
                   <span className="text-[13px] font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
                 </div>
@@ -224,7 +224,7 @@ const Footer = () => {
               
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <img src={badgeGafMasterElite} alt="GAF Master Elite" className="h-8 w-auto mix-blend-multiply" />
+                  <img src={badgeGafMasterElite} alt="GAF Master Elite" className="h-8 w-auto" />
                   <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">Master Elite</span>
                 </div>
                 <span className="text-[11px] text-muted-foreground font-body leading-tight">Top 2% of Roofers Nationally · GAF Verified</span>
@@ -232,7 +232,7 @@ const Footer = () => {
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <img src={badgeHaag} alt="HAAG Certified" className="h-8 w-auto mix-blend-multiply" />
+                  <img src={badgeHaag} alt="HAAG Certified" className="h-8 w-auto" />
                   <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">HAAG Certified</span>
                 </div>
                 <span className="text-[11px] text-muted-foreground font-body leading-tight">Expert Storm Damage Assessment</span>
@@ -240,7 +240,7 @@ const Footer = () => {
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <img src={logoCertainteed} alt="CertainTeed" className="h-6 w-auto mix-blend-multiply" />
+                  <img src={logoCertainteed} alt="CertainTeed" className="h-6 w-auto" />
                   <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">CertainTeed Master</span>
                 </div>
                 <span className="text-[11px] text-muted-foreground font-body leading-tight">Factory-Certified Professional Installer</span>
