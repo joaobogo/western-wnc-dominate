@@ -1270,7 +1270,7 @@ Floor plan modernization isn't just about moving walls; it's about adding glass.
     excerpt: "Discover the most popular room addition type for Highlands and Cashiers homeowners in 2026.",
     category: "Construction",
     date: "2026-04-25",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "5 min",
+    image: outdoorLivingStock, readTime: "5 min",
     metaTitle: "Mountain Room Addition Trends 2026 | Highlander",
     metaDescription: "Why 'mountain rooms' are the top addition choice in Highlands and Cashiers. Layout, heating, and view optimization tips.",
     content: `The 'Mountain Room' is a uniquely WNC architectural trend. It's a space that bridges the gap between an interior sunroom and an exterior porch.
