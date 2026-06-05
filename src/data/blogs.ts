@@ -1561,7 +1561,7 @@ When planning new patios or walkways, we favor layouts that allow water to soak 
     excerpt: "You bought your WNC home for the view. Learn how to plan additions that enhance, not block, your mountain horizon.",
     category: "Design",
     date: "2026-06-22",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000", readTime: "6 min",
+    image: blueRidgeViewStock, readTime: "6 min",
     metaTitle: "Mountain View Layout Strategies | Highlander",
     metaDescription: "How to plan home additions that maximize mountain views. Window placement, room orientation, and sightline planning.",
     content: `A poorly planned addition can 'kill' the view that made you fall in love with your home. We use sightline analysis to protect your horizon.
