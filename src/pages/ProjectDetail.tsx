@@ -350,56 +350,57 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-              {/* Related Knowledge Hub Links */}
-              <div className="mt-20 pt-12 border-t border-border text-left">
-                <div className="flex items-center justify-between mb-8">
-                  <div>
-                    <span className="eyebrow mb-2 block text-primary">Mountain Guidance</span>
-                    <h3 className="text-2xl font-heading font-bold text-foreground">Related Knowledge Hub</h3>
-                  </div>
-                  <Link to="/blog" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
-                    Knowledge Hub <ArrowRight className="w-4 h-4" />
-                  </Link>
+        {/* Related Knowledge Hub Links */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <div className="mt-20 pt-12 border-t border-border text-left">
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <span className="eyebrow mb-2 block text-primary">Mountain Guidance</span>
+                  <h3 className="text-2xl font-heading font-bold text-foreground">Related Knowledge Hub</h3>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {blogPosts
-                    .filter(b => b.category.toLowerCase().includes(project.type.toLowerCase()) || 
-                               (project.location.includes(b.town || "") && b.town !== undefined) ||
-                               b.category === (project.category === "roofing" ? "Materials" : "Construction"))
-                    .slice(0, 3)
-                    .map(post => (
-                      <Link 
-                        key={post.slug} 
-                        to={`/blog/${post.slug}`}
-                        className="group block p-6 bg-secondary/30 border border-border hover:border-primary/20 transition-all"
-                      >
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-3 block">{post.category}</span>
-                        <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3">{post.title}</h4>
-                        <span className="text-xs text-muted-foreground flex items-center gap-1">
-                          Read Guidance <ArrowRight className="w-3 h-3" />
-                        </span>
-                      </Link>
-                    ))}
-                </div>
+                <Link to="/blog" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
+                  Knowledge Hub <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {blogPosts
+                  .filter(b => b.category.toLowerCase().includes(project.type.toLowerCase()) || 
+                             (project.location.includes(b.town || "") && b.town !== undefined) ||
+                             b.category === (project.category === "roofing" ? "Materials" : "Construction"))
+                  .slice(0, 3)
+                  .map(post => (
+                    <Link 
+                      key={post.slug} 
+                      to={`/blog/${post.slug}`}
+                      className="group block p-6 bg-secondary/30 border border-border hover:border-primary/20 transition-all"
+                    >
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-3 block">{post.category}</span>
+                      <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3">{post.title}</h4>
+                      <span className="text-xs text-muted-foreground flex items-center gap-1">
+                        Read Guidance <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </Link>
+                  ))}
+              </div>
+            </div>
 
-              {/* Local Area Context */}
-              <div className="mt-16 p-8 bg-secondary/50 border border-border text-left">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  <div>
-                    <h4 className="font-heading font-bold text-foreground text-lg mb-2">Serving {project.location} and {project.county}</h4>
-                    <p className="text-muted-foreground text-sm max-w-xl">
-                      We've completed numerous projects in this area. Our crews understand the local building codes, 
-                      elevation challenges, and weather patterns unique to this part of Western North Carolina.
-                    </p>
-                  </div>
-                  <Link 
-                    to={`/service-areas/${project.location.split(',')[0].toLowerCase().trim().replace(/\s+/g, '-')}-nc`}
-                    className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm whitespace-nowrap"
-                  >
-                    View Local Service Page
-                  </Link>
+            {/* Local Area Context */}
+            <div className="mt-16 p-8 bg-secondary/50 border border-border text-left">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                  <h4 className="font-heading font-bold text-foreground text-lg mb-2">Serving {project.location} and {project.county}</h4>
+                  <p className="text-muted-foreground text-sm max-w-xl">
+                    We've completed numerous projects in this area. Our crews understand the local building codes, 
+                    elevation challenges, and weather patterns unique to this part of Western North Carolina.
+                  </p>
                 </div>
+                <Link 
+                  to={`/service-areas/${project.location.split(',')[0].toLowerCase().trim().replace(/\s+/g, '-')}-nc`}
+                  className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm whitespace-nowrap"
+                >
+                  View Local Service Page
+                </Link>
               </div>
             </div>
           </div>
