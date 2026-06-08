@@ -125,9 +125,11 @@ const ProjectDetailPage = () => {
               <div className="lg:col-span-2">
                 <motion.div {...fadeUp}>
                   <span className="eyebrow mb-3 block">Project Summary</span>
-                  <h2 className="section-heading mb-5">{project.highlight}</h2>
-                  <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
-                  <p className="text-muted-foreground leading-relaxed text-base font-bold">{project.summary}</p>
+                  <h2 className="section-heading mb-6">{project.highlight}</h2>
+                  <div className="w-16 h-1 bg-[hsl(var(--highland-gold)/0.6)] mb-8" />
+                  <p className="text-foreground leading-relaxed text-lg md:text-xl font-medium max-w-[65ch] mb-8">
+                    {project.summary}
+                  </p>
                 </motion.div>
 
                 {/* Challenge */}
