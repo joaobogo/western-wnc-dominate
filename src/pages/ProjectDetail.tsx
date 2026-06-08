@@ -260,9 +260,11 @@ const ProjectDetailPage = () => {
                   <div className="bg-secondary/60 rounded-sm p-5">
                     <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-2">The Highlander Difference</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.beforeAfter.highlanderDifference}</p>
-                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
             </div>
           </section>
         )}
