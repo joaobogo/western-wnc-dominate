@@ -346,9 +346,9 @@ const ProjectDetailPage = () => {
                    </div>
                 )}
               </motion.div>
-                <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-6" />
-                <p className="text-muted-foreground leading-relaxed text-base mb-10">{project.result}</p>
-              </motion.div>
+            </div>
+          </div>
+        </section>
 
               {/* Related Knowledge Hub Links */}
               <div className="mt-20 pt-12 border-t border-border text-left">
