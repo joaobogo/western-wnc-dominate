@@ -162,6 +162,33 @@ const ProjectDetailPage = () => {
                     {project.challenge}
                   </p>
                 </motion.div>
+                {/* Materials & Systems */}
+                <motion.div {...fadeUp} className="mt-16">
+                  <span className="eyebrow mb-4 block">Materials & Systems</span>
+                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">What We Used</h3>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {project.materials.map((mat, i) => (
+                      <div key={mat.name} className="p-5 border border-border bg-card">
+                        <h4 className="font-heading font-bold text-foreground mb-1">{mat.name}</h4>
+                        <p className="text-muted-foreground text-sm font-medium">{mat.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Process Highlights */}
+                <motion.div {...fadeUp} className="mt-16">
+                  <span className="eyebrow mb-4 block">Process Highlights</span>
+                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">Execution & Quality Control</h3>
+                  <div className="space-y-4">
+                    {project.processHighlights.map((highlight, i) => (
+                      <div key={i} className="flex gap-4 p-5 bg-secondary/20 border border-border/50">
+                        <span className="text-2xl font-heading font-bold text-primary/30">{String(i + 1).padStart(2, '0')}</span>
+                        <p className="text-foreground font-medium italic">{highlight}</p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
               </div>
 
               {/* Sidebar */}
@@ -204,32 +231,6 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-        {/* ── MATERIALS ── */}
-        <section className="section-padding bg-background relative overflow-hidden">
-          <div className="absolute inset-0 tartan-bg opacity-10" />
-          <div className="container-tight">
-            <motion.div {...fadeUp} className="text-center mb-12">
-              <span className="eyebrow mb-3 block">Materials & Systems</span>
-              <h2 className="section-heading mb-4">What We Used — and Why</h2>
-              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto" />
-            </motion.div>
-            <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
-              {project.materials.map((mat, i) => (
-                <motion.div
-                  key={mat.name}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="card-premium p-5"
-                >
-                  <h4 className="font-heading font-semibold text-foreground mb-1">{mat.name}</h4>
-                  <p className="text-muted-foreground text-sm">{mat.detail}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ── BEFORE & AFTER ── */}
         {project.beforeAfter && (
@@ -269,36 +270,6 @@ const ProjectDetailPage = () => {
           </section>
         )}
 
-        {/* ── PROCESS HIGHLIGHTS ── */}
-        <section className="section-padding bg-background relative overflow-hidden">
-          <div className="absolute inset-0 tartan-bg opacity-20" />
-          <div className="container-tight">
-            <motion.div {...fadeUp} className="text-center mb-12">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Process Highlights</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-                How We Executed This Project
-              </h2>
-              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto" />
-            </motion.div>
-            <div className="max-w-2xl mx-auto space-y-4">
-              {project.processHighlights.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -16 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="flex items-start gap-4 p-4 border border-border rounded-sm bg-card spotlight-hover"
-                >
-                  <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold)/0.3)] flex-shrink-0 w-8 text-center">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-medium">{item}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ── MID-CONTENT CONVERSION CTA ── */}
         <section className="bg-primary py-10 md:py-12 relative overflow-hidden">
@@ -436,29 +407,6 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-        {/* ── TESTIMONIAL ── */}
-        {project.testimonial && (
-          <section className="section-padding bg-background">
-            <div className="container-tight">
-              <div className="max-w-2xl mx-auto">
-                <motion.div {...fadeUp} className="bg-card border border-border rounded-sm p-8 md:p-10 relative overflow-hidden text-center">
-                  <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
-                  <Quote className="w-8 h-8 text-[hsl(var(--highland-gold)/0.15)] mx-auto mb-4 rotate-180" />
-                  <div className="flex justify-center gap-0.5 mb-5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <p className="text-foreground text-base md:text-lg leading-relaxed mb-6 font-body italic">
-                    {project.testimonial.quote}
-                  </p>
-                  <p className="font-heading font-semibold text-foreground">{project.testimonial.name}</p>
-                  <p className="text-muted-foreground text-sm font-body">{project.testimonial.location}</p>
-                </motion.div>
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* ── RELATED PROJECTS ── */}
         {related.length > 0 && (
