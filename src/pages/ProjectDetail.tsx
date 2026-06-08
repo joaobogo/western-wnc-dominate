@@ -162,6 +162,7 @@ const ProjectDetailPage = () => {
                     {project.challenge}
                   </p>
                 </motion.div>
+
                 {/* Materials & Systems */}
                 <motion.div {...fadeUp} className="mt-16">
                   <span className="eyebrow mb-4 block">Materials & Systems</span>
