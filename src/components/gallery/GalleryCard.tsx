@@ -35,7 +35,7 @@ const GalleryCard = ({
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 0.97 }}
     transition={{ delay: index * 0.04, duration: 0.4, ease: HIGHLAND_EASE }}
-    className="group relative bg-card border border-border rounded-none overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500"
+    className="group relative bg-card border border-border rounded-none overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full"
     onClick={onClick}
   >
     {/* Image container */}
@@ -74,7 +74,7 @@ const GalleryCard = ({
     </div>
 
     {/* Content */}
-    <div className="p-6 md:p-8 relative z-10">
+    <div className="p-6 md:p-8 relative z-10 flex flex-col flex-grow">
       <div className="flex items-center gap-2 mb-3">
         <MapPin className="w-3.5 h-3.5 text-primary" />
         <span className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground">{location}</span>
