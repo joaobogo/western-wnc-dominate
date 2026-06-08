@@ -228,10 +228,6 @@ const ProjectDetailPage = () => {
                 </div>
               </div>
 
-            </div>
-          </div>
-        </section>
-
 
         {/* ── BEFORE & AFTER ── */}
         {project.beforeAfter && (
