@@ -214,8 +214,8 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-3 pt-8 mt-8 border-t border-border">
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <div className="w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain" />
+                  <div className="w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white rounded-sm border border-border">
+                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain p-1" />
                   </div>
                   <span className="text-[13px] font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
                 </div>
