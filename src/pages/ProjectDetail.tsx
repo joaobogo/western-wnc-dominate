@@ -323,12 +323,29 @@ const ProjectDetailPage = () => {
         </section>
 
         {/* ── RESULT ── */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-secondary/20">
           <div className="container-tight">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center">
               <motion.div {...fadeUp}>
-                <span className="eyebrow mb-3 block">The Result</span>
-                <h2 className="section-heading mb-5">Final Outcome</h2>
+                <span className="eyebrow mb-4 block">The Result</span>
+                <h2 className="section-heading mb-8">Long-Term Protection Secured</h2>
+                <div className="w-16 h-1 bg-primary mx-auto mb-8" />
+                <p className="text-foreground text-xl md:text-2xl font-heading leading-relaxed mb-10 italic">
+                  "{project.result}"
+                </p>
+                {project.testimonial && (
+                   <div className="bg-background p-8 md:p-12 border border-border shadow-sm relative">
+                      <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/10" />
+                      <p className="text-lg md:text-xl font-body italic text-foreground mb-6 leading-relaxed relative z-10">
+                        "{project.testimonial.quote}"
+                      </p>
+                      <div className="flex flex-col items-center">
+                        <span className="font-heading font-bold text-lg text-foreground">{project.testimonial.name}</span>
+                        <span className="text-sm text-muted-foreground uppercase tracking-widest">{project.testimonial.location}</span>
+                      </div>
+                   </div>
+                )}
+              </motion.div>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-6" />
                 <p className="text-muted-foreground leading-relaxed text-base mb-10">{project.result}</p>
               </motion.div>
