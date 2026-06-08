@@ -7,9 +7,9 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 interface GalleryCardProps {
   title: string;
   image: string;
-  type: string;
-  description: string;
-  location: string;
+  type?: string;
+  description?: string;
+  location?: string;
   scope?: string;
   duration?: string;
   highlight?: string;
