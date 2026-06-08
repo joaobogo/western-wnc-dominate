@@ -354,40 +354,48 @@ const Gallery = () => {
           </section>
         )}
 
-        {/* ── FILTER BAR — elegant inline ── */}
-        <section className="bg-background border-b border-border sticky top-[72px] z-30">
-          <div className="container-tight px-5 md:px-8">
-            <div className="flex items-center justify-between py-4 gap-4 overflow-x-auto">
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <Filter className="w-3.5 h-3.5 text-muted-foreground" />
-                <div className="flex gap-1">
-                  {categories.map((cat) => (
-                    <button
-                      key={cat.value}
-                      onClick={() => setFilter(cat.value)}
-                      className={`text-[10px] font-body font-bold uppercase tracking-[0.15em] px-4 py-2 rounded-none transition-all duration-300 ${
-                        filter === cat.value
-                          ? "bg-primary text-primary-foreground"
-                          : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    >
-                      {cat.label}
-                    </button>
-                  ))}
-                </div>
+        {/* ── FILTER BAR — elegant centered ── */}
+        <section className="bg-secondary/50 border-b border-border sticky top-[72px] z-30 backdrop-blur-md">
+          <div className="container-tight px-5 md:px-8 py-6">
+            <div className="flex flex-col items-center gap-6">
+              <div className="flex flex-wrap justify-center items-center gap-2">
+                {categories.map((cat) => (
+                  <button
+                    key={cat.value}
+                    onClick={() => setFilter(cat.value)}
+                    className={`text-[11px] font-body font-bold uppercase tracking-[0.2em] px-8 py-3.5 border transition-all duration-500 relative overflow-hidden group/btn ${
+                      filter === cat.value
+                        ? "bg-primary border-primary text-primary-foreground"
+                        : "bg-background border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                    }`}
+                  >
+                    <span className="relative z-10">{cat.label} Projects</span>
+                    {filter !== cat.value && (
+                      <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+                    )}
+                  </button>
+                ))}
               </div>
-              <div className="flex gap-1 flex-shrink-0">
+
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                 {materialTypes.map((mat) => (
                   <button
                     key={mat}
                     onClick={() => setMaterialFilter(mat)}
-                    className={`text-[10px] font-body font-semibold px-3 py-1.5 rounded-sm transition-all duration-200 ${
+                    className={`text-[10px] font-body font-bold uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${
                       materialFilter === mat
-                        ? "bg-secondary text-foreground border border-border"
-                        : "text-muted-foreground/60 hover:text-muted-foreground"
+                        ? "text-primary font-black"
+                        : "text-muted-foreground/60 hover:text-primary/70"
                     }`}
                   >
                     {mat}
+                    {materialFilter === mat && (
+                      <motion.div
+                        layoutId="activeMaterial"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
                   </button>
                 ))}
               </div>
@@ -395,38 +403,39 @@ const Gallery = () => {
           </div>
         </section>
 
-        {/* ── MASONRY GRID ── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <span className="eyebrow mb-2 block">Portfolio</span>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
-                  {filtered.length} Project{filtered.length !== 1 ? "s" : ""}
-                </h2>
+        {/* ── PROJECT FEED — Cleaner Grid ── */}
+        <section className="section-padding bg-background relative min-h-[600px]">
+          <div className="absolute inset-0 tartan-bg opacity-[0.03]" />
+          <div className="container-tight relative z-10">
+            {filtered.length === 0 ? (
+              <div className="py-20 text-center">
+                <p className="text-muted-foreground font-body italic text-lg">No projects match your current filters. Try selecting "All".</p>
               </div>
-              <p className="text-muted-foreground text-xs font-body hidden md:block">
-                Click any project to explore. Case studies include full documentation.
-              </p>
-            </div>
-
-            <AnimatePresence mode="popLayout">
-              <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 auto-rows-auto">
-                {filtered.map((project, i) => {
-                  // Find original index to get the correct size from pattern
-                  const originalIndex = projects.indexOf(project);
-                  return (
-                    <EditorialCard
-                      key={project.title}
-                      project={project}
-                      index={i}
-                      size={sizePattern[originalIndex % sizePattern.length] || "standard"}
-                      onClick={() => setLightbox(originalIndex)}
-                    />
-                  );
-                })}
-              </motion.div>
-            </AnimatePresence>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                <AnimatePresence mode="popLayout">
+                  {filtered.map((project, i) => {
+                    const originalIndex = projects.indexOf(project);
+                    return (
+                      <motion.div
+                        key={project.title}
+                        layout
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.5, delay: i * 0.05 }}
+                      >
+                        <GalleryCard
+                          {...project}
+                          index={i}
+                          onClick={() => setLightbox(originalIndex)}
+                        />
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
+              </div>
+            )}
           </div>
         </section>
 
