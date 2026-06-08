@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock } from "@/components/trust";
-import { PremiumLightbox } from "@/components/gallery";
+import { PremiumLightbox, GalleryCard } from "@/components/gallery";
 import type { LightboxProject } from "@/components/gallery";
 import { MountainContours, TextureOverlay } from "@/components/motion/BackgroundTexture";
 
