@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight, ArrowLeft, Phone, MapPin, Calendar, Ruler, Mountain,
-  CheckCircle, Star, Quote, Shield,
+  CheckCircle, Star, Quote,
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -13,7 +13,6 @@ import { BeforeAfterSlider } from "@/components/BeforeAfterShowcase";
 import { getProjectBySlug, projectDetails } from "@/data/projects";
 import { blogPosts } from "@/data/blogs";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const fadeUp = {
@@ -45,7 +44,6 @@ const ProjectDetailPage = () => {
     );
   }
 
-  // Related projects (same category, different slug)
   const related = projectDetails
     .filter((p) => p.category === project.category && p.slug !== project.slug)
     .slice(0, 3);
@@ -64,7 +62,6 @@ const ProjectDetailPage = () => {
       />
       <Header />
       <main>
-        {/* ── HERO IMAGE ── */}
         <section className="relative pt-20 md:pt-24">
           <div className="relative h-[50vh] md:h-[65vh] overflow-hidden">
             <motion.img
@@ -117,11 +114,9 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-        {/* ── PROJECT SUMMARY + SIDEBAR ── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-20">
-              {/* Main content */}
               <div className="lg:col-span-2">
                 <motion.div {...fadeUp}>
                   <span className="eyebrow mb-4 block">Project Summary</span>
@@ -132,7 +127,6 @@ const ProjectDetailPage = () => {
                   </p>
                 </motion.div>
 
-                {/* Scope of Work */}
                 <motion.div {...fadeUp} className="mt-16 bg-secondary/30 p-8 md:p-12 border border-border">
                   <span className="eyebrow mb-4 block">Detailed Scope</span>
                   <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">What We Delivered</h3>
@@ -153,7 +147,6 @@ const ProjectDetailPage = () => {
                   </div>
                 </motion.div>
 
-                {/* Challenge */}
                 <motion.div {...fadeUp} className="mt-16">
                   <span className="eyebrow mb-4 block text-accent">The Challenge</span>
                   <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">Mountain Conditions & Technical Hurdles</h3>
@@ -163,12 +156,11 @@ const ProjectDetailPage = () => {
                   </p>
                 </motion.div>
 
-                {/* Materials & Systems */}
                 <motion.div {...fadeUp} className="mt-16">
                   <span className="eyebrow mb-4 block">Materials & Systems</span>
                   <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">What We Used</h3>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {project.materials.map((mat, i) => (
+                    {project.materials.map((mat) => (
                       <div key={mat.name} className="p-5 border border-border bg-card">
                         <h4 className="font-heading font-bold text-foreground mb-1">{mat.name}</h4>
                         <p className="text-muted-foreground text-sm font-medium">{mat.detail}</p>
@@ -177,7 +169,6 @@ const ProjectDetailPage = () => {
                   </div>
                 </motion.div>
 
-                {/* Process Highlights */}
                 <motion.div {...fadeUp} className="mt-16">
                   <span className="eyebrow mb-4 block">Process Highlights</span>
                   <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">Execution & Quality Control</h3>
@@ -192,9 +183,7 @@ const ProjectDetailPage = () => {
                 </motion.div>
               </div>
 
-              {/* Sidebar */}
               <div className="space-y-6">
-                {/* Project metadata card */}
                 <motion.div {...fadeUp} className="bg-card border border-border rounded-sm p-5 md:p-6">
                   <h4 className="font-heading font-semibold text-sm text-foreground mb-4">Project Details</h4>
                   <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)] mb-4" />
@@ -210,7 +199,6 @@ const ProjectDetailPage = () => {
 
                 <TrustSidebar />
 
-                {/* Service Link Card */}
                 <motion.div {...fadeUp} className="bg-secondary/50 border border-border rounded-sm p-5">
                    <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground/80 mb-3">Service Expertise</h4>
                    <Link to={project.category === 'roofing' ? '/roofing/roof-replacement' : '/construction/additions'} className="group flex items-center justify-between text-sm font-heading font-bold text-foreground hover:text-primary transition-colors">
@@ -218,7 +206,6 @@ const ProjectDetailPage = () => {
                    </Link>
                 </motion.div>
 
-                {/* CTA card */}
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
                   <p className="text-primary-foreground/60 text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
@@ -227,9 +214,10 @@ const ProjectDetailPage = () => {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-
-        {/* ── BEFORE & AFTER ── */}
         {project.beforeAfter && (
           <section className="section-padding bg-background">
             <div className="container-tight">
@@ -260,17 +248,13 @@ const ProjectDetailPage = () => {
                   <div className="bg-secondary/60 rounded-sm p-5">
                     <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-2">The Highlander Difference</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.beforeAfter.highlanderDifference}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
             </div>
           </section>
         )}
 
-
-        {/* ── MID-CONTENT CONVERSION CTA ── */}
         <section className="bg-primary py-10 md:py-12 relative overflow-hidden">
           <div className="container-tight text-center px-5 md:px-8 relative z-10">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
@@ -292,7 +276,6 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-        {/* ── RESULT ── */}
         <section className="section-padding bg-secondary/20">
           <div className="container-tight">
             <div className="max-w-4xl mx-auto text-center">
@@ -304,7 +287,7 @@ const ProjectDetailPage = () => {
                   "{project.result}"
                 </p>
                 {project.testimonial && (
-                   <div className="bg-background p-8 md:p-12 border border-border shadow-sm relative">
+                   <div className="bg-background p-8 md:p-12 border border-border shadow-sm relative text-left">
                       <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/10" />
                       <p className="text-lg md:text-xl font-body italic text-foreground mb-6 leading-relaxed relative z-10">
                         "{project.testimonial.quote}"
@@ -320,7 +303,6 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-        {/* Related Knowledge Hub Links */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <div className="mt-20 pt-12 border-t border-border text-left">
@@ -355,7 +337,6 @@ const ProjectDetailPage = () => {
               </div>
             </div>
 
-            {/* Local Area Context */}
             <div className="mt-16 p-8 bg-secondary/50 border border-border text-left">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
@@ -376,7 +357,6 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-        {/* ── GALLERY ── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-12">
@@ -406,8 +386,6 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
-
-        {/* ── RELATED PROJECTS ── */}
         {related.length > 0 && (
           <section className="section-padding bg-secondary tartan-bg">
             <div className="container-tight">
@@ -458,7 +436,6 @@ const ProjectDetailPage = () => {
           </section>
         )}
 
-        {/* ── CLOSING CTA ── */}
         <ReassuranceBlock
           headline={"Your Project Could Be\nOur Next Showcase."}
           subheadline="Schedule a consultation and let's discuss what's possible for your property."
