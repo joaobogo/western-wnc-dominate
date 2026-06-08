@@ -88,7 +88,8 @@ const GalleryCard = ({
         {description}
       </p>
 
-      <div className="flex items-center justify-between border-t border-border pt-5">
+      <div className="mt-auto">
+        <div className="flex items-center justify-between border-t border-border pt-5">
         <div className="flex items-center gap-4 text-[11px] text-muted-foreground font-body font-bold uppercase tracking-wider">
            {scope && <span className="flex items-center gap-1.5"><Ruler className="w-3.5 h-3.5" /> {scope}</span>}
            {duration && <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {duration}</span>}
