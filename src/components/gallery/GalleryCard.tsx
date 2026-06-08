@@ -105,6 +105,7 @@ const GalleryCard = ({
         </div>
       )}
     </div>
+    </div>
   </motion.div>
 );
 
