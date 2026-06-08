@@ -120,11 +120,11 @@ const ProjectDetailPage = () => {
         {/* ── PROJECT SUMMARY + SIDEBAR ── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
-            <div className="grid lg:grid-cols-3 gap-10 lg:gap-14">
+            <div className="grid lg:grid-cols-3 gap-12 lg:gap-20">
               {/* Main content */}
               <div className="lg:col-span-2">
                 <motion.div {...fadeUp}>
-                  <span className="eyebrow mb-3 block">Project Summary</span>
+                  <span className="eyebrow mb-4 block">Project Summary</span>
                   <h2 className="section-heading mb-6">{project.highlight}</h2>
                   <div className="w-16 h-1 bg-[hsl(var(--highland-gold)/0.6)] mb-8" />
                   <p className="text-foreground leading-relaxed text-lg md:text-xl font-medium max-w-[65ch] mb-8">
@@ -132,34 +132,35 @@ const ProjectDetailPage = () => {
                   </p>
                 </motion.div>
 
-                {/* Challenge */}
-                <motion.div {...fadeUp} className="mt-12">
-                  <span className="eyebrow mb-3 block">The Challenge</span>
-                  <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-4">What We Were Working With</h3>
-                  <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-4" />
-                  <p className="text-muted-foreground leading-relaxed font-bold">{project.challenge}</p>
-                </motion.div>
-
                 {/* Scope of Work */}
-                <motion.div {...fadeUp} className="mt-12">
-                  <span className="eyebrow mb-3 block">Scope of Work</span>
-                  <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-4">What We Delivered</h3>
-                  <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
-                  <div className="space-y-3">
+                <motion.div {...fadeUp} className="mt-16 bg-secondary/30 p-8 md:p-12 border border-border">
+                  <span className="eyebrow mb-4 block">Detailed Scope</span>
+                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">What We Delivered</h3>
+                  <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                     {project.scopeOfWork.map((item, i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, x: -12 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.06 }}
+                        transition={{ delay: i * 0.05 }}
                         className="flex items-start gap-3"
                       >
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-                        <span className="text-foreground/90 text-base leading-relaxed font-medium">{item}</span>
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1.5" />
+                        <span className="text-foreground/90 text-base leading-snug font-bold italic">{item}</span>
                       </motion.div>
                     ))}
                   </div>
+                </motion.div>
+
+                {/* Challenge */}
+                <motion.div {...fadeUp} className="mt-16">
+                  <span className="eyebrow mb-4 block text-accent">The Challenge</span>
+                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">Mountain Conditions & Technical Hurdles</h3>
+                  <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
+                  <p className="text-muted-foreground leading-relaxed text-lg font-medium italic border-l-4 border-border pl-6">
+                    {project.challenge}
+                  </p>
                 </motion.div>
               </div>
 
