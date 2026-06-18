@@ -593,7 +593,7 @@ const About = () => {
                 { stat: "4.9★", label: "Google Rating" },
                 { stat: "4.9★", label: "Average across Google & Facebook" },
                 { stat: "Rapid", label: "Response time on every inquiry" },
-                { stat: "In-House", label: "Crews — never subcontracted" },
+                { stat: "In-House", label: "Highlander employee crews" },
               ].map((item, i) => (
                 <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="text-center p-6 border border-[hsl(var(--highland-gold)/0.1)] rounded-sm">
                   <p className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] mb-2">{item.stat}</p>

@@ -134,7 +134,7 @@ export const PROOF_CONTEXT = {
   /** Construction: process + planning + finish quality */
   construction: [
     "Licensed General Contractor",
-    "In-house crews — never subcontracted",
+    "In-house Highlander crews on every project",
     "Design-build capable",
     "Written scope on every project",
   ],
