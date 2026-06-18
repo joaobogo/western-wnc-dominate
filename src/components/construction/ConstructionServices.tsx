@@ -18,6 +18,7 @@ export interface ConstructionCategory {
   description: string;
   outcomes: string[];
   trustPoints: string[];
+  designNote?: string;
 }
 
 export const constructionCategories: ConstructionCategory[] = [
@@ -52,6 +53,7 @@ export const constructionCategories: ConstructionCategory[] = [
       "Structural engineering included",
       "Full permit management",
     ],
+    designNote: "Need help defining the scope first? Highlander's design phases help turn ideas into buildable plans.",
   },
 
   {
@@ -69,6 +71,7 @@ export const constructionCategories: ConstructionCategory[] = [
       "In-house finish crews",
       "Hidden damage discovery protocol",
     ],
+    designNote: "Need help defining the scope first? Highlander's design phases help turn ideas into buildable plans.",
   },
   {
     icon: TreePine,
@@ -85,6 +88,7 @@ export const constructionCategories: ConstructionCategory[] = [
       "Roofing expertise on covered structures",
       "Terrain and slope integration",
     ],
+    designNote: "Need help defining the scope first? Highlander's design phases help turn ideas into buildable plans.",
   },
   {
     icon: Shield,
@@ -117,6 +121,7 @@ export const constructionCategories: ConstructionCategory[] = [
       "Code-compliant egress planning",
       "Mechanical system coordination",
     ],
+    designNote: "Need help defining the scope first? Highlander's design phases help turn ideas into buildable plans.",
   },
   {
     icon: HardHat,
@@ -133,6 +138,7 @@ export const constructionCategories: ConstructionCategory[] = [
       "Licensed GC supervision",
       "Documented structural reports",
     ],
+    designNote: "Need help defining the scope first? Highlander's design phases help turn ideas into buildable plans.",
   },
 ];
 
@@ -199,6 +205,17 @@ export const ConstructionServiceGrid = ({
                     <span>{outcome}</span>
                   </div>
                 ))}
+              </div>
+            )}
+
+            {variant === "detailed" && cat.designNote && (
+              <div className="mb-4 pt-3 border-t border-border/60">
+                <p className="text-[13px] text-foreground/70 font-body italic leading-snug">
+                  {cat.designNote}{" "}
+                  <Link to="/construction/design" className="not-italic font-semibold text-primary hover:underline">
+                    View design phases →
+                  </Link>
+                </p>
               </div>
             )}
 
