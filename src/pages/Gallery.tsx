@@ -345,7 +345,7 @@ const Gallery = () => {
                 { title: "Site Assessment", detail: "Every project begins with a thorough property evaluation — understanding terrain, exposure, existing conditions, and your goals." },
                 { title: "Material Strategy", detail: "We spec materials for your property's specific conditions — elevation, weather exposure, home style, and long-term performance." },
                 { title: "Precision Execution", detail: "Our in-house crews follow manufacturer-exact protocols. Every detail is documented, inspected, and held to our standard." },
-                { title: "Owner Walkthrough", detail: "James personally inspects every completed project before handover. Nothing leaves our hands until it meets our standard." },
+                { title: "Owner Walkthrough", detail: "The owner personally inspects every completed project before handover. Nothing leaves our hands until it meets the Highlander standard." },
               ].map((step, i) => (
                 <motion.div
                   key={step.title}
@@ -369,6 +369,59 @@ const Gallery = () => {
           subheadline="Every project here started the same way yours could — with a conversation about what's possible for your home."
           ctaText="Your Project Could Be Next"
         />
+
+        {/* ── PRE-LAUNCH ASSET REQUEST ── */}
+        <section className="bg-secondary border-t border-border">
+          <div className="container-tight section-padding max-w-4xl">
+            <div className="card-premium p-8 md:p-10">
+              <span className="eyebrow block mb-3">For the Highlander Team — Pre-Launch</span>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight mb-4">
+                Real Project Photos Needed
+              </h2>
+              <p className="text-muted-foreground font-body mb-6">
+                The gallery above shows real Highlander roofing projects. To deepen local proof and expand across both divisions, please send approved photos and details for the following:
+              </p>
+              <ul className="grid sm:grid-cols-2 gap-3 text-sm text-foreground/85 font-body mb-6">
+                {[
+                  "Roofing project photos (Franklin, Highlands, Cashiers, Sylva)",
+                  "Construction project photos (additions, renovations, custom builds)",
+                  "Before / after pairs (same angle, clearly labeled)",
+                  "Outdoor living photos (decks, porches, sunrooms, outdoor kitchens)",
+                  "Storm damage repair / insurance work examples",
+                  "Commercial roofing project photos",
+                  "In-house crew on the job (safety gear visible)",
+                  "Branded Highlander trucks, signage, and office photos",
+                  "Charity / community event photos (with consent)",
+                  "Rotary affiliation photo or logo (if approved for display)",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="font-heading font-bold text-foreground mb-2">For each project, please include:</p>
+              <ul className="grid sm:grid-cols-2 gap-2 text-sm text-foreground/80 font-body mb-6">
+                {[
+                  "Project type and materials used",
+                  "Town or service area",
+                  "Short description of the work",
+                  "Problem solved (leak, storm, full replacement, etc.)",
+                  "Approximate scope (sq ft, duration)",
+                  "Homeowner permission to publish",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="w-1 h-1 rounded-full bg-muted-foreground/60 mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-muted-foreground italic">
+                Until approved photos are provided, stock-style or generic mountain imagery on supporting pages will be flagged for replacement with real Highlander assets.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <PremiumLightbox
