@@ -193,7 +193,7 @@ const Footer = () => {
                   <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
                   <div className="text-[15px] text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Sylva / Waynesville</span>
-                    28 Cross Stitch Mountain Rd<br />
+                    Service area office — by appointment<br />
                     Sylva, NC 28779
                   </div>
                 </div>
@@ -201,7 +201,7 @@ const Footer = () => {
                   <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
                   <div className="text-[15px] text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Asheville / Buncombe</span>
-                    900 Hendersonville Rd, Ste 303-D<br />
+                    Service area office — by appointment<br />
                     Asheville, NC 28803
                   </div>
                 </div>
