@@ -205,6 +205,14 @@ const Footer = () => {
                     Asheville, NC 28803
                   </div>
                 </div>
+                <div className="flex gap-3 pt-2 border-t border-border/60">
+                  <Clock className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <div className="text-[15px] text-muted-foreground leading-relaxed">
+                    <span className="block font-bold text-foreground/80 mb-0.5 text-base">Office Hours</span>
+                    Mon–Fri 7:30 AM – 5:30 PM<br />
+                    <span className="text-primary font-semibold">Emergency response available 24/7</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -347,6 +355,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <Link to="/privacy" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Terms of Service</Link>
+            <Link to="/accessibility" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>
