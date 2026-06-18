@@ -126,7 +126,7 @@ const ConstructionDesign = () => {
     <>
       <SEOHead
         title="Design Services for Construction Projects | Highlander WNC"
-        description="Highlander's in-house design services for additions, remodels, outdoor living, and new construction in Western North Carolina. Three fixed-fee phases — scope, permit set, and construction documents — with real budget guidance before you build."
+        description="Highlander's in-house design services for additions, remodels, outdoor living, and new construction in Western North Carolina. Three design phases — scope, permit set, and construction documents — with real budget guidance before you build."
         path="/construction/design"
         jsonLd={[
           breadcrumbSchema([
@@ -312,6 +312,12 @@ const ConstructionDesign = () => {
             <div className="max-w-3xl mx-auto mt-10 bg-card border-l-2 border-[hsl(var(--highland-gold))] p-5 md:p-6">
               <p className="text-foreground/80 text-[14.5px] font-body leading-relaxed">
                 <span className="font-heading font-bold text-foreground">You can stop after any phase and keep your deliverables.</span> Phases stack — most remodel and addition clients begin with Phases 1 and 2.
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto mt-4 bg-secondary/40 border border-border p-5 md:p-6">
+              <p className="text-foreground/75 text-[14px] font-body leading-relaxed">
+                <span className="font-heading font-bold text-foreground">Pricing is determined by project scope.</span> The appropriate design phase depends on project type, readiness, and existing documentation. Fixed phase pricing and deliverables are reviewed and confirmed during the Design &amp; Consultation Agreement process — after Highlander reviews your project details.
               </p>
             </div>
           </div>
