@@ -553,7 +553,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Ridgetop UV & wind protection",
         summary: "Installation of high-durability dimensional shingles for a Weaverville residence on an exposed ridge, featuring enhanced sealant technology.",
-        proof: "Category 4 impact rating, 130mph wind warranty, and high-temp underlayment",
+        proof: "Category 4 impact rating, high wind-rated system, and high-temp underlayment",
       },
     ],
     faqs: [

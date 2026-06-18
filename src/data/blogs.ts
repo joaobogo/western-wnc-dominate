@@ -333,7 +333,7 @@ If you've had ice dams before, we can assess your roof and attic to identify the
 
 ## Sign 1: Your Roof Is 20+ Years Old
 
-Shingle roofs in Highlands face accelerated aging due to UV, moisture, and temperature swings. A 30-year shingle at sea level may only last 20–25 years at elevation.
+Shingle roofs in Highlands face accelerated aging due to UV, moisture, and temperature swings. A shingle rated for typical lowland service life may underperform significantly at elevation.
 
 ## Sign 2: Multiple Leak Repairs
 

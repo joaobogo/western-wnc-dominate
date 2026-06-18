@@ -17,7 +17,7 @@ export const localBlogTopics: LocalBlogTopic[] = [
         serviceCategory: "construction"
       },
       {
-        title: "Highlands Roofing: Why 30-Year Shingles Only Last 20 Years on the Plateau",
+        title: "Highlands Roofing: Why Shingle Lifespan Is Shorter on the Plateau",
         description: "An honest look at UV and moisture degradation on the plateau and how to extend your roof's life.",
         serviceCategory: "roofing"
       }

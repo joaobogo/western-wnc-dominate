@@ -29,11 +29,11 @@ const benefits = [
 ];
 
 const warranties = [
-  { label: "Glass / glazing", value: "20 years" },
-  { label: "Skylight components", value: "10 years" },
-  { label: "Flashing & insulating systems", value: "10 years" },
-  { label: "Electric & solar operators", value: "5 years" },
-  { label: "Highlander installation workmanship", value: "10 years" },
+  { label: "Glass / glazing", value: "Manufacturer coverage" },
+  { label: "Skylight components", value: "Manufacturer coverage" },
+  { label: "Flashing & insulating systems", value: "Manufacturer coverage" },
+  { label: "Electric & solar operators", value: "Manufacturer coverage" },
+  { label: "Highlander installation workmanship", value: "Workmanship coverage" },
 ];
 
 const VeluxProof = () => {
@@ -136,7 +136,7 @@ const VeluxProof = () => {
                 ))}
               </ul>
               <p className="text-[11px] text-dark-section-foreground/45 font-body leading-relaxed">
-                Coverage reflects standard VELUX warranty terms on deck-mounted skylights; full terms documented at handoff.
+                Coverage reflects standard VELUX warranty terms on deck-mounted skylights. Highlander will review applicable product and workmanship details with you before construction begins; full terms documented at handoff.
               </p>
             </div>
           </motion.aside>
