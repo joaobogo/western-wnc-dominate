@@ -8,7 +8,7 @@ import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import { useRef } from "react";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-004.webp";
+import constructionImg from "@/assets/division-construction.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -35,6 +35,7 @@ const roofingData = {
   cta: "Explore Roofing",
   href: "/roofing",
   image: metalRoof,
+  imageAlt: "Standing seam metal roof on a Western North Carolina mountain home — Highlander Roofing & Construction",
 };
 
 const constructionData = {
@@ -58,7 +59,8 @@ const constructionData = {
   ],
   cta: "Explore Construction",
   href: "/construction",
-  image: cedarRoof,
+  image: constructionImg,
+  imageAlt: "Construction project representing Highlander Roofing & Construction design-build services in Western North Carolina",
 };
 
 const designData = {
@@ -83,6 +85,7 @@ const designData = {
   cta: "Explore Design",
   href: "/layouts-planning",
   image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200",
+  imageAlt: "Architectural design plans for a custom WNC mountain home — Highlander Design Division",
 };
 
 const DivisionCard = ({ data, accent, index }: {
@@ -121,7 +124,7 @@ const DivisionCard = ({ data, accent, index }: {
         >
           <motion.img
             src={data.image}
-            alt={data.title}
+            alt={data.imageAlt ?? data.title}
             className="w-full h-full object-cover"
             loading="lazy"
             initial={{ scale: 1.18 }}

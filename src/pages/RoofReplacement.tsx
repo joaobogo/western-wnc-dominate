@@ -21,7 +21,7 @@ import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-004.webp";
+import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 
 /* ═══════════════════════════════════════════

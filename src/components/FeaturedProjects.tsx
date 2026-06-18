@@ -7,7 +7,7 @@ import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-004.webp";
+import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import asphaltLarge from "@/assets/gallery/asphalt-006.webp";

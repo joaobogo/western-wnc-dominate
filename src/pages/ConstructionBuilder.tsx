@@ -21,7 +21,7 @@ import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 import heroAddition from "@/assets/gallery/cedar-001.jpg";
 import heroDeck from "@/assets/gallery/cedar-002.jpg";
 import heroRenov from "@/assets/gallery/asphalt-005.jpg";
-import heroOutdoor from "@/assets/gallery/cedar-004.webp";
+import heroOutdoor from "@/assets/gallery/cedar-005.jpg";
 import heroFlatwork from "@/assets/gallery/asphalt-006.webp";
 
 const PROJECT_TYPES: VisualChoice[] = [

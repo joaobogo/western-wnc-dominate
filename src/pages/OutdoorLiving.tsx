@@ -23,7 +23,7 @@ const terrainSlopeImg = "https://images.unsplash.com/photo-1464822759023-fed622f
 import proj1 from "@/assets/gallery/cedar-001.jpg";
 import proj2 from "@/assets/gallery/metal-006.webp";
 import proj3 from "@/assets/gallery/asphalt-005.jpg";
-import proj4 from "@/assets/gallery/cedar-004.webp";
+import proj4 from "@/assets/gallery/cedar-005.jpg";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 

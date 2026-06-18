@@ -9,7 +9,7 @@ import { useRef } from "react";
 import asphaltImg from "@/assets/gallery/asphalt-hero.webp";
 import metalImg from "@/assets/gallery/metal-005.webp";
 import stormImg from "@/assets/gallery/asphalt-006.webp";
-import cedarImg from "@/assets/gallery/cedar-004.webp";
+import cedarImg from "@/assets/gallery/cedar-005.jpg";
 import metalRoof from "@/assets/gallery/metal-008.webp";
 import asphalt2 from "@/assets/gallery/asphalt-002b.jpg";
 import metal6 from "@/assets/gallery/metal-006.webp";
