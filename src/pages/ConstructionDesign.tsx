@@ -291,13 +291,12 @@ const ConstructionDesign = () => {
                     </ul>
                   </div>
 
-                  <div className="border-t border-border pt-4 grid grid-cols-2 gap-3">
+                  <div className="border-t border-border pt-4 space-y-3">
                     <div>
                       <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-foreground/55 mb-1">
-                        <DollarSign className="w-3 h-3" /> Typical Range
+                        <CheckCircle className="w-3 h-3" /> Best fit
                       </div>
-                      <div className="font-heading font-bold text-foreground text-sm">{p.feeRange}</div>
-                      <div className="text-[11px] text-foreground/55 font-body">depending on project scope</div>
+                      <p className="text-foreground/80 text-[13px] font-body leading-snug">{p.bestFit}</p>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-foreground/55 mb-1">
