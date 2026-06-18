@@ -14,6 +14,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import { DesignProgramPromo } from "@/components/construction";
 
 import heroImg from "@/assets/gallery/asphalt-007.webp";
 import proj1 from "@/assets/gallery/asphalt-008.webp";
@@ -401,6 +402,13 @@ const Renovations = () => {
         </section>
 
         {/* ─── CLOSING CTA ─── */}
+        <DesignProgramPromo
+          heading="Serious Renovations Start With a Design Phase."
+          subheading="Whole-home and multi-room renovations need a coordinated plan, not decisions made on the fly. Our paid Design & Consultation Agreement scopes, draws, and documents the renovation before construction pricing is finalized."
+          variant="band"
+          className="mt-4"
+        />
+
         <ConstructionClosingCTA
           headline={"Your Home Deserves\nBetter Than 'Good Enough.'"}
           subheadline="Whether it's a kitchen that finally works, a bathroom that lasts, or a whole-home renovation done right — let's have a straightforward conversation about what's possible."

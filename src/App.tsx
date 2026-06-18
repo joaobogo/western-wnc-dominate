@@ -55,6 +55,7 @@ const OutdoorLiving = lazy(() => import("./pages/OutdoorLiving"));
 const Renovations = lazy(() => import("./pages/Renovations"));
 const Siding = lazy(() => import("./pages/Siding"));
 const ConstructionConsultation = lazy(() => import("./pages/ConstructionConsultation"));
+const ConstructionDesign = lazy(() => import("./pages/ConstructionDesign"));
 const QuoteFlow = lazy(() => import("./pages/QuoteFlow"));
 const Contact = lazy(() => import("./pages/Contact"));
 const RoofingIntake = lazy(() => import("./pages/RoofingIntake"));
@@ -115,6 +116,7 @@ const App = () => (
           <Route path="/construction/additions" element={<HomeAdditions />} />
           <Route path="/construction/outdoor-living" element={<OutdoorLiving />} />
           <Route path="/construction/consultation" element={<ConstructionConsultation />} />
+          <Route path="/construction/design" element={<ConstructionDesign />} />
           {/* Redirects for retired construction routes */}
           <Route path="/construction/renovations" element={<Renovations />} />
           <Route path="/construction/siding" element={<Siding />} />

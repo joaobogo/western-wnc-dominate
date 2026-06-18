@@ -29,6 +29,12 @@ export const CTA = {
   constructionMid: "Discuss Your Project Scope",
   constructionClosing: "Your Home Deserves a Real Builder",
 
+  /** Construction primary CTA — used across construction pages */
+  constructionPlan: "Plan Your Construction Project",
+
+  /** Design & Consultation Agreement — paid design program */
+  designAgreement: "Start with a Design Agreement",
+
   /** About page — trust & exploration language */
   aboutHero: "Talk With Our Team",
   aboutClosing: "See What We've Built — Then Decide",
