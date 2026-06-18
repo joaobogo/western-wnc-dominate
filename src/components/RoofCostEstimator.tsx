@@ -222,7 +222,7 @@ const RoofCostEstimator = () => {
                       </div>
                       <div>
                         <label className={labelClass}>Phone</label>
-                        <input type="tel" value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} required className={inputClass} placeholder="(828) 555-1234" />
+                        <input type="tel" value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} required className={inputClass} placeholder="(828) 555-0123" />
                       </div>
                     </div>
                     <div>
