@@ -180,6 +180,10 @@ const App = () => (
           
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/gallery" element={<Navigate to="/recent-projects" replace />} />
+          <Route path="/projects" element={<Navigate to="/recent-projects" replace />} />
+          <Route path="/project-gallery" element={<Navigate to="/recent-projects" replace />} />
+          <Route path="/portfolio" element={<Navigate to="/recent-projects" replace />} />
+          <Route path="/our-work" element={<Navigate to="/recent-projects" replace />} />
           <Route path="/recent-projects" element={<RecentProjects />} />
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
