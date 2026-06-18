@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import IntakeShell from "@/components/intake/IntakeShell";
 import ConstructionIntakeForm from "@/components/intake/ConstructionIntakeForm";
+import { DesignProgramPromo } from "@/components/construction";
 
 const ConstructionIntake = () => (
   <>
@@ -23,12 +24,14 @@ const ConstructionIntake = () => (
           "Owner-led from discovery through final walkthrough.",
           "Written scope and pricing approach before commitment.",
           "We say no honestly when a project isn't the right fit.",
+          "Serious builds typically start with our paid Design & Consultation Agreement.",
         ]}
         otherIntakeLabel="Roofing Intake"
         otherIntakeHref="/roofing-intake"
       >
         <ConstructionIntakeForm />
       </IntakeShell>
+      <DesignProgramPromo />
     </main>
     <Footer />
     <StickyMobileCTA />

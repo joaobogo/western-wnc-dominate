@@ -13,6 +13,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 const heroImg = "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&q=80&w=2000";
@@ -457,6 +458,13 @@ const OutdoorLiving = () => {
         />
 
         {/* ─── CLOSING CTA ─── */}
+        <DesignProgramPromo
+          heading="Multi-Phase Outdoor Builds Deserve Real Planning."
+          subheading="Slope, drainage, roof tie-ins, and material direction shape every great outdoor space. A paid Design & Consultation Agreement turns the vision into a buildable, permit-ready plan."
+          variant="band"
+          className="mt-4"
+        />
+
         <ConstructionClosingCTA
           headline={"The Best Room in Your\nHouse Doesn't Need Walls."}
           subheadline="Whether it's a covered porch for morning coffee, a screened room for summer evenings, or an outdoor kitchen for gathering — let's design the space you've been imagining."

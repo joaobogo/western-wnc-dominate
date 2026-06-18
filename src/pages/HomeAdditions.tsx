@@ -14,6 +14,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 const heroImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
@@ -529,6 +530,13 @@ const HomeAdditions = () => {
         />
 
         {/* ─── CLOSING CTA ─── */}
+        <DesignProgramPromo
+          heading="Most Additions Start With a Design Phase."
+          subheading="Additions involve structural tie-ins, roof transitions, and code-driven layout decisions. Our paid three-phase Design & Consultation Agreement defines the addition before construction pricing is locked in."
+          variant="band"
+          className="mt-4"
+        />
+
         <ConstructionClosingCTA
           headline={"Your Home Has More\nto Give."}
           subheadline="Whether it's a guest suite, a main-level master, or a room you haven't even named yet — let's talk about what your home could become."
