@@ -74,14 +74,14 @@ const materials = [
   {
     name: "Dimensional Shingles",
     brand: "CertainTeed Landmark PRO",
-    lifespan: "30–50 years",
+    lifespan: "Long service life",
     best: "Most residential projects",
     detail: "Impact-resistant, algae-resistant, and available in 20+ color profiles. Our most-installed product for WNC homes.",
   },
   {
     name: "Standing Seam Metal",
     brand: "Custom-fabricated panels",
-    lifespan: "50–70 years",
+    lifespan: "Premium long-term system",
     best: "Premium & mountain estates",
     detail: "Concealed fastener systems rated for 140mph wind uplift. Superior snow shedding, energy efficiency, and zero-maintenance longevity.",
   },
@@ -435,8 +435,8 @@ const RoofingDivision = () => {
                     That's why every Highlander roofing project begins with a site-specific
                     assessment. We evaluate your property's actual exposure — not just its
                     square footage — and specify materials, ventilation, and installation
-                    methods that match the conditions your roof will face for the next 30 to
-                    50 years.
+                    methods that match the conditions your roof will face over its full
+                    service life.
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed font-body">
                     We believe roofing is a craft, not a commodity. And in these mountains,

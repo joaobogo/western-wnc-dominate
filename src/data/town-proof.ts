@@ -213,7 +213,7 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         question: "Which roofing material is best for Swain County cabins?",
-        answer: "Standing seam metal is our top recommendation for Bryson City cabins. It sheds debris and heavy rainfall effectively, resists the high humidity of the Smokies, and provides a 50-year service life.",
+        answer: "Standing seam metal is our top recommendation for Bryson City cabins. It sheds debris and heavy rainfall effectively, resists the high humidity of the Smokies, and offers a long service life suited to mountain conditions.",
       },
       {
         question: "Do you handle deck safety inspections in Bryson City?",

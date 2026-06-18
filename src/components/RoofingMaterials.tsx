@@ -46,7 +46,7 @@ export const roofingMaterials: RoofMaterial[] = [
     colorAccent: "hsl(var(--heritage-green))",
     visualStyle: "Multi-dimensional profile with shadow lines that create depth and visual texture. Available in designer colors that replicate the look of natural slate, cedar, or tile from ground level.",
     durability: "High. Laminated construction provides superior wind resistance (rated 110–130 mph), better impact performance, and significantly longer service life than 3-tab shingles.",
-    lifespan: "30–50 years with manufacturer warranty options available on premium lines. Actual lifespan depends on ventilation, installation quality, and exposure.",
+    lifespan: "Long service life with manufacturer warranty options available on premium lines. Actual lifespan depends on ventilation, installation quality, and exposure.",
     maintenance: "Low. Annual visual inspection recommended. Blown-off tabs can be replaced individually without disturbing surrounding material.",
     idealFor: "Homeowners who want the best balance of appearance, performance, and value. The dominant choice for custom and high-value residential properties in WNC.",
     wncPerformance: "Excellent across all WNC elevations and exposures. Enhanced wind ratings and impact resistance handle mountain weather conditions well. Premium lines with SBS-modified asphalt offer superior flexibility in freeze-thaw cycling.",

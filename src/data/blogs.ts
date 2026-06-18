@@ -549,7 +549,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
 - **Door-to-door solicitation after storms.** Legitimate contractors don't chase storms.
 - **No written contract.** Everything should be documented before work begins.
 - **Large upfront deposits.** Never pay more than 30% before work starts.
-- **No physical address.** Fly-by-night contractors disappear after problems arise.
+- **No physical address.** Contractors without a verifiable local presence can be difficult to reach if issues arise after the project.
 - **Pressure to sign immediately.** Good contractors give you time to decide.
 
 ## Questions to Ask
@@ -632,7 +632,7 @@ In Western NC, we recommend a thorough check twice a year — once in late fall 
 - **Debris in Valleys:** Pine needles and leaves trap moisture against shingles. Clear these to prevent rot.
 
 ## Professional Eyes
-A ground-level check is great, but a professional roofer can spot 'stress fractures' in shingles that a homeowner might miss. Regular maintenance adds 5-10 years to a roof's life.`
+A ground-level check is great, but a professional roofer can spot 'stress fractures' in shingles that a homeowner might miss. Regular maintenance can meaningfully extend the service life of your roof.`
   },
   {
     slug: "wnc-construction-permitting-guide",

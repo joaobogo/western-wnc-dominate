@@ -48,7 +48,7 @@ export const customerReviews: CustomerReview[] = [
       "We've used Highlander for two properties now. Their standing seam metalwork is exceptional — these are the only crews I'd trust at 3,800 feet. They genuinely understand what mountain weather demands.",
     project: "Standing Seam Metal — Two Properties",
     category: "roofing",
-    outcome: "Both properties re-roofed with 50-year metal systems.",
+    outcome: "Both properties re-roofed with premium standing seam metal systems.",
     featured: true,
   },
   {
