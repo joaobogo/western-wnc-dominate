@@ -35,6 +35,7 @@ const roofingData = {
   cta: "Explore Roofing",
   href: "/roofing",
   image: metalRoof,
+  imageAlt: "Standing seam metal roof on a Western North Carolina mountain home — Highlander Roofing & Construction",
 };
 
 const constructionData = {
@@ -59,6 +60,7 @@ const constructionData = {
   cta: "Explore Construction",
   href: "/construction",
   image: cedarRoof,
+  imageAlt: "Construction project representing Highlander Roofing & Construction design-build services in Western North Carolina",
 };
 
 const designData = {
@@ -83,6 +85,7 @@ const designData = {
   cta: "Explore Design",
   href: "/layouts-planning",
   image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200",
+  imageAlt: "Architectural design plans for a custom WNC mountain home — Highlander Design Division",
 };
 
 const DivisionCard = ({ data, accent, index }: {
@@ -121,7 +124,7 @@ const DivisionCard = ({ data, accent, index }: {
         >
           <motion.img
             src={data.image}
-            alt={data.title}
+            alt={data.imageAlt ?? data.title}
             className="w-full h-full object-cover"
             loading="lazy"
             initial={{ scale: 1.18 }}
