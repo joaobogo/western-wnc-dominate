@@ -225,6 +225,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
             {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
             Download My Roof Design
           </Button>
+          <FormConsent className="mt-1" />
         </div>
       </DialogContent>
     </Dialog>

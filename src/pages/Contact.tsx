@@ -481,6 +481,7 @@ export default function Contact() {
                           {!isSubmitting && <ArrowRight className="w-4 h-4" />}
                         </button>
                       </div>
+                      <FormConsent />
                     </form>
                   </motion.div>
                 )}

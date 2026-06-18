@@ -8,6 +8,7 @@ import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots } from "./IntakeFieldKit";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
+import FormConsent from "@/components/FormConsent";
 
 const PROJECT_TYPE_OPTIONS = [
   { value: "addition",   label: "Addition",        sub: "Master suite, guest wing, room extension" },
@@ -318,6 +319,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           </button>
         )}
       </div>
+      {step === totalSteps - 1 && <FormConsent className="mt-4" />}
     </div>
   );
 };

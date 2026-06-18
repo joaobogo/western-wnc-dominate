@@ -93,7 +93,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
           <button type="submit" className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase">
             <Download className="w-5 h-5 relative z-10" /> <span className="relative z-10">{g.cta}</span>
           </button>
-          <p className="text-[10px] text-muted-foreground/50 text-center font-body">No spam · Unsubscribe anytime.</p>
+          <FormConsent className="mt-2" />
         </form>
       )}
     </div>
