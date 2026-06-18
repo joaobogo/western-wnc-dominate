@@ -223,7 +223,7 @@ export const towns: TownData[] = [
     localVibe: "A university-centric community where property maintenance windows are often tied to the academic calendar transitions.",
     constructionContext: "We focus on maximizing rental occupancy by updating older housing stock near the university with modern decks and master-suite expansions.",
     serviceDemandMix: ["Rental Roof Repairs", "Deck Safety Inspections", "Exterior Siding Updates", "Algae-Resistant Shingles"],
-    styleTendency: "Functional residential and multi-unit architecture prioritizing longevity, value, and tenant safety.",
+    styleTendency: "Functional residential and multi-unit home design prioritizing longevity, value, and tenant safety.",
     notableNeighborhoods: ["WCU Campus Area", "Old Cullowhee Road", "Caney Fork", "Speedwell"],
     marketAuthorityAngle: "We understand Cullowhee's academic rhythm. We coordinate with Jackson County property managers to ensure projects finish before the semester starts.",
     heroImage: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=2000"
@@ -323,7 +323,7 @@ export const towns: TownData[] = [
     localVibe: "An exclusive, low-density private community where design perfection and long-term asset protection are the baseline.",
     constructionContext: "We specialize in lakefront deck expansions and high-end master suite additions that maximize Toxaway's unique views.",
     serviceDemandMix: ["Brava Synthetic Slate", "Copper Gutter Systems", "Luxury Additions", "Premium Maintenance"],
-    styleTendency: "Classic Adirondack and sophisticated Mountain Rustic architecture featuring massive stone and timber elements.",
+    styleTendency: "Classic Adirondack and sophisticated Mountain Rustic home design featuring massive stone and timber elements.",
     notableNeighborhoods: ["Lake Toxaway Estates", "The Greystone", "Catatoga"],
     marketAuthorityAngle: "Toxaway estates require a commercial-grade attention to detail and a white-glove service level. We protect the plateau's finest assets.",
     heroImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000"

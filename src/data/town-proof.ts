@@ -382,7 +382,7 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Historic downtown residential reroof",
-        summary: "Traditional Hendersonville architecture requires careful attention to attic ventilation and chimney flashing to ensure another 30+ years of performance.",
+        summary: "Traditional Hendersonville home design requires careful attention to attic ventilation and chimney flashing to ensure another 30+ years of performance.",
         proof: "Oversized ridge vents and custom step-flashing detailing",
         image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
       },
