@@ -77,7 +77,7 @@ export const projectDetails: ProjectDetail[] = [
       "Copper accent details on ridge caps",
     ],
     materials: [
-      { name: "24-Gauge Standing Seam Panels", detail: "Dark Bronze Kynar 500 finish — 40-year color warranty" },
+      { name: "24-Gauge Standing Seam Panels", detail: "Dark Bronze Kynar 500 finish — manufacturer color warranty" },
       { name: "Grace Ice & Water Shield", detail: "High-temp underlayment on valleys, eaves, and penetrations" },
       { name: "Custom Ridge Caps", detail: "Fabricated on-site for seamless geometry matching" },
       { name: "Copper Accent Details", detail: "Ridge cap accents for premium visual finish" },
@@ -89,7 +89,7 @@ export const projectDetails: ProjectDetail[] = [
       "Daily photo documentation shared with homeowner",
       "Final drone inspection to verify every panel seam and flashing detail",
     ],
-    result: "The completed installation transformed the property's curb appeal and eliminated the chronic leak issues. The 24-gauge Kynar 500 panels carry a 40-year color warranty and are engineered for the UV intensity and temperature swings at 4,100 feet. The homeowner reported zero issues through their first full winter season.",
+    result: "The completed installation transformed the property's curb appeal and eliminated the chronic leak issues. The 24-gauge Kynar 500 panels carry a manufacturer color warranty and are engineered for the UV intensity and temperature swings at 4,100 feet. The homeowner reported zero issues through their first full winter season.",
     galleryImages: [metal005, metal006, metal008, metal003],
     testimonial: {
       quote: "We've used Highlander for two properties now. Their standing seam metal work is exceptional and they genuinely understand the mountain climate challenges. Five stars every time.",
@@ -134,7 +134,7 @@ export const projectDetails: ProjectDetail[] = [
       "Gutter cleaning and re-attachment",
     ],
     materials: [
-      { name: "CertainTeed Landmark", detail: "Weathered Wood — Lifetime limited warranty" },
+      { name: "CertainTeed Landmark", detail: "Weathered Wood — Manufacturer limited warranty" },
       { name: "DiamondDeck Underlayment", detail: "Synthetic — superior tear resistance vs. felt" },
       { name: "CertainTeed Starter Strip", detail: "SwiftStart — adhesive activated starter shingles" },
       { name: "Ridge Vent", detail: "Low-profile ridge vent for improved airflow" },

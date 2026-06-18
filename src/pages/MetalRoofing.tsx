@@ -78,7 +78,7 @@ const MetalRoofing = () => {
         <section className="section-padding bg-background">
           <div className="container-tight grid md:grid-cols-3 gap-6">
             {[
-              { icon: Shield, title: "40+ year system", body: "Designed as a forever roof — substrate, underlayment, panels, and trims specified together so the warranty actually holds." },
+              { icon: Shield, title: "Long-life system", body: "Designed as a forever roof — substrate, underlayment, panels, and trims specified together so the warranty actually holds." },
               { icon: Wind, title: "Wind-rated", body: "Standing seam panels with concealed clips resist uplift across the Highlands Plateau and exposed mountain ridgelines." },
               { icon: Snowflake, title: "Snow & ice planned", body: "Snow retention designed into the system at walkways, entries, and outdoor living spaces — not bolted on after the fact." },
             ].map((b) => (

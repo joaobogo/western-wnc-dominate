@@ -29,7 +29,7 @@ const pillars = [
     number: "03",
     title: "The Cheapest Bid Costs You Twice",
     copy: "We don't compete on price — we compete on what your roof or renovation looks like in 15 years. Every material is specified for your actual elevation and climate zone. Every project carries a full written warranty.",
-    detail: "Climate-zone material specs · Full warranty package · 30-year build philosophy",
+    detail: "Climate-zone material specs · Full warranty package · long-horizon build philosophy",
   },
   {
     icon: Mountain,

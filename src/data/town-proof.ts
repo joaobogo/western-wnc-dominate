@@ -419,7 +419,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Pisgah Forest area cabin reroof",
         summary: "Installation of a high-durability standing seam metal roof for a residence bordering the national forest, designed to shed debris and handle high humidity.",
-        proof: "24-gauge steel, debris-resistant valley shields, and lifetime warranty",
+        proof: "24-gauge steel, debris-resistant valley shields, and manufacturer warranty",
         image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
       },
       {
@@ -541,7 +541,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Reems Creek ridgetop reroof",
         summary: "Replacement of an aging shingle system with a high-velocity metal roof designed to handle the exposed winds of the Weaverville ridges.",
-        proof: "Standing seam metal, reinforced fastening, and lifetime warranty",
+        proof: "Standing seam metal, reinforced fastening, and manufacturer warranty",
         image: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=600",
       },
       {
