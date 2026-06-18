@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Mobile typography readability pass (client feedback — Robert) ──
+   Bumps tiny utility sizes a notch on smartphone widths so body copy,
+   form labels, card descriptions, and footer text stay legible without
+   forcing zoom. Desktop sizes are unchanged. */
+@media (max-width: 640px) {
+  .text-xs { font-size: 0.84rem !important; line-height: 1.45 !important; } /* 13.5px */
+  .text-sm { font-size: 0.95rem !important; line-height: 1.55 !important; } /* 15.2px */
+  /* Ensure form controls hit 16px to prevent iOS zoom-on-focus */
+  input, textarea, select { font-size: 16px !important; }
+  /* Tap target floor for inline anchors and small buttons */
+  a, button { min-height: auto; }
+}
+
 @layer base {
   :root {
     /* Highlander Heritage Palette — Refined */
