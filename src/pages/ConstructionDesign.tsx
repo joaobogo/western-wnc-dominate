@@ -394,7 +394,7 @@ const ConstructionDesign = () => {
               <h2 className="section-heading mb-6">Real Budget Guidance Before You Commit to the Full Build.</h2>
               <div className="space-y-5 text-foreground/80 text-base md:text-lg font-body leading-relaxed">
                 <p>
-                  Phase 1 includes a preliminary budget range, giving homeowners a more realistic understanding of the project before committing to larger design phases, permitting, or construction.
+                  Phase 1 includes preliminary budget guidance, giving homeowners a more realistic understanding of the project before committing to larger design phases, permitting, or construction.
                 </p>
                 <p>
                   This supports Highlander's "no instant quote" discipline for serious construction projects. Instead of guessing at a number, we help you define the project first — then price it honestly.
