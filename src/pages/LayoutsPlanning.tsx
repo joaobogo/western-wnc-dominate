@@ -76,7 +76,7 @@ const LayoutsPlanning = () => {
       <Header />
       
       <main>
-        {/* 1. Hero — Refined & Architectural */}
+        {/* 1. Hero — Refined */}
         <section className="relative pt-32 pb-24 md:pt-56 md:pb-40 bg-primary overflow-hidden">
           {/* Subtle Tartan Overlay */}
           <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />

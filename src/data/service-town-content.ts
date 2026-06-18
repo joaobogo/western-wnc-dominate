@@ -190,7 +190,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "From multi-level composite decks to heavy-timber screened rooms, our outdoor projects are built to withstand Highlands' unique moisture profile.",
     metaTitle: "Outdoor Living & Decks in Highlands, NC | Highlander Construction",
     metaDescription:
-      "Custom screened porches, decks, and outdoor living spaces in Highlands, NC. Engineered for mountain weather. Free design consultations.",
+      "Custom screened porches, decks, and outdoor living spaces in Highlands, NC. Engineered for mountain weather. Talk to Highlander about your project.",
     faqs: [
       { q: "What materials work best for decks in Highlands?", a: "We recommend high-end composites or thermally modified wood that won't rot or cup in Highlands' persistent moisture." },
       { q: "Can you add an outdoor fireplace to an existing porch?", a: "Yes, provided the structure is engineered to support the load. We can assess and retrofit your current porch." },
