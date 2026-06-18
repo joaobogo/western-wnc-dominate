@@ -127,8 +127,8 @@ CONVERSATION STRATEGY:
 1. Keep responses concise — 2-4 sentences unless asked for detail. No walls of text.
 2. Ask ONE qualifying question at a time. Make it feel natural, not interrogative.
 3. After 3-4 exchanges, guide toward scheduling a consultation:
-   - For ROOFING: "Would it be helpful if one of our roofing advisors reached out? You can [schedule a consultation](/consultation) or call us at (828) 397-9211."
-   - For CONSTRUCTION: "It sounds like a conversation with our construction team would be valuable. You can [start a project conversation](/construction/consultation) or call us at (828) 397-9211."
+   - For ROOFING: "Would it be helpful if one of our roofing advisors reached out? You can [schedule a consultation](/consultation) or call us at (828) 524-7773."
+   - For CONSTRUCTION: "It sounds like a conversation with our construction team would be valuable. You can [start a project conversation](/construction/consultation) or call us at (828) 524-7773."
 4. Never quote specific prices. Say "every project has unique variables — materials, scope, access, permitting. The best way to get accurate guidance is a conversation with one of our advisors."
 5. For emergencies/storm damage, prioritize urgency immediately: offer the phone number and express willingness to help ASAP.
 6. Use premium CTA language: "Schedule a consultation", "Speak with a project advisor", "Start a project conversation" — never "get a free quote" or "book now".
@@ -152,8 +152,8 @@ LEAD QUALIFICATION (gather naturally over conversation):
 - For construction: Do they have plans? Design-build needs? Property challenges?
 
 When you've gathered 3+ qualification signals, suggest the appropriate consultation:
-- Roofing: "It sounds like you have a solid sense of what you're looking for. You can [schedule a roofing consultation](/consultation) or call us at (828) 397-9211."
-- Construction: "Based on what you're describing, a project conversation with our construction team would be the best next step. You can [start that conversation here](/construction/consultation) or call us at (828) 397-9211."
+- Roofing: "It sounds like you have a solid sense of what you're looking for. You can [schedule a roofing consultation](/consultation) or call us at (828) 524-7773."
+- Construction: "Based on what you're describing, a project conversation with our construction team would be the best next step. You can [start that conversation here](/construction/consultation) or call us at (828) 524-7773."
 
 RESPONSE FORMAT:
 - Use plain text primarily. Markdown bold for emphasis sparingly. Avoid headers or heavy formatting.
@@ -189,7 +189,7 @@ serve(async (req) => {
         .gte("created_at", since);
       if ((count ?? 0) >= RATE_LIMIT_MAX) {
         return new Response(
-          JSON.stringify({ error: "You've reached the message limit for now. Please call us at (828) 397-9211." }),
+          JSON.stringify({ error: "You've reached the message limit for now. Please call us at (828) 524-7773." }),
           { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } },
         );
       }
@@ -234,20 +234,20 @@ serve(async (req) => {
 
     if (!response.ok) {
       if (response.status === 429) {
-        return new Response(JSON.stringify({ error: "We're experiencing high demand right now. Please try again in a moment, or call us at (828) 397-9211." }), {
+        return new Response(JSON.stringify({ error: "We're experiencing high demand right now. Please try again in a moment, or call us at (828) 524-7773." }), {
           status: 429,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
       if (response.status === 402) {
-        return new Response(JSON.stringify({ error: "Our assistant is temporarily unavailable. Please call us at (828) 397-9211 — we answer our own phone." }), {
+        return new Response(JSON.stringify({ error: "Our assistant is temporarily unavailable. Please call us at (828) 524-7773 — we answer our own phone." }), {
           status: 402,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
       const t = await response.text();
       console.error("AI gateway error:", response.status, t);
-      return new Response(JSON.stringify({ error: "Something went wrong. Please try again or call (828) 397-9211." }), {
+      return new Response(JSON.stringify({ error: "Something went wrong. Please try again or call (828) 524-7773." }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
@@ -258,7 +258,7 @@ serve(async (req) => {
     });
   } catch (e) {
     console.error("chatbot error:", e);
-    return new Response(JSON.stringify({ error: "Our assistant is temporarily unavailable. Please call us at (828) 397-9211." }), {
+    return new Response(JSON.stringify({ error: "Our assistant is temporarily unavailable. Please call us at (828) 524-7773." }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
