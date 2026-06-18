@@ -9,6 +9,9 @@ import { useRef } from "react";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import constructionImg from "@/assets/division-construction.jpg";
+// NOTE: Temporary Design Division image. Client to provide final approved
+// Design Division image before launch.
+import designImg from "@/assets/division-design.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -82,9 +85,9 @@ const designData = {
     { icon: Compass, name: "Architectural Prep" },
     { icon: ShieldCheck, name: "Scope Definition" },
   ],
-  cta: "Explore Design",
+  cta: "Explore Design Services",
   href: "/layouts-planning",
-  image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1200",
+  image: designImg,
   imageAlt: "Architectural design plans for a custom WNC mountain home — Highlander Design Division",
 };
 
