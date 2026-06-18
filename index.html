@@ -92,10 +92,26 @@ div[style*="Edit with Lovable"],
     }(window, document, 'ttq');
     </script>
     <!-- TikTok Pixel Code End -->
+    <!-- RealWork Labs Plugin Loader (sitewide) -->
+    <script type="text/javascript">
+    (function(){
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = 'https://app.realworklabs.com/static/plugin/loader.js?v=' + new Date().getTime();
+      window.addEventListener('rwlPluginReady', function () {
+        window.rwlPlugin.init('https://app.realworklabs.com', 'SxCxaBpYsO_fVnK0');
+      }, false);
+      s.parentNode.insertBefore(o, s);
+    }());
+    </script>
+    <!-- End RealWork Labs Plugin Loader -->
   </head>
 
   <body>
     <div id="root"></div>
+    <!-- RealWork Labs global target (required by integration) -->
+    <div id="rwl-neighborhood"></div>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1300176212241296&ev=PageView&noscript=1"
     /></noscript>
