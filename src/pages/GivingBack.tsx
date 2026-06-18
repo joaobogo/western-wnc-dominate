@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart, Users, ArrowRight, HandHeart, Gift, Star, Camera, AlertCircle, Award } from "lucide-react";
+import { Heart, Users, ArrowRight, HandHeart, Mountain, Hammer, Handshake, Building2, ImageIcon, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,39 +8,55 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
 import TartanBackground from "@/components/TartanBackground";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
-
-const initiativeCategories = [
-  { category: "Charity Work", description: "Donated labor, materials, or repair work for families and nonprofits in Western NC." },
-  { category: "Local Sponsorships", description: "Youth sports, school programs, and local events Highlander helps make possible." },
-  { category: "Community Projects", description: "Hands-on build days, cleanup events, and neighbor-helping-neighbor work." },
-  { category: "Local Events", description: "Festivals, fairs, and community gatherings Highlander participates in or sponsors." },
-  { category: "Nonprofit Partnerships", description: "Ongoing relationships with WNC nonprofits supporting housing, veterans, and families." },
-  { category: "Veterans & First Responders", description: "Dedicated support and special considerations for those who have served." },
+const focusAreas = [
+  {
+    icon: Heart,
+    title: "Local Families & Homeowners",
+    copy: "We help protect the homes and properties that families rely on through roofing, repairs, construction, gutters, and exterior solutions built for Western North Carolina conditions.",
+  },
+  {
+    icon: Handshake,
+    title: "Local Organizations",
+    copy: "Highlander welcomes opportunities to support local organizations, events, and causes that strengthen the communities we serve.",
+  },
+  {
+    icon: Hammer,
+    title: "Skilled Trades & Local Work",
+    copy: "We believe in the value of skilled hands, dependable crews, and professional standards that support both homeowners and the local construction community.",
+  },
+  {
+    icon: Mountain,
+    title: "Mountain Heritage",
+    copy: "Our brand reflects a connection to heritage, craftsmanship, and the mountain communities that shape our work.",
+  },
+  {
+    icon: Building2,
+    title: "Community Partnerships",
+    copy: "As Highlander continues to grow, this page will highlight approved partnerships, sponsorships, and community involvement with local groups.",
+  },
 ];
 
 const GivingBack = () => {
   return (
     <>
       <SEOHead
-        title="Giving Back to WNC | Highlander Roofing & Construction"
-        description="Highlander Roofing & Construction is committed to supporting Western North Carolina. Explore our monthly charity work and community initiatives."
+        title="Community Involvement | Highlander Roofing Services"
+        description="Learn how Highlander Roofing Services supports homeowners, local organizations, and communities across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
         path="/giving-back"
         jsonLd={[
           organizationSchema(),
-          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Giving Back", url: "/giving-back" }]),
+          breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Community", url: "/giving-back" }]),
         ]}
       />
       <Header />
       <main>
         {/* ── HERO ── */}
-        <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-heritage-charcoal">
+        <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-heritage-charcoal">
           <div className="absolute inset-0">
-            <img 
-              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000" 
-              alt="Community support" 
-              className="w-full h-full object-cover opacity-60" 
+            <img
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000"
+              alt="Western North Carolina mountain community landscape"
+              className="w-full h-full object-cover opacity-50"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-heritage-charcoal via-heritage-charcoal/40 to-transparent" />
             <TartanBackground opacity={0.03} />
@@ -55,182 +71,177 @@ const GivingBack = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <HandHeart className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                <span className="text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">Highlander Hearts</span>
+                <span className="text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">Community Involvement</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6 tracking-tight">
-                Beyond the Roof:<br />
-                <span className="text-[hsl(var(--highland-gold))]">Supporting Our Neighbors.</span>
+                Built for the Community<br />
+                <span className="text-[hsl(var(--highland-gold))]">We Call Home.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-white/80 font-body leading-relaxed max-w-2xl font-medium">
-                We don't just work in Western North Carolina — we live here. We believe in investing back into the communities that have supported us since 2017.
+              <p className="text-lg md:text-xl text-white/80 font-body leading-relaxed max-w-2xl font-medium mb-8">
+                Highlander Roofing Services is proud to serve the same Western North Carolina communities we live in, work in, and care about. From roofing and construction to local involvement, our work is built around protecting homes, supporting neighbors, and strengthening the places that make this region special.
               </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/quote" className="group bg-[hsl(var(--highland-gold))] text-heritage-charcoal font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] transition-all">
+                  Request a Free Estimate
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link to="/recent-projects" className="group border border-white/30 text-white font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:border-white hover:bg-white/5 transition-all">
+                  See Recent Projects
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* ── VALUES STRIP ── */}
-        <section className="bg-white py-12 border-b border-border">
-          <div className="container-tight">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-primary/10 flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-heading font-bold text-lg mb-1">Monthly Initiatives</h3>
-                  <p className="text-muted-foreground text-sm font-body">Every month, we choose a local cause to support through labor, donations, or advocacy.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-primary/10 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-heading font-bold text-lg mb-1">Locally Focused</h3>
-                  <p className="text-muted-foreground text-sm font-body">Our efforts are concentrated right here in Macon, Jackson, and surrounding counties.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 flex-shrink-0 bg-primary/10 flex items-center justify-center">
-                  <Star className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-heading font-bold text-lg mb-1">Action-Oriented</h3>
-                  <p className="text-muted-foreground text-sm font-body">We prioritize direct action — getting out into the community to do the work ourselves.</p>
-                </div>
-              </div>
-            </div>
+        {/* ── WHY COMMUNITY MATTERS ── */}
+        <section className="section-padding bg-white">
+          <div className="container-tight max-w-4xl">
+            <ScrollReveal>
+              <span className="eyebrow mb-3 block">Why Community Matters</span>
+              <h2 className="section-heading mb-6">More Than Roofing. A Local Commitment.</h2>
+              <p className="text-lg text-muted-foreground font-body leading-relaxed mb-8">
+                Highlander's work is tied to the homes, families, and communities of Western North Carolina. Our reputation is built not only on roofs and construction, but also on showing up with care, accountability, and local pride.
+              </p>
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-base text-foreground/85 font-body">
+                {[
+                  "Locally rooted service",
+                  "Protecting homes in mountain communities",
+                  "Supporting neighbors",
+                  "Building long-term trust",
+                  "Serving Franklin, Highlands, Cashiers, Sylva, and surrounding WNC communities",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] mt-2.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
           </div>
         </section>
 
-        {/* ── COMMUNITY INVOLVEMENT — STRUCTURED PLACEHOLDERS ── */}
+        {/* ── FOCUS AREAS ── */}
         <section className="section-padding bg-secondary relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
-
           <div className="container-tight relative z-10">
-            <div className="text-center mb-14">
-              <span className="eyebrow mb-3 block">Community Involvement</span>
-              <h2 className="section-heading">Investing Back Into WNC</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mt-4 font-body">
-                Highlander is proud to be part of the Western North Carolina community. The categories below outline the kinds of work we support locally. Specific initiatives, dates, and photos will be added once the Highlander team provides approved details.
+            <div className="text-center mb-14 max-w-2xl mx-auto">
+              <span className="eyebrow mb-3 block">Community Focus Areas</span>
+              <h2 className="section-heading">Supporting Western North Carolina Communities</h2>
+              <p className="text-muted-foreground mt-4 font-body">
+                The areas where our work and our community connect most closely.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {initiativeCategories.map((item, i) => (
-                <motion.div
-                  key={item.category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
-                  className="card-premium overflow-hidden"
-                >
-                  <div className="aspect-[16/10] bg-muted flex flex-col items-center justify-center text-center p-6 border-b border-border">
-                    <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center mb-3">
-                      <Camera className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+              {focusAreas.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.06, duration: 0.5 }}
+                    className="card-premium p-7"
+                  >
+                    <div className="w-12 h-12 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
-                      Photo Coming Soon
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <span className="px-2.5 py-1 bg-primary/10 text-primary text-[10px] font-body font-bold uppercase tracking-widest inline-block mb-3">{item.category}</span>
-                    <p className="text-muted-foreground text-sm leading-relaxed font-body">{item.description}</p>
-                    <p className="text-xs text-muted-foreground/70 italic mt-4">Specific initiative details coming soon.</p>
-                  </div>
-                </motion.div>
-              ))}
+                    <h3 className="font-heading font-bold text-xl text-foreground mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-body">{item.copy}</p>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* ── AFFILIATIONS (incl. Rotary placeholder) ── */}
+        {/* ── FEATURED INVOLVEMENT (intentional "coming soon" — polished) ── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
-            <div className="text-center mb-10">
-              <span className="eyebrow mb-3 block">Local Affiliations</span>
-              <h2 className="section-heading">Community Involvement & Local Affiliations</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mt-4 font-body">
-                Final affiliation details, organization logos, and approved descriptions will be added after client confirmation.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              {[
-                { label: "Rotary Affiliation", note: "Pending client confirmation. Do not publish unless approved." },
-                { label: "Chamber of Commerce", note: "Confirm membership and approved logo usage." },
-                { label: "Local Nonprofit Partner", note: "Awaiting nonprofit name and partnership description." },
-                { label: "Industry Association", note: "Confirm NRCA, NCRCA, or trade-association affiliations." },
-              ].map((a) => (
-                <div key={a.label} className="card-premium p-6 flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.3)] flex items-center justify-center flex-shrink-0">
-                    <Award className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-foreground mb-1">{a.label}</h3>
-                    <p className="text-xs text-muted-foreground italic">{a.note}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── INTERNAL NOTICE — INFO REQUEST ── */}
-        <section className="bg-[hsl(var(--highland-gold)/0.08)] border-y border-[hsl(var(--highland-gold)/0.25)]">
-          <div className="container-tight section-padding max-w-4xl">
-            <div className="card-premium p-8 md:p-10">
-              <div className="flex items-start gap-4 mb-5">
-                <AlertCircle className="w-6 h-6 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-1" />
-                <div>
-                  <span className="eyebrow block mb-2">For the Highlander Team — Pre-Launch</span>
-                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight">
-                    Help Us Finalize Community & Affiliation Details
-                  </h2>
+            <ScrollReveal>
+              <div className="card-premium p-8 md:p-12 relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[hsl(var(--highland-gold))] via-primary to-[hsl(var(--highland-gold))]" />
+                <span className="eyebrow mb-3 block">Featured Community Involvement</span>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
+                  Community Highlights Coming Soon
+                </h2>
+                <p className="text-muted-foreground font-body leading-relaxed mb-6">
+                  We are gathering approved photos, organization names, and project details from the Highlander team. This section will be updated with real community involvement, local sponsorships, charity work, and partnership highlights once approved for publication.
+                </p>
+                <div className="border-t border-border pt-6">
+                  <p className="font-heading font-bold text-foreground mb-4">
+                    Have a community opportunity to discuss?
+                  </p>
+                  <Link to="/contact" className="group bg-primary text-primary-foreground font-heading font-bold text-base px-7 py-3.5 inline-flex items-center gap-2.5 hover:bg-primary/90 transition-all">
+                    Contact Highlander
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
-              <p className="text-muted-foreground font-body mb-5">
-                To replace the placeholder cards above with real initiatives, partnerships, and affiliations, please confirm and provide the following:
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ── PHOTO PROOF SECTION ── */}
+        <section className="section-padding bg-secondary">
+          <div className="container-tight">
+            <div className="text-center mb-12 max-w-2xl mx-auto">
+              <span className="eyebrow mb-3 block">Community Moments</span>
+              <h2 className="section-heading">From the Mountains We Serve</h2>
+              <p className="text-muted-foreground mt-4 font-body">
+                A space for real photos from Highlander's community involvement, local projects, and team moments across Western North Carolina. Approved imagery will be added as it becomes available.
               </p>
-              <ul className="grid sm:grid-cols-2 gap-3 text-sm text-foreground/85 font-body mb-6">
-                {[
-                  "Confirm whether Rotary affiliation should be displayed (and provide approved logo + use permission)",
-                  "Chamber of Commerce or trade-association memberships to feature",
-                  "Names of charities, nonprofits, and community partners Highlander supports",
-                  "Specific community projects, dates, and brief descriptions",
-                  "Local sponsorships (youth sports, schools, festivals) with permission to display",
-                  "Photos from community events (with consent of anyone shown)",
-                  "Veteran and first-responder program details, if any",
-                  "Approved organization logos for display",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] mt-2 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-muted-foreground italic">
-                Until approved details are provided, this page intentionally uses structured placeholders. No affiliation, sponsorship, or partnership will be claimed publicly without confirmation.
-              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="md:col-span-2 aspect-[16/10] overflow-hidden card-premium relative group">
+                <img
+                  src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1600"
+                  alt="Western North Carolina mountain landscape"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+              <div className="aspect-[16/10] md:aspect-auto card-premium bg-heritage-charcoal text-white flex flex-col justify-center p-7">
+                <ImageIcon className="w-8 h-8 text-[hsl(var(--highland-gold))] mb-4" />
+                <h3 className="font-heading font-bold text-xl mb-3 leading-tight">Real Photos, Coming Soon</h3>
+                <p className="text-white/70 text-sm font-body leading-relaxed">
+                  Approved team, event, and community photos will appear here as the Highlander team shares them.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ── GET INVOLVED ── */}
-        <section className="section-padding bg-heritage-charcoal text-white text-center relative overflow-hidden">
+        {/* ── HOW TO CONNECT ── */}
+        <section className="section-padding bg-heritage-charcoal text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
-          <div className="container-tight relative z-10">
+          <div className="container-tight relative z-10 max-w-3xl text-center">
             <ScrollReveal>
-              <Gift className="w-12 h-12 text-[hsl(var(--highland-gold))] mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Know a local cause in need?</h2>
-              <p className="text-white/60 text-lg md:text-xl font-body max-w-xl mx-auto mb-10">
-                We're always looking for new ways to support Western North Carolina. If you represent a local non-profit or know a neighbor in need, please reach out.
+              <Users className="w-12 h-12 text-[hsl(var(--highland-gold))] mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 leading-tight">
+                Have a Local Cause or Community Opportunity?
+              </h2>
+              <p className="text-white/70 text-lg font-body max-w-2xl mx-auto mb-10 leading-relaxed">
+                If you represent a local organization, event, or cause in Western North Carolina, Highlander welcomes the opportunity to learn more. Reach out to share details and connect with the team.
               </p>
-              <Link to="/contact" className="group bg-[hsl(var(--highland-gold))] text-heritage-charcoal font-heading font-bold text-lg px-12 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] transition-all">
-                <span>Contact Our Community Lead</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/contact" className="group bg-[hsl(var(--highland-gold))] text-heritage-charcoal font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] transition-all">
+                  Contact Highlander
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link to="/quote" className="group border border-white/30 text-white font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:border-white hover:bg-white/5 transition-all">
+                  Request a Free Estimate
+                </Link>
+              </div>
+              <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-white/60 font-body">
+                <Link to="/about" className="hover:text-white transition-colors">About Highlander</Link>
+                <Link to="/recent-projects" className="hover:text-white transition-colors">Recent Projects</Link>
+                <Link to="/roofing" className="hover:text-white transition-colors">Roofing</Link>
+                <Link to="/construction" className="hover:text-white transition-colors">Construction</Link>
+                <Link to="/service-areas" className="hover:text-white transition-colors">Service Areas</Link>
+              </div>
             </ScrollReveal>
           </div>
         </section>
