@@ -67,7 +67,7 @@ const tier2Areas = [
 ];
 
 const certifications = [
-  { icon: Award, label: "CertainTeed Master Applicator" },
+  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
   { icon: Shield, label: "VELUX Certified Installer" },
   { icon: Shield, label: "Licensed & Fully Insured" },
   { icon: Clock, label: "Rapid Emergency Response" },
