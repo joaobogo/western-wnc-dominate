@@ -224,10 +224,12 @@ const Footer = () => {
               
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <img src={badgeCertainteedMaster} alt="CertainTeed ShingleMaster Credentialed Contractor" className="h-8 w-auto" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">ShingleMaster</span>
+                  <div className="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
+                    <Award className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">Licensed & Insured</span>
                 </div>
-                <span className="text-[11px] text-muted-foreground font-body leading-tight">CertainTeed Credentialed Contractor</span>
+                <span className="text-[11px] text-muted-foreground font-body leading-tight">NC Licensed General Contractor</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
@@ -240,10 +242,10 @@ const Footer = () => {
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <img src={logoCertainteed} alt="CertainTeed" className="h-6 w-auto" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">CertainTeed Master</span>
+                  <img src={badgeCertainteedMaster} alt="CertainTeed ShingleMaster Credentialed Contractor" className="h-8 w-auto" />
+                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">ShingleMaster</span>
                 </div>
-                <span className="text-[11px] text-muted-foreground font-body leading-tight">Factory-Certified Professional Installer</span>
+                <span className="text-[11px] text-muted-foreground font-body leading-tight">CertainTeed Credentialed Contractor</span>
               </div>
 
               <div className="flex flex-col gap-2 group/cert">
