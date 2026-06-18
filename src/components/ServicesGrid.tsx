@@ -254,7 +254,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
               <h3 className="text-base font-heading font-bold text-foreground leading-tight tracking-tight group-hover:text-foreground/90 transition-colors">
                 {service.title}
               </h3>
-              <span className={`text-[15px] md:text-[16px] font-body font-bold uppercase tracking-[0.14em] mt-1 block ${
+              <span className={`text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.18em] mt-1 block ${
                 isGold ? "text-[hsl(var(--highland-gold))]" : "text-primary/80"
               }`}>
                 {service.tagline}
@@ -263,7 +263,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
           </div>
 
           {/* Description */}
-          <p className="text-foreground text-lg md:text-xl leading-relaxed font-body mb-6 flex-1 font-bold">
+          <p className="text-muted-foreground text-[13px] md:text-[13.5px] leading-[1.55] font-body mb-6 flex-1">
             {service.description}
           </p>
 
