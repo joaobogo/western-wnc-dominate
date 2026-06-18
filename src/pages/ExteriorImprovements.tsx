@@ -42,7 +42,7 @@ const weatherResilience = [
 const approachPillars = [
   { icon: Shield, title: "Roofing-Construction Coordination", detail: "Exterior renovation frequently overlaps with roofing at fascia, soffit, and flashing transitions. Having one company manage both eliminates coordination gaps and ensures waterproofing continuity." },
   { icon: ClipboardCheck, title: "Documented Scope & Pricing", detail: "Written proposals with transparent cost groupings, specified materials, defined timeline, and no vague allowances. You know exactly what you're getting before we mobilize." },
-  { icon: Users, title: "In-House Installation Crews", detail: "The same trained, employed craftsmen who build our additions and install our roofs handle exterior work. No anonymous subcontractor rotation." },
+  { icon: Users, title: "In-House Installation Crews", detail: "The same trained, employed craftsmen who build our additions and install our roofs handle exterior work." },
   { icon: FileCheck, title: "Hidden Damage Protocol", detail: "When we find rot, insect damage, or moisture issues behind siding — and we often do — we stop, document, discuss scope and cost, and proceed only after your approval. No surprise charges." },
   { icon: Mountain, title: "WNC Material Expertise", detail: "We specify materials rated for mountain conditions — not what's cheapest at the supply house. Fiber cement, engineered wood, and metal that handle elevation, UV, and moisture." },
   { icon: Eye, title: "Daily Quality Verification", detail: "Trim reveals, caulk lines, material transitions, and paint edges matter on exterior work. We treat visible details as quality indicators — because your neighbors will too." },

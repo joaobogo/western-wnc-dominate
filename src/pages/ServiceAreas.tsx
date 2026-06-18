@@ -35,7 +35,7 @@ const serviceStats = [
 const whyLocal = [
   { icon: Mountain, title: "We Know the Terrain", detail: "Elevation, slope, soil composition, and microclimates affect every project. We've built across this region long enough to know what each town demands." },
   { icon: CloudLightning, title: "We Know the Weather", detail: "From Highlands' 80+ inches of annual rain to Waynesville's ice storms — we spec materials and methods for your area's exact exposure profile." },
-  { icon: Users, title: "Local Crews, Not Subcontractors", detail: "Our teams live and work here. They know the roads, the building codes, and the inspectors. No anonymous subcontractor rotation." },
+  { icon: Users, title: "Local In-House Crews", detail: "Our teams live and work here. They know the roads, the building codes, and the inspectors." },
   { icon: Clock, title: "Fast Response Anywhere in WNC", detail: "With offices in Franklin and Sylva, we reach every town in our service area within 45 minutes. Emergency response is prioritized." },
 ];
 

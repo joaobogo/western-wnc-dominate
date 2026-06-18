@@ -202,8 +202,8 @@ const whyHighlander = [
   },
   {
     icon: Users,
-    title: "Our Crews, Not Subcontractors",
-    detail: "The people on your roof are Highlander employees — trained, certified, and accountable. No subcontractor roulette. The same standard on every project.",
+    title: "Our In-House Crews",
+    detail: "The people on your roof are Highlander employees — trained, certified, and accountable. The same standard on every project.",
   },
 ];
 

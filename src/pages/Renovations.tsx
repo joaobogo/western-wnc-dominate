@@ -49,7 +49,7 @@ const finishQuality = [
 const whyHighlander = [
   { icon: ClipboardCheck, title: "Same Planning Discipline", detail: "We scope renovation work with the same detail and documentation we bring to roofing — written proposals, material specifications, defined timelines, and no vague allowances." },
   { icon: Eye, title: "Same Quality Standards", detail: "Our renovation crews are held to the same quality checkpoints, material handling standards, and supervision protocols as our roofing and construction teams." },
-  { icon: Users, title: "Same In-House Crews", detail: "The same trained, employed craftsmen who build our additions and install our roofs handle renovation work. No anonymous subcontractor rotation." },
+  { icon: Users, title: "Same In-House Crews", detail: "The same trained, employed craftsmen who build our additions and install our roofs handle renovation work." },
   { icon: Ruler, title: "Same Attention to Detail", detail: "Trim reveals, caulk lines, material transitions, and tile work matter. We treat visible details as quality indicators — because you'll notice them every day." },
   { icon: FileCheck, title: "Documented Everything", detail: "Written scope, transparent cost groupings, specified materials, confirmed timeline. You receive a complete proposal — not an estimate with vague allowances and vague 'to be determined' items." },
   { icon: Mountain, title: "WNC Material Knowledge", detail: "Mountain humidity, temperature swings, and elevation affect material performance. We specify products rated for WNC conditions — not what's cheapest at the supply house." },

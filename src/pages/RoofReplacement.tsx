@@ -63,7 +63,7 @@ const rightWayPillars = [
   {
     icon: Users,
     title: "Our Crews, Our Standards",
-    detail: "Your replacement is installed by Highlander employees — trained, certified, and directly accountable. No subcontractor roulette, no crew you've never met showing up on day one.",
+    detail: "Your replacement is installed by Highlander employees — trained, certified, and directly accountable. The crew that shows up on day one is the same team you met during your consultation.",
   },
   {
     icon: ShieldCheck,

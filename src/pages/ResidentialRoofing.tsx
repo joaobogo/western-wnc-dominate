@@ -139,7 +139,7 @@ const faqs = [
   { q: "What warranties do you offer on residential roofing?", a: "Every residential project includes the manufacturer's material warranty (up to lifetime limited on CertainTeed products) plus Highlander's labor warranty. You receive a complete warranty package at your final walkthrough." },
   { q: "Can I stay in my home during a roof replacement?", a: "Yes. While roof replacement is noisy, most homeowners stay in their homes throughout the process. We'll let you know what to expect each day and take every precaution to minimize disruption." },
   { q: "Do you offer financing for residential roofing?", a: "Yes. We offer flexible financing options to make roof replacement accessible. Ask about payment plans during your consultation — no obligation, no pressure." },
-  { q: "Are your crews employees or subcontractors?", a: "Our roofing crews are Highlander employees — trained, certified, and directly accountable. No subcontractor roulette. The same quality standard on every project." },
+  { q: "Are your crews Highlander employees?", a: "Yes. Our roofing crews are Highlander employees — trained, certified, and directly accountable. The same quality standard on every project." },
   { q: "What happens if it rains during my roof replacement?", a: "We monitor weather closely and plan accordingly. If rain is expected, we ensure your roof is properly tarped and sealed before we stop for the day. Your home is never left exposed overnight." },
 ];
 

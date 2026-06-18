@@ -109,7 +109,7 @@ const qualityStandards = [
   {
     icon: Users,
     title: "In-House Crew Standards",
-    detail: "Every project team is hired, trained, and supervised by Highlander. We don't use anonymous subcontractor rotations. Your project team is our team.",
+    detail: "Every project team is hired, trained, and supervised by Highlander. Your project team is our team.",
   },
   {
     icon: Clock,
