@@ -311,13 +311,20 @@ const ConstructionDesign = () => {
                       <div className="font-heading font-bold text-foreground text-sm leading-tight">{p.timeline}</div>
                     </div>
                   </div>
+
+                  <Link
+                    to={p.ctaHref}
+                    className="mt-5 group/cta inline-flex items-center justify-center gap-2 w-full border border-[hsl(var(--highland-gold)/0.45)] bg-transparent text-foreground font-heading font-bold text-[12.5px] px-5 py-3 rounded-none uppercase tracking-[0.12em] hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold))] transition-all"
+                  >
+                    {p.ctaLabel} <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
+                  </Link>
                 </motion.div>
               ))}
             </div>
 
             <div className="max-w-3xl mx-auto mt-10 bg-card border-l-2 border-[hsl(var(--highland-gold))] p-5 md:p-6">
               <p className="text-foreground/80 text-[14.5px] font-body leading-relaxed">
-                <span className="font-heading font-bold text-foreground">You can stop after any phase and keep your deliverables.</span> Phases stack — most remodel and addition clients begin with Phases 1 and 2.
+                <span className="font-heading font-bold text-foreground">Clients can stop after any phase and keep their deliverables.</span> Phases can also stack when a project needs to move from concept to permitting and construction documentation.
               </p>
             </div>
 
