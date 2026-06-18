@@ -196,6 +196,18 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
           </h1>
           <p className="text-sm text-muted-foreground font-body mb-10">{UPDATED}</p>
 
+          {/* Pre-launch placeholder — pending client/legal review */}
+          <div className="mb-10 p-4 border-l-4 border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] rounded-sm">
+            <p className="text-xs font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] mb-1.5">
+              Pending Legal Review
+            </p>
+            <p className="text-sm text-foreground/75 font-body leading-relaxed">
+              This {meta.heading.toLowerCase()} is a working draft prepared for Highlander Roofing &amp; Construction.
+              Final copy must be reviewed and approved by the company's attorney before publication.
+              Nothing on this page should be relied on as a binding legal commitment until that review is complete.
+            </p>
+          </div>
+
           <article className="prose prose-neutral max-w-none font-body text-foreground/85 leading-relaxed [&_h2]:font-heading [&_h2]:text-foreground [&_h2]:text-xl [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:font-bold [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-1.5 [&_a]:text-primary [&_a]:underline [&_a:hover]:no-underline">
             <Body />
           </article>
