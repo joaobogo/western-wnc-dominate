@@ -81,7 +81,7 @@ const GivingBack = () => {
                 Highlander Roofing Services is proud to serve the same Western North Carolina communities we live in, work in, and care about. From roofing and construction to local involvement, our work is built around protecting homes, supporting neighbors, and strengthening the places that make this region special.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/quote" className="group bg-[hsl(var(--highland-gold))] text-heritage-charcoal font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] transition-all">
+                <Link to="/consultation" className="group bg-[hsl(var(--highland-gold))] text-heritage-charcoal font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] transition-all">
                   Request a Free Estimate
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -231,7 +231,7 @@ const GivingBack = () => {
                   Contact Highlander
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/quote" className="group border border-white/30 text-white font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:border-white hover:bg-white/5 transition-all">
+                <Link to="/consultation" className="group border border-white/30 text-white font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:border-white hover:bg-white/5 transition-all">
                   Request a Free Estimate
                 </Link>
               </div>
