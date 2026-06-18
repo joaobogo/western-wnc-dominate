@@ -360,11 +360,11 @@ const ConstructionDesign = () => {
           <div className="container-tight">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <ScrollReveal variant="fade">
-                <span className="eyebrow mb-3 block">How We Price Design</span>
+                <span className="eyebrow mb-3 block">How We Structure Design</span>
                 <h2 className="section-heading mb-6">No Hourly Guesswork. Clear Phases. Defined Deliverables.</h2>
                 <div className="space-y-5 text-foreground/80 text-base font-body leading-relaxed">
                   <p>
-                    Highlander's design process uses fixed phase pricing and itemized deliverables instead of vague hourly design work. You know exactly what each phase includes — and what it costs — before you begin.
+                    Highlander's design process uses defined phases and itemized deliverables instead of vague hourly design work. You know exactly what each phase includes before you begin. Fixed phase pricing is confirmed for your specific project during the Design &amp; Consultation Agreement process.
                   </p>
                 </div>
               </ScrollReveal>
