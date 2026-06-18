@@ -188,7 +188,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Families who want to enjoy the Highlands climate without the insects or rain, and anyone looking to maximize their mountain views with a high-end deck or porch expansion.",
     proofNote:
       "From multi-level composite decks to heavy-timber screened rooms, our outdoor projects are built to withstand Highlands' unique moisture profile.",
-    metaTitle: "Outdoor Living Outdoor Living & Decks in Highlands, NC | Highlander Construction Decks in Highlands, NC | Highlander",
+    metaTitle: "Outdoor Living & Decks in Highlands, NC | Highlander",
     metaDescription:
       "Custom screened porches, decks, and outdoor living spaces in Highlands, NC. Engineered for mountain weather. Talk to Highlander about your project.",
     faqs: [
@@ -478,7 +478,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Outdoor enthusiasts, mountain bikers, and homeowners who want to enjoy the forest views without the maintenance burden of natural wood.",
     proofNote:
       "From composite decks to screened mountain rooms, we build for durability in the wettest county in the state.",
-    metaTitle: "Outdoor Living Outdoor Living & Decks in Brevard, NC | Highlander Construction Decks in Brevard, NC | Highlander",
+    metaTitle: "Outdoor Living & Decks in Brevard, NC | Highlander",
     metaDescription:
       "Custom decks and outdoor living spaces in Brevard, NC. Engineered for moisture resistance and mountain views. Licensed & Insured.",
     faqs: [
