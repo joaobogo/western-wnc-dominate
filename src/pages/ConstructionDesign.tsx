@@ -19,31 +19,30 @@ import { ConstructionClosingCTA, ConstructionMidCTA } from "@/components/constru
  *
  * Approved vocabulary only. NEVER use "architect / architectural / free design".
  *
- * NOTE: All fee ranges below are PRE-LAUNCH PLACEHOLDERS pending final approval
- * from Javi / Highlander. Edit the DESIGN_PHASES array to update. Public copy
- * uses "typical range" and "depending on project scope" — never guaranteed
- * pricing. See `// FEES PENDING APPROVAL` markers.
+ * NOTE: Public-facing design pricing has been removed per Highlander policy.
+ * Pricing is determined by project scope and confirmed during the Design &
+ * Consultation Agreement process. Do NOT reintroduce fee ranges, dollar
+ * amounts, "starting at", or "typical fee range" copy on this page.
  */
 
 const heroImg = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-// FEES PENDING APPROVAL — edit here to update across the page
 const DESIGN_PHASES = [
   {
     icon: ClipboardCheck,
     label: "Phase 1",
     title: "Schematic Design",
-    forWho: "Anyone deciding what to build — and roughly what it costs.",
+    forWho: "Homeowners deciding what to build, what direction makes sense, and what level of investment may be realistic.",
+    bestFit: "Early-stage additions, remodels, outdoor living projects, and construction ideas that need to become clearer before estimating.",
     deliverables: [
       "Measured existing conditions",
       "Concept floor plans and elevations",
       "3D views",
       "Material direction",
-      "Realistic preliminary budget range",
+      "Preliminary budget guidance",
     ],
-    feeRange: "$3,000–$9,500",
     timeline: "2–3 weeks to concept meeting",
   },
   {
@@ -51,13 +50,13 @@ const DESIGN_PHASES = [
     label: "Phase 2",
     title: "Design Development & Permit Set",
     forWho: "Clients ready to move toward approval.",
+    bestFit: "Projects with a defined scope that need permit-ready documentation before construction can begin.",
     deliverables: [
       "Fully dimensioned permit-ready drawings",
       "Code and zoning summary",
       "Engineering coordination",
       "Permit submittal support",
     ],
-    feeRange: "$4,000–$13,500",
     timeline: "3–4 weeks plus jurisdiction review",
   },
   {
@@ -65,13 +64,13 @@ const DESIGN_PHASES = [
     label: "Phase 3",
     title: "Full Construction Documents",
     forWho: "Clients who want bid-ready documentation, and all new construction projects.",
+    bestFit: "New construction and complex remodels where trade-by-trade clarity is essential before pricing and building.",
     deliverables: [
       "Complete construction set",
       "Full schedules",
       "Specifications",
       "Trade-by-trade scopes of work",
     ],
-    feeRange: "$5,000–$19,500",
     timeline: "4–6 weeks",
   },
 ];
@@ -86,7 +85,7 @@ const whyDesignFirst = [
 ];
 
 const fixedFeeBullets = [
-  "Fixed tier pricing by project scope",
+  "Pricing determined by project scope",
   "Clear deliverables for each phase",
   "Defined timeline expectations",
   "Drawings, 3D views, scopes, and permit support — depending on phase",
