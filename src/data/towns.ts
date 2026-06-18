@@ -22,6 +22,52 @@ export interface TownData {
   heroImage: string;
 }
 
+/**
+ * Tight, conversion-focused 2–4 sentence local-relevance block per town.
+ * Names the town, names the work Highlander does there, stays accurate
+ * (no fabricated stats, no claimed projects without proof).
+ * Keyed by town slug. Use `getLocalRelevance(slug)` from the helper below.
+ */
+export const townLocalRelevance: Record<string, string> = {
+  "highlands-nc":
+    "Highlands homes sit above 4,000 feet, where steep rooflines, heavy rainfall, ice loading, and high UV punish standard roofing systems. Highlander Roofing & Construction supports Plateau homeowners with premium synthetic and standing-seam metal systems, high-velocity flashing details, and exterior work built for Western North Carolina's harshest mountain conditions.",
+  "cashiers-nc":
+    "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain architecture and high-end home investments across the Plateau.",
+  "franklin-nc":
+    "Based in Franklin, Highlander Roofing & Construction serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen within 24–48 hours and the same owner-led team is on site from first call to final walkthrough.",
+  "sylva-nc":
+    "Sylva blends historic downtown homes, university rentals, and hillside residences across Jackson County — and valley moisture, fog, and humidity make roof and exterior choices matter. Highlander supports Sylva homeowners and property owners with roof repair and replacement, gutter work, historic-sensitive exterior renovations, and reliable commercial maintenance.",
+  "bryson-city-nc":
+    "Bryson City sits at the gateway to the Smokies, where vacation rentals, cabins, and family homes face sudden mountain deluges and heavy seasonal use. Highlander helps Swain County homeowners and short-term-rental operators with metal roofing, fast roof repair, deck and porch work, and exterior construction scheduled around the rental calendar.",
+  "waynesville-nc":
+    "Waynesville's historic districts and hillside neighborhoods need roofing and exterior work that respects character while modernizing the building envelope. Highlander serves Haywood County homeowners with attic-ventilation correction, standing-seam metal, structural home additions, and renovation work designed for mountain freeze-thaw cycles.",
+  "cullowhee-nc":
+    "Cullowhee's mix of WCU-area rentals, faculty homes, and Tuckasegee valley properties calls for roofing and exterior work that's reliable, budget-conscious, and scheduled around the academic calendar. Highlander supports Jackson County landlords and homeowners with rental roof repairs, deck safety updates, exterior siding work, and algae-resistant shingle systems.",
+  "dillsboro-nc":
+    "Dillsboro is a historic riverfront village where every roof, porch, and exterior detail is visible to neighbors and visitors. Highlander serves Dillsboro homeowners with preservation-sensitive roofing, designer shingle systems, artisan porch detailing, and exterior repairs that integrate with the village's century-old mountain character.",
+  "asheville-nc":
+    "Asheville's housing stock runs from historic Montford and Biltmore Forest to modern Town Mountain builds — each with its own roofing and exterior demands. Highlander serves Buncombe County homeowners with standing-seam metal, Brava synthetic systems, luxury additions, and mountain-modern renovations, with on-site coordination from a Western NC–based team. (See our Service Areas page for current Asheville scheduling availability.)",
+  "hendersonville-nc":
+    "Hendersonville's historic Main Street district and established Henderson County neighborhoods reward roofing and exterior work built to last decades, not seasons. Highlander supports Hendersonville homeowners with Class 4 impact-resistant shingle systems, exterior siding updates, deck safety repairs, and age-in-place exterior modifications.",
+  "brevard-nc":
+    "Brevard sits in the Land of Waterfalls, where record rainfall makes gutter sizing, underlayment, and flashing details a moisture-management problem first and an aesthetics decision second. Highlander serves Transylvania County homeowners with advanced gutter systems, synthetic shake roofing, deck and porch additions, and exterior siding work built to stay dry.",
+  "lake-toxaway-nc":
+    "Lake Toxaway estates expect Brava-grade synthetic roofing, copper gutter work, and lakefront construction that holds up under intense storms and persistent lake-effect moisture. Highlander serves the Lake Toxaway and broader Transylvania County market with luxury roof systems, premium maintenance programs, and high-end master suite and outdoor-living additions.",
+  "murphy-nc":
+    "Murphy and the far western counties get a real local roofing and construction partner instead of a Friday-only crew. Highlander serves Cherokee County homeowners with dimensional shingle systems, deck repairs, siding replacement, storm-damage mitigation, and exterior work scoped to the long-term value of family homes and vacation properties.",
+  "black-mountain-nc":
+    "Black Mountain homes — from arts-and-crafts cottages to modern mountain retreats — sit on ridges and slopes that face real wind exposure and winter ice. Highlander serves Buncombe County homeowners with designer asphalt shingle systems, custom timber porch work, historic roof restoration, and interior renovations that respect the town's craftsman character.",
+  "weaverville-nc":
+    "Weaverville's growing family-home market and ridgetop estates need roofing and exterior work designed for high-wind events and ridgetop UV, not generic suburban specs. Highlander serves North Buncombe homeowners with standing-seam metal systems, structural home additions, dimensional shingles, and modern siding updates engineered for the long run.",
+  "marshall-nc":
+    "Marshall's historic riverfront homes and Madison County's ridgetop farms need a contractor comfortable with complex terrain, century-old structures, and serious wind exposure. Highlander serves Madison County homeowners with metal roofing systems, structural repairs, historic exterior renovations, and deck extensions built for Appalachian conditions.",
+  "hayesville-nc":
+    "Hayesville and the Lake Chatuge area run on lakefront living — homes built for views, decks, and water-adjacent durability. Highlander serves Clay County homeowners with standing-seam metal roofing, luxury decking, exterior modernization, and residential replacement work designed to protect lakefront investments season after season.",
+};
+
+export const getLocalRelevance = (slug: string): string | undefined =>
+  townLocalRelevance[slug];
+
 // ──────────────────────────────────────────────────────────────────────────────
 // 📸 IMAGE STAGING NOTE — read before launch
 // ──────────────────────────────────────────────────────────────────────────────
