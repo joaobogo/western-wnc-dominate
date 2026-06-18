@@ -23,6 +23,7 @@ import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import ProjectConcierge from "@/components/ProjectConcierge";
 import VeluxProof from "@/components/VeluxProof";
+import HomeFAQ from "@/components/HomeFAQ";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -107,6 +108,9 @@ const Index = () => {
 
         {/* 12. Town Grid — Service area footprint */}
         <TownGrid id="areas" />
+
+        {/* 13. Homepage FAQ — Conversion-focused answers */}
+        <HomeFAQ />
 
         <SectionDivider variant="gold-fade" />
       </main>
