@@ -94,6 +94,17 @@ const App = () => (
           <Route path="/roofing/brava-synthetic" element={<SyntheticRoofing />} />
           <Route path="/roofing/skylights" element={<Skylights />} />
 
+          {/* ─── Keyword aliases — roofing search intent → existing polished pages ─── */}
+          <Route path="/roofing/emergency-repair" element={<Navigate to="/roofing/storm-damage" replace />} />
+          <Route path="/roofing/emergency-roof-repair" element={<Navigate to="/roofing/storm-damage" replace />} />
+          <Route path="/roofing/leak-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
+          <Route path="/roofing/roof-leak-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
+          <Route path="/roofing/inspection" element={<Navigate to="/request-inspection" replace />} />
+          <Route path="/roofing/roof-inspection" element={<Navigate to="/request-inspection" replace />} />
+          <Route path="/roofing/asphalt" element={<Navigate to="/roofing/residential" replace />} />
+          <Route path="/roofing/asphalt-shingle" element={<Navigate to="/roofing/residential" replace />} />
+          <Route path="/roofing/shingle" element={<Navigate to="/roofing/residential" replace />} />
+
           {/* ─── Paid landing pages (kept for ad spend, excluded from nav) ─── */}
           <Route path="/lp/roof-replacement" element={<RoofReplacementAds />} />
           <Route path="/lp/roof-repair" element={<RoofRepairAds />} />
@@ -110,6 +121,33 @@ const App = () => (
           <Route path="/construction/exterior" element={<Navigate to="/construction/siding" replace />} />
           <Route path="/construction/custom" element={<Navigate to="/construction" replace />} />
           <Route path="/construction/flatwork" element={<Navigate to="/construction" replace />} />
+
+          {/* ─── Keyword aliases — construction search intent → existing polished pages ─── */}
+          <Route path="/construction/garages" element={<Navigate to="/construction/additions" replace />} />
+          <Route path="/construction/garage" element={<Navigate to="/construction/additions" replace />} />
+          <Route path="/construction/in-law-suite" element={<Navigate to="/construction/additions" replace />} />
+          <Route path="/construction/guest-suite" element={<Navigate to="/construction/additions" replace />} />
+          <Route path="/construction/porches" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/screened-porch" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/sunrooms" element={<Navigate to="/construction/additions" replace />} />
+          <Route path="/construction/sunroom" element={<Navigate to="/construction/additions" replace />} />
+          <Route path="/construction/two-story-addition" element={<Navigate to="/construction/additions" replace />} />
+          <Route path="/construction/decks" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/deck" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/patios" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/patio" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/pergolas" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/pergola" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/outdoor-kitchen" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/fire-pit" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/construction/retaining-walls" element={<Navigate to="/construction/outdoor-living" replace />} />
+
+          {/* ─── Gutter keyword aliases ─── */}
+          <Route path="/gutters/seamless" element={<Navigate to="/roofing" replace />} />
+          <Route path="/gutters/guards" element={<Navigate to="/roofing" replace />} />
+          <Route path="/gutters/downspouts" element={<Navigate to="/roofing" replace />} />
+          <Route path="/gutters/copper" element={<Navigate to="/roofing" replace />} />
+          <Route path="/gutters/aluminum" element={<Navigate to="/roofing" replace />} />
 
           {/* ─── Layouts & Planning (Supporting Branch) ─── */}
           <Route path="/layouts-planning" element={<LayoutsPlanning />} />
