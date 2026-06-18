@@ -329,7 +329,7 @@ const RoofingDivision = () => {
                 transition={{ duration: 0.7, delay: 1 }}
                 className="text-[19px] md:text-[22px] text-primary-foreground/90 max-w-2xl mb-12 leading-relaxed font-body font-medium"
               >
-                Owner-led roofing systems engineered for Western North Carolina's ridgelines. From CertainTeed ShingleMaster-credentialed shingle replacements to architectural standing seam metal, we deliver structural security with family-business integrity.
+                Owner-led roofing systems engineered for Western North Carolina's ridgelines. From CertainTeed ShingleMaster-credentialed shingle replacements to premium standing seam metal, we deliver structural security with family-business integrity.
               </motion.p>
 
               <motion.div
