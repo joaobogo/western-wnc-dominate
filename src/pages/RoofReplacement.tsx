@@ -81,14 +81,14 @@ const materials = [
   {
     name: "CertainTeed Landmark PRO",
     type: "Dimensional Asphalt",
-    lifespan: "30–50 years",
+    lifespan: "Long service life",
     detail: "Our most-installed residential shingle. Impact-resistant, algae-resistant, 20+ designer colors. The best value-to-performance ratio for WNC mountain homes.",
     image: asphalt006,
   },
   {
     name: "Standing Seam Metal",
     type: "Custom-Fabricated Panels",
-    lifespan: "50–70 years",
+    lifespan: "Premium long-term system",
     detail: "Concealed fastener systems rated for 140mph wind uplift. Zero maintenance, superior snow shedding, and energy-efficient reflectivity. The premium long-term investment.",
     image: metalRoof,
   },

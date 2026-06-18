@@ -220,7 +220,7 @@ const MATERIALS = [
   {
     id: "synthetic-slate",
     name: "Synthetic Slate",
-    lifespan: "40–50 years",
+    lifespan: "Long service life",
     priceRange: "$$$",
     bestFor: "Luxury look without natural slate weight",
     windRating: "Up to 110 mph",

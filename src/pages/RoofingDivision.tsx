@@ -74,14 +74,14 @@ const materials = [
   {
     name: "Dimensional Shingles",
     brand: "CertainTeed Landmark PRO",
-    lifespan: "30–50 years",
+    lifespan: "Long service life",
     best: "Most residential projects",
     detail: "Impact-resistant, algae-resistant, and available in 20+ color profiles. Our most-installed product for WNC homes.",
   },
   {
     name: "Standing Seam Metal",
     brand: "Custom-fabricated panels",
-    lifespan: "50–70 years",
+    lifespan: "Premium long-term system",
     best: "Premium & mountain estates",
     detail: "Concealed fastener systems rated for 140mph wind uplift. Superior snow shedding, energy efficiency, and zero-maintenance longevity.",
   },
