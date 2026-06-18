@@ -12,7 +12,7 @@ const divisions = [
   {
     icon: Home,
     label: "Roofing Division",
-    tagline: "CertainTeed Master Applicator · GAF Certified",
+    tagline: "CertainTeed ShingleMaster Credentialed Contractor",
     color: "primary",
     iconBg: "bg-primary/8",
     iconColor: "text-primary",

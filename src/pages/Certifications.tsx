@@ -4,7 +4,6 @@ import {
   ArrowRight, Phone, Shield, Award, FileCheck, BadgeCheck, CheckCircle,
   Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain,
 } from "lucide-react";
-import badgeGafMasterElite from "@/assets/badge-gaf-master-elite.png";
 import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
 import badgeJamesHardie from "@/assets/badge-james-hardie.png";
 import badgeHaag from "@/assets/badge-haag.png";
@@ -44,15 +43,15 @@ const certifications = [
   },
   {
     icon: Shield,
-    title: "GAF Master Elite® Contractor",
-    badge: "Top 2% Nationally",
-    image: badgeGafMasterElite,
-    description: "Highlander is a GAF Master Elite® roofing contractor, a credential held by only 2% of all roofing contractors in the country. This status ensures you receive the highest level of craftsmanship and exclusive access to GAF's strongest warranties.",
+    title: "CertainTeed ShingleMaster™ Credentialed Contractor",
+    badge: "Credentialed",
+    image: badgeCertainteedMaster,
+    description: "Highlander is a CertainTeed ShingleMaster Credentialed Contractor — a designation awarded to roofing companies that meet CertainTeed's standards for installation quality, business practices, and ongoing manufacturer training. It unlocks the strongest CertainTeed warranty options available to homeowners.",
     whatItMeans: [
-      "Exclusive access to GAF's Golden Pledge® Limited Warranty",
-      "GAF-verified insurance, licensing, and credit standing",
-      "Continuous training on the latest roofing technologies",
-      "Independent GAF inspectors verify our project quality",
+      "Eligible to offer CertainTeed's extended SureStart PLUS™ warranty coverage",
+      "Verified business standing, insurance, and customer references",
+      "Crews trained to CertainTeed's documented installation specifications",
+      "Ongoing recertification keeps the credential current — not a one-time stamp",
     ],
   },
   {
