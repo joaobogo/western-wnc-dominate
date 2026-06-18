@@ -26,7 +26,6 @@ const constructionLinks = [
 ];
 
 const resourceLinks = [
-  { label: "Project Gallery", href: "/gallery" },
   { label: "Recent Projects", href: "/recent-projects" },
   { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },

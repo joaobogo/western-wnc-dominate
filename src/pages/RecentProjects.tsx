@@ -59,6 +59,13 @@ const RecentProjects = () => {
         <section className="py-12 md:py-16">
           <div className="container-tight">
             <div id="rwl-output" className="min-h-[400px] w-full" />
+            <p className="mt-6 text-sm text-foreground/60 font-body">
+              Recent project updates are loading. If the feed does not appear,
+              please refresh the page or contact Highlander at{" "}
+              <a href="tel:8285247773" className="text-[hsl(var(--highland-green))] font-semibold hover:underline">
+                828-524-7773
+              </a>.
+            </p>
           </div>
         </section>
 
