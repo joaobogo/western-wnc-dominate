@@ -205,11 +205,6 @@ const App = () => (
           <Route path="/roofing-builder" element={<RoofingBuilder />} />
           <Route path="/construction-builder" element={<ConstructionBuilder />} />
           <Route path="/design-intake" element={<DesignIntake />} />
-
-          <Route path="/design-intake" element={<DesignIntake />} />
-
-          <Route path="/construction/consultation" element={<Navigate to="/construction-intake" replace />} />
-          <Route path="/request-inspection" element={<Navigate to="/roofing-intake" replace />} />
           <Route path="/quote-flow" element={<QuoteFlow />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
