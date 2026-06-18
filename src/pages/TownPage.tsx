@@ -151,6 +151,25 @@ const TownPage = () => {
           </div>
         </section>
 
+        {/* 1.5 Local Relevance — tight, conversion-focused per-town intro */}
+        {localRelevance && (
+          <section className="py-16 md:py-20 bg-secondary/40 border-y border-border/60">
+            <div className="container-tight">
+              <ScrollReveal variant="fade">
+                <div className="max-w-3xl">
+                  <span className="eyebrow mb-4 block">Why {town.name}, {town.state}</span>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6 leading-tight">
+                    Local roofing &amp; construction in <span className="text-primary italic">{town.name}</span>
+                  </h2>
+                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-body">
+                    {localRelevance}
+                  </p>
+                </div>
+              </ScrollReveal>
+            </div>
+          </section>
+        )}
+
         {/* 2. Authority Section */}
         <section className="py-24 bg-background relative overflow-hidden">
           <TartanBackground opacity={0.02} />
