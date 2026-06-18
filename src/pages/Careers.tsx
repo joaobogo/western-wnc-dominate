@@ -10,7 +10,7 @@ import { toast } from "sonner";
 const benefits = [
   { title: "Competitive Pay", desc: "Industry-leading wages based on skill and local mountain experience.", icon: ShieldCheck },
   { title: "Year-Round Work", desc: "No seasonal layoffs. We keep our core crews busy 12 months a year.", icon: Mountain },
-  { title: "Training & Certs", desc: "Paid manufacturer certifications (GAF, CertainTeed) to advance your career.", icon: HardHat },
+  { title: "Training & Certs", desc: "Paid manufacturer certifications (CertainTeed ShingleMaster, VELUX, James Hardie) to advance your career.", icon: HardHat },
   { title: "Family Culture", desc: "Work for a local owner who knows your name and values your time.", icon: Users },
 ];
 

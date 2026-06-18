@@ -1,6 +1,6 @@
 # Highlander Roofing & Construction
 
-> Premium roofing and construction company serving Western North Carolina — Franklin, Sylva, Highlands, Cashiers, and surrounding mountain communities. GAF Master Elite certified, licensed General Contractor, 24-hour response.
+> Premium roofing and construction company serving Western North Carolina — Franklin, Sylva, Highlands, Cashiers, and surrounding mountain communities. Licensed, insured, and CertainTeed ShingleMaster Credentialed Contractor. Licensed NC General Contractor with 24-hour response.
 
 Highlander is a family-operated roofing and construction firm built for the WNC mountain climate. Roofing is the primary authority (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary pillar (additions, outdoor living, flatwork). All work is performed by in-house crews dispatched from offices in Franklin and Sylva.
 
@@ -9,7 +9,7 @@ Highlander is a family-operated roofing and construction firm built for the WNC 
 - [Home](/): Company overview, services, project proof, and lead capture.
 - [About](/about): Company history, leadership, and values.
 - [Team](/team): Owner, project managers, and crew leads.
-- [Certifications](/certifications): GAF Master Elite, manufacturer credentials, licensing (Licensed NC General Contractor).
+- [Certifications](/certifications): CertainTeed ShingleMaster Credentialed Contractor, manufacturer credentials, licensing (Licensed NC General Contractor).
 - [Reviews](/reviews): Verified customer reviews from across WNC.
 - [Financing](/financing): Financing options for roofing and construction projects.
 - [Careers](/careers): Open roles and hiring information.
