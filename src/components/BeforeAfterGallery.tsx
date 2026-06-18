@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
 import metal005 from "@/assets/gallery/metal-005.webp";
-import cedar004 from "@/assets/gallery/cedar-004.webp";
+import cedar004 from "@/assets/gallery/cedar-005.jpg";
 import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import metal006 from "@/assets/gallery/metal-006.webp";
 

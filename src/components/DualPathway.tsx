@@ -8,7 +8,7 @@ import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import { useRef } from "react";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-004.webp";
+import cedarRoof from "@/assets/division-construction.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
