@@ -34,9 +34,10 @@ const TIMELINE_OPTIONS = [
   { value: "exploring", label: "6 + months" },
 ];
 const PLAN_OPTIONS = [
-  { value: "yes",     label: "Yes",        sub: "Professionally drawn plans ready" },
-  { value: "partial", label: "Partial",    sub: "Sketches or inspiration" },
-  { value: "no",      label: "No",         sub: "Need design input" },
+  { value: "yes",     label: "Yes, complete permit-ready plans", sub: "Drawings ready for estimating" },
+  { value: "partial", label: "Rough sketches or inspiration only", sub: "Ideas, references, or concept sketches" },
+  { value: "no",      label: "No, I need help creating a plan",    sub: "Likely starts with a Design Agreement" },
+  { value: "unsure",  label: "I am not sure",                      sub: "We'll help determine the right next step" },
 ];
 const DECISION_OPTIONS = [
   { value: "self",   label: "It's just me / spouse" },
@@ -230,8 +231,9 @@ const ConstructionIntakeForm = () => {
           {step === 1 && (
             <>
               <div>
-                <Label required>Do you have plans or drawings yet</Label>
-                <ChipGroup options={PLAN_OPTIONS} value={data.hasPlans} onChange={(v) => set("hasPlans", v)} columns={3} />
+                <Label required>Do you already have plans?</Label>
+                <ChipGroup options={PLAN_OPTIONS} value={data.hasPlans} onChange={(v) => set("hasPlans", v)} columns={2} />
+                <Helper>If you don't have complete plans yet, that's okay — many serious projects begin with a paid Design &amp; Consultation Agreement.</Helper>
               </div>
               <div>
                 <Label required>Who is the decision-maker</Label>
@@ -282,7 +284,7 @@ const ConstructionIntakeForm = () => {
                   files={files}
                   onChange={setFiles}
                   accept="image/*,application/pdf"
-                  helper="PDFs of drawings or images of the property and inspiration. Max 8 files, 8MB each."
+                  helper="Upload any plans, sketches, inspiration images, property photos, surveys, or documents that may help Highlander understand the project. Max 8 files, 8MB each."
                 />
               </div>
             </>
@@ -339,7 +341,7 @@ const ConstructionIntakeForm = () => {
             onClick={submit}
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-lg"
           >
-            {submitting ? <><Loader2 className="w-5 h-5 animate-spin" /> Sending…</> : <>Request a Design Conversation <ArrowRight className="w-5 h-5" /></>}
+            {submitting ? <><Loader2 className="w-5 h-5 animate-spin" /> Sending…</> : <>Plan Your Construction Project <ArrowRight className="w-5 h-5" /></>}
           </button>
         )}
       </div>

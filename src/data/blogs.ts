@@ -1273,7 +1273,7 @@ Floor plan modernization isn't just about moving walls; it's about adding glass.
     image: outdoorLivingStock, readTime: "5 min",
     metaTitle: "Mountain Room Addition Trends 2026 | Highlander",
     metaDescription: "Why 'mountain rooms' are the top addition choice in Highlands and Cashiers. Layout, heating, and view optimization tips.",
-    content: `The 'Mountain Room' is a uniquely WNC architectural trend. It's a space that bridges the gap between an interior sunroom and an exterior porch.
+    content: `The 'Mountain Room' is a uniquely WNC design trend. It's a space that bridges the gap between an interior sunroom and an exterior porch.
 
 ## Multi-Slide Glass Walls
 The layout of a mountain room is defined by transparency. We utilize large-format sliding door systems that disappear into the walls, completely opening the room to the forest.
@@ -1467,11 +1467,11 @@ A vertical addition requires a new layout for the floor below. We help you find 
     date: "2026-06-05",
     image: blueRidgeViewStock, readTime: "7 min",
     metaTitle: "2026 Mountain Home Design Trends | Highlander",
-    metaDescription: "What's trending in Western NC architecture and design. Mixed materials, dark exteriors, and flexible mountain layouts.",
+    metaDescription: "What's trending in Western NC home design. Mixed materials, dark exteriors, and flexible mountain layouts.",
     content: `Mountain design is evolving. Homeowners in Highlands and Cashiers are moving away from 'heavy log' styles toward something cleaner and more integrated.
 
 ## Mixed Material Envelopes
-We're seeing a shift toward combining standing seam metal roofing with cedar shake and dark-toned board-and-batten siding. It creates a layered, architectural look.
+We're seeing a shift toward combining standing seam metal roofing with cedar shake and dark-toned board-and-batten siding. It creates a layered, layered look.
 
 ## The 'Mud-to-Mountain' Flow
 Modern layouts now prioritize high-function mudrooms and transition spaces. When you come in from a hike or a snowy day, you need a space designed for the gear.

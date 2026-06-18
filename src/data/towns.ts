@@ -32,7 +32,7 @@ export const townLocalRelevance: Record<string, string> = {
   "highlands-nc":
     "Highlands homes sit above 4,000 feet, where steep rooflines, heavy rainfall, ice loading, and high UV punish standard roofing systems. Highlander Roofing & Construction supports Plateau homeowners with premium synthetic and standing-seam metal systems, high-velocity flashing details, and exterior work built for Western North Carolina's harshest mountain conditions.",
   "cashiers-nc":
-    "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain architecture and high-end home investments across the Plateau.",
+    "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain home design and high-end home investments across the Plateau.",
   "franklin-nc":
     "Based in Franklin, Highlander Roofing & Construction serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen within 24–48 hours and the same owner-led team is on site from first call to final walkthrough.",
   "sylva-nc":
@@ -100,7 +100,7 @@ export const towns: TownData[] = [
     metaDescription: "High-elevation roofing and construction for Highlands Plateau estates. Specialized in Brava synthetic systems and master suite additions. Licensed & Insured.",
     housingProfile: "High-end estate homes, historic summer cottages, and gated club communities on the Highlands Plateau.",
     climateExposure: "Extreme high-altitude weather: 80+ inches of rain, heavy ice loading, and high UV levels that test standard roofing systems.",
-    localVibe: "A world-class resort destination where architectural integrity and high-performance materials are the baseline expectation for every project.",
+    localVibe: "A world-class resort destination where design integrity and high-performance materials are the baseline expectation for every project.",
     constructionContext: "We specialize in 'mountain rooms' — high-end screened porches with fireplaces — that capture valley views while shielding from heavy plateau rain.",
     serviceDemandMix: ["Standing Seam Metal Roofing", "Brava Synthetic Shake", "Luxury Master Suite Additions", "Storm Damage Recovery"],
     styleTendency: "Traditional mountain rustic with heavy timber accents, natural stone, and premium shake/slate aesthetics.",
@@ -203,7 +203,7 @@ export const towns: TownData[] = [
     localVibe: "One of WNC's most established residential markets, featuring deep historic roots and a growing modern residential base.",
     constructionContext: "We specialize in home additions and structural modernization for Waynesville properties that need modern efficiency without losing character.",
     serviceDemandMix: ["Historic Roof Restoration", "Hillside Home Additions", "Attic Ventilation Correction", "Standing Seam Metal"],
-    styleTendency: "Elegant historic architecture (Queen Anne, Colonial) transitioning into contemporary mountain modern styles.",
+    styleTendency: "Elegant historic home design (Queen Anne, Colonial) transitioning into contemporary mountain modern styles.",
     notableNeighborhoods: ["Main Street Historic District", "Frog Level", "Pigeon Street", "Hyatt Creek", "Lake Junaluska"],
     marketAuthorityAngle: "Haywood County projects require a balance of technical modernization and visual sensitivity. We protect Waynesville's historic integrity.",
     heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000"
@@ -223,7 +223,7 @@ export const towns: TownData[] = [
     localVibe: "A university-centric community where property maintenance windows are often tied to the academic calendar transitions.",
     constructionContext: "We focus on maximizing rental occupancy by updating older housing stock near the university with modern decks and master-suite expansions.",
     serviceDemandMix: ["Rental Roof Repairs", "Deck Safety Inspections", "Exterior Siding Updates", "Algae-Resistant Shingles"],
-    styleTendency: "Functional residential and multi-unit architecture prioritizing longevity, value, and tenant safety.",
+    styleTendency: "Functional residential and multi-unit home design prioritizing longevity, value, and tenant safety.",
     notableNeighborhoods: ["WCU Campus Area", "Old Cullowhee Road", "Caney Fork", "Speedwell"],
     marketAuthorityAngle: "We understand Cullowhee's academic rhythm. We coordinate with Jackson County property managers to ensure projects finish before the semester starts.",
     heroImage: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=2000"
@@ -241,7 +241,7 @@ export const towns: TownData[] = [
     housingProfile: "Historic village cottages, artisan shops, and riverfront residences in Dillsboro.",
     climateExposure: "River-proximate moisture and valley fog that demands algae-resistant materials and precise flashing.",
     localVibe: "A walkable, historic artisan community where the aesthetic impact of every project is carefully considered by neighbors and visitors.",
-    constructionContext: "We specialize in preservation-focused renovations and small-scale additions that integrate with 100-year-old mountain architecture.",
+    constructionContext: "We specialize in preservation-focused renovations and small-scale additions that integrate with 100-year-old mountain home design.",
     serviceDemandMix: ["Designer Shingle Systems", "Artisan Porch Detailing", "Historic Exterior Repairs", "Gutter Copper Accents"],
     styleTendency: "Quaint Appalachian village style with a focus on charm, historic accuracy, and river-resistant structural details.",
     notableNeighborhoods: ["Historic Village Center", "Tuckasegee Riverfront", "Monteith Park area"],
@@ -254,16 +254,16 @@ export const towns: TownData[] = [
     county: "Buncombe County",
     state: "NC",
     elevation: "2,134 ft",
-    description: "From historic Biltmore Forest estates to modern architectural masterpieces on Town Mountain, we provide Asheville with the highest standard of roofing and construction.",
+    description: "From historic Biltmore Forest estates to modern design masterpieces on Town Mountain, we provide Asheville with the highest standard of roofing and construction.",
     features: ["Historic preservation", "Modern mountain design", "Biltmore area experts", "Luxury master suites"],
     metaTitle: "Roofing & Construction in Asheville, NC | Buncombe County Authority",
     metaDescription: "Premium roofing and construction for Asheville's historic districts and modern mountain homes. Licensed GC, master-class craftsmanship. Licensed & Insured.",
     housingProfile: "A mix of historic urban estates, luxury ridgetop moderns, and established suburban neighborhoods.",
     climateExposure: "High UV intensity on ridgetops and localized wind tunneling between mountain gaps that tests standard shingle adhesion.",
-    localVibe: "A world-class arts and architecture hub where homeowners value both high-performance engineering and visual design excellence.",
-    constructionContext: "We specialize in 'mountain modern' additions and luxury kitchen/bath transformations that integrate with Asheville's unique architectural landscape.",
+    localVibe: "A world-class arts and design hub where homeowners value both high-performance engineering and visual design excellence.",
+    constructionContext: "We specialize in 'mountain modern' additions and luxury kitchen/bath transformations that integrate with Asheville's unique design landscape.",
     serviceDemandMix: ["Standing Seam Metal Roofing", "Brava Synthetic Slate", "Luxury Additions", "Modern Renovations"],
-    styleTendency: "Eclectic mix of Tudor, Craftsman, and ultra-modern mountain architecture featuring glass and steel.",
+    styleTendency: "Eclectic mix of Tudor, Craftsman, and ultra-modern mountain home design featuring glass and steel.",
     notableNeighborhoods: ["Biltmore Forest", "Town Mountain", "Montford", "Grove Park", "Kenilworth"],
     marketAuthorityAngle: "Asheville projects demand a higher level of design sensitivity and structural precision. We build for the city's most discerning homeowners.",
     heroImage: "https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=2000"
@@ -320,10 +320,10 @@ export const towns: TownData[] = [
     metaDescription: "Premier roofing and construction for Lake Toxaway estates. Specialized in Brava synthetic systems and luxury lakefront additions. Licensed & Insured.",
     housingProfile: "Ultra-luxury lakefront estates, private mountain retreats, and gated club properties.",
     climateExposure: "Intense seasonal storms and persistent lake-effect moisture that demands premium synthetic or metal systems.",
-    localVibe: "An exclusive, low-density private community where architectural perfection and long-term asset protection are the baseline.",
+    localVibe: "An exclusive, low-density private community where design perfection and long-term asset protection are the baseline.",
     constructionContext: "We specialize in lakefront deck expansions and high-end master suite additions that maximize Toxaway's unique views.",
     serviceDemandMix: ["Brava Synthetic Slate", "Copper Gutter Systems", "Luxury Additions", "Premium Maintenance"],
-    styleTendency: "Classic Adirondack and sophisticated Mountain Rustic architecture featuring massive stone and timber elements.",
+    styleTendency: "Classic Adirondack and sophisticated Mountain Rustic home design featuring massive stone and timber elements.",
     notableNeighborhoods: ["Lake Toxaway Estates", "The Greystone", "Catatoga"],
     marketAuthorityAngle: "Toxaway estates require a commercial-grade attention to detail and a white-glove service level. We protect the plateau's finest assets.",
     heroImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000"
@@ -365,7 +365,7 @@ export const towns: TownData[] = [
     serviceDemandMix: ["Designer Asphalt Shingles", "Custom Timber Porches", "Historic Roof Restoration", "Interior Renovations"],
     styleTendency: "Craftsman, Appalachian Rustic, and Modern Mountain styles emphasizing natural textures and outdoor integration.",
     notableNeighborhoods: ["The Settings", "Cheshire", "Montreat area", "Black Mountain Historic District"],
-    marketAuthorityAngle: "Black Mountain homes are architectural statements. We build with the precision and care the town's creative legacy requires.",
+    marketAuthorityAngle: "Black Mountain homes are design statements. We build with the precision and care the town's creative legacy requires.",
     heroImage: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000"
   },
   {

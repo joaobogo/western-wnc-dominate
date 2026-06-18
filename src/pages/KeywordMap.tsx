@@ -61,7 +61,7 @@ const KeywordMap = () => {
     <>
       <SEOHead
         title="Keyword Map Generator"
-        description="Generate primary, secondary, and long-tail keyword targets for every service, town, and blog URL using the site's SEO architecture rules."
+        description="Generate primary, secondary, and long-tail keyword targets for every service, town, and blog URL using the site's SEO structure rules."
         path="/keyword-map"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
@@ -76,7 +76,7 @@ const KeywordMap = () => {
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-accent">SEO Workflow</p>
               <h1 className="text-display font-heading font-bold text-white">Keyword Map Generator</h1>
               <p className="mt-6 text-body-lg md:text-body-xl text-primary-foreground/85 leading-relaxed max-w-2xl font-medium">
-                Review page-level keyword targets for every service, town, and blog URL based on the current town-plus-service architecture and design-led construction rules.
+                Review page-level keyword targets for every service, town, and blog URL based on the current town-plus-service structure and design-led construction rules.
               </p>
             </div>
           </div>

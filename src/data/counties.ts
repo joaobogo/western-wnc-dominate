@@ -89,7 +89,7 @@ export const counties: CountyData[] = [
   {
     slug: "buncombe-county",
     name: "Buncombe County",
-    description: "Serving the vibrant mountain hub of Asheville and its surrounding towns. We specialize in everything from historic district preservation to modern architectural roofing systems.",
+    description: "Serving the vibrant mountain hub of Asheville and its surrounding towns. We specialize in everything from historic district preservation to modern premium roofing systems.",
     towns: ["Asheville", "Black Mountain", "Weaverville"],
     metaTitle: "Roofing & Construction Services in Buncombe County, NC | Highlander Roofing",
     metaDescription: "Professional roofing and construction across Buncombe County, NC. Serving Asheville, Black Mountain, and Weaverville with premium local service.",
@@ -100,7 +100,7 @@ export const counties: CountyData[] = [
       { label: "Credentials", value: "Licensed GC" },
       { label: "Rating", value: "4.9/5 Stars" }
     ],
-    housingContext: "Buncombe County features a high-density mix of historic urban estates, modern ridgetop architecture, and rapidly growing residential suburbs.",
+    housingContext: "Buncombe County features a high-density mix of historic urban estates, modern ridgetop home design, and rapidly growing residential suburbs.",
     climateRealities: "Buncombe's varied topography creates significant microclimates, from urban heat islands to high-wind exposure on the surrounding peaks."
   },
   {
@@ -169,7 +169,7 @@ export const counties: CountyData[] = [
       { label: "Focus", value: "Historic + Ridgetop" },
       { label: "Status", value: "Active Service" }
     ],
-    housingContext: "Madison County is known for its historic riverfront architecture in Marshall and expansive, high-elevation agricultural and residential ridgetops.",
+    housingContext: "Madison County is known for its historic riverfront home design in Marshall and expansive, high-elevation agricultural and residential ridgetops.",
     climateRealities: "Significant ridgetop wind exposure and winter icing events require commercial-grade flashing and heavy-duty metal roofing systems."
   },
   {

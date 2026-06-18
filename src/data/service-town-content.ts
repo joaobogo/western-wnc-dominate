@@ -159,7 +159,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Home Additions",
     h1: "Home Additions & Master Suites in Highlands, NC",
     intro:
-      "Expanding a Highlands home requires more than just framing — it's about structural integration with mountain slopes and elevation-rated building envelopes. We specialize in design-build additions that look like they were part of the original mountain architecture.",
+      "Expanding a Highlands home requires more than just framing — it's about structural integration with mountain slopes and elevation-rated building envelopes. We specialize in design-build additions that look like they were part of the original mountain home design.",
     localContext:
       "Most Highlands additions focus on transforming seasonal cabins into year-round residences by adding luxury master suites, guest wings, or gourmet kitchen expansions that take advantage of plateau views.",
     whoItsFor:
@@ -172,7 +172,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     faqs: [
       { q: "How do you handle building on steep Highlands slopes?", a: "We work with local engineers to design foundation systems specifically for your site's topography and drainage requirements." },
       { q: "Can you match my existing cedar or stone siding?", a: "Yes. Matching historic or aged materials is one of our primary strengths in the Highlands market." },
-      { q: "Do you manage the full permit process for Macon County?", a: "Yes. We handle all architectural coordination, permitting, and inspections." },
+      { q: "Do you manage the full permit process for Macon County?", a: "Yes. We handle all design coordination, permitting, and inspections." },
     ],
   }),
   E({
@@ -340,7 +340,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Asheville, NC",
     intro:
-      "Asheville projects require a balance of architectural precision and ridgetop engineering. Whether it's a Biltmore Forest estate or a Town Mountain ridgetop home, we deliver owner-led replacement projects with zero-compromise quality.",
+      "Asheville projects require a balance of design precision and ridgetop engineering. Whether it's a Biltmore Forest estate or a Town Mountain ridgetop home, we deliver owner-led replacement projects with zero-compromise quality.",
     localContext:
       "Asheville's topography means a 'standard' roof doesn't exist. We plan for high UV intensity on south-facing ridges and extreme wind uplift on exposed slopes. Our Asheville replacement packages include reinforced perimeter fastening and high-performance underlayment as the baseline.",
     whoItsFor:
@@ -362,7 +362,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Home Additions",
     h1: "Home Additions & Modernization in Asheville, NC",
     intro:
-      "Expanding an Asheville home is an exercise in mountain modern design and structural precision. We specialize in footprint expansions and master suite additions that honor Asheville's unique architectural landscape.",
+      "Expanding an Asheville home is an exercise in mountain modern design and structural precision. We specialize in footprint expansions and master suite additions that honor Asheville's unique design landscape.",
     localContext:
       "In the Asheville market, we focus on integrating new structural volume with existing historic or modern profiles. We specialize in 'mountain modern' aesthetics — high glass-to-wall ratios, clean lines, and durable mountain materials.",
     whoItsFor:
@@ -407,7 +407,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Waynesville, NC",
     intro:
-      "Waynesville's historic districts and hillside developments require a contractor who understands the balance between architectural preservation and mountain performance.",
+      "Waynesville's historic districts and hillside developments require a contractor who understands the balance between historic preservation and mountain performance.",
     localContext:
       "In Waynesville, we focus on attic ventilation correction and high-temp underlayment. The town's elevation and winter snow cycles mean that standard roofing installs often fail prematurely due to ice damming.",
     whoItsFor:
@@ -430,7 +430,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     intro:
       "Expanding a Waynesville residence requires structural precision and a deep understanding of Haywood County's mountain topography.",
     localContext:
-      "We specialize in 'seamless' additions for Waynesville homes — ensuring that new master suites or kitchen expansions match the existing architectural DNA and foundation requirements of the site.",
+      "We specialize in 'seamless' additions for Waynesville homes — ensuring that new master suites or kitchen expansions match the existing design DNA and foundation requirements of the site.",
     whoItsFor:
       "Families needing more space, owners of historic properties looking to modernize, and anyone adding specialized rooms like home offices or guest wings.",
     proofNote:
@@ -440,7 +440,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Custom home additions and structural modernization in Waynesville, NC. Design-build expertise for mountain homes. Licensed & Insured.",
     faqs: [
       { q: "Can you match the siding on an older Waynesville home?", a: "Yes. We source high-quality matches for historic cedar, stone, and traditional lap siding common in Waynesville." },
-      { q: "Do you manage the full Haywood County permit process?", a: "Yes. We handle all architectural coordination and county inspections." },
+      { q: "Do you manage the full Haywood County permit process?", a: "Yes. We handle all design coordination and county inspections." },
     ],
   }),
   // ─────────── BREVARD ───────────

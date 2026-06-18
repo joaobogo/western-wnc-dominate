@@ -93,7 +93,7 @@ export const localBlogTopics: LocalBlogTopic[] = [
       },
       {
         title: "Master Suite Additions in Waynesville's Historic Neighborhoods",
-        description: "Expanding your square footage while honoring the unique architectural DNA of Waynesville.",
+        description: "Expanding your square footage while honoring the unique design DNA of Waynesville.",
         serviceCategory: "construction"
       }
     ]
@@ -123,7 +123,7 @@ export const localBlogTopics: LocalBlogTopic[] = [
     topics: [
       {
         title: "Asheville's Historic Districts: A Guide to ARB-Approved Roofing",
-        description: "Navigating the complexities of Biltmore Forest and Montford architectural reviews for your next roof project.",
+        description: "Navigating the complexities of Biltmore Forest and Montford design reviews for your next roof project.",
         serviceCategory: "roofing"
       },
       {
