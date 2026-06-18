@@ -197,14 +197,6 @@ const Footer = () => {
                     Sylva, NC 28779
                   </div>
                 </div>
-                <div className="flex gap-3">
-                  <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
-                  <div className="text-[15px] text-muted-foreground leading-relaxed">
-                    <span className="block font-bold text-foreground/80 mb-0.5 text-base">Asheville / Buncombe</span>
-                    Service area office — by appointment<br />
-                    Asheville, NC 28803
-                  </div>
-                </div>
                 <div className="flex gap-3 pt-2 border-t border-border/60">
                   <Clock className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
                   <div className="text-[15px] text-muted-foreground leading-relaxed">
