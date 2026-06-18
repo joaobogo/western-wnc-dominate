@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, HardHat, Wrench, TreePine, Home as HomeIcon, Ruler } from "lucide-react";
+import { Droplets } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -40,7 +41,7 @@ const services: FeaturedService[] = [
     description: "Full tear-off and reinstall specified for your wind zone, ice load, and moisture exposure. CertainTeed-certified materials with manufacturer and labor warranty.",
     stat: "300+",
     statLabel: "replacements completed",
-    href: "/services/roof-replacement",
+    href: "/roofing/roof-replacement",
     image: asphaltImg,
     accent: "green",
   },
@@ -51,7 +52,7 @@ const services: FeaturedService[] = [
     description: "Standing seam and exposed fastener systems for properties above 2,500 feet. Superior wind uplift resistance, energy efficiency, and the longest-lasting roof you can install.",
     stat: "50yr",
     statLabel: "rated lifespan",
-    href: "/services/metal-roofing",
+    href: "/roofing/metal",
     image: metalImg,
     accent: "green",
   },
@@ -62,7 +63,7 @@ const services: FeaturedService[] = [
     description: "Emergency tarping, drone-documented damage assessment, and direct insurance coordination. We handle the paperwork so you handle nothing.",
     stat: "Rapid",
     statLabel: "response time",
-    href: "/services/storm-damage",
+    href: "/roofing/storm-damage",
     image: stormImg,
     accent: "green",
   },
@@ -73,7 +74,7 @@ const services: FeaturedService[] = [
     description: "Leak tracing, flashing replacement, and structural repair — diagnosed accurately, documented fully, and warrantied in writing. One visit, one resolution.",
     stat: "1st",
     statLabel: "visit resolution",
-    href: "/services/roof-repair",
+    href: "/roofing/roof-repair",
     image: asphalt2,
     accent: "green",
   },
@@ -84,8 +85,19 @@ const services: FeaturedService[] = [
     description: "Condition reporting, preventative maintenance, and full-scope solutions for property managers, HOAs, and facility owners across eight WNC counties.",
     stat: "8",
     statLabel: "counties served",
-    href: "/commercial-roofing",
+    href: "/roofing/commercial",
     image: metalRoof,
+    accent: "green",
+  },
+  {
+    icon: Droplets,
+    title: "Gutters & Drainage",
+    tagline: "Protect the roof you just paid for",
+    description: "Seamless gutters, guards, downspouts, and water management installed alongside roofing work — so storm runoff stays off your fascia, foundation, and crawlspace.",
+    stat: "Paired",
+    statLabel: "with every roof",
+    href: "/roofing",
+    image: cedar3,
     accent: "green",
   },
   {
@@ -117,7 +129,7 @@ const services: FeaturedService[] = [
     description: "Fiber cement, engineered wood, and board-and-batten — specified for WNC moisture and UV exposure. Protection and aesthetics in a single installation.",
     stat: "30yr",
     statLabel: "material warranty",
-    href: "/construction/exterior",
+    href: "/construction/siding",
     image: cedar3,
     accent: "gold",
   },
