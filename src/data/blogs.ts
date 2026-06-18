@@ -170,7 +170,7 @@ We respond within 24–48 hours for storm inspections across all of Western NC. 
 
 ### 2. Premium Dimensional Shingles
 **Best for:** Budget-friendly durability
-- 30-year warranty options
+- long-term manufacturer warranty options
 - Impact-resistant classes available
 - Wide style and color selection
 - Good wind resistance (110–130 mph)
@@ -1009,7 +1009,7 @@ See the complete before-and-after gallery, process photos, and homeowner testimo
     ],
     relatedProjects: ["standing-seam-metal-dark-bronze-highlands"],
     faqs: [
-      { question: "How long does a standing seam metal roof last?", answer: "With proper installation, 50+ years. Kynar 500 finishes carry 40-year color warranties." },
+      { question: "How long does a standing seam metal roof last?", answer: "With proper installation, 50+ years. Kynar 500 finishes carry manufacturer color warranties." },
       { question: "Can standing seam metal be installed on steep pitches?", answer: "Yes. Standing seam with concealed fasteners is actually ideal for steep pitches because the panels expand and contract without exposed fastener holes." },
     ],
   },

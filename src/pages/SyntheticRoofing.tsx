@@ -16,7 +16,7 @@ const faqs = [
   { q: "Is Brava heavy enough to need framing reinforcement?", a: "No. Brava is significantly lighter than natural slate and roughly comparable to standard asphalt shingles. Existing framing almost always accepts it without modification." },
   { q: "Will Brava be approved by my club community ARB?", a: "Most WNC club community ARBs approve Brava with documentation. We prepare and submit the package including profile and color samples." },
   { q: "What's the lead time on a Brava order?", a: "Brava is made-to-order in your specified color blend. We plan for several weeks of lead time and quote accordingly." },
-  { q: "What warranty does Brava carry?", a: "Brava carries a 50-year limited material warranty. We handle registration as part of the install." },
+  { q: "What warranty does Brava carry?", a: "Brava carries a manufacturer limited material warranty. We handle registration as part of the install." },
 ];
 
 const SyntheticRoofing = () => {
@@ -25,7 +25,7 @@ const SyntheticRoofing = () => {
     <>
       <SEOHead
         title="Brava Synthetic Roofing in Western NC | Shake & Slate | Highlander"
-        description="Brava synthetic shake and slate roofing across Highlands, Cashiers, and Western NC. Premium aesthetic, mountain-grade durability, 50-year warranty."
+        description="Brava synthetic shake and slate roofing across Highlands, Cashiers, and Western NC. Premium aesthetic, mountain-grade durability, manufacturer warranty."
         path="/roofing/brava-synthetic"
         jsonLd={buildPageSchema({
           type: "service",
@@ -77,7 +77,7 @@ const SyntheticRoofing = () => {
         <section className="section-padding bg-background">
           <div className="container-tight grid md:grid-cols-3 gap-6">
             {[
-              { icon: Award, title: "50-year warranty", body: "Limited material warranty registered as part of every install." },
+              { icon: Award, title: "manufacturer warranty", body: "Limited material warranty registered as part of every install." },
               { icon: Leaf, title: "Lightweight composite", body: "Significantly lighter than slate; no structural reinforcement typically required." },
               { icon: Clock, title: "Holds its profile", body: "Color and shape stable through UV, freeze-thaw, and the rainfall load WNC delivers." },
             ].map((b) => (

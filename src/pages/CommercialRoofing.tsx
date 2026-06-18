@@ -33,7 +33,7 @@ const roofingSystems = [
     title: "TPO Single-Ply Membrane",
     description: "Thermoplastic polyolefin membrane systems — the most widely specified commercial roofing system in North America. Energy-efficient, highly reflective, and excellent for flat and low-slope applications.",
     bestFor: "Retail, office, warehouse, and institutional buildings",
-    highlights: ["Heat-welded seams for superior leak resistance", "Energy Star rated reflectivity", "20–30 year system warranties available"],
+    highlights: ["Heat-welded seams for superior leak resistance", "Energy Star rated reflectivity", "manufacturer system warranties available"],
   },
   {
     title: "EPDM Rubber Roofing",

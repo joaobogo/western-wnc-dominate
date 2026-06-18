@@ -131,7 +131,7 @@ const qualityStandards = [
 const warrantyTiers = [
   { tier: "Standard", coverage: "Material warranty from manufacturer + Highlander labor warranty", availability: "All projects" },
   { tier: "Enhanced", coverage: "CertainTeed SureStart PLUS™ — covers both material and labor under manufacturer warranty", availability: "CertainTeed installations" },
-  { tier: "Lifetime", coverage: "50-year non-prorated material coverage + workmanship guarantee", availability: "Select roofing systems" },
+  { tier: "Premium", coverage: "Premium non-prorated material coverage + workmanship guarantee", availability: "Select roofing systems" },
 ];
 
 const Certifications = () => {

@@ -51,7 +51,7 @@ const wncLifestyle = [
 ];
 
 const materials = [
-  { icon: TreePine, title: "Composite Decking", detail: "Low-maintenance, fade-resistant, and available in wood-grain profiles that hold up to WNC's UV and moisture. Brands like TimberTech and Trex offer 25–50 year warranties." },
+  { icon: TreePine, title: "Composite Decking", detail: "Low-maintenance, fade-resistant, and available in wood-grain profiles that hold up to WNC's UV and moisture. Brands like TimberTech and Trex offer manufacturer warranties." },
   { icon: Layers, title: "Pressure-Treated Lumber", detail: "The workhorse of outdoor framing. Ground-contact rated for structural components, above-ground rated for visible elements. Cost-effective for large-scale builds." },
   { icon: Mountain, title: "Cedar & Hardwood", detail: "Natural beauty, warmth, and character. Cedar resists rot naturally; hardwoods like ipe and mahogany offer exceptional density and longevity. Requires periodic maintenance." },
   { icon: Shield, title: "Metal Roofing on Outdoor Structures", detail: "Standing seam and exposed-fastener metal roofing for covered porches and pavilions. Excellent drainage, long lifespan, and clean aesthetic that pairs well with timber framing." },

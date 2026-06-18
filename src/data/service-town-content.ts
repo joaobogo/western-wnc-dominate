@@ -262,7 +262,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     faqs: [
       { q: "Will Brava develop moss like cedar in Cashiers' rainfall?", a: "Brava's polymer composition doesn't absorb moisture the way cedar does, so it resists the moss and biological growth that shortens cedar roof life here." },
       { q: "Is Brava heavy enough to need framing reinforcement?", a: "Brava is dramatically lighter than natural slate and similar to standard dimensional shingles. Existing framing almost always handles it without modification." },
-      { q: "How does the warranty work?", a: "Brava carries a 50-year limited material warranty. We handle registration as part of the install." },
+      { q: "How does the warranty work?", a: "Brava carries a manufacturer limited material warranty. We handle registration as part of the install." },
     ],
   }),
 

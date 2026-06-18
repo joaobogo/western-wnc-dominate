@@ -67,7 +67,7 @@ const materialsComparison = [
   {
     name: "Dimensional Asphalt Shingles",
     brand: "CertainTeed Landmark PRO",
-    warranty: "Lifetime limited",
+    warranty: "Manufacturer limited",
     lifespan: "30–50 years",
     priceRange: "$$",
     best: "Most WNC residential projects",
@@ -136,7 +136,7 @@ const faqs = [
   { q: "How do I know if I need a repair or a full replacement?", a: "We'll assess your roof honestly and explain both options with their pros, cons, and costs. If a repair will solve the problem, we'll tell you. If replacement is the better long-term investment, we'll explain exactly why. You decide with full information." },
   { q: "What does a residential roof replacement cost in WNC?", a: "Replacement pricing is scope-based — it depends on size, material system, pitch complexity, and access conditions. Rather than publish a generic range, we provide a detailed, grouped-cost proposal after assessing your specific property." },
   { q: "Do you handle the full process or just the roofing?", a: "We handle everything — from initial assessment through final cleanup. That includes material delivery, old roof tear-off, decking inspection and repair, new installation, flashing, ventilation, gutters if needed, and complete debris removal." },
-  { q: "What warranties do you offer on residential roofing?", a: "Every residential project includes the manufacturer's material warranty (up to lifetime limited on CertainTeed products) plus Highlander's labor warranty. You receive a complete warranty package at your final walkthrough." },
+  { q: "What warranties do you offer on residential roofing?", a: "Every residential project includes the manufacturer's material warranty (per the manufacturer's terms for the specified product line) plus Highlander's labor warranty. You receive a complete warranty package at your final walkthrough." },
   { q: "Can I stay in my home during a roof replacement?", a: "Yes. While roof replacement is noisy, most homeowners stay in their homes throughout the process. We'll let you know what to expect each day and take every precaution to minimize disruption." },
   { q: "Do you offer financing for residential roofing?", a: "Yes. We offer flexible financing options to make roof replacement accessible. Ask about payment plans during your consultation — no obligation, no pressure." },
   { q: "Are your crews Highlander employees?", a: "Yes. Our roofing crews are Highlander employees — trained, certified, and directly accountable. The same quality standard on every project." },
