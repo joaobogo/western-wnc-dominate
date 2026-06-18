@@ -29,6 +29,7 @@ const LayoutsPlanning = lazy(() => import("./pages/LayoutsPlanning"));
 
 const Certifications = lazy(() => import("./pages/Certifications"));
 const Gallery = lazy(() => import("./pages/Gallery"));
+const RecentProjects = lazy(() => import("./pages/RecentProjects"));
 const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Financing = lazy(() => import("./pages/Financing"));
@@ -178,6 +179,7 @@ const App = () => (
           
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/recent-projects" element={<RecentProjects />} />
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/financing" element={<Financing />} />
