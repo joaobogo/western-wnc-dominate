@@ -5,7 +5,7 @@ import {
   CheckCircle, Hammer, Ruler, PenTool, Compass, Mountain,
   ChevronRight, Eye, ClipboardCheck, Layers, Users,
   BadgeCheck, TreePine, Fence, DoorOpen, HardHat,
-  Wrench, MessageSquare, CalendarCheck, Sparkles
+  Wrench, MessageSquare, CalendarCheck, Sparkles, FileText
 } from "lucide-react";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
