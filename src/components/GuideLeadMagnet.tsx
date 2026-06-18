@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, X, FileText, Shield, CloudLightning, Wrench, CheckCircle } from "lucide-react";
+import FormConsent from "@/components/FormConsent";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
