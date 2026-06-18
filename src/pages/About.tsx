@@ -27,16 +27,16 @@ const values = [
 
 const leadership = [
   {
-    name: "Luke",
+    name: "Owner — Name Coming Soon",
     role: "Owner & Lead Advisor",
-    bio: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values. Luke oversees the strategic direction of all three divisions: Roofing, Construction, and Design Support.",
+    bio: "Bio coming soon. The owner personally walks every property, approves every scope, and signs off on every final inspection — the way a family-owned WNC company should operate.",
     image: null,
-    credentials: ["NC Licensed GC", "CertainTeed Master Applicator", "WNC Native"]
+    credentials: ["NC Licensed GC", "CertainTeed ShingleMaster", "WNC Local"]
   },
   {
-    name: "Christy",
+    name: "Director of Operations — Name Coming Soon",
     role: "Director of Operations",
-    bio: "The engine behind the scenes. Christy manages project sequencing, client coordination, and ensures the 'Highlander Standard' is met from first call to final walkthrough.",
+    bio: "Bio coming soon. Manages project sequencing, client communication, and ensures the Highlander standard is met from first call to final walkthrough.",
     image: null,
     credentials: ["Project Coordination", "Client Experience", "Operational Excellence"]
   }
@@ -44,17 +44,31 @@ const leadership = [
 
 const teamMembers = [
   {
-    name: "Javier",
-    role: "Roofing Division Lead",
+    name: "Roofing Division Lead",
+    role: "Roofing Foreman",
     specialty: "System Installation & QC",
-    bio: "With years of ridgetop experience, Javier leads our roofing crews with manufacturer-exact precision, specializing in complex metal and synthetic slate systems.",
+    bio: "Bio coming soon. Leads our in-house roofing crews with manufacturer-exact precision on shingle, metal, and specialty systems.",
     image: null
   },
   {
-    name: "Miguel",
+    name: "Construction Foreman",
     role: "Construction Foreman",
     specialty: "Framing & Structural Execution",
-    bio: "Miguel translates design layouts into buildable reality. He manages on-site construction for additions and outdoor living spaces with obsessive attention to detail.",
+    bio: "Bio coming soon. Translates design layouts into buildable reality across additions, renovations, and outdoor living projects.",
+    image: null
+  },
+  {
+    name: "Project Manager",
+    role: "Project Manager",
+    specialty: "Scheduling & Client Communication",
+    bio: "Bio coming soon. Your single point of contact from contract to completion — owns the schedule, the punch list, and the daily updates.",
+    image: null
+  },
+  {
+    name: "Estimator",
+    role: "Lead Estimator",
+    specialty: "Scope & Pricing Accuracy",
+    bio: "Bio coming soon. Builds honest, line-item estimates so you understand exactly what's included before any work begins.",
     image: null
   }
 ];

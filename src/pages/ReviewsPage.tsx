@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
+import { AlertCircle, Camera, Link2, Mail } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -338,6 +339,43 @@ const ReviewsPage = () => {
           subheadline="Experience the communication, craftsmanship, and accountability our clients talk about — start a conversation today."
           ctaText="Talk With Our Team"
         />
+
+        {/* ── INTERNAL: REVIEW CONTENT TO CONFIRM ── */}
+        <section className="bg-secondary border-t border-border">
+          <div className="container-tight section-padding max-w-4xl">
+            <div className="card-premium p-8 md:p-10">
+              <div className="flex items-start gap-4 mb-6">
+                <AlertCircle className="w-6 h-6 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-1" />
+                <div>
+                  <span className="eyebrow block mb-2">For the Highlander Team — Pre-Launch</span>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight">
+                    Review Content to Confirm Before Launch
+                  </h2>
+                </div>
+              </div>
+              <p className="text-muted-foreground font-body mb-6">
+                The review excerpts shown above are placeholders representing the kind of feedback Highlander clients commonly share. Before launch, please confirm or replace them with approved review content directly from Google, Facebook, or other verified sources. We do not invent reviews.
+              </p>
+              <p className="font-heading font-bold text-foreground mb-3">To finalize this page, please provide:</p>
+              <ul className="grid sm:grid-cols-2 gap-3 text-sm text-foreground/85 font-body mb-6">
+                {[
+                  { icon: Link2, text: "Google Business Profile review link" },
+                  { icon: Mail, text: "6–12 approved review excerpts (verbatim from Google or Facebook)" },
+                  { icon: Camera, text: "Permission to display customer names, initials, or town" },
+                  { icon: AlertCircle, text: "Confirmation of current review counts and average ratings" },
+                ].map(({ icon: Icon, text }) => (
+                  <li key={text} className="flex items-start gap-2">
+                    <Icon className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-muted-foreground italic">
+                Once approved content is provided, placeholder reviews and aggregate counts will be replaced with verified Google/Facebook content and structured-data schema will be updated to match.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
       <StickyMobileCTA />
