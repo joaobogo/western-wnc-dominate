@@ -125,10 +125,10 @@ const StormCenter = () => {
                   Storm Assessment Line:
                 </span>
                 <a
-                  href="tel:8283979211"
+                  href="tel:8285247773"
                   className="text-[hsl(var(--dark-section-foreground))] font-heading font-bold text-sm hover:text-accent transition-colors"
                 >
-                  (828) 397-9211
+                  (828) 524-7773
                 </a>
               </div>
               <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-xs mt-3 font-body">

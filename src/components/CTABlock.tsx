@@ -74,7 +74,7 @@ const CTABlock = () => {
                     <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                   <a
-                    href="tel:8283979211"
+                    href="tel:8285247773"
                     className="group border-2 border-dark-section-foreground/20 text-dark-section-foreground font-body font-bold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.4)] transition-all duration-300 min-h-[60px] tracking-wide"
                   >
                     <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />

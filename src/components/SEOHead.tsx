@@ -108,7 +108,7 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   url: BASE_URL,
   logo: DEFAULT_IMAGE,
   image: DEFAULT_IMAGE,
-  telephone: "+1-828-397-9211",
+  telephone: "+1-828-524-7773",
   email: "info@highlanderroofing.com",
   description:
     "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
@@ -190,7 +190,7 @@ export const organizationSchema = () => ({
   logo: { "@type": "ImageObject", url: DEFAULT_IMAGE, width: 512, height: 512 },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-828-397-9211",
+    telephone: "+1-828-524-7773",
     contactType: "customer service",
     areaServed: "US-NC",
     availableLanguage: "English",

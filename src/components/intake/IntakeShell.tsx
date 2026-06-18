@@ -72,11 +72,11 @@ const IntakeShell = ({
                 Prefer to talk?
               </p>
               <a
-                href="tel:8283979211"
+                href="tel:8285247773"
                 className="inline-flex items-center gap-2.5 text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-semibold text-[14px]"
               >
                 <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-                (828) 397-9211
+                (828) 524-7773
               </a>
             </div>
 

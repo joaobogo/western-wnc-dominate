@@ -62,7 +62,7 @@ const StickyMobileCTA = () => {
                 {/* Secondary actions — generous touch targets */}
                 <div className="flex items-stretch divide-x divide-border flex-1">
                   <a
-                    href="tel:8283979211"
+                    href="tel:8285247773"
                     onClick={() => trackEvent("phone_click", { label: "Call Now", elementId: "sticky-cta-mobile-call" })}
                     className="flex-1 flex flex-col items-center justify-center gap-2 px-5 py-4 text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[72px]"
                   >
@@ -129,7 +129,7 @@ const StickyMobileCTA = () => {
                         <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-muted-foreground btn-arrow-icon" />
                       </Link>
                       <a
-                        href="tel:8283979211"
+                        href="tel:8285247773"
                         className="flex items-center gap-3 px-3 py-3 rounded-none hover:bg-secondary/60 transition-all group dropdown-item-premium"
                       >
                         <div className="w-9 h-9 rounded-none bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors">
@@ -137,7 +137,7 @@ const StickyMobileCTA = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-heading font-semibold text-foreground">Call Direct</p>
-                          <p className="text-[10px] text-muted-foreground font-body">(828) 397-9211</p>
+                          <p className="text-[10px] text-muted-foreground font-body">(828) 524-7773</p>
                         </div>
                         <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-muted-foreground btn-arrow-icon" />
                       </a>

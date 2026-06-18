@@ -123,7 +123,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
 
       setSubmitted(true);
     } catch (e: any) {
-      setError(e?.message || "Something went wrong. Please call (828) 397-9211.");
+      setError(e?.message || "Something went wrong. Please call (828) 524-7773.");
     } finally {
       setSubmitting(false);
     }

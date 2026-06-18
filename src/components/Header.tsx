@@ -332,14 +332,14 @@ const Header = () => {
         {/* ─── Right actions ─── */}
         <div className="flex items-center gap-3">
           <a
-            href="tel:8283979211"
+            href="tel:8285247773"
             className="hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 text-heritage-charcoal/60 hover:text-heritage-charcoal"
           >
             <Phone className="w-3.5 h-3.5" />
-            <span className="hidden xl:inline">(828) 397-9211</span>
+            <span className="hidden xl:inline">(828) 524-7773</span>
           </a>
           <a
-            href="tel:8283979211"
+            href="tel:8285247773"
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
           >
             <Phone className="w-4 h-4" />
@@ -547,11 +547,11 @@ const Header = () => {
                     <ArrowRight className="w-5 h-5 relative z-10" />
                   </Link>
                   <a
-                    href="tel:8283979211"
+                    href="tel:8285247773"
                     className="bg-primary text-primary-foreground font-bold text-center py-4.5 px-4 rounded-none flex items-center justify-center gap-2.5 text-[17px] font-body shadow-md active:scale-95 transition-all"
                   >
                     <Phone className="w-5 h-5" />
-                    (828) 397-9211
+                    (828) 524-7773
                   </a>
                 </motion.div>
               </nav>

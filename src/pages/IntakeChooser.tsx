@@ -122,11 +122,11 @@ const IntakeChooser = () => (
         <div className="mt-10 pt-8 border-t border-border max-w-md mx-auto">
           <p className="text-[12px] font-body text-foreground/50 mb-2">Quick question or general inquiry?</p>
           <a
-            href="tel:8283979211"
+            href="tel:8285247773"
             className="inline-flex items-center gap-2 text-foreground hover:text-[hsl(var(--highland-gold))] font-heading font-semibold text-[14px] transition-colors"
           >
             <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-            (828) 397-9211
+            (828) 524-7773
           </a>
         </div>
       </div>

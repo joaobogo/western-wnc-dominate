@@ -222,7 +222,7 @@ export default function ChatbotWidget() {
 
       if (!resp.ok || !resp.body) {
         const err = await resp.json().catch(() => ({ error: "Connection error" }));
-        setMessages(prev => [...prev, { role: "assistant", content: err.error || "Something went wrong. Please call us at (828) 397-9211." }]);
+        setMessages(prev => [...prev, { role: "assistant", content: err.error || "Something went wrong. Please call us at (828) 524-7773." }]);
         setIsLoading(false);
         return;
       }
@@ -275,7 +275,7 @@ export default function ChatbotWidget() {
 
       setExchangeCount(prev => prev + 1);
     } catch {
-      setMessages(prev => [...prev, { role: "assistant", content: "I'm having trouble connecting right now. Please call us at (828) 397-9211 and we'll be happy to help." }]);
+      setMessages(prev => [...prev, { role: "assistant", content: "I'm having trouble connecting right now. Please call us at (828) 524-7773 and we'll be happy to help." }]);
     }
     setIsLoading(false);
   }, [location.pathname, cards]);
@@ -460,8 +460,8 @@ export default function ChatbotWidget() {
               </form>
               <div className="px-3 pb-2 flex items-center justify-between text-xs text-muted-foreground">
                 <span className="font-body">Prefer to talk?</span>
-                <a href="tel:8283979211" className="inline-flex items-center gap-1 font-body font-medium text-primary hover:text-accent transition-colors">
-                  <Phone className="w-3 h-3" /> (828) 397-9211
+                <a href="tel:8285247773" className="inline-flex items-center gap-1 font-body font-medium text-primary hover:text-accent transition-colors">
+                  <Phone className="w-3 h-3" /> (828) 524-7773
                 </a>
               </div>
             </div>

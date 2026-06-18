@@ -143,7 +143,7 @@ There's no universal answer. We assess each home individually — considering el
 
 ## Free Storm Damage Inspections
 
-We respond within 24–48 hours for storm inspections across all of Western NC. Call (828) 397-9211.`,
+We respond within 24–48 hours for storm inspections across all of Western NC. Call (828) 524-7773.`,
   },
 
   {
@@ -273,7 +273,7 @@ Even if everything looks fine from the ground, an annual professional inspection
 
 ## Schedule Your Spring Inspection
 
-Call (828) 397-9211 or request an inspection online. We serve all of Western NC.`,
+Call (828) 524-7773 or request an inspection online. We serve all of Western NC.`,
   },
   {
     slug: "ice-dam-prevention-mountain-homes",
@@ -317,7 +317,7 @@ Clogged gutters accelerate ice dam formation by trapping water at the roof edge.
 
 ## Get Professional Help
 
-If you've had ice dams before, we can assess your roof and attic to identify the root cause and install permanent solutions. Call (828) 397-9211.`,
+If you've had ice dams before, we can assess your roof and attic to identify the root cause and install permanent solutions. Call (828) 524-7773.`,
   },
   {
     slug: "when-to-replace-roof-highlands",
@@ -357,7 +357,7 @@ If damage affects more than 30% of the roof area, or if the roof is past 75% of 
 
 ## Free Replacement Assessment
 
-We'll inspect your Highlands home, assess the full roof system, and give you an honest recommendation. No pressure, no upsell. Call (828) 397-9211.`,
+We'll inspect your Highlands home, assess the full roof system, and give you an honest recommendation. No pressure, no upsell. Call (828) 524-7773.`,
   },
   {
     slug: "mountain-home-addition-planning",
@@ -524,7 +524,7 @@ You'll receive:
 
 ## Schedule Your Free Inspection
 
-Call (828) 397-9211 or submit our online form. We respond rapidly and serve all of Western NC.`,
+Call (828) 524-7773 or submit our online form. We respond rapidly and serve all of Western NC.`,
   },
   {
     slug: "choosing-roofing-contractor-wnc",
@@ -577,7 +577,7 @@ Call (828) 397-9211 or submit our online form. We respond rapidly and serve all 
     date: "2025-12-05",
     image: stormCloudsStock, readTime: "5 min",
     metaTitle: "Emergency Roof Repair in Western NC | Highlander Roofing",
-    metaDescription: "Emergency roof repair in Western NC. What to do after a tree fall, major leak, or storm damage. Fast response — call (828) 397-9211.",
+    metaDescription: "Emergency roof repair in Western NC. What to do after a tree fall, major leak, or storm damage. Fast response — call (828) 524-7773.",
     content: `When your roof is compromised — whether by a fallen tree, severe storm, or sudden leak — fast action prevents thousands in additional damage. Here's what to do.
 
 ## Immediate Steps
@@ -607,7 +607,7 @@ Call (828) 397-9211 or submit our online form. We respond rapidly and serve all 
 
 Highlander Roofing prioritizes emergency calls. We aim for same-day assessment when possible and 24–48 hour response for all emergency situations across Western NC.
 
-## Call Now: (828) 397-9211`,
+## Call Now: (828) 524-7773`,
   },
   {
     slug: "mountain-roofing-maintenance-checklist",
@@ -767,7 +767,7 @@ We understand that a rental roof emergency is a business emergency. We offer pri
 
 ## Protect Your Investment
 
-A planned maintenance visit prevents an emergency repair — and the lost rental income that comes with it. Call (828) 397-9211 for rental property roofing services.`,
+A planned maintenance visit prevents an emergency repair — and the lost rental income that comes with it. Call (828) 524-7773 for rental property roofing services.`,
   },
   {
     slug: "winter-roof-preparation-highlands",
@@ -811,7 +811,7 @@ A planned maintenance visit prevents an emergency repair — and the lost rental
 
 ## Schedule Pre-Winter Inspection
 
-Don't wait for the first storm. Call (828) 397-9211 to schedule a pre-winter roof assessment for your Highlands home.`,
+Don't wait for the first storm. Call (828) 524-7773 to schedule a pre-winter roof assessment for your Highlands home.`,
   },
   {
     slug: "commercial-roof-maintenance-wnc",
@@ -858,7 +858,7 @@ Don't wait for the first storm. Call (828) 397-9211 to schedule a pre-winter roo
 
 ## Get a Maintenance Proposal
 
-Contact us for a customized maintenance proposal based on your property type, roof system, and budget. Call (828) 397-9211 or request online.`,
+Contact us for a customized maintenance proposal based on your property type, roof system, and budget. Call (828) 524-7773 or request online.`,
   },
   // ── Construction Insights ──
   {
@@ -1049,7 +1049,7 @@ Afternoon thunderstorms, flash flooding risk, humidity-driven moisture issues
 
 1. Stay safe — don't climb on your roof
 2. Document visible damage from the ground
-3. Call Highlander at (828) 397-9211 for a free storm inspection
+3. Call Highlander at (828) 524-7773 for a free storm inspection
 4. File your insurance claim promptly
 5. Don't make permanent repairs until the adjuster has visited
 
@@ -1110,7 +1110,7 @@ In summer, an unventilated attic can reach 150°F+, radiating heat into living s
 
 ## Get a Ventilation Assessment
 
-During any roof inspection, we evaluate your attic ventilation system and recommend improvements. Call (828) 397-9211.`,
+During any roof inspection, we evaluate your attic ventilation system and recommend improvements. Call (828) 524-7773.`,
     relatedServices: [
       { label: "Residential Roofing", path: "/roofing/residential" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
