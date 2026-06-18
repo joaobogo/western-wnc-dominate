@@ -73,7 +73,7 @@ const PaidAdsLanding = ({
               <Link to="/" className="font-heading text-lg font-bold text-primary-foreground hover:opacity-80 transition-opacity">
                 Highlander Roofing & Construction
               </Link>
-              <a href="tel:8285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/85 hover:text-primary-foreground transition-colors">
+              <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/85 hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" />
                 (828) 524-7773
               </a>
@@ -98,7 +98,7 @@ const PaidAdsLanding = ({
                     {ctaLabel}
                     <ArrowRight className="h-4 w-4" />
                   </a>
-                  <a href="tel:8285247773" className="inline-flex items-center gap-2 border border-primary-foreground/20 bg-primary-foreground/5 px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
+                  <a href="tel:+18285247773" className="inline-flex items-center gap-2 border border-primary-foreground/20 bg-primary-foreground/5 px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
                     <Phone className="h-4 w-4" />
                     Call Now
                   </a>
@@ -223,7 +223,7 @@ const PaidAdsLanding = ({
                 Start Request
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="tel:8285247773" className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
+              <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
                 <Phone className="h-4 w-4" />
                 (828) 524-7773
               </a>

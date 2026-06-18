@@ -112,7 +112,7 @@ const Careers = () => {
                   <p className="text-sm text-muted-foreground font-body mb-6">
                     Call our Franklin office directly to discuss current crew openings or subcontracting opportunities.
                   </p>
-                  <a href="tel:8285247773" className="inline-flex items-center gap-3 text-primary font-bold hover:text-[hsl(var(--highland-gold))] transition-colors">
+                  <a href="tel:+18285247773" className="inline-flex items-center gap-3 text-primary font-bold hover:text-[hsl(var(--highland-gold))] transition-colors">
                     <Phone className="w-4 h-4" /> (828) 524-7773
                   </a>
                 </div>

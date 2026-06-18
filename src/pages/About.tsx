@@ -480,7 +480,7 @@ const About = () => {
                   <Link to="/careers" className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 transition-all shadow-lg">
                     View Open Positions <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href="tel:8285247773" className="text-white/70 hover:text-white font-bold text-[14px] flex items-center gap-2 transition-colors">
+                  <a href="tel:+18285247773" className="text-white/70 hover:text-white font-bold text-[14px] flex items-center gap-2 transition-colors">
                     <Phone className="w-4 h-4" /> (828) 524-7773
                   </a>
                 </div>

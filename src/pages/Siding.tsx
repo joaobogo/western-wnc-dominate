@@ -41,7 +41,7 @@ const Siding = () => {
                 <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 group hover:scale-[1.02] transition-transform">
                   Request a Siding Quote <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:8285247773" className="bg-white/5 border border-white/10 text-white font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+                <a href="tel:+18285247773" className="bg-white/5 border border-white/10 text-white font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
                   <Phone className="w-5 h-5 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 524-7773
                 </a>
               </div>

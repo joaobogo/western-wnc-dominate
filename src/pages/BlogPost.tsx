@@ -437,7 +437,7 @@ const BlogPostPage = () => {
                       Request a Consultation <ArrowRight className="w-4 h-4" />
                     </Link>
                     <a
-                      href="tel:8285247773"
+                      href="tel:+18285247773"
                       className="border border-primary-foreground/30 text-primary-foreground font-semibold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:bg-primary-foreground/10 transition-colors"
                     >
                       <Phone className="w-4 h-4" /> (828) 524-7773

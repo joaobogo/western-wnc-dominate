@@ -379,7 +379,7 @@ export const ReassuranceBlock = ({
               {ctaText} <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:8285247773"
+              href="tel:+18285247773"
               className={`border font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 transition-colors ${
                 isPrimary
                   ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"

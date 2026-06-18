@@ -154,7 +154,7 @@ const InspectionForm = () => {
               className="text-dark-section-foreground/60 text-[15px] md:text-[16px] font-body font-bold"
             >
               Can't wait?{" "}
-              <a href="tel:8285247773" className="text-[hsl(var(--highland-gold))] font-semibold hover:underline">
+              <a href="tel:+18285247773" className="text-[hsl(var(--highland-gold))] font-semibold hover:underline">
                 (828) 524-7773
               </a>
               {" "}— we answer our own phone.
@@ -228,7 +228,7 @@ const InspectionForm = () => {
               <ScrollReveal variant="fade" delay={0.5}>
                 <div className="mt-8 pt-8 border-t border-dark-section-foreground/6">
                   <p className="text-dark-section-foreground/50 text-sm font-body font-bold mb-2">Prefer to talk directly?</p>
-                  <a href="tel:8285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--highland-gold))] transition-colors">
+                  <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--highland-gold))] transition-colors">
                     <Phone className="w-4 h-4" />
                     (828) 524-7773
                   </a>
