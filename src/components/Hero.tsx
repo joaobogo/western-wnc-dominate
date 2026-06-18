@@ -246,7 +246,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-[19px] md:text-[24px] text-white max-w-2xl mb-12 md:mb-16 leading-[1.6] font-body font-bold drop-shadow-lg"
             >
-              The premium standard for Western North Carolina homes. From storm-grade roofing to custom mountain additions, we combine family-business values with master-class craftsmanship. 
+              Trusted roofing, repairs, construction, gutters, and outdoor living for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, master-class craftsmanship — built for the mountains.
               <span className="block mt-6 text-[hsl(var(--highland-gold))] font-extrabold text-xl md:text-2xl drop-shadow-md">Licensed, Insured and CertainTeed ShingleMaster Credentialed Contractor.</span>
             </motion.p>
 
@@ -263,15 +263,16 @@ const Hero = () => {
                 className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-[15px] md:text-base px-10 md:px-14 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-xl min-h-[60px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Start Your Project</span>
+                <span className="relative">Request a Free Estimate</span>
                 <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1.5 transition-transform" />
               </Link>
               <a
-                href="tel:+18287029876"
-                className="group bg-white/[0.08] backdrop-blur-md border-2 border-white/[0.15] text-primary-foreground font-body font-bold text-[15px] md:text-base px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[60px] tracking-wide"
+                href="tel:+18285247773"
+                aria-label="Call Highlander Roofing & Construction at 828-524-7773"
+                className="group bg-white/[0.08] backdrop-blur-md border-2 border-white/[0.15] text-primary-foreground font-body font-bold text-[15px] md:text-base px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[60px] tracking-wide uppercase"
               >
                 <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                (828) 524-7773
+                <span>Call Highlander · (828) 524-7773</span>
               </a>
             </motion.div>
 
