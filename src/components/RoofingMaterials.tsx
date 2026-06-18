@@ -91,11 +91,11 @@ export const roofingMaterials: RoofMaterial[] = [
     colorAccent: "hsl(var(--heritage-green))",
     visualStyle: "Engineered to replicate the visual texture, color variation, and shadow profile of natural quarried slate — without the extreme weight. Available in multi-width blends that mimic authentic random-width slate installations.",
     durability: "Very high. Impact-rated (Class 4), wind-rated to 110+ mph, and engineered for UV stability. No delamination, no moisture absorption, no organic decay.",
-    lifespan: "50+ years with manufacturer warranties up to 50 years on premium lines.",
+    lifespan: "Long service life on premium lines with manufacturer warranty options available.",
     maintenance: "Very low. Similar maintenance profile to dimensional shingles — periodic visual inspection with no treatment or coating required.",
     idealFor: "Homeowners who love the look of natural slate but need a lighter-weight, more cost-effective, or more readily repairable alternative. Excellent for steep-slope applications where the roof is highly visible.",
     wncPerformance: "Excellent. Impact resistance handles hail well, wind ratings exceed mountain conditions, and the lightweight profile reduces structural load requirements on older homes.",
-    highlights: ["Class 4 impact rating", "50-year manufacturer warranty", "75% lighter than natural slate", "Consistent quality, no delamination", "Environmentally recycled content"],
+    highlights: ["Class 4 impact rating", "Manufacturer warranty options available", "75% lighter than natural slate", "Consistent quality, no delamination", "Environmentally recycled content"],
     priceRange: "$$$$",
   },
 ];

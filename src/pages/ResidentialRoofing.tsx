@@ -67,7 +67,7 @@ const materialsComparison = [
   {
     name: "Dimensional Asphalt Shingles",
     brand: "CertainTeed Landmark PRO",
-    warranty: "Manufacturer limited",
+    warranty: "Manufacturer options available",
     lifespan: "30–50 years",
     priceRange: "$$",
     best: "Most WNC residential projects",
@@ -77,7 +77,7 @@ const materialsComparison = [
   {
     name: "Standing Seam Metal",
     brand: "Custom-fabricated panels",
-    warranty: "40–50 year paint warranty",
+    warranty: "Manufacturer paint warranty options",
     lifespan: "50–70 years",
     priceRange: "$$$$",
     best: "Premium mountain homes & estates",
