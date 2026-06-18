@@ -44,13 +44,15 @@ const DESIGN_PHASES = [
       "Preliminary budget guidance",
     ],
     timeline: "2–3 weeks to concept meeting",
+    ctaLabel: "Start With a Design Agreement",
+    ctaHref: "/construction-intake",
   },
   {
     icon: PenTool,
     label: "Phase 2",
     title: "Design Development & Permit Set",
-    forWho: "Clients ready to move toward approval.",
-    bestFit: "Projects with a defined scope that need permit-ready documentation before construction can begin.",
+    forWho: "Clients who are ready to move toward approval and need more complete drawings for permitting and coordination.",
+    bestFit: "Projects with a defined scope that need to move toward jurisdiction review and construction preparation.",
     deliverables: [
       "Fully dimensioned permit-ready drawings",
       "Code and zoning summary",
@@ -58,13 +60,15 @@ const DESIGN_PHASES = [
       "Permit submittal support",
     ],
     timeline: "3–4 weeks plus jurisdiction review",
+    ctaLabel: "Plan Your Construction Project",
+    ctaHref: "/construction-intake",
   },
   {
     icon: FileCheck,
     label: "Phase 3",
     title: "Full Construction Documents",
-    forWho: "Clients who want bid-ready documentation, and all new construction projects.",
-    bestFit: "New construction and complex remodels where trade-by-trade clarity is essential before pricing and building.",
+    forWho: "Clients who want bid-ready documentation or are planning new construction.",
+    bestFit: "New construction, larger projects, and clients who need full documentation before final construction pricing.",
     deliverables: [
       "Complete construction set",
       "Full schedules",
@@ -72,6 +76,8 @@ const DESIGN_PHASES = [
       "Trade-by-trade scopes of work",
     ],
     timeline: "4–6 weeks",
+    ctaLabel: "Talk to Highlander About Your Project",
+    ctaHref: "/construction-intake",
   },
 ];
 
@@ -305,13 +311,20 @@ const ConstructionDesign = () => {
                       <div className="font-heading font-bold text-foreground text-sm leading-tight">{p.timeline}</div>
                     </div>
                   </div>
+
+                  <Link
+                    to={p.ctaHref}
+                    className="mt-5 group/cta inline-flex items-center justify-center gap-2 w-full border border-[hsl(var(--highland-gold)/0.45)] bg-transparent text-foreground font-heading font-bold text-[12.5px] px-5 py-3 rounded-none uppercase tracking-[0.12em] hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold))] transition-all"
+                  >
+                    {p.ctaLabel} <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
+                  </Link>
                 </motion.div>
               ))}
             </div>
 
             <div className="max-w-3xl mx-auto mt-10 bg-card border-l-2 border-[hsl(var(--highland-gold))] p-5 md:p-6">
               <p className="text-foreground/80 text-[14.5px] font-body leading-relaxed">
-                <span className="font-heading font-bold text-foreground">You can stop after any phase and keep your deliverables.</span> Phases stack — most remodel and addition clients begin with Phases 1 and 2.
+                <span className="font-heading font-bold text-foreground">Clients can stop after any phase and keep their deliverables.</span> Phases can also stack when a project needs to move from concept to permitting and construction documentation.
               </p>
             </div>
 
