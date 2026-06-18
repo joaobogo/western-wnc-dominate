@@ -65,6 +65,7 @@ const RoofingBuilder = lazy(() => import("./pages/RoofingBuilder"));
 const ConstructionBuilder = lazy(() => import("./pages/ConstructionBuilder"));
 const DesignIntake = lazy(() => import("./pages/DesignIntake"));
 const LegalPage = lazy(() => import("./pages/Legal"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 
 
 
@@ -206,8 +207,9 @@ const App = () => (
           <Route path="/request-inspection" element={<Navigate to="/roofing-intake" replace />} />
           <Route path="/quote-flow" element={<QuoteFlow />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy" element={<LegalPage kind="privacy" />} />
-          <Route path="/terms" element={<LegalPage kind="terms" />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+          <Route path="/terms" element={<Navigate to="/privacy-policy" replace />} />
           <Route path="/accessibility" element={<LegalPage kind="accessibility" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
