@@ -1486,7 +1486,7 @@ Deep charcols and 'Iron Ore' tones are popular for exteriors as they help homes 
   {
     slug: "budgeting-for-preconstruction-planning",
     title: "Budgeting for Pre-Construction: Why Planning Saves 15% on Build Costs",
-    excerpt: "Spending $2,000 on planning can save $20,000 in mistakes. Learn the ROI of the Design phase.",
+    excerpt: "Investing in planning prevents costly mistakes during construction. Learn the ROI of the Design phase.",
     category: "Cost",
     date: "2026-06-10",
     image: financeCalcStock, readTime: "6 min",

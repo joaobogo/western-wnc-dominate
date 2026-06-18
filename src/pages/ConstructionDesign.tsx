@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {
   ArrowRight, ClipboardCheck, PenTool, FileCheck, CheckCircle,
   Layers, Compass, ShieldCheck, MessageSquare, HardHat, Ruler,
-  Sparkles, Phone, ChevronRight, FileText, DollarSign, Clock,
+ Sparkles, Phone, ChevronRight, FileText, Clock,
   Home, Trees, PlusSquare, DoorOpen,
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema, faqSchema } from "@/components/SEOHead";
@@ -19,31 +19,30 @@ import { ConstructionClosingCTA, ConstructionMidCTA } from "@/components/constru
  *
  * Approved vocabulary only. NEVER use "architect / architectural / free design".
  *
- * NOTE: All fee ranges below are PRE-LAUNCH PLACEHOLDERS pending final approval
- * from Javi / Highlander. Edit the DESIGN_PHASES array to update. Public copy
- * uses "typical range" and "depending on project scope" — never guaranteed
- * pricing. See `// FEES PENDING APPROVAL` markers.
+ * NOTE: Public-facing design pricing has been removed per Highlander policy.
+ * Pricing is determined by project scope and confirmed during the Design &
+ * Consultation Agreement process. Do NOT reintroduce fee ranges, dollar
+ * amounts, "starting at", or "typical fee range" copy on this page.
  */
 
 const heroImg = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-// FEES PENDING APPROVAL — edit here to update across the page
 const DESIGN_PHASES = [
   {
     icon: ClipboardCheck,
     label: "Phase 1",
     title: "Schematic Design",
-    forWho: "Anyone deciding what to build — and roughly what it costs.",
+    forWho: "Homeowners deciding what to build, what direction makes sense, and what level of investment may be realistic.",
+    bestFit: "Early-stage additions, remodels, outdoor living projects, and construction ideas that need to become clearer before estimating.",
     deliverables: [
       "Measured existing conditions",
       "Concept floor plans and elevations",
       "3D views",
       "Material direction",
-      "Realistic preliminary budget range",
+      "Preliminary budget guidance",
     ],
-    feeRange: "$3,000–$9,500",
     timeline: "2–3 weeks to concept meeting",
   },
   {
@@ -51,13 +50,13 @@ const DESIGN_PHASES = [
     label: "Phase 2",
     title: "Design Development & Permit Set",
     forWho: "Clients ready to move toward approval.",
+    bestFit: "Projects with a defined scope that need permit-ready documentation before construction can begin.",
     deliverables: [
       "Fully dimensioned permit-ready drawings",
       "Code and zoning summary",
       "Engineering coordination",
       "Permit submittal support",
     ],
-    feeRange: "$4,000–$13,500",
     timeline: "3–4 weeks plus jurisdiction review",
   },
   {
@@ -65,13 +64,13 @@ const DESIGN_PHASES = [
     label: "Phase 3",
     title: "Full Construction Documents",
     forWho: "Clients who want bid-ready documentation, and all new construction projects.",
+    bestFit: "New construction and complex remodels where trade-by-trade clarity is essential before pricing and building.",
     deliverables: [
       "Complete construction set",
       "Full schedules",
       "Specifications",
       "Trade-by-trade scopes of work",
     ],
-    feeRange: "$5,000–$19,500",
     timeline: "4–6 weeks",
   },
 ];
@@ -86,7 +85,7 @@ const whyDesignFirst = [
 ];
 
 const fixedFeeBullets = [
-  "Fixed tier pricing by project scope",
+  "Pricing determined by project scope",
   "Clear deliverables for each phase",
   "Defined timeline expectations",
   "Drawings, 3D views, scopes, and permit support — depending on phase",
@@ -127,7 +126,7 @@ const ConstructionDesign = () => {
     <>
       <SEOHead
         title="Design Services for Construction Projects | Highlander WNC"
-        description="Highlander's in-house design services for additions, remodels, outdoor living, and new construction in Western North Carolina. Three fixed-fee phases — scope, permit set, and construction documents — with real budget guidance before you build."
+        description="Highlander's in-house design services for additions, remodels, outdoor living, and new construction in Western North Carolina. Three design phases — scope, permit set, and construction documents — with real budget guidance before you build."
         path="/construction/design"
         jsonLd={[
           breadcrumbSchema([
@@ -292,13 +291,12 @@ const ConstructionDesign = () => {
                     </ul>
                   </div>
 
-                  <div className="border-t border-border pt-4 grid grid-cols-2 gap-3">
+                  <div className="border-t border-border pt-4 space-y-3">
                     <div>
                       <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-foreground/55 mb-1">
-                        <DollarSign className="w-3 h-3" /> Typical Range
+                        <CheckCircle className="w-3 h-3" /> Best fit
                       </div>
-                      <div className="font-heading font-bold text-foreground text-sm">{p.feeRange}</div>
-                      <div className="text-[11px] text-foreground/55 font-body">depending on project scope</div>
+                      <p className="text-foreground/80 text-[13px] font-body leading-snug">{p.bestFit}</p>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-foreground/55 mb-1">
@@ -314,6 +312,12 @@ const ConstructionDesign = () => {
             <div className="max-w-3xl mx-auto mt-10 bg-card border-l-2 border-[hsl(var(--highland-gold))] p-5 md:p-6">
               <p className="text-foreground/80 text-[14.5px] font-body leading-relaxed">
                 <span className="font-heading font-bold text-foreground">You can stop after any phase and keep your deliverables.</span> Phases stack — most remodel and addition clients begin with Phases 1 and 2.
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto mt-4 bg-secondary/40 border border-border p-5 md:p-6">
+              <p className="text-foreground/75 text-[14px] font-body leading-relaxed">
+                <span className="font-heading font-bold text-foreground">Pricing is determined by project scope.</span> The appropriate design phase depends on project type, readiness, and existing documentation. Fixed phase pricing and deliverables are reviewed and confirmed during the Design &amp; Consultation Agreement process — after Highlander reviews your project details.
               </p>
             </div>
           </div>
@@ -356,11 +360,11 @@ const ConstructionDesign = () => {
           <div className="container-tight">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <ScrollReveal variant="fade">
-                <span className="eyebrow mb-3 block">How We Price Design</span>
+                <span className="eyebrow mb-3 block">How We Structure Design</span>
                 <h2 className="section-heading mb-6">No Hourly Guesswork. Clear Phases. Defined Deliverables.</h2>
                 <div className="space-y-5 text-foreground/80 text-base font-body leading-relaxed">
                   <p>
-                    Highlander's design process uses fixed phase pricing and itemized deliverables instead of vague hourly design work. You know exactly what each phase includes — and what it costs — before you begin.
+                    Highlander's design process uses defined phases and itemized deliverables instead of vague hourly design work. You know exactly what each phase includes before you begin. Fixed phase pricing is confirmed for your specific project during the Design &amp; Consultation Agreement process.
                   </p>
                 </div>
               </ScrollReveal>
@@ -390,7 +394,7 @@ const ConstructionDesign = () => {
               <h2 className="section-heading mb-6">Real Budget Guidance Before You Commit to the Full Build.</h2>
               <div className="space-y-5 text-foreground/80 text-base md:text-lg font-body leading-relaxed">
                 <p>
-                  Phase 1 includes a preliminary budget range, giving homeowners a more realistic understanding of the project before committing to larger design phases, permitting, or construction.
+                  Phase 1 includes preliminary budget guidance, giving homeowners a more realistic understanding of the project before committing to larger design phases, permitting, or construction.
                 </p>
                 <p>
                   This supports Highlander's "no instant quote" discipline for serious construction projects. Instead of guessing at a number, we help you define the project first — then price it honestly.
