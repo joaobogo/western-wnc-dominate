@@ -208,6 +208,17 @@ export const ConstructionServiceGrid = ({
               </div>
             )}
 
+            {variant === "detailed" && cat.designNote && (
+              <div className="mb-4 pt-3 border-t border-border/60">
+                <p className="text-[13px] text-foreground/70 font-body italic leading-snug">
+                  {cat.designNote}{" "}
+                  <Link to="/construction/design" className="not-italic font-semibold text-primary hover:underline">
+                    View design phases →
+                  </Link>
+                </p>
+              </div>
+            )}
+
             <Link
               to={cat.slug}
               className="group/link text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body"
