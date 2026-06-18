@@ -21,7 +21,7 @@ const constructionLinks = [
   { label: "Home Additions", href: "/construction/additions" },
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
   { label: "Design", href: "/layouts-planning" },
-  { label: "Start a Project", href: "/consultation" },
+  { label: "Request a Quote", href: "/consultation" },
   { label: "Build Your Project", href: "/construction-builder" },
 ];
 
@@ -133,7 +133,7 @@ const Footer = () => {
                 className="group cta-gradient text-accent-foreground font-bold text-[14px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap uppercase tracking-[0.1em] shadow-lg min-h-[56px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Start a Project</span>
+                <span className="relative">Request a Quote</span>
                 <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
@@ -194,7 +194,7 @@ const Footer = () => {
                   <div className="text-[15px] text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Sylva / Waynesville</span>
                     28 Cross Stitch Mountain Rd<br />
-                    Sylva, NC 20779
+                    Sylva, NC 28779
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -203,6 +203,14 @@ const Footer = () => {
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Asheville / Buncombe</span>
                     900 Hendersonville Rd, Ste 303-D<br />
                     Asheville, NC 28803
+                  </div>
+                </div>
+                <div className="flex gap-3 pt-2 border-t border-border/60">
+                  <Clock className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <div className="text-[15px] text-muted-foreground leading-relaxed">
+                    <span className="block font-bold text-foreground/80 mb-0.5 text-base">Office Hours</span>
+                    Mon–Fri 7:30 AM – 5:30 PM<br />
+                    <span className="text-primary font-semibold">Emergency response available 24/7</span>
                   </div>
                 </div>
               </div>
@@ -347,6 +355,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <Link to="/privacy" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Terms of Service</Link>
+            <Link to="/accessibility" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>

@@ -52,7 +52,7 @@ const TRUST_POINTS = [
   { icon: Clock, text: "Personalized rapid response — guaranteed" },
   { icon: Shield, text: "Licensed GC · Fully insured · Warranty-backed" },
   { icon: Award, text: "CertainTeed Master Shingle Applicator" },
-  { icon: Users, text: "In-house crews — never subcontracted" },
+  { icon: Users, text: "In-house Highlander crews on every project" },
   { icon: Star, text: "4.9★ average across Google & Facebook" },
   { icon: MapPin, text: "Locally owned — Franklin & Sylva, NC" },
 ];
@@ -70,7 +70,7 @@ export default function Contact() {
   const [service, setService] = useState("");
   const [timeline, setTimeline] = useState("");
   const [preferredContact, setPreferredContact] = useState("phone");
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", town: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleDivision = (d: "roofing" | "construction") => {
@@ -94,7 +94,10 @@ export default function Contact() {
         name: form.name.trim(),
         email: form.email.trim(),
         phone: form.phone.trim() || null,
-        project_description: form.message.trim() || null,
+        project_description: [
+          form.town.trim() && `Project location: ${form.town.trim()}`,
+          form.message.trim(),
+        ].filter(Boolean).join("\n\n") || null,
         service_category: division || null,
         project_type: service || null,
         timeline: timeline || null,
@@ -386,6 +389,25 @@ export default function Contact() {
                         />
                       </div>
 
+                      {/* Project address or town */}
+                      <div>
+                        <label htmlFor="cc-town" className={labelClasses}>
+                          Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground/40">— recommended</span>
+                        </label>
+                        <input
+                          id="cc-town"
+                          type="text"
+                          value={form.town}
+                          onChange={(e) => setForm((p) => ({ ...p, town: e.target.value }))}
+                          placeholder="e.g. Highlands, Cashiers, Franklin, or full street address"
+                          className={inputClasses}
+                          maxLength={150}
+                        />
+                        <p className="mt-1.5 text-[11px] text-muted-foreground/60 font-body">
+                          Helps us route your inquiry to the closest Highlander office and crew.
+                        </p>
+                      </div>
+
                       {/* Timeline */}
                       <div>
                         <label className={labelClasses}>Project Timeline</label>
@@ -559,7 +581,7 @@ export default function Contact() {
                   <div className="border border-border bg-secondary/30 p-6 md:p-7">
                     <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Prefer to Connect Directly?</h3>
                     <div className="space-y-3">
-                      <a href="tel:+18285247773" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
+                  <a href="tel:+18285247773" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
                         <Phone className="w-4 h-4 text-primary" />
                         <div>
                           <p className="text-sm font-heading font-semibold text-foreground">(828) 524-7773</p>
@@ -619,7 +641,7 @@ export default function Contact() {
                   <span className="text-[hsl(var(--dark-section-foreground)/0.1)]">•</span>
                   <span>CertainTeed Master Applicator</span>
                   <span className="text-[hsl(var(--dark-section-foreground)/0.1)]">•</span>
-                  <span>In-House Crews</span>
+                  <span>In-House Highlander Crews</span>
                 </div>
               </motion.div>
             </div>
