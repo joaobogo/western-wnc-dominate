@@ -30,14 +30,14 @@ const leadership = [
     name: "Luke",
     role: "Owner & Lead Advisor",
     bio: "Driving the Highlander vision with a focus on mountain-grade quality and family-business values. Luke oversees the strategic direction of all three divisions: Roofing, Construction, and Design Support.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+    image: null,
     credentials: ["NC Licensed GC", "CertainTeed Master Applicator", "WNC Native"]
   },
   {
     name: "Christy",
     role: "Director of Operations",
     bio: "The engine behind the scenes. Christy manages project sequencing, client coordination, and ensures the 'Highlander Standard' is met from first call to final walkthrough.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
+    image: null,
     credentials: ["Project Coordination", "Client Experience", "Operational Excellence"]
   }
 ];
@@ -48,14 +48,14 @@ const teamMembers = [
     role: "Roofing Division Lead",
     specialty: "System Installation & QC",
     bio: "With years of ridgetop experience, Javier leads our roofing crews with manufacturer-exact precision, specializing in complex metal and synthetic slate systems.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400"
+    image: null
   },
   {
     name: "Miguel",
     role: "Construction Foreman",
     specialty: "Framing & Structural Execution",
     bio: "Miguel translates design layouts into buildable reality. He manages on-site construction for additions and outdoor living spaces with obsessive attention to detail.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400"
+    image: null
   }
 ];
 
@@ -219,8 +219,10 @@ const About = () => {
                       <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-4">
-                        <Users className="w-8 h-8 text-muted-foreground/40 mx-auto mb-2" />
-                        <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground/75">Photo<br />Coming Soon</span>
+                        <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
+                          <span className="font-heading font-bold text-2xl text-[hsl(var(--highland-gold))]">{person.name.charAt(0)}</span>
+                        </div>
+                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Highlander Leadership</span>
                       </div>
                     )}
                   </div>
