@@ -125,7 +125,7 @@ export const counties: CountyData[] = [
     name: "Transylvania County",
     description: "The 'Land of Waterfalls' demands superior moisture management. We serve Brevard and the high-end private communities of Lake Toxaway.",
     towns: ["Brevard", "Lake Toxaway", "Rosman"],
-    metaTitle: "Roofing & Construction in Transylvania County, NC | Highlander",
+    metaTitle: "Transylvania County Roofing Roofing & Construction in Transylvania County, NC | Highlander Construction | Highlander",
     metaDescription: "Specialized roofing and construction for Transylvania County, NC. Moisture-resistant systems for Brevard and Lake Toxaway estates.",
     heroImage: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000",
     facts: [
