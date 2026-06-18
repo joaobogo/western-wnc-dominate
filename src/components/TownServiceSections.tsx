@@ -57,7 +57,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
             </div>
           </ScrollReveal>
 
-          {/* Design & Planning Pillar */}
+          {/* Design Pillar */}
           <ScrollReveal variant="rise-subtle" delay={0.2}>
             <div className="flex flex-col h-full bg-secondary/30 border border-border p-10 group relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
               <div className="w-16 h-16 bg-primary/5 flex items-center justify-center mb-8 border border-primary/5">
@@ -71,7 +71,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
                 to="/layouts-planning"
                 className="inline-flex items-center gap-2 text-foreground font-heading font-bold hover:gap-3 transition-all mt-auto text-sm uppercase tracking-widest"
               >
-                Explore Planning Services <ArrowRight className="w-4 h-4" />
+                Explore Design Services <ArrowRight className="w-4 h-4" />
               </Link>
 
               {/* Subtle background icon */}

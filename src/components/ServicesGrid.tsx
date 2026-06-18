@@ -134,7 +134,7 @@ const services: FeaturedService[] = [
   },
   {
     icon: Ruler,
-    title: "Design & Planning",
+    title: "Design",
     tagline: "Layouts & project planning",
     description: "Layouts, floor plans, and project planning support for additions, outdoor living, and scoped residential work.",
     stat: "Concept",
@@ -274,8 +274,8 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
 
 const ServicesGrid = () => {
   const roofing = services.filter(s => s.accent === "green");
-  const construction = services.filter(s => s.accent === "gold" && s.title !== "Design & Planning");
-  const design = services.filter(s => s.title === "Design & Planning");
+  const construction = services.filter(s => s.accent === "gold" && s.title !== "Design");
+  const design = services.filter(s => s.title === "Design");
 
   return (
     <section className="section-padding bg-background relative overflow-hidden">
@@ -295,7 +295,7 @@ const ServicesGrid = () => {
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <p className="text-foreground max-w-xl mx-auto text-lg md:text-xl font-body leading-relaxed font-bold">
-              Roof systems, additions, renovations, and Design & Planning — each project scoped
+              Roof systems, additions, renovations, and Design — each project scoped
               for your property's elevation, exposure, and layout character.
             </p>
           </ScrollReveal>
@@ -346,7 +346,7 @@ const ServicesGrid = () => {
                 <Ruler className="w-4 h-4 text-accent" />
               </div>
               <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.22em] text-accent/95">
-                Design & Planning Pillar
+                Design Pillar
               </span>
               <div className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
             </div>

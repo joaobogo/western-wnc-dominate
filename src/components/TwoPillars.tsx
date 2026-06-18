@@ -10,7 +10,7 @@ import { Home, HardHat } from "lucide-react";
  * Roofing is framed as the proven authority. Construction is framed as the
  * disciplined extension of the same team, owner, and standard.
  *
- * Design & Planning is framed as the supporting foundation that ensures 
+ * Design is framed as the supporting foundation that ensures 
  * success for both pillars.
  */
 const TwoPillars = () => {

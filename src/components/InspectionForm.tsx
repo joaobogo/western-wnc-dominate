@@ -375,7 +375,7 @@ const InspectionForm = () => {
                                   <option value="renovation">Renovation / Remodel</option>
                                   <option value="addition">Addition or Expansion</option>
                                   <option value="outdoor-living">Deck, Porch, or Outdoor Living</option>
-                                  <option value="planning">Design & Planning Support</option>
+                                  <option value="planning">Design Support</option>
                                   <option value="exterior">Siding & Exterior Work</option>
                                 </optgroup>
                                 <optgroup label="Other">

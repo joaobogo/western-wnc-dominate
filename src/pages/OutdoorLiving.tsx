@@ -28,7 +28,7 @@ import proj4 from "@/assets/gallery/cedar-004.webp";
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
 const beautyFunctionDurability = [
-  { icon: PenTool, title: "Design That Belongs", detail: "Every outdoor structure should complement your home's layout and style — not compete with it. We use the Highlander Design & Planning standard to match proportions and rooflines so outdoor spaces feel like intentional extensions of the home." },
+  { icon: PenTool, title: "Design That Belongs", detail: "Every outdoor structure should complement your home's layout and style — not compete with it. We use the Highlander Design standard to match proportions and rooflines so outdoor spaces feel like intentional extensions of the home." },
   { icon: Ruler, title: "Layouts That Fit Your Life", detail: "How do you actually want to use the space? Cooking, entertaining, morning coffee, evening drinks? We design layouts around real use — not showroom photos." },
   { icon: Shield, title: "Durability for Mountain Life", detail: "WNC outdoor structures face UV, rain, freeze-thaw cycles, wind, and occasional ice loads. We specify materials and fasteners rated for these conditions and build with drainage, ventilation, and long-term maintenance in mind." },
 ];
@@ -142,7 +142,7 @@ const OutdoorLiving = () => {
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-xl md:text-2xl text-white mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
-                Decks, covered porches, screened rooms, and outdoor kitchens — strengthened by our <Link to="/layouts-planning" className="text-[hsl(var(--highland-gold))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)]">Design & Planning branch</Link> to handle mountain weather and maximize mountain life.
+                Decks, covered porches, screened rooms, and outdoor kitchens — strengthened by our <Link to="/layouts-planning" className="text-[hsl(var(--highland-gold))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)]">Design branch</Link> to handle mountain weather and maximize mountain life.
               </motion.p>
 
 

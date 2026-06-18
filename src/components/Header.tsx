@@ -36,7 +36,7 @@ const constructionItems: DropdownItem[] = [
 ];
 
 const designItems: DropdownItem[] = [
-  { label: "Design & Planning", href: "/layouts-planning", desc: "Pre-construction support" },
+  { label: "Design", href: "/layouts-planning", desc: "Pre-construction support" },
   { label: "Project Brief", href: "/design-intake?mode=long", desc: "Start a detailed planning brief" },
   { label: "Consultation", href: "/design-intake?mode=short", desc: "Quick planning inquiry" },
 ];

@@ -33,7 +33,7 @@ export const fullConstructionProcess: ProcessStep[] = [
 export const compactConstructionProcess: ProcessStep[] = [
   fullConstructionProcess[0], // Consultation
   fullConstructionProcess[1], // Site Review
-  fullConstructionProcess[3], // Design & Planning
+  fullConstructionProcess[3], // Design
   fullConstructionProcess[5], // Permitting & Scheduling
   fullConstructionProcess[6], // Execution
   fullConstructionProcess[9], // Walk-Through & Closeout

@@ -65,12 +65,12 @@ const LayoutsPlanning = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Design & Planning | Layouts & Preconstruction Support WNC"
+        title="Design | Layouts & Preconstruction Support WNC"
         description="Professional layout support and project planning for Western North Carolina construction. Additions, porches, and outdoor living planned with intention."
         path="/layouts-planning"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Design & Planning", url: "/layouts-planning" }
+          { name: "Design", url: "/layouts-planning" }
         ])}
       />
       <Header />
@@ -115,7 +115,7 @@ const LayoutsPlanning = () => {
                 transition={{ duration: 0.9, delay: 0.2, ease: HIGHLAND_EASE }}
                 className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl leading-relaxed font-body font-light"
               >
-                The foundational step for every successful build. Our Design & Planning branch provides the technical bridge between a vision and a buildable reality—mapping every detail before construction begins.
+                The foundational step for every successful build. Our Design branch provides the technical bridge between a vision and a buildable reality—mapping every detail before construction begins.
               </motion.p>
 
               <motion.div 
@@ -203,7 +203,7 @@ const LayoutsPlanning = () => {
             <div className="text-center max-w-3xl mx-auto mb-20">
               <span className="eyebrow mb-4 block">Project Intake</span>
               <h2 className="section-heading mb-6">Which path is right for you?</h2>
-              <p className="text-muted-foreground font-body">We offer two levels of engagement for the Design & Planning branch, depending on how far along your project is.</p>
+              <p className="text-muted-foreground font-body">We offer two levels of engagement for the Design branch, depending on how far along your project is.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">

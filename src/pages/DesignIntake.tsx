@@ -15,19 +15,19 @@ const DesignIntake = () => {
   return (
     <>
       <SEOHead
-        title="Start Your Project Plan | Design & Planning Intake"
+        title="Start Your Project Plan | Design Intake"
         description="Planning an addition or major renovation in WNC? Share your vision and get professional layout and scope assessment from Highlander."
         path="/design-intake"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Design & Planning", url: "/layouts-planning" },
+          { name: "Design", url: "/layouts-planning" },
           { name: "Project Intake", url: "/design-intake" }
         ])}
       />
       <Header />
       <main>
         <IntakeShell
-          eyebrow="Design & Planning"
+          eyebrow="Design"
           title={mode === "short" ? "Start the conversation." : "Tell us about your vision."}
           subhead={mode === "short" 
             ? "Quickly share the basics of your project and what kind of planning help you need." 

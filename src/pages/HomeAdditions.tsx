@@ -152,7 +152,7 @@ const HomeAdditions = () => {
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-xl md:text-2xl text-white mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
-                Guest suites, layout changes, floor plans, and sunrooms — supported by our Design & Planning branch to integrate seamlessly with your existing home's design theme.
+                Guest suites, layout changes, floor plans, and sunrooms — supported by our Design branch to integrate seamlessly with your existing home's design theme.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">

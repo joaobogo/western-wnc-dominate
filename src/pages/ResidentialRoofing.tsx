@@ -341,7 +341,7 @@ const ResidentialRoofing = () => {
                       Avoid surprises with our pre-construction support. We help Western North Carolina homeowners define layout, floor plans, and project scope before breaking ground.
                    </p>
                    <Link to="/layouts-planning" className="text-sm font-bold text-primary hover:underline">
-                      Design & Planning Support &rarr;
+                      Design Support &rarr;
                    </Link>
                 </div>
              </div>
