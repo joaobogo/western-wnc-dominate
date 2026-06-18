@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {
   ArrowRight, ClipboardCheck, PenTool, FileCheck, CheckCircle,
   Layers, Compass, ShieldCheck, MessageSquare, HardHat, Ruler,
-  Sparkles, Phone, ChevronRight, FileText, DollarSign, Clock,
+ Sparkles, Phone, ChevronRight, FileText, Clock,
   Home, Trees, PlusSquare, DoorOpen,
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema, faqSchema } from "@/components/SEOHead";
