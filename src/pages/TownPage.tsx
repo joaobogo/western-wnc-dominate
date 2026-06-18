@@ -20,7 +20,7 @@ import BuiltForWNC from "@/components/BuiltForWNC";
 import ProjectConcierge from "@/components/ProjectConcierge";
 import TownProofBlock from "@/components/TownProofBlock";
 import NearbyTowns from "@/components/NearbyTowns";
-import { getTownBySlug, towns } from "@/data/towns";
+import { getTownBySlug, getLocalRelevance, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 import { blogPosts } from "@/data/blogs";
 import { getRelevantBlogsForTown } from "@/data/content-support";
@@ -44,6 +44,7 @@ const TownPage = () => {
 
   const townProof = getTownProofContent(town.slug);
   const relevantBlogs = getRelevantBlogsForTown(town.name);
+  const localRelevance = getLocalRelevance(town.slug);
 
   return (
     <>
