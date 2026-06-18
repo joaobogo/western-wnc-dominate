@@ -84,19 +84,19 @@ const RecentProjects = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative bg-[hsl(var(--highland-green))] text-white overflow-hidden">
+        <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
           <div className="absolute inset-0">
-            <img src={heroImg} alt="Highlander roofing project in Western North Carolina" className="w-full h-full object-cover opacity-25" />
-            <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--highland-green))]/95 via-[hsl(var(--highland-green))]/85 to-[hsl(var(--highland-green))]/95" />
+            <img src={heroImg} alt="Highlander roofing project in Western North Carolina" className="w-full h-full object-cover opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/90 to-secondary/95" />
           </div>
           <div className="container-tight relative py-20 md:py-28">
             <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
               Project Activity · Western North Carolina
             </p>
-            <h1 className="text-display-md md:text-display-lg font-heading font-bold mb-6 leading-[1.05] tracking-tightest">
+            <h1 className="text-display-md md:text-display-lg font-heading font-bold text-[hsl(var(--highland-green))] mb-6 leading-[1.05] tracking-tightest">
               Recent Projects
             </h1>
-            <p className="text-body-lg md:text-body-xl text-white/85 max-w-3xl leading-relaxed font-medium mb-8">
+            <p className="text-body-lg md:text-body-xl text-foreground/80 max-w-3xl leading-relaxed font-medium mb-8">
               See how Highlander Roofing Services helps homeowners and property owners across
               Franklin, Highlands, Cashiers, Sylva, and Western North Carolina protect, improve,
               and plan their properties through roofing, construction, gutters, outdoor living,
@@ -106,7 +106,7 @@ const RecentProjects = () => {
               <Link to="/contact" className="cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all">
                 Request a Free Estimate <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/services" className="border border-white/30 text-white font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+              <Link to="/services" className="border border-[hsl(var(--highland-green))]/30 text-[hsl(var(--highland-green))] font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-[hsl(var(--highland-green))]/10 transition-all">
                 Explore Our Services
               </Link>
             </div>
