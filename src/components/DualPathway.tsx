@@ -76,7 +76,7 @@ const designData = {
   badge: "Pre-Con Support",
   title: "Design",
   subtitle: "Our Intelligence",
-  description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and ensure architectural integrity.",
+  description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and protect design integrity end-to-end.",
   stats: [
     { value: "100%", label: "Pre-Con Clarity" },
     { value: "Site", label: "Optimized Plans" },
@@ -86,13 +86,13 @@ const designData = {
     { icon: Search, name: "Site Feasibility" },
     { icon: Layers, name: "Material Selection" },
     { icon: HardHat, name: "Permit Coordination" },
-    { icon: Compass, name: "Architectural Prep" },
+    { icon: Compass, name: "Construction Documents" },
     { icon: ShieldCheck, name: "Scope Definition" },
   ],
   cta: "Explore Design Services",
   href: "/layouts-planning",
   image: designImg,
-  imageAlt: "Architectural design plans for a custom WNC mountain home — Highlander Design Division",
+  imageAlt: "Design plans and 3D views for a custom WNC mountain home — Highlander Design Division",
 };
 
 const DivisionCard = ({ data, accent, index }: {

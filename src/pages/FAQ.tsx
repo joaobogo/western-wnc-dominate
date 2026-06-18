@@ -75,7 +75,7 @@ const categories: Category[] = [
     label: "Shingle Roofing",
     items: [
       { q: "What brand of shingles do you install?", a: "We specialize in CertainTeed shingles as a CertainTeed ShingleMaster contractor. Other premium brands can be sourced on request." },
-      { q: "How long do asphalt shingles last in Western NC?", a: "Quality architectural shingles typically last 25 to 30 years with proper installation and ventilation. Premium shingles can last longer." },
+      { q: "How long do asphalt shingles last in Western NC?", a: "Quality dimensional asphalt shingles typically last 25 to 30 years with proper installation and ventilation. Premium shingles can last longer." },
     ],
   },
   {
@@ -115,14 +115,14 @@ const categories: Category[] = [
     label: "Home Additions",
     items: [
       { q: "How long does a home addition typically take?", a: "Most additions take 8 to 16 weeks from groundbreaking, depending on size, complexity, permitting, and material lead times. We'll provide a project-specific schedule before work begins." },
-      { q: "Do you handle design as well as construction?", a: "We coordinate with trusted local designers and architects, and offer in-house design support to help shape your project before construction starts." },
+      { q: "Do you handle design as well as construction?", a: "Yes. Highlander offers in-house design services through our paid, three-phase Design & Consultation Agreement — scope, plans and 3D views, then a permit set — so your project is fully defined before construction pricing is finalized." },
     ],
   },
   {
     id: "outdoor",
     label: "Outdoor Living",
     items: [
-      { q: "What outdoor living projects do you build?", a: "Decks, screened porches, covered patios, pergolas, and outdoor entertaining spaces designed to handle WNC weather and complement the architecture of your home." },
+      { q: "What outdoor living projects do you build?", a: "Decks, screened porches, covered patios, pergolas, and outdoor entertaining spaces designed to handle WNC weather and complement the character of your home." },
       { q: "Can you build outdoor structures on sloped mountain lots?", a: "Yes. Sloped lots are a Highlander specialty — we engineer foundations, drainage, and framing for the realities of mountain terrain." },
     ],
   },

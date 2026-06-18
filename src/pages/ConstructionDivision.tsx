@@ -27,6 +27,7 @@ import {
   ConstructionProcess, compactConstructionProcess,
   ConstructionTrust,
   DisciplinesBridge,
+  DesignProgramPromo,
 } from "@/components/construction";
 
 const heroImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000";
@@ -71,7 +72,7 @@ const galleryImages = [
 
 const faqsForSEO = [
   { question: "What types of construction projects does Highlander handle?", answer: "We specialize in residential additions, renovations, structural upgrades, exterior improvements, outdoor living spaces, and custom project work." },
-  { question: "Do you handle roofing, construction, and design on the same project?", answer: "Yes — and this is one of our key advantages. When a project involves roof work, structural changes, and design planning, having one company manage all three eliminates coordination gaps and ensures architectural integrity." },
+  { question: "Do you handle roofing, construction, and design on the same project?", answer: "Yes — and this is one of our key advantages. When a project involves roof work, structural changes, and design planning, having one company manage all three eliminates coordination gaps and protects design integrity from first sketch to final walkthrough." },
   { question: "How long does a typical construction project take?", answer: "Timelines vary significantly by scope. A deck or porch project typically takes 2–4 weeks. A room addition may take 6–12 weeks. A major renovation can run 3–6 months." },
   { question: "Do you handle permits and inspections?", answer: "Yes. Permit acquisition, code compliance, and inspection scheduling are part of our standard project management." },
   { question: "How do you price construction projects?", answer: "We provide detailed, grouped-cost proposals with defined scope, material specifications, and labor costs. No vague allowances, no hidden fees." },
@@ -136,7 +137,7 @@ const ConstructionDivision = () => {
               </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-[20px] md:text-[24px] text-white/95 max-w-2xl mb-12 leading-relaxed font-body font-bold drop-shadow-md">
-                From home additions to luxury outdoor living, we combine architectural sensitivity with Western North Carolina's highest construction standards. Licensed, insured, and owner-led.
+                From home additions to luxury outdoor living, we combine design sensitivity with Western North Carolina's highest construction standards. Licensed, insured, and owner-led.
               </motion.p>
 
 
@@ -186,14 +187,14 @@ const ConstructionDivision = () => {
               <div className="text-center">
                 <GoldLine width="3rem" className="mx-auto mb-8" />
                 <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
-                  Highlander builds more than structures. We build the mountain homes and outdoor spaces that define your WNC lifestyle—backed by a master-class standard of roofing authority and architectural planning.
+                  Highlander builds more than structures. We build the mountain homes and outdoor spaces that define your WNC lifestyle—backed by a master-class standard of roofing authority and disciplined in-house design planning.
                 </h2>
                 <div className="max-w-2xl mx-auto space-y-6">
                   <p className="text-foreground text-lg md:text-xl leading-relaxed font-body font-medium">
                     Our Construction division serves homeowners who value meticulous planning and a design-first approach to mountain building.
                   </p>
                   <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body">
-                    We bridge the gap between architectural vision and buildable reality, supported by our expert <Link to="/layouts-planning" className="text-primary font-bold hover:underline">Design</Link> branch.
+                    We bridge the gap between design vision and buildable reality through our paid, three-phase <Link to="/construction/design" className="text-primary font-bold hover:underline">Design &amp; Consultation Agreement</Link>.
                   </p>
                 </div>
                 <GoldLine width="3rem" className="mx-auto mt-10" delay={0.3} />
@@ -264,7 +265,7 @@ const ConstructionDivision = () => {
           eyebrow="Construction Services"
         />
 
-        {/* ═══ ARCHITECTURAL DETAIL — Visual break ═══ */}
+        {/* ═══ CRAFT DETAIL — Visual break ═══ */}
         <section className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
           <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200" alt="Construction detail and craftsmanship" className="w-full h-full object-cover grayscale opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
@@ -314,6 +315,9 @@ const ConstructionDivision = () => {
           subheadline="Let's discuss scope, timeline, and whether Highlander is the right fit."
           ctaText="Schedule a Project Consultation"
         />
+
+        {/* ═══ DESIGN PROGRAM PROMO ═══ */}
+        <DesignProgramPromo />
 
         {/* ═══ FEATURED PROJECTS ═══ */}
         <section className="section-padding bg-background/50 relative">
