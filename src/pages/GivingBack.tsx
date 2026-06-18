@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart, Users, MapPin, Calendar, ArrowRight, Quote, HandHeart, Gift, Star } from "lucide-react";
+import { Heart, Users, Calendar, ArrowRight, HandHeart, Gift, Star, Camera, AlertCircle, Award } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,28 +11,13 @@ import TartanBackground from "@/components/TartanBackground";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-const initiatives = [
-  {
-    title: "Macon County Veteran Support",
-    date: "June 2026",
-    category: "Veterans",
-    description: "This month, we've partnered with local veterans' organizations to provide emergency roof repairs for those who served our country. It's our way of saying thank you for your service.",
-    image: "https://images.unsplash.com/photo-1508847154043-be12a267db5d?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Habitat for Humanity Partnership",
-    date: "May 2026",
-    category: "Housing",
-    description: "Donating labor and materials for a new home build in Sylva. We believe every family in Western North Carolina deserves a safe, dry place to call home.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Mountain Community Food Drive",
-    date: "April 2026",
-    category: "Community",
-    description: "Collected over 500 lbs of non-perishable goods for the local food pantry. Our team and clients came together to support families facing food insecurity.",
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800",
-  }
+const initiativeCategories = [
+  { category: "Charity Work", description: "Donated labor, materials, or repair work for families and nonprofits in Western NC." },
+  { category: "Local Sponsorships", description: "Youth sports, school programs, and local events Highlander helps make possible." },
+  { category: "Community Projects", description: "Hands-on build days, cleanup events, and neighbor-helping-neighbor work." },
+  { category: "Local Events", description: "Festivals, fairs, and community gatherings Highlander participates in or sponsors." },
+  { category: "Nonprofit Partnerships", description: "Ongoing relationships with WNC nonprofits supporting housing, veterans, and families." },
+  { category: "Veterans & First Responders", description: "Dedicated support and special considerations for those who have served." },
 ];
 
 const GivingBack = () => {
