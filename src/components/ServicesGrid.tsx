@@ -350,23 +350,7 @@ const ServicesGrid = () => {
           </div>
         </div>
 
-        {/* Design Division — The 3rd Pillar */}
-        <div>
-          <ScrollReveal variant="slide-left">
-            <div className="flex items-center gap-3 mb-7">
-              <div className="w-8 h-8 rounded-none bg-accent/10 flex items-center justify-center">
-                <Ruler className="w-4 h-4 text-accent" />
-              </div>
-              <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.22em] text-accent/95">
-                Design Pillar
-              </span>
-              <div className="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent" />
-            </div>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            {design.map((s, i) => <ServiceCard key={s.title} service={s} index={i} />)}
-          </div>
-        </div>
+        {/* Design Pillar section temporarily hidden per client request */}
       </div>
     </section>
   );
