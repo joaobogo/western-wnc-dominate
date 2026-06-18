@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
@@ -22,12 +21,6 @@ import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
 import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
 import cedar005 from "@/assets/gallery/cedar-005.jpg";
-
-declare global {
-  interface Window {
-    rwlPlugin?: { init: (host: string, key: string) => void };
-  }
-}
 
 const categoryCards = [
   { icon: Home, title: "Roofing", desc: "Shingle, metal, and cedar roofing systems built for steep mountain rooflines.", img: roofingImg, href: "/roofing" },
@@ -60,16 +53,6 @@ const completedProjects = [
 ];
 
 const RecentProjects = () => {
-  useEffect(() => {
-    if (window.rwlPlugin && typeof window.rwlPlugin.init === "function") {
-      try {
-        window.rwlPlugin.init("https://app.realworklabs.com", "SxCxaBpYsO_fVnK0");
-      } catch {
-        /* no-op */
-      }
-    }
-  }, []);
-
   return (
     <>
       <SEOHead
