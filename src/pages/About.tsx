@@ -266,8 +266,10 @@ const About = () => {
                       <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-6">
-                        <Users className="w-10 h-10 text-muted-foreground/30 mx-auto mb-3" />
-                        <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/90 bg-white/20 px-4 py-2 backdrop-blur-sm border border-white/20 rounded-none">In-House Specialist</span>
+                        <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
+                          <span className="font-heading font-bold text-xl text-[hsl(var(--highland-gold))]">{person.name.charAt(0)}</span>
+                        </div>
+                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">In-House Specialist</span>
                       </div>
                     )}
                   </div>
