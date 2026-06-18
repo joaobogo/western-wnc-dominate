@@ -257,6 +257,67 @@ const ConstructionDivision = () => {
         {/* ═══ DISCIPLINES BRIDGE — Roofing → Construction skill transfer ═══ */}
         <DisciplinesBridge />
 
+        {/* ═══ SERIOUS PROJECTS START WITH DESIGN — strategic intro to paid design program ═══ */}
+        <section className="section-padding bg-background relative overflow-hidden">
+          <div className="container-tight">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+              <ScrollReveal variant="fade" className="lg:col-span-7">
+                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Design &amp; Consultation Program</span>
+                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.1] mb-6 text-balance">
+                  Serious Projects Start<br className="hidden md:block" /> With Design.
+                </h2>
+                <p className="text-foreground/85 text-base md:text-lg leading-relaxed font-body mb-5">
+                  For additions, garages, porches, outdoor living spaces, remodels, and new construction, a reliable estimate starts with a clear scope. Highlander's in-house design services help homeowners move from early ideas to measured existing conditions, concept plans, realistic budget guidance, permit-ready drawings, and construction documents.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8">
+                  <Link
+                    to="/construction/design"
+                    className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 tracking-wide"
+                  >
+                    Start with a Design Agreement
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    to="/construction/design"
+                    className="group bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.6)] hover:text-[hsl(var(--highland-gold))] transition-all tracking-wide"
+                  >
+                    View Design Services
+                  </Link>
+                </div>
+                <div className="mt-8 flex items-start gap-3 p-4 border-l-2 border-[hsl(var(--highland-gold)/0.5)] bg-card/40">
+                  <FileText className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                  <p className="text-foreground/75 text-sm font-body leading-relaxed">
+                    Already have complete plans? Highlander can review them and determine whether your project is ready to move toward estimating.
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal variant="fade" className="lg:col-span-5">
+                <div className="bg-card border border-border rounded-none p-6 md:p-8">
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] block mb-5">
+                    What the Program Delivers
+                  </span>
+                  <ul className="space-y-3.5">
+                    {[
+                      "Three paid design phases based on project readiness",
+                      "Fixed fees and defined deliverables",
+                      "Preliminary budget guidance in Phase 1",
+                      "Permit-ready drawings available in Phase 2",
+                      "Full construction documents available in Phase 3",
+                      "A portion of design fees may credit back when you build with Highlander",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground/85 text-sm md:text-[15px] font-body leading-snug">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
         {/* ═══ SERVICE GRID — Using shared component with detailed variant ═══ */}
         <ConstructionServiceGrid
           variant="detailed"
