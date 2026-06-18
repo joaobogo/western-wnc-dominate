@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone, HelpCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { faqSchema } from "@/components/SEOHead";
-import { Helmet } from "react-helmet-async";
 
 const faqs = [
   {
@@ -39,11 +38,13 @@ const faqs = [
 const HomeFAQ = () => {
   return (
     <section id="faq" className="section-padding bg-secondary/30 relative overflow-hidden">
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a }))))}
-        </script>
-      </Helmet>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))),
+        }}
+      />
 
       <div className="container-tight max-w-4xl relative z-10">
         <motion.div
