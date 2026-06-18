@@ -258,13 +258,15 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                 <button
                   key={i}
                   onClick={(e) => { e.stopPropagation(); onNavigate(i); }}
+                  aria-label={`View project ${i + 1} of ${projects.length}${p.title ? `: ${p.title}` : ""}`}
+                  aria-current={i === currentIndex ? "true" : undefined}
                   className={`w-12 h-8 rounded-sm overflow-hidden border-2 transition-all duration-300 ${
                     i === currentIndex
                       ? "border-[hsl(var(--highland-gold))] opacity-100"
                       : "border-transparent opacity-40 hover:opacity-70"
                   }`}
                 >
-                  <img src={p.image} alt="" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
+                  <img src={p.image} alt="" aria-hidden="true" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </button>
               ))}
             </motion.div>

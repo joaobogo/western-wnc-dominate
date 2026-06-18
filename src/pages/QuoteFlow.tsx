@@ -351,7 +351,7 @@ export default function QuoteFlow() {
               show={true}
               icon={undefined}
               headline={isUrgent ? "We'll call you within 2 hours." : "We'll be in touch within 1 business day."}
-              message={`Thank you, ${form.name}. A project advisor who specializes in ${form.serviceCategory === "construction" || form.serviceCategory === "planning" ? "construction and planning" : "roofing"} will reach out to discuss your project in detail.`}
+              message={`Thank you, ${form.name}. A project advisor who specializes in ${form.serviceCategory === "construction" || form.serviceCategory === "planning" ? "construction and design" : "roofing"} will reach out to discuss your project in detail.`}
               secondaryMessage="In the meantime, feel free to explore our project gallery or learn more about our process."
               action={
                 <div className="flex flex-col sm:flex-row gap-3 mt-4">

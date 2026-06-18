@@ -322,7 +322,7 @@ const InspectionForm = () => {
                                 value={formData.phone}
                                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                 className={inputClasses}
-                                placeholder="(828) 555-1234"
+                                placeholder="(828) 555-0123"
                               />
                               <p className={hintClasses}>We'll call — never text spam.</p>
                             </div>

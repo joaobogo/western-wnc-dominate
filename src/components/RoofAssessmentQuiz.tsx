@@ -218,7 +218,7 @@ const RoofAssessmentQuiz = () => {
                       </div>
                       <div>
                         <label className={labelClass}>Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/30">(optional)</span></label>
-                        <input type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-1234" />
+                        <input type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
                       </div>
                     </div>
                     <button type="submit" className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase">
