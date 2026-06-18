@@ -22,6 +22,24 @@ export interface TownData {
   heroImage: string;
 }
 
+// ──────────────────────────────────────────────────────────────────────────────
+// 📸 IMAGE STAGING NOTE — read before launch
+// ──────────────────────────────────────────────────────────────────────────────
+// The `heroImage` URLs below are temporary, regionally-themed stock photos
+// (mountain landscapes, forested cabins, residential homes). They are NOT
+// taken in the towns they represent.
+//
+// Alt text across the site is intentionally written as "mountain home in
+// Western North Carolina" — never as "{Town}, NC project" — so we do not
+// imply ownership or location of any photo we have not verified.
+//
+// ACTION REQUIRED BEFORE LAUNCH: the Highlander team should provide
+// real Highlander project photos per town (Franklin, Highlands, Cashiers,
+// Sylva first; then secondary towns). Once supplied, swap each `heroImage`
+// here and update alt text in `TownPage.tsx` / `ServiceTownPage.tsx` to
+// reference the actual project location.
+// ──────────────────────────────────────────────────────────────────────────────
+
 export const towns: TownData[] = [
   {
     slug: "highlands-nc",
