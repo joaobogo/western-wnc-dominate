@@ -44,6 +44,8 @@ const DESIGN_PHASES = [
       "Preliminary budget guidance",
     ],
     timeline: "2–3 weeks to concept meeting",
+    ctaLabel: "Start With a Design Agreement",
+    ctaHref: "/construction-intake",
   },
   {
     icon: PenTool,
