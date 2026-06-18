@@ -32,7 +32,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
           >
             <img 
               src={logo} 
-              alt="Highlander Roofing & Construction" 
+              alt="Highlander Roofing &amp; Construction logo" 
               className="h-[120px] md:h-[160px] w-auto"
             />
           </motion.div>
