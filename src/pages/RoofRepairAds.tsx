@@ -17,7 +17,7 @@ const RoofRepairAds = () => (
     trustStats={[
       { value: "48hr", label: "Assessment goal", detail: "Same-day for urgent leak calls" },
       { value: "Honest", label: "Repair guidance", detail: "We tell you if replacement is unnecessary" },
-      { value: "Local", label: "Crew accountability", detail: "No subcontractor roulette" },
+      { value: "Local", label: "Crew accountability", detail: "In-house Highlander crews" },
       { value: "2017", label: "Serving WNC", detail: "Family-run and mountain-experienced" },
     ]}
     highlights={[

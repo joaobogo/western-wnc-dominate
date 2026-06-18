@@ -75,7 +75,7 @@ const principles = [
   {
     icon: Users,
     title: "Same In-House Crews",
-    desc: "No subcontractor roulette. The people on your property are full-time Highlander crew — vetted, trained, and accountable to one standard.",
+    desc: "The people on your property are full-time Highlander crew — vetted, trained, and accountable to one standard.",
   },
   {
     icon: ShieldCheck,

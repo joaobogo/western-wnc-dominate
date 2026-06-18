@@ -67,7 +67,7 @@ export const constructionFAQLibrary: FAQ[] = [
 
   // ── VALUE & INVESTMENT ──
   { q: "Will construction work increase my home's value?", a: "Well-designed, well-executed construction work consistently increases home value. Additions typically return 50–70% of cost at resale. Exterior renovations return 60–80%. Beyond financial return, quality construction eliminates the need to move and the associated costs and disruption — often the most valuable return of all.", categories: ["division", "additions", "renovations"] },
-  { q: "How does Highlander's pricing compare to other contractors?", a: "We're not the cheapest option — and we're transparent about why. Our pricing reflects in-house crews (not anonymous subcontractors), detailed project management, specified materials, documented quality checkpoints, and the planning discipline that prevents the cost overruns that make 'cheap' contractors expensive. We compete on value delivered, not price quoted.", categories: ["division"] },
+  { q: "How does Highlander's pricing compare to other contractors?", a: "We're not the cheapest option — and we're transparent about why. Our pricing reflects in-house crews, detailed project management, specified materials, documented quality checkpoints, and the planning discipline that prevents the cost overruns that make 'cheap' contractors expensive. We compete on value delivered, not price quoted.", categories: ["division"] },
 ];
 
 /** Filter FAQs by category */
