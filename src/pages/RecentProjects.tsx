@@ -151,6 +151,74 @@ const RecentProjects = () => {
           </div>
         </section>
 
+        {/* Section 1b: Completed Project Portfolio */}
+        <section className="py-16 md:py-24 bg-background border-t border-border/60">
+          <div className="container-tight">
+            <div className="max-w-3xl mb-12">
+              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+                Completed Project Portfolio
+              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
+                Real WNC Homes. Real Highlander Work.
+              </h2>
+              <p className="text-foreground/75 text-lg leading-relaxed">
+                These aren't stock photos. Every image below represents a real Western North Carolina
+                home we've protected — across metal, shingle, cedar shake, and mixed-material roofing systems.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {completedProjects.map((p) => {
+                const CardInner = (
+                  <>
+                    <div className="aspect-[4/3] overflow-hidden bg-secondary relative">
+                      <img
+                        src={p.image}
+                        alt={`${p.title} — ${p.location}`}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <span className="absolute top-3 left-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--highland-green))] px-2.5 py-1 rounded-sm">
+                        {p.type}
+                      </span>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-base font-heading font-bold text-foreground mb-2 leading-snug group-hover:text-[hsl(var(--highland-green))] transition-colors">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-foreground/70 leading-relaxed mb-4 line-clamp-3">
+                        {p.description}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-foreground/55 font-body">
+                        <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {p.location}</span>
+                        <span className="flex items-center gap-1"><Ruler className="w-3 h-3" /> {p.scope}</span>
+                        <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {p.duration}</span>
+                      </div>
+                    </div>
+                  </>
+                );
+
+                return p.slug ? (
+                  <Link
+                    key={p.title}
+                    to={`/projects/${p.slug}`}
+                    className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift block"
+                  >
+                    {CardInner}
+                  </Link>
+                ) : (
+                  <div
+                    key={p.title}
+                    className="group bg-card border border-border rounded-sm overflow-hidden"
+                  >
+                    {CardInner}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* Section 2: RealWork widget */}
         <section className="py-16 md:py-24 bg-secondary/40 border-y border-border/60">
           <div className="container-tight">
