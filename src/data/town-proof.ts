@@ -352,7 +352,7 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         title: "Modern mountain suite addition",
-        summary: "Structural footprint expansion for a luxury Asheville residence, integrating a new master suite with existing ridgetop architecture.",
+        summary: "Structural footprint expansion for a luxury Asheville residence, integrating a new master suite with existing ridgetop home design.",
         proof: "Engineered foundation, floor-to-ceiling glass, and seamless roof tie-in",
       },
     ],
@@ -363,7 +363,7 @@ const townProofMap: Record<string, TownProofContent> = {
       },
       {
         question: "What is the best roof for Asheville's modern mountain homes?",
-        answer: "For modern architecture in areas like Town Mountain, we recommend standing seam metal or synthetic slate (Brava). These systems offer clean lines, superior wind resistance, and a 50+ year service life.",
+        answer: "For modern mountain homes in areas like Town Mountain, we recommend standing seam metal or synthetic slate (Brava). These systems offer clean lines, superior wind resistance, and a 50+ year service life.",
       },
     ],
   },
@@ -444,7 +444,7 @@ const townProofMap: Record<string, TownProofContent> = {
     jobHighlights: [
       {
         title: "Lake Toxaway estate reroofing",
-        summary: "Toxaway projects require precision, high-end material sourcing, and coordination with community security and architectural boards.",
+        summary: "Toxaway projects require precision, high-end material sourcing, and coordination with community security and design review boards.",
         proof: "Brava synthetic shake blends, copper accents, and gated-community logistics",
         image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
       },
@@ -585,7 +585,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Madison County hillside addition",
         summary: "Engineering and construction of a new guest wing for a Marshall home, designed to integrate with the steep terrain and maximize valley views.",
-        proof: "Steep-slope foundation, timber-frame architecture, and matching metal roof",
+        proof: "Steep-slope foundation, timber-frame construction, and matching metal roof",
       },
     ],
     faqs: [
