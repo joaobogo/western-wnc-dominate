@@ -435,8 +435,8 @@ const RoofingDivision = () => {
                     That's why every Highlander roofing project begins with a site-specific
                     assessment. We evaluate your property's actual exposure — not just its
                     square footage — and specify materials, ventilation, and installation
-                    methods that match the conditions your roof will face for the next 30 to
-                    50 years.
+                    methods that match the conditions your roof will face over its full
+                    service life.
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed font-body">
                     We believe roofing is a craft, not a commodity. And in these mountains,

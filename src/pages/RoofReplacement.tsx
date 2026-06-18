@@ -229,7 +229,7 @@ const RoofReplacement = () => {
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center">
               <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                A roof replacement isn't a repair. It's a generational investment in your home — one that determines how your property performs, looks, and holds value for the next 30 to 50 years.
+                A roof replacement isn't a repair. It's a generational investment in your home — one that determines how your property performs, looks, and holds value for decades to come.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
                 At Highlander, we treat every replacement with the weight it deserves. We don't rush proposals, cut corners on materials, or skip the steps that separate a roof that lasts from one that merely passes inspection. This is the most important exterior investment you'll make — and we build accordingly.
