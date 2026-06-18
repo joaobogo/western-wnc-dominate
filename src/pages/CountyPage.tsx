@@ -52,7 +52,7 @@ const CountyPage = () => {
           <div className="absolute inset-0">
             <img 
               src={county.heroImage} 
-              alt={`${county.name} mountain construction context`}
+              alt={`Mountain landscape in Western North Carolina — Highlander Roofing & Construction service area: ${county.name}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/45 md:bg-transparent md:bg-gradient-to-r md:from-black/80 md:via-black/40 md:to-transparent" />
