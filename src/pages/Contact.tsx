@@ -58,8 +58,10 @@ const TRUST_POINTS = [
 ];
 
 const OFFICES = [
-  { name: "Franklin Office", address: "64 Stewart St, Franklin, NC 28734", phone: "(828) 524-7773" },
-  { name: "Sylva Office", address: "Sylva, NC 28779", phone: "(828) 524-7773" },
+  // NOTE: Franklin street address pending client confirmation — synced with Footer.
+  { name: "Franklin Office", address: "1511 Highlands Road, Franklin, NC 28734", phone: "(828) 524-7773" },
+  { name: "Sylva / Waynesville", address: "Service area office — by appointment, Sylva, NC 28779", phone: "(828) 524-7773" },
+  { name: "Asheville / Buncombe", address: "Service area office — by appointment, Asheville, NC 28803", phone: "(828) 524-7773" },
 ];
 
 type Step = "division" | "service" | "details" | "success";
