@@ -68,7 +68,7 @@ export const CTA = {
 
 /* ─── SECONDARY CTA LABELS ─── */
 export const CTA_SECONDARY = {
-  call: "(828) 397-9211",
+  call: "(828) 524-7773",
   callLabel: "Call Direct",
 } as const;
 

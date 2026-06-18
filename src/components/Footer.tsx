@@ -137,11 +137,11 @@ const Footer = () => {
                 <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="tel:8283979211"
+                href="tel:8285247773"
                 className="bg-secondary border-2 border-border text-foreground font-bold text-[14px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-secondary/80 hover:border-primary/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                (828) 397-9211
+                (828) 524-7773
               </a>
             </div>
           </motion.div>
@@ -172,8 +172,8 @@ const Footer = () => {
             {/* Contact info */}
             <div className="flex flex-col gap-4 mb-8">
               <div className="space-y-3">
-                <a href="tel:8283979211" className="flex items-center gap-3 text-lg hover:text-primary transition-colors font-heading font-bold text-foreground">
-                  <Phone className="w-4 h-4 text-primary" /> (828) 397-9211
+                <a href="tel:8285247773" className="flex items-center gap-3 text-lg hover:text-primary transition-colors font-heading font-bold text-foreground">
+                  <Phone className="w-4 h-4 text-primary" /> (828) 524-7773
                 </a>
                 <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 text-base hover:text-primary transition-colors font-body text-muted-foreground">
                   <Mail className="w-4 h-4 text-primary" /> info@highlandernc.com

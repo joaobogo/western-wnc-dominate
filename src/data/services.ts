@@ -92,7 +92,7 @@ export const services: ServiceData[] = [
       { question: "Do you handle the insurance process?", answer: "We assist with the entire process — from initial documentation to adjuster meetings to final repairs. Our team has extensive experience navigating roofing insurance claims in WNC." },
     ],
     metaTitle: "Storm Damage Roof Repair in Western NC | Highlander Roofing",
-    metaDescription: "Emergency storm damage response across Western North Carolina. Insurance claim support, tarping, and fast repairs. Call Highlander Roofing — (828) 397-9211.",
+    metaDescription: "Emergency storm damage response across Western North Carolina. Insurance claim support, tarping, and fast repairs. Call Highlander Roofing — (828) 524-7773.",
   },
   {
     slug: "metal-roofing",

@@ -284,8 +284,8 @@ const RoofCostEstimator = () => {
                       <span className="relative z-10">Request a Consultation</span>
                       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
                     </a>
-                    <a href="tel:8283979211" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">
-                      Call (828) 397-9211
+                    <a href="tel:8285247773" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">
+                      Call (828) 524-7773
                     </a>
                   </div>
                 </div>

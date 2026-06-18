@@ -294,10 +294,10 @@ const ServiceAreas = () => {
                   <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                 </Link>
                 <a
-                  href="tel:8283979211"
+                  href="tel:8285247773"
                   className="bg-primary-foreground/8 border-2 border-primary-foreground/20 text-primary-foreground font-bold text-lg md:text-xl px-12 py-6 rounded-sm inline-flex items-center justify-center gap-3 hover:bg-primary-foreground/12 transition-all min-w-[240px]"
                 >
-                  <Phone className="w-5 h-5" /> (828) 397-9211
+                  <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/50 text-sm font-bold uppercase tracking-wider">

@@ -61,11 +61,11 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <a
-          href="tel:8283979211"
+          href="tel:8285247773"
           className="inline-flex items-center gap-2 bg-background border border-border text-foreground font-heading font-semibold text-[13.5px] px-6 py-3 rounded-md hover:border-[hsl(var(--highland-gold))] transition-colors"
         >
           <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-          (828) 397-9211
+          (828) 524-7773
         </a>
         <Link
           to="/"

@@ -170,7 +170,7 @@ export const seoChecklist = [
 export const brandAssets = {
   companyName: "Highlander Roofing Services, Inc.",
   tagline: "Expert Local Roofer",
-  phone: "(828) 397-9211",
+  phone: "(828) 524-7773",
   locations: [
     { name: "Franklin, NC", address: "1511 Highlands Road, Franklin, NC 28734" },
     { name: "Sylva, NC", address: "28 Cross Stitch Mountain Road, Sylva, NC 28779" },

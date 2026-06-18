@@ -67,8 +67,8 @@ const MetalRoofing = () => {
                 <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                   Start Your Metal Roof Project <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:8283979211" className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors">
-                  <Phone className="w-5 h-5" /> (828) 397-9211
+                <a href="tel:8285247773" className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors">
+                  <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
               </div>
             </motion.div>

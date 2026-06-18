@@ -334,7 +334,7 @@ export default function QuoteFlow() {
       setSubmitted(true);
     } catch (err) {
       console.error("Submit error:", err);
-      toast({ title: "Something went wrong", description: "Please try again or call us at (828) 397-9211.", variant: "destructive" });
+      toast({ title: "Something went wrong", description: "Please try again or call us at (828) 524-7773.", variant: "destructive" });
     }
     setIsSubmitting(false);
   };

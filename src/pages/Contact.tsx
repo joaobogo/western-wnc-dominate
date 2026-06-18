@@ -58,8 +58,8 @@ const TRUST_POINTS = [
 ];
 
 const OFFICES = [
-  { name: "Franklin Office", address: "64 Stewart St, Franklin, NC 28734", phone: "(828) 397-9211" },
-  { name: "Sylva Office", address: "Sylva, NC 28779", phone: "(828) 397-9211" },
+  { name: "Franklin Office", address: "64 Stewart St, Franklin, NC 28734", phone: "(828) 524-7773" },
+  { name: "Sylva Office", address: "Sylva, NC 28779", phone: "(828) 524-7773" },
 ];
 
 type Step = "division" | "service" | "details" | "success";
@@ -116,7 +116,7 @@ export default function Contact() {
     <>
       <SEOHead
         title="Contact Highlander | Free Roofing & Construction Quote"
-        description="Talk to Highlander Roofing & Construction in Western NC. Rapid response, free assessments, no pressure. Franklin & Sylva offices. Call (828) 397-9211."
+        description="Talk to Highlander Roofing & Construction in Western NC. Rapid response, free assessments, no pressure. Franklin & Sylva offices. Call (828) 524-7773."
         path="/contact"
         jsonLd={buildPageSchema({
           type: "contact",
@@ -167,10 +167,10 @@ export default function Contact() {
                   transition={{ duration: 0.5, delay: 0.15, ease: HIGHLAND_EASE }}
                   className="flex flex-col gap-3 lg:items-end flex-shrink-0"
                 >
-                  <a href="tel:8283979211" className="group flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.2)] hover:bg-[hsl(var(--highland-gold)/0.15)] transition-all">
+                  <a href="tel:8285247773" className="group flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.2)] hover:bg-[hsl(var(--highland-gold)/0.15)] transition-all">
                     <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     <div>
-                      <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">(828) 397-9211</span>
+                      <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">(828) 524-7773</span>
                       <span className="text-[10px] text-[hsl(var(--dark-section-foreground)/0.4)] font-body uppercase tracking-wider">Call Direct</span>
                     </div>
                   </a>
@@ -559,10 +559,10 @@ export default function Contact() {
                   <div className="border border-border bg-secondary/30 p-6 md:p-7">
                     <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Prefer to Connect Directly?</h3>
                     <div className="space-y-3">
-                      <a href="tel:8283979211" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
+                      <a href="tel:8285247773" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
                         <Phone className="w-4 h-4 text-primary" />
                         <div>
-                          <p className="text-sm font-heading font-semibold text-foreground">(828) 397-9211</p>
+                          <p className="text-sm font-heading font-semibold text-foreground">(828) 524-7773</p>
                           <p className="text-[10px] text-muted-foreground font-body">Call — a real person answers</p>
                         </div>
                       </a>
@@ -608,10 +608,10 @@ export default function Contact() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
-                    href="tel:8283979211"
+                    href="tel:8285247773"
                     className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 inline-flex items-center gap-2.5 hover:opacity-90 transition-opacity"
                   >
-                    <Phone className="w-4 h-4" /> Call Now — (828) 397-9211
+                    <Phone className="w-4 h-4" /> Call Now — (828) 524-7773
                   </a>
                 </div>
                 <div className="flex flex-wrap justify-center gap-6 mt-8 text-[hsl(var(--dark-section-foreground)/0.25)] text-[10px] font-body font-semibold uppercase tracking-wider">

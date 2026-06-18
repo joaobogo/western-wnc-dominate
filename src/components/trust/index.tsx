@@ -379,14 +379,14 @@ export const ReassuranceBlock = ({
               {ctaText} <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:8283979211"
+              href="tel:8285247773"
               className={`border font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 transition-colors ${
                 isPrimary
                   ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
                   : "border-[hsl(var(--dark-section-foreground)/0.2)] text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.05)]"
               }`}
             >
-              <Phone className="w-5 h-5" /> (828) 397-9211
+              <Phone className="w-5 h-5" /> (828) 524-7773
             </a>
           </div>
           <TrustBadgeStrip className={`mt-8 ${

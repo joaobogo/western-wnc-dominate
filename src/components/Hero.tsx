@@ -271,7 +271,7 @@ const Hero = () => {
                 className="group bg-white/[0.08] backdrop-blur-md border-2 border-white/[0.15] text-primary-foreground font-body font-bold text-[15px] md:text-base px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[60px] tracking-wide"
               >
                 <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                (828) 397-9211
+                (828) 524-7773
               </a>
             </motion.div>
 

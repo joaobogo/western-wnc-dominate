@@ -163,7 +163,7 @@ const ConstructionIntakeForm = () => {
 
       setSubmitted(true);
     } catch (e: any) {
-      setError(e?.message || "Something went wrong. Please call (828) 397-9211 and we'll take it from there.");
+      setError(e?.message || "Something went wrong. Please call (828) 524-7773 and we'll take it from there.");
     } finally {
       setSubmitting(false);
     }

@@ -103,8 +103,8 @@ const ServicePage = () => {
                 <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                   Request a Consultation <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:8283979211" className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-dark-section-foreground/10 transition-colors">
-                  <Phone className="w-5 h-5" /> (828) 397-9211
+                <a href="tel:8285247773" className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-dark-section-foreground/10 transition-colors">
+                  <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
               </div>
             </motion.div>
