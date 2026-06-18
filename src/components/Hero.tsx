@@ -247,7 +247,7 @@ const Hero = () => {
               className="text-[19px] md:text-[24px] text-white max-w-2xl mb-12 md:mb-16 leading-[1.6] font-body font-bold drop-shadow-lg"
             >
               The premium standard for Western North Carolina homes. From storm-grade roofing to custom mountain additions, we combine family-business values with master-class craftsmanship. 
-              <span className="block mt-6 text-[hsl(var(--highland-gold))] font-extrabold text-xl md:text-2xl drop-shadow-md">Licensed, Insured, and GAF Master Elite® Accredited.</span>
+              <span className="block mt-6 text-[hsl(var(--highland-gold))] font-extrabold text-xl md:text-2xl drop-shadow-md">Licensed, Insured and CertainTeed ShingleMaster Credentialed Contractor.</span>
             </motion.p>
 
 
