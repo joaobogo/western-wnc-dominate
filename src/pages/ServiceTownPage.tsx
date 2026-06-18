@@ -15,6 +15,27 @@ import {
 import { blogPosts } from "@/data/blogs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
+// Per-service hero overrides so the same town's services don't all show the
+// identical photo. Each image is a regionally-themed mountain/home stock
+// photo — alt text remains region-honest ("Western North Carolina").
+// Replace with real Highlander project photos before launch.
+const SERVICE_HERO_VARIANTS: Record<string, string> = {
+  "roof-replacement":
+    "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=2000",
+  "roof-repair":
+    "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=2000",
+  "metal-roofing":
+    "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=2000",
+  "synthetic-brava":
+    "https://images.unsplash.com/photo-1518173946687-a4c8a9b749f5?auto=format&fit=crop&q=80&w=2000",
+  "additions":
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
+  "renovations":
+    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000",
+  "outdoor-living":
+    "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000",
+};
+
 const ServiceTownPage = () => {
   const { townSlug = "", serviceSlug = "" } = useParams();
   const town = getTownBySlug(townSlug);
@@ -23,6 +44,8 @@ const ServiceTownPage = () => {
   if (!town || !entry) {
     return <Navigate to={town ? `/service-areas/${town.slug}` : "/service-areas"} replace />;
   }
+
+  const heroImage = SERVICE_HERO_VARIANTS[serviceSlug] ?? town.heroImage;
 
   const relatedForTown = getServiceTownEntriesForTown(townSlug).filter(
     (e) => e.serviceSlug !== serviceSlug,
@@ -53,8 +76,8 @@ const ServiceTownPage = () => {
         <section className="relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src={town.heroImage} 
-              alt={`${entry.serviceLabel} in ${town.name}, NC — Highlander roofing and construction`}
+              src={heroImage}
+              alt={`${entry.serviceLabel} on a mountain home in Western North Carolina — Highlander Roofing & Construction service area: ${town.name}, ${town.state}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />

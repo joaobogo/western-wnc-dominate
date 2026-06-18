@@ -70,7 +70,7 @@ const TownPage = () => {
           <div className="absolute inset-0">
             <img 
               src={town.heroImage} 
-              alt={`${town.name} NC mountain roofing and construction`}
+              alt={`Mountain home in Western North Carolina — Highlander Roofing & Construction service area: ${town.name}, ${town.state}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/45 md:bg-transparent md:bg-gradient-to-r md:from-black/75 md:via-black/35 md:to-transparent" />

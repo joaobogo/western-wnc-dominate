@@ -57,7 +57,7 @@ const ServiceAreas = () => {
           <div className="absolute inset-0 section-dark">
             <img 
               src="https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000" 
-              alt="Highlander construction projects across Western North Carolina mountains"
+              alt="Western North Carolina mountain landscape — Highlander Roofing & Construction service area map"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
