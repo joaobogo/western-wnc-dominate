@@ -96,6 +96,59 @@ const Siding = () => {
             </div>
           </div>
         </section>
+
+        {/* ── FAQ ── */}
+        <section className="section-padding bg-secondary">
+          <div className="container-tight max-w-3xl">
+            <div className="text-center mb-10">
+              <span className="eyebrow mb-3 block">Siding FAQ</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight">Common Siding Questions</h2>
+            </div>
+            <div className="divide-y divide-border border-y border-border">
+              {[
+                { q: "What siding material holds up best in Western North Carolina?", a: "Fiber cement (James Hardie) is our most recommended siding for WNC — it handles moisture, temperature swings, and UV exposure better than most alternatives. Cedar and premium composite trim are also strong choices depending on your home and budget." },
+                { q: "Can you replace just damaged sections, or do I need full siding replacement?", a: "Many partial replacements are possible, especially after storm damage. Highlander will assess the existing system and recommend the smallest scope that protects the home long-term." },
+                { q: "How long does siding installation typically take?", a: "Most residential projects in Franklin, Highlands, Cashiers, and Sylva take 1 to 3 weeks depending on size, complexity, and any required repairs to sheathing or trim." },
+                { q: "Do you handle paint, trim, and exterior accents too?", a: "Yes. We coordinate trim, soffit, fascia, and decorative millwork as part of the siding scope. Painting and stain finishes can be included on most projects." },
+                { q: "Is siding work covered by warranty?", a: "Yes — Highlander's workmanship warranty applies, in addition to the manufacturer warranties from James Hardie and other premium product lines." },
+              ].map((qa) => (
+                <details key={qa.q} className="group py-5">
+                  <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
+                    <span className="font-heading font-bold text-foreground text-base md:text-lg leading-snug group-hover:text-primary transition-colors">{qa.q}</span>
+                    <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-1 rotate-90 group-open:-rotate-90 transition-transform" />
+                  </summary>
+                  <p className="text-muted-foreground font-body leading-relaxed mt-3 pr-10">{qa.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CLOSING CTA ── */}
+        <section className="section-padding bg-primary">
+          <div className="container-tight text-center">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
+              Ready to Protect Your WNC Home?
+            </h2>
+            <p className="text-primary-foreground/75 mb-8 max-w-xl mx-auto">
+              Request a free siding estimate from Highlander — serving Franklin, Highlands, Cashiers, Sylva, and the surrounding Western North Carolina mountains.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                Request a Free Estimate <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a href="tel:+18285247773" aria-label="Call Highlander Roofing & Construction at 828-524-7773" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
+                <Phone className="w-5 h-5" /> Call (828) 524-7773
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-10 text-sm">
+              <Link to="/construction/renovations" className="text-primary-foreground/75 hover:text-primary-foreground underline-offset-4 hover:underline">Renovations</Link>
+              <Link to="/construction/additions" className="text-primary-foreground/75 hover:text-primary-foreground underline-offset-4 hover:underline">Home Additions</Link>
+              <Link to="/construction/outdoor-living" className="text-primary-foreground/75 hover:text-primary-foreground underline-offset-4 hover:underline">Outdoor Living</Link>
+              <Link to="/roofing" className="text-primary-foreground/75 hover:text-primary-foreground underline-offset-4 hover:underline">Roofing</Link>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
       <StickyMobileCTA />

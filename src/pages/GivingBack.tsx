@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart, Users, MapPin, Calendar, ArrowRight, Quote, HandHeart, Gift, Star } from "lucide-react";
+import { Heart, Users, ArrowRight, HandHeart, Gift, Star, Camera, AlertCircle, Award } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,28 +11,13 @@ import TartanBackground from "@/components/TartanBackground";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-const initiatives = [
-  {
-    title: "Macon County Veteran Support",
-    date: "June 2026",
-    category: "Veterans",
-    description: "This month, we've partnered with local veterans' organizations to provide emergency roof repairs for those who served our country. It's our way of saying thank you for your service.",
-    image: "https://images.unsplash.com/photo-1508847154043-be12a267db5d?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Habitat for Humanity Partnership",
-    date: "May 2026",
-    category: "Housing",
-    description: "Donating labor and materials for a new home build in Sylva. We believe every family in Western North Carolina deserves a safe, dry place to call home.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Mountain Community Food Drive",
-    date: "April 2026",
-    category: "Community",
-    description: "Collected over 500 lbs of non-perishable goods for the local food pantry. Our team and clients came together to support families facing food insecurity.",
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800",
-  }
+const initiativeCategories = [
+  { category: "Charity Work", description: "Donated labor, materials, or repair work for families and nonprofits in Western NC." },
+  { category: "Local Sponsorships", description: "Youth sports, school programs, and local events Highlander helps make possible." },
+  { category: "Community Projects", description: "Hands-on build days, cleanup events, and neighbor-helping-neighbor work." },
+  { category: "Local Events", description: "Festivals, fairs, and community gatherings Highlander participates in or sponsors." },
+  { category: "Nonprofit Partnerships", description: "Ongoing relationships with WNC nonprofits supporting housing, veterans, and families." },
+  { category: "Veterans & First Responders", description: "Dedicated support and special considerations for those who have served." },
 ];
 
 const GivingBack = () => {
@@ -118,53 +103,116 @@ const GivingBack = () => {
           </div>
         </section>
 
-        {/* ── CHARITY LOG ── */}
+        {/* ── COMMUNITY INVOLVEMENT — STRUCTURED PLACEHOLDERS ── */}
         <section className="section-padding bg-secondary relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
-          
+
           <div className="container-tight relative z-10">
-            <div className="text-center mb-16">
-              <span className="eyebrow mb-3 block">Community Log</span>
-              <h2 className="section-heading">Our Recent Impact</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mt-4 font-body">
-                Tracking the ways we've been able to help our neighbors across WNC.
+            <div className="text-center mb-14">
+              <span className="eyebrow mb-3 block">Community Involvement</span>
+              <h2 className="section-heading">Investing Back Into WNC</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mt-4 font-body">
+                Highlander is proud to be part of the Western North Carolina community. The categories below outline the kinds of work we support locally. Specific initiatives, dates, and photos will be added once the Highlander team provides approved details.
               </p>
             </div>
 
-            <div className="grid gap-12">
-              {initiatives.map((item, i) => (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {initiativeCategories.map((item, i) => (
                 <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  key={item.category}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.6 }}
-                  className="bg-white border border-border group overflow-hidden"
+                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  className="card-premium overflow-hidden"
                 >
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className="relative overflow-hidden aspect-video md:aspect-auto">
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-primary text-white text-[10px] font-body font-bold uppercase tracking-widest">{item.category}</span>
-                      </div>
+                  <div className="aspect-[16/10] bg-muted flex flex-col items-center justify-center text-center p-6 border-b border-border">
+                    <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center mb-3">
+                      <Camera className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
-                    <div className="p-8 md:p-12 flex flex-col justify-center">
-                      <div className="flex items-center gap-2 mb-4">
-                        <Calendar className="w-4 h-4 text-primary/40" />
-                        <span className="text-[13px] font-body font-bold text-primary/60 uppercase tracking-wider">{item.date}</span>
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">{item.title}</h3>
-                      <p className="text-muted-foreground text-lg leading-relaxed mb-6 font-body">
-                        {item.description}
-                      </p>
-                      <div className="mt-auto flex items-center gap-3">
-                        <div className="w-8 h-[1px] bg-primary/20" />
-                        <span className="text-[12px] font-body font-bold uppercase tracking-widest text-primary/40">The Highland Standard</span>
-                      </div>
-                    </div>
+                    <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
+                      Photo Coming Soon
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <span className="px-2.5 py-1 bg-primary/10 text-primary text-[10px] font-body font-bold uppercase tracking-widest inline-block mb-3">{item.category}</span>
+                    <p className="text-muted-foreground text-sm leading-relaxed font-body">{item.description}</p>
+                    <p className="text-xs text-muted-foreground/70 italic mt-4">Specific initiative details coming soon.</p>
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── AFFILIATIONS (incl. Rotary placeholder) ── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight max-w-4xl">
+            <div className="text-center mb-10">
+              <span className="eyebrow mb-3 block">Local Affiliations</span>
+              <h2 className="section-heading">Community Involvement & Local Affiliations</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mt-4 font-body">
+                Final affiliation details, organization logos, and approved descriptions will be added after client confirmation.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                { label: "Rotary Affiliation", note: "Pending client confirmation. Do not publish unless approved." },
+                { label: "Chamber of Commerce", note: "Confirm membership and approved logo usage." },
+                { label: "Local Nonprofit Partner", note: "Awaiting nonprofit name and partnership description." },
+                { label: "Industry Association", note: "Confirm NRCA, NCRCA, or trade-association affiliations." },
+              ].map((a) => (
+                <div key={a.label} className="card-premium p-6 flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.3)] flex items-center justify-center flex-shrink-0">
+                    <Award className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-bold text-foreground mb-1">{a.label}</h3>
+                    <p className="text-xs text-muted-foreground italic">{a.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── INTERNAL NOTICE — INFO REQUEST ── */}
+        <section className="bg-[hsl(var(--highland-gold)/0.08)] border-y border-[hsl(var(--highland-gold)/0.25)]">
+          <div className="container-tight section-padding max-w-4xl">
+            <div className="card-premium p-8 md:p-10">
+              <div className="flex items-start gap-4 mb-5">
+                <AlertCircle className="w-6 h-6 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-1" />
+                <div>
+                  <span className="eyebrow block mb-2">For the Highlander Team — Pre-Launch</span>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight">
+                    Help Us Finalize Community & Affiliation Details
+                  </h2>
+                </div>
+              </div>
+              <p className="text-muted-foreground font-body mb-5">
+                To replace the placeholder cards above with real initiatives, partnerships, and affiliations, please confirm and provide the following:
+              </p>
+              <ul className="grid sm:grid-cols-2 gap-3 text-sm text-foreground/85 font-body mb-6">
+                {[
+                  "Confirm whether Rotary affiliation should be displayed (and provide approved logo + use permission)",
+                  "Chamber of Commerce or trade-association memberships to feature",
+                  "Names of charities, nonprofits, and community partners Highlander supports",
+                  "Specific community projects, dates, and brief descriptions",
+                  "Local sponsorships (youth sports, schools, festivals) with permission to display",
+                  "Photos from community events (with consent of anyone shown)",
+                  "Veteran and first-responder program details, if any",
+                  "Approved organization logos for display",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-muted-foreground italic">
+                Until approved details are provided, this page intentionally uses structured placeholders. No affiliation, sponsorship, or partnership will be claimed publicly without confirmation.
+              </p>
             </div>
           </div>
         </section>
