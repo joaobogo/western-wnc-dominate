@@ -297,7 +297,7 @@ export const services: ServiceData[] = [
     title: "General Construction",
     headline: "Licensed General Contractor for Custom Projects",
     subheadline: "Framing, structural repairs, and specialized construction projects across the WNC mountains.",
-    description: "Beyond roofing, Highlander is a licensed NC General Contractor providing elite exterior construction and planning services. We specialize in additions, outdoor living, and facade improvements that require precise mountain-climate engineering and design-led execution.",
+    description: "Beyond roofing, Highlander is a licensed NC General Contractor providing elite exterior construction services. We specialize in additions, outdoor living, and facade improvements that require precise mountain-climate engineering and design-led execution.",
     icon: HardHat,
     division: "construction",
     features: [

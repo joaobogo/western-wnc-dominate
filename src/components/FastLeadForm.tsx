@@ -85,7 +85,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
               value={formData.phone}
               onChange={(event) => setFormData({ ...formData, phone: event.target.value })}
               className="w-full border border-input bg-background px-4 py-3 text-sm font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
-              placeholder="(828) 555-1234"
+              placeholder="(828) 555-0123"
             />
           </div>
           <div>
