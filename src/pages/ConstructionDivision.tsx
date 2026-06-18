@@ -30,12 +30,12 @@ import {
   DesignProgramPromo,
 } from "@/components/construction";
 
-const heroImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2000";
-const divisionContextImg = "https://images.unsplash.com/photo-1590069230002-70cc6a97da21?auto=format&fit=crop&q=80&w=2000";
-const constructionDetailImg = "https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&q=80&w=1200";
-const planningFocusImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
-const siteCoordinationImg = "https://images.unsplash.com/photo-1590069230002-70cc6a97da21?auto=format&fit=crop&q=80&w=1200";
-const wncTerrainImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
+import heroImg from "@/assets/division-construction-v2.jpg";
+import divisionContextImg from "@/assets/gallery/asphalt-007.webp";
+import constructionDetailImg from "@/assets/gallery/cedar-005.jpg";
+import planningFocusImg from "@/assets/division-design.jpg";
+import siteCoordinationImg from "@/assets/gallery/metal-006.webp";
+import wncTerrainImg from "@/assets/gallery/asphalt-hero.webp";
 
 import proj1 from "@/assets/gallery/asphalt-006.webp";
 import proj2 from "@/assets/gallery/cedar-002.jpg";
@@ -328,7 +328,7 @@ const ConstructionDivision = () => {
 
         {/* ═══ CRAFT DETAIL — Visual break ═══ */}
         <section className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200" alt="Construction detail and craftsmanship" className="w-full h-full object-cover grayscale opacity-60" />
+          <img src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover grayscale opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
           <div className="absolute bottom-10 left-10 flex items-center gap-4">
              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
