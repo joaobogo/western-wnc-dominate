@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Phone, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 type Props = {
   title: string;
@@ -32,8 +33,14 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
           backgroundRepeat: "repeat"
         }} 
       />
-      <div className="w-14 h-14 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-5">
-        <CheckCircle className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
+      <img
+        src={logo}
+        alt="Highlander Roofing & Construction logo"
+        className="h-16 md:h-20 w-auto mx-auto mb-4"
+        decoding="async"
+      />
+      <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-5">
+        <CheckCircle className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
       </div>
       <h2 className="text-2xl md:text-[28px] font-heading font-bold text-foreground mb-3 tracking-tight">
         {title}

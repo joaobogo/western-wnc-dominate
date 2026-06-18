@@ -137,17 +137,20 @@ const Header = () => {
       {/* ─── Main nav bar ─── */}
       <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-0.5" : "py-1 md:py-1.5"}`}>
         {/* Logo */}
-        <Link to="/" className="flex items-center -ml-4 md:-ml-6 bg-transparent hover:bg-transparent">
-            <motion.img
+        <Link to="/" aria-label="Highlander Roofing & Construction — Home" className="flex items-center -ml-3 md:-ml-6 bg-transparent hover:bg-transparent">
+          <img
             src={logo}
-            alt="Highlander Roofing & Construction"
-            className="w-auto transition-all duration-500"
-            animate={{ 
-              height: scrolled ? 60 : 90,
-              scale: scrolled ? 0.9 : 1
-            }}
-            style={{ originX: 0, originY: 0.5 }}
-            transition={{ duration: 0.45, ease: HIGHLAND_EASE }}
+            alt="Highlander Roofing & Construction logo"
+            width={520}
+            height={520}
+            className={`w-auto transition-[height,transform] duration-500 ease-out origin-left ${
+              scrolled
+                ? "h-[72px] md:h-[92px]"
+                : "h-[84px] md:h-[124px]"
+            }`}
+            style={{ imageRendering: "auto" }}
+            decoding="async"
+            fetchPriority="high"
           />
         </Link>
 
