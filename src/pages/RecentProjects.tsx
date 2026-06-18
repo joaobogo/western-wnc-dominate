@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
@@ -22,12 +21,6 @@ import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
 import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
 import cedar005 from "@/assets/gallery/cedar-005.jpg";
-
-declare global {
-  interface Window {
-    rwlPlugin?: { init: (host: string, key: string) => void };
-  }
-}
 
 const categoryCards = [
   { icon: Home, title: "Roofing", desc: "Shingle, metal, and cedar roofing systems built for steep mountain rooflines.", img: roofingImg, href: "/roofing" },
@@ -60,16 +53,6 @@ const completedProjects = [
 ];
 
 const RecentProjects = () => {
-  useEffect(() => {
-    if (window.rwlPlugin && typeof window.rwlPlugin.init === "function") {
-      try {
-        window.rwlPlugin.init("https://app.realworklabs.com", "SxCxaBpYsO_fVnK0");
-      } catch {
-        /* no-op */
-      }
-    }
-  }, []);
-
   return (
     <>
       <SEOHead
@@ -215,35 +198,6 @@ const RecentProjects = () => {
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 2: RealWork widget */}
-        <section className="py-16 md:py-24 bg-secondary/40 border-y border-border/60">
-          <div className="container-tight">
-            <div className="max-w-3xl mb-10">
-              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Live Project Feed</p>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
-                Recent Project Updates
-              </h2>
-              <p className="text-foreground/75 text-lg leading-relaxed">
-                Browse recent Highlander project activity from across Western North Carolina.
-                This feed may update as new roofing, construction, gutter, and exterior projects are added.
-              </p>
-            </div>
-            <div className="bg-background border border-border rounded-sm p-6 md:p-8">
-              <div id="rwl-output" className="min-h-[400px] w-full" />
-              <div className="mt-6 pt-6 border-t border-border/60">
-                <p className="text-sm text-foreground/60 font-body mb-4">
-                  Recent project updates are loading. If the feed does not appear, please refresh
-                  the page or contact Highlander directly to discuss your roofing, construction,
-                  gutter, or outdoor living project.
-                </p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--highland-green))] hover:gap-3 transition-all">
-                  Request a Free Estimate <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
             </div>
           </div>
         </section>
