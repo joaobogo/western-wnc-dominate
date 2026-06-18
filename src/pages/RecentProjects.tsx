@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin } from "lucide-react";
+import { ArrowRight, Phone, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +12,16 @@ import metalImg from "@/assets/gallery/metal-005.webp";
 import cedarImg from "@/assets/gallery/cedar-005.jpg";
 import constructionImg from "@/assets/division-construction-v2.jpg";
 import designImg from "@/assets/division-design.jpg";
+import metal005 from "@/assets/gallery/metal-005.webp";
+import metal006 from "@/assets/gallery/metal-006.webp";
+import metal008 from "@/assets/gallery/metal-008.webp";
+import metal003 from "@/assets/gallery/metal-003.webp";
+import asphalt008 from "@/assets/gallery/asphalt-008.webp";
+import asphalt007 from "@/assets/gallery/asphalt-007.webp";
+import asphalt006 from "@/assets/gallery/asphalt-006.webp";
+import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
+import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
+import cedar005 from "@/assets/gallery/cedar-005.jpg";
 
 declare global {
   interface Window {
@@ -34,6 +44,19 @@ const pathCards = [
   { q: "Need gutters or exterior protection?", href: "/exterior-improvements", cta: "View Exterior Services" },
   { q: "Improving outdoor living space?", href: "/outdoor-living", cta: "View Outdoor Living" },
   { q: "Not sure where to start?", href: "/contact", cta: "Talk to Highlander" },
+];
+
+const completedProjects = [
+  { title: "Standing Seam Metal — Dark Bronze", type: "Metal Roofing", description: "Complex multi-gable standing seam metal roof in dark bronze. Precision panel work on steep pitches with custom trim detailing and concealed fastener system throughout.", image: metal005, location: "Highlands, NC", scope: "3,200 sq ft roof replacement", duration: "8 days", slug: "standing-seam-metal-dark-bronze-highlands" },
+  { title: "CertainTeed Landmark — Weathered Wood", type: "Asphalt Shingles", description: "CertainTeed Landmark shingles on a multi-level mountain home with screen porch. Premium materials installed by Master Shingle Applicator certified crew.", image: asphaltHero, location: "Waynesville, NC", scope: "4,100 sq ft roof replacement", duration: "4 days", slug: "certainteed-landmark-weathered-wood-waynesville" },
+  { title: "Cedar Shake — Estate Home", type: "Cedar Shake", description: "Stunning cedar shake roof on a luxury estate in Highlands. Intricate multi-gable design with copper ridge accents. Hand-selected premium cedar with natural preservative treatment.", image: cedar005, location: "Highlands, NC", scope: "Premium cedar shake installation", duration: "14 days", slug: "cedar-shake-estate-highlands" },
+  { title: "Standing Seam Metal — Mountain Cabin", type: "Metal Roofing", description: "Green standing seam metal on a log cabin nestled in the WNC mountains. Engineered for decades of snow load, wind exposure, and UV at 4,200 feet elevation.", image: metal006, location: "Cashiers, NC", scope: "Full roof replacement", duration: "6 days" },
+  { title: "Asphalt & Metal Combo — Highlands Estate", type: "Mixed Materials", description: "Craftsman mountain home featuring dimensional shingles with standing seam metal accent roofing and natural stone exterior accents. Dual-material design for maximum curb appeal.", image: asphalt007, location: "Highlands, NC", scope: "Dual-material roof system", duration: "10 days" },
+  { title: "Metal Panel — Silver", type: "Metal Roofing", description: "Clean silver metal panel installation with complex hip-and-valley geometry. Every intersection precision-cut and sealed for permanent weather protection.", image: metal008, location: "Franklin, NC", scope: "2,800 sq ft re-roof", duration: "7 days" },
+  { title: "Dimensional Shingles — Slate Gray", type: "Asphalt Shingles", description: "Aerial drone view of a large residential shingle replacement in slate gray with complex roof intersections. Every valley and ridge executed to manufacturer specifications.", image: asphalt006, location: "Franklin, NC", scope: "3,500 sq ft complex roof", duration: "5 days" },
+  { title: "Dimensional Shingles — Brown", type: "Asphalt Shingles", description: "Full dimensional shingle roof replacement with clean hip-and-ridge lines on a residential property. Ventilation upgraded during installation for improved attic performance.", image: asphalt008, location: "Bryson City, NC", scope: "Complete re-roof + ventilation", duration: "4 days" },
+  { title: "Metal Roof — Rural Home", type: "Metal Roofing", description: "Brown metal panel installation on a brick home in the WNC countryside. Material selected for longevity and visual harmony with the surrounding mountain landscape.", image: metal003, location: "Sylva, NC", scope: "Full roof replacement", duration: "5 days" },
+  { title: "Dimensional Shingles — Hunter Green", type: "Asphalt Shingles", description: "Bird's-eye view of a large complex residential roof with hunter green dimensional shingles. Precision work on multiple dormers and valleys.", image: asphalt002, location: "Macon County, NC", scope: "5,200 sq ft multi-dormer roof", duration: "6 days" },
 ];
 
 const RecentProjects = () => {
@@ -124,6 +147,74 @@ const RecentProjects = () => {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 1b: Completed Project Portfolio */}
+        <section className="py-16 md:py-24 bg-background border-t border-border/60">
+          <div className="container-tight">
+            <div className="max-w-3xl mb-12">
+              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+                Completed Project Portfolio
+              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
+                Real WNC Homes. Real Highlander Work.
+              </h2>
+              <p className="text-foreground/75 text-lg leading-relaxed">
+                These aren't stock photos. Every image below represents a real Western North Carolina
+                home we've protected — across metal, shingle, cedar shake, and mixed-material roofing systems.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {completedProjects.map((p) => {
+                const CardInner = (
+                  <>
+                    <div className="aspect-[4/3] overflow-hidden bg-secondary relative">
+                      <img
+                        src={p.image}
+                        alt={`${p.title} — ${p.location}`}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <span className="absolute top-3 left-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--highland-green))] px-2.5 py-1 rounded-sm">
+                        {p.type}
+                      </span>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-base font-heading font-bold text-foreground mb-2 leading-snug group-hover:text-[hsl(var(--highland-green))] transition-colors">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-foreground/70 leading-relaxed mb-4 line-clamp-3">
+                        {p.description}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-foreground/55 font-body">
+                        <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {p.location}</span>
+                        <span className="flex items-center gap-1"><Ruler className="w-3 h-3" /> {p.scope}</span>
+                        <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {p.duration}</span>
+                      </div>
+                    </div>
+                  </>
+                );
+
+                return p.slug ? (
+                  <Link
+                    key={p.title}
+                    to={`/projects/${p.slug}`}
+                    className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift block"
+                  >
+                    {CardInner}
+                  </Link>
+                ) : (
+                  <div
+                    key={p.title}
+                    className="group bg-card border border-border rounded-sm overflow-hidden"
+                  >
+                    {CardInner}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
