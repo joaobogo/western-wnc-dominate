@@ -23,9 +23,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
-const planningImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
-const sketchImg = "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?auto=format&fit=crop&q=80&w=2000";
-const blueprintImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=2000";
+import blueprintImg from "@/assets/division-design.jpg";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
