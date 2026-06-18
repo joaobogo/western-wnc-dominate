@@ -5,7 +5,7 @@ import {
   Shield, Star, Hammer, Home, Wind, CloudLightning, Compass,
   BookOpen
 } from "lucide-react";
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -44,6 +44,14 @@ const CountyPage = () => {
         title={county.metaTitle}
         description={county.metaDescription}
         path={`/service-areas/county/${county.slug}`}
+        jsonLd={buildPageSchema({
+          type: "generic",
+          breadcrumbs: [
+            { name: "Home", url: "/" },
+            { name: "Service Areas", url: "/service-areas" },
+            { name: county.name, url: `/service-areas/county/${county.slug}` },
+          ],
+        })}
       />
       <Header />
       <main>
