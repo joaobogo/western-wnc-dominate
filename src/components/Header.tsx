@@ -57,7 +57,7 @@ const divisions: DivisionDropdown[] = [
     href: "/roofing",
     items: roofingItems,
     icon: Shield,
-    tagline: "GAF Master Elite · Top 2% Nationally",
+    tagline: "CertainTeed ShingleMaster · Credentialed Contractor",
     accent: "green",
   },
   {
