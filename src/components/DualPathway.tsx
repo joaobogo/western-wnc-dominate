@@ -65,7 +65,7 @@ const designData = {
   icon: Ruler,
   label: "Design Division",
   badge: "Pre-Con Support",
-  title: "Design & Planning",
+  title: "Design",
   subtitle: "Our Intelligence",
   description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and ensure architectural integrity.",
   stats: [
@@ -255,7 +255,7 @@ const ThreeDivisionPathway = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="eyebrow mb-4 block">Roofing · Construction · Design & Planning</span>
+            <span className="eyebrow mb-4 block">Roofing · Construction · Design</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-5">
@@ -291,7 +291,7 @@ const ThreeDivisionPathway = () => {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-border" />
             <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-muted-foreground/50">
-              Roofing · Construction · Design & Planning
+              Roofing · Construction · Design
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>

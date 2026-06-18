@@ -102,7 +102,7 @@ const IntakeShell = ({
                   to="/design-intake?mode=long"
                   className="text-[13px] font-body font-medium text-foreground/70 hover:text-[hsl(var(--highland-gold))] transition-colors inline-flex items-center gap-2"
                 >
-                  Design & Planning Intake <ArrowRight className="w-3 h-3" />
+                  Design Intake <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
             </div>

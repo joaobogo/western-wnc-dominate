@@ -117,7 +117,7 @@ const ConstructionDivision = () => {
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
                     <span className="text-[20px] md:text-[22px] font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
-                    <span className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction, Design & Planning</span>
+                    <span className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction, Design</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -193,7 +193,7 @@ const ConstructionDivision = () => {
                     Our Construction division serves homeowners who value meticulous planning and a design-first approach to mountain building.
                   </p>
                   <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body">
-                    We bridge the gap between architectural vision and buildable reality, supported by our expert <Link to="/layouts-planning" className="text-primary font-bold hover:underline">Design & Planning</Link> branch.
+                    We bridge the gap between architectural vision and buildable reality, supported by our expert <Link to="/layouts-planning" className="text-primary font-bold hover:underline">Design</Link> branch.
                   </p>
                 </div>
                 <GoldLine width="3rem" className="mx-auto mt-10" delay={0.3} />

@@ -18,10 +18,10 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const projects = [
   {
-    title: "Project Design & Planning",
+    title: "Project Design",
     location: "Highlands, NC",
     elevation: "4,118 ft",
-    category: "Design & Planning",
+    category: "Design",
     type: "construction" as const,
     outcome: "Complete layout planning and scope definition for a significant multi-level addition. Resolved terrain challenges before build.",
     image: asphaltLarge,

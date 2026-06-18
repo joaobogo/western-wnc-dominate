@@ -383,9 +383,9 @@ Don't assume your current system can handle another 500 square feet. We evaluate
 Every county — Macon, Jackson, Haywood — has unique rules for setbacks, impervious surface limits, and mountain-ridge protections. We handle the coordination to ensure your plan is fully compliant before work starts.
 
 ## How Highlander Helps
-Our Design & Planning branch exists to solve these hurdles before they become expensive change orders. We bridge the gap between your vision and a buildable project roadmap.`,
+Our Design branch exists to solve these hurdles before they become expensive change orders. We bridge the gap between your vision and a buildable project roadmap.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Home Additions", path: "/construction/additions" }
     ],
   },
@@ -453,19 +453,19 @@ Extending your outdoor season into November is a top request. We integrate reces
 Subtle LED lighting integrated into railings and stair treads isn't just for safety — it transforms your space after the sun sets behind the ridges.`,
     relatedServices: [
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Design & Planning", path: "/layouts-planning" }
+      { label: "Design", path: "/layouts-planning" }
     ],
   },
   {
     slug: "why-design-planning-matters",
-    title: "Why 'Design & Planning' is the Secret to a Stress-Free Build",
+    title: "Why 'Design' is the Secret to a Stress-Free Build",
     excerpt: "Most construction delays happen because of poor planning, not poor building. Discover the Highlander pre-construction process.",
     category: "Construction",
     date: "2026-02-18",
     image: planningDeskStock, readTime: "5 min",
     metaTitle: "Importance of Pre-Construction Planning | Highlander",
     metaDescription: "Why detailed design and planning is critical for mountain construction. Avoid budget creep and timeline delays with our disciplined approach.",
-    content: `At Highlander, we say: 'Measure twice, plan once, build forever.' The Design & Planning branch is our commitment to eliminating the 'surprises' that give the construction industry a bad name.
+    content: `At Highlander, we say: 'Measure twice, plan once, build forever.' The Design branch is our commitment to eliminating the 'surprises' that give the construction industry a bad name.
 
 ## The Gap Between 'Idea' and 'Estimate'
 Most contractors give a quote based on a verbal description. We give a scope based on a documented plan. By defining floor plans and layouts first, we ensure everyone is looking at the same target.
@@ -659,7 +659,7 @@ Jackson County is particularly focused on steep-slope regulations. If your lot h
 Haywood often requires more detailed site plans for additions in historic districts.
 
 ## Why We Handle It For You
-At Highlander, our Design & Planning team handles the permitting process from start to finish. We know the inspectors, we know the codes, and we know how to submit a clean plan that gets approved the first time.`
+At Highlander, our Design team handles the permitting process from start to finish. We know the inspectors, we know the codes, and we know how to submit a clean plan that gets approved the first time.`
   },
   {
     slug: "choosing-materials-for-high-elevation",
@@ -1140,7 +1140,7 @@ We help you map out the transition from bed to bath to closet. Intelligent floor
 ## Integration with Outdoor Spaces
 Many of our favorite Highlands and Cashiers projects include a private deck access directly from the master wing. This requires careful structural planning to ensure the rooflines and elevations match up.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Home Additions", path: "/construction/additions" }
     ],
   },
@@ -1153,7 +1153,7 @@ Many of our favorite Highlands and Cashiers projects include a private deck acce
     image: financeCalcStock, readTime: "7 min",
     metaTitle: "Cost-Saving Construction Layout Tips | Highlander",
     metaDescription: "Discover how smart layout planning reduces construction costs. Tips on plumbing stacks, load-bearing walls, and mountain terrain.",
-    content: `Most construction budget blowouts happen because of poor planning. Here is how our Design & Planning branch helps you build smarter for less.
+    content: `Most construction budget blowouts happen because of poor planning. Here is how our Design branch helps you build smarter for less.
 
 ## Plumbing Stacks & Wet Walls
 Moving a bathroom across the house is expensive. We help you plan layouts that utilize existing plumbing infrastructure where possible, significantly reducing labor and material costs.
@@ -1164,7 +1164,7 @@ Removing a wall for an open-concept kitchen? We identify which walls are carryin
 ## Terrain-Responsive Building
 In WNC, fighting the slope is expensive. We help you design layouts that work *with* the topography of your lot, minimizing costly excavation and massive retaining walls.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Construction Division", path: "/construction" }
     ],
   },
@@ -1188,7 +1188,7 @@ A deck added in 2026 should look like it belongs to the porch you build in 2028.
 ## Logical Sequencing
 Don't renovate your kitchen right before you tear out the wall behind it for an addition. We help you sequence projects to minimize disruption and maximize your budget.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Outdoor Living", path: "/construction/outdoor-living" }
     ],
   },
@@ -1212,7 +1212,7 @@ Is your island for prep, dining, or both? We help you define the dimensions and 
 ## Seamless Indoor-Outdoor Flow
 Many of our clients want the kitchen to open directly onto a screened porch or deck. We plan these transitions meticulously to ensure the floor levels and thresholds are safe and weatherproof.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Renovations", path: "/construction/renovations" }
     ],
   },
@@ -1236,7 +1236,7 @@ A screened or covered porch provides a roof over your head and protection from W
 ## The Hybrid Approach
 The best layouts often combine both. A smaller covered 'mountain room' for dining, transitioning into an expansive open deck for sun and views.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Outdoor Living", path: "/construction/outdoor-living" }
     ],
   },
@@ -1260,7 +1260,7 @@ Those oversized hallways and awkward closets can often be reclaimed. We help you
 ## Adding Natural Light
 Floor plan modernization isn't just about moving walls; it's about adding glass. We plan window and door placements that pull the outdoors into every room.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Renovations", path: "/construction/renovations" }
     ],
   },
@@ -1284,7 +1284,7 @@ A mountain room isn't complete without a fireplace. We help you plan the structu
 ## High-Elevation Engineering
 These rooms often project out from the main home. We ensure the structural planning accounts for wind loads and heavy ice accumulation common on the plateau.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Home Additions", path: "/construction/additions" }
     ],
   },
@@ -1297,7 +1297,7 @@ These rooms often project out from the main home. We ensure the structural plann
     image: planningDeskStock, readTime: "6 min",
     metaTitle: "Construction Scope Development Guide | Highlander",
     metaDescription: "How to define your home improvement scope. Avoid budget creep with documented materials, layouts, and timelines.",
-    content: `A 'vague scope' is the most dangerous part of any construction project. At Highlander, our Design & Planning branch is dedicated to specificity.
+    content: `A 'vague scope' is the most dangerous part of any construction project. At Highlander, our Design branch is dedicated to specificity.
 
 ## Listing Your 'Non-Negotiables'
 We start by defining what your project *must* achieve. Is it a third bedroom? A 200-square-foot deck? A walk-in shower? Documenting these goals keeps the project focused.
@@ -1308,7 +1308,7 @@ Scope isn't just about 'where' you build, but 'what' you build with. We help you
 ## The Production Timeline
 A real scope includes a schedule. We help you plan for seasonal weather events in WNC and lead times for premium materials like cedar and composite.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Construction Division", path: "/construction" }
     ],
   },
@@ -1333,7 +1333,7 @@ We help you design layouts that utilize the lower level of your home as a primar
 ## Erosion and Drainage Planning
 Your floor plan should dictate where the water goes. We integrate drainage paths into the early design phase to protect your home and your landscaping from mountain runoff.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Home Additions", path: "/construction/additions" }
     ],
   },
@@ -1357,7 +1357,7 @@ Typically, we recommend starting with the 'envelope' or 'structural core'. Getti
 ## Budgeting for the Future
 By planning now, you avoid 're-work' costs later. We help you install 'sleeves' for future electrical and HVAC so you don't have to tear down new walls when Phase 2 begins.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Construction Division", path: "/construction" }
     ],
   },
@@ -1381,7 +1381,7 @@ We plan layouts that align interior hallways with mountain-facing windows. This 
 ## The Glass-to-Wall Ratio
 In new additions, we balance thermal efficiency with light gain. Using premium WNC-grade windows allows for larger glass areas that don't compromise your heating bills.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Skylights (VELUX)", path: "/roofing/skylights" }
     ],
   },
@@ -1406,7 +1406,7 @@ Jackson County's permitting process focuses heavily on erosion control and water
 ## Why We Handle It For You
 Permitting isn't just paperwork; it's a structural safeguard. Our team manages the entire submittal and inspection cycle so you don't have to learn the code manual.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Construction Division", path: "/construction" }
     ],
   },
@@ -1432,7 +1432,7 @@ Forget standard cabinetry. We recommend masonry bases, stainless steel, or high-
 Your layout should include easy-access shut-off valves for plumbing. We plan these so you can drain the system in minutes before the first freeze.`,
     relatedServices: [
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Design & Planning", path: "/layouts-planning" }
+      { label: "Design", path: "/layouts-planning" }
     ],
   },
   {
@@ -1455,7 +1455,7 @@ A second story isn't just about weight; it's about *where* that weight lands. We
 ## The Staircase Challenge
 A vertical addition requires a new layout for the floor below. We help you find the most efficient spot for a staircase that doesn't ruin your existing flow.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Home Additions", path: "/construction/additions" }
     ],
   },
@@ -1479,20 +1479,20 @@ Modern layouts now prioritize high-function mudrooms and transition spaces. When
 ## Dark Exteriors, Light Interiors
 Deep charcols and 'Iron Ore' tones are popular for exteriors as they help homes disappear into the forest canopy, while interiors are staying bright and airy.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Exterior Improvements", path: "/construction/siding" }
     ],
   },
   {
     slug: "budgeting-for-preconstruction-planning",
     title: "Budgeting for Pre-Construction: Why Planning Saves 15% on Build Costs",
-    excerpt: "Spending $2,000 on planning can save $20,000 in mistakes. Learn the ROI of the Design & Planning phase.",
+    excerpt: "Spending $2,000 on planning can save $20,000 in mistakes. Learn the ROI of the Design phase.",
     category: "Cost",
     date: "2026-06-10",
     image: financeCalcStock, readTime: "6 min",
     metaTitle: "Pre-Construction Planning ROI | Highlander",
     metaDescription: "How professional project planning reduces construction costs. Avoid change orders and material waste with better pre-build logic.",
-    content: `At Highlander, we treat 'Design & Planning' as an investment, not an expense. Here is how that investment pays for itself.
+    content: `At Highlander, we treat 'Design' as an investment, not an expense. Here is how that investment pays for itself.
 
 ## Eliminating 'Field Figuring'
 When a crew has to stop and 'figure out' a detail on-site, it costs you hourly labor and wasted materials. A good plan solves those details on paper first.
@@ -1503,7 +1503,7 @@ We calculate exact quantities for premium materials like metal panels and custom
 ## Preventing Change Orders
 Most change orders come from a lack of clarity in the initial scope. By documenting every detail now, you lock in your price and protect your budget.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Construction Division", path: "/construction" }
     ],
   },
@@ -1551,7 +1551,7 @@ We don't just 'slap on' gutters. We calculate the volume your roof will shed dur
 ## Permeable Hardscapes
 When planning new patios or walkways, we favor layouts that allow water to soak into the ground rather than sheeting off toward your basement walls.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Construction Division", path: "/construction" }
     ],
   },
@@ -1575,7 +1575,7 @@ The height of your windows matters as much as the width. We calculate the 'dip' 
 ## Furniture Layout vs. Viewports
 We don't just draw walls; we plan where your sofa or bed will go. This ensures your primary living zones are perfectly aligned with the property's best assets.`,
     relatedServices: [
-      { label: "Design & Planning", path: "/layouts-planning" },
+      { label: "Design", path: "/layouts-planning" },
       { label: "Home Additions", path: "/construction/additions" }
     ],
   },
@@ -1600,7 +1600,7 @@ A true 'In-Law' suite is a self-contained home. We plan these with kitchenette c
 Regardless of use, privacy is about sound. We design these additions with 'buffer zones' like closets or bathrooms between the new suite and the main living area.`,
     relatedServices: [
       { label: "Home Additions", path: "/construction/additions" },
-      { label: "Design & Planning", path: "/layouts-planning" }
+      { label: "Design", path: "/layouts-planning" }
     ],
   },
   {

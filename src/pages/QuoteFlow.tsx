@@ -36,7 +36,7 @@ const SERVICE_CATEGORIES = [
   { id: "roofing", label: "Roofing", icon: Home, desc: "Repair, replacement, storm damage, or specialty roofing" },
   { id: "construction", label: "Construction", icon: Hammer, desc: "Additions, renovations, exterior, or outdoor living" },
   { id: "both", label: "Both", icon: Building2, desc: "A project that involves roofing and construction" },
-  { id: "planning", label: "Design & Planning", icon: Paintbrush, desc: "Layouts, floor plans, and project planning support" },
+  { id: "planning", label: "Design", icon: Paintbrush, desc: "Layouts, floor plans, and project planning support" },
   { id: "not-sure", label: "Not Sure Yet", icon: Wrench, desc: "We'll help you figure out the right approach" },
 ];
 

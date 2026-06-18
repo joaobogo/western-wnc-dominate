@@ -31,7 +31,7 @@ const categoryConfig: Record<string, { icon: typeof BookOpen; label: string; des
   Financing: { icon: DollarSign, label: "Financing", description: "Affordable options for your roofing investment", color: "primary" },
   Commercial: { icon: Home, label: "Commercial", description: "Maintenance and solutions for commercial properties", color: "primary" },
   Construction: { icon: Home, label: "Construction Insights", description: "Planning, process, and guidance for mountain building projects", color: "primary" },
-  Design: { icon: Mountain, label: "Design & Planning", description: "Floor plans, layouts, and pre-construction guidance", color: "primary" },
+  Design: { icon: Mountain, label: "Design", description: "Floor plans, layouts, and pre-construction guidance", color: "primary" },
 
   Spotlight: { icon: Mountain, label: "Project Spotlights", description: "Deep dives into completed projects — materials, process, and results", color: "primary" },
 };
