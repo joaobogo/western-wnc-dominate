@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, Phone, Shield } from "lucide-react";
+import FormConsent from "@/components/FormConsent";
 
 interface FastLeadFormProps {
   ctaLabel: string;

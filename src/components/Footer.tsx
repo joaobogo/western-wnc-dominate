@@ -353,8 +353,7 @@ const Footer = () => {
             <span>Fully Insured</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/privacy" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Terms of Service</Link>
+            <Link to="/privacy-policy" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy &amp; Terms</Link>
             <Link to="/accessibility" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Accessibility</Link>
           </div>
         </div>

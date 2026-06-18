@@ -10,6 +10,7 @@ import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots } from "./IntakeFieldKit";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
+import FormConsent from "@/components/FormConsent";
 
 type Step = number;
 
@@ -345,6 +346,7 @@ const ConstructionIntakeForm = () => {
           </button>
         )}
       </div>
+      {step === 3 && <FormConsent className="mt-4" />}
     </div>
   );
 };

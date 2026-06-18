@@ -5,6 +5,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import FormConsent from "@/components/FormConsent";
 import {
   Phone, Mail, MapPin, Clock, Shield, Award, ArrowRight, ArrowLeft,
   MessageSquare, CalendarCheck, CheckCircle, Home, HardHat,
@@ -481,6 +482,7 @@ export default function Contact() {
                           {!isSubmitting && <ArrowRight className="w-4 h-4" />}
                         </button>
                       </div>
+                      <FormConsent />
                     </form>
                   </motion.div>
                 )}

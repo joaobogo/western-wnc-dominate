@@ -6,6 +6,7 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import SectionDivider from "@/components/SectionDivider";
+import FormConsent from "@/components/FormConsent";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -492,6 +493,9 @@ const InspectionForm = () => {
                     </button>
                   )}
                 </div>
+                {currentIndex === stepOrder.length - 1 && (
+                  <FormConsent className="mt-4 text-dark-section-foreground/70" />
+                )}
 
                 {/* Bottom microcopy */}
                 <p className="text-center text-dark-section-foreground/20 text-[10px] font-body mt-5 tracking-wide">

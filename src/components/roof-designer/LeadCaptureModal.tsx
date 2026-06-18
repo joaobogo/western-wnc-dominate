@@ -10,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { z } from "zod";
 import { Link } from "react-router-dom";
+import FormConsent from "@/components/FormConsent";
 
 interface LeadCaptureModalProps {
   open: boolean;
@@ -225,6 +226,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
             {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
             Download My Roof Design
           </Button>
+          <FormConsent className="mt-1" />
         </div>
       </DialogContent>
     </Dialog>
