@@ -8,7 +8,11 @@ import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import { useRef } from "react";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import constructionImg from "@/assets/division-construction.jpg";
+// NOTE: Construction Division image replaced per client (Robert) — the prior
+// house photo must not appear in marketing. This is a temporary AI-generated
+// WNC mountain construction visual. Client to provide a final approved
+// Construction Division photo before launch.
+import constructionImg from "@/assets/division-construction-v2.jpg";
 // NOTE: Temporary Design Division image. Client to provide final approved
 // Design Division image before launch.
 import designImg from "@/assets/division-design.jpg";
