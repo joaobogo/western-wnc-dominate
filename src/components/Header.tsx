@@ -23,6 +23,7 @@ const roofingItems: DropdownItem[] = [
   { label: "Brava / Synthetic", href: "/roofing/brava-synthetic", desc: "Premium composite slate & shake" },
   { label: "Specialty Roofing", href: "/roofing/specialty", desc: "Cedar, copper & custom work" },
   { label: "Storm Damage", href: "/roofing/storm-damage", desc: "Insurance claims & emergency work" },
+  { label: "Commercial Roofing", href: "/roofing/commercial", desc: "B2B systems for WNC properties" },
 ];
 
 
