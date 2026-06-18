@@ -73,13 +73,12 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
           </motion.div>
           <h4 className="font-heading font-bold text-foreground text-lg mb-2">Check Your Email</h4>
           <p className="text-muted-foreground text-sm mb-5 font-body">Your {g.title} is on its way — along with a few bonus tips for WNC homeowners.</p>
-          <a
-            href="#"
+          <button
+            type="button"
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-8 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-lg"
-            onClick={(e) => e.preventDefault()}
           >
-            <Download className="w-4 h-4 relative z-10" /> <span className="relative z-10">Download Now</span>
-          </a>
+            <Download className="w-4 h-4 relative z-10" /> <span className="relative z-10">Check Your Inbox</span>
+          </button>
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
