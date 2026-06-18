@@ -195,7 +195,7 @@ const BuilderShell = ({
               {summary}
             </div>
             <a
-              href="tel:8285247773"
+              href="tel:+18285247773"
               className="mt-4 inline-flex items-center gap-2 text-foreground/70 hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-[13px]"
             >
               <Phone className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />

@@ -32,7 +32,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         <div className="space-y-3 border-t border-border pt-4 text-sm text-muted-foreground font-body">
           <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> Typical response rapidly</div>
           <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-primary" /> No obligation and no pressure</div>
-          <a href="tel:8285247773" className="inline-flex items-center gap-2 font-semibold text-primary hover:opacity-80 transition-opacity">
+          <a href="tel:+18285247773" className="inline-flex items-center gap-2 font-semibold text-primary hover:opacity-80 transition-opacity">
             <Phone className="h-4 w-4" /> (828) 524-7773
           </a>
         </div>

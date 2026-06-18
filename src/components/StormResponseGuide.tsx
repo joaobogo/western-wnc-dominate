@@ -220,7 +220,7 @@ const StormResponseGuide = () => {
                       <span className="relative">Request Storm Assessment</span>
                       <ArrowRight className="w-4 h-4 relative" />
                     </Link>
-                    <a href="tel:8285247773" className="border border-border text-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-secondary transition-all">
+                    <a href="tel:+18285247773" className="border border-border text-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-secondary transition-all">
                       <Phone className="w-4 h-4" /> Call (828) 524-7773
                     </a>
                   </div>

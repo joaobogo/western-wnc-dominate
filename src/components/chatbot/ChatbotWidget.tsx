@@ -460,7 +460,7 @@ export default function ChatbotWidget() {
               </form>
               <div className="px-3 pb-2 flex items-center justify-between text-xs text-muted-foreground">
                 <span className="font-body">Prefer to talk?</span>
-                <a href="tel:8285247773" className="inline-flex items-center gap-1 font-body font-medium text-primary hover:text-accent transition-colors">
+                <a href="tel:+18285247773" className="inline-flex items-center gap-1 font-body font-medium text-primary hover:text-accent transition-colors">
                   <Phone className="w-3 h-3" /> (828) 524-7773
                 </a>
               </div>

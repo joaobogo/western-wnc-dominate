@@ -164,7 +164,7 @@ const VeluxProof = () => {
               Request Skylight Inspection <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:8285247773"
+              href="tel:+18285247773"
               className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold text-[14px] px-7 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-colors"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" /> (828) 524-7773

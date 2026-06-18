@@ -46,7 +46,7 @@ const CardCapture = ({
           <ArrowRight className="w-4 h-4 relative" />
         </Link>
         <a
-          href="tel:8285247773"
+          href="tel:+18285247773"
           className="border border-border text-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-secondary transition-all"
         >
           <Phone className="w-4 h-4" /> Call Direct
@@ -101,7 +101,7 @@ const EditorialCapture = ({
           <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
         </Link>
         <a
-          href="tel:8285247773"
+          href="tel:+18285247773"
           className="border border-border text-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-secondary transition-all"
         >
           <Phone className="w-4 h-4 text-muted-foreground" /> (828) 524-7773

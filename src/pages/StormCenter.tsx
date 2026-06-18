@@ -125,7 +125,7 @@ const StormCenter = () => {
                   Storm Assessment Line:
                 </span>
                 <a
-                  href="tel:8285247773"
+                  href="tel:+18285247773"
                   className="text-[hsl(var(--dark-section-foreground))] font-heading font-bold text-sm hover:text-accent transition-colors"
                 >
                   (828) 524-7773

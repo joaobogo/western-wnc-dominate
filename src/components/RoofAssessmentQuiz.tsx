@@ -269,7 +269,7 @@ const RoofAssessmentQuiz = () => {
                       <span className="relative z-10">{result.cta}</span>
                       <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                     </a>
-                    <a href="tel:8285247773" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">
+                    <a href="tel:+18285247773" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">
                       Call (828) 524-7773
                     </a>
                   </div>
