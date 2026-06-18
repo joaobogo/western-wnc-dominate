@@ -20,6 +20,12 @@ export interface TownData {
   notableNeighborhoods: string[];
   marketAuthorityAngle: string;
   heroImage: string;
+  /**
+   * Tight, conversion-focused 2–4 sentence block injected near the top of
+   * the town page. Should name the town, name the work Highlander does
+   * there, and feel local without overclaiming.
+   */
+  localRelevance: string;
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
