@@ -16,3 +16,5 @@ export type { LocalInsight } from "./WNCRelevance";
 
 export { default as ConstructionFAQs, constructionFAQLibrary, getConstructionFAQsByCategory } from "./ConstructionFAQs";
 export type { FAQ } from "./ConstructionFAQs";
+
+export { default as DesignProgramPromo, designProgramPhases } from "./DesignProgramPromo";
