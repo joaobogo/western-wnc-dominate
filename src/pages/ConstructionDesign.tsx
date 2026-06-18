@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight, ClipboardCheck, PenTool, FileCheck, CheckCircle,
-  Layers, Ruler, Compass, ShieldCheck, MessageSquare, HardHat,
-  Sparkles, Phone, ChevronRight,
+  Layers, Compass, ShieldCheck, MessageSquare, HardHat, Ruler,
+  Sparkles, Phone, ChevronRight, FileText, DollarSign, Clock,
+  Home, Trees, PlusSquare, DoorOpen,
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema, faqSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -13,237 +14,469 @@ import { ScrollReveal } from "@/components/motion";
 import GoldLine from "@/components/motion/GoldLine";
 import { ConstructionClosingCTA, ConstructionMidCTA } from "@/components/construction";
 
+/**
+ * /construction/design — Design Services for Construction Projects
+ *
+ * Approved vocabulary only. NEVER use "architect / architectural / free design".
+ *
+ * NOTE: All fee ranges below are PRE-LAUNCH PLACEHOLDERS pending final approval
+ * from Javi / Highlander. Edit the DESIGN_PHASES array to update. Public copy
+ * uses "typical range" and "depending on project scope" — never guaranteed
+ * pricing. See `// FEES PENDING APPROVAL` markers.
+ */
+
 const heroImg = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
-const phases = [
+// FEES PENDING APPROVAL — edit here to update across the page
+const DESIGN_PHASES = [
   {
     icon: ClipboardCheck,
     label: "Phase 1",
-    title: "Discovery & Scope",
-    detail: "We walk the site, document goals and constraints, and produce a written construction scope. You leave Phase 1 with a clear definition of what the project actually is — before anyone draws a line or quotes a number.",
+    title: "Schematic Design",
+    forWho: "Anyone deciding what to build — and roughly what it costs.",
     deliverables: [
-      "On-site review with our design lead",
-      "Documented goals, constraints, and priorities",
-      "Written scope of work",
-      "Preliminary budget range",
+      "Measured existing conditions",
+      "Concept floor plans and elevations",
+      "3D views",
+      "Material direction",
+      "Realistic preliminary budget range",
     ],
+    feeRange: "$3,000–$9,500",
+    timeline: "2–3 weeks to concept meeting",
   },
   {
     icon: PenTool,
     label: "Phase 2",
-    title: "Plans, 3D Views & Material Direction",
-    detail: "Our in-house design team produces layouts, plans, 3D views, and material direction. You see — and refine — the project before it ever becomes a construction proposal.",
+    title: "Design Development & Permit Set",
+    forWho: "Clients ready to move toward approval.",
     deliverables: [
-      "Floor plans and elevations",
-      "3D views of the proposed build",
-      "Material direction and finish guidance",
-      "Revisions until the direction is right",
+      "Fully dimensioned permit-ready drawings",
+      "Code and zoning summary",
+      "Engineering coordination",
+      "Permit submittal support",
     ],
+    feeRange: "$4,000–$13,500",
+    timeline: "3–4 weeks plus jurisdiction review",
   },
   {
     icon: FileCheck,
     label: "Phase 3",
-    title: "Permit Set & Construction Documents",
-    detail: "Permit-ready drawings and construction documents your crew can actually build from — and your county will actually approve. This is the bridge from design to a firm construction agreement.",
+    title: "Full Construction Documents",
+    forWho: "Clients who want bid-ready documentation, and all new construction projects.",
     deliverables: [
-      "Permit set drawings",
-      "Construction documents for the build crew",
-      "Coordination with permitting officials",
-      "Final construction scope and pricing",
+      "Complete construction set",
+      "Full schedules",
+      "Specifications",
+      "Trade-by-trade scopes of work",
     ],
+    feeRange: "$5,000–$19,500",
+    timeline: "4–6 weeks",
   },
 ];
 
-const whoItsFor = [
-  { icon: Layers, title: "Home Additions", detail: "Master suites, garages, sunrooms, two-story expansions, and in-law suites where structural tie-ins and layout flow matter." },
-  { icon: Compass, title: "Major Renovations", detail: "Whole-home and multi-room renovations that need a coordinated plan instead of decisions made on the fly." },
-  { icon: Ruler, title: "Outdoor Living Builds", detail: "Screened porches, covered decks, outdoor kitchens, and multi-phase outdoor spaces that need real planning for slope and weather." },
-  { icon: HardHat, title: "Custom & New Construction", detail: "Ground-up mountain builds and complex custom projects where a proper design phase prevents expensive mistakes." },
+const whyDesignFirst = [
+  "Clarifies what you actually want to build",
+  "Helps Highlander understand the existing conditions of your home and site",
+  "Creates drawings and 3D views you can react to and refine",
+  "Supports honest budget conversations early — before commitments",
+  "Moves qualified projects smoothly toward permitting and construction",
+  "Gives you deliverables you keep, even if you pause after a phase",
 ];
 
-const whyPaid = [
-  { icon: ShieldCheck, title: "Real time, real deliverables", detail: "A paid design phase means our team is dedicated to your project — producing real drawings, real 3D views, and real construction documents, not napkin sketches." },
-  { icon: MessageSquare, title: "No vague estimates", detail: "By the end of Phase 3, you know exactly what is being built. Construction pricing is based on a defined scope, not guesses." },
-  { icon: Sparkles, title: "Design-build advantage", detail: "A portion of design fees can credit toward your construction agreement when you build with Highlander. Planning becomes part of the build, not extra cost." },
+const fixedFeeBullets = [
+  "Fixed tier pricing by project scope",
+  "Clear deliverables for each phase",
+  "Defined timeline expectations",
+  "Drawings, 3D views, scopes, and permit support — depending on phase",
+  "Better information before construction pricing is set",
+  "A more professional path from idea to build",
+];
+
+const whoStarts = [
+  { icon: Home, label: "Home Additions" },
+  { icon: HardHat, label: "Garages" },
+  { icon: DoorOpen, label: "Guest & In-Law Suites" },
+  { icon: Trees, label: "Screened Porches" },
+  { icon: PlusSquare, label: "Covered Porches" },
+  { icon: Sparkles, label: "Sunrooms" },
+  { icon: Layers, label: "Two-Story Additions" },
+  { icon: Compass, label: "Outdoor Living Projects" },
+  { icon: Ruler, label: "Remodels" },
+  { icon: HardHat, label: "New Construction" },
+  { icon: FileText, label: "Projects Without Complete Plans" },
+  { icon: MessageSquare, label: "Anyone Needing Scope & Budget Clarity" },
 ];
 
 const faqs = [
-  { question: "Is the Design & Consultation Agreement free?", answer: "No. It is a paid, three-phase planning program. We invest real design time, on-site review, drawings, 3D views, and construction documents — and we price that work transparently before you commit." },
-  { question: "What do I get for the design fee?", answer: "A documented scope of work, layouts and plans, 3D views, material direction, and (in Phase 3) a permit set and construction documents your county and our build crews can actually use." },
-  { question: "Can I use the plans with another builder?", answer: "Yes. You own the deliverables from your design phases. We design them so any qualified builder could use them — but the design-build advantage applies only when Highlander builds the project." },
-  { question: "How does the credit toward construction work?", answer: "When you move forward with Highlander as your builder, a portion of your design fees can credit toward your construction agreement. Specific amounts are confirmed in writing in your Design & Consultation Agreement." },
-  { question: "Do I have to commit to all three phases up front?", answer: "No. The phases are designed to be sequential — you decide at each step whether to continue. Many projects only need Phase 1 and Phase 2; others need the full permit set in Phase 3." },
-  { question: "Is your design lead a licensed professional?", answer: "Our in-house design lead and design team produce layouts, plans, 3D views, and construction documents for Highlander projects. Where a project legally requires a licensed design professional or engineer, we coordinate with the appropriate licensed partner." },
-  { question: "How long does the design process take?", answer: "Phase 1 typically takes 1–3 weeks. Phase 2 usually runs 3–8 weeks depending on revisions. Phase 3 timing depends on scope and county permitting. Your design lead provides a project-specific schedule before Phase 1 begins." },
+  { question: "Why does Highlander charge for design?", answer: "Design produces real deliverables — measured conditions, concept plans, 3D views, permit-ready drawings, and construction documents — and requires serious planning work from our in-house design team. A paid program ensures the work is dedicated to your project and produced to a professional standard." },
+  { question: "Can I stop after Phase 1?", answer: "Yes. The phases are sequential and you decide at each step whether to continue. Many remodel and addition clients only need Phases 1 and 2. You keep the deliverables from any phase you complete." },
+  { question: "Do I keep the drawings and deliverables?", answer: "Yes. You own the deliverables from any phase you complete, including concept plans, 3D views, permit drawings, and construction documents." },
+  { question: "What if I already have plans?", answer: "If your plans are complete and permit-ready, our team can review them and determine whether your project is ready to move toward estimating. If your plans are incomplete or still conceptual, we'll recommend the appropriate design phase to start with." },
+  { question: "What does \"permit set\" mean?", answer: "A permit set is a fully dimensioned set of drawings — with the code and zoning details required — that your local jurisdiction can review and approve for construction. It's the deliverable from Phase 2." },
+  { question: "How does the design fee credit work?", answer: "Clients who complete design with Highlander and then move forward with Highlander for construction may receive a portion of their design fees as a credit on the final construction invoice at project completion. Final credit details are confirmed in your Design & Consultation Agreement." },
+  { question: "Is this required for every construction project?", answer: "No. Smaller, well-defined projects may not need a full design phase. But for additions, major remodels, outdoor living builds, garages, suites, and new construction, a Design & Consultation Agreement is the most reliable starting point." },
+  { question: "Can I start if I'm still exploring ideas?", answer: "Absolutely. Early-stage clients are welcome. Phase 1 is specifically designed for homeowners who are still deciding what to build and roughly what it costs." },
+  { question: "How long does the design process take?", answer: "Phase 1 is typically 2–3 weeks to a concept meeting. Phase 2 is typically 3–4 weeks plus jurisdiction review. Phase 3 is typically 4–6 weeks. Your design lead provides a project-specific schedule before Phase 1 begins." },
+  { question: "Does this apply to roofing projects?", answer: "Roofing-only projects usually do not need the full design program. The Design & Consultation Agreement is for construction scopes — additions, remodels, outdoor living, and new builds — including projects where roofing work ties into a larger construction package." },
 ];
 
 const ConstructionDesign = () => {
   return (
     <>
       <SEOHead
-        title="Design & Consultation Agreement | Highlander Construction"
-        description="Highlander's paid three-phase design program for additions, renovations, and custom builds in Western North Carolina. Scope, plans, 3D views, and a permit set — before construction begins."
+        title="Design Services for Construction Projects | Highlander WNC"
+        description="Highlander's in-house design services for additions, remodels, outdoor living, and new construction in Western North Carolina. Three fixed-fee phases — scope, permit set, and construction documents — with real budget guidance before you build."
         path="/construction/design"
         jsonLd={[
           breadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Construction", url: "/construction" },
-            { name: "Design & Consultation", url: "/construction/design" },
+            { name: "Design Services", url: "/construction/design" },
           ]),
           faqSchema(faqs),
         ]}
       />
       <Header />
       <main>
-        {/* HERO */}
-        <section className="relative min-h-[60vh] md:min-h-[72vh] flex items-end overflow-hidden">
+        {/* ─── HERO ─── */}
+        <section className="relative min-h-[62vh] md:min-h-[74vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImg} alt="Construction plans and 3D views for a Western North Carolina home build" className="w-full h-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.85)] via-[hsl(var(--hero-overlay)/0.55)] to-transparent" />
+            <img src={heroImg} alt="Design drawings and 3D views for a Western North Carolina construction project" className="w-full h-full object-cover" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.55)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.6)] to-transparent z-10" />
+
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-2 mb-5 text-white/85 text-[12px] font-body">
+              <div className="flex items-center gap-2 mb-5 text-white/80 text-[12px] font-body">
                 <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Construction</Link>
                 <ChevronRight className="w-3 h-3" />
-                <span className="text-[hsl(var(--highland-gold))]">Design & Consultation Agreement</span>
+                <span className="text-[hsl(var(--highland-gold))]">Design Services</span>
               </div>
-              <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[4.25rem] font-heading font-bold text-white leading-[1.02] tracking-tight mb-3">
-                Plan the build before
+
+              <motion.h1
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: HIGHLAND_EASE }}
+                className="text-3xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-white leading-[1.05] tracking-tight mb-7"
+              >
+                Design Services for Construction Projects in <span className="text-[hsl(var(--highland-gold))]">Western North Carolina.</span>
               </motion.h1>
-              <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[4.25rem] font-heading font-bold leading-[1.02] tracking-tight mb-7">
-                <span className="text-[hsl(var(--highland-gold))]">you price the build.</span>
-              </motion.h1>
-              <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="text-[17px] md:text-[20px] text-white/90 max-w-2xl mb-9 leading-relaxed font-body">
-                Our Design &amp; Consultation Agreement is a paid, three-phase planning program for serious additions, renovations, outdoor living projects, and custom builds. Scope. Plans &amp; 3D views. A permit set. Then a real construction agreement — not a guess.
+
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.25 }}
+                className="text-[17px] md:text-[20px] text-white/90 max-w-2xl mb-8 leading-relaxed font-body"
+              >
+                Serious construction projects start with a clear plan. Highlander's in-house design services help homeowners define scope, understand realistic budget ranges, prepare permit-ready drawings, and move confidently toward construction.
               </motion.p>
-              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.45 }} className="flex flex-col sm:flex-row gap-3">
-                <Link to="/design-intake?mode=long" className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]">
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex flex-col sm:flex-row gap-3 mb-8"
+              >
+                <Link
+                  to="/construction-intake"
+                  className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                >
+                  Plan Your Construction Project <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/design-intake?mode=long"
+                  className="bg-white/10 backdrop-blur-sm border border-white/25 text-white font-heading font-bold text-[15px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all uppercase tracking-[0.1em]"
+                >
                   Start with a Design Agreement <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all">
-                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> (828) 524-7773
-                </a>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="flex items-center gap-3 pt-6 border-t border-white/15"
+              >
+                <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.6)]" />
+                <p className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.18em]">
+                  Fixed fees · Defined deliverables · Real budget guidance before you build
+                </p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* OPENING */}
+        {/* ─── SECTION 1: WHY DESIGN COMES FIRST ─── */}
         <section className="section-padding bg-background">
-          <div className="container-tight max-w-3xl text-center">
-            <ScrollReveal variant="fade">
-              <GoldLine width="3rem" className="mx-auto mb-7" />
-              <h2 className="text-2xl md:text-3xl lg:text-[2.25rem] font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
-                The reason projects go sideways isn't construction. It's the absence of a real planning phase.
-              </h2>
-              <p className="text-foreground/80 text-base md:text-lg leading-relaxed font-body">
-                Vague scopes become surprise change orders. Napkin sketches become permit delays. Our paid Design &amp; Consultation Agreement exists so that by the time we talk price, the project is defined, drawn, and ready to build.
-              </p>
-              <GoldLine width="3rem" className="mx-auto mt-7" delay={0.3} />
-            </ScrollReveal>
+          <div className="container-tight">
+            <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">
+              <ScrollReveal variant="fade">
+                <GoldLine width="3rem" className="mb-6" />
+                <span className="eyebrow mb-3 block">Why Design Comes First</span>
+                <h2 className="section-heading mb-6">An instant quote isn't realistic for serious builds.</h2>
+                <div className="space-y-5 text-foreground/80 text-base md:text-lg font-body leading-relaxed">
+                  <p>
+                    For additions, remodels, outdoor living projects, garages, guest suites, and new construction, an instant quote is rarely realistic. Real budgets — and real timelines — come from real planning.
+                  </p>
+                  <p>
+                    Design helps define the project before pricing and construction decisions are made. Whether you're still exploring ideas or ready to draw a permit set, the design phase meets you where you are.
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal variant="rise-subtle" delay={0.15}>
+                <ul className="space-y-3">
+                  {whyDesignFirst.map((item) => (
+                    <li key={item} className="flex items-start gap-3 bg-card border border-border rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.25)] transition-colors">
+                      <CheckCircle className="w-5 h-5 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground/85 text-[14.5px] font-body leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-foreground/65 text-[13.5px] italic font-body">
+                  Still exploring? You're welcome here. Phase 1 is built for homeowners who are still figuring out what to build and what it might cost.
+                </p>
+              </ScrollReveal>
+            </div>
           </div>
         </section>
 
-        {/* THREE PHASES */}
-        <section className="section-padding bg-secondary/40 tartan-bg">
+        {/* ─── SECTION 2: THE THREE DESIGN PHASES ─── */}
+        <section className="section-padding bg-secondary/40 tartan-bg relative">
           <div className="container-tight">
             <div className="max-w-2xl mx-auto text-center mb-12">
-              <span className="eyebrow text-[hsl(var(--highland-gold))] mb-3 block">The Three Phases</span>
-              <h2 className="section-heading mb-4">How a Design Agreement Works.</h2>
-              <p className="text-foreground/75 text-base font-body">Sequential. Transparent. You decide at each step whether to continue.</p>
+              <span className="eyebrow text-[hsl(var(--highland-gold))] mb-3 block">The Three Design Phases</span>
+              <h2 className="section-heading mb-4">A Clear, Sequential Path From Idea to Build.</h2>
+              <p className="text-foreground/75 text-base font-body">Each phase has fixed pricing, defined deliverables, and a clear timeline. You decide at each step whether to continue.</p>
             </div>
+
             <div className="grid lg:grid-cols-3 gap-5">
-              {phases.map((p, i) => (
-                <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-card border border-border rounded-none p-7 md:p-8 relative overflow-hidden group hover:border-[hsl(var(--highland-gold)/0.3)] card-lift">
+              {DESIGN_PHASES.map((p, i) => (
+                <motion.div
+                  key={p.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-card border border-border rounded-none p-7 md:p-8 relative overflow-hidden group hover:border-[hsl(var(--highland-gold)/0.35)] card-lift flex flex-col"
+                >
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.5)] to-transparent" />
+
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.08)] border border-[hsl(var(--highland-gold)/0.25)] flex items-center justify-center">
                       <p.icon className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <div className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">{p.label}</div>
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-xl mb-3 leading-tight">{p.title}</h3>
-                  <p className="text-foreground/75 text-[14.5px] font-body leading-relaxed mb-5">{p.detail}</p>
-                  <ul className="space-y-2 border-t border-border pt-4">
-                    {p.deliverables.map((d) => (
-                      <li key={d} className="flex items-start gap-2 text-[13px] text-foreground/70 font-body">
-                        <CheckCircle className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
-                        <span>{d}</span>
+
+                  <h3 className="font-heading font-bold text-foreground text-xl md:text-[1.4rem] mb-3 leading-tight">{p.title}</h3>
+
+                  <div className="mb-5">
+                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-foreground/55 mb-1">Who it's for</div>
+                    <p className="text-foreground/80 text-[14px] font-body leading-relaxed">{p.forWho}</p>
+                  </div>
+
+                  <div className="mb-5 flex-1">
+                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-foreground/55 mb-2">What you get</div>
+                    <ul className="space-y-1.5">
+                      {p.deliverables.map((d) => (
+                        <li key={d} className="flex items-start gap-2 text-[13.5px] text-foreground/80 font-body">
+                          <CheckCircle className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="border-t border-border pt-4 grid grid-cols-2 gap-3">
+                    <div>
+                      <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-foreground/55 mb-1">
+                        <DollarSign className="w-3 h-3" /> Typical Range
+                      </div>
+                      <div className="font-heading font-bold text-foreground text-sm">{p.feeRange}</div>
+                      <div className="text-[11px] text-foreground/55 font-body">depending on project scope</div>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-foreground/55 mb-1">
+                        <Clock className="w-3 h-3" /> Timeline
+                      </div>
+                      <div className="font-heading font-bold text-foreground text-sm leading-tight">{p.timeline}</div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="max-w-3xl mx-auto mt-10 bg-card border-l-2 border-[hsl(var(--highland-gold))] p-5 md:p-6">
+              <p className="text-foreground/80 text-[14.5px] font-body leading-relaxed">
+                <span className="font-heading font-bold text-foreground">You can stop after any phase and keep your deliverables.</span> Phases stack — most remodel and addition clients begin with Phases 1 and 2.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── SECTION 3: DESIGN-BUILD ADVANTAGE ─── */}
+        <section className="section-dark tartan-dark">
+          <div className="section-padding">
+            <div className="container-tight max-w-4xl">
+              <ScrollReveal variant="fade">
+                <div className="text-center mb-10">
+                  <span className="eyebrow text-[hsl(var(--highland-gold))] mb-3 block">Design-Build Advantage</span>
+                  <h2 className="text-2xl md:text-4xl lg:text-[2.75rem] font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
+                    Design Fees Can Credit Back When You Build With Highlander.
+                  </h2>
+                  <div className="max-w-2xl mx-auto space-y-5 text-dark-section-foreground/85 text-base md:text-lg font-body leading-relaxed">
+                    <p>
+                      Clients who complete design with Highlander and move forward with Highlander for construction may receive a portion of their design fees as a credit on the final construction invoice at project completion.
+                    </p>
+                    <p className="text-dark-section-foreground/65 text-[14px] italic">
+                      Final credit details are confirmed in your Design &amp; Consultation Agreement.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Link
+                    to="/construction-intake"
+                    className="cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                  >
+                    Plan Your Construction Project <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── SECTION 4: FIXED FEES & DEFINED DELIVERABLES ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <ScrollReveal variant="fade">
+                <span className="eyebrow mb-3 block">How We Price Design</span>
+                <h2 className="section-heading mb-6">No Hourly Guesswork. Clear Phases. Defined Deliverables.</h2>
+                <div className="space-y-5 text-foreground/80 text-base font-body leading-relaxed">
+                  <p>
+                    Highlander's design process uses fixed phase pricing and itemized deliverables instead of vague hourly design work. You know exactly what each phase includes — and what it costs — before you begin.
+                  </p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal variant="rise-subtle" delay={0.15}>
+                <div className="bg-card border border-border rounded-none p-7 md:p-8 relative">
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))]" />
+                  <ul className="space-y-3">
+                    {fixedFeeBullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3 text-foreground/85 text-[14.5px] font-body leading-relaxed">
+                        <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-1 flex-shrink-0" />
+                        <span>{b}</span>
                       </li>
                     ))}
                   </ul>
-                </motion.div>
-              ))}
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
 
-        {/* WHO IT'S FOR */}
+        {/* ─── SECTION 5: REAL BUDGET HONESTY EARLY ─── */}
+        <section className="section-padding bg-secondary/40">
+          <div className="container-tight max-w-3xl text-center">
+            <ScrollReveal variant="fade">
+              <GoldLine width="3rem" className="mx-auto mb-6" />
+              <span className="eyebrow mb-3 block">Real Budget Honesty</span>
+              <h2 className="section-heading mb-6">Real Budget Guidance Before You Commit to the Full Build.</h2>
+              <div className="space-y-5 text-foreground/80 text-base md:text-lg font-body leading-relaxed">
+                <p>
+                  Phase 1 includes a preliminary budget range, giving homeowners a more realistic understanding of the project before committing to larger design phases, permitting, or construction.
+                </p>
+                <p>
+                  This supports Highlander's "no instant quote" discipline for serious construction projects. Instead of guessing at a number, we help you define the project first — then price it honestly.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ─── SECTION 6: WHO SHOULD START WITH DESIGN ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <div className="max-w-2xl mx-auto text-center mb-12">
-              <span className="eyebrow mb-3 block">Who It's For</span>
-              <h2 className="section-heading mb-4">A Smart First Step for Serious Projects.</h2>
-              <p className="text-foreground/75 text-base font-body">A Design Agreement is the right starting point any time the build is complex enough that guessing would be expensive.</p>
+              <span className="eyebrow mb-3 block">Who Should Start With Design</span>
+              <h2 className="section-heading mb-4">If Your Project Fits Here, Start With a Design Agreement.</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-5">
-              {whoItsFor.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-card border border-border rounded-none p-6 md:p-7 card-lift hover:border-[hsl(var(--highland-gold)/0.25)]">
-                  <div className="w-10 h-10 bg-[hsl(var(--highland-gold)/0.06)] border border-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+              {whoStarts.map((w, i) => (
+                <motion.div
+                  key={w.label}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.04 }}
+                  className="bg-card border border-border rounded-none p-4 md:p-5 flex flex-col items-start gap-3 hover:border-[hsl(var(--highland-gold)/0.3)] transition-colors"
+                >
+                  <div className="w-9 h-9 bg-[hsl(var(--highland-gold)/0.08)] border border-[hsl(var(--highland-gold)/0.2)] flex items-center justify-center">
+                    <w.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-lg mb-2">{item.title}</h3>
-                  <p className="text-foreground/75 text-[14.5px] font-body leading-relaxed">{item.detail}</p>
+                  <span className="font-heading font-bold text-foreground text-[13.5px] leading-tight">{w.label}</span>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* WHY PAID */}
-        <section className="section-dark tartan-dark">
-          <div className="section-padding">
-            <div className="container-tight">
-              <div className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow text-[hsl(var(--highland-gold))] mb-3 block">Why a Paid Design Phase</span>
-                <h2 className="text-2xl md:text-4xl font-heading font-bold text-dark-section-foreground mb-4 leading-tight">Real Planning Is Worth Paying For.</h2>
-              </div>
-              <div className="grid md:grid-cols-3 gap-5">
-                {whyPaid.map((item) => (
-                  <div key={item.title} className="border border-dark-section-foreground/15 p-7 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
-                    <div className="w-10 h-10 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.3)] flex items-center justify-center mb-4">
-                      <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                    </div>
-                    <h3 className="font-heading font-bold text-dark-section-foreground text-lg mb-2">{item.title}</h3>
-                    <p className="text-dark-section-foreground/80 text-[14.5px] font-body leading-relaxed">{item.detail}</p>
+        {/* ─── SECTION 7: ALREADY HAVE PLANS ─── */}
+        <section className="section-padding bg-secondary/40 tartan-bg">
+          <div className="container-tight max-w-3xl">
+            <ScrollReveal variant="fade">
+              <div className="bg-card border border-border rounded-none p-8 md:p-10 relative">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))]" />
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.25)] flex items-center justify-center">
+                    <FileText className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
-                ))}
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--highland-gold))]">Already Have Plans?</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-tight">
+                  Send Them Over — We'll Tell You Where Your Project Stands.
+                </h2>
+                <div className="space-y-4 text-foreground/80 text-base font-body leading-relaxed mb-7">
+                  <p>
+                    If you already have complete, permit-ready plans, Highlander can review the documents and determine whether your project is ready to move toward estimating.
+                  </p>
+                  <p>
+                    If your plans are incomplete or still conceptual, your project may begin with the appropriate design phase.
+                  </p>
+                </div>
+                <Link
+                  to="/design-intake?mode=long"
+                  className="cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                >
+                  Submit Your Plans <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
 
         <ConstructionMidCTA
-          headline="Ready to plan the project properly?"
-          subheadline="Start a Design & Consultation Agreement and we'll define the scope before we ever talk construction pricing."
+          headline="Ready to define your project the right way?"
+          subheadline="Start with a Design & Consultation Agreement and we'll scope, draw, and document the build before construction pricing is set."
           ctaText="Start with a Design Agreement"
         />
 
-        {/* FAQs */}
+        {/* ─── SECTION 8: FAQs ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-3xl">
             <div className="text-center mb-10">
-              <span className="eyebrow mb-3 block">Design Agreement FAQs</span>
+              <span className="eyebrow mb-3 block">Design Services FAQs</span>
               <h2 className="section-heading">Common Questions.</h2>
             </div>
             <div className="space-y-3">
               {faqs.map((f) => (
-                <details key={f.question} className="group bg-card border border-border rounded-none p-5 open:border-[hsl(var(--highland-gold)/0.3)]">
+                <details key={f.question} className="group bg-card border border-border rounded-none p-5 open:border-[hsl(var(--highland-gold)/0.35)] transition-colors">
                   <summary className="font-heading font-bold text-foreground text-base cursor-pointer list-none flex items-center justify-between gap-4">
                     <span>{f.question}</span>
                     <ChevronRight className="w-4 h-4 text-[hsl(var(--highland-gold))] group-open:rotate-90 transition-transform flex-shrink-0" />
@@ -255,12 +488,38 @@ const ConstructionDesign = () => {
           </div>
         </section>
 
-        <ConstructionClosingCTA
-          headline={"Plan the Build.\nThen Build It Right."}
-          subheadline="Tell us about your project. We'll review your goals and walk you through whether a Design & Consultation Agreement is the right starting point."
-          ctaText="Plan Your Construction Project"
-          eyebrow="Start the Conversation"
-        />
+        {/* ─── FINAL CTA ─── */}
+        <section className="section-dark tartan-dark relative overflow-hidden">
+          <div className="section-padding">
+            <div className="container-tight max-w-3xl text-center">
+              <span className="eyebrow text-[hsl(var(--highland-gold))] mb-4 block">Start the Conversation</span>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-dark-section-foreground leading-[1.1] mb-6">
+                Ready to Plan Your<br className="hidden md:block" /> Construction Project?
+              </h2>
+              <p className="text-dark-section-foreground/80 text-base md:text-lg font-body leading-relaxed max-w-2xl mx-auto mb-9">
+                Tell us what you're considering, whether you already have plans, and how soon you hope to build. Our team will help determine whether your project is ready for estimating — or should begin with a Design &amp; Consultation Agreement.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+                <Link
+                  to="/construction-intake"
+                  className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                >
+                  Plan Your Construction Project <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/design-intake?mode=long"
+                  className="bg-white/10 backdrop-blur-sm border border-white/25 text-dark-section-foreground font-heading font-bold text-[15px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all uppercase tracking-[0.1em]"
+                >
+                  Start with a Design Agreement <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/80 hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-[14px]">
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                (828) 524-7773
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
       <StickyMobileCTA />
