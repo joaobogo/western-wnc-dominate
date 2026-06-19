@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import teamPhoto from "@/assets/team-photo.webp";
 import { ScrollReveal } from "@/components/motion";
+import { teamMembers as approvedTeam } from "@/data/team";
 
 const storyImg = "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?auto=format&fit=crop&q=80&w=1920"; // Smoky Mountains focused picture
 const heritageImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
@@ -25,53 +26,30 @@ const values = [
   { icon: Award, title: "Military Friendly Company", description: "We are proud to be a military-friendly company, offering dedicated support and special considerations to those who have served. Honor and integrity guide every project we undertake." },
 ];
 
-const leadership = [
-  {
-    name: "Owner — Name Coming Soon",
-    role: "Owner & Lead Advisor",
-    bio: "Bio coming soon. The owner personally walks every property, approves every scope, and signs off on every final inspection — the way a family-owned WNC company should operate.",
-    image: null,
-    credentials: ["NC Licensed GC", "CertainTeed ShingleMaster", "WNC Local"]
-  },
-  {
-    name: "Director of Operations — Name Coming Soon",
-    role: "Director of Operations",
-    bio: "Bio coming soon. Manages project sequencing, client communication, and ensures the Highlander standard is met from first call to final walkthrough.",
-    image: null,
-    credentials: ["Project Coordination", "Client Experience", "Operational Excellence"]
-  }
-];
+const pickMember = (slug: string) => approvedTeam.find((m) => m.slug === slug)!;
+
+const leadership = [pickMember("luke-smith"), pickMember("kristy-smith")].map((m) => ({
+  name: m.name,
+  role: m.role,
+  bio: m.bio[0],
+  image: m.image,
+  alt: m.alt,
+  credentials: m.details.slice(0, 3).map((d) => d.value),
+}));
 
 const teamMembers = [
-  {
-    name: "Roofing Division Lead",
-    role: "Roofing Foreman",
-    specialty: "System Installation & QC",
-    bio: "Bio coming soon. Leads our in-house roofing crews with manufacturer-exact precision on shingle, metal, and specialty systems.",
-    image: null
-  },
-  {
-    name: "Construction Foreman",
-    role: "Construction Foreman",
-    specialty: "Framing & Structural Execution",
-    bio: "Bio coming soon. Translates design layouts into buildable reality across additions, renovations, and outdoor living projects.",
-    image: null
-  },
-  {
-    name: "Project Manager",
-    role: "Project Manager",
-    specialty: "Scheduling & Client Communication",
-    bio: "Bio coming soon. Your single point of contact from contract to completion — owns the schedule, the punch list, and the daily updates.",
-    image: null
-  },
-  {
-    name: "Estimator",
-    role: "Lead Estimator",
-    specialty: "Scope & Pricing Accuracy",
-    bio: "Bio coming soon. Builds honest, line-item estimates so you understand exactly what's included before any work begins.",
-    image: null
-  }
-];
+  pickMember("david-bourque"),
+  pickMember("robert-harrison"),
+  pickMember("kyle-poindexter"),
+  pickMember("alex-hurst"),
+].map((m) => ({
+  name: m.name,
+  role: m.role,
+  specialty: m.details.find((d) => d.label === "Specialty")?.value ?? m.role,
+  bio: m.bio[0],
+  image: m.image,
+  alt: m.alt,
+}));
 
 const craftsmanshipPrinciples = [
   { title: "Material Selection", detail: "We spec materials based on your property's exposure, not the lowest bid. Every component is rated for WNC conditions." },
@@ -230,7 +208,7 @@ const About = () => {
                 >
                   <div className="w-full md:w-48 lg:w-56 aspect-square overflow-hidden bg-muted flex items-center justify-center border border-border relative">
                     {person.image ? (
-                      <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                      <img src={person.image} alt={person.alt} className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-4">
                         <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
@@ -277,7 +255,7 @@ const About = () => {
                 >
                   <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center relative">
                     {person.image ? (
-                      <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                      <img src={person.image} alt={person.alt} className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-6">
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">

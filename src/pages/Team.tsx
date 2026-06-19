@@ -1,87 +1,18 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, Camera, ClipboardList, Users, Hammer, HardHat, Calculator, Headset, Crown, AlertCircle } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-
-type Member = { role: string; specialty?: string };
-type Group = { icon: React.ElementType; label: string; eyebrow: string; description: string; members: Member[] };
-
-const groups: Group[] = [
-  {
-    icon: Crown,
-    eyebrow: "Leadership",
-    label: "Owners & Leadership",
-    description: "Owner-led decisions on every project — from first estimate to final walkthrough.",
-    members: [
-      { role: "Owner & Lead Advisor", specialty: "Strategic Direction · Roofing & Construction" },
-      { role: "Director of Operations", specialty: "Project Sequencing · Client Experience" },
-    ],
-  },
-  {
-    icon: Headset,
-    eyebrow: "Office & Client Care",
-    label: "Office & Contact Team",
-    description: "The first voice you hear when you call Highlander, and the people who keep your project on track.",
-    members: [
-      { role: "Client Coordinator", specialty: "Scheduling & Intake" },
-      { role: "Office Administrator", specialty: "Documentation & Warranties" },
-    ],
-  },
-  {
-    icon: ClipboardList,
-    eyebrow: "Project Managers",
-    label: "Project Managers",
-    description: "Your single point of contact from contract through completion. Daily updates, real answers.",
-    members: [
-      { role: "Roofing Project Manager", specialty: "Residential & Commercial Roofing" },
-      { role: "Construction Project Manager", specialty: "Additions, Renovations, Outdoor Living" },
-    ],
-  },
-  {
-    icon: Calculator,
-    eyebrow: "Estimators",
-    label: "Estimators",
-    description: "Honest, line-item estimates built on real measurements — not guesses or pressure tactics.",
-    members: [
-      { role: "Lead Roofing Estimator", specialty: "Inspections & Scope Accuracy" },
-      { role: "Construction Estimator", specialty: "Budgets & Material Specs" },
-    ],
-  },
-  {
-    icon: HardHat,
-    eyebrow: "Roofing Crew",
-    label: "Roofing Crew",
-    description: "In-house Highlander employees — not day-labor subs. Trained on every CertainTeed and metal system we install.",
-    members: [
-      { role: "Roofing Foreman" },
-      { role: "Lead Installer" },
-      { role: "Installer" },
-      { role: "Installer" },
-    ],
-  },
-  {
-    icon: Hammer,
-    eyebrow: "Construction Crew",
-    label: "Construction Crew",
-    description: "Framers, finishers, and craftsmen who execute additions, outdoor living spaces, and renovations to a Highlander standard.",
-    members: [
-      { role: "Construction Foreman" },
-      { role: "Lead Carpenter" },
-      { role: "Carpenter" },
-      { role: "Carpenter" },
-    ],
-  },
-];
+import { teamMembers } from "@/data/team";
 
 const Team = () => {
   return (
     <>
       <SEOHead
-        title="Our Team | Highlander Roofing & Construction"
-        description="Meet the leadership, project managers, estimators, and in-house crews behind Highlander Roofing & Construction in Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
+        title="Meet the Team | Highlander Roofing Services"
+        description="Meet the Highlander Roofing Services team serving Franklin, Highlands, Cashiers, Sylva, and Western North Carolina with roofing consultations, project management, inspections, repairs, and customer-focused service."
         path="/team"
         jsonLd={[
           organizationSchema(),
@@ -102,115 +33,98 @@ const Team = () => {
               The People Behind Highlander
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-3xl">
-              Owner-Led. In-House.<br /><span className="text-[hsl(var(--highland-gold))]">Built in Western North Carolina.</span>
+              Meet the Team Behind<br /><span className="text-[hsl(var(--highland-gold))]">Highlander Roofing Services</span>
             </h1>
             <p className="text-white/75 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
-              When you hire Highlander, you get a real Western NC team — leadership, project managers, estimators, and in-house roofing and construction crews who live and work in these mountains.
+              Highlander Roofing Services is led by a local team committed to dependable workmanship, honest communication, and customer-focused service across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. From company leadership and sales to inspections, project management, repairs, and field coordination, each team member plays a role in helping homeowners protect and improve their properties.
             </p>
           </div>
         </section>
 
-        {/* CLIENT-INFO NOTICE */}
-        <section className="bg-[hsl(var(--highland-gold)/0.08)] border-y border-[hsl(var(--highland-gold)/0.25)]">
-          <div className="container-tight py-6 md:py-7 flex items-start gap-4">
-            <AlertCircle className="w-5 h-5 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-1" />
-            <div className="text-sm md:text-[15px] text-foreground/80 font-body leading-relaxed">
-              <strong className="font-heading text-foreground">Team photos and bios coming soon.</strong>{" "}
-              We're finalizing headshots, names, and short bios for every role below. Highlander team: please send approved headshots, full names, roles, short bios, certifications, and years of experience to populate this page.
-            </div>
-          </div>
-        </section>
-
-        {/* GROUPS */}
+        {/* TEAM GRID */}
         <section className="section-padding bg-background">
-          <div className="container-tight space-y-20 md:space-y-24">
-            {groups.map((group, gi) => (
-              <div key={group.label}>
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
+          <div className="container-tight space-y-16 md:space-y-20">
+            {teamMembers.map((member, idx) => {
+              const reverse = idx % 2 === 1;
+              return (
+                <motion.article
+                  key={member.slug}
+                  id={member.slug}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="flex items-start gap-4 mb-8 md:mb-10"
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.55 }}
+                  className={`grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 md:gap-12 items-start ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}
                 >
-                  <div className="w-12 h-12 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <group.icon className="w-6 h-6 text-primary" />
+                  <div>
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-muted shadow-sm">
+                      <img
+                        src={member.image}
+                        alt={member.alt}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-top"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 h-1 bg-[hsl(var(--highland-gold))]" />
+                    </div>
                   </div>
                   <div>
-                    <span className="eyebrow block mb-2">{group.eyebrow}</span>
-                    <h2 className="section-heading">{group.label}</h2>
-                    <p className="text-muted-foreground mt-3 max-w-2xl font-body">{group.description}</p>
-                  </div>
-                </motion.div>
-
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-                  {group.members.map((m, i) => (
-                    <motion.div
-                      key={`${gi}-${i}`}
-                      initial={{ opacity: 0, y: 16 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.05, duration: 0.4 }}
-                      className="card-premium overflow-hidden"
-                    >
-                      <div className="aspect-[4/5] bg-muted flex flex-col items-center justify-center text-center p-6 border-b border-border">
-                        <div className="w-16 h-16 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center mb-4">
-                          <Camera className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
+                    <span className="eyebrow block mb-2">Highlander Team</span>
+                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2 leading-tight">
+                      {member.name}
+                    </h2>
+                    <p className="text-primary font-heading font-bold text-[14px] uppercase tracking-[0.18em] mb-5">
+                      {member.role}
+                    </p>
+                    <div className="space-y-4 text-foreground/85 font-body text-[16px] md:text-[17px] leading-relaxed mb-6">
+                      {member.bio.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                    </div>
+                    <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pt-5 border-t border-border">
+                      {member.details.map((d) => (
+                        <div key={d.label} className="flex flex-col">
+                          <dt className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))]">
+                            {d.label}
+                          </dt>
+                          <dd className="text-sm md:text-[15px] text-foreground/85 font-body mt-1">
+                            {d.value}
+                          </dd>
                         </div>
-                        <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
-                          Team Photo Coming Soon
-                        </span>
-                      </div>
-                      <div className="p-5 md:p-6">
-                        <h3 className="font-heading font-bold text-foreground text-base mb-1">Name Coming Soon</h3>
-                        <p className="text-primary font-heading font-bold text-[13px] uppercase tracking-[0.15em] mb-3">{m.role}</p>
-                        {m.specialty && (
-                          <p className="text-xs text-muted-foreground/90 font-body">{m.specialty}</p>
-                        )}
-                        <p className="text-xs text-muted-foreground/70 italic mt-3">Bio coming soon.</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            ))}
+                      ))}
+                    </dl>
+                  </div>
+                </motion.article>
+              );
+            })}
           </div>
         </section>
 
-        {/* INFO-REQUEST BLOCK FOR CLIENT */}
+        {/* INTERNAL LINKS */}
         <section className="section-padding bg-secondary">
-          <div className="container-tight max-w-4xl">
-            <div className="card-premium p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-6">
-                <Users className="w-7 h-7 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-1" />
-                <div>
-                  <span className="eyebrow block mb-2">For the Highlander Team</span>
-                  <h2 className="section-heading">Help Us Finish This Page</h2>
-                </div>
-              </div>
-              <p className="text-muted-foreground font-body mb-6">
-                To replace these placeholder cards with the real Highlander team, please send the following for every team member you want featured:
-              </p>
-              <ul className="grid sm:grid-cols-2 gap-3 text-sm text-foreground/85 font-body mb-8">
-                {[
-                  "Professional headshot (high-resolution)",
-                  "Full name (and preferred display name)",
-                  "Role / job title",
-                  "Short bio (2–4 sentences)",
-                  "Certifications and licenses",
-                  "Years of experience",
-                  "Hometown or WNC connection (optional)",
-                  "Specialty / focus area (optional)",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] mt-2 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-muted-foreground italic">
-                Until approved details are provided, this page intentionally avoids placeholder names and stock photos.
-              </p>
+          <div className="container-tight">
+            <div className="text-center mb-10">
+              <span className="eyebrow block mb-3">Keep Exploring</span>
+              <h2 className="section-heading">Connect With Highlander</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { to: "/about", label: "About Highlander" },
+                { to: "/contact", label: "Contact Our Team" },
+                { to: "/recent-projects", label: "Recent Projects" },
+                { to: "/residential-roofing", label: "Residential Roofing" },
+                { to: "/roof-repair", label: "Roof Repair" },
+                { to: "/commercial-roofing", label: "Commercial Roofing" },
+                { to: "/giving-back", label: "Community Involvement" },
+              ].map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="card-premium p-5 flex items-center justify-between group hover:border-primary/40 transition-colors"
+                >
+                  <span className="font-heading font-bold text-foreground">{link.label}</span>
+                  <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
+                </Link>
+              ))}
             </div>
           </div>
         </section>
