@@ -449,6 +449,7 @@ export default function ChatbotWidget() {
                     <LeadCaptureCard
                       onSubmit={() => {}}
                       onDismiss={() => setCards(prev => prev.filter((_, idx) => idx !== i))}
+                      transcript={messages}
                     />
                   )}
                   {card.type === "storm-checklist" && <StormChecklistCard />}
