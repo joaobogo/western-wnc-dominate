@@ -65,8 +65,8 @@ const processSteps = [
 
 const galleryImages = [
   { src: proj1, alt: "Custom construction project with metal roofing", label: "Custom Exterior Build", location: "Mountain Modern, Asheville" },
-  { src: proj2, alt: "Visually sensitive renovation", label: "Structural Renovation", location: "Heritage Home, Weaverville" },
-  { src: proj3, alt: "Complex addition with cedar integration", label: "Multi-Phase Addition", location: "Cedar & Stone, Black Mountain" },
+  { src: proj2, alt: "Visually sensitive renovation", label: "Structural Renovation", location: "Heritage Home, Franklin" },
+  { src: proj3, alt: "Complex addition with cedar integration", label: "Multi-Phase Addition", location: "Cedar & Stone, Sylva" },
   { src: proj4, alt: "High-coordination specialty build", label: "Specialty Build", location: "Custom Timber Frame, Fairview" },
 ];
 

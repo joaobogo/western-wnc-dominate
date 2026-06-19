@@ -79,8 +79,8 @@ const processSteps = [
 
 const galleryImages = [
   { src: proj1, alt: "Room addition on mountain home", label: "Guest Suite Addition", location: "Mountain Residence, Asheville" },
-  { src: proj2, alt: "Expanded living area with metal roof integration", label: "Great Room Expansion", location: "Ridgeline Property, Weaverville" },
-  { src: proj3, alt: "Sunroom addition with mountain views", label: "Four-Season Room", location: "Valley Home, Black Mountain" },
+  { src: proj2, alt: "Expanded living area with metal roof integration", label: "Great Room Expansion", location: "Ridgeline Property, Franklin" },
+  { src: proj3, alt: "Sunroom addition with mountain views", label: "Four-Season Room", location: "Valley Home, Sylva" },
   { src: proj4, alt: "Garage addition matching existing design theme", label: "Detached Garage Build", location: "Custom Build, Fairview" },
 ];
 

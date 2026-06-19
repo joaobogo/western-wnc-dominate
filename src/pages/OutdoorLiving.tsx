@@ -69,8 +69,8 @@ const processSteps = [
 
 const galleryImages = [
   { src: proj1, alt: "Covered porch with mountain views", label: "Covered Porch", location: "Mountain Estate, Asheville" },
-  { src: proj2, alt: "Screened room with metal roof", label: "Screened Porch", location: "Ridge Property, Weaverville" },
-  { src: proj3, alt: "Multi-level deck with integrated stairs", label: "Composite Deck", location: "Hillside Build, Black Mountain" },
+  { src: proj2, alt: "Screened room with metal roof", label: "Screened Porch", location: "Ridge Property, Franklin" },
+  { src: proj3, alt: "Multi-level deck with integrated stairs", label: "Composite Deck", location: "Hillside Build, Sylva" },
   { src: proj4, alt: "Timber-frame pavilion", label: "Timber Pavilion", location: "Custom Design, Fairview" },
 ];
 
