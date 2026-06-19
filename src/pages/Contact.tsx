@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SocialLinks from "@/components/SocialLinks";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import FormConsent from "@/components/FormConsent";
 import {
