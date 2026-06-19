@@ -46,28 +46,28 @@ const MetalRoofing = () => {
       />
       <Header />
       <main>
-        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img src={metalImg} alt="Metal roofing in WNC" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
-          <div className="container-tight relative z-10 pb-16 md:pb-24">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="text-accent text-sm font-semibold uppercase tracking-wider mb-3">
+          <div className="container-tight relative z-10 pb-14 md:pb-20 pt-32 md:pt-40">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+              <div className="text-[hsl(var(--highland-gold))] text-[10px] font-body font-semibold uppercase tracking-[0.2em] mb-6">
                 Roofing · Metal
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-balance">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-balance text-primary-foreground leading-[1.05] tracking-tight">
                 Metal Roofing Built for Mountain Weather
               </h1>
-              <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
+              <p className="text-white/85 max-w-2xl text-base md:text-lg mb-8 font-body leading-relaxed">
                 Standing seam and exposed-fastener metal systems engineered for Western NC elevation, wind, snow load, and rainfall. Specified and installed as a complete system by an team-led, licensed contractor.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                   Start Your Metal Roof Project <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:+18285247773" className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors">
+                <a href="tel:+18285247773" className="bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
                   <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
               </div>
@@ -92,8 +92,8 @@ const MetalRoofing = () => {
         </section>
 
         <section className="section-padding bg-muted/20">
-          <div className="container-tight grid md:grid-cols-3 gap-10">
-            <div className="md:col-span-2 space-y-6">
+          <div className="container-tight grid lg:grid-cols-5 gap-10">
+            <div className="lg:col-span-3 space-y-6">
               <h2 className="text-2xl md:text-3xl font-heading font-bold">What we install</h2>
               <ul className="space-y-3">
                 {[
@@ -111,7 +111,7 @@ const MetalRoofing = () => {
                 ))}
               </ul>
             </div>
-            <aside className="bg-background border border-border rounded-lg p-6 h-fit sticky top-24">
+            <aside className="lg:col-span-2 bg-background border border-border rounded-lg p-6 md:p-8 h-fit lg:sticky lg:top-24">
               <h3 className="font-heading font-bold text-xl mb-2">Request an Assessment</h3>
               <p className="text-sm text-foreground/70 mb-4">Most metal roof assessments are scheduled within 48 hours.</p>
               <InspectionForm />
@@ -139,14 +139,21 @@ const MetalRoofing = () => {
           </section>
         )}
 
-        <section className="section-padding bg-muted/20">
-          <div className="container-tight max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Metal Roofing FAQs</h2>
-            <Accordion type="single" collapsible>
+        <section className="section-padding bg-background">
+          <div className="container-tight max-w-4xl">
+            <div className="text-center mb-10 md:mb-14">
+              <span className="eyebrow mb-3 block">Metal Roofing FAQs</span>
+              <h2 className="section-heading mb-4">Common Questions About<br className="hidden md:block" /> Metal Roofing.</h2>
+            </div>
+            <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((f, i) => (
-                <AccordionItem key={i} value={`m-${i}`}>
-                  <AccordionTrigger className="text-left font-semibold">{f.q}</AccordionTrigger>
-                  <AccordionContent className="text-foreground/80">{f.a}</AccordionContent>
+                <AccordionItem key={i} value={`m-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
+                  <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
+                    <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{f.q}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6 pr-2">
+                    <p className="text-muted-foreground text-sm leading-relaxed font-body">{f.a}</p>
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
