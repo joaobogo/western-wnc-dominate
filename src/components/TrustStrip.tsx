@@ -7,9 +7,9 @@ import { Shield, Award, Clock, Star, MapPin, CheckCircle2 } from "lucide-react";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const stats = [
-  { value: "4.9★", label: "Google Rating", detail: "Across 8 WNC Counties" },
-  { value: "40+", label: "Years Combined", detail: "Roofing & Construction" },
   { value: "150+", label: "Verified Reviews", detail: "From WNC Homeowners" },
+  { value: "40+", label: "Years Combined", detail: "Roofing & Construction" },
+  { value: "24h", label: "Response Window", detail: "For urgent roof issues" },
 ];
 
 const credentials = [
