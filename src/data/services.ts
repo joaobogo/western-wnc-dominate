@@ -34,7 +34,7 @@ export const services: ServiceData[] = [
       "Free inspection before any work begins",
     ],
     faqs: [
-      { question: "How quickly can you repair my roof?", answer: "We typically schedule repair inspections within 24–48 hours and complete most repairs within a week, depending on scope and weather conditions." },
+      { question: "How quickly can you repair my roof?", answer: "We typically schedule repair inspections on a same-day or next-day basis and complete most repairs within a week, depending on scope and weather conditions." },
       { question: "Do you work with insurance companies?", answer: "Yes. We document all damage with photos and detailed reports to support your insurance claim process from start to finish." },
       { question: "How much does a roof repair cost in WNC?", answer: "Repair pricing is scope-based — it depends on damage extent, materials, and accessibility. We provide a free on-site inspection and a transparent, itemized estimate before any work begins." },
       { question: "Can you repair just a section of my roof?", answer: "Absolutely. We specialize in targeted repairs that address the problem area without unnecessary full replacements. We'll always recommend the most cost-effective solution." },

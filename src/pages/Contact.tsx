@@ -589,7 +589,7 @@ export default function Contact() {
                         <div>
                           <p className="text-sm font-heading font-semibold text-foreground">Office Hours</p>
                           <p className="text-xs text-muted-foreground font-body">Mon–Fri 8:00 AM – 5:00 PM</p>
-                          <p className="text-xs text-accent font-body font-semibold">Emergency response available 24/7</p>
+                          <p className="text-xs text-accent font-body font-semibold">Same-day emergency contact</p>
                         </div>
                       </div>
                     </div>

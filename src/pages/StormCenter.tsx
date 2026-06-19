@@ -132,7 +132,7 @@ const StormCenter = () => {
                 </a>
               </div>
               <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-xs mt-3 font-body">
-                We respond within 24–48 hours for storm assessments across all of Western NC.
+                We respond on a same-day or next-day basis for storm assessments across all of Western NC.
               </p>
             </motion.div>
           </div>

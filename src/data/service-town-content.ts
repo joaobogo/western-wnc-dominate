@@ -47,7 +47,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Franklin, NC",
     intro:
-      "When something fails on a Franklin roof, you usually want a real person on site this week — not next month. Because we're based here, most repair inspections happen within 24–48 hours and the fix is scheduled before we leave the driveway.",
+      "When something fails on a Franklin roof, you usually want a real person on site this week — not next month. Because we're based here, most repair inspections happen on a same-day or next-day basis and the fix is scheduled before we leave the driveway.",
     localContext:
       "The repairs we see most often in Franklin: lifted ridge caps from spring storms coming up the Little Tennessee valley, pipe-boot failures on 15+ year asphalt, and chimney flashing that was never properly stepped on older homes.",
     whoItsFor:
@@ -58,7 +58,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     metaDescription:
       "Honest roof repair in Franklin, NC. Local crews, 24–48 hour inspections, full photo documentation, and a straight answer on whether to repair or replace.",
     faqs: [
-      { q: "How fast can you get to my Franklin home for a leak?", a: "Most active-leak inspections in Franklin happen within 24–48 hours of the call. Temporary protection can usually be installed the same visit." },
+      { q: "How fast can you get to my Franklin home for a leak?", a: "Most active-leak inspections in Franklin happen on a same-day or next-day basis of the call. Temporary protection can usually be installed the same visit." },
       { q: "Do you provide written estimates for insurance?", a: "Yes. Every repair gets photo documentation and a written scope you can hand directly to your adjuster." },
       { q: "Is there a minimum charge for a small repair?", a: "We're transparent about minimums during the call so there are no surprises when the estimate arrives." },
     ],
@@ -295,7 +295,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Repair",
     h1: "Roof Repair in Sylva, NC",
     intro:
-      "When something fails on a Sylva roof, we can usually be on-site within 24–48 hours and have a written assessment in your hands before we leave. Most repairs are scheduled the same week.",
+      "When something fails on a Sylva roof, we can usually be on-site on a same-day or next-day basis and have a written assessment in your hands before we leave. Most repairs are scheduled the same week.",
     localContext:
       "Common Sylva repairs: pipe-boot failures on 12+ year asphalt, lifted ridges from valley-channeled spring storms, and chimney flashing on older homes built before stepped flashing became standard.",
     whoItsFor:
@@ -306,7 +306,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     metaDescription:
       "Honest roof repair in Sylva, NC. 24–48 hour inspections, photo documentation, fair pricing, and a straight answer on repair-vs-replace.",
     faqs: [
-      { q: "How fast can you respond to a leak in Sylva?", a: "Most active-leak inspections happen within 24–48 hours. Temporary protection is typically installed during the inspection visit." },
+      { q: "How fast can you respond to a leak in Sylva?", a: "Most active-leak inspections happen on a same-day or next-day basis. Temporary protection is typically installed during the inspection visit." },
       { q: "Will you tell me if a repair isn't worth doing?", a: "Yes. If your roof is too far gone for repair dollars to make sense, we'll say so — in writing — before you spend the money." },
       { q: "Do you do insurance documentation?", a: "Every repair includes photo and written documentation suitable for an insurance claim." },
     ],

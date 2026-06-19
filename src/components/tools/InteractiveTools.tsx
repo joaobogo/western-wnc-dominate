@@ -142,7 +142,7 @@ export function StormChecklist() {
   const totalChecked = checked.size;
 
   const getUrgency = () => {
-    if (criticalCount >= 2) return { level: "High — contact us today", color: "text-red-600", desc: "Multiple critical signs of storm damage. We recommend an inspection within 24-48 hours to prevent further damage and support your insurance claim." };
+    if (criticalCount >= 2) return { level: "High — contact us today", color: "text-red-600", desc: "Multiple critical signs of storm damage. We recommend an inspection on a same-day or next-day basis to prevent further damage and support your insurance claim." };
     if (totalChecked >= 3) return { level: "Moderate — schedule an inspection this week", color: "text-amber-600", desc: "Several signs of storm impact. A professional inspection will determine the extent of damage and whether an insurance claim is warranted." };
     if (totalChecked > 0) return { level: "Low — monitor and document", color: "text-green-600", desc: "Minor signs. Take photos, keep records, and consider a routine inspection at your convenience." };
     return null;
