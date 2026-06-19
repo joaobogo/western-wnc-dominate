@@ -15,7 +15,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import heroImg from "@/assets/gallery/cedar-005.jpg";
 import cedar001 from "@/assets/gallery/cedar-001.jpg";
 import cedar002 from "@/assets/gallery/cedar-002.jpg";
-import metal009 from "@/assets/gallery/metal-009.jpg";
+import metal009 from "@/assets/gallery/metal-010.jpg";
 import metal010 from "@/assets/gallery/metal-010.jpg";
 
 /* ═══════════════════════════════════════════

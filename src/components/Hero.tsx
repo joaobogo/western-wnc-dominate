@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, Clock, HardHat, Home, Mountain, Phone, Ruler } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
-import heroLayer2 from "@/assets/gallery/metal-009.jpg";
+import heroLayer2 from "@/assets/gallery/metal-010.jpg";
 import heroLayer3 from "@/assets/gallery/asphalt-hero.webp";
 import veluxLogo from "@/assets/logo-velux.png";
 import { useEffect, useRef, useState } from "react";

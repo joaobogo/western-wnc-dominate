@@ -19,7 +19,7 @@ import { trackEvent } from "@/lib/analytics";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 
 import asphalt from "@/assets/gallery/asphalt-hero.webp";
-import metal from "@/assets/gallery/metal-009.jpg";
+import metal from "@/assets/gallery/metal-010.jpg";
 import cedar from "@/assets/gallery/cedar-005.jpg";
 import synthetic from "@/assets/gallery/cedar-002.jpg";
 import asphaltDark from "@/assets/gallery/asphalt-004.jpg";
