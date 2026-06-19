@@ -19,8 +19,8 @@ const ConstructionIntake = () => (
     <Header />
     <main>
       {/* Planning expectation framing — sets the design-first tone before the form */}
-      <section className="bg-background border-b border-border">
-        <div className="container-tight section-padding-sm py-12 md:py-16">
+      <section className="bg-background border-b border-border pt-32 md:pt-40">
+        <div className="container-tight section-padding-sm pb-12 md:pb-16">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 mb-4">
               <Compass className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
