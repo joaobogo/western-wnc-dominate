@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart, Users, ArrowRight, HandHeart, Mountain, Hammer, Handshake, Building2, ImageIcon, Phone } from "lucide-react";
+import { Heart, Users, ArrowRight, HandHeart, Mountain, Hammer, Handshake, Building2, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -190,35 +190,6 @@ const GivingBack = () => {
         </section>
 
         {/* ── PHOTO PROOF SECTION ── */}
-        <section className="section-padding bg-secondary">
-          <div className="container-tight">
-            <div className="text-center mb-12 max-w-2xl mx-auto">
-              <span className="eyebrow mb-3 block">Community Moments</span>
-              <h2 className="section-heading">From the Mountains We Serve</h2>
-              <p className="text-muted-foreground mt-4 font-body">
-                A space for real photos from Highlander's community involvement, local projects, and team moments across Western North Carolina. Approved imagery will be added as it becomes available.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="md:col-span-2 aspect-[16/10] overflow-hidden card-premium relative group">
-                <img
-                  src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1600"
-                  alt="Western North Carolina mountain landscape"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <div className="aspect-[16/10] md:aspect-auto card-premium bg-heritage-charcoal text-white flex flex-col justify-center p-7">
-                <ImageIcon className="w-8 h-8 text-[hsl(var(--highland-gold))] mb-4" />
-                <h3 className="font-heading font-bold text-xl mb-3 leading-tight">Real Photos, Coming Soon</h3>
-                <p className="text-white/70 text-sm font-body leading-relaxed">
-                  Approved team, event, and community photos will appear here as the Highlander team shares them.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ── HOW TO CONNECT ── */}
         <section className="section-padding bg-heritage-charcoal text-white relative overflow-hidden">
