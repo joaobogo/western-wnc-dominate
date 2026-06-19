@@ -155,7 +155,7 @@ const Footer = () => {
                 <img 
                   src={logo} 
                   alt="Highlander Roofing &amp; Construction logo" 
-                  className="h-[100px] md:h-[120px] w-auto transition-all duration-500 group-hover:scale-105" 
+                  className="h-[56px] md:h-[64px] w-auto transition-all duration-500 group-hover:scale-105" 
                   loading="lazy" 
                   decoding="async" 
                 />
