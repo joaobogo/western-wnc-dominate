@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import logoCertainteed from "@/assets/logo-certainteed-vendor.png";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";
+import logoSenox from "@/assets/logo-senox-vendor.png";
 
 type Vendor = {
   name: string;
@@ -29,6 +30,7 @@ const vendors: Vendor[] = [
   {
     name: "Senox",
     href: "https://senox.com/",
+    image: logoSenox,
     description:
       "Specialty gutter and rainware supplier. Highlander uses Senox coil and seamless gutter machinery for on-site fabrication of aluminum and copper gutters.",
   },
