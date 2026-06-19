@@ -39,20 +39,10 @@ const Hero = () => {
     "Premium dimensional asphalt roof on a Highlands-area home",
   ];
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-  const contentY = useTransform(scrollYProgress, [0, 0.5], [0, 80]);
-
   return (
     <section ref={ref} className="relative min-h-[100svh] flex flex-col overflow-hidden">
-      {/* === BACKGROUND — cinematic parallax + scale === */}
-      <motion.div className="absolute inset-0" style={{ y: bgY, scale: bgScale }}>
+      {/* === BACKGROUND — static, no parallax for smooth scroll === */}
+      <div className="absolute inset-0">
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
             No video. All real WNC roof photography. */}
         {layers.map((src, i) => (
