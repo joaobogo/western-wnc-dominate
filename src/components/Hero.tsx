@@ -180,10 +180,10 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 px-3 py-1.5 bg-black/50 backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] rounded-sm"
               >
-                <Mountain className="w-3 h-3 text-[hsl(var(--highland-gold)/0.6)]" />
-                <span className="text-[14px] md:text-[16px] font-body font-bold uppercase tracking-[0.22em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))] drop-shadow-sm">
+                <Mountain className="w-3 h-3 text-[hsl(var(--highland-gold)/0.8)]" />
+                <span className="text-[14px] md:text-[16px] font-body font-bold uppercase tracking-[0.22em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))]">
                    Western North Carolina · Since 2017
                  </span>
               </motion.div>
