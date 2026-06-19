@@ -9,7 +9,7 @@ import TartanBackground from "@/components/TartanBackground";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { MountainContours } from "@/components/motion/BackgroundTexture";
 import { towns } from "@/data/towns";
-import serviceAreasHero from "@/assets/service-areas-hero.jpg.asset.json";
+import serviceAreasHero from "@/assets/service-areas-hero-smokies.jpg.asset.json";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -54,21 +54,22 @@ const ServiceAreas = () => {
       />
       <Header />
       <main>
-        <section className="relative min-h-[78vh] md:min-h-[88vh] flex items-end overflow-hidden">
+        <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-end overflow-hidden">
           <div className="absolute inset-0 section-dark">
             <img
               src={serviceAreasHero.url}
               alt="Sunlit Blue Ridge and Smoky Mountains over a Western North Carolina town at golden hour"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-[60%_center]"
               width={1920}
               height={1080}
               loading="eager"
               fetchPriority="high"
             />
-            {/* Premium readability gradients: subtle warm wash at top, deeper anchor at bottom for text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--hero-overlay)/0.25)] via-transparent to-[hsl(var(--hero-overlay)/0.78)]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.55)] via-[hsl(var(--hero-overlay)/0.15)] to-transparent" />
-            <TartanBackground opacity={0.06} variant="dark" />
+            {/* Premium readability gradients — keeps the Smoky Mountains bright while
+                anchoring the lower-left text area with strong contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.85)] via-[hsl(var(--hero-overlay)/0.25)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.7)] via-[hsl(var(--hero-overlay)/0.1)] to-transparent" />
+            <TartanBackground opacity={0.04} variant="dark" />
           </div>
 
           <MountainContours variant="dark" opacity={0.05} />
@@ -81,20 +82,16 @@ const ServiceAreas = () => {
                   transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
                   className="lg:col-span-7"
                 >
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="h-px w-8 bg-[hsl(var(--highland-gold)/0.5)]" />
-                    <span className="text-[12px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highland Authority</span>
+                  <div className="flex items-center gap-3 mb-6">
+                    <Compass className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                    <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Service Areas · Western North Carolina</span>
                   </div>
-                  <div className="flex items-center gap-3 mb-5">
-                    <Compass className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                    <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Service Areas</span>
-                  </div>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-[1.02] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
-                    We work in these towns every week{" "}
-                    <span className="text-[hsl(var(--highland-gold))]">because this region is home.</span>
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-heading font-bold text-white mb-6 leading-[1.05] tracking-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)]">
+                    We serve Western North Carolina with crews who{" "}
+                    <span className="text-[hsl(var(--highland-gold))]">know these towns.</span>
                   </h1>
-                  <p className="text-base md:text-lg text-white/90 max-w-xl mb-10 leading-relaxed font-body drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
-                    Highlander is locally operated, with offices in Franklin and Sylva. Our crews know the roads, the building codes, the inspectors, and the weather patterns that shape every mountain home in Western North Carolina.
+                  <p className="text-lg md:text-xl text-white max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
+                    Highlander is locally operated, with offices in Franklin and Sylva. Our crews know the roads, the building codes, the inspectors, and the weather patterns that shape every mountain home in this region.
                   </p>
                 </motion.div>
 
@@ -112,10 +109,10 @@ const ServiceAreas = () => {
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 + i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
-                        className="rounded-sm border border-white/15 bg-white/[0.06] backdrop-blur-md p-4 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
+                        className="rounded-sm border border-white/25 bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-xl p-4 md:p-5 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.65)]"
                       >
-                        <span className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none block mb-1.5">{stat.value}</span>
-                        <span className="text-[11px] font-heading font-semibold text-white block uppercase tracking-wider mb-1">{stat.label}</span>
+                        <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none block mb-2">{stat.value}</span>
+                        <span className="text-[12px] font-heading font-bold text-white block uppercase tracking-[0.12em] mb-1.5">{stat.label}</span>
                         <span className="text-[12px] text-white/95 font-body leading-snug block">{stat.detail}</span>
                       </motion.div>
                     ))}
