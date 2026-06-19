@@ -111,9 +111,16 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 110px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 150px;
+    }
   }
 
   body {
