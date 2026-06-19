@@ -137,7 +137,7 @@ const HomeAdditions = () => {
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" /></div>
                   <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/80">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/30" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
                 <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Home Additions</span>
               </motion.div>
 
@@ -180,8 +180,8 @@ const HomeAdditions = () => {
                   { value: "3–6", unit: "mo", label: "Typical Timeline" },
                 ].map((item) => (
                   <div key={item.label} className="p-3 bg-white/5 border border-white/8 rounded-sm text-center">
-                    <div className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}<span className="text-[10px] text-primary-foreground/30 ml-0.5">{item.unit}</span></div>
-                    <div className="text-[9px] text-primary-foreground/30 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
+                    <div className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}<span className="text-[10px] text-primary-foreground/70 ml-0.5">{item.unit}</span></div>
+                    <div className="text-[9px] text-primary-foreground/70 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
                   </div>
                 ))}
               </motion.div>

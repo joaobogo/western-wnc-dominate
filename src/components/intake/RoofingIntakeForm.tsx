@@ -188,7 +188,7 @@ const RoofingIntakeForm = () => {
     <div>
       <div className="flex items-center justify-between mb-7">
         <div>
-          <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/45 mb-1">
+          <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/80 mb-1">
             Step {step + 1} of 4
           </p>
           <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight">

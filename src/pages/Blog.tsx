@@ -346,7 +346,7 @@ const Blog = () => {
                           <h4 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
                           <p className="text-muted-foreground text-xs mt-0.5 line-clamp-1">{post.excerpt}</p>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/30 mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/70 mt-0.5 flex-shrink-0" />
                       </Link>
                     ))}
                   </div>
@@ -378,7 +378,7 @@ const Blog = () => {
                           <h4 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
                           <p className="text-muted-foreground text-xs mt-0.5">{post.town} · {post.readTime} read</p>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/30 mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/70 mt-0.5 flex-shrink-0" />
                       </Link>
                     ))}
                   </div>
@@ -512,7 +512,7 @@ const Blog = () => {
               </div>
             ) : (
               <div className="text-center py-16">
-                <Search className="w-8 h-8 text-muted-foreground/30 mx-auto mb-3" />
+                <Search className="w-8 h-8 text-muted-foreground/70 mx-auto mb-3" />
                 <p className="text-muted-foreground font-body">No articles found matching your search.</p>
                 <button onClick={() => { setSearchQuery(""); setActiveCategory("All"); }} className="text-primary text-sm font-semibold mt-2 hover:underline">
                   Clear filters

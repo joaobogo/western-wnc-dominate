@@ -28,7 +28,7 @@ const ReviewCard = ({ rows, children }: Props) => {
         </div>
         <dl className="divide-y divide-[hsl(var(--heritage-green)/0.12)]">
           {filled.length === 0 && (
-            <div className="px-5 py-4 text-[12.5px] font-body text-foreground/45">No selections yet.</div>
+            <div className="px-5 py-4 text-[12.5px] font-body text-foreground/80">No selections yet.</div>
           )}
           {filled.map((r) => (
             <div key={r.label} className="px-5 py-3 grid grid-cols-[120px,1fr] sm:grid-cols-[160px,1fr] gap-3 items-start">

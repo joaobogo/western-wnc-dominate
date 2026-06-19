@@ -143,7 +143,7 @@ const ConstructionAuthority = () => {
                 After years of roofing and general construction, the most common question we heard was:
                 <em className="text-dark-section-foreground/70"> "Can you handle the rest of the house too?"</em>
               </p>
-              <p className="text-dark-section-foreground/40 text-[15px] font-body leading-[1.8]">
+              <p className="text-dark-section-foreground/75 text-[15px] font-body leading-[1.8]">
                 The answer is now yes. Every skill that makes us exceptional roofers — project management, structural understanding, weather protection, craftsmanship, and finish quality — transfers directly to construction. It's not a pivot. It's a natural extension.
               </p>
             </div>
@@ -176,12 +176,12 @@ const ConstructionAuthority = () => {
 
                 {/* Skill transfer labels */}
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-dark-section-foreground/25 bg-dark-section-foreground/[0.04] px-2 py-0.5">{d.roofingLabel}</span>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-dark-section-foreground/70 bg-dark-section-foreground/[0.04] px-2 py-0.5">{d.roofingLabel}</span>
                   <ArrowRight className="w-3 h-3 text-[hsl(var(--highland-gold)/0.3)]" />
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold)/0.5)] bg-[hsl(var(--highland-gold)/0.06)] px-2 py-0.5">{d.constructionLabel}</span>
                 </div>
 
-                <p className="text-dark-section-foreground/35 text-[12.5px] leading-[1.7] font-body">
+                <p className="text-dark-section-foreground/75 text-[12.5px] leading-[1.7] font-body">
                   {d.desc}
                 </p>
               </motion.div>
@@ -198,7 +198,7 @@ const ConstructionAuthority = () => {
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
-                  <span className="text-dark-section-foreground/35 text-[12px] font-body font-medium">
+                  <span className="text-dark-section-foreground/75 text-[12px] font-body font-medium">
                     {item}
                   </span>
                 </div>

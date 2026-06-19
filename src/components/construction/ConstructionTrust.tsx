@@ -142,7 +142,7 @@ const ConstructionTrust = ({
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
               <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">{eyebrow}</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground whitespace-pre-line">{heading}</h2>
-              {subheading && <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">{subheading}</p>}
+              {subheading && <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">{subheading}</p>}
             </motion.div>
 
             <div className={`grid grid-cols-1 ${colClass} gap-4 md:gap-5`}>
@@ -155,7 +155,7 @@ const ConstructionTrust = ({
                     <pillar.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{pillar.title}</h3>
-                  <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+                  <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
                 </motion.div>
               ))}
             </div>

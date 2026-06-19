@@ -127,7 +127,7 @@ const OutdoorLiving = () => {
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" /></div>
                   <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
                 <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Outdoor Living</span>
               </motion.div>
 
@@ -172,7 +172,7 @@ const OutdoorLiving = () => {
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/8 rounded-sm">
                     <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
-                    <span className="text-[10px] font-body text-primary-foreground/35 uppercase tracking-wider">{item.label}</span>
+                    <span className="text-[10px] font-body text-primary-foreground/75 uppercase tracking-wider">{item.label}</span>
                   </div>
                 ))}
               </motion.div>

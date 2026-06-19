@@ -94,7 +94,7 @@ const BuilderShell = ({
                     </span>
                     <span
                       className={`text-[11.5px] font-body tracking-tight truncate ${
-                        current ? "text-foreground font-semibold" : "text-foreground/45"
+                        current ? "text-foreground font-semibold" : "text-foreground/80"
                       }`}
                     >
                       {name}
@@ -114,9 +114,9 @@ const BuilderShell = ({
           <div className="flex items-center justify-between">
             <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/55">
               Step {step + 1} of {totalSteps}
-              {currentName ? <span className="text-foreground/45 font-medium normal-case tracking-normal"> · {currentName}</span> : null}
+              {currentName ? <span className="text-foreground/80 font-medium normal-case tracking-normal"> · {currentName}</span> : null}
             </span>
-            <span className="text-[10.5px] font-body text-foreground/45">{pct}%</span>
+            <span className="text-[10.5px] font-body text-foreground/80">{pct}%</span>
           </div>
           <div className="flex gap-1.5">
             {Array.from({ length: totalSteps }).map((_, i) => (
@@ -162,7 +162,7 @@ const BuilderShell = ({
 
             {/* Reassurance footer */}
             <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 max-w-xl">
-              <p className="text-[11.5px] font-body text-foreground/45 leading-relaxed">
+              <p className="text-[11.5px] font-body text-foreground/80 leading-relaxed">
                 Builds a project brief — <span className="text-foreground/65">not an instant quote</span>. Final scope comes from an on-site walkthrough.
               </p>
               {shortFormHref && (
@@ -177,7 +177,7 @@ const BuilderShell = ({
             {/* Mobile switch link */}
             <Link
               to={switchHref}
-              className="md:hidden mt-3 inline-flex items-center gap-1.5 text-[11.5px] font-body text-foreground/45 hover:text-[hsl(var(--highland-gold))] transition-colors"
+              className="md:hidden mt-3 inline-flex items-center gap-1.5 text-[11.5px] font-body text-foreground/80 hover:text-[hsl(var(--highland-gold))] transition-colors"
             >
               <ArrowLeft className="w-3 h-3" /> {switchLabel}
             </Link>
@@ -190,7 +190,7 @@ const BuilderShell = ({
                 <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--heritage-green))]">
                   Your scope brief
                 </span>
-                <span className="text-[10.5px] font-body text-foreground/45">{pct}%</span>
+                <span className="text-[10.5px] font-body text-foreground/80">{pct}%</span>
               </div>
               {summary}
             </div>

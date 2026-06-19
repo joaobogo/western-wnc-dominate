@@ -115,7 +115,7 @@ const RoofRepair = () => {
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Roofing</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Roof Repair</span>
               </motion.div>
 
@@ -157,7 +157,7 @@ const RoofRepair = () => {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">48-Hour Assessment Guarantee</div>
-                  <div className="text-xs text-primary-foreground/40 font-body">Same-day for emergencies. We answer our own phone.</div>
+                  <div className="text-xs text-primary-foreground/75 font-body">Same-day for emergencies. We answer our own phone.</div>
                 </div>
               </motion.div>
             </div>
@@ -171,7 +171,7 @@ const RoofRepair = () => {
               <div className="flex items-center justify-center gap-3 mb-8">
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
                 <div className="w-16 h-px bg-border" />
-                <Search className="w-4 h-4 text-muted-foreground/40" />
+                <Search className="w-4 h-4 text-muted-foreground/75" />
                 <div className="w-16 h-px bg-border" />
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
               </div>
@@ -352,7 +352,7 @@ const RoofRepair = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   When Repair Is Enough.<br className="hidden md:block" /> When It Isn't.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
                   We'll always tell you the truth about your roof's condition. Here's the framework we use to guide our recommendation.
                 </p>
               </motion.div>
@@ -443,7 +443,7 @@ const RoofRepair = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     The Best Repair Is the One<br className="hidden md:block" /> You Don't Have to Do Twice.
                   </h2>
-                  <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     If something doesn't look right, it probably isn't. Call us for an honest assessment — we'll tell you what's happening, what it will take to fix it, and whether repair or replacement is the better path forward.
                   </p>
 
@@ -467,7 +467,7 @@ const RoofRepair = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

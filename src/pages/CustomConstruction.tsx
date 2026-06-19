@@ -116,7 +116,7 @@ const CustomConstruction = () => {
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Custom & Specialty</span>
               </motion.div>
 

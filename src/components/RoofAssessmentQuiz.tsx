@@ -114,7 +114,7 @@ const RoofAssessmentQuiz = () => {
   };
 
   const optionClass = "w-full text-left px-5 py-4 rounded-none border border-border hover:border-[hsl(var(--highland-gold)/0.3)] hover:bg-[hsl(var(--highland-gold)/0.03)] transition-all duration-200";
-  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground/40 text-sm font-body field-premium";
+  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground/75 text-sm font-body field-premium";
   const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/60 mb-2";
 
   return (
@@ -217,7 +217,7 @@ const RoofAssessmentQuiz = () => {
                         <input type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
                       </div>
                       <div>
-                        <label className={labelClass}>Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/30">(optional)</span></label>
+                        <label className={labelClass}>Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/70">(optional)</span></label>
                         <input type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
                       </div>
                     </div>

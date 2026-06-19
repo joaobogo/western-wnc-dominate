@@ -163,7 +163,7 @@ const ConstructionDivision = () => {
                   ].map((stat) => (
                     <div key={stat.label}>
                       <div className="text-lg font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
-                      <div className="text-[10px] uppercase tracking-wider text-primary-foreground/30 font-body mt-0.5">{stat.label}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-primary-foreground/70 font-body mt-0.5">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -171,7 +171,7 @@ const ConstructionDivision = () => {
                   {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Scoping Clarity"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.4)]" />
-                      <span className="text-primary-foreground/25 text-[11px] font-body font-medium tracking-wide">{item}</span>
+                      <span className="text-primary-foreground/70 text-[11px] font-body font-medium tracking-wide">{item}</span>
                     </div>
                   ))}
                 </div>

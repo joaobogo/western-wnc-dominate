@@ -142,15 +142,15 @@ const Hero = () => {
           <div className="flex flex-col items-center gap-2">
             <div className="w-px h-20 bg-gradient-to-b from-transparent to-primary-foreground/15" />
             <div className="w-7 h-7 rounded-none border border-primary-foreground/10 flex items-center justify-center">
-              <Home className="w-3 h-3 text-primary-foreground/25" />
+              <Home className="w-3 h-3 text-primary-foreground/70" />
             </div>
-            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/30 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/70 [writing-mode:vertical-lr] rotate-180">
               Roofing
             </span>
           </div>
           <div className="w-5 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/30 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/70 [writing-mode:vertical-lr] rotate-180">
               Construction
             </span>
             <div className="w-7 h-7 rounded-none border border-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center">

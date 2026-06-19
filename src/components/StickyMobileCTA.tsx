@@ -126,7 +126,7 @@ const StickyMobileCTA = () => {
                           <p className="text-sm font-heading font-semibold text-foreground">Start a Project</p>
                           <p className="text-[10px] text-muted-foreground font-body">No-obligation consultation</p>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-muted-foreground btn-arrow-icon" />
+                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/70 group-hover:text-muted-foreground btn-arrow-icon" />
                       </Link>
                       <a
                         href="tel:+18285247773"
@@ -139,7 +139,7 @@ const StickyMobileCTA = () => {
                           <p className="text-sm font-heading font-semibold text-foreground">Call Direct</p>
                           <p className="text-[10px] text-muted-foreground font-body">(828) 524-7773</p>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-muted-foreground btn-arrow-icon" />
+                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/70 group-hover:text-muted-foreground btn-arrow-icon" />
                       </a>
                     </div>
                   </motion.div>

@@ -69,7 +69,7 @@ export const RoofingClosingCTA = ({
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground whitespace-pre-line">
               {headline}
             </h2>
-            <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+            <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
               {subheadline}
             </p>
 
@@ -93,7 +93,7 @@ export const RoofingClosingCTA = ({
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
                   <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                  <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
+                  <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
                 </div>
               ))}
             </div>
