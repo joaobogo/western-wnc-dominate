@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield, Ruler } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield, Ruler, Heart } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -342,6 +342,14 @@ const Header = () => {
             <Phone className="w-3.5 h-3.5" />
             <span className="hidden xl:inline">(828) 524-7773</span>
           </a>
+          <Link
+            to="/community"
+            aria-label="Giving Back to our community"
+            className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-body font-bold uppercase tracking-[0.1em] text-heritage-charcoal/75 hover:text-[hsl(var(--highland-gold))] transition-colors duration-300 px-2 py-1.5 group"
+          >
+            <Heart className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))] group-hover:fill-[hsl(var(--highland-gold))] transition-all duration-300" />
+            <span>Giving Back</span>
+          </Link>
           <a
             href="tel:+18285247773"
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
