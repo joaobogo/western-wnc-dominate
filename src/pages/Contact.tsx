@@ -135,9 +135,9 @@ export default function Contact() {
       <Header />
       <main className="md:pt-0">
         {/* ── HERO — Compact utility header (unique to Contact) ── */}
-        <section className="relative section-dark overflow-hidden">
-          <div className="absolute inset-0 tartan-dark" />
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--highland-gold)/0.03)] to-transparent pointer-events-none" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--heritage-green))] via-[hsl(var(--heritage-green)/0.88)] to-[hsl(var(--heritage-charcoal)/0.92)]">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--highland-gold)/0.18),transparent_60%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--highland-gold)/0.08),transparent_55%)] pointer-events-none" />
           <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-[0.02] pointer-events-none hidden lg:block">
             <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200" alt="Mountain texture" className="w-full h-full object-cover" />
           </div>
@@ -160,7 +160,7 @@ export default function Contact() {
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[0.95] tracking-tightest">
                     Start the Conversation.
                   </h1>
-                  <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-lg font-medium drop-shadow-sm">
+                  <p className="text-body-lg md:text-body-xl text-white/95 leading-relaxed max-w-lg font-medium drop-shadow-sm">
                     No call centers. No automated systems. A Highlander project advisor — not a salesperson — will personally reach out rapidly.
                   </p>
                 </motion.div>
