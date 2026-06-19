@@ -69,7 +69,7 @@ const RecentProjects = () => {
         {/* Hero */}
         <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
           <div className="absolute inset-0">
-            <img src={heroImg} alt="Highlander roofing project in Western North Carolina" className="w-full h-full object-cover opacity-20" />
+            <img src={heroImg} alt="Highlander roofing project in Western North Carolina" className="w-full h-full object-cover opacity-60" />
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/90 to-secondary/95" />
           </div>
           <div className="container-tight relative py-20 md:py-28">

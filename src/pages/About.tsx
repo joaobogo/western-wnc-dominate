@@ -211,7 +211,7 @@ const About = () => {
                 >
                   <div className="w-full md:w-48 lg:w-56 aspect-square overflow-hidden bg-muted flex items-center justify-center border border-border relative">
                     {person.image ? (
-                      <img src={person.image} alt={person.alt} className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" />
+                      <img src={person.image} alt={person.alt} className="w-full h-full object-cover object-top hover:scale-[1.02] transition-all duration-700" />
                     ) : (
                       <div className="text-center p-4">
                         <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
@@ -258,7 +258,7 @@ const About = () => {
                 >
                   <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center relative">
                     {person.image ? (
-                      <img src={person.image} alt={person.alt} className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                      <img src={person.image} alt={person.alt} className="w-full h-full object-cover object-top group-hover:scale-[1.02] group-hover:scale-105 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-6">
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
@@ -351,7 +351,7 @@ const About = () => {
               transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
               className="mt-16 relative aspect-[21/9] md:aspect-[3/1] overflow-hidden border border-border"
             >
-              <img src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover grayscale opacity-60 hover:opacity-80 transition-opacity duration-700" />
+              <img src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover opacity-100 transition-opacity duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
@@ -652,7 +652,7 @@ const About = () => {
               </ScrollReveal>
               <div className="relative">
                 <div className="aspect-[4/5] bg-muted overflow-hidden">
-                  <img src={heritageImg} alt="Western North Carolina heritage" className="w-full h-full object-cover grayscale opacity-80" />
+                  <img src={heritageImg} alt="Western North Carolina heritage" className="w-full h-full object-cover opacity-100" />
                 </div>
                 {/* Visual badge */}
                 <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary flex items-center justify-center p-6 text-center border border-white/10 shadow-xl">

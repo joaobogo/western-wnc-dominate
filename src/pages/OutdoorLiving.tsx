@@ -196,7 +196,7 @@ const OutdoorLiving = () => {
                   Highlander builds outdoor living spaces scaled to your property, designed for the Western North Carolina climate, and finished with the same quality we bring to every project.
                 </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
-                <img src={porchContextImg} alt="Mountain porch extension" className="w-full h-full object-cover grayscale opacity-40 hover:opacity-60 transition-opacity duration-700" />
+                <img src={porchContextImg} alt="Mountain porch extension" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
               </div>
             </motion.div>

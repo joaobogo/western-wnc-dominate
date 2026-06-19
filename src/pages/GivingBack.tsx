@@ -56,7 +56,7 @@ const GivingBack = () => {
             <img
               src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000"
               alt="Western North Carolina mountain community landscape"
-              className="w-full h-full object-cover opacity-50"
+              className="w-full h-full object-cover opacity-80"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-heritage-charcoal via-heritage-charcoal/40 to-transparent" />
             <TartanBackground opacity={0.03} />
