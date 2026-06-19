@@ -69,23 +69,24 @@ const RecentProjects = () => {
         {/* Hero */}
         <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
           <div className="absolute inset-0">
-            <img src={heroImg} alt="Highlander roofing project in Western North Carolina" className="w-full h-full object-cover opacity-60" />
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/90 to-secondary/95" />
+            <img src={heroImg} alt="Highlander roofing project in Western North Carolina" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/75 to-secondary/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-secondary/60" />
           </div>
-          <div className="container-tight relative pt-32 md:pt-44 pb-16 md:pb-24">
+          <div className="container-tight relative pt-40 md:pt-52 pb-14 md:pb-20">
             <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
               Project Activity · Western North Carolina
             </p>
             <h1 className="text-display-md md:text-display-lg font-heading font-bold text-[hsl(var(--heritage-green))] mb-6 leading-[1.05] tracking-tightest">
               Recent Projects
             </h1>
-            <p className="text-body-lg md:text-body-xl text-foreground/80 max-w-3xl leading-relaxed font-medium mb-8">
+            <p className="text-body-lg md:text-body-xl text-foreground/85 max-w-3xl leading-relaxed font-medium mb-6">
               See how Highlander Roofing Services helps homeowners and property owners across
               Franklin, Highlands, Cashiers, Sylva, and Western North Carolina protect, improve,
               and plan their properties through roofing, construction, gutters, outdoor living,
               and design-led construction support.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 mt-2">
               <Link to="/contact" className="cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all">
                 Request a Free Estimate <ArrowRight className="w-4 h-4" />
               </Link>
