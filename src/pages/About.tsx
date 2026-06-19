@@ -18,7 +18,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const values = [
   { icon: Eye, title: "Transparency Over Tactics", description: "We give honest assessments. If your roof doesn't need replacing, we'll tell you. No pressure, no upselling, no manufactured urgency." },
-  { icon: Hammer, title: "Craftsmanship as Standard", description: "Every project reflects our personal standard — not the minimum required. We build like we're building for our own family." },
+  { icon: Hammer, title: "Craftsmanship as Standard", description: "Every project reflects our personal standard, not the minimum required. We build like we're building for our own family." },
   { icon: Heart, title: "Relationships Over Transactions", description: "We don't chase projects. We earn trust. Most of our work comes from referrals and repeat clients who've seen what we deliver." },
   { icon: Mountain, title: "Mountain-Built Knowledge", description: "We understand what elevation, weather exposure, and WNC terrain demand from a roof and a structure. That knowledge is earned, not taught." },
   { icon: Users, title: "Accountability You Can See", description: "The owner walks your property. Your crew lead is on-site daily. When you call, a real person answers. That's how it should work." },
@@ -53,17 +53,17 @@ const teamMembers = [
 
 const craftsmanshipPrinciples = [
   { title: "Material Selection", detail: "We spec materials based on your property's exposure, not the lowest bid. Every component is rated for WNC conditions." },
-  { title: "Installation Precision", detail: "Our crews follow manufacturer-exact installation protocols. Shortcuts aren't tolerated — period." },
-  { title: "Finish Quality", detail: "We inspect every detail before final walkthrough. Flashing, trim, cleanup — nothing is left incomplete." },
+  { title: "Installation Precision", detail: "Our crews follow manufacturer-exact installation protocols. Shortcuts aren't tolerated, period." },
+  { title: "Finish Quality", detail: "We inspect every detail before final walkthrough. Flashing, trim, cleanup. Nothing is left incomplete." },
   { title: "Long-Term Accountability", detail: "We're here after the project ends. Warranty support, maintenance guidance, and a team you can actually reach." },
 ];
 
 const milestones = [
   { year: "2017", event: "Founded in Franklin, NC", detail: "Started with a truck, a ladder, and a commitment to doing roofing right in these mountains." },
-  { year: "2019", event: "CertainTeed Master Applicator", detail: "Earned the industry's highest installer certification — awarded to the top 1% nationally." },
+  { year: "2019", event: "CertainTeed Master Applicator", detail: "Earned the industry's highest installer certification, awarded to the top 1% nationally." },
   { year: "2021", event: "Second Office in Sylva", detail: "Expanded into Jackson County to better serve the western reaches of our service area." },
   { year: "2022", event: "Construction Division Launched", detail: "Client demand drove expansion into additions, renovations, and outdoor living builds." },
-  { year: "2024", event: "Best of Macon County", detail: "Voted Reader's Choice — the recognition that matters most because it comes from our neighbors." },
+  { year: "2024", event: "Best of Macon County", detail: "Voted Reader's Choice. The recognition that matters most because it comes from our neighbors." },
 ];
 
 const About = () => {
@@ -71,7 +71,7 @@ const About = () => {
     <>
       <SEOHead
         title="About Highlander Roofing & Construction"
-        description="Meet Highlander Roofing & Construction — a premium roofing and construction company serving Western North Carolina. Licensed, certified, locally owned."
+        description="Meet Highlander Roofing & Construction, a premium roofing and construction company serving Western North Carolina. Licensed, certified, locally owned."
         path="/about"
         jsonLd={[
           organizationSchema(),
@@ -134,7 +134,7 @@ const About = () => {
               </motion.h1>
 
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-[19px] md:text-[22px] text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
-                Highlander is family-owned and locally run by a team of people who call Western North Carolina home. The owners set the standard, and every team member — from leadership and consultants to inspectors, project managers, repair specialists, and crews — plays a role in delivering the craft, care, and local accountability your home deserves.
+                Highlander is family-owned and locally run by a team of people who call Western North Carolina home. The owners set the standard, and every team member, from leadership and consultants to inspectors, project managers, repair specialists, and crews, plays a role in delivering the craft, care, and local accountability your home deserves.
               </motion.p>
 
               {/* Understated CTA — warm solid button, no gradient (About-only) */}
@@ -285,7 +285,7 @@ const About = () => {
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   The name Highlander wasn't chosen from a branding playbook. It comes from a quieter
-                  place — a respect for highland values that shaped the way this company was built.
+                  place. A respect for highland values that shaped the way this company was built.
                   Resilience. Loyalty. The idea that your work should speak louder than your marketing.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
@@ -296,7 +296,7 @@ const About = () => {
                 </p>
                 <p className="text-muted-foreground leading-relaxed font-bold">
                   We're different. We live here. Our kids go to school here. When we put a roof on
-                  your home, we drive past it every day. That accountability isn't a policy —
+                  your home, we drive past it every day. That accountability isn't a policy.
                   it's a way of life.
                 </p>
               </motion.div>
@@ -305,19 +305,19 @@ const About = () => {
                 <h2 className="section-heading mb-6">Family Roots.<br /> Mountain Standards.</h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
                 <p className="text-muted-foreground leading-relaxed mb-4 font-bold">
-                  Highlander is family-owned and locally operated, with two locations — Franklin and
-                  Sylva, NC — and a team of local professionals who have completed hundreds of roofing,
+                  Highlander is family-owned and locally operated, with two locations in Franklin and
+                  Sylva, NC, and a team of local professionals who have completed hundreds of roofing,
                   construction, and design projects across Macon, Jackson, Swain, Haywood, and surrounding counties.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Ownership sets the standard — a licensed NC General Contractor and CertainTeed Master
-                  Shingle Applicator approves every scope — and the local team carries that standard
+                  Ownership sets the standard. A licensed NC General Contractor and CertainTeed Master
+                  Shingle Applicator approves every scope, and the local team carries that standard
                   through every estimate, install, inspection, and final walkthrough.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   We don't subcontract critical work. Our in-house crews are trained, vetted, and
                   held to a standard that most contractors don't even set. When your project is
-                  done, we want it to reflect who we are — not just what we do.
+                  done, we want it to reflect who we are, not just what we do.
                 </p>
               </motion.div>
             </div>
@@ -345,7 +345,7 @@ const About = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
               <Calendar className="w-5 h-5 text-[hsl(var(--highland-gold)/0.3)] mx-auto mb-4" />
               <h2 className="section-heading mb-4">The Road So Far</h2>
-              <p className="text-muted-foreground text-sm max-w-lg mx-auto">Not a linear climb — a series of commitments that built something worth standing behind.</p>
+              <p className="text-muted-foreground text-sm max-w-lg mx-auto">Not a linear climb. A series of commitments that built something worth standing behind.</p>
             </motion.div>
             <div className="relative">
               <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
@@ -419,7 +419,7 @@ const About = () => {
                   In an industry where "quality craftsmanship" is printed on every business card, we've learned to let our work do the talking. Every Highlander project follows the same discipline: careful material selection, manufacturer-exact installation, detailed inspection, and personal accountability from start to finish.
                 </p>
                 <p className="text-[hsl(var(--dark-section-foreground)/0.7)] leading-relaxed">
-                  The result isn't a promise — it's a pattern you can see in every project we've ever completed across the ridgelines of Western North Carolina.
+                  The result isn't a promise. It's a pattern you can see in every project we've ever completed across the ridgelines of Western North Carolina.
                 </p>
               </motion.div>
               <div className="space-y-4">
@@ -482,8 +482,8 @@ const About = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: TreePine, title: "Franklin & Sylva Based", detail: "Two local offices. Deep roots in Macon and Jackson counties. We're your neighbors." },
-                { icon: Mountain, title: "Elevation-Aware Building", detail: "From 2,000 to 5,000+ feet — we spec materials and methods for your property's specific exposure." },
-                { icon: Home, title: "Mountain Design", detail: "We understand WNC home styles, proportions, and materials. Our work enhances — never clashes." },
+                { icon: Mountain, title: "Elevation-Aware Building", detail: "From 2,000 to 5,000+ feet, we spec materials and methods for your property's specific exposure." },
+                { icon: Home, title: "Mountain Design", detail: "We understand WNC home styles, proportions, and materials. Our work enhances. It never clashes." },
               ].map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="text-center p-8">
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -512,13 +512,13 @@ const About = () => {
                   asking: "Can you handle our addition too? What about our outdoor living space?"
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  The answer was yes — because the same values that make a great roofing company
+                  The answer was yes, because the same values that make a great roofing company
                   make a great construction partner. Precision. Accountability. Respect for the home.
                   Communication that doesn't disappear after the contract is signed.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Today, Highlander's Construction Division handles home additions, renovations,
-                  outdoor living builds, and custom projects — all with the same crew quality,
+                  outdoor living builds, and custom projects, all with the same crew quality,
                   project oversight, and finish standards that built our roofing reputation.
                 </p>
               </motion.div>
@@ -582,7 +582,7 @@ const About = () => {
           <div className="container-tight text-center">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
-                Now That You Know Us —<br /> Let's Talk About Your Project.
+                Now That You Know Us.<br /> Let's Talk About Your Project.
               </h2>
               <p className="text-primary-foreground/70 mb-8 max-w-xl mx-auto">
                 Browse our projects, read what homeowners say, or start a conversation.

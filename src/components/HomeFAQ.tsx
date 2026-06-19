@@ -11,11 +11,11 @@ const faqs = [
   },
   {
     q: "What areas do you serve?",
-    a: "We serve Franklin, Highlands, Cashiers, Sylva, Asheville, and the surrounding Western NC mountain communities — including Macon, Jackson, Buncombe, Haywood, Swain, and neighboring counties. Visit our Service Areas page for the full list.",
+    a: "We serve Franklin, Highlands, Cashiers, Sylva, Asheville, and the surrounding Western NC mountain communities, including Macon, Jackson, Buncombe, Haywood, Swain, and neighboring counties. Visit our Service Areas page for the full list.",
   },
   {
     q: "Do you handle both roof repairs and full replacements?",
-    a: "Yes. From a single failed pipe boot to a full tear-off and replacement, our roofing crews handle the entire range. We diagnose honestly — if a repair will solve the problem, that is what we recommend.",
+    a: "Yes. From a single failed pipe boot to a full tear-off and replacement, our roofing crews handle the entire range. We diagnose honestly: if a repair will solve the problem, that is what we recommend.",
   },
   {
     q: "Do you help with storm damage and insurance claims?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Do you offer construction services beyond roofing?",
-    a: "Yes. As a licensed General Contractor we build home additions, sunrooms, garages, screened porches, decks, outdoor living spaces, and full renovations — all under the same documented standard as our roofing work.",
+    a: "Yes. As a licensed General Contractor we build home additions, sunrooms, garages, screened porches, decks, outdoor living spaces, and full renovations, all held to the same documented standard as our roofing work.",
   },
   {
     q: "Do you offer financing?",
@@ -60,7 +60,7 @@ const HomeFAQ = () => {
             <span className="text-[hsl(var(--highland-gold))]">Pick Up the Phone.</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg font-body max-w-2xl mx-auto">
-            Short answers to the questions homeowners ask most. For anything specific to your property, call us or send a message — we will answer plainly.
+            Short answers to the questions homeowners ask most. For anything specific to your property, call us or send a message and we will answer plainly.
           </p>
         </motion.div>
 

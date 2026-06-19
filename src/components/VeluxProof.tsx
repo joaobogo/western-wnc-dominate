@@ -9,7 +9,7 @@ const benefits = [
   {
     icon: BadgeCheck,
     title: "Manufacturer-accredited crew",
-    body: "Every skylight install is performed by a VELUX-trained team — not subcontracted to a general roofer.",
+    body: "Every skylight install is performed by a VELUX-trained team. We never subcontract this work to a general roofer.",
   },
   {
     icon: ShieldCheck,
@@ -24,7 +24,7 @@ const benefits = [
   {
     icon: Wrench,
     title: "Coordinated with the roof",
-    body: "Skylight + roof installed as a single scope under one warranty — no finger-pointing between trades.",
+    body: "Skylight and roof installed as a single scope under one warranty, with no finger-pointing between trades.",
   },
 ];
 
@@ -69,7 +69,7 @@ const VeluxProof = () => {
             Manufacturer-accredited. Locally accountable.
           </h2>
           <p className="text-dark-section-foreground/90 text-[18px] md:text-[22px] leading-relaxed font-bold">
-            A VELUX Certified Installer is a contractor trained and accredited by VELUX to install their skylights to specification. That accreditation is what unlocks VELUX's installation warranty — not just the product warranty.
+            A VELUX Certified Installer is a contractor trained and accredited by VELUX to install their skylights to specification. That accreditation is what unlocks VELUX's installation warranty, not just the product warranty.
           </p>
         </motion.div>
 
@@ -153,7 +153,7 @@ const VeluxProof = () => {
           <div className="max-w-xl">
             <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">Schedule a skylight inspection.</h3>
             <p className="text-dark-section-foreground/80 text-[17px] md:text-[20px] font-bold">
-              Free, no-pressure assessment of your existing skylights — leak diagnosis, flashing review, and replacement recommendations in writing.
+              Free, no-pressure assessment of your existing skylights: leak diagnosis, flashing review, and replacement recommendations in writing.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">

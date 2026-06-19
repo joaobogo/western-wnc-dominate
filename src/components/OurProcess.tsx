@@ -49,14 +49,14 @@ const steps = [
     number: "06",
     icon: CheckCircle,
     title: "Final Walkthrough",
-    description: "We inspect every detail together. If anything doesn't meet our standard, we fix it before we leave — not after you call to complain.",
+    description: "We inspect every detail together. If anything doesn't meet our standard, we fix it before we leave, not after you call to complain.",
     detail: "Joint inspection · Same-day punch list · Photo record",
   },
   {
     number: "07",
     icon: Shield,
     title: "Warranty Delivery & Ongoing Support",
-    description: "Your warranty package is physically handed to you — manufacturer coverage, labor protection, and maintenance guidance. Plus direct access to our team for as long as you own the property.",
+    description: "Your warranty package is physically handed to you: manufacturer coverage, labor protection, and maintenance guidance. You also keep direct access to our team for as long as you own the property.",
     detail: "Physical warranty package · Ongoing access · Maintenance guidance",
   },
 ];

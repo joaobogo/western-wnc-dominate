@@ -10,7 +10,7 @@ import { useRef } from "react";
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const factors = [
-  { icon: Thermometer, title: "Extreme Temperature Swings", detail: "From single digits in January to 90°F summers — materials must handle constant expansion and contraction without failing." },
+  { icon: Thermometer, title: "Extreme Temperature Swings", detail: "Single digits in January to 90°F summers. Materials must handle constant expansion and contraction without failing." },
   { icon: Wind, title: "High-Altitude Wind Exposure", detail: "Ridge-top homes face sustained winds that test every fastener, flashing detail, and roof edge. Standard installations don't hold." },
   { icon: Droplets, title: "Heavy Rainfall & Snow Loads", detail: "60+ inches of annual rainfall and significant snowfall demand proper drainage engineering, ice and water shield, and load-rated framing." },
   { icon: Mountain, title: "Steep Terrain & Access", detail: "Mountain lots with steep grades and limited access require crews who plan logistics as carefully as they plan the build itself." },
