@@ -20,7 +20,7 @@ const Siding = () => {
       />
       <Header />
       <main>
-        <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img 
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" 
