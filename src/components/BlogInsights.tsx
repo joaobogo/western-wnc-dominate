@@ -91,7 +91,7 @@ export const BlogInsights = () => {
                   className={`text-[11px] font-body font-bold uppercase tracking-[0.15em] px-4 py-2.5 rounded-none transition-all duration-300 flex items-center gap-1.5 ${
                     activeFilter === cat.value
                       ? "bg-[hsl(var(--highland-gold))] text-accent-foreground"
-                      : "bg-dark-section-foreground/[0.04] border border-dark-section-foreground/[0.06] text-dark-section-foreground/75 hover:border-dark-section-foreground/[0.12] hover:text-dark-section-foreground/60"
+                      : "bg-dark-section-foreground/[0.04] border border-dark-section-foreground/[0.06] text-dark-section-foreground/95 hover:border-dark-section-foreground/[0.12] hover:text-dark-section-foreground/85"
                   }`}
                 >
                   <cat.icon className="w-3 h-3" />
@@ -135,12 +135,12 @@ export const BlogInsights = () => {
           <GoldLine width="3rem" centered delay={0.2} className="mb-6" />
           <Link
             to="/blog"
-            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[15px] tracking-wide text-dark-section-foreground/80 hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
+            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[15px] tracking-wide text-dark-section-foreground/95 hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
           >
             Browse All Articles
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <p className="text-[13px] text-dark-section-foreground/75 font-body font-bold mt-2">
+          <p className="text-[13px] text-dark-section-foreground/95 font-body font-bold mt-2">
             Roofing education · Construction insights · WNC weather & building updates
           </p>
         </motion.div>
@@ -196,7 +196,7 @@ const FeaturedCard = ({ post }: { post: PostWithCategory }) => {
             <span className={`text-[11px] font-body font-bold uppercase tracking-[0.15em] px-3 py-1.5 ${accent.bg} ${accent.text}`}>
               {post.editorialCategory}
             </span>
-            <span className="text-dark-section-foreground/50 text-[13px] font-body font-bold">
+            <span className="text-dark-section-foreground/85 text-[13px] font-body font-bold">
               {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
             </span>
           </div>
@@ -207,13 +207,13 @@ const FeaturedCard = ({ post }: { post: PostWithCategory }) => {
           </h3>
 
           {/* Excerpt */}
-          <p className="text-dark-section-foreground/75 text-[14px] leading-[1.75] font-body mb-8 max-w-lg">
+          <p className="text-dark-section-foreground/95 text-[14px] leading-[1.75] font-body mb-8 max-w-lg">
             {post.excerpt}
           </p>
 
           {/* Bottom row */}
           <div className="flex items-center justify-between mt-auto pt-5 border-t border-dark-section-foreground/[0.06]">
-            <div className="flex items-center gap-1.5 text-dark-section-foreground/70 text-xs font-body">
+            <div className="flex items-center gap-1.5 text-dark-section-foreground/90 text-xs font-body">
               <Clock className="w-3 h-3" />
               {post.readTime} read
             </div>
@@ -254,11 +254,11 @@ const SecondaryCard = ({ post, index }: { post: PostWithCategory; index: number 
             </span>
           </div>
 
-          <h4 className="text-base font-heading font-bold text-dark-section-foreground/80 leading-snug mb-3 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300 tracking-tight flex-1">
+          <h4 className="text-base font-heading font-bold text-dark-section-foreground/95 leading-snug mb-3 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300 tracking-tight flex-1">
             {post.title}
           </h4>
 
-          <p className="text-dark-section-foreground/70 text-[12.5px] leading-[1.7] font-body mb-4 line-clamp-2">
+          <p className="text-dark-section-foreground/90 text-[12.5px] leading-[1.7] font-body mb-4 line-clamp-2">
             {post.excerpt}
           </p>
 
@@ -289,7 +289,7 @@ const CompactCard = ({ post, index }: { post: PostWithCategory; index: number })
         <span className={`inline-block text-[8px] font-body font-bold uppercase tracking-[0.12em] px-2 py-0.5 mb-3 ${accent.bg} ${accent.text}`}>
           {post.editorialCategory}
         </span>
-        <h4 className="text-sm font-heading font-bold text-dark-section-foreground/70 leading-snug mb-2 group-hover:text-dark-section-foreground/90 transition-colors line-clamp-2 tracking-tight">
+        <h4 className="text-sm font-heading font-bold text-dark-section-foreground/90 leading-snug mb-2 group-hover:text-dark-section-foreground/90 transition-colors line-clamp-2 tracking-tight">
           {post.title}
         </h4>
         <div className="flex items-center gap-2 text-dark-section-foreground/20 text-[10px] font-body">

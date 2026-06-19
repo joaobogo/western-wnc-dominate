@@ -112,7 +112,7 @@ const About = () => {
             </motion.div>
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
-                <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                 <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Franklin & Sylva, North Carolina</span>
               </motion.div>
 
@@ -344,7 +344,7 @@ const About = () => {
         <section className="section-padding bg-background">
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-              <Calendar className="w-5 h-5 text-[hsl(var(--highland-gold)/0.3)] mx-auto mb-4" />
+              <Calendar className="w-5 h-5 text-[hsl(var(--highland-gold)/0.75)] mx-auto mb-4" />
               <h2 className="section-heading mb-4">The Road So Far</h2>
               <p className="text-muted-foreground text-sm max-w-lg mx-auto">Not a linear climb. A series of commitments that built something worth standing behind.</p>
             </motion.div>
@@ -451,14 +451,14 @@ const About = () => {
                 <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
                   Build a Career <br className="md:hidden" /> <span className="text-[hsl(var(--highland-gold))] italic">on Higher Ground.</span>
                 </h2>
-                <p className="text-white/50 text-base md:text-lg mb-10 max-w-2xl mx-auto font-body leading-relaxed">
+                <p className="text-white/85 text-base md:text-lg mb-10 max-w-2xl mx-auto font-body leading-relaxed">
                   We're always looking for skilled craftsmen and dedicated professionals who share our values. If you're local, honest, and take pride in your work, we want to hear from you.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link to="/careers" className="cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 transition-all shadow-lg">
                     View Open Positions <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href="tel:+18285247773" className="text-white/70 hover:text-white font-bold text-[14px] flex items-center gap-2 transition-colors">
+                  <a href="tel:+18285247773" className="text-white/90 hover:text-white font-bold text-[14px] flex items-center gap-2 transition-colors">
                     <Phone className="w-4 h-4" /> (828) 524-7773
                   </a>
                 </div>
@@ -585,7 +585,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
                 Now That You Know Us.<br /> Let's Talk About Your Project.
               </h2>
-              <p className="text-primary-foreground/70 mb-8 max-w-xl mx-auto">
+              <p className="text-primary-foreground/90 mb-8 max-w-xl mx-auto">
                 Browse our projects, read what homeowners say, or start a conversation.
                 We'll earn your trust the same way we've earned everyone else's.
               </p>
@@ -597,7 +597,7 @@ const About = () => {
                   Talk With Our Team <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
-              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/50 text-xs font-medium uppercase tracking-wider">
+              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/85 text-xs font-medium uppercase tracking-wider">
                 <span>Family-Owned. Locally Run. Since 2017.</span>
                 <span className="text-primary-foreground/20">•</span>
                 <span>20+ Local Professionals</span>

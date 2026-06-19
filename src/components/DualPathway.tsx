@@ -152,7 +152,7 @@ const DivisionCard = ({ data, accent, index }: {
               <span className="block text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                 {data.label}
               </span>
-              <span className="block text-[9px] font-body text-white/80 tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
+              <span className="block text-[9px] font-body text-white/95 tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                 {data.subtitle}
               </span>
             </div>
@@ -220,7 +220,7 @@ const DivisionCard = ({ data, accent, index }: {
               className="flex items-center gap-2 group/item"
             >
               <service.icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors duration-200 ${
-                isGold ? "text-[hsl(var(--highland-gold)/0.5)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/40 group-hover/item:text-primary/70"
+                isGold ? "text-[hsl(var(--highland-gold)/0.9)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/40 group-hover/item:text-primary/70"
               }`} />
               <span className="text-[14px] md:text-[15px] text-foreground/80 font-body font-bold leading-tight">
                 {service.name}

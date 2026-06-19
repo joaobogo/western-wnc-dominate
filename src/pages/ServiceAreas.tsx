@@ -86,7 +86,7 @@ const ServiceAreas = () => {
                     <span className="text-[12px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highland Authority</span>
                   </div>
                   <div className="flex items-center gap-3 mb-5">
-                    <Compass className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                    <Compass className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                     <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Service Areas</span>
                   </div>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-[1.02] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
@@ -116,7 +116,7 @@ const ServiceAreas = () => {
                       >
                         <span className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none block mb-1.5">{stat.value}</span>
                         <span className="text-[11px] font-heading font-semibold text-white block uppercase tracking-wider mb-1">{stat.label}</span>
-                        <span className="text-[12px] text-white/80 font-body leading-snug block">{stat.detail}</span>
+                        <span className="text-[12px] text-white/95 font-body leading-snug block">{stat.detail}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -303,7 +303,7 @@ const ServiceAreas = () => {
                   <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
               </div>
-              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/50 text-sm font-bold uppercase tracking-wider">
+              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/85 text-sm font-bold uppercase tracking-wider">
                 <span>Franklin & Sylva Offices</span>
                 <span className="text-primary-foreground/15">•</span>
                 <span>45-Min Max Response</span>

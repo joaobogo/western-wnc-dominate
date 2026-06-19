@@ -84,25 +84,25 @@ const ProjectDetailPage = () => {
                   <div className="h-px w-8 bg-[hsl(var(--highland-gold)/0.4)]" />
                   <span className="text-[10px] font-heading font-bold text-white tracking-[0.2em] uppercase">Highlander Project</span>
                 </motion.div>
-                <nav className="flex items-center gap-2 text-white/50 text-sm font-body mb-4">
+                <nav className="flex items-center gap-2 text-white/85 text-sm font-body mb-4">
                   <Link to="/gallery" className="hover:text-white transition-colors flex items-center gap-1">
                     <ArrowLeft className="w-3 h-3" /> Projects
                   </Link>
                   <span>/</span>
-                  <span className="text-white/70">{project.type}</span>
+                  <span className="text-white/90">{project.type}</span>
                 </nav>
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
                     {project.type}
                   </span>
-                  <span className="text-white/80 text-sm font-body flex items-center gap-1.5 font-medium">
+                  <span className="text-white/95 text-sm font-body flex items-center gap-1.5 font-medium">
                     <MapPin className="w-3 h-3" /> {project.location}
                   </span>
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-3 leading-tight">
                   {project.title}
                 </h1>
-                <div className="flex flex-wrap items-center gap-4 text-white/60 text-sm font-body">
+                <div className="flex flex-wrap items-center gap-4 text-white/85 text-sm font-body">
                   <span className="flex items-center gap-1.5"><Ruler className="w-3.5 h-3.5" /> {project.scope}</span>
                   <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {project.duration}</span>
                   {project.elevation && (
@@ -208,7 +208,7 @@ const ProjectDetailPage = () => {
 
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
-                  <p className="text-primary-foreground/60 text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
+                  <p className="text-primary-foreground/85 text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
                   <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center">
                     Discuss Your Project <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -262,7 +262,7 @@ const ProjectDetailPage = () => {
                 <p className="text-primary-foreground font-heading font-semibold text-lg mb-1">
                   Inspired by this project?
                 </p>
-                <p className="text-primary-foreground/50 text-sm font-body">
+                <p className="text-primary-foreground/85 text-sm font-body">
                   Let's discuss how we can deliver the same level of quality for your property.
                 </p>
               </div>

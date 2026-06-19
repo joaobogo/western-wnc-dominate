@@ -163,15 +163,15 @@ const ConstructionDivision = () => {
                   ].map((stat) => (
                     <div key={stat.label}>
                       <div className="text-lg font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
-                      <div className="text-[10px] uppercase tracking-wider text-primary-foreground/70 font-body mt-0.5">{stat.label}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-primary-foreground/90 font-body mt-0.5">{stat.label}</div>
                     </div>
                   ))}
                 </div>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
                   {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Scoping Clarity"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
-                      <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.4)]" />
-                      <span className="text-primary-foreground/70 text-[11px] font-body font-medium tracking-wide">{item}</span>
+                      <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.85)]" />
+                      <span className="text-primary-foreground/90 text-[11px] font-body font-medium tracking-wide">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -229,7 +229,7 @@ const ConstructionDivision = () => {
                     ].map((stat, i) => (
                       <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/15 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
                         <span className="text-xl font-heading font-bold text-[hsl(var(--highland-gold))] block">{stat.value}</span>
-                        <span className="text-[12px] md:text-[13px] font-body text-dark-section-foreground/75 uppercase tracking-[0.15em]">{stat.label}</span>
+                        <span className="text-[12px] md:text-[13px] font-body text-dark-section-foreground/95 uppercase tracking-[0.15em]">{stat.label}</span>
                       </motion.div>
                     ))}
                   </div>

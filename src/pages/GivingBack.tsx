@@ -77,7 +77,7 @@ const GivingBack = () => {
                 Built for the Community<br />
                 <span className="text-[hsl(var(--highland-gold))]">We Call Home.</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/80 font-body leading-relaxed max-w-2xl font-medium mb-8">
+              <p className="text-lg md:text-xl text-white/95 font-body leading-relaxed max-w-2xl font-medium mb-8">
                 Highlander Roofing Services is proud to serve the same Western North Carolina communities we live in, work in, and care about. From roofing and construction to local involvement, our work is built around protecting homes, supporting neighbors, and strengthening the places that make this region special.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -200,7 +200,7 @@ const GivingBack = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 leading-tight">
                 Have a Local Cause or Community Opportunity?
               </h2>
-              <p className="text-white/70 text-lg font-body max-w-2xl mx-auto mb-10 leading-relaxed">
+              <p className="text-white/90 text-lg font-body max-w-2xl mx-auto mb-10 leading-relaxed">
                 If you represent a local organization, event, or cause in Western North Carolina, Highlander welcomes the opportunity to learn more. Reach out to share details and connect with the team.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
@@ -212,7 +212,7 @@ const GivingBack = () => {
                   Request a Free Estimate
                 </Link>
               </div>
-              <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-white/60 font-body">
+              <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-white/85 font-body">
                 <Link to="/about" className="hover:text-white transition-colors">About Highlander</Link>
                 <Link to="/recent-projects" className="hover:text-white transition-colors">Recent Projects</Link>
                 <Link to="/roofing" className="hover:text-white transition-colors">Roofing</Link>

@@ -82,7 +82,7 @@ export const ConstructionClosingCTA = ({
                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
               </Link>
               <a href="tel:+18285247773" className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all">
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
               </a>
             </div>
 
@@ -95,7 +95,7 @@ export const ConstructionClosingCTA = ({
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
                   <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                  <span className="text-dark-section-foreground/50 text-[13px] font-body font-bold">{item.text}</span>
+                  <span className="text-dark-section-foreground/85 text-[13px] font-body font-bold">{item.text}</span>
                 </div>
               ))}
             </div>

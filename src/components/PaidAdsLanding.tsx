@@ -88,7 +88,7 @@ const PaidAdsLanding = ({
                   <h1 className="max-w-3xl text-4xl font-heading font-bold leading-[1.04] text-primary-foreground md:text-5xl lg:text-6xl">
                     {headline}
                   </h1>
-                  <p className="mt-5 max-w-2xl text-base font-body leading-relaxed text-primary-foreground/70 md:text-lg">
+                  <p className="mt-5 max-w-2xl text-base font-body leading-relaxed text-primary-foreground/90 md:text-lg">
                     {subheadline}
                   </p>
                 </motion.div>
@@ -109,7 +109,7 @@ const PaidAdsLanding = ({
                     <div key={item.label} className="border border-primary-foreground/12 bg-primary-foreground/5 px-4 py-4">
                       <div className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}</div>
                       <div className="mt-1 text-sm font-semibold text-primary-foreground">{item.label}</div>
-                      <div className="mt-1 text-xs font-body text-primary-foreground/55">{item.detail}</div>
+                      <div className="mt-1 text-xs font-body text-primary-foreground/85">{item.detail}</div>
                     </div>
                   ))}
                 </motion.div>
@@ -214,7 +214,7 @@ const PaidAdsLanding = ({
           <div className="container-tight flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="font-heading text-2xl font-bold">Need the fastest path?</div>
-              <p className="mt-2 max-w-xl text-sm font-body text-primary-foreground/75">
+              <p className="mt-2 max-w-xl text-sm font-body text-primary-foreground/95">
                 Call now or use the short form above. We keep these landing pages focused so you can move quickly.
               </p>
             </div>

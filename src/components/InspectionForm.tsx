@@ -141,7 +141,7 @@ const InspectionForm = () => {
                     transition={{ delay: 0.6 + i * 0.08 }}
                     className="flex items-center gap-2.5"
                   >
-                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)] flex-shrink-0" />
+                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.9)] flex-shrink-0" />
                     <span className="text-dark-section-foreground text-[15px] md:text-[16px] font-body font-bold">{item.text}</span>
                   </motion.div>
                 ))}
@@ -152,7 +152,7 @@ const InspectionForm = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="text-dark-section-foreground/60 text-[15px] md:text-[16px] font-body font-bold"
+              className="text-dark-section-foreground/85 text-[15px] md:text-[16px] font-body font-bold"
             >
               Can't wait?{" "}
               <a href="tel:+18285247773" className="text-[hsl(var(--highland-gold))] font-semibold hover:underline">
@@ -168,7 +168,7 @@ const InspectionForm = () => {
 
   const inputClasses = "w-full px-6 py-6 md:py-7 rounded-none text-white text-[20px] md:text-[22px] font-body placeholder:text-white/40 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.08] border border-white/20";
   const labelClasses = "block text-[16px] md:text-[17px] font-bold text-white mb-3 font-body uppercase tracking-[0.18em]";
-  const hintClasses = "text-dark-section-foreground/75 text-[15px] md:text-[16px] font-body mt-3 leading-relaxed font-bold";
+  const hintClasses = "text-dark-section-foreground/95 text-[15px] md:text-[16px] font-body mt-3 leading-relaxed font-bold";
 
   const canProceedStep1 = formData.name && formData.phone;
   const canProceedStep2 = formData.town && formData.projectType;
@@ -233,7 +233,7 @@ const InspectionForm = () => {
                     <Phone className="w-4 h-4" />
                     (828) 524-7773
                   </a>
-                  <p className="text-white/80 text-sm font-body font-semibold mt-1.5">We answer our own phone — always a real person.</p>
+                  <p className="text-white/95 text-sm font-body font-semibold mt-1.5">We answer our own phone — always a real person.</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -267,7 +267,7 @@ const InspectionForm = () => {
                               <CheckCircle className="w-4 h-4 text-white" />
                             </motion.div>
                           ) : (
-                            <span className={i <= currentIndex ? "text-white" : "text-dark-section-foreground/70"}>{i + 1}</span>
+                            <span className={i <= currentIndex ? "text-white" : "text-dark-section-foreground/90"}>{i + 1}</span>
                           )}
                         </motion.div>
                         {i < stepOrder.length - 1 && (
@@ -286,7 +286,7 @@ const InspectionForm = () => {
                     <p className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold))]">
                       Step {currentIndex + 1} of {stepOrder.length}
                     </p>
-                    <p className="text-[13px] md:text-[14px] text-dark-section-foreground/80 font-body font-bold">{stepLabels[currentStep]}</p>
+                    <p className="text-[13px] md:text-[14px] text-dark-section-foreground/95 font-body font-bold">{stepLabels[currentStep]}</p>
                   </div>
                 </div>
 
@@ -330,7 +330,7 @@ const InspectionForm = () => {
                           </div>
                           <div>
                             <label htmlFor="email" className={labelClasses}>
-                              Email Address <span className="text-white/75 normal-case tracking-normal font-normal">— for your written proposal</span>
+                              Email Address <span className="text-white/95 normal-case tracking-normal font-normal">— for your written proposal</span>
                             </label>
                             <input
                               id="email" type="email" maxLength={255}
@@ -426,7 +426,7 @@ const InspectionForm = () => {
 
                           {/* Pre-submit trust reinforcement */}
                           <div className="bg-dark-section-foreground/[0.03] border border-dark-section-foreground/6 rounded-none p-4">
-                            <p className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold)/0.4)] mb-3">
+                            <p className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold)/0.85)] mb-3">
                               What Happens Next
                             </p>
                             <div className="space-y-2.5">
@@ -439,7 +439,7 @@ const InspectionForm = () => {
                                   <div className="w-5 h-5 rounded-full bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                     <span className="text-[9px] font-heading font-bold text-[hsl(var(--highland-gold)/0.6)]">{i + 1}</span>
                                   </div>
-                                  <span className="text-dark-section-foreground/75 text-xs font-body leading-relaxed">{point}</span>
+                                  <span className="text-dark-section-foreground/95 text-xs font-body leading-relaxed">{point}</span>
                                 </div>
                               ))}
                             </div>
@@ -458,7 +458,7 @@ const InspectionForm = () => {
                     className={`inline-flex items-center gap-2 text-sm font-body font-medium px-4 py-2.5 rounded-none transition-all ${
                       currentIndex === 0
                         ? "opacity-0 cursor-default"
-                        : "text-dark-section-foreground/75 hover:text-dark-section-foreground/60"
+                        : "text-dark-section-foreground/95 hover:text-dark-section-foreground/85"
                     }`}
                   >
                     <ArrowLeft className="w-3.5 h-3.5" /> Back
@@ -494,11 +494,11 @@ const InspectionForm = () => {
                   )}
                 </div>
                 {currentIndex === stepOrder.length - 1 && (
-                  <FormConsent className="mt-4 text-dark-section-foreground/70" />
+                  <FormConsent className="mt-4 text-dark-section-foreground/90" />
                 )}
 
                 {/* Bottom microcopy */}
-                <p className="text-center text-white/75 text-[12px] font-body font-medium mt-5 tracking-wide">
+                <p className="text-center text-white/95 text-[12px] font-body font-medium mt-5 tracking-wide">
                   No obligation · No sales pressure · Your information stays private
                 </p>
               </div>

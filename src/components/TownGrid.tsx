@@ -53,7 +53,7 @@ const TownGrid = ({ id }: { id?: string }) => {
                     <h3 className="font-heading font-bold text-lg text-dark-section-foreground mb-1.5">
                       {town.name}
                     </h3>
-                    <p className="text-dark-section-foreground/60 text-[16px] mt-1 font-body font-bold">{town.county}</p>
+                    <p className="text-dark-section-foreground/85 text-[16px] mt-1 font-body font-bold">{town.county}</p>
                     <div className="mt-3 pt-3 border-t border-dark-section-foreground/6">
                       <span className="text-[hsl(var(--highland-gold)/0.85)] text-[12px] font-body font-bold uppercase tracking-[0.12em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5">
                         View Area <ArrowRight className="w-3 h-3" />

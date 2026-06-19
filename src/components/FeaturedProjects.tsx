@@ -174,7 +174,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           {/* Arrow icon — bottom right */}
           <div className="absolute bottom-5 md:bottom-7 right-5 md:right-7 z-10">
             <div className="w-10 h-10 rounded-none border border-white/0 group-hover:border-[hsl(var(--highland-gold)/0.3)] bg-transparent group-hover:bg-[hsl(var(--highland-gold)/0.08)] backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-              <ArrowUpRight className="w-4 h-4 text-white/80 group-hover:text-[hsl(var(--highland-gold))] transition-colors" />
+              <ArrowUpRight className="w-4 h-4 text-white/95 group-hover:text-[hsl(var(--highland-gold))] transition-colors" />
             </div>
           </div>
         </div>

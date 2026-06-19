@@ -300,7 +300,7 @@ export const ValuesTeamOverlay = ({ name, role, valueName, image }: ValuesTeamOv
         )}
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] to-transparent">
           <p className="font-heading font-bold text-white text-[15px]">{name}</p>
-          <p className="text-white/80 text-[13px] font-body font-semibold">{role}</p>
+          <p className="text-white/95 text-[13px] font-body font-semibold">{role}</p>
         </div>
       </div>
       <div className="p-4">

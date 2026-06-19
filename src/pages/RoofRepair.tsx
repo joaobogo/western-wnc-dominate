@@ -113,9 +113,9 @@ const RoofRepair = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Roofing</span>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Roof Repair</span>
               </motion.div>
 
@@ -157,7 +157,7 @@ const RoofRepair = () => {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">48-Hour Assessment Guarantee</div>
-                  <div className="text-xs text-primary-foreground/75 font-body">Same-day for emergencies. We answer our own phone.</div>
+                  <div className="text-xs text-primary-foreground/95 font-body">Same-day for emergencies. We answer our own phone.</div>
                 </div>
               </motion.div>
             </div>
@@ -253,7 +253,7 @@ const RoofRepair = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Noticed something that doesn't look right?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">The sooner it's assessed, the less it costs to fix. Call us or schedule online.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">The sooner it's assessed, the less it costs to fix. Call us or schedule online.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -300,7 +300,7 @@ const RoofRepair = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Noticed something on your roof?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We diagnose accurately and recommend honestly — repair or replace, you'll know why.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">We diagnose accurately and recommend honestly — repair or replace, you'll know why.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -352,7 +352,7 @@ const RoofRepair = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   When Repair Is Enough.<br className="hidden md:block" /> When It Isn't.
                 </h2>
-                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">
                   We'll always tell you the truth about your roof's condition. Here's the framework we use to guide our recommendation.
                 </p>
               </motion.div>
@@ -372,7 +372,7 @@ const RoofRepair = () => {
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-0.5 text-primary/50 flex-shrink-0" />
-                          <span className="text-dark-section-foreground/50 text-[13px] font-body leading-snug">{item}</span>
+                          <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -392,8 +392,8 @@ const RoofRepair = () => {
                     <ul className="space-y-3">
                       {repairVsReplace.replace.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
-                          <span className="text-dark-section-foreground/50 text-[13px] font-body leading-snug">{item}</span>
+                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
+                          <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -443,7 +443,7 @@ const RoofRepair = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     The Best Repair Is the One<br className="hidden md:block" /> You Don't Have to Do Twice.
                   </h2>
-                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     If something doesn't look right, it probably isn't. Call us for an honest assessment — we'll tell you what's happening, what it will take to fix it, and whether repair or replacement is the better path forward.
                   </p>
 
@@ -454,7 +454,7 @@ const RoofRepair = () => {
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <a href="tel:+18285247773" className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all">
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" /> (828) 524-7773
+                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
                     </a>
                   </div>
 
@@ -467,7 +467,7 @@ const RoofRepair = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

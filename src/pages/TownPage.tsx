@@ -139,7 +139,7 @@ const TownPage = () => {
                   { icon: Star, label: "Local Trust", value: "4.9★ Rated" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/60 font-bold mb-1">{stat.label}</span>
+                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/85 font-bold mb-1">{stat.label}</span>
                     <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
                       <stat.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
                       {stat.value}

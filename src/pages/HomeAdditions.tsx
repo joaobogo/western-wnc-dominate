@@ -135,9 +135,9 @@ const HomeAdditions = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" /></div>
-                  <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/80">Construction</span>
+                  <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/95">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
                 <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Home Additions</span>
               </motion.div>
 
@@ -180,8 +180,8 @@ const HomeAdditions = () => {
                   { value: "3–6", unit: "mo", label: "Typical Timeline" },
                 ].map((item) => (
                   <div key={item.label} className="p-3 bg-white/5 border border-white/8 rounded-sm text-center">
-                    <div className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}<span className="text-[10px] text-primary-foreground/70 ml-0.5">{item.unit}</span></div>
-                    <div className="text-[9px] text-primary-foreground/70 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
+                    <div className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}<span className="text-[10px] text-primary-foreground/90 ml-0.5">{item.unit}</span></div>
+                    <div className="text-[9px] text-primary-foreground/90 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -195,7 +195,7 @@ const HomeAdditions = () => {
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-8">
                 <div className="flex items-center gap-3 mb-8">
-                  <Compass className="w-5 h-5 text-[hsl(var(--highland-gold)/0.4)]" />
+                  <Compass className="w-5 h-5 text-[hsl(var(--highland-gold)/0.85)]" />
                   <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.2)]" />
                 </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
@@ -286,7 +286,7 @@ const HomeAdditions = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Making It Look Like<br className="hidden md:block" /> It Was Always There.
                 </h2>
-                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto">
                   The hardest part of any addition isn't building the new space — it's making it belong.
                 </p>
               </motion.div>
@@ -298,7 +298,7 @@ const HomeAdditions = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -312,7 +312,7 @@ const HomeAdditions = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Thinking about adding on?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We'll help you evaluate what's possible — structurally, visually, and within your budget.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">We'll help you evaluate what's possible — structurally, visually, and within your budget.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
@@ -394,7 +394,7 @@ const HomeAdditions = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Building Additions in WNC<br className="hidden md:block" /> Is Different.
                 </h2>
-                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto">
                   The Western North Carolina landscape demands more from every build. Not every contractor understands why.
                 </p>
               </motion.div>
@@ -406,7 +406,7 @@ const HomeAdditions = () => {
                       <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
                       <h3 className="font-heading font-bold text-dark-section-foreground text-sm">{item.title}</h3>
                     </div>
-                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -453,7 +453,7 @@ const HomeAdditions = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
-                    <p className="text-white/50 text-xs font-body">{img.location}</p>
+                    <p className="text-white/85 text-xs font-body">{img.location}</p>
                   </div>
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[hsl(var(--highland-gold))] group-hover:w-full transition-all duration-500" />
                 </motion.div>

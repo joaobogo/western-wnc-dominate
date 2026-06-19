@@ -18,7 +18,7 @@ interface TrustBadgeProps {
 const badgeVariants = {
   default: {
     wrapper: "flex items-center gap-2 badge-trust",
-    icon: "w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]",
+    icon: "w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.9)]",
     text: "text-muted-foreground text-xs font-body font-medium",
   },
   subtle: {
@@ -28,7 +28,7 @@ const badgeVariants = {
   },
   dark: {
     wrapper: "flex items-center gap-2",
-    icon: "w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.4)]",
+    icon: "w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.85)]",
     text: "text-[hsl(var(--dark-section-foreground)/0.25)] text-xs font-body font-medium",
   },
 };

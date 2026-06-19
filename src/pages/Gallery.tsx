@@ -91,10 +91,10 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-[1.08] mb-4 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-500">
             {project.title}
           </h2>
-          <p className="text-white/65 text-base md:text-lg font-body max-w-xl leading-relaxed mb-5 hidden md:block font-medium">
+          <p className="text-white/90 text-base md:text-lg font-body max-w-xl leading-relaxed mb-5 hidden md:block font-medium">
             {project.description}
           </p>
-          <div className="flex flex-wrap items-center gap-5 text-white/60 text-[13px] md:text-[14px] font-body font-medium">
+          <div className="flex flex-wrap items-center gap-5 text-white/85 text-[13px] md:text-[14px] font-body font-medium">
             <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3" /> {project.location}</span>
             <span className="flex items-center gap-1.5"><Ruler className="w-3 h-3" /> {project.scope}</span>
             <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {project.duration}</span>
@@ -164,7 +164,7 @@ const Gallery = () => {
                 className="text-center max-w-3xl mx-auto"
               >
                 <div className="inline-flex items-center gap-3 mb-6">
-                  <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                  <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                   <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Portfolio</span>
                 </div>
                 <motion.h1

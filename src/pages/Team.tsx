@@ -35,7 +35,7 @@ const Team = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-3xl">
               Meet the Team Behind<br /><span className="text-[hsl(var(--highland-gold))]">Highlander Roofing Services</span>
             </h1>
-            <p className="text-white/75 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
+            <p className="text-white/95 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
               Highlander Roofing Services is led by a local team committed to dependable workmanship, honest communication, and customer-focused service across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. From company leadership and sales to inspections, project management, repairs, and field coordination, each team member plays a role in helping homeowners protect and improve their properties.
             </p>
           </div>
@@ -148,7 +148,7 @@ const Team = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
               Talk to a Real Person — Not a Call Center.
             </h2>
-            <p className="text-primary-foreground/75 mb-8 max-w-xl mx-auto">
+            <p className="text-primary-foreground/95 mb-8 max-w-xl mx-auto">
               When you call Highlander, a member of our Western NC team picks up. No phone tree, no offshore sales floor.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

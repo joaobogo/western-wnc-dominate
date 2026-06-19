@@ -82,7 +82,7 @@ const RoofingGallery = ({
                     {project.title}
                   </h3>
                   {project.summary && (
-                    <p className="text-white/50 text-xs font-body line-clamp-2 max-w-xs translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <p className="text-white/85 text-xs font-body line-clamp-2 max-w-xs translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       {project.summary}
                     </p>
                   )}
@@ -108,7 +108,7 @@ const RoofingGallery = ({
           >
             <button
               onClick={() => setLightboxIdx(null)}
-              className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10"
+              className="absolute top-6 right-6 text-white/85 hover:text-white transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>

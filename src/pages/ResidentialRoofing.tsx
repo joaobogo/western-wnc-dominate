@@ -204,11 +204,11 @@ const ResidentialRoofing = () => {
                     <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
                       <Home className="w-3.5 h-3.5 text-primary-foreground" />
                     </div>
-                    <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/75">
+                    <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">
                       Roofing
                     </span>
                   </Link>
-                  <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
+                  <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
                   <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
                     Residential
                   </span>
@@ -284,7 +284,7 @@ const ResidentialRoofing = () => {
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2">
                     <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
-                    <span className="text-[10px] font-body text-primary-foreground/75 uppercase tracking-widest">{item.label}</span>
+                    <span className="text-[10px] font-body text-primary-foreground/95 uppercase tracking-widest">{item.label}</span>
                   </div>
                 ))}
               </motion.div>
@@ -360,7 +360,7 @@ const ResidentialRoofing = () => {
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
                   <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                  <span className="text-xs font-body font-medium text-primary-foreground/70">{item.text}</span>
+                  <span className="text-xs font-body font-medium text-primary-foreground/90">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -515,7 +515,7 @@ const ResidentialRoofing = () => {
                     <ul className="space-y-3">
                       {option.items.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/50' : 'text-[hsl(var(--highland-gold)/0.5)]'}`} />
+                          <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/50' : 'text-[hsl(var(--highland-gold)/0.9)]'}`} />
                           <span className="text-muted-foreground text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}
@@ -890,7 +890,7 @@ const ResidentialRoofing = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Mountain Home<br className="hidden md:block" /> Deserves Mountain-Grade<br className="hidden md:block" /> Protection.
                   </h2>
-                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     Whether you're planning ahead or responding to damage — the conversation
                     starts with a local roofing expert who knows your neighborhood, your
                     elevation, and your weather.
@@ -909,7 +909,7 @@ const ResidentialRoofing = () => {
                       href="tel:+18285247773"
                       className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all"
                     >
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                       (828) 524-7773
                     </a>
                   </div>

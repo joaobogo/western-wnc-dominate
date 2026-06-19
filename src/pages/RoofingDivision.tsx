@@ -296,7 +296,7 @@ const RoofingDivision = () => {
                   <div className="w-8 h-8 rounded-none bg-primary/20 flex items-center justify-center">
                     <Home className="w-4 h-4 text-primary-foreground" />
                   </div>
-                  <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">
+                  <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">
                     Authority Since 2017
                   </span>
                 </div>
@@ -373,7 +373,7 @@ const RoofingDivision = () => {
                 >
                   <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.7)] mb-2" />
                   <span className="text-xs font-heading font-semibold text-primary-foreground/85 mb-0.5">{item.label}</span>
-                  <span className="text-[10px] text-primary-foreground/75 font-body">{item.detail}</span>
+                  <span className="text-[10px] text-primary-foreground/95 font-body">{item.detail}</span>
                 </motion.div>
               ))}
             </div>
@@ -571,7 +571,7 @@ const RoofingDivision = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   What Sets Highlander<br className="hidden md:block" /> Roofing Apart.
                 </h2>
-                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">
                   The difference between a roof that lasts and a roof that fails is the team
                   that installs it. Here's what you get with Highlander.
                 </p>
@@ -593,7 +593,7 @@ const RoofingDivision = () => {
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">
+                    <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">
                       {item.detail}
                     </p>
                   </motion.div>
@@ -920,7 +920,7 @@ const RoofingDivision = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to discuss your roof?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -973,7 +973,7 @@ const RoofingDivision = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute top-4 left-4 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-[hsl(var(--highland-gold))] text-accent-foreground px-3 py-1.5 rounded-none">Featured</div>
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/50 mb-1 block">{galleryItems[0].category}</span>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/85 mb-1 block">{galleryItems[0].category}</span>
                   <h3 className="font-heading font-bold text-white text-lg md:text-xl">{galleryItems[0].title}</h3>
                 </div>
               </motion.div>
@@ -1075,7 +1075,7 @@ const RoofingDivision = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Protects Everything<br className="hidden md:block" /> That Matters. Plan It With<br className="hidden md:block" /> a Team That Knows.
                   </h2>
-                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     Whether it's time for a replacement, a repair, or an honest second opinion —
                     let's build a plan that gives you confidence for the next 30 years.
                   </p>
@@ -1093,7 +1093,7 @@ const RoofingDivision = () => {
                       href="tel:+18285247773"
                       className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all"
                     >
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                       (828) 524-7773
                     </a>
                   </div>
@@ -1107,7 +1107,7 @@ const RoofingDivision = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

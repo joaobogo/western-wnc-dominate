@@ -125,9 +125,9 @@ const OutdoorLiving = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" /></div>
-                  <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">Construction</span>
+                  <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/90">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
                 <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Outdoor Living</span>
               </motion.div>
 
@@ -171,8 +171,8 @@ const OutdoorLiving = () => {
                   { icon: Shield, label: "Mountain-Rated" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/8 rounded-sm">
-                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
-                    <span className="text-[10px] font-body text-primary-foreground/75 uppercase tracking-wider">{item.label}</span>
+                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.9)]" />
+                    <span className="text-[10px] font-body text-primary-foreground/95 uppercase tracking-wider">{item.label}</span>
                   </div>
                 ))}
               </motion.div>
@@ -188,7 +188,7 @@ const OutdoorLiving = () => {
 
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <Sun className="w-6 h-6 text-[hsl(var(--highland-gold)/0.3)] mx-auto mb-8" />
+              <Sun className="w-6 h-6 text-[hsl(var(--highland-gold)/0.75)] mx-auto mb-8" />
               <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
                 Mountain living is meant to be lived outside — on porches, decks, and patios built to enjoy the view in every season.
               </h2>
@@ -212,7 +212,7 @@ const OutdoorLiving = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Beauty. Function.<br className="hidden md:block" /> Durability.
                 </h2>
-                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto">
                   Great outdoor spaces deliver all three — and compromising on any one undermines the other two.
                 </p>
               </motion.div>
@@ -224,7 +224,7 @@ const OutdoorLiving = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -298,7 +298,7 @@ const OutdoorLiving = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Imagining your perfect outdoor space?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">Let's discuss what's possible for your property, your views, and your lifestyle.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">Let's discuss what's possible for your property, your views, and your lifestyle.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
@@ -347,7 +347,7 @@ const OutdoorLiving = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   A Roofing Company That<br className="hidden md:block" /> Builds Outdoor Structures.
                 </h2>
-                <p className="text-dark-section-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
+                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto leading-relaxed">
                   Every covered porch, pavilion, and screened room needs a roof. We don't subcontract that part — we built the company on it.
                 </p>
               </motion.div>
@@ -359,7 +359,7 @@ const OutdoorLiving = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/70 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -406,7 +406,7 @@ const OutdoorLiving = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
-                    <p className="text-white/50 text-xs font-body">{img.location}</p>
+                    <p className="text-white/85 text-xs font-body">{img.location}</p>
                   </div>
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[hsl(var(--highland-gold))] group-hover:w-full transition-all duration-500" />
                 </motion.div>

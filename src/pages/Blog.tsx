@@ -109,7 +109,7 @@ const Blog = () => {
                     <div className="h-px w-12 bg-white/20" />
                   </div>
                   <div className="flex items-center gap-3 mb-5">
-                    <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                    <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                     <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Insights & Resources</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[0.95] tracking-tightest">
@@ -190,7 +190,7 @@ const Blog = () => {
                 className="mb-10"
               >
                 <div className="flex items-center gap-3">
-                  <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                  <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                   <span className="eyebrow">Editor's Picks</span>
                 </div>
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)] mt-3" />
@@ -222,7 +222,7 @@ const Blog = () => {
                         <p className="text-muted-foreground text-base leading-relaxed mb-6 max-w-lg">
                           {heroFeatured.excerpt}
                         </p>
-                        <div className="flex items-center gap-5 text-sm text-white/70 font-bold mb-6">
+                        <div className="flex items-center gap-5 text-sm text-white/90 font-bold mb-6">
                           <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {heroFeatured.readTime}</span>
                           <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {heroFeatured.date}</span>
                           {heroFeatured.town && <span className="flex items-center gap-1"><Mountain className="w-3 h-3" /> {heroFeatured.town}</span>}

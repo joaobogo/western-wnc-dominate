@@ -156,7 +156,7 @@ const ReviewsPage = () => {
                 >
                   <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5">{stat.value}</span>
                   <span className="text-sm font-heading font-semibold text-primary-foreground/85 mb-1">{stat.label}</span>
-                  <span className="text-[13px] text-primary-foreground/50 font-body tracking-wide font-bold">{stat.detail}</span>
+                  <span className="text-[13px] text-primary-foreground/85 font-body tracking-wide font-bold">{stat.detail}</span>
                 </motion.div>
               ))}
             </div>

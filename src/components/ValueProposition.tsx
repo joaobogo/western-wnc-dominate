@@ -84,7 +84,7 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
         {/* Icon */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-10 h-10 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
-            <pillar.icon className="w-4.5 h-4.5 text-[hsl(var(--highland-gold)/0.5)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
+            <pillar.icon className="w-4.5 h-4.5 text-[hsl(var(--highland-gold)/0.9)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
           </div>
         </div>
 
@@ -94,13 +94,13 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
         </h3>
 
         {/* Copy */}
-        <p className="text-dark-section-foreground/80 text-[13px] leading-[1.75] font-body mb-5">
+        <p className="text-dark-section-foreground/95 text-[13px] leading-[1.75] font-body mb-5">
           {pillar.copy}
         </p>
 
         {/* Detail strip */}
         <div className="pt-4 border-t border-dark-section-foreground/[0.06]">
-          <span className="text-[10px] font-body text-dark-section-foreground/70 tracking-wide leading-relaxed">
+          <span className="text-[10px] font-body text-dark-section-foreground/90 tracking-wide leading-relaxed">
             {pillar.detail}
           </span>
         </div>
@@ -130,7 +130,7 @@ const ValueProposition = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-dark-section-foreground/75 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
+            <p className="text-dark-section-foreground/95 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
               We built our reputation on being the contractor you don't have to call back.
               Here's exactly how we earn that.
             </p>
@@ -161,7 +161,7 @@ const ValueProposition = () => {
             <span className="relative">Discuss Your Project With Us</span>
             <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
           </Link>
-          <p className="text-[11px] text-dark-section-foreground/70 font-body mt-4 tracking-wide">
+          <p className="text-[11px] text-dark-section-foreground/90 font-body mt-4 tracking-wide">
             No pressure. No sales pitch. Just a conversation about what your property needs.
           </p>
         </motion.div>

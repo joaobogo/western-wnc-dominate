@@ -169,7 +169,7 @@ export default function Contact() {
                   className="max-w-2xl"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Handshake className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                    <Handshake className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                     <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Concierge</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[0.95] tracking-tightest">
@@ -195,7 +195,7 @@ export default function Contact() {
                     </div>
                   </a>
                   <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--dark-section-foreground)/0.04)] border border-[hsl(var(--dark-section-foreground)/0.08)] hover:border-[hsl(var(--highland-gold)/0.15)] transition-all">
-                    <Mail className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                    <Mail className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                     <span className="text-sm font-body text-[hsl(var(--dark-section-foreground)/0.6)]">info@highlandernc.com</span>
                   </a>
                 </motion.div>

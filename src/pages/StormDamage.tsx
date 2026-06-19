@@ -164,9 +164,9 @@ const StormDamage = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                  <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/75">Roofing</span>
+                  <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">Roofing</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
                 <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Storm Damage</span>
               </motion.div>
 
@@ -209,7 +209,7 @@ const StormDamage = () => {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">Rapid Emergency Response Active</div>
-                  <div className="text-[11px] text-primary-foreground/60 font-body uppercase tracking-wider">Call (828) 524-7773 for immediate storm assistance</div>
+                  <div className="text-[11px] text-primary-foreground/85 font-body uppercase tracking-wider">Call (828) 524-7773 for immediate storm assistance</div>
                 </div>
               </motion.div>
             </div>
@@ -293,7 +293,7 @@ const StormDamage = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm hit your area recently?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We respond rapidly. Same-day for emergencies with active water intrusion.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">We respond rapidly. Same-day for emergencies with active water intrusion.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -386,7 +386,7 @@ const StormDamage = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Repair the Damage.<br className="hidden md:block" /> Or Replace the Roof.
                 </h2>
-                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">
                   The right answer depends on the extent of damage, your roof's age, and your long-term plans. Here's how we help you decide.
                 </p>
               </motion.div>
@@ -405,7 +405,7 @@ const StormDamage = () => {
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-0.5 text-primary/50 flex-shrink-0" />
-                          <span className="text-dark-section-foreground/50 text-[13px] font-body leading-snug">{item}</span>
+                          <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -427,8 +427,8 @@ const StormDamage = () => {
                     <ul className="space-y-3">
                       {repairVsReplace.replace.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
-                          <span className="text-dark-section-foreground/50 text-[13px] font-body leading-snug">{item}</span>
+                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
+                          <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -448,7 +448,7 @@ const StormDamage = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm damage? We respond rapidly.</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">Professional assessment, complete documentation, honest guidance — from a local team.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">Professional assessment, complete documentation, honest guidance — from a local team.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -532,7 +532,7 @@ const StormDamage = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Already Took the Hit.<br className="hidden md:block" /> Let's Make Sure It's Still Protecting You.
                   </h2>
-                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     A professional storm assessment takes less than an hour and gives you the clarity to make confident decisions — whether that means a simple repair, a full replacement, or the reassurance that your roof came through just fine.
                   </p>
 
@@ -543,7 +543,7 @@ const StormDamage = () => {
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <a href="tel:+18285247773" className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all">
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" /> (828) 524-7773
+                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
                     </a>
                   </div>
 
@@ -556,7 +556,7 @@ const StormDamage = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

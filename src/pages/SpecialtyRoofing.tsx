@@ -163,7 +163,7 @@ const SpecialtyRoofing = () => {
                   </motion.div>
                 ))}
                 <Link to="/gallery" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
-                  <span className="text-[10px] text-primary-foreground/75 font-body text-center leading-tight">View<br/>Portfolio</span>
+                  <span className="text-[10px] text-primary-foreground/95 font-body text-center leading-tight">View<br/>Portfolio</span>
                 </Link>
               </motion.div>
             </div>
@@ -174,7 +174,7 @@ const SpecialtyRoofing = () => {
         <section className="py-20 md:py-28 bg-background">
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <Gem className="w-6 h-6 text-[hsl(var(--highland-gold)/0.4)] mx-auto mb-8" />
+              <Gem className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)] mx-auto mb-8" />
               <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance tracking-tight">
                 Some roofs are meant to be noticed. They deserve a team that treats every line, every material, and every detail as a reflection of the home itself.
               </h2>
@@ -253,7 +253,7 @@ const SpecialtyRoofing = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -276,7 +276,7 @@ const SpecialtyRoofing = () => {
               <div className="lg:col-span-3 space-y-3">
                 {whyHigherStandard.map((reason, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="flex items-start gap-3 p-4 bg-card border border-border rounded-sm">
-                    <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] mt-0.5 flex-shrink-0" />
+                    <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground text-[13px] leading-snug font-body">{reason}</span>
                   </motion.div>
                 ))}
@@ -363,7 +363,7 @@ const SpecialtyRoofing = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Should Be as Considered<br className="hidden md:block" /> as the Home Beneath It.
                   </h2>
-                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     If you're building, renovating, or reimagining a home where the roof is part of the design statement — let's talk about what's possible.
                   </p>
 
@@ -374,7 +374,7 @@ const SpecialtyRoofing = () => {
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <a href="tel:+18285247773" className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all">
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" /> (828) 524-7773
+                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
                     </a>
                   </div>
 
@@ -387,7 +387,7 @@ const SpecialtyRoofing = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

@@ -75,7 +75,7 @@ const Skylights = () => {
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-balance">
                 Skylight Installation & Repair, Done Right.
               </h1>
-              <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
+              <p className="text-dark-section-foreground/90 max-w-2xl text-base md:text-lg mb-8">
                 Team-led, VELUX Certified skylight installation across Western NC. Deck-mounted units, Sun Tunnels, and full leak diagnosis — coordinated with the roof system so the warranty actually holds.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
