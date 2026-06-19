@@ -247,7 +247,7 @@ const Hero = () => {
                 className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-[15px] md:text-base px-10 md:px-14 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-xl min-h-[60px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Request a Free Estimate</span>
+                <span className="relative">Request a Free Quote</span>
                 <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1.5 transition-transform" />
               </Link>
               <a
