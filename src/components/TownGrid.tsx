@@ -66,9 +66,9 @@ const TownGrid = ({ id }: { id?: string }) => {
             </StaggerContainer>
           </div>
           
-          {/* Subtle fade edges to indicate more content */}
-          <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-primary to-transparent pointer-events-none z-10 hidden md:block" />
-          <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-primary to-transparent pointer-events-none z-10 hidden md:block" />
+          {/* Subtle fade edges — match section-dark background, no harsh primary shadow */}
+          <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-[hsl(var(--dark-section))] to-transparent pointer-events-none z-10 hidden md:block" />
+          <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-[hsl(var(--dark-section))] to-transparent pointer-events-none z-10 hidden md:block" />
         </div>
 
         <ScrollReveal variant="fade" delay={0.4} className="text-center mt-8">
