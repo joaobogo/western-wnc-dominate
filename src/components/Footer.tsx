@@ -56,13 +56,9 @@ const tier1Areas = [
 // Tier 2 — extended WNC coverage
 const tier2Areas = [
   { label: "Brevard", href: "/service-areas/brevard-nc" },
-  { label: "Lake Toxaway", href: "/service-areas/lake-toxaway-nc" },
   { label: "Waynesville", href: "/service-areas/waynesville-nc" },
   { label: "Bryson City", href: "/service-areas/bryson-city-nc" },
-  { label: "Black Mountain", href: "/service-areas/black-mountain-nc" },
-  { label: "Weaverville", href: "/service-areas/weaverville-nc" },
   { label: "Murphy", href: "/service-areas/murphy-nc" },
-  { label: "Marshall", href: "/service-areas/marshall-nc" },
   { label: "Hayesville", href: "/service-areas/hayesville-nc" },
 ];
 
