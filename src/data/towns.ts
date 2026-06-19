@@ -303,26 +303,6 @@ export const towns: TownData[] = [
     heroImage: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000"
   },
   {
-    slug: "lake-toxaway-nc",
-    name: "Lake Toxaway",
-    county: "Transylvania County",
-    state: "NC",
-    elevation: "2,979 ft",
-    description: "High-end estate services for Lake Toxaway's premier private community. We specialize in luxury roofing systems and expansive lakefront construction.",
-    features: ["Private community expertise", "Luxury estate focus", "Lakefront construction", "Brava Platinum installers"],
-    metaTitle: "Roofing & Construction in Lake Toxaway, NC | Highlander",
-    metaDescription: "Premier roofing and construction for Lake Toxaway estates. Specialized in Brava synthetic systems and luxury lakefront additions. Licensed & Insured.",
-    housingProfile: "Ultra-luxury lakefront estates, private mountain retreats, and gated club properties.",
-    climateExposure: "Intense seasonal storms and persistent lake-effect moisture that demands premium synthetic or metal systems.",
-    localVibe: "An exclusive, low-density private community where design perfection and long-term asset protection are the baseline.",
-    constructionContext: "We specialize in lakefront deck expansions and high-end master suite additions that maximize Toxaway's unique views.",
-    serviceDemandMix: ["Brava Synthetic Slate", "Copper Gutter Systems", "Luxury Additions", "Premium Maintenance"],
-    styleTendency: "Classic Adirondack and sophisticated Mountain Rustic home design featuring massive stone and timber elements.",
-    notableNeighborhoods: ["Lake Toxaway Estates", "The Greystone", "Catatoga"],
-    marketAuthorityAngle: "Toxaway estates require a commercial-grade attention to detail and a white-glove service level. We protect the plateau's finest assets.",
-    heroImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000"
-  },
-  {
     slug: "murphy-nc",
     name: "Murphy",
     county: "Cherokee County",
