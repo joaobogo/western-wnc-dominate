@@ -71,7 +71,7 @@ const OurProcess = () => {
         {/* Header */}
         <div className="text-center mb-14 md:mb-20">
           <ScrollReveal variant="fade">
-            <span className="text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] mb-4 block">
+            <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] mb-4 block drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Our Process — 7 Phases
             </span>
           </ScrollReveal>
@@ -82,7 +82,7 @@ const OurProcess = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-white/85 max-w-xl mx-auto text-base md:text-lg font-body font-medium leading-relaxed">
+            <p className="text-white max-w-xl mx-auto text-base md:text-lg font-body font-semibold leading-relaxed">
               Consistent quality requires a consistent process. Every phase is documented,
               every decision is yours, and every detail is accountable to one standard.
             </p>
