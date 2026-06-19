@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield, Ruler, Heart } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.png";
 
@@ -100,6 +100,7 @@ const Header = () => {
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
   const location = useLocation();
+  const navigate = useNavigate();
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
@@ -128,6 +129,32 @@ const Header = () => {
   };
 
   const isActive = (href: string) => location.pathname === href || location.pathname.startsWith(href + "/");
+
+  /**
+   * Robust "View All <Division>" handler.
+   * Fixes two bugs:
+   *  1) When already on the hub (e.g. /construction) — possibly with a hash like
+   *     /construction#structural from the Structural & Repair entry — clicking
+   *     <Link to="/construction"> was a no-op (same pathname, hash kept), so the
+   *     page appeared unchanged and "stuck" on the structural section.
+   *  2) From any sibling subtype page, we want a guaranteed clean navigation to
+   *     the hub top — no inherited hash, no last-tab fallback.
+   */
+  const handleViewAllClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    setOpenDropdown(null);
+    setMobileOpen(false);
+    if (location.pathname === href) {
+      // Already on the hub — strip any hash and scroll to top.
+      if (location.hash) {
+        navigate(href, { replace: true });
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate(href);
+      requestAnimationFrame(() => window.scrollTo({ top: 0 }));
+    }
+  };
 
   return (
     <motion.header
@@ -266,6 +293,7 @@ const Header = () => {
                       <div className="border-t border-border/60 mx-2 mt-1">
                         <Link
                           to={div.href}
+                          onClick={(e) => handleViewAllClick(e, div.href)}
                           className={`flex items-center gap-1.5 px-3 py-3 text-[14px] font-body font-bold rounded-sm transition-colors ${
                             div.accent === "green"
                               ? "text-primary hover:bg-primary/5"
@@ -492,7 +520,7 @@ const Header = () => {
                             ))}
                             <Link
                               to={div.href}
-                              onClick={() => setMobileOpen(false)}
+                              onClick={(e) => handleViewAllClick(e, div.href)}
                               className={`py-2.5 px-3 text-sm font-semibold rounded-sm transition-colors flex items-center gap-1.5 font-body ${
                                 div.accent === "green" ? "text-primary" : "text-accent"
                               }`}
