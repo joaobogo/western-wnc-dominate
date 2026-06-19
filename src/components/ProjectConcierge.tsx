@@ -11,8 +11,8 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const pathways = [
   {
     icon: Phone,
-    title: "Speak with the Owner",
-    desc: "A direct conversation with our owner. Not a call center, not a sales rep. The person who signs your warranty.",
+    title: "Speak with a Specialist Just for You",
+    desc: "A direct conversation with a dedicated specialist. Not a call center, not a sales rep. Someone who listens to your project and gives you straight answers.",
     action: "Call (828) 524-7773",
     href: "tel:+18285247773",
     external: true,
