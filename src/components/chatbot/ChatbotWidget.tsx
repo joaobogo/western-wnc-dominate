@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
+import { submitLead, logChatbotConversation } from "@/lib/leads";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
