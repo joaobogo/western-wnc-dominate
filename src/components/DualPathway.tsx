@@ -179,15 +179,15 @@ const DivisionCard = ({ data, accent, index }: {
         <div className="absolute bottom-0 left-0 right-0 px-5 pb-4">
           <div className="flex items-end gap-6">
             {data.stats.map((stat) => (
-              <div key={stat.label}>
+              <div key={stat.label} className="flex flex-col">
                 <AnimatedCounter
                   value={stat.value}
-                  className={`text-xl md:text-2xl font-heading font-bold leading-none mb-0.5 ${
+                  className={`block text-xl md:text-2xl font-heading font-bold leading-none mb-1 ${
                     isGold ? "text-[hsl(var(--highland-gold))]" : "text-white"
                   }`}
                   duration={1600}
                 />
-                <span className="text-[9px] font-body text-white/85 uppercase tracking-[0.12em] drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
+                <span className="block text-[9px] font-body text-white/85 uppercase tracking-[0.12em] drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                   {stat.label}
                 </span>
               </div>
@@ -300,12 +300,12 @@ const ThreeDivisionPathway = () => {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-border" />
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-muted-foreground/50">
+            <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-foreground/75">
               Roofing · Construction · Design
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
-          <p className="text-[14px] text-muted-foreground/60 font-body leading-relaxed max-w-md mx-auto">
+          <p className="text-[15px] text-foreground/85 font-body font-medium leading-relaxed max-w-md mx-auto">
             Your project shouldn't be split across multiple companies and conflicting schedules.
             With Highlander, you get one standard across all three divisions.
           </p>
