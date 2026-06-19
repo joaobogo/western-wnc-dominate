@@ -193,32 +193,32 @@ const Hero = () => {
             </motion.div>
 
             {/* Headline — cinematic three-line reveal */}
-            <div className="overflow-hidden mb-1 md:mb-2">
+            <div className="overflow-hidden mb-1 md:mb-2 pb-[0.12em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
+                className="text-[2.6rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
                 High-Elevation,
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-1 md:mb-2">
+            <div className="overflow-hidden mb-1 md:mb-2 pb-[0.12em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
+                className="text-[2.6rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
                 Built for the Peaks.
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-8 md:mb-12">
+            <div className="overflow-hidden mb-8 md:mb-12 pb-[0.18em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.035em]"
+                className="text-[2.6rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.035em]"
               >
                 <span className="text-[hsl(var(--highland-gold))]">Roofing, Construction &amp; Design</span>
                 <span className="text-primary-foreground">.</span>
@@ -268,14 +268,14 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
-              className="mt-7 md:mt-9 flex items-center gap-6"
+              className="mt-7 md:mt-9 flex items-center gap-5 md:gap-7"
             >
-              <div className="flex items-center gap-1.5">
-                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-base">4.9★</span>
-                <span className="text-primary-foreground/40 text-[12px] font-body uppercase tracking-wider">Google Rating</span>
+              <div className="flex items-center gap-2">
+                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-xl md:text-2xl">4.9★</span>
+                <span className="text-primary-foreground/85 text-[13px] md:text-sm font-body font-semibold uppercase tracking-wider">Google Rating</span>
               </div>
-              <div className="w-px h-3 bg-primary-foreground/20" />
-              <span className="text-primary-foreground/40 text-[12px] font-body uppercase tracking-wider">150+ Verified Reviews</span>
+              <div className="w-px h-5 bg-primary-foreground/30" />
+              <span className="text-primary-foreground/85 text-[13px] md:text-sm font-body font-semibold uppercase tracking-wider">150+ Verified Reviews</span>
             </motion.div>
 
             {/* VELUX Certified Installer badge */}
