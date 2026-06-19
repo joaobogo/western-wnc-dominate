@@ -199,7 +199,7 @@ const Footer = () => {
                   <div className="text-[15px] text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Office Hours</span>
                     Mon–Fri 8:00 AM – 5:00 PM<br />
-                    <span className="text-primary font-semibold">Emergency response available 24/7</span>
+                    <span className="text-primary font-semibold">Same-day emergency contact</span>
                   </div>
                 </div>
               </div>

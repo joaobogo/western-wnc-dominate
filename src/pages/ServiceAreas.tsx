@@ -37,7 +37,7 @@ const whyLocal = [
   { icon: Mountain, title: "We Know the Terrain", detail: "Elevation, slope, soil composition, and microclimates affect every project. We've built across this region long enough to know what each town demands." },
   { icon: CloudLightning, title: "We Know the Weather", detail: "From Highlands' 80+ inches of annual rain to Waynesville's ice storms — we spec materials and methods for your area's exact exposure profile." },
   { icon: Users, title: "Local In-House Crews", detail: "Our teams live and work here. They know the roads, the building codes, and the inspectors." },
-  { icon: Clock, title: "Fast Response Anywhere in WNC", detail: "With offices in Franklin and Sylva, we reach every town in our service area within 45 minutes. Emergency response is prioritized." },
+  { icon: Clock, title: "Fast Response Anywhere in WNC", detail: "With offices in Franklin and Sylva, we reach every town in our service area the same day. Emergency response is prioritized." },
 ];
 
 const primaryTowns = towns.slice(0, 6);
@@ -303,7 +303,7 @@ const ServiceAreas = () => {
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/85 text-sm font-bold uppercase tracking-wider">
                 <span>Franklin & Sylva Offices</span>
                 <span className="text-primary-foreground/15">•</span>
-                <span>45-Min Max Response</span>
+                <span>Same-Day Contact</span>
                 <span className="text-primary-foreground/15">•</span>
                 <span>All Three Divisions Available</span>
               </div>

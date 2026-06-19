@@ -143,7 +143,7 @@ There's no universal answer. We assess each home individually — considering el
 
 ## Free Storm Damage Inspections
 
-We respond within 24–48 hours for storm inspections across all of Western NC. Call (828) 524-7773.`,
+We respond on a same-day or next-day basis for storm inspections across all of Western NC. Call (828) 524-7773.`,
   },
 
   {
@@ -584,7 +584,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
 
 1. **Ensure safety.** If there's structural damage, evacuate and call emergency services.
 2. **Stop water entry.** Place buckets under leaks. If safe, use tarps to cover exposed areas from inside.
-3. **Call a professional.** We respond within 24–48 hours for emergency situations.
+3. **Call a professional.** We respond on a same-day or next-day basis for emergency situations.
 4. **Document everything.** Photos, videos, time stamps — this supports your insurance claim.
 5. **Don't attempt roof access.** Wet, damaged roofs are extremely dangerous.
 
@@ -605,7 +605,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
 
 ## Our Response Commitment
 
-Highlander Roofing prioritizes emergency calls. We aim for same-day assessment when possible and 24–48 hour response for all emergency situations across Western NC.
+Highlander Roofing prioritizes emergency calls. We aim for same-day assessment when possible and prompt response for all emergency situations across Western NC.
 
 ## Call Now: (828) 524-7773`,
   },
@@ -1055,14 +1055,14 @@ Afternoon thunderstorms, flash flooding risk, humidity-driven moisture issues
 
 ## Emergency Response
 
-Highlander responds within 24-48 hours for storm damage inspections across all of Western NC. We provide detailed documentation that supports your insurance claim.`,
+Highlander responds on a same-day or next-day basis for storm damage inspections across all of Western NC. We provide detailed documentation that supports your insurance claim.`,
     relatedServices: [
       { label: "Storm Damage Roofing", path: "/roofing/storm-damage" },
       { label: "Storm Center", path: "/storm-center" },
     ],
     faqs: [
       { question: "Does Highlander offer emergency tarping?", answer: "Yes. We provide emergency tarping to prevent further damage while you wait for insurance assessment and permanent repairs." },
-      { question: "How quickly can you inspect storm damage?", answer: "We aim for 24-48 hour response for storm damage inspections across all of Western NC." },
+      { question: "How quickly can you inspect storm damage?", answer: "We aim for prompt response for storm damage inspections across all of Western NC." },
     ],
   },
   // ── Roofing Education ──

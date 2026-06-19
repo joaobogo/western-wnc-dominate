@@ -44,7 +44,7 @@ const repairPhilosophy = [
 ];
 
 const processSteps = [
-  { number: "01", title: "You Call — We Answer", icon: Phone, description: "Describe what you're seeing. We'll ask targeted questions to understand the urgency and schedule an assessment — typically within 24–48 hours, or same-day for emergencies." },
+  { number: "01", title: "You Call — We Answer", icon: Phone, description: "Describe what you're seeing. We'll ask targeted questions to understand the urgency and schedule an assessment — typically on a same-day or next-day basis, or same-day for emergencies." },
   { number: "02", title: "On-Site Diagnosis", icon: Eye, description: "We inspect the affected area and surrounding components to identify the true source of the problem. We photograph everything and explain our findings on-site." },
   { number: "03", title: "Clear Recommendation", icon: ClipboardCheck, description: "You receive a straightforward recommendation — repair, monitor, or replace — with a written scope, cost, and timeline. No ambiguity, no upselling." },
   { number: "04", title: "Precision Repair", icon: Hammer, description: "If repair is the right path, our crew executes with the same materials and standards we use on full replacements. Warrantied work, documented results." },
@@ -69,7 +69,7 @@ const repairVsReplace = {
 };
 
 const faqs = [
-  { q: "How quickly can you respond to a roof leak?", a: "For active leaks and storm damage, we offer Rapid emergency response including temporary tarping to prevent further water intrusion. Non-emergency repair assessments are typically scheduled within 24–48 hours of your call." },
+  { q: "How quickly can you respond to a roof leak?", a: "For active leaks and storm damage, we offer Rapid emergency response including temporary tarping to prevent further water intrusion. Non-emergency repair assessments are typically scheduled on a same-day or next-day basis of your call." },
   { q: "How much does a roof repair cost?", a: "Repair pricing is scope-based — it depends on the type of damage, materials involved, and accessibility. Rather than publish a generic range, we provide exact, itemized pricing after an on-site assessment so the number reflects the actual work." },
   { q: "Will you try to sell me a full replacement when I only need a repair?", a: "No. We diagnose honestly and recommend based on what your roof actually needs. If a targeted repair will solve the problem, that's what we'll recommend — and we'll document our reasoning so you can verify our logic." },
   { q: "Do you warranty repair work?", a: "Yes. Every repair we perform comes with a Highlander labor warranty covering the work we completed. The duration depends on the scope of the repair, and we'll specify it clearly before work begins." },

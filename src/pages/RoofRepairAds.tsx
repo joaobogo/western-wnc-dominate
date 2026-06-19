@@ -48,7 +48,7 @@ const RoofRepairAds = () => (
       },
       {
         question: "How soon can someone look at my roof repair issue?",
-        answer: "Active leaks get priority. Most non-emergency repair assessments are scheduled within 24–48 hours depending on weather and call volume.",
+        answer: "Active leaks get priority. Most non-emergency repair assessments are scheduled on a same-day or next-day basis depending on weather and call volume.",
       },
       {
         question: "Will you tell me if repair is no longer the smart option?",

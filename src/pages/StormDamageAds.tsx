@@ -44,7 +44,7 @@ const StormDamageAds = () => (
     faqs={[
       {
         question: "How fast can you respond after a storm?",
-        answer: "For urgent leak situations we prioritize same-day or next-day response when possible. For non-emergency storm assessments, we typically schedule within 24–48 hours depending on event volume.",
+        answer: "For urgent leak situations we prioritize same-day or next-day response when possible. For non-emergency storm assessments, we typically schedule on a same-day or next-day basis depending on event volume.",
       },
       {
         question: "Will you help with insurance documentation?",

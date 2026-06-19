@@ -90,7 +90,7 @@ const StormCenter = () => {
     <>
       <SEOHead
         title="Storm Center | Roof Damage Response & Recovery in Western NC"
-        description="Storm preparedness, damage assessment, and insurance claim guidance for Western North Carolina homeowners. 24–48 hour storm response from Highlander Roofing."
+        description="Storm preparedness, damage assessment, and insurance claim guidance for Western North Carolina homeowners. prompt storm response from Highlander Roofing."
         path="/storm-center"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
@@ -132,7 +132,7 @@ const StormCenter = () => {
                 </a>
               </div>
               <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-xs mt-3 font-body">
-                We respond within 24–48 hours for storm assessments across all of Western NC.
+                We respond on a same-day or next-day basis for storm assessments across all of Western NC.
               </p>
             </motion.div>
           </div>
