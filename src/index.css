@@ -228,6 +228,26 @@ img {
     }
   }
 
+  /* ─── Global header-overlap safety net ─────────────────────────────
+     Scroll-anchor offset so jump links never land beneath the fixed
+     header, plus fallback minimum top padding for any first-of-type
+     section that doesn't already declare its own pt-* / min-h-* hero
+     treatment. */
+  main > section:first-of-type {
+    scroll-margin-top: var(--header-h-md);
+  }
+  html {
+    scroll-padding-top: var(--header-h-md);
+  }
+  main > section:first-of-type:not([class*="min-h-"]):not([class*="pt-"]) {
+    padding-top: calc(var(--header-h) + 1rem);
+  }
+  @media (min-width: 768px) {
+    main > section:first-of-type:not([class*="min-h-"]):not([class*="pt-"]):not([class*="md:pt-"]) {
+      padding-top: calc(var(--header-h-md) + 1rem);
+    }
+  }
+
   /* Third-party floating widgets must not cover the first hero content on mobile. */
   @media (max-width: 767px) {
     #rwl-neighborhood,
