@@ -197,7 +197,7 @@ const Footer = () => {
                   <Clock className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
                   <div className="text-[15px] text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Office Hours</span>
-                    Mon–Fri 7:30 AM – 5:30 PM<br />
+                    Mon–Fri 8:00 AM – 5:00 PM<br />
                     <span className="text-primary font-semibold">Emergency response available 24/7</span>
                   </div>
                 </div>

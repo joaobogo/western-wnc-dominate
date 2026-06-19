@@ -573,7 +573,7 @@ export default function Contact() {
                         <Clock className="w-4 h-4 text-accent/50 flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="text-sm font-heading font-semibold text-foreground">Office Hours</p>
-                          <p className="text-xs text-muted-foreground font-body">Mon–Fri 7:30 AM – 5:30 PM</p>
+                          <p className="text-xs text-muted-foreground font-body">Mon–Fri 8:00 AM – 5:00 PM</p>
                           <p className="text-xs text-accent font-body font-semibold">Emergency response available 24/7</p>
                         </div>
                       </div>
