@@ -164,16 +164,6 @@ export const localBlogTopics: LocalBlogTopic[] = [
     ]
   },
   {
-    townSlug: "lake-toxaway-nc",
-    topics: [
-      {
-        title: "Luxury Roofing Systems for Lake Toxaway Estates",
-        description: "Why Brava synthetic slate and copper accents are the preferred choice for premier private lake communities.",
-        serviceCategory: "roofing"
-      }
-    ]
-  },
-  {
     townSlug: "murphy-nc",
     topics: [
       {
