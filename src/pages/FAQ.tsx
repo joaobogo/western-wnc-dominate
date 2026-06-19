@@ -213,7 +213,7 @@ const FAQ = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-3xl">
               Frequently Asked <span className="text-[hsl(var(--highland-gold))]">Questions</span>
             </h1>
-            <p className="text-white/75 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
+            <p className="text-white/95 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
               Practical answers about roofing, repairs, storm damage, insurance, construction, and home projects in Western North Carolina. For project-specific guidance, contact Highlander directly.
             </p>
           </div>
@@ -288,7 +288,7 @@ const FAQ = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
               Still Have Questions?
             </h2>
-            <p className="text-primary-foreground/75 mb-8 max-w-xl mx-auto">
+            <p className="text-primary-foreground/95 mb-8 max-w-xl mx-auto">
               Every home is different. For specific guidance on your roof, repair, or construction project, contact Highlander directly — a real WNC team member will answer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

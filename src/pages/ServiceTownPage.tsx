@@ -97,7 +97,7 @@ const ServiceTownPage = () => {
                 <span>/</span>
                 <Link to={`/service-areas/${town.slug}`} className="hover:underline">{town.name}</Link>
                 <span>/</span>
-                <span className="text-white/70">{entry.serviceLabel}</span>
+                <span className="text-white/90">{entry.serviceLabel}</span>
               </div>
               <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-6">
                 <MapPin className="w-4 h-4" />
@@ -139,7 +139,7 @@ const ServiceTownPage = () => {
                   { label: "Status", value: "Active Division" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest text-white/60 font-bold mb-0.5 md:mb-1">{stat.label}</span>
+                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest text-white/85 font-bold mb-0.5 md:mb-1">{stat.label}</span>
                     <span className="text-xs md:text-sm font-heading font-bold text-white uppercase tracking-tight">
                       {stat.value}
                     </span>

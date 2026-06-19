@@ -426,7 +426,7 @@ const BlogPostPage = () => {
                   <h3 className="text-xl font-heading font-bold text-primary-foreground mb-2">
                     Have Questions About Your Project?
                   </h3>
-                  <p className="text-primary-foreground/60 text-sm mb-5 max-w-md mx-auto">
+                  <p className="text-primary-foreground/85 text-sm mb-5 max-w-md mx-auto">
                     Our team is happy to answer questions — no commitment required. Just honest, expert advice from people who build in these mountains every day.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -492,7 +492,7 @@ const BlogPostPage = () => {
                   <h4 className="font-heading font-semibold text-primary-foreground text-sm mb-2">
                     Need Expert Advice?
                   </h4>
-                  <p className="text-primary-foreground/60 text-xs mb-4">
+                  <p className="text-primary-foreground/85 text-xs mb-4">
                     No pressure, no upselling — just honest expert advice.
                   </p>
                   <Link

@@ -111,10 +111,10 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-2">{g.title}</h3>
-              <p className="text-primary-foreground/50 text-sm font-body mb-4">{g.description}</p>
+              <p className="text-primary-foreground/85 text-sm font-body mb-4">{g.description}</p>
               <ul className="space-y-1.5">
                 {g.bulletPoints.map((point) => (
-                  <li key={point} className="text-primary-foreground/60 text-sm flex items-center gap-2.5 font-body">
+                  <li key={point} className="text-primary-foreground/85 text-sm flex items-center gap-2.5 font-body">
                     <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))] flex-shrink-0" /> {point}
                   </li>
                 ))}

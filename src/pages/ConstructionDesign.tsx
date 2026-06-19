@@ -156,7 +156,7 @@ const ConstructionDesign = () => {
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-2 mb-5 text-white/80 text-[12px] font-body">
+              <div className="flex items-center gap-2 mb-5 text-white/95 text-[12px] font-body">
                 <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Construction</Link>
                 <ChevronRight className="w-3 h-3" />
                 <span className="text-[hsl(var(--highland-gold))]">Design Services</span>
@@ -350,7 +350,7 @@ const ConstructionDesign = () => {
                     <p>
                       Clients who complete design with Highlander and move forward with Highlander for construction may receive a portion of their design fees as a credit on the final construction invoice at project completion.
                     </p>
-                    <p className="text-dark-section-foreground/65 text-[14px] italic">
+                    <p className="text-dark-section-foreground/90 text-[14px] italic">
                       Final credit details are confirmed in your Design &amp; Consultation Agreement.
                     </p>
                   </div>
@@ -513,7 +513,7 @@ const ConstructionDesign = () => {
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-dark-section-foreground leading-[1.1] mb-6">
                 Ready to Plan Your<br className="hidden md:block" /> Construction Project?
               </h2>
-              <p className="text-dark-section-foreground/80 text-base md:text-lg font-body leading-relaxed max-w-2xl mx-auto mb-9">
+              <p className="text-dark-section-foreground/95 text-base md:text-lg font-body leading-relaxed max-w-2xl mx-auto mb-9">
                 Tell us what you're considering, whether you already have plans, and how soon you hope to build. Our team will help determine whether your project is ready for estimating — or should begin with a Design &amp; Consultation Agreement.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
@@ -530,7 +530,7 @@ const ConstructionDesign = () => {
                   Start with a Design Agreement <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/80 hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-[14px]">
+              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/95 hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-[14px]">
                 <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                 (828) 524-7773
               </a>

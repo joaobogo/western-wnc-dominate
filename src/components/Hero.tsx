@@ -142,19 +142,19 @@ const Hero = () => {
           <div className="flex flex-col items-center gap-2">
             <div className="w-px h-20 bg-gradient-to-b from-transparent to-primary-foreground/15" />
             <div className="w-7 h-7 rounded-none border border-primary-foreground/10 flex items-center justify-center">
-              <Home className="w-3 h-3 text-primary-foreground/70" />
+              <Home className="w-3 h-3 text-primary-foreground/90" />
             </div>
-            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/70 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
               Roofing
             </span>
           </div>
           <div className="w-5 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/70 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
               Construction
             </span>
             <div className="w-7 h-7 rounded-none border border-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center">
-              <HardHat className="w-3 h-3 text-[hsl(var(--highland-gold)/0.3)]" />
+              <HardHat className="w-3 h-3 text-[hsl(var(--highland-gold)/0.75)]" />
             </div>
             <div className="w-px h-20 bg-gradient-to-b from-primary-foreground/15 to-transparent" />
           </div>
@@ -293,7 +293,7 @@ const Hero = () => {
                 <span className="text-[11px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))]">
                   VELUX Certified
                 </span>
-                <span className="text-[13px] font-body font-medium text-primary-foreground/80">
+                <span className="text-[13px] font-body font-medium text-primary-foreground/95">
                   Skylight Installer · Pro Accredited
                 </span>
               </div>
@@ -329,9 +329,9 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 2.2 + i * 0.1 }}
-                    className="flex items-center gap-2 text-primary-foreground/75 text-[13px] md:text-base"
+                    className="flex items-center gap-2 text-primary-foreground/95 text-[13px] md:text-base"
                   >
-                    <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
+                    <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
                     <span className="font-body font-medium leading-tight">{item.label}</span>
                   </motion.div>
                 ))}

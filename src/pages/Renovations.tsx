@@ -159,11 +159,11 @@ const Renovations = () => {
               >
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
                   <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                  <span className="text-xs font-body text-primary-foreground/75">Avg. ROI: 60–80% at resale</span>
+                  <span className="text-xs font-body text-primary-foreground/95">Avg. ROI: 60–80% at resale</span>
                 </div>
                 <div className="hidden sm:flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
                   <Eye className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                  <span className="text-xs font-body text-primary-foreground/75">Hidden damage protocol included</span>
+                  <span className="text-xs font-body text-primary-foreground/95">Hidden damage protocol included</span>
                 </div>
               </motion.div>
             </div>
@@ -180,7 +180,7 @@ const Renovations = () => {
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <div className="flex items-center justify-center gap-2 mb-8">
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
-                <Gauge className="w-6 h-6 text-[hsl(var(--highland-gold)/0.4)]" />
+                <Gauge className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)]" />
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">
@@ -253,7 +253,7 @@ const Renovations = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   The Details You Live With<br className="hidden md:block" /> Every Day.
                 </h2>
-                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">
                   Renovation quality isn't about the big reveal — it's about what you notice six months later. Grout lines. Trim joints. How a drawer closes. We build for the long view.
                 </p>
               </motion.div>
@@ -265,7 +265,7 @@ const Renovations = () => {
                       <div className="w-1 h-8 bg-[hsl(var(--highland-gold)/0.3)] rounded-full mt-0.5 flex-shrink-0" />
                       <div>
                         <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2">{item.title}</h3>
-                        <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                        <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{item.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -281,7 +281,7 @@ const Renovations = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to discuss your renovation?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
@@ -361,7 +361,7 @@ const Renovations = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
-                    <p className="text-white/50 text-xs font-body">{img.location}</p>
+                    <p className="text-white/85 text-xs font-body">{img.location}</p>
                   </div>
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[hsl(var(--highland-gold))] group-hover:w-full transition-all duration-500" />
                 </motion.div>

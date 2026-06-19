@@ -130,7 +130,7 @@ const RoofAssessmentQuiz = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.2}>
-            <p className="text-dark-section-foreground/50 text-sm font-body max-w-md mx-auto">
+            <p className="text-dark-section-foreground/85 text-sm font-body max-w-md mx-auto">
               Five quick questions. Instant results with actionable next steps. Takes under 60 seconds.
             </p>
           </ScrollReveal>

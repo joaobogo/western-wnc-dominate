@@ -369,7 +369,7 @@ export const ReassuranceBlock = ({
             isPrimary ? "text-primary-foreground" : "text-[hsl(var(--dark-section-foreground))]"
           }`}>{headline}</h2>
           <p className={`mb-8 max-w-xl mx-auto ${
-            isPrimary ? "text-primary-foreground/70" : "text-[hsl(var(--dark-section-foreground)/0.6)]"
+            isPrimary ? "text-primary-foreground/90" : "text-[hsl(var(--dark-section-foreground)/0.6)]"
           }`}>{subheadline}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -390,7 +390,7 @@ export const ReassuranceBlock = ({
             </a>
           </div>
           <TrustBadgeStrip className={`mt-8 ${
-            isPrimary ? "text-primary-foreground/50" : "text-[hsl(var(--dark-section-foreground)/0.4)]"
+            isPrimary ? "text-primary-foreground/85" : "text-[hsl(var(--dark-section-foreground)/0.4)]"
           }`} />
         </motion.div>
       </div>

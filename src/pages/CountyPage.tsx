@@ -115,7 +115,7 @@ const CountyPage = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 {county.facts.map((fact, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/60 font-bold mb-1">
+                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/85 font-bold mb-1">
                       {fact.label}
                     </span>
                     <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
@@ -214,7 +214,7 @@ const CountyPage = () => {
                   <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
                   <Home className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
                   <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Roofing</h3>
-                  <p className="text-white/70 text-sm mb-8 font-body leading-relaxed">
+                  <p className="text-white/90 text-sm mb-8 font-body leading-relaxed">
                     Specialized mountain systems designed for {county.name} weather. Shingle, metal, and premium Brava synthetic installations.
                   </p>
                   <Link to="/roofing" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm uppercase tracking-widest">

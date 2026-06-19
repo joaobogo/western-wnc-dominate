@@ -159,7 +159,7 @@ const BeforeAfterGallery = () => {
                     <h3 className="font-heading font-bold text-xl md:text-2xl text-white mb-1.5">
                       {projects[current].title}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-white/80 text-[15px] mb-3 font-body font-medium">
+                    <div className="flex items-center gap-1.5 text-white/95 text-[15px] mb-3 font-body font-medium">
                       <MapPin className="w-3.5 h-3.5" />
                       {projects[current].location}
                     </div>

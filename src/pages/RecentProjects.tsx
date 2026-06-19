@@ -252,7 +252,7 @@ const RecentProjects = () => {
         <section className="bg-[hsl(var(--heritage-green))] text-white">
           <div className="container-tight py-16 md:py-20 text-center">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Ready to Talk About Your Project?</h2>
-            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-white/95 text-lg mb-8 max-w-2xl mx-auto">
               Tell Highlander what you are planning, where the property is located, and what kind of help
               you need. Our team will help you determine the right next step.
             </p>

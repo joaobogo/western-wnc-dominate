@@ -27,7 +27,7 @@ export const RoofingMidCTA = ({
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">{headline}</h3>
-          <p className="text-primary-foreground/50 text-sm font-body">{subheadline}</p>
+          <p className="text-primary-foreground/85 text-sm font-body">{subheadline}</p>
         </div>
         <div className="flex gap-3 flex-shrink-0">
           <Link to={ctaLink} className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -69,7 +69,7 @@ export const RoofingClosingCTA = ({
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground whitespace-pre-line">
               {headline}
             </h2>
-            <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+            <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
               {subheadline}
             </p>
 
@@ -80,7 +80,7 @@ export const RoofingClosingCTA = ({
                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
               </Link>
               <a href="tel:+18285247773" className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all">
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
               </a>
             </div>
 
@@ -93,7 +93,7 @@ export const RoofingClosingCTA = ({
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
                   <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                  <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
+                  <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
                 </div>
               ))}
             </div>

@@ -62,9 +62,9 @@ const MetalRoofing = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-white/10 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-white" /></div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-white/60">Roofing</span>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-white/70" />
+                <ChevronRight className="w-3 h-3 text-white/90" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Metal Roofing</span>
               </motion.div>
 

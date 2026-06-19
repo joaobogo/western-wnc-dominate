@@ -115,9 +115,9 @@ const ExteriorImprovements = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Construction</span>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Exterior Improvements</span>
               </motion.div>
 
@@ -160,8 +160,8 @@ const ExteriorImprovements = () => {
                   { icon: Wind, label: "Ridge Wind Exposure" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-1.5 px-3 py-2 bg-white/5 border border-white/8 rounded-sm">
-                    <item.icon className="w-3 h-3 text-primary-foreground/70" />
-                    <span className="text-[10px] font-body text-primary-foreground/70 uppercase tracking-wider">{item.label}</span>
+                    <item.icon className="w-3 h-3 text-primary-foreground/90" />
+                    <span className="text-[10px] font-body text-primary-foreground/90 uppercase tracking-wider">{item.label}</span>
                   </div>
                 ))}
               </motion.div>
@@ -233,7 +233,7 @@ const ExteriorImprovements = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   WNC Exteriors Face<br className="hidden md:block" /> More Than Most.
                 </h2>
-                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">
                   The mountains test every material, fastener, and joint on your home's exterior. We build for the conditions — not just the appearance.
                 </p>
               </motion.div>
@@ -245,7 +245,7 @@ const ExteriorImprovements = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -259,7 +259,7 @@ const ExteriorImprovements = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to improve your home's exterior?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">Let's discuss what would make the biggest impact for your property.</p>
+                <p className="text-primary-foreground/85 text-sm font-body">Let's discuss what would make the biggest impact for your property.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
@@ -316,7 +316,7 @@ const ExteriorImprovements = () => {
                 {valueImpact.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group p-5 md:p-6 rounded-sm bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                     <div className="flex items-start gap-3">
-                      <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] mt-1 flex-shrink-0" />
+                      <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
                         <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
@@ -368,7 +368,7 @@ const ExteriorImprovements = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
-                    <p className="text-white/50 text-xs font-body">{img.location}</p>
+                    <p className="text-white/85 text-xs font-body">{img.location}</p>
                   </div>
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[hsl(var(--highland-gold))] group-hover:w-full transition-all duration-500" />
                 </motion.div>

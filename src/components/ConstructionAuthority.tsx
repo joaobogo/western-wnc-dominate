@@ -139,11 +139,11 @@ const ConstructionAuthority = () => {
 
           <ScrollReveal variant="rise-subtle" delay={0.25}>
             <div className="space-y-4 mb-10 max-w-2xl">
-              <p className="text-dark-section-foreground/50 text-[15px] font-body leading-[1.8]">
+              <p className="text-dark-section-foreground/85 text-[15px] font-body leading-[1.8]">
                 After years of roofing and general construction, the most common question we heard was:
-                <em className="text-dark-section-foreground/70"> "Can you handle the rest of the house too?"</em>
+                <em className="text-dark-section-foreground/90"> "Can you handle the rest of the house too?"</em>
               </p>
-              <p className="text-dark-section-foreground/75 text-[15px] font-body leading-[1.8]">
+              <p className="text-dark-section-foreground/95 text-[15px] font-body leading-[1.8]">
                 The answer is now yes. Every skill that makes us exceptional roofers — project management, structural understanding, weather protection, craftsmanship, and finish quality — transfers directly to construction. It's not a pivot. It's a natural extension.
               </p>
             </div>
@@ -167,7 +167,7 @@ const ConstructionAuthority = () => {
 
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-9 h-9 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center flex-shrink-0 group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
-                    <d.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
+                    <d.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
                   </div>
                   <h3 className="text-sm font-heading font-bold text-dark-section-foreground/85 tracking-tight">
                     {d.title}
@@ -176,12 +176,12 @@ const ConstructionAuthority = () => {
 
                 {/* Skill transfer labels */}
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-dark-section-foreground/70 bg-dark-section-foreground/[0.04] px-2 py-0.5">{d.roofingLabel}</span>
-                  <ArrowRight className="w-3 h-3 text-[hsl(var(--highland-gold)/0.3)]" />
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold)/0.5)] bg-[hsl(var(--highland-gold)/0.06)] px-2 py-0.5">{d.constructionLabel}</span>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-dark-section-foreground/90 bg-dark-section-foreground/[0.04] px-2 py-0.5">{d.roofingLabel}</span>
+                  <ArrowRight className="w-3 h-3 text-[hsl(var(--highland-gold)/0.75)]" />
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold)/0.9)] bg-[hsl(var(--highland-gold)/0.06)] px-2 py-0.5">{d.constructionLabel}</span>
                 </div>
 
-                <p className="text-dark-section-foreground/75 text-[12.5px] leading-[1.7] font-body">
+                <p className="text-dark-section-foreground/95 text-[12.5px] leading-[1.7] font-body">
                   {d.desc}
                 </p>
               </motion.div>
@@ -197,8 +197,8 @@ const ConstructionAuthority = () => {
                 "8 WNC Counties",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
-                  <span className="text-dark-section-foreground/75 text-[12px] font-body font-medium">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.9)]" />
+                  <span className="text-dark-section-foreground/95 text-[12px] font-body font-medium">
                     {item}
                   </span>
                 </div>
@@ -221,7 +221,7 @@ const ConstructionAuthority = () => {
                 to="/construction/consultation"
                 className="group border border-dark-section-foreground/10 text-dark-section-foreground font-heading font-medium text-[13px] px-7 py-4 rounded-none inline-flex items-center gap-2.5 hover:bg-dark-section-foreground/[0.04] hover:border-[hsl(var(--highland-gold)/0.25)] transition-all duration-300"
               >
-                <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
+                <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                 Schedule a Construction Consultation
               </Link>
             </div>

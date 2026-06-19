@@ -87,8 +87,8 @@ const ServicePage = () => {
                 <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.15em] ${theme.badgeTextClass}`}>
                   {theme.label}
                 </span>
-                <span className="text-dark-section-foreground/70 text-[10px] font-body">—</span>
-                <span className="text-dark-section-foreground/75 text-[10px] font-body italic tracking-wide">
+                <span className="text-dark-section-foreground/90 text-[10px] font-body">—</span>
+                <span className="text-dark-section-foreground/95 text-[10px] font-body italic tracking-wide">
                   {theme.tagline}
                 </span>
               </div>
@@ -160,7 +160,7 @@ const ServicePage = () => {
               {towns.map((town) => (
                 <Link key={town.slug} to={`/service-areas/${town.slug}`} className="bg-dark-section-foreground/5 border border-dark-section-foreground/10 rounded-lg p-4 hover:bg-dark-section-foreground/10 hover:border-accent/30 transition-all text-center">
                   <span className="font-heading font-semibold text-dark-section-foreground">{town.name}</span>
-                  <p className="text-dark-section-foreground/50 text-xs mt-1">{town.county}</p>
+                  <p className="text-dark-section-foreground/85 text-xs mt-1">{town.county}</p>
                 </Link>
               ))}
             </div>

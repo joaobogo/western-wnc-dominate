@@ -111,7 +111,7 @@ const LayoutsPlanning = () => {
                 initial={{ opacity: 0, y: 24 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.9, delay: 0.2, ease: HIGHLAND_EASE }}
-                className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl leading-relaxed font-body font-light"
+                className="text-xl md:text-2xl text-white/85 mb-12 max-w-2xl leading-relaxed font-body font-light"
               >
                 The foundational step for every successful build. Our Design branch provides the technical bridge between a vision and a buildable reality—mapping every detail before construction begins.
               </motion.p>
@@ -252,7 +252,7 @@ const LayoutsPlanning = () => {
                         <FileText className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
                       </div>
                       <h3 className="text-2xl font-heading font-bold mb-4">Detailed Planning Brief</h3>
-                      <p className="text-white/60 font-body text-sm leading-relaxed">
+                      <p className="text-white/85 font-body text-sm leading-relaxed">
                         For major additions, complex outdoor living, or multi-phase renovations. A comprehensive dive into your goals, constraints, and specific layout needs.
                       </p>
                     </div>
@@ -265,7 +265,7 @@ const LayoutsPlanning = () => {
                         "Materiality & aesthetic goals",
                         "Detailed project roadmap"
                       ].map(item => (
-                        <li key={item} className="flex items-center gap-3 text-xs font-medium font-body text-white/80">
+                        <li key={item} className="flex items-center gap-3 text-xs font-medium font-body text-white/95">
                           <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                           {item}
                         </li>
@@ -353,7 +353,7 @@ const LayoutsPlanning = () => {
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-10 leading-[1.1]">
                   Planning for the <span className="text-[hsl(var(--highland-gold))]">Unique Physics</span> of the Mountains.
                 </h2>
-                <p className="text-xl text-white/50 mb-12 font-body max-w-3xl mx-auto leading-relaxed">
+                <p className="text-xl text-white/85 mb-12 font-body max-w-3xl mx-auto leading-relaxed">
                   Western North Carolina isn't flat. We plan for soil types, slope stability, heavy snow loads, and extreme temperature swings. A plan from a flat-land designer won't work here. A Highlander plan will.
                 </p>
                 <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-105 transition-transform duration-300">

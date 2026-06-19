@@ -119,14 +119,14 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                     className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                     title="Toggle info (I)"
                   >
-                    <span className="text-white/50 text-xs font-body font-semibold">i</span>
+                    <span className="text-white/85 text-xs font-body font-semibold">i</span>
                   </button>
                   <button
                     onClick={() => setZoomed(p => !p)}
                     className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                     title="Toggle zoom (Z)"
                   >
-                    {zoomed ? <Minimize2 className="w-4 h-4 text-white/50" /> : <ZoomIn className="w-4 h-4 text-white/50" />}
+                    {zoomed ? <Minimize2 className="w-4 h-4 text-white/85" /> : <ZoomIn className="w-4 h-4 text-white/85" />}
                   </button>
                 </>
               )}
@@ -134,7 +134,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                 onClick={onClose}
                 className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
               >
-                <X className="w-5 h-5 text-white/60" />
+                <X className="w-5 h-5 text-white/85" />
               </button>
             </div>
           </motion.div>
@@ -145,7 +145,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
               onClick={(e) => { e.stopPropagation(); onNavigate(currentIndex! - 1); }}
               className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all z-20 group"
             >
-              <ChevronLeft className="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors" />
+              <ChevronLeft className="w-6 h-6 text-white/40 group-hover:text-white/95 transition-colors" />
             </button>
           )}
           {!isMobile && currentIndex! < projects.length - 1 && (
@@ -153,7 +153,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
               onClick={(e) => { e.stopPropagation(); onNavigate(currentIndex! + 1); }}
               className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all z-20 group"
             >
-              <ChevronRight className="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors" />
+              <ChevronRight className="w-6 h-6 text-white/40 group-hover:text-white/95 transition-colors" />
             </button>
           )}
 
@@ -213,7 +213,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   )}
                   <h3 className="font-heading font-bold text-xl text-white mb-3">{project.title}</h3>
                   {project.description && (
-                    <p className="text-white/55 text-sm leading-relaxed font-body mb-5">{project.description}</p>
+                    <p className="text-white/85 text-sm leading-relaxed font-body mb-5">{project.description}</p>
                   )}
                   <div className="space-y-2.5 text-sm text-white/45 font-body">
                     {project.location && (
@@ -225,8 +225,8 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   </div>
                   {project.highlight && (
                     <div className="mt-5 pt-5 border-t border-white/8">
-                      <p className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--highland-gold)/0.5)] mb-1">Project Highlight</p>
-                      <p className="text-white/60 text-sm font-body">{project.highlight}</p>
+                      <p className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--highland-gold)/0.9)] mb-1">Project Highlight</p>
+                      <p className="text-white/85 text-sm font-body">{project.highlight}</p>
                     </div>
                   )}
                 </motion.div>

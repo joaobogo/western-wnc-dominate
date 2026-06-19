@@ -142,20 +142,20 @@ const ConstructionTrust = ({
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
               <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">{eyebrow}</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground whitespace-pre-line">{heading}</h2>
-              {subheading && <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">{subheading}</p>}
+              {subheading && <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">{subheading}</p>}
             </motion.div>
 
             <div className={`grid grid-cols-1 ${colClass} gap-4 md:gap-5`}>
               {pillars.map((pillar, i) => (
                 <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                   {showObjections && pillar.overcomes && (
-                    <p className="text-[hsl(var(--highland-gold)/0.4)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                    <p className="text-[hsl(var(--highland-gold)/0.85)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
                   )}
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4">
                     <pillar.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                   </div>
                   <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{pillar.title}</h3>
-                  <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+                  <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -178,7 +178,7 @@ const ConstructionTrust = ({
           {pillars.map((pillar, i) => (
             <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
               {showObjections && pillar.overcomes && (
-                <p className="text-[hsl(var(--highland-gold)/0.4)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                <p className="text-[hsl(var(--highland-gold)/0.85)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
               )}
               <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
                 <pillar.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
@@ -233,7 +233,7 @@ export const ConstructionObjectionBuster = ({
           >
             <div className="grid md:grid-cols-5 gap-5 md:gap-8 items-start">
               <div className="md:col-span-2">
-                <p className="text-[hsl(var(--highland-gold)/0.5)] text-[12px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                <p className="text-[hsl(var(--highland-gold)/0.9)] text-[12px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors flex-shrink-0">
                     <pillar.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
@@ -266,7 +266,7 @@ export const ConstructionTrustStrip = ({
   <div className={`flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-6 ${className}`}>
     {pillars.map((p) => (
       <div key={p.title} className="flex items-center gap-2">
-        <p.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.4)]" />
+        <p.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.85)]" />
         <span className="text-muted-foreground text-xs font-body font-medium">{p.title}</span>
       </div>
     ))}

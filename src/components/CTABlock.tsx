@@ -105,7 +105,7 @@ const CTABlock = () => {
                       className="flex items-start gap-3"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.45)] flex-shrink-0 mt-0.5" />
-                      <span className="text-dark-section-foreground/75 text-[13px] font-body leading-relaxed">
+                      <span className="text-dark-section-foreground/95 text-[13px] font-body leading-relaxed">
                         {promise}
                       </span>
                     </motion.div>
@@ -154,15 +154,15 @@ const CTABlock = () => {
       <div className="bg-primary relative">
         <div className="container-tight px-6 md:px-10 py-5 md:py-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-primary-foreground/50 text-[13px] font-body text-center md:text-left">
-              <span className="text-primary-foreground/80 font-heading font-bold">4.9★ Rated.</span>{" "}
-              <span className="text-primary-foreground/80 font-heading font-bold">4.9★ rated.</span>{" "}
+            <p className="text-primary-foreground/85 text-[13px] font-body text-center md:text-left">
+              <span className="text-primary-foreground/95 font-heading font-bold">4.9★ Rated.</span>{" "}
+              <span className="text-primary-foreground/95 font-heading font-bold">4.9★ rated.</span>{" "}
               Roofing & Construction across Western NC since 2017.
             </p>
             <div className="flex items-center gap-4">
               <Link
                 to="/consultation"
-                className="group inline-flex items-center gap-2 text-primary-foreground/50 font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-primary-foreground/70 transition-colors"
+                className="group inline-flex items-center gap-2 text-primary-foreground/85 font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-primary-foreground/90 transition-colors"
               >
                 Roofing
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

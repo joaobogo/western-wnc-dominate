@@ -98,7 +98,7 @@ const VeluxProof = () => {
                   <h3 className="text-base font-heading font-bold text-dark-section-foreground mb-1.5 leading-tight">
                     {b.title}
                   </h3>
-                  <p className="text-[16px] text-dark-section-foreground/80 leading-relaxed font-medium">{b.body}</p>
+                  <p className="text-[16px] text-dark-section-foreground/95 leading-relaxed font-medium">{b.body}</p>
                 </div>
               ))}
             </div>
@@ -135,7 +135,7 @@ const VeluxProof = () => {
                   </li>
                 ))}
               </ul>
-              <p className="text-[11px] text-dark-section-foreground/80 font-body leading-relaxed">
+              <p className="text-[11px] text-dark-section-foreground/95 font-body leading-relaxed">
                 Coverage reflects standard VELUX warranty terms on deck-mounted skylights. Highlander will review applicable product and workmanship details with you before construction begins; full terms documented at handoff.
               </p>
             </div>
@@ -152,7 +152,7 @@ const VeluxProof = () => {
         >
           <div className="max-w-xl">
             <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">Schedule a skylight inspection.</h3>
-            <p className="text-dark-section-foreground/80 text-[17px] md:text-[20px] font-bold">
+            <p className="text-dark-section-foreground/95 text-[17px] md:text-[20px] font-bold">
               Free, no-pressure assessment of your existing skylights: leak diagnosis, flashing review, and replacement recommendations in writing.
             </p>
           </div>

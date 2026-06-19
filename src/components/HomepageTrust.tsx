@@ -77,7 +77,7 @@ const HomepageTrust = () => {
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.25}>
-              <p className="text-dark-section-foreground/75 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
+              <p className="text-dark-section-foreground/95 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
                 Certifications are verifiable. Reviews are public. Project photos are real.
                 We don't ask for trust — we earn it with evidence.
               </p>
@@ -101,7 +101,7 @@ const HomepageTrust = () => {
                   className="text-2xl md:text-[2.5rem] font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5 tracking-tight stat-glow"
                   duration={1800}
                 />
-                <span className="text-xs font-heading font-bold text-dark-section-foreground/60 tracking-tight">
+                <span className="text-xs font-heading font-bold text-dark-section-foreground/85 tracking-tight">
                   {stat.label}
                 </span>
               </motion.div>
@@ -121,12 +121,12 @@ const HomepageTrust = () => {
               >
                 <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-600 z-10" />
                 <div className="w-10 h-10 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center mb-4 group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
-                  <cred.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
+                  <cred.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
                 </div>
                 <h3 className="text-sm font-heading font-bold text-dark-section-foreground/85 mb-2 tracking-tight">
                   {cred.title}
                 </h3>
-                <p className="text-dark-section-foreground/75 text-[12.5px] leading-[1.7] font-body">
+                <p className="text-dark-section-foreground/95 text-[12.5px] leading-[1.7] font-body">
                   {cred.detail}
                 </p>
               </motion.div>
@@ -251,7 +251,7 @@ const HomepageTrust = () => {
             {/* Left — headline */}
             <div>
               <ScrollReveal variant="fade">
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold)/0.5)] mb-3 block">
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold)/0.9)] mb-3 block">
                   Local Knowledge
                 </span>
               </ScrollReveal>
@@ -260,7 +260,7 @@ const HomepageTrust = () => {
                   Built for Western<br className="hidden md:block" /> North Carolina.
                 </h3>
               </HeadingReveal>
-              <p className="text-dark-section-foreground/75 text-[13.5px] font-body leading-relaxed max-w-md">
+              <p className="text-dark-section-foreground/95 text-[13.5px] font-body leading-relaxed max-w-md">
                 Coastal specs don't work at 3,800 feet. Our crews live in these conditions —
                 every material recommendation comes from direct experience, not a manufacturer's data sheet.
               </p>
@@ -277,8 +277,8 @@ const HomepageTrust = () => {
                   transition={{ delay: 0.15 + i * 0.06, duration: 0.4, ease: HIGHLAND_EASE }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)] flex-shrink-0 mt-0.5" />
-                  <span className="text-dark-section-foreground/55 text-[13px] font-body leading-relaxed">
+                  <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] flex-shrink-0 mt-0.5" />
+                  <span className="text-dark-section-foreground/85 text-[13px] font-body leading-relaxed">
                     {point}
                   </span>
                 </motion.div>

@@ -581,7 +581,7 @@ export default function ConstructionConsultation() {
               "Design-Build Capable",
             ].map(item => (
               <div key={item} className="flex items-center gap-1.5">
-                <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.4)]" />
+                <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.85)]" />
                 <span className="text-muted-foreground/50 text-[11px] font-body font-medium">{item}</span>
               </div>
             ))}
