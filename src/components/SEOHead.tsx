@@ -173,9 +173,9 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   foundingDate: "2017",
   slogan: "Built for the Mountains. Built for Life.",
   sameAs: [
-    "https://www.facebook.com/highlanderroofing",
-    "https://www.instagram.com/highlanderroofing",
-    "https://www.google.com/maps?cid=highlanderroofing",
+    "https://www.linkedin.com/company/highlander-roofing-services-inc/",
+    "https://www.facebook.com/highlanderroof/reels/",
+    "https://www.instagram.com/highlanderroofingservices/",
   ],
   ...overrides,
 });
@@ -195,8 +195,9 @@ export const organizationSchema = () => ({
     availableLanguage: "English",
   },
   sameAs: [
-    "https://www.facebook.com/highlanderroofing",
-    "https://www.instagram.com/highlanderroofing",
+    "https://www.linkedin.com/company/highlander-roofing-services-inc/",
+    "https://www.facebook.com/highlanderroof/reels/",
+    "https://www.instagram.com/highlanderroofingservices/",
   ],
 });
 

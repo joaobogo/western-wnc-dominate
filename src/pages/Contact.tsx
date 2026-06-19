@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SocialLinks from "@/components/SocialLinks";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import FormConsent from "@/components/FormConsent";
 import {
@@ -661,6 +662,15 @@ export default function Contact() {
                   <span>CertainTeed Master Applicator</span>
                   <span className="text-[hsl(var(--highland-gold)/0.6)]">•</span>
                   <span>In-House Highlander Crews</span>
+                </div>
+                <div className="mt-12 pt-8 border-t border-white/10 flex flex-col items-center gap-4">
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
+                    Connect With Highlander
+                  </span>
+                  <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-sm md:text-base font-body max-w-md leading-relaxed">
+                    Follow along for recent work, community involvement, and roofing &amp; construction insights from across Western North Carolina.
+                  </p>
+                  <SocialLinks variant="dark" size="md" className="justify-center" />
                 </div>
               </motion.div>
             </div>

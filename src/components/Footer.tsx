@@ -5,6 +5,7 @@ import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
 import badgeHaag from "@/assets/badge-haag.png";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
+import SocialLinks from "@/components/SocialLinks";
 
 const roofingLinks = [
   { label: "Roof Replacement", href: "/roofing/roof-replacement" },
@@ -204,6 +205,13 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Follow Highlander */}
+            <div className="pt-6 mt-2 border-t border-border">
+              <span className="block text-[11px] font-body font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                Follow Highlander
+              </span>
+              <SocialLinks variant="light" size="md" />
+            </div>
 
             {/* Certifications & Authority */}
             <div className="grid grid-cols-2 gap-3 pt-8 mt-8 border-t border-border">
