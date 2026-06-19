@@ -230,7 +230,7 @@
   }
 
   .container-tight {
-    @apply max-w-6xl mx-auto;
+    @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
   }
 
   .cta-gradient {
