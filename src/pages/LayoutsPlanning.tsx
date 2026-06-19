@@ -309,9 +309,7 @@ const LayoutsPlanning = () => {
               <ScrollReveal variant="rise-subtle" delay={0.2} className="lg:sticky lg:top-32">
                 <div className="bg-card border border-border p-12 relative">
                   <div className="absolute top-0 right-0 w-full h-1 bg-[hsl(var(--highland-gold))]" />
-                  {/* Tartan Micro Detail */}
-                  <div className="absolute top-1 left-0 w-12 h-12 opacity-10" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "60px auto" }} />
-                  
+
                   <h3 className="text-2xl font-heading font-bold mb-8">Highlander Process Logic</h3>
                   <div className="space-y-12">
                     {[
