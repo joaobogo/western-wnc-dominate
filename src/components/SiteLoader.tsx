@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 
 const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
   const [visible, setVisible] = useState(true);
