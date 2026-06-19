@@ -17,7 +17,7 @@ import metal6 from "@/assets/gallery/metal-006.webp";
 import asphalt3 from "@/assets/gallery/asphalt-003.jpg";
 import metal10 from "@/assets/gallery/metal-010.jpg";
 import guttersImg from "@/assets/gallery/gutters-001.jpg";
-import metal9 from "@/assets/gallery/metal-009.jpg";
+import metal9 from "@/assets/gallery/siding-001.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;

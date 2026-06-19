@@ -10,7 +10,7 @@ import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
 import cedar004 from "@/assets/gallery/cedar-005.jpg";
 import asphalt001 from "@/assets/gallery/asphalt-001.jpg";
 import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
-import metal009 from "@/assets/gallery/metal-009.jpg";
+import metal009 from "@/assets/gallery/metal-010.jpg";
 import metal010 from "@/assets/gallery/metal-010.jpg";
 
 export interface ProjectDetail {
