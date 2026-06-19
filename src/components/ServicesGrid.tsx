@@ -191,20 +191,20 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
             width={600}
             height={400}
           />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/20 to-transparent" />
+          {/* Gradient overlay — deepened bottom scrim for stat legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
           <div className={`absolute inset-0 mix-blend-multiply opacity-10 ${
             isGold ? "bg-[hsl(var(--highland-gold))]" : "bg-[hsl(var(--heritage-green))]"
           }`} />
 
           {/* Stat floating in image */}
-          <div className="absolute bottom-3 left-5">
+          <div className="absolute bottom-3 left-5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
             <span className={`text-xl md:text-2xl font-heading font-bold leading-none ${
               isGold ? "text-[hsl(var(--highland-gold))]" : "text-white"
             }`}>
               {service.stat}
             </span>
-            <span className="block text-[13px] md:text-[14px] font-body text-white/85 uppercase tracking-[0.12em] mt-0.5 font-bold">
+            <span className="block text-[13px] md:text-[14px] font-body text-white uppercase tracking-[0.12em] mt-0.5 font-bold">
               {service.statLabel}
             </span>
           </div>
