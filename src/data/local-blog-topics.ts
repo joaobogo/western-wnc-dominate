@@ -174,36 +174,6 @@ export const localBlogTopics: LocalBlogTopic[] = [
     ]
   },
   {
-    townSlug: "black-mountain-nc",
-    topics: [
-      {
-        title: "Artisan Construction: The Black Mountain Timber-Frame Legacy",
-        description: "How we incorporate traditional joinery and heavy timber into modern mountain home expansions.",
-        serviceCategory: "construction"
-      }
-    ]
-  },
-  {
-    townSlug: "weaverville-nc",
-    topics: [
-      {
-        title: "North Buncombe Ridgetop Roofing: Defending Against High Winds",
-        description: "Engineering your roof for the specific physics of Weaverville's exposed ridgelines.",
-        serviceCategory: "roofing"
-      }
-    ]
-  },
-  {
-    townSlug: "marshall-nc",
-    topics: [
-      {
-        title: "Preserving Madison County: Historic Riverside Renovations",
-        description: "Challenges and strategies for structural modernization in Marshall's historic downtown core.",
-        serviceCategory: "both"
-      }
-    ]
-  },
-  {
     townSlug: "hayesville-nc",
     topics: [
       {
