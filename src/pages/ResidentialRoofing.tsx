@@ -914,7 +914,7 @@ const ResidentialRoofing = () => {
                     </a>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
+                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/15">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Award, text: "CertainTeed Certified" },
@@ -923,7 +923,7 @@ const ResidentialRoofing = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-                        <span className="text-dark-section-foreground/85 text-sm font-body font-semibold">{item.text}</span>
+                        <span className="text-dark-section-foreground text-sm font-body font-semibold">{item.text}</span>
                       </div>
                     ))}
                   </div>
