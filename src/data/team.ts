@@ -27,13 +27,13 @@ export const teamMembers: TeamMember[] = [
     alt: "Luke Smith, Owner & Founder at Highlander Roofing Services",
     bio: [
       "Luke's roots in roofing and construction go back to the 1980s, when he first started learning the trades hands-on. That decades-long foundation shaped the standards, craftsmanship, and work ethic that define Highlander Roofing Services today.",
-      "For the past 10 years, Luke has built and led Highlander locally across Western North Carolina, delivering dependable roofing and construction solutions with a focus on quality workmanship, honest communication, and lasting relationships in the communities Highlander serves.",
+      "Across decades in the trade, Luke has built and led Highlander locally throughout Western North Carolina, delivering dependable roofing and construction solutions with a focus on quality workmanship, honest communication, and lasting relationships in the communities Highlander serves.",
       "As the company owner, Luke remains actively involved in daily operations, customer relations, and ensuring every project reflects Highlander's standards. Beyond the business, he is deeply involved in local organizations and community service initiatives across Franklin, Highlands, Cashiers, and the surrounding areas.",
       "When he's not working with customers or managing projects, Luke enjoys training for and running marathons and spending time with family and friends in the mountains of Western North Carolina.",
     ],
     details: [
       { label: "Industry Experience", value: "Roofing & Construction Since the 1980s" },
-      { label: "Years Leading Highlander Locally", value: "10 Years in Western NC" },
+      { label: "Leading Highlander Locally", value: "Decades in Western NC" },
       { label: "Specialty", value: "Customer Relations & Company Leadership" },
       { label: "Favorite Part of the Job", value: "Helping homeowners protect their most valuable investment" },
       { label: "Community Involvement", value: "Active in local organizations and community service initiatives" },
