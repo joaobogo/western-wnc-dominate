@@ -164,52 +164,12 @@ export const localBlogTopics: LocalBlogTopic[] = [
     ]
   },
   {
-    townSlug: "lake-toxaway-nc",
-    topics: [
-      {
-        title: "Luxury Roofing Systems for Lake Toxaway Estates",
-        description: "Why Brava synthetic slate and copper accents are the preferred choice for premier private lake communities.",
-        serviceCategory: "roofing"
-      }
-    ]
-  },
-  {
     townSlug: "murphy-nc",
     topics: [
       {
         title: "Durable Roofing for Western NC: Murphy's Best Material Choices",
         description: "A guide to selecting low-maintenance, high-performance systems for Cherokee County residences.",
         serviceCategory: "roofing"
-      }
-    ]
-  },
-  {
-    townSlug: "black-mountain-nc",
-    topics: [
-      {
-        title: "Artisan Construction: The Black Mountain Timber-Frame Legacy",
-        description: "How we incorporate traditional joinery and heavy timber into modern mountain home expansions.",
-        serviceCategory: "construction"
-      }
-    ]
-  },
-  {
-    townSlug: "weaverville-nc",
-    topics: [
-      {
-        title: "North Buncombe Ridgetop Roofing: Defending Against High Winds",
-        description: "Engineering your roof for the specific physics of Weaverville's exposed ridgelines.",
-        serviceCategory: "roofing"
-      }
-    ]
-  },
-  {
-    townSlug: "marshall-nc",
-    topics: [
-      {
-        title: "Preserving Madison County: Historic Riverside Renovations",
-        description: "Challenges and strategies for structural modernization in Marshall's historic downtown core.",
-        serviceCategory: "both"
       }
     ]
   },

@@ -67,8 +67,8 @@ const processSteps = [
 
 const galleryImages = [
   { src: proj1, alt: "Kitchen renovation in WNC home", label: "Kitchen Remodel", location: "Complete Transformation, Asheville" },
-  { src: proj2, alt: "Bathroom renovation with custom tile", label: "Master Bath", location: "Custom Tile & Vanity, Black Mountain" },
-  { src: proj3, alt: "Living space open concept renovation", label: "Open Concept Conversion", location: "Wall Removal & Refinish, Weaverville" },
+  { src: proj2, alt: "Bathroom renovation with custom tile", label: "Master Bath", location: "Custom Tile & Vanity, Sylva" },
+  { src: proj3, alt: "Living space open concept renovation", label: "Open Concept Conversion", location: "Wall Removal & Refinish, Franklin" },
   { src: proj4, alt: "Whole home multi-room renovation", label: "Whole-Home Renovation", location: "Multi-Room Scope, Fairview" },
 ];
 

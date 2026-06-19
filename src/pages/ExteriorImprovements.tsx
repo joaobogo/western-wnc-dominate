@@ -66,8 +66,8 @@ const processSteps = [
 
 const galleryImages = [
   { src: proj1, alt: "Complete exterior renovation", label: "Full Exterior Upgrade", location: "Siding & Trim, Asheville" },
-  { src: proj2, alt: "Entry enhancement with new door", label: "Entry Enhancement", location: "Custom Door Installation, Weaverville" },
-  { src: proj3, alt: "Cedar siding renovation", label: "Cedar Siding", location: "Mountain Home Renovation, Black Mountain" },
+  { src: proj2, alt: "Entry enhancement with new door", label: "Entry Enhancement", location: "Custom Door Installation, Franklin" },
+  { src: proj3, alt: "Cedar siding renovation", label: "Cedar Siding", location: "Mountain Home Renovation, Sylva" },
   { src: proj4, alt: "Window replacement project", label: "Window Replacement", location: "Energy Upgrade, Fairview" },
 ];
 

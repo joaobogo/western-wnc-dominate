@@ -51,16 +51,8 @@ export const townLocalRelevance: Record<string, string> = {
     "Hendersonville's historic Main Street district and established Henderson County neighborhoods reward roofing and exterior work built to last decades, not seasons. Highlander supports Hendersonville homeowners with Class 4 impact-resistant shingle systems, exterior siding updates, deck safety repairs, and age-in-place exterior modifications.",
   "brevard-nc":
     "Brevard sits in the Land of Waterfalls, where record rainfall makes gutter sizing, underlayment, and flashing details a moisture-management problem first and an aesthetics decision second. Highlander serves Transylvania County homeowners with advanced gutter systems, synthetic shake roofing, deck and porch additions, and exterior siding work built to stay dry.",
-  "lake-toxaway-nc":
-    "Lake Toxaway estates expect Brava-grade synthetic roofing, copper gutter work, and lakefront construction that holds up under intense storms and persistent lake-effect moisture. Highlander serves the Lake Toxaway and broader Transylvania County market with luxury roof systems, premium maintenance programs, and high-end master suite and outdoor-living additions.",
   "murphy-nc":
     "Murphy and the far western counties get a real local roofing and construction partner instead of a Friday-only crew. Highlander serves Cherokee County homeowners with dimensional shingle systems, deck repairs, siding replacement, storm-damage mitigation, and exterior work scoped to the long-term value of family homes and vacation properties.",
-  "black-mountain-nc":
-    "Black Mountain homes — from arts-and-crafts cottages to modern mountain retreats — sit on ridges and slopes that face real wind exposure and winter ice. Highlander serves Buncombe County homeowners with designer asphalt shingle systems, custom timber porch work, historic roof restoration, and interior renovations that respect the town's craftsman character.",
-  "weaverville-nc":
-    "Weaverville's growing family-home market and ridgetop estates need roofing and exterior work designed for high-wind events and ridgetop UV, not generic suburban specs. Highlander serves North Buncombe homeowners with standing-seam metal systems, structural home additions, dimensional shingles, and modern siding updates engineered for the long run.",
-  "marshall-nc":
-    "Marshall's historic riverfront homes and Madison County's ridgetop farms need a contractor comfortable with complex terrain, century-old structures, and serious wind exposure. Highlander serves Madison County homeowners with metal roofing systems, structural repairs, historic exterior renovations, and deck extensions built for Appalachian conditions.",
   "hayesville-nc":
     "Hayesville and the Lake Chatuge area run on lakefront living — homes built for views, decks, and water-adjacent durability. Highlander serves Clay County homeowners with standing-seam metal roofing, luxury decking, exterior modernization, and residential replacement work designed to protect lakefront investments season after season.",
 };
@@ -309,26 +301,6 @@ export const towns: TownData[] = [
     heroImage: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000"
   },
   {
-    slug: "lake-toxaway-nc",
-    name: "Lake Toxaway",
-    county: "Transylvania County",
-    state: "NC",
-    elevation: "2,979 ft",
-    description: "High-end estate services for Lake Toxaway's premier private community. We specialize in luxury roofing systems and expansive lakefront construction.",
-    features: ["Private community expertise", "Luxury estate focus", "Lakefront construction", "Brava Platinum installers"],
-    metaTitle: "Roofing & Construction in Lake Toxaway, NC | Highlander",
-    metaDescription: "Premier roofing and construction for Lake Toxaway estates. Specialized in Brava synthetic systems and luxury lakefront additions. Licensed & Insured.",
-    housingProfile: "Ultra-luxury lakefront estates, private mountain retreats, and gated club properties.",
-    climateExposure: "Intense seasonal storms and persistent lake-effect moisture that demands premium synthetic or metal systems.",
-    localVibe: "An exclusive, low-density private community where design perfection and long-term asset protection are the baseline.",
-    constructionContext: "We specialize in lakefront deck expansions and high-end master suite additions that maximize Toxaway's unique views.",
-    serviceDemandMix: ["Brava Synthetic Slate", "Copper Gutter Systems", "Luxury Additions", "Premium Maintenance"],
-    styleTendency: "Classic Adirondack and sophisticated Mountain Rustic home design featuring massive stone and timber elements.",
-    notableNeighborhoods: ["Lake Toxaway Estates", "The Greystone", "Catatoga"],
-    marketAuthorityAngle: "Toxaway estates require a commercial-grade attention to detail and a white-glove service level. We protect the plateau's finest assets.",
-    heroImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=2000"
-  },
-  {
     slug: "murphy-nc",
     name: "Murphy",
     county: "Cherokee County",
@@ -347,66 +319,6 @@ export const towns: TownData[] = [
     notableNeighborhoods: ["Bear Paw", "Hiwassee Dam area", "Hanging Dog", "Murphy Town Center"],
     marketAuthorityAngle: "Murphy is where we offer Western North Carolina's most dependable local service. We're your neighbors, building for your long-term value.",
     heroImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
-  },
-  {
-    slug: "black-mountain-nc",
-    name: "Black Mountain",
-    county: "Buncombe County",
-    state: "NC",
-    elevation: "2,405 ft",
-    description: "Serving the 'Little Town That Rocks' with premium mountain roofing and custom deck expansions. We combine artisan quality with high-performance materials.",
-    features: ["Artisan craftsmanship", "Mountain deck experts", "Local Buncombe crews", "Historic cottage care"],
-    metaTitle: "Roofing & Construction in Black Mountain, NC | Highlander",
-    metaDescription: "Professional roofing and construction for Black Mountain homes. Specialized in mountain-modern design and historic preservation. Licensed & Insured.",
-    housingProfile: "Historic arts-and-crafts cottages, modern mountain retreats, and cozy residential neighborhoods.",
-    climateExposure: "Significant ridgetop wind exposure and winter ice events common to the Swannanoa Valley.",
-    localVibe: "A vibrant, creative mountain community that values authentic materials and meticulous craftsmanship.",
-    constructionContext: "We specialize in custom timber-frame porches and interior transformations that enhance the town's signature mountain-arts aesthetic.",
-    serviceDemandMix: ["Designer Asphalt Shingles", "Custom Timber Porches", "Historic Roof Restoration", "Interior Renovations"],
-    styleTendency: "Craftsman, Appalachian Rustic, and Modern Mountain styles emphasizing natural textures and outdoor integration.",
-    notableNeighborhoods: ["The Settings", "Cheshire", "Montreat area", "Black Mountain Historic District"],
-    marketAuthorityAngle: "Black Mountain homes are design statements. We build with the precision and care the town's creative legacy requires.",
-    heroImage: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=2000"
-  },
-  {
-    slug: "weaverville-nc",
-    name: "Weaverville",
-    county: "Buncombe County",
-    state: "NC",
-    elevation: "2,165 ft",
-    description: "Providing Weaverville families and ridgetop estates with high-durability roofing and structural home additions. We serve North Buncombe with local pride.",
-    features: ["Family-home focus", "Ridgetop specialists", "North Buncombe hub", "Modern residential plans"],
-    metaTitle: "Roofing & Construction in Weaverville, NC | Highlander",
-    metaDescription: "Expert roofing and construction for Weaverville's growing residential market. Specialized in ridgetop durability and home additions. Licensed & Insured.",
-    housingProfile: "Established family neighborhoods, luxury ridgetop developments, and modern craftsman subdivisions.",
-    climateExposure: "High-wind events common to the Reems Creek valley and ridgetop UV intensity.",
-    localVibe: "A growing, sophisticated residential community that balances small-town charm with modern mountain growth.",
-    constructionContext: "We focus on expanding modern family homes with master suites, sunrooms, and engineered outdoor living spaces.",
-    serviceDemandMix: ["Standing Seam Metal", "Structural Additions", "Dimensional Shingles", "Siding Modernization"],
-    styleTendency: "Modern Craftsman and Transitional Mountain styles featuring clean lines and durable exterior finishes.",
-    notableNeighborhoods: ["Reems Creek", "Vantage Point", "Ox Creek", "Downtown Weaverville"],
-    marketAuthorityAngle: "Weaverville's growth requires a contractor who understands modern building envelopes and ridgetop physics. We build for the next generation.",
-    heroImage: "https://images.unsplash.com/photo-1434082033009-b81d41d32e1c?auto=format&fit=crop&q=80&w=2000"
-  },
-  {
-    slug: "marshall-nc",
-    name: "Marshall",
-    county: "Madison County",
-    state: "NC",
-    elevation: "1,647 ft",
-    description: "Serving Marshall's historic riverfront and Madison County's ridgetop farms with reliable, team-led roofing and construction.",
-    features: ["Historic riverfront care", "Ridgetop farm expertise", "Madison County focus", "Steep-slope specialists"],
-    metaTitle: "Roofing & Construction in Marshall, NC | Highlander",
-    metaDescription: "Professional roofing and construction for Marshall and Madison County. Specialized in historic preservation and ridgetop builds. Licensed & Insured.",
-    housingProfile: "Historic riverside homes, century-old farmhouses, and modern ridgetop retreats.",
-    climateExposure: "River-proximate humidity and significant wind exposure on Madison County's high ridgetops.",
-    localVibe: "A rugged, authentic mountain community where history and hard work are the foundation of every project.",
-    constructionContext: "We specialize in structural stabilization of older homes and modern additions that capture Madison County's long-range views.",
-    serviceDemandMix: ["Metal Roofing Systems", "Structural Repairs", "Historic Renovations", "Deck Extensions"],
-    styleTendency: "Traditional Appalachian, Farmhouse, and industrial-tinged historic styles.",
-    notableNeighborhoods: ["Historic Downtown", "Walnut Creek", "Redmon", "Sandy Mush area"],
-    marketAuthorityAngle: "Marshall requires a contractor who isn't afraid of complex terrain or historic challenges. We build with Madison County grit.",
-    heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "hayesville-nc",
