@@ -12,7 +12,7 @@ const pathways = [
   {
     icon: Phone,
     title: "Speak with the Owner",
-    desc: "A direct conversation with our owner. Not a call center, not a sales rep — the person who signs your warranty.",
+    desc: "A direct conversation with our owner. Not a call center, not a sales rep. The person who signs your warranty.",
     action: "Call (828) 524-7773",
     href: "tel:+18285247773",
     external: true,
