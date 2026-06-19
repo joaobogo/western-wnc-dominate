@@ -237,14 +237,6 @@ const Footer = () => {
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <img src={badgeHaag} alt="HAAG Certified" className="h-8 w-auto" />
-                  <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">HAAG Certified</span>
-                </div>
-                <span className="text-[11px] text-muted-foreground font-body leading-tight">Expert Storm Damage Assessment</span>
-              </div>
-
-              <div className="flex flex-col gap-2 group/cert">
-                <div className="h-10 w-auto flex items-center">
                   <img src={badgeCertainteedMaster} alt="CertainTeed ShingleMaster Credentialed Contractor" className="h-8 w-auto" />
                   <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">ShingleMaster</span>
                 </div>
