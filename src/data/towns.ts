@@ -34,7 +34,7 @@ export const townLocalRelevance: Record<string, string> = {
   "cashiers-nc":
     "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain home design and high-end home investments across the Plateau.",
   "franklin-nc":
-    "Based in Franklin, Highlander Roofing & Construction serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen within 24–48 hours and the same owner-led team is on site from first call to final walkthrough.",
+    "Based in Franklin, Highlander Roofing & Construction serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen within 24–48 hours and the same team-led team is on site from first call to final walkthrough.",
   "sylva-nc":
     "Sylva blends historic downtown homes, university rentals, and hillside residences across Jackson County — and valley moisture, fog, and humidity make roof and exterior choices matter. Highlander supports Sylva homeowners and property owners with roof repair and replacement, gutter work, historic-sensitive exterior renovations, and reliable commercial maintenance.",
   "bryson-city-nc":
@@ -135,9 +135,9 @@ export const towns: TownData[] = [
     state: "NC",
     elevation: "2,119 ft",
     description: "Our hometown market. Based in Franklin, we provide the region's fastest response times for family homes, valley farms, and ridge-top residences across Macon County.",
-    features: ["Locally based crews", "Design", "Residential specialists", "Family-owned authority"],
+    features: ["Locally based crews", "Design", "Residential specialists", "Family-owned, team-driven"],
     metaTitle: "Roofing & Construction in Franklin, NC | Highlander",
-    metaDescription: "Local roofing and construction for Franklin, NC families and farms. Family-owned crews for residential roofing and home additions. Licensed & insured.",
+    metaDescription: "Local roofing and construction for Franklin, NC families and farms. Family-owned and locally run by a team of WNC pros for residential roofing and home additions. Licensed & insured.",
     housingProfile: "Traditional single-family homes, ridgetop residences, and historic valley farmhouses across Macon County.",
     climateExposure: "Challenging seasonal swings and high-wind events channeled through the Little Tennessee River valley.",
     localVibe: "A stable, year-round community where local accountability and family-business reliability are the primary priorities.",
@@ -394,7 +394,7 @@ export const towns: TownData[] = [
     county: "Madison County",
     state: "NC",
     elevation: "1,647 ft",
-    description: "Serving Marshall's historic riverfront and Madison County's ridgetop farms with reliable, owner-led roofing and construction.",
+    description: "Serving Marshall's historic riverfront and Madison County's ridgetop farms with reliable, team-led roofing and construction.",
     features: ["Historic riverfront care", "Ridgetop farm expertise", "Madison County focus", "Steep-slope specialists"],
     metaTitle: "Roofing & Construction in Marshall, NC | Highlander",
     metaDescription: "Professional roofing and construction for Marshall and Madison County. Specialized in historic preservation and ridgetop builds. Licensed & Insured.",

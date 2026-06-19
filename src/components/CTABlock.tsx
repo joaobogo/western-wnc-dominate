@@ -50,7 +50,7 @@ const CTABlock = () => {
               <HeadingReveal delay={0.1}>
                 <h2 className="text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-heading font-bold mb-6 md:mb-8 leading-[1.06] tracking-[-0.02em] text-dark-section-foreground">
                   One conversation.<br />
-                  <span className="text-[hsl(var(--highland-gold))]">One owner-led team.</span>
+                  <span className="text-[hsl(var(--highland-gold))]">One local team.</span>
                 </h2>
               </HeadingReveal>
 

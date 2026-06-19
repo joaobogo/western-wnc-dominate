@@ -130,11 +130,11 @@ const About = () => {
                 transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.0] mb-8"
               >
-                <span className="text-[hsl(var(--highland-gold))]">Built on Family Values.</span>
+                <span className="text-[hsl(var(--highland-gold))]">Built by a Local Team.</span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-[19px] md:text-[22px] text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
-                Highlander is a family-owned company rooted in Franklin and Sylva, NC. We provide premium roofing, construction, and design support across Western North Carolina—delivering the craft, care, and local accountability your home deserves.
+                Highlander is family-owned and locally run by a team of people who call Western North Carolina home. The owners set the standard, and every team member — from leadership and consultants to inspectors, project managers, repair specialists, and crews — plays a role in delivering the craft, care, and local accountability your home deserves.
               </motion.p>
 
               {/* Understated CTA — warm solid button, no gradient (About-only) */}
@@ -191,8 +191,11 @@ const About = () => {
         <section id="team-section" className="section-padding bg-background relative overflow-hidden">
           <div className="container-tight">
             <div className="text-center mb-16 relative">
-              <span className="eyebrow mb-3 block">Family Ownership</span>
-              <h2 className="section-heading">Owner-Led Accountability</h2>
+              <span className="eyebrow mb-3 block">Family-Owned. Locally Run. Team-Driven.</span>
+              <h2 className="section-heading">Every Team Member Makes a Difference</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mt-6 leading-relaxed font-body">
+                Highlander is family-owned, but the experience customers receive is shaped by the entire team. From ownership and customer relations to inspections, repairs, scheduling, project management, and crews, every person plays a role in helping Western North Carolina homeowners protect and improve their properties.
+              </p>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mt-4" />
             </div>
 
@@ -324,14 +327,14 @@ const About = () => {
                 <h2 className="section-heading mb-6">Family Roots.<br /> Mountain Standards.</h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
                 <p className="text-muted-foreground leading-relaxed mb-4 font-bold">
-                  Highlander is a family-owned and operated company with two locations — Franklin and
-                  Sylva, NC. We've completed hundreds of roofing, construction, and design projects across
-                  Macon, Jackson, Swain, Haywood, and surrounding counties.
+                  Highlander is family-owned and locally operated, with two locations — Franklin and
+                  Sylva, NC — and a team of local professionals who have completed hundreds of roofing,
+                  construction, and design projects across Macon, Jackson, Swain, Haywood, and surrounding counties.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Every project is led by our owner — a licensed NC General
-                  Contractor and CertainTeed Master Shingle Applicator who personally handles
-                  estimates, approves every scope of work, and walks every final inspection.
+                  Ownership sets the standard — a licensed NC General Contractor and CertainTeed Master
+                  Shingle Applicator approves every scope — and the local team carries that standard
+                  through every estimate, install, inspection, and final walkthrough.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   We don't subcontract critical work. Our in-house crews are trained, vetted, and
@@ -616,7 +619,7 @@ const About = () => {
                 </Link>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/50 text-xs font-medium uppercase tracking-wider">
-                <span>Family-Owned Since 2017</span>
+                <span>Family-Owned. Locally Run. Since 2017.</span>
                 <span className="text-primary-foreground/20">•</span>
                 <span>20+ Local Professionals</span>
                 <span className="text-primary-foreground/20">•</span>
@@ -640,7 +643,7 @@ const About = () => {
                     Highlander started as a local response to a regional problem: homeowners in Western North Carolina weren't getting the specialized roofing care their mountain homes demanded.
                   </p>
                   <p>
-                    Since 2017, we've remained owner-led and family-driven. We don't have board members or out-of-state headquarters. Our decisions are made on front porches and ridgelines, with the long-term reputation of our family name at stake.
+                    Since 2017, we've remained team-led and family-driven. We don't have board members or out-of-state headquarters. Our decisions are made on front porches and ridgelines, with the long-term reputation of our family name at stake.
                   </p>
                   <p className="italic font-medium text-foreground">
                     "When we put our name on a project, we're making a promise to a neighbor."

@@ -18,7 +18,7 @@ const RoofRepairAds = () => (
       { value: "48hr", label: "Assessment goal", detail: "Same-day for urgent leak calls" },
       { value: "Honest", label: "Repair guidance", detail: "We tell you if replacement is unnecessary" },
       { value: "Local", label: "Crew accountability", detail: "In-house Highlander crews" },
-      { value: "2017", label: "Serving WNC", detail: "Family-run and mountain-experienced" },
+      { value: "2017", label: "Serving WNC", detail: "Family-owned, locally run by a mountain-experienced team" },
     ]}
     highlights={[
       "Leak tracing that focuses on the real source instead of a guess near the stain.",

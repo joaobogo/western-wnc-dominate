@@ -36,7 +36,7 @@ const presets: Record<string, { items: ProofItem[]; accent?: string }> = {
   },
   stats: {
     items: [
-      { icon: Hammer, text: "Owner-Led Quality", stat: "100%" },
+      { icon: Hammer, text: "Team-Led Quality", stat: "100%" },
       { icon: Clock, text: "40+ Years Combined Exp.", stat: "40+" },
       { icon: Mountain, text: "8 WNC Counties Served", stat: "8" },
     ],

@@ -25,7 +25,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Franklin, NC",
     intro:
-      "Franklin is our home market. Our crews, trucks, and material yards are minutes from most jobs in town — so replacement projects move on schedule and the same owner-led team is on-site from tear-off to final inspection.",
+      "Franklin is our home market. Our crews, trucks, and material yards are minutes from most jobs in town — so replacement projects move on schedule and the same team-led team is on-site from tear-off to final inspection.",
     localContext:
       "Most Franklin roofs we replace are 20–30 year asphalt systems on ranch, split-level, and farmhouse-style homes in the Cartoogechaye, Cowee, and Iotla valleys. Ventilation deficiencies and aging underlayment are the two most common reasons homes here need a full replacement rather than another patch.",
     whoItsFor:
@@ -34,7 +34,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Franklin is where we cut our teeth. The crew you meet at your estimate is the crew on your roof — same names, same trucks, year after year.",
     metaTitle: "Roof Replacement in Franklin, NC | Highlander Roofing",
     metaDescription:
-      "Full roof replacement in Franklin, NC from a locally based, owner-led team. CertainTeed Master Applicator, licensed GC, free on-site assessment.",
+      "Full roof replacement in Franklin, NC from a locally based, team-led team. CertainTeed Master Applicator, licensed GC, free on-site assessment.",
     faqs: [
       { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start." },
       { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it." },
@@ -99,10 +99,10 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Second-home owners, club community residents, and homeowners replacing 20+ year shake or asphalt systems that no longer match the elevation they sit at.",
     proofNote:
-      "Premium materials, full underlayment systems, and an owner-led crew that documents the entire project so you can review the work without being on the mountain.",
+      "Premium materials, full underlayment systems, and an team-led crew that documents the entire project so you can review the work without being on the mountain.",
     metaTitle: "Roof Replacement in Highlands, NC | Highlander Roofing",
     metaDescription:
-      "Premium roof replacement in Highlands, NC. Elevation-rated systems for second homes and mountain residences. Owner-led, fully documented, licensed.",
+      "Premium roof replacement in Highlands, NC. Elevation-rated systems for second homes and mountain residences. Team-led, fully documented, licensed.",
     faqs: [
       { q: "Can you manage the project while we're not in Highlands?", a: "Yes. The majority of Highlands replacements we do are for owners not currently on-site. You get scheduled photo updates and a full project package on completion." },
       { q: "What materials hold up best at Highlands' elevation?", a: "Heavy dimensional asphalt, standing seam metal, and synthetic shake (Brava) all perform well here when paired with the correct underlayment and ventilation." },
@@ -124,7 +124,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Specified as a system, installed by the same crew that did the estimate, and documented in writing so the warranty path is clean.",
     metaTitle: "Metal Roofing in Highlands, NC | Highlander Roofing",
     metaDescription:
-      "Standing seam metal roofing in Highlands, NC. Designed for mountain elevation, snow loading, and second-home reliability. Owner-led installation.",
+      "Standing seam metal roofing in Highlands, NC. Designed for mountain elevation, snow loading, and second-home reliability. Team-led installation.",
     faqs: [
       { q: "How do you handle snow shedding above entries?", a: "We design snow-retention into the system at entries, walkways, and over outdoor living spaces — not as a bolt-on afterthought." },
       { q: "Is metal a good fit for a club-community home?", a: "Often yes — but every ARB has its own approved profiles and color palette. We submit and coordinate that process for you." },
@@ -146,7 +146,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "We're set up to specify, source, and install Brava as a complete system — not stocked as a one-off material. Quote includes the trims, accessories, and warranty registration most contractors skip.",
     metaTitle: "Brava Synthetic Roofing in Highlands, NC | Highlander",
     metaDescription:
-      "Brava synthetic shake and slate roofing in Highlands, NC. Premium look, mountain-grade durability. Licensed contractor, owner-led installation.",
+      "Brava synthetic shake and slate roofing in Highlands, NC. Premium look, mountain-grade durability. Licensed contractor, team-led installation.",
     faqs: [
       { q: "How does Brava compare to real cedar shake at Highlands' elevation?", a: "Brava holds color and profile much longer at elevation than cedar, which dries, cups, and splits aggressively in mountain UV and freeze-thaw cycles." },
       { q: "Will Brava be approved by my club community ARB?", a: "Most Highlands-area ARBs approve Brava with documentation. We handle the submission package including color samples and profile cuts." },
@@ -168,7 +168,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Licensed NC General Contractor with specialized experience in steep-slope foundations and heavy timber integration common on the Highlands Plateau.",
     metaTitle: "Home Additions in Highlands, NC | Highlander Construction",
     metaDescription:
-      "Custom home additions and master suites in Highlands, NC. Design-build expertise for mountain homes. Licensed, insured, owner-led.",
+      "Custom home additions and master suites in Highlands, NC. Design-build expertise for mountain homes. Licensed, insured, team-led.",
     faqs: [
       { q: "How do you handle building on steep Highlands slopes?", a: "We work with local engineers to design foundation systems specifically for your site's topography and drainage requirements." },
       { q: "Can you match my existing cedar or stone siding?", a: "Yes. Matching historic or aged materials is one of our primary strengths in the Highlands market." },
@@ -211,10 +211,10 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Second-home owners, club community residents, and owners of aging shake or asphalt roofs that are losing the battle with persistent mountain moisture.",
     proofNote:
-      "Premium underlayment from eave to ridge, full photo documentation, and an owner-led crew that treats the home like the asset it is.",
+      "Premium underlayment from eave to ridge, full photo documentation, and an team-led crew that treats the home like the asset it is.",
     metaTitle: "Roof Replacement in Cashiers, NC | Highlander Roofing",
     metaDescription:
-      "Full roof replacement in Cashiers, NC. Engineered for one of NC's wettest climates. Owner-led, fully documented, licensed contractor.",
+      "Full roof replacement in Cashiers, NC. Engineered for one of NC's wettest climates. Team-led, fully documented, licensed contractor.",
     faqs: [
       { q: "What's the right roof for Cashiers' rainfall?", a: "Heavy dimensional asphalt, standing seam metal, and synthetic shake all perform well here — paired with full ice-and-water shield and proper drip-edge detailing." },
       { q: "Can you work with my property manager?", a: "Yes. We routinely coordinate access and scheduling with property managers for Cashiers second-home projects." },
@@ -236,7 +236,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Designed and installed as a complete system — substrate, underlayment, panels, trims, and fasteners specified together so the warranty actually holds.",
     metaTitle: "Metal Roofing in Cashiers, NC | Highlander Roofing",
     metaDescription:
-      "Standing seam metal roofing in Cashiers, NC. Designed for extreme rainfall and mountain elevation. Owner-led, fully warranted installation.",
+      "Standing seam metal roofing in Cashiers, NC. Designed for extreme rainfall and mountain elevation. Team-led, fully warranted installation.",
     faqs: [
       { q: "Will metal handle the rainfall volume in Cashiers?", a: "Yes — that's one of the things metal does best. The system has to be designed with the right valley detailing and gutter capacity to match." },
       { q: "Can you install metal on a steep mountain-home roof?", a: "Yes. Steep pitches are actually easier for water management; the install plan accounts for safety, anchoring, and snow retention." },
@@ -258,7 +258,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "We specify and install Brava as a complete system — including the trims, accessories, and warranty registration that most contractors skip — so the system lasts as long as the warranty claims.",
     metaTitle: "Brava Synthetic Roofing in Cashiers, NC | Highlander Roofing",
     metaDescription:
-      "Brava synthetic shake and slate roofing in Cashiers, NC. Premium look, climate-grade durability. Owner-led, licensed installation.",
+      "Brava synthetic shake and slate roofing in Cashiers, NC. Premium look, climate-grade durability. Team-led, licensed installation.",
     faqs: [
       { q: "Will Brava develop moss like cedar in Cashiers' rainfall?", a: "Brava's polymer composition doesn't absorb moisture the way cedar does, so it resists the moss and biological growth that shortens cedar roof life here." },
       { q: "Is Brava heavy enough to need framing reinforcement?", a: "Brava is dramatically lighter than natural slate and similar to standard dimensional shingles. Existing framing almost always handles it without modification." },
@@ -282,7 +282,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Local crews, real scheduling, and an owner who will give you a straight answer on whether your roof actually needs replacement now or has another season in it.",
     metaTitle: "Roof Replacement in Sylva, NC | Highlander Roofing",
     metaDescription:
-      "Full roof replacement in Sylva, NC. Owner-led, locally based, CertainTeed Master Applicator. Free on-site assessment and honest repair-vs-replace guidance.",
+      "Full roof replacement in Sylva, NC. Team-led, locally based, CertainTeed Master Applicator. Free on-site assessment and honest repair-vs-replace guidance.",
     faqs: [
       { q: "Do you replace roofs on rental properties in Sylva?", a: "Yes. We schedule around tenants and minimize disruption — most single-family replacements are complete in 1–3 working days." },
       { q: "What's the most common issue on older Sylva homes?", a: "Inadequate attic ventilation — which shortens roof life from below. We correct ventilation as part of every full replacement." },
@@ -323,7 +323,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Homeowners specifying a forever roof, anyone re-roofing a custom home, and clients pairing a main house with outbuildings or an addition under one unified system.",
     proofNote:
-      "Specified as a system, installed by the same owner-led crew that estimated the project, with the trim and detail work that protects the warranty.",
+      "Specified as a system, installed by the same team-led crew that estimated the project, with the trim and detail work that protects the warranty.",
     metaTitle: "Metal Roofing in Sylva, NC | Highlander Roofing",
     metaDescription:
       "Standing seam and exposed-fastener metal roofing in Sylva, NC. Engineered for mountain weather, installed by a locally based licensed contractor.",
@@ -340,7 +340,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Asheville, NC",
     intro:
-      "Asheville projects require a balance of design precision and ridgetop engineering. Whether it's a Biltmore Forest estate or a Town Mountain ridgetop home, we deliver owner-led replacement projects with zero-compromise quality.",
+      "Asheville projects require a balance of design precision and ridgetop engineering. Whether it's a Biltmore Forest estate or a Town Mountain ridgetop home, we deliver team-led replacement projects with zero-compromise quality.",
     localContext:
       "Asheville's topography means a 'standard' roof doesn't exist. We plan for high UV intensity on south-facing ridges and extreme wind uplift on exposed slopes. Our Asheville replacement packages include reinforced perimeter fastening and high-performance underlayment as the baseline.",
     whoItsFor:
@@ -349,7 +349,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "We are experts in Asheville ARB submissions and historic district compliance. We handle the paperwork and the precision detailing so you don't have to.",
     metaTitle: "Roof Replacement in Asheville, NC | Highlander Roofing",
     metaDescription:
-      "Premium roof replacement for Asheville's historic and modern mountain homes. Expert Buncombe County crews, owner-led, licensed GC.",
+      "Premium roof replacement for Asheville's historic and modern mountain homes. Expert Buncombe County crews, team-led, licensed GC.",
     faqs: [
       { q: "Do you handle historic district ARB approvals in Asheville?", a: "Yes. We prepare and submit all required documentation for Biltmore Forest, Montford, and other Asheville historic boards." },
       { q: "What's the best roof for a Town Mountain ridgetop home?", a: "We recommend standing seam metal or synthetic slate for high-exposure Asheville ridges to ensure maximum wind and UV resistance." },
@@ -385,7 +385,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Hendersonville, NC",
     intro:
-      "Hendersonville projects prioritize longevity and reliability. We serve established neighborhoods and retirement communities with clean, organized, and owner-led roof replacement services.",
+      "Hendersonville projects prioritize longevity and reliability. We serve established neighborhoods and retirement communities with clean, organized, and team-led roof replacement services.",
     localContext:
       "The Hendersonville plateau sees significant afternoon thunderstorms and localized hail. We recommend Class 4 impact-rated shingles for Henderson County homes to ensure the longest possible service life and storm resistance.",
     whoItsFor:
@@ -394,7 +394,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Locally based crews and thousands of documented successful projects across the Hendersonville plateau.",
     metaTitle: "Roof Replacement in Hendersonville, NC | Highlander Roofing",
     metaDescription:
-      "Reliable roof replacement for Hendersonville homes. Local crews, impact-resistant options, and owner-led quality. Licensed & Insured.",
+      "Reliable roof replacement for Hendersonville homes. Local crews, impact-resistant options, and team-led quality. Licensed & Insured.",
     faqs: [
       { q: "Do you work in Hendersonville retirement communities?", a: "Yes. we are familiar with the scheduling and staging requirements of many Hendersonville-area active adult and retirement communities." },
       { q: "Why should I choose impact-resistant shingles in Hendersonville?", a: "Hendersonville is a hail-prone corridor. Class 4 shingles are designed to survive these events and often provide insurance discounts." },
@@ -456,10 +456,10 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Homeowners near Pisgah Forest, Brevard families, and residents of the surrounding rain-belt plateau needing the region's best moisture protection.",
     proofNote:
-      "Owner-led crews with specialized experience in high-moisture climate engineering and oversized gutter integration.",
+      "Team-led crews with specialized experience in high-moisture climate engineering and oversized gutter integration.",
     metaTitle: "Roof Replacement in Brevard, NC | Highlander Roofing",
     metaDescription:
-      "Moisture-ready roof replacement in Brevard, NC. Engineered for Transylvania County's extreme rainfall. Licensed contractor, owner-led.",
+      "Moisture-ready roof replacement in Brevard, NC. Engineered for Transylvania County's extreme rainfall. Licensed contractor, team-led.",
     faqs: [
       { q: "How do you handle Brevard's extreme rainfall?", a: "We use high-performance ice-and-water shield coverage and 6-inch gutter systems as the standard for Brevard projects." },
       { q: "Is standing seam metal better for Brevard?", a: "Metal sheds high volumes of water exceptionally well, making it a top-tier choice for Transylvania County homes." },
@@ -499,7 +499,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     whoItsFor:
       "Vacation rental owners, cabin owners near the Smokies, and anyone looking for a low-maintenance 'forever' roof system.",
     proofNote:
-      "Owner-led crews with specialized expertise in metal-system design and fast-turnaround scheduling for rental properties.",
+      "Team-led crews with specialized expertise in metal-system design and fast-turnaround scheduling for rental properties.",
     metaTitle: "Metal Roofing in Bryson City, NC | Highlander Roofing",
     metaDescription:
       "Premium metal roofing in Bryson City, NC. Ideal for cabins and vacation rentals. Sheds debris and moisture. Licensed & Insured.",
@@ -515,7 +515,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     serviceLabel: "Roof Replacement",
     h1: "Roof Replacement in Murphy, NC",
     intro:
-      "Serving the far west with reliable, owner-led roof replacement. We provide Murphy families with the same standard of quality we bring to Asheville and Highlands.",
+      "Serving the far west with reliable, team-led roof replacement. We provide Murphy families with the same standard of quality we bring to Asheville and Highlands.",
     localContext:
       "In Murphy and Cherokee County, we focus on durability and local accountability. Our crews are staged to provide responsive service and honor long-term warranties in the westernmost corner of NC.",
     whoItsFor:
@@ -524,7 +524,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Documented successful projects across Cherokee County, featuring high-quality shingle and metal systems.",
     metaTitle: "Roof Replacement in Murphy, NC | Highlander Roofing",
     metaDescription:
-      "Reliable roof replacement in Murphy, NC. Locally based crews, durable materials, and owner-led quality. Licensed & Insured.",
+      "Reliable roof replacement in Murphy, NC. Locally based crews, durable materials, and team-led quality. Licensed & Insured.",
     faqs: [
       { q: "Do you have local crews in Murphy?", a: "Yes. We maintain a local crew presence to ensure responsive service and local accountability for our Murphy clients." },
       { q: "What's the best roof for a Murphy mountain cabin?", a: "Dimensional shingles or standing seam metal both perform exceptionally well in Murphy's climate." },

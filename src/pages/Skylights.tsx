@@ -40,7 +40,7 @@ const Skylights = () => {
     <>
       <SEOHead
         title="VELUX Skylight Installation in Western NC | Highlander Roofing"
-        description="VELUX Certified Installer for Franklin, Highlands, Cashiers & Sylva. Skylight installation, replacement, leak repair, and Sun Tunnels — fully warranted, owner-led."
+        description="VELUX Certified Installer for Franklin, Highlands, Cashiers & Sylva. Skylight installation, replacement, leak repair, and Sun Tunnels — fully warranted, team-led."
         path="/roofing/skylights"
         jsonLd={buildPageSchema({
           type: "service",
@@ -76,7 +76,7 @@ const Skylights = () => {
                 Skylight Installation & Repair, Done Right.
               </h1>
               <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
-                Owner-led, VELUX Certified skylight installation across Western NC. Deck-mounted units, Sun Tunnels, and full leak diagnosis — coordinated with the roof system so the warranty actually holds.
+                Team-led, VELUX Certified skylight installation across Western NC. Deck-mounted units, Sun Tunnels, and full leak diagnosis — coordinated with the roof system so the warranty actually holds.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
