@@ -72,7 +72,7 @@ const RecentProjects = () => {
             <img src={heroImg} alt="Highlander roofing project in Western North Carolina" className="w-full h-full object-cover opacity-60" />
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/90 to-secondary/95" />
           </div>
-          <div className="container-tight relative py-20 md:py-28">
+          <div className="container-tight relative pt-32 md:pt-44 pb-16 md:pb-24">
             <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
               Project Activity · Western North Carolina
             </p>

@@ -47,7 +47,7 @@ const Financing = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
           
-          <div className="container-tight relative z-10 pb-16 md:pb-24">
+          <div className="container-tight relative z-10 hero-clears-header pb-16 md:pb-24">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <p className="text-[hsl(var(--highland-gold))] font-bold text-sm uppercase tracking-[0.25em] mb-4">Investment Support</p>
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-white mb-6 leading-[0.95] tracking-tightest">
