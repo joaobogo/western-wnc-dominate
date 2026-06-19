@@ -12,6 +12,7 @@ import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import VendorPartners from "@/components/VendorPartners";
 import {
   CredentialCards,
   TrustPillarGrid,
@@ -342,6 +343,8 @@ const Certifications = () => {
         </section>
 
         {/* ── CLOSING CTA ── */}
+        <VendorPartners />
+
         <ReassuranceBlock
           headline={"Credentials That Translate\nInto Better Outcomes."}
           subheadline="See how our certifications, training, and quality standards translate into real results on your property."
