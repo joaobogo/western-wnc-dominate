@@ -96,7 +96,7 @@ export async function submitLead(payload: LeadPayload) {
   };
   const { data, error } = await supabase
     .from("leads")
-    .insert(row)
+    .insert([row])
     .select("id")
     .single();
   if (error) {
@@ -137,6 +137,6 @@ export async function logChatbotConversation(input: {
     utm_content: attribution.utm_content ?? null,
     utm_term: attribution.utm_term ?? null,
   };
-  const { error } = await supabase.from("chatbot_conversations").insert(row);
+  const { error } = await supabase.from("chatbot_conversations").insert([row]);
   if (error) console.error("logChatbotConversation error:", error);
 }
