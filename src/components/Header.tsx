@@ -173,8 +173,8 @@ const Header = () => {
             height={520}
             className={`w-auto transition-[height,transform] duration-500 ease-out origin-left ${
               scrolled
-                ? "h-[64px] md:h-[84px]"
-                : "h-[72px] md:h-[108px]"
+                ? "h-[36px] md:h-[44px]"
+                : "h-[40px] md:h-[56px]"
             }`}
             style={{ imageRendering: "auto" }}
             decoding="async"
