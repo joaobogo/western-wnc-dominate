@@ -146,8 +146,8 @@ export const PROOF_CONTEXT = {
   ],
   /** About: story + values + team credibility */
   about: [
-    "Family-owned since 2017",
-    "20+ local professionals",
+    "Family-owned, locally run since 2017",
+    "20+ local team members behind every project",
     "4.9★ average across Google & Facebook",
     "2024 Best of Macon County",
   ],

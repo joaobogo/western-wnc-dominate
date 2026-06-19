@@ -41,6 +41,19 @@ const Team = () => {
           </div>
         </section>
 
+        {/* EVERY TEAM MEMBER MAKES A DIFFERENCE */}
+        <section className="bg-background border-b border-border py-14 md:py-16">
+          <div className="container-tight max-w-3xl text-center">
+            <span className="eyebrow mb-3 block">Family-Owned. Locally Run. Team-Driven.</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight mb-5">
+              Every Team Member Makes a Difference
+            </h2>
+            <p className="text-foreground/75 text-base md:text-lg leading-relaxed font-body">
+              Highlander is family-owned, but the company is powered by a broader team of local professionals who each play a role in serving customers well. From leadership and financial management to sales, inspections, repairs, project coordination, scheduling, drone documentation, and field support, every role matters.
+            </p>
+          </div>
+        </section>
+
         {/* TEAM GRID */}
         <section className="section-padding bg-background">
           <div className="container-tight space-y-16 md:space-y-20">

@@ -42,7 +42,7 @@ const Careers = () => {
     <>
       <SEOHead
         title="Careers | Join the Highlander Team in Western NC"
-        description="Build your career with Highlander Roofing & Construction. Family-owned, year-round work, and a commitment to mountain-grade craftsmanship. Apply now."
+        description="Build your career with Highlander Roofing & Construction. Family-owned and locally run by a team of WNC craftspeople. Year-round work, mountain-grade craftsmanship. Apply now."
         path="/careers"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
@@ -62,7 +62,7 @@ const Careers = () => {
                 <span className="text-[hsl(var(--highland-gold))]">on Higher Ground.</span>
               </h1>
               <p className="text-body-lg md:text-body-xl text-white/85 font-body leading-relaxed max-w-2xl font-medium drop-shadow-sm">
-                Highlander isn't just a roofing company. We're a family-owned team of craftsmen dedicated to protecting and improving WNC homes. We're looking for reliable people who take pride in doing the job right.
+                Highlander isn't just a roofing company. We're a family-owned, locally run team where every craftsperson, project manager, and crew member plays a role in protecting and improving WNC homes. We're looking for reliable people who take pride in doing the job right.
               </p>
             </motion.div>
           </div>

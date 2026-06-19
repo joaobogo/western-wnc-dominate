@@ -9,8 +9,8 @@ const pillars = [
   },
   {
     icon: Users,
-    title: "Family-Owned Since 2017",
-    description: "40+ years of combined experience, serving our neighbors across Franklin, Highlands, Cashiers, Sylva, and beyond.",
+    title: "Family-Owned. Locally Run. Team-Driven.",
+    description: "Founded in 2017 and powered by a local team — from leadership and consultants to inspectors, project managers, repair specialists, and crews — each playing a role in the customer experience.",
   },
   {
     icon: ShieldCheck,
