@@ -245,7 +245,7 @@ const ConstructionDivision = () => {
                       Design-first coordination, layout verification, and unified accountability — under one team.
                     </p>
                     <div className="mt-4 relative aspect-video overflow-hidden border border-border">
-                       <img src={planningFocusImg} alt="Project scoping and planning" className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
+                       <img src={planningFocusImg} alt="Project scoping and planning" className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                   </motion.div>
                 </motion.div>
@@ -328,7 +328,7 @@ const ConstructionDivision = () => {
 
         {/* ═══ CRAFT DETAIL — Visual break ═══ */}
         <section className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
-          <img src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover grayscale opacity-60" />
+          <img src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
           <div className="absolute bottom-10 left-10 flex items-center gap-4">
              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
