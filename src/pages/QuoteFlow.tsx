@@ -262,7 +262,7 @@ export default function QuoteFlow() {
                 type="tel"
                 value={form.phone}
                 onChange={e => update("phone", e.target.value)}
-                placeholder="(828) 555-0123"
+                placeholder="(828) 000-0000"
                 className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
             </div>
