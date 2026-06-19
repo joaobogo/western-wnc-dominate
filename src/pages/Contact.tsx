@@ -614,9 +614,11 @@ export default function Contact() {
         </section>
 
         {/* ── CLOSING CTA ── */}
-        <section className="section-dark tartan-dark relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }} />
-          <div className="section-padding">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--heritage-green))] via-[hsl(var(--heritage-green)/0.92)] to-[hsl(var(--heritage-charcoal))]">
+          <div className="absolute inset-0 tartan-dark opacity-40" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--highland-gold)/0.08),transparent_70%)]" />
+          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))' }} />
+          <div className="section-padding relative z-10">
             <div className="container-tight max-w-2xl text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -624,26 +626,26 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: HIGHLAND_EASE }}
               >
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-tight tracking-tight">
                   Your Project Deserves a Real Partner.
                 </h2>
-                <p className="text-[hsl(var(--dark-section-foreground)/0.4)] font-body text-sm mb-8 max-w-lg mx-auto">
+                <p className="text-[hsl(var(--dark-section-foreground)/0.9)] font-body text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-medium">
                   Whether you're planning a new roof, a home addition, or a custom build —
                   let's talk through what's possible, what's practical, and what's right for your property.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
                     href="tel:+18285247773"
-                    className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 inline-flex items-center gap-2.5 hover:opacity-90 transition-opacity"
+                    className="cta-gradient text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-4 inline-flex items-center gap-3 hover:opacity-95 hover:scale-[1.02] transition-all shadow-xl"
                   >
-                    <Phone className="w-4 h-4" /> Call Now — (828) 524-7773
+                    <Phone className="w-5 h-5" /> Call Now — (828) 524-7773
                   </a>
                 </div>
-                <div className="flex flex-wrap justify-center gap-6 mt-8 text-[hsl(var(--dark-section-foreground)/0.25)] text-[10px] font-body font-semibold uppercase tracking-wider">
-                  <span>Licensed & Insured</span>
-                  <span className="text-[hsl(var(--dark-section-foreground)/0.1)]">•</span>
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-10 text-[hsl(var(--dark-section-foreground)/0.75)] text-xs md:text-sm font-body font-bold uppercase tracking-[0.12em]">
+                  <span>Licensed &amp; Insured</span>
+                  <span className="text-[hsl(var(--highland-gold)/0.6)]">•</span>
                   <span>CertainTeed Master Applicator</span>
-                  <span className="text-[hsl(var(--dark-section-foreground)/0.1)]">•</span>
+                  <span className="text-[hsl(var(--highland-gold)/0.6)]">•</span>
                   <span>In-House Highlander Crews</span>
                 </div>
               </motion.div>
