@@ -388,7 +388,7 @@ const Header = () => {
             to="/consultation"
             className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
           >
-            <span className="relative z-10">Request a Quote</span>
+            <span className="relative z-10">Free Quote</span>
             <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
           </Link>
           <button
@@ -583,7 +583,7 @@ const Header = () => {
                     onClick={() => setMobileOpen(false)}
                     className="cta-gradient text-accent-foreground font-bold text-center py-4.5 px-4 rounded-none flex items-center justify-center gap-2.5 text-[17px] uppercase tracking-wider shadow-lg"
                   >
-                    <span className="relative z-10">Request a Quote</span>
+                    <span className="relative z-10">Request a Free Quote</span>
                     <ArrowRight className="w-5 h-5 relative z-10" />
                   </Link>
                   <a
