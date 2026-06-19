@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Phone, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 
 type Props = {
   title: string;

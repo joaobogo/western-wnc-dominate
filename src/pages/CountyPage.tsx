@@ -16,7 +16,7 @@ import HeadingReveal from "@/components/motion/HeadingReveal";
 import { getCountyBySlug } from "@/data/counties";
 import { towns } from "@/data/towns";
 import { getRelevantBlogsForTown } from "@/data/content-support";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 
 const CountyPage = () => {
   const { slug } = useParams<{ slug: string }>();
