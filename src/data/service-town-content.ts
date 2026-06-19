@@ -56,7 +56,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "If repair is the right call, we'll say so. If your roof is past the point repairs are worth your money, we'll say that too — and put it in writing.",
     metaTitle: "Roof Repair in Franklin, NC | Highlander Roofing",
     metaDescription:
-      "Honest roof repair in Franklin, NC. Local crews, 24–48 hour inspections, full photo documentation, and a straight answer on whether to repair or replace.",
+      "Honest roof repair in Franklin, NC. Local crews, same-day or next-day inspections, full photo documentation, and a straight answer on whether to repair or replace.",
     faqs: [
       { q: "How fast can you get to my Franklin home for a leak?", a: "Most active-leak inspections in Franklin happen on a same-day or next-day basis of the call. Temporary protection can usually be installed the same visit." },
       { q: "Do you provide written estimates for insurance?", a: "Yes. Every repair gets photo documentation and a written scope you can hand directly to your adjuster." },
@@ -304,7 +304,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Photo documentation of every repair, plain-English write-up, and a direct answer on whether your roof is worth investing more repair dollars into.",
     metaTitle: "Roof Repair in Sylva, NC | Highlander Roofing",
     metaDescription:
-      "Honest roof repair in Sylva, NC. 24–48 hour inspections, photo documentation, fair pricing, and a straight answer on repair-vs-replace.",
+      "Honest roof repair in Sylva, NC. same-day or next-day inspections, photo documentation, fair pricing, and a straight answer on repair-vs-replace.",
     faqs: [
       { q: "How fast can you respond to a leak in Sylva?", a: "Most active-leak inspections happen on a same-day or next-day basis. Temporary protection is typically installed during the inspection visit." },
       { q: "Will you tell me if a repair isn't worth doing?", a: "Yes. If your roof is too far gone for repair dollars to make sense, we'll say so — in writing — before you spend the money." },

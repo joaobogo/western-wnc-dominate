@@ -77,7 +77,7 @@ export const services: ServiceData[] = [
     icon: CloudLightning,
     division: "roofing",
     features: [
-      "24–48 hour emergency response",
+      "same-day emergency response",
       "Emergency tarping to prevent further damage",
       "Comprehensive storm damage inspection",
       "Detailed photo and video documentation",
