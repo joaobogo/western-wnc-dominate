@@ -77,11 +77,22 @@ const LayoutsPlanning = () => {
       <main>
         {/* 1. Hero — Refined */}
         <section className="relative pt-32 pb-24 md:pt-56 md:pb-40 bg-primary overflow-hidden">
+          {/* Blueprint background image — mountain-home architectural drawings */}
+          <img
+            src={designHero}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none select-none"
+          />
+          {/* Readability gradient — darker at left where text sits */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/75 to-primary/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary/70 pointer-events-none" />
+
           {/* Subtle Tartan Overlay */}
-          <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
-          
+          <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+
           {/* Blueprint-style grid lines overlay */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ 
+          <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ 
             backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
             backgroundSize: '40px 40px'
           }} />
