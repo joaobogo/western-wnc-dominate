@@ -385,6 +385,23 @@ export default function ConstructionConsultation() {
       });
 
       if (error) throw error;
+      try {
+        const { submitLead } = await import("@/lib/leads");
+        await submitLead({
+          source: "construction_consultation_form",
+          lead_type: "construction",
+          name: form.name,
+          email: form.email,
+          phone: form.phone || null,
+          property_town: form.town,
+          service_category: "construction",
+          project_type: form.projectType,
+          urgency: form.timeline === "1-3-months" ? "medium" : "low",
+          has_plans: form.hasPlans === "yes-pro-plans" || form.hasPlans === "yes-sketches",
+          project_description: form.description || null,
+          metadata: { goals: form.projectGoals, planStatus: form.hasPlans, budgetRange: form.budgetRange },
+        });
+      } catch (e) { console.error(e); }
       setSubmitted(true);
     } catch (err) {
       console.error("Submit error:", err);

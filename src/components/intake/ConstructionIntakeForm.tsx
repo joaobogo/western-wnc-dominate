@@ -157,6 +157,25 @@ const ConstructionIntakeForm = () => {
       });
       if (insertErr) throw insertErr;
 
+      try {
+        const { submitLead } = await import("@/lib/leads");
+        await submitLead({
+          source: "construction_intake_form",
+          lead_type: "construction",
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          property_town: data.town,
+          service_category: "construction",
+          project_type: data.projectType,
+          urgency: routing.priority === "P1" ? "high" : routing.priority === "P2" ? "medium" : "low",
+          property_type: data.propertyType,
+          has_plans: hasPlansBool ?? null,
+          project_description: data.description,
+          files_uploaded: uploadedPaths,
+        });
+      } catch (e) { console.error(e); }
+
       trackEvent("form_submit", {
         label: "Construction Intake",
         elementId: "construction-intake",

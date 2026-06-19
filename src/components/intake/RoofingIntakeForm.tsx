@@ -139,6 +139,26 @@ const RoofingIntakeForm = () => {
       });
       if (insertErr) throw insertErr;
 
+      // Mirror into unified leads table
+      try {
+        const { submitLead } = await import("@/lib/leads");
+        await submitLead({
+          source: "roofing_form",
+          lead_type: "roofing",
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          property_town: data.town,
+          service_category: "roofing",
+          project_type: data.projectType,
+          urgency: data.timeline === "emergency" ? "high" : data.timeline === "30days" ? "medium" : "low",
+          roofing_issue_type: data.projectType,
+          property_type: data.propertyType,
+          project_description: data.description || null,
+          files_uploaded: uploadedPaths,
+        });
+      } catch (e) { console.error(e); }
+
       trackEvent("form_submit", {
         label: "Roofing Intake",
         elementId: "roofing-intake",

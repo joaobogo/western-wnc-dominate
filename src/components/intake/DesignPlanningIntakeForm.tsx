@@ -113,6 +113,23 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           mode: mode,
         },
       });
+      try {
+        const { submitLead } = await import("@/lib/leads");
+        await submitLead({
+          source: "design_form",
+          lead_type: "design_services",
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          property_address: data.address,
+          service_category: "design_planning",
+          project_type: data.projectType,
+          urgency: data.timeline || "exploring",
+          has_plans: data.hasExistingPlans === "yes",
+          project_description: data.description,
+          files_uploaded: uploadedPaths,
+        });
+      } catch (e) { console.error(e); }
 
       if (insertErr) throw insertErr;
 
