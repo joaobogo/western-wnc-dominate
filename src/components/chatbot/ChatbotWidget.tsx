@@ -334,7 +334,7 @@ export default function ChatbotWidget() {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center group"
+            className="fixed bottom-32 md:bottom-6 right-4 md:right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center group"
             aria-label="Open project assistant"
           >
             <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
