@@ -1,17 +1,17 @@
-const roofRepairStock = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000";
+const roofRepairStock = "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000";
 const metalBenefitsStock = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
 const metalInstallStock = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1000";
 const homeValueStock = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000";
-const shingleRoofsStock = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
+const shingleRoofsStock = "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=1000";
 const kitchenModernStock = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=1000";
-const masterSuiteStock = "https://images.unsplash.com/photo-1616594111350-474246a4d55b?auto=format&fit=crop&q=80&w=1000";
-const outdoorLivingStock = "https://images.unsplash.com/photo-1615873968403-89e068629275?auto=format&fit=crop&q=80&w=1000";
-const planningDeskStock = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000";
+const masterSuiteStock = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=1000";
+const outdoorLivingStock = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=1000";
+const planningDeskStock = "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=1000";
 const blueRidgeViewStock = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
 const financeCalcStock = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000";
 const commercialRoofStock = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000";
 const stormCloudsStock = "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&q=80&w=1000";
-const skylightStock = "https://images.unsplash.com/photo-1513584684374-8bdb74838a0f?auto=format&fit=crop&q=80&w=1000";
+const skylightStock = "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&q=80&w=1000";
 
 export interface BlogFAQ {
   question: string;
@@ -615,7 +615,7 @@ Highlander Roofing prioritizes emergency calls. We aim for same-day assessment w
     excerpt: "Living at elevation means different wear patterns. Use this checklist to stay ahead of mountain-specific roofing issues.",
     category: "Maintenance",
     date: "2026-04-05",
-    image: "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=1000",
     readTime: "5 min",
     metaTitle: "Mountain Roof Maintenance Checklist | Highlander Roofing",
     metaDescription: "A comprehensive maintenance checklist for WNC mountain roofs. Learn how to spot issues early and extend your roof's life.",
@@ -640,7 +640,7 @@ A ground-level check is great, but a professional roofer can spot 'stress fractu
     excerpt: "Don't let paperwork stall your project. A guide to permitting for additions and renovations in Western North Carolina.",
     category: "Construction",
     date: "2026-04-12",
-    image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=1000",
     readTime: "7 min",
     metaTitle: "WNC Construction Permitting Guide | Highlander",
     metaDescription: "How to navigate building permits in Western NC. Information for Macon, Jackson, and Haywood counties.",

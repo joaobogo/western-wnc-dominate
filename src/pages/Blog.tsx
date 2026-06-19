@@ -207,7 +207,7 @@ const Blog = () => {
                   <Link to={`/blog/${heroFeatured.slug}`} className="group block card-premium overflow-hidden h-full">
                     <div className="relative aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
                       <img 
-                        src={heroFeatured.image || "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000"} 
+                        src={heroFeatured.image || "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000"} 
                         alt={heroFeatured.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
@@ -446,7 +446,7 @@ const Blog = () => {
                       <div className="grid md:grid-cols-12 gap-0 min-h-[300px]">
                         <div className="md:col-span-5 h-64 md:h-auto overflow-hidden">
                           <img 
-                            src={filtered[0].image || "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000"} 
+                            src={filtered[0].image || "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000"} 
                             alt={filtered[0].title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />
