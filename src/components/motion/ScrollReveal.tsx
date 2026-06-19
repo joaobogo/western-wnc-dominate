@@ -1,4 +1,4 @@
-import { motion, type Variants, type Transition } from "framer-motion";
+import { motion, type Variants, type Transition, useReducedMotion } from "framer-motion";
 import React from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -23,37 +23,36 @@ const getVariants = (
   variant: RevealVariant,
   isMobile: boolean
 ): Variants => {
-  const mobileScale = 0.6; // reduce distances on mobile
-
   switch (variant) {
     case "rise":
       return {
-        hidden: { opacity: 0, y: isMobile ? 20 : 32 },
+        hidden: { opacity: 0, y: isMobile ? 12 : 20 },
         visible: { opacity: 1, y: 0 },
       };
     case "rise-subtle":
       return {
-        hidden: { opacity: 0, y: isMobile ? 10 : 16 },
+        hidden: { opacity: 0, y: isMobile ? 6 : 10 },
         visible: { opacity: 1, y: 0 },
       };
     case "scale":
       return {
-        hidden: { opacity: 0, scale: 0.95 },
+        hidden: { opacity: 0, scale: 0.98 },
         visible: { opacity: 1, scale: 1 },
       };
     case "clip":
       return {
-        hidden: { clipPath: "inset(0 0 100% 0)" },
-        visible: { clipPath: "inset(0 0 0% 0)" },
+        // clipPath animations are expensive on scroll — fall back to opacity
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
       };
     case "slide-left":
       return {
-        hidden: { opacity: 0, x: isMobile ? -16 : -30 },
+        hidden: { opacity: 0, x: isMobile ? -10 : -18 },
         visible: { opacity: 1, x: 0 },
       };
     case "slide-right":
       return {
-        hidden: { opacity: 0, x: isMobile ? 16 : 30 },
+        hidden: { opacity: 0, x: isMobile ? 10 : 18 },
         visible: { opacity: 1, x: 0 },
       };
     case "fade":
@@ -73,10 +72,11 @@ export const ScrollReveal = ({
   className = "",
   stagger,
   once = true,
-  margin = "-60px",
+  margin = "0px 0px -10% 0px",
 }: ScrollRevealProps) => {
   const isMobile = useIsMobile();
-  const baseDuration = duration ?? (isMobile ? 0.35 : 0.6);
+  const prefersReduced = useReducedMotion();
+  const baseDuration = duration ?? (isMobile ? 0.28 : 0.45);
 
   const variants = getVariants(variant, isMobile);
 
@@ -86,10 +86,6 @@ export const ScrollReveal = ({
     ease: HIGHLAND_EASE,
     ...(stagger ? { staggerChildren: stagger } : {}),
   };
-
-  // Check prefers-reduced-motion
-  const prefersReduced = typeof window !== "undefined" 
-    && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
   if (prefersReduced) {
     return <div className={className}>{children}</div>;
@@ -125,11 +121,15 @@ const containerVariants: Variants = {
 
 export const StaggerContainer = ({
   children,
-  stagger = 0.06,
+  stagger = 0.04,
   className = "",
   once = true,
-  margin = "-50px",
+  margin = "0px 0px -10% 0px",
 }: StaggerContainerProps) => {
+  const prefersReduced = useReducedMotion();
+  if (prefersReduced) {
+    return <div className={className}>{children}</div>;
+  }
   return (
     <motion.div
       variants={{
@@ -161,7 +161,7 @@ export const StaggerItem = ({
   duration,
 }: StaggerItemProps) => {
   const isMobile = useIsMobile();
-  const baseDuration = duration ?? (isMobile ? 0.35 : 0.5);
+  const baseDuration = duration ?? (isMobile ? 0.25 : 0.4);
   const variants = getVariants(variant, isMobile);
 
   return (

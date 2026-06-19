@@ -1,5 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -18,55 +17,33 @@ interface ImageRevealProps {
 }
 
 /**
- * Premium image reveal — curtain wipe with optional parallax.
- * Wrap in an overflow-hidden container for clean edges.
+ * Premium image reveal — simple opacity fade. Avoids clipPath + scroll-linked
+ * transforms that cause scroll jank on long pages. Hover-only zoom kept for craft.
  */
 const ImageReveal = ({
   src,
   alt,
   className = "",
-  direction = "bottom",
-  parallax = true,
+  // direction & parallax kept for API compatibility, no longer animated
+  direction: _direction = "bottom",
+  parallax: _parallax = true,
   delay = 0,
   loading = "lazy",
 }: ImageRevealProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", parallax ? "8%" : "0%"]);
-
-  const clipPaths: Record<string, { hidden: string; visible: string }> = {
-    bottom: { hidden: "inset(0 0 100% 0)", visible: "inset(0 0 0% 0)" },
-    left: { hidden: "inset(0 100% 0 0)", visible: "inset(0 0% 0 0)" },
-    right: { hidden: "inset(0 0 0 100%)", visible: "inset(0 0 0 0%)" },
-  };
-
-  const clip = clipPaths[direction];
-
+  const reduced = useReducedMotion();
   return (
-    <div ref={ref} className={`overflow-hidden ${className}`}>
-      <motion.div
-        initial={{ clipPath: clip.hidden }}
-        whileInView={{ clipPath: clip.visible }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 1.1, delay, ease: HIGHLAND_EASE }}
-      >
-        <motion.img
-          src={src}
-          alt={alt}
-          loading={loading}
-          className="w-full h-full object-cover"
-          style={{ y }}
-          initial={{ scale: 1.15 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.8, delay: delay + 0.1, ease: HIGHLAND_EASE }}
-        />
-      </motion.div>
+    <div className={`overflow-hidden group ${className}`}>
+      <motion.img
+        src={src}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        initial={reduced ? false : { opacity: 0 }}
+        whileInView={reduced ? undefined : { opacity: 1 }}
+        viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+        transition={{ duration: 0.5, delay, ease: HIGHLAND_EASE }}
+      />
     </div>
   );
 };

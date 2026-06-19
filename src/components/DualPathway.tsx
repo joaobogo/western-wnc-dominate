@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, ShieldCheck, Wrench, CloudLightning, Search, Layers, PaintBucket, PlusSquare, Hammer, Ruler, Settings, Compass } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
@@ -122,24 +122,15 @@ const DivisionCard = ({ data, accent, index }: {
     >
       {/* === IMAGE HEADER with curtain reveal === */}
       <div className="relative h-48 md:h-56 overflow-hidden">
-        <motion.div
-          initial={{ clipPath: "inset(0 0 100% 0)" }}
-          whileInView={{ clipPath: "inset(0 0 0% 0)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.1, delay: index * 0.15, ease: HIGHLAND_EASE }}
-          className="absolute inset-0"
-        >
-          <motion.img
-            src={data.image}
-            alt={data.imageAlt ?? data.title}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            initial={{ scale: 1.18 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 2, delay: index * 0.15 + 0.1, ease: HIGHLAND_EASE }}
-          />
-        </motion.div>
+        <img
+          src={data.image}
+          alt={data.imageAlt ?? data.title}
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+          loading="lazy"
+          decoding="async"
+          width={800}
+          height={500}
+        />
         {/* Cinematic overlay — refined for clarity */}
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.3)] via-transparent to-transparent" />
