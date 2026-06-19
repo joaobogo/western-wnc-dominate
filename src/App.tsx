@@ -8,9 +8,12 @@ import Index from "./pages/Index";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 import ScrollToTop from "./components/ScrollToTop";
 import { initPixels } from "./lib/analytics";
+import { captureAttribution } from "./lib/leads";
 
 // Initialize tracking pixels
 initPixels();
+// Persist UTM / click-id / referrer for lead attribution
+captureAttribution();
 
 // Lazy-load all non-home routes for faster LCP on initial load
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -66,6 +69,8 @@ const ConstructionBuilder = lazy(() => import("./pages/ConstructionBuilder"));
 const DesignIntake = lazy(() => import("./pages/DesignIntake"));
 const LegalPage = lazy(() => import("./pages/Legal"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const AdminLeads = lazy(() => import("./pages/AdminLeads"));
+const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 
 
 
