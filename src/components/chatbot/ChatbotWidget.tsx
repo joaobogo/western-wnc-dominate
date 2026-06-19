@@ -63,7 +63,15 @@ const getQuickStarters = (path: string) => {
 };
 
 /* ─── In-chat lead capture card ─── */
-function LeadCaptureCard({ onSubmit, onDismiss }: { onSubmit: () => void; onDismiss: () => void }) {
+function LeadCaptureCard({
+  onSubmit,
+  onDismiss,
+  transcript,
+}: {
+  onSubmit: () => void;
+  onDismiss: () => void;
+  transcript: Msg[];
+}) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -73,13 +81,37 @@ function LeadCaptureCard({ onSubmit, onDismiss }: { onSubmit: () => void; onDism
   const handleSubmit = async () => {
     if (!name || !phone) return;
     setSubmitting(true);
+    // Mirror into legacy table for back-compat
     try {
       await supabase.from("consultation_requests").insert({
         name, phone: phone || null, email: email || null,
         source: "chatbot-inline", lead_score: 30, status: "new",
       });
     } catch { /* continue anyway */ }
-    
+
+    // Unified leads table
+    const { id: leadId } = await submitLead({
+      source: "chatbot",
+      lead_type: "general_inquiry",
+      name,
+      phone: phone || null,
+      email: email || null,
+      preferred_contact_method: "phone",
+      chat_summary: transcript.slice(-6).map(m => `${m.role}: ${m.content}`).join("\n").slice(0, 2000),
+      full_chat_transcript: transcript,
+    });
+    await logChatbotConversation({
+      lead_id: leadId,
+      name,
+      phone: phone || null,
+      email: email || null,
+      summary: transcript.slice(-4).map(m => `${m.role}: ${m.content}`).join(" | ").slice(0, 500),
+      full_transcript: transcript,
+      contact_path: "form",
+      recommended_next_step: "advisor_callback",
+      converted_to_lead: !!leadId,
+    });
+
     // Track lead capture from chatbot
     trackEvent("lead_capture", {
       label: "Chatbot Inline Lead",
@@ -125,8 +157,11 @@ function LeadCaptureCard({ onSubmit, onDismiss }: { onSubmit: () => void; onDism
           Not yet
         </button>
       </div>
-      <p className="text-[10px] text-muted-foreground/50 font-body flex items-center gap-1">
-        <Shield className="w-3 h-3" /> Rapid response · No sales pressure
+      <p className="text-[10px] text-muted-foreground/60 font-body flex items-start gap-1 leading-relaxed">
+        <Shield className="w-3 h-3 mt-0.5 flex-shrink-0" />
+        <span>
+          By submitting, you agree Highlander may contact you by phone, text, or email about your inquiry. Reply STOP to opt out. See our <a href="/privacy-policy" className="underline">Privacy Policy</a>.
+        </span>
       </p>
     </motion.div>
   );
