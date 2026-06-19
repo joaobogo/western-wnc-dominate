@@ -20,7 +20,7 @@ const RoofingIntake = () => (
         title="Request a roof assessment."
         subhead="Replacement, repair, storm, metal, or synthetic — start with a few details and a Highlander advisor responds within as soon as possible. No call centers, no high-pressure quotes."
         sidebarBullets={[
-          "Owner-led team, local crews, written scope before any work begins.",
+          "Team-led team, local crews, written scope before any work begins.",
           "CertainTeed Master Applicator and Licensed General Contractor.",
           "Rapid storm response across 8 Western NC counties.",
         ]}

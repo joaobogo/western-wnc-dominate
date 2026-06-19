@@ -53,7 +53,7 @@ const ConstructionIntake = () => (
         title="Tell us about the project."
         subhead="For many construction projects, the first step is not an instant quote — it is defining the scope. Share what you are considering, any plans you already have, and your timeline. A Highlander project advisor will personally review and respond as soon as possible."
         sidebarBullets={[
-          "Owner-led from discovery through final walkthrough.",
+          "Team-led from discovery through final walkthrough.",
           "Written scope and pricing approach before commitment.",
           "We say no honestly when a project isn't the right fit.",
           "Serious builds typically start with our paid Design & Consultation Agreement.",

@@ -192,7 +192,7 @@ const About = () => {
           <div className="container-tight">
             <div className="text-center mb-16 relative">
               <span className="eyebrow mb-3 block">Family Ownership</span>
-              <h2 className="section-heading">Owner-Led Accountability</h2>
+              <h2 className="section-heading">Team-Led Accountability</h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mt-4" />
             </div>
 
@@ -640,7 +640,7 @@ const About = () => {
                     Highlander started as a local response to a regional problem: homeowners in Western North Carolina weren't getting the specialized roofing care their mountain homes demanded.
                   </p>
                   <p>
-                    Since 2017, we've remained owner-led and family-driven. We don't have board members or out-of-state headquarters. Our decisions are made on front porches and ridgelines, with the long-term reputation of our family name at stake.
+                    Since 2017, we've remained team-led and family-driven. We don't have board members or out-of-state headquarters. Our decisions are made on front porches and ridgelines, with the long-term reputation of our family name at stake.
                   </p>
                   <p className="italic font-medium text-foreground">
                     "When we put our name on a project, we're making a promise to a neighbor."

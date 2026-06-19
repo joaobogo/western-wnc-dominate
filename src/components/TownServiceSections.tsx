@@ -43,7 +43,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
               </div>
               <h2 className="text-3xl font-heading font-bold mb-6 text-foreground leading-tight">Construction in <br />{town.name}</h2>
               <p className="text-muted-foreground font-body leading-relaxed mb-10 text-sm">
-                {town.constructionContext} From master suite additions to custom outdoor living spaces, our {town.name} construction division uses the same disciplined, owner-led approach we apply to our roofing projects.
+                {town.constructionContext} From master suite additions to custom outdoor living spaces, our {town.name} construction division uses the same disciplined, team-led approach we apply to our roofing projects.
               </p>
               <Link 
                 to={`/service-areas/${town.slug}/additions`}

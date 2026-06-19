@@ -140,7 +140,7 @@ export const counties: CountyData[] = [
   {
     slug: "cherokee-county",
     name: "Cherokee County",
-    description: "Serving the westernmost corner of North Carolina with reliable, owner-led roofing and residential home improvements.",
+    description: "Serving the westernmost corner of North Carolina with reliable, team-led roofing and residential home improvements.",
     towns: ["Murphy", "Andrews"],
     metaTitle: "Roofing & Construction in Cherokee County, NC | Highlander",
     metaDescription: "Professional roofing and construction across Cherokee County, NC. Serving Murphy and Andrews with local accountability.",

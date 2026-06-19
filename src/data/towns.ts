@@ -34,7 +34,7 @@ export const townLocalRelevance: Record<string, string> = {
   "cashiers-nc":
     "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain home design and high-end home investments across the Plateau.",
   "franklin-nc":
-    "Based in Franklin, Highlander Roofing & Construction serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen within 24–48 hours and the same owner-led team is on site from first call to final walkthrough.",
+    "Based in Franklin, Highlander Roofing & Construction serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen within 24–48 hours and the same team-led team is on site from first call to final walkthrough.",
   "sylva-nc":
     "Sylva blends historic downtown homes, university rentals, and hillside residences across Jackson County — and valley moisture, fog, and humidity make roof and exterior choices matter. Highlander supports Sylva homeowners and property owners with roof repair and replacement, gutter work, historic-sensitive exterior renovations, and reliable commercial maintenance.",
   "bryson-city-nc":
@@ -394,7 +394,7 @@ export const towns: TownData[] = [
     county: "Madison County",
     state: "NC",
     elevation: "1,647 ft",
-    description: "Serving Marshall's historic riverfront and Madison County's ridgetop farms with reliable, owner-led roofing and construction.",
+    description: "Serving Marshall's historic riverfront and Madison County's ridgetop farms with reliable, team-led roofing and construction.",
     features: ["Historic riverfront care", "Ridgetop farm expertise", "Madison County focus", "Steep-slope specialists"],
     metaTitle: "Roofing & Construction in Marshall, NC | Highlander",
     metaDescription: "Professional roofing and construction for Marshall and Madison County. Specialized in historic preservation and ridgetop builds. Licensed & Insured.",

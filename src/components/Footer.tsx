@@ -166,7 +166,7 @@ const Footer = () => {
             </Link>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6 max-w-xs font-body">
               Premium roofing and construction across Western NC. 
-              Serving 10+ primary counties with localized crews and owner-led quality since 2017.
+              Serving 10+ primary counties with localized crews and team-led quality since 2017.
             </p>
 
             {/* Contact info */}

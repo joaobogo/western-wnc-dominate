@@ -476,7 +476,7 @@ const townProofMap: Record<string, TownProofContent> = {
     jobHighlights: [
       {
         title: "Hiwassee valley residential reroof",
-        summary: "Reliable, owner-led roof replacement for Murphy families who need a roofer who answers the phone and stands by the warranty.",
+        summary: "Reliable, team-led roof replacement for Murphy families who need a roofer who answers the phone and stands by the warranty.",
         proof: "CertainTeed dimensional systems and local Madison County crew support",
         image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
       },
@@ -521,7 +521,7 @@ const townProofMap: Record<string, TownProofContent> = {
       {
         title: "Historic cottage roof & trim repair",
         summary: "Meticulous repair and restoration of a historic Black Mountain cottage roof, matching original profiles while upgrading structural performance.",
-        proof: "Historic material matching, specialized flashing details, and owner-led QA",
+        proof: "Historic material matching, specialized flashing details, and team-led QA",
       },
     ],
     faqs: [

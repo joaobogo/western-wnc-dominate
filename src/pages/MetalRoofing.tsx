@@ -61,7 +61,7 @@ const MetalRoofing = () => {
                 Metal Roofing Built for Mountain Weather
               </h1>
               <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
-                Standing seam and exposed-fastener metal systems engineered for Western NC elevation, wind, snow load, and rainfall. Specified and installed as a complete system by an owner-led, licensed contractor.
+                Standing seam and exposed-fastener metal systems engineered for Western NC elevation, wind, snow load, and rainfall. Specified and installed as a complete system by an team-led, licensed contractor.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">

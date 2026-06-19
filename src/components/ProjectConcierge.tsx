@@ -138,7 +138,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
           >
             {[
               "No sales pressure",
-              "Owner-led consultations",
+              "Team-led consultations",
               "Rapid response guaranteed",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">

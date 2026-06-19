@@ -137,7 +137,7 @@ const ConstructionDivision = () => {
               </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-[20px] md:text-[24px] text-white/95 max-w-2xl mb-12 leading-relaxed font-body font-bold drop-shadow-md">
-                From home additions to luxury outdoor living, we combine design sensitivity with Western North Carolina's highest construction standards. Licensed, insured, and owner-led.
+                From home additions to luxury outdoor living, we combine design sensitivity with Western North Carolina's highest construction standards. Licensed, insured, and team-led.
               </motion.p>
 
 
@@ -212,7 +212,7 @@ const ConstructionDivision = () => {
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Proven Standards</span>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
-                    Owner-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
+                    Team-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
                   <p className="text-dark-section-foreground text-base md:text-lg leading-relaxed font-body mb-6">
                     Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed Master Applicator status to every construction project we take on.
