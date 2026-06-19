@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart, Users, ArrowRight, HandHeart, Mountain, Hammer, Handshake, Building2, ImageIcon, Phone } from "lucide-react";
+import { Heart, Users, ArrowRight, HandHeart, Mountain, Hammer, Handshake, Building2, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
