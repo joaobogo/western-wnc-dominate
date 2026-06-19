@@ -216,6 +216,8 @@ const App = () => (
           <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
           <Route path="/terms" element={<Navigate to="/privacy-policy" replace />} />
           <Route path="/accessibility" element={<LegalPage kind="accessibility" />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/leads" element={<AdminLeads />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           </Routes>
