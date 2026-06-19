@@ -193,17 +193,17 @@ export default function Contact() {
                 transition={{ duration: 0.5, delay: 0.3, ease: HIGHLAND_EASE }}
                 className="mt-8 pt-6 border-t border-[hsl(var(--dark-section-foreground)/0.06)]"
               >
-                <div className="grid sm:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
                   {[
                     { step: "1", title: "Tell us about your project", detail: "Service type, timeline, and details." },
                     { step: "2", title: "We assign the right advisor", detail: "Matched to your project type." },
-                    { step: "3", title: "Personal follow-up within Rapid", detail: "A real conversation about next steps." },
+                    { step: "3", title: "Rapid personal follow-up", detail: "A real conversation about next steps." },
                   ].map((item) => (
-                    <div key={item.step} className="flex items-start gap-3">
-                      <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold)/0.3)] flex-shrink-0">{item.step}</span>
+                    <div key={item.step} className="flex items-start gap-4">
+                      <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] flex-shrink-0 leading-none">{item.step}</span>
                       <div>
-                        <p className="text-sm font-heading font-semibold text-[hsl(var(--dark-section-foreground)/0.7)]">{item.title}</p>
-                        <p className="text-xs text-[hsl(var(--dark-section-foreground)/0.35)] font-body mt-0.5">{item.detail}</p>
+                        <p className="text-base md:text-lg font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-snug">{item.title}</p>
+                        <p className="text-sm md:text-base text-[hsl(var(--dark-section-foreground)/0.75)] font-body mt-1 leading-relaxed">{item.detail}</p>
                       </div>
                     </div>
                   ))}
