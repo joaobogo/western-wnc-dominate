@@ -97,26 +97,15 @@ const filters = [
 ];
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
   const isHero = project.size === "hero";
   const isWide = project.size === "wide";
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    cardRef.current.style.setProperty('--mouse-x', `${((e.clientX - rect.left) / rect.width) * 100}%`);
-    cardRef.current.style.setProperty('--mouse-y', `${((e.clientY - rect.top) / rect.height) * 100}%`);
-  };
-
   return (
     <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      layout
-      initial={{ opacity: 0, y: 28 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -12, scale: 0.97 }}
-      transition={{ delay: index * 0.07, duration: 0.6, ease: HIGHLAND_EASE }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ delay: Math.min(index * 0.04, 0.2), duration: 0.45, ease: HIGHLAND_EASE }}
       className={`group relative rounded-none overflow-hidden cursor-pointer ${
         isHero ? "md:col-span-2 md:row-span-2" : isWide ? "md:col-span-2" : ""
       }`}
@@ -126,33 +115,18 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         <div className={`relative overflow-hidden ${
           isHero ? "aspect-[4/3] md:aspect-[16/10]" : isWide ? "aspect-[21/9]" : "aspect-[4/3]"
         }`}>
-          {/* Curtain reveal */}
-          <motion.div
-            initial={{ clipPath: "inset(0 0 100% 0)" }}
-            whileInView={{ clipPath: "inset(0 0 0% 0)" }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 1.1, delay: index * 0.05, ease: HIGHLAND_EASE }}
-            className="absolute inset-0"
-          >
-            <motion.img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-              loading="lazy"
-              initial={{ scale: 1.15 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, delay: index * 0.05 + 0.15, ease: HIGHLAND_EASE }}
-            />
-          </motion.div>
+          <img
+            src={project.image}
+            alt={project.title}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] will-change-transform"
+            loading="lazy"
+            decoding="async"
+          />
 
           {/* Cinematic overlays — refined for clarity */}
           <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.5)] via-[hsl(var(--heritage-charcoal)/0.1)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.6)] group-hover:via-[hsl(var(--heritage-charcoal)/0.3)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
           <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.05)] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.15)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-          {/* Hover image zoom */}
-          <div className="absolute inset-0 group-hover:scale-[1.06] transition-transform duration-&lsqb;1400ms&rsqb;" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
 
           {/* Gold bottom edge — draw on hover */}
           <div className="absolute bottom-0 left-0 w-0 group-hover:w-2/3 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-[hsl(var(--highland-gold)/0)] transition-all duration-700 z-20" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
