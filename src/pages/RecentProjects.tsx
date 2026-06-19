@@ -76,7 +76,7 @@ const RecentProjects = () => {
             <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
               Project Activity · Western North Carolina
             </p>
-            <h1 className="text-display-md md:text-display-lg font-heading font-bold text-[hsl(var(--highland-green))] mb-6 leading-[1.05] tracking-tightest">
+            <h1 className="text-display-md md:text-display-lg font-heading font-bold text-[hsl(var(--heritage-green))] mb-6 leading-[1.05] tracking-tightest">
               Recent Projects
             </h1>
             <p className="text-body-lg md:text-body-xl text-foreground/80 max-w-3xl leading-relaxed font-medium mb-8">
@@ -89,7 +89,7 @@ const RecentProjects = () => {
               <Link to="/contact" className="cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all">
                 Request a Free Estimate <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/services" className="border border-[hsl(var(--highland-green))]/30 text-[hsl(var(--highland-green))] font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-[hsl(var(--highland-green))]/10 transition-all">
+              <Link to="/services" className="border border-[hsl(var(--heritage-green))]/30 text-[hsl(var(--heritage-green))] font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-[hsl(var(--heritage-green))]/10 transition-all">
                 Explore Our Services
               </Link>
             </div>
@@ -118,13 +118,13 @@ const RecentProjects = () => {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-9 h-9 bg-[hsl(var(--highland-green))]/10 flex items-center justify-center rounded-sm">
-                        <card.icon className="w-4 h-4 text-[hsl(var(--highland-green))]" />
+                      <div className="w-9 h-9 bg-[hsl(var(--heritage-green))]/10 flex items-center justify-center rounded-sm">
+                        <card.icon className="w-4 h-4 text-[hsl(var(--heritage-green))]" />
                       </div>
                       <h3 className="text-lg font-heading font-bold text-foreground">{card.title}</h3>
                     </div>
                     <p className="text-sm text-foreground/70 leading-relaxed mb-4">{card.desc}</p>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--highland-green))] group-hover:gap-2.5 transition-all">
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--heritage-green))] group-hover:gap-2.5 transition-all">
                       Learn more <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
@@ -161,12 +161,12 @@ const RecentProjects = () => {
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      <span className="absolute top-3 left-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--highland-green))] px-2.5 py-1 rounded-sm">
+                      <span className="absolute top-3 left-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--heritage-green))] px-2.5 py-1 rounded-sm">
                         {p.type}
                       </span>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-base font-heading font-bold text-foreground mb-2 leading-snug group-hover:text-[hsl(var(--highland-green))] transition-colors">
+                      <h3 className="text-base font-heading font-bold text-foreground mb-2 leading-snug group-hover:text-[hsl(var(--heritage-green))] transition-colors">
                         {p.title}
                       </h3>
                       <p className="text-sm text-foreground/70 leading-relaxed mb-4 line-clamp-3">
@@ -216,9 +216,9 @@ const RecentProjects = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {pathCards.map((p) => (
-                <Link key={p.q} to={p.href} className="group bg-card border border-border hover:border-[hsl(var(--highland-green))]/40 rounded-sm p-6 transition-all card-lift flex flex-col justify-between">
+                <Link key={p.q} to={p.href} className="group bg-card border border-border hover:border-[hsl(var(--heritage-green))]/40 rounded-sm p-6 transition-all card-lift flex flex-col justify-between">
                   <h3 className="text-base font-heading font-bold text-foreground mb-4 leading-snug">{p.q}</h3>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--highland-green))] group-hover:gap-2.5 transition-all">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--heritage-green))] group-hover:gap-2.5 transition-all">
                     {p.cta} <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </Link>
@@ -241,7 +241,7 @@ const RecentProjects = () => {
                 Highlander serves homeowners across Western North Carolina with roofing, construction,
                 gutter, and exterior services built for mountain communities.
               </p>
-              <Link to="/service-areas" className="inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--highland-green))] hover:gap-3 transition-all">
+              <Link to="/service-areas" className="inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--heritage-green))] hover:gap-3 transition-all">
                 View All Service Areas <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -249,7 +249,7 @@ const RecentProjects = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-[hsl(var(--highland-green))] text-white">
+        <section className="bg-[hsl(var(--heritage-green))] text-white">
           <div className="container-tight py-16 md:py-20 text-center">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Ready to Talk About Your Project?</h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
