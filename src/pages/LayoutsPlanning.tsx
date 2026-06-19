@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import designHero from "@/assets/design-planning-hero.jpg";
 import { 
   ArrowRight, Phone, Ruler, Compass, Layers, 
   ClipboardCheck, PenTool, CheckCircle, Search, 
