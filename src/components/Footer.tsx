@@ -147,7 +147,7 @@ const Footer = () => {
 
       {/* Main footer grid */}
       <div className="container-tight py-14 md:py-16 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-y-10 gap-x-8 lg:gap-x-10">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-y-12 gap-x-8 lg:gap-x-12">
           {/* Brand column — spans 2 on lg */}
           <div className="col-span-2 md:col-span-12 lg:col-span-4">
             <Link to="/" className="inline-flex items-center gap-4 mb-8 group/footer-logo">
@@ -272,7 +272,7 @@ const Footer = () => {
           </div>
 
           {/* Roofing */}
-          <div className="md:col-span-3 lg:col-span-2">
+          <div className="md:col-span-6 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Roofing</h4>
             <nav className="flex flex-col gap-2">
               {roofingLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
@@ -280,7 +280,7 @@ const Footer = () => {
           </div>
 
           {/* Construction */}
-          <div className="md:col-span-3 lg:col-span-2">
+          <div className="md:col-span-6 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Construction</h4>
             <nav className="flex flex-col gap-2">
               {constructionLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
@@ -288,41 +288,32 @@ const Footer = () => {
           </div>
 
           {/* Resources */}
-          <div className="md:col-span-3 lg:col-span-2">
+          <div className="md:col-span-6 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Resources</h4>
             <nav className="flex flex-col gap-2">
               {resourceLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
 
-            <h4 className="eyebrow text-primary mt-6 mb-4">Company</h4>
+            <h4 className="eyebrow text-primary mt-8 mb-4">Company</h4>
             <nav className="flex flex-col gap-2">
               {companyLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
           </div>
 
           {/* Service Areas — tiered */}
-          <div className="md:col-span-3 lg:col-span-2">
+          <div className="md:col-span-6 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Primary Markets</h4>
             <nav className="flex flex-col gap-2">
-              {tier1Areas.map((l) => (
-                <Link
-                  key={l.href}
-                  to={l.href}
-                  className="group text-[18px] font-bold text-foreground hover:text-primary transition-colors inline-flex items-center gap-2 font-body leading-relaxed py-1.5"
-                >
-                  {l.label}
-                  <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </Link>
-              ))}
+              {tier1Areas.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
 
-            <h4 className="eyebrow text-primary mt-6 mb-3">Also Serving</h4>
-            <nav className="flex flex-col gap-1.5">
+            <h4 className="eyebrow text-primary mt-8 mb-4">Also Serving</h4>
+            <nav className="flex flex-col gap-2">
               {tier2Areas.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
             <Link
               to="/service-areas"
-              className="mt-4 text-xs font-body font-medium text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+              className="mt-5 text-[13px] font-body font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1.5"
             >
               View All Areas <ArrowRight className="w-3 h-3" />
             </Link>
