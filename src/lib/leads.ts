@@ -96,7 +96,8 @@ export async function submitLead(payload: LeadPayload) {
   };
   const { data, error } = await supabase
     .from("leads")
-    .insert([row])
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .insert([row as any])
     .select("id")
     .single();
   if (error) {
@@ -137,6 +138,7 @@ export async function logChatbotConversation(input: {
     utm_content: attribution.utm_content ?? null,
     utm_term: attribution.utm_term ?? null,
   };
-  const { error } = await supabase.from("chatbot_conversations").insert([row]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { error } = await supabase.from("chatbot_conversations").insert([row as any]);
   if (error) console.error("logChatbotConversation error:", error);
 }
