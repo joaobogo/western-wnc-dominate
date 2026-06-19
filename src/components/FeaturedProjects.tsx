@@ -1,7 +1,7 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, ArrowUpRight } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -236,24 +236,21 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
           </ScrollReveal>
         </div>
 
-        {/* Project grid — horizontal scroll on mobile, scrollable on desktop */}
-        <AnimatePresence mode="popLayout">
-          <motion.div 
-            layout 
-            className="flex overflow-x-auto pb-8 gap-4 snap-x snap-mandatory scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0"
-            style={{ 
-              scrollbarWidth: 'none', 
-              msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch' 
-            }}
-          >
-            {displayProjects.map((project, i) => (
-              <div key={project.title} className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw] snap-start">
-                <ProjectCard project={project} index={i} />
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+        {/* Project grid — horizontal scroll */}
+        <div
+          className="flex overflow-x-auto pb-8 gap-4 snap-x snap-mandatory scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch',
+          }}
+        >
+          {displayProjects.map((project, i) => (
+            <div key={project.title} className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw] snap-start">
+              <ProjectCard project={project} index={i} />
+            </div>
+          ))}
+        </div>
 
         {/* Gallery CTA */}
         <motion.div
