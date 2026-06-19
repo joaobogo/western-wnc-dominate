@@ -107,6 +107,20 @@ export default function Contact() {
         lead_score: service ? 30 : 20,
         metadata: { preferred_contact: preferredContact },
       });
+      const { submitLead } = await import("@/lib/leads");
+      await submitLead({
+        source: "contact_form",
+        lead_type: division || "general_inquiry",
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim() || null,
+        property_town: form.town.trim() || null,
+        service_category: division || null,
+        project_type: service || null,
+        urgency: timeline || null,
+        project_description: form.message.trim() || null,
+        preferred_contact_method: preferredContact || null,
+      });
       setStep("success");
     } catch {
       setStep("success");
