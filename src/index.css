@@ -17,6 +17,36 @@
   a, button { min-height: auto; }
 }
 
+/* ── Global scroll-performance pass ──
+   Stops reveal animations from causing scroll jank by:
+   1. Respecting prefers-reduced-motion sitewide (kills all transitions/animations).
+   2. Keeping images stable while loading (prevents CLS-driven re-layout).
+   3. Hinting the compositor to skip painting offscreen sections.
+   Keep this block minimal — opt sections in via .perf-skip when safe. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Default image rendering — preserve aspect-ratio when width/height attrs are set */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Sections that are mostly offscreen on initial load can skip painting until near viewport.
+   Use sparingly — apply to heavy below-the-fold sections (galleries, grids, FAQs). */
+.perf-skip {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
 @layer base {
   :root {
     /* Highlander Heritage Palette — Refined */
