@@ -160,10 +160,10 @@ img {
      eyebrow, H1, breadcrumb, CTA, or first-section content.
      ────────────────────────────────────── */
   :root {
-    --header-h: 72px;
-    --header-h-md: 108px;
-    --header-h-scrolled: 64px;
-    --header-h-scrolled-md: 84px;
+    --header-h: 80px;
+    --header-h-md: 120px;
+    --header-h-scrolled: 68px;
+    --header-h-scrolled-md: 88px;
   }
 
   /* Every hero whose content stacks from the top automatically clears
@@ -190,6 +190,41 @@ img {
   @media (min-width: 768px) {
     .hero-clears-header {
       padding-top: calc(var(--header-h-md) + 2.5rem);
+    }
+  }
+
+  main[class~="pt-20"],
+  main[class~="pt-24"],
+  main > section:first-of-type[class~="pt-20"],
+  main > section:first-of-type[class~="pt-24"],
+  main > section:first-of-type > div[class~="pt-20"],
+  main > section:first-of-type > div[class~="pt-24"] {
+    padding-top: calc(var(--header-h) + 1.5rem) !important;
+  }
+
+  main > section:first-of-type[class~="pt-32"],
+  main > section:first-of-type > div[class~="pt-32"] {
+    padding-top: max(8rem, calc(var(--header-h) + 1.5rem)) !important;
+  }
+
+  @media (min-width: 768px) {
+    main[class~="md:pt-28"],
+    main[class~="md:pt-32"],
+    main > section:first-of-type[class~="md:pt-28"],
+    main > section:first-of-type[class~="md:pt-32"],
+    main > section:first-of-type > div[class~="md:pt-28"],
+    main > section:first-of-type > div[class~="md:pt-32"] {
+      padding-top: calc(var(--header-h-md) + 2rem) !important;
+    }
+
+    main > section:first-of-type[class~="md:pt-40"],
+    main > section:first-of-type > div[class~="md:pt-40"] {
+      padding-top: max(10rem, calc(var(--header-h-md) + 2rem)) !important;
+    }
+
+    main > section:first-of-type[class~="md:pt-48"],
+    main > section:first-of-type > div[class~="md:pt-48"] {
+      padding-top: max(12rem, calc(var(--header-h-md) + 2rem)) !important;
     }
   }
 
