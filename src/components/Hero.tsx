@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, Clock, HardHat, Home, Mountain, Phone, Ruler } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
 import heroLayer2 from "@/assets/gallery/metal-009.jpg";
