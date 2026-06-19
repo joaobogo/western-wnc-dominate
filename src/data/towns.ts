@@ -51,8 +51,6 @@ export const townLocalRelevance: Record<string, string> = {
     "Hendersonville's historic Main Street district and established Henderson County neighborhoods reward roofing and exterior work built to last decades, not seasons. Highlander supports Hendersonville homeowners with Class 4 impact-resistant shingle systems, exterior siding updates, deck safety repairs, and age-in-place exterior modifications.",
   "brevard-nc":
     "Brevard sits in the Land of Waterfalls, where record rainfall makes gutter sizing, underlayment, and flashing details a moisture-management problem first and an aesthetics decision second. Highlander serves Transylvania County homeowners with advanced gutter systems, synthetic shake roofing, deck and porch additions, and exterior siding work built to stay dry.",
-  "lake-toxaway-nc":
-    "Lake Toxaway estates expect Brava-grade synthetic roofing, copper gutter work, and lakefront construction that holds up under intense storms and persistent lake-effect moisture. Highlander serves the Lake Toxaway and broader Transylvania County market with luxury roof systems, premium maintenance programs, and high-end master suite and outdoor-living additions.",
   "murphy-nc":
     "Murphy and the far western counties get a real local roofing and construction partner instead of a Friday-only crew. Highlander serves Cherokee County homeowners with dimensional shingle systems, deck repairs, siding replacement, storm-damage mitigation, and exterior work scoped to the long-term value of family homes and vacation properties.",
   "hayesville-nc":
