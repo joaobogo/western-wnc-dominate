@@ -55,12 +55,6 @@ export const townLocalRelevance: Record<string, string> = {
     "Lake Toxaway estates expect Brava-grade synthetic roofing, copper gutter work, and lakefront construction that holds up under intense storms and persistent lake-effect moisture. Highlander serves the Lake Toxaway and broader Transylvania County market with luxury roof systems, premium maintenance programs, and high-end master suite and outdoor-living additions.",
   "murphy-nc":
     "Murphy and the far western counties get a real local roofing and construction partner instead of a Friday-only crew. Highlander serves Cherokee County homeowners with dimensional shingle systems, deck repairs, siding replacement, storm-damage mitigation, and exterior work scoped to the long-term value of family homes and vacation properties.",
-  "black-mountain-nc":
-    "Black Mountain homes — from arts-and-crafts cottages to modern mountain retreats — sit on ridges and slopes that face real wind exposure and winter ice. Highlander serves Buncombe County homeowners with designer asphalt shingle systems, custom timber porch work, historic roof restoration, and interior renovations that respect the town's craftsman character.",
-  "weaverville-nc":
-    "Weaverville's growing family-home market and ridgetop estates need roofing and exterior work designed for high-wind events and ridgetop UV, not generic suburban specs. Highlander serves North Buncombe homeowners with standing-seam metal systems, structural home additions, dimensional shingles, and modern siding updates engineered for the long run.",
-  "marshall-nc":
-    "Marshall's historic riverfront homes and Madison County's ridgetop farms need a contractor comfortable with complex terrain, century-old structures, and serious wind exposure. Highlander serves Madison County homeowners with metal roofing systems, structural repairs, historic exterior renovations, and deck extensions built for Appalachian conditions.",
   "hayesville-nc":
     "Hayesville and the Lake Chatuge area run on lakefront living — homes built for views, decks, and water-adjacent durability. Highlander serves Clay County homeowners with standing-seam metal roofing, luxury decking, exterior modernization, and residential replacement work designed to protect lakefront investments season after season.",
 };
