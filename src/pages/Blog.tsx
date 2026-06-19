@@ -87,7 +87,7 @@ const Blog = () => {
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }])}
       />
       <Header />
-      <main className="md:pt-0">
+      <main>
         {/* ═══ HERO — Editorial masthead ═══ */}
         <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
