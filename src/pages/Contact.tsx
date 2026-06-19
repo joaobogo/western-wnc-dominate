@@ -393,7 +393,7 @@ export default function Contact() {
                       {/* Phone */}
                       <div>
                         <label htmlFor="cc-phone" className={labelClasses}>
-                          Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/40">— recommended</span>
+                          Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— recommended</span>
                         </label>
                         <input
                           id="cc-phone"
@@ -409,7 +409,7 @@ export default function Contact() {
                       {/* Project address or town */}
                       <div>
                         <label htmlFor="cc-town" className={labelClasses}>
-                          Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground/40">— recommended</span>
+                          Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— recommended</span>
                         </label>
                         <input
                           id="cc-town"
@@ -470,7 +470,7 @@ export default function Contact() {
                       {/* Message */}
                       <div>
                         <label htmlFor="cc-msg" className={labelClasses}>
-                          Project Details <span className="normal-case tracking-normal font-normal text-muted-foreground/40">— optional</span>
+                          Project Details <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— optional</span>
                         </label>
                         <textarea
                           id="cc-msg"
@@ -484,7 +484,7 @@ export default function Contact() {
                       </div>
 
                       <div className="flex items-center justify-between pt-2">
-                        <p className="text-[10px] text-muted-foreground/40 font-body">
+                        <p className="text-[10px] text-muted-foreground/75 font-body">
                           Personal response rapidly — guaranteed.
                         </p>
                         <button

@@ -159,11 +159,11 @@ const Renovations = () => {
               >
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
                   <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                  <span className="text-xs font-body text-primary-foreground/40">Avg. ROI: 60–80% at resale</span>
+                  <span className="text-xs font-body text-primary-foreground/75">Avg. ROI: 60–80% at resale</span>
                 </div>
                 <div className="hidden sm:flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
                   <Eye className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                  <span className="text-xs font-body text-primary-foreground/40">Hidden damage protocol included</span>
+                  <span className="text-xs font-body text-primary-foreground/75">Hidden damage protocol included</span>
                 </div>
               </motion.div>
             </div>
@@ -253,7 +253,7 @@ const Renovations = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   The Details You Live With<br className="hidden md:block" /> Every Day.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
                   Renovation quality isn't about the big reveal — it's about what you notice six months later. Grout lines. Trim joints. How a drawer closes. We build for the long view.
                 </p>
               </motion.div>
@@ -265,7 +265,7 @@ const Renovations = () => {
                       <div className="w-1 h-8 bg-[hsl(var(--highland-gold)/0.3)] rounded-full mt-0.5 flex-shrink-0" />
                       <div>
                         <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2">{item.title}</h3>
-                        <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                        <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{item.detail}</p>
                       </div>
                     </div>
                   </motion.div>

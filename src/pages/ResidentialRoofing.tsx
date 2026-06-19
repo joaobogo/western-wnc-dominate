@@ -208,7 +208,7 @@ const ResidentialRoofing = () => {
                       Roofing
                     </span>
                   </Link>
-                  <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
+                  <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
                   <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
                     Residential
                   </span>
@@ -284,7 +284,7 @@ const ResidentialRoofing = () => {
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2">
                     <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
-                    <span className="text-[10px] font-body text-primary-foreground/40 uppercase tracking-widest">{item.label}</span>
+                    <span className="text-[10px] font-body text-primary-foreground/75 uppercase tracking-widest">{item.label}</span>
                   </div>
                 ))}
               </motion.div>
@@ -890,7 +890,7 @@ const ResidentialRoofing = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Mountain Home<br className="hidden md:block" /> Deserves Mountain-Grade<br className="hidden md:block" /> Protection.
                   </h2>
-                  <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     Whether you're planning ahead or responding to damage — the conversation
                     starts with a local roofing expert who knows your neighborhood, your
                     elevation, and your weather.

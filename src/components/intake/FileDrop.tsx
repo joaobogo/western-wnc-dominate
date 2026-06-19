@@ -54,8 +54,8 @@ const FileDrop = ({ files, onChange, accept = "image/*", helper, maxFiles = 8 }:
                 ? <ImageIcon className="w-4 h-4 text-[hsl(var(--highland-gold))] flex-shrink-0" />
                 : <FileText className="w-4 h-4 text-[hsl(var(--highland-gold))] flex-shrink-0" />}
               <span className="text-[12.5px] font-body text-foreground/80 truncate flex-1">{f.name}</span>
-              <span className="text-[11px] text-foreground/40 font-body">{(f.size / 1024 / 1024).toFixed(1)}MB</span>
-              <button type="button" onClick={(e) => { e.stopPropagation(); remove(i); }} className="text-foreground/40 hover:text-foreground transition-colors">
+              <span className="text-[11px] text-foreground/75 font-body">{(f.size / 1024 / 1024).toFixed(1)}MB</span>
+              <button type="button" onClick={(e) => { e.stopPropagation(); remove(i); }} className="text-foreground/75 hover:text-foreground transition-colors">
                 <X className="w-3.5 h-3.5" />
               </button>
             </li>

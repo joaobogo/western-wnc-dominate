@@ -151,7 +151,7 @@ const CommercialRoofing = () => {
                     <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
                     <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Roofing</span>
                   </Link>
-                  <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
+                  <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Commercial</span>
                 </div>
               </motion.div>
@@ -303,7 +303,7 @@ const CommercialRoofing = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Your Business Keeps Running.<br className="hidden md:block" /> We Plan Around It.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
                   Commercial roofing happens on occupied buildings with active operations. We plan every project to minimize disruption to your tenants, customers, and daily business.
                 </p>
               </motion.div>
@@ -312,7 +312,7 @@ const CommercialRoofing = () => {
                 {disruptionPoints.map((point, i) => (
                   <motion.div key={point.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
                     <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{point.title}</h3>
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{point.detail}</p>
+                    <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{point.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -443,7 +443,7 @@ const CommercialRoofing = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Protects Your Investment.<br className="hidden md:block" /> We Protect Your Roof.
                   </h2>
-                  <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     Whether you're planning a replacement, evaluating a new building, or looking for a long-term maintenance partner — let's have a straightforward conversation about your commercial roofing needs.
                   </p>
 
@@ -467,7 +467,7 @@ const CommercialRoofing = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

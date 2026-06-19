@@ -145,7 +145,7 @@ const NotJustRoofing = () => {
 
         {/* Shared foundation message */}
         <ScrollReveal variant="fade" delay={0.4} className="text-center mt-10">
-          <div className="flex items-center justify-center gap-3 text-muted-foreground/40">
+          <div className="flex items-center justify-center gap-3 text-muted-foreground/75">
             <Shield className="w-3.5 h-3.5" />
             <span className="text-[11px] font-body font-medium uppercase tracking-[0.14em]">
               Same Crews · Same Process · Same Warranty Protection

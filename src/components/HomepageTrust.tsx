@@ -77,7 +77,7 @@ const HomepageTrust = () => {
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.25}>
-              <p className="text-dark-section-foreground/40 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
+              <p className="text-dark-section-foreground/75 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
                 Certifications are verifiable. Reviews are public. Project photos are real.
                 We don't ask for trust — we earn it with evidence.
               </p>
@@ -126,7 +126,7 @@ const HomepageTrust = () => {
                 <h3 className="text-sm font-heading font-bold text-dark-section-foreground/85 mb-2 tracking-tight">
                   {cred.title}
                 </h3>
-                <p className="text-dark-section-foreground/35 text-[12.5px] leading-[1.7] font-body">
+                <p className="text-dark-section-foreground/75 text-[12.5px] leading-[1.7] font-body">
                   {cred.detail}
                 </p>
               </motion.div>
@@ -260,7 +260,7 @@ const HomepageTrust = () => {
                   Built for Western<br className="hidden md:block" /> North Carolina.
                 </h3>
               </HeadingReveal>
-              <p className="text-dark-section-foreground/35 text-[13.5px] font-body leading-relaxed max-w-md">
+              <p className="text-dark-section-foreground/75 text-[13.5px] font-body leading-relaxed max-w-md">
                 Coastal specs don't work at 3,800 feet. Our crews live in these conditions —
                 every material recommendation comes from direct experience, not a manufacturer's data sheet.
               </p>

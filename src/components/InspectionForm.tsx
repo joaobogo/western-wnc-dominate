@@ -267,7 +267,7 @@ const InspectionForm = () => {
                               <CheckCircle className="w-4 h-4 text-white" />
                             </motion.div>
                           ) : (
-                            <span className={i <= currentIndex ? "text-white" : "text-dark-section-foreground/30"}>{i + 1}</span>
+                            <span className={i <= currentIndex ? "text-white" : "text-dark-section-foreground/70"}>{i + 1}</span>
                           )}
                         </motion.div>
                         {i < stepOrder.length - 1 && (
@@ -439,7 +439,7 @@ const InspectionForm = () => {
                                   <div className="w-5 h-5 rounded-full bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                     <span className="text-[9px] font-heading font-bold text-[hsl(var(--highland-gold)/0.6)]">{i + 1}</span>
                                   </div>
-                                  <span className="text-dark-section-foreground/35 text-xs font-body leading-relaxed">{point}</span>
+                                  <span className="text-dark-section-foreground/75 text-xs font-body leading-relaxed">{point}</span>
                                 </div>
                               ))}
                             </div>
@@ -458,7 +458,7 @@ const InspectionForm = () => {
                     className={`inline-flex items-center gap-2 text-sm font-body font-medium px-4 py-2.5 rounded-none transition-all ${
                       currentIndex === 0
                         ? "opacity-0 cursor-default"
-                        : "text-dark-section-foreground/40 hover:text-dark-section-foreground/60"
+                        : "text-dark-section-foreground/75 hover:text-dark-section-foreground/60"
                     }`}
                   >
                     <ArrowLeft className="w-3.5 h-3.5" /> Back

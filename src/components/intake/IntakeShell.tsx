@@ -68,7 +68,7 @@ const IntakeShell = ({
 
             {/* Phone alt path */}
             <div className="mt-8 pt-6 border-t border-border/60">
-              <p className="text-[11px] font-body uppercase tracking-[0.18em] text-foreground/40 mb-2">
+              <p className="text-[11px] font-body uppercase tracking-[0.18em] text-foreground/75 mb-2">
                 Prefer to talk?
               </p>
               <a
@@ -82,7 +82,7 @@ const IntakeShell = ({
 
             {/* Cross-link to other intakes */}
             <div className="mt-6 pt-6 border-t border-border/60">
-              <p className="text-[11px] font-body uppercase tracking-[0.18em] text-foreground/40 mb-3">
+              <p className="text-[11px] font-body uppercase tracking-[0.18em] text-foreground/75 mb-3">
                 Need a different form?
               </p>
               <div className="flex flex-col gap-2">

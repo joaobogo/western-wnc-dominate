@@ -117,7 +117,7 @@ const ExteriorImprovements = () => {
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Exterior Improvements</span>
               </motion.div>
 
@@ -160,8 +160,8 @@ const ExteriorImprovements = () => {
                   { icon: Wind, label: "Ridge Wind Exposure" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-1.5 px-3 py-2 bg-white/5 border border-white/8 rounded-sm">
-                    <item.icon className="w-3 h-3 text-primary-foreground/30" />
-                    <span className="text-[10px] font-body text-primary-foreground/30 uppercase tracking-wider">{item.label}</span>
+                    <item.icon className="w-3 h-3 text-primary-foreground/70" />
+                    <span className="text-[10px] font-body text-primary-foreground/70 uppercase tracking-wider">{item.label}</span>
                   </div>
                 ))}
               </motion.div>
@@ -233,7 +233,7 @@ const ExteriorImprovements = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   WNC Exteriors Face<br className="hidden md:block" /> More Than Most.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
                   The mountains test every material, fastener, and joint on your home's exterior. We build for the conditions — not just the appearance.
                 </p>
               </motion.div>
@@ -245,7 +245,7 @@ const ExteriorImprovements = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>

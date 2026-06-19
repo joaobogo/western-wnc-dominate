@@ -135,7 +135,7 @@ const VeluxProof = () => {
                   </li>
                 ))}
               </ul>
-              <p className="text-[11px] text-dark-section-foreground/45 font-body leading-relaxed">
+              <p className="text-[11px] text-dark-section-foreground/80 font-body leading-relaxed">
                 Coverage reflects standard VELUX warranty terms on deck-mounted skylights. Highlander will review applicable product and workmanship details with you before construction begins; full terms documented at handoff.
               </p>
             </div>

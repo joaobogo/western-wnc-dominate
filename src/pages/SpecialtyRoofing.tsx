@@ -163,7 +163,7 @@ const SpecialtyRoofing = () => {
                   </motion.div>
                 ))}
                 <Link to="/gallery" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
-                  <span className="text-[10px] text-primary-foreground/40 font-body text-center leading-tight">View<br/>Portfolio</span>
+                  <span className="text-[10px] text-primary-foreground/75 font-body text-center leading-tight">View<br/>Portfolio</span>
                 </Link>
               </motion.div>
             </div>
@@ -253,7 +253,7 @@ const SpecialtyRoofing = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/40 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -363,7 +363,7 @@ const SpecialtyRoofing = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Should Be as Considered<br className="hidden md:block" /> as the Home Beneath It.
                   </h2>
-                  <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     If you're building, renovating, or reimagining a home where the roof is part of the design statement — let's talk about what's possible.
                   </p>
 
@@ -387,7 +387,7 @@ const SpecialtyRoofing = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

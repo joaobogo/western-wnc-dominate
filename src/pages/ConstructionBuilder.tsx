@@ -352,7 +352,7 @@ const ConstructionBuilder = () => {
                     Project context
                   </h2>
                   <p className="text-foreground/55 text-[13px] font-body mb-6">A few details so we route the right Highlander team lead.</p>
-                  <Label required>Investment tier <span className="font-normal text-foreground/45 text-[11px] normal-case tracking-normal">— qualitative, not a price</span></Label>
+                  <Label required>Investment tier <span className="font-normal text-foreground/80 text-[11px] normal-case tracking-normal">— qualitative, not a price</span></Label>
                   <VisualChoiceGrid options={INVESTMENT} value={data.investment} onChange={(v) => set("investment", v)} columns={2} />
                   <div className="mt-7">
                     <Label required>Ideal start window</Label>

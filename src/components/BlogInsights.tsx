@@ -91,7 +91,7 @@ export const BlogInsights = () => {
                   className={`text-[11px] font-body font-bold uppercase tracking-[0.15em] px-4 py-2.5 rounded-none transition-all duration-300 flex items-center gap-1.5 ${
                     activeFilter === cat.value
                       ? "bg-[hsl(var(--highland-gold))] text-accent-foreground"
-                      : "bg-dark-section-foreground/[0.04] border border-dark-section-foreground/[0.06] text-dark-section-foreground/40 hover:border-dark-section-foreground/[0.12] hover:text-dark-section-foreground/60"
+                      : "bg-dark-section-foreground/[0.04] border border-dark-section-foreground/[0.06] text-dark-section-foreground/75 hover:border-dark-section-foreground/[0.12] hover:text-dark-section-foreground/60"
                   }`}
                 >
                   <cat.icon className="w-3 h-3" />
@@ -140,7 +140,7 @@ export const BlogInsights = () => {
             Browse All Articles
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <p className="text-[13px] text-dark-section-foreground/40 font-body font-bold mt-2">
+          <p className="text-[13px] text-dark-section-foreground/75 font-body font-bold mt-2">
             Roofing education · Construction insights · WNC weather & building updates
           </p>
         </motion.div>
@@ -207,13 +207,13 @@ const FeaturedCard = ({ post }: { post: PostWithCategory }) => {
           </h3>
 
           {/* Excerpt */}
-          <p className="text-dark-section-foreground/35 text-[14px] leading-[1.75] font-body mb-8 max-w-lg">
+          <p className="text-dark-section-foreground/75 text-[14px] leading-[1.75] font-body mb-8 max-w-lg">
             {post.excerpt}
           </p>
 
           {/* Bottom row */}
           <div className="flex items-center justify-between mt-auto pt-5 border-t border-dark-section-foreground/[0.06]">
-            <div className="flex items-center gap-1.5 text-dark-section-foreground/25 text-xs font-body">
+            <div className="flex items-center gap-1.5 text-dark-section-foreground/70 text-xs font-body">
               <Clock className="w-3 h-3" />
               {post.readTime} read
             </div>
@@ -258,7 +258,7 @@ const SecondaryCard = ({ post, index }: { post: PostWithCategory; index: number 
             {post.title}
           </h4>
 
-          <p className="text-dark-section-foreground/30 text-[12.5px] leading-[1.7] font-body mb-4 line-clamp-2">
+          <p className="text-dark-section-foreground/70 text-[12.5px] leading-[1.7] font-body mb-4 line-clamp-2">
             {post.excerpt}
           </p>
 

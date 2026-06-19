@@ -175,7 +175,7 @@ const RoofReplacement = () => {
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/50">Roofing</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/25" />
+                <ChevronRight className="w-3 h-3 text-primary-foreground/70" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Roof Replacement</span>
               </motion.div>
 
@@ -217,7 +217,7 @@ const RoofReplacement = () => {
                   <span className="text-xs uppercase tracking-wider text-primary-foreground/50 font-body font-semibold">How We Price Replacement</span>
                 </div>
                 <div className="text-2xl font-heading font-bold text-primary-foreground">Scope-based, grouped-cost</div>
-                <p className="text-xs text-primary-foreground/40 mt-1 font-body">Every roof is priced from its real scope after on-site assessment — no generic ranges, no allowances disguised as estimates.</p>
+                <p className="text-xs text-primary-foreground/75 mt-1 font-body">Every roof is priced from its real scope after on-site assessment — no generic ranges, no allowances disguised as estimates.</p>
               </motion.div>
             </div>
           </div>
@@ -356,7 +356,7 @@ const RoofReplacement = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Materials That Perform<br className="hidden md:block" /> at Elevation.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
                   We specify materials based on where your home sits — not what's cheapest to install. Here are the three systems we recommend most for WNC roof replacements.
                 </p>
               </motion.div>
@@ -373,8 +373,8 @@ const RoofReplacement = () => {
                           <h3 className="font-heading font-bold text-dark-section-foreground text-lg group-hover:text-[hsl(var(--highland-gold))] transition-colors">{mat.name}</h3>
                           <span className="text-[10px] font-body font-semibold text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">{mat.lifespan}</span>
                         </div>
-                        <span className="text-[11px] font-body text-dark-section-foreground/35 mb-3">{mat.type}</span>
-                        <p className="text-dark-section-foreground/45 text-sm font-body leading-relaxed">{mat.detail}</p>
+                        <span className="text-[11px] font-body text-dark-section-foreground/75 mb-3">{mat.type}</span>
+                        <p className="text-dark-section-foreground/80 text-sm font-body leading-relaxed">{mat.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -492,7 +492,7 @@ const RoofReplacement = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     When You're Ready to Replace<br className="hidden md:block" /> Your Roof the Right Way —<br className="hidden md:block" /> We're Ready to Build It.
                   </h2>
-                  <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     No pressure. No obligation. Just a conversation with a local roofing expert who will assess your property honestly and help you make the right decision for your home.
                   </p>
 
@@ -516,7 +516,7 @@ const RoofReplacement = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

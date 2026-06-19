@@ -87,8 +87,8 @@ const ServicePage = () => {
                 <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.15em] ${theme.badgeTextClass}`}>
                   {theme.label}
                 </span>
-                <span className="text-dark-section-foreground/30 text-[10px] font-body">—</span>
-                <span className="text-dark-section-foreground/40 text-[10px] font-body italic tracking-wide">
+                <span className="text-dark-section-foreground/70 text-[10px] font-body">—</span>
+                <span className="text-dark-section-foreground/75 text-[10px] font-body italic tracking-wide">
                   {theme.tagline}
                 </span>
               </div>

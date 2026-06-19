@@ -373,7 +373,7 @@ const RoofingDivision = () => {
                 >
                   <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.7)] mb-2" />
                   <span className="text-xs font-heading font-semibold text-primary-foreground/85 mb-0.5">{item.label}</span>
-                  <span className="text-[10px] text-primary-foreground/35 font-body">{item.detail}</span>
+                  <span className="text-[10px] text-primary-foreground/75 font-body">{item.detail}</span>
                 </motion.div>
               ))}
             </div>
@@ -571,7 +571,7 @@ const RoofingDivision = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   What Sets Highlander<br className="hidden md:block" /> Roofing Apart.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/75 text-base font-body max-w-lg mx-auto">
                   The difference between a roof that lasts and a roof that fails is the team
                   that installs it. Here's what you get with Highlander.
                 </p>
@@ -593,7 +593,7 @@ const RoofingDivision = () => {
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-dark-section-foreground/35 text-[13px] leading-relaxed font-body">
+                    <p className="text-dark-section-foreground/75 text-[13px] leading-relaxed font-body">
                       {item.detail}
                     </p>
                   </motion.div>
@@ -1075,7 +1075,7 @@ const RoofingDivision = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Protects Everything<br className="hidden md:block" /> That Matters. Plan It With<br className="hidden md:block" /> a Team That Knows.
                   </h2>
-                  <p className="text-dark-section-foreground/45 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground/80 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     Whether it's time for a replacement, a repair, or an honest second opinion —
                     let's build a plan that gives you confidence for the next 30 years.
                   </p>
@@ -1107,7 +1107,7 @@ const RoofingDivision = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground/70 text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

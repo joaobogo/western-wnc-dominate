@@ -105,7 +105,7 @@ const CTABlock = () => {
                       className="flex items-start gap-3"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.45)] flex-shrink-0 mt-0.5" />
-                      <span className="text-dark-section-foreground/40 text-[13px] font-body leading-relaxed">
+                      <span className="text-dark-section-foreground/75 text-[13px] font-body leading-relaxed">
                         {promise}
                       </span>
                     </motion.div>

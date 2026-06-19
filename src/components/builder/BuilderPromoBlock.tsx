@@ -141,7 +141,7 @@ const BuilderPromoBlock = ({
                 </Link>
               </div>
 
-              <p className="mt-5 text-[11.5px] text-foreground/45 font-body">
+              <p className="mt-5 text-[11.5px] text-foreground/80 font-body">
                 Not an instant quote. A real scope brief reviewed by a Highlander advisor as soon as possible.
               </p>
             </div>

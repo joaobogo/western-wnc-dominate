@@ -72,7 +72,7 @@ const IntakeChooser = () => (
                 }`}
               >
                 <c.icon className="w-7 h-7 text-[hsl(var(--highland-gold))] mb-5" />
-                <p className="text-[10.5px] font-body font-semibold uppercase tracking-[0.22em] text-foreground/45 mb-1">{c.eyebrow}</p>
+                <p className="text-[10.5px] font-body font-semibold uppercase tracking-[0.22em] text-foreground/80 mb-1">{c.eyebrow}</p>
                 <h2 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-2 tracking-tight">{c.title}</h2>
                 <p className="text-foreground/65 text-[13.5px] font-body leading-relaxed mb-6">{c.body}</p>
                 <span className="inline-flex items-center gap-2 text-[13px] font-heading font-bold text-foreground group-hover:text-[hsl(var(--highland-gold))] transition-colors">
@@ -87,7 +87,7 @@ const IntakeChooser = () => (
         <div className="mt-12 max-w-3xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <div className="flex-1 h-px bg-border" />
-            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.28em] text-foreground/45">Or go deeper</span>
+            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.28em] text-foreground/80">Or go deeper</span>
             <div className="flex-1 h-px bg-border" />
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
@@ -100,7 +100,7 @@ const IntakeChooser = () => (
                 <p className="text-[12.5px] font-heading font-bold text-foreground leading-tight">Build a roofing scope brief</p>
                 <p className="text-[11.5px] font-body text-foreground/55 leading-snug">Material, priorities, investment tier — guided</p>
               </div>
-              <ArrowRight className="w-3.5 h-3.5 text-foreground/40 group-hover:text-[hsl(var(--highland-gold))] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="w-3.5 h-3.5 text-foreground/75 group-hover:text-[hsl(var(--highland-gold))] group-hover:translate-x-0.5 transition-all" />
             </Link>
             <Link
               to="/construction-builder"
@@ -111,10 +111,10 @@ const IntakeChooser = () => (
                 <p className="text-[12.5px] font-heading font-bold text-foreground leading-tight">Build a construction scope brief</p>
                 <p className="text-[11.5px] font-body text-foreground/55 leading-snug">Scope, style, priorities — guided</p>
               </div>
-              <ArrowRight className="w-3.5 h-3.5 text-foreground/40 group-hover:text-[hsl(var(--highland-gold))] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="w-3.5 h-3.5 text-foreground/75 group-hover:text-[hsl(var(--highland-gold))] group-hover:translate-x-0.5 transition-all" />
             </Link>
           </div>
-          <p className="text-[11px] font-body text-foreground/40 mt-3 text-center">
+          <p className="text-[11px] font-body text-foreground/75 mt-3 text-center">
             Advanced builders are optional. They organize your project — they are not instant quotes.
           </p>
         </div>
