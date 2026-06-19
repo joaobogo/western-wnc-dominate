@@ -19,7 +19,7 @@ import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
-import cedarDetail from "@/assets/gallery/cedar-003.jpg";
+import cedarDetail from "@/assets/gallery/cedar-001.jpg";
 
 /* ═══════════════════════════════════════════
    DATA
