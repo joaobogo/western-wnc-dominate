@@ -153,6 +153,46 @@ img {
     }
   }
 
+  /* ──────────────────────────────────────
+     GLOBAL HEADER SAFETY
+     The Header component is `position: fixed`. Every hero / first
+     section needs space underneath so the fixed bar never covers
+     eyebrow, H1, breadcrumb, CTA, or first-section content.
+     ────────────────────────────────────── */
+  :root {
+    --header-h: 84px;
+    --header-h-md: 124px;
+    --header-h-scrolled: 72px;
+    --header-h-scrolled-md: 92px;
+  }
+
+  /* Every hero whose content stacks from the top automatically clears
+     the header. Heroes that use `flex items-end` (bottom-anchored) are
+     unaffected because their padding-top is intentionally minimal. */
+  main > section:first-of-type:not(.no-header-pad):not([data-hero-anchored="bottom"]) {
+    scroll-margin-top: var(--header-h);
+  }
+
+  @media (min-width: 768px) {
+    main > section:first-of-type:not(.no-header-pad):not([data-hero-anchored="bottom"]) {
+      scroll-margin-top: var(--header-h-md);
+    }
+  }
+}
+
+@layer utilities {
+  /* Apply to the inner content wrapper of any hero so the headline
+     never collides with the fixed header. Pairs with `flex items-end`
+     heroes (pushes content slightly down from the very top edge). */
+  .hero-clears-header {
+    padding-top: calc(var(--header-h) + 1.5rem);
+  }
+  @media (min-width: 768px) {
+    .hero-clears-header {
+      padding-top: calc(var(--header-h-md) + 1.5rem);
+    }
+  }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
     font-size: 1.125rem; /* Base 18px for better readability */
