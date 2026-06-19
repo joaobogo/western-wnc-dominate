@@ -90,9 +90,9 @@ export const counties: CountyData[] = [
     slug: "buncombe-county",
     name: "Buncombe County",
     description: "Serving the vibrant mountain hub of Asheville and its surrounding towns. We specialize in everything from historic district preservation to modern premium roofing systems.",
-    towns: ["Asheville", "Black Mountain", "Weaverville"],
+    towns: ["Asheville"],
     metaTitle: "Roofing & Construction in Buncombe County, NC | Highlander",
-    metaDescription: "Professional roofing and construction across Buncombe County, NC. Serving Asheville, Black Mountain, and Weaverville with premium local service.",
+    metaDescription: "Professional roofing and construction across Buncombe County, NC. Serving Asheville with premium local service.",
     heroImage: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Market Hub", value: "Asheville Region" },
@@ -123,15 +123,15 @@ export const counties: CountyData[] = [
   {
     slug: "transylvania-county",
     name: "Transylvania County",
-    description: "The 'Land of Waterfalls' demands superior moisture management. We serve Brevard and the high-end private communities of Lake Toxaway.",
-    towns: ["Brevard", "Lake Toxaway", "Rosman"],
+    description: "The 'Land of Waterfalls' demands superior moisture management. We serve Brevard and the surrounding Transylvania County communities.",
+    towns: ["Brevard", "Rosman"],
     metaTitle: "Transylvania County Roofing & Construction | Highlander",
-    metaDescription: "Specialized roofing and construction for Transylvania County, NC. Moisture-resistant systems for Brevard and Lake Toxaway estates.",
+    metaDescription: "Specialized roofing and construction for Transylvania County, NC. Moisture-resistant systems for Brevard and surrounding communities.",
     heroImage: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Climate", value: "High Moisture" },
       { label: "Top Material", value: "Synthetic / Metal" },
-      { label: "Focus", value: "Lake Toxaway Estates" },
+      { label: "Focus", value: "Premier Estates" },
       { label: "Credentials", value: "Licensed GC" }
     ],
     housingContext: "Transylvania County ranges from high-traffic tourism gateways in Brevard to some of the Southeast's most exclusive private lakefront estates.",
