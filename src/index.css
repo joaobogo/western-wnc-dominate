@@ -160,10 +160,10 @@ img {
      eyebrow, H1, breadcrumb, CTA, or first-section content.
      ────────────────────────────────────── */
   :root {
-    --header-h: 84px;
-    --header-h-md: 124px;
-    --header-h-scrolled: 72px;
-    --header-h-scrolled-md: 92px;
+    --header-h: 80px;
+    --header-h-md: 120px;
+    --header-h-scrolled: 68px;
+    --header-h-scrolled-md: 88px;
   }
 
   /* Every hero whose content stacks from the top automatically clears
@@ -185,11 +185,56 @@ img {
      never collides with the fixed header. Pairs with `flex items-end`
      heroes (pushes content slightly down from the very top edge). */
   .hero-clears-header {
-    padding-top: calc(var(--header-h) + 1.5rem);
+    padding-top: calc(var(--header-h) + 2rem);
   }
   @media (min-width: 768px) {
     .hero-clears-header {
-      padding-top: calc(var(--header-h-md) + 1.5rem);
+      padding-top: calc(var(--header-h-md) + 2.5rem);
+    }
+  }
+
+  main[class~="pt-20"],
+  main[class~="pt-24"],
+  main > section:first-of-type[class~="pt-20"],
+  main > section:first-of-type[class~="pt-24"],
+  main > section:first-of-type > div[class~="pt-20"],
+  main > section:first-of-type > div[class~="pt-24"] {
+    padding-top: calc(var(--header-h) + 1.5rem) !important;
+  }
+
+  main > section:first-of-type[class~="pt-32"],
+  main > section:first-of-type > div[class~="pt-32"] {
+    padding-top: max(8rem, calc(var(--header-h) + 1.5rem)) !important;
+  }
+
+  @media (min-width: 768px) {
+    main[class~="md:pt-28"],
+    main[class~="md:pt-32"],
+    main > section:first-of-type[class~="md:pt-28"],
+    main > section:first-of-type[class~="md:pt-32"],
+    main > section:first-of-type > div[class~="md:pt-28"],
+    main > section:first-of-type > div[class~="md:pt-32"] {
+      padding-top: calc(var(--header-h-md) + 2rem) !important;
+    }
+
+    main > section:first-of-type[class~="md:pt-40"],
+    main > section:first-of-type > div[class~="md:pt-40"] {
+      padding-top: max(10rem, calc(var(--header-h-md) + 2rem)) !important;
+    }
+
+    main > section:first-of-type[class~="md:pt-48"],
+    main > section:first-of-type > div[class~="md:pt-48"] {
+      padding-top: max(12rem, calc(var(--header-h-md) + 2rem)) !important;
+    }
+  }
+
+  /* Third-party floating widgets must not cover the first hero content on mobile. */
+  @media (max-width: 767px) {
+    #rwl-neighborhood,
+    body > div[id^="0-"],
+    body > div:not(#root):has([style*="writing-mode"]),
+    body > div:not(#root):has([style*="rotate"]) {
+      display: none !important;
     }
   }
 
