@@ -435,38 +435,6 @@ const townProofMap: Record<string, TownProofContent> = {
       },
     ],
   },
-  "lake-toxaway-nc": {
-    stats: [
-      { label: "Setting", value: "Private Lake", detail: "Ultra-high-end estate focus" },
-      { label: "Service", value: "White-Glove", detail: "Premium project management for remote owners" },
-      { label: "Specialty", value: "Brava", detail: "Certified luxury synthetic installers" },
-    ],
-    jobHighlights: [
-      {
-        title: "Lake Toxaway estate reroofing",
-        summary: "Toxaway projects require precision, high-end material sourcing, and coordination with community security and design review boards.",
-        proof: "Brava synthetic shake blends, copper accents, and gated-community logistics",
-        image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
-      },
-      {
-        title: "Lakefront master suite expansion",
-        summary: "Design-build addition for a premier Toxaway estate, providing a new luxury suite with expansive views and high-end exterior finishes.",
-        proof: "Structural lake-view engineering, matching stone masonry, and premium trim",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600",
-      },
-      {
-        title: "Premium gutter & drainage system",
-        summary: "Installation of oversized copper gutter systems and underground drainage for a large Lake Toxaway residence to manage lake-effect precipitation.",
-        proof: "6-inch half-round copper gutters, decorative downspouts, and site-graded drainage",
-      },
-    ],
-    faqs: [
-      {
-        question: "Do you manage Toxaway estate projects for out-of-town owners?",
-        answer: "Yes. Most of our Lake Toxaway clients are remote. We provide a full-service experience including daily photo updates, material logistics, and ARB coordination.",
-      },
-    ],
-  },
   "murphy-nc": {
     stats: [
       { label: "Hub", value: "Cherokee Co.", detail: "Fast response for the far west" },
