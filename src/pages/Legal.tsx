@@ -79,7 +79,7 @@ function PrivacyBody() {
       <h2>Contact Us About Privacy</h2>
       <p>
         Questions, requests, or concerns? Reach the Highlander office at <a href="tel:+18285247773">(828) 524-7773</a> or
-        email <a href="mailto:info@highlanderroofing.com">info@highlanderroofing.com</a> and we will respond promptly.
+        email <a href="mailto:info@highlandernc.com">info@highlandernc.com</a> and we will respond promptly.
       </p>
     </>
   );
@@ -125,7 +125,7 @@ function TermsBody() {
       <h2>Questions</h2>
       <p>
         Reach us at <a href="tel:+18285247773">(828) 524-7773</a> or
-        <a href="mailto:info@highlanderroofing.com"> info@highlanderroofing.com</a>.
+        <a href="mailto:info@highlandernc.com"> info@highlandernc.com</a>.
       </p>
     </>
   );
@@ -163,7 +163,7 @@ function AccessibilityBody() {
       <p>
         If you encounter a page, form, or feature that is difficult to use with assistive technology, please let us
         know so we can fix it and help you directly in the meantime. Call <a href="tel:+18285247773">(828) 524-7773</a> or
-        email <a href="mailto:info@highlanderroofing.com">info@highlanderroofing.com</a>. We respond promptly.
+        email <a href="mailto:info@highlandernc.com">info@highlandernc.com</a>. We respond promptly.
       </p>
     </>
   );
@@ -218,7 +218,7 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
             <Link to="/accessibility" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><AccessibilityIcon className="w-3.5 h-3.5" /> Accessibility</Link>
             <span className="text-border">·</span>
             <a href="tel:+18285247773" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> (828) 524-7773</a>
-            <a href="mailto:info@highlanderroofing.com" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> info@highlanderroofing.com</a>
+            <a href="mailto:info@highlandernc.com" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> info@highlandernc.com</a>
           </div>
         </div>
       </main>

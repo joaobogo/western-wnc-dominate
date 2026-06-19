@@ -194,9 +194,9 @@ export default function Contact() {
                       <span className="text-[10px] text-[hsl(var(--dark-section-foreground)/0.4)] font-body uppercase tracking-wider">Call Direct</span>
                     </div>
                   </a>
-                  <a href="mailto:info@highlanderroofing.com" className="flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--dark-section-foreground)/0.04)] border border-[hsl(var(--dark-section-foreground)/0.08)] hover:border-[hsl(var(--highland-gold)/0.15)] transition-all">
+                  <a href="mailto:info@highlandernc.com" className="flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--dark-section-foreground)/0.04)] border border-[hsl(var(--dark-section-foreground)/0.08)] hover:border-[hsl(var(--highland-gold)/0.15)] transition-all">
                     <Mail className="w-4 h-4 text-[hsl(var(--highland-gold)/0.5)]" />
-                    <span className="text-sm font-body text-[hsl(var(--dark-section-foreground)/0.6)]">info@highlanderroofing.com</span>
+                    <span className="text-sm font-body text-[hsl(var(--dark-section-foreground)/0.6)]">info@highlandernc.com</span>
                   </a>
                 </motion.div>
               </div>
@@ -606,10 +606,10 @@ export default function Contact() {
                           <p className="text-[10px] text-muted-foreground font-body">Call — a real person answers</p>
                         </div>
                       </a>
-                      <a href="mailto:info@highlanderroofing.com" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
+                      <a href="mailto:info@highlandernc.com" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
                         <Mail className="w-4 h-4 text-primary" />
                         <div>
-                          <p className="text-sm font-heading font-semibold text-foreground">info@highlanderroofing.com</p>
+                          <p className="text-sm font-heading font-semibold text-foreground">info@highlandernc.com</p>
                           <p className="text-[10px] text-muted-foreground font-body">Email — reply rapidly</p>
                         </div>
                       </a>
