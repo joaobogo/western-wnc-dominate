@@ -163,9 +163,9 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_30px_-10px_rgba(0,0,0,0.15)] border-b border-black/[0.08] md:border-b-0"
     >
       {/* ─── Main nav bar ─── */}
-      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-0.5" : "py-1 md:py-1.5"}`}>
+      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-2" : "py-3 md:py-4"}`}>
         {/* Logo */}
-        <Link to="/" aria-label="Highlander Roofing & Construction — Home" className="flex items-center -ml-3 md:-ml-6 bg-transparent hover:bg-transparent">
+        <Link to="/" aria-label="Highlander Roofing & Construction — Home" className="flex items-center bg-transparent hover:bg-transparent">
           <img
             src={logo}
             alt="Highlander Roofing & Construction logo"
