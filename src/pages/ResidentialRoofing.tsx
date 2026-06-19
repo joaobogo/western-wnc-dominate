@@ -537,19 +537,19 @@ const ResidentialRoofing = () => {
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
           />
-          <div className="section-padding">
+          <div className="px-6 md:px-10 lg:px-20 pt-12 md:pt-24 lg:pt-28 pb-8 md:pb-10 lg:pb-12">
             <div className="container-tight">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="max-w-2xl mx-auto text-center mb-12 md:mb-16"
+                className="max-w-2xl mx-auto text-center mb-10 md:mb-14"
               >
                 <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Residential Materials</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Materials Specified for<br className="hidden md:block" /> Mountain Performance.
                 </h2>
-                <p className="text-dark-section-foreground/40 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground/85 text-base md:text-lg font-body font-medium leading-relaxed max-w-lg mx-auto">
                   Every material we recommend has been proven in WNC conditions.
                   Here's how the most popular residential options compare.
                 </p>
@@ -586,17 +586,17 @@ const ResidentialRoofing = () => {
                           </span>
                         </div>
 
-                        <div className="flex flex-wrap gap-4 mb-4 text-[11px] font-body text-dark-section-foreground/35">
-                          <span><strong className="text-dark-section-foreground/50">Brand:</strong> {mat.brand}</span>
-                          <span><strong className="text-dark-section-foreground/50">Warranty:</strong> {mat.warranty}</span>
-                          <span><strong className="text-dark-section-foreground/50">Best For:</strong> {mat.best}</span>
+                        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-[13px] font-body text-dark-section-foreground/85">
+                          <span><strong className="text-[hsl(var(--highland-gold))] font-semibold uppercase tracking-wide text-[11px] mr-1">Brand:</strong> {mat.brand}</span>
+                          <span><strong className="text-[hsl(var(--highland-gold))] font-semibold uppercase tracking-wide text-[11px] mr-1">Warranty:</strong> {mat.warranty}</span>
+                          <span><strong className="text-[hsl(var(--highland-gold))] font-semibold uppercase tracking-wide text-[11px] mr-1">Best For:</strong> {mat.best}</span>
                         </div>
 
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {mat.pros.map((pro) => (
                             <li key={pro} className="flex items-start gap-2">
-                              <CheckCircle className="w-3.5 h-3.5 mt-0.5 text-[hsl(var(--highland-gold)/0.4)] flex-shrink-0" />
-                              <span className="text-dark-section-foreground/50 text-xs font-body">{pro}</span>
+                              <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold))] flex-shrink-0" />
+                              <span className="text-dark-section-foreground/85 text-[13px] font-body font-medium">{pro}</span>
                             </li>
                           ))}
                         </ul>
@@ -611,11 +611,11 @@ const ResidentialRoofing = () => {
 
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
-          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
+          <div className="container-tight px-5 md:px-8 py-7 md:py-9">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Need guidance on materials or timing?</h3>
-                <p className="text-primary-foreground/50 text-sm font-body">We'll assess your roof honestly and recommend based on what it actually needs.</p>
+                <p className="text-primary-foreground/90 text-base font-body font-medium">We'll assess your roof honestly and recommend based on what it actually needs.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -922,8 +922,8 @@ const ResidentialRoofing = () => {
                       { icon: Star, text: "Financing Available" },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
-                        <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/25 text-xs font-body font-medium">{item.text}</span>
+                        <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                        <span className="text-dark-section-foreground/85 text-sm font-body font-semibold">{item.text}</span>
                       </div>
                     ))}
                   </div>
