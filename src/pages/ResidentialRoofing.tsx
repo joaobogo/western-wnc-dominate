@@ -537,7 +537,7 @@ const ResidentialRoofing = () => {
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
           />
-          <div className="px-6 md:px-10 lg:px-20 pt-12 md:pt-24 lg:pt-28 pb-8 md:pb-10 lg:pb-12">
+          <div className="px-6 md:px-10 lg:px-20 pt-12 md:pt-24 lg:pt-28 pb-4 md:pb-5 lg:pb-6">
             <div className="container-tight">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
@@ -549,7 +549,7 @@ const ResidentialRoofing = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Materials Specified for<br className="hidden md:block" /> Mountain Performance.
                 </h2>
-                <p className="text-dark-section-foreground/85 text-base md:text-lg font-body font-medium leading-relaxed max-w-lg mx-auto">
+                <p className="text-dark-section-foreground text-base md:text-lg font-body font-medium leading-relaxed max-w-lg mx-auto">
                   Every material we recommend has been proven in WNC conditions.
                   Here's how the most popular residential options compare.
                 </p>
@@ -563,7 +563,7 @@ const ResidentialRoofing = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
-                    className="group border border-dark-section-foreground/6 rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.15)] bg-dark-section-foreground/[0.02] hover:bg-dark-section-foreground/[0.04] transition-all duration-300"
+                    className="group border border-dark-section-foreground/10 rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] bg-dark-section-foreground/[0.04] hover:bg-dark-section-foreground/[0.06] transition-all duration-300"
                   >
                     <div className="grid md:grid-cols-5 gap-0">
                       {/* Image */}
@@ -586,7 +586,7 @@ const ResidentialRoofing = () => {
                           </span>
                         </div>
 
-                        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-[13px] font-body text-dark-section-foreground/85">
+                        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-[13px] font-body text-dark-section-foreground/95">
                           <span><strong className="text-[hsl(var(--highland-gold))] font-semibold uppercase tracking-wide text-[11px] mr-1">Brand:</strong> {mat.brand}</span>
                           <span><strong className="text-[hsl(var(--highland-gold))] font-semibold uppercase tracking-wide text-[11px] mr-1">Warranty:</strong> {mat.warranty}</span>
                           <span><strong className="text-[hsl(var(--highland-gold))] font-semibold uppercase tracking-wide text-[11px] mr-1">Best For:</strong> {mat.best}</span>
@@ -596,7 +596,7 @@ const ResidentialRoofing = () => {
                           {mat.pros.map((pro) => (
                             <li key={pro} className="flex items-start gap-2">
                               <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold))] flex-shrink-0" />
-                              <span className="text-dark-section-foreground/85 text-[13px] font-body font-medium">{pro}</span>
+                              <span className="text-dark-section-foreground/95 text-[13px] font-body font-medium">{pro}</span>
                             </li>
                           ))}
                         </ul>
@@ -611,11 +611,11 @@ const ResidentialRoofing = () => {
 
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
-          <div className="container-tight px-5 md:px-8 py-7 md:py-9">
+          <div className="container-tight px-5 md:px-8 py-5 md:py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Need guidance on materials or timing?</h3>
-                <p className="text-primary-foreground/90 text-base font-body font-medium">We'll assess your roof honestly and recommend based on what it actually needs.</p>
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5 text-primary-foreground">Need guidance on materials or timing?</h3>
+                <p className="text-primary-foreground text-base font-body font-medium">We'll assess your roof honestly and recommend based on what it actually needs.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
@@ -914,7 +914,7 @@ const ResidentialRoofing = () => {
                     </a>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
+                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/15">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Award, text: "CertainTeed Certified" },
@@ -923,7 +923,7 @@ const ResidentialRoofing = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-                        <span className="text-dark-section-foreground/85 text-sm font-body font-semibold">{item.text}</span>
+                        <span className="text-dark-section-foreground text-sm font-body font-semibold">{item.text}</span>
                       </div>
                     ))}
                   </div>
