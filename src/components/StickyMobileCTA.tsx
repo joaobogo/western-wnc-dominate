@@ -37,13 +37,13 @@ const StickyMobileCTA = () => {
               {/* VELUX trust strip */}
               <Link
                 to="/certifications"
-                className="flex items-center justify-center gap-2 py-1.5 px-3 bg-[hsl(var(--heritage-green))] border-b border-[hsl(var(--highland-gold)/0.25)]"
+                className="flex items-center justify-center gap-2 py-1.5 px-3 bg-[hsl(var(--heritage-green))] border-b border-[hsl(var(--highland-gold)/0.25)] min-w-0"
               >
                 <div className="w-6 h-6 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white rounded-sm">
                   <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain p-0.5" />
                 </div>
-                <span className="text-[11px] font-body font-bold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold))]">
-                  VELUX Certified Skylight Installer
+                <span className="text-[10px] xs:text-[11px] font-body font-bold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold))] truncate">
+                  VELUX Certified Installer
                 </span>
               </Link>
 
