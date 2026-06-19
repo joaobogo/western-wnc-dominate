@@ -11,7 +11,8 @@ import { ScrollReveal } from "@/components/motion";
 import { teamMembers as approvedTeam } from "@/data/team";
 
 const storyImg = "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?auto=format&fit=crop&q=80&w=1920"; // Smoky Mountains focused picture
-const heritageImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
+import heritageAsset from "@/assets/wnc-heritage-home.jpg.asset.json";
+const heritageImg = heritageAsset.url;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
