@@ -218,7 +218,7 @@ const InspectionForm = () => {
                     transition={{ delay: 0.3 + i * 0.08, duration: 0.4, ease: HIGHLAND_EASE }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.3)] flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.22)] border border-[hsl(var(--highland-gold)/0.55)] flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                     </div>
                     <span className="text-white text-body font-bold text-lg md:text-xl drop-shadow-md">{item.text}</span>
@@ -228,12 +228,12 @@ const InspectionForm = () => {
 
               <ScrollReveal variant="fade" delay={0.5}>
                 <div className="mt-8 pt-8 border-t border-dark-section-foreground/6">
-                  <p className="text-white/85 text-base font-body font-bold mb-2">Prefer to talk directly?</p>
+                  <p className="text-white text-base font-body font-bold mb-2">Prefer to talk directly?</p>
                   <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--highland-gold))] transition-colors">
                     <Phone className="w-4 h-4" />
                     (828) 524-7773
                   </a>
-                  <p className="text-white/95 text-sm font-body font-semibold mt-1.5">We answer our own phone — always a real person.</p>
+                  <p className="text-white text-sm font-body font-semibold mt-1.5">We answer our own phone — always a real person.</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -330,7 +330,7 @@ const InspectionForm = () => {
                           </div>
                           <div>
                             <label htmlFor="email" className={labelClasses}>
-                              Email Address <span className="text-white/95 normal-case tracking-normal font-normal">— for your written proposal</span>
+                              Email Address <span className="text-white normal-case tracking-normal font-medium">— for your written proposal</span>
                             </label>
                             <input
                               id="email" type="email" maxLength={255}
@@ -498,7 +498,7 @@ const InspectionForm = () => {
                 )}
 
                 {/* Bottom microcopy */}
-                <p className="text-center text-white/95 text-[12px] font-body font-medium mt-5 tracking-wide">
+                <p className="text-center text-white text-[13px] font-body font-semibold mt-5 tracking-wide">
                   No obligation · No sales pressure · Your information stays private
                 </p>
               </div>

@@ -29,7 +29,7 @@ const roofingData = {
   description: "Every material specified for your elevation, wind zone, and moisture exposure. Installed by crews who've spent their careers on WNC ridgelines.",
   stats: [
     { value: "4.9★", label: "Google Rating" },
-    { value: "Top 1%", label: "Nationally Certified" },
+    { value: "Top 1%", label: " Nationally Certified" },
   ],
   services: [
     { icon: Layers, name: "Full Roof Replacements" },
@@ -53,8 +53,8 @@ const constructionData = {
   subtitle: "Our Craftsmanship",
   description: "Additions, outdoor living, and whole-home renovations. We treat every construction project with the same structural precision as our roofing division, ensuring your investment is built to last in the WNC environment.",
   stats: [
-    { value: "GC", label: "Licensed Contractor" },
-    { value: "5/5", label: "Client Satisfaction" },
+    { value: "GC", label: " Licensed Contractor" },
+    { value: "5/5", label: " Client Satisfaction" },
   ],
   services: [
     { icon: PlusSquare, name: "Mountain Additions" },
@@ -78,8 +78,8 @@ const designData = {
   subtitle: "Our Intelligence",
   description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and protect design integrity end-to-end.",
   stats: [
-    { value: "100%", label: "Pre-Con Clarity" },
-    { value: "Site", label: "Optimized Plans" },
+    { value: "100%", label: " Pre-Con Clarity" },
+    { value: "Site", label: " Optimized Plans" },
   ],
   services: [
     { icon: Ruler, name: "Floor Plan Layouts" },
@@ -168,18 +168,18 @@ const DivisionCard = ({ data, accent, index }: {
 
         {/* Stats overlay at bottom of image */}
         <div className="absolute bottom-0 left-0 right-0 px-5 pb-4">
-          <div className="flex items-end gap-6">
+          <div className="flex items-center gap-5 flex-wrap">
             {data.stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col">
+              <div key={stat.label} className="flex items-baseline gap-1.5 drop-shadow-[0_1px_3px_rgba(0,0,0,0.65)]">
                 <AnimatedCounter
                   value={stat.value}
-                  className={`block text-xl md:text-2xl font-heading font-bold leading-none mb-1 ${
+                  className={`text-lg md:text-xl font-heading font-bold leading-none ${
                     isGold ? "text-[hsl(var(--highland-gold))]" : "text-white"
                   }`}
                   duration={1600}
                 />
-                <span className="block text-[9px] font-body text-white/85 uppercase tracking-[0.12em] drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
-                  {stat.label}
+                <span className="text-[12px] md:text-[13px] font-body font-bold text-white uppercase tracking-[0.1em] leading-none">
+                  {stat.label.trim()}
                 </span>
               </div>
             ))}
@@ -291,12 +291,12 @@ const ThreeDivisionPathway = () => {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-border" />
-            <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-foreground/75">
+            <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-foreground">
               Roofing · Construction · Design
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
-          <p className="text-[15px] text-foreground/85 font-body font-medium leading-relaxed max-w-md mx-auto">
+          <p className="text-[16px] text-foreground font-body font-semibold leading-relaxed max-w-md mx-auto">
             Your project shouldn't be split across multiple companies and conflicting schedules.
             With Highlander, you get one standard across all three divisions.
           </p>

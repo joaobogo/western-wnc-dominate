@@ -206,9 +206,9 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
       <div className="container-tight relative z-10" id="projects">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12 md:mb-16">
-          <div className="md:pt-2">
+          <div>
             <ScrollReveal variant="fade">
-              <span className="eyebrow mb-4 block">Selected Work</span>
+              <span className="eyebrow mb-3 block">Selected Work</span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
               <h2 className="section-heading mb-3">
@@ -275,7 +275,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
             View the Full Portfolio
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <p className="text-[13px] text-foreground/80 font-body font-medium mt-3">
+          <p className="text-[14px] text-foreground font-body font-semibold mt-3">
             Mountain-proven across 8 WNC counties
           </p>
         </motion.div>
