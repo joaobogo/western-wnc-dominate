@@ -80,15 +80,6 @@ const GivingBack = () => {
               <p className="text-lg md:text-xl text-white/95 font-body leading-relaxed max-w-2xl font-medium mb-8">
                 Highlander Roofing Services is proud to serve the same Western North Carolina communities we live in, work in, and care about. From roofing and construction to local involvement, our work is built around protecting homes, supporting neighbors, and strengthening the places that make this region special.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/consultation" className="group bg-[hsl(var(--highland-gold))] text-heritage-charcoal font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] transition-all">
-                  Request a Free Quote
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link to="/recent-projects" className="group border border-white/30 text-white font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:border-white hover:bg-white/5 transition-all">
-                  See Recent Projects
-                </Link>
-              </div>
             </motion.div>
           </div>
         </section>
