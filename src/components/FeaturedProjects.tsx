@@ -11,7 +11,7 @@ import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
-import cedarDetail from "@/assets/gallery/cedar-003.jpg";
+import cedarDetail from "@/assets/gallery/cedar-001.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
