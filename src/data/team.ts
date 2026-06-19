@@ -26,12 +26,14 @@ export const teamMembers: TeamMember[] = [
     image: lukeImg,
     alt: "Luke Smith, Owner & Founder at Highlander Roofing Services",
     bio: [
-      "Luke founded Highlander Roofing Services with a commitment to delivering dependable roofing solutions and exceptional customer service throughout Western North Carolina. His vision has always been centered on quality workmanship, honest communication, and building lasting relationships within the communities Highlander serves.",
-      "As the company owner, Luke remains actively involved in daily operations, customer relations, and ensuring every project reflects Highlander's standards of quality and service. Beyond the roofing industry, he is deeply involved in local organizations, community service initiatives, and supporting the communities of Franklin, Highlands, Cashiers, and the surrounding areas.",
+      "Luke's roots in roofing and construction go back to the 1980s, when he first started learning the trades hands-on. That decades-long foundation shaped the standards, craftsmanship, and work ethic that define Highlander Roofing Services today.",
+      "For the past 10 years, Luke has built and led Highlander locally across Western North Carolina, delivering dependable roofing and construction solutions with a focus on quality workmanship, honest communication, and lasting relationships in the communities Highlander serves.",
+      "As the company owner, Luke remains actively involved in daily operations, customer relations, and ensuring every project reflects Highlander's standards. Beyond the business, he is deeply involved in local organizations and community service initiatives across Franklin, Highlands, Cashiers, and the surrounding areas.",
       "When he's not working with customers or managing projects, Luke enjoys training for and running marathons and spending time with family and friends in the mountains of Western North Carolina.",
     ],
     details: [
-      { label: "Years in Roofing", value: "10 Years" },
+      { label: "Industry Experience", value: "Roofing & Construction Since the 1980s" },
+      { label: "Years Leading Highlander Locally", value: "10 Years in Western NC" },
       { label: "Specialty", value: "Customer Relations & Company Leadership" },
       { label: "Favorite Part of the Job", value: "Helping homeowners protect their most valuable investment" },
       { label: "Community Involvement", value: "Active in local organizations and community service initiatives" },
