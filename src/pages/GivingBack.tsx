@@ -82,7 +82,7 @@ const GivingBack = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/consultation" className="group bg-[hsl(var(--highland-gold))] text-heritage-charcoal font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] transition-all">
-                  Request a Free Estimate
+                  Request a Free Quote
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link to="/recent-projects" className="group border border-white/30 text-white font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:border-white hover:bg-white/5 transition-all">
@@ -209,7 +209,7 @@ const GivingBack = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link to="/consultation" className="group border border-white/30 text-white font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:border-white hover:bg-white/5 transition-all">
-                  Request a Free Estimate
+                  Request a Free Quote
                 </Link>
               </div>
               <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-white/85 font-body">
