@@ -345,18 +345,18 @@ const Hero = () => {
                 className="hidden md:flex items-center gap-3"
               >
                 <div className="flex items-center gap-1.5">
-                  <Home className="w-3 h-3 text-primary-foreground/20" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.15em] text-primary-foreground/20">Roofing</span>
+                  <Home className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)]" />
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground/85">Roofing</span>
                 </div>
-                <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.25)]" />
+                <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.5)]" />
                 <div className="flex items-center gap-1.5">
-                  <HardHat className="w-3 h-3 text-[hsl(var(--highland-gold)/0.25)]" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold)/0.25)]">Construction</span>
+                  <HardHat className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)]" />
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground/85">Construction</span>
                 </div>
-                <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.25)]" />
+                <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.5)]" />
                 <div className="flex items-center gap-1.5">
-                  <Ruler className="w-3 h-3 text-[hsl(var(--highland-gold)/0.25)]" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold)/0.25)]">Design</span>
+                  <Ruler className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)]" />
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground/85">Design</span>
                 </div>
               </motion.div>
             </div>
