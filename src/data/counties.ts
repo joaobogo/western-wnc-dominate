@@ -159,9 +159,9 @@ export const counties: CountyData[] = [
     slug: "madison-county",
     name: "Madison County",
     description: "Rugged and authentic. We serve Madison County's ridgetop farms and historic riverside towns with specialized roofing and structural construction.",
-    towns: ["Marshall", "Mars Hill"],
+    towns: ["Mars Hill"],
     metaTitle: "Roofing & Construction in Madison County, NC | Highlander",
-    metaDescription: "Professional roofing and construction across Madison County, NC. Serving Marshall and Mars Hill with rugged, reliable mountain service.",
+    metaDescription: "Professional roofing and construction across Madison County, NC. Serving Mars Hill with rugged, reliable mountain service.",
     heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000",
     facts: [
       { label: "Dispatch", value: "Madison Hub" },
@@ -169,7 +169,7 @@ export const counties: CountyData[] = [
       { label: "Focus", value: "Historic + Ridgetop" },
       { label: "Status", value: "Active Service" }
     ],
-    housingContext: "Madison County is known for its historic riverfront home design in Marshall and expansive, high-elevation agricultural and residential ridgetops.",
+    housingContext: "Madison County is known for its historic riverfront home design and expansive, high-elevation agricultural and residential ridgetops.",
     climateRealities: "Significant ridgetop wind exposure and winter icing events require commercial-grade flashing and heavy-duty metal roofing systems."
   },
   {
