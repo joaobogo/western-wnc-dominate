@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock, BadgeCheck, Star } from "lucide-react";
 import veluxLogo from "@/assets/logo-velux.png";
 import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
-import badgeHaag from "@/assets/badge-haag.png";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import SocialLinks from "@/components/SocialLinks";
