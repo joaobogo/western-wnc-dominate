@@ -143,7 +143,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
                 <Shield className="w-3 h-3 text-[hsl(var(--highland-gold)/0.3)]" />
-                <span className="text-[10px] font-body text-dark-section-foreground/20 uppercase tracking-[0.12em]">
+                <span className="text-[12px] font-body font-semibold text-white/80 uppercase tracking-[0.15em]">
                   {item}
                 </span>
               </div>

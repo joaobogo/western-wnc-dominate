@@ -147,9 +147,9 @@ const Footer = () => {
 
       {/* Main footer grid */}
       <div className="container-tight py-14 md:py-16 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-y-10 gap-x-8 lg:gap-x-10">
           {/* Brand column — spans 2 on lg */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+          <div className="col-span-2 md:col-span-12 lg:col-span-4">
             <Link to="/" className="inline-flex items-center gap-4 mb-8 group/footer-logo">
               <div className="relative">
                 <img 
@@ -272,7 +272,7 @@ const Footer = () => {
           </div>
 
           {/* Roofing */}
-          <div>
+          <div className="md:col-span-3 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Roofing</h4>
             <nav className="flex flex-col gap-2">
               {roofingLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
@@ -280,7 +280,7 @@ const Footer = () => {
           </div>
 
           {/* Construction */}
-          <div>
+          <div className="md:col-span-3 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Construction</h4>
             <nav className="flex flex-col gap-2">
               {constructionLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
@@ -288,7 +288,7 @@ const Footer = () => {
           </div>
 
           {/* Resources */}
-          <div>
+          <div className="md:col-span-3 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Resources</h4>
             <nav className="flex flex-col gap-2">
               {resourceLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
@@ -301,7 +301,7 @@ const Footer = () => {
           </div>
 
           {/* Service Areas — tiered */}
-          <div>
+          <div className="md:col-span-3 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Primary Markets</h4>
             <nav className="flex flex-col gap-2">
               {tier1Areas.map((l) => (

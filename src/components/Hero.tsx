@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, Clock, HardHat, Home, Mountain, Phone, Ruler } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.jpg";
 import heroLayer2 from "@/assets/gallery/metal-009.jpg";
@@ -39,20 +39,10 @@ const Hero = () => {
     "Premium dimensional asphalt roof on a Highlands-area home",
   ];
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-  const contentY = useTransform(scrollYProgress, [0, 0.5], [0, 80]);
-
   return (
     <section ref={ref} className="relative min-h-[100svh] flex flex-col overflow-hidden">
-      {/* === BACKGROUND — cinematic parallax + scale === */}
-      <motion.div className="absolute inset-0" style={{ y: bgY, scale: bgScale }}>
+      {/* === BACKGROUND — static, no parallax for smooth scroll === */}
+      <div className="absolute inset-0">
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
             No video. All real WNC roof photography. */}
         {layers.map((src, i) => (
@@ -90,7 +80,7 @@ const Hero = () => {
 
         {/* Grain texture */}
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
-      </motion.div>
+      </div>
 
       {/* === LAYER INDICATOR — tiny premium ticks bottom-right of hero === */}
       <div className="absolute right-6 md:right-10 lg:right-20 bottom-32 md:bottom-36 z-20 hidden sm:flex items-center gap-1.5">
@@ -172,10 +162,7 @@ const Hero = () => {
       </div>
 
       {/* === MAIN CONTENT === */}
-      <motion.div
-        className="relative z-10 flex-1 flex items-center md:items-end w-full"
-        style={{ opacity: contentOpacity, y: contentY }}
-      >
+      <div className="relative z-10 flex-1 flex items-center md:items-end w-full">
         <div className="w-full px-6 md:px-10 lg:px-20 pb-20 md:pb-44 pt-32 md:pt-48">
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
@@ -206,32 +193,32 @@ const Hero = () => {
             </motion.div>
 
             {/* Headline — cinematic three-line reveal */}
-            <div className="overflow-hidden mb-1 md:mb-2">
+            <div className="overflow-hidden mb-1 md:mb-2 pb-[0.12em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
+                className="text-[2.6rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
                 High-Elevation,
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-1 md:mb-2">
+            <div className="overflow-hidden mb-1 md:mb-2 pb-[0.12em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
+                className="text-[2.6rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
                 Built for the Peaks.
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-8 md:mb-12">
+            <div className="overflow-hidden mb-8 md:mb-12 pb-[0.18em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[0.98] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.035em]"
+                className="text-[2.6rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.035em]"
               >
                 <span className="text-[hsl(var(--highland-gold))]">Roofing, Construction &amp; Design</span>
                 <span className="text-primary-foreground">.</span>
@@ -281,14 +268,14 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
-              className="mt-7 md:mt-9 flex items-center gap-6"
+              className="mt-7 md:mt-9 flex items-center gap-5 md:gap-7"
             >
-              <div className="flex items-center gap-1.5">
-                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-base">4.9★</span>
-                <span className="text-primary-foreground/40 text-[12px] font-body uppercase tracking-wider">Google Rating</span>
+              <div className="flex items-center gap-2">
+                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-xl md:text-2xl">4.9★</span>
+                <span className="text-primary-foreground/85 text-[13px] md:text-sm font-body font-semibold uppercase tracking-wider">Google Rating</span>
               </div>
-              <div className="w-px h-3 bg-primary-foreground/20" />
-              <span className="text-primary-foreground/40 text-[12px] font-body uppercase tracking-wider">150+ Verified Reviews</span>
+              <div className="w-px h-5 bg-primary-foreground/30" />
+              <span className="text-primary-foreground/85 text-[13px] md:text-sm font-body font-semibold uppercase tracking-wider">150+ Verified Reviews</span>
             </motion.div>
 
             {/* VELUX Certified Installer badge */}
@@ -313,7 +300,7 @@ const Hero = () => {
             </motion.a>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* === BOTTOM AUTHORITY BAR === */}
       <motion.div
@@ -358,18 +345,18 @@ const Hero = () => {
                 className="hidden md:flex items-center gap-3"
               >
                 <div className="flex items-center gap-1.5">
-                  <Home className="w-3 h-3 text-primary-foreground/20" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.15em] text-primary-foreground/20">Roofing</span>
+                  <Home className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)]" />
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground/85">Roofing</span>
                 </div>
-                <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.25)]" />
+                <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.5)]" />
                 <div className="flex items-center gap-1.5">
-                  <HardHat className="w-3 h-3 text-[hsl(var(--highland-gold)/0.25)]" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold)/0.25)]">Construction</span>
+                  <HardHat className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)]" />
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground/85">Construction</span>
                 </div>
-                <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.25)]" />
+                <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.5)]" />
                 <div className="flex items-center gap-1.5">
-                  <Ruler className="w-3 h-3 text-[hsl(var(--highland-gold)/0.25)]" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold)/0.25)]">Design</span>
+                  <Ruler className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.7)]" />
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground/85">Design</span>
                 </div>
               </motion.div>
             </div>

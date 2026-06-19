@@ -82,8 +82,8 @@ const ProofMoment = ({ variant, className = "", id }: ProofMomentProps) => {
               transition={{ delay: 0.1 + i * 0.08, duration: 0.35, ease: HIGHLAND_EASE }}
               className="flex items-center gap-2"
             >
-              <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.5)]" />
-              <span className="text-[11px] md:text-[12px] font-body font-medium text-muted-foreground whitespace-nowrap">
+              <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+              <span className="text-[14px] md:text-[16px] font-body font-semibold text-foreground whitespace-nowrap">
                 {item.text}
               </span>
             </motion.div>

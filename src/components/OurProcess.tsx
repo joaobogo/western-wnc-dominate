@@ -71,7 +71,7 @@ const OurProcess = () => {
         {/* Header */}
         <div className="text-center mb-14 md:mb-20">
           <ScrollReveal variant="fade">
-            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
+            <span className="text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] mb-4 block">
               Our Process — 7 Phases
             </span>
           </ScrollReveal>
@@ -82,7 +82,7 @@ const OurProcess = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-dark-section-foreground/60 max-w-xl mx-auto text-[15px] md:text-lg font-body leading-relaxed">
+            <p className="text-white/85 max-w-xl mx-auto text-base md:text-lg font-body font-medium leading-relaxed">
               Consistent quality requires a consistent process. Every phase is documented,
               every decision is yours, and every detail is accountable to one standard.
             </p>
@@ -148,7 +148,7 @@ const OurProcess = () => {
 
                     {/* Detail strip */}
                     <div className="pt-3 border-t border-dark-section-foreground/[0.04]">
-                      <span className="text-[10px] font-body text-dark-section-foreground/40 tracking-wide">
+                      <span className="text-[11px] font-body font-medium text-white/75 tracking-wide">
                         {step.detail}
                       </span>
                     </div>
@@ -169,7 +169,7 @@ const OurProcess = () => {
         >
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-[hsl(var(--highland-gold)/0.3)]" />
-            <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-dark-section-foreground/25">
+            <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-white/80">
               Roofing · Construction · Design
             </span>
             <div className="w-8 h-px bg-gradient-to-l from-transparent to-[hsl(var(--highland-gold)/0.3)]" />
@@ -184,7 +184,7 @@ const OurProcess = () => {
               <span className="relative">Start Your Project</span>
               <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
             </Link>
-            <p className="text-[11px] text-dark-section-foreground/20 font-body mt-4">
+            <p className="text-[13px] text-white/80 font-body font-medium mt-4">
               It starts with a 15-minute call. No commitment required.
             </p>
           </div>
