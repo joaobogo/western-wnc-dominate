@@ -224,7 +224,7 @@ const ConstructionDivision = () => {
                     {[
                       { value: "4.9★", label: "Google Rating" },
                       { value: "Top 1%", label: "CertainTeed Certified" },
-                      { value: "4.9★", label: "Google Rating" },
+                      { value: "150+", label: "Verified Reviews" },
                       { value: "Rapid", label: "Response Time" },
                     ].map((stat, i) => (
                       <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/15 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
