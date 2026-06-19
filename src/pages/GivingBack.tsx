@@ -51,7 +51,7 @@ const GivingBack = () => {
       <Header />
       <main>
         {/* ── HERO ── */}
-        <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-heritage-charcoal">
+        <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-heritage-charcoal">
           <div className="absolute inset-0">
             <img
               src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000"
@@ -62,7 +62,7 @@ const GivingBack = () => {
             <TartanBackground opacity={0.03} />
           </div>
 
-          <div className="relative z-10 container-tight pt-32 pb-20">
+          <div className="relative z-10 container-tight pt-36 md:pt-44 pb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
