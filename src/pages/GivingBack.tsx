@@ -164,11 +164,17 @@ const GivingBack = () => {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[hsl(var(--highland-gold))] via-primary to-[hsl(var(--highland-gold))]" />
                 <span className="eyebrow mb-3 block">Featured Community Involvement</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
-                  Community Highlights Coming Soon
+                  Community Involvement, Led by Our Team
                 </h2>
-                <p className="text-muted-foreground font-body leading-relaxed mb-6">
-                  We are gathering approved photos, organization names, and project details from the Highlander team. This section will be updated with real community involvement, local sponsorships, charity work, and partnership highlights once approved for publication.
+                <p className="text-muted-foreground font-body leading-relaxed mb-4">
+                  Highlander's community involvement is reflected through the people behind the company. From local service organizations and Rotary involvement to youth sports coaching and community initiatives, the Highlander team is committed to supporting the Western North Carolina communities it serves.
                 </p>
+                <ul className="space-y-2 text-muted-foreground font-body leading-relaxed mb-6 list-disc pl-5">
+                  <li><strong className="text-foreground">Luke Smith</strong> — active in local organizations and community service initiatives across Franklin, Highlands, and Cashiers.</li>
+                  <li><strong className="text-foreground">Kristy Smith</strong> — involved with Rotary and local service organizations throughout Franklin and Highlands.</li>
+                  <li><strong className="text-foreground">Derek Wallace</strong> — youth baseball and football coach for local programs.</li>
+                  <li><strong className="text-foreground">Alex Hurst</strong> — coaches baseball and football for his son's local teams.</li>
+                </ul>
                 <div className="border-t border-border pt-6">
                   <p className="font-heading font-bold text-foreground mb-4">
                     Have a community opportunity to discuss?
