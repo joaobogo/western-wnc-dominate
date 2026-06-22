@@ -22,7 +22,7 @@ import BuiltForWNC from "@/components/BuiltForWNC";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import ProjectConcierge from "@/components/ProjectConcierge";
-import VeluxProof from "@/components/VeluxProof";
+import TrustedMaterials from "@/components/TrustedMaterials";
 import HomeFAQ from "@/components/HomeFAQ";
 
 const Index = () => {
@@ -83,8 +83,8 @@ const Index = () => {
 
         <SectionDivider variant="tartan-trim" />
 
-        {/* 6. Velux Proof — Specialty authority */}
-        <VeluxProof />
+        {/* 6. Trusted Materials — Product partners & material suppliers */}
+        <TrustedMaterials />
 
         {/* 7. Featured Projects — Visual proof */}
         <FeaturedProjects />
