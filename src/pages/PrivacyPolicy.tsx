@@ -4,42 +4,36 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
-const LAST_UPDATED = "[CLIENT TO CONFIRM LAST UPDATED DATE]";
-const WEBSITE_URL = "[CLIENT TO CONFIRM FINAL WEBSITE URL]";
-const EMAIL = "[CLIENT TO CONFIRM EMAIL ADDRESS]";
-const ADDRESS = "[CLIENT TO CONFIRM PHYSICAL BUSINESS ADDRESS]";
+const LAST_UPDATED = "June 24, 2026";
+const WEBSITE_URL = "https://www.highlandernc.com/";
+const EMAIL = "luke@highlandernc.com";
+const ADDRESS = "1511 Highlands Rd, Franklin, NC 28734";
 const COMPANY = "Highlander Roofing Services, Inc.";
-const PHONE = "828-524-7773";
-const PROGRAM = "Highlander Roofing Services Customer Communications";
+const PHONE = "(828) 526-6421";
+const PHONE_TEL = "+18285266421";
+const PROGRAM = "Highlander Roofing Services, Inc. Customer Communications";
 
 const TOC: { id: string; label: string }[] = [
-  { id: "program", label: "1. Program Description and Acceptance of Terms" },
-  { id: "frequency", label: "2. Message Frequency and Charges" },
-  { id: "opt", label: "3. Opt-In and Opt-Out" },
-  { id: "carrier", label: "4. Carrier Disclosures" },
-  { id: "surveys", label: "5. Post-Project Survey and Review Requests" },
-  { id: "support", label: "6. Customer Support and Contact Information" },
-  { id: "privacy", label: "7. Privacy Policy" },
-  { id: "scope", label: "8. Scope" },
-  { id: "collect", label: "9. Information We Collect" },
-  { id: "voluntary", label: "10. Information You Provide Voluntarily" },
-  { id: "automatic", label: "11. Information Collected Automatically" },
-  { id: "cookies", label: "12. Cookies, Pixels, SDKs, and Similar Technologies" },
-  { id: "use", label: "13. How We Use Your Information" },
-  { id: "comm-privacy", label: "14. Communications and Text Messaging Privacy" },
-  { id: "sms", label: "15. SMS/MMS Text Messages" },
-  { id: "ad-choices", label: "16. Cookies, Interest-Based Advertising, and Your Choices" },
-  { id: "sharing", label: "17. Sharing and Disclosure of Information" },
-  { id: "providers", label: "18. Service Providers" },
-  { id: "legal", label: "19. Legal and Safety" },
-  { id: "transfers", label: "20. Business Transfers" },
-  { id: "security", label: "21. Data Security" },
-  { id: "links", label: "22. Links to Other Websites" },
-  { id: "children", label: "23. Children's Privacy" },
-  { id: "retention", label: "24. Data Retention" },
-  { id: "changes", label: "25. Changes to These Terms and This Policy" },
-  { id: "us-rights", label: "26. Privacy Rights and Choices for U.S. Residents" },
-  { id: "no-sale", label: "27. No Sale of Personal Information" },
+  { id: "s1", label: "1. Program Description and Acceptance of Terms" },
+  { id: "s2", label: "2. Message Frequency and Charges" },
+  { id: "s3", label: "3. Opt-In and Opt-Out" },
+  { id: "s4", label: "4. Carrier Disclosures" },
+  { id: "s5", label: "5. Post-Project Survey and Review Requests" },
+  { id: "s6", label: "6. Customer Support and Contact Information" },
+  { id: "s7", label: "7. Link to Privacy Policy" },
+  { id: "s8", label: "8. Privacy Policy" },
+  { id: "s8-1", label: "8.1 Scope" },
+  { id: "s8-2", label: "8.2 Information We Collect" },
+  { id: "s8-3", label: "8.3 How We Use Your Information" },
+  { id: "s8-4", label: "8.4 Communications and Text Messaging Privacy" },
+  { id: "s8-5", label: "8.5 Cookies, Interest-Based Advertising, and Your Choices" },
+  { id: "s8-6", label: "8.6 Sharing and Disclosure of Information" },
+  { id: "s8-7", label: "8.7 Data Security" },
+  { id: "s8-8", label: "8.8 Links to Other Websites" },
+  { id: "s8-9", label: "8.9 Children's Privacy" },
+  { id: "s8-10", label: "8.10 Data Retention" },
+  { id: "s8-11", label: "8.11 Changes to These Terms and This Policy" },
+  { id: "s8-12", label: "8.12 Privacy Rights and Choices (U.S. Residents)" },
 ];
 
 const PrivacyPolicy = () => {
@@ -64,8 +58,17 @@ const PrivacyPolicy = () => {
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-3 tracking-tight">
             Terms &amp; Conditions and Privacy Policy
           </h1>
+          <p className="text-sm text-muted-foreground font-body mb-2">
+            <strong>Last Updated:</strong> {LAST_UPDATED}
+          </p>
+          <p className="text-sm text-muted-foreground font-body mb-1">
+            <strong>Company Name:</strong> {COMPANY}
+          </p>
           <p className="text-sm text-muted-foreground font-body mb-10">
-            Last updated: {LAST_UPDATED}
+            <strong>Website:</strong>{" "}
+            <a href={WEBSITE_URL} className="text-primary underline hover:no-underline">
+              {WEBSITE_URL}
+            </a>
           </p>
 
           {/* Table of Contents */}
@@ -87,255 +90,551 @@ const PrivacyPolicy = () => {
             </ol>
           </nav>
 
-          <article className="prose prose-neutral max-w-none font-body text-foreground/85 leading-relaxed [&_h2]:font-heading [&_h2]:text-foreground [&_h2]:text-xl [&_h2]:mt-12 [&_h2]:mb-3 [&_h2]:font-bold [&_h2]:scroll-mt-32 [&_h3]:font-heading [&_h3]:text-foreground [&_h3]:text-lg [&_h3]:mt-6 [&_h3]:mb-2 [&_h3]:font-semibold [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-1.5 [&_a]:text-primary [&_a]:underline [&_a:hover]:no-underline">
+          <article className="prose prose-neutral max-w-none font-body text-foreground/85 leading-relaxed [&_h2]:font-heading [&_h2]:text-foreground [&_h2]:text-xl [&_h2]:mt-12 [&_h2]:mb-3 [&_h2]:font-bold [&_h2]:scroll-mt-32 [&_h3]:font-heading [&_h3]:text-foreground [&_h3]:text-lg [&_h3]:mt-6 [&_h3]:mb-2 [&_h3]:font-semibold [&_h4]:font-heading [&_h4]:text-foreground [&_h4]:text-base [&_h4]:mt-5 [&_h4]:mb-2 [&_h4]:font-semibold [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-1.5 [&_a]:text-primary [&_a]:underline [&_a:hover]:no-underline">
+            <h2 id="s1">1. Program Description and Acceptance of Terms</h2>
             <p>
-              These Terms &amp; Conditions and Privacy Policy ("Terms") govern your use of the
-              website operated by {COMPANY} ("Highlander," "we," "us," or "our") and your
-              participation in the {PROGRAM} program. By using our website, submitting a form,
-              or opting in to receive communications from us, you agree to these Terms.
+              {COMPANY} ("Company," "we," "our," or "us") operates one or more text messaging,
+              email, and call programs (collectively, the "Programs") to communicate with
+              customers and prospects regarding our services. These Programs may include,
+              without limitation:
+            </p>
+            <ul>
+              <li>Service-related alerts and reminders.</li>
+              <li>Customer support and scheduling updates.</li>
+              <li>
+                Post-project follow-up communications, including satisfaction surveys, Net
+                Promoter Score (NPS) collection, qualitative feedback about completed work,
+                and invitations to leave public reviews on third-party platforms.
+              </li>
+              <li>
+                Where permitted, limited informational or promotional messages related to our
+                services.
+              </li>
+            </ul>
+            <p>
+              By providing your contact information (including your mobile phone number and
+              email address) and opting in to receive messages from us, or by using our
+              Website or services, you agree to these Terms &amp; Conditions and our Privacy
+              Policy (together, the "Terms"). If you do not agree, please do not enroll in any
+              Program or use the Website.
+            </p>
+            <ul>
+              <li>
+                <strong>Program / Brand Name(s):</strong> "{PROGRAM}"
+              </li>
+              <li>
+                <strong>Program Description:</strong> One-time and recurring communications by
+                SMS, MMS, phone, and email related to service scheduling and support,
+                post-project surveys (including NPS), feedback collection, and invitations to
+                leave public reviews, as well as other service-related and, where permitted,
+                limited promotional messages.
+              </li>
+            </ul>
+
+            <h2 id="s2">2. Message Frequency and Charges</h2>
+            <ul>
+              <li>Message and data rates may apply.</li>
+              <li>
+                Message frequency may vary based on your interactions with us and which
+                Programs you join (for example, number of projects, survey requests, or
+                inbound inquiries).
+              </li>
+              <li>
+                Your wireless carrier may charge you for text messages according to your
+                mobile plan. You are responsible for any such charges.
+              </li>
+            </ul>
+
+            <h2 id="s3">3. Opt-In and Opt-Out</h2>
+            <p>
+              You may opt in to receive messages from us by, for example, submitting a form on
+              our Website that includes consent language, requesting text or email updates,
+              providing your information during a service interaction, or otherwise agreeing
+              to receive communications.
+            </p>
+            <h3>Opt-Out Instructions (STOP):</h3>
+            <ul>
+              <li>
+                To stop receiving text messages from a Program, reply "STOP" to any message we
+                send you.
+              </li>
+              <li>
+                After you send "STOP," we may send you a one-time confirmation message to
+                confirm that you have been unsubscribed from that Program. After this, you
+                will no longer receive messages from that specific Program, but you may still
+                receive messages from other Programs you have joined (unless and until you opt
+                out of those Programs as well).
+              </li>
+            </ul>
+            <h3>Help Instructions (HELP):</h3>
+            <ul>
+              <li>
+                If you need assistance with a Program, reply "HELP" to any message or contact
+                us using the information in Section 6 (Customer Support).
+              </li>
+            </ul>
+            <p>
+              You may also contact us directly using the information in Section 6 to request
+              that we stop sending messages via SMS, email, or phone.
             </p>
 
-            <h2 id="program">1. Program Description and Acceptance of Terms</h2>
+            <h2 id="s4">4. Carrier Disclosures</h2>
             <p>
-              The {PROGRAM} program allows {COMPANY} to communicate with current and
-              prospective customers about roofing, construction, gutter, outdoor living, and
-              related services. Communications may include scheduling, estimates, project
-              updates, follow-ups, satisfaction surveys, and review requests. By providing your
-              contact information or opting in, you accept these Terms.
+              Carriers are not liable for any delayed or undelivered messages. Availability of
+              a Program and performance of message delivery may be affected by your carrier's
+              coverage and network conditions.
             </p>
 
-            <h2 id="frequency">2. Message Frequency and Charges</h2>
+            <h2 id="s5">5. Post-Project Survey and Review Requests</h2>
             <p>
-              Message frequency may vary based on your interactions with us and the stage of
-              your project. <strong>Message and data rates may apply</strong> according to your
-              mobile carrier plan. Highlander is not responsible for carrier charges.
+              After a project or service is completed, we may contact you by phone, SMS/MMS,
+              or email to:
             </p>
-
-            <h2 id="opt">3. Opt-In and Opt-Out</h2>
+            <ul>
+              <li>Request that you complete a satisfaction survey.</li>
+              <li>
+                Collect a Net Promoter Score (NPS) or other rating regarding your experience.
+              </li>
+              <li>Gather qualitative feedback about the work that was performed.</li>
+              <li>
+                Ask you to leave a review on public platforms (such as online review or social
+                media sites), at your discretion.
+              </li>
+            </ul>
             <p>
-              You opt in to receive communications by submitting a form, providing your phone
-              number to a Highlander representative, or replying to a message confirming your
-              consent.
-            </p>
-            <p>
-              You may opt out of text messages at any time by replying <strong>STOP</strong> to
-              any message. After a STOP request, you may receive one final confirmation
-              message. To receive assistance, reply <strong>HELP</strong> or contact us at{" "}
-              <a href={`tel:+1${PHONE.replace(/-/g, "")}`}>{PHONE}</a>. Opting out of text
-              messages does not opt you out of other programs you may have separately
-              subscribed to; you must opt out of each program individually.
-            </p>
-
-            <h2 id="carrier">4. Carrier Disclosures</h2>
-            <p>
-              Mobile carriers are not liable for delayed or undelivered messages. Supported
-              carriers may change without notice.
-            </p>
-
-            <h2 id="surveys">5. Post-Project Survey and Review Requests</h2>
-            <p>
-              After a project or service is completed, Highlander may contact you by phone,
-              SMS/MMS, or email to request a satisfaction survey, collect Net Promoter Score
-              (NPS) feedback, gather qualitative feedback about completed work, or invite you
-              to leave a review on a public platform at your discretion.
-            </p>
-            <p>
-              Participation in surveys, feedback requests, and public reviews is entirely
+              Your participation in surveys, feedback requests, or public reviews is
               voluntary. Declining to participate will not affect your ability to receive
-              services from Highlander.
+              services from us.
             </p>
 
-            <h2 id="support">6. Customer Support and Contact Information</h2>
+            <h2 id="s6">6. Customer Support and Contact Information</h2>
             <p>
-              For questions about communications, opt-out status, or these Terms, contact:
+              If you have questions about these Terms or any Program, or if you need help,
+              please contact us:
             </p>
             <ul>
-              <li>Phone: <a href={`tel:+1${PHONE.replace(/-/g, "")}`}>{PHONE}</a></li>
-              <li>Email: {EMAIL}</li>
-              <li>Mailing address: {ADDRESS}</li>
-              <li>Website: {WEBSITE_URL}</li>
+              <li>
+                Phone: <a href={`tel:${PHONE_TEL}`}>{PHONE}</a>
+              </li>
+              <li>
+                Email:{" "}
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+              </li>
+              <li>Mailing Address: {ADDRESS}</li>
             </ul>
+            <p>You may also reply HELP to any text message for assistance.</p>
 
-            <h2 id="privacy">7. Privacy Policy</h2>
+            <h2 id="s7">7. Link to Privacy Policy</h2>
             <p>
-              This Privacy Policy explains how {COMPANY} collects, uses, shares, and protects
-              information about you when you use our website, submit a form, contact us, or
-              receive services from us.
+              For more information about how we collect, use, and share your information,
+              including information collected through the Programs and the Website, please
+              review our Privacy Policy below in Section 8 ("Privacy Policy").
             </p>
 
-            <h2 id="scope">8. Scope</h2>
+            <h2 id="s8">8. Privacy Policy</h2>
+
+            <h3 id="s8-1">8.1 Scope</h3>
             <p>
-              This policy applies to information collected through our website, forms,
-              communications (phone, SMS/MMS, email), and the {PROGRAM} program. It does not
-              cover the practices of third parties we do not own or control.
+              This Privacy Policy explains how we collect, use, disclose, and safeguard
+              information when you visit or interact with our Website or participate in any of
+              our Programs, including our post-project survey, feedback, and review-request
+              campaigns.
+            </p>
+            <p>
+              This policy applies to information we collect through the Website, through our
+              Programs (including SMS/MMS, email, and calls), and through related online
+              interactions. It does not apply to information collected offline (for example,
+              by phone or in person) unless we specifically state otherwise.
+            </p>
+            <p>
+              The Website and Programs are intended for users located in the United States. If
+              you access the Website or participate in any Program from outside the United
+              States, your information may be transferred to, processed, and stored in the
+              United States.
+            </p>
+            <p>
+              By accessing or using the Website or participating in any Program, you agree to
+              this Privacy Policy.
             </p>
 
-            <h2 id="collect">9. Information We Collect</h2>
+            <h3 id="s8-2">8.2 Information We Collect</h3>
             <p>
-              We collect information you provide directly to us and information collected
-              automatically when you interact with our website or messages.
+              We collect information in three primary ways: (a) information you provide to us,
+              (b) information collected automatically when you browse the Website, and (c)
+              information collected through cookies and similar technologies used for
+              analytics, advertising, and performance measurement.
             </p>
-
-            <h2 id="voluntary">10. Information You Provide Voluntarily</h2>
-            <ul>
-              <li>Name, phone number, email, and mailing/project address</li>
-              <li>Project details (type, scope, timeline, budget range, photos)</li>
-              <li>Preferred contact method and best time to reach you</li>
-              <li>Feedback, survey responses, NPS ratings, and reviews</li>
-              <li>Information shared in communications with our team</li>
-            </ul>
-
-            <h2 id="automatic">11. Information Collected Automatically</h2>
-            <ul>
-              <li>Device, browser, operating system, and IP address (approximate location)</li>
-              <li>Pages viewed, referring page, time on site, and interaction events</li>
-              <li>Message delivery, open, and click metadata for emails and texts</li>
-            </ul>
-
-            <h2 id="cookies">12. Cookies, Pixels, SDKs, and Similar Technologies</h2>
+            <h4>8.2.1 Information You Provide Voluntarily</h4>
             <p>
-              Our website and communications may use cookies, pixels, tags, local storage,
-              SDKs, and similar technologies, including:
+              When you submit information through the Website or otherwise interact with
+              us—such as by requesting service, requesting an estimate, scheduling an
+              appointment, starting a chat, contacting us, or participating in a Program—we
+              may collect information you choose to provide, including:
             </p>
             <ul>
-              <li>Analytics tools such as Google Analytics</li>
-              <li>Advertising tools such as Google Ads and Meta Pixel</li>
-              <li>Call tracking tools</li>
-              <li>Chat or messaging tools</li>
-              <li>Survey and review request platforms such as RealWork</li>
+              <li>
+                Identifiers and contact information (such as name, email address, phone
+                number, and mailing/service address).
+              </li>
+              <li>
+                Service request and project details (such as service type, project dates,
+                preferred appointment windows, photos or attachments you upload, and notes you
+                provide).
+              </li>
+              <li>
+                Communications content (such as messages submitted through forms, chat,
+                SMS/MMS, email, or other channels you use to contact us).
+              </li>
+              <li>
+                Survey responses and feedback, including NPS scores, ratings, qualitative
+                comments about completed work or your experience, and any other information
+                you choose to share in a survey or review request.
+              </li>
+              <li>Any other information you choose to submit.</li>
             </ul>
-
-            <h2 id="use">13. How We Use Your Information</h2>
+            <p>
+              You are not required to provide personal information to browse the Website.
+              However, if you choose not to provide certain information, we may be unable to
+              respond to your request, administer certain Programs, or provide certain
+              services.
+            </p>
+            <h4>8.2.2 Information Collected Automatically</h4>
+            <p>
+              When you visit the Website, we (and our service providers) may automatically
+              collect certain information about your device and your interaction with the
+              Website, such as:
+            </p>
             <ul>
-              <li>Respond to inquiries, schedule consultations, and provide estimates</li>
-              <li>Deliver, manage, and follow up on projects and services</li>
-              <li>Send service updates, scheduling, and project completion communications</li>
-              <li>Request feedback, NPS, and reviews after work is completed</li>
-              <li>Maintain warranty, service, and accounting records</li>
-              <li>Improve our website, services, and marketing</li>
-              <li>Comply with legal obligations and enforce our agreements</li>
+              <li>
+                IP address and general location information (such as city/state inferred from
+                IP address).
+              </li>
+              <li>
+                Device and browser information (such as browser type, operating system, device
+                type, and language settings).
+              </li>
+              <li>
+                Usage and event data (such as pages visited, links clicked, scroll activity,
+                time spent on pages, and referring/exit pages).
+              </li>
+              <li>
+                Approximate timestamps, session identifiers, and diagnostic data used for
+                performance, analytics, and security monitoring.
+              </li>
             </ul>
+            <p>
+              This information helps us operate the Website, measure performance, understand
+              visitor engagement, detect and prevent fraud, and maintain security.
+            </p>
+            <h4>8.2.3 Cookies, Pixels, SDKs, and Similar Technologies</h4>
+            <p>
+              We use cookies and similar technologies (such as pixels, tags, local storage,
+              and SDKs) to help the Website function, to understand how the Website is used,
+              and to support advertising and measurement activities. These technologies may
+              collect information such as your IP address, device/browser characteristics, and
+              your interactions with the Website. Examples include:
+            </p>
+            <ul>
+              <li>
+                Analytics tools (for example, Google Analytics) to understand Website traffic
+                and usage.
+              </li>
+              <li>
+                Advertising and conversion measurement tools (for example, Google Ads and Meta
+                Pixel) to help measure the effectiveness of marketing campaigns and deliver
+                ads.
+              </li>
+              <li>
+                Call tracking tools (for example, dynamic phone numbers) to attribute calls
+                and leads to marketing sources and improve service.
+              </li>
+              <li>
+                Chat and messaging tools to support customer communications and improve
+                responsiveness.
+              </li>
+            </ul>
+            <p>
+              Some of these technologies may be operated by third parties and may collect
+              information across different websites or online services over time, subject to
+              those parties' privacy practices. You can control certain cookies through your
+              browser settings and, where available, through any cookie preference controls
+              presented on the Website. See Section 8.5 for more information.
+            </p>
 
-            <h2 id="comm-privacy">14. Communications and Text Messaging Privacy</h2>
+            <h3 id="s8-3">8.3 How We Use Your Information</h3>
+            <p>
+              We use the information we collect for legitimate business purposes consistent
+              with operating our business, maintaining an effective Website, and running our
+              Programs. Depending on how you interact with us, we may use information to:
+            </p>
+            <ul>
+              <li>
+                Provide and manage services, including responding to inquiries, providing
+                estimates, scheduling appointments, and coordinating project or service
+                delivery.
+              </li>
+              <li>
+                Communicate with you, including confirmations, reminders, follow-up
+                communications, and customer support.
+              </li>
+              <li>
+                Administer post-project survey, NPS, and feedback Programs, including sending
+                you survey invitations, collecting and analyzing satisfaction scores and
+                qualitative feedback, and following up on issues or questions you raise.
+              </li>
+              <li>
+                Request that you leave reviews on public platforms, at your discretion, and
+                track whether review requests are sent or completed.
+              </li>
+              <li>
+                Operate, maintain, and improve the Website and Programs, including
+                troubleshooting, testing, analytics, measuring performance, and improving user
+                experience.
+              </li>
+              <li>
+                Conduct marketing and advertising activities with your consent, including
+                measuring campaign performance and attributing calls and leads.
+              </li>
+              <li>
+                Protect against fraud, misuse, and security incidents; enforce our policies;
+                and maintain the safety and integrity of our systems.
+              </li>
+              <li>
+                Comply with applicable legal requirements and respond to lawful requests.
+              </li>
+            </ul>
+            <p>
+              We do not sell personal information. We do not use information collected through
+              the Website or Programs to make decisions that produce legal or similarly
+              significant effects solely by automated means (for example, automated denial of
+              services).
+            </p>
+
+            <h3 id="s8-4">8.4 Communications and Text Messaging Privacy</h3>
+            <p>
+              If you provide your phone number or email address, you may receive
+              communications from us as described in Sections 1–6 and 8.3.
+            </p>
+            <h4>8.4.1 SMS / MMS Text Messages</h4>
+            <p>If you opt in to receive text messages, we may send SMS/MMS messages related to:</p>
+            <ul>
+              <li>Your current or past projects or services.</li>
+              <li>Satisfaction surveys and NPS requests.</li>
+              <li>Qualitative feedback requests about work performed.</li>
+              <li>Invitations to leave public reviews.</li>
+              <li>
+                Service-related messages and, where permitted, limited promotional messages
+                related to our services.
+              </li>
+              <li>Message frequency may vary.</li>
+              <li>Message and data rates may apply.</li>
+              <li>You can opt out at any time by replying STOP.</li>
+              <li>
+                For help, reply HELP or contact us using the information in Section 6.
+              </li>
+            </ul>
             <p>
               <strong>
                 No mobile information will be shared with third parties or affiliates for
                 marketing or promotional purposes.
               </strong>{" "}
-              {COMPANY} does not sell, rent, or share mobile phone numbers, text-message
-              consent information, or opt-out status with third parties or affiliates for their
-              own marketing or promotional purposes. This information may only be shared with
-              service providers that help us deliver messages or as required by law.
+              We do not sell, rent, or share your mobile phone number, text-message consent
+              information, or opt-out status with third parties or affiliates for their own
+              marketing or promotional purposes. We may share this information only with
+              service providers that help us deliver text messages (such as messaging
+              platforms, phone companies, and other vendors assisting with SMS delivery) or as
+              required by law.
             </p>
 
-            <h2 id="sms">15. SMS/MMS Text Messages</h2>
-            <ul>
-              <li>Message and data rates may apply.</li>
-              <li>Message frequency may vary.</li>
-              <li>Reply STOP to opt out. Reply HELP for help.</li>
-              <li>Carriers are not liable for delayed or undelivered messages.</li>
-              <li>One confirmation message may be sent after a STOP request.</li>
-              <li>Opting out of one program does not opt you out of other programs.</li>
-            </ul>
-
-            <h2 id="ad-choices">16. Cookies, Interest-Based Advertising, and Your Choices</h2>
-            <p>You may control tracking and advertising technologies in several ways:</p>
-            <ul>
-              <li>Adjust browser cookie and tracking settings</li>
-              <li>Use any cookie preference controls offered on our site</li>
-              <li>
-                We honor Global Privacy Control (GPC) signals where legally required. Browsers
-                may also send a Do Not Track (DNT) signal; because there is no industry
-                standard for DNT, we treat valid GPC signals as the preferred opt-out signal.
-              </li>
-              <li>
-                Opt out of interest-based advertising through the
-                {" "}<a href="https://optout.aboutads.info" target="_blank" rel="noopener noreferrer">Digital Advertising Alliance</a>{" "}
-                or
-                {" "}<a href="https://optout.networkadvertising.org" target="_blank" rel="noopener noreferrer">Network Advertising Initiative</a>.
-              </li>
-              <li>Submit applicable privacy rights requests as described below.</li>
-            </ul>
-
-            <h2 id="sharing">17. Sharing and Disclosure of Information</h2>
+            <h3 id="s8-5">8.5 Cookies, Interest-Based Advertising, and Your Choices</h3>
+            <h4>8.5.1 Managing Cookies</h4>
             <p>
-              We share information only as needed to operate our business and deliver your
-              project, as described in the sections below.
+              You can control cookies through your browser settings, including refusing some
+              or all cookies or receiving an alert when cookies are being sent. If you disable
+              cookies, certain features of the Website may not function properly.
+            </p>
+            <p>
+              If the Website presents a cookie banner or preference center, you can use it to
+              manage certain categories of cookies where available.
+            </p>
+            <h4>8.5.2 Analytics and Advertising Tools</h4>
+            <p>
+              We may use third-party analytics and advertising tools (such as Google
+              Analytics, Google Ads, and Meta Pixel). These providers may set cookies or
+              similar technologies and collect information about your interactions with the
+              Website to provide measurement, analytics, and advertising services. Information
+              collected through these tools may be combined with other information collected
+              through the Website for the purposes described in this policy.
+            </p>
+            <h4>8.5.3 Global Privacy Control (GPC)</h4>
+            <p>
+              Some browsers or extensions support the Global Privacy Control ("GPC") signal.
+              Where required by applicable law, we will process GPC signals as a request to
+              opt out of certain processing (such as certain types of "sharing" for targeted
+              advertising under state law). Honoring GPC may be limited by technical
+              constraints and may not apply to all uses of cookies (for example, cookies
+              necessary to operate the Website).
+            </p>
+            <h4>8.5.4 Do Not Track</h4>
+            <p>
+              Some browsers include a "Do Not Track" (DNT) setting. Because there is no common
+              industry standard for interpreting DNT signals, the Website may not respond to
+              all DNT signals. You can use the other controls described in this section to
+              manage cookies and tracking.
             </p>
 
-            <h2 id="providers">18. Service Providers</h2>
+            <h3 id="s8-6">8.6 Sharing and Disclosure of Information</h3>
             <p>
-              We share information with vendors that help us run our business and deliver
-              services — for example, hosting, email and SMS delivery, scheduling, CRM,
-              analytics, advertising measurement, and survey/review platforms such as
-              RealWork. These vendors are bound by contract to use information only to perform
-              services for us.
+              We may disclose information collected through the Website and Programs in
+              limited circumstances as described below. We do not sell personal information.
+            </p>
+            <h4>8.6.1 Service Providers</h4>
+            <p>
+              We may share information with vendors and service providers that help us operate
+              the Website, run our business, or deliver the Programs, such as website hosting
+              providers, analytics providers, advertising and measurement vendors, call
+              tracking providers, survey and review-request platforms, messaging platforms,
+              and customer communication tools. These providers are permitted to use
+              information only to perform services on our behalf and are subject to
+              contractual confidentiality and security obligations. We do not authorize
+              service providers to use personal information for their own independent
+              marketing purposes.
+            </p>
+            <p>
+              No mobile information will be shared with third parties or affiliates for
+              marketing or promotional purposes. Your mobile information will not be sold or
+              shared with third parties or affiliates for promotional or marketing purposes.
+              All categories of sharing described in this Section exclude mobile contact
+              information and text messaging originator opt-in data and consent; this
+              information will not be shared with any third parties, except service providers
+              that assist us in delivering our text messages or as required by law.
+            </p>
+            <h4>8.6.2 Legal and Safety</h4>
+            <p>
+              We may disclose information if we believe it is necessary to: (a) comply with
+              applicable law, regulation, legal process, or governmental request; (b) enforce
+              our agreements or policies; (c) protect the rights, property, or safety of the
+              Company, our customers, or others; or (d) detect, prevent, or address fraud or
+              security issues.
+            </p>
+            <h4>8.6.3 Business Transfers</h4>
+            <p>
+              If we are involved in a merger, acquisition, financing, reorganization,
+              bankruptcy, or sale of all or a portion of our business or assets, information
+              may be transferred as part of that transaction, subject to applicable law and
+              appropriate confidentiality protections.
             </p>
 
-            <h2 id="legal">19. Legal and Safety</h2>
+            <h3 id="s8-7">8.7 Data Security</h3>
             <p>
-              We may disclose information when required by law, subpoena, or other legal
-              process, or when we believe disclosure is necessary to protect rights, safety,
-              or property of {COMPANY}, our customers, or others.
-            </p>
-
-            <h2 id="transfers">20. Business Transfers</h2>
-            <p>
-              If {COMPANY} is involved in a merger, acquisition, financing, reorganization,
-              bankruptcy, or sale of assets, information may be transferred as part of that
-              transaction, subject to applicable law.
-            </p>
-
-            <h2 id="security">21. Data Security</h2>
-            <p>
-              We use reasonable administrative, technical, and physical safeguards to protect
-              information. No method of transmission or storage is completely secure; we
+              We use reasonable administrative, technical, and physical safeguards designed to
+              protect information collected through the Website and Programs from unauthorized
+              access, use, disclosure, alteration, or destruction. No method of transmission
+              over the Internet or method of electronic storage is completely secure, so we
               cannot guarantee absolute security.
             </p>
-
-            <h2 id="links">22. Links to Other Websites</h2>
             <p>
-              Our website may link to third-party websites or platforms. We are not
-              responsible for the privacy practices of those sites. Please review their
-              policies before providing information.
+              Email, text messages, and chat communications may not be encrypted end-to-end
+              and may not be secure. Please do not send sensitive information through these
+              channels.
+            </p>
+            <p>
+              If you believe your interaction with us is no longer secure, please contact us
+              immediately using the information in Section 6.
             </p>
 
-            <h2 id="children">23. Children's Privacy</h2>
+            <h3 id="s8-8">8.8 Links to Other Websites</h3>
             <p>
-              Our services are directed to adults. We do not knowingly collect personal
-              information from children under 13. If you believe a child has provided us with
-              personal information, contact us and we will delete it.
+              The Website may contain links to third-party websites or services. We do not
+              control, and are not responsible for, the content, privacy practices, or
+              security of third-party websites. We encourage you to review the privacy
+              policies of any website you visit.
             </p>
 
-            <h2 id="retention">24. Data Retention</h2>
+            <h3 id="s8-9">8.9 Children's Privacy</h3>
             <p>
-              We retain information for as long as needed to provide services, support
-              warranties, meet legal and accounting obligations, and resolve disputes. You may
-              request deletion of contact information that is no longer tied to an active
-              project or warranty.
+              The Website and Programs are not directed to children under 18, and we do not
+              knowingly collect personal information from children. If you believe a child has
+              provided personal information through the Website or a Program, please contact
+              us so we can take appropriate steps to delete it.
             </p>
 
-            <h2 id="changes">25. Changes to These Terms and This Policy</h2>
+            <h3 id="s8-10">8.10 Data Retention</h3>
             <p>
-              We may update these Terms and this Privacy Policy from time to time. Changes
-              take effect when posted on this page. The "Last updated" date at the top of this
-              page reflects the most recent revision.
+              We retain personal information collected through the Website and Programs for as
+              long as reasonably necessary to fulfill the purposes described in this policy,
+              including to provide services, administer Programs (including surveys and review
+              requests), maintain business records, resolve disputes, enforce agreements, and
+              comply with legal obligations. When information is no longer needed, we will
+              take reasonable steps to delete, deidentify, or securely dispose of it in
+              accordance with our retention practices and applicable law.
             </p>
 
-            <h2 id="us-rights">26. Privacy Rights and Choices for U.S. Residents</h2>
+            <h3 id="s8-11">8.11 Changes to These Terms and This Policy</h3>
             <p>
-              Depending on your state of residence, you may have rights to access, correct,
-              delete, or obtain a copy of personal information we hold about you, and to opt
-              out of certain processing activities. To exercise these rights, contact us using
-              the information in Section 6. We will respond as required by applicable law and
-              may need to verify your identity before fulfilling the request.
+              We may update these Terms &amp; Conditions and this Privacy Policy from time to
+              time. When we do, we will revise the "Last Updated" date at the top of this
+              document. Your continued use of the Website or participation in any Program
+              after changes are posted means you accept the updated Terms.
             </p>
 
-            <h2 id="no-sale">27. No Sale of Personal Information</h2>
+            <h3 id="s8-12">8.12 Privacy Rights and Choices (U.S. Residents)</h3>
             <p>
-              {COMPANY} does not sell personal information as that term is commonly defined,
-              and we do not sell or share mobile phone numbers, SMS opt-in data, or
-              text-messaging consent for third-party marketing or promotional purposes.
+              Depending on where you live, you may have certain rights regarding personal
+              information, which may include the right to:
+            </p>
+            <ul>
+              <li>
+                Confirm whether we collect or process personal information about you and
+                request access to it.
+              </li>
+              <li>Request correction of inaccurate personal information.</li>
+              <li>
+                Request deletion of personal information, subject to certain legal exceptions.
+              </li>
+              <li>Request a copy of personal information in a portable format.</li>
+              <li>
+                Opt out of certain uses of personal information, including certain forms of
+                targeted advertising conducted through cookies and similar technologies.
+              </li>
+              <li>
+                Appeal a decision regarding your privacy rights request, where required by
+                applicable law.
+              </li>
+            </ul>
+            <p>The availability and scope of these rights may vary by jurisdiction.</p>
+            <h4>How to Exercise Your Rights</h4>
+            <p>
+              To submit a privacy request, contact us using the information in Section 6. We
+              may need to verify your identity before completing your request. Where permitted
+              by law, you may designate an authorized agent to submit a request on your
+              behalf. If your request is denied, you may have the right to appeal our decision
+              by contacting us and stating that you are submitting an appeal.
+            </p>
+            <h4>Cookie and Advertising Choices</h4>
+            <p>You can control cookies and similar technologies by:</p>
+            <ul>
+              <li>Adjusting your browser settings to block or delete cookies.</li>
+              <li>
+                Using any cookie preference tools or banners that may be available on the
+                Website.
+              </li>
+              <li>
+                Using certain browser signals (such as Global Privacy Control) that
+                communicate your preference to opt out of certain cookie-based uses, where
+                required by applicable law.
+              </li>
+            </ul>
+            <p>
+              Please note that blocking cookies may affect the functionality of the Website,
+              and some cookies are necessary for the Website to operate.
+            </p>
+            <h4>No Sale of Personal Information</h4>
+            <p>
+              We do not sell personal information for money. However, we may allow certain
+              third-party partners to collect information through cookies and similar
+              technologies for analytics, advertising, and measurement. You can opt out of
+              certain cookie-based advertising through the controls described above.
             </p>
           </article>
 
@@ -347,7 +646,7 @@ const PrivacyPolicy = () => {
               Accessibility
             </Link>
             <span className="text-border">·</span>
-            <a href={`tel:+1${PHONE.replace(/-/g, "")}`} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5">
+            <a href={`tel:${PHONE_TEL}`} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5">
               <Phone className="w-3.5 h-3.5" /> {PHONE}
             </a>
             <span className="text-muted-foreground flex items-center gap-1.5">
