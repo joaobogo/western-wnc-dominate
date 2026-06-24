@@ -4,13 +4,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
-const LAST_UPDATED = "[CLIENT TO CONFIRM LAST UPDATED DATE]";
-const WEBSITE_URL = "[CLIENT TO CONFIRM FINAL WEBSITE URL]";
-const EMAIL = "[CLIENT TO CONFIRM EMAIL ADDRESS]";
-const ADDRESS = "[CLIENT TO CONFIRM PHYSICAL BUSINESS ADDRESS]";
+const LAST_UPDATED = "June 24, 2026";
+const WEBSITE_URL = "https://www.highlandernc.com/";
+const EMAIL = "luke@highlandernc.com";
+const ADDRESS = "1511 Highlands Rd, Franklin, NC 28734";
 const COMPANY = "Highlander Roofing Services, Inc.";
-const PHONE = "828-524-7773";
-const PROGRAM = "Highlander Roofing Services Customer Communications";
+const PHONE = "(828) 526-6421";
+const PHONE_TEL = "+18285266421";
+const PROGRAM = "Highlander Roofing Services, Inc. Customer Communications";
 
 const TOC: { id: string; label: string }[] = [
   { id: "program", label: "1. Program Description and Acceptance of Terms" },
