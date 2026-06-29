@@ -4,6 +4,7 @@ import { Calculator, ArrowRight, ArrowLeft, DollarSign, Home, CheckCircle, Shiel
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
+import { submitLead } from "@/lib/leads";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -73,6 +74,18 @@ const RoofCostEstimator = () => {
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (data.name && data.email && data.phone) {
+      const est = getEstimate();
+      submitLead({
+        source: "roof_cost_estimator",
+        lead_type: "cost_estimate",
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        property_town: data.town,
+        service_category: "roofing",
+        project_description: `Estimator: ${data.size} home, ${data.material}, ${data.condition} condition — $${est.low.toLocaleString()}–$${est.high.toLocaleString()}`,
+        metadata: { size: data.size, material: data.material, condition: data.condition, estimate_low: est.low, estimate_high: est.high },
+      }).catch((err) => console.error("RoofCostEstimator submitLead failed:", err));
       goTo("result");
     }
   };

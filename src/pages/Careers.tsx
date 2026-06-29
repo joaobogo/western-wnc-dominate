@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useState } from "react";
 import { toast } from "sonner";
+import { submitLead } from "@/lib/leads";
 
 const benefits = [
   { title: "Competitive Pay", desc: "Industry-leading wages based on skill and local mountain experience.", icon: ShieldCheck },
@@ -26,11 +27,20 @@ const openRoles = [
 const Careers = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: "", phone: "", role: openRoles[0], experience: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
+    submitLead({
+      source: "careers_application",
+      lead_type: "job_application",
+      name: form.name,
+      phone: form.phone,
+      project_type: form.role,
+      project_description: form.experience,
+      metadata: { role: form.role },
+    }).catch((err) => console.error("Careers submitLead failed:", err));
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -137,17 +147,17 @@ const Careers = () => {
                         <div className="grid sm:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
                             <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Full Name</label>
-                            <input required type="text" className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="John Doe" />
+                            <input required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="John Doe" />
                           </div>
                           <div className="space-y-1.5">
                             <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Phone Number</label>
-                            <input required type="tel" className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
+                            <input required type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
                           </div>
                         </div>
 
                         <div className="space-y-1.5">
                           <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Position of Interest</label>
-                          <select className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors appearance-none">
+                          <select value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors appearance-none">
                             {openRoles.map(role => (
                               <option key={role}>{role}</option>
                             ))}
@@ -157,7 +167,7 @@ const Careers = () => {
 
                         <div className="space-y-1.5">
                           <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Relevant Experience</label>
-                          <textarea rows={4} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
+                          <textarea rows={4} value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
                         </div>
 
                         <div className="space-y-1.5">

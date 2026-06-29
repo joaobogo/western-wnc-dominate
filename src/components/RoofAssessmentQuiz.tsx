@@ -4,6 +4,7 @@ import { ClipboardCheck, ArrowRight, ArrowLeft, AlertTriangle, CheckCircle, XCir
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
+import { submitLead } from "@/lib/leads";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -101,6 +102,17 @@ const RoofAssessmentQuiz = () => {
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (contact.name && contact.email) {
+      submitLead({
+        source: "roof_assessment_quiz",
+        lead_type: "roof_assessment",
+        name: contact.name,
+        email: contact.email,
+        phone: contact.phone || null,
+        service_category: "roofing",
+        project_description: `Quiz score ${totalScore}/19 — ${getResult(totalScore).level}`,
+        urgency: getResult(totalScore).level === "urgent" ? "high" : getResult(totalScore).level === "caution" ? "medium" : "low",
+        metadata: { quiz_answers: answers, quiz_score: totalScore },
+      }).catch((err) => console.error("RoofAssessmentQuiz submitLead failed:", err));
       goTo("result");
     }
   };
