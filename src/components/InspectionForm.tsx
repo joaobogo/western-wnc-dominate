@@ -7,6 +7,7 @@ import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import SectionDivider from "@/components/SectionDivider";
 import FormConsent from "@/components/FormConsent";
+import { submitLead } from "@/lib/leads";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -48,9 +49,23 @@ const InspectionForm = () => {
     setCurrentStep(stepOrder[currentIndex - 1]);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setIsSubmitting(true);
-    
+
+    // Persist to database (fire-and-forget; UI proceeds regardless)
+    submitLead({
+      source: "inspection_form",
+      lead_type: "inspection_request",
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email || null,
+      property_address: formData.town,
+      project_type: formData.projectType,
+      urgency: formData.timeline,
+      project_description: formData.details,
+      service_category: formData.projectType?.startsWith("roof") || formData.projectType === "storm-damage" || formData.projectType === "metal-roofing" ? "roofing" : "construction",
+    }).catch((err) => console.error("InspectionForm submitLead failed:", err));
+
     // Track form submission
     trackEvent("form_submit", {
       label: "Inspection Request",

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, X, FileText, Shield, CloudLightning, Wrench, CheckCircle } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
+import { submitLead } from "@/lib/leads";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -53,6 +54,14 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email && name) {
+      submitLead({
+        source: "guide_lead_magnet",
+        lead_type: `guide_download:${guide}`,
+        name,
+        email,
+        project_description: `Downloaded: ${g.title}`,
+        metadata: { guide, file_name: g.fileName },
+      }).catch((err) => console.error("GuideLeadMagnet submitLead failed:", err));
       setSubmitted(true);
     }
   };

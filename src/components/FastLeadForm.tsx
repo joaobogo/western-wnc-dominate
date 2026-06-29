@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, Phone, Shield } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
+import { submitLead } from "@/lib/leads";
 
 interface FastLeadFormProps {
   ctaLabel: string;
@@ -57,6 +58,15 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         className="space-y-4"
         onSubmit={(event) => {
           event.preventDefault();
+          submitLead({
+            source: "fast_lead_form",
+            lead_type: serviceLabel,
+            name: formData.name,
+            phone: formData.phone,
+            property_town: formData.town,
+            urgency: formData.urgency,
+            service_category: serviceLabel,
+          }).catch((err) => console.error("FastLeadForm submitLead failed:", err));
           setSubmitted(true);
         }}
       >
