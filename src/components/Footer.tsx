@@ -79,16 +79,6 @@ const FooterLink = ({ to, children }: { to: string; children: React.ReactNode })
   </Link>
 );
 
-const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
-  <Link
-    to={to}
-    className="group text-sm text-primary-foreground/60 hover:text-accent transition-colors inline-flex items-center gap-1"
-  >
-    {children}
-    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200" />
-  </Link>
-);
-
 const Footer = () => {
   return (
     <footer className="bg-white text-foreground relative overflow-hidden border-t border-border">
