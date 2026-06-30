@@ -1,33 +1,95 @@
-import { useState } from "react";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield, Ruler, Heart } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo.svg";
 
-const roofingDropdown = [
-  { label: "Roof Repair", href: "/services/roof-repair" },
-  { label: "Roof Replacement", href: "/services/roof-replacement" },
-  { label: "Storm Damage", href: "/services/storm-damage" },
-  { label: "Metal Roofing", href: "/services/metal-roofing" },
-  { label: "Commercial Roofing", href: "/commercial-roofing" },
-  { label: "Maintenance Programs", href: "/commercial-maintenance" },
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+
+/* ─── DROPDOWN DATA ─── */
+
+interface DropdownItem {
+  label: string;
+  href: string;
+  desc: string;
+}
+
+const roofingItems: DropdownItem[] = [
+  { label: "Residential Roofing", href: "/roofing/residential", desc: "Premium mountain home systems" },
+  { label: "Roof Replacement", href: "/roofing/roof-replacement", desc: "Full tear-off and reinstall" },
+  { label: "Roof Repair", href: "/roofing/roof-repair", desc: "Targeted damage restoration" },
+  { label: "Metal Roofing", href: "/roofing/metal", desc: "Standing seam built for the mountains" },
+  { label: "Brava / Synthetic", href: "/roofing/brava-synthetic", desc: "Premium composite slate & shake" },
+  { label: "Specialty Roofing", href: "/roofing/specialty", desc: "Cedar, copper & custom work" },
+  { label: "Storm Damage", href: "/roofing/storm-damage", desc: "Insurance claims & emergency work" },
+  { label: "Commercial Roofing", href: "/roofing/commercial", desc: "B2B systems for WNC properties" },
 ];
 
-const constructionDropdown = [
-  { label: "Gutter Services", href: "/gutters" },
-  { label: "Outdoor Living", href: "/outdoor-living" },
-  { label: "Construction Services", href: "/construction-services" },
+
+const constructionItems: DropdownItem[] = [
+  { label: "Additions & Suites", href: "/construction/additions", desc: "Expand your home's footprint" },
+  { label: "Kitchen & Bath", href: "/construction/renovations", desc: "Interior transformations" },
+  { label: "Outdoor Living", href: "/construction/outdoor-living", desc: "Decks, porches & pergolas" },
+  { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
+  { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
+  { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
 ];
 
-const navLinks = [
-  { label: "Roofing", href: "/services", dropdown: roofingDropdown },
-  { label: "Construction", href: "/construction-services", dropdown: constructionDropdown },
-  { label: "Roof Designer", href: "/roof-designer" },
-  { label: "Service Areas", href: "/service-areas" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "About", href: "/about" },
+const designItems: DropdownItem[] = [
+  { label: "Design", href: "/layouts-planning", desc: "Pre-construction support" },
+  { label: "Project Brief", href: "/design-intake?mode=long", desc: "Start a detailed planning brief" },
+  { label: "Consultation", href: "/design-intake?mode=short", desc: "Quick planning inquiry" },
+];
+
+
+interface DivisionDropdown {
+  label: string;
+  href: string;
+  items: DropdownItem[];
+  icon: typeof Shield;
+  tagline: string;
+  accent: "green" | "gold";
+}
+
+const divisions: DivisionDropdown[] = [
+  {
+    label: "Roofing",
+    href: "/roofing",
+    items: roofingItems,
+    icon: Shield,
+    tagline: "CertainTeed ShingleMaster · Credentialed Contractor",
+    accent: "green",
+  },
+  {
+    label: "Construction",
+    href: "/construction",
+    items: constructionItems,
+    icon: Hammer,
+    tagline: "Licensed General Contractor",
+    accent: "gold",
+  },
+];
+
+const secondaryLinks = [
+  
+  { label: "Recent Projects", href: "/recent-projects" },
   { label: "Blog", href: "/blog" },
+  { label: "Service Areas", href: "/service-areas" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
+
+const dropdownItemVariants = {
+  hidden: { opacity: 0, x: -6 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.025, duration: 0.2, ease: HIGHLAND_EASE },
+  }),
+};
+
+/* ─── COMPONENT ─── */
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -36,145 +98,323 @@ const Header = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const { scrollY } = useScroll();
-  const [lastY, setLastY] = useState(0);
+  const lastYRef = useRef(0);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setMobileExpanded(null);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
 
   useMotionValueEvent(scrollY, "change", (y) => {
-    setScrolled(y > 50);
-    if (y > lastY && y > 200) setHidden(true);
+    setScrolled(y > 30);
+    if (y > lastYRef.current && y > 200) setHidden(true);
     else setHidden(false);
-    setLastY(y);
+    lastYRef.current = y;
   });
+
+  const handleDropdownEnter = (label: string) => {
+    clearTimeout(dropdownTimeout.current);
+    setOpenDropdown(label);
+  };
+  const handleDropdownLeave = () => {
+    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
+  };
+
+  const isActive = (href: string) => location.pathname === href || location.pathname.startsWith(href + "/");
+
+  /**
+   * Robust "View All <Division>" handler.
+   * Fixes two bugs:
+   *  1) When already on the hub (e.g. /construction) — possibly with a hash like
+   *     /construction#structural from the Structural & Repair entry — clicking
+   *     <Link to="/construction"> was a no-op (same pathname, hash kept), so the
+   *     page appeared unchanged and "stuck" on the structural section.
+   *  2) From any sibling subtype page, we want a guaranteed clean navigation to
+   *     the hub top — no inherited hash, no last-tab fallback.
+   */
+  const handleViewAllClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    setOpenDropdown(null);
+    setMobileOpen(false);
+    if (location.pathname === href) {
+      // Already on the hub — strip any hash and scroll to top.
+      if (location.hash) {
+        navigate(href, { replace: true });
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate(href);
+      requestAnimationFrame(() => window.scrollTo({ top: 0 }));
+    }
+  };
 
   return (
     <motion.header
-      animate={{ y: hidden ? -100 : 0 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/98 backdrop-blur-xl shadow-lg border-b border-border"
-          : "bg-background border-b border-border"
-      }`}
+      animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
+      transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_30px_-10px_rgba(0,0,0,0.15)] border-b border-black/[0.08] md:border-b-0"
     >
-      {/* Top bar — heritage styled */}
-      <AnimatePresence>
-        {!scrolled && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="hidden md:flex items-center justify-between px-8 py-2 bg-primary text-primary-foreground text-sm overflow-hidden"
-          >
-            <div className="flex items-center gap-6">
-              <span className="font-medium">Franklin & Sylva, NC</span>
-              <span className="text-primary-foreground/30">|</span>
-              <span>CertainTeed Master Shingle Applicator</span>
-              <span className="text-primary-foreground/30">|</span>
-              <span>Licensed General Contractor</span>
-            </div>
-            <a href="tel:8283979211" className="flex items-center gap-2 font-semibold hover:text-accent transition-colors">
-              <Phone className="w-3.5 h-3.5" />
-              (828) 397-9211
-            </a>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Main nav */}
-      <div className={`flex items-center justify-between px-4 md:px-8 transition-all duration-300 ${scrolled ? "py-2" : "py-3"}`}>
-        <Link to="/" className="flex items-center">
-          <motion.img
+      {/* ─── Main nav bar ─── */}
+      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-2" : "py-3 md:py-4"}`}>
+        {/* Logo */}
+        <Link to="/" aria-label="Highlander Roofing & Construction — Home" className="flex items-center bg-transparent hover:bg-transparent">
+          <img
             src={logo}
-            alt="Highlander Roofing & Construction"
-            className="w-auto"
-            animate={{ height: scrolled ? 36 : 48 }}
-            transition={{ duration: 0.3 }}
+            alt="Highlander Roofing & Construction logo"
+            width={520}
+            height={520}
+            className={`w-auto transition-[height,transform] duration-500 ease-out origin-left ${
+              scrolled
+                ? "h-[36px] md:h-[44px]"
+                : "h-[40px] md:h-[56px]"
+            }`}
+            style={{ imageRendering: "auto" }}
+            decoding="async"
+            fetchPriority="high"
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link, i) => (
-            <motion.div
-              key={link.label}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.05, duration: 0.3 }}
+        {/* ─── Desktop Navigation ─── */}
+        <nav className="hidden lg:flex items-center gap-0 whitespace-nowrap">
+          {/* Division dropdowns */}
+          <Link
+            to="/"
+            className="hidden"
+          />
+
+          {divisions.map((div) => (
+            <div
+              key={div.label}
               className="relative"
-              onMouseEnter={() => link.dropdown && setOpenDropdown(link.label)}
-              onMouseLeave={() => setOpenDropdown(null)}
+              onMouseEnter={() => handleDropdownEnter(div.label)}
+              onMouseLeave={handleDropdownLeave}
             >
               <Link
-                to={link.href}
-                className="relative text-sm font-medium text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                to={div.href}
+                className={`relative text-[15px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+                  isActive(div.href)
+                    ? "text-heritage-charcoal bg-black/5"
+                    : "text-heritage-charcoal/90 hover:text-heritage-charcoal hover:bg-black/5"
+                }`}
+
               >
-                {link.label}
-                {link.dropdown && (
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === link.label ? "rotate-180" : ""}`} />
+                {div.label}
+                <motion.div
+                  animate={{ rotate: openDropdown === div.label ? 180 : 0 }}
+                  transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
+                >
+                  <ChevronDown className="w-3 h-3 opacity-50" />
+                </motion.div>
+                {isActive(div.href) && (
+                  <motion.div
+                    layoutId="nav-active"
+                    className="absolute -bottom-px left-3 right-3 h-[2px] bg-[hsl(var(--highland-gold))]"
+                    transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
+                  />
                 )}
               </Link>
 
-              {/* Dropdown */}
+              {/* ─── Mega dropdown panel ─── */}
               <AnimatePresence>
-                {link.dropdown && openDropdown === link.label && (
+                {openDropdown === div.label && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                    initial={{ opacity: 0, y: 10, scale: 0.97 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.97 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                    transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
+                    className="absolute top-full left-0 pt-2.5"
                   >
-                    <div className="bg-card border border-border rounded-md shadow-xl py-2 min-w-[240px] overflow-hidden">
-                      {link.dropdown.map((item) => (
+                    <div className="bg-card border border-border rounded-sm shadow-[0_20px_60px_-15px_hsl(var(--heritage-charcoal)/0.15)] min-w-[340px] relative overflow-hidden">
+                      {/* Top accent line — Tartan */}
+                      <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
+                        <div className="absolute inset-0 opacity-40 bg-[hsl(var(--highland-gold)/0.1)]" style={{ 
+                          backgroundImage: "url('/tartan.png')",
+                          backgroundSize: "80px auto"
+                        }} />
+                      </div>
+
+                      {/* Division header */}
+                      <div className="px-5 pt-5 pb-3">
+                        <div className="flex items-center gap-2.5 mb-1">
+                          <div className={`w-7 h-7 rounded-sm flex items-center justify-center ${
+                            div.accent === "green" ? "bg-primary/10" : "bg-[hsl(var(--highland-gold)/0.1)]"
+                          }`}>
+                            <div.icon className={`w-3.5 h-3.5 ${
+                              div.accent === "green" ? "text-primary" : "text-[hsl(var(--highland-gold))]"
+                            }`} />
+                          </div>
+                          <span className="text-base font-heading font-bold text-foreground">{div.label} Division</span>
+                        </div>
+                        <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/60 ml-[38px]">
+                          {div.tagline}
+                        </p>
+                      </div>
+
+                      {/* Divider */}
+                      <div className="mx-5 h-px bg-border/60" />
+
+                      {/* Items */}
+                      <div className="py-2 px-2">
+                        {div.items.map((item, i) => (
+                          <motion.div
+                            key={item.href}
+                            custom={i}
+                            variants={dropdownItemVariants}
+                            initial="hidden"
+                            animate="visible"
+                          >
+                            <Link
+                              to={item.href}
+                              className={`group/item flex items-center justify-between px-3 py-2.5 rounded-sm transition-all duration-200 ${
+                                isActive(item.href)
+                                  ? "bg-secondary/60 text-foreground"
+                                  : "text-foreground/65 hover:text-foreground hover:bg-secondary/40"
+                              }`}
+                            >
+                              <div>
+                                <span className="text-[16px] font-body font-bold block leading-tight">{item.label}</span>
+                                <span className="text-[14px] font-body text-muted-foreground/80 leading-tight font-medium">{item.desc}</span>
+                              </div>
+                              <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      {/* Footer CTA */}
+                      <div className="border-t border-border/60 mx-2 mt-1">
                         <Link
-                          key={item.href}
-                          to={item.href}
-                          className="block px-5 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-muted/60 transition-colors"
+                          to={div.href}
+                          onClick={(e) => handleViewAllClick(e, div.href)}
+                          className={`flex items-center gap-1.5 px-3 py-3 text-[14px] font-body font-bold rounded-sm transition-colors ${
+                            div.accent === "green"
+                              ? "text-primary hover:bg-primary/5"
+                              : "text-accent hover:bg-accent/5"
+                          }`}
                         >
-                          {item.label}
-                        </Link>
-                      ))}
-                      <div className="border-t border-border mt-1 pt-1">
-                        <Link
-                          to={link.href}
-                          className="block px-5 py-2.5 text-sm font-semibold text-accent hover:bg-muted/60 transition-colors"
-                        >
-                          View All {link.label} →
+                          View All {div.label}
+                          <ArrowRight className="w-3 h-3 btn-arrow-icon" />
                         </Link>
                       </div>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
+          ))}
+
+          {/* Separator dot */}
+          <span className="w-px h-4 mx-1.5 transition-colors duration-300 bg-black/10" />
+
+          {/* Design Link */}
+          <Link 
+            to="/layouts-planning" 
+            className={`relative text-[15px] font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+
+              isActive('/layouts-planning')
+                ? "text-heritage-charcoal bg-black/5"
+                : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
+            }`}
+          >
+            Design
+            {isActive('/layouts-planning') && (
+              <motion.div
+                layoutId="nav-active-design"
+                className="absolute -bottom-px left-3 right-3 h-[2px] bg-[hsl(var(--highland-gold))]"
+                transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
+              />
+            )}
+          </Link>
+
+          {/* Separator dot */}
+          <span className="w-px h-4 mx-1.5 transition-colors duration-300 bg-black/10" />
+
+          {/* Secondary links */}
+          {secondaryLinks.map((link) => (
+            <Link
+              key={link.label}
+              to={link.href}
+              className={`relative text-[15px] font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
+                isActive(link.href)
+                  ? "text-heritage-charcoal bg-black/5"
+                  : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
+              }`}
+
+            >
+              {link.label}
+              {isActive(link.href) && (
+                <motion.div
+                  layoutId="nav-active-secondary"
+                  className="absolute -bottom-px left-3 right-3 h-[2px] bg-[hsl(var(--highland-gold))]"
+                  transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
+                />
+              )}
+            </Link>
           ))}
         </nav>
 
+        {/* ─── Right actions ─── */}
         <div className="flex items-center gap-3">
           <a
-            href="tel:8283979211"
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground active:scale-95 transition-transform"
+            href="tel:+18285247773"
+            className="hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 text-heritage-charcoal/60 hover:text-heritage-charcoal"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span className="hidden xl:inline">(828) 524-7773</span>
+          </a>
+          <Link
+            to="/community"
+            aria-label="Giving Back to our community"
+            className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-body font-bold uppercase tracking-[0.1em] text-heritage-charcoal/75 hover:text-[hsl(var(--highland-gold))] transition-colors duration-300 px-2 py-1.5 group"
+          >
+            <Heart className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))] group-hover:fill-[hsl(var(--highland-gold))] transition-all duration-300" />
+            <span>Giving Back</span>
+          </Link>
+          <a
+            href="tel:+18285247773"
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
           >
             <Phone className="w-4 h-4" />
           </a>
           <Link
-            to="/request-inspection"
-            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-semibold text-sm px-5 py-2.5 rounded-sm hover:opacity-90 hover:scale-[1.02] active:scale-[0.97] transition-all duration-200 relative overflow-hidden group"
+            to="/consultation"
+            className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative">Request a Consultation</span>
+            <span className="relative z-10">Free Quote</span>
+            <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 active:scale-90 transition-transform"
+            className="lg:hidden p-2 active:scale-90 transition-all duration-300 text-heritage-charcoal"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
               {mobileOpen ? (
-                <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0, scale: 0.8 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: 90, opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.2, ease: HIGHLAND_EASE }}
+                >
                   <X className="w-6 h-6" />
                 </motion.div>
               ) : (
-                <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0, scale: 0.8 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: -90, opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.2, ease: HIGHLAND_EASE }}
+                >
                   <Menu className="w-6 h-6" />
                 </motion.div>
               )}
@@ -183,92 +423,180 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* ─── MOBILE MENU ─── */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-card border-t border-border overflow-hidden"
-          >
-            <nav className="flex flex-col px-4 py-4 gap-1">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.label}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05, duration: 0.3 }}
-                >
-                  {link.dropdown ? (
-                    <div>
-                      <button
-                        onClick={() => setMobileExpanded(mobileExpanded === link.label ? null : link.label)}
-                        className="w-full py-3 px-3 text-base font-medium text-foreground hover:bg-muted rounded-sm transition-colors flex items-center justify-between"
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 top-[inherit] bg-[hsl(var(--heritage-charcoal)/0.3)] backdrop-blur-sm lg:hidden z-[-1]"
+              onClick={() => setMobileOpen(false)}
+            />
+
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
+              className="lg:hidden bg-white border-t border-black/5 overflow-hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
+            >
+              <nav className="flex flex-col px-5 py-5 gap-1">
+                {/* ─── Division sections ─── */}
+                {divisions.map((div, di) => (
+                  <motion.div
+                    key={div.label}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 + di * 0.06, duration: 0.3, ease: HIGHLAND_EASE }}
+                  >
+                    <button
+                      onClick={() => setMobileExpanded(mobileExpanded === div.label ? null : div.label)}
+                      className={`w-full py-3 px-3 rounded-sm transition-all duration-200 flex items-center justify-between ${
+                        isActive(div.href)
+                          ? "text-heritage-charcoal bg-black/5"
+                          : "text-heritage-charcoal/90 hover:bg-black/5"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-sm flex items-center justify-center ${
+                          div.accent === "green" ? "bg-primary/10" : "bg-[hsl(var(--highland-gold)/0.1)]"
+                        }`}>
+                          <div.icon className={`w-4 h-4 ${
+                            div.accent === "green" ? "text-primary" : "text-[hsl(var(--highland-gold))]"
+                          }`} />
+                        </div>
+                        <div className="text-left">
+                          <span className="text-[17px] md:text-[18px] font-heading font-bold block leading-tight text-heritage-charcoal">{div.label}</span>
+                          <span className="text-[11px] md:text-[12px] font-body text-heritage-charcoal/60 uppercase tracking-wider">{div.tagline}</span>
+                        </div>
+                      </div>
+                      <motion.div
+                        animate={{ rotate: mobileExpanded === div.label ? 180 : 0 }}
+                        transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
                       >
-                        {link.label}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === link.label ? "rotate-180" : ""}`} />
-                      </button>
-                      <AnimatePresence>
-                        {mobileExpanded === link.label && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="pl-4 pb-2 space-y-1">
-                              {link.dropdown.map((item) => (
+                        <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" />
+                      </motion.div>
+                    </button>
+
+                    <AnimatePresence>
+                      {mobileExpanded === div.label && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
+                          className="overflow-hidden"
+                        >
+                          <div className={`ml-4 pl-4 pb-2 space-y-0.5 border-l-2 ${
+                            div.accent === "green"
+                              ? "border-primary/15"
+                              : "border-[hsl(var(--highland-gold)/0.15)]"
+                          }`}>
+                            {div.items.map((item, j) => (
+                              <motion.div
+                                key={item.href}
+                                initial={{ opacity: 0, x: -8 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: j * 0.03, duration: 0.2 }}
+                              >
                                 <Link
-                                  key={item.href}
                                   to={item.href}
                                   onClick={() => setMobileOpen(false)}
-                                  className="py-2 px-3 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-sm transition-colors block"
+                                  className={`py-2.5 px-3 rounded-sm transition-all block ${
+                                    isActive(item.href)
+                                      ? "bg-black/5"
+                                      : "hover:bg-black/5"
+                                  }`}
                                 >
-                                  {item.label}
+                                  <span className={`text-sm font-body block leading-tight ${
+                                    isActive(item.href) ? "font-medium text-heritage-charcoal" : "text-heritage-charcoal/70"
+                                  }`}>{item.label}</span>
+                                  <span className="text-[11px] font-body text-heritage-charcoal/30">{item.desc}</span>
                                 </Link>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ) : (
+                              </motion.div>
+                            ))}
+                            <Link
+                              to={div.href}
+                              onClick={(e) => handleViewAllClick(e, div.href)}
+                              className={`py-2.5 px-3 text-sm font-semibold rounded-sm transition-colors flex items-center gap-1.5 font-body ${
+                                div.accent === "green" ? "text-primary" : "text-accent"
+                              }`}
+                            >
+                              View All {div.label} <ArrowRight className="w-3 h-3" />
+                            </Link>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+
+                {/* ─── Divider ─── */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
+                  className="flex items-center gap-3 py-2 px-3"
+                >
+                  <div className="flex-1 h-px bg-black/10" />
+                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/30">Company</span>
+                  <div className="flex-1 h-px bg-black/10" />
+                </motion.div>
+
+                {/* ─── Secondary links ─── */}
+                {secondaryLinks.map((link, i) => (
+                  <motion.div
+                    key={link.label}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 + i * 0.03, duration: 0.3, ease: HIGHLAND_EASE }}
+                  >
                     <Link
                       to={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="py-3 px-3 text-base font-medium text-foreground hover:bg-muted rounded-sm transition-colors block"
+                      className={`py-3 px-3 text-lg font-bold rounded-sm transition-all flex items-center gap-2 font-body ${
+                        isActive(link.href)
+                          ? "text-heritage-charcoal bg-black/5"
+                          : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"
+                      }`}
                     >
                       {link.label}
+                      {isActive(link.href) && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
+                      )}
                     </Link>
-                  )}
+                  </motion.div>
+                ))}
+
+                {/* ─── Mobile CTA ─── */}
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.35, duration: 0.3, ease: HIGHLAND_EASE }}
+                  className="pt-4 mt-2 border-t border-black/10 space-y-2.5"
+                >
+                  <Link
+                    to="/consultation"
+                    onClick={() => setMobileOpen(false)}
+                    className="cta-gradient text-accent-foreground font-bold text-center py-4.5 px-4 rounded-none flex items-center justify-center gap-2.5 text-[17px] uppercase tracking-wider shadow-lg"
+                  >
+                    <span className="relative z-10">Request a Free Quote</span>
+                    <ArrowRight className="w-5 h-5 relative z-10" />
+                  </Link>
+                  <a
+                    href="tel:+18285247773"
+                    className="bg-primary text-primary-foreground font-bold text-center py-4.5 px-4 rounded-none flex items-center justify-center gap-2.5 text-[17px] font-body shadow-md active:scale-95 transition-all"
+                  >
+                    <Phone className="w-5 h-5" />
+                    (828) 524-7773
+                  </a>
                 </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.3 }}
-                className="pt-3 border-t border-border mt-2"
-              >
-                <Link
-                  to="/request-inspection"
-                  onClick={() => setMobileOpen(false)}
-                  className="cta-gradient text-accent-foreground font-semibold text-center py-3.5 px-4 rounded-sm block"
-                >
-                  Request a Consultation
-                </Link>
-                <a
-                  href="tel:8283979211"
-                  className="mt-2 bg-primary text-primary-foreground font-semibold text-center py-3.5 px-4 rounded-sm flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-4 h-4" />
-                  (828) 397-9211
-                </a>
-              </motion.div>
-            </nav>
-          </motion.div>
+              </nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.header>

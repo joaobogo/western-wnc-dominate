@@ -1,26 +1,32 @@
 import { motion } from "framer-motion";
+import { ScrollReveal } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
+import GoldLine from "@/components/motion/GoldLine";
 
 import asphalt001 from "@/assets/gallery/asphalt-001.jpg";
 import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
 import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
 import cedar001 from "@/assets/gallery/cedar-001.jpg";
 import cedar002 from "@/assets/gallery/cedar-002.jpg";
-import metal009 from "@/assets/gallery/metal-009.jpg";
+import metal009 from "@/assets/gallery/metal-010.jpg";
 import metal010 from "@/assets/gallery/metal-010.jpg";
 import asphalt004 from "@/assets/gallery/asphalt-004.jpg";
 import asphalt005 from "@/assets/gallery/asphalt-005.jpg";
 
 const gridItems = [
-  { label: "Shingle Repair", image: asphalt001 },
-  { label: "Crew at Work", image: asphalt002 },
-  { label: "New Install", image: asphalt003 },
-  { label: "Cedar Shake", image: cedar001 },
-  { label: "Metal Roof", image: metal009 },
-  { label: "Inspection", image: asphalt004 },
-  { label: "Cedar Detail", image: cedar002 },
-  { label: "Storm Repair", image: metal010 },
-  { label: "Mountain Home", image: asphalt005 },
+  { label: "Precision Repair", image: asphalt001 },
+  { label: "Crew On-Site", image: asphalt002 },
+  { label: "New Installation", image: asphalt003 },
+  { label: "Cedar Shake Detail", image: cedar001 },
+  { label: "Standing Seam Metal", image: metal009 },
+  { label: "Professional Inspection", image: asphalt004 },
+  { label: "Cedar Craftsmanship", image: cedar002 },
+  { label: "Storm Restoration", image: metal010 },
+  { label: "Mountain Home Complete", image: asphalt005 },
 ];
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 const containerVariants = {
   hidden: {},
@@ -28,27 +34,31 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: [0, 0, 0.2, 1] as const } },
+  hidden: { opacity: 0, scale: 0.9, y: 12 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, ease: HIGHLAND_EASE } },
 };
 
 const InstagramGrid = () => {
   return (
-    <section className="section-padding bg-secondary">
+    <section className="section-padding bg-secondary tartan-bg">
       <div className="container-tight">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Follow Along</p>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2">
-            @HighlanderRoofing
-          </h2>
-          <p className="text-muted-foreground">See our latest projects and mountain roofing tips.</p>
-        </motion.div>
+        <div className="text-center mb-12">
+          <ScrollReveal variant="fade">
+            <span className="eyebrow mb-3 block">Documented Craftsmanship</span>
+          </ScrollReveal>
+          <HeadingReveal delay={0.1}>
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2">
+              Real Work. Real Mountains. Real Results.
+            </h2>
+          </HeadingReveal>
+          <ScrollReveal variant="rise-subtle" delay={0.2}>
+            <p className="text-muted-foreground font-body text-sm max-w-md mx-auto">
+              Every image is from a Highlander jobsite across Western NC — 
+              no stock photos, no staged setups, just our crews and our craft.
+            </p>
+          </ScrollReveal>
+          <GoldLine width="3rem" centered delay={0.3} className="mt-4" />
+        </div>
 
         <motion.div
           variants={containerVariants}
@@ -61,22 +71,22 @@ const InstagramGrid = () => {
             <motion.div
               key={item.label}
               variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -4 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative aspect-square rounded-md overflow-hidden cursor-pointer"
+              className="group relative aspect-square rounded-none overflow-hidden cursor-pointer"
             >
               <img
                 src={item.image}
                 alt={item.label}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover img-zoom-dramatic"
                 loading="lazy"
               />
-              {/* Hover overlay with label */}
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex items-center justify-center">
-                <span className="text-primary-foreground text-xs md:text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-2">
+              {/* Cinematic hover overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0)] via-transparent to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.5)] transition-all duration-500 flex items-end justify-center pb-4">
+                <span className="text-white text-[11px] font-body font-semibold tracking-[0.12em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-400 translate-y-3 group-hover:translate-y-0">
                   {item.label}
                 </span>
               </div>
+              {/* Gold bottom edge on hover */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </motion.div>
           ))}
         </motion.div>

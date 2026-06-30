@@ -1,6 +1,7 @@
 import { useParams, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle } from "lucide-react";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -8,18 +9,24 @@ import InspectionForm from "@/components/InspectionForm";
 import { getServiceBySlug, services } from "@/data/services";
 import { towns } from "@/data/towns";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { getDivisionTheme } from "@/lib/division-theme";
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
   
-  // Handle both /services/:slug and /commercial-roofing, /commercial-maintenance routes
   const resolvedSlug = slug || location.pathname.replace("/", "");
   const service = getServiceBySlug(resolvedSlug);
 
   if (!service) {
     return (
       <>
+        <SEOHead
+          title="Service Not Found | Highlander Roofing"
+          description="The requested service page was not found. Browse all roofing and construction services."
+          path={location.pathname}
+          noindex
+        />
         <Header />
         <main className="section-padding text-center pt-32">
           <h1 className="text-3xl font-heading font-bold">Service Not Found</h1>
@@ -30,31 +37,74 @@ const ServicePage = () => {
     );
   }
 
+  const theme = getDivisionTheme(service.division);
+  const DivisionIcon = theme.icon;
   const otherServices = services.filter(s => s.slug !== resolvedSlug).slice(0, 3);
+  const servicePath = ["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(resolvedSlug)
+    ? `/${resolvedSlug}`
+    : `/services/${resolvedSlug}`;
 
   return (
     <>
+      <SEOHead
+        title={service.metaTitle}
+        description={service.metaDescription}
+        path={servicePath}
+        jsonLd={buildPageSchema({
+          type: "service",
+          service: {
+            name: service.title,
+            description: service.description,
+            url: servicePath,
+            areaServed: "Western North Carolina",
+          },
+          breadcrumbs: [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: service.title, url: servicePath },
+          ],
+          faqs: service.faqs,
+        })}
+      />
       <Header />
       <main>
-        {/* Hero */}
-        <section className="section-padding section-dark pt-32 md:pt-40">
-          <div className="container-tight">
+        {/* Division accent line */}
+        <div className={`h-[3px] w-full ${theme.heroAccentLine}`} />
+
+        <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
+          <div className="absolute inset-0 section-dark">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" alt={service.title} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
+          </div>
+          <div className="container-tight relative z-10 pb-16 md:pb-24">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">
-                {resolvedSlug.includes("commercial") ? "Commercial Services" : resolvedSlug === "outdoor-living" || resolvedSlug === "construction-services" ? "Building Services" : resolvedSlug === "gutters" ? "Exterior Services" : "Residential Services"}
-              </p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-balance">
+              {/* Division badge */}
+              <div className="flex items-center gap-2.5 mb-5">
+                <div className={`w-8 h-8 rounded-sm flex items-center justify-center ${theme.badgeBgClass}`}>
+                  <DivisionIcon className={`w-4 h-4 ${theme.badgeTextClass}`} />
+                </div>
+                <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.15em] ${theme.badgeTextClass}`}>
+                  {theme.label}
+                </span>
+                <span className="text-dark-section-foreground/90 text-[10px] font-body">—</span>
+                <span className="text-dark-section-foreground/95 text-[10px] font-body italic tracking-wide">
+                  {theme.tagline}
+                </span>
+              </div>
+
+              <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-4 text-balance text-white leading-[0.95] tracking-tightest">
                 {service.headline}
               </h1>
-              <p className="text-dark-section-foreground/70 max-w-2xl text-base md:text-lg mb-8">
+              <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {service.subheadline}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/request-inspection" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-                  Request Free Inspection <ArrowRight className="w-5 h-5" />
+                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                  Request a Consultation <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:8283979211" className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-dark-section-foreground/10 transition-colors">
-                  <Phone className="w-5 h-5" /> (828) 397-9211
+                <a href="tel:+18285247773" className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-dark-section-foreground/10 transition-colors">
+                  <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
               </div>
             </motion.div>
@@ -68,8 +118,8 @@ const ServicePage = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">What We Do</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-                <Link to="/request-inspection" className="cta-gradient text-accent-foreground font-semibold px-6 py-3 rounded-md inline-flex items-center gap-2 hover:opacity-90 transition-opacity">
-                  Get a Free Estimate <ArrowRight className="w-4 h-4" />
+                <Link to="/consultation" className="cta-gradient text-accent-foreground font-semibold px-6 py-3 rounded-md inline-flex items-center gap-2 hover:opacity-90 transition-opacity">
+                  Discuss Your Project <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
@@ -77,7 +127,7 @@ const ServicePage = () => {
                 <ul className="space-y-3">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle className={`w-5 h-5 mt-0.5 flex-shrink-0 ${theme.checkClass}`} />
                       <span className="text-foreground">{feature}</span>
                     </li>
                   ))}
@@ -110,7 +160,7 @@ const ServicePage = () => {
               {towns.map((town) => (
                 <Link key={town.slug} to={`/service-areas/${town.slug}`} className="bg-dark-section-foreground/5 border border-dark-section-foreground/10 rounded-lg p-4 hover:bg-dark-section-foreground/10 hover:border-accent/30 transition-all text-center">
                   <span className="font-heading font-semibold text-dark-section-foreground">{town.name}</span>
-                  <p className="text-dark-section-foreground/50 text-xs mt-1">{town.county}</p>
+                  <p className="text-dark-section-foreground/85 text-xs mt-1">{town.county}</p>
                 </Link>
               ))}
             </div>
@@ -122,13 +172,21 @@ const ServicePage = () => {
           <div className="container-tight">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-8 text-center">Other Services</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {otherServices.map((s) => (
-                <Link key={s.slug} to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(s.slug) ? `/${s.slug}` : `/services/${s.slug}`} className="group bg-card border border-border rounded-lg p-6 hover:border-primary/30 hover:shadow-lg transition-all">
-                  <s.icon className="w-8 h-8 text-primary mb-3" />
-                  <h3 className="font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">Learn More <ArrowRight className="w-4 h-4" /></span>
-                </Link>
-              ))}
+              {otherServices.map((s) => {
+                const sTheme = getDivisionTheme(s.division);
+                return (
+                  <Link key={s.slug} to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(s.slug) ? `/${s.slug}` : `/services/${s.slug}`} className={`group bg-card border border-border rounded-lg p-6 ${sTheme.borderHoverClass} hover:shadow-lg transition-all`}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <s.icon className={`w-8 h-8 ${sTheme.accentClass}`} />
+                      <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.12em] ${sTheme.badgeTextClass} opacity-60`}>
+                        {sTheme.label}
+                      </span>
+                    </div>
+                    <h3 className="font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+                    <span className={`${sTheme.accentClass} text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>Learn More <ArrowRight className="w-4 h-4" /></span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

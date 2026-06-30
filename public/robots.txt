@@ -1,3 +1,10 @@
+# Highlander Roofing & Construction — Robots
+User-agent: *
+Allow: /
+Disallow: /consultation
+Disallow: /quote-flow
+Disallow: /request-inspection
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +17,11 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Block known AI scrapers (optional — remove if you want AI training)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://western-wnc-dominate.lovable.app/sitemap.xml

@@ -1,82 +1,185 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, Shield, Award, Clock, Mountain, CheckCircle2 } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
+import HeadingReveal from "@/components/motion/HeadingReveal";
+import { ScrollReveal } from "@/components/motion";
+import GoldLine from "@/components/motion/GoldLine";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CRAFT_EASE = [0.25, 0.1, 0.25, 1] as any;
+
+const promises = [
+  "No high-pressure sales tactics — ever",
+  "Transparent pricing with written scope before work begins",
+  "A named project contact who answers your calls",
+  "Full warranty documentation delivered at walkthrough",
+];
 
 const CTABlock = () => {
   return (
-    <section className="section-padding section-dark relative overflow-hidden tartan-accent">
-      {/* Gold accent line */}
-      <motion.div
-        className="absolute top-0 left-0 w-full h-0.5"
-        style={{ background: 'hsl(var(--gold))' }}
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-        
-      />
-
-      <div className="container-tight text-center relative z-10">
+    <section className="relative overflow-hidden">
+      {/* ═══ PART 1: Emotional Close (Dark) ═══ */}
+      <div className="section-dark tartan-dark relative">
+        {/* Top gold line */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="absolute top-0 left-0 w-full h-px"
+          style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))' }}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-accent font-semibold text-sm uppercase tracking-[0.15em] mb-4"
-          >
-            Start Your Project
-          </motion.p>
-          <div className="overflow-hidden">
-            <motion.h2
-              initial={{ y: "100%" }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4"
-            >
-              Ready to Discuss Your Project?
-            </motion.h2>
-          </div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-dark-section-foreground/60 text-lg max-w-xl mx-auto mb-10"
-          >
-            Schedule a consultation with our team. We'll walk your property, assess the scope, and deliver a detailed proposal — no pressure, no obligation.
-          </motion.p>
+          transition={{ duration: 1.2, ease: CRAFT_EASE }}
+        />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link
-              to="/request-inspection"
-              className="group cta-gradient text-accent-foreground font-bold text-lg px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative">Request a Consultation</span>
-              <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <a
-              href="tel:8283979211"
-              className="group border border-dark-section-foreground/20 text-dark-section-foreground font-semibold text-lg px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-dark-section-foreground/5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-            >
-              <Phone className="w-5 h-5 group-hover:animate-[wiggle_0.5s_ease-in-out]" />
-              (828) 397-9211
-            </a>
-          </motion.div>
-        </motion.div>
+        {/* Ambient glow */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[hsl(var(--highland-gold)/0.025)] rounded-full blur-[150px] pointer-events-none" />
+
+        <div className="section-padding">
+          <div className="container-tight relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              {/* Eyebrow */}
+              <ScrollReveal variant="fade">
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-6 block">
+                  The Next Step
+                </span>
+              </ScrollReveal>
+
+              {/* Headline — emotional weight */}
+              <HeadingReveal delay={0.1}>
+                <h2 className="text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-heading font-bold mb-6 md:mb-8 leading-[1.06] tracking-[-0.02em] text-dark-section-foreground">
+                  One conversation.<br />
+                  <span className="text-[hsl(var(--highland-gold))]">One local team.</span>
+                </h2>
+              </HeadingReveal>
+
+              {/* Subtext — calm authority */}
+              <ScrollReveal variant="rise-subtle" delay={0.3}>
+                <p className="text-dark-section-foreground/38 text-[15px] md:text-[17px] max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
+                  Tell us about your property. A project advisor — not a call center — responds within as soon as possible with a clear next step.
+                </p>
+              </ScrollReveal>
+
+              {/* CTA Buttons */}
+              <ScrollReveal variant="rise" delay={0.4}>
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 md:mb-16">
+                  <Link
+                    to="/consultation"
+                    onClick={() => trackEvent("cta_click", { label: "Start Your Project", elementId: "cta-block-start" })}
+                    className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-base md:text-lg px-10 md:px-16 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-2xl min-h-[60px]"
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                    <span className="relative">Start Your Project</span>
+                    <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1.5 transition-transform" />
+                  </Link>
+                  <a
+                    href="tel:+18285247773"
+                    className="group border-2 border-dark-section-foreground/20 text-dark-section-foreground font-body font-bold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.4)] transition-all duration-300 min-h-[60px] tracking-wide"
+                  >
+                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    Speak With a Project Advisor
+                  </a>
+                </div>
+              </ScrollReveal>
+
+              {/* ── Promise list ── */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6, ease: HIGHLAND_EASE }}
+                className="max-w-md mx-auto mb-12 md:mb-14"
+              >
+                <p className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-dark-section-foreground/20 mb-5 text-center">
+                  Our Promise to You
+                </p>
+                <div className="space-y-3">
+                  {promises.map((promise, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.6 + i * 0.06, duration: 0.35, ease: HIGHLAND_EASE }}
+                      className="flex items-start gap-3"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.45)] flex-shrink-0 mt-0.5" />
+                      <span className="text-dark-section-foreground/95 text-[13px] font-body leading-relaxed">
+                        {promise}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* ── Closing trust strip ── */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8, duration: 0.5 }}
+                className="pt-8 border-t border-dark-section-foreground/[0.05]"
+              >
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                  {[
+                    { icon: Shield, text: "Licensed & Fully Insured" },
+                    { icon: Award, text: "CertainTeed Master Applicator" },
+                    { icon: Shield, text: "Licensed General Contractor" },
+                    { icon: Clock, text: "Rapid Storm Response" },
+                    { icon: Mountain, text: "8 WNC Counties" },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={item.text}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.9 + i * 0.08 }}
+                      className="flex items-center gap-2"
+                    >
+                      <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
+                      <span className="text-dark-section-foreground/22 text-[11px] font-body font-medium">
+                        {item.text}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ═══ PART 2: Final confidence strip ═══ */}
+      <div className="bg-primary relative">
+        <div className="container-tight px-6 md:px-10 py-5 md:py-6 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-primary-foreground/85 text-[13px] font-body text-center md:text-left">
+              <span className="text-primary-foreground/95 font-heading font-bold">4.9★ Rated.</span>{" "}
+              <span className="text-primary-foreground/95 font-heading font-bold">4.9★ rated.</span>{" "}
+              Roofing & Construction across Western NC since 2017.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link
+                to="/consultation"
+                className="group inline-flex items-center gap-2 text-primary-foreground/85 font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-primary-foreground/90 transition-colors"
+              >
+                Roofing
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <div className="w-px h-3 bg-primary-foreground/10" />
+              <Link
+                to="/construction/consultation"
+                className="group inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
+              >
+                Construction
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+        {/* Gold bottom line */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.4)] to-transparent" />
       </div>
     </section>
   );

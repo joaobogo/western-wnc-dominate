@@ -1,55 +1,55 @@
 import { motion } from "framer-motion";
-import { Mountain, Users, ShieldCheck, Clock } from "lucide-react";
+import { Mountain, Users, ShieldCheck, Clock, Award } from "lucide-react";
 
 const pillars = [
   {
     icon: Mountain,
     title: "Mountain Climate Expertise",
-    description:
-      "We understand the demands of WNC weather — heavy snow loads, high winds, and summer storms. Every installation is specified for elevation and exposure.",
+    description: "We understand WNC weather — heavy snow loads, high winds, and summer storms. Every installation is specified for elevation and exposure.",
   },
   {
     icon: Users,
-    title: "Family-Owned, Locally Operated",
-    description:
-      "40+ years of combined experience, serving our neighbors across Franklin, Highlands, Cashiers, Sylva, and beyond since 2017.",
+    title: "Family-Owned. Locally Run. Team-Driven.",
+    description: "Founded in 2017 and powered by a local team — from leadership and consultants to inspectors, project managers, repair specialists, and crews — each playing a role in the customer experience.",
   },
   {
     icon: ShieldCheck,
     title: "Warranty-Backed Workmanship",
-    description:
-      "Every project carries full labor and material warranties. CertainTeed Master Shingle Applicator certified — your investment is documented and protected.",
+    description: "Every project carries full labor and material warranties. CertainTeed Master Shingle Applicator certified.",
   },
   {
     icon: Clock,
     title: "Rapid Response, Clear Communication",
-    description:
-      "We respond within 24 hours with clear next steps. Emergency tarping, insurance documentation, and priority scheduling when storms hit.",
+    description: "We respond rapidly with clear next steps. Emergency tarping, insurance documentation, and priority scheduling when storms hit.",
+  },
+  {
+    icon: Award,
+    title: "Military Friendly Company",
+    description: "We are proud to support our veterans and active-duty service members with dedicated discounts and priority support.",
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="section-padding bg-secondary relative overflow-hidden tartan-accent">
+    <section className="section-padding bg-secondary tartan-bg relative overflow-hidden">
       <div className="container-tight relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="text-accent font-semibold text-sm uppercase tracking-[0.15em] mb-3">Why Highlander</p>
+          <span className="eyebrow mb-3 block">Why Highlander</span>
           <div className="overflow-hidden">
             <motion.h2
               initial={{ y: "100%" }}
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4"
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="section-heading mb-4"
             >
-              Precision. Integrity.
-              <br /> Mountain Knowledge.
+              Precision. Integrity.<br /> Mountain Knowledge.
             </motion.h2>
           </div>
         </motion.div>
@@ -58,18 +58,19 @@ const WhyChooseUs = () => {
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.5 }}
-              className="group flex gap-4 md:gap-5"
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="group flex gap-5 p-5 md:p-6 bg-card border border-border rounded-none hover:border-[hsl(var(--highland-gold)/0.15)] hover:shadow-[0_8px_28px_-8px_hsl(var(--heritage-charcoal)/0.06)] transition-all duration-500 spotlight-hover"
+              style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
-              <div className="flex-shrink-0 w-11 h-11 rounded-sm bg-primary/8 flex items-center justify-center">
+              <div className="flex-shrink-0 w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center mt-0.5 group-hover:bg-primary/12 transition-colors duration-300">
                 <pillar.icon className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="text-base font-heading font-semibold text-foreground mb-2">{pillar.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{pillar.description}</p>
+                <h3 className="text-base font-heading font-bold text-foreground mb-1.5 tracking-tight">{pillar.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed font-body">{pillar.description}</p>
               </div>
             </motion.div>
           ))}

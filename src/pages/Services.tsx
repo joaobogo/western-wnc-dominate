@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -10,6 +11,24 @@ import { services } from "@/data/services";
 const Services = () => {
   return (
     <>
+      <SEOHead
+        title="Roofing & Construction Services in Western NC | Highlander"
+        description="Complete roofing and construction services across Western North Carolina — repair, replacement, metal roofing, additions, renovations & more. Free estimates."
+        path="/services"
+        jsonLd={[
+          serviceSchema({
+            name: "Roofing & Construction Services",
+            description:
+              "Roofing and construction services across Western North Carolina — repair, replacement, metal roofing, additions, and outdoor living.",
+            url: "/services",
+            areaServed: "Western North Carolina",
+          }),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+          ]),
+        ]}
+      />
       <Header />
       <main>
         <section className="section-padding section-dark pt-32 md:pt-40">
@@ -19,7 +38,7 @@ const Services = () => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
                 Roofing Services Built for Mountain Living
               </h1>
-              <p className="text-dark-section-foreground/70 max-w-2xl mx-auto text-base md:text-lg">
+              <p className="text-dark-section-foreground/90 max-w-2xl mx-auto text-base md:text-lg">
                 From emergency storm repairs to full replacements, we handle every roofing need across Western North Carolina.
               </p>
             </motion.div>

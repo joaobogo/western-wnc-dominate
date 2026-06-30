@@ -5,22 +5,31 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-none text-[18px] md:text-[20px] font-bold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 font-body uppercase tracking-[0.16em] shadow-md border-2 border-transparent active:scale-[0.98] hover:shadow-lg",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/95 shadow-md hover:shadow-primary/20",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        outline: "border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold border-border/50 hover:border-border",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-primary underline-offset-4 hover:underline font-bold tracking-normal",
+        /** Highland gold gradient — primary conversion CTA */
+        highland: "cta-gradient text-accent-foreground font-extrabold tracking-[0.1em] btn-primary-interactive relative overflow-hidden shadow-[0_10px_30px_-5px_hsl(var(--highland-gold)/0.5)] hover:shadow-[0_15px_35px_-5px_hsl(var(--highland-gold)/0.6)] border border-[hsl(var(--highland-gold)/0.4)] hover:scale-[1.02] active:scale-[0.98]",
+        /** Gold outline — secondary premium action */
+        gold: "border-2 border-[hsl(var(--highland-gold)/0.5)] text-[hsl(var(--highland-gold))] bg-transparent hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold)/0.8)] font-bold btn-ghost-interactive shadow-sm",
+        /** Ghost premium — dark section secondary */
+        "ghost-dark": "border-2 border-[hsl(var(--dark-section-foreground)/0.2)] text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.1)] hover:border-[hsl(var(--highland-gold)/0.4)] font-semibold btn-ghost-interactive",
+        /** Heritage — deep green filled */
+        heritage: "bg-primary text-primary-foreground font-bold hover:bg-primary/90 btn-ghost-interactive shadow-lg",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        default: "h-14 px-10 text-[18px] md:text-[20px]",
+        sm: "h-12 px-8 text-[16px] md:text-[18px]",
+        lg: "h-16 px-12 text-[20px] md:text-[22px] tracking-[0.12em]",
+        xl: "h-20 px-14 md:px-16 text-[24px] md:text-[26px] tracking-[0.14em]",
+        icon: "h-14 w-14",
       },
     },
     defaultVariants: {

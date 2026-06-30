@@ -1,4 +1,5 @@
-import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat } from "lucide-react";
+import { Hammer, RotateCcw, CloudLightning, Layers, Building2, Wrench, Droplets, TreePine, HardHat, UtensilsCrossed, Home, Shield } from "lucide-react";
+import type { Division } from "@/lib/division-theme";
 
 export interface ServiceData {
   slug: string;
@@ -7,6 +8,7 @@ export interface ServiceData {
   subheadline: string;
   description: string;
   icon: any;
+  division: Division;
   features: string[];
   faqs: { question: string; answer: string }[];
   metaTitle: string;
@@ -21,6 +23,7 @@ export const services: ServiceData[] = [
     subheadline: "Leak fixes, shingle replacement, and damage repair — done right the first time by a local team that knows mountain roofing.",
     description: "Whether it's a small leak or significant storm damage, our repair crews respond fast and fix it properly. We serve homeowners across Franklin, Sylva, Highlands, Cashiers, and surrounding WNC communities with honest assessments and lasting repairs.",
     icon: Hammer,
+    division: "roofing",
     features: [
       "Same-week emergency repair scheduling",
       "Leak detection and waterproofing",
@@ -31,9 +34,9 @@ export const services: ServiceData[] = [
       "Free inspection before any work begins",
     ],
     faqs: [
-      { question: "How quickly can you repair my roof?", answer: "We typically schedule repair inspections within 24–48 hours and complete most repairs within a week, depending on scope and weather conditions." },
+      { question: "How quickly can you repair my roof?", answer: "We typically schedule repair inspections on a same-day or next-day basis and complete most repairs within a week, depending on scope and weather conditions." },
       { question: "Do you work with insurance companies?", answer: "Yes. We document all damage with photos and detailed reports to support your insurance claim process from start to finish." },
-      { question: "How much does a roof repair cost in WNC?", answer: "Repair costs vary based on damage extent, materials, and accessibility. Most minor repairs range from $300–$1,500. We provide a free inspection and transparent estimate before any work begins." },
+      { question: "How much does a roof repair cost in WNC?", answer: "Repair pricing is scope-based — it depends on damage extent, materials, and accessibility. We provide a free on-site inspection and a transparent, itemized estimate before any work begins." },
       { question: "Can you repair just a section of my roof?", answer: "Absolutely. We specialize in targeted repairs that address the problem area without unnecessary full replacements. We'll always recommend the most cost-effective solution." },
     ],
     metaTitle: "Roof Repair in Western NC | Highlander Roofing",
@@ -46,19 +49,20 @@ export const services: ServiceData[] = [
     subheadline: "Premium tear-off and installation with materials engineered for WNC's elevation, wind, and moisture — backed by manufacturer warranties.",
     description: "When repair isn't enough, our full replacement service delivers a new roof system designed for the unique demands of Western North Carolina. From tear-off to final inspection, we manage every detail with CertainTeed-certified craftsmanship.",
     icon: RotateCcw,
+    division: "roofing",
     features: [
       "Complete tear-off and disposal",
       "Ice & water shield underlayment for mountain climates",
       "CertainTeed Master Shingle Applicator quality",
-      "Architectural and designer shingle options",
+      "Premium dimensional and designer shingle options",
       "Ridge vent and attic ventilation optimization",
       "Manufacturer warranty registration",
       "Financing options available",
     ],
     faqs: [
       { question: "How long does a roof replacement take?", answer: "Most residential roof replacements are completed in 2–5 days depending on size, complexity, and weather. We keep you informed every step of the way." },
-      { question: "How much does a new roof cost in Western NC?", answer: "A typical residential roof replacement in WNC ranges from $8,000–$25,000+ depending on size, materials, and complexity. We provide detailed estimates after a free inspection." },
-      { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend architectural shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
+      { question: "How much does a new roof cost in Western NC?", answer: "Replacement pricing depends on size, pitch, material system, and complexity. Rather than publish a generic range, we provide a detailed, grouped-cost proposal after a free on-site inspection so you know exactly what you're investing in." },
+      { question: "What materials do you recommend for mountain homes?", answer: "We typically recommend dimensional shingles or metal roofing for WNC homes. Both handle high winds, heavy rain, and snow loads. We'll recommend the best option for your specific situation." },
       { question: "Do you offer financing for roof replacement?", answer: "Yes, we offer flexible financing options to make a new roof affordable. Ask us about payment plans during your free inspection." },
     ],
     metaTitle: "Roof Replacement in Western NC | Highlander Roofing",
@@ -71,8 +75,9 @@ export const services: ServiceData[] = [
     subheadline: "Wind, hail, and fallen trees don't wait — and neither do we. Emergency inspections, full documentation, and insurance support when you need it most.",
     description: "Western NC sees severe storms, high winds, and heavy snowfall that can devastate roofs. Our storm damage team responds quickly with emergency tarping, detailed damage documentation, and full insurance claim support to get your home protected fast.",
     icon: CloudLightning,
+    division: "roofing",
     features: [
-      "24–48 hour emergency response",
+      "same-day emergency response",
       "Emergency tarping to prevent further damage",
       "Comprehensive storm damage inspection",
       "Detailed photo and video documentation",
@@ -87,7 +92,7 @@ export const services: ServiceData[] = [
       { question: "Do you handle the insurance process?", answer: "We assist with the entire process — from initial documentation to adjuster meetings to final repairs. Our team has extensive experience navigating roofing insurance claims in WNC." },
     ],
     metaTitle: "Storm Damage Roof Repair in Western NC | Highlander Roofing",
-    metaDescription: "Emergency storm damage response across Western North Carolina. Insurance claim support, tarping, and fast repairs. Call Highlander Roofing — (828) 397-9211.",
+    metaDescription: "Emergency storm damage response across Western North Carolina. Insurance claim support, tarping, and fast repairs. Call Highlander Roofing — (828) 524-7773.",
   },
   {
     slug: "metal-roofing",
@@ -96,6 +101,7 @@ export const services: ServiceData[] = [
     subheadline: "Durable, energy-efficient, and built to last 50+ years — metal roofing is the premium choice for WNC homeowners who want long-term protection.",
     description: "Metal roofing outperforms traditional shingles in virtually every category that matters for mountain living: wind resistance, snow shedding, energy efficiency, and lifespan. Our metal roofing installations are engineered specifically for Western NC conditions.",
     icon: Layers,
+    division: "roofing",
     features: [
       "Standing seam and exposed fastener options",
       "50+ year lifespan with minimal maintenance",
@@ -121,6 +127,7 @@ export const services: ServiceData[] = [
     subheadline: "Inspections, repairs, replacements, and maintenance programs for property managers, facility managers, and business owners across Western North Carolina.",
     description: "Commercial roofs have different demands — larger scale, stricter timelines, and compliance requirements. Highlander Roofing provides professional commercial roofing services tailored to WNC's property managers, HOAs, and business owners.",
     icon: Building2,
+    division: "roofing",
     features: [
       "Flat and low-slope roofing systems",
       "TPO, EPDM, and modified bitumen installations",
@@ -146,6 +153,7 @@ export const services: ServiceData[] = [
     subheadline: "Extend your roof's lifespan, avoid emergency repairs, and protect your investment with scheduled maintenance from a trusted WNC roofing contractor.",
     description: "Most commercial roof failures are preventable. Our maintenance programs catch small issues before they become expensive problems — saving you money, extending roof life, and giving you documentation for warranty and insurance compliance.",
     icon: Wrench,
+    division: "roofing",
     features: [
       "Bi-annual comprehensive roof inspections",
       "Debris removal and drainage clearing",
@@ -171,6 +179,7 @@ export const services: ServiceData[] = [
     subheadline: "Seamless gutters, gutter guards, and drainage solutions engineered for WNC's heavy rainfall and mountain runoff.",
     description: "Proper gutter systems are critical for mountain homes where heavy rainfall and steep terrain can cause severe water damage. Highlander installs seamless aluminum and copper gutters, gutter guards, and custom downspout solutions designed to handle Western NC's unique drainage demands.",
     icon: Droplets,
+    division: "roofing",
     features: [
       "Seamless aluminum gutter installation",
       "Copper gutter systems for premium homes",
@@ -182,7 +191,7 @@ export const services: ServiceData[] = [
     ],
     faqs: [
       { question: "What size gutters do mountain homes need?", answer: "Most WNC homes benefit from 6-inch gutters with oversized 3x4 downspouts. The steep terrain and heavy rainfall here demand higher-capacity systems than standard 5-inch gutters provide." },
-      { question: "How much do new gutters cost in Western NC?", answer: "Seamless aluminum gutters typically range from $6–$12 per linear foot installed. Gutter guard systems add $3–$8 per foot. We provide free estimates tailored to your home's specific needs." },
+      { question: "How much do new gutters cost in Western NC?", answer: "Gutter pricing is based on linear footage, drop count, material, and whether guards are added. We provide a free, tailored estimate after measuring your home." },
       { question: "Do you install gutter guards?", answer: "Yes. We install micro-mesh and reverse-curve gutter guards that prevent leaves, pine needles, and debris from clogging your gutters — especially important in WNC's heavily wooded areas." },
       { question: "Can you repair existing gutters instead of replacing them?", answer: "Often, yes. We repair leaking seams, rehang sagging sections, and replace damaged segments. We'll recommend repair vs. replacement based on your gutter's age and overall condition." },
     ],
@@ -196,6 +205,7 @@ export const services: ServiceData[] = [
     subheadline: "Custom decks, covered porches, screened-in rooms, and pergolas designed to complement your WNC mountain lifestyle.",
     description: "Mountain living is about enjoying the outdoors. Highlander designs and builds custom outdoor living spaces — from covered porches and screened rooms to composite decks and timber-frame pergolas — all engineered for WNC's elevation, weather, and stunning views.",
     icon: TreePine,
+    division: "construction",
     features: [
       "Custom deck design and construction",
       "Covered porches and pavilions",
@@ -208,19 +218,88 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "What decking materials work best in WNC?", answer: "Composite decking (like Trex or TimberTech) performs best in mountain climates — it resists moisture, UV, and temperature swings without the maintenance of natural wood. We also install premium hardwoods like Ipe for a natural look." },
       { question: "Do you handle permits for outdoor construction?", answer: "Yes. We manage the permitting process for all outdoor living projects, ensuring compliance with local building codes in Macon, Jackson, Swain, and surrounding counties." },
-      { question: "Can you build a covered porch on my existing home?", answer: "Absolutely. We specialize in adding covered porches, screened rooms, and pergolas to existing mountain homes. We match roofing materials and architectural style for a seamless addition." },
+      { question: "Can you build a covered porch on my existing home?", answer: "Absolutely. We specialize in adding covered porches, screened rooms, and pergolas to existing mountain homes. We match roofing materials and design style for a seamless addition." },
       { question: "How long does an outdoor living project take?", answer: "Most deck and porch projects take 2–4 weeks from start to finish, depending on complexity, permits, and weather. We provide a detailed timeline before work begins." },
     ],
     metaTitle: "Outdoor Living Spaces in Western NC | Decks, Porches & Pergolas",
     metaDescription: "Custom decks, covered porches, screened rooms & pergolas for WNC mountain homes. Highlands, Franklin, Sylva, Cashiers. Free consultation from Highlander.",
   },
   {
+    slug: "renovations",
+    title: "Kitchen & Bath Remodels",
+    headline: "Interior Renovations That Protect Your Investment",
+    subheadline: "Complete kitchen, bathroom, and living space transformations managed by one professional local team.",
+    description: "Highlander approaches renovation with the same planning discipline we bring to our roofing projects. From open-concept conversions to custom master baths, we handle the design-build process from demo to final finish.",
+    icon: UtensilsCrossed,
+    division: "construction",
+    features: [
+      "Custom kitchen layout & cabinetry",
+      "Master suite & bathroom renovations",
+      "Basement finishing & moisture management",
+      "Load-bearing wall removal & structural work",
+      "Flooring, tile, and interior finish work",
+      "Electrical & plumbing coordination",
+      "Detailed project timeline & fixed pricing",
+    ],
+    faqs: [
+      { question: "How long does a kitchen remodel take?", answer: "Most kitchen renovations take 4–8 weeks depending on layout changes and material lead times." },
+      { question: "Do I need to move out during renovation?", answer: "Usually not. We use dust barriers and staging to keep your home livable during construction." },
+    ],
+    metaTitle: "Kitchen & Bath Remodeling in Western NC | Highlander",
+    metaDescription: "Professional kitchen and bathroom remodeling across Highlands, Franklin, and Sylva. Fixed pricing, in-house crews, and documented quality.",
+  },
+  {
+    slug: "additions",
+    title: "Additions & Suites",
+    headline: "More Space, Integrated Perfectly",
+    subheadline: "Guest suites, in-law apartments, and room extensions that look like they were always part of your home.",
+    description: "The best additions don't look like additions. We match rooflines, siding, and proportions so your new space integrates seamlessly with your existing structure.",
+    icon: Home,
+    division: "construction",
+    features: [
+      "Master suite & guest wing additions",
+      "Second-story expansions",
+      "Garage-to-living-space conversions",
+      "Attached & detached garage builds",
+      "Full permit & zoning management",
+      "Structural engineering coordination",
+    ],
+    faqs: [
+      { question: "Do you handle the permits?", answer: "Yes, we manage the entire permitting and inspection process with the county." },
+    ],
+    metaTitle: "Home Additions in Western NC | Highlander Construction",
+    metaDescription: "Expand your mountain home with professional additions. Guest suites, in-law apartments, and room extensions. Licensed GC in WNC.",
+  },
+  {
+    slug: "siding",
+    title: "Siding & Exterior",
+    headline: "Mountain-Grade Exterior Protection",
+    subheadline: "Fiber cement, cedar, and premium trim systems engineered for Western NC's moisture and elevation.",
+    description: "Your home's exterior envelope is its first line of defense. We install premium siding systems like James Hardie fiber cement and natural cedar, ensuring proper moisture management and aesthetic continuity.",
+    icon: Shield,
+    division: "construction",
+    features: [
+      "James Hardie fiber cement installation",
+      "Natural cedar shake & lap siding",
+      "PVC and composite exterior trim",
+      "House wrap & moisture barrier systems",
+      "Soffit & fascia replacement",
+      "Exterior painting & staining",
+    ],
+    faqs: [
+      { question: "What siding lasts longest in the mountains?", answer: "Fiber cement (like James Hardie) is highly recommended for its resistance to moisture, rot, and fire." },
+    ],
+    metaTitle: "Siding & Exterior Trim in Western NC | Highlander",
+    metaDescription: "Premium siding installation in Highlands, Cashiers, and Franklin. Fiber cement, cedar, and moisture-proof trim systems. Free estimates.",
+  },
+  {
     slug: "construction-services",
-    title: "Construction Services",
-    headline: "General Construction for Western NC Properties",
-    subheadline: "Licensed general contractor services including siding, framing, additions, and exterior renovations across Macon, Jackson, and Swain counties.",
-    description: "Beyond roofing, Highlander provides full general contracting services for Western NC homeowners. Our experienced crews handle siding installation, structural framing, home additions, and exterior renovations — all built to mountain-grade standards and backed by our quality guarantee.",
+    title: "General Construction",
+    headline: "Licensed General Contractor for Custom Projects",
+    subheadline: "Framing, structural repairs, and specialized construction projects across the WNC mountains.",
+    description: "Beyond roofing, Highlander is a licensed NC General Contractor providing elite exterior construction services. We specialize in additions, outdoor living, and facade improvements that require precise mountain-climate engineering and design-led execution.",
     icon: HardHat,
+    division: "construction",
     features: [
       "Vinyl, fiber cement, and board & batten siding",
       "Structural framing and repairs",
@@ -234,7 +313,7 @@ export const services: ServiceData[] = [
       { question: "Are you a licensed general contractor?", answer: "Yes. Highlander is a fully licensed general contractor in North Carolina, authorized for residential and commercial construction projects across Western NC." },
       { question: "What siding materials do you install?", answer: "We install James Hardie fiber cement, vinyl, engineered wood (LP SmartSide), and natural wood siding. We recommend materials based on your home's style, budget, and mountain exposure." },
       { question: "Can you handle storm damage beyond the roof?", answer: "Yes. When storms damage siding, fascia, soffits, or structural elements, we handle the full scope of exterior repairs — not just the roof. This simplifies your insurance claim and reconstruction process." },
-      { question: "Do you build home additions?", answer: "Yes. We design and build home additions, bump-outs, and garage conversions. As a licensed GC, we manage the entire project from permitting through final inspection." },
+      { question: "Do you build home additions?", answer: "Yes. We plan and build home additions, bump-outs, and garage conversions. As a licensed GC, we manage the entire project from preconstruction through final inspection, including help with layouts and floor plans." },
     ],
     metaTitle: "Construction Services in Western NC | Siding, Framing & Additions",
     metaDescription: "Licensed general contractor in Western NC. Siding, framing, additions, and exterior renovations in Highlands, Franklin, Sylva & beyond. Free estimates.",

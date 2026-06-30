@@ -1,0 +1,159 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { 
+  Shield, CheckCircle, ArrowRight, Phone, 
+  Mountain, Droplets, Wind, Sun, Home, Layers,
+  HardHat, Award, Clock
+} from "lucide-react";
+import SEOHead from "@/components/SEOHead";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
+
+const Siding = () => {
+  return (
+    <>
+      <SEOHead
+        title="Siding Installation in Western NC | Fiber Cement & Cedar"
+        description="Mountain-grade siding installation across Highlands, Franklin, and Sylva. James Hardie fiber cement, natural cedar, and premium moisture-proof trim."
+        path="/construction/siding"
+      />
+      <Header />
+      <main>
+        <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" 
+              alt="Mountain home with premium siding and exterior finishes"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.7)] via-[hsl(var(--hero-overlay)/0.4)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.4)] via-transparent to-transparent" />
+          </div>
+          <div className="container-tight relative z-10 pt-32 md:pt-40">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Construction Division</span>
+              <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-white tracking-tight">Siding & Exterior.</h1>
+              <p className="text-white/85 text-lg md:text-xl max-w-2xl mb-8 font-body leading-relaxed">
+                Mountain-grade exterior protection. Fiber cement, natural cedar, and premium trim systems engineered for Western NC&apos;s moisture and elevation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 group hover:scale-[1.02] transition-transform">
+                  Request a Siding Quote <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <a href="tel:+18285247773" className="bg-white/5 border border-white/10 text-white font-bold px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+                  <Phone className="w-5 h-5 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 524-7773
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-heading font-bold mb-6">Built for Mountain Exposure.</h2>
+                <p className="text-foreground/70 mb-8">
+                  The mountains of Western North Carolina present a unique set of challenges for your home's exterior. High humidity, heavy rainfall, and constant temperature swings require more than just a "standard" siding job.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "James Hardie fiber cement systems (Rot-proof, Fire-rated)",
+                    "Natural cedar shake and lap siding",
+                    "Premium PVC and composite trim (Never-rot guarantees)",
+                    "Advanced house-wrap and moisture management",
+                    "Soffit, fascia, and decorative millwork",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                      <span className="text-foreground/80 font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative group overflow-hidden">
+                <div className="bg-secondary/40 p-8 border border-border relative z-10">
+                  <h3 className="text-xl font-heading font-bold mb-4">Why Highlander Siding?</h3>
+                  <p className="text-sm text-foreground/60 mb-6 leading-relaxed font-body">
+                    We approach siding as a complete envelope system — not just a cosmetic layer. Every corner, transition, and flashing detail is executed to prevent moisture intrusion, which is the #1 cause of structural decay in WNC homes.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
+                      <Droplets className="w-5 h-5 text-[hsl(var(--highland-gold))] mb-2" />
+                      <div className="text-[10px] font-bold uppercase tracking-wider">Moisture Proof</div>
+                    </div>
+                    <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
+                      <Wind className="w-5 h-5 text-[hsl(var(--highland-gold))] mb-2" />
+                      <div className="text-[10px] font-bold uppercase tracking-wider">Wind Rated</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute right-0 bottom-0 w-1/2 h-1/2 opacity-[0.05] pointer-events-none grayscale translate-x-4 translate-y-4">
+                   <img src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Texture detail" className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="section-padding bg-secondary">
+          <div className="container-tight max-w-3xl">
+            <div className="text-center mb-10">
+              <span className="eyebrow mb-3 block">Siding FAQ</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight">Common Siding Questions</h2>
+            </div>
+            <div className="divide-y divide-border border-y border-border">
+              {[
+                { q: "What siding material holds up best in Western North Carolina?", a: "Fiber cement (James Hardie) is our most recommended siding for WNC — it handles moisture, temperature swings, and UV exposure better than most alternatives. Cedar and premium composite trim are also strong choices depending on your home and budget." },
+                { q: "Can you replace just damaged sections, or do I need full siding replacement?", a: "Many partial replacements are possible, especially after storm damage. Highlander will assess the existing system and recommend the smallest scope that protects the home long-term." },
+                { q: "How long does siding installation typically take?", a: "Most residential projects in Franklin, Highlands, Cashiers, and Sylva take 1 to 3 weeks depending on size, complexity, and any required repairs to sheathing or trim." },
+                { q: "Do you handle paint, trim, and exterior accents too?", a: "Yes. We coordinate trim, soffit, fascia, and decorative millwork as part of the siding scope. Painting and stain finishes can be included on most projects." },
+                { q: "Is siding work covered by warranty?", a: "Yes — Highlander's workmanship warranty applies, in addition to the manufacturer warranties from James Hardie and other premium product lines." },
+              ].map((qa) => (
+                <details key={qa.q} className="group py-5">
+                  <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
+                    <span className="font-heading font-bold text-foreground text-base md:text-lg leading-snug group-hover:text-primary transition-colors">{qa.q}</span>
+                    <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-1 rotate-90 group-open:-rotate-90 transition-transform" />
+                  </summary>
+                  <p className="text-muted-foreground font-body leading-relaxed mt-3 pr-10">{qa.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CLOSING CTA ── */}
+        <section className="section-padding bg-primary">
+          <div className="container-tight text-center">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
+              Ready to Protect Your WNC Home?
+            </h2>
+            <p className="text-primary-foreground/95 mb-8 max-w-xl mx-auto">
+              Request a free siding estimate from Highlander — serving Franklin, Highlands, Cashiers, Sylva, and the surrounding Western North Carolina mountains.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                Request a Free Quote <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a href="tel:+18285247773" aria-label="Call Highlander Roofing & Construction at 828-524-7773" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
+                <Phone className="w-5 h-5" /> Call (828) 524-7773
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-10 text-sm">
+              <Link to="/construction/renovations" className="text-primary-foreground/95 hover:text-primary-foreground underline-offset-4 hover:underline">Renovations</Link>
+              <Link to="/construction/additions" className="text-primary-foreground/95 hover:text-primary-foreground underline-offset-4 hover:underline">Home Additions</Link>
+              <Link to="/construction/outdoor-living" className="text-primary-foreground/95 hover:text-primary-foreground underline-offset-4 hover:underline">Outdoor Living</Link>
+              <Link to="/roofing" className="text-primary-foreground/95 hover:text-primary-foreground underline-offset-4 hover:underline">Roofing</Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+      <StickyMobileCTA />
+    </>
+  );
+};
+
+export default Siding;

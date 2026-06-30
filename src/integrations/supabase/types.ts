@@ -14,6 +14,203 @@ export type Database = {
   }
   public: {
     Tables: {
+      chatbot_conversations: {
+        Row: {
+          consent_given: boolean | null
+          consent_text: string | null
+          contact_path: string | null
+          converted_to_lead: boolean | null
+          created_at: string
+          email: string | null
+          full_transcript: Json | null
+          id: string
+          lead_id: string | null
+          name: string | null
+          page_url: string | null
+          phone: string | null
+          project_type: string | null
+          property_town: string | null
+          recommended_next_step: string | null
+          referrer: string | null
+          service_category: string | null
+          session_id: string | null
+          summary: string | null
+          updated_at: string
+          urgency: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          consent_given?: boolean | null
+          consent_text?: string | null
+          contact_path?: string | null
+          converted_to_lead?: boolean | null
+          created_at?: string
+          email?: string | null
+          full_transcript?: Json | null
+          id?: string
+          lead_id?: string | null
+          name?: string | null
+          page_url?: string | null
+          phone?: string | null
+          project_type?: string | null
+          property_town?: string | null
+          recommended_next_step?: string | null
+          referrer?: string | null
+          service_category?: string | null
+          session_id?: string | null
+          summary?: string | null
+          updated_at?: string
+          urgency?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          consent_given?: boolean | null
+          consent_text?: string | null
+          contact_path?: string | null
+          converted_to_lead?: boolean | null
+          created_at?: string
+          email?: string | null
+          full_transcript?: Json | null
+          id?: string
+          lead_id?: string | null
+          name?: string | null
+          page_url?: string | null
+          phone?: string | null
+          project_type?: string | null
+          property_town?: string | null
+          recommended_next_step?: string | null
+          referrer?: string | null
+          service_category?: string | null
+          session_id?: string | null
+          summary?: string | null
+          updated_at?: string
+          urgency?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chatbot_conversations_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      consultation_requests: {
+        Row: {
+          budget_range: string | null
+          conversation_log: Json | null
+          created_at: string
+          email: string | null
+          has_plans: boolean | null
+          id: string
+          insurance_status: string | null
+          lead_score: number | null
+          metadata: Json | null
+          name: string | null
+          phone: string | null
+          project_description: string | null
+          project_type: string | null
+          property_type: string | null
+          service_category: string | null
+          source: string | null
+          status: string | null
+          timeline: string | null
+          town: string | null
+          urgency: string | null
+        }
+        Insert: {
+          budget_range?: string | null
+          conversation_log?: Json | null
+          created_at?: string
+          email?: string | null
+          has_plans?: boolean | null
+          id?: string
+          insurance_status?: string | null
+          lead_score?: number | null
+          metadata?: Json | null
+          name?: string | null
+          phone?: string | null
+          project_description?: string | null
+          project_type?: string | null
+          property_type?: string | null
+          service_category?: string | null
+          source?: string | null
+          status?: string | null
+          timeline?: string | null
+          town?: string | null
+          urgency?: string | null
+        }
+        Update: {
+          budget_range?: string | null
+          conversation_log?: Json | null
+          created_at?: string
+          email?: string | null
+          has_plans?: boolean | null
+          id?: string
+          insurance_status?: string | null
+          lead_score?: number | null
+          metadata?: Json | null
+          name?: string | null
+          phone?: string | null
+          project_description?: string | null
+          project_type?: string | null
+          property_type?: string | null
+          service_category?: string | null
+          source?: string | null
+          status?: string | null
+          timeline?: string | null
+          town?: string | null
+          urgency?: string | null
+        }
+        Relationships: []
+      }
+      conversion_events: {
+        Row: {
+          created_at: string
+          element_id: string | null
+          event_type: string
+          id: string
+          label: string | null
+          metadata: Json | null
+          path: string
+          session_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          element_id?: string | null
+          event_type: string
+          id?: string
+          label?: string | null
+          metadata?: Json | null
+          path: string
+          session_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          element_id?: string | null
+          event_type?: string
+          id?: string
+          label?: string | null
+          metadata?: Json | null
+          path?: string
+          session_id?: string | null
+        }
+        Relationships: []
+      }
       designer_leads: {
         Row: {
           created_at: string
@@ -95,6 +292,141 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      leads: {
+        Row: {
+          chat_summary: string | null
+          consent_given: boolean | null
+          consent_text: string | null
+          created_at: string
+          crm_id: string | null
+          crm_sync_status: string
+          crm_synced: boolean
+          email: string | null
+          fbclid: string | null
+          files_uploaded: Json | null
+          full_chat_transcript: Json | null
+          gclid: string | null
+          has_plans: boolean | null
+          id: string
+          ip_address: string | null
+          lead_type: string | null
+          li_fat_id: string | null
+          metadata: Json | null
+          name: string | null
+          notes: string | null
+          page_url: string | null
+          phone: string | null
+          photos_uploaded: Json | null
+          preferred_contact_method: string | null
+          project_description: string | null
+          project_type: string | null
+          property_address: string | null
+          property_town: string | null
+          property_type: string | null
+          referrer: string | null
+          roofing_issue_type: string | null
+          service_category: string | null
+          source: string
+          status: string
+          updated_at: string
+          urgency: string | null
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          chat_summary?: string | null
+          consent_given?: boolean | null
+          consent_text?: string | null
+          created_at?: string
+          crm_id?: string | null
+          crm_sync_status?: string
+          crm_synced?: boolean
+          email?: string | null
+          fbclid?: string | null
+          files_uploaded?: Json | null
+          full_chat_transcript?: Json | null
+          gclid?: string | null
+          has_plans?: boolean | null
+          id?: string
+          ip_address?: string | null
+          lead_type?: string | null
+          li_fat_id?: string | null
+          metadata?: Json | null
+          name?: string | null
+          notes?: string | null
+          page_url?: string | null
+          phone?: string | null
+          photos_uploaded?: Json | null
+          preferred_contact_method?: string | null
+          project_description?: string | null
+          project_type?: string | null
+          property_address?: string | null
+          property_town?: string | null
+          property_type?: string | null
+          referrer?: string | null
+          roofing_issue_type?: string | null
+          service_category?: string | null
+          source: string
+          status?: string
+          updated_at?: string
+          urgency?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          chat_summary?: string | null
+          consent_given?: boolean | null
+          consent_text?: string | null
+          created_at?: string
+          crm_id?: string | null
+          crm_sync_status?: string
+          crm_synced?: boolean
+          email?: string | null
+          fbclid?: string | null
+          files_uploaded?: Json | null
+          full_chat_transcript?: Json | null
+          gclid?: string | null
+          has_plans?: boolean | null
+          id?: string
+          ip_address?: string | null
+          lead_type?: string | null
+          li_fat_id?: string | null
+          metadata?: Json | null
+          name?: string | null
+          notes?: string | null
+          page_url?: string | null
+          phone?: string | null
+          photos_uploaded?: Json | null
+          preferred_contact_method?: string | null
+          project_description?: string | null
+          project_type?: string | null
+          property_address?: string | null
+          property_town?: string | null
+          property_type?: string | null
+          referrer?: string | null
+          roofing_issue_type?: string | null
+          service_category?: string | null
+          source?: string
+          status?: string
+          updated_at?: string
+          urgency?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
       }
       roof_designs: {
         Row: {
@@ -182,15 +514,135 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_404_log: {
+        Row: {
+          created_at: string
+          id: string
+          metadata: Json | null
+          path: string
+          referrer: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          path: string
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          path?: string
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      seo_reports: {
+        Row: {
+          created_at: string
+          email_recipient: string | null
+          email_status: string | null
+          errors: Json | null
+          gsc_avg_ctr: number | null
+          gsc_avg_position: number | null
+          gsc_indexed_pages: number | null
+          gsc_top_keywords: Json | null
+          gsc_top_pages: Json | null
+          gsc_total_clicks: number | null
+          gsc_total_impressions: number | null
+          id: string
+          period_end: string
+          period_start: string
+          raw_data: Json | null
+          sitemap_status: string | null
+          sitemap_url_count: number | null
+          top_404_paths: Json | null
+          total_404s: number | null
+        }
+        Insert: {
+          created_at?: string
+          email_recipient?: string | null
+          email_status?: string | null
+          errors?: Json | null
+          gsc_avg_ctr?: number | null
+          gsc_avg_position?: number | null
+          gsc_indexed_pages?: number | null
+          gsc_top_keywords?: Json | null
+          gsc_top_pages?: Json | null
+          gsc_total_clicks?: number | null
+          gsc_total_impressions?: number | null
+          id?: string
+          period_end: string
+          period_start: string
+          raw_data?: Json | null
+          sitemap_status?: string | null
+          sitemap_url_count?: number | null
+          top_404_paths?: Json | null
+          total_404s?: number | null
+        }
+        Update: {
+          created_at?: string
+          email_recipient?: string | null
+          email_status?: string | null
+          errors?: Json | null
+          gsc_avg_ctr?: number | null
+          gsc_avg_position?: number | null
+          gsc_indexed_pages?: number | null
+          gsc_top_keywords?: Json | null
+          gsc_top_pages?: Json | null
+          gsc_total_clicks?: number | null
+          gsc_total_impressions?: number | null
+          id?: string
+          period_end?: string
+          period_start?: string
+          raw_data?: Json | null
+          sitemap_status?: string | null
+          sitemap_url_count?: number | null
+          top_404_paths?: Json | null
+          total_404s?: number | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -317,6 +769,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+    },
   },
 } as const

@@ -1,6 +1,13 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { ClipboardCheck, ArrowRight, ArrowLeft, AlertTriangle, CheckCircle, XCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ClipboardCheck, ArrowRight, ArrowLeft, AlertTriangle, CheckCircle, XCircle, Shield } from "lucide-react";
+import { ScrollReveal } from "@/components/motion";
+import HeadingReveal from "@/components/motion/HeadingReveal";
+import GoldLine from "@/components/motion/GoldLine";
+import { submitLead } from "@/lib/leads";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
 type QuizStep = "intro" | "q1" | "q2" | "q3" | "q4" | "q5" | "contact" | "result";
 
@@ -60,15 +67,16 @@ const questions: { step: QuizStep; question: string; options: { label: string; s
 ];
 
 const getResult = (score: number) => {
-  if (score <= 4) return { level: "good", icon: CheckCircle, color: "text-primary", title: "Your Roof Looks Good!", description: "Based on your answers, your roof appears to be in reasonable condition. We recommend an annual inspection to keep it that way — especially in WNC's challenging climate.", cta: "Schedule Preventative Inspection" };
-  if (score <= 9) return { level: "caution", icon: AlertTriangle, color: "text-accent", title: "Your Roof May Need Attention", description: "Your answers suggest some potential issues that should be evaluated by a professional. Early intervention often prevents costly full replacements.", cta: "Schedule Free Inspection" };
-  return { level: "urgent", icon: XCircle, color: "text-destructive", title: "Your Roof Likely Needs Replacement", description: "Based on your answers, your roof shows signs of significant wear or damage. We strongly recommend a professional inspection to assess your options before problems worsen.", cta: "Request Urgent Inspection" };
+  if (score <= 4) return { level: "good", icon: CheckCircle, color: "text-primary", bg: "bg-primary/10", title: "Your Roof Looks Good.", description: "Based on your answers, your roof appears to be in reasonable condition. We recommend an annual professional inspection to keep it that way — especially given WNC's challenging mountain climate.", cta: "Schedule Preventative Inspection" };
+  if (score <= 9) return { level: "caution", icon: AlertTriangle, color: "text-accent", bg: "bg-accent/10", title: "Your Roof May Need Attention.", description: "Your answers suggest potential issues that should be evaluated by a professional. Early intervention often prevents costly full replacements — catching problems now could save thousands.", cta: "Schedule a Professional Inspection" };
+  return { level: "urgent", icon: XCircle, color: "text-destructive", bg: "bg-destructive/10", title: "Your Roof Likely Needs Replacement.", description: "Based on your answers, your roof shows signs of significant wear or damage. We strongly recommend a professional assessment to evaluate your options before conditions worsen.", cta: "Request Priority Inspection" };
 };
 
 const RoofAssessmentQuiz = () => {
   const [currentStep, setCurrentStep] = useState<QuizStep>("intro");
   const [answers, setAnswers] = useState<number[]>([]);
   const [contact, setContact] = useState({ name: "", email: "", phone: "" });
+  const [direction, setDirection] = useState(1);
 
   const totalScore = answers.reduce((sum, s) => sum + s, 0);
   const result = getResult(totalScore);
@@ -78,132 +86,209 @@ const RoofAssessmentQuiz = () => {
   const currentIndex = stepOrder.indexOf(currentStep);
   const progress = Math.round((currentIndex / (stepOrder.length - 1)) * 100);
 
+  const goTo = (step: QuizStep) => {
+    const nextIdx = stepOrder.indexOf(step);
+    setDirection(nextIdx > currentIndex ? 1 : -1);
+    setCurrentStep(step);
+  };
+
   const selectAnswer = (score: number, questionIndex: number) => {
     const newAnswers = [...answers];
     newAnswers[questionIndex] = score;
     setAnswers(newAnswers);
-    const nextStep = stepOrder[currentIndex + 1];
-    setCurrentStep(nextStep);
+    goTo(stepOrder[currentIndex + 1]);
   };
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (contact.name && contact.email) {
-      console.log("Quiz lead:", { ...contact, score: totalScore, result: result.level });
-      setCurrentStep("result");
+      submitLead({
+        source: "roof_assessment_quiz",
+        lead_type: "roof_assessment",
+        name: contact.name,
+        email: contact.email,
+        phone: contact.phone || null,
+        service_category: "roofing",
+        project_description: `Quiz score ${totalScore}/19 — ${getResult(totalScore).level}`,
+        urgency: getResult(totalScore).level === "urgent" ? "high" : getResult(totalScore).level === "caution" ? "medium" : "low",
+        metadata: { quiz_answers: answers, quiz_score: totalScore },
+      }).catch((err) => console.error("RoofAssessmentQuiz submitLead failed:", err));
+      goTo("result");
     }
   };
 
   const currentQuestion = questions.find(q => q.step === currentStep);
 
+  const stepVariants = {
+    enter: (d: number) => ({ x: d > 0 ? 40 : -40, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (d: number) => ({ x: d > 0 ? -40 : 40, opacity: 0 }),
+  };
+
+  const optionClass = "w-full text-left px-5 py-4 rounded-none border border-border hover:border-[hsl(var(--highland-gold)/0.3)] hover:bg-[hsl(var(--highland-gold)/0.03)] transition-all duration-200";
+  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground/75 text-sm font-body field-premium";
+  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/60 mb-2";
+
   return (
-    <section className="section-padding section-dark" id="roof-quiz">
+    <section className="section-padding section-dark tartan-dark" id="roof-quiz">
       <div className="container-tight max-w-2xl">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-          <div className="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
-            <ClipboardCheck className="w-7 h-7 text-accent" />
-          </div>
-          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-2">Does Your Roof Need Replacement?</h2>
-          <p className="text-dark-section-foreground/70">Take this 60-second quiz to find out. Get personalized recommendations based on your roof's condition.</p>
-        </motion.div>
+        <div className="text-center mb-8">
+          <ScrollReveal variant="fade">
+            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] mb-3 block">Roof Assessment Tool</span>
+          </ScrollReveal>
+          <HeadingReveal delay={0.1}>
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-section-foreground mb-3">
+              Does Your Roof Need Replacement?
+            </h2>
+          </HeadingReveal>
+          <ScrollReveal variant="rise-subtle" delay={0.2}>
+            <p className="text-dark-section-foreground/85 text-sm font-body max-w-md mx-auto">
+              Five quick questions. Instant results with actionable next steps. Takes under 60 seconds.
+            </p>
+          </ScrollReveal>
+        </div>
 
         {/* Progress */}
         {currentStep !== "intro" && (
-          <div className="w-full h-2 bg-dark-section-foreground/10 rounded-full mb-8 overflow-hidden">
-            <motion.div className="h-full bg-accent rounded-full" animate={{ width: `${progress}%` }} transition={{ duration: 0.3 }} />
+          <div className="w-full h-1 bg-dark-section-foreground/8 rounded-full mb-8 overflow-hidden">
+            <motion.div
+              className="h-full bg-[hsl(var(--highland-gold))] rounded-full"
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
+            />
           </div>
         )}
 
-        <div className="bg-card border border-border rounded-lg p-6 md:p-8">
-          {currentStep === "intro" && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
-              <h3 className="text-xl font-heading font-bold text-foreground mb-4">Quick Roof Health Assessment</h3>
-              <p className="text-muted-foreground mb-6">5 simple questions · Takes under 60 seconds · Get instant results with actionable next steps.</p>
-              <button
-                onClick={() => setCurrentStep("q1")}
-                className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
-              >
-                Start Assessment <ArrowRight className="w-5 h-5" />
-              </button>
-            </motion.div>
-          )}
-
-          {currentQuestion && (
-            <motion.div key={currentStep} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-              <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wider">Question {currentIndex} of 5</p>
-              <h3 className="text-lg font-heading font-semibold text-foreground mb-6">{currentQuestion.question}</h3>
-              <div className="space-y-3">
-                {currentQuestion.options.map((opt) => (
+        <div className="bg-card border border-border rounded-none p-6 md:p-8">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentStep}
+              custom={direction}
+              variants={stepVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
+            >
+              {currentStep === "intro" && (
+                <div className="text-center py-4">
+                  <div className="w-14 h-14 rounded-none bg-accent/12 flex items-center justify-center mx-auto mb-5">
+                    <ClipboardCheck className="w-7 h-7 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-heading font-bold text-foreground mb-2">Quick Roof Health Assessment</h3>
+                  <p className="text-muted-foreground mb-6 text-sm font-body max-w-md mx-auto">
+                    5 questions · Under 60 seconds · Personalized results with clear recommendations.
+                  </p>
                   <button
-                    key={opt.label}
-                    onClick={() => selectAnswer(opt.score, currentIndex - 1)}
-                    className="w-full text-left px-5 py-4 rounded-lg border border-border hover:border-primary/30 hover:bg-muted/50 transition-all"
+                    onClick={() => goTo("q1")}
+                    className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-xl"
                   >
-                    <span className="font-medium text-foreground">{opt.label}</span>
+                    <span className="relative z-10">Start Assessment</span>
+                    <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                   </button>
-                ))}
-              </div>
-              {currentIndex > 1 && (
-                <button onClick={() => setCurrentStep(stepOrder[currentIndex - 1])} className="mt-4 text-sm text-primary font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
-                  <ArrowLeft className="w-3.5 h-3.5" /> Back
-                </button>
+                </div>
+              )}
+
+              {currentQuestion && (
+                <div>
+                  <p className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">
+                    Question {currentIndex} of 5
+                  </p>
+                  <h3 className="text-lg font-heading font-bold text-foreground mb-6">{currentQuestion.question}</h3>
+                  <div className="space-y-2.5">
+                    {currentQuestion.options.map((opt) => (
+                      <button
+                        key={opt.label}
+                        onClick={() => selectAnswer(opt.score, currentIndex - 1)}
+                        className={optionClass}
+                      >
+                        <span className="font-heading font-medium text-foreground text-sm">{opt.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                  {currentIndex > 1 && (
+                    <button onClick={() => goTo(stepOrder[currentIndex - 1])} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">
+                      <ArrowLeft className="w-3.5 h-3.5" /> Back
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {currentStep === "contact" && (
+                <div>
+                  <h3 className="text-lg font-heading font-bold text-foreground mb-1">Your Results Are Ready</h3>
+                  <p className="text-sm text-muted-foreground mb-6 font-body">Enter your info to see your personalized assessment and next steps.</p>
+                  <form onSubmit={handleContactSubmit} className="space-y-4">
+                    <div>
+                      <label className={labelClass}>Your Name</label>
+                      <input type="text" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className={inputClass} placeholder="First & last name" />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className={labelClass}>Email</label>
+                        <input type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
+                      </div>
+                      <div>
+                        <label className={labelClass}>Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/70">(optional)</span></label>
+                        <input type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
+                      </div>
+                    </div>
+                    <button type="submit" className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase">
+                      <span className="relative z-10">See My Results</span>
+                      <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
+                    </button>
+                    <p className="text-[10px] text-muted-foreground/50 text-center font-body">No spam · Your information stays private.</p>
+                  </form>
+                  <button onClick={() => goTo("q5")} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">
+                    <ArrowLeft className="w-3.5 h-3.5" /> Back
+                  </button>
+                </div>
+              )}
+
+              {currentStep === "result" && (
+                <div className="text-center">
+                  <motion.div
+                    className={`w-16 h-16 rounded-full ${result.bg} flex items-center justify-center mx-auto mb-5`}
+                    initial={{ scale: 0, rotate: -30 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                  >
+                    <ResultIcon className={`w-8 h-8 ${result.color}`} />
+                  </motion.div>
+                  <h3 className="text-xl font-heading font-bold text-foreground mb-2">{result.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-6 font-body max-w-md mx-auto leading-relaxed">{result.description}</p>
+
+                  <div className="bg-secondary rounded-none p-5 mb-6 border border-border">
+                    <div className="flex items-center justify-between mb-2.5">
+                      <span className="text-sm font-heading font-semibold text-foreground">Roof Health Score</span>
+                      <span className={`text-sm font-heading font-bold ${result.color}`}>{totalScore}/19</span>
+                    </div>
+                    <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${Math.min((totalScore / 19) * 100, 100)}%` }}
+                        transition={{ delay: 0.3, duration: 0.8, ease: HIGHLAND_EASE }}
+                        className={`h-full rounded-full ${result.level === "good" ? "bg-primary" : result.level === "caution" ? "bg-accent" : "bg-destructive"}`}
+                      />
+                    </div>
+                    <div className="flex justify-between mt-1.5 text-[10px] text-muted-foreground/50 font-body">
+                      <span>Good</span><span>Needs Attention</span><span>Urgent</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a href="/consultation" className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-xl">
+                      <span className="relative z-10">{result.cta}</span>
+                      <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
+                    </a>
+                    <a href="tel:+18285247773" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">
+                      Call (828) 524-7773
+                    </a>
+                  </div>
+                </div>
               )}
             </motion.div>
-          )}
-
-          {currentStep === "contact" && (
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-              <h3 className="text-lg font-heading font-semibold text-foreground mb-1">Your Results Are Ready!</h3>
-              <p className="text-sm text-muted-foreground mb-6">Enter your info to see your personalized assessment and receive a detailed report by email.</p>
-              <form onSubmit={handleContactSubmit} className="space-y-3">
-                <input type="text" placeholder="Your Name" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm" />
-                <input type="email" placeholder="Your Email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} required className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm" />
-                <input type="tel" placeholder="Your Phone (optional)" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm" />
-                <button type="submit" className="w-full cta-gradient text-accent-foreground font-bold py-3 rounded-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-                  See My Results <ArrowRight className="w-4 h-4" />
-                </button>
-                <p className="text-xs text-muted-foreground text-center">No spam. Your info stays private.</p>
-              </form>
-              <button onClick={() => setCurrentStep("q5")} className="mt-4 text-sm text-primary font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
-                <ArrowLeft className="w-3.5 h-3.5" /> Back
-              </button>
-            </motion.div>
-          )}
-
-          {currentStep === "result" && (
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center">
-              <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${result.level === "good" ? "bg-primary/10" : result.level === "caution" ? "bg-accent/10" : "bg-destructive/10"}`}>
-                <ResultIcon className={`w-8 h-8 ${result.color}`} />
-              </div>
-              <h3 className="text-xl font-heading font-bold text-foreground mb-2">{result.title}</h3>
-              <p className="text-muted-foreground mb-6">{result.description}</p>
-
-              <div className="bg-secondary rounded-lg p-4 mb-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-foreground">Your Roof Health Score</span>
-                  <span className={`text-sm font-bold ${result.color}`}>{totalScore}/19</span>
-                </div>
-                <div className="w-full h-3 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className={`h-full rounded-full transition-all ${result.level === "good" ? "bg-primary" : result.level === "caution" ? "bg-accent" : "bg-destructive"}`}
-                    style={{ width: `${Math.min((totalScore / 19) * 100, 100)}%` }}
-                  />
-                </div>
-                <div className="flex justify-between mt-1 text-xs text-muted-foreground">
-                  <span>Good</span><span>Needs Attention</span><span>Urgent</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="/request-inspection" className="cta-gradient text-accent-foreground font-bold px-8 py-3 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-                  {result.cta} <ArrowRight className="w-4 h-4" />
-                </a>
-                <a href="tel:8283979211" className="border border-border text-foreground font-semibold px-8 py-3 rounded-md inline-flex items-center justify-center gap-2 hover:bg-muted transition-colors">
-                  Call (828) 397-9211
-                </a>
-              </div>
-            </motion.div>
-          )}
+          </AnimatePresence>
         </div>
       </div>
     </section>

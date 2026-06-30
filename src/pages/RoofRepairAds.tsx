@@ -1,0 +1,61 @@
+import PaidAdsLanding from "@/components/PaidAdsLanding";
+import heroImg from "@/assets/gallery/asphalt-003.jpg";
+
+const RoofRepairAds = () => (
+  <PaidAdsLanding
+    title="Roof Repair Landing Page | Leak Help Fast"
+    description="Roof repair landing page for paid traffic with a faster form, leak-focused messaging, and conversion-oriented trust proof for Western North Carolina homeowners."
+    path="/lp/roof-repair"
+    serviceName="Roof Repair"
+    heroImage={heroImg}
+    heroAlt="Roof repair work on a residential home in Western North Carolina"
+    eyebrow="Roof repair landing page"
+    headline="Roof leak or damage? Get the repair answer fast."
+    subheadline="We diagnose the actual source, explain whether repair makes sense, and move quickly when water is getting inside your home."
+    ctaLabel="Schedule Repair Assessment"
+    urgencyOptions={["Leak happening now", "Within 48 hours", "This week", "Just comparing options"]}
+    trustStats={[
+      { value: "48hr", label: "Assessment goal", detail: "Same-day for urgent leak calls" },
+      { value: "Honest", label: "Repair guidance", detail: "We tell you if replacement is unnecessary" },
+      { value: "Local", label: "Crew accountability", detail: "In-house Highlander crews" },
+      { value: "2017", label: "Serving WNC", detail: "Family-owned, locally run by a mountain-experienced team" },
+    ]}
+    highlights={[
+      "Leak tracing that focuses on the real source instead of a guess near the stain.",
+      "Targeted repair recommendations when a full replacement is not the right spend.",
+      "Documentation and photos so you know exactly what was found.",
+      "Fast local follow-up for active leak situations across Western North Carolina.",
+    ]}
+    quickSteps={[
+      { title: "Tell us what you are seeing", detail: "A few details about the leak, missing shingles, or damage help us prioritize quickly." },
+      { title: "We inspect the source", detail: "We assess the roof system, flashing, and nearby failure points instead of treating symptoms only." },
+      { title: "You get a straight recommendation", detail: "Repair now, monitor, or replace — with the reasoning explained clearly." },
+    ]}
+    trustBullets={[
+      "Permanent-minded repairs, not temporary patchwork sold as a solution",
+      "Licensed and insured local team",
+      "Written scopes and warranty-backed workmanship",
+    ]}
+    testimonial={{
+      quote: "They found the real leak source in one visit after two other contractors guessed wrong. The repair was clean, quick, and fully explained.",
+      name: "Mark T.",
+      location: "Franklin, NC",
+    }}
+    faqs={[
+      {
+        question: "Can you fix a leak without replacing the whole roof?",
+        answer: "Often yes. If the issue is isolated and the surrounding roof system is still sound, a targeted repair is usually the right move. We inspect before recommending anything bigger.",
+      },
+      {
+        question: "How soon can someone look at my roof repair issue?",
+        answer: "Active leaks get priority. Most non-emergency repair assessments are scheduled on a same-day or next-day basis depending on weather and call volume.",
+      },
+      {
+        question: "Will you tell me if repair is no longer the smart option?",
+        answer: "Yes. If the roof has moved beyond cost-effective repair, we explain why clearly so you are not spending money twice.",
+      },
+    ]}
+  />
+);
+
+export default RoofRepairAds;

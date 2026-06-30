@@ -1,0 +1,188 @@
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+
+type Lead = {
+  id: string;
+  created_at: string;
+  source: string;
+  lead_type: string | null;
+  status: string;
+  name: string | null;
+  phone: string | null;
+  email: string | null;
+  property_town: string | null;
+  service_category: string | null;
+  project_type: string | null;
+  urgency: string | null;
+  project_description: string | null;
+  chat_summary: string | null;
+  page_url: string | null;
+};
+
+const STATUSES = [
+  "new",
+  "contacted",
+  "estimate_scheduled",
+  "waiting_on_customer",
+  "not_a_fit",
+  "closed",
+  "archived",
+];
+
+export default function AdminLeads() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const [authed, setAuthed] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [leads, setLeads] = useState<Lead[]>([]);
+  const [selected, setSelected] = useState<Lead | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    supabase.auth.getSession().then(async ({ data }) => {
+      if (!mounted) return;
+      const session = data.session;
+      setAuthed(!!session);
+      if (!session) {
+        setLoading(false);
+        navigate("/admin/login", { replace: true });
+        return;
+      }
+      const { data: roles } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", session.user.id);
+      const admin = (roles ?? []).some((r: { role: string }) => r.role === "admin");
+      setIsAdmin(admin);
+      if (admin) {
+        const { data: rows } = await supabase
+          .from("leads")
+          .select("id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url")
+          .order("created_at", { ascending: false })
+          .limit(200);
+        setLeads((rows ?? []) as Lead[]);
+      }
+      setLoading(false);
+    });
+    return () => { mounted = false; };
+  }, [navigate]);
+
+  const updateStatus = async (id: string, status: string) => {
+    const { error } = await supabase.from("leads").update({ status }).eq("id", id);
+    if (!error) setLeads(prev => prev.map(l => l.id === id ? { ...l, status } : l));
+  };
+
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    navigate("/admin/login", { replace: true });
+  };
+
+  if (loading) return <div className="p-10 text-sm">Loading…</div>;
+  if (!authed) return null;
+  if (!isAdmin) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-6">
+        <div className="max-w-md text-center space-y-3">
+          <h1 className="text-xl font-heading font-bold">Not authorized</h1>
+          <p className="text-sm text-muted-foreground">Your account is signed in but does not have the <code>admin</code> role. Ask an existing admin to grant it.</p>
+          <button onClick={signOut} className="text-sm underline">Sign out</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <header className="border-b border-border px-6 py-4 flex items-center justify-between">
+        <div>
+          <h1 className="text-lg font-heading font-bold">Leads — Internal</h1>
+          <p className="text-xs text-muted-foreground">Showing latest 200 leads. Not visible to the public.</p>
+        </div>
+        <div className="flex items-center gap-4 text-sm">
+          <Link to="/" className="underline">← Site</Link>
+          <button onClick={signOut} className="underline">Sign out</button>
+        </div>
+      </header>
+      <div className="grid lg:grid-cols-[1fr_2fr] gap-0 min-h-[calc(100vh-65px)]">
+        <div className="border-r border-border overflow-auto max-h-[calc(100vh-65px)]">
+          {leads.length === 0 && (
+            <p className="p-6 text-sm text-muted-foreground">No leads yet.</p>
+          )}
+          {leads.map(l => (
+            <button
+              key={l.id}
+              onClick={() => setSelected(l)}
+              className={`w-full text-left px-4 py-3 border-b border-border hover:bg-muted/40 transition ${selected?.id === l.id ? "bg-muted/60" : ""}`}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-sm font-semibold">{l.name || l.email || l.phone || "Anonymous"}</span>
+                <span className="text-[10px] uppercase tracking-wide bg-primary/10 text-primary px-1.5 py-0.5 rounded">{l.status}</span>
+              </div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">
+                {l.source} · {l.lead_type ?? "—"} · {l.property_town ?? ""}
+              </div>
+              <div className="text-[10px] text-muted-foreground/70 mt-0.5">{new Date(l.created_at).toLocaleString()}</div>
+            </button>
+          ))}
+        </div>
+        <div className="p-6 overflow-auto max-h-[calc(100vh-65px)]">
+          {!selected && <p className="text-sm text-muted-foreground">Select a lead.</p>}
+          {selected && (
+            <div className="space-y-4 max-w-2xl">
+              <div>
+                <h2 className="text-xl font-heading font-bold">{selected.name || "Unnamed lead"}</h2>
+                <p className="text-xs text-muted-foreground">{new Date(selected.created_at).toLocaleString()} · {selected.source}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <Field label="Phone" value={selected.phone} link={selected.phone ? `tel:${selected.phone}` : undefined} />
+                <Field label="Email" value={selected.email} link={selected.email ? `mailto:${selected.email}` : undefined} />
+                <Field label="Town" value={selected.property_town} />
+                <Field label="Service" value={selected.service_category} />
+                <Field label="Project type" value={selected.project_type} />
+                <Field label="Urgency" value={selected.urgency} />
+                <Field label="Page" value={selected.page_url} />
+                <Field label="Lead type" value={selected.lead_type} />
+              </div>
+              {selected.project_description && (
+                <div>
+                  <p className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1">Description</p>
+                  <p className="text-sm whitespace-pre-wrap bg-muted/40 p-3 rounded">{selected.project_description}</p>
+                </div>
+              )}
+              {selected.chat_summary && (
+                <div>
+                  <p className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1">Chat summary</p>
+                  <pre className="text-xs whitespace-pre-wrap bg-muted/40 p-3 rounded">{selected.chat_summary}</pre>
+                </div>
+              )}
+              <div>
+                <label className="text-[11px] uppercase tracking-wide text-muted-foreground block mb-1">Status</label>
+                <select
+                  value={selected.status}
+                  onChange={(e) => { updateStatus(selected.id, e.target.value); setSelected({ ...selected, status: e.target.value }); }}
+                  className="border border-input rounded px-2 py-1 text-sm bg-background"
+                >
+                  {STATUSES.map(s => <option key={s} value={s}>{s}</option>)}
+                </select>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Field({ label, value, link }: { label: string; value: string | null; link?: string }) {
+  return (
+    <div>
+      <p className="text-[11px] uppercase tracking-wide text-muted-foreground">{label}</p>
+      {link ? (
+        <a href={link} className="text-sm underline break-all">{value || "—"}</a>
+      ) : (
+        <p className="text-sm break-all">{value || "—"}</p>
+      )}
+    </div>
+  );
+}

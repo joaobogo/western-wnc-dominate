@@ -1,52 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ── Mobile typography readability pass (client feedback — Robert) ──
+   Bumps tiny utility sizes a notch on smartphone widths so body copy,
+   form labels, card descriptions, and footer text stay legible without
+   forcing zoom. Desktop sizes are unchanged. */
+@media (max-width: 640px) {
+  .text-xs { font-size: 0.84rem !important; line-height: 1.45 !important; } /* 13.5px */
+  .text-sm { font-size: 0.95rem !important; line-height: 1.55 !important; } /* 15.2px */
+  /* Ensure form controls hit 16px to prevent iOS zoom-on-focus */
+  input, textarea, select { font-size: 16px !important; }
+  /* Tap target floor for inline anchors and small buttons */
+  a, button { min-height: auto; }
+}
+
+/* ── Global scroll-performance pass ──
+   Stops reveal animations from causing scroll jank by:
+   1. Respecting prefers-reduced-motion sitewide (kills all transitions/animations).
+   2. Keeping images stable while loading (prevents CLS-driven re-layout).
+   3. Hinting the compositor to skip painting offscreen sections.
+   Keep this block minimal — opt sections in via .perf-skip when safe. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Default image rendering — preserve aspect-ratio when width/height attrs are set */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Sections that are mostly offscreen on initial load can skip painting until near viewport.
+   Use sparingly — apply to heavy below-the-fold sections (galleries, grids, FAQs). */
+.perf-skip {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
 @layer base {
   :root {
-    --background: 40 18% 97%;
-    --foreground: 200 15% 12%;
+    /* Highlander Heritage Palette — Refined */
+    --background: 0 0% 100%; /* Pure white for maximum clarity */
+    --foreground: 210 20% 12%;
 
-    --card: 40 15% 99%;
-    --card-foreground: 200 15% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 12%;
 
-    --popover: 40 15% 99%;
-    --popover-foreground: 200 15% 12%;
+    --popover: 42 14% 100%;
+    --popover-foreground: 210 20% 12%;
 
-    --primary: 156 32% 18%;
-    --primary-foreground: 40 18% 96%;
+    /* Deep forest / heritage green — richer but lighter */
+    --primary: 158 38% 18%; 
+    --primary-foreground: 42 18% 98%;
 
-    --secondary: 40 20% 93%;
-    --secondary-foreground: 200 15% 12%;
+    /* Warm stone — much cleaner and brighter */
+    --secondary: 42 20% 97%; 
+    --secondary-foreground: 210 20% 12%;
 
-    --muted: 40 12% 91%;
-    --muted-foreground: 200 8% 45%;
+    --muted: 42 15% 94%; 
+    --muted-foreground: 210 10% 42%;
 
-    --accent: 42 65% 46%;
-    --accent-foreground: 200 15% 10%;
+    /* Highland gold — adjusted for better accessibility/contrast */
+    --accent: 38 98% 46%; 
+    --accent-foreground: 210 20% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 40 12% 87%;
-    --input: 40 12% 87%;
-    --ring: 156 32% 18%;
+    --border: 38 12% 88%;
+    --input: 38 12% 88%;
+    --ring: 158 38% 18%;
 
-    --radius: 0.375rem;
+    --radius: 0rem; 
 
-    /* Custom tokens */
-    --dark-section: 200 18% 10%;
-    --dark-section-foreground: 40 18% 94%;
-    --trust-badge: 156 28% 26%;
-    --cta-gradient-from: 42 65% 46%;
-    --cta-gradient-to: 36 60% 40%;
-    --hero-overlay: 200 20% 8%;
-    --heritage: 156 20% 14%;
-    --heritage-foreground: 40 18% 94%;
-    --gold: 42 65% 46%;
-    --gold-muted: 42 35% 72%;
+    /* Heritage tokens — refined for brightness and readability */
+    --dark-section: 158 35% 15%; /* Slightly more saturated but dark enough for contrast */
+    --dark-section-foreground: 42 20% 99%;
+    --trust-badge: 158 35% 20%; 
+    --cta-gradient-from: 38 98% 54%; /* Slightly brighter gold */
+    --cta-gradient-to: 32 95% 48%;
+    --hero-overlay: 158 30% 6%; /* Deep but we will use lower opacities */
+    --heritage-green: 158 38% 18%;
+    --heritage-charcoal: 210 25% 10%;
+    --highland-gold: 38 98% 48%; /* Improved contrast gold */
+    --highland-gold-light: 38 55% 75%;
+    --tartan-line: 158 30% 28%;
+    --tartan-accent: 0 45% 35%;
+    --warm-stone: 34 20% 92%;
+    --slate: 210 14% 50%;
+    --slate-light: 210 12% 70%;
+    --slate-dark: 210 16% 34%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -59,25 +112,25 @@
   }
 
   .dark {
-    --background: 200 18% 7%;
-    --foreground: 40 18% 94%;
-    --card: 200 15% 10%;
-    --card-foreground: 40 18% 94%;
-    --popover: 200 15% 10%;
-    --popover-foreground: 40 18% 94%;
-    --primary: 156 32% 40%;
-    --primary-foreground: 200 18% 7%;
-    --secondary: 200 12% 15%;
-    --secondary-foreground: 40 18% 94%;
-    --muted: 200 12% 15%;
-    --muted-foreground: 40 8% 55%;
-    --accent: 42 65% 52%;
-    --accent-foreground: 200 18% 7%;
+    --background: 210 20% 7%;
+    --foreground: 45 12% 92%;
+    --card: 210 18% 10%;
+    --card-foreground: 45 12% 92%;
+    --popover: 210 18% 10%;
+    --popover-foreground: 45 12% 92%;
+    --primary: 160 30% 38%;
+    --primary-foreground: 210 20% 7%;
+    --secondary: 210 12% 14%;
+    --secondary-foreground: 45 12% 92%;
+    --muted: 210 12% 14%;
+    --muted-foreground: 45 8% 55%;
+    --accent: 40 55% 52%;
+    --accent-foreground: 210 20% 7%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 200 12% 18%;
-    --input: 200 12% 18%;
-    --ring: 156 32% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 12% 18%;
+    --input: 210 12% 18%;
+    --ring: 160 30% 38%;
   }
 }
 
@@ -88,66 +141,1003 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 150px;
+    }
+  }
+
+  /* ──────────────────────────────────────
+     GLOBAL HEADER SAFETY
+     The Header component is `position: fixed`. Every hero / first
+     section needs space underneath so the fixed bar never covers
+     eyebrow, H1, breadcrumb, CTA, or first-section content.
+     ────────────────────────────────────── */
+  :root {
+    --header-h: 80px;
+    --header-h-md: 120px;
+    --header-h-scrolled: 68px;
+    --header-h-scrolled-md: 88px;
+  }
+
+  /* Every hero whose content stacks from the top automatically clears
+     the header. Heroes that use `flex items-end` (bottom-anchored) are
+     unaffected because their padding-top is intentionally minimal. */
+  main > section:first-of-type:not(.no-header-pad):not([data-hero-anchored="bottom"]) {
+    scroll-margin-top: var(--header-h);
+  }
+
+  @media (min-width: 768px) {
+    main > section:first-of-type:not(.no-header-pad):not([data-hero-anchored="bottom"]) {
+      scroll-margin-top: var(--header-h-md);
+    }
+  }
+}
+
+@layer utilities {
+  /* Apply to the inner content wrapper of any hero so the headline
+     never collides with the fixed header. Pairs with `flex items-end`
+     heroes (pushes content slightly down from the very top edge). */
+  .hero-clears-header {
+    padding-top: calc(var(--header-h) + 2rem);
+  }
+  @media (min-width: 768px) {
+    .hero-clears-header {
+      padding-top: calc(var(--header-h-md) + 2.5rem);
+    }
+  }
+
+  main[class~="pt-20"],
+  main[class~="pt-24"],
+  main > section:first-of-type[class~="pt-20"],
+  main > section:first-of-type[class~="pt-24"],
+  main > section:first-of-type > div[class~="pt-20"],
+  main > section:first-of-type > div[class~="pt-24"] {
+    padding-top: calc(var(--header-h) + 1.5rem) !important;
+  }
+
+  main > section:first-of-type[class~="pt-32"],
+  main > section:first-of-type > div[class~="pt-32"] {
+    padding-top: max(8rem, calc(var(--header-h) + 1.5rem)) !important;
+  }
+
+  @media (min-width: 768px) {
+    main[class~="md:pt-28"],
+    main[class~="md:pt-32"],
+    main > section:first-of-type[class~="md:pt-28"],
+    main > section:first-of-type[class~="md:pt-32"],
+    main > section:first-of-type > div[class~="md:pt-28"],
+    main > section:first-of-type > div[class~="md:pt-32"] {
+      padding-top: calc(var(--header-h-md) + 2rem) !important;
+    }
+
+    main > section:first-of-type[class~="md:pt-40"],
+    main > section:first-of-type > div[class~="md:pt-40"] {
+      padding-top: max(10rem, calc(var(--header-h-md) + 2rem)) !important;
+    }
+
+    main > section:first-of-type[class~="md:pt-48"],
+    main > section:first-of-type > div[class~="md:pt-48"] {
+      padding-top: max(12rem, calc(var(--header-h-md) + 2rem)) !important;
+    }
+  }
+
+  /* ─── Global header-overlap safety net ─────────────────────────────
+     Scroll-anchor offset so jump links never land beneath the fixed
+     header, plus fallback minimum top padding for any first-of-type
+     section that doesn't already declare its own pt-* / min-h-* hero
+     treatment. */
+  main > section:first-of-type {
+    scroll-margin-top: var(--header-h-md);
+  }
+  html {
+    scroll-padding-top: var(--header-h-md);
+  }
+  main > section:first-of-type:not([class*="min-h-"]):not([class*="pt-"]) {
+    padding-top: calc(var(--header-h) + 1rem);
+  }
+  @media (min-width: 768px) {
+    main > section:first-of-type:not([class*="min-h-"]):not([class*="pt-"]):not([class*="md:pt-"]) {
+      padding-top: calc(var(--header-h-md) + 1rem);
+    }
+  }
+
+  /* Third-party floating widgets must not cover the first hero content on mobile. */
+  @media (max-width: 767px) {
+    #rwl-neighborhood,
+    body > div[id^="0-"],
+    body > div:not(#root):has([style*="writing-mode"]),
+    body > div:not(#root):has([style*="rotate"]) {
+      display: none !important;
+    }
   }
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-size: 1.125rem; /* Base 18px for better readability */
+    letter-spacing: 0.01em;
+    line-height: 1.7; /* Increased line-height */
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.25rem; /* 20px on desktop */
+    }
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+  /* ──────────────────────────────────────
+     HEADING HIERARCHY — Cormorant Garamond
+     Tight tracking, design-led line-height
+     ────────────────────────────────────── */
+  h1 {
+    @apply font-heading font-bold;
+    font-size: clamp(2.5rem, 5vw + 0.5rem, 4.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+  h2 {
+    @apply font-heading font-bold;
+    font-size: clamp(1.875rem, 3.5vw + 0.25rem, 3.25rem);
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+  h3 {
+    @apply font-heading font-semibold;
+    font-size: clamp(1.5rem, 2.5vw + 0.25rem, 2.25rem);
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+  h4 {
+    @apply font-heading font-semibold;
+    font-size: clamp(1.25rem, 1.8vw + 0.125rem, 1.625rem);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  h5 {
+    @apply font-heading font-semibold;
+    font-size: 1.25rem;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+  }
+  h6 {
+    @apply font-heading font-semibold;
+    font-size: 1.125rem;
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+
+  /* ──────────────────────────────────────
+     PARAGRAPH RHYTHM — DM Sans
+     Generous line-height, comfortable measure
+     ────────────────────────────────────── */
+  p {
+    @apply font-body text-foreground/95;
+    max-width: 65ch; /* Slightly shorter line length for focus */
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+  
+  @media (min-width: 768px) {
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  p + p {
+    margin-top: 1.5rem;
+  }
+
+  /* Lead paragraph — opening statements, hero subtitles */
+  .lead {
+    @apply font-body text-xl md:text-2xl text-muted-foreground leading-relaxed;
+    max-width: 60ch;
+  }
+
+  /* Selection color */
+  ::selection {
+    background: hsl(var(--highland-gold) / 0.25);
+    color: hsl(var(--heritage-charcoal));
   }
 }
 
 @layer components {
   .section-padding {
-    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16 lg:py-32;
+    @apply px-6 py-12 md:px-10 md:py-24 lg:px-20 lg:py-28;
+  }
+
+  /* Safe bottom padding for sticky mobile CTA */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Mobile-first: bottom padding to account for sticky CTA bar */
+  @media (max-width: 767px) {
+    main > section:last-child {
+      padding-bottom: 5rem;
+    }
   }
 
   .section-dark {
     background: hsl(var(--dark-section));
     color: hsl(var(--dark-section-foreground));
+    @apply py-20 md:py-32;
   }
 
   .container-tight {
-    @apply max-w-6xl mx-auto;
+    @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
   }
 
   .cta-gradient {
-    background: linear-gradient(135deg, hsl(var(--cta-gradient-from)), hsl(var(--cta-gradient-to)));
+    background: linear-gradient(135deg, hsl(38 95% 58%), hsl(32 90% 48%));
+    box-shadow: 0 6px 20px -4px hsl(var(--highland-gold) / 0.4);
+    border: 1px solid hsl(var(--highland-gold) / 0.3);
   }
 
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Tartan-inspired subtle diagonal pattern */
-  .tartan-accent {
+  /* ──────────────────────────────────────
+     TARTAN PATTERN SYSTEM
+     Subtle, heritage-inspired textures
+     ────────────────────────────────────── */
+
+  /* Light tartan for section backgrounds */
+  .tartan-bg {
     background-image: 
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        hsl(var(--primary) / 0.03) 10px,
-        hsl(var(--primary) / 0.03) 11px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 10px,
-        hsl(var(--gold) / 0.03) 10px,
-        hsl(var(--gold) / 0.03) 11px
-      );
+      linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)),
+      url('/tartan.png');
+    background-size: 320px auto;
+    background-repeat: repeat;
   }
 
-  /* Heritage divider */
-  .heritage-divider {
+  /* Darker tartan for dark sections */
+  .tartan-dark {
+    background-image: 
+      linear-gradient(rgba(24, 46, 39, 0.97), rgba(24, 46, 39, 0.97)),
+      url('/tartan.png');
+    background-size: 400px auto;
+    background-repeat: repeat;
+  }
+
+  /* Very subtle watermark version */
+  .tartan-watermark {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.992), rgba(255, 255, 255, 0.992)),
+      url('/tartan.png');
+    background-size: 500px auto;
+    background-repeat: repeat;
+  }
+
+  /* Subtle accent band using the tartan */
+  .tartan-accent-band {
+    position: relative;
+    overflow: hidden;
+  }
+  .tartan-accent-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-image: url('/tartan.png');
+    background-size: 120px auto;
+    opacity: 0.6;
+  }
+
+  /* Ultra-subtle overlay for images */
+  .tartan-image-overlay {
+    position: relative;
+  }
+  .tartan-image-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/tartan.png');
+    background-size: 200px auto;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  /* Subtle tartan for hover states */
+  .tartan-hover {
+    position: relative;
+    overflow: hidden;
+  }
+  .tartan-hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+      url('/tartan.png');
+    background-size: 160px auto;
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .tartan-hover:hover::before {
+    opacity: 1;
+  }
+
+  /* ──────────────────────────────────────
+     HERITAGE DIVIDER
+     Gold accent line with optional knot
+     ────────────────────────────────────── */
+  .heritage-line {
     @apply relative;
   }
-  .heritage-divider::after {
+  .heritage-line::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-12 h-0.5;
-    background: hsl(var(--gold));
+    @apply absolute bottom-0 left-0 h-px;
+    width: 3rem;
+    background: linear-gradient(90deg, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0));
+  }
+  .heritage-line-center::after {
+    @apply left-1/2 -translate-x-1/2;
+    width: 4rem;
+    background: linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0));
+  }
+
+  /* ──────────────────────────────────────
+     PREMIUM CARD SYSTEM
+     ────────────────────────────────────── */
+  .card-premium {
+    @apply bg-card border border-border rounded-none relative overflow-hidden shadow-sm;
+    transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-premium:hover {
+    border-color: hsl(var(--highland-gold) / 0.25);
+    box-shadow: 0 12px 30px -10px hsl(var(--heritage-charcoal) / 0.1),
+                0 0 0 1px hsl(var(--highland-gold) / 0.1);
+    transform: translateY(-4px);
+  }
+  .card-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0.2));
+    transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-premium:hover::after {
+    height: 100%;
+  }
+
+  /* ──────────────────────────────────────
+     EYEBROW / LABEL STYLE
+     ────────────────────────────────────── */
+  .eyebrow {
+    @apply text-eyebrow-size font-semibold uppercase text-accent;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  /* Section label — slightly larger than eyebrow, used above section headings */
+  .section-label {
+    @apply text-label uppercase text-accent;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  /* ──────────────────────────────────────
+     SECTION HEADING PATTERN
+     ────────────────────────────────────── */
+  .section-heading {
+    @apply text-display font-heading font-bold text-foreground;
+  }
+
+  .section-subheading {
+    @apply text-heading-lg font-heading font-bold text-foreground;
+  }
+
+  /* ──────────────────────────────────────
+     STAT / NUMBER TYPOGRAPHY
+     Large impact numbers for proof strips
+     ────────────────────────────────────── */
+  .stat-number {
+    @apply text-stat font-heading font-bold text-foreground;
+  }
+  .stat-number-sm {
+    @apply text-stat-sm font-heading font-bold text-foreground;
+  }
+  .stat-label {
+    @apply text-body-sm font-body font-medium uppercase tracking-widest text-muted-foreground;
+  }
+
+  /* ──────────────────────────────────────
+     CTA TYPOGRAPHY
+     Strong, compact, confident
+     ────────────────────────────────────── */
+  .cta-text {
+    @apply text-[12px] font-body font-bold uppercase tracking-[0.12em];
+  }
+  .cta-text-lg {
+    @apply text-[14px] font-body font-bold uppercase tracking-[0.1em];
+  }
+
+  /* ──────────────────────────────────────
+     CONTENT TYPOGRAPHY HELPERS
+     ────────────────────────────────────── */
+  /* Pull quote — editorial emphasis */
+  .pull-quote {
+    @apply font-heading text-heading-lg font-medium italic text-foreground;
+    max-width: 48ch;
+  }
+
+  /* Caption — image labels, fine print */
+  .caption {
+    @apply text-body-sm font-body text-muted-foreground;
+  }
+
+  /* Kicker — small bold label inline with content */
+  .kicker {
+    @apply text-body-sm font-body font-bold text-foreground uppercase tracking-wider;
+  }
+
+  /* ──────────────────────────────────────
+     SCROLL MOMENTUM & MICRO-INTERACTIONS
+     ────────────────────────────────────── */
+
+  /* Stagger background tones for visual rhythm */
+  .bg-warm-cream {
+    background-color: hsl(42 18% 95%);
+  }
+
+  /* Card lift on hover — reusable */
+  .card-lift {
+    @apply transition-all duration-500;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px -10px hsl(var(--heritage-charcoal) / 0.07),
+                0 0 0 1px hsl(var(--highland-gold) / 0.06);
+  }
+
+  /* Image reveal on scroll — clip-path */
+  .image-reveal {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .image-reveal.revealed {
+    clip-path: inset(0 0 0% 0);
+  }
+
+  /* Subtle parallax depth layers */
+  .depth-layer-1 {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  .depth-layer-2 {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Glow on hover for CTAs */
+  .glow-hover {
+    @apply relative;
+  }
+  .glow-hover::after {
+    content: '';
+    @apply absolute inset-0 rounded-sm opacity-0;
+    background: radial-gradient(circle at center, hsl(var(--highland-gold) / 0.12), transparent 70%);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .glow-hover:hover::after {
+    opacity: 1;
+  }
+
+  /* Stagger entrance for grid children */
+  .stagger-grid > * {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  .stagger-grid > *:nth-child(1) { animation-delay: 0s; }
+  .stagger-grid > *:nth-child(2) { animation-delay: 0.06s; }
+  .stagger-grid > *:nth-child(3) { animation-delay: 0.12s; }
+  .stagger-grid > *:nth-child(4) { animation-delay: 0.18s; }
+  .stagger-grid > *:nth-child(5) { animation-delay: 0.24s; }
+  .stagger-grid > *:nth-child(6) { animation-delay: 0.3s; }
+  .stagger-grid > *:nth-child(7) { animation-delay: 0.36s; }
+  .stagger-grid > *:nth-child(8) { animation-delay: 0.42s; }
+
+  /* ──────────────────────────────────────
+     MICRO-INTERACTION SYSTEM
+     Premium tactile feedback & division-aware
+     ────────────────────────────────────── */
+
+  /* === BUTTON INTERACTIONS === */
+  /* Primary CTA — shimmer + tactile press, refined timing */
+  .btn-primary-interactive {
+    @apply relative overflow-hidden;
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s, box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-primary-interactive:hover {
+    transform: scale(1.015);
+    box-shadow: 0 8px 28px -6px hsl(var(--highland-gold) / 0.3);
+  }
+  .btn-primary-interactive:active {
+    transform: scale(0.975);
+    box-shadow: 0 2px 6px -2px hsl(var(--highland-gold) / 0.2);
+    transition-duration: 0.08s;
+  }
+  .btn-primary-interactive::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 30%, hsl(0 0% 100% / 0.1) 50%, transparent 70%);
+    transform: translateX(-150%);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .btn-primary-interactive:hover::before {
+    transform: translateX(150%);
+  }
+
+  /* Secondary/Ghost — subtle scale with spring-like ease */
+  .btn-ghost-interactive {
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s;
+  }
+  .btn-ghost-interactive:hover {
+    transform: scale(1.015);
+  }
+  .btn-ghost-interactive:active {
+    transform: scale(0.975);
+    transition-duration: 0.08s;
+  }
+
+  /* Arrow icons inside CTAs — smooth translate on hover */
+  .btn-arrow-icon {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .btn-arrow-icon,
+  *:hover > .btn-arrow-icon {
+    transform: translateX(3px);
+  }
+
+  /* === LINK INTERACTIONS === */
+  /* Underline draw from left — for inline links */
+  .link-draw {
+    @apply relative inline-block;
+  }
+  .link-draw::after {
+    content: '';
+    @apply absolute left-0 bottom-0 h-[1px] w-full;
+    background: hsl(var(--highland-gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-draw:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* === IMAGE INTERACTIONS === */
+  /* Controlled zoom — within overflow-hidden container */
+  .img-zoom {
+    @apply transition-transform duration-700;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .img-zoom,
+  *:hover > .img-zoom {
+    transform: scale(1.03);
+  }
+
+  /* === FORM FIELD INTERACTIONS === */
+  /* Premium focus state — gold accent with glow */
+  .field-premium {
+    @apply transition-all duration-300;
+    border: 1px solid hsl(var(--border));
+    background: transparent;
+  }
+  .field-premium:focus {
+    border-color: hsl(var(--highland-gold) / 0.5);
+    box-shadow:
+      0 0 0 3px hsl(var(--highland-gold) / 0.08),
+      0 1px 2px hsl(var(--heritage-charcoal) / 0.04);
+    outline: none;
+  }
+  .field-premium::placeholder {
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .field-premium:focus::placeholder {
+    opacity: 0.4;
+    transform: translateX(4px);
+  }
+
+  /* Dark form variant */
+  .field-premium-dark {
+    @apply transition-all duration-300;
+    border: 1px solid hsl(var(--dark-section-foreground) / 0.1);
+    background: hsl(var(--dark-section));
+  }
+  .field-premium-dark:focus {
+    border-color: hsl(var(--highland-gold) / 0.5);
+    box-shadow:
+      0 0 0 3px hsl(var(--highland-gold) / 0.06),
+      0 1px 2px hsl(var(--heritage-charcoal) / 0.08);
+    outline: none;
+  }
+
+  /* Floating label effect (for enhanced forms) */
+  .field-label-float {
+    @apply transition-all duration-200;
+    transform-origin: left;
+  }
+  .field-label-float.active {
+    transform: translateY(-2px) scale(0.92);
+    color: hsl(var(--highland-gold));
+  }
+
+  /* === DROPDOWN INTERACTIONS === */
+  .dropdown-premium {
+    @apply transition-all duration-200;
+    transform-origin: top center;
+  }
+  .dropdown-premium[data-state="open"] {
+    animation: dropdownIn 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .dropdown-premium[data-state="closed"] {
+    animation: dropdownOut 0.15s ease-in;
+  }
+
+  /* Dropdown item hover — gold left accent draw */
+  .dropdown-item-premium {
+    @apply relative transition-colors duration-150;
+  }
+  .dropdown-item-premium::before {
+    content: '';
+    @apply absolute left-0 top-0 w-[2px] h-0;
+    background: hsl(var(--highland-gold));
+    transition: height 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .dropdown-item-premium:hover::before {
+    height: 100%;
+  }
+
+  /* === ACCORDION INTERACTIONS === */
+  .accordion-premium {
+    @apply transition-all duration-300;
+  }
+  .accordion-premium[data-state="open"] {
+    border-color: hsl(var(--highland-gold) / 0.15);
+    box-shadow: 0 4px 16px -4px hsl(var(--heritage-charcoal) / 0.04);
+  }
+  /* Smooth icon rotation */
+  .accordion-chevron {
+    @apply transition-transform duration-300;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-state="open"] > .accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* === TAB INTERACTIONS === */
+  .tab-premium {
+    @apply relative transition-all duration-200;
+  }
+  .tab-premium::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-[2px];
+    background: hsl(var(--highland-gold));
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tab-premium[data-state="active"]::after {
+    transform: scaleX(1);
+  }
+  .tab-premium:hover:not([data-state="active"])::after {
+    transform: scaleX(0.5);
+    opacity: 0.3;
+  }
+
+  /* === DIVISION-SPECIFIC INTERACTION ACCENTS === */
+
+  /* Roofing context — heritage green undertones */
+  .interaction-roofing .card-premium:hover::after {
+    background: hsl(var(--heritage-green));
+  }
+  .interaction-roofing .link-draw::after {
+    background: hsl(var(--heritage-green));
+  }
+
+  /* Construction context — gold undertones */
+  .interaction-construction .card-premium:hover::after {
+    background: hsl(var(--highland-gold));
+  }
+  .interaction-construction .link-draw::after {
+    background: hsl(var(--highland-gold));
+  }
+
+  /* Editorial context — muted, slower transitions */
+  .interaction-editorial .card-lift:hover {
+    transform: translateY(-2px);
+  }
+  .interaction-editorial .img-zoom:hover {
+    transform: scale(1.02);
+  }
+
+  /* Quote flow context — heightened trust signals */
+  .interaction-quote .field-premium:focus {
+    box-shadow:
+      0 0 0 3px hsl(var(--highland-gold) / 0.12),
+      0 2px 4px hsl(var(--heritage-charcoal) / 0.06);
+  }
+  .interaction-quote .btn-primary-interactive:hover {
+    box-shadow: 0 8px 32px -4px hsl(var(--highland-gold) / 0.3);
+  }
+
+  /* === TRUST BADGE INTERACTIONS === */
+  .badge-trust {
+    @apply transition-all duration-300;
+  }
+  .badge-trust:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px -3px hsl(var(--heritage-charcoal) / 0.06);
+  }
+
+  /* === PROOF ELEMENT HOVER SYSTEM === */
+  /* Project cards — reveal outcome text on hover */
+  .proof-card-outcome {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease 0.05s;
+    opacity: 0;
+  }
+  .group:hover .proof-card-outcome {
+    max-height: 120px;
+    opacity: 1;
+  }
+
+  /* Touch devices: always show outcome text */
+  @media (hover: none) {
+    .proof-card-outcome {
+      max-height: 120px;
+      opacity: 1;
+    }
+  }
+
+  /* Before/after handle pulse — first-view attention */
+  .ba-handle-pulse {
+    animation: baPulse 2s ease-in-out 1;
+  }
+
+  /* Testimonial card — subtle border glow on hover */
+  .testimonial-hover {
+    @apply transition-all duration-300;
+  }
+  .testimonial-hover:hover {
+    border-color: hsl(var(--highland-gold) / 0.2);
+    box-shadow: 0 0 0 1px hsl(var(--highland-gold) / 0.06),
+                0 8px 24px -8px hsl(var(--heritage-charcoal) / 0.06);
+  }
+
+  /* Process step connector pulse */
+  .process-connector {
+    @apply relative;
+  }
+  .process-connector::after {
+    content: '';
+    @apply absolute left-1/2 -translate-x-1/2 top-full w-px;
+    height: 0;
+    background: linear-gradient(to bottom, hsl(var(--highland-gold) / 0.3), transparent);
+    transition: height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .process-connector.active::after {
+    height: 2rem;
+  }
+
+  /* Team card — photo emphasis on hover */
+  .team-card-photo {
+    @apply transition-transform duration-500;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .team-card-photo {
+    transform: scale(1.05);
+  }
+
+
+  /* === WOW-FACTOR INTERACTIONS === */
+
+  /* Cinematic image zoom — smooth, restrained */
+  .img-zoom-dramatic {
+    transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .img-zoom-dramatic {
+    transform: scale(1.04);
+  }
+
+  /* Active/tap feedback for touch — universal */
+  @media (hover: none) {
+    .btn-primary-interactive:active,
+    .btn-ghost-interactive:active,
+    .card-premium:active,
+    .card-lift:active {
+      transform: scale(0.97);
+      transition-duration: 0.08s;
+    }
+  }
+
+  /* Gold glow pulse ring — for key badges */
+  .glow-ring-gold {
+    box-shadow: 0 0 0 0 hsl(var(--highland-gold) / 0.3);
+    animation: glowRingPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Glass panel — frosted glass effect */
+  .glass-panel {
+    background: hsl(var(--card) / 0.65);
+    backdrop-filter: blur(20px) saturate(1.3);
+    -webkit-backdrop-filter: blur(20px) saturate(1.3);
+    border: 1px solid hsl(var(--border) / 0.4);
+  }
+
+  /* Spotlight hover — radial gold glow from cursor */
+  .spotlight-hover {
+    @apply relative overflow-hidden;
+  }
+  .spotlight-hover::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      hsl(var(--highland-gold) / 0.06) 0%,
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .spotlight-hover:hover::before {
+    opacity: 1;
+  }
+
+  /* Editorial large quote — for testimonial sections */
+  .quote-glyph {
+    position: relative;
+  }
+  .quote-glyph::before {
+    content: '"';
+    position: absolute;
+    top: -0.2em;
+    left: -0.05em;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6em;
+    line-height: 1;
+    color: hsl(var(--highland-gold) / 0.06);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Reveal mask — for cinematic image reveals */
+  .reveal-mask {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal-mask.from-bottom {
+    clip-path: inset(100% 0 0 0);
+  }
+  .reveal-mask.from-bottom.revealed {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Magnetic hover — subtle pull toward cursor */
+  .magnetic-hover {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* === PREMIUM HOVER DEPTH === */
+  /* Cards with subtle shadow depth on hover */
+  .card-depth {
+    @apply transition-all;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-depth:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 60px -15px hsl(var(--heritage-charcoal) / 0.08),
+      0 0 0 1px hsl(var(--highland-gold) / 0.05);
+  }
+
+  /* Gold border draw — left edge draws down on hover */
+  .gold-border-draw {
+    @apply relative;
+  }
+  .gold-border-draw::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0.15));
+    transition: height 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .gold-border-draw:hover::after {
+    height: 100%;
+  }
+
+  /* Smooth image hover zoom inside card */
+  .img-hover-zoom {
+    transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .img-hover-zoom {
+    transform: scale(1.05);
+  }
+
+  /* CTA glow — ambient gold underglow on hover */
+  .cta-glow {
+    @apply relative;
+    transition: box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta-glow:hover {
+    box-shadow:
+      0 8px 30px -6px hsl(var(--highland-gold) / 0.35),
+      0 0 0 1px hsl(var(--highland-gold) / 0.12);
+  }
+  .cta-glow:active {
+    transform: scale(0.98);
+    transition-duration: 0.08s;
+  }
+
+  /* Section entrance — fade up with slight blur clear */
+  .section-entrance {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .section-entrance.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  /* Stat number glow — subtle gold text shadow on counters */
+  .stat-glow {
+    text-shadow: 0 0 40px hsl(var(--highland-gold) / 0.15);
+  }
+
+  /* Border shimmer on dark cards */
+  .border-shimmer {
+    @apply relative overflow-hidden;
+  }
+  .border-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--highland-gold) / 0.4), transparent);
+    transition: left 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .border-shimmer:hover::after {
+    left: 100%;
   }
 }
 
@@ -194,4 +1184,427 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
   }
+
+  /* Gold line draw animation */
+  @keyframes drawLine {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  /* Dropdown enter/exit */
+  @keyframes dropdownIn {
+    from { opacity: 0; transform: translateY(6px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes dropdownOut {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(4px) scale(0.98); }
+  }
+
+  /* Before/after handle attention pulse */
+  @keyframes baPulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--highland-gold) / 0.4); }
+    50% { box-shadow: 0 0 0 8px hsl(var(--highland-gold) / 0); }
+  }
+
+  /* Gold ring pulse — for process badges & key elements */
+  @keyframes glowRingPulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--highland-gold) / 0.25); }
+    50% { box-shadow: 0 0 0 6px hsl(var(--highland-gold) / 0); }
+  }
+
+  /* Slow float — for background decorative elements */
+  @keyframes slowFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-8px) rotate(0.5deg); }
+    66% { transform: translateY(4px) rotate(-0.3deg); }
+  }
+
+  /* ──────────────────────────────────────
+     PHASE 12: PREMIUM MICRO-DETAILS
+     Handcrafted polish layer
+     ────────────────────────────────────── */
+
+  /* Section title line-draw accent — gold underline reveals on scroll */
+  .heading-line-draw {
+    position: relative;
+    display: inline-block;
+  }
+  .heading-line-draw::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 1.5px;
+    width: 0;
+    background: linear-gradient(90deg, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0.2));
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .heading-line-draw.visible::after {
+    width: 48px;
+  }
+
+  /* Premium focus ring — replaces browser default */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--highland-gold) / 0.3),
+                0 0 0 4px hsl(var(--highland-gold) / 0.08);
+    border-radius: 2px;
+  }
+
+  /* Image soft edge highlight — subtle inner glow */
+  .img-edge-glow {
+    position: relative;
+  }
+  .img-edge-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 30px 0 hsl(var(--hero-overlay) / 0.15);
+    pointer-events: none;
+  }
+
+  /* Hover geometry — subtle corner brackets on cards */
+  .hover-brackets {
+    position: relative;
+  }
+  .hover-brackets::before,
+  .hover-brackets::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: hsl(var(--highland-gold) / 0);
+    border-style: solid;
+    border-width: 0;
+    transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .hover-brackets::before {
+    top: -1px;
+    left: -1px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
+  .hover-brackets::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+  }
+  .hover-brackets:hover::before,
+  .hover-brackets:hover::after {
+    border-color: hsl(var(--highland-gold) / 0.25);
+  }
+
+  /* Controlled CTA glow pulse — ambient attention */
+  .cta-ambient-glow {
+    animation: ctaAmbientPulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes ctaAmbientPulse {
+    0%, 100% { box-shadow: 0 4px 16px -4px hsl(var(--highland-gold) / 0.25); }
+    50% { box-shadow: 0 6px 24px -4px hsl(var(--highland-gold) / 0.35); }
+  }
+
+  /* Tactile form field response — subtle background shift */
+  .field-tactile {
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .field-tactile:focus {
+    background-color: hsl(var(--card));
+    border-color: hsl(var(--highland-gold) / 0.4);
+    box-shadow: 0 0 0 3px hsl(var(--highland-gold) / 0.06);
+  }
+
+  /* Elegant hover geometry for team/service cards */
+  .card-craft {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-craft::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0));
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-craft:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px -12px hsl(var(--heritage-charcoal) / 0.08);
+  }
+  .card-craft:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* ──────────────────────────────────────
+     CONSTRUCTION DIVISION VISUAL SYSTEM
+     Spatial, design-led, project-driven
+     Distinct from Roofing's protective/weather tone
+     ────────────────────────────────────── */
+
+  /* Blueprint grid — construction-specific texture */
+  .blueprint-bg {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 48px,
+        hsl(var(--highland-gold) / 0.04) 48px,
+        hsl(var(--highland-gold) / 0.04) 49px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 48px,
+        hsl(var(--highland-gold) / 0.04) 48px,
+        hsl(var(--highland-gold) / 0.04) 49px
+      );
+  }
+
+  /* Blueprint dark — for dark construction sections */
+  .blueprint-dark {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 48px,
+        hsl(var(--highland-gold) / 0.03) 48px,
+        hsl(var(--highland-gold) / 0.03) 49px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 48px,
+        hsl(var(--highland-gold) / 0.03) 48px,
+        hsl(var(--highland-gold) / 0.03) 49px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 192px,
+        hsl(var(--highland-gold) / 0.05) 192px,
+        hsl(var(--highland-gold) / 0.05) 194px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 192px,
+        hsl(var(--highland-gold) / 0.05) 192px,
+        hsl(var(--highland-gold) / 0.05) 194px
+      );
+  }
+
+  /* Construction card — gold accent system (vs roofing green) */
+  .card-construction {
+    @apply bg-card border border-border rounded-sm relative overflow-hidden;
+    transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-construction:hover {
+    border-color: hsl(var(--highland-gold) / 0.25);
+    box-shadow: 0 12px 40px -10px hsl(var(--heritage-charcoal) / 0.08),
+                0 0 0 1px hsl(var(--highland-gold) / 0.08);
+    transform: translateY(-2px);
+  }
+  .card-construction::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0));
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-construction:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* Construction design line — corner accent */
+  .arch-corners {
+    position: relative;
+  }
+  .arch-corners::before,
+  .arch-corners::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: hsl(var(--highland-gold) / 0);
+    border-style: solid;
+    border-width: 0;
+    transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .arch-corners::before {
+    top: -1px;
+    left: -1px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
+  .arch-corners::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+  }
+  .arch-corners:hover::before,
+  .arch-corners:hover::after {
+    border-color: hsl(var(--highland-gold) / 0.3);
+  }
+
+  /* Construction section — warm tinted bg */
+  .section-construction {
+    background: hsl(38 18% 95%);
+  }
+
+  /* Construction dark section — slightly warmer than roofing dark */
+  .section-construction-dark {
+    background: hsl(30 10% 9%);
+    color: hsl(var(--dark-section-foreground));
+  }
+
+  /* Construction form fields — gold focus */
+  .field-construction {
+    @apply transition-all duration-300;
+    border: 1px solid hsl(var(--border));
+    background: transparent;
+  }
+  .field-construction:focus {
+    border-color: hsl(var(--highland-gold) / 0.5);
+    box-shadow:
+      0 0 0 3px hsl(var(--highland-gold) / 0.08),
+      0 1px 2px hsl(var(--heritage-charcoal) / 0.04);
+    outline: none;
+  }
+
+  /* Construction CTA gradient — warmer than default */
+  .cta-construction {
+    background: linear-gradient(135deg, hsl(38 62% 46%), hsl(32 50% 38%));
+    box-shadow: 0 4px 20px -4px hsl(var(--highland-gold) / 0.35);
+  }
+  .cta-construction:hover {
+    box-shadow: 0 8px 28px -6px hsl(var(--highland-gold) / 0.4);
+  }
+
+  /* Measurement marks — subtle ruler marks for construction sections */
+  .ruler-marks {
+    position: relative;
+  }
+  .ruler-marks::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    background: repeating-linear-gradient(
+      to bottom,
+      hsl(var(--highland-gold) / 0.1) 0px,
+      hsl(var(--highland-gold) / 0.1) 4px,
+      transparent 4px,
+      transparent 12px
+    );
+    pointer-events: none;
+  }
+
+  /* Construction quote flow container */
+  .interaction-construction {
+    @apply bg-card border border-border rounded-sm;
+    box-shadow: 0 1px 3px hsl(var(--heritage-charcoal) / 0.04);
+  }
+  .interaction-construction:focus-within {
+    border-color: hsl(var(--highland-gold) / 0.25);
+    box-shadow: 0 4px 20px -8px hsl(var(--highland-gold) / 0.12);
+  }
 }
+
+/* Quantum Lovable - watermark removal */
+#lovable-badge {
+  display: none !important;
+}
+a[href*="lovable.dev"],
+iframe[src*="lovable.dev"],
+div[style*="Edit with Lovable"],
+.lovable-badge {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
+
+/* ──────────────────────────────────────
+   GLOBAL MOBILE READABILITY PASS
+   Enforces minimum legible font sizes on smartphones
+   so cards, FAQs, labels, captions, helper text,
+   footer copy, and CTAs never feel cramped.
+   Desktop sizing is preserved.
+   ────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Form inputs — 16px minimum prevents iOS auto-zoom and improves tap legibility */
+  input,
+  textarea,
+  select,
+  button {
+    font-size: max(1rem, 1em);
+  }
+
+  /* Bump Tailwind's smallest text utilities to readable minimums */
+  .text-xs { font-size: 0.875rem !important; line-height: 1.5 !important; }   /* 12 → 14px */
+  .text-sm { font-size: 1rem !important; line-height: 1.6 !important; }       /* 14 → 16px */
+  .text-base { font-size: 1.0625rem !important; line-height: 1.65 !important; }
+
+  /* Common arbitrary tiny sizes used across the site */
+  .text-\[10px\],
+  .text-\[11px\],
+  .text-\[11\.5px\],
+  .text-\[12px\] { font-size: 13px !important; line-height: 1.5 !important; }
+  .text-\[13px\],
+  .text-\[14px\] { font-size: 15px !important; line-height: 1.55 !important; }
+  .text-\[15px\] { font-size: 16px !important; line-height: 1.6 !important; }
+
+  /* Labels, captions, helpers — never below 14px */
+  label,
+  .caption,
+  figcaption,
+  small {
+    font-size: 0.9375rem !important;
+    line-height: 1.55;
+  }
+
+  /* Buttons & CTAs — readable tap targets */
+  .cta-text { font-size: 13px !important; letter-spacing: 0.1em !important; }
+  .cta-text-lg { font-size: 15px !important; }
+  button, .btn, [role="button"] {
+    min-height: 44px;
+  }
+
+  /* Footer text — keep legible */
+  footer p,
+  footer li,
+  footer a,
+  footer span {
+    font-size: max(0.9375rem, 1em);
+    line-height: 1.6;
+  }
+
+  /* Card/FAQ body copy breathing room */
+  .card-premium p,
+  article p,
+  .faq-answer,
+  [data-faq] p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+

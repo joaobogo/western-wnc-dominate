@@ -1,0 +1,59 @@
+# Highlander Roofing & Construction
+
+> Premium roofing and construction company serving Western North Carolina — Franklin, Sylva, Highlands, Cashiers, and surrounding mountain communities. Licensed, insured, and CertainTeed ShingleMaster Credentialed Contractor. Licensed NC General Contractor with 24-hour response.
+
+Highlander is a family-operated roofing and construction firm built for the WNC mountain climate. Roofing is the primary authority (replacement, repair, metal, synthetic, storm damage, commercial). Construction is a focused secondary pillar (additions, outdoor living, flatwork). All work is performed by in-house crews dispatched from offices in Franklin and Sylva.
+
+## Pages
+
+- [Home](/): Company overview, services, project proof, and lead capture.
+- [About](/about): Company history, leadership, and values.
+- [Team](/team): Owner, project managers, and crew leads.
+- [Certifications](/certifications): CertainTeed ShingleMaster Credentialed Contractor, manufacturer credentials, licensing (Licensed NC General Contractor).
+- [Reviews](/reviews): Verified customer reviews from across WNC.
+- [Financing](/financing): Financing options for roofing and construction projects.
+- [Careers](/careers): Open roles and hiring information.
+- [Contact / Request Inspection](/request-inspection): Primary lead form for roofing and construction inquiries.
+
+## Roofing
+
+- [Roofing Division](/roofing): Overview of all roofing services.
+- [Roof Replacement](/roofing/roof-replacement): Full residential roof replacement.
+- [Roof Repair](/roofing/roof-repair): Targeted leak and damage repairs.
+- [Storm Damage Roofing](/roofing/storm-damage): Wind, hail, and storm damage response and insurance support.
+- [Commercial Roofing](/roofing/commercial): Commercial flat and steep-slope roofing.
+- [Specialty Roofing](/roofing/specialty): Metal, synthetic slate, and premium specialty systems.
+- [Residential Roofing](/roofing/residential): Residential roofing overview.
+
+## Construction
+
+- [Construction Division](/construction): Overview of all construction services.
+- [Home Additions](/construction/additions): Room additions and home extensions.
+- [Renovations](/construction/renovations): Interior renovations including kitchens, baths, and basements.
+- [Exterior Improvements](/construction/exterior): Siding, windows, trim, and fascia.
+- [Outdoor Living](/construction/outdoor-living): Decks, porches, pergolas, and outdoor structures.
+- [Custom Projects](/construction/custom): Custom-scope construction projects.
+
+## Service Areas
+
+- [Service Areas](/service-areas): All Western North Carolina towns and counties served.
+- [Franklin, NC](/service-areas/franklin-nc): Roofing and construction in Franklin, Macon County.
+- [Sylva, NC](/service-areas/sylva-nc): Roofing and construction in Sylva, Jackson County.
+- [Highlands, NC](/service-areas/highlands-nc): High-elevation roofing and construction.
+- [Cashiers, NC](/service-areas/cashiers-nc): Mountain roofing and construction services.
+- [Waynesville, NC](/service-areas/waynesville-nc): Roofing and construction in Haywood County.
+- [Brevard, NC](/service-areas/brevard-nc): Roofing and construction in Transylvania County.
+
+## Projects & Content
+
+- [Project Gallery](/gallery): Completed roofing and construction projects across WNC.
+- [Blog](/blog): Articles on mountain roofing, materials, storm prep, and construction.
+
+## Brand & Strategy
+
+- [Heritage & Tartan Strategy](/Heritage-Deliverables-Summary.md): Official rules and requirements for the Highlander heritage identity.
+
+## Optional
+
+- [Storm Center](/storm-center): Storm response resources and post-storm guidance.
+- [Free Tools](/free-tools): Planning tools and resources for homeowners.
