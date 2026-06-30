@@ -276,31 +276,6 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
   );
 };
 
-const ServiceCard = ({ service }: { service: typeof roofingServices[0] }) => (
-  <motion.div variants={itemVariants}>
-    <Link
-      to={service.href}
-      className="group block bg-card border border-border rounded-sm p-6 md:p-8 hover:border-accent/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-full"
-    >
-      <div className="absolute top-0 left-0 w-0.5 h-0 bg-accent group-hover:h-full transition-all duration-500" />
-      <div className="relative z-10">
-        <div className="w-10 h-10 rounded-sm bg-primary/8 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors duration-300">
-          <service.icon className="w-5 h-5 text-primary" />
-        </div>
-        <h3 className="text-lg font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-          {service.title}
-        </h3>
-        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-          {service.description}
-        </p>
-        <span className="inline-flex items-center gap-1 text-accent font-medium text-sm group-hover:gap-2 transition-all">
-          Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </span>
-      </div>
-    </Link>
-  </motion.div>
-);
-
 const ServicesGrid = () => {
   const roofing = services.filter(s => s.accent === "green");
   const construction = services.filter(s => s.accent === "gold" && s.title !== "Design");
