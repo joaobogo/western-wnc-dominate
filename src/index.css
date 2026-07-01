@@ -1738,3 +1738,123 @@ div[style*="Edit with Lovable"],
   }
 }
 
+/* ============================================================
+   Mobile Standards Pass — Typography refinement + rhythm
+   Applies at ≤640px. Desktop untouched.
+   ============================================================ */
+@media (max-width: 640px) {
+  /* --- Typography: rein in raw Tailwind size utilities on mobile --- */
+  .text-6xl { font-size: 2.25rem !important; line-height: 1.1 !important; }
+  .text-5xl { font-size: 2rem !important;   line-height: 1.12 !important; }
+  .text-4xl { font-size: 1.75rem !important; line-height: 1.15 !important; }
+  .text-3xl { font-size: 1.5rem !important;  line-height: 1.2 !important; }
+  .text-2xl { font-size: 1.3125rem !important; line-height: 1.28 !important; }
+  .text-xl  { font-size: 1.1875rem !important; line-height: 1.35 !important; }
+  .text-lg  { font-size: 1.0625rem !important; line-height: 1.55 !important; }
+
+  /* Descender protection — never clip on serifed display fonts */
+  h1, h2, h3, .font-heading, [class*="display-"], [class*="heading-"] {
+    padding-bottom: 0.06em;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: manual;
+  }
+  h1 { text-wrap: balance; }
+  h2, h3 { text-wrap: pretty; }
+
+  /* Body copy — comfortable, never overly bold */
+  p { line-height: 1.65; }
+  p.font-bold, p.font-extrabold, p.font-black { font-weight: 600 !important; }
+
+  /* Buttons — elegant, not boxy */
+  button, .btn, [role="button"], a[class*="rounded"] {
+    min-height: 44px;
+  }
+  button, .btn { line-height: 1.2; }
+  /* Trim over-padded CTAs so they don't dominate mobile viewports */
+  .btn-lg, [class*="px-10"], [class*="px-12"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  [class*="py-5"], [class*="py-6"], [class*="py-7"], [class*="py-8"] {
+    padding-top: 0.875rem !important;
+    padding-bottom: 0.875rem !important;
+  }
+
+  /* Footer — legible, never tiny */
+  footer .text-xs,
+  footer .text-\[10px\],
+  footer .text-\[11px\],
+  footer .text-\[12px\],
+  footer small {
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- Section rhythm: cut heroic vertical padding on phones --- */
+  section { scroll-margin-top: 80px; }
+  [class*="py-24"], [class*="py-28"], [class*="py-32"], [class*="py-36"], [class*="py-40"] {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  [class*="py-16"], [class*="py-20"] {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  [class*="pt-24"], [class*="pt-28"], [class*="pt-32"], [class*="pt-36"] {
+    padding-top: 2.5rem !important;
+  }
+  [class*="pb-24"], [class*="pb-28"], [class*="pb-32"], [class*="pb-36"] {
+    padding-bottom: 2.5rem !important;
+  }
+  /* Top space above hero — respect fixed header without piling on */
+  main > section:first-child { padding-top: 5rem; }
+
+  /* Card interiors — controlled, not cavernous */
+  [class*="p-10"], [class*="p-12"], [class*="p-14"], [class*="p-16"] {
+    padding: 1.25rem !important;
+  }
+  [class*="px-10"]:not(button):not([role="button"]),
+  [class*="px-12"]:not(button):not([role="button"]) {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Vertical stacks — tighten oversized spacing utilities */
+  [class*="space-y-10"] > * + * { margin-top: 1.25rem !important; }
+  [class*="space-y-12"] > * + * { margin-top: 1.5rem !important; }
+  [class*="space-y-14"] > * + * { margin-top: 1.5rem !important; }
+  [class*="space-y-16"] > * + * { margin-top: 1.75rem !important; }
+  [class*="space-y-20"] > * + * { margin-top: 2rem !important; }
+  [class*="gap-y-10"], [class*="gap-y-12"], [class*="gap-y-14"], [class*="gap-y-16"] { row-gap: 1.5rem !important; }
+
+  /* Button clusters — comfortable but not gappy */
+  [class*="gap-6"] { gap: 1rem !important; }
+  [class*="gap-8"] { gap: 1.25rem !important; }
+
+  /* Margin utilities — big top/bottom margins on mobile look wasteful */
+  [class*="mt-16"], [class*="mt-20"], [class*="mt-24"] { margin-top: 1.75rem !important; }
+  [class*="mb-16"], [class*="mb-20"], [class*="mb-24"] { margin-bottom: 1.75rem !important; }
+
+  /* Form spacing */
+  form [class*="space-y-6"] > * + *,
+  form [class*="space-y-8"] > * + * { margin-top: 1rem !important; }
+  form label { margin-bottom: 0.25rem; display: inline-block; }
+
+  /* FAQ / accordion breathing room */
+  [data-radix-accordion-item],
+  [data-state] > [role="button"] {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+}
+
+/* Extra-small phones — 375px and below */
+@media (max-width: 380px) {
+  main > section:first-child { padding-top: 4.5rem; }
+  .container, [class*="container-"] { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .text-6xl { font-size: 2rem !important; }
+  .text-5xl { font-size: 1.875rem !important; }
+  .text-4xl { font-size: 1.625rem !important; }
+}
+

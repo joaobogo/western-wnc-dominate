@@ -19,14 +19,14 @@ export default {
       },
       fontSize: {
         /* Display scale — hero & statement moments */
-        'display-xl': ['clamp(2.25rem, 6.5vw + 0.5rem, 6rem)', { lineHeight: '1.05', letterSpacing: '-0.03em', fontWeight: '700' }],
-        'display-lg': ['clamp(2rem, 6vw + 0.25rem, 5rem)', { lineHeight: '1.06', letterSpacing: '-0.03em', fontWeight: '700' }],
-        'display': ['clamp(1.75rem, 4.5vw + 0.25rem, 3.75rem)', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-xl': ['clamp(2.125rem, 5.5vw + 0.5rem, 6rem)', { lineHeight: '1.08', letterSpacing: '-0.025em', fontWeight: '700' }],
+        'display-lg': ['clamp(1.875rem, 5vw + 0.35rem, 5rem)', { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }],
+        'display': ['clamp(1.625rem, 4vw + 0.25rem, 3.75rem)', { lineHeight: '1.12', letterSpacing: '-0.02em', fontWeight: '700' }],
         /* Section headings */
-        'heading-xl': ['clamp(1.75rem, 4vw + 0.25rem, 3.5rem)', { lineHeight: '1.12', letterSpacing: '-0.02em', fontWeight: '700' }],
-        'heading-lg': ['clamp(1.625rem, 3.5vw + 0.25rem, 3rem)', { lineHeight: '1.14', letterSpacing: '-0.015em', fontWeight: '700' }],
-        'heading': ['clamp(1.5rem, 3vw + 0.25rem, 2.5rem)', { lineHeight: '1.18', letterSpacing: '-0.01em', fontWeight: '600' }],
-        'heading-sm': ['clamp(1.25rem, 2.5vw + 0.125rem, 2rem)', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '600' }],
+        'heading-xl': ['clamp(1.625rem, 3.5vw + 0.25rem, 3.5rem)', { lineHeight: '1.15', letterSpacing: '-0.018em', fontWeight: '700' }],
+        'heading-lg': ['clamp(1.5rem, 3vw + 0.25rem, 3rem)', { lineHeight: '1.18', letterSpacing: '-0.015em', fontWeight: '700' }],
+        'heading': ['clamp(1.375rem, 2.5vw + 0.25rem, 2.5rem)', { lineHeight: '1.22', letterSpacing: '-0.01em', fontWeight: '600' }],
+        'heading-sm': ['clamp(1.1875rem, 2vw + 0.125rem, 2rem)', { lineHeight: '1.25', letterSpacing: '-0.005em', fontWeight: '600' }],
         /* Body scale — readable on mobile, generous on desktop for older ICPs */
         'body-xl': ['clamp(1.125rem, 1.2vw + 0.75rem, 1.5rem)', { lineHeight: '1.6', letterSpacing: '0.01em' }],
         'body-lg': ['clamp(1.0625rem, 1vw + 0.75rem, 1.375rem)', { lineHeight: '1.65', letterSpacing: '0.015em' }],
