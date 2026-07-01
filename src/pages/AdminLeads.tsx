@@ -18,6 +18,12 @@ type Lead = {
   project_description: string | null;
   chat_summary: string | null;
   page_url: string | null;
+  jobtread_synced: boolean | null;
+  jobtread_sync_status: string | null;
+  jobtread_id: string | null;
+  jobtread_last_attempt_at: string | null;
+  jobtread_error_message: string | null;
+  jobtread_retry_count: number | null;
 };
 
 const STATUSES = [
@@ -58,7 +64,7 @@ export default function AdminLeads() {
       if (admin) {
         const { data: rows } = await supabase
           .from("leads")
-          .select("id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url")
+          .select("id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url,jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count")
           .order("created_at", { ascending: false })
           .limit(200);
         setLeads((rows ?? []) as Lead[]);
@@ -117,7 +123,10 @@ export default function AdminLeads() {
             >
               <div className="flex items-center justify-between gap-2">
                 <span className="text-sm font-semibold">{l.name || l.email || l.phone || "Anonymous"}</span>
-                <span className="text-[10px] uppercase tracking-wide bg-primary/10 text-primary px-1.5 py-0.5 rounded">{l.status}</span>
+                <div className="flex items-center gap-1">
+                  <SyncPill status={l.jobtread_sync_status} />
+                  <span className="text-[10px] uppercase tracking-wide bg-primary/10 text-primary px-1.5 py-0.5 rounded">{l.status}</span>
+                </div>
               </div>
               <div className="text-[11px] text-muted-foreground mt-0.5">
                 {l.source} · {l.lead_type ?? "—"} · {l.property_town ?? ""}
@@ -143,6 +152,24 @@ export default function AdminLeads() {
                 <Field label="Urgency" value={selected.urgency} />
                 <Field label="Page" value={selected.page_url} />
                 <Field label="Lead type" value={selected.lead_type} />
+              </div>
+              <div className="border border-border rounded p-3 space-y-2">
+                <div className="flex items-center justify-between">
+                  <p className="text-[11px] uppercase tracking-wide text-muted-foreground">JobTread Sync</p>
+                  <SyncPill status={selected.jobtread_sync_status} />
+                </div>
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <Field label="JobTread ID" value={selected.jobtread_id} />
+                  <Field label="Last attempt" value={selected.jobtread_last_attempt_at ? new Date(selected.jobtread_last_attempt_at).toLocaleString() : null} />
+                  <Field label="Retries" value={selected.jobtread_retry_count != null ? String(selected.jobtread_retry_count) : null} />
+                  <Field label="Synced" value={selected.jobtread_synced ? "Yes" : "No"} />
+                </div>
+                {selected.jobtread_error_message && (
+                  <div>
+                    <p className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1">Error</p>
+                    <p className="text-xs whitespace-pre-wrap bg-destructive/10 text-destructive p-2 rounded">{selected.jobtread_error_message}</p>
+                  </div>
+                )}
               </div>
               {selected.project_description && (
                 <div>
@@ -184,5 +211,20 @@ function Field({ label, value, link }: { label: string; value: string | null; li
         <p className="text-sm break-all">{value || "—"}</p>
       )}
     </div>
+  );
+}
+
+function SyncPill({ status }: { status: string | null }) {
+  const s = status ?? "pending";
+  const styles: Record<string, string> = {
+    success: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400",
+    pending: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
+    retry_needed: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
+    failed: "bg-destructive/15 text-destructive",
+  };
+  return (
+    <span className={`text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded ${styles[s] ?? "bg-muted text-muted-foreground"}`}>
+      JT: {s.replace("_", " ")}
+    </span>
   );
 }
