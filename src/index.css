@@ -1858,3 +1858,80 @@ div[style*="Edit with Lovable"],
   .text-4xl { font-size: 1.625rem !important; }
 }
 
+/* ============================================================
+   Mobile Card & Grid pass — compact, readable, premium
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Card corners — chunky 3xl feels toy-like on phones */
+  .rounded-3xl { border-radius: 1rem !important; }
+  .rounded-2xl { border-radius: 0.875rem !important; }
+
+  /* Uniform card interior padding when a card uses arbitrary p-8/p-9 */
+  [class*="p-8"]:not(button):not([role="button"]) { padding: 1.25rem !important; }
+  [class*="p-9"]:not(button):not([role="button"]) { padding: 1.25rem !important; }
+
+  /* Card media — cap aspect + arbitrary heights so images stay proportional */
+  .aspect-\[4\/5\], .aspect-\[3\/4\], .aspect-\[2\/3\], .aspect-\[9\/16\] {
+    aspect-ratio: 4 / 3 !important;
+  }
+  /* Common oversized card image heights */
+  [class*="h-[30"], [class*="h-[32"], [class*="h-[34"], [class*="h-[36"], [class*="h-[38"] {
+    height: 220px !important;
+    max-height: 220px !important;
+  }
+  [class*="h-[40"], [class*="h-[44"], [class*="h-[48"] {
+    height: 240px !important;
+    max-height: 240px !important;
+  }
+
+  /* Team / avatar circles — cap the huge portrait sizes */
+  [class*="w-40"][class*="h-40"],
+  [class*="w-44"][class*="h-44"],
+  [class*="w-48"][class*="h-48"],
+  [class*="w-56"][class*="h-56"] {
+    width: 128px !important;
+    height: 128px !important;
+  }
+
+  /* Stat cards — massive numbers dominate mobile; rein them in */
+  .text-stat, [class*="text-stat"] { font-size: 2.5rem !important; line-height: 1 !important; }
+  .text-stat-sm { font-size: 2rem !important; line-height: 1 !important; }
+
+  /* Grid gaps between stacked cards — noticeably tighter */
+  .grid { gap: 0.875rem; }
+  .grid[class*="gap-4"] { gap: 0.875rem !important; }
+  .grid[class*="gap-5"] { gap: 1rem !important; }
+  .grid[class*="gap-6"] { gap: 1rem !important; }
+  .grid[class*="gap-8"] { gap: 1.25rem !important; }
+
+  /* Card hover scale/translate — remove on mobile (no hover, wastes GPU) */
+  .hover-scale, [class*="hover:scale"], [class*="hover:-translate-y"] {
+    transform: none !important;
+  }
+  /* Reduce heavy shadow layering that trips scroll perf on cheap Androids */
+  .shadow-2xl { box-shadow: 0 10px 25px -5px hsl(var(--heritage-charcoal) / 0.15) !important; }
+
+  /* FAQ accordion cards — trim internal padding */
+  [data-radix-accordion-item] { padding: 0 !important; }
+  [data-radix-accordion-item] > [data-state] { padding: 0.75rem 0.875rem !important; }
+
+  /* Process / numbered cards — cap giant step numbers */
+  [class*="text-[8"], [class*="text-[9"], [class*="text-[10"][class*="rem"] {
+    font-size: 3rem !important;
+    line-height: 1 !important;
+  }
+
+  /* Trust badge chips — compact */
+  [class*="rounded-full"][class*="px-4"] { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+
+  /* Blog / project card title inside cards — controlled */
+  article h2, article h3, .card h2, .card h3,
+  [class*="card"] h2, [class*="card"] h3 {
+    font-size: 1.125rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Kill will-change on cards — some pages set it globally and it thrashes memory */
+  * { will-change: auto; }
+}
+
