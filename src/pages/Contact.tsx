@@ -235,7 +235,7 @@ export default function Contact() {
               {/* Left: form area */}
               <div className="lg:col-span-7">
                 {/* Progress indicator */}
-                <div className="flex items-center gap-2 mb-8">
+                <div className="flex items-center flex-wrap gap-x-2 gap-y-2 mb-8">
                   {["Division", "Service", "Your Details"].map((label, i) => {
                     const stepIdx = i;
                     const currentIdx = step === "division" ? 0 : step === "service" ? 1 : step === "details" ? 2 : 3;
@@ -249,7 +249,7 @@ export default function Contact() {
                         <span className={`text-[10px] font-body font-semibold uppercase tracking-wider ${
                           stepIdx <= currentIdx ? "text-foreground" : "text-muted-foreground/50"
                         }`}>{label}</span>
-                        {i < 2 && <div className="w-8 h-px bg-border mx-1" />}
+                        {i < 2 && <div className="hidden sm:block w-8 h-px bg-border mx-1" />}
                       </div>
                     );
                   })}
