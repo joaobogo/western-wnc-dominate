@@ -1681,11 +1681,14 @@ div[style*="Edit with Lovable"],
    Mobile proportion pass — cap oversized elements on phones
    ============================================================ */
 @media (max-width: 640px) {
-  /* Grids without explicit mobile columns collapse to 1 column so image
-     children can't force column widths larger than the viewport. */
-  .grid:not([class*="grid-cols-"]):not([class*="auto-"]) {
+  /* Grids whose only column definitions are md:/lg:/xl:-prefixed collapse to
+     a single column on mobile so image children can't force column widths
+     larger than the viewport. */
+  .grid[class*=":grid-cols-"]:not([class~="grid-cols-1"]):not([class~="grid-cols-2"]):not([class~="grid-cols-3"]):not([class~="grid-cols-4"]):not([class~="grid-cols-5"]):not([class~="grid-cols-6"]):not([class~="grid-cols-12"]) {
     grid-template-columns: minmax(0, 1fr) !important;
   }
+  /* Guard against image intrinsic widths blowing out grid tracks */
+  .grid > * { min-width: 0; }
 
   /* Cap oversized hero/media heights on phones */
   .hero-height,
