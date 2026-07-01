@@ -160,62 +160,62 @@ const Hero = () => {
 
       {/* === MAIN CONTENT === */}
       <div className="relative z-10 flex-1 flex items-start md:items-end w-full">
-        <div className="w-full px-6 md:px-10 lg:px-20 pb-20 md:pb-44 hero-clears-header">
+        <div className="w-full px-5 md:px-10 lg:px-20 pb-14 md:pb-44 hero-clears-header">
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex items-center gap-3 md:gap-4 mb-6 md:mb-10"
+              className="flex items-center gap-2.5 md:gap-4 mb-4 md:mb-10"
             >
               <motion.div
                 className="h-px"
                 style={{ background: 'hsl(var(--highland-gold))' }}
                 initial={{ width: 0 }}
-                animate={{ width: 56 }}
+                animate={{ width: 40 }}
                 transition={{ duration: 1.2, delay: 0.5 }}
               />
               <motion.div
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="flex items-center gap-2 px-3 py-1.5 bg-black/50 backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] rounded-sm"
+                className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-black/50 backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] rounded-sm"
               >
-                <Mountain className="w-3 h-3 text-[hsl(var(--highland-gold)/0.8)]" />
-                <span className="text-[14px] md:text-[16px] font-body font-bold uppercase tracking-[0.22em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))]">
+                <Mountain className="w-2.5 h-2.5 md:w-3 md:h-3 text-[hsl(var(--highland-gold)/0.8)]" />
+                <span className="text-[10.5px] md:text-[16px] font-body font-bold uppercase tracking-[0.18em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))]">
                    Western North Carolina · Since 2017
                  </span>
               </motion.div>
             </motion.div>
 
             {/* Headline — cinematic three-line reveal */}
-            <div className="overflow-hidden mb-1 md:mb-2 pb-[0.35em]">
+            <div className="overflow-hidden mb-0.5 md:mb-2 pb-[0.25em] md:pb-[0.35em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[1.15] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
+                className="text-[2.1rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
                 High-Elevation,
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-1 md:mb-2 pb-[0.35em]">
+            <div className="overflow-hidden mb-0.5 md:mb-2 pb-[0.25em] md:pb-[0.35em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[1.15] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
+                className="text-[2.1rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
               >
                 Built for the Peaks.
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-8 md:mb-12 pb-[0.4em]">
+            <div className="overflow-hidden mb-5 md:mb-12 pb-[0.3em] md:pb-[0.4em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[2.6rem] leading-[1.15] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.035em]"
+                className="text-[2.1rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.035em]"
               >
                 <span className="text-[hsl(var(--highland-gold))]">Roofing, Construction &amp; Design</span>
                 <span className="text-primary-foreground">.</span>
@@ -228,10 +228,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[19px] md:text-[24px] text-white max-w-2xl mb-12 md:mb-16 leading-[1.6] font-body font-bold drop-shadow-lg"
+              className="text-[14.5px] md:text-[24px] text-white max-w-2xl mb-6 md:mb-16 leading-[1.55] md:leading-[1.6] font-body font-semibold md:font-bold drop-shadow-lg"
             >
               Trusted roofing, repairs, construction, gutters, and outdoor living for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, locally run, and built for the mountains by a team of WNC craftspeople.
-              <span className="block mt-6 text-[hsl(var(--highland-gold))] font-extrabold text-xl md:text-2xl drop-shadow-md">Licensed, Insured and CertainTeed ShingleMaster Credentialed Contractor.</span>
+              <span className="block mt-3 md:mt-6 text-[hsl(var(--highland-gold))] font-extrabold text-[13px] md:text-2xl drop-shadow-md">Licensed, Insured &amp; CertainTeed ShingleMaster Credentialed.</span>
             </motion.p>
 
 
@@ -240,23 +240,24 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.35 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-6"
             >
               <Link
                 to="/consultation"
-                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-[15px] md:text-base px-10 md:px-14 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.1em] uppercase shadow-xl min-h-[60px]"
+                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-14 py-3.5 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-xl min-h-[52px] md:min-h-[60px]"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Request a Free Quote</span>
-                <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative group-hover:translate-x-1.5 transition-transform" />
               </Link>
               <a
                 href="tel:+18285247773"
                 aria-label="Call Highlander Roofing & Construction at 828-524-7773"
-                className="group bg-white/[0.08] backdrop-blur-md border-2 border-white/[0.15] text-primary-foreground font-body font-bold text-[15px] md:text-base px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[60px] tracking-wide uppercase"
+                className="group bg-white/[0.08] backdrop-blur-md border md:border-2 border-white/[0.18] text-primary-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-12 py-3.5 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[52px] md:min-h-[60px] tracking-wide uppercase"
               >
-                <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                <span>Call Highlander · (828) 524-7773</span>
+                <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--highland-gold))]" />
+                <span className="md:hidden">Call · (828) 524-7773</span>
+                <span className="hidden md:inline">Call Highlander · (828) 524-7773</span>
               </a>
             </motion.div>
 
@@ -265,14 +266,14 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
-              className="mt-7 md:mt-9 flex items-center gap-5 md:gap-7"
+              className="mt-5 md:mt-9 flex items-center flex-wrap gap-x-4 gap-y-2 md:gap-7"
             >
               <div className="flex items-center gap-2">
-                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-2xl md:text-3xl">4.9★</span>
-                <span className="text-primary-foreground text-[15px] md:text-base font-body font-bold uppercase tracking-wider">Google Rating</span>
+                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-lg md:text-3xl">4.9★</span>
+                <span className="text-primary-foreground text-[11px] md:text-base font-body font-bold uppercase tracking-wider">Google Rating</span>
               </div>
-              <div className="w-px h-6 bg-primary-foreground/40" />
-              <span className="text-primary-foreground text-[15px] md:text-base font-body font-bold uppercase tracking-wider">150+ Verified Reviews</span>
+              <div className="w-px h-4 md:h-6 bg-primary-foreground/40" />
+              <span className="text-primary-foreground text-[11px] md:text-base font-body font-bold uppercase tracking-wider">150+ Verified Reviews</span>
               <div className="w-px h-6 bg-primary-foreground/40 hidden md:block" />
               <span className="text-primary-foreground text-[15px] md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Rapid Response Guarantee</span>
             </motion.div>
@@ -283,16 +284,16 @@ const Hero = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.2, duration: 0.8 }}
-              className="mt-6 inline-flex items-center gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-2 pr-4 py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
+              className="mt-4 md:mt-6 inline-flex items-center gap-2.5 md:gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
             >
-              <div className="w-16 h-16 flex items-center justify-center flex-shrink-0 overflow-hidden bg-white shadow-sm border border-white/10">
-                <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
+              <div className="w-11 h-11 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 overflow-hidden bg-white shadow-sm border border-white/10">
+                <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-1.5 md:p-2" />
               </div>
               <div className="flex flex-col leading-tight text-left">
-                <span className="text-[11px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))]">
+                <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.16em] md:tracking-[0.18em] text-[hsl(var(--highland-gold))]">
                   VELUX Certified
                 </span>
-                <span className="text-[13px] font-body font-medium text-primary-foreground/95">
+                <span className="text-[11.5px] md:text-[13px] font-body font-medium text-primary-foreground/95">
                   Skylight Installer · Pro Accredited
                 </span>
               </div>
