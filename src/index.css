@@ -1677,3 +1677,64 @@ div[style*="Edit with Lovable"],
   }
 }
 
+/* ============================================================
+   Mobile proportion pass — cap oversized elements on phones
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Grids whose only column definitions are md:/lg:/xl:-prefixed collapse to
+     a single column on mobile so image children can't force column widths
+     larger than the viewport. */
+  .grid[class*=":grid-cols-"]:not([class~="grid-cols-1"]):not([class~="grid-cols-2"]):not([class~="grid-cols-3"]):not([class~="grid-cols-4"]):not([class~="grid-cols-5"]):not([class~="grid-cols-6"]):not([class~="grid-cols-12"]) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  /* Guard against image intrinsic widths blowing out grid tracks */
+  .grid > * { min-width: 0; }
+
+  /* Cap oversized hero/media heights on phones */
+  .hero-height,
+  [class*="min-h-screen"] > section:first-child,
+  section[class*="min-h-[85vh]"],
+  section[class*="min-h-[90vh]"],
+  section[class*="min-h-[100vh]"] {
+    min-height: 78vh;
+  }
+
+  /* Rein in oversized card interiors */
+  .card-premium { padding: 1.5rem !important; }
+
+  /* Section vertical rhythm — a touch tighter on small phones */
+  .section-padding {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* Cap arbitrary large image heights so cards aren't half-screen tall */
+  img.h-\[420px\],
+  img.h-\[480px\],
+  img.h-\[520px\],
+  img.h-\[560px\],
+  img.h-\[600px\],
+  .h-\[420px\] > img,
+  .h-\[480px\] > img,
+  .h-\[520px\] > img,
+  .h-\[560px\] > img,
+  .h-\[600px\] > img {
+    height: 260px !important;
+    max-height: 260px !important;
+  }
+
+  /* Reduce excessive gaps in stacked mobile grids */
+  .gap-10, .gap-12, .gap-14, .gap-16 { gap: 1.5rem !important; }
+
+  /* Sticky mobile CTA — slimmer footprint */
+  [data-sticky-cta],
+  .sticky-cta { padding: 0.5rem 0.75rem !important; }
+
+  /* Chatbot launcher — nudge above sticky CTA bar */
+  [data-chatbot-launcher],
+  .chatbot-launcher {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 4.75rem) !important;
+    right: 0.75rem !important;
+  }
+}
+
