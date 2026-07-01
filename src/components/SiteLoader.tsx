@@ -4,23 +4,40 @@ import { useState, useEffect, useCallback } from "react";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const EASE = [0.22, 1, 0.36, 1] as any;
 
+// Brand palette (Smith Green identity)
+const SMITH_GREEN = "#184613";
+const SMITH_LIGHT = "#2D9123";
+const CREAM = "#F7F3EA";
+const GOLD = "hsl(var(--highland-gold))";
+
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
 /**
- * SiteLoader — premium mountain-ridge + roofline reveal.
+ * SiteLoader — premium mountain-ridge + roofline reveal in Smith Green.
  * A single continuous line traces the Blue Ridge silhouette, ascends into a
- * roof peak, then dissolves into the homepage. ~2.1s total.
+ * roof peak, then dissolves into the homepage. ~1.4s total.
+ * Session-gated by the caller; respects prefers-reduced-motion.
  */
 const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
+  const [reduced] = useState(prefersReducedMotion);
   const [visible, setVisible] = useState(true);
 
   const dismiss = useCallback(() => {
     setVisible(false);
-    setTimeout(onComplete, 650);
-  }, [onComplete]);
+    setTimeout(onComplete, reduced ? 0 : 450);
+  }, [onComplete, reduced]);
 
   useEffect(() => {
-    const t = setTimeout(dismiss, 2100);
+    // Reduced motion → dismiss on the next paint (no animation, no wait)
+    if (reduced) {
+      const t = setTimeout(dismiss, 60);
+      return () => clearTimeout(t);
+    }
+    const t = setTimeout(dismiss, 1400);
     return () => clearTimeout(t);
-  }, [dismiss]);
+  }, [dismiss, reduced]);
 
   // Ridge + roofline path: distant peaks → mid ridge → sharp roof pitch → eave
   const ridgePath =
@@ -31,13 +48,27 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
       {visible && (
         <motion.div
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden"
+          role="status"
+          aria-label="Loading Highlander Roofing &amp; Construction"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 55%, hsl(var(--heritage-green)) 0%, hsl(var(--heritage-charcoal)) 85%)",
+              `radial-gradient(ellipse at 50% 60%, ${SMITH_LIGHT} 0%, ${SMITH_GREEN} 55%, #0d2a0a 100%)`,
           }}
-          exit={{ opacity: 0, filter: "blur(6px)" }}
-          transition={{ duration: 0.55, ease: EASE }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.45, ease: EASE }}
         >
+          {/* Reduced-motion: solid brand plate, no drawing */}
+          {reduced && (
+            <span
+              className="text-[11px] font-body font-bold uppercase tracking-[0.4em]"
+              style={{ color: CREAM }}
+            >
+              Highlander
+            </span>
+          )}
+
+          {!reduced && (
+            <>
           {/* Grain */}
           <div
             className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay"
@@ -51,11 +82,11 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
           <motion.div
             className="absolute inset-x-0 top-[38%] h-[45%] pointer-events-none"
             initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.55, 0.35] }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
+            animate={{ opacity: [0, 0.4, 0.25] }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
             style={{
               background:
-                "radial-gradient(ellipse 55% 100% at 50% 100%, hsl(var(--highland-gold) / 0.35), transparent 70%)",
+                `radial-gradient(ellipse 55% 100% at 50% 100%, ${GOLD}, transparent 70%)`,
             }}
           />
 
@@ -63,22 +94,22 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
           <motion.div
             className="absolute top-0 inset-x-0 h-px origin-center"
             style={{
-              background:
-                "linear-gradient(90deg, transparent, hsl(var(--highland-gold)/0.7), transparent)",
+              background: `linear-gradient(90deg, transparent, ${CREAM}, transparent)`,
+              opacity: 0.5,
             }}
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 1.1, ease: EASE }}
+            transition={{ duration: 0.9, ease: EASE }}
           />
           <motion.div
             className="absolute bottom-0 inset-x-0 h-px origin-center"
             style={{
-              background:
-                "linear-gradient(90deg, transparent, hsl(var(--highland-gold)/0.5), transparent)",
+              background: `linear-gradient(90deg, transparent, ${CREAM}, transparent)`,
+              opacity: 0.35,
             }}
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 1.1, delay: 0.15, ease: EASE }}
+            transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
           />
 
           {/* --- Mountain ridge + roofline SVG trace --- */}
@@ -91,12 +122,12 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
             >
               <defs>
                 <linearGradient id="ridge-stroke" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="hsl(var(--highland-gold) / 0.4)" />
-                  <stop offset="50%" stopColor="hsl(var(--highland-gold))" />
-                  <stop offset="100%" stopColor="hsl(var(--highland-gold) / 0.4)" />
+                  <stop offset="0%" stopColor={CREAM} stopOpacity="0.35" />
+                  <stop offset="50%" stopColor={CREAM} stopOpacity="1" />
+                  <stop offset="100%" stopColor={CREAM} stopOpacity="0.35" />
                 </linearGradient>
                 <filter id="ridge-glow" x="-10%" y="-40%" width="120%" height="180%">
-                  <feGaussianBlur stdDeviation="2.5" result="b" />
+                  <feGaussianBlur stdDeviation="2" result="b" />
                   <feMerge>
                     <feMergeNode in="b" />
                     <feMergeNode in="SourceGraphic" />
@@ -108,11 +139,12 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
               <motion.path
                 d={ridgePath}
                 fill="none"
-                stroke="hsl(var(--highland-gold) / 0.15)"
+                stroke={CREAM}
+                strokeOpacity={0.12}
                 strokeWidth={1}
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 1 }}
-                transition={{ duration: 1.6, delay: 0.1, ease: EASE }}
+                transition={{ duration: 1.1, delay: 0.05, ease: EASE }}
                 transform="translate(-10, 20) scale(1.02, 0.85)"
               />
 
@@ -127,21 +159,20 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                 filter="url(#ridge-glow)"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: 1.7, ease: EASE }}
+                transition={{ duration: 1.15, ease: EASE }}
               />
 
-              {/* Roof pitch highlight — the sharpest peak, drawn with a heavier
-                  hairline as if the roofline emerges from the ridge */}
+              {/* Roof pitch highlight in gold — roofline emerges from ridge */}
               <motion.path
                 d="M 500 100 L 560 40 L 620 100"
                 fill="none"
-                stroke="hsl(var(--highland-gold))"
+                stroke={GOLD}
                 strokeWidth={2.2}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 1 }}
-                transition={{ duration: 0.9, delay: 0.9, ease: EASE }}
+                transition={{ duration: 0.55, delay: 0.7, ease: EASE }}
               />
 
               {/* Peak marker dot */}
@@ -149,10 +180,10 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                 cx={560}
                 cy={40}
                 r={3}
-                fill="hsl(var(--highland-gold))"
+                fill={GOLD}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.4, delay: 1.55, ease: EASE }}
+                transition={{ duration: 0.3, delay: 1.15, ease: EASE }}
               />
 
               {/* Baseline / horizon */}
@@ -161,11 +192,12 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                 y1={175}
                 x2={800}
                 y2={175}
-                stroke="hsl(var(--highland-gold) / 0.25)"
+                stroke={CREAM}
+                strokeOpacity={0.2}
                 strokeWidth={0.5}
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: 1.4, delay: 0.4, ease: EASE }}
+                transition={{ duration: 1, delay: 0.25, ease: EASE }}
               />
             </svg>
           </div>
@@ -174,19 +206,19 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.15, ease: EASE }}
-            className="relative z-10 mt-6 sm:mt-8 flex flex-col items-center gap-3"
+            transition={{ duration: 0.5, delay: 0.85, ease: EASE }}
+            className="relative z-10 mt-5 sm:mt-7 flex flex-col items-center gap-2.5"
           >
-            <div className="flex items-center gap-3 sm:gap-4">
-              <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em] text-primary-foreground">
+            <div className="flex items-center gap-3 sm:gap-4" style={{ color: CREAM }}>
+              <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
                 Roofing
               </span>
-              <span className="w-1 h-1 rounded-full bg-[hsl(var(--highland-gold))]" />
-              <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em] text-primary-foreground">
+              <span className="w-1 h-1 rounded-full" style={{ background: GOLD }} />
+              <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
                 Construction
               </span>
-              <span className="w-1 h-1 rounded-full bg-[hsl(var(--highland-gold))]" />
-              <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em] text-primary-foreground">
+              <span className="w-1 h-1 rounded-full" style={{ background: GOLD }} />
+              <span className="text-[11px] sm:text-[13px] font-heading font-semibold uppercase tracking-[0.35em] sm:tracking-[0.5em]">
                 Design
               </span>
             </div>
@@ -194,12 +226,15 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.4, ease: EASE }}
-              className="text-[9.5px] sm:text-[10.5px] font-body font-bold uppercase tracking-[0.4em] text-[hsl(var(--highland-gold))]"
+              transition={{ duration: 0.4, delay: 1.05, ease: EASE }}
+              className="text-[9.5px] sm:text-[10.5px] font-body font-bold uppercase tracking-[0.4em]"
+              style={{ color: GOLD }}
             >
               Western North Carolina · Since 2017
             </motion.p>
           </motion.div>
+            </>
+          )}
         </motion.div>
       )}
     </AnimatePresence>
