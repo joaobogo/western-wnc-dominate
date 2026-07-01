@@ -163,7 +163,7 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_30px_-10px_rgba(0,0,0,0.15)] border-b border-black/[0.08] md:border-b-0"
     >
       {/* ─── Main nav bar ─── */}
-      <div className={`flex items-center justify-between px-5 md:px-8 transition-all duration-500 ${scrolled ? "py-2" : "py-3 md:py-4"}`}>
+      <div className={`flex items-center justify-between px-4 md:px-8 transition-all duration-500 ${scrolled ? "py-1.5 md:py-2" : "py-2 md:py-4"}`}>
         {/* Logo */}
         <Link to="/" aria-label="Highlander Roofing & Construction — Home" className="flex items-center bg-transparent hover:bg-transparent">
           <img
@@ -173,8 +173,8 @@ const Header = () => {
             height={520}
             className={`w-auto transition-[height,transform] duration-500 ease-out origin-left ${
               scrolled
-                ? "h-[36px] md:h-[44px]"
-                : "h-[40px] md:h-[56px]"
+                ? "h-[32px] md:h-[44px]"
+                : "h-[36px] md:h-[56px]"
             }`}
             style={{ imageRendering: "auto" }}
             decoding="async"
@@ -440,10 +440,10 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-              className="lg:hidden bg-white border-t border-black/5 overflow-hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
+              transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
+              className="lg:hidden bg-white border-t border-black/5 overflow-hidden max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain"
             >
-              <nav className="flex flex-col px-5 py-5 gap-1">
+              <nav className="flex flex-col px-4 py-3 gap-0.5">
                 {/* ─── Division sections ─── */}
                 {divisions.map((div, di) => (
                   <motion.div
@@ -454,23 +454,23 @@ const Header = () => {
                   >
                     <button
                       onClick={() => setMobileExpanded(mobileExpanded === div.label ? null : div.label)}
-                      className={`w-full py-3 px-3 rounded-sm transition-all duration-200 flex items-center justify-between ${
+                      className={`w-full py-2.5 px-2.5 rounded-sm transition-all duration-200 flex items-center justify-between min-h-[48px] ${
                         isActive(div.href)
                           ? "text-heritage-charcoal bg-black/5"
                           : "text-heritage-charcoal/90 hover:bg-black/5"
                       }`}
                     >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 rounded-sm flex items-center justify-center ${
+                      <div className="flex items-center gap-2.5">
+                        <div className={`w-7 h-7 rounded-sm flex items-center justify-center ${
                           div.accent === "green" ? "bg-primary/10" : "bg-[hsl(var(--highland-gold)/0.1)]"
                         }`}>
-                          <div.icon className={`w-4 h-4 ${
+                          <div.icon className={`w-3.5 h-3.5 ${
                             div.accent === "green" ? "text-primary" : "text-[hsl(var(--highland-gold))]"
                           }`} />
                         </div>
                         <div className="text-left">
-                          <span className="text-[17px] md:text-[18px] font-heading font-bold block leading-tight text-heritage-charcoal">{div.label}</span>
-                          <span className="text-[11px] md:text-[12px] font-body text-heritage-charcoal/60 uppercase tracking-wider">{div.tagline}</span>
+                          <span className="text-[16px] md:text-[18px] font-heading font-bold block leading-tight text-heritage-charcoal">{div.label}</span>
+                          <span className="text-[10.5px] md:text-[12px] font-body text-heritage-charcoal/55 uppercase tracking-[0.1em] leading-tight">{div.tagline}</span>
                         </div>
                       </div>
                       <motion.div
@@ -490,7 +490,7 @@ const Header = () => {
                           transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
                           className="overflow-hidden"
                         >
-                          <div className={`ml-4 pl-4 pb-2 space-y-0.5 border-l-2 ${
+                          <div className={`ml-3.5 pl-3 pb-1.5 space-y-0 border-l-2 ${
                             div.accent === "green"
                               ? "border-primary/15"
                               : "border-[hsl(var(--highland-gold)/0.15)]"
@@ -505,23 +505,23 @@ const Header = () => {
                                 <Link
                                   to={item.href}
                                   onClick={() => setMobileOpen(false)}
-                                  className={`py-2.5 px-3 rounded-sm transition-all block ${
+                                  className={`py-2 px-2.5 rounded-sm transition-all block min-h-[44px] flex flex-col justify-center ${
                                     isActive(item.href)
                                       ? "bg-black/5"
                                       : "hover:bg-black/5"
                                   }`}
                                 >
-                                  <span className={`text-sm font-body block leading-tight ${
+                                  <span className={`text-[15px] font-body block leading-tight ${
                                     isActive(item.href) ? "font-medium text-heritage-charcoal" : "text-heritage-charcoal/70"
                                   }`}>{item.label}</span>
-                                  <span className="text-[11px] font-body text-heritage-charcoal/30">{item.desc}</span>
+                                  <span className="text-[11.5px] font-body text-heritage-charcoal/45 leading-tight mt-0.5">{item.desc}</span>
                                 </Link>
                               </motion.div>
                             ))}
                             <Link
                               to={div.href}
                               onClick={(e) => handleViewAllClick(e, div.href)}
-                              className={`py-2.5 px-3 text-sm font-semibold rounded-sm transition-colors flex items-center gap-1.5 font-body ${
+                              className={`py-2 px-2.5 text-[13px] font-bold uppercase tracking-[0.08em] rounded-sm transition-colors flex items-center gap-1.5 font-body ${
                                 div.accent === "green" ? "text-primary" : "text-accent"
                               }`}
                             >
@@ -538,11 +538,11 @@ const Header = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2, duration: 0.3 }}
-                  className="flex items-center gap-3 py-2 px-3"
+                  transition={{ delay: 0.15, duration: 0.3 }}
+                  className="flex items-center gap-3 py-1.5 px-2.5 mt-1"
                 >
                   <div className="flex-1 h-px bg-black/10" />
-                  <span className="text-[9px] font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/30">Company</span>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">Company</span>
                   <div className="flex-1 h-px bg-black/10" />
                 </motion.div>
 
@@ -557,7 +557,7 @@ const Header = () => {
                     <Link
                       to={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className={`py-3 px-3 text-lg font-bold rounded-sm transition-all flex items-center gap-2 font-body ${
+                      className={`py-2.5 px-2.5 text-[15px] font-bold rounded-sm transition-all flex items-center gap-2 font-body min-h-[44px] ${
                         isActive(link.href)
                           ? "text-heritage-charcoal bg-black/5"
                           : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"
@@ -575,22 +575,22 @@ const Header = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.35, duration: 0.3, ease: HIGHLAND_EASE }}
-                  className="pt-4 mt-2 border-t border-black/10 space-y-2.5"
+                  transition={{ delay: 0.3, duration: 0.3, ease: HIGHLAND_EASE }}
+                  className="pt-3 mt-2 border-t border-black/10 space-y-2 pb-[max(env(safe-area-inset-bottom),0.5rem)]"
                 >
                   <Link
                     to="/consultation"
                     onClick={() => setMobileOpen(false)}
-                    className="cta-gradient text-accent-foreground font-bold text-center py-4.5 px-4 rounded-none flex items-center justify-center gap-2.5 text-[17px] uppercase tracking-wider shadow-lg"
+                    className="cta-gradient text-accent-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-[14px] uppercase tracking-[0.1em] shadow-lg min-h-[52px]"
                   >
                     <span className="relative z-10">Request a Free Quote</span>
-                    <ArrowRight className="w-5 h-5 relative z-10" />
+                    <ArrowRight className="w-4 h-4 relative z-10" />
                   </Link>
                   <a
                     href="tel:+18285247773"
-                    className="bg-primary text-primary-foreground font-bold text-center py-4.5 px-4 rounded-none flex items-center justify-center gap-2.5 text-[17px] font-body shadow-md active:scale-95 transition-all"
+                    className="bg-primary text-primary-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-[14px] font-body shadow-md active:scale-95 transition-all min-h-[52px] uppercase tracking-[0.08em]"
                   >
-                    <Phone className="w-5 h-5" />
+                    <Phone className="w-4 h-4" />
                     (828) 524-7773
                   </a>
                 </motion.div>

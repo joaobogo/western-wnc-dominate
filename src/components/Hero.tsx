@@ -40,7 +40,7 @@ const Hero = () => {
   ];
 
   return (
-    <section ref={ref} className="relative min-h-[100svh] flex flex-col overflow-hidden">
+    <section ref={ref} className="relative min-h-[86svh] md:min-h-[100svh] flex flex-col overflow-hidden">
       {/* === BACKGROUND — static, no parallax for smooth scroll === */}
       <div className="absolute inset-0">
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
@@ -159,15 +159,15 @@ const Hero = () => {
       </div>
 
       {/* === MAIN CONTENT === */}
-      <div className="relative z-10 flex-1 flex items-start md:items-end w-full">
-        <div className="w-full px-5 md:px-10 lg:px-20 pb-14 md:pb-44 hero-clears-header">
+      <div className="relative z-10 flex-1 flex items-center md:items-end w-full">
+        <div className="w-full px-5 md:px-10 lg:px-20 pt-20 md:pt-0 pb-36 md:pb-44 hero-clears-header">
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex items-center gap-2.5 md:gap-4 mb-4 md:mb-10"
+              className="flex items-center gap-2 md:gap-4 mb-3 md:mb-10"
             >
               <motion.div
                 className="h-px"
@@ -180,42 +180,42 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-black/50 backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] rounded-sm"
+                className="flex items-center gap-1.5 md:gap-2 px-2 md:px-3 py-1 md:py-1.5 bg-black/50 backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] rounded-sm"
               >
-                <Mountain className="w-2.5 h-2.5 md:w-3 md:h-3 text-[hsl(var(--highland-gold)/0.8)]" />
-                <span className="text-[10.5px] md:text-[16px] font-body font-bold uppercase tracking-[0.18em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))]">
+                <Mountain className="w-2.5 h-2.5 md:w-3 md:h-3 text-[hsl(var(--highland-gold)/0.85)]" />
+                <span className="text-[10px] md:text-[16px] font-body font-bold uppercase tracking-[0.16em] md:tracking-[0.3em] text-[hsl(var(--highland-gold))]">
                    Western North Carolina · Since 2017
                  </span>
               </motion.div>
             </motion.div>
 
             {/* Headline — cinematic three-line reveal */}
-            <div className="overflow-hidden mb-0.5 md:mb-2 pb-[0.25em] md:pb-[0.35em]">
+            <div className="overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
-                className="text-[2.1rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
+                className="text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
               >
                 High-Elevation,
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-0.5 md:mb-2 pb-[0.25em] md:pb-[0.35em]">
+            <div className="overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
-                className="text-[2.1rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.035em]"
+                className="text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
               >
                 Built for the Peaks.
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-5 md:mb-12 pb-[0.3em] md:pb-[0.4em]">
+            <div className="overflow-hidden mb-4 md:mb-12 pb-[0.25em] md:pb-[0.4em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[2.1rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.035em]"
+                className="text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.03em]"
               >
                 <span className="text-[hsl(var(--highland-gold))]">Roofing, Construction &amp; Design</span>
                 <span className="text-primary-foreground">.</span>
@@ -228,10 +228,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[14.5px] md:text-[24px] text-white max-w-2xl mb-6 md:mb-16 leading-[1.55] md:leading-[1.6] font-body font-semibold md:font-bold drop-shadow-lg"
+              className="text-[14px] md:text-[24px] text-white max-w-2xl mb-5 md:mb-16 leading-[1.55] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
             >
               Trusted roofing, repairs, construction, gutters, and outdoor living for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, locally run, and built for the mountains by a team of WNC craftspeople.
-              <span className="block mt-3 md:mt-6 text-[hsl(var(--highland-gold))] font-extrabold text-[13px] md:text-2xl drop-shadow-md">Licensed, Insured &amp; CertainTeed ShingleMaster Credentialed.</span>
+              <span className="block mt-2.5 md:mt-6 text-[hsl(var(--highland-gold))] font-bold text-[12.5px] md:text-2xl drop-shadow-md">Licensed, Insured &amp; CertainTeed ShingleMaster Credentialed.</span>
             </motion.p>
 
 
