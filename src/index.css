@@ -17,6 +17,75 @@
   a, button { min-height: auto; }
 }
 
+/* ── Mobile UX/UI perfection pass ──────────────────────────────
+   Tames oversized headings, spacing, and cards on phones so the
+   mobile experience feels premium, balanced, and modern.
+   Scoped to <=640px; desktop is completely untouched.
+   Uses [class*=] so both static (`text-5xl`) and responsive
+   (`md:text-5xl` — which still applies below md) classes shrink.
+   ────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* ---------- Typography: tighten oversized display type ---------- */
+  h1, [class*="text-6xl"], [class*="text-7xl"], [class*="text-8xl"] {
+    letter-spacing: -0.025em;
+    line-height: 1.08 !important;
+  }
+  .text-8xl, [class*=" text-8xl"] { font-size: clamp(2.4rem, 10.5vw, 3.1rem) !important; }
+  .text-7xl, [class*=" text-7xl"] { font-size: clamp(2.2rem, 9.5vw, 2.85rem) !important; }
+  .text-6xl, [class*=" text-6xl"] { font-size: clamp(2rem, 8.5vw, 2.55rem) !important; }
+  .text-5xl, [class*=" text-5xl"] { font-size: clamp(1.75rem, 7.5vw, 2.25rem) !important; }
+  .text-4xl, [class*=" text-4xl"] { font-size: clamp(1.55rem, 6.5vw, 1.95rem) !important; }
+  .text-3xl, [class*=" text-3xl"] { font-size: clamp(1.35rem, 5.4vw, 1.65rem) !important; }
+  .text-2xl, [class*=" text-2xl"] { font-size: clamp(1.18rem, 4.6vw, 1.4rem) !important; }
+  .text-xl,  [class*=" text-xl"]  { font-size: clamp(1.05rem, 4vw, 1.2rem) !important; }
+  .text-lg,  [class*=" text-lg"]  { font-size: 1rem !important; line-height: 1.55 !important; }
+
+  /* Body copy — cap paragraph size so hero subheads don't dominate */
+  p { font-size: clamp(0.95rem, 3.9vw, 1.02rem); line-height: 1.6; }
+
+  /* ---------- Section spacing: tighten vertical rhythm ---------- */
+  section { padding-top: clamp(2.25rem, 8vw, 3rem); padding-bottom: clamp(2.25rem, 8vw, 3rem); }
+  [class*="py-32"], [class*="py-28"], [class*="py-24"], [class*="py-20"] {
+    padding-top: 2.75rem !important;
+    padding-bottom: 2.75rem !important;
+  }
+  [class*="py-16"] { padding-top: 2.25rem !important; padding-bottom: 2.25rem !important; }
+  [class*="mb-16"], [class*="mb-20"], [class*="mb-24"] { margin-bottom: 2rem !important; }
+  [class*="mt-16"], [class*="mt-20"], [class*="mt-24"] { margin-top: 2rem !important; }
+  [class*="gap-16"], [class*="gap-20"], [class*="gap-24"] { gap: 2rem !important; }
+  [class*="gap-12"] { gap: 1.5rem !important; }
+
+  /* ---------- Buttons: keep tappable, don't feel oversized ---------- */
+  .cta-gradient, [class*="min-h-[60px]"], [class*="min-h-[64px]"], [class*="min-h-[72px]"] {
+    min-height: 52px !important;
+  }
+  [class*="px-14"], [class*="px-12"], [class*="px-10"] {
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
+  }
+  [class*="py-5"], [class*="py-6"] { padding-top: 0.9rem !important; padding-bottom: 0.9rem !important; }
+
+  /* ---------- Cards: slightly tighter interior padding ---------- */
+  [class*="p-10"], [class*="p-12"] { padding: 1.5rem !important; }
+  [class*="p-8"] { padding: 1.25rem !important; }
+
+  /* ---------- Container gutters ---------- */
+  [class*="px-20"] { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  [class*="px-10"]:not([class*="px-10 "]) { /* no-op guard */ }
+
+  /* ---------- Hero-specific safety ---------- */
+  [data-hero-anchored] h1 { font-size: clamp(2.15rem, 9vw, 2.7rem) !important; }
+
+  /* ---------- Rounded corners feel less blocky on tight screens ---------- */
+  img { image-rendering: -webkit-optimize-contrast; }
+}
+
+/* Slightly smaller-scale tablet ease (641–820) */
+@media (min-width: 641px) and (max-width: 820px) {
+  h1 { font-size: clamp(2.6rem, 6vw, 3.25rem) !important; line-height: 1.1 !important; }
+  section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+}
+
 /* ── Global scroll-performance pass ──
    Stops reveal animations from causing scroll jank by:
    1. Respecting prefers-reduced-motion sitewide (kills all transitions/animations).
