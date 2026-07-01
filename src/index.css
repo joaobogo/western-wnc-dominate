@@ -1874,12 +1874,15 @@ div[style*="Edit with Lovable"],
   .aspect-\[4\/5\], .aspect-\[3\/4\], .aspect-\[2\/3\], .aspect-\[9\/16\] {
     aspect-ratio: 4 / 3 !important;
   }
-  /* Common oversized card image heights */
-  [class*="h-[30"], [class*="h-[32"], [class*="h-[34"], [class*="h-[36"], [class*="h-[38"] {
+  /* Common oversized card image heights — scoped to <img> so we don't
+     shrink logos, icons, or arbitrary utility sizes like h-[36px]. */
+  img.h-\[300px\], img.h-\[320px\], img.h-\[340px\], img.h-\[360px\], img.h-\[380px\],
+  .h-\[300px\] > img, .h-\[320px\] > img, .h-\[340px\] > img, .h-\[360px\] > img, .h-\[380px\] > img {
     height: 220px !important;
     max-height: 220px !important;
   }
-  [class*="h-[40"], [class*="h-[44"], [class*="h-[48"] {
+  img.h-\[400px\], img.h-\[440px\], img.h-\[480px\],
+  .h-\[400px\] > img, .h-\[440px\] > img, .h-\[480px\] > img {
     height: 240px !important;
     max-height: 240px !important;
   }
