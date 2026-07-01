@@ -24,6 +24,12 @@ export type Database = {
           email: string | null
           full_transcript: Json | null
           id: string
+          jobtread_error_message: string | null
+          jobtread_id: string | null
+          jobtread_last_attempt_at: string | null
+          jobtread_retry_count: number
+          jobtread_sync_status: string
+          jobtread_synced: boolean
           lead_id: string | null
           name: string | null
           page_url: string | null
@@ -52,6 +58,12 @@ export type Database = {
           email?: string | null
           full_transcript?: Json | null
           id?: string
+          jobtread_error_message?: string | null
+          jobtread_id?: string | null
+          jobtread_last_attempt_at?: string | null
+          jobtread_retry_count?: number
+          jobtread_sync_status?: string
+          jobtread_synced?: boolean
           lead_id?: string | null
           name?: string | null
           page_url?: string | null
@@ -80,6 +92,12 @@ export type Database = {
           email?: string | null
           full_transcript?: Json | null
           id?: string
+          jobtread_error_message?: string | null
+          jobtread_id?: string | null
+          jobtread_last_attempt_at?: string | null
+          jobtread_retry_count?: number
+          jobtread_sync_status?: string
+          jobtread_synced?: boolean
           lead_id?: string | null
           name?: string | null
           page_url?: string | null
@@ -310,6 +328,14 @@ export type Database = {
           has_plans: boolean | null
           id: string
           ip_address: string | null
+          jobtread_account_id: string | null
+          jobtread_error_message: string | null
+          jobtread_id: string | null
+          jobtread_last_attempt_at: string | null
+          jobtread_payload: Json | null
+          jobtread_retry_count: number
+          jobtread_sync_status: string
+          jobtread_synced: boolean
           lead_type: string | null
           li_fat_id: string | null
           metadata: Json | null
@@ -354,6 +380,14 @@ export type Database = {
           has_plans?: boolean | null
           id?: string
           ip_address?: string | null
+          jobtread_account_id?: string | null
+          jobtread_error_message?: string | null
+          jobtread_id?: string | null
+          jobtread_last_attempt_at?: string | null
+          jobtread_payload?: Json | null
+          jobtread_retry_count?: number
+          jobtread_sync_status?: string
+          jobtread_synced?: boolean
           lead_type?: string | null
           li_fat_id?: string | null
           metadata?: Json | null
@@ -398,6 +432,14 @@ export type Database = {
           has_plans?: boolean | null
           id?: string
           ip_address?: string | null
+          jobtread_account_id?: string | null
+          jobtread_error_message?: string | null
+          jobtread_id?: string | null
+          jobtread_last_attempt_at?: string | null
+          jobtread_payload?: Json | null
+          jobtread_retry_count?: number
+          jobtread_sync_status?: string
+          jobtread_synced?: boolean
           lead_type?: string | null
           li_fat_id?: string | null
           metadata?: Json | null
