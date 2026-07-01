@@ -213,3 +213,18 @@ function Field({ label, value, link }: { label: string; value: string | null; li
     </div>
   );
 }
+
+function SyncPill({ status }: { status: string | null }) {
+  const s = status ?? "pending";
+  const styles: Record<string, string> = {
+    success: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400",
+    pending: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
+    retry_needed: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
+    failed: "bg-destructive/15 text-destructive",
+  };
+  return (
+    <span className={`text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded ${styles[s] ?? "bg-muted text-muted-foreground"}`}>
+      JT: {s.replace("_", " ")}
+    </span>
+  );
+}
