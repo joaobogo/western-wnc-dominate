@@ -186,8 +186,8 @@ const BlogPostPage = () => {
               alt={post.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.95)] via-[hsl(var(--hero-overlay)/0.8)] to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay))] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
             <div className="absolute inset-0 tartan-dark opacity-[0.08] pointer-events-none" />
           </div>
 
@@ -199,12 +199,12 @@ const BlogPostPage = () => {
                 <div className="h-px w-12 bg-white/10" />
               </div>
               {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-[hsl(var(--dark-section-foreground)/0.4)] text-sm font-body mb-6">
-                <Link to="/blog" className="hover:text-[hsl(var(--dark-section-foreground)/0.7)] transition-colors flex items-center gap-1">
+              <nav className="flex items-center gap-2 text-white/70 text-sm font-body mb-6">
+                <Link to="/blog" className="hover:text-white transition-colors flex items-center gap-1">
                   <ArrowLeft className="w-3 h-3" /> Blog
                 </Link>
                 <span>/</span>
-                <span className="text-[hsl(var(--dark-section-foreground)/0.6)]">{post.category}</span>
+                <span className="text-white/80">{post.category}</span>
               </nav>
 
               {/* Meta */}
@@ -212,21 +212,21 @@ const BlogPostPage = () => {
                 <span className={`text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-sm ${getCategoryColor(post.category)}`}>
                   {post.category}
                 </span>
-                <span className="text-[hsl(var(--dark-section-foreground)/0.6)] text-[13px] font-body font-bold flex items-center gap-1.5">
+                <span className="text-white/80 text-[13px] font-body font-bold flex items-center gap-1.5">
                   <Calendar className="w-3 h-3" /> {formattedDate}
                 </span>
-                <span className="text-[hsl(var(--dark-section-foreground)/0.6)] text-[13px] font-body font-bold flex items-center gap-1.5">
+                <span className="text-white/80 text-[13px] font-body font-bold flex items-center gap-1.5">
                   <Clock className="w-3 h-3" /> {post.readTime} read
                 </span>
                 {post.town && (
-                  <span className="text-[hsl(var(--dark-section-foreground)/0.6)] text-[13px] font-body font-bold flex items-center gap-1.5">
+                  <span className="text-white/80 text-[13px] font-body font-bold flex items-center gap-1.5">
                     <MapPin className="w-3 h-3" /> {post.town}, NC
                   </span>
                 )}
               </div>
 
               {/* Title */}
-              <h1 className="text-display font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[1.0] tracking-tightest text-balance">
+              <h1 className="text-display font-heading font-bold text-white mb-5 leading-[1.0] tracking-tightest text-balance drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)]">
                 {post.title}
               </h1>
 
