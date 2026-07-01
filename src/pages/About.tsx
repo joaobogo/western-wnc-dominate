@@ -11,8 +11,7 @@ import { ScrollReveal } from "@/components/motion";
 import { teamMembers as approvedTeam } from "@/data/team";
 
 const storyImg = "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?auto=format&fit=crop&q=80&w=1920"; // Smoky Mountains focused picture
-import heritageAsset from "@/assets/wnc-heritage-home.jpg.asset.json";
-const heritageImg = heritageAsset.url;
+const heritageImg = "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&q=80&w=1200";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -630,8 +629,17 @@ const About = () => {
                 </div>
               </ScrollReveal>
               <div className="relative">
-                <div className="aspect-[4/5] bg-muted overflow-hidden">
-                  <img src={heritageImg} alt="Western North Carolina heritage" className="w-full h-full object-cover opacity-100" />
+                <div className="aspect-[4/5] bg-muted overflow-hidden border border-border">
+                  <img
+                    src={heritageImg}
+                    alt="Western North Carolina mountain home representing Highlander's family heritage"
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src =
+                        "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?auto=format&fit=crop&q=80&w=1200";
+                    }}
+                  />
                 </div>
                 {/* Visual badge */}
                 <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary flex items-center justify-center p-6 text-center border border-white/10 shadow-xl">
