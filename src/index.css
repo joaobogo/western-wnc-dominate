@@ -1935,3 +1935,104 @@ div[style*="Edit with Lovable"],
   * { will-change: auto; }
 }
 
+/* ============================================================
+   Mobile Image, Video, Form & CTA pass
+   ============================================================ */
+@media (max-width: 640px) {
+  /* --- Images: prevent layout shift, cap oversized dark heroes --- */
+  img { max-width: 100%; height: auto; }
+  img:not([width]):not([height]) { content-visibility: auto; }
+  /* Section-wide background images sometimes render pitch-black on OLED —
+     lighten the darkest overlay opacities on phones so imagery reads. */
+  [class*="bg-black/8"], [class*="bg-black/9"] { background-color: hsl(var(--heritage-charcoal) / 0.65) !important; }
+  /* Kill background-attachment: fixed on mobile — jank on iOS Safari */
+  * { background-attachment: scroll !important; }
+
+  /* --- Videos: mobile-safe defaults --- */
+  video {
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+    background-color: hsl(var(--heritage-charcoal));
+  }
+  video:not([controls]) { pointer-events: none; }
+  /* Autoplay videos must be muted — enforce via CSS attr selector fallback */
+  video[autoplay]:not([muted]) { display: none; }
+
+  /* --- Form fields: comfortable, not oversized --- */
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    min-height: 48px;
+    padding: 0.75rem 0.875rem !important;
+    border-radius: 0.5rem !important;
+    font-size: 16px !important; /* prevents iOS zoom */
+    line-height: 1.4 !important;
+  }
+  textarea { min-height: 96px; }
+  label {
+    font-size: 0.9375rem !important;
+    font-weight: 600;
+    margin-bottom: 0.375rem;
+    display: inline-block;
+  }
+  /* Consent / privacy / legal footnote text under forms */
+  form small,
+  form p.text-xs,
+  form [class*="text-muted"] {
+    font-size: 0.8125rem !important;
+    line-height: 1.5 !important;
+  }
+  /* Form section spacing — never balloon */
+  form fieldset { padding: 0; border: 0; margin: 0; }
+  form [class*="space-y-4"] > * + * { margin-top: 0.875rem !important; }
+  form [class*="space-y-6"] > * + * { margin-top: 1rem !important; }
+  form [class*="space-y-8"] > * + * { margin-top: 1.125rem !important; }
+
+  /* Submit / primary form buttons — clear hierarchy, not giant slabs */
+  form button[type="submit"],
+  form [type="submit"] {
+    min-height: 52px;
+    font-size: 15px !important;
+    padding: 0.875rem 1.25rem !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* Secondary/ghost form buttons — visibly lighter than primary */
+  form button[type="button"] { min-height: 44px; font-size: 14px !important; }
+
+  /* Error/success message text */
+  [role="alert"], [data-sonner-toast], .toast {
+    font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Radix Select dropdown content — full-width feel on phone */
+  [role="listbox"], [data-radix-select-content] {
+    max-height: 60vh !important;
+  }
+
+  /* --- CTA hierarchy on mobile --- */
+  /* Primary CTA already sized via .cta-gradient — cap runaway padding */
+  a.cta-gradient, button.cta-gradient {
+    min-height: 52px;
+    padding: 0.875rem 1.25rem !important;
+    font-size: 14px !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* tel: links styled as buttons stay compact but tappable */
+  a[href^="tel:"] { min-height: 44px; }
+}
+
+/* Respect reduced-motion — no card float / infinite loops on phones that ask */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
