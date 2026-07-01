@@ -9,7 +9,8 @@ import TartanBackground from "@/components/TartanBackground";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { MountainContours } from "@/components/motion/BackgroundTexture";
 import { towns } from "@/data/towns";
-import serviceAreasHero from "@/assets/service-areas-hero-smokies.jpg.asset.json";
+const SERVICE_AREAS_HERO = "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1920";
+const SERVICE_AREAS_HERO_FALLBACK = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -57,7 +58,11 @@ const ServiceAreas = () => {
         <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-end overflow-hidden">
           <div className="absolute inset-0 section-dark">
             <img
-              src={serviceAreasHero.url}
+              src={SERVICE_AREAS_HERO}
+              onError={(e) => {
+                const img = e.currentTarget;
+                if (img.src !== SERVICE_AREAS_HERO_FALLBACK) img.src = SERVICE_AREAS_HERO_FALLBACK;
+              }}
               alt="Sunlit Blue Ridge and Smoky Mountains over a Western North Carolina town at golden hour"
               className="w-full h-full object-cover object-[60%_center]"
               width={1920}
