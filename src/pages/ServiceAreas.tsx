@@ -155,15 +155,15 @@ const ServiceAreas = () => {
                     className="group block bg-card border border-border p-6 md:p-8 hover:border-primary/25 hover:shadow-[0_8px_30px_-8px_hsl(var(--heritage-green)/0.08)] transition-all duration-300 relative overflow-hidden"
                   >
                     <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-primary/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
+                    <div className="flex items-start justify-between gap-3 mb-4 flex-wrap">
+                      <div className="min-w-0">
                         <div className="flex items-center gap-2 mb-1">
                           <MapPin className="w-4 h-4 text-primary" />
-                          <h3 className="font-heading font-bold text-xl text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
+                          <h3 className="font-heading font-bold text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                         </div>
                         <p className="text-muted-foreground/60 text-[13px] font-body font-bold">{town.county}</p>
                       </div>
-                      <div className="flex gap-1">
+                      <div className="flex flex-wrap gap-1 shrink-0">
                         <span className="text-[10px] font-body font-bold uppercase tracking-[0.12em] px-2 py-1 bg-primary/8 text-primary rounded-sm">Roofing</span>
                         <span className="text-[10px] font-body font-bold uppercase tracking-[0.12em] px-2 py-1 bg-[hsl(var(--highland-gold)/0.1)] text-[hsl(var(--highland-gold))] rounded-sm">Construction</span>
                       </div>
