@@ -153,8 +153,8 @@ export default function Contact() {
         <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--heritage-green))] via-[hsl(var(--heritage-green)/0.88)] to-[hsl(var(--heritage-charcoal)/0.92)] pt-32 md:pt-40">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--highland-gold)/0.18),transparent_60%)] pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--highland-gold)/0.08),transparent_55%)] pointer-events-none" />
-          <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-[0.02] pointer-events-none hidden lg:block">
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200" alt="Mountain texture" className="w-full h-full object-cover" />
+          <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-30 pointer-events-none hidden lg:block [mask-image:linear-gradient(to_left,black,transparent)]">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1600" alt="Blue Ridge Mountains" className="w-full h-full object-cover" />
           </div>
 
           {/* No MountainContours — clean, functional */}
