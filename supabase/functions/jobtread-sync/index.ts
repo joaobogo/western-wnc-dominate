@@ -793,11 +793,66 @@ function validateSecrets(): string | null {
   return "Missing JobTread environment variable: JOBTREAD_API_KEY";
 }
 
+// Strip secrets, URLs, and any bearer/grant-key material out of upstream error
+// text before persisting to the database or returning it to callers. Keeps a
+// short, safe reason team members can read without leaking API details.
+function sanitizeError(input: unknown): string {
+  const raw = typeof input === "string" ? input : (input as any)?.message ?? JSON.stringify(input ?? "");
+  return String(raw)
+    .replace(/https?:\/\/\S+/gi, "[url]")
+    .replace(/bearer\s+[A-Za-z0-9._~+/=-]+/gi, "[token]")
+    .replace(/(grantKey|api_key|apikey|authorization)\s*[:=]\s*"?[A-Za-z0-9._~+/=-]+"?/gi, "$1=[redacted]")
+    .replace(/[A-Za-z0-9]{20,}\.[A-Za-z0-9._-]{20,}/g, "[token]")
+    .slice(0, 500);
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
   let body: any = {};
   try { body = await req.json(); } catch { /* empty */ }
+
+  // Bulk retry mode: find failed / retry_needed leads and re-run them. Meant
+  // for admin/scheduled use — protected by an internal admin token so it
+  // cannot be triggered from the public site.
+  if (body.retry_failed === true) {
+    const adminToken = body.admin_token ?? req.headers.get("x-admin-token");
+    if (!adminToken || adminToken !== (Deno.env.get("JOBTREAD_ADMIN_TOKEN") ?? SERVICE_ROLE)) {
+      return new Response(JSON.stringify({ error: "unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const limit = Math.min(Number(body.limit) || 25, 100);
+    const admin = createClient(SUPABASE_URL, SERVICE_ROLE, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
+    const { data: failed } = await admin
+      .from("leads")
+      .select("id, jobtread_retry_count")
+      .in("jobtread_sync_status", ["failed", "retry_needed"])
+      .lt("jobtread_retry_count", 5)
+      .order("created_at", { ascending: true })
+      .limit(limit);
+    const results: Array<{ id: string; ok: boolean }> = [];
+    for (const r of failed ?? []) {
+      try {
+        const url = new URL(req.url);
+        const res = await fetch(`${url.origin}${url.pathname}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Authorization": req.headers.get("authorization") ?? "" },
+          body: JSON.stringify({ lead_id: r.id, force: true }),
+        });
+        const j = await res.json().catch(() => ({ ok: false }));
+        results.push({ id: r.id, ok: !!j.ok });
+      } catch {
+        results.push({ id: r.id, ok: false });
+      }
+    }
+    return new Response(JSON.stringify({ ok: true, retried: results.length, results }), {
+      status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
   const leadId: string | undefined = body.lead_id;
   const convId: string | undefined = body.chatbot_conversation_id;
   const consultId: string | undefined = body.consultation_request_id;
@@ -859,11 +914,11 @@ Deno.serve(async (req) => {
     await admin.from(table).update({
       jobtread_sync_status: "retry_needed",
       jobtread_last_attempt_at: nowIso,
-      jobtread_error_message: missing,
+      jobtread_error_message: sanitizeError(missing),
       jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
-    return new Response(JSON.stringify({ ok: false, error: missing, retryable: true }), {
+    return new Response(JSON.stringify({ ok: false, error: "sync_config_missing", retryable: true }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
@@ -885,13 +940,17 @@ Deno.serve(async (req) => {
     await admin.from(table).update({
       jobtread_sync_status: "failed",
       jobtread_last_attempt_at: nowIso,
-      jobtread_error_message: result.error ?? "Unknown JobTread error",
+      jobtread_error_message: sanitizeError(result.error ?? "Unknown JobTread error"),
       jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
   }
 
-  return new Response(JSON.stringify(result), {
+  // Never leak raw upstream error text back to the caller.
+  const safeResult = result.ok
+    ? result
+    : { ok: false, error: "sync_failed", retryable: true };
+  return new Response(JSON.stringify(safeResult), {
     status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
   });
 });
