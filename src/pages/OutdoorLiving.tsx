@@ -15,6 +15,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
+import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.jpg";
 
 const heroImg = "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&q=80&w=2000";
 const porchContextImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600";
@@ -112,7 +113,10 @@ const OutdoorLiving = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImg} alt="Outdoor living space in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={outdoorMobileHero} />
+              <img src={heroImg} alt="Outdoor living space in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>

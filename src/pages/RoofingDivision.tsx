@@ -15,6 +15,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
+import roofingMobileHero from "@/assets/heroes/roofing-mobile.jpg";
 import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
@@ -253,12 +254,15 @@ const RoofingDivision = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src={metalRoof}
-              alt="Premium standing seam metal roof on a mountain estate in Cashiers, NC"
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={roofingMobileHero} />
+              <img
+                src={metalRoof}
+                alt="Premium standing seam metal roof on a mountain estate in Cashiers, NC"
+                className="w-full h-full object-cover object-[50%_25%] md:object-center"
+                loading="eager"
+              />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.1)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.4)] via-transparent to-transparent opacity-80" />
           </div>
