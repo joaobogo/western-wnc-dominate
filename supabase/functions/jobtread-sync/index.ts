@@ -125,7 +125,7 @@ function humanizeLeadName(row: LeadRow): string {
     // Route to Design Services when plans are missing/unclear — but preserve
     // specialty and roofing labels (gutter/skylight/outdoor living/roof/storm)
     // which are their own service categories and shouldn't be relabeled.
-    if (!/roof|storm|gutter|skylight|design|outdoor living/i.test(label)) {
+    if (!/roof|storm|gutter|skylight|design|outdoor living|deck|patio|porch|pergola|sunroom|garage/i.test(label)) {
       label = "Design Services Inquiry";
     }
   }
