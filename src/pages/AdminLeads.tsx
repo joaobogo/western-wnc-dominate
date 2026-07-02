@@ -79,6 +79,28 @@ export default function AdminLeads() {
     if (!error) setLeads(prev => prev.map(l => l.id === id ? { ...l, status } : l));
   };
 
+  const retryJobTread = async (id: string) => {
+    const { data, error } = await supabase.functions.invoke("jobtread-sync", {
+      body: { lead_id: id, force: true },
+    });
+    if (error) {
+      alert(`Retry failed: ${error.message}`);
+      return;
+    }
+    const { data: row } = await supabase
+      .from("leads")
+      .select("jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count")
+      .eq("id", id)
+      .maybeSingle();
+    if (row) {
+      setLeads(prev => prev.map(l => l.id === id ? { ...l, ...row } as Lead : l));
+      setSelected(prev => prev && prev.id === id ? { ...prev, ...row } as Lead : prev);
+    }
+    if (!(data as any)?.ok) {
+      alert(`JobTread not synced: ${(data as any)?.error || "check secrets"}`);
+    }
+  };
+
   const signOut = async () => {
     await supabase.auth.signOut();
     navigate("/admin/login", { replace: true });
@@ -170,6 +192,12 @@ export default function AdminLeads() {
                     <p className="text-xs whitespace-pre-wrap bg-destructive/10 text-destructive p-2 rounded">{selected.jobtread_error_message}</p>
                   </div>
                 )}
+                <button
+                  onClick={() => retryJobTread(selected.id)}
+                  className="text-xs underline text-primary hover:opacity-80"
+                >
+                  Retry JobTread sync
+                </button>
               </div>
               {selected.project_description && (
                 <div>
