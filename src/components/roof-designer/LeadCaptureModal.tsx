@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 import { Link } from "react-router-dom";
 import FormConsent from "@/components/FormConsent";
+import { syncDesignerLeadToJobTread } from "@/lib/leads";
 
 interface LeadCaptureModalProps {
   open: boolean;
@@ -58,7 +59,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
 
     try {
       // Save lead
-      const { error } = await supabase.from("designer_leads").insert({
+      const { data: inserted, error } = await supabase.from("designer_leads").insert({
         design_id: designId,
         name: form.name.trim(),
         email: form.email.trim(),
@@ -66,8 +67,9 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
         town: form.town.trim() || null,
         timeline: form.timeline,
         gdpr_consent: form.gdpr_consent,
-      });
+      }).select("id").single();
       if (error) throw error;
+      syncDesignerLeadToJobTread(inserted?.id);
 
       // Track metric
       await supabase.from("designer_metrics").insert({
