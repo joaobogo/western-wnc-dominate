@@ -74,7 +74,11 @@
   [class*="px-10"]:not([class*="px-10 "]) { /* no-op guard */ }
 
   /* ---------- Hero-specific safety ---------- */
-  [data-hero-anchored] h1 { font-size: clamp(2.15rem, 9vw, 2.7rem) !important; }
+  [data-hero-anchored] h1 {
+    font-size: clamp(1.7rem, 7.6vw, 2.3rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.025em !important;
+  }
 
   /* ---------- Rounded corners feel less blocky on tight screens ---------- */
   img { image-rendering: -webkit-optimize-contrast; }
