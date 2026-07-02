@@ -23,8 +23,13 @@ const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 // so nothing breaks if the secret was already saved under the legacy name.
 const JOBTREAD_API_KEY =
   Deno.env.get("JOBTREAD_API_KEY") ?? Deno.env.get("JOBTREAD_GRANT_KEY") ?? "";
-const JOBTREAD_BASE_URL =
-  Deno.env.get("JOBTREAD_BASE_URL") ?? "https://api.jobtread.com/pave";
+// JobTread's Pave API lives at `${host}/pave`. Accept either form of BASE_URL
+// and normalize so a plain `https://api.jobtread.com` still works.
+const JOBTREAD_BASE_URL_RAW =
+  Deno.env.get("JOBTREAD_BASE_URL") ?? "https://api.jobtread.com";
+const JOBTREAD_PAVE_URL = JOBTREAD_BASE_URL_RAW.replace(/\/+$/, "").endsWith("/pave")
+  ? JOBTREAD_BASE_URL_RAW.replace(/\/+$/, "")
+  : `${JOBTREAD_BASE_URL_RAW.replace(/\/+$/, "")}/pave`;
 // Optional. Used only if actually set — never blocks the integration.
 const JOBTREAD_ORG_ID = Deno.env.get("JOBTREAD_ORG_ID") ?? "";
 const JOBTREAD_WEBHOOK_URL = Deno.env.get("JOBTREAD_WEBHOOK_URL") ?? "";
@@ -236,62 +241,207 @@ async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; 
   }
 }
 
+// ---------- JobTread Highlander org constants ----------
+// Discovered via Pave introspection against the live org
+// "Highlander Roofing Services Inc" (org id 22P5uYkUSP8F).
+// Custom-field IDs are stable per JobTread org, so hardcoding here is safe
+// and avoids an extra API roundtrip on every sync.
+const JT_CF = {
+  account: {
+    service_area: "22P72GvSrBgk", // option: Franklin | Sylva | Asheville
+    lead_source: "22P75KEjYCfa",  // option: Website (and many others)
+  },
+  location: {
+    gate_code: "22PNwBiMbUzf",    // boolean, required
+    contact_name: "22PPzwDNUYjN", // text
+    phone: "22PPzw5sqRSX",        // phoneNumber
+    email: "22PTWFAtwzqx",        // emailAddress
+    sales_notes: "22P6KUiJD3EJ",  // text
+  },
+  job: {
+    status: "22P5uYmYTED2",       // option, "01 New Lead (Needs Appointment)"
+    job_type: "22PNawhnSXmW",     // option, required
+    scope_type: "22P6NLAkTWjs",   // option, required
+    comm_pref: "22PPQYu3uBCx",    // option, required
+    customer_present: "22PNm2NKGREB", // boolean, required
+    lead_notes: "22PYx7PBhE56",   // text
+  },
+} as const;
+
+function mapServiceArea(town: string | null | undefined): string {
+  const t = (town ?? "").toLowerCase();
+  if (/franklin|highlands|cashiers|scaly|otto|clayton/.test(t)) return "Franklin";
+  if (/sylva|cullowhee|bryson|waynesville|dillsboro|webster|balsam|maggie|cherokee/.test(t)) return "Sylva";
+  if (/asheville|hendersonville|weaverville|black mountain|arden|fletcher/.test(t)) return "Asheville";
+  return "Franklin"; // safe default matching HQ service area
+}
+
+function mapJobType(payload: any): string {
+  const key = (payload?.project?.service_category || payload?.source?.lead_type || "")
+    .toString()
+    .toLowerCase();
+  if (/gutter/.test(key)) return "Gutters";
+  if (/construction|addition|design|renovation|outdoor/.test(key)) return "Builder Service";
+  if (/repair|storm|maintenance|inspection|leak/.test(key)) return "Maintenance / Repair";
+  return "Roofing Service";
+}
+
+function mapScopeType(payload: any): string {
+  const key = (payload?.project?.service_category || payload?.source?.lead_type || "")
+    .toString()
+    .toLowerCase();
+  const desc = (payload?.project?.description || "").toString().toLowerCase();
+  if (/storm|emergency|active water|water coming/.test(key + " " + desc)) return "Emergency Tarp/Patch";
+  if (/metal/.test(key)) return "Roofing - Metal";
+  if (/synthetic|cedur|brava/.test(key)) return "Roofing - Synthetic CeDUR/Brava";
+  if (/commercial/.test(key)) return "Roofing - TRI-BUILT® SA / Flintlastic style Roofing";
+  if (/repair|leak|inspection/.test(key)) return "Roofing Repairs";
+  if (/replacement|shingle|roof/.test(key)) return "Roofing - Shingles";
+  if (/gutter/.test(key)) return "Gutters";
+  if (/addition/.test(key)) return "Construction - Addition";
+  if (/renovation|remodel/.test(key)) return "Construction - Remodel";
+  if (/design/.test(key)) return "Architectural Design";
+  if (/construction/.test(key)) return "Construction";
+  return "Still Needs";
+}
+
+function mapCommPref(pref: string | null | undefined): string {
+  const p = (pref ?? "").toLowerCase();
+  if (/text|sms/.test(p)) return "Texting";
+  if (/email/.test(p)) return "Email";
+  return "Phone Call";
+}
+
+async function paveFetch(query: any): Promise<any> {
+  const res = await fetch(JOBTREAD_PAVE_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query }),
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`Pave HTTP ${res.status}: ${text.slice(0, 400)}`);
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(`Non-JSON Pave response: ${text.slice(0, 300)}`);
+  }
+}
+
 async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
-    // JobTread's Pave API uses a `grantKey` field for auth — the value the
-    // user provides as JOBTREAD_API_KEY is that grant key. If ORG_ID is
-    // set we include it; otherwise the API will error and we surface that
-    // exact message back to the admin.
-    const accountFields: any = {
-      name: payload.contact?.name || payload.lead_name,
-      type: "customer",
-    };
-    if (payload.contact?.phone) {
-      accountFields.phones = [{ label: "primary", number: payload.contact.phone }];
+    const orgId = JOBTREAD_ORG_ID;
+    if (!orgId) {
+      return { ok: false, error: "Missing JOBTREAD_ORG_ID (Highlander org). Cannot create JobTread records." };
     }
-    if (payload.contact?.email) {
-      accountFields.emails = [{ label: "primary", address: payload.contact.email }];
-    }
-    const createAccount: any = {
-      $: accountFields,
-      id: {},
-      createJob: {
-        $: { name: payload.job_name, description: payload.note },
-        id: {},
+
+    const contactName = payload.contact?.name || "Website Lead";
+    const town = payload.location?.town;
+    const address = payload.location?.address;
+
+    const noteFull: string = payload.note ?? "";
+    // JobTread text custom fields cap at 1024 chars.
+    const noteShort = noteFull.length > 1000
+      ? noteFull.slice(0, 990) + "\n…[truncated]"
+      : noteFull;
+
+    // Step 1 — dedupe by account name. JobTread enforces unique account
+    // names within an org, so look up first and reuse the existing account
+    // when possible; otherwise create a new one.
+    let accountId: string | undefined;
+    const lookupRes = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      organization: {
+        $: { id: orgId },
+        accounts: {
+          $: {
+            where: {
+              and: [
+                { "=": [{ field: "name" }, { value: payload.lead_name }] },
+              ],
+            },
+            size: 1,
+          },
+          nodes: { id: {}, name: {} },
+        },
       },
-    };
-    const query: any = { $: { grantKey: JOBTREAD_API_KEY } };
-    if (JOBTREAD_ORG_ID) {
-      query.organization = { $: { id: JOBTREAD_ORG_ID }, createAccount };
-    } else {
-      // No org id supplied — try the current-organization shortcut. If the
-      // API rejects it, the exact message is surfaced in jobtread_error_message.
-      query.currentGrant = { organization: { createAccount } };
-    }
-    const res = await fetch(JOBTREAD_BASE_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query }),
     });
-    const text = await res.text();
-    if (!res.ok) {
-      return { ok: false, error: `Pave HTTP ${res.status}: ${text.slice(0, 400)}` };
+    accountId = lookupRes?.organization?.accounts?.nodes?.[0]?.id;
+    if (!accountId) {
+      const accountRes = await paveFetch({
+        $: { grantKey: JOBTREAD_API_KEY },
+        createAccount: {
+          $: {
+            organizationId: orgId,
+            name: payload.lead_name,
+            type: "customer",
+            customFieldValues: {
+              [JT_CF.account.service_area]: mapServiceArea(town),
+              [JT_CF.account.lead_source]: "Website",
+            },
+          },
+          createdAccount: { id: {}, name: {} },
+        },
+      });
+      const apiErrA = accountRes?.error?.message || accountRes?.error;
+      if (apiErrA) return { ok: false, error: `createAccount: ${String(apiErrA).slice(0, 400)}` };
+      accountId = accountRes?.createAccount?.createdAccount?.id;
+      if (!accountId) return { ok: false, error: `createAccount returned no id` };
     }
-    let id: string | undefined;
-    let apiError: string | undefined;
-    try {
-      const j = JSON.parse(text);
-      // Pave returns 200 with an { error } body when the query itself is invalid.
-      apiError = j?.error?.message || j?.error || j?.errors?.[0]?.message;
-      id =
-        j?.organization?.createAccount?.createJob?.id ??
-        j?.currentGrant?.organization?.createAccount?.createJob?.id ??
-        j?.data?.organization?.createAccount?.createJob?.id;
-    } catch { /* ignore */ }
-    if (apiError && !id) {
-      return { ok: false, error: `JobTread API: ${String(apiError).slice(0, 400)}` };
-    }
-    return { ok: true, id };
+
+    // Step 2 — create Location under the Account. JobTread caps name at 30 chars.
+    const rawLocName = [town, address].filter(Boolean).join(" — ") || contactName || "Website Lead";
+    const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
+    const locRes = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      createLocation: {
+        $: {
+          accountId,
+          name: locName,
+          address: address || null,
+          customFieldValues: {
+            [JT_CF.location.gate_code]: false,
+            [JT_CF.location.contact_name]: contactName,
+            [JT_CF.location.phone]: payload.contact?.phone || "",
+            [JT_CF.location.email]: payload.contact?.email || "",
+            [JT_CF.location.sales_notes]: noteShort,
+          },
+        },
+        createdLocation: { id: {}, name: {} },
+      },
+    });
+    const apiErrL = locRes?.error?.message || locRes?.error;
+    if (apiErrL) return { ok: false, error: `createLocation: ${String(apiErrL).slice(0, 400)}` };
+    const locationId: string | undefined = locRes?.createLocation?.createdLocation?.id;
+    if (!locationId) return { ok: false, error: `createLocation returned no id: ${JSON.stringify(locRes).slice(0, 300)}` };
+
+    // Step 3 — create Job under the Location
+    // JobTread caps job.name at 30 chars as well.
+    const jobNameShort = payload.job_name.length > 30
+      ? payload.job_name.slice(0, 30)
+      : payload.job_name;
+    const jobRes = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      createJob: {
+        $: {
+          locationId,
+          name: jobNameShort,
+          description: noteFull,
+          customFieldValues: {
+            [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
+            [JT_CF.job.job_type]: mapJobType(payload),
+            [JT_CF.job.scope_type]: mapScopeType(payload),
+            [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
+            [JT_CF.job.customer_present]: false,
+            [JT_CF.job.lead_notes]: noteShort,
+          },
+        },
+        createdJob: { id: {}, name: {} },
+      },
+    });
+    const apiErrJ = jobRes?.error?.message || jobRes?.error;
+    if (apiErrJ) return { ok: false, error: `createJob: ${String(apiErrJ).slice(0, 400)}` };
+    const jobId: string | undefined = jobRes?.createJob?.createdJob?.id;
+    return { ok: true, id: jobId ?? accountId };
   } catch (e) {
     return { ok: false, error: `Pave error: ${(e as Error).message}` };
   }
