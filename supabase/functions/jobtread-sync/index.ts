@@ -85,7 +85,7 @@ function humanizeLeadName(row: LeadRow): string {
 
   // Refine construction leads by project type: Addition / Garage / Porch /
   // Sunroom / Deck / Patio / Pergola / Outdoor Living / Renovation.
-  if (/construction/.test(key)) {
+  if (/construction|design|addition|garage|porch|sunroom|deck|patio|pergola|outdoor|renovation|remodel/.test(key)) {
     const pt = String(row.project_type ?? "").toLowerCase();
     if (/addition/.test(pt)) label = "Construction Addition Inquiry";
     else if (/garage/.test(pt)) label = "Garage Inquiry";
@@ -99,12 +99,48 @@ function humanizeLeadName(row: LeadRow): string {
     else if (/whole[- ]?home|custom[- ]?home|new[- ]?build/.test(pt)) label = "Custom Home Inquiry";
   }
 
+  // Lead classification: if this is a construction/design project, decide
+  // whether it should be organized as a Design/Planning inquiry or a
+  // Construction/Build inquiry based on plan status.
+  const classification = classifyConstructionDesign(row);
+  if (classification === "design") {
+    // Only rewrite roofing labels are untouched. For build-style labels,
+    // route to Design Services when plans are missing/unclear.
+    if (!/roof|storm|gutter|skylight|design/i.test(label)) {
+      label = "Design Services Inquiry";
+    }
+  }
+
   if (waterEntering) {
     label = "Urgent Roof Leak Lead";
   } else if (urgent && /roof/i.test(label)) {
     label = `Urgent ${label}`;
   }
   return name ? `${label} - ${town} - ${name}` : `${label} - ${town}`;
+}
+
+// Returns "construction" when the customer has complete permit-ready plans,
+// "design" when they only have ideas/sketches/no plans/unsure, or null when
+// the lead is not a construction/design project.
+function classifyConstructionDesign(row: LeadRow): "construction" | "design" | null {
+  const catBlob = (
+    String(row.service_category ?? "") + " " +
+    String(row.lead_type ?? "") + " " +
+    String(row.project_type ?? "")
+  ).toLowerCase();
+  const isCd = /construction|design|planning|outdoor|addition|garage|porch|sunroom|deck|patio|pergola|renovation|remodel|whole[- ]?home|custom[- ]?home/.test(catBlob);
+  if (!isCd) return null;
+  const meta: any = row.metadata ?? {};
+  const raw = String(
+    meta.plan_status ?? meta.planStatus ?? meta.planningStage ?? "",
+  ).toLowerCase();
+  const completePlans =
+    /pro[- ]?plans|permit|full[_-]?plans|complete|stamped|approved/.test(raw) ||
+    raw === "yes-pro-plans";
+  const explicitNoPlans =
+    /sketch|inspiration|idea|no[- ]?plans|not[- ]?sure|unsure|have[_-]?ideas|^no$/.test(raw);
+  if (completePlans || row.has_plans === true && !explicitNoPlans) return "construction";
+  return "design";
 }
 
 function humanizeKey(key: string): string {
@@ -226,9 +262,15 @@ function buildHumanNote(row: LeadRow): string {
     bullet("Email", row.email);
   } else if (isConstructionCategory) {
     bullet("Service Category", row.service_category);
+    const classification = classifyConstructionDesign(row);
+    if (classification) {
+      lines.push(
+        `- Lead Classification: ${classification === "construction" ? "Construction / Build Inquiry" : "Design / Planning Inquiry"}`,
+      );
+    }
     bullet("Project Type", row.project_type);
     if (planStatusLabel) lines.push(`- Plan Status: ${planStatusLabel}`);
-    if (meta.planningStage) bullet("Planning Stage", meta.planningStage);
+    if (meta.planningStage) bullet("Design/Planning Stage", meta.planningStage);
     bullet("Desired Timeline", row.urgency ?? meta.timeline);
     bullet("Budget Range", meta.budgetRange ?? meta.budget_band ?? meta.investment);
     bullet("Property Type", row.property_type);
@@ -369,6 +411,7 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       roofing_issue_type: row.roofing_issue_type ?? null,
       urgency: row.urgency ?? null,
       has_plans: row.has_plans ?? null,
+      lead_classification: classifyConstructionDesign(row),
       project_description: row.project_description ?? null,
       description: row.project_description ?? null, // legacy alias
       all_form_specific_answers: row.metadata ?? null,
