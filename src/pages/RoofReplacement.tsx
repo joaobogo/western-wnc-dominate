@@ -23,6 +23,7 @@ import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import metalCabin from "@/assets/gallery/metal-006.webp";
+import replacementMobileHero from "@/assets/heroes/replacement-mobile.jpg";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -160,7 +161,10 @@ const RoofReplacement = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img src={asphalt008} alt="Roof replacement in progress on a mountain home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={replacementMobileHero} />
+              <img src={asphalt008} alt="Roof replacement in progress on a mountain home in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>

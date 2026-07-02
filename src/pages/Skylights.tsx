@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { towns } from "@/data/towns";
 import veluxLogo from "@/assets/velux-certified-logo.jpg";
 import VeluxProof from "@/components/VeluxProof";
+import skylightsMobileHero from "@/assets/heroes/skylights-mobile.jpg";
 
 const faqs = [
   { q: "Are you a certified VELUX installer?", a: "Yes. Highlander is a VELUX Certified Installer — trained and accredited by VELUX to install their skylights and Sun Tunnels to manufacturer specification. That accreditation is what unlocks VELUX's installation warranty on top of the product warranty." },
@@ -61,9 +62,17 @@ const Skylights = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="section-padding section-dark pt-32 md:pt-40">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+        <section className="relative min-h-[65vh] md:min-h-[80vh] flex items-end overflow-hidden pt-32 md:pt-40 pb-14 md:pb-20">
+          <div className="absolute inset-0">
+            <picture>
+              <source media="(max-width: 767px)" srcSet={skylightsMobileHero} />
+              <img src={skylightsMobileHero} alt="Interior mountain great room with VELUX skylights and warm sunlight in Western North Carolina" className="w-full h-full object-cover object-center" loading="eager" />
+            </picture>
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.72)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.15)]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.55)] via-transparent to-transparent" />
+          </div>
+          <div className="container-tight relative z-10">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-white">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-20 h-20 flex items-center justify-center overflow-hidden bg-white/10 backdrop-blur-sm border border-white/10">
                   <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
@@ -75,14 +84,14 @@ const Skylights = () => {
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-balance">
                 Skylight Installation & Repair, Done Right.
               </h1>
-              <p className="text-dark-section-foreground/90 max-w-2xl text-base md:text-lg mb-8">
+              <p className="text-white/90 max-w-2xl text-base md:text-lg mb-8">
                 Team-led, VELUX Certified skylight installation across Western NC. Deck-mounted units, Sun Tunnels, and full leak diagnosis — coordinated with the roof system so the warranty actually holds.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                   Request a Skylight Assessment <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:+18285247773" className="border border-accent/40 text-accent font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-accent/10 transition-colors">
+                <a href="tel:+18285247773" className="border border-white/40 text-white font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
                   <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
               </div>
