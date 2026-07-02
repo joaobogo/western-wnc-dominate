@@ -353,7 +353,14 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       organization: {
         $: { id: orgId },
         accounts: {
-          $: { where: [["name", "=", payload.lead_name]], size: 1 },
+          $: {
+            where: {
+              and: [
+                { "=": [{ field: "name" }, { value: payload.lead_name }] },
+              ],
+            },
+            size: 1,
+          },
           nodes: { id: {}, name: {} },
         },
       },
