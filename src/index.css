@@ -2087,10 +2087,10 @@ div[style*="Edit with Lovable"],
 @media (max-width: 767px) {
   body[data-sticky-bar="visible"] main,
   body[data-sticky-bar="visible"] footer {
-    scroll-padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 140px);
+    scroll-padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 96px);
   }
   body[data-sticky-bar="visible"] footer {
-    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 140px) !important;
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 96px) !important;
   }
 }
 
