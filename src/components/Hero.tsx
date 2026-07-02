@@ -53,7 +53,7 @@ const Hero = () => {
             loading={i === 0 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "low"}
             decoding="async"
-            className="absolute inset-0 w-full h-full object-cover object-[50%_28%] md:object-center"
+            className="absolute inset-0 w-full h-full object-cover object-[58%_18%] md:object-center"
             style={{
               opacity: layer === i ? 1 : 0,
               transition: "opacity 1800ms cubic-bezier(0.22, 1, 0.36, 1)",
@@ -65,7 +65,7 @@ const Hero = () => {
         {/* Multi-layer cinematic grading — stronger on mobile for text legibility, lighter on desktop */}
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.35)] md:from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.08)] md:via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
         {/* Bottom-heavy gradient behind headline/CTAs on mobile — improves contrast without darkening the top sky */}
-        <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.78)] via-[hsl(var(--hero-overlay)/0.45)] to-transparent" />
+        <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.5)] to-transparent" />
         <div className="absolute inset-0 hidden md:block bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.15)] to-transparent" />
 
@@ -217,7 +217,7 @@ const Hero = () => {
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[1.15rem] leading-[1.2] md:text-[3.8rem] md:leading-[1.08] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-medium md:font-bold tracking-[0.02em] md:tracking-[-0.03em] uppercase md:normal-case"
+                className="text-[0.82rem] leading-[1.2] md:text-[3.8rem] md:leading-[1.08] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-semibold md:font-bold tracking-[0.22em] md:tracking-[-0.03em] uppercase md:normal-case whitespace-nowrap"
               >
                 <span className="text-[hsl(var(--highland-gold))]">Roofing · Construction · Design</span>
               </motion.h1>
@@ -229,11 +229,11 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[14px] md:text-[24px] text-white max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
+              className="text-[13.5px] md:text-[24px] text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
             >
-              <span className="md:hidden">Trusted roofing, construction, and outdoor living for Franklin, Highlands, Cashiers &amp; Western NC. Family-owned. Built for the mountains.</span>
+              <span className="md:hidden">Trusted roofing, construction &amp; outdoor living across Franklin, Highlands &amp; Cashiers. Family-owned. Built for the mountains.</span>
               <span className="hidden md:inline">Trusted roofing, repairs, construction, gutters, and outdoor living for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, locally run, and built for the mountains by a team of WNC craftspeople.</span>
-              <span className="block mt-2 md:mt-6 text-[hsl(var(--highland-gold))] font-bold text-[11.5px] md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
+              <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--highland-gold))] font-bold text-[11.5px] md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
             </motion.p>
 
 
@@ -268,14 +268,14 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
-              className="mt-5 md:mt-9 flex items-center flex-wrap gap-x-4 gap-y-2 md:gap-7"
+              className="mt-4 md:mt-9 flex items-center flex-wrap gap-x-3 gap-y-2 md:gap-7"
             >
-              <div className="flex items-center gap-2">
-                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-lg md:text-3xl">4.9★</span>
-                <span className="text-primary-foreground text-[11px] md:text-base font-body font-bold uppercase tracking-wider">Google Rating</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-base md:text-3xl leading-none">4.9★</span>
+                <span className="text-primary-foreground/90 text-[10.5px] md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Google · 150+ Reviews</span>
               </div>
-              <div className="w-px h-4 md:h-6 bg-primary-foreground/40" />
-              <span className="text-primary-foreground text-[11px] md:text-base font-body font-bold uppercase tracking-wider">150+ Verified Reviews</span>
+              <div className="w-px h-3.5 md:h-6 bg-primary-foreground/30" />
+              <span className="text-primary-foreground/90 text-[10.5px] md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed &amp; Insured</span>
               <div className="w-px h-6 bg-primary-foreground/40 hidden md:block" />
               <span className="text-primary-foreground text-[15px] md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Rapid Response Guarantee</span>
             </motion.div>
@@ -324,7 +324,7 @@ const Hero = () => {
           <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-20 py-4 md:py-5">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
               {/* Trust badges */}
-              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-5 gap-y-2.5 md:gap-x-8">
+              <div className="hidden sm:flex sm:flex-wrap gap-x-5 gap-y-2.5 md:gap-x-8">
                 {trustItems.map((item, i) => (
                   <motion.div
                     key={item.label}
