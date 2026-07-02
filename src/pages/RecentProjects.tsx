@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { ArrowRight, Phone, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Phone, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, Loader2, AlertCircle } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -54,6 +54,9 @@ const completedProjects = [
 ];
 
 const RecentProjects = () => {
+  const rwlOutputRef = useRef<HTMLDivElement>(null);
+  const [rwlStatus, setRwlStatus] = useState<"loading" | "ready" | "error">("loading");
+
   // Re-initialize RealWork widget on route mount (SPA navigation).
   // The sitewide loader.js is injected in index.html; here we ensure init()
   // runs after #rwl-output exists in the DOM even when arriving via client-side routing.
@@ -61,6 +64,8 @@ const RecentProjects = () => {
     const PLUGIN_ID = "SxCxaBpYsO_fVnK0";
     const HOST = "https://app.realworklabs.com";
     const w = window as any;
+    let cancelled = false;
+
     const tryInit = () => {
       if (w.rwlPlugin && typeof w.rwlPlugin.init === "function") {
         try { w.rwlPlugin.init(HOST, PLUGIN_ID); } catch (e) { /* no-op */ }
@@ -68,11 +73,41 @@ const RecentProjects = () => {
       }
       return false;
     };
-    if (!tryInit()) {
-      const onReady = () => tryInit();
-      window.addEventListener("rwlPluginReady", onReady, false);
-      return () => window.removeEventListener("rwlPluginReady", onReady);
+
+    const inited = tryInit();
+    const onReady = () => tryInit();
+    if (!inited) window.addEventListener("rwlPluginReady", onReady, false);
+
+    // Watch for widget content being injected into #rwl-output.
+    // Success: any child appears within 15s → 'ready'.
+    // Failure: nothing appears → 'error' (native fallback UI shown).
+    const start = Date.now();
+    const TIMEOUT_MS = 15000;
+    let observer: MutationObserver | null = null;
+    const checkReady = () => {
+      if (cancelled) return false;
+      const el = rwlOutputRef.current;
+      if (el && el.children.length > 0) {
+        setRwlStatus("ready");
+        return true;
+      }
+      return false;
+    };
+    if (!checkReady() && rwlOutputRef.current) {
+      observer = new MutationObserver(() => { if (checkReady() && observer) observer.disconnect(); });
+      observer.observe(rwlOutputRef.current, { childList: true, subtree: false });
     }
+    const timeoutId = window.setTimeout(() => {
+      if (cancelled) return;
+      if (!checkReady()) setRwlStatus("error");
+    }, TIMEOUT_MS);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timeoutId);
+      if (observer) observer.disconnect();
+      window.removeEventListener("rwlPluginReady", onReady);
+    };
   }, []);
 
   return (
@@ -265,7 +300,55 @@ const RecentProjects = () => {
               </p>
             </div>
             {/* RealWork Labs render target — do not modify, duplicate, or hide. */}
-            <div id="rwl-output" className="min-h-[120px]" />
+            {/* Container is always mounted so RealWork can render whenever the
+                plugin is ready. Loading/fallback UI overlays only when needed. */}
+            <div className="relative">
+              <div
+                id="rwl-output"
+                ref={rwlOutputRef}
+                className="min-h-[180px]"
+                aria-live="polite"
+                aria-busy={rwlStatus === "loading"}
+              />
+
+              {rwlStatus === "loading" && (
+                <div className="flex items-center justify-center gap-3 py-14 text-foreground/60 text-sm font-body">
+                  <Loader2 className="w-4 h-4 animate-spin text-[hsl(var(--heritage-green))]" aria-hidden="true" />
+                  <span>Loading recent project updates…</span>
+                </div>
+              )}
+
+              {rwlStatus === "error" && (
+                <div className="border border-border rounded-sm bg-card p-6 md:p-8">
+                  <div className="flex items-start gap-3 mb-4">
+                    <AlertCircle className="w-5 h-5 mt-0.5 text-[hsl(var(--heritage-green))] shrink-0" aria-hidden="true" />
+                    <div>
+                      <h3 className="text-base md:text-lg font-heading font-bold text-foreground mb-2">
+                        Recent project updates are temporarily unavailable
+                      </h3>
+                      <p className="text-sm md:text-base text-foreground/75 leading-relaxed">
+                        You can still explore our project gallery above, or contact Highlander
+                        to talk through your roofing, construction, gutter, or exterior project.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                    <Link
+                      to="/contact"
+                      className="cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+                    >
+                      Request a Free Quote <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <a
+                      href="tel:+18285247773"
+                      className="border border-[hsl(var(--heritage-green))]/30 text-[hsl(var(--heritage-green))] font-semibold text-sm px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-[hsl(var(--heritage-green))]/10 transition-all"
+                    >
+                      <Phone className="w-4 h-4" /> 828-524-7773
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
