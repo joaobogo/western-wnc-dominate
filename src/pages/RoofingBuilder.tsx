@@ -15,6 +15,7 @@ import IntakeConfirmation from "@/components/intake/IntakeConfirmation";
 import { supabase } from "@/integrations/supabase/client";
 import { scoreLead } from "@/lib/lead-scoring";
 import { deriveRoofingRouting } from "@/lib/lead-routing";
+import { syncConsultationRequestToJobTread } from "@/lib/leads";
 import { trackEvent } from "@/lib/analytics";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 
@@ -181,7 +182,7 @@ const RoofingBuilder = () => {
         hasPhotos: uploadedPaths.length > 0,
       });
 
-      const { error: insertErr } = await supabase.from("consultation_requests").insert({
+      const { data: inserted, error: insertErr } = await supabase.from("consultation_requests").insert({
         name: data.name,
         email: data.email,
         phone: data.phone,
@@ -209,8 +210,9 @@ const RoofingBuilder = () => {
           referrer: typeof document !== "undefined" ? document.referrer : null,
           utm: Object.fromEntries(params.entries()),
         } as any),
-      });
+      }).select("id").single();
       if (insertErr) throw insertErr;
+      syncConsultationRequestToJobTread(inserted?.id);
       trackEvent("form_submit", {
         label: "Roofing Builder",
         elementId: "roofing-builder",
