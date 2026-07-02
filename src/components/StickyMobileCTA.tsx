@@ -19,6 +19,14 @@ const StickyMobileCTA = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Reflect visibility on <body> so global CSS can add page bottom padding
+  // and any other overlay can coordinate. Cleared on unmount.
+  useEffect(() => {
+    const visible = scrolled && !suppressed;
+    document.body.dataset.stickyBar = visible ? "visible" : "hidden";
+    return () => { delete document.body.dataset.stickyBar; };
+  }, [scrolled, suppressed]);
+
   // Hide sticky mobile bar when chatbot or mobile menu is open, so the
   // floating overlays never stack and compete for the same tap area.
   useEffect(() => {
