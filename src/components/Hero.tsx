@@ -162,7 +162,7 @@ const Hero = () => {
 
       {/* === MAIN CONTENT === */}
       <div className="relative z-10 flex-1 flex items-end w-full">
-        <div className="w-full px-5 md:px-10 lg:px-20 pb-32 md:pb-44 hero-clears-header">
+        <div className="w-full px-5 md:px-10 lg:px-20 pb-24 md:pb-44 hero-clears-header">
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <motion.div
