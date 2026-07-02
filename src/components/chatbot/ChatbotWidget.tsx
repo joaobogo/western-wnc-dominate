@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { submitLead, logChatbotConversation } from "@/lib/leads";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -223,6 +224,7 @@ export default function ChatbotWidget() {
   const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
 
   // Mobile: only reveal the chatbot trigger after the user scrolls past the hero
   // so it never covers the headline, CTAs, or trust badges on first paint.
@@ -373,16 +375,14 @@ export default function ChatbotWidget() {
     <>
       {/* Floating trigger */}
       <AnimatePresence>
-        {!isOpen && (
+        {!isOpen && (!isMobile || scrolledPastHero) && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={() => setIsOpen(true)}
-            className={`fixed right-4 md:right-6 bottom-[calc(env(safe-area-inset-bottom,0px)+168px)] md:bottom-6 z-40 md:z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl flex items-center justify-center group transition-all duration-300 md:opacity-100 md:pointer-events-auto ${
-              scrolledPastHero ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            }`}
+            className="fixed right-4 md:right-6 bottom-[calc(env(safe-area-inset-bottom,0px)+168px)] md:bottom-6 z-40 md:z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl flex items-center justify-center group"
             aria-label="Open project assistant"
           >
             <MessageCircle className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
