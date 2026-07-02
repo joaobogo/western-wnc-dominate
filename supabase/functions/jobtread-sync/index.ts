@@ -415,12 +415,16 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     if (!locationId) return { ok: false, error: `createLocation returned no id: ${JSON.stringify(locRes).slice(0, 300)}` };
 
     // Step 3 — create Job under the Location
+    // JobTread caps job.name at 30 chars as well.
+    const jobNameShort = payload.job_name.length > 30
+      ? payload.job_name.slice(0, 30)
+      : payload.job_name;
     const jobRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createJob: {
         $: {
           locationId,
-          name: payload.job_name,
+          name: jobNameShort,
           description: noteFull,
           customFieldValues: {
             [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
