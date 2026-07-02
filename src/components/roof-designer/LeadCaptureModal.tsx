@@ -58,8 +58,10 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
     setIsSubmitting(true);
 
     try {
-      // Save lead
-      const { data: inserted, error } = await supabase.from("designer_leads").insert({
+      // Save lead — generate id client-side because anon has no SELECT policy.
+      const designerLeadId = (typeof crypto !== "undefined" && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}`;
+      const { error } = await supabase.from("designer_leads").insert({
+        id: designerLeadId,
         design_id: designId,
         name: form.name.trim(),
         email: form.email.trim(),
@@ -67,9 +69,9 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
         town: form.town.trim() || null,
         timeline: form.timeline,
         gdpr_consent: form.gdpr_consent,
-      }).select("id").single();
+      });
       if (error) throw error;
-      syncDesignerLeadToJobTread(inserted?.id);
+      syncDesignerLeadToJobTread(designerLeadId);
 
       // Track metric
       await supabase.from("designer_metrics").insert({

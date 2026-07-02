@@ -303,7 +303,9 @@ export default function QuoteFlow() {
     if (primaryTowns.includes(form.town)) score += 10;
 
     try {
-      const { data: inserted, error } = await supabase.from("consultation_requests").insert({
+      const consultId = (typeof crypto !== "undefined" && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}`;
+      const { error } = await supabase.from("consultation_requests").insert({
+        id: consultId,
         name: form.name,
         email: form.email,
         phone: form.phone || null,
@@ -316,10 +318,10 @@ export default function QuoteFlow() {
         source: "quote-flow",
         lead_score: score,
         property_type: form.propertyType || null,
-      }).select("id").single();
+      });
 
       if (error) throw error;
-      syncConsultationRequestToJobTread(inserted?.id);
+      syncConsultationRequestToJobTread(consultId);
       
       // Track successful submission
       trackEvent("form_submit", {

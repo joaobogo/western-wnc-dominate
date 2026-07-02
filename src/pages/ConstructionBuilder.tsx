@@ -212,7 +212,9 @@ const ConstructionBuilder = () => {
         town: data.town,
       });
 
-      const { data: inserted, error: insertErr } = await supabase.from("consultation_requests").insert({
+      const consultId = (typeof crypto !== "undefined" && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}`;
+      const { error: insertErr } = await supabase.from("consultation_requests").insert({
+        id: consultId,
         name: data.name,
         email: data.email,
         phone: data.phone,
