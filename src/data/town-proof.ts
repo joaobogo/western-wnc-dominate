@@ -46,7 +46,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Plateau leak response planning",
         summary: "Highlands homes often need phased work scheduling because steep drives, estate layouts, and sudden weather shifts can slow standard crews.",
         proof: "Daily weather sequencing, custom staging, and high-temp waterproofing details",
-        image: "https://images.unsplash.com/photo-1516706562725-aa47c4701923?auto=format&fit=crop&q=80&w=600",
+        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
       },
     ].slice(0, 3),
     faqs: [
@@ -192,7 +192,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Rental-turnover roof planning",
         summary: "Bryson City owners often need roofing work scheduled around guest occupancy, turnover windows, and limited maintenance access.",
         proof: "Condensed schedules and communication for remote property owners",
-        image: "https://images.unsplash.com/photo-1510627489930-0c1b0ba0546c?auto=format&fit=crop&q=80&w=600",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Tree-impact and branch-damage response",
@@ -268,7 +268,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Budget-focused repair plans",
         summary: "Rental properties in Cullowhee often need prioritized recommendations — what affects interior lease risk and what can be planned for next summer.",
         proof: "Repair prioritization with clear near-term vs. long-term Jackson County code guidance",
-        image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=600",
+        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Multi-building service support",
@@ -348,7 +348,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Town Mountain ridgetop roofing",
         summary: "High-wind exposure on Asheville's surrounding ridgetops requires high-velocity rated systems and reinforced perimeter fastening.",
         proof: "Category 4 impact ratings and 130mph wind warranties",
-        image: "https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=600",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Modern mountain suite addition",
