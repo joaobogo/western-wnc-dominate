@@ -83,6 +83,24 @@ function humanizeLeadName(row: LeadRow): string {
   const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
   let label = serviceMap[key] || "Website Lead";
 
+  // Detect specialty leads (gutters, skylights, outdoor living, deck/patio/pergola)
+  // from page_url, referrer, project_description and metadata when the
+  // service_category is generic (e.g. "roofing" or "construction" coming from
+  // the intake chooser). This produces a readable JobTread name even when the
+  // customer landed on a specialty page and went through a generic intake.
+  const specialtyBlob = (
+    String(row.page_url ?? "") + " " +
+    String(row.referrer ?? "") + " " +
+    String(row.project_type ?? "") + " " +
+    String(row.project_description ?? "") + " " +
+    (row.metadata ? JSON.stringify(row.metadata) : "")
+  ).toLowerCase();
+  if (/skylight|velux/.test(specialtyBlob)) label = "Skylight Inquiry";
+  else if (/gutter/.test(specialtyBlob)) label = "Gutter Inquiry";
+  else if (/outdoor[- ]?living|pergola|deck|patio|firepit|outdoor kitchen/.test(specialtyBlob)) {
+    label = "Outdoor Living Inquiry";
+  }
+
   // Refine construction leads by project type: Addition / Garage / Porch /
   // Sunroom / Deck / Patio / Pergola / Outdoor Living / Renovation.
   if (/construction|design|addition|garage|porch|sunroom|deck|patio|pergola|outdoor|renovation|remodel/.test(key)) {
@@ -104,9 +122,10 @@ function humanizeLeadName(row: LeadRow): string {
   // Construction/Build inquiry based on plan status.
   const classification = classifyConstructionDesign(row);
   if (classification === "design") {
-    // Only rewrite roofing labels are untouched. For build-style labels,
-    // route to Design Services when plans are missing/unclear.
-    if (!/roof|storm|gutter|skylight|design/i.test(label)) {
+    // Route to Design Services when plans are missing/unclear — but preserve
+    // specialty and roofing labels (gutter/skylight/outdoor living/roof/storm)
+    // which are their own service categories and shouldn't be relabeled.
+    if (!/roof|storm|gutter|skylight|design|outdoor living/i.test(label)) {
       label = "Design Services Inquiry";
     }
   }
