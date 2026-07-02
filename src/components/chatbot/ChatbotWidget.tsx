@@ -380,13 +380,9 @@ export default function ChatbotWidget() {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={() => setIsOpen(true)}
-            className={`fixed right-4 md:right-6 z-40 md:z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl flex items-center justify-center group transition-all duration-300 md:opacity-100 md:pointer-events-auto ${
+            className={`fixed right-4 md:right-6 bottom-[calc(env(safe-area-inset-bottom,0px)+168px)] md:bottom-6 z-40 md:z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl flex items-center justify-center group transition-all duration-300 md:opacity-100 md:pointer-events-auto ${
               scrolledPastHero ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             }`}
-            style={{
-              // Sit above the mobile sticky action bar (with VELUX strip + safe area).
-              bottom: `calc(env(safe-area-inset-bottom, 0px) + 168px)`,
-            }}
             aria-label="Open project assistant"
           >
             <MessageCircle className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
