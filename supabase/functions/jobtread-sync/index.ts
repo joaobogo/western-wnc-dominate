@@ -338,6 +338,12 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     const town = payload.location?.town;
     const address = payload.location?.address;
 
+    const noteFull: string = payload.note ?? "";
+    // JobTread text custom fields cap at 1024 chars.
+    const noteShort = noteFull.length > 1000
+      ? noteFull.slice(0, 990) + "\n…[truncated]"
+      : noteFull;
+
     // Step 1 — create Account (customer) with required custom fields
     const accountRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
@@ -373,8 +379,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
             [JT_CF.location.contact_name]: contactName,
             [JT_CF.location.phone]: payload.contact?.phone || "",
             [JT_CF.location.email]: payload.contact?.email || "",
-            // JobTread caps text custom fields at 1024 chars — truncate safely.
-            [JT_CF.location.sales_notes]: payload.note,
+            [JT_CF.location.sales_notes]: noteShort,
           },
         },
         createdLocation: { id: {}, name: {} },
@@ -392,14 +397,14 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
         $: {
           locationId,
           name: payload.job_name,
-          description: payload.note,
+          description: noteFull,
           customFieldValues: {
             [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
             [JT_CF.job.job_type]: mapJobType(payload),
             [JT_CF.job.scope_type]: mapScopeType(payload),
             [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
             [JT_CF.job.customer_present]: false,
-            [JT_CF.job.lead_notes]: payload.note,
+            [JT_CF.job.lead_notes]: noteShort,
           },
         },
         createdJob: { id: {}, name: {} },
