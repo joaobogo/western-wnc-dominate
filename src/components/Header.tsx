@@ -162,7 +162,7 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_30px_-10px_rgba(0,0,0,0.15)] border-b border-black/[0.08] md:border-b-0"
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_30px_-10px_rgba(0,0,0,0.15)] border-b border-black/[0.08] md:border-b-0 pt-[env(safe-area-inset-top)]"
     >
       {/* ─── Main nav bar ─── */}
       <div className={`flex items-center justify-between px-4 md:px-8 transition-all duration-500 ${scrolled ? "py-1.5 md:py-2" : "py-2 md:py-4"}`}>
@@ -395,8 +395,9 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 active:scale-90 transition-all duration-300 text-heritage-charcoal"
-            aria-label="Toggle menu"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-sm text-heritage-charcoal hover:bg-black/5 active:scale-90 transition-all duration-300"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
           >
             <AnimatePresence mode="wait">
               {mobileOpen ? (
