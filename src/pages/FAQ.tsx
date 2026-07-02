@@ -169,6 +169,50 @@ const categories: Category[] = [
       { q: "Do I need a permit for my roof or construction project?", a: "Most construction work and many roofing projects require local permits. Highlander handles permitting on your behalf and ensures all work meets WNC code requirements." },
     ],
   },
+  {
+    id: "skylights",
+    label: "Skylights & Sun Tunnels",
+    items: [
+      { q: "Do you install and replace skylights?", a: "Yes. We install, replace, and re-flash skylights and sun tunnels as part of a roof replacement or as standalone work. On any re-roof with existing skylights we recommend replacing them at the same time so the flashing is fully integrated with the new roof." },
+      { q: "Can you fix a leaking skylight?", a: "Almost always. Most 'leaking skylights' are actually flashing failures at the curb. We diagnose the real source, re-flash to spec, and only recommend a full skylight replacement when the unit itself has failed." },
+    ],
+  },
+  {
+    id: "design",
+    label: "Design & Planning Services",
+    items: [
+      { q: "Do you offer design services for additions and outdoor living projects?", a: "Yes. Highlander offers in-house design through a paid, three-phase Design & Consultation Agreement: scope discovery, plans and 3D views, and a permit-ready set. This is how we make sure your project is fully defined before we finalize construction pricing." },
+      { q: "How much do design services cost?", a: "Design fees are quoted per project after we understand scope. We don't publish generic pricing because a small deck plan and a full addition design aren't the same project. Contact us and we'll walk you through the phases and what to expect." },
+      { q: "Can I use plans I already have?", a: "Yes. If you already have architect or designer plans, we can price and build from them. If plans need refinement or a permit set, we can also step in through our design phases to finish them." },
+    ],
+  },
+  {
+    id: "getting-started",
+    label: "How to Start a Project",
+    items: [
+      { q: "How do I get started with Highlander?", a: "The easiest path is to request a free inspection or consultation on our Request Inspection page, or call (828) 524-7773. A local team member will reach out — usually the same or next business day — to schedule an on-site visit and understand what you're planning." },
+      { q: "What should I have ready for the first conversation?", a: "Just the basics: the property address, what you're seeing or want to build, and your rough timing. If you already have plans, photos, or an insurance claim number, share those too — but none of it is required to get started." },
+      { q: "What if I'm still early and just exploring ideas?", a: "That's a great time to reach out. Early conversations help us right-size the project, flag anything that could affect budget or timeline, and — if design work is needed — start you on the right phase." },
+    ],
+  },
+  {
+    id: "plans",
+    label: "Plans vs. No Plans",
+    items: [
+      { q: "I don't have plans yet — can we still talk?", a: "Absolutely. Most construction and outdoor-living projects start without plans. We'll listen to what you want, walk the property, and recommend whether you're ready for construction pricing or need to move through our design phases first." },
+      { q: "I already have complete plans — can you just price and build?", a: "Yes. If your plans are complete, permit-ready, and reflect the finishes and specifications you want, we can move straight to a construction estimate. If anything is missing, we'll flag it up front rather than surprise you during construction." },
+      { q: "I have partial plans or old sketches — what now?", a: "Very common. We'll review what you have, tell you honestly what's usable, and recommend the design phase that gets you from where you are to a build-ready set." },
+    ],
+  },
+  {
+    id: "contact",
+    label: "Contacting Highlander",
+    items: [
+      { q: "How do I get in touch?", a: "Call (828) 524-7773, request a free inspection or consultation online, or use the contact form on the Contact page. Someone from our local Western NC team will follow up personally." },
+      { q: "What are your hours?", a: "Our office is staffed during standard business hours, and we respond to storm and active-leak calls outside of hours when possible. The fastest response is usually a phone call — voicemails after hours are checked first thing." },
+      { q: "Do you have showroom or office visits?", a: "Meetings are by appointment so a team member can give you their full attention. Reach out and we'll schedule a time that works for both of us." },
+    ],
+  },
 ];
 
 const faqJsonLd = {
