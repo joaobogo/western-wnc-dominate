@@ -257,10 +257,12 @@ img {
      eyebrow, H1, breadcrumb, CTA, or first-section content.
      ────────────────────────────────────── */
   :root {
-    --header-h: 80px;
-    --header-h-md: 120px;
-    --header-h-scrolled: 68px;
-    --header-h-scrolled-md: 88px;
+    /* Real measured mobile header: ~52px expanded, ~44px scrolled.
+       Keep a small buffer so shadow + safe-area sit inside the offset. */
+    --header-h: 60px;
+    --header-h-md: 96px;
+    --header-h-scrolled: 48px;
+    --header-h-scrolled-md: 76px;
   }
 
   /* Every hero whose content stacks from the top automatically clears
