@@ -164,3 +164,25 @@ export async function logChatbotConversation(input: {
       .catch((err) => console.warn("jobtread-sync invoke failed:", err));
   }
 }
+
+/**
+ * Fire-and-forget JobTread sync for a consultation_requests row.
+ * Callers pass the id returned from the insert. Safe to call in a `.then()`
+ * on the insert promise — errors are logged, never thrown.
+ */
+export function syncConsultationRequestToJobTread(id: string | null | undefined) {
+  if (!id) return;
+  void supabase.functions
+    .invoke("jobtread-sync", { body: { consultation_request_id: id } })
+    .catch((err) => console.warn("jobtread-sync (consultation) invoke failed:", err));
+}
+
+/**
+ * Fire-and-forget JobTread sync for a designer_leads row.
+ */
+export function syncDesignerLeadToJobTread(id: string | null | undefined) {
+  if (!id) return;
+  void supabase.functions
+    .invoke("jobtread-sync", { body: { designer_lead_id: id } })
+    .catch((err) => console.warn("jobtread-sync (designer) invoke failed:", err));
+}
