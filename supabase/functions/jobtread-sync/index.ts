@@ -18,12 +18,16 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
-const JOBTREAD_WEBHOOK_URL = Deno.env.get("JOBTREAD_WEBHOOK_URL") ?? "";
-const JOBTREAD_GRANT_KEY = Deno.env.get("JOBTREAD_GRANT_KEY") ?? "";
-const JOBTREAD_ORG_ID = Deno.env.get("JOBTREAD_ORG_ID") ?? "";
-// Legacy / optional — kept so old references don't break anything.
+// Required: API key + base URL. Everything else is optional.
+// JobTread's Pave API calls the API key a "grantKey"; we accept either name
+// so nothing breaks if the secret was already saved under the legacy name.
+const JOBTREAD_API_KEY =
+  Deno.env.get("JOBTREAD_API_KEY") ?? Deno.env.get("JOBTREAD_GRANT_KEY") ?? "";
 const JOBTREAD_BASE_URL =
   Deno.env.get("JOBTREAD_BASE_URL") ?? "https://api.jobtread.com/pave";
+// Optional. Used only if actually set — never blocks the integration.
+const JOBTREAD_ORG_ID = Deno.env.get("JOBTREAD_ORG_ID") ?? "";
+const JOBTREAD_WEBHOOK_URL = Deno.env.get("JOBTREAD_WEBHOOK_URL") ?? "";
 
 type LeadRow = Record<string, any>;
 type ConvRow = Record<string, any>;
@@ -234,49 +238,59 @@ async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; 
 
 async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
+    // JobTread's Pave API uses a `grantKey` field for auth — the value the
+    // user provides as JOBTREAD_API_KEY is that grant key. If ORG_ID is
+    // set we include it; otherwise the API will error and we surface that
+    // exact message back to the admin.
+    const accountFields: any = {
+      name: payload.contact?.name || payload.lead_name,
+      type: "customer",
+    };
+    if (payload.contact?.phone) {
+      accountFields.phones = [{ label: "primary", number: payload.contact.phone }];
+    }
+    if (payload.contact?.email) {
+      accountFields.emails = [{ label: "primary", address: payload.contact.email }];
+    }
+    const createAccount: any = {
+      $: accountFields,
+      id: {},
+      createJob: {
+        $: { name: payload.job_name, description: payload.note },
+        id: {},
+      },
+    };
+    const query: any = { $: { grantKey: JOBTREAD_API_KEY } };
+    if (JOBTREAD_ORG_ID) {
+      query.organization = { $: { id: JOBTREAD_ORG_ID }, createAccount };
+    } else {
+      // No org id supplied — try the current-organization shortcut. If the
+      // API rejects it, the exact message is surfaced in jobtread_error_message.
+      query.currentGrant = { organization: { createAccount } };
+    }
     const res = await fetch(JOBTREAD_BASE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: {
-          $: { grantKey: JOBTREAD_GRANT_KEY },
-          organization: {
-            $: { id: JOBTREAD_ORG_ID },
-            createAccount: {
-              $: {
-                name: payload.contact?.name || payload.lead_name,
-                type: "customer",
-                phones: payload.contact?.phone
-                  ? [{ label: "primary", number: payload.contact.phone }]
-                  : [],
-                emails: payload.contact?.email
-                  ? [{ label: "primary", address: payload.contact.email }]
-                  : [],
-              },
-              id: {},
-              createJob: {
-                $: {
-                  name: payload.job_name,
-                  description: payload.note,
-                },
-                id: {},
-              },
-            },
-          },
-        },
-      }),
+      body: JSON.stringify({ query }),
     });
     const text = await res.text();
     if (!res.ok) {
       return { ok: false, error: `Pave HTTP ${res.status}: ${text.slice(0, 400)}` };
     }
     let id: string | undefined;
+    let apiError: string | undefined;
     try {
       const j = JSON.parse(text);
+      // Pave returns 200 with an { error } body when the query itself is invalid.
+      apiError = j?.error?.message || j?.error || j?.errors?.[0]?.message;
       id =
         j?.organization?.createAccount?.createJob?.id ??
+        j?.currentGrant?.organization?.createAccount?.createJob?.id ??
         j?.data?.organization?.createAccount?.createJob?.id;
     } catch { /* ignore */ }
+    if (apiError && !id) {
+      return { ok: false, error: `JobTread API: ${String(apiError).slice(0, 400)}` };
+    }
     return { ok: true, id };
   } catch (e) {
     return { ok: false, error: `Pave error: ${(e as Error).message}` };
@@ -284,13 +298,10 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
 }
 
 function validateSecrets(): string | null {
-  if (JOBTREAD_WEBHOOK_URL) return null; // webhook flow is self-sufficient
-  if (JOBTREAD_GRANT_KEY && JOBTREAD_ORG_ID) return null; // pave flow ok
-  const missing: string[] = [];
-  if (!JOBTREAD_WEBHOOK_URL) missing.push("JOBTREAD_WEBHOOK_URL");
-  if (!JOBTREAD_GRANT_KEY) missing.push("JOBTREAD_GRANT_KEY");
-  if (!JOBTREAD_ORG_ID) missing.push("JOBTREAD_ORG_ID");
-  return `Missing JobTread environment variable(s): ${missing.join(", ")}`;
+  // Only the API key is truly required. Base URL has a default. Webhook /
+  // org id are optional and only used when present.
+  if (JOBTREAD_API_KEY) return null;
+  return "Missing JobTread environment variable: JOBTREAD_API_KEY";
 }
 
 Deno.serve(async (req) => {
