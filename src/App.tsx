@@ -39,6 +39,7 @@ const Careers = lazy(() => import("./pages/Careers"));
 const RequestInspection = lazy(() => import("./pages/RequestInspection"));
 const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
+const ExteriorImprovements = lazy(() => import("./pages/ExteriorImprovements"));
 const ResidentialRoofing = lazy(() => import("./pages/ResidentialRoofing"));
 const SpecialtyRoofing = lazy(() => import("./pages/SpecialtyRoofing"));
 const RoofReplacement = lazy(() => import("./pages/RoofReplacement"));
