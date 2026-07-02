@@ -246,9 +246,9 @@ const ConstructionBuilder = () => {
           referrer: typeof document !== "undefined" ? document.referrer : null,
           utm: Object.fromEntries(params.entries()),
         } as any),
-      }).select("id").single();
+      });
       if (insertErr) throw insertErr;
-      syncConsultationRequestToJobTread(inserted?.id);
+      syncConsultationRequestToJobTread(consultId);
       trackEvent("form_submit", {
         label: "Construction Builder",
         elementId: "construction-builder",
