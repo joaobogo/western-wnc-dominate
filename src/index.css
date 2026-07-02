@@ -1951,8 +1951,14 @@ div[style*="Edit with Lovable"],
   [data-radix-accordion-item] { padding: 0 !important; }
   [data-radix-accordion-item] > [data-state] { padding: 0.75rem 0.875rem !important; }
 
-  /* Process / numbered cards — cap giant step numbers */
-  [class*="text-[8"], [class*="text-[9"], [class*="text-[10"][class*="rem"] {
+  /* Process / numbered cards — cap giant step numbers.
+     Only match rem-based arbitrary sizes so we don't accidentally blow up
+     tiny px labels like text-[9px] / text-[10px] used for eyebrow text. */
+  [class*="text-[8rem"],
+  [class*="text-[9rem"],
+  [class*="text-[10rem"],
+  [class*="text-[11rem"],
+  [class*="text-[12rem"] {
     font-size: 3rem !important;
     line-height: 1 !important;
   }
