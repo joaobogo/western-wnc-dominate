@@ -75,7 +75,14 @@ export type LeadPayload = {
  */
 export async function submitLead(payload: LeadPayload) {
   const attribution = readStoredAttribution();
+  // Generate the id client-side so we don't need SELECT-after-INSERT
+  // permission (anon can INSERT but cannot SELECT the leads table).
+  const leadId =
+    typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   const row = {
+    id: leadId,
     ...payload,
     consent_given: payload.consent_given ?? true,
     consent_text: CONSENT_TEXT,
@@ -97,23 +104,18 @@ export async function submitLead(payload: LeadPayload) {
     fbclid: attribution.fbclid ?? null,
     li_fat_id: attribution.li_fat_id ?? null,
   };
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from("leads")
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .insert([row as any])
-    .select("id")
-    .single();
+    .insert([row as any]);
   if (error) {
     console.error("submitLead error:", error);
     return { id: null as string | null, error };
   }
-  const leadId = (data?.id as string) ?? null;
   // Fire-and-forget JobTread sync. Never block the visitor on this.
-  if (leadId) {
-    void supabase.functions
-      .invoke("jobtread-sync", { body: { lead_id: leadId } })
-      .catch((err) => console.warn("jobtread-sync invoke failed:", err));
-  }
+  void supabase.functions
+    .invoke("jobtread-sync", { body: { lead_id: leadId } })
+    .catch((err) => console.warn("jobtread-sync invoke failed:", err));
   return { id: leadId, error: null };
 }
 
@@ -134,7 +136,12 @@ export async function logChatbotConversation(input: {
   converted_to_lead?: boolean;
 }) {
   const attribution = readStoredAttribution();
+  const convId =
+    typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   const row = {
+    id: convId,
     ...input,
     consent_given: true,
     consent_text: CONSENT_TEXT,
@@ -149,19 +156,16 @@ export async function logChatbotConversation(input: {
     utm_term: attribution.utm_term ?? null,
   };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from("chatbot_conversations")
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .insert([row as any])
-    .select("id")
-    .single();
+    .insert([row as any]);
   if (error) {
     console.error("logChatbotConversation error:", error);
     return;
   }
-  const convId = (data?.id as string) ?? null;
   // Only sync chatbot rows that actually captured contact info.
-  if (convId && (input.phone || input.email || input.name)) {
+  if (input.phone || input.email || input.name) {
     void supabase.functions
       .invoke("jobtread-sync", { body: { chatbot_conversation_id: convId } })
       .catch((err) => console.warn("jobtread-sync invoke failed:", err));
