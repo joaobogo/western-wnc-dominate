@@ -83,6 +83,24 @@ function humanizeLeadName(row: LeadRow): string {
   const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
   let label = serviceMap[key] || "Website Lead";
 
+  // Detect specialty leads (gutters, skylights, outdoor living, deck/patio/pergola)
+  // from page_url, referrer, project_description and metadata when the
+  // service_category is generic (e.g. "roofing" or "construction" coming from
+  // the intake chooser). This produces a readable JobTread name even when the
+  // customer landed on a specialty page and went through a generic intake.
+  const specialtyBlob = (
+    String(row.page_url ?? "") + " " +
+    String(row.referrer ?? "") + " " +
+    String(row.project_type ?? "") + " " +
+    String(row.project_description ?? "") + " " +
+    (row.metadata ? JSON.stringify(row.metadata) : "")
+  ).toLowerCase();
+  if (/skylight|velux/.test(specialtyBlob)) label = "Skylight Inquiry";
+  else if (/gutter/.test(specialtyBlob)) label = "Gutter Inquiry";
+  else if (/outdoor[- ]?living|pergola|deck|patio|firepit|outdoor kitchen/.test(specialtyBlob)) {
+    label = "Outdoor Living Inquiry";
+  }
+
   // Refine construction leads by project type: Addition / Garage / Porch /
   // Sunroom / Deck / Patio / Pergola / Outdoor Living / Renovation.
   if (/construction|design|addition|garage|porch|sunroom|deck|patio|pergola|outdoor|renovation|remodel/.test(key)) {
