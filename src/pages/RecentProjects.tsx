@@ -69,7 +69,13 @@ const RecentProjects = () => {
         {/* Hero */}
         <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
           <div className="absolute inset-0">
-            <img src={heroImg} alt="Highlander roofing project in Western North Carolina" className="w-full h-full object-cover" />
+            <img
+              src={heroImg}
+              alt="Highlander roofing project in Western North Carolina"
+              fetchPriority="high"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/75 to-secondary/40" />
             <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-secondary/60" />
           </div>
@@ -115,7 +121,15 @@ const RecentProjects = () => {
               {categoryCards.map((card) => (
                 <Link key={card.title} to={card.href} className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift">
                   <div className="aspect-[4/3] overflow-hidden bg-secondary">
-                    <img src={card.img} alt={`${card.title} — Highlander Roofing Services`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img
+                      src={card.img}
+                      alt={`${card.title} — Highlander Roofing Services`}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -160,6 +174,9 @@ const RecentProjects = () => {
                         src={p.image}
                         alt={`${p.title} — ${p.location}`}
                         loading="lazy"
+                        decoding="async"
+                        width={800}
+                        height={600}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <span className="absolute top-3 left-3 text-[10px] font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--heritage-green))] px-2.5 py-1 rounded-sm">
