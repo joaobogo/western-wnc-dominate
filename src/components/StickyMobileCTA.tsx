@@ -1,4 +1,4 @@
-import { Phone, ArrowRight, FileText } from "lucide-react";
+import { Phone, ArrowRight, FileText, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
