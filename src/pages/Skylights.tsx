@@ -204,8 +204,8 @@ const Skylights = () => {
             </Accordion>
           </div>
         </section>
-      </main>
         <CTABlock />
+      </main>
       <Footer />
       <StickyMobileCTA />
     </>
