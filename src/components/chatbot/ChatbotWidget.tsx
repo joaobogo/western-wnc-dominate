@@ -220,6 +220,7 @@ export default function ChatbotWidget() {
   const [leadCaptureShown, setLeadCaptureShown] = useState(false);
   const [exchangeCount, setExchangeCount] = useState(0);
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
@@ -233,6 +234,13 @@ export default function ChatbotWidget() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Hide launcher when mobile nav is open so overlays don't stack.
+  useEffect(() => {
+    const sync = (e: Event) => setMenuOpen((e as CustomEvent).detail?.open === true);
+    window.addEventListener("mobilemenu:toggle", sync);
+    return () => window.removeEventListener("mobilemenu:toggle", sync);
   }, []);
 
   useEffect(() => {
@@ -383,7 +391,7 @@ export default function ChatbotWidget() {
     <>
       {/* Floating trigger */}
       <AnimatePresence>
-        {!isOpen && (!isMobile || scrolledPastHero) && (
+        {!isOpen && !menuOpen && (!isMobile || scrolledPastHero) && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
