@@ -145,7 +145,7 @@ const RoofRepair = () => {
                 </a>
               </motion.div>
 
-              {/* Response guarantee — unique to Repair */}
+              {/* Response commitment — unique to Repair */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -156,8 +156,8 @@ const RoofRepair = () => {
                   <Clock className="w-5 h-5 text-[hsl(var(--heritage-green))]" />
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-bold text-primary-foreground">48-Hour Assessment Guarantee</div>
-                  <div className="text-xs text-primary-foreground/95 font-body">Same-day for emergencies. We answer our own phone.</div>
+                  <div className="text-sm font-heading font-bold text-primary-foreground">Fast Repair Assessments</div>
+                  <div className="text-xs text-primary-foreground/95 font-body">We prioritize active water intrusion and answer our own phone.</div>
                 </div>
               </motion.div>
             </div>
@@ -408,6 +408,34 @@ const RoofRepair = () => {
         </section>
 
         {/* ─── FAQS ─── */}
+        {/* ─── ONGOING MAINTENANCE ─── */}
+        <section className="section-padding bg-muted/20">
+          <div className="container-tight max-w-4xl">
+            <div className="text-center mb-8">
+              <span className="eyebrow mb-3 block">Ongoing Roof Care</span>
+              <h2 className="section-heading mb-4">Preventive Maintenance for<br className="hidden md:block" /> Western NC Roofs.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-2xl mx-auto">
+                Mountain weather — freeze-thaw cycles, wind-driven rain, heavy pollen and organic debris — is hard on roofs. A scheduled walk-through catches small failures at flashings, sealants, and fasteners before they turn into interior damage.
+              </p>
+            </div>
+            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl mx-auto">
+              {[
+                "Flashing, boot, and penetration inspection",
+                "Sealant refresh at exposed fasteners and terminations",
+                "Valley and gutter debris clearing",
+                "Documented condition report with photos",
+                "Repair-vs-replace guidance you can plan around",
+                "Priority scheduling on future repair calls",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <span className="text-foreground/80 font-body leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
