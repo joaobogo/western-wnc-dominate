@@ -53,7 +53,7 @@ const contactMethods = [
 const TRUST_POINTS = [
   { icon: Clock, text: "Personalized rapid response — guaranteed" },
   { icon: Shield, text: "Licensed GC · Fully insured · Warranty-backed" },
-  { icon: Award, text: "CertainTeed Master Shingle Applicator" },
+  { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
   { icon: Users, text: "In-house Highlander crews on every project" },
   { icon: Star, text: "4.9★ average across Google & Facebook" },
   { icon: MapPin, text: "Locally owned — Franklin & Sylva, NC" },

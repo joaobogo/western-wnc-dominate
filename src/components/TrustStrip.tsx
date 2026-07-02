@@ -13,7 +13,7 @@ const stats = [
 ];
 
 const credentials = [
-  { icon: Award, label: "CertainTeed Master Shingle Applicator", emphasis: true },
+  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", emphasis: true },
   { icon: Shield, label: "Licensed General Contractor", emphasis: true },
   { icon: Star, label: "Brava Preferred Installer", emphasis: true },
   { icon: Clock, label: "Rapid Storm Response" },

@@ -542,7 +542,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
 1. **NC General Contractor License.** Required for roofing work in North Carolina. Ask for the license number and verify it.
 2. **Insurance.** Both general liability and workers' compensation. Ask for certificates.
 3. **Local presence.** A contractor who lives and works in WNC understands mountain roofing challenges that out-of-state storm chasers don't.
-4. **Manufacturer certifications.** CertainTeed Master Shingle Applicator or similar certifications indicate training and quality standards.
+4. **Manufacturer certifications.** CertainTeed ShingleMaster Credentialed Contractor or similar certifications indicate training and quality standards.
 
 ## Red Flags to Avoid
 
@@ -564,7 +564,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
 
 - Family-owned since 2017
 - Licensed NC General Contractor
-- CertainTeed Master Shingle Applicators
+- CertainTeed ShingleMaster Credentialed Contractors
 - Based in Franklin & Sylva — not out of state
 - Free inspections with written reports
 - Financing available`,

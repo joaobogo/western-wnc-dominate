@@ -31,7 +31,7 @@ const fadeUp = {
 const certifications = [
   {
     icon: Award,
-    title: "CertainTeed Master Shingle Applicator",
+    title: "CertainTeed ShingleMaster Credentialed Contractor",
     badge: "Top 1% Nationally",
     image: badgeCertainteedMaster,
     description: "This is the highest credential CertainTeed offers to roofing contractors. It means our installers have been trained, tested, and certified to install CertainTeed roofing systems to the manufacturer's exact specifications — unlocking the strongest warranty coverage available.",
@@ -140,7 +140,7 @@ const Certifications = () => {
     <>
       <SEOHead
         title="Certifications & Credentials | Licensed & Insured"
-        description="Highlander's certifications explained — CertainTeed Master Shingle Applicator, Licensed NC General Contractor, full insurance, and manufacturer-backed warranties."
+        description="Highlander's certifications explained — CertainTeed ShingleMaster Credentialed Contractor, Licensed NC General Contractor, full insurance, and manufacturer-backed warranties."
         path="/certifications"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Certifications", url: "/certifications" }])}
       />

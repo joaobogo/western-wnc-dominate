@@ -15,7 +15,7 @@ const pillars = [
   {
     icon: ShieldCheck,
     title: "Warranty-Backed Workmanship",
-    description: "Every project carries full labor and material warranties. CertainTeed Master Shingle Applicator certified.",
+    description: "Every project carries full labor and material warranties. CertainTeed ShingleMaster Credentialed Contractor certified.",
   },
   {
     icon: Clock,

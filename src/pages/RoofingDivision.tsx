@@ -122,14 +122,14 @@ const faqs = [
   { q: "What roofing materials work best for mountain homes?", a: "It depends on your elevation, wind exposure, aesthetic preference, and budget. We typically recommend CertainTeed Landmark PRO dimensional shingles or standing seam metal for WNC homes — both handle high winds, heavy rain, and snow loads exceptionally well." },
   { q: "Do you handle insurance claims for storm damage?", a: "Yes. We provide complete damage documentation with photos and measurements, meet with your adjuster on-site, and coordinate the entire repair or replacement process through your insurance claim." },
   { q: "What does a new roof cost in Western North Carolina?", a: "Replacement pricing is scope-based — every proposal reflects size, material system, pitch complexity, and access conditions. We provide a detailed, grouped-cost proposal after assessing your specific property rather than publishing a generic range." },
-  { q: "Are you certified to install specific roofing brands?", a: "Yes. We are CertainTeed Master Shingle Applicator certified — a designation held by fewer than 1% of roofing contractors nationally. This means enhanced warranties and factory-backed installation quality." },
+  { q: "Are you certified to install specific roofing brands?", a: "Yes. We are CertainTeed ShingleMaster Credentialed Contractor certified — a designation held by fewer than 1% of roofing contractors nationally. This means enhanced warranties and factory-backed installation quality." },
   { q: "Do you offer warranties on your roofing work?", a: "Every project includes both the manufacturer's material warranty and Highlander's labor warranty. You receive a complete warranty package at your final walkthrough — documentation you can hold in your hands." },
   { q: "Can I finance a new roof?", a: "Yes. We offer flexible financing options to make roof replacement accessible. Ask about payment plans during your consultation — there's no obligation and no pressure." },
   { q: "How do I know if I need a repair or full replacement?", a: "We'll assess your roof honestly and explain both options with their pros, cons, and costs. We never recommend a replacement when a repair will solve the problem — and we'll document our reasoning so you can decide with confidence." },
 ];
 
 const trustSignals = [
-  { icon: Award, label: "CertainTeed Master Shingle Applicator", detail: "Top 1% nationally" },
+  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Top 1% nationally" },
   { icon: Shield, label: "Licensed General Contractor", detail: "State of North Carolina" },
   { icon: FileText, label: "Full Warranty Documentation", detail: "Material + labor coverage" },
   { icon: Clock, label: "Rapid Storm Response", detail: "Emergency priority service" },

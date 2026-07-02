@@ -222,7 +222,7 @@ const InspectionForm = () => {
                 {[
                   { icon: Clock, text: "Personal response rapidly — not an auto-reply" },
                   { icon: MapPin, text: "We serve every community in Western North Carolina" },
-                  { icon: Award, text: "CertainTeed Master Shingle Applicator certified" },
+                  { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor certified" },
                   { icon: Shield, text: "Licensed GC · Fully insured · Warranty-backed" },
                 ].map((item, i) => (
                   <motion.div

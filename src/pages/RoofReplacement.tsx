@@ -112,7 +112,7 @@ const timelineSteps = [
 
 const trustProof = [
   { value: "4.9★", label: "Google Rating", detail: "Across Highlands, Cashiers, Franklin, Sylva & surrounding communities" },
-  { value: "Top 1%", label: "CertainTeed Certification", detail: "Master Shingle Applicator — held by fewer than 1% of contractors nationally" },
+  { value: "Top 1%", label: "CertainTeed Certification", detail: "ShingleMaster Credentialed Contractor — held by fewer than 1% of contractors nationally" },
   { value: "4.7★", label: "Google Rating", detail: "Earned through consistent quality, communication, and follow-through" },
   { value: "Rapid", label: "Storm Response", detail: "Emergency tarping and priority scheduling when weather strikes" },
 ];

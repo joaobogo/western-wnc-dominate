@@ -176,7 +176,7 @@ export const brandAssets = {
     { name: "Sylva, NC", address: "28 Cross Stitch Mountain Road, Sylva, NC 28779" },
   ],
   certifications: [
-    "CertainTeed Master Shingle Applicator",
+    "CertainTeed ShingleMaster Credentialed Contractor",
     "VELUX Certified Installer",
     "Licensed NC General Contractor",
     "Fully Insured",

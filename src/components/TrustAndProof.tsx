@@ -3,7 +3,7 @@ import { Shield, Award, FileCheck, BadgeCheck, Handshake } from "lucide-react";
 import { BlueprintGrid } from "@/components/motion/BackgroundTexture";
 
 const certifications = [
-  { icon: Award, label: "CertainTeed", detail: "Master Shingle Applicator" },
+  { icon: Award, label: "CertainTeed", detail: "ShingleMaster Credentialed Contractor" },
   { icon: Shield, label: "Licensed GC", detail: "State of North Carolina" },
   { icon: BadgeCheck, label: "VELUX Certified", detail: "Professional Installer" },
   { icon: FileCheck, label: "Warranty-Backed", detail: "Labor & Material Coverage" },
