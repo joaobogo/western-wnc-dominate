@@ -87,7 +87,7 @@ function LeadCaptureCard({
     try {
       await supabase.from("consultation_requests").insert({
         name, phone: phone || null, email: email || null,
-        property_town: town.trim() || null,
+        town: town.trim() || null,
         source: "chatbot-inline", lead_score: 30, status: "new",
       });
     } catch { /* continue anyway */ }
