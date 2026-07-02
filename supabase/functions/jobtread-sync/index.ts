@@ -143,6 +143,17 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   const urgent =
     (row.urgency && /emergency|urgent|active|water/i.test(String(row.urgency))) ||
     /leak|water coming in|active/i.test(String(row.project_description || ""));
+  const town = row.property_town ?? null;
+  const serviceArea = town ? mapServiceAreaSafe(town) : null;
+  // Detect city/service-area landing pages by URL pattern.
+  const pageUrl: string = row.page_url ?? "";
+  const cityPageMatch = pageUrl.match(/\/(?:service-area|areas|towns|locations|cities)\/([a-z0-9-]+)/i);
+  const serviceAreaOrCityPage = cityPageMatch?.[1] ?? serviceArea ?? null;
+  const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
+  const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
+  const uploadedFileUrls = [...photos, ...files]
+    .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
+    .filter(Boolean);
   return {
     // Top-level fields most webhook receivers will look for
     lead_name: leadName,
@@ -157,8 +168,15 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       email: row.email ?? null,
       preferred_contact_method: row.preferred_contact_method ?? null,
     },
+    property: {
+      property_address: row.property_address ?? null,
+      property_town: town,
+      service_area_or_city_page: serviceAreaOrCityPage,
+      property_type: row.property_type ?? null,
+    },
+    // Kept for backward compatibility with any downstream mapper still reading `location`.
     location: {
-      town: row.property_town ?? null,
+      town,
       address: row.property_address ?? null,
       property_type: row.property_type ?? null,
     },
@@ -168,15 +186,20 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       roofing_issue_type: row.roofing_issue_type ?? null,
       urgency: row.urgency ?? null,
       has_plans: row.has_plans ?? null,
-      description: row.project_description ?? null,
+      project_description: row.project_description ?? null,
+      description: row.project_description ?? null, // legacy alias
+      all_form_specific_answers: row.metadata ?? null,
+      uploaded_file_urls: uploadedFileUrls,
     },
     source: {
-      form: row.source ?? null,
-      lead_type: row.lead_type ?? null,
-      page_url: row.page_url ?? null,
+      source_form: row.source ?? null,
+      source_page_url: row.page_url ?? null,
       referrer: row.referrer ?? null,
       submitted_at: row.created_at ?? null,
       user_agent: row.user_agent ?? null,
+      form: row.source ?? null, // legacy alias
+      page_url: row.page_url ?? null, // legacy alias
+      lead_type: row.lead_type ?? null,
       kind,
     },
     tracking: {
@@ -190,25 +213,35 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       li_fat_id: row.li_fat_id ?? null,
     },
     consent: {
-      given: row.consent_given ?? false,
-      text: row.consent_text ?? null,
+      consent_given: row.consent_given ?? false,
+      consent_text: row.consent_text ?? null,
       privacy_policy_url: "https://highlandernc.com/privacy-policy",
+      given: row.consent_given ?? false, // legacy alias
+      text: row.consent_text ?? null, // legacy alias
     },
     uploads: {
-      photos: Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [],
-      files: Array.isArray(row.files_uploaded) ? row.files_uploaded : [],
+      photos,
+      files,
+      uploaded_file_urls: uploadedFileUrls,
     },
     chat: kind === "chatbot" || row.chat_summary
       ? {
-          summary: row.chat_summary ?? row.summary ?? null,
-          transcript: row.full_chat_transcript ?? row.full_transcript ?? null,
+          chat_summary: row.chat_summary ?? row.summary ?? null,
+          chat_transcript: row.full_chat_transcript ?? row.full_transcript ?? null,
           recommended_next_step: row.recommended_next_step ?? null,
+          summary: row.chat_summary ?? row.summary ?? null, // legacy alias
+          transcript: row.full_chat_transcript ?? row.full_transcript ?? null, // legacy alias
         }
       : null,
     metadata: row.metadata ?? null,
     // Human-readable note the Highlander team can read at a glance
     note: buildHumanNote(row),
   };
+}
+
+function mapServiceAreaSafe(town: string | null | undefined): string | null {
+  if (!town) return null;
+  try { return mapServiceArea(town); } catch { return null; }
 }
 
 async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
