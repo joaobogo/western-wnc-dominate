@@ -39,6 +39,7 @@ const outdoorTypes = [
   { icon: Umbrella, title: "Covered Porches & Pavilions", detail: "Timber-framed, post-and-beam, or conventional covered structures that extend your living space outdoors — with roofing, lighting, electrical, and ceiling fan infrastructure built in." },
   { icon: Sun, title: "Screened Porches & Enclosures", detail: "Fully screened outdoor rooms that let you enjoy WNC evenings without the insects. Options range from simple screen-in conversions to custom-framed rooms with finished ceilings and fans." },
   { icon: TreePine, title: "Decks & Elevated Platforms", detail: "Composite, hardwood, and pressure-treated deck construction — including multi-level designs, stairs, railings, and integration with existing rooflines and entries." },
+  { icon: Layers, title: "Patios & Hardscape Transitions", detail: "Stone, paver, and stamped-concrete patios built into the terrain — with proper base preparation, drainage, and clean transitions to decks, porches, and existing walkways. Sized for entertaining, dining, or a quiet morning coffee." },
   { icon: Layers, title: "Pergolas & Shade Structures", detail: "Freestanding or attached pergolas, arbors, and shade structures with optional retractable canopies, lighting, and climbing-plant infrastructure." },
   { icon: Compass, title: "Outdoor Kitchens & Living Areas", detail: "Full outdoor kitchen builds with countertops, gas/electric hookups, storage, and weather-resistant cabinetry. Designed for WNC's climate and built to handle mountain weather year-round." },
   { icon: Hammer, title: "Custom Exterior Enhancements", detail: "Retaining walls, privacy screens, built-in seating, fire pit surrounds, and custom hardscape-to-structure transitions that tie outdoor spaces together." },
@@ -91,6 +92,7 @@ const faqs = [
   { q: "Do you coordinate roofing on covered outdoor structures?", a: "Absolutely — this is one of our key advantages. As a roofing and construction company, we handle the roofing on covered porches, pavilions, and screened rooms with the same materials, techniques, and warranty standards we use on primary roofing projects." },
   { q: "Can outdoor spaces be used year-round in WNC?", a: "With the right design, many outdoor spaces can be used 8–10 months per year. Screened porches with ceiling fans extend summer. Covered structures with radiant heaters and wind screens extend into fall and early spring. Four-season rooms with insulation and HVAC can be used year-round." },
   { q: "How do you protect outdoor structures from mountain weather?", a: "Material selection, fastener specification, drainage design, and structural engineering are all calibrated for WNC conditions — including wind exposure, freeze-thaw cycles, snow loads at elevation, and UV intensity. We build for the climate, not just the catalog." },
+  { q: "Do you install patios as well as decks and porches?", a: "Yes. We build stone, paver, and stamped-concrete patios with proper base prep and drainage, and we coordinate the transition between the patio and any adjacent deck, porch, walkway, or entry — so the finished space reads as one project instead of separate add-ons." },
 ];
 
 /* ═══════════════════════════════════════════ PAGE ═══════════════════════════════════════════ */
@@ -99,8 +101,8 @@ const OutdoorLiving = () => {
   return (
     <>
       <SEOHead
-        title="Outdoor Living in WNC | Decks, Porches & Pergolas"
-        description="Premium outdoor living spaces for Western North Carolina. Covered porches, screened rooms, decks, pavilions, and outdoor kitchens designed for mountain weather and mountain life."
+        title="Outdoor Living in WNC | Patios, Decks, Porches & Pergolas"
+        description="Premium outdoor living spaces for Western North Carolina. Patios, covered porches, screened rooms, decks, pavilions, and outdoor kitchens designed for mountain weather and mountain life."
         path="/construction/outdoor-living"
         jsonLd={[
           serviceSchema({ name: "Outdoor Living", description: "Premium outdoor living construction for Western North Carolina homeowners.", url: "/construction/outdoor-living" }),
