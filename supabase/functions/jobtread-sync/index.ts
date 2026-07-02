@@ -71,6 +71,9 @@ function humanizeLeadName(row: LeadRow): string {
     construction: "Construction Inquiry",
     addition: "Construction Addition Inquiry",
     design: "Design Services Inquiry",
+    design_planning: "Design Services Inquiry",
+    design_services: "Design Services Inquiry",
+    design_agreement: "Design Agreement Inquiry",
     gutters: "Gutter Inquiry",
     skylights: "Skylight Inquiry",
     outdoor_living: "Outdoor Living Inquiry",
@@ -79,6 +82,23 @@ function humanizeLeadName(row: LeadRow): string {
   };
   const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
   let label = serviceMap[key] || "Website Lead";
+
+  // Refine construction leads by project type: Addition / Garage / Porch /
+  // Sunroom / Deck / Patio / Pergola / Outdoor Living / Renovation.
+  if (/construction/.test(key)) {
+    const pt = String(row.project_type ?? "").toLowerCase();
+    if (/addition/.test(pt)) label = "Construction Addition Inquiry";
+    else if (/garage/.test(pt)) label = "Garage Inquiry";
+    else if (/porch/.test(pt)) label = "Porch Inquiry";
+    else if (/sunroom|solarium/.test(pt)) label = "Sunroom Inquiry";
+    else if (/pergola/.test(pt)) label = "Pergola Inquiry";
+    else if (/deck/.test(pt)) label = "Deck Inquiry";
+    else if (/patio/.test(pt)) label = "Patio Inquiry";
+    else if (/outdoor|kitchen|firepit/.test(pt)) label = "Outdoor Living Inquiry";
+    else if (/renovation|remodel/.test(pt)) label = "Renovation Inquiry";
+    else if (/whole[- ]?home|custom[- ]?home|new[- ]?build/.test(pt)) label = "Custom Home Inquiry";
+  }
+
   if (waterEntering) {
     label = "Urgent Roof Leak Lead";
   } else if (urgent && /roof/i.test(label)) {
