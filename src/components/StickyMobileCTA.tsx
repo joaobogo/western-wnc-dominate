@@ -14,9 +14,17 @@ const StickyMobileCTA = () => {
   const [suppressed, setSuppressed] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 400);
+    // Reveal only after the user scrolls past the hero (approx one full viewport)
+    // so the sticky bar never competes with the hero CTAs above the fold.
+    const threshold = () => Math.max(window.innerHeight * 0.9, 640);
+    const onScroll = () => setScrolled(window.scrollY > threshold());
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   // Reflect visibility on <body> so global CSS can add page bottom padding

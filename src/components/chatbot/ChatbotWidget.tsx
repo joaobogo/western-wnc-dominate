@@ -230,10 +230,15 @@ export default function ChatbotWidget() {
   // Mobile: only reveal the chatbot trigger after the user scrolls past the hero
   // so it never covers the headline, CTAs, or trust badges on first paint.
   useEffect(() => {
-    const onScroll = () => setScrolledPastHero(window.scrollY > 500);
+    const threshold = () => Math.max(window.innerHeight * 0.9, 640);
+    const onScroll = () => setScrolledPastHero(window.scrollY > threshold());
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   // Hide launcher when mobile nav is open so overlays don't stack.
