@@ -76,6 +76,7 @@ function LeadCaptureCard({
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [town, setTown] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -86,6 +87,7 @@ function LeadCaptureCard({
     try {
       await supabase.from("consultation_requests").insert({
         name, phone: phone || null, email: email || null,
+        town: town.trim() || null,
         source: "chatbot-inline", lead_score: 30, status: "new",
       });
     } catch { /* continue anyway */ }
@@ -97,6 +99,7 @@ function LeadCaptureCard({
       name,
       phone: phone || null,
       email: email || null,
+      property_town: town.trim() || null,
       preferred_contact_method: "phone",
       chat_summary: transcript.slice(-6).map(m => `${m.role}: ${m.content}`).join("\n").slice(0, 2000),
       full_chat_transcript: transcript,
@@ -149,6 +152,7 @@ function LeadCaptureCard({
         <input value={name} onChange={e => setName(e.target.value)} placeholder="Your name" className={inputCls} maxLength={100} />
         <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Best phone number" className={inputCls} maxLength={20} />
         <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email (optional)" className={inputCls} maxLength={255} />
+        <input value={town} onChange={e => setTown(e.target.value)} placeholder="Property town (Franklin, Highlands, Cashiers, Sylva…)" className={inputCls} maxLength={80} aria-label="What town is the property in?" />
       </div>
       <div className="flex items-center gap-2">
         <button onClick={handleSubmit} disabled={!name || !phone || submitting} className="flex-1 text-xs font-body font-semibold px-3 py-2 rounded-sm bg-primary text-primary-foreground disabled:opacity-40 hover:bg-primary/90 transition-colors">
