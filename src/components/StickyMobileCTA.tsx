@@ -51,6 +51,42 @@ const StickyMobileCTA = () => {
     };
   }, []);
 
+  // Also hide the sticky bar when a primary lead-capture form is in view.
+  // Any element with `data-hide-sticky` counts; when ≥25% visible the bar
+  // steps out of the way so the submit button and consent stay clear.
+  const [formInView, setFormInView] = useState(false);
+  useEffect(() => {
+    const visibleEls = new Set<Element>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting && e.intersectionRatio >= 0.25) visibleEls.add(e.target);
+          else visibleEls.delete(e.target);
+        }
+        setFormInView(visibleEls.size > 0);
+      },
+      { threshold: [0, 0.25, 0.5] }
+    );
+    const observed = new WeakSet<Element>();
+    const scan = () => {
+      document.querySelectorAll("[data-hide-sticky]").forEach((el) => {
+        if (!observed.has(el)) { io.observe(el); observed.add(el); }
+      });
+    };
+    scan();
+    const mo = new MutationObserver(scan);
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => { io.disconnect(); mo.disconnect(); };
+  }, []);
+  useEffect(() => {
+    if (formInView) setSuppressed(true);
+    else {
+      const chatOpen = document.body.dataset.chatOpen === "true";
+      const menuOpen = document.body.dataset.menuOpen === "true";
+      setSuppressed(chatOpen || menuOpen);
+    }
+  }, [formInView]);
+
   return (
     <>
       {/* ─── MOBILE: Premium bottom action bar ─── */}
