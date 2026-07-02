@@ -411,6 +411,7 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       roofing_issue_type: row.roofing_issue_type ?? null,
       urgency: row.urgency ?? null,
       has_plans: row.has_plans ?? null,
+      lead_classification: classifyConstructionDesign(row),
       project_description: row.project_description ?? null,
       description: row.project_description ?? null, // legacy alias
       all_form_specific_answers: row.metadata ?? null,
