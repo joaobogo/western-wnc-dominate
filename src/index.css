@@ -1808,7 +1808,12 @@ div[style*="Edit with Lovable"],
     padding-bottom: 2.5rem !important;
   }
   /* Top space above hero — respect fixed header without piling on */
-  main > section:first-child { padding-top: 5rem; }
+  /* Bottom-anchored heroes handle their own header clearance via
+     `.hero-clears-header`. Adding padding here creates a visible white
+     gap above the hero image on mobile. */
+  main > section:first-child:not([data-hero-anchored]):not(.no-header-pad) {
+    padding-top: 5rem;
+  }
 
   /* Card interiors — controlled, not cavernous */
   [class*="p-10"], [class*="p-12"], [class*="p-14"], [class*="p-16"] {
