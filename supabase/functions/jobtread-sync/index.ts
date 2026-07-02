@@ -311,9 +311,11 @@ Deno.serve(async (req) => {
   try { body = await req.json(); } catch { /* empty */ }
   const leadId: string | undefined = body.lead_id;
   const convId: string | undefined = body.chatbot_conversation_id;
+  const consultId: string | undefined = body.consultation_request_id;
+  const designerId: string | undefined = body.designer_lead_id;
 
-  if (!leadId && !convId) {
-    return new Response(JSON.stringify({ error: "lead_id or chatbot_conversation_id required" }), {
+  if (!leadId && !convId && !consultId && !designerId) {
+    return new Response(JSON.stringify({ error: "lead_id, chatbot_conversation_id, consultation_request_id, or designer_lead_id required" }), {
       status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
@@ -322,8 +324,17 @@ Deno.serve(async (req) => {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  const table = leadId ? "leads" : "chatbot_conversations";
-  const id = leadId ?? convId!;
+  const table = leadId
+    ? "leads"
+    : convId
+    ? "chatbot_conversations"
+    : consultId
+    ? "consultation_requests"
+    : "designer_leads";
+  const id = (leadId ?? convId ?? consultId ?? designerId)!;
+  const kind: "lead" | "chatbot" =
+    convId ? "chatbot" : "lead";
+  const supportsPayloadCol = table === "leads" || table === "consultation_requests" || table === "designer_leads";
   const { data: row, error: fetchErr } = await admin
     .from(table)
     .select("*")
@@ -342,7 +353,15 @@ Deno.serve(async (req) => {
     });
   }
 
-  const payload = buildPayload(row, leadId ? "lead" : "chatbot");
+  // consultation_requests uses `town` instead of `property_town` — normalize
+  // a couple of aliases so the payload builder emits the same shape.
+  const normalized = {
+    ...row,
+    property_town: row.property_town ?? row.town ?? null,
+    project_description: row.project_description ?? row.description ?? null,
+    source: row.source ?? row.source_form ?? table,
+  };
+  const payload = buildPayload(normalized, kind);
 
   const missing = validateSecrets();
   const nowIso = new Date().toISOString();
@@ -353,7 +372,7 @@ Deno.serve(async (req) => {
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: missing,
       jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
-      ...(leadId ? { jobtread_payload: payload } : {}),
+      ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
     return new Response(JSON.stringify({ ok: false, error: missing, retryable: true }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -371,7 +390,7 @@ Deno.serve(async (req) => {
       jobtread_id: result.id ?? null,
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: null,
-      ...(leadId ? { jobtread_payload: payload } : {}),
+      ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
   } else {
     await admin.from(table).update({
@@ -379,7 +398,7 @@ Deno.serve(async (req) => {
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: result.error ?? "Unknown JobTread error",
       jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
-      ...(leadId ? { jobtread_payload: payload } : {}),
+      ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
   }
 
