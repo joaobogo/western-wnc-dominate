@@ -152,6 +152,7 @@ const App = () => (
           <Route path="/construction/retaining-walls" element={<Navigate to="/construction/outdoor-living" replace />} />
 
           {/* ─── Gutter keyword aliases ─── */}
+          <Route path="/exterior-improvements" element={<ExteriorImprovements />} />
           <Route path="/gutters/seamless" element={<Navigate to="/roofing" replace />} />
           <Route path="/gutters/guards" element={<Navigate to="/roofing" replace />} />
           <Route path="/gutters/downspouts" element={<Navigate to="/roofing" replace />} />
