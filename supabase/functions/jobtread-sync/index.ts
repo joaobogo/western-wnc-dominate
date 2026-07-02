@@ -37,9 +37,29 @@ const JOBTREAD_WEBHOOK_URL = Deno.env.get("JOBTREAD_WEBHOOK_URL") ?? "";
 type LeadRow = Record<string, any>;
 type ConvRow = Record<string, any>;
 
+function detectUrgentRoofing(row: LeadRow): { urgent: boolean; waterEntering: boolean } {
+  const urgencyStr = String(row.urgency ?? "").toLowerCase();
+  const desc = String(row.project_description ?? "").toLowerCase();
+  const issue = String(row.roofing_issue_type ?? "").toLowerCase();
+  const projectType = String(row.project_type ?? "").toLowerCase();
+  const category = String(row.service_category ?? row.lead_type ?? "").toLowerCase();
+  const metaBlob = row.metadata ? JSON.stringify(row.metadata).toLowerCase() : "";
+  const isRoofing = /roof|storm|leak|gutter|skylight/.test(category + " " + projectType + " " + issue);
+  const waterEntering = /water (?:is )?(?:coming in|entering|dripping|pouring)|active(?:ly)? (?:leak|water)|actively coming in|leak(?:ing)? (?:inside|through|into)|ceiling (?:leak|drip)/.test(
+    desc + " " + issue + " " + metaBlob,
+  );
+  const urgent =
+    /emergency|urgent|asap|high|p1|active|storm|water/.test(urgencyStr) ||
+    /leak|storm|emergency/.test(issue) ||
+    /storm|leak/.test(projectType) ||
+    waterEntering;
+  return { urgent: isRoofing && urgent, waterEntering: isRoofing && waterEntering };
+}
+
 function humanizeLeadName(row: LeadRow): string {
   const name = (row.name || "").trim();
   const town = (row.property_town || "").trim() || "Western NC";
+  const { urgent, waterEntering } = detectUrgentRoofing(row);
   const serviceMap: Record<string, string> = {
     roofing: "Roofing Inquiry",
     roof_repair: "Roof Repair Lead",
@@ -58,7 +78,12 @@ function humanizeLeadName(row: LeadRow): string {
     synthetic_roofing: "Synthetic Roofing Inquiry",
   };
   const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
-  const label = serviceMap[key] || "Website Lead";
+  let label = serviceMap[key] || "Website Lead";
+  if (waterEntering) {
+    label = "Urgent Roof Leak Lead";
+  } else if (urgent && /roof/i.test(label)) {
+    label = `Urgent ${label}`;
+  }
   return name ? `${label} - ${town} - ${name}` : `${label} - ${town}`;
 }
 
