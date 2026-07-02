@@ -150,6 +150,19 @@ function humanizeLeadName(row: LeadRow): string {
   } else if (urgent && /roof/i.test(label)) {
     label = `Urgent ${label}`;
   }
+
+  // Chatbot-originated leads get a "Chatbot" prefix so Highlander can spot
+  // them at a glance in JobTread.
+  const isChatbot =
+    /chatbot|chat[-_ ]?bot/.test(String(row.source ?? "").toLowerCase()) ||
+    /chatbot|chat[-_ ]?bot/.test(String(row.lead_type ?? "").toLowerCase()) ||
+    !!row.chat_summary || !!row.summary || !!row.full_chat_transcript || !!row.full_transcript;
+  if (isChatbot && !/chatbot/i.test(label)) {
+    if (label === "Website Lead") label = "Chatbot Website Lead";
+    else if (/roof|storm|gutter|skylight/i.test(label)) label = `Chatbot ${label}`.replace(/Chatbot Urgent /, "Urgent Chatbot ");
+    else label = `Chatbot ${label}`;
+  }
+
   return name ? `${label} - ${town} - ${name}` : `${label} - ${town}`;
 }
 
@@ -386,11 +399,39 @@ function buildHumanNote(row: LeadRow): string {
     uploadLinks.forEach((link) => lines.push(`  • ${link}`));
   }
 
-  if (row.chat_summary || row.summary) {
-    section("Chatbot Summary:");
-    lines.push(String(row.chat_summary ?? row.summary));
-    if (row.recommended_next_step) {
-      lines.push(`- Recommended Next Step: ${row.recommended_next_step}`);
+  const isChatbotLead =
+    /chatbot|chat[-_ ]?bot/.test(String(row.source ?? "").toLowerCase()) ||
+    /chatbot|chat[-_ ]?bot/.test(String(row.lead_type ?? "").toLowerCase()) ||
+    !!row.chat_summary || !!row.summary ||
+    !!row.full_chat_transcript || !!row.full_transcript;
+  if (isChatbotLead) {
+    section("Chatbot Lead Summary:");
+    bullet("Service Needed", row.service_category);
+    bullet("Project Type", row.project_type);
+    bullet("Urgency", row.urgency);
+    bullet("Property Town", row.property_town);
+    bullet("Preferred Contact Method", row.preferred_contact_method);
+    bullet("Recommended Next Step", row.recommended_next_step);
+
+    const summaryText = String(row.chat_summary ?? row.summary ?? "").trim();
+    if (summaryText) {
+      section("Chat Summary:");
+      lines.push(summaryText);
+    }
+    const transcript = row.full_chat_transcript ?? row.full_transcript;
+    if (transcript) {
+      section("Full Transcript:");
+      if (Array.isArray(transcript)) {
+        for (const turn of transcript) {
+          const role = String(turn?.role ?? "user");
+          const content = String(turn?.content ?? turn?.text ?? "").trim();
+          if (content) lines.push(`- ${role}: ${content}`);
+        }
+      } else if (typeof transcript === "string") {
+        lines.push(transcript);
+      } else {
+        lines.push(JSON.stringify(transcript));
+      }
     }
   }
 
