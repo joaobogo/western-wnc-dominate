@@ -209,10 +209,10 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
 async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
     const headers: Record<string, string> = { "Content-Type": "application/json" };
-    if (JOBTREAD_GRANT_KEY) headers["Authorization"] = `Bearer ${JOBTREAD_GRANT_KEY}`;
+    if (JOBTREAD_API_KEY) headers["Authorization"] = `Bearer ${JOBTREAD_API_KEY}`;
     if (JOBTREAD_ORG_ID) headers["X-JobTread-Org"] = JOBTREAD_ORG_ID;
     const body = {
-      grant_key: JOBTREAD_GRANT_KEY || undefined,
+      api_key: JOBTREAD_API_KEY || undefined,
       org_id: JOBTREAD_ORG_ID || undefined,
       ...payload,
     };
