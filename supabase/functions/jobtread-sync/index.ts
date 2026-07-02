@@ -400,6 +400,11 @@ function buildHumanNote(row: LeadRow): string {
 function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   const leadName = humanizeLeadName(row);
   const { urgent, waterEntering } = detectUrgentRoofing(row);
+  // Derive a smart category from the readable lead name when the customer
+  // did not pick one on the form. Keeps JobTread's job_type useful even for
+  // generic contact/quote submissions.
+  const inferredCategory = leadName.split(" - ")[0]?.trim() || "Website Lead";
+  const jobType = row.service_category || row.lead_type || inferredCategory;
   const town = row.property_town ?? null;
   const serviceArea = town ? mapServiceAreaSafe(town) : null;
   // Detect city/service-area landing pages by URL pattern.
@@ -415,7 +420,7 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
     // Top-level fields most webhook receivers will look for
     lead_name: leadName,
     job_name: leadName,
-    job_type: row.service_category || row.lead_type || "Website Lead",
+    job_type: jobType,
     priority: urgent ? "P1" : "P3",
     urgency_level: urgent ? "high" : (row.urgency ?? "normal"),
     water_actively_entering: waterEntering,
