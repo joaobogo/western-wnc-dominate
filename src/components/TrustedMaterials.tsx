@@ -29,12 +29,12 @@ const vendors: Vendor[] = [
     logoMaxH: "max-h-12 md:max-h-14",
   },
   {
-    name: "Velux Skylights",
+    name: "VELUX Skylights",
     logo: logoVelux,
-    badge: "Certified Installer for Velux Products",
-    body: "Velux skylight products help bring natural light and fresh air into homes, with installation support from a certified Highlander team.",
+    badge: "VELUX Certified Installer",
+    body: "VELUX skylight products bring natural light and fresh air into homes, installed by a VELUX Certified Installer team at Highlander.",
     href: "https://www.veluxusa.com/",
-    ariaLabel: "Visit Velux Skylights (opens in a new tab)",
+    ariaLabel: "Visit VELUX Skylights (opens in a new tab)",
     logoMaxH: "max-h-10 md:max-h-12",
   },
   {
