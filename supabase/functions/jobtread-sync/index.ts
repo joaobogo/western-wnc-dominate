@@ -18,12 +18,16 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
-const JOBTREAD_WEBHOOK_URL = Deno.env.get("JOBTREAD_WEBHOOK_URL") ?? "";
-const JOBTREAD_GRANT_KEY = Deno.env.get("JOBTREAD_GRANT_KEY") ?? "";
-const JOBTREAD_ORG_ID = Deno.env.get("JOBTREAD_ORG_ID") ?? "";
-// Legacy / optional — kept so old references don't break anything.
+// Required: API key + base URL. Everything else is optional.
+// JobTread's Pave API calls the API key a "grantKey"; we accept either name
+// so nothing breaks if the secret was already saved under the legacy name.
+const JOBTREAD_API_KEY =
+  Deno.env.get("JOBTREAD_API_KEY") ?? Deno.env.get("JOBTREAD_GRANT_KEY") ?? "";
 const JOBTREAD_BASE_URL =
   Deno.env.get("JOBTREAD_BASE_URL") ?? "https://api.jobtread.com/pave";
+// Optional. Used only if actually set — never blocks the integration.
+const JOBTREAD_ORG_ID = Deno.env.get("JOBTREAD_ORG_ID") ?? "";
+const JOBTREAD_WEBHOOK_URL = Deno.env.get("JOBTREAD_WEBHOOK_URL") ?? "";
 
 type LeadRow = Record<string, any>;
 type ConvRow = Record<string, any>;
