@@ -17,7 +17,7 @@ import { ConstructionClosingCTA } from "@/components/construction/ConstructionSh
 const heroImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
 const specialtyContextImg = "https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=1000";
 const detailOversightImg = "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1000";
-const complexityImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000";
+const complexityImg = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000";
 
 import proj1 from "@/assets/gallery/metal-003.webp";
 import proj2 from "@/assets/gallery/asphalt-002.jpg";
