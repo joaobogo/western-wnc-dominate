@@ -268,7 +268,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Budget-focused repair plans",
         summary: "Rental properties in Cullowhee often need prioritized recommendations — what affects interior lease risk and what can be planned for next summer.",
         proof: "Repair prioritization with clear near-term vs. long-term Jackson County code guidance",
-        image: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=600",
+        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
       },
       {
         title: "Multi-building service support",
