@@ -101,6 +101,21 @@ function humanizeLeadName(row: LeadRow): string {
     label = "Outdoor Living Inquiry";
   }
 
+  // Smart categorization: if the customer did not choose a category, try to
+  // infer one from the source page URL / referrer so JobTread never receives
+  // an unlabeled "Website Lead" when the page context makes the service clear.
+  if (label === "Website Lead") {
+    if (/storm|hail|wind[- ]damage/.test(specialtyBlob)) label = "Storm Damage Lead";
+    else if (/roof[- ]?repair|leak/.test(specialtyBlob)) label = "Roof Repair Lead";
+    else if (/roof[- ]?replac/.test(specialtyBlob)) label = "Roof Replacement Inquiry";
+    else if (/commercial/.test(specialtyBlob)) label = "Commercial Roofing Inquiry";
+    else if (/metal[- ]?roof/.test(specialtyBlob)) label = "Metal Roofing Inquiry";
+    else if (/synthetic|davinci|brava/.test(specialtyBlob)) label = "Synthetic Roofing Inquiry";
+    else if (/roof/.test(specialtyBlob)) label = "Roofing Inquiry";
+    else if (/design|planning|layout/.test(specialtyBlob)) label = "Design Services Inquiry";
+    else if (/construction|addition|renovation|remodel|custom[- ]?home/.test(specialtyBlob)) label = "Construction Inquiry";
+  }
+
   // Refine construction leads by project type: Addition / Garage / Porch /
   // Sunroom / Deck / Patio / Pergola / Outdoor Living / Renovation.
   if (/construction|design|addition|garage|porch|sunroom|deck|patio|pergola|outdoor|renovation|remodel/.test(key)) {
