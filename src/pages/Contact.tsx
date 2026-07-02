@@ -360,7 +360,7 @@ export default function Contact() {
                       The more detail you share, the more prepared we'll be when we reach out.
                     </p>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6" data-hide-sticky>
                       {/* Name & Email */}
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
