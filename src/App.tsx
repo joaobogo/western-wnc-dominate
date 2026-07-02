@@ -39,6 +39,7 @@ const Careers = lazy(() => import("./pages/Careers"));
 const RequestInspection = lazy(() => import("./pages/RequestInspection"));
 const SEOMonitoring = lazy(() => import("./pages/SEOMonitoring"));
 const RoofingDivision = lazy(() => import("./pages/RoofingDivision"));
+const ExteriorImprovements = lazy(() => import("./pages/ExteriorImprovements"));
 const ResidentialRoofing = lazy(() => import("./pages/ResidentialRoofing"));
 const SpecialtyRoofing = lazy(() => import("./pages/SpecialtyRoofing"));
 const RoofReplacement = lazy(() => import("./pages/RoofReplacement"));
@@ -151,6 +152,7 @@ const App = () => (
           <Route path="/construction/retaining-walls" element={<Navigate to="/construction/outdoor-living" replace />} />
 
           {/* ─── Gutter keyword aliases ─── */}
+          <Route path="/exterior-improvements" element={<ExteriorImprovements />} />
           <Route path="/gutters/seamless" element={<Navigate to="/roofing" replace />} />
           <Route path="/gutters/guards" element={<Navigate to="/roofing" replace />} />
           <Route path="/gutters/downspouts" element={<Navigate to="/roofing" replace />} />
