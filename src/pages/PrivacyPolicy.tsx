@@ -483,7 +483,9 @@ const PrivacyPolicy = () => {
             <h4>8.5.2 Analytics and Advertising Tools</h4>
             <p>
               We may use third-party analytics and advertising tools (such as Google
-              Analytics, Google Ads, and Meta Pixel). These providers may set cookies or
+              Analytics, Google Ads, Meta Pixel, the LinkedIn Insight Tag, call-tracking
+              providers, and review-request tools such as RealWork Labs). These providers
+              may set cookies or
               similar technologies and collect information about your interactions with the
               Website to provide measurement, analytics, and advertising services. Information
               collected through these tools may be combined with other information collected
