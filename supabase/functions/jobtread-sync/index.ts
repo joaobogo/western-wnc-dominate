@@ -144,7 +144,33 @@ function buildHumanNote(row: LeadRow): string {
     lines.push(`- ${label}: ${rendered}`);
   };
 
-  section("Lead Summary:");
+  const { urgent: urgentRoofing, waterEntering } = detectUrgentRoofing(row);
+  const isRoofingCategory = /roof|storm|gutter|skylight|leak/i.test(
+    String(row.service_category ?? row.lead_type ?? "") +
+      " " + String(row.project_type ?? "") +
+      " " + String(row.roofing_issue_type ?? ""),
+  );
+
+  if (urgentRoofing) {
+    lines.push("*** URGENT ROOFING LEAD ***");
+    if (waterEntering) lines.push("*** WATER ACTIVELY ENTERING PROPERTY ***");
+    lines.push("");
+  }
+
+  section(isRoofingCategory ? "Roofing Lead Summary:" : "Lead Summary:");
+  if (isRoofingCategory) {
+    bullet("Service Type", row.service_category);
+    bullet("Roofing Issue", row.roofing_issue_type ?? row.project_type);
+    bullet("Urgency", urgentRoofing ? `HIGH — ${row.urgency ?? "urgent"}` : row.urgency);
+    lines.push(`- Water Actively Entering: ${waterEntering ? "Yes" : "No / Unknown"}`);
+    bullet("Property Type", row.property_type);
+    bullet("Property Town", row.property_town);
+    bullet("Property Address", row.property_address);
+    bullet("Preferred Contact Method", row.preferred_contact_method);
+    bullet("Name", row.name);
+    bullet("Phone", row.phone);
+    bullet("Email", row.email);
+  } else {
   bullet("Service Category", row.service_category);
   bullet("Project Type", row.project_type);
   bullet("Urgency", row.urgency);
@@ -154,6 +180,7 @@ function buildHumanNote(row: LeadRow): string {
   bullet("Name", row.name);
   bullet("Phone", row.phone);
   bullet("Email", row.email);
+  }
 
   const customerMessage = (row.project_description ?? "").toString().trim();
   if (customerMessage) {
@@ -162,7 +189,10 @@ function buildHumanNote(row: LeadRow): string {
   }
 
   const formAnswers: Array<[string, string]> = [];
-  if (row.roofing_issue_type) formAnswers.push(["Roofing Issue", humanizeValue(row.roofing_issue_type)]);
+  // Roofing Issue is already in the Roofing Lead Summary above — avoid duplicate
+  if (row.roofing_issue_type && !isRoofingCategory) {
+    formAnswers.push(["Roofing Issue", humanizeValue(row.roofing_issue_type)]);
+  }
   if (row.property_type) formAnswers.push(["Property Type", humanizeValue(row.property_type)]);
   if (row.has_plans !== null && row.has_plans !== undefined) {
     formAnswers.push(["Has Plans", humanizeValue(row.has_plans)]);
@@ -207,7 +237,7 @@ function buildHumanNote(row: LeadRow): string {
     .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
     .filter(Boolean) as string[];
   if (uploadLinks.length) {
-    section("Files:");
+    section(isRoofingCategory ? "Photos/Files:" : "Files:");
     lines.push("- Uploaded Photo/File Links:");
     uploadLinks.forEach((link) => lines.push(`  • ${link}`));
   }
@@ -225,9 +255,7 @@ function buildHumanNote(row: LeadRow): string {
 
 function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   const leadName = humanizeLeadName(row);
-  const urgent =
-    (row.urgency && /emergency|urgent|active|water/i.test(String(row.urgency))) ||
-    /leak|water coming in|active/i.test(String(row.project_description || ""));
+  const { urgent, waterEntering } = detectUrgentRoofing(row);
   const town = row.property_town ?? null;
   const serviceArea = town ? mapServiceAreaSafe(town) : null;
   // Detect city/service-area landing pages by URL pattern.
@@ -245,6 +273,8 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
     job_name: leadName,
     job_type: row.service_category || row.lead_type || "Website Lead",
     priority: urgent ? "P1" : "P3",
+    urgency_level: urgent ? "high" : (row.urgency ?? "normal"),
+    water_actively_entering: waterEntering,
     org_id: JOBTREAD_ORG_ID || null,
     // Structured sections
     contact: {
