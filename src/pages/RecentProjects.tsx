@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { ArrowRight, Phone, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -53,6 +54,27 @@ const completedProjects = [
 ];
 
 const RecentProjects = () => {
+  // Re-initialize RealWork widget on route mount (SPA navigation).
+  // The sitewide loader.js is injected in index.html; here we ensure init()
+  // runs after #rwl-output exists in the DOM even when arriving via client-side routing.
+  useEffect(() => {
+    const PLUGIN_ID = "SxCxaBpYsO_fVnK0";
+    const HOST = "https://app.realworklabs.com";
+    const w = window as any;
+    const tryInit = () => {
+      if (w.rwlPlugin && typeof w.rwlPlugin.init === "function") {
+        try { w.rwlPlugin.init(HOST, PLUGIN_ID); } catch (e) { /* no-op */ }
+        return true;
+      }
+      return false;
+    };
+    if (!tryInit()) {
+      const onReady = () => tryInit();
+      window.addEventListener("rwlPluginReady", onReady, false);
+      return () => window.removeEventListener("rwlPluginReady", onReady);
+    }
+  }, []);
+
   return (
     <>
       <SEOHead
