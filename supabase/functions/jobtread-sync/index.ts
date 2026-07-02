@@ -150,6 +150,19 @@ function humanizeLeadName(row: LeadRow): string {
   } else if (urgent && /roof/i.test(label)) {
     label = `Urgent ${label}`;
   }
+
+  // Chatbot-originated leads get a "Chatbot" prefix so Highlander can spot
+  // them at a glance in JobTread.
+  const isChatbot =
+    /chatbot|chat[-_ ]?bot/.test(String(row.source ?? "").toLowerCase()) ||
+    /chatbot|chat[-_ ]?bot/.test(String(row.lead_type ?? "").toLowerCase()) ||
+    !!row.chat_summary || !!row.summary || !!row.full_chat_transcript || !!row.full_transcript;
+  if (isChatbot && !/chatbot/i.test(label)) {
+    if (label === "Website Lead") label = "Chatbot Website Lead";
+    else if (/roof|storm|gutter|skylight/i.test(label)) label = `Chatbot ${label}`.replace(/Chatbot Urgent /, "Urgent Chatbot ");
+    else label = `Chatbot ${label}`;
+  }
+
   return name ? `${label} - ${town} - ${name}` : `${label} - ${town}`;
 }
 
