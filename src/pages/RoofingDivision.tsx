@@ -306,26 +306,28 @@ const RoofingDivision = () => {
                 </div>
               </motion.div>
 
-              <div className="overflow-hidden mb-2">
-                <motion.h1
-                  initial={{ y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight"
-                >
-                  Premium Roofing.
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden mb-8">
-                <motion.h1
-                  initial={{ y: "110%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight"
-                >
-                  Masterfully <span className="text-[hsl(var(--highland-gold))]">Executed.</span>
-                </motion.h1>
-              </div>
+              <h1 className="mb-8 text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight">
+                <span className="block overflow-hidden mb-2">
+                  <motion.span
+                    className="block"
+                    initial={{ y: "110%" }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    Premium Roofing.
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden">
+                  <motion.span
+                    className="block"
+                    initial={{ y: "110%" }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    Masterfully <span className="text-[hsl(var(--highland-gold))]">Executed.</span>
+                  </motion.span>
+                </span>
+              </h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
