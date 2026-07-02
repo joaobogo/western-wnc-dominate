@@ -141,9 +141,9 @@ const OutdoorLiving = () => {
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.05] tracking-tight">
+                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.05] tracking-tight">
                   <span className="text-[hsl(var(--highland-gold))]">Built for the Weather.</span>
-                </motion.h1>
+                </motion.h2>
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-xl md:text-2xl text-white mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
@@ -187,7 +187,7 @@ const OutdoorLiving = () => {
         {/* ─── OPENING — Experiential with generous whitespace ─── */}
         <section className="py-20 md:py-32 bg-background relative overflow-hidden">
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" alt="Timber frame detail" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Timber frame detail" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight max-w-3xl">
