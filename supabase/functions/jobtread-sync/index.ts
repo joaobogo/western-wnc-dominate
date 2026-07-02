@@ -344,26 +344,42 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       ? noteFull.slice(0, 990) + "\n…[truncated]"
       : noteFull;
 
-    // Step 1 — create Account (customer) with required custom fields
-    const accountRes = await paveFetch({
+    // Step 1 — dedupe by account name. JobTread enforces unique account
+    // names within an org, so look up first and reuse the existing account
+    // when possible; otherwise create a new one.
+    let accountId: string | undefined;
+    const lookupRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
-      createAccount: {
-        $: {
-          organizationId: orgId,
-          name: payload.lead_name,
-          type: "customer",
-          customFieldValues: {
-            [JT_CF.account.service_area]: mapServiceArea(town),
-            [JT_CF.account.lead_source]: "Website",
-          },
+      organization: {
+        $: { id: orgId },
+        accounts: {
+          $: { where: [["name", "=", payload.lead_name]], size: 1 },
+          nodes: { id: {}, name: {} },
         },
-        createdAccount: { id: {}, name: {} },
       },
     });
-    const apiErrA = accountRes?.error?.message || accountRes?.error;
-    if (apiErrA) return { ok: false, error: `createAccount: ${String(apiErrA).slice(0, 400)}` };
-    const accountId: string | undefined = accountRes?.createAccount?.createdAccount?.id;
-    if (!accountId) return { ok: false, error: `createAccount returned no id: ${JSON.stringify(accountRes).slice(0, 300)}` };
+    accountId = lookupRes?.organization?.accounts?.nodes?.[0]?.id;
+    if (!accountId) {
+      const accountRes = await paveFetch({
+        $: { grantKey: JOBTREAD_API_KEY },
+        createAccount: {
+          $: {
+            organizationId: orgId,
+            name: payload.lead_name,
+            type: "customer",
+            customFieldValues: {
+              [JT_CF.account.service_area]: mapServiceArea(town),
+              [JT_CF.account.lead_source]: "Website",
+            },
+          },
+          createdAccount: { id: {}, name: {} },
+        },
+      });
+      const apiErrA = accountRes?.error?.message || accountRes?.error;
+      if (apiErrA) return { ok: false, error: `createAccount: ${String(apiErrA).slice(0, 400)}` };
+      accountId = accountRes?.createAccount?.createdAccount?.id;
+      if (!accountId) return { ok: false, error: `createAccount returned no id` };
+    }
 
     // Step 2 — create Location under the Account
     const locName = [contactName, address, town].filter(Boolean).join(" — ") || contactName;
