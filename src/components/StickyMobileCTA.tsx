@@ -1,9 +1,8 @@
-import { Phone, MessageSquare, Layers, ArrowRight, FileText } from "lucide-react";
+import { Phone, ArrowRight, FileText, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
-import veluxLogo from "@/assets/velux-certified-logo.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -68,49 +67,24 @@ const StickyMobileCTA = () => {
             <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))' }} />
             
             <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-[0_-8px_32px_-12px_hsl(var(--heritage-charcoal)/0.12)]">
-              {/* VELUX trust strip */}
-              <Link
-                to="/certifications"
-                className="flex items-center justify-center gap-2 py-1.5 px-3 bg-[hsl(var(--heritage-green))] border-b border-[hsl(var(--highland-gold)/0.25)] min-w-0"
-              >
-                <div className="w-6 h-6 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white rounded-sm">
-                  <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain p-0.5" />
-                </div>
-                <span className="text-[10px] xs:text-[11px] font-body font-bold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold))] truncate">
-                  VELUX Certified Installer
-                </span>
-              </Link>
-
-              {/* Two-column layout: primary CTA + secondary actions */}
+              {/* Two-column layout: Primary (Request a Quote) + Call */}
               <div className="flex items-stretch">
-                {/* Primary CTA — full gold, generous touch target */}
                 <Link
                   to="/consultation"
-                  onClick={() => trackEvent("cta_click", { label: "Start a Project", elementId: "sticky-cta-mobile-start" })}
-                  className="flex-[1.8] flex items-center justify-center gap-3 py-5 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[72px]"
+                  onClick={() => trackEvent("cta_click", { label: "Request a Quote", elementId: "sticky-cta-mobile-quote" })}
+                  className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
                 >
-                  <MessageSquare className="w-6 h-6" />
-                  <span className="text-lg font-body font-extrabold uppercase tracking-[0.1em]">Start Project</span>
+                  <FileText className="w-4 h-4" />
+                  <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.08em]">Request a Quote</span>
                 </Link>
-                
-                {/* Secondary actions — generous touch targets */}
-                <div className="flex items-stretch divide-x divide-border flex-1">
-                  <a
-                    href="tel:+18285247773"
-                    onClick={() => trackEvent("phone_click", { label: "Call Now", elementId: "sticky-cta-mobile-call" })}
-                    className="flex-1 flex flex-col items-center justify-center gap-2 px-5 py-4 text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[72px]"
-                  >
-                    <Phone className="w-6 h-6" />
-                    <span className="text-sm font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
-                  </a>
-                  <Link
-                    to="/roofing"
-                    className="flex-1 flex flex-col items-center justify-center gap-2 px-5 py-4 text-muted-foreground active:bg-secondary active:scale-95 transition-all min-h-[72px]"
-                  >
-                    <Layers className="w-6 h-6" />
-                    <span className="text-sm font-body font-extrabold uppercase tracking-[0.06em]">Services</span>
-                  </Link>
-                </div>
+                <a
+                  href="tel:+18285247773"
+                  onClick={() => trackEvent("phone_click", { label: "Call Now", elementId: "sticky-cta-mobile-call" })}
+                  className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
+                </a>
               </div>
 
               {/* Safe area spacer for notch phones */}
