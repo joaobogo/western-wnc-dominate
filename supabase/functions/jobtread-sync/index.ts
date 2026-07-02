@@ -373,6 +373,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
             [JT_CF.location.contact_name]: contactName,
             [JT_CF.location.phone]: payload.contact?.phone || "",
             [JT_CF.location.email]: payload.contact?.email || "",
+            // JobTread caps text custom fields at 1024 chars — truncate safely.
             [JT_CF.location.sales_notes]: payload.note,
           },
         },
