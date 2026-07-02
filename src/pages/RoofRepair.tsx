@@ -145,7 +145,7 @@ const RoofRepair = () => {
                 </a>
               </motion.div>
 
-              {/* Response guarantee — unique to Repair */}
+              {/* Response commitment — unique to Repair */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -156,8 +156,8 @@ const RoofRepair = () => {
                   <Clock className="w-5 h-5 text-[hsl(var(--heritage-green))]" />
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-bold text-primary-foreground">48-Hour Assessment Guarantee</div>
-                  <div className="text-xs text-primary-foreground/95 font-body">Same-day for emergencies. We answer our own phone.</div>
+                  <div className="text-sm font-heading font-bold text-primary-foreground">Fast Repair Assessments</div>
+                  <div className="text-xs text-primary-foreground/95 font-body">We prioritize active water intrusion and answer our own phone.</div>
                 </div>
               </motion.div>
             </div>
