@@ -120,17 +120,10 @@ const About = () => {
                 initial={{ opacity: 0, letterSpacing: "0.08em" }}
                 animate={{ opacity: 1, letterSpacing: "-0.02em" }}
                 transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-[1.0] mb-2 tracking-tight"
-              >
-                Elevating WNC Standards.
-              </motion.h1>
-              <motion.h1
-                initial={{ opacity: 0, letterSpacing: "0.08em" }}
-                animate={{ opacity: 1, letterSpacing: "-0.02em" }}
-                transition={{ duration: 1.5, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.0] mb-8"
               >
-                <span className="text-[hsl(var(--highland-gold))]">Built by a Local Team.</span>
+                <span className="block text-[hsl(var(--dark-section-foreground))] mb-2">Elevating WNC Standards.</span>
+                <span className="block text-[hsl(var(--highland-gold))]">Built by a Local Team.</span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-[19px] md:text-[22px] text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
