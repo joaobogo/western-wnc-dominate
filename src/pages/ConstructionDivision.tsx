@@ -215,7 +215,7 @@ const ConstructionDivision = () => {
                     Team-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
                   <p className="text-dark-section-foreground text-base md:text-lg leading-relaxed font-body mb-6">
-                    Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed Master Applicator status to every construction project we take on.
+                    Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed ShingleMaster Credentialed Contractor status to every construction project we take on.
                   </p>
                   <p className="text-dark-section-foreground/85 text-sm md:text-base leading-relaxed font-body mb-8">
                     When you hire Highlander for construction, you get a company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.

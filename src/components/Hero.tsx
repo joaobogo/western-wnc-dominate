@@ -15,7 +15,7 @@ const DRAMATIC_EASE = [0.16, 1, 0.3, 1] as any;
 
 const trustItems = [
   { icon: Shield, label: "Licensed & Insured" },
-  { icon: Award, label: "CertainTeed Master Applicator" },
+  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
   { icon: HardHat, label: "Licensed General Contractor" },
   { icon: Clock, label: "WNC · Since 2017" },
 ];

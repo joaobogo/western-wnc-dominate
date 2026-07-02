@@ -143,7 +143,7 @@ export const projectDetails: ProjectDetail[] = [
       "Magnetic nail sweep of entire property perimeter before and after tear-off",
       "Tarped landscaping and protected all exterior surfaces",
       "Completed in 4 days despite complex multi-level geometry",
-      "Enhanced SureStart PLUS™ warranty activated through Master Applicator certification",
+      "Enhanced SureStart PLUS™ warranty activated through ShingleMaster Credentialed Contractor certification",
     ],
     result: "The Weathered Wood color perfectly complements the home's mountain setting, and the dimensional profile is a dramatic visual upgrade from the flat 3-tab shingles. The SureStart PLUS™ warranty provides both material and workmanship coverage directly from CertainTeed — a tier only available through certified Master Shingle Applicators.",
     galleryImages: [asphaltHero, asphalt007, asphalt006, asphalt008],

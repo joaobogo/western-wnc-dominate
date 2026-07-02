@@ -14,7 +14,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 /* ─── DATA ─── */
 
 const credentials = [
-  { icon: Award, title: "CertainTeed Master Applicator", detail: "Top 1% nationally certified — the highest residential roofing credential available." },
+  { icon: Award, title: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Top 1% nationally certified — the highest residential roofing credential available." },
   { icon: Shield, title: "Licensed General Contractor", detail: "Full NC general contractor license — additions, renovations, and structural work." },
   { icon: FileCheck, title: "Fully Insured & Bonded", detail: "Comprehensive liability and workers' comp coverage on every project." },
   { icon: Clock, title: "Rapid Storm Response", detail: "Emergency tarping and damage assessment rapidly of your call." },

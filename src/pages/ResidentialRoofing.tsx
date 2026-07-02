@@ -278,7 +278,7 @@ const ResidentialRoofing = () => {
                 className="mt-10 flex items-center gap-6"
               >
                 {[
-                  { icon: Award, label: "CertainTeed Master Applicator" },
+                  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
                   { icon: ShieldCheck, label: "Licensed & Insured" },
                   { icon: Star, label: "4.9★ Local Rating" },
                 ].map((item) => (
@@ -353,7 +353,7 @@ const ResidentialRoofing = () => {
           <div className="container-tight px-5 md:px-8 py-5 md:py-6">
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
               {[
-                { icon: Award, text: "CertainTeed Master Applicator" },
+                { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
                 { icon: Shield, text: "Licensed & Insured" },
                 { icon: Clock, text: "Rapid Storm Response" },
                 { icon: Star, text: "4.7★ Google Rating" },
@@ -398,7 +398,7 @@ const ResidentialRoofing = () => {
               >
                 {[
                   { icon: ShieldCheck, label: "Licensed & Fully Insured", sub: "NC General Contractor" },
-                  { icon: Award, label: "CertainTeed Master Applicator", sub: "Top 1% nationally" },
+                  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", sub: "Top 1% nationally" },
                   { icon: Camera, label: "Documented Everything", sub: "Before, during & after" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-sm">

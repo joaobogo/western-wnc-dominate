@@ -120,7 +120,7 @@ const TrustStrip = () => {
                 className="mt-6 pt-4 border-t border-primary-foreground/[0.05]"
               >
                 <p className="text-primary-foreground/85 text-[15px] md:text-[16px] font-body italic leading-relaxed max-w-md font-medium">
-                  "The only company in Western NC that holds both a CertainTeed Master Applicator
+                  "The only company in Western NC that holds both a CertainTeed ShingleMaster Credentialed Contractor
                   certification and a General Contractor license under the same roof."
                 </p>
               </motion.div>

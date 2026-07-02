@@ -124,7 +124,7 @@ const CTABlock = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
                   {[
                     { icon: Shield, text: "Licensed & Fully Insured" },
-                    { icon: Award, text: "CertainTeed Master Applicator" },
+                    { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
                     { icon: Shield, text: "Licensed General Contractor" },
                     { icon: Clock, text: "Rapid Storm Response" },
                     { icon: Mountain, text: "8 WNC Counties" },

@@ -177,7 +177,7 @@ const processSteps = [
 const whyHighlander = [
   {
     icon: Award,
-    title: "CertainTeed Master Applicator",
+    title: "CertainTeed ShingleMaster Credentialed Contractor",
     detail: "Fewer than 1% of roofing contractors hold this designation. It means factory-trained installation, enhanced warranties, and a commitment to quality that's been independently verified.",
   },
   {
@@ -240,7 +240,7 @@ const RoofingDivision = () => {
     <>
       <SEOHead
         title="Roofing Services in Western NC | Highlander"
-        description="Premium roofing in Western North Carolina. Shingle, metal & cedar roofing, storm damage, commercial systems. CertainTeed Master Applicator. Schedule a consultation."
+        description="Premium roofing in Western North Carolina. Shingle, metal & cedar roofing, storm damage, commercial systems. CertainTeed ShingleMaster Credentialed Contractor. Schedule a consultation."
         path="/roofing"
         jsonLd={[
           serviceSchema({ name: "Roofing Services", description: "Expert residential and commercial roofing across Western North Carolina.", url: "/roofing" }),

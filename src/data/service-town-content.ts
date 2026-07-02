@@ -34,7 +34,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Franklin is where we cut our teeth. The crew you meet at your estimate is the crew on your roof — same names, same trucks, year after year.",
     metaTitle: "Roof Replacement in Franklin, NC | Highlander Roofing",
     metaDescription:
-      "Full roof replacement in Franklin, NC from a locally based, team-led team. CertainTeed Master Applicator, licensed GC, free on-site assessment.",
+      "Full roof replacement in Franklin, NC from a locally based, team-led team. CertainTeed ShingleMaster Credentialed Contractor, licensed GC, free on-site assessment.",
     faqs: [
       { q: "How long does a full roof replacement take on a Franklin home?", a: "Most single-family asphalt replacements in Franklin finish in 1–3 working days once materials are on-site. Larger or steeper roofs and metal systems take longer; we give you a firm window before we start." },
       { q: "Do you pull the permit for Macon County?", a: "Yes. We handle the Macon County permit and final inspection so you don't have to coordinate it." },
@@ -282,7 +282,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Local crews, real scheduling, and an owner who will give you a straight answer on whether your roof actually needs replacement now or has another season in it.",
     metaTitle: "Roof Replacement in Sylva, NC | Highlander Roofing",
     metaDescription:
-      "Full roof replacement in Sylva, NC. Team-led, locally based, CertainTeed Master Applicator. Free on-site assessment and honest repair-vs-replace guidance.",
+      "Full roof replacement in Sylva, NC. Team-led, locally based, CertainTeed ShingleMaster Credentialed Contractor. Free on-site assessment and honest repair-vs-replace guidance.",
     faqs: [
       { q: "Do you replace roofs on rental properties in Sylva?", a: "Yes. We schedule around tenants and minimize disruption — most single-family replacements are complete in 1–3 working days." },
       { q: "What's the most common issue on older Sylva homes?", a: "Inadequate attic ventilation — which shortens roof life from below. We correct ventilation as part of every full replacement." },

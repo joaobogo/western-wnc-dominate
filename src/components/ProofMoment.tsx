@@ -22,7 +22,7 @@ interface ProofMomentProps {
 const presets: Record<string, { items: ProofItem[]; accent?: string }> = {
   credentials: {
     items: [
-      { icon: Award, text: "CertainTeed Master Applicator" },
+      { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
       { icon: Shield, text: "Licensed General Contractor" },
       { icon: CheckCircle2, text: "Full Liability & Workers' Comp" },
     ],

@@ -659,7 +659,7 @@ export default function Contact() {
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-10 text-[hsl(var(--dark-section-foreground)/0.75)] text-xs md:text-sm font-body font-bold uppercase tracking-[0.12em]">
                   <span>Licensed &amp; Insured</span>
                   <span className="text-[hsl(var(--highland-gold)/0.6)]">•</span>
-                  <span>CertainTeed Master Applicator</span>
+                  <span>CertainTeed ShingleMaster Credentialed Contractor</span>
                   <span className="text-[hsl(var(--highland-gold)/0.6)]">•</span>
                   <span>In-House Highlander Crews</span>
                 </div>
