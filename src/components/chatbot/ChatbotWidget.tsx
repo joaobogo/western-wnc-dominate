@@ -220,6 +220,7 @@ export default function ChatbotWidget() {
   const [leadCaptureShown, setLeadCaptureShown] = useState(false);
   const [exchangeCount, setExchangeCount] = useState(0);
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
@@ -235,12 +236,27 @@ export default function ChatbotWidget() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Hide launcher when mobile nav is open so overlays don't stack.
+  useEffect(() => {
+    const sync = (e: Event) => setMenuOpen((e as CustomEvent).detail?.open === true);
+    window.addEventListener("mobilemenu:toggle", sync);
+    return () => window.removeEventListener("mobilemenu:toggle", sync);
+  }, []);
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, cards]);
 
   useEffect(() => {
     if (isOpen) inputRef.current?.focus();
+  }, [isOpen]);
+
+  // Broadcast open state so other floating UI (StickyMobileCTA) can hide
+  // to avoid competing for the same screen real estate on mobile.
+  useEffect(() => {
+    document.body.dataset.chatOpen = isOpen ? "true" : "false";
+    window.dispatchEvent(new CustomEvent("chatbot:toggle", { detail: { open: isOpen } }));
+    return () => { delete document.body.dataset.chatOpen; };
   }, [isOpen]);
 
   // Show lead capture after 4 exchanges
@@ -375,7 +391,7 @@ export default function ChatbotWidget() {
     <>
       {/* Floating trigger */}
       <AnimatePresence>
-        {!isOpen && (!isMobile || scrolledPastHero) && (
+        {!isOpen && !menuOpen && (!isMobile || scrolledPastHero) && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
