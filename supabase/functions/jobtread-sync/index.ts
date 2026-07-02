@@ -276,17 +276,21 @@ function mapServiceArea(town: string | null | undefined): string {
   return "Franklin"; // safe default matching HQ service area
 }
 
-function mapJobType(row: any): string {
-  const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
+function mapJobType(payload: any): string {
+  const key = (payload?.project?.service_category || payload?.source?.lead_type || "")
+    .toString()
+    .toLowerCase();
   if (/gutter/.test(key)) return "Gutters";
   if (/construction|addition|design|renovation|outdoor/.test(key)) return "Builder Service";
   if (/repair|storm|maintenance|inspection|leak/.test(key)) return "Maintenance / Repair";
   return "Roofing Service";
 }
 
-function mapScopeType(row: any): string {
-  const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
-  const desc = (row.project_description || row.description || "").toString().toLowerCase();
+function mapScopeType(payload: any): string {
+  const key = (payload?.project?.service_category || payload?.source?.lead_type || "")
+    .toString()
+    .toLowerCase();
+  const desc = (payload?.project?.description || "").toString().toLowerCase();
   if (/storm|emergency|active water|water coming/.test(key + " " + desc)) return "Emergency Tarp/Patch";
   if (/metal/.test(key)) return "Roofing - Metal";
   if (/synthetic|cedur|brava/.test(key)) return "Roofing - Synthetic CeDUR/Brava";
@@ -390,8 +394,8 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           description: payload.note,
           customFieldValues: {
             [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
-            [JT_CF.job.job_type]: mapJobType(payload._source_row ?? payload),
-            [JT_CF.job.scope_type]: mapScopeType(payload._source_row ?? payload),
+            [JT_CF.job.job_type]: mapJobType(payload),
+            [JT_CF.job.scope_type]: mapScopeType(payload),
             [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
             [JT_CF.job.customer_present]: false,
             [JT_CF.job.lead_notes]: payload.note,
