@@ -243,10 +243,40 @@ async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; 
 
 async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
+    // Discover org id if not provided. JobTread's Pave API only exposes
+    // mutations under organization($: {id: <orgId>}); currentGrant.organization
+    // is a read-only sub-graph.
+    let orgId = JOBTREAD_ORG_ID;
+    if (!orgId) {
+      const orgRes = await fetch(JOBTREAD_PAVE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query: {
+            $: { grantKey: JOBTREAD_API_KEY },
+            currentGrant: { organization: { id: {} } },
+          },
+        }),
+      });
+      const orgText = await orgRes.text();
+      if (!orgRes.ok) {
+        return { ok: false, error: `Org lookup HTTP ${orgRes.status}: ${orgText.slice(0, 400)}` };
+      }
+      try {
+        const j = JSON.parse(orgText);
+        orgId =
+          j?.currentGrant?.organization?.id ??
+          j?.data?.currentGrant?.organization?.id ??
+          "";
+      } catch { /* ignore */ }
+      if (!orgId) {
+        return { ok: false, error: `Could not resolve JobTread org id from grant. Response: ${orgText.slice(0, 300)}` };
+      }
+    }
+
     // JobTread's Pave API uses a `grantKey` field for auth — the value the
-    // user provides as JOBTREAD_API_KEY is that grant key. If ORG_ID is
-    // set we include it; otherwise the API will error and we surface that
-    // exact message back to the admin.
+    // user provides as JOBTREAD_API_KEY is that grant key. Org id is either
+    // supplied via secret or discovered above from currentGrant.
     const accountFields: any = {
       name: payload.contact?.name || payload.lead_name,
       type: "customer",
@@ -265,14 +295,10 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
         id: {},
       },
     };
-    const query: any = { $: { grantKey: JOBTREAD_API_KEY } };
-    if (JOBTREAD_ORG_ID) {
-      query.organization = { $: { id: JOBTREAD_ORG_ID }, createAccount };
-    } else {
-      // No org id supplied — try the current-organization shortcut. If the
-      // API rejects it, the exact message is surfaced in jobtread_error_message.
-      query.currentGrant = { organization: { createAccount } };
-    }
+    const query: any = {
+      $: { grantKey: JOBTREAD_API_KEY },
+      organization: { $: { id: orgId }, createAccount },
+    };
     const res = await fetch(JOBTREAD_PAVE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -290,7 +316,6 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       apiError = j?.error?.message || j?.error || j?.errors?.[0]?.message;
       id =
         j?.organization?.createAccount?.createJob?.id ??
-        j?.currentGrant?.organization?.createAccount?.createJob?.id ??
         j?.data?.organization?.createAccount?.createJob?.id;
     } catch { /* ignore */ }
     if (apiError && !id) {
