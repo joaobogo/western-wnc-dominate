@@ -122,9 +122,10 @@ function humanizeLeadName(row: LeadRow): string {
   // Construction/Build inquiry based on plan status.
   const classification = classifyConstructionDesign(row);
   if (classification === "design") {
-    // Only rewrite roofing labels are untouched. For build-style labels,
-    // route to Design Services when plans are missing/unclear.
-    if (!/roof|storm|gutter|skylight|design/i.test(label)) {
+    // Route to Design Services when plans are missing/unclear — but preserve
+    // specialty and roofing labels (gutter/skylight/outdoor living/roof/storm)
+    // which are their own service categories and shouldn't be relabeled.
+    if (!/roof|storm|gutter|skylight|design|outdoor living/i.test(label)) {
       label = "Design Services Inquiry";
     }
   }
