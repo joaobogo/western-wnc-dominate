@@ -79,6 +79,9 @@ export async function submitLead(payload: LeadPayload) {
     ...payload,
     consent_given: payload.consent_given ?? true,
     consent_text: CONSENT_TEXT,
+    jobtread_sync_status: "pending",
+    jobtread_synced: false,
+    jobtread_retry_count: 0,
     page_url: typeof window !== "undefined" ? window.location.href : null,
     referrer:
       attribution.referrer ??
