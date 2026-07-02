@@ -3,7 +3,6 @@ User-agent: *
 Allow: /
 Disallow: /consultation
 Disallow: /quote-flow
-Disallow: /request-inspection
 
 User-agent: Googlebot
 Allow: /
