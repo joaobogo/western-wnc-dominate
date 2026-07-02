@@ -9,8 +9,11 @@ const WEBSITE_URL = "https://www.highlandernc.com/";
 const EMAIL = "luke@highlandernc.com";
 const ADDRESS = "1511 Highlands Rd, Franklin, NC 28734";
 const COMPANY = "Highlander Roofing Services, Inc.";
-const PHONE = "(828) 526-6421";
-const PHONE_TEL = "+18285266421";
+// Sitewide customer phone. The RealWork template listed (828) 526-6421 —
+// see the "Needs Client Input" callout under Section 6 for the flagged mismatch.
+const PHONE = "(828) 524-7773";
+const PHONE_TEL = "+18285247773";
+const REALWORK_TEMPLATE_PHONE = "(828) 526-6421";
 const PROGRAM = "Highlander Roofing Services, Inc. Customer Communications";
 
 const TOC: { id: string; label: string }[] = [
@@ -223,6 +226,17 @@ const PrivacyPolicy = () => {
               <li>Mailing Address: {ADDRESS}</li>
             </ul>
             <p>You may also reply HELP to any text message for assistance.</p>
+            <div
+              role="note"
+              className="not-prose my-4 p-4 border border-amber-400/60 bg-amber-50 text-amber-950 rounded-sm text-sm leading-relaxed"
+            >
+              <strong className="font-semibold">Needs Client Input — phone number:</strong>{" "}
+              The RealWork Privacy Policy template lists {REALWORK_TEMPLATE_PHONE} as the
+              contact number. This page currently shows the sitewide customer phone{" "}
+              {PHONE}. Highlander should confirm which number the Privacy Policy should
+              display and, if different from the sitewide sales phone, we will keep the
+              legal/support number here without changing the sitewide contact.
+            </div>
 
             <h2 id="s7">7. Link to Privacy Policy</h2>
             <p>
@@ -352,6 +366,15 @@ const PrivacyPolicy = () => {
                 Chat and messaging tools to support customer communications and improve
                 responsiveness.
               </li>
+              <li>
+                Professional-network measurement tools (for example, the LinkedIn Insight
+                Tag) to measure campaign performance and audience insights on LinkedIn.
+              </li>
+              <li>
+                Review-request and reputation tools (for example, RealWork Labs) that help
+                us send post-project survey and review invitations and display recent
+                project activity on the Website.
+              </li>
             </ul>
             <p>
               Some of these technologies may be operated by third parties and may collect
@@ -460,7 +483,9 @@ const PrivacyPolicy = () => {
             <h4>8.5.2 Analytics and Advertising Tools</h4>
             <p>
               We may use third-party analytics and advertising tools (such as Google
-              Analytics, Google Ads, and Meta Pixel). These providers may set cookies or
+              Analytics, Google Ads, Meta Pixel, the LinkedIn Insight Tag, call-tracking
+              providers, and review-request tools such as RealWork Labs). These providers
+              may set cookies or
               similar technologies and collect information about your interactions with the
               Website to provide measurement, analytics, and advertising services. Information
               collected through these tools may be combined with other information collected
