@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MultiStepForm, ConfirmationState } from "@/components/conversion";
 import { supabase } from "@/integrations/supabase/client";
+import { syncConsultationRequestToJobTread } from "@/lib/leads";
 import { toast } from "@/hooks/use-toast";
 import {
   Home, Building2, Hammer, CloudLightning, PlusCircle,
@@ -302,7 +303,7 @@ export default function QuoteFlow() {
     if (primaryTowns.includes(form.town)) score += 10;
 
     try {
-      const { error } = await supabase.from("consultation_requests").insert({
+      const { data: inserted, error } = await supabase.from("consultation_requests").insert({
         name: form.name,
         email: form.email,
         phone: form.phone || null,
@@ -315,9 +316,10 @@ export default function QuoteFlow() {
         source: "quote-flow",
         lead_score: score,
         property_type: form.propertyType || null,
-      });
+      }).select("id").single();
 
       if (error) throw error;
+      syncConsultationRequestToJobTread(inserted?.id);
       
       // Track successful submission
       trackEvent("form_submit", {
