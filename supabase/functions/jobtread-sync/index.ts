@@ -241,91 +241,169 @@ async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; 
   }
 }
 
+// ---------- JobTread Highlander org constants ----------
+// Discovered via Pave introspection against the live org
+// "Highlander Roofing Services Inc" (org id 22P5uYkUSP8F).
+// Custom-field IDs are stable per JobTread org, so hardcoding here is safe
+// and avoids an extra API roundtrip on every sync.
+const JT_CF = {
+  account: {
+    service_area: "22P72GvSrBgk", // option: Franklin | Sylva | Asheville
+    lead_source: "22P75KEjYCfa",  // option: Website (and many others)
+  },
+  location: {
+    gate_code: "22PNwBiMbUzf",    // boolean, required
+    contact_name: "22PPzwDNUYjN", // text
+    phone: "22PPzw5sqRSX",        // phoneNumber
+    email: "22PTWFAtwzqx",        // emailAddress
+    sales_notes: "22P6KUiJD3EJ",  // text
+  },
+  job: {
+    status: "22P5uYmYTED2",       // option, "01 New Lead (Needs Appointment)"
+    job_type: "22PNawhnSXmW",     // option, required
+    scope_type: "22P6NLAkTWjs",   // option, required
+    comm_pref: "22PPQYu3uBCx",    // option, required
+    customer_present: "22PNm2NKGREB", // boolean, required
+    lead_notes: "22PYx7PBhE56",   // text
+  },
+} as const;
+
+function mapServiceArea(town: string | null | undefined): string {
+  const t = (town ?? "").toLowerCase();
+  if (/franklin|highlands|cashiers|scaly|otto|clayton/.test(t)) return "Franklin";
+  if (/sylva|cullowhee|bryson|waynesville|dillsboro|webster|balsam|maggie|cherokee/.test(t)) return "Sylva";
+  if (/asheville|hendersonville|weaverville|black mountain|arden|fletcher/.test(t)) return "Asheville";
+  return "Franklin"; // safe default matching HQ service area
+}
+
+function mapJobType(row: any): string {
+  const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
+  if (/gutter/.test(key)) return "Gutters";
+  if (/construction|addition|design|renovation|outdoor/.test(key)) return "Builder Service";
+  if (/repair|storm|maintenance|inspection|leak/.test(key)) return "Maintenance / Repair";
+  return "Roofing Service";
+}
+
+function mapScopeType(row: any): string {
+  const key = (row.service_category || row.lead_type || "").toString().toLowerCase();
+  const desc = (row.project_description || row.description || "").toString().toLowerCase();
+  if (/storm|emergency|active water|water coming/.test(key + " " + desc)) return "Emergency Tarp/Patch";
+  if (/metal/.test(key)) return "Roofing - Metal";
+  if (/synthetic|cedur|brava/.test(key)) return "Roofing - Synthetic CeDUR/Brava";
+  if (/commercial/.test(key)) return "Roofing - TRI-BUILT® SA / Flintlastic style Roofing";
+  if (/repair|leak|inspection/.test(key)) return "Roofing Repairs";
+  if (/replacement|shingle|roof/.test(key)) return "Roofing - Shingles";
+  if (/gutter/.test(key)) return "Gutters";
+  if (/addition/.test(key)) return "Construction - Addition";
+  if (/renovation|remodel/.test(key)) return "Construction - Remodel";
+  if (/design/.test(key)) return "Architectural Design";
+  if (/construction/.test(key)) return "Construction";
+  return "Still Needs";
+}
+
+function mapCommPref(pref: string | null | undefined): string {
+  const p = (pref ?? "").toLowerCase();
+  if (/text|sms/.test(p)) return "Texting";
+  if (/email/.test(p)) return "Email";
+  return "Phone Call";
+}
+
+async function paveFetch(query: any): Promise<any> {
+  const res = await fetch(JOBTREAD_PAVE_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query }),
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`Pave HTTP ${res.status}: ${text.slice(0, 400)}`);
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(`Non-JSON Pave response: ${text.slice(0, 300)}`);
+  }
+}
+
 async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
-    // Discover org id if not provided. JobTread's Pave API only exposes
-    // mutations under organization($: {id: <orgId>}); currentGrant.organization
-    // is a read-only sub-graph.
-    let orgId = JOBTREAD_ORG_ID;
+    const orgId = JOBTREAD_ORG_ID;
     if (!orgId) {
-      const orgRes = await fetch(JOBTREAD_PAVE_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          query: {
-            $: { grantKey: JOBTREAD_API_KEY },
-            currentGrant: {
-              organization: { id: {} },
-              user: { memberships: { nodes: { organization: { id: {} } } } },
-            },
-          },
-        }),
-      });
-      const orgText = await orgRes.text();
-      if (!orgRes.ok) {
-        return { ok: false, error: `Org lookup HTTP ${orgRes.status}: ${orgText.slice(0, 400)}` };
-      }
-      try {
-        const j = JSON.parse(orgText);
-        orgId =
-          j?.currentGrant?.organization?.id ??
-          j?.currentGrant?.user?.memberships?.nodes?.[0]?.organization?.id ??
-          j?.data?.currentGrant?.organization?.id ??
-          "";
-      } catch { /* ignore */ }
-      if (!orgId) {
-        return { ok: false, error: `Could not resolve JobTread org id from grant. Response: ${orgText.slice(0, 300)}` };
-      }
+      return { ok: false, error: "Missing JOBTREAD_ORG_ID (Highlander org). Cannot create JobTread records." };
     }
 
-    // JobTread's Pave API uses a `grantKey` field for auth — the value the
-    // user provides as JOBTREAD_API_KEY is that grant key. Org id is either
-    // supplied via secret or discovered above from currentGrant.
-    const accountFields: any = {
-      name: payload.contact?.name || payload.lead_name,
-      type: "customer",
-    };
-    if (payload.contact?.phone) {
-      accountFields.phones = [{ label: "primary", number: payload.contact.phone }];
-    }
-    if (payload.contact?.email) {
-      accountFields.emails = [{ label: "primary", address: payload.contact.email }];
-    }
-    const createAccount: any = {
-      $: accountFields,
-      id: {},
-      createJob: {
-        $: { name: payload.job_name, description: payload.note },
-        id: {},
-      },
-    };
-    const query: any = {
+    const contactName = payload.contact?.name || "Website Lead";
+    const town = payload.location?.town;
+    const address = payload.location?.address;
+
+    // Step 1 — create Account (customer) with required custom fields
+    const accountRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
-      organization: { $: { id: orgId }, createAccount },
-    };
-    const res = await fetch(JOBTREAD_PAVE_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query }),
+      createAccount: {
+        $: {
+          organizationId: orgId,
+          name: payload.lead_name,
+          type: "customer",
+          customFieldValues: {
+            [JT_CF.account.service_area]: mapServiceArea(town),
+            [JT_CF.account.lead_source]: "Website",
+          },
+        },
+        createdAccount: { id: {}, name: {} },
+      },
     });
-    const text = await res.text();
-    if (!res.ok) {
-      return { ok: false, error: `Pave HTTP ${res.status}: ${text.slice(0, 400)}` };
-    }
-    let id: string | undefined;
-    let apiError: string | undefined;
-    try {
-      const j = JSON.parse(text);
-      // Pave returns 200 with an { error } body when the query itself is invalid.
-      apiError = j?.error?.message || j?.error || j?.errors?.[0]?.message;
-      id =
-        j?.organization?.createAccount?.createJob?.id ??
-        j?.data?.organization?.createAccount?.createJob?.id;
-    } catch { /* ignore */ }
-    if (apiError && !id) {
-      return { ok: false, error: `JobTread API: ${String(apiError).slice(0, 400)}` };
-    }
-    return { ok: true, id };
+    const apiErrA = accountRes?.error?.message || accountRes?.error;
+    if (apiErrA) return { ok: false, error: `createAccount: ${String(apiErrA).slice(0, 400)}` };
+    const accountId: string | undefined = accountRes?.createAccount?.createdAccount?.id;
+    if (!accountId) return { ok: false, error: `createAccount returned no id: ${JSON.stringify(accountRes).slice(0, 300)}` };
+
+    // Step 2 — create Location under the Account
+    const locName = [contactName, address, town].filter(Boolean).join(" — ") || contactName;
+    const locRes = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      createLocation: {
+        $: {
+          accountId,
+          name: locName,
+          address: address || null,
+          customFieldValues: {
+            [JT_CF.location.gate_code]: false,
+            [JT_CF.location.contact_name]: contactName,
+            [JT_CF.location.phone]: payload.contact?.phone || "",
+            [JT_CF.location.email]: payload.contact?.email || "",
+            [JT_CF.location.sales_notes]: payload.note,
+          },
+        },
+        createdLocation: { id: {}, name: {} },
+      },
+    });
+    const apiErrL = locRes?.error?.message || locRes?.error;
+    if (apiErrL) return { ok: false, error: `createLocation: ${String(apiErrL).slice(0, 400)}` };
+    const locationId: string | undefined = locRes?.createLocation?.createdLocation?.id;
+    if (!locationId) return { ok: false, error: `createLocation returned no id: ${JSON.stringify(locRes).slice(0, 300)}` };
+
+    // Step 3 — create Job under the Location
+    const jobRes = await paveFetch({
+      $: { grantKey: JOBTREAD_API_KEY },
+      createJob: {
+        $: {
+          locationId,
+          name: payload.job_name,
+          description: payload.note,
+          customFieldValues: {
+            [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
+            [JT_CF.job.job_type]: mapJobType(payload._source_row ?? payload),
+            [JT_CF.job.scope_type]: mapScopeType(payload._source_row ?? payload),
+            [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
+            [JT_CF.job.customer_present]: false,
+            [JT_CF.job.lead_notes]: payload.note,
+          },
+        },
+        createdJob: { id: {}, name: {} },
+      },
+    });
+    const apiErrJ = jobRes?.error?.message || jobRes?.error;
+    if (apiErrJ) return { ok: false, error: `createJob: ${String(apiErrJ).slice(0, 400)}` };
+    const jobId: string | undefined = jobRes?.createJob?.createdJob?.id;
+    return { ok: true, id: jobId ?? accountId };
   } catch (e) {
     return { ok: false, error: `Pave error: ${(e as Error).message}` };
   }
