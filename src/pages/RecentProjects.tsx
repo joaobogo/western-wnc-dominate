@@ -243,6 +243,32 @@ const RecentProjects = () => {
         </section>
 
         {/* Section 3: Path cards */}
+        {/* RealWork Labs — Recent Project Updates (live widget) */}
+        <section
+          className="py-16 md:py-24 bg-background border-t border-border/60"
+          aria-labelledby="recent-project-updates-heading"
+        >
+          <div className="container-tight">
+            <div className="max-w-3xl mb-10">
+              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+                Live Project Feed
+              </p>
+              <h2
+                id="recent-project-updates-heading"
+                className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight"
+              >
+                Recent Project Updates
+              </h2>
+              <p className="text-foreground/75 text-lg leading-relaxed">
+                Explore recent Highlander project activity, updates, and completed work across
+                Western North Carolina.
+              </p>
+            </div>
+            {/* RealWork Labs render target — do not modify, duplicate, or hide. */}
+            <div id="rwl-output" className="min-h-[120px]" />
+          </div>
+        </section>
+
         <section className="py-16 md:py-24 bg-background">
           <div className="container-tight">
             <div className="max-w-3xl mb-12">
