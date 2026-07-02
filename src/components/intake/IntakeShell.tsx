@@ -110,7 +110,7 @@ const IntakeShell = ({
           </aside>
 
           {/* === Form column === */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7" data-hide-sticky>
             <div className="bg-card border border-border rounded-lg shadow-sm p-6 md:p-9 relative overflow-hidden">
               {/* Highland Heritage Accent */}
               <div 
