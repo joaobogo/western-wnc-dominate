@@ -44,7 +44,15 @@
   p { font-size: clamp(0.95rem, 3.9vw, 1.02rem); line-height: 1.6; }
 
   /* ---------- Section spacing: tighten vertical rhythm ---------- */
-  section { padding-top: clamp(2.25rem, 8vw, 3rem); padding-bottom: clamp(2.25rem, 8vw, 3rem); }
+  /* Scoped to real content sections. Excludes the outer hero wrapper
+     (which controls its own spacing via .hero-clears-header) and any
+     off-DOM Radix/Sonner <section> containers that would otherwise
+     inject phantom top padding above the fixed header. */
+  main > section:not(#hero):not([data-hero-anchored]):not(.no-header-pad),
+  main section section {
+    padding-top: clamp(2.25rem, 8vw, 3rem);
+    padding-bottom: clamp(2.25rem, 8vw, 3rem);
+  }
   [class*="py-32"], [class*="py-28"], [class*="py-24"], [class*="py-20"] {
     padding-top: 2.75rem !important;
     padding-bottom: 2.75rem !important;
@@ -74,7 +82,11 @@
   [class*="px-10"]:not([class*="px-10 "]) { /* no-op guard */ }
 
   /* ---------- Hero-specific safety ---------- */
-  [data-hero-anchored] h1 { font-size: clamp(2.15rem, 9vw, 2.7rem) !important; }
+  [data-hero-anchored] h1 {
+    font-size: clamp(1.7rem, 7.6vw, 2.3rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.025em !important;
+  }
 
   /* ---------- Rounded corners feel less blocky on tight screens ---------- */
   img { image-rendering: -webkit-optimize-contrast; }
@@ -1808,7 +1820,12 @@ div[style*="Edit with Lovable"],
     padding-bottom: 2.5rem !important;
   }
   /* Top space above hero — respect fixed header without piling on */
-  main > section:first-child { padding-top: 5rem; }
+  /* Bottom-anchored heroes handle their own header clearance via
+     `.hero-clears-header`. Adding padding here creates a visible white
+     gap above the hero image on mobile. */
+  main > section:first-child:not([data-hero-anchored]):not(.no-header-pad) {
+    padding-top: 5rem;
+  }
 
   /* Card interiors — controlled, not cavernous */
   [class*="p-10"], [class*="p-12"], [class*="p-14"], [class*="p-16"] {
