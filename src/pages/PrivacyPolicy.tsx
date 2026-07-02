@@ -366,6 +366,15 @@ const PrivacyPolicy = () => {
                 Chat and messaging tools to support customer communications and improve
                 responsiveness.
               </li>
+              <li>
+                Professional-network measurement tools (for example, the LinkedIn Insight
+                Tag) to measure campaign performance and audience insights on LinkedIn.
+              </li>
+              <li>
+                Review-request and reputation tools (for example, RealWork Labs) that help
+                us send post-project survey and review invitations and display recent
+                project activity on the Website.
+              </li>
             </ul>
             <p>
               Some of these technologies may be operated by third parties and may collect
