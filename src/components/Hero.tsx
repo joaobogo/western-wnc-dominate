@@ -53,7 +53,7 @@ const Hero = () => {
             loading={i === 0 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "low"}
             decoding="async"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-[50%_28%] md:object-center"
             style={{
               opacity: layer === i ? 1 : 0,
               transition: "opacity 1800ms cubic-bezier(0.22, 1, 0.36, 1)",
@@ -62,9 +62,11 @@ const Hero = () => {
           />
         ))}
 
-        {/* Multi-layer cinematic grading — lightened significantly for clarity */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent" />
+        {/* Multi-layer cinematic grading — stronger on mobile for text legibility, lighter on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.35)] md:from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.08)] md:via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
+        {/* Bottom-heavy gradient behind headline/CTAs on mobile — improves contrast without darkening the top sky */}
+        <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.78)] via-[hsl(var(--hero-overlay)/0.45)] to-transparent" />
+        <div className="absolute inset-0 hidden md:block bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.15)] to-transparent" />
 
         {/* Warm highlight wash — top-right, like golden hour light */}
@@ -240,11 +242,11 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.35 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-6"
+              className="flex flex-col sm:flex-row gap-2.5 sm:gap-6"
             >
               <Link
                 to="/consultation"
-                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-14 py-3.5 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-xl min-h-[52px] md:min-h-[60px]"
+                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-14 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-xl min-h-[48px] md:min-h-[60px] whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Request a Free Quote</span>
@@ -253,7 +255,7 @@ const Hero = () => {
               <a
                 href="tel:+18285247773"
                 aria-label="Call Highlander Roofing & Construction at 828-524-7773"
-                className="group bg-white/[0.08] backdrop-blur-md border md:border-2 border-white/[0.18] text-primary-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-12 py-3.5 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[52px] md:min-h-[60px] tracking-wide uppercase"
+                className="group bg-white/[0.08] backdrop-blur-md border md:border-2 border-white/[0.22] text-primary-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-12 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[48px] md:min-h-[60px] tracking-wide uppercase whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--highland-gold))]" />
                 <span className="md:hidden">Call · (828) 524-7773</span>
@@ -278,13 +280,13 @@ const Hero = () => {
               <span className="text-primary-foreground text-[15px] md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Rapid Response Guarantee</span>
             </motion.div>
 
-            {/* VELUX Certified Installer badge */}
+            {/* VELUX Certified Installer badge — desktop only; keeps mobile hero clean */}
             <motion.a
               href="/certifications"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.2, duration: 0.8 }}
-              className="mt-4 md:mt-6 inline-flex items-center gap-2.5 md:gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
+              className="mt-4 md:mt-6 hidden md:inline-flex items-center gap-2.5 md:gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
             >
               <div className="w-11 h-11 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 overflow-hidden bg-white shadow-sm border border-white/10">
                 <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-1.5 md:p-2" />
