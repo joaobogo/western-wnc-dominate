@@ -914,11 +914,11 @@ Deno.serve(async (req) => {
     await admin.from(table).update({
       jobtread_sync_status: "retry_needed",
       jobtread_last_attempt_at: nowIso,
-      jobtread_error_message: missing,
+      jobtread_error_message: sanitizeError(missing),
       jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
-    return new Response(JSON.stringify({ ok: false, error: missing, retryable: true }), {
+    return new Response(JSON.stringify({ ok: false, error: "sync_config_missing", retryable: true }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
@@ -940,13 +940,17 @@ Deno.serve(async (req) => {
     await admin.from(table).update({
       jobtread_sync_status: "failed",
       jobtread_last_attempt_at: nowIso,
-      jobtread_error_message: result.error ?? "Unknown JobTread error",
+      jobtread_error_message: sanitizeError(result.error ?? "Unknown JobTread error"),
       jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
   }
 
-  return new Response(JSON.stringify(result), {
+  // Never leak raw upstream error text back to the caller.
+  const safeResult = result.ok
+    ? result
+    : { ok: false, error: "sync_failed", retryable: true };
+  return new Response(JSON.stringify(safeResult), {
     status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
   });
 });
