@@ -23,8 +23,13 @@ const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 // so nothing breaks if the secret was already saved under the legacy name.
 const JOBTREAD_API_KEY =
   Deno.env.get("JOBTREAD_API_KEY") ?? Deno.env.get("JOBTREAD_GRANT_KEY") ?? "";
-const JOBTREAD_BASE_URL =
-  Deno.env.get("JOBTREAD_BASE_URL") ?? "https://api.jobtread.com/pave";
+// JobTread's Pave API lives at `${host}/pave`. Accept either form of BASE_URL
+// and normalize so a plain `https://api.jobtread.com` still works.
+const JOBTREAD_BASE_URL_RAW =
+  Deno.env.get("JOBTREAD_BASE_URL") ?? "https://api.jobtread.com";
+const JOBTREAD_PAVE_URL = JOBTREAD_BASE_URL_RAW.replace(/\/+$/, "").endsWith("/pave")
+  ? JOBTREAD_BASE_URL_RAW.replace(/\/+$/, "")
+  : `${JOBTREAD_BASE_URL_RAW.replace(/\/+$/, "")}/pave`;
 // Optional. Used only if actually set — never blocks the integration.
 const JOBTREAD_ORG_ID = Deno.env.get("JOBTREAD_ORG_ID") ?? "";
 const JOBTREAD_WEBHOOK_URL = Deno.env.get("JOBTREAD_WEBHOOK_URL") ?? "";
@@ -268,7 +273,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       // API rejects it, the exact message is surfaced in jobtread_error_message.
       query.currentGrant = { organization: { createAccount } };
     }
-    const res = await fetch(JOBTREAD_BASE_URL, {
+    const res = await fetch(JOBTREAD_PAVE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query }),
