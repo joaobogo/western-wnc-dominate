@@ -92,6 +92,22 @@
   img { image-rendering: -webkit-optimize-contrast; }
 }
 
+/* ── Mobile hero top-padding tightening ──
+   Many page heroes use pt-32/pt-40 on an inner wrapper (e.g.
+   `pt-32 md:pt-40`), which produces ~128px of empty space beneath the
+   fixed header on phones. Cap those on <=640px so hero content sits
+   closer to the header without touching desktop values. */
+@media (max-width: 640px) {
+  [class*="pt-48"]:not(main):not(body) { padding-top: 5.5rem !important; }
+  [class*="pt-40"]:not(main):not(body) { padding-top: 5rem !important; }
+  [class*="pt-36"]:not(main):not(body) { padding-top: 4.75rem !important; }
+  [class*="pt-32"]:not(main):not(body) { padding-top: 4.5rem !important; }
+  [class*="pt-28"]:not(main):not(body) { padding-top: 4rem !important; }
+  [class*="pb-24"] { padding-bottom: 2.5rem !important; }
+  [class*="pb-20"] { padding-bottom: 2rem !important; }
+  [class*="pb-16"] { padding-bottom: 1.75rem !important; }
+}
+
 /* Slightly smaller-scale tablet ease (641–820) */
 @media (min-width: 641px) and (max-width: 820px) {
   h1 { font-size: clamp(2.6rem, 6vw, 3.25rem) !important; line-height: 1.1 !important; }
