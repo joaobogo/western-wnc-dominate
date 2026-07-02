@@ -226,7 +226,7 @@ const App = () => (
           <Route path="/roof-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
           <Route path="/metal-roofs" element={<Navigate to="/roofing/metal" replace />} />
           <Route path="/re-roof-specialists" element={<Navigate to="/roofing/roof-replacement" replace />} />
-          <Route path="/roof-maintenance-program" element={<Navigate to="/roofing/commercial" replace />} />
+          <Route path="/roof-maintenance-program" element={<Navigate to="/roofing/roof-repair" replace />} />
           <Route path="/types-of-roofs-we-install" element={<Navigate to="/roofing" replace />} />
           <Route path="/gutter-services" element={<Navigate to="/roofing" replace />} />
           <Route path="/gutter-installation" element={<Navigate to="/roofing" replace />} />
