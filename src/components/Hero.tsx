@@ -217,7 +217,7 @@ const Hero = () => {
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[0.72rem] leading-[1.2] md:text-[3.8rem] md:leading-[1.08] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-semibold md:font-bold tracking-[0.14em] md:tracking-[-0.03em] uppercase md:normal-case whitespace-nowrap"
+                className="text-xs leading-[1.2] md:text-[3.8rem] md:leading-[1.08] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-semibold md:font-bold tracking-[0.14em] md:tracking-[-0.03em] uppercase md:normal-case whitespace-nowrap"
               >
                 <span className="text-[hsl(var(--highland-gold))]">Roofing · Construction · Design</span>
               </motion.h1>
