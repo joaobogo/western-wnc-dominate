@@ -213,14 +213,14 @@ const Hero = () => {
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-3 md:mb-12 pb-[0.15em] md:pb-[0.4em]">
-              <motion.h1
+              <motion.div
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-xs leading-[1.2] md:text-[3.8rem] md:leading-[1.08] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-semibold md:font-bold tracking-[0.14em] md:tracking-[-0.03em] uppercase md:normal-case whitespace-nowrap"
+                className="text-[0.72rem] leading-[1.2] md:text-[3.8rem] md:leading-[1.08] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-semibold md:font-bold tracking-[0.16em] md:tracking-[-0.03em] uppercase md:normal-case whitespace-nowrap"
               >
                 <span className="text-[hsl(var(--highland-gold))]">Roofing · Construction · Design</span>
-              </motion.h1>
+              </motion.div>
             </div>
 
 
