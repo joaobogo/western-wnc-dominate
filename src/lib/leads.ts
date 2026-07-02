@@ -104,7 +104,14 @@ export async function submitLead(payload: LeadPayload) {
     console.error("submitLead error:", error);
     return { id: null as string | null, error };
   }
-  return { id: (data?.id as string) ?? null, error: null };
+  const leadId = (data?.id as string) ?? null;
+  // Fire-and-forget JobTread sync. Never block the visitor on this.
+  if (leadId) {
+    void supabase.functions
+      .invoke("jobtread-sync", { body: { lead_id: leadId } })
+      .catch((err) => console.warn("jobtread-sync invoke failed:", err));
+  }
+  return { id: leadId, error: null };
 }
 
 export async function logChatbotConversation(input: {
@@ -139,6 +146,21 @@ export async function logChatbotConversation(input: {
     utm_term: attribution.utm_term ?? null,
   };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { error } = await supabase.from("chatbot_conversations").insert([row as any]);
-  if (error) console.error("logChatbotConversation error:", error);
+  const { data, error } = await supabase
+    .from("chatbot_conversations")
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .insert([row as any])
+    .select("id")
+    .single();
+  if (error) {
+    console.error("logChatbotConversation error:", error);
+    return;
+  }
+  const convId = (data?.id as string) ?? null;
+  // Only sync chatbot rows that actually captured contact info.
+  if (convId && (input.phone || input.email || input.name)) {
+    void supabase.functions
+      .invoke("jobtread-sync", { body: { chatbot_conversation_id: convId } })
+      .catch((err) => console.warn("jobtread-sync invoke failed:", err));
+  }
 }
