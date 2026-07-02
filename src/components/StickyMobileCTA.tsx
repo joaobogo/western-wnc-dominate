@@ -11,6 +11,7 @@ const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 const StickyMobileCTA = () => {
   const [scrolled, setScrolled] = useState(false);
   const [desktopHovered, setDesktopHovered] = useState(false);
+  const [suppressed, setSuppressed] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 400);
@@ -18,11 +19,28 @@ const StickyMobileCTA = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Hide sticky mobile bar when chatbot or mobile menu is open, so the
+  // floating overlays never stack and compete for the same tap area.
+  useEffect(() => {
+    const sync = () => {
+      const chatOpen = document.body.dataset.chatOpen === "true";
+      const menuOpen = document.body.dataset.menuOpen === "true";
+      setSuppressed(chatOpen || menuOpen);
+    };
+    sync();
+    window.addEventListener("chatbot:toggle", sync);
+    window.addEventListener("mobilemenu:toggle", sync);
+    return () => {
+      window.removeEventListener("chatbot:toggle", sync);
+      window.removeEventListener("mobilemenu:toggle", sync);
+    };
+  }, []);
+
   return (
     <>
       {/* ─── MOBILE: Premium bottom action bar ─── */}
       <AnimatePresence>
-        {scrolled && (
+        {scrolled && !suppressed && (
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
