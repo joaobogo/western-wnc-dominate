@@ -135,6 +135,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           </div>
         </div>
 
+        <FormConsent />
         <motion.button
           whileTap={{ scale: 0.98 }}
           type="submit"
