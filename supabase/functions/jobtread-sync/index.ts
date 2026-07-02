@@ -254,7 +254,10 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
         body: JSON.stringify({
           query: {
             $: { grantKey: JOBTREAD_API_KEY },
-            currentGrant: { organization: { id: {} } },
+            currentGrant: {
+              organization: { id: {} },
+              user: { memberships: { nodes: { organization: { id: {} } } } },
+            },
           },
         }),
       });
@@ -266,6 +269,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
         const j = JSON.parse(orgText);
         orgId =
           j?.currentGrant?.organization?.id ??
+          j?.currentGrant?.user?.memberships?.nodes?.[0]?.organization?.id ??
           j?.data?.currentGrant?.organization?.id ??
           "";
       } catch { /* ignore */ }
