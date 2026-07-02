@@ -110,6 +110,8 @@ const Header = () => {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+    document.body.dataset.menuOpen = mobileOpen ? "true" : "false";
+    window.dispatchEvent(new CustomEvent("mobilemenu:toggle", { detail: { open: mobileOpen } }));
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
