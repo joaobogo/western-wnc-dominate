@@ -262,9 +262,15 @@ function buildHumanNote(row: LeadRow): string {
     bullet("Email", row.email);
   } else if (isConstructionCategory) {
     bullet("Service Category", row.service_category);
+    const classification = classifyConstructionDesign(row);
+    if (classification) {
+      lines.push(
+        `- Lead Classification: ${classification === "construction" ? "Construction / Build Inquiry" : "Design / Planning Inquiry"}`,
+      );
+    }
     bullet("Project Type", row.project_type);
     if (planStatusLabel) lines.push(`- Plan Status: ${planStatusLabel}`);
-    if (meta.planningStage) bullet("Planning Stage", meta.planningStage);
+    if (meta.planningStage) bullet("Design/Planning Stage", meta.planningStage);
     bullet("Desired Timeline", row.urgency ?? meta.timeline);
     bullet("Budget Range", meta.budgetRange ?? meta.budget_band ?? meta.investment);
     bullet("Property Type", row.property_type);
