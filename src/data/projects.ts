@@ -122,7 +122,7 @@ export const projectDetails: ProjectDetail[] = [
     scope: "4,100 sq ft roof replacement",
     duration: "4 days",
     highlight: "CertainTeed SureStart PLUS™ warranty",
-    summary: "Full dimensional shingle replacement on a multi-level mountain home in Waynesville. CertainTeed Landmark shingles in Weathered Wood with enhanced warranty coverage available through our Master Shingle Applicator certification.",
+    summary: "Full dimensional shingle replacement on a multi-level mountain home in Waynesville. CertainTeed Landmark shingles in Weathered Wood with enhanced warranty coverage available through our ShingleMaster Credentialed Contractor certification.",
     challenge: "The existing 3-tab shingles were 22 years old and showing widespread granule loss and curling. The multi-level roofline with screen porch integration required careful sequencing to protect the home during replacement.",
     scopeOfWork: [
       "Complete tear-off of 22-year-old 3-tab shingles",
@@ -143,9 +143,9 @@ export const projectDetails: ProjectDetail[] = [
       "Magnetic nail sweep of entire property perimeter before and after tear-off",
       "Tarped landscaping and protected all exterior surfaces",
       "Completed in 4 days despite complex multi-level geometry",
-      "Enhanced SureStart PLUS™ warranty activated through Master Applicator certification",
+      "Enhanced SureStart PLUS™ warranty activated through ShingleMaster Credentialed Contractor certification",
     ],
-    result: "The Weathered Wood color perfectly complements the home's mountain setting, and the dimensional profile is a dramatic visual upgrade from the flat 3-tab shingles. The SureStart PLUS™ warranty provides both material and workmanship coverage directly from CertainTeed — a tier only available through certified Master Shingle Applicators.",
+    result: "The Weathered Wood color perfectly complements the home's mountain setting, and the dimensional profile is a dramatic visual upgrade from the flat 3-tab shingles. The SureStart PLUS™ warranty provides both material and workmanship coverage directly from CertainTeed — a tier only available through certified ShingleMaster Credentialed Contractors.",
     galleryImages: [asphaltHero, asphalt007, asphalt006, asphalt008],
     testimonial: {
       quote: "After three bad experiences with other contractors, we were skeptical. Highlander changed that completely. James came out personally, gave an honest assessment — no pressure, no upselling. The install crew was clean, fast, and meticulous.",
@@ -159,7 +159,7 @@ export const projectDetails: ProjectDetail[] = [
       afterLabel: "CertainTeed Landmark — Weathered Wood",
       whatChanged: "Full replacement of deteriorated 3-tab shingles with CertainTeed Landmark dimensional shingles. 12 sheets of damaged decking replaced. Ventilation system upgraded. Screen porch roof integrated seamlessly.",
       whyItMattered: "The aging 3-tab shingles had lost most of their protective granules, leaving the home vulnerable to water infiltration. Multiple areas showed curling and lifting, particularly on the north-facing slope.",
-      highlanderDifference: "Master Shingle Applicator certification unlocked CertainTeed's strongest warranty tier. 4-day completion on a complex multi-level home. Magnetic nail sweep protected the entire property.",
+      highlanderDifference: "ShingleMaster Credentialed Contractor certification unlocked CertainTeed's strongest warranty tier. 4-day completion on a complex multi-level home. Magnetic nail sweep protected the entire property.",
     },
     seo: {
       title: "CertainTeed Landmark Roof Replacement — Waynesville, NC | Highlander",

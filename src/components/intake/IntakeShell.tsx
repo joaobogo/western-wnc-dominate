@@ -55,7 +55,7 @@ const IntakeShell = ({
             <div className="grid grid-cols-2 gap-3 mb-8">
               {[
                 { icon: Shield,  text: "Licensed GC" },
-                { icon: Award,   text: "Master Applicator" },
+                { icon: Award,   text: "ShingleMaster Credentialed" },
                 { icon: Clock,   text: "24-hr Storm Response" },
                 { icon: MapPin,  text: "8 WNC Counties" },
               ].map((t) => (

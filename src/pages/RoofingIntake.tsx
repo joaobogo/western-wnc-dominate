@@ -21,7 +21,7 @@ const RoofingIntake = () => (
         subhead="Replacement, repair, storm, metal, or synthetic — start with a few details and a Highlander advisor responds within as soon as possible. No call centers, no high-pressure quotes."
         sidebarBullets={[
           "Team-led team, local crews, written scope before any work begins.",
-          "CertainTeed Master Applicator and Licensed General Contractor.",
+          "CertainTeed ShingleMaster Credentialed Contractor and Licensed General Contractor.",
           "Rapid storm response across 8 Western NC counties.",
         ]}
         otherIntakeLabel="Construction Intake"

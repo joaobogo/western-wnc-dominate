@@ -13,7 +13,7 @@ const stats = [
 ];
 
 const credentials = [
-  { icon: Award, label: "CertainTeed Master Shingle Applicator", emphasis: true },
+  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor", emphasis: true },
   { icon: Shield, label: "Licensed General Contractor", emphasis: true },
   { icon: Star, label: "Brava Preferred Installer", emphasis: true },
   { icon: Clock, label: "Rapid Storm Response" },
@@ -120,7 +120,7 @@ const TrustStrip = () => {
                 className="mt-6 pt-4 border-t border-primary-foreground/[0.05]"
               >
                 <p className="text-primary-foreground/85 text-[15px] md:text-[16px] font-body italic leading-relaxed max-w-md font-medium">
-                  "The only company in Western NC that holds both a CertainTeed Master Applicator
+                  "The only company in Western NC that holds both a CertainTeed ShingleMaster Credentialed Contractor
                   certification and a General Contractor license under the same roof."
                 </p>
               </motion.div>

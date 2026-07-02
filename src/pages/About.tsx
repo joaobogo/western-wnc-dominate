@@ -22,7 +22,7 @@ const values = [
   { icon: Heart, title: "Relationships Over Transactions", description: "We don't chase projects. We earn trust. Most of our work comes from referrals and repeat clients who've seen what we deliver." },
   { icon: Mountain, title: "Mountain-Built Knowledge", description: "We understand what elevation, weather exposure, and WNC terrain demand from a roof and a structure. That knowledge is earned, not taught." },
   { icon: Users, title: "Accountability You Can See", description: "The owner walks your property. Your crew lead is on-site daily. When you call, a real person answers. That's how it should work." },
-  { icon: Shield, title: "Licensed, Insured, Certified", description: "Licensed NC General Contractor. CertainTeed Master Shingle Applicator. Fully insured. We carry the credentials because we've earned them." },
+  { icon: Shield, title: "Licensed, Insured, Certified", description: "Licensed NC General Contractor. CertainTeed ShingleMaster Credentialed Contractor. Fully insured. We carry the credentials because we've earned them." },
   { icon: Award, title: "Military Friendly Company", description: "We are proud to be a military-friendly company, offering dedicated support and special considerations to those who have served. Honor and integrity guide every project we undertake." },
 ];
 
@@ -60,7 +60,7 @@ const craftsmanshipPrinciples = [
 
 const milestones = [
   { year: "2017", event: "Founded in Franklin, NC", detail: "Started with a truck, a ladder, and a commitment to doing roofing right in these mountains." },
-  { year: "2019", event: "CertainTeed Master Applicator", detail: "Earned the industry's highest installer certification, awarded to the top 1% nationally." },
+  { year: "2019", event: "CertainTeed ShingleMaster Credentialed Contractor", detail: "Earned the industry's highest installer certification, awarded to the top 1% nationally." },
   { year: "2021", event: "Second Office in Sylva", detail: "Expanded into Jackson County to better serve the western reaches of our service area." },
   { year: "2022", event: "Construction Division Launched", detail: "Client demand drove expansion into additions, renovations, and outdoor living builds." },
   { year: "2024", event: "Best of Macon County", detail: "Voted Reader's Choice. The recognition that matters most because it comes from our neighbors." },

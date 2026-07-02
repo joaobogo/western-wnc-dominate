@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { submitLead, logChatbotConversation } from "@/lib/leads";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -218,10 +219,21 @@ export default function ChatbotWidget() {
   const [cards, setCards] = useState<ChatCard[]>([]);
   const [leadCaptureShown, setLeadCaptureShown] = useState(false);
   const [exchangeCount, setExchangeCount] = useState(0);
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
+
+  // Mobile: only reveal the chatbot trigger after the user scrolls past the hero
+  // so it never covers the headline, CTAs, or trust badges on first paint.
+  useEffect(() => {
+    const onScroll = () => setScrolledPastHero(window.scrollY > 500);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -363,17 +375,17 @@ export default function ChatbotWidget() {
     <>
       {/* Floating trigger */}
       <AnimatePresence>
-        {!isOpen && (
+        {!isOpen && (!isMobile || scrolledPastHero) && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-32 md:bottom-6 right-4 md:right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center group"
+            className="fixed right-4 md:right-6 bottom-[calc(env(safe-area-inset-bottom,0px)+168px)] md:bottom-6 z-40 md:z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl flex items-center justify-center group"
             aria-label="Open project assistant"
           >
-            <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <MessageCircle className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
             <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-accent rounded-full border-2 border-background" />
           </motion.button>
         )}

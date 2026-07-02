@@ -31,7 +31,7 @@ const pillars = [
   {
     icon: ShieldCheck,
     title: "Certified & Licensed",
-    copy: "CertainTeed Master Applicator for roofing. Licensed General Contractor for construction. Full warranty coverage on every project.",
+    copy: "CertainTeed ShingleMaster Credentialed Contractor for roofing. Licensed General Contractor for construction. Full warranty coverage on every project.",
     stat: "Top 1%",
     statLabel: "nationally certified",
   },
