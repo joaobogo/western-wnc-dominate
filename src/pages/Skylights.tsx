@@ -11,6 +11,7 @@ import { towns } from "@/data/towns";
 import veluxLogo from "@/assets/velux-certified-logo.jpg";
 import VeluxProof from "@/components/VeluxProof";
 import skylightsMobileHero from "@/assets/heroes/skylights-mobile.jpg";
+import CTABlock from "@/components/CTABlock";
 
 const faqs = [
   { q: "Are you a certified VELUX installer?", a: "Yes. Highlander is a VELUX Certified Installer — trained and accredited by VELUX to install their skylights and Sun Tunnels to manufacturer specification. That accreditation is what unlocks VELUX's installation warranty on top of the product warranty." },
@@ -204,6 +205,7 @@ const Skylights = () => {
           </div>
         </section>
       </main>
+        <CTABlock />
       <Footer />
       <StickyMobileCTA />
     </>
