@@ -31,7 +31,7 @@ const InspectionForm = () => {
     name: "",
     phone: "",
     email: "",
-    town: window.location.pathname.split('/').pop()?.replace('-nc', '').replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) || "",
+    town: "",
     projectType: "",
     timeline: "",
     details: "",
