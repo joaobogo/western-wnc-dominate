@@ -388,8 +388,9 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       if (!accountId) return { ok: false, error: `createAccount returned no id` };
     }
 
-    // Step 2 — create Location under the Account
-    const locName = [contactName, address, town].filter(Boolean).join(" — ") || contactName;
+    // Step 2 — create Location under the Account. JobTread caps name at 30 chars.
+    const rawLocName = [town, address].filter(Boolean).join(" — ") || contactName || "Website Lead";
+    const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
     const locRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createLocation: {
