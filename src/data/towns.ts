@@ -178,7 +178,7 @@ export const towns: TownData[] = [
     styleTendency: "Classic Smoky Mountain log and timber styles emphasizing durability and natural finishes.",
     notableNeighborhoods: ["Alarka", "Deep Creek", "Lands Creek", "Fontana Lake area"],
     marketAuthorityAngle: "We understand that in Bryson City, your home is often your business. We complete major projects in the tight windows between guest stays.",
-    heroImage: "https://images.unsplash.com/photo-1449156001437-3a144f0073bc?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "waynesville-nc",
@@ -238,7 +238,7 @@ export const towns: TownData[] = [
     styleTendency: "Quaint Appalachian village style with a focus on charm, historic accuracy, and river-resistant structural details.",
     notableNeighborhoods: ["Historic Village Center", "Tuckasegee Riverfront", "Monteith Park area"],
     marketAuthorityAngle: "Dillsboro is a destination. We keep our job sites tourism-ready and our craftsmanship village-compliant to protect Dillsboro's unique mountain character.",
-    heroImage: "https://images.unsplash.com/photo-1518173946687-a4c8a9b749f5?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "asheville-nc",
@@ -258,7 +258,7 @@ export const towns: TownData[] = [
     styleTendency: "Eclectic mix of Tudor, Craftsman, and ultra-modern mountain home design featuring glass and steel.",
     notableNeighborhoods: ["Biltmore Forest", "Town Mountain", "Montford", "Grove Park", "Kenilworth"],
     marketAuthorityAngle: "Asheville projects demand a higher level of design sensitivity and structural precision. We build for the city's most discerning homeowners.",
-    heroImage: "https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=2000"
+    heroImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
   },
   {
     slug: "hendersonville-nc",
