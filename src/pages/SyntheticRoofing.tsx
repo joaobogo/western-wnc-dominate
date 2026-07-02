@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
+import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getServiceTownEntriesForService } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
@@ -189,6 +190,7 @@ const SyntheticRoofing = () => {
           body="An optional guided pathway for homeowners specifying a Brava shake or slate system — profile, color blend, ARB documentation, and detailing. We use it to prepare a precise on-site assessment."
           ctaLabel="Build Your Brava Roof Plan"
         />
+        <CTABlock />
       </main>
       <Footer />
       <StickyMobileCTA />
