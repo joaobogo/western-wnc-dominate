@@ -220,6 +220,28 @@ const App = () => (
           <Route path="/accessibility" element={<LegalPage kind="accessibility" />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/leads" element={<AdminLeads />} />
+          {/* ─── Legacy WordPress backlink redirects (Hibu migration) ─── */}
+          {/* Preserve SEO value from old highlandernc.com URLs. */}
+          <Route path="/residential-roofing-services" element={<Navigate to="/roofing/residential" replace />} />
+          <Route path="/roof-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
+          <Route path="/metal-roofs" element={<Navigate to="/roofing/metal" replace />} />
+          <Route path="/re-roof-specialists" element={<Navigate to="/roofing/roof-replacement" replace />} />
+          <Route path="/roof-maintenance-program" element={<Navigate to="/roofing/commercial" replace />} />
+          <Route path="/types-of-roofs-we-install" element={<Navigate to="/roofing" replace />} />
+          <Route path="/gutter-services" element={<Navigate to="/roofing" replace />} />
+          <Route path="/gutter-installation" element={<Navigate to="/roofing" replace />} />
+          <Route path="/seamless-gutters" element={<Navigate to="/roofing" replace />} />
+          <Route path="/seamless-gutter-installation" element={<Navigate to="/roofing" replace />} />
+          <Route path="/design/build-services" element={<Navigate to="/construction/design" replace />} />
+          <Route path="/design-build-services" element={<Navigate to="/construction/design" replace />} />
+          <Route path="/patio-installation" element={<Navigate to="/construction/outdoor-living" replace />} />
+          <Route path="/request-quote-form" element={<Navigate to="/request-inspection" replace />} />
+          <Route path="/request-quote-form-page" element={<Navigate to="/request-inspection" replace />} />
+          <Route path="/faqs" element={<Navigate to="/faq" replace />} />
+          <Route path="/highlands-nc" element={<Navigate to="/service-areas/highlands-nc" replace />} />
+          <Route path="/highlands--nc" element={<Navigate to="/service-areas/highlands-nc" replace />} />
+          <Route path="/the-benefits-of-metal-roof-installation-for-your-home" element={<Navigate to="/blog/metal-vs-shingle-roof-western-nc" replace />} />
+          <Route path="/why-asphalt-shingle-remains-the-most-popular-roofing-material" element={<Navigate to="/blog/best-roofing-materials-highlands-nc" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           </Routes>
