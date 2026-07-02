@@ -243,6 +243,14 @@ export default function ChatbotWidget() {
     if (isOpen) inputRef.current?.focus();
   }, [isOpen]);
 
+  // Broadcast open state so other floating UI (StickyMobileCTA) can hide
+  // to avoid competing for the same screen real estate on mobile.
+  useEffect(() => {
+    document.body.dataset.chatOpen = isOpen ? "true" : "false";
+    window.dispatchEvent(new CustomEvent("chatbot:toggle", { detail: { open: isOpen } }));
+    return () => { delete document.body.dataset.chatOpen; };
+  }, [isOpen]);
+
   // Show lead capture after 4 exchanges
   useEffect(() => {
     if (exchangeCount >= 4 && !leadCaptureShown) {
