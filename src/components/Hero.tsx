@@ -212,15 +212,14 @@ const Hero = () => {
                 Built for the Peaks.
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-4 md:mb-12 pb-[0.25em] md:pb-[0.4em]">
+            <div className="overflow-hidden mb-3 md:mb-12 pb-[0.15em] md:pb-[0.4em]">
               <motion.h1
                 initial={{ y: "120%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.03em]"
+                className="text-[1.15rem] leading-[1.2] md:text-[3.8rem] md:leading-[1.08] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-medium md:font-bold tracking-[0.02em] md:tracking-[-0.03em] uppercase md:normal-case"
               >
-                <span className="text-[hsl(var(--highland-gold))]">Roofing, Construction &amp; Design</span>
-                <span className="text-primary-foreground">.</span>
+                <span className="text-[hsl(var(--highland-gold))]">Roofing · Construction · Design</span>
               </motion.h1>
             </div>
 
@@ -230,10 +229,11 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[14px] md:text-[24px] text-white max-w-2xl mb-5 md:mb-16 leading-[1.55] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
+              className="text-[14px] md:text-[24px] text-white max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
             >
-              Trusted roofing, repairs, construction, gutters, and outdoor living for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, locally run, and built for the mountains by a team of WNC craftspeople.
-              <span className="block mt-2.5 md:mt-6 text-[hsl(var(--highland-gold))] font-bold text-[12.5px] md:text-2xl drop-shadow-md">Licensed, Insured &amp; CertainTeed ShingleMaster Credentialed.</span>
+              <span className="md:hidden">Trusted roofing, construction, and outdoor living for Franklin, Highlands, Cashiers &amp; Western NC. Family-owned. Built for the mountains.</span>
+              <span className="hidden md:inline">Trusted roofing, repairs, construction, gutters, and outdoor living for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, locally run, and built for the mountains by a team of WNC craftspeople.</span>
+              <span className="block mt-2 md:mt-6 text-[hsl(var(--highland-gold))] font-bold text-[11.5px] md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
             </motion.p>
 
 
