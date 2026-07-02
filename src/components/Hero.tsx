@@ -309,7 +309,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.8, ease: HIGHLAND_EASE }}
-        className="absolute bottom-0 left-0 right-0 z-20"
+        className="absolute bottom-0 left-0 right-0 z-20 hidden sm:block"
       >
         {/* Top gold line */}
         <motion.div
