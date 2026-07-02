@@ -217,7 +217,6 @@ If you're weighing metal vs. shingle for a home in Highlands, Cashiers, Sapphire
       { label: "Residential Roofing", path: "/roofing/residential" },
     ],
   },
-  },
   {
     slug: "storm-damage-checklist-western-nc",
     title: "Storm Damage Roof Checklist for Western NC Homeowners",
