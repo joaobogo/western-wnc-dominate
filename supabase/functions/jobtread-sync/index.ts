@@ -170,6 +170,34 @@ function buildHumanNote(row: LeadRow): string {
       " " + String(row.project_type ?? "") +
       " " + String(row.roofing_issue_type ?? ""),
   );
+  const catBlob = String(row.service_category ?? row.lead_type ?? "").toLowerCase();
+  const isConstructionCategory =
+    !isRoofingCategory &&
+    /construction|design|planning|outdoor|addition|garage|porch|sunroom|deck|patio|pergola|renovation|remodel/.test(
+      catBlob + " " + String(row.project_type ?? "").toLowerCase(),
+    );
+
+  const meta: any = row.metadata ?? {};
+  const planStatusRaw =
+    meta.plan_status ?? meta.planStatus ?? meta.planningStage ?? null;
+  const planStatusMap: Record<string, string> = {
+    "yes-pro-plans": "Complete permit-ready plans",
+    "full_plans": "Complete permit-ready plans",
+    "yes-sketches": "Rough sketches / inspiration only",
+    "have_ideas": "Rough sketches / inspiration only",
+    "yes": "Has plans",
+    "no": "No plans yet",
+    "not-sure": "Not sure",
+    "unsure": "Not sure",
+    "": "",
+  };
+  const planStatusLabel = planStatusRaw
+    ? planStatusMap[String(planStatusRaw).toLowerCase()] ?? humanizeValue(planStatusRaw)
+    : row.has_plans === true
+    ? "Has plans"
+    : row.has_plans === false
+    ? "No plans yet"
+    : "";
 
   if (urgentRoofing) {
     lines.push("*** URGENT ROOFING LEAD ***");
@@ -177,12 +205,32 @@ function buildHumanNote(row: LeadRow): string {
     lines.push("");
   }
 
-  section(isRoofingCategory ? "Roofing Lead Summary:" : "Lead Summary:");
+  section(
+    isRoofingCategory
+      ? "Roofing Lead Summary:"
+      : isConstructionCategory
+      ? "Construction/Design Lead Summary:"
+      : "Lead Summary:",
+  );
   if (isRoofingCategory) {
     bullet("Service Type", row.service_category);
     bullet("Roofing Issue", row.roofing_issue_type ?? row.project_type);
     bullet("Urgency", urgentRoofing ? `HIGH — ${row.urgency ?? "urgent"}` : row.urgency);
     lines.push(`- Water Actively Entering: ${waterEntering ? "Yes" : "No / Unknown"}`);
+    bullet("Property Type", row.property_type);
+    bullet("Property Town", row.property_town);
+    bullet("Property Address", row.property_address);
+    bullet("Preferred Contact Method", row.preferred_contact_method);
+    bullet("Name", row.name);
+    bullet("Phone", row.phone);
+    bullet("Email", row.email);
+  } else if (isConstructionCategory) {
+    bullet("Service Category", row.service_category);
+    bullet("Project Type", row.project_type);
+    if (planStatusLabel) lines.push(`- Plan Status: ${planStatusLabel}`);
+    if (meta.planningStage) bullet("Planning Stage", meta.planningStage);
+    bullet("Desired Timeline", row.urgency ?? meta.timeline);
+    bullet("Budget Range", meta.budgetRange ?? meta.budget_band ?? meta.investment);
     bullet("Property Type", row.property_type);
     bullet("Property Town", row.property_town);
     bullet("Property Address", row.property_address);
