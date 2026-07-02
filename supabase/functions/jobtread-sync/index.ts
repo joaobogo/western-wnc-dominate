@@ -62,79 +62,139 @@ function humanizeLeadName(row: LeadRow): string {
   return name ? `${label} - ${town} - ${name}` : `${label} - ${town}`;
 }
 
+function humanizeKey(key: string): string {
+  return key
+    .replace(/[_-]+/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function humanizeValue(value: any): string {
+  if (value === null || value === undefined) return "";
+  if (typeof value === "boolean") return value ? "Yes" : "No";
+  if (typeof value === "number") return String(value);
+  if (typeof value === "string") return value.trim();
+  if (Array.isArray(value)) {
+    return value.map((v) => humanizeValue(v)).filter(Boolean).join(", ");
+  }
+  if (typeof value === "object") {
+    // Uploaded-file object like {url, name}
+    if ((value as any).url) return String((value as any).url);
+    return JSON.stringify(value);
+  }
+  return String(value);
+}
+
+function flattenFormAnswers(
+  metadata: any,
+  prefix = "",
+  out: Array<[string, string]> = [],
+): Array<[string, string]> {
+  if (!metadata || typeof metadata !== "object") return out;
+  for (const [k, v] of Object.entries(metadata)) {
+    if (v === null || v === undefined || v === "") continue;
+    if (Array.isArray(v) && v.length === 0) continue;
+    const label = prefix ? `${prefix} — ${humanizeKey(k)}` : humanizeKey(k);
+    if (v && typeof v === "object" && !Array.isArray(v) && !(v as any).url) {
+      flattenFormAnswers(v, label, out);
+    } else {
+      const rendered = humanizeValue(v);
+      if (rendered) out.push([label, rendered]);
+    }
+  }
+  return out;
+}
+
 function buildHumanNote(row: LeadRow): string {
   const lines: string[] = [];
-  const push = (label: string, value: any) => {
-    if (value === null || value === undefined || value === "") return;
-    if (Array.isArray(value) && value.length === 0) return;
-    lines.push(`${label}: ${typeof value === "string" ? value : JSON.stringify(value)}`);
+  const section = (title: string) => {
+    if (lines.length) lines.push("");
+    lines.push(title);
   };
-  lines.push("=== Highlander Website Lead ===");
-  push("Name", row.name);
-  push("Phone", row.phone);
-  push("Email", row.email);
-  push("Preferred contact", row.preferred_contact_method);
-  push("Town", row.property_town);
-  push("Address", row.property_address);
-  lines.push("");
-  lines.push("--- Project ---");
-  push("Service", row.service_category);
-  push("Project type", row.project_type);
-  push("Property type", row.property_type);
-  push("Roofing issue", row.roofing_issue_type);
-  push("Urgency", row.urgency);
-  push("Has plans", row.has_plans);
-  push("Description", row.project_description);
-  lines.push("");
-  lines.push("--- Source ---");
-  push("Form", row.source);
-  push("Lead type", row.lead_type);
-  push("Page URL", row.page_url);
-  push("Referrer", row.referrer);
-  push("Submitted at", row.created_at);
-  push("User agent", row.user_agent);
-  const tracking = [
-    ["UTM source", row.utm_source],
-    ["UTM medium", row.utm_medium],
-    ["UTM campaign", row.utm_campaign],
-    ["UTM content", row.utm_content],
-    ["UTM term", row.utm_term],
-    ["gclid", row.gclid],
-    ["fbclid", row.fbclid],
-    ["li_fat_id", row.li_fat_id],
-  ].filter(([, v]) => v);
-  if (tracking.length) {
-    lines.push("");
-    lines.push("--- Tracking ---");
-    for (const [k, v] of tracking) push(k as string, v);
+  const bullet = (label: string, value: any) => {
+    const rendered = humanizeValue(value);
+    if (!rendered) return;
+    lines.push(`- ${label}: ${rendered}`);
+  };
+
+  section("Lead Summary:");
+  bullet("Service Category", row.service_category);
+  bullet("Project Type", row.project_type);
+  bullet("Urgency", row.urgency);
+  bullet("Property Town", row.property_town);
+  bullet("Property Address", row.property_address);
+  bullet("Preferred Contact Method", row.preferred_contact_method);
+  bullet("Name", row.name);
+  bullet("Phone", row.phone);
+  bullet("Email", row.email);
+
+  const customerMessage = (row.project_description ?? "").toString().trim();
+  if (customerMessage) {
+    section("Customer Message:");
+    lines.push(customerMessage);
   }
-  lines.push("");
-  lines.push("--- Consent ---");
-  push("Consent given", row.consent_given);
-  push("Consent text", row.consent_text);
-  push("Privacy policy", "https://highlandernc.com/privacy-policy");
+
+  const formAnswers: Array<[string, string]> = [];
+  if (row.roofing_issue_type) formAnswers.push(["Roofing Issue", humanizeValue(row.roofing_issue_type)]);
+  if (row.property_type) formAnswers.push(["Property Type", humanizeValue(row.property_type)]);
+  if (row.has_plans !== null && row.has_plans !== undefined) {
+    formAnswers.push(["Has Plans", humanizeValue(row.has_plans)]);
+  }
+  formAnswers.push(...flattenFormAnswers(row.metadata));
+  if (formAnswers.length) {
+    section("Form Answers:");
+    for (const [q, a] of formAnswers) lines.push(`- ${q}: ${a}`);
+  }
+
+  section("Source:");
+  bullet("Form", row.source);
+  bullet("Lead Type", row.lead_type);
+  bullet("Page URL", row.page_url);
+  bullet("Referrer", row.referrer);
+  bullet("Submitted At", row.created_at);
+  bullet("User Agent", row.user_agent);
+
+  section("Consent:");
+  bullet("Consent Given", row.consent_given);
+  bullet("Consent Text", row.consent_text);
+  bullet("Privacy Policy", "https://highlandernc.com/privacy-policy");
+
+  const trackingRows: Array<[string, any]> = [
+    ["UTM Source", row.utm_source],
+    ["UTM Medium", row.utm_medium],
+    ["UTM Campaign", row.utm_campaign],
+    ["UTM Content", row.utm_content],
+    ["UTM Term", row.utm_term],
+    ["GCLID", row.gclid],
+    ["FBCLID", row.fbclid],
+    ["LinkedIn Attribution", row.li_fat_id],
+  ];
+  if (trackingRows.some(([, v]) => v)) {
+    section("Tracking:");
+    for (const [k, v] of trackingRows) bullet(k, v);
+  }
+
   const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
   const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
-  if (photos.length || files.length) {
-    lines.push("");
-    lines.push("--- Uploads ---");
-    photos.forEach((p: any, i: number) =>
-      push(`Photo ${i + 1}`, typeof p === "string" ? p : JSON.stringify(p))
-    );
-    files.forEach((f: any, i: number) =>
-      push(`File ${i + 1}`, typeof f === "string" ? f : JSON.stringify(f))
-    );
+  const uploadLinks = [...photos, ...files]
+    .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
+    .filter(Boolean) as string[];
+  if (uploadLinks.length) {
+    section("Files:");
+    lines.push("- Uploaded Photo/File Links:");
+    uploadLinks.forEach((link) => lines.push(`  • ${link}`));
   }
-  if (row.chat_summary) {
-    lines.push("");
-    lines.push("--- Chatbot Summary ---");
-    lines.push(String(row.chat_summary));
+
+  if (row.chat_summary || row.summary) {
+    section("Chatbot Summary:");
+    lines.push(String(row.chat_summary ?? row.summary));
+    if (row.recommended_next_step) {
+      lines.push(`- Recommended Next Step: ${row.recommended_next_step}`);
+    }
   }
-  if (row.metadata && Object.keys(row.metadata).length) {
-    lines.push("");
-    lines.push("--- Additional Details ---");
-    lines.push(JSON.stringify(row.metadata, null, 2));
-  }
+
   return lines.join("\n");
 }
 
