@@ -9,8 +9,11 @@ const WEBSITE_URL = "https://www.highlandernc.com/";
 const EMAIL = "luke@highlandernc.com";
 const ADDRESS = "1511 Highlands Rd, Franklin, NC 28734";
 const COMPANY = "Highlander Roofing Services, Inc.";
-const PHONE = "(828) 526-6421";
-const PHONE_TEL = "+18285266421";
+// Sitewide customer phone. The RealWork template listed (828) 526-6421 —
+// see the "Needs Client Input" callout under Section 6 for the flagged mismatch.
+const PHONE = "(828) 524-7773";
+const PHONE_TEL = "+18285247773";
+const REALWORK_TEMPLATE_PHONE = "(828) 526-6421";
 const PROGRAM = "Highlander Roofing Services, Inc. Customer Communications";
 
 const TOC: { id: string; label: string }[] = [
