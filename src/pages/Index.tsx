@@ -26,6 +26,7 @@ import TrustedMaterials from "@/components/TrustedMaterials";
 import HomeFAQ from "@/components/HomeFAQ";
 import RegionalAuthority from "@/components/RegionalAuthority";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
+import ExploreHighlander from "@/components/ExploreHighlander";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -120,6 +121,9 @@ const Index = () => {
 
         {/* 13. Homepage FAQ — Conversion-focused answers */}
         <HomeFAQ />
+
+        {/* 14. Explore Highlander — Structured internal linking hub */}
+        <ExploreHighlander />
 
         <SectionDivider variant="gold-fade" />
       </main>
