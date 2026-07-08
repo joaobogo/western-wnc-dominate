@@ -101,9 +101,10 @@ export default SEOHead;
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
-  "@type": ["RoofingContractor", "GeneralContractor", "LocalBusiness"],
+  "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
   "@id": `${BASE_URL}/#business`,
   name: SITE_NAME,
+  legalName: "Highlander Roofing Services, Inc.",
   alternateName: "Highlander Roofing",
   url: BASE_URL,
   logo: DEFAULT_IMAGE,
@@ -152,12 +153,11 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Outdoor Living Spaces" } },
     ],
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "500",
-    bestRating: "5",
-    worstRating: "1",
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "certification",
+    name: "CertainTeed ShingleMaster Credentialed Contractor",
+    recognizedBy: { "@type": "Organization", name: "CertainTeed" },
   },
   priceRange: "$$-$$$",
   currenciesAccepted: "USD",
