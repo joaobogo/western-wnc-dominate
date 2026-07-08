@@ -6,36 +6,33 @@ import { faqSchema } from "@/components/SEOHead";
 
 const faqs = [
   {
-    q: "What areas does Highlander Roofing serve in Western NC?",
-    a: "Highlander Roofing & Construction serves Franklin, Highlands, Cashiers, Sylva, Waynesville, Brevard, Bryson City, Asheville, and the surrounding Western North Carolina mountain communities — including Macon, Jackson, Buncombe, Haywood, Swain, and Transylvania counties. If you're searching for a roofing contractor near Franklin, Highlands, or Cashiers NC, we cover it.",
+  {
+    q: "What roofing services does Highlander provide in Western North Carolina?",
+    a: "Highlander provides a full range of roofing services across Western NC — roof repair, roof replacement, metal roofing, synthetic shake, cedar, gutters, skylights, storm damage response, and commercial roofing. Every system is specified for mountain elevation, wind exposure, and moisture conditions.",
   },
   {
-    q: "Do you offer free roofing estimates in Western North Carolina?",
-    a: "Yes. We provide free, on-site estimates for every roofing and construction project across Western NC. Call (828) 524-7773 or request one through our contact form and a Highlander advisor will schedule a visit — usually within a few business days.",
+    q: "Does Highlander provide both roof repair and roof replacement?",
+    a: "Yes. Our crews handle everything from a single leak, failed pipe boot, or flashing repair to full tear-off and roof replacement. We diagnose the actual problem first — if a targeted repair will protect the home, that's what we recommend rather than a replacement you don't need.",
   },
   {
-    q: "Do you handle both roof repair and roof replacement in Western NC?",
-    a: "Yes. From a single failed pipe boot to a full tear-off and roof replacement, our roofing crews handle the full range. We diagnose honestly: if a targeted roof repair will solve the problem and protect the home, that's what we recommend — not a replacement you don't need.",
+    q: "Does Highlander install metal roofing?",
+    a: "Yes. Metal roofing is one of our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading.",
   },
   {
-    q: "Do you install metal roofing on mountain homes?",
-    a: "Yes. Metal roofing is one of the most requested systems for Western NC mountain homes because it sheds snow, resists wind uplift at elevation, and lasts 40–70 years. We install standing seam and exposed-fastener metal roofing sized and detailed for high-elevation weather.",
+    q: "Does Highlander serve Franklin, Highlands, Cashiers, and Sylva?",
+    a: "Yes. Franklin is our home base, and we regularly work in Highlands, Cashiers, Sylva, Waynesville, Bryson City, Hayesville, Murphy, and the surrounding mountain communities including Scaly Mountain, Otto, and Lake Glenville. See our Service Areas page for the full footprint.",
   },
   {
-    q: "Do you help with storm damage and insurance claims?",
-    a: "Yes. We provide emergency tarping, drone-documented damage assessments, and direct coordination with your insurance adjuster. We document the scope so your claim moves cleanly and the repair is done right.",
+    q: "Can Highlander help with construction and design services?",
+    a: "Yes. Highlander is a licensed North Carolina General Contractor as well as a roofing company. We handle home additions, renovations, outdoor living, siding, and in-house design work — floor plans, elevations, and material planning that carry straight into the build.",
   },
   {
-    q: "Are you a roofing company or a full construction company?",
-    a: "Both. Highlander is a licensed roofing contractor and a licensed North Carolina General Contractor — a true roofing and construction company serving Western NC. That means the same team builds your addition, sunroom, garage, porch, deck, outdoor living space, or full renovation, all held to the same documented standard as our roofing work.",
+    q: "What should I do if water is coming into my home?",
+    a: "Contain the water safely — move belongings, place a bucket under the drip, and if you can do so safely, take a photo of the affected area. Then call us at (828) 524-7773 during business hours and we'll schedule the fastest inspection we can arrange. For an active storm event, coordinate with your insurance carrier as well.",
   },
   {
-    q: "Do you offer financing?",
-    a: "Financing may be available for major roofing and construction projects. Ask your project advisor during your consultation and they will walk you through the current options. Specific terms come from the lender at the time of application.",
-  },
-  {
-    q: "How quickly will a Highlander roofing advisor contact me?",
-    a: "During business hours we typically respond within a few hours. After-hours requests are answered the next business morning. For an active roof leak or storm emergency anywhere in Western NC, call (828) 524-7773 directly for the fastest response.",
+    q: "How do I request an inspection or quote?",
+    a: "Call (828) 524-7773 or submit a request through our inspection or contact form. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.",
   },
 ];
 
