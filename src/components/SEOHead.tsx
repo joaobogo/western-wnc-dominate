@@ -19,7 +19,7 @@ const FAVICON_VERSION = "2";
 const DEFAULT_IMAGE = `${BASE_URL}/favicon.png?v=${FAVICON_VERSION}`;
 const TWITTER_HANDLE = "@highlanderroof";
 const DEFAULT_KEYWORDS =
-  "roofing Western NC, roofing Highlands NC, roofing Cashiers NC, roofing Franklin NC, roofing Sylva NC, metal roofing WNC, roof repair, roof replacement, storm damage, mountain home construction, home additions WNC, Highlander Roofing";
+  "Highlander Roofing, Highlander Roofing Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roofing contractor near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing Sylva NC, storm damage roof WNC, mountain home construction, home additions WNC";
 
 const setMeta = (attr: string, key: string, content: string) => {
   let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;

@@ -6,32 +6,36 @@ import { faqSchema } from "@/components/SEOHead";
 
 const faqs = [
   {
-    q: "Do you offer free estimates?",
-    a: "Yes. We provide free, on-site estimates for roofing and construction projects across Western North Carolina. Call (828) 524-7773 or request one through our contact form and a Highlander advisor will schedule a visit.",
+    q: "What areas does Highlander Roofing serve in Western NC?",
+    a: "Highlander Roofing & Construction serves Franklin, Highlands, Cashiers, Sylva, Waynesville, Brevard, Bryson City, Asheville, and the surrounding Western North Carolina mountain communities — including Macon, Jackson, Buncombe, Haywood, Swain, and Transylvania counties. If you're searching for a roofing contractor near Franklin, Highlands, or Cashiers NC, we cover it.",
   },
   {
-    q: "What areas do you serve?",
-    a: "We serve Franklin, Highlands, Cashiers, Sylva, Asheville, and the surrounding Western NC mountain communities, including Macon, Jackson, Buncombe, Haywood, Swain, and neighboring counties. Visit our Service Areas page for the full list.",
+    q: "Do you offer free roofing estimates in Western North Carolina?",
+    a: "Yes. We provide free, on-site estimates for every roofing and construction project across Western NC. Call (828) 524-7773 or request one through our contact form and a Highlander advisor will schedule a visit — usually within a few business days.",
   },
   {
-    q: "Do you handle both roof repairs and full replacements?",
-    a: "Yes. From a single failed pipe boot to a full tear-off and replacement, our roofing crews handle the entire range. We diagnose honestly: if a repair will solve the problem, that is what we recommend.",
+    q: "Do you handle both roof repair and roof replacement in Western NC?",
+    a: "Yes. From a single failed pipe boot to a full tear-off and roof replacement, our roofing crews handle the full range. We diagnose honestly: if a targeted roof repair will solve the problem and protect the home, that's what we recommend — not a replacement you don't need.",
+  },
+  {
+    q: "Do you install metal roofing on mountain homes?",
+    a: "Yes. Metal roofing is one of the most requested systems for Western NC mountain homes because it sheds snow, resists wind uplift at elevation, and lasts 40–70 years. We install standing seam and exposed-fastener metal roofing sized and detailed for high-elevation weather.",
   },
   {
     q: "Do you help with storm damage and insurance claims?",
     a: "Yes. We provide emergency tarping, drone-documented damage assessments, and direct coordination with your insurance adjuster. We document the scope so your claim moves cleanly and the repair is done right.",
   },
   {
-    q: "Do you offer construction services beyond roofing?",
-    a: "Yes. As a licensed General Contractor we build home additions, sunrooms, garages, screened porches, decks, outdoor living spaces, and full renovations, all held to the same documented standard as our roofing work.",
+    q: "Are you a roofing company or a full construction company?",
+    a: "Both. Highlander is a licensed roofing contractor and a licensed North Carolina General Contractor — a true roofing and construction company serving Western NC. That means the same team builds your addition, sunroom, garage, porch, deck, outdoor living space, or full renovation, all held to the same documented standard as our roofing work.",
   },
   {
     q: "Do you offer financing?",
     a: "Financing may be available for major roofing and construction projects. Ask your project advisor during your consultation and they will walk you through the current options. Specific terms come from the lender at the time of application.",
   },
   {
-    q: "How quickly will someone contact me?",
-    a: "During business hours we typically respond within a few hours. After-hours requests are answered the next business morning. For an active roof leak or storm emergency, call (828) 524-7773 directly for the fastest response.",
+    q: "How quickly will a Highlander roofing advisor contact me?",
+    a: "During business hours we typically respond within a few hours. After-hours requests are answered the next business morning. For an active roof leak or storm emergency anywhere in Western NC, call (828) 524-7773 directly for the fastest response.",
   },
 ];
 
