@@ -7,23 +7,48 @@ import { faqSchema } from "@/components/SEOHead";
 const faqs = [
   {
     q: "What roofing services does Highlander provide in Western North Carolina?",
-    a: "Highlander provides a full range of roofing services across Western NC — roof repair, roof replacement, metal roofing, synthetic shake, cedar, gutters, skylights, storm damage response, and commercial roofing. Every system is specified for mountain elevation, wind exposure, and moisture conditions.",
+    aNode: (
+      <>
+        Highlander provides a full range of <Link to="/roofing" className="text-primary underline-offset-4 hover:underline">roofing services across Western NC</Link> — including <Link to="/roofing/roof-repair" className="text-primary underline-offset-4 hover:underline">roof repair</Link>, <Link to="/roofing/roof-replacement" className="text-primary underline-offset-4 hover:underline">roof replacement</Link>, <Link to="/roofing/metal" className="text-primary underline-offset-4 hover:underline">metal roofing</Link>, <Link to="/roofing/gutters" className="text-primary underline-offset-4 hover:underline">gutters</Link>, <Link to="/roofing/skylights" className="text-primary underline-offset-4 hover:underline">skylights</Link>, and storm damage response. Every system is specified for mountain elevation, wind exposure, and moisture conditions.
+      </>
+    ),
+    a: "Highlander provides a full range of roofing services across Western NC — including roof repair, roof replacement, metal roofing, gutters, skylights, and storm damage response. Every system is specified for mountain elevation, wind exposure, and moisture conditions.",
   },
   {
     q: "Does Highlander provide both roof repair and roof replacement?",
-    a: "Yes. Our crews handle everything from a single leak, failed pipe boot, or flashing repair to full tear-off and roof replacement. We diagnose the actual problem first — if a targeted repair will protect the home, that's what we recommend rather than a replacement you don't need.",
+    aNode: (
+      <>
+        Yes. Our crews handle everything from a single leak or failed pipe boot on a <Link to="/roofing/residential" className="text-primary underline-offset-4 hover:underline">residential roof</Link> to full tear-off and <Link to="/roofing/roof-replacement" className="text-primary underline-offset-4 hover:underline">roof replacement for mountain homes</Link>. We diagnose the actual problem first — if a targeted <Link to="/roofing/roof-repair" className="text-primary underline-offset-4 hover:underline">roof repair in Western North Carolina</Link> will protect the home, that's what we recommend rather than a replacement you don't need.
+      </>
+    ),
+    a: "Yes. Our crews handle everything from a single leak or failed pipe boot to full tear-off and roof replacement for mountain homes. We diagnose the actual problem first — if a targeted roof repair will protect the home, that's what we recommend rather than a replacement you don't need.",
   },
   {
     q: "Does Highlander install metal roofing?",
-    a: "Yes. Metal roofing is one of our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading.",
+    aNode: (
+      <>
+        Yes. <Link to="/roofing/metal" className="text-primary underline-offset-4 hover:underline">Metal roofing options</Link> are among our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading. For a deeper comparison, see our guide to <Link to="/blog/metal-vs-shingle-roof-western-nc" className="text-primary underline-offset-4 hover:underline">metal vs. shingle roofs in Western NC</Link>.
+      </>
+    ),
+    a: "Yes. Metal roofing is among our most-installed systems for Western NC mountain homes. We install standing seam and exposed-fastener metal roofing with flashing details, fastening schedules, and underlayments sized for high-elevation wind, snow, and ice loading.",
   },
   {
     q: "Does Highlander serve Franklin, Highlands, Cashiers, and Sylva?",
-    a: "Yes. Franklin is our home base, and we regularly work in Highlands, Cashiers, Sylva, Waynesville, Bryson City, Hayesville, Murphy, and the surrounding mountain communities including Scaly Mountain, Otto, and Lake Glenville. See our Service Areas page for the full footprint.",
+    aNode: (
+      <>
+        Yes. Franklin is our home base, and we regularly work in <Link to="/service-areas/highlands-nc" className="text-primary underline-offset-4 hover:underline">Highlands</Link>, Cashiers, Sylva, Waynesville, Bryson City, Hayesville, Murphy, and the surrounding mountain communities including Scaly Mountain, Otto, and Lake Glenville. See our <Link to="/blog/best-roofing-materials-highlands-nc" className="text-primary underline-offset-4 hover:underline">guide to the best roofing materials for Highlands NC</Link> for a local material breakdown.
+      </>
+    ),
+    a: "Yes. Franklin is our home base, and we regularly work in Highlands, Cashiers, Sylva, Waynesville, Bryson City, Hayesville, Murphy, and the surrounding mountain communities including Scaly Mountain, Otto, and Lake Glenville.",
   },
   {
     q: "Can Highlander help with construction and design services?",
-    a: "Yes. Highlander is a licensed North Carolina General Contractor as well as a roofing company. We handle home additions, renovations, outdoor living, siding, and in-house design work — floor plans, elevations, and material planning that carry straight into the build.",
+    aNode: (
+      <>
+        Yes. Highlander is a licensed North Carolina General Contractor as well as a roofing company. Explore our <Link to="/construction" className="text-primary underline-offset-4 hover:underline">construction and design services</Link>, including <Link to="/construction/design" className="text-primary underline-offset-4 hover:underline">in-house design</Link> (floor plans, elevations, material planning) and <Link to="/construction/outdoor-living" className="text-primary underline-offset-4 hover:underline">outdoor living projects</Link>.
+      </>
+    ),
+    a: "Yes. Highlander is a licensed North Carolina General Contractor as well as a roofing company. We handle construction, in-house design, home additions, renovations, and outdoor living projects.",
   },
   {
     q: "What should I do if water is coming into my home?",
@@ -31,7 +56,12 @@ const faqs = [
   },
   {
     q: "How do I request an inspection or quote?",
-    a: "Call (828) 524-7773 or submit a request through our inspection or contact form. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.",
+    aNode: (
+      <>
+        Call (828) 524-7773, <Link to="/request-inspection" className="text-primary underline-offset-4 hover:underline">request an inspection</Link>, or reach us through our <Link to="/contact" className="text-primary underline-offset-4 hover:underline">contact form</Link>. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.
+      </>
+    ),
+    a: "Call (828) 524-7773, request an inspection, or reach us through our contact form. A Highlander advisor will follow up to gather project details, confirm your service area, and schedule an on-site visit. On-site estimates for roofing and construction projects across Western NC are free.",
   },
 ];
 
@@ -85,7 +115,7 @@ const HomeFAQ = () => {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-base font-body leading-relaxed pb-5 px-3 md:px-4 pl-10 md:pl-11">
-                  {faq.a}
+                  {faq.aNode ?? faq.a}
                 </AccordionContent>
               </AccordionItem>
             ))}
