@@ -191,37 +191,44 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Headline — cinematic three-line reveal */}
-            <div className="overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
-              <motion.h1
-                initial={{ y: "120%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
-                className="text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
-              >
-                High-Elevation,
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
-              <motion.h2
-                initial={{ y: "120%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
-                className="text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
-              >
-                Built for the Peaks.
-              </motion.h2>
-            </div>
-            <div className="overflow-hidden mb-3 md:mb-12 pb-[0.15em] md:pb-[0.4em]">
-              <motion.div
-                initial={{ y: "120%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                className="text-[0.72rem] leading-[1.2] md:text-[3.8rem] md:leading-[1.08] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-semibold md:font-bold tracking-[0.16em] md:tracking-[-0.03em] uppercase md:normal-case whitespace-nowrap"
-              >
-                <span className="text-[hsl(var(--highland-gold))]">Roofing · Construction · Design</span>
-              </motion.div>
-            </div>
+            {/* Headline — single H1 revealed as three cinematic lines */}
+            <h1 className="mb-3 md:mb-12">
+              <span className="sr-only">
+                Roofing, Construction &amp; Design for Western North Carolina Mountain Homes
+              </span>
+              <span aria-hidden="true" className="block">
+                <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
+                  <motion.span
+                    initial={{ y: "120%" }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
+                    className="block text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                  >
+                    Roofing, Construction
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
+                  <motion.span
+                    initial={{ y: "120%" }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
+                    className="block text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                  >
+                    &amp; Design for Western NC
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden pb-[0.15em] md:pb-[0.4em]">
+                  <motion.span
+                    initial={{ y: "120%" }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
+                    className="block text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.03em] text-[hsl(var(--highland-gold))]"
+                  >
+                    Mountain Homes.
+                  </motion.span>
+                </span>
+              </span>
+            </h1>
 
 
             {/* Subtext — refined positioning statement */}
@@ -231,8 +238,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-[13.5px] md:text-[24px] text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
             >
-              <span className="md:hidden">Trusted roofing, construction &amp; outdoor living across Franklin, Highlands &amp; Cashiers. Family-owned. Built for the mountains.</span>
-              <span className="hidden md:inline">Trusted roofing, repairs, construction, gutters, and outdoor living for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, locally run, and built for the mountains by a team of WNC craftspeople.</span>
+              <span className="md:hidden">Roofing, roof repair, roof replacement, construction &amp; design services across Franklin, Highlands, Cashiers &amp; Sylva. Family-owned. Built for the mountains.</span>
+              <span className="hidden md:inline">Roofing, roof repair, roof replacement, construction, and design services for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, locally run, and built for mountain homes by a team of WNC craftspeople.</span>
               <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--highland-gold))] font-bold text-[11.5px] md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
             </motion.p>
 
