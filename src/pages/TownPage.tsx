@@ -12,6 +12,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import RelatedLinks from "@/components/RelatedLinks";
 import TownServiceSections from "@/components/TownServiceSections";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import SectionDivider from "@/components/SectionDivider";
