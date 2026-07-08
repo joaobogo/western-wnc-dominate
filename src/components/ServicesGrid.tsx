@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, HardHat, Wrench, TreePine, Home as HomeIcon, Ruler } from "lucide-react";
+import { ArrowRight, Hammer, RotateCcw, CloudLightning, Layers, Building2, HardHat, Wrench, TreePine, Home as HomeIcon, Ruler, Sun, Shield } from "lucide-react";
 import { Droplets } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
@@ -18,6 +18,8 @@ import asphalt3 from "@/assets/gallery/asphalt-003.jpg";
 import metal10 from "@/assets/gallery/metal-010.jpg";
 import guttersImg from "@/assets/gallery/gutters-002.jpg";
 import metal9 from "@/assets/gallery/siding-001.jpg";
+import designImg from "@/assets/division-design.jpg";
+import constructionImg from "@/assets/division-construction-v2.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -35,6 +37,17 @@ interface FeaturedService {
 }
 
 const services: FeaturedService[] = [
+  {
+    icon: Shield,
+    title: "Roofing",
+    tagline: "Full-service roofing division",
+    description: "Roof replacement, repair, metal, synthetic, gutters, and skylights — one licensed roofing company covering every system a Western NC home needs.",
+    stat: "1,000+",
+    statLabel: "roofs completed",
+    href: "/roofing",
+    image: asphaltImg,
+    accent: "green",
+  },
   {
     icon: RotateCcw,
     title: "Roof Replacement",
@@ -58,17 +71,6 @@ const services: FeaturedService[] = [
     accent: "green",
   },
   {
-    icon: CloudLightning,
-    title: "Storm Damage",
-    tagline: "Rapid response. Fully documented.",
-    description: "Emergency tarping, drone-documented damage assessment, and direct insurance coordination. We handle the paperwork so you handle nothing.",
-    stat: "Rapid",
-    statLabel: "response time",
-    href: "/roofing/storm-damage",
-    image: stormImg,
-    accent: "green",
-  },
-  {
     icon: Hammer,
     title: "Roof Repair",
     tagline: "Fix the cause, not the symptom",
@@ -77,6 +79,39 @@ const services: FeaturedService[] = [
     statLabel: "visit resolution",
     href: "/roofing/roof-repair",
     image: asphalt2,
+    accent: "green",
+  },
+  {
+    icon: Droplets,
+    title: "Gutters & Drainage",
+    tagline: "Protect the roof you just paid for",
+    description: "Seamless gutters, guards, downspouts, and water management installed alongside roofing work, so storm runoff stays off your fascia, foundation, and crawlspace.",
+    stat: "Paired",
+    statLabel: "with every roof",
+    href: "/roofing/gutters",
+    image: guttersImg,
+    accent: "green",
+  },
+  {
+    icon: Sun,
+    title: "Skylights",
+    tagline: "VELUX Certified Installers",
+    description: "Fixed, vented, and solar-powered VELUX skylights installed with mountain-grade flashing details. Natural light without a future leak call.",
+    stat: "VELUX",
+    statLabel: "certified installer",
+    href: "/roofing/skylights",
+    image: metal10,
+    accent: "green",
+  },
+  {
+    icon: CloudLightning,
+    title: "Storm Damage",
+    tagline: "Rapid response. Fully documented.",
+    description: "Emergency tarping, drone-documented damage assessment, and direct insurance coordination. We handle the paperwork so you handle nothing.",
+    stat: "Rapid",
+    statLabel: "response time",
+    href: "/roofing/storm-damage",
+    image: stormImg,
     accent: "green",
   },
   {
@@ -91,15 +126,15 @@ const services: FeaturedService[] = [
     accent: "green",
   },
   {
-    icon: Droplets,
-    title: "Gutters & Drainage",
-    tagline: "Protect the roof you just paid for",
-    description: "Seamless gutters, guards, downspouts, and water management installed alongside roofing work, so storm runoff stays off your fascia, foundation, and crawlspace.",
-    stat: "Paired",
-    statLabel: "with every roof",
-    href: "/roofing",
-    image: guttersImg,
-    accent: "green",
+    icon: HardHat,
+    title: "Construction",
+    tagline: "Licensed NC General Contractor",
+    description: "Additions, renovations, outdoor living, and exterior work under a single licensed builder — same team, same standards, same warranty as our roofing.",
+    stat: "Full",
+    statLabel: "GC oversight",
+    href: "/construction",
+    image: constructionImg,
+    accent: "gold",
   },
   {
     icon: HardHat,
@@ -110,6 +145,28 @@ const services: FeaturedService[] = [
     statLabel: "years combined exp.",
     href: "/construction/additions",
     image: metal6,
+    accent: "gold",
+  },
+  {
+    icon: TreePine,
+    title: "Outdoor Living",
+    tagline: "Four-season, mountain-engineered",
+    description: "Custom decks, covered porches, and pergolas designed for elevation views and year-round weather. Built to the same documented standard as every project we take on.",
+    stat: "4-Season",
+    statLabel: "engineered",
+    href: "/construction/outdoor-living",
+    image: cedarImg,
+    accent: "gold",
+  },
+  {
+    icon: Ruler,
+    title: "Design Services",
+    tagline: "Concept to construction drawings",
+    description: "In-house design for additions, renovations, and outdoor living — floor plans, elevations, and material selection carried straight into the build.",
+    stat: "Concept",
+    statLabel: "to construction",
+    href: "/construction/design",
+    image: designImg,
     accent: "gold",
   },
   {
@@ -132,28 +189,6 @@ const services: FeaturedService[] = [
     statLabel: "material warranty",
     href: "/construction/siding",
     image: metal9,
-    accent: "gold",
-  },
-  {
-    icon: TreePine,
-    title: "Outdoor Living",
-    tagline: "Four-season, mountain-engineered",
-    description: "Custom decks, covered porches, and pergolas designed for elevation views and year-round weather. Built to the same documented standard as every project we take on.",
-    stat: "4-Season",
-    statLabel: "engineered",
-    href: "/construction/outdoor-living",
-    image: cedarImg,
-    accent: "gold",
-  },
-  {
-    icon: Ruler,
-    title: "Design",
-    tagline: "Layouts & project planning",
-    description: "Layouts, floor plans, and project planning support for additions, outdoor living, and scoped residential work.",
-    stat: "Concept",
-    statLabel: "to construction",
-    href: "/layouts-planning",
-    image: asphaltImg, // Placeholder - consider if a more 'planning' oriented image exists
     accent: "gold",
   },
 ];
@@ -278,8 +313,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
 
 const ServicesGrid = () => {
   const roofing = services.filter(s => s.accent === "green");
-  const construction = services.filter(s => s.accent === "gold" && s.title !== "Design");
-  const design = services.filter(s => s.title === "Design");
+  const construction = services.filter(s => s.accent === "gold");
 
   return (
     <section className="section-padding bg-background relative overflow-hidden">
