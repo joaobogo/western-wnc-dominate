@@ -6,7 +6,6 @@ import { faqSchema } from "@/components/SEOHead";
 
 const faqs = [
   {
-  {
     q: "What roofing services does Highlander provide in Western North Carolina?",
     a: "Highlander provides a full range of roofing services across Western NC — roof repair, roof replacement, metal roofing, synthetic shake, cedar, gutters, skylights, storm damage response, and commercial roofing. Every system is specified for mountain elevation, wind exposure, and moisture conditions.",
   },
