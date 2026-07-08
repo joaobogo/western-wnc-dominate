@@ -2094,9 +2094,12 @@ div[style*="Edit with Lovable"],
   }
 }
 
-/* Prevent background scroll when mobile menu or chatbot is open */
-body[data-menu-open="true"],
-body[data-chat-open="true"] {
-  overflow: hidden;
+/* Prevent background scroll when mobile menu or chatbot is open — mobile only.
+   On desktop the chatbot is a small floating panel, so the page must remain scrollable. */
+@media (max-width: 767px) {
+  body[data-menu-open="true"],
+  body[data-chat-open="true"] {
+    overflow: hidden;
+  }
 }
 
