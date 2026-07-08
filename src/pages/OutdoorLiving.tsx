@@ -26,6 +26,7 @@ import proj1 from "@/assets/gallery/cedar-001.jpg";
 import proj2 from "@/assets/gallery/metal-006.webp";
 import proj3 from "@/assets/gallery/asphalt-005.jpg";
 import proj4 from "@/assets/gallery/cedar-005.jpg";
+import RelatedLinks from "@/components/RelatedLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -475,7 +476,21 @@ const OutdoorLiving = () => {
           subheadline="Whether it's a covered porch for morning coffee, a screened room for summer evenings, or an outdoor kitchen for gathering — let's design the space you've been imagining."
           eyebrow="Start Your Outdoor Project"
         />
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Construction Division", href: "/construction", description: "Additions, renovations, and outdoor living" },
+            { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning support" },
+            { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Outdoor living work in Highlands" },
+            { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent porches and outdoor rooms" },
+            { label: "Request a Project Consultation", href: "/request-inspection", description: "Start the conversation" },
+            { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

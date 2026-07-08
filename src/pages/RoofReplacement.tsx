@@ -24,6 +24,7 @@ import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import replacementMobileHero from "@/assets/heroes/replacement-mobile.jpg";
+import RelatedLinks from "@/components/RelatedLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -529,7 +530,21 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Residential Roofing Services", href: "/roofing/residential", description: "Materials and process overview" },
+            { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal options" },
+            { label: "Metal vs Shingle Roof in Western NC", href: "/blog/metal-vs-shingle-roof-western-nc", description: "Compare materials before you decide" },
+            { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "Local climate and material guide" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Start your replacement estimate" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

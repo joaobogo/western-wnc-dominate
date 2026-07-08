@@ -6,6 +6,7 @@ import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOH
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import RelatedLinks from "@/components/RelatedLinks";
 
 type QA = { q: string; a: string };
 type Category = { id: string; label: string; items: QA[] };
@@ -345,7 +346,22 @@ const FAQ = () => {
             </div>
           </div>
         </section>
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Roof Repair in Western NC", href: "/roofing/roof-repair", description: "Repair scope and timelines" },
+            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials, planning, and process" },
+            { label: "Construction Division", href: "/construction", description: "Additions, renovations, and outdoor living" },
+            { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning" },
+            { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

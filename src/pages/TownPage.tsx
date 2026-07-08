@@ -12,6 +12,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import RelatedLinks from "@/components/RelatedLinks";
 import TownServiceSections from "@/components/TownServiceSections";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import SectionDivider from "@/components/SectionDivider";
@@ -322,6 +323,21 @@ const TownPage = () => {
         <NearbyTowns currentTown={town} />
 
         <InspectionForm />
+        <RelatedLinks
+          eyebrow="Explore Services"
+          heading={`Roofing & construction for ${town.name} homeowners`}
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Roof Repair in Western NC", href: "/roofing/roof-repair", description: "Leaks, storm damage, and repair" },
+            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials and process" },
+            { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal panels" },
+            { label: "Construction Division", href: "/construction", description: "Additions, renovations, and more" },
+            { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning" },
+            { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Start your project with a written scope" },
+          ]}
+        />
       </main>
       <Footer />
       <StickyMobileCTA />

@@ -13,6 +13,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
 import GoldLine from "@/components/motion/GoldLine";
 import { ConstructionClosingCTA, ConstructionMidCTA } from "@/components/construction";
+import RelatedLinks from "@/components/RelatedLinks";
 
 /**
  * /construction/design — Design Services for Construction Projects
@@ -537,7 +538,21 @@ const ConstructionDesign = () => {
             </div>
           </div>
         </section>
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Construction Division", href: "/construction", description: "Additions, renovations, and full builds" },
+            { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
+            { label: "Construction & Renovation FAQ", href: "/faq", description: "Answers to common planning questions" },
+            { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
+            { label: "Request a Project Consultation", href: "/request-inspection", description: "Start with a design conversation" },
+            { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>
