@@ -22,6 +22,7 @@ import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import cedarDetail from "@/assets/gallery/cedar-001.jpg";
+import RelatedLinks from "@/components/RelatedLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -932,7 +933,22 @@ const ResidentialRoofing = () => {
             </div>
           </div>
         </section>
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Roof Repair in Western NC", href: "/roofing/roof-repair", description: "Repair scope and timelines" },
+            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials, planning, and process" },
+            { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal panels" },
+            { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "How to choose for WNC weather" },
+            { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Local roofing coverage" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

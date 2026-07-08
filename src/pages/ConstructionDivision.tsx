@@ -41,6 +41,7 @@ import proj1 from "@/assets/gallery/asphalt-006.webp";
 import proj2 from "@/assets/gallery/cedar-002.jpg";
 import proj3 from "@/assets/gallery/metal-008.webp";
 import proj4 from "@/assets/gallery/asphalt-004.jpg";
+import RelatedLinks from "@/components/RelatedLinks";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -470,7 +471,20 @@ const ConstructionDivision = () => {
           ctaText="Schedule a Project Consultation"
           eyebrow="Start the Conversation"
         />
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning support" },
+            { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
+            { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
+            { label: "Request a Project Consultation", href: "/request-inspection", description: "Start the conversation" },
+            { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

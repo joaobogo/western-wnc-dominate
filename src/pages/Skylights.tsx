@@ -12,6 +12,7 @@ import veluxLogo from "@/assets/velux-certified-logo.jpg";
 import VeluxProof from "@/components/VeluxProof";
 import skylightsMobileHero from "@/assets/heroes/skylights-mobile.jpg";
 import CTABlock from "@/components/CTABlock";
+import RelatedLinks from "@/components/RelatedLinks";
 
 const faqs = [
   { q: "Are you a certified VELUX installer?", a: "Yes. Highlander is a VELUX Certified Installer — trained and accredited by VELUX to install their skylights and Sun Tunnels to manufacturer specification. That accreditation is what unlocks VELUX's installation warranty on top of the product warranty." },
@@ -205,7 +206,21 @@ const Skylights = () => {
           </div>
         </section>
         <CTABlock />
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal panel options" },
+            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Plan a re-roof around your skylights" },
+            { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Roofing and skylight service in Highlands" },
+            { label: "Recent Highlander Projects", href: "/recent-projects", description: "Skylight and roofing project gallery" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

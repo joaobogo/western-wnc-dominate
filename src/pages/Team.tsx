@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { teamMembers } from "@/data/team";
+import RelatedLinks from "@/components/RelatedLinks";
 
 const Team = () => {
   return (
@@ -161,7 +162,20 @@ const Team = () => {
             </div>
           </div>
         </section>
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "See the roofing division" },
+            { label: "Construction Division", href: "/construction", description: "See the construction division" },
+            { label: "Recent Highlander Projects", href: "/recent-projects", description: "See our work across WNC" },
+            { label: "Contact Highlander", href: "/contact", description: "Reach the team directly" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

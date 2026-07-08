@@ -15,6 +15,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
+import RelatedLinks from "@/components/RelatedLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -504,7 +505,21 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Residential Roofing Services", href: "/roofing/residential", description: "When repair becomes replacement" },
+            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Compare repair vs full replacement" },
+            { label: "Roofing FAQ", href: "/faq", description: "Common questions about repair timelines" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Get a repair scope in writing" },
+            { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

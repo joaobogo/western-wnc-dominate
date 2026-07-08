@@ -13,6 +13,7 @@ import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getServiceTownEntriesForService } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
+import RelatedLinks from "@/components/RelatedLinks";
 
 const faqs = [
   { q: "How long does a metal roof last in Western NC?", a: "A properly specified and installed standing seam system is a 40+ year roof. Failures we see in the field are almost always install-detail issues at flashings and terminations — not panel failures." },
@@ -195,7 +196,21 @@ const MetalRoofing = () => {
           ctaLabel="Build Your Metal Roof Plan"
         />
         <CTABlock />
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Residential Roofing Services", href: "/roofing/residential", description: "Shingle, metal, and cedar options" },
+            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Planning and material selection" },
+            { label: "Metal vs Shingle Roof in Western NC", href: "/blog/metal-vs-shingle-roof-western-nc", description: "How the two materials compare" },
+            { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "Local-climate-first material guide" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Talk metal specifics with an advisor" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

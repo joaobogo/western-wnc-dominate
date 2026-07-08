@@ -9,6 +9,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import RelatedLinks from "@/components/RelatedLinks";
 
 const faqs = [
   { q: "What size gutters do mountain homes need?", a: "Most WNC homes benefit from 6-inch gutters with oversized 3x4 downspouts. The steep terrain and heavy rainfall here demand higher-capacity systems than standard 5-inch gutters provide." },
@@ -181,7 +182,21 @@ const Gutters = () => {
         </section>
 
         <CTABlock />
+      <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Roof Repair in Western NC", href: "/roofing/roof-repair", description: "Leaks, storm damage, and repair options" },
+            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials, planning, and process" },
+            { label: "Recent Highlander Projects", href: "/recent-projects", description: "See gutter and roofing work across WNC" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" },
+            { label: "Contact Highlander", href: "/contact", description: "Talk to a project advisor" }
+          ]}
+        />
       </main>
+
       <Footer />
       <StickyMobileCTA />
     </>
