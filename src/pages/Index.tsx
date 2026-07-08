@@ -41,8 +41,8 @@ const Index = () => {
     <>
       {showLoader && <SiteLoader onComplete={handleLoaderComplete} />}
       <SEOHead
-        title="Roofing Company in Western NC · Highlander Roofing & Construction"
-        description="Highlander Roofing & Construction — trusted roofing contractor for Western North Carolina. Roof repair, roof replacement, metal roofing, and full construction serving Franklin, Highlands, Cashiers & Sylva. Licensed, insured, 4.9★."
+        title="Roofing & Construction Company in Western NC | Highlander Roofing Services"
+        description="Highlander Roofing Services provides roofing, roof repair, roof replacement, metal roofing, gutters, skylights, construction, and design services across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
         path="/"
         keywords="Highlander Roofing Services, Highlander Roofing, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing company near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC"
         jsonLd={buildPageSchema({
