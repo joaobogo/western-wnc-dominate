@@ -24,6 +24,7 @@ import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import ProjectConcierge from "@/components/ProjectConcierge";
 import TrustedMaterials from "@/components/TrustedMaterials";
 import HomeFAQ from "@/components/HomeFAQ";
+import RegionalAuthority from "@/components/RegionalAuthority";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -100,6 +101,9 @@ const Index = () => {
 
         {/* 9. Our Process — How we work */}
         <OurProcess />
+
+        {/* 9.5 Regional Authority — SEO-rich Western NC positioning */}
+        <RegionalAuthority />
 
         {/* 10. Proof Moment — Highest impact review */}
         <ProofMoment variant="social" id="proof" />
