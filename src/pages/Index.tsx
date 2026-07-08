@@ -25,6 +25,7 @@ import ProjectConcierge from "@/components/ProjectConcierge";
 import TrustedMaterials from "@/components/TrustedMaterials";
 import HomeFAQ from "@/components/HomeFAQ";
 import RegionalAuthority from "@/components/RegionalAuthority";
+import ServiceAreaMap from "@/components/ServiceAreaMap";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(() => {
@@ -104,6 +105,9 @@ const Index = () => {
 
         {/* 9.5 Regional Authority — SEO-rich Western NC positioning */}
         <RegionalAuthority />
+
+        {/* 9.6 Service Area Map — Local SEO chip/card block */}
+        <ServiceAreaMap id="service-area" />
 
         {/* 10. Proof Moment — Highest impact review */}
         <ProofMoment variant="social" id="proof" />
