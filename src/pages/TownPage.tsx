@@ -14,6 +14,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import RelatedLinks from "@/components/RelatedLinks";
 import TownServiceSections from "@/components/TownServiceSections";
+import TownLocalServiceBlocks from "@/components/TownLocalServiceBlocks";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import SectionDivider from "@/components/SectionDivider";
 import TartanBackground from "@/components/TartanBackground";
@@ -120,8 +121,8 @@ const TownPage = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 md:gap-6"
               >
-                <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
-                  Request a {town.name} Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Link to="/request-inspection" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                  Request an Inspection in {town.name} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
                   <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 524-7773
@@ -219,6 +220,9 @@ const TownPage = () => {
 
         {/* 3. Dual Pathway */}
         <TownServiceSections town={town} />
+
+        {/* 3.5 Local Service Blocks — six-section local SEO template */}
+        <TownLocalServiceBlocks town={town} />
 
         {/* 4. Local Proof */}
         {townProof && <TownProofBlock town={town} content={townProof} />}
