@@ -499,6 +499,204 @@ const townProofMap: Record<string, TownProofContent> = {
       },
     ],
   },
+  "scaly-mountain-nc": {
+    stats: [
+      { label: "Elevation", value: "3,700 ft", detail: "Real wind, ice loading, and freeze-thaw exposure" },
+      { label: "Corridor", value: "NC-106", detail: "Between our Franklin base and Highlands" },
+      { label: "Focus", value: "Metal roofing", detail: "Standing seam sized for ridge exposure" },
+    ],
+    jobHighlights: [
+      {
+        title: "Ridge cabin metal roof replacement",
+        summary: "Standing-seam metal roof replacement on a Scaly Mountain ridge cabin, with upgraded ice-and-water shield at eaves and valleys.",
+        proof: "24-gauge standing seam, high-temp underlayment, and reinforced fastening for wind exposure",
+      },
+      {
+        title: "Storm-response tarping and repair",
+        summary: "Rapid tarping and follow-on repair for a Scaly Mountain full-time residence after a wind event stripped ridge caps and lifted flashing.",
+        proof: "Same-week tarp, documented scope, and precise repair rather than an oversell",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you actually service Scaly Mountain, or just Highlands and Franklin?",
+        answer: "Yes, we service Scaly Mountain directly. NC-106 runs from our Franklin base up through Scaly to Highlands, so it's on our regular route rather than a detour.",
+      },
+      {
+        question: "What roofing systems hold up best at Scaly Mountain elevation?",
+        answer: "Standing-seam metal and premium synthetic shake systems tend to perform best at Scaly Mountain elevation. We size flashing, fastening, and underlayment for high wind and freeze-thaw exposure.",
+      },
+      {
+        question: "Do you handle emergency roof repair on the ridge?",
+        answer: "Yes. For active leaks or storm damage on Scaly Mountain, call (828) 524-7773 during business hours and we'll schedule the fastest inspection we can arrange, weather permitting.",
+      },
+    ],
+  },
+  "otto-nc": {
+    stats: [
+      { label: "Base", value: "Franklin", detail: "Otto sits just south of our home office" },
+      { label: "Corridor", value: "US-441", detail: "Little Tennessee valley homes and farms" },
+      { label: "Focus", value: "Repair & replacement", detail: "Family-home roofing and additions" },
+    ],
+    jobHighlights: [
+      {
+        title: "Otto valley roof replacement",
+        summary: "Dimensional shingle roof replacement on an Otto valley home, including ventilation correction and gutter capacity upgrade.",
+        proof: "CertainTeed dimensional shingles, ridge-vent airflow, and oversized 6-inch gutters",
+      },
+      {
+        title: "Garage and mudroom addition",
+        summary: "Design-then-build addition for an Otto family home — attached garage with a mudroom entry sized to real WNC use.",
+        proof: "In-house design, licensed GC oversight, and integrated exterior finish",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is Otto inside Highlander's normal service area?",
+        answer: "Yes. Otto is essentially our backyard — our Franklin base is only a short drive up US-441. Otto projects are handled by the same crews that work Franklin daily.",
+      },
+      {
+        question: "Do you handle both roof repair and full replacement in Otto?",
+        answer: "Yes. We diagnose first — if a targeted repair will protect the home, that's what we recommend. If the underlayment or deck is compromised, we walk through replacement options with real scope.",
+      },
+      {
+        question: "Can Highlander design and build an addition on my Otto home?",
+        answer: "Yes. Highlander is a licensed North Carolina General Contractor and handles in-house design work — floor plans, elevations, and material planning that carry straight into the build.",
+      },
+    ],
+  },
+  "lake-glenville-nc": {
+    stats: [
+      { label: "Elevation", value: "3,494 ft", detail: "Highest major lake east of the Mississippi" },
+      { label: "Rainfall", value: "70+ in", detail: "Plateau moisture drives every roof decision" },
+      { label: "Focus", value: "Lakefront", detail: "Steep-lot access and premium finishes" },
+    ],
+    jobHighlights: [
+      {
+        title: "Lakefront standing-seam replacement",
+        summary: "Full standing-seam metal roof replacement on a Lake Glenville home, with upgraded valley waterproofing and gutter capacity sized to Plateau rainfall.",
+        proof: "24-gauge standing seam, oversized gutters and downspouts, and high-temp underlayment",
+      },
+      {
+        title: "Deck rebuild and screened porch addition",
+        summary: "Steep-lot deck rebuild plus a new screened porch for a Lake Glenville second home, coordinated around summer occupancy.",
+        proof: "Composite decking, engineered structural framing, and sequenced scheduling around owner use",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you serve both Lake Glenville and Glenville, NC?",
+        answer: "Yes — Lake Glenville and Glenville refer to the same community. Our Jackson County work covers the entire Lake Glenville / Highway 107 corridor.",
+      },
+      {
+        question: "What roofing systems do you recommend for Lake Glenville lakefront homes?",
+        answer: "For most lakefront properties we recommend standing-seam metal or premium synthetic systems, with oversized gutters and high-temperature underlayment sized to Plateau rainfall and ice loading.",
+      },
+      {
+        question: "Can Highlander handle design and construction for a Lake Glenville project?",
+        answer: "Yes. We handle in-house design services, home additions, screened porches, and outdoor living work under our construction division — coordinated with our roofing crews when the project touches both.",
+      },
+    ],
+  },
+  "lake-toxaway-nc": {
+    stats: [
+      { label: "Lake", value: "Largest private", detail: "Largest private lake in North Carolina" },
+      { label: "Market", value: "Estate", detail: "Established Transylvania County estates" },
+      { label: "Focus", value: "Design + build", detail: "In-house design services on premium builds" },
+    ],
+    jobHighlights: [
+      {
+        title: "Estate roof replacement with premium synthetic",
+        summary: "Full roof replacement using a premium synthetic system on a Lake Toxaway estate, with copper flashing details and oversized gutter capacity.",
+        proof: "Premium synthetic panels, copper flashing details, and oversized gutter systems",
+      },
+      {
+        title: "Screened porch and outdoor kitchen addition",
+        summary: "Screened porch and outdoor kitchen addition for a Lake Toxaway lake home, designed and built in-house with landscape protection throughout.",
+        proof: "In-house design, licensed GC oversight, and full jobsite protection of drives and landscaping",
+      },
+    ],
+    faqs: [
+      {
+        question: "Does Highlander regularly work at Lake Toxaway?",
+        answer: "Yes. Lake Toxaway is within our Transylvania County service area, and we specify projects to match the elevation, rainfall, and estate-grade standards owners expect.",
+      },
+      {
+        question: "Do you handle in-house design for Lake Toxaway estates?",
+        answer: "Yes. Highlander's construction division includes in-house design services — floor plans, elevations, and material planning that flow straight into the build under licensed GC oversight.",
+      },
+      {
+        question: "How do you protect landscaping and driveways on Lake Toxaway jobsites?",
+        answer: "We stage materials, protect driveways, and coordinate crew access around the property's landscape and pool areas. On-site protection is a standard line item on every Lake Toxaway estimate, not an afterthought.",
+      },
+    ],
+  },
+  "sapphire-nc": {
+    stats: [
+      { label: "Elevation", value: "3,376 ft", detail: "Plateau-edge exposure and rainfall" },
+      { label: "Setting", value: "Resort", detail: "Sapphire Valley and Plateau ridges" },
+      { label: "Focus", value: "Moisture management", detail: "Gutters, ventilation, and flashing detail" },
+    ],
+    jobHighlights: [
+      {
+        title: "Resort-community roof replacement",
+        summary: "Standing-seam metal roof replacement on a Sapphire Valley home, with oversized gutter capacity and premium ice-and-water shield at valleys.",
+        proof: "Standing-seam metal, oversized gutters, and high-temp underlayment",
+      },
+      {
+        title: "Skylight replacement and flashing rebuild",
+        summary: "Skylight replacement and full curb-flashing rebuild for a Plateau home experiencing recurring leaks around aging skylight units.",
+        proof: "New skylight units, factory curb kits, and integrated flashing to the surrounding roof plane",
+      },
+    ],
+    faqs: [
+      {
+        question: "How is Sapphire different from Highlands or Cashiers for roofing?",
+        answer: "Sapphire sits at Plateau elevation with Plateau rainfall — very similar exposure to Highlands and Cashiers. We specify the same premium underlayment, flashing, and gutter capacity we use across the Plateau.",
+      },
+      {
+        question: "Can Highlander replace and re-flash skylights in Sapphire?",
+        answer: "Yes. We regularly replace skylights and rebuild their flashing on Plateau homes where aging units are the leak source rather than the surrounding roof.",
+      },
+      {
+        question: "Do you handle outdoor living projects in Sapphire?",
+        answer: "Yes. Our construction division designs and builds screened porches, decks, and outdoor kitchens across the Sapphire and Cashiers area under our licensed GC.",
+      },
+    ],
+  },
+  "cherokee-nc": {
+    stats: [
+      { label: "Setting", value: "River valley", detail: "Oconaluftee moisture and biological growth" },
+      { label: "Corridor", value: "US-19", detail: "Qualla Boundary and Swain County" },
+      { label: "Focus", value: "Roofing + gutters", detail: "River-valley water management" },
+    ],
+    jobHighlights: [
+      {
+        title: "Roof replacement with algae-resistant system",
+        summary: "Full roof replacement using an algae-resistant asphalt system on a Cherokee-area home experiencing biological growth on the north-facing planes.",
+        proof: "Algae-resistant dimensional shingles, ridge-vent airflow correction, and gutter cleaning",
+      },
+      {
+        title: "Gutter replacement and downspout re-routing",
+        summary: "Seamless gutter replacement and downspout re-routing on a Cherokee-area home to move water clear of foundation and hardscape.",
+        proof: "6-inch seamless aluminum gutters, oversized downspouts, and re-routed discharge",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you serve the Qualla Boundary and Cherokee, NC?",
+        answer: "Yes. Our Swain County service area covers Cherokee, the Qualla Boundary, and the surrounding Oconaluftee corridor for both roofing and exterior construction.",
+      },
+      {
+        question: "What causes moss and algae on Cherokee-area roofs?",
+        answer: "River-valley humidity, tree cover, and north-facing exposure are the usual causes. We use algae-resistant materials and correct attic ventilation to slow future growth.",
+      },
+      {
+        question: "Can Highlander help with rental property roofing in Cherokee?",
+        answer: "Yes. We work with short-term-rental owners on repair and replacement projects that fit around booking calendars, with clear scoping and documentation for the property record.",
+      },
+    ],
+  },
 };
 
 
