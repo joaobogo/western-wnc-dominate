@@ -215,6 +215,8 @@ If you're weighing metal vs. shingle for a home in Highlands, Cashiers, Sapphire
       { label: "Standing Seam Metal Roofing", path: "/roofing/metal" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
       { label: "Residential Roofing", path: "/roofing/residential" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Best Roofing Materials for Highlands", path: "/blog/best-roofing-materials-highlands-nc" },
     ],
   },
   {
@@ -424,6 +426,7 @@ We're based in the mountains and we re-roof homes in Highlands, Cashiers, Sapphi
       { label: "Standing Seam Metal Roofing", path: "/roofing/metal" },
       { label: "Residential Roofing", path: "/roofing/residential" },
       { label: "Highlands, NC Service Area", path: "/service-areas/highlands-nc" },
+      { label: "Request an Inspection", path: "/request-inspection" },
     ],
   },
   {
