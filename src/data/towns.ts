@@ -425,7 +425,7 @@ export const towns: TownData[] = [
     housingProfile: "Established lakefront estates, timber-frame lodges, and long-tenured second homes around North Carolina's largest private lake.",
     climateExposure: "High rainfall totals, lake-generated humidity, and localized wind events that make oversized drainage and premium flashing standard, not optional.",
     localVibe: "A discreet estate community where craftsmanship, jobsite discipline, and landscape protection matter as much as the roof itself.",
-    constructionContext: "We support Lake Toxaway with roof replacements, screened-porch and outdoor-kitchen additions, and design-then-build work coordinated with local architects.",
+    constructionContext: "We support Lake Toxaway with roof replacements, screened-porch and outdoor-kitchen additions, and design-then-build work coordinated with the homeowner's design team.",
     serviceDemandMix: ["Standing Seam Metal Roofing", "Brava Synthetic Systems", "Outdoor Living & Screened Porches", "Home Additions & Design"],
     styleTendency: "Estate lake-lodge style with heavy timber, stone chimneys, and standing-seam or synthetic shake roofs.",
     notableNeighborhoods: ["Lake Toxaway Estates", "Cardinal Drive area", "West Club Boulevard", "Toxaway Falls"],
