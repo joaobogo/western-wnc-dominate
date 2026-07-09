@@ -26,9 +26,12 @@ const secondaryAreas: Area[] = [
 
 // Nearby communities — served but no dedicated page (no broken links)
 const nearbyCommunities: Area[] = [
-  { name: "Scaly Mountain", county: "Macon County" },
-  { name: "Otto", county: "Macon County" },
-  { name: "Lake Glenville", county: "Jackson County" },
+  { name: "Scaly Mountain", href: "/service-areas/scaly-mountain-nc", county: "Macon County" },
+  { name: "Otto", href: "/service-areas/otto-nc", county: "Macon County" },
+  { name: "Lake Glenville", href: "/service-areas/lake-glenville-nc", county: "Jackson County" },
+  { name: "Lake Toxaway", href: "/service-areas/lake-toxaway-nc", county: "Transylvania County" },
+  { name: "Sapphire", href: "/service-areas/sapphire-nc", county: "Jackson County" },
+  { name: "Cherokee", href: "/service-areas/cherokee-nc", county: "Swain County" },
   { name: "Cullowhee", href: "/service-areas/cullowhee-nc", county: "Jackson County" },
   { name: "Dillsboro", href: "/service-areas/dillsboro-nc", county: "Jackson County" },
   { name: "Brevard", href: "/service-areas/brevard-nc", county: "Transylvania County" },
