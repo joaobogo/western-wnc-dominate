@@ -14,18 +14,46 @@ interface NearbyTownsProps {
  * improve SEO crawl depth for all town pages.
  */
 const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
-  // 1. Find towns in the same county
-  const sameCountyTowns = towns.filter(
-    (t) => t.county === currentTown.county && t.slug !== currentTown.slug
+  // Curated adjacency — real geographic neighbors, not just same-county.
+  // Keeps nearby links natural (e.g. Highlands → Cashiers even though different counties).
+  const adjacency: Record<string, string[]> = {
+    "highlands-nc": ["cashiers-nc", "franklin-nc", "scaly-mountain-nc", "lake-glenville-nc"],
+    "cashiers-nc": ["highlands-nc", "sapphire-nc", "lake-glenville-nc", "sylva-nc"],
+    "franklin-nc": ["highlands-nc", "otto-nc", "sylva-nc", "cashiers-nc"],
+    "sylva-nc": ["dillsboro-nc", "cullowhee-nc", "cashiers-nc", "waynesville-nc"],
+    "dillsboro-nc": ["sylva-nc", "cullowhee-nc", "bryson-city-nc", "waynesville-nc"],
+    "cullowhee-nc": ["sylva-nc", "dillsboro-nc", "cashiers-nc", "waynesville-nc"],
+    "bryson-city-nc": ["cherokee-nc", "dillsboro-nc", "sylva-nc", "waynesville-nc"],
+    "cherokee-nc": ["bryson-city-nc", "sylva-nc", "waynesville-nc", "dillsboro-nc"],
+    "waynesville-nc": ["sylva-nc", "asheville-nc", "hendersonville-nc", "bryson-city-nc"],
+    "asheville-nc": ["hendersonville-nc", "waynesville-nc", "brevard-nc", "sylva-nc"],
+    "hendersonville-nc": ["asheville-nc", "brevard-nc", "waynesville-nc", "sapphire-nc"],
+    "brevard-nc": ["hendersonville-nc", "lake-toxaway-nc", "sapphire-nc", "asheville-nc"],
+    "lake-toxaway-nc": ["sapphire-nc", "cashiers-nc", "brevard-nc", "lake-glenville-nc"],
+    "sapphire-nc": ["cashiers-nc", "lake-toxaway-nc", "highlands-nc", "lake-glenville-nc"],
+    "lake-glenville-nc": ["cashiers-nc", "highlands-nc", "sylva-nc", "sapphire-nc"],
+    "scaly-mountain-nc": ["highlands-nc", "franklin-nc", "otto-nc", "cashiers-nc"],
+    "otto-nc": ["franklin-nc", "highlands-nc", "scaly-mountain-nc", "hayesville-nc"],
+    "hayesville-nc": ["murphy-nc", "franklin-nc", "otto-nc", "cherokee-nc"],
+    "murphy-nc": ["hayesville-nc", "cherokee-nc", "franklin-nc", "bryson-city-nc"],
+  };
+
+  const neighborSlugs = adjacency[currentTown.slug] ?? [];
+  const curated = neighborSlugs
+    .map((s) => towns.find((t) => t.slug === s))
+    .filter((t): t is TownData => !!t);
+
+  // Fallback: same-county, then anything else in WNC — dedupe against curated.
+  const seen = new Set(curated.map((t) => t.slug));
+  const sameCounty = towns.filter(
+    (t) => t.county === currentTown.county && t.slug !== currentTown.slug && !seen.has(t.slug)
+  );
+  sameCounty.forEach((t) => seen.add(t.slug));
+  const fallback = towns.filter(
+    (t) => t.slug !== currentTown.slug && !seen.has(t.slug)
   );
 
-  // 2. If same county is thin, find other towns in WNC (fallback)
-  // In a real app, this could be based on geographical distance
-  const otherTowns = towns
-    .filter((t) => t.county !== currentTown.county && t.slug !== currentTown.slug)
-    .slice(0, 4 - sameCountyTowns.length);
-
-  const displayedTowns = [...sameCountyTowns, ...otherTowns].slice(0, 4);
+  const displayedTowns = [...curated, ...sameCounty, ...fallback].slice(0, 4);
 
   if (displayedTowns.length === 0) return null;
 
