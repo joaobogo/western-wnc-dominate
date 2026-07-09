@@ -1864,6 +1864,1225 @@ WNC is a temperate rainforest. Without aggressive ventilation, mountain humidity
 ];
 
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Batch 1 — Roof Repair & Leak Content (10 posts)
+// Batch 2 — Roof Replacement & Metal Roofing (10 posts)
+// Batch 3 — Gutters, Skylights & Water Management (10 posts)
+// Rules: no GAF / Master Elite / Master Applicator, no "architect(ural)(ure)",
+// no 24/7, no 45-minute, no lifetime warranty, phone 828-524-7773 only,
+// credential wording: CertainTeed ShingleMaster Credentialed Contractor.
+// ─────────────────────────────────────────────────────────────────────────────
+
+const batchPosts: BlogPost[] = [
+  // ── Batch 1 ────────────────────────────────────────────────────────────────
+  {
+    slug: "roof-repair-franklin-nc",
+    title: "Roof Repair in Franklin, NC: What Homeowners Should Know Before Small Problems Grow",
+    excerpt: "A practical guide to spotting and addressing small roof problems in Franklin, NC before they turn into full replacements.",
+    category: "Maintenance",
+    date: "2026-07-05",
+    image: roofRepairStock,
+    readTime: "7 min",
+    town: "Franklin",
+    metaTitle: "Roof Repair in Franklin, NC | Highlander Roofing",
+    metaDescription: "Franklin, NC homeowners: how to spot small roof issues early, what repairs typically involve, and when to request an inspection.",
+    content: `Franklin sits at the edge of the Cowee and Nantahala ranges, where summer thunderstorms, wind-driven rain, and heavy tree cover put roofs under real stress. Most of the roof repairs Highlander sees in Macon County start as small, quiet problems — a lifted shingle, a bit of exposed underlayment, a rusted pipe boot — that grow into interior damage over a season or two.
+
+This guide covers what Franklin homeowners should watch for, when repair is the right call, and how our inspection process works.
+
+## Common Roof Problems on Franklin Homes
+Wind exposure on ridge lots lifts shingle tabs and loosens ridge caps. Heavy leaf litter traps moisture in valleys. Older pipe boots and step flashing near chimneys are frequent leak points. None of these require a full replacement if caught early.
+
+## Early Warning Signs Worth Checking
+Granules collecting at downspout outlets. Dark streaks along valleys or around penetrations. Small ceiling stains that appear after storms. Daylight visible in the attic near the ridge or vents. Any of these are worth a look before another storm season.
+
+## When Repair Makes Sense (and When It Doesn't)
+If your roof is structurally sound, under about 15 years old, and the damage is localized, targeted repair is almost always the right first step. If leaks are recurring across multiple areas, or the deck is soft, we'll walk through repair vs. replacement openly rather than pushing one path.
+
+## What a Highlander Roof Repair Visit Looks Like
+We inspect the field of the roof, valleys, flashings, penetrations, and the attic side when accessible. You get photos of what we found, a plain-English explanation, and a written scope — not a sales pitch. Highlander is a CertainTeed ShingleMaster Credentialed Contractor, so our repair work is done to the manufacturer's install standards.
+
+## Ready for a Look?
+If you're seeing any of the signs above, [request an inspection](/request-inspection) and we'll put eyes on it. You can also learn more about our [roof repair services](/roofing/roof-repair) or explore [roofing services in Franklin, NC](/service-areas/franklin-nc).`,
+    faqs: [
+      { question: "How quickly should I address a small roof leak in Franklin?", answer: "Before the next storm cycle if possible. Small leaks worsen quickly under WNC rainfall — even a season of delay can mean decking replacement instead of a simple flashing repair." },
+      { question: "Do you charge for roof inspections?", answer: "Inspections tied to a repair or replacement estimate are complimentary. Just request an inspection and we'll schedule a visit." },
+      { question: "Can you repair a roof that isn't your original install?", answer: "Yes. We repair asphalt, metal, and specialty roofs regardless of who installed them, as long as the system is repairable." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+  {
+    slug: "roof-repair-highlands-nc",
+    title: "Roof Repair in Highlands, NC: Common Issues for Mountain Homes",
+    excerpt: "The most common roof issues on Highlands, NC mountain homes — and how to plan repairs around elevation, wind, and freeze/thaw cycles.",
+    category: "Maintenance",
+    date: "2026-07-05",
+    image: metalInstallStock,
+    readTime: "7 min",
+    town: "Highlands",
+    metaTitle: "Roof Repair in Highlands, NC | Highlander Roofing",
+    metaDescription: "Highlands, NC mountain homes see wind, freeze/thaw, and heavy rain. Here's what typically fails on these roofs and how we repair it.",
+    content: `At just over 4,000 feet, Highlands puts more weather stress on a roof in a year than most Piedmont towns see in three. Wind loading on ridge lots, ice at the eaves, and heavy summer rain all shorten the useful life of shingles, flashings, and sealants. The good news: most of what we see on Highlands homes is repairable if it's caught in time.
+
+## Wind Damage on Ridge and Exposed Lots
+Highlands ridgelines and cleared home sites see routine wind gusts that lift shingle tabs, tear off ridge caps, and loosen metal panels along eaves. The damage is often invisible from the ground.
+
+## Ice, Freeze/Thaw, and Eave Leaks
+Elevation means real freeze/thaw cycles. Water backs up under shingles at the eaves and refreezes, opening pathways for leaks that only show up in a warm rain. Repair usually involves flashing correction and ice-and-water shield along the affected edges.
+
+## Flashing and Chimney Details
+Highlands homes tend to have complex rooflines — multiple dormers, valleys, and stone chimneys. Step flashing, counter flashing, and cricket details are the most common leak sources we find and repair.
+
+## Tree Impact and Debris
+Cove hardwoods drop steady debris. Wet leaves in valleys hold moisture against the roof surface. Regular clean-off and targeted repair keeps the underlying system sound.
+
+## Working With Highlander on a Highlands Repair
+We'll inspect the roof, document what we find with photos, and give you a written scope. If repair is the right answer, we'll do it. If we think you're better off planning [a roof replacement](/roofing/roof-replacement), we'll say so and explain why. Explore more about our [roof repair services](/roofing/roof-repair) or [roofing in Highlands, NC](/service-areas/highlands-nc), and when you're ready, [request an inspection](/request-inspection).`,
+    faqs: [
+      { question: "Are Highlands roof repairs more expensive than lower elevations?", answer: "Often, yes — access is harder, materials cost more to transport, and detail work takes longer. We price every job from the real conditions rather than a flat rate." },
+      { question: "What time of year is best for Highlands roof repair?", answer: "Late spring through early fall is easiest, but we plan repairs year-round around weather windows. Urgent leaks get priority scheduling." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "roof-repair-cashiers-nc",
+    title: "Roof Repair in Cashiers, NC: Leaks, Storm Damage, and When to Call",
+    excerpt: "How Cashiers, NC homeowners can tell the difference between a minor repair and storm damage that needs immediate attention.",
+    category: "Storm",
+    date: "2026-07-05",
+    image: stormCloudsStock,
+    readTime: "7 min",
+    town: "Cashiers",
+    metaTitle: "Roof Repair in Cashiers, NC | Highlander Roofing",
+    metaDescription: "Cashiers, NC roof repair guidance — leak sources, storm damage triage, and when to bring in a licensed WNC roofing contractor.",
+    content: `The Cashiers plateau catches storms that funnel across from Sapphire and Lake Toxaway. Between summer downpours, occasional hail, and consistent wind loading, most Cashiers homes will need at least one meaningful roof repair between full replacements. Knowing what's minor and what needs prompt attention protects both your roof and your interior.
+
+## Leaks That Show Up After Storms
+Ceiling stains, damp attic insulation, or drips at recessed lights after heavy rain usually trace back to a flashing failure, a lifted shingle, or a compromised valley. These are repairable in most cases.
+
+## Storm Damage: What to Look For
+After a serious storm, walk the property (safely) and check for: shingle fragments in the yard, dented metal fascia or gutters, damaged skylight domes, and any ceiling or attic moisture. Photograph anything that looks off before anyone touches the roof.
+
+## When to Call Sooner Rather Than Later
+Active drips during rain, missing sections of roofing, or visible decking are prompt-response situations. During business hours we work to get eyes on it quickly and can install a temporary cover if needed. If water is actively coming into your home, call Highlander at 828-524-7773.
+
+## Repair, Not Replace, When Possible
+A good WNC roofer will tell you when a repair actually solves the problem. We'll only recommend a full replacement when the roof's condition or age makes repair uneconomical.
+
+## Next Steps for Cashiers Homeowners
+Learn more about [roof repair](/roofing/roof-repair), see when [roof replacement](/roofing/roof-replacement) becomes the better call, or [talk with Highlander about your roof](/contact). You can also explore [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
+    faqs: [
+      { question: "Should I tarp my roof myself after a storm?", answer: "Only if you can do it safely from inside or the ground. Steep Cashiers roofs are not DIY territory — call us and we'll cover it properly." },
+      { question: "Do you help document damage for insurance?", answer: "Yes. We document what we find with photos and a written scope. We don't negotiate claims for you, but that documentation is what most adjusters need." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Contact Highlander", path: "/contact" },
+      { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
+    ],
+  },
+  {
+    slug: "roof-repair-sylva-nc",
+    title: "Roof Repair in Sylva, NC: Signs Your Roof Needs Attention",
+    excerpt: "The signs Sylva, NC homeowners should watch for on aging Jackson County roofs — from granule loss to fascia rot.",
+    category: "Maintenance",
+    date: "2026-07-05",
+    image: homeValueStock,
+    readTime: "6 min",
+    town: "Sylva",
+    metaTitle: "Roof Repair in Sylva, NC | Highlander Roofing",
+    metaDescription: "Sylva, NC roof repair guide — the warning signs that mean your roof needs a professional look before problems spread.",
+    content: `A lot of Sylva's housing stock is old enough that original roofs are near the end of their useful life. That means many of the calls we get here start with, "It's not leaking yet, but…". Catching the early signs is the difference between a targeted repair and a full replacement.
+
+## Granule Loss and Bald Shingles
+If your downspouts are dropping shingle granules or you can see smooth, dark patches on the roof from the ground, the shingle surface is failing. Isolated spots can be repaired; widespread loss usually points to replacement.
+
+## Curling, Cupping, or Lifting Shingles
+Wind and heat over time cause shingle edges to curl. Once the seal breaks, the next real storm can peel them. This is a common repair on 12–18-year-old Sylva roofs.
+
+## Fascia Rot and Soffit Damage
+If your gutters have pulled away from the fascia, water has been running behind them for a while. That usually means fascia repair alongside any roof work.
+
+## Attic Signs You Shouldn't Ignore
+Dark stains on decking, damp insulation, or a musty smell in the attic all point to moisture where it shouldn't be. Attic inspection is part of every Highlander evaluation.
+
+## What Happens Next
+If any of the above sound familiar, [request an inspection](/request-inspection) and we'll evaluate the roof honestly. Explore [roof repair services](/roofing/roof-repair) or [roofing across our division](/roofing), and see what our team does across [Sylva, NC](/service-areas/sylva-nc).`,
+    faqs: [
+      { question: "How old is 'too old' for shingle repair in Sylva?", answer: "There isn't a hard rule — condition matters more than age. Some 20-year-old roofs still take a repair well; some 12-year-olds don't. We'll tell you honestly." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Sylva, NC", path: "/service-areas/sylva-nc" },
+    ],
+  },
+  {
+    slug: "water-through-ceiling-western-nc",
+    title: "What to Do When Water Is Coming Through Your Ceiling in Western NC",
+    excerpt: "Immediate steps for Western NC homeowners when water starts coming through the ceiling — protect your home first, then diagnose the roof.",
+    category: "Storm",
+    date: "2026-07-05",
+    image: stormCloudsStock,
+    readTime: "5 min",
+    metaTitle: "Water Coming Through Ceiling? What to Do | Highlander",
+    metaDescription: "Active roof leak in Western NC? Here's the immediate checklist to protect your home and get a roofer on site quickly.",
+    content: `Active ceiling leaks are stressful. The right sequence in the first hour protects your ceiling, your floors, and your electronics — and gives our team the best chance to find the source quickly.
+
+**If water is actively coming into your home, call Highlander at 828-524-7773.**
+
+## Step 1: Contain the Water
+Put a bucket under the drip. If the ceiling is bulging, gently puncture the low point with a screwdriver into the bucket — a controlled release is safer than an uncontrolled ceiling collapse.
+
+## Step 2: Cut Power if It's Near Fixtures
+Water tracking near recessed lights, ceiling fans, or wall outlets is a shock risk. Cut power to the affected circuit at the breaker.
+
+## Step 3: Move Anything Valuable
+Furniture, rugs, electronics — clear the drip zone. Cover what you can't move with plastic sheeting.
+
+## Step 4: Document Everything
+Photograph the ceiling, the leak location, and any water in the attic if you can access it safely. This helps both diagnosis and any insurance claim.
+
+## Step 5: Call a Local Roofer
+A Western NC roofer knows how mountain roofs fail. During business hours we work to schedule quickly and can install a temporary cover to stop the leak until permanent repair. Learn more about [roof leak repair](/roofing/roof-repair) and [our roofing services](/roofing), or [contact Highlander](/contact) directly. Explore [roofing in Franklin, NC](/service-areas/franklin-nc) and other WNC towns.
+
+## What Not to Do
+Don't climb on a wet roof. Don't ignore a small drip hoping it stops — most active leaks worsen with the next storm. Don't accept vague pricing over the phone before someone has looked at it.`,
+    faqs: [
+      { question: "Will my insurance cover roof leak damage?", answer: "It depends on the cause. Storm and impact damage is often covered; wear-and-tear leaks are usually not. Document everything and check your policy." },
+      { question: "Can you install a temporary cover the same day?", answer: "During business hours we work to respond as quickly as scheduling and weather allow. We don't advertise a fixed response window because mountain weather and access vary." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Contact Highlander", path: "/contact" },
+      { label: "Service Areas", path: "/service-areas/franklin-nc" },
+    ],
+  },
+  {
+    slug: "roof-leak-repair-western-nc",
+    title: "Roof Leak Repair in Western North Carolina: Causes, Warning Signs, and Next Steps",
+    excerpt: "The most common causes of roof leaks on Western NC mountain homes, and how to plan repair without over- or under-scoping.",
+    category: "Maintenance",
+    date: "2026-07-06",
+    image: roofRepairStock,
+    readTime: "8 min",
+    metaTitle: "Roof Leak Repair in Western NC | Highlander Roofing",
+    metaDescription: "Roof leaks in Western NC: the real causes, the early warning signs, and what a proper leak repair looks like on a mountain home.",
+    content: `A roof leak is a symptom, not a diagnosis. Repairing the visible drip without finding the actual source is the reason so many WNC homeowners see the "same" leak return year after year. Here's how we think about leak repair on Western North Carolina mountain homes.
+
+## The Most Common Real Causes
+**Flashing failure** at chimneys, sidewalls, and pipe penetrations is the number-one leak source we find. Sealant fails long before shingles do.
+
+**Valley debris and undersized valleys** hold water and force it sideways under shingles.
+
+**Ice-and-water shield gaps** at eaves and rakes let wind-driven rain intrude on exposed lots.
+
+**Skylight flashing** breaks down over time; the roof around it is often fine.
+
+**Failed pipe boots** — the rubber gasket cracks in 8–12 years and leaks straight down the vent stack.
+
+## Warning Signs Before the Ceiling Stain
+Musty attic smell after rain. Damp insulation. Rust on nails poking through the deck. Discoloration on rafters. All of these show up weeks or months before the ceiling shows.
+
+## Why "Diagnose First" Matters
+Water travels along framing before it drops. The visible stain is often several feet away from the actual entry point. Chasing the stain instead of the source is how leaks come back.
+
+## What a Proper Leak Repair Looks Like
+Exterior and attic-side inspection. Photos of the actual failure. Written scope explaining what will be repaired and why. A repair that addresses the source, not just the symptom.
+
+## Working With Highlander
+Highlander is a CertainTeed ShingleMaster Credentialed Contractor with a full [roof repair](/roofing/roof-repair) team serving [our WNC roofing division](/roofing). If a repair won't hold, we'll say so and walk through [roof replacement](/roofing/roof-replacement) instead. Ready to look at it? [Request an inspection](/request-inspection) or read about our work across [Highlands, NC](/service-areas/highlands-nc).`,
+    faqs: [
+      { question: "How long does a typical leak repair take?", answer: "Most single-source repairs are a half to full day on site. Complex chimney or skylight rebuilds can run longer." },
+      { question: "Can you match my existing shingles?", answer: "We match as close as manufacturer stock allows. Older discontinued colors can weather over time to blend acceptably." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "storm-damage-roof-repair-franklin-highlands-cashiers",
+    title: "Storm Damage Roof Repair in Franklin, Highlands, and Cashiers",
+    excerpt: "What storm damage actually looks like on WNC roofs — and how Franklin, Highlands, and Cashiers homeowners should approach repair and documentation.",
+    category: "Storm",
+    date: "2026-07-06",
+    image: stormCloudsStock,
+    readTime: "8 min",
+    metaTitle: "Storm Damage Roof Repair Franklin, Highlands & Cashiers | Highlander",
+    metaDescription: "Storm damage roof repair across Franklin, Highlands, and Cashiers, NC — what to look for, how to document it, and when to call a roofer.",
+    content: `Between summer thunderstorms, occasional hail, and the wind loading on ridge and plateau lots, storm damage is a routine reality across Franklin, Highlands, and Cashiers. What isn't routine is how homeowners respond in the first 48 hours — that's where value gets protected or lost.
+
+## Types of Storm Damage We Actually See in WNC
+**Wind damage:** lifted or missing shingles, torn ridge caps, loosened metal panel fasteners, bent gutters.
+**Hail damage:** bruised shingles, dented metal fascia and vents, cracked skylight domes.
+**Impact damage:** limbs and debris on the roof surface, punctured decking, damaged flashings.
+**Water intrusion:** interior stains, attic moisture, damp insulation.
+
+## The First 48 Hours
+Walk the exterior safely. Photograph everything — shingle debris in the yard counts. Check the attic for moisture. Save any pieces of the roof you find. Don't get on the roof yourself.
+
+## Documentation Matters
+Insurance adjusters need dated photos, a written scope, and a professional inspection. We document what we find and give you a written report; we don't negotiate claims for you, but that documentation is usually what adjusters need to move.
+
+## Repair vs Replace After a Storm
+Not every storm-damaged roof needs replacement. Isolated wind damage on a healthy roof is repairable. Widespread hail or aged shingles that failed under moderate wind usually point to replacement.
+
+## Local, Not Storm-Chaser
+Highlander is based in WNC and works these mountains year-round. We aren't following storms from out of state. Learn more about [roof repair](/roofing/roof-repair), [roof replacement](/roofing/roof-replacement), or [request an inspection](/request-inspection). Explore our work across [Highlands, NC](/service-areas/highlands-nc) and neighboring towns.`,
+    faqs: [
+      { question: "Should I sign anything with a roofer at my door after a storm?", answer: "No. Legitimate WNC contractors don't door-knock hard. Take a card, do your own research, and call a local company you can verify." },
+      { question: "How long do I have to file a storm damage claim?", answer: "Policies vary — check yours. Most carriers want a claim within a year of the storm event, but sooner is always better." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "emergency-vs-scheduled-roof-repair-wnc",
+    title: "Emergency Roof Repair vs. Scheduled Roof Repair: What Western NC Homeowners Should Know",
+    excerpt: "How Western NC homeowners can tell whether a roof issue is an urgent call or a scheduled repair — and how each is handled.",
+    category: "Maintenance",
+    date: "2026-07-06",
+    image: roofRepairStock,
+    readTime: "6 min",
+    metaTitle: "Emergency vs Scheduled Roof Repair in WNC | Highlander",
+    metaDescription: "When is a roof issue an emergency and when is it a scheduled repair? A practical guide for Western NC homeowners.",
+    content: `Not every roof problem is an emergency, and not every problem can wait. Here's how we help Western NC homeowners think through it.
+
+## Signs of an Actual Emergency
+Active water intrusion during rain. Missing sections of roofing after a storm. Sagging ceiling or visible decking from below. Any of these are prompt-response situations — call us during business hours and we'll work to get eyes on it quickly.
+
+**If water is actively coming into your home, call Highlander at 828-524-7773.**
+
+## Signs That Can Be Scheduled
+A small ceiling stain that isn't growing. A few lifted shingles. Granule loss in the gutters. Sagging or pulled gutters. These are real issues that need attention, but they can go on a scheduled inspection instead of a same-day call.
+
+## What "Emergency Response" Actually Means at Highlander
+We don't advertise fixed response times because WNC weather and access don't cooperate with them. What we do commit to: prompt response during business hours, a temporary cover when safe, and honest communication about timing.
+
+## Scheduled Repair Workflow
+Inspection → written scope with photos → repair scheduled within a normal window → post-repair walkthrough. No pressure, no surprises.
+
+## Next Steps
+Read more about [roof repair](/roofing/roof-repair) and [our roofing services](/roofing), or [contact Highlander](/contact) to schedule. Serving [Cashiers, NC](/service-areas/cashiers-nc) and the wider WNC region.`,
+    faqs: [
+      { question: "What counts as after-hours for scheduling?", answer: "We prioritize active water intrusion whenever we can, but non-urgent scheduling happens during standard business hours." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Contact Highlander", path: "/contact" },
+      { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
+    ],
+  },
+  {
+    slug: "heavy-rain-roofs-gutters-western-nc",
+    title: "How Heavy Rain Impacts Roofs and Gutters in Western NC",
+    excerpt: "Western NC gets some of the highest annual rainfall in the eastern US. Here's how that affects your roof, gutters, and long-term maintenance planning.",
+    category: "Maintenance",
+    date: "2026-07-06",
+    image: stormCloudsStock,
+    readTime: "7 min",
+    metaTitle: "Heavy Rain, Roofs & Gutters in Western NC | Highlander",
+    metaDescription: "How WNC's heavy rainfall stresses roofs and gutters — and what homeowners can do to plan maintenance around a wet climate.",
+    content: `Parts of Western North Carolina get 70–90 inches of rain a year — some of the highest totals east of the Rockies. That much water changes how you should think about roofing and gutter systems on a mountain home.
+
+## What Heavy Rain Does to a Roof
+Constant wetting accelerates shingle granule loss. Water sits longer in valleys and behind flashings. Underlayment quality matters more here than in dry climates. Any small opening becomes a real leak faster.
+
+## What It Does to Gutters
+Undersized gutters overflow. Loose fasteners fail under water weight. Downspouts that dump water at the foundation cause soil erosion and, eventually, foundation moisture problems.
+
+## Design for the Actual Rainfall
+Six-inch seamless gutters and adequate downspout count aren't a luxury on WNC homes — they're the baseline. Kickout flashings where roofs meet walls are non-negotiable.
+
+## Maintenance That Actually Helps
+Twice-yearly gutter cleaning. Valley debris removal. Inspecting flashings and sealants annually. Checking downspout discharge for erosion after major storms.
+
+## Get Ahead of It
+See our [gutters and water management services](/roofing/gutters), [roof repair](/roofing/roof-repair), or [request an inspection](/request-inspection). Serving [Cashiers, NC](/service-areas/cashiers-nc) and the broader region.`,
+    faqs: [
+      { question: "Are seamless gutters worth the extra cost in WNC?", answer: "Yes — fewer seams means fewer leak points, which matters when you're moving this much water." },
+    ],
+    relatedServices: [
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
+    ],
+  },
+  {
+    slug: "spring-roof-maintenance-western-nc",
+    title: "Spring Roof Maintenance Tips for Western NC Homes",
+    excerpt: "A practical spring maintenance checklist for Western NC roofs after a mountain winter of freeze, thaw, wind, and debris.",
+    category: "Maintenance",
+    date: "2026-07-06",
+    image: shingleRoofsStock,
+    readTime: "6 min",
+    metaTitle: "Spring Roof Maintenance Tips for Western NC | Highlander",
+    metaDescription: "Spring roof maintenance for WNC homes: the checklist that catches winter damage before summer storms make it worse.",
+    content: `Mountain winters are hard on roofs. Spring is the right time to check what winter did before summer storms compound it. Here's what Western NC homeowners should look at (or have a roofer look at) each spring.
+
+## Walk the Property First
+Look up at the roof from every angle. Scan the yard for shingle fragments, granules at downspouts, and displaced flashings.
+
+## Check the Attic
+Bring a flashlight. Look for staining on the underside of the deck, damp insulation, or daylight around penetrations. Musty smell counts.
+
+## Clean the Gutters
+Winter debris and residual leaves need to come out before spring rain starts. Check that downspouts discharge away from the foundation.
+
+## Inspect Flashings and Sealants
+Chimneys, skylights, and wall junctions are the first places sealants fail. Look for cracking, gaps, or lifted metal.
+
+## Schedule a Professional Inspection
+If it's been more than 2 years since a professional walked your roof, spring is the time. [Request an inspection](/request-inspection) and we'll document what we find. Learn more about [roof repair](/roofing/roof-repair) and [our roofing services](/roofing), or explore [roofing in Franklin, NC](/service-areas/franklin-nc).
+
+## Related: Fall Prep
+Once you're through spring and summer, a fall check-in matters too. Our [fall roof and gutter maintenance guide](/blog/fall-roof-gutter-maintenance-before-winter-mountains) covers what to do before winter.`,
+    faqs: [
+      { question: "How often should I have my WNC roof professionally inspected?", answer: "Every 2 years for shingle roofs under 10 years old; annually after that or after any major storm." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+
+  // ── Batch 2 ────────────────────────────────────────────────────────────────
+  {
+    slug: "roof-replacement-franklin-nc",
+    title: "Roof Replacement in Franklin, NC: When Repair Is No Longer Enough",
+    excerpt: "How Franklin, NC homeowners can tell when a roof has passed the repair stage — and what a proper replacement project looks like.",
+    category: "Replacement",
+    date: "2026-07-07",
+    image: shingleRoofsStock,
+    readTime: "7 min",
+    town: "Franklin",
+    metaTitle: "Roof Replacement in Franklin, NC | Highlander Roofing",
+    metaDescription: "Franklin, NC roof replacement — how to know when repair is no longer enough and what a proper mountain-home replacement involves.",
+    content: `There's a moment every roof reaches when patching stops making financial sense. For most Franklin homes, that's somewhere between year 18 and 25 for a standard asphalt system — but condition matters more than age.
+
+## Signs It's Time to Replace
+Widespread granule loss, recurring leaks in multiple areas, curled or cupped shingles across the field, soft or bouncy decking underfoot, and repair costs that are starting to stack up.
+
+## What a Franklin Roof Replacement Involves
+Full tear-off (we don't recommend overlays in WNC), deck inspection and repair, ice-and-water shield at critical areas, synthetic underlayment, new flashings, drip edge, ridge and soffit ventilation, and new shingles or metal.
+
+## Material Choice Matters
+Dimensional asphalt remains the most common choice for its balance of value and performance. Standing seam metal is a strong option for exposed lots and longer horizon ownership. Explore [metal roofing](/roofing/metal) if you're considering it.
+
+## Timing Around Franklin Weather
+Late spring through fall is our peak season. We plan around weather windows year-round and don't tear off more than we can dry-in the same day.
+
+## The Highlander Difference
+Highlander is a CertainTeed ShingleMaster Credentialed Contractor. Every replacement is priced from real conditions — no flat published pricing, no rushed estimates.
+
+## Ready to Start Planning?
+Learn more about [roof replacement](/roofing/roof-replacement), see when [roof repair](/roofing/roof-repair) still makes sense, [request an inspection](/request-inspection), or read about our work across [Franklin, NC](/service-areas/franklin-nc). Related: [how to make the repair vs replace decision](/blog/roof-repair-vs-replacement-wnc).`,
+    faqs: [
+      { question: "How long does a full replacement take in Franklin?", answer: "Most single-family homes are 2–4 days of on-site work, weather permitting." },
+      { question: "Do you handle permits?", answer: "Yes, when required for the scope. We pull and manage all permits ourselves." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+  {
+    slug: "roof-replacement-highlands-nc",
+    title: "Roof Replacement in Highlands, NC: Planning for Mountain Weather",
+    excerpt: "A guide to planning a Highlands, NC roof replacement around mountain weather, elevation, and material choice.",
+    category: "Replacement",
+    date: "2026-07-07",
+    image: metalBenefitsStock,
+    readTime: "8 min",
+    town: "Highlands",
+    metaTitle: "Roof Replacement in Highlands, NC | Highlander Roofing",
+    metaDescription: "Highlands, NC roof replacement — planning around 4,000-ft weather, steep lots, and material decisions that fit mountain homes.",
+    content: `A Highlands replacement isn't a lowland replacement scaled up. Access, weather windows, wind exposure, and the sheer volume of rain and freeze/thaw cycles all change how the work is planned and specified.
+
+## Planning Around the Weather Window
+We schedule tear-offs when the forecast supports drying in the roof the same day. Highlands weather can turn quickly, so we build buffer into schedules rather than promise a fixed day.
+
+## Steep Lots and Access
+Many Highlands homes sit on grades that limit staging and require specialized equipment. We plan access before we quote so there are no surprises.
+
+## Material Choice at Elevation
+**Standing seam metal** performs exceptionally well at elevation — long life, wind resistance, and clean shedding of debris. **Premium dimensional shingles** with upgraded underlayment work well when metal isn't the aesthetic choice.
+
+## Details That Matter More at 4,000 Feet
+Ice-and-water shield at eaves, valleys, and sidewalls. Upgraded ridge and soffit ventilation. Wind-rated shingle patterns. Kickout flashings at every roof-to-wall junction.
+
+## Highlander's Process
+Inspection → written scope → material selection → project schedule → tear-off and install → walkthrough. Highlander is a CertainTeed ShingleMaster Credentialed Contractor.
+
+## Ready to Plan Yours?
+See our [roof replacement services](/roofing/roof-replacement), consider [metal roofing](/roofing/metal), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related reading: [how long a roof lasts on a mountain home](/blog/roof-lifespan-mountain-home-wnc).`,
+    faqs: [
+      { question: "Can you replace a Highlands roof in winter?", answer: "Yes, when weather cooperates. We schedule around forecast windows and don't tear off more than we can dry-in the same day." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "roof-replacement-cashiers-nc",
+    title: "Roof Replacement in Cashiers, NC: What Homeowners Should Expect",
+    excerpt: "What a Cashiers, NC roof replacement actually involves — timeline, materials, and what makes plateau projects different.",
+    category: "Replacement",
+    date: "2026-07-07",
+    image: shingleRoofsStock,
+    readTime: "7 min",
+    town: "Cashiers",
+    metaTitle: "Roof Replacement in Cashiers, NC | Highlander Roofing",
+    metaDescription: "Cashiers, NC roof replacement — what to expect from timeline, materials, and process on plateau mountain homes.",
+    content: `Cashiers roofs live in the middle of a storm corridor. Between plateau wind, summer rain, and occasional hail, most homes here need a proper replacement — not a patch — somewhere between year 18 and 25 for asphalt systems.
+
+## What to Expect on Day One
+Site protection first: tarps over landscaping, magnetic sweep areas identified, access secured. Then tear-off begins. Debris goes into a bin, not onto the yard.
+
+## Deck Inspection Matters
+Once the roof is stripped, we inspect the decking. Any soft or delaminated sheets get replaced before underlayment goes down. This is where cutting corners costs homeowners later.
+
+## Underlayment and Flashing
+Synthetic underlayment across the field. Ice-and-water shield at eaves, valleys, and penetrations. New flashings at every wall junction, chimney, and skylight — we don't reuse old flashing.
+
+## Shingle or Metal Installation
+Manufacturer-spec install patterns. Ridge and soffit ventilation balanced correctly. Ridge cap installed last.
+
+## Walkthrough and Cleanup
+We walk the property with you, magnet-sweep for nails, and make sure everything's photographed.
+
+## Ready to Talk?
+Read more about [roof replacement](/roofing/roof-replacement), [roof repair](/roofing/roof-repair) when replacement isn't yet needed, [request an inspection](/request-inspection), or explore [roofing in Cashiers, NC](/service-areas/cashiers-nc). Related: [replacement cost factors in WNC](/blog/roof-replacement-cost-factors-western-nc).`,
+    faqs: [
+      { question: "How long does a Cashiers roof replacement take?", answer: "Most homes are 2–4 days of on-site work, weather permitting. Larger or more complex roofs take longer." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
+    ],
+  },
+  {
+    slug: "roof-replacement-sylva-nc",
+    title: "Roof Replacement in Sylva, NC: Materials, Timing, and Process",
+    excerpt: "Sylva, NC roof replacement guide — how to pick the right material, when to schedule, and what the process looks like on Jackson County homes.",
+    category: "Replacement",
+    date: "2026-07-07",
+    image: homeValueStock,
+    readTime: "7 min",
+    town: "Sylva",
+    metaTitle: "Roof Replacement in Sylva, NC | Highlander Roofing",
+    metaDescription: "Sylva, NC roof replacement — materials that fit Jackson County homes, timing tips, and what to expect from the process.",
+    content: `Sylva's housing stock includes a lot of homes with original roofs approaching or past their useful life. If you're planning a replacement, here's how we think through material choice, timing, and process on Jackson County projects.
+
+## Material Choice
+**Dimensional asphalt shingles** are the most common Sylva choice — good balance of aesthetics, longevity, and value. **Standing seam metal** for homeowners planning long-term ownership or on wooded lots where debris performance matters.
+
+## Timing
+Late spring through fall is easiest. We work year-round around weather windows. If you can plan ahead, avoiding the busy late-fall rush usually means better scheduling flexibility.
+
+## Process
+Inspection → written proposal → material selection → schedule → tear-off, deck check, underlayment, install → walkthrough. Nothing exotic; done right.
+
+## What Makes a Sylva Replacement Different
+Cove hardwoods mean regular debris. Consider [gutter guards](/roofing/gutters) as part of the replacement scope so the new roof stays clean.
+
+## Next Steps
+See our [roof replacement services](/roofing/roof-replacement), [roof repair](/roofing/roof-repair) when full replacement isn't yet warranted, [request an inspection](/request-inspection), or explore [roofing in Sylva, NC](/service-areas/sylva-nc). Related: [best roofing materials for WNC mountain homes](/blog/best-roofing-materials-highlands-nc).`,
+    faqs: [
+      { question: "Do you replace both roof and gutters at once?", answer: "Often, yes. It's efficient to do both while access is set up, and gutters replaced with a roof carry a coordinated warranty structure." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Sylva, NC", path: "/service-areas/sylva-nc" },
+    ],
+  },
+  {
+    slug: "roof-replacement-cost-factors-western-nc",
+    title: "Roof Replacement Cost Factors in Western North Carolina",
+    excerpt: "The real factors that shape a WNC roof replacement estimate — and why flat, published pricing rarely reflects actual mountain conditions.",
+    category: "Cost",
+    date: "2026-07-07",
+    image: financeCalcStock,
+    readTime: "7 min",
+    metaTitle: "Roof Replacement Cost Factors in Western NC | Highlander",
+    metaDescription: "What actually drives roof replacement pricing in Western NC — access, materials, decking, and mountain-specific details.",
+    content: `We don't publish flat replacement pricing for one honest reason: it never reflects a real WNC project. Access, deck condition, complexity, and material choice change the number more than the roof's square footage does. Here are the factors that actually shape a Western NC replacement estimate.
+
+## Roof Size and Pitch
+Square footage is the starting point. Steep pitches take longer, need more safety setup, and often waste more material.
+
+## Access and Site Conditions
+Steep driveways, narrow lots, and limited staging areas add time and equipment cost. Ridge lots with high-lift requirements cost more than street-level suburban roofs.
+
+## Deck Condition
+You don't know what's under the shingles until they come off. Rotten or delaminated decking gets replaced — that's a per-sheet add.
+
+## Material Choice
+Standard dimensional shingles are the value baseline. Premium shingles, standing seam metal, and specialty products step up from there.
+
+## Complexity Details
+Number of valleys, dormers, skylights, chimneys, and penetrations all matter. So do underlayment upgrades (extra ice-and-water shield, high-temp underlayments for metal).
+
+## Removal and Disposal
+Tear-off of one or two layers, dump fees, and disposal logistics vary by location.
+
+## What We Won't Do
+We won't publish flat pricing. We won't estimate off Google Earth. Every proposal comes from an in-person inspection.
+
+## Ready for a Real Number?
+[Request an inspection](/request-inspection) or read more about [roof replacement](/roofing/roof-replacement), [our roofing services](/roofing), and [roofing in Franklin, NC](/service-areas/franklin-nc). Related: [repair vs replacement decision guide](/blog/roof-repair-vs-replacement-wnc).`,
+    faqs: [
+      { question: "Can you give me a ballpark over the phone?", answer: "Not honestly. We'd rather see the roof and give you a real number." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+  {
+    slug: "roof-lifespan-mountain-home-wnc",
+    title: "How Long Does a Roof Last on a Mountain Home in WNC?",
+    excerpt: "Real-world roof lifespans for Western NC mountain homes across shingles, metal, and specialty systems — with the caveats that matter.",
+    category: "Materials",
+    date: "2026-07-07",
+    image: blueRidgeViewStock,
+    readTime: "6 min",
+    metaTitle: "How Long Does a WNC Mountain Roof Last? | Highlander",
+    metaDescription: "Realistic roof lifespans for Western NC mountain homes — what shingles, metal, and specialty roofs actually deliver at elevation.",
+    content: `Manufacturer lifespan claims and real WNC lifespan aren't the same number. Elevation, wind, freeze/thaw, and rainfall all shorten what you'd expect on paper. Here's what we actually see on Western North Carolina mountain homes.
+
+## Dimensional Asphalt Shingles
+Manufacturers advertise 25–30 year systems. Real WNC lifespan is more often **18–25 years**, sooner on exposed lots and later on protected ones.
+
+## Premium / Impact-Rated Shingles
+Slightly longer than standard dimensional in most cases — the impact rating helps on hail-exposed properties.
+
+## Standing Seam Metal
+Manufacturers claim 40–50+ years. Real WNC lifespan often runs **40+ years** with proper install and periodic fastener/sealant inspection. This is the longest-lived common option.
+
+## Specialty Systems
+Synthetic composites and standing seam variants can exceed asphalt lifespan considerably. Case-by-case.
+
+## What Cuts Lifespan Short
+Poor install. Wrong underlayment for elevation. Inadequate ventilation. Deferred maintenance on flashings and sealants.
+
+## What Extends It
+Correct spec for the site. Periodic professional inspection. Prompt repair when small issues surface.
+
+## Planning Ahead
+If your roof is nearing the end of its useful life, planning a replacement early gives you more material and scheduling options. Learn about [roof replacement](/roofing/roof-replacement), [metal roofing](/roofing/metal), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [repair vs replacement guide](/blog/roof-repair-vs-replacement-wnc).
+
+> Highlander does not publish unsupported warranty-year claims. Manufacturer warranties vary by product and install method; we'll walk through the specifics for your project.`,
+    faqs: [
+      { question: "Can I get a warranty on a WNC mountain roof?", answer: "Yes — manufacturer warranties apply per product and install method. We'll walk through what actually applies to your project rather than making blanket claims." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "roof-repair-vs-replacement-wnc",
+    title: "Roof Repair vs. Roof Replacement: How to Make the Right Choice",
+    excerpt: "A clear framework for Western NC homeowners deciding between roof repair and full replacement — with the questions that actually matter.",
+    category: "Replacement",
+    date: "2026-07-08",
+    image: shingleRoofsStock,
+    readTime: "7 min",
+    metaTitle: "Roof Repair vs Replacement: How to Choose | Highlander",
+    metaDescription: "Repair or replace your WNC roof? A clear decision framework — what to weigh, what to ignore, and when each is the right call.",
+    content: `The repair-vs-replace question is one of the most common we get. Here's the honest framework we use with WNC homeowners.
+
+## Question 1: How Old Is the Roof?
+Under 12 years old and localized damage? Almost always repair. Over 20 years and multiple issues? Usually replacement. In between depends on condition.
+
+## Question 2: How Widespread Is the Damage?
+One flashing, one valley, one section — repair. Multiple leaks across multiple areas, widespread granule loss, or systemic ventilation issues — usually replacement.
+
+## Question 3: What's the Deck Condition?
+Soft spots or delamination point to replacement territory. A structurally sound deck under aging shingles can still take a targeted repair.
+
+## Question 4: How Long Do You Plan to Own?
+Selling in a year? Repair keeps insurability. Staying long term? Sometimes replacement pays off — you avoid stacking repair costs over the next decade.
+
+## Question 5: What's the Repair Cost Trajectory?
+If you've already put multiple repairs into the same roof, the total is often approaching a fraction of a replacement. That's the tipping point.
+
+## What a Good Roofer Actually Does
+Walks the roof and attic. Documents with photos. Explains the failure mode. Recommends the smallest scope that actually solves the problem.
+
+## Next Steps
+Explore [roof repair](/roofing/roof-repair), [roof replacement](/roofing/roof-replacement), [request an inspection](/request-inspection), or read about our work in [Sylva, NC](/service-areas/sylva-nc). Related: [roof lifespan on WNC mountain homes](/blog/roof-lifespan-mountain-home-wnc).`,
+    faqs: [
+      { question: "Will insurance pay for replacement instead of repair?", answer: "Only when the damage is severe enough to require it, and only if the cause is covered. Storm damage often triggers replacement coverage; wear-and-tear doesn't." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Sylva, NC", path: "/service-areas/sylva-nc" },
+    ],
+  },
+  {
+    slug: "metal-roofing-western-nc-mountain-home",
+    title: "Metal Roofing in Western NC: Is It Right for Your Mountain Home?",
+    excerpt: "An honest look at metal roofing for Western NC mountain homes — where it shines, where it doesn't, and what to consider before choosing it.",
+    category: "Materials",
+    date: "2026-07-08",
+    image: metalBenefitsStock,
+    readTime: "8 min",
+    metaTitle: "Metal Roofing in Western NC: Is It Right? | Highlander",
+    metaDescription: "Metal roofing in Western NC — an honest guide to where it fits, where it doesn't, and how to decide for your mountain home.",
+    content: `Metal roofing has gained real market share in Western NC over the last decade, and for good reason. But it's not automatically the right choice for every mountain home. Here's how we think through it.
+
+## Where Metal Excels
+**Longevity** — properly installed standing seam commonly runs 40+ years.
+**Wind performance** — locked panel systems resist uplift better than shingles.
+**Debris shedding** — leaves and needles slide off rather than accumulating.
+**Ice and snow shedding** — with snow guards where needed to prevent damage below.
+
+## Where Metal Isn't Ideal
+**Homes with lots of complex roof geometry** — the more valleys and hips, the more the labor cost climbs.
+**Neighborhoods with aesthetic covenants** that limit visible metal.
+**Homeowners planning to sell short-term** — the higher upfront cost pays back over decades.
+
+## Standing Seam vs Exposed Fastener
+**Standing seam** is the premium option — hidden fasteners, cleaner lines, longer life. What we recommend for most residential WNC work.
+
+**Exposed fastener** (screw-down) is lower cost and appropriate for barns, outbuildings, or budget-driven projects.
+
+## Details That Matter
+High-temp underlayment. Correct panel gauge for the climate. Snow guards over walkways and entries. Kickout flashings at wall junctions.
+
+## Ready to Explore?
+See our [metal roofing services](/roofing/metal), consider full [roof replacement](/roofing/roof-replacement) alongside a material change, [request an inspection](/request-inspection), or read about our work in [Highlands, NC](/service-areas/highlands-nc). Related: [metal vs shingle across WNC towns](/blog/metal-vs-shingle-roof-franklin-highlands-cashiers).`,
+    faqs: [
+      { question: "Is metal roofing louder in the rain?", answer: "With proper underlayment and decking, no — sound difference in a finished home is minimal." },
+      { question: "Does a metal roof lower insurance?", answer: "Sometimes. Check with your carrier; impact and wind ratings sometimes trigger discounts." },
+    ],
+    relatedServices: [
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "metal-roofing-highlands-nc-benefits",
+    title: "Metal Roofing in Highlands, NC: Benefits for Rain, Wind, and Elevation",
+    excerpt: "Why standing seam metal is one of the strongest roofing options for Highlands, NC homes at 4,000+ feet.",
+    category: "Materials",
+    date: "2026-07-08",
+    image: metalInstallStock,
+    readTime: "7 min",
+    town: "Highlands",
+    metaTitle: "Metal Roofing in Highlands, NC | Highlander Roofing",
+    metaDescription: "Metal roofing for Highlands, NC homes — how it performs against rain, wind, and elevation, and where it fits best.",
+    content: `At 4,000+ feet, roofing systems face a different set of stresses than they do in lower elevations. Metal — especially standing seam — is one of the strongest answers for Highlands homes on exposed lots.
+
+## Rain Performance
+Highlands gets serious rainfall. Metal sheds water fast and doesn't hold moisture in the surface the way an aging shingle does. Fewer surface freeze/thaw problems.
+
+## Wind Resistance
+Locked standing seam panel systems resist uplift where shingles start losing tabs. On ridge and exposed lots, this alone often justifies the material.
+
+## Elevation and Temperature Cycling
+Metal expands and contracts predictably. Properly detailed clips accommodate that movement — old-style through-fasteners eventually work loose in this climate.
+
+## Ice, Snow, and Snow Guards
+Metal sheds snow fast, which can be a problem over entries and walkways. We install snow guards where needed to control release.
+
+## The Long View
+Standing seam is a longer install than shingles and a bigger upfront investment, but for owners planning to keep the home long-term, the lifecycle math typically favors it.
+
+## Ready to Talk About Metal on Your Home?
+Learn more about [metal roofing](/roofing/metal), consider [roof replacement](/roofing/roof-replacement) as a broader project, [request an inspection](/request-inspection), or explore our work across [Highlands, NC](/service-areas/highlands-nc). Related: [is metal roofing right for your WNC home?](/blog/metal-roofing-western-nc-mountain-home)`,
+    faqs: [
+      { question: "Do I need snow guards on a Highlands metal roof?", answer: "Almost always over doors, walkways, and gathering spaces. Snow release from smooth panels can be dangerous without them." },
+    ],
+    relatedServices: [
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "metal-vs-shingle-roof-franklin-highlands-cashiers",
+    title: "Metal Roof vs. Shingle Roof in Franklin, Highlands, and Cashiers",
+    excerpt: "A side-by-side comparison of metal and shingle roofs across Franklin, Highlands, and Cashiers — with the trade-offs each town brings.",
+    category: "Materials",
+    date: "2026-07-08",
+    image: metalBenefitsStock,
+    readTime: "8 min",
+    metaTitle: "Metal vs Shingle Roof: Franklin, Highlands, Cashiers | Highlander",
+    metaDescription: "Metal vs shingle roofing across Franklin, Highlands, and Cashiers, NC — a side-by-side comparison for WNC mountain homeowners.",
+    content: `Metal or shingle? The right answer depends on your lot, your ownership horizon, and how you value upfront vs long-term cost. Here's how the comparison plays out across Franklin, Highlands, and Cashiers.
+
+## Upfront Cost
+Shingle installs cost less upfront. Standing seam metal is often 2–3x the shingle price for similar coverage. This is the biggest single trade-off.
+
+## Longevity
+Shingles typically last 18–25 years in WNC. Standing seam metal commonly runs 40+ years. Divide upfront cost by useful life and metal often wins on lifecycle math.
+
+## Franklin: The Mixed Case
+Franklin's mix of elevations and lot types means both materials work. We often recommend premium dimensional shingles for suburban lots, metal for exposed ridge lots.
+
+## Highlands: Metal-Leaning
+Elevation, exposure, and long-hold ownership patterns often favor metal. See more in our [Highlands metal roofing guide](/blog/metal-roofing-highlands-nc-benefits).
+
+## Cashiers: Depends on the Home
+Plateau winds and long-hold ownership favor metal on many homes. Some architectural styles read better in shingle — we help match material to aesthetic.
+
+## Common Concerns Debunked
+"Metal is noisy" — with modern underlayment, no.
+"Metal attracts lightning" — no more than any other roof.
+"Shingles are outdated" — modern dimensional shingles are excellent products.
+
+## Next Steps
+Explore [metal roofing](/roofing/metal), [roof replacement](/roofing/roof-replacement) more broadly, [request an inspection](/request-inspection), or see our work in [Franklin, NC](/service-areas/franklin-nc). Related: [our existing WNC metal vs shingle deep-dive](/blog/metal-vs-shingle-roof-western-nc).`,
+    faqs: [
+      { question: "Can I mix metal and shingle on the same home?", answer: "Yes — accent metal on porches, dormers, or lower roofs with shingle on the main field is common and often looks great." },
+    ],
+    relatedServices: [
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+
+  // ── Batch 3 ────────────────────────────────────────────────────────────────
+  {
+    slug: "gutter-installation-franklin-nc",
+    title: "Gutter Installation in Franklin, NC: Why Water Management Matters",
+    excerpt: "Why proper gutter installation matters on Franklin, NC homes — and how a well-designed system protects roofs, siding, and foundations.",
+    category: "Maintenance",
+    date: "2026-07-09",
+    image: stormCloudsStock,
+    readTime: "6 min",
+    town: "Franklin",
+    metaTitle: "Gutter Installation in Franklin, NC | Highlander",
+    metaDescription: "Franklin, NC gutter installation — why water management matters and what proper seamless gutter design looks like on WNC homes.",
+    content: `Franklin's rainfall makes gutters more than a finish detail — they're the front line of water management on your home. A well-designed system protects the roof edge, siding, foundation, and any outdoor living areas below.
+
+## What "Proper Gutter Installation" Actually Means
+Correct sizing for the roof area. Enough downspouts to move the water. Proper slope. Sealed corners. Fastened into structure, not just fascia trim.
+
+## Seamless Aluminum Is the WNC Baseline
+Fewer seams means fewer leak points. Formed on site to fit the run exactly. Standard for Highlander installs.
+
+## Downspout Placement
+Every downspout needs to discharge water away from the foundation. On sloped lots, this means downspout extensions or splash blocks that actually work.
+
+## Add-On Details Worth Considering
+**Gutter guards** for wooded lots. **Kickout flashings** where roof meets wall. **Larger 6" gutters** on high-volume roofs.
+
+## Getting It Right the First Time
+Learn more about our [gutters and water management](/roofing/gutters), [roof repair](/roofing/roof-repair) related to gutter failures, [request an inspection](/request-inspection), or explore [roofing in Franklin, NC](/service-areas/franklin-nc). Related: [how gutters protect roofs, siding, foundations, and outdoor spaces](/blog/how-gutters-protect-home-wnc).`,
+    faqs: [
+      { question: "How long do aluminum gutters last in WNC?", answer: "Properly installed, commonly 20+ years. Failure usually comes from fastener issues or overflow damage, not the aluminum itself." },
+    ],
+    relatedServices: [
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+  {
+    slug: "seamless-gutters-highlands-nc",
+    title: "Seamless Gutters in Highlands, NC: Protecting Mountain Homes From Heavy Rain",
+    excerpt: "How seamless aluminum gutters protect Highlands, NC mountain homes from the region's heavy annual rainfall and heavy tree cover.",
+    category: "Maintenance",
+    date: "2026-07-09",
+    image: metalInstallStock,
+    readTime: "6 min",
+    town: "Highlands",
+    metaTitle: "Seamless Gutters in Highlands, NC | Highlander Roofing",
+    metaDescription: "Seamless gutters for Highlands, NC mountain homes — why they matter, how they're sized, and what to expect from installation.",
+    content: `Highlands catches an outsized share of Southeast rainfall. A gutter system that moves that water quickly, cleanly, and away from the foundation is one of the highest-ROI details on a mountain home.
+
+## Why Seamless
+Formed on site to your exact run length. No mid-run joints where sealant eventually fails. Cleaner look. Standard for our Highlands installs.
+
+## Sizing for Highlands Rainfall
+Six-inch gutters and adequate downspouts aren't a luxury here — they're what actually moves the water. Undersized gutters overflow and damage what's below.
+
+## Fastener Choice at Elevation
+Hidden hangers with structural screws, not spike-and-ferrule. Elevation temperature swings work fasteners loose fastest.
+
+## Tree Cover Considerations
+Cove hardwoods drop steady debris. Consider gutter guards as part of the same install rather than retrofitting later.
+
+## Coordination With the Roof
+If you're planning [a roof replacement](/roofing/roof-replacement), doing gutters at the same time is efficient and gives you a coordinated system.
+
+## Ready to Plan?
+Learn more about our [gutter services](/roofing/gutters), [our roofing division](/roofing), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [how heavy rain impacts WNC roofs and gutters](/blog/heavy-rain-roofs-gutters-western-nc).`,
+    faqs: [
+      { question: "Can I upgrade my existing gutters to seamless without a full replacement?", answer: "Yes — seamless replacement is a common standalone project, no roof work required." },
+    ],
+    relatedServices: [
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "gutter-replacement-cashiers-nc",
+    title: "Gutter Replacement in Cashiers, NC: Signs It Is Time to Upgrade",
+    excerpt: "How to tell when Cashiers, NC gutters are past repair — and what a proper replacement should include.",
+    category: "Maintenance",
+    date: "2026-07-09",
+    image: homeValueStock,
+    readTime: "6 min",
+    town: "Cashiers",
+    metaTitle: "Gutter Replacement in Cashiers, NC | Highlander",
+    metaDescription: "Cashiers, NC gutter replacement — the signs your system is past repair and what to expect from a proper seamless installation.",
+    content: `Old gutters fail slowly, then all at once. Here's how Cashiers homeowners can tell when it's time to plan a replacement rather than another patch.
+
+## Signs of Real Failure
+Sagging runs. Pulled-away fascia. Overflow in moderate rain. Rusted-out seams. Standing water inside the trough. Fastener holes wallowed out where hangers pull loose.
+
+## Why Patchwork Stops Working
+Older sectioned gutters have seams every 10 feet. Once sealant starts failing across multiple joints, you're chasing leaks faster than you can fix them.
+
+## What a Proper Replacement Includes
+Seamless aluminum runs formed on site. Hidden hangers with structural screws. Correct downspout count for the roof area. Downspout discharge managed away from the foundation. Optional gutter guards.
+
+## Coordination Opportunities
+If your roof is also aging, consider [replacement together with the roof](/roofing/roof-replacement) — access is set up, and the two systems get coordinated warranties. If the roof is fine, gutter-only replacement is straightforward.
+
+## Ready?
+See our [gutter services](/roofing/gutters), [roof repair](/roofing/roof-repair) if there's related damage, [request an inspection](/request-inspection), or explore [roofing in Cashiers, NC](/service-areas/cashiers-nc). Related: [signs it's time to upgrade gutter guards in WNC](/blog/gutter-guards-worth-it-western-nc).`,
+    faqs: [
+      { question: "Do you match gutter color to existing trim?", answer: "Yes — aluminum comes in a wide color range and we match to your fascia and trim." },
+    ],
+    relatedServices: [
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
+    ],
+  },
+  {
+    slug: "gutter-guards-worth-it-western-nc",
+    title: "Gutter Guards in Western NC: Are They Worth It for Mountain Homes?",
+    excerpt: "An honest look at gutter guards for Western NC mountain homes — where they earn their cost and where they don't.",
+    category: "Maintenance",
+    date: "2026-07-09",
+    image: outdoorLivingStock,
+    readTime: "6 min",
+    metaTitle: "Are Gutter Guards Worth It in Western NC? | Highlander",
+    metaDescription: "Gutter guards in Western NC — an honest look at where they earn their cost, where they don't, and what to install if you go this route.",
+    content: `Gutter guards are one of the more marketed home upgrades. Here's an honest read on where they actually pay off for Western NC mountain homes and where they don't.
+
+## Where Guards Pay Off
+**Wooded lots** with steady leaf and needle drop. **Two-story or steep-roof homes** where cleaning is difficult or unsafe. **Second homes** where seasonal absence means missed cleanings.
+
+## Where They Don't
+**Open lots** with minimal tree cover — the cleaning burden was already low. **Homes where budget is better spent elsewhere** — proper gutter sizing beats guards on undersized gutters.
+
+## Types Worth Considering
+**Micro-mesh guards** — best debris rejection, needs periodic surface cleaning.
+**Reverse-curve** — sheds most debris, can struggle in heavy downpours.
+**Foam / brush inserts** — cheapest, shortest life, we don't typically recommend.
+
+## What Guards Don't Eliminate
+Occasional cleaning still helps — no guard is fully maintenance-free. Setting expectations honestly matters.
+
+## Coordinating With Gutter Work
+If you're already planning [seamless gutter replacement](/roofing/gutters), adding guards during the same install is much cheaper than a retrofit.
+
+## Next Steps
+Learn about [our gutter services](/roofing/gutters), [our roofing division](/roofing), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [seamless gutters in Highlands, NC](/blog/seamless-gutters-highlands-nc).`,
+    faqs: [
+      { question: "Do gutter guards void my gutter warranty?", answer: "Not when installed as part of the same scope by the same contractor. Third-party retrofits sometimes do — check with your original installer first." },
+    ],
+    relatedServices: [
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "how-gutters-protect-home-wnc",
+    title: "How Gutters Help Protect Roofs, Siding, Foundations, and Outdoor Living Areas",
+    excerpt: "Gutters do more than move rainwater — here's how a well-designed WNC system protects the whole home, from roof edge to foundation.",
+    category: "Maintenance",
+    date: "2026-07-09",
+    image: outdoorLivingStock,
+    readTime: "7 min",
+    metaTitle: "How Gutters Protect Your Home in WNC | Highlander",
+    metaDescription: "How gutters protect roofs, siding, foundations, and outdoor living areas on Western NC mountain homes.",
+    content: `Gutters get treated as a finish detail. On a WNC mountain home moving 70+ inches of rain a year, they're actually a whole-home protection system.
+
+## Protecting the Roof Edge
+Gutters that overflow or pull away from fascia let water track behind the edge. Over a few seasons that means rotted fascia, wet decking, and eventually a roof-edge repair.
+
+## Protecting Siding
+Overflow splashes and stains siding. Water dripping in the wrong place accelerates paint failure and, on wood, rot.
+
+## Protecting the Foundation
+Concentrated water at the drip line saturates soil against the foundation. Over years, that means settlement, cracked foundations, and basement moisture.
+
+## Protecting Outdoor Living Areas
+Decks, porches, and patios below a roof edge get hammered by uncontrolled runoff. Proper gutter design puts that water where you want it — not on your outdoor space.
+
+## What a Whole-Home System Looks Like
+Seamless aluminum, correct sizing, adequate downspouts, controlled discharge, guards where warranted, kickout flashings at wall junctions. See our [gutter services](/roofing/gutters) or [outdoor living work](/construction/outdoor-living).
+
+## Next Steps
+Learn more about [our roofing division](/roofing), [request an inspection](/request-inspection), or explore [roofing in Franklin, NC](/service-areas/franklin-nc). Related: [gutter installation in Franklin, NC](/blog/gutter-installation-franklin-nc).`,
+    faqs: [
+      { question: "Can gutter design impact insurance?", answer: "Indirectly, yes — foundation and roof-edge damage from failed gutters is a common denied claim source." },
+    ],
+    relatedServices: [
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+  {
+    slug: "skylight-installation-western-nc",
+    title: "Skylight Installation in Western NC: What Homeowners Should Consider",
+    excerpt: "Planning a skylight install on a Western NC mountain home — placement, product choice, and the details that keep them leak-free long-term.",
+    category: "Materials",
+    date: "2026-07-10",
+    image: skylightStock,
+    readTime: "7 min",
+    metaTitle: "Skylight Installation in Western NC | Highlander",
+    metaDescription: "Skylight installation in Western NC — how to plan placement, product, and detailing for a leak-free mountain-home install.",
+    content: `Skylights are one of the best ways to bring natural light and airflow into a mountain home. They're also one of the most-blamed roof details when things leak — usually because of install shortcuts, not the skylight itself.
+
+## Placement Considerations
+North-facing skylights give even, diffused light with less heat. South-facing bring warmth and stronger light. Consider tree cover, prevailing wind, and interior space.
+
+## Product Choice
+**Velux** is the dominant residential product line and what we install most often — well-supported, well-flashed, long track record. Fixed for pure daylighting; venting for airflow; solar-powered venting for spaces without wiring.
+
+## The Flashing Detail
+This is where skylight installs succeed or fail. Manufacturer-spec flashing kits, ice-and-water shield around the frame, proper step flashing on the up-slope side. Sealant is a backup, not the primary defense.
+
+## Coordinating With Roof Work
+Best time to install or replace a skylight is during [a roof replacement](/roofing/roof-replacement) — flashing and underlayment integrate cleanly. Retrofit installs are common too, done properly.
+
+## Common Mistakes We Fix
+Cutting corners on flashing. Reusing old flashing on a new skylight. Sealing over problems instead of correcting them.
+
+## Ready to Plan?
+Learn more about [our roofing services](/roofing), [roof replacement](/roofing/roof-replacement), [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [Velux skylights for mountain homes](/blog/velux-skylights-mountain-homes).`,
+    faqs: [
+      { question: "How long do modern skylights last?", answer: "Quality units with proper install commonly run 20+ years before the seals or flashings need attention." },
+    ],
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "velux-skylights-mountain-homes",
+    title: "Velux Skylights for Mountain Homes: Light, Ventilation, and Planning",
+    excerpt: "Why Velux is the dominant skylight choice for Western NC mountain homes — light quality, ventilation options, and planning considerations.",
+    category: "Materials",
+    date: "2026-07-10",
+    image: skylightStock,
+    readTime: "6 min",
+    metaTitle: "Velux Skylights for WNC Mountain Homes | Highlander",
+    metaDescription: "Velux skylights for Western NC mountain homes — light, ventilation, and planning for a well-integrated install.",
+    content: `Velux is the skylight brand we install most often on WNC mountain homes. Here's why, and what to think through when planning yours.
+
+## Product Lines
+**Fixed skylights** for pure daylighting.
+**Manual venting** for accessible openings.
+**Solar-powered venting** with rain sensors — a mountain-home favorite for high ceilings and hard-to-reach spaces.
+**Sun tunnels** for interior rooms where a full skylight isn't practical.
+
+## Why Velux Specifically
+Comprehensive flashing kits designed for each install condition. Strong warranty support. Wide dealer and installer network. Long track record.
+
+## Ventilation as a Real Benefit
+Vented skylights create passive stack effect — hot air escapes at the peak while cooler air draws in below. On a mountain home with big volume spaces, this can meaningfully improve summer comfort.
+
+## Planning Considerations
+Roof pitch, framing layout, interior ceiling condition, and tree cover all shape placement. We survey during inspection and coordinate with any interior finish work needed.
+
+## Working With Highlander
+We install Velux products per manufacturer spec, with the flashing kit designed for your roof type. See more about [our roofing services](/roofing), [roof replacement](/roofing/roof-replacement) coordination, [request an inspection](/request-inspection), or explore [roofing in Highlands, NC](/service-areas/highlands-nc). Related: [skylight leak diagnosis guide](/blog/skylight-leaks-roof-or-skylight-wnc).`,
+    faqs: [
+      { question: "Can you retrofit a Velux into an existing shingle roof?", answer: "Yes — retrofit installs are common and done well with the right flashing kit and detail work." },
+    ],
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Design", path: "/construction/design" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "skylight-replacement-wnc",
+    title: "Skylight Replacement: When Repairs Are Not Enough",
+    excerpt: "How to tell when a WNC skylight is past repair — and what a proper replacement should include to prevent future leaks.",
+    category: "Materials",
+    date: "2026-07-10",
+    image: skylightStock,
+    readTime: "6 min",
+    metaTitle: "Skylight Replacement in Western NC | Highlander",
+    metaDescription: "Skylight replacement in Western NC — when repairs are not enough and what a proper replacement install involves.",
+    content: `Not every skylight leak is the skylight's fault, and not every failing skylight needs replacement. Here's how to tell the difference.
+
+## Signs of Actual Skylight Failure
+Fogging between panes. Cracked or hazed exterior dome. Broken seals letting condensation form inside. Visible frame damage. Age past 20–25 years for older units.
+
+## Signs of Flashing Failure (Not the Skylight)
+Leaks that appear along one side of the frame. Water tracking down the wall below. Sealant that's separated at the flashing edges. These are repair situations, not replacement.
+
+## Why Old Skylights Fail
+Seals degrade over time from UV and temperature cycling. Older acrylic domes yellow, haze, and crack. Frames corrode where drainage was inadequate.
+
+## What a Proper Replacement Includes
+New unit sized to the existing opening (or the opening resized if you're upgrading). Manufacturer flashing kit. Ice-and-water shield around the frame. New shingle or panel integration. No reuse of old flashing.
+
+## Coordinating With Other Roof Work
+If your roof is also aging, doing both together is efficient and gets you a coordinated warranty. See [roof replacement](/roofing/roof-replacement).
+
+## Ready to Talk About Yours?
+Learn more about [our roofing services](/roofing), [roof repair](/roofing/roof-repair) for flashing-only fixes, [request an inspection](/request-inspection), or explore [roofing in Cashiers, NC](/service-areas/cashiers-nc). Related: [skylight installation planning guide](/blog/skylight-installation-western-nc).`,
+    faqs: [
+      { question: "Can you replace a skylight without touching the surrounding shingles?", answer: "Usually not — proper integration requires lifting shingles around the frame. That's why doing it as part of a re-roof is often most efficient." },
+    ],
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
+    ],
+  },
+  {
+    slug: "skylight-leaks-roof-or-skylight-wnc",
+    title: "Skylight Leaks: Roof Problem or Skylight Problem?",
+    excerpt: "How to diagnose a leaky skylight on a Western NC mountain home — and why the skylight is often not the actual problem.",
+    category: "Maintenance",
+    date: "2026-07-10",
+    image: skylightStock,
+    readTime: "6 min",
+    metaTitle: "Skylight Leaks: Roof or Skylight Problem? | Highlander",
+    metaDescription: "Skylight leak diagnosis for Western NC homes — is the unit failing, or is it the flashing and roof detailing around it?",
+    content: `Most "skylight leaks" we're called to look at aren't actually the skylight — they're the flashing, the shingle integration around it, or an unrelated leak that just happens to run down to the skylight opening. Here's how to think through it.
+
+## The Diagnostic Questions
+Where does the water appear? What was the weather like? Is condensation possible? Is there any pattern (wind direction, temperature, freeze/thaw)?
+
+## Signs It's the Skylight
+Fogging between glass panes. Water tracking straight down from the unit itself. Visibly cracked or degraded seals. Older acrylic dome that's yellowed or hazed.
+
+## Signs It's the Flashing
+Water along one side of the frame. Leaks tied to wind direction. Sealant separated at the flashing edges. Water appearing on the wall or ceiling adjacent to the skylight, not directly under it.
+
+## Signs It's Something Else Entirely
+Water hitting the skylight frame after tracking from a higher point — a chimney flashing, a valley, or a compromised shingle field. Attic inspection is critical here.
+
+## The Fix Follows the Diagnosis
+Repair the flashing. Replace the unit. Correct the unrelated leak. We won't recommend replacement when repair solves it, and we won't seal over a symptom.
+
+## Next Steps
+Explore [roof repair](/roofing/roof-repair), [our roofing services](/roofing), [request an inspection](/request-inspection), or read about our work in [Franklin, NC](/service-areas/franklin-nc). Related: [Velux skylights for mountain homes](/blog/velux-skylights-mountain-homes).`,
+    faqs: [
+      { question: "Is condensation on a skylight always a problem?", answer: "Not necessarily — some interior condensation in cold weather is normal on any glazed surface. Persistent moisture between the panes is a seal failure." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+  {
+    slug: "fall-roof-gutter-maintenance-before-winter-mountains",
+    title: "Fall Roof and Gutter Maintenance Tips Before Winter in the Mountains",
+    excerpt: "The fall maintenance checklist that keeps WNC mountain roofs and gutters ready for winter freeze/thaw, snow, and ice.",
+    category: "Maintenance",
+    date: "2026-07-10",
+    image: shingleRoofsStock,
+    readTime: "7 min",
+    metaTitle: "Fall Roof & Gutter Maintenance Before Winter | Highlander",
+    metaDescription: "Fall roof and gutter maintenance for WNC mountain homes — the checklist that prevents winter freeze/thaw problems and ice damage.",
+    content: `Winter in the WNC mountains punishes anything the fall left neglected. Here's the checklist that keeps roofs and gutters ready for freeze/thaw, snow load, and ice-dam conditions.
+
+## Clean the Gutters — Thoroughly
+All debris out. Downspouts flushed. Discharge points checked for clogs. Frozen debris blocks gutters and causes overflow that becomes ice.
+
+## Check the Roof Field
+Lifted shingles from summer storms. Displaced ridge caps. Missing granules. Anything visible from the ground gets a closer look before winter.
+
+## Inspect Flashings and Sealants
+Chimneys, skylights, wall junctions, pipe boots. Sealants that failed in summer heat crack open under freeze/thaw.
+
+## Attic Check
+Ventilation clear. Insulation dry. Any daylight around penetrations sealed.
+
+## Trim Overhanging Branches
+Dead limbs are winter roof damage waiting to happen. Prune before ice loads them.
+
+## Schedule a Professional Look
+If the last professional inspection was more than a year ago, book one now. [Request an inspection](/request-inspection). See [our gutter services](/roofing/gutters), [roof repair](/roofing/roof-repair), or explore [roofing in Sylva, NC](/service-areas/sylva-nc). Related: [spring maintenance checklist](/blog/spring-roof-maintenance-western-nc).`,
+    faqs: [
+      { question: "When's the latest I can schedule a fall roof check?", answer: "Ideally by late October before the first real cold. Later works but weather windows shrink." },
+    ],
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Sylva, NC", path: "/service-areas/sylva-nc" },
+    ],
+  },
+];
+
+blogPosts.push(...batchPosts);
+
 export const getBlogBySlug = (slug: string) => blogPosts.find(b => b.slug === slug);
 
 export const getBlogsByCategory = (category: string) =>
