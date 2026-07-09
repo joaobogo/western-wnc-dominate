@@ -340,6 +340,7 @@ const TownPage = () => {
             { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning" },
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
             { label: "Request an Inspection", href: "/request-inspection", description: "Start your project with a written scope" },
+            { label: "Contact Highlander", href: "/contact", description: "Reach a Western NC project advisor" },
           ]}
         />
       </main>
