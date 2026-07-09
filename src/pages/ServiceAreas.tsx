@@ -9,8 +9,10 @@ import TartanBackground from "@/components/TartanBackground";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { MountainContours } from "@/components/motion/BackgroundTexture";
 import { towns } from "@/data/towns";
-const SERVICE_AREAS_HERO = "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&q=80&w=1920";
-const SERVICE_AREAS_HERO_FALLBACK = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920";
+import serviceAreasHeroAsset from "@/assets/service-areas-hero-smokies.jpg.asset.json";
+import serviceAreasHeroFallbackAsset from "@/assets/service-areas-hero.jpg.asset.json";
+const SERVICE_AREAS_HERO = serviceAreasHeroAsset.url;
+const SERVICE_AREAS_HERO_FALLBACK = serviceAreasHeroFallbackAsset.url;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
