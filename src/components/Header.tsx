@@ -633,6 +633,65 @@ const Header = () => {
                 </motion.div>
 
                 {/* ─── Secondary links ─── */}
+                {/* Service Areas expandable */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.18, duration: 0.3, ease: HIGHLAND_EASE }}
+                >
+                  <button
+                    onClick={() => setMobileExpanded(mobileExpanded === "ServiceAreas" ? null : "ServiceAreas")}
+                    className={`w-full py-2.5 px-2.5 rounded-sm transition-all duration-200 flex items-center justify-between min-h-[48px] ${
+                      isActive("/service-areas")
+                        ? "text-heritage-charcoal bg-black/5"
+                        : "text-heritage-charcoal/90 hover:bg-black/5"
+                    }`}
+                  >
+                    <span className="text-[15px] font-bold font-body">Service Areas</span>
+                    <motion.div
+                      animate={{ rotate: mobileExpanded === "ServiceAreas" ? 180 : 0 }}
+                      transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
+                    >
+                      <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {mobileExpanded === "ServiceAreas" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
+                        className="overflow-hidden"
+                      >
+                        <div className="ml-3.5 pl-3 pb-1.5 border-l-2 border-[hsl(var(--highland-gold)/0.15)] grid grid-cols-2 gap-0">
+                          {townLinks.map((item) => (
+                            <Link
+                              key={item.href}
+                              to={item.href}
+                              onClick={() => setMobileOpen(false)}
+                              className={`py-2 px-2.5 rounded-sm transition-all block min-h-[40px] text-[14px] font-body ${
+                                isActive(item.href)
+                                  ? "font-semibold text-heritage-charcoal bg-black/5"
+                                  : "text-heritage-charcoal/70 hover:bg-black/5"
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                          <Link
+                            to="/service-areas"
+                            onClick={() => setMobileOpen(false)}
+                            className="col-span-2 py-2 px-2.5 text-[13px] font-bold uppercase tracking-[0.08em] rounded-sm text-primary flex items-center gap-1.5 font-body"
+                          >
+                            View All Service Areas <ArrowRight className="w-3 h-3" />
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
                 {secondaryLinks.map((link, i) => (
                   <motion.div
                     key={link.label}
