@@ -2669,7 +2669,7 @@ Franklin's mix of elevations and lot types means both materials work. We often r
 Elevation, exposure, and long-hold ownership patterns often favor metal. See more in our [Highlands metal roofing guide](/blog/metal-roofing-highlands-nc-benefits).
 
 ## Cashiers: Depends on the Home
-Plateau winds and long-hold ownership favor metal on many homes. Some architectural styles read better in shingle — we help match material to aesthetic.
+Plateau winds and long-hold ownership favor metal on many homes. Some home styles read better in shingle — we help match material to aesthetic.
 
 ## Common Concerns Debunked
 "Metal is noisy" — with modern underlayment, no.
