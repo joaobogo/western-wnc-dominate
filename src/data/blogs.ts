@@ -3083,6 +3083,694 @@ If the last professional inspection was more than a year ago, book one now. [Req
 
 blogPosts.push(...batchPosts);
 
+// ── Batch 4 + Batch 5 ────────────────────────────────────────────────────────
+const batch4And5Posts: BlogPost[] = [
+  // ── Batch 4: Construction, Design, Outdoor Living ─────────────────────────
+  {
+    slug: "construction-services-franklin-nc",
+    title: "Construction Services in Franklin, NC: What to Know Before Starting a Project",
+    excerpt: "A practical guide to planning a construction project in Franklin, NC — from first idea to Design & Consultation Agreement.",
+    category: "Construction",
+    date: "2026-07-15",
+    image: planningDeskStock,
+    readTime: "7 min",
+    town: "Franklin",
+    metaTitle: "Construction Services in Franklin, NC | Highlander",
+    metaDescription: "Planning an addition, porch, or remodel in Franklin, NC? Here's how Highlander's design team and construction division approach mountain projects.",
+    content: `Franklin homeowners planning an addition, porch, or larger remodel often start with a sketch, a Pinterest board, or a vague sense that "we need more space." Highlander's construction division works with Macon County homeowners at exactly that stage — before drawings exist — to help shape a workable project.
+
+## Start With Scope, Not Materials
+Cabinets, floors, and finishes come later. The first useful conversation is about scope: how the space will be used, the footprint, and how it connects to the existing home. Our design team walks that with you on site.
+
+## Franklin-Specific Site Factors
+Sloped lots off 441, mature hardwood cover near the Little Tennessee, and older homes with additions layered over decades all shape what's possible. A site walk usually surfaces constraints you couldn't see from a floor plan.
+
+## Design Services Come Before Construction
+If you don't have plans yet, that's normal. Our in-house design services produce the drawings a build crew can price and permit against. It starts with a Design & Consultation Agreement so scope, timeline, and design fees are clear before any drafting begins.
+
+## What Highlander Handles
+Home additions, porches, decks, outdoor living spaces, and full remodels — coordinated by a single project team so the design intent survives into construction.
+
+## Ready to Talk Through a Project?
+[Contact Highlander](/contact) to start the conversation, or explore our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living) pages. Related: [roofing services in Franklin, NC](/service-areas/franklin-nc).`,
+    faqs: [
+      { question: "Do I need plans before contacting Highlander?", answer: "No. Most Franklin projects start with a conversation and a site visit. If drawings are needed, our design team produces them under a Design & Consultation Agreement." },
+      { question: "Does Highlander handle small additions?", answer: "Yes — porches, single-room additions, and outdoor living projects are a regular part of our work in Franklin and Macon County." },
+    ],
+    relatedServices: [
+      { label: "Construction Division", path: "/construction" },
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "construction-services-highlands-nc-mountain-homes",
+    title: "Construction Services in Highlands, NC for Mountain Homes",
+    excerpt: "How Highlander approaches additions, porches, and construction projects on Highlands, NC mountain homes at elevation.",
+    category: "Construction",
+    date: "2026-07-15",
+    image: masterSuiteStock,
+    readTime: "7 min",
+    town: "Highlands",
+    metaTitle: "Construction Services in Highlands, NC | Highlander",
+    metaDescription: "Additions, porches, and construction projects for Highlands, NC mountain homes. In-house design team, elevation-savvy planning, single project team.",
+    content: `Highlands homes are rarely simple. Steep lots, complex rooflines, and a mix of original structure and past additions mean construction work here needs a team that understands mountain sites — not just floor plans.
+
+## Elevation Changes What's Possible
+At 4,100+ feet, structural loads, drainage, and access all matter. A porch that's routine at lower elevation may need different footings and connections here.
+
+## Working With Existing Structure
+Most Highlands additions tie into homes that have already been added to once or twice. Our design team documents what's actually there before drawing what's next.
+
+## Design First, Then Build
+If you don't have plans yet, our in-house design services produce drawings under a Design & Consultation Agreement. That gives you a build-ready plan a crew can price and permit against.
+
+## Coordinated Project Team
+Roofing, framing, exterior details, and interior work stay under one project team so nothing gets lost between trades.
+
+## Start the Conversation
+[Contact Highlander](/contact), or read more about our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living). Related: [roofing in Highlands, NC](/service-areas/highlands-nc).`,
+    faqs: [
+      { question: "Do you build on very steep Highlands lots?", answer: "Yes, with the right structural design. That's a conversation we have on a site walk with our design team." },
+    ],
+    relatedServices: [
+      { label: "Construction Division", path: "/construction" },
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "construction-services-cashiers-nc-additions-porches",
+    title: "Construction Services in Cashiers, NC: Planning Additions, Porches, and Outdoor Spaces",
+    excerpt: "Planning an addition, porch, or outdoor space in Cashiers, NC? Here's how Highlander scopes and designs mountain construction projects.",
+    category: "Construction",
+    date: "2026-07-15",
+    image: outdoorLivingStock,
+    readTime: "7 min",
+    town: "Cashiers",
+    metaTitle: "Construction Services in Cashiers, NC | Highlander",
+    metaDescription: "Cashiers, NC construction: additions, porches, and outdoor living planning with in-house design services and a single project team.",
+    content: `Cashiers homeowners often want the same things: more usable space, a real outdoor room, and construction that respects the mountain setting. Highlander plans and builds those projects with an in-house design team so the drawings and the build come from the same place.
+
+## Common Cashiers Projects
+Screened porches, expanded decks, primary-suite additions, and reworked outdoor living spaces that connect kitchen and view.
+
+## Site and View Considerations
+Where the addition sits changes the whole house. Our design team walks the lot with you to understand sightlines, sun, and how the new space should feel from inside and out.
+
+## Design & Consultation Agreement
+If plans don't exist yet, we work under a Design & Consultation Agreement so scope, drawings, and fees are clear before any construction pricing.
+
+## One Project Team, Roof to Deck
+Because Highlander runs roofing and construction under one roof, transitions between a new roof line, existing structure, and exterior details are handled without finger-pointing between trades.
+
+## Start Planning
+[Contact Highlander](/contact), or explore our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living). Related: [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
+    relatedServices: [
+      { label: "Construction Division", path: "/construction" },
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "home-addition-without-plans-western-nc",
+    title: "What If I Want a Home Addition but Do Not Have Plans Yet?",
+    excerpt: "Most Western NC homeowners start an addition without plans. Here's how Highlander's design team turns an idea into build-ready drawings.",
+    category: "Design",
+    date: "2026-07-15",
+    image: planningDeskStock,
+    readTime: "6 min",
+    metaTitle: "Home Addition Without Plans? Here's How to Start | Highlander",
+    metaDescription: "You don't need drawings to start. Highlander's in-house design team scopes, plans, and produces build-ready drawings for Western NC home additions.",
+    content: `Most homeowners we talk to about additions don't have plans yet. That's normal — and it's not a barrier to starting a conversation. Highlander's in-house design team exists exactly for this stage.
+
+## Step 1: Site Walk and Scope Conversation
+A designer visits the home, listens to what you need, and looks at what the site actually allows. No drawings yet — just a real read of the project.
+
+## Step 2: Design & Consultation Agreement
+If you decide to move forward with design, we work under a Design & Consultation Agreement. It defines what the design team will produce, timeline, and design fees before any drafting begins.
+
+## Step 3: Drawings a Build Crew Can Use
+The design team produces the plans and drawings needed to price, permit, and build. These are build-ready, not concept sketches.
+
+## Step 4: Construction Pricing
+Once drawings exist, our construction division prices the work against a real scope — not a guess.
+
+## Start the Conversation
+[Contact Highlander](/contact) to talk with our design team. Explore [design services](/construction/design), [construction](/construction), and [outdoor living](/construction/outdoor-living).`,
+    faqs: [
+      { question: "Can Highlander price an addition without plans?", answer: "Not accurately. We can talk range on a site walk, but real pricing needs drawings — which is exactly what the design phase produces." },
+      { question: "Do I have to build with Highlander if you draw the plans?", answer: "No. The Design & Consultation Agreement covers the design work regardless of who builds it, though most clients continue with our construction division." },
+    ],
+    relatedServices: [
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Construction Division", path: "/construction" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "design-services-vs-build-ready-plans",
+    title: "Design Services vs. Build-Ready Plans: What Highlander Needs to Start",
+    excerpt: "What's the difference between design services and build-ready plans — and what Highlander needs to price and build your Western NC project.",
+    category: "Design",
+    date: "2026-07-15",
+    image: planningDeskStock,
+    readTime: "6 min",
+    metaTitle: "Design Services vs. Build-Ready Plans | Highlander",
+    metaDescription: "Understand the difference between design services and build-ready plans, and what Highlander needs to price and build your project.",
+    content: `Homeowners often ask if they need "plans" before contacting us. The honest answer: it depends what you have.
+
+## What "Build-Ready Plans" Actually Means
+Build-ready plans are drawings a construction crew can price against and a permit office can review. They include dimensions, structural notes, and enough detail to define the scope.
+
+## What Concept Sketches Are
+Napkin sketches, Pinterest boards, and rough floor plans are useful — but they're not build-ready. They're the starting point our design team works from.
+
+## Where Highlander's Design Services Fit
+Our in-house design services take you from concept to build-ready. That's the gap most homeowners need bridged. Work happens under a Design & Consultation Agreement so scope and fees are clear upfront.
+
+## If You Already Have Plans
+Bring them. Our construction team reviews the drawings, flags anything that will need clarification, and prices against the documented scope.
+
+## Start the Conversation
+[Contact Highlander](/contact), or explore [design services](/construction/design) and [construction](/construction).`,
+    relatedServices: [
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Construction Division", path: "/construction" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "design-consultation-agreement-construction-project",
+    title: "How a Design & Consultation Agreement Helps Plan a Construction Project",
+    excerpt: "The Design & Consultation Agreement defines scope, drawings, and design fees before construction pricing — here's how it works.",
+    category: "Design",
+    date: "2026-07-15",
+    image: planningDeskStock,
+    readTime: "6 min",
+    metaTitle: "Design & Consultation Agreement Explained | Highlander",
+    metaDescription: "How Highlander's Design & Consultation Agreement helps plan a Western NC construction project — scope, drawings, and fees defined upfront.",
+    content: `Every Highlander construction project that needs drawings starts the same way: with a Design & Consultation Agreement. It's a straightforward document that defines what our design team will produce before any drafting begins.
+
+## Why an Agreement First
+Design work has real cost. Rather than doing "free" concepts that homeowners then take elsewhere — or leaving fees vague — we define them upfront in writing.
+
+## What the Agreement Covers
+- Scope of design work
+- Deliverables (site plan, floor plans, elevations, sections as needed)
+- Timeline
+- Design fees
+
+## What It Doesn't Cover
+Construction pricing. That comes after drawings exist, priced against a real scope by our construction division.
+
+## Who Runs the Design Work
+Our in-house design team — led by our Design Lead — produces the drawings. You work with one designer from first sketch through build-ready plans.
+
+## Start the Conversation
+[Contact Highlander](/contact), or explore [design services](/construction/design) and [construction](/construction).`,
+    faqs: [
+      { question: "Is a Design & Consultation Agreement required?", answer: "For any project that needs new drawings, yes. It's how we scope the design phase in writing before work begins." },
+    ],
+    relatedServices: [
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Construction Division", path: "/construction" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "outdoor-living-highlands-nc-porches-patios",
+    title: "Outdoor Living in Highlands, NC: Porches, Patios, and Mountain Views",
+    excerpt: "Planning porches, patios, and outdoor living spaces on Highlands, NC mountain homes — sightlines, weather, and structure.",
+    category: "Outdoor Living",
+    date: "2026-07-15",
+    image: outdoorLivingStock,
+    readTime: "7 min",
+    town: "Highlands",
+    metaTitle: "Outdoor Living in Highlands, NC | Highlander",
+    metaDescription: "Porches, patios, and outdoor living spaces for Highlands, NC mountain homes. Planned around view, weather exposure, and elevation.",
+    content: `In Highlands, outdoor living is the reason people build here. Getting the porch, patio, or covered outdoor space right shapes how the whole home feels.
+
+## Start With the View
+Where you sit matters. Our design team walks the site to understand sightlines before drawing anything.
+
+## Weather Exposure at Elevation
+Wind, rain, and shoulder-season cold change what "outdoor" means at 4,100+ feet. Covered porches with proper structure extend the usable season significantly.
+
+## Structure and Roof Integration
+Adding a porch usually means new roof lines tying into existing. Because Highlander runs roofing and construction together, those transitions are planned as one system.
+
+## Materials That Hold Up
+Decking, railing, ceiling material, and finishes all get evaluated against mountain weather — not lowland assumptions.
+
+## Start Planning
+[Contact Highlander](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design). Related: [roofing in Highlands, NC](/service-areas/highlands-nc).`,
+    relatedServices: [
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Construction Division", path: "/construction" },
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "outdoor-living-cashiers-nc-mountain-homes",
+    title: "Outdoor Living in Cashiers, NC: Planning Spaces for Mountain Homes",
+    excerpt: "How to plan porches, patios, and outdoor living spaces for Cashiers, NC mountain homes — with view, weather, and daily use in mind.",
+    category: "Outdoor Living",
+    date: "2026-07-15",
+    image: outdoorLivingStock,
+    readTime: "7 min",
+    town: "Cashiers",
+    metaTitle: "Outdoor Living in Cashiers, NC | Highlander",
+    metaDescription: "Planning porches, patios, and outdoor living for Cashiers, NC mountain homes. Highlander's design team plans around view, weather, and use.",
+    content: `Outdoor living in Cashiers is less about square footage and more about how the space is used across the seasons. A well-planned porch or patio changes how the home lives.
+
+## Daily Use vs. Entertaining
+Morning coffee, evening dinners, hosting weekends — each pulls the design in different directions. Our design team scopes that early.
+
+## Cover, Screen, or Open
+Fully open patios are limited by pollen, rain, and bugs. Screened and covered porches earn more usable months in the WNC climate.
+
+## Tying Into the House
+How the new space connects to the kitchen, living, or primary suite matters more than the space itself. We plan those connections up front.
+
+## Start Planning
+[Contact Highlander](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design). Related: [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
+    relatedServices: [
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Construction Division", path: "/construction" },
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "covered-porches-patios-western-nc-considerations",
+    title: "Covered Porches and Patios in Western NC: What to Consider",
+    excerpt: "Covered porches and patios extend the usable season for Western NC homes — here's what to think through before building.",
+    category: "Outdoor Living",
+    date: "2026-07-15",
+    image: outdoorLivingStock,
+    readTime: "6 min",
+    metaTitle: "Covered Porches & Patios in Western NC | Highlander",
+    metaDescription: "What to consider when planning a covered porch or patio for a Western NC mountain home — cover, structure, and roof integration.",
+    content: `Cover changes everything about how an outdoor space is used in WNC. Here's what to think through before committing to a design.
+
+## Roof Cover vs. Pergola
+Full roof cover keeps rain and sun off — the difference between using the space in a shower and not. Pergolas look nice but limit real use.
+
+## Structural Design
+A covered porch is a structural project. Posts, beams, connections, and footings all need to be right for mountain wind and snow loads.
+
+## Ceiling and Lighting
+T&G ceilings, fans, and layered lighting turn a covered porch into a real room. Plan those early.
+
+## Tying Into the Existing Roof
+Most covered porches join the existing roof. Getting that transition watertight is where roofing and construction have to work together.
+
+## Start the Conversation
+[Contact Highlander](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design).`,
+    relatedServices: [
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Construction Division", path: "/construction" },
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+  {
+    slug: "decks-porches-outdoor-spaces-mountain-weather",
+    title: "Decks, Porches, and Outdoor Living Spaces for Mountain Weather",
+    excerpt: "How to plan decks, porches, and outdoor spaces that hold up to Western NC mountain weather — freeze/thaw, rain, and wind.",
+    category: "Outdoor Living",
+    date: "2026-07-15",
+    image: outdoorLivingStock,
+    readTime: "6 min",
+    metaTitle: "Decks & Porches for Mountain Weather | Highlander",
+    metaDescription: "Building decks, porches, and outdoor spaces that hold up to Western NC mountain weather — materials, drainage, and structure.",
+    content: `Mountain weather is the real test for any deck or porch in WNC. Freeze/thaw, sustained rain, and wind on exposed lots shorten the useful life of anything not built for it.
+
+## Material Choice
+Decking, fastener, railing, and post material all get selected against real WNC exposure — not marketing photos.
+
+## Drainage and Detail
+How water leaves the deck matters as much as the deck itself. Slopes, gaps, and flashings at the house connection are where failures start.
+
+## Structural Load
+Snow, ice, and wind loads at elevation change beam and post design. This is engineering, not guesswork.
+
+## Long-Term Maintenance
+Every material has a maintenance profile. We tell you what yours will need before you commit to it.
+
+## Start the Conversation
+[Contact Highlander](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design).`,
+    relatedServices: [
+      { label: "Outdoor Living", path: "/construction/outdoor-living" },
+      { label: "Construction Division", path: "/construction" },
+      { label: "Design Services", path: "/construction/design" },
+      { label: "Contact Highlander", path: "/contact" },
+    ],
+  },
+
+  // ── Batch 5: Local Service Area + Seasonal SEO ────────────────────────────
+  {
+    slug: "roofing-company-franklin-nc-what-to-look-for",
+    title: "Roofing Company in Franklin, NC: What to Look for Before Hiring",
+    excerpt: "What Franklin, NC homeowners should look for when hiring a roofing company — credentials, process, and local knowledge.",
+    category: "Local",
+    date: "2026-07-20",
+    image: shingleRoofsStock,
+    readTime: "7 min",
+    town: "Franklin",
+    metaTitle: "Roofing Company in Franklin, NC: What to Look For | Highlander",
+    metaDescription: "Choosing a roofing company in Franklin, NC? Here's what to look for — credentials, written scope, and mountain-climate experience.",
+    content: `Not every roofing company operating in Franklin actually understands mountain roofing. Here's what to look for before you sign anything.
+
+## Real Local Experience
+Franklin roofs deal with wind on ridge lots, heavy tree cover, and driven rain. A company that works these conditions weekly will spot things a lowland crew won't.
+
+## Manufacturer Credentials
+Highlander is a CertainTeed ShingleMaster Credentialed Contractor — one indicator that install work meets manufacturer standards.
+
+## Written Scope, Not a Verbal Estimate
+A real roofer gives you photos, findings, and a written scope. If the estimate arrives on the back of a business card, keep looking.
+
+## No Pressure to Sign Same Day
+Any legitimate contractor gives you time to compare and understand the proposal.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roofing](/roofing), [roof repair](/roofing/roof-repair), [roof replacement](/roofing/roof-replacement), and [roofing in Franklin, NC](/service-areas/franklin-nc).`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Franklin, NC", path: "/service-areas/franklin-nc" },
+    ],
+  },
+  {
+    slug: "roofing-company-highlands-nc-local-factors",
+    title: "Roofing Company in Highlands, NC: Local Factors That Matter",
+    excerpt: "What sets a real Highlands, NC roofing company apart — elevation experience, access, and mountain-climate detail.",
+    category: "Local",
+    date: "2026-07-20",
+    image: metalBenefitsStock,
+    readTime: "7 min",
+    town: "Highlands",
+    metaTitle: "Roofing Company in Highlands, NC | Highlander",
+    metaDescription: "Choosing a roofing company in Highlands, NC? Elevation, access, and detailing matter. Here's what to look for before you hire.",
+    content: `Highlands roofing is not the same job as roofing in Asheville or Charlotte. Elevation, access, and detailing all change what "good" looks like.
+
+## Elevation Experience
+At 4,100+ feet, ice, wind, and freeze/thaw are routine. The right underlayment, flashing, and ventilation choices make the difference between a roof that lasts and one that leaks in year three.
+
+## Site Access
+Steep drives and tight lots need equipment and planning. Ask how a contractor handles material staging and cleanup.
+
+## Detailing on Complex Rooflines
+Dormers, valleys, and stone chimneys are common on Highlands homes. Detail work is where installers earn their credentials.
+
+## Local Presence
+A company you can reach after the job is finished matters. Highlander is based in Western NC, not a storm-chasing crew.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roofing](/roofing), [metal roofing](/roofing/metal), [roof replacement](/roofing/roof-replacement), and [roofing in Highlands, NC](/service-areas/highlands-nc).`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "roofing-company-cashiers-nc-choosing-contractor",
+    title: "Roofing Company in Cashiers, NC: Choosing the Right Contractor",
+    excerpt: "How Cashiers, NC homeowners can evaluate roofing contractors — credentials, process, and mountain-climate fit.",
+    category: "Local",
+    date: "2026-07-20",
+    image: shingleRoofsStock,
+    readTime: "7 min",
+    town: "Cashiers",
+    metaTitle: "Roofing Company in Cashiers, NC | Highlander",
+    metaDescription: "Choosing a Cashiers, NC roofing contractor? Here's how to evaluate credentials, process, and local mountain experience.",
+    content: `Cashiers homes see the same mountain weather patterns as Highlands, plus a strong second-home ownership mix. Choosing the right roofing contractor here matters both for full-time residents and out-of-town owners.
+
+## Communication for Out-of-Town Owners
+If you're not on the mountain full time, ask how the contractor documents work — photos before, during, and after — and how they communicate updates.
+
+## Manufacturer Credentials
+Highlander is a CertainTeed ShingleMaster Credentialed Contractor. That matters for warranty-eligible installs.
+
+## Written Scope
+Photos, findings, and a written scope should be standard. Anything less is a risk.
+
+## Local Reputation
+Ask around town. Reputation in a community this size follows a contractor honestly.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roofing](/roofing), [roof repair](/roofing/roof-repair), and [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
+    ],
+  },
+  {
+    slug: "roofing-contractor-sylva-nc-roofing-gutters-repairs",
+    title: "Roofing Contractor in Sylva, NC: Roofing, Gutters, and Repairs",
+    excerpt: "Roofing, gutters, and repair services for Sylva, NC homeowners — what Highlander handles across Jackson County.",
+    category: "Local",
+    date: "2026-07-20",
+    image: roofRepairStock,
+    readTime: "7 min",
+    town: "Sylva",
+    metaTitle: "Roofing Contractor in Sylva, NC | Highlander",
+    metaDescription: "Roofing, gutters, and repair services for Sylva, NC homes. Highlander serves Jackson County with a written scope and mountain-climate experience.",
+    content: `Sylva sits in a mix of valley and ridge terrain that puts a full range of weather stress on roofs. Highlander covers Jackson County with the same process we use across WNC — inspection, photos, written scope.
+
+## Roofing
+Full replacements, tear-offs, and new installs. Materials chosen against real site conditions rather than defaulting to one system.
+
+## Gutters
+Sylva's rainfall makes gutters non-optional. Sizing, downspout count, and discharge all get planned around the actual roof area.
+
+## Repairs
+Targeted repair when the roof is sound but a section has failed. We won't push replacement if repair is honestly the right answer.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roofing](/roofing), [gutters](/roofing/gutters), [roof repair](/roofing/roof-repair), and [roofing in Sylva, NC](/service-areas/sylva-nc).`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roofing in Sylva, NC", path: "/service-areas/sylva-nc" },
+    ],
+  },
+  {
+    slug: "roofing-construction-services-western-north-carolina",
+    title: "Roofing and Construction Services Across Western North Carolina",
+    excerpt: "An overview of Highlander's roofing and construction services across Western North Carolina — one team, roof to remodel.",
+    category: "Local",
+    date: "2026-07-20",
+    image: blueRidgeViewStock,
+    readTime: "7 min",
+    metaTitle: "Roofing & Construction Services in Western NC | Highlander",
+    metaDescription: "Roofing, gutters, additions, and outdoor living across Western North Carolina. One project team from roof to remodel.",
+    content: `Highlander serves Western North Carolina with two coordinated divisions: roofing and construction. Same company, same standards, one project team.
+
+## Roofing
+Repair, replacement, metal, gutters, and skylights across WNC. CertainTeed ShingleMaster Credentialed Contractor.
+
+## Construction and Design
+Additions, porches, decks, and outdoor living with in-house design services and a Design & Consultation Agreement for any project needing drawings.
+
+## Coverage
+Franklin, Highlands, Cashiers, Sylva, and surrounding communities across Macon and Jackson counties.
+
+## Why One Team Matters
+When a new porch needs to tie into an existing roof, or a remodel touches the exterior envelope, having roofing and construction under one company removes the finger-pointing that stalls projects.
+
+## Start the Conversation
+[Contact Highlander](/contact) or [request an inspection](/request-inspection). Explore [roofing](/roofing), [construction](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living).`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Construction Division", path: "/construction" },
+      { label: "Contact Highlander", path: "/contact" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+  },
+  {
+    slug: "roofing-vacation-second-homes-highlands-cashiers",
+    title: "Roofing for Vacation Homes and Second Homes in Highlands and Cashiers",
+    excerpt: "What second-home owners in Highlands and Cashiers should know about roof maintenance, monitoring, and long-distance communication.",
+    category: "Local",
+    date: "2026-07-20",
+    image: homeValueStock,
+    readTime: "7 min",
+    metaTitle: "Roofing for Vacation Homes in Highlands & Cashiers | Highlander",
+    metaDescription: "Second-home owners in Highlands and Cashiers: how to keep the roof sound when you're not on the mountain full time.",
+    content: `If your Highlands or Cashiers home is a second residence, roof problems have a way of compounding between visits. Here's how to stay ahead of them.
+
+## Scheduled Inspections
+A once-a-year inspection catches issues while they're still repairs. We document everything with photos so you can see what we saw.
+
+## Storm Follow-Up
+After named storms or unusual wind events, we'll do a check even when you're not in town.
+
+## Gutter Maintenance
+Heavy tree cover means gutters clog. Twice-a-year cleaning avoids overflow damage to fascia, soffits, and foundations.
+
+## Communication for Out-of-Town Owners
+Photos, findings, and written scope — sent to your email. You approve work before it happens.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roofing](/roofing), [gutters](/roofing/gutters), and [roof repair](/roofing/roof-repair). Related: [Highlands, NC](/service-areas/highlands-nc) and [Cashiers, NC](/service-areas/cashiers-nc).`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing in Highlands, NC", path: "/service-areas/highlands-nc" },
+    ],
+  },
+  {
+    slug: "roofing-mountain-homes-lake-glenville-scaly-mountain",
+    title: "Roofing for Mountain Homes Near Lake Glenville and Scaly Mountain",
+    excerpt: "Roofing considerations for homes near Lake Glenville and Scaly Mountain — elevation, wind, and lake-effect weather.",
+    category: "Local",
+    date: "2026-07-20",
+    image: metalBenefitsStock,
+    readTime: "7 min",
+    metaTitle: "Roofing Near Lake Glenville & Scaly Mountain | Highlander",
+    metaDescription: "Roofing for mountain homes near Lake Glenville and Scaly Mountain — elevation, wind, and weather considerations from a local WNC contractor.",
+    content: `Homes near Lake Glenville and Scaly Mountain sit at elevations and exposures that shape every roofing decision — from underlayment to material choice.
+
+## Wind Exposure
+Ridge and lakefront lots see routine wind loads that lift shingle tabs and stress ridge details. Fastening schedule and starter courses matter.
+
+## Freeze/Thaw at Elevation
+Ice and water shield at eaves and valleys is essential, not optional.
+
+## Metal vs. Shingle
+Both work here. Metal earns its cost on high-exposure sites; shingles remain the value option on more sheltered lots.
+
+## Local Contractor
+Highlander works these communities regularly. We know the roads, the sites, and the weather.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roofing](/roofing), [metal roofing](/roofing/metal), and [roof replacement](/roofing/roof-replacement). Related: [Cashiers, NC](/service-areas/cashiers-nc) and [Highlands, NC](/service-areas/highlands-nc).`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+  },
+  {
+    slug: "storm-readiness-roofs-franklin-highlands-cashiers-sylva",
+    title: "Storm Readiness for Roofs in Franklin, Highlands, Cashiers, and Sylva",
+    excerpt: "Practical storm readiness for roofs across Franklin, Highlands, Cashiers, and Sylva — before and after WNC weather events.",
+    category: "Seasonal",
+    date: "2026-07-20",
+    image: stormCloudsStock,
+    readTime: "7 min",
+    metaTitle: "Storm Readiness for WNC Roofs | Highlander",
+    metaDescription: "Storm readiness for roofs in Franklin, Highlands, Cashiers, and Sylva — what to check before and after named weather events.",
+    content: `Named storms, wind events, and heavy rain cycles are part of life across Franklin, Highlands, Cashiers, and Sylva. A little pre-season prep prevents most avoidable damage.
+
+## Before the Season
+Clean gutters. Check flashings and sealants. Trim overhanging limbs. Book an inspection if the last one was more than a year ago.
+
+## During a Storm
+Nothing to do on the roof itself. Watch for interior signs — ceiling stains, drips near penetrations — and note the location.
+
+## After a Storm
+Walk the perimeter. Look for granules at downspout outlets, displaced ridge caps, or shingles in the yard. If anything looks off, request an inspection before the next system arrives.
+
+## Highlander Response
+We prioritize storm follow-up for existing clients across our service area.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roofing](/roofing), [roof repair](/roofing/roof-repair), and [gutters](/roofing/gutters). Related: [Franklin](/service-areas/franklin-nc), [Highlands](/service-areas/highlands-nc), [Cashiers](/service-areas/cashiers-nc), [Sylva](/service-areas/sylva-nc).`,
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+      { label: "Roofing Division", path: "/roofing" },
+    ],
+  },
+  {
+    slug: "best-time-of-year-replace-roof-western-north-carolina",
+    title: "Best Time of Year to Replace a Roof in Western North Carolina",
+    excerpt: "When to schedule a roof replacement in Western NC — weather windows, lead times, and planning ahead.",
+    category: "Seasonal",
+    date: "2026-07-20",
+    image: shingleRoofsStock,
+    readTime: "6 min",
+    metaTitle: "Best Time to Replace a Roof in Western NC | Highlander",
+    metaDescription: "The best time of year to replace a roof in Western North Carolina — weather windows, scheduling, and planning ahead.",
+    content: `The short answer: late spring through early fall is easiest, but WNC gives us usable weather windows most of the year. Here's how to think about scheduling.
+
+## Spring (April–June)
+Dry stretches, moderate temperatures — ideal conditions. Also the busiest booking window.
+
+## Summer (July–August)
+Afternoon thunderstorms shape the workday but don't stop the season. Crews start early.
+
+## Fall (September–October)
+Historically the most reliable weather stretch in WNC. Excellent for larger projects.
+
+## Winter (November–March)
+Weather-permitting installs happen throughout winter for smaller scopes. Ice and snow limit larger tear-offs.
+
+## Plan Ahead
+If you know a replacement is coming, booking two to three months out gets you the best window.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roof replacement](/roofing/roof-replacement) and [roofing](/roofing).`,
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+  },
+  {
+    slug: "tree-cover-rain-elevation-affect-roofs-wnc",
+    title: "How Tree Cover, Rain, and Elevation Affect Roofs in WNC",
+    excerpt: "The three biggest environmental factors on WNC roofs — tree cover, rainfall, and elevation — and how they shape maintenance.",
+    category: "Seasonal",
+    date: "2026-07-20",
+    image: blueRidgeViewStock,
+    readTime: "7 min",
+    metaTitle: "Tree Cover, Rain & Elevation: WNC Roof Impact | Highlander",
+    metaDescription: "How tree cover, rainfall, and elevation shape roof performance and maintenance in Western North Carolina.",
+    content: `Three environmental factors dominate roof performance across WNC: tree cover, rainfall, and elevation. Understanding each helps you plan realistic maintenance.
+
+## Tree Cover
+Constant debris in valleys and gutters. Shade slows drying and lengthens moisture exposure. Both accelerate wear.
+
+## Rainfall
+WNC is one of the wetter parts of the Southeast. Gutter sizing, flashing quality, and underlayment all matter more here than in drier climates.
+
+## Elevation
+Above 3,000 feet, freeze/thaw becomes routine. Above 4,000 feet, ice at the eaves is normal winter behavior. Ice and water shield stops being optional.
+
+## What This Means for Maintenance
+Twice-a-year gutter cleaning. Annual roof inspection. Prompt repair of small issues before they compound.
+
+## Talk With Highlander
+[Request an inspection](/request-inspection), or explore [roofing](/roofing), [gutters](/roofing/gutters), and [roof repair](/roofing/roof-repair).`,
+    relatedServices: [
+      { label: "Roofing Division", path: "/roofing" },
+      { label: "Gutters", path: "/roofing/gutters" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Request an Inspection", path: "/request-inspection" },
+    ],
+  },
+];
+
+blogPosts.push(...batch4And5Posts);
+
 export const getBlogBySlug = (slug: string) => blogPosts.find(b => b.slug === slug);
 
 export const getBlogsByCategory = (category: string) =>
