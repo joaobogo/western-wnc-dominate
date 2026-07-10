@@ -216,8 +216,13 @@ export const websiteSchema = () => ({
   inLanguage: "en-US",
 });
 
-export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
-  "@context": "https://schema.org", "@type": "BreadcrumbList",
+export const breadcrumbSchema = (
+  items: { name: string; url: string }[],
+  id?: string,
+) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  ...(id ? { "@id": id } : {}),
   itemListElement: items.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.name, item: `${BASE_URL}${item.url}` })),
 });
 
