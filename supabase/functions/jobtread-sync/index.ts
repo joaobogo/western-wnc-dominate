@@ -785,7 +785,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     const jobRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createJob: {
-        $: {
+        $: scrubDescription({
           locationId,
           name: jobNameShort,
           // Description intentionally OMITTED from the payload — Highlander
@@ -799,7 +799,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
             [JT_CF.job.customer_present]: false,
             [JT_CF.job.lead_notes]: noteShort,
           },
-        },
+        }),
         createdJob: { id: {}, name: {} },
       },
     });
