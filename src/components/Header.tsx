@@ -483,6 +483,8 @@ const Header = () => {
                           key={item.href}
                           to={item.href}
                           role="menuitem"
+                          title={`Roofing & Construction in ${item.label}, NC`}
+                          aria-label={`Roofing & Construction in ${item.label}, NC`}
                           onClick={() =>
                             trackEvent("cta_click", {
                               label: `service_area_dropdown:${item.label}`,
@@ -816,6 +818,8 @@ const Header = () => {
                                     <li key={item.href}>
                                       <Link
                                         to={item.href}
+                                        title={`Roofing & Construction in ${item.name}, NC`}
+                                        aria-label={`Roofing & Construction in ${item.name}, NC — ${item.county}`}
                                         onClick={() => {
                                           trackEvent("cta_click", {
                                             label: `service_area_dropdown:${item.name}`,
