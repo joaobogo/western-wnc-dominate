@@ -1,11 +1,11 @@
-import lukeImg from "@/assets/team/luke-smith.png";
-import kristyImg from "@/assets/team/kristy-smith.png";
-import davidImg from "@/assets/team/david-bourque.png";
-import derekImg from "@/assets/team/derek-wallace.png";
-import robertImg from "@/assets/team/robert-harrison.png";
-import kyleImg from "@/assets/team/kyle-poindexter.png";
-import prestonImg from "@/assets/team/preston-lopes.png";
-import alexImg from "@/assets/team/alex-hurst.png";
+import lukeImg from "@/assets/team/luke-smith.jpg";
+import kristyImg from "@/assets/team/kristy-smith.jpg";
+import davidImg from "@/assets/team/david-bourque.jpg";
+import derekImg from "@/assets/team/derek-wallace.jpg";
+import robertImg from "@/assets/team/robert-harrison.jpg";
+import kyleImg from "@/assets/team/kyle-poindexter.jpg";
+import prestonImg from "@/assets/team/preston-lopes.jpg";
+import alexImg from "@/assets/team/alex-hurst.jpg";
 
 export type TeamMember = {
   slug: string;
