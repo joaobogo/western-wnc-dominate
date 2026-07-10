@@ -673,7 +673,11 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
             type: "customer",
             customFieldValues: {
               [JT_CF.account.service_area]: mapServiceArea(town),
-              [JT_CF.account.lead_source]: "Website",
+              // Chatbot leads get "Website Chatbot" so Highlander can filter
+              // them from regular form leads in JobTread.
+              [JT_CF.account.lead_source]: /chatbot/i.test(payload.lead_name)
+                ? "Website Chatbot"
+                : "Website",
             },
           },
           createdAccount: { id: {}, name: {} },
