@@ -305,21 +305,35 @@ function buildHumanNote(row: LeadRow): string {
   kv("Email", row.email);
   kv("Preferred Contact Method", row.preferred_contact_method);
 
+  // Metadata fields that may carry extra property/project details submitted
+  // by newer form variants without dedicated columns.
+  const communityOrSubdivision =
+    row.community_or_subdivision ?? meta.community_or_subdivision ?? meta.community ?? meta.subdivision ?? null;
+  const gateCode = row.gate_code ?? meta.gate_code ?? meta.entry_code ?? null;
+  const roofType = row.roof_type ?? meta.roof_type ?? null;
+  const materialColor = row.material_color ?? meta.material_color ?? meta.color ?? null;
+  const foundationType = row.foundation_type ?? meta.foundation_type ?? null;
+
   section("Property");
   kv("Town", row.property_town);
-  if (has(row.property_address)) kv("Address", row.property_address);
-  if (has(row.property_type)) kv("Property Type", row.property_type);
+  kv("Address", row.property_address);
+  kv("Community/Subdivision", communityOrSubdivision);
+  kv("Gate Code", gateCode);
+  kv("Property Type", row.property_type);
 
   section("Project");
   kv("Service Category", row.service_category);
   kv("Project Type", row.project_type);
   kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
-  if (isConstructionCategory && planStatusLabel) {
-    lines.push(`Plan Status: ${planStatusLabel}`);
-  }
   if (isRoofingCategory) {
+    kv("Roof Type", roofType);
     kv("Roofing Issue", row.roofing_issue_type ?? row.project_type);
     lines.push(`Water Actively Entering: ${waterEntering ? "Yes" : "No"}`);
+    kv("Material Color", materialColor);
+  }
+  if (isConstructionCategory) {
+    lines.push(`Plan Status: ${planStatusLabel || NP}`);
+    kv("Foundation Type", foundationType);
   }
 
   const customerMessage = (row.project_description ?? "").toString().trim();
@@ -327,6 +341,7 @@ function buildHumanNote(row: LeadRow): string {
   lines.push(customerMessage || NP);
 
   section("Source");
+  lines.push("Lead Source: Website");
   kv("Form", row.source);
   kv("Page URL", row.page_url);
   kv("Lead Type", row.lead_type);
@@ -350,10 +365,12 @@ function buildHumanNote(row: LeadRow): string {
   const uploadLinks = [...photos, ...files]
     .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
     .filter(Boolean) as string[];
+  section("Files");
   if (uploadLinks.length) {
-    section("Files");
     lines.push("Uploaded Files:");
     uploadLinks.forEach((link) => lines.push(`  • ${link}`));
+  } else {
+    lines.push("Uploaded Files: None");
   }
 
   if (isChatbotLead) {
