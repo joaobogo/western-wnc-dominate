@@ -255,6 +255,48 @@ const App = () => (
           <Route path="/highlands--nc" element={<Navigate to="/service-areas/highlands-nc" replace />} />
           <Route path="/the-benefits-of-metal-roof-installation-for-your-home" element={<Navigate to="/blog/metal-vs-shingle-roof-western-nc" replace />} />
           <Route path="/why-asphalt-shingle-remains-the-most-popular-roofing-material" element={<Navigate to="/blog/best-roofing-materials-highlands-nc" replace />} />
+          {/* ─── SEMrush-verified legacy URLs — high-intent service pages ─── */}
+          {/* Residential */}
+          <Route path="/residential-roofing-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
+          <Route path="/residential-roofing-installation" element={<Navigate to="/roofing/roof-replacement" replace />} />
+          <Route path="/specialized-roofing-services" element={<Navigate to="/roofing/specialty" replace />} />
+          <Route path="/specialty-roof-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
+          <Route path="/types-of-roofs-we-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
+          {/* Commercial */}
+          <Route path="/commercial-roofing-services" element={<Navigate to="/roofing/commercial" replace />} />
+          <Route path="/commercial-roofing-installation" element={<Navigate to="/roofing/commercial" replace />} />
+          <Route path="/commercial-roofing-repairs" element={<Navigate to="/roofing/commercial" replace />} />
+          <Route path="/tpo-installation" element={<Navigate to="/roofing/commercial" replace />} />
+          <Route path="/roof-coating-services" element={<Navigate to="/roofing/commercial" replace />} />
+          {/* Metal */}
+          <Route path="/metal-roof-installation" element={<Navigate to="/roofing/metal" replace />} />
+          <Route path="/metal-roof-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
+          {/* Slate / specialty */}
+          <Route path="/slate-roof-installation" element={<Navigate to="/roofing/specialty" replace />} />
+          <Route path="/slate-roof-repair" element={<Navigate to="/roofing/specialty" replace />} />
+          {/* Waterproofing */}
+          <Route path="/roof-waterproofing" element={<Navigate to="/roofing/roof-repair" replace />} />
+          {/* Gutters & guards */}
+          <Route path="/leaf-guard-installation" element={<Navigate to="/roofing/gutters" replace />} />
+          <Route path="/gutter-protection-installation" element={<Navigate to="/roofing/gutters" replace />} />
+          <Route path="/gutter-protection-systems" element={<Navigate to="/roofing/gutters" replace />} />
+          {/* Outdoor / construction */}
+          <Route path="/gazebos-and-pergolas" element={<Navigate to="/construction/outdoor-living" replace />} />
+          {/* Contact town-specific pages → matching service area */}
+          <Route path="/contact-franklin-nc" element={<Navigate to="/service-areas/franklin-nc" replace />} />
+          <Route path="/contact-sylva-nc" element={<Navigate to="/service-areas/sylva-nc" replace />} />
+          <Route path="/contact-highlands-nc" element={<Navigate to="/service-areas/highlands-nc" replace />} />
+          <Route path="/contact-cashiers-nc" element={<Navigate to="/service-areas/cashiers-nc" replace />} />
+          <Route path="/contact-waynesville-nc" element={<Navigate to="/service-areas/waynesville-nc" replace />} />
+          <Route path="/contact-bryson-city-nc" element={<Navigate to="/service-areas/bryson-city-nc" replace />} />
+          <Route path="/contact-cullowhee-nc" element={<Navigate to="/service-areas/cullowhee-nc" replace />} />
+          <Route path="/contact-dillsboro-nc" element={<Navigate to="/service-areas/dillsboro-nc" replace />} />
+          {/* Legacy Hibu /contact/[service]-service-area/[town] wildcard */}
+          <Route path="/contact/:pattern/:town" element={<LegacyTownRedirect />} />
+          <Route path="/contact/local-roofers-service-area/:town" element={<LegacyTownRedirect />} />
+          {/* About/team legacy aliases (about-us already covered above; add extras) */}
+          <Route path="/our-team" element={<Navigate to="/team" replace />} />
+          <Route path="/testimonials" element={<Navigate to="/reviews" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
               </Routes>
