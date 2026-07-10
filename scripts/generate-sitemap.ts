@@ -8,7 +8,7 @@ import { resolve } from "path";
 import { blogPosts } from "../src/data/blogs";
 import { towns } from "../src/data/towns";
 
-const BASE_URL = "https://western-wnc-dominate.lovable.app";
+const BASE_URL = "https://highlandernc.com";
 
 interface SitemapEntry {
   path: string;
