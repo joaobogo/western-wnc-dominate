@@ -3,6 +3,16 @@ User-agent: *
 Allow: /
 Disallow: /consultation
 Disallow: /quote-flow
+Disallow: /lp/
+Disallow: /admin/
+Disallow: /roofing-intake
+Disallow: /construction-intake
+Disallow: /roofing-builder
+Disallow: /construction-builder
+Disallow: /design-intake
+Disallow: /request-quote-form
+Disallow: /request-quote-form-page
+Disallow: /seo-monitoring
 
 User-agent: Googlebot
 Allow: /
