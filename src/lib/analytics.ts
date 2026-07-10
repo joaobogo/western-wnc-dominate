@@ -18,6 +18,46 @@ interface TrackOptions {
 
 // Session management
 const SESSION_KEY = "hl_analytics_session_id";
+const ATTRIBUTION_KEY = "hl_source_town";
+const ATTRIBUTION_TTL_MS = 1000 * 60 * 60 * 24 * 7; // 7 days
+
+interface SourceTownAttribution {
+  town: string;
+  county?: string;
+  href?: string;
+  source?: string;
+  ts: number;
+}
+
+/**
+ * Persist the town a visitor clicked from the Service Areas dropdown so we can
+ * attribute downstream conversions (form submits, phone clicks) to it.
+ */
+export const setSourceTown = (attr: Omit<SourceTownAttribution, "ts">) => {
+  if (typeof window === "undefined") return;
+  try {
+    const payload: SourceTownAttribution = { ...attr, ts: Date.now() };
+    sessionStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(payload));
+    localStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(payload));
+  } catch {
+    // ignore
+  }
+};
+
+export const getSourceTown = (): SourceTownAttribution | null => {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = sessionStorage.getItem(ATTRIBUTION_KEY) || localStorage.getItem(ATTRIBUTION_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as SourceTownAttribution;
+    if (!parsed?.town) return null;
+    if (Date.now() - (parsed.ts || 0) > ATTRIBUTION_TTL_MS) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+};
+
 const getSessionId = () => {
   if (typeof window === "undefined") return null;
   let id = sessionStorage.getItem(SESSION_KEY);
@@ -39,6 +79,21 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
   const path = typeof window !== "undefined" ? window.location.pathname : "";
   const sessionId = getSessionId();
 
+  // Attach source-town attribution to every event so conversions (form_submit,
+  // phone_click, lead_capture) can be sliced by the town that drove the visit.
+  const attribution = getSourceTown();
+  const enrichedMetadata: Record<string, any> = {
+    ...metadata,
+    ...(attribution
+      ? {
+          source_town: attribution.town,
+          source_town_county: attribution.county,
+          source_town_href: attribution.href,
+          source_town_channel: attribution.source,
+        }
+      : {}),
+  };
+
   // 1. Internal Tracking (Supabase)
   try {
     void supabase.from("conversion_events").insert({
@@ -47,7 +102,7 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
       element_id: elementId,
       label,
       metadata: {
-        ...metadata,
+        ...enrichedMetadata,
         href: typeof window !== "undefined" ? window.location.href : null,
         referrer: typeof document !== "undefined" ? document.referrer : null,
         userAgent: typeof navigator !== "undefined" ? navigator.userAgent : null,
@@ -67,7 +122,7 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
       event_label: label || elementId || type,
       value: value,
       page_path: path,
-      ...metadata,
+      ...enrichedMetadata,
     });
   }
 
@@ -79,7 +134,7 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
       content_category: "conversion",
       value: value,
       currency: "USD",
-      ...metadata,
+      ...enrichedMetadata,
     });
   }
 };

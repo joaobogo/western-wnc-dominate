@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import { towns } from "@/data/towns";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, setSourceTown } from "@/lib/analytics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -485,13 +485,18 @@ const Header = () => {
                           role="menuitem"
                           title={`Roofing & Construction in ${item.label}, NC`}
                           aria-label={`Roofing & Construction in ${item.label}, NC`}
-                          onClick={() =>
+                          onClick={() => {
+                            setSourceTown({
+                              town: item.label,
+                              href: item.href,
+                              source: "header_dropdown_desktop",
+                            });
                             trackEvent("cta_click", {
                               label: `service_area_dropdown:${item.label}`,
                               elementId: "header-service-areas-desktop",
                               metadata: { town: item.label, href: item.href, source: "header_dropdown_desktop" },
-                            })
-                          }
+                            });
+                          }}
                           aria-current={isActive(item.href) ? "page" : undefined}
                           className={`group/item relative flex items-center justify-between px-3 py-2 rounded-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold)/0.5)] ${
                             isActive(item.href)
@@ -821,6 +826,12 @@ const Header = () => {
                                         title={`Roofing & Construction in ${item.name}, NC`}
                                         aria-label={`Roofing & Construction in ${item.name}, NC — ${item.county}`}
                                         onClick={() => {
+                                          setSourceTown({
+                                            town: item.name,
+                                            county: item.county,
+                                            href: item.href,
+                                            source: "header_dropdown_mobile",
+                                          });
                                           trackEvent("cta_click", {
                                             label: `service_area_dropdown:${item.name}`,
                                             elementId: "header-service-areas-mobile",
