@@ -716,7 +716,10 @@ const Header = () => {
                   transition={{ delay: 0.18, duration: 0.3, ease: HIGHLAND_EASE }}
                 >
                   <button
+                    ref={mobileServiceAreasBtnRef}
                     onClick={() => setMobileExpanded(mobileExpanded === "ServiceAreas" ? null : "ServiceAreas")}
+                    aria-expanded={mobileExpanded === "ServiceAreas"}
+                    aria-controls="mobile-service-areas-panel"
                     className={`w-full py-2.5 px-2.5 rounded-sm transition-all duration-200 flex items-center justify-between min-h-[48px] ${
                       isActive("/service-areas")
                         ? "text-heritage-charcoal bg-black/5"
@@ -727,6 +730,7 @@ const Header = () => {
                     <motion.div
                       animate={{ rotate: mobileExpanded === "ServiceAreas" ? 180 : 0 }}
                       transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
+                      aria-hidden="true"
                     >
                       <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" />
                     </motion.div>
@@ -734,11 +738,20 @@ const Header = () => {
                   <AnimatePresence>
                     {mobileExpanded === "ServiceAreas" && (
                       <motion.div
+                        id="mobile-service-areas-panel"
+                        role="region"
+                        aria-label="Service areas by town"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
                         className="overflow-hidden"
+                        onKeyDown={(e) => {
+                          if (e.key === "Escape") {
+                            setMobileExpanded(null);
+                            mobileServiceAreasBtnRef.current?.focus();
+                          }
+                        }}
                       >
                         <div className="ml-3.5 pl-3 pb-2 border-l-2 border-[hsl(var(--highland-gold)/0.15)]">
                           {/* Search input */}
