@@ -627,6 +627,45 @@ async function paveFetch(query: any): Promise<any> {
   }
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// PERMANENT SAFEGUARD — QuickBooks-safe JobTread Description field.
+//
+// Do not populate JobTread Description from website leads. Highlander uses
+// this field in QuickBooks invoice flow. Website intake details belong in
+// Lead Notes only. Any accidental future edit that introduces `description`,
+// `jobDescription`, `job_description`, `desc`, `summary`, `long_description`,
+// or a nested `customFieldValues.description` on a createJob/updateJob
+// payload will be stripped here before the payload leaves this function.
+//
+// If Highlander later decides Description should carry a specific short
+// value, add an explicit allowlist here — never bypass this scrubber.
+// ─────────────────────────────────────────────────────────────────────────────
+const FORBIDDEN_DESCRIPTION_KEYS = new Set([
+  "description",
+  "jobDescription",
+  "job_description",
+  "desc",
+  "long_description",
+  "longDescription",
+]);
+function scrubDescription<T extends Record<string, any>>(input: T): T {
+  if (!input || typeof input !== "object") return input;
+  const out: Record<string, any> = { ...input };
+  for (const key of Object.keys(out)) {
+    if (FORBIDDEN_DESCRIPTION_KEYS.has(key)) {
+      delete out[key];
+    }
+  }
+  if (out.customFieldValues && typeof out.customFieldValues === "object") {
+    const cf: Record<string, any> = { ...out.customFieldValues };
+    for (const key of Object.keys(cf)) {
+      if (FORBIDDEN_DESCRIPTION_KEYS.has(key)) delete cf[key];
+    }
+    out.customFieldValues = cf;
+  }
+  return out as T;
+}
+
 async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
     const orgId = JOBTREAD_ORG_ID;
