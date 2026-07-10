@@ -516,11 +516,14 @@ async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; 
     const headers: Record<string, string> = { "Content-Type": "application/json" };
     if (JOBTREAD_API_KEY) headers["Authorization"] = `Bearer ${JOBTREAD_API_KEY}`;
     if (JOBTREAD_ORG_ID) headers["X-JobTread-Org"] = JOBTREAD_ORG_ID;
-    const body = {
+    // Do not populate JobTread Description from website leads. Highlander
+    // uses this field in QuickBooks invoice flow. Website intake details
+    // belong in Lead Notes only. Scrub before dispatch.
+    const body = scrubDescription({
       api_key: JOBTREAD_API_KEY || undefined,
       org_id: JOBTREAD_ORG_ID || undefined,
       ...payload,
-    };
+    });
     const res = await fetch(JOBTREAD_WEBHOOK_URL, {
       method: "POST",
       headers,
