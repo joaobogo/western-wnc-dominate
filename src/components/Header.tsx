@@ -1,13 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield, Ruler, Heart, Search, MapPin } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.svg";
-import { towns } from "@/data/towns";
-import { trackEvent, setSourceTown } from "@/lib/analytics";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+import { HIGHLAND_EASE } from "./header/nav-data";
+import { DesktopNav } from "./header/DesktopNav";
+import { HeaderActions } from "./header/HeaderActions";
+import { MobileMenu } from "./header/MobileMenu";
 
 /* ─── DROPDOWN DATA ─── */
 
