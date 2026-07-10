@@ -237,32 +237,32 @@ function flattenFormAnswers(
 
 function buildHumanNote(row: LeadRow): string {
   const lines: string[] = [];
+  const NP = "Not provided";
+  const val = (v: any): string => {
+    const r = humanizeValue(v);
+    return r ? r : NP;
+  };
+  const has = (v: any): boolean => humanizeValue(v).length > 0;
+  const kv = (label: string, v: any) => lines.push(`${label}: ${val(v)}`);
   const section = (title: string) => {
     if (lines.length) lines.push("");
     lines.push(title);
   };
-  const bullet = (label: string, value: any) => {
-    const rendered = humanizeValue(value);
-    if (!rendered) return;
-    lines.push(`- ${label}: ${rendered}`);
-  };
 
   const { urgent: urgentRoofing, waterEntering } = detectUrgentRoofing(row);
-  const isRoofingCategory = /roof|storm|gutter|skylight|leak/i.test(
+  const catStr =
     String(row.service_category ?? row.lead_type ?? "") +
-      " " + String(row.project_type ?? "") +
-      " " + String(row.roofing_issue_type ?? ""),
-  );
+    " " + String(row.project_type ?? "") +
+    " " + String(row.roofing_issue_type ?? "");
+  const isRoofingCategory = /roof|storm|gutter|skylight|leak/i.test(catStr);
   const catBlob = String(row.service_category ?? row.lead_type ?? "").toLowerCase();
   const isConstructionCategory =
     !isRoofingCategory &&
     /construction|design|planning|outdoor|addition|garage|porch|sunroom|deck|patio|pergola|renovation|remodel/.test(
       catBlob + " " + String(row.project_type ?? "").toLowerCase(),
     );
-
   const meta: any = row.metadata ?? {};
-  const planStatusRaw =
-    meta.plan_status ?? meta.planStatus ?? meta.planningStage ?? null;
+  const planStatusRaw = meta.plan_status ?? meta.planStatus ?? meta.planningStage ?? null;
   const planStatusMap: Record<string, string> = {
     "yes-pro-plans": "Complete permit-ready plans",
     "full_plans": "Complete permit-ready plans",
@@ -272,7 +272,6 @@ function buildHumanNote(row: LeadRow): string {
     "no": "No plans yet",
     "not-sure": "Not sure",
     "unsure": "Not sure",
-    "": "",
   };
   const planStatusLabel = planStatusRaw
     ? planStatusMap[String(planStatusRaw).toLowerCase()] ?? humanizeValue(planStatusRaw)
@@ -282,111 +281,65 @@ function buildHumanNote(row: LeadRow): string {
     ? "No plans yet"
     : "";
 
+  const isChatbotLead =
+    /chatbot|chat[-_ ]?bot/.test(String(row.source ?? "").toLowerCase()) ||
+    /chatbot|chat[-_ ]?bot/.test(String(row.lead_type ?? "").toLowerCase()) ||
+    !!row.chat_summary || !!row.summary ||
+    !!row.full_chat_transcript || !!row.full_transcript;
+
+  lines.push("=== Highlander Website Lead ===");
+
   if (urgentRoofing) {
+    lines.push("");
     lines.push("*** URGENT ROOFING LEAD ***");
     if (waterEntering) lines.push("*** WATER ACTIVELY ENTERING PROPERTY ***");
-    lines.push("");
   }
 
-  section(
-    isRoofingCategory
-      ? "Roofing Lead Summary:"
-      : isConstructionCategory
-      ? "Construction/Design Lead Summary:"
-      : "Lead Summary:",
-  );
+  section("Contact");
+  kv("Name", row.name);
+  kv("Phone", row.phone);
+  kv("Email", row.email);
+  kv("Preferred Contact Method", row.preferred_contact_method);
+
+  section("Property");
+  kv("Town", row.property_town);
+  if (has(row.property_address)) kv("Address", row.property_address);
+  if (has(row.property_type)) kv("Property Type", row.property_type);
+
+  section("Project");
+  kv("Service Category", row.service_category);
+  kv("Project Type", row.project_type);
+  kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
+  if (isConstructionCategory && planStatusLabel) {
+    lines.push(`Plan Status: ${planStatusLabel}`);
+  }
   if (isRoofingCategory) {
-    bullet("Service Type", row.service_category);
-    bullet("Roofing Issue", row.roofing_issue_type ?? row.project_type);
-    bullet("Urgency", urgentRoofing ? `HIGH — ${row.urgency ?? "urgent"}` : row.urgency);
-    lines.push(`- Water Actively Entering: ${waterEntering ? "Yes" : "No / Unknown"}`);
-    bullet("Property Type", row.property_type);
-    bullet("Property Town", row.property_town);
-    bullet("Property Address", row.property_address);
-    bullet("Preferred Contact Method", row.preferred_contact_method);
-    bullet("Name", row.name);
-    bullet("Phone", row.phone);
-    bullet("Email", row.email);
-  } else if (isConstructionCategory) {
-    bullet("Service Category", row.service_category);
-    const classification = classifyConstructionDesign(row);
-    if (classification) {
-      lines.push(
-        `- Lead Classification: ${classification === "construction" ? "Construction / Build Inquiry" : "Design / Planning Inquiry"}`,
-      );
-    }
-    bullet("Project Type", row.project_type);
-    if (planStatusLabel) lines.push(`- Plan Status: ${planStatusLabel}`);
-    if (meta.planningStage) bullet("Design/Planning Stage", meta.planningStage);
-    bullet("Desired Timeline", row.urgency ?? meta.timeline);
-    bullet("Budget Range", meta.budgetRange ?? meta.budget_band ?? meta.investment);
-    bullet("Property Type", row.property_type);
-    bullet("Property Town", row.property_town);
-    bullet("Property Address", row.property_address);
-    bullet("Preferred Contact Method", row.preferred_contact_method);
-    bullet("Name", row.name);
-    bullet("Phone", row.phone);
-    bullet("Email", row.email);
-  } else {
-  bullet("Service Category", row.service_category);
-  bullet("Project Type", row.project_type);
-  bullet("Urgency", row.urgency);
-  bullet("Property Town", row.property_town);
-  bullet("Property Address", row.property_address);
-  bullet("Preferred Contact Method", row.preferred_contact_method);
-  bullet("Name", row.name);
-  bullet("Phone", row.phone);
-  bullet("Email", row.email);
+    kv("Roofing Issue", row.roofing_issue_type ?? row.project_type);
+    lines.push(`Water Actively Entering: ${waterEntering ? "Yes" : "No"}`);
   }
 
   const customerMessage = (row.project_description ?? "").toString().trim();
-  if (customerMessage) {
-    section("Customer Message:");
-    lines.push(customerMessage);
-  }
+  section("Customer Message");
+  lines.push(customerMessage || NP);
 
-  const formAnswers: Array<[string, string]> = [];
-  // Roofing Issue is already in the Roofing Lead Summary above — avoid duplicate
-  if (row.roofing_issue_type && !isRoofingCategory) {
-    formAnswers.push(["Roofing Issue", humanizeValue(row.roofing_issue_type)]);
-  }
-  if (row.property_type) formAnswers.push(["Property Type", humanizeValue(row.property_type)]);
-  if (row.has_plans !== null && row.has_plans !== undefined) {
-    formAnswers.push(["Has Plans", humanizeValue(row.has_plans)]);
-  }
-  formAnswers.push(...flattenFormAnswers(row.metadata));
-  if (formAnswers.length) {
-    section("Form Answers:");
-    for (const [q, a] of formAnswers) lines.push(`- ${q}: ${a}`);
-  }
+  section("Source");
+  kv("Form", row.source);
+  kv("Page URL", row.page_url);
+  kv("Lead Type", row.lead_type);
+  kv("Submitted At", row.created_at);
 
-  section("Source:");
-  bullet("Form", row.source);
-  bullet("Lead Type", row.lead_type);
-  bullet("Page URL", row.page_url);
-  bullet("Referrer", row.referrer);
-  bullet("Submitted At", row.created_at);
-  bullet("User Agent", row.user_agent);
+  section("Consent");
+  lines.push(`Consent Given: ${row.consent_given === true ? "true" : row.consent_given === false ? "false" : NP}`);
+  kv("Consent Text", row.consent_text);
+  lines.push("Privacy Policy: https://highlandernc.com/privacy-policy");
 
-  section("Consent:");
-  bullet("Consent Given", row.consent_given);
-  bullet("Consent Text", row.consent_text);
-  bullet("Privacy Policy", "https://highlandernc.com/privacy-policy");
-
-  const trackingRows: Array<[string, any]> = [
-    ["UTM Source", row.utm_source],
-    ["UTM Medium", row.utm_medium],
-    ["UTM Campaign", row.utm_campaign],
-    ["UTM Content", row.utm_content],
-    ["UTM Term", row.utm_term],
-    ["GCLID", row.gclid],
-    ["FBCLID", row.fbclid],
-    ["LinkedIn Attribution", row.li_fat_id],
-  ];
-  if (trackingRows.some(([, v]) => v)) {
-    section("Tracking:");
-    for (const [k, v] of trackingRows) bullet(k, v);
-  }
+  section("Tracking");
+  kv("UTM Source", row.utm_source);
+  kv("UTM Medium", row.utm_medium);
+  kv("UTM Campaign", row.utm_campaign);
+  kv("GCLID", row.gclid);
+  kv("FBCLID", row.fbclid);
+  kv("LinkedIn Attribution", row.li_fat_id);
 
   const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
   const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
@@ -394,43 +347,26 @@ function buildHumanNote(row: LeadRow): string {
     .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
     .filter(Boolean) as string[];
   if (uploadLinks.length) {
-    section(isRoofingCategory ? "Photos/Files:" : "Files:");
-    lines.push("- Uploaded Photo/File Links:");
+    section("Files");
+    lines.push("Uploaded Files:");
     uploadLinks.forEach((link) => lines.push(`  • ${link}`));
   }
 
-  const isChatbotLead =
-    /chatbot|chat[-_ ]?bot/.test(String(row.source ?? "").toLowerCase()) ||
-    /chatbot|chat[-_ ]?bot/.test(String(row.lead_type ?? "").toLowerCase()) ||
-    !!row.chat_summary || !!row.summary ||
-    !!row.full_chat_transcript || !!row.full_transcript;
   if (isChatbotLead) {
-    section("Chatbot Lead Summary:");
-    bullet("Service Needed", row.service_category);
-    bullet("Project Type", row.project_type);
-    bullet("Urgency", row.urgency);
-    bullet("Property Town", row.property_town);
-    bullet("Preferred Contact Method", row.preferred_contact_method);
-    bullet("Recommended Next Step", row.recommended_next_step);
-
+    section("Chatbot");
     const summaryText = String(row.chat_summary ?? row.summary ?? "").trim();
-    if (summaryText) {
-      section("Chat Summary:");
-      lines.push(summaryText);
-    }
+    lines.push(`Chat Summary: ${summaryText || NP}`);
     const transcript = row.full_chat_transcript ?? row.full_transcript;
     if (transcript) {
-      section("Full Transcript:");
+      lines.push("Transcript:");
       if (Array.isArray(transcript)) {
         for (const turn of transcript) {
           const role = String(turn?.role ?? "user");
           const content = String(turn?.content ?? turn?.text ?? "").trim();
-          if (content) lines.push(`- ${role}: ${content}`);
+          if (content) lines.push(`  ${role}: ${content}`);
         }
       } else if (typeof transcript === "string") {
         lines.push(transcript);
-      } else {
-        lines.push(JSON.stringify(transcript));
       }
     }
   }
