@@ -163,7 +163,11 @@ function humanizeLeadName(row: LeadRow): string {
     else label = `Chatbot ${label}`;
   }
 
-  return name ? `${label} - ${town} - ${name}` : `${label} - ${town}`;
+  // Only include the customer's first name (or first initial) so job names
+  // stay short and scannable in JobTread. Never leak full name, phone,
+  // email, message, or tracking values into the title.
+  const firstName = name.split(/\s+/)[0]?.trim() ?? "";
+  return firstName ? `${label} - ${town} - ${firstName}` : `${label} - ${town}`;
 }
 
 // Returns "construction" when the customer has complete permit-ready plans,
