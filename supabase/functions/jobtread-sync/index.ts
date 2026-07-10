@@ -516,11 +516,14 @@ async function sendToWebhook(payload: any): Promise<{ ok: boolean; id?: string; 
     const headers: Record<string, string> = { "Content-Type": "application/json" };
     if (JOBTREAD_API_KEY) headers["Authorization"] = `Bearer ${JOBTREAD_API_KEY}`;
     if (JOBTREAD_ORG_ID) headers["X-JobTread-Org"] = JOBTREAD_ORG_ID;
-    const body = {
+    // Do not populate JobTread Description from website leads. Highlander
+    // uses this field in QuickBooks invoice flow. Website intake details
+    // belong in Lead Notes only. Scrub before dispatch.
+    const body = scrubDescription({
       api_key: JOBTREAD_API_KEY || undefined,
       org_id: JOBTREAD_ORG_ID || undefined,
       ...payload,
-    };
+    });
     const res = await fetch(JOBTREAD_WEBHOOK_URL, {
       method: "POST",
       headers,
@@ -625,6 +628,45 @@ async function paveFetch(query: any): Promise<any> {
   } catch {
     throw new Error(`Non-JSON Pave response: ${text.slice(0, 300)}`);
   }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PERMANENT SAFEGUARD — QuickBooks-safe JobTread Description field.
+//
+// Do not populate JobTread Description from website leads. Highlander uses
+// this field in QuickBooks invoice flow. Website intake details belong in
+// Lead Notes only. Any accidental future edit that introduces `description`,
+// `jobDescription`, `job_description`, `desc`, `summary`, `long_description`,
+// or a nested `customFieldValues.description` on a createJob/updateJob
+// payload will be stripped here before the payload leaves this function.
+//
+// If Highlander later decides Description should carry a specific short
+// value, add an explicit allowlist here — never bypass this scrubber.
+// ─────────────────────────────────────────────────────────────────────────────
+const FORBIDDEN_DESCRIPTION_KEYS = new Set([
+  "description",
+  "jobDescription",
+  "job_description",
+  "desc",
+  "long_description",
+  "longDescription",
+]);
+function scrubDescription<T extends Record<string, any>>(input: T): T {
+  if (!input || typeof input !== "object") return input;
+  const out: Record<string, any> = { ...input };
+  for (const key of Object.keys(out)) {
+    if (FORBIDDEN_DESCRIPTION_KEYS.has(key)) {
+      delete out[key];
+    }
+  }
+  if (out.customFieldValues && typeof out.customFieldValues === "object") {
+    const cf: Record<string, any> = { ...out.customFieldValues };
+    for (const key of Object.keys(cf)) {
+      if (FORBIDDEN_DESCRIPTION_KEYS.has(key)) delete cf[key];
+    }
+    out.customFieldValues = cf;
+  }
+  return out as T;
 }
 
 async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
@@ -785,7 +827,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     const jobRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createJob: {
-        $: {
+        $: scrubDescription({
           locationId,
           name: jobNameShort,
           // Description intentionally OMITTED from the payload — Highlander
@@ -799,7 +841,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
             [JT_CF.job.customer_present]: false,
             [JT_CF.job.lead_notes]: noteShort,
           },
-        },
+        }),
         createdJob: { id: {}, name: {} },
       },
     });
