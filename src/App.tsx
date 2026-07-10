@@ -289,10 +289,7 @@ const App = () => (
           <Route path="/skylight-installation" element={<Navigate to="/roofing/skylights" replace />} />
           {/* Additional commercial / replacement / asphalt legacy aliases */}
           <Route path="/commercial-re-roof-specialists" element={<Navigate to="/roofing/commercial" replace />} />
-          <Route path="/re-roof-specialists" element={<Navigate to="/roofing/roof-replacement" replace />} />
           <Route path="/asphalt-shingles-installation" element={<Navigate to="/roofing/residential" replace />} />
-          <Route path="/metal-roofs" element={<Navigate to="/roofing/metal" replace />} />
-          <Route path="/residential-roofing-services" element={<Navigate to="/roofing/residential" replace />} />
           {/* Root-level leak repair aliases (SEMrush intent) */}
           <Route path="/roof-leak-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
           <Route path="/roof-leak-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
