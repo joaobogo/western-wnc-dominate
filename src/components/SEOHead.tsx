@@ -221,6 +221,32 @@ export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
   itemListElement: items.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.name, item: `${BASE_URL}${item.url}` })),
 });
 
+/**
+ * WebPage schema — ties per-page title/description/URL to the
+ * sitewide WebSite + Organization graph, and (optionally) to a
+ * primary entity like a town-scoped LocalBusiness.
+ */
+export const webPageSchema = (page: {
+  name: string;
+  description: string;
+  url: string;
+  breadcrumbId?: string;
+  primaryEntityId?: string;
+  type?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": page.type || "WebPage",
+  "@id": `${BASE_URL}${page.url}#webpage`,
+  url: `${BASE_URL}${page.url}`,
+  name: page.name,
+  description: page.description,
+  isPartOf: { "@id": `${BASE_URL}/#website` },
+  about: { "@id": `${BASE_URL}/#organization` },
+  inLanguage: "en-US",
+  ...(page.breadcrumbId ? { breadcrumb: { "@id": page.breadcrumbId } } : {}),
+  ...(page.primaryEntityId ? { mainEntity: { "@id": page.primaryEntityId } } : {}),
+});
+
 export const serviceSchema = (service: { name: string; description: string; url: string; areaServed?: string }) => ({
   "@context": "https://schema.org", "@type": "Service", serviceType: service.name, name: service.name,
   description: service.description, url: `${BASE_URL}${service.url}`,
