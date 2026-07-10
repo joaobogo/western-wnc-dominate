@@ -282,6 +282,12 @@ const App = () => (
           <Route path="/gutter-protection-systems" element={<Navigate to="/roofing/gutters" replace />} />
           {/* Outdoor / construction */}
           <Route path="/gazebos-and-pergolas" element={<Navigate to="/construction/outdoor-living" replace />} />
+          {/* Root-level leak repair aliases (SEMrush intent) */}
+          <Route path="/roof-leak-repair" element={<Navigate to="/roofing/roof-repair" replace />} />
+          <Route path="/roof-leak-repairs" element={<Navigate to="/roofing/roof-repair" replace />} />
+          <Route path="/emergency-roof-repair" element={<Navigate to="/roofing/storm-damage" replace />} />
+          <Route path="/emergency-roofing" element={<Navigate to="/roofing/storm-damage" replace />} />
+          <Route path="/storm-damage-repair" element={<Navigate to="/roofing/storm-damage" replace />} />
           {/* Contact town-specific pages → matching service area */}
           <Route path="/contact-franklin-nc" element={<Navigate to="/service-areas/franklin-nc" replace />} />
           <Route path="/contact-sylva-nc" element={<Navigate to="/service-areas/sylva-nc" replace />} />
