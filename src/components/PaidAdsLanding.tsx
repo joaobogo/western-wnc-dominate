@@ -50,6 +50,7 @@ const PaidAdsLanding = ({
         title={title}
         description={description}
         path={path}
+        noindex={true}
         jsonLd={[
           serviceSchema({ name: serviceName, description, url: path }),
           breadcrumbSchema([
