@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 import ScrollToTop from "./components/ScrollToTop";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/leads";
 
@@ -76,17 +77,26 @@ const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 
 
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      staleTime: 60_000,
+    },
+  },
+});
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Suspense fallback={<div className="min-h-screen bg-background" />}>
-          <Routes>
+  <ErrorBoundary boundary="app-root">
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Suspense fallback={<div className="min-h-screen bg-background" />}>
+            <ErrorBoundary boundary="route">
+              <Routes>
           <Route path="/" element={<Index />} />
 
           {/* ─── Roofing Division ─── */}
@@ -246,12 +256,16 @@ const App = () => (
           <Route path="/why-asphalt-shingle-remains-the-most-popular-roofing-material" element={<Navigate to="/blog/best-roofing-materials-highlands-nc" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-        <ChatbotWidget />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+              </Routes>
+            </ErrorBoundary>
+          </Suspense>
+          <ErrorBoundary boundary="chatbot" fallback={() => null}>
+            <ChatbotWidget />
+          </ErrorBoundary>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;
