@@ -32,13 +32,13 @@ const Gutters = () => {
           service: {
             name: "Gutter Services",
             description: "Seamless gutter installation, gutter guards, repair, and drainage coordination across Western North Carolina.",
-            url: "https://western-wnc-dominate.lovable.app/roofing/gutters",
+            url: "https://highlandernc.com/roofing/gutters",
             areaServed: "Western North Carolina",
           },
           breadcrumbs: [
-            { name: "Home", url: "https://western-wnc-dominate.lovable.app/" },
-            { name: "Roofing", url: "https://western-wnc-dominate.lovable.app/roofing" },
-            { name: "Gutters", url: "https://western-wnc-dominate.lovable.app/roofing/gutters" },
+            { name: "Home", url: "https://highlandernc.com/" },
+            { name: "Roofing", url: "https://highlandernc.com/roofing" },
+            { name: "Gutters", url: "https://highlandernc.com/roofing/gutters" },
           ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
