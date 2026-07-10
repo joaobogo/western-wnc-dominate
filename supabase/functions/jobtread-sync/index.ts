@@ -645,6 +645,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       },
     });
     accountId = lookupRes?.organization?.accounts?.nodes?.[0]?.id;
+    let accountIsNew = false;
     if (!accountId) {
       const accountRes = await paveFetch({
         $: { grantKey: JOBTREAD_API_KEY },
@@ -665,6 +666,37 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       if (apiErrA) return { ok: false, error: `createAccount: ${String(apiErrA).slice(0, 400)}` };
       accountId = accountRes?.createAccount?.createdAccount?.id;
       if (!accountId) return { ok: false, error: `createAccount returned no id` };
+      accountIsNew = true;
+    }
+
+    // Step 1b — create a Contact under the Account so JobTread's
+    // "Contact Details" section (Name / Email / Phone) is populated,
+    // not just the Location custom fields. Only run on brand-new accounts
+    // to avoid duplicate contacts on re-synced leads. Guarded: any Pave
+    // schema mismatch is swallowed so it never blocks the job creation.
+    if (accountIsNew) {
+      const contactName = (payload.contact?.name ?? "").toString().trim();
+      const contactEmail = (payload.contact?.email ?? "").toString().trim();
+      const contactPhone = (payload.contact?.phone ?? "").toString().trim();
+      if (contactName || contactEmail || contactPhone) {
+        try {
+          await paveFetch({
+            $: { grantKey: JOBTREAD_API_KEY },
+            createContact: {
+              $: {
+                accountId,
+                name: contactName || payload.lead_name,
+                email: contactEmail || undefined,
+                phone: contactPhone || undefined,
+              },
+              createdContact: { id: {} },
+            },
+          });
+        } catch (contactErr) {
+          // Non-fatal — Location custom fields still carry contact info.
+          console.warn("createContact (non-fatal) failed:", (contactErr as Error).message);
+        }
+      }
     }
 
     // Step 2 — create Location under the Account. JobTread caps name at 30 chars.
