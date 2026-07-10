@@ -411,11 +411,6 @@ const BlogPostPage = () => {
                 )}
 
 
-                {/* Inline Lead Magnet */}
-                <div className="mt-10">
-                  <GuideLeadMagnet variant="inline" guide={getGuideType(post.category)} />
-                </div>
-
                 {/* In-Article CTA */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
