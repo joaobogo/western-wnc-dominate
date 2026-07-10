@@ -3,11 +3,16 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.8";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-admin-secret",
 };
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const DEFAULT_SITE_URL = "https://western-wnc-dominate.lovable.app";
+const ALLOWED_SITE_URLS = new Set([
+  "https://western-wnc-dominate.lovable.app",
+  "https://highlandernc.com",
+  "https://www.highlandernc.com",
+]);
 
 type RequestPayload = {
   dryRun?: boolean;
@@ -115,6 +120,12 @@ serve(async (req) => {
     return json({ error: "Method not allowed" }, 405);
   }
 
+  const adminSecret = Deno.env.get("SEO_ADMIN_SECRET");
+  const provided = req.headers.get("x-admin-secret");
+  if (!adminSecret || provided !== adminSecret) {
+    return json({ error: "Unauthorized" }, 401);
+  }
+
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -125,7 +136,10 @@ serve(async (req) => {
 
     const payload = (await req.json().catch(() => ({}))) as RequestPayload;
     const { periodStart, periodEnd, mode } = computeWindow(payload);
-    const siteUrl = payload.siteUrl?.trim() || Deno.env.get("PUBLIC_SITE_URL") || DEFAULT_SITE_URL;
+    const requestedSiteUrl = payload.siteUrl?.trim() || Deno.env.get("PUBLIC_SITE_URL") || DEFAULT_SITE_URL;
+    const siteUrl = ALLOWED_SITE_URLS.has(requestedSiteUrl.replace(/\/$/, ""))
+      ? requestedSiteUrl.replace(/\/$/, "")
+      : DEFAULT_SITE_URL;
     const source = payload.source?.trim() || "manual";
 
     const supabase = createClient(supabaseUrl, serviceRoleKey, {
