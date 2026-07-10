@@ -14,7 +14,7 @@ interface SEOHeadProps {
 
 const SITE_NAME = "Highlander Roofing & Construction";
 const BRAND_SUFFIX = "Highlander"; // short suffix to keep titles ≤60 chars
-const BASE_URL = "https://western-wnc-dominate.lovable.app";
+const BASE_URL = "https://highlandernc.com";
 const FAVICON_VERSION = "2";
 const DEFAULT_IMAGE = `${BASE_URL}/favicon.png?v=${FAVICON_VERSION}`;
 const TWITTER_HANDLE = "@highlanderroof";

@@ -50,13 +50,13 @@ const Skylights = () => {
           service: {
             name: "VELUX Skylight Installation",
             description: "VELUX Certified skylight installation, replacement, and repair across Western North Carolina.",
-            url: "https://western-wnc-dominate.lovable.app/roofing/skylights",
+            url: "https://highlandernc.com/roofing/skylights",
             areaServed: "Western North Carolina",
           },
           breadcrumbs: [
-            { name: "Home", url: "https://western-wnc-dominate.lovable.app/" },
-            { name: "Roofing", url: "https://western-wnc-dominate.lovable.app/roofing" },
-            { name: "Skylights", url: "https://western-wnc-dominate.lovable.app/roofing/skylights" },
+            { name: "Home", url: "https://highlandernc.com/" },
+            { name: "Roofing", url: "https://highlandernc.com/roofing" },
+            { name: "Skylights", url: "https://highlandernc.com/roofing/skylights" },
           ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}

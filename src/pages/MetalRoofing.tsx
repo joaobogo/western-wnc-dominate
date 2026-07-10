@@ -36,13 +36,13 @@ const MetalRoofing = () => {
           service: {
             name: "Metal Roofing",
             description: "Standing seam and exposed-fastener metal roofing across Western North Carolina.",
-            url: "https://western-wnc-dominate.lovable.app/roofing/metal",
+            url: "https://highlandernc.com/roofing/metal",
             areaServed: "Western North Carolina",
           },
           breadcrumbs: [
-            { name: "Home", url: "https://western-wnc-dominate.lovable.app/" },
-            { name: "Roofing", url: "https://western-wnc-dominate.lovable.app/roofing" },
-            { name: "Metal Roofing", url: "https://western-wnc-dominate.lovable.app/roofing/metal" },
+            { name: "Home", url: "https://highlandernc.com/" },
+            { name: "Roofing", url: "https://highlandernc.com/roofing" },
+            { name: "Metal Roofing", url: "https://highlandernc.com/roofing/metal" },
           ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
