@@ -4,7 +4,6 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import GoldLine from "@/components/motion/GoldLine";
 import HeadingReveal from "@/components/motion/HeadingReveal";
-import { useRef } from "react";
 
 const pillars = [
   {
