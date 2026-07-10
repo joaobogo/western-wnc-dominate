@@ -70,7 +70,6 @@ const HomeFAQ = () => {
     <section id="faq" className="section-padding bg-secondary/30 relative overflow-hidden">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))),
         }}

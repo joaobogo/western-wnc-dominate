@@ -57,7 +57,6 @@ export function logError(err: unknown, ctx: ErrorContext = {}): void {
     const { message, name, stack } = normalize(err);
     // Always surface in the console with the original error so devtools keeps
     // its rich stack trace and source-map linking.
-    // eslint-disable-next-line no-console
     console.error(`[error:${ctx.source ?? "app"}]`, err);
 
     const fingerprint = buildFingerprint(message, ctx.source);

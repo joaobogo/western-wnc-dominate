@@ -4,7 +4,6 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
-import { useRef } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -75,20 +74,18 @@ const BuiltForWNC = () => {
           {/* Right column — factor cards */}
           <div className="lg:col-span-3 space-y-4">
             {factors.map((factor, i) => {
-              const cardRef = useRef<HTMLDivElement>(null);
-              const handleMouseMove = (e: React.MouseEvent) => {
-                if (!cardRef.current) return;
-                const rect = cardRef.current.getBoundingClientRect();
+              const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+                const el = e.currentTarget;
+                const rect = el.getBoundingClientRect();
                 const x = ((e.clientX - rect.left) / rect.width) * 100;
                 const y = ((e.clientY - rect.top) / rect.height) * 100;
-                cardRef.current.style.setProperty('--mouse-x', `${x}%`);
-                cardRef.current.style.setProperty('--mouse-y', `${y}%`);
+                el.style.setProperty('--mouse-x', `${x}%`);
+                el.style.setProperty('--mouse-y', `${y}%`);
               };
 
               return (
                 <motion.div
                   key={factor.title}
-                  ref={cardRef}
                   onMouseMove={handleMouseMove}
                   initial={{ opacity: 0, x: 24, y: 8 }}
                   whileInView={{ opacity: 1, x: 0, y: 0 }}

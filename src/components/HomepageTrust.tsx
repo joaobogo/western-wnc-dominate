@@ -6,7 +6,6 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
-import { useRef } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -162,18 +161,16 @@ const HomepageTrust = () => {
           {/* Review cards */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
             {reviewHighlights.map((review, i) => {
-              const cardRef = useRef<HTMLDivElement>(null);
-              const handleMouseMove = (e: React.MouseEvent) => {
-                if (!cardRef.current) return;
-                const rect = cardRef.current.getBoundingClientRect();
-                cardRef.current.style.setProperty('--mouse-x', `${((e.clientX - rect.left) / rect.width) * 100}%`);
-                cardRef.current.style.setProperty('--mouse-y', `${((e.clientY - rect.top) / rect.height) * 100}%`);
+              const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+                const el = e.currentTarget;
+                const rect = el.getBoundingClientRect();
+                el.style.setProperty('--mouse-x', `${((e.clientX - rect.left) / rect.width) * 100}%`);
+                el.style.setProperty('--mouse-y', `${((e.clientY - rect.top) / rect.height) * 100}%`);
               };
 
               return (
                 <motion.div
                   key={review.name}
-                  ref={cardRef}
                   onMouseMove={handleMouseMove}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}

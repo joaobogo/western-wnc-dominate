@@ -4,7 +4,6 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion
 import AnimatedCounter from "@/components/motion/AnimatedCounter";
 import GoldLine from "@/components/motion/GoldLine";
 import HeadingReveal from "@/components/motion/HeadingReveal";
-import { useRef } from "react";
 
 const pillars = [
   {
@@ -70,20 +69,18 @@ const ProofStrip = () => {
 
         <StaggerContainer stagger={0.07} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-5">
           {pillars.map((pillar) => {
-            const cardRef = useRef<HTMLDivElement>(null);
-            const handleMouseMove = (e: React.MouseEvent) => {
-              if (!cardRef.current) return;
-              const rect = cardRef.current.getBoundingClientRect();
+            const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+              const el = e.currentTarget;
+              const rect = el.getBoundingClientRect();
               const x = ((e.clientX - rect.left) / rect.width) * 100;
               const y = ((e.clientY - rect.top) / rect.height) * 100;
-              cardRef.current.style.setProperty('--mouse-x', `${x}%`);
-              cardRef.current.style.setProperty('--mouse-y', `${y}%`);
+              el.style.setProperty('--mouse-x', `${x}%`);
+              el.style.setProperty('--mouse-y', `${y}%`);
             };
 
             return (
               <StaggerItem key={pillar.title} variant="rise">
                 <div
-                  ref={cardRef}
                   onMouseMove={handleMouseMove}
                   className="group relative bg-card border border-border rounded-none p-5 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift overflow-hidden h-full spotlight-hover"
                 >

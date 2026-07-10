@@ -66,7 +66,7 @@ const BeforeAfterGallery = () => {
     const controls = animate(progress, 100, { duration: 5, ease: "linear" });
     timerRef.current = setInterval(() => { progress.set(0); next(); }, 5000);
     return () => { clearInterval(timerRef.current); controls.stop(); };
-  }, [paused, next, current]);
+  }, [paused, next, current, progress]);
 
   const pauseTemporarily = useCallback(() => {
     setPaused(true);
@@ -77,7 +77,10 @@ const BeforeAfterGallery = () => {
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStart === null) return;
     const diff = touchStart - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) next();
+      else prev();
+    }
     setTouchStart(null);
   };
 

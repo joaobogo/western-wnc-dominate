@@ -155,7 +155,6 @@ export async function logChatbotConversation(input: {
     utm_content: attribution.utm_content ?? null,
     utm_term: attribution.utm_term ?? null,
   };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { error } = await supabase
     .from("chatbot_conversations")
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
