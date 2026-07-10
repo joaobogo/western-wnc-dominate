@@ -302,6 +302,7 @@ function buildHumanNote(row: LeadRow): string {
   section("Contact");
   kv("Name", row.name);
   kv("Phone", row.phone);
+  kv("Secondary Phone", (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null);
   kv("Email", row.email);
   kv("Preferred Contact Method", row.preferred_contact_method);
 
@@ -330,6 +331,8 @@ function buildHumanNote(row: LeadRow): string {
     kv("Roofing Issue", row.roofing_issue_type ?? row.project_type);
     lines.push(`Water Actively Entering: ${waterEntering ? "Yes" : "No"}`);
     kv("Material Color", materialColor);
+    kv("Approximate Roof Age", (row as any).roof_age ?? meta.roof_age ?? meta.date_of_roof ?? meta.roof_installed ?? null);
+    kv("Material Interest", meta.material_interest ?? meta.material ?? null);
   }
   if (isConstructionCategory) {
     lines.push(`Plan Status: ${planStatusLabel || NP}`);
@@ -346,6 +349,7 @@ function buildHumanNote(row: LeadRow): string {
   kv("Page URL", row.page_url);
   kv("Lead Type", row.lead_type);
   kv("Submitted At", row.created_at);
+  kv("Referred By", (row as any).referral_source ?? meta.referral_source ?? meta.referred_by ?? meta.how_did_you_hear ?? null);
 
   section("Consent");
   lines.push(`Consent Given: ${row.consent_given === true ? "true" : row.consent_given === false ? "false" : NP}`);
