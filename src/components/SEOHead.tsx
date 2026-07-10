@@ -216,9 +216,40 @@ export const websiteSchema = () => ({
   inLanguage: "en-US",
 });
 
-export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
-  "@context": "https://schema.org", "@type": "BreadcrumbList",
+export const breadcrumbSchema = (
+  items: { name: string; url: string }[],
+  id?: string,
+) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  ...(id ? { "@id": id } : {}),
   itemListElement: items.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.name, item: `${BASE_URL}${item.url}` })),
+});
+
+/**
+ * WebPage schema — ties per-page title/description/URL to the
+ * sitewide WebSite + Organization graph, and (optionally) to a
+ * primary entity like a town-scoped LocalBusiness.
+ */
+export const webPageSchema = (page: {
+  name: string;
+  description: string;
+  url: string;
+  breadcrumbId?: string;
+  primaryEntityId?: string;
+  type?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": page.type || "WebPage",
+  "@id": `${BASE_URL}${page.url}#webpage`,
+  url: `${BASE_URL}${page.url}`,
+  name: page.name,
+  description: page.description,
+  isPartOf: { "@id": `${BASE_URL}/#website` },
+  about: { "@id": `${BASE_URL}/#organization` },
+  inLanguage: "en-US",
+  ...(page.breadcrumbId ? { breadcrumb: { "@id": page.breadcrumbId } } : {}),
+  ...(page.primaryEntityId ? { mainEntity: { "@id": page.primaryEntityId } } : {}),
 });
 
 export const serviceSchema = (service: { name: string; description: string; url: string; areaServed?: string }) => ({
@@ -396,7 +427,12 @@ export const contactPageSchema = (path: string) => ({
 
 export type PageSchemaInput =
   | { type: "home"; reviews?: ReviewInput[]; aggregate?: { ratingValue: number; reviewCount: number } }
-  | { type: "town"; town: TownSchemaInput; faqs?: { question: string; answer: string }[] }
+  | {
+      type: "town";
+      town: TownSchemaInput;
+      faqs?: { question: string; answer: string }[];
+      page?: { title: string; description: string };
+    }
   | {
       type: "service";
       service: { name: string; description: string; url: string; areaServed?: string };
@@ -446,13 +482,26 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     }
 
     case "town": {
+      const path = `/service-areas/${input.town.slug}`;
+      const breadcrumbId = `${BASE_URL}${path}#breadcrumb`;
+      const businessId = `${BASE_URL}${path}#business`;
       const out: Record<string, unknown>[] = [
         townSchema(input.town),
-        breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Service Areas", url: "/service-areas" },
-          { name: `${input.town.name}, ${input.town.state}`, url: `/service-areas/${input.town.slug}` },
-        ]),
+        breadcrumbSchema(
+          [
+            { name: "Home", url: "/" },
+            { name: "Service Areas", url: "/service-areas" },
+            { name: `${input.town.name}, ${input.town.state}`, url: path },
+          ],
+          breadcrumbId,
+        ),
+        webPageSchema({
+          name: input.page?.title || `Roofing & Construction in ${input.town.name}, ${input.town.state}`,
+          description: input.page?.description || input.town.description,
+          url: path,
+          breadcrumbId,
+          primaryEntityId: businessId,
+        }),
       ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
       return out;

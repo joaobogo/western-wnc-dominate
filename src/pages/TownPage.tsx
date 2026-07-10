@@ -64,6 +64,7 @@ const TownPage = () => {
             description: town.description,
           },
           faqs: townProof?.faqs ?? [],
+          page: { title: town.metaTitle, description: town.metaDescription },
         })}
       />
       <Header />
