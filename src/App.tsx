@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 import ScrollToTop from "./components/ScrollToTop";
 import ErrorBoundary from "./components/ErrorBoundary";
+import LegacyTownRedirect from "./components/LegacyTownRedirect";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/leads";
 
