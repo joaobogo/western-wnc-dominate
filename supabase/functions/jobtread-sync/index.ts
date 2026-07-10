@@ -719,11 +719,11 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
             type: "customer",
             customFieldValues: {
               [JT_CF.account.service_area]: mapServiceArea(town),
-              // Chatbot leads get "Website Chatbot" so Highlander can filter
-              // them from regular form leads in JobTread.
-              [JT_CF.account.lead_source]: /chatbot/i.test(payload.lead_name)
-                ? "Website Chatbot"
-                : "Website",
+              // Lead Source picklist in JobTread only accepts "Website" for
+              // website-originated leads. Chatbot origin is preserved in the
+              // Job name prefix and inside Lead Notes → Source section so
+              // Highlander can still filter/search for chatbot leads.
+              [JT_CF.account.lead_source]: "Website",
             },
           },
           createdAccount: { id: {}, name: {} },
@@ -787,9 +787,11 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           name: locName,
           address: address || null,
           customFieldValues: {
-            // Gate code intentionally OMITTED — website form does not collect
-            // gate code info. Per spec: leave blank if not collected rather
-            // than sending a default `false` that misrepresents the property.
+            // JobTread requires the "Is There a Gate Code?" boolean field on
+            // every Location. The website form does not collect gate access,
+            // so we send `false` as the safe default; Highlander updates it
+            // manually if the property actually has a gate.
+            [JT_CF.location.gate_code]: false,
             [JT_CF.location.contact_name]: contactName,
             [JT_CF.location.phone]: payload.contact?.phone || "",
             [JT_CF.location.email]: payload.contact?.email || "",
