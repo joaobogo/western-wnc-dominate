@@ -1,82 +1,119 @@
-# Local SEO Service-Area Expansion Plan
+# Plano Completo de SEO — Highlander Roofing & Construction
 
-## What already exists (audited today)
+Objetivo: dominar buscas orgânicas em Western North Carolina (Highlands, Cashiers, Franklin e vizinhos) para roofing + construction, converter tráfego em leads qualificados e criar defesa competitiva de longo prazo.
 
-The site already ships a serious, non-thin service-area system:
+Status atual: 129 rotas, 19 páginas de cidade, 64+ artigos de blog, sitemap com ~168 URLs, schema LocalBusiness/Breadcrumb/WebPage/FAQ por cidade, tracking de atribuição por town já ativo. O site publicado ainda não tem histórico no Google (Semrush sem dados), então a prioridade #1 é indexação + medição.
 
-- Route pattern `/service-areas/:slug` (`TownPage.tsx`), plus service+town combinations at `/service-areas/:townSlug/:serviceSlug` (`ServiceTownPage.tsx`) and counties at `/service-areas/county/:slug`.
-- Rich per-town data model in `src/data/towns.ts` — hero, elevation, housing profile, climate exposure, local vibe, construction context, service demand mix, style tendency, neighborhoods, market authority angle, meta title/description, 3–4 sentence local relevance block.
-- Deep proof content in `src/data/town-proof.ts` — per-town stats, job highlights, and unique local FAQs.
-- Town LocalBusiness + FAQ schema via `buildPageSchema({ type: "town" })` in `SEOHead.tsx`.
+---
 
-Priority 1 (all 4) and most of Priority 2 & 3 are already live: Franklin, Highlands, Cashiers, Sylva, Bryson City, Waynesville, Cullowhee, Dillsboro, Hayesville, Murphy, Asheville, Hendersonville, Brevard.
+## Fase 1 — Fundação Técnica e Indexação (Semana 1)
 
-## Realism review (before adding pages)
+O que fazer:
+1. Conectar Google Search Console via connector (OAuth), verificar `https://western-wnc-dominate.lovable.app/` pelo método META, submeter `/sitemap.xml`.
+2. Criar propriedade também em Bing Webmaster Tools (importar de GSC).
+3. Auditar `sitemap.xml` contra as 129 rotas: remover redirects (`Navigate`), landing pages `/lp/*` (noindex), rotas internas; adicionar `lastmod` real por post.
+4. Migrar `sitemap.xml` estático para gerador `scripts/generate-sitemap.ts` (predev/prebuild) que lê `blogs.ts` + `towns.ts` — hoje é editado à mão e perde sincronia.
+5. Adicionar `noindex` por rota em `/lp/*`, `/request-inspection` (após envio), `/thank-you` via `react-helmet-async`.
+6. Auditoria de Core Web Vitals (LCP, INP, CLS) com PageSpeed em Home, TownPage e Blog. Lazy-load de imagens abaixo da dobra, `width`/`height` explícitos, `preload` do hero image.
+7. Configurar Google Analytics 4 real (`VITE_GA_ID`) + linkar com GSC.
+8. Registrar Google Business Profile (se ainda não existir): endereço, telefone 828-524-7773, horário, fotos, serviços — pilar #1 de local SEO.
 
-Recommended to add — real WNC target markets, tight to the existing Franklin hub:
+Saída: site 100% indexável, mensurável e monitorado.
 
-- Scaly Mountain NC (Macon County, ~15 min from Highlands)
-- Otto NC (Macon County, ~15 min from Franklin)
-- Lake Glenville / Glenville NC (Jackson County — treat as one page with both names covered; same lake community)
-- Lake Toxaway NC (Transylvania — high-end lake homes, real fit)
-- Sapphire NC (Jackson/Transylvania — Plateau resort community)
-- Cherokee NC (Swain — Qualla Boundary, tourism-heavy, real fit)
+---
 
-Flagged as questionable — will not ship pages unless you confirm:
+## Fase 2 — On-Page e Schema (Semanas 2-3)
 
-- Robbinsville NC (Graham County) — 1.5+ hr drive from Franklin, thin residential market. Real trip cost. Recommend **skip** unless you actively want work there.
-- Nantahala NC (Macon/Swain) — dispersed gorge community, mostly cabins/outfitters. Recommend **skip** as a dedicated page; it's better covered by a mention on the Franklin and Bryson City pages.
+Money pages (Home, `/roofing`, `/roofing/roof-replacement`, `/roofing/metal`, `/construction`, `/construction/additions`):
+- Title < 60 chars com keyword + geo ("Metal Roofing in Highlands, NC | Highlander").
+- Meta description < 160 chars com CTA e telefone.
+- H1 único por página, H2/H3 semânticos com variações de keyword.
+- Bloco FAQ com `FAQPage` schema (2-4 perguntas de busca real).
+- Bloco "Serving" com links internos para as 19 cidades.
+- Imagens: alt descritivo com keyword + cidade, WebP, `loading="lazy"` fora da dobra.
 
-## Scope of work
+Schema a adicionar/refinar:
+- `Organization` + `WebSite` (com `SearchAction`) no `index.html`.
+- `Service` schema em cada página de serviço (`/roofing/*`, `/construction/*`).
+- `Article` + `BreadcrumbList` em cada post do blog (hoje faltam alguns).
+- `Review`/`AggregateRating` se houver reviews reais (não inventar).
 
-### 1. Add 6 new town pages (data + proof, no template dumping)
+Limpezas obrigatórias (varredura completa):
+- Zerar "architectural shingles" nos 14 posts legados sinalizados no QA anterior.
+- Confirmar zero ocorrências de: GAF, "24/7", 828-397-9211, "architect*".
 
-For each of Scaly Mountain, Otto, Lake Glenville, Lake Toxaway, Sapphire, Cherokee:
+---
 
-- Full `TownData` entry with real Macon/Jackson/Swain/Transylvania county, real elevation, honest housing/climate/vibe/construction/style, distinct service demand mix, correct neighborhoods (e.g., Wildcat Cliffs is Highlands, not Scaly), unique authority angle.
-- Unique `townLocalRelevance` block (2–4 sentences, natural keyword coverage — no stuffing).
-- Meta title `Roofing & Construction Services in [Town], NC | Highlander` and unique meta description covering roofing, roof repair, roof replacement, metal roofing, gutters/skylights, construction, design services.
-- Unique `TownProofContent` entry: 3 real stats, 2–3 job highlights (drawn from `projectDetails` where a real match exists, otherwise honest operational highlights — no fabricated projects), and 4 town-specific FAQs.
+## Fase 3 — Autoridade Local (Semanas 3-6)
 
-### 2. Align existing town pages with the requested section structure
+Pilar de local SEO — é onde este site ganha ou perde.
 
-`TownPage.tsx` already renders hero, local relevance, service mix, proof stats, job highlights, FAQs, and internal links. It's missing the explicit six-section layout the prompt names. Add (without rewriting the existing sections):
+1. Google Business Profile: 3 posts/semana, fotos de projetos reais georreferenciadas, Q&A preenchido, categoria primária = Roofing Contractor + secundárias.
+2. NAP consistency: nome, endereço e telefone idênticos em ~30 diretórios (Yelp, BBB, Angi, HomeAdvisor, Nextdoor, Houzz, Chamber of Commerce de Highlands/Cashiers/Franklin, Nicerh, Facebook, Apple Maps, Bing Places).
+3. Reviews: fluxo automatizado pós-projeto pedindo Google Review com link direto; meta = 2 reviews/mês.
+4. Link building local: parceria com Chamber of Commerce, patrocínio de eventos locais (Highlands Festival, Cashiers Designer Showhouse), guest posts em blogs regionais (Highlander Newspaper, Laurel Magazine).
+5. Expandir de 19 para 30 páginas de cidade priorizando: Brevard, Waynesville, Hendersonville, Asheville, Sylva, Bryson City, Murphy, Robbinsville, Andrews, Hayesville, Blowing Rock.
 
-- Section: **Roofing Services in [Town], NC** (uses existing service demand mix, links to `/roofing`).
-- Section: **Roof Repair, Roof Replacement & Metal Roofing** — three short blurbs, each linking to `/roofing/roof-repair`, `/roofing/roof-replacement`, `/roofing/metal`.
-- Section: **Gutters, Skylights & Exterior Water Management** — links to `/roofing/gutters`, `/roofing/skylights`.
-- Section: **Construction, Design Services & Outdoor Living** — links to `/construction`, `/construction/design`, `/construction/outdoor-living`.
-- Section: **Why Mountain Homes in [Town] Need the Right Roof and Exterior System** — pulls from `climateExposure` + `constructionContext`.
-- Keep existing proof / job highlights section (this is the "recent projects / RealWork" slot).
-- Keep existing FAQ section.
-- Final CTA: "Request an Inspection" → `/request-inspection` + `Call (828) 524-7773` → `tel:+18285247773` (already wired to JobTread lead form via `/request-inspection`).
+---
 
-### 3. Keyword targeting — natural, per town
+## Fase 4 — Conteúdo e Cluster SEO (Semanas 4-16)
 
-Existing local-relevance and meta content already reads like human prose. For each town (existing + new), the six-section template above naturally covers: roofing company [town] NC, roofing contractor [town] NC, roofer [town] NC, roof repair [town] NC, roof replacement [town] NC, metal roofing [town] NC, gutter installation [town] NC, construction company [town] NC, home additions [town] NC, outdoor living [town] NC — one natural sentence per pattern, not repetition.
+Roadmap de 50 posts já publicado; próximo movimento é aprofundar autoridade por cluster.
 
-### 4. Sitemap + internal linking
+Novos hubs (pillar pages de 2000+ palavras):
+- `/roofing/gutters` e `/roofing/skylights` — hoje são "thin content" (identificado no QA anterior).
+- `/guides/mountain-roofing-guide` — guia definitivo para casas em altitude WNC.
+- `/guides/insurance-claims-storm-damage` — captura busca de alto valor pós-tempestade.
+- `/guides/roof-material-comparison` — comparador metal vs. synthetic vs. asphalt.
 
-- Add the 6 new slugs to `public/sitemap.xml`.
-- Add the 6 new towns to `ServiceAreaMap.tsx` chip rows and `TownGrid.tsx` on the homepage so they get real internal links.
-- Confirm `ServiceAreas.tsx` (index page) picks them up automatically from `towns` array (it does — verified during audit).
+Cadência editorial:
+- 2 posts/semana durante 12 semanas (24 novos posts), cada um linkando a 1 money page + 2 cidades + 1 hub.
+- Atualizar 10 posts legados/trimestre (refresh de data + adicionar seção FAQ + novo internal link).
 
-### 5. What is intentionally NOT changing
+Formatos que rendem em local:
+- "Cost of X in [Town], NC" (busca comercial alta).
+- "Best roofers in [Town]" (marca própria + comparativo honesto).
+- Case studies com foto antes/depois georreferenciada.
 
-- The `/service-areas/:townSlug/:serviceSlug` matrix stays as-is; it's already generating unique content per town+service.
-- Existing town pages get the section-structure upgrade but their unique local copy is preserved verbatim.
-- No changes to schema builder, no changes to routing.
+---
 
-## Deliverables
+## Fase 5 — Mensuração, Iteração e Defesa (Contínuo)
 
-- `src/data/towns.ts` — 6 new `TownData` entries + 6 new `townLocalRelevance` blocks.
-- `src/data/town-proof.ts` — 6 new `TownProofContent` entries.
-- `src/pages/TownPage.tsx` — insert the six-section local template between the hero and the existing proof block; keep every existing section.
-- `src/components/ServiceAreaMap.tsx` and `src/components/TownGrid.tsx` — add the new towns to the chip/card lists.
-- `public/sitemap.xml` — 6 new `<url>` entries.
+Dashboards a construir dentro do app (Lovable Cloud já tem `conversion_events` + atribuição `source_town`):
+- Ranking por town: clicks no dropdown → form_submit → phone_click.
+- Funil por money page.
+- CTR real vs. impressions do GSC (via connector).
 
-## Open decisions for you
+Rotina mensal:
+- Puxar top queries no GSC, identificar posições 4-15 e otimizar títulos/H1 (quick wins).
+- Semrush: rodar `domain_analysis` + `competitive_analysis` vs. 3 concorrentes regionais para achar gaps.
+- Auditar 404s no GSC e criar redirects 301.
+- Novos backlinks: 2-4/mês (parceiros, imprensa local, diretórios de nicho).
 
-1. **Robbinsville NC** — add anyway, or skip as recommended?
-2. **Nantahala NC** — add anyway, or skip as recommended?
-3. **Lake Glenville vs Glenville NC** — one merged page (recommended: `/service-areas/lake-glenville-nc`, covers both names) or two separate pages?
+Sinais de sucesso (6 meses):
+- 500+ keywords rankeadas no US database do Semrush.
+- Top 3 em "roofing highlands nc", "roofing cashiers nc", "metal roofing western nc".
+- 40+ reviews no Google Business Profile com média ≥ 4.8.
+- 20+ leads orgânicos/mês atribuídos a cidades específicas via tracking já instalado.
+
+---
+
+## Detalhes técnicos (para minha execução)
+
+- Sitemap: migrar de estático para `scripts/generate-sitemap.ts` (predev/prebuild), fonte = `src/data/{blogs,towns}.ts` + rotas de `App.tsx` filtradas.
+- Per-route SEO: `SEOHead.tsx` já usa Helmet; expandir para adicionar `Service` schema nas rotas `/roofing/*` e `/construction/*`.
+- GSC: usar `standard_connectors--connect` com `connector_id: "google_search_console"`, depois fluxo META de verificação já documentado.
+- CWV: rodar Playwright + Lighthouse-CI local, priorizar hero image `preload` e conversão para WebP.
+- Noindex de LP: `<Helmet><meta name="robots" content="noindex" /></Helmet>` nas rotas `/lp/*` (elas convertem paid, não devem competir com money pages orgânicas).
+
+---
+
+## Ordem de execução se aprovado
+
+1. Fase 1 completa (fundação + GSC + sitemap dinâmico + noindex de LPs).
+2. Fase 2 on-page nas 6 money pages + schema Service.
+3. Fase 3 kickoff (checklist NAP + template de review request).
+4. Fase 4 novos hubs (`gutters`, `skylights`, mountain guide).
+5. Fase 5 dashboard interno de atribuição.
+
+Aprova este plano? Posso começar pela Fase 1 agora — é o que destrava todo o resto.
