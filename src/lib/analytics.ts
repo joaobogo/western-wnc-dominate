@@ -1,13 +1,14 @@
 import { supabase } from "@/integrations/supabase/client";
 
 // Types for tracking
-type EventType = 
-  | "cta_click" 
-  | "form_submit" 
-  | "form_start" 
-  | "lead_capture" 
-  | "page_view" 
-  | "phone_click";
+type EventType =
+  | "cta_click"
+  | "form_submit"
+  | "form_start"
+  | "lead_capture"
+  | "page_view"
+  | "phone_click"
+  | "client_error";
 
 interface TrackOptions {
   label?: string;
