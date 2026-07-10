@@ -427,7 +427,12 @@ export const contactPageSchema = (path: string) => ({
 
 export type PageSchemaInput =
   | { type: "home"; reviews?: ReviewInput[]; aggregate?: { ratingValue: number; reviewCount: number } }
-  | { type: "town"; town: TownSchemaInput; faqs?: { question: string; answer: string }[] }
+  | {
+      type: "town";
+      town: TownSchemaInput;
+      faqs?: { question: string; answer: string }[];
+      page?: { title: string; description: string };
+    }
   | {
       type: "service";
       service: { name: string; description: string; url: string; areaServed?: string };
@@ -477,13 +482,26 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     }
 
     case "town": {
+      const path = `/service-areas/${input.town.slug}`;
+      const breadcrumbId = `${BASE_URL}${path}#breadcrumb`;
+      const businessId = `${BASE_URL}${path}#business`;
       const out: Record<string, unknown>[] = [
         townSchema(input.town),
-        breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Service Areas", url: "/service-areas" },
-          { name: `${input.town.name}, ${input.town.state}`, url: `/service-areas/${input.town.slug}` },
-        ]),
+        breadcrumbSchema(
+          [
+            { name: "Home", url: "/" },
+            { name: "Service Areas", url: "/service-areas" },
+            { name: `${input.town.name}, ${input.town.state}`, url: path },
+          ],
+          breadcrumbId,
+        ),
+        webPageSchema({
+          name: input.page?.title || `Roofing & Construction in ${input.town.name}, ${input.town.state}`,
+          description: input.page?.description || input.town.description,
+          url: path,
+          breadcrumbId,
+          primaryEntityId: businessId,
+        }),
       ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
       return out;
