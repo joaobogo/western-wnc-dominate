@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield, Ruler, Heart } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, ChevronRight, ArrowRight, Hammer, Shield, Ruler, Heart, Search, MapPin } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import logo from "@/assets/logo.svg";
@@ -85,6 +85,21 @@ const townLinks = towns.map((t) => ({
   label: t.name,
   href: `/service-areas/${t.slug}`,
 }));
+
+// Grouped by county for mobile dropdown (searchable, sectioned list).
+interface TownEntry { name: string; slug: string; county: string; href: string }
+const townsByCounty: { county: string; towns: TownEntry[] }[] = (() => {
+  const map = new Map<string, TownEntry[]>();
+  towns.forEach((t) => {
+    const entry: TownEntry = { name: t.name, slug: t.slug, county: t.county, href: `/service-areas/${t.slug}` };
+    const arr = map.get(t.county) ?? [];
+    arr.push(entry);
+    map.set(t.county, arr);
+  });
+  return Array.from(map.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([county, towns]) => ({ county, towns: towns.sort((a, b) => a.name.localeCompare(b.name)) }));
+})();
 
 const dropdownItemVariants = {
   hidden: { opacity: 0, x: -6 },
