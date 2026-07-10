@@ -742,10 +742,10 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
             [JT_CF.location.contact_name]: contactName,
             [JT_CF.location.phone]: payload.contact?.phone || "",
             [JT_CF.location.email]: payload.contact?.email || "",
-            // Sales Notes intentionally left blank — full website intake
-            // summary lives ONLY in Job → Lead Notes (per Highlander/Robert).
-            // Duplicating here caused the same note to appear twice in JobTread.
-            [JT_CF.location.sales_notes]: "",
+            // Sales Notes intentionally OMITTED from the payload — full
+            // website intake summary lives ONLY in Job → Lead Notes
+            // (per Highlander/Robert). Sending the same note here made it
+            // appear twice in JobTread.
           },
         },
         createdLocation: { id: {}, name: {} },
@@ -767,10 +767,9 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
         $: {
           locationId,
           name: jobNameShort,
-          // Description intentionally blank — Highlander uses JobTread
-          // Description for internal scope/notes, not for website intake.
-          // The full website lead summary goes into Lead Notes only.
-          description: "",
+          // Description intentionally OMITTED from the payload — Highlander
+          // uses JobTread Description for internal scope, not for the
+          // website intake summary. Full summary goes into Lead Notes only.
           customFieldValues: {
             [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
             [JT_CF.job.job_type]: mapJobType(payload),
