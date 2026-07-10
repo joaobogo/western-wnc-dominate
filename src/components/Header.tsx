@@ -426,12 +426,16 @@ const Header = () => {
                               metadata: { town: item.label, href: item.href, source: "header_dropdown_desktop" },
                             })
                           }
-                          className={`group/item flex items-center justify-between px-3 py-2 rounded-sm transition-all duration-200 ${
+                          aria-current={isActive(item.href) ? "page" : undefined}
+                          className={`group/item relative flex items-center justify-between px-3 py-2 rounded-sm transition-all duration-200 ${
                             isActive(item.href)
-                              ? "bg-secondary/60 text-foreground"
+                              ? "bg-[hsl(var(--highland-gold)/0.12)] text-foreground font-semibold ring-1 ring-[hsl(var(--highland-gold)/0.35)]"
                               : "text-foreground/70 hover:text-foreground hover:bg-secondary/40"
                           }`}
                         >
+                          {isActive(item.href) && (
+                            <span className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-[3px] rounded-r bg-[hsl(var(--highland-gold))]" />
+                          )}
                           <span className="text-[15px] font-body font-semibold leading-tight">{item.label}</span>
                           <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
                         </Link>
@@ -685,12 +689,16 @@ const Header = () => {
                                 });
                                 setMobileOpen(false);
                               }}
-                              className={`py-2 px-2.5 rounded-sm transition-all block min-h-[40px] text-[14px] font-body ${
+                              aria-current={isActive(item.href) ? "page" : undefined}
+                              className={`relative py-2 px-2.5 rounded-sm transition-all block min-h-[40px] text-[14px] font-body ${
                                 isActive(item.href)
-                                  ? "font-semibold text-heritage-charcoal bg-black/5"
+                                  ? "font-semibold text-heritage-charcoal bg-[hsl(var(--highland-gold)/0.12)] ring-1 ring-[hsl(var(--highland-gold)/0.35)] pl-3.5"
                                   : "text-heritage-charcoal/70 hover:bg-black/5"
                               }`}
                             >
+                              {isActive(item.href) && (
+                                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-[3px] rounded-r bg-[hsl(var(--highland-gold))]" />
+                              )}
                               {item.label}
                             </Link>
                           ))}
