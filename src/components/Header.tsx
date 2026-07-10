@@ -124,6 +124,22 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const serviceAreasTriggerRef = useRef<HTMLAnchorElement>(null);
+  const serviceAreasPanelRef = useRef<HTMLDivElement>(null);
+  const mobileServiceAreasBtnRef = useRef<HTMLButtonElement>(null);
+
+  // Close open desktop dropdown on Escape and restore focus to its trigger.
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpenDropdown(null);
+        if (openDropdown === "ServiceAreas") serviceAreasTriggerRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [openDropdown]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -390,9 +406,32 @@ const Header = () => {
             className="relative"
             onMouseEnter={() => handleDropdownEnter("ServiceAreas")}
             onMouseLeave={handleDropdownLeave}
+            onFocus={() => handleDropdownEnter("ServiceAreas")}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                setOpenDropdown((prev) => (prev === "ServiceAreas" ? null : prev));
+              }
+            }}
           >
             <Link
               to="/service-areas"
+              ref={serviceAreasTriggerRef}
+              aria-haspopup="menu"
+              aria-expanded={openDropdown === "ServiceAreas"}
+              aria-controls="service-areas-menu"
+              onKeyDown={(e) => {
+                if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  setOpenDropdown("ServiceAreas");
+                  requestAnimationFrame(() => {
+                    const first = serviceAreasPanelRef.current?.querySelector<HTMLAnchorElement>('[role="menuitem"]');
+                    first?.focus();
+                  });
+                } else if (e.key === "Escape" && openDropdown === "ServiceAreas") {
+                  e.preventDefault();
+                  setOpenDropdown(null);
+                }
+              }}
               className={`relative text-[15px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
                 isActive("/service-areas")
                   ? "text-heritage-charcoal bg-black/5"
@@ -403,6 +442,7 @@ const Header = () => {
               <motion.div
                 animate={{ rotate: openDropdown === "ServiceAreas" ? 180 : 0 }}
                 transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
+                aria-hidden="true"
               >
                 <ChevronDown className="w-3 h-3 opacity-50" />
               </motion.div>
@@ -417,7 +457,13 @@ const Header = () => {
                   transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
                   className="absolute top-full right-0 pt-2.5"
                 >
-                  <div className="bg-card border border-border rounded-sm shadow-[0_20px_60px_-15px_hsl(var(--heritage-charcoal)/0.15)] w-[440px] relative overflow-hidden">
+                  <div
+                    ref={serviceAreasPanelRef}
+                    id="service-areas-menu"
+                    role="menu"
+                    aria-label="Service areas by town"
+                    className="bg-card border border-border rounded-sm shadow-[0_20px_60px_-15px_hsl(var(--heritage-charcoal)/0.15)] w-[440px] relative overflow-hidden focus:outline-none"
+                  >
                     <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
                       <div
                         className="absolute inset-0 opacity-40 bg-[hsl(var(--highland-gold)/0.1)]"
@@ -436,6 +482,7 @@ const Header = () => {
                         <Link
                           key={item.href}
                           to={item.href}
+                          role="menuitem"
                           onClick={() =>
                             trackEvent("cta_click", {
                               label: `service_area_dropdown:${item.label}`,
@@ -444,17 +491,17 @@ const Header = () => {
                             })
                           }
                           aria-current={isActive(item.href) ? "page" : undefined}
-                          className={`group/item relative flex items-center justify-between px-3 py-2 rounded-sm transition-all duration-200 ${
+                          className={`group/item relative flex items-center justify-between px-3 py-2 rounded-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold)/0.5)] ${
                             isActive(item.href)
                               ? "bg-[hsl(var(--highland-gold)/0.12)] text-foreground font-semibold ring-1 ring-[hsl(var(--highland-gold)/0.35)]"
                               : "text-foreground/70 hover:text-foreground hover:bg-secondary/40"
                           }`}
                         >
                           {isActive(item.href) && (
-                            <span className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-[3px] rounded-r bg-[hsl(var(--highland-gold))]" />
+                            <span aria-hidden="true" className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-[3px] rounded-r bg-[hsl(var(--highland-gold))]" />
                           )}
                           <span className="text-[15px] font-body font-semibold leading-tight">{item.label}</span>
-                          <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
+                          <ChevronRight aria-hidden="true" className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
                         </Link>
                       ))}
                     </div>
@@ -669,7 +716,10 @@ const Header = () => {
                   transition={{ delay: 0.18, duration: 0.3, ease: HIGHLAND_EASE }}
                 >
                   <button
+                    ref={mobileServiceAreasBtnRef}
                     onClick={() => setMobileExpanded(mobileExpanded === "ServiceAreas" ? null : "ServiceAreas")}
+                    aria-expanded={mobileExpanded === "ServiceAreas"}
+                    aria-controls="mobile-service-areas-panel"
                     className={`w-full py-2.5 px-2.5 rounded-sm transition-all duration-200 flex items-center justify-between min-h-[48px] ${
                       isActive("/service-areas")
                         ? "text-heritage-charcoal bg-black/5"
@@ -680,6 +730,7 @@ const Header = () => {
                     <motion.div
                       animate={{ rotate: mobileExpanded === "ServiceAreas" ? 180 : 0 }}
                       transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
+                      aria-hidden="true"
                     >
                       <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" />
                     </motion.div>
@@ -687,11 +738,20 @@ const Header = () => {
                   <AnimatePresence>
                     {mobileExpanded === "ServiceAreas" && (
                       <motion.div
+                        id="mobile-service-areas-panel"
+                        role="region"
+                        aria-label="Service areas by town"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
                         className="overflow-hidden"
+                        onKeyDown={(e) => {
+                          if (e.key === "Escape") {
+                            setMobileExpanded(null);
+                            mobileServiceAreasBtnRef.current?.focus();
+                          }
+                        }}
                       >
                         <div className="ml-3.5 pl-3 pb-2 border-l-2 border-[hsl(var(--highland-gold)/0.15)]">
                           {/* Search input */}
