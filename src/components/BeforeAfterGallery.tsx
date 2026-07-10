@@ -66,7 +66,7 @@ const BeforeAfterGallery = () => {
     const controls = animate(progress, 100, { duration: 5, ease: "linear" });
     timerRef.current = setInterval(() => { progress.set(0); next(); }, 5000);
     return () => { clearInterval(timerRef.current); controls.stop(); };
-  }, [paused, next, current]);
+  }, [paused, next, current, progress]);
 
   const pauseTemporarily = useCallback(() => {
     setPaused(true);
