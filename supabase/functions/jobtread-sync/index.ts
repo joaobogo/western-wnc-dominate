@@ -700,7 +700,17 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     }
 
     // Step 2 — create Location under the Account. JobTread caps name at 30 chars.
-    const rawLocName = [town, address].filter(Boolean).join(" — ") || contactName || "Website Lead";
+    // Display Name format (per Highlander spec):
+    //   "[Customer Name] - [Town] Property"  → e.g. "John Smith - Highlands Property"
+    // If customer name is missing:
+    //   "[Town] Property"                    → e.g. "Highlands Property"
+    // Final fallback: "Website Lead".
+    const rawLocName = (() => {
+      if (contactName && town) return `${contactName} - ${town} Property`;
+      if (town) return `${town} Property`;
+      if (contactName) return `${contactName} Property`;
+      return "Website Lead";
+    })();
     const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
     const locRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
@@ -710,7 +720,9 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           name: locName,
           address: address || null,
           customFieldValues: {
-            [JT_CF.location.gate_code]: false,
+            // Gate code intentionally OMITTED — website form does not collect
+            // gate code info. Per spec: leave blank if not collected rather
+            // than sending a default `false` that misrepresents the property.
             [JT_CF.location.contact_name]: contactName,
             [JT_CF.location.phone]: payload.contact?.phone || "",
             [JT_CF.location.email]: payload.contact?.email || "",
