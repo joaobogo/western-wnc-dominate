@@ -118,6 +118,7 @@ const Header = () => {
   const [hidden, setHidden] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [mobileTownSearch, setMobileTownSearch] = useState("");
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
   const location = useLocation();
@@ -127,6 +128,7 @@ const Header = () => {
   useEffect(() => {
     setMobileOpen(false);
     setMobileExpanded(null);
+    setMobileTownSearch("");
   }, [location.pathname]);
 
   useEffect(() => {
