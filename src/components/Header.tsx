@@ -485,13 +485,18 @@ const Header = () => {
                           role="menuitem"
                           title={`Roofing & Construction in ${item.label}, NC`}
                           aria-label={`Roofing & Construction in ${item.label}, NC`}
-                          onClick={() =>
+                          onClick={() => {
+                            setSourceTown({
+                              town: item.label,
+                              href: item.href,
+                              source: "header_dropdown_desktop",
+                            });
                             trackEvent("cta_click", {
                               label: `service_area_dropdown:${item.label}`,
                               elementId: "header-service-areas-desktop",
                               metadata: { town: item.label, href: item.href, source: "header_dropdown_desktop" },
-                            })
-                          }
+                            });
+                          }}
                           aria-current={isActive(item.href) ? "page" : undefined}
                           className={`group/item relative flex items-center justify-between px-3 py-2 rounded-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold)/0.5)] ${
                             isActive(item.href)
@@ -821,6 +826,12 @@ const Header = () => {
                                         title={`Roofing & Construction in ${item.name}, NC`}
                                         aria-label={`Roofing & Construction in ${item.name}, NC — ${item.county}`}
                                         onClick={() => {
+                                          setSourceTown({
+                                            town: item.name,
+                                            county: item.county,
+                                            href: item.href,
+                                            source: "header_dropdown_mobile",
+                                          });
                                           trackEvent("cta_click", {
                                             label: `service_area_dropdown:${item.name}`,
                                             elementId: "header-service-areas-mobile",
