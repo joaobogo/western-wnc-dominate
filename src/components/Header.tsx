@@ -124,6 +124,22 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const serviceAreasTriggerRef = useRef<HTMLAnchorElement>(null);
+  const serviceAreasPanelRef = useRef<HTMLDivElement>(null);
+  const mobileServiceAreasBtnRef = useRef<HTMLButtonElement>(null);
+
+  // Close open desktop dropdown on Escape and restore focus to its trigger.
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpenDropdown(null);
+        if (openDropdown === "ServiceAreas") serviceAreasTriggerRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [openDropdown]);
 
   useEffect(() => {
     setMobileOpen(false);
