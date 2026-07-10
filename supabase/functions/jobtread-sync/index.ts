@@ -698,9 +698,21 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
 
     // Step 3 — create Job under the Location
     // JobTread caps job.name at 30 chars as well.
-    const jobNameShort = payload.job_name.length > 30
-      ? payload.job_name.slice(0, 30)
-      : payload.job_name;
+    // JobTread caps job.name at 30 chars. Prefer graceful degradation over a
+    // hard slice so we never leave a truncated word (e.g. "... - Q") in the
+    // title. Try full name → first initial → drop name entirely.
+    const jobNameShort = (() => {
+      const full = payload.job_name;
+      if (full.length <= 30) return full;
+      const parts = full.split(" - ");
+      if (parts.length === 3) {
+        const withInitial = `${parts[0]} - ${parts[1]} - ${parts[2].charAt(0)}`;
+        if (withInitial.length <= 30) return withInitial;
+        const noName = `${parts[0]} - ${parts[1]}`;
+        if (noName.length <= 30) return noName;
+      }
+      return full.slice(0, 30);
+    })();
     const jobRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createJob: {
