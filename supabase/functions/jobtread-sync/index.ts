@@ -401,13 +401,25 @@ function buildHumanNote(row: LeadRow): string {
 
 function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   const leadName = humanizeLeadName(row);
+  // Account-level identity must be unique per real customer. Job/lead names
+  // are intentionally short ("Roofing Inquiry - Franklin - John") for
+  // scannability, but reusing that as the JobTread account key merges
+  // unrelated customers who share a first name in the same town. Use the
+  // full submitted name (falling back to email/phone) so the account
+  // lookup key materially identifies the person.
+  const fullName = (row.name ?? "").toString().trim();
+  const town = row.property_town ?? null;
+  const uniqueSuffix = fullName
+    || (row.email ?? "").toString().trim()
+    || (row.phone ?? "").toString().trim()
+    || row.id;
+  const accountName = town ? `${uniqueSuffix} - ${town}` : uniqueSuffix;
   const { urgent, waterEntering } = detectUrgentRoofing(row);
   // Derive a smart category from the readable lead name when the customer
   // did not pick one on the form. Keeps JobTread's job_type useful even for
   // generic contact/quote submissions.
   const inferredCategory = leadName.split(" - ")[0]?.trim() || "Website Lead";
   const jobType = row.service_category || row.lead_type || inferredCategory;
-  const town = row.property_town ?? null;
   const serviceArea = town ? mapServiceAreaSafe(town) : null;
   // Detect city/service-area landing pages by URL pattern.
   const pageUrl: string = row.page_url ?? "";
@@ -422,6 +434,7 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
     // Top-level fields most webhook receivers will look for
     lead_name: leadName,
     job_name: leadName,
+    account_name: accountName,
     job_type: jobType,
     priority: urgent ? "P1" : "P3",
     urgency_level: urgent ? "high" : (row.urgency ?? "normal"),
