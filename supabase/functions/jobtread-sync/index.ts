@@ -711,7 +711,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           $: {
             where: {
               and: [
-                { "=": [{ field: "name" }, { value: payload.lead_name }] },
+                { "=": [{ field: "name" }, { value: payload.account_name ?? payload.lead_name }] },
               ],
             },
             size: 1,
@@ -728,7 +728,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
         createAccount: {
           $: {
             organizationId: orgId,
-            name: payload.lead_name,
+            name: payload.account_name ?? payload.lead_name,
             type: "customer",
             customFieldValues: {
               [JT_CF.account.service_area]: mapServiceArea(town),
