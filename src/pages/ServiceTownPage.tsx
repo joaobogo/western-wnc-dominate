@@ -11,6 +11,7 @@ import { getTownBySlug, towns } from "@/data/towns";
 import {
   getServiceTownEntry,
   getServiceTownEntriesForTown,
+  tier1FlatEntries,
 } from "@/data/service-town-content";
 import { blogPosts } from "@/data/blogs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -65,6 +66,15 @@ const ServiceTownPage = ({
 
   const heroImage = SERVICE_HERO_VARIANTS[serviceSlug] ?? town.heroImage;
 
+  // If this town+service is a Tier 1 pair, the flat URL is canonical
+  // regardless of which route the user arrived on.
+  const tier1 = tier1FlatEntries.find(
+    (t) => t.townSlug === townSlug && t.serviceSlug === serviceSlug,
+  );
+  const resolvedCanonical =
+    canonicalPath ??
+    (tier1 ? `/${tier1.flatSlug}` : `/service-areas/${townSlug}/${serviceSlug}`);
+
   const relatedForTown = getServiceTownEntriesForTown(townSlug).filter(
     (e) => e.serviceSlug !== serviceSlug,
   );
@@ -75,7 +85,7 @@ const ServiceTownPage = ({
       <SEOHead
         title={entry.metaTitle}
         description={entry.metaDescription}
-        path={canonicalPath ?? `/service-areas/${townSlug}/${serviceSlug}`}
+        path={resolvedCanonical}
         jsonLd={buildPageSchema({
           type: "town",
           town: {

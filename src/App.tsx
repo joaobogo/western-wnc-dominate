@@ -189,6 +189,21 @@ const App = () => (
           <Route path="/service-areas/:slug" element={<TownPage />} />
           <Route path="/service-areas/county/:slug" element={<CountyPage />} />
           <Route path="/service-areas/:townSlug/:serviceSlug" element={<ServiceTownPage />} />
+
+          {/* ─── Tier 1 flat-slug commercial pages (Highlands / Franklin / Cashiers × 5 services) ─── */}
+          {tier1FlatEntries.map((t) => (
+            <Route
+              key={t.flatSlug}
+              path={`/${t.flatSlug}`}
+              element={
+                <ServiceTownPage
+                  townSlug={t.townSlug}
+                  serviceSlug={t.serviceSlug}
+                  canonicalPath={`/${t.flatSlug}`}
+                />
+              }
+            />
+          ))}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/about" element={<About />} />
