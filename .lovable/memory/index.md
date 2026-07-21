@@ -38,6 +38,7 @@ Updated: now
 - [Conversion Architecture](mem://strategy/conversion-architecture) — Mobile-first lead capture, sticky CTA, and interactive lead magnets
 - [Market Segmentation](mem://strategy/market-segmentation) — Dual-funnel architecture for B2B (Commercial) and B2C (Residential)
 - [SEO Architecture](mem://seo/architecture-strategy) — SEO Town+Service strategy, internal linking, and JSON-LD structured data
+- [Local SEO Cluster Strategy](mem://strategy/local-seo-cluster) — Primary (Franklin/Highlands/Cashiers) vs secondary (Sylva/Cullowhee) market priority, one-city-per-article rule, 70-80% uniqueness requirement, planned 12-post cluster + service pages
 - [SEO Page Checklist](mem://seo/page-seo-checklist) — End-to-end SEO requirements (sections, schema, links, keywords) per page type
 - [Migration Strategy](mem://seo/migration-strategy) — 301 redirects and URL structure for Hibu migration
 - [Service Categories](mem://features/service-expansion) — Building Services category expansion beyond core roofing
