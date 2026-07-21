@@ -530,7 +530,283 @@ export const serviceTownContent: ServiceTownEntry[] = [
       { q: "What's the best roof for a Murphy mountain cabin?", a: "Dimensional shingles or standing seam metal both perform exceptionally well in Murphy's climate." },
     ],
   }),
+  // ═════════════════════════════════════════════════════════════
+  //  TIER 1 — Highlands / Franklin / Cashiers × 5 core services
+  //  Slugs: roofing, roof-repair, roof-replacement (see above),
+  //         construction, home-repairs
+  //  Each block is written distinctly per city; no swap-the-name copy.
+  // ═════════════════════════════════════════════════════════════
+
+  // ─────────── HIGHLANDS ───────────
+  E({
+    townSlug: "highlands-nc",
+    serviceSlug: "roofing",
+    serviceLabel: "Roofing Services",
+    h1: "Roofing Services in Highlands, NC",
+    intro:
+      "Highlands sits above 4,100 feet, which puts every roof here through a climate most contractors never see: freeze-thaw cycles, ice at the eaves, rime fog on north slopes, and summer downpours that arrive sideways. Roofing on the plateau is a system decision, not a shingle choice.",
+    localContext:
+      "Our Highlands work concentrates on the ridge-line neighborhoods off NC-106, Big Bearpen, Wildcat Cliffs, and the Cullasaja/Horse Cove corridor. Substrate deck condition, ice-and-water coverage well past code minimums, high-temperature underlayment on metal, and true continuous ridge ventilation are the four decisions that separate a plateau roof that lasts from one that fails in a decade.",
+    whoItsFor:
+      "Full-time residents on the plateau, second-home owners closing on Highlands Cove or Highlands Country Club properties, and buyers who need a complete roof condition report before removing the inspection contingency.",
+    proofNote:
+      "We're on Highlands roofs every week of the season. If a competitor tells you 'a roof is a roof,' get a second opinion — the mountain doesn't grade on a curve.",
+    metaTitle: "Roofing Services in Highlands, NC | Highlander",
+    metaDescription:
+      "Licensed roofing contractor serving Highlands, NC at 4,100+ ft. Repairs, replacements, metal, and specialty roofs engineered for plateau weather.",
+    faqs: [
+      { q: "Why does Highlands need a different roofing spec than the valley?", a: "Elevation. Freeze-thaw, ice damming at the eaves, and prolonged wet-cold conditions on the plateau demand higher-temp underlayments, wider ice-and-water membrane, and ventilation designed for cold-roof performance. Standard Piedmont specs don't hold up here." },
+      { q: "Do you work on Highlands Country Club and Highlands Cove homes?", a: "Yes. We're familiar with the HOA/ARB requirements in both communities and coordinate submissions before work starts." },
+      { q: "Can you handle a full re-roof between seasons for a second home?", a: "Yes. Most of our second-home replacements are scheduled around the shoulder seasons so owners return to a completed roof and no in-house disruption." },
+    ],
+  }),
+  E({
+    townSlug: "highlands-nc",
+    serviceSlug: "roof-repair",
+    serviceLabel: "Roof Repair",
+    h1: "Roof Repair in Highlands, NC",
+    intro:
+      "A leak at 4,100 feet does not wait for a scheduling window. Because Highlands weather compresses damage — one storm can move a decade forward — our repair work here is fast, thoroughly documented, and pointed straight at the actual failure, not a cosmetic patch.",
+    localContext:
+      "The repairs we see most often in Highlands: valley wear-through where snow slides converge, pipe-boot cracking from UV plus freeze-thaw, fastener back-out on older metal roofs, and step-flashing failures on stone chimneys where the mason and roofer never truly coordinated the first time.",
+    whoItsFor:
+      "Owners with an active leak, second-home owners who found a stain on the season-open walkthrough, and property managers preparing a rental for a booked stay.",
+    proofNote:
+      "Every Highlands repair leaves with photos of what failed, what we did, and what's still on the clock. Nothing hidden, nothing padded.",
+    metaTitle: "Roof Repair in Highlands, NC | Highlander Roofing",
+    metaDescription:
+      "Fast, honest roof repair in Highlands, NC. Same-day/next-day plateau response, photo-documented scopes, and a straight answer on repair vs. replace.",
+    faqs: [
+      { q: "How quickly can you get to a Highlands leak?", a: "Most active-leak inspections on the plateau happen within 24–48 hours. In severe weather, we prioritize by damage class, not by call order." },
+      { q: "Will a repair void my roof's warranty?", a: "Only if it's done wrong. We use compatible materials and document the repair so your manufacturer coverage stays intact." },
+      { q: "My roof is 18 years old — is a repair worth it?", a: "Sometimes. If the failure is isolated and the field is sound, yes. If the underlayment is brittle across the deck, we'll tell you that plainly and price both options." },
+    ],
+  }),
+  E({
+    townSlug: "highlands-nc",
+    serviceSlug: "construction",
+    serviceLabel: "Construction Services",
+    h1: "Construction Services in Highlands, NC",
+    intro:
+      "Building or remodeling in Highlands is not a valley project transplanted uphill. Grade, granite, water table, wind exposure, and a short building season all shape the schedule and the detail. We plan, price, and build around the mountain — not against it.",
+    localContext:
+      "Our Highlands construction work covers additions, kitchen and primary-suite remodels, screened porches designed for four-season use, and full envelope upgrades on 1980s and 1990s homes that were never insulated for plateau winters. Foundation and drainage design come first on this terrain; framing and finish follow.",
+    whoItsFor:
+      "Homeowners planning an addition or major remodel, buyers who just closed on a home that needs to be brought up to their standard, and clients who want a single team accountable from design through the final walkthrough.",
+    proofNote:
+      "Roofing division and construction division under one roof means the envelope actually lines up — no finger-pointing between trades when something moves.",
+    metaTitle: "Construction Services in Highlands, NC | Highlander",
+    metaDescription:
+      "Additions, remodels, and full-envelope projects in Highlands, NC. One team, plateau-grade detailing, and a project lead you can reach directly.",
+    faqs: [
+      { q: "Do you handle design as well as construction?", a: "Yes. Our in-house design track can take a project from first sketch through permit-ready drawings and into build, or we work from your architect's set." },
+      { q: "What's a realistic timeline for a Highlands addition?", a: "Most additions run 4–8 months from signed contract to punch-list depending on scope, permitting, and material lead times. We give you a written schedule before we start." },
+      { q: "Do you pull the permits with the Town of Highlands and Macon County?", a: "Yes. Permit coordination is on us, including any HOA or ARB submission your neighborhood requires." },
+    ],
+  }),
+  E({
+    townSlug: "highlands-nc",
+    serviceSlug: "home-repairs",
+    serviceLabel: "Home Repair Services",
+    h1: "Home Repair Services in Highlands, NC",
+    intro:
+      "Highlands homes take a beating in ways valley homes don't: wind-driven rain, freeze cycles that split unsealed penetrations, and long stretches of unoccupied months when small failures grow into large ones. Our home-repair work is the fast, correct fix — not a stopgap.",
+    localContext:
+      "The repairs we see most often on the plateau: exterior wood rot at trim and beam ends, water intrusion at deck ledgers, chimney chase leaks, failed skylight seals, and interior damage remediation after a roof event. On second homes we frequently pair the repair with a broader condition report so nothing else is missed.",
+    whoItsFor:
+      "Full-time residents catching small problems early, second-home owners who need coordinated repairs handled between visits, and buyers with a home-inspection punch list that needs a real contractor — not a handyman.",
+    proofNote:
+      "One point of contact, one written scope, one crew. You don't have to chase five trades to get one repair done right.",
+    metaTitle: "Home Repair Services in Highlands, NC | Highlander",
+    metaDescription:
+      "Coordinated home repairs in Highlands, NC — exterior, envelope, and interior damage remediation from a licensed general contractor.",
+    faqs: [
+      { q: "Can you manage repairs while I'm out of town?", a: "Yes. We handle access, document progress with photos, and coordinate any secondary trades so you return to a completed project." },
+      { q: "Do you take on smaller repair scopes or only large ones?", a: "Both. We're transparent about our minimum during the initial call so there are no surprises." },
+      { q: "Can you handle water damage from a roof failure end-to-end?", a: "Yes. We stop the source, dry the assembly, and coordinate interior repairs so one company owns the outcome." },
+    ],
+  }),
+
+  // ─────────── FRANKLIN ───────────
+  E({
+    townSlug: "franklin-nc",
+    serviceSlug: "roofing",
+    serviceLabel: "Roofing Services",
+    h1: "Roofing Services in Franklin, NC",
+    intro:
+      "Franklin is where Highlander started, and it's still the market we know best. Our crews live here, our yard is here, and most Franklin homes are inside a 15-minute drive of a truck ready to roll. That proximity is why we can quote fast, start on time, and keep our word on completion dates.",
+    localContext:
+      "Franklin roofing splits cleanly into three groups: 20–30 year asphalt systems on ranch and split-level homes across town, farmhouse and cabin roofs in the surrounding valleys where standing seam metal now dominates new work, and older homes where ventilation and flashing were never done right the first time and are the real cause of premature failure.",
+    whoItsFor:
+      "Long-time Franklin homeowners weighing repair vs. replace, first-time buyers who need a straight condition report, and homeowners preparing a property for sale or refinance.",
+    proofNote:
+      "Same crew from estimate through cleanup. When you drive by Franklin roofs we did five and ten years ago, they still look right — that's the reference you should be asking for.",
+    metaTitle: "Roofing Services in Franklin, NC | Highlander Roofing",
+    metaDescription:
+      "Franklin, NC roofing contractor — repairs, replacements, and metal systems from a local team-led team. CertainTeed ShingleMaster credentialed.",
+    faqs: [
+      { q: "Are you actually based in Franklin?", a: "Yes. Our shop, yard, and office are in Macon County. When you call, you're reaching the people who will be on your roof." },
+      { q: "What roofing warranty do you offer in Franklin?", a: "Manufacturer material warranty plus a Highlander workmanship warranty. Both are put in writing and handed to you at project close-out." },
+      { q: "Do you handle insurance claims in Franklin?", a: "We provide the documentation adjusters need, but we don't do the adjuster's job — the claim relationship stays between you and your carrier." },
+    ],
+  }),
+  E({
+    townSlug: "franklin-nc",
+    serviceSlug: "construction",
+    serviceLabel: "Construction Services",
+    h1: "Construction Services in Franklin, NC",
+    intro:
+      "Beyond the roof, Franklin homeowners come to us for additions, remodels, and outdoor-living projects that need a licensed general contractor who actually shows up. Our construction division runs on the same job-lead model as our roofing crews: one person accountable, start to finish.",
+    localContext:
+      "Franklin construction work is a mix of primary residences that want to stay for the next 20 years and rentals or short-term properties that need to earn. We build for both: durable, right-detailed envelopes on the family homes, and clean, punch-list-tight finishes on the income properties.",
+    whoItsFor:
+      "Homeowners adding a primary suite, in-law suite, or garage, families opening the main floor with a kitchen remodel, and property owners upgrading a rental for higher nightly rates.",
+    proofNote:
+      "Written schedule at signing, weekly written update during the build. If we slip, you find out from us before you notice on-site.",
+    metaTitle: "Construction Services in Franklin, NC | Highlander",
+    metaDescription:
+      "Additions, remodels, and new-build work in Franklin, NC from a licensed general contractor with in-house design and a single project lead.",
+    faqs: [
+      { q: "What's the smallest construction project you take on?", a: "We're transparent about minimums on the initial call. Small isn't a problem — poorly scoped is." },
+      { q: "Do I need architect drawings before calling you?", a: "Not necessarily. Our in-house design track can produce permit-ready drawings, or we work from your architect's set." },
+      { q: "How do you handle change orders?", a: "In writing. Every change gets a line-item cost and schedule impact before work moves." },
+    ],
+  }),
+  E({
+    townSlug: "franklin-nc",
+    serviceSlug: "home-repairs",
+    serviceLabel: "Home Repair Services",
+    h1: "Home Repair Services in Franklin, NC",
+    intro:
+      "Small repairs done badly become big repairs later. Franklin homeowners call us when they want the fix done once — coordinated, warrantied, and documented — not passed between three trades who each blame the next one.",
+    localContext:
+      "The Franklin repair calls we take most often: exterior trim rot on 25+ year homes, ledger and deck-attachment failures, chimney flashing that never worked, skylight replacement, and water-intrusion cleanup after a roof event.",
+    whoItsFor:
+      "Homeowners with a punch list, buyers working through a home-inspection response, and property owners keeping a rental in market-ready condition.",
+    proofNote:
+      "One estimate, one crew, one warranty. If it isn't right, we come back — that's the standard.",
+    metaTitle: "Home Repair Services in Franklin, NC | Highlander",
+    metaDescription:
+      "Coordinated home repairs in Franklin, NC. Exterior, envelope, and interior damage remediation from a licensed general contractor.",
+    faqs: [
+      { q: "Do you do handyman-scale work?", a: "We're a licensed general contractor, so our floor is higher than a handyman's. Anything at or above that floor, yes — and it comes with a written scope and warranty." },
+      { q: "Can you handle interior work after a roof leak?", a: "Yes. Drying, drywall, paint, and finish repairs are inside our scope so you're not managing multiple companies." },
+      { q: "How fast can a repair estimate happen in Franklin?", a: "Most Franklin repair walk-throughs are on the calendar inside 48 hours." },
+    ],
+  }),
+
+  // ─────────── CASHIERS ───────────
+  E({
+    townSlug: "cashiers-nc",
+    serviceSlug: "roofing",
+    serviceLabel: "Roofing Services",
+    h1: "Roofing Services in Cashiers, NC",
+    intro:
+      "Cashiers homes are almost never simple roofs. Steep pitches, complex valley geometry, dormers, and heavy timber accents mean the field work has to match the design work — and both have to survive plateau weather that punishes anything less than a full system.",
+    localContext:
+      "Our Cashiers work is concentrated along the NC-107 and US-64 corridors and on the private communities south of town — High Hampton, Trillium, Wade Hampton, Chattooga Club. On these homes the roof is a design element as much as a weather assembly, and specification errors show up visibly, not just as a leak years later.",
+    whoItsFor:
+      "Owners of legacy plateau homes updating the roof after 20+ years, buyers taking on a Cashiers property that needs a baseline condition report, and homeowners planning a re-roof coordinated with a broader exterior update.",
+    proofNote:
+      "Roofing in Cashiers is a specification problem before it's an installation problem. We answer both — and we put the specification in writing.",
+    metaTitle: "Roofing Services in Cashiers, NC | Highlander",
+    metaDescription:
+      "Cashiers, NC roofing contractor for complex plateau homes. Metal, specialty, and asphalt roof systems specified and installed for four-season performance.",
+    faqs: [
+      { q: "Do you work in the private communities around Cashiers?", a: "Yes, across High Hampton, Trillium, Wade Hampton, Chattooga Club, and others. We coordinate ARB submissions and community access requirements before work starts." },
+      { q: "How do you handle steep-slope safety on Cashiers roofs?", a: "Every crew is trained and equipped for the pitches we work on here. Fall protection is planned into the estimate, not improvised on day one." },
+      { q: "Can you re-roof around an existing solar array?", a: "Yes. We coordinate detachment and re-set with the installer or handle a full remove/reinstall if needed." },
+    ],
+  }),
+  E({
+    townSlug: "cashiers-nc",
+    serviceSlug: "roof-repair",
+    serviceLabel: "Roof Repair",
+    h1: "Roof Repair in Cashiers, NC",
+    intro:
+      "Repair work in Cashiers has to respect two things at once: the reason the roof is failing, and the design language of the home it protects. A visible patch on a plateau roof is a design problem in addition to a weather one — we solve both.",
+    localContext:
+      "The most frequent Cashiers repair calls: flashing failures at the many roof-to-wall transitions on complex plans, cracked pipe boots on 15+ year systems, ice-and-snow damage in valleys after freeze-thaw cycles, and older metal roofs with backing-out fasteners that no one has revisited in a decade.",
+    whoItsFor:
+      "Owners with an active or intermittent leak, buyers who need a written repair scope during due diligence, and homeowners preparing a property for the upcoming season.",
+    proofNote:
+      "A repair on a Cashiers roof should look like it wasn't there. That's the bar we hold ourselves to.",
+    metaTitle: "Roof Repair in Cashiers, NC | Highlander Roofing",
+    metaDescription:
+      "Precision roof repair in Cashiers, NC. Plateau-experienced crews, photo-documented scopes, and repairs that respect the home's design.",
+    faqs: [
+      { q: "How fast can you inspect a Cashiers roof?", a: "Most Cashiers-area repair inspections are on the calendar inside 24–72 hours depending on weather and current call volume." },
+      { q: "Can you match aged materials on a repair?", a: "We match to the closest current spec and note any visual difference in writing before we start. On some legacy roofs a broader repair area gives a cleaner result — we'll show you both options." },
+      { q: "Do you provide written repair reports for buyers or sellers?", a: "Yes. Every repair inspection includes a photo-documented scope you can share with counsel, insurance, or the other side of a transaction." },
+    ],
+  }),
+  E({
+    townSlug: "cashiers-nc",
+    serviceSlug: "construction",
+    serviceLabel: "Construction Services",
+    h1: "Construction Services in Cashiers, NC",
+    intro:
+      "Cashiers construction is a design discipline first. Additions, screened porches, and remodels here have to sit inside a strong design vocabulary and hold up to a strict community review process. Our construction division is built to work in both worlds.",
+    localContext:
+      "The Cashiers projects we take on most often: primary-suite additions on legacy plateau homes, four-season screened porches integrated with existing rooflines, kitchen and great-room remodels opened for real entertaining, and full envelope upgrades on 1980s–1990s homes that were built for a different climate expectation.",
+    whoItsFor:
+      "Owners of plateau homes planning a serious addition or remodel, buyers who just closed on a property and want a coordinated whole-home update, and clients working through community ARB approvals who want a builder who understands the process.",
+    proofNote:
+      "One team, one lead, one accountable point of contact from first meeting through the walkthrough. No handoffs.",
+    metaTitle: "Construction Services in Cashiers, NC | Highlander",
+    metaDescription:
+      "Additions, remodels, and envelope work in Cashiers, NC from a licensed general contractor with in-house design and ARB experience.",
+    faqs: [
+      { q: "Do you work with community ARBs around Cashiers?", a: "Yes. We prepare and submit ARB packages for the communities we regularly work in and coordinate any revisions the board requests." },
+      { q: "How long does an addition take in Cashiers?", a: "Most additions run 5–9 months from signed contract through punch-list, depending on scope and permit timing. You get a written schedule before we start." },
+      { q: "Can you coordinate with my architect or designer?", a: "Yes. We regularly build from other firms' documents and act as the contractor of record for those projects." },
+    ],
+  }),
+  E({
+    townSlug: "cashiers-nc",
+    serviceSlug: "home-repairs",
+    serviceLabel: "Home Repair Services",
+    h1: "Home Repair Services in Cashiers, NC",
+    intro:
+      "Cashiers homes are exposed to weather most builders never build for. When something fails — an exterior detail, a deck attachment, a chimney flashing — the right response is a coordinated repair from a general contractor, not a rotating cast of trade calls.",
+    localContext:
+      "Common Cashiers repair calls: exterior trim and beam-end rot on legacy homes, deck ledger failures, chimney chase leaks, failed skylight seals, and interior remediation after a roof or plumbing event. On second homes we frequently combine the repair with a broader condition report.",
+    whoItsFor:
+      "Owners with a specific failure that needs a definitive fix, second-home owners coordinating repairs between visits, and buyers working through an inspection response.",
+    proofNote:
+      "One scope, one crew, one warranty. We own the outcome, not just our part of it.",
+    metaTitle: "Home Repair Services in Cashiers, NC | Highlander",
+    metaDescription:
+      "Coordinated home repairs in Cashiers, NC. Exterior, envelope, and interior remediation from a licensed general contractor.",
+    faqs: [
+      { q: "Can you handle repairs while my home is closed for the season?", a: "Yes. We coordinate access, document progress, and hand back a completed, cleaned project so nothing is waiting on you." },
+      { q: "Do you fix water damage end-to-end?", a: "Yes. Source, dry, and finish repairs are in-scope so one contractor is responsible for the result." },
+      { q: "How do you price small repairs?", a: "Time-and-materials on true small work, fixed-price on defined scopes. We tell you which model we're using and why before we start." },
+    ],
+  }),
 ];
+
+// ─────────────────────────────────────────────────────────────
+//  Tier 1 flat-slug directory — canonical short URLs the site uses
+//  to serve the same content at /roofing-highlands-nc etc.
+// ─────────────────────────────────────────────────────────────
+
+export interface Tier1FlatEntry {
+  flatSlug: string;    // e.g. "roofing-highlands-nc"
+  townSlug: string;    // e.g. "highlands-nc"
+  serviceSlug: string; // e.g. "roofing"
+}
+
+const TIER1_CITIES = ["highlands-nc", "franklin-nc", "cashiers-nc"] as const;
+const TIER1_SERVICES = ["roofing", "roof-repair", "roof-replacement", "construction", "home-repairs"] as const;
+
+export const tier1FlatEntries: Tier1FlatEntry[] = TIER1_CITIES.flatMap((town) =>
+  TIER1_SERVICES.map((service) => ({
+    flatSlug: `${service}-${town}`,
+    townSlug: town,
+    serviceSlug: service,
+  })),
+);
 
 
 export function getServiceTownEntry(townSlug: string, serviceSlug: string) {
