@@ -34,10 +34,28 @@ const SERVICE_HERO_VARIANTS: Record<string, string> = {
     "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000",
   "outdoor-living":
     "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=2000",
+  "roofing":
+    "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&q=80&w=2000",
+  "construction":
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000",
+  "home-repairs":
+    "https://images.unsplash.com/photo-1581091012184-5c8a7f5e4f7f?auto=format&fit=crop&q=80&w=2000",
 };
 
-const ServiceTownPage = () => {
-  const { townSlug = "", serviceSlug = "" } = useParams();
+interface ServiceTownPageProps {
+  townSlug?: string;
+  serviceSlug?: string;
+  canonicalPath?: string;
+}
+
+const ServiceTownPage = ({
+  townSlug: propTownSlug,
+  serviceSlug: propServiceSlug,
+  canonicalPath,
+}: ServiceTownPageProps = {}) => {
+  const params = useParams();
+  const townSlug = propTownSlug ?? params.townSlug ?? "";
+  const serviceSlug = propServiceSlug ?? params.serviceSlug ?? "";
   const town = getTownBySlug(townSlug);
   const entry = getServiceTownEntry(townSlug, serviceSlug);
 
@@ -57,7 +75,7 @@ const ServiceTownPage = () => {
       <SEOHead
         title={entry.metaTitle}
         description={entry.metaDescription}
-        path={`/service-areas/${townSlug}/${serviceSlug}`}
+        path={canonicalPath ?? `/service-areas/${townSlug}/${serviceSlug}`}
         jsonLd={buildPageSchema({
           type: "town",
           town: {
