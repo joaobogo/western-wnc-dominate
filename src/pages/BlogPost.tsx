@@ -13,6 +13,8 @@ import { TrustSidebar } from "@/components/trust";
 import { getBlogBySlug, blogPosts } from "@/data/blogs";
 import { projectDetails } from "@/data/projects";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
+import { getBlogInternalLinks } from "@/lib/blog-internal-links";
+import BlogInternalLinksBlock from "@/components/blog/BlogInternalLinksBlock";
 
 /* ─── Author data ─── */
 const authors: Record<string, { name: string; role: string; bio: string }> = {
@@ -138,6 +140,7 @@ const BlogPostPage = () => {
 
   const author = authors.default;
   const takeaways = extractTakeaways(post.content);
+  const internalLinks = getBlogInternalLinks(post);
   const relatedPosts = blogPosts
     .filter((p) => p.slug !== slug && (p.category === post.category || p.town === post.town))
     .slice(0, 3);
