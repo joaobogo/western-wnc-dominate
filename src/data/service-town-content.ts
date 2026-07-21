@@ -808,6 +808,116 @@ export const tier1FlatEntries: Tier1FlatEntry[] = TIER1_CITIES.flatMap((town) =>
   })),
 );
 
+// ─────────────────────────────────────────────────────────────
+//  TIER 2 — Sylva & Cullowhee. Broader combined "roofing + construction"
+//  hub page per city, plus a dedicated roof-repair page. We start narrow
+//  here on purpose; dedicated replacement/construction/home-repair pages
+//  come later once these earn impressions.
+// ─────────────────────────────────────────────────────────────
+
+serviceTownContent.push(
+  E({
+    townSlug: "sylva-nc",
+    serviceSlug: "roofing-construction",
+    serviceLabel: "Roofing & Construction",
+    h1: "Roofing and Construction Services in Sylva, NC",
+    intro:
+      "Sylva sits in the Tuckasegee valley where a compact downtown meets steep, forested slopes climbing toward Balsam and Cowee. That geography shapes every roof and every addition we build here — drainage, snow load, and access are all decisions that get made before framing.",
+    localContext:
+      "Our Sylva work is a mix of long-standing family homes near downtown, hillside builds along Skyland Drive and the Dillsboro side of the river, and updates on 1970s–1990s homes that were built before modern envelope standards. We handle the roofing division and the construction division under one project lead so the exterior actually lines up when the addition ties into the existing house.",
+    whoItsFor:
+      "Homeowners planning a roof plus an exterior update in the same season, buyers finishing a Jackson County home purchase who need one contractor for a coordinated punch list, and long-term owners weighing a re-roof against a broader whole-home refresh.",
+    proofNote:
+      "Roofing and construction under one roof means one written schedule, one warranty, and one person accountable when something moves.",
+    metaTitle: "Roofing & Construction in Sylva, NC | Highlander",
+    metaDescription:
+      "Sylva, NC roofing and construction from one licensed general contractor. Re-roofs, repairs, additions, and remodels coordinated by a single project lead.",
+    faqs: [
+      { q: "Do you actually work in Jackson County or just visit?", a: "We work in Jackson County regularly — Sylva, Dillsboro, Cullowhee, and the surrounding communities. Trucks, materials, and crews cover this market on their normal weekly rotation." },
+      { q: "Can you combine a re-roof with an addition into one project?", a: "Yes, and it usually saves you real money on staging, dumpsters, and access. We sequence both scopes together with one written schedule." },
+      { q: "Who pulls the permits with Jackson County?", a: "We do. Permit coordination, inspections, and final sign-off are on us." },
+    ],
+  }),
+  E({
+    townSlug: "sylva-nc",
+    serviceSlug: "roofing-construction-hub",
+    // duplicate reserved for future — safe no-op
+    serviceLabel: "Roofing & Construction",
+    h1: "Roofing and Construction Services in Sylva, NC",
+    intro: "",
+    localContext: "",
+    whoItsFor: "",
+    proofNote: "",
+    metaTitle: "",
+    metaDescription: "",
+    faqs: [],
+  }),
+  E({
+    townSlug: "cullowhee-nc",
+    serviceSlug: "roofing-construction",
+    serviceLabel: "Roofing & Construction",
+    h1: "Roofing and Construction Services in Cullowhee, NC",
+    intro:
+      "Cullowhee is defined by the Tuckasegee, the university, and the hillside neighborhoods that ring both. Homes here range from long-held family properties to newer builds on steep parcels — and the right roof and the right addition look different on each.",
+    localContext:
+      "Our Cullowhee work covers re-roofs on older WCU-adjacent homes where ventilation and flashing details were never right, additions and remodels on hillside properties where drainage and access drive the schedule, and full envelope updates on 1980s–1990s homes that need to catch up to modern climate expectations. Roofing and construction sit under one project lead so the exterior stays coherent when scopes overlap.",
+    whoItsFor:
+      "Homeowners planning a coordinated roof plus exterior update, buyers finishing on a Cullowhee property that needs a real punch list, and property owners upgrading rentals or long-term family homes without juggling multiple trades.",
+    proofNote:
+      "One team, one lead, one warranty. If it isn't right we come back — that's the standard on every Cullowhee project.",
+    metaTitle: "Roofing & Construction in Cullowhee, NC | Highlander",
+    metaDescription:
+      "Cullowhee, NC roofing and construction from a licensed general contractor. Re-roofs, repairs, additions, and remodels coordinated by one project lead.",
+    faqs: [
+      { q: "Are you set up to work in Cullowhee specifically?", a: "Yes. Cullowhee is inside our regular Jackson County service area — same crews, same materials pipeline as Sylva." },
+      { q: "Can you handle a re-roof and an addition in the same season?", a: "Yes. Combining the scopes usually cuts cost on staging and access. You get one written schedule for both." },
+      { q: "Do you work on rental properties?", a: "Yes. We keep rental turn timelines in mind on scoping and provide a clean, punch-list-tight handoff." },
+    ],
+  }),
+  E({
+    townSlug: "cullowhee-nc",
+    serviceSlug: "roof-repair",
+    serviceLabel: "Roof Repair",
+    h1: "Roof Repair in Cullowhee, NC",
+    intro:
+      "A leak in Cullowhee doesn't wait on a scheduling window. Because we run Jackson County as a normal weekly route, most repair inspections here happen inside 48 hours — and the fix is scheduled before we leave the driveway.",
+    localContext:
+      "The repair calls we see most often in Cullowhee: valley wear-through on 15+ year asphalt, pipe-boot failures from long UV plus freeze-thaw exposure, chimney flashing that was never properly stepped on older homes, and small storm damage that keeps getting bigger because it was patched instead of fixed.",
+    whoItsFor:
+      "Owners with an active leak, buyers working through an inspection response before closing, and property owners keeping a rental or family home in tight condition year-round.",
+    proofNote:
+      "Every Cullowhee repair leaves with photos of what failed, what we did, and what's still on the clock. Nothing hidden, nothing padded.",
+    metaTitle: "Roof Repair in Cullowhee, NC | Highlander Roofing",
+    metaDescription:
+      "Fast, honest roof repair in Cullowhee, NC. Same-week response, photo-documented scopes, and a straight answer on repair vs. replace.",
+    faqs: [
+      { q: "How fast can you get to a Cullowhee leak?", a: "Most active-leak inspections in Cullowhee are on the calendar inside 48 hours. Temporary protection can usually be installed the same visit." },
+      { q: "Is my repair worth doing or should I replace?", a: "Depends on the field. If the failure is isolated and the underlayment is sound, repair is the right call. If the deck is brittle across the roof, we'll say so plainly and price both options." },
+      { q: "Do you provide written repair reports for insurance?", a: "Yes. Every repair inspection includes a photo-documented scope you can send directly to your adjuster." },
+    ],
+  }),
+);
+
+// Remove the reserved placeholder entry so it never renders.
+for (let i = serviceTownContent.length - 1; i >= 0; i--) {
+  if (serviceTownContent[i].serviceSlug === "roofing-construction-hub") {
+    serviceTownContent.splice(i, 1);
+  }
+}
+
+export interface Tier2FlatEntry {
+  flatSlug: string;
+  townSlug: string;
+  serviceSlug: string;
+}
+
+export const tier2FlatEntries: Tier2FlatEntry[] = [
+  { flatSlug: "roofing-construction-sylva-nc",   townSlug: "sylva-nc",     serviceSlug: "roofing-construction" },
+  { flatSlug: "roof-repair-sylva-nc",            townSlug: "sylva-nc",     serviceSlug: "roof-repair" },
+  { flatSlug: "roofing-construction-cullowhee-nc", townSlug: "cullowhee-nc", serviceSlug: "roofing-construction" },
+  { flatSlug: "roof-repair-cullowhee-nc",        townSlug: "cullowhee-nc", serviceSlug: "roof-repair" },
+];
+
 
 export function getServiceTownEntry(townSlug: string, serviceSlug: string) {
   return serviceTownContent.find(
