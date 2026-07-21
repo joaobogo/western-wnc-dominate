@@ -235,7 +235,7 @@ const FAQ = () => {
     <>
       <SEOHead
         title="FAQ — Roofing & Construction Questions | Highlander"
-        description="Answers to common questions about roofing, repairs, storm damage, insurance, construction, additions, outdoor living, warranties, and permits in Western North Carolina."
+        description="Answers to common questions on roofing, repairs, storm damage, insurance, additions, warranties, and permits in Western NC."
         path="/faq"
         jsonLd={[
           organizationSchema(),
