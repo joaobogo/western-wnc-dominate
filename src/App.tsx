@@ -11,7 +11,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/leads";
-import { tier1FlatEntries } from "./data/service-town-content";
+import { tier1FlatEntries, tier2FlatEntries } from "./data/service-town-content";
 
 // Initialize tracking pixels
 initPixels();
@@ -193,6 +193,21 @@ const App = () => (
 
           {/* ─── Tier 1 flat-slug commercial pages (Highlands / Franklin / Cashiers × 5 services) ─── */}
           {tier1FlatEntries.map((t) => (
+            <Route
+              key={t.flatSlug}
+              path={`/${t.flatSlug}`}
+              element={
+                <ServiceTownPage
+                  townSlug={t.townSlug}
+                  serviceSlug={t.serviceSlug}
+                  canonicalPath={`/${t.flatSlug}`}
+                />
+              }
+            />
+          ))}
+
+          {/* ─── Tier 2 flat-slug pages (Sylva / Cullowhee) ─── */}
+          {tier2FlatEntries.map((t) => (
             <Route
               key={t.flatSlug}
               path={`/${t.flatSlug}`}
