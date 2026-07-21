@@ -357,6 +357,9 @@ const BlogPostPage = () => {
                   </motion.div>
                 )}
 
+                {/* SEO Internal Linking Block — city, service, related blog, project, estimate */}
+                <BlogInternalLinksBlock links={internalLinks} town={post.town} />
+
                 {/* Localized Proof Moment - Dynamic connection to Gallery */}
                 <div className="mt-16 pt-12 border-t border-border">
                   <div className="flex items-center justify-between mb-8">
