@@ -12,6 +12,7 @@ import {
   getServiceTownEntry,
   getServiceTownEntriesForTown,
   tier1FlatEntries,
+  tier2FlatEntries,
 } from "@/data/service-town-content";
 import { blogPosts } from "@/data/blogs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -41,6 +42,8 @@ const SERVICE_HERO_VARIANTS: Record<string, string> = {
     "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000",
   "home-repairs":
     "https://images.unsplash.com/photo-1581091012184-5c8a7f5e4f7f?auto=format&fit=crop&q=80&w=2000",
+  "roofing-construction":
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
 };
 
 interface ServiceTownPageProps {
@@ -71,9 +74,16 @@ const ServiceTownPage = ({
   const tier1 = tier1FlatEntries.find(
     (t) => t.townSlug === townSlug && t.serviceSlug === serviceSlug,
   );
+  const tier2 = tier2FlatEntries.find(
+    (t) => t.townSlug === townSlug && t.serviceSlug === serviceSlug,
+  );
   const resolvedCanonical =
     canonicalPath ??
-    (tier1 ? `/${tier1.flatSlug}` : `/service-areas/${townSlug}/${serviceSlug}`);
+    (tier1
+      ? `/${tier1.flatSlug}`
+      : tier2
+        ? `/${tier2.flatSlug}`
+        : `/service-areas/${townSlug}/${serviceSlug}`);
 
   const relatedForTown = getServiceTownEntriesForTown(townSlug).filter(
     (e) => e.serviceSlug !== serviceSlug,
