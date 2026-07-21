@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { execSync } from "node:child_process";
+import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/supabase/vite";
 
 function sitemapPlugin() {
   return {
@@ -40,7 +41,7 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), sitemapPlugin(), faviconVerifyPlugin(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), sitemapPlugin(), faviconVerifyPlugin(), mcpPlugin(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

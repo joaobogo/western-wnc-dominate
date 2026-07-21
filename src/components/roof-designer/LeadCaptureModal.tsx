@@ -26,7 +26,7 @@ const leadSchema = z.object({
   phone: z.string().trim().max(20).optional(),
   town: z.string().trim().max(100).optional(),
   timeline: z.string().optional(),
-  gdpr_consent: z.literal(true, { errorMap: () => ({ message: "Please agree to continue" }) }),
+  gdpr_consent: z.literal(true, { message: "Please agree to continue" }),
 });
 
 const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCaptureModalProps) => {
