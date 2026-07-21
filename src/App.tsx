@@ -11,6 +11,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/leads";
+import { tier1FlatEntries } from "./data/service-town-content";
 
 // Initialize tracking pixels
 initPixels();
