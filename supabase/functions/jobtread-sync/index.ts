@@ -537,7 +537,7 @@ function validateCustomerAccountName(
   return null;
 }
 
-function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
+export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   const leadName = humanizeLeadName(row);
   const town = row.property_town ?? null;
   const meta: any = row.metadata ?? {};
