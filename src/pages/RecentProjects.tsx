@@ -304,7 +304,7 @@ const RecentProjects = () => {
                 plugin is ready. Loading/fallback UI overlays only when needed. */}
             <div className="relative">
               <div
-                id="rwl-output"
+                id="rwl-neighborhood"
                 ref={rwlOutputRef}
                 className="min-h-[180px]"
                 aria-live="polite"
