@@ -96,6 +96,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <GTMRouteTracker />
           <Suspense fallback={<div className="min-h-screen bg-background" />}>
             <ErrorBoundary boundary="route">
               <Routes>
