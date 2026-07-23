@@ -563,22 +563,16 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   return {
     // Top-level fields most webhook receivers will look for
     lead_name: leadName,
-    job_name: leadName,
+    job_name: buildJobName(row),
     account_name: accountName,
+    location_display_name: buildLocationDisplayName(row),
     job_type: jobType,
     priority: urgent ? "P1" : "P3",
     urgency_level: urgent ? "high" : (row.urgency ?? "normal"),
     water_actively_entering: waterEntering,
     org_id: JOBTREAD_ORG_ID || null,
     // Structured sections
-    contact: {
-      name: row.name ?? null,
-      phone: row.phone ?? null,
-      secondary_phone: (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null,
-      email: row.email ?? null,
-      title: (row as any).contact_title ?? meta.contact_title ?? meta.title ?? meta.role ?? null,
-      preferred_contact_method: row.preferred_contact_method ?? null,
-    },
+    contact: buildContactPayload(row),
     property: {
       property_address: row.property_address ?? null,
       property_town: town,
@@ -652,7 +646,7 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       : null,
     metadata: row.metadata ?? null,
     // Human-readable note the Highlander team can read at a glance
-    note: buildHumanNote(row),
+    note: buildLeadNotes(row),
   };
 }
 
