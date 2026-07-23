@@ -824,6 +824,21 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     const town = payload.location?.town;
     const address = payload.location?.address;
 
+    // ── SAFEGUARD: refuse to send a malformed Customer / Account Name.
+    // If validation fails, the caller marks the lead retry_needed so the
+    // Highlander team can supply a real name — we never invent one from
+    // job title, address, or category.
+    const accountName = cleanName(payload.account_name);
+    const acctErr = validateCustomerAccountName(accountName, {
+      jobName: payload.job_name,
+      locationName: payload.location_display_name,
+      propertyAddress: address,
+      serviceCategory: payload.project?.service_category,
+    });
+    if (acctErr) {
+      return { ok: false, error: `retry_needed: invalid customer name (${acctErr}). Provide a valid full name or company name before retrying.` };
+    }
+
     const noteFull: string = payload.note ?? "";
     // JobTread text custom fields cap at 1024 chars.
     const noteShort = noteFull.length > 1000
@@ -842,7 +857,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           $: {
             where: {
               and: [
-                { "=": [{ field: "name" }, { value: payload.account_name }] },
+                { "=": [{ field: "name" }, { value: accountName }] },
               ],
             },
             size: 1,
@@ -859,7 +874,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
         createAccount: {
           $: {
             organizationId: orgId,
-            name: payload.account_name,
+            name: accountName,
             type: "customer",
             customFieldValues: {
               [JT_CF.account.service_area]: mapServiceArea(town),
@@ -879,6 +894,12 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       if (!accountId) return { ok: false, error: `createAccount returned no id` };
       accountIsNew = true;
     }
+    // ── EXISTING CUSTOMER PROTECTION ──────────────────────────────────────
+    // When we reuse an existing Account (matched by name above), we NEVER
+    // issue an updateAccount / rename mutation from this function. New Jobs
+    // and Locations attach under the existing correct Customer. Do not add
+    // account-rename logic here without explicit Highlander sign-off.
+    // ─────────────────────────────────────────────────────────────────────
 
     // Step 1b — create a Contact under the Account so JobTread's
     // "Contact Details" section (Name / Email / Phone) is populated,
@@ -920,11 +941,8 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     //   2. "[Town] Property"     → "Franklin Property"
     //   3. Fallback "Website Lead"
     // Never uses the Job Name, Customer Name, or Lead Notes.
-    const rawLocName = (() => {
-      if (address) return String(address);
-      if (town) return `${town} Property`;
-      return "Website Lead";
-    })();
+    const rawLocName = payload.location_display_name
+      || (address ? String(address) : (town ? `${town} Property` : "Website Lead"));
     const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
     const gateCodeSubmitted = payload.property?.gate_code;
     const gateCodeBool = gateCodeSubmitted === true
