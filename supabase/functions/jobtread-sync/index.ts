@@ -462,7 +462,9 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
     contact: {
       name: row.name ?? null,
       phone: row.phone ?? null,
+      secondary_phone: (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null,
       email: row.email ?? null,
+      title: (row as any).contact_title ?? meta.contact_title ?? meta.title ?? meta.role ?? null,
       preferred_contact_method: row.preferred_contact_method ?? null,
     },
     property: {
@@ -470,6 +472,11 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       property_town: town,
       service_area_or_city_page: serviceAreaOrCityPage,
       property_type: row.property_type ?? null,
+      community_or_subdivision: (row as any).community_or_subdivision ?? meta.community_or_subdivision ?? meta.community ?? meta.subdivision ?? null,
+      gate_code: (row as any).gate_code ?? meta.gate_code ?? meta.entry_code ?? null,
+      roof_type: (row as any).roof_type ?? meta.roof_type ?? null,
+      material_color: (row as any).material_color ?? meta.material_color ?? meta.color ?? null,
+      foundation_type: (row as any).foundation_type ?? meta.foundation_type ?? null,
     },
     // Kept for backward compatibility with any downstream mapper still reading `location`.
     location: {
@@ -776,6 +783,8 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       const contactName = (payload.contact?.name ?? "").toString().trim();
       const contactEmail = (payload.contact?.email ?? "").toString().trim();
       const contactPhone = (payload.contact?.phone ?? "").toString().trim();
+      const contactPhone2 = (payload.contact?.secondary_phone ?? "").toString().trim();
+      const contactTitle = (payload.contact?.title ?? "").toString().trim();
       if (contactName || contactEmail || contactPhone) {
         try {
           await paveFetch({
@@ -786,6 +795,8 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
                 name: contactName || payload.lead_name,
                 email: contactEmail || undefined,
                 phone: contactPhone || undefined,
+                secondaryPhone: contactPhone2 || undefined,
+                title: contactTitle || undefined,
               },
               createdContact: { id: {} },
             },
@@ -798,18 +809,20 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     }
 
     // Step 2 — create Location under the Account. JobTread caps name at 30 chars.
-    // Display Name format (per Highlander spec):
-    //   "[Customer Name] - [Town] Property"  → e.g. "John Smith - Highlands Property"
-    // If customer name is missing:
-    //   "[Town] Property"                    → e.g. "Highlands Property"
-    // Final fallback: "Website Lead".
+    // Display Name (per Highlander spec, in priority order):
+    //   1. Property address ("53 Mountain Rd, Franklin, NC 28734")
+    //   2. "[Town] Property"     → "Franklin Property"
+    //   3. Fallback "Website Lead"
+    // Never uses the Job Name, Customer Name, or Lead Notes.
     const rawLocName = (() => {
-      if (contactName && town) return `${contactName} - ${town} Property`;
+      if (address) return String(address);
       if (town) return `${town} Property`;
-      if (contactName) return `${contactName} Property`;
       return "Website Lead";
     })();
     const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
+    const gateCodeSubmitted = payload.property?.gate_code;
+    const gateCodeBool = gateCodeSubmitted === true
+      || (typeof gateCodeSubmitted === "string" && gateCodeSubmitted.trim() !== "" && !/^(no|false|0|none)$/i.test(gateCodeSubmitted.trim()));
     const locRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
       createLocation: {
@@ -818,11 +831,10 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           name: locName,
           address: address || null,
           customFieldValues: {
-            // JobTread requires the "Is There a Gate Code?" boolean field on
-            // every Location. The website form does not collect gate access,
-            // so we send `false` as the safe default; Highlander updates it
-            // manually if the property actually has a gate.
-            [JT_CF.location.gate_code]: false,
+            // JobTread requires the "Is There a Gate Code?" boolean on every
+            // Location. Send `true` only when the customer actually submitted
+            // a gate code / entry code; otherwise `false` (safe default).
+            [JT_CF.location.gate_code]: gateCodeBool,
             [JT_CF.location.contact_name]: contactName,
             [JT_CF.location.phone]: payload.contact?.phone || "",
             [JT_CF.location.email]: payload.contact?.email || "",
