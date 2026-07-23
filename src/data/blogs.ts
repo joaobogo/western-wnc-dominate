@@ -5099,6 +5099,9 @@ const cullowheeClusterPosts: BlogPost[] = [
 
 blogPosts.push(...cullowheeClusterPosts);
 
+// Sort all posts by date descending (most recent first)
+blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
 export const getBlogBySlug = (slug: string) => blogPosts.find(b => b.slug === slug);
 
 export const getBlogsByCategory = (category: string) =>
