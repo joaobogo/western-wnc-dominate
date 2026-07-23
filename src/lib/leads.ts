@@ -1,4 +1,9 @@
 import { supabase } from "@/integrations/supabase/client";
+import {
+  trackFormSuccess,
+  trackFormError,
+  trackChatbotLeadSubmit,
+} from "@/lib/gtm";
 
 export const CONSENT_TEXT =
   "By submitting your information, you agree that Highlander Roofing Services, Inc. may contact you by phone, text, or email about your inquiry, services, scheduling, project follow-up, and review requests. Message and data rates may apply. Reply STOP to opt out of text messages. Reply HELP for help. See our Privacy Policy.";
@@ -110,8 +115,21 @@ export async function submitLead(payload: LeadPayload) {
     .insert([row as any]);
   if (error) {
     console.error("submitLead error:", error);
+    trackFormError({
+      form_name: payload.source,
+      form_id: payload.source,
+      error_type: (error as { code?: string })?.code || "insert_failed",
+    });
     return { id: null as string | null, error };
   }
+  trackFormSuccess({
+    form_name: payload.source,
+    form_id: payload.source,
+    lead_type: payload.lead_type ?? null,
+    service_category: payload.service_category ?? null,
+    property_town: payload.property_town ?? null,
+    lead_id: leadId,
+  });
   // Fire-and-forget JobTread sync. Never block the visitor on this.
   void supabase.functions
     .invoke("jobtread-sync", { body: { lead_id: leadId } })
@@ -165,6 +183,11 @@ export async function logChatbotConversation(input: {
   }
   // Only sync chatbot rows that actually captured contact info.
   if (input.phone || input.email || input.name) {
+    trackChatbotLeadSubmit({
+      service_category: input.service_category ?? null,
+      property_town: input.property_town ?? null,
+      lead_id: convId,
+    });
     void supabase.functions
       .invoke("jobtread-sync", { body: { chatbot_conversation_id: convId } })
       .catch((err) => console.warn("jobtread-sync invoke failed:", err));
