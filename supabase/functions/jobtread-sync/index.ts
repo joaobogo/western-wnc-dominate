@@ -399,39 +399,151 @@ function buildHumanNote(row: LeadRow): string {
   return lines.join("\n");
 }
 
-function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
-  const leadName = humanizeLeadName(row);
-  // JobTread Customer / Account Name must contain ONLY the customer's real
-  // identity — never the service, address, town, job name, or lead notes.
-  //   Residential → customer full name
-  //   Commercial  → submitted company/business name (contact still gets the person)
-  // Fallbacks (email → phone → row id) exist only so a lead can never be
-  // dropped for lack of a name; they are never combined with anything else.
-  const fullName = (row.name ?? "").toString().trim();
-  const town = row.property_town ?? null;
+// ─────────────────────────────────────────────────────────────────────────────
+// PERMANENT SAFEGUARD — JobTread entity builders.
+//
+// Each JobTread entity (Customer, Contact, Location, Job, Lead Notes) has its
+// OWN builder. Never reuse a builder across entities. In particular, the
+// Customer / Account Name must never receive:
+//   - the Job Name           (buildJobName)
+//   - the Location Display   (buildLocationDisplayName)
+//   - the service category / project type
+//   - the property address / town / state / ZIP
+//   - the Lead Notes summary
+// These rules exist because concatenated Customer names (e.g.
+// "Roofing Inquiry - 123 Main St - Jane") pollute QuickBooks and merge
+// unrelated leads. See scripts/jobtread-regression-test.md.
+// ─────────────────────────────────────────────────────────────────────────────
+function cleanName(raw: string | null | undefined): string {
+  return String(raw ?? "").replace(/\s+/g, " ").trim();
+}
+
+const COMMERCIAL_CATEGORY_RE =
+  /commercial|business|office|retail|industrial|hoa|multifamily|apartment|condo/i;
+
+function isCommercialLead(row: LeadRow): boolean {
+  const blob = [
+    row.service_category, row.lead_type, row.project_type, row.property_type,
+  ].map((v) => String(v ?? "")).join(" ");
+  return COMMERCIAL_CATEGORY_RE.test(blob);
+}
+
+function getSubmittedCompanyName(row: LeadRow): string {
   const meta: any = row.metadata ?? {};
-  const submittedCompany = (
+  return cleanName(
     (row as any).company_name ??
     (row as any).company ??
     meta.company_name ??
     meta.company ??
     meta.business_name ??
     meta.organization ??
-    ""
-  ).toString().trim();
-  const catBlob = (
-    String(row.service_category ?? "") + " " +
-    String(row.lead_type ?? "") + " " +
-    String(row.project_type ?? "") + " " +
-    String(row.property_type ?? "")
-  ).toLowerCase();
-  const isCommercial = /commercial|business|office|retail|industrial|hoa|multifamily|apartment|condo/.test(catBlob);
-  const accountName =
-    (isCommercial && submittedCompany) ? submittedCompany
-      : (submittedCompany || fullName
-          || (row.email ?? "").toString().trim()
-          || (row.phone ?? "").toString().trim()
-          || row.id);
+    "",
+  );
+}
+
+/**
+ * Returns the JobTread Customer / Account Name.
+ *   Commercial + company submitted → company name
+ *   Otherwise                      → customer full name
+ *
+ * If no valid name exists, returns "" so the caller can mark the lead as
+ * `retry_needed` instead of creating a malformed Customer account.
+ * Never falls back to job_name, address, location display, or category.
+ */
+function buildCustomerAccountName(row: LeadRow): string {
+  const company = getSubmittedCompanyName(row);
+  if (company && isCommercialLead(row)) return cleanName(company);
+
+  const fullName = cleanName(row.name);
+  if (fullName) return fullName;
+
+  const first = cleanName((row as any).first_name);
+  const last = cleanName((row as any).last_name);
+  const combined = cleanName(`${first} ${last}`);
+  if (combined) return combined;
+
+  // Commercial company as last-resort even if not flagged commercial
+  if (company) return company;
+
+  return ""; // no valid customer name — caller must retry, never invent one
+}
+
+function buildContactPayload(row: LeadRow) {
+  const meta: any = row.metadata ?? {};
+  return {
+    name: cleanName(row.name) || null,
+    phone: row.phone ?? null,
+    secondary_phone:
+      (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null,
+    email: row.email ?? null,
+    title:
+      (row as any).contact_title ?? meta.contact_title ?? meta.title ?? meta.role ?? null,
+    preferred_contact_method: row.preferred_contact_method ?? null,
+  };
+}
+
+/**
+ * Location display: property address → "[Town] Property" → "Website Lead".
+ * Never uses Customer, Job Name, or Lead Notes.
+ */
+function buildLocationDisplayName(row: LeadRow): string {
+  const address = cleanName(row.property_address);
+  if (address) return address;
+  const town = cleanName(row.property_town);
+  if (town) return `${town} Property`;
+  return "Website Lead";
+}
+
+/** Job name = human-readable "[Service] - [Town] - [First Name]". */
+function buildJobName(row: LeadRow): string {
+  return humanizeLeadName(row);
+}
+
+/** Lead Notes = full intake summary. Stored ONLY on Job custom field. */
+function buildLeadNotes(row: LeadRow): string {
+  return buildHumanNote(row);
+}
+
+/**
+ * Validates a candidate Customer / Account Name. Returns null if OK, or a
+ * short error string describing the violation. Used both at send-time (to
+ * refuse malformed writes) and by the regression checks.
+ */
+function validateCustomerAccountName(
+  name: string,
+  ctx: { jobName?: string; locationName?: string; propertyAddress?: string; serviceCategory?: string } = {},
+): string | null {
+  const n = cleanName(name);
+  if (!n) return "empty customer name";
+
+  // Structural red flags — Customer must never look like a Job/Location/service tag.
+  if (/\bInquiry\b/i.test(n)) return "customer name contains 'Inquiry'";
+  if (/\bWebsite Lead\b/i.test(n)) return "customer name contains 'Website Lead'";
+  if (/^(Roofing|Construction|Repair|Replacement|Home Repairs|Gutters|Skylights)\b/i.test(n))
+    return "customer name starts with service category";
+  if (/\b\d{5}\b/.test(n)) return "customer name contains ZIP code";
+  // Full street address heuristic: leading number + street word.
+  if (/^\d+\s+\S+.*\b(st|street|rd|road|ave|avenue|dr|drive|ln|lane|way|blvd|ct|court|hwy|highway)\b/i.test(n))
+    return "customer name contains a street address";
+
+  const eq = (a?: string) => a && cleanName(a).toLowerCase() === n.toLowerCase();
+  if (eq(ctx.jobName)) return "customer name equals job name";
+  if (eq(ctx.locationName)) return "customer name equals location display name";
+  if (ctx.propertyAddress && n.toLowerCase().includes(cleanName(ctx.propertyAddress).toLowerCase()) && cleanName(ctx.propertyAddress).length > 4)
+    return "customer name contains property address";
+  if (ctx.serviceCategory && n.toLowerCase().startsWith(cleanName(ctx.serviceCategory).toLowerCase() + " "))
+    return "customer name starts with service category prefix";
+
+  return null;
+}
+
+function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
+  const leadName = humanizeLeadName(row);
+  const town = row.property_town ?? null;
+  const meta: any = row.metadata ?? {};
+  // Independent builders — one per JobTread entity. Never reuse across
+  // entities. See buildCustomerAccountName() docs for the safeguard rules.
+  const accountName = buildCustomerAccountName(row);
   const { urgent, waterEntering } = detectUrgentRoofing(row);
   // Derive a smart category from the readable lead name when the customer
   // did not pick one on the form. Keeps JobTread's job_type useful even for
@@ -451,22 +563,16 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   return {
     // Top-level fields most webhook receivers will look for
     lead_name: leadName,
-    job_name: leadName,
+    job_name: buildJobName(row),
     account_name: accountName,
+    location_display_name: buildLocationDisplayName(row),
     job_type: jobType,
     priority: urgent ? "P1" : "P3",
     urgency_level: urgent ? "high" : (row.urgency ?? "normal"),
     water_actively_entering: waterEntering,
     org_id: JOBTREAD_ORG_ID || null,
     // Structured sections
-    contact: {
-      name: row.name ?? null,
-      phone: row.phone ?? null,
-      secondary_phone: (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null,
-      email: row.email ?? null,
-      title: (row as any).contact_title ?? meta.contact_title ?? meta.title ?? meta.role ?? null,
-      preferred_contact_method: row.preferred_contact_method ?? null,
-    },
+    contact: buildContactPayload(row),
     property: {
       property_address: row.property_address ?? null,
       property_town: town,
@@ -540,7 +646,7 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       : null,
     metadata: row.metadata ?? null,
     // Human-readable note the Highlander team can read at a glance
-    note: buildHumanNote(row),
+    note: buildLeadNotes(row),
   };
 }
 
@@ -718,6 +824,21 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     const town = payload.location?.town;
     const address = payload.location?.address;
 
+    // ── SAFEGUARD: refuse to send a malformed Customer / Account Name.
+    // If validation fails, the caller marks the lead retry_needed so the
+    // Highlander team can supply a real name — we never invent one from
+    // job title, address, or category.
+    const accountName = cleanName(payload.account_name);
+    const acctErr = validateCustomerAccountName(accountName, {
+      jobName: payload.job_name,
+      locationName: payload.location_display_name,
+      propertyAddress: address,
+      serviceCategory: payload.project?.service_category,
+    });
+    if (acctErr) {
+      return { ok: false, error: `retry_needed: invalid customer name (${acctErr}). Provide a valid full name or company name before retrying.` };
+    }
+
     const noteFull: string = payload.note ?? "";
     // JobTread text custom fields cap at 1024 chars.
     const noteShort = noteFull.length > 1000
@@ -736,7 +857,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           $: {
             where: {
               and: [
-                { "=": [{ field: "name" }, { value: payload.account_name }] },
+                { "=": [{ field: "name" }, { value: accountName }] },
               ],
             },
             size: 1,
@@ -753,7 +874,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
         createAccount: {
           $: {
             organizationId: orgId,
-            name: payload.account_name,
+            name: accountName,
             type: "customer",
             customFieldValues: {
               [JT_CF.account.service_area]: mapServiceArea(town),
@@ -773,6 +894,12 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
       if (!accountId) return { ok: false, error: `createAccount returned no id` };
       accountIsNew = true;
     }
+    // ── EXISTING CUSTOMER PROTECTION ──────────────────────────────────────
+    // When we reuse an existing Account (matched by name above), we NEVER
+    // issue an updateAccount / rename mutation from this function. New Jobs
+    // and Locations attach under the existing correct Customer. Do not add
+    // account-rename logic here without explicit Highlander sign-off.
+    // ─────────────────────────────────────────────────────────────────────
 
     // Step 1b — create a Contact under the Account so JobTread's
     // "Contact Details" section (Name / Email / Phone) is populated,
@@ -814,11 +941,8 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
     //   2. "[Town] Property"     → "Franklin Property"
     //   3. Fallback "Website Lead"
     // Never uses the Job Name, Customer Name, or Lead Notes.
-    const rawLocName = (() => {
-      if (address) return String(address);
-      if (town) return `${town} Property`;
-      return "Website Lead";
-    })();
+    const rawLocName = payload.location_display_name
+      || (address ? String(address) : (town ? `${town} Property` : "Website Lead"));
     const locName = rawLocName.length > 30 ? rawLocName.slice(0, 30) : rawLocName;
     const gateCodeSubmitted = payload.property?.gate_code;
     const gateCodeBool = gateCodeSubmitted === true
