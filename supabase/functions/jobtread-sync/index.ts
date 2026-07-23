@@ -401,37 +401,11 @@ function buildHumanNote(row: LeadRow): string {
 
 function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   const leadName = humanizeLeadName(row);
-  // JobTread Customer / Account Name must contain ONLY the customer's real
-  // identity — never the service, address, town, job name, or lead notes.
-  //   Residential → customer full name
-  //   Commercial  → submitted company/business name (contact still gets the person)
-  // Fallbacks (email → phone → row id) exist only so a lead can never be
-  // dropped for lack of a name; they are never combined with anything else.
-  const fullName = (row.name ?? "").toString().trim();
   const town = row.property_town ?? null;
   const meta: any = row.metadata ?? {};
-  const submittedCompany = (
-    (row as any).company_name ??
-    (row as any).company ??
-    meta.company_name ??
-    meta.company ??
-    meta.business_name ??
-    meta.organization ??
-    ""
-  ).toString().trim();
-  const catBlob = (
-    String(row.service_category ?? "") + " " +
-    String(row.lead_type ?? "") + " " +
-    String(row.project_type ?? "") + " " +
-    String(row.property_type ?? "")
-  ).toLowerCase();
-  const isCommercial = /commercial|business|office|retail|industrial|hoa|multifamily|apartment|condo/.test(catBlob);
-  const accountName =
-    (isCommercial && submittedCompany) ? submittedCompany
-      : (submittedCompany || fullName
-          || (row.email ?? "").toString().trim()
-          || (row.phone ?? "").toString().trim()
-          || row.id);
+  // Independent builders — one per JobTread entity. Never reuse across
+  // entities. See buildCustomerAccountName() docs for the safeguard rules.
+  const accountName = buildCustomerAccountName(row);
   const { urgent, waterEntering } = detectUrgentRoofing(row);
   // Derive a smart category from the readable lead name when the customer
   // did not pick one on the form. Keeps JobTread's job_type useful even for
