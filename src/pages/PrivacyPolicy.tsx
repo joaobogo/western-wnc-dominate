@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
 const LAST_UPDATED = "June 24, 2026";
-const WEBSITE_URL = "https://www.highlandernc.com/";
+const WEBSITE_URL = "https://highlandernc.com/";
 const EMAIL = "luke@highlandernc.com";
 const ADDRESS = "1511 Highlands Rd, Franklin, NC 28734";
 const COMPANY = "Highlander Roofing Services, Inc.";
@@ -483,13 +483,23 @@ const PrivacyPolicy = () => {
             <h4>8.5.2 Analytics and Advertising Tools</h4>
             <p>
               We may use third-party analytics and advertising tools (such as Google
-              Analytics, Google Ads, Meta Pixel, the LinkedIn Insight Tag, call-tracking
-              providers, and review-request tools such as RealWork Labs). These providers
-              may set cookies or
+              Analytics, Google Ads (including conversion tracking and, if enabled,
+              remarketing audiences), Google Tag Manager (used to load and manage
+              measurement and advertising tags), Meta Pixel, the LinkedIn Insight Tag,
+              TikTok Pixel, call-tracking providers, and review-request tools such as
+              RealWork Labs). These providers may set cookies or
               similar technologies and collect information about your interactions with the
               Website to provide measurement, analytics, and advertising services. Information
               collected through these tools may be combined with other information collected
               through the Website for the purposes described in this policy.
+            </p>
+            <p>
+              Where applicable, we send only non-identifying, operational event data
+              (such as a page path, service category, or an internal, non-sensitive
+              lead identifier) to these tools. We do not send names, phone numbers,
+              email addresses, mailing addresses, form messages, or chatbot transcripts
+              to Google Tag Manager, Google Ads, or any other third-party advertising
+              or analytics tool.
             </p>
             <h4>8.5.3 Global Privacy Control (GPC)</h4>
             <p>
