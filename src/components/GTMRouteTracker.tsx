@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import { installGtmGlobalListeners } from "@/lib/gtm";
 
 /**
  * SPA route tracker for Google Tag Manager (GTM-W26D39LJ).
@@ -15,6 +16,11 @@ import { useLocation } from "react-router-dom";
 const GTMRouteTracker = () => {
   const { pathname, search } = useLocation();
   const lastUrlRef = useRef<string | null>(null);
+
+  // Install global click/focus listeners exactly once.
+  useEffect(() => {
+    installGtmGlobalListeners();
+  }, []);
 
   useEffect(() => {
     const url = pathname + search;
