@@ -462,7 +462,9 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
     contact: {
       name: row.name ?? null,
       phone: row.phone ?? null,
+      secondary_phone: (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null,
       email: row.email ?? null,
+      title: (row as any).contact_title ?? meta.contact_title ?? meta.title ?? meta.role ?? null,
       preferred_contact_method: row.preferred_contact_method ?? null,
     },
     property: {
@@ -470,6 +472,11 @@ function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       property_town: town,
       service_area_or_city_page: serviceAreaOrCityPage,
       property_type: row.property_type ?? null,
+      community_or_subdivision: (row as any).community_or_subdivision ?? meta.community_or_subdivision ?? meta.community ?? meta.subdivision ?? null,
+      gate_code: (row as any).gate_code ?? meta.gate_code ?? meta.entry_code ?? null,
+      roof_type: (row as any).roof_type ?? meta.roof_type ?? null,
+      material_color: (row as any).material_color ?? meta.material_color ?? meta.color ?? null,
+      foundation_type: (row as any).foundation_type ?? meta.foundation_type ?? null,
     },
     // Kept for backward compatibility with any downstream mapper still reading `location`.
     location: {
