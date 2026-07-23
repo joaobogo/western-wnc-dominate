@@ -94,7 +94,7 @@
       {
         "name": "fetch_page",
         "title": "Fetch page",
-        "description": "Fetch the raw HTML of a page on the Highlander site. Only URLs on western-wnc-dominate.lovable.app are allowed. Use search_site first to find URLs.",
+        "description": "Fetch the raw HTML of a page on the Highlander site. Only URLs on highlandernc.com are allowed. Use search_site first to find URLs.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

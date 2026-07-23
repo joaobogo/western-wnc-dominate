@@ -10,7 +10,7 @@ export default defineTool({
     const info = {
       name: "Highlander Roofing & Construction, Inc.",
       phone: "(828) 524-7773",
-      website: "https://western-wnc-dominate.lovable.app",
+      website: "https://highlandernc.com",
       city: "Franklin",
       region: "North Carolina",
       country: "US",

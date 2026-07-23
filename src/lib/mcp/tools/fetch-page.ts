@@ -1,13 +1,13 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
 
-const ALLOWED_HOST = "western-wnc-dominate.lovable.app";
+const ALLOWED_HOST = "highlandernc.com";
 
 export default defineTool({
   name: "fetch_page",
   title: "Fetch page",
   description:
-    "Fetch the raw HTML of a page on the Highlander site. Only URLs on western-wnc-dominate.lovable.app are allowed. Use search_site first to find URLs.",
+    "Fetch the raw HTML of a page on the Highlander site. Only URLs on highlandernc.com are allowed. Use search_site first to find URLs.",
   inputSchema: {
     url: z.string().url().describe("Full https URL on the Highlander site."),
   },

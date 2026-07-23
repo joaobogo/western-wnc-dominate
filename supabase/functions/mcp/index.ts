@@ -17,7 +17,7 @@ var get_business_info_default = defineTool({
     const info = {
       name: "Highlander Roofing & Construction, Inc.",
       phone: "(828) 524-7773",
-      website: "https://western-wnc-dominate.lovable.app",
+      website: "https://highlandernc.com",
       city: "Franklin",
       region: "North Carolina",
       country: "US",
@@ -99,7 +99,7 @@ var list_service_areas_default = defineTool3({
   handler: () => {
     const withUrls = towns.map((t) => ({
       ...t,
-      url: `https://western-wnc-dominate.lovable.app/service-areas/${t.slug}`
+      url: `https://highlandernc.com/service-areas/${t.slug}`
     }));
     return {
       content: [{ type: "text", text: JSON.stringify(withUrls, null, 2) }],
@@ -143,11 +143,11 @@ var search_site_default = defineTool4({
 // src/lib/mcp/tools/fetch-page.ts
 import { defineTool as defineTool5 } from "npm:@lovable.dev/mcp-js@0.24.0";
 import { z as z2 } from "npm:zod@^4.4.3";
-var ALLOWED_HOST = "western-wnc-dominate.lovable.app";
+var ALLOWED_HOST = "highlandernc.com";
 var fetch_page_default = defineTool5({
   name: "fetch_page",
   title: "Fetch page",
-  description: "Fetch the raw HTML of a page on the Highlander site. Only URLs on western-wnc-dominate.lovable.app are allowed. Use search_site first to find URLs.",
+  description: "Fetch the raw HTML of a page on the Highlander site. Only URLs on highlandernc.com are allowed. Use search_site first to find URLs.",
   inputSchema: {
     url: z2.string().url().describe("Full https URL on the Highlander site.")
   },

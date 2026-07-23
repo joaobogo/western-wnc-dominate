@@ -31,7 +31,7 @@ export default defineTool({
   handler: () => {
     const withUrls = towns.map((t) => ({
       ...t,
-      url: `https://western-wnc-dominate.lovable.app/service-areas/${t.slug}`,
+      url: `https://highlandernc.com/service-areas/${t.slug}`,
     }));
     return {
       content: [{ type: "text", text: JSON.stringify(withUrls, null, 2) }],
