@@ -33,4 +33,4 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-Sitemap: https://western-wnc-dominate.lovable.app/sitemap.xml
+Sitemap: https://highlandernc.com/sitemap.xml

@@ -1,7 +1,7 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
 
-const SITEMAP_URL = "https://western-wnc-dominate.lovable.app/sitemap.xml";
+const SITEMAP_URL = "https://highlandernc.com/sitemap.xml";
 
 export default defineTool({
   name: "search_site",

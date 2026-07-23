@@ -40,7 +40,7 @@ function PrivacyBody() {
     <>
       <p>
         <strong>Company Name:</strong> Highlander Roofing Services, Inc.<br />
-        <strong>Website:</strong> <a href="https://www.highlandernc.com/">https://www.highlandernc.com/</a>
+        <strong>Website:</strong> <a href="https://highlandernc.com/">https://highlandernc.com/</a>
       </p>
       <h2>8.1 Scope</h2>
       <p>
@@ -229,7 +229,7 @@ function TermsBody() {
     <>
       <p>
         <strong>Company Name:</strong> Highlander Roofing Services, Inc.<br />
-        <strong>Website:</strong> <a href="https://www.highlandernc.com/">https://www.highlandernc.com/</a>
+        <strong>Website:</strong> <a href="https://highlandernc.com/">https://highlandernc.com/</a>
       </p>
       <h2>1. Program Description and Acceptance of Terms</h2>
       <p>
