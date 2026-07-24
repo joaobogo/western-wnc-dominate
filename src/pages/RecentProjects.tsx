@@ -59,8 +59,8 @@ const RecentProjects = () => {
   const [rwlStatus, setRwlStatus] = useState<"loading" | "ready" | "error">("loading");
 
   // Re-initialize RealWork widget on route mount (SPA navigation).
-  // The sitewide loader.js is injected in index.html; here we ensure init()
-  // runs after #rwl-output exists in the DOM even when arriving via client-side routing.
+    // The sitewide loader.js is injected in index.html; here we ensure init()
+    // runs after #rwl-neighborhood exists in the DOM even when arriving via client-side routing.
   useEffect(() => {
     const PLUGIN_ID = "SxCxaBpYsO_fVnK0";
     const HOST = "https://app.realworklabs.com";
@@ -70,6 +70,7 @@ const RecentProjects = () => {
     const tryInit = () => {
       if (w.rwlPlugin && typeof w.rwlPlugin.init === "function") {
         try { w.rwlPlugin.init(HOST, PLUGIN_ID); } catch (e) { /* no-op */ }
+        try { w.rwlPlugin.rescan && w.rwlPlugin.rescan(); } catch (e) { /* no-op */ }
         return true;
       }
       return false;
@@ -87,7 +88,6 @@ const RecentProjects = () => {
     // Watch for widget content being injected into #rwl-output.
     // Success: any child appears within 15s → 'ready'.
     // Failure: nothing appears → 'error' (native fallback UI shown).
-    const start = Date.now();
     const TIMEOUT_MS = 15000;
     let observer: MutationObserver | null = null;
     const checkReady = () => {

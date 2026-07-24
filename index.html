@@ -173,6 +173,7 @@ div[style*="Edit with Lovable"],
       }, false);
       s.parentNode.insertBefore(o,s);
     };
+      window.__loadRWL();
     </script>
     <!-- End RealWork Labs Plugin Loader -->
     <!-- Unified deferred-loader trigger: first interaction OR 5s after load -->
@@ -184,7 +185,6 @@ div[style*="Edit with Lovable"],
         try{ w.__loadGTM && w.__loadGTM(); }catch(e){}
         try{ w.__loadFB && w.__loadFB(); }catch(e){}
         try{ w.__loadTT && w.__loadTT(); }catch(e){}
-        try{ w.__loadRWL && w.__loadRWL(); }catch(e){}
       }
       ['pointerdown','keydown','scroll','touchstart','mousemove'].forEach(function(e){
         w.addEventListener(e, fire, {passive:true, once:true});
