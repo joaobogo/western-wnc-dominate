@@ -37,6 +37,108 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "metal-roofing-cost-wnc",
+    title: "Metal Roofing Cost in Western NC: Standing Seam vs. Exposed Fastener",
+    excerpt: "A regional pricing guide to metal roof cost in Western North Carolina — how standing seam and exposed fastener systems compare, and what elevation, wind load, and access add to your investment.",
+    category: "Cost",
+    date: "2026-07-24",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=1600",
+    readTime: "10 min",
+    metaTitle: "Metal Roof Cost in Western NC | Standing Seam vs. Exposed Fastener",
+    metaDescription: "What does a metal roof cost in Western NC? Compare standing seam vs. exposed fastener pricing, and see how elevation and wind load shape your quote.",
+    relatedServices: [
+      { label: "Metal Roofing", path: "/roofing/specialty" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Request a Free Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      {
+        question: "What does a metal roof actually cost in Western NC?",
+        answer: "Metal roof cost in WNC is scope-driven. Exposed fastener panels (like ag-panel / R-panel) are the entry point and typically land well below standing seam on a per-square basis. Standing seam — the system we specialize in — costs more because of the concealed-clip panels, custom fabrication, and detailing at ridges, valleys, and penetrations. Elevation, pitch, access, tear-off scope, and metal gauge all move the number, which is why we quote from an on-site measure instead of publishing a flat price.",
+      },
+      {
+        question: "Is standing seam worth the price difference over exposed fastener?",
+        answer: "On most WNC mountain homes, yes. Standing seam has no exposed screws through the panel face, so there are no rubber gaskets slowly failing in UV and freeze-thaw cycles. Panels expand and contract on hidden clips, which matters on long runs and steep pitches common here. Exposed fastener systems still have a place — outbuildings, barns, workshops, some agricultural structures — where the lower price and simpler install outweigh the long-term maintenance profile.",
+      },
+      {
+        question: "Why does elevation change my metal roof quote?",
+        answer: "Homes above roughly 3,500 feet in Macon, Jackson, and Transylvania counties see more wind uplift, heavier rain events, ice loading, and harsher UV. That drives heavier-gauge steel or aluminum, tighter clip spacing, upgraded underlayment, and more robust edge metal. Steep mountain lots also add rigging, staging, and material-handling time that flatland quotes don't carry.",
+      },
+      {
+        question: "How do wind-load requirements affect cost?",
+        answer: "WNC building code enforces wind-load design based on your site's exposure and elevation. Meeting it on a standing seam roof usually means a specific clip pattern, panel gauge, and fastener schedule tested to those uplift ratings. Those upgrades aren't optional — they're what keeps the roof on in a ridge-top wind event — and they're baked into every proposal we write.",
+      },
+      {
+        question: "Does a metal roof pay back over time in Western NC?",
+        answer: "A properly installed standing seam roof is typically the last roof a mountain home needs for decades. Compared with re-roofing an asphalt system two or three times over the same period, the lifetime cost math often favors metal — especially on second homes and vacation rentals where every re-roof means another access, staging, and disruption cycle. We walk through the numbers honestly during your estimate so the decision is based on your home, not a brochure.",
+      },
+    ],
+    content: `Metal roofing is one of the fastest-growing categories in Western North Carolina, and the question we hear most from Highlands, Cashiers, Franklin, Sylva, and Cullowhee homeowners is the same: **what does a metal roof actually cost here?**
+
+The honest answer is that "metal roof cost" is really two very different price conversations — **standing seam** and **exposed fastener** — layered on top of WNC-specific realities like elevation, wind load, pitch, and access. This guide breaks down how those pieces come together so you can read any quote (ours or a competitor's) with clear eyes.
+
+## The Two Metal Systems Homeowners Actually Compare
+
+### Standing Seam
+Concealed-fastener panels that lock together at raised vertical seams. No screws penetrate the panel face. Panels float on hidden clips, allowing thermal expansion without stressing fasteners. This is the system Highlander specializes in for WNC mountain homes because it's engineered for the exact conditions this region throws at a roof: long panel runs, steep pitches, ice loading, and sustained ridge-top wind.
+
+### Exposed Fastener (Ag-Panel / R-Panel)
+Corrugated or ribbed panels screwed directly through the panel face into the roof deck or purlins, with rubber gasketed screws sealing each penetration. Lower upfront cost, faster install, but the gaskets are consumables — they degrade in UV and freeze-thaw cycles, and screws back out over time. Best suited to outbuildings, workshops, barns, and agricultural structures where maintenance access is easy.
+
+## What Actually Drives Metal Roof Cost in WNC
+
+Every real quote is priced from these variables — not a national average:
+
+- **System choice.** Standing seam carries a meaningful premium over exposed fastener because of the concealed clip system, custom on-site or shop fabrication, and precision detailing at ridges, hips, valleys, eaves, and penetrations.
+- **Metal type and gauge.** 24-gauge steel is standard for premium standing seam in this region; 26-gauge is lighter and less costly. Aluminum runs higher than steel per square but resists corrosion on lakeshore and river-valley sites. Copper and zinc are separate conversations entirely.
+- **Panel profile and finish.** Snap-lock vs. mechanically seamed, striated vs. flat pans, Kynar 500 (PVDF) vs. SMP paint systems — each choice moves the material line.
+- **Roof geometry.** Simple gable runs are the cheapest per square. Complex mountain roofs with multiple pitches, dormers, valleys, and skylights add labor, flashing, and waste.
+- **Underlayment.** High-temp synthetic and ice-and-water shield are not optional at WNC elevations. They protect the deck if a panel is ever compromised and are code-required in ice-dam zones.
+- **Tear-off and deck repair.** Removing existing shingles, replacing rotted decking, and correcting ventilation are line items that don't appear on new-construction bids but almost always appear on replacements.
+- **Site access.** Steep driveways, long carries, tree cover, and limited staging areas add labor hours. Highlands and Cashiers ridge lots frequently need extra rigging.
+- **Wind-load and elevation upgrades.** More on this below — this is where WNC quotes legitimately diverge from flatland numbers.
+
+## How Elevation Changes the Number
+
+Once you're above roughly 3,500 feet — most of Highlands, Cashiers, Scaly Mountain, Sapphire, and higher-elevation Franklin and Sylva neighborhoods — the roof is designed for a different environment:
+
+- **Wind exposure.** Ridge-top and knob-top homes see sustained wind and uplift events that require specific clip spacing and fastener patterns rated to those loads.
+- **Ice and snow.** Freeze-thaw cycling stresses seams and fasteners. Standing seam's floating clip design handles this better than any screwed-through system.
+- **UV intensity.** Higher altitude means more UV degradation on any exposed gasket, sealant, or paint system. Kynar 500 finishes and concealed fasteners age far better here than at lower elevations.
+- **Rainfall volume.** Cashiers and Highlands regularly log 70–90+ inches annually. Every seam, valley, and penetration matters.
+
+These aren't marketing points — they're the reason a properly engineered mountain roof costs more than the same square footage in the Piedmont.
+
+## How Wind-Load Requirements Shape Your Quote
+
+North Carolina residential code sets wind-load design pressures based on your site's exposure category and basic wind speed. For a metal roof, meeting those pressures means:
+
+- **Panel gauge** heavy enough to resist deformation at the required uplift.
+- **Clip spacing** tightened at eaves, ridges, and corners where uplift concentrates.
+- **Fastener schedule** — the specific screws, quantity per clip, and embedment into the deck or framing — engineered to the tested assembly.
+- **Edge metal and trim** installed to meet ANSI/SPRI ES-1 or manufacturer wind-tested details.
+
+Every one of these is a real cost item. A quote that comes in dramatically below others in your area is often skipping one of them. Ask any contractor — including us — to show you the wind-load assembly they're pricing to.
+
+## Standing Seam vs. Exposed Fastener: How the Numbers Compare
+
+We don't publish flat per-square pricing because it misleads more than it helps — the same house can vary 30% or more based on the variables above. But directionally, on a typical WNC residential replacement:
+
+- **Exposed fastener** is the entry point for a real metal roof. Expect a meaningful premium over architectural asphalt shingles but a noticeable discount to standing seam.
+- **Standing seam** in 24-gauge steel with a Kynar 500 finish typically runs well above exposed fastener and is priced closer to premium architectural systems like synthetic slate or high-end cedar.
+- **Aluminum standing seam, copper, and zinc** are separate tiers above steel standing seam.
+
+The right way to read those tiers: exposed fastener buys you metal's fire and impact resistance at the lowest entry cost, with the tradeoff of periodic gasket and fastener maintenance. Standing seam buys you a roof that, properly installed, is likely the last one the home needs for decades — with no exposed fasteners to fail.
+
+## Where Highlander Specializes
+
+Standing seam metal is a core system for us on WNC mountain homes. We fabricate and install panels engineered for elevation, wind, and the long panel runs common on estate and second-home rooflines. Every proposal itemizes the system, gauge, finish, underlayment, wind-load design, and access work so you can compare quotes on equal footing instead of a single per-square number.
+
+## Get a Real Number for Your Home
+
+Every accurate metal roof quote in Western NC starts with an on-site measure — pitch, geometry, access, existing conditions, and wind exposure. We provide free inspections and transparent, line-itemed proposals for standing seam and, where it fits, exposed fastener systems. Call **828-524-7773** or request an inspection online to get started.`,
+  },
+  {
     slug: "how-much-does-roof-cost-highlands-nc",
     title: "How Much Does a New Roof Cost in Highlands, NC?",
     excerpt: "A breakdown of real roofing costs for Highlands homeowners — from materials to labor to elevation factors that affect your bottom line.",
