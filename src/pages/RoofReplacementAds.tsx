@@ -3,7 +3,7 @@ import heroImg from "@/assets/gallery/asphalt-008.webp";
 
 const RoofReplacementAds = () => (
   <PaidAdsLanding
-    title="Roof Replacement Landing Page | Get a Clear Scope"
+    title="Roof Replacement in Western NC | Get a Clear Scope"
     description="Roof replacement landing page for paid traffic with a simplified lead form, stronger trust proof, and clear next-step messaging for Western North Carolina homeowners."
     path="/lp/roof-replacement"
     serviceName="Roof Replacement"
