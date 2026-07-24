@@ -36,6 +36,16 @@ const RealWorkDiagnostics = () => {
   const [elapsed, setElapsed] = useState(0);
 
   useEffect(() => {
+    document.title = "RealWork Diagnostics — Highlander";
+    let meta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    const prev = meta?.content;
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "robots";
+      document.head.appendChild(meta);
+    }
+    meta.content = "noindex,nofollow";
+
     const errors: string[] = [];
     const origError = window.console.error;
     window.console.error = (...args: unknown[]) => {
@@ -137,6 +147,7 @@ const RealWorkDiagnostics = () => {
       window.clearInterval(interval);
       window.removeEventListener("error", onErr, true);
       window.console.error = origError;
+      if (meta && prev !== undefined) meta.content = prev;
     };
   }, []);
 
