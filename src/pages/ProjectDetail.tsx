@@ -7,6 +7,7 @@ import {
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock, TrustSidebar } from "@/components/trust";
 import { BeforeAfterSlider } from "@/components/BeforeAfterShowcase";
@@ -61,6 +62,13 @@ const ProjectDetailPage = () => {
         ])}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Recent Projects", url: "/recent-projects" },
+          { name: project.title, url: `/projects/${project.slug}` },
+        ]}
+      />
       <main>
         <section className="relative pt-20 md:pt-24">
           <div className="relative h-[50vh] md:h-[65vh] overflow-hidden">
