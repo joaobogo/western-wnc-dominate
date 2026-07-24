@@ -162,19 +162,26 @@ div[style*="Edit with Lovable"],
     };
     </script>
     <!-- TikTok Pixel Code End -->
-    <!-- RealWork Labs Plugin Loader (sitewide) -->
+    <!-- RealWork Labs Plugin Loader (sitewide, loaded once) -->
     <script type="text/javascript">
-    window.__loadRWL = function(){
-      if(window.__rwlLoaded)return; window.__rwlLoaded=true;
-      var d=document, t='script', o=d.createElement(t), s=d.getElementsByTagName(t)[0];
-      o.async=true;
-      o.src='https://app.realworklabs.com/static/plugin/loader.js?v='+new Date().getTime();
-      window.addEventListener('rwlPluginReady', function(){
-        window.rwlPlugin.init('https://app.realworklabs.com','SxCxaBpYsO_fVnK0');
-      }, false);
-      s.parentNode.insertBefore(o,s);
-    };
+    (function(){
+      var HOST='https://app.realworklabs.com';
+      var KEY='SxCxaBpYsO_fVnK0';
+      window.__loadRWL = function(){
+        if(window.__rwlLoaderRequested)return; window.__rwlLoaderRequested=true;
+        var d=document, t='script', o=d.createElement(t), s=d.getElementsByTagName(t)[0];
+        o.async=true;
+        o.id='rwl-loader';
+        o.src=HOST+'/static/plugin/loader.js?v='+new Date().getTime();
+        window.addEventListener('rwlPluginReady', function(){
+          if(window.rwlPlugin && typeof window.rwlPlugin.init === 'function') {
+            window.rwlPlugin.init(HOST, KEY);
+          }
+        }, false);
+        s.parentNode.insertBefore(o,s);
+      };
       window.__loadRWL();
+    }());
     </script>
     <!-- End RealWork Labs Plugin Loader -->
     <!-- Unified deferred-loader trigger: first interaction OR 5s after load -->
@@ -208,6 +215,7 @@ div[style*="Edit with Lovable"],
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
+    <div id="rwl-neighborhood"></div>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1300176212241296&ev=PageView&noscript=1"
     /></noscript>

@@ -345,15 +345,6 @@ img {
     }
   }
 
-  /* Third-party floating widgets must not cover the first hero content on mobile. */
-  @media (max-width: 767px) {
-    body > div[id^="0-"],
-    body > div:not(#root):has([style*="writing-mode"]),
-    body > div:not(#root):has([style*="rotate"]) {
-      display: none !important;
-    }
-  }
-
   body {
     @apply bg-background text-foreground font-body antialiased;
     font-size: 1.125rem; /* Base 18px for better readability */
