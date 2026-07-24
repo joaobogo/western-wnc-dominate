@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, BookOpen, HardHat, Mountain } from "lucide-react";
-import { blogPosts } from "@/data/blogs";
+import { blogSummaries } from "@/data/blog-summaries.generated";
 import { useState, useRef } from "react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
@@ -44,7 +44,7 @@ const categoryAccent: Record<string, { bg: string; text: string; border: string 
 export const BlogInsights = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const enriched = blogPosts.map((post) => ({
+  const enriched = blogSummaries.map((post) => ({
     ...post,
     editorialCategory: getEditorialCategory(post.category),
   }));

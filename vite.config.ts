@@ -18,6 +18,19 @@ function sitemapPlugin() {
   };
 }
 
+function blogSummariesPlugin() {
+  return {
+    name: "highlander-blog-summaries",
+    buildStart() {
+      try {
+        execSync("node scripts/generate-blog-summaries.mjs", { stdio: "inherit" });
+      } catch (e) {
+        console.warn("[blog-summaries] generation skipped:", (e as Error).message);
+      }
+    },
+  };
+}
+
 function faviconVerifyPlugin() {
   return {
     name: "highlander-favicon-verify",
@@ -41,10 +54,37 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), sitemapPlugin(), faviconVerifyPlugin(), mcpPlugin(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), sitemapPlugin(), blogSummariesPlugin(), faviconVerifyPlugin(), mcpPlugin(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  build: {
+    // Split heavy vendors so the main app chunk stays small and cacheable
+    // across deploys. Route chunks (already lazy) then only carry app code.
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "motion-vendor": ["framer-motion"],
+          "radix-vendor": [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-navigation-menu",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-slot",
+          ],
+          "query-vendor": ["@tanstack/react-query"],
+          "form-vendor": ["react-hook-form", "@hookform/resolvers", "zod"],
+          "supabase-vendor": ["@supabase/supabase-js"],
+          "icons-vendor": ["lucide-react"],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 900,
   },
 }));
