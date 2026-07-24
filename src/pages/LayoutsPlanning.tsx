@@ -161,7 +161,7 @@ const LayoutsPlanning = () => {
               <ScrollReveal variant="slide-right">
                 <div className="relative">
                   <div className="aspect-[4/5] relative z-10 overflow-hidden border border-border">
-                    <img src={blueprintImg} alt="Technical drafting and planning" className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000" />
+                    <img loading="lazy" decoding="async" src={blueprintImg} alt="Technical drafting and planning" className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000" />
                     <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
                   </div>
                   {/* Tartan Accent Box */}

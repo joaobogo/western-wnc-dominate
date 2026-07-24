@@ -179,7 +179,7 @@ const CustomConstruction = () => {
                 Highlander takes on custom and specialty construction work where our planning discipline, in-house craft quality, and communication standards make a meaningful difference.
               </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
-                <img src={specialtyContextImg} alt="Specialty construction detail" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
+                <img loading="lazy" decoding="async" src={specialtyContextImg} alt="Specialty construction detail" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
               </div>
             </motion.div>

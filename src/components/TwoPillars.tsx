@@ -23,7 +23,7 @@ const TwoPillars = () => {
         opacity: "0.03"
       }} />
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200" alt="Mountain home craftsmanship in Western North Carolina" className="w-full h-full object-cover opacity-100" />
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200" alt="Mountain home craftsmanship in Western North Carolina" className="w-full h-full object-cover opacity-100" />
       </div>
       <div className="max-w-5xl mx-auto px-6 md:px-10">
         <motion.div

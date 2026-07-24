@@ -133,7 +133,7 @@ const ServiceTownPage = ({
         {/* Hero */}
         <section className="relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img 
+            <img loading="eager" fetchPriority="high" decoding="async" 
               src={heroImage}
               alt={`${entry.serviceLabel} on a mountain home in Western North Carolina — Highlander Roofing & Construction service area: ${town.name}, ${town.state}`}
               className="w-full h-full object-cover"

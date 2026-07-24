@@ -33,7 +33,7 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
           backgroundRepeat: "repeat"
         }} 
       />
-      <img
+      <img loading="lazy" decoding="async"
         src={logo}
         alt="Highlander Roofing & Construction logo"
         className="h-16 md:h-20 w-auto mx-auto mb-4"

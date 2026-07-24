@@ -85,7 +85,7 @@ const Skylights = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-white">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-20 h-20 flex items-center justify-center overflow-hidden bg-white/10 backdrop-blur-sm border border-white/10">
-                  <img src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
+                  <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
                 </div>
                 <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
                   VELUX Certified Installer

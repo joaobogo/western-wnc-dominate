@@ -192,7 +192,7 @@ const OutdoorLiving = () => {
         {/* ─── OPENING — Experiential with generous whitespace ─── */}
         <section className="py-20 md:py-32 bg-background relative overflow-hidden">
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Timber frame detail" className="w-full h-full object-cover" />
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Timber frame detail" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight max-w-3xl">

@@ -225,7 +225,7 @@ const Footer = () => {
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
                   <div className="w-12 h-12 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white rounded-sm border border-border">
-                    <img src={veluxLogo} alt="VELUX" className="w-full h-full object-contain p-1" />
+                    <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX" className="w-full h-full object-contain p-1" />
                   </div>
                   <span className="text-[13px] font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
                 </div>
@@ -244,7 +244,7 @@ const Footer = () => {
 
               <div className="flex flex-col gap-2 group/cert">
                 <div className="h-10 w-auto flex items-center">
-                  <img src={badgeCertainteedMaster} alt="CertainTeed ShingleMaster Credentialed Contractor" className="h-8 w-auto" />
+                  <img loading="lazy" decoding="async" src={badgeCertainteedMaster} alt="CertainTeed ShingleMaster Credentialed Contractor" className="h-8 w-auto" />
                   <span className="text-[12px] font-bold uppercase tracking-wider text-foreground/90 ml-2">ShingleMaster</span>
                 </div>
                 <span className="text-[11px] text-muted-foreground font-body leading-tight">CertainTeed Credentialed Contractor</span>

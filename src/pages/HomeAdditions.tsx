@@ -207,7 +207,7 @@ const HomeAdditions = () => {
                   Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
-                  <img src={expansionContextImg} alt="Integrated home expansion" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
+                  <img loading="lazy" decoding="async" src={expansionContextImg} alt="Integrated home expansion" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                 </div>
                 <p className="text-muted-foreground/60 text-sm leading-relaxed font-body italic">
@@ -255,7 +255,7 @@ const HomeAdditions = () => {
         {/* ─── EXPANSION TYPES ─── */}
         <section className="section-padding bg-background relative overflow-hidden">
           <div className="absolute right-0 top-0 w-1/3 h-full opacity-[0.03] pointer-events-none hidden lg:block">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" alt="Mountain home addition planning" className="w-full h-full object-cover" />
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" alt="Mountain home addition planning" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight">
