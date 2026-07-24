@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 
 declare global {
   interface Window {
@@ -151,10 +150,6 @@ const RealWorkDiagnostics = () => {
 
   return (
     <>
-      <Helmet>
-        <title>RealWork Diagnostics — Highlander</title>
-        <meta name="robots" content="noindex,nofollow" />
-      </Helmet>
       <main className="min-h-screen bg-background pt-[96px] md:pt-[136px] pb-16">
         <div className="container-tight max-w-4xl">
           <div className="mb-8">
