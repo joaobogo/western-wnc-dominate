@@ -53,8 +53,9 @@ else {
     const re = new RegExp(`^\\s*Disallow:\\s*${p.replace(/\//g, "\\/")}\\s*$`, "m");
     if (re.test(robots)) fail(`robots.txt blocks public path ${p}.`);
   }
-  // OAI-SearchBot must not be explicitly blocked
-  if (/User-agent:\s*OAI-SearchBot[\s\S]*?Disallow:\s*\//i.test(robots))
+  // OAI-SearchBot must not be explicitly blocked (scoped to its own block only)
+  const oai = robots.match(/User-agent:\s*OAI-SearchBot[^\n]*\n([\s\S]*?)(?=\n\s*User-agent:|\Z)/i);
+  if (oai && /^\s*Disallow:\s*\/\s*$/m.test(oai[1]))
     fail("robots.txt blocks OAI-SearchBot.");
 }
 
