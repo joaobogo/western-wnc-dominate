@@ -46,18 +46,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 min",
     metaTitle: "Metal Roof Cost in Western NC | Standing Seam vs. Exposed Fastener",
     metaDescription: "What does a metal roof cost in Western NC? Compare standing seam vs. exposed fastener pricing, and see how elevation and wind load shape your quote.",
-    metaTitle: undefined as unknown as string,
-  } as never,
-  {
-    slug: "metal-roofing-cost-wnc",
-    title: "Metal Roofing Cost in Western NC: Standing Seam vs. Exposed Fastener",
-    excerpt: "A regional pricing guide to metal roof cost in Western North Carolina — how standing seam and exposed fastener systems compare, and what elevation, wind load, and access add to your investment.",
-    category: "Cost",
-    date: "2026-07-24",
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=1600",
-    readTime: "10 min",
-    metaTitle: "Metal Roof Cost in Western NC | Standing Seam vs. Exposed Fastener",
-    metaDescription: "What does a metal roof cost in Western NC? Compare standing seam vs. exposed fastener pricing, and see how elevation and wind load shape your quote.",
     relatedServices: [
       { label: "Metal Roofing", path: "/roofing/specialty" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
