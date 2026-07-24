@@ -77,6 +77,7 @@ const LegalPage = lazy(() => import("./pages/Legal"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const AdminLeads = lazy(() => import("./pages/AdminLeads"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
+const RealWorkDiagnostics = lazy(() => import("./pages/RealWorkDiagnostics"));
 
 
 
@@ -247,6 +248,7 @@ const App = () => (
 
           {/* Internal-only admin tool */}
           <Route path="/seo-monitoring" element={<SEOMonitoring />} />
+          <Route path="/realwork-diagnostics" element={<RealWorkDiagnostics />} />
 
           {/* Removed: /roof-designer, /free-tools, /seo-checklist, /internal-linking-qa, /keyword-map, /seo-launch-qa */}
           <Route path="/roof-designer" element={<Navigate to="/" replace />} />
