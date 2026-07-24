@@ -77,6 +77,7 @@ const LegalPage = lazy(() => import("./pages/Legal"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const AdminLeads = lazy(() => import("./pages/AdminLeads"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
+const RealWorkDiagnostics = lazy(() => import("./pages/RealWorkDiagnostics"));
 
 
 
