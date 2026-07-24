@@ -10,16 +10,29 @@ const OUT = resolve("src/data/blog-summaries.generated.ts");
 const N = 12;
 
 const src = readFileSync(SRC, "utf8");
-// Parse each object block { ... , }, keeping only the fields we need.
-const objectRe = /\{\s*id:\s*"([^"]+)",[\s\S]*?slug:\s*"([^"]+)",[\s\S]*?title:\s*"((?:[^"\\]|\\.)*)",[\s\S]*?excerpt:\s*"((?:[^"\\]|\\.)*)",[\s\S]*?category:\s*"([^"]+)",[\s\S]*?date:\s*"([^"]+)",[\s\S]*?readTime:\s*"([^"]+)"/g;
+// Anchor on `slug:` then look ahead within the same object for other fields.
+const slugRe = /\bslug:\s*"([^"]+)"/g;
+const grab = (field, chunk) => {
+  const re = new RegExp(`\\b${field}:\\s*"((?:[^"\\\\]|\\\\.)*)"`);
+  const m = chunk.match(re);
+  return m ? m[1] : "";
+};
 
 const posts = [];
 let m;
-while ((m = objectRe.exec(src)) !== null) {
-  posts.push({
-    id: m[1], slug: m[2], title: m[3], excerpt: m[4],
-    category: m[5], date: m[6], readTime: m[7],
-  });
+while ((m = slugRe.exec(src)) !== null) {
+  const start = m.index;
+  // Look at the next ~2500 chars (a single blog object) for co-located fields.
+  const chunk = src.slice(start, start + 2500);
+  const slug = m[1];
+  const title = grab("title", chunk);
+  const excerpt = grab("excerpt", chunk);
+  const category = grab("category", chunk);
+  const date = grab("date", chunk);
+  const readTime = grab("readTime", chunk);
+  if (slug && title && date) {
+    posts.push({ id: slug, slug, title, excerpt, category, date, readTime });
+  }
 }
 
 posts.sort((a, b) => (a.date < b.date ? 1 : -1));
