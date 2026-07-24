@@ -7,10 +7,14 @@ import logo from "@/assets/logo.svg";
 import SocialLinks from "@/components/SocialLinks";
 
 const roofingLinks = [
+  { label: "Residential Roofing", href: "/roofing/residential" },
   { label: "Roof Replacement", href: "/roofing/roof-replacement" },
   { label: "Roof Repair", href: "/roofing/roof-repair" },
   { label: "Metal Roofing", href: "/roofing/metal" },
   { label: "Brava / Synthetic", href: "/roofing/brava-synthetic" },
+  { label: "Specialty Roofing", href: "/roofing/specialty" },
+  { label: "Seamless Gutters", href: "/roofing/gutters" },
+  { label: "Skylights", href: "/roofing/skylights" },
   { label: "Storm Damage", href: "/roofing/storm-damage" },
   { label: "Commercial Roofing", href: "/roofing/commercial" },
   { label: "Build Your Roof", href: "/roofing-builder" },
@@ -20,8 +24,10 @@ const constructionLinks = [
   { label: "Construction Division", href: "/construction" },
   { label: "Home Additions", href: "/construction/additions" },
   { label: "Outdoor Living", href: "/construction/outdoor-living" },
-  { label: "Design", href: "/layouts-planning" },
-  { label: "Request a Quote", href: "/consultation" },
+  { label: "Design & Planning", href: "/construction/design" },
+  { label: "Siding & Exterior", href: "/construction/siding" },
+  { label: "Exterior Improvements", href: "/exterior-improvements" },
+  { label: "Construction Consultation", href: "/construction/consultation" },
   { label: "Build Your Project", href: "/construction-builder" },
 ];
 
@@ -29,12 +35,14 @@ const resourceLinks = [
   { label: "Recent Projects", href: "/recent-projects" },
   { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/faq" },
   { label: "Financing", href: "/financing" },
   { label: "Certifications", href: "/certifications" },
 ];
 
 const companyLinks = [
   { label: "Our Story", href: "/about" },
+  { label: "Our Team", href: "/team" },
   { label: "Community", href: "/giving-back" },
   { label: "Work With Us", href: "/careers" },
   { label: "Service Areas", href: "/service-areas" },
