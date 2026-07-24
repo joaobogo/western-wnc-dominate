@@ -34,7 +34,7 @@ const ProjectDetailPage = () => {
           <div className="text-center">
             <h1 className="text-3xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">Project Not Found</h1>
             <p className="text-[hsl(var(--dark-section-foreground)/0.6)] mb-6">The project you're looking for doesn't exist or has been moved.</p>
-            <Link to="/gallery" className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2">
+            <Link to="/recent-projects" className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2">
               View All Projects <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -56,7 +56,7 @@ const ProjectDetailPage = () => {
         path={`/projects/${project.slug}`}
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Projects", url: "/gallery" },
+          { name: "Projects", url: "/recent-projects" },
           { name: project.title, url: `/projects/${project.slug}` },
         ])}
       />
@@ -85,7 +85,7 @@ const ProjectDetailPage = () => {
                   <span className="text-[10px] font-heading font-bold text-white tracking-[0.2em] uppercase">Highlander Project</span>
                 </motion.div>
                 <nav className="flex items-center gap-2 text-white/85 text-sm font-body mb-4">
-                  <Link to="/gallery" className="hover:text-white transition-colors flex items-center gap-1">
+                  <Link to="/recent-projects" className="hover:text-white transition-colors flex items-center gap-1">
                     <ArrowLeft className="w-3 h-3" /> Projects
                   </Link>
                   <span>/</span>
@@ -426,7 +426,7 @@ const ProjectDetailPage = () => {
               </div>
               <div className="text-center mt-10">
                 <Link
-                  to="/gallery"
+                  to="/recent-projects"
                   className="group inline-flex items-center gap-2 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
                 >
                   View Full Portfolio <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

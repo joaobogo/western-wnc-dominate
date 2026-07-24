@@ -28,7 +28,7 @@ const categoryCards = [
   { icon: Wrench, title: "Roof Repairs", desc: "Storm response, leak repair, and detail work that protects your home long-term.", img: repairImg, href: "/roof-repair" },
   { icon: HardHat, title: "Construction", desc: "Additions, renovations, and full-scope building from a licensed general contractor.", img: constructionImg, href: "/construction" },
   { icon: Droplets, title: "Gutters", desc: "Seamless gutters and exterior water management built for WNC weather patterns.", img: metalImg, href: "/exterior-improvements" },
-  { icon: Trees, title: "Outdoor Living", desc: "Porches, decks, pergolas, and outdoor spaces designed for mountain terrain.", img: cedarImg, href: "/outdoor-living" },
+  { icon: Trees, title: "Outdoor Living", desc: "Porches, decks, pergolas, and outdoor spaces designed for mountain terrain.", img: cedarImg, href: "/construction/outdoor-living" },
   { icon: Ruler, title: "Design Services", desc: "Pre-construction layout and planning support before the first board is cut.", img: designImg, href: "/layouts-planning" },
 ];
 
@@ -36,7 +36,7 @@ const pathCards = [
   { q: "Need roofing help?", href: "/roofing", cta: "Explore Roofing" },
   { q: "Planning a construction project?", href: "/construction", cta: "Explore Construction" },
   { q: "Need gutters or exterior protection?", href: "/exterior-improvements", cta: "View Exterior Services" },
-  { q: "Improving outdoor living space?", href: "/outdoor-living", cta: "View Outdoor Living" },
+  { q: "Improving outdoor living space?", href: "/construction/outdoor-living", cta: "View Outdoor Living" },
   { q: "Not sure where to start?", href: "/contact", cta: "Talk to Highlander" },
 ];
 
@@ -153,7 +153,7 @@ const RecentProjects = () => {
               <Link to="/contact" className="cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all">
                 Request a Free Quote <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/services" className="border border-[hsl(var(--heritage-green))]/30 text-[hsl(var(--heritage-green))] font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-[hsl(var(--heritage-green))]/10 transition-all">
+              <Link to="/roofing" className="border border-[hsl(var(--heritage-green))]/30 text-[hsl(var(--heritage-green))] font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-[hsl(var(--heritage-green))]/10 transition-all">
                 Explore Our Services
               </Link>
             </div>

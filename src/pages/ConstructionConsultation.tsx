@@ -425,7 +425,7 @@ export default function ConstructionConsultation() {
               secondaryMessage="We'll come prepared with relevant questions and initial thoughts based on what you've shared."
               action={
                 <div className="flex flex-col sm:flex-row gap-3 mt-4">
-                  <button onClick={() => navigate("/gallery")} className="btn-ghost-interactive text-sm px-5 py-2.5 rounded-sm border border-border">View Our Work</button>
+                  <button onClick={() => navigate("/recent-projects")} className="btn-ghost-interactive text-sm px-5 py-2.5 rounded-sm border border-border">View Our Work</button>
                   <button onClick={() => navigate("/construction")} className="btn-ghost-interactive text-sm px-5 py-2.5 rounded-sm border border-border">Explore Construction</button>
                 </div>
               }

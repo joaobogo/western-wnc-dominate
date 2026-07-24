@@ -958,7 +958,7 @@ const RoofingDivision = () => {
                 </h2>
               </div>
               <Link
-                to="/gallery"
+                to="/recent-projects"
                 className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body"
               >
                 Full Gallery

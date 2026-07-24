@@ -162,7 +162,7 @@ const SpecialtyRoofing = () => {
                     <img src={img} alt="Specialty roofing detail" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
                   </motion.div>
                 ))}
-                <Link to="/gallery" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
+                <Link to="/recent-projects" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
                   <span className="text-[10px] text-primary-foreground/95 font-body text-center leading-tight">View<br/>Portfolio</span>
                 </Link>
               </motion.div>

@@ -28,7 +28,7 @@ const services = [
   { label: "Roof Inspection & Repair", to: "/roofing/roof-repair" },
   { label: "Roof Replacement", to: "/roofing/roof-replacement" },
   { label: "Standing Seam Metal Roofing", to: "/roofing/metal" },
-  { label: "Gutters & Downspouts", to: "/gutters" },
+  { label: "Gutters & Downspouts", to: "/roofing/gutters" },
   { label: "Skylights & Sun Tunnels", to: "/roofing/residential" },
   { label: "Construction & Additions", to: "/construction" },
   { label: "Design & Planning", to: "/construction/design" },

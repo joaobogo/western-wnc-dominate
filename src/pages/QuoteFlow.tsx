@@ -359,7 +359,7 @@ export default function QuoteFlow() {
               secondaryMessage="In the meantime, feel free to explore our project gallery or learn more about our process."
               action={
                 <div className="flex flex-col sm:flex-row gap-3 mt-4">
-                  <button onClick={() => navigate("/gallery")} className="btn-ghost-interactive text-sm px-5 py-2.5">View Our Work</button>
+                  <button onClick={() => navigate("/recent-projects")} className="btn-ghost-interactive text-sm px-5 py-2.5">View Our Work</button>
                   <button onClick={() => navigate("/")} className="btn-ghost-interactive text-sm px-5 py-2.5">Back to Home</button>
                 </div>
               }

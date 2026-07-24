@@ -350,7 +350,7 @@ const Blog = () => {
                       </Link>
                     ))}
                   </div>
-                  <Link to="/storm-center" className="inline-flex items-center gap-1.5 mt-4 text-accent font-heading font-semibold text-sm hover:gap-2.5 transition-all">
+                  <Link to="/roofing/storm-damage" className="inline-flex items-center gap-1.5 mt-4 text-accent font-heading font-semibold text-sm hover:gap-2.5 transition-all">
                     Visit Storm Center <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </motion.div>

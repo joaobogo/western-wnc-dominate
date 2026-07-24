@@ -22,10 +22,10 @@ const FreeTools = () => {
       <SEOHead
         title="Free Roofing & Construction Planning Tools"
         description="Free interactive tools to plan your roofing or construction project — material comparison, damage assessment, cost estimator, and a virtual roof designer."
-        path="/free-tools"
+        path="/"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Free Tools", url: "/free-tools" },
+          { name: "Free Tools", url: "/" },
         ])}
       />
       <Header />

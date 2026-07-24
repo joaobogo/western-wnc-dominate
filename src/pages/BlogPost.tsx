@@ -369,7 +369,7 @@ const BlogPostPage = () => {
                         {post.town ? `Real Work in ${post.town}` : "Mountain-Proven Results"}
                       </h3>
                     </div>
-                    <Link to="/gallery" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
+                    <Link to="/recent-projects" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
                       View All Projects <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
