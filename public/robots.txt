@@ -22,19 +22,17 @@ Allow: /*.woff$
 Allow: /*.woff2$
 Allow: /*.ttf$
 
-# Form-only funnels and intake builders (no informational content to rank)
-Disallow: /consultation
-Disallow: /quote-flow
-Disallow: /roofing-intake
-Disallow: /construction-intake
-Disallow: /roofing-builder
-Disallow: /construction-builder
-Disallow: /design-intake
+# NOTE: form-only funnels (/consultation, /quote-flow, /*-intake, /*-builder)
+# are intentionally NOT blocked here. They use <meta name="robots"
+# content="noindex,follow"> so Google can crawl the page and honor the
+# noindex directive. Blocking them in robots.txt would prevent Google from
+# ever seeing that directive and could leave stale URL-only entries in the
+# index. Same reasoning for internal /admin/ and SEO QA pages — they carry
+# noindex,nofollow via <meta>.
 
-# Internal utilities & paid landing pages
+# Paid landing pages: ad-only entry points, no organic value.
 Disallow: /admin/
 Disallow: /lp/
-Disallow: /seo-monitoring
 
 # ── Google Search ────────────────────────────────────────────────────────
 User-agent: Googlebot
