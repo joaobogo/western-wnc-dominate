@@ -54,12 +54,39 @@ const NotFound = () => {
         noindex
       />
       <div className="flex min-h-screen items-center justify-center bg-muted">
-        <div className="text-center">
-          <h1 className="mb-4 text-4xl font-bold">404</h1>
-          <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-          <a href="/" className="text-primary underline hover:text-primary/90">
-            Return to Home
-          </a>
+        <div className="mx-auto max-w-2xl px-6 py-16 text-center">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">404 · Page Not Found</p>
+          <h1 className="mb-4 text-4xl font-bold">We couldn't find that page</h1>
+          <p className="mb-8 text-lg text-muted-foreground">
+            The page you're looking for may have moved or no longer exists. Try one of the popular pages below, or call us at{" "}
+            <a href="tel:+18285247773" className="font-semibold text-primary underline">828-524-7773</a>.
+          </p>
+          <div className="grid grid-cols-1 gap-3 text-left sm:grid-cols-2">
+            <a href="/" className="rounded-lg border bg-background p-4 hover:bg-accent">
+              <div className="font-semibold">Home</div>
+              <div className="text-sm text-muted-foreground">Roofing & construction in Western NC</div>
+            </a>
+            <a href="/roofing" className="rounded-lg border bg-background p-4 hover:bg-accent">
+              <div className="font-semibold">Roofing Services</div>
+              <div className="text-sm text-muted-foreground">Repair, replacement, metal, storm damage</div>
+            </a>
+            <a href="/construction" className="rounded-lg border bg-background p-4 hover:bg-accent">
+              <div className="font-semibold">Construction Services</div>
+              <div className="text-sm text-muted-foreground">Additions, renovations, outdoor living</div>
+            </a>
+            <a href="/service-areas" className="rounded-lg border bg-background p-4 hover:bg-accent">
+              <div className="font-semibold">Service Areas</div>
+              <div className="text-sm text-muted-foreground">Highlands, Franklin, Cashiers & nearby towns</div>
+            </a>
+            <a href="/blog" className="rounded-lg border bg-background p-4 hover:bg-accent">
+              <div className="font-semibold">Blog</div>
+              <div className="text-sm text-muted-foreground">Local roofing & construction guides</div>
+            </a>
+            <a href="/request-inspection" className="rounded-lg border bg-primary p-4 text-primary-foreground hover:opacity-90">
+              <div className="font-semibold">Request an Inspection</div>
+              <div className="text-sm opacity-90">Free assessment · 24h response</div>
+            </a>
+          </div>
         </div>
       </div>
     </>
