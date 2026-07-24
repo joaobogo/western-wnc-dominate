@@ -357,6 +357,7 @@ const SEOMonitoring = () => {
         title="SEO Monitoring Dashboard"
         description="Monitor fresh 404 URLs, robots and crawl issues, stale or missing sitemap entries, and pages that may have dropped from the index."
         path="/seo-monitoring"
+        noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
           { name: "SEO Monitoring", url: "/seo-monitoring" },
