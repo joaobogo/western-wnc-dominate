@@ -23,6 +23,14 @@ import BuiltForWNC from "@/components/BuiltForWNC";
 import ProjectConcierge from "@/components/ProjectConcierge";
 import TownProofBlock from "@/components/TownProofBlock";
 import NearbyTowns from "@/components/NearbyTowns";
+import {
+  TownEmergencyBand,
+  TownServicesGrid,
+  TownCTABand,
+  TownWhyChoose,
+  TownFAQ,
+  TownCTAStrip,
+} from "@/components/town/TownLandingSections";
 import { getTownBySlug, getLocalRelevance, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 import { blogPosts } from "@/data/blogs";
@@ -181,6 +189,9 @@ const TownPage = () => {
           </section>
         )}
 
+        {/* 1.6 Storm / Emergency band — high-urgency CTA under the fold */}
+        <TownEmergencyBand town={town} />
+
         {/* 2. Authority Section */}
         <section className="py-24 bg-background relative overflow-hidden">
           <TartanBackground opacity={0.02} />
@@ -230,16 +241,28 @@ const TownPage = () => {
         {/* 3. Dual Pathway */}
         <TownServiceSections town={town} />
 
+        {/* 3.1 Town-personalized Services Grid */}
+        <TownServicesGrid town={town} />
+
+        {/* 3.2 Mid-page thin CTA strip */}
+        <TownCTAStrip town={town} />
+
         {/* 3.5 Local Service Blocks — six-section local SEO template */}
         <TownLocalServiceBlocks town={town} />
 
         {/* 4. Local Proof */}
         {townProof && <TownProofBlock town={town} content={townProof} />}
 
+        {/* 4.1 Why Choose Highlander in {town} */}
+        <TownWhyChoose town={town} />
+
         <SectionDivider variant="diamond" />
 
         {/* 5. Featured Projects - Filtered for Town Relevance */}
         <FeaturedProjects location={town.name} />
+
+        {/* 5.5 Cinematic mid-page CTA band */}
+        <TownCTABand town={town} />
 
         {/* 6. Built for WNC Factors */}
         <BuiltForWNC />
@@ -332,6 +355,9 @@ const TownPage = () => {
 
         <ProjectConcierge />
         
+        {/* 7.5 Town-specific FAQ (uses proof FAQs if available) */}
+        <TownFAQ town={town} faqs={townProof?.faqs} />
+
         {/* 8. Internal Linking Engine - Nearby Areas */}
         <NearbyTowns currentTown={town} />
 
