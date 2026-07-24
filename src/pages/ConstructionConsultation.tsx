@@ -413,7 +413,7 @@ export default function ConstructionConsultation() {
   if (submitted) {
     return (
       <>
-        <SEOHead title="Consultation Requested | Highlander Construction" description="Your construction project consultation has been received." path="/construction/consultation" />
+        <SEOHead title="Consultation Requested | Highlander Construction" description="Your construction project consultation has been received." path="/construction/consultation" noindex />
         <Header />
         <main className="pt-24 md:pt-32 pb-16">
           <div className="container-tight max-w-lg">
@@ -443,6 +443,7 @@ export default function ConstructionConsultation() {
         title="Construction Consultation in Western NC"
         description="Start a conversation about your home addition, renovation, outdoor living space, or custom construction project in Western North Carolina."
         path="/construction/consultation"
+        noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
           { name: "Construction", url: "/construction" },

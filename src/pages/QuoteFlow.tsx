@@ -347,7 +347,7 @@ export default function QuoteFlow() {
     const isUrgent = form.timeline === "emergency" || form.timeline === "1-month";
     return (
       <>
-        <SEOHead title="Consultation Requested | Highlander Roofing & Construction" description="Your project consultation request has been received." path="/consultation" />
+        <SEOHead title="Consultation Requested | Highlander Roofing & Construction" description="Your project consultation request has been received." path="/consultation" noindex />
         <Header />
         <main className="pt-24 md:pt-32 pb-16">
           <div className="container-tight max-w-lg">
@@ -377,6 +377,7 @@ export default function QuoteFlow() {
         title="Project Consultation in Western NC"
         description="Tell us about your roofing or construction project — we'll connect you with the right advisor. No pressure. Highlander Roofing & Construction, Western NC."
         path="/consultation"
+        noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
           { name: "Consultation", url: "/consultation" },

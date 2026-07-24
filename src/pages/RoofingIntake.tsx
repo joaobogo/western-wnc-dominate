@@ -11,6 +11,7 @@ const RoofingIntake = () => (
       title="Request a Roof Assessment | Highlander Roofing"
       description="Tell us about your roof. A Highlander project advisor responds within as soon as possible across Western North Carolina."
       path="/roofing-intake"
+      noindex
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing Intake", url: "/roofing-intake" }])}
     />
     <Header />

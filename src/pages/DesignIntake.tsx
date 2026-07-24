@@ -18,6 +18,7 @@ const DesignIntake = () => {
         title="Start Your Project Plan | Design Intake"
         description="Planning an addition or major renovation in WNC? Share your vision and get professional layout and scope assessment from Highlander."
         path="/design-intake"
+        noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
           { name: "Design", url: "/layouts-planning" },
