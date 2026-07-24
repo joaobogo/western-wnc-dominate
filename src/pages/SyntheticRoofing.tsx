@@ -4,6 +4,7 @@ import { ArrowRight, Phone, CheckCircle, Award, Leaf, Clock, Home, ChevronRight 
 import bravaHero from "@/assets/gallery/cedar-005.jpg";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -34,18 +35,19 @@ const SyntheticRoofing = () => {
           service: {
             name: "Brava Synthetic Roofing",
             description: "Brava synthetic shake and slate roofing across Western North Carolina.",
-            url: "https://highlandernc.com/roofing/brava-synthetic",
+            url: "/roofing/brava-synthetic",
             areaServed: "Western North Carolina",
           },
           breadcrumbs: [
-            { name: "Home", url: "https://highlandernc.com/" },
-            { name: "Roofing", url: "https://highlandernc.com/roofing" },
-            { name: "Brava Synthetic Roofing", url: "https://highlandernc.com/roofing/brava-synthetic" },
+            { name: "Home", url: "/" },
+            { name: "Roofing", url: "/roofing" },
+            { name: "Brava Synthetic Roofing", url: "/roofing/brava-synthetic" },
           ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Brava Synthetic Roofing", url: "/roofing/brava-synthetic" }]} />
       <main>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">

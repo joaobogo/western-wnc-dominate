@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MapPin, ArrowRight, Phone, Shield, Award, Mountain, Compass, Users, Star, CloudLightning, Clock } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import TartanBackground from "@/components/TartanBackground";
 
@@ -56,6 +57,7 @@ const ServiceAreas = () => {
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }])}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }]} />
       <main>
         <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-end overflow-hidden">
           <div className="absolute inset-0 section-dark">

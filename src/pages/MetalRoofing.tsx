@@ -6,6 +6,7 @@ import metalMobileHero from "@/assets/heroes/metal-mobile.jpg";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
@@ -36,18 +37,25 @@ const MetalRoofing = () => {
           service: {
             name: "Metal Roofing",
             description: "Standing seam and exposed-fastener metal roofing across Western North Carolina.",
-            url: "https://highlandernc.com/roofing/metal",
+            url: "/roofing/metal",
             areaServed: "Western North Carolina",
           },
           breadcrumbs: [
-            { name: "Home", url: "https://highlandernc.com/" },
-            { name: "Roofing", url: "https://highlandernc.com/roofing" },
-            { name: "Metal Roofing", url: "https://highlandernc.com/roofing/metal" },
+            { name: "Home", url: "/" },
+            { name: "Roofing", url: "/roofing" },
+            { name: "Metal Roofing", url: "/roofing/metal" },
           ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Roofing", url: "/roofing" },
+          { name: "Metal Roofing", url: "/roofing/metal" },
+        ]}
+      />
       <main>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">

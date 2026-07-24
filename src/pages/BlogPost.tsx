@@ -201,13 +201,20 @@ const BlogPostPage = () => {
                 <span className="text-[11px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Insight</span>
                 <div className="h-px w-12 bg-white/10" />
               </div>
-              {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-white/70 text-sm font-body mb-6">
+              {/* Breadcrumb — matches BreadcrumbList schema */}
+              <nav
+                aria-label="Breadcrumb"
+                className="flex flex-wrap items-center gap-2 text-white/70 text-sm font-body mb-6"
+              >
+                <Link to="/" className="hover:text-white transition-colors">Home</Link>
+                <span aria-hidden="true">/</span>
                 <Link to="/blog" className="hover:text-white transition-colors flex items-center gap-1">
                   <ArrowLeft className="w-3 h-3" /> Blog
                 </Link>
-                <span>/</span>
-                <span className="text-white/80">{post.category}</span>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page" className="text-white/90 truncate max-w-[60vw]">
+                  {post.title}
+                </span>
               </nav>
 
               {/* Meta */}

@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -98,6 +99,7 @@ const ConstructionDivision = () => {
         ]}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }]} />
       <main className="md:pt-0">
         {/* ═══ HERO — Cinematic construction hero with gold accents ═══ */}
         <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden">

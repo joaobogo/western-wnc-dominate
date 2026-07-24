@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Sun, Droplets, Wrench, Shield, Award } from "lucide-react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -50,18 +51,25 @@ const Skylights = () => {
           service: {
             name: "VELUX Skylight Installation",
             description: "VELUX Certified skylight installation, replacement, and repair across Western North Carolina.",
-            url: "https://highlandernc.com/roofing/skylights",
+            url: "/roofing/skylights",
             areaServed: "Western North Carolina",
           },
           breadcrumbs: [
-            { name: "Home", url: "https://highlandernc.com/" },
-            { name: "Roofing", url: "https://highlandernc.com/roofing" },
-            { name: "Skylights", url: "https://highlandernc.com/roofing/skylights" },
+            { name: "Home", url: "/" },
+            { name: "Roofing", url: "/roofing" },
+            { name: "Skylights", url: "/roofing/skylights" },
           ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Roofing", url: "/roofing" },
+          { name: "Skylights", url: "/roofing/skylights" },
+        ]}
+      />
       <main>
         {/* Hero */}
         <section className="relative min-h-[65vh] md:min-h-[80vh] flex items-end overflow-hidden pt-32 md:pt-40 pb-14 md:pb-20">

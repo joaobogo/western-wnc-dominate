@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import GoldLine from "@/components/motion/GoldLine";
@@ -73,6 +74,7 @@ const LayoutsPlanning = () => {
         ])}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Design & Planning", url: "/construction/design-planning" }]} />
       
       <main>
         {/* 1. Hero — Refined */}

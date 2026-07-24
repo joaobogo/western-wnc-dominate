@@ -1,9 +1,14 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, MapPin } from "lucide-react";
-import SEOHead, { buildPageSchema } from "@/components/SEOHead";
+import SEOHead, {
+  townSchema,
+  breadcrumbSchema,
+  faqSchema,
+} from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import NearbyTowns from "@/components/NearbyTowns";
@@ -96,19 +101,34 @@ const ServiceTownPage = ({
         title={entry.metaTitle}
         description={entry.metaDescription}
         path={resolvedCanonical}
-        jsonLd={buildPageSchema({
-          type: "town",
-          town: {
+        jsonLd={[
+          townSchema({
             name: town.name,
             slug: town.slug,
             county: town.county,
             state: town.state,
             description: entry.intro,
-          },
-          faqs: entry.faqs.map((f) => ({ question: f.q, answer: f.a })),
-        })}
+          }),
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Service Areas", url: "/service-areas" },
+            { name: `${town.name}, ${town.state}`, url: `/service-areas/${town.slug}` },
+            { name: entry.serviceLabel, url: resolvedCanonical },
+          ]),
+          ...(entry.faqs.length
+            ? [faqSchema(entry.faqs.map((f) => ({ question: f.q, answer: f.a })))]
+            : []),
+        ]}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Service Areas", url: "/service-areas" },
+          { name: `${town.name}, ${town.state}`, url: `/service-areas/${town.slug}` },
+          { name: entry.serviceLabel, url: resolvedCanonical },
+        ]}
+      />
       <main>
         {/* Hero */}
         <section className="relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden">
@@ -130,13 +150,6 @@ const ServiceTownPage = ({
 
           <div className="container-tight relative z-10 pt-32 md:pt-40 pb-20">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-4 text-sm font-body font-bold uppercase tracking-wider">
-                <Link to="/service-areas" className="hover:underline">Service Areas</Link>
-                <span>/</span>
-                <Link to={`/service-areas/${town.slug}`} className="hover:underline">{town.name}</Link>
-                <span>/</span>
-                <span className="text-white/90">{entry.serviceLabel}</span>
-              </div>
               <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-6">
                 <MapPin className="w-4 h-4" />
                 <span className="font-bold text-sm uppercase tracking-[0.2em]">

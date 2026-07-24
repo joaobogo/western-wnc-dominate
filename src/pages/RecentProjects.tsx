@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Phone, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, Loader2, AlertCircle } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import heroImg from "@/assets/gallery/asphalt-hero.webp";
@@ -122,6 +123,7 @@ const RecentProjects = () => {
         ])}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Recent Projects", url: "/recent-projects" }]} />
       <main>
         {/* Hero */}
         <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">

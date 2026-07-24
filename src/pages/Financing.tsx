@@ -3,6 +3,7 @@ import { ArrowRight, Phone, CheckCircle, DollarSign, Shield, Clock, AlertCircle,
 import { Link } from "react-router-dom";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -35,6 +36,7 @@ const Financing = () => {
         ])}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Financing", url: "/financing" }]} />
       <main>
         <section className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">

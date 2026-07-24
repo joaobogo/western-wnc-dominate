@@ -10,6 +10,7 @@ import HeadingReveal from "@/components/motion/HeadingReveal";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -68,6 +69,13 @@ const TownPage = () => {
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Service Areas", url: "/service-areas" },
+          { name: `${town.name}, ${town.state}`, url: `/service-areas/${town.slug}` },
+        ]}
+      />
       <main>
         {/* 1. Premium Hero */}
         <section className="relative min-h-[90svh] flex flex-col items-center justify-center overflow-hidden">

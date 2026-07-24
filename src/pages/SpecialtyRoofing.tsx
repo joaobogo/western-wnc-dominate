@@ -7,6 +7,7 @@ import {
   BadgeCheck, Layers, Mountain, Sparkles
 } from "lucide-react";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Footer from "@/components/Footer";
@@ -93,6 +94,7 @@ const SpecialtyRoofing = () => {
         ]}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Specialty", url: "/roofing/specialty" }]} />
       <main>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">

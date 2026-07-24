@@ -8,6 +8,7 @@ import {
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import TartanBackground from "@/components/TartanBackground";
 import SectionDivider from "@/components/SectionDivider";
@@ -54,6 +55,13 @@ const CountyPage = () => {
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Service Areas", url: "/service-areas" },
+          { name: county.name, url: `/service-areas/county/${county.slug}` },
+        ]}
+      />
       <main>
         {/* 1. County Hero — Premium Mountain Visual */}
         <section className="relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden">

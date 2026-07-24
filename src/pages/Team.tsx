@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { teamMembers } from "@/data/team";
@@ -25,6 +26,7 @@ const Team = () => {
         ]}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }, { name: "Team", url: "/team" }]} />
       <main>
         {/* HERO */}
         <section className="bg-heritage-charcoal pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden">

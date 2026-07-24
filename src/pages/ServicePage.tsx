@@ -4,6 +4,7 @@ import { ArrowRight, Phone, CheckCircle } from "lucide-react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import { getServiceBySlug, services } from "@/data/services";
@@ -67,6 +68,13 @@ const ServicePage = () => {
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Services", url: "/roofing" },
+          { name: service.title, url: servicePath },
+        ]}
+      />
       <main>
         {/* Division accent line */}
         <div className={`h-[3px] w-full ${theme.heroAccentLine}`} />

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Heart, Users, ArrowRight, HandHeart, Mountain, Hammer, Handshake, Building2, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
@@ -49,6 +50,7 @@ const GivingBack = () => {
         ]}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Community", url: "/giving-back" }]} />
       <main>
         {/* ── HERO ── */}
         <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-heritage-charcoal">
