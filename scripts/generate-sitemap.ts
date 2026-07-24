@@ -31,19 +31,15 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/team", changefreq: "monthly", priority: "0.6" },
   { path: "/certifications", changefreq: "monthly", priority: "0.6" },
   { path: "/reviews", changefreq: "weekly", priority: "0.7" },
-  { path: "/gallery", changefreq: "weekly", priority: "0.7" },
-  { path: "/projects", changefreq: "weekly", priority: "0.7" },
-  { path: "/portfolio", changefreq: "weekly", priority: "0.6" },
+  { path: "/recent-projects", changefreq: "weekly", priority: "0.7" },
   { path: "/careers", changefreq: "monthly", priority: "0.5" },
   { path: "/community", changefreq: "monthly", priority: "0.5" },
   { path: "/giving-back", changefreq: "monthly", priority: "0.5" },
   { path: "/faq", changefreq: "monthly", priority: "0.6" },
   { path: "/financing", changefreq: "monthly", priority: "0.6" },
-  { path: "/storm-center", changefreq: "weekly", priority: "0.7" },
   { path: "/contact", changefreq: "monthly", priority: "0.7" },
   { path: "/request-inspection", changefreq: "monthly", priority: "0.8" },
   { path: "/consultation", changefreq: "monthly", priority: "0.7" },
-  { path: "/free-tools", changefreq: "monthly", priority: "0.6" },
 
   // Roofing money pages
   { path: "/roofing", changefreq: "weekly", priority: "0.9" },
@@ -68,19 +64,8 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/construction/consultation", changefreq: "monthly", priority: "0.7" },
 
   // Gutter & exterior hubs
-  { path: "/gutters", changefreq: "monthly", priority: "0.7" },
-  { path: "/gutters/seamless", changefreq: "monthly", priority: "0.6" },
-  { path: "/gutters/guards", changefreq: "monthly", priority: "0.6" },
-  { path: "/gutters/downspouts", changefreq: "monthly", priority: "0.5" },
-  { path: "/gutters/copper", changefreq: "monthly", priority: "0.6" },
-  { path: "/gutters/aluminum", changefreq: "monthly", priority: "0.5" },
   { path: "/exterior-improvements", changefreq: "monthly", priority: "0.6" },
-  { path: "/outdoor-living", changefreq: "monthly", priority: "0.6" },
-  { path: "/commercial-roofing", changefreq: "monthly", priority: "0.7" },
-  { path: "/commercial-maintenance", changefreq: "monthly", priority: "0.6" },
-  { path: "/construction-services", changefreq: "monthly", priority: "0.6" },
   { path: "/layouts-planning", changefreq: "monthly", priority: "0.5" },
-  { path: "/services", changefreq: "weekly", priority: "0.7" },
 
   // Service Areas hub
   { path: "/service-areas", changefreq: "weekly", priority: "0.8" },
@@ -88,7 +73,6 @@ const staticRoutes: SitemapEntry[] = [
 
   // Legal
   { path: "/privacy-policy", changefreq: "yearly", priority: "0.2" },
-  { path: "/terms", changefreq: "yearly", priority: "0.2" },
   { path: "/accessibility", changefreq: "yearly", priority: "0.2" },
 ];
 

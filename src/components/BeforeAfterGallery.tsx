@@ -193,7 +193,7 @@ const BeforeAfterGallery = () => {
                 ))}
               </div>
               <Link
-                to="/gallery"
+                to="/recent-projects"
                 className="text-sm font-medium text-accent hover:text-accent/80 transition-colors inline-flex items-center gap-1.5 group font-body"
               >
                 View Full Gallery

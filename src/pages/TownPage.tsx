@@ -314,7 +314,7 @@ const TownPage = () => {
                     <p className="text-base text-muted-foreground font-body leading-relaxed max-w-xl">We support every service area with real project data and mountain-proven advice.</p>
                   </div>
                 </div>
-                <Link to="/gallery" className="text-sm md:text-base font-heading font-bold text-foreground hover:text-primary transition-colors flex items-center gap-2 group whitespace-nowrap">
+                <Link to="/recent-projects" className="text-sm md:text-base font-heading font-bold text-foreground hover:text-primary transition-colors flex items-center gap-2 group whitespace-nowrap">
                   View {town.name} Portfolio <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

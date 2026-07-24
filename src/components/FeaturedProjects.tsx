@@ -110,7 +110,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         isHero ? "md:col-span-2 md:row-span-2" : isWide ? "md:col-span-2" : ""
       }`}
     >
-      <Link to="/gallery" className="block relative h-full">
+      <Link to="/recent-projects" className="block relative h-full">
         {/* Image */}
         <div className={`relative overflow-hidden ${
           isHero ? "aspect-[4/3] md:aspect-[16/10]" : isWide ? "aspect-[21/9]" : "aspect-[4/3]"
@@ -269,7 +269,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
         >
           <GoldLine width="3rem" centered delay={0.2} className="mb-6" />
           <Link
-            to="/gallery"
+            to="/recent-projects"
             className="group inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
           >
             View the Full Portfolio

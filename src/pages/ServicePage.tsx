@@ -30,7 +30,7 @@ const ServicePage = () => {
         <Header />
         <main className="section-padding text-center pt-32">
           <h1 className="text-3xl font-heading font-bold">Service Not Found</h1>
-          <Link to="/services" className="text-primary underline mt-4 inline-block">View All Services</Link>
+          <Link to="/roofing" className="text-primary underline mt-4 inline-block">View All Services</Link>
         </main>
         <Footer />
       </>
@@ -60,7 +60,7 @@ const ServicePage = () => {
           },
           breadcrumbs: [
             { name: "Home", url: "/" },
-            { name: "Services", url: "/services" },
+            { name: "Services", url: "/roofing" },
             { name: service.title, url: servicePath },
           ],
           faqs: service.faqs,

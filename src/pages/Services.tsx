@@ -14,18 +14,18 @@ const Services = () => {
       <SEOHead
         title="Roofing & Construction Services in Western NC | Highlander"
         description="Complete roofing and construction services across Western North Carolina — repair, replacement, metal roofing, additions, renovations & more. Free estimates."
-        path="/services"
+        path="/roofing"
         jsonLd={[
           serviceSchema({
             name: "Roofing & Construction Services",
             description:
               "Roofing and construction services across Western North Carolina — repair, replacement, metal roofing, additions, and outdoor living.",
-            url: "/services",
+            url: "/roofing",
             areaServed: "Western North Carolina",
           }),
           breadcrumbSchema([
             { name: "Home", url: "/" },
-            { name: "Services", url: "/services" },
+            { name: "Services", url: "/roofing" },
           ]),
         ]}
       />

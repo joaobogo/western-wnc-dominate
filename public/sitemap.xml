@@ -26,19 +26,9 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://highlandernc.com/gallery</loc>
+    <loc>https://highlandernc.com/recent-projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/projects</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/portfolio</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://highlandernc.com/careers</loc>
@@ -66,11 +56,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://highlandernc.com/storm-center</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://highlandernc.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -84,11 +69,6 @@
     <loc>https://highlandernc.com/consultation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/free-tools</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://highlandernc.com/roofing</loc>
@@ -181,57 +161,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://highlandernc.com/gutters</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/gutters/seamless</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/gutters/guards</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/gutters/downspouts</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/gutters/copper</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/gutters/aluminum</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://highlandernc.com/exterior-improvements</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/outdoor-living</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/commercial-roofing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/commercial-maintenance</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/construction-services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -239,11 +169,6 @@
     <loc>https://highlandernc.com/layouts-planning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/services</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://highlandernc.com/service-areas</loc>
@@ -257,11 +182,6 @@
   </url>
   <url>
     <loc>https://highlandernc.com/privacy-policy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://highlandernc.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

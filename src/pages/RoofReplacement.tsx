@@ -441,7 +441,7 @@ const RoofReplacement = () => {
                 <span className="eyebrow mb-3 block">Replacement Projects</span>
                 <h2 className="section-heading">Recent Roof<br className="hidden md:block" /> Replacements.</h2>
               </div>
-              <Link to="/gallery" className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body">
+              <Link to="/recent-projects" className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body">
                 Full Gallery <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>

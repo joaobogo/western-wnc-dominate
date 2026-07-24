@@ -18,7 +18,7 @@ const META: Record<LegalKind, { title: string; description: string; path: string
   terms: {
     title: "Terms of Service | Highlander Roofing & Construction",
     description: "Terms & Conditions for Highlander Roofing Services, Inc., including SMS/MMS, email, and call program terms.",
-    path: "/terms",
+    path: "/privacy-policy",
     eyebrow: "Legal",
     heading: "Terms & Conditions",
     icon: FileText,
@@ -128,7 +128,7 @@ function PrivacyBody() {
       <p>We do not sell personal information. We do not use information collected through the Website or Programs to make decisions that produce legal or similarly significant effects solely by automated means (for example, automated denial of services).</p>
 
       <h2>8.4 Communications and Text Messaging Privacy</h2>
-      <p>If you provide your phone number or email address, you may receive communications from us as described in our <a href="/terms">Terms &amp; Conditions</a> and in Section 8.3 above.</p>
+      <p>If you provide your phone number or email address, you may receive communications from us as described in our <a href="/privacy-policy">Terms &amp; Conditions</a> and in Section 8.3 above.</p>
       <h3>8.4.1 SMS / MMS Text Messages</h3>
       <p>If you opt in to receive text messages, we may send SMS/MMS messages related to:</p>
       <ul>
@@ -373,7 +373,7 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
 
           <div className="mt-14 pt-8 border-t border-border flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-body">
             <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Shield className="w-3.5 h-3.5" /> Privacy Policy</Link>
-            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><FileText className="w-3.5 h-3.5" /> Terms of Service</Link>
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><FileText className="w-3.5 h-3.5" /> Terms of Service</Link>
             <Link to="/accessibility" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><AccessibilityIcon className="w-3.5 h-3.5" /> Accessibility</Link>
             <span className="text-border">·</span>
             <a href="tel:+18285247773" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> (828) 524-7773</a>

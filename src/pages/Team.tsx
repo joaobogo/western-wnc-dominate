@@ -127,7 +127,7 @@ const Team = () => {
                 { to: "/recent-projects", label: "Recent Projects" },
                 { to: "/residential-roofing", label: "Residential Roofing" },
                 { to: "/roof-repair", label: "Roof Repair" },
-                { to: "/commercial-roofing", label: "Commercial Roofing" },
+                { to: "/roofing/commercial", label: "Commercial Roofing" },
                 { to: "/giving-back", label: "Community Involvement" },
               ].map((link) => (
                 <Link

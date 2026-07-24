@@ -582,7 +582,7 @@ const About = () => {
                 We'll earn your trust the same way we've earned everyone else's.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/gallery" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <Link to="/recent-projects" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                   See What We've Built <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link to="/consultation" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">

@@ -33,7 +33,7 @@ const RoofDesigner = () => {
         path="/roof-designer"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Free Tools", url: "/free-tools" },
+          { name: "Free Tools", url: "/" },
           { name: "Roof Designer", url: "/roof-designer" },
         ])}
       />

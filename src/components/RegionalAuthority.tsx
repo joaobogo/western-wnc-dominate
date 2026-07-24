@@ -75,7 +75,7 @@ const RegionalAuthority = () => {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              to="/services"
+              to="/roofing"
               className="group bg-card border border-border text-foreground font-body font-bold text-sm px-7 py-4 rounded-none inline-flex items-center justify-center gap-2 uppercase tracking-wider hover:border-primary/40 transition-all"
             >
               All Roofing Services
