@@ -105,7 +105,9 @@ const Header = () => {
             width={520}
             height={520}
             className={`w-auto transition-[height,transform] duration-500 ease-out origin-left ${
-              scrolled ? "h-[32px] md:h-[44px]" : "h-[36px] md:h-[56px]"
+              scrolled
+                ? "h-[44px] sm:h-[48px] md:h-[52px] lg:h-[56px]"
+                : "h-[52px] sm:h-[60px] md:h-[68px] lg:h-[76px]"
             }`}
             style={{ imageRendering: "auto" }}
             fetchPriority="high"
