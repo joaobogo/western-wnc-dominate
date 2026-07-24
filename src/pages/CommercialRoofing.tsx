@@ -14,6 +14,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import heroImg from "@/assets/gallery/metal-006.webp";
+import RealWorkWidget from "@/components/RealWorkWidget";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -477,6 +478,7 @@ const CommercialRoofing = () => {
           </div>
         </section>
       </main>
+      <RealWorkWidget />
       <Footer />
       <StickyMobileCTA />
     </>

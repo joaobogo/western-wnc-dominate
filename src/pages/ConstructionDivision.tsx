@@ -43,6 +43,7 @@ import proj2 from "@/assets/gallery/cedar-002.jpg";
 import proj3 from "@/assets/gallery/metal-008.webp";
 import proj4 from "@/assets/gallery/asphalt-004.jpg";
 import RelatedLinks from "@/components/RelatedLinks";
+import RealWorkWidget from "@/components/RealWorkWidget";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -487,6 +488,7 @@ const ConstructionDivision = () => {
         />
       </main>
 
+      <RealWorkWidget />
       <Footer />
       <StickyMobileCTA />
     </>

@@ -16,6 +16,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import StormResponseGuide from "@/components/StormResponseGuide";
 
 import heroImg from "@/assets/gallery/asphalt-005.jpg";
+import RealWorkWidget from "@/components/RealWorkWidget";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -568,6 +569,7 @@ const StormDamage = () => {
           </div>
         </section>
       </main>
+      <RealWorkWidget />
       <Footer />
       <StickyMobileCTA />
     </>

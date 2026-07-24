@@ -26,6 +26,7 @@ import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import replacementMobileHero from "@/assets/heroes/replacement-mobile.jpg";
 import RelatedLinks from "@/components/RelatedLinks";
+import RealWorkWidget from "@/components/RealWorkWidget";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -547,6 +548,7 @@ const RoofReplacement = () => {
         />
       </main>
 
+      <RealWorkWidget />
       <Footer />
       <StickyMobileCTA />
     </>

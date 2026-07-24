@@ -22,6 +22,7 @@ import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
 import cedarDetail from "@/assets/gallery/cedar-001.jpg";
+import RealWorkWidget from "@/components/RealWorkWidget";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -1125,6 +1126,7 @@ const RoofingDivision = () => {
           </div>
         </section>
       </main>
+      <RealWorkWidget />
       <Footer />
       <StickyMobileCTA />
     </>

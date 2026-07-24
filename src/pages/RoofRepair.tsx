@@ -17,6 +17,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
 import RelatedLinks from "@/components/RelatedLinks";
+import RealWorkWidget from "@/components/RealWorkWidget";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -522,6 +523,7 @@ const RoofRepair = () => {
         />
       </main>
 
+      <RealWorkWidget />
       <Footer />
       <StickyMobileCTA />
     </>

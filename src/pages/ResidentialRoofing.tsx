@@ -24,6 +24,7 @@ import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.jpg";
 import cedarDetail from "@/assets/gallery/cedar-001.jpg";
 import RelatedLinks from "@/components/RelatedLinks";
+import RealWorkWidget from "@/components/RealWorkWidget";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -951,6 +952,7 @@ const ResidentialRoofing = () => {
         />
       </main>
 
+      <RealWorkWidget />
       <Footer />
       <StickyMobileCTA />
     </>
