@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Breadcrumb,
@@ -8,6 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import HeaderOffset from "@/components/layout/HeaderOffset";
+import { breadcrumbSchema } from "@/components/SEOHead";
 
 export interface BreadcrumbCrumb {
   name: string;
@@ -25,9 +27,34 @@ export interface BreadcrumbCrumb {
 interface PageBreadcrumbsProps {
   items: BreadcrumbCrumb[];
   className?: string;
+  /**
+   * When true (default), emits a BreadcrumbList JSON-LD script into
+   * <head> matching the visible trail. Set false only if the page
+   * already ships an equivalent BreadcrumbList via buildPageSchema()
+   * to avoid duplicate schema.
+   */
+  emitSchema?: boolean;
 }
 
-const PageBreadcrumbs = ({ items, className = "" }: PageBreadcrumbsProps) => {
+const SCHEMA_SCRIPT_ID = "ld-breadcrumbs";
+
+const PageBreadcrumbs = ({ items, className = "", emitSchema = true }: PageBreadcrumbsProps) => {
+  useEffect(() => {
+    if (!emitSchema || !items || items.length === 0) return;
+    let el = document.getElementById(SCHEMA_SCRIPT_ID) as HTMLScriptElement | null;
+    if (!el) {
+      el = document.createElement("script");
+      el.type = "application/ld+json";
+      el.id = SCHEMA_SCRIPT_ID;
+      document.head.appendChild(el);
+    }
+    el.textContent = JSON.stringify(breadcrumbSchema(items));
+    return () => {
+      const existing = document.getElementById(SCHEMA_SCRIPT_ID);
+      if (existing) existing.remove();
+    };
+  }, [items, emitSchema]);
+
   if (!items || items.length === 0) return null;
   return (
     <HeaderOffset as="nav" aria-label="Breadcrumb" spacing="normal" className={className}>
