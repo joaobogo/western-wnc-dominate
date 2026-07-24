@@ -35,13 +35,13 @@ const SyntheticRoofing = () => {
           service: {
             name: "Brava Synthetic Roofing",
             description: "Brava synthetic shake and slate roofing across Western North Carolina.",
-            url: "https://highlandernc.com/roofing/brava-synthetic",
+            url: "/roofing/brava-synthetic",
             areaServed: "Western North Carolina",
           },
           breadcrumbs: [
-            { name: "Home", url: "https://highlandernc.com/" },
-            { name: "Roofing", url: "https://highlandernc.com/roofing" },
-            { name: "Brava Synthetic Roofing", url: "https://highlandernc.com/roofing/brava-synthetic" },
+            { name: "Home", url: "/" },
+            { name: "Roofing", url: "/roofing" },
+            { name: "Brava Synthetic Roofing", url: "/roofing/brava-synthetic" },
           ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
