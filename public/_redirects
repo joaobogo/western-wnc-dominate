@@ -1,1 +1,155 @@
+# ============================================================
+# Legacy Hibu / old-site URL 301 redirects (edge-level)
+# Real 301s so Google consolidates signal to the canonical URL
+# instead of indexing SPA shell duplicates.
+# ============================================================
+/roofing/emergency-repair                                    /roofing/storm-damage                              301!
+/roofing/emergency-roof-repair                               /roofing/storm-damage                              301!
+/roofing/leak-repair                                         /roofing/roof-repair                               301!
+/roofing/roof-leak-repair                                    /roofing/roof-repair                               301!
+/roofing/inspection                                          /request-inspection                                301!
+/roofing/roof-inspection                                     /request-inspection                                301!
+/roofing/asphalt                                             /roofing/residential                               301!
+/roofing/asphalt-shingle                                     /roofing/residential                               301!
+/roofing/shingle                                             /roofing/residential                               301!
+/construction/exterior                                       /construction/siding                               301!
+/construction/custom                                         /construction                                      301!
+/construction/flatwork                                       /construction                                      301!
+/construction/garages                                        /construction/additions                            301!
+/construction/garage                                         /construction/additions                            301!
+/construction/in-law-suite                                   /construction/additions                            301!
+/construction/guest-suite                                    /construction/additions                            301!
+/construction/porches                                        /construction/outdoor-living                       301!
+/construction/screened-porch                                 /construction/outdoor-living                       301!
+/construction/sunrooms                                       /construction/additions                            301!
+/construction/sunroom                                        /construction/additions                            301!
+/construction/two-story-addition                             /construction/additions                            301!
+/construction/decks                                          /construction/outdoor-living                       301!
+/construction/deck                                           /construction/outdoor-living                       301!
+/construction/patios                                         /construction/outdoor-living                       301!
+/construction/patio                                          /construction/outdoor-living                       301!
+/construction/pergolas                                       /construction/outdoor-living                       301!
+/construction/pergola                                        /construction/outdoor-living                       301!
+/construction/outdoor-kitchen                                /construction/outdoor-living                       301!
+/construction/fire-pit                                       /construction/outdoor-living                       301!
+/construction/retaining-walls                                /construction/outdoor-living                       301!
+/gutters/seamless                                            /roofing/gutters                                   301!
+/gutters/guards                                              /roofing/gutters                                   301!
+/gutters/downspouts                                          /roofing/gutters                                   301!
+/gutters/copper                                              /roofing/gutters                                   301!
+/gutters/aluminum                                            /roofing/gutters                                   301!
+/services                                                    /roofing                                           301!
+/commercial-roofing                                          /roofing/commercial                                301!
+/commercial-maintenance                                      /roofing/commercial                                301!
+/gutters                                                     /roofing/gutters                                   301!
+/outdoor-living                                              /construction/outdoor-living                       301!
+/construction-services                                       /construction                                      301!
+/gallery                                                     /recent-projects                                   301!
+/projects                                                    /recent-projects                                   301!
+/project-gallery                                             /recent-projects                                   301!
+/portfolio                                                   /recent-projects                                   301!
+/our-work                                                    /recent-projects                                   301!
+/storm-center                                                /roofing/storm-damage                              301!
+/roof-designer                                               /                                                  301!
+/free-tools                                                  /                                                  301!
+/privacy                                                     /privacy-policy                                    301!
+/terms                                                       /privacy-policy                                    301!
+/residential-roofing-services                                /roofing/residential                               301!
+/roof-repairs                                                /roofing/roof-repair                               301!
+/metal-roofs                                                 /roofing/metal                                     301!
+/re-roof-specialists                                         /roofing/roof-replacement                          301!
+/roof-maintenance-program                                    /roofing/roof-repair                               301!
+/types-of-roofs-we-install                                   /roofing                                           301!
+/gutter-services                                             /roofing/gutters                                   301!
+/gutter-installation                                         /roofing/gutters                                   301!
+/seamless-gutters                                            /roofing/gutters                                   301!
+/seamless-gutter-installation                                /roofing/gutters                                   301!
+/design/build-services                                       /construction/design                               301!
+/design-build-services                                       /construction/design                               301!
+/patio-installation                                          /construction/outdoor-living                       301!
+/request-quote-form                                          /request-inspection                                301!
+/request-quote-form-page                                     /request-inspection                                301!
+/faqs                                                        /faq                                               301!
+/highlands-nc                                                /service-areas/highlands-nc                        301!
+/highlands--nc                                               /service-areas/highlands-nc                        301!
+/the-benefits-of-metal-roof-installation-for-your-home       /blog/metal-vs-shingle-roof-western-nc             301!
+/why-asphalt-shingle-remains-the-most-popular-roofing-material /blog/best-roofing-materials-highlands-nc          301!
+/residential-roofing-repairs                                 /roofing/roof-repair                               301!
+/residential-roofing-installation                            /roofing/roof-replacement                          301!
+/specialized-roofing-services                                /roofing/specialty                                 301!
+/specialty-roof-repairs                                      /roofing/roof-repair                               301!
+/types-of-roofs-we-repair                                    /roofing/roof-repair                               301!
+/commercial-roofing-services                                 /roofing/commercial                                301!
+/commercial-roofing-installation                             /roofing/commercial                                301!
+/commercial-roofing-repairs                                  /roofing/commercial                                301!
+/tpo-installation                                            /roofing/commercial                                301!
+/roof-coating-services                                       /roofing/commercial                                301!
+/metal-roof-installation                                     /roofing/metal                                     301!
+/metal-roof-repair                                           /roofing/roof-repair                               301!
+/slate-roof-installation                                     /roofing/specialty                                 301!
+/slate-roof-repair                                           /roofing/specialty                                 301!
+/roof-waterproofing                                          /roofing/roof-repair                               301!
+/leaf-guard-installation                                     /roofing/gutters                                   301!
+/gutter-protection-installation                              /roofing/gutters                                   301!
+/gutter-protection-systems                                   /roofing/gutters                                   301!
+/gazebos-and-pergolas                                        /construction/outdoor-living                       301!
+/deck-installation                                           /construction/outdoor-living                       301!
+/outdoor-kitchens-and-grills                                 /construction/outdoor-living                       301!
+/skylight-installation                                       /roofing/skylights                                 301!
+/commercial-re-roof-specialists                              /roofing/commercial                                301!
+/asphalt-shingles-installation                               /roofing/residential                               301!
+/roof-leak-repair                                            /roofing/roof-repair                               301!
+/roof-leak-repairs                                           /roofing/roof-repair                               301!
+/emergency-roof-repair                                       /roofing/storm-damage                              301!
+/emergency-roofing                                           /roofing/storm-damage                              301!
+/storm-damage-repair                                         /roofing/storm-damage                              301!
+/contact-franklin-nc                                         /service-areas/franklin-nc                         301!
+/contact-sylva-nc                                            /service-areas/sylva-nc                            301!
+/contact-highlands-nc                                        /service-areas/highlands-nc                        301!
+/contact-cashiers-nc                                         /service-areas/cashiers-nc                         301!
+/contact-waynesville-nc                                      /service-areas/waynesville-nc                      301!
+/contact-bryson-city-nc                                      /service-areas/bryson-city-nc                      301!
+/contact-cullowhee-nc                                        /service-areas/cullowhee-nc                        301!
+/contact-dillsboro-nc                                        /service-areas/dillsboro-nc                        301!
+/our-team                                                    /team                                              301!
+/testimonials                                                /reviews                                           301!
+/fire-pits-and-fireplaces                                    /construction/outdoor-living                       301!
+/sunrooms                                                    /construction/additions                            301!
+/vapor-barrier-installation                                  /roofing/roof-repair                               301!
+/aluminum-gutter-installation-services                       /roofing/gutters                                   301!
+/copper-gutter-installation                                  /roofing/gutters                                   301!
+/copper-gutter-installation-services                         /roofing/gutters                                   301!
+/roof-installation                                           /roofing/roof-replacement                          301!
+/new-roof-installation                                       /roofing/roof-replacement                          301!
+/re-roofing                                                  /roofing/roof-replacement                          301!
+/re-roofing-services                                         /roofing/roof-replacement                          301!
+/home-additions                                              /construction/additions                            301!
+/home-renovations                                            /construction/renovations                          301!
+/kitchen-remodeling                                          /construction/renovations                          301!
+/bathroom-remodeling                                         /construction/renovations                          301!
+/decks-and-patios                                            /construction/outdoor-living                       301!
+/screened-porches                                            /construction/outdoor-living                       301!
+/contact-us                                                  /contact                                           301!
+/about-us                                                    /about                                             301!
+/meet-the-team                                               /team                                              301!
+/service-area                                                /service-areas                                     301!
+/service-areas-served                                        /service-areas                                     301!
+/highlands                                                   /service-areas/highlands-nc                        301!
+/franklin                                                    /service-areas/franklin-nc                         301!
+/cashiers                                                    /service-areas/cashiers-nc                         301!
+/sylva                                                       /service-areas/sylva-nc                            301!
+/cullowhee                                                   /service-areas/cullowhee-nc                        301!
+/waynesville                                                 /service-areas/waynesville-nc                      301!
+/bryson-city                                                 /service-areas/bryson-city-nc                      301!
+
+# ============================================================
+# Legacy /contact/[service]-service-area/[town] Hibu pattern
+# Splat-forwarded to the town service-area hub as a safe fallback
+# (LegacyTownRedirect still runs client-side for exact town match).
+# ============================================================
+/contact/*                                                    /service-areas                                       301!
+
+# ============================================================
+# SPA fallback — must be last
+# ============================================================
 /*    /index.html   200
