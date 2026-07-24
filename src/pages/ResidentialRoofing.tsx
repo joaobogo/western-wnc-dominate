@@ -224,7 +224,7 @@ const ResidentialRoofing = () => {
                   className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
                 >
                   Your Home Deserves a Roof
-                </motion.h2>
+                </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h2
