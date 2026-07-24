@@ -80,6 +80,7 @@ const InternalLinkingQA = () => {
         title="Internal Linking QA"
         description="Audit services, town pages, and blog posts for missing or weak internal links before launch."
         path="/internal-linking-qa"
+        noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
           { name: "Internal Linking QA", url: "/internal-linking-qa" },

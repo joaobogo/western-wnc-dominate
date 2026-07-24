@@ -11,6 +11,7 @@ const IntakeChooser = () => (
       title="Start a Project | Highlander Roofing & Construction"
       description="Two intake paths — roofing or construction. Pick the right one and a Highlander project advisor responds within as soon as possible."
       path="/consultation"
+      noindex
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Start a Project", url: "/consultation" }])}
     />
     <Header />

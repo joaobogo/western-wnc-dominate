@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import SEOHead from "@/components/SEOHead";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -26,6 +27,8 @@ export default function AdminLogin() {
   };
 
   return (
+    <>
+    <SEOHead title="Admin Sign In | Highlander" description="Highlander admin sign-in." path="/admin/login" noindex />
     <div className="min-h-screen flex items-center justify-center p-6 bg-background">
       <form onSubmit={submit} className="w-full max-w-sm space-y-4 border border-border rounded-md p-6">
         <div>
@@ -44,5 +47,6 @@ export default function AdminLogin() {
         </button>
       </form>
     </div>
+    </>
   );
 }

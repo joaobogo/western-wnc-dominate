@@ -73,6 +73,7 @@ const SEOChecklist = () => {
         title="SEO Checklist Tool"
         description="Select a page type and review required sections, schema, internal links, and target keywords before publishing."
         path="/seo-checklist"
+        noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
           { name: "SEO Checklist", url: "/seo-checklist" },

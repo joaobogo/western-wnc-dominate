@@ -233,7 +233,7 @@ const RoofingBuilder = () => {
   if (submitted) {
     return (
       <>
-        <SEOHead title="Scope brief received | Highlander" description="Your roofing scope brief has been received." path="/roofing-builder" />
+        <SEOHead title="Scope brief received | Highlander" description="Your roofing scope brief has been received." path="/roofing-builder" noindex />
         <Header />
         <main className="pt-28 pb-20 bg-background">
           <div className="max-w-2xl mx-auto px-6">
@@ -259,6 +259,7 @@ const RoofingBuilder = () => {
         title="Build Your Roofing Project | Highlander"
         description="An optional guided builder for premium roofing projects in Western North Carolina. Build a scope brief — not an instant quote."
         path="/roofing-builder"
+        noindex
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
           { name: "Build Your Roofing Project", url: "/roofing-builder" },

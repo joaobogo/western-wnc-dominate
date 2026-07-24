@@ -14,6 +14,7 @@ const ConstructionIntake = () => (
       title="Start a Construction Project | Highlander Construction"
       description="Additions, outdoor living, renovations, and custom builds across Western North Carolina. Tell us about your project — a project advisor responds within as soon as possible."
       path="/construction-intake"
+      noindex
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction Intake", url: "/construction-intake" }])}
     />
     <Header />
