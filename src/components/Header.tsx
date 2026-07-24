@@ -97,7 +97,7 @@ const Header = () => {
         }`}
       >
         <Link to="/" aria-label="Highlander Roofing & Construction — Home" className="flex items-center bg-transparent hover:bg-transparent">
-          <img
+          <img loading="lazy" decoding="async"
             src={logo}
             alt="Highlander Roofing & Construction logo"
             width={520}

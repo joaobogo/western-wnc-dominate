@@ -55,7 +55,7 @@ const GivingBack = () => {
         {/* ── HERO ── */}
         <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-heritage-charcoal">
           <div className="absolute inset-0">
-            <img
+            <img loading="eager" fetchPriority="high" decoding="async"
               src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2000"
               alt="Western North Carolina mountain community landscape"
               className="w-full h-full object-cover opacity-80"

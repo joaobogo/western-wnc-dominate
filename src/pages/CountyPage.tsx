@@ -66,7 +66,7 @@ const CountyPage = () => {
         {/* 1. County Hero — Premium Mountain Visual */}
         <section className="relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img 
+            <img loading="eager" fetchPriority="high" decoding="async" 
               src={county.heroImage} 
               alt={`Mountain landscape in Western North Carolina — Highlander Roofing & Construction service area: ${county.name}`}
               className="w-full h-full object-cover"

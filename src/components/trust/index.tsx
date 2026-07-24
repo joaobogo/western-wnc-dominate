@@ -121,7 +121,7 @@ export const CredentialCards = ({ variant = "light" }: { variant?: "light" | "da
           cert.image ? "w-20 h-16" : "w-11 h-11 rounded-sm " + (variant === "dark" ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8 group-hover:bg-primary/12")
         }`}>
           {cert.image ? (
-            <img 
+            <img loading="lazy" decoding="async" 
               src={cert.image} 
               alt={cert.label} 
               className={`w-full h-full object-contain mix-blend-multiply ${variant === "dark" ? "brightness-200 contrast-125" : ""}`} 
