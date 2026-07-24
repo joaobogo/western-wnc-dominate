@@ -39,7 +39,6 @@ const staticRoutes: SitemapEntry[] = [
   { path: "/financing", changefreq: "monthly", priority: "0.6" },
   { path: "/contact", changefreq: "monthly", priority: "0.7" },
   { path: "/request-inspection", changefreq: "monthly", priority: "0.8" },
-  { path: "/consultation", changefreq: "monthly", priority: "0.7" },
 
   // Roofing money pages
   { path: "/roofing", changefreq: "weekly", priority: "0.9" },
