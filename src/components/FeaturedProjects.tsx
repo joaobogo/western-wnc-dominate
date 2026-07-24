@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
+import RealWorkWidget from "@/components/RealWorkWidget";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.jpg";
@@ -200,10 +201,11 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
     : byFilter;
 
   return (
-    <section className="section-padding bg-background relative overflow-hidden">
-      <div className="absolute inset-0 tartan-bg opacity-10" />
+    <>
+      <section className="section-padding bg-background relative overflow-hidden">
+        <div className="absolute inset-0 tartan-bg opacity-10" />
 
-      <div className="container-tight relative z-10" id="projects">
+        <div className="container-tight relative z-10" id="projects">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12 md:mb-16">
           <div>
@@ -279,8 +281,19 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
             Mountain-proven across 8 WNC counties
           </p>
         </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+      <RealWorkWidget
+        eyebrow="Verified Project Activity"
+        heading={location ? `Recent Highlander Updates Near ${location}` : "Recent Highlander Project Updates"}
+        description={
+          location
+            ? `Live RealWork updates help show current Highlander activity around ${location} and nearby Western North Carolina communities.`
+            : "Live RealWork updates help show current Highlander activity across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
+        }
+        className="py-14 md:py-20 bg-secondary/30 border-y border-border/60"
+      />
+    </>
   );
 };
 
