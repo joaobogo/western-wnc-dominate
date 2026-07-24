@@ -75,6 +75,11 @@ const RecentProjects = () => {
       return false;
     };
 
+    // Force-load the RealWork plugin immediately on this page instead of
+    // waiting for the sitewide deferred trigger (first interaction / 5s idle).
+    // The widget is the primary content of this section — it must load on mount.
+    try { w.__loadRWL && w.__loadRWL(); } catch (e) { /* no-op */ }
+
     const inited = tryInit();
     const onReady = () => tryInit();
     if (!inited) window.addEventListener("rwlPluginReady", onReady, false);
