@@ -10,6 +10,7 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import StormResponseGuide from "@/components/StormResponseGuide";
@@ -147,6 +148,7 @@ const StormDamage = () => {
         ]}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Storm Damage", url: "/roofing/storm-damage" }]} />
       <main>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">

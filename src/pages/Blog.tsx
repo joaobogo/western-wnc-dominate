@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock } from "@/components/trust";
@@ -87,6 +88,7 @@ const Blog = () => {
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }])}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }]} />
       <main>
         {/* ═══ HERO — Editorial masthead ═══ */}
         <section className="relative section-dark overflow-hidden">

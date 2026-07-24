@@ -7,6 +7,7 @@ import {
   CloudRain, Snowflake, Wind, Zap, ExternalLink,
 } from "lucide-react";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
@@ -98,6 +99,7 @@ const StormCenter = () => {
         ])}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Storm Center", url: "/storm-center" }]} />
       <main>
         {/* ═══ HERO ═══ */}
         <section className="section-padding section-dark tartan-dark pt-32 md:pt-40 pb-16 md:pb-20">

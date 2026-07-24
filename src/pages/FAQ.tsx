@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Phone, ArrowRight, HelpCircle } from "lucide-react";
 import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -247,6 +248,7 @@ const FAQ = () => {
         ]}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "FAQ", url: "/faq" }]} />
       <main>
         {/* HERO */}
         <section className="bg-heritage-charcoal pt-32 md:pt-40 pb-14 md:pb-20 relative overflow-hidden">

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SEOHead, { breadcrumbSchema, serviceSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -30,6 +31,7 @@ const Services = () => {
         ]}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }]} />
       <main>
         <section className="section-padding section-dark pt-32 md:pt-40">
           <div className="container-tight text-center">

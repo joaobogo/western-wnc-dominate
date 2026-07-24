@@ -4,6 +4,7 @@ import { ArrowRight, Phone, CheckCircle, Award, Leaf, Clock, Home, ChevronRight 
 import bravaHero from "@/assets/gallery/cedar-005.jpg";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
@@ -46,6 +47,7 @@ const SyntheticRoofing = () => {
         })}
       />
       <Header />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Synthetic", url: "/roofing/synthetic" }]} />
       <main>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
