@@ -160,7 +160,7 @@ const RequestInspection = () => {
             </a>
             <p className="text-primary-foreground/70 text-sm mt-6">
               By submitting the form on this page you agree to our{" "}
-              <Link to="/privacy" className="underline hover:text-primary-foreground">Privacy Policy</Link>.
+              <Link to="/privacy-policy" className="underline hover:text-primary-foreground">Privacy Policy</Link>.
             </p>
           </div>
         </section>
