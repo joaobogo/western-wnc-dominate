@@ -5,6 +5,7 @@ import guttersImg from "@/assets/gallery/gutters-002.jpg";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import CTABlock from "@/components/CTABlock";
@@ -32,18 +33,25 @@ const Gutters = () => {
           service: {
             name: "Gutter Services",
             description: "Seamless gutter installation, gutter guards, repair, and drainage coordination across Western North Carolina.",
-            url: "https://highlandernc.com/roofing/gutters",
+            url: "/roofing/gutters",
             areaServed: "Western North Carolina",
           },
           breadcrumbs: [
-            { name: "Home", url: "https://highlandernc.com/" },
-            { name: "Roofing", url: "https://highlandernc.com/roofing" },
-            { name: "Gutters", url: "https://highlandernc.com/roofing/gutters" },
+            { name: "Home", url: "/" },
+            { name: "Roofing", url: "/roofing" },
+            { name: "Gutters", url: "/roofing/gutters" },
           ],
           faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Roofing", url: "/roofing" },
+          { name: "Gutters", url: "/roofing/gutters" },
+        ]}
+      />
       <main>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
