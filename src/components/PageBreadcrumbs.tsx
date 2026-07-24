@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import HeaderOffset from "@/components/layout/HeaderOffset";
 
 export interface BreadcrumbCrumb {
   name: string;
@@ -29,7 +30,7 @@ interface PageBreadcrumbsProps {
 const PageBreadcrumbs = ({ items, className = "" }: PageBreadcrumbsProps) => {
   if (!items || items.length === 0) return null;
   return (
-    <div className={`container mx-auto px-4 pt-[96px] md:pt-[136px] ${className}`}>
+    <HeaderOffset as="nav" aria-label="Breadcrumb" spacing="normal" className={className}>
       <Breadcrumb>
         <BreadcrumbList>
           {items.map((c, i) => {
@@ -53,7 +54,7 @@ const PageBreadcrumbs = ({ items, className = "" }: PageBreadcrumbsProps) => {
           })}
         </BreadcrumbList>
       </Breadcrumb>
-    </div>
+    </HeaderOffset>
   );
 };
 
