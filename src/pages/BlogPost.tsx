@@ -169,6 +169,8 @@ const BlogPostPage = () => {
             description: post.excerpt,
             url: `/blog/${post.slug}`,
             datePublished: post.date,
+            dateModified: post.date,
+            image: post.image,
             author: "Highlander Team",
           },
           breadcrumbs: [

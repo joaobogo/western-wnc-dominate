@@ -117,7 +117,6 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
     "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Franklin Office",
     addressLocality: "Franklin",
     addressRegion: "NC",
     postalCode: "28734",
@@ -161,17 +160,7 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
     name: "CertainTeed ShingleMaster Credentialed Contractor",
     recognizedBy: { "@type": "Organization", name: "CertainTeed" },
   },
-  priceRange: "$$-$$$",
   currenciesAccepted: "USD",
-  paymentAccepted: "Cash, Credit Card, Check, Financing",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "17:00",
-    },
-  ],
   foundingDate: "2017",
   slogan: "Built for the Mountains. Built for Life.",
   sameAs: [
@@ -257,7 +246,7 @@ export const webPageSchema = (page: {
 export const serviceSchema = (service: { name: string; description: string; url: string; areaServed?: string }) => ({
   "@context": "https://schema.org", "@type": "Service", serviceType: service.name, name: service.name,
   description: service.description, url: `${BASE_URL}${service.url}`,
-  provider: { "@type": "RoofingContractor", name: SITE_NAME, url: BASE_URL },
+  provider: { "@id": `${BASE_URL}/#business` },
   areaServed: service.areaServed || "Western North Carolina",
 });
 
@@ -267,11 +256,18 @@ export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
 });
 
 export const articleSchema = (article: { title: string; description: string; url: string; datePublished: string; dateModified?: string; image?: string; author?: string }) => ({
-  "@context": "https://schema.org", "@type": "Article", headline: article.title, description: article.description,
-  url: `${BASE_URL}${article.url}`, datePublished: article.datePublished, dateModified: article.dateModified || article.datePublished,
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": `${BASE_URL}${article.url}#article`,
+  headline: article.title,
+  description: article.description,
+  url: `${BASE_URL}${article.url}`,
+  mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}${article.url}` },
+  datePublished: article.datePublished,
+  dateModified: article.dateModified || article.datePublished,
   image: article.image || DEFAULT_IMAGE,
-  author: { "@type": "Person", name: article.author || "Highlander Team" },
-  publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: DEFAULT_IMAGE } },
+  author: { "@type": "Organization", name: article.author || SITE_NAME, "@id": `${BASE_URL}/#organization` },
+  publisher: { "@id": `${BASE_URL}/#organization` },
 });
 
 // ============================================================
