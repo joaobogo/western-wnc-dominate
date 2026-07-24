@@ -6,6 +6,7 @@ import { HIGHLAND_EASE } from "./header/nav-data";
 import { DesktopNav } from "./header/DesktopNav";
 import { HeaderActions } from "./header/HeaderActions";
 import { MobileMenu } from "./header/MobileMenu";
+import SkipToContent from "./a11y/SkipToContent";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -91,6 +92,7 @@ const Header = () => {
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_30px_-10px_rgba(0,0,0,0.15)] border-b border-black/[0.08] md:border-b-0 pt-[env(safe-area-inset-top)]"
     >
+      <SkipToContent />
       <div
         className={`flex items-center justify-between px-4 md:px-8 transition-all duration-500 ${
           scrolled ? "py-1.5 md:py-2" : "py-2 md:py-4"

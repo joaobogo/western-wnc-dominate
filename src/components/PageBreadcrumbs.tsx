@@ -57,8 +57,8 @@ const PageBreadcrumbs = ({ items, className = "", emitSchema = true }: PageBread
 
   if (!items || items.length === 0) return null;
   return (
-    <HeaderOffset as="nav" aria-label="Breadcrumb" spacing="normal" className={className}>
-      <Breadcrumb>
+    <HeaderOffset spacing="normal" className={className}>
+      <Breadcrumb aria-label="Breadcrumb">
         <BreadcrumbList>
           {items.map((c, i) => {
             const isLast = i === items.length - 1;
