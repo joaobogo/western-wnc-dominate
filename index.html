@@ -42,29 +42,18 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" /></noscript>
 
-    <!-- Google Tag Manager — deferred to first interaction or 3s idle to slash TBT -->
+    <!-- Google Tag Manager — deferred: fires on first interaction or 4s after load -->
     <script>
+    window.dataLayer = window.dataLayer || [];
     (function(w,d,i){
-      w.dataLayer = w.dataLayer || [];
-      var loaded = false;
-      function loadGTM(){
-        if(loaded)return; loaded = true;
+      var loaded=false;
+      w.__loadGTM = function(){
+        if(loaded)return; loaded=true;
         w.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-        var f = d.getElementsByTagName('script')[0],
-            j = d.createElement('script');
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i;
-        f.parentNode.insertBefore(j, f);
-      }
-      var events = ['pointerdown','keydown','scroll','touchstart'];
-      function onInteract(){ events.forEach(function(e){ w.removeEventListener(e, onInteract, {passive:true}); }); loadGTM(); }
-      events.forEach(function(e){ w.addEventListener(e, onInteract, {passive:true, once:true}); });
-      // Fallback: load after browser idle so analytics still fires for bounces
-      if('requestIdleCallback' in w){
-        w.requestIdleCallback(loadGTM, {timeout: 3500});
-      } else {
-        w.addEventListener('load', function(){ setTimeout(loadGTM, 2500); });
-      }
+        var f=d.getElementsByTagName('script')[0], j=d.createElement('script');
+        j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i;
+        f.parentNode.insertBefore(j,f);
+      };
     })(window,document,'GTM-W26D39LJ');
     </script>
     <!-- End Google Tag Manager -->
@@ -140,31 +129,27 @@ div[style*="Edit with Lovable"],
   z-index: -9999 !important;
 }
 </style>
-    <!-- Meta Pixel — stub queues calls; real script loads on first interaction/idle -->
+    <!-- Meta Pixel — stub queues immediately; network fetch deferred to interaction/post-load -->
     <script>
     (function(f){
       if(f.fbq)return;
       var n=f.fbq=function(){ n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
       if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
-      f.fbq('init','1300176212241296');
-      f.fbq('track','PageView');
+      f.fbq('init','1300176212241296'); f.fbq('track','PageView');
       var loaded=false;
-      function load(){
+      f.__loadFB = function(){
         if(loaded)return; loaded=true;
         var d=document, s=d.getElementsByTagName('script')[0], t=d.createElement('script');
         t.async=true; t.src='https://connect.facebook.net/en_US/fbevents.js';
         s.parentNode.insertBefore(t,s);
-      }
-      ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ f.addEventListener(e, load, {passive:true, once:true}); });
-      if('requestIdleCallback' in f){ f.requestIdleCallback(load, {timeout: 4000}); }
-      else { f.addEventListener('load', function(){ setTimeout(load, 3000); }); }
+      };
     })(window);
     </script>
     <!-- End Meta Pixel Code -->
     <!-- TikTok Pixel Code Start -->
     <script>
-    // Deferred to `load` — pixel script is >30 KB and non-critical for LCP/TBT.
-    window.addEventListener('load', function () {
+    window.__loadTT = function(){
+      if(window.__ttLoaded)return; window.__ttLoaded=true;
       !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
     var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
@@ -173,25 +158,40 @@ div[style*="Edit with Lovable"],
       ttq.load('D8GTVURC77UDLID67QSG');
       ttq.page();
       }(window, document, 'ttq');
-    });
+    };
     </script>
     <!-- TikTok Pixel Code End -->
     <!-- RealWork Labs Plugin Loader (sitewide) -->
     <script type="text/javascript">
-    // Deferred until after page load — non-critical widget, keeps it out of the LCP path.
-    window.addEventListener('load', function () {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.async = true;
-      o.src = 'https://app.realworklabs.com/static/plugin/loader.js?v=' + new Date().getTime();
-      window.addEventListener('rwlPluginReady', function () {
-        window.rwlPlugin.init('https://app.realworklabs.com', 'SxCxaBpYsO_fVnK0');
+    window.__loadRWL = function(){
+      if(window.__rwlLoaded)return; window.__rwlLoaded=true;
+      var d=document, t='script', o=d.createElement(t), s=d.getElementsByTagName(t)[0];
+      o.async=true;
+      o.src='https://app.realworklabs.com/static/plugin/loader.js?v='+new Date().getTime();
+      window.addEventListener('rwlPluginReady', function(){
+        window.rwlPlugin.init('https://app.realworklabs.com','SxCxaBpYsO_fVnK0');
       }, false);
-      s.parentNode.insertBefore(o, s);
-    });
+      s.parentNode.insertBefore(o,s);
+    };
     </script>
     <!-- End RealWork Labs Plugin Loader -->
+    <!-- Unified deferred-loader trigger: first interaction OR 5s after load -->
+    <script>
+    (function(w){
+      var fired=false;
+      function fire(){
+        if(fired)return; fired=true;
+        try{ w.__loadGTM && w.__loadGTM(); }catch(e){}
+        try{ w.__loadFB && w.__loadFB(); }catch(e){}
+        try{ w.__loadTT && w.__loadTT(); }catch(e){}
+        try{ w.__loadRWL && w.__loadRWL(); }catch(e){}
+      }
+      ['pointerdown','keydown','scroll','touchstart','mousemove'].forEach(function(e){
+        w.addEventListener(e, fire, {passive:true, once:true});
+      });
+      w.addEventListener('load', function(){ setTimeout(fire, 5000); });
+    })(window);
+    </script>
   </head>
 
   <body>
