@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -359,8 +359,8 @@ export default function QuoteFlow() {
               secondaryMessage="In the meantime, feel free to explore our project gallery or learn more about our process."
               action={
                 <div className="flex flex-col sm:flex-row gap-3 mt-4">
-                  <button onClick={() => navigate("/recent-projects")} className="btn-ghost-interactive text-sm px-5 py-2.5">View Our Work</button>
-                  <button onClick={() => navigate("/")} className="btn-ghost-interactive text-sm px-5 py-2.5">Back to Home</button>
+                  <Link to="/recent-projects" className="btn-ghost-interactive text-sm px-5 py-2.5">View Our Work</Link>
+                  <Link to="/" className="btn-ghost-interactive text-sm px-5 py-2.5">Back to Home</Link>
                 </div>
               }
             />
