@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Phone, ArrowRight, Loader2, CheckCircle, AlertTriangle, Home, Hammer, CloudLightning, HelpCircle, Calendar, Shield } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
@@ -380,12 +380,13 @@ export default function ChatbotWidget() {
           a: ({ href, children }) => {
             if (href?.startsWith("/")) {
               return (
-                <button
-                  onClick={() => { navigate(href); setIsOpen(false); }}
-                  className="text-accent font-semibold hover:underline cursor-pointer inline"
+                <Link
+                  to={href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-accent font-semibold hover:underline inline"
                 >
                   {children}
-                </button>
+                </Link>
               );
             }
             return <a href={href} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold">{children}</a>;
