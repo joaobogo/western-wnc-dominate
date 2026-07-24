@@ -35,6 +35,8 @@ export const roofingItems: DropdownItem[] = [
   { label: "Specialty Roofing", href: "/roofing/specialty", desc: "Cedar, copper & custom work" },
   { label: "Storm Damage", href: "/roofing/storm-damage", desc: "Insurance claims & emergency work" },
   { label: "Commercial Roofing", href: "/roofing/commercial", desc: "B2B systems for WNC properties" },
+  { label: "Seamless Gutters", href: "/roofing/gutters", desc: "Custom-fit aluminum & copper systems" },
+  { label: "Skylights", href: "/roofing/skylights", desc: "VELUX Certified installation" },
 ];
 
 export const constructionItems: DropdownItem[] = [
@@ -44,6 +46,8 @@ export const constructionItems: DropdownItem[] = [
   { label: "Siding & Exterior", href: "/construction/siding", desc: "Mountain-grade protection" },
   { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
+  { label: "Design & Planning", href: "/construction/design", desc: "In-house design for additions & remodels" },
+  { label: "Construction Consultation", href: "/construction/consultation", desc: "Scope, schedule & budget review" },
 ];
 
 export const divisions: DivisionDropdown[] = [
