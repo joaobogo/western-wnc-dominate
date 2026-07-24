@@ -57,7 +57,7 @@ const ProjectDetailPage = () => {
         path={`/projects/${project.slug}`}
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
-          { name: "Projects", url: "/recent-projects" },
+          { name: "Recent Projects", url: "/recent-projects" },
           { name: project.title, url: `/projects/${project.slug}` },
         ])}
       />
