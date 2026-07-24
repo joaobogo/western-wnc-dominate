@@ -106,7 +106,6 @@ const Header = () => {
               scrolled ? "h-[32px] md:h-[44px]" : "h-[36px] md:h-[56px]"
             }`}
             style={{ imageRendering: "auto" }}
-            decoding="async"
             fetchPriority="high"
           />
         </Link>
