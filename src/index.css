@@ -345,6 +345,39 @@ img {
     }
   }
 
+  /* ─── Any element inserted BETWEEN <Header /> and <main> ───────────
+     The Header is `position: fixed`, so orphan siblings placed between
+     it and <main> (breadcrumbs, banners, alerts, promo strips) would
+     otherwise render underneath the fixed bar. This targets siblings
+     of <header> that are NOT the main content, layout chrome, or
+     inert nodes — no page-specific padding required.
+
+     Opt out per-instance with `data-no-header-pad` or the
+     `.no-header-pad` class. `main` handles its own offset via the
+     rules above, and elements that already declare their own top
+     padding keep it (this rule only sets a floor).                 */
+  header ~ *:not(main):not(footer):not(aside):not(script):not(style):not(link):not([hidden]):not(.no-header-pad):not([data-no-header-pad]) {
+    padding-top: max(var(--header-h), var(--tw-pt, 0px));
+    scroll-margin-top: var(--header-h);
+  }
+  @media (min-width: 768px) {
+    header ~ *:not(main):not(footer):not(aside):not(script):not(style):not(link):not([hidden]):not(.no-header-pad):not([data-no-header-pad]) {
+      padding-top: max(var(--header-h-md), var(--tw-pt, 0px));
+      scroll-margin-top: var(--header-h-md);
+    }
+  }
+
+  /* Opt-in utility for any component that needs to sit flush below
+     the fixed header without knowing its own context. */
+  .below-header {
+    padding-top: calc(var(--header-h) + 0.5rem);
+  }
+  @media (min-width: 768px) {
+    .below-header {
+      padding-top: calc(var(--header-h-md) + 0.5rem);
+    }
+  }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
     font-size: 1.125rem; /* Base 18px for better readability */
