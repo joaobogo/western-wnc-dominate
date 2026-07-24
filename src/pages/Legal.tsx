@@ -246,7 +246,7 @@ function TermsBody() {
       <p>
         By providing your contact information (including your mobile phone number and email address) and opting
         in to receive messages from us, or by using our Website or services, you agree to these Terms &amp;
-        Conditions and our <a href="/privacy">Privacy Policy</a> (together, the "Terms"). If you do not agree,
+        Conditions and our <a href="/privacy-policy">Privacy Policy</a> (together, the "Terms"). If you do not agree,
         please do not enroll in any Program or use the Website.
       </p>
       <ul>
@@ -297,7 +297,7 @@ function TermsBody() {
       <p>You may also reply HELP to any text message for assistance.</p>
 
       <h2>7. Link to Privacy Policy</h2>
-      <p>For more information about how we collect, use, and share your information, including information collected through the Programs and the Website, please review our <a href="/privacy">Privacy Policy</a>.</p>
+      <p>For more information about how we collect, use, and share your information, including information collected through the Programs and the Website, please review our <a href="/privacy-policy">Privacy Policy</a>.</p>
     </>
   );
 }
@@ -372,7 +372,7 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
           </article>
 
           <div className="mt-14 pt-8 border-t border-border flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-body">
-            <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Shield className="w-3.5 h-3.5" /> Privacy Policy</Link>
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Shield className="w-3.5 h-3.5" /> Privacy Policy</Link>
             <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><FileText className="w-3.5 h-3.5" /> Terms of Service</Link>
             <Link to="/accessibility" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><AccessibilityIcon className="w-3.5 h-3.5" /> Accessibility</Link>
             <span className="text-border">·</span>
