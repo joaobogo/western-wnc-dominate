@@ -24,7 +24,7 @@ const Gutters = () => {
   return (
     <>
       <SEOHead
-        title="Gutter Installation & Seamless Gutters | Highlander Roofing Services"
+        title="Seamless Gutter Installation in Western NC | Highlander"
         description="Explore gutter installation, seamless gutters, gutter replacement, and drainage support for homes across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
         path="/roofing/gutters"
         jsonLd={buildPageSchema({

@@ -151,7 +151,7 @@ const ResidentialRoofing = () => {
     return (
     <>
       <SEOHead
-        title="Residential Roofing in Western NC"
+        title="Residential Roofing in Western NC | Highlander"
         description="Residential roofing for mountain homes across Highlands, Cashiers, Franklin & Sylva. CertainTeed certified installation and premium materials."
         path="/roofing/residential"
         jsonLd={[

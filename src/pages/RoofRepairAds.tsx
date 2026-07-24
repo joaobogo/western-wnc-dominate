@@ -3,7 +3,7 @@ import heroImg from "@/assets/gallery/asphalt-003.jpg";
 
 const RoofRepairAds = () => (
   <PaidAdsLanding
-    title="Roof Repair Landing Page | Leak Help Fast"
+    title="Roof Repair in Western NC | Fast Local Leak Help"
     description="Roof repair landing page for paid traffic with a faster form, leak-focused messaging, and conversion-oriented trust proof for Western North Carolina homeowners."
     path="/lp/roof-repair"
     serviceName="Roof Repair"
