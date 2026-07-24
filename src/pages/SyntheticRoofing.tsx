@@ -47,7 +47,7 @@ const SyntheticRoofing = () => {
         })}
       />
       <Header />
-      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Synthetic", url: "/roofing/synthetic" }]} />
+      <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Brava Synthetic Roofing", url: "/roofing/brava-synthetic" }]} />
       <main>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
