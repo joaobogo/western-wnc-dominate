@@ -347,7 +347,6 @@ img {
 
   /* Third-party floating widgets must not cover the first hero content on mobile. */
   @media (max-width: 767px) {
-    #rwl-neighborhood,
     body > div[id^="0-"],
     body > div:not(#root):has([style*="writing-mode"]),
     body > div:not(#root):has([style*="rotate"]) {
