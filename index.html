@@ -42,18 +42,30 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" /></noscript>
 
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager — deferred to first interaction or 3s idle to slash TBT -->
     <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W26D39LJ');
+    (function(w,d,i){
+      w.dataLayer = w.dataLayer || [];
+      var loaded = false;
+      function loadGTM(){
+        if(loaded)return; loaded = true;
+        w.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f = d.getElementsByTagName('script')[0],
+            j = d.createElement('script');
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i;
+        f.parentNode.insertBefore(j, f);
+      }
+      var events = ['pointerdown','keydown','scroll','touchstart'];
+      function onInteract(){ events.forEach(function(e){ w.removeEventListener(e, onInteract, {passive:true}); }); loadGTM(); }
+      events.forEach(function(e){ w.addEventListener(e, onInteract, {passive:true, once:true}); });
+      // Fallback: load after browser idle so analytics still fires for bounces
+      if('requestIdleCallback' in w){
+        w.requestIdleCallback(loadGTM, {timeout: 3500});
+      } else {
+        w.addEventListener('load', function(){ setTimeout(loadGTM, 2500); });
+      }
+    })(window,document,'GTM-W26D39LJ');
     </script>
     <!-- End Google Tag Manager -->
 
@@ -128,24 +140,25 @@ div[style*="Edit with Lovable"],
   z-index: -9999 !important;
 }
 </style>
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel — stub queues calls; real script loads on first interaction/idle -->
     <script>
-    // Queue calls immediately (so fbq('track', ...) elsewhere works), defer network fetch to `load`.
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[]}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1300176212241296');
-    fbq('track', 'PageView');
-    window.addEventListener('load', function () {
-      var b = document, e = 'script',
-          t = b.createElement(e), s = b.getElementsByTagName(e)[0];
-      t.async = true;
-      t.src = 'https://connect.facebook.net/en_US/fbevents.js';
-      s.parentNode.insertBefore(t, s);
-    });
+    (function(f){
+      if(f.fbq)return;
+      var n=f.fbq=function(){ n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+      if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
+      f.fbq('init','1300176212241296');
+      f.fbq('track','PageView');
+      var loaded=false;
+      function load(){
+        if(loaded)return; loaded=true;
+        var d=document, s=d.getElementsByTagName('script')[0], t=d.createElement('script');
+        t.async=true; t.src='https://connect.facebook.net/en_US/fbevents.js';
+        s.parentNode.insertBefore(t,s);
+      }
+      ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ f.addEventListener(e, load, {passive:true, once:true}); });
+      if('requestIdleCallback' in f){ f.requestIdleCallback(load, {timeout: 4000}); }
+      else { f.addEventListener('load', function(){ setTimeout(load, 3000); }); }
+    })(window);
     </script>
     <!-- End Meta Pixel Code -->
     <!-- TikTok Pixel Code Start -->
