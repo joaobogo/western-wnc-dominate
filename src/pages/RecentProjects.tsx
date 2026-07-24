@@ -132,7 +132,6 @@ const RecentProjects = () => {
               src={heroImg}
               alt="Highlander roofing project in Western North Carolina"
               fetchPriority="high"
-              decoding="async"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/75 to-secondary/40" />

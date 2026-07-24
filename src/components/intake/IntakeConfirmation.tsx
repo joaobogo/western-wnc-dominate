@@ -37,7 +37,6 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
         src={logo}
         alt="Highlander Roofing & Construction logo"
         className="h-16 md:h-20 w-auto mx-auto mb-4"
-        decoding="async"
       />
       <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-5">
         <CheckCircle className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
