@@ -1,0 +1,54 @@
+name: Sync Lovable edit branch to main
+
+# Keeps `main` up to date with whatever Lovable pushes to an `edit/**` branch,
+# so Netlify (which builds from `main`) always deploys the latest site.
+
+on:
+  push:
+    branches:
+      - 'edit/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-main
+  cancel-in-progress: false
+
+jobs:
+  sync-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Configure git identity
+        run: |
+          git config user.name "lovable-sync[bot]"
+          git config user.email "lovable-sync[bot]@users.noreply.github.com"
+
+      - name: Merge edit branch into main
+        run: |
+          set -e
+          BRANCH="${{ github.ref_name }}"
+          git fetch origin main:refs/remotes/origin/main || true
+
+          if git show-ref --verify --quiet refs/remotes/origin/main; then
+            git checkout -B main origin/main
+            # Prefer the edit branch's content on any conflict — Lovable is the
+            # source of truth for this project.
+            if ! git merge --no-edit -X theirs "origin/$BRANCH"; then
+              echo "Merge hit an unresolvable conflict; resetting main to the edit branch."
+              git merge --abort || true
+              git reset --hard "origin/$BRANCH"
+            fi
+          else
+            git checkout -B main "origin/$BRANCH"
+          fi
+
+          git push origin main
+          echo "main is now in sync with $BRANCH"
