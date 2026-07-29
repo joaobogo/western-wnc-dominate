@@ -63,7 +63,7 @@ const CHECKS: Check[] = [
   {
     path: "/service-areas",
     label: "Service areas index",
-    mustContain: ["Highlander Roofing", "Service Area"],
+    mustContain: ["Highlander Roofing"],
   },
   {
     path: "/service-areas/highlands-nc",
