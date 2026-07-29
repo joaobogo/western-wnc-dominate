@@ -77,6 +77,7 @@ const LegalPage = lazy(() => import("./pages/Legal"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const AdminLeads = lazy(() => import("./pages/AdminLeads"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
+const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 const RealWorkDiagnostics = lazy(() => import("./pages/RealWorkDiagnostics"));
 
 
@@ -268,6 +269,7 @@ const App = () => (
           <Route path="/accessibility" element={<LegalPage kind="accessibility" />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/leads" element={<AdminLeads />} />
+          <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
           {/* ─── Legacy WordPress backlink redirects (Hibu migration) ─── */}
           {/* Preserve SEO value from old highlandernc.com URLs. */}
           <Route path="/residential-roofing-services" element={<Navigate to="/roofing/residential" replace />} />

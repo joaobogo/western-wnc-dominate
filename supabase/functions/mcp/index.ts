@@ -3,7 +3,7 @@
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
 // src/lib/mcp/index.ts
-import { defineMcp } from "npm:@lovable.dev/mcp-js@0.24.0";
+import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.24.0";
 
 // src/lib/mcp/tools/get-business-info.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.24.0";
@@ -176,10 +176,15 @@ var fetch_page_default = defineTool5({
 });
 
 // src/lib/mcp/index.ts
+var projectRef = "qflrlebkswerlbqbuslx";
 var mcp_default = defineMcp({
   name: "highlander-mcp",
   title: "Highlander Roofing & Construction",
   version: "0.1.0",
+  auth: auth.oauth.issuer({
+    issuer: `https://${projectRef}.supabase.co/auth/v1`,
+    acceptedAudiences: "authenticated"
+  }),
   instructions: "Tools for Highlander Roofing & Construction (Western North Carolina). Use `get_business_info` for contact details and credentials, `list_services` and `list_service_areas` for what is offered and where, `search_site` to find pages (blog posts, service pages, town pages) by keyword, and `fetch_page` to read the HTML of a specific page.",
   tools: [get_business_info_default, list_services_default, list_service_areas_default, search_site_default, fetch_page_default]
 });
