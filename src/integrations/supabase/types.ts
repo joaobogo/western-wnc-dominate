@@ -730,6 +730,42 @@ export type Database = {
         }
         Relationships: []
       }
+      site_health_checks: {
+        Row: {
+          alerted: boolean
+          build_commit: string | null
+          checked_count: number
+          created_at: string
+          failure_count: number
+          failure_key: string | null
+          id: string
+          ok: boolean
+          results: Json
+        }
+        Insert: {
+          alerted?: boolean
+          build_commit?: string | null
+          checked_count?: number
+          created_at?: string
+          failure_count?: number
+          failure_key?: string | null
+          id?: string
+          ok: boolean
+          results?: Json
+        }
+        Update: {
+          alerted?: boolean
+          build_commit?: string | null
+          checked_count?: number
+          created_at?: string
+          failure_count?: number
+          failure_key?: string | null
+          id?: string
+          ok?: boolean
+          results?: Json
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
