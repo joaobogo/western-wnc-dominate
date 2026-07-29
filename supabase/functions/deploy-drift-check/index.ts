@@ -267,24 +267,39 @@ Deno.serve(async (req) => {
       newestSourceCommit(),
     ]);
 
-    const newest = source.newest;
-    if (!newest) throw new Error("No branches found on GitHub");
+    // The host builds from main, so main HEAD is what the live site must serve.
+    const expected = source.main;
+    if (!expected) throw new Error("Could not resolve main HEAD on GitHub");
 
-    const ageMinutes = (Date.now() - Date.parse(newest.date)) / 60000;
-    const inSync = live.reachable && live.commit === newest.sha;
+    const ageMinutes = (Date.now() - Date.parse(expected.date)) / 60000;
+    const inSync = live.reachable && live.commit === expected.sha;
     const withinGrace = ageMinutes < GRACE_MINUTES;
+
+    // Secondary signal: newest Lovable work branch never merged into main.
+    const ls = source.latestSource;
+    const syncLagMinutes = ls
+      ? (Date.parse(ls.date) - Date.parse(expected.date)) / 60000
+      : 0;
+    const syncLag =
+      !!ls &&
+      ls.sha !== expected.sha &&
+      syncLagMinutes > GRACE_MINUTES &&
+      (Date.now() - Date.parse(ls.date)) / 60000 > GRACE_MINUTES;
 
     // Drift = live build isn't the newest source commit, and the newest commit
     // has had enough time to build and deploy.
-    const drift = !inSync && !withinGrace;
+    const drift = (!inSync && !withinGrace) || syncLag;
 
     const result = {
       checked_at: new Date().toISOString(),
       site: SITE,
       live: live,
-      newest_commit: newest,
+      newest_commit: source.newest,
+      expected_commit: expected,
+      latest_work_branch: ls,
+      sync_lag: syncLag,
       main_commit: source.main,
-      newest_commit_age_minutes: Math.round(ageMinutes),
+      main_commit_age_minutes: Math.round(ageMinutes),
       in_sync: inSync,
       within_grace_period: withinGrace,
       drift,
@@ -292,7 +307,7 @@ Deno.serve(async (req) => {
     };
 
     if (drift && !dryRun) {
-      const shouldAlert = await recordAndShouldAlert(fetch, live.commit, newest.sha);
+      const shouldAlert = await recordAndShouldAlert(fetch, live.commit, expected.sha);
       if (shouldAlert) {
         const reason = live.reachable
           ? `Live build is <b>${esc(live.commit.slice(0, 7))}</b> (${esc(live.branch)}), built ${esc(eastern(live.builtAt))}.`
@@ -301,10 +316,12 @@ Deno.serve(async (req) => {
           `<h3>🚨 Deployment drift on highlandernc.com</h3>` +
           `<p>${reason}</p>` +
           `<ul>` +
-          `<li><b>Expected commit:</b> ${esc(newest.sha.slice(0, 7))} on <b>${esc(newest.branch)}</b></li>` +
-          `<li><b>Commit message:</b> ${esc(newest.message)}</li>` +
-          `<li><b>Committed:</b> ${esc(eastern(newest.date))} (${Math.round(ageMinutes)} min ago)</li>` +
-          `<li><b>main HEAD:</b> ${esc(source.main?.sha.slice(0, 7) ?? "unknown")}</li>` +
+          `<li><b>Expected commit:</b> ${esc(expected.sha.slice(0, 7))} on <b>main</b></li>` +
+          `<li><b>Commit message:</b> ${esc(expected.message)}</li>` +
+          `<li><b>Committed:</b> ${esc(eastern(expected.date))} (${Math.round(ageMinutes)} min ago)</li>` +
+          (syncLag && ls
+            ? `<li><b>Unmerged work branch:</b> ${esc(ls.branch)} (${esc(ls.sha.slice(0, 7))}, ${esc(eastern(ls.date))})</li>`
+            : "") +
           `</ul>` +
           `<p>The site is serving an older build. Check that the edit branch merged into <b>main</b> and that the Netlify build succeeded.</p>` +
           `<p><i>Automated deployment drift check.</i></p>`;
@@ -318,7 +335,12 @@ Deno.serve(async (req) => {
     });
   } catch (err) {
     console.error("deploy-drift-check failed:", err);
-    return new Response(JSON.stringify({ error: "Drift check failed" }), {
+    return new Response(
+      JSON.stringify({
+        error: "Drift check failed",
+        details: err instanceof Error ? err.message : String(err),
+      }),
+      {
       status: 502,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
