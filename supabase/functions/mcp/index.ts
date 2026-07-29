@@ -3,10 +3,10 @@
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
 // src/lib/mcp/index.ts
-import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.24.0";
+import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.25.0";
 
 // src/lib/mcp/tools/get-business-info.ts
-import { defineTool } from "npm:@lovable.dev/mcp-js@0.24.0";
+import { defineTool } from "npm:@lovable.dev/mcp-js@0.25.0";
 var get_business_info_default = defineTool({
   name: "get_business_info",
   title: "Get business info",
@@ -37,7 +37,7 @@ var get_business_info_default = defineTool({
 });
 
 // src/lib/mcp/tools/list-services.ts
-import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.24.0";
+import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.25.0";
 var services = [
   { slug: "roof-replacement", title: "Roof Replacement", division: "roofing", url: "https://highlandernc.com/roofing/roof-replacement" },
   { slug: "roof-repair", title: "Roof Repair", division: "roofing", url: "https://highlandernc.com/roofing/roof-repair" },
@@ -68,7 +68,7 @@ var list_services_default = defineTool2({
 });
 
 // src/lib/mcp/tools/list-service-areas.ts
-import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.24.0";
+import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.25.0";
 var towns = [
   { slug: "franklin-nc", name: "Franklin", county: "Macon" },
   { slug: "highlands-nc", name: "Highlands", county: "Macon" },
@@ -109,7 +109,7 @@ var list_service_areas_default = defineTool3({
 });
 
 // src/lib/mcp/tools/search-site.ts
-import { defineTool as defineTool4 } from "npm:@lovable.dev/mcp-js@0.24.0";
+import { defineTool as defineTool4 } from "npm:@lovable.dev/mcp-js@0.25.0";
 import { z } from "npm:zod@^4.4.3";
 var SITEMAP_URL = "https://highlandernc.com/sitemap.xml";
 var search_site_default = defineTool4({
@@ -141,7 +141,7 @@ var search_site_default = defineTool4({
 });
 
 // src/lib/mcp/tools/fetch-page.ts
-import { defineTool as defineTool5 } from "npm:@lovable.dev/mcp-js@0.24.0";
+import { defineTool as defineTool5 } from "npm:@lovable.dev/mcp-js@0.25.0";
 import { z as z2 } from "npm:zod@^4.4.3";
 var ALLOWED_HOST = "highlandernc.com";
 var fetch_page_default = defineTool5({
@@ -190,5 +190,5 @@ var mcp_default = defineMcp({
 });
 
 // lovable-mcp-supabase-entry.ts
-import { createSupabaseHandler } from "npm:@lovable.dev/mcp-js@0.24.0/stacks/supabase";
+import { createSupabaseHandler } from "npm:@lovable.dev/mcp-js@0.25.0/stacks/supabase";
 Deno.serve(createSupabaseHandler(mcp_default, { functionName: "mcp" }));
