@@ -1,3 +1,6 @@
+import stormHeroImg from "@/assets/blog/highlands-storm-july-28-hero.jpg";
+import stormInspectionImg from "@/assets/blog/highlands-storm-july-28-inspection.jpg";
+
 const roofRepairStock = "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000";
 const metalBenefitsStock = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";
 const metalInstallStock = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1000";
@@ -27,6 +30,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   image: string;
+  imageAlt?: string;
   metaTitle: string;
   metaDescription: string;
   town?: string;
@@ -36,6 +40,175 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "highlands-nc-storm-damage-july-28-2026",
+    title: "After the July 28 Storm in Highlands, NC: What Homeowners Should Check",
+    excerpt:
+      "A Severe Thunderstorm Warning covered Highlands and southeastern Macon County on July 28, 2026. Here is a calm, practical guide to what to check from the ground, what to leave to a professional, and how to document it.",
+    category: "Storm",
+    date: "2026-07-29",
+    image: stormHeroImg,
+    imageAlt: "Home exterior in Highlands, North Carolina after a severe thunderstorm",
+    readTime: "9 min",
+    metaTitle: "Highlands NC Storm Damage: What to Check After July 28",
+    metaDescription:
+      "A Severe Thunderstorm Warning hit Highlands NC on July 28, 2026. Learn the ground-level signs of hail and wind roof damage and when to book an inspection.",
+    town: "Highlands",
+    relatedServices: [
+      { label: "Storm Damage Roof Repair", path: "/roofing/storm-damage" },
+      { label: "Residential Roof Repairs", path: "/roofing/residential" },
+      { label: "Gutters & Downspouts", path: "/roofing/gutters" },
+      { label: "Request a Roof Inspection", path: "/request-inspection" },
+    ],
+    faqs: [
+      {
+        question: "What exactly did the National Weather Service report for Highlands on July 28, 2026?",
+        answer:
+          "The NWS Greenville-Spartanburg office issued a Severe Thunderstorm Warning that included Highlands, southeastern Macon County, and nearby communities. At 7:48 PM EDT the storm was near Highlands, moving southeast at 30 mph, with radar-indicated wind gusts up to 60 mph and penny-size hail. The NWS said possible impacts included damage to trees and power lines. Earlier that day the NWS also reported a strong storm near Cashiers with gusts up to 40 mph and half-inch hail, with Highlands in the impacted area.",
+      },
+      {
+        question: "Can penny-size hail actually damage my roof?",
+        answer:
+          "It can, though usually not by puncturing anything. Penny-size hail more often bruises the shingle mat and dislodges the granule layer that protects the asphalt from UV, which shortens the roof's remaining service life without changing how it looks from the ground. Softer metals like gutters, vents, drip edge, and valley metal dent more readily and are often the first visible evidence that hail hit your property.",
+      },
+      {
+        question: "Should I get on my roof to check for damage myself?",
+        answer:
+          "No. Wet decking and loose granules make post-storm roofs genuinely dangerous, and compromised areas may not hold weight. Do your inspection from the ground with a phone camera or binoculars, check ceilings and the attic from inside, and let a professional handle anything that requires being on the roof.",
+      },
+      {
+        question: "How soon should I schedule a storm damage roof inspection in Highlands?",
+        answer:
+          "If you saw hail, found any ground-level signs of damage, have a new ceiling stain, or had limbs land on the roof, sooner is better - largely because Western North Carolina gets heavy rainfall and a small opening finds water quickly here. If you saw nothing unusual, a routine evaluation after a season with multiple severe warnings is still a reasonable way to establish a baseline.",
+      },
+      {
+        question: "What should I document before cleaning up storm debris?",
+        answer:
+          "Photograph all four sides of the house from the ground, wide and close, plus gutters, downspouts, and any debris resting on the roof. Photograph the debris itself before it is hauled away, note the storm date and the date of your photos, write down what you observed in plain language, and keep receipts for any cleanup, tarping, or tree work.",
+      },
+    ],
+    content: `After Tuesday evening's severe thunderstorm moved through Highlands and southeastern Macon County, a lot of homeowners walked outside Wednesday morning, looked up, and saw nothing obviously wrong. That's normal — and it's also the part worth understanding. Wind and hail rarely announce themselves with a hole in the roof. More often they lift, loosen, or bruise, and the consequences show up weeks or months later as a stain on a ceiling or a drip in an attic.
+
+This is a plain, homeowner-first guide to what to check after the July 28 storm, what to leave to a professional, and how to document things carefully in the meantime.
+
+<img src="${stormInspectionImg}" alt="Roofing professional standing on the ground beside a mountain home, looking up at a wet shingle roof and taking notes" loading="lazy" width="1408" height="912" class="w-full rounded-sm my-8" />
+
+## What's In This Guide
+
+- What the July 28 storm brought to Highlands
+- Start with safety, not the roof
+- 7 signs of storm damage you can look for from the ground
+- Why wind and hail damage can be easy to miss
+- Document what you see before cleanup
+- When to schedule a professional roof inspection
+- How Highlander can help
+- Frequently asked questions
+
+## What the July 28 Storm Brought to Highlands
+
+All weather details below come from the **National Weather Service** office in Greenville-Spartanburg. We are not adding anything beyond what the NWS reported.
+
+- **The warning.** On Tuesday, July 28, 2026, the NWS Greenville-Spartanburg office issued a Severe Thunderstorm Warning that included Highlands, southeastern Macon County, and nearby communities.
+- **Location and movement.** At 7:48 PM EDT, the storm was located near Highlands and moving southeast at 30 mph.
+- **Hazards.** The warning identified radar-indicated wind gusts up to 60 mph and penny-size hail.
+- **Possible impacts.** The NWS said possible impacts included damage to trees and power lines.
+- **Earlier that day.** The NWS also reported a strong storm near Cashiers with gusts up to 40 mph and half-inch hail, with Highlands included in the impacted area.
+
+That's the verified picture. It does not mean every home, road, or neighborhood in the area was damaged — many were not. It does mean the conditions that commonly loosen shingles, dent soft metal, and drop limbs were present across the area, which is reason enough for a careful look.
+
+## Start With Safety, Not the Roof
+
+Before anything else: **do not climb onto your roof.** Post-storm decking is wet, granules act like ball bearings underfoot, and damage you can't see from a ladder is exactly the kind that gives way under weight. There is no piece of information up there worth a fall.
+
+A few other ground rules for the days after a storm:
+
+- Stay well away from downed or sagging power lines, and assume every line is live.
+- Give leaning trees and hanging limbs a wide berth — "widow-makers" can drop hours or days later with no warning.
+- Watch for debris, exposed nails, and broken glass in the yard and driveway.
+- Keep children and pets away from damaged fencing, gutters, or anything hanging from the eaves.
+- **If there is an immediate safety emergency** — downed lines, gas odor, structural collapse, or fire — call 911 or your local emergency services first.
+
+Everything in this guide can wait until you are safely on the ground and the weather has cleared.
+
+## 7 Signs of Storm Damage You Can Look For From the Ground
+
+You can learn a lot standing in your own yard with a phone camera and, if you have one, a pair of binoculars. Walk the full perimeter of the house slowly and look for:
+
+1. **Missing, lifted, cracked, or displaced shingles.** Look along ridges, hips, and rake edges first — those take the most wind.
+2. **Hail impact marks or unusual granule accumulation.** Check the ground below downspouts and along the driveway for piles of dark granules that weren't there before.
+3. **Damaged gutters, downspouts, flashing, vents, skylights, or siding.** Dents, separations, and loose sections are visible from the ground and often tell you where wind hit hardest.
+4. **Fallen limbs or debris contacting the roof.** Anything resting on the roof surface, in a valley, or wedged behind a chimney.
+5. **Ceiling stains, dripping, or attic moisture.** Check upstairs ceilings, closets, and — from the attic hatch only, with a flashlight — the underside of the decking.
+6. **Loose fascia or soffit.** Sagging trim, gaps at the eave line, or panels that have pulled away.
+7. **Damage around roof penetrations or valleys.** Pipe boots, chimney flashing, and valley metal are where leaks start most often.
+
+One important caveat: **none of these symptoms by itself proves your roof is damaged**, and their absence doesn't prove it isn't. Each one is simply a reason for a closer, qualified evaluation of the roof system — not a diagnosis.
+
+## Why Wind and Hail Damage Can Be Easy to Miss
+
+Storm damage on a mountain home is usually a *systems* problem, not a hole.
+
+Sixty-mile-per-hour gusts don't need to remove a shingle to matter. They can break the factory seal strip that bonds one shingle course to the next. The shingle drops back into place and looks perfectly normal from the driveway — but it is now free to flutter in the next wind event and to let wind-driven rain track underneath it.
+
+Hail is similar. Penny-size stones rarely puncture an asphalt shingle. What they do is bruise the mat and knock loose the granule layer that shields the asphalt from UV. The roof looks fine; its remaining service life quietly shortens. On softer metals — gutters, vents, valley metal, drip edge — the same hail leaves visible dents that are often the first honest evidence that a roof took a hit.
+
+Add in our terrain and the odds of a subtle problem go up: steep pitches, tall tree cover dropping debris into valleys, complex rooflines with lots of flashing, and the sheer rainfall Highlands and Cashiers see afterward. A small opening at a penetration finds water quickly here.
+
+That's why a [professional roof repair evaluation](/roofing/roof-repair) matters more than a glance from the yard.
+
+## Document What You See Before Cleanup
+
+If you're going to clean up the yard or have limbs removed, take five minutes first. Documentation is easy to create now and impossible to recreate later.
+
+- **Take photos from the ground**, wide and close, all four sides of the house, plus gutters, downspouts, and any debris on the roof.
+- **Photograph the debris itself** before it's hauled off — the limb that landed on the roof, the granule pile at the downspout.
+- **Note the date and time** of the storm (Tuesday, July 28, 2026) and of your photos.
+- **Write down what you observed** in plain language: sounds, hail, when you first noticed a stain.
+- **Keep receipts** for any emergency cleanup, tarping, or tree work.
+- **Save this record** somewhere you can find it — email it to yourself or drop it in a cloud folder.
+
+We're not going to tell you what your policy covers or whether to file a claim — that's a conversation between you and your insurer, and every policy is different. What we can say is that a clear, dated record of your home's condition is useful to have in either direction.
+
+## When to Schedule a Professional Roof Inspection
+
+A professional look is reasonable if any of the following is true after July 28:
+
+- You saw or heard hail at your property.
+- You've found any of the seven ground-level signs above.
+- You have a new ceiling stain, damp attic sheathing, or a drip.
+- Limbs or debris landed on the roof.
+- Your roof is already older, or it's been several years since anyone qualified was on it.
+- Your home sits on an exposed ridge or knob where wind loads run higher.
+- Your home is a second home or rental and no one has physically checked it since the storm.
+
+Even if the answer to all of those is no, homeowners in the [Highlands service area](/service-areas/highlands-nc) often find it worthwhile to have the roof looked at after a season with multiple severe warnings — simply to establish a baseline.
+
+## How Highlander Can Help
+
+Highlander Roofing Services, Inc. is a local Western North Carolina contractor. We work on these mountain roofs every week, and we know how wind and hail behave on steep pitches, long valleys, and high-elevation exposures.
+
+If you'd like a look after the July 28 storm, here's what that involves:
+
+- A ground-and-roof evaluation of the roof system — field shingles, ridges, valleys, flashing, penetrations, and edge metal.
+- A check of the [gutter and drainage system](/roofing/gutters), which is often where hail evidence shows up first.
+- An assessment of any [residential roof repair](/roofing/residential) needed, with clear photos of what we found.
+- A written estimate if repair work is warranted — and an honest "your roof is fine" if it isn't.
+
+You can read more about our approach to [storm damage roof repair](/roofing/storm-damage), or request an evaluation directly through our [roof inspection request form](/request-inspection).
+
+**Local weather source:** Weather details in this article are from the National Weather Service Greenville-Spartanburg forecast office. You can follow current watches and warnings for our area at [weather.gov/gsp](https://www.weather.gov/gsp/), and the specific July 28 Severe Thunderstorm Warning text is archived [here](https://govonestop.com/nws/georgia-north-carolina-south-carolina-severe-severe-thunderstorm-warning-effective-07282026-1648).
+
+## Ready for a Closer Look?
+
+If you're in Highlands, Cashiers, Franklin, or anywhere across Macon County and Western North Carolina and want your roof evaluated after the July 28 storm, we're glad to help.
+
+- **Call us:** 828-524-7773
+- **Request an inspection online:** [Request a roof inspection](/request-inspection)
+- **General questions:** [Contact Highlander](/contact)
+
+No pressure, no scare tactics — just a clear, professional read on your roof and what, if anything, it needs.
+`,
+  },
   {
     slug: "metal-roofing-cost-wnc",
     title: "Metal Roofing Cost in Western NC: Standing Seam vs. Exposed Fastener",

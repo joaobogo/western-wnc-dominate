@@ -58,6 +58,15 @@ const extractTakeaways = (content: string): string[] => {
 };
 
 /* ─── Render markdown content ─── */
+const linkify = (text: string) =>
+  text.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g,
+    (_m, label: string, href: string) =>
+      href.startsWith("http")
+        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-4 hover:text-accent">${label}</a>`
+        : `<a href="${href}" class="text-primary underline underline-offset-4 hover:text-accent">${label}</a>`,
+  );
+
 const renderContent = (content: string) => {
   return content.split("\n").map((line, i) => {
     if (line.startsWith("## "))
@@ -79,7 +88,7 @@ const renderContent = (content: string) => {
           <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" />
           <span>
             <strong className="text-foreground">{parts[0]}</strong>
-            {parts[1]}
+            <span dangerouslySetInnerHTML={{ __html: linkify(parts.slice(1).join("**")) }} />
           </span>
         </li>
       );
@@ -88,17 +97,21 @@ const renderContent = (content: string) => {
       return (
         <li key={i} className="text-muted-foreground mb-2 flex items-start gap-2">
           <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" />
-          <span>{line.replace("- ", "")}</span>
+          <span dangerouslySetInnerHTML={{ __html: linkify(line.replace("- ", "")) }} />
         </li>
       );
     if (line.match(/^\d+\. /))
       return (
-        <li key={i} className="text-muted-foreground mb-2.5 list-decimal ml-5 leading-relaxed">
-          {line.replace(/^\d+\. /, "")}
-        </li>
+        <li
+          key={i}
+          className="text-muted-foreground mb-2.5 list-decimal ml-5 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: linkify(line.replace(/^\d+\. /, "")) }}
+        />
       );
     if (line.trim() === "") return <div key={i} className="h-2" />;
-    const boldProcessed = line.replace(/\*\*(.*?)\*\*/g, "<strong class='text-foreground'>$1</strong>");
+    const boldProcessed = linkify(
+      line.replace(/\*\*(.*?)\*\*/g, "<strong class='text-foreground'>$1</strong>"),
+    );
     return (
       <p
         key={i}
@@ -178,6 +191,7 @@ const BlogPostPage = () => {
             { name: "Blog", url: "/blog" },
             { name: post.title, url: `/blog/${post.slug}` },
           ],
+          faqs: post.faqs,
         })}
       />
       <Header />
@@ -188,7 +202,7 @@ const BlogPostPage = () => {
             <img loading="eager" fetchPriority="high" decoding="async" 
               src={post.image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"} 
 
-              alt={post.title}
+              alt={post.imageAlt || post.title}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30" />

@@ -441,6 +441,7 @@ export type PageSchemaInput =
       type: "blog";
       article: Parameters<typeof articleSchema>[0];
       breadcrumbs: { name: string; url: string }[];
+      faqs?: { question: string; answer: string }[];
     }
   | {
       type: "commercial";
@@ -514,8 +515,14 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       return out;
     }
 
-    case "blog":
-      return [articleSchema(input.article), breadcrumbSchema(input.breadcrumbs)];
+    case "blog": {
+      const out: Record<string, unknown>[] = [
+        articleSchema(input.article),
+        breadcrumbSchema(input.breadcrumbs),
+      ];
+      if (input.faqs?.length) out.push(faqSchema(input.faqs));
+      return out;
+    }
 
     case "commercial": {
       const out: Record<string, unknown>[] = [
