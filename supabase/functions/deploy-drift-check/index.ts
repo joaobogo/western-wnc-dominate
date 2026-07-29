@@ -168,6 +168,10 @@ async function recordAndShouldAlert(
   deployed: string,
   expected: string,
 ) {
+  supabaseFetch: typeof fetch,
+  deployed: string,
+  expected: string,
+) {
   const since = new Date(Date.now() - REALERT_HOURS * 3600_000).toISOString();
   const q =
     `${SUPABASE_URL}/rest/v1/deploy_drift_alerts?select=id&expected_commit=eq.${expected}` +
