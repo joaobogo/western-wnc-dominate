@@ -203,7 +203,10 @@ Deno.serve(async (req) => {
   }
 
   const provided = req.headers.get("x-admin-secret") ?? "";
-  if (!ADMIN_SECRET || provided !== ADMIN_SECRET) {
+  const authorized =
+    (!!ADMIN_SECRET && provided === ADMIN_SECRET) ||
+    (provided.length > 0 && (await isSchedulerToken(provided)));
+  if (!authorized) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
       status: 401,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
