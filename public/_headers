@@ -13,3 +13,8 @@
 # Long-cache hashed Vite build assets
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Deployment fingerprint — must never be cached, the drift monitor reads it live
+/build-info.json
+  Cache-Control: no-store, max-age=0
+  Content-Type: application/json
