@@ -249,6 +249,10 @@ export function installGtmGlobalListeners() {
           link_url: href,
           click_location: resolveClickLocation(anchor),
         });
+        notifyTeamsOfCall({
+          phone_number: rawNumber || display,
+          click_location: resolveClickLocation(anchor),
+        });
       } else if (href.startsWith("mailto:")) {
         trackEmailClick({
           link_url: href,
