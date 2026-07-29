@@ -60,20 +60,6 @@ function buildInfoPlugin() {
   };
 }
 
-function faviconVerifyPluginUnused() {
-  return {
-    name: "highlander-favicon-verify",
-    buildStart() {
-      try {
-        execSync("node scripts/verify-favicons.mjs", { stdio: "inherit" });
-      } catch (e) {
-        // Fail the build — favicon drift is a real bug we want to surface
-        throw new Error("Favicon verification failed. See logs above.");
-      }
-    },
-  };
-}
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
