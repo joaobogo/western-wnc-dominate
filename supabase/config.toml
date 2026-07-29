@@ -1,3 +1,6 @@
 project_id = "qflrlebkswerlbqbuslx"
 [functions.deploy-drift-check]
 verify_jwt = false
+
+[functions.site-health-check]
+verify_jwt = false
