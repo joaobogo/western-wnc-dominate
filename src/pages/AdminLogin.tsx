@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import SEOHead from "@/components/SEOHead";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+  const rawNext = params.get("next") ?? "";
+  const next = /^\/(?!\/)/.test(rawNext) ? rawNext : "/admin/leads";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [err, setErr] = useState<string | null>(null);
@@ -12,9 +15,9 @@ export default function AdminLogin() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate("/admin/leads", { replace: true });
+      if (data.session) navigate(next, { replace: true });
     });
-  }, [navigate]);
+  }, [navigate, next]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,7 +26,7 @@ export default function AdminLogin() {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
     if (error) { setErr(error.message); return; }
-    navigate("/admin/leads", { replace: true });
+    navigate(next, { replace: true });
   };
 
   return (
