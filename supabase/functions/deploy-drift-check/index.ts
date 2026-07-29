@@ -141,26 +141,49 @@ async function readLiveBuild(): Promise<LiveBuild> {
 }
 
 async function newestSourceCommit() {
-  const branches: Array<{ name: string; commit: { sha: string } }> = await gh(
-    `/repos/${OWNER}/${REPO}/branches?per_page=100`,
-  );
-  const tracked = branches.filter(
-    (b) => b.name === "main" || b.name.startsWith("edit/"),
-  );
-  const details = await Promise.all(
-    tracked.map(async (b) => {
-      const c = await gh(`/repos/${OWNER}/${REPO}/commits/${b.commit.sha}`);
-      return {
-        branch: b.name,
-        sha: String(c.sha),
-        date: String(c.commit?.committer?.date ?? c.commit?.author?.date ?? ""),
-        message: String(c.commit?.message ?? "").split("\n")[0],
-      };
-    }),
-  );
-  details.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
-  const main = details.find((d) => d.branch === "main") ?? null;
-  return { newest: details[0] ?? null, main, all: details };
+  const detail = async (branch: string, ref: string) => {
+    const c = await gh(`/repos/${OWNER}/${REPO}/commits/${ref}`);
+    return {
+      branch,
+      sha: String(c.sha),
+      date: String(c.commit?.committer?.date ?? c.commit?.author?.date ?? ""),
+      message: String(c.commit?.message ?? "").split("\n")[0],
+    };
+  };
+
+  // main is the branch the host builds from — always resolve it directly
+  // instead of paging through the (hundreds of) Lovable sync branches.
+  const main = await detail("main", "main");
+
+  // Find the newest un-merged work branch. Lovable sync branches encode an
+  // epoch in the name (lovable-sync-<epoch>), so we can rank cheaply and only
+  // fetch commit detail for the single best candidate.
+  let candidates: Array<{ name: string; sha: string; rank: number }> = [];
+  for (let page = 1; page <= 5; page++) {
+    const branches: Array<{ name: string; commit: { sha: string } }> = await gh(
+      `/repos/${OWNER}/${REPO}/branches?per_page=100&page=${page}`,
+    );
+    if (!Array.isArray(branches) || branches.length === 0) break;
+    for (const b of branches) {
+      const m = /^(?:edit\/.*?|lovable-sync-)(\d{9,})$/.exec(b.name);
+      if (b.name.startsWith("lovable-sync-") || b.name.startsWith("edit/")) {
+        candidates.push({
+          name: b.name,
+          sha: b.commit.sha,
+          rank: m ? Number(m[1]) : 0,
+        });
+      }
+    }
+    if (branches.length < 100) break;
+  }
+  candidates.sort((a, b) => b.rank - a.rank);
+  const top = candidates[0] ?? null;
+  const latestSource = top ? await detail(top.name, top.sha) : null;
+
+  // Newest = whichever of main / newest work branch has the later commit date.
+  const all = [main, ...(latestSource ? [latestSource] : [])];
+  all.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+  return { newest: all[0] ?? null, main, latestSource, all };
 }
 
 // The pg_cron scheduler authenticates with a private token stored in the
