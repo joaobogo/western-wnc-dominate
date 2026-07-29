@@ -250,6 +250,27 @@ export type Database = {
         }
         Relationships: []
       }
+      deploy_drift_alerts: {
+        Row: {
+          created_at: string
+          deployed_commit: string
+          expected_commit: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          deployed_commit: string
+          expected_commit: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          deployed_commit?: string
+          expected_commit?: string
+          id?: string
+        }
+        Relationships: []
+      }
       designer_leads: {
         Row: {
           created_at: string
