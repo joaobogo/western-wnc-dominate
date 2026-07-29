@@ -293,10 +293,13 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
       // Extract original path from URL
       const originalPath = imageUrl.split("/roof-designs/")[1] || imageUrl;
 
-      // Save design record
-      const { data: design, error } = await supabase
+      // Save design record. The id is generated client-side so the insert does
+      // not need to read the row back (roof_designs is insert-only for visitors).
+      const designId = crypto.randomUUID();
+      const { error } = await supabase
         .from("roof_designs")
         .insert({
+          id: designId,
           original_image_path: originalPath,
           result_image_path: resultPath,
           material_id: selectedMaterial.id,
@@ -304,20 +307,18 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
           color_hex: selectedMaterial.color_hex,
           finish: selectedMaterial.finish,
           session_id: sessionId,
-        })
-        .select("id")
-        .single();
+        });
 
       if (error) throw error;
 
       // Track metric
       await supabase.from("designer_metrics").insert({
         event_type: "design_complete",
-        design_id: design.id,
+        design_id: designId,
         session_id: sessionId,
       });
 
-      onSave(resultCanvas, design.id);
+      onSave(resultCanvas, designId);
     } catch (err) {
       console.error("Save error:", err);
       toast.error("Failed to save design. Please try again.");
