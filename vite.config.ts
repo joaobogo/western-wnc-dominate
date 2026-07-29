@@ -45,6 +45,35 @@ function faviconVerifyPlugin() {
   };
 }
 
+// Stamps public/build-info.json with the commit being built, so the deployed
+// site can be compared against GitHub by the deploy-drift-check function.
+function buildInfoPlugin() {
+  return {
+    name: "highlander-build-info",
+    buildStart() {
+      try {
+        execSync("node scripts/generate-build-info.mjs", { stdio: "inherit" });
+      } catch (e) {
+        console.warn("[build-info] generation skipped:", (e as Error).message);
+      }
+    },
+  };
+}
+
+function faviconVerifyPluginUnused() {
+  return {
+    name: "highlander-favicon-verify",
+    buildStart() {
+      try {
+        execSync("node scripts/verify-favicons.mjs", { stdio: "inherit" });
+      } catch (e) {
+        // Fail the build — favicon drift is a real bug we want to surface
+        throw new Error("Favicon verification failed. See logs above.");
+      }
+    },
+  };
+}
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
@@ -54,7 +83,7 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), sitemapPlugin(), blogSummariesPlugin(), faviconVerifyPlugin(), mcpPlugin(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), sitemapPlugin(), blogSummariesPlugin(), faviconVerifyPlugin(), buildInfoPlugin(), mcpPlugin(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
