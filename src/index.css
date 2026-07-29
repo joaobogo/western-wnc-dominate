@@ -356,12 +356,12 @@ img {
      `.no-header-pad` class. `main` handles its own offset via the
      rules above, and elements that already declare their own top
      padding keep it (this rule only sets a floor).                 */
-  header ~ *:not(main):not(footer):not(aside):not(script):not(style):not(link):not([hidden]):not(.no-header-pad):not([data-no-header-pad]) {
+  header ~ *:not(main):not(footer):not(aside):not(script):not(style):not(link):not([hidden]):not(.no-header-pad):not([data-no-header-pad]):not([class*="fixed"]):not([class*="sticky"]):not([class*="absolute"]):not([data-header-offset]):not([class*="pt-"]) {
     padding-top: max(var(--header-h), var(--tw-pt, 0px));
     scroll-margin-top: var(--header-h);
   }
   @media (min-width: 768px) {
-    header ~ *:not(main):not(footer):not(aside):not(script):not(style):not(link):not([hidden]):not(.no-header-pad):not([data-no-header-pad]) {
+    header ~ *:not(main):not(footer):not(aside):not(script):not(style):not(link):not([hidden]):not(.no-header-pad):not([data-no-header-pad]):not([class*="fixed"]):not([class*="sticky"]):not([class*="absolute"]):not([data-header-offset]):not([class*="pt-"]) {
       padding-top: max(var(--header-h-md), var(--tw-pt, 0px));
       scroll-margin-top: var(--header-h-md);
     }
