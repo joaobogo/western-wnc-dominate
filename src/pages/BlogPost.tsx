@@ -178,6 +178,7 @@ const BlogPostPage = () => {
             { name: "Blog", url: "/blog" },
             { name: post.title, url: `/blog/${post.slug}` },
           ],
+          faqs: post.faqs,
         })}
       />
       <Header />
@@ -188,7 +189,7 @@ const BlogPostPage = () => {
             <img loading="eager" fetchPriority="high" decoding="async" 
               src={post.image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"} 
 
-              alt={post.title}
+              alt={post.imageAlt || post.title}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30" />
