@@ -163,11 +163,29 @@ async function newestSourceCommit() {
   return { newest: details[0] ?? null, main, all: details };
 }
 
+// The pg_cron scheduler authenticates with a private token stored in the
+// backend-only internal_config table (never exposed to the browser).
+async function isSchedulerToken(provided: string): Promise<boolean> {
+  try {
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/internal_config?select=value&key=eq.drift_check_token&limit=1`,
+      {
+        headers: {
+          apikey: SERVICE_ROLE,
+          Authorization: `Bearer ${SERVICE_ROLE}`,
+        },
+      },
+    );
+    if (!res.ok) return false;
+    const rows = await res.json();
+    const token = Array.isArray(rows) && rows[0]?.value ? String(rows[0].value) : "";
+    return token.length > 0 && token === provided;
+  } catch {
+    return false;
+  }
+}
+
 async function recordAndShouldAlert(
-  supabaseFetch: typeof fetch,
-  deployed: string,
-  expected: string,
-) {
   supabaseFetch: typeof fetch,
   deployed: string,
   expected: string,
