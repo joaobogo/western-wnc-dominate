@@ -11,8 +11,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "predev": "bun scripts/generate-sitemap.ts",
-    "prebuild": "bun scripts/generate-sitemap.ts",
+    "predev": "bun scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts",
+    "prebuild": "bun scripts/generate-blog-summaries.mjs && bun scripts/generate-sitemap.ts",
     "seo:check": "node scripts/seo-regression-check.mjs"
   },
   "dependencies": {
