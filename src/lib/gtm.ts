@@ -203,6 +203,34 @@ export function trackChatbotLeadSubmit(opts: {
 let listenersInstalled = false;
 
 /**
+ * Sends a Teams alert when a visitor taps a click-to-call link.
+ * Throttled to once every 10 minutes per session so a single caller who taps
+ * a few times doesn't spam the channel. Fire-and-forget.
+ */
+function notifyTeamsOfCall(opts: { phone_number: string; click_location: string }) {
+  if (typeof window === "undefined") return;
+  try {
+    const last = Number(window.sessionStorage.getItem("hl_call_notified") || 0);
+    if (Date.now() - last < 10 * 60 * 1000) return;
+    window.sessionStorage.setItem("hl_call_notified", String(Date.now()));
+  } catch {
+    /* ignore */
+  }
+  void import("@/integrations/supabase/client")
+    .then(({ supabase }) =>
+      supabase.functions.invoke("teams-notify", {
+        body: {
+          event: "phone_click",
+          phone_number: opts.phone_number,
+          click_location: opts.click_location,
+          page_url: window.location.href,
+        },
+      }),
+    )
+    .catch((err) => console.warn("teams-notify (call) invoke failed:", err));
+}
+
+/**
  * One-time installer for global click / focus listeners.
  *
  * - `tel:` links → phone_click
