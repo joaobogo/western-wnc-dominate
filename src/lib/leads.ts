@@ -134,7 +134,18 @@ export async function submitLead(payload: LeadPayload) {
   void supabase.functions
     .invoke("jobtread-sync", { body: { lead_id: leadId } })
     .catch((err) => console.warn("jobtread-sync invoke failed:", err));
+  notifyTeams({ lead_id: leadId });
   return { id: leadId, error: null };
+}
+
+/**
+ * Fire-and-forget Microsoft Teams notification. Never blocks the visitor and
+ * never surfaces errors to the UI — Teams is a notification channel only.
+ */
+export function notifyTeams(body: Record<string, unknown>) {
+  void supabase.functions
+    .invoke("teams-notify", { body })
+    .catch((err) => console.warn("teams-notify invoke failed:", err));
 }
 
 export async function logChatbotConversation(input: {
@@ -191,6 +202,7 @@ export async function logChatbotConversation(input: {
     void supabase.functions
       .invoke("jobtread-sync", { body: { chatbot_conversation_id: convId } })
       .catch((err) => console.warn("jobtread-sync invoke failed:", err));
+    notifyTeams({ chatbot_conversation_id: convId });
   }
 }
 
@@ -204,6 +216,7 @@ export function syncConsultationRequestToJobTread(id: string | null | undefined)
   void supabase.functions
     .invoke("jobtread-sync", { body: { consultation_request_id: id } })
     .catch((err) => console.warn("jobtread-sync (consultation) invoke failed:", err));
+  notifyTeams({ consultation_request_id: id });
 }
 
 /**
@@ -214,4 +227,5 @@ export function syncDesignerLeadToJobTread(id: string | null | undefined) {
   void supabase.functions
     .invoke("jobtread-sync", { body: { designer_lead_id: id } })
     .catch((err) => console.warn("jobtread-sync (designer) invoke failed:", err));
+  notifyTeams({ designer_lead_id: id });
 }

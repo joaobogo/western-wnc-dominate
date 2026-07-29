@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "highlands-nc-storm-damage-july-28-2026",
+    "slug": "highlands-nc-storm-damage-july-28-2026",
+    "title": "After the July 28 Storm in Highlands, NC: What Homeowners Should Check",
+    "excerpt": "A Severe Thunderstorm Warning covered Highlands and southeastern Macon County on July 28, 2026. Here is a calm, practical guide to what to check from the ground, what to leave to a professional, and how to document it.",
+    "category": "Storm",
+    "date": "2026-07-29",
+    "readTime": "9 min"
+  },
+  {
     "id": "storm-moisture-damage-cullowhee-nc",
     "slug": "storm-moisture-damage-cullowhee-nc",
     "title": "Storm and Moisture Damage Cullowhee Homeowners Should Watch For",
@@ -110,14 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Construction",
     "date": "2026-07-24",
     "readTime": "8 min"
-  },
-  {
-    "id": "roof-leak-causes-cashiers-nc",
-    "slug": "roof-leak-causes-cashiers-nc",
-    "title": "What Causes Roof Leaks in Cashiers Mountain Homes?",
-    "excerpt": "The real causes of roof leaks in Cashiers, NC mountain homes and why they rarely start where the stain appears on the ceiling.",
-    "category": "Repair",
-    "date": "2026-07-24",
-    "readTime": "7 min"
   }
 ];
