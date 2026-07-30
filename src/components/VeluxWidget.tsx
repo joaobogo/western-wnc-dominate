@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 
-const VELUX_SCRIPT_SRC = "https://veluxsolutions.com/installer-embed/velux-roofer.js";
+const VELUX_SCRIPTS = {
+  roofer: "https://veluxsolutions.com/installer-embed/velux-roofer.js",
+  remodeler: "https://veluxsolutions.com/installer-embed/velux-remodeler.js",
+} as const;
 
 interface VeluxWidgetProps {
   eyebrow?: string;
@@ -9,6 +12,7 @@ interface VeluxWidgetProps {
   className?: string;
   ctaText?: string;
   ctaLink?: string;
+  variant?: keyof typeof VELUX_SCRIPTS;
 }
 
 /**
@@ -23,12 +27,14 @@ const VeluxWidget = ({
   className = "section-padding bg-background border-t border-border/60",
   ctaText = "Request a Quote!",
   ctaLink = "https://highlandernc.com/contact",
+  variant = "roofer",
 }: VeluxWidgetProps) => {
   const hostRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const host = hostRef.current;
     if (!host) return;
+    const scriptSrc = VELUX_SCRIPTS[variant];
 
     // Clear any markup left behind by a previous mount before re-initializing.
     host.innerHTML = "";
@@ -40,11 +46,11 @@ const VeluxWidget = ({
     host.appendChild(target);
 
     document
-      .querySelectorAll(`script[src^="${VELUX_SCRIPT_SRC}"]`)
+      .querySelectorAll(`script[src^="${scriptSrc}"]`)
       .forEach((existing) => existing.remove());
 
     const script = document.createElement("script");
-    script.src = VELUX_SCRIPT_SRC;
+    script.src = scriptSrc;
     script.async = true;
     document.body.appendChild(script);
 
@@ -52,7 +58,7 @@ const VeluxWidget = ({
       script.remove();
       host.innerHTML = "";
     };
-  }, [ctaLink, ctaText]);
+  }, [ctaLink, ctaText, variant]);
 
   return (
     <section className={className}>
