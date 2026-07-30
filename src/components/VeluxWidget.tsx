@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { trackVeluxQuoteClick } from "@/lib/gtm";
 
 const VELUX_SCRIPTS = {
   roofer: "https://veluxsolutions.com/installer-embed/velux-roofer.js",
@@ -54,7 +55,33 @@ const VeluxWidget = ({
     script.async = true;
     document.body.appendChild(script);
 
+    // The vendor renders the CTA inside a shadow root, so a document-level
+    // delegated listener only ever sees the host element. Listen on the host
+    // and walk the composed path to find the real anchor/button.
+    const onClick = (ev: Event) => {
+      const path = (ev.composedPath?.() ?? []) as Element[];
+      for (const node of path) {
+        if (!(node instanceof Element)) continue;
+        const tag = node.tagName?.toLowerCase();
+        if (tag !== "a" && tag !== "button") continue;
+        const href = node.getAttribute("href") || "";
+        const text = (node.textContent || "").trim();
+        const isCta =
+          href === ctaLink ||
+          text.toLowerCase() === ctaText.toLowerCase();
+        if (!isCta) continue;
+        trackVeluxQuoteClick({
+          variant,
+          destination_url: href || ctaLink,
+          cta_text: text || ctaText,
+        });
+        return;
+      }
+    };
+    host.addEventListener("click", onClick, { capture: true });
+
     return () => {
+      host.removeEventListener("click", onClick, { capture: true });
       script.remove();
       host.innerHTML = "";
     };

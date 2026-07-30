@@ -166,6 +166,38 @@ export function trackRequestInspectionClick(opts: {
   });
 }
 
+/* ---------- VELUX widget ---------- */
+
+// Throttle duplicate fires from the vendor widget (shadow DOM can bubble the
+// same activation as both a click on the anchor and on its inner span).
+let lastVeluxClick = 0;
+
+export function trackVeluxQuoteClick(opts: {
+  variant: string;
+  destination_url: string;
+  cta_text: string;
+}) {
+  const now = Date.now();
+  if (now - lastVeluxClick < 800) return;
+  lastVeluxClick = now;
+
+  const click_location = `velux_widget_${opts.variant}`;
+  push({
+    event: "velux_widget_cta_click",
+    page_path: pagePath(),
+    page_title: pageTitle(),
+    click_location,
+    widget_variant: opts.variant,
+    cta_text: opts.cta_text,
+    destination_url: opts.destination_url,
+  });
+  // Also emit the standard quote CTA event so existing conversion tags fire.
+  trackRequestQuoteClick({
+    click_location,
+    destination_url: opts.destination_url,
+  });
+}
+
 /* ---------- Chatbot ---------- */
 
 let chatbotOpenFiredThisSession = false;
