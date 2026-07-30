@@ -67,6 +67,9 @@ const linkify = (text: string) =>
         : `<a href="${href}" class="text-primary underline underline-offset-4 hover:text-accent">${label}</a>`,
   );
 
+const inlineMarkdown = (text: string) =>
+  linkify(text.replace(/\*\*(.*?)\*\*/g, "<strong class='text-foreground'>$1</strong>"));
+
 const renderContent = (content: string) => {
   return content.split("\n").map((line, i) => {
     if (line.startsWith("## "))
@@ -81,23 +84,11 @@ const renderContent = (content: string) => {
           {line.replace("### ", "")}
         </h3>
       );
-    if (line.startsWith("- **")) {
-      const parts = line.replace("- **", "").split("**");
-      return (
-        <li key={i} className="text-muted-foreground mb-2.5 flex items-start gap-2">
-          <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" />
-          <span>
-            <strong className="text-foreground">{parts[0]}</strong>
-            <span dangerouslySetInnerHTML={{ __html: linkify(parts.slice(1).join("**")) }} />
-          </span>
-        </li>
-      );
-    }
     if (line.startsWith("- "))
       return (
         <li key={i} className="text-muted-foreground mb-2 flex items-start gap-2">
           <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" />
-          <span dangerouslySetInnerHTML={{ __html: linkify(line.replace("- ", "")) }} />
+          <span dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace("- ", "")) }} />
         </li>
       );
     if (line.match(/^\d+\. /))
@@ -105,13 +96,11 @@ const renderContent = (content: string) => {
         <li
           key={i}
           className="text-muted-foreground mb-2.5 list-decimal ml-5 leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: linkify(line.replace(/^\d+\. /, "")) }}
+          dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace(/^\d+\. /, "")) }}
         />
       );
     if (line.trim() === "") return <div key={i} className="h-2" />;
-    const boldProcessed = linkify(
-      line.replace(/\*\*(.*?)\*\*/g, "<strong class='text-foreground'>$1</strong>"),
-    );
+    const boldProcessed = inlineMarkdown(line);
     return (
       <p
         key={i}
