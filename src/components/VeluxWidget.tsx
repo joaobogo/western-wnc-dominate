@@ -1,10 +1,34 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { trackVeluxQuoteClick } from "@/lib/gtm";
 
 const VELUX_SCRIPTS = {
   roofer: "https://veluxsolutions.com/installer-embed/velux-roofer.js",
   remodeler: "https://veluxsolutions.com/installer-embed/velux-remodeler.js",
 } as const;
+
+/**
+ * Every origin the VELUX embed touches. Kept here next to the loader so the
+ * hosting CSP allowlist (public/_headers) and the code can't drift apart:
+ *   script-src  https://veluxsolutions.com
+ *   img-src     https://veluxsolutions.com
+ *   connect-src https://veluxsolutions.com
+ *   style-src   'unsafe-inline'  (the widget injects a <style> block into its
+ *                                 own shadow root; shadow DOM is still subject
+ *                                 to the page CSP)
+ */
+export const VELUX_CSP_ORIGINS = ["https://veluxsolutions.com"] as const;
+
+/** Read the page's CSP nonce, if the host is serving a nonce-based policy. */
+function getCspNonce(): string | null {
+  if (typeof document === "undefined") return null;
+  const meta = document.querySelector<HTMLMetaElement>('meta[property="csp-nonce"], meta[name="csp-nonce"]');
+  if (meta?.content) return meta.content;
+  const scriptWithNonce = document.querySelector<HTMLScriptElement>("script[nonce]");
+  // `nonce` is hidden from attribute reads by the browser, but the IDL
+  // property still exposes it to same-origin scripts.
+  return scriptWithNonce?.nonce || null;
+}
 
 interface VeluxWidgetProps {
   eyebrow?: string;
