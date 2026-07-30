@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import { DesignProgramPromo } from "@/components/construction";
+import VeluxWidget from "@/components/VeluxWidget";
 
 import heroImg from "@/assets/gallery/asphalt-007.webp";
 import proj1 from "@/assets/gallery/asphalt-008.webp";
@@ -377,6 +378,13 @@ const Renovations = () => {
             </motion.div>
           </div>
         </section>
+
+        <VeluxWidget
+          variant="remodeler"
+          eyebrow="VELUX Certified Installer"
+          heading="Add Daylight to Your Remodel"
+          description="Browse the VELUX skylight and Sun Tunnel lineup for renovations — then tell us which rooms you want brightened."
+        />
 
         {/* ─── FAQs ─── */}
         <section className="section-padding bg-secondary tartan-bg">
