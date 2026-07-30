@@ -23,6 +23,7 @@ import metalCabin from "@/assets/gallery/metal-006.webp";
 import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
 import cedarDetail from "@/assets/gallery/cedar-001.jpg";
 import RealWorkWidget from "@/components/RealWorkWidget";
+import VeluxWidget from "@/components/VeluxWidget";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -1125,6 +1126,12 @@ const RoofingDivision = () => {
             </div>
           </div>
         </section>
+
+        <VeluxWidget
+          heading="VELUX Skylights, Installed by a Certified Roofer"
+          description="Daylight and fresh air for mountain homes. Browse the VELUX lineup below, then talk to our team about adding or replacing skylights during your roofing project."
+          className="section-padding bg-background border-t border-border/60"
+        />
       </main>
       <RealWorkWidget />
       <Footer />
