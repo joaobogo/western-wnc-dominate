@@ -55,11 +55,13 @@ const VeluxWidget = ({
   variant = "roofer",
 }: VeluxWidgetProps) => {
   const hostRef = useRef<HTMLDivElement>(null);
+  const [blocked, setBlocked] = useState(false);
 
   useEffect(() => {
     const host = hostRef.current;
     if (!host) return;
     const scriptSrc = VELUX_SCRIPTS[variant];
+    setBlocked(false);
 
     // Clear any markup left behind by a previous mount before re-initializing.
     host.innerHTML = "";
@@ -77,7 +79,23 @@ const VeluxWidget = ({
     const script = document.createElement("script");
     script.src = scriptSrc;
     script.async = true;
+    // Nonce-based CSPs (`script-src 'nonce-…' 'strict-dynamic'`) reject
+    // dynamically injected scripts unless they carry the page nonce.
+    const nonce = getCspNonce();
+    if (nonce) script.nonce = nonce;
+    // Vendor assets are public; no credentials and no referrer leakage.
+    script.crossOrigin = "anonymous";
+    script.referrerPolicy = "strict-origin-when-cross-origin";
+    // A CSP refusal surfaces as a plain error event on the element.
+    script.addEventListener("error", () => setBlocked(true));
     document.body.appendChild(script);
+
+    // Belt-and-braces: if the script loads but the widget never paints
+    // (blocked sub-resources, vendor outage), fall back to our own CTA.
+    const renderTimer = window.setTimeout(() => {
+      const painted = Boolean(target.shadowRoot?.childElementCount || target.childElementCount);
+      if (!painted) setBlocked(true);
+    }, 8000);
 
     // The vendor renders the CTA inside a shadow root, so a document-level
     // delegated listener only ever sees the host element. Listen on the host
@@ -105,6 +123,7 @@ const VeluxWidget = ({
     host.addEventListener("click", onClick, { capture: true });
 
     return () => {
+      window.clearTimeout(renderTimer);
       host.removeEventListener("click", onClick, { capture: true });
       script.remove();
       host.innerHTML = "";
@@ -121,7 +140,23 @@ const VeluxWidget = ({
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">{heading}</h2>
           <p className="text-foreground/75 leading-relaxed">{description}</p>
         </div>
-        <div ref={hostRef} />
+        <div ref={hostRef} hidden={blocked} />
+        {blocked && (
+          <div className="rounded-lg border border-border/60 bg-muted/40 p-6">
+            <p className="text-foreground/80 mb-4 leading-relaxed">
+              The VELUX product brochure couldn't load in your browser. We can walk you
+              through the full skylight and Sun Tunnel lineup directly.
+            </p>
+            <Link
+              to="/contact"
+              data-gtm-cta="request_quote"
+              data-gtm-location={`velux_widget_${variant}_fallback`}
+              className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+            >
+              {ctaText}
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
