@@ -99,17 +99,16 @@ const Header = () => {
         }`}
       >
         <Link to="/" aria-label="Highlander Roofing & Construction — Home" className="flex items-center bg-transparent hover:bg-transparent">
-          <img loading="lazy" decoding="async"
+          <img decoding="async"
             src={logo}
             alt="Highlander Roofing & Construction logo"
-            width={520}
-            height={520}
+            width={1193}
+            height={338}
             className={`w-auto transition-[height,transform] duration-500 ease-out origin-left ${
               scrolled
                 ? "h-[44px] sm:h-[48px] md:h-[52px] lg:h-[56px]"
                 : "h-[52px] sm:h-[60px] md:h-[68px] lg:h-[76px]"
             }`}
-            style={{ imageRendering: "auto" }}
             fetchPriority="high"
           />
         </Link>
