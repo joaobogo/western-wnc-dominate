@@ -6,49 +6,13 @@ import {
 } from "@/lib/gtm";
 import { scoreLead } from "@/lib/lead-scoring";
 import { parsePersonName } from "@/lib/name-parser";
+import { getAttribution, currentPagePath } from "@/lib/attribution";
+
+export { captureAttribution } from "@/lib/attribution";
+export type { Attribution } from "@/lib/attribution";
 
 export const CONSENT_TEXT =
   "By submitting your information, you agree that Highlander Roofing Services, Inc. may contact you by phone, text, or email about your inquiry, services, scheduling, project follow-up, and review requests. Message and data rates may apply. Reply STOP to opt out of text messages. Reply HELP for help. See our Privacy Policy.";
-
-function readQuery(name: string): string | null {
-  if (typeof window === "undefined") return null;
-  try {
-    return new URLSearchParams(window.location.search).get(name);
-  } catch {
-    return null;
-  }
-}
-
-function readStoredAttribution() {
-  if (typeof window === "undefined") return {};
-  try {
-    const raw = window.sessionStorage.getItem("hl_attribution");
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-
-export function captureAttribution() {
-  if (typeof window === "undefined") return;
-  const current = readStoredAttribution();
-  const next = {
-    utm_source: current.utm_source ?? readQuery("utm_source"),
-    utm_medium: current.utm_medium ?? readQuery("utm_medium"),
-    utm_campaign: current.utm_campaign ?? readQuery("utm_campaign"),
-    utm_content: current.utm_content ?? readQuery("utm_content"),
-    utm_term: current.utm_term ?? readQuery("utm_term"),
-    gclid: current.gclid ?? readQuery("gclid"),
-    fbclid: current.fbclid ?? readQuery("fbclid"),
-    li_fat_id: current.li_fat_id ?? readQuery("li_fat_id"),
-    referrer: current.referrer ?? (document.referrer || null),
-  };
-  try {
-    window.sessionStorage.setItem("hl_attribution", JSON.stringify(next));
-  } catch {
-    /* ignore */
-  }
-}
 
 /** A single uploaded file attached to a lead. */
 export type LeadAttachment = {
@@ -125,7 +89,11 @@ export type CanonicalLeadPayload = {
   utm_term?: string | null;
   gclid?: string | null;
   fbclid?: string | null;
+  msclkid?: string | null;
   li_fat_id?: string | null;
+  referrer?: string | null;
+  landing_page?: string | null;
+  landing_url?: string | null;
 
   consent_given?: boolean;
   metadata?: Record<string, unknown>;
@@ -226,9 +194,7 @@ export function normalizeLeadPayload(input: LeadPayload) {
           description: clean(input.project_description) ?? undefined,
         });
 
-  const pagePath =
-    clean(input.page_path) ??
-    (typeof window !== "undefined" ? window.location.pathname : null);
+  const pagePath = clean(input.page_path) ?? currentPagePath();
 
   return {
     source: input.source,
@@ -283,7 +249,9 @@ export function normalizeLeadPayload(input: LeadPayload) {
  * Fire-and-forget safe: caller should not block the user on this.
  */
 export async function submitLead(payload: LeadPayload) {
-  const attribution = readStoredAttribution();
+  // getAttribution() captures on the spot if the session never did, so a lead
+  // is never sent without page / referrer / campaign context.
+  const attribution = getAttribution();
   const normalized = normalizeLeadPayload(payload);
   // Generate the id client-side so we don't need SELECT-after-INSERT
   // permission (anon can INSERT but cannot SELECT the leads table).
@@ -300,8 +268,12 @@ export async function submitLead(payload: LeadPayload) {
     jobtread_retry_count: 0,
     page_url: typeof window !== "undefined" ? window.location.href : null,
     referrer:
+      payload.referrer ??
       attribution.referrer ??
       (typeof document !== "undefined" ? document.referrer || null : null),
+    landing_page: payload.landing_page ?? attribution.landing_page ?? null,
+    landing_url: payload.landing_url ?? attribution.landing_url ?? null,
+    first_seen_at: attribution.first_seen_at ?? null,
     user_agent:
       typeof navigator !== "undefined" ? navigator.userAgent : null,
     utm_source: payload.utm_source ?? attribution.utm_source ?? null,
@@ -311,6 +283,7 @@ export async function submitLead(payload: LeadPayload) {
     utm_term: payload.utm_term ?? attribution.utm_term ?? null,
     gclid: payload.gclid ?? attribution.gclid ?? null,
     fbclid: payload.fbclid ?? attribution.fbclid ?? null,
+    msclkid: payload.msclkid ?? attribution.msclkid ?? null,
     li_fat_id: payload.li_fat_id ?? attribution.li_fat_id ?? null,
   };
   const { error } = await supabase
@@ -368,7 +341,9 @@ export async function logChatbotConversation(input: {
   contact_path?: string | null;
   converted_to_lead?: boolean;
 }) {
-  const attribution = readStoredAttribution();
+  // getAttribution() captures on the spot if the session never did, so a lead
+  // is never sent without page / referrer / campaign context.
+  const attribution = getAttribution();
   const convId =
     typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
       ? crypto.randomUUID()
