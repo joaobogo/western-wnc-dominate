@@ -10,6 +10,7 @@ import FormConsent from "@/components/FormConsent";
 import { submitLead } from "@/lib/leads";
 import InlineFieldError from "@/components/forms/InlineFieldError";
 import { useContactValidation } from "@/hooks/use-contact-validation";
+import { useFormAutosave } from "@/hooks/use-form-autosave";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -38,6 +39,17 @@ const InspectionForm = () => {
     timeline: "",
     details: "",
   });
+
+  const STEP_ORDER: FormStep[] = ["info", "property", "details"];
+  const autosave = useFormAutosave("inspection-form", formData, {
+    step: STEP_ORDER.indexOf(currentStep),
+    enabled: !submitted,
+    onRestore: (saved, savedStep) => {
+      setFormData((d) => ({ ...d, ...saved }));
+      if (typeof savedStep === "number" && STEP_ORDER[savedStep]) setCurrentStep(STEP_ORDER[savedStep]);
+    },
+  });
+
 
   const contact = useContactValidation({
     name: formData.name,
@@ -96,6 +108,7 @@ const InspectionForm = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
+      autosave.clear();
     }, 1200);
   };
 
