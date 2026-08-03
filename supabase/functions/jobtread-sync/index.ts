@@ -475,17 +475,24 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   kv("Consent Text", row.consent_text);
   lines.push("Privacy Policy: https://highlandernc.com/privacy-policy");
 
-  const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
-  const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
-  const uploadLinks = [...photos, ...files]
-    .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
-    .filter(Boolean) as string[];
+  // Attachments: signed download links when available, plus an explicit list
+  // of files that failed so the team knows what to ask the customer to resend.
+  const resolved: AttachmentInfo = attachments ?? {
+    files: attachmentEntries(row)
+      .filter((e) => e.url)
+      .map((e) => ({ name: e.name, url: e.url! })),
+    failures: uploadFailures(row),
+  };
   section("Files");
-  if (uploadLinks.length) {
-    lines.push("Uploaded Files:");
-    uploadLinks.forEach((link) => lines.push(`  • ${link}`));
+  if (resolved.files.length) {
+    lines.push(`Uploaded Files: ${resolved.files.length}`);
+    resolved.files.forEach((f) => lines.push(`  • ${f.name} — ${f.url}`));
   } else {
     lines.push("Uploaded Files: None");
+  }
+  if (resolved.failures.length) {
+    lines.push(`Files That Failed To Upload: ${resolved.failures.length} — ask the customer to resend`);
+    resolved.failures.forEach((f) => lines.push(`  • ${f.name} — ${f.reason}`));
   }
 
   if (isChatbotLead) {
