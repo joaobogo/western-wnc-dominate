@@ -390,16 +390,19 @@ export default function ConstructionConsultation() {
         await submitLead({
           source: "construction_consultation_form",
           lead_type: "construction",
-          name: form.name,
+          full_name: form.name,
           email: form.email,
           phone: form.phone || null,
           property_town: form.town,
+          property_state: "NC",
           service_category: "construction",
           project_type: form.projectType,
+          timeline: form.timeline,
           urgency: form.timeline === "1-3-months" ? "medium" : "low",
+          budget_range: form.budgetRange || null,
           has_plans: form.hasPlans === "yes-pro-plans" || form.hasPlans === "yes-sketches",
           project_description: form.description || null,
-          metadata: { goals: form.projectGoals, planStatus: form.hasPlans, budgetRange: form.budgetRange },
+          metadata: { goals: form.projectGoals, planStatus: form.hasPlans },
         });
       } catch (e) { console.error(e); }
       setSubmitted(true);
