@@ -46,7 +46,7 @@ const formatPostDate = (date: string) =>
   new Date(`${date}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
 const isRecent = (date: string) =>
-  Date.now() - new Date(`${date}T12:00:00`).getTime() < 1000 * 60 * 60 * 24 * 45;
+  Date.now() - new Date(`${date}T12:00:00`).getTime() < 1000 * 60 * 60 * 24 * 14;
 
 
 /* Seasonal awareness */
