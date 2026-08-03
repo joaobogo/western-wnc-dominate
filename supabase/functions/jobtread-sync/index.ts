@@ -515,30 +515,90 @@ function buildLeadNotes(row: LeadRow): string {
  * short error string describing the violation. Used both at send-time (to
  * refuse malformed writes) and by the regression checks.
  */
-function validateCustomerAccountName(
+/**
+ * Service words that may never START a Customer / Account Name. A person or
+ * company name never begins with the service they asked about.
+ */
+const SERVICE_CATEGORY_PREFIXES = [
+  "roof", "roofing", "reroof", "re-roof", "roof repair", "roof replacement",
+  "metal roofing", "synthetic roofing", "commercial roofing", "residential roofing",
+  "storm", "storm damage", "hail", "wind damage", "leak", "emergency",
+  "construction", "renovation", "remodel", "remodeling", "addition", "additions",
+  "custom home", "design", "design services", "design planning", "planning",
+  "gutter", "gutters", "skylight", "skylights", "siding", "windows", "doors",
+  "deck", "decks", "patio", "pergola", "outdoor living", "home repairs",
+  "repair", "repairs", "replacement", "inspection", "estimate", "quote",
+  "maintenance", "service", "general contracting",
+];
+
+const STREET_SUFFIXES =
+  "st|street|rd|road|ave|avenue|dr|drive|ln|lane|way|blvd|boulevard|ct|court|cir|circle|hwy|highway|pkwy|parkway|ter|terrace|trl|trail|pl|place|loop|run|ridge|holw|hollow";
+
+/**
+ * Validates a candidate Customer / Account Name against the six locked rules:
+ *
+ *   1. Never equal to the Job name.
+ *   2. Never equal to the Location display name.
+ *   3. Never contains the street address.
+ *   4. Never contains a 5-digit ZIP.
+ *   5. Never starts with a service category.
+ *   6. Never contains "Inquiry" or "Website Lead".
+ *
+ * Returns null when the name is clean, or a short error string describing the
+ * violation. Used at send-time to refuse malformed writes (the lead is then
+ * marked `retry_needed` and stays queued locally) and by regression checks.
+ */
+export function validateCustomerAccountName(
   name: string,
   ctx: { jobName?: string; locationName?: string; propertyAddress?: string; serviceCategory?: string } = {},
 ): string | null {
   const n = cleanName(name);
   if (!n) return "empty customer name";
 
-  // Structural red flags — Customer must never look like a Job/Location/service tag.
-  if (/\bInquiry\b/i.test(n)) return "customer name contains 'Inquiry'";
-  if (/\bWebsite Lead\b/i.test(n)) return "customer name contains 'Website Lead'";
-  if (/^(Roofing|Construction|Repair|Replacement|Home Repairs|Gutters|Skylights)\b/i.test(n))
-    return "customer name starts with service category";
-  if (/\b\d{5}\b/.test(n)) return "customer name contains ZIP code";
-  // Full street address heuristic: leading number + street word.
-  if (/^\d+\s+\S+.*\b(st|street|rd|road|ave|avenue|dr|drive|ln|lane|way|blvd|ct|court|hwy|highway)\b/i.test(n))
-    return "customer name contains a street address";
+  // Compare ignoring case, punctuation and spacing so cosmetic differences
+  // ("Roofing - Highlands - John" vs "Roofing – Highlands – John") still match.
+  const norm = (v: string) =>
+    cleanName(v).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const nNorm = norm(n);
 
-  const eq = (a?: string) => a && cleanName(a).toLowerCase() === n.toLowerCase();
-  if (eq(ctx.jobName)) return "customer name equals job name";
-  if (eq(ctx.locationName)) return "customer name equals location display name";
-  if (ctx.propertyAddress && n.toLowerCase().includes(cleanName(ctx.propertyAddress).toLowerCase()) && cleanName(ctx.propertyAddress).length > 4)
-    return "customer name contains property address";
-  if (ctx.serviceCategory && n.toLowerCase().startsWith(cleanName(ctx.serviceCategory).toLowerCase() + " "))
-    return "customer name starts with service category prefix";
+  // Rule 6 — never a lead/job label.
+  if (/inquiry/i.test(n)) return "customer name contains 'Inquiry'";
+  if (/website\s*lead/i.test(n)) return "customer name contains 'Website Lead'";
+  if (/\blead\b/i.test(n)) return "customer name contains 'Lead'";
+
+  // Rule 5 — never starts with a service category (static list + submitted one).
+  const startsWithCategory = SERVICE_CATEGORY_PREFIXES.some((cat) => {
+    const c = norm(cat);
+    return nNorm === c || nNorm.startsWith(c + " ");
+  });
+  if (startsWithCategory) return "customer name starts with service category";
+  if (ctx.serviceCategory) {
+    const c = norm(ctx.serviceCategory);
+    if (c && (nNorm === c || nNorm.startsWith(c + " ")))
+      return "customer name starts with service category";
+  }
+
+  // Rule 4 — never a ZIP (5-digit, or ZIP+4).
+  if (/(?<!\d)\d{5}(?:-\d{4})?(?!\d)/.test(n)) return "customer name contains ZIP code";
+
+  // Rule 3 — never a street address: leading house number, any street suffix,
+  // PO boxes, or unit designators.
+  if (new RegExp(`\\b(${STREET_SUFFIXES})\\b`, "i").test(n))
+    return "customer name contains a street address";
+  if (/^\s*\d+\s+\S+/.test(n)) return "customer name contains a street address";
+  if (/\bp\.?\s*o\.?\s*box\b/i.test(n)) return "customer name contains a street address";
+  if (/\b(apt|apartment|suite|ste|unit|lot|#\s*\d+)\b/i.test(n))
+    return "customer name contains a street address";
+  if (ctx.propertyAddress) {
+    const addr = norm(ctx.propertyAddress);
+    if (addr.length > 4 && (nNorm.includes(addr) || addr.includes(nNorm)))
+      return "customer name contains property address";
+  }
+
+  // Rules 1 & 2 — never the Job or Location name.
+  if (ctx.jobName && norm(ctx.jobName) === nNorm) return "customer name equals job name";
+  if (ctx.locationName && norm(ctx.locationName) === nNorm)
+    return "customer name equals location display name";
 
   return null;
 }
@@ -1187,8 +1247,11 @@ Deno.serve(async (req) => {
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
   } else {
+    // A name-rule violation is not a transport failure: keep the lead queued
+    // locally as `retry_needed` so the team can supply a real customer name.
+    const nameViolation = String(result.error ?? "").startsWith("retry_needed:");
     await admin.from(table).update({
-      jobtread_sync_status: "failed",
+      jobtread_sync_status: nameViolation ? "retry_needed" : "failed",
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: sanitizeError(result.error ?? "Unknown JobTread error"),
       jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
@@ -1199,7 +1262,13 @@ Deno.serve(async (req) => {
   // Never leak raw upstream error text back to the caller.
   const safeResult = result.ok
     ? result
-    : { ok: false, error: "sync_failed", retryable: true };
+    : {
+        ok: false,
+        error: String(result.error ?? "").startsWith("retry_needed:")
+          ? "retry_needed"
+          : "sync_failed",
+        retryable: true,
+      };
   return new Response(JSON.stringify(safeResult), {
     status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
   });
