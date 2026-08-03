@@ -71,10 +71,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
 
       <form
         className="space-y-4"
-        onSubmit={(event) => {
+        onSubmit={async (event) => {
           event.preventDefault();
+          if (submitting) return;
           if (!contact.markAttempted()) return;
-          submitLead({
+          await submit({
             source: "fast_lead_form",
             lead_type: serviceLabel,
             full_name: contact.values.name,
@@ -83,7 +84,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             property_state: "NC",
             timeline: formData.urgency,
             service_category: serviceLabel,
-          }).catch((err) => console.error("FastLeadForm submitLead failed:", err));
+          });
           setSubmitted(true);
         }}
       >
@@ -166,10 +167,20 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         <motion.button
           whileTap={{ scale: 0.98 }}
           type="submit"
-          className="inline-flex w-full items-center justify-center gap-2 bg-primary px-5 py-3.5 font-body text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          disabled={submitting}
+          className="inline-flex w-full items-center justify-center gap-2 bg-primary px-5 py-3.5 font-body text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
         >
-          {ctaLabel}
-          <ArrowRight className="h-4 w-4" />
+          {submitting ? (
+            <>
+              Sending…
+              <Loader2 className="h-4 w-4 animate-spin" />
+            </>
+          ) : (
+            <>
+              {ctaLabel}
+              <ArrowRight className="h-4 w-4" />
+            </>
+          )}
         </motion.button>
       </form>
 
