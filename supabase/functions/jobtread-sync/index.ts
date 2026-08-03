@@ -1072,12 +1072,11 @@ export function scrubDescription<T extends Record<string, any>>(input: T): T {
 export function truncateNotePreservingFiles(note: string, max = 1000): string {
   if (!note || note.length <= max) return note;
   const lines = note.split("\n");
-  const start = lines.findIndex((l) => l.trim().toUpperCase().startsWith("FILES"));
+  const start = lines.findIndex((l) => l.trim().toLowerCase() === "files");
   if (start === -1) return note.slice(0, max - 10) + "\n…[truncated]";
   let end = lines.length;
   for (let i = start + 1; i < lines.length; i++) {
-    const l = lines[i];
-    if (/^[A-Z][A-Z &/]+$/.test(l.trim()) && l.trim().length > 2) { end = i; break; }
+    if (lines[i].trim() === "") { end = i; break; }
   }
   const filesBlock = lines.slice(start, end).join("\n");
   const head = lines.slice(0, start).join("\n");
