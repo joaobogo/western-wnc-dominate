@@ -271,7 +271,20 @@ Deno.serve(async (req) => {
         buildSyncExhaustedMessage(row, { table, attempts: body.attempts }),
       );
     } else {
-      await postToTeams(buildLeadMessage(label, row));
+      // The CRM sync runs in parallel with this notification, so the JobTread
+      // job id is often written a second or two later. Re-read once so the
+      // message can carry a direct link instead of nothing.
+      let notifyRow = row;
+      if (!row.jobtread_id) {
+        await new Promise((r) => setTimeout(r, 6000));
+        const { data: fresh } = await supabase
+          .from(table)
+          .select("*")
+          .eq("id", body[key])
+          .maybeSingle();
+        if (fresh) notifyRow = fresh;
+      }
+      await postToTeams(buildLeadMessage(label, notifyRow));
     }
     return new Response(JSON.stringify({ ok: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
