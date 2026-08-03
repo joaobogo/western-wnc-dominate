@@ -274,6 +274,7 @@ export function normalizeLeadPayload(input: LeadPayload) {
     consent_given: input.consent_given ?? true,
     metadata: {
       ...(input.metadata ?? {}),
+      ...(clean(input.decision_maker) ? { decision_maker: clean(input.decision_maker) } : {}),
       ...(attachmentErrors.length ? { attachment_errors: attachmentErrors } : {}),
     },
   };
