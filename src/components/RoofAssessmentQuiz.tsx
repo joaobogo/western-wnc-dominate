@@ -106,12 +106,14 @@ const RoofAssessmentQuiz = () => {
       submitLead({
         source: "roof_assessment_quiz",
         lead_type: "roof_assessment",
-        name: contact.name,
+        full_name: contact.name,
         email: contact.email,
         phone: contact.phone || null,
         service_category: "roofing",
+        property_state: "NC",
         project_description: `Quiz score ${totalScore}/19 — ${getResult(totalScore).level}`,
         urgency: getResult(totalScore).level === "urgent" ? "high" : getResult(totalScore).level === "caution" ? "medium" : "low",
+        timeline: getResult(totalScore).level === "urgent" ? "emergency" : "exploring",
         metadata: { quiz_answers: answers, quiz_score: totalScore },
       }).catch((err) => console.error("RoofAssessmentQuiz submitLead failed:", err));
       goTo("result");
