@@ -1391,7 +1391,7 @@ Deno.serve(async (req) => {
       .from("leads")
       .select("id, jobtread_retry_count")
       .in("jobtread_sync_status", ["failed", "retry_needed"])
-      .lt("jobtread_retry_count", 5)
+      .lt("jobtread_retry_count", MAX_SYNC_ATTEMPTS)
       .order("created_at", { ascending: true })
       .limit(limit);
     const results: Array<{ id: string; ok: boolean }> = [];
@@ -1454,6 +1454,14 @@ Deno.serve(async (req) => {
   // Short-circuit if already synced (unless caller passed force=true)
   if (row.jobtread_synced && !body.force) {
     return new Response(JSON.stringify({ ok: true, already_synced: true, id: row.jobtread_id }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
+  // Idempotency: a repeat submission carrying the same client key inside the
+  // 10-minute window is ignored instead of creating duplicate CRM records.
+  if (!body.force && isDuplicateSubmission(row as any, body.idempotency_key)) {
+    return new Response(JSON.stringify({ ok: true, duplicate_ignored: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }
