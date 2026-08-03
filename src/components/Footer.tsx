@@ -73,7 +73,6 @@ const tier2Areas = towns
 // Design, tools, and quote paths — reachable in one click from any page.
 const designLinks = [
   { label: "Design & Layout Planning", href: "/layouts-planning" },
-  { label: "Virtual Roof Designer", href: "/roof-designer" },
   { label: "Request a Quote", href: "/consultation" },
   { label: "Free Roof Inspection", href: "/request-inspection" },
 ];
