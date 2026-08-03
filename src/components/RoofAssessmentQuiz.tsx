@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ClipboardCheck, ArrowRight, ArrowLeft, AlertTriangle, CheckCircle, XCircle, Shield } from "lucide-react";
+import { Loader2, ClipboardCheck, ArrowRight, ArrowLeft, AlertTriangle, CheckCircle, XCircle, Shield } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";

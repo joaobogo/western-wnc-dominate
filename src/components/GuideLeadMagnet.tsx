@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, X, FileText, Shield, CloudLightning, Wrench, CheckCircle } from "lucide-react";
+import { Loader2, Download, X, FileText, Shield, CloudLightning, Wrench, CheckCircle } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 
