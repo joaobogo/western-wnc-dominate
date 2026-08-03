@@ -394,6 +394,8 @@ export type Database = {
       }
       leads: {
         Row: {
+          attachments: Json | null
+          budget_range: string | null
           chat_summary: string | null
           consent_given: boolean | null
           consent_text: string | null
@@ -404,10 +406,12 @@ export type Database = {
           email: string | null
           fbclid: string | null
           files_uploaded: Json | null
+          first_name: string | null
           full_chat_transcript: Json | null
           gclid: string | null
           has_plans: boolean | null
           id: string
+          insurance_status: string | null
           ip_address: string | null
           jobtread_account_id: string | null
           jobtread_error_message: string | null
@@ -417,11 +421,14 @@ export type Database = {
           jobtread_retry_count: number
           jobtread_sync_status: string
           jobtread_synced: boolean
+          last_name: string | null
+          lead_score: number | null
           lead_type: string | null
           li_fat_id: string | null
           metadata: Json | null
           name: string | null
           notes: string | null
+          page_path: string | null
           page_url: string | null
           phone: string | null
           photos_uploaded: Json | null
@@ -429,13 +436,16 @@ export type Database = {
           project_description: string | null
           project_type: string | null
           property_address: string | null
+          property_state: string | null
           property_town: string | null
           property_type: string | null
+          property_zip: string | null
           referrer: string | null
           roofing_issue_type: string | null
           service_category: string | null
           source: string
           status: string
+          timeline: string | null
           updated_at: string
           urgency: string | null
           user_agent: string | null
@@ -446,6 +456,8 @@ export type Database = {
           utm_term: string | null
         }
         Insert: {
+          attachments?: Json | null
+          budget_range?: string | null
           chat_summary?: string | null
           consent_given?: boolean | null
           consent_text?: string | null
@@ -456,10 +468,12 @@ export type Database = {
           email?: string | null
           fbclid?: string | null
           files_uploaded?: Json | null
+          first_name?: string | null
           full_chat_transcript?: Json | null
           gclid?: string | null
           has_plans?: boolean | null
           id?: string
+          insurance_status?: string | null
           ip_address?: string | null
           jobtread_account_id?: string | null
           jobtread_error_message?: string | null
@@ -469,11 +483,14 @@ export type Database = {
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
+          last_name?: string | null
+          lead_score?: number | null
           lead_type?: string | null
           li_fat_id?: string | null
           metadata?: Json | null
           name?: string | null
           notes?: string | null
+          page_path?: string | null
           page_url?: string | null
           phone?: string | null
           photos_uploaded?: Json | null
@@ -481,13 +498,16 @@ export type Database = {
           project_description?: string | null
           project_type?: string | null
           property_address?: string | null
+          property_state?: string | null
           property_town?: string | null
           property_type?: string | null
+          property_zip?: string | null
           referrer?: string | null
           roofing_issue_type?: string | null
           service_category?: string | null
           source: string
           status?: string
+          timeline?: string | null
           updated_at?: string
           urgency?: string | null
           user_agent?: string | null
@@ -498,6 +518,8 @@ export type Database = {
           utm_term?: string | null
         }
         Update: {
+          attachments?: Json | null
+          budget_range?: string | null
           chat_summary?: string | null
           consent_given?: boolean | null
           consent_text?: string | null
@@ -508,10 +530,12 @@ export type Database = {
           email?: string | null
           fbclid?: string | null
           files_uploaded?: Json | null
+          first_name?: string | null
           full_chat_transcript?: Json | null
           gclid?: string | null
           has_plans?: boolean | null
           id?: string
+          insurance_status?: string | null
           ip_address?: string | null
           jobtread_account_id?: string | null
           jobtread_error_message?: string | null
@@ -521,11 +545,14 @@ export type Database = {
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
+          last_name?: string | null
+          lead_score?: number | null
           lead_type?: string | null
           li_fat_id?: string | null
           metadata?: Json | null
           name?: string | null
           notes?: string | null
+          page_path?: string | null
           page_url?: string | null
           phone?: string | null
           photos_uploaded?: Json | null
@@ -533,13 +560,16 @@ export type Database = {
           project_description?: string | null
           project_type?: string | null
           property_address?: string | null
+          property_state?: string | null
           property_town?: string | null
           property_type?: string | null
+          property_zip?: string | null
           referrer?: string | null
           roofing_issue_type?: string | null
           service_category?: string | null
           source?: string
           status?: string
+          timeline?: string | null
           updated_at?: string
           urgency?: string | null
           user_agent?: string | null
