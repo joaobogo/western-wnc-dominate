@@ -618,8 +618,8 @@ export function buildJobName(row: LeadRow): string {
 }
 
 /** Lead Notes = full intake summary. Stored ONLY on Job custom field. */
-function buildLeadNotes(row: LeadRow): string {
-  return buildHumanNote(row);
+function buildLeadNotes(row: LeadRow, attachments?: AttachmentInfo): string {
+  return buildHumanNote(row, attachments);
 }
 
 /**
