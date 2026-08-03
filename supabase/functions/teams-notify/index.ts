@@ -29,6 +29,41 @@ const CHANNEL_ID =
 
 const SITE = "https://highlandernc.com";
 
+// Deep link to a Job inside the JobTread web app.
+const JOBTREAD_APP =
+  (Deno.env.get("JOBTREAD_APP_BASE_URL") ?? "https://app.jobtread.com").replace(/\/+$/, "");
+
+/** Threshold for the distinct "hot lead" alert style. */
+const HOT_LEAD_SCORE = 70;
+
+type TierLabel = "Hot" | "Warm" | "Engaged" | "Cool";
+
+/** Mirrors leadTierLabel() in src/lib/lead-scoring.ts. */
+function leadTierLabel(score: number): TierLabel {
+  if (score >= HOT_LEAD_SCORE) return "Hot";
+  if (score >= 50) return "Warm";
+  if (score >= 30) return "Engaged";
+  return "Cool";
+}
+
+const TIER_ICON: Record<TierLabel, string> = {
+  Hot: "🔥",
+  Warm: "🌤️",
+  Engaged: "📋",
+  Cool: "❄️",
+};
+
+function jobtreadLink(jobtreadId: unknown): string {
+  const id = String(jobtreadId ?? "").trim();
+  if (!id) return "";
+  return `${JOBTREAD_APP}/jobs/${encodeURIComponent(id)}`;
+}
+
+function linkLine(label: string, url: string, text: string): string {
+  if (!url) return "";
+  return `<li><b>${esc(label)}:</b> <a href="${esc(url)}">${esc(text)}</a></li>`;
+}
+
 function esc(v: unknown): string {
   return String(v ?? "")
     .replace(/&/g, "&amp;")
@@ -85,11 +120,18 @@ function buildLeadMessage(kind: string, row: Record<string, any>) {
   const town = row.property_town || row.town || "";
   const service =
     row.service_category || row.lead_type || row.project_type || "General inquiry";
+  const score = Number(row.lead_score ?? 0) || 0;
+  const tier = leadTierLabel(score);
+  const hot = tier === "Hot";
   const urgent = /emergency|urgent|asap|active leak/i.test(
     `${row.urgency ?? ""} ${row.project_description ?? ""} ${row.roofing_issue_type ?? ""}`,
   );
+  const jobUrl = jobtreadLink(row.jobtread_id);
 
-  const header = `${urgent ? "🚨 URGENT " : "🟢 "}New ${kind}${town ? ` — ${esc(town)}` : ""}`;
+  // Hot leads get their own alert style so they stand out in the channel.
+  const header = hot
+    ? `🔥 HOT LEAD (${score}/100) — ${esc(town || "Western NC")}`
+    : `${urgent ? "🚨 URGENT " : "🟢 "}New ${kind}${town ? ` — ${esc(town)}` : ""}`;
 
   const items = [
     line("Name", name),
@@ -101,18 +143,26 @@ function buildLeadMessage(kind: string, row: Record<string, any>) {
     line("Project type", row.project_type),
     line("Urgency", row.urgency),
     line("Timeline", row.timeline),
+    line("Lead score", `${score}/100`),
+    line("Tier", `${TIER_ICON[tier]} ${tier}`),
     line("Preferred contact", row.preferred_contact_method),
     line("Property type", row.property_type),
     line("Details", clip(row.project_description || row.summary || row.chat_summary)),
     line("Source", row.source),
-    line("Page", row.page_url),
+    line("Source page", clip(row.page_url || row.page_path, 300)),
     line("Campaign", row.utm_campaign || row.utm_source),
     line("Received", easternTime(row.created_at)),
+    linkLine("JobTread Job", jobUrl, "Open in JobTread"),
   ]
     .filter(Boolean)
     .join("");
 
-  return `<h3>${header}</h3><ul>${items}</ul><p><i>Highlander website intake — also synced to JobTread.</i></p>`;
+  const footer = hot
+    ? `<p><b>Call this lead first — score ${score}/100. Aim to respond within the hour.</b></p>`
+    : `<p><i>Highlander website intake — also synced to JobTread.</i></p>`;
+  const body = `<h3>${header}</h3><ul>${items}</ul>${footer}`;
+  // Hot leads are wrapped in an attention block so Teams renders them distinctly.
+  return hot ? `<blockquote>${body}</blockquote>` : body;
 }
 
 function buildCallMessage(input: Record<string, any>) {
@@ -221,7 +271,20 @@ Deno.serve(async (req) => {
         buildSyncExhaustedMessage(row, { table, attempts: body.attempts }),
       );
     } else {
-      await postToTeams(buildLeadMessage(label, row));
+      // The CRM sync runs in parallel with this notification, so the JobTread
+      // job id is often written a second or two later. Re-read once so the
+      // message can carry a direct link instead of nothing.
+      let notifyRow = row;
+      if (!row.jobtread_id) {
+        await new Promise((r) => setTimeout(r, 6000));
+        const { data: fresh } = await supabase
+          .from(table)
+          .select("*")
+          .eq("id", body[key])
+          .maybeSingle();
+        if (fresh) notifyRow = fresh;
+      }
+      await postToTeams(buildLeadMessage(label, notifyRow));
     }
     return new Response(JSON.stringify({ ok: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },

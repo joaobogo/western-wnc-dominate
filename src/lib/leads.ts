@@ -72,6 +72,11 @@ export type CanonicalLeadPayload = {
   budget_range?: string | null;
   insurance_status?: string | null;
   has_plans?: boolean | null;
+  /**
+   * Who decides on the project ("self" | "joint" | "board" | free text).
+   * Feeds the `decisionMakerOnSite` scoring signal.
+   */
+  decision_maker?: string | null;
   project_description?: string | null;
 
   // ----- Scoring & context -----
@@ -161,6 +166,16 @@ function normalizeAttachments(
 }
 
 /**
+ * True when the person filling the form is the one who decides. Anything that
+ * involves a partner, a board, or another party scores lower.
+ */
+export function decisionMakerOnSite(value?: string | null): boolean {
+  const v = (value || "").toLowerCase().trim();
+  if (!v) return false;
+  return v === "self" || v === "me" || v === "owner" || v === "solo";
+}
+
+/**
  * Fills in every derived field so the row written to `leads` is always the
  * same shape regardless of which form produced it.
  */
@@ -201,6 +216,7 @@ export function normalizeLeadPayload(input: LeadPayload) {
           propertyType: clean(input.property_type) ?? undefined,
           town: clean(input.property_town) ?? undefined,
           budgetReadiness: clean(input.budget_range) ?? undefined,
+          decisionMakerOnSite: decisionMakerOnSite(input.decision_maker),
           description: clean(input.project_description) ?? undefined,
         });
 
@@ -258,6 +274,7 @@ export function normalizeLeadPayload(input: LeadPayload) {
     consent_given: input.consent_given ?? true,
     metadata: {
       ...(input.metadata ?? {}),
+      ...(clean(input.decision_maker) ? { decision_maker: clean(input.decision_maker) } : {}),
       ...(attachmentErrors.length ? { attachment_errors: attachmentErrors } : {}),
     },
   };
