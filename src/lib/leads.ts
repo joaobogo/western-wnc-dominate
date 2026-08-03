@@ -72,6 +72,11 @@ export type CanonicalLeadPayload = {
   budget_range?: string | null;
   insurance_status?: string | null;
   has_plans?: boolean | null;
+  /**
+   * Who decides on the project ("self" | "joint" | "board" | free text).
+   * Feeds the `decisionMakerOnSite` scoring signal.
+   */
+  decision_maker?: string | null;
   project_description?: string | null;
 
   // ----- Scoring & context -----
@@ -201,6 +206,7 @@ export function normalizeLeadPayload(input: LeadPayload) {
           propertyType: clean(input.property_type) ?? undefined,
           town: clean(input.property_town) ?? undefined,
           budgetReadiness: clean(input.budget_range) ?? undefined,
+          decisionMakerOnSite: decisionMakerOnSite(input.decision_maker),
           description: clean(input.project_description) ?? undefined,
         });
 
