@@ -35,10 +35,11 @@ const Careers = () => {
     submitLead({
       source: "careers_application",
       lead_type: "job_application",
-      name: form.name,
+      full_name: form.name,
       phone: form.phone,
       project_type: form.role,
       project_description: form.experience,
+      lead_score: 0,
       metadata: { role: form.role },
     }).catch((err) => console.error("Careers submitLead failed:", err));
     setTimeout(() => {
