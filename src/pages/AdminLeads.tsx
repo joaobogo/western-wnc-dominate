@@ -238,7 +238,10 @@ export default function AdminLeads() {
             <div className="space-y-4 max-w-2xl">
               <div>
                 <h2 className="text-xl font-heading font-bold">{selected.name || "Unnamed lead"}</h2>
-                <p className="text-xs text-muted-foreground">{new Date(selected.created_at).toLocaleString()} · {selected.source}</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <TierPill score={selected.lead_score} />
+                  <p className="text-xs text-muted-foreground">{new Date(selected.created_at).toLocaleString()} · {selected.source}</p>
+                </div>
               </div>
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <Field label="Phone" value={selected.phone} link={selected.phone ? `tel:${selected.phone}` : undefined} />
@@ -269,9 +272,10 @@ export default function AdminLeads() {
                 )}
                 <button
                   onClick={() => retryJobTread(selected.id)}
-                  className="text-xs underline text-primary hover:opacity-80"
+                  disabled={resending === selected.id}
+                  className="text-xs underline text-primary hover:opacity-80 disabled:opacity-50"
                 >
-                  Retry JobTread sync
+                  {resending === selected.id ? "Resending…" : "Resend to CRM"}
                 </button>
               </div>
               {selected.project_description && (
