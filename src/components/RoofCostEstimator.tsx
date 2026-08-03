@@ -79,11 +79,14 @@ const RoofCostEstimator = () => {
       submitLead({
         source: "roof_cost_estimator",
         lead_type: "cost_estimate",
-        name: data.name,
+        full_name: data.name,
         email: data.email,
         phone: data.phone,
         property_town: data.town,
+        property_state: "NC",
         service_category: "roofing",
+        project_type: "replacement",
+        budget_range: `$${est.low.toLocaleString()}–$${est.high.toLocaleString()}`,
         project_description: `Estimator: ${data.size} home, ${data.material}, ${data.condition} condition — $${est.low.toLocaleString()}–$${est.high.toLocaleString()}`,
         metadata: { size: data.size, material: data.material, condition: data.condition, estimate_low: est.low, estimate_high: est.high },
       }).catch((err) => console.error("RoofCostEstimator submitLead failed:", err));
