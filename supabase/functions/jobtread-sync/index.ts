@@ -1092,10 +1092,9 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
     }
 
     const noteFull: string = payload.note ?? "";
-    // JobTread text custom fields cap at 1024 chars.
-    const noteShort = noteFull.length > 1000
-      ? noteFull.slice(0, 990) + "\n…[truncated]"
-      : noteFull;
+    // JobTread text custom fields cap at 1024 chars. Attachment links must
+    // survive truncation — they are the only way the crew reaches the files.
+    const noteShort = truncateNotePreservingFiles(noteFull, 1000);
 
     // Step 1 — dedupe by account name. JobTread enforces unique account
     // names within an org, so look up first and reuse the existing account
