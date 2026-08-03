@@ -531,8 +531,16 @@ const SERVICE_CATEGORY_PREFIXES = [
   "maintenance", "service", "general contracting",
 ];
 
+/** Any street suffix — only address-y when the name also carries a number. */
 const STREET_SUFFIXES =
   "st|street|rd|road|ave|avenue|dr|drive|ln|lane|way|blvd|boulevard|ct|court|cir|circle|hwy|highway|pkwy|parkway|ter|terrace|trl|trail|pl|place|loop|run|ridge|holw|hollow";
+/**
+ * Suffixes that are address-only even without a house number. Ambiguous ones
+ * that double as personal names (Lane, Court, Place, Way, Ridge, Run) are
+ * deliberately excluded to avoid rejecting real customers.
+ */
+const STRONG_STREET_SUFFIXES =
+  "street|road|avenue|boulevard|highway|parkway|terrace|drive|circle";
 
 /**
  * Validates a candidate Customer / Account Name against the six locked rules:
@@ -583,7 +591,10 @@ export function validateCustomerAccountName(
 
   // Rule 3 — never a street address: leading house number, any street suffix,
   // PO boxes, or unit designators.
-  if (new RegExp(`\\b(${STREET_SUFFIXES})\\b`, "i").test(n))
+  const hasNumber = /\d/.test(n);
+  if (hasNumber && new RegExp(`\\b(${STREET_SUFFIXES})\\b`, "i").test(n))
+    return "customer name contains a street address";
+  if (new RegExp(`\\b(${STRONG_STREET_SUFFIXES})\\b`, "i").test(n))
     return "customer name contains a street address";
   if (/^\s*\d+\s+\S+/.test(n)) return "customer name contains a street address";
   if (/\bp\.?\s*o\.?\s*box\b/i.test(n)) return "customer name contains a street address";
