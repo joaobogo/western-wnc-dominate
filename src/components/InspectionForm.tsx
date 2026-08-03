@@ -40,13 +40,12 @@ const InspectionForm = () => {
     details: "",
   });
 
-  const STEP_ORDER: FormStep[] = ["info", "property", "details"];
   const autosave = useFormAutosave("inspection-form", formData, {
-    step: STEP_ORDER.indexOf(currentStep),
+    step: stepOrder.indexOf(currentStep),
     enabled: !submitted,
     onRestore: (saved, savedStep) => {
       setFormData((d) => ({ ...d, ...saved }));
-      if (typeof savedStep === "number" && STEP_ORDER[savedStep]) setCurrentStep(STEP_ORDER[savedStep]);
+      if (typeof savedStep === "number" && stepOrder[savedStep]) setCurrentStep(stepOrder[savedStep]);
     },
   });
 
