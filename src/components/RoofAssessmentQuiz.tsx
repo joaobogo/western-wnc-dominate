@@ -78,6 +78,7 @@ const RoofAssessmentQuiz = () => {
   const [answers, setAnswers] = useState<number[]>([]);
   const [contact, setContact] = useState({ name: "", email: "", phone: "" });
   const [direction, setDirection] = useState(1);
+  const { submitting, submit } = useLeadSubmit();
 
   const totalScore = answers.reduce((sum, s) => sum + s, 0);
   const result = getResult(totalScore);
