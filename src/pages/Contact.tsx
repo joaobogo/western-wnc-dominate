@@ -17,6 +17,7 @@ import {
   TreePine, Hammer, Users, Star, Handshake,
 } from "lucide-react";
 import { MountainContours } from "@/components/motion/BackgroundTexture";
+import { microcopy } from "@/lib/microcopy";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -516,7 +517,7 @@ export default function Contact() {
                           disabled={isSubmitting}
                           className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
                         >
-                          {isSubmitting ? "Sending..." : "Start the Conversation"}
+                          {isSubmitting ? microcopy.loading.submitting : "Start the Conversation"}
                           {!isSubmitting && <ArrowRight className="w-4 h-4" />}
                         </button>
                       </div>
