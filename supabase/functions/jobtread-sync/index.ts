@@ -299,13 +299,6 @@ function buildHumanNote(row: LeadRow): string {
     if (waterEntering) lines.push("*** WATER ACTIVELY ENTERING PROPERTY ***");
   }
 
-  section("Contact");
-  kv("Name", row.name);
-  kv("Phone", row.phone);
-  kv("Secondary Phone", (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null);
-  kv("Email", row.email);
-  kv("Preferred Contact Method", row.preferred_contact_method);
-
   // Metadata fields that may carry extra property/project details submitted
   // by newer form variants without dedicated columns.
   const communityOrSubdivision =
@@ -314,22 +307,39 @@ function buildHumanNote(row: LeadRow): string {
   const roofType = row.roof_type ?? meta.roof_type ?? null;
   const materialColor = row.material_color ?? meta.material_color ?? meta.color ?? null;
   const foundationType = row.foundation_type ?? meta.foundation_type ?? null;
+  const budgetValue =
+    (row as any).budget ?? meta.budget ?? meta.budget_range ?? meta.budgetRange ??
+    meta.project_budget ?? meta.investment_range ?? null;
+  const timelineValue =
+    (row as any).timeline ?? meta.timeline ?? meta.project_timeline ?? meta.start_timeline ??
+    meta.timeframe ?? meta.when ?? null;
+  const stormBlob = (catStr + " " + String(row.source ?? "") + " " + String(row.page_url ?? "")).toLowerCase();
+  const isStormLead = /storm|hail|wind[- ]?damage|insurance|leak/.test(stormBlob);
+  const insuranceValue =
+    (row as any).insurance_status ?? meta.insurance_status ?? meta.insurance ??
+    meta.insurance_claim ?? meta.has_insurance_claim ?? meta.filed_claim ?? null;
+  const insuranceCarrier = meta.insurance_carrier ?? meta.carrier ?? null;
+  const claimNumber = meta.claim_number ?? meta.claimNumber ?? null;
 
-  section("Property");
-  kv("Town", row.property_town);
-  kv("Address", row.property_address);
-  kv("Community/Subdivision", communityOrSubdivision);
-  kv("Gate Code", gateCode);
-  kv("Property Type", row.property_type);
+  // ── ORDER IS CONTRACTUAL (Highlander spec, prompt 08):
+  // source page → service requested → timeline/urgency → property details →
+  // budget → insurance (storm) → customer's verbatim description →
+  // contact preferences → UTM attribution. Do not reorder.
 
-  section("Project");
+  section("Source Page");
+  lines.push("Lead Source: Website");
+  kv("Form", row.source);
+  kv("Page URL", row.page_url);
+  kv("Lead Type", row.lead_type);
+  kv("Submitted At", row.created_at);
+  kv("Referred By", (row as any).referral_source ?? meta.referral_source ?? meta.referred_by ?? meta.how_did_you_hear ?? null);
+
+  section("Service Requested");
   kv("Service Category", row.service_category);
   kv("Project Type", row.project_type);
-  kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
   if (isRoofingCategory) {
     kv("Roof Type", roofType);
     kv("Roofing Issue", row.roofing_issue_type ?? row.project_type);
-    lines.push(`Water Actively Entering: ${waterEntering ? "Yes" : "No"}`);
     kv("Material Color", materialColor);
     kv("Approximate Roof Age", (row as any).roof_age ?? meta.roof_age ?? meta.date_of_roof ?? meta.roof_installed ?? null);
     kv("Material Interest", meta.material_interest ?? meta.material ?? null);
@@ -339,22 +349,43 @@ function buildHumanNote(row: LeadRow): string {
     kv("Foundation Type", foundationType);
   }
 
+  section("Timeline & Urgency");
+  kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
+  kv("Timeline", timelineValue);
+  if (isRoofingCategory) {
+    lines.push(`Water Actively Entering: ${waterEntering ? "Yes" : "No"}`);
+  }
+
+  section("Property");
+  kv("Town", row.property_town);
+  kv("Address", row.property_address);
+  kv("Community/Subdivision", communityOrSubdivision);
+  kv("Gate Code", gateCode);
+  kv("Property Type", row.property_type);
+
+  if (has(budgetValue)) {
+    section("Budget");
+    kv("Budget", budgetValue);
+  }
+
+  if (isStormLead && (has(insuranceValue) || has(insuranceCarrier) || has(claimNumber))) {
+    section("Insurance");
+    kv("Insurance Status", insuranceValue);
+    if (has(insuranceCarrier)) kv("Carrier", insuranceCarrier);
+    if (has(claimNumber)) kv("Claim Number", claimNumber);
+  }
+
   const customerMessage = (row.project_description ?? "").toString().trim();
   section("Customer Message");
   lines.push(customerMessage || NP);
 
-  section("Source");
-  lines.push("Lead Source: Website");
-  kv("Form", row.source);
-  kv("Page URL", row.page_url);
-  kv("Lead Type", row.lead_type);
-  kv("Submitted At", row.created_at);
-  kv("Referred By", (row as any).referral_source ?? meta.referral_source ?? meta.referred_by ?? meta.how_did_you_hear ?? null);
-
-  section("Consent");
-  lines.push(`Consent Given: ${row.consent_given === true ? "true" : row.consent_given === false ? "false" : NP}`);
-  kv("Consent Text", row.consent_text);
-  lines.push("Privacy Policy: https://highlandernc.com/privacy-policy");
+  section("Contact");
+  kv("Name", row.name);
+  kv("Phone", row.phone);
+  kv("Secondary Phone", (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null);
+  kv("Email", row.email);
+  kv("Preferred Contact Method", row.preferred_contact_method);
+  kv("Best Time to Contact", meta.best_time ?? meta.best_time_to_call ?? meta.contact_time ?? null);
 
   section("Tracking");
   kv("UTM Source", row.utm_source);
@@ -369,6 +400,11 @@ function buildHumanNote(row: LeadRow): string {
   kv("Referrer", row.referrer);
   kv("Landing Page", row.landing_page);
   kv("First Visit", row.first_seen_at);
+
+  section("Consent");
+  lines.push(`Consent Given: ${row.consent_given === true ? "true" : row.consent_given === false ? "false" : NP}`);
+  kv("Consent Text", row.consent_text);
+  lines.push("Privacy Policy: https://highlandernc.com/privacy-policy");
 
   const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
   const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
@@ -508,6 +544,53 @@ export function buildJobName(row: LeadRow): string {
 /** Lead Notes = full intake summary. Stored ONLY on Job custom field. */
 function buildLeadNotes(row: LeadRow): string {
   return buildHumanNote(row);
+}
+
+/**
+ * SINGLE-WRITE RULE — the Lead Notes summary is written to exactly ONE
+ * JobTread field: Job → JT_CF.job.lead_notes. It must never be copied into
+ * Location Sales Notes (JT_CF.location.sales_notes) or the Job Description.
+ */
+export function buildLocationCustomFieldValues(opts: {
+  gateCodeBool: boolean;
+  contactName: string;
+  phone?: string | null;
+  email?: string | null;
+}): Record<string, unknown> {
+  // Sales Notes intentionally OMITTED — see SINGLE-WRITE RULE above.
+  return {
+    [JT_CF.location.gate_code]: opts.gateCodeBool,
+    [JT_CF.location.contact_name]: opts.contactName,
+    [JT_CF.location.phone]: opts.phone || "",
+    [JT_CF.location.email]: opts.email || "",
+  };
+}
+
+export function buildJobCustomFieldValues(payload: any, noteShort: string): Record<string, unknown> {
+  return {
+    [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
+    [JT_CF.job.job_type]: mapJobType(payload),
+    [JT_CF.job.scope_type]: mapScopeType(payload),
+    [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
+    [JT_CF.job.customer_present]: false,
+    [JT_CF.job.lead_notes]: noteShort,
+  };
+}
+
+/** Deep-counts how many times `note` appears as a value anywhere in `obj`. */
+export function countNoteWrites(obj: unknown, note: string): number {
+  if (!note) return 0;
+  let n = 0;
+  const walk = (v: unknown) => {
+    if (typeof v === "string") {
+      if (v === note || v.includes(note.slice(0, 200))) n += 1;
+      return;
+    }
+    if (Array.isArray(v)) return v.forEach(walk);
+    if (v && typeof v === "object") Object.values(v as Record<string, unknown>).forEach(walk);
+  };
+  walk(obj);
+  return n;
 }
 
 /**
@@ -1042,19 +1125,15 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           accountId,
           name: locName,
           address: address || null,
-          customFieldValues: {
-            // JobTread requires the "Is There a Gate Code?" boolean on every
-            // Location. Send `true` only when the customer actually submitted
-            // a gate code / entry code; otherwise `false` (safe default).
-            [JT_CF.location.gate_code]: gateCodeBool,
-            [JT_CF.location.contact_name]: contactName,
-            [JT_CF.location.phone]: payload.contact?.phone || "",
-            [JT_CF.location.email]: payload.contact?.email || "",
-            // Sales Notes intentionally OMITTED from the payload — full
-            // website intake summary lives ONLY in Job → Lead Notes
-            // (per Highlander/Robert). Sending the same note here made it
-            // appear twice in JobTread.
-          },
+          // JobTread requires the "Is There a Gate Code?" boolean on every
+          // Location. Sales Notes intentionally OMITTED — full website intake
+          // summary lives ONLY in Job → Lead Notes (single-write rule).
+          customFieldValues: buildLocationCustomFieldValues({
+            gateCodeBool,
+            contactName,
+            phone: payload.contact?.phone,
+            email: payload.contact?.email,
+          }),
         },
         createdLocation: { id: {}, name: {} },
       },
@@ -1090,14 +1169,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           // Description intentionally OMITTED from the payload — Highlander
           // uses JobTread Description for internal scope, not for the
           // website intake summary. Full summary goes into Lead Notes only.
-          customFieldValues: {
-            [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
-            [JT_CF.job.job_type]: mapJobType(payload),
-            [JT_CF.job.scope_type]: mapScopeType(payload),
-            [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
-            [JT_CF.job.customer_present]: false,
-            [JT_CF.job.lead_notes]: noteShort,
-          },
+          customFieldValues: buildJobCustomFieldValues(payload, noteShort),
         }),
         createdJob: { id: {}, name: {} },
       },
