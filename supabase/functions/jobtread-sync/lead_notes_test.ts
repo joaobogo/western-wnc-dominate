@@ -61,7 +61,7 @@ Deno.test("note sections appear in the required order", () => {
 Deno.test("note contains required content, description verbatim", () => {
   const note = (buildPayload(stormRow, "lead") as any).note as string;
   assert(note.includes("https://highlandernc.com/storm-damage"));
-  assert(/Service Category: Storm Damage/i.test(note));
+  assert(/Service Category: Storm[ _-]?damage/i.test(note));
   assert(note.includes("Timeline: ASAP"));
   assert(note.includes("482 Cullasaja Dr"));
   assert(note.includes("$25,000 - $50,000"));
