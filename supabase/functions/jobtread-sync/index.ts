@@ -547,6 +547,53 @@ function buildLeadNotes(row: LeadRow): string {
 }
 
 /**
+ * SINGLE-WRITE RULE — the Lead Notes summary is written to exactly ONE
+ * JobTread field: Job → JT_CF.job.lead_notes. It must never be copied into
+ * Location Sales Notes (JT_CF.location.sales_notes) or the Job Description.
+ */
+export function buildLocationCustomFieldValues(opts: {
+  gateCodeBool: boolean;
+  contactName: string;
+  phone?: string | null;
+  email?: string | null;
+}): Record<string, unknown> {
+  // Sales Notes intentionally OMITTED — see SINGLE-WRITE RULE above.
+  return {
+    [JT_CF.location.gate_code]: opts.gateCodeBool,
+    [JT_CF.location.contact_name]: opts.contactName,
+    [JT_CF.location.phone]: opts.phone || "",
+    [JT_CF.location.email]: opts.email || "",
+  };
+}
+
+export function buildJobCustomFieldValues(payload: any, noteShort: string): Record<string, unknown> {
+  return {
+    [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
+    [JT_CF.job.job_type]: mapJobType(payload),
+    [JT_CF.job.scope_type]: mapScopeType(payload),
+    [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
+    [JT_CF.job.customer_present]: false,
+    [JT_CF.job.lead_notes]: noteShort,
+  };
+}
+
+/** Deep-counts how many times `note` appears as a value anywhere in `obj`. */
+export function countNoteWrites(obj: unknown, note: string): number {
+  if (!note) return 0;
+  let n = 0;
+  const walk = (v: unknown) => {
+    if (typeof v === "string") {
+      if (v === note || v.includes(note.slice(0, 200))) n += 1;
+      return;
+    }
+    if (Array.isArray(v)) return v.forEach(walk);
+    if (v && typeof v === "object") Object.values(v as Record<string, unknown>).forEach(walk);
+  };
+  walk(obj);
+  return n;
+}
+
+/**
  * Validates a candidate Customer / Account Name. Returns null if OK, or a
  * short error string describing the violation. Used both at send-time (to
  * refuse malformed writes) and by the regression checks.
