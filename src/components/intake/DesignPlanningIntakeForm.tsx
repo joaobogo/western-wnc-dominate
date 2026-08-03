@@ -11,6 +11,7 @@ import { useFormAutosave } from "@/hooks/use-form-autosave";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
 import FormConsent from "@/components/FormConsent";
+import { actionableError } from "@/lib/microcopy";
 
 const PROJECT_TYPE_OPTIONS = [
   { value: "addition",   label: "Addition",        sub: "Master suite, guest wing, room extension" },
@@ -179,7 +180,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
       setSubmitted(true);
       autosave.clear();
     } catch (e: any) {
-      setError(e?.message || "Something went wrong. Please call (828) 524-7773.");
+      setError(actionableError(e, "lead"));
     } finally {
       setSubmitting(false);
     }

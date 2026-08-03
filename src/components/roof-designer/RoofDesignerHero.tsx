@@ -4,6 +4,7 @@ import { Upload, Camera, Image, Sparkles, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { actionableError } from "@/lib/microcopy";
 
 interface RoofDesignerHeroProps {
   onImageUploaded: (imageUrl: string) => void;
@@ -69,7 +70,7 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
       toast.success("Photo uploaded! Analyzing your roof...");
     } catch (err) {
       console.error("Upload error:", err);
-      toast.error("Upload failed. Please try again.");
+      toast.error(actionableError(err, "upload"));
     } finally {
       setIsUploading(false);
     }

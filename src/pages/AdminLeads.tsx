@@ -156,7 +156,7 @@ export default function AdminLeads() {
     setSyncFilter("all"); setFromDate(""); setToDate("");
   };
 
-  if (loading) return <div className="p-10 text-sm">Loading…</div>;
+  if (loading) return <div className="p-10 text-sm">Loading leads…</div>;
   if (!authed) return null;
   if (!isAdmin) {
     return (
@@ -205,7 +205,7 @@ export default function AdminLeads() {
         <div className="border-r border-border overflow-auto max-h-[calc(100vh-65px)]">
           {filtered.length === 0 && (
             <p className="p-6 text-sm text-muted-foreground">
-              {leads.length === 0 ? "No leads yet." : "No leads match these filters."}
+              {leads.length === 0 ? "No leads captured yet. New submissions appear here within seconds." : "No leads match these filters. Clear a filter or widen the date range."}
             </p>
           )}
           {filtered.map(l => (

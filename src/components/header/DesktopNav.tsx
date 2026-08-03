@@ -27,6 +27,8 @@ export const DesktopNav = forwardRef<HTMLElement, Props>(
           isOpen={openDropdown === div.label}
           onEnter={() => onEnter(div.label)}
           onLeave={onLeave}
+          onOpen={() => onOpen(div.label)}
+          onClose={onClose}
           isActive={isActive}
           onViewAllClick={onViewAllClick}
         />

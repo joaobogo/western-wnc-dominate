@@ -13,6 +13,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { syncConsultationRequestToJobTread } from "@/lib/leads";
 import { toast } from "@/hooks/use-toast";
 import {
+import { actionableError, errorTitle } from "@/lib/microcopy";
   Home, Building2, Hammer, CloudLightning, PlusCircle,
   Paintbrush, TreePine, Wrench, MapPin, Clock, User, FileText
 } from "lucide-react";
@@ -392,7 +393,7 @@ export default function QuoteFlow() {
       autosave.clear();
     } catch (err) {
       console.error("Submit error:", err);
-      toast({ title: "Something went wrong", description: "Please try again or call us at (828) 524-7773.", variant: "destructive" });
+      toast({ title: errorTitle("lead"), description: actionableError(err, "lead"), variant: "destructive" });
     }
     setIsSubmitting(false);
   };

@@ -24,6 +24,7 @@ import heroDeck from "@/assets/gallery/cedar-002.jpg";
 import heroRenov from "@/assets/gallery/asphalt-005.jpg";
 import heroOutdoor from "@/assets/gallery/cedar-005.jpg";
 import heroFlatwork from "@/assets/gallery/asphalt-006.webp";
+import { actionableError } from "@/lib/microcopy";
 
 const PROJECT_TYPES: VisualChoice[] = [
   { value: "addition", label: "Addition / Extension", sub: "Expand the footprint of your home", image: heroAddition },
@@ -256,7 +257,7 @@ const ConstructionBuilder = () => {
       });
       setSubmitted(true);
     } catch (e: any) {
-      setError(e?.message || "Something went wrong. Please call (828) 524-7773.");
+      setError(actionableError(e, "lead"));
     } finally {
       setSubmitting(false);
     }

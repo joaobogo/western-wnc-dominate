@@ -5,6 +5,7 @@ import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.svg";
 import SocialLinks from "@/components/SocialLinks";
+import { towns } from "@/data/towns";
 
 const roofingLinks = [
   { label: "Residential Roofing", href: "/roofing/residential" },
@@ -61,13 +62,19 @@ const tier1Areas = [
   { label: "Sylva", href: "/service-areas/sylva-nc" },
 ];
 
-// Tier 2 — extended WNC coverage
-const tier2Areas = [
-  { label: "Brevard", href: "/service-areas/brevard-nc" },
-  { label: "Waynesville", href: "/service-areas/waynesville-nc" },
-  { label: "Bryson City", href: "/service-areas/bryson-city-nc" },
-  { label: "Murphy", href: "/service-areas/murphy-nc" },
-  { label: "Hayesville", href: "/service-areas/hayesville-nc" },
+// Tier 2 — every remaining town we serve, generated from the town data so the
+// footer link map stays complete for crawlers as new markets are added.
+const tier1Slugs = new Set(tier1Areas.map((a) => a.href));
+const tier2Areas = towns
+  .map((t) => ({ label: t.name, href: `/service-areas/${t.slug}` }))
+  .filter((t) => !tier1Slugs.has(t.href))
+  .sort((a, b) => a.label.localeCompare(b.label));
+
+// Design, tools, and quote paths — reachable in one click from any page.
+const designLinks = [
+  { label: "Design & Layout Planning", href: "/layouts-planning" },
+  { label: "Request a Quote", href: "/consultation" },
+  { label: "Free Roof Inspection", href: "/request-inspection" },
 ];
 
 const certifications = [
@@ -291,6 +298,11 @@ const Footer = () => {
             <h4 className="eyebrow text-primary mb-4">Resources</h4>
             <nav className="flex flex-col gap-2">
               {resourceLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
+            </nav>
+
+            <h4 className="eyebrow text-primary mt-8 mb-4">Design &amp; Tools</h4>
+            <nav className="flex flex-col gap-2">
+              {designLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
 
             <h4 className="eyebrow text-primary mt-8 mb-4">Company</h4>

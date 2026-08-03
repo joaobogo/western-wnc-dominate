@@ -13,6 +13,7 @@ import { useFormAutosave } from "@/hooks/use-form-autosave";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
 import FormConsent from "@/components/FormConsent";
+import { actionableError } from "@/lib/microcopy";
 
 type Step = number;
 
@@ -200,7 +201,7 @@ const RoofingIntakeForm = () => {
       setSubmitted(true);
       autosave.clear();
     } catch (e: any) {
-      setError(e?.message || "Something went wrong. Please call (828) 524-7773 and we'll take it from there.");
+      setError(actionableError(e, "lead"));
     } finally {
       setSubmitting(false);
     }

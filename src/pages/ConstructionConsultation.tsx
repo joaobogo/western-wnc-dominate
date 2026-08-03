@@ -8,6 +8,7 @@ import { ConfirmationState } from "@/components/conversion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import {
+import { actionableError, errorTitle } from "@/lib/microcopy";
   HardHat, Home, Paintbrush, TreePine, Wrench, Compass,
   ArrowRight, ArrowLeft, CheckCircle, Loader2,
   Calendar, MessageSquare, Target, Lightbulb,
@@ -408,7 +409,7 @@ export default function ConstructionConsultation() {
       setSubmitted(true);
     } catch (err) {
       console.error("Submit error:", err);
-      toast({ title: "Something went wrong", description: "Please try again or call us at (828) 524-7773.", variant: "destructive" });
+      toast({ title: errorTitle("lead"), description: actionableError(err, "lead"), variant: "destructive" });
     }
     setIsSubmitting(false);
   };

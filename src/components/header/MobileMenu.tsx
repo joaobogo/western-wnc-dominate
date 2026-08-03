@@ -44,6 +44,8 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               >
                 <button
                   onClick={() => setExpanded(expanded === div.label ? null : div.label)}
+                  aria-expanded={expanded === div.label}
+                  aria-controls={`mobile-${div.label.toLowerCase()}-panel`}
                   className={`w-full py-2.5 px-2.5 rounded-sm transition-all duration-200 flex items-center justify-between min-h-[48px] ${
                     isActive(div.href) ? "text-heritage-charcoal bg-black/5" : "text-heritage-charcoal/90 hover:bg-black/5"
                   }`}
@@ -74,6 +76,9 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
                       className="overflow-hidden"
+                      id={`mobile-${div.label.toLowerCase()}-panel`}
+                      role="region"
+                      aria-label={`${div.label} services`}
                     >
                       <div className={`ml-3.5 pl-3 pb-1.5 space-y-0 border-l-2 ${
                         div.accent === "green" ? "border-primary/15" : "border-[hsl(var(--highland-gold)/0.15)]"
@@ -124,6 +129,18 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               onNavigate={onClose}
               btnRef={serviceAreasBtnRef}
             />
+
+            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.19, duration: 0.3, ease: HIGHLAND_EASE }}>
+              <Link
+                to="/layouts-planning"
+                onClick={onClose}
+                className={`py-2.5 px-2.5 text-[15px] font-bold rounded-sm transition-all flex items-center gap-2 font-body min-h-[44px] ${
+                  isActive("/layouts-planning") ? "text-heritage-charcoal bg-black/5" : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"
+                }`}
+              >
+                Design
+              </Link>
+            </motion.div>
 
             {secondaryLinks.map((link, i) => (
               <motion.div key={link.label} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.03, duration: 0.3, ease: HIGHLAND_EASE }}>

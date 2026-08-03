@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
@@ -10,12 +11,44 @@ interface Props {
   onLeave: () => void;
   isActive: (href: string) => boolean;
   onViewAllClick: (e: React.MouseEvent, href: string) => void;
+  onOpen: () => void;
+  onClose: () => void;
 }
 
-export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isActive, onViewAllClick }: Props) => (
-  <div className="relative" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isActive, onViewAllClick, onOpen, onClose }: Props) => {
+  const panelRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLAnchorElement>(null);
+  const menuId = `nav-${div.label.toLowerCase()}-menu`;
+
+  return (
+  <div
+    className="relative"
+    onMouseEnter={onEnter}
+    onMouseLeave={onLeave}
+    onFocus={onEnter}
+    onBlur={(e) => {
+      if (!e.currentTarget.contains(e.relatedTarget as Node)) onClose();
+    }}
+  >
     <Link
       to={div.href}
+      ref={triggerRef}
+      aria-haspopup="menu"
+      aria-expanded={isOpen}
+      aria-controls={menuId}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          onOpen();
+          requestAnimationFrame(() => {
+            panelRef.current?.querySelector<HTMLAnchorElement>('[role="menuitem"]')?.focus();
+          });
+        } else if (e.key === "Escape" && isOpen) {
+          e.preventDefault();
+          onClose();
+          triggerRef.current?.focus();
+        }
+      }}
       className={`relative text-[15px] font-bold transition-all duration-300 inline-flex items-center gap-1.5 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
         isActive(div.href)
           ? "text-heritage-charcoal bg-black/5"
@@ -43,6 +76,17 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
           exit={{ opacity: 0, y: 6, scale: 0.98 }}
           transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
           className="absolute top-full left-0 pt-2.5"
+          ref={panelRef}
+          id={menuId}
+          role="menu"
+          aria-label={`${div.label} services`}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") {
+              e.preventDefault();
+              onClose();
+              triggerRef.current?.focus();
+            }
+          }}
         >
           <div className="bg-card border border-border rounded-sm shadow-[0_20px_60px_-15px_hsl(var(--heritage-charcoal)/0.15)] min-w-[340px] relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
@@ -75,6 +119,8 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                 <motion.div key={item.href} custom={i} variants={dropdownItemVariants} initial="hidden" animate="visible">
                   <Link
                     to={item.href}
+                    role="menuitem"
+                    onClick={onClose}
                     className={`group/item flex items-center justify-between px-3 py-2.5 rounded-sm transition-all duration-200 ${
                       isActive(item.href)
                         ? "bg-secondary/60 text-foreground"
@@ -94,6 +140,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
             <div className="border-t border-border/60 mx-2 mt-1">
               <Link
                 to={div.href}
+                role="menuitem"
                 onClick={(e) => onViewAllClick(e, div.href)}
                 className={`flex items-center gap-1.5 px-3 py-3 text-[14px] font-body font-bold rounded-sm transition-colors ${
                   div.accent === "green" ? "text-primary hover:bg-primary/5" : "text-accent hover:bg-accent/5"
@@ -108,4 +155,5 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
       )}
     </AnimatePresence>
   </div>
-);
+  );
+};

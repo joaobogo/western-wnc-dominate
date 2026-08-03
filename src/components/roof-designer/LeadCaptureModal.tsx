@@ -12,6 +12,7 @@ import { z } from "zod";
 import { Link } from "react-router-dom";
 import FormConsent from "@/components/FormConsent";
 import { syncDesignerLeadToJobTread } from "@/lib/leads";
+import { actionableError } from "@/lib/microcopy";
 
 interface LeadCaptureModalProps {
   open: boolean;
@@ -85,7 +86,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
       toast.success("Design saved! Check your email.");
     } catch (err) {
       console.error("Lead capture error:", err);
-      toast.error("Something went wrong. Please try again.");
+      toast.error(actionableError(err, "lead"));
     } finally {
       setIsSubmitting(false);
     }

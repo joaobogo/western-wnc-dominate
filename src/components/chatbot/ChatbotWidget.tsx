@@ -8,6 +8,7 @@ import { trackEvent } from "@/lib/analytics";
 import { submitLead, logChatbotConversation } from "@/lib/leads";
 import { trackChatbotOpen } from "@/lib/gtm";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { actionableError } from "@/lib/microcopy";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -297,7 +298,7 @@ export default function ChatbotWidget() {
 
       if (!resp.ok || !resp.body) {
         const err = await resp.json().catch(() => ({ error: "Connection error" }));
-        setMessages(prev => [...prev, { role: "assistant", content: err.error || "Something went wrong. Please call us at (828) 524-7773." }]);
+        setMessages(prev => [...prev, { role: "assistant", content: err.error || actionableError(null, "chat") }]);
         setIsLoading(false);
         return;
       }
