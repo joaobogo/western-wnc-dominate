@@ -5,6 +5,7 @@ import {
   trackChatbotLeadSubmit,
 } from "@/lib/gtm";
 import { scoreLead } from "@/lib/lead-scoring";
+import { parsePersonName } from "@/lib/name-parser";
 
 export const CONSENT_TEXT =
   "By submitting your information, you agree that Highlander Roofing Services, Inc. may contact you by phone, text, or email about your inquiry, services, scheduling, project follow-up, and review requests. Message and data rates may apply. Reply STOP to opt out of text messages. Reply HELP for help. See our Privacy Policy.";
@@ -76,6 +77,10 @@ export type CanonicalLeadPayload = {
   last_name?: string | null;
   /** Derived from first+last when omitted; split into first/last when provided alone. */
   full_name?: string | null;
+  /** Set automatically when the submitted name looks like a business. */
+  is_company?: boolean | null;
+  /** Business/organization name. Auto-detected from `full_name` when omitted. */
+  company_name?: string | null;
   email?: string | null;
   phone?: string | null;
   preferred_contact_method?: string | null;
