@@ -4,7 +4,7 @@ import { Loader2, ClipboardCheck, ArrowRight, ArrowLeft, AlertTriangle, CheckCir
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
-import { submitLead } from "@/lib/leads";
+import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import FormConsent from "@/components/FormConsent";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -100,10 +100,10 @@ const RoofAssessmentQuiz = () => {
     goTo(stepOrder[currentIndex + 1]);
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (contact.name && contact.email) {
-      submitLead({
+    if (contact.name && contact.email && !submitting) {
+      await submit({
         source: "roof_assessment_quiz",
         lead_type: "roof_assessment",
         full_name: contact.name,
@@ -115,7 +115,7 @@ const RoofAssessmentQuiz = () => {
         urgency: getResult(totalScore).level === "urgent" ? "high" : getResult(totalScore).level === "caution" ? "medium" : "low",
         timeline: getResult(totalScore).level === "urgent" ? "emergency" : "exploring",
         metadata: { quiz_answers: answers, quiz_score: totalScore },
-      }).catch((err) => console.error("RoofAssessmentQuiz submitLead failed:", err));
+      });
       goTo("result");
     }
   };
@@ -237,9 +237,13 @@ const RoofAssessmentQuiz = () => {
                       </div>
                     </div>
                     <FormConsent />
-                    <button type="submit" className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase">
-                      <span className="relative z-10">See My Results</span>
-                      <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
+                    <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase disabled:opacity-60">
+                      <span className="relative z-10">{submitting ? "Sending…" : "See My Results"}</span>
+                      {submitting ? (
+                        <Loader2 className="w-5 h-5 relative z-10 animate-spin" />
+                      ) : (
+                        <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
+                      )}
                     </button>
                   </form>
                   <button onClick={() => goTo("q5")} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">
