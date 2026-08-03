@@ -70,3 +70,20 @@ export function leadTier(score: number): "hot" | "warm" | "nurture" {
   if (score >= 35) return "warm";
   return "nurture";
 }
+
+/**
+ * Four-tier triage label used by the Teams alerts and the admin dashboard.
+ * Hot (70+) is the threshold that triggers the distinct urgent alert style.
+ * `leadTier` above stays as-is because lead routing depends on its 3 tiers.
+ */
+export type LeadTierLabel = "Hot" | "Warm" | "Engaged" | "Cool";
+
+export const HOT_LEAD_SCORE = 70;
+
+export function leadTierLabel(score: number | null | undefined): LeadTierLabel {
+  const s = typeof score === "number" ? score : 0;
+  if (s >= HOT_LEAD_SCORE) return "Hot";
+  if (s >= 50) return "Warm";
+  if (s >= 30) return "Engaged";
+  return "Cool";
+}
