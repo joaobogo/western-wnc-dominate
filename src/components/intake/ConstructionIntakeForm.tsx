@@ -189,6 +189,7 @@ const ConstructionIntakeForm = () => {
           property_type: data.propertyType,
           budget_range: data.budgetReadiness || null,
           has_plans: hasPlansBool ?? null,
+          decision_maker: data.decisionMaker || null,
           project_description: data.description,
           lead_score: score,
           attachments: uploadedPaths,
