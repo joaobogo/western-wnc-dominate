@@ -65,6 +65,15 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
   const set = <K extends keyof typeof data>(k: K, v: (typeof data)[K]) =>
     setData((d) => ({ ...d, [k]: v }));
 
+  const autosave = useFormAutosave(`design-planning-intake-${mode}`, data, {
+    step,
+    enabled: !submitted,
+    onRestore: (saved, savedStep) => {
+      setData((d) => ({ ...d, ...saved }));
+      if (typeof savedStep === "number") setStep(savedStep);
+    },
+  });
+
   const contact = useContactValidation({
     name: data.name,
     email: data.email,
