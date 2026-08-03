@@ -7,6 +7,7 @@ import { Slider } from "@/components/ui/slider";
 import MaterialPanel from "./MaterialPanel";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { actionableError } from "@/lib/microcopy";
 
 interface RoofDesignerWorkspaceProps {
   imageUrl: string;
@@ -321,7 +322,7 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
       onSave(resultCanvas, designId);
     } catch (err) {
       console.error("Save error:", err);
-      toast.error("Failed to save design. Please try again.");
+      toast.error(actionableError(err, "save"));
     } finally {
       setIsSaving(false);
     }

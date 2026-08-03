@@ -25,6 +25,7 @@ import cedar from "@/assets/gallery/cedar-005.jpg";
 import synthetic from "@/assets/gallery/cedar-002.jpg";
 import asphaltDark from "@/assets/gallery/asphalt-004.jpg";
 import metalAlt from "@/assets/gallery/metal-005.webp";
+import { actionableError } from "@/lib/microcopy";
 
 const PROJECT_TYPES: VisualChoice[] = [
   { value: "replacement", label: "Full Replacement", sub: "End-of-life roof, full tear-off", image: asphalt },
@@ -222,7 +223,7 @@ const RoofingBuilder = () => {
       });
       setSubmitted(true);
     } catch (e: any) {
-      setError(e?.message || "Something went wrong. Please call (828) 524-7773.");
+      setError(actionableError(e, "lead"));
     } finally {
       setSubmitting(false);
     }
