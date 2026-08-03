@@ -39,13 +39,14 @@ const categoryConfig: Record<string, { icon: typeof BookOpen; label: string; des
 
 const categories = ["All", ...Array.from(new Set(blogPosts.map((p) => p.category)))];
 
-const featuredSlugs = [
-  "how-much-does-roof-cost-highlands-nc",
-  "metal-vs-shingle-roof-western-nc",
-  "storm-damage-checklist-western-nc",
-  "mountain-home-addition-planning",
-  "mountain-porch-deck-design-wnc",
-];
+const byNewest = (a: { date: string }, b: { date: string }) =>
+  new Date(b.date).getTime() - new Date(a.date).getTime();
+
+const formatPostDate = (date: string) =>
+  new Date(`${date}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+
+const isRecent = (date: string) =>
+  Date.now() - new Date(`${date}T12:00:00`).getTime() < 1000 * 60 * 60 * 24 * 14;
 
 
 /* Seasonal awareness */
@@ -60,6 +61,7 @@ const getSeasonalContext = () => {
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
   const seasonal = useMemo(getSeasonalContext, []);
 
   const filtered = blogPosts
@@ -69,14 +71,16 @@ const Blog = () => {
         !searchQuery ||
         p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    )
+    .slice()
+    .sort((a, b) => (sortOrder === "newest" ? byNewest(a, b) : byNewest(b, a)));
 
-  const featuredPosts = blogPosts.filter((p) => featuredSlugs.includes(p.slug));
+  const featuredPosts = blogPosts.slice().sort(byNewest).slice(0, 5);
   const heroFeatured = featuredPosts[0];
   const sideFeatured = featuredPosts.slice(1);
-  const stormPosts = blogPosts.filter((p) => p.category === "Storm" || p.category === "Maintenance").slice(0, 4);
-  const localPosts = blogPosts.filter((p) => p.town).slice(0, 4);
-  const seasonalPosts = blogPosts.filter((p) => seasonal.categories.includes(p.category)).slice(0, 3);
+  const stormPosts = blogPosts.filter((p) => p.category === "Storm" || p.category === "Maintenance").sort(byNewest).slice(0, 4);
+  const localPosts = blogPosts.filter((p) => p.town).sort(byNewest).slice(0, 4);
+  const seasonalPosts = blogPosts.filter((p) => seasonal.categories.includes(p.category)).sort(byNewest).slice(0, 3);
   const showFeatured = activeCategory === "All" && !searchQuery;
 
   return (
@@ -193,7 +197,7 @@ const Blog = () => {
               >
                 <div className="flex items-center gap-3">
                   <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                  <span className="eyebrow">Editor's Picks</span>
+                  <span className="eyebrow">Latest Articles</span>
                 </div>
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)] mt-3" />
               </motion.div>
@@ -257,10 +261,16 @@ const Blog = () => {
                             />
                           </div>
                           <div className="p-5 md:p-6 flex-1">
-                            <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                            <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3 flex-wrap">
                               <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/15 text-primary">
                                 {post.category}
                               </span>
+                              {isRecent(post.date) && (
+                                <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--highland-gold))]">
+                                  New
+                                </span>
+                              )}
+                              <span className="flex items-center gap-1 font-bold"><Calendar className="w-3 h-3" /> {formatPostDate(post.date)}</span>
                               <span className="flex items-center gap-1 font-bold"><Clock className="w-3 h-3" /> {post.readTime}</span>
                             </div>
                             <h3 className="font-heading font-bold text-foreground text-lg mb-2 group-hover:text-primary transition-colors leading-snug">
@@ -414,7 +424,25 @@ const Blog = () => {
                   <p className="text-muted-foreground text-sm mt-2 max-w-lg">{categoryConfig[activeCategory].description}</p>
                 )}
               </div>
-              <p className="text-muted-foreground text-sm font-body">{filtered.length} article{filtered.length !== 1 ? "s" : ""}</p>
+              <div className="flex items-center gap-4">
+                <p className="text-muted-foreground text-sm font-body">{filtered.length} article{filtered.length !== 1 ? "s" : ""}</p>
+                <div className="flex items-center rounded-sm border border-border bg-card p-0.5">
+                  {(["newest", "oldest"] as const).map((order) => (
+                    <button
+                      key={order}
+                      onClick={() => setSortOrder(order)}
+                      aria-pressed={sortOrder === order}
+                      className={`px-3 py-1.5 text-[10px] font-body font-bold uppercase tracking-[0.14em] rounded-sm transition-all ${
+                        sortOrder === order
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {order === "newest" ? "Newest" : "Oldest"}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </motion.div>
 
             {/* Category pills */}
@@ -454,9 +482,16 @@ const Blog = () => {
                           />
                         </div>
                         <div className="md:col-span-7 p-6 md:p-8 flex flex-col justify-center bg-card">
-                          <span className="text-[9px] font-body font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-primary/10 text-primary inline-block mb-3 w-fit">
-                            {filtered[0].category}
-                          </span>
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-[9px] font-body font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-primary/10 text-primary w-fit">
+                              {filtered[0].category}
+                            </span>
+                            {isRecent(filtered[0].date) && (
+                              <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--highland-gold))] w-fit">
+                                New
+                              </span>
+                            )}
+                          </div>
                           <h3 className="font-heading font-bold text-foreground text-xl md:text-3xl mb-4 group-hover:text-primary transition-colors leading-snug">
                             {filtered[0].title}
                           </h3>
@@ -465,7 +500,7 @@ const Blog = () => {
                           </p>
                           <div className="flex items-center gap-4 text-xs text-muted-foreground">
                             <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {filtered[0].readTime}</span>
-                            <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {filtered[0].date}</span>
+                            <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {formatPostDate(filtered[0].date)}</span>
                             {filtered[0].town && <span className="flex items-center gap-1.5"><Mountain className="w-3.5 h-3.5" /> {filtered[0].town}</span>}
                           </div>
                         </div>
@@ -493,9 +528,16 @@ const Blog = () => {
                           />
                         </div>
                         <div className="p-6 flex-1 flex flex-col bg-card">
-                          <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 bg-primary/10 text-primary mb-3 w-fit">
-                            {post.category}
-                          </span>
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 bg-primary/10 text-primary w-fit">
+                              {post.category}
+                            </span>
+                            {isRecent(post.date) && (
+                              <span className="text-[9px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--highland-gold))] w-fit">
+                                New
+                              </span>
+                            )}
+                          </div>
                           <h3 className="font-heading font-bold text-foreground text-lg mb-3 group-hover:text-primary transition-colors leading-tight">
                             {post.title}
                           </h3>
@@ -503,7 +545,10 @@ const Blog = () => {
                             {post.excerpt}
                           </p>
                           <div className="mt-auto pt-4 border-t border-border flex items-center justify-between text-[11px] text-muted-foreground font-body">
-                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                            <span className="flex items-center gap-2">
+                              <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {formatPostDate(post.date)}</span>
+                              <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                            </span>
                             <span className="font-semibold text-primary group-hover:gap-1.5 transition-all flex items-center gap-1 uppercase tracking-wider text-[10px]">Read More <ArrowRight className="w-3 h-3" /></span>
                           </div>
                         </div>
