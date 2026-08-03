@@ -602,7 +602,7 @@ export function validateCustomerAccountName(
     return "customer name contains a street address";
   if (ctx.propertyAddress) {
     const addr = norm(ctx.propertyAddress);
-    if (addr.length > 4 && (nNorm.includes(addr) || addr.includes(nNorm)))
+    if (addr.length > 4 && nNorm.includes(addr))
       return "customer name contains property address";
   }
 
