@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { installGtmGlobalListeners } from "@/lib/gtm";
+import { captureAttribution } from "@/lib/attribution";
 
 /**
  * SPA route tracker for Google Tag Manager (GTM-W26D39LJ).
@@ -21,6 +22,13 @@ const GTMRouteTracker = () => {
   useEffect(() => {
     installGtmGlobalListeners();
   }, []);
+
+  // Re-capture on every route change. First-touch values already in
+  // sessionStorage always win, so campaign data survives SPA navigation —
+  // this only fills gaps or picks up a campaign link opened mid-session.
+  useEffect(() => {
+    captureAttribution();
+  }, [pathname, search]);
 
   useEffect(() => {
     const url = pathname + search;

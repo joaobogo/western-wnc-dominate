@@ -360,9 +360,15 @@ function buildHumanNote(row: LeadRow): string {
   kv("UTM Source", row.utm_source);
   kv("UTM Medium", row.utm_medium);
   kv("UTM Campaign", row.utm_campaign);
+  kv("UTM Term", row.utm_term);
+  kv("UTM Content", row.utm_content);
   kv("GCLID", row.gclid);
   kv("FBCLID", row.fbclid);
+  kv("MSCLKID", row.msclkid);
   kv("LinkedIn Attribution", row.li_fat_id);
+  kv("Referrer", row.referrer);
+  kv("Landing Page", row.landing_page);
+  kv("First Visit", row.first_seen_at);
 
   const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
   const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
@@ -606,6 +612,9 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       source_form: row.source ?? null,
       source_page_url: row.page_url ?? null,
       referrer: row.referrer ?? null,
+      landing_page: row.landing_page ?? null,
+      landing_url: row.landing_url ?? null,
+      first_seen_at: row.first_seen_at ?? null,
       submitted_at: row.created_at ?? null,
       user_agent: row.user_agent ?? null,
       form: row.source ?? null, // legacy alias
@@ -621,7 +630,11 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       utm_term: row.utm_term ?? null,
       gclid: row.gclid ?? null,
       fbclid: row.fbclid ?? null,
+      msclkid: row.msclkid ?? null,
       li_fat_id: row.li_fat_id ?? null,
+      referrer: row.referrer ?? null,
+      landing_page: row.landing_page ?? null,
+      first_seen_at: row.first_seen_at ?? null,
     },
     consent: {
       consent_given: row.consent_given ?? false,
