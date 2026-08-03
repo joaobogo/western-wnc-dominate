@@ -1,4 +1,6 @@
 import { useState, useCallback } from "react";
+import InlineFieldError from "@/components/forms/InlineFieldError";
+import { useContactValidation } from "@/hooks/use-contact-validation";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
@@ -142,6 +144,13 @@ export default function QuoteFlow() {
   const [form, setForm] = useState<FormData>(INITIAL);
   const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const contact = useContactValidation({
+    name: form.name,
+    email: form.email,
+    phone: form.phone,
+    town: form.town,
+    require: { name: true, email: true },
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
@@ -241,10 +250,13 @@ export default function QuoteFlow() {
               <input
                 value={form.name}
                 onChange={e => update("name", e.target.value)}
+                onBlur={() => contact.blur("name")}
+                aria-invalid={Boolean(contact.errorFor("name")) || undefined}
                 placeholder="Your name"
                 className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 required
               />
+              <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
             </div>
             <div>
               <label className="text-xs font-body font-medium text-foreground mb-1 block">Email Address *</label>
@@ -252,20 +264,28 @@ export default function QuoteFlow() {
                 type="email"
                 value={form.email}
                 onChange={e => update("email", e.target.value)}
+                onBlur={() => contact.blur("email")}
+                aria-invalid={Boolean(contact.errorFor("email")) || undefined}
                 placeholder="you@email.com"
                 className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 required
+                maxLength={255}
               />
+              <InlineFieldError>{contact.errorFor("email")}</InlineFieldError>
             </div>
             <div>
               <label className="text-xs font-body font-medium text-foreground mb-1 block">Phone Number <span className="text-muted-foreground">(optional — speeds up our response)</span></label>
               <input
                 type="tel"
                 value={form.phone}
-                onChange={e => update("phone", e.target.value)}
+                onChange={e => update("phone", contact.formatPhoneInput(e.target.value))}
+                onBlur={() => contact.blur("phone")}
+                aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
+                inputMode="tel"
                 placeholder="(828) 000-0000"
                 className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
+              <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
             </div>
           </div>
         </div>
@@ -280,7 +300,7 @@ export default function QuoteFlow() {
       case 2: return !!form.town;
       case 3: return !!form.timeline;
       case 4: return true; // description is optional
-      case 5: return !!form.name && !!form.email;
+      case 5: return contact.valid;
       default: return false;
     }
   };
@@ -289,7 +309,7 @@ export default function QuoteFlow() {
   const handlePrev = () => { if (step > 0) setStep(s => s - 1); };
 
   const handleSubmit = async () => {
-    if (!form.name || !form.email) return;
+    if (!contact.markAttempted()) return;
     setIsSubmitting(true);
 
     // Calculate lead score
@@ -306,10 +326,10 @@ export default function QuoteFlow() {
       const consultId = (typeof crypto !== "undefined" && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}`;
       const { error } = await supabase.from("consultation_requests").insert({
         id: consultId,
-        name: form.name,
-        email: form.email,
-        phone: form.phone || null,
-        town: form.town,
+        name: contact.values.name,
+        email: contact.values.email,
+        phone: contact.values.phone,
+        town: contact.values.town,
         project_type: form.projectType || null,
         service_category: form.serviceCategory,
         timeline: form.timeline,
@@ -329,10 +349,10 @@ export default function QuoteFlow() {
         await submitLead({
           source: "quote_flow",
           lead_type: form.serviceCategory || "general_inquiry",
-          full_name: form.name,
-          email: form.email,
-          phone: form.phone || null,
-          property_town: form.town,
+          full_name: contact.values.name,
+          email: contact.values.email,
+          phone: contact.values.phone,
+          property_town: contact.values.town,
           property_state: "NC",
           property_type: form.propertyType || null,
           service_category: form.serviceCategory,

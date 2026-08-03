@@ -7,7 +7,8 @@ import { trackEvent } from "@/lib/analytics";
 import { scoreLead } from "@/lib/lead-scoring";
 import { deriveConstructionRouting } from "@/lib/lead-routing";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
-import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots } from "./IntakeFieldKit";
+import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots, FieldError } from "./IntakeFieldKit";
+import { useContactValidation } from "@/hooks/use-contact-validation";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
 import FormConsent from "@/components/FormConsent";
@@ -76,18 +77,27 @@ const ConstructionIntakeForm = () => {
   const set = <K extends keyof typeof data>(k: K, v: (typeof data)[K]) =>
     setData((d) => ({ ...d, [k]: v }));
 
+  const contact = useContactValidation({
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    town: data.town,
+    require: { name: true, town: true },
+  });
+
   const stepValid = useMemo(() => {
     if (step === 0) return Boolean(data.projectType && data.budgetReadiness && data.timeline);
-    if (step === 1) return Boolean(data.hasPlans && data.decisionMaker && data.town.trim().length >= 2);
+    if (step === 1) return Boolean(data.hasPlans && data.decisionMaker) && !contact.errors.town;
     if (step === 2) return data.description.trim().length >= 20;
-    if (step === 3) return Boolean(data.name.trim() && data.phone.trim() && /\S+@\S+\.\S+/.test(data.email));
+    if (step === 3) return contact.valid;
     return false;
-  }, [step, data]);
+  }, [step, data, contact.valid, contact.errors.town]);
 
   const next = () => stepValid && setStep((s) => Math.min(3, s + 1));
   const back = () => setStep((s) => Math.max(0, s - 1));
 
   const submit = async () => {
+    if (!contact.markAttempted()) return;
     setSubmitting(true);
     setError(null);
     try {
@@ -129,10 +139,10 @@ const ConstructionIntakeForm = () => {
       });
 
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        town: data.town,
+        name: contact.values.name,
+        email: contact.values.email,
+        phone: contact.values.phone,
+        town: contact.values.town,
         project_type: data.projectType,
         service_category: "construction",
         timeline: data.timeline,
@@ -162,10 +172,10 @@ const ConstructionIntakeForm = () => {
         await submitLead({
           source: "construction_intake_form",
           lead_type: "construction",
-          full_name: data.name,
-          email: data.email,
-          phone: data.phone,
-          property_town: data.town,
+          full_name: contact.values.name,
+          email: contact.values.email,
+          phone: contact.values.phone,
+          property_town: contact.values.town,
           property_state: "NC",
           service_category: "construction",
           project_type: data.projectType,
@@ -277,7 +287,10 @@ const ConstructionIntakeForm = () => {
                     placeholder="Street, city, and state"
                     value={data.town}
                     onChange={(e) => set("town", e.target.value)}
+                    onBlur={() => contact.blur("town")}
+                    invalid={Boolean(contact.errorFor("town"))}
                   />
+                  <FieldError>{contact.errorFor("town")}</FieldError>
                   <Helper>Full address helps us account for terrain, slope, and local conditions.</Helper>
                 </div>
                 <div>
@@ -326,16 +339,42 @@ const ConstructionIntakeForm = () => {
               <FieldRow>
                 <div>
                   <Label required>Full name</Label>
-                  <Input value={data.name} onChange={(e) => set("name", e.target.value)} autoComplete="name" />
+                  <Input
+                    value={data.name}
+                    onChange={(e) => set("name", e.target.value)}
+                    onBlur={() => contact.blur("name")}
+                    invalid={Boolean(contact.errorFor("name"))}
+                    autoComplete="name"
+                  />
+                  <FieldError>{contact.errorFor("name")}</FieldError>
                 </div>
                 <div>
                   <Label required>Phone</Label>
-                  <Input type="tel" value={data.phone} onChange={(e) => set("phone", e.target.value)} autoComplete="tel" placeholder="(828) 555-0123" />
+                  <Input
+                    type="tel"
+                    inputMode="tel"
+                    value={data.phone}
+                    onChange={(e) => set("phone", contact.formatPhoneInput(e.target.value))}
+                    onBlur={() => contact.blur("phone")}
+                    invalid={Boolean(contact.errorFor("phone"))}
+                    autoComplete="tel"
+                    placeholder="(828) 555-0123"
+                  />
+                  <FieldError>{contact.errorFor("phone")}</FieldError>
                 </div>
               </FieldRow>
               <div>
                 <Label required>Email</Label>
-                <Input type="email" value={data.email} onChange={(e) => set("email", e.target.value)} autoComplete="email" />
+                <Input
+                  type="email"
+                  value={data.email}
+                  onChange={(e) => set("email", e.target.value)}
+                  onBlur={() => contact.blur("email")}
+                  invalid={Boolean(contact.errorFor("email"))}
+                  autoComplete="email"
+                  maxLength={255}
+                />
+                <FieldError>{contact.errorFor("email")}</FieldError>
                 <Helper>Used for scope documents and scheduling. No marketing list.</Helper>
               </div>
             </>
