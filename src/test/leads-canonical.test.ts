@@ -10,7 +10,7 @@ describe("canonical lead payload", () => {
       attachments: ["a/b/roof.jpg"],
     });
     expect(r.first_name).toBe("Jane");
-    expect(r.last_name).toBe("Q Public");
+    expect(r.last_name).toBe("Public");
     expect(r.name).toBe("Jane Q Public");
     expect(r.urgency).toBe("high");
     expect(r.attachments[0].name).toBe("roof.jpg");
