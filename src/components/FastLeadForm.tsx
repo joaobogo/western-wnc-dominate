@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Clock, Phone, Shield } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Loader2, Phone, Shield } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
-import { submitLead } from "@/lib/leads";
+import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import InlineFieldError from "@/components/forms/InlineFieldError";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 
@@ -14,6 +14,7 @@ interface FastLeadFormProps {
 
 const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormProps) => {
   const [submitted, setSubmitted] = useState(false);
+  const { submitting, submit } = useLeadSubmit();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
