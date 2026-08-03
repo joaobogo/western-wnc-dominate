@@ -1383,7 +1383,20 @@ Deno.serve(async (req) => {
     project_description: row.project_description ?? row.description ?? null,
     source: row.source ?? row.source_form ?? table,
   };
-  const payload = buildPayload(normalized, kind);
+  // Sign attachment URLs with the service role so the CRM note carries real,
+  // openable links. Failures are reported inside the note, never fatal.
+  let attachmentInfo: AttachmentInfo = { files: [], failures: [] };
+  try {
+    attachmentInfo = await resolveAttachments(normalized, async (path: string) => {
+      const { data, error } = await admin.storage
+        .from("lead-uploads")
+        .createSignedUrl(path, ATTACHMENT_URL_TTL_SECONDS);
+      return { url: data?.signedUrl ?? null, error: error?.message ?? null };
+    });
+  } catch (e) {
+    console.warn("attachment signing failed (non-fatal):", (e as Error).message);
+  }
+  const payload = buildPayload(normalized, kind, attachmentInfo);
 
   const missing = validateSecrets();
   const nowIso = new Date().toISOString();
