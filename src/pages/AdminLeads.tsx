@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { leadTierLabel, type LeadTierLabel } from "@/lib/lead-scoring";
 
 type Lead = {
   id: string;
@@ -24,7 +25,15 @@ type Lead = {
   jobtread_last_attempt_at: string | null;
   jobtread_error_message: string | null;
   jobtread_retry_count: number | null;
+  lead_score: number | null;
 };
+
+const SELECT_COLUMNS =
+  "id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url,jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count,lead_score";
+
+const TIERS: LeadTierLabel[] = ["Hot", "Warm", "Engaged", "Cool"];
+
+const SYNC_STATES = ["success", "pending", "retry_needed", "failed"];
 
 const STATUSES = [
   "new",
@@ -43,6 +52,13 @@ export default function AdminLeads() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [leads, setLeads] = useState<Lead[]>([]);
   const [selected, setSelected] = useState<Lead | null>(null);
+  const [resending, setResending] = useState<string | null>(null);
+  const [tierFilter, setTierFilter] = useState<string>("all");
+  const [sourceFilter, setSourceFilter] = useState<string>("all");
+  const [townFilter, setTownFilter] = useState<string>("all");
+  const [syncFilter, setSyncFilter] = useState<string>("all");
+  const [fromDate, setFromDate] = useState<string>("");
+  const [toDate, setToDate] = useState<string>("");
 
   useEffect(() => {
     let mounted = true;
@@ -64,7 +80,7 @@ export default function AdminLeads() {
       if (admin) {
         const { data: rows } = await supabase
           .from("leads")
-          .select("id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url,jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count")
+          .select(SELECT_COLUMNS)
           .order("created_at", { ascending: false })
           .limit(200);
         setLeads((rows ?? []) as Lead[]);
@@ -80,24 +96,29 @@ export default function AdminLeads() {
   };
 
   const retryJobTread = async (id: string) => {
-    const { data, error } = await supabase.functions.invoke("jobtread-sync", {
-      body: { lead_id: id, force: true },
-    });
-    if (error) {
-      alert(`Retry failed: ${error.message}`);
-      return;
-    }
-    const { data: row } = await supabase
-      .from("leads")
-      .select("jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count")
-      .eq("id", id)
-      .maybeSingle();
-    if (row) {
-      setLeads(prev => prev.map(l => l.id === id ? { ...l, ...row } as Lead : l));
-      setSelected(prev => prev && prev.id === id ? { ...prev, ...row } as Lead : prev);
-    }
-    if (!(data as any)?.ok) {
-      alert(`JobTread not synced: ${(data as any)?.error || "check secrets"}`);
+    setResending(id);
+    try {
+      const { data, error } = await supabase.functions.invoke("jobtread-sync", {
+        body: { lead_id: id, force: true },
+      });
+      if (error) {
+        alert(`Resend failed: ${error.message}`);
+        return;
+      }
+      const { data: row } = await supabase
+        .from("leads")
+        .select("jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count")
+        .eq("id", id)
+        .maybeSingle();
+      if (row) {
+        setLeads(prev => prev.map(l => l.id === id ? { ...l, ...row } as Lead : l));
+        setSelected(prev => prev && prev.id === id ? { ...prev, ...row } as Lead : prev);
+      }
+      if (!(data as any)?.ok) {
+        alert(`JobTread not synced: ${(data as any)?.error || "check secrets"}`);
+      }
+    } finally {
+      setResending(null);
     }
   };
 
