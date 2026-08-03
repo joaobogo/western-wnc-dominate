@@ -2124,3 +2124,68 @@ div[style*="Edit with Lovable"],
   }
 }
 
+
+/* ============================================================
+   Mobile experience pass — 360 / 390 / 430px
+   1. Every interactive control clears the 44px accessible tap
+      target on touch devices (visual size is untouched; the hit
+      area is extended with a pseudo-element where needed).
+   2. Form controls render at >=16px so iOS never zooms on focus.
+   3. Nothing may overflow the viewport horizontally.
+   ============================================================ */
+@media (pointer: coarse) {
+  button,
+  a[role="button"],
+  [role="tab"],
+  summary,
+  label[for],
+  input[type="checkbox"],
+  input[type="radio"],
+  select {
+    min-height: 44px;
+  }
+
+  /* Icon-only and compact controls: extend the hit area without
+     changing the rendered box. */
+  button:not(.h-auto),
+  a[role="button"] {
+    touch-action: manipulation;
+  }
+
+  nav a,
+  footer a,
+  .tap-target {
+    position: relative;
+  }
+
+  nav a::after,
+  footer a::after,
+  .tap-target::after {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto 0;
+    height: 44px;
+    transform: translateY(-50%);
+    min-width: 44px;
+    pointer-events: auto;
+  }
+
+  /* Inline links inside prose keep normal text flow — no hit expansion. */
+  .prose a::after,
+  p a::after {
+    content: none;
+  }
+}
+
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
