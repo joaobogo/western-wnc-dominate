@@ -1494,7 +1494,6 @@ Deno.serve(async (req) => {
   const attempt = (row.jobtread_retry_count ?? 0) + 1;
   const retryAt = nextRetryAt(attempt);
   const exhausted = retryAt === null;
-  const supportsRetrySchedule = true;
 
   if (missing) {
     await admin.from(table).update({
