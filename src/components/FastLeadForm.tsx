@@ -63,7 +63,6 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             lead_type: serviceLabel,
             full_name: formData.name,
             phone: formData.phone,
-            email: formData.email || null,
             property_town: formData.town,
             property_state: "NC",
             timeline: formData.urgency,
