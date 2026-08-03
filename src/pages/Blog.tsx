@@ -39,13 +39,14 @@ const categoryConfig: Record<string, { icon: typeof BookOpen; label: string; des
 
 const categories = ["All", ...Array.from(new Set(blogPosts.map((p) => p.category)))];
 
-const featuredSlugs = [
-  "how-much-does-roof-cost-highlands-nc",
-  "metal-vs-shingle-roof-western-nc",
-  "storm-damage-checklist-western-nc",
-  "mountain-home-addition-planning",
-  "mountain-porch-deck-design-wnc",
-];
+const byNewest = (a: { date: string }, b: { date: string }) =>
+  new Date(b.date).getTime() - new Date(a.date).getTime();
+
+const formatPostDate = (date: string) =>
+  new Date(`${date}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+
+const isRecent = (date: string) =>
+  Date.now() - new Date(`${date}T12:00:00`).getTime() < 1000 * 60 * 60 * 24 * 45;
 
 
 /* Seasonal awareness */
@@ -60,6 +61,7 @@ const getSeasonalContext = () => {
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
   const seasonal = useMemo(getSeasonalContext, []);
 
   const filtered = blogPosts
@@ -69,14 +71,16 @@ const Blog = () => {
         !searchQuery ||
         p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    )
+    .slice()
+    .sort((a, b) => (sortOrder === "newest" ? byNewest(a, b) : byNewest(b, a)));
 
-  const featuredPosts = blogPosts.filter((p) => featuredSlugs.includes(p.slug));
+  const featuredPosts = blogPosts.slice().sort(byNewest).slice(0, 5);
   const heroFeatured = featuredPosts[0];
   const sideFeatured = featuredPosts.slice(1);
-  const stormPosts = blogPosts.filter((p) => p.category === "Storm" || p.category === "Maintenance").slice(0, 4);
-  const localPosts = blogPosts.filter((p) => p.town).slice(0, 4);
-  const seasonalPosts = blogPosts.filter((p) => seasonal.categories.includes(p.category)).slice(0, 3);
+  const stormPosts = blogPosts.filter((p) => p.category === "Storm" || p.category === "Maintenance").sort(byNewest).slice(0, 4);
+  const localPosts = blogPosts.filter((p) => p.town).sort(byNewest).slice(0, 4);
+  const seasonalPosts = blogPosts.filter((p) => seasonal.categories.includes(p.category)).sort(byNewest).slice(0, 3);
   const showFeatured = activeCategory === "All" && !searchQuery;
 
   return (
