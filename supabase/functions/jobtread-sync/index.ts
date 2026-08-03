@@ -1491,15 +1491,25 @@ Deno.serve(async (req) => {
 
   const missing = validateSecrets();
   const nowIso = new Date().toISOString();
+  const attempt = (row.jobtread_retry_count ?? 0) + 1;
+  const retryAt = nextRetryAt(attempt);
+  const exhausted = retryAt === null;
+  const supportsRetrySchedule = true;
 
   if (missing) {
     await admin.from(table).update({
-      jobtread_sync_status: "retry_needed",
+      jobtread_sync_status: exhausted ? "exhausted" : "retry_needed",
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: sanitizeError(missing),
-      jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
+      jobtread_retry_count: attempt,
+      jobtread_next_retry_at: retryAt,
+      jobtread_exhausted_at: exhausted ? nowIso : null,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
+    if (exhausted && !row.jobtread_alerted) {
+      await alertSyncExhausted(table, id, attempt);
+      await admin.from(table).update({ jobtread_alerted: true }).eq("id", id);
+    }
     return new Response(JSON.stringify({ ok: false, error: "sync_config_missing", retryable: true }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
@@ -1516,6 +1526,7 @@ Deno.serve(async (req) => {
       jobtread_id: result.id ?? null,
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: null,
+      jobtread_next_retry_at: null,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
   } else {
@@ -1523,12 +1534,19 @@ Deno.serve(async (req) => {
     // locally as `retry_needed` so the team can supply a real customer name.
     const nameViolation = String(result.error ?? "").startsWith("retry_needed:");
     await admin.from(table).update({
-      jobtread_sync_status: nameViolation ? "retry_needed" : "failed",
+      jobtread_sync_status: exhausted ? "exhausted" : nameViolation ? "retry_needed" : "failed",
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: sanitizeError(result.error ?? "Unknown JobTread error"),
-      jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
+      jobtread_retry_count: attempt,
+      jobtread_next_retry_at: retryAt,
+      jobtread_exhausted_at: exhausted ? nowIso : null,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
+    // Every retry is spent and the lead still isn't in the CRM — page the team.
+    if (exhausted && !row.jobtread_alerted) {
+      await alertSyncExhausted(table, id, attempt);
+      await admin.from(table).update({ jobtread_alerted: true }).eq("id", id);
+    }
   }
 
   // Never leak raw upstream error text back to the caller.
