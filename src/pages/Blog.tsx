@@ -261,10 +261,16 @@ const Blog = () => {
                             />
                           </div>
                           <div className="p-5 md:p-6 flex-1">
-                            <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                            <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3 flex-wrap">
                               <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/15 text-primary">
                                 {post.category}
                               </span>
+                              {isRecent(post.date) && (
+                                <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--highland-gold))]">
+                                  New
+                                </span>
+                              )}
+                              <span className="flex items-center gap-1 font-bold"><Calendar className="w-3 h-3" /> {formatPostDate(post.date)}</span>
                               <span className="flex items-center gap-1 font-bold"><Clock className="w-3 h-3" /> {post.readTime}</span>
                             </div>
                             <h3 className="font-heading font-bold text-foreground text-lg mb-2 group-hover:text-primary transition-colors leading-snug">
