@@ -77,6 +77,15 @@ const ConstructionIntakeForm = () => {
   const set = <K extends keyof typeof data>(k: K, v: (typeof data)[K]) =>
     setData((d) => ({ ...d, [k]: v }));
 
+  const autosave = useFormAutosave("construction-intake", data, {
+    step,
+    enabled: !submitted,
+    onRestore: (saved, savedStep) => {
+      setData((d) => ({ ...d, ...saved }));
+      if (typeof savedStep === "number") setStep(savedStep as Step);
+    },
+  });
+
   const contact = useContactValidation({
     name: data.name,
     email: data.email,
