@@ -1304,6 +1304,69 @@ function sanitizeError(input: unknown): string {
     .slice(0, 500);
 }
 
+/**
+ * Exponential backoff schedule for CRM sync retries.
+ * 5 attempts spread over ~24 hours: 5m, 30m, 2h, 6h, 16h.
+ * Returns null once the schedule is exhausted.
+ */
+export const MAX_SYNC_ATTEMPTS = 5;
+export const RETRY_DELAYS_MS = [
+  5 * 60_000,
+  30 * 60_000,
+  2 * 60 * 60_000,
+  6 * 60 * 60_000,
+  16 * 60 * 60_000,
+];
+
+export function nextRetryAt(attempt: number, from: Date = new Date()): string | null {
+  if (attempt >= MAX_SYNC_ATTEMPTS) return null;
+  const delay = RETRY_DELAYS_MS[Math.max(0, Math.min(attempt - 1, RETRY_DELAYS_MS.length - 1))];
+  return new Date(from.getTime() + delay).toISOString();
+}
+
+/** Idempotency: ignore a repeat submission with the same key inside this window. */
+export const IDEMPOTENCY_WINDOW_MS = 10 * 60_000;
+
+export function isDuplicateSubmission(
+  row: { idempotency_key?: string | null; jobtread_last_attempt_at?: string | null; created_at?: string | null },
+  incomingKey: string | null | undefined,
+  now: Date = new Date(),
+): boolean {
+  if (!incomingKey || !row.idempotency_key) return false;
+  if (row.idempotency_key !== incomingKey) return false;
+  const seenAt = row.jobtread_last_attempt_at ?? row.created_at;
+  if (!seenAt) return false;
+  // Only a *repeat* attempt counts — the first attempt has no last_attempt_at.
+  if (!row.jobtread_last_attempt_at) return false;
+  return now.getTime() - new Date(seenAt).getTime() < IDEMPOTENCY_WINDOW_MS;
+}
+
+/** Fires the Teams alert for a lead that used up every retry. Never throws. */
+async function alertSyncExhausted(table: string, id: string, attempts: number) {
+  const idKey =
+    table === "leads"
+      ? "lead_id"
+      : table === "chatbot_conversations"
+        ? "chatbot_conversation_id"
+        : table === "consultation_requests"
+          ? "consultation_request_id"
+          : "designer_lead_id";
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/teams-notify`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SERVICE_ROLE}`,
+        apikey: SERVICE_ROLE,
+      },
+      body: JSON.stringify({ event: "sync_exhausted", attempts, [idKey]: id }),
+    });
+    if (!res.ok) console.error(`teams-notify exhausted alert failed [${res.status}]`);
+  } catch (e) {
+    console.error("teams-notify exhausted alert failed:", (e as Error).message);
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
@@ -1328,7 +1391,7 @@ Deno.serve(async (req) => {
       .from("leads")
       .select("id, jobtread_retry_count")
       .in("jobtread_sync_status", ["failed", "retry_needed"])
-      .lt("jobtread_retry_count", 5)
+      .lt("jobtread_retry_count", MAX_SYNC_ATTEMPTS)
       .order("created_at", { ascending: true })
       .limit(limit);
     const results: Array<{ id: string; ok: boolean }> = [];
@@ -1395,6 +1458,14 @@ Deno.serve(async (req) => {
     });
   }
 
+  // Idempotency: a repeat submission carrying the same client key inside the
+  // 10-minute window is ignored instead of creating duplicate CRM records.
+  if (!body.force && isDuplicateSubmission(row as any, body.idempotency_key)) {
+    return new Response(JSON.stringify({ ok: true, duplicate_ignored: true }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
   // consultation_requests uses `town` instead of `property_town` — normalize
   // a couple of aliases so the payload builder emits the same shape.
   const normalized = {
@@ -1420,15 +1491,24 @@ Deno.serve(async (req) => {
 
   const missing = validateSecrets();
   const nowIso = new Date().toISOString();
+  const attempt = (row.jobtread_retry_count ?? 0) + 1;
+  const retryAt = nextRetryAt(attempt);
+  const exhausted = retryAt === null;
 
   if (missing) {
     await admin.from(table).update({
-      jobtread_sync_status: "retry_needed",
+      jobtread_sync_status: exhausted ? "exhausted" : "retry_needed",
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: sanitizeError(missing),
-      jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
+      jobtread_retry_count: attempt,
+      jobtread_next_retry_at: retryAt,
+      jobtread_exhausted_at: exhausted ? nowIso : null,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
+    if (exhausted && !row.jobtread_alerted) {
+      await alertSyncExhausted(table, id, attempt);
+      await admin.from(table).update({ jobtread_alerted: true }).eq("id", id);
+    }
     return new Response(JSON.stringify({ ok: false, error: "sync_config_missing", retryable: true }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
@@ -1445,6 +1525,7 @@ Deno.serve(async (req) => {
       jobtread_id: result.id ?? null,
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: null,
+      jobtread_next_retry_at: null,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
   } else {
@@ -1452,12 +1533,19 @@ Deno.serve(async (req) => {
     // locally as `retry_needed` so the team can supply a real customer name.
     const nameViolation = String(result.error ?? "").startsWith("retry_needed:");
     await admin.from(table).update({
-      jobtread_sync_status: nameViolation ? "retry_needed" : "failed",
+      jobtread_sync_status: exhausted ? "exhausted" : nameViolation ? "retry_needed" : "failed",
       jobtread_last_attempt_at: nowIso,
       jobtread_error_message: sanitizeError(result.error ?? "Unknown JobTread error"),
-      jobtread_retry_count: (row.jobtread_retry_count ?? 0) + 1,
+      jobtread_retry_count: attempt,
+      jobtread_next_retry_at: retryAt,
+      jobtread_exhausted_at: exhausted ? nowIso : null,
       ...(supportsPayloadCol ? { jobtread_payload: payload } : {}),
     }).eq("id", id);
+    // Every retry is spent and the lead still isn't in the CRM — page the team.
+    if (exhausted && !row.jobtread_alerted) {
+      await alertSyncExhausted(table, id, attempt);
+      await admin.from(table).update({ jobtread_alerted: true }).eq("id", id);
+    }
   }
 
   // Never leak raw upstream error text back to the caller.

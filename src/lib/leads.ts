@@ -7,6 +7,12 @@ import {
 import { scoreLead } from "@/lib/lead-scoring";
 import { parsePersonName } from "@/lib/name-parser";
 import { getAttribution, currentPagePath } from "@/lib/attribution";
+import {
+  fingerprintSubmission,
+  resolveIdempotency,
+  rememberSubmission,
+  forgetSubmission,
+} from "@/lib/lead-idempotency";
 
 export { captureAttribution } from "@/lib/attribution";
 export type { Attribution } from "@/lib/attribution";
@@ -99,6 +105,8 @@ export type CanonicalLeadPayload = {
 
   consent_given?: boolean;
   metadata?: Record<string, unknown>;
+  /** Overrides the auto-generated key. Rarely needed. */
+  idempotency_key?: string | null;
 };
 
 /** @deprecated Use CanonicalLeadPayload. Kept so older call sites still compile. */
@@ -255,17 +263,52 @@ export function normalizeLeadPayload(input: LeadPayload) {
   };
 }
 
+export type SubmitLeadResult = {
+  id: string | null;
+  error: unknown | null;
+  /** True when this exact submission was already stored in the last 10 minutes. */
+  duplicate?: boolean;
+};
+
 /**
- * Inserts a row into the unified `leads` table.
- * Auto-captures page URL, referrer, user agent and any UTM/click-id values
- * stored in sessionStorage by captureAttribution().
- * Fire-and-forget safe: caller should not block the user on this.
+ * Durably captures a lead.
+ *
+ * Order of operations is deliberate and must not change:
+ *   1. Write the submission to the database (the durable record of truth).
+ *   2. Only then fire the CRM sync + Teams notification, fire-and-forget.
+ *
+ * If the CRM sync fails or times out, the row stays queued with
+ * `jobtread_sync_status` and is picked up by the scheduled retry worker
+ * (5 attempts with exponential backoff over ~24 hours). The visitor is never
+ * shown an error once the lead is safely stored.
+ *
+ * A repeat submission with the same idempotency key inside 10 minutes is
+ * ignored and returns the original lead id.
  */
-export async function submitLead(payload: LeadPayload) {
+export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult> {
   // getAttribution() captures on the spot if the session never did, so a lead
   // is never sent without page / referrer / campaign context.
   const attribution = getAttribution();
   const normalized = normalizeLeadPayload(payload);
+
+  // ---- Idempotency: identical submission inside the window is a no-op ----
+  const fingerprint = fingerprintSubmission([
+    normalized.source,
+    normalized.name,
+    normalized.email,
+    normalized.phone,
+    normalized.property_town,
+    normalized.service_category,
+    normalized.project_description,
+  ]);
+  const idem = payload.idempotency_key
+    ? { key: payload.idempotency_key, duplicate: false, lead_id: null }
+    : resolveIdempotency(fingerprint);
+  if (idem.duplicate) {
+    console.info("submitLead: duplicate submission ignored (10 min window)");
+    return { id: idem.lead_id, error: null, duplicate: true };
+  }
+
   // Generate the id client-side so we don't need SELECT-after-INSERT
   // permission (anon can INSERT but cannot SELECT the leads table).
   const leadId =
@@ -276,6 +319,7 @@ export async function submitLead(payload: LeadPayload) {
     id: leadId,
     ...normalized,
     consent_text: CONSENT_TEXT,
+    idempotency_key: idem.key,
     jobtread_sync_status: "pending",
     jobtread_synced: false,
     jobtread_retry_count: 0,
@@ -305,6 +349,9 @@ export async function submitLead(payload: LeadPayload) {
     .insert([row as any]);
   if (error) {
     console.error("submitLead error:", error);
+    // The durable write failed, so this key never represented a stored lead.
+    // Clear it so the visitor's next attempt is treated as a fresh submission.
+    forgetSubmission(fingerprint);
     trackFormError({
       form_name: payload.source,
       form_id: payload.source,
@@ -312,6 +359,9 @@ export async function submitLead(payload: LeadPayload) {
     });
     return { id: null as string | null, error };
   }
+  // The lead is now safe. Nothing after this point may surface an error to the
+  // visitor — CRM delivery is retried in the background.
+  rememberSubmission(fingerprint, idem.key, leadId);
   trackFormSuccess({
     form_name: payload.source,
     form_id: payload.source,
@@ -320,10 +370,13 @@ export async function submitLead(payload: LeadPayload) {
     property_town: normalized.property_town,
     lead_id: leadId,
   });
-  // Fire-and-forget JobTread sync. Never block the visitor on this.
+  // Fire-and-forget JobTread sync. Never block the visitor on this. A failure
+  // here leaves the row at `pending`, which the retry worker picks up.
   void supabase.functions
-    .invoke("jobtread-sync", { body: { lead_id: leadId } })
-    .catch((err) => console.warn("jobtread-sync invoke failed:", err));
+    .invoke("jobtread-sync", {
+      body: { lead_id: leadId, idempotency_key: idem.key },
+    })
+    .catch((err) => console.warn("jobtread-sync invoke failed (queued for retry):", err));
   notifyTeams({ lead_id: leadId });
   return { id: leadId, error: null };
 }

@@ -4,7 +4,7 @@ import { Calculator, ArrowRight, ArrowLeft, DollarSign, Home, CheckCircle, Shiel
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
-import { submitLead } from "@/lib/leads";
+import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import FormConsent from "@/components/FormConsent";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -50,6 +50,7 @@ const stepOrder: Step[] = ["size", "material", "condition", "contact", "result"]
 const RoofCostEstimator = () => {
   const [step, setStep] = useState<Step>("size");
   const [direction, setDirection] = useState(1);
+  const { submitting, submit } = useLeadSubmit();
   const [data, setData] = useState<EstimateData>({
     size: "", material: "", condition: "", name: "", email: "", phone: "", town: "",
   });
@@ -72,11 +73,11 @@ const RoofCostEstimator = () => {
     return { low: Math.round(base * 0.85), high: Math.round(base * 1.15) };
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (data.name && data.email && data.phone) {
+    if (data.name && data.email && data.phone && !submitting) {
       const est = getEstimate();
-      submitLead({
+      await submit({
         source: "roof_cost_estimator",
         lead_type: "cost_estimate",
         full_name: data.name,
@@ -89,7 +90,7 @@ const RoofCostEstimator = () => {
         budget_range: `$${est.low.toLocaleString()}–$${est.high.toLocaleString()}`,
         project_description: `Estimator: ${data.size} home, ${data.material}, ${data.condition} condition — $${est.low.toLocaleString()}–$${est.high.toLocaleString()}`,
         metadata: { size: data.size, material: data.material, condition: data.condition, estimate_low: est.low, estimate_high: est.high },
-      }).catch((err) => console.error("RoofCostEstimator submitLead failed:", err));
+      });
       goTo("result");
     }
   };
@@ -250,9 +251,13 @@ const RoofCostEstimator = () => {
                       </select>
                     </div>
                     <FormConsent />
-                    <button type="submit" className="w-full cta-gradient text-accent-foreground font-heading font-bold py-3.5 rounded-none flex items-center justify-center gap-2 btn-primary-interactive">
-                      <span className="relative z-10">See My Estimate</span>
-                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                    <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-heading font-bold py-3.5 rounded-none flex items-center justify-center gap-2 btn-primary-interactive disabled:opacity-60">
+                      <span className="relative z-10">{submitting ? "Sending…" : "See My Estimate"}</span>
+                      {submitting ? (
+                        <Loader2 className="w-4 h-4 relative z-10 animate-spin" />
+                      ) : (
+                        <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                      )}
                     </button>
                   </form>
                   <button onClick={() => goTo("condition")} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">

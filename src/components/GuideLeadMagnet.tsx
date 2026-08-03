@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, X, FileText, Shield, CloudLightning, Wrench, CheckCircle } from "lucide-react";
+import { Loader2, Download, X, FileText, Shield, CloudLightning, Wrench, CheckCircle } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
-import { submitLead } from "@/lib/leads";
+import { useLeadSubmit } from "@/hooks/use-lead-submit";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -47,14 +47,15 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const { submitting, submit } = useLeadSubmit();
 
   const g = guides[guide];
   const Icon = g.icon;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && name) {
-      submitLead({
+    if (email && name && !submitting) {
+      await submit({
         source: "guide_lead_magnet",
         lead_type: `guide_download:${guide}`,
         full_name: name,
@@ -62,7 +63,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
         timeline: "exploring",
         project_description: `Downloaded: ${g.title}`,
         metadata: { guide, file_name: g.fileName },
-      }).catch((err) => console.error("GuideLeadMagnet submitLead failed:", err));
+      });
       setSubmitted(true);
     }
   };
@@ -101,8 +102,16 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
             <label className={labelClass}>Email</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
           </div>
-          <button type="submit" className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase">
-            <Download className="w-5 h-5 relative z-10" /> <span className="relative z-10">{g.cta}</span>
+          <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase disabled:opacity-60">
+            {submitting ? (
+              <>
+                <Loader2 className="w-5 h-5 relative z-10 animate-spin" /> <span className="relative z-10">Sending…</span>
+              </>
+            ) : (
+              <>
+                <Download className="w-5 h-5 relative z-10" /> <span className="relative z-10">{g.cta}</span>
+              </>
+            )}
           </button>
           <FormConsent className="mt-2" />
         </form>

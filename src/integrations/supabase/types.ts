@@ -24,9 +24,12 @@ export type Database = {
           email: string | null
           full_transcript: Json | null
           id: string
+          jobtread_alerted: boolean
           jobtread_error_message: string | null
+          jobtread_exhausted_at: string | null
           jobtread_id: string | null
           jobtread_last_attempt_at: string | null
+          jobtread_next_retry_at: string | null
           jobtread_retry_count: number
           jobtread_sync_status: string
           jobtread_synced: boolean
@@ -58,9 +61,12 @@ export type Database = {
           email?: string | null
           full_transcript?: Json | null
           id?: string
+          jobtread_alerted?: boolean
           jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
@@ -92,9 +98,12 @@ export type Database = {
           email?: string | null
           full_transcript?: Json | null
           id?: string
+          jobtread_alerted?: boolean
           jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
@@ -136,9 +145,12 @@ export type Database = {
           has_plans: boolean | null
           id: string
           insurance_status: string | null
+          jobtread_alerted: boolean
           jobtread_error_message: string | null
+          jobtread_exhausted_at: string | null
           jobtread_id: string | null
           jobtread_last_attempt_at: string | null
+          jobtread_next_retry_at: string | null
           jobtread_payload: Json | null
           jobtread_retry_count: number
           jobtread_sync_status: string | null
@@ -165,9 +177,12 @@ export type Database = {
           has_plans?: boolean | null
           id?: string
           insurance_status?: string | null
+          jobtread_alerted?: boolean
           jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string | null
@@ -194,9 +209,12 @@ export type Database = {
           has_plans?: boolean | null
           id?: string
           insurance_status?: string | null
+          jobtread_alerted?: boolean
           jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string | null
@@ -278,9 +296,12 @@ export type Database = {
           email: string
           gdpr_consent: boolean | null
           id: string
+          jobtread_alerted: boolean
           jobtread_error_message: string | null
+          jobtread_exhausted_at: string | null
           jobtread_id: string | null
           jobtread_last_attempt_at: string | null
+          jobtread_next_retry_at: string | null
           jobtread_payload: Json | null
           jobtread_retry_count: number
           jobtread_sync_status: string | null
@@ -297,9 +318,12 @@ export type Database = {
           email: string
           gdpr_consent?: boolean | null
           id?: string
+          jobtread_alerted?: boolean
           jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string | null
@@ -316,9 +340,12 @@ export type Database = {
           email?: string
           gdpr_consent?: boolean | null
           id?: string
+          jobtread_alerted?: boolean
           jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string | null
@@ -413,13 +440,17 @@ export type Database = {
           gclid: string | null
           has_plans: boolean | null
           id: string
+          idempotency_key: string | null
           insurance_status: string | null
           ip_address: string | null
           is_company: boolean
           jobtread_account_id: string | null
+          jobtread_alerted: boolean
           jobtread_error_message: string | null
+          jobtread_exhausted_at: string | null
           jobtread_id: string | null
           jobtread_last_attempt_at: string | null
+          jobtread_next_retry_at: string | null
           jobtread_payload: Json | null
           jobtread_retry_count: number
           jobtread_sync_status: string
@@ -481,13 +512,17 @@ export type Database = {
           gclid?: string | null
           has_plans?: boolean | null
           id?: string
+          idempotency_key?: string | null
           insurance_status?: string | null
           ip_address?: string | null
           is_company?: boolean
           jobtread_account_id?: string | null
+          jobtread_alerted?: boolean
           jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string
@@ -549,13 +584,17 @@ export type Database = {
           gclid?: string | null
           has_plans?: boolean | null
           id?: string
+          idempotency_key?: string | null
           insurance_status?: string | null
           ip_address?: string | null
           is_company?: boolean
           jobtread_account_id?: string | null
+          jobtread_alerted?: boolean
           jobtread_error_message?: string | null
+          jobtread_exhausted_at?: string | null
           jobtread_id?: string | null
           jobtread_last_attempt_at?: string | null
+          jobtread_next_retry_at?: string | null
           jobtread_payload?: Json | null
           jobtread_retry_count?: number
           jobtread_sync_status?: string

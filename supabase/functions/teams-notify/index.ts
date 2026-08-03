@@ -128,6 +128,28 @@ function buildCallMessage(input: Record<string, any>) {
   return `<h3>📞 Call started from the website</h3><ul>${items}</ul><p><i>A visitor tapped a click-to-call link on ${esc(SITE)}. Expect an inbound call.</i></p>`;
 }
 
+/**
+ * Alert raised when a lead exhausts every JobTread sync retry. The lead is
+ * safely stored in the database — this tells the team to enter it manually.
+ */
+function buildSyncExhaustedMessage(row: Record<string, any>, input: Record<string, any>) {
+  const items = [
+    line("Name", row.name || row.first_name || "Name not provided"),
+    line("Phone", row.phone),
+    line("Email", row.email),
+    line("Town", row.property_town || row.town),
+    line("Service", row.service_category || row.lead_type || row.project_type),
+    line("Source", row.source),
+    line("Attempts", input.attempts),
+    line("Last error", clip(row.jobtread_error_message, 300)),
+    line("Record", `${input.table ?? "leads"} / ${row.id}`),
+    line("Received", easternTime(row.created_at)),
+  ]
+    .filter(Boolean)
+    .join("");
+  return `<h3>⚠️ Lead could not reach JobTread</h3><ul>${items}</ul><p><i>The lead is saved on the website database and was NOT lost, but automatic CRM sync failed after every retry. Please add it to JobTread manually.</i></p>`;
+}
+
 const SOURCES: Record<string, { table: string; label: string }> = {
   lead_id: { table: "leads", label: "website lead" },
   chatbot_conversation_id: {
@@ -194,7 +216,13 @@ Deno.serve(async (req) => {
       });
     }
 
-    await postToTeams(buildLeadMessage(label, row));
+    if (body?.event === "sync_exhausted") {
+      await postToTeams(
+        buildSyncExhaustedMessage(row, { table, attempts: body.attempts }),
+      );
+    } else {
+      await postToTeams(buildLeadMessage(label, row));
+    }
     return new Response(JSON.stringify({ ok: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
