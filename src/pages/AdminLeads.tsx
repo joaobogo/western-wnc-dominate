@@ -318,6 +318,43 @@ function Field({ label, value, link }: { label: string; value: string | null; li
 }
 
 function SyncPill({ status }: { status: string | null }) {
+  return <SyncPillInner status={status} />;
+}
+
+function FilterSelect({
+  label, value, onChange, options,
+}: { label: string; value: string; onChange: (v: string) => void; options: readonly string[] }) {
+  return (
+    <div>
+      <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1">{label}</label>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="border border-input rounded px-2 py-1 bg-background max-w-[180px]"
+      >
+        <option value="all">All</option>
+        {options.map(o => <option key={o} value={o}>{o.replace(/_/g, " ")}</option>)}
+      </select>
+    </div>
+  );
+}
+
+function TierPill({ score }: { score: number | null }) {
+  const tier = leadTierLabel(score);
+  const styles: Record<LeadTierLabel, string> = {
+    Hot: "bg-destructive/15 text-destructive",
+    Warm: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
+    Engaged: "bg-primary/10 text-primary",
+    Cool: "bg-muted text-muted-foreground",
+  };
+  return (
+    <span className={`text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded ${styles[tier]}`}>
+      {tier} {score ?? 0}
+    </span>
+  );
+}
+
+function SyncPillInner({ status }: { status: string | null }) {
   const s = status ?? "pending";
   const styles: Record<string, string> = {
     success: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400",
