@@ -57,8 +57,9 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
       submitLead({
         source: "guide_lead_magnet",
         lead_type: `guide_download:${guide}`,
-        name,
+        full_name: name,
         email,
+        timeline: "exploring",
         project_description: `Downloaded: ${g.title}`,
         metadata: { guide, file_name: g.fileName },
       }).catch((err) => console.error("GuideLeadMagnet submitLead failed:", err));
