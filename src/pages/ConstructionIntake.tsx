@@ -60,6 +60,7 @@ const ConstructionIntake = () => (
           "Serious builds typically start with our paid Design & Consultation Agreement.",
         ]}
         otherIntakeLabel="Roofing Intake"
+        trustCategory="construction"
         otherIntakeHref="/roofing-intake"
       >
         <ConstructionIntakeForm />

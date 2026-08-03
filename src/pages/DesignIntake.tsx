@@ -44,7 +44,8 @@ const DesignIntake = () => {
             "Professional scope documentation."
           ]}
           otherIntakeLabel="Construction Intake"
-          otherIntakeHref="/construction-intake"
+          trustCategory="construction"
+        otherIntakeHref="/construction-intake"
         >
           <div className="mb-10 p-1.5 bg-secondary/50 border border-border rounded-lg inline-flex w-full">
             <button 

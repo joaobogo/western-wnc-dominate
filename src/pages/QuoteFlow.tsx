@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import InlineFieldError from "@/components/forms/InlineFieldError";
 import { useContactValidation } from "@/hooks/use-contact-validation";
+import { useFormAutosave } from "@/hooks/use-form-autosave";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
@@ -152,6 +153,16 @@ export default function QuoteFlow() {
     require: { name: true, email: true },
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const autosave = useFormAutosave("quote-flow", form as unknown as Record<string, unknown>, {
+    step,
+    enabled: !submitted,
+    onRestore: (saved, savedStep) => {
+      setForm((f) => ({ ...f, ...(saved as Partial<FormData>) }));
+      if (typeof savedStep === "number") setStep(savedStep);
+    },
+  });
+
   const navigate = useNavigate();
 
   const update = useCallback((field: keyof FormData, value: string) => {
@@ -378,6 +389,7 @@ export default function QuoteFlow() {
       });
 
       setSubmitted(true);
+      autosave.clear();
     } catch (err) {
       console.error("Submit error:", err);
       toast({ title: "Something went wrong", description: "Please try again or call us at (828) 524-7773.", variant: "destructive" });

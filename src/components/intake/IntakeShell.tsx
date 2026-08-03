@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Phone, Shield, Award, Clock, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import ConversionTrustBlock, { type TrustCategory } from "@/components/trust/ConversionTrustBlock";
 
 
 type Props = {
@@ -10,6 +11,8 @@ type Props = {
   sidebarBullets: string[];
   otherIntakeLabel: string;
   otherIntakeHref: string;
+  /** Drives which local review and project photo appear beside the form. */
+  trustCategory?: TrustCategory;
   children: ReactNode;
 };
 
@@ -19,7 +22,7 @@ type Props = {
  * into a slim header above the form.
  */
 const IntakeShell = ({
-  eyebrow, title, subhead, sidebarBullets, otherIntakeLabel, otherIntakeHref, children,
+  eyebrow, title, subhead, sidebarBullets, otherIntakeLabel, otherIntakeHref, trustCategory = "roofing", children,
 }: Props) => {
   return (
     <section className="pt-24 md:pt-32 pb-16 md:pb-24 bg-background">
@@ -78,6 +81,11 @@ const IntakeShell = ({
                 <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
                 (828) 524-7773
               </a>
+            </div>
+
+            {/* Proof next to the CTA: photo, credentials, local review, response time */}
+            <div className="mt-6">
+              <ConversionTrustBlock category={trustCategory} />
             </div>
 
             {/* Cross-link to other intakes */}
