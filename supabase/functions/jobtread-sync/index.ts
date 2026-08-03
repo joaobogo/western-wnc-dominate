@@ -1304,6 +1304,69 @@ function sanitizeError(input: unknown): string {
     .slice(0, 500);
 }
 
+/**
+ * Exponential backoff schedule for CRM sync retries.
+ * 5 attempts spread over ~24 hours: 5m, 30m, 2h, 6h, 16h.
+ * Returns null once the schedule is exhausted.
+ */
+export const MAX_SYNC_ATTEMPTS = 5;
+export const RETRY_DELAYS_MS = [
+  5 * 60_000,
+  30 * 60_000,
+  2 * 60 * 60_000,
+  6 * 60 * 60_000,
+  16 * 60 * 60_000,
+];
+
+export function nextRetryAt(attempt: number, from: Date = new Date()): string | null {
+  if (attempt >= MAX_SYNC_ATTEMPTS) return null;
+  const delay = RETRY_DELAYS_MS[Math.max(0, Math.min(attempt - 1, RETRY_DELAYS_MS.length - 1))];
+  return new Date(from.getTime() + delay).toISOString();
+}
+
+/** Idempotency: ignore a repeat submission with the same key inside this window. */
+export const IDEMPOTENCY_WINDOW_MS = 10 * 60_000;
+
+export function isDuplicateSubmission(
+  row: { idempotency_key?: string | null; jobtread_last_attempt_at?: string | null; created_at?: string | null },
+  incomingKey: string | null | undefined,
+  now: Date = new Date(),
+): boolean {
+  if (!incomingKey || !row.idempotency_key) return false;
+  if (row.idempotency_key !== incomingKey) return false;
+  const seenAt = row.jobtread_last_attempt_at ?? row.created_at;
+  if (!seenAt) return false;
+  // Only a *repeat* attempt counts — the first attempt has no last_attempt_at.
+  if (!row.jobtread_last_attempt_at) return false;
+  return now.getTime() - new Date(seenAt).getTime() < IDEMPOTENCY_WINDOW_MS;
+}
+
+/** Fires the Teams alert for a lead that used up every retry. Never throws. */
+async function alertSyncExhausted(table: string, id: string, attempts: number) {
+  const idKey =
+    table === "leads"
+      ? "lead_id"
+      : table === "chatbot_conversations"
+        ? "chatbot_conversation_id"
+        : table === "consultation_requests"
+          ? "consultation_request_id"
+          : "designer_lead_id";
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/teams-notify`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SERVICE_ROLE}`,
+        apikey: SERVICE_ROLE,
+      },
+      body: JSON.stringify({ event: "sync_exhausted", attempts, [idKey]: id }),
+    });
+    if (!res.ok) console.error(`teams-notify exhausted alert failed [${res.status}]`);
+  } catch (e) {
+    console.error("teams-notify exhausted alert failed:", (e as Error).message);
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
