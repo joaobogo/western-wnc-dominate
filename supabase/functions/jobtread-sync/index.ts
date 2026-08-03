@@ -773,7 +773,7 @@ export function validateCustomerAccountName(
   return null;
 }
 
-export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
+export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments?: AttachmentInfo) {
   const leadName = humanizeLeadName(row);
   const town = row.property_town ?? null;
   const meta: any = row.metadata ?? {};
@@ -793,9 +793,12 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   const serviceAreaOrCityPage = cityPageMatch?.[1] ?? serviceArea ?? null;
   const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
   const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
-  const uploadedFileUrls = [...photos, ...files]
-    .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
-    .filter(Boolean);
+  const resolvedAttachments: AttachmentInfo = attachments ?? { files: [], failures: uploadFailures(row) };
+  const uploadedFileUrls = resolvedAttachments.files.length
+    ? resolvedAttachments.files.map((f) => f.url)
+    : [...photos, ...files]
+        .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
+        .filter(Boolean);
   return {
     // Top-level fields most webhook receivers will look for
     lead_name: leadName,
@@ -877,6 +880,8 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       photos,
       files,
       uploaded_file_urls: uploadedFileUrls,
+      attachments: resolvedAttachments.files,
+      failed_uploads: resolvedAttachments.failures,
     },
     chat: kind === "chatbot" || row.chat_summary
       ? {
@@ -889,7 +894,7 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       : null,
     metadata: row.metadata ?? null,
     // Human-readable note the Highlander team can read at a glance
-    note: buildLeadNotes(row),
+    note: buildLeadNotes(row, resolvedAttachments),
   };
 }
 
