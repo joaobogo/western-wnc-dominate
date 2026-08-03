@@ -112,13 +112,14 @@ export default function Contact() {
       await submitLead({
         source: "contact_form",
         lead_type: division || "general_inquiry",
-        name: form.name.trim(),
+        full_name: form.name.trim(),
         email: form.email.trim(),
         phone: form.phone.trim() || null,
         property_town: form.town.trim() || null,
+        property_state: "NC",
         service_category: division || null,
         project_type: service || null,
-        urgency: timeline || null,
+        timeline: timeline || null,
         project_description: form.message.trim() || null,
         preferred_contact_method: preferredContact || null,
       });
