@@ -9,6 +9,7 @@ import { deriveRoofingRouting } from "@/lib/lead-routing";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots, FieldError } from "./IntakeFieldKit";
 import { useContactValidation } from "@/hooks/use-contact-validation";
+import { useFormAutosave } from "@/hooks/use-form-autosave";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
 import FormConsent from "@/components/FormConsent";
@@ -68,6 +69,16 @@ const RoofingIntakeForm = () => {
 
   const set = <K extends keyof typeof data>(k: K, v: (typeof data)[K]) =>
     setData((d) => ({ ...d, [k]: v }));
+
+  // Partial answers survive a refresh or accidental back-navigation.
+  const autosave = useFormAutosave("roofing-intake", data, {
+    step,
+    enabled: !submitted,
+    onRestore: (saved, savedStep) => {
+      setData((d) => ({ ...d, ...saved }));
+      if (typeof savedStep === "number") setStep(savedStep);
+    },
+  });
 
   const contact = useContactValidation({
     name: data.name,
@@ -187,6 +198,7 @@ const RoofingIntakeForm = () => {
       });
 
       setSubmitted(true);
+      autosave.clear();
     } catch (e: any) {
       setError(e?.message || "Something went wrong. Please call (828) 524-7773 and we'll take it from there.");
     } finally {
