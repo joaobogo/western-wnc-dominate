@@ -239,7 +239,76 @@ function flattenFormAnswers(
   return out;
 }
 
-function buildHumanNote(row: LeadRow): string {
+/** Resolved attachment (signed URL) or a failure we must report in the note. */
+export type ResolvedAttachment = { name: string; url: string };
+export type AttachmentFailure = { name: string; reason: string };
+export type AttachmentInfo = { files: ResolvedAttachment[]; failures: AttachmentFailure[] };
+
+export const ATTACHMENT_URL_TTL_SECONDS = 60 * 60 * 24 * 30; // 30 days
+
+function attachmentEntries(row: LeadRow): Array<{ path?: string; url?: string; name: string }> {
+  const raw = [
+    ...(Array.isArray(row.photos_uploaded) ? row.photos_uploaded : []),
+    ...(Array.isArray(row.files_uploaded) ? row.files_uploaded : []),
+    ...(Array.isArray((row as any).attachments) ? (row as any).attachments : []),
+  ];
+  const out: Array<{ path?: string; url?: string; name: string }> = [];
+  const seen = new Set<string>();
+  for (const v of raw) {
+    const value = typeof v === "string" ? { path: v } : (v ?? {});
+    const url = (value as any).url as string | undefined;
+    const path = (value as any).path as string | undefined;
+    const key = url ?? path;
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    const name = String((value as any).name ?? key.split("/").pop() ?? "attachment");
+    if (url && /^https?:\/\//i.test(url)) out.push({ url, name });
+    else if (path) out.push({ path, name });
+  }
+  return out;
+}
+
+/** Failed client-side uploads recorded on the lead metadata. */
+function uploadFailures(row: LeadRow): AttachmentFailure[] {
+  const meta: any = row.metadata ?? {};
+  const raw = meta.attachment_errors ?? meta.upload_errors ?? [];
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((e: any) => ({
+      name: String(e?.name ?? "file"),
+      reason: String(e?.reason ?? e?.message ?? "Upload failed"),
+    }))
+    .filter((e) => e.name);
+}
+
+/**
+ * Turns storage paths into signed, shareable URLs so Highlander can open the
+ * customer's photos/plans straight from the JobTread Job. Any file we cannot
+ * sign is reported as a failure in Lead Notes — it never blocks the sync.
+ */
+export async function resolveAttachments(
+  row: LeadRow,
+  signer: (path: string) => Promise<{ url?: string | null; error?: string | null }>,
+): Promise<AttachmentInfo> {
+  const files: ResolvedAttachment[] = [];
+  const failures: AttachmentFailure[] = uploadFailures(row);
+  for (const entry of attachmentEntries(row)) {
+    if (entry.url) {
+      files.push({ name: entry.name, url: entry.url });
+      continue;
+    }
+    try {
+      const res = await signer(entry.path!);
+      if (res?.url) files.push({ name: entry.name, url: res.url });
+      else failures.push({ name: entry.name, reason: String(res?.error ?? "Could not generate download link") });
+    } catch (e) {
+      failures.push({ name: entry.name, reason: (e as Error)?.message ?? "Could not generate download link" });
+    }
+  }
+  return { files, failures };
+}
+
+function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   const lines: string[] = [];
   const NP = "Not provided";
   const val = (v: any): string => {
@@ -406,17 +475,24 @@ function buildHumanNote(row: LeadRow): string {
   kv("Consent Text", row.consent_text);
   lines.push("Privacy Policy: https://highlandernc.com/privacy-policy");
 
-  const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
-  const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
-  const uploadLinks = [...photos, ...files]
-    .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
-    .filter(Boolean) as string[];
+  // Attachments: signed download links when available, plus an explicit list
+  // of files that failed so the team knows what to ask the customer to resend.
+  const resolved: AttachmentInfo = attachments ?? {
+    files: attachmentEntries(row)
+      .filter((e) => e.url)
+      .map((e) => ({ name: e.name, url: e.url! })),
+    failures: uploadFailures(row),
+  };
   section("Files");
-  if (uploadLinks.length) {
-    lines.push("Uploaded Files:");
-    uploadLinks.forEach((link) => lines.push(`  • ${link}`));
+  if (resolved.files.length) {
+    lines.push(`Uploaded Files: ${resolved.files.length}`);
+    resolved.files.forEach((f) => lines.push(`  • ${f.name} — ${f.url}`));
   } else {
     lines.push("Uploaded Files: None");
+  }
+  if (resolved.failures.length) {
+    lines.push(`Files That Failed To Upload: ${resolved.failures.length} — ask the customer to resend`);
+    resolved.failures.forEach((f) => lines.push(`  • ${f.name} — ${f.reason}`));
   }
 
   if (isChatbotLead) {
@@ -542,8 +618,8 @@ export function buildJobName(row: LeadRow): string {
 }
 
 /** Lead Notes = full intake summary. Stored ONLY on Job custom field. */
-function buildLeadNotes(row: LeadRow): string {
-  return buildHumanNote(row);
+function buildLeadNotes(row: LeadRow, attachments?: AttachmentInfo): string {
+  return buildHumanNote(row, attachments);
 }
 
 /**
@@ -697,7 +773,7 @@ export function validateCustomerAccountName(
   return null;
 }
 
-export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
+export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments?: AttachmentInfo) {
   const leadName = humanizeLeadName(row);
   const town = row.property_town ?? null;
   const meta: any = row.metadata ?? {};
@@ -717,9 +793,12 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
   const serviceAreaOrCityPage = cityPageMatch?.[1] ?? serviceArea ?? null;
   const photos = Array.isArray(row.photos_uploaded) ? row.photos_uploaded : [];
   const files = Array.isArray(row.files_uploaded) ? row.files_uploaded : [];
-  const uploadedFileUrls = [...photos, ...files]
-    .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
-    .filter(Boolean);
+  const resolvedAttachments: AttachmentInfo = attachments ?? { files: [], failures: uploadFailures(row) };
+  const uploadedFileUrls = resolvedAttachments.files.length
+    ? resolvedAttachments.files.map((f) => f.url)
+    : [...photos, ...files]
+        .map((v: any) => (typeof v === "string" ? v : v?.url ?? null))
+        .filter(Boolean);
   return {
     // Top-level fields most webhook receivers will look for
     lead_name: leadName,
@@ -801,6 +880,8 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       photos,
       files,
       uploaded_file_urls: uploadedFileUrls,
+      attachments: resolvedAttachments.files,
+      failed_uploads: resolvedAttachments.failures,
     },
     chat: kind === "chatbot" || row.chat_summary
       ? {
@@ -813,7 +894,7 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot") {
       : null,
     metadata: row.metadata ?? null,
     // Human-readable note the Highlander team can read at a glance
-    note: buildLeadNotes(row),
+    note: buildLeadNotes(row, resolvedAttachments),
   };
 }
 
@@ -984,6 +1065,27 @@ export function scrubDescription<T extends Record<string, any>>(input: T): T {
   return out as T;
 }
 
+/**
+ * Truncates the Lead Notes to JobTread's field cap while always keeping the
+ * FILES block (signed attachment links + failed uploads) intact.
+ */
+export function truncateNotePreservingFiles(note: string, max = 1000): string {
+  if (!note || note.length <= max) return note;
+  const lines = note.split("\n");
+  const start = lines.findIndex((l) => l.trim().toLowerCase() === "files");
+  if (start === -1) return note.slice(0, max - 10) + "\n…[truncated]";
+  let end = lines.length;
+  for (let i = start + 1; i < lines.length; i++) {
+    if (lines[i].trim() === "") { end = i; break; }
+  }
+  const filesBlock = lines.slice(start, end).join("\n");
+  const head = lines.slice(0, start).join("\n");
+  const marker = "\n…[truncated]\n";
+  const budget = max - filesBlock.length - marker.length;
+  if (budget <= 0) return filesBlock.slice(0, max);
+  return head.slice(0, budget) + marker + filesBlock;
+}
+
 export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
     const orgId = JOBTREAD_ORG_ID;
@@ -1011,10 +1113,9 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
     }
 
     const noteFull: string = payload.note ?? "";
-    // JobTread text custom fields cap at 1024 chars.
-    const noteShort = noteFull.length > 1000
-      ? noteFull.slice(0, 990) + "\n…[truncated]"
-      : noteFull;
+    // JobTread text custom fields cap at 1024 chars. Attachment links must
+    // survive truncation — they are the only way the crew reaches the files.
+    const noteShort = truncateNotePreservingFiles(noteFull, 1000);
 
     // Step 1 — dedupe by account name. JobTread enforces unique account
     // names within an org, so look up first and reuse the existing account
@@ -1302,7 +1403,20 @@ Deno.serve(async (req) => {
     project_description: row.project_description ?? row.description ?? null,
     source: row.source ?? row.source_form ?? table,
   };
-  const payload = buildPayload(normalized, kind);
+  // Sign attachment URLs with the service role so the CRM note carries real,
+  // openable links. Failures are reported inside the note, never fatal.
+  let attachmentInfo: AttachmentInfo = { files: [], failures: [] };
+  try {
+    attachmentInfo = await resolveAttachments(normalized, async (path: string) => {
+      const { data, error } = await admin.storage
+        .from("lead-uploads")
+        .createSignedUrl(path, ATTACHMENT_URL_TTL_SECONDS);
+      return { url: data?.signedUrl ?? null, error: error?.message ?? null };
+    });
+  } catch (e) {
+    console.warn("attachment signing failed (non-fatal):", (e as Error).message);
+  }
+  const payload = buildPayload(normalized, kind, attachmentInfo);
 
   const missing = validateSecrets();
   const nowIso = new Date().toISOString();

@@ -76,6 +76,8 @@ export type CanonicalLeadPayload = {
 
   // ----- Attachments -----
   attachments?: Array<string | LeadAttachment> | null;
+  /** Files the customer selected that failed to upload. Never blocks the lead. */
+  attachment_errors?: Array<{ name: string; reason: string }> | null;
 
   // ----- Conversational -----
   chat_summary?: string | null;
@@ -196,6 +198,14 @@ export function normalizeLeadPayload(input: LeadPayload) {
 
   const pagePath = clean(input.page_path) ?? currentPagePath();
 
+  // Failed uploads travel with the lead so the CRM note can name the files
+  // the customer tried to send. An upload failure must never block the lead.
+  const attachmentErrors = Array.isArray(input.attachment_errors)
+    ? input.attachment_errors
+        .map((e) => ({ name: String(e?.name ?? "file"), reason: String(e?.reason ?? "Upload failed") }))
+        .filter((e) => e.name)
+    : [];
+
   return {
     source: input.source,
     lead_type: clean(input.lead_type),
@@ -238,7 +248,10 @@ export function normalizeLeadPayload(input: LeadPayload) {
     full_chat_transcript: input.full_chat_transcript ?? null,
 
     consent_given: input.consent_given ?? true,
-    metadata: input.metadata ?? {},
+    metadata: {
+      ...(input.metadata ?? {}),
+      ...(attachmentErrors.length ? { attachment_errors: attachmentErrors } : {}),
+    },
   };
 }
 

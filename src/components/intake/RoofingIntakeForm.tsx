@@ -95,9 +95,13 @@ const RoofingIntakeForm = () => {
     try {
       const folder = newSessionFolder();
       let uploadedPaths: string[] = [];
+      // Files that failed to upload must never block the lead — they travel
+      // with the payload so the CRM note can name them.
+      let uploadErrors: { name: string; reason: string }[] = [];
       if (files.length) {
         const u = await uploadIntakeFiles(folder, files);
         uploadedPaths = u.ok.map((f) => f.path);
+        uploadErrors = u.errors;
       }
 
       const score = scoreLead({
@@ -143,6 +147,7 @@ const RoofingIntakeForm = () => {
           jobtread,
           upload_folder: folder,
           upload_paths: uploadedPaths,
+          upload_errors: uploadErrors,
           referrer: typeof document !== "undefined" ? document.referrer : null,
           utm: Object.fromEntries(params.entries()),
         } as any),
@@ -170,6 +175,7 @@ const RoofingIntakeForm = () => {
           project_description: data.description || null,
           lead_score: score,
           attachments: uploadedPaths,
+          attachment_errors: uploadErrors,
           metadata: { routing, jobtread, upload_folder: folder },
         });
       } catch (e) { console.error(e); }

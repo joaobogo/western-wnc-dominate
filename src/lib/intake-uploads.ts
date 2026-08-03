@@ -35,14 +35,19 @@ export async function uploadIntakeFiles(
     }
     const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
     const path = `submissions/${sessionFolder}/${Date.now()}-${safe}`;
-    const { error } = await supabase.storage
-      .from("lead-uploads")
-      .upload(path, file, { upsert: false, cacheControl: "3600", contentType: file.type });
-    if (error) {
-      out.errors.push({ name: file.name, reason: error.message });
-      continue;
+    try {
+      const { error } = await supabase.storage
+        .from("lead-uploads")
+        .upload(path, file, { upsert: false, cacheControl: "3600", contentType: file.type });
+      if (error) {
+        out.errors.push({ name: file.name, reason: error.message });
+        continue;
+      }
+      out.ok.push({ path, name: file.name, size: file.size, type: file.type });
+    } catch (e) {
+      // Network/CORS failure — never block the lead itself.
+      out.errors.push({ name: file.name, reason: (e as Error)?.message ?? "Upload failed" });
     }
-    out.ok.push({ path, name: file.name, size: file.size, type: file.type });
   }
   return out;
 }

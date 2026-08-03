@@ -97,9 +97,13 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
     try {
       const folder = newSessionFolder();
       let uploadedPaths: string[] = [];
+      // Files that failed to upload must never block the lead — they travel
+      // with the payload so the CRM note can name them.
+      let uploadErrors: { name: string; reason: string }[] = [];
       if (files.length) {
         const u = await uploadIntakeFiles(folder, files);
         uploadedPaths = u.ok.map((f) => f.path);
+        uploadErrors = u.errors;
       }
 
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
@@ -121,6 +125,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           decision_makers: data.decisionMakers,
           upload_folder: folder,
           upload_paths: uploadedPaths,
+          upload_errors: uploadErrors,
           mode: mode,
         },
       });
@@ -141,6 +146,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           has_plans: data.hasExistingPlans === "yes",
           project_description: data.description,
           attachments: uploadedPaths,
+          attachment_errors: uploadErrors,
           metadata: {
             mode,
             planning_need: data.planningNeed,
