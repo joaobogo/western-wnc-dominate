@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InlineFieldError from "@/components/forms/InlineFieldError";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -569,6 +570,13 @@ export default function Contact() {
                   transition={{ delay: 0.1, duration: 0.6, ease: HIGHLAND_EASE }}
                   className="lg:sticky lg:top-28"
                 >
+                  {/* Proof beside the CTA: real project, credentials, local review, response time */}
+                  <ConversionTrustBlock
+                    category={division === "roofing" ? "roofing" : "construction"}
+                    town={form.town.split(",")[0].trim() || undefined}
+                    className="mb-6"
+                  />
+
                   {/* Trust signals */}
                   <div className="border border-border bg-card p-6 md:p-7 mb-6">
                     <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-5">Why Homeowners Trust Highlander</h3>
