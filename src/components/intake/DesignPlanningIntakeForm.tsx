@@ -116,18 +116,27 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
       try {
         const { submitLead } = await import("@/lib/leads");
         await submitLead({
-          source: "design_form",
+          source: "design_intake_form",
           lead_type: "design_services",
-          name: data.name,
+          full_name: data.name,
           email: data.email,
           phone: data.phone,
           property_address: data.address,
+          property_state: "NC",
           service_category: "design_planning",
           project_type: data.projectType,
-          urgency: data.timeline || "exploring",
+          timeline: data.timeline || "exploring",
+          budget_range: data.budgetReadiness || null,
           has_plans: data.hasExistingPlans === "yes",
           project_description: data.description,
-          files_uploaded: uploadedPaths,
+          attachments: uploadedPaths,
+          metadata: {
+            mode,
+            planning_need: data.planningNeed,
+            current_stage: data.currentStage,
+            decision_makers: data.decisionMakers,
+            upload_folder: folder,
+          },
         });
       } catch (e) { console.error(e); }
 

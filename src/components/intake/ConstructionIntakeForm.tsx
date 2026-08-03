@@ -162,17 +162,28 @@ const ConstructionIntakeForm = () => {
         await submitLead({
           source: "construction_intake_form",
           lead_type: "construction",
-          name: data.name,
+          full_name: data.name,
           email: data.email,
           phone: data.phone,
           property_town: data.town,
+          property_state: "NC",
           service_category: "construction",
           project_type: data.projectType,
+          timeline: data.timeline,
           urgency: routing.priority === "P1" ? "high" : routing.priority === "P2" ? "medium" : "low",
           property_type: data.propertyType,
+          budget_range: data.budgetReadiness || null,
           has_plans: hasPlansBool ?? null,
           project_description: data.description,
-          files_uploaded: uploadedPaths,
+          lead_score: score,
+          attachments: uploadedPaths,
+          metadata: {
+            routing,
+            jobtread,
+            plan_status: data.hasPlans,
+            decision_maker: data.decisionMaker,
+            upload_folder: folder,
+          },
         });
       } catch (e) { console.error(e); }
 

@@ -143,19 +143,24 @@ const RoofingIntakeForm = () => {
       try {
         const { submitLead } = await import("@/lib/leads");
         await submitLead({
-          source: "roofing_form",
+          source: "roofing_intake_form",
           lead_type: "roofing",
-          name: data.name,
+          full_name: data.name,
           email: data.email,
           phone: data.phone,
           property_town: data.town,
+          property_state: "NC",
           service_category: "roofing",
           project_type: data.projectType,
+          timeline: data.timeline,
           urgency: data.timeline === "emergency" ? "high" : data.timeline === "30days" ? "medium" : "low",
+          insurance_status: data.insuranceStatus || null,
           roofing_issue_type: data.projectType,
           property_type: data.propertyType,
           project_description: data.description || null,
-          files_uploaded: uploadedPaths,
+          lead_score: score,
+          attachments: uploadedPaths,
+          metadata: { routing, jobtread, upload_folder: folder },
         });
       } catch (e) { console.error(e); }
 

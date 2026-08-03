@@ -61,10 +61,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           submitLead({
             source: "fast_lead_form",
             lead_type: serviceLabel,
-            name: formData.name,
+            full_name: formData.name,
             phone: formData.phone,
             property_town: formData.town,
-            urgency: formData.urgency,
+            property_state: "NC",
+            timeline: formData.urgency,
             service_category: serviceLabel,
           }).catch((err) => console.error("FastLeadForm submitLead failed:", err));
           setSubmitted(true);
