@@ -322,6 +322,28 @@ export default function QuoteFlow() {
 
       if (error) throw error;
       syncConsultationRequestToJobTread(consultId);
+
+      // Mirror into the unified `leads` table using the canonical payload.
+      try {
+        const { submitLead } = await import("@/lib/leads");
+        await submitLead({
+          source: "quote_flow",
+          lead_type: form.serviceCategory || "general_inquiry",
+          full_name: form.name,
+          email: form.email,
+          phone: form.phone || null,
+          property_town: form.town,
+          property_state: "NC",
+          property_type: form.propertyType || null,
+          service_category: form.serviceCategory,
+          project_type: form.projectType || null,
+          timeline: form.timeline,
+          urgency: TIMELINES.find(t => t.id === form.timeline)?.urgency || "low",
+          project_description: form.description || null,
+          lead_score: score,
+          metadata: { consultation_request_id: consultId },
+        });
+      } catch (e) { console.error("QuoteFlow submitLead failed:", e); }
       
       // Track successful submission
       trackEvent("form_submit", {
