@@ -8,6 +8,8 @@ import GoldLine from "@/components/motion/GoldLine";
 import SectionDivider from "@/components/SectionDivider";
 import FormConsent from "@/components/FormConsent";
 import { submitLead } from "@/lib/leads";
+import InlineFieldError from "@/components/forms/InlineFieldError";
+import { useContactValidation } from "@/hooks/use-contact-validation";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -37,6 +39,15 @@ const InspectionForm = () => {
     details: "",
   });
 
+  const contact = useContactValidation({
+    name: formData.name,
+    phone: formData.phone,
+    email: formData.email,
+    address: formData.town,
+    town: formData.town,
+    require: { name: true, address: true },
+  });
+
   const currentIndex = stepOrder.indexOf(currentStep);
   const progress = ((currentIndex + 1) / stepOrder.length) * 100;
 
@@ -50,16 +61,20 @@ const InspectionForm = () => {
   };
 
   const handleSubmit = async () => {
+    if (!contact.markAttempted()) {
+      setCurrentStep("info");
+      return;
+    }
     setIsSubmitting(true);
 
     // Persist to database (fire-and-forget; UI proceeds regardless)
     submitLead({
       source: "inspection_form",
       lead_type: "inspection_request",
-      full_name: formData.name,
-      phone: formData.phone,
-      email: formData.email || null,
-      property_address: formData.town,
+      full_name: contact.values.name,
+      phone: contact.values.phone,
+      email: contact.values.email,
+      property_address: contact.values.address,
       property_state: "NC",
       project_type: formData.projectType,
       timeline: formData.timeline,
@@ -186,8 +201,9 @@ const InspectionForm = () => {
   const labelClasses = "block text-[16px] md:text-[17px] font-bold text-white mb-3 font-body uppercase tracking-[0.18em]";
   const hintClasses = "text-dark-section-foreground/95 text-[15px] md:text-[16px] font-body mt-3 leading-relaxed font-bold";
 
-  const canProceedStep1 = formData.name && formData.phone;
-  const canProceedStep2 = formData.town && formData.projectType;
+  const canProceedStep1 =
+    !contact.errors.name && !contact.errors.phone && !contact.errors.email;
+  const canProceedStep2 = Boolean(!contact.errors.address && formData.projectType);
 
   return (
     <section className="section-dark relative overflow-hidden interaction-quote" id="request-inspection">
@@ -327,9 +343,12 @@ const InspectionForm = () => {
                                 id="name" type="text" required maxLength={100}
                                 value={formData.name}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                onBlur={() => contact.blur("name")}
+                                aria-invalid={Boolean(contact.errorFor("name")) || undefined}
                                 className={inputClasses}
                                 placeholder="First & last name"
                               />
+                              <InlineFieldError className="text-[hsl(var(--highland-gold))]">{contact.errorFor("name")}</InlineFieldError>
                               <p className={hintClasses}>So we know who we're speaking with.</p>
                             </div>
                             <div>
@@ -337,10 +356,13 @@ const InspectionForm = () => {
                               <input
                                 id="phone" type="tel" required maxLength={20}
                                 value={formData.phone}
-                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                onChange={(e) => setFormData({ ...formData, phone: contact.formatPhoneInput(e.target.value) })}
+                                onBlur={() => contact.blur("phone")}
+                                aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
                                 className={inputClasses}
                                 placeholder="(828) 555-0123"
                               />
+                              <InlineFieldError className="text-[hsl(var(--highland-gold))]">{contact.errorFor("phone")}</InlineFieldError>
                               <p className={hintClasses}>We'll call — never text spam.</p>
                             </div>
                           </div>
@@ -352,9 +374,12 @@ const InspectionForm = () => {
                               id="email" type="email" maxLength={255}
                               value={formData.email}
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                              onBlur={() => contact.blur("email")}
+                              aria-invalid={Boolean(contact.errorFor("email")) || undefined}
                               className={inputClasses}
                               placeholder="you@email.com"
                             />
+                            <InlineFieldError className="text-[hsl(var(--highland-gold))]">{contact.errorFor("email")}</InlineFieldError>
                           </div>
                         </div>
                       )}
@@ -368,9 +393,12 @@ const InspectionForm = () => {
                                 id="address" type="text" required maxLength={200}
                                 value={formData.town}
                                 onChange={(e) => setFormData({ ...formData, town: e.target.value })}
+                                onBlur={() => contact.blur("address")}
+                                aria-invalid={Boolean(contact.errorFor("address")) || undefined}
                                 className={inputClasses}
                                 placeholder="Street, city, and state"
                               />
+                              <InlineFieldError className="text-[hsl(var(--highland-gold))]">{contact.errorFor("address")}</InlineFieldError>
                               <p className={hintClasses}>So we can review the property on satellite before we call.</p>
                             </div>
                             <div>

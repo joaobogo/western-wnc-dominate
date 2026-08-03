@@ -1,4 +1,6 @@
 import { useState } from "react";
+import InlineFieldError from "@/components/forms/InlineFieldError";
+import { useContactValidation } from "@/hooks/use-contact-validation";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
@@ -74,6 +76,13 @@ export default function Contact() {
   const [timeline, setTimeline] = useState("");
   const [preferredContact, setPreferredContact] = useState("phone");
   const [form, setForm] = useState({ name: "", email: "", phone: "", town: "", message: "" });
+  const contact = useContactValidation({
+    name: form.name,
+    email: form.email,
+    phone: form.phone,
+    town: form.town,
+    require: { name: true, email: true },
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleDivision = (d: "roofing" | "construction") => {
@@ -89,14 +98,14 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name.trim() || !form.email.trim()) return;
+    if (!contact.markAttempted()) return;
     setIsSubmitting(true);
     try {
       const { supabase } = await import("@/integrations/supabase/client");
       await supabase.from("consultation_requests").insert({
-        name: form.name.trim(),
-        email: form.email.trim(),
-        phone: form.phone.trim() || null,
+        name: contact.values.name,
+        email: contact.values.email,
+        phone: contact.values.phone,
         project_description: [
           form.town.trim() && `Project location: ${form.town.trim()}`,
           form.message.trim(),
@@ -112,10 +121,10 @@ export default function Contact() {
       await submitLead({
         source: "contact_form",
         lead_type: division || "general_inquiry",
-        full_name: form.name.trim(),
-        email: form.email.trim(),
-        phone: form.phone.trim() || null,
-        property_town: form.town.trim() || null,
+        full_name: contact.values.name,
+        email: contact.values.email,
+        phone: contact.values.phone,
+        property_town: contact.values.town,
         property_state: "NC",
         service_category: division || null,
         project_type: service || null,
@@ -370,11 +379,14 @@ export default function Contact() {
                             id="cc-name"
                             value={form.name}
                             onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
+                            onBlur={() => contact.blur("name")}
+                            aria-invalid={Boolean(contact.errorFor("name")) || undefined}
                             placeholder="First & last name"
                             className={inputClasses}
                             required
                             maxLength={100}
                           />
+                          <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
                         </div>
                         <div>
                           <label htmlFor="cc-email" className={labelClasses}>Email *</label>
@@ -383,11 +395,14 @@ export default function Contact() {
                             type="email"
                             value={form.email}
                             onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                            onBlur={() => contact.blur("email")}
+                            aria-invalid={Boolean(contact.errorFor("email")) || undefined}
                             placeholder="you@email.com"
                             className={inputClasses}
                             required
                             maxLength={255}
                           />
+                          <InlineFieldError>{contact.errorFor("email")}</InlineFieldError>
                         </div>
                       </div>
 
@@ -400,11 +415,15 @@ export default function Contact() {
                           id="cc-phone"
                           type="tel"
                           value={form.phone}
-                          onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))}
+                          onChange={(e) => setForm((p) => ({ ...p, phone: contact.formatPhoneInput(e.target.value) }))}
+                          onBlur={() => contact.blur("phone")}
+                          aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
                           placeholder="(828) 555-0123"
                           className={inputClasses}
+                          inputMode="tel"
                           maxLength={20}
                         />
+                        <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
                       </div>
 
                       {/* Project address or town */}
@@ -417,10 +436,13 @@ export default function Contact() {
                           type="text"
                           value={form.town}
                           onChange={(e) => setForm((p) => ({ ...p, town: e.target.value }))}
+                          onBlur={() => contact.blur("town")}
+                          aria-invalid={Boolean(contact.errorFor("town")) || undefined}
                           placeholder="e.g. Highlands, Cashiers, Franklin, or full street address"
                           className={inputClasses}
                           maxLength={150}
                         />
+                        <InlineFieldError>{contact.errorFor("town")}</InlineFieldError>
                         <p className="mt-1.5 text-[11px] text-muted-foreground/60 font-body">
                           Helps us route your inquiry to the closest Highlander office and crew.
                         </p>

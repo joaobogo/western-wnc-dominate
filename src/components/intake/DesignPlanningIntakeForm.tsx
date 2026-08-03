@@ -5,7 +5,8 @@ import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
-import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots } from "./IntakeFieldKit";
+import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots, FieldError } from "./IntakeFieldKit";
+import { useContactValidation } from "@/hooks/use-contact-validation";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
 import FormConsent from "@/components/FormConsent";
@@ -63,24 +64,34 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
   const set = <K extends keyof typeof data>(k: K, v: (typeof data)[K]) =>
     setData((d) => ({ ...d, [k]: v }));
 
+  const contact = useContactValidation({
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    address: data.address,
+    town: data.address,
+    require: { name: true, address: true },
+  });
+
   const totalSteps = mode === "short" ? 2 : 4;
 
   const stepValid = useMemo(() => {
     if (step === 0) return Boolean(data.projectType && data.planningNeed);
     if (mode === "short") {
-      if (step === 1) return Boolean(data.name.trim() && data.phone.trim() && /\S+@\S+\.\S+/.test(data.email) && data.address.trim());
+      if (step === 1) return contact.valid;
     } else {
       if (step === 1) return Boolean(data.currentStage && data.timeline);
       if (step === 2) return data.description.trim().length >= 10;
-      if (step === 3) return Boolean(data.name.trim() && data.phone.trim() && /\S+@\S+\.\S+/.test(data.email) && data.address.trim());
+      if (step === 3) return contact.valid;
     }
     return false;
-  }, [step, data, mode]);
+  }, [step, data, mode, contact.valid]);
 
   const next = () => stepValid && setStep((s) => Math.min(totalSteps - 1, s + 1));
   const back = () => setStep((s) => Math.max(0, s - 1));
 
   const submit = async () => {
+    if (!contact.markAttempted()) return;
     setSubmitting(true);
     setError(null);
     try {
@@ -92,10 +103,10 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
       }
 
       const { error: insertErr } = await supabase.from("consultation_requests").insert({
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        town: data.address,
+        name: contact.values.name,
+        email: contact.values.email,
+        phone: contact.values.phone,
+        town: contact.values.town,
         project_type: data.projectType,
         service_category: "design_planning",
         timeline: data.timeline || "exploring",
@@ -118,10 +129,10 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
         await submitLead({
           source: "design_intake_form",
           lead_type: "design_services",
-          full_name: data.name,
-          email: data.email,
-          phone: data.phone,
-          property_address: data.address,
+          full_name: contact.values.name,
+          email: contact.values.email,
+          phone: contact.values.phone,
+          property_address: contact.values.address,
           property_state: "NC",
           service_category: "design_planning",
           project_type: data.projectType,
@@ -291,20 +302,53 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
               <FieldRow>
                 <div>
                   <Label required>Full name</Label>
-                  <Input value={data.name} onChange={(e) => set("name", e.target.value)} autoComplete="name" />
+                  <Input
+                    value={data.name}
+                    onChange={(e) => set("name", e.target.value)}
+                    onBlur={() => contact.blur("name")}
+                    invalid={Boolean(contact.errorFor("name"))}
+                    autoComplete="name"
+                  />
+                  <FieldError>{contact.errorFor("name")}</FieldError>
                 </div>
                 <div>
                   <Label required>Phone</Label>
-                  <Input type="tel" value={data.phone} onChange={(e) => set("phone", e.target.value)} autoComplete="tel" placeholder="(828) 555-0123" />
+                  <Input
+                    type="tel"
+                    inputMode="tel"
+                    value={data.phone}
+                    onChange={(e) => set("phone", contact.formatPhoneInput(e.target.value))}
+                    onBlur={() => contact.blur("phone")}
+                    invalid={Boolean(contact.errorFor("phone"))}
+                    autoComplete="tel"
+                    placeholder="(828) 555-0123"
+                  />
+                  <FieldError>{contact.errorFor("phone")}</FieldError>
                 </div>
               </FieldRow>
               <div>
                 <Label required>Email</Label>
-                <Input type="email" value={data.email} onChange={(e) => set("email", e.target.value)} autoComplete="email" />
+                <Input
+                  type="email"
+                  value={data.email}
+                  onChange={(e) => set("email", e.target.value)}
+                  onBlur={() => contact.blur("email")}
+                  invalid={Boolean(contact.errorFor("email"))}
+                  autoComplete="email"
+                  maxLength={255}
+                />
+                <FieldError>{contact.errorFor("email")}</FieldError>
               </div>
               <div>
                 <Label required>Property Address / Town</Label>
-                <Input placeholder="e.g. Highlands, Franklin, Cashiers" value={data.address} onChange={(e) => set("address", e.target.value)} />
+                <Input
+                  placeholder="e.g. Highlands, Franklin, Cashiers"
+                  value={data.address}
+                  onChange={(e) => set("address", e.target.value)}
+                  onBlur={() => contact.blur("address")}
+                  invalid={Boolean(contact.errorFor("address"))}
+                />
+                <FieldError>{contact.errorFor("address")}</FieldError>
                 <Helper>Helps us account for local terrain and codes.</Helper>
               </div>
             </>

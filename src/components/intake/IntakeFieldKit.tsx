@@ -12,10 +12,29 @@ export const Helper = ({ children }: { children: ReactNode }) => (
   <p className="text-[13px] md:text-[14px] text-foreground/60 mt-1.5 font-body leading-snug">{children}</p>
 );
 
-export const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
+/** Inline, per-field validation message. Always rendered under the input. */
+export const FieldError = ({ id, children }: { id?: string; children?: ReactNode }) =>
+  children ? (
+    <p
+      id={id}
+      role="alert"
+      className="text-[13px] md:text-[14px] text-destructive mt-1.5 font-body leading-snug"
+    >
+      {children}
+    </p>
+  ) : null;
+
+type InputProps = React.InputHTMLAttributes<HTMLInputElement> & { invalid?: boolean };
+
+export const Input = ({ invalid, ...props }: InputProps) => (
   <input
     {...props}
-    className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-foreground/75 focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors"
+    aria-invalid={invalid || undefined}
+    className={`w-full bg-background border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-foreground/75 focus:outline-none focus:ring-2 transition-colors ${
+      invalid
+        ? "border-destructive focus:border-destructive focus:ring-destructive/20"
+        : "border-border focus:border-[hsl(var(--highland-gold))] focus:ring-[hsl(var(--highland-gold)/0.15)]"
+    }`}
   />
 );
 

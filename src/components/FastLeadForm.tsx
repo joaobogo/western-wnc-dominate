@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, Phone, Shield } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
 import { submitLead } from "@/lib/leads";
+import InlineFieldError from "@/components/forms/InlineFieldError";
+import { useContactValidation } from "@/hooks/use-contact-validation";
 
 interface FastLeadFormProps {
   ctaLabel: string;
@@ -18,6 +20,19 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
     town: "",
     urgency: urgencyOptions[0] ?? "As soon as possible",
   });
+
+  const contact = useContactValidation({
+    name: formData.name,
+    phone: formData.phone,
+    town: formData.town,
+    // No email field on this form, so a valid phone is the only way to reach us.
+    require: { name: true, phone: true, town: true },
+  });
+
+  const fieldClass = (invalid?: boolean) =>
+    `w-full border bg-background px-4 py-3 text-sm font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 ${
+      invalid ? "border-destructive focus:border-destructive" : "border-input focus:border-primary"
+    }`;
 
   if (submitted) {
     return (
@@ -58,12 +73,13 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         className="space-y-4"
         onSubmit={(event) => {
           event.preventDefault();
+          if (!contact.markAttempted()) return;
           submitLead({
             source: "fast_lead_form",
             lead_type: serviceLabel,
-            full_name: formData.name,
-            phone: formData.phone,
-            property_town: formData.town,
+            full_name: contact.values.name,
+            phone: contact.values.phone,
+            property_town: contact.values.town,
             property_state: "NC",
             timeline: formData.urgency,
             service_category: serviceLabel,
@@ -80,9 +96,12 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             required
             value={formData.name}
             onChange={(event) => setFormData({ ...formData, name: event.target.value })}
-            className="w-full border border-input bg-background px-4 py-3 text-sm font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+            onBlur={() => contact.blur("name")}
+            aria-invalid={Boolean(contact.errorFor("name")) || undefined}
+            className={fieldClass(Boolean(contact.errorFor("name")))}
             placeholder="Your name"
           />
+          <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -93,12 +112,16 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             <input
               id={`${serviceLabel}-phone`}
               type="tel"
+              inputMode="tel"
               required
               value={formData.phone}
-              onChange={(event) => setFormData({ ...formData, phone: event.target.value })}
-              className="w-full border border-input bg-background px-4 py-3 text-sm font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+              onChange={(event) => setFormData({ ...formData, phone: contact.formatPhoneInput(event.target.value) })}
+              onBlur={() => contact.blur("phone")}
+              aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
+              className={fieldClass(Boolean(contact.errorFor("phone")))}
               placeholder="(828) 555-0123"
             />
+            <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
           </div>
           <div>
             <label htmlFor={`${serviceLabel}-town`} className="mb-2 block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -109,9 +132,12 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
               required
               value={formData.town}
               onChange={(event) => setFormData({ ...formData, town: event.target.value })}
-              className="w-full border border-input bg-background px-4 py-3 text-sm font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+              onBlur={() => contact.blur("town")}
+              aria-invalid={Boolean(contact.errorFor("town")) || undefined}
+              className={fieldClass(Boolean(contact.errorFor("town")))}
               placeholder="Franklin, Highlands, Sylva…"
             />
+            <InlineFieldError>{contact.errorFor("town")}</InlineFieldError>
           </div>
         </div>
 
