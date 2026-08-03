@@ -76,6 +76,8 @@ export type CanonicalLeadPayload = {
 
   // ----- Attachments -----
   attachments?: Array<string | LeadAttachment> | null;
+  /** Files the customer selected that failed to upload. Never blocks the lead. */
+  attachment_errors?: Array<{ name: string; reason: string }> | null;
 
   // ----- Conversational -----
   chat_summary?: string | null;
