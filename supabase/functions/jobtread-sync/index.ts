@@ -984,7 +984,7 @@ export function scrubDescription<T extends Record<string, any>>(input: T): T {
   return out as T;
 }
 
-async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
+export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
     const orgId = JOBTREAD_ORG_ID;
     if (!orgId) {
