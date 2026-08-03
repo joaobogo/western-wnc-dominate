@@ -56,12 +56,13 @@ const InspectionForm = () => {
     submitLead({
       source: "inspection_form",
       lead_type: "inspection_request",
-      name: formData.name,
+      full_name: formData.name,
       phone: formData.phone,
       email: formData.email || null,
       property_address: formData.town,
+      property_state: "NC",
       project_type: formData.projectType,
-      urgency: formData.timeline,
+      timeline: formData.timeline,
       project_description: formData.details,
       service_category: formData.projectType?.startsWith("roof") || formData.projectType === "storm-damage" || formData.projectType === "metal-roofing" ? "roofing" : "construction",
     }).catch((err) => console.error("InspectionForm submitLead failed:", err));
