@@ -408,6 +408,7 @@ export type Database = {
           fbclid: string | null
           files_uploaded: Json | null
           first_name: string | null
+          first_seen_at: string | null
           full_chat_transcript: Json | null
           gclid: string | null
           has_plans: boolean | null
@@ -423,11 +424,14 @@ export type Database = {
           jobtread_retry_count: number
           jobtread_sync_status: string
           jobtread_synced: boolean
+          landing_page: string | null
+          landing_url: string | null
           last_name: string | null
           lead_score: number | null
           lead_type: string | null
           li_fat_id: string | null
           metadata: Json | null
+          msclkid: string | null
           name: string | null
           notes: string | null
           page_path: string | null
@@ -472,6 +476,7 @@ export type Database = {
           fbclid?: string | null
           files_uploaded?: Json | null
           first_name?: string | null
+          first_seen_at?: string | null
           full_chat_transcript?: Json | null
           gclid?: string | null
           has_plans?: boolean | null
@@ -487,11 +492,14 @@ export type Database = {
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
+          landing_page?: string | null
+          landing_url?: string | null
           last_name?: string | null
           lead_score?: number | null
           lead_type?: string | null
           li_fat_id?: string | null
           metadata?: Json | null
+          msclkid?: string | null
           name?: string | null
           notes?: string | null
           page_path?: string | null
@@ -536,6 +544,7 @@ export type Database = {
           fbclid?: string | null
           files_uploaded?: Json | null
           first_name?: string | null
+          first_seen_at?: string | null
           full_chat_transcript?: Json | null
           gclid?: string | null
           has_plans?: boolean | null
@@ -551,11 +560,14 @@ export type Database = {
           jobtread_retry_count?: number
           jobtread_sync_status?: string
           jobtread_synced?: boolean
+          landing_page?: string | null
+          landing_url?: string | null
           last_name?: string | null
           lead_score?: number | null
           lead_type?: string | null
           li_fat_id?: string | null
           metadata?: Json | null
+          msclkid?: string | null
           name?: string | null
           notes?: string | null
           page_path?: string | null
