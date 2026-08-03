@@ -1065,6 +1065,28 @@ export function scrubDescription<T extends Record<string, any>>(input: T): T {
   return out as T;
 }
 
+/**
+ * Truncates the Lead Notes to JobTread's field cap while always keeping the
+ * FILES block (signed attachment links + failed uploads) intact.
+ */
+export function truncateNotePreservingFiles(note: string, max = 1000): string {
+  if (!note || note.length <= max) return note;
+  const lines = note.split("\n");
+  const start = lines.findIndex((l) => l.trim().toUpperCase().startsWith("FILES"));
+  if (start === -1) return note.slice(0, max - 10) + "\n…[truncated]";
+  let end = lines.length;
+  for (let i = start + 1; i < lines.length; i++) {
+    const l = lines[i];
+    if (/^[A-Z][A-Z &/]+$/.test(l.trim()) && l.trim().length > 2) { end = i; break; }
+  }
+  const filesBlock = lines.slice(start, end).join("\n");
+  const head = lines.slice(0, start).join("\n");
+  const marker = "\n…[truncated]\n";
+  const budget = max - filesBlock.length - marker.length;
+  if (budget <= 0) return filesBlock.slice(0, max);
+  return head.slice(0, budget) + marker + filesBlock;
+}
+
 export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
     const orgId = JOBTREAD_ORG_ID;
