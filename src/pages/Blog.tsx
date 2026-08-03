@@ -418,7 +418,25 @@ const Blog = () => {
                   <p className="text-muted-foreground text-sm mt-2 max-w-lg">{categoryConfig[activeCategory].description}</p>
                 )}
               </div>
-              <p className="text-muted-foreground text-sm font-body">{filtered.length} article{filtered.length !== 1 ? "s" : ""}</p>
+              <div className="flex items-center gap-4">
+                <p className="text-muted-foreground text-sm font-body">{filtered.length} article{filtered.length !== 1 ? "s" : ""}</p>
+                <div className="flex items-center rounded-sm border border-border bg-card p-0.5">
+                  {(["newest", "oldest"] as const).map((order) => (
+                    <button
+                      key={order}
+                      onClick={() => setSortOrder(order)}
+                      aria-pressed={sortOrder === order}
+                      className={`px-3 py-1.5 text-[10px] font-body font-bold uppercase tracking-[0.14em] rounded-sm transition-all ${
+                        sortOrder === order
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {order === "newest" ? "Newest" : "Oldest"}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </motion.div>
 
             {/* Category pills */}
