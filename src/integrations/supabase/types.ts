@@ -397,6 +397,7 @@ export type Database = {
           attachments: Json | null
           budget_range: string | null
           chat_summary: string | null
+          company_name: string | null
           consent_given: boolean | null
           consent_text: string | null
           created_at: string
@@ -413,6 +414,7 @@ export type Database = {
           id: string
           insurance_status: string | null
           ip_address: string | null
+          is_company: boolean
           jobtread_account_id: string | null
           jobtread_error_message: string | null
           jobtread_id: string | null
@@ -459,6 +461,7 @@ export type Database = {
           attachments?: Json | null
           budget_range?: string | null
           chat_summary?: string | null
+          company_name?: string | null
           consent_given?: boolean | null
           consent_text?: string | null
           created_at?: string
@@ -475,6 +478,7 @@ export type Database = {
           id?: string
           insurance_status?: string | null
           ip_address?: string | null
+          is_company?: boolean
           jobtread_account_id?: string | null
           jobtread_error_message?: string | null
           jobtread_id?: string | null
@@ -521,6 +525,7 @@ export type Database = {
           attachments?: Json | null
           budget_range?: string | null
           chat_summary?: string | null
+          company_name?: string | null
           consent_given?: boolean | null
           consent_text?: string | null
           created_at?: string
@@ -537,6 +542,7 @@ export type Database = {
           id?: string
           insurance_status?: string | null
           ip_address?: string | null
+          is_company?: boolean
           jobtread_account_id?: string | null
           jobtread_error_message?: string | null
           jobtread_id?: string | null

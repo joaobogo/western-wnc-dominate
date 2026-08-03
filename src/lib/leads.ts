@@ -5,6 +5,7 @@ import {
   trackChatbotLeadSubmit,
 } from "@/lib/gtm";
 import { scoreLead } from "@/lib/lead-scoring";
+import { parsePersonName } from "@/lib/name-parser";
 
 export const CONSENT_TEXT =
   "By submitting your information, you agree that Highlander Roofing Services, Inc. may contact you by phone, text, or email about your inquiry, services, scheduling, project follow-up, and review requests. Message and data rates may apply. Reply STOP to opt out of text messages. Reply HELP for help. See our Privacy Policy.";
@@ -76,6 +77,10 @@ export type CanonicalLeadPayload = {
   last_name?: string | null;
   /** Derived from first+last when omitted; split into first/last when provided alone. */
   full_name?: string | null;
+  /** Set automatically when the submitted name looks like a business. */
+  is_company?: boolean | null;
+  /** Business/organization name. Auto-detected from `full_name` when omitted. */
+  company_name?: string | null;
   email?: string | null;
   phone?: string | null;
   preferred_contact_method?: string | null;
@@ -142,13 +147,14 @@ function clean(v: unknown): string | null {
   return t.length ? t : null;
 }
 
-/** Splits a display name into first / last. Everything after the first token is the last name. */
+/**
+ * Splits a display name into first / last using the shared name parser.
+ * Company names return `{ first: null, last: null }` — read `parsePersonName`
+ * directly when you need the `is_company` / `company_name` fields.
+ */
 export function splitFullName(full?: string | null): { first: string | null; last: string | null } {
-  const n = clean(full);
-  if (!n) return { first: null, last: null };
-  const parts = n.split(" ");
-  if (parts.length === 1) return { first: parts[0], last: null };
-  return { first: parts[0], last: parts.slice(1).join(" ") };
+  const parsed = parsePersonName(full);
+  return { first: parsed.first_name, last: parsed.last_name };
 }
 
 /** Canonical timeline -> urgency mapping. Used whenever a form omits `urgency`. */
@@ -183,14 +189,16 @@ function normalizeAttachments(
 export function normalizeLeadPayload(input: LeadPayload) {
   // Name: accept first/last, full_name, or the legacy `name` field.
   const providedFull = clean(input.full_name) ?? clean(input.name);
+  const parsed = parsePersonName(providedFull);
   let first = clean(input.first_name);
   let last = clean(input.last_name);
   if (!first && !last && providedFull) {
-    const s = splitFullName(providedFull);
-    first = s.first;
-    last = s.last;
+    first = parsed.first_name;
+    last = parsed.last_name;
   }
   const fullName = providedFull ?? clean([first, last].filter(Boolean).join(" "));
+  const isCompany = input.is_company ?? parsed.is_company;
+  const companyName = clean(input.company_name) ?? parsed.company_name;
 
   const timeline = clean(input.timeline);
   const urgency = clean(input.urgency) ?? urgencyFromTimeline(timeline);
@@ -228,6 +236,8 @@ export function normalizeLeadPayload(input: LeadPayload) {
 
     first_name: first,
     last_name: last,
+    is_company: isCompany,
+    company_name: companyName,
     // `name` is the existing full-name column the JobTread mapper reads.
     name: fullName,
     email: clean(input.email),
