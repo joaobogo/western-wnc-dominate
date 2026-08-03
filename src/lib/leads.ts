@@ -175,21 +175,6 @@ export function decisionMakerOnSite(value?: string | null): boolean {
   return v === "self" || v === "me" || v === "owner" || v === "solo";
 }
 
-function unusedNormalizeAttachments(
-  input: CanonicalLeadPayload["attachments"],
-): LeadAttachment[] {
-  if (!Array.isArray(input)) return [];
-  return input
-    .map<LeadAttachment | null>((a) =>
-      typeof a === "string"
-        ? { path: a, name: a.split("/").pop() ?? a, size: null, type: null }
-        : a && typeof a.path === "string"
-          ? { path: a.path, name: a.name ?? null, size: a.size ?? null, type: a.type ?? null }
-          : null,
-    )
-    .filter((a): a is LeadAttachment => a !== null);
-}
-
 /**
  * Fills in every derived field so the row written to `leads` is always the
  * same shape regardless of which form produced it.
