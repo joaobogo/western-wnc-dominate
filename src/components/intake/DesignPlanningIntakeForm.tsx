@@ -144,6 +144,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           timeline: data.timeline || "exploring",
           budget_range: data.budgetReadiness || null,
           has_plans: data.hasExistingPlans === "yes",
+          decision_maker: data.decisionMakers || null,
           project_description: data.description,
           attachments: uploadedPaths,
           attachment_errors: uploadErrors,
