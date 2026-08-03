@@ -2152,14 +2152,12 @@ div[style*="Edit with Lovable"],
     touch-action: manipulation;
   }
 
-  nav a,
-  footer a,
+  a,
   .tap-target {
     position: relative;
   }
 
-  nav a::after,
-  footer a::after,
+  a::after,
   .tap-target::after {
     content: "";
     position: absolute;
@@ -2170,9 +2168,13 @@ div[style*="Edit with Lovable"],
     pointer-events: auto;
   }
 
-  /* Inline links inside prose keep normal text flow — no hit expansion. */
+  /* Inline links inside body copy keep normal text flow — expanding their
+     hit area there would overlap neighbouring lines of text. */
   .prose a::after,
-  p a::after {
+  p a::after,
+  li a::after,
+  blockquote a::after,
+  a[href^="#"]::after {
     content: none;
   }
 }
