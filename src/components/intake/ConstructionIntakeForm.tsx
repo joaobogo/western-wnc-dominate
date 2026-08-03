@@ -103,9 +103,13 @@ const ConstructionIntakeForm = () => {
     try {
       const folder = newSessionFolder();
       let uploadedPaths: string[] = [];
+      // Files that failed to upload must never block the lead — they travel
+      // with the payload so the CRM note can name them.
+      let uploadErrors: { name: string; reason: string }[] = [];
       if (files.length) {
         const u = await uploadIntakeFiles(folder, files);
         uploadedPaths = u.ok.map((f) => f.path);
+        uploadErrors = u.errors;
       }
 
       const hasPlansBool =
@@ -161,6 +165,7 @@ const ConstructionIntakeForm = () => {
           decision_maker: data.decisionMaker,
           upload_folder: folder,
           upload_paths: uploadedPaths,
+          upload_errors: uploadErrors,
           referrer: typeof document !== "undefined" ? document.referrer : null,
           utm: Object.fromEntries(params.entries()),
         } as any),
@@ -187,6 +192,7 @@ const ConstructionIntakeForm = () => {
           project_description: data.description,
           lead_score: score,
           attachments: uploadedPaths,
+          attachment_errors: uploadErrors,
           metadata: {
             routing,
             jobtread,
