@@ -492,7 +492,7 @@ function buildContactPayload(row: LeadRow) {
  * Location display: property address → "[Town] Property" → "Website Lead".
  * Never uses Customer, Job Name, or Lead Notes.
  */
-function buildLocationDisplayName(row: LeadRow): string {
+export function buildLocationDisplayName(row: LeadRow): string {
   const address = cleanName(row.property_address);
   if (address) return address;
   const town = cleanName(row.property_town);
@@ -501,7 +501,7 @@ function buildLocationDisplayName(row: LeadRow): string {
 }
 
 /** Job name = human-readable "[Service] - [Town] - [First Name]". */
-function buildJobName(row: LeadRow): string {
+export function buildJobName(row: LeadRow): string {
   return humanizeLeadName(row);
 }
 
