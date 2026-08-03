@@ -14,7 +14,7 @@ export type ScoreInput = {
   propertyType?: string;           // primary | second_home | rental | commercial
   town?: string;
   budgetReadiness?: string;        // ready | exploring | researching
-  decisionMakerOnSite?: boolean;
+  decisionMakerOnSite?: boolean;   // true when the person submitting decides
   description?: string;
 };
 
