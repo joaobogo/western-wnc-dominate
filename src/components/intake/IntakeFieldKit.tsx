@@ -92,7 +92,14 @@ export const FieldRow = ({ children }: { children: ReactNode }) => (
 );
 
 export const StepDots = ({ total, current }: { total: number; current: number }) => (
-  <div className="flex items-center gap-1.5">
+  <div
+    className="flex items-center gap-1.5"
+    role="progressbar"
+    aria-valuemin={1}
+    aria-valuemax={total}
+    aria-valuenow={current + 1}
+    aria-label={`Step ${current + 1} of ${total}`}
+  >
     {Array.from({ length: total }).map((_, i) => (
       <div
         key={i}
@@ -103,3 +110,42 @@ export const StepDots = ({ total, current }: { total: number; current: number })
     ))}
   </div>
 );
+
+/**
+ * Continuous progress bar for longer flows. Pairs with StepDots on wide
+ * layouts and replaces it where horizontal room is tight (mobile).
+ */
+export const ProgressIndicator = ({
+  total,
+  current,
+  label,
+}: {
+  total: number;
+  current: number;
+  label?: string;
+}) => {
+  const pct = Math.round(((current + 1) / total) * 100);
+  return (
+    <div className="w-full">
+      <div className="flex items-center justify-between mb-1.5">
+        <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/80">
+          Step {current + 1} of {total}
+        </span>
+        {label && <span className="text-[11px] font-body text-muted-foreground">{label}</span>}
+      </div>
+      <div
+        className="h-1 w-full rounded-full bg-border overflow-hidden"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={pct}
+        aria-label={`Form progress: step ${current + 1} of ${total}`}
+      >
+        <div
+          className="h-full bg-[hsl(var(--highland-gold))] transition-all duration-300"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+    </div>
+  );
+};
