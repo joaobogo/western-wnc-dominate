@@ -189,14 +189,16 @@ function normalizeAttachments(
 export function normalizeLeadPayload(input: LeadPayload) {
   // Name: accept first/last, full_name, or the legacy `name` field.
   const providedFull = clean(input.full_name) ?? clean(input.name);
+  const parsed = parsePersonName(providedFull);
   let first = clean(input.first_name);
   let last = clean(input.last_name);
   if (!first && !last && providedFull) {
-    const s = splitFullName(providedFull);
-    first = s.first;
-    last = s.last;
+    first = parsed.first_name;
+    last = parsed.last_name;
   }
   const fullName = providedFull ?? clean([first, last].filter(Boolean).join(" "));
+  const isCompany = input.is_company ?? parsed.is_company;
+  const companyName = clean(input.company_name) ?? parsed.company_name;
 
   const timeline = clean(input.timeline);
   const urgency = clean(input.urgency) ?? urgencyFromTimeline(timeline);
@@ -234,6 +236,8 @@ export function normalizeLeadPayload(input: LeadPayload) {
 
     first_name: first,
     last_name: last,
+    is_company: isCompany,
+    company_name: companyName,
     // `name` is the existing full-name column the JobTread mapper reads.
     name: fullName,
     email: clean(input.email),
