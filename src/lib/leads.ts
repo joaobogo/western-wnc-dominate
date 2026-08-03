@@ -142,13 +142,14 @@ function clean(v: unknown): string | null {
   return t.length ? t : null;
 }
 
-/** Splits a display name into first / last. Everything after the first token is the last name. */
+/**
+ * Splits a display name into first / last using the shared name parser.
+ * Company names return `{ first: null, last: null }` — read `parsePersonName`
+ * directly when you need the `is_company` / `company_name` fields.
+ */
 export function splitFullName(full?: string | null): { first: string | null; last: string | null } {
-  const n = clean(full);
-  if (!n) return { first: null, last: null };
-  const parts = n.split(" ");
-  if (parts.length === 1) return { first: parts[0], last: null };
-  return { first: parts[0], last: parts.slice(1).join(" ") };
+  const parsed = parsePersonName(full);
+  return { first: parsed.first_name, last: parsed.last_name };
 }
 
 /** Canonical timeline -> urgency mapping. Used whenever a form omits `urgency`. */
