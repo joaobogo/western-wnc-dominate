@@ -1125,19 +1125,15 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           accountId,
           name: locName,
           address: address || null,
-          customFieldValues: {
-            // JobTread requires the "Is There a Gate Code?" boolean on every
-            // Location. Send `true` only when the customer actually submitted
-            // a gate code / entry code; otherwise `false` (safe default).
-            [JT_CF.location.gate_code]: gateCodeBool,
-            [JT_CF.location.contact_name]: contactName,
-            [JT_CF.location.phone]: payload.contact?.phone || "",
-            [JT_CF.location.email]: payload.contact?.email || "",
-            // Sales Notes intentionally OMITTED from the payload — full
-            // website intake summary lives ONLY in Job → Lead Notes
-            // (per Highlander/Robert). Sending the same note here made it
-            // appear twice in JobTread.
-          },
+          // JobTread requires the "Is There a Gate Code?" boolean on every
+          // Location. Sales Notes intentionally OMITTED — full website intake
+          // summary lives ONLY in Job → Lead Notes (single-write rule).
+          customFieldValues: buildLocationCustomFieldValues({
+            gateCodeBool,
+            contactName,
+            phone: payload.contact?.phone,
+            email: payload.contact?.email,
+          }),
         },
         createdLocation: { id: {}, name: {} },
       },
@@ -1173,14 +1169,7 @@ async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: string; 
           // Description intentionally OMITTED from the payload — Highlander
           // uses JobTread Description for internal scope, not for the
           // website intake summary. Full summary goes into Lead Notes only.
-          customFieldValues: {
-            [JT_CF.job.status]: "01 New Lead (Needs Appointment)",
-            [JT_CF.job.job_type]: mapJobType(payload),
-            [JT_CF.job.scope_type]: mapScopeType(payload),
-            [JT_CF.job.comm_pref]: mapCommPref(payload.contact?.preferred_contact_method),
-            [JT_CF.job.customer_present]: false,
-            [JT_CF.job.lead_notes]: noteShort,
-          },
+          customFieldValues: buildJobCustomFieldValues(payload, noteShort),
         }),
         createdJob: { id: {}, name: {} },
       },
