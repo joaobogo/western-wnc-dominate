@@ -166,7 +166,7 @@ function normalizeAttachments(
 ): LeadAttachment[] {
   if (!Array.isArray(input)) return [];
   return input
-    .map((a) =>
+    .map<LeadAttachment | null>((a) =>
       typeof a === "string"
         ? { path: a, name: a.split("/").pop() ?? a, size: null, type: null }
         : a && typeof a.path === "string"
