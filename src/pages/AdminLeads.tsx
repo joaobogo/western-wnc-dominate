@@ -127,6 +127,35 @@ export default function AdminLeads() {
     navigate("/admin/login", { replace: true });
   };
 
+  const sources = useMemo(
+    () => Array.from(new Set(leads.map(l => l.source).filter(Boolean))).sort(),
+    [leads],
+  );
+  const towns = useMemo(
+    () => Array.from(new Set(leads.map(l => l.property_town).filter(Boolean) as string[])).sort(),
+    [leads],
+  );
+
+  const filtered = useMemo(() => {
+    const from = fromDate ? new Date(`${fromDate}T00:00:00`).getTime() : null;
+    const to = toDate ? new Date(`${toDate}T23:59:59`).getTime() : null;
+    return leads.filter(l => {
+      if (tierFilter !== "all" && leadTierLabel(l.lead_score) !== tierFilter) return false;
+      if (sourceFilter !== "all" && l.source !== sourceFilter) return false;
+      if (townFilter !== "all" && (l.property_town ?? "") !== townFilter) return false;
+      if (syncFilter !== "all" && (l.jobtread_sync_status ?? "pending") !== syncFilter) return false;
+      const t = new Date(l.created_at).getTime();
+      if (from && t < from) return false;
+      if (to && t > to) return false;
+      return true;
+    });
+  }, [leads, tierFilter, sourceFilter, townFilter, syncFilter, fromDate, toDate]);
+
+  const resetFilters = () => {
+    setTierFilter("all"); setSourceFilter("all"); setTownFilter("all");
+    setSyncFilter("all"); setFromDate(""); setToDate("");
+  };
+
   if (loading) return <div className="p-10 text-sm">Loading…</div>;
   if (!authed) return null;
   if (!isAdmin) {
@@ -146,19 +175,40 @@ export default function AdminLeads() {
       <header className="border-b border-border px-6 py-4 flex items-center justify-between">
         <div>
           <h1 className="text-lg font-heading font-bold">Leads — Internal</h1>
-          <p className="text-xs text-muted-foreground">Showing latest 200 leads. Not visible to the public.</p>
+          <p className="text-xs text-muted-foreground">
+            Showing {filtered.length} of {leads.length} (latest 200). Not visible to the public.
+          </p>
         </div>
         <div className="flex items-center gap-4 text-sm">
           <Link to="/" className="underline">← Site</Link>
           <button onClick={signOut} className="underline">Sign out</button>
         </div>
       </header>
+      <div className="border-b border-border px-6 py-3 flex flex-wrap items-end gap-3 text-xs">
+        <FilterSelect label="Tier" value={tierFilter} onChange={setTierFilter} options={TIERS} />
+        <FilterSelect label="Sync" value={syncFilter} onChange={setSyncFilter} options={SYNC_STATES} />
+        <FilterSelect label="Source" value={sourceFilter} onChange={setSourceFilter} options={sources} />
+        <FilterSelect label="Town" value={townFilter} onChange={setTownFilter} options={towns} />
+        <div>
+          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1">From</label>
+          <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)}
+            className="border border-input rounded px-2 py-1 bg-background" />
+        </div>
+        <div>
+          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1">To</label>
+          <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)}
+            className="border border-input rounded px-2 py-1 bg-background" />
+        </div>
+        <button onClick={resetFilters} className="underline text-muted-foreground pb-1">Reset</button>
+      </div>
       <div className="grid lg:grid-cols-[1fr_2fr] gap-0 min-h-[calc(100vh-65px)]">
         <div className="border-r border-border overflow-auto max-h-[calc(100vh-65px)]">
-          {leads.length === 0 && (
-            <p className="p-6 text-sm text-muted-foreground">No leads yet.</p>
+          {filtered.length === 0 && (
+            <p className="p-6 text-sm text-muted-foreground">
+              {leads.length === 0 ? "No leads yet." : "No leads match these filters."}
+            </p>
           )}
-          {leads.map(l => (
+          {filtered.map(l => (
             <button
               key={l.id}
               onClick={() => setSelected(l)}
@@ -167,6 +217,7 @@ export default function AdminLeads() {
               <div className="flex items-center justify-between gap-2">
                 <span className="text-sm font-semibold">{l.name || l.email || l.phone || "Anonymous"}</span>
                 <div className="flex items-center gap-1">
+                  <TierPill score={l.lead_score} />
                   <SyncPill status={l.jobtread_sync_status} />
                   <span className="text-[10px] uppercase tracking-wide bg-primary/10 text-primary px-1.5 py-0.5 rounded">{l.status}</span>
                 </div>
@@ -174,6 +225,9 @@ export default function AdminLeads() {
               <div className="text-[11px] text-muted-foreground mt-0.5">
                 {l.source} · {l.lead_type ?? "—"} · {l.property_town ?? ""}
               </div>
+              {l.jobtread_sync_status && l.jobtread_sync_status !== "success" && l.jobtread_error_message && (
+                <div className="text-[10px] text-destructive mt-0.5 line-clamp-2">{l.jobtread_error_message}</div>
+              )}
               <div className="text-[10px] text-muted-foreground/70 mt-0.5">{new Date(l.created_at).toLocaleString()}</div>
             </button>
           ))}
