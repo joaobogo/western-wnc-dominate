@@ -239,7 +239,76 @@ function flattenFormAnswers(
   return out;
 }
 
-function buildHumanNote(row: LeadRow): string {
+/** Resolved attachment (signed URL) or a failure we must report in the note. */
+export type ResolvedAttachment = { name: string; url: string };
+export type AttachmentFailure = { name: string; reason: string };
+export type AttachmentInfo = { files: ResolvedAttachment[]; failures: AttachmentFailure[] };
+
+export const ATTACHMENT_URL_TTL_SECONDS = 60 * 60 * 24 * 30; // 30 days
+
+function attachmentEntries(row: LeadRow): Array<{ path?: string; url?: string; name: string }> {
+  const raw = [
+    ...(Array.isArray(row.photos_uploaded) ? row.photos_uploaded : []),
+    ...(Array.isArray(row.files_uploaded) ? row.files_uploaded : []),
+    ...(Array.isArray((row as any).attachments) ? (row as any).attachments : []),
+  ];
+  const out: Array<{ path?: string; url?: string; name: string }> = [];
+  const seen = new Set<string>();
+  for (const v of raw) {
+    const value = typeof v === "string" ? { path: v } : (v ?? {});
+    const url = (value as any).url as string | undefined;
+    const path = (value as any).path as string | undefined;
+    const key = url ?? path;
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    const name = String((value as any).name ?? key.split("/").pop() ?? "attachment");
+    if (url && /^https?:\/\//i.test(url)) out.push({ url, name });
+    else if (path) out.push({ path, name });
+  }
+  return out;
+}
+
+/** Failed client-side uploads recorded on the lead metadata. */
+function uploadFailures(row: LeadRow): AttachmentFailure[] {
+  const meta: any = row.metadata ?? {};
+  const raw = meta.attachment_errors ?? meta.upload_errors ?? [];
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((e: any) => ({
+      name: String(e?.name ?? "file"),
+      reason: String(e?.reason ?? e?.message ?? "Upload failed"),
+    }))
+    .filter((e) => e.name);
+}
+
+/**
+ * Turns storage paths into signed, shareable URLs so Highlander can open the
+ * customer's photos/plans straight from the JobTread Job. Any file we cannot
+ * sign is reported as a failure in Lead Notes — it never blocks the sync.
+ */
+export async function resolveAttachments(
+  row: LeadRow,
+  signer: (path: string) => Promise<{ url?: string | null; error?: string | null }>,
+): Promise<AttachmentInfo> {
+  const files: ResolvedAttachment[] = [];
+  const failures: AttachmentFailure[] = uploadFailures(row);
+  for (const entry of attachmentEntries(row)) {
+    if (entry.url) {
+      files.push({ name: entry.name, url: entry.url });
+      continue;
+    }
+    try {
+      const res = await signer(entry.path!);
+      if (res?.url) files.push({ name: entry.name, url: res.url });
+      else failures.push({ name: entry.name, reason: String(res?.error ?? "Could not generate download link") });
+    } catch (e) {
+      failures.push({ name: entry.name, reason: (e as Error)?.message ?? "Could not generate download link" });
+    }
+  }
+  return { files, failures };
+}
+
+function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   const lines: string[] = [];
   const NP = "Not provided";
   const val = (v: any): string => {
