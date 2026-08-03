@@ -168,6 +168,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
       });
 
       setSubmitted(true);
+      autosave.clear();
     } catch (e: any) {
       setError(e?.message || "Something went wrong. Please call (828) 524-7773.");
     } finally {
