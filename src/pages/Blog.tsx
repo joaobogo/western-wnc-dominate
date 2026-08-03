@@ -197,7 +197,7 @@ const Blog = () => {
               >
                 <div className="flex items-center gap-3">
                   <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                  <span className="eyebrow">Editor's Picks</span>
+                  <span className="eyebrow">Latest Articles</span>
                 </div>
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)] mt-3" />
               </motion.div>
