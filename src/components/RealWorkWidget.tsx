@@ -79,7 +79,6 @@ const RealWorkWidget = ({
       if (cancelled) return false;
       const output = outputRef.current;
       if (output && output.children.length > 0) {
-        patchInjectedA11y(output);
         setStatus("ready");
         return true;
       }
@@ -103,14 +102,24 @@ const RealWorkWidget = ({
       window.setTimeout(checkReady, 1000);
     };
 
-    if (outputRef.current) {
-      const output = outputRef.current;
-      observer = new MutationObserver(() => {
-        patchInjectedA11y(output);
+    // The plugin can mount its UI outside #rwl-output, so watch the document
+    // and re-patch on every injection. patchInjectedA11y only fills in missing
+    // accessible names, so it never overrides our own markup.
+    let patchScheduled = false;
+    const schedulePatch = () => {
+      if (patchScheduled) return;
+      patchScheduled = true;
+      window.setTimeout(() => {
+        patchScheduled = false;
+        if (cancelled) return;
+        patchInjectedA11y(document.body);
         checkReady();
-      });
-      observer.observe(output, { childList: true, subtree: true });
-    }
+      }, 120);
+    };
+
+    observer = new MutationObserver(schedulePatch);
+    observer.observe(document.body, { childList: true, subtree: true });
+    schedulePatch();
 
     window.__loadRWL?.();
     initialize();
