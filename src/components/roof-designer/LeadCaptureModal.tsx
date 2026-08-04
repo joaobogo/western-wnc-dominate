@@ -198,8 +198,8 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
           </div>
 
           <div className="space-y-2">
-            <Label>Timeline</Label>
-            <Select value={form.timeline} onValueChange={(v) => setForm({ ...form, timeline: v })}>
+            <Label htmlFor="f-timeline">Timeline</Label>
+            <Select id="f-timeline" value={form.timeline} onValueChange={(v) => setForm({ ...form, timeline: v })}>
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>

@@ -224,17 +224,17 @@ const RoofAssessmentQuiz = () => {
                   <p className="text-sm text-muted-foreground mb-6 font-body">Enter your info to see your personalized assessment and next steps.</p>
                   <form onSubmit={handleContactSubmit} className="space-y-4">
                     <div>
-                      <label className={labelClass}>Your Name</label>
-                      <input type="text" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className={inputClass} placeholder="First & last name" />
+                      <label className={labelClass} htmlFor="f-your-name">Your Name</label>
+                      <input id="f-your-name" type="text" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className={inputClass} placeholder="First & last name" />
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className={labelClass}>Email</label>
-                        <input type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
+                        <label className={labelClass} htmlFor="f-email">Email</label>
+                        <input id="f-email" type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
                       </div>
                       <div>
-                        <label className={labelClass}>Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/70">(optional)</span></label>
-                        <input type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
+                        <label className={labelClass} htmlFor="f-phone-optional">Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/70">(optional)</span></label>
+                        <input id="f-phone-optional" type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
                       </div>
                     </div>
                     <FormConsent />

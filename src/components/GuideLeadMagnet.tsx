@@ -95,12 +95,12 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
-            <label className={labelClass}>Your Name</label>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} placeholder="First & last name" />
+            <label className={labelClass} htmlFor="f-your-name">Your Name</label>
+            <input id="f-your-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} placeholder="First & last name" />
           </div>
           <div>
-            <label className={labelClass}>Email</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
+            <label className={labelClass} htmlFor="f-email">Email</label>
+            <input id="f-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
           </div>
           <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase disabled:opacity-60">
             {submitting ? (

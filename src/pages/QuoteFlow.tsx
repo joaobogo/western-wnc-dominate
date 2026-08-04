@@ -258,8 +258,8 @@ export default function QuoteFlow() {
           </div>
           <div className="space-y-3">
             <div>
-              <label className="text-xs font-body font-medium text-foreground mb-1 block">Full Name *</label>
-              <input
+              <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-full-name">Full Name *</label>
+              <input id="f-full-name"
                 value={form.name}
                 onChange={e => update("name", e.target.value)}
                 onBlur={() => contact.blur("name")}
@@ -271,8 +271,8 @@ export default function QuoteFlow() {
               <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
             </div>
             <div>
-              <label className="text-xs font-body font-medium text-foreground mb-1 block">Email Address *</label>
-              <input
+              <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-email-address">Email Address *</label>
+              <input id="f-email-address"
                 type="email"
                 value={form.email}
                 onChange={e => update("email", e.target.value)}
@@ -286,8 +286,8 @@ export default function QuoteFlow() {
               <InlineFieldError>{contact.errorFor("email")}</InlineFieldError>
             </div>
             <div>
-              <label className="text-xs font-body font-medium text-foreground mb-1 block">Phone Number <span className="text-muted-foreground">(optional — speeds up our response)</span></label>
-              <input
+              <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-phone-number-optional-speeds-up-">Phone Number <span className="text-muted-foreground">(optional — speeds up our response)</span></label>
+              <input id="f-phone-number-optional-speeds-up-"
                 type="tel"
                 value={form.phone}
                 onChange={e => update("phone", contact.formatPhoneInput(e.target.value))}

@@ -377,8 +377,8 @@ const ConstructionBuilder = () => {
                     <ChipGroup options={DECISION_MAKERS} value={data.decisionMakers} onChange={(v) => set("decisionMakers", v)} columns={2} />
                   </div>
                   <div className="mt-6">
-                    <Label required>Property address</Label>
-                    <Input value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Street, city, and state…" />
+                    <Label required htmlFor="f-property-address">Property address</Label>
+                    <Input id="f-property-address" value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Street, city, and state…" />
                   </div>
                 </>
               )}
@@ -390,8 +390,8 @@ const ConstructionBuilder = () => {
                   <p className="text-foreground/55 text-[13px] font-body mb-6">Plans, sketches, or inspiration photos — all optional.</p>
                   <FileDrop files={files} onChange={setFiles} />
                   <div className="mt-6">
-                    <Label>Anything else the advisor should know</Label>
-                    <Textarea
+                    <Label htmlFor="f-anything-else-the-advisor-should">Anything else the advisor should know</Label>
+                    <Textarea id="f-anything-else-the-advisor-should"
                       rows={4}
                       value={data.description}
                       onChange={(e) => set("description", e.target.value)}
@@ -411,17 +411,17 @@ const ConstructionBuilder = () => {
                       <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/55 mb-3">Your contact</p>
                       <FieldRow>
                         <div>
-                          <Label required>Full name</Label>
-                          <Input value={data.name} onChange={(e) => set("name", e.target.value)} />
+                          <Label required htmlFor="f-full-name">Full name</Label>
+                          <Input id="f-full-name" value={data.name} onChange={(e) => set("name", e.target.value)} />
                         </div>
                         <div>
-                          <Label required>Phone</Label>
-                          <Input value={data.phone} onChange={(e) => set("phone", e.target.value)} placeholder="(828) 555-0100" />
+                          <Label required htmlFor="f-phone">Phone</Label>
+                          <Input id="f-phone" value={data.phone} onChange={(e) => set("phone", e.target.value)} placeholder="(828) 555-0100" />
                         </div>
                       </FieldRow>
                       <div className="mt-4">
-                        <Label required>Email</Label>
-                        <Input value={data.email} onChange={(e) => set("email", e.target.value)} type="email" />
+                        <Label required htmlFor="f-email">Email</Label>
+                        <Input id="f-email" value={data.email} onChange={(e) => set("email", e.target.value)} type="email" />
                       </div>
                     </div>
                     {error && <p className="text-[12.5px] text-destructive font-body">{error}</p>}

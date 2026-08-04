@@ -289,8 +289,8 @@ export default function ConstructionConsultation() {
       content: (
         <div className="space-y-4">
           <div>
-            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block">Full Name *</label>
-            <input
+            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block" htmlFor="f-full-name">Full Name *</label>
+            <input id="f-full-name"
               value={form.name}
               onChange={e => update("name", e.target.value)}
               placeholder="Your name"
@@ -299,8 +299,8 @@ export default function ConstructionConsultation() {
             />
           </div>
           <div>
-            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block">Email Address *</label>
-            <input
+            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block" htmlFor="f-email-address">Email Address *</label>
+            <input id="f-email-address"
               type="email"
               value={form.email}
               onChange={e => update("email", e.target.value)}
@@ -310,10 +310,10 @@ export default function ConstructionConsultation() {
             />
           </div>
           <div>
-            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block">
+            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block" htmlFor="f-phone-number-recommended-our-adv">
               Phone Number <span className="text-muted-foreground font-normal">(recommended — our advisors prefer to call)</span>
             </label>
-            <input
+            <input id="f-phone-number-recommended-our-adv"
               type="tel"
               value={form.phone}
               onChange={e => update("phone", e.target.value)}

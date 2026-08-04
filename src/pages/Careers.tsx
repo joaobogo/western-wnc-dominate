@@ -147,18 +147,18 @@ const Careers = () => {
                       <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid sm:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Full Name</label>
-                            <input required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="John Doe" />
+                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-full-name">Full Name</label>
+                            <input id="f-full-name" required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="John Doe" />
                           </div>
                           <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Phone Number</label>
-                            <input required type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
+                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-phone-number">Phone Number</label>
+                            <input id="f-phone-number" required type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
                           </div>
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Position of Interest</label>
-                          <select value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors appearance-none">
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-position-of-interest">Position of Interest</label>
+                          <select id="f-position-of-interest" value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors appearance-none">
                             {openRoles.map(role => (
                               <option key={role}>{role}</option>
                             ))}
@@ -167,14 +167,14 @@ const Careers = () => {
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Relevant Experience</label>
-                          <textarea rows={4} value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-relevant-experience">Relevant Experience</label>
+                          <textarea id="f-relevant-experience" rows={4} value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Resume / CV (Optional)</label>
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-resume-cv-optional">Resume / CV (Optional)</label>
                           <div className="relative group cursor-pointer">
-                            <input type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                            <input id="f-resume-cv-optional" type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
                             <div className="w-full bg-secondary/30 border border-dashed border-border p-6 text-center group-hover:border-primary/50 transition-colors">
                               <Upload className="w-6 h-6 text-muted-foreground mx-auto mb-2" />
                               <p className="text-xs text-muted-foreground">Click or drag to upload file</p>

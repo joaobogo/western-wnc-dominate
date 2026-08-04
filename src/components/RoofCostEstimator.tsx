@@ -230,22 +230,22 @@ const RoofCostEstimator = () => {
                   <p className="text-sm text-muted-foreground mb-6 font-body">Enter your info to see your personalized range and receive a detailed breakdown.</p>
                   <form onSubmit={handleContactSubmit} className="space-y-4">
                     <div>
-                      <label className={labelClass}>Your Name</label>
-                      <input type="text" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} required className={inputClass} placeholder="First & last name" />
+                      <label className={labelClass} htmlFor="f-your-name">Your Name</label>
+                      <input id="f-your-name" type="text" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} required className={inputClass} placeholder="First & last name" />
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className={labelClass}>Email</label>
-                        <input type="email" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
+                        <label className={labelClass} htmlFor="f-email">Email</label>
+                        <input id="f-email" type="email" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
                       </div>
                       <div>
-                        <label className={labelClass}>Phone</label>
-                        <input type="tel" value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} required className={inputClass} placeholder="(828) 555-0123" />
+                        <label className={labelClass} htmlFor="f-phone">Phone</label>
+                        <input id="f-phone" type="tel" value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} required className={inputClass} placeholder="(828) 555-0123" />
                       </div>
                     </div>
                     <div>
-                      <label className={labelClass}>Your Town</label>
-                      <select value={data.town} onChange={(e) => setData({ ...data, town: e.target.value })} required className={inputClass}>
+                      <label className={labelClass} htmlFor="f-your-town">Your Town</label>
+                      <select id="f-your-town" value={data.town} onChange={(e) => setData({ ...data, town: e.target.value })} required className={inputClass}>
                         <option value="">Select your town</option>
                         {towns.map((t) => <option key={t} value={t}>{t}</option>)}
                       </select>
