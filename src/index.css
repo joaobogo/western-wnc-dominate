@@ -189,6 +189,12 @@ img {
     --heritage-charcoal: 210 25% 10%;
     --highland-gold: 38 98% 48%; /* Improved contrast gold */
     --highland-gold-light: 38 55% 75%;
+    /*
+     * Gold used as TEXT. On light surfaces the brand gold only reaches ~2.2:1,
+     * so text defaults to a deeper gold that clears WCAG AA (5.17:1 on white).
+     * Dark surfaces re-declare this token below and get the bright brand gold.
+     */
+    --gold-ink: 38 100% 30%;
     --tartan-line: 158 30% 28%;
     --tartan-accent: 0 45% 35%;
     --warm-stone: 34 20% 92%;
