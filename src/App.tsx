@@ -1,6 +1,4 @@
 import { lazy, Suspense } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -15,6 +13,9 @@ import { tier1FlatEntries, tier2FlatEntries } from "./data/service-town-slugs";
 
 // Chat widget is below-the-fold, non-critical UI — keep it out of the first load.
 const ChatbotWidget = lazy(() => import("./components/chatbot/ChatbotWidget"));
+// Toast layers only matter after an interaction — keep them off the critical path.
+const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
+const Sonner = lazy(() => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })));
 
 // Initialize tracking pixels
 initPixels();
@@ -97,8 +98,10 @@ const App = () => (
   <ErrorBoundary boundary="app-root">
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
+        <Suspense fallback={null}>
+          <Toaster />
+          <Sonner />
+        </Suspense>
         <BrowserRouter>
           <ScrollToTop />
           <GTMRouteTracker />
