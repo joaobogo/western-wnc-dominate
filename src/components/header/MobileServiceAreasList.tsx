@@ -70,7 +70,6 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                   placeholder="Search town or county…"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  aria-label="Search service areas"
                   className="w-full min-h-[44px] rounded-sm border border-black/10 bg-white pl-8 pr-8 py-2 text-[15px] font-body text-heritage-charcoal placeholder:text-heritage-charcoal/40 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.4)] focus:border-[hsl(var(--highland-gold)/0.5)]"
                 />
                 {search && (
