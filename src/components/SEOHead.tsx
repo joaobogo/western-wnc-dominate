@@ -86,15 +86,39 @@ const SEOHead = ({
 
     const existingLd = document.querySelector('script[data-seo-ld]');
     if (existingLd) existingLd.remove();
-    if (jsonLd) {
+    // Sitewide schema floor: every indexable route carries the LocalBusiness
+    // entity and a BreadcrumbList, on top of whatever the page supplies.
+    const nodes: Record<string, unknown>[] = jsonLd
+      ? (Array.isArray(jsonLd) ? [...jsonLd] : [jsonLd])
+      : [];
+    const serialized = JSON.stringify(nodes);
+    if (!noindex && !serialized.includes(`${BASE_URL}/#business`)) {
+      nodes.push(localBusinessSchema());
+    }
+    if (!noindex && !serialized.includes("BreadcrumbList") && path !== "/") {
+      const segments = path.split("/").filter(Boolean);
+      const trail = [{ name: "Home", url: "/" }];
+      segments.forEach((segment, i) => {
+        trail.push({
+          name: segment
+            .replace(/-nc$/, " NC")
+            .split("-")
+            .map((w) => (w.length > 2 ? w[0].toUpperCase() + w.slice(1) : w.toUpperCase()))
+            .join(" "),
+          url: `/${segments.slice(0, i + 1).join("/")}`,
+        });
+      });
+      nodes.push(breadcrumbSchema(trail) as Record<string, unknown>);
+    }
+    if (nodes.length) {
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.setAttribute("data-seo-ld", "true");
-      script.textContent = JSON.stringify(Array.isArray(jsonLd) ? jsonLd : jsonLd);
+      script.textContent = JSON.stringify(nodes.length === 1 ? nodes[0] : nodes);
       document.head.appendChild(script);
     }
     return () => { const ld = document.querySelector('script[data-seo-ld]'); if (ld) ld.remove(); };
-  }, [fullTitle, description, canonicalUrl, type, ogImage, noindex, jsonLd, keywords, locale]);
+  }, [fullTitle, description, canonicalUrl, path, type, ogImage, noindex, jsonLd, keywords, locale]);
 
   return null;
 };
