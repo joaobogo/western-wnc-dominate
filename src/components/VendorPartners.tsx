@@ -72,7 +72,7 @@ const VendorPartners = ({ heading = "Trusted Manufacturer & Supplier Partners", 
             >
               <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5">
                 {v.image ? (
-                  <img
+                  <img decoding="async"
                     src={v.image}
                     alt={`${v.name} logo`}
                     loading="lazy"

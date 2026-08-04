@@ -60,7 +60,7 @@ const RoofingGallery = ({
                 onClick={() => setLightboxIdx(i)}
                 className="group relative aspect-[4/3] rounded-sm overflow-hidden text-left cursor-pointer"
               >
-                <img
+                <img decoding="async"
                   src={project.src}
                   alt={project.alt}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -121,7 +121,7 @@ const RoofingGallery = ({
               className="max-w-5xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <img decoding="async" loading="lazy"
                 src={projects[lightboxIdx].src}
                 alt={projects[lightboxIdx].alt}
                 className="w-full h-auto max-h-[75vh] object-contain rounded-sm"

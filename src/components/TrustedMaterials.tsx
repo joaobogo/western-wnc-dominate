@@ -105,7 +105,7 @@ const TrustedMaterials = () => {
               className="group bg-white p-6 md:p-7 flex flex-col border border-white/10 hover:border-[hsl(var(--highland-gold)/0.6)] hover:-translate-y-1 transition-all duration-300 shadow-lg"
             >
               <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5 border-b border-foreground/10 pb-5">
-                <img
+                <img decoding="async"
                   src={v.logo}
                   alt={`${v.name} logo`}
                   loading="lazy"

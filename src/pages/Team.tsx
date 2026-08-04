@@ -74,7 +74,7 @@ const Team = () => {
                 >
                   <div>
                     <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-muted shadow-sm">
-                      <img
+                      <img decoding="async"
                         src={member.image}
                         alt={member.alt}
                         loading="lazy"

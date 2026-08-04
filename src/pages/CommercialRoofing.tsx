@@ -129,7 +129,7 @@ const CommercialRoofing = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImg} alt="Commercial roofing project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img decoding="async" src={heroImg} alt="Commercial roofing project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>

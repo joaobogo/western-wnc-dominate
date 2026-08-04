@@ -62,7 +62,7 @@ const ServiceAreas = () => {
       <main>
         <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-end overflow-hidden">
           <div className="absolute inset-0 section-dark">
-            <img
+            <img decoding="async" loading="lazy"
               src={SERVICE_AREAS_HERO}
               onError={(e) => {
                 const img = e.currentTarget;

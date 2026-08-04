@@ -56,7 +56,7 @@ const Gutters = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img
+            <img decoding="async"
               src={guttersImg}
               alt="Seamless aluminum gutters on a Western North Carolina mountain home"
               className="w-full h-full object-cover object-center"
