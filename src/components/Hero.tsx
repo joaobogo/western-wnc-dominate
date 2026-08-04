@@ -24,6 +24,16 @@ const Hero = () => {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
   const [layer, setLayer] = useState(0);
+  // Only the LCP image is in the DOM on first paint. The two cross-fade
+  // layers mount after load so they never compete for bandwidth with the LCP.
+  const [extraLayersReady, setExtraLayersReady] = useState(false);
+
+  useEffect(() => {
+    const mount = () => setExtraLayersReady(true);
+    const id = window.setTimeout(mount, 2500);
+    window.addEventListener("load", mount, { once: true });
+    return () => window.clearTimeout(id);
+  }, []);
 
   // Layered still imagery — slow cinematic cross-fade across 3 real WNC roof photos.
   // 9s per layer, ease handled by CSS transition.
@@ -45,11 +55,13 @@ const Hero = () => {
       <div className="absolute inset-0">
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
             No video. All real WNC roof photography. */}
-        {layers.map((src, i) => (
+        {layers.map((src, i) => (i > 0 && !extraLayersReady ? null : (
           <img
             key={src}
             src={src}
             alt={layerAlts[i]}
+            width={1600}
+            height={1067}
             loading={i === 0 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "low"}
             decoding="async"
@@ -60,7 +72,7 @@ const Hero = () => {
               transform: "translateZ(0)",
             }}
           />
-        ))}
+        )))}
 
         {/* Multi-layer cinematic grading — stronger on mobile for text legibility, lighter on desktop */}
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.35)] md:from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.08)] md:via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
