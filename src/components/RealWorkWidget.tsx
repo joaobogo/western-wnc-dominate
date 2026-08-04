@@ -31,6 +31,46 @@ const RealWorkWidget = ({
   const outputRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
 
+  /*
+   * The RealWork embed injects markup we don't control, and it ships icon-only
+   * controls and placeholder images with no accessible names. Patch the injected
+   * subtree so the widget doesn't fail WCAG on our pages.
+   */
+  const patchInjectedA11y = (root: HTMLElement) => {
+    root.querySelectorAll<HTMLImageElement>("img:not([alt])").forEach((img) => {
+      img.setAttribute("alt", "");
+      img.setAttribute("role", "presentation");
+    });
+
+    root
+      .querySelectorAll<HTMLElement>('button, a[role="button"], [role="button"]')
+      .forEach((el) => {
+        if (el.getAttribute("aria-label") || el.getAttribute("aria-labelledby")) return;
+        if ((el.textContent || "").trim().length > 0) return;
+        el.setAttribute("aria-label", "Recent project updates control");
+      });
+
+    // Their carousel exposes role="list" on a node whose children aren't listitems.
+    root.querySelectorAll<HTMLElement>('[role="list"]').forEach((el) => {
+      const hasListItems = el.querySelector('[role="listitem"], li');
+      if (!hasListItems) el.setAttribute("role", "group");
+    });
+
+    // Horizontally scrollable panes must be keyboard reachable.
+    root.querySelectorAll<HTMLElement>("div").forEach((el) => {
+      if (el.hasAttribute("tabindex")) return;
+      const style = window.getComputedStyle(el);
+      const scrolls =
+        (style.overflowX === "auto" || style.overflowX === "scroll") &&
+        el.scrollWidth > el.clientWidth;
+      if (scrolls) {
+        el.setAttribute("tabindex", "0");
+        el.setAttribute("role", "region");
+        el.setAttribute("aria-label", "Recent project updates, scrollable");
+      }
+    });
+  };
+
   useEffect(() => {
     let cancelled = false;
     let observer: MutationObserver | null = null;
@@ -39,6 +79,7 @@ const RealWorkWidget = ({
       if (cancelled) return false;
       const output = outputRef.current;
       if (output && output.children.length > 0) {
+        patchInjectedA11y(output);
         setStatus("ready");
         return true;
       }
@@ -63,10 +104,12 @@ const RealWorkWidget = ({
     };
 
     if (outputRef.current) {
+      const output = outputRef.current;
       observer = new MutationObserver(() => {
-        if (checkReady() && observer) observer.disconnect();
+        patchInjectedA11y(output);
+        checkReady();
       });
-      observer.observe(outputRef.current, { childList: true, subtree: true });
+      observer.observe(output, { childList: true, subtree: true });
     }
 
     window.__loadRWL?.();
