@@ -7,7 +7,6 @@ import TartanBackground from "@/components/TartanBackground";
 
 import ThreeDivisionPathway from "@/components/DualPathway";
 
-import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
 import SiteLoader from "@/components/SiteLoader";
@@ -29,6 +28,7 @@ const HomeFAQ = lazy(() => import("@/components/HomeFAQ"));
 const RegionalAuthority = lazy(() => import("@/components/RegionalAuthority"));
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap"));
 const ExploreHighlander = lazy(() => import("@/components/ExploreHighlander"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const SectionFallback = ({ h = 480 }: { h?: number }) => (
   <div style={{ minHeight: h }} aria-hidden="true" />
@@ -135,7 +135,9 @@ const Index = () => {
 
         <SectionDivider variant="gold-fade" />
       </main>
-      <Footer />
+      <Suspense fallback={<SectionFallback h={600} />}>
+        <Footer />
+      </Suspense>
       <StickyMobileCTA />
     </>
   );
