@@ -28,6 +28,8 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
   const isMobile = useIsMobile();
   const [zoomed, setZoomed] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const lastFocused = useRef<HTMLElement | null>(null);
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
   const dragX = useMotionValue(0);
@@ -46,11 +48,37 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
         case "ArrowRight": if (currentIndex! < projects.length - 1) onNavigate(currentIndex! + 1); break;
         case "i": setShowInfo(p => !p); break;
         case "z": setZoomed(p => !p); break;
+        case "Tab": {
+          // Focus trap: cycle within the dialog so keyboard users cannot
+          // tab into the page behind the overlay.
+          const focusables = dialogRef.current?.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+          );
+          if (!focusables || focusables.length === 0) break;
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+          const active = document.activeElement as HTMLElement | null;
+          if (e.shiftKey && (active === first || !dialogRef.current?.contains(active))) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && active === last) {
+            e.preventDefault();
+            first.focus();
+          }
+          break;
+        }
       }
     };
+    lastFocused.current = document.activeElement as HTMLElement | null;
+    // Move focus into the dialog so the screen reader announces it.
+    requestAnimationFrame(() => dialogRef.current?.focus());
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handler);
-    return () => { window.removeEventListener("keydown", handler); document.body.style.overflow = ""; };
+    return () => {
+      window.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+      lastFocused.current?.focus();
+    };
   }, [isOpen, currentIndex, onClose, onNavigate, projects.length]);
 
   // Reset zoom on slide change
@@ -94,7 +122,12 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[70] bg-[hsl(var(--heritage-charcoal)/0.97)] backdrop-blur-sm flex items-center justify-center"
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={project ? `Project gallery: ${project.title}` : "Project gallery"}
+          tabIndex={-1}
+          className="fixed inset-0 z-[70] bg-[hsl(var(--heritage-charcoal)/0.97)] backdrop-blur-sm flex items-center justify-center focus:outline-none"
           onClick={onClose}
         >
           {/* Controls bar */}
@@ -116,6 +149,8 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                 <>
                   <button
                     onClick={() => setShowInfo(p => !p)}
+                    aria-label={showInfo ? "Hide project details" : "Show project details"}
+                    aria-pressed={showInfo}
                     className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                     title="Toggle info (I)"
                   >
@@ -123,6 +158,8 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   </button>
                   <button
                     onClick={() => setZoomed(p => !p)}
+                    aria-label={zoomed ? "Zoom out" : "Zoom in"}
+                    aria-pressed={zoomed}
                     className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                     title="Toggle zoom (Z)"
                   >
@@ -132,6 +169,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
               )}
               <button
                 onClick={onClose}
+                aria-label="Close project gallery"
                 className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
               >
                 <X className="w-5 h-5 text-white/85" />
@@ -143,6 +181,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
           {!isMobile && currentIndex! > 0 && (
             <button
               onClick={(e) => { e.stopPropagation(); onNavigate(currentIndex! - 1); }}
+              aria-label="Previous project"
               className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all z-20 group"
             >
               <ChevronLeft className="w-6 h-6 text-white/40 group-hover:text-white/95 transition-colors" />
@@ -151,6 +190,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
           {!isMobile && currentIndex! < projects.length - 1 && (
             <button
               onClick={(e) => { e.stopPropagation(); onNavigate(currentIndex! + 1); }}
+              aria-label="Next project"
               className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all z-20 group"
             >
               <ChevronRight className="w-6 h-6 text-white/40 group-hover:text-white/95 transition-colors" />
