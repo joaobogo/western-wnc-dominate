@@ -247,12 +247,12 @@ const RoofingIntakeForm = () => {
           {step === 0 && (
             <>
               <div>
-                <Label required>What kind of roofing project</Label>
-                <ChipGroup options={PROJECT_OPTIONS} value={data.projectType} onChange={(v) => set("projectType", v)} columns={2} />
+                <Label required id="lbl-what-kind-of-roofing-project">What kind of roofing project</Label>
+                <ChipGroup labelledBy="lbl-what-kind-of-roofing-project" options={PROJECT_OPTIONS} value={data.projectType} onChange={(v) => set("projectType", v)} columns={2} />
               </div>
               <div>
-                <Label required>Timeline</Label>
-                <ChipGroup options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={2} />
+                <Label required id="lbl-timeline">Timeline</Label>
+                <ChipGroup labelledBy="lbl-timeline" options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={2} />
               </div>
               {data.timeline === "emergency" && (
                 <p className="text-[12.5px] font-body text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] border border-[hsl(var(--highland-gold)/0.25)] rounded-md px-4 py-3">
@@ -265,13 +265,13 @@ const RoofingIntakeForm = () => {
           {step === 1 && (
             <>
               <div>
-                <Label required>Property type</Label>
-                <ChipGroup options={PROPERTY_OPTIONS} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
+                <Label required id="lbl-property-type">Property type</Label>
+                <ChipGroup labelledBy="lbl-property-type" options={PROPERTY_OPTIONS} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
               </div>
               <div className="space-y-4">
                 <div>
-                  <Label required>Property address</Label>
-                  <Input
+                  <Label required htmlFor="fld-property-address">Property address</Label>
+                  <Input id="fld-property-address"
                     placeholder="Street, city, and state"
                     value={data.town}
                     onChange={(e) => set("town", e.target.value)}
@@ -282,8 +282,8 @@ const RoofingIntakeForm = () => {
                   <Helper>Full address allows us to prepare a more accurate assessment.</Helper>
                 </div>
                 <div>
-                  <Label>Insurance claim status</Label>
-                  <ChipGroup options={INSURANCE_OPTIONS} value={data.insuranceStatus} onChange={(v) => set("insuranceStatus", v)} columns={3} />
+                  <Label id="lbl-insurance-claim-status">Insurance claim status</Label>
+                  <ChipGroup labelledBy="lbl-insurance-claim-status" options={INSURANCE_OPTIONS} value={data.insuranceStatus} onChange={(v) => set("insuranceStatus", v)} columns={3} />
                 </div>
               </div>
             </>
@@ -292,7 +292,7 @@ const RoofingIntakeForm = () => {
           {step === 2 && (
             <>
               <div>
-                <Label>Roof photos</Label>
+                <Label htmlFor="fld-roof-photos-anything-specific-we-should-">Roof photos</Label>
                 <FileDrop
                   files={files}
                   onChange={setFiles}
@@ -302,7 +302,7 @@ const RoofingIntakeForm = () => {
               </div>
               <div>
                 <Label>Anything specific we should know?</Label>
-                <Textarea
+                <Textarea id="fld-roof-photos-anything-specific-we-should-"
                   rows={5}
                   placeholder="Roof age, known leaks, recent storm, prior repairs, specific design concerns…"
                   value={data.description}
@@ -317,8 +317,8 @@ const RoofingIntakeForm = () => {
             <>
               <FieldRow>
                 <div>
-                  <Label required>Full name</Label>
-                  <Input
+                  <Label required htmlFor="fld-full-name">Full name</Label>
+                  <Input id="fld-full-name"
                     value={data.name}
                     onChange={(e) => set("name", e.target.value)}
                     onBlur={() => contact.blur("name")}
@@ -328,8 +328,8 @@ const RoofingIntakeForm = () => {
                   <FieldError>{contact.errorFor("name")}</FieldError>
                 </div>
                 <div>
-                  <Label required>Phone</Label>
-                  <Input
+                  <Label required htmlFor="fld-phone">Phone</Label>
+                  <Input id="fld-phone"
                     type="tel"
                     inputMode="tel"
                     value={data.phone}
@@ -343,8 +343,8 @@ const RoofingIntakeForm = () => {
                 </div>
               </FieldRow>
               <div>
-                <Label required>Email</Label>
-                <Input
+                <Label required htmlFor="fld-email">Email</Label>
+                <Input id="fld-email"
                   type="email"
                   value={data.email}
                   onChange={(e) => set("email", e.target.value)}
