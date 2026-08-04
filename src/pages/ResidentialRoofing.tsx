@@ -15,14 +15,14 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
-import asphalt001 from "@/assets/gallery/asphalt-001.jpg";
-import asphalt005 from "@/assets/gallery/asphalt-005.jpg";
+import asphalt001 from "@/assets/gallery/asphalt-001.webp";
+import asphalt005 from "@/assets/gallery/asphalt-005.webp";
 import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-005.jpg";
-import cedarDetail from "@/assets/gallery/cedar-001.jpg";
+import cedarRoof from "@/assets/gallery/cedar-005.webp";
+import cedarDetail from "@/assets/gallery/cedar-001.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 
@@ -168,7 +168,7 @@ const ResidentialRoofing = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img
+            <img decoding="async"
               src={asphaltHero}
               alt="Premium residential roof replacement on a mountain home in Western North Carolina"
               className="w-full h-full object-cover"
@@ -572,7 +572,7 @@ const ResidentialRoofing = () => {
                     <div className="grid md:grid-cols-5 gap-0">
                       {/* Image */}
                       <div className="md:col-span-2 aspect-[16/10] md:aspect-auto">
-                        <img
+                        <img decoding="async"
                           src={mat.image}
                           alt={mat.name}
                           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
@@ -711,7 +711,7 @@ const ResidentialRoofing = () => {
                   transition={{ delay: i * 0.06, duration: 0.5 }}
                   className="group relative aspect-[4/3] rounded-sm overflow-hidden"
                 >
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute top-3 left-3 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">
                     {item.category}

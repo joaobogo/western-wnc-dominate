@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import logoCertainteed from "@/assets/logo-certainteed-vendor.png";
+import logoCertainteed from "@/assets/logo-certainteed-vendor.webp";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";
 import logoSenox from "@/assets/logo-senox-vendor.png";
@@ -72,7 +72,7 @@ const VendorPartners = ({ heading = "Trusted Manufacturer & Supplier Partners", 
             >
               <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5">
                 {v.image ? (
-                  <img
+                  <img decoding="async"
                     src={v.image}
                     alt={`${v.name} logo`}
                     loading="lazy"

@@ -11,7 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { towns } from "@/data/towns";
 import veluxLogo from "@/assets/velux-certified-logo.jpg";
 import VeluxProof from "@/components/VeluxProof";
-import skylightsMobileHero from "@/assets/heroes/skylights-mobile.jpg";
+import skylightsMobileHero from "@/assets/heroes/skylights-mobile.webp";
 import CTABlock from "@/components/CTABlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import VeluxWidget from "@/components/VeluxWidget";
@@ -77,7 +77,7 @@ const Skylights = () => {
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={skylightsMobileHero} />
-              <img src={skylightsMobileHero} alt="Interior mountain great room with VELUX skylights and warm sunlight in Western North Carolina" className="w-full h-full object-cover object-center" loading="eager" />
+              <img decoding="async" src={skylightsMobileHero} alt="Interior mountain great room with VELUX skylights and warm sunlight in Western North Carolina" className="w-full h-full object-cover object-center" loading="eager" />
             </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.72)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.55)] via-transparent to-transparent" />

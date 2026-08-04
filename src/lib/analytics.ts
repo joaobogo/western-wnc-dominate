@@ -1,4 +1,4 @@
-import { supabase } from "@/integrations/supabase/client";
+// The backend client is imported lazily so it stays out of the critical bundle.
 
 // Types for tracking
 type EventType =
@@ -97,21 +97,26 @@ export const trackEvent = async (type: EventType, options: TrackOptions = {}) =>
 
   // 1. Internal Tracking (Supabase)
   try {
-    void supabase.from("conversion_events").insert({
-      event_type: type,
-      path,
-      element_id: elementId,
-      label,
-      metadata: {
-        ...enrichedMetadata,
-        href: typeof window !== "undefined" ? window.location.href : null,
-        referrer: typeof document !== "undefined" ? document.referrer : null,
-        userAgent: typeof navigator !== "undefined" ? navigator.userAgent : null,
-      },
-      session_id: sessionId,
-    }).then(({ error }) => {
-      if (error) console.warn("Internal tracking failed:", error.message);
-    });
+    void import("@/integrations/supabase/client").then(({ supabase }) =>
+      supabase
+        .from("conversion_events")
+        .insert({
+          event_type: type,
+          path,
+          element_id: elementId,
+          label,
+          metadata: {
+            ...enrichedMetadata,
+            href: typeof window !== "undefined" ? window.location.href : null,
+            referrer: typeof document !== "undefined" ? document.referrer : null,
+            userAgent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+          },
+          session_id: sessionId,
+        })
+        .then(({ error }) => {
+          if (error) console.warn("Internal tracking failed:", error.message);
+        }),
+    );
   } catch (err) {
     console.warn("Analytics error:", err);
   }

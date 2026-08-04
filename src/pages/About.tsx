@@ -623,7 +623,7 @@ const About = () => {
               </ScrollReveal>
               <div className="relative">
                 <div className="aspect-[4/5] bg-muted overflow-hidden border border-border">
-                  <img
+                  <img decoding="async"
                     src={heritageImg}
                     alt="Western North Carolina mountain home representing Highlander's family heritage"
                     loading="lazy"

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Phone } from "lucide-react";
-import logoCertainteed from "@/assets/logo-certainteed-vendor.png";
+import logoCertainteed from "@/assets/logo-certainteed-vendor.webp";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoSenox from "@/assets/logo-senox-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";
@@ -105,7 +105,7 @@ const TrustedMaterials = () => {
               className="group bg-white p-6 md:p-7 flex flex-col border border-white/10 hover:border-[hsl(var(--highland-gold)/0.6)] hover:-translate-y-1 transition-all duration-300 shadow-lg"
             >
               <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5 border-b border-foreground/10 pb-5">
-                <img
+                <img decoding="async"
                   src={v.logo}
                   alt={`${v.name} logo`}
                   loading="lazy"

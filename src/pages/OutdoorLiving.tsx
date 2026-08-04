@@ -16,17 +16,17 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
-import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.jpg";
+import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
 
 const heroImg = "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&q=80&w=2000";
 const porchContextImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600";
 const timberFrameImg = "https://images.unsplash.com/photo-1590069230002-70cc6a97da21?auto=format&fit=crop&q=80&w=1200";
 const terrainSlopeImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
 
-import proj1 from "@/assets/gallery/cedar-001.jpg";
+import proj1 from "@/assets/gallery/cedar-001.webp";
 import proj2 from "@/assets/gallery/metal-006.webp";
-import proj3 from "@/assets/gallery/asphalt-005.jpg";
-import proj4 from "@/assets/gallery/cedar-005.jpg";
+import proj3 from "@/assets/gallery/asphalt-005.webp";
+import proj4 from "@/assets/gallery/cedar-005.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
@@ -120,7 +120,7 @@ const OutdoorLiving = () => {
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={outdoorMobileHero} />
-              <img src={heroImg} alt="Outdoor living space in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
+              <img decoding="async" src={heroImg} alt="Outdoor living space in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
             </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
@@ -205,7 +205,7 @@ const OutdoorLiving = () => {
                   Highlander designs and builds bright, comfortable outdoor living spaces scaled to your home, crafted for the Western North Carolina climate, and finished with the same care we bring to every project.
                 </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
-                <img src={porchContextImg} alt="Sunlit mountain home with covered porch and deck overlooking the landscape" className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
+                <img decoding="async" src={porchContextImg} alt="Sunlit mountain home with covered porch and deck overlooking the landscape" className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
               </div>
             </motion.div>
           </div>
@@ -411,7 +411,7 @@ const OutdoorLiving = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>

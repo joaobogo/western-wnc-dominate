@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 import { ConfirmationState } from "@/components/conversion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import {
 import { actionableError, errorTitle } from "@/lib/microcopy";
+import {
   HardHat, Home, Paintbrush, TreePine, Wrench, Compass,
   ArrowRight, ArrowLeft, CheckCircle, Loader2,
   Calendar, MessageSquare, Target, Lightbulb,

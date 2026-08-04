@@ -10,16 +10,16 @@ import { useRef } from "react";
 import asphaltImg from "@/assets/gallery/asphalt-hero.webp";
 import metalImg from "@/assets/gallery/metal-005.webp";
 import stormImg from "@/assets/gallery/asphalt-006.webp";
-import cedarImg from "@/assets/gallery/cedar-005.jpg";
+import cedarImg from "@/assets/gallery/cedar-005.webp";
 import metalRoof from "@/assets/gallery/metal-008.webp";
-import asphalt2 from "@/assets/gallery/asphalt-002b.jpg";
+import asphalt2 from "@/assets/gallery/asphalt-002b.webp";
 import metal6 from "@/assets/gallery/metal-006.webp";
-import asphalt3 from "@/assets/gallery/asphalt-003.jpg";
-import metal10 from "@/assets/gallery/metal-010.jpg";
+import asphalt3 from "@/assets/gallery/asphalt-003.webp";
+import metal10 from "@/assets/gallery/metal-010.webp";
 import guttersImg from "@/assets/gallery/gutters-002.jpg";
-import metal9 from "@/assets/gallery/siding-001.jpg";
-import designImg from "@/assets/division-design.jpg";
-import constructionImg from "@/assets/division-construction-v2.jpg";
+import metal9 from "@/assets/gallery/siding-001.webp";
+import designImg from "@/assets/division-design.webp";
+import constructionImg from "@/assets/division-construction-v2.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;

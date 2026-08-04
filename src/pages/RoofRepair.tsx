@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
+import asphalt003 from "@/assets/gallery/asphalt-003.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 
@@ -104,7 +104,7 @@ const RoofRepair = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img src={asphalt003} alt="Roof repair on a residential home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img decoding="async" src={asphalt003} alt="Roof repair on a residential home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>

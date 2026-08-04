@@ -1,5 +1,5 @@
 import PaidAdsLanding from "@/components/PaidAdsLanding";
-import heroImg from "@/assets/gallery/asphalt-003.jpg";
+import heroImg from "@/assets/gallery/asphalt-003.webp";
 
 const RoofRepairAds = () => (
   <PaidAdsLanding

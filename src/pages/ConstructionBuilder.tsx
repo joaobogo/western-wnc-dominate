@@ -19,10 +19,10 @@ import { syncConsultationRequestToJobTread } from "@/lib/leads";
 import { trackEvent } from "@/lib/analytics";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 
-import heroAddition from "@/assets/gallery/cedar-001.jpg";
-import heroDeck from "@/assets/gallery/cedar-002.jpg";
-import heroRenov from "@/assets/gallery/asphalt-005.jpg";
-import heroOutdoor from "@/assets/gallery/cedar-005.jpg";
+import heroAddition from "@/assets/gallery/cedar-001.webp";
+import heroDeck from "@/assets/gallery/cedar-002.webp";
+import heroRenov from "@/assets/gallery/asphalt-005.webp";
+import heroOutdoor from "@/assets/gallery/cedar-005.webp";
 import heroFlatwork from "@/assets/gallery/asphalt-006.webp";
 import { actionableError } from "@/lib/microcopy";
 

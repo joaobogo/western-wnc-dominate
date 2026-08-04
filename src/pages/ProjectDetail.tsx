@@ -382,7 +382,7 @@ const ProjectDetailPage = () => {
                   transition={{ delay: i * 0.08 }}
                   className="aspect-[4/3] rounded-sm overflow-hidden group"
                 >
-                  <img
+                  <img decoding="async"
                     src={img}
                     alt={`${project.title} — view ${i + 1}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -413,7 +413,7 @@ const ProjectDetailPage = () => {
                   >
                     <Link to={`/projects/${rel.slug}`} className="group block">
                       <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
-                        <img
+                        <img decoding="async"
                           src={rel.heroImage}
                           alt={rel.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
