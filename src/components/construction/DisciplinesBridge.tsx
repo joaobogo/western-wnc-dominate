@@ -128,7 +128,7 @@ const DisciplinesBridge = ({
           transition={{ delay: 0.4 }}
           className="text-center mt-10"
         >
-          <p className="text-muted-foreground/60 text-sm font-body italic max-w-xl mx-auto">
+          <p className="text-muted-foreground text-sm font-body italic max-w-xl mx-auto">
             "We didn't learn construction in a classroom. We learned it on rooftops — where precision isn't optional and weather doesn't wait."
           </p>
         </motion.div>

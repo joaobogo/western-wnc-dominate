@@ -411,7 +411,7 @@ export default function Contact() {
                       {/* Phone */}
                       <div>
                         <label htmlFor="cc-phone" className={labelClasses}>
-                          Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— recommended</span>
+                          Phone <span className="normal-case tracking-normal font-normal text-muted-foreground">— recommended</span>
                         </label>
                         <input
                           id="cc-phone"
@@ -431,7 +431,7 @@ export default function Contact() {
                       {/* Project address or town */}
                       <div>
                         <label htmlFor="cc-town" className={labelClasses}>
-                          Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— recommended</span>
+                          Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground">— recommended</span>
                         </label>
                         <input
                           id="cc-town"
@@ -445,7 +445,7 @@ export default function Contact() {
                           maxLength={150}
                         />
                         <InlineFieldError>{contact.errorFor("town")}</InlineFieldError>
-                        <p className="mt-1.5 text-[11px] text-muted-foreground/60 font-body">
+                        <p className="mt-1.5 text-[11px] text-muted-foreground font-body">
                           Helps us route your inquiry to the closest Highlander office and crew.
                         </p>
                       </div>
@@ -495,7 +495,7 @@ export default function Contact() {
                       {/* Message */}
                       <div>
                         <label htmlFor="cc-msg" className={labelClasses}>
-                          Project Details <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— optional</span>
+                          Project Details <span className="normal-case tracking-normal font-normal text-muted-foreground">— optional</span>
                         </label>
                         <textarea
                           id="cc-msg"
@@ -509,7 +509,7 @@ export default function Contact() {
                       </div>
 
                       <div className="flex items-center justify-between pt-2">
-                        <p className="text-[10px] text-muted-foreground/75 font-body">
+                        <p className="text-[10px] text-muted-foreground font-body">
                           Personal response within 24 hours.
                         </p>
                         <button
@@ -540,7 +540,7 @@ export default function Contact() {
                       transition={{ delay: 0.1, type: "spring", stiffness: 400, damping: 15 }}
                       className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6"
                     >
-                      <CheckCircle className="w-8 h-8 text-accent" />
+                      <CheckCircle className="w-8 h-8 text-[hsl(var(--gold-ink))]" />
                     </motion.div>
                     <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
                       Your Request Has Been Received.
@@ -592,7 +592,7 @@ export default function Contact() {
                           className="flex items-center gap-3"
                         >
                           <div className="w-8 h-8 bg-accent/8 flex items-center justify-center flex-shrink-0">
-                            <t.icon className="w-3.5 h-3.5 text-accent/60" />
+                            <t.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]/60" />
                           </div>
                           <span className="text-sm text-foreground/70 font-body">{t.text}</span>
                         </motion.div>
@@ -606,7 +606,7 @@ export default function Contact() {
                     <div className="space-y-5">
                       {OFFICES.map((office) => (
                         <div key={office.name} className="flex items-start gap-3">
-                          <MapPin className="w-4 h-4 text-accent/50 flex-shrink-0 mt-0.5" />
+                          <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
                           <div>
                             <p className="text-sm font-heading font-semibold text-foreground">{office.name}</p>
                             <p className="text-xs text-muted-foreground font-body">{office.address}</p>
@@ -617,11 +617,11 @@ export default function Contact() {
                     </div>
                     <div className="mt-5 pt-5 border-t border-border">
                       <div className="flex items-start gap-3">
-                        <Clock className="w-4 h-4 text-accent/50 flex-shrink-0 mt-0.5" />
+                        <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="text-sm font-heading font-semibold text-foreground">Office Hours</p>
                           <p className="text-xs text-muted-foreground font-body">Mon–Fri 8:00 AM – 5:00 PM</p>
-                          <p className="text-xs text-accent font-body font-semibold">Same-day emergency contact</p>
+                          <p className="text-xs text-[hsl(var(--gold-ink))] font-body font-semibold">Same-day emergency contact</p>
                         </div>
                       </div>
                     </div>
@@ -646,7 +646,7 @@ export default function Contact() {
                         </div>
                       </a>
                       <Link to="/consultation" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-accent/20 transition-all">
-                        <CalendarCheck className="w-4 h-4 text-accent" />
+                        <CalendarCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                         <div>
                           <p className="text-sm font-heading font-semibold text-foreground">Guided Consultation</p>
                           <p className="text-[10px] text-muted-foreground font-body">More detailed project discovery flow</p>

@@ -69,7 +69,7 @@ const questions: { step: QuizStep; question: string; options: { label: string; s
 
 const getResult = (score: number) => {
   if (score <= 4) return { level: "good", icon: CheckCircle, color: "text-primary", bg: "bg-primary/10", title: "Your Roof Looks Good.", description: "Based on your answers, your roof appears to be in reasonable condition. We recommend an annual professional inspection to keep it that way — especially given WNC's challenging mountain climate.", cta: "Schedule Preventative Inspection" };
-  if (score <= 9) return { level: "caution", icon: AlertTriangle, color: "text-accent", bg: "bg-accent/10", title: "Your Roof May Need Attention.", description: "Your answers suggest potential issues that should be evaluated by a professional. Early intervention often prevents costly full replacements — catching problems now could save thousands.", cta: "Schedule a Professional Inspection" };
+  if (score <= 9) return { level: "caution", icon: AlertTriangle, color: "text-[hsl(var(--gold-ink))]", bg: "bg-accent/10", title: "Your Roof May Need Attention.", description: "Your answers suggest potential issues that should be evaluated by a professional. Early intervention often prevents costly full replacements — catching problems now could save thousands.", cta: "Schedule a Professional Inspection" };
   return { level: "urgent", icon: XCircle, color: "text-destructive", bg: "bg-destructive/10", title: "Your Roof Likely Needs Replacement.", description: "Based on your answers, your roof shows signs of significant wear or damage. We strongly recommend a professional assessment to evaluate your options before conditions worsen.", cta: "Request Priority Inspection" };
 };
 
@@ -130,8 +130,8 @@ const RoofAssessmentQuiz = () => {
   };
 
   const optionClass = "w-full text-left px-5 py-4 rounded-none border border-border hover:border-[hsl(var(--highland-gold)/0.3)] hover:bg-[hsl(var(--highland-gold)/0.03)] transition-all duration-200";
-  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground/75 text-sm font-body field-premium";
-  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/60 mb-2";
+  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground text-sm font-body field-premium";
+  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
 
   return (
     <section className="section-padding section-dark tartan-dark" id="roof-quiz">
@@ -177,7 +177,7 @@ const RoofAssessmentQuiz = () => {
               {currentStep === "intro" && (
                 <div className="text-center py-4">
                   <div className="w-14 h-14 rounded-none bg-accent/12 flex items-center justify-center mx-auto mb-5">
-                    <ClipboardCheck className="w-7 h-7 text-accent" />
+                    <ClipboardCheck className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-foreground mb-2">Quick Roof Health Assessment</h3>
                   <p className="text-muted-foreground mb-6 text-sm font-body max-w-md mx-auto">
@@ -233,7 +233,7 @@ const RoofAssessmentQuiz = () => {
                         <input id="f-email" type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
                       </div>
                       <div>
-                        <label className={labelClass} htmlFor="f-phone-optional">Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/70">(optional)</span></label>
+                        <label className={labelClass} htmlFor="f-phone-optional">Phone <span className="normal-case tracking-normal font-normal text-muted-foreground">(optional)</span></label>
                         <input id="f-phone-optional" type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
                       </div>
                     </div>

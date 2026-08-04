@@ -19,7 +19,7 @@ const RoofDesignerCTA = () => {
           </div>
 
           <h2 className="section-heading mb-4 text-balance">
-            Visualize Your New Roof <span className="text-accent">Before</span> Installation
+            Visualize Your New Roof <span className="text-[hsl(var(--gold-ink))]">Before</span> Installation
           </h2>
 
           <p className="text-base text-muted-foreground mb-8 max-w-lg mx-auto font-body">

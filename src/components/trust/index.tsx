@@ -241,7 +241,7 @@ export const ReviewHighlight = ({ quote, name, location, project, outcome }: Rev
     <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
     <div className="flex gap-0.5 mb-4">
       {[...Array(5)].map((_, i) => (
-        <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />
+        <Star key={i} className="w-3.5 h-3.5 fill-accent text-[hsl(var(--gold-ink))]" />
       ))}
     </div>
     <p className="text-foreground text-sm md:text-[15px] leading-relaxed mb-5 font-body">"{quote}"</p>
@@ -463,7 +463,7 @@ export const EditorialProofSection = ({ eyebrow, heading, body, stats, variant =
             }`}
           >
             <p className={`text-2xl md:text-3xl font-heading font-bold mb-1 ${
-              isDark ? "text-[hsl(var(--gold-ink))]" : "text-accent"
+              isDark ? "text-[hsl(var(--gold-ink))]" : "text-[hsl(var(--gold-ink))]"
             }`}>{s.value}</p>
             <p className={`text-xs font-body ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.5)]" : "text-muted-foreground"}`}>
               {s.label}

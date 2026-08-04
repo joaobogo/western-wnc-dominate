@@ -188,7 +188,7 @@ const About = () => {
                         <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
                           <span className="font-heading font-bold text-2xl text-[hsl(var(--gold-ink))]">{person.name.charAt(0)}</span>
                         </div>
-                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Highlander Leadership</span>
+                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Highlander Leadership</span>
                       </div>
                     )}
                   </div>
@@ -235,7 +235,7 @@ const About = () => {
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
                           <span className="font-heading font-bold text-xl text-[hsl(var(--gold-ink))]">{person.name.charAt(0)}</span>
                         </div>
-                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">In-House Specialist</span>
+                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">In-House Specialist</span>
                       </div>
                     )}
                   </div>
@@ -246,7 +246,7 @@ const About = () => {
                     <p className="text-[16px] md:text-[18px] text-muted-foreground leading-relaxed font-body mb-4 font-bold">{person.bio}</p>
                     <div className="pt-4 border-t border-border flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
-                      <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground/90">{person.specialty}</span>
+                      <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground">{person.specialty}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -326,7 +326,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-                <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/90">Our Horizon — Western North Carolina</span>
+                <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Our Horizon — Western North Carolina</span>
               </div>
             </motion.div>
           </div>

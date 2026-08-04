@@ -279,7 +279,7 @@ const ServiceTownPage = ({
                       <div className="w-6 h-6 rounded-none bg-primary/5 flex items-center justify-center">
                         <ArrowRight className="w-3 h-3 text-primary rotate-[-45deg]" />
                       </div>
-                      <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground/60">{post.category}</span>
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">{post.category}</span>
                     </div>
                     <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
                     <p className="text-sm text-muted-foreground mb-6 line-clamp-3 font-body flex-grow">{post.excerpt}</p>
@@ -306,11 +306,11 @@ const ServiceTownPage = ({
                     to={`/service-areas/${town.slug}/${r.serviceSlug}`}
                     className="border border-border rounded-lg p-5 hover:border-accent transition-colors group"
                   >
-                    <div className="flex items-center gap-2 text-accent mb-1 text-sm">
+                    <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-1 text-sm">
                       <CheckCircle className="w-4 h-4" />
                       <span>{town.name}, NC</span>
                     </div>
-                    <div className="font-heading font-bold group-hover:text-accent transition-colors">
+                    <div className="font-heading font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors">
                       {r.serviceLabel}
                     </div>
                   </Link>
@@ -319,7 +319,7 @@ const ServiceTownPage = ({
               <div className="mt-8">
                 <Link
                   to={`/service-areas/${town.slug}`}
-                  className="text-accent font-semibold inline-flex items-center gap-2 hover:underline"
+                  className="text-[hsl(var(--gold-ink))] font-semibold inline-flex items-center gap-2 hover:underline"
                 >
                   See full {town.name} overview <ArrowRight className="w-4 h-4" />
                 </Link>

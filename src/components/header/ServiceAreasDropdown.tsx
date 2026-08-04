@@ -82,7 +82,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
               </div>
               <div className="px-5 pt-5 pb-3">
                 <span className="text-base font-heading font-bold text-foreground block">Service Areas</span>
-                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/60 mt-1">
+                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mt-1">
                   Western North Carolina Mountains
                 </p>
               </div>

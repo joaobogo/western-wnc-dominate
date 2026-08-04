@@ -171,7 +171,7 @@ const ServiceAreas = () => {
                           <MapPin className="w-4 h-4 text-primary" />
                           <h3 className="font-heading font-bold text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                         </div>
-                        <p className="text-muted-foreground/60 text-[13px] font-body font-bold">{town.county}</p>
+                        <p className="text-muted-foreground text-[13px] font-body font-bold">{town.county}</p>
                       </div>
                       <div className="flex flex-wrap gap-1 shrink-0">
                         <span className="text-[10px] font-body font-bold uppercase tracking-[0.12em] px-2 py-1 bg-primary/8 text-primary rounded-sm">Roofing</span>
@@ -181,7 +181,7 @@ const ServiceAreas = () => {
                     <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4 line-clamp-3">{town.description}</p>
                     <div className="flex flex-wrap gap-2 mb-5">
                       {town.features.slice(0, 3).map((f) => (
-                        <span key={f} className="text-[12px] font-body font-bold text-muted-foreground/70 bg-secondary px-3 py-1 rounded-sm">{f}</span>
+                        <span key={f} className="text-[12px] font-body font-bold text-muted-foreground bg-secondary px-3 py-1 rounded-sm">{f}</span>
                       ))}
                     </div>
                     <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all font-body">

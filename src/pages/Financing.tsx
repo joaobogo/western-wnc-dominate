@@ -129,7 +129,7 @@ const Financing = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-xs text-muted-foreground/80 font-body italic leading-relaxed">
+                <p className="mt-6 text-xs text-muted-foreground font-body italic leading-relaxed">
                   Financing availability, terms, and qualification are determined by the lender — not by Highlander Roofing &amp; Construction.
                   All financing is subject to credit approval. Specific program details will be provided by your project advisor and the
                   lender at the time of application.

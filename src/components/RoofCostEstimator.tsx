@@ -108,8 +108,8 @@ const RoofCostEstimator = () => {
         : "border-border hover:border-[hsl(var(--highland-gold)/0.2)] hover:bg-secondary/30"
     }`;
 
-  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground/75 text-sm font-body field-premium";
-  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/60 mb-2";
+  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground text-sm font-body field-premium";
+  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
 
   return (
     <section className="section-padding bg-background tartan-bg" id="cost-estimator">

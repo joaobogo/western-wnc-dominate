@@ -318,7 +318,7 @@ const TownPage = () => {
                         Read Guide <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                       </span>
                       {post.town === town.name && (
-                        <span className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground/75 uppercase tracking-widest">
+                        <span className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground uppercase tracking-widest">
                           <MapPin className="w-3 h-3" /> Local Info
                         </span>
                       )}

@@ -277,7 +277,7 @@ export default function ConstructionConsultation() {
             rows={5}
             className="w-full rounded-sm border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold)/0.3)] resize-none field-construction"
           />
-          <p className="text-xs text-muted-foreground/60 font-body">Optional — but projects with clear descriptions get more productive first calls.</p>
+          <p className="text-xs text-muted-foreground font-body">Optional — but projects with clear descriptions get more productive first calls.</p>
         </div>
       ),
       valid: true,

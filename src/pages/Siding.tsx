@@ -66,7 +66,7 @@ const Siding = () => {
                     "Soffit, fascia, and decorative millwork",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
                       <span className="text-foreground/80 font-medium">{item}</span>
                     </li>
                   ))}

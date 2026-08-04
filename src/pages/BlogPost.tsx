@@ -31,7 +31,7 @@ const getGuideType = (category: string): "storm" | "maintenance" | "checklist" =
 
 const getCategoryColor = (category: string) => {
   const map: Record<string, string> = {
-    Storm: "bg-accent/15 text-accent",
+    Storm: "bg-accent/15 text-[hsl(var(--gold-ink))]",
     Maintenance: "bg-primary/10 text-primary",
     Materials: "bg-primary/10 text-primary",
     Cost: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--gold-ink))]",
@@ -63,8 +63,8 @@ const linkify = (text: string) =>
     /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g,
     (_m, label: string, href: string) =>
       href.startsWith("http")
-        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-4 hover:text-accent">${label}</a>`
-        : `<a href="${href}" class="text-primary underline underline-offset-4 hover:text-accent">${label}</a>`,
+        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-4 hover:text-[hsl(var(--gold-ink))]">${label}</a>`
+        : `<a href="${href}" class="text-primary underline underline-offset-4 hover:text-[hsl(var(--gold-ink))]">${label}</a>`,
   );
 
 const inlineMarkdown = (text: string) =>
@@ -450,7 +450,7 @@ const BlogPostPage = () => {
                 {/* Local Town Bridge */}
                 {post.town && (
                   <div className="mt-10 pt-8 border-t border-border">
-                    <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground/80 mb-4">Market Context</h4>
+                    <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground mb-4">Market Context</h4>
                     <Link to={`/service-areas/${post.town.toLowerCase().trim().replace(/\s+/g, '-')}-nc`} className="group flex items-center justify-between p-6 bg-secondary/40 border border-border rounded-sm hover:border-primary/20 transition-all">
                       <div>
                         <p className="text-sm font-heading font-bold text-foreground mb-1">Roofing & Construction in {post.town}</p>

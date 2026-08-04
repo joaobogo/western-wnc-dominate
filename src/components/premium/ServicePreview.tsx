@@ -54,7 +54,7 @@ export const ServicePreview = ({
           <p className="text-sm font-heading font-semibold text-foreground truncate">{title}</p>
           <p className="text-[11px] text-muted-foreground font-body truncate">{description}</p>
         </div>
-        <ArrowRight className="w-3 h-3 text-muted-foreground/70 group-hover:text-muted-foreground btn-arrow-icon flex-shrink-0" />
+        <ArrowRight className="w-3 h-3 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon flex-shrink-0" />
       </Link>
     );
   }

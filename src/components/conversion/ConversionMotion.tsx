@@ -373,7 +373,7 @@ export const ScheduleSlot = ({ time, available, selected, onClick }: ScheduleSlo
         ? "bg-[hsl(var(--highland-gold))] text-white shadow-[0_4px_12px_-3px_hsl(var(--highland-gold)/0.3)]"
         : available
           ? "bg-card border border-border text-foreground hover:border-[hsl(var(--highland-gold)/0.3)] hover:bg-secondary/40"
-          : "bg-muted/30 text-muted-foreground/75 cursor-not-allowed"
+          : "bg-muted/30 text-muted-foreground cursor-not-allowed"
     }`}
     disabled={!available}
   >

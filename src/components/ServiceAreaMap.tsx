@@ -191,7 +191,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                 ),
               )}
             </ul>
-            <p className="text-xs text-muted-foreground/80 mt-4 font-body italic">
+            <p className="text-xs text-muted-foreground mt-4 font-body italic">
               Don't see your town? If it's within our Western NC footprint, we
               likely serve it — call{" "}
               <a href="tel:+18285247773" className="text-primary font-semibold hover:underline not-italic">

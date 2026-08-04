@@ -108,7 +108,7 @@ const ReviewsPage = () => {
               <motion.div {...fadeUp} className="max-w-2xl">
                 <div className="flex items-center gap-2 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                    <Star key={i} className="w-5 h-5 fill-accent text-[hsl(var(--gold-ink))]" />
                   ))}
                   <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
                   <span className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
@@ -180,7 +180,7 @@ const ReviewsPage = () => {
               >
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                    <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" />
                   ))}
                 </div>
                 <div className="h-4 w-px bg-border" />
@@ -206,14 +206,14 @@ const ReviewsPage = () => {
                     </span>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, si) => (
-                        <Star key={si} className="w-3 h-3 fill-accent text-accent" />
+                        <Star key={si} className="w-3 h-3 fill-accent text-[hsl(var(--gold-ink))]" />
                       ))}
                     </div>
                   </div>
                   <Quote className="w-6 h-6 text-[hsl(var(--highland-gold)/0.15)] mb-3 rotate-180" />
                   <p className="text-foreground text-[16px] leading-relaxed mb-5 font-body font-medium">"{r.reviewBody}"</p>
                   <div className="bg-secondary/70 rounded-sm px-4 py-3 mb-5">
-                    <p className="text-[12px] font-body font-bold uppercase tracking-[0.1em] text-muted-foreground/70 mb-1">Project Outcome</p>
+                    <p className="text-[12px] font-body font-bold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
                     <p className="text-[15px] font-body font-bold text-foreground/80">{r.outcome}</p>
                   </div>
                   <div className="flex items-center gap-3">
@@ -272,7 +272,7 @@ const ReviewsPage = () => {
                     </span>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, si) => (
-                        <Star key={si} className="w-2.5 h-2.5 fill-accent text-accent" />
+                        <Star key={si} className="w-2.5 h-2.5 fill-accent text-[hsl(var(--gold-ink))]" />
                       ))}
                     </div>
                   </div>

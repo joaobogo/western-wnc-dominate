@@ -302,7 +302,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
               Explore <ArrowRight className="w-3 h-3" />
             </span>
             <div className="w-7 h-7 rounded-none border border-border/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-              <ArrowRight className="w-3 h-3 text-muted-foreground/60" />
+              <ArrowRight className="w-3 h-3 text-muted-foreground" />
             </div>
           </div>
         </div>

@@ -336,7 +336,7 @@ const ConstructionDivision = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
           <div className="absolute bottom-10 left-10 flex items-center gap-4">
              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-             <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Craftsmanship in Detail</span>
+             <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Craftsmanship in Detail</span>
           </div>
         </section>
 

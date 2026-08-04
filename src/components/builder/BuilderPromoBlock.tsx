@@ -99,7 +99,7 @@ const BuilderPromoBlock = ({
           <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-accent via-secondary to-accent" />
           <div className="grid md:grid-cols-[1.4fr_1fr] gap-0">
             <div className="p-7 md:p-10">
-              <div className="flex items-center gap-2 text-accent text-[11px] font-semibold uppercase tracking-[0.16em] mb-4">
+              <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] text-[11px] font-semibold uppercase tracking-[0.16em] mb-4">
                 <SlidersHorizontal className="w-3.5 h-3.5" />
                 {_eyebrow}
               </div>
@@ -118,7 +118,7 @@ const BuilderPromoBlock = ({
                     key={label}
                     className="flex items-center gap-2 text-[12.5px] font-body text-foreground/70 border border-border/60 rounded-sm px-3 py-2 bg-background/60"
                   >
-                    <Icon className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                    <Icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
                     {label}
                   </li>
                   );
@@ -135,7 +135,7 @@ const BuilderPromoBlock = ({
                 </Link>
                 <Link
                   to={_secHref}
-                  className="text-foreground/70 hover:text-accent text-[13px] font-semibold underline underline-offset-4 decoration-border hover:decoration-accent transition-colors"
+                  className="text-foreground/70 hover:text-[hsl(var(--gold-ink))] text-[13px] font-semibold underline underline-offset-4 decoration-border hover:decoration-accent transition-colors"
                 >
                   {_secLabel}
                 </Link>
@@ -150,7 +150,7 @@ const BuilderPromoBlock = ({
               <div className="space-y-4">
                 {defaults.steps.map(({ n, t }) => (
                   <div key={n} className="flex items-start gap-3">
-                    <span className="font-heading text-accent text-[13px] font-bold tracking-wider mt-0.5">
+                    <span className="font-heading text-[hsl(var(--gold-ink))] text-[13px] font-bold tracking-wider mt-0.5">
                       {n}
                     </span>
                     <span className="text-foreground/75 text-[13.5px] font-body leading-snug">

@@ -106,7 +106,7 @@ const ConversionTrustBlock = ({
           <figure className="border-t border-border pt-4">
             <div className="flex gap-0.5 mb-2" role="img" aria-label={`${review.ratingValue} out of 5 stars`}>
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-3 h-3 fill-accent text-accent" />
+                <Star key={i} className="w-3 h-3 fill-accent text-[hsl(var(--gold-ink))]" />
               ))}
             </div>
             <blockquote className="text-[13px] font-body leading-relaxed text-foreground/85">

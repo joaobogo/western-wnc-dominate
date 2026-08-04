@@ -149,7 +149,7 @@ const HomepageTrust = () => {
             <div className="inline-flex items-center gap-4 px-6 py-3 bg-card border border-border rounded-none">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                  <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" />
                 ))}
               </div>
               <div className="h-5 w-px bg-border" />
@@ -187,7 +187,7 @@ const HomepageTrust = () => {
                   {/* Stars */}
                   <div className="flex gap-0.5 mb-4">
                     {[...Array(5)].map((_, si) => (
-                      <Star key={si} className="w-3 h-3 fill-accent text-accent" />
+                      <Star key={si} className="w-3 h-3 fill-accent text-[hsl(var(--gold-ink))]" />
                     ))}
                   </div>
 

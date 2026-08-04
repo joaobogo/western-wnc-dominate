@@ -302,7 +302,7 @@ const ResidentialRoofing = () => {
              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-3">
                    <div className="w-10 h-[1px] bg-primary/20" />
-                   <span className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground/60">Serving Local Markets</span>
+                   <span className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">Serving Local Markets</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
                    {[
@@ -389,7 +389,7 @@ const ResidentialRoofing = () => {
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
                   At Highlander, residential roofing isn't a side service — it's our foundation. We've built our reputation one home at a time across Western North Carolina, earning trust through transparent communication, certified craftsmanship, and roofs that perform decade after decade at elevation.
                 </p>
-                <p className="text-muted-foreground/70 text-sm leading-relaxed font-body">
+                <p className="text-muted-foreground text-sm leading-relaxed font-body">
                   Every residential project receives the same standard: site-specific material specification, manufacturer-certified installation, daily communication, and a warranty package you can hold in your hands.
                 </p>
               </motion.div>
@@ -694,7 +694,7 @@ const ResidentialRoofing = () => {
               </div>
               <Link
                 to="/recent-projects"
-                className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body"
+                className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
               >
                 Full Gallery
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

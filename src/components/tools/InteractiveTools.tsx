@@ -277,7 +277,7 @@ export function MaterialsComparison() {
                 </div>
                 <div className="mt-3 pt-3 border-t border-border">
                   <p className="text-xs text-muted-foreground font-body mb-2"><strong className="text-foreground">Best for:</strong> {m.bestFor}</p>
-                  <p className="text-xs text-accent/80 font-body italic">🏔 {m.mountainNote}</p>
+                  <p className="text-xs text-[hsl(var(--gold-ink))]/80 font-body italic">🏔 {m.mountainNote}</p>
                 </div>
                 <div className="mt-3 pt-3 border-t border-border grid grid-cols-2 gap-2">
                   <div>
@@ -439,14 +439,14 @@ export function ServiceAreaFinder() {
               }`}
             >
               {t.name}
-              {t.primary && <span className="text-[10px] text-accent ml-1">★</span>}
+              {t.primary && <span className="text-[10px] text-[hsl(var(--gold-ink))] ml-1">★</span>}
             </a>
           ))}
         </div>
 
         {filtered.length === 0 && (
           <p className="text-sm text-muted-foreground font-body text-center py-4">
-            Don't see your town? We likely still serve your area. <a href="/consultation" className="text-primary hover:text-accent transition-colors font-medium">Contact us to confirm.</a>
+            Don't see your town? We likely still serve your area. <a href="/consultation" className="text-primary hover:text-[hsl(var(--gold-ink))] transition-colors font-medium">Contact us to confirm.</a>
           </p>
         )}
       </div>

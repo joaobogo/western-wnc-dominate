@@ -127,7 +127,7 @@ const Gutters = () => {
               { icon: Wind, title: "Repair & replacement", body: "Reseal leaking seams, rehang sagging runs, replace damaged sections, or fully replace an undersized system with a properly capacitized one." },
             ].map((b) => (
               <div key={b.title} className="border border-border rounded-lg p-6">
-                <b.icon className="w-8 h-8 text-accent mb-3" />
+                <b.icon className="w-8 h-8 text-[hsl(var(--gold-ink))] mb-3" />
                 <div className="font-heading font-bold text-xl mb-2">{b.title}</div>
                 <p className="text-foreground/70">{b.body}</p>
               </div>
@@ -154,7 +154,7 @@ const Gutters = () => {
                 "French drain and grading coordination where site drainage is the real problem",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
                   <span className="text-foreground/80 font-body leading-relaxed">{f}</span>
                 </li>
               ))}

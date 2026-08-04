@@ -150,14 +150,14 @@ export const ValuesPillarGrid = ({
               {v.name}
             </h3>
             <p className={`text-[12px] md:text-[13px] font-body font-bold uppercase tracking-wider mb-3 ${
-              isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-accent"
+              isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-[hsl(var(--gold-ink))]"
             }`}>{v.tagline}</p>
             <p className={`text-[14px] md:text-[15px] leading-relaxed font-body font-bold ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.8)]" : "text-muted-foreground"}`}>
               {v.statement}
             </p>
             {showObjections && (
               <div className={`text-[12px] font-body font-bold italic pt-3 mt-3 border-t ${
-                isDark ? "border-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--dark-section-foreground)/0.6)]" : "border-border text-muted-foreground/60"
+                isDark ? "border-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--dark-section-foreground)/0.6)]" : "border-border text-muted-foreground"
               }`}>
                 Overcomes: "{v.overcomes}"
               </div>
@@ -201,7 +201,7 @@ export const ValuesEditorial = ({ values: customValues, variant = "light" }: Val
               <v.icon className={`w-6 h-6 ${isDark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} />
             </div>
             <span className={`text-[12px] font-body font-bold uppercase tracking-wider block mb-2 ${
-              isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-accent"
+              isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-[hsl(var(--gold-ink))]"
             }`}>{v.tagline}</span>
             <h3 className={`text-2xl md:text-3xl font-heading font-bold mb-4 ${
               isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"
@@ -211,7 +211,7 @@ export const ValuesEditorial = ({ values: customValues, variant = "light" }: Val
               {v.statement}
             </p>
             <blockquote className={`text-[15px] md:text-base italic border-l-2 border-[hsl(var(--highland-gold)/0.4)] pl-4 ${
-              isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-muted-foreground/80"
+              isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-muted-foreground"
             }`}>
               "{v.teamQuote}"
             </blockquote>
@@ -305,8 +305,8 @@ export const ValuesTeamOverlay = ({ name, role, valueName, image }: ValuesTeamOv
       </div>
       <div className="p-4">
         <div className="flex items-center gap-2 mb-2">
-          <value.icon className="w-3.5 h-3.5 text-accent" />
-          <span className="text-[12px] font-body font-bold uppercase tracking-wider text-accent">{value.name}</span>
+          <value.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
+          <span className="text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))]">{value.name}</span>
         </div>
         <p className="text-muted-foreground text-[14px] font-body font-medium italic leading-relaxed">
           "{value.teamQuote}"

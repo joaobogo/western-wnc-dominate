@@ -200,7 +200,7 @@ export const ConstructionServiceGrid = ({
             {variant === "detailed" && (
               <div className="mb-4 space-y-1.5">
                 {cat.outcomes.map((outcome) => (
-                  <div key={outcome} className="flex items-start gap-2 text-[14px] text-muted-foreground/80 font-body font-medium">
+                  <div key={outcome} className="flex items-start gap-2 text-[14px] text-muted-foreground font-body font-medium">
                     <span className="text-primary/40 mt-0.5">•</span>
                     <span>{outcome}</span>
                   </div>
@@ -284,7 +284,7 @@ export const ConstructionComparison = ({
                 <h4 className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-primary/70 mb-3">Client Outcomes</h4>
                 <div className="space-y-1.5">
                   {cat.outcomes.map((o) => (
-                    <div key={o} className="flex items-start gap-2 text-[14px] text-muted-foreground/80 font-body font-medium">
+                    <div key={o} className="flex items-start gap-2 text-[14px] text-muted-foreground font-body font-medium">
                       <span className="text-primary/40 mt-0.5">✓</span>
                       <span>{o}</span>
                     </div>
@@ -296,7 +296,7 @@ export const ConstructionComparison = ({
                 <h4 className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-primary/70 mb-3">Why Highlander</h4>
                 <div className="space-y-1.5">
                   {cat.trustPoints.map((t) => (
-                    <div key={t} className="flex items-start gap-2 text-[14px] text-muted-foreground/80 font-body font-medium">
+                    <div key={t} className="flex items-start gap-2 text-[14px] text-muted-foreground font-body font-medium">
                       <span className="text-primary/40 mt-0.5">•</span>
                       <span>{t}</span>
                     </div>

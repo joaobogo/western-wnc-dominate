@@ -109,7 +109,7 @@ const ProofStrip = () => {
                         value={pillar.stat}
                         className="text-base font-heading font-bold text-[hsl(var(--gold-ink))] leading-none"
                       />
-                      <span className="text-[11px] font-body text-muted-foreground/70 uppercase tracking-[0.12em]">
+                      <span className="text-[11px] font-body text-muted-foreground uppercase tracking-[0.12em]">
                         {pillar.statLabel}
                       </span>
                     </div>

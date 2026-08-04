@@ -107,7 +107,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                 </div>
                 <span className="text-base font-heading font-bold text-foreground">{div.label} Division</span>
               </div>
-              <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/60 ml-[38px]">
+              <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground ml-[38px]">
                 {div.tagline}
               </p>
             </div>
@@ -129,7 +129,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                   >
                     <div>
                       <span className="text-[16px] font-body font-bold block leading-tight">{item.label}</span>
-                      <span className="text-[14px] font-body text-muted-foreground/80 leading-tight font-medium">{item.desc}</span>
+                      <span className="text-[14px] font-body text-muted-foreground leading-tight font-medium">{item.desc}</span>
                     </div>
                     <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
                   </Link>
@@ -143,7 +143,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                 role="menuitem"
                 onClick={(e) => onViewAllClick(e, div.href)}
                 className={`flex items-center gap-1.5 px-3 py-3 text-[14px] font-body font-bold rounded-sm transition-colors ${
-                  div.accent === "green" ? "text-primary hover:bg-primary/5" : "text-accent hover:bg-accent/5"
+                  div.accent === "green" ? "text-primary hover:bg-primary/5" : "text-[hsl(var(--gold-ink))] hover:bg-accent/5"
                 }`}
               >
                 View All {div.label}

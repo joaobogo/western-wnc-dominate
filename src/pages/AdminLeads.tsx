@@ -228,7 +228,7 @@ export default function AdminLeads() {
               {l.jobtread_sync_status && l.jobtread_sync_status !== "success" && l.jobtread_error_message && (
                 <div className="text-[10px] text-destructive mt-0.5 line-clamp-2">{l.jobtread_error_message}</div>
               )}
-              <div className="text-[10px] text-muted-foreground/70 mt-0.5">{new Date(l.created_at).toLocaleString()}</div>
+              <div className="text-[10px] text-muted-foreground mt-0.5">{new Date(l.created_at).toLocaleString()}</div>
             </button>
           ))}
         </div>

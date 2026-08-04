@@ -250,7 +250,7 @@ const Gallery = () => {
                     className={`text-[10px] font-body font-bold uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${
                       materialFilter === mat
                         ? "text-primary font-black"
-                        : "text-muted-foreground/60 hover:text-primary/70"
+                        : "text-muted-foreground hover:text-primary/70"
                     }`}
                   >
                     {mat}

@@ -67,7 +67,7 @@ const TwoPillars = () => {
 
           {/* Statement */}
           <p className="font-heading text-[1.85rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.15] tracking-tight text-foreground max-w-5xl mx-auto font-bold text-balance">
-            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same team-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--gold-ink))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions and outdoor living</Link> — with <Link to="/layouts-planning" className="hover:text-accent transition-colors underline decoration-accent/30 underline-offset-[6px]">Design Support</Link> ensuring every project is intelligently mapped before the first board is cut.
+            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same team-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--gold-ink))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions and outdoor living</Link> — with <Link to="/layouts-planning" className="hover:text-[hsl(var(--gold-ink))] transition-colors underline decoration-accent/30 underline-offset-[6px]">Design Support</Link> ensuring every project is intelligently mapped before the first board is cut.
           </p>
 
         </motion.div>

@@ -106,7 +106,7 @@ const CardSelect = ({ options, value, onChange, columns = 2 }: {
           }`}
         >
           <div className="flex items-start gap-3">
-            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-accent" : "text-muted-foreground"}`} />}
+            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"}`} />}
             <div>
               <p className={`font-heading text-sm font-semibold ${selected ? "text-foreground" : "text-foreground/80"}`}>{opt.label}</p>
               {opt.desc && <p className="text-xs text-muted-foreground mt-0.5 font-body">{opt.desc}</p>}
@@ -443,7 +443,7 @@ export default function QuoteFlow() {
       <main className="pt-24 md:pt-32 pb-16">
         <div className="container-tight max-w-2xl">
           <div className="text-center mb-8">
-            <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-accent mb-2">Project Consultation</p>
+            <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-[hsl(var(--gold-ink))] mb-2">Project Consultation</p>
             <h1 className="font-heading text-2xl md:text-3xl font-bold text-foreground">Let's Talk About Your Project</h1>
             <p className="text-sm text-muted-foreground font-body mt-2 max-w-md mx-auto">
               No obligation. No pressure. Just a straightforward conversation with someone who knows these mountains.

@@ -47,7 +47,7 @@ const divisions = [
     tagline: "Pre-Construction · Layouts · Design",
     color: "gold",
     iconBg: "bg-accent/5",
-    iconColor: "text-accent",
+    iconColor: "text-[hsl(var(--gold-ink))]",
     borderColor: "border-accent/15 hover:border-accent/25",
     stats: [
       { value: "Layout", label: "Professional support" },
@@ -55,7 +55,7 @@ const divisions = [
     ],
     href: "/layouts-planning",
     cta: "Explore Design",
-    ctaColor: "text-accent",
+    ctaColor: "text-[hsl(var(--gold-ink))]",
   },
 ];
 
@@ -145,7 +145,7 @@ const NotJustRoofing = () => {
 
         {/* Shared foundation message */}
         <ScrollReveal variant="fade" delay={0.4} className="text-center mt-10">
-          <div className="flex items-center justify-center gap-3 text-muted-foreground/75">
+          <div className="flex items-center justify-center gap-3 text-muted-foreground">
             <Shield className="w-3.5 h-3.5" />
             <span className="text-[11px] font-body font-medium uppercase tracking-[0.14em]">
               Same Crews · Same Process · Same Warranty Protection

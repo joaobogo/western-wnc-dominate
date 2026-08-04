@@ -163,7 +163,7 @@ img {
     --secondary-foreground: 210 20% 12%;
 
     --muted: 42 15% 94%; 
-    --muted-foreground: 210 10% 42%;
+    --muted-foreground: 210 12% 38%; /* AA contrast on light surfaces */
 
     /* Highland gold — adjusted for better accessibility/contrast */
     --accent: 38 98% 46%; 

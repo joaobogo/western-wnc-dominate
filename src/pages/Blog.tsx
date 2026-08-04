@@ -340,7 +340,7 @@ const Blog = () => {
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center">
-                      <CloudLightning className="w-5 h-5 text-accent" />
+                      <CloudLightning className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-foreground">Storm & Emergency Guides</h3>
@@ -354,16 +354,16 @@ const Blog = () => {
                         to={`/blog/${post.slug}`}
                         className="group flex items-start gap-3 p-3 rounded-sm hover:bg-secondary/60 transition-colors"
                       >
-                        <Zap className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                        <Zap className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                         <div className="flex-1">
                           <h4 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
                           <p className="text-muted-foreground text-xs mt-0.5 line-clamp-1">{post.excerpt}</p>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/70 mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground mt-0.5 flex-shrink-0" />
                       </Link>
                     ))}
                   </div>
-                  <Link to="/roofing/storm-damage" className="inline-flex items-center gap-1.5 mt-4 text-accent font-heading font-semibold text-sm hover:gap-2.5 transition-all">
+                  <Link to="/roofing/storm-damage" className="inline-flex items-center gap-1.5 mt-4 text-[hsl(var(--gold-ink))] font-heading font-semibold text-sm hover:gap-2.5 transition-all">
                     Visit Storm Center <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </motion.div>
@@ -391,7 +391,7 @@ const Blog = () => {
                           <h4 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
                           <p className="text-muted-foreground text-xs mt-0.5">{post.town} · {post.readTime} read</p>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/70 mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground mt-0.5 flex-shrink-0" />
                       </Link>
                     ))}
                   </div>
@@ -560,7 +560,7 @@ const Blog = () => {
               </div>
             ) : (
               <div className="text-center py-16">
-                <Search className="w-8 h-8 text-muted-foreground/70 mx-auto mb-3" />
+                <Search className="w-8 h-8 text-muted-foreground mx-auto mb-3" />
                 <p className="text-muted-foreground font-body">No articles found matching your search.</p>
                 <button onClick={() => { setSearchQuery(""); setActiveCategory("All"); }} className="text-primary text-sm font-semibold mt-2 hover:underline">
                   Clear filters

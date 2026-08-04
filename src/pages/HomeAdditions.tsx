@@ -210,7 +210,7 @@ const HomeAdditions = () => {
                   <img loading="lazy" decoding="async" src={expansionContextImg} alt="Integrated home expansion" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                 </div>
-                <p className="text-muted-foreground/60 text-sm leading-relaxed font-body italic">
+                <p className="text-muted-foreground text-sm leading-relaxed font-body italic">
                   Every addition starts with understanding your home and ends with a space that elevates the entire property.
                 </p>
               </motion.div>

@@ -216,7 +216,7 @@ const Certifications = () => {
                             </div>
                           )}
                         </div>
-                        <span className="text-[10px] font-semibold uppercase tracking-wider text-accent bg-accent/10 px-2.5 py-1 rounded-sm">
+                        <span className="text-[10px] font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-accent/10 px-2.5 py-1 rounded-sm">
                           {cert.badge}
                         </span>
                       </div>

@@ -410,7 +410,7 @@ const RoofingDivision = () => {
                 not through advertising, but through the quality of the roofs we've installed and
                 the relationships we've built along the way.
               </p>
-              <p className="text-muted-foreground/70 text-sm leading-relaxed font-body max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-sm leading-relaxed font-body max-w-2xl mx-auto">
                 Every roof we install reflects a commitment to craftsmanship, honest communication,
                 and materials specified for the actual conditions your property faces.
               </p>
@@ -963,7 +963,7 @@ const RoofingDivision = () => {
               </div>
               <Link
                 to="/recent-projects"
-                className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body"
+                className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
               >
                 Full Gallery
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
