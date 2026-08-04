@@ -116,7 +116,7 @@ const TrustedMaterials = () => {
                 {v.name}
                 <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] transition-colors" />
               </h3>
-              <span className="inline-block text-[10px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--highland-green))] mb-3">
+              <span className="inline-block text-[10px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--heritage-green))] mb-3">
                 {v.badge}
               </span>
               <p className="text-muted-foreground text-[14px] leading-relaxed">{v.body}</p>
