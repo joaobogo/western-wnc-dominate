@@ -297,8 +297,8 @@ Every one of these is a real cost item. A quote that comes in dramatically below
 
 We don't publish flat per-square pricing because it misleads more than it helps — the same house can vary 30% or more based on the variables above. But directionally, on a typical WNC residential replacement:
 
-- **Exposed fastener** is the entry point for a real metal roof. Expect a meaningful premium over architectural asphalt shingles but a noticeable discount to standing seam.
-- **Standing seam** in 24-gauge steel with a Kynar 500 finish typically runs well above exposed fastener and is priced closer to premium architectural systems like synthetic slate or high-end cedar.
+- **Exposed fastener** is the entry point for a real metal roof. Expect a meaningful premium over dimensional asphalt shingles but a noticeable discount to standing seam.
+- **Standing seam** in 24-gauge steel with a Kynar 500 finish typically runs well above exposed fastener and is priced closer to premium systems like synthetic slate or high-end cedar.
 - **Aluminum standing seam, copper, and zinc** are separate tiers above steel standing seam.
 
 The right way to read those tiers: exposed fastener buys you metal's fire and impact resistance at the lowest entry cost, with the tradeoff of periodic gasket and fastener maintenance. Standing seam buys you a roof that, properly installed, is likely the last one the home needs for decades — with no exposed fasteners to fail.
@@ -368,7 +368,7 @@ A roof that performs beautifully in Charlotte or Raleigh can underperform quickl
 
 ## Asphalt Shingle Roofing in Western NC
 
-Architectural (dimensional) asphalt shingles are still the most common roof on WNC homes for good reasons: strong performance, wide style selection, and a lower upfront investment than metal.
+Dimensional asphalt shingles are still the most common roof on WNC homes for good reasons: strong performance, wide style selection, and a lower upfront investment than metal.
 
 ### Where shingles work well
 
@@ -386,7 +386,7 @@ Architectural (dimensional) asphalt shingles are still the most common roof on W
 
 ### What we install
 
-We install CertainTeed architectural shingle systems and are a CertainTeed **ShingleMaster** certified contractor, which lets us offer their upgraded system warranties when the full assembly is installed to spec. Warranty terms vary by product and installation — we walk homeowners through the actual coverage tied to their specific roof rather than quoting generic year counts.
+We install CertainTeed dimensional shingle systems and are a CertainTeed **ShingleMaster** certified contractor, which lets us offer their upgraded system warranties when the full assembly is installed to spec. Warranty terms vary by product and installation — we walk homeowners through the actual coverage tied to their specific roof rather than quoting generic year counts.
 
 > "Shingles aren't the 'budget' option in WNC — they're the right option for a lot of homes. What matters is the underlayment, the flashing, and the crew putting it on."
 
@@ -398,7 +398,7 @@ Standing seam metal roofing has grown quickly across the WNC plateau, and for go
 
 - Steep-pitch mountain homes where snow and ice need to shed cleanly
 - High-wind ridgeline lots and open exposures
-- Modern mountain, farmhouse, and lodge-style architecture
+- Modern mountain, farmhouse, and lodge-style homes
 - Homeowners planning to stay long-term and prioritize lifecycle value
 - Properties near heavy tree cover, where a smooth surface sheds debris better
 
@@ -419,7 +419,7 @@ Concealed-fastener standing seam is our default recommendation for full re-roofs
 We won't publish specific warranty year counts here because real coverage depends on the exact product, the installer certification level, and the assembly details. What we can say honestly:
 
 - A properly installed standing seam metal roof is a **generational** roof for most WNC homes
-- A properly installed architectural shingle roof is a **long-service** roof, typically outlasting the average homeowner's stay
+- A properly installed dimensional shingle roof is a **long-service** roof, typically outlasting the average homeowner's stay
 - A poorly installed roof of either material will fail early — installer quality often matters more than material choice
 
 ## Cost and Value (Without Made-Up Numbers)
@@ -428,7 +428,7 @@ Real pricing depends on roof size, pitch, complexity, access, tear-off scope, de
 
 What's consistent:
 
-- Metal roofs cost meaningfully more upfront than architectural shingles
+- Metal roofs cost meaningfully more upfront than dimensional shingles
 - Metal roofs generally deliver a lower cost-per-year of service life
 - Insurance premiums can respond favorably to impact-resistant and Class-A fire-rated systems — worth asking your carrier
 - The cheapest bid on either material is almost always the most expensive roof over 10 years
@@ -439,7 +439,7 @@ What's consistent:
 - High-elevation properties with open wind exposure
 - Homes with long roof runs where standing seam looks intentional and clean
 - Owners planning to stay 15+ years and wanting minimal maintenance
-- Modern mountain, farmhouse, and lodge-style architecture
+- Modern mountain, farmhouse, and lodge-style homes
 
 ## Which Homes Benefit Most From Shingles
 
@@ -467,7 +467,7 @@ If you're weighing metal vs. shingle for a home in Highlands, Cashiers, Sapphire
     faqs: [
       {
         question: "Is a metal roof really worth the extra cost in Western NC?",
-        answer: "For most steep-pitch, high-elevation homes with open wind exposure and heavy tree cover, yes — the lifecycle cost of a properly installed standing seam roof is generally lower than replacing a shingle roof once or twice in the same timeframe. For simpler roofs or shorter ownership horizons, architectural shingles are often the smarter choice.",
+        answer: "For most steep-pitch, high-elevation homes with open wind exposure and heavy tree cover, yes — the lifecycle cost of a properly installed standing seam roof is generally lower than replacing a shingle roof once or twice in the same timeframe. For simpler roofs or shorter ownership horizons, dimensional shingles are often the smarter choice.",
       },
       {
         question: "Will a metal roof be loud in the rain?",
@@ -475,7 +475,7 @@ If you're weighing metal vs. shingle for a home in Highlands, Cashiers, Sapphire
       },
       {
         question: "Can I mix metal and shingles on the same house?",
-        answer: "Yes, and we do this regularly on WNC homes — standing seam on porches, dormers, or lower shed roofs paired with architectural shingles on the main field. Done thoughtfully, it looks intentional and can lower total cost.",
+        answer: "Yes, and we do this regularly on WNC homes — standing seam on porches, dormers, or lower shed roofs paired with dimensional shingles on the main field. Done thoughtfully, it looks intentional and can lower total cost.",
       },
       {
         question: "Do metal roofs shed snow safely?",
@@ -569,9 +569,9 @@ A roof designed for Charlotte will underperform here. Every material below is ev
 
 ## The Materials That Actually Work in Highlands
 
-### 1. Architectural Asphalt Shingles
+### 1. Dimensional Asphalt Shingles
 
-Architectural (dimensional) shingles are still the most common roof in Highlands and Cashiers — and rightly so. On the right home, they're an excellent long-service system with a lower upfront investment than metal.
+Dimensional shingles are still the most common roof in Highlands and Cashiers — and rightly so. On the right home, they're an excellent long-service system with a lower upfront investment than metal.
 
 **Where they shine**
 
@@ -582,7 +582,7 @@ Architectural (dimensional) shingles are still the most common roof in Highlands
 
 **What we install**
 
-We install CertainTeed architectural shingle systems and are a CertainTeed **ShingleMaster** certified contractor. That certification lets us offer their upgraded system warranties when the full assembly — shingles, underlayment, starters, hip and ridge, and ventilation — is installed to spec. Warranty length and coverage vary by product; we walk homeowners through the actual coverage tied to their specific roof rather than quoting generic year counts.
+We install CertainTeed dimensional shingle systems and are a CertainTeed **ShingleMaster** certified contractor. That certification lets us offer their upgraded system warranties when the full assembly — shingles, underlayment, starters, hip and ridge, and ventilation — is installed to spec. Warranty length and coverage vary by product; we walk homeowners through the actual coverage tied to their specific roof rather than quoting generic year counts.
 
 ### 2. Standing Seam Metal Roofing
 
@@ -592,7 +592,7 @@ Standing seam metal is our default recommendation for a lot of Highlands homes �
 
 - Steep pitches where snow and ice need to shed cleanly
 - Ridgeline lots and lakefront homes with open wind exposure
-- Modern mountain architecture with long, uninterrupted roof planes
+- Modern mountain homes with long, uninterrupted roof planes
 - Homeowners planning to stay long-term and prioritize lifecycle value
 
 **Considerations for Highlands specifically**
@@ -608,13 +608,13 @@ Composite (synthetic) slate and shake products have earned a real place on highe
 
 **Where they shine**
 
-- Homes where a slate or shake look is architectural, not optional
+- Homes where a slate or shake look is essential, not optional
 - Structures where natural slate weight would require framing upgrades
 - Owners who want a distinctive roof with modern impact and weather performance
 
 **Considerations**
 
-- Higher material cost than architectural shingles
+- Higher material cost than dimensional shingles
 - Installer familiarity varies — this is not a system to hand to an inexperienced crew
 - Coverage and warranty terms vary widely by brand; read the actual document
 
@@ -629,12 +629,12 @@ Composite (synthetic) slate and shake products have earned a real place on highe
 
 In Highlands, the roof is a huge part of how the home reads from the driveway and from the lake.
 
-- **Traditional cottage or craftsman** — architectural shingles in weathered wood or slate colorways almost always look right
+- **Traditional cottage or craftsman** — dimensional shingles in weathered wood or slate colorways almost always look right
 - **Modern mountain or lodge** — standing seam in matte dark bronze, black, or charcoal grounds the design
 - **Estate or high-end custom** — synthetic slate or a mixed assembly (metal on porches and dormers, shingles on the main field) reads as intentional and premium
-- **Cabin or rustic** — architectural shingles or exposed-fastener metal on simple roof lines can be exactly right
+- **Cabin or rustic** — dimensional shingles or exposed-fastener metal on simple roof lines can be exactly right
 
-There's no single "best-looking" roof. The best-looking roof is the one that matches the home's architecture and the surrounding landscape.
+There's no single "best-looking" roof. The best-looking roof is the one that matches the home's style and the surrounding landscape.
 
 ## Maintenance and Replacement Considerations
 
@@ -665,9 +665,9 @@ Get those five right, and any of the recommended materials above will serve a Hi
 If you're weighing options, walk through this quick filter:
 
 - Steep pitch, open exposure, long-term ownership → **standing seam metal**
-- Complex roof, heavy trees, strong value focus → **architectural shingles (ShingleMaster system)**
+- Complex roof, heavy trees, strong value focus → **dimensional shingles (ShingleMaster system)**
 - High-end aesthetic requirement, slate/shake look → **synthetic slate or shake**
-- Simple cabin, outbuilding, or porch roof → **architectural shingles or exposed-fastener metal**
+- Simple cabin, outbuilding, or porch roof → **dimensional shingles or exposed-fastener metal**
 
 And when it's not obvious, that's the conversation to have on the roof, not over the phone.
 
@@ -677,7 +677,7 @@ We're based in the mountains and we re-roof homes in Highlands, Cashiers, Sapphi
     faqs: [
       {
         question: "Are asphalt shingles really appropriate for Highlands homes?",
-        answer: "Yes — architectural shingles, installed as a full system with upgraded underlayment and proper flashing, are an excellent choice for most Highlands homes. They're especially strong on complex roof lines and homes under heavy tree cover.",
+        answer: "Yes — dimensional shingles, installed as a full system with upgraded underlayment and proper flashing, are an excellent choice for most Highlands homes. They're especially strong on complex roof lines and homes under heavy tree cover.",
       },
       {
         question: "Do I need special underlayment at this elevation?",
@@ -685,15 +685,15 @@ We're based in the mountains and we re-roof homes in Highlands, Cashiers, Sapphi
       },
       {
         question: "How long will a roof last in Highlands?",
-        answer: "It depends on the material, the assembly, and the maintenance. A properly installed metal roof is often a generational roof. A properly installed architectural shingle roof is a long-service roof that typically outlasts the average homeowner's stay. We won't publish specific year counts because real coverage depends on the exact product and installation.",
+        answer: "It depends on the material, the assembly, and the maintenance. A properly installed metal roof is often a generational roof. A properly installed dimensional shingle roof is a long-service roof that typically outlasts the average homeowner's stay. We won't publish specific year counts because real coverage depends on the exact product and installation.",
       },
       {
         question: "Can I mix materials on one home?",
-        answer: "Absolutely — and we do this often on Highlands homes. Standing seam on porches, dormers, or lower shed roofs paired with architectural shingles on the main field can look intentional and lower total cost while still giving the metal roof presence where it matters.",
+        answer: "Absolutely — and we do this often on Highlands homes. Standing seam on porches, dormers, or lower shed roofs paired with dimensional shingles on the main field can look intentional and lower total cost while still giving the metal roof presence where it matters.",
       },
       {
         question: "What about synthetic slate — is it worth it?",
-        answer: "On the right home, yes. If the architecture calls for a slate or shake aesthetic and natural slate isn't practical due to weight or budget, high-quality synthetic products deliver the look with modern impact and weather performance. The key is installer experience with the specific product.",
+        answer: "On the right home, yes. If the home's style calls for a slate or shake aesthetic and natural slate isn't practical due to weight or budget, high-quality synthetic products deliver the look with modern impact and weather performance. The key is installer experience with the specific product.",
       },
     ],
     relatedServices: [
@@ -4193,7 +4193,7 @@ A few local realities shape how we evaluate roofs in Highlands, Cashiers, Frankl
 
 Damage on a full time residence usually gets noticed within days. Damage on a second home or seasonal property can quietly progress for months before an owner returns. That is one reason we recommend a documented roof inspection between visits for homeowners who split their time between Highlands and another primary residence.
 
-A local roofing contractor should understand mountain weather patterns, the architecture common to this region, how metal and shingle systems behave at elevation, how to work safely on steep slopes, how to solve real drainage problems, and how various roofing materials actually perform in Western North Carolina.
+A local roofing contractor should understand mountain weather patterns, the home styles common to this region, how metal and shingle systems behave at elevation, how to work safely on steep slopes, how to solve real drainage problems, and how various roofing materials actually perform in Western North Carolina.
 
 ## Roof Repair or Replacement? A Simple Comparison
 
