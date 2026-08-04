@@ -2,9 +2,30 @@ import { ReactNode } from "react";
 
 /* Small typed primitives so both intake forms feel identical. */
 
-export const Label = ({ children, required }: { children: ReactNode; required?: boolean }) => (
-  <label className="block text-[14px] md:text-[15px] font-body font-bold text-foreground/90 mb-2 tracking-wide">
-    {children} {required && <span className="text-[hsl(var(--highland-gold))]">*</span>}
+export const Label = ({
+  children,
+  required,
+  htmlFor,
+  id,
+}: {
+  children: ReactNode;
+  required?: boolean;
+  /** Associates the label with its control so screen readers announce it. */
+  htmlFor?: string;
+  id?: string;
+}) => (
+  <label
+    htmlFor={htmlFor}
+    id={id}
+    className="block text-[14px] md:text-[15px] font-body font-bold text-foreground/90 mb-2 tracking-wide"
+  >
+    {children}{" "}
+    {required && (
+      <span className="text-[hsl(var(--highland-gold))]" aria-hidden="true">
+        *
+      </span>
+    )}
+    {required && <span className="sr-only">(required)</span>}
   </label>
 );
 
@@ -55,24 +76,35 @@ export const Select = (props: React.SelectHTMLAttributes<HTMLSelectElement>) => 
 type ChipOption = { value: string; label: string; sub?: string };
 
 export const ChipGroup = ({
-  options, value, onChange, columns = 2,
+  options, value, onChange, columns = 2, ariaLabel, labelledBy,
 }: {
   options: ChipOption[];
   value: string;
   onChange: (v: string) => void;
   columns?: 2 | 3 | 4;
+  /** Accessible name when there is no associated visible label element. */
+  ariaLabel?: string;
+  /** id of the visible label element describing this choice group. */
+  labelledBy?: string;
 }) => {
   const cols = columns === 4 ? "sm:grid-cols-4" : columns === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2";
   return (
-    <div className={`grid grid-cols-1 ${cols} gap-2.5`}>
+    <div
+      className={`grid grid-cols-1 ${cols} gap-2.5`}
+      role="radiogroup"
+      aria-label={labelledBy ? undefined : ariaLabel}
+      aria-labelledby={labelledBy}
+    >
       {options.map((o) => {
         const active = value === o.value;
         return (
           <button
             key={o.value}
             type="button"
+            role="radio"
+            aria-checked={active}
             onClick={() => onChange(o.value)}
-            className={`text-left rounded-none border px-5 py-4 transition-all ${
+            className={`text-left rounded-none border px-5 py-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))] focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
               active
                 ? "border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] text-foreground"
                 : "border-border bg-background text-foreground/75 hover:border-foreground/30"
