@@ -56,10 +56,33 @@ const VeluxWidget = ({
 }: VeluxWidgetProps) => {
   const hostRef = useRef<HTMLDivElement>(null);
   const [blocked, setBlocked] = useState(false);
+  // The vendor bundle is ~229 KB — only fetch it once the block is near the
+  // viewport so it never competes with the page's own critical resources.
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const host = hostRef.current;
     if (!host) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "400px" },
+    );
+    io.observe(host);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const host = hostRef.current;
+    if (!host || !inView) return;
     const scriptSrc = VELUX_SCRIPTS[variant];
     setBlocked(false);
 
