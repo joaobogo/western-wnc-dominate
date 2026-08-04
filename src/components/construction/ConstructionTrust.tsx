@@ -140,7 +140,7 @@ const ConstructionTrust = ({
         <div className="section-padding">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">{eyebrow}</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">{eyebrow}</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground whitespace-pre-line">{heading}</h2>
               {subheading && <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">{subheading}</p>}
             </motion.div>
@@ -152,7 +152,7 @@ const ConstructionTrust = ({
                     <p className="text-[hsl(var(--highland-gold)/0.85)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
                   )}
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4">
-                    <pillar.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <pillar.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{pillar.title}</h3>
                   <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
@@ -181,9 +181,9 @@ const ConstructionTrust = ({
                 <p className="text-[hsl(var(--highland-gold)/0.85)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
               )}
               <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                <pillar.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                <pillar.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
               </div>
-              <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{pillar.title}</h3>
+              <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{pillar.title}</h3>
               <p className="text-foreground/70 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
             </motion.div>
           ))}
@@ -236,9 +236,9 @@ export const ConstructionObjectionBuster = ({
                 <p className="text-[hsl(var(--highland-gold)/0.9)] text-[12px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors flex-shrink-0">
-                    <pillar.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                    <pillar.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm group-hover:text-[hsl(var(--highland-gold))] transition-colors">{pillar.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground text-sm group-hover:text-[hsl(var(--gold-ink))] transition-colors">{pillar.title}</h3>
                 </div>
               </div>
               <div className="md:col-span-3">
@@ -288,7 +288,7 @@ export const ConstructionTrustSidebarDetailed = ({
       <div key={p.title} className="space-y-1.5">
         <div className="flex items-center gap-2.5">
           <div className="w-7 h-7 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center flex-shrink-0">
-            <p.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
+            <p.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
           </div>
           <span className="text-foreground text-xs font-heading font-bold">{p.title}</span>
         </div>
@@ -298,7 +298,7 @@ export const ConstructionTrustSidebarDetailed = ({
       </div>
     ))}
     <div className="pt-3 border-t border-border">
-      <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+      <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
         Discuss Your Project <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
       </Link>
     </div>

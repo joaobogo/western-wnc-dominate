@@ -86,7 +86,7 @@ const HomeFAQ = () => {
           <span className="eyebrow mb-3 block">Common Questions</span>
           <h2 className="section-heading mb-4">
             Answers Before You{" "}
-            <span className="text-[hsl(var(--highland-gold))]">Pick Up the Phone.</span>
+            <span className="text-[hsl(var(--gold-ink))]">Pick Up the Phone.</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg font-body max-w-2xl mx-auto">
             Short answers to the questions homeowners ask most. For anything specific to your property, call us or send a message and we will answer plainly.

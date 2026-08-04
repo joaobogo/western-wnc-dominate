@@ -13,7 +13,7 @@ const TownGrid = ({ id }: { id?: string }) => {
       <div className="container-tight">
         <div className="text-center mb-12 md:mb-16">
           <ScrollReveal variant="fade">
-            <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Service Territory</span>
+            <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Service Territory</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-display font-heading font-bold mb-6 text-white leading-[0.95] tracking-tightest">
@@ -49,7 +49,7 @@ const TownGrid = ({ id }: { id?: string }) => {
                     className="group block bg-dark-section-foreground/[0.06] border border-dark-section-foreground/[0.15] rounded-none p-6 md:p-8 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.3)] card-lift transition-all duration-500 shadow-sm h-full"
                     style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                   >
-                    <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))] mb-3 group-hover:scale-110 transition-transform duration-300" />
+                    <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))] mb-3 group-hover:scale-110 transition-transform duration-300" />
                     <h3 className="font-heading font-bold text-lg text-dark-section-foreground mb-1.5">
                       {town.name}
                     </h3>
@@ -72,7 +72,7 @@ const TownGrid = ({ id }: { id?: string }) => {
         <ScrollReveal variant="fade" delay={0.4} className="text-center mt-8">
           <Link
             to="/service-areas"
-            className="group inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-medium text-sm transition-all font-body link-draw"
+            className="group inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-medium text-sm transition-all font-body link-draw"
           >
             View All Service Areas <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
           </Link>

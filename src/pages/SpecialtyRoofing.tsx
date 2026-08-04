@@ -113,11 +113,11 @@ const SpecialtyRoofing = () => {
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="flex flex-col">
                     <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                    <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1">Specialty Division</span>
+                    <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Specialty Division</span>
                   </div>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-white/30" />
-                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Specialty Roofing</span>
+                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Specialty Roofing</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -226,7 +226,7 @@ const SpecialtyRoofing = () => {
               {premiumMaterials.map((mat, i) => (
                 <motion.div key={mat.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center mb-4">
-                    <Gem className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                    <Gem className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{mat.title}</h3>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{mat.detail}</p>
@@ -242,7 +242,7 @@ const SpecialtyRoofing = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Detail Execution</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Detail Execution</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   The Details That Separate<br className="hidden md:block" /> Good From Exceptional.
                 </h2>
@@ -252,7 +252,7 @@ const SpecialtyRoofing = () => {
                 {detailExecution.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-dark-section-foreground/12 transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
-                      <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                      <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
                     <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{item.detail}</p>
@@ -361,7 +361,7 @@ const SpecialtyRoofing = () => {
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">Start the Conversation</span>
+                  <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Start the Conversation</span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Should Be as Considered<br className="hidden md:block" /> as the Home Beneath It.
                   </h2>

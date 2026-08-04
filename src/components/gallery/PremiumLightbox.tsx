@@ -247,7 +247,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   }`}
                 >
                   {project.type && (
-                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--highland-gold))] mb-2 block">
+                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--gold-ink))] mb-2 block">
                       {project.type}
                     </span>
                   )}

@@ -100,7 +100,7 @@ const ProjectDetailPage = () => {
                   <span className="text-white/90">{project.type}</span>
                 </nav>
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
+                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
                     {project.type}
                   </span>
                   <span className="text-white/95 text-sm font-body flex items-center gap-1.5 font-medium">
@@ -435,7 +435,7 @@ const ProjectDetailPage = () => {
               <div className="text-center mt-10">
                 <Link
                   to="/recent-projects"
-                  className="group inline-flex items-center gap-2 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
+                  className="group inline-flex items-center gap-2 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
                 >
                   View Full Portfolio <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>

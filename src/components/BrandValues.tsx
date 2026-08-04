@@ -118,7 +118,7 @@ export const ValuesPillarGrid = ({
         viewport={{ once: true }}
         className="text-center mb-12 md:mb-14"
       >
-        <span className={`eyebrow mb-3 block ${isDark ? "text-[hsl(var(--highland-gold))]" : ""}`}>{eyebrow}</span>
+        <span className={`eyebrow mb-3 block ${isDark ? "text-[hsl(var(--gold-ink))]" : ""}`}>{eyebrow}</span>
         <h2 className={`section-heading mb-4 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : ""}`}>{heading}</h2>
         <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
         {subheading && (
@@ -144,7 +144,7 @@ export const ValuesPillarGrid = ({
             <div className={`w-10 h-10 rounded-sm flex items-center justify-center mb-3 ${
               isDark ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8"
             }`}>
-              <v.icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`} />
+              <v.icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} />
             </div>
             <h3 className={`font-heading font-semibold text-sm mb-1 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
               {v.name}
@@ -198,7 +198,7 @@ export const ValuesEditorial = ({ values: customValues, variant = "light" }: Val
             <div className={`w-12 h-12 rounded-sm flex items-center justify-center mb-4 ${
               isDark ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8"
             }`}>
-              <v.icon className={`w-6 h-6 ${isDark ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`} />
+              <v.icon className={`w-6 h-6 ${isDark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} />
             </div>
             <span className={`text-[12px] font-body font-bold uppercase tracking-wider block mb-2 ${
               isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-accent"

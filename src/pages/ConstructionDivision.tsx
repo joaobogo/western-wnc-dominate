@@ -122,14 +122,14 @@ const ConstructionDivision = () => {
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
                     <span className="text-[20px] md:text-[22px] font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
-                    <span className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction, Design</span>
+                    <span className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction, Design</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.4)] shadow-[0_0_15px_-3px_hsl(var(--highland-gold)/0.3)]">
-                    <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <HardHat className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))] drop-shadow-sm">Mountain Quality Since 2017</span>
+                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] drop-shadow-sm">Mountain Quality Since 2017</span>
                 </div>
               </motion.div>
 
@@ -137,7 +137,7 @@ const ConstructionDivision = () => {
                 Mountain Construction
               </motion.h1>
               <motion.h2 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold tracking-tight leading-[1.0] mb-8">
-                <span className="text-[hsl(var(--highland-gold))]">Masterfully Planned.</span>
+                <span className="text-[hsl(var(--gold-ink))]">Masterfully Planned.</span>
               </motion.h2>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-[20px] md:text-[24px] text-white/95 max-w-2xl mb-12 leading-relaxed font-body font-bold drop-shadow-md">
@@ -166,7 +166,7 @@ const ConstructionDivision = () => {
                     { value: "Full", label: "Design-Build" },
                   ].map((stat) => (
                     <div key={stat.label}>
-                      <div className="text-lg font-heading font-bold text-[hsl(var(--highland-gold))]">{stat.value}</div>
+                      <div className="text-lg font-heading font-bold text-[hsl(var(--gold-ink))]">{stat.value}</div>
                       <div className="text-[10px] uppercase tracking-wider text-primary-foreground/90 font-body mt-0.5">{stat.label}</div>
                     </div>
                   ))}
@@ -214,7 +214,7 @@ const ConstructionDivision = () => {
             <div className="container-tight">
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Proven Standards</span>
+                  <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Proven Standards</span>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
                     Team-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
                   </h2>
@@ -232,7 +232,7 @@ const ConstructionDivision = () => {
                       { value: "Rapid", label: "Response Time" },
                     ].map((stat, i) => (
                       <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/15 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
-                        <span className="text-xl font-heading font-bold text-[hsl(var(--highland-gold))] block">{stat.value}</span>
+                        <span className="text-xl font-heading font-bold text-[hsl(var(--gold-ink))] block">{stat.value}</span>
                         <span className="text-[12px] md:text-[13px] font-body text-dark-section-foreground/95 uppercase tracking-[0.15em]">{stat.label}</span>
                       </motion.div>
                     ))}
@@ -244,7 +244,7 @@ const ConstructionDivision = () => {
                     <img decoding="async" src={proj3} alt="Room addition with standing seam metal roof integration" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[240px]">
-                    <span className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
+                    <span className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
                     <p className="text-muted-foreground text-sm font-body leading-snug">
                       Design-first coordination, layout verification, and unified accountability — under one team.
                     </p>
@@ -266,7 +266,7 @@ const ConstructionDivision = () => {
           <div className="container-tight">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
               <ScrollReveal variant="fade" className="lg:col-span-7">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Design &amp; Consultation Program</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Design &amp; Consultation Program</span>
                 <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.1] mb-6 text-balance">
                   Serious Projects Start<br className="hidden md:block" /> With Design.
                 </h2>
@@ -283,13 +283,13 @@ const ConstructionDivision = () => {
                   </Link>
                   <Link
                     to="/construction/design"
-                    className="group bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.6)] hover:text-[hsl(var(--highland-gold))] transition-all tracking-wide"
+                    className="group bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.6)] hover:text-[hsl(var(--gold-ink))] transition-all tracking-wide"
                   >
                     View Design Services
                   </Link>
                 </div>
                 <div className="mt-8 flex items-start gap-3 p-4 border-l-2 border-[hsl(var(--highland-gold)/0.5)] bg-card/40">
-                  <FileText className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                  <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
                   <p className="text-foreground/75 text-sm font-body leading-relaxed">
                     Already have complete plans? Highlander can review them and determine whether your project is ready to move toward estimating.
                   </p>
@@ -298,7 +298,7 @@ const ConstructionDivision = () => {
 
               <ScrollReveal variant="fade" className="lg:col-span-5">
                 <div className="bg-card border border-border rounded-none p-6 md:p-8">
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] block mb-5">
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] block mb-5">
                     What the Program Delivers
                   </span>
                   <ul className="space-y-3.5">
@@ -311,7 +311,7 @@ const ConstructionDivision = () => {
                       "A portion of design fees may credit back when you build with Highlander",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
                         <span className="text-foreground/85 text-sm md:text-[15px] font-body leading-snug">{item}</span>
                       </li>
                     ))}
@@ -357,9 +357,9 @@ const ConstructionDivision = () => {
               {philosophy.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
                   <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
                   <p className="text-foreground/80 text-base leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
@@ -426,9 +426,9 @@ const ConstructionDivision = () => {
               {whyHighlander.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
                   <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
                   <p className="text-foreground/80 text-base leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}

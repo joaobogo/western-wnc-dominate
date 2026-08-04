@@ -70,7 +70,7 @@ const ProjectPathfinder = () => {
           <span className="eyebrow mb-3 block">Project Guide</span>
           <h2 className="section-heading mb-4">
             Not Sure Where to Start?<br className="hidden md:block" />
-            <span className="text-[hsl(var(--highland-gold))]"> We'll Help You Find Your Path.</span>
+            <span className="text-[hsl(var(--gold-ink))]"> We'll Help You Find Your Path.</span>
           </h2>
           <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
             Answer one or two quick questions and we'll point you to exactly the right service, page, and next step.
@@ -155,8 +155,8 @@ const ProjectPathfinder = () => {
                 <div className="bg-card border border-border rounded-sm overflow-hidden">
                   <div className="p-6 md:p-8 border-b border-border">
                     <div className="flex items-center gap-2 mb-4">
-                      <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))]">Recommended For You</span>
+                      <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))]">Recommended For You</span>
                     </div>
                     <h3 className="font-heading font-bold text-foreground text-2xl mb-3">{result.title}</h3>
                     <p className="text-muted-foreground text-sm font-body leading-relaxed max-w-xl">{result.description}</p>

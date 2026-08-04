@@ -137,7 +137,7 @@ const OutdoorLiving = () => {
                   <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/90">Construction</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Outdoor Living</span>
+                <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Outdoor Living</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -147,12 +147,12 @@ const OutdoorLiving = () => {
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.05] tracking-tight">
-                  <span className="text-[hsl(var(--highland-gold))]">Built for the Weather.</span>
+                  <span className="text-[hsl(var(--gold-ink))]">Built for the Weather.</span>
                 </motion.h2>
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-xl md:text-2xl text-white mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
-                Decks, covered porches, screened rooms, and outdoor kitchens — strengthened by our <Link to="/layouts-planning" className="text-[hsl(var(--highland-gold))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)]">Design branch</Link> to handle mountain weather and maximize mountain life.
+                Decks, covered porches, screened rooms, and outdoor kitchens — strengthened by our <Link to="/layouts-planning" className="text-[hsl(var(--gold-ink))] hover:underline underline-offset-4 decoration-[hsl(var(--highland-gold)/0.4)]">Design branch</Link> to handle mountain weather and maximize mountain life.
               </motion.p>
 
 
@@ -217,7 +217,7 @@ const OutdoorLiving = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Our Philosophy</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Our Philosophy</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Beauty. Function.<br className="hidden md:block" /> Durability.
                 </h2>
@@ -230,7 +230,7 @@ const OutdoorLiving = () => {
                 {beautyFunctionDurability.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
-                      <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                      <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
                     <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
@@ -253,9 +253,9 @@ const OutdoorLiving = () => {
               {outdoorTypes.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
                   <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
@@ -276,7 +276,7 @@ const OutdoorLiving = () => {
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h4 className="font-heading font-bold text-foreground text-sm mb-2">Wondering what's possible on your lot?</h4>
                   <p className="text-foreground/60 text-[13px] leading-relaxed font-body mb-3">We evaluate terrain, views, drainage, and access as part of every outdoor project consultation.</p>
-                  <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+                  <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -287,10 +287,10 @@ const OutdoorLiving = () => {
                   <motion.div key={item.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group p-5 md:p-6 rounded-sm bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                     <div className="flex items-start gap-4">
                       <div className="w-9 h-9 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                        <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                        <item.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
+                        <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
                         <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                       </div>
                     </div>
@@ -336,9 +336,9 @@ const OutdoorLiving = () => {
               {materials.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
                   <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
@@ -352,7 +352,7 @@ const OutdoorLiving = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Why Highlander</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Why Highlander</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   A Roofing Company That<br className="hidden md:block" /> Builds Outdoor Structures.
                 </h2>
@@ -365,7 +365,7 @@ const OutdoorLiving = () => {
                 {whyHighlander.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
-                      <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                      <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
                     <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
@@ -389,9 +389,9 @@ const OutdoorLiving = () => {
                 <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <step.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{step.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
                   <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
@@ -423,7 +423,7 @@ const OutdoorLiving = () => {
             </div>
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
                 View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>

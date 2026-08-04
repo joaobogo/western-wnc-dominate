@@ -31,7 +31,7 @@ const divisions = [
     tagline: "Licensed General Contractor · Full-Scope Building",
     color: "gold",
     iconBg: "bg-[hsl(var(--highland-gold)/0.1)]",
-    iconColor: "text-[hsl(var(--highland-gold))]",
+    iconColor: "text-[hsl(var(--gold-ink))]",
     borderColor: "border-[hsl(var(--highland-gold)/0.12)] hover:border-[hsl(var(--highland-gold)/0.25)]",
     stats: [
       { value: "40+", label: "Years Combined Exp." },
@@ -39,7 +39,7 @@ const divisions = [
     ],
     href: "/construction",
     cta: "Explore Construction",
-    ctaColor: "text-[hsl(var(--highland-gold))]",
+    ctaColor: "text-[hsl(var(--gold-ink))]",
   },
   {
     icon: Ruler,

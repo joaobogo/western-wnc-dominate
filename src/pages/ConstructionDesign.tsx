@@ -158,9 +158,9 @@ const ConstructionDesign = () => {
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 mb-5 text-white/95 text-[12px] font-body">
-                <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Construction</Link>
+                <Link to="/construction" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Construction</Link>
                 <ChevronRight className="w-3 h-3" />
-                <span className="text-[hsl(var(--highland-gold))]">Design Services</span>
+                <span className="text-[hsl(var(--gold-ink))]">Design Services</span>
               </div>
 
               <motion.h1
@@ -169,7 +169,7 @@ const ConstructionDesign = () => {
                 transition={{ duration: 0.8, ease: HIGHLAND_EASE }}
                 className="text-3xl md:text-5xl lg:text-[3.75rem] font-heading font-bold text-white leading-[1.05] tracking-tight mb-7"
               >
-                Design Services for Construction Projects in <span className="text-[hsl(var(--highland-gold))]">Western North Carolina.</span>
+                Design Services for Construction Projects in <span className="text-[hsl(var(--gold-ink))]">Western North Carolina.</span>
               </motion.h1>
 
               <motion.p
@@ -208,7 +208,7 @@ const ConstructionDesign = () => {
                 className="flex items-center gap-3 pt-6 border-t border-white/15"
               >
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.6)]" />
-                <p className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.18em]">
+                <p className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.18em]">
                   Fixed fees · Defined deliverables · Real budget guidance before you build
                 </p>
               </motion.div>
@@ -238,7 +238,7 @@ const ConstructionDesign = () => {
                 <ul className="space-y-3">
                   {whyDesignFirst.map((item) => (
                     <li key={item} className="flex items-start gap-3 bg-card border border-border rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.25)] transition-colors">
-                      <CheckCircle className="w-5 h-5 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
                       <span className="text-foreground/85 text-[14.5px] font-body leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -255,7 +255,7 @@ const ConstructionDesign = () => {
         <section className="section-padding bg-secondary/40 tartan-bg relative">
           <div className="container-tight">
             <div className="max-w-2xl mx-auto text-center mb-12">
-              <span className="eyebrow text-[hsl(var(--highland-gold))] mb-3 block">The Three Design Phases</span>
+              <span className="eyebrow text-[hsl(var(--gold-ink))] mb-3 block">The Three Design Phases</span>
               <h2 className="section-heading mb-4">A Clear, Sequential Path From Idea to Build.</h2>
               <p className="text-foreground/75 text-base font-body">Each phase has fixed pricing, defined deliverables, and a clear timeline. You decide at each step whether to continue.</p>
             </div>
@@ -274,9 +274,9 @@ const ConstructionDesign = () => {
 
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.08)] border border-[hsl(var(--highland-gold)/0.25)] flex items-center justify-center">
-                      <p.icon className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                      <p.icon className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
                     </div>
-                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">{p.label}</div>
+                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">{p.label}</div>
                   </div>
 
                   <h3 className="font-heading font-bold text-foreground text-xl md:text-[1.4rem] mb-3 leading-tight">{p.title}</h3>
@@ -291,7 +291,7 @@ const ConstructionDesign = () => {
                     <ul className="space-y-1.5">
                       {p.deliverables.map((d) => (
                         <li key={d} className="flex items-start gap-2 text-[13.5px] text-foreground/80 font-body">
-                          <CheckCircle className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
                           <span>{d}</span>
                         </li>
                       ))}
@@ -343,7 +343,7 @@ const ConstructionDesign = () => {
             <div className="container-tight max-w-4xl">
               <ScrollReveal variant="fade">
                 <div className="text-center mb-10">
-                  <span className="eyebrow text-[hsl(var(--highland-gold))] mb-3 block">Design-Build Advantage</span>
+                  <span className="eyebrow text-[hsl(var(--gold-ink))] mb-3 block">Design-Build Advantage</span>
                   <h2 className="text-2xl md:text-4xl lg:text-[2.75rem] font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
                     Design Fees Can Credit Back When You Build With Highlander.
                   </h2>
@@ -388,7 +388,7 @@ const ConstructionDesign = () => {
                   <ul className="space-y-3">
                     {fixedFeeBullets.map((b) => (
                       <li key={b} className="flex items-start gap-3 text-foreground/85 text-[14.5px] font-body leading-relaxed">
-                        <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-1 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-1 flex-shrink-0" />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -436,7 +436,7 @@ const ConstructionDesign = () => {
                   className="bg-card border border-border rounded-none p-4 md:p-5 flex flex-col items-start gap-3 hover:border-[hsl(var(--highland-gold)/0.3)] transition-colors"
                 >
                   <div className="w-9 h-9 bg-[hsl(var(--highland-gold)/0.08)] border border-[hsl(var(--highland-gold)/0.2)] flex items-center justify-center">
-                    <w.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                    <w.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <span className="font-heading font-bold text-foreground text-[13.5px] leading-tight">{w.label}</span>
                 </motion.div>
@@ -453,9 +453,9 @@ const ConstructionDesign = () => {
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))]" />
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.25)] flex items-center justify-center">
-                    <FileText className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <FileText className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--highland-gold))]">Already Have Plans?</span>
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">Already Have Plans?</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-5 leading-tight">
                   Send Them Over — We'll Tell You Where Your Project Stands.
@@ -497,7 +497,7 @@ const ConstructionDesign = () => {
                 <details key={f.question} className="group bg-card border border-border rounded-none p-5 open:border-[hsl(var(--highland-gold)/0.35)] transition-colors">
                   <summary className="font-heading font-bold text-foreground text-base cursor-pointer list-none flex items-center justify-between gap-4">
                     <span>{f.question}</span>
-                    <ChevronRight className="w-4 h-4 text-[hsl(var(--highland-gold))] group-open:rotate-90 transition-transform flex-shrink-0" />
+                    <ChevronRight className="w-4 h-4 text-[hsl(var(--gold-ink))] group-open:rotate-90 transition-transform flex-shrink-0" />
                   </summary>
                   <p className="text-foreground/75 text-[14.5px] font-body leading-relaxed mt-3">{f.answer}</p>
                 </details>
@@ -510,7 +510,7 @@ const ConstructionDesign = () => {
         <section className="section-dark tartan-dark relative overflow-hidden">
           <div className="section-padding">
             <div className="container-tight max-w-3xl text-center">
-              <span className="eyebrow text-[hsl(var(--highland-gold))] mb-4 block">Start the Conversation</span>
+              <span className="eyebrow text-[hsl(var(--gold-ink))] mb-4 block">Start the Conversation</span>
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-dark-section-foreground leading-[1.1] mb-6">
                 Ready to Plan Your<br className="hidden md:block" /> Construction Project?
               </h2>
@@ -531,8 +531,8 @@ const ConstructionDesign = () => {
                   Start with a Design Agreement <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/95 hover:text-[hsl(var(--highland-gold))] transition-colors font-heading font-bold text-[14px]">
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/95 hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-[14px]">
+                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                 (828) 524-7773
               </a>
             </div>

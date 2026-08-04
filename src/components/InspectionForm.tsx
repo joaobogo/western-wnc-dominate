@@ -134,7 +134,7 @@ const InspectionForm = () => {
               animate={{ scale: 1, rotate: 0 }}
               transition={{ delay: 0.15, type: "spring", stiffness: 400, damping: 15 }}
             >
-              <CheckCircle className="w-8 h-8 text-[hsl(var(--highland-gold))]" />
+              <CheckCircle className="w-8 h-8 text-[hsl(var(--gold-ink))]" />
             </motion.div>
 
             <motion.h2
@@ -198,7 +198,7 @@ const InspectionForm = () => {
               className="text-dark-section-foreground/85 text-[15px] md:text-[16px] font-body font-bold"
             >
               Can't wait?{" "}
-              <a href="tel:+18285247773" className="text-[hsl(var(--highland-gold))] font-semibold hover:underline">
+              <a href="tel:+18285247773" className="text-[hsl(var(--gold-ink))] font-semibold hover:underline">
                 (828) 524-7773
               </a>
               {" "}— we answer our own phone.
@@ -230,7 +230,7 @@ const InspectionForm = () => {
             {/* Left — editorial trust content */}
             <div className="lg:col-span-2">
               <ScrollReveal variant="fade">
-                <span className="text-[12px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] mb-4 block">
+                <span className="text-[12px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-4 block">
                   Begin Your Project
                 </span>
               </ScrollReveal>
@@ -263,7 +263,7 @@ const InspectionForm = () => {
                     className="flex items-center gap-3"
                   >
                     <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.22)] border border-[hsl(var(--highland-gold)/0.55)] flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                      <item.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <span className="text-white text-body font-bold text-lg md:text-xl drop-shadow-md">{item.text}</span>
                   </motion.div>
@@ -273,7 +273,7 @@ const InspectionForm = () => {
               <ScrollReveal variant="fade" delay={0.5}>
                 <div className="mt-8 pt-8 border-t border-dark-section-foreground/6">
                   <p className="text-white text-base font-body font-bold mb-2">Prefer to talk directly?</p>
-                  <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--highland-gold))] transition-colors">
+                  <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" />
                     (828) 524-7773
                   </a>
@@ -327,7 +327,7 @@ const InspectionForm = () => {
                     ))}
                   </div>
                   <div className="flex items-center justify-between">
-                    <p className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold))]">
+                    <p className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))]">
                       Step {currentIndex + 1} of {stepOrder.length}
                     </p>
                     <p className="text-[13px] md:text-[14px] text-dark-section-foreground/95 font-body font-bold">{stepLabels[currentStep]}</p>
@@ -360,7 +360,7 @@ const InspectionForm = () => {
                                 className={inputClasses}
                                 placeholder="First & last name"
                               />
-                              <InlineFieldError className="text-[hsl(var(--highland-gold))]">{contact.errorFor("name")}</InlineFieldError>
+                              <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("name")}</InlineFieldError>
                               <p className={hintClasses}>So we know who we're speaking with.</p>
                             </div>
                             <div>
@@ -374,7 +374,7 @@ const InspectionForm = () => {
                                 className={inputClasses}
                                 placeholder="(828) 555-0123"
                               />
-                              <InlineFieldError className="text-[hsl(var(--highland-gold))]">{contact.errorFor("phone")}</InlineFieldError>
+                              <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("phone")}</InlineFieldError>
                               <p className={hintClasses}>We'll call — never text spam.</p>
                             </div>
                           </div>
@@ -391,7 +391,7 @@ const InspectionForm = () => {
                               className={inputClasses}
                               placeholder="you@email.com"
                             />
-                            <InlineFieldError className="text-[hsl(var(--highland-gold))]">{contact.errorFor("email")}</InlineFieldError>
+                            <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("email")}</InlineFieldError>
                           </div>
                         </div>
                       )}
@@ -410,7 +410,7 @@ const InspectionForm = () => {
                                 className={inputClasses}
                                 placeholder="Street, city, and state"
                               />
-                              <InlineFieldError className="text-[hsl(var(--highland-gold))]">{contact.errorFor("address")}</InlineFieldError>
+                              <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("address")}</InlineFieldError>
                               <p className={hintClasses}>So we can review the property on satellite before we call.</p>
                             </div>
                             <div>

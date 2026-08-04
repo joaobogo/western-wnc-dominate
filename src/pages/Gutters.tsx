@@ -77,7 +77,7 @@ const Gutters = () => {
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-white/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Gutters</span>
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Gutters</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">

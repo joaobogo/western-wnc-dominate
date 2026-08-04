@@ -32,7 +32,7 @@ const Siding = () => {
           </div>
           <div className="container-tight relative z-10 pt-32 md:pt-40">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Construction Division</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Construction Division</span>
               <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-white tracking-tight">Siding & Exterior.</h1>
               <p className="text-white/85 text-lg md:text-xl max-w-2xl mb-8 font-body leading-relaxed">
                 Mountain-grade exterior protection. Fiber cement, natural cedar, and premium trim systems engineered for Western NC&apos;s moisture and elevation.
@@ -80,11 +80,11 @@ const Siding = () => {
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
-                      <Droplets className="w-5 h-5 text-[hsl(var(--highland-gold))] mb-2" />
+                      <Droplets className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-2" />
                       <div className="text-[10px] font-bold uppercase tracking-wider">Moisture Proof</div>
                     </div>
                     <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
-                      <Wind className="w-5 h-5 text-[hsl(var(--highland-gold))] mb-2" />
+                      <Wind className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-2" />
                       <div className="text-[10px] font-bold uppercase tracking-wider">Wind Rated</div>
                     </div>
                   </div>

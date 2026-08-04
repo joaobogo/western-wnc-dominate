@@ -39,7 +39,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
           <ScrollReveal variant="rise-subtle" delay={0.1}>
             <div className="flex flex-col h-full bg-background border border-border p-10 group relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
               <div className="w-16 h-16 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-8 border border-[hsl(var(--highland-gold)/0.1)]">
-                <HardHat className="w-8 h-8 text-[hsl(var(--highland-gold))]" />
+                <HardHat className="w-8 h-8 text-[hsl(var(--gold-ink))]" />
               </div>
               <h2 className="text-3xl font-heading font-bold mb-6 text-foreground leading-tight">Construction in <br />{town.name}</h2>
               <p className="text-muted-foreground font-body leading-relaxed mb-10 text-sm">
@@ -47,13 +47,13 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
               </p>
               <Link 
                 to={`/service-areas/${town.slug}/additions`}
-                className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-heading font-bold hover:gap-3 transition-all mt-auto text-sm uppercase tracking-widest"
+                className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold hover:gap-3 transition-all mt-auto text-sm uppercase tracking-widest"
               >
                 Explore {town.name} Construction <ArrowRight className="w-4 h-4" />
               </Link>
 
               {/* Subtle background icon */}
-              <HardHat className="absolute -bottom-4 -right-4 w-32 h-32 text-[hsl(var(--highland-gold))] opacity-[0.03] group-hover:scale-110 transition-transform duration-700" />
+              <HardHat className="absolute -bottom-4 -right-4 w-32 h-32 text-[hsl(var(--gold-ink))] opacity-[0.03] group-hover:scale-110 transition-transform duration-700" />
             </div>
           </ScrollReveal>
 

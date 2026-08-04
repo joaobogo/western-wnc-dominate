@@ -153,7 +153,7 @@ const CommercialRoofing = () => {
                     <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                   </Link>
                   <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Commercial</span>
+                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Commercial</span>
                 </div>
               </motion.div>
 
@@ -300,7 +300,7 @@ const CommercialRoofing = () => {
           <div className="section-padding">
             <div className="container-tight max-w-5xl">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Operational Awareness</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Operational Awareness</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Your Business Keeps Running.<br className="hidden md:block" /> We Plan Around It.
                 </h2>
@@ -440,7 +440,7 @@ const CommercialRoofing = () => {
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">Partner With Highlander</span>
+                  <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Partner With Highlander</span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Protects Your Investment.<br className="hidden md:block" /> We Protect Your Roof.
                   </h2>

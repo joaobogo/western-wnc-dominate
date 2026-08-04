@@ -82,7 +82,7 @@ const RecentProjects = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-secondary/60" />
           </div>
           <div className="container-tight relative pt-40 md:pt-52 pb-14 md:pb-20">
-            <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+            <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
               Project Activity · Western North Carolina
             </p>
             <h1 className="text-display-md md:text-display-lg font-heading font-bold text-[hsl(var(--heritage-green))] mb-6 leading-[1.05] tracking-tightest">
@@ -109,7 +109,7 @@ const RecentProjects = () => {
         <section className="py-16 md:py-24 bg-background">
           <div className="container-tight">
             <div className="max-w-3xl mb-12">
-              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">What We Build</p>
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">What We Build</p>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
                 Built for Mountain Homes, Weather, and Real-World Conditions
               </h2>
@@ -155,7 +155,7 @@ const RecentProjects = () => {
         <section className="py-16 md:py-24 bg-background border-t border-border/60">
           <div className="container-tight">
             <div className="max-w-3xl mb-12">
-              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
                 Completed Project Portfolio
               </p>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
@@ -228,7 +228,7 @@ const RecentProjects = () => {
         <section className="py-16 md:py-24 bg-background">
           <div className="container-tight">
             <div className="max-w-3xl mb-12">
-              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Find Your Path</p>
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Find Your Path</p>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
                 What Project Type Are You Planning?
               </h2>
@@ -253,7 +253,7 @@ const RecentProjects = () => {
         <section className="py-16 md:py-20 bg-secondary/40">
           <div className="container-tight">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+              <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
                 <MapPin className="w-3.5 h-3.5" /> Service Areas
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">

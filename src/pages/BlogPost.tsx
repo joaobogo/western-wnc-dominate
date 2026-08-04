@@ -34,12 +34,12 @@ const getCategoryColor = (category: string) => {
     Storm: "bg-accent/15 text-accent",
     Maintenance: "bg-primary/10 text-primary",
     Materials: "bg-primary/10 text-primary",
-    Cost: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--highland-gold))]",
+    Cost: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--gold-ink))]",
     Insurance: "bg-primary/10 text-primary",
     Replacement: "bg-primary/10 text-primary",
     Tips: "bg-primary/10 text-primary",
     Commercial: "bg-primary/10 text-primary",
-    Financing: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--highland-gold))]",
+    Financing: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--gold-ink))]",
     Inspections: "bg-primary/10 text-primary",
   };
   return map[category] || "bg-primary/10 text-primary";
@@ -268,7 +268,7 @@ const BlogPostPage = () => {
                     className="bg-secondary/60 border border-border rounded-sm p-5 md:p-6 mb-10"
                   >
                     <div className="flex items-center gap-2 mb-4">
-                      <Lightbulb className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                      <Lightbulb className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                       <h3 className="font-heading font-semibold text-sm text-foreground">Key Takeaways</h3>
                     </div>
                     <div className="space-y-2">
@@ -404,7 +404,7 @@ const BlogPostPage = () => {
                           </div>
                           <div className="p-5">
                             <div className="flex items-center gap-2 mb-2">
-                              <MapPin className="w-3 h-3 text-[hsl(var(--highland-gold))]" />
+                              <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                               <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{project.location}</span>
                             </div>
                             <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h4>
@@ -501,7 +501,7 @@ const BlogPostPage = () => {
 
                 {/* Sidebar CTA */}
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
-                  <Shield className="w-6 h-6 text-[hsl(var(--highland-gold))] mx-auto mb-3" />
+                  <Shield className="w-6 h-6 text-[hsl(var(--gold-ink))] mx-auto mb-3" />
                   <h4 className="font-heading font-semibold text-primary-foreground text-sm mb-2">
                     Need Expert Advice?
                   </h4>

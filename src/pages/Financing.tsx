@@ -51,9 +51,9 @@ const Financing = () => {
           
           <div className="container-tight relative z-10 hero-clears-header pb-16 md:pb-24">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="text-[hsl(var(--highland-gold))] font-bold text-sm uppercase tracking-[0.25em] mb-4">Investment Support</p>
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-sm uppercase tracking-[0.25em] mb-4">Investment Support</p>
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-white mb-6 leading-[0.95] tracking-tightest">
-                Ask About <span className="text-[hsl(var(--highland-gold))]">Financing</span> for Your Project
+                Ask About <span className="text-[hsl(var(--gold-ink))]">Financing</span> for Your Project
               </h1>
               <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl leading-relaxed font-medium drop-shadow-sm">
                 A new roof or major construction project is a long-term investment. Financing can make it easier to move forward on the right timeline — talk with our team about options that may fit your project.
@@ -75,9 +75,9 @@ const Financing = () => {
             {/* Pre-launch placeholder — needs client/lender details */}
             <div className="mb-12 max-w-3xl mx-auto p-5 border-l-4 border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] rounded-sm">
               <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] mb-1.5">
+                  <p className="text-xs font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-1.5">
                     Pending Client Confirmation
                   </p>
                   <p className="text-sm text-foreground/80 font-body leading-relaxed">

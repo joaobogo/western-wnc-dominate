@@ -26,7 +26,7 @@ export const FinalCTA = ({
   <section className={`section-padding bg-primary text-primary-foreground ${className}`}>
     <div className="container-tight max-w-3xl text-center">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-        <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] mb-4 block">
+        <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-4 block">
           {eyebrow}
         </span>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-[1.15] text-balance mb-5">

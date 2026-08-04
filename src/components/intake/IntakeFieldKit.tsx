@@ -21,7 +21,7 @@ export const Label = ({
   >
     {children}{" "}
     {required && (
-      <span className="text-[hsl(var(--highland-gold))]" aria-hidden="true">
+      <span className="text-[hsl(var(--gold-ink))]" aria-hidden="true">
         *
       </span>
     )}

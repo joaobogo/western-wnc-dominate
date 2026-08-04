@@ -34,7 +34,7 @@ const categoryLabels: Record<string, string> = {
 
 const categoryColors: Record<string, string> = {
   roofing: "bg-primary/10 text-primary",
-  construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--highland-gold))]",
+  construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--gold-ink))]",
   storm: "bg-destructive/10 text-destructive",
   commercial: "bg-secondary text-muted-foreground",
 };
@@ -154,7 +154,7 @@ const ReviewsPage = () => {
                   transition={{ delay: i * 0.08, duration: 0.5 }}
                   className="flex flex-col items-center text-center md:px-6 lg:px-8"
                 >
-                  <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5">{stat.value}</span>
+                  <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1.5">{stat.value}</span>
                   <span className="text-sm font-heading font-semibold text-primary-foreground/85 mb-1">{stat.label}</span>
                   <span className="text-[13px] text-primary-foreground/85 font-body tracking-wide font-bold">{stat.detail}</span>
                 </motion.div>
@@ -297,7 +297,7 @@ const ReviewsPage = () => {
         <section className="section-padding section-dark tartan-dark">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-14">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Recurring Themes</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Recurring Themes</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
                 What Clients Mention Most
               </h2>
@@ -318,7 +318,7 @@ const ReviewsPage = () => {
                   className="border border-[hsl(var(--highland-gold)/0.1)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)]"
                 >
                   <div className="w-11 h-11 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-4">
-                    <theme.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <theme.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-2">{theme.title}</h3>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm leading-relaxed mb-4">{theme.description}</p>
@@ -345,7 +345,7 @@ const ReviewsPage = () => {
           <div className="container-tight section-padding max-w-4xl">
             <div className="card-premium p-8 md:p-10">
               <div className="flex items-start gap-4 mb-6">
-                <AlertCircle className="w-6 h-6 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-1" />
+                <AlertCircle className="w-6 h-6 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" />
                 <div>
                   <span className="eyebrow block mb-2">For the Highlander Team — Pre-Launch</span>
                   <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight">
@@ -365,7 +365,7 @@ const ReviewsPage = () => {
                   { icon: AlertCircle, text: "Confirmation of current review counts and average ratings" },
                 ].map(({ icon: Icon, text }) => (
                   <li key={text} className="flex items-start gap-2">
-                    <Icon className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                    <Icon className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
                     <span>{text}</span>
                   </li>
                 ))}

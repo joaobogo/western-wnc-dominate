@@ -89,7 +89,7 @@ const RealWorkWidget = ({
     <section className={className} aria-labelledby="realwork-project-updates-heading">
       <div className="container-tight">
         <div className="max-w-3xl mb-10">
-          <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
+          <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
             {eyebrow}
           </p>
           <h2

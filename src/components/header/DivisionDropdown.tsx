@@ -102,7 +102,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                   div.accent === "green" ? "bg-primary/10" : "bg-[hsl(var(--highland-gold)/0.1)]"
                 }`}>
                   <div.icon className={`w-3.5 h-3.5 ${
-                    div.accent === "green" ? "text-primary" : "text-[hsl(var(--highland-gold))]"
+                    div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
                   }`} />
                 </div>
                 <span className="text-base font-heading font-bold text-foreground">{div.label} Division</span>

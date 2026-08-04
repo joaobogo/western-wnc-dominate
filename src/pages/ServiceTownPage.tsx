@@ -150,7 +150,7 @@ const ServiceTownPage = ({
 
           <div className="container-tight relative z-10 pt-32 md:pt-40 pb-20">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-6">
+              <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-6">
                 <MapPin className="w-4 h-4" />
                 <span className="font-bold text-sm uppercase tracking-[0.2em]">
                   {town.county}, {town.state}
@@ -173,7 +173,7 @@ const ServiceTownPage = ({
                   href="tel:+18285247773"
                   className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/40 transition-all duration-300 shadow-xl min-w-[240px]"
                 >
-                  <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 524-7773
+                  <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
                 </a>
               </div>
             </motion.div>
@@ -335,7 +335,7 @@ const ServiceTownPage = ({
         <section className="py-24 bg-primary text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10 text-center">
-            <span className="eyebrow mb-6 block text-[hsl(var(--highland-gold))]">Start Your Project</span>
+            <span className="eyebrow mb-6 block text-[hsl(var(--gold-ink))]">Start Your Project</span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 leading-tight">
               Ready to Upgrade Your <br className="hidden md:block" /> {town.name} Property?
             </h2>
@@ -347,7 +347,7 @@ const ServiceTownPage = ({
                 Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" />
               </Link>
               <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg md:text-xl px-12 py-7 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px]">
-                <Phone className="w-6 h-6 text-[hsl(var(--highland-gold))]" /> (828) 524-7773
+                <Phone className="w-6 h-6 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
               </a>
             </div>
           </div>

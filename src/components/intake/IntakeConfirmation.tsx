@@ -39,7 +39,7 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
         className="h-16 md:h-20 w-auto mx-auto mb-4"
       />
       <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-5">
-        <CheckCircle className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+        <CheckCircle className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
       </div>
       <h2 className="text-2xl md:text-[28px] font-heading font-bold text-foreground mb-3 tracking-tight">
         {title}
@@ -50,7 +50,7 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
 
       <div className="text-left bg-background border border-border rounded-md p-5 mb-8">
         <div className="flex items-center gap-2 mb-4">
-          <Clock className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+          <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
           <h3 className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-foreground/70">
             {nextStepsTitle}
           </h3>
@@ -58,7 +58,7 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
         <ol className="space-y-3">
           {steps.map((s, i) => (
             <li key={i} className="flex gap-3 text-[13.5px] font-body text-foreground/75 leading-relaxed">
-              <span className="text-[hsl(var(--highland-gold))] font-heading font-bold flex-shrink-0">{i + 1}.</span>
+              <span className="text-[hsl(var(--gold-ink))] font-heading font-bold flex-shrink-0">{i + 1}.</span>
               <span>{s}</span>
             </li>
           ))}
@@ -70,7 +70,7 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
           href="tel:+18285247773"
           className="inline-flex items-center gap-2 bg-background border border-border text-foreground font-heading font-semibold text-[13.5px] px-6 py-3 rounded-md hover:border-[hsl(var(--highland-gold))] transition-colors"
         >
-          <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+          <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
           (828) 524-7773
         </a>
         <Link

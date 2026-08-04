@@ -10,7 +10,7 @@ type TestimonialCategory = "Roofing" | "Construction" | "Storm" | "Commercial";
 
 const categoryColors: Record<TestimonialCategory, string> = {
   Roofing: "bg-primary/10 text-primary",
-  Construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--highland-gold))]",
+  Construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--gold-ink))]",
   Storm: "bg-destructive/10 text-destructive",
   Commercial: "bg-secondary text-muted-foreground",
 };
@@ -122,7 +122,7 @@ export const TestimonialCard = ({
             className={cn(
               "rounded-none flex items-center justify-center font-heading font-bold",
               isCompact ? "w-8 h-8 text-[10px]" : "w-11 h-11 text-sm",
-              isDark ? "bg-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--highland-gold))]" : "bg-primary/8 text-primary",
+              isDark ? "bg-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--gold-ink))]" : "bg-primary/8 text-primary",
             )}
           >
             {name.charAt(0)}

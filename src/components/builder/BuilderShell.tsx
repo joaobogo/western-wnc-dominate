@@ -53,7 +53,7 @@ const BuilderShell = ({
           <div>
             <div className="flex items-center gap-2 mb-2.5">
               <div className="h-px w-8 bg-[hsl(var(--highland-gold))]" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.28em] text-[hsl(var(--highland-gold))]">
+              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.28em] text-[hsl(var(--gold-ink))]">
                 {eyebrow}
               </span>
             </div>
@@ -66,7 +66,7 @@ const BuilderShell = ({
           </div>
           <Link
             to={switchHref}
-            className="hidden md:inline-flex items-center gap-1.5 text-[12px] font-body text-foreground/55 hover:text-[hsl(var(--highland-gold))] transition-colors"
+            className="hidden md:inline-flex items-center gap-1.5 text-[12px] font-body text-foreground/55 hover:text-[hsl(var(--gold-ink))] transition-colors"
           >
             <ArrowLeft className="w-3 h-3" /> {switchLabel}
           </Link>
@@ -168,7 +168,7 @@ const BuilderShell = ({
               {shortFormHref && (
                 <Link
                   to={shortFormHref}
-                  className="text-[11.5px] font-body text-foreground/55 hover:text-[hsl(var(--highland-gold))] transition-colors whitespace-nowrap underline-offset-4 hover:underline"
+                  className="text-[11.5px] font-body text-foreground/55 hover:text-[hsl(var(--gold-ink))] transition-colors whitespace-nowrap underline-offset-4 hover:underline"
                 >
                   Prefer the short form →
                 </Link>
@@ -177,7 +177,7 @@ const BuilderShell = ({
             {/* Mobile switch link */}
             <Link
               to={switchHref}
-              className="md:hidden mt-3 inline-flex items-center gap-1.5 text-[11.5px] font-body text-foreground/80 hover:text-[hsl(var(--highland-gold))] transition-colors"
+              className="md:hidden mt-3 inline-flex items-center gap-1.5 text-[11.5px] font-body text-foreground/80 hover:text-[hsl(var(--gold-ink))] transition-colors"
             >
               <ArrowLeft className="w-3 h-3" /> {switchLabel}
             </Link>
@@ -196,9 +196,9 @@ const BuilderShell = ({
             </div>
             <a
               href="tel:+18285247773"
-              className="mt-4 inline-flex items-center gap-2 text-foreground/70 hover:text-[hsl(var(--highland-gold))] transition-colors font-body text-[13px]"
+              className="mt-4 inline-flex items-center gap-2 text-foreground/70 hover:text-[hsl(var(--gold-ink))] transition-colors font-body text-[13px]"
             >
-              <Phone className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
+              <Phone className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
               Prefer to talk? (828) 524-7773
             </a>
           </aside>

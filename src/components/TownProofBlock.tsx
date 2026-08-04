@@ -103,7 +103,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
             className="lg:col-span-3"
           >
             <div className="border border-border bg-card rounded-sm px-6 py-6 md:px-7 md:py-7 h-full">
-              <div className="flex items-center gap-2 mb-4 text-[hsl(var(--highland-gold))]">
+              <div className="flex items-center gap-2 mb-4 text-[hsl(var(--gold-ink))]">
                 <Star className="w-4 h-4" />
                 <span className="font-body text-xs uppercase tracking-[0.18em]">Town FAQs</span>
               </div>

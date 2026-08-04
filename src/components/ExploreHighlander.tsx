@@ -66,7 +66,7 @@ const ExploreHighlander = () => {
           <span className="eyebrow mb-3 block">Explore Highlander</span>
           <h2 id="explore-heading" className="section-heading mb-4">
             Keep Exploring{" "}
-            <span className="text-[hsl(var(--highland-gold))]">Roofing, Construction & Western NC.</span>
+            <span className="text-[hsl(var(--gold-ink))]">Roofing, Construction & Western NC.</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg font-body max-w-2xl mx-auto">
             Direct paths into the services, service areas, and field guides most useful to Western North Carolina homeowners.

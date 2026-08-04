@@ -73,7 +73,7 @@ const TrustAndProof = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
-              <Handshake className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+              <Handshake className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
             </div>
             <div>
               <h3 className="font-heading font-semibold text-base text-foreground mb-0.5">Our Accountability Promise</h3>
@@ -102,7 +102,7 @@ const TrustAndProof = () => {
           {/* Warranty highlight */}
           <div className="bg-secondary rounded-none p-4 md:p-5 border border-border/60">
             <div className="flex items-start gap-3">
-              <Shield className="w-5 h-5 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-0.5" />
+              <Shield className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-heading font-semibold text-sm text-foreground mb-1">
                   Full Warranty Package Included

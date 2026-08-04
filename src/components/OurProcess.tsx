@@ -71,14 +71,14 @@ const OurProcess = () => {
         {/* Header */}
         <div className="text-center mb-14 md:mb-20">
           <ScrollReveal variant="fade">
-            <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] mb-4 block drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+            <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] mb-4 block drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Our Process — 7 Phases
             </span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
               Every Project Follows<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> the Same Documented Path.</span>
+              <span className="text-[hsl(var(--gold-ink))]"> the Same Documented Path.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>

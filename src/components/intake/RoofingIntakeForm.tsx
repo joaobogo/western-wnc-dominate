@@ -255,7 +255,7 @@ const RoofingIntakeForm = () => {
                 <ChipGroup labelledBy="lbl-timeline" options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={2} />
               </div>
               {data.timeline === "emergency" && (
-                <p className="text-[12.5px] font-body text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] border border-[hsl(var(--highland-gold)/0.25)] rounded-md px-4 py-3">
+                <p className="text-[12.5px] font-body text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] border border-[hsl(var(--highland-gold)/0.25)] rounded-md px-4 py-3">
                   Emergency response: complete the form and we'll call you directly — or dial <a className="underline font-semibold" href="tel:+18285247773">(828) 524-7773</a> now.
                 </p>
               )}

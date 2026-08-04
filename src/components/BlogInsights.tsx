@@ -36,7 +36,7 @@ function getEditorialCategory(cat: string): string {
 
 const categoryAccent: Record<string, { bg: string; text: string; border: string }> = {
   "Roofing Education": { bg: "bg-primary/8", text: "text-primary", border: "border-primary/15" },
-  "Construction Insights": { bg: "bg-[hsl(var(--highland-gold)/0.08)]", text: "text-[hsl(var(--highland-gold))]", border: "border-[hsl(var(--highland-gold)/0.15)]" },
+  "Construction Insights": { bg: "bg-[hsl(var(--highland-gold)/0.08)]", text: "text-[hsl(var(--gold-ink))]", border: "border-[hsl(var(--highland-gold)/0.15)]" },
   "WNC Updates": { bg: "bg-secondary", text: "text-muted-foreground", border: "border-border" },
   "Homeowner Guidance": { bg: "bg-accent/8", text: "text-accent-foreground", border: "border-accent/15" },
 };
@@ -76,7 +76,7 @@ export const BlogInsights = () => {
             <HeadingReveal delay={0.1}>
               <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug tracking-tight">
                 What Mountain Property Owners<br className="hidden md:block" />
-                <span className="text-[hsl(var(--highland-gold))]"> Actually Need to Know.</span>
+                <span className="text-[hsl(var(--gold-ink))]"> Actually Need to Know.</span>
               </h2>
             </HeadingReveal>
           </div>
@@ -135,7 +135,7 @@ export const BlogInsights = () => {
           <GoldLine width="3rem" centered delay={0.2} className="mb-6" />
           <Link
             to="/blog"
-            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[15px] tracking-wide text-dark-section-foreground/95 hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
+            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[15px] tracking-wide text-dark-section-foreground/95 hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
           >
             Browse All Articles
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -217,7 +217,7 @@ const FeaturedCard = ({ post }: { post: PostWithCategory }) => {
               <Clock className="w-3 h-3" />
               {post.readTime} read
             </div>
-            <span className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold)/0.7)] font-heading font-bold text-[12px] tracking-wide group-hover:text-[hsl(var(--highland-gold))] group-hover:gap-3 transition-all duration-300">
+            <span className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold)/0.7)] font-heading font-bold text-[12px] tracking-wide group-hover:text-[hsl(var(--gold-ink))] group-hover:gap-3 transition-all duration-300">
               Read Article <ArrowRight className="w-3.5 h-3.5" />
             </span>
           </div>

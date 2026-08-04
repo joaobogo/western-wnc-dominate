@@ -67,7 +67,7 @@ export const ConstructionClosingCTA = ({
       <div className="container-tight">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">{eyebrow}</span>
+            <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">{eyebrow}</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground whitespace-pre-line">
               {headline}
             </h2>

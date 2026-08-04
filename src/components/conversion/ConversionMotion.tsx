@@ -93,7 +93,7 @@ export const MultiStepForm = ({
           ))}
         </div>
         <div className="flex items-center justify-between">
-          <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold))]">
+          <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--gold-ink))]">
             Step {currentStep + 1} of {steps.length}
           </p>
           <p className="text-[11px] text-muted-foreground font-body">{steps[currentStep].label}</p>

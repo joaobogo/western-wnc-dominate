@@ -328,7 +328,7 @@ const RoofingDivision = () => {
                     animate={{ y: 0 }}
                     transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    Masterfully <span className="text-[hsl(var(--highland-gold))]">Executed.</span>
+                    Masterfully <span className="text-[hsl(var(--gold-ink))]">Executed.</span>
                   </motion.span>
                 </span>
               </h1>
@@ -479,7 +479,7 @@ const RoofingDivision = () => {
                   transition={{ delay: 0.4 }}
                   className="absolute -bottom-6 -left-4 md:left-auto md:-right-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[220px]"
                 >
-                  <span className="text-3xl font-heading font-bold text-[hsl(var(--highland-gold))]">4.9★</span>
+                  <span className="text-3xl font-heading font-bold text-[hsl(var(--gold-ink))]">4.9★</span>
                   <p className="text-muted-foreground text-xs font-body mt-1 leading-snug">
                     Mountain roofs installed across Highlands, Cashiers, Franklin & Sylva.
                   </p>
@@ -577,7 +577,7 @@ const RoofingDivision = () => {
                 viewport={{ once: true }}
                 className="max-w-2xl mx-auto text-center mb-12 md:mb-16"
               >
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Why Highlander</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Why Highlander</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   What Sets Highlander<br className="hidden md:block" /> Roofing Apart.
                 </h2>
@@ -600,7 +600,7 @@ const RoofingDivision = () => {
                     <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
                       <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.6)]" />
                     </div>
-                    <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">
+                    <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">
@@ -644,7 +644,7 @@ const RoofingDivision = () => {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-heading font-bold text-base text-foreground">{mat.name}</h3>
-                    <span className="text-[10px] font-body font-semibold text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.08)] px-2.5 py-1 rounded-none">
+                    <span className="text-[10px] font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.08)] px-2.5 py-1 rounded-none">
                       {mat.lifespan}
                     </span>
                   </div>
@@ -740,7 +740,7 @@ const RoofingDivision = () => {
                   property faces — not generic manufacturer guidelines written for sea level.
                 </p>
                 <div className="p-4 rounded-none border border-border bg-card">
-                  <span className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))]">2,000–5,000 ft</span>
+                  <span className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]">2,000–5,000 ft</span>
                   <p className="text-muted-foreground text-xs font-body mt-1">
                     Elevation range across our service area — from Franklin's valley to Cashiers' ridgelines.
                   </p>
@@ -864,7 +864,7 @@ const RoofingDivision = () => {
                 <div className="p-7 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
-                      <Layers className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                      <Layers className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-xl text-foreground">Full Replacement</h3>
@@ -880,7 +880,7 @@ const RoofingDivision = () => {
                       "Selling your home and roof condition affects value or insurability",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <Target className="w-4 h-4 text-[hsl(var(--highland-gold))] mt-0.5 flex-shrink-0" />
+                        <Target className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
                         <span className="text-muted-foreground text-[13px] font-body leading-relaxed">{item}</span>
                       </li>
                     ))}
@@ -891,7 +891,7 @@ const RoofingDivision = () => {
                         <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Typical range</span>
                         <p className="text-lg font-heading font-bold text-foreground">Detailed grouped-cost proposal</p>
                       </div>
-                      <Link to="/roofing/roof-replacement" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--highland-gold))] font-body hover:gap-2.5 transition-all">
+                      <Link to="/roofing/roof-replacement" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--gold-ink))] font-body hover:gap-2.5 transition-all">
                         Roof Replacement <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -1079,7 +1079,7 @@ const RoofingDivision = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">
+                  <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">
                     Your Roof, Our Expertise
                   </span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">

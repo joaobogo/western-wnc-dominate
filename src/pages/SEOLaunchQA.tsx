@@ -14,8 +14,8 @@ const SEOLaunchQA = () => {
       <main className="pt-32 pb-20 bg-background">
         <div className="container-tight max-w-4xl">
           <div className="flex items-center gap-3 mb-8">
-            <Shield className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-            <span className="text-eyebrow-size font-bold uppercase tracking-widest text-[hsl(var(--highland-gold))]">Quality Assurance</span>
+            <Shield className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+            <span className="text-eyebrow-size font-bold uppercase tracking-widest text-[hsl(var(--gold-ink))]">Quality Assurance</span>
           </div>
           <h1 className="text-display font-heading font-bold text-foreground mb-8">SEO & Content Launch Checklist</h1>
           

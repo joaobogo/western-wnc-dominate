@@ -81,7 +81,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
             animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 400, damping: 15 }}
           >
-            <CheckCircle className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
+            <CheckCircle className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
           </motion.div>
           <h4 className="font-heading font-bold text-foreground text-lg mb-2">Check Your Email</h4>
           <p className="text-muted-foreground text-sm mb-5 font-body">Your {g.title} is on its way — along with a few bonus tips for WNC homeowners.</p>
@@ -125,7 +125,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
         <div className="container-tight px-5 py-10 md:px-8 md:py-14">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
-              <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-3">
+              <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-3">
                 <FileText className="w-4 h-4" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
               </div>
@@ -200,7 +200,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
   // Inline (default)
   return (
     <div className="bg-secondary border border-border rounded-none p-6 md:p-8">
-      <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-3">
+      <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-3">
         <Icon className="w-5 h-5" />
         <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
       </div>

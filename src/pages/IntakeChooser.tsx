@@ -19,7 +19,7 @@ const IntakeChooser = () => (
       <div className="max-w-5xl mx-auto px-6 md:px-10 text-center">
         <div className="flex items-center justify-center gap-2 mb-5">
           <div className="h-px w-10 bg-[hsl(var(--highland-gold))]" />
-          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">Start a Project</span>
+          <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Start a Project</span>
           <div className="h-px w-10 bg-[hsl(var(--highland-gold))]" />
         </div>
         <h1 className="text-3xl md:text-5xl font-heading font-bold tracking-[-0.02em] mb-4 text-foreground">
@@ -72,11 +72,11 @@ const IntakeChooser = () => (
                   c.accent ? "border-[hsl(var(--highland-gold)/0.5)] hover:border-[hsl(var(--highland-gold))]" : "border-border hover:border-foreground/30"
                 }`}
               >
-                <c.icon className="w-7 h-7 text-[hsl(var(--highland-gold))] mb-5" />
+                <c.icon className="w-7 h-7 text-[hsl(var(--gold-ink))] mb-5" />
                 <p className="text-[10.5px] font-body font-semibold uppercase tracking-[0.22em] text-foreground/80 mb-1">{c.eyebrow}</p>
                 <h2 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-2 tracking-tight">{c.title}</h2>
                 <p className="text-foreground/65 text-[13.5px] font-body leading-relaxed mb-6">{c.body}</p>
-                <span className="inline-flex items-center gap-2 text-[13px] font-heading font-bold text-foreground group-hover:text-[hsl(var(--highland-gold))] transition-colors">
+                <span className="inline-flex items-center gap-2 text-[13px] font-heading font-bold text-foreground group-hover:text-[hsl(var(--gold-ink))] transition-colors">
                   {c.cta} <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </Link>
@@ -96,23 +96,23 @@ const IntakeChooser = () => (
               to="/roofing-builder"
               className="group flex items-center gap-3 text-left bg-[hsl(var(--heritage-green)/0.04)] border border-[hsl(var(--heritage-green)/0.2)] rounded-lg px-5 py-4 hover:border-[hsl(var(--heritage-green))] transition-all"
             >
-              <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold))] flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-[12.5px] font-heading font-bold text-foreground leading-tight">Build a roofing scope brief</p>
                 <p className="text-[11.5px] font-body text-foreground/55 leading-snug">Material, priorities, investment tier — guided</p>
               </div>
-              <ArrowRight className="w-3.5 h-3.5 text-foreground/75 group-hover:text-[hsl(var(--highland-gold))] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="w-3.5 h-3.5 text-foreground/75 group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" />
             </Link>
             <Link
               to="/construction-builder"
               className="group flex items-center gap-3 text-left bg-[hsl(var(--highland-gold)/0.05)] border border-[hsl(var(--highland-gold)/0.25)] rounded-lg px-5 py-4 hover:border-[hsl(var(--highland-gold))] transition-all"
             >
-              <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold))] flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-[12.5px] font-heading font-bold text-foreground leading-tight">Build a construction scope brief</p>
                 <p className="text-[11.5px] font-body text-foreground/55 leading-snug">Scope, style, priorities — guided</p>
               </div>
-              <ArrowRight className="w-3.5 h-3.5 text-foreground/75 group-hover:text-[hsl(var(--highland-gold))] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="w-3.5 h-3.5 text-foreground/75 group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" />
             </Link>
           </div>
           <p className="text-[11px] font-body text-foreground/75 mt-3 text-center">
@@ -124,9 +124,9 @@ const IntakeChooser = () => (
           <p className="text-[12px] font-body text-foreground/50 mb-2">Quick question or general inquiry?</p>
           <a
             href="tel:+18285247773"
-            className="inline-flex items-center gap-2 text-foreground hover:text-[hsl(var(--highland-gold))] font-heading font-semibold text-[14px] transition-colors"
+            className="inline-flex items-center gap-2 text-foreground hover:text-[hsl(var(--gold-ink))] font-heading font-semibold text-[14px] transition-colors"
           >
-            <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+            <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
             (828) 524-7773
           </a>
         </div>

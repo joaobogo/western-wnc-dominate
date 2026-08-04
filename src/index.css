@@ -491,6 +491,23 @@ img {
     }
   }
 
+  /*
+   * Dark surfaces: restore the bright brand gold for text. Any element that
+   * paints a dark background re-declares --gold-ink for its subtree, so
+   * `text-[hsl(var(--gold-ink))]` is always readable on both themes.
+   */
+  .dark,
+  .section-dark,
+  [class*="section-dark"],
+  [class*="--dark-section"],
+  [class*="--heritage-charcoal"],
+  [class*="--heritage-green"],
+  [class*="--hero-overlay"],
+  .bg-primary,
+  .bg-foreground {
+    --gold-ink: var(--highland-gold);
+  }
+
   .section-dark {
     background: hsl(var(--dark-section));
     color: hsl(var(--dark-section-foreground));
@@ -650,13 +667,15 @@ img {
      EYEBROW / LABEL STYLE
      ────────────────────────────────────── */
   .eyebrow {
-    @apply text-eyebrow-size font-semibold uppercase text-accent;
+    @apply text-eyebrow-size font-semibold uppercase;
+    color: hsl(var(--gold-ink));
     font-family: 'DM Sans', system-ui, sans-serif;
   }
 
   /* Section label — slightly larger than eyebrow, used above section headings */
   .section-label {
-    @apply text-label uppercase text-accent;
+    @apply text-label uppercase;
+    color: hsl(var(--gold-ink));
     font-family: 'DM Sans', system-ui, sans-serif;
   }
 

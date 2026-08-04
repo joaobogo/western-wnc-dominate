@@ -104,10 +104,10 @@ const DisciplinesBridge = ({
               className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift transition-all"
             >
               <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
-                <d.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                <d.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
               </div>
 
-              <h3 className="font-heading font-bold text-foreground text-sm mb-3 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{d.title}</h3>
+              <h3 className="font-heading font-bold text-foreground text-sm mb-3 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{d.title}</h3>
 
               {/* Transfer labels */}
               <div className="flex items-center gap-1.5 mb-3 flex-wrap">

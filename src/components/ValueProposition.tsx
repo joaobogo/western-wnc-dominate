@@ -126,7 +126,7 @@ const ValueProposition = () => {
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
               Six Things We Do That<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Most Contractors Won't.</span>
+              <span className="text-[hsl(var(--gold-ink))]"> Most Contractors Won't.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>

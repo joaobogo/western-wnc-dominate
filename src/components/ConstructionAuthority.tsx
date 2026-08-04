@@ -118,7 +118,7 @@ const ConstructionAuthority = () => {
           <ScrollReveal variant="fade">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                <HardHat className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                <HardHat className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
               </div>
               <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold)/0.6)]">
                 Why Construction
@@ -130,7 +130,7 @@ const ConstructionAuthority = () => {
             <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-[1.1] mb-6 tracking-tight max-w-3xl">
               We Didn't Add Construction<br className="hidden md:block" />
               to Sell More.{" "}
-              <span className="text-[hsl(var(--highland-gold))]">
+              <span className="text-[hsl(var(--gold-ink))]">
                 We Added It Because<br className="hidden md:block" />
                 Clients Kept Asking.
               </span>

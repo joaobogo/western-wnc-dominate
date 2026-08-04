@@ -93,7 +93,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                 filtered.map((group) => (
                   <div key={group.county} className="mb-2 last:mb-0">
                     <div className="flex items-center gap-1.5 px-2 pt-2 pb-1">
-                      <MapPin className="w-3 h-3 text-[hsl(var(--highland-gold))]" />
+                      <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                       <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.14em] text-heritage-charcoal/55">{group.county}</span>
                       <span className="text-[10.5px] font-body text-heritage-charcoal/35 ml-auto">{group.towns.length}</span>
                     </div>

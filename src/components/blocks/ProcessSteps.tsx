@@ -35,7 +35,7 @@ export const ProcessSteps = ({ steps, eyebrow = "Our Process", heading = "How We
             className="relative bg-card border border-border rounded-sm p-6"
           >
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">
+              <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
                 {s.number}
               </span>
               <div className="flex-1 h-px bg-border" />

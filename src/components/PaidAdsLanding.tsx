@@ -83,7 +83,7 @@ const PaidAdsLanding = ({
             <div className="grid gap-10 pt-12 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-7">
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                  <div className="mb-4 text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--highland-gold))]">
+                  <div className="mb-4 text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
                     {eyebrow}
                   </div>
                   <h1 className="max-w-3xl text-4xl font-heading font-bold leading-[1.04] text-primary-foreground md:text-5xl lg:text-6xl">
@@ -108,7 +108,7 @@ const PaidAdsLanding = ({
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.5 }} className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                   {trustStats.map((item) => (
                     <div key={item.label} className="border border-primary-foreground/12 bg-primary-foreground/5 px-4 py-4">
-                      <div className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}</div>
+                      <div className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}</div>
                       <div className="mt-1 text-sm font-semibold text-primary-foreground">{item.label}</div>
                       <div className="mt-1 text-xs font-body text-primary-foreground/85">{item.detail}</div>
                     </div>

@@ -151,10 +151,10 @@ const Certifications = () => {
           <div className="absolute inset-0 tartan-dark" />
           <div className="container-tight relative z-10 px-5 md:px-8 lg:px-16">
             <motion.div {...fadeUp} className="max-w-3xl">
-              <span className="eyebrow mb-4 block text-[hsl(var(--highland-gold))]">Credentials & Standards</span>
+              <span className="eyebrow mb-4 block text-[hsl(var(--gold-ink))]">Credentials & Standards</span>
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                 Credentials That Mean<br />
-                <span className="text-[hsl(var(--highland-gold))]">Something to Your Project.</span>
+                <span className="text-[hsl(var(--gold-ink))]">Something to Your Project.</span>
               </h1>
               <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
               <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-2xl font-medium drop-shadow-sm">
@@ -295,7 +295,7 @@ const Certifications = () => {
         <section className="section-padding section-dark tartan-dark">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-14">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Warranties & Protection</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Warranties & Protection</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
                 Your Project Is Protected.<br />Before, During, and After.
               </h2>
@@ -316,7 +316,7 @@ const Certifications = () => {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)] text-center"
                 >
-                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-xl mb-2">{w.tier}</p>
+                  <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-xl mb-2">{w.tier}</p>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-sm leading-relaxed mb-4">{w.coverage}</p>
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.4)]">
                     {w.availability}

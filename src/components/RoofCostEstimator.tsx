@@ -274,14 +274,14 @@ const RoofCostEstimator = () => {
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
-                    <DollarSign className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
+                    <DollarSign className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
                   </motion.div>
                   <h3 className="text-xl font-heading font-bold text-foreground mb-2">Your Estimated Range</h3>
                   <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.4 }}
-                    className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] mb-3"
+                    className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] mb-3"
                   >
                     ${getEstimate().low.toLocaleString()} – ${getEstimate().high.toLocaleString()}
                   </motion.div>
@@ -291,7 +291,7 @@ const RoofCostEstimator = () => {
 
                   <div className="bg-secondary rounded-none p-5 mb-6 text-left border border-border">
                     <div className="flex items-start gap-3 mb-3">
-                      <Shield className="w-5 h-5 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-0.5" />
+                      <Shield className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-heading font-semibold text-foreground text-sm mb-1">Want an Exact, Written Quote?</h4>
                         <p className="text-muted-foreground text-[13px] font-body leading-relaxed">

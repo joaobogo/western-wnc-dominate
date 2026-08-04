@@ -108,7 +108,7 @@ const LayoutsPlanning = () => {
                 className="flex items-center gap-4 mb-8"
               >
                 <div className="w-10 h-[1px] bg-[hsl(var(--highland-gold))]" />
-                <span className="text-[11px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">Pre-Construction & Design Support</span>
+                <span className="text-[11px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Pre-Construction & Design Support</span>
               </motion.div>
 
               <motion.h1 
@@ -118,7 +118,7 @@ const LayoutsPlanning = () => {
                 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-8 leading-[0.95] tracking-tightest"
               >
                 Measure Twice. <br />
-                <span className="text-[hsl(var(--highland-gold))] italic font-medium">Build Once.</span>
+                <span className="text-[hsl(var(--gold-ink))] italic font-medium">Build Once.</span>
               </motion.h1>
 
               <motion.p 
@@ -169,7 +169,7 @@ const LayoutsPlanning = () => {
                     <div className="w-full h-full border border-white/10 relative overflow-hidden">
                       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "100px auto" }} />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <DraftingCompass className="w-12 h-12 text-[hsl(var(--highland-gold))]" />
+                        <DraftingCompass className="w-12 h-12 text-[hsl(var(--gold-ink))]" />
                       </div>
                     </div>
                   </div>
@@ -242,7 +242,7 @@ const LayoutsPlanning = () => {
                       "Direct follow-up call"
                     ].map(item => (
                       <li key={item} className="flex items-center gap-3 text-xs font-medium font-body text-foreground/80">
-                        <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                        <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                         {item}
                       </li>
                     ))}
@@ -263,7 +263,7 @@ const LayoutsPlanning = () => {
                   <div className="relative z-10">
                     <div className="mb-8">
                       <div className="w-14 h-14 bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-                        <FileText className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
+                        <FileText className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
                       </div>
                       <h3 className="text-2xl font-heading font-bold mb-4">Detailed Planning Brief</h3>
                       <p className="text-white/85 font-body text-sm leading-relaxed">
@@ -280,7 +280,7 @@ const LayoutsPlanning = () => {
                         "Detailed project roadmap"
                       ].map(item => (
                         <li key={item} className="flex items-center gap-3 text-xs font-medium font-body text-white/95">
-                          <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                          <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                           {item}
                         </li>
                       ))}
@@ -359,11 +359,11 @@ const LayoutsPlanning = () => {
             <div className="max-w-4xl mx-auto text-center">
               <ScrollReveal variant="fade">
                 <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-white/10 bg-white/5 backdrop-blur-sm">
-                  <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                  <Mountain className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                   <span className="text-[10px] font-bold uppercase tracking-widest">Built for the Blue Ridge</span>
                 </div>
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-10 leading-[1.1]">
-                  Planning for the <span className="text-[hsl(var(--highland-gold))]">Unique Physics</span> of the Mountains.
+                  Planning for the <span className="text-[hsl(var(--gold-ink))]">Unique Physics</span> of the Mountains.
                 </h2>
                 <p className="text-xl text-white/85 mb-12 font-body max-w-3xl mx-auto leading-relaxed">
                   Western North Carolina isn't flat. We plan for soil types, slope stability, heavy snow loads, and extreme temperature swings. A plan from a flat-land designer won't work here. A Highlander plan will.

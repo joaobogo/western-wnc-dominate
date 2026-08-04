@@ -138,7 +138,7 @@ const RoofAssessmentQuiz = () => {
       <div className="container-tight max-w-2xl">
         <div className="text-center mb-8">
           <ScrollReveal variant="fade">
-            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))] mb-3 block">Roof Assessment Tool</span>
+            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))] mb-3 block">Roof Assessment Tool</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark-section-foreground mb-3">

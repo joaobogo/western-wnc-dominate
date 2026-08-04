@@ -27,8 +27,8 @@ const divisionStyles = {
   },
   construction: {
     iconBg: "bg-[hsl(var(--highland-gold)/0.08)] group-hover:bg-[hsl(var(--highland-gold)/0.14)]",
-    iconColor: "text-[hsl(var(--highland-gold))]",
-    ctaColor: "text-[hsl(var(--highland-gold))]",
+    iconColor: "text-[hsl(var(--gold-ink))]",
+    ctaColor: "text-[hsl(var(--gold-ink))]",
     label: "Construction",
   },
 };

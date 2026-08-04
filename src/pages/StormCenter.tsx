@@ -40,7 +40,7 @@ const phases = [
     icon: FileCheck,
     label: "Recovery & Claims",
     description: "Insurance process, repair planning, next steps",
-    color: "text-[hsl(var(--highland-gold))]",
+    color: "text-[hsl(var(--gold-ink))]",
     bg: "bg-[hsl(var(--highland-gold)/0.1)]",
   },
 ];
@@ -108,7 +108,7 @@ const StormCenter = () => {
               <div className="w-14 h-14 rounded-sm bg-accent/10 flex items-center justify-center mx-auto mb-5">
                 <CloudLightning className="w-7 h-7 text-accent" />
               </div>
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">
                 Storm Center
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-tight">
@@ -280,7 +280,7 @@ const StormCenter = () => {
                 <div className="bg-card border border-border rounded-sm p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                      <ShieldAlert className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                      <ShieldAlert className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <div>
                       <h3 className="font-heading font-semibold text-foreground">How We Help</h3>
@@ -311,7 +311,7 @@ const StormCenter = () => {
         <section className="section-padding section-dark tartan-dark">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-12">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Seasonal Readiness</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Seasonal Readiness</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">
                 Year-Round Storm Preparedness
               </h2>
@@ -329,7 +329,7 @@ const StormCenter = () => {
                   className="border border-[hsl(var(--highland-gold)/0.1)] bg-[hsl(var(--dark-section-foreground)/0.03)] rounded-sm p-5 md:p-6"
                 >
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-3">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-1">{item.season}</h3>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.5)] text-sm font-body mb-3">{item.focus}</p>

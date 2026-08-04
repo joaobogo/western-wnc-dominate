@@ -182,7 +182,7 @@ export default function Contact() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <Handshake className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Concierge</span>
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Project Concierge</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[0.95] tracking-tightest">
                     Start the Conversation.
@@ -200,7 +200,7 @@ export default function Contact() {
                   className="flex flex-col gap-3 lg:items-end flex-shrink-0"
                 >
                   <a href="tel:+18285247773" className="group flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.2)] hover:bg-[hsl(var(--highland-gold)/0.15)] transition-all">
-                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     <div>
                       <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">(828) 524-7773</span>
                       <span className="text-[10px] text-[hsl(var(--dark-section-foreground)/0.4)] font-body uppercase tracking-wider">Call Direct</span>
@@ -227,7 +227,7 @@ export default function Contact() {
                     { step: "3", title: "Rapid personal follow-up", detail: "A real conversation about next steps." },
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-4">
-                      <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] flex-shrink-0 leading-none">{item.step}</span>
+                      <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] flex-shrink-0 leading-none">{item.step}</span>
                       <div>
                         <p className="text-base md:text-lg font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-snug">{item.title}</p>
                         <p className="text-sm md:text-base text-[hsl(var(--dark-section-foreground)/0.75)] font-body mt-1 leading-relaxed">{item.detail}</p>
@@ -301,13 +301,13 @@ export default function Contact() {
                         className="group text-left p-6 md:p-8 border border-border bg-card hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_8px_30px_-8px_hsl(var(--highland-gold)/0.1)] transition-all duration-300"
                       >
                         <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
-                          <HardHat className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                          <HardHat className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
                         </div>
                         <h3 className="font-heading font-bold text-lg text-foreground mb-2">Construction</h3>
                         <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">
                           Home additions, renovations, outdoor living, exterior improvements, and custom construction projects.
                         </p>
-                        <span className="inline-flex items-center gap-1.5 text-[hsl(var(--highland-gold))] font-semibold text-sm group-hover:gap-2.5 transition-all">
+                        <span className="inline-flex items-center gap-1.5 text-[hsl(var(--gold-ink))] font-semibold text-sm group-hover:gap-2.5 transition-all">
                           Select Construction <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </button>
@@ -696,7 +696,7 @@ export default function Contact() {
                   <span>In-House Highlander Crews</span>
                 </div>
                 <div className="mt-12 pt-8 border-t border-white/10 flex flex-col items-center gap-4">
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
                     Connect With Highlander
                   </span>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-sm md:text-base font-body max-w-md leading-relaxed">

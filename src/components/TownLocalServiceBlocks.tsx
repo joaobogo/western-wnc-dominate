@@ -154,7 +154,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))] opacity-70" />
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4">
-              <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+              <Mountain className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
               <span className="eyebrow">Local Conditions</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight mb-5">
