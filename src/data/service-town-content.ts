@@ -1,3 +1,7 @@
+import { tier1FlatEntries, tier2FlatEntries, type FlatSlugEntry } from "./service-town-slugs";
+export { tier1FlatEntries, tier2FlatEntries };
+export type { FlatSlugEntry };
+
 // Tier 1 Service × Town pairings — Franklin, Highlands, Cashiers, Sylva.
 // Each entry is unique; no swap-the-town-name copy.
 
@@ -791,22 +795,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
 //  to serve the same content at /roofing-highlands-nc etc.
 // ─────────────────────────────────────────────────────────────
 
-export interface Tier1FlatEntry {
-  flatSlug: string;    // e.g. "roofing-highlands-nc"
-  townSlug: string;    // e.g. "highlands-nc"
-  serviceSlug: string; // e.g. "roofing"
-}
-
-const TIER1_CITIES = ["highlands-nc", "franklin-nc", "cashiers-nc"] as const;
-const TIER1_SERVICES = ["roofing", "roof-repair", "roof-replacement", "construction", "home-repairs"] as const;
-
-export const tier1FlatEntries: Tier1FlatEntry[] = TIER1_CITIES.flatMap((town) =>
-  TIER1_SERVICES.map((service) => ({
-    flatSlug: `${service}-${town}`,
-    townSlug: town,
-    serviceSlug: service,
-  })),
-);
+export type Tier1FlatEntry = FlatSlugEntry;
 
 // ─────────────────────────────────────────────────────────────
 //  TIER 2 — Sylva & Cullowhee. Broader combined "roofing + construction"
@@ -905,18 +894,7 @@ for (let i = serviceTownContent.length - 1; i >= 0; i--) {
   }
 }
 
-export interface Tier2FlatEntry {
-  flatSlug: string;
-  townSlug: string;
-  serviceSlug: string;
-}
-
-export const tier2FlatEntries: Tier2FlatEntry[] = [
-  { flatSlug: "roofing-construction-sylva-nc",   townSlug: "sylva-nc",     serviceSlug: "roofing-construction" },
-  { flatSlug: "roof-repair-sylva-nc",            townSlug: "sylva-nc",     serviceSlug: "roof-repair" },
-  { flatSlug: "roofing-construction-cullowhee-nc", townSlug: "cullowhee-nc", serviceSlug: "roofing-construction" },
-  { flatSlug: "roof-repair-cullowhee-nc",        townSlug: "cullowhee-nc", serviceSlug: "roof-repair" },
-];
+export type Tier2FlatEntry = FlatSlugEntry;
 
 
 export function getServiceTownEntry(townSlug: string, serviceSlug: string) {
