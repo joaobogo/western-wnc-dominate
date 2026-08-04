@@ -292,8 +292,9 @@ const RoofingIntakeForm = () => {
           {step === 2 && (
             <>
               <div>
-                <Label htmlFor="fld-roof-photos-anything-specific-we-should-">Roof photos</Label>
+                <Label id="lbl-roof-photos">Roof photos</Label>
                 <FileDrop
+                  labelledBy="lbl-roof-photos"
                   files={files}
                   onChange={setFiles}
                   accept="image/*"
@@ -301,8 +302,8 @@ const RoofingIntakeForm = () => {
                 />
               </div>
               <div>
-                <Label>Anything specific we should know?</Label>
-                <Textarea id="fld-roof-photos-anything-specific-we-should-"
+                <Label htmlFor="fld-roofing-notes">Anything specific we should know?</Label>
+                <Textarea id="fld-roofing-notes"
                   rows={5}
                   placeholder="Roof age, known leaks, recent storm, prior repairs, specific design concerns…"
                   value={data.description}

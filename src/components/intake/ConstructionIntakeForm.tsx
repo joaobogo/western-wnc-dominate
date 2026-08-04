@@ -342,8 +342,9 @@ const ConstructionIntakeForm = () => {
                 <Helper>Minimum a few sentences — this shapes the discovery conversation.</Helper>
               </div>
               <div>
-                <Label htmlFor="fld-plans-sketches-inspiration-site-photos-s">Plans, sketches, inspiration, site photos</Label>
+                <Label id="lbl-construction-uploads">Plans, sketches, inspiration, site photos</Label>
                 <FileDrop
+                  labelledBy="lbl-construction-uploads"
                   files={files}
                   onChange={setFiles}
                   accept="image/*,application/pdf"
@@ -357,8 +358,8 @@ const ConstructionIntakeForm = () => {
             <>
               <FieldRow>
                 <div>
-                  <Label required>Full name</Label>
-                  <Input id="fld-plans-sketches-inspiration-site-photos-s"
+                  <Label required htmlFor="fld-construction-name">Full name</Label>
+                  <Input id="fld-construction-name"
                     value={data.name}
                     onChange={(e) => set("name", e.target.value)}
                     onBlur={() => contact.blur("name")}

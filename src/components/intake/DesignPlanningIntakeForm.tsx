@@ -294,8 +294,9 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
                 />
               </div>
               <div>
-                <Label htmlFor="fld-inspiration-or-site-photos-mode-short-st">Inspiration or site photos</Label>
+                <Label id="lbl-design-uploads">Inspiration or site photos</Label>
                 <FileDrop
+                  labelledBy="lbl-design-uploads"
                   files={files}
                   onChange={setFiles}
                   accept="image/*,application/pdf"
@@ -309,8 +310,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
             <>
               {mode === "short" && (
                 <div>
-                  <Label>Describe the help you need</Label>
-                  <Textarea id="fld-inspiration-or-site-photos-mode-short-st"
+                  <Label htmlFor="fld-design-help">Describe the help you need</Label>
+                  <Textarea id="fld-design-help"
                     rows={3}
                     placeholder="Short description of your project..."
                     value={data.description}
