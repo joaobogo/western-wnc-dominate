@@ -49,16 +49,16 @@ export default class ErrorBoundary extends Component<Props, State> {
         className="min-h-[60vh] flex items-center justify-center px-6 py-16 bg-background text-foreground"
       >
         <div className="max-w-lg text-center">
-          <p className="text-sm uppercase tracking-widest text-highland-gold mb-3">
+          <p className="text-sm uppercase tracking-widest text-[hsl(var(--gold-ink))] mb-3">
             Something interrupted this page
           </p>
-          <h1 className="font-serif text-3xl md:text-4xl font-semibold mb-4">
+          <h1 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
             We hit a snag loading this view.
           </h1>
           <p className="text-muted-foreground mb-8">
             The team has been notified. You can retry, head back to the homepage, or call us
             directly at{" "}
-            <a href="tel:+18285247773" className="text-highland-gold underline underline-offset-4">
+            <a href="tel:+18285247773" className="text-[hsl(var(--gold-ink))] font-semibold underline underline-offset-4">
               828-524-7773
             </a>
             .
@@ -67,7 +67,7 @@ export default class ErrorBoundary extends Component<Props, State> {
             <button
               type="button"
               onClick={this.reset}
-              className="px-5 py-2.5 rounded-md bg-highland-green text-white font-medium hover:bg-highland-green/90 transition"
+              className="px-5 py-2.5 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition"
             >
               Try again
             </button>
