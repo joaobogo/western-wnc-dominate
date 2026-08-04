@@ -279,7 +279,7 @@ const RoofAssessmentQuiz = () => {
                         className={`h-full rounded-full ${result.level === "good" ? "bg-primary" : result.level === "caution" ? "bg-accent" : "bg-destructive"}`}
                       />
                     </div>
-                    <div className="flex justify-between mt-1.5 text-[10px] text-muted-foreground/50 font-body">
+                    <div className="flex justify-between mt-1.5 text-[10px] text-muted-foreground font-body">
                       <span>Good</span><span>Needs Attention</span><span>Urgent</span>
                     </div>
                   </div>

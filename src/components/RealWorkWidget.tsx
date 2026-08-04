@@ -111,7 +111,7 @@ const RealWorkWidget = ({
           />
 
           {status === "loading" && (
-            <div className="flex items-center justify-center gap-3 py-14 text-foreground/60 text-sm font-body">
+            <div className="flex items-center justify-center gap-3 py-14 text-foreground/75 text-sm font-body">
               <Loader2 className="w-4 h-4 animate-spin text-[hsl(var(--heritage-green))]" aria-hidden="true" />
               <span>Loading recent project updates…</span>
             </div>

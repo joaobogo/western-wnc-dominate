@@ -179,7 +179,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-foreground mb-1">{g.title}</h3>
-                <p className="text-[11px] text-muted-foreground/50 font-body mb-3 uppercase tracking-wide">{g.subtitle}</p>
+                <p className="text-[11px] text-muted-foreground font-body mb-3 uppercase tracking-wide">{g.subtitle}</p>
                 <p className="text-sm text-muted-foreground mb-4 font-body leading-relaxed">{g.description}</p>
                 <ul className="space-y-1.5 mb-6">
                   {g.bulletPoints.map((point) => (

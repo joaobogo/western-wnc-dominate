@@ -141,7 +141,7 @@ export default function Contact() {
     setIsSubmitting(false);
   };
 
-  const inputClasses = "w-full px-4 py-3.5 rounded-sm border border-input bg-background text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring transition-all";
+  const inputClasses = "w-full px-4 py-3.5 rounded-sm border border-input bg-background text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all";
   const labelClasses = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-1.5";
 
   return (
@@ -259,7 +259,7 @@ export default function Contact() {
                           {stepIdx < currentIdx ? <CheckCircle className="w-3.5 h-3.5" /> : stepIdx + 1}
                         </div>
                         <span className={`text-[10px] font-body font-semibold uppercase tracking-wider ${
-                          stepIdx <= currentIdx ? "text-foreground" : "text-muted-foreground/50"
+                          stepIdx <= currentIdx ? "text-foreground" : "text-muted-foreground"
                         }`}>{label}</span>
                         {i < 2 && <div className="hidden sm:block w-8 h-px bg-border mx-1" />}
                       </div>
@@ -312,7 +312,7 @@ export default function Contact() {
                         </span>
                       </button>
                     </div>
-                    <p className="text-muted-foreground/50 text-xs font-body mt-4 text-center">
+                    <p className="text-muted-foreground text-xs font-body mt-4 text-center">
                       Not sure? Select either option — we'll route you to the right team.
                     </p>
                   </motion.div>

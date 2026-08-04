@@ -312,7 +312,7 @@ const ResidentialRoofing = () => {
                       { name: "Sylva", slug: "sylva-nc" },
                       { name: "Waynesville", slug: "waynesville-nc" }
                    ].map(town => (
-                      <Link key={town.slug} to={`/service-areas/${town.slug}`} className="text-xs font-bold text-foreground/60 hover:text-primary transition-colors uppercase tracking-widest underline underline-offset-4 decoration-border">
+                      <Link key={town.slug} to={`/service-areas/${town.slug}`} className="text-xs font-bold text-foreground/75 hover:text-primary transition-colors uppercase tracking-widest underline underline-offset-4 decoration-border">
                          {town.name}
                       </Link>
                    ))}

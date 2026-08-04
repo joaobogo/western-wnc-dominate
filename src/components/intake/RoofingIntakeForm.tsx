@@ -369,7 +369,7 @@ const RoofingIntakeForm = () => {
           <button
             type="button"
             onClick={back}
-            className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground text-[13px] font-body transition-colors"
+            className="inline-flex items-center gap-2 text-foreground/75 hover:text-foreground text-[13px] font-body transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back
           </button>

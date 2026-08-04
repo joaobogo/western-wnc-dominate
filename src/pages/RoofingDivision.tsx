@@ -653,12 +653,12 @@ const RoofingDivision = () => {
                   </p>
                   <div className="flex items-center gap-4 pt-3 border-t border-border/60">
                     <div>
-                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Brand</span>
+                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Brand</span>
                       <p className="text-xs font-body font-medium text-foreground/70">{mat.brand}</p>
                     </div>
                     <div className="h-6 w-px bg-border" />
                     <div>
-                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Best For</span>
+                      <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Best For</span>
                       <p className="text-xs font-body font-medium text-foreground/70">{mat.best}</p>
                     </div>
                   </div>
@@ -841,7 +841,7 @@ const RoofingDivision = () => {
                   <div className="pt-5 border-t border-border">
                     <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Typical range</span>
+                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Typical range</span>
                         <p className="text-lg font-heading font-bold text-foreground">Scope-based pricing</p>
                       </div>
                       <Link to="/roofing/roof-repair" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-primary font-body hover:gap-2.5 transition-all">
@@ -888,7 +888,7 @@ const RoofingDivision = () => {
                   <div className="pt-5 border-t border-border">
                     <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">Typical range</span>
+                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Typical range</span>
                         <p className="text-lg font-heading font-bold text-foreground">Detailed grouped-cost proposal</p>
                       </div>
                       <Link to="/roofing/roof-replacement" className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--gold-ink))] font-body hover:gap-2.5 transition-all">

@@ -39,7 +39,7 @@ const FileDrop = ({ files, onChange, accept = "image/*", helper, maxFiles = 8, l
         <p className="text-[13.5px] font-body font-semibold text-foreground/80">
           Drop files or click to upload
         </p>
-        {helper && <p className="text-[11.5px] text-foreground/50 mt-1 font-body">{helper}</p>}
+        {helper && <p className="text-[11.5px] text-foreground/70 mt-1 font-body">{helper}</p>}
       </button>
       <input
         ref={inputRef}

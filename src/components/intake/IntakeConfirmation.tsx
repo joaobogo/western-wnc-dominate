@@ -75,7 +75,7 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
         </a>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground font-body text-[13.5px] transition-colors"
+          className="inline-flex items-center gap-2 text-foreground/75 hover:text-foreground font-body text-[13.5px] transition-colors"
         >
           Return home <ArrowRight className="w-3.5 h-3.5" />
         </Link>

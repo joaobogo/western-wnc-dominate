@@ -86,7 +86,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
             </h2>
             <p className="text-lg text-muted-foreground font-body leading-relaxed">
               Highlander is a full-service{" "}
-              <Link to="/roofing" className="text-primary underline-offset-4 hover:underline">
+              <Link to="/roofing" className="text-primary underline underline-offset-4 hover:no-underline">
                 roofing company serving {t}, NC
               </Link>{" "}
               and the surrounding Western North Carolina mountains — repair, replacement, metal roofing, gutters, and skylights, all installed by the same crew you'll meet on site.
@@ -136,7 +136,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
             </h3>
             <p className="text-muted-foreground font-body leading-relaxed">
               Highlander is a licensed North Carolina General Contractor as well as a{" "}
-              <Link to="/roofing" className="text-primary underline-offset-4 hover:underline">
+              <Link to="/roofing" className="text-primary underline underline-offset-4 hover:no-underline">
                 roofing contractor in {t}, NC
               </Link>
               . Home additions, renovations, in-house design, and outdoor living all run through the same team, with the same warranty discipline.

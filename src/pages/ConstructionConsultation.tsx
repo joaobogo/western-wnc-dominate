@@ -325,7 +325,7 @@ export default function ConstructionConsultation() {
           </div>
 
           {/* Privacy note */}
-          <p className="text-[11px] text-muted-foreground/50 font-body leading-relaxed">
+          <p className="text-[11px] text-muted-foreground font-body leading-relaxed">
             Your information is never shared or sold. We use it solely to discuss your project.
           </p>
         </div>
@@ -589,7 +589,7 @@ export default function ConstructionConsultation() {
             ].map(item => (
               <div key={item} className="flex items-center gap-1.5">
                 <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.85)]" />
-                <span className="text-muted-foreground/50 text-[11px] font-body font-medium">{item}</span>
+                <span className="text-muted-foreground text-[11px] font-body font-medium">{item}</span>
               </div>
             ))}
           </motion.div>

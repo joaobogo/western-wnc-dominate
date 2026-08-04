@@ -194,7 +194,7 @@ const RealWorkDiagnostics = () => {
           <section className="mb-10">
             <h2 className="font-heading text-xl font-bold mb-3">Captured loader errors</h2>
             {logs.length === 0 ? (
-              <p className="text-sm text-foreground/60 italic">No RealWork / Maps errors captured.</p>
+              <p className="text-sm text-foreground/75 italic">No RealWork / Maps errors captured.</p>
             ) : (
               <ul className="space-y-2">
                 {logs.map((l, i) => (
@@ -213,14 +213,14 @@ const RealWorkDiagnostics = () => {
               the widget is not initializing on this page.
             </p>
             <div className="border border-border rounded-sm p-4 bg-card mb-4">
-              <p className="text-xs font-mono uppercase tracking-wider text-foreground/50 mb-2">#rwl-output</p>
+              <p className="text-xs font-mono uppercase tracking-wider text-foreground/70 mb-2">#rwl-output</p>
               <div id="rwl-output" className="min-h-[120px]" />
             </div>
             <div className="border border-border rounded-sm p-4 bg-card">
-              <p className="text-xs font-mono uppercase tracking-wider text-foreground/50 mb-2">
+              <p className="text-xs font-mono uppercase tracking-wider text-foreground/70 mb-2">
                 #rwl-neighborhood (sitewide, in index.html)
               </p>
-              <p className="text-sm text-foreground/60">
+              <p className="text-sm text-foreground/75">
                 The neighborhood panel is injected into the body-level container defined in
                 <code className="mx-1 px-1 bg-muted rounded">index.html</code>. Check the check above
                 for its status.

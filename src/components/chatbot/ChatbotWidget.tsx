@@ -143,7 +143,7 @@ function LeadCaptureCard({
     );
   }
 
-  const inputCls = "w-full px-3 py-2 text-xs font-body bg-background border border-input rounded-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-ring";
+  const inputCls = "w-full px-3 py-2 text-xs font-body bg-background border border-input rounded-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring";
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-card border border-border rounded-sm p-4 max-w-[90%] space-y-3">

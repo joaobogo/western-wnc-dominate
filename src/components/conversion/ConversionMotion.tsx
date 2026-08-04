@@ -296,7 +296,7 @@ export const ConfirmationState = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.4 }}
-            className="text-muted-foreground/50 font-body text-xs mt-3"
+            className="text-muted-foreground font-body text-xs mt-3"
           >
             {secondaryMessage}
           </motion.p>

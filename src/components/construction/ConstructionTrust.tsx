@@ -293,7 +293,7 @@ export const ConstructionTrustSidebarDetailed = ({
           <span className="text-foreground text-xs font-heading font-bold">{p.title}</span>
         </div>
         {p.overcomes && (
-          <p className="text-muted-foreground/50 text-[11px] italic font-body pl-[calc(1.75rem+0.625rem)] leading-snug">{p.overcomes}</p>
+          <p className="text-muted-foreground text-[11px] italic font-body pl-[calc(1.75rem+0.625rem)] leading-snug">{p.overcomes}</p>
         )}
       </div>
     ))}

@@ -113,7 +113,7 @@ const NotJustRoofing = () => {
                     </div>
                     <div>
                       <h3 className="text-base font-heading font-bold text-foreground">{div.label}</h3>
-                      <p className="text-[10px] font-body font-medium uppercase tracking-[0.12em] text-muted-foreground/50">
+                      <p className="text-[10px] font-body font-medium uppercase tracking-[0.12em] text-muted-foreground">
                         {div.tagline}
                       </p>
                     </div>
@@ -126,7 +126,7 @@ const NotJustRoofing = () => {
                         <span className={`block text-xl font-heading font-bold ${div.iconColor} leading-none mb-1`}>
                           {stat.value}
                         </span>
-                        <span className="text-[10px] font-body uppercase tracking-[0.1em] text-muted-foreground/50">
+                        <span className="text-[10px] font-body uppercase tracking-[0.1em] text-muted-foreground">
                           {stat.label}
                         </span>
                       </div>

@@ -251,7 +251,7 @@ const CustomConstruction = () => {
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h4 className="font-heading font-bold text-foreground text-sm mb-2">Working with a designer?</h4>
-                  <p className="text-foreground/60 text-[13px] leading-relaxed font-body mb-3">We collaborate with local designers and project planners regularly. We can work from your plans or recommend firms we've partnered with successfully.</p>
+                  <p className="text-foreground/75 text-[13px] leading-relaxed font-body mb-3">We collaborate with local designers and project planners regularly. We can work from your plans or recommend firms we've partnered with successfully.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>

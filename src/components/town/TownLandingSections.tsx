@@ -340,7 +340,7 @@ export const TownFAQ = ({
 export const TownCTAStrip = ({ town }: { town: TownData }) => (
   <section className="bg-primary text-primary-foreground relative">
     <div className="container-tight px-6 py-5 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
-      <p className="text-[13px] font-body text-center md:text-left">
+      <p className="text-[13px] font-body text-center md:text-left text-primary-foreground">
         <span className="font-heading font-bold">Serving {town.name}, {town.state}</span>{" "}
         · Roofing &amp; Construction · Licensed GC · 4.9★ Rated
       </p>

@@ -211,7 +211,7 @@ export const TrustPillarGrid = ({
             </p>
             {showObjections && (
               <div className={`text-[11px] font-body italic pt-3 border-t ${
-                isDark ? "border-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--dark-section-foreground)/0.4)]" : "border-border text-muted-foreground/50"
+                isDark ? "border-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--dark-section-foreground)/0.4)]" : "border-border text-muted-foreground"
               }`}>
                 Overcomes: "{p.overcomes}"
               </div>
@@ -247,7 +247,7 @@ export const ReviewHighlight = ({ quote, name, location, project, outcome }: Rev
     <p className="text-foreground text-sm md:text-[15px] leading-relaxed mb-5 font-body">"{quote}"</p>
     {outcome && (
       <div className="bg-secondary/60 rounded-sm px-4 py-3 mb-5">
-        <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/50 mb-1">Project Outcome</p>
+        <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
         <p className="text-sm font-body font-medium text-foreground/80">{outcome}</p>
       </div>
     )}

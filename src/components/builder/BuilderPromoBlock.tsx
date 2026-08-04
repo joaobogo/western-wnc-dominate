@@ -159,7 +159,7 @@ const BuilderPromoBlock = ({
                   </div>
                 ))}
               </div>
-              <p className="text-foreground/50 text-[11px] font-body uppercase tracking-[0.18em] mt-6">
+              <p className="text-foreground/70 text-[11px] font-body uppercase tracking-[0.18em] mt-6">
                 ~3 minutes · Optional
               </p>
             </div>

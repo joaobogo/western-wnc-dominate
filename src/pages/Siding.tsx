@@ -75,7 +75,7 @@ const Siding = () => {
               <div className="relative group overflow-hidden">
                 <div className="bg-secondary/40 p-8 border border-border relative z-10">
                   <h3 className="text-xl font-heading font-bold mb-4">Why Highlander Siding?</h3>
-                  <p className="text-sm text-foreground/60 mb-6 leading-relaxed font-body">
+                  <p className="text-sm text-foreground/75 mb-6 leading-relaxed font-body">
                     We approach siding as a complete envelope system — not just a cosmetic layer. Every corner, transition, and flashing detail is executed to prevent moisture intrusion, which is the #1 cause of structural decay in WNC homes.
                   </p>
                   <div className="grid grid-cols-2 gap-4">

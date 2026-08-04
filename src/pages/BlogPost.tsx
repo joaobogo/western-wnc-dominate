@@ -502,7 +502,7 @@ const BlogPostPage = () => {
                     <BookOpen className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-body font-semibold uppercase tracking-wider text-muted-foreground/50 mb-1">
+                    <p className="text-[10px] font-body font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                       Written By
                     </p>
                     <h4 className="font-heading font-semibold text-foreground text-sm">{author.name}</h4>

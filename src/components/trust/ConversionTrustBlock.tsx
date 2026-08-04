@@ -104,7 +104,7 @@ const ConversionTrustBlock = ({
 
         {review && (
           <figure className="border-t border-border pt-4">
-            <div className="flex gap-0.5 mb-2" aria-label={`${review.ratingValue} out of 5 stars`}>
+            <div className="flex gap-0.5 mb-2" role="img" aria-label={`${review.ratingValue} out of 5 stars`}>
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="w-3 h-3 fill-accent text-accent" />
               ))}

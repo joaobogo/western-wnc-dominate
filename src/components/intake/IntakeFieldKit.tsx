@@ -30,7 +30,7 @@ export const Label = ({
 );
 
 export const Helper = ({ children }: { children: ReactNode }) => (
-  <p className="text-[13px] md:text-[14px] text-foreground/60 mt-1.5 font-body leading-snug">{children}</p>
+  <p className="text-[13px] md:text-[14px] text-foreground/75 mt-1.5 font-body leading-snug">{children}</p>
 );
 
 /** Inline, per-field validation message. Always rendered under the input. */
@@ -111,7 +111,7 @@ export const ChipGroup = ({
             }`}
           >
             <div className="text-[15px] md:text-[16px] font-body font-bold leading-tight">{o.label}</div>
-            {o.sub && <div className="text-[11.5px] text-foreground/50 mt-0.5 font-body">{o.sub}</div>}
+            {o.sub && <div className="text-[11.5px] text-foreground/70 mt-0.5 font-body">{o.sub}</div>}
           </button>
         );
       })}

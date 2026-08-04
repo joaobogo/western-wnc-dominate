@@ -88,7 +88,7 @@ const Reviews = () => {
               </p>
 
               <div className="bg-secondary/50 rounded-none px-5 py-3.5 mb-7 relative z-10">
-                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/50 mb-1">Project Outcome</p>
+                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
                 <p className="text-sm font-body font-medium text-foreground/80">{t.outcome}</p>
               </div>
 
@@ -102,7 +102,7 @@ const Reviews = () => {
                     <p className="text-muted-foreground text-xs font-body">{t.location}</p>
                   </div>
                 </div>
-                <span className="text-[10px] font-body font-medium text-muted-foreground/50 max-w-[140px] text-right leading-tight">
+                <span className="text-[10px] font-body font-medium text-muted-foreground max-w-[140px] text-right leading-tight">
                   {t.project}
                 </span>
               </div>

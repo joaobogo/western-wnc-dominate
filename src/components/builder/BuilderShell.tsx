@@ -60,7 +60,7 @@ const BuilderShell = ({
             <h1 className="text-[26px] md:text-5xl font-heading font-bold text-foreground tracking-[-0.02em] leading-[1.1] mb-2 max-w-2xl">
               {title}
             </h1>
-            <p className="text-foreground/60 text-[13.5px] md:text-[15px] font-body max-w-xl leading-relaxed">
+            <p className="text-foreground/75 text-[13.5px] md:text-[15px] font-body max-w-xl leading-relaxed">
               {subhead}
             </p>
           </div>
@@ -87,7 +87,7 @@ const BuilderShell = ({
                           ? "bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))]"
                           : done
                           ? "bg-[hsl(var(--heritage-green))] text-white"
-                          : "bg-border/60 text-foreground/50"
+                          : "bg-border/60 text-foreground/70"
                       }`}
                     >
                       {done ? "✓" : i + 1}
