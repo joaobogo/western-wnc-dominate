@@ -1474,6 +1474,7 @@ Mountain additions are priced from the actual scope — complexity, access, fini
   // ── Project Spotlights ──
   {
     slug: "project-spotlight-standing-seam-highlands-estate",
+    town: "Highlands",
     title: "Project Spotlight: Standing Seam Metal Roof on a Highlands Estate",
     excerpt: "A deep look at our most complex metal roofing project — 3,200 sq ft, 12/12 pitch, 8 gable intersections, and custom-fabricated panels.",
     category: "Spotlight",
@@ -2393,6 +2394,7 @@ Highlander is a CertainTeed ShingleMaster Credentialed Contractor with a full [r
   },
   {
     slug: "storm-damage-roof-repair-franklin-highlands-cashiers",
+    town: "Highlands",
     title: "Storm Damage Roof Repair in Franklin, Highlands, and Cashiers",
     excerpt: "What storm damage actually looks like on WNC roofs — and how Franklin, Highlands, and Cashiers homeowners should approach repair and documentation.",
     category: "Storm",
@@ -2921,6 +2923,7 @@ Learn more about [metal roofing](/roofing/metal), consider [roof replacement](/r
   },
   {
     slug: "metal-vs-shingle-roof-franklin-highlands-cashiers",
+    town: "Highlands",
     title: "Metal Roof vs. Shingle Roof in Franklin, Highlands, and Cashiers",
     excerpt: "A side-by-side comparison of metal and shingle roofs across Franklin, Highlands, and Cashiers — with the trade-offs each town brings.",
     category: "Materials",
@@ -3877,6 +3880,7 @@ When a new porch needs to tie into an existing roof, or a remodel touches the ex
   },
   {
     slug: "roofing-vacation-second-homes-highlands-cashiers",
+    town: "Highlands",
     title: "Roofing for Vacation Homes and Second Homes in Highlands and Cashiers",
     excerpt: "What second-home owners in Highlands and Cashiers should know about roof maintenance, monitoring, and long-distance communication.",
     category: "Local",
@@ -3910,6 +3914,7 @@ Photos, findings, and written scope — sent to your email. You approve work bef
   },
   {
     slug: "roofing-mountain-homes-lake-glenville-scaly-mountain",
+    town: "Lake Glenville",
     title: "Roofing for Mountain Homes Near Lake Glenville and Scaly Mountain",
     excerpt: "Roofing considerations for homes near Lake Glenville and Scaly Mountain — elevation, wind, and lake-effect weather.",
     category: "Local",
@@ -3943,6 +3948,7 @@ Highlander works these communities regularly. We know the roads, the sites, and 
   },
   {
     slug: "storm-readiness-roofs-franklin-highlands-cashiers-sylva",
+    town: "Highlands",
     title: "Storm Readiness for Roofs in Franklin, Highlands, Cashiers, and Sylva",
     excerpt: "Practical storm readiness for roofs across Franklin, Highlands, Cashiers, and Sylva — before and after WNC weather events.",
     category: "Seasonal",
