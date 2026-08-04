@@ -79,7 +79,7 @@ const LayoutsPlanning = () => {
       <main>
         {/* 1. Hero — Refined */}
         <section className="relative pt-32 pb-24 md:pt-56 md:pb-40 bg-primary overflow-hidden">
-          {/* Blueprint background image — mountain-home architectural drawings */}
+          {/* Blueprint background image — mountain-home construction drawings */}
           <img decoding="async" loading="lazy"
             src={designHero}
             alt=""

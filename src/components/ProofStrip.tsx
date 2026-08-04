@@ -18,7 +18,7 @@ const pillars = [
     title: "Radical Transparency",
     copy: "Named project contact. Written scope before work begins. Daily updates — whether it's a roof replacement or a full renovation.",
     stat: "Rapid",
-    statLabel: "guaranteed response",
+    statLabel: "response window",
   },
   {
     icon: Mountain,

@@ -13,6 +13,42 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "attic-ventilation-waynesville-nc-winter",
+    "slug": "attic-ventilation-waynesville-nc-winter",
+    "title": "Attic Ventilation in Waynesville: The Fix Most Winter Roof Problems Start With",
+    "excerpt": "Ice at the eaves, damp insulation, and premature shingle wear in Haywood County usually trace back to one thing — an unbalanced attic. Here is how to diagnose and correct it.",
+    "category": "Maintenance",
+    "date": "2026-08-03",
+    "readTime": "6 min"
+  },
+  {
+    "id": "roof-replacement-waynesville-nc-historic-homes",
+    "slug": "roof-replacement-waynesville-nc-historic-homes",
+    "title": "Roof Replacement on Waynesville's Historic Homes: Doing It Without Losing the Character",
+    "excerpt": "Haywood County's older homes have complex roof lines, original detailing, and modern performance needs. Here is how we approach a replacement that respects the house.",
+    "category": "Replacement",
+    "date": "2026-08-02",
+    "readTime": "8 min"
+  },
+  {
+    "id": "storm-damage-checklist-bryson-city-nc",
+    "slug": "storm-damage-checklist-bryson-city-nc",
+    "title": "After a Storm in Bryson City: A Ground-Level Roof Checklist",
+    "excerpt": "Swain County storms move fast and leave subtle damage. Here is what a Bryson City homeowner can safely check from the ground, what to photograph, and when to bring in a professional.",
+    "category": "Storm",
+    "date": "2026-08-02",
+    "readTime": "6 min"
+  },
+  {
+    "id": "metal-roofing-bryson-city-nc-vacation-rentals",
+    "slug": "metal-roofing-bryson-city-nc-vacation-rentals",
+    "title": "Metal Roofing for Bryson City Vacation Rentals: What Owners Should Know",
+    "excerpt": "Bryson City rental cabins take heavy rain, heavy guest turnover, and very little downtime. Here is how standing seam metal changes the maintenance math for short-term rental owners in Swain County.",
+    "category": "Materials",
+    "date": "2026-08-01",
+    "readTime": "7 min"
+  },
+  {
     "id": "highlands-nc-storm-damage-july-28-2026",
     "slug": "highlands-nc-storm-damage-july-28-2026",
     "title": "After the July 28 Storm in Highlands, NC: What Homeowners Should Check",
@@ -83,41 +119,5 @@ export const blogSummaries: BlogSummary[] = [
     "category": "Maintenance",
     "date": "2026-07-25",
     "readTime": "7 min"
-  },
-  {
-    "id": "roofing-construction-contractor-sylva-nc",
-    "slug": "roofing-construction-contractor-sylva-nc",
-    "title": "How to Choose a Roofing and Construction Contractor in Sylva",
-    "excerpt": "A practical guide for Sylva, NC homeowners on how to evaluate and choose a trustworthy local roofing and construction contractor.",
-    "category": "Guides",
-    "date": "2026-07-25",
-    "readTime": "8 min"
-  },
-  {
-    "id": "roof-inspection-signs-sylva-nc",
-    "slug": "roof-inspection-signs-sylva-nc",
-    "title": "Common Signs Your Sylva Home Needs a Roof Inspection",
-    "excerpt": "The most common signs a Sylva, NC home is due for a professional roof inspection, and what a good inspection actually covers.",
-    "category": "Inspection",
-    "date": "2026-07-25",
-    "readTime": "7 min"
-  },
-  {
-    "id": "roof-repair-vs-replacement-sylva-nc",
-    "slug": "roof-repair-vs-replacement-sylva-nc",
-    "title": "Roof Repair vs. Roof Replacement for Sylva Homeowners",
-    "excerpt": "How Sylva, NC homeowners can decide between a targeted roof repair and a full replacement in Jackson County's mountain climate.",
-    "category": "Replacement",
-    "date": "2026-07-25",
-    "readTime": "8 min"
-  },
-  {
-    "id": "property-access-terrain-mountain-construction-cashiers-nc",
-    "slug": "property-access-terrain-mountain-construction-cashiers-nc",
-    "title": "How Property Access and Terrain Affect Mountain Construction",
-    "excerpt": "How property access, slope, and terrain shape construction scope, schedule, and budget on Cashiers, NC mountain properties.",
-    "category": "Construction",
-    "date": "2026-07-24",
-    "readTime": "8 min"
   }
 ];

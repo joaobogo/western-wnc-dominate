@@ -55,7 +55,7 @@ const contactMethods = [
 ];
 
 const TRUST_POINTS = [
-  { icon: Clock, text: "Personalized rapid response — guaranteed" },
+  { icon: Clock, text: "Personalized response within 24 hours" },
   { icon: Shield, text: "Licensed GC · Fully insured · Warranty-backed" },
   { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
   { icon: Users, text: "In-house Highlander crews on every project" },
@@ -510,7 +510,7 @@ export default function Contact() {
 
                       <div className="flex items-center justify-between pt-2">
                         <p className="text-[10px] text-muted-foreground/75 font-body">
-                          Personal response rapidly — guaranteed.
+                          Personal response within 24 hours.
                         </p>
                         <button
                           type="submit"

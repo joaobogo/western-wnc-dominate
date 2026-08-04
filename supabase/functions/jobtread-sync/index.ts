@@ -995,7 +995,7 @@ function mapScopeType(payload: any): string {
   if (/gutter/.test(key)) return "Gutters";
   if (/addition/.test(key)) return "Construction - Addition";
   if (/renovation|remodel/.test(key)) return "Construction - Remodel";
-  if (/design/.test(key)) return "Architectural Design";
+  if (/design/.test(key)) return "Design & Planning";
   if (/construction/.test(key)) return "Construction";
   return "Still Needs";
 }

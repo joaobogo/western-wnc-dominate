@@ -603,7 +603,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     metaDescription:
       "Additions, remodels, and full-envelope projects in Highlands, NC. One team, plateau-grade detailing, and a project lead you can reach directly.",
     faqs: [
-      { q: "Do you handle design as well as construction?", a: "Yes. Our in-house design track can take a project from first sketch through permit-ready drawings and into build, or we work from your architect's set." },
+      { q: "Do you handle design as well as construction?", a: "Yes. Our in-house design track can take a project from first sketch through permit-ready drawings and into build, or we work from your designer's or engineer's set." },
       { q: "What's a realistic timeline for a Highlands addition?", a: "Most additions run 4–8 months from signed contract to punch-list depending on scope, permitting, and material lead times. We give you a written schedule before we start." },
       { q: "Do you pull the permits with the Town of Highlands and Macon County?", a: "Yes. Permit coordination is on us, including any HOA or ARB submission your neighborhood requires." },
     ],
@@ -672,7 +672,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
       "Additions, remodels, and new-build work in Franklin, NC from a licensed general contractor with in-house design and a single project lead.",
     faqs: [
       { q: "What's the smallest construction project you take on?", a: "We're transparent about minimums on the initial call. Small isn't a problem — poorly scoped is." },
-      { q: "Do I need architect drawings before calling you?", a: "Not necessarily. Our in-house design track can produce permit-ready drawings, or we work from your architect's set." },
+      { q: "Do I need finished drawings before calling you?", a: "Not necessarily. Our in-house design track can produce permit-ready drawings, or we work from your designer's or engineer's set." },
       { q: "How do you handle change orders?", a: "In writing. Every change gets a line-item cost and schedule impact before work moves." },
     ],
   }),
@@ -763,7 +763,7 @@ export const serviceTownContent: ServiceTownEntry[] = [
     faqs: [
       { q: "Do you work with community ARBs around Cashiers?", a: "Yes. We prepare and submit ARB packages for the communities we regularly work in and coordinate any revisions the board requests." },
       { q: "How long does an addition take in Cashiers?", a: "Most additions run 5–9 months from signed contract through punch-list, depending on scope and permit timing. You get a written schedule before we start." },
-      { q: "Can you coordinate with my architect or designer?", a: "Yes. We regularly build from other firms' documents and act as the contractor of record for those projects." },
+      { q: "Can you coordinate with my designer or engineer?", a: "Yes. We regularly build from other firms' documents and act as the contractor of record for those projects." },
     ],
   }),
   E({

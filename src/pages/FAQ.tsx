@@ -185,7 +185,7 @@ const categories: Category[] = [
     items: [
       { q: "Do you offer design services for additions and outdoor living projects?", a: "Yes. Highlander offers in-house design through a paid, three-phase Design & Consultation Agreement: scope discovery, plans and 3D views, and a permit-ready set. This is how we make sure your project is fully defined before we finalize construction pricing." },
       { q: "How much do design services cost?", a: "Design fees are quoted per project after we understand scope. We don't publish generic pricing because a small deck plan and a full addition design aren't the same project. Contact us and we'll walk you through the phases and what to expect." },
-      { q: "Can I use plans I already have?", a: "Yes. If you already have architect or designer plans, we can price and build from them. If plans need refinement or a permit set, we can also step in through our design phases to finish them." },
+      { q: "Can I use plans I already have?", a: "Yes. If you already have designer or engineer plans, we can price and build from them. If plans need refinement or a permit set, we can also step in through our design phases to finish them." },
     ],
   },
   {
