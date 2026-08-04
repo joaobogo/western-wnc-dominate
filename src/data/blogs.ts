@@ -41,6 +41,341 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "metal-roofing-bryson-city-nc-vacation-rentals",
+    title: "Metal Roofing for Bryson City Vacation Rentals: What Owners Should Know",
+    excerpt:
+      "Bryson City rental cabins take heavy rain, heavy guest turnover, and very little downtime. Here is how standing seam metal changes the maintenance math for short-term rental owners in Swain County.",
+    category: "Materials",
+    date: "2026-08-01",
+    image: "/media/bryson-city-metal-roof-rental.jpg",
+    imageAlt: "Cabin-style vacation rental with a standing seam metal roof near Bryson City, North Carolina",
+    readTime: "7 min",
+    metaTitle: "Metal Roofing for Bryson City NC Vacation Rentals",
+    metaDescription:
+      "Why standing seam metal fits Bryson City rental cabins: rain shedding, low maintenance between guests, and scheduling around the booking calendar.",
+    town: "Bryson City",
+    relatedServices: [
+      { label: "Metal Roofing", path: "/roofing/metal" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Gutters & Downspouts", path: "/roofing/gutters" },
+      { label: "Request a Roof Inspection", path: "/request-inspection" },
+    ],
+    relatedProjects: [
+      "standing-seam-metal-dark-bronze-highlands",
+    ],
+    faqs: [
+      {
+        question: "Is metal roofing worth it on a Bryson City rental cabin?",
+        answer: "Usually yes if you plan to hold the property for the long term. The upfront cost is higher than a shingle system, but reduced maintenance between guests and faster shedding of rain and debris matter more on a rental than on a primary home.",
+      },
+      {
+        question: "How long will my cabin be out of service?",
+        answer: "Most rental roofs we install here are a matter of days on site, not weeks, and we sequence the work so the structure is never left open overnight. We plan the schedule around your blocked booking windows.",
+      },
+      {
+        question: "Do I need snow retention in Bryson City?",
+        answer: "If the roof sheds over an entry, deck, walkway, or hot tub, yes. Snow and ice releasing off metal in a single slide is a genuine guest safety issue.",
+      },
+    ],
+    content: `Bryson City sits at the gateway to the Smokies, and the rental market here runs hard. A cabin that books forty weekends a year has very few open windows for roof work, and every leak is a refund conversation. That combination is why so many owners in Swain County end up asking about metal.
+
+Here is the honest version of that conversation.
+
+## Why Metal Fits This Market
+
+**Rain volume.** The Smokies corridor takes a lot of water, often in short, intense bursts. Standing seam panels with concealed fasteners shed that volume quickly and give water fewer places to sit.
+
+**Tree cover.** Most Bryson City cabins sit under hardwood. Needles and leaves slide off metal far more readily than off a granulated shingle surface, which means fewer clogged valleys between visits.
+
+**Guest turnover.** Rentals get inspected by strangers, not by owners. Problems get reported late. A system that fails slowly and visibly is worth more than one that fails invisibly behind a ceiling.
+
+**Scheduling.** Metal installs are typically fewer days on site than a full tear-off and re-shingle with the same complexity, which matters when every day is a blocked booking.
+
+## Where Metal Is Not Automatically the Answer
+
+- Very complex roof lines with many dormers and intersections raise metal cost faster than shingle cost
+- Short ownership horizons rarely recover the upfront premium
+- Some HOA and neighborhood covenants restrict panel profiles and colors
+
+If any of those apply, a properly specified [dimensional shingle system](/roofing/roof-replacement) is often the smarter spend.
+
+## What a Correct Install Looks Like Here
+
+1. Full deck inspection and repair before any panel goes down
+2. High-temperature ice and water shield at eaves, valleys, and penetrations
+3. Concealed-fastener standing seam, not exposed-fastener panel, on primary living structures
+4. Snow retention above entries, decks, and hot tubs — a full slide onto a guest is a real liability
+5. Gutters sized for actual roof area, not builder default
+
+That fifth point catches more Bryson City owners than any other. See our [gutter work](/roofing/gutters) for how we size systems for mountain rainfall.
+
+## Working Around the Booking Calendar
+
+We plan rental roofs backward from the calendar. Owners give us their blocked windows, we sequence tear-off, dry-in, and finish so the structure is never left open overnight, and we stage material off the guest parking area.
+
+## Local Context
+
+Bryson City work often pairs with deck and porch repairs, since the same weather that punishes a roof punishes an exposed deck. Our [Bryson City service page](/service-areas/bryson-city-nc) covers the full scope we handle in Swain County.
+
+For a look at finished metal work in similar mountain conditions, see the [dark bronze standing seam project in Highlands](/projects/standing-seam-metal-dark-bronze-highlands).
+
+## Next Step
+
+If you own a rental here and are weighing metal against another shingle cycle, [book a consultation](/consultation) or [request an inspection](/request-inspection). We will walk the roof, document what is actually there, and give you a written proposal with real numbers.
+
+Related reading: [metal vs shingle in Western North Carolina](/blog/metal-vs-shingle-roof-western-nc).`,
+  },
+  {
+    slug: "storm-damage-checklist-bryson-city-nc",
+    title: "After a Storm in Bryson City: A Ground-Level Roof Checklist",
+    excerpt:
+      "Swain County storms move fast and leave subtle damage. Here is what a Bryson City homeowner can safely check from the ground, what to photograph, and when to bring in a professional.",
+    category: "Storm",
+    date: "2026-08-02",
+    image: "/media/bryson-city-storm-gutter-check.jpg",
+    imageAlt: "Roof valley and gutter after heavy rain on a wooded mountain home near Bryson City, North Carolina",
+    readTime: "6 min",
+    metaTitle: "Bryson City NC Storm Roof Checklist for Homeowners",
+    metaDescription:
+      "A practical, ground-level checklist for Bryson City homeowners after wind, hail, or heavy rain, plus how to document damage for an insurance claim.",
+    town: "Bryson City",
+    relatedServices: [
+      { label: "Storm Damage Response", path: "/roofing/storm-damage" },
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Gutters & Downspouts", path: "/roofing/gutters" },
+      { label: "Request a Roof Inspection", path: "/request-inspection" },
+    ],
+    relatedProjects: [
+      "certainteed-landmark-weathered-wood-waynesville",
+    ],
+    faqs: [
+      {
+        question: "Should I get on my roof after a storm?",
+        answer: "No. Wet mountain roofs are steep and dangerous. Everything a homeowner needs to check can be done from the ground with binoculars or a phone camera, plus a look in the attic.",
+      },
+      {
+        question: "How soon should I report storm damage to my insurer?",
+        answer: "Report promptly and document first. Date-stamped photos, the storm date, and any weather alert covering Swain County give your claim a much stronger foundation.",
+      },
+      {
+        question: "Does every storm mean a roof replacement?",
+        answer: "No. A great deal of storm damage in Bryson City is repairable — flashing, a section of material, or gutter work. We tell you which one it is in writing.",
+      },
+    ],
+    content: `Storms in the Smokies corridor tend to arrive fast, drop a large amount of water, and move on. The damage they leave is often subtle: a lifted edge, a displaced piece of flashing, a valley that is now holding debris. None of that announces itself until the next long rain.
+
+This is what you can safely check yourself, and what belongs to someone with fall protection.
+
+## Check From the Ground First
+
+Stay off the roof. Wet mountain roofs are steep and unforgiving. Everything below can be done from the yard with binoculars or a phone camera.
+
+- **Roof surface.** Look for missing, lifted, or shifted material, and for lines that no longer look straight
+- **Ridge and hips.** These take the highest wind load and show damage first
+- **Valleys.** Look for packed leaves, limbs, or standing debris
+- **Gutters and downspouts.** Sagging, separation at seams, or granule buildup in the bottom of the downspout
+- **Ground around the house.** Roofing material, flashing pieces, or granule wash at the splash line
+- **Flashing at chimneys and dormers.** Look for anything lifted, bent, or visibly separated
+
+## Check Inside
+
+- Ceiling stains, especially at exterior walls and around chimneys
+- Attic decking for wet spots, daylight, or damp insulation
+- Window and door heads for new water marks
+
+## Document It Properly
+
+If this becomes an insurance claim, the documentation you take in the first days matters.
+
+1. Date-stamped photos of every item above, wide shot and close shot
+2. A note of the storm date and time
+3. Any local weather alert or warning that covered Swain County that day
+4. Receipts for emergency measures such as tarping
+
+Our [insurance claim guide](/blog/insurance-claim-roof-damage-nc) walks through how carriers evaluate this material.
+
+## When to Call
+
+Call the same day for active leaks, visible structural damage, or anything hanging. Call within the week for missing material, damaged flashing, or gutter separation. We handle [storm damage response](/roofing/storm-damage) across Swain County, including tarping and photo-documented reports.
+
+## Local Context
+
+Bryson City properties often combine steep pitch with heavy tree cover, which means limb strikes are as common a cause of damage as wind uplift. See our [Bryson City page](/service-areas/bryson-city-nc) for the full scope we handle here, and the [Waynesville shingle project](/projects/certainteed-landmark-weathered-wood-waynesville) for what a full post-storm replacement looks like in mountain conditions.
+
+## Next Step
+
+[Book a consultation](/consultation) or [request a written inspection](/request-inspection). We document what we find in photos, give you an honest read on whether it is a repair or a claim, and never push a replacement that the roof does not need.`,
+  },
+  {
+    slug: "roof-replacement-waynesville-nc-historic-homes",
+    title: "Roof Replacement on Waynesville's Historic Homes: Doing It Without Losing the Character",
+    excerpt:
+      "Haywood County's older homes have complex roof lines, original detailing, and modern performance needs. Here is how we approach a replacement that respects the house.",
+    category: "Replacement",
+    date: "2026-08-02",
+    image: "/media/waynesville-historic-home-roof.jpg",
+    imageAlt: "Historic craftsman home with a dimensional shingle roof on a hillside street in Waynesville, North Carolina",
+    readTime: "8 min",
+    metaTitle: "Roof Replacement for Historic Homes in Waynesville NC",
+    metaDescription:
+      "How to replace a roof on an older Waynesville home without losing its character: material matching, detailing, ventilation upgrades, and permitting.",
+    town: "Waynesville",
+    relatedServices: [
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Residential Roofing", path: "/roofing/residential" },
+      { label: "Construction & Renovations", path: "/construction/renovations" },
+      { label: "Request a Roof Inspection", path: "/request-inspection" },
+    ],
+    relatedProjects: [
+      "certainteed-landmark-weathered-wood-waynesville",
+    ],
+    faqs: [
+      {
+        question: "Will a new roof change how my historic Waynesville home looks?",
+        answer: "It does not have to. Profile, color, and edge detailing determine whether a new roof reads original. We select those with the house in front of us, not from a catalog.",
+      },
+      {
+        question: "Can I put metal on an older home in Waynesville?",
+        answer: "Often yes, and frequently the best answer is a mix — standing seam on porches and shed roofs with a dimensional shingle field. It reads intentional and controls cost.",
+      },
+      {
+        question: "What usually adds cost on an older home?",
+        answer: "Deck repair. Decades of small leaks soften board sheathing. We quote a written unit rate for decking up front so the number is never a surprise mid-project.",
+      },
+    ],
+    content: `Waynesville has some of the best-preserved older housing stock in Western North Carolina. Steep pitches, multiple gables, real dormers, exposed rafter tails, original chimneys. All of it is beautiful, and all of it makes a roof replacement more demanding than a simple ranch tear-off.
+
+Here is how we think about that work in Haywood County.
+
+## Start With the Roof That Is There
+
+Before anyone talks about material, we document the existing assembly: pitch, layers, deck condition, ventilation, flashing details, and how the roof meets every wall, chimney, and dormer. On homes of this age, the deck is frequently board sheathing rather than plywood, and the fastening strategy has to account for that.
+
+## Matching Character Without Freezing Performance
+
+The goal is a roof that reads correct from the street and performs to modern standards underneath.
+
+- **Profile and color.** Dimensional shingles in weathered wood, slate, or charcoal colorways usually read right on a craftsman or cottage
+- **Standing seam** can be appropriate on porch and shed roofs even when the main field stays shingle
+- **Synthetic slate and shake** are the honest option when the original look was slate or cedar and the structure cannot carry the real thing
+- **Detailing matters more than material.** Exposed rafter tails, drip edge reveal, and ridge profile determine whether the roof looks original
+
+## The Upgrades That Are Not Visible
+
+This is where an older Waynesville home gains the most:
+
+1. **Ventilation correction.** Many historic homes have intake or exhaust, rarely a balanced system. Freeze-thaw cycles punish unbalanced attics
+2. **Ice and water shield** at eaves, valleys, and every penetration
+3. **Proper step and counter flashing** at chimneys, rather than the surface-sealed detail we frequently find
+4. **Deck repair** where decades of small leaks have softened board sheathing
+
+Read more on why this matters at elevation in our [ventilation guide](/blog/understanding-roof-ventilation-mountain-homes).
+
+## Permitting and Neighborhood Considerations
+
+Haywood County permitting is straightforward for a like-for-like replacement. Where a home sits in a district or an HOA with appearance standards, material and color selections should be confirmed before the order goes in, not after tear-off starts.
+
+## Scope Creep Is Normal — Plan for It
+
+On homes of this age, opening the roof frequently reveals soft decking, previous repair layers, or flashing that was never correct. We price known scope in the proposal and give a written unit rate for deck replacement so there is no surprise number on day three.
+
+When the work extends past the roof into porches, trim, or siding, our [renovation team](/construction/renovations) handles it under the same contract.
+
+## Local Proof
+
+See the [CertainTeed Landmark weathered wood project in Waynesville](/projects/certainteed-landmark-weathered-wood-waynesville) for a finished example on a comparable home, and our [Waynesville service page](/service-areas/waynesville-nc) for the full scope we handle in Haywood County.
+
+## Next Step
+
+[Book a consultation](/consultation) and we will walk the roof, photograph the detailing that matters, and put a written scope in front of you.`,
+  },
+  {
+    slug: "attic-ventilation-waynesville-nc-winter",
+    title: "Attic Ventilation in Waynesville: The Fix Most Winter Roof Problems Start With",
+    excerpt:
+      "Ice at the eaves, damp insulation, and premature shingle wear in Haywood County usually trace back to one thing — an unbalanced attic. Here is how to diagnose and correct it.",
+    category: "Maintenance",
+    date: "2026-08-03",
+    image: "/media/waynesville-attic-ventilation-winter.jpg",
+    imageAlt: "Ridge vent with light snow on a mountain home roof near Waynesville, North Carolina in winter",
+    readTime: "6 min",
+    metaTitle: "Attic Ventilation for Waynesville NC Homes in Winter",
+    metaDescription:
+      "Why unbalanced attic ventilation causes ice, damp insulation, and early roof wear on Waynesville homes, and what a correct intake and exhaust system looks like.",
+    town: "Waynesville",
+    relatedServices: [
+      { label: "Roof Repair", path: "/roofing/roof-repair" },
+      { label: "Roof Replacement", path: "/roofing/roof-replacement" },
+      { label: "Gutters & Downspouts", path: "/roofing/gutters" },
+      { label: "Request a Roof Inspection", path: "/request-inspection" },
+    ],
+    relatedProjects: [
+      "certainteed-landmark-weathered-wood-waynesville",
+    ],
+    faqs: [
+      {
+        question: "Why do I get ice at the gutters but not on the upper roof?",
+        answer: "That pattern almost always means heat is escaping into the attic. Snow melts up-slope, runs to the cold overhang, and refreezes. The fix is ventilation and air sealing, not the gutter.",
+      },
+      {
+        question: "Is a powered attic fan a good solution in Waynesville?",
+        answer: "Usually not. Adding powered exhaust on top of a ridge vent tends to pull air from the path of least resistance — often the house itself — instead of the soffits. Balanced passive ventilation performs better here.",
+      },
+      {
+        question: "Can ventilation be corrected without replacing the roof?",
+        answer: "Often yes. Clearing and baffling soffits, removing competing exhaust, and re-ducting bath fans can all be done without a tear-off. If the roof is due anyway, correcting it during replacement costs far less.",
+      },
+    ],
+    content: `When a Waynesville homeowner calls in January about ice at the gutter line, the roof surface is rarely the root cause. The root cause is usually an attic that is warmer than it should be, and it is warmer because intake and exhaust are not balanced.
+
+## What Balanced Actually Means
+
+A working attic pulls cold air in low at the soffits and pushes warm air out high at the ridge. Both halves have to exist, and they have to be roughly matched in area. Common failures in Haywood County homes:
+
+- **Ridge vent installed, soffits blocked** by insulation pushed into the eave during a past upgrade
+- **Exhaust stacked** — a ridge vent plus gable vents plus a powered fan, which short-circuits airflow instead of increasing it
+- **No baffles**, so blown insulation sits directly against the deck at the eave
+- **Bath and dryer exhaust dumped into the attic** rather than out through the roof or wall
+
+## The Winter Symptoms
+
+1. Ice building at the eaves and in the gutters while the upper roof is clear
+2. Frost on the underside of the deck on cold mornings
+3. Damp or compressed insulation near the eaves
+4. Roof material aging noticeably faster on one slope
+5. Musty attic smell in spring
+
+The first one is the one homeowners notice. It happens because heat escaping into the attic melts snow up-slope, the water runs down to the cold overhang, and it refreezes.
+
+## How We Diagnose It
+
+We measure net free vent area at intake and exhaust, inspect for baffles and blockage, check for stacked exhaust, verify that every bath and dryer line terminates outside, and look at insulation depth and placement at the eave. It is a written report, with photos, not a verbal opinion.
+
+## The Corrections
+
+- Clear and baffle every soffit bay
+- Remove competing exhaust so one path governs
+- Add or correct ridge exhaust sized to intake
+- Duct bath and dryer exhaust to the exterior
+- Restore insulation depth without re-blocking the eave
+
+Where the roof is due for [replacement](/roofing/roof-replacement) anyway, this is the moment to correct all of it at once — the assembly is open and the cost of doing it then is a fraction of doing it later.
+
+## Gutters Matter Too
+
+An overwhelmed or clogged gutter holds meltwater right where you least want it. Our [gutter work](/roofing/gutters) sizes systems for actual roof area and mountain rainfall.
+
+## Local Context
+
+Waynesville's hillside neighborhoods see real freeze-thaw cycling, and older homes in particular were rarely built with a balanced system. Our [Waynesville page](/service-areas/waynesville-nc) covers the full scope we handle across Haywood County, and the [Waynesville shingle replacement project](/projects/certainteed-landmark-weathered-wood-waynesville) shows the ventilation corrections we make during a re-roof.
+
+Related reading: [ice dam prevention on mountain homes](/blog/ice-dam-prevention-mountain-homes).
+
+## Next Step
+
+[Book a consultation](/consultation) or [request an inspection](/request-inspection) before the first hard freeze. Ventilation is one of the least expensive corrections available on a roof and one of the highest-return.`,
+  },
+  {
     slug: "highlands-nc-storm-damage-july-28-2026",
     title: "After the July 28 Storm in Highlands, NC: What Homeowners Should Check",
     excerpt:
