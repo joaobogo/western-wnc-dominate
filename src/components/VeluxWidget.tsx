@@ -151,7 +151,7 @@ const VeluxWidget = ({
       script.remove();
       host.innerHTML = "";
     };
-  }, [ctaLink, ctaText, variant]);
+  }, [ctaLink, ctaText, variant, inView]);
 
   return (
     <section className={className}>
