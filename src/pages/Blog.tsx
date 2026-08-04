@@ -132,6 +132,7 @@ const Blog = () => {
                   <div className="relative max-w-md">
                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.3)]" />
                     <input
+                      aria-label="Search articles"
                       type="text"
                       placeholder="Search articles..."
                       value={searchQuery}
@@ -591,6 +592,7 @@ const Blog = () => {
               </p>
               <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
+                  aria-label="Email address for the newsletter"
                   type="email"
                   placeholder="your@email.com"
                   className="flex-1 px-4 py-3 rounded-sm bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.1)] text-[hsl(var(--dark-section-foreground))] text-sm font-body placeholder:text-[hsl(var(--dark-section-foreground)/0.3)] focus:outline-none focus:border-[hsl(var(--highland-gold)/0.3)] transition-colors"
