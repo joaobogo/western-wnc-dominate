@@ -1,4 +1,4 @@
-import { supabase } from "@/integrations/supabase/client";
+// The backend client is imported lazily so it stays out of the critical bundle.
 
 // Types for tracking
 type EventType =
