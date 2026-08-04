@@ -10,7 +10,7 @@ import GTMRouteTracker from "./components/GTMRouteTracker";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
 import { initPixels } from "./lib/analytics";
-import { captureAttribution } from "./lib/leads";
+import { captureAttribution } from "./lib/attribution";
 import { tier1FlatEntries, tier2FlatEntries } from "./data/service-town-slugs";
 
 // Chat widget is below-the-fold, non-critical UI — keep it out of the first load.
