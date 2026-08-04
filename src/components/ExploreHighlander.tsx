@@ -99,7 +99,7 @@ const ExploreHighlander = () => {
                         to={link.to}
                         className="group/link flex items-start gap-1.5 text-sm font-body text-muted-foreground hover:text-primary transition-colors leading-snug"
                       >
-                        <ArrowUpRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/60 group-hover/link:text-primary transition-colors" />
+                        <ArrowUpRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/80 group-hover/link:text-primary transition-colors" />
                         <span>{link.label}</span>
                       </Link>
                     </li>

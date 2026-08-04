@@ -325,7 +325,7 @@ const ConstructionBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     What kind of project is this?
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">Pick the best match — scope comes next.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">Pick the best match — scope comes next.</p>
                   <VisualChoiceGrid options={PROJECT_TYPES} value={data.projectType} onChange={(v) => set("projectType", v)} columns={3} />
                 </>
               )}
@@ -334,7 +334,7 @@ const ConstructionBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     What's in the scope?
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">Pick anything you're considering.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">Pick anything you're considering.</p>
                   <VisualChoiceGrid options={SCOPE_ITEMS} value={data.scopeItems} onChange={(v) => toggleMulti("scopeItems", v)} multi columns={3} />
                 </>
               )}
@@ -343,7 +343,7 @@ const ConstructionBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Style & priorities
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">Direction now — refined together later.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">Direction now — refined together later.</p>
                   <Label required>Style direction</Label>
                   <VisualChoiceGrid options={STYLE} value={data.style} onChange={(v) => set("style", v)} columns={2} />
                   <div className="mt-7">
@@ -357,7 +357,7 @@ const ConstructionBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Project context
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">A few details so we route the right Highlander team lead.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">A few details so we route the right Highlander team lead.</p>
                   <Label required>Investment tier <span className="font-normal text-foreground/80 text-[11px] normal-case tracking-normal">— qualitative, not a price</span></Label>
                   <VisualChoiceGrid options={INVESTMENT} value={data.investment} onChange={(v) => set("investment", v)} columns={2} />
                   <div className="mt-7">
@@ -387,7 +387,7 @@ const ConstructionBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Plans, inspiration & notes
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">Plans, sketches, or inspiration photos — all optional.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">Plans, sketches, or inspiration photos — all optional.</p>
                   <FileDrop files={files} onChange={setFiles} />
                   <div className="mt-6">
                     <Label htmlFor="f-anything-else-the-advisor-should">Anything else the advisor should know</Label>
@@ -405,10 +405,10 @@ const ConstructionBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Review & send
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">A named advisor reviews your brief and responds within as soon as possible.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">A named advisor reviews your brief and responds within as soon as possible.</p>
                   <ReviewCard rows={summaryRows}>
                     <div className="pt-1">
-                      <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/55 mb-3">Your contact</p>
+                      <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-muted-foreground mb-3">Your contact</p>
                       <FieldRow>
                         <div>
                           <Label required htmlFor="f-full-name">Full name</Label>

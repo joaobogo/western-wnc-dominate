@@ -275,7 +275,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
                 ? "bg-[hsl(var(--highland-gold)/0.06)] group-hover:bg-[hsl(var(--highland-gold)/0.14)]"
                 : "bg-primary/6 group-hover:bg-primary/12"
             }`}>
-              <service.icon className={`w-4 h-4 ${isGold ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-primary/60"}`} />
+              <service.icon className={`w-4 h-4 ${isGold ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-primary/80"}`} />
             </div>
             <div>
               <h3 className="text-base font-heading font-bold text-foreground leading-tight tracking-tight group-hover:text-foreground/90 transition-colors">

@@ -312,7 +312,7 @@ const ResidentialRoofing = () => {
                       { name: "Sylva", slug: "sylva-nc" },
                       { name: "Waynesville", slug: "waynesville-nc" }
                    ].map(town => (
-                      <Link key={town.slug} to={`/service-areas/${town.slug}`} className="text-xs font-bold text-foreground/75 hover:text-primary transition-colors uppercase tracking-widest underline underline-offset-4 decoration-border">
+                      <Link key={town.slug} to={`/service-areas/${town.slug}`} className="text-xs font-bold text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest underline underline-offset-4 decoration-border">
                          {town.name}
                       </Link>
                    ))}
@@ -519,7 +519,7 @@ const ResidentialRoofing = () => {
                     <ul className="space-y-3">
                       {option.items.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/50' : 'text-[hsl(var(--highland-gold)/0.9)]'}`} />
+                          <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/80' : 'text-[hsl(var(--highland-gold)/0.9)]'}`} />
                           <span className="text-muted-foreground text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}
@@ -665,7 +665,7 @@ const ResidentialRoofing = () => {
                   className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <Landmark className="w-5 h-5 text-primary/50 group-hover:text-primary transition-colors" />
+                    <Landmark className="w-5 h-5 text-primary/80 group-hover:text-primary transition-colors" />
                     <h3 className="font-heading font-bold text-foreground text-base group-hover:text-primary transition-colors">{style.title}</h3>
                   </div>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">

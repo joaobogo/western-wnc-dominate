@@ -112,7 +112,7 @@ const Gutters = () => {
           <div className="container-tight max-w-4xl text-center">
             <span className="eyebrow mb-3 block">Why It Matters</span>
             <h2 className="section-heading mb-6">Water Management Is a<br className="hidden md:block" /> Mountain-Home Problem.</h2>
-            <p className="text-foreground/75 text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
               Western NC gets some of the highest rainfall totals east of the Cascades, on steep lots surrounded by hardwoods and pines. Undersized or clogged gutters push water back under the eaves, saturate foundations, ice over walkways in winter, and quietly rot fascia and trim. A properly sized system solves all of it.
             </p>
           </div>
@@ -129,7 +129,7 @@ const Gutters = () => {
               <div key={b.title} className="border border-border rounded-lg p-6">
                 <b.icon className="w-8 h-8 text-[hsl(var(--gold-ink))] mb-3" />
                 <div className="font-heading font-bold text-xl mb-2">{b.title}</div>
-                <p className="text-foreground/70">{b.body}</p>
+                <p className="text-muted-foreground">{b.body}</p>
               </div>
             ))}
           </div>

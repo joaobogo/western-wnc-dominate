@@ -96,7 +96,7 @@ const RequestInspection = () => {
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="eyebrow block mb-3">What Happens After You Submit</span>
               <h2 className="section-heading">A simple, three-step process</h2>
-              <p className="text-foreground/70 mt-3 font-body">
+              <p className="text-muted-foreground mt-3 font-body">
                 No aggressive sales calls. No pressure. Just a clear path from your first message to a written recommendation for your property.
               </p>
             </div>
@@ -110,7 +110,7 @@ const RequestInspection = () => {
                     <s.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-lg mb-2">{s.title}</h3>
-                  <p className="text-foreground/75 font-body text-[15px] leading-relaxed">{s.body}</p>
+                  <p className="text-muted-foreground font-body text-[15px] leading-relaxed">{s.body}</p>
                 </div>
               ))}
             </div>
@@ -123,7 +123,7 @@ const RequestInspection = () => {
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="eyebrow block mb-3">What Can We Help With?</span>
               <h2 className="section-heading">Roofing, gutters, skylights, construction, and design</h2>
-              <p className="text-foreground/70 mt-3 font-body">
+              <p className="text-muted-foreground mt-3 font-body">
                 Choose whatever fits — you can also just describe what you need in the form below.
               </p>
             </div>

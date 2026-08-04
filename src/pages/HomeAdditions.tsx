@@ -203,7 +203,7 @@ const HomeAdditions = () => {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
                   The best additions don't look like additions. We build rooms that look like your home always had them — because we match the rooflines, materials, and proportions.
                 </h2>
-                <p className="text-foreground/70 text-base md:text-lg leading-relaxed font-body mb-4">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
                   Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
@@ -235,7 +235,7 @@ const HomeAdditions = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Add On</span>
               <h2 className="section-heading mb-4">The Reasons<br className="hidden md:block" /> Homeowners Expand.</h2>
-              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">Every addition project starts with a real need — not a trend. These are the situations that bring homeowners to us.</p>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">Every addition project starts with a real need — not a trend. These are the situations that bring homeowners to us.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -245,7 +245,7 @@ const HomeAdditions = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -271,7 +271,7 @@ const HomeAdditions = () => {
                     <type.icon className="w-4.5 h-4.5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{type.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{type.detail}</p>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{type.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -336,7 +336,7 @@ const HomeAdditions = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">What Makes This Different.</h2>
-              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
                 Years of high-elevation roofing experience built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
               </p>
             </motion.div>
@@ -348,7 +348,7 @@ const HomeAdditions = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -362,12 +362,12 @@ const HomeAdditions = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
                 <span className="eyebrow mb-3 block">Planning & Permits</span>
                 <h2 className="section-heading mb-5">We Handle the<br /> Complexity.</h2>
-                <p className="text-foreground/70 text-base font-body mb-6 leading-relaxed">
+                <p className="text-muted-foreground text-base font-body mb-6 leading-relaxed">
                   Home additions involve zoning, structural engineering, permits, inspections, and utility coordination. We manage all of it as part of our standard process — so you focus on the vision while we navigate the logistics.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h4 className="font-heading font-bold text-foreground text-sm mb-2">Not sure where to start?</h4>
-                  <p className="text-foreground/75 text-[13px] leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
+                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -378,7 +378,7 @@ const HomeAdditions = () => {
                 {planningPermitting.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group p-5 md:p-6 rounded-sm bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                     <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                    <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>

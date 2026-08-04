@@ -25,7 +25,7 @@ const IntakeChooser = () => (
         <h1 className="text-3xl md:text-5xl font-heading font-bold tracking-[-0.02em] mb-4 text-foreground">
           Which conversation should we start with?
         </h1>
-        <p className="text-foreground/65 max-w-xl mx-auto mb-12 font-body text-[15px] leading-relaxed">
+        <p className="text-muted-foreground max-w-xl mx-auto mb-12 font-body text-[15px] leading-relaxed">
           Two intake paths so the right advisor reaches out with the right questions.
         </p>
 
@@ -75,7 +75,7 @@ const IntakeChooser = () => (
                 <c.icon className="w-7 h-7 text-[hsl(var(--gold-ink))] mb-5" />
                 <p className="text-[10.5px] font-body font-semibold uppercase tracking-[0.22em] text-foreground/80 mb-1">{c.eyebrow}</p>
                 <h2 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-2 tracking-tight">{c.title}</h2>
-                <p className="text-foreground/65 text-[13.5px] font-body leading-relaxed mb-6">{c.body}</p>
+                <p className="text-muted-foreground text-[13.5px] font-body leading-relaxed mb-6">{c.body}</p>
                 <span className="inline-flex items-center gap-2 text-[13px] font-heading font-bold text-foreground group-hover:text-[hsl(var(--gold-ink))] transition-colors">
                   {c.cta} <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </span>
@@ -99,9 +99,9 @@ const IntakeChooser = () => (
               <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-[12.5px] font-heading font-bold text-foreground leading-tight">Build a roofing scope brief</p>
-                <p className="text-[11.5px] font-body text-foreground/55 leading-snug">Material, priorities, investment tier — guided</p>
+                <p className="text-[11.5px] font-body text-muted-foreground leading-snug">Material, priorities, investment tier — guided</p>
               </div>
-              <ArrowRight className="w-3.5 h-3.5 text-foreground/75 group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" />
             </Link>
             <Link
               to="/construction-builder"
@@ -110,18 +110,18 @@ const IntakeChooser = () => (
               <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-[12.5px] font-heading font-bold text-foreground leading-tight">Build a construction scope brief</p>
-                <p className="text-[11.5px] font-body text-foreground/55 leading-snug">Scope, style, priorities — guided</p>
+                <p className="text-[11.5px] font-body text-muted-foreground leading-snug">Scope, style, priorities — guided</p>
               </div>
-              <ArrowRight className="w-3.5 h-3.5 text-foreground/75 group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" />
             </Link>
           </div>
-          <p className="text-[11px] font-body text-foreground/75 mt-3 text-center">
+          <p className="text-[11px] font-body text-muted-foreground mt-3 text-center">
             Advanced builders are optional. They organize your project — they are not instant quotes.
           </p>
         </div>
 
         <div className="mt-10 pt-8 border-t border-border max-w-md mx-auto">
-          <p className="text-[12px] font-body text-foreground/70 mb-2">Quick question or general inquiry?</p>
+          <p className="text-[12px] font-body text-muted-foreground mb-2">Quick question or general inquiry?</p>
           <a
             href="tel:+18285247773"
             className="inline-flex items-center gap-2 text-foreground hover:text-[hsl(var(--gold-ink))] font-heading font-semibold text-[14px] transition-colors"

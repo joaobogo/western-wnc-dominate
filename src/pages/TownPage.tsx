@@ -300,7 +300,7 @@ const TownPage = () => {
                   <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-background border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
                     {/* Subtle category badge */}
                     <div className="flex items-center gap-3 mb-6">
-                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/60 bg-primary/5 px-2.5 py-1">
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/80 bg-primary/5 px-2.5 py-1">
                         {post.category}
                       </span>
                       <div className="h-px flex-1 bg-border/40" />

@@ -201,7 +201,7 @@ const OutdoorLiving = () => {
               <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
                 Mountain living is meant to be lived outside — on porches, decks, and patios built to enjoy the view in every season.
               </h2>
-                <p className="text-foreground/70 text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
+                <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
                   Highlander designs and builds bright, comfortable outdoor living spaces scaled to your home, crafted for the Western North Carolina climate, and finished with the same care we bring to every project.
                 </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
@@ -256,7 +256,7 @@ const OutdoorLiving = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -270,12 +270,12 @@ const OutdoorLiving = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
                 <span className="eyebrow mb-3 block">WNC Living</span>
                 <h2 className="section-heading mb-5">Designed for<br /> Mountain Property.</h2>
-                <p className="text-foreground/70 text-base font-body mb-6 leading-relaxed">
+                <p className="text-muted-foreground text-base font-body mb-6 leading-relaxed">
                   Western North Carolina properties come with unique advantages — and unique challenges. We design outdoor spaces that leverage your views, work with your terrain, and handle your weather.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h4 className="font-heading font-bold text-foreground text-sm mb-2">Wondering what's possible on your lot?</h4>
-                  <p className="text-foreground/75 text-[13px] leading-relaxed font-body mb-3">We evaluate terrain, views, drainage, and access as part of every outdoor project consultation.</p>
+                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-3">We evaluate terrain, views, drainage, and access as part of every outdoor project consultation.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -291,7 +291,7 @@ const OutdoorLiving = () => {
                       </div>
                       <div>
                         <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                        <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                        <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -329,7 +329,7 @@ const OutdoorLiving = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Materials & Durability</span>
               <h2 className="section-heading mb-4">Built for This Climate.</h2>
-              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">Materials that look great in a showroom don't always hold up at 3,500 feet. We specify for WNC conditions.</p>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">Materials that look great in a showroom don't always hold up at 3,500 feet. We specify for WNC conditions.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -339,7 +339,7 @@ const OutdoorLiving = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -392,7 +392,7 @@ const OutdoorLiving = () => {
                     <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{step.description}</p>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -405,7 +405,7 @@ const OutdoorLiving = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
               <span className="eyebrow mb-3 block">Featured Projects</span>
               <h2 className="section-heading mb-3">Outdoor Spaces We've Built.</h2>
-              <p className="text-foreground/70 text-base font-body max-w-md mx-auto leading-relaxed">Each project was designed for its specific property, climate exposure, and the way the homeowner lives.</p>
+              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">Each project was designed for its specific property, climate exposure, and the way the homeowner lives.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">

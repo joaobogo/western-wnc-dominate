@@ -260,7 +260,7 @@ const ServiceAreas = () => {
                     className="group block bg-card border border-border p-5 hover:border-primary/20 hover:shadow-sm transition-all duration-300"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="w-3.5 h-3.5 text-primary/60" />
+                      <MapPin className="w-3.5 h-3.5 text-primary/80" />
                       <h3 className="font-heading font-semibold text-base text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                     </div>
                     <p className="text-muted-foreground text-xs font-body mb-3">{town.county}</p>

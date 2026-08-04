@@ -124,7 +124,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                     className={`group/item flex items-center justify-between px-3 py-2.5 rounded-sm transition-all duration-200 ${
                       isActive(item.href)
                         ? "bg-secondary/60 text-foreground"
-                        : "text-foreground/65 hover:text-foreground hover:bg-secondary/40"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/40"
                     }`}
                   >
                     <div>

@@ -19,7 +19,7 @@ const BuilderControls = ({ step, total, canNext, submitting, onBack, onNext, nex
         type="button"
         onClick={onBack}
         disabled={step === 0}
-        className="inline-flex items-center gap-1.5 text-[13px] font-body text-foreground/55 hover:text-foreground disabled:opacity-0 disabled:pointer-events-none transition-all"
+        className="inline-flex items-center gap-1.5 text-[13px] font-body text-muted-foreground hover:text-foreground disabled:opacity-0 disabled:pointer-events-none transition-all"
       >
         <ArrowLeft className="w-3.5 h-3.5" /> Back
       </button>

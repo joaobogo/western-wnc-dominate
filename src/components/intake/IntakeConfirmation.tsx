@@ -44,20 +44,20 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
       <h2 className="text-2xl md:text-[28px] font-heading font-bold text-foreground mb-3 tracking-tight">
         {title}
       </h2>
-      <p className="text-foreground/65 text-[14.5px] font-body leading-relaxed max-w-md mx-auto mb-8">
+      <p className="text-muted-foreground text-[14.5px] font-body leading-relaxed max-w-md mx-auto mb-8">
         {body}
       </p>
 
       <div className="text-left bg-background border border-border rounded-md p-5 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-          <h3 className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-foreground/70">
+          <h3 className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">
             {nextStepsTitle}
           </h3>
         </div>
         <ol className="space-y-3">
           {steps.map((s, i) => (
-            <li key={i} className="flex gap-3 text-[13.5px] font-body text-foreground/75 leading-relaxed">
+            <li key={i} className="flex gap-3 text-[13.5px] font-body text-muted-foreground leading-relaxed">
               <span className="text-[hsl(var(--gold-ink))] font-heading font-bold flex-shrink-0">{i + 1}.</span>
               <span>{s}</span>
             </li>
@@ -75,7 +75,7 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
         </a>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-foreground/75 hover:text-foreground font-body text-[13.5px] transition-colors"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground font-body text-[13.5px] transition-colors"
         >
           Return home <ArrowRight className="w-3.5 h-3.5" />
         </Link>

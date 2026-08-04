@@ -119,7 +119,7 @@ const MetalRoofing = () => {
               <div key={b.title} className="border border-border rounded-lg p-6">
                 <b.icon className="w-8 h-8 text-[hsl(var(--gold-ink))] mb-3" />
                 <div className="font-heading font-bold text-xl mb-2">{b.title}</div>
-                <p className="text-foreground/70">{b.body}</p>
+                <p className="text-muted-foreground">{b.body}</p>
               </div>
             ))}
           </div>

@@ -174,7 +174,7 @@ export const ConstructionServiceGrid = ({
       >
         <span className="eyebrow mb-3 block">{eyebrow}</span>
         <h2 className="section-heading mb-4">{heading}</h2>
-        {subheading && <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">{subheading}</p>}
+        {subheading && <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">{subheading}</p>}
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -201,7 +201,7 @@ export const ConstructionServiceGrid = ({
               <div className="mb-4 space-y-1.5">
                 {cat.outcomes.map((outcome) => (
                   <div key={outcome} className="flex items-start gap-2 text-[14px] text-muted-foreground font-body font-medium">
-                    <span className="text-primary/40 mt-0.5">•</span>
+                    <span className="text-primary/80 mt-0.5">•</span>
                     <span>{outcome}</span>
                   </div>
                 ))}
@@ -210,7 +210,7 @@ export const ConstructionServiceGrid = ({
 
             {variant === "detailed" && cat.designNote && (
               <div className="mb-4 pt-3 border-t border-border/60">
-                <p className="text-[13px] text-foreground/70 font-body italic leading-snug">
+                <p className="text-[13px] text-muted-foreground font-body italic leading-snug">
                   {cat.designNote}{" "}
                   <Link to="/construction/design" className="not-italic font-semibold text-primary hover:underline">
                     View design phases →
@@ -285,7 +285,7 @@ export const ConstructionComparison = ({
                 <div className="space-y-1.5">
                   {cat.outcomes.map((o) => (
                     <div key={o} className="flex items-start gap-2 text-[14px] text-muted-foreground font-body font-medium">
-                      <span className="text-primary/40 mt-0.5">✓</span>
+                      <span className="text-primary/80 mt-0.5">✓</span>
                       <span>{o}</span>
                     </div>
                   ))}
@@ -297,7 +297,7 @@ export const ConstructionComparison = ({
                 <div className="space-y-1.5">
                   {cat.trustPoints.map((t) => (
                     <div key={t} className="flex items-start gap-2 text-[14px] text-muted-foreground font-body font-medium">
-                      <span className="text-primary/40 mt-0.5">•</span>
+                      <span className="text-primary/80 mt-0.5">•</span>
                       <span>{t}</span>
                     </div>
                   ))}

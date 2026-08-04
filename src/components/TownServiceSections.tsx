@@ -61,7 +61,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
           <ScrollReveal variant="rise-subtle" delay={0.2}>
             <div className="flex flex-col h-full bg-secondary/30 border border-border p-10 group relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
               <div className="w-16 h-16 bg-primary/5 flex items-center justify-center mb-8 border border-primary/5">
-                <Compass className="w-8 h-8 text-primary/60" />
+                <Compass className="w-8 h-8 text-primary/80" />
               </div>
               <h2 className="text-3xl font-heading font-bold mb-6 text-foreground leading-tight">Design & Support in <br />{town.name}</h2>
               <p className="text-muted-foreground font-body leading-relaxed mb-10 text-sm">

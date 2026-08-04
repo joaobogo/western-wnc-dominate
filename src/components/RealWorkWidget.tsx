@@ -98,7 +98,7 @@ const RealWorkWidget = ({
           >
             {heading}
           </h2>
-          <p className="text-foreground/75 text-lg leading-relaxed">{description}</p>
+          <p className="text-muted-foreground text-lg leading-relaxed">{description}</p>
         </div>
 
         <div className="relative">
@@ -111,7 +111,7 @@ const RealWorkWidget = ({
           />
 
           {status === "loading" && (
-            <div className="flex items-center justify-center gap-3 py-14 text-foreground/75 text-sm font-body">
+            <div className="flex items-center justify-center gap-3 py-14 text-muted-foreground text-sm font-body">
               <Loader2 className="w-4 h-4 animate-spin text-[hsl(var(--heritage-green))]" aria-hidden="true" />
               <span>Loading recent project updates…</span>
             </div>
@@ -125,7 +125,7 @@ const RealWorkWidget = ({
                   <h3 className="text-base md:text-lg font-heading font-bold text-foreground mb-2">
                     Recent project updates are temporarily unavailable
                   </h3>
-                  <p className="text-sm md:text-base text-foreground/75 leading-relaxed">
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     You can still explore our project gallery or contact Highlander to talk through your roofing,
                     construction, gutter, or exterior project.
                   </p>

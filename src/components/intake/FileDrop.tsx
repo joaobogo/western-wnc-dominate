@@ -39,7 +39,7 @@ const FileDrop = ({ files, onChange, accept = "image/*", helper, maxFiles = 8, l
         <p className="text-[13.5px] font-body font-semibold text-foreground/80">
           Drop files or click to upload
         </p>
-        {helper && <p className="text-[11.5px] text-foreground/70 mt-1 font-body">{helper}</p>}
+        {helper && <p className="text-[11.5px] text-muted-foreground mt-1 font-body">{helper}</p>}
       </button>
       <input
         ref={inputRef}
@@ -60,12 +60,12 @@ const FileDrop = ({ files, onChange, accept = "image/*", helper, maxFiles = 8, l
                 ? <ImageIcon className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true" />
                 : <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true" />}
               <span className="text-[12.5px] font-body text-foreground/80 truncate flex-1">{f.name}</span>
-              <span className="text-[11px] text-foreground/75 font-body">{(f.size / 1024 / 1024).toFixed(1)}MB</span>
+              <span className="text-[11px] text-muted-foreground font-body">{(f.size / 1024 / 1024).toFixed(1)}MB</span>
               <button
                 type="button"
                 aria-label={`Remove ${f.name}`}
                 onClick={(e) => { e.stopPropagation(); remove(i); }}
-                className="min-h-11 min-w-11 flex items-center justify-center text-foreground/75 hover:text-foreground transition-colors"
+                className="min-h-11 min-w-11 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
               >
                 <X className="w-3.5 h-3.5" aria-hidden="true" />
               </button>

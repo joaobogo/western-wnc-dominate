@@ -130,7 +130,7 @@ const Reviews = () => {
                    "{t.reviewBody}"
                 </p>
 
-                <p className="text-[11px] text-primary/60 font-body font-medium mb-4 leading-snug">
+                <p className="text-[11px] text-primary/80 font-body font-medium mb-4 leading-snug">
                   {t.outcome}
                 </p>
 

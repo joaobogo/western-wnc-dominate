@@ -71,7 +71,7 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
                 )}
               </div>
               {o.sub && (
-                <p className="text-[11.5px] text-foreground/55 mt-1 font-body leading-snug">{o.sub}</p>
+                <p className="text-[11.5px] text-muted-foreground mt-1 font-body leading-snug">{o.sub}</p>
               )}
             </div>
           </button>

@@ -119,7 +119,7 @@ const ProjectPathfinder = () => {
                   <button onClick={reset} className="flex items-center gap-1.5 text-sm font-body text-muted-foreground hover:text-foreground transition-colors">
                     <ArrowLeft className="w-3.5 h-3.5" /> Back
                   </button>
-                  <span className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-primary/60">
+                  <span className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-primary/80">
                     {step === "roofing" ? "Roofing Services" : "Construction Services"}
                   </span>
                 </div>
@@ -164,8 +164,8 @@ const ProjectPathfinder = () => {
                   <div className="px-6 md:px-8 py-5 bg-secondary/30">
                     <div className="flex flex-wrap gap-3 mb-6">
                       {result.highlights.map((h) => (
-                        <span key={h} className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-foreground/70 bg-background border border-border rounded-sm px-3 py-1.5">
-                          <CheckCircle className="w-3 h-3 text-primary/40" /> {h}
+                        <span key={h} className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-muted-foreground bg-background border border-border rounded-sm px-3 py-1.5">
+                          <CheckCircle className="w-3 h-3 text-primary/80" /> {h}
                         </span>
                       ))}
                     </div>

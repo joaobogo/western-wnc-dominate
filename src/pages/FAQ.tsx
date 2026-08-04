@@ -271,7 +271,7 @@ const FAQ = () => {
           <div className="container-tight py-3 overflow-x-auto">
             <div className="flex gap-2 min-w-max">
               {categories.map((c) => (
-                <a key={c.id} href={`#${c.id}`} className="text-xs md:text-sm font-body font-bold uppercase tracking-wider px-3 py-2 text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-sm transition-colors whitespace-nowrap">
+                <a key={c.id} href={`#${c.id}`} className="text-xs md:text-sm font-body font-bold uppercase tracking-wider px-3 py-2 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-sm transition-colors whitespace-nowrap">
                   {c.label}
                 </a>
               ))}

@@ -279,11 +279,11 @@ const CommercialRoofing = () => {
                 <motion.div key={sys.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <h3 className="font-heading font-bold text-foreground text-base mb-3 group-hover:text-primary transition-colors">{sys.title}</h3>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-4">{sys.description}</p>
-                  <p className="text-xs font-body font-semibold text-primary/60 uppercase tracking-wider mb-3">Best for: {sys.bestFor}</p>
+                  <p className="text-xs font-body font-semibold text-primary/80 uppercase tracking-wider mb-3">Best for: {sys.bestFor}</p>
                   <ul className="space-y-1.5">
                     {sys.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2">
-                        <CheckCircle className="w-3.5 h-3.5 mt-0.5 text-primary/40 flex-shrink-0" />
+                        <CheckCircle className="w-3.5 h-3.5 mt-0.5 text-primary/80 flex-shrink-0" />
                         <span className="text-muted-foreground text-xs font-body">{h}</span>
                       </li>
                     ))}

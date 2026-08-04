@@ -110,7 +110,7 @@ export const TestimonialCard = ({
 
       {/* Compact outcome */}
       {outcome && isCompact && (
-        <p className={cn("text-[11px] font-body font-medium mb-4 leading-snug", isDark ? "text-[hsl(var(--highland-gold)/0.9)]" : "text-primary/60")}>
+        <p className={cn("text-[11px] font-body font-medium mb-4 leading-snug", isDark ? "text-[hsl(var(--highland-gold)/0.9)]" : "text-primary/80")}>
           {outcome}
         </p>
       )}

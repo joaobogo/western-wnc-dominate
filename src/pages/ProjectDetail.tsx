@@ -183,7 +183,7 @@ const ProjectDetailPage = () => {
                   <div className="space-y-4">
                     {project.processHighlights.map((highlight, i) => (
                       <div key={i} className="flex gap-4 p-5 bg-secondary/20 border border-border/50">
-                        <span className="text-2xl font-heading font-bold text-primary/30">{String(i + 1).padStart(2, '0')}</span>
+                        <span className="text-2xl font-heading font-bold text-primary/80">{String(i + 1).padStart(2, '0')}</span>
                         <p className="text-foreground font-medium italic">{highlight}</p>
                       </div>
                     ))}

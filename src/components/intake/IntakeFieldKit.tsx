@@ -30,7 +30,7 @@ export const Label = ({
 );
 
 export const Helper = ({ children }: { children: ReactNode }) => (
-  <p className="text-[13px] md:text-[14px] text-foreground/75 mt-1.5 font-body leading-snug">{children}</p>
+  <p className="text-[13px] md:text-[14px] text-muted-foreground mt-1.5 font-body leading-snug">{children}</p>
 );
 
 /** Inline, per-field validation message. Always rendered under the input. */
@@ -51,7 +51,7 @@ export const Input = ({ invalid, ...props }: InputProps) => (
   <input
     {...props}
     aria-invalid={invalid || undefined}
-    className={`w-full bg-background border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-foreground/75 focus:outline-none focus:ring-2 transition-colors ${
+    className={`w-full bg-background border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-colors ${
       invalid
         ? "border-destructive focus:border-destructive focus:ring-destructive/20"
         : "border-border focus:border-[hsl(var(--highland-gold))] focus:ring-[hsl(var(--highland-gold)/0.15)]"
@@ -62,7 +62,7 @@ export const Input = ({ invalid, ...props }: InputProps) => (
 export const Textarea = (props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
   <textarea
     {...props}
-    className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-foreground/75 focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors resize-none"
+    className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors resize-none"
   />
 );
 
@@ -107,11 +107,11 @@ export const ChipGroup = ({
             className={`text-left rounded-none border px-5 py-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold))] focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
               active
                 ? "border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] text-foreground"
-                : "border-border bg-background text-foreground/75 hover:border-foreground/30"
+                : "border-border bg-background text-muted-foreground hover:border-foreground/30"
             }`}
           >
             <div className="text-[15px] md:text-[16px] font-body font-bold leading-tight">{o.label}</div>
-            {o.sub && <div className="text-[11.5px] text-foreground/70 mt-0.5 font-body">{o.sub}</div>}
+            {o.sub && <div className="text-[11.5px] text-muted-foreground mt-0.5 font-body">{o.sub}</div>}
           </button>
         );
       })}

@@ -35,7 +35,7 @@ const ConstructionIntake = () => (
             <p className="text-foreground/85 text-base md:text-lg font-body leading-relaxed mb-4">
               If you are planning an addition, garage, porch, outdoor living space, remodel, or new construction project, Highlander may recommend starting with a paid <Link to="/construction/design" className="text-primary font-semibold hover:underline">Design &amp; Consultation Agreement</Link>. This helps define the scope, create useful drawings, understand realistic budget ranges, and prepare the project for estimating, permitting, and construction.
             </p>
-            <p className="text-foreground/70 text-sm md:text-base font-body leading-relaxed mb-6">
+            <p className="text-muted-foreground text-sm md:text-base font-body leading-relaxed mb-6">
               Still exploring? That is okay. Tell us what you are considering, and we will help you understand the right next step.
             </p>
             <Link

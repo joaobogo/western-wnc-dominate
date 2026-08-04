@@ -363,7 +363,7 @@ const StormDamage = () => {
                   <ul className="space-y-3.5">
                     {insurancePoints.map((point) => (
                       <li key={point} className="flex items-start gap-3">
-                        <CheckCircle className="w-4 h-4 mt-0.5 text-primary/50 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
                         <span className="text-muted-foreground text-[13px] font-body leading-snug">{point}</span>
                       </li>
                     ))}
@@ -407,7 +407,7 @@ const StormDamage = () => {
                     <ul className="space-y-3">
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 mt-0.5 text-primary/50 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
                           <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}

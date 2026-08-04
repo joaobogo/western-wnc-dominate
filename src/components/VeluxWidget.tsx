@@ -161,7 +161,7 @@ const VeluxWidget = ({
             {eyebrow}
           </div>
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">{heading}</h2>
-          <p className="text-foreground/75 leading-relaxed">{description}</p>
+          <p className="text-muted-foreground leading-relaxed">{description}</p>
         </div>
         <div ref={hostRef} hidden={blocked} />
         {blocked && (

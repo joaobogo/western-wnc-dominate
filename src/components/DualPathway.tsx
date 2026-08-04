@@ -220,7 +220,7 @@ const DivisionCard = ({ data, accent, index }: {
               className="flex items-center gap-2 group/item"
             >
               <service.icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors duration-200 ${
-                isGold ? "text-[hsl(var(--highland-gold)/0.9)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/40 group-hover/item:text-primary/70"
+                isGold ? "text-[hsl(var(--highland-gold)/0.9)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/80 group-hover/item:text-primary/70"
               }`} />
               <span className="text-[14px] md:text-[15px] text-foreground/80 font-body font-bold leading-tight">
                 {service.name}

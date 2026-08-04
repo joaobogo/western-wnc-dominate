@@ -243,7 +243,7 @@ const ConstructionDesign = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-foreground/65 text-[13.5px] italic font-body">
+                <p className="mt-6 text-muted-foreground text-[13.5px] italic font-body">
                   Still exploring? You're welcome here. Phase 1 is built for homeowners who are still figuring out what to build and what it might cost.
                 </p>
               </ScrollReveal>
@@ -257,7 +257,7 @@ const ConstructionDesign = () => {
             <div className="max-w-2xl mx-auto text-center mb-12">
               <span className="eyebrow text-[hsl(var(--gold-ink))] mb-3 block">The Three Design Phases</span>
               <h2 className="section-heading mb-4">A Clear, Sequential Path From Idea to Build.</h2>
-              <p className="text-foreground/75 text-base font-body">Each phase has fixed pricing, defined deliverables, and a clear timeline. You decide at each step whether to continue.</p>
+              <p className="text-muted-foreground text-base font-body">Each phase has fixed pricing, defined deliverables, and a clear timeline. You decide at each step whether to continue.</p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-5">
@@ -282,12 +282,12 @@ const ConstructionDesign = () => {
                   <h3 className="font-heading font-bold text-foreground text-xl md:text-[1.4rem] mb-3 leading-tight">{p.title}</h3>
 
                   <div className="mb-5">
-                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-foreground/55 mb-1">Who it's for</div>
+                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-1">Who it's for</div>
                     <p className="text-foreground/80 text-[14px] font-body leading-relaxed">{p.forWho}</p>
                   </div>
 
                   <div className="mb-5 flex-1">
-                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-foreground/55 mb-2">What you get</div>
+                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-2">What you get</div>
                     <ul className="space-y-1.5">
                       {p.deliverables.map((d) => (
                         <li key={d} className="flex items-start gap-2 text-[13.5px] text-foreground/80 font-body">
@@ -300,13 +300,13 @@ const ConstructionDesign = () => {
 
                   <div className="border-t border-border pt-4 space-y-3">
                     <div>
-                      <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-foreground/55 mb-1">
+                      <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground mb-1">
                         <CheckCircle className="w-3 h-3" /> Best fit
                       </div>
                       <p className="text-foreground/80 text-[13px] font-body leading-snug">{p.bestFit}</p>
                     </div>
                     <div>
-                      <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-foreground/55 mb-1">
+                      <div className="flex items-center gap-1.5 text-[10px] font-body font-bold uppercase tracking-[0.15em] text-muted-foreground mb-1">
                         <Clock className="w-3 h-3" /> Timeline
                       </div>
                       <div className="font-heading font-bold text-foreground text-sm leading-tight">{p.timeline}</div>
@@ -330,7 +330,7 @@ const ConstructionDesign = () => {
             </div>
 
             <div className="max-w-3xl mx-auto mt-4 bg-secondary/40 border border-border p-5 md:p-6">
-              <p className="text-foreground/75 text-[14px] font-body leading-relaxed">
+              <p className="text-muted-foreground text-[14px] font-body leading-relaxed">
                 <span className="font-heading font-bold text-foreground">Pricing is determined by project scope.</span> The appropriate design phase depends on project type, readiness, and existing documentation. Fixed phase pricing and deliverables are reviewed and confirmed during the Design &amp; Consultation Agreement process — after Highlander reviews your project details.
               </p>
             </div>
@@ -499,7 +499,7 @@ const ConstructionDesign = () => {
                     <span>{f.question}</span>
                     <ChevronRight className="w-4 h-4 text-[hsl(var(--gold-ink))] group-open:rotate-90 transition-transform flex-shrink-0" />
                   </summary>
-                  <p className="text-foreground/75 text-[14.5px] font-body leading-relaxed mt-3">{f.answer}</p>
+                  <p className="text-muted-foreground text-[14.5px] font-body leading-relaxed mt-3">{f.answer}</p>
                 </details>
               ))}
             </div>

@@ -32,7 +32,7 @@ const ReviewCard = ({ rows, children }: Props) => {
           )}
           {filled.map((r) => (
             <div key={r.label} className="px-5 py-3 grid grid-cols-[120px,1fr] sm:grid-cols-[160px,1fr] gap-3 items-start">
-              <dt className="text-[10.5px] font-body font-bold uppercase tracking-[0.18em] text-foreground/55 pt-0.5">
+              <dt className="text-[10.5px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground pt-0.5">
                 {r.label}
               </dt>
               <dd className="text-[13px] font-body text-foreground/90 leading-snug">

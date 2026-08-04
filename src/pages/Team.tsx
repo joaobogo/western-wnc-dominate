@@ -51,7 +51,7 @@ const Team = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight mb-5">
               Every Team Member Makes a Difference
             </h2>
-            <p className="text-foreground/75 text-base md:text-lg leading-relaxed font-body">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body">
               Highlander is family-owned, but the company is powered by a broader team of local professionals who each play a role in serving customers well. From leadership and financial management to sales, inspections, repairs, project coordination, scheduling, drone documentation, and field support, every role matters.
             </p>
           </div>

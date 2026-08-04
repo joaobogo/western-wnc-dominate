@@ -227,7 +227,7 @@ const ServiceTownPage = ({
               <h3 className="font-heading font-bold text-xl mb-2">
                 {entry.serviceLabel} in {town.name}
               </h3>
-              <p className="text-sm text-foreground/70 mb-4">
+              <p className="text-sm text-muted-foreground mb-4">
                 Tell us the basics. A project advisor responds within as soon as possible — most {town.name} assessments are on the calendar inside 48 hours.
               </p>
               <InspectionForm />

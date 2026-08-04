@@ -106,7 +106,7 @@ const BuilderPromoBlock = ({
               <h3 className="font-heading font-bold text-foreground text-[26px] md:text-[32px] leading-[1.1] tracking-tight mb-3">
                 {_title}
               </h3>
-              <p className="text-foreground/65 text-[14.5px] md:text-[15px] font-body leading-relaxed max-w-xl mb-6">
+              <p className="text-muted-foreground text-[14.5px] md:text-[15px] font-body leading-relaxed max-w-xl mb-6">
                 {_body}
               </p>
 
@@ -116,7 +116,7 @@ const BuilderPromoBlock = ({
                   return (
                   <li
                     key={label}
-                    className="flex items-center gap-2 text-[12.5px] font-body text-foreground/70 border border-border/60 rounded-sm px-3 py-2 bg-background/60"
+                    className="flex items-center gap-2 text-[12.5px] font-body text-muted-foreground border border-border/60 rounded-sm px-3 py-2 bg-background/60"
                   >
                     <Icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
                     {label}
@@ -135,7 +135,7 @@ const BuilderPromoBlock = ({
                 </Link>
                 <Link
                   to={_secHref}
-                  className="text-foreground/70 hover:text-[hsl(var(--gold-ink))] text-[13px] font-semibold underline underline-offset-4 decoration-border hover:decoration-accent transition-colors"
+                  className="text-muted-foreground hover:text-[hsl(var(--gold-ink))] text-[13px] font-semibold underline underline-offset-4 decoration-border hover:decoration-accent transition-colors"
                 >
                   {_secLabel}
                 </Link>
@@ -153,13 +153,13 @@ const BuilderPromoBlock = ({
                     <span className="font-heading text-[hsl(var(--gold-ink))] text-[13px] font-bold tracking-wider mt-0.5">
                       {n}
                     </span>
-                    <span className="text-foreground/75 text-[13.5px] font-body leading-snug">
+                    <span className="text-muted-foreground text-[13.5px] font-body leading-snug">
                       {t}
                     </span>
                   </div>
                 ))}
               </div>
-              <p className="text-foreground/70 text-[11px] font-body uppercase tracking-[0.18em] mt-6">
+              <p className="text-muted-foreground text-[11px] font-body uppercase tracking-[0.18em] mt-6">
                 ~3 minutes · Optional
               </p>
             </div>

@@ -118,7 +118,7 @@ const Skylights = () => {
                 <Award className="w-4 h-4" /> Manufacturer-Accredited Scope
               </div>
               <h2 className="text-2xl md:text-3xl font-heading font-bold">What VELUX Certified installation includes</h2>
-              <p className="text-foreground/70">
+              <p className="text-muted-foreground">
                 A VELUX Certified Installer is trained and accredited by VELUX to install their skylights to spec — flashing kit, underlayment integration, fasteners, and interior shaft all coordinated as one assembly. That's what makes the VELUX installation warranty stick.
               </p>
               <ul className="space-y-3">
@@ -139,7 +139,7 @@ const Skylights = () => {
             <div className="max-w-2xl mb-10">
               <div className="text-[hsl(var(--gold-ink))] text-sm font-semibold uppercase tracking-wider mb-3">Common Skylight Issues</div>
               <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">What we actually see in the field</h2>
-              <p className="text-foreground/70">
+              <p className="text-muted-foreground">
                 Most "bad skylight" calls aren't a defective skylight. Here's what's really happening — and how we diagnose it before recommending a replacement.
               </p>
             </div>
@@ -148,7 +148,7 @@ const Skylights = () => {
                 <div key={i.title} className="border border-border rounded-lg p-6 bg-background">
                   <i.icon className="w-7 h-7 text-[hsl(var(--gold-ink))] mb-3" />
                   <div className="font-heading font-bold text-lg mb-2">{i.title}</div>
-                  <p className="text-foreground/70 text-sm leading-relaxed">{i.body}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{i.body}</p>
                 </div>
               ))}
             </div>
@@ -173,7 +173,7 @@ const Skylights = () => {
               ].map((s) => (
                 <Link key={s.href} to={s.href} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
                   <div className="font-heading font-bold mb-1 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{s.title}</div>
-                  <p className="text-sm text-foreground/65">{s.desc}</p>
+                  <p className="text-sm text-muted-foreground">{s.desc}</p>
                 </Link>
               ))}
             </div>
@@ -184,7 +184,7 @@ const Skylights = () => {
         <section className="section-padding bg-muted/20">
           <div className="container-tight">
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight service across the Western NC mountains</h2>
-            <p className="text-foreground/70 mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our 10-county service area in Western North Carolina.</p>
+            <p className="text-muted-foreground mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our 10-county service area in Western North Carolina.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {towns.map((t) => (
                 <Link

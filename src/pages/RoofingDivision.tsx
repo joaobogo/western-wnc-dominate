@@ -528,7 +528,7 @@ const RoofingDivision = () => {
                         <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center group-hover:bg-primary/14 transition-colors">
                           <service.icon className="w-5 h-5 text-primary" />
                         </div>
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] text-primary/40 group-hover:text-primary/60 transition-opacity">
+                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] text-primary/80 group-hover:text-primary/80 transition-opacity">
                           Roofing
                         </span>
                       </div>
@@ -542,7 +542,7 @@ const RoofingDivision = () => {
 
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {service.features.map((f) => (
-                          <span key={f} className="text-[10px] font-body font-medium text-primary/60 bg-primary/5 px-2 py-0.5 rounded-none">
+                          <span key={f} className="text-[10px] font-body font-medium text-primary/80 bg-primary/5 px-2 py-0.5 rounded-none">
                             {f}
                           </span>
                         ))}
@@ -654,12 +654,12 @@ const RoofingDivision = () => {
                   <div className="flex items-center gap-4 pt-3 border-t border-border/60">
                     <div>
                       <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Brand</span>
-                      <p className="text-xs font-body font-medium text-foreground/70">{mat.brand}</p>
+                      <p className="text-xs font-body font-medium text-muted-foreground">{mat.brand}</p>
                     </div>
                     <div className="h-6 w-px bg-border" />
                     <div>
                       <span className="text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">Best For</span>
-                      <p className="text-xs font-body font-medium text-foreground/70">{mat.best}</p>
+                      <p className="text-xs font-body font-medium text-muted-foreground">{mat.best}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -821,7 +821,7 @@ const RoofingDivision = () => {
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-xl text-foreground">Targeted Repair</h3>
-                      <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-primary/50">When it makes sense</span>
+                      <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-primary/80">When it makes sense</span>
                     </div>
                   </div>
                   <ul className="space-y-3 mb-6">

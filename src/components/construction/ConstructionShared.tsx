@@ -154,7 +154,7 @@ export const ConstructionCredentialStrip = ({ className = "" }: { className?: st
       { icon: Star, text: "Design-Build" },
     ].map((item) => (
       <div key={item.text} className="flex items-center gap-2">
-        <item.icon className="w-3.5 h-3.5 text-primary/30" />
+        <item.icon className="w-3.5 h-3.5 text-primary/80" />
         <span className="text-muted-foreground text-xs font-body font-medium">{item.text}</span>
       </div>
     ))}

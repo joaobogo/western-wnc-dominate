@@ -290,7 +290,7 @@ const ConstructionDivision = () => {
                 </div>
                 <div className="mt-8 flex items-start gap-3 p-4 border-l-2 border-[hsl(var(--highland-gold)/0.5)] bg-card/40">
                   <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
-                  <p className="text-foreground/75 text-sm font-body leading-relaxed">
+                  <p className="text-muted-foreground text-sm font-body leading-relaxed">
                     Already have complete plans? Highlander can review them and determine whether your project is ready to move toward estimating.
                   </p>
                 </div>
@@ -347,7 +347,7 @@ const ConstructionDivision = () => {
               <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
                 <span className="eyebrow mb-3 block">Our Approach</span>
                 <h2 className="section-heading mb-4">How Highlander<br className="hidden md:block" /> Approaches Construction.</h2>
-                <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
+                <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
                   Every project begins with four commitments that define how we work — and why the outcome is different.
                 </p>
               </div>
@@ -416,7 +416,7 @@ const ConstructionDivision = () => {
               <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
                 <span className="eyebrow mb-3 block">Why Highlander</span>
                 <h2 className="section-heading mb-4">What Makes This<br className="hidden md:block" /> Different.</h2>
-                <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
+                <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
                   Not just another name on a truck. A company built on documented systems, staffed with in-house craftsmen, and rooted in Western North Carolina's mountains.
                 </p>
               </div>

@@ -58,7 +58,7 @@ const DesignProgramPromo = ({
         <h3 className="font-heading font-bold text-foreground text-lg md:text-xl mb-3 leading-tight">
           A paid planning program for serious builds.
         </h3>
-        <p className="text-foreground/75 text-sm md:text-[15px] font-body leading-relaxed mb-5">
+        <p className="text-muted-foreground text-sm md:text-[15px] font-body leading-relaxed mb-5">
           Three phases — scope, plans &amp; 3D views, then a permit set. A portion of design fees can credit toward construction when you build with Highlander.
         </p>
         <Link
@@ -83,14 +83,14 @@ const DesignProgramPromo = ({
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight mb-4">
                 {heading}
               </h2>
-              <p className="text-foreground/75 text-base font-body leading-relaxed mb-6 max-w-xl">
+              <p className="text-muted-foreground text-base font-body leading-relaxed mb-6 max-w-xl">
                 {subheading}
               </p>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6">
                 {["Three design phases", "Permit set + construction documents", "Design fees can credit toward your build"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
-                    <span className="text-[12.5px] font-body text-foreground/70">{item}</span>
+                    <span className="text-[12.5px] font-body text-muted-foreground">{item}</span>
                   </div>
                 ))}
               </div>
@@ -110,7 +110,7 @@ const DesignProgramPromo = ({
                   <div>
                     <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-0.5">{p.label}</div>
                     <div className="font-heading font-bold text-foreground text-sm mb-0.5">{p.title}</div>
-                    <p className="text-foreground/65 text-[12.5px] font-body leading-relaxed">{p.detail}</p>
+                    <p className="text-muted-foreground text-[12.5px] font-body leading-relaxed">{p.detail}</p>
                   </div>
                 </li>
               ))}
@@ -127,7 +127,7 @@ const DesignProgramPromo = ({
         <div className="max-w-2xl mx-auto text-center mb-12">
           <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Design & Consultation Agreement</span>
           <h2 className="section-heading mb-5">{heading}</h2>
-          <p className="text-foreground/75 text-base md:text-lg font-body leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg font-body leading-relaxed">
             {subheading}
           </p>
         </div>
@@ -148,13 +148,13 @@ const DesignProgramPromo = ({
               </div>
               <div className="text-[10px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))] mb-1.5">{p.label}</div>
               <h3 className="font-heading font-bold text-foreground text-lg mb-2 leading-tight">{p.title}</h3>
-              <p className="text-foreground/75 text-sm font-body leading-relaxed">{p.detail}</p>
+              <p className="text-muted-foreground text-sm font-body leading-relaxed">{p.detail}</p>
             </motion.div>
           ))}
         </div>
 
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-foreground/65 text-[14px] font-body italic mb-5">
+          <p className="text-muted-foreground text-[14px] font-body italic mb-5">
             A portion of design fees can credit toward your construction agreement when you build with Highlander — a true design-build advantage.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

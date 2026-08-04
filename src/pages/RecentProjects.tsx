@@ -113,7 +113,7 @@ const RecentProjects = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
                 Built for Mountain Homes, Weather, and Real-World Conditions
               </h2>
-              <p className="text-foreground/75 text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 From steep rooflines and storm repairs to additions, gutters, porches, and outdoor living
                 spaces, Highlander's work is shaped by the homes, terrain, and weather patterns of
                 Western North Carolina.
@@ -140,7 +140,7 @@ const RecentProjects = () => {
                       </div>
                       <h3 className="text-lg font-heading font-bold text-foreground">{card.title}</h3>
                     </div>
-                    <p className="text-sm text-foreground/70 leading-relaxed mb-4">{card.desc}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">{card.desc}</p>
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--heritage-green))] group-hover:gap-2.5 transition-all">
                       Learn more <ArrowRight className="w-3.5 h-3.5" />
                     </span>
@@ -161,7 +161,7 @@ const RecentProjects = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
                 Real WNC Homes. Real Highlander Work.
               </h2>
-              <p className="text-foreground/75 text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 These aren't stock photos. Every image below represents a real Western North Carolina
                 home we've protected — across metal, shingle, cedar shake, and mixed-material roofing systems.
               </p>
@@ -189,10 +189,10 @@ const RecentProjects = () => {
                       <h3 className="text-base font-heading font-bold text-foreground mb-2 leading-snug group-hover:text-[hsl(var(--heritage-green))] transition-colors">
                         {p.title}
                       </h3>
-                      <p className="text-sm text-foreground/70 leading-relaxed mb-4 line-clamp-3">
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
                         {p.description}
                       </p>
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-foreground/55 font-body">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground font-body">
                         <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {p.location}</span>
                         <span className="flex items-center gap-1"><Ruler className="w-3 h-3" /> {p.scope}</span>
                         <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {p.duration}</span>
@@ -232,7 +232,7 @@ const RecentProjects = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
                 What Project Type Are You Planning?
               </h2>
-              <p className="text-foreground/75 text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 Tell us roughly what you're trying to solve and we'll route you to the right Highlander team.
               </p>
             </div>
@@ -259,7 +259,7 @@ const RecentProjects = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
                 Serving Franklin, Highlands, Cashiers, Sylva, and Western North Carolina
               </h2>
-              <p className="text-foreground/75 text-lg leading-relaxed mb-8">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 Highlander serves homeowners across Western North Carolina with roofing, construction,
                 gutter, and exterior services built for mountain communities.
               </p>

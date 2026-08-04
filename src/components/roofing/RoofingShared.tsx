@@ -122,7 +122,7 @@ const defaultSidebarItems: TrustSidebarItem[] = [
 
 export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSidebarItem[] }) => (
   <div className="bg-card border border-border rounded-sm p-5 md:p-6 space-y-4">
-    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60 mb-2">Why Highlander</h4>
+    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-2">Why Highlander</h4>
     {items.map((item) => (
       <div key={item.label} className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">
@@ -152,7 +152,7 @@ export const CredentialStrip = ({ className = "" }: { className?: string }) => (
       { icon: Star, text: "Warrantied Work" },
     ].map((item) => (
       <div key={item.text} className="flex items-center gap-2">
-        <item.icon className="w-3.5 h-3.5 text-primary/30" />
+        <item.icon className="w-3.5 h-3.5 text-primary/80" />
         <span className="text-muted-foreground text-xs font-body font-medium">{item.text}</span>
       </div>
     ))}

@@ -524,7 +524,7 @@ const BlogPostPage = () => {
                     <div className="space-y-2">
                       {takeaways.map((t, i) => (
                         <p key={i} className="text-muted-foreground text-xs font-body leading-relaxed flex items-start gap-2">
-                          <span className="text-[10px] font-heading font-bold text-primary/40 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
+                          <span className="text-[10px] font-heading font-bold text-primary/80 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
                           {t}
                         </p>
                       ))}

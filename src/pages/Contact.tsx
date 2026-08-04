@@ -594,7 +594,7 @@ export default function Contact() {
                           <div className="w-8 h-8 bg-accent/8 flex items-center justify-center flex-shrink-0">
                             <t.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]/60" />
                           </div>
-                          <span className="text-sm text-foreground/70 font-body">{t.text}</span>
+                          <span className="text-sm text-muted-foreground font-body">{t.text}</span>
                         </motion.div>
                       ))}
                     </div>
