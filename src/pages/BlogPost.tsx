@@ -71,44 +71,77 @@ const inlineMarkdown = (text: string) =>
   linkify(text.replace(/\*\*(.*?)\*\*/g, "<strong class='text-foreground'>$1</strong>"));
 
 const renderContent = (content: string) => {
-  return content.split("\n").map((line, i) => {
+  const lines = content.split("\n");
+  const nodes: JSX.Element[] = [];
+  // Buffer consecutive list lines so every <li> lands inside a real <ul>/<ol>.
+  let listBuffer: { type: "ul" | "ol"; items: JSX.Element[]; start: number } | null = null;
+
+  const flushList = () => {
+    if (!listBuffer) return;
+    const { type, items, start } = listBuffer;
+    listBuffer = null;
+    nodes.push(
+      type === "ul" ? (
+        <ul key={`ul-${start}`} className="mb-4 space-y-0">
+          {items}
+        </ul>
+      ) : (
+        <ol key={`ol-${start}`} className="mb-4 space-y-0 list-decimal ml-5">
+          {items}
+        </ol>
+      ),
+    );
+  };
+
+  const pushItem = (type: "ul" | "ol", index: number, item: JSX.Element) => {
+    if (!listBuffer || listBuffer.type !== type) {
+      flushList();
+      listBuffer = { type, items: [], start: index };
+    }
+    listBuffer.items.push(item);
+  };
+
+  lines.forEach((line, i) => {
     if (line.startsWith("## "))
-      return (
+      { flushList(); nodes.push(
         <h2 key={i} className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-4">
           {line.replace("## ", "")}
         </h2>
-      );
+      ); return; }
     if (line.startsWith("### "))
-      return (
+      { flushList(); nodes.push(
         <h3 key={i} className="text-lg font-heading font-semibold text-foreground mt-7 mb-3">
           {line.replace("### ", "")}
         </h3>
-      );
+      ); return; }
     if (line.startsWith("- "))
-      return (
+      { pushItem("ul", i,
         <li key={i} className="text-muted-foreground mb-2 flex items-start gap-2">
-          <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" />
+          <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
           <span dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace("- ", "")) }} />
         </li>
-      );
+      ); return; }
     if (line.match(/^\d+\. /))
-      return (
+      { pushItem("ol", i,
         <li
           key={i}
-          className="text-muted-foreground mb-2.5 list-decimal ml-5 leading-relaxed"
+          className="text-muted-foreground mb-2.5 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace(/^\d+\. /, "")) }}
         />
-      );
-    if (line.trim() === "") return <div key={i} className="h-2" />;
+      ); return; }
+    flushList();
+    if (line.trim() === "") { nodes.push(<div key={i} className="h-2" />); return; }
     const boldProcessed = inlineMarkdown(line);
-    return (
+    nodes.push(
       <p
         key={i}
         className="text-muted-foreground leading-relaxed mb-4"
         dangerouslySetInnerHTML={{ __html: boldProcessed }}
-      />
+      />,
     );
   });
+  flushList();
+  return nodes;
 };
 
 const BlogPostPage = () => {
