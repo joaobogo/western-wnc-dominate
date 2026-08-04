@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import StormResponseGuide from "@/components/StormResponseGuide";
 
-import heroImg from "@/assets/gallery/asphalt-005.jpg";
+import heroImg from "@/assets/gallery/asphalt-005.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 
 /* ═══════════════════════════════════════════

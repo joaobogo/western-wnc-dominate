@@ -16,15 +16,15 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
-import asphalt001 from "@/assets/gallery/asphalt-001.jpg";
-import asphalt005 from "@/assets/gallery/asphalt-005.jpg";
+import asphalt001 from "@/assets/gallery/asphalt-001.webp";
+import asphalt005 from "@/assets/gallery/asphalt-005.webp";
 import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-005.jpg";
+import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
-import replacementMobileHero from "@/assets/heroes/replacement-mobile.jpg";
+import replacementMobileHero from "@/assets/heroes/replacement-mobile.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 

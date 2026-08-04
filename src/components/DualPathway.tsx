@@ -12,10 +12,10 @@ import metalRoof from "@/assets/gallery/metal-005.webp";
 // house photo must not appear in marketing. This is a temporary AI-generated
 // WNC mountain construction visual. Client to provide a final approved
 // Construction Division photo before launch.
-import constructionImg from "@/assets/division-construction-v2.jpg";
+import constructionImg from "@/assets/division-construction-v2.webp";
 // NOTE: Temporary Design Division image. Client to provide final approved
 // Design Division image before launch.
-import designImg from "@/assets/division-design.jpg";
+import designImg from "@/assets/division-design.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;

@@ -1,5 +1,5 @@
 import PaidAdsLanding from "@/components/PaidAdsLanding";
-import heroImg from "@/assets/gallery/asphalt-005.jpg";
+import heroImg from "@/assets/gallery/asphalt-005.webp";
 
 const StormDamageAds = () => (
   <PaidAdsLanding

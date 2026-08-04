@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
+import asphalt003 from "@/assets/gallery/asphalt-003.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 

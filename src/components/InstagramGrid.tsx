@@ -3,15 +3,15 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 
-import asphalt001 from "@/assets/gallery/asphalt-001.jpg";
-import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
-import asphalt003 from "@/assets/gallery/asphalt-003.jpg";
-import cedar001 from "@/assets/gallery/cedar-001.jpg";
-import cedar002 from "@/assets/gallery/cedar-002.jpg";
-import metal009 from "@/assets/gallery/metal-010.jpg";
-import metal010 from "@/assets/gallery/metal-010.jpg";
-import asphalt004 from "@/assets/gallery/asphalt-004.jpg";
-import asphalt005 from "@/assets/gallery/asphalt-005.jpg";
+import asphalt001 from "@/assets/gallery/asphalt-001.webp";
+import asphalt002 from "@/assets/gallery/asphalt-002.webp";
+import asphalt003 from "@/assets/gallery/asphalt-003.webp";
+import cedar001 from "@/assets/gallery/cedar-001.webp";
+import cedar002 from "@/assets/gallery/cedar-002.webp";
+import metal009 from "@/assets/gallery/metal-010.webp";
+import metal010 from "@/assets/gallery/metal-010.webp";
+import asphalt004 from "@/assets/gallery/asphalt-004.webp";
+import asphalt005 from "@/assets/gallery/asphalt-005.webp";
 
 const gridItems = [
   { label: "Precision Repair", image: asphalt001 },

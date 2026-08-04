@@ -19,8 +19,8 @@ import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
-import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
-import cedar004 from "@/assets/gallery/cedar-005.jpg";
+import asphalt002 from "@/assets/gallery/asphalt-002.webp";
+import cedar004 from "@/assets/gallery/cedar-005.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;

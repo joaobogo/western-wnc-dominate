@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import designHero from "@/assets/design-planning-hero.jpg";
+import designHero from "@/assets/design-planning-hero.webp";
 import { 
   ArrowRight, Phone, Ruler, Compass, Layers, 
   ClipboardCheck, PenTool, CheckCircle, Search, 
@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
-import blueprintImg from "@/assets/division-design.jpg";
+import blueprintImg from "@/assets/division-design.webp";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 

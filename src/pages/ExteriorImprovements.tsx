@@ -17,8 +17,8 @@ import { ConstructionClosingCTA } from "@/components/construction/ConstructionSh
 
 const heroImg = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000";
 import proj1 from "@/assets/gallery/asphalt-008.webp";
-import proj2 from "@/assets/gallery/metal-010.jpg";
-import proj3 from "@/assets/gallery/cedar-005.jpg";
+import proj2 from "@/assets/gallery/metal-010.webp";
+import proj3 from "@/assets/gallery/cedar-005.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */

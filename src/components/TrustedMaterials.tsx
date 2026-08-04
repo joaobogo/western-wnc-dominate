@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Phone } from "lucide-react";
-import logoCertainteed from "@/assets/logo-certainteed-vendor.png";
+import logoCertainteed from "@/assets/logo-certainteed-vendor.webp";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoSenox from "@/assets/logo-senox-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";

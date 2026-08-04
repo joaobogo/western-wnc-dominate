@@ -1,5 +1,5 @@
-import stormHeroImg from "@/assets/blog/highlands-storm-july-28-hero.jpg";
-import stormInspectionImg from "@/assets/blog/highlands-storm-july-28-inspection.jpg";
+import stormHeroImg from "@/assets/blog/highlands-storm-july-28-hero.webp";
+import stormInspectionImg from "@/assets/blog/highlands-storm-july-28-inspection.webp";
 
 const roofRepairStock = "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000";
 const metalBenefitsStock = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000";

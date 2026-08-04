@@ -11,7 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { towns } from "@/data/towns";
 import veluxLogo from "@/assets/velux-certified-logo.jpg";
 import VeluxProof from "@/components/VeluxProof";
-import skylightsMobileHero from "@/assets/heroes/skylights-mobile.jpg";
+import skylightsMobileHero from "@/assets/heroes/skylights-mobile.webp";
 import CTABlock from "@/components/CTABlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import VeluxWidget from "@/components/VeluxWidget";

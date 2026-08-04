@@ -23,10 +23,10 @@ const expansionContextImg = "https://images.unsplash.com/photo-1541888946425-d81
 const structuralTieImg = "https://images.unsplash.com/photo-1503387762-592dec58ef4e?auto=format&fit=crop&q=80&w=1200";
 const mountainSiteImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
 
-import proj1 from "@/assets/gallery/cedar-001.jpg";
+import proj1 from "@/assets/gallery/cedar-001.webp";
 import proj2 from "@/assets/gallery/metal-008.webp";
 import proj3 from "@/assets/gallery/asphalt-006.webp";
-import proj4 from "@/assets/gallery/cedar-002.jpg";
+import proj4 from "@/assets/gallery/cedar-002.webp";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 

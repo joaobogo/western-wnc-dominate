@@ -16,17 +16,17 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
-import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.jpg";
+import outdoorMobileHero from "@/assets/heroes/outdoor-living-mobile.webp";
 
 const heroImg = "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&q=80&w=2000";
 const porchContextImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600";
 const timberFrameImg = "https://images.unsplash.com/photo-1590069230002-70cc6a97da21?auto=format&fit=crop&q=80&w=1200";
 const terrainSlopeImg = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200";
 
-import proj1 from "@/assets/gallery/cedar-001.jpg";
+import proj1 from "@/assets/gallery/cedar-001.webp";
 import proj2 from "@/assets/gallery/metal-006.webp";
-import proj3 from "@/assets/gallery/asphalt-005.jpg";
-import proj4 from "@/assets/gallery/cedar-005.jpg";
+import proj3 from "@/assets/gallery/asphalt-005.webp";
+import proj4 from "@/assets/gallery/cedar-005.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import logoCertainteed from "@/assets/logo-certainteed-vendor.png";
+import logoCertainteed from "@/assets/logo-certainteed-vendor.webp";
 import logoVelux from "@/assets/logo-velux-vendor.png";
 import logoQxo from "@/assets/logo-qxo.png";
 import logoSenox from "@/assets/logo-senox-vendor.png";

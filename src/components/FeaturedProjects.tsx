@@ -8,11 +8,11 @@ import GoldLine from "@/components/motion/GoldLine";
 import RealWorkWidget from "@/components/RealWorkWidget";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import cedarRoof from "@/assets/gallery/cedar-005.jpg";
+import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
-import cedarDetail from "@/assets/gallery/cedar-001.jpg";
+import cedarDetail from "@/assets/gallery/cedar-001.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;

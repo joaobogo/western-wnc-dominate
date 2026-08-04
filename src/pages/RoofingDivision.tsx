@@ -16,12 +16,12 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
-import roofingMobileHero from "@/assets/heroes/roofing-mobile.jpg";
-import cedarRoof from "@/assets/gallery/cedar-005.jpg";
+import roofingMobileHero from "@/assets/heroes/roofing-mobile.webp";
+import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
 import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
-import cedarDetail from "@/assets/gallery/cedar-001.jpg";
+import cedarDetail from "@/assets/gallery/cedar-001.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import VeluxWidget from "@/components/VeluxWidget";
 

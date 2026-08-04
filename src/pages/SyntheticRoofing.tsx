@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Award, Leaf, Clock, Home, ChevronRight } from "lucide-react";
-import bravaHero from "@/assets/gallery/cedar-005.jpg";
+import bravaHero from "@/assets/gallery/cedar-005.webp";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";

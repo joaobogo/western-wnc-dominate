@@ -21,9 +21,9 @@ const detailOversightImg = "https://images.unsplash.com/photo-1503387762-592dea5
 const complexityImg = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000";
 
 import proj1 from "@/assets/gallery/metal-003.webp";
-import proj2 from "@/assets/gallery/asphalt-002.jpg";
-import proj3 from "@/assets/gallery/cedar-002.jpg";
-import proj4 from "@/assets/gallery/metal-010.jpg";
+import proj2 from "@/assets/gallery/asphalt-002.webp";
+import proj3 from "@/assets/gallery/cedar-002.webp";
+import proj4 from "@/assets/gallery/metal-010.webp";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 

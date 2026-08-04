@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, Shield, Wind, Snowflake, Home, ChevronRight } from "lucide-react";
 import metalImg from "@/assets/gallery/metal-005.webp";
-import metalMobileHero from "@/assets/heroes/metal-mobile.jpg";
+import metalMobileHero from "@/assets/heroes/metal-mobile.webp";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

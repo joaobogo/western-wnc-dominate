@@ -8,11 +8,11 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import heroImg from "@/assets/gallery/asphalt-hero.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
-import repairImg from "@/assets/gallery/asphalt-003.jpg";
+import repairImg from "@/assets/gallery/asphalt-003.webp";
 import metalImg from "@/assets/gallery/metal-005.webp";
-import cedarImg from "@/assets/gallery/cedar-005.jpg";
-import constructionImg from "@/assets/division-construction-v2.jpg";
-import designImg from "@/assets/division-design.jpg";
+import cedarImg from "@/assets/gallery/cedar-005.webp";
+import constructionImg from "@/assets/division-construction-v2.webp";
+import designImg from "@/assets/division-design.webp";
 import metal005 from "@/assets/gallery/metal-005.webp";
 import metal006 from "@/assets/gallery/metal-006.webp";
 import metal008 from "@/assets/gallery/metal-008.webp";
@@ -21,8 +21,8 @@ import asphalt008 from "@/assets/gallery/asphalt-008.webp";
 import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphaltHero from "@/assets/gallery/asphalt-hero.webp";
-import asphalt002 from "@/assets/gallery/asphalt-002.jpg";
-import cedar005 from "@/assets/gallery/cedar-005.jpg";
+import asphalt002 from "@/assets/gallery/asphalt-002.webp";
+import cedar005 from "@/assets/gallery/cedar-005.webp";
 
 const categoryCards = [
   { icon: Home, title: "Roofing", desc: "Shingle, metal, and cedar roofing systems built for steep mountain rooflines.", img: roofingImg, href: "/roofing" },

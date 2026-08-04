@@ -31,17 +31,17 @@ import {
   DesignProgramPromo,
 } from "@/components/construction";
 
-import heroImg from "@/assets/division-construction-v2.jpg";
+import heroImg from "@/assets/division-construction-v2.webp";
 import divisionContextImg from "@/assets/gallery/asphalt-007.webp";
-import constructionDetailImg from "@/assets/gallery/cedar-005.jpg";
-import planningFocusImg from "@/assets/division-design.jpg";
+import constructionDetailImg from "@/assets/gallery/cedar-005.webp";
+import planningFocusImg from "@/assets/division-design.webp";
 import siteCoordinationImg from "@/assets/gallery/metal-006.webp";
 import wncTerrainImg from "@/assets/gallery/asphalt-hero.webp";
 
 import proj1 from "@/assets/gallery/asphalt-006.webp";
-import proj2 from "@/assets/gallery/cedar-002.jpg";
+import proj2 from "@/assets/gallery/cedar-002.webp";
 import proj3 from "@/assets/gallery/metal-008.webp";
-import proj4 from "@/assets/gallery/asphalt-004.jpg";
+import proj4 from "@/assets/gallery/asphalt-004.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 

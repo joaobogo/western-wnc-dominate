@@ -20,8 +20,8 @@ import VeluxWidget from "@/components/VeluxWidget";
 
 import heroImg from "@/assets/gallery/asphalt-007.webp";
 import proj1 from "@/assets/gallery/asphalt-008.webp";
-import proj2 from "@/assets/gallery/metal-010.jpg";
-import proj3 from "@/assets/gallery/cedar-005.jpg";
+import proj2 from "@/assets/gallery/metal-010.webp";
+import proj3 from "@/assets/gallery/cedar-005.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
