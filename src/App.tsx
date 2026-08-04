@@ -5,14 +5,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
-import ChatbotWidget from "./components/chatbot/ChatbotWidget";
 import ScrollToTop from "./components/ScrollToTop";
 import GTMRouteTracker from "./components/GTMRouteTracker";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/leads";
-import { tier1FlatEntries, tier2FlatEntries } from "./data/service-town-content";
+import { tier1FlatEntries, tier2FlatEntries } from "./data/service-town-slugs";
+
+// Chat widget is below-the-fold, non-critical UI — keep it out of the first load.
+const ChatbotWidget = lazy(() => import("./components/chatbot/ChatbotWidget"));
 
 // Initialize tracking pixels
 initPixels();
