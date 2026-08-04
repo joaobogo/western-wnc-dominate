@@ -86,7 +86,7 @@ const CountyPage = () => {
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
                 <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">{county.name} Division</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{county.name} Division</span>
               </div>
             </motion.div>
 
@@ -98,7 +98,7 @@ const CountyPage = () => {
               >
                 <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 md:mb-10 text-white tracking-tightest leading-[0.9] drop-shadow-lg">
                   Built for the <br />
-                  <span className="text-[hsl(var(--highland-gold))] italic">{county.name} Corridor.</span>
+                  <span className="text-[hsl(var(--gold-ink))] italic">{county.name} Corridor.</span>
                 </h1>
 
                 <p className="text-lg md:text-2xl text-white/95 mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
@@ -110,7 +110,7 @@ const CountyPage = () => {
                     Start a {county.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
-                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 524-7773
+                    <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
                   </a>
                 </div>
               </motion.div>
@@ -127,7 +127,7 @@ const CountyPage = () => {
                       {fact.label}
                     </span>
                     <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
-                      <Shield className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
+                      <Shield className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
                       {fact.value}
                     </span>
                   </div>
@@ -166,7 +166,7 @@ const CountyPage = () => {
                     
                     <div className="flex gap-6 items-start group">
                       <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center shrink-0 border border-[hsl(var(--highland-gold)/0.2)]">
-                        <Wind className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                        <Wind className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
                       </div>
                       <div>
                         <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Climate Realities</h4>
@@ -180,7 +180,7 @@ const CountyPage = () => {
               <div className="relative">
                 <div className="bg-secondary p-8 border border-border relative z-10 shadow-sm">
                   <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
-                    <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                    <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                     {county.name} Communities
                   </h4>
                   <div className="grid gap-4">
@@ -220,12 +220,12 @@ const CountyPage = () => {
               <ScrollReveal variant="rise-subtle">
                 <div className="bg-primary p-10 text-white h-full flex flex-col group relative overflow-hidden">
                   <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
-                  <Home className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
+                  <Home className="w-10 h-10 text-[hsl(var(--gold-ink))] mb-6" />
                   <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Roofing</h3>
                   <p className="text-white/90 text-sm mb-8 font-body leading-relaxed">
                     Specialized mountain systems designed for {county.name} weather. Shingle, metal, and premium Brava synthetic installations.
                   </p>
-                  <Link to="/roofing" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
+                  <Link to="/roofing" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--gold-ink))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
                     Roofing Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                 </div>
@@ -246,12 +246,12 @@ const CountyPage = () => {
 
               <ScrollReveal variant="rise-subtle" delay={0.2}>
                 <div className="bg-secondary p-10 h-full flex flex-col group border border-border shadow-sm relative overflow-hidden">
-                  <Compass className="w-10 h-10 text-[hsl(var(--highland-gold))] mb-6" />
+                  <Compass className="w-10 h-10 text-[hsl(var(--gold-ink))] mb-6" />
                   <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter text-foreground">Design Support</h3>
                   <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
                     Pre-construction planning, layouts, and site-specific guidance to ensure your {county.name} project is built right from the start.
                   </p>
-                  <Link to="/layouts-planning" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--highland-gold))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
+                  <Link to="/layouts-planning" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--gold-ink))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
                     Planning Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
                 </div>
@@ -292,7 +292,7 @@ const CountyPage = () => {
                 <ScrollReveal key={post.slug} variant="rise-subtle" delay={i * 0.1}>
                   <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-card border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
                     <div className="flex items-center gap-3 mb-6">
-                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/60 bg-primary/5 px-2.5 py-1">
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/80 bg-primary/5 px-2.5 py-1">
                         {post.category}
                       </span>
                       <div className="h-px flex-1 bg-border/40" />
@@ -325,7 +325,7 @@ const CountyPage = () => {
         <section className="py-24 bg-primary text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10 text-center">
-            <span className="eyebrow mb-6 block text-[hsl(var(--highland-gold))] uppercase tracking-widest">Start Your Project</span>
+            <span className="eyebrow mb-6 block text-[hsl(var(--gold-ink))] uppercase tracking-widest">Start Your Project</span>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight text-white text-balance">
               Ready to Discuss Your <br className="hidden md:block" /> {county.name} Property?
             </h2>
@@ -337,7 +337,7 @@ const CountyPage = () => {
                 Start a {county.name} Assessment <ArrowRight className="w-6 h-6" />
               </Link>
               <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px] justify-center shadow-xl">
-                <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 524-7773
+                <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
               </a>
             </div>
           </div>

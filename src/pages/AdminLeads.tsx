@@ -190,13 +190,13 @@ export default function AdminLeads() {
         <FilterSelect label="Source" value={sourceFilter} onChange={setSourceFilter} options={sources} />
         <FilterSelect label="Town" value={townFilter} onChange={setTownFilter} options={towns} />
         <div>
-          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1">From</label>
-          <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)}
+          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-from">From</label>
+          <input id="f-from" type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)}
             className="border border-input rounded px-2 py-1 bg-background" />
         </div>
         <div>
-          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1">To</label>
-          <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)}
+          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-to">To</label>
+          <input id="f-to" type="date" value={toDate} onChange={(e) => setToDate(e.target.value)}
             className="border border-input rounded px-2 py-1 bg-background" />
         </div>
         <button onClick={resetFilters} className="underline text-muted-foreground pb-1">Reset</button>
@@ -228,7 +228,7 @@ export default function AdminLeads() {
               {l.jobtread_sync_status && l.jobtread_sync_status !== "success" && l.jobtread_error_message && (
                 <div className="text-[10px] text-destructive mt-0.5 line-clamp-2">{l.jobtread_error_message}</div>
               )}
-              <div className="text-[10px] text-muted-foreground/70 mt-0.5">{new Date(l.created_at).toLocaleString()}</div>
+              <div className="text-[10px] text-muted-foreground mt-0.5">{new Date(l.created_at).toLocaleString()}</div>
             </button>
           ))}
         </div>
@@ -291,8 +291,8 @@ export default function AdminLeads() {
                 </div>
               )}
               <div>
-                <label className="text-[11px] uppercase tracking-wide text-muted-foreground block mb-1">Status</label>
-                <select
+                <label className="text-[11px] uppercase tracking-wide text-muted-foreground block mb-1" htmlFor="f-status">Status</label>
+                <select id="f-status"
                   value={selected.status}
                   onChange={(e) => { updateStatus(selected.id, e.target.value); setSelected({ ...selected, status: e.target.value }); }}
                   className="border border-input rounded px-2 py-1 text-sm bg-background"
@@ -330,8 +330,9 @@ function FilterSelect({
 }: { label: string; value: string; onChange: (v: string) => void; options: readonly string[] }) {
   return (
     <div>
-      <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1">{label}</label>
+      <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" id={`flt-${label}`}>{label}</label>
       <select
+        aria-labelledby={`flt-${label}`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="border border-input rounded px-2 py-1 bg-background max-w-[180px]"

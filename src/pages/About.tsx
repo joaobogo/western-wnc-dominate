@@ -106,13 +106,13 @@ const About = () => {
               <div className="h-10 md:h-12 w-px bg-white/30" />
               <div className="flex flex-col">
                 <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em] -mt-1">Heritage & Story</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Heritage & Story</span>
               </div>
             </motion.div>
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
                 <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Franklin & Sylva, North Carolina</span>
+                <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Franklin & Sylva, North Carolina</span>
               </motion.div>
 
               {/* Slow fade-in (no curtain-reveal like Roofing/Construction) */}
@@ -123,7 +123,7 @@ const About = () => {
                 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.0] mb-8"
               >
                 <span className="block text-[hsl(var(--dark-section-foreground))] mb-2">Elevating WNC Standards.</span>
-                <span className="block text-[hsl(var(--highland-gold))]">Built by a Local Team.</span>
+                <span className="block text-[hsl(var(--gold-ink))]">Built by a Local Team.</span>
               </motion.h1>
 
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-[19px] md:text-[22px] text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
@@ -186,16 +186,16 @@ const About = () => {
                     ) : (
                       <div className="text-center p-4">
                         <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
-                          <span className="font-heading font-bold text-2xl text-[hsl(var(--highland-gold))]">{person.name.charAt(0)}</span>
+                          <span className="font-heading font-bold text-2xl text-[hsl(var(--gold-ink))]">{person.name.charAt(0)}</span>
                         </div>
-                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Highlander Leadership</span>
+                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Highlander Leadership</span>
                       </div>
                     )}
                   </div>
 
                   <div className="flex-1">
                     <h3 className="text-2xl font-heading font-bold mb-1">{person.name}</h3>
-                    <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[16px] mb-4 uppercase tracking-wider">{person.role}</p>
+                    <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-[16px] mb-4 uppercase tracking-wider">{person.role}</p>
                     <p className="text-muted-foreground text-[18px] md:text-[20px] leading-relaxed mb-6 font-body font-bold">{person.bio}</p>
                     <div className="flex flex-wrap gap-2">
                       {person.credentials.map(cred => (
@@ -233,9 +233,9 @@ const About = () => {
                     ) : (
                       <div className="text-center p-6">
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
-                          <span className="font-heading font-bold text-xl text-[hsl(var(--highland-gold))]">{person.name.charAt(0)}</span>
+                          <span className="font-heading font-bold text-xl text-[hsl(var(--gold-ink))]">{person.name.charAt(0)}</span>
                         </div>
-                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/80">In-House Specialist</span>
+                        <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">In-House Specialist</span>
                       </div>
                     )}
                   </div>
@@ -246,7 +246,7 @@ const About = () => {
                     <p className="text-[16px] md:text-[18px] text-muted-foreground leading-relaxed font-body mb-4 font-bold">{person.bio}</p>
                     <div className="pt-4 border-t border-border flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
-                      <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground/90">{person.specialty}</span>
+                      <span className="text-[13px] font-body font-bold uppercase tracking-wider text-muted-foreground">{person.specialty}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -326,7 +326,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-                <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground/90">Our Horizon — Western North Carolina</span>
+                <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Our Horizon — Western North Carolina</span>
               </div>
             </motion.div>
           </div>
@@ -352,7 +352,7 @@ const About = () => {
                   className={`relative flex items-start gap-6 mb-10 last:mb-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:gap-12`}
                 >
                   <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'} pl-12 md:pl-0`}>
-                    <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold))]">{m.year}</span>
+                    <span className="text-lg font-heading font-bold text-[hsl(var(--gold-ink))]">{m.year}</span>
                     <h3 className="font-heading font-bold text-foreground text-base mt-1">{m.event}</h3>
                     <p className="text-muted-foreground text-sm font-body mt-1 leading-relaxed">{m.detail}</p>
                   </div>
@@ -403,7 +403,7 @@ const About = () => {
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Our Philosophy</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Our Philosophy</span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-tight">
                   Craftsmanship Isn't a<br /> Marketing Word Here.
                 </h2>
@@ -419,7 +419,7 @@ const About = () => {
                 {craftsmanshipPrinciples.map((p, i) => (
                   <motion.div key={p.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 md:p-6 bg-[hsl(var(--dark-section-foreground)/0.03)]">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                       <div>
                         <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-1">{p.title}</h3>
                         <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm leading-relaxed">{p.detail}</p>
@@ -439,9 +439,9 @@ const About = () => {
             <div className="bg-primary p-8 md:p-16 relative overflow-hidden text-center max-w-5xl mx-auto">
               <div className="absolute inset-0 tartan-dark opacity-[0.08]" />
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative z-10">
-                <span className="text-[hsl(var(--highland-gold))] font-heading font-bold text-[11px] uppercase tracking-[0.25em] mb-6 block">Join the Team</span>
+                <span className="text-[hsl(var(--gold-ink))] font-heading font-bold text-[11px] uppercase tracking-[0.25em] mb-6 block">Join the Team</span>
                 <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
-                  Build a Career <br className="md:hidden" /> <span className="text-[hsl(var(--highland-gold))] italic">on Higher Ground.</span>
+                  Build a Career <br className="md:hidden" /> <span className="text-[hsl(var(--gold-ink))] italic">on Higher Ground.</span>
                 </h2>
                 <p className="text-white/85 text-base md:text-lg mb-10 max-w-2xl mx-auto font-body leading-relaxed">
                   We're always looking for skilled craftsmen and dedicated professionals who share our values. If you're local, honest, and take pride in your work, we want to hear from you.
@@ -544,7 +544,7 @@ const About = () => {
         <section className="section-padding section-dark tartan-dark">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Why Homeowners Trust Us</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Why Homeowners Trust Us</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
                 Trust Is Built. Not Claimed.
               </h2>
@@ -562,7 +562,7 @@ const About = () => {
                 { stat: "In-House", label: "Highlander employee crews" },
               ].map((item, i) => (
                 <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="text-center p-6 border border-[hsl(var(--highland-gold)/0.1)] rounded-sm">
-                  <p className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] mb-2">{item.stat}</p>
+                  <p className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] mb-2">{item.stat}</p>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm">{item.label}</p>
                 </motion.div>
               ))}
@@ -636,7 +636,7 @@ const About = () => {
                 </div>
                 {/* Visual badge */}
                 <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary flex items-center justify-center p-6 text-center border border-white/10 shadow-xl">
-                  <p className="text-[hsl(var(--highland-gold))] font-heading font-bold text-xs uppercase tracking-widest leading-tight">Macon & Jackson County Specialists</p>
+                  <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-xs uppercase tracking-widest leading-tight">Macon & Jackson County Specialists</p>
                 </div>
               </div>
             </div>

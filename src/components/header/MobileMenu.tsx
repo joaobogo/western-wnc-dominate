@@ -55,7 +55,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                       div.accent === "green" ? "bg-primary/10" : "bg-[hsl(var(--highland-gold)/0.1)]"
                     }`}>
                       <div.icon className={`w-3.5 h-3.5 ${
-                        div.accent === "green" ? "text-primary" : "text-[hsl(var(--highland-gold))]"
+                        div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
                       }`} />
                     </div>
                     <div className="text-left">
@@ -103,7 +103,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                           to={div.href}
                           onClick={(e) => onViewAllClick(e, div.href)}
                           className={`py-2 px-2.5 text-[13px] font-bold uppercase tracking-[0.08em] rounded-sm transition-colors flex items-center gap-1.5 font-body ${
-                            div.accent === "green" ? "text-primary" : "text-accent"
+                            div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
                           }`}
                         >
                           View All {div.label} <ArrowRight className="w-3 h-3" />

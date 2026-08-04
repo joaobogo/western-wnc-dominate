@@ -32,7 +32,7 @@ const Siding = () => {
           </div>
           <div className="container-tight relative z-10 pt-32 md:pt-40">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Construction Division</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Construction Division</span>
               <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-white tracking-tight">Siding & Exterior.</h1>
               <p className="text-white/85 text-lg md:text-xl max-w-2xl mb-8 font-body leading-relaxed">
                 Mountain-grade exterior protection. Fiber cement, natural cedar, and premium trim systems engineered for Western NC&apos;s moisture and elevation.
@@ -54,7 +54,7 @@ const Siding = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-heading font-bold mb-6">Built for Mountain Exposure.</h2>
-                <p className="text-foreground/70 mb-8">
+                <p className="text-muted-foreground mb-8">
                   The mountains of Western North Carolina present a unique set of challenges for your home's exterior. High humidity, heavy rainfall, and constant temperature swings require more than just a "standard" siding job.
                 </p>
                 <ul className="space-y-4">
@@ -66,7 +66,7 @@ const Siding = () => {
                     "Soffit, fascia, and decorative millwork",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
                       <span className="text-foreground/80 font-medium">{item}</span>
                     </li>
                   ))}
@@ -75,16 +75,16 @@ const Siding = () => {
               <div className="relative group overflow-hidden">
                 <div className="bg-secondary/40 p-8 border border-border relative z-10">
                   <h3 className="text-xl font-heading font-bold mb-4">Why Highlander Siding?</h3>
-                  <p className="text-sm text-foreground/60 mb-6 leading-relaxed font-body">
+                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed font-body">
                     We approach siding as a complete envelope system — not just a cosmetic layer. Every corner, transition, and flashing detail is executed to prevent moisture intrusion, which is the #1 cause of structural decay in WNC homes.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
-                      <Droplets className="w-5 h-5 text-[hsl(var(--highland-gold))] mb-2" />
+                      <Droplets className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-2" />
                       <div className="text-[10px] font-bold uppercase tracking-wider">Moisture Proof</div>
                     </div>
                     <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
-                      <Wind className="w-5 h-5 text-[hsl(var(--highland-gold))] mb-2" />
+                      <Wind className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-2" />
                       <div className="text-[10px] font-bold uppercase tracking-wider">Wind Rated</div>
                     </div>
                   </div>

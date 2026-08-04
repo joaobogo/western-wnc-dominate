@@ -34,7 +34,7 @@ const FreeTools = () => {
         <section className="section-padding bg-primary text-primary-foreground">
           <div className="container-tight text-center">
             <ScrollReveal>
-              <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-accent mb-3">Project Planning Tools</p>
+              <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-[hsl(var(--gold-ink))] mb-3">Project Planning Tools</p>
               <h1 className="font-heading text-3xl md:text-4xl font-bold mb-3">Plan Before You Build</h1>
               <p className="text-sm md:text-base font-body text-primary-foreground/90 max-w-lg mx-auto">
                 Use these tools to explore options, assess your situation, and prepare for a productive consultation. No pressure — just clarity.

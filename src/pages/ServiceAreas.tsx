@@ -26,11 +26,11 @@ const serviceStats = [
     label: "Counties Served", 
     detail: (
       <span className="flex gap-1.5 flex-wrap">
-        <Link to="/service-areas/county/macon-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Macon</Link> · 
-        <Link to="/service-areas/county/jackson-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Jackson</Link> · 
-        <Link to="/service-areas/county/buncombe-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Buncombe</Link> · 
-        <Link to="/service-areas/county/henderson-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Henderson</Link> ·
-        <Link to="/service-areas/county/transylvania-county" className="hover:text-[hsl(var(--highland-gold))] transition-colors">Transylvania</Link>
+        <Link to="/service-areas/county/macon-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Macon</Link> · 
+        <Link to="/service-areas/county/jackson-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Jackson</Link> · 
+        <Link to="/service-areas/county/buncombe-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Buncombe</Link> · 
+        <Link to="/service-areas/county/henderson-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Henderson</Link> ·
+        <Link to="/service-areas/county/transylvania-county" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Transylvania</Link>
       </span>
     ) 
   },
@@ -93,12 +93,12 @@ const ServiceAreas = () => {
                   className="lg:col-span-7"
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <Compass className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-                    <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Service Areas · Western North Carolina</span>
+                    <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                    <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Service Areas · Western North Carolina</span>
                   </div>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-heading font-bold text-white mb-6 leading-[1.05] tracking-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)]">
                     We serve Western North Carolina with crews who{" "}
-                    <span className="text-[hsl(var(--highland-gold))]">know these towns.</span>
+                    <span className="text-[hsl(var(--gold-ink))]">know these towns.</span>
                   </h1>
                   <p className="text-lg md:text-xl text-white max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
                     Highlander is locally operated, with offices in Franklin and Sylva. Our crews know the roads, the building codes, the inspectors, and the weather patterns that shape every mountain home in this region.
@@ -121,7 +121,7 @@ const ServiceAreas = () => {
                         transition={{ delay: 0.3 + i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
                         className="rounded-sm border border-white/25 bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-xl p-4 md:p-5 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.65)]"
                       >
-                        <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none block mb-2">{stat.value}</span>
+                        <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none block mb-2">{stat.value}</span>
                         <span className="text-[12px] font-heading font-bold text-white block uppercase tracking-[0.12em] mb-1.5">{stat.label}</span>
                         <span className="text-[12px] text-white/95 font-body leading-snug block">{stat.detail}</span>
                       </motion.div>
@@ -171,17 +171,17 @@ const ServiceAreas = () => {
                           <MapPin className="w-4 h-4 text-primary" />
                           <h3 className="font-heading font-bold text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                         </div>
-                        <p className="text-muted-foreground/60 text-[13px] font-body font-bold">{town.county}</p>
+                        <p className="text-muted-foreground text-[13px] font-body font-bold">{town.county}</p>
                       </div>
                       <div className="flex flex-wrap gap-1 shrink-0">
                         <span className="text-[10px] font-body font-bold uppercase tracking-[0.12em] px-2 py-1 bg-primary/8 text-primary rounded-sm">Roofing</span>
-                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.12em] px-2 py-1 bg-[hsl(var(--highland-gold)/0.1)] text-[hsl(var(--highland-gold))] rounded-sm">Construction</span>
+                        <span className="text-[10px] font-body font-bold uppercase tracking-[0.12em] px-2 py-1 bg-[hsl(var(--highland-gold)/0.1)] text-[hsl(var(--gold-ink))] rounded-sm">Construction</span>
                       </div>
                     </div>
                     <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4 line-clamp-3">{town.description}</p>
                     <div className="flex flex-wrap gap-2 mb-5">
                       {town.features.slice(0, 3).map((f) => (
-                        <span key={f} className="text-[12px] font-body font-bold text-muted-foreground/70 bg-secondary px-3 py-1 rounded-sm">{f}</span>
+                        <span key={f} className="text-[12px] font-body font-bold text-muted-foreground bg-secondary px-3 py-1 rounded-sm">{f}</span>
                       ))}
                     </div>
                     <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all font-body">
@@ -203,7 +203,7 @@ const ServiceAreas = () => {
               viewport={{ once: true }}
               className="text-center mb-14"
             >
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Local Knowledge</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Local Knowledge</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
                 Why &#8220;Local&#8221; Isn't Just<br /> a Marketing Claim.
               </h2>
@@ -260,10 +260,10 @@ const ServiceAreas = () => {
                     className="group block bg-card border border-border p-5 hover:border-primary/20 hover:shadow-sm transition-all duration-300"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="w-3.5 h-3.5 text-primary/60" />
+                      <MapPin className="w-3.5 h-3.5 text-primary/80" />
                       <h3 className="font-heading font-semibold text-base text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                     </div>
-                    <p className="text-muted-foreground/50 text-xs font-body mb-3">{town.county}</p>
+                    <p className="text-muted-foreground text-xs font-body mb-3">{town.county}</p>
                     <p className="text-muted-foreground text-[13px] font-body leading-relaxed line-clamp-2 mb-4 font-bold">{town.description.slice(0, 100)}…</p>
                     <span className="inline-flex items-center gap-1 text-primary/70 font-medium text-xs group-hover:gap-2 group-hover:text-primary transition-all font-body">
                       View Details <ArrowRight className="w-3 h-3" />
@@ -286,7 +286,7 @@ const ServiceAreas = () => {
               transition={{ duration: 0.6 }}
               className="max-w-2xl mx-auto"
             >
-              <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">Your Town, Our Team</span>
+              <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Your Town, Our Team</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1]">
                 Wherever You Are in WNC,<br />
                 We're Already Nearby.

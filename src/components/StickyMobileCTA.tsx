@@ -164,13 +164,13 @@ const StickyMobileCTA = () => {
                         className="flex items-center gap-3 px-3 py-3 rounded-none hover:bg-secondary/60 transition-all group dropdown-item-premium"
                       >
                         <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center flex-shrink-0 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
-                          <FileText className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                          <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-heading font-semibold text-foreground">Start a Project</p>
                           <p className="text-[10px] text-muted-foreground font-body">No-obligation consultation</p>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/70 group-hover:text-muted-foreground btn-arrow-icon" />
+                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" />
                       </Link>
                       <a
                         href="tel:+18285247773"
@@ -183,7 +183,7 @@ const StickyMobileCTA = () => {
                           <p className="text-sm font-heading font-semibold text-foreground">Call Direct</p>
                           <p className="text-[10px] text-muted-foreground font-body">(828) 524-7773</p>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/70 group-hover:text-muted-foreground btn-arrow-icon" />
+                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" />
                       </a>
                     </div>
                   </motion.div>

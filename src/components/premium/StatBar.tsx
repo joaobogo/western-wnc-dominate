@@ -27,11 +27,11 @@ export const StatItem = ({
     {animate ? (
       <AnimatedCounter
         value={value}
-        className="stat-number-sm text-[hsl(var(--highland-gold))] leading-none mb-1.5"
+        className="stat-number-sm text-[hsl(var(--gold-ink))] leading-none mb-1.5"
         duration={1800}
       />
     ) : (
-      <span className="stat-number-sm text-[hsl(var(--highland-gold))] leading-none mb-1.5">{value}</span>
+      <span className="stat-number-sm text-[hsl(var(--gold-ink))] leading-none mb-1.5">{value}</span>
     )}
     <span className="text-sm font-heading font-bold text-inherit mb-1 tracking-tight opacity-80">{label}</span>
     {detail && (

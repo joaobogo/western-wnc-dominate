@@ -140,7 +140,7 @@ const HomeAdditions = () => {
                   <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/95">Construction</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Home Additions</span>
+                <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Home Additions</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -150,7 +150,7 @@ const HomeAdditions = () => {
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.05] tracking-tight">
-                  <span className="text-[hsl(var(--highland-gold))]">Same Home.</span>
+                  <span className="text-[hsl(var(--gold-ink))]">Same Home.</span>
                 </motion.h2>
               </div>
 
@@ -182,7 +182,7 @@ const HomeAdditions = () => {
                   { value: "3–6", unit: "mo", label: "Typical Timeline" },
                 ].map((item) => (
                   <div key={item.label} className="p-3 bg-white/5 border border-white/8 rounded-sm text-center">
-                    <div className="text-sm font-heading font-bold text-[hsl(var(--highland-gold))]">{item.value}<span className="text-[10px] text-primary-foreground/90 ml-0.5">{item.unit}</span></div>
+                    <div className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}<span className="text-[10px] text-primary-foreground/90 ml-0.5">{item.unit}</span></div>
                     <div className="text-[9px] text-primary-foreground/90 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
                   </div>
                 ))}
@@ -203,14 +203,14 @@ const HomeAdditions = () => {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
                   The best additions don't look like additions. We build rooms that look like your home always had them — because we match the rooflines, materials, and proportions.
                 </h2>
-                <p className="text-foreground/70 text-base md:text-lg leading-relaxed font-body mb-4">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body mb-4">
                   Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
                   <img loading="lazy" decoding="async" src={expansionContextImg} alt="Integrated home expansion" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                 </div>
-                <p className="text-muted-foreground/60 text-sm leading-relaxed font-body italic">
+                <p className="text-muted-foreground text-sm leading-relaxed font-body italic">
                   Every addition starts with understanding your home and ends with a space that elevates the entire property.
                 </p>
               </motion.div>
@@ -235,17 +235,17 @@ const HomeAdditions = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Add On</span>
               <h2 className="section-heading mb-4">The Reasons<br className="hidden md:block" /> Homeowners Expand.</h2>
-              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">Every addition project starts with a real need — not a trend. These are the situations that bring homeowners to us.</p>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">Every addition project starts with a real need — not a trend. These are the situations that bring homeowners to us.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {whyAdditions.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift transition-all">
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -268,10 +268,10 @@ const HomeAdditions = () => {
               {expansionTypes.map((type, i) => (
                 <motion.div key={type.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                   <div className="w-9 h-9 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <type.icon className="w-4.5 h-4.5 text-[hsl(var(--highland-gold))]" />
+                    <type.icon className="w-4.5 h-4.5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{type.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{type.detail}</p>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{type.title}</h3>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{type.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -284,7 +284,7 @@ const HomeAdditions = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Design Continuity</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Design Continuity</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Making It Look Like<br className="hidden md:block" /> It Was Always There.
                 </h2>
@@ -297,7 +297,7 @@ const HomeAdditions = () => {
                 {designContinuity.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
-                      <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                      <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
                     <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
@@ -336,7 +336,7 @@ const HomeAdditions = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Why Highlander</span>
               <h2 className="section-heading mb-4">What Makes This Different.</h2>
-              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
                 Years of high-elevation roofing experience built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
               </p>
             </motion.div>
@@ -345,10 +345,10 @@ const HomeAdditions = () => {
               {whyHighlander.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -362,13 +362,13 @@ const HomeAdditions = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
                 <span className="eyebrow mb-3 block">Planning & Permits</span>
                 <h2 className="section-heading mb-5">We Handle the<br /> Complexity.</h2>
-                <p className="text-foreground/70 text-base font-body mb-6 leading-relaxed">
+                <p className="text-muted-foreground text-base font-body mb-6 leading-relaxed">
                   Home additions involve zoning, structural engineering, permits, inspections, and utility coordination. We manage all of it as part of our standard process — so you focus on the vision while we navigate the logistics.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h4 className="font-heading font-bold text-foreground text-sm mb-2">Not sure where to start?</h4>
-                  <p className="text-foreground/60 text-[13px] leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
-                  <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
+                  <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -377,8 +377,8 @@ const HomeAdditions = () => {
               <div className="lg:col-span-3 space-y-4">
                 {planningPermitting.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group p-5 md:p-6 rounded-sm bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
-                    <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                    <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                    <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -392,7 +392,7 @@ const HomeAdditions = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Mountain Building</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Mountain Building</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Building Additions in WNC<br className="hidden md:block" /> Is Different.
                 </h2>
@@ -429,9 +429,9 @@ const HomeAdditions = () => {
                 <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <step.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{step.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
@@ -463,7 +463,7 @@ const HomeAdditions = () => {
             </div>
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
                 View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -483,12 +483,12 @@ const HomeAdditions = () => {
               </div>
               <div className="flex flex-col gap-4">
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
-                  <TrendingUp className="w-5 h-5 text-[hsl(var(--highland-gold))] mx-auto mb-2" />
+                  <TrendingUp className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" />
                   <span className="text-2xl font-heading font-bold text-foreground">50–70%</span>
                   <p className="text-muted-foreground text-xs font-body mt-1">Typical cost recovery at resale</p>
                 </div>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
-                  <Home className="w-5 h-5 text-[hsl(var(--highland-gold))] mx-auto mb-2" />
+                  <Home className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" />
                   <span className="text-2xl font-heading font-bold text-foreground">None</span>
                   <p className="text-muted-foreground text-xs font-body mt-1">No realtor fees, no moving costs, no community disruption</p>
                 </div>

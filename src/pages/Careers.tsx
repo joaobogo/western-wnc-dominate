@@ -67,10 +67,10 @@ const Careers = () => {
           <div className="absolute inset-0 tartan-dark opacity-[0.05]" />
           <div className="container-tight relative z-10">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-              <p className="text-[hsl(var(--highland-gold))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work With Us</p>
+              <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work With Us</p>
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.95]">
                 Build a Career <br />
-                <span className="text-[hsl(var(--highland-gold))]">on Higher Ground.</span>
+                <span className="text-[hsl(var(--gold-ink))]">on Higher Ground.</span>
               </h1>
               <p className="text-body-lg md:text-body-xl text-white/85 font-body leading-relaxed max-w-2xl font-medium drop-shadow-sm">
                 Highlander isn't just a roofing company. We're a family-owned, locally run team where every craftsperson, project manager, and crew member plays a role in protecting and improving WNC homes. We're looking for reliable people who take pride in doing the job right.
@@ -86,7 +86,7 @@ const Careers = () => {
               {benefits.map((b) => (
                 <div key={b.title} className="p-8 bg-secondary/30 border border-border group hover:border-[hsl(var(--highland-gold)/0.3)] transition-all duration-300">
                   <div className="w-12 h-12 bg-primary/5 flex items-center justify-center mb-6 transition-colors group-hover:bg-[hsl(var(--highland-gold)/0.1)]">
-                    <b.icon className="w-6 h-6 text-primary group-hover:text-[hsl(var(--highland-gold))] transition-colors" />
+                    <b.icon className="w-6 h-6 text-primary group-hover:text-[hsl(var(--gold-ink))] transition-colors" />
                   </div>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-3">{b.title}</h3>
                   <p className="text-sm text-muted-foreground font-body leading-relaxed">{b.desc}</p>
@@ -111,7 +111,7 @@ const Careers = () => {
                   <div className="space-y-4">
                     {openRoles.map((role) => (
                       <div key={role} className="flex items-center gap-3 p-4 bg-background border border-border">
-                        <Briefcase className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                        <Briefcase className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                         <span className="text-sm font-heading font-bold text-foreground">{role}</span>
                       </div>
                     ))}
@@ -123,7 +123,7 @@ const Careers = () => {
                   <p className="text-sm text-muted-foreground font-body mb-6">
                     Call our Franklin office directly to discuss current crew openings or subcontracting opportunities.
                   </p>
-                  <a href="tel:+18285247773" className="inline-flex items-center gap-3 text-primary font-bold hover:text-[hsl(var(--highland-gold))] transition-colors">
+                  <a href="tel:+18285247773" className="inline-flex items-center gap-3 text-primary font-bold hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" /> (828) 524-7773
                   </a>
                 </div>
@@ -147,18 +147,18 @@ const Careers = () => {
                       <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid sm:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Full Name</label>
-                            <input required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="John Doe" />
+                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-full-name">Full Name</label>
+                            <input id="f-full-name" required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="John Doe" />
                           </div>
                           <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Phone Number</label>
-                            <input required type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
+                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-phone-number">Phone Number</label>
+                            <input id="f-phone-number" required type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
                           </div>
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Position of Interest</label>
-                          <select value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors appearance-none">
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-position-of-interest">Position of Interest</label>
+                          <select id="f-position-of-interest" value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors appearance-none">
                             {openRoles.map(role => (
                               <option key={role}>{role}</option>
                             ))}
@@ -167,14 +167,14 @@ const Careers = () => {
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Relevant Experience</label>
-                          <textarea rows={4} value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-relevant-experience">Relevant Experience</label>
+                          <textarea id="f-relevant-experience" rows={4} value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Resume / CV (Optional)</label>
+                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-resume-cv-optional">Resume / CV (Optional)</label>
                           <div className="relative group cursor-pointer">
-                            <input type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                            <input id="f-resume-cv-optional" type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
                             <div className="w-full bg-secondary/30 border border-dashed border-border p-6 text-center group-hover:border-primary/50 transition-colors">
                               <Upload className="w-6 h-6 text-muted-foreground mx-auto mb-2" />
                               <p className="text-xs text-muted-foreground">Click or drag to upload file</p>

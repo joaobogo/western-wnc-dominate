@@ -31,7 +31,7 @@ const divisions = [
     tagline: "Licensed General Contractor · Full-Scope Building",
     color: "gold",
     iconBg: "bg-[hsl(var(--highland-gold)/0.1)]",
-    iconColor: "text-[hsl(var(--highland-gold))]",
+    iconColor: "text-[hsl(var(--gold-ink))]",
     borderColor: "border-[hsl(var(--highland-gold)/0.12)] hover:border-[hsl(var(--highland-gold)/0.25)]",
     stats: [
       { value: "40+", label: "Years Combined Exp." },
@@ -39,7 +39,7 @@ const divisions = [
     ],
     href: "/construction",
     cta: "Explore Construction",
-    ctaColor: "text-[hsl(var(--highland-gold))]",
+    ctaColor: "text-[hsl(var(--gold-ink))]",
   },
   {
     icon: Ruler,
@@ -47,7 +47,7 @@ const divisions = [
     tagline: "Pre-Construction · Layouts · Design",
     color: "gold",
     iconBg: "bg-accent/5",
-    iconColor: "text-accent",
+    iconColor: "text-[hsl(var(--gold-ink))]",
     borderColor: "border-accent/15 hover:border-accent/25",
     stats: [
       { value: "Layout", label: "Professional support" },
@@ -55,7 +55,7 @@ const divisions = [
     ],
     href: "/layouts-planning",
     cta: "Explore Design",
-    ctaColor: "text-accent",
+    ctaColor: "text-[hsl(var(--gold-ink))]",
   },
 ];
 
@@ -113,7 +113,7 @@ const NotJustRoofing = () => {
                     </div>
                     <div>
                       <h3 className="text-base font-heading font-bold text-foreground">{div.label}</h3>
-                      <p className="text-[10px] font-body font-medium uppercase tracking-[0.12em] text-muted-foreground/50">
+                      <p className="text-[10px] font-body font-medium uppercase tracking-[0.12em] text-muted-foreground">
                         {div.tagline}
                       </p>
                     </div>
@@ -126,7 +126,7 @@ const NotJustRoofing = () => {
                         <span className={`block text-xl font-heading font-bold ${div.iconColor} leading-none mb-1`}>
                           {stat.value}
                         </span>
-                        <span className="text-[10px] font-body uppercase tracking-[0.1em] text-muted-foreground/50">
+                        <span className="text-[10px] font-body uppercase tracking-[0.1em] text-muted-foreground">
                           {stat.label}
                         </span>
                       </div>
@@ -145,7 +145,7 @@ const NotJustRoofing = () => {
 
         {/* Shared foundation message */}
         <ScrollReveal variant="fade" delay={0.4} className="text-center mt-10">
-          <div className="flex items-center justify-center gap-3 text-muted-foreground/75">
+          <div className="flex items-center justify-center gap-3 text-muted-foreground">
             <Shield className="w-3.5 h-3.5" />
             <span className="text-[11px] font-body font-medium uppercase tracking-[0.14em]">
               Same Crews · Same Process · Same Warranty Protection

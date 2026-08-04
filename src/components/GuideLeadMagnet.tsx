@@ -68,8 +68,8 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
     }
   };
 
-  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground/75 text-sm font-body field-premium";
-  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/60 mb-2";
+  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground text-sm font-body field-premium";
+  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
 
   const formContent = (
     <div>
@@ -81,7 +81,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
             animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 400, damping: 15 }}
           >
-            <CheckCircle className="w-7 h-7 text-[hsl(var(--highland-gold))]" />
+            <CheckCircle className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
           </motion.div>
           <h4 className="font-heading font-bold text-foreground text-lg mb-2">Check Your Email</h4>
           <p className="text-muted-foreground text-sm mb-5 font-body">Your {g.title} is on its way — along with a few bonus tips for WNC homeowners.</p>
@@ -95,12 +95,12 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
-            <label className={labelClass}>Your Name</label>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} placeholder="First & last name" />
+            <label className={labelClass} htmlFor="f-your-name">Your Name</label>
+            <input id="f-your-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} placeholder="First & last name" />
           </div>
           <div>
-            <label className={labelClass}>Email</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
+            <label className={labelClass} htmlFor="f-email">Email</label>
+            <input id="f-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
           </div>
           <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase disabled:opacity-60">
             {submitting ? (
@@ -125,7 +125,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
         <div className="container-tight px-5 py-10 md:px-8 md:py-14">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
-              <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-3">
+              <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-3">
                 <FileText className="w-4 h-4" />
                 <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
               </div>
@@ -179,7 +179,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-foreground mb-1">{g.title}</h3>
-                <p className="text-[11px] text-muted-foreground/50 font-body mb-3 uppercase tracking-wide">{g.subtitle}</p>
+                <p className="text-[11px] text-muted-foreground font-body mb-3 uppercase tracking-wide">{g.subtitle}</p>
                 <p className="text-sm text-muted-foreground mb-4 font-body leading-relaxed">{g.description}</p>
                 <ul className="space-y-1.5 mb-6">
                   {g.bulletPoints.map((point) => (
@@ -200,7 +200,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
   // Inline (default)
   return (
     <div className="bg-secondary border border-border rounded-none p-6 md:p-8">
-      <div className="flex items-center gap-2 text-[hsl(var(--highland-gold))] mb-3">
+      <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-3">
         <Icon className="w-5 h-5" />
         <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
       </div>

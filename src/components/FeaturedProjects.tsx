@@ -141,7 +141,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
           {/* Elevation badge — top right */}
           <div className="absolute top-4 md:top-5 right-4 md:right-6 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0">
-            <span className="text-[9px] font-body font-semibold tracking-[0.12em] text-[hsl(var(--highland-gold))] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+            <span className="text-[9px] font-body font-semibold tracking-[0.12em] text-[hsl(var(--gold-ink))] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
               ▲ {project.elevation}
             </span>
           </div>
@@ -150,7 +150,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 z-10">
             {/* Location */}
             <div className="flex items-center gap-1.5 mb-2.5">
-              <MapPin className="w-2.5 h-2.5 text-[hsl(var(--highland-gold))]" />
+              <MapPin className="w-2.5 h-2.5 text-[hsl(var(--gold-ink))]" />
               <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em] text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                 {project.location}
               </span>
@@ -175,7 +175,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           {/* Arrow icon — bottom right */}
           <div className="absolute bottom-5 md:bottom-7 right-5 md:right-7 z-10">
             <div className="w-10 h-10 rounded-none border border-white/0 group-hover:border-[hsl(var(--highland-gold)/0.3)] bg-transparent group-hover:bg-[hsl(var(--highland-gold)/0.08)] backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-              <ArrowUpRight className="w-4 h-4 text-white/95 group-hover:text-[hsl(var(--highland-gold))] transition-colors" />
+              <ArrowUpRight className="w-4 h-4 text-white/95 group-hover:text-[hsl(var(--gold-ink))] transition-colors" />
             </div>
           </div>
         </div>
@@ -215,7 +215,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
             <HeadingReveal delay={0.1}>
               <h2 className="section-heading mb-3">
                 Projects That Speak<br className="hidden md:block" />
-                <span className="text-[hsl(var(--highland-gold))]"> for Themselves.</span>
+                <span className="text-[hsl(var(--gold-ink))]"> for Themselves.</span>
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
@@ -272,7 +272,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
           <GoldLine width="3rem" centered delay={0.2} className="mb-6" />
           <Link
             to="/recent-projects"
-            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
+            className="group inline-flex items-center gap-2.5 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
           >
             View the Full Portfolio
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

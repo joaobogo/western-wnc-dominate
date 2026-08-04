@@ -55,14 +55,14 @@ const BuiltForWNC = () => {
                 <div className="flex items-baseline gap-2 mb-1">
                   <AnimatedCounter
                     value="2,000"
-                    className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))]"
+                    className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]"
                   />
-                  <span className="text-lg font-heading text-[hsl(var(--highland-gold))]">–</span>
+                  <span className="text-lg font-heading text-[hsl(var(--gold-ink))]">–</span>
                   <AnimatedCounter
                     value="5,000"
-                    className="text-2xl font-heading font-bold text-[hsl(var(--highland-gold))]"
+                    className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]"
                   />
-                  <span className="text-lg font-heading font-bold text-[hsl(var(--highland-gold))]">ft</span>
+                  <span className="text-lg font-heading font-bold text-[hsl(var(--gold-ink))]">ft</span>
                 </div>
                 <p className="text-muted-foreground text-xs font-body">
                   Elevation range of our service area — from Franklin's valley floor to Cashiers' ridgelines.

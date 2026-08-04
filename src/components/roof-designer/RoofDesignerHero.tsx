@@ -150,6 +150,8 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
           >
             <input
               ref={fileInputRef}
+              aria-hidden="true"
+              tabIndex={-1}
               type="file"
               accept="image/jpeg,image/png,image/heic,image/heif,image/webp"
               className="hidden"

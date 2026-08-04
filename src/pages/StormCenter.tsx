@@ -32,7 +32,7 @@ const phases = [
     icon: AlertTriangle,
     label: "During & After",
     description: "Damage assessment, emergency steps, documentation",
-    color: "text-accent",
+    color: "text-[hsl(var(--gold-ink))]",
     bg: "bg-accent/10",
   },
   {
@@ -40,7 +40,7 @@ const phases = [
     icon: FileCheck,
     label: "Recovery & Claims",
     description: "Insurance process, repair planning, next steps",
-    color: "text-[hsl(var(--highland-gold))]",
+    color: "text-[hsl(var(--gold-ink))]",
     bg: "bg-[hsl(var(--highland-gold)/0.1)]",
   },
 ];
@@ -106,9 +106,9 @@ const StormCenter = () => {
           <div className="container-tight text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="w-14 h-14 rounded-sm bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                <CloudLightning className="w-7 h-7 text-accent" />
+                <CloudLightning className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
               </div>
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">
                 Storm Center
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-tight">
@@ -122,13 +122,13 @@ const StormCenter = () => {
 
               {/* Emergency contact */}
               <div className="inline-flex items-center gap-3 bg-[hsl(var(--dark-section-foreground)/0.05)] border border-[hsl(var(--dark-section-foreground)/0.1)] rounded-sm px-5 py-3">
-                <Phone className="w-4 h-4 text-accent" />
+                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                 <span className="text-[hsl(var(--dark-section-foreground)/0.5)] text-sm font-body">
                   Storm Assessment Line:
                 </span>
                 <a
                   href="tel:+18285247773"
-                  className="text-[hsl(var(--dark-section-foreground))] font-heading font-bold text-sm hover:text-accent transition-colors"
+                  className="text-[hsl(var(--dark-section-foreground))] font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors"
                 >
                   (828) 524-7773
                 </a>
@@ -181,7 +181,7 @@ const StormCenter = () => {
                     to={`/blog/${post.slug}`}
                     className="group card-premium p-5 flex flex-col"
                   >
-                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] text-accent mb-2">
+                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--gold-ink))] mb-2">
                       {post.category}
                     </span>
                     <h4 className="font-heading font-semibold text-foreground text-sm mb-2 group-hover:text-primary transition-colors leading-snug">
@@ -224,12 +224,12 @@ const StormCenter = () => {
                   className="card-premium p-5 flex items-start gap-3"
                 >
                   <div className="w-9 h-9 rounded-sm bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-4 h-4 text-accent" />
+                    <item.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <div>
                     <p className="text-foreground text-sm font-body leading-snug mb-1">{item.sign}</p>
                     <span className={`text-[10px] font-body font-semibold uppercase tracking-wider ${
-                      item.severity === "Critical" ? "text-red-500" : item.severity === "High" ? "text-accent" : "text-muted-foreground"
+                      item.severity === "Critical" ? "text-red-500" : item.severity === "High" ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"
                     }`}>
                       {item.severity} Priority
                     </span>
@@ -280,7 +280,7 @@ const StormCenter = () => {
                 <div className="bg-card border border-border rounded-sm p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                      <ShieldAlert className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                      <ShieldAlert className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <div>
                       <h3 className="font-heading font-semibold text-foreground">How We Help</h3>
@@ -311,7 +311,7 @@ const StormCenter = () => {
         <section className="section-padding section-dark tartan-dark">
           <div className="container-tight">
             <motion.div {...fadeUp} className="text-center mb-12">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Seasonal Readiness</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Seasonal Readiness</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">
                 Year-Round Storm Preparedness
               </h2>
@@ -329,7 +329,7 @@ const StormCenter = () => {
                   className="border border-[hsl(var(--highland-gold)/0.1)] bg-[hsl(var(--dark-section-foreground)/0.03)] rounded-sm p-5 md:p-6"
                 >
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-3">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-1">{item.season}</h3>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.5)] text-sm font-body mb-3">{item.focus}</p>
@@ -363,7 +363,7 @@ const StormCenter = () => {
                   >
                     <div className="p-5 md:p-6 flex flex-col h-full">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm bg-accent/10 text-accent">
+                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm bg-accent/10 text-[hsl(var(--gold-ink))]">
                           {post.category}
                         </span>
                         <span className="text-muted-foreground text-xs flex items-center gap-1">

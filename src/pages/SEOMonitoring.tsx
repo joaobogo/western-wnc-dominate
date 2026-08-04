@@ -368,7 +368,7 @@ const SEOMonitoring = () => {
         <section className="section-padding bg-primary text-primary-foreground">
           <div className="container-tight">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-accent">Active SEO Monitoring</p>
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Active SEO Monitoring</p>
               <h1 className="text-display font-heading font-bold text-white">SEO Monitoring Dashboard</h1>
               <p className="mt-6 text-body-lg md:text-body-xl text-primary-foreground/85 leading-relaxed max-w-2xl font-medium">
                 Surface new 404s, crawl blockers, sitemap drift, and suspected index-loss pages with direct links for investigation.
@@ -492,7 +492,7 @@ const SEOMonitoring = () => {
 
             <section className="rounded-sm border border-border bg-card p-6">
               <div className="flex items-start gap-3">
-                <AlertTriangle className="mt-1 h-5 w-5 text-accent" />
+                <AlertTriangle className="mt-1 h-5 w-5 text-[hsl(var(--gold-ink))]" />
                 <p className="text-sm leading-7 text-muted-foreground">
                   This dashboard combines logged 404 hits with a live rendered-page crawl, sitemap diff, and weekly priority-page monitoring for all service and town URLs. Weekly reporting can now summarize keyword shifts alongside internal-link count and severity changes.
                 </p>

@@ -235,7 +235,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
           {/* Stat floating in image */}
           <div className="absolute bottom-3 left-5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
             <span className={`text-xl md:text-2xl font-heading font-bold leading-none ${
-              isGold ? "text-[hsl(var(--highland-gold))]" : "text-white"
+              isGold ? "text-[hsl(var(--gold-ink))]" : "text-white"
             }`}>
               {service.stat}
             </span>
@@ -247,7 +247,7 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
           {/* Division tag */}
           <div className={`absolute top-3 right-3 text-[12px] font-body font-bold uppercase tracking-[0.15em] px-3 py-1.5 backdrop-blur-md ${
             isGold
-              ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.25)] border border-[hsl(var(--highland-gold)/0.35)]"
+              ? "text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.25)] border border-[hsl(var(--highland-gold)/0.35)]"
               : "text-white bg-primary/40 border border-white/25"
           }`}>
             {isGold ? "Construction" : "Roofing"}
@@ -275,14 +275,14 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
                 ? "bg-[hsl(var(--highland-gold)/0.06)] group-hover:bg-[hsl(var(--highland-gold)/0.14)]"
                 : "bg-primary/6 group-hover:bg-primary/12"
             }`}>
-              <service.icon className={`w-4 h-4 ${isGold ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-primary/60"}`} />
+              <service.icon className={`w-4 h-4 ${isGold ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-primary/80"}`} />
             </div>
             <div>
               <h3 className="text-base font-heading font-bold text-foreground leading-tight tracking-tight group-hover:text-foreground/90 transition-colors">
                 {service.title}
               </h3>
               <span className={`text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.18em] mt-1 block ${
-                isGold ? "text-[hsl(var(--highland-gold))]" : "text-primary/80"
+                isGold ? "text-[hsl(var(--gold-ink))]" : "text-primary/80"
               }`}>
                 {service.tagline}
               </span>
@@ -297,12 +297,12 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
           {/* CTA row */}
           <div className="flex items-center justify-between pt-3 border-t border-border/60">
             <span className={`inline-flex items-center gap-1.5 font-heading font-bold text-[14px] tracking-wide group-hover:gap-2.5 transition-all duration-300 ${
-              isGold ? "text-[hsl(var(--highland-gold))]" : "text-primary"
+              isGold ? "text-[hsl(var(--gold-ink))]" : "text-primary"
             }`}>
               Explore <ArrowRight className="w-3 h-3" />
             </span>
             <div className="w-7 h-7 rounded-none border border-border/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-              <ArrowRight className="w-3 h-3 text-muted-foreground/60" />
+              <ArrowRight className="w-3 h-3 text-muted-foreground" />
             </div>
           </div>
         </div>
@@ -328,7 +328,7 @@ const ServicesGrid = () => {
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-4">
               Every Service Specified for<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> Your Property's Conditions.</span>
+              <span className="text-[hsl(var(--gold-ink))]"> Your Property's Conditions.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
@@ -363,7 +363,7 @@ const ServicesGrid = () => {
           <ScrollReveal variant="slide-left">
             <div className="flex items-center gap-3 mb-7">
               <div className="w-8 h-8 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
               </div>
               <span className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--highland-gold)/0.9)]">
                 Construction Division

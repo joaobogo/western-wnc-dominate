@@ -143,7 +143,7 @@ function LeadCaptureCard({
     );
   }
 
-  const inputCls = "w-full px-3 py-2 text-xs font-body bg-background border border-input rounded-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-ring";
+  const inputCls = "w-full px-3 py-2 text-xs font-body bg-background border border-input rounded-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring";
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-card border border-border rounded-sm p-4 max-w-[90%] space-y-3">
@@ -152,9 +152,9 @@ function LeadCaptureCard({
         <p className="text-[11px] text-muted-foreground font-body mt-0.5">Share your info and we'll call you — no obligation.</p>
       </div>
       <div className="space-y-2">
-        <input value={name} onChange={e => setName(e.target.value)} placeholder="Your name" className={inputCls} maxLength={100} />
-        <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Best phone number" className={inputCls} maxLength={20} />
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email (optional)" className={inputCls} maxLength={255} />
+        <input aria-label="Your name" value={name} onChange={e => setName(e.target.value)} placeholder="Your name" className={inputCls} maxLength={100} />
+        <input aria-label="Best phone number" type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Best phone number" className={inputCls} maxLength={20} />
+        <input aria-label="Email address (optional)" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email (optional)" className={inputCls} maxLength={255} />
         <input value={town} onChange={e => setTown(e.target.value)} placeholder="Property town (Franklin, Highlands, Cashiers, Sylva…)" className={inputCls} maxLength={80} aria-label="What town is the property in?" />
       </div>
       <div className="flex items-center gap-2">
@@ -165,7 +165,7 @@ function LeadCaptureCard({
           Not yet
         </button>
       </div>
-      <p className="text-[10px] text-muted-foreground/60 font-body flex items-start gap-1 leading-relaxed">
+      <p className="text-[10px] text-muted-foreground font-body flex items-start gap-1 leading-relaxed">
         <Shield className="w-3 h-3 mt-0.5 flex-shrink-0" />
         <span>
           By submitting, you agree Highlander may contact you by phone, text, or email about your inquiry. Reply STOP to opt out. See our <a href="/privacy-policy" className="underline">Privacy Policy</a>.
@@ -192,7 +192,7 @@ function StormChecklistCard() {
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-card border border-border rounded-sm p-4 max-w-[90%]">
       <div className="flex items-center gap-2 mb-3">
-        <AlertTriangle className="w-4 h-4 text-accent" />
+        <AlertTriangle className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
         <p className="text-sm font-heading font-semibold text-foreground">Storm Damage Checklist</p>
       </div>
       <div className="space-y-2">
@@ -376,7 +376,7 @@ export default function ChatbotWidget() {
 
   // Handle markdown links to navigate within the app
   const renderMarkdown = (content: string) => (
-    <div className="prose prose-sm prose-stone max-w-none [&_p]:mb-1 [&_p:last-child]:mb-0 [&_a]:text-accent [&_a]:no-underline [&_a:hover]:underline [&_strong]:text-foreground">
+    <div className="prose prose-sm prose-stone max-w-none [&_p]:mb-1 [&_p:last-child]:mb-0 [&_a]:text-[hsl(var(--gold-ink))] [&_a]:no-underline [&_a:hover]:underline [&_strong]:text-foreground">
       <ReactMarkdown
         components={{
           a: ({ href, children }) => {
@@ -385,13 +385,13 @@ export default function ChatbotWidget() {
                 <Link
                   to={href}
                   onClick={() => setIsOpen(false)}
-                  className="text-accent font-semibold hover:underline inline"
+                  className="text-[hsl(var(--gold-ink))] font-semibold hover:underline inline"
                 >
                   {children}
                 </Link>
               );
             }
-            return <a href={href} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold">{children}</a>;
+            return <a href={href} target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--gold-ink))] font-semibold">{children}</a>;
           },
         }}
       >
@@ -519,6 +519,7 @@ export default function ChatbotWidget() {
             <div className="shrink-0 border-t border-border bg-card">
               <form onSubmit={handleSubmit} className="flex items-center gap-2 px-3 py-2">
                 <input
+                  aria-label="Describe your project"
                   ref={inputRef}
                   value={input}
                   onChange={e => setInput(e.target.value)}
@@ -538,7 +539,7 @@ export default function ChatbotWidget() {
               </form>
               <div className="px-3 pb-2 flex items-center justify-between text-xs text-muted-foreground">
                 <span className="font-body">Prefer to talk?</span>
-                <a href="tel:+18285247773" className="inline-flex items-center gap-1 font-body font-medium text-primary hover:text-accent transition-colors">
+                <a href="tel:+18285247773" className="inline-flex items-center gap-1 font-body font-medium text-primary hover:text-[hsl(var(--gold-ink))] transition-colors">
                   <Phone className="w-3 h-3" /> (828) 524-7773
                 </a>
               </div>

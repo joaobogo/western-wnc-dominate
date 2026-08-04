@@ -62,7 +62,7 @@ const CardCapture = ({
         { icon: Star, text: "Warrantied Work" },
       ].map((item) => (
         <div key={item.text} className="flex items-center gap-1.5">
-          <item.icon className="w-3 h-3 text-primary/30" />
+          <item.icon className="w-3 h-3 text-primary/80" />
           <span className="text-muted-foreground text-[10px] font-body font-medium">{item.text}</span>
         </div>
       ))}

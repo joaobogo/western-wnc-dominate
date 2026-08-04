@@ -72,12 +72,12 @@ const GivingBack = () => {
               className="max-w-3xl"
             >
               <div className="flex items-center gap-3 mb-6">
-                <HandHeart className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
-                <span className="text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))]">Community Involvement</span>
+                <HandHeart className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                <span className="text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Community Involvement</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6 tracking-tight">
                 Built for the Community<br />
-                <span className="text-[hsl(var(--highland-gold))]">We Call Home.</span>
+                <span className="text-[hsl(var(--gold-ink))]">We Call Home.</span>
               </h1>
               <p className="text-lg md:text-xl text-white/95 font-body leading-relaxed max-w-2xl font-medium mb-8">
                 Highlander Roofing Services is proud to serve the same Western North Carolina communities we live in, work in, and care about. From roofing and construction to local involvement, our work is built around protecting homes, supporting neighbors, and strengthening the places that make this region special.
@@ -189,7 +189,7 @@ const GivingBack = () => {
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
           <div className="container-tight relative z-10 max-w-3xl text-center">
             <ScrollReveal>
-              <Users className="w-12 h-12 text-[hsl(var(--highland-gold))] mx-auto mb-6" />
+              <Users className="w-12 h-12 text-[hsl(var(--gold-ink))] mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 leading-tight">
                 Have a Local Cause or Community Opportunity?
               </h2>

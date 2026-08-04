@@ -164,13 +164,13 @@ const RealWorkDiagnostics = () => {
       <main className="min-h-screen bg-background pt-[96px] md:pt-[136px] pb-16">
         <div className="container-tight max-w-4xl">
           <div className="mb-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))] font-bold mb-2">
+            <p className="text-xs uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] font-bold mb-2">
               Internal Tools
             </p>
             <h1 className="text-3xl md:text-4xl font-heading font-bold mb-3">
               RealWork Widget Diagnostics
             </h1>
-            <p className="text-foreground/70">
+            <p className="text-muted-foreground">
               Live status of the RealWork Labs loader, Google Maps dependency, and both widget
               containers. Elapsed: {(elapsed / 1000).toFixed(1)}s
             </p>
@@ -186,7 +186,7 @@ const RealWorkDiagnostics = () => {
                   <h2 className="font-semibold text-foreground text-sm md:text-base">{c.label}</h2>
                   <span className={badge(c.status)}>{c.status}</span>
                 </div>
-                <p className="text-sm text-foreground/70 font-mono">{c.detail}</p>
+                <p className="text-sm text-muted-foreground font-mono">{c.detail}</p>
               </div>
             ))}
           </div>
@@ -194,7 +194,7 @@ const RealWorkDiagnostics = () => {
           <section className="mb-10">
             <h2 className="font-heading text-xl font-bold mb-3">Captured loader errors</h2>
             {logs.length === 0 ? (
-              <p className="text-sm text-foreground/60 italic">No RealWork / Maps errors captured.</p>
+              <p className="text-sm text-muted-foreground italic">No RealWork / Maps errors captured.</p>
             ) : (
               <ul className="space-y-2">
                 {logs.map((l, i) => (
@@ -208,19 +208,19 @@ const RealWorkDiagnostics = () => {
 
           <section>
             <h2 className="font-heading text-xl font-bold mb-3">Live containers</h2>
-            <p className="text-sm text-foreground/70 mb-4">
+            <p className="text-sm text-muted-foreground mb-4">
               These are the exact IDs the RealWork plugin binds to. If they stay empty after 15s,
               the widget is not initializing on this page.
             </p>
             <div className="border border-border rounded-sm p-4 bg-card mb-4">
-              <p className="text-xs font-mono uppercase tracking-wider text-foreground/50 mb-2">#rwl-output</p>
+              <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground mb-2">#rwl-output</p>
               <div id="rwl-output" className="min-h-[120px]" />
             </div>
             <div className="border border-border rounded-sm p-4 bg-card">
-              <p className="text-xs font-mono uppercase tracking-wider text-foreground/50 mb-2">
+              <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground mb-2">
                 #rwl-neighborhood (sitewide, in index.html)
               </p>
-              <p className="text-sm text-foreground/60">
+              <p className="text-sm text-muted-foreground">
                 The neighborhood panel is injected into the body-level container defined in
                 <code className="mx-1 px-1 bg-muted rounded">index.html</code>. Check the check above
                 for its status.

@@ -64,7 +64,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-2 mb-4"
           >
-            <Compass className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+            <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
             <span className="eyebrow">Local Service Area</span>
           </motion.div>
 
@@ -77,7 +77,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             className="text-display font-heading font-bold leading-[0.98] tracking-tight mb-5"
           >
             Serving Franklin, Highlands, Cashiers, Sylva{" "}
-            <span className="text-[hsl(var(--highland-gold))]">
+            <span className="text-[hsl(var(--gold-ink))]">
               &amp; Western North Carolina.
             </span>
           </motion.h2>
@@ -111,7 +111,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
 
                 <div className="flex items-center gap-2 mb-3">
-                  <MapPin className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
+                  <MapPin className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
                   <span className="text-[10px] font-body font-bold uppercase tracking-[0.16em] text-muted-foreground">
                     Primary Hub
                   </span>
@@ -149,7 +149,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                     to={area.href!}
                     className="group inline-flex items-center gap-1.5 bg-card border border-border hover:border-primary/40 hover:bg-card px-3.5 py-2 text-sm font-body font-semibold text-foreground hover:text-primary transition-all"
                   >
-                    <MapPin className="w-3 h-3 text-[hsl(var(--highland-gold))]" />
+                    <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                     {area.name}, NC
                     <ArrowRight className="w-3 h-3 opacity-0 -ml-1 group-hover:opacity-70 group-hover:ml-0 transition-all" />
                   </Link>
@@ -177,7 +177,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                       to={area.href}
                       className="group inline-flex items-center gap-1.5 bg-card border border-border hover:border-primary/40 px-3.5 py-2 text-sm font-body font-semibold text-foreground hover:text-primary transition-all"
                     >
-                      <MapPin className="w-3 h-3 text-[hsl(var(--highland-gold))]" />
+                      <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                       {area.name}
                     </Link>
                   </li>
@@ -191,7 +191,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                 ),
               )}
             </ul>
-            <p className="text-xs text-muted-foreground/80 mt-4 font-body italic">
+            <p className="text-xs text-muted-foreground mt-4 font-body italic">
               Don't see your town? If it's within our Western NC footprint, we
               likely serve it — call{" "}
               <a href="tel:+18285247773" className="text-primary font-semibold hover:underline not-italic">

@@ -91,7 +91,7 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
                 className="group p-6 bg-secondary/30 border border-border/50 hover:border-primary/30 transition-all duration-300 flex flex-col h-full"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <MapPin className="w-4 h-4 text-primary/60" />
+                  <MapPin className="w-4 h-4 text-primary/80" />
                   <h3 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors">
                     {town.name}
                   </h3>

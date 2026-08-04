@@ -38,10 +38,10 @@ export default function AdminLogin() {
           <h1 className="text-lg font-heading font-bold">Internal sign in</h1>
           <p className="text-xs text-muted-foreground">Highlander team only. Leads dashboard access.</p>
         </div>
-        <input type="email" required placeholder="Email" value={email}
+        <input aria-label="Email" type="email" required placeholder="Email" value={email}
           onChange={e => setEmail(e.target.value)}
           className="w-full border border-input rounded px-3 py-2 text-sm bg-background" />
-        <input type="password" required placeholder="Password" value={password}
+        <input aria-label="Password" type="password" required placeholder="Password" value={password}
           onChange={e => setPassword(e.target.value)}
           className="w-full border border-input rounded px-3 py-2 text-sm bg-background" />
         {err && <p className="text-xs text-destructive">{err}</p>}

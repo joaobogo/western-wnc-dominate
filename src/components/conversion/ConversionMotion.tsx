@@ -93,7 +93,7 @@ export const MultiStepForm = ({
           ))}
         </div>
         <div className="flex items-center justify-between">
-          <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold))]">
+          <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--gold-ink))]">
             Step {currentStep + 1} of {steps.length}
           </p>
           <p className="text-[11px] text-muted-foreground font-body">{steps[currentStep].label}</p>
@@ -296,7 +296,7 @@ export const ConfirmationState = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.4 }}
-            className="text-muted-foreground/50 font-body text-xs mt-3"
+            className="text-muted-foreground font-body text-xs mt-3"
           >
             {secondaryMessage}
           </motion.p>
@@ -373,7 +373,7 @@ export const ScheduleSlot = ({ time, available, selected, onClick }: ScheduleSlo
         ? "bg-[hsl(var(--highland-gold))] text-white shadow-[0_4px_12px_-3px_hsl(var(--highland-gold)/0.3)]"
         : available
           ? "bg-card border border-border text-foreground hover:border-[hsl(var(--highland-gold)/0.3)] hover:bg-secondary/40"
-          : "bg-muted/30 text-muted-foreground/75 cursor-not-allowed"
+          : "bg-muted/30 text-muted-foreground cursor-not-allowed"
     }`}
     disabled={!available}
   >

@@ -158,7 +158,7 @@ export function StormChecklist() {
         <div className="space-y-2 mb-6">
           {STORM_ITEMS.map(item => (
             <label key={item.id} className={`flex items-start gap-3 p-3 rounded-sm border cursor-pointer transition-all ${checked.has(item.id) ? "border-accent/50 bg-accent/5" : "border-border hover:border-accent/20"}`}>
-              <input type="checkbox" checked={checked.has(item.id)} onChange={() => toggle(item.id)} className="mt-0.5 accent-[hsl(var(--accent))]" />
+              <input type="checkbox" aria-label={item.label} checked={checked.has(item.id)} onChange={() => toggle(item.id)} className="mt-0.5 accent-[hsl(var(--accent))]" />
               <span className="text-sm font-body text-foreground">
                 {item.label}
                 {item.critical && <span className="text-xs text-red-500 ml-1 font-medium">⚠ Critical</span>}
@@ -277,7 +277,7 @@ export function MaterialsComparison() {
                 </div>
                 <div className="mt-3 pt-3 border-t border-border">
                   <p className="text-xs text-muted-foreground font-body mb-2"><strong className="text-foreground">Best for:</strong> {m.bestFor}</p>
-                  <p className="text-xs text-accent/80 font-body italic">🏔 {m.mountainNote}</p>
+                  <p className="text-xs text-[hsl(var(--gold-ink))]/80 font-body italic">🏔 {m.mountainNote}</p>
                 </div>
                 <div className="mt-3 pt-3 border-t border-border grid grid-cols-2 gap-2">
                   <div>
@@ -422,6 +422,7 @@ export function ServiceAreaFinder() {
         <p className="text-sm text-muted-foreground font-body mb-6">We serve all of Western North Carolina. Find your community below.</p>
 
         <input
+          aria-label="Search your town"
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Search your town…"
@@ -438,14 +439,14 @@ export function ServiceAreaFinder() {
               }`}
             >
               {t.name}
-              {t.primary && <span className="text-[10px] text-accent ml-1">★</span>}
+              {t.primary && <span className="text-[10px] text-[hsl(var(--gold-ink))] ml-1">★</span>}
             </a>
           ))}
         </div>
 
         {filtered.length === 0 && (
           <p className="text-sm text-muted-foreground font-body text-center py-4">
-            Don't see your town? We likely still serve your area. <a href="/consultation" className="text-primary hover:text-accent transition-colors font-medium">Contact us to confirm.</a>
+            Don't see your town? We likely still serve your area. <a href="/consultation" className="text-primary hover:text-[hsl(var(--gold-ink))] transition-colors font-medium">Contact us to confirm.</a>
           </p>
         )}
       </div>

@@ -254,11 +254,11 @@ const FAQ = () => {
         <section className="bg-heritage-charcoal pt-32 md:pt-40 pb-14 md:pb-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
           <div className="container-tight relative z-10">
-            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] block mb-4">
+            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
               Homeowner Questions, Answered
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-3xl">
-              Frequently Asked <span className="text-[hsl(var(--highland-gold))]">Questions</span>
+              Frequently Asked <span className="text-[hsl(var(--gold-ink))]">Questions</span>
             </h1>
             <p className="text-white/95 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
               Practical answers about roofing, repairs, storm damage, insurance, construction, and home projects in Western North Carolina. For project-specific guidance, contact Highlander directly.
@@ -271,7 +271,7 @@ const FAQ = () => {
           <div className="container-tight py-3 overflow-x-auto">
             <div className="flex gap-2 min-w-max">
               {categories.map((c) => (
-                <a key={c.id} href={`#${c.id}`} className="text-xs md:text-sm font-body font-bold uppercase tracking-wider px-3 py-2 text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-sm transition-colors whitespace-nowrap">
+                <a key={c.id} href={`#${c.id}`} className="text-xs md:text-sm font-body font-bold uppercase tracking-wider px-3 py-2 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-sm transition-colors whitespace-nowrap">
                   {c.label}
                 </a>
               ))}
@@ -285,7 +285,7 @@ const FAQ = () => {
             {categories.map((cat) => (
               <div key={cat.id} id={cat.id} className="scroll-mt-32">
                 <div className="flex items-center gap-3 mb-6">
-                  <HelpCircle className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <HelpCircle className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">{cat.label}</h2>
                 </div>
                 <div className="border-t border-border">

@@ -119,7 +119,7 @@ const CustomConstruction = () => {
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Construction</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Custom & Specialty</span>
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Custom & Specialty</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -129,7 +129,7 @@ const CustomConstruction = () => {
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.05] tracking-tight">
-                  <span className="text-[hsl(var(--highland-gold))]">Demand More.</span>
+                  <span className="text-[hsl(var(--gold-ink))]">Demand More.</span>
                 </motion.h2>
               </div>
 
@@ -156,7 +156,7 @@ const CustomConstruction = () => {
                 className="mt-10 p-5 bg-white/5 backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.15)] rounded-sm max-w-md"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <Gem className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <Gem className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   <span className="text-xs uppercase tracking-wider text-primary-foreground/85 font-body font-semibold">By Selection Only</span>
                 </div>
                 <p className="text-sm text-primary-foreground/85 font-body leading-relaxed">
@@ -175,7 +175,7 @@ const CustomConstruction = () => {
               <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.12] mb-8 text-balance tracking-tight">
                 Some projects don't fit categories. They require more planning, more coordination, and more craft. Those are the projects we're built for.
               </h2>
-              <p className="text-foreground/70 text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
                 Highlander takes on custom and specialty construction work where our planning discipline, in-house craft quality, and communication standards make a meaningful difference.
               </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
@@ -192,7 +192,7 @@ const CustomConstruction = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Project Types</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Project Types</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Projects That Require<br className="hidden md:block" /> a Higher Standard.
                 </h2>
@@ -205,7 +205,7 @@ const CustomConstruction = () => {
                 {complexProjects.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
-                      <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                      <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
                     <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
@@ -222,17 +222,17 @@ const CustomConstruction = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
               <span className="eyebrow mb-3 block">Custom Planning</span>
               <h2 className="section-heading mb-4">Planning Is the<br className="hidden md:block" /> Product.</h2>
-              <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">On custom projects, the quality of the plan determines the quality of the result. We invest heavily in the front end so execution is precise.</p>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">On custom projects, the quality of the plan determines the quality of the result. We invest heavily in the front end so execution is precise.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {customPlanning.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift transition-all">
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -246,13 +246,13 @@ const CustomConstruction = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
                 <span className="eyebrow mb-3 block">Structural & Design</span>
                 <h2 className="section-heading mb-5">Where Craft<br /> Meets Engineering.</h2>
-                <p className="text-foreground/70 text-base font-body mb-6 leading-relaxed">
+                <p className="text-muted-foreground text-base font-body mb-6 leading-relaxed">
                   Custom projects live at the intersection of design vision and structural reality. We navigate both — ensuring what's beautiful is also buildable, durable, and code-compliant.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h4 className="font-heading font-bold text-foreground text-sm mb-2">Working with a designer?</h4>
-                  <p className="text-foreground/60 text-[13px] leading-relaxed font-body mb-3">We collaborate with local designers and project planners regularly. We can work from your plans or recommend firms we've partnered with successfully.</p>
-                  <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
+                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-3">We collaborate with local designers and project planners regularly. We can work from your plans or recommend firms we've partnered with successfully.</p>
+                  <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -264,8 +264,8 @@ const CustomConstruction = () => {
                     <div className="flex items-start gap-4">
                       <div className="w-1 h-8 bg-[hsl(var(--highland-gold)/0.3)] rounded-full mt-0.5 flex-shrink-0" />
                       <div>
-                        <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{item.title}</h3>
-                        <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                        <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                        <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -303,7 +303,7 @@ const CustomConstruction = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Communication</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Communication</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Built on<br className="hidden md:block" /> Transparency.
                 </h2>
@@ -316,7 +316,7 @@ const CustomConstruction = () => {
                 {communicationOversight.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
-                      <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                      <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
                     <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
@@ -340,10 +340,10 @@ const CustomConstruction = () => {
                 <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <step.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--highland-gold))] transition-colors">{step.title}</h3>
-                  <p className="text-foreground/75 text-[13.5px] leading-relaxed font-body">{step.description}</p>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
+                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -356,7 +356,7 @@ const CustomConstruction = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
               <span className="eyebrow mb-3 block">Selected Work</span>
               <h2 className="section-heading mb-3">Precision in Practice.</h2>
-              <p className="text-foreground/70 text-base font-body max-w-md mx-auto leading-relaxed">Custom projects where planning discipline, craft quality, and communication made the difference.</p>
+              <p className="text-muted-foreground text-base font-body max-w-md mx-auto leading-relaxed">Custom projects where planning discipline, craft quality, and communication made the difference.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -374,7 +374,7 @@ const CustomConstruction = () => {
             </div>
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--highland-gold))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
                 View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>

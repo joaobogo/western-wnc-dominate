@@ -32,11 +32,11 @@ const Team = () => {
         <section className="bg-heritage-charcoal pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
           <div className="container-tight relative z-10">
-            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] block mb-4">
+            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
               The People Behind Highlander
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-3xl">
-              Meet the Team Behind<br /><span className="text-[hsl(var(--highland-gold))]">Highlander Roofing Services</span>
+              Meet the Team Behind<br /><span className="text-[hsl(var(--gold-ink))]">Highlander Roofing Services</span>
             </h1>
             <p className="text-white/95 text-lg md:text-xl max-w-2xl leading-relaxed font-body">
               Highlander Roofing Services is led by a local team committed to dependable workmanship, honest communication, and customer-focused service across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. From company leadership and sales to inspections, project management, repairs, and field coordination, each team member plays a role in helping homeowners protect and improve their properties.
@@ -51,7 +51,7 @@ const Team = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight mb-5">
               Every Team Member Makes a Difference
             </h2>
-            <p className="text-foreground/75 text-base md:text-lg leading-relaxed font-body">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body">
               Highlander is family-owned, but the company is powered by a broader team of local professionals who each play a role in serving customers well. From leadership and financial management to sales, inspections, repairs, project coordination, scheduling, drone documentation, and field support, every role matters.
             </p>
           </div>
@@ -99,7 +99,7 @@ const Team = () => {
                     <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pt-5 border-t border-border">
                       {member.details.map((d) => (
                         <div key={d.label} className="flex flex-col">
-                          <dt className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))]">
+                          <dt className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))]">
                             {d.label}
                           </dt>
                           <dd className="text-sm md:text-[15px] text-foreground/85 font-body mt-1">

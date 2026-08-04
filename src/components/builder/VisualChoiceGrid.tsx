@@ -67,11 +67,11 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
                   {o.label}
                 </span>
                 {!o.image && active && (
-                  <Check className="w-4 h-4 text-[hsl(var(--highland-gold))]" strokeWidth={3} />
+                  <Check className="w-4 h-4 text-[hsl(var(--gold-ink))]" strokeWidth={3} />
                 )}
               </div>
               {o.sub && (
-                <p className="text-[11.5px] text-foreground/55 mt-1 font-body leading-snug">{o.sub}</p>
+                <p className="text-[11.5px] text-muted-foreground mt-1 font-body leading-snug">{o.sub}</p>
               )}
             </div>
           </button>

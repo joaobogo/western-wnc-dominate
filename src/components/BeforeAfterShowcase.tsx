@@ -171,15 +171,15 @@ export const BeforeAfterShowcase = ({
 
         <div className="space-y-4 mb-6">
           <div>
-            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">What Changed</h4>
+            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">What Changed</h4>
             <p className="text-muted-foreground text-sm leading-relaxed">{whatChanged}</p>
           </div>
           <div>
-            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">Why It Mattered</h4>
+            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">Why It Mattered</h4>
             <p className="text-muted-foreground text-sm leading-relaxed">{whyItMattered}</p>
           </div>
           <div>
-            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-1">The Highlander Difference</h4>
+            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">The Highlander Difference</h4>
             <p className="text-muted-foreground text-sm leading-relaxed">{highlanderDifference}</p>
           </div>
         </div>

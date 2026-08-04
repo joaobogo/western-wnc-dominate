@@ -127,7 +127,7 @@ export const CredentialCards = ({ variant = "light" }: { variant?: "light" | "da
               className={`w-full h-full object-contain mix-blend-multiply ${variant === "dark" ? "brightness-200 contrast-125" : ""}`} 
             />
           ) : (
-            <cert.icon className={`w-5 h-5 ${variant === "dark" ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`} />
+            <cert.icon className={`w-5 h-5 ${variant === "dark" ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} />
           )}
         </div>
         <h3 className={`font-heading font-bold text-sm mb-0.5 ${
@@ -175,7 +175,7 @@ export const TrustPillarGrid = ({
         viewport={{ once: true }}
         className="text-center mb-12 md:mb-14"
       >
-        <span className={`eyebrow mb-3 block ${isDark ? "text-[hsl(var(--highland-gold))]" : ""}`}>{eyebrow}</span>
+        <span className={`eyebrow mb-3 block ${isDark ? "text-[hsl(var(--gold-ink))]" : ""}`}>{eyebrow}</span>
         <h2 className={`section-heading mb-4 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : ""}`}>{heading}</h2>
         <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
         {subheading && (
@@ -201,7 +201,7 @@ export const TrustPillarGrid = ({
             <div className={`w-10 h-10 rounded-sm flex items-center justify-center mb-3 ${
               isDark ? "bg-[hsl(var(--highland-gold)/0.1)]" : "bg-primary/8"
             }`}>
-              <p.icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`} />
+              <p.icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} />
             </div>
             <h3 className={`font-heading font-semibold text-sm mb-2 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
               {p.title}
@@ -211,7 +211,7 @@ export const TrustPillarGrid = ({
             </p>
             {showObjections && (
               <div className={`text-[11px] font-body italic pt-3 border-t ${
-                isDark ? "border-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--dark-section-foreground)/0.4)]" : "border-border text-muted-foreground/50"
+                isDark ? "border-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--dark-section-foreground)/0.4)]" : "border-border text-muted-foreground"
               }`}>
                 Overcomes: "{p.overcomes}"
               </div>
@@ -241,13 +241,13 @@ export const ReviewHighlight = ({ quote, name, location, project, outcome }: Rev
     <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
     <div className="flex gap-0.5 mb-4">
       {[...Array(5)].map((_, i) => (
-        <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />
+        <Star key={i} className="w-3.5 h-3.5 fill-accent text-[hsl(var(--gold-ink))]" />
       ))}
     </div>
     <p className="text-foreground text-sm md:text-[15px] leading-relaxed mb-5 font-body">"{quote}"</p>
     {outcome && (
       <div className="bg-secondary/60 rounded-sm px-4 py-3 mb-5">
-        <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/50 mb-1">Project Outcome</p>
+        <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
         <p className="text-sm font-body font-medium text-foreground/80">{outcome}</p>
       </div>
     )}
@@ -289,7 +289,7 @@ export const StandardsCallout = ({
       <div className={`w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 ${
         isDark ? "bg-[hsl(var(--highland-gold)/0.08)]" : "bg-primary/8"
       }`}>
-        <Icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--highland-gold))]" : "text-primary"}`} />
+        <Icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} />
       </div>
       <div>
         <h4 className={`font-heading font-semibold text-sm mb-1 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
@@ -445,7 +445,7 @@ export const EditorialProofSection = ({ eyebrow, heading, body, stats, variant =
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className={`eyebrow mb-3 block ${isDark ? "text-[hsl(var(--highland-gold))]" : ""}`}>{eyebrow}</span>
+        <span className={`eyebrow mb-3 block ${isDark ? "text-[hsl(var(--gold-ink))]" : ""}`}>{eyebrow}</span>
         <h2 className={`section-heading mb-5 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : ""}`}>{heading}</h2>
         <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
         <p className={`leading-relaxed ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-muted-foreground"}`}>{body}</p>
@@ -463,7 +463,7 @@ export const EditorialProofSection = ({ eyebrow, heading, body, stats, variant =
             }`}
           >
             <p className={`text-2xl md:text-3xl font-heading font-bold mb-1 ${
-              isDark ? "text-[hsl(var(--highland-gold))]" : "text-accent"
+              isDark ? "text-[hsl(var(--gold-ink))]" : "text-[hsl(var(--gold-ink))]"
             }`}>{s.value}</p>
             <p className={`text-xs font-body ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.5)]" : "text-muted-foreground"}`}>
               {s.label}

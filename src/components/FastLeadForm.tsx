@@ -31,7 +31,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
   });
 
   const fieldClass = (invalid?: boolean) =>
-    `w-full border bg-background px-4 py-3 text-sm font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 ${
+    `w-full border bg-background px-4 py-3 text-sm font-body text-foreground outline-none transition-colors placeholder:text-muted-foreground ${
       invalid ? "border-destructive focus:border-destructive" : "border-input focus:border-primary"
     }`;
 

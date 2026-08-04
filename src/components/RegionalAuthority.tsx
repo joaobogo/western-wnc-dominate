@@ -29,7 +29,7 @@ const RegionalAuthority = () => {
             className="text-display font-heading font-bold mb-5 leading-[0.98] tracking-tight"
           >
             A Roofing Company Built{" "}
-            <span className="text-[hsl(var(--highland-gold))]">for Western NC.</span>
+            <span className="text-[hsl(var(--gold-ink))]">for Western NC.</span>
           </motion.h2>
 
           <div className="w-12 h-px bg-[hsl(var(--highland-gold))] mb-6" />
@@ -94,7 +94,7 @@ const RegionalAuthority = () => {
         >
           <div className="bg-card border border-border rounded-none p-6 md:p-8 shadow-sm">
             <div className="flex items-center gap-2 mb-5">
-              <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
               <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground">
                 Coverage Snapshot
               </span>

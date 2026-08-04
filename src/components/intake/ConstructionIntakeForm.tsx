@@ -273,17 +273,17 @@ const ConstructionIntakeForm = () => {
           {step === 0 && (
             <>
               <div>
-                <Label required>Project type</Label>
-                <ChipGroup options={PROJECT_OPTIONS} value={data.projectType} onChange={(v) => set("projectType", v)} columns={2} />
+                <Label required id="lbl-project-type">Project type</Label>
+                <ChipGroup labelledBy="lbl-project-type" options={PROJECT_OPTIONS} value={data.projectType} onChange={(v) => set("projectType", v)} columns={2} />
               </div>
               <div>
-                <Label required>Where are you in the process</Label>
-                <ChipGroup options={READINESS_OPTIONS} value={data.budgetReadiness} onChange={(v) => set("budgetReadiness", v)} columns={3} />
+                <Label required id="lbl-where-are-you-in-the-process">Where are you in the process</Label>
+                <ChipGroup labelledBy="lbl-where-are-you-in-the-process" options={READINESS_OPTIONS} value={data.budgetReadiness} onChange={(v) => set("budgetReadiness", v)} columns={3} />
                 <Helper>We work best when both sides are honest about stage. No wrong answer.</Helper>
               </div>
               <div>
-                <Label required>Ideal start window</Label>
-                <ChipGroup options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={4} />
+                <Label required id="lbl-ideal-start-window">Ideal start window</Label>
+                <ChipGroup labelledBy="lbl-ideal-start-window" options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={4} />
               </div>
             </>
           )}
@@ -291,18 +291,18 @@ const ConstructionIntakeForm = () => {
           {step === 1 && (
             <>
               <div>
-                <Label required>Do you already have plans?</Label>
-                <ChipGroup options={PLAN_OPTIONS} value={data.hasPlans} onChange={(v) => set("hasPlans", v)} columns={2} />
+                <Label required id="lbl-do-you-already-have-plans">Do you already have plans?</Label>
+                <ChipGroup labelledBy="lbl-do-you-already-have-plans" options={PLAN_OPTIONS} value={data.hasPlans} onChange={(v) => set("hasPlans", v)} columns={2} />
                 <Helper>If you don't have complete plans yet, that's okay — many serious projects begin with a paid Design &amp; Consultation Agreement.</Helper>
               </div>
               <div>
-                <Label required>Who is the decision-maker</Label>
-                <ChipGroup options={DECISION_OPTIONS} value={data.decisionMaker} onChange={(v) => set("decisionMaker", v)} columns={3} />
+                <Label required id="lbl-who-is-the-decision-maker">Who is the decision-maker</Label>
+                <ChipGroup labelledBy="lbl-who-is-the-decision-maker" options={DECISION_OPTIONS} value={data.decisionMaker} onChange={(v) => set("decisionMaker", v)} columns={3} />
               </div>
               <div className="space-y-4">
                 <div>
-                  <Label required>Property address</Label>
-                  <Input
+                  <Label required htmlFor="fld-property-address">Property address</Label>
+                  <Input id="fld-property-address"
                     placeholder="Street, city, and state"
                     value={data.town}
                     onChange={(e) => set("town", e.target.value)}
@@ -313,8 +313,8 @@ const ConstructionIntakeForm = () => {
                   <Helper>Full address helps us account for terrain, slope, and local conditions.</Helper>
                 </div>
                 <div>
-                  <Label>Property type</Label>
-                  <ChipGroup
+                  <Label id="lbl-property-type">Property type</Label>
+                  <ChipGroup labelledBy="lbl-property-type"
                     options={[
                       { value: "primary", label: "Primary" },
                       { value: "second_home", label: "Second home" },
@@ -332,8 +332,8 @@ const ConstructionIntakeForm = () => {
           {step === 2 && (
             <>
               <div>
-                <Label required>Describe the project</Label>
-                <Textarea
+                <Label required htmlFor="fld-describe-the-project">Describe the project</Label>
+                <Textarea id="fld-describe-the-project"
                   rows={6}
                   placeholder="Square footage, rooms involved, finish level, lot constraints, anything you've already explored…"
                   value={data.description}
@@ -342,8 +342,9 @@ const ConstructionIntakeForm = () => {
                 <Helper>Minimum a few sentences — this shapes the discovery conversation.</Helper>
               </div>
               <div>
-                <Label>Plans, sketches, inspiration, site photos</Label>
+                <Label id="lbl-construction-uploads">Plans, sketches, inspiration, site photos</Label>
                 <FileDrop
+                  labelledBy="lbl-construction-uploads"
                   files={files}
                   onChange={setFiles}
                   accept="image/*,application/pdf"
@@ -357,8 +358,8 @@ const ConstructionIntakeForm = () => {
             <>
               <FieldRow>
                 <div>
-                  <Label required>Full name</Label>
-                  <Input
+                  <Label required htmlFor="fld-construction-name">Full name</Label>
+                  <Input id="fld-construction-name"
                     value={data.name}
                     onChange={(e) => set("name", e.target.value)}
                     onBlur={() => contact.blur("name")}
@@ -368,8 +369,8 @@ const ConstructionIntakeForm = () => {
                   <FieldError>{contact.errorFor("name")}</FieldError>
                 </div>
                 <div>
-                  <Label required>Phone</Label>
-                  <Input
+                  <Label required htmlFor="fld-phone">Phone</Label>
+                  <Input id="fld-phone"
                     type="tel"
                     inputMode="tel"
                     value={data.phone}
@@ -383,8 +384,8 @@ const ConstructionIntakeForm = () => {
                 </div>
               </FieldRow>
               <div>
-                <Label required>Email</Label>
-                <Input
+                <Label required htmlFor="fld-email">Email</Label>
+                <Input id="fld-email"
                   type="email"
                   value={data.email}
                   onChange={(e) => set("email", e.target.value)}
@@ -408,7 +409,7 @@ const ConstructionIntakeForm = () => {
           <button
             type="button"
             onClick={back}
-            className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground text-[13px] font-body transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-[13px] font-body transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back
           </button>

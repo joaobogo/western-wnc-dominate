@@ -106,7 +106,7 @@ const CardSelect = ({ options, value, onChange, columns = 2 }: {
           }`}
         >
           <div className="flex items-start gap-3">
-            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-accent" : "text-muted-foreground"}`} />}
+            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"}`} />}
             <div>
               <p className={`font-heading text-sm font-semibold ${selected ? "text-foreground" : "text-foreground/80"}`}>{opt.label}</p>
               {opt.desc && <p className="text-xs text-muted-foreground mt-0.5 font-body">{opt.desc}</p>}
@@ -237,6 +237,7 @@ export default function QuoteFlow() {
             <p className="text-sm text-muted-foreground font-body mt-1">A few sentences is perfect. What's prompting this project? What matters most to you?</p>
           </div>
           <textarea
+            aria-label="Tell us a bit about your project"
             value={form.description}
             onChange={e => update("description", e.target.value)}
             placeholder="Example: We had some shingles blow off during the last storm, and we're thinking it might be time for a full replacement rather than another repair..."
@@ -258,8 +259,8 @@ export default function QuoteFlow() {
           </div>
           <div className="space-y-3">
             <div>
-              <label className="text-xs font-body font-medium text-foreground mb-1 block">Full Name *</label>
-              <input
+              <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-full-name">Full Name *</label>
+              <input id="f-full-name"
                 value={form.name}
                 onChange={e => update("name", e.target.value)}
                 onBlur={() => contact.blur("name")}
@@ -271,8 +272,8 @@ export default function QuoteFlow() {
               <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
             </div>
             <div>
-              <label className="text-xs font-body font-medium text-foreground mb-1 block">Email Address *</label>
-              <input
+              <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-email-address">Email Address *</label>
+              <input id="f-email-address"
                 type="email"
                 value={form.email}
                 onChange={e => update("email", e.target.value)}
@@ -286,8 +287,8 @@ export default function QuoteFlow() {
               <InlineFieldError>{contact.errorFor("email")}</InlineFieldError>
             </div>
             <div>
-              <label className="text-xs font-body font-medium text-foreground mb-1 block">Phone Number <span className="text-muted-foreground">(optional — speeds up our response)</span></label>
-              <input
+              <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-phone-number-optional-speeds-up-">Phone Number <span className="text-muted-foreground">(optional — speeds up our response)</span></label>
+              <input id="f-phone-number-optional-speeds-up-"
                 type="tel"
                 value={form.phone}
                 onChange={e => update("phone", contact.formatPhoneInput(e.target.value))}
@@ -442,7 +443,7 @@ export default function QuoteFlow() {
       <main className="pt-24 md:pt-32 pb-16">
         <div className="container-tight max-w-2xl">
           <div className="text-center mb-8">
-            <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-accent mb-2">Project Consultation</p>
+            <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-[hsl(var(--gold-ink))] mb-2">Project Consultation</p>
             <h1 className="font-heading text-2xl md:text-3xl font-bold text-foreground">Let's Talk About Your Project</h1>
             <p className="text-sm text-muted-foreground font-body mt-2 max-w-md mx-auto">
               No obligation. No pressure. Just a straightforward conversation with someone who knows these mountains.

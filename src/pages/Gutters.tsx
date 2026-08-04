@@ -77,7 +77,7 @@ const Gutters = () => {
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-white/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Gutters</span>
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Gutters</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -112,7 +112,7 @@ const Gutters = () => {
           <div className="container-tight max-w-4xl text-center">
             <span className="eyebrow mb-3 block">Why It Matters</span>
             <h2 className="section-heading mb-6">Water Management Is a<br className="hidden md:block" /> Mountain-Home Problem.</h2>
-            <p className="text-foreground/75 text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto">
               Western NC gets some of the highest rainfall totals east of the Cascades, on steep lots surrounded by hardwoods and pines. Undersized or clogged gutters push water back under the eaves, saturate foundations, ice over walkways in winter, and quietly rot fascia and trim. A properly sized system solves all of it.
             </p>
           </div>
@@ -127,9 +127,9 @@ const Gutters = () => {
               { icon: Wind, title: "Repair & replacement", body: "Reseal leaking seams, rehang sagging runs, replace damaged sections, or fully replace an undersized system with a properly capacitized one." },
             ].map((b) => (
               <div key={b.title} className="border border-border rounded-lg p-6">
-                <b.icon className="w-8 h-8 text-accent mb-3" />
+                <b.icon className="w-8 h-8 text-[hsl(var(--gold-ink))] mb-3" />
                 <div className="font-heading font-bold text-xl mb-2">{b.title}</div>
-                <p className="text-foreground/70">{b.body}</p>
+                <p className="text-muted-foreground">{b.body}</p>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ const Gutters = () => {
                 "French drain and grading coordination where site drainage is the real problem",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
                   <span className="text-foreground/80 font-body leading-relaxed">{f}</span>
                 </li>
               ))}

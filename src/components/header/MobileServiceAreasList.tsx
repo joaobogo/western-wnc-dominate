@@ -63,13 +63,13 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
               <div className="relative mt-1.5 mb-2 mr-1">
                 <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-heritage-charcoal/40 pointer-events-none" />
                 <input
-                  type="search"
+                  aria-label="Search town or county"
+            type="search"
                   inputMode="search"
                   autoComplete="off"
                   placeholder="Search town or county…"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  aria-label="Search service areas"
                   className="w-full min-h-[44px] rounded-sm border border-black/10 bg-white pl-8 pr-8 py-2 text-[15px] font-body text-heritage-charcoal placeholder:text-heritage-charcoal/40 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.4)] focus:border-[hsl(var(--highland-gold)/0.5)]"
                 />
                 {search && (
@@ -92,7 +92,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                 filtered.map((group) => (
                   <div key={group.county} className="mb-2 last:mb-0">
                     <div className="flex items-center gap-1.5 px-2 pt-2 pb-1">
-                      <MapPin className="w-3 h-3 text-[hsl(var(--highland-gold))]" />
+                      <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                       <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.14em] text-heritage-charcoal/55">{group.county}</span>
                       <span className="text-[10.5px] font-body text-heritage-charcoal/35 ml-auto">{group.towns.length}</span>
                     </div>

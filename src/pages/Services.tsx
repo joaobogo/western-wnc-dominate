@@ -36,7 +36,7 @@ const Services = () => {
         <section className="section-padding section-dark pt-32 md:pt-40">
           <div className="container-tight text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">Our Services</p>
+              <p className="text-[hsl(var(--gold-ink))] font-semibold text-sm uppercase tracking-wider mb-3">Our Services</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
                 Roofing Services Built for Mountain Living
               </h1>

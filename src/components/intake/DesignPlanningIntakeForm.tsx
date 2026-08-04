@@ -235,12 +235,12 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           {step === 0 && (
             <>
               <div>
-                <Label required>What are you building?</Label>
-                <ChipGroup options={PROJECT_TYPE_OPTIONS} value={data.projectType} onChange={(v) => set("projectType", v)} columns={2} />
+                <Label required id="lbl-what-are-you-building">What are you building?</Label>
+                <ChipGroup labelledBy="lbl-what-are-you-building" options={PROJECT_TYPE_OPTIONS} value={data.projectType} onChange={(v) => set("projectType", v)} columns={2} />
               </div>
               <div>
-                <Label required>What help do you need most?</Label>
-                <ChipGroup options={PLANNING_NEED_OPTIONS} value={data.planningNeed} onChange={(v) => set("planningNeed", v)} columns={2} />
+                <Label required id="lbl-what-help-do-you-need-most">What help do you need most?</Label>
+                <ChipGroup labelledBy="lbl-what-help-do-you-need-most" options={PLANNING_NEED_OPTIONS} value={data.planningNeed} onChange={(v) => set("planningNeed", v)} columns={2} />
               </div>
             </>
           )}
@@ -248,17 +248,17 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           {mode === "long" && step === 1 && (
             <>
               <div>
-                <Label required>Where are you in your thinking?</Label>
-                <ChipGroup options={STAGE_OPTIONS} value={data.currentStage} onChange={(v) => set("currentStage", v)} columns={3} />
+                <Label required id="lbl-where-are-you-in-your-thinking">Where are you in your thinking?</Label>
+                <ChipGroup labelledBy="lbl-where-are-you-in-your-thinking" options={STAGE_OPTIONS} value={data.currentStage} onChange={(v) => set("currentStage", v)} columns={3} />
               </div>
               <div>
-                <Label required>Preferred timing</Label>
-                <ChipGroup options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={3} />
+                <Label required id="lbl-preferred-timing">Preferred timing</Label>
+                <ChipGroup labelledBy="lbl-preferred-timing" options={TIMELINE_OPTIONS} value={data.timeline} onChange={(v) => set("timeline", v)} columns={3} />
               </div>
               <FieldRow>
                 <div>
-                  <Label>Budget readiness</Label>
-                  <ChipGroup 
+                  <Label id="lbl-budget-readiness">Budget readiness</Label>
+                  <ChipGroup labelledBy="lbl-budget-readiness" 
                     options={[
                       { value: "researching", label: "Researching" },
                       { value: "budgeted", label: "Budget Defined" }
@@ -268,8 +268,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
                   />
                 </div>
                 <div>
-                  <Label>Existing plans?</Label>
-                  <ChipGroup 
+                  <Label id="lbl-existing-plans">Existing plans?</Label>
+                  <ChipGroup labelledBy="lbl-existing-plans" 
                     options={[
                       { value: "yes", label: "Yes" },
                       { value: "no", label: "No" }
@@ -285,8 +285,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           {mode === "long" && step === 2 && (
             <>
               <div>
-                <Label required>Project goals & description</Label>
-                <Textarea
+                <Label required htmlFor="fld-project-goals-description">Project goals & description</Label>
+                <Textarea id="fld-project-goals-description"
                   rows={5}
                   placeholder="Describe your must-haves, concerns, or rough size (e.g. 500sqft deck, 2-story guest addition)..."
                   value={data.description}
@@ -294,8 +294,9 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
                 />
               </div>
               <div>
-                <Label>Inspiration or site photos</Label>
+                <Label id="lbl-design-uploads">Inspiration or site photos</Label>
                 <FileDrop
+                  labelledBy="lbl-design-uploads"
                   files={files}
                   onChange={setFiles}
                   accept="image/*,application/pdf"
@@ -309,8 +310,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
             <>
               {mode === "short" && (
                 <div>
-                  <Label>Describe the help you need</Label>
-                  <Textarea
+                  <Label htmlFor="fld-design-help">Describe the help you need</Label>
+                  <Textarea id="fld-design-help"
                     rows={3}
                     placeholder="Short description of your project..."
                     value={data.description}
@@ -320,8 +321,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
               )}
               <FieldRow>
                 <div>
-                  <Label required>Full name</Label>
-                  <Input
+                  <Label required htmlFor="fld-full-name">Full name</Label>
+                  <Input id="fld-full-name"
                     value={data.name}
                     onChange={(e) => set("name", e.target.value)}
                     onBlur={() => contact.blur("name")}
@@ -331,8 +332,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
                   <FieldError>{contact.errorFor("name")}</FieldError>
                 </div>
                 <div>
-                  <Label required>Phone</Label>
-                  <Input
+                  <Label required htmlFor="fld-phone">Phone</Label>
+                  <Input id="fld-phone"
                     type="tel"
                     inputMode="tel"
                     value={data.phone}
@@ -346,8 +347,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
                 </div>
               </FieldRow>
               <div>
-                <Label required>Email</Label>
-                <Input
+                <Label required htmlFor="fld-email">Email</Label>
+                <Input id="fld-email"
                   type="email"
                   value={data.email}
                   onChange={(e) => set("email", e.target.value)}
@@ -359,8 +360,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
                 <FieldError>{contact.errorFor("email")}</FieldError>
               </div>
               <div>
-                <Label required>Property Address / Town</Label>
-                <Input
+                <Label required htmlFor="fld-property-address-town">Property Address / Town</Label>
+                <Input id="fld-property-address-town"
                   placeholder="e.g. Highlands, Franklin, Cashiers"
                   value={data.address}
                   onChange={(e) => set("address", e.target.value)}
@@ -382,7 +383,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           <button
             type="button"
             onClick={back}
-            className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground text-[13px] font-body transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-[13px] font-body transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back
           </button>

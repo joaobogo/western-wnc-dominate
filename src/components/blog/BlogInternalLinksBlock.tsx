@@ -50,7 +50,7 @@ export const BlogInternalLinksBlock = ({ links, town }: Props) => {
                 <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
               </span>
               <span className="flex-1 min-w-0">
-                <span className="block text-[10px] font-body font-semibold uppercase tracking-widest text-muted-foreground/70 mb-1">
+                <span className="block text-[10px] font-body font-semibold uppercase tracking-widest text-muted-foreground mb-1">
                   {kind}
                 </span>
                 <span className="block font-heading font-semibold text-foreground text-sm leading-snug group-hover:text-primary transition-colors">

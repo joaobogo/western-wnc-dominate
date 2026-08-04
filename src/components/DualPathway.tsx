@@ -159,7 +159,7 @@ const DivisionCard = ({ data, accent, index }: {
           </div>
           <span className={`text-[9px] font-body font-bold uppercase tracking-[0.15em] px-2.5 py-1 backdrop-blur-md border ${
             isGold
-              ? "text-[hsl(var(--highland-gold))] bg-[hsl(var(--heritage-charcoal)/0.55)] border-[hsl(var(--highland-gold)/0.4)]"
+              ? "text-[hsl(var(--gold-ink))] bg-[hsl(var(--heritage-charcoal)/0.55)] border-[hsl(var(--highland-gold)/0.4)]"
               : "text-white bg-[hsl(var(--heritage-charcoal)/0.55)] border-white/25"
           }`}>
             {data.badge}
@@ -174,7 +174,7 @@ const DivisionCard = ({ data, accent, index }: {
                 <AnimatedCounter
                   value={stat.value}
                   className={`text-lg md:text-xl font-heading font-bold leading-none ${
-                    isGold ? "text-[hsl(var(--highland-gold))]" : "text-white"
+                    isGold ? "text-[hsl(var(--gold-ink))]" : "text-white"
                   }`}
                   duration={1600}
                 />
@@ -220,7 +220,7 @@ const DivisionCard = ({ data, accent, index }: {
               className="flex items-center gap-2 group/item"
             >
               <service.icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors duration-200 ${
-                isGold ? "text-[hsl(var(--highland-gold)/0.9)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/40 group-hover/item:text-primary/70"
+                isGold ? "text-[hsl(var(--highland-gold)/0.9)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/80 group-hover/item:text-primary/70"
               }`} />
               <span className="text-[14px] md:text-[15px] text-foreground/80 font-body font-bold leading-tight">
                 {service.name}
@@ -261,7 +261,7 @@ const ThreeDivisionPathway = () => {
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-5">
               Choose Your Division.<br className="hidden md:block" />
-              <span className="text-[hsl(var(--highland-gold))]"> The Standard Stays the Same.</span>
+              <span className="text-[hsl(var(--gold-ink))]"> The Standard Stays the Same.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>

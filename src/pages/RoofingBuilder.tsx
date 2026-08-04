@@ -293,7 +293,7 @@ const RoofingBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     What kind of project are you planning?
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">Pick the closest match — material comes next.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">Pick the closest match — material comes next.</p>
                   <VisualChoiceGrid options={PROJECT_TYPES} value={data.projectType} onChange={(v) => set("projectType", v)} />
                 </>
               )}
@@ -302,7 +302,7 @@ const RoofingBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Which material system fits?
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">Not a commitment. We confirm fit on-site.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">Not a commitment. We confirm fit on-site.</p>
                   <VisualChoiceGrid options={MATERIALS} value={data.material} onChange={(v) => set("material", v)} columns={3} />
                 </>
               )}
@@ -311,7 +311,7 @@ const RoofingBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     What matters most for this roof?
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">Pick anything that applies.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">Pick anything that applies.</p>
                   <VisualChoiceGrid options={PRIORITIES} value={data.priorities} onChange={(v) => toggleMulti("priorities", v)} multi columns={3} />
 
                   <div className="mt-8 pt-6 border-t border-border/60">
@@ -325,7 +325,7 @@ const RoofingBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Project context
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">A few details so we route the right Highlander specialist.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">A few details so we route the right Highlander specialist.</p>
                   <Label required>Investment tier <span className="font-normal text-foreground/80 text-[11px] normal-case tracking-normal">— qualitative, not a price</span></Label>
                   <VisualChoiceGrid options={INVESTMENT} value={data.investment} onChange={(v) => set("investment", v)} columns={2} />
                   <div className="mt-7">
@@ -337,8 +337,8 @@ const RoofingBuilder = () => {
                     <ChipGroup options={PROPERTY} value={data.propertyType} onChange={(v) => set("propertyType", v)} columns={2} />
                   </div>
                   <div className="mt-6">
-                    <Label required>Property address</Label>
-                    <Input value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Street, city, and state…" />
+                    <Label required htmlFor="f-property-address">Property address</Label>
+                    <Input id="f-property-address" value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Street, city, and state…" />
                   </div>
                 </>
               )}
@@ -347,11 +347,11 @@ const RoofingBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Photos & notes
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">Optional — sharpens the assessment.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">Optional — sharpens the assessment.</p>
                   <FileDrop files={files} onChange={setFiles} />
                   <div className="mt-6">
-                    <Label>Anything the advisor should know</Label>
-                    <Textarea
+                    <Label htmlFor="f-anything-the-advisor-should-know">Anything the advisor should know</Label>
+                    <Textarea id="f-anything-the-advisor-should-know"
                       rows={4}
                       value={data.description}
                       onChange={(e) => set("description", e.target.value)}
@@ -365,23 +365,23 @@ const RoofingBuilder = () => {
                   <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
                     Review & send
                   </h2>
-                  <p className="text-foreground/55 text-[13px] font-body mb-6">A named advisor reviews your brief and responds within as soon as possible.</p>
+                  <p className="text-muted-foreground text-[13px] font-body mb-6">A named advisor reviews your brief and responds within as soon as possible.</p>
                   <ReviewCard rows={summaryRows}>
                     <div className="pt-1">
-                      <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/55 mb-3">Your contact</p>
+                      <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-muted-foreground mb-3">Your contact</p>
                       <FieldRow>
                         <div>
-                          <Label required>Full name</Label>
-                          <Input value={data.name} onChange={(e) => set("name", e.target.value)} />
+                          <Label required htmlFor="f-full-name">Full name</Label>
+                          <Input id="f-full-name" value={data.name} onChange={(e) => set("name", e.target.value)} />
                         </div>
                         <div>
-                          <Label required>Phone</Label>
-                          <Input value={data.phone} onChange={(e) => set("phone", e.target.value)} placeholder="(828) 555-0100" />
+                          <Label required htmlFor="f-phone">Phone</Label>
+                          <Input id="f-phone" value={data.phone} onChange={(e) => set("phone", e.target.value)} placeholder="(828) 555-0100" />
                         </div>
                       </FieldRow>
                       <div className="mt-4">
-                        <Label required>Email</Label>
-                        <Input value={data.email} onChange={(e) => set("email", e.target.value)} type="email" />
+                        <Label required htmlFor="f-email">Email</Label>
+                        <Input id="f-email" value={data.email} onChange={(e) => set("email", e.target.value)} type="email" />
                       </div>
                     </div>
                     {error && (

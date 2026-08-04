@@ -194,7 +194,7 @@ const BeforeAfterGallery = () => {
               </div>
               <Link
                 to="/recent-projects"
-                className="text-sm font-medium text-accent hover:text-accent/80 transition-colors inline-flex items-center gap-1.5 group font-body"
+                className="text-sm font-medium text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors inline-flex items-center gap-1.5 group font-body"
               >
                 View Full Gallery
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />

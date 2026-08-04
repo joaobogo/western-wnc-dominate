@@ -105,7 +105,7 @@ const WNCRelevance = ({
                       <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{insight.title}</h3>
                       <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-2">{insight.detail}</p>
                       {showImplications && (
-                        <p className="text-primary/50 text-[12px] leading-relaxed font-body italic">{insight.implication}</p>
+                        <p className="text-primary/80 text-[12px] leading-relaxed font-body italic">{insight.implication}</p>
                       )}
                     </div>
                   </div>
@@ -124,7 +124,7 @@ const WNCRelevance = ({
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
           <span className="eyebrow mb-3 block">{eyebrow}</span>
           <h2 className="section-heading mb-4 whitespace-pre-line">{heading}</h2>
-          {subheading && <p className="text-foreground/70 text-base font-body max-w-lg mx-auto leading-relaxed">{subheading}</p>}
+          {subheading && <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">{subheading}</p>}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
@@ -136,7 +136,7 @@ const WNCRelevance = ({
               <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{insight.title}</h3>
               <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-2">{insight.detail}</p>
               {showImplications && (
-                <p className="text-primary/40 text-[12px] leading-relaxed font-body italic border-t border-border pt-2 mt-3">{insight.implication}</p>
+                <p className="text-primary/80 text-[12px] leading-relaxed font-body italic border-t border-border pt-2 mt-3">{insight.implication}</p>
               )}
             </motion.div>
           ))}
@@ -171,7 +171,7 @@ export const WNCRelevanceDark = ({
     <div className="section-padding">
       <div className="container-tight">
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-          <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">{eyebrow}</span>
+          <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">{eyebrow}</span>
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground whitespace-pre-line">{heading}</h2>
           {subheading && <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">{subheading}</p>}
         </motion.div>
@@ -180,7 +180,7 @@ export const WNCRelevanceDark = ({
           {insights.map((insight, i) => (
             <motion.div key={insight.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
               <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4">
-                <insight.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                <insight.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
               </div>
               <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{insight.title}</h3>
               <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{insight.detail}</p>

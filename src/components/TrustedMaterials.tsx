@@ -78,7 +78,7 @@ const TrustedMaterials = () => {
         >
           <div className="flex items-center gap-3 mb-5">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
-            <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
+            <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
               Product Partners &amp; Material Suppliers
             </span>
           </div>
@@ -114,12 +114,12 @@ const TrustedMaterials = () => {
               </div>
               <h3 className="font-heading font-bold text-lg text-foreground mb-2 inline-flex items-center gap-1.5">
                 {v.name}
-                <ExternalLink className="w-3.5 h-3.5 text-foreground/40 group-hover:text-[hsl(var(--highland-gold))] transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] transition-colors" />
               </h3>
-              <span className="inline-block text-[10px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--highland-green))] mb-3">
+              <span className="inline-block text-[10px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--heritage-green))] mb-3">
                 {v.badge}
               </span>
-              <p className="text-foreground/75 text-[14px] leading-relaxed">{v.body}</p>
+              <p className="text-muted-foreground text-[14px] leading-relaxed">{v.body}</p>
             </motion.a>
           ))}
         </div>

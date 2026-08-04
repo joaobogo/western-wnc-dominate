@@ -141,7 +141,7 @@ export default function Contact() {
     setIsSubmitting(false);
   };
 
-  const inputClasses = "w-full px-4 py-3.5 rounded-sm border border-input bg-background text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring transition-all";
+  const inputClasses = "w-full px-4 py-3.5 rounded-sm border border-input bg-background text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all";
   const labelClasses = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-1.5";
 
   return (
@@ -182,7 +182,7 @@ export default function Contact() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <Handshake className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Concierge</span>
+                    <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Project Concierge</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[0.95] tracking-tightest">
                     Start the Conversation.
@@ -200,7 +200,7 @@ export default function Contact() {
                   className="flex flex-col gap-3 lg:items-end flex-shrink-0"
                 >
                   <a href="tel:+18285247773" className="group flex items-center gap-3 px-6 py-3.5 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.2)] hover:bg-[hsl(var(--highland-gold)/0.15)] transition-all">
-                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     <div>
                       <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">(828) 524-7773</span>
                       <span className="text-[10px] text-[hsl(var(--dark-section-foreground)/0.4)] font-body uppercase tracking-wider">Call Direct</span>
@@ -227,7 +227,7 @@ export default function Contact() {
                     { step: "3", title: "Rapid personal follow-up", detail: "A real conversation about next steps." },
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-4">
-                      <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] flex-shrink-0 leading-none">{item.step}</span>
+                      <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] flex-shrink-0 leading-none">{item.step}</span>
                       <div>
                         <p className="text-base md:text-lg font-heading font-bold text-[hsl(var(--dark-section-foreground))] leading-snug">{item.title}</p>
                         <p className="text-sm md:text-base text-[hsl(var(--dark-section-foreground)/0.75)] font-body mt-1 leading-relaxed">{item.detail}</p>
@@ -259,7 +259,7 @@ export default function Contact() {
                           {stepIdx < currentIdx ? <CheckCircle className="w-3.5 h-3.5" /> : stepIdx + 1}
                         </div>
                         <span className={`text-[10px] font-body font-semibold uppercase tracking-wider ${
-                          stepIdx <= currentIdx ? "text-foreground" : "text-muted-foreground/50"
+                          stepIdx <= currentIdx ? "text-foreground" : "text-muted-foreground"
                         }`}>{label}</span>
                         {i < 2 && <div className="hidden sm:block w-8 h-px bg-border mx-1" />}
                       </div>
@@ -301,18 +301,18 @@ export default function Contact() {
                         className="group text-left p-6 md:p-8 border border-border bg-card hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_8px_30px_-8px_hsl(var(--highland-gold)/0.1)] transition-all duration-300"
                       >
                         <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
-                          <HardHat className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                          <HardHat className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
                         </div>
                         <h3 className="font-heading font-bold text-lg text-foreground mb-2">Construction</h3>
                         <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">
                           Home additions, renovations, outdoor living, exterior improvements, and custom construction projects.
                         </p>
-                        <span className="inline-flex items-center gap-1.5 text-[hsl(var(--highland-gold))] font-semibold text-sm group-hover:gap-2.5 transition-all">
+                        <span className="inline-flex items-center gap-1.5 text-[hsl(var(--gold-ink))] font-semibold text-sm group-hover:gap-2.5 transition-all">
                           Select Construction <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </button>
                     </div>
-                    <p className="text-muted-foreground/50 text-xs font-body mt-4 text-center">
+                    <p className="text-muted-foreground text-xs font-body mt-4 text-center">
                       Not sure? Select either option — we'll route you to the right team.
                     </p>
                   </motion.div>
@@ -411,7 +411,7 @@ export default function Contact() {
                       {/* Phone */}
                       <div>
                         <label htmlFor="cc-phone" className={labelClasses}>
-                          Phone <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— recommended</span>
+                          Phone <span className="normal-case tracking-normal font-normal text-muted-foreground">— recommended</span>
                         </label>
                         <input
                           id="cc-phone"
@@ -431,7 +431,7 @@ export default function Contact() {
                       {/* Project address or town */}
                       <div>
                         <label htmlFor="cc-town" className={labelClasses}>
-                          Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— recommended</span>
+                          Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground">— recommended</span>
                         </label>
                         <input
                           id="cc-town"
@@ -445,7 +445,7 @@ export default function Contact() {
                           maxLength={150}
                         />
                         <InlineFieldError>{contact.errorFor("town")}</InlineFieldError>
-                        <p className="mt-1.5 text-[11px] text-muted-foreground/60 font-body">
+                        <p className="mt-1.5 text-[11px] text-muted-foreground font-body">
                           Helps us route your inquiry to the closest Highlander office and crew.
                         </p>
                       </div>
@@ -495,7 +495,7 @@ export default function Contact() {
                       {/* Message */}
                       <div>
                         <label htmlFor="cc-msg" className={labelClasses}>
-                          Project Details <span className="normal-case tracking-normal font-normal text-muted-foreground/75">— optional</span>
+                          Project Details <span className="normal-case tracking-normal font-normal text-muted-foreground">— optional</span>
                         </label>
                         <textarea
                           id="cc-msg"
@@ -509,7 +509,7 @@ export default function Contact() {
                       </div>
 
                       <div className="flex items-center justify-between pt-2">
-                        <p className="text-[10px] text-muted-foreground/75 font-body">
+                        <p className="text-[10px] text-muted-foreground font-body">
                           Personal response within 24 hours.
                         </p>
                         <button
@@ -540,7 +540,7 @@ export default function Contact() {
                       transition={{ delay: 0.1, type: "spring", stiffness: 400, damping: 15 }}
                       className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6"
                     >
-                      <CheckCircle className="w-8 h-8 text-accent" />
+                      <CheckCircle className="w-8 h-8 text-[hsl(var(--gold-ink))]" />
                     </motion.div>
                     <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
                       Your Request Has Been Received.
@@ -592,9 +592,9 @@ export default function Contact() {
                           className="flex items-center gap-3"
                         >
                           <div className="w-8 h-8 bg-accent/8 flex items-center justify-center flex-shrink-0">
-                            <t.icon className="w-3.5 h-3.5 text-accent/60" />
+                            <t.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]/60" />
                           </div>
-                          <span className="text-sm text-foreground/70 font-body">{t.text}</span>
+                          <span className="text-sm text-muted-foreground font-body">{t.text}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -606,7 +606,7 @@ export default function Contact() {
                     <div className="space-y-5">
                       {OFFICES.map((office) => (
                         <div key={office.name} className="flex items-start gap-3">
-                          <MapPin className="w-4 h-4 text-accent/50 flex-shrink-0 mt-0.5" />
+                          <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
                           <div>
                             <p className="text-sm font-heading font-semibold text-foreground">{office.name}</p>
                             <p className="text-xs text-muted-foreground font-body">{office.address}</p>
@@ -617,11 +617,11 @@ export default function Contact() {
                     </div>
                     <div className="mt-5 pt-5 border-t border-border">
                       <div className="flex items-start gap-3">
-                        <Clock className="w-4 h-4 text-accent/50 flex-shrink-0 mt-0.5" />
+                        <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="text-sm font-heading font-semibold text-foreground">Office Hours</p>
                           <p className="text-xs text-muted-foreground font-body">Mon–Fri 8:00 AM – 5:00 PM</p>
-                          <p className="text-xs text-accent font-body font-semibold">Same-day emergency contact</p>
+                          <p className="text-xs text-[hsl(var(--gold-ink))] font-body font-semibold">Same-day emergency contact</p>
                         </div>
                       </div>
                     </div>
@@ -646,7 +646,7 @@ export default function Contact() {
                         </div>
                       </a>
                       <Link to="/consultation" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-accent/20 transition-all">
-                        <CalendarCheck className="w-4 h-4 text-accent" />
+                        <CalendarCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                         <div>
                           <p className="text-sm font-heading font-semibold text-foreground">Guided Consultation</p>
                           <p className="text-[10px] text-muted-foreground font-body">More detailed project discovery flow</p>
@@ -696,7 +696,7 @@ export default function Contact() {
                   <span>In-House Highlander Crews</span>
                 </div>
                 <div className="mt-12 pt-8 border-t border-white/10 flex flex-col items-center gap-4">
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
+                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
                     Connect With Highlander
                   </span>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-sm md:text-base font-body max-w-md leading-relaxed">

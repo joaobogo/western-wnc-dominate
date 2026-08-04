@@ -120,7 +120,7 @@ const RoofRepair = () => {
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Roof Repair</span>
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Repair</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -175,7 +175,7 @@ const RoofRepair = () => {
               <div className="flex items-center justify-center gap-3 mb-8">
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
                 <div className="w-16 h-px bg-border" />
-                <Search className="w-4 h-4 text-muted-foreground/75" />
+                <Search className="w-4 h-4 text-muted-foreground" />
                 <div className="w-16 h-px bg-border" />
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
               </div>
@@ -352,7 +352,7 @@ const RoofRepair = () => {
           <div className="section-padding">
             <div className="container-tight max-w-5xl">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Honest Guidance</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Honest Guidance</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   When Repair Is Enough.<br className="hidden md:block" /> When It Isn't.
                 </h2>
@@ -375,7 +375,7 @@ const RoofRepair = () => {
                     <ul className="space-y-3">
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 mt-0.5 text-primary/50 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
                           <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}
@@ -389,7 +389,7 @@ const RoofRepair = () => {
                   <div className="p-6 md:p-7">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
-                        <Replace className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                        <Replace className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                       </div>
                       <h3 className="font-heading font-bold text-dark-section-foreground text-lg">Consider Replacement</h3>
                     </div>
@@ -401,7 +401,7 @@ const RoofRepair = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to="/roofing/roof-replacement" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--highland-gold))] mt-5 hover:opacity-80 transition-opacity font-body">
+                    <Link to="/roofing/roof-replacement" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] mt-5 hover:opacity-80 transition-opacity font-body">
                       Learn About Roof Replacement <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -432,7 +432,7 @@ const RoofRepair = () => {
                 "Priority scheduling on future repair calls",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
                   <span className="text-foreground/80 font-body leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -471,7 +471,7 @@ const RoofRepair = () => {
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">Don't Wait Until It Gets Worse</span>
+                  <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Don't Wait Until It Gets Worse</span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     The Best Repair Is the One<br className="hidden md:block" /> You Don't Have to Do Twice.
                   </h2>

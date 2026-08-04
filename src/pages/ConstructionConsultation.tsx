@@ -114,7 +114,7 @@ const CardSelect = ({ options, value, onChange }: {
           }`}
         >
           <div className="flex items-start gap-3">
-            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-[hsl(var(--highland-gold))]" : "text-muted-foreground"}`} />}
+            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"}`} />}
             <div>
               <p className={`font-heading text-sm font-semibold ${selected ? "text-foreground" : "text-foreground/80"}`}>{opt.label}</p>
               {opt.desc && <p className="text-xs text-muted-foreground mt-0.5 font-body">{opt.desc}</p>}
@@ -147,7 +147,7 @@ const MultiSelect = ({ options, values, onChange }: {
               : "border-border bg-card text-muted-foreground hover:border-[hsl(var(--highland-gold)/0.2)]"
           }`}
         >
-          {selected && <CheckCircle className="w-3 h-3 inline mr-1.5 text-[hsl(var(--highland-gold))]" />}
+          {selected && <CheckCircle className="w-3 h-3 inline mr-1.5 text-[hsl(var(--gold-ink))]" />}
           {opt.label}
         </button>
       );
@@ -252,6 +252,7 @@ export default function ConstructionConsultation() {
       hint: "We serve all of Western North Carolina. A full address helps us account for elevation, terrain, and local conditions.",
       content: (
         <input 
+          aria-label="Property address"
           value={form.town} 
           onChange={e => update("town", e.target.value)} 
           placeholder="Street, city, and state" 
@@ -269,13 +270,14 @@ export default function ConstructionConsultation() {
       content: (
         <div className="space-y-3">
           <textarea
+            aria-label="Tell us about your vision for this project"
             value={form.description}
             onChange={e => update("description", e.target.value)}
             placeholder="Example: We want to add a primary suite above our garage that matches the existing roofline and uses similar materials. We're also considering a covered porch on the south side..."
             rows={5}
             className="w-full rounded-sm border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold)/0.3)] resize-none field-construction"
           />
-          <p className="text-xs text-muted-foreground/60 font-body">Optional — but projects with clear descriptions get more productive first calls.</p>
+          <p className="text-xs text-muted-foreground font-body">Optional — but projects with clear descriptions get more productive first calls.</p>
         </div>
       ),
       valid: true,
@@ -289,8 +291,8 @@ export default function ConstructionConsultation() {
       content: (
         <div className="space-y-4">
           <div>
-            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block">Full Name *</label>
-            <input
+            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block" htmlFor="f-full-name">Full Name *</label>
+            <input id="f-full-name"
               value={form.name}
               onChange={e => update("name", e.target.value)}
               placeholder="Your name"
@@ -299,8 +301,8 @@ export default function ConstructionConsultation() {
             />
           </div>
           <div>
-            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block">Email Address *</label>
-            <input
+            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block" htmlFor="f-email-address">Email Address *</label>
+            <input id="f-email-address"
               type="email"
               value={form.email}
               onChange={e => update("email", e.target.value)}
@@ -310,10 +312,10 @@ export default function ConstructionConsultation() {
             />
           </div>
           <div>
-            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block">
+            <label className="text-xs font-body font-semibold text-foreground mb-1.5 block" htmlFor="f-phone-number-recommended-our-adv">
               Phone Number <span className="text-muted-foreground font-normal">(recommended — our advisors prefer to call)</span>
             </label>
-            <input
+            <input id="f-phone-number-recommended-our-adv"
               type="tel"
               value={form.phone}
               onChange={e => update("phone", e.target.value)}
@@ -323,7 +325,7 @@ export default function ConstructionConsultation() {
           </div>
 
           {/* Privacy note */}
-          <p className="text-[11px] text-muted-foreground/50 font-body leading-relaxed">
+          <p className="text-[11px] text-muted-foreground font-body leading-relaxed">
             Your information is never shared or sold. We use it solely to discuss your project.
           </p>
         </div>
@@ -423,7 +425,7 @@ export default function ConstructionConsultation() {
           <div className="container-tight max-w-lg">
             <ConfirmationState
               show={true}
-              icon={<HardHat className="w-8 h-8 text-[hsl(var(--highland-gold))]" />}
+              icon={<HardHat className="w-8 h-8 text-[hsl(var(--gold-ink))]" />}
               headline="Your project consultation is confirmed."
               message={`Thank you, ${form.name}. A construction project advisor will reach out rapidly to discuss your ${form.projectType === "not-sure" ? "project" : form.projectType.replace(/-/g, " ")} in detail.`}
               secondaryMessage="We'll come prepared with relevant questions and initial thoughts based on what you've shared."
@@ -461,9 +463,9 @@ export default function ConstructionConsultation() {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2.5 mb-3">
               <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
               </div>
-              <p className="text-[10px] font-body font-bold tracking-[0.25em] uppercase text-[hsl(var(--highland-gold))]">Construction Consultation</p>
+              <p className="text-[10px] font-body font-bold tracking-[0.25em] uppercase text-[hsl(var(--gold-ink))]">Construction Consultation</p>
             </div>
             <h1 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">Start Your Project Conversation</h1>
             <p className="text-sm text-muted-foreground font-body max-w-md mx-auto leading-relaxed">
@@ -509,7 +511,7 @@ export default function ConstructionConsultation() {
                 ))}
               </div>
               <div className="flex items-center justify-between">
-                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold))]">
+                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--gold-ink))]">
                   Step {step + 1} of {steps.length}
                 </p>
                 <p className="text-[11px] text-muted-foreground font-body">{currentStep.label}</p>
@@ -587,7 +589,7 @@ export default function ConstructionConsultation() {
             ].map(item => (
               <div key={item} className="flex items-center gap-1.5">
                 <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.85)]" />
-                <span className="text-muted-foreground/50 text-[11px] font-body font-medium">{item}</span>
+                <span className="text-muted-foreground text-[11px] font-body font-medium">{item}</span>
               </div>
             ))}
           </motion.div>

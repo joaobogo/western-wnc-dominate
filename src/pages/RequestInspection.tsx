@@ -61,11 +61,11 @@ const RequestInspection = () => {
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
           <div className="container-tight relative z-10 grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-10 items-center">
             <div>
-              <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold))] block mb-4">
+              <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
                 Free · No Obligation · Local Team
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-5">
-                Request a Free Inspection or <span className="text-[hsl(var(--highland-gold))]">Consultation</span>
+                Request a Free Inspection or <span className="text-[hsl(var(--gold-ink))]">Consultation</span>
               </h1>
               <p className="text-white/90 text-lg leading-relaxed font-body max-w-xl mb-8">
                 Whether you have an active leak, a roof due for replacement, storm damage to document for insurance, gutters that need work, or a construction project you're planning — start here. A local Highlander team member will follow up personally.
@@ -82,7 +82,7 @@ const RequestInspection = () => {
             <ul className="space-y-3">
               {trust.map((t) => (
                 <li key={t.label} className="flex items-start gap-3 text-white/90 text-[15px] font-body">
-                  <t.icon className="w-5 h-5 text-[hsl(var(--highland-gold))] flex-shrink-0 mt-0.5" />
+                  <t.icon className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                   <span>{t.label}</span>
                 </li>
               ))}
@@ -96,7 +96,7 @@ const RequestInspection = () => {
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="eyebrow block mb-3">What Happens After You Submit</span>
               <h2 className="section-heading">A simple, three-step process</h2>
-              <p className="text-foreground/70 mt-3 font-body">
+              <p className="text-muted-foreground mt-3 font-body">
                 No aggressive sales calls. No pressure. Just a clear path from your first message to a written recommendation for your property.
               </p>
             </div>
@@ -107,10 +107,10 @@ const RequestInspection = () => {
                     <span className="w-10 h-10 rounded-sm bg-primary/10 text-primary flex items-center justify-center font-heading font-bold">
                       {i + 1}
                     </span>
-                    <s.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <s.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-lg mb-2">{s.title}</h3>
-                  <p className="text-foreground/75 font-body text-[15px] leading-relaxed">{s.body}</p>
+                  <p className="text-muted-foreground font-body text-[15px] leading-relaxed">{s.body}</p>
                 </div>
               ))}
             </div>
@@ -123,7 +123,7 @@ const RequestInspection = () => {
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="eyebrow block mb-3">What Can We Help With?</span>
               <h2 className="section-heading">Roofing, gutters, skylights, construction, and design</h2>
-              <p className="text-foreground/70 mt-3 font-body">
+              <p className="text-muted-foreground mt-3 font-body">
                 Choose whatever fits — you can also just describe what you need in the form below.
               </p>
             </div>

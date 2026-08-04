@@ -81,7 +81,7 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
       <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16 z-10">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.15)] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.3)] px-3 py-1.5">
+            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.15)] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.3)] px-3 py-1.5">
               Featured Project
             </span>
             <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.15em] text-white/85 bg-white/10 backdrop-blur-sm px-2.5 py-1.5">
@@ -104,7 +104,7 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
 
       <div className="absolute bottom-8 md:bottom-12 right-8 md:right-12 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div className="w-12 h-12 border border-[hsl(var(--highland-gold)/0.3)] bg-[hsl(var(--highland-gold)/0.08)] backdrop-blur-sm flex items-center justify-center">
-          <Eye className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+          <Eye className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
         </div>
       </div>
 
@@ -165,7 +165,7 @@ const Gallery = () => {
               >
                 <div className="inline-flex items-center gap-3 mb-6">
                   <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Project Portfolio</span>
+                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Project Portfolio</span>
                 </div>
                 <motion.h1
                   initial={{ opacity: 0, scale: 0.96 }}
@@ -174,7 +174,7 @@ const Gallery = () => {
                   className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest"
                 >
                   Every Project Is a Commitment{" "}
-                  <span className="text-[hsl(var(--highland-gold))]">Made Visible.</span>
+                  <span className="text-[hsl(var(--gold-ink))]">Made Visible.</span>
                 </motion.h1>
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -201,7 +201,7 @@ const Gallery = () => {
                     { value: "100%", label: "Owner-Inspected" },
                   ].map((stat) => (
                     <div key={stat.label} className="flex flex-col items-center text-center md:px-6">
-                      <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1">{stat.value}</span>
+                      <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1">{stat.value}</span>
                       <span className="text-[10px] uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.35)] font-body">{stat.label}</span>
                     </div>
                   ))}
@@ -250,7 +250,7 @@ const Gallery = () => {
                     className={`text-[10px] font-body font-bold uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${
                       materialFilter === mat
                         ? "text-primary font-black"
-                        : "text-muted-foreground/60 hover:text-primary/70"
+                        : "text-muted-foreground hover:text-primary/70"
                     }`}
                   >
                     {mat}
@@ -330,7 +330,7 @@ const Gallery = () => {
               viewport={{ once: true }}
               className="text-center mb-14"
             >
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Our Process</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Our Process</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
                 Every Project Tells a Story
               </h2>

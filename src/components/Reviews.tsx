@@ -17,7 +17,7 @@ const categoryLabelMap = {
 
 const categoryColors: Record<string, string> = {
   Roofing: "bg-primary/10 text-primary",
-  Construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--highland-gold))]",
+  Construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--gold-ink))]",
   Storm: "bg-destructive/10 text-destructive",
   Commercial: "bg-secondary text-muted-foreground",
 };
@@ -47,7 +47,7 @@ const Reviews = () => {
               <div className="flex items-center gap-3 sm:gap-4">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-accent text-accent" />
+                    <Star key={i} className="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-accent text-[hsl(var(--gold-ink))]" />
                   ))}
                 </div>
                 <div className="h-5 w-px bg-border hidden sm:block" />
@@ -78,7 +78,7 @@ const Reviews = () => {
                 </span>
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, si) => (
-                    <Star key={si} className="w-3.5 h-3.5 fill-accent text-accent" />
+                    <Star key={si} className="w-3.5 h-3.5 fill-accent text-[hsl(var(--gold-ink))]" />
                   ))}
                 </div>
               </div>
@@ -88,7 +88,7 @@ const Reviews = () => {
               </p>
 
               <div className="bg-secondary/50 rounded-none px-5 py-3.5 mb-7 relative z-10">
-                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground/50 mb-1">Project Outcome</p>
+                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
                 <p className="text-sm font-body font-medium text-foreground/80">{t.outcome}</p>
               </div>
 
@@ -102,7 +102,7 @@ const Reviews = () => {
                     <p className="text-muted-foreground text-xs font-body">{t.location}</p>
                   </div>
                 </div>
-                <span className="text-[10px] font-body font-medium text-muted-foreground/50 max-w-[140px] text-right leading-tight">
+                <span className="text-[10px] font-body font-medium text-muted-foreground max-w-[140px] text-right leading-tight">
                   {t.project}
                 </span>
               </div>
@@ -121,7 +121,7 @@ const Reviews = () => {
                   </span>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, si) => (
-                      <Star key={si} className="w-2.5 h-2.5 fill-accent text-accent" />
+                      <Star key={si} className="w-2.5 h-2.5 fill-accent text-[hsl(var(--gold-ink))]" />
                     ))}
                   </div>
                 </div>
@@ -130,7 +130,7 @@ const Reviews = () => {
                    "{t.reviewBody}"
                 </p>
 
-                <p className="text-[11px] text-primary/60 font-body font-medium mb-4 leading-snug">
+                <p className="text-[11px] text-primary/80 font-body font-medium mb-4 leading-snug">
                   {t.outcome}
                 </p>
 

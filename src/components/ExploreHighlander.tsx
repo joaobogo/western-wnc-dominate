@@ -66,7 +66,7 @@ const ExploreHighlander = () => {
           <span className="eyebrow mb-3 block">Explore Highlander</span>
           <h2 id="explore-heading" className="section-heading mb-4">
             Keep Exploring{" "}
-            <span className="text-[hsl(var(--highland-gold))]">Roofing, Construction & Western NC.</span>
+            <span className="text-[hsl(var(--gold-ink))]">Roofing, Construction & Western NC.</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg font-body max-w-2xl mx-auto">
             Direct paths into the services, service areas, and field guides most useful to Western North Carolina homeowners.
@@ -99,7 +99,7 @@ const ExploreHighlander = () => {
                         to={link.to}
                         className="group/link flex items-start gap-1.5 text-sm font-body text-muted-foreground hover:text-primary transition-colors leading-snug"
                       >
-                        <ArrowUpRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/60 group-hover/link:text-primary transition-colors" />
+                        <ArrowUpRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/80 group-hover/link:text-primary transition-colors" />
                         <span>{link.label}</span>
                       </Link>
                     </li>

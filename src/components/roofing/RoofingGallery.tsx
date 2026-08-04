@@ -127,7 +127,7 @@ const RoofingGallery = ({
                 className="w-full h-auto max-h-[75vh] object-contain rounded-sm"
               />
               <div className="mt-4 text-center">
-                <span className="text-[9px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold))]">
+                <span className="text-[9px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))]">
                   {projects[lightboxIdx].category}
                 </span>
                 <h3 className="text-white font-heading font-bold text-lg mt-1">

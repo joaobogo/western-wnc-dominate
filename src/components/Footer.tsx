@@ -193,7 +193,7 @@ const Footer = () => {
 
               <div className="space-y-4 pt-2 border-t border-border">
                 <div className="flex gap-3">
-                  <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" />
                   <div className="text-[16px] text-foreground/80 font-body leading-relaxed">
                     <span className="block font-bold text-foreground mb-0.5 text-[17px]">Franklin Office</span>
                     1511 Highlands Road<br />
@@ -201,7 +201,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <MapPin className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" />
                   <div className="text-[15px] text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Sylva / Waynesville</span>
                     Service area office — by appointment<br />
@@ -209,7 +209,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex gap-3 pt-2 border-t border-border/60">
-                  <Clock className="w-4 h-4 text-primary/60 flex-shrink-0 mt-0.5" />
+                  <Clock className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" />
                   <div className="text-[15px] text-muted-foreground leading-relaxed">
                     <span className="block font-bold text-foreground/80 mb-0.5 text-base">Office Hours</span>
                     Mon–Fri 8:00 AM – 5:00 PM<br />
@@ -351,8 +351,8 @@ const Footer = () => {
             <span>Fully Insured</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/privacy-policy" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy &amp; Terms</Link>
-            <Link to="/accessibility" className="text-[13px] text-muted-foreground/60 hover:text-muted-foreground font-body tracking-wide transition-colors">Accessibility</Link>
+            <Link to="/privacy-policy" className="text-[13px] text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Privacy Policy &amp; Terms</Link>
+            <Link to="/accessibility" className="text-[13px] text-muted-foreground hover:text-muted-foreground font-body tracking-wide transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>

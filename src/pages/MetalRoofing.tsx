@@ -79,7 +79,7 @@ const MetalRoofing = () => {
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-white/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Metal Roofing</span>
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Metal Roofing</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -117,9 +117,9 @@ const MetalRoofing = () => {
               { icon: Snowflake, title: "Snow & ice planned", body: "Snow retention designed into the system at walkways, entries, and outdoor living spaces — not bolted on after the fact." },
             ].map((b) => (
               <div key={b.title} className="border border-border rounded-lg p-6">
-                <b.icon className="w-8 h-8 text-accent mb-3" />
+                <b.icon className="w-8 h-8 text-[hsl(var(--gold-ink))] mb-3" />
                 <div className="font-heading font-bold text-xl mb-2">{b.title}</div>
-                <p className="text-foreground/70">{b.body}</p>
+                <p className="text-muted-foreground">{b.body}</p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ const MetalRoofing = () => {
                 "ARB submission packages for club community projects",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
                   <span className="text-foreground/80 font-body leading-relaxed">{f}</span>
                 </li>
               ))}
@@ -162,8 +162,8 @@ const MetalRoofing = () => {
                   if (!t) return null;
                   return (
                     <Link key={p.townSlug} to={`/service-areas/${p.townSlug}/metal-roofing`} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
-                      <div className="text-sm text-accent mb-1">{t.county}</div>
-                      <div className="font-heading font-bold group-hover:text-accent transition-colors">Metal Roofing in {t.name}, NC</div>
+                      <div className="text-sm text-[hsl(var(--gold-ink))] mb-1">{t.county}</div>
+                      <div className="font-heading font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors">Metal Roofing in {t.name}, NC</div>
                     </Link>
                   );
                 })}

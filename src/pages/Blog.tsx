@@ -110,18 +110,18 @@ const Blog = () => {
                   <div className="flex items-center gap-5 mb-8">
                     <div className="flex flex-col">
                       <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander</span>
-                      <span className="text-[11px] md:text-[12px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.2em]">Knowledge Base</span>
+                      <span className="text-[11px] md:text-[12px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em]">Knowledge Base</span>
                     </div>
                     <div className="h-px w-12 bg-white/20" />
                   </div>
                   <div className="flex items-center gap-3 mb-5">
                     <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                    <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">Insights & Resources</span>
+                    <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Insights & Resources</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[0.95] tracking-tightest">
                     Mountain-Specific<br />
                     Knowledge You Can<br />
-                    <span className="text-[hsl(var(--highland-gold))]">Actually Use.</span>
+                    <span className="text-[hsl(var(--gold-ink))]">Actually Use.</span>
                   </h1>
                   <div className="w-16 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
                   <p className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-lg mb-8 font-medium drop-shadow-sm">
@@ -132,6 +132,7 @@ const Blog = () => {
                   <div className="relative max-w-md">
                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.3)]" />
                     <input
+                      aria-label="Search articles"
                       type="text"
                       placeholder="Search articles..."
                       value={searchQuery}
@@ -151,10 +152,10 @@ const Blog = () => {
                   <div className="border border-[hsl(var(--highland-gold)/0.12)] bg-[hsl(var(--dark-section-foreground)/0.03)] p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-10 h-10 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center rounded-sm">
-                        <seasonal.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                        <seasonal.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                       </div>
                       <div>
-                        <p className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--highland-gold))]">{seasonal.season} Advisory</p>
+                        <p className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))]">{seasonal.season} Advisory</p>
                         <p className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body font-medium">Timely for WNC homeowners</p>
                       </div>
                     </div>
@@ -166,7 +167,7 @@ const Blog = () => {
                           to={`/blog/${post.slug}`}
                           className="group flex items-center justify-between py-2 border-b border-[hsl(var(--dark-section-foreground)/0.06)] last:border-0"
                         >
-                          <span className="text-[15px] text-[hsl(var(--dark-section-foreground)/0.7)] font-body font-bold group-hover:text-[hsl(var(--highland-gold))] transition-colors line-clamp-1 pr-2">{post.title}</span>
+                          <span className="text-[15px] text-[hsl(var(--dark-section-foreground)/0.7)] font-body font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors line-clamp-1 pr-2">{post.title}</span>
                           <ChevronRight className="w-3 h-3 text-[hsl(var(--dark-section-foreground)/0.2)] flex-shrink-0" />
                         </Link>
                       ))}
@@ -219,7 +220,7 @@ const Blog = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal))] via-[hsl(var(--heritage-charcoal)/0.4)] to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 lg:p-12">
-                        <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.15)] px-3 py-1.5 mb-4 inline-block">
+                        <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.15)] px-3 py-1.5 mb-4 inline-block">
                           {heroFeatured.category}
                         </span>
                         <h3 className="font-heading font-bold text-foreground text-2xl md:text-3xl mb-4 group-hover:text-primary transition-colors leading-snug">
@@ -266,7 +267,7 @@ const Blog = () => {
                                 {post.category}
                               </span>
                               {isRecent(post.date) && (
-                                <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--highland-gold))]">
+                                <span className="text-[10px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))]">
                                   New
                                 </span>
                               )}
@@ -339,7 +340,7 @@ const Blog = () => {
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center">
-                      <CloudLightning className="w-5 h-5 text-accent" />
+                      <CloudLightning className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-foreground">Storm & Emergency Guides</h3>
@@ -353,16 +354,16 @@ const Blog = () => {
                         to={`/blog/${post.slug}`}
                         className="group flex items-start gap-3 p-3 rounded-sm hover:bg-secondary/60 transition-colors"
                       >
-                        <Zap className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                        <Zap className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                         <div className="flex-1">
                           <h4 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
                           <p className="text-muted-foreground text-xs mt-0.5 line-clamp-1">{post.excerpt}</p>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/70 mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground mt-0.5 flex-shrink-0" />
                       </Link>
                     ))}
                   </div>
-                  <Link to="/roofing/storm-damage" className="inline-flex items-center gap-1.5 mt-4 text-accent font-heading font-semibold text-sm hover:gap-2.5 transition-all">
+                  <Link to="/roofing/storm-damage" className="inline-flex items-center gap-1.5 mt-4 text-[hsl(var(--gold-ink))] font-heading font-semibold text-sm hover:gap-2.5 transition-all">
                     Visit Storm Center <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </motion.div>
@@ -390,7 +391,7 @@ const Blog = () => {
                           <h4 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
                           <p className="text-muted-foreground text-xs mt-0.5">{post.town} · {post.readTime} read</p>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/70 mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground mt-0.5 flex-shrink-0" />
                       </Link>
                     ))}
                   </div>
@@ -487,7 +488,7 @@ const Blog = () => {
                               {filtered[0].category}
                             </span>
                             {isRecent(filtered[0].date) && (
-                              <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--highland-gold))] w-fit">
+                              <span className="text-[9px] font-body font-bold uppercase tracking-[0.18em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))] w-fit">
                                 New
                               </span>
                             )}
@@ -533,7 +534,7 @@ const Blog = () => {
                               {post.category}
                             </span>
                             {isRecent(post.date) && (
-                              <span className="text-[9px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--highland-gold))] w-fit">
+                              <span className="text-[9px] font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 bg-[hsl(var(--highland-gold)/0.16)] text-[hsl(var(--gold-ink))] w-fit">
                                 New
                               </span>
                             )}
@@ -559,7 +560,7 @@ const Blog = () => {
               </div>
             ) : (
               <div className="text-center py-16">
-                <Search className="w-8 h-8 text-muted-foreground/70 mx-auto mb-3" />
+                <Search className="w-8 h-8 text-muted-foreground mx-auto mb-3" />
                 <p className="text-muted-foreground font-body">No articles found matching your search.</p>
                 <button onClick={() => { setSearchQuery(""); setActiveCategory("All"); }} className="text-primary text-sm font-semibold mt-2 hover:underline">
                   Clear filters
@@ -580,7 +581,7 @@ const Blog = () => {
               className="max-w-xl mx-auto text-center"
             >
               <div className="w-12 h-12 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mx-auto mb-4">
-                <Newspaper className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                <Newspaper className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
               </div>
               <h3 className="text-xl md:text-2xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-2">
                 Stay Informed
@@ -591,6 +592,7 @@ const Blog = () => {
               </p>
               <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
+                  aria-label="Email address for the newsletter"
                   type="email"
                   placeholder="your@email.com"
                   className="flex-1 px-4 py-3 rounded-sm bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.1)] text-[hsl(var(--dark-section-foreground))] text-sm font-body placeholder:text-[hsl(var(--dark-section-foreground)/0.3)] focus:outline-none focus:border-[hsl(var(--highland-gold)/0.3)] transition-colors"

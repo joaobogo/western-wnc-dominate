@@ -33,8 +33,8 @@ const SocialLinks = ({ variant = "light", size = "md", className = "" }: SocialL
 
   const base =
     variant === "dark"
-      ? "border-white/20 text-white/85 hover:text-[hsl(var(--highland-gold))] hover:border-[hsl(var(--highland-gold)/0.5)] hover:bg-white/5"
-      : "border-border text-foreground/70 hover:text-primary hover:border-primary/40 hover:bg-primary/5";
+      ? "border-white/20 text-white/85 hover:text-[hsl(var(--gold-ink))] hover:border-[hsl(var(--highland-gold)/0.5)] hover:bg-white/5"
+      : "border-border text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-primary/5";
 
   return (
     <ul className={`flex items-center gap-2.5 ${className}`}>

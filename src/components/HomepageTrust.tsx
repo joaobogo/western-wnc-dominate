@@ -72,7 +72,7 @@ const HomepageTrust = () => {
             <HeadingReveal delay={0.1}>
               <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
                 Every Claim Backed by<br className="hidden md:block" />
-                <span className="text-[hsl(var(--highland-gold))]"> Documentation You Can Hold.</span>
+                <span className="text-[hsl(var(--gold-ink))]"> Documentation You Can Hold.</span>
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.25}>
@@ -97,7 +97,7 @@ const HomepageTrust = () => {
               >
                 <AnimatedCounter
                   value={stat.value}
-                  className="text-2xl md:text-[2.5rem] font-heading font-bold text-[hsl(var(--highland-gold))] leading-none mb-1.5 tracking-tight stat-glow"
+                  className="text-2xl md:text-[2.5rem] font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1.5 tracking-tight stat-glow"
                   duration={1800}
                 />
                 <span className="text-xs font-heading font-bold text-dark-section-foreground/85 tracking-tight">
@@ -149,7 +149,7 @@ const HomepageTrust = () => {
             <div className="inline-flex items-center gap-4 px-6 py-3 bg-card border border-border rounded-none">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                  <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" />
                 ))}
               </div>
               <div className="h-5 w-px bg-border" />
@@ -187,7 +187,7 @@ const HomepageTrust = () => {
                   {/* Stars */}
                   <div className="flex gap-0.5 mb-4">
                     {[...Array(5)].map((_, si) => (
-                      <Star key={si} className="w-3 h-3 fill-accent text-accent" />
+                      <Star key={si} className="w-3 h-3 fill-accent text-[hsl(var(--gold-ink))]" />
                     ))}
                   </div>
 
@@ -198,7 +198,7 @@ const HomepageTrust = () => {
 
                   {/* Project tag */}
                   <div className="bg-secondary/60 rounded-none px-3 py-2 mb-5">
-                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground/50">
+                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                       {review.project}
                     </span>
                   </div>
@@ -231,7 +231,7 @@ const HomepageTrust = () => {
           >
             <Link
               to="/reviews"
-              className="group inline-flex items-center gap-2 text-sm font-heading font-bold text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors"
+              className="group inline-flex items-center gap-2 text-sm font-heading font-bold text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors"
             >
               Read All Reviews
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

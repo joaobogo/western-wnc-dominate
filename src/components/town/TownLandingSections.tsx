@@ -28,10 +28,10 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4 text-center md:text-left">
           <div className="w-12 h-12 shrink-0 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.4)] flex items-center justify-center">
-            <CloudLightning className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+            <CloudLightning className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
           </div>
           <div>
-            <p className="text-[11px] uppercase tracking-[0.25em] font-bold text-[hsl(var(--highland-gold))] mb-1">
+            <p className="text-[11px] uppercase tracking-[0.25em] font-bold text-[hsl(var(--gold-ink))] mb-1">
               Storm or Active Leak in {town.name}?
             </p>
             <p className="font-heading font-bold text-lg md:text-xl leading-tight">
@@ -146,7 +146,7 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
             href="tel:+18285247773"
             className="border-2 border-foreground/15 text-foreground font-heading font-bold text-[15px] px-10 py-5 uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:border-primary/40 transition"
           >
-            <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> (828) 524-7773
+            <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
           </a>
         </div>
       </ScrollReveal>
@@ -163,14 +163,14 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
     <div className="section-padding relative z-10">
       <div className="container-tight max-w-3xl text-center">
         <ScrollReveal variant="fade">
-          <span className="text-[11px] uppercase tracking-[0.3em] font-bold text-[hsl(var(--highland-gold))] mb-6 block">
+          <span className="text-[11px] uppercase tracking-[0.3em] font-bold text-[hsl(var(--gold-ink))] mb-6 block">
             {town.name} · {town.county} County
           </span>
         </ScrollReveal>
         <HeadingReveal delay={0.1}>
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-dark-section-foreground leading-tight mb-8">
             Ready to talk about your <br />
-            <span className="text-[hsl(var(--highland-gold))] italic">{town.name}</span> project?
+            <span className="text-[hsl(var(--gold-ink))] italic">{town.name}</span> project?
           </h2>
         </HeadingReveal>
         <ScrollReveal variant="rise-subtle" delay={0.2}>
@@ -190,7 +190,7 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
               href="tel:+18285247773"
               className="border-2 border-dark-section-foreground/20 text-dark-section-foreground font-heading font-bold text-[15px] px-10 py-5 uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:border-[hsl(var(--highland-gold)/0.4)] hover:bg-dark-section-foreground/[0.05] transition"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--highland-gold))]" /> Call Direct
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> Call Direct
             </a>
           </div>
         </ScrollReveal>
@@ -340,7 +340,7 @@ export const TownFAQ = ({
 export const TownCTAStrip = ({ town }: { town: TownData }) => (
   <section className="bg-primary text-primary-foreground relative">
     <div className="container-tight px-6 py-5 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
-      <p className="text-[13px] font-body text-center md:text-left">
+      <p className="text-[13px] font-body text-center md:text-left text-primary-foreground">
         <span className="font-heading font-bold">Serving {town.name}, {town.state}</span>{" "}
         · Roofing &amp; Construction · Licensed GC · 4.9★ Rated
       </p>
@@ -354,7 +354,7 @@ export const TownCTAStrip = ({ town }: { town: TownData }) => (
         <div className="w-px h-3 bg-primary-foreground/20" />
         <Link
           to="/request-inspection"
-          className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:opacity-90"
+          className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:opacity-90"
         >
           Request Inspection <ArrowRight className="w-3.5 h-3.5" />
         </Link>

@@ -170,7 +170,7 @@ const StormDamage = () => {
                   <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Storm Damage</span>
+                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Storm Damage</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -363,13 +363,13 @@ const StormDamage = () => {
                   <ul className="space-y-3.5">
                     {insurancePoints.map((point) => (
                       <li key={point} className="flex items-start gap-3">
-                        <CheckCircle className="w-4 h-4 mt-0.5 text-primary/50 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
                         <span className="text-muted-foreground text-[13px] font-body leading-snug">{point}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="mt-6 pt-5 border-t border-border">
-                    <p className="text-muted-foreground/60 text-xs font-body italic">
+                    <p className="text-muted-foreground text-xs font-body italic">
                       Note: Highlander Roofing provides documentation and contractor support for insurance claims. We do not act as public adjusters, and we never recommend filing claims for damage we have not verified.
                     </p>
                   </div>
@@ -385,7 +385,7 @@ const StormDamage = () => {
           <div className="section-padding">
             <div className="container-tight max-w-5xl">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Storm Recovery Guidance</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Storm Recovery Guidance</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Repair the Damage.<br className="hidden md:block" /> Or Replace the Roof.
                 </h2>
@@ -407,7 +407,7 @@ const StormDamage = () => {
                     <ul className="space-y-3">
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 mt-0.5 text-primary/50 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
                           <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
                         </li>
                       ))}
@@ -423,7 +423,7 @@ const StormDamage = () => {
                   <div className="p-6 md:p-7">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
-                        <Replace className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                        <Replace className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                       </div>
                       <h3 className="font-heading font-bold text-dark-section-foreground text-lg">Full Replacement</h3>
                     </div>
@@ -435,7 +435,7 @@ const StormDamage = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to="/roofing/roof-replacement" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--highland-gold))] mt-5 hover:opacity-80 transition-opacity font-body">
+                    <Link to="/roofing/roof-replacement" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] mt-5 hover:opacity-80 transition-opacity font-body">
                       Learn About Roof Replacement <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -531,7 +531,7 @@ const StormDamage = () => {
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">Don't Wait for the Next Storm</span>
+                  <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Don't Wait for the Next Storm</span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Already Took the Hit.<br className="hidden md:block" /> Let's Make Sure It's Still Protecting You.
                   </h2>

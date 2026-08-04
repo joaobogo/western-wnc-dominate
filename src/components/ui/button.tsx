@@ -18,7 +18,7 @@ const buttonVariants = cva(
         /** Highland gold gradient — primary conversion CTA */
         highland: "cta-gradient text-accent-foreground font-extrabold tracking-[0.1em] btn-primary-interactive relative overflow-hidden shadow-[0_10px_30px_-5px_hsl(var(--highland-gold)/0.5)] hover:shadow-[0_15px_35px_-5px_hsl(var(--highland-gold)/0.6)] border border-[hsl(var(--highland-gold)/0.4)] hover:scale-[1.02] active:scale-[0.98]",
         /** Gold outline — secondary premium action */
-        gold: "border-2 border-[hsl(var(--highland-gold)/0.5)] text-[hsl(var(--highland-gold))] bg-transparent hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold)/0.8)] font-bold btn-ghost-interactive shadow-sm",
+        gold: "border-2 border-[hsl(var(--highland-gold)/0.5)] text-[hsl(var(--gold-ink))] bg-transparent hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold)/0.8)] font-bold btn-ghost-interactive shadow-sm",
         /** Ghost premium — dark section secondary */
         "ghost-dark": "border-2 border-[hsl(var(--dark-section-foreground)/0.2)] text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.1)] hover:border-[hsl(var(--highland-gold)/0.4)] font-semibold btn-ghost-interactive",
         /** Heritage — deep green filled */

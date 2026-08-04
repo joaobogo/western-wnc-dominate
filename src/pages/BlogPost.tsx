@@ -31,15 +31,15 @@ const getGuideType = (category: string): "storm" | "maintenance" | "checklist" =
 
 const getCategoryColor = (category: string) => {
   const map: Record<string, string> = {
-    Storm: "bg-accent/15 text-accent",
+    Storm: "bg-accent/15 text-[hsl(var(--gold-ink))]",
     Maintenance: "bg-primary/10 text-primary",
     Materials: "bg-primary/10 text-primary",
-    Cost: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--highland-gold))]",
+    Cost: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--gold-ink))]",
     Insurance: "bg-primary/10 text-primary",
     Replacement: "bg-primary/10 text-primary",
     Tips: "bg-primary/10 text-primary",
     Commercial: "bg-primary/10 text-primary",
-    Financing: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--highland-gold))]",
+    Financing: "bg-[hsl(var(--highland-gold)/0.15)] text-[hsl(var(--gold-ink))]",
     Inspections: "bg-primary/10 text-primary",
   };
   return map[category] || "bg-primary/10 text-primary";
@@ -63,52 +63,85 @@ const linkify = (text: string) =>
     /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g,
     (_m, label: string, href: string) =>
       href.startsWith("http")
-        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-4 hover:text-accent">${label}</a>`
-        : `<a href="${href}" class="text-primary underline underline-offset-4 hover:text-accent">${label}</a>`,
+        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-4 hover:text-[hsl(var(--gold-ink))]">${label}</a>`
+        : `<a href="${href}" class="text-primary underline underline-offset-4 hover:text-[hsl(var(--gold-ink))]">${label}</a>`,
   );
 
 const inlineMarkdown = (text: string) =>
   linkify(text.replace(/\*\*(.*?)\*\*/g, "<strong class='text-foreground'>$1</strong>"));
 
 const renderContent = (content: string) => {
-  return content.split("\n").map((line, i) => {
+  const lines = content.split("\n");
+  const nodes: JSX.Element[] = [];
+  // Buffer consecutive list lines so every <li> lands inside a real <ul>/<ol>.
+  let listBuffer: { type: "ul" | "ol"; items: JSX.Element[]; start: number } | null = null;
+
+  const flushList = () => {
+    if (!listBuffer) return;
+    const { type, items, start } = listBuffer;
+    listBuffer = null;
+    nodes.push(
+      type === "ul" ? (
+        <ul key={`ul-${start}`} className="mb-4 space-y-0">
+          {items}
+        </ul>
+      ) : (
+        <ol key={`ol-${start}`} className="mb-4 space-y-0 list-decimal ml-5">
+          {items}
+        </ol>
+      ),
+    );
+  };
+
+  const pushItem = (type: "ul" | "ol", index: number, item: JSX.Element) => {
+    if (!listBuffer || listBuffer.type !== type) {
+      flushList();
+      listBuffer = { type, items: [], start: index };
+    }
+    listBuffer.items.push(item);
+  };
+
+  lines.forEach((line, i) => {
     if (line.startsWith("## "))
-      return (
+      { flushList(); nodes.push(
         <h2 key={i} className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-4">
           {line.replace("## ", "")}
         </h2>
-      );
+      ); return; }
     if (line.startsWith("### "))
-      return (
+      { flushList(); nodes.push(
         <h3 key={i} className="text-lg font-heading font-semibold text-foreground mt-7 mb-3">
           {line.replace("### ", "")}
         </h3>
-      );
+      ); return; }
     if (line.startsWith("- "))
-      return (
+      { pushItem("ul", i,
         <li key={i} className="text-muted-foreground mb-2 flex items-start gap-2">
-          <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" />
+          <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
           <span dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace("- ", "")) }} />
         </li>
-      );
+      ); return; }
     if (line.match(/^\d+\. /))
-      return (
+      { pushItem("ol", i,
         <li
           key={i}
-          className="text-muted-foreground mb-2.5 list-decimal ml-5 leading-relaxed"
+          className="text-muted-foreground mb-2.5 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace(/^\d+\. /, "")) }}
         />
-      );
-    if (line.trim() === "") return <div key={i} className="h-2" />;
+      ); return; }
+    flushList();
+    if (line.trim() === "") { nodes.push(<div key={i} className="h-2" />); return; }
     const boldProcessed = inlineMarkdown(line);
-    return (
+    nodes.push(
       <p
         key={i}
         className="text-muted-foreground leading-relaxed mb-4"
         dangerouslySetInnerHTML={{ __html: boldProcessed }}
-      />
+      />,
     );
   });
+  flushList();
+  return nodes;
 };
 
 const BlogPostPage = () => {
@@ -268,7 +301,7 @@ const BlogPostPage = () => {
                     className="bg-secondary/60 border border-border rounded-sm p-5 md:p-6 mb-10"
                   >
                     <div className="flex items-center gap-2 mb-4">
-                      <Lightbulb className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                      <Lightbulb className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                       <h3 className="font-heading font-semibold text-sm text-foreground">Key Takeaways</h3>
                     </div>
                     <div className="space-y-2">
@@ -404,7 +437,7 @@ const BlogPostPage = () => {
                           </div>
                           <div className="p-5">
                             <div className="flex items-center gap-2 mb-2">
-                              <MapPin className="w-3 h-3 text-[hsl(var(--highland-gold))]" />
+                              <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                               <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{project.location}</span>
                             </div>
                             <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h4>
@@ -417,7 +450,7 @@ const BlogPostPage = () => {
                 {/* Local Town Bridge */}
                 {post.town && (
                   <div className="mt-10 pt-8 border-t border-border">
-                    <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground/80 mb-4">Market Context</h4>
+                    <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground mb-4">Market Context</h4>
                     <Link to={`/service-areas/${post.town.toLowerCase().trim().replace(/\s+/g, '-')}-nc`} className="group flex items-center justify-between p-6 bg-secondary/40 border border-border rounded-sm hover:border-primary/20 transition-all">
                       <div>
                         <p className="text-sm font-heading font-bold text-foreground mb-1">Roofing & Construction in {post.town}</p>
@@ -469,7 +502,7 @@ const BlogPostPage = () => {
                     <BookOpen className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-body font-semibold uppercase tracking-wider text-muted-foreground/50 mb-1">
+                    <p className="text-[10px] font-body font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                       Written By
                     </p>
                     <h4 className="font-heading font-semibold text-foreground text-sm">{author.name}</h4>
@@ -491,7 +524,7 @@ const BlogPostPage = () => {
                     <div className="space-y-2">
                       {takeaways.map((t, i) => (
                         <p key={i} className="text-muted-foreground text-xs font-body leading-relaxed flex items-start gap-2">
-                          <span className="text-[10px] font-heading font-bold text-primary/40 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
+                          <span className="text-[10px] font-heading font-bold text-primary/80 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
                           {t}
                         </p>
                       ))}
@@ -501,7 +534,7 @@ const BlogPostPage = () => {
 
                 {/* Sidebar CTA */}
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
-                  <Shield className="w-6 h-6 text-[hsl(var(--highland-gold))] mx-auto mb-3" />
+                  <Shield className="w-6 h-6 text-[hsl(var(--gold-ink))] mx-auto mb-3" />
                   <h4 className="font-heading font-semibold text-primary-foreground text-sm mb-2">
                     Need Expert Advice?
                   </h4>

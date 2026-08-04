@@ -100,7 +100,7 @@ const ProjectDetailPage = () => {
                   <span className="text-white/90">{project.type}</span>
                 </nav>
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
+                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.2)] backdrop-blur-sm px-3.5 py-1.5 rounded-sm">
                     {project.type}
                   </span>
                   <span className="text-white/95 text-sm font-body flex items-center gap-1.5 font-medium">
@@ -156,7 +156,7 @@ const ProjectDetailPage = () => {
                 </motion.div>
 
                 <motion.div {...fadeUp} className="mt-16">
-                  <span className="eyebrow mb-4 block text-accent">The Challenge</span>
+                  <span className="eyebrow mb-4 block text-[hsl(var(--gold-ink))]">The Challenge</span>
                   <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">Mountain Conditions & Technical Hurdles</h3>
                   <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
                   <p className="text-muted-foreground leading-relaxed text-lg font-medium italic border-l-4 border-border pl-6">
@@ -183,7 +183,7 @@ const ProjectDetailPage = () => {
                   <div className="space-y-4">
                     {project.processHighlights.map((highlight, i) => (
                       <div key={i} className="flex gap-4 p-5 bg-secondary/20 border border-border/50">
-                        <span className="text-2xl font-heading font-bold text-primary/30">{String(i + 1).padStart(2, '0')}</span>
+                        <span className="text-2xl font-heading font-bold text-primary/80">{String(i + 1).padStart(2, '0')}</span>
                         <p className="text-foreground font-medium italic">{highlight}</p>
                       </div>
                     ))}
@@ -208,7 +208,7 @@ const ProjectDetailPage = () => {
                 <TrustSidebar />
 
                 <motion.div {...fadeUp} className="bg-secondary/50 border border-border rounded-sm p-5">
-                   <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground/80 mb-3">Service Expertise</h4>
+                   <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground mb-3">Service Expertise</h4>
                    <Link to={project.category === 'roofing' ? '/roofing/roof-replacement' : '/construction/additions'} className="group flex items-center justify-between text-sm font-heading font-bold text-foreground hover:text-primary transition-colors">
                       View {project.type} Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                    </Link>
@@ -246,15 +246,15 @@ const ProjectDetailPage = () => {
                 />
                 <div className="grid md:grid-cols-3 gap-5 mt-8">
                   <div className="bg-secondary/60 rounded-sm p-5">
-                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-2">What Changed</h4>
+                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">What Changed</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.beforeAfter.whatChanged}</p>
                   </div>
                   <div className="bg-secondary/60 rounded-sm p-5">
-                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-2">Why It Mattered</h4>
+                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">Why It Mattered</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.beforeAfter.whyItMattered}</p>
                   </div>
                   <div className="bg-secondary/60 rounded-sm p-5">
-                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-accent mb-2">The Highlander Difference</h4>
+                    <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-2">The Highlander Difference</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.beforeAfter.highlanderDifference}</p>
                   </div>
                 </div>
@@ -423,7 +423,7 @@ const ProjectDetailPage = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.5)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="absolute bottom-0 left-0 w-0 group-hover:w-1/2 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-transparent transition-all duration-700" />
                       </div>
-                      <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-accent mb-1 block">{rel.type}</span>
+                      <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1 block">{rel.type}</span>
                       <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors mb-1">{rel.title}</h3>
                       <p className="text-muted-foreground text-sm font-body flex items-center gap-1">
                         <MapPin className="w-3 h-3" /> {rel.location}
@@ -435,7 +435,7 @@ const ProjectDetailPage = () => {
               <div className="text-center mt-10">
                 <Link
                   to="/recent-projects"
-                  className="group inline-flex items-center gap-2 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--highland-gold))] transition-colors duration-300"
+                  className="group inline-flex items-center gap-2 font-heading font-bold text-[13px] tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
                 >
                   View Full Portfolio <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>

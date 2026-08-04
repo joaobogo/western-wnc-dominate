@@ -50,7 +50,7 @@ const CTABlock = () => {
               <HeadingReveal delay={0.1}>
                 <h2 className="text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-heading font-bold mb-6 md:mb-8 leading-[1.06] tracking-[-0.02em] text-dark-section-foreground">
                   One conversation.<br />
-                  <span className="text-[hsl(var(--highland-gold))]">One local team.</span>
+                  <span className="text-[hsl(var(--gold-ink))]">One local team.</span>
                 </h2>
               </HeadingReveal>
 
@@ -77,7 +77,7 @@ const CTABlock = () => {
                     href="tel:+18285247773"
                     className="group border-2 border-dark-section-foreground/20 text-dark-section-foreground font-body font-bold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.4)] transition-all duration-300 min-h-[60px] tracking-wide"
                   >
-                    <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     Speak With a Project Advisor
                   </a>
                 </div>
@@ -170,7 +170,7 @@ const CTABlock = () => {
               <div className="w-px h-3 bg-primary-foreground/10" />
               <Link
                 to="/construction/consultation"
-                className="group inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
+                className="group inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
               >
                 Construction
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

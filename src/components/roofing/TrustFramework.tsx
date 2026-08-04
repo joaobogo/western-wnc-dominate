@@ -98,7 +98,7 @@ const TrustFramework = ({
         <div className="section-padding">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
-              <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">{eyebrow}</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">{eyebrow}</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">{heading}</h2>
               {subheading && <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">{subheading}</p>}
             </motion.div>
@@ -107,7 +107,7 @@ const TrustFramework = ({
               {pillars.map((pillar, i) => (
                 <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4">
-                    <pillar.icon className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                    <pillar.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{pillar.title}</h3>
                   <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{pillar.detail}</p>

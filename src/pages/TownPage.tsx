@@ -108,7 +108,7 @@ const TownPage = () => {
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
                 <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--highland-gold))] uppercase tracking-[0.3em]">{town.name} Division</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{town.name} Division</span>
               </div>
             </motion.div>
 
@@ -120,7 +120,7 @@ const TownPage = () => {
                 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.9] drop-shadow-lg"
               >
                 Roofing &amp; Construction in <br />
-                <span className="text-[hsl(var(--highland-gold))]">{town.name}, NC</span>
+                <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span>
               </motion.h1>
 
               <motion.p 
@@ -142,7 +142,7 @@ const TownPage = () => {
                   Request an Inspection in {town.name} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
-                  <Phone className="w-5 h-5 text-[hsl(var(--highland-gold))]" /> (828) 524-7773
+                  <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
                 </a>
               </motion.div>
             </div>
@@ -160,7 +160,7 @@ const TownPage = () => {
                   <div key={i} className="flex flex-col">
                     <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/85 font-bold mb-1">{stat.label}</span>
                     <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
-                      <stat.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))]" />
+                      <stat.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
                       {stat.value}
                     </span>
                   </div>
@@ -219,7 +219,7 @@ const TownPage = () => {
             </ScrollReveal>
             <div className="bg-secondary p-8 border relative z-10 shadow-sm">
               <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
+                <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                 {town.name} Site Realities
               </h4>
               <ul className="space-y-8">
@@ -229,7 +229,7 @@ const TownPage = () => {
                   { label: "Notable Areas", value: town.notableNeighborhoods.join(', ') }
                 ].map((item, i) => (
                   <li key={i}>
-                    <p className="text-[11px] font-bold text-[hsl(var(--highland-gold))] uppercase tracking-widest mb-1.5">{item.label}</p>
+                    <p className="text-[11px] font-bold text-[hsl(var(--gold-ink))] uppercase tracking-widest mb-1.5">{item.label}</p>
                     <p className="text-lg text-foreground font-heading font-bold leading-tight">{item.value}</p>
                   </li>
                 ))}
@@ -300,7 +300,7 @@ const TownPage = () => {
                   <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-background border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
                     {/* Subtle category badge */}
                     <div className="flex items-center gap-3 mb-6">
-                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/60 bg-primary/5 px-2.5 py-1">
+                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/80 bg-primary/5 px-2.5 py-1">
                         {post.category}
                       </span>
                       <div className="h-px flex-1 bg-border/40" />
@@ -318,7 +318,7 @@ const TownPage = () => {
                         Read Guide <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                       </span>
                       {post.town === town.name && (
-                        <span className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground/75 uppercase tracking-widest">
+                        <span className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground uppercase tracking-widest">
                           <MapPin className="w-3 h-3" /> Local Info
                         </span>
                       )}

@@ -61,7 +61,7 @@ const VeluxProof = () => {
             <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white shadow-sm border border-white/10">
               <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
             </div>
-            <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
+            <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
               VELUX Certified Installer
             </span>
           </div>
@@ -84,7 +84,7 @@ const VeluxProof = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--highland-gold))]">
+              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
                 What it means for you
               </span>
             </div>
@@ -94,7 +94,7 @@ const VeluxProof = () => {
                   key={b.title}
                   className="bg-dark-section-foreground/[0.04] border border-dark-section-foreground/10 p-5 rounded-none hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors"
                 >
-                  <b.icon className="w-5 h-5 text-[hsl(var(--highland-gold))] mb-3" />
+                  <b.icon className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-3" />
                   <h3 className="text-base font-heading font-bold text-dark-section-foreground mb-1.5 leading-tight">
                     {b.title}
                   </h3>
@@ -114,8 +114,8 @@ const VeluxProof = () => {
           >
             <div className="border border-[hsl(var(--highland-gold)/0.3)] bg-dark-section-foreground/[0.03] p-6 md:p-8 h-full flex flex-col">
               <div className="flex items-center gap-2 mb-1">
-                <ShieldCheck className="w-4 h-4 text-[hsl(var(--highland-gold))]" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--highland-gold))]">
+                <ShieldCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
                   Skylight Warranty
                 </span>
               </div>
@@ -129,7 +129,7 @@ const VeluxProof = () => {
                     className="flex items-baseline justify-between gap-4 pb-3 border-b border-dark-section-foreground/10 last:border-0 last:pb-0"
                   >
                     <span className="text-[16px] text-dark-section-foreground/85 font-body font-medium">{w.label}</span>
-                    <span className="text-[16px] font-heading font-bold text-[hsl(var(--highland-gold))] whitespace-nowrap">
+                    <span className="text-[16px] font-heading font-bold text-[hsl(var(--gold-ink))] whitespace-nowrap">
                       {w.value}
                     </span>
                   </li>

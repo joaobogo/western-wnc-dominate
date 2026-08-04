@@ -20,9 +20,9 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
     <Link
       to="/community"
       aria-label="Giving Back to our community"
-      className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-body font-bold uppercase tracking-[0.1em] text-heritage-charcoal/75 hover:text-[hsl(var(--highland-gold))] transition-colors duration-300 px-2 py-1.5 group"
+      className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-body font-bold uppercase tracking-[0.1em] text-heritage-charcoal/75 hover:text-[hsl(var(--gold-ink))] transition-colors duration-300 px-2 py-1.5 group"
     >
-      <Heart className="w-3.5 h-3.5 text-[hsl(var(--highland-gold))] group-hover:fill-[hsl(var(--highland-gold))] transition-all duration-300" />
+      <Heart className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))] group-hover:fill-[hsl(var(--highland-gold))] transition-all duration-300" />
       <span>Giving Back</span>
     </Link>
     <a

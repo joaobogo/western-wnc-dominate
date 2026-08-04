@@ -24,7 +24,7 @@ const badgeVariants = {
   subtle: {
     wrapper: "flex items-center gap-2",
     icon: "w-3 h-3 text-[hsl(var(--highland-gold)/0.35)]",
-    text: "text-muted-foreground/50 text-[11px] font-body font-medium",
+    text: "text-muted-foreground text-[11px] font-body font-medium",
   },
   dark: {
     wrapper: "flex items-center gap-2",

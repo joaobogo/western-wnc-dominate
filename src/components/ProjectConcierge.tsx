@@ -70,7 +70,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
             <HeadingReveal delay={0.1}>
               <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
                 Your Project Deserves a<br className="hidden md:block" />
-                <span className="text-[hsl(var(--highland-gold))]"> Real Conversation.</span>
+                <span className="text-[hsl(var(--gold-ink))]"> Real Conversation.</span>
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
@@ -110,7 +110,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
                 {path.external ? (
                   <a
                     href={path.href}
-                    className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] text-[13px] font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
+                    className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] text-[13px] font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
                   >
                     {path.action}
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -118,7 +118,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
                 ) : (
                   <Link
                     to={path.href}
-                    className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold))] text-[13px] font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
+                    className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] text-[13px] font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
                   >
                     {path.action}
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

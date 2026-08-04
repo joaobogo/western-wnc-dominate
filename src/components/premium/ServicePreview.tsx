@@ -27,8 +27,8 @@ const divisionStyles = {
   },
   construction: {
     iconBg: "bg-[hsl(var(--highland-gold)/0.08)] group-hover:bg-[hsl(var(--highland-gold)/0.14)]",
-    iconColor: "text-[hsl(var(--highland-gold))]",
-    ctaColor: "text-[hsl(var(--highland-gold))]",
+    iconColor: "text-[hsl(var(--gold-ink))]",
+    ctaColor: "text-[hsl(var(--gold-ink))]",
     label: "Construction",
   },
 };
@@ -52,9 +52,9 @@ export const ServicePreview = ({
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-heading font-semibold text-foreground truncate">{title}</p>
-          <p className="text-[11px] text-muted-foreground/50 font-body truncate">{description}</p>
+          <p className="text-[11px] text-muted-foreground font-body truncate">{description}</p>
         </div>
-        <ArrowRight className="w-3 h-3 text-muted-foreground/70 group-hover:text-muted-foreground btn-arrow-icon flex-shrink-0" />
+        <ArrowRight className="w-3 h-3 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon flex-shrink-0" />
       </Link>
     );
   }

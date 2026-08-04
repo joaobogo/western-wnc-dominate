@@ -184,7 +184,7 @@ const RoofReplacement = () => {
                   <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--highland-gold))]">Roof Replacement</span>
+                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Replacement</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -221,7 +221,7 @@ const RoofReplacement = () => {
                 className="mt-10 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm max-w-md"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <DollarSign className="w-5 h-5 text-[hsl(var(--highland-gold))]" />
+                  <DollarSign className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   <span className="text-xs uppercase tracking-wider text-primary-foreground/85 font-body font-semibold">How We Price Replacement</span>
                 </div>
                 <div className="text-2xl font-heading font-bold text-primary-foreground">Scope-based, grouped-cost</div>
@@ -360,7 +360,7 @@ const RoofReplacement = () => {
           <div className="section-padding">
             <div className="container-tight">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-                <span className="eyebrow mb-3 block text-[hsl(var(--highland-gold))]">Materials</span>
+                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Materials</span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Materials That Perform<br className="hidden md:block" /> at Elevation.
                 </h2>
@@ -378,8 +378,8 @@ const RoofReplacement = () => {
                       </div>
                       <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
                         <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-heading font-bold text-dark-section-foreground text-lg group-hover:text-[hsl(var(--highland-gold))] transition-colors">{mat.name}</h3>
-                          <span className="text-[10px] font-body font-semibold text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">{mat.lifespan}</span>
+                          <h3 className="font-heading font-bold text-dark-section-foreground text-lg group-hover:text-[hsl(var(--gold-ink))] transition-colors">{mat.name}</h3>
+                          <span className="text-[10px] font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">{mat.lifespan}</span>
                         </div>
                         <span className="text-[11px] font-body text-dark-section-foreground/95 mb-3">{mat.type}</span>
                         <p className="text-dark-section-foreground/95 text-sm font-body leading-relaxed">{mat.detail}</p>
@@ -407,7 +407,7 @@ const RoofReplacement = () => {
               {timelineSteps.map((step, i) => (
                 <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
-                  <span className="inline-block text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.08)] px-2 py-0.5 rounded-sm mb-4">{step.duration}</span>
+                  <span className="inline-block text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.08)] px-2 py-0.5 rounded-sm mb-4">{step.duration}</span>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
                 </motion.div>
@@ -427,7 +427,7 @@ const RoofReplacement = () => {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {trustProof.map((item, i) => (
                 <motion.div key={item.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center p-5 md:p-6 bg-card border border-border rounded-sm">
-                  <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--highland-gold))] block mb-2">{item.value}</span>
+                  <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] block mb-2">{item.value}</span>
                   <span className="font-heading font-semibold text-foreground text-sm block mb-1">{item.label}</span>
                   <span className="text-muted-foreground text-[11px] font-body leading-snug">{item.detail}</span>
                 </motion.div>
@@ -444,7 +444,7 @@ const RoofReplacement = () => {
                 <span className="eyebrow mb-3 block">Replacement Projects</span>
                 <h2 className="section-heading">Recent Roof<br className="hidden md:block" /> Replacements.</h2>
               </div>
-              <Link to="/recent-projects" className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors font-body">
+              <Link to="/recent-projects" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body">
                 Full Gallery <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -496,7 +496,7 @@ const RoofReplacement = () => {
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  <span className="eyebrow mb-5 block text-[hsl(var(--highland-gold))]">Ready to Move Forward?</span>
+                  <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Ready to Move Forward?</span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     When You're Ready to Replace<br className="hidden md:block" /> Your Roof the Right Way —<br className="hidden md:block" /> We're Ready to Build It.
                   </h2>

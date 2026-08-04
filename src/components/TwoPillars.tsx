@@ -36,7 +36,7 @@ const TwoPillars = () => {
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
-            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold))]">
+            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
               Roofing · Construction · Design Support
             </span>
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
@@ -57,7 +57,7 @@ const TwoPillars = () => {
             
             <div className="flex flex-col items-center gap-2.5">
               <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.05)] flex items-center justify-center mb-1">
-                <HardHat className="w-6 h-6 text-[hsl(var(--highland-gold))]" />
+                <HardHat className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
               </div>
               <span className="text-[14px] md:text-base font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
                 Construction
@@ -67,7 +67,7 @@ const TwoPillars = () => {
 
           {/* Statement */}
           <p className="font-heading text-[1.85rem] md:text-[2.5rem] lg:text-[3rem] leading-[1.15] tracking-tight text-foreground max-w-5xl mx-auto font-bold text-balance">
-            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same team-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--highland-gold))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions and outdoor living</Link> — with <Link to="/layouts-planning" className="hover:text-accent transition-colors underline decoration-accent/30 underline-offset-[6px]">Design Support</Link> ensuring every project is intelligently mapped before the first board is cut.
+            Highlander is built on mountain-grade <Link to="/roofing" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-[6px]">roofing authority</Link>. We carry that same team-led discipline into <Link to="/construction" className="hover:text-[hsl(var(--gold-ink))] transition-colors underline decoration-[hsl(var(--highland-gold)/0.3)] underline-offset-[6px]">additions and outdoor living</Link> — with <Link to="/layouts-planning" className="hover:text-[hsl(var(--gold-ink))] transition-colors underline decoration-accent/30 underline-offset-[6px]">Design Support</Link> ensuring every project is intelligently mapped before the first board is cut.
           </p>
 
         </motion.div>

@@ -178,31 +178,31 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
             <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
               <div className="p-6 md:p-8 space-y-5">
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60 mb-1.5">Visual Style</h4>
+                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Visual Style</h4>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.visualStyle}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60 mb-1.5">Durability</h4>
+                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Durability</h4>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.durability}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60 mb-1.5">Expected Lifespan</h4>
+                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Expected Lifespan</h4>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.lifespan}</p>
                 </div>
               </div>
               <div className="p-6 md:p-8 space-y-5">
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60 mb-1.5">Maintenance</h4>
+                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Maintenance</h4>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.maintenance}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60 mb-1.5">Ideal Homeowner</h4>
+                  <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80 mb-1.5">Ideal Homeowner</h4>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.idealFor}</p>
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5 mb-1.5">
-                    <ThermometerSun className="w-3 h-3 text-primary/40" />
-                    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/60">WNC Climate Performance</h4>
+                    <ThermometerSun className="w-3 h-3 text-primary/80" />
+                    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-primary/80">WNC Climate Performance</h4>
                   </div>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{active.wncPerformance}</p>
                 </div>
@@ -213,8 +213,8 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
             <div className="px-6 md:px-8 py-5 bg-secondary/30 border-t border-border">
               <div className="flex flex-wrap gap-2.5">
                 {active.highlights.map((h) => (
-                  <span key={h} className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-foreground/70 bg-background border border-border rounded-sm px-3 py-1.5">
-                    <CheckCircle className="w-3 h-3 text-primary/40" />
+                  <span key={h} className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-muted-foreground bg-background border border-border rounded-sm px-3 py-1.5">
+                    <CheckCircle className="w-3 h-3 text-primary/80" />
                     {h}
                   </span>
                 ))}
