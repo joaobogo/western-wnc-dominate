@@ -174,7 +174,7 @@ const InspectionForm = () => {
               <div className="flex flex-col gap-3">
                 {[
                   { icon: User, text: "You'll speak with a local project advisor" },
-                  { icon: Clock, text: "Response rapidly — guaranteed" },
+                  { icon: Clock, text: "Response within 24 hours" },
                   { icon: Shield, text: "No obligation · No sales pressure" },
                 ].map((item, i) => (
                   <motion.div
