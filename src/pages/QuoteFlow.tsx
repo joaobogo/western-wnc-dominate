@@ -237,6 +237,7 @@ export default function QuoteFlow() {
             <p className="text-sm text-muted-foreground font-body mt-1">A few sentences is perfect. What's prompting this project? What matters most to you?</p>
           </div>
           <textarea
+            aria-label="Tell us a bit about your project"
             value={form.description}
             onChange={e => update("description", e.target.value)}
             placeholder="Example: We had some shingles blow off during the last storm, and we're thinking it might be time for a full replacement rather than another repair..."

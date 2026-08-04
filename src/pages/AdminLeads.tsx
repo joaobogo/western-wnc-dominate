@@ -330,8 +330,9 @@ function FilterSelect({
 }: { label: string; value: string; onChange: (v: string) => void; options: readonly string[] }) {
   return (
     <div>
-      <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1">{label}</label>
+      <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" id={`flt-${label}`}>{label}</label>
       <select
+        aria-labelledby={`flt-${label}`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="border border-input rounded px-2 py-1 bg-background max-w-[180px]"

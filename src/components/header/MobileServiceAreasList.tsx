@@ -63,7 +63,8 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
               <div className="relative mt-1.5 mb-2 mr-1">
                 <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-heritage-charcoal/40 pointer-events-none" />
                 <input
-                  type="search"
+                  aria-label="Search town or county"
+            type="search"
                   inputMode="search"
                   autoComplete="off"
                   placeholder="Search town or county…"

@@ -252,6 +252,7 @@ export default function ConstructionConsultation() {
       hint: "We serve all of Western North Carolina. A full address helps us account for elevation, terrain, and local conditions.",
       content: (
         <input 
+          aria-label="Property address"
           value={form.town} 
           onChange={e => update("town", e.target.value)} 
           placeholder="Street, city, and state" 
@@ -269,6 +270,7 @@ export default function ConstructionConsultation() {
       content: (
         <div className="space-y-3">
           <textarea
+            aria-label="Tell us about your vision for this project"
             value={form.description}
             onChange={e => update("description", e.target.value)}
             placeholder="Example: We want to add a primary suite above our garage that matches the existing roofline and uses similar materials. We're also considering a covered porch on the south side..."

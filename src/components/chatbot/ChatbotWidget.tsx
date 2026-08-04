@@ -152,9 +152,9 @@ function LeadCaptureCard({
         <p className="text-[11px] text-muted-foreground font-body mt-0.5">Share your info and we'll call you — no obligation.</p>
       </div>
       <div className="space-y-2">
-        <input value={name} onChange={e => setName(e.target.value)} placeholder="Your name" className={inputCls} maxLength={100} />
-        <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Best phone number" className={inputCls} maxLength={20} />
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email (optional)" className={inputCls} maxLength={255} />
+        <input aria-label="Your name" value={name} onChange={e => setName(e.target.value)} placeholder="Your name" className={inputCls} maxLength={100} />
+        <input aria-label="Best phone number" type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Best phone number" className={inputCls} maxLength={20} />
+        <input aria-label="Email address (optional)" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email (optional)" className={inputCls} maxLength={255} />
         <input value={town} onChange={e => setTown(e.target.value)} placeholder="Property town (Franklin, Highlands, Cashiers, Sylva…)" className={inputCls} maxLength={80} aria-label="What town is the property in?" />
       </div>
       <div className="flex items-center gap-2">
@@ -519,6 +519,7 @@ export default function ChatbotWidget() {
             <div className="shrink-0 border-t border-border bg-card">
               <form onSubmit={handleSubmit} className="flex items-center gap-2 px-3 py-2">
                 <input
+                  aria-label="Describe your project"
                   ref={inputRef}
                   value={input}
                   onChange={e => setInput(e.target.value)}
