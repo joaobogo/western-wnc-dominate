@@ -356,7 +356,9 @@ const App = () => (
             </ErrorBoundary>
           </Suspense>
           <ErrorBoundary boundary="chatbot" fallback={() => null}>
-            <ChatbotWidget />
+            <Suspense fallback={null}>
+              <ChatbotWidget />
+            </Suspense>
           </ErrorBoundary>
         </BrowserRouter>
       </TooltipProvider>
