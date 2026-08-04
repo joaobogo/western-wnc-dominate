@@ -12,8 +12,8 @@ import { MultiStepForm, ConfirmationState } from "@/components/conversion";
 import { supabase } from "@/integrations/supabase/client";
 import { syncConsultationRequestToJobTread } from "@/lib/leads";
 import { toast } from "@/hooks/use-toast";
-import {
 import { actionableError, errorTitle } from "@/lib/microcopy";
+import {
   Home, Building2, Hammer, CloudLightning, PlusCircle,
   Paintbrush, TreePine, Wrench, MapPin, Clock, User, FileText
 } from "lucide-react";
