@@ -200,7 +200,8 @@ div[style*="Edit with Lovable"],
           s.parentNode.insertBefore(o,s);
         });
       };
-      window.__loadRWL();
+      // No eager call — RealWork (and its Google Maps dependency) is started by the
+      // unified deferred trigger below, or on demand by <RealWorkWidget />.
     }());
     </script>
     <!-- End RealWork Labs Plugin Loader -->
@@ -213,6 +214,7 @@ div[style*="Edit with Lovable"],
         try{ w.__loadGTM && w.__loadGTM(); }catch(e){}
         try{ w.__loadFB && w.__loadFB(); }catch(e){}
         try{ w.__loadTT && w.__loadTT(); }catch(e){}
+        try{ w.__loadRWL && w.__loadRWL(); }catch(e){}
       }
       ['pointerdown','keydown','scroll','touchstart','mousemove'].forEach(function(e){
         w.addEventListener(e, fire, {passive:true, once:true});
