@@ -1,6 +1,19 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
 import { logError } from "@/lib/error-reporting";
 
+const RELOAD_KEY = "hl_chunk_reload";
+
+/** A failed dynamic import after a deploy — recoverable with a single reload. */
+const isStaleChunkError = (error: Error): boolean => {
+  const msg = `${error?.name ?? ""} ${error?.message ?? ""}`;
+  return (
+    msg.includes("Importing a module script failed") ||
+    msg.includes("Failed to fetch dynamically imported module") ||
+    msg.includes("error loading dynamically imported module") ||
+    msg.includes("ChunkLoadError")
+  );
+};
+
 interface Props {
   children: ReactNode;
   /** Where in the tree this boundary is mounted — helps in analytics. */
@@ -29,6 +42,21 @@ export default class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
+    // Stale hashed chunks after a deploy are the most common cause of a blank
+    // "snag" screen on forms. Recover silently with one reload instead of
+    // showing the fallback.
+    if (isStaleChunkError(error)) {
+      try {
+        if (!sessionStorage.getItem(RELOAD_KEY)) {
+          sessionStorage.setItem(RELOAD_KEY, "1");
+          window.location.reload();
+          return;
+        }
+      } catch {
+        // sessionStorage unavailable (private mode) — fall through to fallback.
+      }
+    }
+
     logError(error, {
       source: `ErrorBoundary:${this.props.boundary ?? "unknown"}`,
       extra: { componentStack: info.componentStack },
