@@ -102,6 +102,18 @@ const renderContent = (content: string) => {
   };
 
   lines.forEach((line, i) => {
+    // Markdown tables: | a | b |  /  |---|---|
+    if (line.trim().startsWith("|") && line.trim().endsWith("|")) {
+      const cells = line.trim().slice(1, -1).split("|").map((c) => c.trim());
+      if (cells.every((c) => /^:?-{2,}:?$/.test(c))) return; // separator row
+      if (!tableBuffer) {
+        flushList();
+        tableBuffer = { rows: [], start: i };
+      }
+      tableBuffer.rows.push(cells);
+      return;
+    }
+    flushTable();
     if (line.startsWith("## "))
       { flushList(); nodes.push(
         <h2 key={i} className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-4">
@@ -141,6 +153,7 @@ const renderContent = (content: string) => {
     );
   });
   flushList();
+  flushTable();
   return nodes;
 };
 
