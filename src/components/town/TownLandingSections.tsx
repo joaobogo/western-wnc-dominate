@@ -315,7 +315,8 @@ export const TownFAQ = ({
                 {f.question}
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground font-body leading-relaxed text-[15px] pb-6">
-                {f.answer}
+                <p>{f.answer}</p>
+                <TownFAQAnswerLinks town={town} question={f.question} answer={f.answer} />
               </AccordionContent>
             </AccordionItem>
           ))}
