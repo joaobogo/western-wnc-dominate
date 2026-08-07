@@ -132,7 +132,7 @@ export const counties: CountyData[] = [
     permitting: "Buncombe County permits are issued through county Permits and Inspections, with the City of Asheville handling work inside city limits and additional review for local historic districts such as Montford. Scheduling in the Asheville market moves faster when the permit path is confirmed before the contract is signed.",
     faqs: [
       { q: "Does Highlander take Asheville projects?", a: "Yes, within our scheduling capacity. Check our Service Areas page or call for current Asheville availability." },
-      { q: "Are historic district projects different?", a: "Yes. Visible exterior changes in Asheville"s local historic districts can require review, which adds lead time we plan for up front." },
+      { q: "Are historic district projects different?", a: "Yes. Visible exterior changes in Asheville's local historic districts can require review, which adds lead time we plan for up front." },
       { q: "What roofing systems suit Asheville homes?", a: "The stock ranges from historic Montford homes to modern Town Mountain builds, so it varies — standing-seam metal, synthetic composite, and heavy dimensional asphalt all have their place here." },
     ]
   },
