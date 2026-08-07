@@ -13,6 +13,7 @@ import HeadingReveal from "@/components/motion/HeadingReveal";
 import TartanBackground from "@/components/TartanBackground";
 import type { TownData } from "@/data/towns";
 import { getFaqServiceLink, getTownCountyLink } from "@/lib/town-faq-links";
+import { trackTownFaqOpen } from "@/lib/gtm";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const EASE = [0.22, 1, 0.36, 1] as any;
@@ -333,8 +334,20 @@ export const TownFAQ = ({
           },
         ];
 
+  const handleOpen = (value: string) => {
+    if (!value) return;
+    const index = Number(value.replace("item-", ""));
+    const item = items[index];
+    if (!item) return;
+    trackTownFaqOpen({ town: town.slug, question: item.question, position: index + 1 });
+  };
+
   return (
-    <section className="section-padding bg-background relative">
+    <section
+      className="section-padding bg-background relative"
+      data-gtm-location="town_faq"
+      data-gtm-town={town.slug}
+    >
       <div className="container-tight max-w-4xl">
         <div className="mb-12 text-center">
           <ScrollReveal variant="fade">
@@ -349,7 +362,12 @@ export const TownFAQ = ({
           </HeadingReveal>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-3">
+        <Accordion
+          type="single"
+          collapsible
+          className="space-y-3"
+          onValueChange={handleOpen}
+        >
           {items.map((f, i) => (
             <AccordionItem
               key={i}
@@ -367,13 +385,20 @@ export const TownFAQ = ({
           ))}
         </Accordion>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-center">
           <Link
             to="/request-inspection"
-            className="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all"
+            data-gtm-cta="request_inspection"
+            className="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all min-h-[44px]"
           >
             Still have questions? Talk with our team <ArrowRight className="w-4 h-4" />
           </Link>
+          <a
+            href="tel:+18285247773"
+            className="inline-flex items-center gap-2 text-foreground font-heading font-bold text-sm uppercase tracking-widest hover:text-primary transition-colors min-h-[44px]"
+          >
+            <Phone className="w-4 h-4" /> (828) 524-7773
+          </a>
         </div>
       </div>
     </section>
