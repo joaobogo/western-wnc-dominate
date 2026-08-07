@@ -24,7 +24,7 @@ const SERVICE_TARGETS: ServiceTarget[] = [
   { label: "Brava Synthetic Roofing", href: "/roofing/brava-synthetic", keywords: ["synthetic", "brava", "composite shake", "cedar shake"] },
   { label: "Skylights", href: "/roofing/skylights", keywords: ["skylight", "velux", "sun tunnel"] },
   { label: "Gutters", href: "/roofing/gutters", keywords: ["gutter", "downspout", "leaf guard"] },
-  { label: "Commercial Roofing", href: "/roofing/commercial", keywords: ["commercial", "tpo", "flat roof", "business"] },
+  { label: "Commercial Roofing", href: "/roofing/commercial", keywords: ["commercial", "tpo", "flat roof"] },
   { label: "Roof Repair", href: "/roofing/roof-repair", keywords: ["repair", "leak", "flashing", "missing shingle"] },
   { label: "Roof Replacement", href: "/roofing/roof-replacement", keywords: ["replace", "replacement", "re-roof", "reroof", "new roof", "shingle", "roofing system", "underlayment"] },
   { label: "Home Additions", href: "/construction/additions", keywords: ["addition", "sunroom", "garage", "in-law", "guest suite", "second story"] },
@@ -32,7 +32,7 @@ const SERVICE_TARGETS: ServiceTarget[] = [
   { label: "Renovations", href: "/construction/renovations", keywords: ["renovation", "remodel", "kitchen", "bath", "whole-home"] },
   { label: "Siding & Exteriors", href: "/construction/siding", keywords: ["siding", "exterior cladding", "trim"] },
   { label: "Construction Division", href: "/construction", keywords: ["general contractor", "construction", "build", "permit", "inspection department"] },
-  { label: "Residential Roofing", href: "/roofing/residential", keywords: ["residential", "home", "house", "attic", "ventilation", "roof"] },
+  { label: "Residential Roofing", href: "/roofing/residential", keywords: ["residential", "attic", "ventilation", "asphalt", "dimensional shingle"] },
 ];
 
 const FALLBACK_SERVICE: FaqLink = { label: "Roofing Services", href: "/roofing" };
@@ -53,7 +53,7 @@ export const getFaqServiceLink = (question: string, answer: string): FaqLink => 
 
   SERVICE_TARGETS.forEach((target) => {
     const score = target.keywords.reduce(
-      (sum, k) => sum + (q.includes(k) ? 4 : 0) + (a.includes(k) ? 1 : 0),
+      (sum, k) => sum + (q.includes(k) ? 20 : 0) + (a.includes(k) ? 1 : 0),
       0,
     );
     if (score > bestScore) {
