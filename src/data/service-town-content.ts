@@ -900,6 +900,23 @@ for (let i = serviceTownContent.length - 1; i >= 0; i--) {
   }
 }
 
+// ─────────────────────────────────────────────────────────────
+//  COVERAGE FILL — every town × every core service.
+//  Hand-written entries above always win; generated entries only
+//  fill combinations that don't already exist.
+// ─────────────────────────────────────────────────────────────
+{
+  const existing = new Set(
+    serviceTownContent.map((e) => `${e.townSlug}|${e.serviceSlug}`),
+  );
+  for (const g of generatedServiceTownEntries) {
+    const key = `${g.townSlug}|${g.serviceSlug}`;
+    if (existing.has(key)) continue;
+    existing.add(key);
+    serviceTownContent.push(E(g));
+  }
+}
+
 export type Tier2FlatEntry = FlatSlugEntry;
 
 
