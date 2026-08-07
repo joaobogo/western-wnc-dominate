@@ -85,12 +85,37 @@ export const generatedTownFAQs: Record<string, TownFAQItem[]> = Object.fromEntri
  * Merges hand-written proof FAQs with generated localized ones,
  * de-duplicating by question text. Hand-written entries win.
  */
+/** Loose fingerprint used to suppress near-duplicate questions. */
+const fingerprint = (q: string) =>
+  q
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, " ")
+    .split(/\s+/)
+    .filter(
+      (w) =>
+        w.length > 3 &&
+        !["what", "which", "does", "your", "with", "that", "this", "from", "have", "highlander"].includes(w),
+    )
+    .sort()
+    .join(" ");
+
+const overlaps = (a: string, b: string) => {
+  const A = new Set(fingerprint(a).split(" ").filter(Boolean));
+  const B = new Set(fingerprint(b).split(" ").filter(Boolean));
+  if (!A.size || !B.size) return false;
+  let hit = 0;
+  A.forEach((w) => {
+    if (B.has(w)) hit++;
+  });
+  return hit / Math.min(A.size, B.size) >= 0.6;
+};
+
 export const getTownFAQs = (
   slug: string,
   authored?: TownFAQItem[],
 ): TownFAQItem[] => {
   const generated = generatedTownFAQs[slug] ?? [];
-  const seen = new Set((authored ?? []).map((f) => f.question.trim().toLowerCase()));
-  const extra = generated.filter((f) => !seen.has(f.question.trim().toLowerCase()));
+  const existing = authored ?? [];
+  const extra = generated.filter((g) => !existing.some((a) => overlaps(a.question, g.question)));
   return [...(authored ?? []), ...extra];
 };
