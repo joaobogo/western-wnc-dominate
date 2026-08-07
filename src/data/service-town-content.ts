@@ -1,4 +1,8 @@
 import { tier1FlatEntries, tier2FlatEntries, type FlatSlugEntry } from "./service-town-slugs";
+import {
+  generatedServiceTownEntries,
+  type GeneratedSection,
+} from "./service-town-generated";
 export { tier1FlatEntries, tier2FlatEntries };
 export type { FlatSlugEntry };
 
@@ -17,6 +21,8 @@ export interface ServiceTownEntry {
   metaTitle: string;
   metaDescription: string;
   faqs: { q: string; a: string }[];
+  /** Long-form supporting sections (generated coverage pages). */
+  sections?: GeneratedSection[];
 }
 
 const E = (e: ServiceTownEntry) => e;
