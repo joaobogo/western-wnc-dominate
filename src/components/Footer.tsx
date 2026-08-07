@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock, BadgeCheck, Star } from "lucide-react";
 import veluxLogo from "@/assets/logo-velux.png";
@@ -84,15 +85,20 @@ const certifications = [
   { icon: Clock, label: "Rapid Emergency Response" },
 ];
 
-const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
+const FooterLink = React.forwardRef<
+  HTMLAnchorElement,
+  { to: string; children: React.ReactNode }
+>(({ to, children }, ref) => (
   <Link
+    ref={ref}
     to={to}
     className="group text-[17px] text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-1.5 font-medium"
   >
     {children}
     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
   </Link>
-);
+));
+FooterLink.displayName = "FooterLink";
 
 const Footer = () => {
   return (
