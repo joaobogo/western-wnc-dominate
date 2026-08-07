@@ -37,11 +37,32 @@ const SERVICE_TARGETS: ServiceTarget[] = [
 
 const FALLBACK_SERVICE: FaqLink = { label: "Roofing Services", href: "/roofing" };
 
-/** Most relevant service page for a single FAQ, based on its own wording. */
+/**
+ * Most relevant service page for a single FAQ. Keywords found in the question
+ * weigh far more than keywords buried in the answer body, so a permitting or
+ * repair-vs-replace question doesn't get pulled toward an unrelated product
+ * page just because the answer mentions it in passing. Ties fall back to the
+ * declaration order above (most specific service first).
+ */
 export const getFaqServiceLink = (question: string, answer: string): FaqLink => {
-  const haystack = `${question} ${answer}`.toLowerCase();
-  const match = SERVICE_TARGETS.find((t) => t.keywords.some((k) => haystack.includes(k)));
-  return match ? { label: match.label, href: match.href } : FALLBACK_SERVICE;
+  const q = question.toLowerCase();
+  const a = answer.toLowerCase();
+
+  let best: ServiceTarget | undefined;
+  let bestScore = 0;
+
+  SERVICE_TARGETS.forEach((target) => {
+    const score = target.keywords.reduce(
+      (sum, k) => sum + (q.includes(k) ? 4 : 0) + (a.includes(k) ? 1 : 0),
+      0,
+    );
+    if (score > bestScore) {
+      best = target;
+      bestScore = score;
+    }
+  });
+
+  return best ? { label: best.label, href: best.href } : FALLBACK_SERVICE;
 };
 
 /** County hub page for the town this FAQ belongs to. */
