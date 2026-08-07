@@ -48,6 +48,12 @@ export const getFaqServiceLink = (question: string, answer: string): FaqLink => 
   const q = question.toLowerCase();
   const a = answer.toLowerCase();
 
+  // Coverage / "what do you do here" questions span both divisions — send
+  // those to the roofing hub rather than letting a single stray keyword
+  // decide between a narrow product page and the construction hub.
+  const spansBothDivisions = q.includes("roofing and construction") || q.includes("just pass through");
+  if (spansBothDivisions) return FALLBACK_SERVICE;
+
   let best: ServiceTarget | undefined;
   let bestScore = 0;
 
