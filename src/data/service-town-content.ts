@@ -1,4 +1,8 @@
 import { tier1FlatEntries, tier2FlatEntries, type FlatSlugEntry } from "./service-town-slugs";
+import {
+  generatedServiceTownEntries,
+  type GeneratedSection,
+} from "./service-town-generated";
 export { tier1FlatEntries, tier2FlatEntries };
 export type { FlatSlugEntry };
 
@@ -17,6 +21,8 @@ export interface ServiceTownEntry {
   metaTitle: string;
   metaDescription: string;
   faqs: { q: string; a: string }[];
+  /** Long-form supporting sections (generated coverage pages). */
+  sections?: GeneratedSection[];
 }
 
 const E = (e: ServiceTownEntry) => e;
@@ -891,6 +897,23 @@ serviceTownContent.push(
 for (let i = serviceTownContent.length - 1; i >= 0; i--) {
   if (serviceTownContent[i].serviceSlug === "roofing-construction-hub") {
     serviceTownContent.splice(i, 1);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+//  COVERAGE FILL — every town × every core service.
+//  Hand-written entries above always win; generated entries only
+//  fill combinations that don't already exist.
+// ─────────────────────────────────────────────────────────────
+{
+  const existing = new Set(
+    serviceTownContent.map((e) => `${e.townSlug}|${e.serviceSlug}`),
+  );
+  for (const g of generatedServiceTownEntries) {
+    const key = `${g.townSlug}|${g.serviceSlug}`;
+    if (existing.has(key)) continue;
+    existing.add(key);
+    serviceTownContent.push(E(g));
   }
 }
 

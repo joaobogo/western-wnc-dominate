@@ -75,6 +75,47 @@ const renderContent = (content: string) => {
   const nodes: JSX.Element[] = [];
   // Buffer consecutive list lines so every <li> lands inside a real <ul>/<ol>.
   let listBuffer: { type: "ul" | "ol"; items: JSX.Element[]; start: number } | null = null;
+  let tableBuffer: { rows: string[][]; start: number } | null = null;
+
+  const flushTable = () => {
+    if (!tableBuffer) return;
+    const { rows, start } = tableBuffer;
+    tableBuffer = null;
+    const [head, ...body] = rows;
+    nodes.push(
+      <div key={`table-${start}`} className="my-6 overflow-x-auto">
+        <table className="w-full text-sm border border-border">
+          {head && (
+            <thead className="bg-muted/40">
+              <tr>
+                {head.map((c, ci) => (
+                  <th
+                    key={ci}
+                    scope="col"
+                    className="text-left font-heading font-bold text-foreground p-3 border-b border-border"
+                    dangerouslySetInnerHTML={{ __html: inlineMarkdown(c) }}
+                  />
+                ))}
+              </tr>
+            </thead>
+          )}
+          <tbody>
+            {body.map((r, ri) => (
+              <tr key={ri} className="border-b border-border last:border-0">
+                {r.map((c, ci) => (
+                  <td
+                    key={ci}
+                    className="p-3 align-top text-muted-foreground"
+                    dangerouslySetInnerHTML={{ __html: inlineMarkdown(c) }}
+                  />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>,
+    );
+  };
 
   const flushList = () => {
     if (!listBuffer) return;
@@ -102,6 +143,18 @@ const renderContent = (content: string) => {
   };
 
   lines.forEach((line, i) => {
+    // Markdown tables: | a | b |  /  |---|---|
+    if (line.trim().startsWith("|") && line.trim().endsWith("|")) {
+      const cells = line.trim().slice(1, -1).split("|").map((c) => c.trim());
+      if (cells.every((c) => /^:?-{2,}:?$/.test(c))) return; // separator row
+      if (!tableBuffer) {
+        flushList();
+        tableBuffer = { rows: [], start: i };
+      }
+      tableBuffer.rows.push(cells);
+      return;
+    }
+    flushTable();
     if (line.startsWith("## "))
       { flushList(); nodes.push(
         <h2 key={i} className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-4">
@@ -141,6 +194,7 @@ const renderContent = (content: string) => {
     );
   });
   flushList();
+  flushTable();
   return nodes;
 };
 

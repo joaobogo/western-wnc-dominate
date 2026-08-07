@@ -5,7 +5,7 @@ import {
   Shield, Star, Hammer, Home, Wind, CloudLightning, Compass,
   BookOpen
 } from "lucide-react";
-import SEOHead, { buildPageSchema } from "@/components/SEOHead";
+import SEOHead, { buildPageSchema, faqSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
@@ -52,7 +52,11 @@ const CountyPage = () => {
             { name: "Service Areas", url: "/service-areas" },
             { name: county.name, url: `/service-areas/county/${county.slug}` },
           ],
-        })}
+        }).concat(
+          county.faqs?.length
+            ? [faqSchema(county.faqs.map((f) => ({ question: f.q, answer: f.a })))]
+            : [],
+        )}
       />
       <Header />
       <PageBreadcrumbs
@@ -322,6 +326,39 @@ const CountyPage = () => {
         </section>
 
         {/* 5. Final Conversion Pathway */}
+        {(county.permitting || county.faqs?.length) && (
+          <section className="py-24 bg-muted/20 border-t border-border">
+            <div className="container-tight max-w-3xl">
+              {county.permitting && (
+                <>
+                  <span className="eyebrow mb-4 block">Permitting</span>
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+                    Permits and inspections in {county.name}
+                  </h2>
+                  <p className="text-muted-foreground font-body leading-relaxed mb-12">
+                    {county.permitting}
+                  </p>
+                </>
+              )}
+              {!!county.faqs?.length && (
+                <>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">
+                    {county.name} — Frequently Asked
+                  </h2>
+                  <div className="space-y-6">
+                    {county.faqs.map((f, i) => (
+                      <div key={i} className="border-b border-border pb-6 last:border-0">
+                        <h3 className="font-heading font-bold text-foreground mb-2">{f.q}</h3>
+                        <p className="text-muted-foreground font-body leading-relaxed">{f.a}</p>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </section>
+        )}
+
         <section className="py-24 bg-primary text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
           <div className="container-tight relative z-10 text-center">
