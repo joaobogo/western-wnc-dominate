@@ -5716,6 +5716,12 @@ const cullowheeClusterPosts: BlogPost[] = [
 blogPosts.push(...cullowheeClusterPosts);
 
 // Sort all posts by date descending (most recent first)
+// Local coverage posts for towns that previously had no town-tagged article.
+import { localTownBlogPosts } from "./blogs-local-towns";
+for (const p of localTownBlogPosts) {
+  if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
+}
+
 blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export const getBlogBySlug = (slug: string) => blogPosts.find(b => b.slug === slug);
