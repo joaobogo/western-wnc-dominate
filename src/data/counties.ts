@@ -152,7 +152,7 @@ export const counties: CountyData[] = [
     ],
     housingContext: "Henderson County is characterized by established retirement communities, historic downtown residential districts, and new multi-generational developments.",
     climateRealities: "The Hendersonville plateau experiences significant afternoon thunderhead development and localized hail events that test roof integrity year-round.",
-    permitting: "Henderson County permits are issued through the county Building Services office in Hendersonville, with municipal permitting inside town limits for Hendersonville, Fletcher, and Mills River. Wind and impact considerations show up regularly in this county"s material selection.",
+    permitting: "Henderson County permits are issued through the county Building Services office in Hendersonville, with municipal permitting inside town limits for Hendersonville, Fletcher, and Mills River. Wind and impact considerations show up regularly in this county's material selection.",
     faqs: [
       { q: "Why do you recommend impact-resistant shingles here?", a: "Henderson County sees enough hail and wind events that Class 4 impact-resistant lines are frequently worth the modest upcharge, and some insurers discount for them." },
       { q: "Do you serve Fletcher and Mills River too?", a: "Yes, both are inside our Henderson County coverage along with Hendersonville." },
