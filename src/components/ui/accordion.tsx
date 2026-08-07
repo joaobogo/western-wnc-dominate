@@ -38,13 +38,21 @@ const AccordionTrigger = React.forwardRef<
 ));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
+/**
+ * `forceMount` keeps collapsed answers in the DOM. Google requires FAQPage
+ * `acceptedAnswer` text to exist in the rendered HTML (it may be visually
+ * hidden) for Rich Results eligibility — Radix unmounts closed content by
+ * default, which makes FAQ schema ineligible. `data-[state=closed]:h-0`
+ * collapses it without removing it, so the open/close animation still runs.
+ */
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    forceMount
+    className="overflow-hidden text-sm transition-all data-[state=closed]:h-0 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>
