@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { towns } from "@/data/towns";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Mail, MessageSquare } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
@@ -25,6 +26,20 @@ const stepLabels: Record<FormStep, string> = {
 
 const stepOrder: FormStep[] = ["info", "project", "details"];
 
+/** A CTA can hand us a town slug (?town=highlands-nc) so the estimate form
+ *  opens pre-filled with the visitor's town. */
+function townFromQuery(): string {
+  if (typeof window === "undefined") return "";
+  try {
+    const slug = new URLSearchParams(window.location.search).get("town");
+    if (!slug) return "";
+    const match = towns.find((t) => t.slug === slug);
+    return match ? `${match.name}, ${match.state}` : "";
+  } catch {
+    return "";
+  }
+}
+
 const InspectionForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,7 +49,7 @@ const InspectionForm = () => {
     name: "",
     phone: "",
     email: "",
-    town: "",
+    town: townFromQuery(),
     projectType: "",
     timeline: "",
     details: "",
@@ -44,7 +59,7 @@ const InspectionForm = () => {
     step: stepOrder.indexOf(currentStep),
     enabled: !submitted,
     onRestore: (saved, savedStep) => {
-      setFormData((d) => ({ ...d, ...saved }));
+      setFormData((d) => ({ ...d, ...saved, town: saved.town || d.town }));
       if (typeof savedStep === "number" && stepOrder[savedStep]) setCurrentStep(stepOrder[savedStep]);
     },
   });
