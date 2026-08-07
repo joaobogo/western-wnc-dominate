@@ -20,6 +20,7 @@ import {
   tier2FlatEntries,
 } from "@/data/service-town-content";
 import { blogPosts } from "@/data/blogs";
+import { getServiceParentPath } from "@/data/service-town-generated";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 // Per-service hero overrides so the same town's services don't all show the
@@ -219,6 +220,26 @@ const ServiceTownPage = ({
               </div>
               <div className="border-l-2 border-accent pl-6 py-2">
                 <p className="text-foreground/90 italic leading-relaxed">{entry.proofNote}</p>
+              </div>
+
+              {entry.sections?.map((s, i) => (
+                <div key={i}>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4">{s.heading}</h2>
+                  <p className="text-foreground/80 leading-relaxed">{s.body}</p>
+                </div>
+              ))}
+
+              {/* Contextual internal links */}
+              <div className="border-t border-border pt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+                <Link to={getServiceParentPath(serviceSlug)} className="text-primary font-semibold hover:underline">
+                  More on {entry.serviceLabel.toLowerCase()} across Western NC
+                </Link>
+                <Link to={`/service-areas/${town.slug}`} className="text-primary font-semibold hover:underline">
+                  {town.name}, NC service overview
+                </Link>
+                <Link to="/consultation" className="text-primary font-semibold hover:underline">
+                  Request a {town.name} consultation
+                </Link>
               </div>
             </div>
 
