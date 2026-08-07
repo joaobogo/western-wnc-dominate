@@ -34,6 +34,7 @@ import {
 import { getTownBySlug, getLocalRelevance, towns } from "@/data/towns";
 import { getTownProofContent } from "@/data/town-proof";
 import { blogPosts } from "@/data/blogs";
+import { getTownFAQs } from "@/data/town-faqs-generated";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 
 const TownPage = () => {
@@ -55,6 +56,7 @@ const TownPage = () => {
 
   const townProof = getTownProofContent(town.slug);
   const relevantBlogs = getRelevantBlogsForTown(town.name);
+  const townFaqs = getTownFAQs(town.slug, townProof?.faqs);
   const localRelevance = getLocalRelevance(town.slug);
 
   return (
@@ -72,7 +74,7 @@ const TownPage = () => {
             state: town.state,
             description: town.description,
           },
-          faqs: townProof?.faqs ?? [],
+          faqs: townFaqs,
           page: { title: town.metaTitle, description: town.metaDescription },
         })}
       />
@@ -356,7 +358,7 @@ const TownPage = () => {
         <ProjectConcierge />
         
         {/* 7.5 Town-specific FAQ (uses proof FAQs if available) */}
-        <TownFAQ town={town} faqs={townProof?.faqs} />
+        <TownFAQ town={town} faqs={townFaqs} />
 
         {/* 8. Internal Linking Engine - Nearby Areas */}
         <NearbyTowns currentTown={town} />
