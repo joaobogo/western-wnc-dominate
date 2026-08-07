@@ -46,15 +46,107 @@ function resolveClickLocation(el: Element | null): string {
   return "content";
 }
 
+/** Walk ancestors for `data-gtm-town` (town slug) so any click inside a
+ *  town-scoped block is attributed to that town. */
+function resolveTown(el: Element | null): string | null {
+  let node: Element | null = el;
+  while (node) {
+    const t = node.getAttribute?.("data-gtm-town");
+    if (t) return t;
+    node = node.parentElement;
+  }
+  return null;
+}
+
+/* ---------- Town-scoped source attribution ----------
+ * A visitor who taps a CTA inside a town FAQ block usually converts on the
+ * next page (the form). We stash the originating context in sessionStorage so
+ * the eventual form_submit_success can be credited back to that FAQ section.
+ */
+
+const CTA_SOURCE_KEY = "hl_cta_source";
+const CTA_SOURCE_TTL_MS = 30 * 60 * 1000;
+
+export type CtaSource = {
+  context: string;
+  town: string | null;
+  page_path: string;
+  at: number;
+};
+
+export function recordCtaSource(source: Omit<CtaSource, "at">) {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage.setItem(
+      CTA_SOURCE_KEY,
+      JSON.stringify({ ...source, at: Date.now() } satisfies CtaSource),
+    );
+  } catch {
+    /* storage unavailable — analytics only, safe to ignore */
+  }
+}
+
+export function getCtaSource(): CtaSource | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.sessionStorage.getItem(CTA_SOURCE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as CtaSource;
+    if (!parsed?.context || Date.now() - parsed.at > CTA_SOURCE_TTL_MS) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+/* ---------- Town FAQ engagement ---------- */
+
+const townFaqOpenFired = new Set<string>();
+
+/** Fires once per town+question when a visitor expands a town FAQ item. */
+export function trackTownFaqOpen(opts: { town: string; question: string; position: number }) {
+  const key = `${opts.town}::${opts.question}`;
+  if (townFaqOpenFired.has(key)) return;
+  townFaqOpenFired.add(key);
+  push({
+    event: "town_faq_open",
+    town: opts.town,
+    faq_question: opts.question,
+    faq_position: opts.position,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
+/** Conversion-intent click that originated inside a town FAQ section. */
+export function trackTownFaqConversionIntent(opts: {
+  town: string;
+  intent: "call" | "form";
+  destination_url: string;
+  cta_text?: string;
+}) {
+  push({
+    event: "town_faq_conversion_intent",
+    town: opts.town,
+    intent: opts.intent,
+    destination_url: opts.destination_url,
+    cta_text: opts.cta_text ?? null,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
 /* ---------- Phone / email ---------- */
 
 export function trackPhoneClick(opts: {
   phone_number: string;
   link_url: string;
   click_location: string;
+  town?: string | null;
 }) {
   push({
     event: "phone_click",
+    town: opts.town ?? null,
     phone_number: opts.phone_number,
     link_url: opts.link_url,
     page_path: pagePath(),
@@ -112,8 +204,12 @@ export function trackFormSuccess(opts: {
   // double invokes and duplicate `.then` chains).
   if (formSuccessFired.has(opts.lead_id)) return;
   formSuccessFired.add(opts.lead_id);
+  const source = getCtaSource();
   push({
     event: "form_submit_success",
+    source_context: source?.context ?? null,
+    source_town: source?.town ?? null,
+    source_page_path: source?.page_path ?? null,
     form_name: opts.form_name,
     form_id: opts.form_id,
     lead_type: opts.lead_type ?? null,
@@ -143,9 +239,11 @@ export function trackFormError(opts: {
 export function trackRequestQuoteClick(opts: {
   click_location: string;
   destination_url: string;
+  town?: string | null;
 }) {
   push({
     event: "request_quote_click",
+    town: opts.town ?? null,
     page_path: pagePath(),
     page_title: pageTitle(),
     click_location: opts.click_location,
@@ -156,9 +254,11 @@ export function trackRequestQuoteClick(opts: {
 export function trackRequestInspectionClick(opts: {
   click_location: string;
   destination_url: string;
+  town?: string | null;
 }) {
   push({
     event: "request_inspection_click",
+    town: opts.town ?? null,
     page_path: pagePath(),
     page_title: pageTitle(),
     click_location: opts.click_location,
@@ -290,10 +390,20 @@ export function installGtmGlobalListeners() {
           ctaEl.getAttribute("data-gtm-destination") ||
           pagePath();
         const loc = resolveClickLocation(ctaEl);
+        const town = resolveTown(ctaEl);
         if (cta === "request_quote") {
-          trackRequestQuoteClick({ click_location: loc, destination_url: dest });
+          trackRequestQuoteClick({ click_location: loc, destination_url: dest, town });
         } else if (cta === "request_inspection") {
-          trackRequestInspectionClick({ click_location: loc, destination_url: dest });
+          trackRequestInspectionClick({ click_location: loc, destination_url: dest, town });
+        }
+        recordCtaSource({ context: loc, town, page_path: pagePath() });
+        if (loc === "town_faq" && town) {
+          trackTownFaqConversionIntent({
+            town,
+            intent: "form",
+            destination_url: dest,
+            cta_text: ctaEl.textContent?.trim().slice(0, 80),
+          });
         }
         // Do not return: a CTA can also be a tel: link.
       }
@@ -304,11 +414,22 @@ export function installGtmGlobalListeners() {
       if (href.startsWith("tel:")) {
         const rawNumber = href.replace(/^tel:/i, "").replace(/[^0-9+]/g, "");
         const display = anchor.textContent?.trim() || rawNumber;
+        const phoneLoc = resolveClickLocation(anchor);
+        const phoneTown = resolveTown(anchor);
         trackPhoneClick({
           phone_number: display,
           link_url: href,
-          click_location: resolveClickLocation(anchor),
+          click_location: phoneLoc,
+          town: phoneTown,
         });
+        if (phoneLoc === "town_faq" && phoneTown) {
+          trackTownFaqConversionIntent({
+            town: phoneTown,
+            intent: "call",
+            destination_url: href,
+            cta_text: display,
+          });
+        }
         notifyTeamsOfCall({
           phone_number: rawNumber || display,
           click_location: resolveClickLocation(anchor),
