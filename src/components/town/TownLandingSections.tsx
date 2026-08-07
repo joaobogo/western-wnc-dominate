@@ -12,6 +12,7 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import TartanBackground from "@/components/TartanBackground";
 import type { TownData } from "@/data/towns";
+import { getFaqServiceLink, getTownCountyLink } from "@/lib/town-faq-links";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const EASE = [0.22, 1, 0.36, 1] as any;
