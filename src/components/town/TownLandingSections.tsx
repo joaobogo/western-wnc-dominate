@@ -406,6 +406,75 @@ export const TownFAQ = ({
 };
 
 /* ─────────────────────────────────────────────────────────────
+ *  5.5 TOWN ESTIMATE CTA — sits directly under the localized FAQs
+ * ────────────────────────────────────────────────────────── */
+export const TownEstimateCTA = ({ town }: { town: TownData }) => {
+  const county = getTownCountyLink(town);
+  // Town-mapped destination: the estimate form reads ?town= and pre-fills it.
+  const estimateHref = `/request-inspection?town=${town.slug}#request-inspection`;
+
+  return (
+    <section
+      className="pb-16 md:pb-24 bg-background"
+      data-gtm-location="town_estimate_cta"
+      data-gtm-town={town.slug}
+    >
+      <div className="container-tight max-w-4xl">
+        <ScrollReveal variant="fade">
+          <div className="border border-primary/25 bg-secondary/40 px-6 py-10 md:px-12 md:py-12 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.5)] to-transparent" />
+
+            <span className="eyebrow mb-4 flex items-center justify-center gap-2">
+              <MapPin className="w-3.5 h-3.5" /> {town.name}, {town.state}
+            </span>
+
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight">
+              Request an estimate in{" "}
+              <span className="italic text-primary">{town.name}</span>
+            </h2>
+
+            <p className="mt-4 text-[15px] font-body text-muted-foreground leading-relaxed max-w-xl mx-auto">
+              Tell us what you&rsquo;re seeing at the property. A local Highlander team
+              member responds within one business day with a scheduled on-site visit
+              and a written, transparent estimate — no obligation.
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Link
+                to={estimateHref}
+                data-gtm-cta="request_quote"
+                className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-8"
+              >
+                Request an estimate in {town.name} <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="tel:+18285247773"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-6 border border-border font-heading font-bold text-[13px] uppercase tracking-[0.15em] text-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                <Phone className="w-4 h-4" /> (828) 524-7773
+              </a>
+            </div>
+
+            {county && (
+              <p className="mt-6 text-[13px] font-body text-muted-foreground">
+                Also serving the rest of{" "}
+                <Link
+                  to={county.href}
+                  className="text-primary font-semibold underline underline-offset-4 hover:opacity-80"
+                >
+                  {county.label}
+                </Link>
+                .
+              </p>
+            )}
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+};
+
+/* ─────────────────────────────────────────────────────────────
  *  6. THIN CTA STRIP — town identity + phone
  * ────────────────────────────────────────────────────────── */
 export const TownCTAStrip = ({ town }: { town: TownData }) => (

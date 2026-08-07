@@ -29,6 +29,7 @@ import {
   TownCTABand,
   TownWhyChoose,
   TownFAQ,
+  TownEstimateCTA,
   TownCTAStrip,
 } from "@/components/town/TownLandingSections";
 import { getTownBySlug, getLocalRelevance, towns } from "@/data/towns";
@@ -359,6 +360,9 @@ const TownPage = () => {
         
         {/* 7.5 Town-specific FAQ (uses proof FAQs if available) */}
         <TownFAQ town={town} faqs={townFaqs} />
+
+        {/* 7.6 Town-mapped estimate CTA */}
+        <TownEstimateCTA town={town} />
 
         {/* 8. Internal Linking Engine - Nearby Areas */}
         <NearbyTowns currentTown={town} />
