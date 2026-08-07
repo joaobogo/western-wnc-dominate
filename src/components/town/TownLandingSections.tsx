@@ -12,6 +12,7 @@ import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import TartanBackground from "@/components/TartanBackground";
 import type { TownData } from "@/data/towns";
+import { getFaqServiceLink, getTownCountyLink } from "@/lib/town-faq-links";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const EASE = [0.22, 1, 0.36, 1] as any;
@@ -259,6 +260,50 @@ export const TownWhyChoose = ({ town }: { town: TownData }) => (
 /* ─────────────────────────────────────────────────────────────
  *  5. TOWN FAQ — pulls town-specific FAQ list or falls back
  * ────────────────────────────────────────────────────────── */
+/**
+ * Contextual internal links rendered inside every town FAQ answer:
+ * the most relevant service page for that specific question plus the
+ * town's county hub. Keeps the answer text itself unchanged so the
+ * FAQPage schema still matches the visible copy.
+ */
+const TownFAQAnswerLinks = ({
+  town,
+  question,
+  answer,
+}: {
+  town: TownData;
+  question: string;
+  answer: string;
+}) => {
+  const service = getFaqServiceLink(question, answer);
+  const county = getTownCountyLink(town);
+
+  return (
+    <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
+      <span className="uppercase tracking-widest text-foreground/50 font-heading text-[11px]">
+        Related
+      </span>
+      <Link
+        to={service.href}
+        className="text-primary font-semibold underline underline-offset-4 hover:opacity-80 transition-opacity"
+      >
+        {service.label} in {town.name}
+      </Link>
+      {county && (
+        <>
+          <span aria-hidden="true" className="text-foreground/30">·</span>
+          <Link
+            to={county.href}
+            className="text-primary font-semibold underline underline-offset-4 hover:opacity-80 transition-opacity"
+          >
+            {county.label} service hub
+          </Link>
+        </>
+      )}
+    </p>
+  );
+};
+
 export const TownFAQ = ({
   town,
   faqs,
@@ -315,7 +360,8 @@ export const TownFAQ = ({
                 {f.question}
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground font-body leading-relaxed text-[15px] pb-6">
-                {f.answer}
+                <p>{f.answer}</p>
+                <TownFAQAnswerLinks town={town} question={f.question} answer={f.answer} />
               </AccordionContent>
             </AccordionItem>
           ))}
