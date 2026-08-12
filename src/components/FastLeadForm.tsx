@@ -50,22 +50,15 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
   if (submitted) {
     return (
       <div className="border border-border bg-card px-6 py-7 shadow-sm rounded-sm">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-            <CheckCircle2 className="h-5 w-5" />
-          </div>
-          <div>
-            <h3 className="font-heading text-lg font-bold text-foreground">Request received.</h3>
-            <p className="text-sm text-muted-foreground font-body">A local advisor will reach out shortly.</p>
-          </div>
-        </div>
-        <div className="space-y-3 border-t border-border pt-4 text-sm text-muted-foreground font-body">
-          <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> Typical response rapidly</div>
-          <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-primary" /> No obligation and no pressure</div>
-          <a href="tel:+18285247773" className="inline-flex items-center gap-2 font-semibold text-primary hover:opacity-80 transition-opacity">
-            <Phone className="h-4 w-4" /> (828) 524-7773
-          </a>
-        </div>
+        <LeadConfirmationPanel
+          heading="Request received."
+          town={values.town}
+          summary={[
+            { label: "Service", value: serviceLabel },
+            { label: "Town", value: values.town },
+            { label: "We'll reach you at", value: values.phone || values.email },
+          ]}
+        />
       </div>
     );
   }
