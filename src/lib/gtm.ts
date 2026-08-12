@@ -11,6 +11,38 @@
  * the same event twice for the same underlying action.
  */
 
+/**
+ * Canonical dataLayer event map. Every event this app can publish is listed
+ * here once, so the GTM container and the codebase stay in sync. Never push a
+ * raw string literal — reference `GTM_EVENTS.*` instead.
+ */
+export const GTM_EVENTS = {
+  // Navigation
+  PAGE_VIEW: "page_view",
+  // Contact intent
+  PHONE_CLICK: "phone_click",
+  EMAIL_CLICK: "email_click",
+  CTA_CLICK: "cta_click",
+  REQUEST_QUOTE_CLICK: "request_quote_click",
+  REQUEST_INSPECTION_CLICK: "request_inspection_click",
+  // Forms
+  FORM_START: "form_start",
+  FORM_SUCCESS: "form_success",
+  FORM_ERROR: "form_error",
+  // Content engagement
+  TOWN_FAQ_OPEN: "town_faq_open",
+  TOWN_FAQ_CONVERSION_INTENT: "town_faq_conversion_intent",
+  // Partner widgets
+  VELUX_QUOTE_CLICK: "velux_quote_click",
+  // Chatbot
+  CHATBOT_OPEN: "chatbot_open",
+  CHATBOT_LEAD_SUBMIT: "chatbot_lead_submit",
+  // Consent
+  CONSENT_UPDATE: "consent_update",
+} as const;
+
+export type GtmEventName = (typeof GTM_EVENTS)[keyof typeof GTM_EVENTS];
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyRecord = Record<string, any>;
 
@@ -467,4 +499,19 @@ export function installGtmGlobalListeners() {
   };
   document.addEventListener("focusin", onFormInteraction, { capture: true });
   document.addEventListener("input", onFormInteraction, { capture: true });
+}
+
+/** Publish the visitor's consent decision so GTM triggers can branch on it. */
+export function trackConsentUpdate(state: {
+  functional: boolean;
+  analytics: boolean;
+  marketing: boolean;
+}) {
+  push({
+    event: GTM_EVENTS.CONSENT_UPDATE,
+    consent_functional: state.functional,
+    consent_analytics: state.analytics,
+    consent_marketing: state.marketing,
+    page_path: pagePath(),
+  });
 }

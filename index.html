@@ -43,6 +43,28 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" /></noscript>
 
+    <!-- Consent Mode v2 defaults — set BEFORE any tag loads. -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    (function(w){
+      var stored=null;
+      try{ stored = JSON.parse(w.localStorage.getItem('hl_consent_v1') || 'null'); }catch(e){}
+      w.__hlConsent = stored;
+      var analytics = stored && stored.analytics ? 'granted' : 'denied';
+      var marketing = stored && stored.marketing ? 'granted' : 'denied';
+      gtag('consent','default',{
+        ad_storage: marketing,
+        ad_user_data: marketing,
+        ad_personalization: marketing,
+        analytics_storage: analytics,
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+    })(window);
+    </script>
+
     <!-- Google Tag Manager — deferred: fires on first interaction or 4s after load -->
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -209,11 +231,29 @@ div[style*="Edit with Lovable"],
     <script>
     (function(w){
       var fired=false;
-      function fire(){
-        if(fired)return; fired=true;
-        try{ w.__loadGTM && w.__loadGTM(); }catch(e){}
+      function marketingOk(){ return !!(w.__hlConsent && w.__hlConsent.marketing); }
+      function loadMarketing(){
+        if(!marketingOk())return;
         try{ w.__loadFB && w.__loadFB(); }catch(e){}
         try{ w.__loadTT && w.__loadTT(); }catch(e){}
+      }
+      // Called by the in-app consent banner once the visitor makes a choice.
+      w.__hlApplyConsent = function(state){
+        w.__hlConsent = state;
+        gtag('consent','update',{
+          ad_storage: state.marketing ? 'granted':'denied',
+          ad_user_data: state.marketing ? 'granted':'denied',
+          ad_personalization: state.marketing ? 'granted':'denied',
+          analytics_storage: state.analytics ? 'granted':'denied'
+        });
+        if(fired){ try{ w.__loadGTM && w.__loadGTM(); }catch(e){} loadMarketing(); }
+      };
+      function fire(){
+        if(fired)return; fired=true;
+        // GTM itself is consent-mode aware: it loads, but storage stays denied
+        // until the visitor opts in. Ad/social pixels are hard-gated.
+        try{ w.__loadGTM && w.__loadGTM(); }catch(e){}
+        loadMarketing();
         try{ w.__loadRWL && w.__loadRWL(); }catch(e){}
       }
       ['pointerdown','keydown','scroll','touchstart','mousemove'].forEach(function(e){

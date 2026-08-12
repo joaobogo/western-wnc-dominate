@@ -10,9 +10,28 @@ const isStaleChunkError = (error: Error): boolean => {
     msg.includes("Importing a module script failed") ||
     msg.includes("Failed to fetch dynamically imported module") ||
     msg.includes("error loading dynamically imported module") ||
-    msg.includes("ChunkLoadError")
+    msg.includes("ChunkLoadError") ||
+    msg.includes("Loading chunk") ||
+    msg.includes("Loading CSS chunk") ||
+    msg.includes("Unable to preload CSS")
   );
 };
+
+/** One hard reload per session, then stop — never trap the visitor in a loop. */
+function tryOneTimeHardReload(): boolean {
+  try {
+    if (sessionStorage.getItem(RELOAD_KEY)) return false;
+    sessionStorage.setItem(RELOAD_KEY, "1");
+  } catch {
+    return false; // sessionStorage unavailable (private mode)
+  }
+  // Cache-busted hard reload so the browser refetches index.html and the new
+  // hashed chunk manifest instead of replaying the stale one.
+  const url = new URL(window.location.href);
+  url.searchParams.set("_r", Date.now().toString(36));
+  window.location.replace(url.toString());
+  return true;
+}
 
 interface Props {
   children: ReactNode;
@@ -24,6 +43,7 @@ interface Props {
 
 interface State {
   error: Error | null;
+  stale: boolean;
 }
 
 /**
@@ -35,27 +55,27 @@ interface State {
  *   • Route-level (inside <Suspense>) — one broken page can't nuke the shell.
  */
 export default class ErrorBoundary extends Component<Props, State> {
-  state: State = { error: null };
+  state: State = { error: null, stale: false };
 
   static getDerivedStateFromError(error: Error): State {
-    return { error };
+    return { error, stale: isStaleChunkError(error) };
+  }
+
+  componentDidMount(): void {
+    // Reaching a successful render means the fresh build loaded — clear the
+    // one-shot guard so a future deploy can recover the same way.
+    try {
+      sessionStorage.removeItem(RELOAD_KEY);
+    } catch {
+      /* no-op */
+    }
   }
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
     // Stale hashed chunks after a deploy are the most common cause of a blank
     // "snag" screen on forms. Recover silently with one reload instead of
     // showing the fallback.
-    if (isStaleChunkError(error)) {
-      try {
-        if (!sessionStorage.getItem(RELOAD_KEY)) {
-          sessionStorage.setItem(RELOAD_KEY, "1");
-          window.location.reload();
-          return;
-        }
-      } catch {
-        // sessionStorage unavailable (private mode) — fall through to fallback.
-      }
-    }
+    if (isStaleChunkError(error) && tryOneTimeHardReload()) return;
 
     logError(error, {
       source: `ErrorBoundary:${this.props.boundary ?? "unknown"}`,
@@ -63,10 +83,10 @@ export default class ErrorBoundary extends Component<Props, State> {
     });
   }
 
-  reset = () => this.setState({ error: null });
+  reset = () => this.setState({ error: null, stale: false });
 
   render() {
-    const { error } = this.state;
+    const { error, stale } = this.state;
     if (!error) return this.props.children;
 
     if (this.props.fallback) return this.props.fallback(error, this.reset);
@@ -78,14 +98,18 @@ export default class ErrorBoundary extends Component<Props, State> {
       >
         <div className="max-w-lg text-center">
           <p className="text-sm uppercase tracking-widest text-[hsl(var(--gold-ink))] mb-3">
-            Something interrupted this page
+            {stale ? "This page was updated" : "Something interrupted this page"}
           </p>
           <h1 className="font-heading text-3xl md:text-4xl font-semibold mb-4">
-            We hit a snag loading this view.
+            {stale
+              ? "A newer version of the site is available."
+              : "We hit a snag loading this view."}
           </h1>
           <p className="text-muted-foreground mb-8">
-            The team has been notified. You can retry, head back to the homepage, or call us
-            directly at{" "}
+            {stale
+              ? "Reload to pick up the latest files. "
+              : "The team has been notified. "}
+            You can retry, head back to the homepage, or call us directly at{" "}
             <a href="tel:+18285247773" className="text-[hsl(var(--gold-ink))] font-semibold underline underline-offset-4">
               828-524-7773
             </a>
