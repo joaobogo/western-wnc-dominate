@@ -94,7 +94,7 @@ const Renovations = () => {
     <>
       <SEOHead
         title="Renovations in Western NC | Kitchen, Bath & Whole-Home"
-        description="Premium renovations for Western North Carolina homes. Kitchen remodels, bathroom renovations, basement finishing, and whole-home transformations with in-house crews and documented quality."
+        description="Renovations for Western NC homes: kitchen remodels, bathroom updates, basement finishing, and whole-home work by in-house Highlander crews."
         path="/construction/renovations"
         jsonLd={[
           serviceSchema({ name: "Renovations", description: "Interior renovations and remodeling for Western North Carolina homeowners.", url: "/construction/renovations" }),

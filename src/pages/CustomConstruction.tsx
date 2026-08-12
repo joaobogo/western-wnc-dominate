@@ -91,7 +91,7 @@ const CustomConstruction = () => {
     <>
       <SEOHead
         title="Custom Construction in Western NC | Specialty Builds"
-        description="Custom construction and specialty projects for visually distinctive Western North Carolina homes. Multi-phase renovations, structural modifications, and high-coordination builds."
+        description="Custom construction for distinctive Western North Carolina homes: multi-phase renovations, structural modifications, and high-coordination builds."
         path="/construction/custom"
         jsonLd={[
           serviceSchema({ name: "Custom Construction", description: "Custom and specialty construction projects for Western North Carolina homeowners.", url: "/construction/custom" }),

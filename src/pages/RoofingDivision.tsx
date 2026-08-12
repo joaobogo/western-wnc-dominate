@@ -245,7 +245,7 @@ const RoofingDivision = () => {
     <>
       <SEOHead
         title="Roofing Services in Western NC | Highlander"
-        description="Premium roofing in Western North Carolina. Shingle, metal & cedar roofing, storm damage, commercial systems. CertainTeed ShingleMaster Credentialed Contractor. Schedule a consultation."
+        description="Roofing in Western North Carolina: shingle, metal, cedar, storm damage, and commercial systems from a CertainTeed ShingleMaster Credentialed Contractor."
         path="/roofing"
         jsonLd={[
           serviceSchema({ name: "Roofing Services", description: "Expert residential and commercial roofing across Western North Carolina.", url: "/roofing" }),

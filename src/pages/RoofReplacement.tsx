@@ -153,7 +153,7 @@ const RoofReplacement = () => {
     <>
       <SEOHead
         title="Roof Replacement for Mountain Homes in Western NC"
-        description="Complete roof replacement for Western North Carolina homes. Site-specific material specification, certified installation, transparent proposals, and warranties you can count on."
+        description="Roof replacement for Western North Carolina homes: site-specific material specification, certified installation, and transparent written proposals."
         path="/roofing/roof-replacement"
         jsonLd={[
           serviceSchema({ name: "Roof Replacement", description: "Full roof replacement for mountain homes across Western North Carolina.", url: "/roofing/roof-replacement" }),

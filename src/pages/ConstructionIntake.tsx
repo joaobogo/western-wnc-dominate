@@ -12,7 +12,7 @@ const ConstructionIntake = () => (
   <>
     <SEOHead
       title="Start a Construction Project | Highlander Construction"
-      description="Additions, outdoor living, renovations, and custom builds across Western North Carolina. Tell us about your project — a project advisor responds within as soon as possible."
+      description="Additions, outdoor living, renovations, and custom builds across Western North Carolina. Share your project and a local advisor responds within 24 hours."
       path="/construction-intake"
       noindex
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction Intake", url: "/construction-intake" }])}

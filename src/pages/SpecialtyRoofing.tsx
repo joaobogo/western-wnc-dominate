@@ -87,7 +87,7 @@ const SpecialtyRoofing = () => {
     <>
       <SEOHead
         title="Specialty Roofing in WNC | Custom & Designer Systems"
-        description="Specialty roofing for custom homes and visually distinctive properties in Western North Carolina. Cedar shake, copper, standing seam metal, and complex roofline expertise."
+        description="Specialty roofing for custom Western North Carolina homes: cedar shake, copper, standing seam metal, and complex roofline expertise."
         path="/roofing/specialty"
         jsonLd={[
           serviceSchema({ name: "Specialty Roofing", description: "Specialty roofing for custom homes and visually distinctive properties across Western North Carolina.", url: "/roofing/specialty" }),

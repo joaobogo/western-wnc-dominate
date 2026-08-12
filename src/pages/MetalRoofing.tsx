@@ -32,7 +32,7 @@ const MetalRoofing = () => {
     <>
       <SEOHead
         title="Standing Seam Metal Roofing in Western NC | Highlander"
-        description="Standing seam and exposed-fastener metal roofing across Franklin, Highlands, Cashiers, and Sylva. Engineered for mountain weather, installed by a licensed contractor."
+        description="Standing seam and exposed-fastener metal roofing in Franklin, Highlands, Cashiers, and Sylva — built for mountain weather by a licensed contractor."
         path="/roofing/metal"
         jsonLd={buildPageSchema({
           type: "service",
