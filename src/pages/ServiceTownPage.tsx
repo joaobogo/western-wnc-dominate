@@ -28,6 +28,8 @@ import { isUrgentIntentPath } from "@/lib/urgent-intent";
 import { getServiceTownLinkWeb } from "@/lib/local-link-graph";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import AttributedReviews from "@/components/trust/AttributedReviews";
+import LocalProjectProof from "@/components/trust/LocalProjectProof";
 import RelatedLinks from "@/components/RelatedLinks";
 import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
 
@@ -285,6 +287,15 @@ const ServiceTownPage = ({
               </p>
               <InspectionForm />
             </aside>
+          </div>
+
+          <div className="mt-16 md:mt-20 space-y-14">
+            <LocalProjectProof
+              town={{ name: town.name, slug: town.slug, county: town.county }}
+              category="roofing"
+              heading={`${entry.serviceLabel} work near ${town.name}`}
+            />
+            <AttributedReviews town={town.name} category="roofing" />
           </div>
         </section>
 

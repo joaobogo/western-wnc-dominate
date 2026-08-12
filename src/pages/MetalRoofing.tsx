@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import AttributedReviews from "@/components/trust/AttributedReviews";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -158,6 +159,9 @@ const MetalRoofing = () => {
         </section>
 
         {/* ─── REQUEST ASSESSMENT (full-width, like the rest of the site) ─── */}
+        <div className="container-tight pt-16 md:pt-20">
+          <AttributedReviews category="roofing" heading="What homeowners say about our metal roofing work" />
+        </div>
         <InspectionForm />
 
         {pairings.length > 0 && (

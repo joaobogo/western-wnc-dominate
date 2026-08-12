@@ -13,6 +13,7 @@ import { towns } from "@/data/towns";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getDivisionTheme } from "@/lib/division-theme";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import AttributedReviews from "@/components/trust/AttributedReviews";
 import RelatedLinks from "@/components/RelatedLinks";
 import { getServiceBlogLinks, getServiceTownLinks, estimateLink } from "@/lib/internal-links";
 
@@ -213,6 +214,12 @@ const ServicePage = () => {
           </div>
         </section>
 
+        <div className="container-tight pt-16 md:pt-20">
+          <AttributedReviews
+            category={service.division === "construction" ? "construction" : "roofing"}
+            heading={`What homeowners say about our ${service.title.toLowerCase()} work`}
+          />
+        </div>
         <InspectionForm />
         <RelatedLinks
           eyebrow="Keep Exploring"
