@@ -383,7 +383,7 @@ export default function Contact() {
                             onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
                             onBlur={() => contact.blur("name")}
                             aria-invalid={Boolean(contact.errorFor("name")) || undefined}
-                            placeholder="First & last name"
+                            placeholder="e.g. John and Mary Davidson"
                             className={inputClasses}
                             required
                             maxLength={100}

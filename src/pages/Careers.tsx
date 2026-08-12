@@ -149,7 +149,7 @@ const Careers = () => {
                         <div className="grid sm:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
                             <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-full-name">Full Name</label>
-                            <input id="f-full-name" required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="John Doe" />
+                            <input id="f-full-name" required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="e.g. John Davidson" />
                           </div>
                           <div className="space-y-1.5">
                             <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-phone-number">Phone Number</label>

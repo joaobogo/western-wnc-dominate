@@ -331,7 +331,7 @@ const InspectionForm = () => {
                         onBlur={() => contact.blur("name")}
                         aria-invalid={Boolean(contact.errorFor("name")) || undefined}
                         className={inputClasses}
-                        placeholder="First & last name"
+                        placeholder="e.g. John and Mary Davidson"
                       />
                       <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("name")}</InlineFieldError>
                     </div>
@@ -463,7 +463,7 @@ const InspectionForm = () => {
                               onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                               onBlur={() => contact.blur("address")}
                               className={inputClasses}
-                              placeholder="Street, city, and state"
+                              placeholder="e.g. 120 Chestnut St, Highlands, NC"
                             />
                             <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("address")}</InlineFieldError>
                           </div>

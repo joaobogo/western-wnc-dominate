@@ -169,7 +169,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
             <Label htmlFor="lead-name">Name *</Label>
             <Input
               id="lead-name"
-              placeholder="Your full name"
+              placeholder="e.g. John and Mary Davidson"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
             />
@@ -203,7 +203,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
               <Label htmlFor="lead-town">Town</Label>
               <Input
                 id="lead-town"
-                placeholder="Highlands, NC"
+                placeholder="e.g. Highlands, NC"
                 value={form.town}
                 onChange={(e) => setForm({ ...form, town: e.target.value })}
               />

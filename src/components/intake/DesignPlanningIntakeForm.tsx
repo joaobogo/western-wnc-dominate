@@ -313,7 +313,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
                   <Label htmlFor="fld-design-help">Describe the help you need</Label>
                   <Textarea id="fld-design-help"
                     rows={3}
-                    placeholder="Short description of your project..."
+                    placeholder="e.g. Screened porch off the back of a 1990s cabin"
                     value={data.description}
                     onChange={(e) => set("description", e.target.value)}
                   />

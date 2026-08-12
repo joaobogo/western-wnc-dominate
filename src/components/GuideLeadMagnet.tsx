@@ -96,7 +96,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
             <label className={labelClass} htmlFor="f-your-name">Your Name</label>
-            <input id="f-your-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} placeholder="First & last name" />
+            <input id="f-your-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} placeholder="e.g. John and Mary Davidson" />
           </div>
           <div>
             <label className={labelClass} htmlFor="f-email">Email</label>

@@ -265,7 +265,7 @@ export default function QuoteFlow() {
                 onChange={e => update("name", e.target.value)}
                 onBlur={() => contact.blur("name")}
                 aria-invalid={Boolean(contact.errorFor("name")) || undefined}
-                placeholder="Your name"
+                placeholder="e.g. John and Mary Davidson"
                 className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 required
               />
