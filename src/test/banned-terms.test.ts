@@ -18,7 +18,8 @@ const BANNED = [
   /top[- ]rated/i,
 ];
 
-const ALLOW_FILES = ["banned-terms.test.ts"];
+// Guard tests that assert the ABSENCE of these terms necessarily contain them.
+const ALLOW_FILES = ["banned-terms.test.ts", "chatbot-handler.test.ts"];
 
 const walk = (dir: string): string[] =>
   readdirSync(dir).flatMap((f) => {
