@@ -223,7 +223,7 @@ export const ConstructionServiceGrid = ({
               to={cat.slug}
               className="group/link text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body"
             >
-              Learn More <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+              Explore This Service <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         ))}
