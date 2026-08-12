@@ -128,17 +128,17 @@ const RoofRepair = () => {
 
               <div className="overflow-hidden mb-2">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Find the Problem.
+                  Roof Leaking?
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
                 <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
-                  Fix It Permanently.
+                  We Find the Real Cause.
                 </motion.h2>
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
-                Targeted, warrantied roof repairs across Western North Carolina. We diagnose the real cause, fix it right the first time, and document everything — so you know exactly what was done and why.
+                Water stains, missing shingles, or a drip you can&apos;t trace — call and a local crew inspects the roof, shows you photos of what failed, and gives you a written repair scope and price before anything is touched. Serving Franklin, Highlands, Cashiers, Sylva and Western North Carolina.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
