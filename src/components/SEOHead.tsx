@@ -276,6 +276,16 @@ export const organizationSchema = () => ({
   name: SITE_NAME,
   url: BASE_URL,
   logo: { "@type": "ImageObject", url: DEFAULT_IMAGE, width: 512, height: 512 },
+  legalName: "Highlander Roofing Services, Inc.",
+  telephone: "+1-828-524-7773",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "76 Creative Dr",
+    addressLocality: "Franklin",
+    addressRegion: "NC",
+    postalCode: "28734",
+    addressCountry: "US",
+  },
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+1-828-524-7773",
@@ -405,6 +415,7 @@ export const townSchema = (town: TownSchemaInput) =>
       name: town.name,
       containedInPlace: { "@type": "AdministrativeArea", name: `${town.county}, ${town.state}` },
     },
+    parentOrganization: { "@id": `${BASE_URL}/#business` },
     ...(town.latitude && town.longitude
       ? { geo: { "@type": "GeoCoordinates", latitude: town.latitude, longitude: town.longitude } }
       : {}),
@@ -584,6 +595,7 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
       const businessId = `${BASE_URL}${path}#business`;
       const out: Record<string, unknown>[] = [
         townSchema(input.town),
+        localBusinessSchema(),
         breadcrumbSchema(
           [
             { name: "Home", url: "/" },
@@ -607,6 +619,7 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     case "service": {
       const out: Record<string, unknown>[] = [
         serviceSchema(input.service),
+        localBusinessSchema(),
         breadcrumbSchema(input.breadcrumbs),
       ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
@@ -625,6 +638,7 @@ export const buildPageSchema = (input: PageSchemaInput): Record<string, unknown>
     case "commercial": {
       const out: Record<string, unknown>[] = [
         serviceSchema(input.service),
+        localBusinessSchema(),
         breadcrumbSchema(input.breadcrumbs),
       ];
       if (input.faqs?.length) out.push(faqSchema(input.faqs));
