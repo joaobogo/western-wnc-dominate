@@ -14,6 +14,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { getServiceTownEntriesForService } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 const faqs = [
   { q: "How does Brava compare to real cedar shake?", a: "Brava holds color and profile dramatically longer than cedar in mountain climates. Real cedar cups, splits, and grows moss in the moisture and UV conditions across Highlands and Cashiers." },
@@ -200,6 +201,7 @@ const SyntheticRoofing = () => {
         />
         <CTABlock />
       </main>
+      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

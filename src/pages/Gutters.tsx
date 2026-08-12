@@ -12,6 +12,7 @@ import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 const faqs = [
   { q: "What size gutters do mountain homes need?", a: "Most WNC homes benefit from 6-inch gutters with oversized 3x4 downspouts. The steep terrain and heavy rainfall here demand higher-capacity systems than standard 5-inch gutters provide." },
@@ -211,6 +212,7 @@ const Gutters = () => {
         />
       </main>
 
+      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

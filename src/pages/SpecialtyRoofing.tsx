@@ -19,6 +19,7 @@ import cedar002 from "@/assets/gallery/cedar-002.webp";
 import metal009 from "@/assets/gallery/metal-010.webp";
 import metal010 from "@/assets/gallery/metal-010.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -405,6 +406,7 @@ const SpecialtyRoofing = () => {
           </div>
         </section>
       </main>
+      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

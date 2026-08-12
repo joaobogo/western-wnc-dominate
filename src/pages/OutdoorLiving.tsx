@@ -29,6 +29,7 @@ import proj3 from "@/assets/gallery/asphalt-005.webp";
 import proj4 from "@/assets/gallery/cedar-005.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -499,6 +500,7 @@ const OutdoorLiving = () => {
         />
       </main>
 
+      <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
       <StickyMobileCTA />
     </>

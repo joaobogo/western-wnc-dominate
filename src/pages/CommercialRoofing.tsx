@@ -16,6 +16,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import heroImg from "@/assets/gallery/metal-006.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -485,6 +486,7 @@ const CommercialRoofing = () => {
         </section>
       </main>
       <RealWorkWidget />
+      <ConversionTrustBlock variant="band" category="commercial" />
       <Footer />
       <StickyMobileCTA />
     </>

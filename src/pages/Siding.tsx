@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 const Siding = () => {
   return (
@@ -156,6 +157,7 @@ const Siding = () => {
           </div>
         </section>
       </main>
+      <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
       <StickyMobileCTA />
     </>

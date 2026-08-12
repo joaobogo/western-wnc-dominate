@@ -25,6 +25,7 @@ import proj2 from "@/assets/gallery/asphalt-002.webp";
 import proj3 from "@/assets/gallery/cedar-002.webp";
 import proj4 from "@/assets/gallery/metal-010.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -419,6 +420,7 @@ const CustomConstruction = () => {
           eyebrow="Start the Conversation"
         />
       </main>
+      <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
       <StickyMobileCTA />
     </>
