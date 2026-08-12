@@ -223,7 +223,7 @@ const Blog = () => {
                         <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.15)] px-3 py-1.5 mb-4 inline-block">
                           {heroFeatured.category}
                         </span>
-                        <h3 className="font-heading font-bold text-foreground text-2xl md:text-3xl mb-4 group-hover:text-primary transition-colors leading-snug">
+                        <h3 className="font-heading font-bold text-[hsl(var(--dark-section-foreground))] text-2xl md:text-3xl mb-4 group-hover:text-[hsl(var(--highland-gold-light))] transition-colors leading-snug drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
                           {heroFeatured.title}
                         </h3>
                         <p className="text-muted-foreground text-base leading-relaxed mb-6 max-w-lg">
