@@ -103,6 +103,7 @@ function LeadCaptureCard({
       email: email || null,
       property_town: town.trim() || null,
       property_state: "NC",
+      source_context: "chat_widget",
       preferred_contact_method: "phone",
       chat_summary: transcript.slice(-6).map(m => `${m.role}: ${m.content}`).join("\n").slice(0, 2000),
       full_chat_transcript: transcript,

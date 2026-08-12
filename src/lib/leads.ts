@@ -1,4 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
+import { towns } from "@/data/towns";
 import {
   trackFormSuccess,
   trackFormError,
@@ -58,6 +59,8 @@ export type CanonicalLeadPayload = {
   // ----- Property -----
   property_address?: string | null;
   property_town?: string | null;
+  /** County of the property. Derived from `property_town` when omitted. */
+  property_county?: string | null;
   property_state?: string | null;
   property_zip?: string | null;
   property_type?: string | null;
@@ -84,6 +87,14 @@ export type CanonicalLeadPayload = {
   lead_score?: number | null;
   /** Defaults to window.location.pathname. */
   page_path?: string | null;
+  /**
+   * Where on the page/site the lead came from, e.g. "town_faq_cta",
+   * "sticky_mobile_bar", "hero_form". Complements `source` (the component)
+   * and `page_path` (the URL).
+   */
+  source_context?: string | null;
+  /** ISO timestamp of the visitor's submission. Defaults to now(). */
+  submitted_at?: string | null;
 
   // ----- Attachments -----
   attachments?: Array<string | LeadAttachment> | null;
@@ -175,6 +186,16 @@ export function decisionMakerOnSite(value?: string | null): boolean {
   return v === "self" || v === "me" || v === "owner" || v === "solo";
 }
 
+/** Resolves the county for a town name or slug from the shared towns dataset. */
+export function countyFromTown(town?: string | null): string | null {
+  const t = (town || "").trim().toLowerCase();
+  if (!t) return null;
+  const match = towns.find(
+    (x) => x.name.toLowerCase() === t || x.slug.toLowerCase() === t,
+  );
+  return match?.county ?? null;
+}
+
 /**
  * Fills in every derived field so the row written to `leads` is always the
  * same shape regardless of which form produced it.
@@ -246,6 +267,8 @@ export function normalizeLeadPayload(input: LeadPayload) {
 
     property_address: clean(input.property_address),
     property_town: clean(input.property_town),
+    property_county:
+      clean(input.property_county) ?? countyFromTown(clean(input.property_town)),
     property_state: clean(input.property_state),
     property_zip: clean(input.property_zip),
     property_type: clean(input.property_type),
@@ -262,6 +285,10 @@ export function normalizeLeadPayload(input: LeadPayload) {
 
     lead_score: leadScore,
     page_path: pagePath,
+    // Always populated: falls back to the entry-point identifier so every row
+    // carries a usable context value.
+    source_context: clean(input.source_context) ?? clean(input.source),
+    submitted_at: clean(input.submitted_at) ?? new Date().toISOString(),
 
     attachments,
     // Legacy columns kept in sync so existing dashboards/mappers keep working.

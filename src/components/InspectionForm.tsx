@@ -41,6 +41,15 @@ function townFromQuery(): string {
 }
 
 const InspectionForm = () => {
+  // Where the visitor came from, e.g. ?context=town_faq_cta
+  const contextFromQuery = (): string | null => {
+    if (typeof window === "undefined") return null;
+    try {
+      return new URLSearchParams(window.location.search).get("context");
+    } catch {
+      return null;
+    }
+  };
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState<FormStep>("info");
@@ -101,11 +110,13 @@ const InspectionForm = () => {
       phone: contact.values.phone,
       email: contact.values.email,
       property_address: contact.values.address,
+      property_town: contact.values.town || null,
       property_state: "NC",
       project_type: formData.projectType,
       timeline: formData.timeline,
       project_description: formData.details,
       service_category: formData.projectType?.startsWith("roof") || formData.projectType === "storm-damage" || formData.projectType === "metal-roofing" ? "roofing" : "construction",
+      source_context: contextFromQuery(),
     }).catch((err) => console.error("InspectionForm submitLead failed:", err));
 
     // Track form submission

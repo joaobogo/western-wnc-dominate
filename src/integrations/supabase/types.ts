@@ -473,6 +473,7 @@ export type Database = {
           project_description: string | null
           project_type: string | null
           property_address: string | null
+          property_county: string | null
           property_state: string | null
           property_town: string | null
           property_type: string | null
@@ -481,7 +482,9 @@ export type Database = {
           roofing_issue_type: string | null
           service_category: string | null
           source: string
+          source_context: string | null
           status: string
+          submitted_at: string | null
           timeline: string | null
           updated_at: string
           urgency: string | null
@@ -545,6 +548,7 @@ export type Database = {
           project_description?: string | null
           project_type?: string | null
           property_address?: string | null
+          property_county?: string | null
           property_state?: string | null
           property_town?: string | null
           property_type?: string | null
@@ -553,7 +557,9 @@ export type Database = {
           roofing_issue_type?: string | null
           service_category?: string | null
           source: string
+          source_context?: string | null
           status?: string
+          submitted_at?: string | null
           timeline?: string | null
           updated_at?: string
           urgency?: string | null
@@ -617,6 +623,7 @@ export type Database = {
           project_description?: string | null
           project_type?: string | null
           property_address?: string | null
+          property_county?: string | null
           property_state?: string | null
           property_town?: string | null
           property_type?: string | null
@@ -625,7 +632,9 @@ export type Database = {
           roofing_issue_type?: string | null
           service_category?: string | null
           source?: string
+          source_context?: string | null
           status?: string
+          submitted_at?: string | null
           timeline?: string | null
           updated_at?: string
           urgency?: string | null

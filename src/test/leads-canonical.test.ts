@@ -35,3 +35,16 @@ describe("canonical lead payload", () => {
     expect(urgencyFromTimeline(null)).toBeNull();
   });
 });
+
+describe("canonical payload: county, context, timestamp", () => {
+  it("derives county from town and always sets context + submitted_at", () => {
+    const n = normalizeLeadPayload({ source: "inspection_form", property_town: "Highlands" });
+    expect(n.property_county).toBe("Macon County");
+    expect(n.source_context).toBe("inspection_form");
+    expect(typeof n.submitted_at).toBe("string");
+  });
+  it("respects an explicit source_context", () => {
+    const n = normalizeLeadPayload({ source: "inspection_form", source_context: "town_faq_cta" });
+    expect(n.source_context).toBe("town_faq_cta");
+  });
+});
