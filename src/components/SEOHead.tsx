@@ -169,6 +169,27 @@ const SEOHead = ({
 
 export default SEOHead;
 
+/**
+ * Head handling for internal, non-indexable routes (admin, diagnostics, OAuth).
+ * Gives each one a unique title/description and a noindex directive without
+ * requiring the component to have a single JSX return.
+ */
+export const useInternalPageHead = (title: string, description: string, path: string) => {
+  useEffect(() => {
+    const fullTitle = title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`;
+    document.title = fullTitle;
+    setMeta("name", "description", description);
+    setMeta("name", "robots", "noindex,nofollow");
+
+    const canonicalLinks = Array.from(
+      document.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'),
+    );
+    canonicalLinks.slice(1).forEach((extra) => extra.remove());
+    const link = canonicalLinks[0];
+    if (link) link.setAttribute("href", canonicalUrlFor(path));
+  }, [title, description, path]);
+};
+
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",
   "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
