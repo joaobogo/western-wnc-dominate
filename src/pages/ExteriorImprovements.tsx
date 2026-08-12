@@ -101,6 +101,13 @@ const ExteriorImprovements = () => {
         ]}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Construction", url: "/construction" },
+          { name: "Exterior Improvements", url: "/construction/exterior" },
+        ]}
+      />
       <main id="main-content">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
