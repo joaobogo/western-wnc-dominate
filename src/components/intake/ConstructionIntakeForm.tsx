@@ -253,6 +253,15 @@ const ConstructionIntakeForm = () => {
     return (
       <IntakeConfirmation
         title="Thank you — we have what we need to start."
+        town={data.town}
+        category="construction"
+        summary={[
+          { label: "Project", value: PROJECT_OPTIONS.find((o) => o.value === data.projectType)?.label },
+          { label: "Timeline", value: TIMELINE_OPTIONS.find((o) => o.value === data.timeline)?.label },
+          { label: "Plans", value: PLAN_OPTIONS.find((o) => o.value === data.hasPlans)?.label },
+          { label: "Town", value: data.town },
+          { label: "We'll reach you at", value: data.phone || data.email },
+        ]}
         body="A project advisor will personally review your scope and reach out as soon as possible to schedule the planning conversation."
         nextSteps={[
           "An advisor reviews scope, readiness, and any plans you shared.",

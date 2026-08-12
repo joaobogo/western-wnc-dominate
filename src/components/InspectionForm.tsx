@@ -17,6 +17,7 @@ import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
 import WhatHappensNext from "@/components/forms/WhatHappensNext";
+import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import FormSavedNote from "@/components/forms/FormSavedNote";
 import { ACCEPTED_UPLOAD_TYPES, isAcceptedUpload, newSessionFolder, uploadIntakeFiles } from "@/lib/intake-uploads";
 
@@ -222,88 +223,24 @@ const InspectionForm = () => {
   if (submitted) {
     return (
       <section className="section-padding section-dark tartan-dark" id="request-inspection">
-        <div className="container-tight max-w-lg text-center">
+        <div className="container-tight">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: HIGHLAND_EASE }}
-            className="p-10 md:p-14"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
           >
-            <motion.div
-              className="w-16 h-16 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-6"
-              initial={{ scale: 0, rotate: -30 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ delay: 0.15, type: "spring", stiffness: 400, damping: 15 }}
-            >
-              <CheckCircle className="w-8 h-8 text-[hsl(var(--gold-ink))]" />
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25, duration: 0.4 }}
-              className="text-2xl md:text-3xl font-heading font-bold text-dark-section-foreground mb-4"
-            >
-              Your Project Conversation Has Begun.
-            </motion.h2>
-
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 0.35, duration: 0.6, ease: HIGHLAND_EASE }}
-              className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-6"
+            <LeadConfirmationPanel
+              heading="Your project conversation has begun."
+              tone="dark"
+              town={formData.town}
+              category={formData.projectType === "construction" ? "construction" : "roofing"}
+              summary={[
+                { label: "Project", value: formData.projectType },
+                { label: "Town", value: formData.town },
+                { label: "Name", value: formData.name },
+                { label: "We'll reach you at", value: formData.phone || formData.email },
+              ]}
             />
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-dark-section-foreground font-body text-[18px] md:text-[21px] leading-relaxed mb-5 max-w-md mx-auto font-bold"
-            >
-              A Highlander project advisor — not a call center, not an automated system — will
-              personally review your details and reach out rapidly to discuss your property,
-              scope, materials, and next steps.
-            </motion.p>
-
-            {/* Trust reinforcement at confirmation */}
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="bg-dark-section-foreground/[0.03] border border-dark-section-foreground/8 rounded-none p-5 mb-6 max-w-sm mx-auto"
-            >
-              <div className="flex flex-col gap-3">
-                {[
-                  { icon: User, text: "You'll speak with a local project advisor" },
-                  { icon: Clock, text: "Response within 24 hours" },
-                  { icon: Shield, text: "No obligation · No sales pressure" },
-                ].map((item, i) => (
-                  <motion.div
-                    key={item.text}
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.6 + i * 0.08 }}
-                    className="flex items-center gap-2.5"
-                  >
-                    <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.9)] flex-shrink-0" />
-                    <span className="text-dark-section-foreground text-[15px] md:text-[16px] font-body font-bold">{item.text}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="text-dark-section-foreground/85 text-[15px] md:text-[16px] font-body font-bold"
-            >
-              Can't wait?{" "}
-              <a href="tel:+18285247773" className="text-[hsl(var(--gold-ink))] font-semibold hover:underline">
-                (828) 524-7773
-              </a>
-              {" "}— we answer our own phone.
-            </motion.p>
           </motion.div>
         </div>
       </section>

@@ -230,6 +230,15 @@ const RoofingIntakeForm = () => {
     return (
       <IntakeConfirmation
         title="Your request is in good hands."
+        town={data.town}
+        category="roofing"
+        summary={[
+          { label: "Project", value: PROJECT_OPTIONS.find((o) => o.value === data.projectType)?.label },
+          { label: "Timeline", value: TIMELINE_OPTIONS.find((o) => o.value === data.timeline)?.label },
+          { label: "Property", value: PROPERTY_OPTIONS.find((o) => o.value === data.propertyType)?.label },
+          { label: "Town", value: data.town },
+          { label: "We'll reach you at", value: data.phone || data.email },
+        ]}
         body={data.timeline === "emergency"
           ? "An advisor will contact you within hours. If you have active interior leaking, place a bucket and avoid touching ceiling drywall."
           : "A Highlander project advisor will personally review your request and reach out as soon as possible."}
