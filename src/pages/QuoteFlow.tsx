@@ -9,6 +9,7 @@ import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MultiStepForm, ConfirmationState } from "@/components/conversion";
+import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { actionableError, errorTitle } from "@/lib/microcopy";
