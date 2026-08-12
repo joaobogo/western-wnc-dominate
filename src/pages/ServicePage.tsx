@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle } from "lucide-react";
@@ -119,6 +120,16 @@ const ServicePage = () => {
             </motion.div>
           </div>
         </section>
+
+        <AnswerBlock
+          question={`What is ${service.name.toLowerCase()} from Highlander?`}
+          answer={service.description}
+          points={[
+            "Serving Franklin, Highlands, Cashiers, Sylva & Western NC",
+            "Call 828-524-7773 to talk with the team",
+            "Scoped on site before any work begins",
+          ]}
+        />
 
         {/* Description + Features */}
         <section className="section-padding bg-background">
