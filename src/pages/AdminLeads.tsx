@@ -214,8 +214,6 @@ export default function AdminLeads() {
           <button onClick={signOut} className="underline">Sign out</button>
         </div>
       </header>
-      <div className="border-b border-border px-6 py-3 flex flex-wrap items-end gap-3 text-xs">
-      </div>
       {deadLetters.length > 0 && (
         <div className="border-b border-destructive/30 bg-destructive/10 px-6 py-3 flex flex-wrap items-center justify-between gap-3">
           <div>
