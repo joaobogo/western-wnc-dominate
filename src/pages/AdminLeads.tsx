@@ -169,7 +169,11 @@ export default function AdminLeads() {
       if (tierFilter !== "all" && leadTierLabel(l.lead_score) !== tierFilter) return false;
       if (sourceFilter !== "all" && l.source !== sourceFilter) return false;
       if (townFilter !== "all" && (l.property_town ?? "") !== townFilter) return false;
-      if (syncFilter !== "all" && (l.jobtread_sync_status ?? "pending") !== syncFilter) return false;
+      if (syncFilter === "dead_letter") {
+        if (!isDeadLetter(l)) return false;
+      } else if (syncFilter !== "all" && (l.jobtread_sync_status ?? "pending") !== syncFilter) {
+        return false;
+      }
       const t = new Date(l.created_at).getTime();
       if (from && t < from) return false;
       if (to && t > to) return false;
