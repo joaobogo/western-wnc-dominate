@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
+import CTAProofPoints from "@/components/trust/CTAProofPoints";
 
 interface Props {
   eyebrow?: string;
@@ -50,6 +51,7 @@ export const FinalCTA = ({
             <Phone className="w-4 h-4" /> {phone}
           </a>
         </div>
+        <CTAProofPoints tone="dark" className="mt-6" />
       </motion.div>
     </div>
   </section>
