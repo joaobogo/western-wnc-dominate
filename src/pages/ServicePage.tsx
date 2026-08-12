@@ -122,7 +122,7 @@ const ServicePage = () => {
         </section>
 
         <AnswerBlock
-          question={`What is ${service.name.toLowerCase()} from Highlander?`}
+          question={`What is ${service.title.toLowerCase()} from Highlander?`}
           answer={service.description}
           points={[
             "Serving Franklin, Highlands, Cashiers, Sylva & Western NC",
