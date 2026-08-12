@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
 import { towns } from "@/data/towns";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Paperclip, X } from "lucide-react";
+import { ArrowRight, ArrowLeft, ChevronDown, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Paperclip, X, Home, Wrench, Layers, CloudLightning, Hammer, Building2, TreePine, HelpCircle } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import { trackFormStepComplete } from "@/lib/gtm";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -16,6 +17,18 @@ import { ACCEPTED_UPLOAD_TYPES, isAcceptedUpload, newSessionFolder, uploadIntake
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+
+/** Step 1 tap-select cards — one tap is the early micro-commitment. */
+const PROJECT_CHOICES = [
+  { value: "roof-repair", label: "Roof Repair or Leak", icon: Wrench },
+  { value: "roof-replacement", label: "Roof Replacement", icon: Home },
+  { value: "metal-roofing", label: "Metal Roofing", icon: Layers },
+  { value: "storm-damage", label: "Storm or Insurance", icon: CloudLightning },
+  { value: "addition", label: "Addition or Remodel", icon: Hammer },
+  { value: "outdoor-living", label: "Deck, Porch, Outdoor", icon: TreePine },
+  { value: "commercial", label: "Commercial Property", icon: Building2 },
+  { value: "not-sure", label: "Not Sure Yet", icon: HelpCircle },
+] as const;
 
 /** A CTA can hand us a town slug (?town=highlands-nc) so the estimate form
  *  opens pre-filled with the visitor's town. */
