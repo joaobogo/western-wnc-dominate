@@ -24,6 +24,8 @@ import { blogPosts } from "@/data/blogs";
 import { getServiceParentPath } from "@/data/service-town-generated";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import RelatedLinks from "@/components/RelatedLinks";
+import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
 
 // Per-service hero overrides so the same town's services don't all show the
 // identical photo. Each image is a regionally-themed mountain/home stock
@@ -385,6 +387,17 @@ const ServiceTownPage = ({
             </div>
           </div>
         </section>
+        <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading={`More for ${town.name} homeowners`}
+          columns={2}
+          links={[
+            ...(getCountyHubLink(town.county) ? [getCountyHubLink(town.county)!] : []),
+            { label: `${town.name} Service Area`, href: `/service-areas/${town.slug}`, description: `Local overview, projects, and coverage for ${town.name}.` },
+            ...getTownBlogLinks(town.name, 3),
+            estimateLink,
+          ]}
+        />
       </main>
       <ConversionTrustBlock variant="band" town={town.name} />
       <Footer />
