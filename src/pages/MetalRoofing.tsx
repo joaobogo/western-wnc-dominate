@@ -19,6 +19,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
+import SchedulingReality from "@/components/conversion/SchedulingReality";
 import FinancingTeaser from "@/components/conversion/FinancingTeaser";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -165,6 +166,7 @@ const MetalRoofing = () => {
         {/* ─── REQUEST ASSESSMENT (full-width, like the rest of the site) ─── */}
         <CommonConcerns />
         <CostContextBlock serviceLabel="metal roofing" />
+        <SchedulingReality serviceLabel="metal roofing" />
         <div className="container-tight pt-0 pb-8 md:pb-12">
           <FinancingTeaser serviceLabel="metal roofing" />
         </div>
