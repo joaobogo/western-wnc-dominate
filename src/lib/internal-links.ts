@@ -69,5 +69,5 @@ export const getServiceTownLinks = (limit = 4): RelatedLinkItem[] =>
 export const estimateLink: RelatedLinkItem = {
   label: "Request an Estimate",
   href: "/request-inspection",
-  description: "Free, written scope from a Western NC team — 828-524-7773.",
+  description: "Written scope from a Western NC team — 828-524-7773.",
 };

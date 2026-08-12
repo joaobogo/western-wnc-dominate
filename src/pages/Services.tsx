@@ -15,7 +15,7 @@ const Services = () => {
     <>
       <SEOHead
         title="Roofing & Construction Services in Western NC | Highlander"
-        description="Complete roofing and construction services across Western North Carolina — repair, replacement, metal roofing, additions, renovations & more. Free estimates."
+        description="Complete roofing and construction services across Western North Carolina — repair, replacement, metal roofing, additions, renovations & more. Licensed and insured."
         path="/roofing"
         jsonLd={[
           serviceSchema({

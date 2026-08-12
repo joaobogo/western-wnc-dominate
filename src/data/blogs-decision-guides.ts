@@ -367,7 +367,7 @@ This is the half most homeowners never hear about, and it is where the diagnosis
 | Itemized written scope | Prevents bundled mystery pricing |
 | Urgency ranking | Separates what leaks now from what can wait a season |
 | Repair versus replacement pricing when it is close | Lets you decide with numbers, not adjectives |
-| Materials named by manufacturer and line | "Architect-grade shingle" is not a specification |
+| Materials named by manufacturer and line | "Premium-grade shingle" is not a specification |
 
 ## Warning signs
 

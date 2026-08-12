@@ -196,7 +196,7 @@ export const services: ServiceData[] = [
       { question: "Can you repair existing gutters instead of replacing them?", answer: "Often, yes. We repair leaking seams, rehang sagging sections, and replace damaged segments. We'll recommend repair vs. replacement based on your gutter's age and overall condition." },
     ],
     metaTitle: "Gutter Installation & Repair in Western NC | Highlander Roofing",
-    metaDescription: "Seamless gutter installation, gutter guards, and repair for mountain homes in Highlands, Franklin, Sylva, Cashiers & WNC. Free estimates. Licensed & insured.",
+    metaDescription: "Seamless gutter installation, gutter guards, and repair for mountain homes in Highlands, Franklin, Sylva, Cashiers & WNC. Licensed & insured.",
   },
   {
     slug: "outdoor-living",
@@ -290,7 +290,7 @@ export const services: ServiceData[] = [
       { question: "What siding lasts longest in the mountains?", answer: "Fiber cement (like James Hardie) is highly recommended for its resistance to moisture, rot, and fire." },
     ],
     metaTitle: "Siding & Exterior Trim in Western NC | Highlander",
-    metaDescription: "Premium siding installation in Highlands, Cashiers, and Franklin. Fiber cement, cedar, and moisture-proof trim systems. Free estimates.",
+    metaDescription: "Premium siding installation in Highlands, Cashiers, and Franklin. Fiber cement, cedar, and moisture-proof trim systems. Licensed and insured.",
   },
   {
     slug: "construction-services",
@@ -316,7 +316,7 @@ export const services: ServiceData[] = [
       { question: "Do you build home additions?", answer: "Yes. We plan and build home additions, bump-outs, and garage conversions. As a licensed GC, we manage the entire project from preconstruction through final inspection, including help with layouts and floor plans." },
     ],
     metaTitle: "Construction Services in Western NC | Siding, Framing & Additions",
-    metaDescription: "Licensed general contractor in Western NC. Siding, framing, additions, and exterior renovations in Highlands, Franklin, Sylva & beyond. Free estimates.",
+    metaDescription: "Licensed general contractor in Western NC. Siding, framing, additions, and exterior renovations in Highlands, Franklin, Sylva & beyond. Licensed and insured.",
   },
 ];
 

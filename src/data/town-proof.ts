@@ -129,7 +129,7 @@ const townProofMap: Record<string, TownProofContent> = {
     ],
     faqs: [
       {
-        question: "Why is Highlander the top-rated roofer in Franklin?",
+        question: "Why do Franklin homeowners choose Highlander?",
         answer: "As a Franklin-based family business, we provide the fastest dispatch times and most reliable warranties in Macon County. Our crews live here and build to the standard our neighbors deserve.",
       },
       {
