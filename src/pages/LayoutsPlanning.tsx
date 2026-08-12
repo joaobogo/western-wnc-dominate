@@ -249,7 +249,7 @@ const LayoutsPlanning = () => {
                   </ul>
 
                   <Link to="/design-intake?mode=short" className="inline-flex items-center justify-center gap-2 w-full py-4 border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300">
-                    Submit Quick Inquiry <ArrowRight className="w-4 h-4" />
+                    Send Quick Inquiry <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -287,7 +287,7 @@ const LayoutsPlanning = () => {
                     </ul>
 
                     <Link to="/design-intake?mode=long" className="inline-flex items-center justify-center gap-2 w-full py-4 cta-gradient text-accent-foreground font-bold hover:opacity-90 transition-all duration-300">
-                      Submit Detailed Brief <ArrowRight className="w-4 h-4" />
+                      Send Detailed Brief <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>

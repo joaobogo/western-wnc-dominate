@@ -685,7 +685,7 @@ export default function Contact() {
                     href="tel:+18285247773"
                     className="cta-gradient text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-4 inline-flex items-center gap-3 hover:opacity-95 hover:scale-[1.02] transition-all shadow-xl"
                   >
-                    <Phone className="w-5 h-5" /> Call Now — (828) 524-7773
+                    <Phone className="w-5 h-5" /> Call Direct — (828) 524-7773
                   </a>
                 </div>
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-10 text-[hsl(var(--dark-section-foreground)/0.75)] text-xs md:text-sm font-body font-bold uppercase tracking-[0.12em]">

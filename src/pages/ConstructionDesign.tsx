@@ -472,7 +472,7 @@ const ConstructionDesign = () => {
                   to="/design-intake?mode=long"
                   className="cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
                 >
-                  Submit Your Plans <ArrowRight className="w-4 h-4" />
+                  Send Your Plans <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </ScrollReveal>
