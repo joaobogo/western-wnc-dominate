@@ -4,7 +4,11 @@ import { ArrowRight, Shield, Award, Clock, HardHat, Home, Mountain, Phone, Ruler
 import heroImage from "@/assets/hero-roofing.webp";
 import heroLayer2 from "@/assets/gallery/metal-010.webp";
 import heroLayer3 from "@/assets/gallery/asphalt-hero.webp";
+import heroImageAvif from "@/assets/hero-roofing.webp?format=avif&quality=62";
+import heroLayer2Avif from "@/assets/gallery/metal-010.webp?format=avif&quality=62";
+import heroLayer3Avif from "@/assets/gallery/asphalt-hero.webp?format=avif&quality=62";
 import veluxLogo from "@/assets/logo-velux.png";
+import HeroPicture from "@/components/media/HeroPicture";
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
