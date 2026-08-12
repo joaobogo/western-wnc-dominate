@@ -215,6 +215,32 @@ export default function AdminLeads() {
         </div>
       </header>
       <div className="border-b border-border px-6 py-3 flex flex-wrap items-end gap-3 text-xs">
+      </div>
+      {deadLetters.length > 0 && (
+        <div className="border-b border-destructive/30 bg-destructive/10 px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-destructive">
+              {deadLetters.length} lead{deadLetters.length === 1 ? "" : "s"} did not reach the CRM
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Every one is stored here and safe. They ran out of automatic retries — resend them or enter them in JobTread by hand.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 text-xs">
+            <button onClick={() => setSyncFilter("dead_letter")} className="underline">
+              Show only these
+            </button>
+            <button
+              onClick={retryAllDeadLetters}
+              disabled={retryingAll}
+              className="rounded bg-destructive px-3 py-1.5 text-destructive-foreground disabled:opacity-50"
+            >
+              {retryingAll ? "Resending…" : "Resend all to CRM"}
+            </button>
+          </div>
+        </div>
+      )}
+      <div className="border-b border-border px-6 py-3 flex flex-wrap items-end gap-3 text-xs">
         <FilterSelect label="Tier" value={tierFilter} onChange={setTierFilter} options={TIERS} />
         <FilterSelect label="Sync" value={syncFilter} onChange={setSyncFilter} options={SYNC_STATES} />
         <FilterSelect label="Source" value={sourceFilter} onChange={setSourceFilter} options={sources} />
