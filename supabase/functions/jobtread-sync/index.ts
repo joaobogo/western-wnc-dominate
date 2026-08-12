@@ -563,30 +563,71 @@ function getSubmittedCompanyName(row: LeadRow): string {
 }
 
 /**
- * Returns the JobTread Customer / Account Name.
- *   Commercial + company submitted → company name
- *   Otherwise                      → customer full name
+ * CUSTOMER / ACCOUNT NAME RULE — LOCKED. Do not change without Highlander
+ * sign-off.
+ *
+ *   1. Commercial lead that submitted a company name → the company name.
+ *   2. Everyone else → "<parsed first name> <parsed last name>" from the
+ *      canonical name parser (first_name / last_name columns). The raw
+ *      `name` column is only a fallback for legacy rows that predate the
+ *      parser.
+ *   3. Identity for matching is "full name + town" (see resolveAccount in
+ *      sendToPaveApi). An existing Customer is NEVER renamed and NEVER
+ *      merged: when the name matches but the town does not, a new Customer
+ *      is created as "Full Name (Town)".
+ *   4. Never derived from job name, location display, address, or category.
  *
  * If no valid name exists, returns "" so the caller can mark the lead as
  * `retry_needed` instead of creating a malformed Customer account.
- * Never falls back to job_name, address, location display, or category.
  */
-function buildCustomerAccountName(row: LeadRow): string {
+export function buildCustomerAccountName(row: LeadRow): string {
   const company = getSubmittedCompanyName(row);
   if (company && isCommercialLead(row)) return cleanName(company);
-
-  const fullName = cleanName(row.name);
-  if (fullName) return fullName;
 
   const first = cleanName((row as any).first_name);
   const last = cleanName((row as any).last_name);
   const combined = cleanName(`${first} ${last}`);
   if (combined) return combined;
 
+  // Legacy rows written before the canonical name parser existed.
+  const fullName = cleanName(row.name);
+  if (fullName) return fullName;
+
   // Commercial company as last-resort even if not flagged commercial
   if (company) return company;
 
   return ""; // no valid customer name — caller must retry, never invent one
+}
+
+/**
+ * Disambiguated Customer name used when an Account with the same name already
+ * exists in a DIFFERENT town. Keeps two unrelated "John Smith" customers
+ * apart instead of merging them onto one account.
+ */
+export function buildTownScopedAccountName(accountName: string, town?: string | null): string {
+  const t = cleanName(town);
+  if (!t) return accountName;
+  if (new RegExp(`\\(${t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\)$`, "i").test(accountName)) {
+    return accountName;
+  }
+  return `${accountName} (${t})`;
+}
+
+/**
+ * True when an existing JobTread Account belongs to the same town as this
+ * lead. Matching is intentionally loose (town name appearing in any location
+ * name or address) because JobTread stores towns inside free-text addresses.
+ */
+export function accountMatchesTown(
+  locations: Array<{ name?: string | null; address?: string | null }> | null | undefined,
+  town?: string | null,
+): boolean {
+  const t = cleanName(town).toLowerCase();
+  if (!t) return true; // no town on the lead — never split the customer
+  if (!locations || locations.length === 0) return false;
+  return locations.some((l) =>
+    `${l?.name ?? ""} ${l?.address ?? ""}`.toLowerCase().includes(t),
+  );
 }
 
 function buildContactPayload(row: LeadRow) {
@@ -833,9 +874,13 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments
       material_color: (row as any).material_color ?? meta.material_color ?? meta.color ?? null,
       foundation_type: (row as any).foundation_type ?? meta.foundation_type ?? null,
     },
-    // Kept for backward compatibility with any downstream mapper still reading `location`.
+    // Location mapping — the JobTread Location is placed by the lead's
+    // town/county (address when we have it). County comes from the canonical
+    // lead payload and is used for service-area routing when the town alone
+    // is not one of the mapped markets.
     location: {
       town,
+      county: (row as any).property_county ?? null,
       address: row.property_address ?? null,
       property_type: row.property_type ?? null,
     },
@@ -973,11 +1018,15 @@ const JT_CF = {
   },
 } as const;
 
-function mapServiceArea(town: string | null | undefined): string {
-  const t = (town ?? "").toLowerCase();
+export function mapServiceArea(town: string | null | undefined, county?: string | null): string {
+  const t = `${town ?? ""} ${county ?? ""}`.toLowerCase();
   if (/franklin|highlands|cashiers|scaly|otto|clayton/.test(t)) return "Franklin";
   if (/sylva|cullowhee|bryson|waynesville|dillsboro|webster|balsam|maggie|cherokee/.test(t)) return "Sylva";
   if (/asheville|hendersonville|weaverville|black mountain|arden|fletcher/.test(t)) return "Asheville";
+  // County-level routing when the town is not one of the mapped markets.
+  const c = (county ?? "").toLowerCase();
+  if (/jackson|swain|haywood/.test(c)) return "Sylva";
+  if (/buncombe|henderson|madison|transylvania/.test(c)) return "Asheville";
   return "Franklin"; // safe default matching HQ service area
 }
 
@@ -1105,13 +1154,14 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
 
     const contactName = payload.contact?.name || "Website Lead";
     const town = payload.location?.town;
+    const county = payload.location?.county;
     const address = payload.location?.address;
 
     // ── SAFEGUARD: refuse to send a malformed Customer / Account Name.
     // If validation fails, the caller marks the lead retry_needed so the
     // Highlander team can supply a real name — we never invent one from
     // job title, address, or category.
-    const accountName = cleanName(payload.account_name);
+    let accountName = cleanName(payload.account_name);
     const acctErr = validateCustomerAccountName(accountName, {
       jobName: payload.job_name,
       locationName: payload.location_display_name,
@@ -1127,9 +1177,12 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
     // survive truncation — they are the only way the crew reaches the files.
     const noteShort = truncateNotePreservingFiles(noteFull, 1000);
 
-    // Step 1 — dedupe by account name. JobTread enforces unique account
-    // names within an org, so look up first and reuse the existing account
-    // when possible; otherwise create a new one.
+    // Step 1 — resolve the Customer by "full name + town".
+    // JobTread enforces unique account names within an org, so we look the
+    // name up first. If an Account with that name exists AND it has a
+    // location in this lead's town, we reuse it. If it exists in a different
+    // town, we create a separate Account named "Full Name (Town)" — we never
+    // rename or merge the existing customer.
     let accountId: string | undefined;
     const lookupRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
@@ -1144,11 +1197,38 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
             },
             size: 1,
           },
-          nodes: { id: {}, name: {} },
+          nodes: {
+            id: {},
+            name: {},
+            locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } },
+          },
         },
       },
     });
-    accountId = lookupRes?.organization?.accounts?.nodes?.[0]?.id;
+    const existing = lookupRes?.organization?.accounts?.nodes?.[0];
+    if (existing?.id) {
+      const locs = existing?.locations?.nodes ?? null;
+      if (accountMatchesTown(locs, town)) {
+        accountId = existing.id;
+      } else {
+        // Same name, different town → distinct customer. Never rename/merge.
+        accountName = buildTownScopedAccountName(accountName, town);
+        const scopedRes = await paveFetch({
+          $: { grantKey: JOBTREAD_API_KEY },
+          organization: {
+            $: { id: orgId },
+            accounts: {
+              $: {
+                where: { and: [{ "=": [{ field: "name" }, { value: accountName }] }] },
+                size: 1,
+              },
+              nodes: { id: {}, name: {} },
+            },
+          },
+        });
+        accountId = scopedRes?.organization?.accounts?.nodes?.[0]?.id;
+      }
+    }
     let accountIsNew = false;
     if (!accountId) {
       const accountRes = await paveFetch({
@@ -1159,7 +1239,7 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
             name: accountName,
             type: "customer",
             customFieldValues: {
-              [JT_CF.account.service_area]: mapServiceArea(town),
+              [JT_CF.account.service_area]: mapServiceArea(town, county),
               // Lead Source picklist in JobTread only accepts "Website" for
               // website-originated leads. Chatbot origin is preserved in the
               // Job name prefix and inside Lead Notes → Source section so

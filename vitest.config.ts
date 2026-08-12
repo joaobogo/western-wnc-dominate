@@ -11,6 +11,10 @@ export default defineConfig({
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
   },
   resolve: {
-    alias: { "@": path.resolve(__dirname, "./src") },
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+      // Lets tests import pure helpers out of Deno edge functions.
+      "npm:@supabase/supabase-js@2": "@supabase/supabase-js",
+    },
   },
 });
