@@ -214,7 +214,7 @@ const Blog = () => {
                 >
                   <Link to={`/blog/${heroFeatured.slug}`} className="group block card-premium overflow-hidden h-full">
                     <div className="relative aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
-                      <img loading="eager" fetchPriority="high" decoding="async" 
+                      <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
                         src={heroFeatured.image || "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000"} 
                         alt={heroFeatured.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -256,7 +256,7 @@ const Blog = () => {
                       <Link to={`/blog/${post.slug}`} className="group block card-premium overflow-hidden">
                         <div className="flex flex-col sm:flex-row h-full">
                           <div className="sm:w-32 md:w-40 shrink-0 overflow-hidden">
-                            <img loading="lazy" decoding="async" 
+                            <img width={1600} height={1067} loading="lazy" decoding="async" 
                               src={post.image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600"} 
                               alt={post.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -477,7 +477,7 @@ const Blog = () => {
                     <Link to={`/blog/${filtered[0].slug}`} className="group block card-premium overflow-hidden">
                       <div className="grid md:grid-cols-12 gap-0 min-h-[300px]">
                         <div className="md:col-span-5 h-64 md:h-auto overflow-hidden">
-                          <img loading="lazy" decoding="async" 
+                          <img width={1600} height={1067} loading="lazy" decoding="async" 
                             src={filtered[0].image || "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000"} 
                             alt={filtered[0].title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -523,7 +523,7 @@ const Blog = () => {
                     >
                       <Link to={`/blog/${post.slug}`} className="group block h-full card-premium overflow-hidden flex flex-col">
                         <div className="aspect-[16/10] overflow-hidden">
-                          <img loading="lazy" decoding="async" 
+                          <img width={1600} height={1067} loading="lazy" decoding="async" 
                             src={post.image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800"} 
                             alt={post.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

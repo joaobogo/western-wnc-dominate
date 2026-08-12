@@ -105,7 +105,7 @@ const CustomConstruction = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img decoding="async" src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -186,7 +186,7 @@ const CustomConstruction = () => {
                 Highlander takes on custom and specialty construction work where our planning discipline, in-house craft quality, and communication standards make a meaningful difference.
               </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
-                <img loading="lazy" decoding="async" src={specialtyContextImg} alt="Specialty construction detail" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
+                <img width={1600} height={1067} loading="lazy" decoding="async" src={specialtyContextImg} alt="Specialty construction detail" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
               </div>
             </motion.div>
@@ -369,7 +369,7 @@ const CustomConstruction = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>

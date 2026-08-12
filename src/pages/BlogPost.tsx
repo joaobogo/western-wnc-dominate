@@ -275,7 +275,7 @@ const BlogPostPage = () => {
         {/* ═══ HERO ═══ */}
         <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img loading="eager" fetchPriority="high" decoding="async" 
+            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={post.image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"} 
 
               alt={post.imageAlt || post.title}
@@ -483,7 +483,7 @@ const BlogPostPage = () => {
                           className="group block card-premium overflow-hidden"
                         >
                           <div className="aspect-[16/9] overflow-hidden">
-                            <img loading="lazy" decoding="async" 
+                            <img width={1600} height={1067} loading="lazy" decoding="async" 
                               src={project.heroImage} 
                               alt={project.title} 
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

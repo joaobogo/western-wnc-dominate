@@ -80,7 +80,7 @@ const LayoutsPlanning = () => {
         {/* 1. Hero — Refined */}
         <section className="relative pt-32 pb-24 md:pt-56 md:pb-40 bg-primary overflow-hidden">
           {/* Blueprint background image — mountain-home construction drawings */}
-          <img decoding="async" loading="lazy"
+          <img width={1600} height={1067} decoding="async" loading="lazy"
             src={designHero}
             alt=""
             aria-hidden="true"
@@ -161,7 +161,7 @@ const LayoutsPlanning = () => {
               <ScrollReveal variant="slide-right">
                 <div className="relative">
                   <div className="aspect-[4/5] relative z-10 overflow-hidden border border-border">
-                    <img loading="lazy" decoding="async" src={blueprintImg} alt="Technical drafting and planning" className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000" />
+                    <img width={1600} height={1067} loading="lazy" decoding="async" src={blueprintImg} alt="Technical drafting and planning" className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-1000" />
                     <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
                   </div>
                   {/* Tartan Accent Box */}

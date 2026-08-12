@@ -41,7 +41,7 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
           >
             {o.image && (
               <div className="relative aspect-[5/3] overflow-hidden bg-secondary/30">
-                <img
+                <img width={1600} height={1067}
                   src={o.image}
                   alt={o.label}
                   loading="lazy"

@@ -64,7 +64,7 @@ const MetalRoofing = () => {
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={metalMobileHero} />
-              <img decoding="async" src={metalImg} alt="Standing seam metal roof on a Western North Carolina mountain home" className="w-full h-full object-cover object-[50%_30%] md:object-center" loading="eager" />
+              <img width={1600} height={1067} decoding="async" src={metalImg} alt="Standing seam metal roof on a Western North Carolina mountain home" className="w-full h-full object-cover object-[50%_30%] md:object-center" loading="eager" />
             </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.75)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.2)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.65)] via-transparent to-[hsl(var(--hero-overlay)/0.25)]" />

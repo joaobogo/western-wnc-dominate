@@ -108,7 +108,7 @@ const Renovations = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img decoding="async" src={heroImg} alt="Home renovation in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Home renovation in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.35)] via-transparent to-transparent" />
           </div>
@@ -183,7 +183,7 @@ const Renovations = () => {
         {/* ─── OPENING — Lifestyle-focused with warm visual treatment ─── */}
         <section className="py-20 md:py-32 bg-background relative overflow-hidden">
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
-            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200" alt="Interior detail" className="w-full h-full object-cover" />
+            <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200" alt="Interior detail" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight max-w-3xl">
@@ -367,7 +367,7 @@ const Renovations = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>

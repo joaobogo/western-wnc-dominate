@@ -122,7 +122,7 @@ const OutdoorLiving = () => {
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={outdoorMobileHero} />
-              <img decoding="async" src={heroImg} alt="Outdoor living space in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
+              <img width={1600} height={1067} decoding="async" src={heroImg} alt="Outdoor living space in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
             </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
@@ -199,7 +199,7 @@ const OutdoorLiving = () => {
         {/* ─── OPENING — Experiential with generous whitespace ─── */}
         <section className="py-20 md:py-32 bg-background relative overflow-hidden">
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none">
-            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Timber frame detail" className="w-full h-full object-cover" />
+            <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Timber frame detail" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight max-w-3xl">
@@ -212,7 +212,7 @@ const OutdoorLiving = () => {
                   Highlander designs and builds bright, comfortable outdoor living spaces scaled to your home, crafted for the Western North Carolina climate, and finished with the same care we bring to every project.
                 </p>
               <div className="mt-12 relative aspect-[16/7] overflow-hidden border border-border">
-                <img decoding="async" src={porchContextImg} alt="Sunlit mountain home with covered porch and deck overlooking the landscape" className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
+                <img width={1600} height={1067} decoding="async" src={porchContextImg} alt="Sunlit mountain home with covered porch and deck overlooking the landscape" className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-1000" loading="lazy" />
               </div>
             </motion.div>
           </div>
@@ -418,7 +418,7 @@ const OutdoorLiving = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>
