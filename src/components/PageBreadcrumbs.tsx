@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Breadcrumb,
@@ -67,20 +67,22 @@ const PageBreadcrumbs = ({ items, className = "", emitSchema = true }: PageBread
           {items.map((c, i) => {
             const isLast = i === items.length - 1;
             return (
-              <BreadcrumbItem key={`${c.url}-${i}`}>
-                {isLast ? (
-                  <BreadcrumbPage className="truncate max-w-[60vw] sm:max-w-none">
-                    {c.name}
-                  </BreadcrumbPage>
-                ) : (
-                  <>
+              // The separator is itself an <li>, so it must be a sibling of the
+              // item — never nested inside it (invalid <li> inside <li>).
+              <Fragment key={`${c.url}-${i}`}>
+                <BreadcrumbItem>
+                  {isLast ? (
+                    <BreadcrumbPage className="truncate max-w-[60vw] sm:max-w-none">
+                      {c.name}
+                    </BreadcrumbPage>
+                  ) : (
                     <BreadcrumbLink asChild>
                       <Link to={c.url}>{c.name}</Link>
                     </BreadcrumbLink>
-                    <BreadcrumbSeparator />
-                  </>
-                )}
-              </BreadcrumbItem>
+                  )}
+                </BreadcrumbItem>
+                {!isLast && <BreadcrumbSeparator />}
+              </Fragment>
             );
           })}
         </BreadcrumbList>
