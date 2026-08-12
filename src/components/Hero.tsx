@@ -210,7 +210,7 @@ const Hero = () => {
             {/* Headline — single H1 revealed as three cinematic lines */}
             <h1 className="mb-3 md:mb-12">
               <span className="sr-only">
-                Roofing, Construction &amp; Design for Western North Carolina Mountain Homes
+                Roofing &amp; Construction Built for Western NC Mountain Homes
               </span>
               <span aria-hidden="true" className="block">
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
@@ -220,7 +220,7 @@ const Hero = () => {
                     transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
                     className="block text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
                   >
-                    Roofing, Construction
+                    Roofing &amp; Construction
                   </motion.span>
                 </span>
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
@@ -230,7 +230,7 @@ const Hero = () => {
                     transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
                     className="block text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
                   >
-                    &amp; Design for Western NC
+                    Built for Western NC
                   </motion.span>
                 </span>
                 <span className="block overflow-hidden pb-[0.15em] md:pb-[0.4em]">
@@ -254,8 +254,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-[13.5px] md:text-[24px] text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
             >
-              <span className="md:hidden">Roofing, roof repair, roof replacement, construction &amp; design services across Franklin, Highlands, Cashiers &amp; Sylva. Family-owned. Built for the mountains.</span>
-              <span className="hidden md:inline">Roofing, roof repair, roof replacement, construction, and design services for Franklin, Highlands, Cashiers, Sylva, and Western North Carolina. Family-owned, locally run, and built for mountain homes by a team of WNC craftspeople.</span>
+              <span className="md:hidden">Leak, storm damage, aging roof, or an addition you&apos;re planning? Tell us what&apos;s going on in Franklin, Highlands, Cashiers or Sylva and a local Highlander advisor gets back to you with next steps.</span>
+              <span className="hidden md:inline">Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
               <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--gold-ink))] font-bold text-[11.5px] md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
             </motion.p>
 
