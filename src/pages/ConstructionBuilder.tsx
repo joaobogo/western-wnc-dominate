@@ -249,7 +249,41 @@ const ConstructionBuilder = () => {
         } as any),
       });
       if (insertErr) throw insertErr;
-      syncConsultationRequestToJobTread(consultId);
+      // Canonical pipeline: durable `leads` row + single CRM sync happens here.
+      const { submitLead } = await import("@/lib/leads");
+      await submitLead({
+        source: "construction_builder",
+        lead_type: "construction",
+        full_name: data.name,
+        email: data.email,
+        phone: data.phone,
+        property_town: data.town,
+        property_state: "NC",
+        property_type: data.propertyType,
+        service_category: "construction",
+        project_type: data.projectType,
+        timeline: data.timeline,
+        budget_range: data.investment,
+        has_plans: data.planningStage === "full_plans",
+        decision_maker: data.decisionMakers,
+        project_description: data.description || null,
+        lead_score: score,
+        attachments: uploadedPaths,
+        metadata: {
+          consultation_request_id: consultId,
+          builder: {
+            scope_items: data.scopeItems,
+            style: data.style,
+            priorities: data.priorities,
+            investment_tier: data.investment,
+            planning_stage: data.planningStage,
+            decision_makers: data.decisionMakers,
+          },
+          routing,
+          jobtread,
+          upload_folder: folder,
+        },
+      });
       trackEvent("form_submit", {
         label: "Construction Builder",
         elementId: "construction-builder",
