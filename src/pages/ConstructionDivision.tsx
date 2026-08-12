@@ -304,6 +304,9 @@ const ConstructionDivision = () => {
                     View Design Services
                   </Link>
                 </div>
+                <div className="mt-6">
+                  <FinancingTeaser serviceLabel="construction project" />
+                </div>
                 <div className="mt-8 flex items-start gap-3 p-4 border-l-2 border-[hsl(var(--highland-gold)/0.5)] bg-card/40">
                   <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
                   <p className="text-muted-foreground text-sm font-body leading-relaxed">
