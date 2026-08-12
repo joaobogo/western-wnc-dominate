@@ -214,6 +214,7 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
     "Premium roofing and construction company serving Western North Carolina mountain communities since 2017. Specializing in storm-resistant roofing, metal roofing, home additions, renovations, and outdoor living for elevation-rated homes.",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "76 Creative Dr",
     addressLocality: "Franklin",
     addressRegion: "NC",
     postalCode: "28734",
