@@ -185,10 +185,10 @@ export default function Contact() {
                     <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Project Concierge</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-[0.95] tracking-tightest">
-                    Start the Conversation.
+                    Talk With a Local WNC Roofing Team.
                   </h1>
                   <p className="text-body-lg md:text-body-xl text-white/95 leading-relaxed max-w-lg font-medium drop-shadow-sm">
-                    No call centers. No automated systems. A Highlander project advisor — not a salesperson — will personally reach out rapidly.
+                    Tell us the problem — a leak, storm damage, an aging roof, or a project you&apos;re planning. No call centers, no automated systems: a Highlander project advisor reviews your message, calls you back, and schedules an on-site look.
                   </p>
                 </motion.div>
 
