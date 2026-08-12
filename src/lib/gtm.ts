@@ -25,13 +25,19 @@ export const GTM_EVENTS = {
   CTA_CLICK: "cta_click",
   REQUEST_QUOTE_CLICK: "request_quote_click",
   REQUEST_INSPECTION_CLICK: "request_inspection_click",
+  PRIMARY_CTA_CLICK: "primary_cta_click",
   // Forms
   FORM_START: "form_start",
+  FORM_STEP_COMPLETE: "form_step_complete",
   FORM_SUCCESS: "form_success",
   FORM_ERROR: "form_error",
+  GENERATE_LEAD: "generate_lead",
   // Content engagement
   TOWN_FAQ_OPEN: "town_faq_open",
   TOWN_FAQ_CONVERSION_INTENT: "town_faq_conversion_intent",
+  SCROLL_DEPTH: "scroll_depth",
+  SCROLL_75: "scroll_75",
+  EXIT_INTENT_SHOWN: "exit_intent_shown",
   // Partner widgets
   VELUX_QUOTE_CLICK: "velux_quote_click",
   // Chatbot
@@ -46,12 +52,76 @@ export type GtmEventName = (typeof GTM_EVENTS)[keyof typeof GTM_EVENTS];
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyRecord = Record<string, any>;
 
+/* ---------- Page context (attached to EVERY event) ----------
+ * Every dataLayer event carries page_type / town / service so GTM can slice
+ * any conversion by local page without extra tags. Values are derived from
+ * the URL and stay PII-free.
+ */
+
+const TOWN_SERVICE_RE =
+  /^\/([a-z0-9-]+?)-(roofing|roof-repair|roof-replacement|metal-roofing|gutters|siding)-(nc|[a-z0-9-]+)$/;
+
+export interface PageContext {
+  page_type: string;
+  town: string | null;
+  service: string | null;
+}
+
+export function getPageContext(pathnameArg?: string): PageContext {
+  const raw =
+    pathnameArg ??
+    (typeof window === "undefined" ? "/" : window.location.pathname);
+  const path = raw.replace(/\/+$/, "") || "/";
+
+  let town: string | null = null;
+  let service: string | null = null;
+  let page_type = "other";
+
+  if (path === "/") page_type = "home";
+  else if (path.startsWith("/service-areas/")) {
+    page_type = "town";
+    town = path.split("/")[2] || null;
+  } else if (path.startsWith("/counties/")) {
+    page_type = "county";
+  } else if (path.startsWith("/roofing")) {
+    page_type = "service";
+    service = path.split("/")[2] || "roofing";
+  } else if (path.startsWith("/construction")) {
+    page_type = "service";
+    service = path.split("/")[2] || "construction";
+  } else if (path.startsWith("/blog")) page_type = "blog";
+  else if (path.startsWith("/storm-center")) {
+    page_type = "service";
+    service = "storm-damage";
+  } else if (/intake|consultation|request-inspection|contact/.test(path)) {
+    page_type = "conversion";
+  }
+
+  const m = TOWN_SERVICE_RE.exec(path);
+  if (m) {
+    page_type = "town_service";
+    town = m[1];
+    service = m[2];
+  }
+
+  return { page_type, town, service };
+}
+
 function push(event: AnyRecord) {
   if (typeof window === "undefined") return;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const w = window as any;
+  const ctx = getPageContext();
   w.dataLayer = w.dataLayer || [];
-  w.dataLayer.push(event);
+  w.dataLayer.push({
+    page_type: ctx.page_type,
+    town: ctx.town,
+    service: ctx.service,
+    ...event,
+    // A null town/service on the event must not erase page-derived context.
+    ...(event.town == null && ctx.town ? { town: ctx.town } : {}),
+    ...(event.service == null && ctx.service ? { service: ctx.service } : {}),
+  });
 }
 
 function pagePath() {
