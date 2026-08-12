@@ -48,3 +48,15 @@ describe("canonical payload: county, context, timestamp", () => {
     expect(n.source_context).toBe("town_faq_cta");
   });
 });
+
+describe("intake upload rules", () => {
+  it("accepts images, PDFs, and documents and rejects the rest", async () => {
+    const { isAcceptedUpload, ACCEPTED_UPLOAD_TYPES } = await import("@/lib/intake-uploads");
+    expect(isAcceptedUpload({ name: "roof.jpg", type: "image/jpeg" })).toBe(true);
+    expect(isAcceptedUpload({ name: "plans.pdf", type: "application/pdf" })).toBe(true);
+    expect(isAcceptedUpload({ name: "scope.docx", type: "" })).toBe(true);
+    expect(isAcceptedUpload({ name: "budget.xlsx", type: "" })).toBe(true);
+    expect(isAcceptedUpload({ name: "malware.exe", type: "application/octet-stream" })).toBe(false);
+    expect(ACCEPTED_UPLOAD_TYPES).toContain("application/pdf");
+  });
+});

@@ -300,13 +300,24 @@ export async function resolveAttachments(
       files.push({ name: entry.name, url: entry.url });
       continue;
     }
-    try {
-      const res = await signer(entry.path!);
-      if (res?.url) files.push({ name: entry.name, url: res.url });
-      else failures.push({ name: entry.name, reason: String(res?.error ?? "Could not generate download link") });
-    } catch (e) {
-      failures.push({ name: entry.name, reason: (e as Error)?.message ?? "Could not generate download link" });
+    // Retry signing so a transient storage hiccup never drops an attachment
+    // from the CRM note.
+    let reason = "Could not generate download link";
+    let signed = false;
+    for (let attempt = 1; attempt <= 3 && !signed; attempt++) {
+      try {
+        const res = await signer(entry.path!);
+        if (res?.url) {
+          files.push({ name: entry.name, url: res.url });
+          signed = true;
+        } else if (res?.error) {
+          reason = String(res.error);
+        }
+      } catch (e) {
+        reason = (e as Error)?.message ?? reason;
+      }
     }
+    if (!signed) failures.push({ name: entry.name, reason });
   }
   return { files, failures };
 }
@@ -1053,7 +1064,41 @@ function mapCommPref(pref: string | null | undefined): string {
   return "Phone Call";
 }
 
+/**
+ * NEVER RENAME OR MERGE — hard guard. This function may only create records.
+ * Any mutation that could rename, merge, or overwrite an existing Customer /
+ * Account / Contact is refused before it leaves the edge function.
+ */
+const FORBIDDEN_MUTATIONS = [
+  "updateAccount",
+  "renameAccount",
+  "mergeAccount",
+  "mergeAccounts",
+  "updateContact",
+  "mergeContacts",
+  "deleteAccount",
+];
+
+export function assertNoCustomerRewrite(query: any): void {
+  const keys = new Set<string>();
+  const walk = (node: any, depth = 0) => {
+    if (!node || typeof node !== "object" || depth > 6) return;
+    for (const k of Object.keys(node)) {
+      keys.add(k);
+      walk(node[k], depth + 1);
+    }
+  };
+  walk(query);
+  const hit = FORBIDDEN_MUTATIONS.find((m) => keys.has(m));
+  if (hit) {
+    throw new Error(
+      `blocked: ${hit} — existing JobTread customers are never renamed or merged from a website lead.`,
+    );
+  }
+}
+
 async function paveFetch(query: any): Promise<any> {
+  assertNoCustomerRewrite(query);
   const res = await fetch(JOBTREAD_PAVE_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { scoreLead } from "@/lib/lead-scoring";
 import { deriveRoofingRouting } from "@/lib/lead-routing";
-import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
+import { uploadIntakeFiles, newSessionFolder, ACCEPTED_UPLOAD_TYPES } from "@/lib/intake-uploads";
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots, FieldError } from "./IntakeFieldKit";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
@@ -297,7 +297,7 @@ const RoofingIntakeForm = () => {
                   labelledBy="lbl-roof-photos"
                   files={files}
                   onChange={setFiles}
-                  accept="image/*"
+                  accept={ACCEPTED_UPLOAD_TYPES}
                   helper="A few photos help us prepare. Phone photos are fine. Max 8 files, 8MB each."
                 />
               </div>

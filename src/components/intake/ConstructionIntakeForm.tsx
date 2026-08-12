@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { scoreLead } from "@/lib/lead-scoring";
 import { deriveConstructionRouting } from "@/lib/lead-routing";
-import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
+import { uploadIntakeFiles, newSessionFolder, ACCEPTED_UPLOAD_TYPES } from "@/lib/intake-uploads";
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots, FieldError } from "./IntakeFieldKit";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
@@ -347,7 +347,7 @@ const ConstructionIntakeForm = () => {
                   labelledBy="lbl-construction-uploads"
                   files={files}
                   onChange={setFiles}
-                  accept="image/*,application/pdf"
+                  accept={ACCEPTED_UPLOAD_TYPES}
                   helper="Upload any plans, sketches, inspiration images, property photos, surveys, or documents that may help Highlander understand the project. Max 8 files, 8MB each."
                 />
               </div>

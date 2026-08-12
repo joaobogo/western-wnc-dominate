@@ -2,6 +2,22 @@ import { supabase } from "@/integrations/supabase/client";
 
 const MAX_BYTES = 8 * 1024 * 1024; // 8MB per file
 const MAX_FILES = 8;
+const UPLOAD_ATTEMPTS = 3;
+
+/** Images, PDFs, and common document types the crew can actually open. */
+export const ACCEPTED_UPLOAD_TYPES =
+  "image/*,application/pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.heic,.heif";
+
+const ACCEPTED_EXTENSIONS = /\.(jpe?g|png|webp|gif|heic|heif|pdf|docx?|xlsx?|csv|txt)$/i;
+
+export function isAcceptedUpload(file: { name: string; type?: string }): boolean {
+  const type = (file.type ?? "").toLowerCase();
+  if (type.startsWith("image/") || type === "application/pdf") return true;
+  if (/(msword|wordprocessingml|ms-excel|spreadsheetml|csv|plain)/.test(type)) return true;
+  return ACCEPTED_EXTENSIONS.test(file.name);
+}
+
+const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export type UploadedFileRef = {
   path: string;
@@ -33,21 +49,35 @@ export async function uploadIntakeFiles(
       out.errors.push({ name: file.name, reason: "Larger than 8MB" });
       continue;
     }
-    const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const path = `submissions/${sessionFolder}/${Date.now()}-${safe}`;
-    try {
-      const { error } = await supabase.storage
-        .from("lead-uploads")
-        .upload(path, file, { upsert: false, cacheControl: "3600", contentType: file.type });
-      if (error) {
-        out.errors.push({ name: file.name, reason: error.message });
-        continue;
-      }
-      out.ok.push({ path, name: file.name, size: file.size, type: file.type });
-    } catch (e) {
-      // Network/CORS failure — never block the lead itself.
-      out.errors.push({ name: file.name, reason: (e as Error)?.message ?? "Upload failed" });
+    if (!isAcceptedUpload(file)) {
+      out.errors.push({ name: file.name, reason: "Unsupported file type" });
+      continue;
     }
+    const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+    // Retry a failed upload so an attachment is never silently lost to a
+    // flaky connection. Each attempt gets its own path to avoid collisions.
+    let lastReason = "Upload failed";
+    let uploaded = false;
+    for (let attempt = 1; attempt <= UPLOAD_ATTEMPTS && !uploaded; attempt++) {
+      const path = `submissions/${sessionFolder}/${Date.now()}-${attempt}-${safe}`;
+      try {
+        const { error } = await supabase.storage
+          .from("lead-uploads")
+          .upload(path, file, { upsert: false, cacheControl: "3600", contentType: file.type });
+        if (error) {
+          lastReason = error.message;
+        } else {
+          out.ok.push({ path, name: file.name, size: file.size, type: file.type });
+          uploaded = true;
+          break;
+        }
+      } catch (e) {
+        // Network/CORS failure — never block the lead itself.
+        lastReason = (e as Error)?.message ?? "Upload failed";
+      }
+      if (attempt < UPLOAD_ATTEMPTS) await wait(400 * attempt);
+    }
+    if (!uploaded) out.errors.push({ name: file.name, reason: lastReason });
   }
   return out;
 }
