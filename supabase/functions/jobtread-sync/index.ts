@@ -1018,11 +1018,15 @@ const JT_CF = {
   },
 } as const;
 
-function mapServiceArea(town: string | null | undefined): string {
-  const t = (town ?? "").toLowerCase();
+export function mapServiceArea(town: string | null | undefined, county?: string | null): string {
+  const t = `${town ?? ""} ${county ?? ""}`.toLowerCase();
   if (/franklin|highlands|cashiers|scaly|otto|clayton/.test(t)) return "Franklin";
   if (/sylva|cullowhee|bryson|waynesville|dillsboro|webster|balsam|maggie|cherokee/.test(t)) return "Sylva";
   if (/asheville|hendersonville|weaverville|black mountain|arden|fletcher/.test(t)) return "Asheville";
+  // County-level routing when the town is not one of the mapped markets.
+  const c = (county ?? "").toLowerCase();
+  if (/jackson|swain|haywood/.test(c)) return "Sylva";
+  if (/buncombe|henderson|madison|transylvania/.test(c)) return "Asheville";
   return "Franklin"; // safe default matching HQ service area
 }
 
