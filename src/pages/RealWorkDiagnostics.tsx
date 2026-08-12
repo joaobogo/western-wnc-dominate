@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useInternalPageHead } from "@/components/SEOHead";
 
 declare global {
   interface Window {
@@ -31,6 +32,8 @@ const badge = (s: Status) => {
 };
 
 const RealWorkDiagnostics = () => {
+  useInternalPageHead("Recent projects widget diagnostics", "Internal diagnostics for the Highlander recent projects widget integration.", "/realwork-diagnostics");
+
   const [checks, setChecks] = useState<Check[]>([]);
   const [logs, setLogs] = useState<string[]>([]);
   const [elapsed, setElapsed] = useState(0);
