@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Clock, Loader2, Phone, Shield } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import InlineFieldError from "@/components/forms/InlineFieldError";
@@ -10,6 +10,7 @@ import { fieldAttrs } from "@/lib/field-ergonomics";
 import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import FormSavedNote from "@/components/forms/FormSavedNote";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
+import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 
 interface FastLeadFormProps {
   ctaLabel: string;
@@ -52,11 +53,12 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
       <div className="border border-border bg-card px-6 py-7 shadow-sm rounded-sm">
         <LeadConfirmationPanel
           heading="Request received."
-          town={values.town}
+          town={formData.town}
           summary={[
             { label: "Service", value: serviceLabel },
-            { label: "Town", value: values.town },
-            { label: "We'll reach you at", value: values.phone || values.email },
+            { label: "Town", value: formData.town },
+            { label: "We'll reach you at", value: formData.phone },
+            { label: "Timing", value: formData.urgency },
           ]}
         />
       </div>
