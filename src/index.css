@@ -497,6 +497,7 @@ img {
    * `text-[hsl(var(--gold-ink))]` is always readable on both themes.
    */
   .dark,
+  .dark-surface,
   .section-dark,
   [class*="section-dark"],
   [class*="--dark-section"],
