@@ -43,7 +43,7 @@ const roofingServices = [
     icon: Wrench,
     title: "Roof Repair",
     slug: "/roofing/roof-repair",
-    description: "Targeted, warrantied repairs that stop leaks and prevent escalation. We diagnose accurately, fix permanently, and document everything.",
+    description: "Targeted repairs that stop leaks and prevent escalation. We diagnose accurately, fix it right, and document everything.",
     features: ["Leak detection", "Flashing repair", "Shingle replacement", "Chimney seals"],
   },
   {
