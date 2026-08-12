@@ -37,6 +37,18 @@ describe("email", () => {
     expect(emailSchema.safeParse("nope").success).toBe(false);
     expect(emailSchema.safeParse(`${"a".repeat(250)}@gmail.com`).success).toBe(false);
   });
+  it("rejects obvious fake and disposable addresses", () => {
+    for (const bad of [
+      "jane@example.com",
+      "test@gmail.com",
+      "someone@mailinator.com",
+      "user@site.test",
+      "aaaa@gmail.com",
+    ]) {
+      expect(emailSchema.safeParse(bad).success).toBe(false);
+    }
+    expect(emailSchema.safeParse("jane.doe@gmail.com").success).toBe(true);
+  });
 });
 
 describe("town matching", () => {
