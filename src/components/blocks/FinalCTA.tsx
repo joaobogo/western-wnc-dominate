@@ -17,7 +17,7 @@ export const FinalCTA = ({
   eyebrow = "Ready When You Are",
   heading,
   subheading,
-  primaryLabel = "Request a Free Quote",
+  primaryLabel = "Request an Estimate",
   primaryHref = "/consultation",
   phone = "(828) 524-7773",
   telHref = "tel:+18285247773",

@@ -198,7 +198,7 @@ const RealWorkWidget = ({
                   to="/contact"
                   className="cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all"
                 >
-                  Request a Free Quote <ArrowRight className="w-4 h-4" />
+                  Request an Estimate <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href="tel:+18285247773"

@@ -46,15 +46,16 @@ const byNewest = (a: { date: string }, b: { date: string }) =>
 const formatPostDate = (date: string) =>
   new Date(`${date}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
+/** "New" badge window: published within the last 7 days. */
 const isRecent = (date: string) =>
-  Date.now() - new Date(`${date}T12:00:00`).getTime() < 1000 * 60 * 60 * 24 * 14;
+  Date.now() - new Date(`${date}T12:00:00`).getTime() < 1000 * 60 * 60 * 24 * 7;
 
 
 /* Seasonal awareness */
 const getSeasonalContext = () => {
   const month = new Date().getMonth();
   if (month >= 2 && month <= 4) return { season: "Spring", icon: Leaf, tip: "Spring storms and hail season approaching — schedule your inspection now.", categories: ["Storm", "Maintenance", "Inspections"] };
-  if (month >= 5 && month <= 7) return { season: "Summer", icon: Sun, tip: "Peak construction season. Book your project early for best scheduling.", categories: ["Construction", "Materials", "Cost"] };
+  if (month >= 5 && month <= 7) return { season: "Summer", icon: Sun, tip: "Peak construction season. Schedule your project early for the best availability.", categories: ["Construction", "Materials", "Cost"] };
   if (month >= 8 && month <= 10) return { season: "Fall", icon: Wind, tip: "Prepare your roof for winter. Last chance for pre-freeze repairs.", categories: ["Maintenance", "Replacement", "Tips"] };
   return { season: "Winter", icon: Snowflake, tip: "Ice dam prevention and emergency storm response. We prioritize emergency storm calls.", categories: ["Storm", "Maintenance", "Insurance"] };
 };
@@ -215,7 +216,7 @@ const Blog = () => {
                   <Link to={`/blog/${heroFeatured.slug}`} className="group block card-premium overflow-hidden h-full">
                     <div className="relative aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
                       <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-                        src={heroFeatured.image || "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000"} 
+                        src={heroFeatured.image || "/media/wnc-town-overlook.jpg"} 
                         alt={heroFeatured.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
@@ -257,7 +258,7 @@ const Blog = () => {
                         <div className="flex flex-col sm:flex-row h-full">
                           <div className="sm:w-32 md:w-40 shrink-0 overflow-hidden">
                             <img width={1600} height={1067} loading="lazy" decoding="async" 
-                              src={post.image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600"} 
+                              src={post.image || "/media/wnc-town-overlook.jpg"} 
                               alt={post.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
@@ -478,7 +479,7 @@ const Blog = () => {
                       <div className="grid md:grid-cols-12 gap-0 min-h-[300px]">
                         <div className="md:col-span-5 h-64 md:h-auto overflow-hidden">
                           <img width={1600} height={1067} loading="lazy" decoding="async" 
-                            src={filtered[0].image || "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=1000"} 
+                            src={filtered[0].image || "/media/wnc-town-overlook.jpg"} 
                             alt={filtered[0].title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />
@@ -524,7 +525,7 @@ const Blog = () => {
                       <Link to={`/blog/${post.slug}`} className="group block h-full card-premium overflow-hidden flex flex-col">
                         <div className="aspect-[16/10] overflow-hidden">
                           <img width={1600} height={1067} loading="lazy" decoding="async" 
-                            src={post.image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800"} 
+                            src={post.image || "/media/wnc-town-overlook.jpg"} 
                             alt={post.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />

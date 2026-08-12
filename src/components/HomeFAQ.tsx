@@ -132,7 +132,7 @@ const HomeFAQ = () => {
             to="/contact"
             className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all min-h-11"
           >
-            Request a Free Quote
+            Request an Estimate
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <a

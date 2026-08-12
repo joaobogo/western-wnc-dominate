@@ -35,7 +35,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
       to="/consultation"
       className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
     >
-      <span className="relative z-10">Free Quote</span>
+      <span className="relative z-10">Get Estimate</span>
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
     </Link>
     <button

@@ -1,6 +1,18 @@
 import { towns, townLocalRelevance, type TownData } from "./towns";
 import type { BlogPost } from "./blogs";
 
+/** Storm imagery pool — keeps town storm posts visually distinct. */
+const STORM_IMAGES = [
+  "/media/wnc-storm-tree-damage.jpg",
+  "/media/wnc-storm-clouds-ridge.jpg",
+  "/media/wnc-hail-damage-detail.jpg",
+  "/media/wnc-rain-drainage.jpg",
+  "/media/wnc-winter-ice-dam.jpg",
+];
+const stormImage = (slug: string) =>
+  STORM_IMAGES[[...slug].reduce((a, c) => a + c.charCodeAt(0), 0) % STORM_IMAGES.length];
+
+
 /**
  * Local coverage posts for towns that previously had no town-tagged article.
  * Each post is composed from that town's real profile data in `towns.ts`
@@ -207,7 +219,7 @@ We are based in Western North Carolina year-round rather than following storms t
     category: "Storm",
     date: "2026-08-06",
     readTime: "7 min",
-    image: t.heroImage,
+    image: stormImage(t.slug),
     imageAlt: `Storm clouds over mountain homes in Western North Carolina near ${t.name}`,
     metaTitle: `Storm Damage in ${t.name}, NC: Homeowner Checklist`,
     metaDescription: `A ${t.name}, NC storm damage checklist: what wind and hail actually do at ${t.elevation}, what to do in the first 48 hours, and how to document a claim.`,

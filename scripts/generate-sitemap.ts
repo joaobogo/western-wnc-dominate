@@ -7,6 +7,8 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { blogPosts } from "../src/data/blogs";
 import { towns } from "../src/data/towns";
+import { counties } from "../src/data/counties";
+import { generatedServiceTownEntries } from "../src/data/service-town-generated";
 
 const BASE_URL = "https://highlandernc.com";
 
@@ -81,6 +83,16 @@ const townRoutes: SitemapEntry[] = towns.map((t) => ({
   path: `/service-areas/${t.slug}`,
 }));
 
+// Dynamic: county hub pages (/service-areas/county/{slug}).
+const countyRoutes: SitemapEntry[] = counties.map((c) => ({
+  path: `/service-areas/county/${c.slug}`,
+}));
+
+// Dynamic: service-town landing pages (/service-areas/{town}/{service}).
+const serviceTownRoutes: SitemapEntry[] = generatedServiceTownEntries.map((e) => ({
+  path: `/service-areas/${e.townSlug}/${e.serviceSlug}`,
+}));
+
 // Dynamic: one entry per blog post. lastmod = post.date (authoritative,
 // page-specific). Skip lastmod if the date is unparseable.
 const blogRoutes: SitemapEntry[] = blogPosts.map((p) => {
@@ -92,7 +104,13 @@ const blogRoutes: SitemapEntry[] = blogPosts.map((p) => {
 
 // De-duplicate by path (first wins) to guarantee no duplicate <url> entries.
 const seen = new Set<string>();
-const entries: SitemapEntry[] = [...staticRoutes, ...townRoutes, ...blogRoutes].filter((e) => {
+const entries: SitemapEntry[] = [
+  ...staticRoutes,
+  ...townRoutes,
+  ...countyRoutes,
+  ...serviceTownRoutes,
+  ...blogRoutes,
+].filter((e) => {
   if (seen.has(e.path)) return false;
   seen.add(e.path);
   return true;
@@ -121,5 +139,5 @@ function generateSitemap(items: SitemapEntry[]) {
 
 writeFileSync(resolve("public/sitemap.xml"), generateSitemap(entries));
 console.log(
-  `sitemap.xml written (${entries.length} entries — ${staticRoutes.length} static, ${townRoutes.length} towns, ${blogRoutes.length} blog posts)`,
+  `sitemap.xml written (${entries.length} entries — ${staticRoutes.length} static, ${townRoutes.length} towns, ${countyRoutes.length} counties, ${serviceTownRoutes.length} service-town, ${blogRoutes.length} blog posts)`,
 );
