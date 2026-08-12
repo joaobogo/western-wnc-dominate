@@ -2,6 +2,7 @@ import { useState } from "react";
 import InlineFieldError from "@/components/forms/InlineFieldError";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import { useContactValidation } from "@/hooks/use-contact-validation";
+import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
@@ -87,6 +88,8 @@ export default function Contact() {
     require: { name: true, email: true },
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [issues, setIssues] = useState<string[]>([]);
 
   const handleDivision = (d: "roofing" | "construction") => {
     setDivision(d);
@@ -101,7 +104,13 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!contact.markAttempted()) return;
+    if (!contact.markAttempted()) {
+      setSubmitError("We need a little more before we can send this.");
+      setIssues(Object.values(contact.errors).filter(Boolean) as string[]);
+      return;
+    }
+    setSubmitError(null);
+    setIssues([]);
     setIsSubmitting(true);
     try {
       const { supabase } = await import("@/integrations/supabase/client");
@@ -136,8 +145,9 @@ export default function Contact() {
         preferred_contact_method: preferredContact || null,
       });
       setStep("success");
-    } catch {
-      setStep("success");
+    } catch (err) {
+      console.error("Contact submit failed:", err);
+      setSubmitError("We couldn't send your message just now. Nothing you typed was lost — try again in a moment.");
     }
     setIsSubmitting(false);
   };
@@ -509,6 +519,8 @@ export default function Contact() {
                           maxLength={2000}
                         />
                       </div>
+
+                      <FormErrorSummary message={submitError} issues={issues} />
 
                       <div className="flex items-center justify-between pt-2">
                         <p className="text-[10px] text-muted-foreground font-body">

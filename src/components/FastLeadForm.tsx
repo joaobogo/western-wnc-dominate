@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, Clock, Loader2, Phone, Shield } from "lucide-
 import FormConsent from "@/components/FormConsent";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import InlineFieldError from "@/components/forms/InlineFieldError";
+import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { fieldAttrs } from "@/lib/field-ergonomics";
 
@@ -15,6 +16,8 @@ interface FastLeadFormProps {
 
 const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormProps) => {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [issues, setIssues] = useState<string[]>([]);
   const { submitting, submit } = useLeadSubmit();
   const [formData, setFormData] = useState({
     name: "",
@@ -76,8 +79,14 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         onSubmit={async (event) => {
           event.preventDefault();
           if (submitting) return;
-          if (!contact.markAttempted()) return;
-          await submit({
+          if (!contact.markAttempted()) {
+            setSubmitError("We need a little more before we can send this.");
+            setIssues(Object.values(contact.errors).filter(Boolean) as string[]);
+            return;
+          }
+          setSubmitError(null);
+          setIssues([]);
+          const result = await submit({
             source: "fast_lead_form",
             lead_type: serviceLabel,
             full_name: contact.values.name,
@@ -87,6 +96,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             timeline: formData.urgency,
             service_category: serviceLabel,
           });
+          if (!result) return; // a submit was already in flight
+          if (result.error) {
+            setSubmitError("We couldn't send that just now. Everything you typed is still here — try again in a moment.");
+            return;
+          }
           setSubmitted(true);
         }}
       >
@@ -166,6 +180,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           </div>
         </div>
 
+        <FormErrorSummary message={submitError} issues={issues} />
         <FormConsent />
         <motion.button
           whileTap={{ scale: 0.98 }}

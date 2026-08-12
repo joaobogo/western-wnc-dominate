@@ -14,6 +14,7 @@ import { useFormAutosave } from "@/hooks/use-form-autosave";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
 import FormConsent from "@/components/FormConsent";
+import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { actionableError } from "@/lib/microcopy";
 
 type Step = number;
@@ -68,6 +69,7 @@ const RoofingIntakeForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [issues, setIssues] = useState<string[]>([]);
 
   const set = <K extends keyof typeof data>(k: K, v: (typeof data)[K]) =>
     setData((d) => ({ ...d, [k]: v }));
@@ -111,7 +113,12 @@ const RoofingIntakeForm = () => {
   const back = () => setStep((s) => Math.max(0, (s - 1) as Step));
 
   const submit = async () => {
-    if (!contact.markAttempted()) return;
+    if (!contact.markAttempted()) {
+      setError("We need a little more before we can send this.");
+      setIssues(Object.values(contact.errors).filter(Boolean) as string[]);
+      return;
+    }
+    setIssues([]);
     setSubmitting(true);
     setError(null);
     try {
@@ -370,7 +377,7 @@ const RoofingIntakeForm = () => {
             </>
           )}
 
-          {error && <p className="text-[13px] font-body text-destructive">{error}</p>}
+          <FormErrorSummary message={error} issues={issues} />
         </motion.div>
       </AnimatePresence>
 
@@ -397,7 +404,7 @@ const RoofingIntakeForm = () => {
         ) : (
           <button
             type="button"
-            disabled={!stepValid || submitting}
+            disabled={submitting}
             onClick={submit}
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-lg"
           >
