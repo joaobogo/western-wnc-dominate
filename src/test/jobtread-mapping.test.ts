@@ -2,7 +2,7 @@ import { describe, it, expect, beforeAll } from "vitest";
 
 // The edge function reads secrets at module load. Stub Deno before importing.
 beforeAll(() => {
-  (globalThis as any).Deno = { env: { get: () => "test" } };
+  (globalThis as any).Deno = { env: { get: () => "test" }, serve: () => undefined };
 });
 
 const mod = async () => await import("../../supabase/functions/jobtread-sync/index.ts");
