@@ -42,14 +42,11 @@ export function preloadRoute(href: string) {
 export function preloadLikelyRoutes() {
   const run = () => ["/roofing", "/construction", "/request-inspection"].forEach(preloadRoute);
   if (typeof window === "undefined") return;
-  if ("requestIdleCallback" in window) {
-    (window as Window & { requestIdleCallback: (cb: () => void, o?: { timeout: number }) => void }).requestIdleCallback(
-      run,
-      { timeout: 4000 },
-    );
-  } else {
-    window.setTimeout(run, 2500);
-  }
+  const idle = (window as unknown as {
+    requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => void;
+  }).requestIdleCallback;
+  if (idle) idle(run, { timeout: 4000 });
+  else window.setTimeout(run, 2500);
 }
 
 /** Spread onto a <Link> to warm its chunk on hover / focus / touch. */
