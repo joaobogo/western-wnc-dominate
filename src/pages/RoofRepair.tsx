@@ -20,6 +20,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -528,6 +529,7 @@ const RoofRepair = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
           ]}
         />
+        <ServiceInternalLinks title="Roof Repair" slug="roof-repair" />
       </main>
 
       <RealWorkWidget />

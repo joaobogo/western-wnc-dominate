@@ -17,6 +17,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import VeluxWidget from "@/components/VeluxWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 const faqs = [
   { q: "Are you a certified VELUX installer?", a: "Yes. Highlander is a VELUX Certified Installer — trained and accredited by VELUX to install their skylights and Sun Tunnels to manufacturer specification. That accreditation is what unlocks VELUX's installation warranty on top of the product warranty." },
@@ -237,6 +238,7 @@ const Skylights = () => {
             { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
           ]}
         />
+        <ServiceInternalLinks title="Skylights" slug="skylights" />
       </main>
 
       <ConversionTrustBlock variant="band" category="roofing" />

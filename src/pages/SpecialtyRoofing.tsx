@@ -20,6 +20,7 @@ import metal009 from "@/assets/gallery/metal-010.webp";
 import metal010 from "@/assets/gallery/metal-010.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -405,6 +406,7 @@ const SpecialtyRoofing = () => {
             </div>
           </div>
         </section>
+        <ServiceInternalLinks title="Specialty Roofing" slug="specialty-roofing" />
       </main>
       <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />

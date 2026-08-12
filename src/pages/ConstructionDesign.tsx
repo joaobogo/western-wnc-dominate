@@ -16,6 +16,7 @@ import { ScrollReveal } from "@/components/motion";
 import GoldLine from "@/components/motion/GoldLine";
 import { ConstructionClosingCTA, ConstructionMidCTA } from "@/components/construction";
 import RelatedLinks from "@/components/RelatedLinks";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /**
  * /construction/design — Design Services for Construction Projects
@@ -577,6 +578,7 @@ const ConstructionDesign = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
           ]}
         />
+        <ServiceInternalLinks title="Design & Planning" slug="design" />
       </main>
 
       <Footer />

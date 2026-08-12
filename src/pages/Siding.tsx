@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 const Siding = () => {
   const faqs = [
@@ -180,6 +181,7 @@ const Siding = () => {
             </div>
           </div>
         </section>
+        <ServiceInternalLinks title="Siding & Exterior" slug="siding" />
       </main>
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

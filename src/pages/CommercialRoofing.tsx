@@ -18,6 +18,7 @@ import heroImg from "@/assets/gallery/metal-006.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -492,6 +493,7 @@ const CommercialRoofing = () => {
             </div>
           </div>
         </section>
+        <ServiceInternalLinks title="Commercial Roofing" slug="commercial-roofing" />
       </main>
       <RealWorkWidget />
       <ConversionTrustBlock variant="band" category="commercial" />

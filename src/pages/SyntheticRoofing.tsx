@@ -15,6 +15,7 @@ import { getServiceTownEntriesForService } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 const faqs = [
   { q: "How does Brava compare to real cedar shake?", a: "Brava holds color and profile dramatically longer than cedar in mountain climates. Real cedar cups, splits, and grows moss in the moisture and UV conditions across Highlands and Cashiers." },
@@ -200,6 +201,7 @@ const SyntheticRoofing = () => {
           ctaLabel="Build Your Brava Roof Plan"
         />
         <CTABlock />
+        <ServiceInternalLinks title="Synthetic Roofing" slug="brava-synthetic" />
       </main>
       <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />

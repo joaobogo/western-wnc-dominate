@@ -25,6 +25,7 @@ import proj3 from "@/assets/gallery/cedar-005.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -431,6 +432,7 @@ const Renovations = () => {
           subheadline="Whether it's a kitchen that finally works, a bathroom that lasts, or a whole-home renovation done right — let's have a straightforward conversation about what's possible."
           eyebrow="Start Planning"
         />
+        <ServiceInternalLinks title="Renovations" slug="renovations" />
       </main>
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
