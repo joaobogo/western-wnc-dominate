@@ -581,6 +581,13 @@ export function installGtmGlobalListeners() {
           pagePath();
         const loc = resolveClickLocation(ctaEl);
         const town = resolveTown(ctaEl);
+        trackCtaClick({
+          cta_location: loc,
+          cta_text: ctaEl.textContent?.trim().slice(0, 80) || null,
+          cta_type: cta,
+          destination_url: dest,
+          town,
+        });
         if (cta === "request_quote") {
           trackRequestQuoteClick({ click_location: loc, destination_url: dest, town });
         } else if (cta === "request_inspection") {
@@ -606,6 +613,15 @@ export function installGtmGlobalListeners() {
         const display = anchor.textContent?.trim() || rawNumber;
         const phoneLoc = resolveClickLocation(anchor);
         const phoneTown = resolveTown(anchor);
+        if (!anchor.closest("[data-gtm-cta]")) {
+          trackCtaClick({
+            cta_location: phoneLoc,
+            cta_text: display,
+            cta_type: "phone",
+            destination_url: href,
+            town: phoneTown,
+          });
+        }
         trackPhoneClick({
           phone_number: display,
           link_url: href,
