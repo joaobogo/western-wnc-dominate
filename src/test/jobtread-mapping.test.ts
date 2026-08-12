@@ -5,7 +5,7 @@ beforeAll(() => {
   (globalThis as any).Deno = { env: { get: () => "test" }, serve: () => undefined };
 });
 
-const mod = async () => await import("../../supabase/functions/jobtread-sync/index.ts");
+const mod = async () => (await import("@jobtread-sync")) as any;
 
 const base = {
   name: "Jane Marie Van Dyke",
@@ -98,5 +98,71 @@ describe("Job name, Location, and Description", () => {
       customFieldValues: fields,
     });
     expect("description" in jobArgs).toBe(false);
+  });
+});
+
+describe("Lead Notes single-write rule", () => {
+  const row = {
+    ...base,
+    email: "jane@example.com",
+    phone: "+18285247773",
+    property_address: "53 Mountain Rd",
+    project_description: "Leak over the kitchen after the last storm.",
+    urgency: "asap",
+    utm_source: "google",
+    source: "inspection_form",
+    created_at: "2026-08-12T16:00:00Z",
+  };
+
+  it("writes the six sections in the contractual order", async () => {
+    const { buildLeadNotes } = await mod();
+    const note: string = buildLeadNotes(row);
+    const order = [
+      "Contact Info",
+      "Project Summary",
+      "Source/Attribution",
+      "Timeline/Urgency",
+      "Property Details",
+      "Attachments",
+    ];
+    const positions = order.map((s) => note.indexOf(`\n${s}\n`));
+    positions.forEach((p, i) => expect(p, `${order[i]} missing`).toBeGreaterThan(-1));
+    expect(positions).toEqual([...positions].sort((a, b) => a - b));
+  });
+
+  it("writes each section exactly once — no duplicated blocks", async () => {
+    const { buildLeadNotes } = await mod();
+    const note: string = buildLeadNotes({ ...row, chat_summary: "Wants a roof inspection." });
+    for (const s of ["Contact Info", "Project Summary", "Source/Attribution", "Timeline/Urgency", "Property Details", "Attachments"]) {
+      expect(note.split(`\n${s}\n`).length - 1, s).toBe(1);
+    }
+    // Data is not repeated across sections.
+    expect(note.split("jane@example.com").length - 1).toBe(1);
+    expect(note.split("53 Mountain Rd").length - 1).toBe(1);
+    expect(note.split("Leak over the kitchen").length - 1).toBe(1);
+  });
+
+  it("goes into one custom field only, never a second note or the description", async () => {
+    const { buildPayload, buildJobCustomFieldValues, buildLeadNotes, scrubDescription } = await mod();
+    const payload = buildPayload(row, "lead");
+    const note = buildLeadNotes(row);
+    const fields = buildJobCustomFieldValues(payload, note);
+    const withNote = Object.entries(fields).filter(([, v]) => String(v).includes("Contact Info"));
+    expect(withNote).toHaveLength(1);
+    expect(withNote[0][0]).toBe("22PYx7PBhE56");
+    expect("description" in scrubDescription({ name: "x", description: note })).toBe(false);
+  });
+
+  it("keeps the Attachments block intact when the note is truncated", async () => {
+    const { buildLeadNotes, truncateNotePreservingFiles } = await mod();
+    const note: string = buildLeadNotes({
+      ...row,
+      project_description: "x".repeat(3000),
+      attachments: [{ name: "roof.jpg", url: "https://example.com/roof.jpg" }],
+    });
+    const short = truncateNotePreservingFiles(note, 1000);
+    expect(short.length).toBeLessThanOrEqual(1000);
+    expect(short).toContain("Attachments");
+    expect(short).toContain("roof.jpg");
   });
 });

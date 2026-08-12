@@ -393,20 +393,23 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   const insuranceCarrier = meta.insurance_carrier ?? meta.carrier ?? null;
   const claimNumber = meta.claim_number ?? meta.claimNumber ?? null;
 
-  // ── ORDER IS CONTRACTUAL (Highlander spec, prompt 08):
-  // source page → service requested → timeline/urgency → property details →
-  // budget → insurance (storm) → customer's verbatim description →
-  // contact preferences → UTM attribution. Do not reorder.
+  // ── SECTION ORDER IS CONTRACTUAL (Highlander spec, prompt 08). Exactly six
+  // sections, in this order, written ONCE into the single Lead Notes field:
+  //   Contact Info → Project Summary → Source/Attribution →
+  //   Timeline/Urgency → Property Details → Attachments.
+  // Never append a second note and never duplicate a value across sections.
 
-  section("Source Page");
-  lines.push("Lead Source: Website");
-  kv("Form", row.source);
-  kv("Page URL", row.page_url);
-  kv("Lead Type", row.lead_type);
-  kv("Submitted At", row.created_at);
-  kv("Referred By", (row as any).referral_source ?? meta.referral_source ?? meta.referred_by ?? meta.how_did_you_hear ?? null);
+  section("Contact Info");
+  kv("Name", row.name);
+  kv("Phone", row.phone);
+  kv("Secondary Phone", (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null);
+  kv("Email", row.email);
+  kv("Preferred Contact Method", row.preferred_contact_method);
+  kv("Best Time to Contact", meta.best_time ?? meta.best_time_to_call ?? meta.contact_time ?? null);
+  lines.push(`Consent Given: ${row.consent_given === true ? "true" : row.consent_given === false ? "false" : NP}`);
+  if (has(row.consent_text)) kv("Consent Text", row.consent_text);
 
-  section("Service Requested");
+  section("Project Summary");
   kv("Service Category", row.service_category);
   kv("Project Type", row.project_type);
   if (isRoofingCategory) {
@@ -420,46 +423,39 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
     lines.push(`Plan Status: ${planStatusLabel || NP}`);
     kv("Foundation Type", foundationType);
   }
-
-  section("Timeline & Urgency");
-  kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
-  kv("Timeline", timelineValue);
-  if (isRoofingCategory) {
-    lines.push(`Water Actively Entering: ${waterEntering ? "Yes" : "No"}`);
-  }
-
-  section("Property");
-  kv("Town", row.property_town);
-  kv("Address", row.property_address);
-  kv("Community/Subdivision", communityOrSubdivision);
-  kv("Gate Code", gateCode);
-  kv("Property Type", row.property_type);
-
-  if (has(budgetValue)) {
-    section("Budget");
-    kv("Budget", budgetValue);
-  }
-
+  if (has(budgetValue)) kv("Budget", budgetValue);
   if (isStormLead && (has(insuranceValue) || has(insuranceCarrier) || has(claimNumber))) {
-    section("Insurance");
     kv("Insurance Status", insuranceValue);
-    if (has(insuranceCarrier)) kv("Carrier", insuranceCarrier);
+    if (has(insuranceCarrier)) kv("Insurance Carrier", insuranceCarrier);
     if (has(claimNumber)) kv("Claim Number", claimNumber);
   }
-
   const customerMessage = (row.project_description ?? "").toString().trim();
-  section("Customer Message");
-  lines.push(customerMessage || NP);
+  lines.push(`Customer Message: ${customerMessage || NP}`);
+  if (isChatbotLead) {
+    const summaryText = String(row.chat_summary ?? row.summary ?? "").trim();
+    lines.push(`Chat Summary: ${summaryText || NP}`);
+    const transcript = row.full_chat_transcript ?? row.full_transcript;
+    if (transcript) {
+      lines.push("Chat Transcript:");
+      if (Array.isArray(transcript)) {
+        for (const turn of transcript) {
+          const role = String(turn?.role ?? "user");
+          const content = String(turn?.content ?? turn?.text ?? "").trim();
+          if (content) lines.push(`  ${role}: ${content}`);
+        }
+      } else if (typeof transcript === "string") {
+        lines.push(transcript);
+      }
+    }
+  }
 
-  section("Contact");
-  kv("Name", row.name);
-  kv("Phone", row.phone);
-  kv("Secondary Phone", (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null);
-  kv("Email", row.email);
-  kv("Preferred Contact Method", row.preferred_contact_method);
-  kv("Best Time to Contact", meta.best_time ?? meta.best_time_to_call ?? meta.contact_time ?? null);
-
-  section("Tracking");
+  section("Source/Attribution");
+  lines.push("Lead Source: Website");
+  kv("Form", row.source);
+  kv("Page URL", row.page_url);
+  kv("Lead Type", row.lead_type);
+  kv("Submitted At", row.created_at);
+  kv("Referred By", (row as any).referral_source ?? meta.referral_source ?? meta.referred_by ?? meta.how_did_you_hear ?? null);
   kv("UTM Source", row.utm_source);
   kv("UTM Medium", row.utm_medium);
   kv("UTM Campaign", row.utm_campaign);
@@ -473,10 +469,20 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   kv("Landing Page", row.landing_page);
   kv("First Visit", row.first_seen_at);
 
-  section("Consent");
-  lines.push(`Consent Given: ${row.consent_given === true ? "true" : row.consent_given === false ? "false" : NP}`);
-  kv("Consent Text", row.consent_text);
-  lines.push("Privacy Policy: https://highlandernc.com/privacy-policy");
+  section("Timeline/Urgency");
+  kv("Urgency", urgentRoofing ? `HIGH — ${humanizeValue(row.urgency) || "urgent"}` : row.urgency);
+  kv("Timeline", timelineValue);
+  if (isRoofingCategory) {
+    lines.push(`Water Actively Entering: ${waterEntering ? "Yes" : "No"}`);
+  }
+
+  section("Property Details");
+  kv("Town", row.property_town);
+  kv("County", (row as any).property_county);
+  kv("Address", row.property_address);
+  kv("Community/Subdivision", communityOrSubdivision);
+  kv("Gate Code", gateCode);
+  kv("Property Type", row.property_type);
 
   // Attachments: signed download links when available, plus an explicit list
   // of files that failed so the team knows what to ask the customer to resend.
@@ -486,7 +492,7 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
       .map((e) => ({ name: e.name, url: e.url! })),
     failures: uploadFailures(row),
   };
-  section("Files");
+  section("Attachments");
   if (resolved.files.length) {
     lines.push(`Uploaded Files: ${resolved.files.length}`);
     resolved.files.forEach((f) => lines.push(`  • ${f.name} — ${f.url}`));
@@ -496,25 +502,6 @@ function buildHumanNote(row: LeadRow, attachments?: AttachmentInfo): string {
   if (resolved.failures.length) {
     lines.push(`Files That Failed To Upload: ${resolved.failures.length} — ask the customer to resend`);
     resolved.failures.forEach((f) => lines.push(`  • ${f.name} — ${f.reason}`));
-  }
-
-  if (isChatbotLead) {
-    section("Chatbot");
-    const summaryText = String(row.chat_summary ?? row.summary ?? "").trim();
-    lines.push(`Chat Summary: ${summaryText || NP}`);
-    const transcript = row.full_chat_transcript ?? row.full_transcript;
-    if (transcript) {
-      lines.push("Transcript:");
-      if (Array.isArray(transcript)) {
-        for (const turn of transcript) {
-          const role = String(turn?.role ?? "user");
-          const content = String(turn?.content ?? turn?.text ?? "").trim();
-          if (content) lines.push(`  ${role}: ${content}`);
-        }
-      } else if (typeof transcript === "string") {
-        lines.push(transcript);
-      }
-    }
   }
 
   return lines.join("\n");
@@ -669,7 +656,7 @@ export function buildJobName(row: LeadRow): string {
 }
 
 /** Lead Notes = full intake summary. Stored ONLY on Job custom field. */
-function buildLeadNotes(row: LeadRow, attachments?: AttachmentInfo): string {
+export function buildLeadNotes(row: LeadRow, attachments?: AttachmentInfo): string {
   return buildHumanNote(row, attachments);
 }
 
@@ -1126,12 +1113,16 @@ export function scrubDescription<T extends Record<string, any>>(input: T): T {
 
 /**
  * Truncates the Lead Notes to JobTread's field cap while always keeping the
- * FILES block (signed attachment links + failed uploads) intact.
+ * ATTACHMENTS block (signed links + failed uploads) intact. It is the last
+ * section of the note, so everything above it absorbs the truncation.
  */
 export function truncateNotePreservingFiles(note: string, max = 1000): string {
   if (!note || note.length <= max) return note;
   const lines = note.split("\n");
-  const start = lines.findIndex((l) => l.trim().toLowerCase() === "files");
+  const start = lines.findIndex((l) => {
+    const t = l.trim().toLowerCase();
+    return t === "attachments" || t === "files";
+  });
   if (start === -1) return note.slice(0, max - 10) + "\n…[truncated]";
   let end = lines.length;
   for (let i = start + 1; i < lines.length; i++) {
