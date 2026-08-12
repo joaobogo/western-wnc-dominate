@@ -65,6 +65,7 @@ export default function AdminLeads() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [selected, setSelected] = useState<Lead | null>(null);
   const [resending, setResending] = useState<string | null>(null);
+  const [retryingAll, setRetryingAll] = useState(false);
   const [tierFilter, setTierFilter] = useState<string>("all");
   const [sourceFilter, setSourceFilter] = useState<string>("all");
   const [townFilter, setTownFilter] = useState<string>("all");
