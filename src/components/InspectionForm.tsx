@@ -41,6 +41,15 @@ function townFromQuery(): string {
 }
 
 const InspectionForm = () => {
+  // Where the visitor came from, e.g. ?context=town_faq_cta
+  const contextFromQuery = (): string | null => {
+    if (typeof window === "undefined") return null;
+    try {
+      return new URLSearchParams(window.location.search).get("context");
+    } catch {
+      return null;
+    }
+  };
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState<FormStep>("info");
