@@ -2,20 +2,37 @@ import { motion } from "framer-motion";
 import { CheckCircle, Phone, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
+import { pickGuideLink, pickProjectLink, type LeadCategory } from "@/lib/confirmation-links";
+import type { SubmittedSummaryItem } from "@/components/forms/LeadConfirmationPanel";
 
 type Props = {
   title: string;
   body: string;
   nextStepsTitle?: string;
   nextSteps?: string[];
+  /** Recap of what the visitor actually submitted. */
+  summary?: SubmittedSummaryItem[];
+  town?: string | null;
+  category?: LeadCategory;
 };
 
-const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next", nextSteps }: Props) => {
+const IntakeConfirmation = ({
+  title,
+  body,
+  nextStepsTitle = "What happens next",
+  nextSteps,
+  summary = [],
+  town,
+  category = "roofing",
+}: Props) => {
   const steps = nextSteps ?? [
     "A project advisor reviews your details — usually as soon as possible.",
     "We confirm scope and schedule an on-site assessment at your property.",
-    "You receive a written, itemized proposal with materials, scope, and warranty terms.",
+    "You receive a written, itemized proposal with materials, scope, and pricing.",
   ];
+  const project = pickProjectLink({ town, category });
+  const guide = pickGuideLink({ town });
+  const recap = summary.filter((s) => s.value && String(s.value).trim().length > 0);
 
   return (
     <motion.div
@@ -48,6 +65,22 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
         {body}
       </p>
 
+      {recap.length > 0 && (
+        <div className="text-left bg-background border border-border rounded-md p-5 mb-6">
+          <h3 className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-3">
+            What you sent us
+          </h3>
+          <dl className="space-y-2">
+            {recap.map((item) => (
+              <div key={item.label} className="flex flex-wrap gap-x-2 text-[13.5px] font-body">
+                <dt className="text-muted-foreground">{item.label}:</dt>
+                <dd className="font-semibold text-foreground">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      )}
+
       <div className="text-left bg-background border border-border rounded-md p-5 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
@@ -63,6 +96,37 @@ const IntakeConfirmation = ({ title, body, nextStepsTitle = "What happens next",
             </li>
           ))}
         </ol>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2 text-left mb-8">
+        <Link
+          to={project.path}
+          className="group border border-border rounded-md p-4 hover:border-[hsl(var(--highland-gold))] transition-colors"
+        >
+          <span className="block text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-1.5">
+            See the work
+          </span>
+          <span className="block font-heading font-bold text-[15px] text-foreground leading-snug">
+            {project.label}
+          </span>
+          <span className="block text-[12.5px] font-body text-muted-foreground mt-1">
+            {project.description}
+          </span>
+        </Link>
+        <Link
+          to={guide.path}
+          className="group border border-border rounded-md p-4 hover:border-[hsl(var(--highland-gold))] transition-colors"
+        >
+          <span className="block text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-1.5">
+            While you wait
+          </span>
+          <span className="block font-heading font-bold text-[15px] text-foreground leading-snug">
+            {guide.label}
+          </span>
+          <span className="block text-[12.5px] font-body text-muted-foreground mt-1">
+            {guide.description}
+          </span>
+        </Link>
       </div>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
