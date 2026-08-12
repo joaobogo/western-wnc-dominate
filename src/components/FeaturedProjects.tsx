@@ -116,7 +116,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         <div className={`relative overflow-hidden ${
           isHero ? "aspect-[4/3] md:aspect-[16/10]" : isWide ? "aspect-[21/9]" : "aspect-[4/3]"
         }`}>
-          <img
+          <img width={1600} height={1067}
             src={project.image}
             alt={project.title}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] will-change-transform"

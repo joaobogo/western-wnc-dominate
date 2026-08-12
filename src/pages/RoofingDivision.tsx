@@ -261,7 +261,7 @@ const RoofingDivision = () => {
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={roofingMobileHero} />
-              <img decoding="async"
+              <img width={1600} height={1067} decoding="async"
                 src={metalRoof}
                 alt="Premium standing seam metal roof on a mountain estate in Cashiers, NC"
                 className="w-full h-full object-cover object-[50%_25%] md:object-center"
@@ -465,7 +465,7 @@ const RoofingDivision = () => {
                 className="relative"
               >
                 <div className="aspect-[4/3] rounded-none overflow-hidden">
-                  <img decoding="async"
+                  <img width={1600} height={1067} decoding="async"
                     src={cedarRoof}
                     alt="Cedar shake roof installation on a mountain home in Highlands, NC"
                     className="w-full h-full object-cover"
@@ -980,7 +980,7 @@ const RoofingDivision = () => {
                 viewport={{ once: true }}
                 className="group relative aspect-[4/3] lg:aspect-auto lg:row-span-2 rounded-none overflow-hidden"
               >
-                <img decoding="async" src={galleryItems[0].image} alt={galleryItems[0].title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
+                <img width={1600} height={1067} decoding="async" src={galleryItems[0].image} alt={galleryItems[0].title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.85)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute top-4 left-4 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-[hsl(var(--highland-gold))] text-accent-foreground px-3 py-1.5 rounded-none">Featured</div>
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
@@ -1000,7 +1000,7 @@ const RoofingDivision = () => {
                     transition={{ delay: 0.1 + i * 0.06, duration: 0.5 }}
                     className="group relative aspect-[4/3] rounded-none overflow-hidden"
                   >
-                    <img decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
+                    <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
                     <div className="absolute top-2 left-2 text-[8px] font-body font-semibold uppercase tracking-[0.12em] bg-primary/90 text-primary-foreground px-2 py-0.5 rounded-none">{item.category}</div>
                     <div className="absolute bottom-0 left-0 right-0 p-3">

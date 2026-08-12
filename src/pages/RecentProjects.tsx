@@ -73,7 +73,7 @@ const RecentProjects = () => {
         {/* Hero */}
         <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
           <div className="absolute inset-0">
-            <img loading="lazy" decoding="async"
+            <img width={1600} height={1067} loading="eager" decoding="async"
               src={heroImg}
               alt="Highlander roofing project in Western North Carolina"
               fetchPriority="high"

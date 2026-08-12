@@ -101,7 +101,7 @@ const SpecialtyRoofing = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img decoding="async" src={heroImg} alt="Specialty cedar roof on a custom home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Specialty cedar roof on a custom home in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -163,7 +163,7 @@ const SpecialtyRoofing = () => {
                     transition={{ duration: 0.5, delay: 1.7 + i * 0.15 }}
                     className="w-16 h-16 md:w-20 md:h-20 rounded-sm overflow-hidden border border-white/15"
                   >
-                    <img src={img} alt="Specialty roofing detail" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
+                    <img width={1600} height={1067} src={img} alt="Specialty roofing detail" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
                   </motion.div>
                 ))}
                 <Link to="/recent-projects" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
@@ -305,7 +305,7 @@ const SpecialtyRoofing = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-xs font-body font-medium tracking-wide">{img.label}</p>

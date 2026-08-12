@@ -63,7 +63,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                     <div className="flex flex-col md:flex-row gap-5">
                       {highlight.image && (
                         <div className="w-full md:w-32 h-32 shrink-0 overflow-hidden border border-border">
-                          <img loading="lazy" decoding="async" 
+                          <img width={1600} height={1067} loading="lazy" decoding="async" 
                             src={highlight.image} 
                             alt={highlight.title} 
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 

@@ -4,7 +4,11 @@ import { ArrowRight, Shield, Award, Clock, HardHat, Home, Mountain, Phone, Ruler
 import heroImage from "@/assets/hero-roofing.webp";
 import heroLayer2 from "@/assets/gallery/metal-010.webp";
 import heroLayer3 from "@/assets/gallery/asphalt-hero.webp";
+import heroImageAvif from "@/assets/hero-roofing.webp?format=avif";
+import heroLayer2Avif from "@/assets/gallery/metal-010.webp?format=avif";
+import heroLayer3Avif from "@/assets/gallery/asphalt-hero.webp?format=avif";
 import veluxLogo from "@/assets/logo-velux.png";
+import HeroPicture from "@/components/media/HeroPicture";
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -43,6 +47,7 @@ const Hero = () => {
   }, []);
 
   const layers = [heroImage, heroLayer2, heroLayer3];
+  const layersAvif = [heroImageAvif, heroLayer2Avif, heroLayer3Avif];
   const layerAlts = [
     "Premium mountain home roof in Western North Carolina",
     "Standing seam metal roof on a WNC residence",
@@ -56,15 +61,14 @@ const Hero = () => {
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
             No video. All real WNC roof photography. */}
         {layers.map((src, i) => (i > 0 && !extraLayersReady ? null : (
-          <img
+          <HeroPicture
             key={src}
             src={src}
+            avif={layersAvif[i]}
             alt={layerAlts[i]}
             width={1600}
             height={1067}
-            loading={i === 0 ? "eager" : "lazy"}
-            fetchPriority={i === 0 ? "high" : "low"}
-            decoding="async"
+            priority={i === 0}
             className="absolute inset-0 w-full h-full object-cover object-[58%_18%] md:object-center"
             style={{
               opacity: layer === i ? 1 : 0,

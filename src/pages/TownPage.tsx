@@ -92,7 +92,7 @@ const TownPage = () => {
         {/* 1. Premium Hero */}
         <section className="dark-surface relative min-h-[90svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img loading="eager" fetchPriority="high" decoding="async" 
+            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={town.heroImage} 
               alt={`Mountain home in Western North Carolina — Highlander Roofing & Construction service area: ${town.name}, ${town.state}`}
               className="w-full h-full object-cover"

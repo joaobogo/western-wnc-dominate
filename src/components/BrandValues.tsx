@@ -292,7 +292,7 @@ export const ValuesTeamOverlay = ({ name, role, valueName, image }: ValuesTeamOv
     >
       <div className="aspect-[3/4] bg-secondary relative overflow-hidden">
         {image ? (
-          <img src={image} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"  loading="lazy" decoding="async" />
+          <img width={1600} height={1067} src={image} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"  loading="lazy" decoding="async" />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-primary/5">
             <span className="text-4xl font-heading font-bold text-primary/15">{name.charAt(0)}</span>

@@ -126,7 +126,7 @@ const HomeAdditions = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img decoding="async" src={heroImg} alt="Home addition project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Home addition project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -214,7 +214,7 @@ const HomeAdditions = () => {
                   Highlander builds home additions that integrate with your existing design theme — structurally, visually, and in the way the space flows.
                 </p>
                 <div className="mt-10 relative aspect-[16/7] overflow-hidden border border-border">
-                  <img loading="lazy" decoding="async" src={expansionContextImg} alt="Integrated home expansion" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
+                  <img width={1600} height={1067} loading="lazy" decoding="async" src={expansionContextImg} alt="Integrated home expansion" className="w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body italic">
@@ -262,7 +262,7 @@ const HomeAdditions = () => {
         {/* ─── EXPANSION TYPES ─── */}
         <section className="section-padding bg-background relative overflow-hidden">
           <div className="absolute right-0 top-0 w-1/3 h-full opacity-[0.03] pointer-events-none hidden lg:block">
-            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" alt="Mountain home addition planning" className="w-full h-full object-cover" />
+            <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" alt="Mountain home addition planning" className="w-full h-full object-cover" />
           </div>
 
           <div className="container-tight">
@@ -458,7 +458,7 @@ const HomeAdditions = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
-                  <img decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white text-sm font-heading font-bold tracking-wide mb-0.5">{img.label}</p>

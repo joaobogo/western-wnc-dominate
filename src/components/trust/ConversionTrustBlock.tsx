@@ -110,7 +110,7 @@ const ConversionTrustBlock = ({
     >
       {variant === "full" && project && (
         <Link to={`/projects/${project.slug}`} className="block relative group">
-          <img
+          <img width={1600} height={1067}
             src={project.heroImage}
             alt={`${project.type} project completed by Highlander in ${project.location}`}
             loading="lazy"

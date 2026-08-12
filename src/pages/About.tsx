@@ -84,7 +84,7 @@ const About = () => {
         {/* ── HERO — Warm editorial fade (unique to About — no text-reveal, no gold line) ── */}
         <section className="relative min-h-[55vh] md:min-h-[75vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img loading="eager" fetchPriority="high" decoding="async" 
+            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={storyImg} 
               alt="Western North Carolina mountains" 
               className="w-full h-full object-cover" 
@@ -182,7 +182,7 @@ const About = () => {
                 >
                   <div className="w-full md:w-48 lg:w-56 aspect-square overflow-hidden bg-muted flex items-center justify-center border border-border relative">
                     {person.image ? (
-                      <img loading="lazy" decoding="async" src={person.image} alt={person.alt} className="w-full h-full object-cover object-top hover:scale-[1.02] transition-all duration-700" />
+                      <img width={1600} height={1067} loading="lazy" decoding="async" src={person.image} alt={person.alt} className="w-full h-full object-cover object-top hover:scale-[1.02] transition-all duration-700" />
                     ) : (
                       <div className="text-center p-4">
                         <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
@@ -229,7 +229,7 @@ const About = () => {
                 >
                   <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center relative">
                     {person.image ? (
-                      <img loading="lazy" decoding="async" src={person.image} alt={person.alt} className="w-full h-full object-cover object-top group-hover:scale-[1.02] group-hover:scale-105 transition-all duration-700" />
+                      <img width={1600} height={1067} loading="lazy" decoding="async" src={person.image} alt={person.alt} className="w-full h-full object-cover object-top group-hover:scale-[1.02] group-hover:scale-105 transition-all duration-700" />
                     ) : (
                       <div className="text-center p-6">
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.35)] flex items-center justify-center">
@@ -322,7 +322,7 @@ const About = () => {
               transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
               className="mt-16 relative aspect-[21/9] md:aspect-[3/1] overflow-hidden border border-border"
             >
-              <img loading="lazy" decoding="async" src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover opacity-100 transition-opacity duration-700" />
+              <img width={1600} height={1067} loading="lazy" decoding="async" src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover opacity-100 transition-opacity duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
               <div className="absolute bottom-6 left-8 flex items-center gap-3">
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)]" />

@@ -54,7 +54,7 @@ const SyntheticRoofing = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img decoding="async" src={bravaHero} alt="Brava synthetic shake roofing on a Western North Carolina mountain home" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={bravaHero} alt="Brava synthetic shake roofing on a Western North Carolina mountain home" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.75)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.2)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.65)] via-transparent to-[hsl(var(--hero-overlay)/0.25)]" />
           </div>

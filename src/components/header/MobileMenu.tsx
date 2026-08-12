@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Phone } from "lucide-react";
 import { HIGHLAND_EASE, divisions, secondaryLinks } from "./nav-data";
 import { MobileServiceAreasList } from "./MobileServiceAreasList";
+import { preloadHandlers } from "@/lib/route-preload";
 
 interface Props {
   open: boolean;
@@ -87,6 +88,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                           <motion.div key={item.href} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: j * 0.03, duration: 0.2 }}>
                             <Link
                               to={item.href}
+                              {...preloadHandlers(item.href)}
                               onClick={onClose}
                               className={`py-2 px-2.5 rounded-sm transition-all block min-h-[44px] flex flex-col justify-center ${
                                 isActive(item.href) ? "bg-black/5" : "hover:bg-black/5"
@@ -134,6 +136,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               <motion.div key={link.label} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.03, duration: 0.3, ease: HIGHLAND_EASE }}>
                 <Link
                   to={link.href}
+                  {...preloadHandlers(link.href)}
                   onClick={onClose}
                   className={`py-2.5 px-2.5 text-[15px] font-bold rounded-sm transition-all flex items-center gap-2 font-body min-h-[44px] ${
                     isActive(link.href) ? "text-heritage-charcoal bg-black/5" : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"

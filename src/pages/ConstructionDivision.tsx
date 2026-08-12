@@ -106,7 +106,7 @@ const ConstructionDivision = () => {
         {/* ═══ HERO — Cinematic construction hero with gold accents ═══ */}
         <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img decoding="async" src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
@@ -242,7 +242,7 @@ const ConstructionDivision = () => {
 
                 <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="relative">
                   <div className="aspect-[4/3] rounded-none overflow-hidden border border-dark-section-foreground/6">
-                    <img decoding="async" src={proj3} alt="Room addition with standing seam metal roof integration" className="w-full h-full object-cover" loading="lazy" />
+                    <img width={1600} height={1067} decoding="async" src={proj3} alt="Room addition with standing seam metal roof integration" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[240px]">
                     <span className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
@@ -250,7 +250,7 @@ const ConstructionDivision = () => {
                       Design-first coordination, layout verification, and unified accountability — under one team.
                     </p>
                     <div className="mt-4 relative aspect-video overflow-hidden border border-border">
-                       <img loading="lazy" decoding="async" src={planningFocusImg} alt="Project scoping and planning" className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500" />
+                       <img width={1600} height={1067} loading="lazy" decoding="async" src={planningFocusImg} alt="Project scoping and planning" className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                   </motion.div>
                 </motion.div>
@@ -333,7 +333,7 @@ const ConstructionDivision = () => {
 
         {/* ═══ CRAFT DETAIL — Visual break ═══ */}
         <section className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
-          <img loading="lazy" decoding="async" src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover opacity-100" />
+          <img width={1600} height={1067} loading="lazy" decoding="async" src={constructionDetailImg} alt="Construction detail and craftsmanship" className="w-full h-full object-cover opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
           <div className="absolute bottom-10 left-10 flex items-center gap-4">
              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
@@ -398,7 +398,7 @@ const ConstructionDivision = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {galleryImages.map((img, i) => (
                 <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-none overflow-hidden">
-                  <img decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                     <div className="w-6 h-px bg-[hsl(var(--highland-gold)/0.5)] mb-2" />

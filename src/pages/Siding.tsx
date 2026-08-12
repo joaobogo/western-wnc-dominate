@@ -24,7 +24,7 @@ const Siding = () => {
       <main>
         <section className="relative min-h-[60vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img loading="eager" fetchPriority="high" decoding="async" 
+            <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" 
               alt="Mountain home with premium siding and exterior finishes"
               className="w-full h-full object-cover"
@@ -97,7 +97,7 @@ const Siding = () => {
                   </div>
                 </div>
                 <div className="absolute right-0 bottom-0 w-1/2 h-1/2 opacity-[0.05] pointer-events-none grayscale translate-x-4 translate-y-4">
-                   <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Texture detail" className="w-full h-full object-cover" />
+                   <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1518005020251-58296d87ba60?auto=format&fit=crop&q=80&w=800" alt="Texture detail" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

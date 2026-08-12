@@ -73,7 +73,7 @@ const InstagramGrid = () => {
               variants={itemVariants}
               className="group relative aspect-square rounded-none overflow-hidden cursor-pointer"
             >
-              <img decoding="async"
+              <img width={1600} height={1067} decoding="async"
                 src={item.image}
                 alt={item.label}
                 className="w-full h-full object-cover img-zoom-dramatic"
