@@ -725,6 +725,17 @@ export function startPageEngagement(pagePathValue: string) {
           page_title: pageTitle(),
           seconds_on_page: Math.round((Date.now() - startedAt) / 1000),
         });
+        // Dedicated 75% event: the standard "engaged reader" trigger used by
+        // the conversion tags, so GTM doesn't need a value-filtered trigger.
+        if (m === 75) {
+          push({
+            event: GTM_EVENTS.SCROLL_75,
+            percent_scrolled: 75,
+            page_path: pagePathValue,
+            page_title: pageTitle(),
+            seconds_on_page: Math.round((Date.now() - startedAt) / 1000),
+          });
+        }
       }
     }
   };
@@ -774,4 +785,68 @@ export function trackPrimaryCtaClick(opts: {
     page_path: pagePath(),
     page_title: pageTitle(),
   });
+  trackCtaClick({
+    cta_location: opts.click_location,
+    cta_text: opts.cta_text,
+    cta_type: `primary_${opts.intent}`,
+    destination_url: opts.destination_url,
+  });
+}
+
+/* ---------- Exit intent ---------- */
+
+const EXIT_INTENT_KEY = "hl_exit_intent_shown";
+
+/** Fires at most once per browsing session. */
+export function trackExitIntentShown(opts: { trigger: string; variant?: string | null }) {
+  if (typeof window === "undefined") return;
+  try {
+    if (window.sessionStorage.getItem(EXIT_INTENT_KEY)) return;
+    window.sessionStorage.setItem(EXIT_INTENT_KEY, "1");
+  } catch {
+    /* storage unavailable — still emit once per page load */
+  }
+  push({
+    event: GTM_EVENTS.EXIT_INTENT_SHOWN,
+    exit_trigger: opts.trigger,
+    variant: opts.variant ?? null,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
+let exitIntentInstalled = false;
+
+/**
+ * Detects abandonment signals (desktop: pointer leaving through the top of the
+ * viewport; mobile/desktop: tab hidden after real engagement) and emits
+ * `exit_intent_shown` once per session. Safe to call on every mount.
+ */
+export function installExitIntentDetection(onExitIntent?: (trigger: string) => void) {
+  if (exitIntentInstalled || typeof document === "undefined") return () => {};
+  exitIntentInstalled = true;
+  const mountedAt = Date.now();
+
+  const fire = (trigger: string) => {
+    // Ignore instant bounces — those are not decision-stage exits.
+    if (Date.now() - mountedAt < 5000) return;
+    trackExitIntentShown({ trigger });
+    onExitIntent?.(trigger);
+  };
+
+  const onMouseOut = (ev: MouseEvent) => {
+    if (ev.clientY <= 0 && !ev.relatedTarget) fire("pointer_exit_top");
+  };
+  const onVisibility = () => {
+    if (document.visibilityState === "hidden") fire("tab_hidden");
+  };
+
+  document.addEventListener("mouseout", onMouseOut);
+  document.addEventListener("visibilitychange", onVisibility);
+
+  return () => {
+    document.removeEventListener("mouseout", onMouseOut);
+    document.removeEventListener("visibilitychange", onVisibility);
+    exitIntentInstalled = false;
+  };
 }
