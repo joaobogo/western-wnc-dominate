@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -141,6 +142,16 @@ const CountyPage = () => {
             </div>
           </div>
         </section>
+
+        <AnswerBlock
+          question={`Does Highlander serve ${county.name} County, North Carolina?`}
+          answer={`Yes. Highlander Roofing Services, Inc. works across ${county.name} County from our Franklin, NC base, covering roof repair, roof replacement, metal roofing, gutters, and construction projects for mountain homes and commercial buildings.`}
+          points={[
+            `Crews across ${county.name} County`,
+            "Call 828-524-7773 to talk with the team",
+            "Roofing and construction handled in-house",
+          ]}
+        />
 
         {/* 2. County Intelligence — Authority Section */}
         <section className="py-24 bg-background relative overflow-hidden">

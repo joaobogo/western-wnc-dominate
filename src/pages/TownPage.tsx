@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -173,6 +174,17 @@ const TownPage = () => {
             </div>
           </div>
         </section>
+
+        <AnswerBlock
+          question={`Does Highlander do roofing and construction in ${town.name}, ${town.state}?`}
+          answer={`Yes. Highlander Roofing Services, Inc. is based at 76 Creative Dr, Franklin, NC 28734 and works throughout ${town.name} and the rest of ${town.county} County. We handle roof repair, roof replacement, metal roofing, gutters, and construction work built for Western North Carolina mountain weather.`}
+          points={[
+            `Local crews serving ${town.name}, ${town.state}`,
+            "Call 828-524-7773 to reach the team directly",
+            "Roofing, exteriors, and construction under one contractor",
+            "Estimates scoped in person, not over guesswork",
+          ]}
+        />
 
         {/* 1.5 Local Relevance — tight, conversion-focused per-town intro */}
         {localRelevance && (

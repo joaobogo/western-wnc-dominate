@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle, MapPin } from "lucide-react";
@@ -202,6 +203,16 @@ const ServiceTownPage = ({
             </div>
           </div>
         </section>
+
+        <AnswerBlock
+          question={`Who handles ${entry.serviceLabel.toLowerCase()} in ${town.name}, ${town.state}?`}
+          answer={entry.intro}
+          points={[
+            `${entry.serviceLabel} in ${town.name} and across ${town.county} County`,
+            "Call 828-524-7773 for a direct answer",
+            "Scoped on site by Highlander crews",
+          ]}
+        />
 
         {/* Local context */}
         <section className="section-padding bg-background">
