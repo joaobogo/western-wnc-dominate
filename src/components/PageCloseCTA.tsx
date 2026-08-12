@@ -33,7 +33,7 @@ const PageCloseCTA = ({
   context,
 }: Props) => {
   return (
-    <section className="section-dark dark-surface border-t border-dark-section-foreground/10">
+    <section aria-label="Next step" className="section-dark dark-surface border-t border-dark-section-foreground/10">
       <div className="section-padding">
         <div className="container-tight max-w-3xl text-center">
           <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] mb-4 block">
