@@ -25,11 +25,23 @@ type Lead = {
   jobtread_last_attempt_at: string | null;
   jobtread_error_message: string | null;
   jobtread_retry_count: number | null;
+  jobtread_exhausted_at: string | null;
   lead_score: number | null;
 };
 
 const SELECT_COLUMNS =
-  "id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url,jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count,lead_score";
+  "id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url,jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count,jobtread_exhausted_at,lead_score";
+
+/**
+ * A lead is "dead-lettered" once the background worker has burned through all
+ * of its retries without reaching the CRM. The lead itself is never lost — it
+ * is stored here and needs a human to resend it or enter it manually.
+ */
+const MAX_SYNC_ATTEMPTS = 5;
+function isDeadLetter(l: Lead): boolean {
+  if (l.jobtread_synced) return false;
+  return !!l.jobtread_exhausted_at || (l.jobtread_retry_count ?? 0) >= MAX_SYNC_ATTEMPTS;
+}
 
 const TIERS: LeadTierLabel[] = ["Hot", "Warm", "Engaged", "Cool"];
 
