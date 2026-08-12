@@ -1,4 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
+import { towns } from "@/data/towns";
 import {
   trackFormSuccess,
   trackFormError,
@@ -58,6 +59,8 @@ export type CanonicalLeadPayload = {
   // ----- Property -----
   property_address?: string | null;
   property_town?: string | null;
+  /** County of the property. Derived from `property_town` when omitted. */
+  property_county?: string | null;
   property_state?: string | null;
   property_zip?: string | null;
   property_type?: string | null;
@@ -84,6 +87,14 @@ export type CanonicalLeadPayload = {
   lead_score?: number | null;
   /** Defaults to window.location.pathname. */
   page_path?: string | null;
+  /**
+   * Where on the page/site the lead came from, e.g. "town_faq_cta",
+   * "sticky_mobile_bar", "hero_form". Complements `source` (the component)
+   * and `page_path` (the URL).
+   */
+  source_context?: string | null;
+  /** ISO timestamp of the visitor's submission. Defaults to now(). */
+  submitted_at?: string | null;
 
   // ----- Attachments -----
   attachments?: Array<string | LeadAttachment> | null;
@@ -173,6 +184,16 @@ export function decisionMakerOnSite(value?: string | null): boolean {
   const v = (value || "").toLowerCase().trim();
   if (!v) return false;
   return v === "self" || v === "me" || v === "owner" || v === "solo";
+}
+
+/** Resolves the county for a town name or slug from the shared towns dataset. */
+export function countyFromTown(town?: string | null): string | null {
+  const t = (town || "").trim().toLowerCase();
+  if (!t) return null;
+  const match = towns.find(
+    (x) => x.name.toLowerCase() === t || x.slug.toLowerCase() === t,
+  );
+  return match?.county ?? null;
 }
 
 /**
