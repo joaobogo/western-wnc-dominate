@@ -285,7 +285,9 @@ export function normalizeLeadPayload(input: LeadPayload) {
 
     lead_score: leadScore,
     page_path: pagePath,
-    source_context: clean(input.source_context),
+    // Always populated: falls back to the entry-point identifier so every row
+    // carries a usable context value.
+    source_context: clean(input.source_context) ?? clean(input.source),
     submitted_at: clean(input.submitted_at) ?? new Date().toISOString(),
 
     attachments,
