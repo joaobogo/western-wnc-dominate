@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useState, useEffect, lazy, Suspense } from "react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -71,6 +72,17 @@ const Index = () => {
         <section id="hero" className="min-h-[100svh]" data-hero-anchored="bottom">
           <Hero />
         </section>
+
+        <AnswerBlock
+          question="Who is Highlander Roofing & Construction?"
+          answer="Highlander Roofing Services, Inc. is a roofing and construction company based at 76 Creative Dr, Franklin, NC 28734, serving Franklin, Highlands, Cashiers, Sylva, and the wider Western North Carolina mountains with roof repair, roof replacement, metal roofing, gutters, and custom construction."
+          points={[
+            "Roofing, exteriors, and construction under one contractor",
+            "Serving Western North Carolina mountain towns",
+            "Call 828-524-7773 for a direct answer",
+            "Estimates scoped on site",
+          ]}
+        />
 
         {/* 2. TrustStrip — Immediate proof anchors */}
         <section id="trust">
