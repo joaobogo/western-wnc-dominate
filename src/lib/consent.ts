@@ -11,6 +11,8 @@
  * visitor chooses). This module is the single writer of that state.
  */
 
+import { trackConsentUpdate } from "./gtm";
+
 export const CONSENT_STORAGE_KEY = "hl_consent_v1";
 
 export interface ConsentState {
@@ -57,6 +59,7 @@ export function saveConsent(choice: Partial<Omit<ConsentState, "decidedAt">>): C
   const w = window as W;
   w.__hlConsent = state;
   w.__hlApplyConsent?.(state);
+  trackConsentUpdate(state);
   window.dispatchEvent(new CustomEvent("hl:consent", { detail: state }));
   return state;
 }
