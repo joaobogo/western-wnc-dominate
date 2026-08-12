@@ -4,6 +4,7 @@ import { HIGHLAND_EASE, divisions, secondaryLinks } from "./nav-data";
 import { DivisionDropdown } from "./DivisionDropdown";
 import { ServiceAreasDropdown } from "./ServiceAreasDropdown";
 import { forwardRef } from "react";
+import { preloadHandlers, preloadRoute } from "@/lib/route-preload";
 
 interface Props {
   openDropdown: string | null;
@@ -25,7 +26,10 @@ export const DesktopNav = forwardRef<HTMLElement, Props>(
           key={div.label}
           division={div}
           isOpen={openDropdown === div.label}
-          onEnter={() => onEnter(div.label)}
+          onEnter={() => {
+            preloadRoute(div.href);
+            onEnter(div.label);
+          }}
           onLeave={onLeave}
           onOpen={() => onOpen(div.label)}
           onClose={onClose}
@@ -54,6 +58,7 @@ export const DesktopNav = forwardRef<HTMLElement, Props>(
         <Link
           key={link.label}
           to={link.href}
+          {...preloadHandlers(link.href)}
           className={`relative text-[15px] font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
             isActive(link.href)
               ? "text-heritage-charcoal bg-black/5"
