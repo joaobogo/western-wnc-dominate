@@ -272,7 +272,13 @@ export default function AdminLeads() {
                 <span className="text-sm font-semibold">{l.name || l.email || l.phone || "Anonymous"}</span>
                 <div className="flex items-center gap-1">
                   <TierPill score={l.lead_score} />
-                  <SyncPill status={l.jobtread_sync_status} />
+                  {isDeadLetter(l) ? (
+                    <span className="text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded bg-destructive text-destructive-foreground">
+                      Needs resend
+                    </span>
+                  ) : (
+                    <SyncPill status={l.jobtread_sync_status} />
+                  )}
                   <span className="text-[10px] uppercase tracking-wide bg-primary/10 text-primary px-1.5 py-0.5 rounded">{l.status}</span>
                 </div>
               </div>
