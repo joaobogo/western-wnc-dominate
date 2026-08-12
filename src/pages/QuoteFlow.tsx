@@ -324,15 +324,16 @@ export default function QuoteFlow() {
     if (!contact.markAttempted()) return;
     setIsSubmitting(true);
 
-    // Calculate lead score
-    let score = 20; // base for submitting
-    if (form.phone) score += 15;
-    if (form.timeline === "emergency") score += 25;
-    else if (form.timeline === "1-month") score += 20;
-    else if (form.timeline === "1-3-months") score += 15;
-    if (form.description && form.description.length > 50) score += 10;
-    const primaryTowns = ["Highlands", "Cashiers", "Franklin", "Sylva"];
-    if (primaryTowns.includes(form.town)) score += 10;
+    // Shared 0–100 scoring model so every entry point is comparable.
+    const score = scoreLead({
+      serviceCategory: "roofing",
+      projectType: form.projectType,
+      timeline: form.timeline,
+      propertyType: form.propertyType,
+      town: form.town,
+      description: form.description,
+      bonus: form.phone ? 6 : 0, // a phone number makes the lead reachable today
+    });
 
     try {
       const consultId = (typeof crypto !== "undefined" && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}`;
