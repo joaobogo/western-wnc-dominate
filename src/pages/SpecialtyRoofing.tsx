@@ -20,6 +20,7 @@ import metal009 from "@/assets/gallery/metal-010.webp";
 import metal010 from "@/assets/gallery/metal-010.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
@@ -408,6 +409,11 @@ const SpecialtyRoofing = () => {
         </section>
         <ServiceInternalLinks title="Specialty Roofing" slug="specialty-roofing" />
       </main>
+      <section className="section-padding bg-muted/20">
+        <div className="container-tight">
+          <AttributedReviews category="roofing" heading="What homeowners say about our specialty roofing work" />
+        </div>
+      </section>
       <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />

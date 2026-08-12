@@ -19,6 +19,7 @@ import heroImg from "@/assets/gallery/asphalt-005.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
@@ -580,6 +581,11 @@ const StormDamage = () => {
         <ServiceInternalLinks title="Storm Damage Response" slug="storm-damage" />
       </main>
       <RealWorkWidget />
+      <section className="section-padding bg-muted/20">
+        <div className="container-tight">
+          <AttributedReviews category="storm" heading="What homeowners say about our storm damage work" />
+        </div>
+      </section>
       <ConversionTrustBlock variant="band" category="storm" />
       <Footer />
       <StickyMobileCTA />

@@ -17,6 +17,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import VeluxWidget from "@/components/VeluxWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 const faqs = [
@@ -241,6 +242,11 @@ const Skylights = () => {
         <ServiceInternalLinks title="Skylights" slug="skylights" />
       </main>
 
+      <section className="section-padding bg-muted/20">
+        <div className="container-tight">
+          <AttributedReviews category="roofing" heading="What homeowners say about our skylight work" />
+        </div>
+      </section>
       <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />

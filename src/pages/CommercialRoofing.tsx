@@ -18,6 +18,7 @@ import heroImg from "@/assets/gallery/metal-006.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
@@ -496,6 +497,11 @@ const CommercialRoofing = () => {
         <ServiceInternalLinks title="Commercial Roofing" slug="commercial-roofing" />
       </main>
       <RealWorkWidget />
+      <section className="section-padding bg-muted/20">
+        <div className="container-tight">
+          <AttributedReviews category="commercial" heading="What homeowners say about our commercial roofing work" />
+        </div>
+      </section>
       <ConversionTrustBlock variant="band" category="commercial" />
       <Footer />
       <StickyMobileCTA />
