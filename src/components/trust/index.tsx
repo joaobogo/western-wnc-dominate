@@ -292,9 +292,9 @@ export const StandardsCallout = ({
         <Icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} />
       </div>
       <div>
-        <h4 className={`font-heading font-semibold text-sm mb-1 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
+        <h3 className={`font-heading font-semibold text-sm mb-1 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
           {title}
-        </h4>
+        </h3>
         <p className={`text-[13px] font-body leading-relaxed ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
           {description}
         </p>
@@ -405,7 +405,7 @@ export const ReassuranceBlock = ({
 
 export const TrustSidebar = () => (
   <div className="bg-card border border-border rounded-sm p-5 md:p-6 space-y-4">
-    <h4 className="font-heading font-semibold text-sm text-foreground">Why Highlander</h4>
+    <h3 className="font-heading font-semibold text-sm text-foreground">Why Highlander</h3>
     <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
     {[
       "Licensed NC General Contractor",
