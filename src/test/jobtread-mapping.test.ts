@@ -5,7 +5,7 @@ beforeAll(() => {
   (globalThis as any).Deno = { env: { get: () => "test" }, serve: () => undefined };
 });
 
-const mod = async () => await import("../../supabase/functions/jobtread-sync/index.ts");
+const mod = async () => (await import("@jobtread-sync")) as any;
 
 const base = {
   name: "Jane Marie Van Dyke",

@@ -15,6 +15,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
       // Lets tests import pure helpers out of Deno edge functions.
       "npm:@supabase/supabase-js@2": "@supabase/supabase-js",
+      "@jobtread-sync": path.resolve(__dirname, "./supabase/functions/jobtread-sync/index.ts"),
     },
   },
 });
