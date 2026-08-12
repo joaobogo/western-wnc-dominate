@@ -47,6 +47,7 @@ const Hero = () => {
   }, []);
 
   const layers = [heroImage, heroLayer2, heroLayer3];
+  const layersAvif = [heroImageAvif, heroLayer2Avif, heroLayer3Avif];
   const layerAlts = [
     "Premium mountain home roof in Western North Carolina",
     "Standing seam metal roof on a WNC residence",
@@ -60,15 +61,14 @@ const Hero = () => {
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
             No video. All real WNC roof photography. */}
         {layers.map((src, i) => (i > 0 && !extraLayersReady ? null : (
-          <img
+          <HeroPicture
             key={src}
             src={src}
+            avif={layersAvif[i]}
             alt={layerAlts[i]}
             width={1600}
             height={1067}
-            loading={i === 0 ? "eager" : "lazy"}
-            fetchPriority={i === 0 ? "high" : "low"}
-            decoding="async"
+            priority={i === 0}
             className="absolute inset-0 w-full h-full object-cover object-[58%_18%] md:object-center"
             style={{
               opacity: layer === i ? 1 : 0,
