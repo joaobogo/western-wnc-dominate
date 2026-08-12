@@ -45,7 +45,7 @@ function isDeadLetter(l: Lead): boolean {
 
 const TIERS: LeadTierLabel[] = ["Hot", "Warm", "Engaged", "Cool"];
 
-const SYNC_STATES = ["success", "pending", "retry_needed", "failed"];
+const SYNC_STATES = ["success", "pending", "retry_needed", "failed", "dead_letter"];
 
 const STATUSES = [
   "new",
