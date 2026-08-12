@@ -1390,12 +1390,24 @@ img {
     width: 48px;
   }
 
-  /* Premium focus ring — replaces browser default */
+  /* Premium focus ring — replaces browser default.
+     Opacity is kept high enough to clear WCAG 2.1 AA non-text contrast (1.4.11)
+     on both cream and forest-green surfaces, with a dark halo so the gold ring
+     stays visible against light backgrounds. */
   *:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px hsl(var(--highland-gold) / 0.3),
-                0 0 0 4px hsl(var(--highland-gold) / 0.08);
+    outline: 2px solid transparent; /* preserved in Windows High Contrast Mode */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--highland-gold)),
+                0 0 0 4px hsl(var(--heritage-charcoal) / 0.55);
     border-radius: 2px;
+  }
+
+  /* Forced-colors users get the system focus indicator instead of our ring. */
+  @media (forced-colors: active) {
+    *:focus-visible {
+      outline: 2px solid Highlight;
+      box-shadow: none;
+    }
   }
 
   /* Image soft edge highlight — subtle inner glow */
