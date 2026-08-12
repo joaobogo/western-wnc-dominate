@@ -498,37 +498,8 @@ const InspectionForm = () => {
                         placeholder="(828) 555-0123"
                       />
                       <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("phone")}</InlineFieldError>
+                      <p className={hintClasses}>Name and phone are all we need to get you scheduled.</p>
                     </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-5">
-                    <div>
-                      <label htmlFor="email" className={labelClasses}>Email</label>
-                      <input
-                        id="email" type="email" maxLength={255}
-                        {...fieldAttrs.emailLast}
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        onBlur={() => contact.blur("email")}
-                        aria-invalid={Boolean(contact.errorFor("email")) || undefined}
-                        className={inputClasses}
-                        placeholder="you@email.com"
-                      />
-                      <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("email")}</InlineFieldError>
-                      <p className={hintClasses}>A phone number or an email is enough — whichever you prefer.</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="details" className={labelClasses}>Briefly, What's Going On?</label>
-                    <textarea
-                      id="details" rows={3} maxLength={1000}
-                      {...fieldAttrs.notes}
-                      value={formData.details}
-                      onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                      className={`${inputClasses} resize-none`}
-                      placeholder="A leak over the kitchen, an aging roof, a porch we'd like to build…"
-                    />
                   </div>
                 </div>
 
@@ -545,7 +516,7 @@ const InspectionForm = () => {
                     {showDetails ? "Hide extra details" : "Add details (optional)"}
                   </button>
                   <p className="text-white/70 text-[13px] font-body mt-2">
-                    Address, timing, insurance and photos help us prepare — none of it is required.
+                    Email, notes, address, timing, insurance and photos help us prepare — none of it is required.
                   </p>
 
                   <AnimatePresence initial={false}>
@@ -559,6 +530,31 @@ const InspectionForm = () => {
                         className="overflow-hidden"
                       >
                         <div className="space-y-5 pt-5">
+                          <div>
+                            <label htmlFor="email" className={labelClasses}>Email</label>
+                            <input
+                              id="email" type="email" maxLength={255}
+                              {...fieldAttrs.emailLast}
+                              value={formData.email}
+                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                              onBlur={() => contact.blur("email")}
+                              aria-invalid={Boolean(contact.errorFor("email")) || undefined}
+                              className={inputClasses}
+                              placeholder="you@email.com"
+                            />
+                            <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("email")}</InlineFieldError>
+                          </div>
+                          <div>
+                            <label htmlFor="details" className={labelClasses}>Briefly, What's Going On?</label>
+                            <textarea
+                              id="details" rows={3} maxLength={1000}
+                              {...fieldAttrs.notes}
+                              value={formData.details}
+                              onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                              className={`${inputClasses} resize-none`}
+                              placeholder="A leak over the kitchen, an aging roof, a porch we'd like to build…"
+                            />
+                          </div>
                           <div>
                             <label htmlFor="address" className={labelClasses}>Property Address</label>
                             <input
