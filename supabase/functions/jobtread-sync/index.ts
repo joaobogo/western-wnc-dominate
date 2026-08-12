@@ -591,8 +591,15 @@ function buildCustomerAccountName(row: LeadRow): string {
 
 function buildContactPayload(row: LeadRow) {
   const meta: any = row.metadata ?? {};
+  // First/last come from the canonical client-side name parser (multi-word
+  // surnames, particles and suffixes already resolved). Recompose the display
+  // name from them when the row has no stored full name.
+  const first = cleanName((row as any).first_name);
+  const last = cleanName((row as any).last_name);
   return {
-    name: cleanName(row.name) || null,
+    name: cleanName(row.name) || cleanName(`${first} ${last}`) || null,
+    first_name: first || null,
+    last_name: last || null,
     phone: row.phone ?? null,
     secondary_phone:
       (row as any).secondary_phone ?? meta.secondary_phone ?? meta.phone2 ?? null,
