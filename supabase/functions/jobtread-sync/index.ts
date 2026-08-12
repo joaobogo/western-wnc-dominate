@@ -1146,13 +1146,14 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
 
     const contactName = payload.contact?.name || "Website Lead";
     const town = payload.location?.town;
+    const county = payload.location?.county;
     const address = payload.location?.address;
 
     // ── SAFEGUARD: refuse to send a malformed Customer / Account Name.
     // If validation fails, the caller marks the lead retry_needed so the
     // Highlander team can supply a real name — we never invent one from
     // job title, address, or category.
-    const accountName = cleanName(payload.account_name);
+    let accountName = cleanName(payload.account_name);
     const acctErr = validateCustomerAccountName(accountName, {
       jobName: payload.job_name,
       locationName: payload.location_display_name,
@@ -1168,9 +1169,12 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
     // survive truncation — they are the only way the crew reaches the files.
     const noteShort = truncateNotePreservingFiles(noteFull, 1000);
 
-    // Step 1 — dedupe by account name. JobTread enforces unique account
-    // names within an org, so look up first and reuse the existing account
-    // when possible; otherwise create a new one.
+    // Step 1 — resolve the Customer by "full name + town".
+    // JobTread enforces unique account names within an org, so we look the
+    // name up first. If an Account with that name exists AND it has a
+    // location in this lead's town, we reuse it. If it exists in a different
+    // town, we create a separate Account named "Full Name (Town)" — we never
+    // rename or merge the existing customer.
     let accountId: string | undefined;
     const lookupRes = await paveFetch({
       $: { grantKey: JOBTREAD_API_KEY },
@@ -1185,11 +1189,38 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
             },
             size: 1,
           },
-          nodes: { id: {}, name: {} },
+          nodes: {
+            id: {},
+            name: {},
+            locations: { $: { size: 20 }, nodes: { id: {}, name: {}, address: {} } },
+          },
         },
       },
     });
-    accountId = lookupRes?.organization?.accounts?.nodes?.[0]?.id;
+    const existing = lookupRes?.organization?.accounts?.nodes?.[0];
+    if (existing?.id) {
+      const locs = existing?.locations?.nodes ?? null;
+      if (accountMatchesTown(locs, town)) {
+        accountId = existing.id;
+      } else {
+        // Same name, different town → distinct customer. Never rename/merge.
+        accountName = buildTownScopedAccountName(accountName, town);
+        const scopedRes = await paveFetch({
+          $: { grantKey: JOBTREAD_API_KEY },
+          organization: {
+            $: { id: orgId },
+            accounts: {
+              $: {
+                where: { and: [{ "=": [{ field: "name" }, { value: accountName }] }] },
+                size: 1,
+              },
+              nodes: { id: {}, name: {} },
+            },
+          },
+        });
+        accountId = scopedRes?.organization?.accounts?.nodes?.[0]?.id;
+      }
+    }
     let accountIsNew = false;
     if (!accountId) {
       const accountRes = await paveFetch({
