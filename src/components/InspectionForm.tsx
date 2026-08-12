@@ -5,6 +5,7 @@ import { ArrowRight, ArrowLeft, ChevronDown, CheckCircle, Shield, Clock, Phone, 
 import { trackEvent } from "@/lib/analytics";
 import { trackFormStepComplete } from "@/lib/gtm";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import { projectTypeFromPage } from "@/lib/form-service-context";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -61,6 +62,9 @@ const InspectionForm = () => {
   const [step, setStep] = useState<1 | 2>(1);
   /** Optional fields stay collapsed so the visible form is only what we need. */
   const [showDetails, setShowDetails] = useState(false);
+  /** Service type implied by the page — no need to ask again. */
+  const presetProjectType = useRef<string>(projectTypeFromPage());
+  const [showProjectChoices, setShowProjectChoices] = useState(!presetProjectType.current);
   const [townError, setTownError] = useState<string | null>(null);
   const [projectError, setProjectError] = useState<string | null>(null);
   const [files, setFiles] = useState<File[]>([]);
@@ -71,7 +75,7 @@ const InspectionForm = () => {
     phone: "",
     email: "",
     town: townFromQuery(),
-    projectType: "",
+    projectType: presetProjectType.current,
     details: "",
     // Optional — revealed behind "Add details"
     address: "",
@@ -93,7 +97,7 @@ const InspectionForm = () => {
     email: formData.email,
     address: formData.address,
     town: formData.town,
-    require: { name: true },
+    require: { name: true, phone: true },
   });
 
   const addFiles = (incoming: FileList | null) => {
