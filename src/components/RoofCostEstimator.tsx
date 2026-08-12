@@ -6,6 +6,7 @@ import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import FormConsent from "@/components/FormConsent";
+import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import { fieldAttrs } from "@/lib/field-ergonomics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -251,6 +252,7 @@ const RoofCostEstimator = () => {
                         {towns.map((t) => <option key={t} value={t}>{t}</option>)}
                       </select>
                     </div>
+                    <WhatHappensNext className="mb-1" />
                     <FormConsent />
                     <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-heading font-bold py-3.5 rounded-none flex items-center justify-center gap-2 btn-primary-interactive disabled:opacity-60">
                       <span className="relative z-10">{submitting ? "Sending…" : "See My Estimate"}</span>

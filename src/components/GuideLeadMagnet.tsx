@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, Download, X, FileText, Shield, CloudLightning, Wrench, CheckCircle } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
+import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import { fieldAttrs } from "@/lib/field-ergonomics";
 
@@ -103,6 +104,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
             <label className={labelClass} htmlFor="f-email">Email</label>
             <input id="f-email" {...fieldAttrs.emailLast} value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
           </div>
+          <WhatHappensNext variant="email" className="mb-1" />
           <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase disabled:opacity-60">
             {submitting ? (
               <>
