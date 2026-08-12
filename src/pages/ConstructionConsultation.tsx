@@ -8,6 +8,7 @@ import { ConfirmationState } from "@/components/conversion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { actionableError, errorTitle } from "@/lib/microcopy";
+import { scoreLead } from "@/lib/lead-scoring";
 import {
   HardHat, Home, Paintbrush, TreePine, Wrench, Compass,
   ArrowRight, ArrowLeft, CheckCircle, Loader2,
@@ -354,16 +355,17 @@ export default function ConstructionConsultation() {
     if (!form.name || !form.email) return;
     setIsSubmitting(true);
 
-    let score = 25;
-    if (form.phone) score += 15;
-    if (form.projectGoals.length >= 3) score += 10;
-    if (form.hasPlans === "yes-pro-plans") score += 15; // premium lead signal from plans
-    else if (form.hasPlans === "yes-sketches") score += 10;
-    if (form.budgetRange === "100-200k" || form.budgetRange === "200k-plus") score += 15;
-    else if (form.budgetRange === "50-100k") score += 10;
-    if (form.description && form.description.length > 80) score += 10;
-    const primaryTowns = ["Highlands", "Cashiers", "Franklin", "Sylva", "Asheville Area"];
-    if (primaryTowns.includes(form.town)) score += 5;
+    // Shared 0-100 scoring model so every entry point is comparable.
+    const score = scoreLead({
+      serviceCategory: "construction",
+      projectType: form.projectType,
+      timeline: form.timeline,
+      budgetRange: form.budgetRange,
+      hasPlans: form.hasPlans ? form.hasPlans.startsWith("yes") : null,
+      town: form.town,
+      description: form.description,
+      bonus: (form.phone ? 6 : 0) + (form.projectGoals.length >= 3 ? 4 : 0),
+    });
 
     try {
       const { error } = await supabase.from("consultation_requests").insert({

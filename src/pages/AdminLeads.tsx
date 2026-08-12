@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { leadTierLabel, type LeadTierLabel } from "@/lib/lead-scoring";
 
@@ -59,6 +59,8 @@ const STATUSES = [
 
 export default function AdminLeads() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const deepLinkId = searchParams.get("lead");
   const [loading, setLoading] = useState(true);
   const [authed, setAuthed] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -96,12 +98,19 @@ export default function AdminLeads() {
           .select(SELECT_COLUMNS)
           .order("created_at", { ascending: false })
           .limit(200);
-        setLeads((rows ?? []) as Lead[]);
+        const list = (rows ?? []) as Lead[];
+        setLeads(list);
+        // Deep link from the Teams alert: /admin/leads?lead=<id>
+        const wanted = deepLinkId;
+        if (wanted) {
+          const match = list.find((l) => l.id === wanted);
+          if (match) setSelected(match);
+        }
       }
       setLoading(false);
     });
     return () => { mounted = false; };
-  }, [navigate]);
+  }, [navigate, deepLinkId]);
 
   const updateStatus = async (id: string, status: string) => {
     const { error } = await supabase.from("leads").update({ status }).eq("id", id);

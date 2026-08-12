@@ -165,7 +165,8 @@ const RoofingBuilder = () => {
         town: data.town,
         hasPhotos: uploadedPaths.length > 0,
         description: data.description,
-      }) + 12; // builder = higher-intent than basic intake
+        bonus: 12, // higher-commitment entry point
+      });  // builder = higher-intent than basic intake
 
       const { routing, jobtread } = deriveRoofingRouting({
         source: "roofing_builder",

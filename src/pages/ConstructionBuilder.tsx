@@ -192,7 +192,8 @@ const ConstructionBuilder = () => {
         town: data.town,
         hasPlans: uploadedPaths.length > 0,
         description: data.description,
-      }) + 14; // builder leads carry more depth
+        bonus: 14, // higher-commitment entry point
+      });  // builder leads carry more depth
 
       const { routing, jobtread } = deriveConstructionRouting({
         source: "construction_builder",

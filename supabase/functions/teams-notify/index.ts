@@ -115,7 +115,16 @@ async function postToTeams(html: string) {
   return await res.json();
 }
 
-function buildLeadMessage(kind: string, row: Record<string, any>) {
+/** Direct link to the lead detail view in the admin dashboard. */
+function adminLink(table: string, id: unknown): string {
+  const leadId = String(id ?? "").trim();
+  if (!leadId) return "";
+  return table === "leads"
+    ? `${SITE}/admin/leads?lead=${encodeURIComponent(leadId)}`
+    : `${SITE}/admin/leads`;
+}
+
+function buildLeadMessage(kind: string, row: Record<string, any>, table = "leads") {
   const name = row.name || "Name not provided";
   const town = row.property_town || row.town || "";
   const service =
@@ -152,6 +161,7 @@ function buildLeadMessage(kind: string, row: Record<string, any>) {
     line("Source page", clip(row.page_url || row.page_path, 300)),
     line("Campaign", row.utm_campaign || row.utm_source),
     line("Received", easternTime(row.created_at)),
+    linkLine("Open lead", adminLink(table, row.id), "View in admin dashboard"),
     linkLine("JobTread Job", jobUrl, "Open in JobTread"),
   ]
     .filter(Boolean)
@@ -284,7 +294,7 @@ Deno.serve(async (req) => {
           .maybeSingle();
         if (fresh) notifyRow = fresh;
       }
-      await postToTeams(buildLeadMessage(label, notifyRow));
+      await postToTeams(buildLeadMessage(label, notifyRow, table));
     }
     return new Response(JSON.stringify({ ok: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
