@@ -141,7 +141,7 @@ const RoofRepair = () => {
                 Water stains, missing shingles, or a drip you can&apos;t trace — call and a local crew inspects the roof, shows you photos of what failed, and gives you a written repair scope and price before anything is touched. Serving Franklin, Highlands, Cashiers, Sylva and Western North Carolina.
               </motion.p>
 
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
                 {/* Primary action on repair pages is the phone call (see page-cta-hierarchy.ts) */}
                 <a href="tel:+18285247773" className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
                   <Phone className="w-5 h-5" /> (828) 524-7773
@@ -151,6 +151,10 @@ const RoofRepair = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
+              {/* One-line reason to call instead of writing (CRO Prompt 12) */}
+              <p className="mt-3 text-[13px] md:text-[14px] font-body text-white/80 max-w-xl leading-snug">
+                An active leak can&apos;t wait on email — call and we&apos;ll triage the roof on the phone and get an inspection on the schedule.
+              </p>
 
               {/* Response commitment — unique to Repair */}
               <motion.div

@@ -1,3 +1,4 @@
+import { getAnalyticsPageType, getTownSlugFromPath, isUrgentIntentPath } from "@/lib/urgent-intent";
 /**
  * Google Tag Manager dataLayer helpers.
  *
@@ -124,6 +125,10 @@ function push(event: AnyRecord) {
   });
 }
 
+function currentPath() {
+  if (typeof window === "undefined") return "/";
+  return window.location.pathname;
+}
 function pagePath() {
   if (typeof window === "undefined") return "";
   return window.location.pathname + window.location.search;
@@ -245,10 +250,13 @@ export function trackPhoneClick(opts: {
   link_url: string;
   click_location: string;
   town?: string | null;
+  page_type?: string | null;
 }) {
   push({
     event: "phone_click",
-    town: opts.town ?? null,
+    town: opts.town ?? getTownSlugFromPath(currentPath()),
+    page_type: opts.page_type ?? getAnalyticsPageType(currentPath()),
+    urgent_intent: isUrgentIntentPath(currentPath()),
     phone_number: opts.phone_number,
     link_url: opts.link_url,
     page_path: pagePath(),
@@ -626,7 +634,8 @@ export function installGtmGlobalListeners() {
           phone_number: display,
           link_url: href,
           click_location: phoneLoc,
-          town: phoneTown,
+          town: phoneTown ?? getTownSlugFromPath(currentPath()),
+          page_type: getAnalyticsPageType(currentPath()),
         });
         if (phoneLoc === "town_faq" && phoneTown) {
           trackTownFaqConversionIntent({
