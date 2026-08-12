@@ -12,6 +12,7 @@ import { MultiStepForm, ConfirmationState } from "@/components/conversion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { actionableError, errorTitle } from "@/lib/microcopy";
+import { scoreLead } from "@/lib/lead-scoring";
 import {
   Home, Building2, Hammer, CloudLightning, PlusCircle,
   Paintbrush, TreePine, Wrench, MapPin, Clock, User, FileText
@@ -326,7 +327,7 @@ export default function QuoteFlow() {
 
     // Shared 0–100 scoring model so every entry point is comparable.
     const score = scoreLead({
-      serviceCategory: "roofing",
+      serviceCategory: form.serviceCategory || "roofing",
       projectType: form.projectType,
       timeline: form.timeline,
       propertyType: form.propertyType,
