@@ -13,6 +13,15 @@ export interface BlogSummary {
 
 export const blogSummaries: BlogSummary[] = [
   {
+    "id": "metal-roof-vs-shingle-roof-western-north-carolina",
+    "slug": "metal-roof-vs-shingle-roof-western-north-carolina",
+    "title": "Metal Roof vs Shingle Roof: Cost, Lifespan, and Comparison for Mountain Homes",
+    "excerpt": "A detailed Western North Carolina comparison of standing seam metal, exposed-fastener panels, and dimensional asphalt shingles \\u2014 cost per square foot, realistic lifespan, and how each performs in mountain rain, wind, snow, and shade.",
+    "category": "Materials",
+    "date": "2026-08-12",
+    "readTime": "14 min"
+  },
+  {
     "id": "attic-ventilation-waynesville-nc-winter",
     "slug": "attic-ventilation-waynesville-nc-winter",
     "title": "Attic Ventilation in Waynesville: The Fix Most Winter Roof Problems Start With",
@@ -108,15 +117,6 @@ export const blogSummaries: BlogSummary[] = [
     "title": "What to Check After a Storm in Sylva, North Carolina",
     "excerpt": "A safe, practical post storm checklist for Sylva, NC homeowners, plus when to call a local roofer for a professional evaluation.",
     "category": "Storm Damage",
-    "date": "2026-07-25",
-    "readTime": "7 min"
-  },
-  {
-    "id": "exterior-repairs-before-winter-sylva-nc",
-    "slug": "exterior-repairs-before-winter-sylva-nc",
-    "title": "Exterior Repairs Sylva Homeowners Should Address Before Winter",
-    "excerpt": "The exterior repairs Sylva, NC homeowners should address before winter to prevent water, ice, and structural damage.",
-    "category": "Maintenance",
     "date": "2026-07-25",
     "readTime": "7 min"
   }
