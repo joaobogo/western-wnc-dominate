@@ -392,6 +392,15 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .insert([row as any]);
   if (error) {
+    // Server-side idempotency: a unique index on `idempotency_key` means a
+    // racing double submit (double click, retry after a timeout that actually
+    // succeeded) hits a unique violation instead of creating a second lead.
+    // The first write is already durable, so this is a success for the visitor.
+    if ((error as { code?: string })?.code === "23505") {
+      console.info("submitLead: duplicate submission rejected by the database");
+      rememberSubmission(fingerprint, idem.key, idem.lead_id ?? null);
+      return { id: idem.lead_id ?? null, error: null, duplicate: true };
+    }
     console.error("submitLead error:", error);
     // The durable write failed, so this key never represented a stored lead.
     // Clear it so the visitor's next attempt is treated as a fresh submission.

@@ -25,15 +25,27 @@ type Lead = {
   jobtread_last_attempt_at: string | null;
   jobtread_error_message: string | null;
   jobtread_retry_count: number | null;
+  jobtread_exhausted_at: string | null;
   lead_score: number | null;
 };
 
 const SELECT_COLUMNS =
-  "id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url,jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count,lead_score";
+  "id,created_at,source,lead_type,status,name,phone,email,property_town,service_category,project_type,urgency,project_description,chat_summary,page_url,jobtread_synced,jobtread_sync_status,jobtread_id,jobtread_last_attempt_at,jobtread_error_message,jobtread_retry_count,jobtread_exhausted_at,lead_score";
+
+/**
+ * A lead is "dead-lettered" once the background worker has burned through all
+ * of its retries without reaching the CRM. The lead itself is never lost — it
+ * is stored here and needs a human to resend it or enter it manually.
+ */
+const MAX_SYNC_ATTEMPTS = 5;
+function isDeadLetter(l: Lead): boolean {
+  if (l.jobtread_synced) return false;
+  return !!l.jobtread_exhausted_at || (l.jobtread_retry_count ?? 0) >= MAX_SYNC_ATTEMPTS;
+}
 
 const TIERS: LeadTierLabel[] = ["Hot", "Warm", "Engaged", "Cool"];
 
-const SYNC_STATES = ["success", "pending", "retry_needed", "failed"];
+const SYNC_STATES = ["success", "pending", "retry_needed", "failed", "dead_letter"];
 
 const STATUSES = [
   "new",
@@ -53,6 +65,7 @@ export default function AdminLeads() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [selected, setSelected] = useState<Lead | null>(null);
   const [resending, setResending] = useState<string | null>(null);
+  const [retryingAll, setRetryingAll] = useState(false);
   const [tierFilter, setTierFilter] = useState<string>("all");
   const [sourceFilter, setSourceFilter] = useState<string>("all");
   const [townFilter, setTownFilter] = useState<string>("all");
@@ -127,6 +140,19 @@ export default function AdminLeads() {
     navigate("/admin/login", { replace: true });
   };
 
+  const deadLetters = useMemo(() => leads.filter(isDeadLetter), [leads]);
+
+  const retryAllDeadLetters = async () => {
+    setRetryingAll(true);
+    try {
+      for (const l of deadLetters) {
+        await retryJobTread(l.id);
+      }
+    } finally {
+      setRetryingAll(false);
+    }
+  };
+
   const sources = useMemo(
     () => Array.from(new Set(leads.map(l => l.source).filter(Boolean))).sort(),
     [leads],
@@ -143,7 +169,11 @@ export default function AdminLeads() {
       if (tierFilter !== "all" && leadTierLabel(l.lead_score) !== tierFilter) return false;
       if (sourceFilter !== "all" && l.source !== sourceFilter) return false;
       if (townFilter !== "all" && (l.property_town ?? "") !== townFilter) return false;
-      if (syncFilter !== "all" && (l.jobtread_sync_status ?? "pending") !== syncFilter) return false;
+      if (syncFilter === "dead_letter") {
+        if (!isDeadLetter(l)) return false;
+      } else if (syncFilter !== "all" && (l.jobtread_sync_status ?? "pending") !== syncFilter) {
+        return false;
+      }
       const t = new Date(l.created_at).getTime();
       if (from && t < from) return false;
       if (to && t > to) return false;
@@ -184,6 +214,30 @@ export default function AdminLeads() {
           <button onClick={signOut} className="underline">Sign out</button>
         </div>
       </header>
+      {deadLetters.length > 0 && (
+        <div className="border-b border-destructive/30 bg-destructive/10 px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-destructive">
+              {deadLetters.length} lead{deadLetters.length === 1 ? "" : "s"} did not reach the CRM
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Every one is stored here and safe. They ran out of automatic retries — resend them or enter them in JobTread by hand.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 text-xs">
+            <button onClick={() => setSyncFilter("dead_letter")} className="underline">
+              Show only these
+            </button>
+            <button
+              onClick={retryAllDeadLetters}
+              disabled={retryingAll}
+              className="rounded bg-destructive px-3 py-1.5 text-destructive-foreground disabled:opacity-50"
+            >
+              {retryingAll ? "Resending…" : "Resend all to CRM"}
+            </button>
+          </div>
+        </div>
+      )}
       <div className="border-b border-border px-6 py-3 flex flex-wrap items-end gap-3 text-xs">
         <FilterSelect label="Tier" value={tierFilter} onChange={setTierFilter} options={TIERS} />
         <FilterSelect label="Sync" value={syncFilter} onChange={setSyncFilter} options={SYNC_STATES} />
@@ -218,7 +272,13 @@ export default function AdminLeads() {
                 <span className="text-sm font-semibold">{l.name || l.email || l.phone || "Anonymous"}</span>
                 <div className="flex items-center gap-1">
                   <TierPill score={l.lead_score} />
-                  <SyncPill status={l.jobtread_sync_status} />
+                  {isDeadLetter(l) ? (
+                    <span className="text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded bg-destructive text-destructive-foreground">
+                      Needs resend
+                    </span>
+                  ) : (
+                    <SyncPill status={l.jobtread_sync_status} />
+                  )}
                   <span className="text-[10px] uppercase tracking-wide bg-primary/10 text-primary px-1.5 py-0.5 rounded">{l.status}</span>
                 </div>
               </div>
