@@ -396,6 +396,7 @@ const TownPage = () => {
           <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" />
           <AttributedReviews town={town.name} category="roofing" />
         </div>
+        <WhoShowsUp town={town.name} />
         <InspectionForm />
         <RelatedLinks
           eyebrow="Explore Services"

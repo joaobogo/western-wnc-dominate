@@ -424,6 +424,8 @@ const ExteriorImprovements = () => {
           </div>
         </section>
 
+        <WhoShowsUp />
+
         {/* ─── CLOSING CTA ─── */}
         <ConstructionClosingCTA
           headline={"Your Home's Best Days\nDon't Have to Be Behind It."}

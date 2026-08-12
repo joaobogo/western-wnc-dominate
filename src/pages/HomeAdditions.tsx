@@ -541,6 +541,8 @@ const HomeAdditions = () => {
           ctaLabel="Build Your Addition Plan"
         />
 
+        <WhoShowsUp />
+
         {/* ─── CLOSING CTA ─── */}
         <DesignProgramPromo
           heading="Most Additions Start With a Design Phase."

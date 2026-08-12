@@ -882,6 +882,8 @@ const ResidentialRoofing = () => {
           </div>
         </section>
 
+        <WhoShowsUp />
+
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div

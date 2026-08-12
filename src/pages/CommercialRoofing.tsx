@@ -452,6 +452,8 @@ const CommercialRoofing = () => {
           </div>
         </section>
 
+        <WhoShowsUp />
+
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />

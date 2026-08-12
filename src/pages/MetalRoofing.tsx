@@ -213,6 +213,8 @@ const MetalRoofing = () => {
           </div>
         </section>
 
+        <WhoShowsUp />
+
         <BuilderPromoBlock
           variant="band"
           preset="metal_upgrade"

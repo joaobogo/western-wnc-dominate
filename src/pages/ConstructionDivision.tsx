@@ -482,6 +482,8 @@ const ConstructionDivision = () => {
 
         <BuilderPromoBlock mode="construction" variant="band" />
 
+        <WhoShowsUp />
+
         {/* ═══ CLOSING CTA ═══ */}
         <ConstructionClosingCTA
           headline={"Your Home Deserves a Builder\nWho Treats It Like Their Own."}

@@ -158,6 +158,8 @@ const Siding = () => {
           </div>
         </section>
 
+        <WhoShowsUp />
+
         {/* ── CLOSING CTA ── */}
         <section className="section-padding bg-primary">
           <div className="container-tight text-center">

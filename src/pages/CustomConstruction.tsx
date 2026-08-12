@@ -414,6 +414,8 @@ const CustomConstruction = () => {
           </div>
         </section>
 
+        <WhoShowsUp />
+
         {/* ─── CLOSING CTA ─── */}
         <ConstructionClosingCTA
           headline={"The Right Builder Makes\nAll the Difference."}

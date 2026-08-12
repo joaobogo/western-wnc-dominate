@@ -421,6 +421,8 @@ const Renovations = () => {
           </div>
         </section>
 
+        <WhoShowsUp />
+
         {/* ─── CLOSING CTA ─── */}
         <DesignProgramPromo
           heading="Serious Renovations Start With a Design Phase."

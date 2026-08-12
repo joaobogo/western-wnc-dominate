@@ -475,6 +475,8 @@ const OutdoorLiving = () => {
           ctaLabel="Build Your Outdoor Plan"
         />
 
+        <WhoShowsUp />
+
         {/* ─── CLOSING CTA ─── */}
         <DesignProgramPromo
           heading="Multi-Phase Outdoor Builds Deserve Real Planning."

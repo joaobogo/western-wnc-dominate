@@ -228,6 +228,8 @@ const Skylights = () => {
             </Accordion>
           </div>
         </section>
+        <WhoShowsUp />
+
         <CTABlock />
       <RelatedLinks
           eyebrow="Keep Exploring"
