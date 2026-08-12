@@ -12,6 +12,8 @@ import { getServiceBySlug, services } from "@/data/services";
 import { towns } from "@/data/towns";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getDivisionTheme } from "@/lib/division-theme";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -214,6 +216,10 @@ const ServicePage = () => {
           </div>
         </section>
 
+        <CommonConcerns />
+        {service.division !== "construction" && (
+          <CostContextBlock serviceLabel={service.title.toLowerCase()} />
+        )}
         <div className="container-tight pt-16 md:pt-20">
           <AttributedReviews
             category={service.division === "construction" ? "construction" : "roofing"}

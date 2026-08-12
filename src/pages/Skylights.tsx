@@ -16,6 +16,8 @@ import CTABlock from "@/components/CTABlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import VeluxWidget from "@/components/VeluxWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -242,6 +244,8 @@ const Skylights = () => {
         <ServiceInternalLinks title="Skylights" slug="skylights" />
       </main>
 
+        <CommonConcerns />
+        <CostContextBlock serviceLabel="skylight" />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
           <AttributedReviews category="roofing" heading="What homeowners say about our skylight work" />

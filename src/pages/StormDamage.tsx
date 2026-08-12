@@ -18,6 +18,8 @@ import StormResponseGuide from "@/components/StormResponseGuide";
 import heroImg from "@/assets/gallery/asphalt-005.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -581,6 +583,8 @@ const StormDamage = () => {
         <ServiceInternalLinks title="Storm Damage Response" slug="storm-damage" />
       </main>
       <RealWorkWidget />
+        <CommonConcerns />
+        <CostContextBlock serviceLabel="storm damage" />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
           <AttributedReviews category="storm" heading="What homeowners say about our storm damage work" />
