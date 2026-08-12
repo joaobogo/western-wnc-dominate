@@ -287,13 +287,13 @@ const RoofingDivision = () => {
             transition={{ duration: 2, delay: 0.5 }}
           />
 
-          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-20 pt-32 md:pt-40">
-            <div className="max-w-3xl">
+          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-10 md:pb-20 pt-24 md:pt-40">
+            <div className="max-w-3xl flex flex-col">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex flex-col gap-6 mb-8"
+                className="order-4 md:order-none flex flex-col gap-4 md:gap-6 mt-8 md:mt-0 mb-0 md:mb-8"
               >
                 <div className="inline-flex items-center gap-4">
                   <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
@@ -312,7 +312,7 @@ const RoofingDivision = () => {
                 </div>
               </motion.div>
 
-              <h1 className="mb-8 text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight">
+              <h1 className="order-1 md:order-none mb-4 md:mb-8 text-[34px] md:text-5xl lg:text-6xl xl:text-8xl font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight">
                 <span className="block overflow-hidden mb-2">
                   <motion.span
                     className="block"
@@ -339,16 +339,17 @@ const RoofingDivision = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1 }}
-                className="text-[19px] md:text-[22px] text-primary-foreground/90 max-w-2xl mb-12 leading-relaxed font-body font-medium"
+                className="order-2 md:order-none text-[17px] md:text-[22px] text-primary-foreground/90 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
               >
-                Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed ShingleMaster credentialed, licensed, and insured.
+                <span className="md:hidden">Wind, ice, and ridgeline exposure end mountain roofs early. We inspect, spec the right system, and put scope and price in writing first.</span>
+                <span className="hidden md:inline">Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed ShingleMaster credentialed, licensed, and insured.</span>
               </motion.p>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+                className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4"
               >
                 <Link
                   to="/consultation"
