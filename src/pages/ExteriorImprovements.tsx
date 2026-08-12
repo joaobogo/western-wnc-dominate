@@ -20,6 +20,7 @@ import proj1 from "@/assets/gallery/asphalt-008.webp";
 import proj2 from "@/assets/gallery/metal-010.webp";
 import proj3 from "@/assets/gallery/cedar-005.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -168,6 +169,11 @@ const ExteriorImprovements = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What are exterior improvements?"
+          answer="Exterior improvements bundle the work that protects and finishes the outside of a home — roofing, siding, gutters, trim, windows, doors, and outdoor structures. Handling them together keeps flashing details continuous and avoids gaps between separate trades. Highlander handles full exterior scopes across Western North Carolina."
+          points={["Roofing, siding, gutters, and trim in one scope", "Continuous flashing detail between systems", "Single point of accountability for the exterior"]}
+        />
 
         {/* ─── OPENING — Protection-focused with left-aligned editorial ─── */}
         <section className="section-padding bg-background">

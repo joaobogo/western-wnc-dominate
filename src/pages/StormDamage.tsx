@@ -17,6 +17,7 @@ import StormResponseGuide from "@/components/StormResponseGuide";
 
 import heroImg from "@/assets/gallery/asphalt-005.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -218,6 +219,11 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is storm damage roofing work in Western North Carolina?"
+          answer="Storm damage work starts with documenting wind, hail, or falling-tree damage, protecting the home from further water intrusion, and then restoring the roof system. In the mountains, damage is often concentrated on exposed slopes and at flashing points rather than spread evenly. Highlander inspects, documents, and repairs storm damage across the region."
+          points={["Damage documentation for your insurance claim", "Temporary protection to stop further water intrusion", "Full repair or replacement once scope is set"]}
+        />
 
         {/* ─── OPENING STATEMENT ─── */}
         <section className="section-padding bg-background">

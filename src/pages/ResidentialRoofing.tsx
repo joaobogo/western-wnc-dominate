@@ -25,6 +25,7 @@ import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import cedarDetail from "@/assets/gallery/cedar-001.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -295,6 +296,11 @@ const ResidentialRoofing = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is residential roofing, and who is it for?"
+          answer="Residential roofing covers repair, replacement, and new roof systems on single-family mountain homes, cabins, and second homes. The right system depends on elevation, exposure, roof pitch, and how the home is used through the year. Highlander works with homeowners across Franklin, Highlands, Cashiers, Sylva, and nearby communities."
+          points={["Repairs, replacements, and full system upgrades", "Material guidance based on exposure and elevation", "Second-home and seasonal-property coordination"]}
+        />
 
         {/* Local Markets Navigation — SEO Expansion */}
         <section className="py-12 bg-background border-b border-border">

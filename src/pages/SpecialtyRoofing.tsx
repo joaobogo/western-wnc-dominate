@@ -18,6 +18,7 @@ import cedar001 from "@/assets/gallery/cedar-001.webp";
 import cedar002 from "@/assets/gallery/cedar-002.webp";
 import metal009 from "@/assets/gallery/metal-010.webp";
 import metal010 from "@/assets/gallery/metal-010.webp";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -171,6 +172,11 @@ const SpecialtyRoofing = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is specialty roofing?"
+          answer="Specialty roofing covers systems outside standard asphalt shingles — including slate, cedar, synthetic, and architecturally complex roofs with unusual geometry or detailing. These roofs demand specific flashing, fastening, and ventilation approaches. Highlander installs and restores specialty roof systems on mountain homes across Western North Carolina."
+          points={["Slate, cedar, synthetic, and complex roof geometry", "Detail-driven flashing and ventilation work", "Restoration as well as new installation"]}
+        />
 
         {/* ─── OPENING — Artisan editorial with generous whitespace ─── */}
         <section className="py-20 md:py-28 bg-background">

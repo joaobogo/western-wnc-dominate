@@ -28,6 +28,7 @@ import proj2 from "@/assets/gallery/metal-006.webp";
 import proj3 from "@/assets/gallery/asphalt-005.webp";
 import proj4 from "@/assets/gallery/cedar-005.webp";
 import RelatedLinks from "@/components/RelatedLinks";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -188,6 +189,11 @@ const OutdoorLiving = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is an outdoor living project?"
+          answer="Outdoor living work builds usable exterior space — covered porches, decks, screened rooms, and outdoor kitchens — engineered for mountain terrain and weather. On sloped lots, footings, drainage, and roof tie-in matter as much as the finished surface. Highlander designs and builds outdoor living spaces across Western North Carolina."
+          points={["Covered porches, decks, and screened rooms", "Footings and drainage engineered for sloped lots", "Roof and structure tied into the existing home"]}
+        />
 
         {/* ─── OPENING — Experiential with generous whitespace ─── */}
         <section className="py-20 md:py-32 bg-background relative overflow-hidden">

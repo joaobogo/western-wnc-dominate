@@ -27,6 +27,7 @@ import metalCabin from "@/assets/gallery/metal-006.webp";
 import replacementMobileHero from "@/assets/heroes/replacement-mobile.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -230,6 +231,11 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is a roof replacement, and who needs one?"
+          answer="A roof replacement removes the existing roof down to the deck, repairs damaged sheathing, and installs a new system — underlayment, flashing, ventilation, and finish material. Homeowners typically need one when the roof is at end of life, has widespread damage, or keeps failing after repeated repairs. Highlander replaces roofs on mountain homes throughout Western North Carolina."
+          points={["Full tear-off with deck inspection and repair", "Underlayment, flashing, and ventilation rebuilt", "Asphalt, metal, and specialty systems available"]}
+        />
 
         {/* ─── OPENING STATEMENT ─── */}
         <section className="section-padding bg-background">

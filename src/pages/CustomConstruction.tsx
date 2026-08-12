@@ -24,6 +24,7 @@ import proj1 from "@/assets/gallery/metal-003.webp";
 import proj2 from "@/assets/gallery/asphalt-002.webp";
 import proj3 from "@/assets/gallery/cedar-002.webp";
 import proj4 from "@/assets/gallery/metal-010.webp";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -166,6 +167,11 @@ const CustomConstruction = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is custom construction with Highlander?"
+          answer="Custom construction covers ground-up builds and major structural projects designed around a specific site, family, and budget. In the mountains, site access, grade, drainage, and exposure shape the build as much as the floor plan does. Highlander manages custom projects across Western North Carolina from planning through completion."
+          points={["Ground-up builds and major structural work", "Site, grade, and drainage planned first", "One team accountable from planning to punch list"]}
+        />
 
         {/* ─── OPENING — Premium minimal with gem accent ─── */}
         <section className="py-20 md:py-28 bg-background">

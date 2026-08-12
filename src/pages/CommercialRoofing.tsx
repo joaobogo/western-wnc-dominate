@@ -15,6 +15,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 import heroImg from "@/assets/gallery/metal-006.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -199,6 +200,11 @@ const CommercialRoofing = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is commercial roofing, and which buildings need it?"
+          answer="Commercial roofing covers low-slope and flat roof systems on business, multi-family, and institutional buildings — including maintenance, repairs, and full replacement. Scheduling around occupancy and keeping the building operational matters as much as the roof detail itself. Highlander serves commercial property owners and managers across Western North Carolina."
+          points={["Low-slope and flat roof systems", "Maintenance, repair, and replacement scopes", "Work sequenced around building operations"]}
+        />
 
         {/* ─── OPENING STATEMENT — Corporate split with stat sidebar ─── */}
         <section className="section-padding bg-background">
