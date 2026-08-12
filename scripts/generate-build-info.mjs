@@ -1,5 +1,6 @@
 // Writes public/build-info.json so the deployed site can be fingerprinted.
-// Netlify exposes COMMIT_REF / BRANCH; GitHub Actions exposes GITHUB_SHA / GITHUB_REF_NAME.
+// Netlify exposes COMMIT_REF / BRANCH / DEPLOY_ID / DEPLOY_URL / DEPLOY_PRIME_URL / URL;
+// GitHub Actions exposes GITHUB_SHA / GITHUB_REF_NAME.
 import { writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { resolve, dirname } from "node:path";
@@ -33,6 +34,9 @@ const info = {
   branch,
   builtAt: new Date().toISOString(),
   deployId: process.env.DEPLOY_ID || null,
+  deployUrl: process.env.DEPLOY_URL || null,
+  deployPrimeUrl: process.env.DEPLOY_PRIME_URL || null,
+  siteUrl: process.env.URL || null,
   context: process.env.CONTEXT || "local",
 };
 

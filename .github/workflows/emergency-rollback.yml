@@ -1,0 +1,106 @@
+name: Emergency rollback
+
+# One-click rollback for highlandernc.com.
+# This workflow can either revert the latest commit on main (triggering a Netlify
+# rebuild) or restore a specific Netlify deploy from deploy history.
+
+on:
+  workflow_dispatch:
+    inputs:
+      method:
+        description: "Rollback method"
+        required: true
+        default: "revert_head"
+        type: choice
+        options:
+          - revert_head
+          - restore_netlify_deploy
+      deploy_id:
+        description: "Netlify deploy ID to restore (only for restore_netlify_deploy)"
+        required: false
+      reason:
+        description: "Reason for rollback"
+        required: true
+
+env:
+  SITE: https://highlandernc.com
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git identity
+        run: |
+          git config user.name "rollback-bot[bot]"
+          git config user.email "rollback-bot[bot]@users.noreply.github.com"
+
+      - name: Revert latest commit on main
+        if: github.event.inputs.method == 'revert_head'
+        run: |
+          set -e
+          echo "reverted_commit=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git revert HEAD --no-edit
+          git push origin main
+          echo "Rollback commit pushed to main. Netlify will redeploy automatically."
+
+      - name: Restore Netlify deploy
+        if: github.event.inputs.method == 'restore_netlify_deploy'
+        env:
+          NETLIFY_API_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          set -e
+          DEPLOY_ID="${{ github.event.inputs.deploy_id }}"
+          if [ -z "$DEPLOY_ID" ]; then
+            echo "deploy_id is required for restore_netlify_deploy" >&2
+            exit 1
+          fi
+          if [ -z "$NETLIFY_API_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "NETLIFY_API_TOKEN and NETLIFY_SITE_ID secrets are required for restore_netlify_deploy" >&2
+            exit 1
+          fi
+          curl -s -X POST "https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/deploys/${DEPLOY_ID}/restore" \
+            -H "Authorization: Bearer ${NETLIFY_API_TOKEN}" \
+            -H "Content-Type: application/json"
+          echo "restored_deploy_id=$DEPLOY_ID" >> "$GITHUB_ENV"
+          echo "Netlify deploy $DEPLOY_ID has been restored."
+
+      - name: Resolve Supabase credentials
+        id: supabase
+        env:
+          SUPABASE_URL_SECRET: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY_SECRET: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          # Fallback to the project defaults if repository secrets are not configured.
+          URL="${SUPABASE_URL_SECRET:-https://qflrlebkswerlbqbuslx.supabase.co}"
+          KEY="${SUPABASE_ANON_KEY_SECRET:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFmbHJsZWJrc3dlcmxicWJ1c2x4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4OTI2NzksImV4cCI6MjA4NzQ2ODY3OX0.MZOBD9GHJtFeNJU_nA2kfwyXbSNLkX-BUGisYrph2qU}"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "key=$KEY" >> "$GITHUB_OUTPUT"
+
+      - name: Notify team via Microsoft Teams
+        if: steps.supabase.outputs.url != '' && steps.supabase.outputs.key != ''
+        env:
+          SUPABASE_URL: ${{ steps.supabase.outputs.url }}
+          SUPABASE_ANON_KEY: ${{ steps.supabase.outputs.key }}
+        run: |
+          curl -s -X POST "${SUPABASE_URL}/functions/v1/teams-notify" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "event": "site_rollback",
+              "reason": ${{ toJson(github.event.inputs.reason) }},
+              "method": ${{ toJson(github.event.inputs.method) }},
+              "deploy_id": ${{ toJson(github.event.inputs.deploy_id) }},
+              "actor": "${{ github.actor }}",
+              "commit": "${{ github.sha }}",
+              "site": "${{ env.SITE }}"
+            }'
