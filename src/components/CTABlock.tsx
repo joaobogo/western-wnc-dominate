@@ -81,6 +81,7 @@ const CTABlock = () => {
                     Speak With a Project Advisor
                   </a>
                 </div>
+                <CTAProofPoints tone="dark" className="-mt-6 mb-12 md:mb-14" />
               </ScrollReveal>
 
               {/* ── Promise list ── */}
