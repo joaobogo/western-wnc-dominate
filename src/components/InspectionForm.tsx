@@ -13,6 +13,7 @@ import SectionDivider from "@/components/SectionDivider";
 import FormConsent from "@/components/FormConsent";
 import { submitLead } from "@/lib/leads";
 import InlineFieldError from "@/components/forms/InlineFieldError";
+import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
 import { ACCEPTED_UPLOAD_TYPES, isAcceptedUpload, newSessionFolder, uploadIntakeFiles } from "@/lib/intake-uploads";
@@ -66,6 +67,8 @@ const InspectionForm = () => {
   const presetProjectType = useRef<string>(projectTypeFromPage());
   const [showProjectChoices, setShowProjectChoices] = useState(!presetProjectType.current);
   const [townError, setTownError] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [issues, setIssues] = useState<string[]>([]);
   const [projectError, setProjectError] = useState<string | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [fileNotice, setFileNotice] = useState<string | null>(null);
@@ -134,8 +137,19 @@ const InspectionForm = () => {
   const handleSubmit = async () => {
     const townOk = formData.town.trim().length >= 2;
     setTownError(townOk ? null : "Let us know the town so we route you to the right crew.");
-    if (!townOk) { setStep(1); return; }
-    if (!contact.markAttempted()) return;
+    if (!townOk) {
+      setSubmitError("We need a little more before we can send this.");
+      setIssues(["Add the property town so we route you to the right crew."]);
+      setStep(1);
+      return;
+    }
+    if (!contact.markAttempted()) {
+      setSubmitError("We need a little more before we can send this.");
+      setIssues(Object.values(contact.errors).filter(Boolean) as string[]);
+      return;
+    }
+    setSubmitError(null);
+    setIssues([]);
 
     trackFormStepComplete({
       form_name: "Inspection Request",
@@ -156,8 +170,7 @@ const InspectionForm = () => {
       }
     }
 
-    // Persist to database (fire-and-forget; UI proceeds regardless)
-    submitLead({
+    const result = await submitLead({
       source: "inspection_form",
       lead_type: "inspection_request",
       full_name: contact.values.name,
@@ -173,7 +186,18 @@ const InspectionForm = () => {
       attachments,
       service_category: formData.projectType?.startsWith("roof") || formData.projectType === "storm-damage" || formData.projectType === "metal-roofing" ? "roofing" : "construction",
       source_context: contextFromQuery(),
-    }).catch((err) => console.error("InspectionForm submitLead failed:", err));
+    }).catch((err) => {
+      console.error("InspectionForm submitLead failed:", err);
+      return { id: null, error: err } as const;
+    });
+
+    if (result && "error" in result && result.error) {
+      // Keep every entered value — the visitor only needs to retry or call.
+      setIsSubmitting(false);
+      setSubmitError("We couldn't send your request just now. Your answers are still here — try again in a moment.");
+      setIssues([]);
+      return;
+    }
 
     trackEvent("form_submit", {
       label: "Inspection Request",
@@ -187,11 +211,9 @@ const InspectionForm = () => {
       },
     });
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      autosave.clear();
-    }, 900);
+    setIsSubmitting(false);
+    setSubmitted(true);
+    autosave.clear();
   };
 
   /* ─── Confirmation State ─── */
