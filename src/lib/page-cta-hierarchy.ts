@@ -1,3 +1,5 @@
+import { isUrgentIntentPath } from "@/lib/urgent-intent";
+
 /**
  * Page-level primary action hierarchy (CRO Phase 1).
  *
@@ -51,6 +53,16 @@ const formFirst = (
  */
 export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
   const path = pathname.replace(/\/+$/, "") || "/";
+
+  // Urgent intent anywhere (incl. town+service repair / storm pages) → call.
+  if (isUrgentIntentPath(path)) {
+    if (path.startsWith("/roofing/roof-repair")) return callFirst("roof_repair");
+    if (path.includes("storm")) return callFirst("storm_damage");
+    if (path.startsWith("/service-areas/") || /-(roof-repair|storm-damage)-/.test(path)) {
+      return callFirst("town_service_urgent");
+    }
+    return callFirst("urgent");
+  }
 
   // Urgent roofing intent → call first.
   if (path.startsWith("/roofing/roof-repair")) return callFirst("roof_repair");
