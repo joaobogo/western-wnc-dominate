@@ -7,6 +7,9 @@ import InlineFieldError from "@/components/forms/InlineFieldError";
 import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import WhatHappensNext from "@/components/forms/WhatHappensNext";
+import FormSavedNote from "@/components/forms/FormSavedNote";
+import { useFormAutosave } from "@/hooks/use-form-autosave";
 
 interface FastLeadFormProps {
   ctaLabel: string;
@@ -24,6 +27,11 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
     phone: "",
     town: "",
     urgency: urgencyOptions[0] ?? "As soon as possible",
+  });
+
+  const autosave = useFormAutosave(`fast-lead-${serviceLabel}`, formData, {
+    enabled: !submitted,
+    onRestore: (saved) => setFormData((d) => ({ ...d, ...(saved as typeof d) })),
   });
 
   const contact = useContactValidation({
@@ -102,6 +110,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             return;
           }
           setSubmitted(true);
+          autosave.clear();
         }}
       >
         <div>
@@ -181,6 +190,8 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         </div>
 
         <FormErrorSummary message={submitError} issues={issues} />
+        <FormSavedNote show={autosave.restored} />
+        <WhatHappensNext />
         <FormConsent />
         <motion.button
           whileTap={{ scale: 0.98 }}

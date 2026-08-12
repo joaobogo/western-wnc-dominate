@@ -16,6 +16,8 @@ import InlineFieldError from "@/components/forms/InlineFieldError";
 import FormErrorSummary from "@/components/forms/FormErrorSummary";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
+import WhatHappensNext from "@/components/forms/WhatHappensNext";
+import FormSavedNote from "@/components/forms/FormSavedNote";
 import { ACCEPTED_UPLOAD_TYPES, isAcceptedUpload, newSessionFolder, uploadIntakeFiles } from "@/lib/intake-uploads";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -405,6 +407,8 @@ const InspectionForm = () => {
                   </div>
                 </div>
 
+                <FormSavedNote show={autosave.restored} tone="dark" className="mb-5" />
+
                 {step === 1 && (
                 <div className="space-y-6">
                   <div>
@@ -656,6 +660,7 @@ const InspectionForm = () => {
 
                 {/* Submit */}
                 <FormErrorSummary tone="dark" message={submitError} issues={issues} />
+                <WhatHappensNext tone="dark" className="mt-6" />
                 <div className="mt-8 pt-6 border-t border-dark-section-foreground/6 flex flex-col sm:flex-row sm:items-center gap-4">
                   <button
                     onClick={handleSubmit}

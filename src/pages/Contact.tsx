@@ -3,6 +3,9 @@ import InlineFieldError from "@/components/forms/InlineFieldError";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import FormErrorSummary from "@/components/forms/FormErrorSummary";
+import WhatHappensNext from "@/components/forms/WhatHappensNext";
+import FormSavedNote from "@/components/forms/FormSavedNote";
+import { useFormAutosave } from "@/hooks/use-form-autosave";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
@@ -88,6 +91,28 @@ export default function Contact() {
     require: { name: true, email: true },
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Abandoned-form recovery: keep in-progress answers for this session only.
+  const autosave = useFormAutosave(
+    "contact-form",
+    { ...form, service, timeline, preferredContact },
+    {
+      enabled: step !== "success",
+      onRestore: (saved) => {
+        const d = saved as Record<string, string>;
+        setForm((p) => ({
+          name: d.name || p.name,
+          email: d.email || p.email,
+          phone: d.phone || p.phone,
+          town: d.town || p.town,
+          message: d.message || p.message,
+        }));
+        if (d.service) setService(d.service);
+        if (d.timeline) setTimeline(d.timeline);
+        if (d.preferredContact) setPreferredContact(d.preferredContact);
+      },
+    },
+  );
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [issues, setIssues] = useState<string[]>([]);
 
@@ -145,6 +170,7 @@ export default function Contact() {
         preferred_contact_method: preferredContact || null,
       });
       setStep("success");
+      autosave.clear();
     } catch (err) {
       console.error("Contact submit failed:", err);
       setSubmitError("We couldn't send your message just now. Nothing you typed was lost — try again in a moment.");
@@ -503,6 +529,8 @@ export default function Contact() {
                         </div>
                       </div>
 
+                      <FormSavedNote show={autosave.restored} />
+
                       {/* Message */}
                       <div>
                         <label htmlFor="cc-msg" className={labelClasses}>
@@ -521,6 +549,7 @@ export default function Contact() {
                       </div>
 
                       <FormErrorSummary message={submitError} issues={issues} />
+                      <WhatHappensNext className="mt-1" />
 
                       <div className="flex items-center justify-between pt-2">
                         <p className="text-[10px] text-muted-foreground font-body">

@@ -6,6 +6,7 @@ import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import FormConsent from "@/components/FormConsent";
+import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import { fieldAttrs } from "@/lib/field-ergonomics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -238,6 +239,7 @@ const RoofAssessmentQuiz = () => {
                         <input id="f-phone-optional" {...fieldAttrs.phoneLast} value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
                       </div>
                     </div>
+                    <WhatHappensNext className="mb-1" />
                     <FormConsent />
                     <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase disabled:opacity-60">
                       <span className="relative z-10">{submitting ? "Sending…" : "See My Results"}</span>

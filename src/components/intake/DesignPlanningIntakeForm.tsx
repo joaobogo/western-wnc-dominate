@@ -9,6 +9,8 @@ import { uploadIntakeFiles, newSessionFolder, ACCEPTED_UPLOAD_TYPES } from "@/li
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots, FieldError } from "./IntakeFieldKit";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
+import WhatHappensNext from "@/components/forms/WhatHappensNext";
+import FormSavedNote from "@/components/forms/FormSavedNote";
 import FileDrop from "./FileDrop";
 import IntakeConfirmation from "./IntakeConfirmation";
 import FormConsent from "@/components/FormConsent";
@@ -240,6 +242,8 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
         <StepDots total={totalSteps} current={step} />
       </div>
 
+      <FormSavedNote show={autosave.restored} className="mb-5" />
+
       <AnimatePresence mode="wait">
         <motion.div
           key={step}
@@ -395,6 +399,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
         </motion.div>
       </AnimatePresence>
 
+      {step === totalSteps - 1 && <WhatHappensNext className="mt-8" />}
       <div className="flex items-center justify-between gap-3 mt-8 pt-6 border-t border-border">
         {step > 0 ? (
           <button
