@@ -191,7 +191,7 @@ const StormDamage = () => {
                 Rapid storm response across Western North Carolina. Professional damage assessment, complete documentation, and honest guidance — from a local team that's been here through every storm season.
               </motion.p>
 
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
                 {/* Primary action on storm pages is the phone call (see page-cta-hierarchy.ts) */}
                 <a href="tel:+18285247773" className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
                   <Phone className="w-5 h-5" /> (828) 524-7773
@@ -201,6 +201,10 @@ const StormDamage = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
+              {/* One-line reason to call instead of writing (CRO Prompt 12) */}
+              <p className="mt-3 text-[13px] md:text-[14px] font-body text-white/80 max-w-xl leading-snug">
+                Storm damage moves fast — calling gets a real person who can prioritize your assessment and start the insurance documentation today.
+              </p>
 
               {/* Emergency pulse — unique to Storm Damage */}
               <motion.div

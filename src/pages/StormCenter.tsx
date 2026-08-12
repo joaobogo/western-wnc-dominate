@@ -122,7 +122,7 @@ const StormCenter = () => {
               </p>
 
               {/* Primary action on storm pages is the phone call (see page-cta-hierarchy.ts) */}
-              <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-3" data-gtm-location="hero">
                 <span className="text-[hsl(var(--dark-section-foreground)/0.5)] text-xs font-body uppercase tracking-[0.16em]">
                   Storm Assessment Line
                 </span>
@@ -134,7 +134,7 @@ const StormCenter = () => {
                 </a>
               </div>
               <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-xs mt-3 font-body">
-                We respond on a same-day or next-day basis for storm assessments across all of Western NC.
+                Storm damage moves fast — calling reaches a real person who can prioritize your assessment and start the insurance documentation today.
               </p>
             </motion.div>
           </div>
