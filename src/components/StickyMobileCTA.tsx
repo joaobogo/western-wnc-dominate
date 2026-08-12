@@ -47,10 +47,10 @@ const StickyMobileCTA = () => {
   // Reflect visibility on <body> so global CSS can add page bottom padding
   // and any other overlay can coordinate. Cleared on unmount.
   useEffect(() => {
-    const visible = scrolled && !suppressed;
+    const visible = scrolled && !suppressed && !onIntakePage;
     document.body.dataset.stickyBar = visible ? "visible" : "hidden";
     return () => { delete document.body.dataset.stickyBar; };
-  }, [scrolled, suppressed]);
+  }, [scrolled, suppressed, onIntakePage]);
 
   // Hide sticky mobile bar when chatbot or mobile menu is open, so the
   // floating overlays never stack and compete for the same tap area.
@@ -127,15 +127,15 @@ const StickyMobileCTA = () => {
               <div className="flex items-stretch">
                 <Link
                   to="/consultation"
-                  onClick={() => trackEvent("cta_click", { label: "Request a Quote", elementId: "sticky-cta-mobile-quote" })}
+                  onClick={() => trackEvent("cta_click", { label: "Request Estimate", elementId: "sticky-cta-mobile-estimate" })}
                   className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
                 >
                   <FileText className="w-4 h-4" />
-                  <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.08em]">Request a Quote</span>
+                  <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.08em]">Request Estimate</span>
                 </Link>
                 <a
                   href="tel:+18285247773"
-                  onClick={() => trackEvent("phone_click", { label: "Call Now", elementId: "sticky-cta-mobile-call" })}
+                  onClick={() => trackEvent("phone_click", { label: "Call Direct", elementId: "sticky-cta-mobile-call" })}
                   className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
                 >
                   <Phone className="w-4 h-4" />
