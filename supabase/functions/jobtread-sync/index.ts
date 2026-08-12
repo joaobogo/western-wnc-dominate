@@ -166,7 +166,10 @@ function humanizeLeadName(row: LeadRow): string {
   // Only include the customer's first name (or first initial) so job names
   // stay short and scannable in JobTread. Never leak full name, phone,
   // email, message, or tracking values into the title.
-  const firstName = name.split(/\s+/)[0]?.trim() ?? "";
+  // Prefer the parsed `first_name` column written by the canonical name parser;
+  // fall back to the first token of the display name for legacy rows.
+  const firstName =
+    cleanName((row as any).first_name) || (name.split(/\s+/)[0]?.trim() ?? "");
   return firstName ? `${label} - ${town} - ${firstName}` : `${label} - ${town}`;
 }
 
