@@ -112,16 +112,16 @@ const RealWorkWidget = ({
       window.setTimeout(() => {
         patchScheduled = false;
         if (cancelled) return;
-        if (outputRef.current) patchInjectedA11y(outputRef.current);
+        // The plugin injects into its own containers anywhere in the document,
+        // so patch from <body> down rather than only our output node.
+        patchInjectedA11y(document.body);
         checkReady();
       }, 120);
     };
 
     const startObserver = () => {
-      const output = outputRef.current;
-      if (!output) return;
       observer = new MutationObserver(schedulePatch);
-      observer.observe(output, { childList: true, subtree: true });
+      observer.observe(document.body, { childList: true, subtree: true });
     };
     startObserver();
     schedulePatch();
