@@ -50,7 +50,7 @@ const Hero = () => {
   ];
 
   return (
-    <section ref={ref} className="relative min-h-[100svh] flex flex-col overflow-hidden">
+    <section ref={ref} className="dark-surface relative min-h-[100svh] flex flex-col overflow-hidden">
       {/* === BACKGROUND — static, no parallax for smooth scroll === */}
       <div className="absolute inset-0">
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.

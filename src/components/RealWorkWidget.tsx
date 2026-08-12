@@ -112,13 +112,18 @@ const RealWorkWidget = ({
       window.setTimeout(() => {
         patchScheduled = false;
         if (cancelled) return;
-        patchInjectedA11y(document.body);
+        if (outputRef.current) patchInjectedA11y(outputRef.current);
         checkReady();
       }, 120);
     };
 
-    observer = new MutationObserver(schedulePatch);
-    observer.observe(document.body, { childList: true, subtree: true });
+    const startObserver = () => {
+      const output = outputRef.current;
+      if (!output) return;
+      observer = new MutationObserver(schedulePatch);
+      observer.observe(output, { childList: true, subtree: true });
+    };
+    startObserver();
     schedulePatch();
 
     window.__loadRWL?.();
