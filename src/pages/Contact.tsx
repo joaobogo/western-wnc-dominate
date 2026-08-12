@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InlineFieldError from "@/components/forms/InlineFieldError";
+import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import FormErrorSummary from "@/components/forms/FormErrorSummary";
@@ -572,35 +573,23 @@ export default function Contact() {
                 {/* Success */}
                 {step === "success" && (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
-                    className="text-center py-16"
+                    className="py-10"
                   >
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.1, type: "spring", stiffness: 400, damping: 15 }}
-                      className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6"
-                    >
-                      <CheckCircle className="w-8 h-8 text-[hsl(var(--gold-ink))]" />
-                    </motion.div>
-                    <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
-                      Your Request Has Been Received.
-                    </h2>
-                    <p className="text-muted-foreground font-body max-w-md mx-auto mb-6">
-                      A Highlander project advisor will personally review your project details and
-                      reach out rapidly. Thank you, {form.name.split(" ")[0] || "friend"}.
-                    </p>
-                    <div className="border border-border bg-card p-5 rounded-sm max-w-sm mx-auto text-left">
-                      <p className="text-[10px] font-body font-bold uppercase tracking-wider text-muted-foreground mb-3">Your Submission</p>
-                      <div className="space-y-2 text-sm font-body text-foreground">
-                        <p><span className="text-muted-foreground">Division:</span> {division === "roofing" ? "Roofing" : "Construction"}</p>
-                        <p><span className="text-muted-foreground">Service:</span> {service.replace(/-/g, " ")}</p>
-                        {timeline && <p><span className="text-muted-foreground">Timeline:</span> {timeline}</p>}
-                        <p><span className="text-muted-foreground">Preferred contact:</span> {preferredContact}</p>
-                      </div>
-                    </div>
+                    <LeadConfirmationPanel
+                      heading={`Thank you, ${form.name.split(" ")[0] || "friend"} — your request is in.`}
+                      town={form.town}
+                      category={division === "roofing" ? "roofing" : "construction"}
+                      summary={[
+                        { label: "Division", value: division === "roofing" ? "Roofing" : "Construction" },
+                        { label: "Service", value: service.replace(/-/g, " ") },
+                        { label: "Timeline", value: timeline },
+                        { label: "Town", value: form.town },
+                        { label: "Preferred contact", value: preferredContact },
+                      ]}
+                    />
                   </motion.div>
                 )}
               </div>
