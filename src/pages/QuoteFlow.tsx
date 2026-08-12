@@ -457,6 +457,7 @@ export default function QuoteFlow() {
             onPrev={handlePrev}
             onSubmit={handleSubmit}
             isSubmitting={isSubmitting}
+            draftRestored={autosave.restored}
             submitLabel="Request Consultation"
           />
         </div>

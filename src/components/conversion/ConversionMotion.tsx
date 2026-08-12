@@ -1,6 +1,8 @@
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import React, { useState, useCallback } from "react";
 import { CheckCircle, ArrowRight, ArrowLeft, Loader2 } from "lucide-react";
+import WhatHappensNext from "@/components/forms/WhatHappensNext";
+import FormSavedNote from "@/components/forms/FormSavedNote";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -24,6 +26,7 @@ interface MultiStepFormProps {
   onSubmit: () => void;
   isSubmitting?: boolean;
   submitLabel?: string;
+  draftRestored?: boolean;
   className?: string;
 }
 
@@ -41,6 +44,7 @@ export const MultiStepForm = ({
   onSubmit,
   isSubmitting = false,
   submitLabel = "Submit Request",
+  draftRestored = false,
   className = "",
 }: MultiStepFormProps) => {
   const [direction, setDirection] = useState(1);
@@ -100,6 +104,8 @@ export const MultiStepForm = ({
         </div>
       </div>
 
+      <FormSavedNote show={draftRestored} className="mb-4" />
+
       {/* Step content — slide transition */}
       <div className="relative overflow-hidden min-h-[200px]">
         <AnimatePresence mode="wait" custom={direction}>
@@ -116,6 +122,8 @@ export const MultiStepForm = ({
           </motion.div>
         </AnimatePresence>
       </div>
+
+      {isLast && <WhatHappensNext className="mt-8" />}
 
       {/* Navigation */}
       <div className="flex items-center justify-between mt-8 pt-6 border-t border-border">
