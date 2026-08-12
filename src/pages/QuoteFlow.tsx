@@ -10,7 +10,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MultiStepForm, ConfirmationState } from "@/components/conversion";
 import { supabase } from "@/integrations/supabase/client";
-import { syncConsultationRequestToJobTread } from "@/lib/leads";
 import { toast } from "@/hooks/use-toast";
 import { actionableError, errorTitle } from "@/lib/microcopy";
 import {
@@ -354,7 +353,6 @@ export default function QuoteFlow() {
       });
 
       if (error) throw error;
-      syncConsultationRequestToJobTread(consultId);
 
       // Mirror into the unified `leads` table using the canonical payload.
       try {

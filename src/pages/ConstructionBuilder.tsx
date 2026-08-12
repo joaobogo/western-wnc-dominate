@@ -15,7 +15,6 @@ import IntakeConfirmation from "@/components/intake/IntakeConfirmation";
 import { supabase } from "@/integrations/supabase/client";
 import { scoreLead } from "@/lib/lead-scoring";
 import { deriveConstructionRouting } from "@/lib/lead-routing";
-import { syncConsultationRequestToJobTread } from "@/lib/leads";
 import { trackEvent } from "@/lib/analytics";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 
