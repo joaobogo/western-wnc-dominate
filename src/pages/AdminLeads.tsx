@@ -140,6 +140,19 @@ export default function AdminLeads() {
     navigate("/admin/login", { replace: true });
   };
 
+  const deadLetters = useMemo(() => leads.filter(isDeadLetter), [leads]);
+
+  const retryAllDeadLetters = async () => {
+    setRetryingAll(true);
+    try {
+      for (const l of deadLetters) {
+        await retryJobTread(l.id);
+      }
+    } finally {
+      setRetryingAll(false);
+    }
+  };
+
   const sources = useMemo(
     () => Array.from(new Set(leads.map(l => l.source).filter(Boolean))).sort(),
     [leads],
