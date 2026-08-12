@@ -15,6 +15,8 @@ import { projectDetails } from "@/data/projects";
 import { FeaturedProjects } from "@/components/FeaturedProjects";
 import { getBlogInternalLinks } from "@/lib/blog-internal-links";
 import BlogInternalLinksBlock from "@/components/blog/BlogInternalLinksBlock";
+import LocalLinkWeb from "@/components/LocalLinkWeb";
+import { getBlogLocalLinkWeb } from "@/lib/local-link-graph";
 
 /* ─── Author data ─── */
 const authors: Record<string, { name: string; role: string; bio: string }> = {
@@ -458,6 +460,13 @@ const BlogPostPage = () => {
 
                 {/* SEO Internal Linking Block — city, service, related blog, project, estimate */}
                 <BlogInternalLinksBlock links={internalLinks} town={post.town} />
+
+                <LocalLinkWeb
+                  className="!px-0 !py-10 bg-transparent"
+                  eyebrow="Local Links"
+                  heading={post.town ? `More for ${post.town}, NC` : "More Western NC resources"}
+                  groups={getBlogLocalLinkWeb(post)}
+                />
 
                 {/* Localized Proof Moment - Dynamic connection to Gallery */}
                 <div className="mt-16 pt-12 border-t border-border">
