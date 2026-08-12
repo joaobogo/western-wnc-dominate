@@ -33,6 +33,43 @@ const setMeta = (attr: string, key: string, content: string) => {
   el.setAttribute("content", content);
 };
 
+/**
+ * Canonical path normalizer.
+ *
+ * Every route must emit a self-referencing canonical in exactly one shape, so
+ * crawlers never see two URLs for the same page:
+ *  - always absolute against https://highlandernc.com
+ *  - query strings and hashes dropped (gclid, utm_*, fbclid, ?page=... etc.)
+ *  - no trailing slash, except the homepage which is always "/"
+ *  - lowercase path, duplicate slashes collapsed
+ */
+export const normalizeCanonicalPath = (rawPath: string): string => {
+  let path = (rawPath || "/").trim();
+
+  // Accept a full URL or a bare path.
+  if (/^https?:\/\//i.test(path)) {
+    try {
+      path = new URL(path).pathname;
+    } catch {
+      path = "/";
+    }
+  }
+
+  // Drop query string and fragment — they never belong in a canonical.
+  path = path.split("#")[0].split("?")[0];
+
+  if (!path.startsWith("/")) path = `/${path}`;
+  path = path.replace(/\/{2,}/g, "/").toLowerCase();
+  if (path.length > 1) path = path.replace(/\/+$/, "");
+
+  return path || "/";
+};
+
+export const canonicalUrlFor = (rawPath: string): string => {
+  const path = normalizeCanonicalPath(rawPath);
+  return path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`;
+};
+
 const SEOHead = ({
   title,
   description,
@@ -45,7 +82,8 @@ const SEOHead = ({
   locale = "en_US",
 }: SEOHeadProps) => {
   const fullTitle = title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`;
-  const canonicalUrl = `${BASE_URL}${path}`;
+  const canonicalPath = normalizeCanonicalPath(path);
+  const canonicalUrl = canonicalUrlFor(path);
   const ogImage = image || DEFAULT_IMAGE;
 
   useEffect(() => {
