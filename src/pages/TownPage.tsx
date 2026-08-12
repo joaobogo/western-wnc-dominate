@@ -215,7 +215,7 @@ const TownPage = () => {
                     <Shield className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Local Insight</h4>
+                    <h3 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Local Insight</h3>
                     <p className="text-muted-foreground leading-relaxed font-body">{town.localVibe}</p>
                   </div>
                 </div>

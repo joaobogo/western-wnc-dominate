@@ -35,7 +35,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
           transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
           className="lg:hidden bg-white border-t border-black/5 overflow-hidden max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain"
         >
-          <nav className="flex flex-col px-4 py-3 gap-0.5">
+          <nav aria-label="Mobile" className="flex flex-col px-4 py-3 gap-0.5">
             {divisions.map((div, di) => (
               <motion.div
                 key={div.label}

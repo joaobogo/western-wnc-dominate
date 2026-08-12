@@ -20,7 +20,7 @@ interface Props {
 
 export const DesktopNav = forwardRef<HTMLElement, Props>(
   ({ openDropdown, onEnter, onLeave, onOpen, onClose, isActive, onViewAllClick, serviceAreasTriggerRef, serviceAreasPanelRef }, _ref) => (
-    <nav className="hidden lg:flex items-center gap-0 whitespace-nowrap">
+    <nav aria-label="Primary" className="hidden lg:flex items-center gap-0 whitespace-nowrap">
       {divisions.map((div) => (
         <DivisionDropdown
           key={div.label}
