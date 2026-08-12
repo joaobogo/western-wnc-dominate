@@ -6,7 +6,7 @@
 // - Falls back to JobTread Pave API (https://api.jobtread.com/pave) when only grant key + org id are set.
 // - Updates jobtread_* columns with success/failure state. Never throws to the caller in a way that would lose the lead.
 
-import { createClient } from "npm:@supabase/supabase-js@2";
+import { createClient } from "npm:@supabase/supabase-js@2.112.3";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
