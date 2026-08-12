@@ -118,9 +118,9 @@ const ConstructionDivision = () => {
           <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2.2, delay: 0.5, ease: HIGHLAND_EASE }} />
           <motion.div className="absolute right-0 bottom-0 w-[2px] z-20" style={{ background: "linear-gradient(to top, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "40%" }} transition={{ duration: 1.5, delay: 1.2, ease: HIGHLAND_EASE }} />
 
-          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-16 md:pb-24 pt-32 md:pt-40">
-            <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col gap-8 mb-10">
+          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-10 md:pb-24 pt-24 md:pt-40">
+            <div className="max-w-3xl flex flex-col">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col gap-4 md:gap-8 mt-8 md:mt-0 mb-0 md:mb-10 order-4 md:order-none">
                 <div className="inline-flex items-center gap-4">
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
@@ -136,19 +136,20 @@ const ConstructionDivision = () => {
                 </div>
               </motion.div>
 
-              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight mb-2">
+              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-[34px] md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight mb-1 md:mb-2">
                 Additions &amp; Custom Building
               </motion.h1>
-              <motion.h2 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold tracking-tight leading-[1.0] mb-8">
+              <motion.h2 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-[34px] md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold tracking-tight leading-[0.98] mb-3 md:mb-8">
                 <span className="text-[hsl(var(--gold-ink))]">Across Western NC.</span>
               </motion.h2>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-[20px] md:text-[24px] text-white/95 max-w-2xl mb-12 leading-relaxed font-body font-bold drop-shadow-md">
-                Out of room, or ready to build on your mountain lot? Bring us the idea and we walk the site, map the permits and site constraints, and return a written scope, schedule, and budget range before you commit. Additions, renovations, and outdoor living — licensed, insured, and team-led.
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="order-2 md:order-none text-[17px] md:text-[24px] text-white/95 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-bold drop-shadow-md">
+                <span className="md:hidden">Out of room, or ready to build on your mountain lot? We walk the site and return a written scope, schedule, and budget range before you commit.</span>
+                <span className="hidden md:inline">Out of room, or ready to build on your mountain lot? Bring us the idea and we walk the site, map the permits and site constraints, and return a written scope, schedule, and budget range before you commit. Additions, renovations, and outdoor living — licensed, insured, and team-led.</span>
               </motion.p>
 
 
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
@@ -160,7 +161,7 @@ const ConstructionDivision = () => {
               </motion.div>
 
               {/* Division scope — unique to landing */}
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }} className="mt-10 pt-8 border-t border-white/6">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }} className="order-5 md:order-none mt-8 md:mt-10 pt-6 md:pt-8 border-t border-white/6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-6">
                   {[
                     { value: "6", label: "Service Categories" },
