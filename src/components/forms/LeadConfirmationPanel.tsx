@@ -89,7 +89,13 @@ const LeadConfirmationPanel = ({
         </div>
         <a
           href="tel:+18285247773"
-          onClick={() => trackPhoneClick({ cta_location: "confirmation_panel" })}
+          onClick={() =>
+            trackPhoneClick({
+              phone_number: "+18285247773",
+              link_url: "tel:+18285247773",
+              click_location: "confirmation_panel",
+            })
+          }
           className="mt-5 inline-flex items-center gap-2 border border-[hsl(var(--highland-gold)/0.5)] px-5 py-3 font-body text-[15px] font-bold text-[hsl(var(--gold-ink))] transition-colors hover:bg-[hsl(var(--highland-gold)/0.1)]"
         >
           <Phone className="h-4 w-4" aria-hidden="true" />
