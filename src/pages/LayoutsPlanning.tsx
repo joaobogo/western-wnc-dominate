@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { motion } from "framer-motion";
 import designHero from "@/assets/design-planning-hero.webp";
 import { 
@@ -174,6 +175,16 @@ const LayoutsPlanning = () => {
             className="absolute top-1/2 -right-20 w-[400px] h-[400px] border border-white/5 rounded-full pointer-events-none hidden xl:block"
           />
         </section>
+
+        <AnswerBlock
+          question="What is design and planning support at Highlander?"
+          answer="Design and planning support is our pre-construction service: layout visualization, floor plan thinking, and scope development so a Western North Carolina project is fully defined before the build begins."
+          points={[
+            "Layouts, floor plans, and scope definition",
+            "Early site and feasibility review",
+            "Call 828-524-7773 to talk through your plan",
+          ]}
+        />
 
         {/* 2. The Planning Gap — Value Proposition */}
         <section className="py-24 md:py-32 bg-background relative overflow-hidden">
