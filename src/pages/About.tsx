@@ -80,7 +80,7 @@ const About = () => {
         ]}
       />
       <Header />
-      <main>
+      <main id="main-content">
         {/* ── HERO — Warm editorial fade (unique to About — no text-reveal, no gold line) ── */}
         <section className="relative min-h-[55vh] md:min-h-[75vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">

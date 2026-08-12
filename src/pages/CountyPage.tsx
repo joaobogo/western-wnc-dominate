@@ -28,7 +28,7 @@ const CountyPage = () => {
     return (
       <>
         <Header />
-        <main className="section-padding text-center pt-32 min-h-[60vh] flex flex-col items-center justify-center">
+        <main id="main-content" className="section-padding text-center pt-32 min-h-[60vh] flex flex-col items-center justify-center">
           <h1 className="text-3xl font-heading font-bold text-foreground">County Not Found</h1>
           <Link to="/service-areas" className="text-primary underline mt-4 inline-block">View All Service Areas</Link>
         </main>
@@ -67,7 +67,7 @@ const CountyPage = () => {
           { name: county.name, url: `/service-areas/county/${county.slug}` },
         ]}
       />
-      <main>
+      <main id="main-content">
         {/* 1. County Hero — Premium Mountain Visual */}
         <section className="dark-surface relative min-h-[85svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">

@@ -33,7 +33,7 @@ const Services = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }]} />
-      <main>
+      <main id="main-content">
         <section className="section-padding section-dark pt-32 md:pt-40">
           <div className="container-tight text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>

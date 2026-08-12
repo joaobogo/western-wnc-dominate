@@ -59,7 +59,7 @@ const ServiceAreas = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Service Areas", url: "/service-areas" }]} />
-      <main>
+      <main id="main-content">
         <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-end overflow-hidden">
           <div className="absolute inset-0 section-dark">
             <img

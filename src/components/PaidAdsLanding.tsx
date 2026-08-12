@@ -61,7 +61,7 @@ const PaidAdsLanding = ({
         ]}
       />
 
-      <main className="bg-background">
+      <main id="main-content" className="bg-background">
         <section className="relative overflow-hidden section-dark">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImage} alt={heroAlt} className="h-full w-full object-cover" loading="eager" />

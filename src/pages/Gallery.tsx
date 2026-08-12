@@ -135,7 +135,7 @@ const Gallery = () => {
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Projects", url: "/recent-projects" }])}
       />
       <Header />
-      <main>
+      <main id="main-content">
         <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />
           <MountainContours variant="dark" opacity={0.04} />

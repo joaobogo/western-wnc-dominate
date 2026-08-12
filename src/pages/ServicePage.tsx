@@ -30,7 +30,7 @@ const ServicePage = () => {
           noindex
         />
         <Header />
-        <main className="section-padding text-center pt-32">
+        <main id="main-content" className="section-padding text-center pt-32">
           <h1 className="text-3xl font-heading font-bold">Service Not Found</h1>
           <Link to="/roofing" className="text-primary underline mt-4 inline-block">View All Services</Link>
         </main>
@@ -76,7 +76,7 @@ const ServicePage = () => {
           { name: service.title, url: servicePath },
         ]}
       />
-      <main>
+      <main id="main-content">
         {/* Division accent line */}
         <div className={`h-[3px] w-full ${theme.heroAccentLine}`} />
 

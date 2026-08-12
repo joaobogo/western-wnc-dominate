@@ -31,7 +31,7 @@ const ProjectDetailPage = () => {
     return (
       <>
         <Header />
-        <main className="section-padding section-dark pt-32 md:pt-40 min-h-[60vh] flex items-center justify-center">
+        <main id="main-content" className="section-padding section-dark pt-32 md:pt-40 min-h-[60vh] flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-3xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">Project Not Found</h1>
             <p className="text-[hsl(var(--dark-section-foreground)/0.6)] mb-6">The project you're looking for doesn't exist or has been moved.</p>
@@ -69,7 +69,7 @@ const ProjectDetailPage = () => {
           { name: project.title, url: `/projects/${project.slug}` },
         ]}
       />
-      <main>
+      <main id="main-content">
         <section className="relative pt-20 md:pt-24">
           <div className="relative h-[50vh] md:h-[65vh] overflow-hidden">
             <motion.img

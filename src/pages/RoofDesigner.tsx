@@ -38,7 +38,7 @@ const RoofDesigner = () => {
         ])}
       />
       <Header />
-      <main className="pt-[88px] md:pt-[128px] relative">
+      <main id="main-content" className="pt-[88px] md:pt-[128px] relative">
         {/* Beta banner */}
         <div className="bg-accent/10 border-b border-accent/20 px-4 py-2 text-center">
           <p className="text-sm text-accent-foreground/80 flex items-center justify-center gap-2">

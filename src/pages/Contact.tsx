@@ -160,7 +160,7 @@ export default function Contact() {
         })}
       />
       <Header />
-      <main>
+      <main id="main-content">
         {/* ── HERO — Compact utility header (unique to Contact) ── */}
         <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--heritage-green))] via-[hsl(var(--heritage-green)/0.88)] to-[hsl(var(--heritage-charcoal)/0.92)] pt-20 md:pt-40">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--highland-gold)/0.18),transparent_60%)] pointer-events-none" />

@@ -15,7 +15,7 @@ const RoofingIntake = () => (
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Roofing Intake", url: "/roofing-intake" }])}
     />
     <Header />
-    <main>
+    <main id="main-content">
       <IntakeShell
         eyebrow="Roofing Intake"
         title="Request a roof assessment."

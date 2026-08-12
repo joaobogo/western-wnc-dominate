@@ -48,7 +48,7 @@ const PrivacyPolicy = () => {
         path="/privacy-policy"
       />
       <Header />
-      <main className="pt-32 md:pt-40 pb-20 bg-background">
+      <main id="main-content" className="pt-32 md:pt-40 pb-20 bg-background">
         <div className="container-tight max-w-3xl">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center">

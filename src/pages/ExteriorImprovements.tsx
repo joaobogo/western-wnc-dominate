@@ -100,7 +100,7 @@ const ExteriorImprovements = () => {
         ]}
       />
       <Header />
-      <main>
+      <main id="main-content">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">

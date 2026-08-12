@@ -76,7 +76,7 @@ const LayoutsPlanning = () => {
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Design & Planning", url: "/construction/design-planning" }]} />
       
-      <main>
+      <main id="main-content">
         {/* 1. Hero — Refined */}
         <section className="relative pt-32 pb-24 md:pt-56 md:pb-40 bg-primary overflow-hidden">
           {/* Blueprint background image — mountain-home construction drawings */}

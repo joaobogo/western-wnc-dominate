@@ -145,7 +145,7 @@ const ConstructionDesign = () => {
         ]}
       />
       <Header />
-      <main>
+      <main id="main-content">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[62vh] md:min-h-[74vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">

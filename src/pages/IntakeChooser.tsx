@@ -16,7 +16,7 @@ const IntakeChooser = () => (
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Start a Project", url: "/consultation" }])}
     />
     <Header />
-    <main className="pt-28 md:pt-36 pb-20 bg-background">
+    <main id="main-content" className="pt-28 md:pt-36 pb-20 bg-background">
       <div className="max-w-5xl mx-auto px-6 md:px-10 text-center">
         <div className="flex items-center justify-center gap-2 mb-5">
           <div className="h-px w-10 bg-[hsl(var(--highland-gold))]" />

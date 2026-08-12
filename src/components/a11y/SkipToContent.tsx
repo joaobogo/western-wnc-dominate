@@ -7,8 +7,8 @@ import type { MouseEvent } from "react";
  * pressing Tab on any page surfaces it before the nav. Visually
  * hidden until focused (WCAG 2.4.1 Bypass Blocks).
  *
- * Targets the first <main> in the DOM — pages own their own
- * <main> in this app, so we resolve it at click time rather than
+ * Targets the first <main id="main-content"> in the DOM — pages own their own
+ * <main id="main-content"> in this app, so we resolve it at click time rather than
  * requiring every page to set a specific id.
  */
 const SkipToContent = () => {

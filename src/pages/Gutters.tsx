@@ -54,7 +54,7 @@ const Gutters = () => {
           { name: "Gutters", url: "/roofing/gutters" },
         ]}
       />
-      <main>
+      <main id="main-content">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">

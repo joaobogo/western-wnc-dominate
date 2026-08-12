@@ -94,7 +94,7 @@ const Blog = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }]} />
-      <main>
+      <main id="main-content">
         {/* ═══ HERO — Editorial masthead ═══ */}
         <section className="relative section-dark overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />

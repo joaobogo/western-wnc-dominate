@@ -101,7 +101,7 @@ const StormCenter = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Storm Center", url: "/storm-center" }]} />
-      <main>
+      <main id="main-content">
         {/* ═══ HERO ═══ */}
         <section className="section-padding section-dark tartan-dark pt-32 md:pt-40 pb-16 md:pb-20">
           <div className="container-tight text-center">
