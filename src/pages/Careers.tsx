@@ -3,6 +3,7 @@ import { Phone, CheckCircle, Upload, Send, Users, ShieldCheck, Mountain, HardHat
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -222,6 +223,7 @@ const Careers = () => {
           </div>
         </section>
       </main>
+      <PageCloseCTA eyebrow="Homeowners" heading="Not here for a job? Let's talk about your property." body="Roofing, storm damage, renovations — tell us what you need and we'll follow up personally." secondaryLabel="Learn about Highlander" secondaryTo="/about" context="careers" />
       <Footer />
       <StickyMobileCTA />
     </>

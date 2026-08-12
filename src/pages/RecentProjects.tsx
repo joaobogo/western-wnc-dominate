@@ -4,6 +4,7 @@ import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import heroImg from "@/assets/gallery/asphalt-hero.webp";
@@ -289,6 +290,7 @@ const RecentProjects = () => {
           </div>
         </section>
       </main>
+      <PageCloseCTA eyebrow="Next Step" heading="Ready to start your own project?" body="Tell us about your property and a Highlander advisor will follow up with scope, materials, and timing." secondaryLabel="Browse the full gallery" secondaryTo="/gallery" context="recent-projects" />
       <Footer />
       <StickyMobileCTA />
     </>

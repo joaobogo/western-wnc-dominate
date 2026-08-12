@@ -4,6 +4,7 @@ import { ArrowRight, Home, HardHat, Phone, Sparkles } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 
 const IntakeChooser = () => (
   <>
@@ -132,7 +133,8 @@ const IntakeChooser = () => (
         </div>
       </div>
     </main>
-    <Footer />
+    <PageCloseCTA primaryTo="/contact" primaryLabel="Send us the details" eyebrow="Not Sure Where to Start?" heading="Tell us what's going on and we'll route it" body="If neither path fits, send us the basics and a local advisor will point you in the right direction." secondaryLabel="See the towns we serve" secondaryTo="/service-areas" context="intake-chooser" />
+      <Footer />
   </>
 );
 

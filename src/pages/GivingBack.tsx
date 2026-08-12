@@ -5,6 +5,7 @@ import SEOHead, { breadcrumbSchema, organizationSchema } from "@/components/SEOH
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ScrollReveal } from "@/components/motion";
 import TartanBackground from "@/components/TartanBackground";
@@ -216,6 +217,7 @@ const GivingBack = () => {
           </div>
         </section>
       </main>
+      <PageCloseCTA eyebrow="Next Step" heading="Working on a project of your own?" body="Share the details and a local advisor will follow up personally — no obligation." secondaryLabel="Meet the team" secondaryTo="/team" context="giving-back" />
       <Footer />
       <StickyMobileCTA />
     </>

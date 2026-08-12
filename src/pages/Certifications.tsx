@@ -11,6 +11,7 @@ import badgeVelux from "@/assets/logo-velux.png";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import VendorPartners from "@/components/VendorPartners";
 import {
@@ -351,6 +352,7 @@ const Certifications = () => {
           ctaText="Talk With Our Team"
         />
       </main>
+      <PageCloseCTA eyebrow="Next Step" heading="Put these credentials to work on your roof" body="Tell us about your property and we'll follow up with a clear, written next step." secondaryLabel="Explore our roofing services" secondaryTo="/roofing" context="certifications" />
       <Footer />
       <StickyMobileCTA />
     </>

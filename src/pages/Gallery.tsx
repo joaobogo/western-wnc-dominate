@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock } from "@/components/trust";
 import { PremiumLightbox, GalleryCard } from "@/components/gallery";
@@ -431,6 +432,7 @@ const Gallery = () => {
         onNavigate={handleLightboxNav}
       />
 
+      <PageCloseCTA eyebrow="Next Step" heading="Want work like this on your home?" body="Share a few details about your property and a Highlander advisor will follow up with scope, materials, and timing." secondaryLabel="Explore our roofing services" secondaryTo="/roofing" context="gallery" />
       <Footer />
       <StickyMobileCTA />
     </>

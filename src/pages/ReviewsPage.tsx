@@ -8,6 +8,7 @@ import {
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
@@ -377,6 +378,7 @@ const ReviewsPage = () => {
           </div>
         </section>
       </main>
+      <PageCloseCTA eyebrow="Next Step" heading="Ready to become our next review?" body="Tell us about your property and we'll follow up personally with a clear next step." secondaryLabel="See recent projects" secondaryTo="/recent-projects" context="reviews" />
       <Footer />
       <StickyMobileCTA />
     </>
