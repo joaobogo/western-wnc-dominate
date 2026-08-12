@@ -21,6 +21,17 @@ export const PRIMARY_CLUSTER_TOWNS = [
   "cullowhee-nc",
 ] as const;
 
+/** Decision-guide imagery pool so each town cluster looks distinct. */
+const DECISION_IMAGES = [
+  "/media/wnc-roof-tearoff-crew.jpg",
+  "/media/wnc-roof-inspection.jpg",
+  "/media/wnc-dimensional-shingle-roof.jpg",
+  "/media/wnc-metal-standing-seam.jpg",
+  "/media/wnc-chimney-flashing.jpg",
+  "/media/wnc-cedar-slate-roof.jpg",
+  "/media/wnc-attic-ventilation.jpg",
+];
+
 const countyShort = (t: TownData) => t.county.replace(/ County$/, "");
 const countySlug = (t: TownData) => t.county.toLowerCase().replace(/\s+/g, "-");
 const ft = (t: TownData) => parseInt(t.elevation.replace(/[^0-9]/g, ""), 10) || 0;
@@ -87,7 +98,7 @@ When you want a straight read on your roof, [request an estimate](/request-inspe
     category: "Decision Guide",
     date: "2026-08-11",
     readTime: "7 min",
-    image: t.heroImage,
+    image: DECISION_IMAGES[towns.findIndex((x) => x.slug === t.slug) % DECISION_IMAGES.length],
     imageAlt: `Roofline of a mountain home near ${t.name}, North Carolina`,
     metaTitle: `Roof Repair vs Replacement in ${t.name}, NC`,
     metaDescription: `How ${t.name}, NC homeowners should decide between roof repair and replacement — decking, ventilation, flashing, and ${countyShort(t)} County weather.`,
