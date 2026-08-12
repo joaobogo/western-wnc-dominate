@@ -40,6 +40,8 @@ import { getTownFAQs } from "@/data/town-faqs-generated";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
+import LocalLinkWeb from "@/components/LocalLinkWeb";
+import { getTownLinkWeb } from "@/lib/local-link-graph";
 
 const TownPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -380,6 +382,12 @@ const TownPage = () => {
 
         {/* 8. Internal Linking Engine - Nearby Areas */}
         <NearbyTowns currentTown={town} />
+
+        <LocalLinkWeb
+          heading={`Everything we cover in and around ${town.name}, NC`}
+          intro={`Local service pages, neighboring towns, ${town.county} coverage, and field guides written for ${town.name} conditions.`}
+          groups={getTownLinkWeb(town)}
+        />
 
         <InspectionForm />
         <RelatedLinks

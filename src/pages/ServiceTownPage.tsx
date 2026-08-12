@@ -22,6 +22,8 @@ import {
 } from "@/data/service-town-content";
 import { blogPosts } from "@/data/blogs";
 import { getServiceParentPath } from "@/data/service-town-generated";
+import LocalLinkWeb from "@/components/LocalLinkWeb";
+import { getServiceTownLinkWeb } from "@/lib/local-link-graph";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -387,6 +389,11 @@ const ServiceTownPage = ({
             </div>
           </div>
         </section>
+        <LocalLinkWeb
+          heading={`${entry.serviceLabel} and more across ${town.county}`}
+          intro={`Related ${town.name} services, the same work in neighboring towns, and local guides for ${town.name} homeowners.`}
+          groups={getServiceTownLinkWeb(town, serviceSlug, entry.serviceLabel, resolvedCanonical)}
+        />
         <RelatedLinks
           eyebrow="Keep Exploring"
           heading={`More for ${town.name} homeowners`}

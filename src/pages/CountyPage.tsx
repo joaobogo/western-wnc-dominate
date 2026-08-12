@@ -20,6 +20,8 @@ import { towns } from "@/data/towns";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import logo from "@/assets/logo.svg";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import LocalLinkWeb from "@/components/LocalLinkWeb";
+import { getCountyLinkWeb } from "@/lib/local-link-graph";
 
 const CountyPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -391,6 +393,12 @@ const CountyPage = () => {
             </div>
           </div>
         </section>
+
+        <LocalLinkWeb
+          heading={`Explore ${county.name} town by town`}
+          intro={`Town landing pages, local service pages, and field guides written for ${county.name} conditions.`}
+          groups={getCountyLinkWeb(county.name, county.towns)}
+        />
       </main>
       <ConversionTrustBlock variant="band" />
       <Footer />

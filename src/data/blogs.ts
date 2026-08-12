@@ -5978,6 +5978,7 @@ blogPosts.push(...cullowheeClusterPosts);
 import { localTownBlogPosts } from "./blogs-local-towns";
 import { decisionGuidePosts } from "./blogs-decision-guides";
 import { primaryClusterBlogPosts } from "./blogs-primary-clusters";
+import { crossLocalBlogPosts } from "./blogs-cross-local";
 for (const p of localTownBlogPosts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
@@ -5985,6 +5986,9 @@ for (const p of decisionGuidePosts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 for (const p of primaryClusterBlogPosts) {
+  if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
+}
+for (const p of crossLocalBlogPosts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 
