@@ -37,6 +37,7 @@ import { getTownProofContent } from "@/data/town-proof";
 import { blogPosts } from "@/data/blogs";
 import { getTownFAQs } from "@/data/town-faqs-generated";
 import { getRelevantBlogsForTown } from "@/data/content-support";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 const TownPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -385,6 +386,7 @@ const TownPage = () => {
           ]}
         />
       </main>
+      <ConversionTrustBlock variant="band" town={town.name} />
       <Footer />
       <StickyMobileCTA />
     </>

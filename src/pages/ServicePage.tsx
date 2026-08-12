@@ -11,6 +11,7 @@ import { getServiceBySlug, services } from "@/data/services";
 import { towns } from "@/data/towns";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getDivisionTheme } from "@/lib/division-theme";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -201,6 +202,7 @@ const ServicePage = () => {
 
         <InspectionForm />
       </main>
+      <ConversionTrustBlock variant="band" category={service.division === "construction" ? "construction" : "roofing"} />
       <Footer />
       <StickyMobileCTA />
     </>

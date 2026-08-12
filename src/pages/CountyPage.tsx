@@ -18,6 +18,7 @@ import { getCountyBySlug } from "@/data/counties";
 import { towns } from "@/data/towns";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import logo from "@/assets/logo.svg";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 const CountyPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -380,6 +381,7 @@ const CountyPage = () => {
           </div>
         </section>
       </main>
+      <ConversionTrustBlock variant="band" />
       <Footer />
       <StickyMobileCTA />
     </>
