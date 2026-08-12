@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { leadTierLabel, type LeadTierLabel } from "@/lib/lead-scoring";
 
@@ -96,7 +96,14 @@ export default function AdminLeads() {
           .select(SELECT_COLUMNS)
           .order("created_at", { ascending: false })
           .limit(200);
-        setLeads((rows ?? []) as Lead[]);
+        const list = (rows ?? []) as Lead[];
+        setLeads(list);
+        // Deep link from the Teams alert: /admin/leads?lead=<id>
+        const wanted = deepLinkId;
+        if (wanted) {
+          const match = list.find((l) => l.id === wanted);
+          if (match) setSelected(match);
+        }
       }
       setLoading(false);
     });
