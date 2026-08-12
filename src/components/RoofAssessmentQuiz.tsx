@@ -225,7 +225,7 @@ const RoofAssessmentQuiz = () => {
                   <form onSubmit={handleContactSubmit} className="space-y-4">
                     <div>
                       <label className={labelClass} htmlFor="f-your-name">Your Name</label>
-                      <input id="f-your-name" type="text" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className={inputClass} placeholder="First & last name" />
+                      <input id="f-your-name" type="text" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className={inputClass} placeholder="e.g. John and Mary Davidson" />
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>

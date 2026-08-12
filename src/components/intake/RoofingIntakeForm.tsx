@@ -272,7 +272,7 @@ const RoofingIntakeForm = () => {
                 <div>
                   <Label required htmlFor="fld-property-address">Property address</Label>
                   <Input id="fld-property-address"
-                    placeholder="Street, city, and state"
+                    placeholder="e.g. 120 Chestnut St, Highlands, NC"
                     value={data.town}
                     onChange={(e) => set("town", e.target.value)}
                     onBlur={() => contact.blur("town")}

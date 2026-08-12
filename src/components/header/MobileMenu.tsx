@@ -115,12 +115,6 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               </motion.div>
             ))}
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.3 }} className="flex items-center gap-3 py-1.5 px-2.5 mt-1">
-              <div className="flex-1 h-px bg-black/10" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">Company</span>
-              <div className="flex-1 h-px bg-black/10" />
-            </motion.div>
-
             <MobileServiceAreasList
               expanded={expanded === "ServiceAreas"}
               onToggle={() => setExpanded(expanded === "ServiceAreas" ? null : "ServiceAreas")}
@@ -130,16 +124,10 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               btnRef={serviceAreasBtnRef}
             />
 
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.19, duration: 0.3, ease: HIGHLAND_EASE }}>
-              <Link
-                to="/layouts-planning"
-                onClick={onClose}
-                className={`py-2.5 px-2.5 text-[15px] font-bold rounded-sm transition-all flex items-center gap-2 font-body min-h-[44px] ${
-                  isActive("/layouts-planning") ? "text-heritage-charcoal bg-black/5" : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"
-                }`}
-              >
-                Design
-              </Link>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.3 }} className="flex items-center gap-3 py-1.5 px-2.5 mt-1">
+              <div className="flex-1 h-px bg-black/10" />
+              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">Company</span>
+              <div className="flex-1 h-px bg-black/10" />
             </motion.div>
 
             {secondaryLinks.map((link, i) => (

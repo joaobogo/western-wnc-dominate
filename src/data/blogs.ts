@@ -1709,7 +1709,7 @@ Call (828) 524-7773 or submit our online form. We respond rapidly and serve all 
 
 Highlander Roofing prioritizes emergency calls. We aim for same-day assessment when possible and prompt response for all emergency situations across Western NC.
 
-## Call Now: (828) 524-7773`,
+## Call Direct: (828) 524-7773`,
   },
   {
     slug: "mountain-roofing-maintenance-checklist",

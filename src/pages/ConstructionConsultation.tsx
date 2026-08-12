@@ -256,7 +256,7 @@ export default function ConstructionConsultation() {
           aria-label="Property address"
           value={form.town} 
           onChange={e => update("town", e.target.value)} 
-          placeholder="Street, city, and state" 
+          placeholder="e.g. 120 Chestnut St, Highlands, NC" 
           className="w-full rounded-sm border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold)/0.3)]"
         />
       ),
@@ -296,7 +296,7 @@ export default function ConstructionConsultation() {
             <input id="f-full-name"
               value={form.name}
               onChange={e => update("name", e.target.value)}
-              placeholder="Your name"
+              placeholder="e.g. John and Mary Davidson"
               className="w-full rounded-sm border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--highland-gold)/0.3)] field-construction"
               required
             />

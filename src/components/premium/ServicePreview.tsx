@@ -85,7 +85,7 @@ export const ServicePreview = ({
           <h4 className="text-base font-heading font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{title}</h4>
           <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-5 flex-grow">{description}</p>
           <span className={cn("inline-flex items-center gap-1.5 font-semibold text-sm font-body group-hover:gap-2.5 transition-all", styles.ctaColor)}>
-            Learn More <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
+            Explore This Service <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
           </span>
         </div>
       </Link>

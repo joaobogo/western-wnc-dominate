@@ -412,7 +412,7 @@ const ConstructionBuilder = () => {
                   </div>
                   <div className="mt-6">
                     <Label required htmlFor="f-property-address">Property address</Label>
-                    <Input id="f-property-address" value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="Street, city, and state…" />
+                    <Input id="f-property-address" value={data.town} onChange={(e) => set("town", e.target.value)} placeholder="e.g. 120 Chestnut St, Highlands, NC" />
                   </div>
                 </>
               )}

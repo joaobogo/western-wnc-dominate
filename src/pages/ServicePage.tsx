@@ -192,7 +192,7 @@ const ServicePage = () => {
                       </span>
                     </div>
                     <h3 className="font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-                    <span className={`${sTheme.accentClass} text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>Learn More <ArrowRight className="w-4 h-4" /></span>
+                    <span className={`${sTheme.accentClass} text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>Explore This Service <ArrowRight className="w-4 h-4" /></span>
                   </Link>
                 );
               })}

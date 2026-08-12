@@ -36,23 +36,17 @@ export const DesktopNav = forwardRef<HTMLElement, Props>(
 
       <span className="w-px h-4 mx-1.5 transition-colors duration-300 bg-black/10" />
 
-      <Link
-        to="/layouts-planning"
-        className={`relative text-[15px] font-bold transition-all duration-300 px-2.5 xl:px-4 py-4 rounded-sm font-body whitespace-nowrap ${
-          isActive("/layouts-planning")
-            ? "text-heritage-charcoal bg-black/5"
-            : "text-heritage-charcoal/75 hover:text-heritage-charcoal hover:bg-black/5"
-        }`}
-      >
-        Design
-        {isActive("/layouts-planning") && (
-          <motion.div
-            layoutId="nav-active-design"
-            className="absolute -bottom-px left-3 right-3 h-[2px] bg-[hsl(var(--highland-gold))]"
-            transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
-          />
-        )}
-      </Link>
+      <ServiceAreasDropdown
+        ref={serviceAreasTriggerRef}
+        isOpen={openDropdown === "ServiceAreas"}
+        onEnter={() => onEnter("ServiceAreas")}
+        onLeave={onLeave}
+        onOpen={() => onOpen("ServiceAreas")}
+        onClose={onClose}
+        isActive={isActive}
+        onViewAllClick={onViewAllClick}
+        panelRef={serviceAreasPanelRef}
+      />
 
       <span className="w-px h-4 mx-1.5 transition-colors duration-300 bg-black/10" />
 
@@ -76,18 +70,6 @@ export const DesktopNav = forwardRef<HTMLElement, Props>(
           )}
         </Link>
       ))}
-
-      <ServiceAreasDropdown
-        ref={serviceAreasTriggerRef}
-        isOpen={openDropdown === "ServiceAreas"}
-        onEnter={() => onEnter("ServiceAreas")}
-        onLeave={onLeave}
-        onOpen={() => onOpen("ServiceAreas")}
-        onClose={onClose}
-        isActive={isActive}
-        onViewAllClick={onViewAllClick}
-        panelRef={serviceAreasPanelRef}
-      />
     </nav>
   )
 );

@@ -101,7 +101,7 @@ const PaidAdsLanding = ({
                   </a>
                   <a href="tel:+18285247773" className="inline-flex items-center gap-2 border border-primary-foreground/20 bg-primary-foreground/5 px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
                     <Phone className="h-4 w-4" />
-                    Call Now
+                    Call Direct
                   </a>
                 </motion.div>
 

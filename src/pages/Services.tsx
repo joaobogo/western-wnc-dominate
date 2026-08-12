@@ -67,7 +67,7 @@ const Services = () => {
                     <h2 className="text-lg font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{service.title}</h2>
                     <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{service.description.slice(0, 120)}…</p>
                     <span className="inline-flex items-center gap-1 text-primary font-medium text-sm group-hover:gap-2 transition-all">
-                      Learn More <ArrowRight className="w-4 h-4" />
+                      Explore This Service <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
                 </motion.div>
