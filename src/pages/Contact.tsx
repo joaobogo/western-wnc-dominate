@@ -612,7 +612,7 @@ export default function Contact() {
                           <div>
                             <p className="text-sm font-heading font-semibold text-foreground">{office.name}</p>
                             <p className="text-xs text-muted-foreground font-body">{office.address}</p>
-                            <a href={`tel:${office.phone.replace(/[^0-9]/g, "")}`} className="text-xs text-primary font-body hover:underline">{office.phone}</a>
+                            <a href={`tel:${office.phone.replace(/[^0-9]/g, "")}`} className="inline-flex items-center min-h-[44px] text-xs text-primary font-body hover:underline">{office.phone}</a>
                           </div>
                         </div>
                       ))}
