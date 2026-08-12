@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Award, Clock, HardHat, Home, Mountain, Phone, Ruler } from "lucide-react";
 import heroImage from "@/assets/hero-roofing.webp";
