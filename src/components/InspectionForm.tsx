@@ -56,6 +56,8 @@ const InspectionForm = () => {
   };
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  /** Two-step flow: 1 = what you need + town, 2 = how to reach you. */
+  const [step, setStep] = useState<1 | 2>(1);
   /** Optional fields stay collapsed so the visible form is only what we need. */
   const [showDetails, setShowDetails] = useState(false);
   const [townError, setTownError] = useState<string | null>(null);
@@ -103,10 +105,38 @@ const InspectionForm = () => {
 
   const removeFile = (name: string) => setFiles((prev) => prev.filter((f) => f.name !== name));
 
+  const goToStepTwo = () => {
+    const townOk = formData.town.trim().length >= 2;
+    setTownError(townOk ? null : "Let us know the town so we route you to the right crew.");
+    if (!formData.projectType) {
+      setProjectError("Pick what you need help with so we send the right crew.");
+      return;
+    }
+    setProjectError(null);
+    if (!townOk) return;
+    trackFormStepComplete({
+      form_name: "Inspection Request",
+      form_id: "inspection-form-main",
+      step_index: 0,
+      step_name: "need_and_town",
+      total_steps: 2,
+    });
+    setStep(2);
+  };
+
   const handleSubmit = async () => {
     const townOk = formData.town.trim().length >= 2;
     setTownError(townOk ? null : "Let us know the town so we route you to the right crew.");
-    if (!contact.markAttempted() || !townOk) return;
+    if (!townOk) { setStep(1); return; }
+    if (!contact.markAttempted()) return;
+
+    trackFormStepComplete({
+      form_name: "Inspection Request",
+      form_id: "inspection-form-main",
+      step_index: 1,
+      step_name: "contact_details",
+      total_steps: 2,
+    });
 
     setIsSubmitting(true);
 
