@@ -92,7 +92,7 @@ const ConstructionDivision = () => {
     <>
       <SEOHead
         title="Construction in Western NC | Additions & Renovations"
-        description="Premium construction in Western North Carolina. Home additions, renovations, outdoor living, structural upgrades, and custom projects. Licensed general contractor."
+        description="Construction in Western North Carolina: home additions, renovations, outdoor living, and structural upgrades from a licensed general contractor."
         path="/construction"
         jsonLd={[
           serviceSchema({ name: "Construction Services", description: "Home additions, renovations, outdoor living, and custom construction across Western NC.", url: "/construction" }),

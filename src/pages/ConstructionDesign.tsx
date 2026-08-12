@@ -133,7 +133,7 @@ const ConstructionDesign = () => {
     <>
       <SEOHead
         title="Design Services for Construction Projects | Highlander WNC"
-        description="Highlander's in-house design services for additions, remodels, outdoor living, and new construction in Western North Carolina. Three design phases — scope, permit set, and construction documents — with real budget guidance before you build."
+        description="In-house design for additions, remodels, outdoor living, and new builds in Western NC — scope, permit set, and construction documents with real budget guidance."
         path="/construction/design"
         jsonLd={[
           breadcrumbSchema([

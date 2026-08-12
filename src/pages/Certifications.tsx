@@ -141,7 +141,7 @@ const Certifications = () => {
     <>
       <SEOHead
         title="Certifications & Credentials | Licensed & Insured"
-        description="Highlander's certifications explained — CertainTeed ShingleMaster Credentialed Contractor, Licensed NC General Contractor, full insurance, and manufacturer-backed warranties."
+        description="Highlander credentials explained: CertainTeed ShingleMaster Credentialed Contractor, licensed NC general contractor, and full insurance coverage."
         path="/certifications"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Certifications", url: "/certifications" }])}
       />

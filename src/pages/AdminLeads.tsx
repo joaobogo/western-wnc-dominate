@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { leadTierLabel, type LeadTierLabel } from "@/lib/lead-scoring";
+import { useInternalPageHead } from "@/components/SEOHead";
 
 type Lead = {
   id: string;
@@ -87,6 +88,8 @@ type SortKey = keyof typeof SORTS;
 const PAGE_SIZE = 100;
 
 export default function AdminLeads() {
+  useInternalPageHead("Lead dashboard", "Internal Highlander lead dashboard for reviewing and managing inbound requests.", "/admin/leads");
+
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const deepLinkId = searchParams.get("lead");

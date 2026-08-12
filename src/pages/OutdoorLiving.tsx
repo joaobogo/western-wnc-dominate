@@ -106,7 +106,7 @@ const OutdoorLiving = () => {
     <>
       <SEOHead
         title="Outdoor Living in WNC | Patios, Decks, Porches & Pergolas"
-        description="Premium outdoor living spaces for Western North Carolina. Patios, covered porches, screened rooms, decks, pavilions, and outdoor kitchens designed for mountain weather and mountain life."
+        description="Outdoor living in Western North Carolina: patios, covered porches, screened rooms, decks, and outdoor kitchens designed for mountain weather."
         path="/construction/outdoor-living"
         jsonLd={[
           serviceSchema({ name: "Outdoor Living", description: "Premium outdoor living construction for Western North Carolina homeowners.", url: "/construction/outdoor-living" }),

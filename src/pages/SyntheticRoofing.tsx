@@ -30,7 +30,7 @@ const SyntheticRoofing = () => {
     <>
       <SEOHead
         title="Brava Synthetic Shake & Slate Roofing in Western NC"
-        description="Brava synthetic shake and slate roofing across Highlands, Cashiers, and Western NC. Premium aesthetic, mountain-grade durability, manufacturer warranty."
+        description="Brava synthetic shake and slate roofing across Highlands, Cashiers, and Western NC — premium appearance with mountain-grade durability."
         path="/roofing/brava-synthetic"
         jsonLd={buildPageSchema({
           type: "service",

@@ -112,7 +112,7 @@ const HomeAdditions = () => {
     <>
       <SEOHead
         title="Home Additions in Western NC | Suites & Expansions"
-        description="Premium home additions for Western North Carolina. Guest suites, in-law apartments, room expansions, and second-story additions that integrate seamlessly with your existing home."
+        description="Home additions for Western North Carolina: guest suites, in-law apartments, room expansions, and second-story builds matched to your existing home."
         path="/construction/additions"
         jsonLd={[
           serviceSchema({ name: "Home Additions", description: "Home additions and expansions for Western North Carolina homeowners.", url: "/construction/additions" }),

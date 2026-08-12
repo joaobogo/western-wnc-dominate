@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { useInternalPageHead } from "@/components/SEOHead";
 
 type OAuthApi = {
   getAuthorizationDetails: (id: string) => Promise<{ data: any; error: any }>;
@@ -11,6 +12,8 @@ type OAuthApi = {
 const oauth = () => (supabase.auth as unknown as { oauth: OAuthApi }).oauth;
 
 export default function OAuthConsent() {
+  useInternalPageHead("Authorize application access", "Internal authorization screen for granting an application access to Highlander tools.", "/.lovable/oauth/consent");
+
   const [params] = useSearchParams();
   const authorizationId = params.get("authorization_id") ?? "";
   const [details, setDetails] = useState<any>(null);

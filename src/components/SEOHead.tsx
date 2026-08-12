@@ -33,6 +33,43 @@ const setMeta = (attr: string, key: string, content: string) => {
   el.setAttribute("content", content);
 };
 
+/**
+ * Canonical path normalizer.
+ *
+ * Every route must emit a self-referencing canonical in exactly one shape, so
+ * crawlers never see two URLs for the same page:
+ *  - always absolute against https://highlandernc.com
+ *  - query strings and hashes dropped (gclid, utm_*, fbclid, ?page=... etc.)
+ *  - no trailing slash, except the homepage which is always "/"
+ *  - lowercase path, duplicate slashes collapsed
+ */
+export const normalizeCanonicalPath = (rawPath: string): string => {
+  let path = (rawPath || "/").trim();
+
+  // Accept a full URL or a bare path.
+  if (/^https?:\/\//i.test(path)) {
+    try {
+      path = new URL(path).pathname;
+    } catch {
+      path = "/";
+    }
+  }
+
+  // Drop query string and fragment — they never belong in a canonical.
+  path = path.split("#")[0].split("?")[0];
+
+  if (!path.startsWith("/")) path = `/${path}`;
+  path = path.replace(/\/{2,}/g, "/").toLowerCase();
+  if (path.length > 1) path = path.replace(/\/+$/, "");
+
+  return path || "/";
+};
+
+export const canonicalUrlFor = (rawPath: string): string => {
+  const path = normalizeCanonicalPath(rawPath);
+  return path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`;
+};
+
 const SEOHead = ({
   title,
   description,
@@ -45,7 +82,8 @@ const SEOHead = ({
   locale = "en_US",
 }: SEOHeadProps) => {
   const fullTitle = title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`;
-  const canonicalUrl = `${BASE_URL}${path}`;
+  const canonicalPath = normalizeCanonicalPath(path);
+  const canonicalUrl = canonicalUrlFor(path);
   const ogImage = image || DEFAULT_IMAGE;
 
   useEffect(() => {
@@ -62,7 +100,13 @@ const SEOHead = ({
     setMeta("name", "geo.position", "35.1821;-83.3807");
     setMeta("name", "ICBM", "35.1821, -83.3807");
 
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    // Exactly one canonical element may exist — drop any extras the static
+    // head or a previous route left behind, then self-reference this route.
+    const canonicalLinks = Array.from(
+      document.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'),
+    );
+    canonicalLinks.slice(1).forEach((extra) => extra.remove());
+    let link = canonicalLinks[0] ?? null;
     if (!link) { link = document.createElement("link"); link.setAttribute("rel", "canonical"); document.head.appendChild(link); }
     link.setAttribute("href", canonicalUrl);
 
@@ -95,8 +139,8 @@ const SEOHead = ({
     if (!noindex && !serialized.includes(`${BASE_URL}/#business`)) {
       nodes.push(localBusinessSchema());
     }
-    if (!noindex && !serialized.includes("BreadcrumbList") && path !== "/") {
-      const segments = path.split("/").filter(Boolean);
+    if (!noindex && !serialized.includes("BreadcrumbList") && canonicalPath !== "/") {
+      const segments = canonicalPath.split("/").filter(Boolean);
       const trail = [{ name: "Home", url: "/" }];
       segments.forEach((segment, i) => {
         trail.push({
@@ -118,12 +162,33 @@ const SEOHead = ({
       document.head.appendChild(script);
     }
     return () => { const ld = document.querySelector('script[data-seo-ld]'); if (ld) ld.remove(); };
-  }, [fullTitle, description, canonicalUrl, path, type, ogImage, noindex, jsonLd, keywords, locale]);
+  }, [fullTitle, description, canonicalUrl, canonicalPath, type, ogImage, noindex, jsonLd, keywords, locale]);
 
   return null;
 };
 
 export default SEOHead;
+
+/**
+ * Head handling for internal, non-indexable routes (admin, diagnostics, OAuth).
+ * Gives each one a unique title/description and a noindex directive without
+ * requiring the component to have a single JSX return.
+ */
+export const useInternalPageHead = (title: string, description: string, path: string) => {
+  useEffect(() => {
+    const fullTitle = title.includes("Highlander") ? title : `${title} | ${BRAND_SUFFIX}`;
+    document.title = fullTitle;
+    setMeta("name", "description", description);
+    setMeta("name", "robots", "noindex,nofollow");
+
+    const canonicalLinks = Array.from(
+      document.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'),
+    );
+    canonicalLinks.slice(1).forEach((extra) => extra.remove());
+    const link = canonicalLinks[0];
+    if (link) link.setAttribute("href", canonicalUrlFor(path));
+  }, [title, description, path]);
+};
 
 export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@context": "https://schema.org",

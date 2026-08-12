@@ -92,7 +92,7 @@ const RoofRepair = () => {
     <>
       <SEOHead
         title="Roof Repair in Western NC | Leak Diagnosis & Repair"
-        description="Targeted, warrantied roof repairs across Western North Carolina. We diagnose the real cause, fix it right the first time, and document everything."
+        description="Targeted roof repairs across Western North Carolina. We diagnose the real cause, complete the fix correctly, and document the work with photos."
         path="/roofing/roof-repair"
         jsonLd={[
           serviceSchema({ name: "Roof Repair", description: "Expert roof leak diagnosis and permanent repair for Western North Carolina homes.", url: "/roofing/roof-repair" }),
