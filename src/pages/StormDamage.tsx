@@ -19,6 +19,7 @@ import heroImg from "@/assets/gallery/asphalt-005.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -575,6 +576,7 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
+        <ServiceInternalLinks title="Storm Damage Response" slug="storm-damage" />
       </main>
       <RealWorkWidget />
       <ConversionTrustBlock variant="band" category="storm" />

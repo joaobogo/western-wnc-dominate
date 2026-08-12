@@ -30,6 +30,7 @@ import proj4 from "@/assets/gallery/cedar-005.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -498,6 +499,7 @@ const OutdoorLiving = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
+        <ServiceInternalLinks title="Outdoor Living" slug="outdoor-living" />
       </main>
 
       <ConversionTrustBlock variant="band" category="construction" />

@@ -29,6 +29,7 @@ import proj3 from "@/assets/gallery/asphalt-006.webp";
 import proj4 from "@/assets/gallery/cedar-002.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -551,6 +552,7 @@ const HomeAdditions = () => {
           subheadline="Whether it's a guest suite, a main-level master, or a room you haven't even named yet — let's talk about what your home could become."
           eyebrow="Start Planning"
         />
+        <ServiceInternalLinks title="Home Additions" slug="additions" />
       </main>
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

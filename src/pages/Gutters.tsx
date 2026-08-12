@@ -13,6 +13,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 const faqs = [
   { q: "What size gutters do mountain homes need?", a: "Most WNC homes benefit from 6-inch gutters with oversized 3x4 downspouts. The steep terrain and heavy rainfall here demand higher-capacity systems than standard 5-inch gutters provide." },
@@ -210,6 +211,7 @@ const Gutters = () => {
             { label: "Contact Highlander", href: "/contact", description: "Talk to a project advisor" }
           ]}
         />
+        <ServiceInternalLinks title="Seamless Gutters" slug="gutters" />
       </main>
 
       <ConversionTrustBlock variant="band" category="roofing" />

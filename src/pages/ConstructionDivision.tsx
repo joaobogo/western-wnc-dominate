@@ -46,6 +46,7 @@ import proj4 from "@/assets/gallery/asphalt-004.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -498,6 +499,7 @@ const ConstructionDivision = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
+        <ServiceInternalLinks title="Construction Services" slug="construction" />
       </main>
 
       <RealWorkWidget />

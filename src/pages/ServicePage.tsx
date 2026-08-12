@@ -13,6 +13,8 @@ import { towns } from "@/data/towns";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getDivisionTheme } from "@/lib/division-theme";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import RelatedLinks from "@/components/RelatedLinks";
+import { getServiceBlogLinks, getServiceTownLinks, estimateLink } from "@/lib/internal-links";
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -212,6 +214,17 @@ const ServicePage = () => {
         </section>
 
         <InspectionForm />
+        <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading={`Related reading and local coverage for ${service.title}`}
+          columns={2}
+          links={[
+            ...getServiceBlogLinks(service.title, resolvedSlug, 3),
+            ...getServiceTownLinks(4),
+            { label: "All Service Areas", href: "/service-areas", description: "Every Western North Carolina town we cover." },
+            estimateLink,
+          ]}
+        />
       </main>
       <ConversionTrustBlock variant="band" category={service.division === "construction" ? "construction" : "roofing"} />
       <Footer />

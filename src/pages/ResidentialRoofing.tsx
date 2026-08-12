@@ -27,6 +27,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -957,6 +958,7 @@ const ResidentialRoofing = () => {
             { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
           ]}
         />
+        <ServiceInternalLinks title="Residential Roofing" slug="residential-roofing" />
       </main>
 
       <RealWorkWidget />

@@ -39,6 +39,7 @@ import { blogPosts } from "@/data/blogs";
 import { getTownFAQs } from "@/data/town-faqs-generated";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
 
 const TownPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -386,6 +387,7 @@ const TownPage = () => {
           heading={`Roofing & construction for ${town.name} homeowners`}
           columns={2}
           links={[
+            ...(getCountyHubLink(town.county) ? [getCountyHubLink(town.county)!] : []),
             { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
             { label: "Roof Repair in Western NC", href: "/roofing/roof-repair", description: "Leaks, storm damage, and repair" },
             { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials and process" },
@@ -393,7 +395,8 @@ const TownPage = () => {
             { label: "Construction Division", href: "/construction", description: "Additions, renovations, and more" },
             { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning" },
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
-            { label: "Request an Inspection", href: "/request-inspection", description: "Start your project with a written scope" },
+            ...getTownBlogLinks(town.name, 3),
+            estimateLink,
             { label: "Contact Highlander", href: "/contact", description: "Reach a Western NC project advisor" },
           ]}
         />
