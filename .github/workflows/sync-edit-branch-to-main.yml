@@ -8,6 +8,15 @@ on:
     branches:
       - 'edit/**'
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Edit branch to sync (blank = newest edit/** branch)'
+        required: false
+        default: ''
+  # Safety net: push events from the Lovable GitHub App do not always start a
+  # workflow run, so reconcile main with the newest edit branch on a schedule.
+  schedule:
+    - cron: '*/30 * * * *'
 
 permissions:
   contents: write
@@ -24,21 +33,49 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.ref_name }}
+
+      - name: Resolve edit branch to sync
+        id: resolve
+        run: |
+          set -e
+          INPUT="${{ github.event.inputs.branch }}"
+          if [ "${{ github.event_name }}" = "push" ]; then
+            BRANCH="${{ github.ref_name }}"
+          elif [ -n "$INPUT" ]; then
+            BRANCH="$INPUT"
+          else
+            # Newest edit/** branch by last commit date.
+            BRANCH=$(git for-each-ref --sort=-committerdate --format='%(refname:short)' \
+              'refs/remotes/origin/edit/*' | head -n1 | sed 's|^origin/||')
+          fi
+          if [ -z "$BRANCH" ]; then
+            echo "No edit/** branch found; nothing to sync."
+            echo "branch=" >> "$GITHUB_OUTPUT"
+          else
+            echo "Syncing from $BRANCH"
+            echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Configure git identity
+        if: steps.resolve.outputs.branch != ''
         run: |
           git config user.name "lovable-sync[bot]"
           git config user.email "lovable-sync[bot]@users.noreply.github.com"
 
       - name: Merge edit branch into main
+        if: steps.resolve.outputs.branch != ''
         run: |
           set -e
-          BRANCH="${{ github.ref_name }}"
+          BRANCH="${{ steps.resolve.outputs.branch }}"
           git fetch origin main:refs/remotes/origin/main || true
+          git fetch origin "$BRANCH" || true
 
           if git show-ref --verify --quiet refs/remotes/origin/main; then
             git checkout -B main origin/main
+            if git merge-base --is-ancestor "origin/$BRANCH" main; then
+              echo "main already contains $BRANCH — nothing to do."
+              exit 0
+            fi
             # Prefer the edit branch's content on any conflict — Lovable is the
             # source of truth for this project.
             if ! git merge --no-edit -X theirs "origin/$BRANCH"; then
