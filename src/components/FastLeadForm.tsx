@@ -64,7 +64,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         <div className="text-[10px] font-body font-semibold uppercase tracking-[0.18em] text-primary mb-2">
           Request a Free Quote
         </div>
-        <h3 className="font-heading text-2xl font-bold text-foreground">Get help with {serviceLabel.toLowerCase()}.</h3>
+        <h2 className="font-heading text-2xl font-bold text-foreground">Get help with {serviceLabel.toLowerCase()}.</h2>
         <p className="mt-2 text-sm text-muted-foreground font-body leading-relaxed">
           Four quick fields. A real local advisor follows up fast.
         </p>

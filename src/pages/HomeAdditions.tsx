@@ -373,7 +373,7 @@ const HomeAdditions = () => {
                   Home additions involve zoning, structural engineering, permits, inspections, and utility coordination. We manage all of it as part of our standard process — so you focus on the vision while we navigate the logistics.
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
-                  <h4 className="font-heading font-bold text-foreground text-sm mb-2">Not sure where to start?</h4>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2">Not sure where to start?</h3>
                   <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
