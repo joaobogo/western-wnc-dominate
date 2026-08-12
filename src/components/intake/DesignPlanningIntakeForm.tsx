@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { trackFormStepComplete } from "@/lib/gtm";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, Loader2, Sparkles, Layout, ClipboardCheck, FileText } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
@@ -98,7 +99,16 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
     return false;
   }, [step, data, mode, contact.valid]);
 
-  const next = () => stepValid && setStep((s) => Math.min(totalSteps - 1, s + 1));
+  const next = () => {
+    if (!stepValid) return;
+    trackFormStepComplete({
+      form_name: "Design Planning Intake",
+      form_id: "design-planning-intake",
+      step_index: step,
+      total_steps: totalSteps,
+    });
+    setStep((s) => Math.min(totalSteps - 1, s + 1));
+  };
   const back = () => setStep((s) => Math.max(0, s - 1));
 
   const submit = async () => {
