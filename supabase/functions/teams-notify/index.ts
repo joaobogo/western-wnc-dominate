@@ -189,6 +189,26 @@ function buildCallMessage(input: Record<string, any>) {
 }
 
 /**
+ * Alert raised when a website rollback is performed via GitHub Actions or the
+ * Netlify dashboard. Includes the reason, method, and actor so the team can
+ * verify the live site and investigate the root cause.
+ */
+function buildRollbackMessage(input: Record<string, any>) {
+  const items = [
+    line("Reason", input.reason),
+    line("Method", input.method),
+    line("Deploy ID", input.deploy_id),
+    line("Actor", input.actor),
+    line("Commit", input.commit),
+    line("Site", input.site || SITE),
+    line("Time", easternTime()),
+  ]
+    .filter(Boolean)
+    .join("");
+  return `<h3>🔄 Website rollback executed</h3><ul>${items}</ul><p><i>The live site has been rolled back. Please verify the homepage, conversion paths, and business information, then investigate the root cause before re-deploying.</i></p>`;
+}
+
+/**
  * Alert raised when a lead exhausts every JobTread sync retry. The lead is
  * safely stored in the database — this tells the team to enter it manually.
  */

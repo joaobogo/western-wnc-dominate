@@ -1,8 +1,11 @@
 {
-  "commit": "46e187576702a698ce27759b2dea8b11503c9006",
-  "shortCommit": "46e1875",
-  "branch": "edit/edt-4a4094bc-bf3c-464d-98e3-49004af8d9b1",
-  "builtAt": "2026-08-12T19:05:31.151Z",
+  "commit": "96c200695c4456f5e974bfae0125489183e2bebc",
+  "shortCommit": "96c2006",
+  "branch": "edit/edt-d5469e5e-dffc-494b-97c5-e44e9c7179fa",
+  "builtAt": "2026-08-12T19:15:47.701Z",
   "deployId": null,
+  "deployUrl": null,
+  "deployPrimeUrl": null,
+  "siteUrl": null,
   "context": "local"
 }
