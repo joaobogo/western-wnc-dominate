@@ -146,7 +146,7 @@ A meaningful comparison, though, needs to consider the entire project rather tha
 | Exposed-fastener metal | $5–$12 per sq. ft. |
 | Standing seam metal | $9–$16 per sq. ft. |
 
-*These are published national cost ranges for general comparison, not Highlander Building Services pricing or an estimate for a specific property. Actual costs vary by location, material specifications, roof size, pitch, tear-off requirements, decking condition, access, flashing, architectural complexity, and other project-specific conditions.
+*These are published national cost ranges for general comparison, not Highlander Building Services pricing or an estimate for a specific property. Actual costs vary by location, material specifications, roof size, pitch, tear-off requirements, decking condition, access, flashing, roof complexity, and other project-specific conditions.
 
 These figures also show why broad statements about metal costing a fixed multiple of shingles can be misleading. The ranges overlap, particularly when comparing higher-end asphalt products with exposed-fastener metal.
 
@@ -244,7 +244,7 @@ Mountain construction adds another variable: access. A narrow or steep driveway,
 | Wind | Product and installation dependent | Excellent uplift potential | Fastening and product dependent |
 | Snow | Textured surface retains snow longer | Smooth surface can release snow | Can also shed accumulated snow |
 | Complex designs | Adaptable and repairable | Strong performance but fabrication-intensive | Detail and geometry dependent |
-| Appearance | Broad range of styles | Distinct architectural look | More utilitarian depending on profile |
+| Appearance | Broad range of styles | Distinct designer look | More utilitarian depending on profile |
 
 ## Which Roof Should You Choose?
 
