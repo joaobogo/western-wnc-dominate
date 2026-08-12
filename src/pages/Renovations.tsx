@@ -26,6 +26,7 @@ import proj4 from "@/assets/gallery/metal-005.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */

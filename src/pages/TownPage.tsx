@@ -40,6 +40,7 @@ import { getTownFAQs } from "@/data/town-faqs-generated";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import LocalProjectProof from "@/components/trust/LocalProjectProof";
 import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
 import LocalLinkWeb from "@/components/LocalLinkWeb";

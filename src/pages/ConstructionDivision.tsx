@@ -46,6 +46,7 @@ import proj4 from "@/assets/gallery/asphalt-004.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -31,6 +31,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
