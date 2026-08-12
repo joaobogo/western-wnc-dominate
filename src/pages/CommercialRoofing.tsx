@@ -128,6 +128,13 @@ const CommercialRoofing = () => {
         })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Roofing", url: "/roofing" },
+          { name: "Commercial Roofing", url: "/roofing/commercial" },
+        ]}
+      />
       <main id="main-content">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
