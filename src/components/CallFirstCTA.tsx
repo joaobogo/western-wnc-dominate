@@ -71,6 +71,12 @@ const CallFirstCTA = ({
       >
         {reason ?? getCallReason(pathname, townName)}
       </p>
+      <CTAProofPoints
+        align="start"
+        tone={dark ? "dark" : "light"}
+        area={townName ? `${townName} and the surrounding area` : undefined}
+        className="mt-4"
+      />
     </div>
   );
 };
