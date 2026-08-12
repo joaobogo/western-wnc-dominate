@@ -591,7 +591,7 @@ const BlogPostPage = () => {
                   <Shield className="w-6 h-6 text-[hsl(var(--gold-ink))] mx-auto mb-3" />
                   <h2 className="font-heading font-semibold text-primary-foreground text-sm mb-2">
                     Need Expert Advice?
-                  </h4>
+                  </h2>
                   <p className="text-primary-foreground/85 text-xs mb-4">
                     No pressure, no upselling — just honest expert advice.
                   </p>
