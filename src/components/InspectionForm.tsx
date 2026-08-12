@@ -5,6 +5,7 @@ import { ArrowRight, ArrowLeft, ChevronDown, CheckCircle, Shield, Clock, Phone, 
 import { trackEvent } from "@/lib/analytics";
 import { trackFormStepComplete } from "@/lib/gtm";
 import { fieldAttrs } from "@/lib/field-ergonomics";
+import { projectTypeFromPage } from "@/lib/form-service-context";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -61,6 +62,9 @@ const InspectionForm = () => {
   const [step, setStep] = useState<1 | 2>(1);
   /** Optional fields stay collapsed so the visible form is only what we need. */
   const [showDetails, setShowDetails] = useState(false);
+  /** Service type implied by the page — no need to ask again. */
+  const presetProjectType = useRef<string>(projectTypeFromPage());
+  const [showProjectChoices, setShowProjectChoices] = useState(!presetProjectType.current);
   const [townError, setTownError] = useState<string | null>(null);
   const [projectError, setProjectError] = useState<string | null>(null);
   const [files, setFiles] = useState<File[]>([]);
@@ -71,7 +75,7 @@ const InspectionForm = () => {
     phone: "",
     email: "",
     town: townFromQuery(),
-    projectType: "",
+    projectType: presetProjectType.current,
     details: "",
     // Optional — revealed behind "Add details"
     address: "",
@@ -83,7 +87,8 @@ const InspectionForm = () => {
     enabled: !submitted,
     onRestore: (saved) => {
       setFormData((d) => ({ ...d, ...saved, town: saved.town || d.town }));
-      if (saved.address || saved.timeline || saved.insuranceStatus) setShowDetails(true);
+      if (saved.address || saved.timeline || saved.insuranceStatus || saved.email || saved.details) setShowDetails(true);
+      if (saved.projectType) setShowProjectChoices(false);
     },
   });
 
@@ -93,7 +98,7 @@ const InspectionForm = () => {
     email: formData.email,
     address: formData.address,
     town: formData.town,
-    require: { name: true },
+    require: { name: true, phone: true },
   });
 
   const addFiles = (incoming: FileList | null) => {
@@ -381,7 +386,27 @@ const InspectionForm = () => {
                 {step === 1 && (
                 <div className="space-y-6">
                   <div>
-                    <span className={labelClasses}>What Do You Need Help With?</span>
+                    <div className="flex items-baseline justify-between gap-4 flex-wrap">
+                      <span className={labelClasses}>What Do You Need Help With?</span>
+                      {!showProjectChoices && (
+                        <button
+                          type="button"
+                          onClick={() => setShowProjectChoices(true)}
+                          className="text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] hover:opacity-85 transition-opacity mb-3"
+                        >
+                          Change
+                        </button>
+                      )}
+                    </div>
+                    {!showProjectChoices && (
+                      <div className="flex items-center gap-3 px-4 py-4 border border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.16)]">
+                        <CheckCircle className="w-5 h-5 flex-shrink-0 text-[hsl(var(--gold-ink))]" />
+                        <span className="text-white font-body font-bold text-[16px] md:text-[17px]">
+                          {PROJECT_CHOICES.find((c) => c.value === formData.projectType)?.label ?? "Roof Repair or Leak"}
+                        </span>
+                      </div>
+                    )}
+                    {showProjectChoices && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {PROJECT_CHOICES.map((choice) => {
                         const active = formData.projectType === choice.value;
@@ -404,6 +429,7 @@ const InspectionForm = () => {
                         );
                       })}
                     </div>
+                    )}
                     <InlineFieldError className="text-[hsl(var(--gold-ink))]">{projectError ?? undefined}</InlineFieldError>
                   </div>
 
@@ -473,37 +499,8 @@ const InspectionForm = () => {
                         placeholder="(828) 555-0123"
                       />
                       <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("phone")}</InlineFieldError>
+                      <p className={hintClasses}>Name and phone are all we need to get you scheduled.</p>
                     </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-5">
-                    <div>
-                      <label htmlFor="email" className={labelClasses}>Email</label>
-                      <input
-                        id="email" type="email" maxLength={255}
-                        {...fieldAttrs.emailLast}
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        onBlur={() => contact.blur("email")}
-                        aria-invalid={Boolean(contact.errorFor("email")) || undefined}
-                        className={inputClasses}
-                        placeholder="you@email.com"
-                      />
-                      <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("email")}</InlineFieldError>
-                      <p className={hintClasses}>A phone number or an email is enough — whichever you prefer.</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="details" className={labelClasses}>Briefly, What's Going On?</label>
-                    <textarea
-                      id="details" rows={3} maxLength={1000}
-                      {...fieldAttrs.notes}
-                      value={formData.details}
-                      onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                      className={`${inputClasses} resize-none`}
-                      placeholder="A leak over the kitchen, an aging roof, a porch we'd like to build…"
-                    />
                   </div>
                 </div>
 
@@ -520,7 +517,7 @@ const InspectionForm = () => {
                     {showDetails ? "Hide extra details" : "Add details (optional)"}
                   </button>
                   <p className="text-white/70 text-[13px] font-body mt-2">
-                    Address, timing, insurance and photos help us prepare — none of it is required.
+                    Email, notes, address, timing, insurance and photos help us prepare — none of it is required.
                   </p>
 
                   <AnimatePresence initial={false}>
@@ -534,6 +531,31 @@ const InspectionForm = () => {
                         className="overflow-hidden"
                       >
                         <div className="space-y-5 pt-5">
+                          <div>
+                            <label htmlFor="email" className={labelClasses}>Email</label>
+                            <input
+                              id="email" type="email" maxLength={255}
+                              {...fieldAttrs.emailLast}
+                              value={formData.email}
+                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                              onBlur={() => contact.blur("email")}
+                              aria-invalid={Boolean(contact.errorFor("email")) || undefined}
+                              className={inputClasses}
+                              placeholder="you@email.com"
+                            />
+                            <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("email")}</InlineFieldError>
+                          </div>
+                          <div>
+                            <label htmlFor="details" className={labelClasses}>Briefly, What's Going On?</label>
+                            <textarea
+                              id="details" rows={3} maxLength={1000}
+                              {...fieldAttrs.notes}
+                              value={formData.details}
+                              onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                              className={`${inputClasses} resize-none`}
+                              placeholder="A leak over the kitchen, an aging roof, a porch we'd like to build…"
+                            />
+                          </div>
                           <div>
                             <label htmlFor="address" className={labelClasses}>Property Address</label>
                             <input
