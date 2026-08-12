@@ -91,6 +91,27 @@ const CHECKS: Check[] = [
     mustContain: ["828-524-7773"],
   },
   {
+    path: "/construction",
+    label: "Construction hub",
+    mustContain: ["Highlander"],
+  },
+  {
+    path: "/service-areas/franklin-nc",
+    label: "Franklin NC town page",
+    mustContain: ["Franklin", "828-524-7773"],
+  },
+  {
+    path: "/projects",
+    label: "Projects page",
+    mustContain: ["Highlander"],
+  },
+  {
+    path: "/build-info.json",
+    label: "Build fingerprint",
+    mustContain: ["commit"],
+    contentType: "json",
+  },
+  {
     path: "/sitemap.xml",
     label: "Sitemap",
     mustContain: ["<urlset", "https://highlandernc.com/"],
