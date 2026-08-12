@@ -464,9 +464,9 @@ const BlogPostPage = () => {
                   <div className="flex items-center justify-between mb-8">
                     <div>
                       <span className="eyebrow mb-2 block">Project Proof</span>
-                      <h3 className="text-2xl font-heading font-bold text-foreground">
+                      <h2 className="text-2xl font-heading font-bold text-foreground">
                         {post.town ? `Real Work in ${post.town}` : "Mountain-Proven Results"}
-                      </h3>
+                      </h2>
                     </div>
                     <Link to="/recent-projects" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
                       View All Projects <ArrowRight className="w-4 h-4" />
@@ -494,7 +494,7 @@ const BlogPostPage = () => {
                               <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                               <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{project.location}</span>
                             </div>
-                            <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h4>
+                            <h3 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
                           </div>
                         </Link>
                       ))}
