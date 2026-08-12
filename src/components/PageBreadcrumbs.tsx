@@ -41,6 +41,10 @@ const SCHEMA_SCRIPT_ID = "ld-breadcrumbs";
 const PageBreadcrumbs = ({ items, className = "", emitSchema = true }: PageBreadcrumbsProps) => {
   useEffect(() => {
     if (!emitSchema || !items || items.length === 0) return;
+    // Avoid duplicate BreadcrumbList nodes when the page already ships one
+    // through SEOHead/buildPageSchema.
+    const pageLd = document.querySelector('script[data-seo-ld]');
+    if (pageLd?.textContent?.includes("BreadcrumbList")) return;
     let el = document.getElementById(SCHEMA_SCRIPT_ID) as HTMLScriptElement | null;
     if (!el) {
       el = document.createElement("script");

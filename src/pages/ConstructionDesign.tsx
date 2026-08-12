@@ -6,7 +6,8 @@ import {
  Sparkles, Phone, ChevronRight, FileText, Clock,
   Home, Trees, PlusSquare, DoorOpen,
 } from "lucide-react";
-import SEOHead, { breadcrumbSchema, faqSchema } from "@/components/SEOHead";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -135,16 +136,30 @@ const ConstructionDesign = () => {
         title="Design Services for Construction Projects | Highlander WNC"
         description="In-house design for additions, remodels, outdoor living, and new builds in Western NC — scope, permit set, and construction documents with real budget guidance."
         path="/construction/design"
-        jsonLd={[
-          breadcrumbSchema([
+        jsonLd={buildPageSchema({
+          type: "service",
+          service: {
+            name: "Layout & Design Planning",
+            description:
+              "In-house design for additions, remodels, outdoor living, and new builds in Western North Carolina — scope, permit set, and construction documents.",
+            url: "/construction/design",
+          },
+          breadcrumbs: [
             { name: "Home", url: "/" },
             { name: "Construction", url: "/construction" },
             { name: "Design Services", url: "/construction/design" },
-          ]),
-          faqSchema(faqs),
-        ]}
+          ],
+          faqs,
+        })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Construction", url: "/construction" },
+          { name: "Design Services", url: "/construction/design" },
+        ]}
+      />
       <main id="main-content">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[62vh] md:min-h-[74vh] flex items-end overflow-hidden">

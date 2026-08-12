@@ -5,22 +5,52 @@ import {
   Mountain, Droplets, Wind, Sun, Home, Layers,
   HardHat, Award, Clock
 } from "lucide-react";
-import SEOHead from "@/components/SEOHead";
+import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 const Siding = () => {
+  const faqs = [
+    { q: "What siding material holds up best in Western North Carolina?", a: "Fiber cement (James Hardie) is our most recommended siding for WNC — it handles moisture, temperature swings, and UV exposure better than most alternatives. Cedar and premium composite trim are also strong choices depending on your home and budget." },
+    { q: "Can you replace just damaged sections, or do I need full siding replacement?", a: "Many partial replacements are possible, especially after storm damage. Highlander will assess the existing system and recommend the smallest scope that protects the home long-term." },
+    { q: "How long does siding installation typically take?", a: "Most residential projects in Franklin, Highlands, Cashiers, and Sylva take 1 to 3 weeks depending on size, complexity, and any required repairs to sheathing or trim." },
+    { q: "Do you handle paint, trim, and exterior accents too?", a: "Yes. We coordinate trim, soffit, fascia, and decorative millwork as part of the siding scope. Painting and stain finishes can be included on most projects." },
+    { q: "Who installs the siding — subcontractors or your own crews?", a: "Our in-house crews handle siding installation, with the same project manager coordinating trim, roofing, and gutter transitions." },
+  ];
   return (
     <>
       <SEOHead
         title="Siding Installation in Western NC | Fiber Cement & Cedar"
         description="Mountain-grade siding installation across Highlands, Franklin, and Sylva. James Hardie fiber cement, natural cedar, and premium moisture-proof trim."
         path="/construction/siding"
+        jsonLd={buildPageSchema({
+          type: "service",
+          service: {
+            name: "Siding & Exterior Installation",
+            description:
+              "Fiber cement, cedar, and composite siding installation with flashing, trim, and moisture management for Western North Carolina homes.",
+            url: "/construction/siding",
+          },
+          breadcrumbs: [
+            { name: "Home", url: "/" },
+            { name: "Construction", url: "/construction" },
+            { name: "Siding & Exterior", url: "/construction/siding" },
+          ],
+          faqs: faqs.map((f) => ({ question: f.q, answer: f.a })),
+        })}
       />
       <Header />
+      <PageBreadcrumbs
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Construction", url: "/construction" },
+          { name: "Siding & Exterior", url: "/construction/siding" },
+        ]}
+      />
       <main id="main-content">
         <section className="relative min-h-[60vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
@@ -68,7 +98,7 @@ const Siding = () => {
                   {[
                     "James Hardie fiber cement systems (Rot-proof, Fire-rated)",
                     "Natural cedar shake and lap siding",
-                    "Premium PVC and composite trim (Never-rot guarantees)",
+                    "Premium PVC and composite trim (rot-resistant)",
                     "Advanced house-wrap and moisture management",
                     "Soffit, fascia, and decorative millwork",
                   ].map((item) => (
@@ -112,13 +142,7 @@ const Siding = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight">Common Siding Questions</h2>
             </div>
             <div className="divide-y divide-border border-y border-border">
-              {[
-                { q: "What siding material holds up best in Western North Carolina?", a: "Fiber cement (James Hardie) is our most recommended siding for WNC — it handles moisture, temperature swings, and UV exposure better than most alternatives. Cedar and premium composite trim are also strong choices depending on your home and budget." },
-                { q: "Can you replace just damaged sections, or do I need full siding replacement?", a: "Many partial replacements are possible, especially after storm damage. Highlander will assess the existing system and recommend the smallest scope that protects the home long-term." },
-                { q: "How long does siding installation typically take?", a: "Most residential projects in Franklin, Highlands, Cashiers, and Sylva take 1 to 3 weeks depending on size, complexity, and any required repairs to sheathing or trim." },
-                { q: "Do you handle paint, trim, and exterior accents too?", a: "Yes. We coordinate trim, soffit, fascia, and decorative millwork as part of the siding scope. Painting and stain finishes can be included on most projects." },
-                { q: "Is siding work covered by warranty?", a: "Yes — Highlander's workmanship warranty applies, in addition to the manufacturer warranties from James Hardie and other premium product lines." },
-              ].map((qa) => (
+              {faqs.map((qa) => (
                 <details key={qa.q} className="group py-5">
                   <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
                     <span className="font-heading font-bold text-foreground text-base md:text-lg leading-snug group-hover:text-primary transition-colors">{qa.q}</span>
