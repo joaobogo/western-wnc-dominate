@@ -529,6 +529,8 @@ export default function Contact() {
                         </div>
                       </div>
 
+                      <FormSavedNote show={autosave.restored} />
+
                       {/* Message */}
                       <div>
                         <label htmlFor="cc-msg" className={labelClasses}>
