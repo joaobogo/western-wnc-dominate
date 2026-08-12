@@ -1,5 +1,5 @@
 import { Phone, ArrowRight, FileText, MessageSquare } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
@@ -7,7 +7,25 @@ import { trackEvent } from "@/lib/analytics";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
 
+/** Intake / form-first routes already show a primary form above the fold —
+ *  the sticky bar would duplicate their CTAs, so it stays hidden there. */
+const INTAKE_ROUTES = [
+  "/consultation",
+  "/roofing-intake",
+  "/construction-intake",
+  "/roofing-builder",
+  "/construction-builder",
+  "/design-intake",
+  "/quote-flow",
+  "/request-inspection",
+  "/contact",
+];
+
 const StickyMobileCTA = () => {
+  const { pathname } = useLocation();
+  const onIntakePage = INTAKE_ROUTES.some(
+    (r) => pathname === r || pathname.startsWith(`${r}/`),
+  );
   const [scrolled, setScrolled] = useState(false);
   const [desktopHovered, setDesktopHovered] = useState(false);
   const [suppressed, setSuppressed] = useState(false);
@@ -86,6 +104,8 @@ const StickyMobileCTA = () => {
       setSuppressed(chatOpen || menuOpen);
     }
   }, [formInView]);
+
+  if (onIntakePage) return null;
 
   return (
     <>
