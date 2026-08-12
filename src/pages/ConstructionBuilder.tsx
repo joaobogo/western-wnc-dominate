@@ -300,7 +300,7 @@ const ConstructionBuilder = () => {
   if (submitted) {
     return (
       <>
-        <SEOHead title="Scope brief received | Highlander" description="Your construction scope brief has been received." path="/construction-builder" noindex />
+        <SEOHead title="Construction scope brief received | Highlander" description="Your construction scope brief has been received by the Highlander project team." path="/construction-builder" noindex />
         <Header />
         <main id="main-content" className="pt-28 pb-20 bg-background">
           <div className="max-w-2xl mx-auto px-6">

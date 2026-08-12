@@ -265,7 +265,7 @@ const RoofingBuilder = () => {
   if (submitted) {
     return (
       <>
-        <SEOHead title="Scope brief received | Highlander" description="Your roofing scope brief has been received." path="/roofing-builder" noindex />
+        <SEOHead title="Roofing scope brief received | Highlander" description="Your roofing scope brief has been received by the Highlander roofing team." path="/roofing-builder" noindex />
         <Header />
         <main id="main-content" className="pt-28 pb-20 bg-background">
           <div className="max-w-2xl mx-auto px-6">
