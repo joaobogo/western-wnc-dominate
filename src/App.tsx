@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
+import UrlNormalizer from "./components/UrlNormalizer";
 import GTMRouteTracker from "./components/GTMRouteTracker";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
@@ -108,6 +109,7 @@ const App = () => (
           <Sonner />
         </Suspense>
         <BrowserRouter>
+          <UrlNormalizer />
           <ScrollToTop />
           <GTMRouteTracker />
           <Suspense fallback={<div className="min-h-screen bg-background" />}>
