@@ -193,11 +193,11 @@ const LayoutsPlanning = () => {
 
                 <div className="mt-12 grid grid-cols-2 gap-8 border-t border-border pt-12">
                   <div>
-                    <h4 className="text-2xl font-heading font-bold mb-2">35+</h4>
+                    <p className="text-2xl font-heading font-bold mb-2">35+</p>
                     <p className="text-xs uppercase tracking-widest text-muted-foreground font-body">Years Construction Experience</p>
                   </div>
                   <div>
-                    <h4 className="text-2xl font-heading font-bold mb-2">100%</h4>
+                    <p className="text-2xl font-heading font-bold mb-2">100%</p>
                     <p className="text-xs uppercase tracking-widest text-muted-foreground font-body">Technical Feasibility Check</p>
                   </div>
                 </div>
@@ -312,7 +312,7 @@ const LayoutsPlanning = () => {
                     <div key={point.title} className="group">
                       <div className="flex items-center gap-3 mb-3 border-b border-border pb-3 group-hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
                         <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
-                        <h4 className="font-heading font-bold text-lg">{point.title}</h4>
+                        <h3 className="font-heading font-bold text-lg">{point.title}</h3>
                       </div>
                       <p className="text-[14px] text-muted-foreground leading-relaxed font-body">{point.desc}</p>
                     </div>
@@ -338,7 +338,7 @@ const LayoutsPlanning = () => {
                           <step.icon className="w-4 h-4" />
                         </div>
                         <div>
-                          <h4 className="font-heading font-bold text-[16px] mb-1">{step.title}</h4>
+                          <h3 className="font-heading font-bold text-[16px] mb-1">{step.title}</h3>
                           <p className="text-[13px] text-muted-foreground font-body leading-relaxed">{step.desc}</p>
                         </div>
                       </div>
