@@ -166,3 +166,69 @@ describe("Lead Notes single-write rule", () => {
     expect(short).toContain("roof.jpg");
   });
 });
+
+describe("Never rename or merge existing customers", () => {
+  it("blocks any rename/merge mutation before it leaves the function", async () => {
+    const { assertNoCustomerRewrite } = await mod();
+    expect(() => assertNoCustomerRewrite({ createAccount: { $: { name: "Jane Van Dyke" } } })).not.toThrow();
+    for (const m of ["updateAccount", "renameAccount", "mergeAccount", "updateContact", "deleteAccount"]) {
+      expect(() => assertNoCustomerRewrite({ [m]: { $: { id: "a1", name: "x" } } }), m).toThrow(/never renamed or merged/);
+    }
+    // Nested inside a larger query too.
+    expect(() =>
+      assertNoCustomerRewrite({ organization: { accounts: { updateAccount: { $: {} } } } }),
+    ).toThrow(/never renamed or merged/);
+  });
+
+  it("matches an existing customer only on full name + town", async () => {
+    const { accountMatchesTown } = await mod();
+    const locs = [{ name: "12 Elm St", address: "12 Elm St, Franklin, NC" }];
+    expect(accountMatchesTown(locs, "Franklin")).toBe(true);
+    expect(accountMatchesTown(locs, "Cashiers")).toBe(false);
+    expect(accountMatchesTown([], "Franklin")).toBe(false);
+  });
+});
+
+describe("Attachment pipeline", () => {
+  it("signs links for 30 days", async () => {
+    const { ATTACHMENT_URL_TTL_SECONDS } = await mod();
+    expect(ATTACHMENT_URL_TTL_SECONDS).toBe(60 * 60 * 24 * 30);
+  });
+
+  it("retries signing before reporting a failure", async () => {
+    const { resolveAttachments } = await mod();
+    let calls = 0;
+    const res = await resolveAttachments(
+      { attachments: [{ path: "submissions/a/plan.pdf", name: "plan.pdf" }] },
+      async () => {
+        calls += 1;
+        if (calls < 2) throw new Error("network");
+        return { url: "https://signed.example.com/plan.pdf" };
+      },
+    );
+    expect(calls).toBe(2);
+    expect(res.files).toHaveLength(1);
+    expect(res.failures).toHaveLength(0);
+  });
+
+  it("reports files it could never sign so the crew can ask for a resend", async () => {
+    const { resolveAttachments, buildLeadNotes } = await mod();
+    const res = await resolveAttachments(
+      { attachments: [{ path: "submissions/a/plan.pdf", name: "plan.pdf" }] },
+      async () => ({ error: "object not found" }),
+    );
+    expect(res.failures).toHaveLength(1);
+    const note = buildLeadNotes({ name: "Jane Doe" }, res);
+    expect(note).toContain("Files That Failed To Upload");
+  });
+
+  it("puts signed URLs in the Lead Notes Attachments block", async () => {
+    const { buildLeadNotes } = await mod();
+    const note = buildLeadNotes(
+      { name: "Jane Doe" },
+      { files: [{ name: "roof.jpg", url: "https://signed.example.com/roof.jpg" }], failures: [] },
+    );
+    expect(note).toContain("Attachments");
+    expect(note).toContain("https://signed.example.com/roof.jpg");
+  });
+});
