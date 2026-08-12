@@ -71,7 +71,7 @@ const RegionalAuthority = () => {
               to="/consultation"
               className="group cta-gradient text-accent-foreground font-body font-bold text-sm px-7 py-4 rounded-none inline-flex items-center justify-center gap-2 uppercase tracking-wider hover:opacity-90 transition-all"
             >
-              Request a Free Quote
+              Request an Estimate
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link

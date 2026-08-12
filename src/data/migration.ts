@@ -186,7 +186,7 @@ export const brandAssets = {
   keyDifferentiators: [
     "Financing Available",
     "Labor & Material Warranties",
-    "Free Quotes Within a Week",
+    "Estimates Within a Week",
     "Licensed and Insured",
     "Quick Response Time",
     "40+ Years Combined Experience",

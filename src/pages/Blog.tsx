@@ -55,7 +55,7 @@ const isRecent = (date: string) =>
 const getSeasonalContext = () => {
   const month = new Date().getMonth();
   if (month >= 2 && month <= 4) return { season: "Spring", icon: Leaf, tip: "Spring storms and hail season approaching — schedule your inspection now.", categories: ["Storm", "Maintenance", "Inspections"] };
-  if (month >= 5 && month <= 7) return { season: "Summer", icon: Sun, tip: "Peak construction season. Book your project early for best scheduling.", categories: ["Construction", "Materials", "Cost"] };
+  if (month >= 5 && month <= 7) return { season: "Summer", icon: Sun, tip: "Peak construction season. Schedule your project early for the best availability.", categories: ["Construction", "Materials", "Cost"] };
   if (month >= 8 && month <= 10) return { season: "Fall", icon: Wind, tip: "Prepare your roof for winter. Last chance for pre-freeze repairs.", categories: ["Maintenance", "Replacement", "Tips"] };
   return { season: "Winter", icon: Snowflake, tip: "Ice dam prevention and emergency storm response. We prioritize emergency storm calls.", categories: ["Storm", "Maintenance", "Insurance"] };
 };

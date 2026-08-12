@@ -62,7 +62,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
     <div className="border border-border bg-card px-6 py-7 shadow-sm rounded-sm">
       <div className="mb-5">
         <div className="text-[10px] font-body font-semibold uppercase tracking-[0.18em] text-primary mb-2">
-          Request a Free Quote
+          Request an Estimate
         </div>
         <h2 className="font-heading text-2xl font-bold text-foreground">Get help with {serviceLabel.toLowerCase()}.</h2>
         <p className="mt-2 text-sm text-muted-foreground font-body leading-relaxed">
