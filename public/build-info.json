@@ -1,11 +1,11 @@
 {
-  "commit": "334cd5d5913a8636e1922c86e6537066c1670fa4",
-  "shortCommit": "334cd5d",
+  "commit": "9188acd99fd8b500e880ded2009ededfa27157e2",
+  "shortCommit": "9188acd",
   "branch": "edit/edt-d5469e5e-dffc-494b-97c5-e44e9c7179fa",
-  "builtAt": "2026-08-12T19:16:32.993Z",
-  "deployId": null,
-  "deployUrl": null,
-  "deployPrimeUrl": null,
-  "siteUrl": null,
-  "context": "local"
+  "builtAt": "2026-08-12T19:19:54.347Z",
+  "deployId": "abc123",
+  "deployUrl": "https://abc123--highlandernc.netlify.app",
+  "deployPrimeUrl": "https://main--highlandernc.netlify.app",
+  "siteUrl": "https://highlandernc.com",
+  "context": "production"
 }
