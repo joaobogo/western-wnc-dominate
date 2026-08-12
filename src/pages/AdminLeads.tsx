@@ -59,6 +59,8 @@ const STATUSES = [
 
 export default function AdminLeads() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const deepLinkId = searchParams.get("lead");
   const [loading, setLoading] = useState(true);
   const [authed, setAuthed] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
