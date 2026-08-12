@@ -21,6 +21,7 @@ import proj2 from "@/assets/gallery/metal-010.webp";
 import proj3 from "@/assets/gallery/cedar-005.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -421,6 +422,7 @@ const ExteriorImprovements = () => {
           eyebrow="Transform Your Exterior"
         />
       </main>
+      <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
       <StickyMobileCTA />
     </>

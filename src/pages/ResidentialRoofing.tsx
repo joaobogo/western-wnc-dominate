@@ -26,6 +26,7 @@ import cedarDetail from "@/assets/gallery/cedar-001.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -959,6 +960,7 @@ const ResidentialRoofing = () => {
       </main>
 
       <RealWorkWidget />
+      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

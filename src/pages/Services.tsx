@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import { services } from "@/data/services";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 const Services = () => {
   return (
@@ -77,6 +78,7 @@ const Services = () => {
 
         <InspectionForm />
       </main>
+      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

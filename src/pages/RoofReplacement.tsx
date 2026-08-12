@@ -28,6 +28,7 @@ import replacementMobileHero from "@/assets/heroes/replacement-mobile.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -555,6 +556,7 @@ const RoofReplacement = () => {
       </main>
 
       <RealWorkWidget />
+      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

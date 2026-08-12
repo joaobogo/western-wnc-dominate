@@ -24,6 +24,7 @@ import asphaltLarge from "@/assets/gallery/asphalt-006.webp";
 import cedarDetail from "@/assets/gallery/cedar-001.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import VeluxWidget from "@/components/VeluxWidget";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -1134,6 +1135,7 @@ const RoofingDivision = () => {
         />
       </main>
       <RealWorkWidget />
+      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

@@ -22,6 +22,7 @@ import {
 import { blogPosts } from "@/data/blogs";
 import { getServiceParentPath } from "@/data/service-town-generated";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 
 // Per-service hero overrides so the same town's services don't all show the
 // identical photo. Each image is a regionally-themed mountain/home stock
@@ -374,6 +375,7 @@ const ServiceTownPage = ({
           </div>
         </section>
       </main>
+      <ConversionTrustBlock variant="band" town={town.name} />
       <Footer />
       <StickyMobileCTA />
     </>
