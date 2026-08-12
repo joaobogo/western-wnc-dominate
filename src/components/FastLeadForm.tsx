@@ -96,7 +96,8 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             timeline: formData.urgency,
             service_category: serviceLabel,
           });
-          if (!result || result.error) {
+          if (!result) return; // a submit was already in flight
+          if (result.error) {
             setSubmitError("We couldn't send that just now. Everything you typed is still here — try again in a moment.");
             return;
           }
@@ -179,6 +180,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           </div>
         </div>
 
+        <FormErrorSummary message={submitError} issues={issues} />
         <FormConsent />
         <motion.button
           whileTap={{ scale: 0.98 }}
