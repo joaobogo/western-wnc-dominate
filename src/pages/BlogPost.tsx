@@ -276,7 +276,7 @@ const BlogPostPage = () => {
         <section className="relative section-dark min-h-[50vh] flex flex-col justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
-              src={post.image || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"} 
+              src={post.image || "/media/wnc-town-overlook.jpg"} 
 
               alt={post.imageAlt || post.title}
               className="w-full h-full object-cover"

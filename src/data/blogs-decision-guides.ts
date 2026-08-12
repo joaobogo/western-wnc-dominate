@@ -14,7 +14,7 @@ export const decisionGuidePosts: BlogPost[] = [
     category: "Materials",
     date: "2026-08-04",
     readTime: "9 min",
-    image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=1000",
+    image: "/media/wnc-roof-tearoff-crew.jpg",
     imageAlt: "Standing seam metal roof on a mountain home in Western North Carolina",
     metaTitle: "Metal vs. Shingle Roofs for Western NC Mountain Homes",
     metaDescription:
@@ -112,7 +112,7 @@ If you want the numbers for your specific roof rather than a general range, we m
     category: "Maintenance",
     date: "2026-08-03",
     readTime: "8 min",
-    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=1000",
+    image: "/media/wnc-roof-tearoff-crew.jpg",
     imageAlt: "Aging asphalt shingle roof on a Western North Carolina home",
     metaTitle: "Signs Your Roof Needs Replacement | WNC Homeowner Checklist",
     metaDescription:
@@ -209,7 +209,7 @@ Get a photo-documented assessment before you commit either way. Start with a [co
     category: "Materials",
     date: "2026-08-02",
     readTime: "8 min",
-    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&q=80&w=1000",
+    image: "/media/wnc-roof-tearoff-crew.jpg",
     imageAlt: "Roofline of a mountain home in the Blue Ridge of Western North Carolina",
     metaTitle: "Roof Lifespan in Western NC by Material | Real Numbers",
     metaDescription:
@@ -299,7 +299,7 @@ We measure the roof, document the assembly, and give you real numbers for the sy
     category: "Maintenance",
     date: "2026-08-01",
     readTime: "8 min",
-    image: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=1000",
+    image: "/media/wnc-roof-tearoff-crew.jpg",
     imageAlt: "Roofing professional inspecting flashing detail on a mountain home",
     metaTitle: "What a Real Roof Inspection Covers | WNC Homeowner Guide",
     metaDescription:
