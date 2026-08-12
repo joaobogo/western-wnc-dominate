@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { trackPrimaryCtaClick } from "@/lib/gtm";
+import { getPagePrimaryAction } from "@/lib/page-cta-hierarchy";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -23,6 +25,17 @@ const INTAKE_ROUTES = [
 
 const StickyMobileCTA = () => {
   const { pathname } = useLocation();
+  const action = getPagePrimaryAction(pathname);
+  const callIsPrimary = action.intent === "call";
+
+  const firePrimary = () =>
+    trackPrimaryCtaClick({
+      page_key: action.pageKey,
+      intent: action.intent,
+      cta_text: action.primaryLabel,
+      destination_url: action.primaryHref,
+      click_location: "sticky_bar",
+    });
   const onIntakePage = INTAKE_ROUTES.some(
     (r) => pathname === r || pathname.startsWith(`${r}/`),
   );
@@ -124,23 +137,55 @@ const StickyMobileCTA = () => {
             
             <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-[0_-8px_32px_-12px_hsl(var(--heritage-charcoal)/0.12)]">
               {/* Two-column layout: Primary (Request a Quote) + Call */}
-              <div className="flex items-stretch">
-                <Link
-                  to="/consultation"
-                  onClick={() => trackEvent("cta_click", { label: "Request Estimate", elementId: "sticky-cta-mobile-estimate" })}
-                  className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
-                >
-                  <FileText className="w-4 h-4" />
-                  <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.08em]">Request Estimate</span>
-                </Link>
-                <a
-                  href="tel:+18285247773"
-                  onClick={() => trackEvent("phone_click", { label: "Call Direct", elementId: "sticky-cta-mobile-call" })}
-                  className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
-                </a>
+              {/* One primary action per page — see src/lib/page-cta-hierarchy.ts */}
+              <div className="flex items-stretch" data-gtm-location="sticky_bar">
+                {callIsPrimary ? (
+                  <>
+                    <a
+                      href={action.primaryHref}
+                      onClick={() => {
+                        firePrimary();
+                        trackEvent("phone_click", { label: "Call Direct", elementId: "sticky-cta-mobile-call" });
+                      }}
+                      className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
+                    >
+                      <Phone className="w-4 h-4" />
+                      <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.08em]">
+                        {action.primaryLabel}
+                      </span>
+                    </a>
+                    <Link
+                      to={action.secondaryHref}
+                      onClick={() => trackEvent("cta_click", { label: action.secondaryLabel, elementId: "sticky-cta-mobile-estimate" })}
+                      className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
+                    >
+                      <FileText className="w-4 h-4" />
+                      <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.06em]">Estimate</span>
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to={action.primaryHref}
+                      onClick={() => {
+                        firePrimary();
+                        trackEvent("cta_click", { label: action.primaryLabel, elementId: "sticky-cta-mobile-estimate" });
+                      }}
+                      className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
+                    >
+                      <FileText className="w-4 h-4" />
+                      <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.08em]">Request Estimate</span>
+                    </Link>
+                    <a
+                      href={action.secondaryHref}
+                      onClick={() => trackEvent("phone_click", { label: "Call Direct", elementId: "sticky-cta-mobile-call" })}
+                      className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
+                    >
+                      <Phone className="w-4 h-4" />
+                      <span className="text-[13px] font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
+                    </a>
+                  </>
+                )}
               </div>
 
               {/* Safe area spacer for notch phones */}

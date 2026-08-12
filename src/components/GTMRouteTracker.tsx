@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { installGtmGlobalListeners } from "@/lib/gtm";
+import { installGtmGlobalListeners, startPageEngagement } from "@/lib/gtm";
 import { captureAttribution } from "@/lib/attribution";
 
 /**
@@ -29,6 +29,9 @@ const GTMRouteTracker = () => {
   useEffect(() => {
     captureAttribution();
   }, [pathname, search]);
+
+  // Scroll-depth + engaged-time measurement, restarted on every route.
+  useEffect(() => startPageEngagement(pathname + search), [pathname, search]);
 
   useEffect(() => {
     const url = pathname + search;
