@@ -1,0 +1,1 @@
+REVOKE ALL ON FUNCTION public.validate_lead_contact() FROM PUBLIC, anon, authenticated;
