@@ -74,13 +74,77 @@ export const phoneSchema = z
 
 /* ─────────────────────────── Email ─────────────────────────── */
 
+/**
+ * Domains and local parts that are never a real customer: throwaway inboxes,
+ * reserved documentation domains, and obvious placeholder typing.
+ */
+const FAKE_EMAIL_DOMAINS = new Set([
+  "example.com",
+  "example.org",
+  "example.net",
+  "test.com",
+  "test.test",
+  "email.com",
+  "domain.com",
+  "asdf.com",
+  "mailinator.com",
+  "yopmail.com",
+  "guerrillamail.com",
+  "sharklasers.com",
+  "10minutemail.com",
+  "tempmail.com",
+  "temp-mail.org",
+  "trashmail.com",
+  "getnada.com",
+  "dispostable.com",
+  "fakeinbox.com",
+  "maildrop.cc",
+  "throwawaymail.com",
+]);
+
+const FAKE_EMAIL_LOCALS = new Set([
+  "test",
+  "tests",
+  "testing",
+  "asdf",
+  "asdfasdf",
+  "qwerty",
+  "fake",
+  "noreply",
+  "no-reply",
+  "none",
+  "nobody",
+  "aaa",
+  "abc",
+  "xxx",
+]);
+
+const FAKE_EMAIL_MESSAGE = "Enter a real email address we can reply to.";
+
+/** True when an RFC-shaped address is obviously not a reachable inbox. */
+export function isObviouslyFakeEmail(raw?: string | null): boolean {
+  const value = (raw ?? "").trim().toLowerCase();
+  const at = value.lastIndexOf("@");
+  if (at < 1) return false;
+  const local = value.slice(0, at);
+  const domain = value.slice(at + 1);
+  if (FAKE_EMAIL_DOMAINS.has(domain)) return true;
+  if (domain.endsWith(".test") || domain.endsWith(".invalid") || domain.endsWith(".example")) return true;
+  if (domain === "localhost" || !domain.includes(".")) return true;
+  if (FAKE_EMAIL_LOCALS.has(local)) return true;
+  // "aaaaaa@", "1111111@" — a single repeated character.
+  if (local.length >= 3 && /^(.)\1+$/.test(local)) return true;
+  return false;
+}
+
 export const emailSchema = z
   .string()
   .trim()
   .min(1, "Email address is required.")
   .max(255, "Email must be 255 characters or fewer.")
   .email("Enter a valid email address, like name@example.com.")
-  .transform((v) => v.toLowerCase());
+  .transform((v) => v.toLowerCase())
+  .refine((v) => !isObviouslyFakeEmail(v), FAKE_EMAIL_MESSAGE);
 
 /* ─────────────────────────── Town ─────────────────────────── */
 
@@ -261,7 +325,11 @@ export function validateContact(input: ContactInput): ContactValidation {
 
   // Address
   const address = (input.address ?? "").trim() || null;
-  if (!address && req.address) errors.address = "Property address is required.";
+  // Address is nice to have, never a blocker when we at least know the town —
+  // a lot of mountain properties are described by road + town, not a street number.
+  if (!address && req.address && !town) {
+    errors.address = "Add the property address or the town.";
+  }
 
   // A non-blocking email/phone typo shouldn't stop a reachable submission.
   const blockingKeys = (Object.keys(errors) as (keyof ContactErrors)[]).filter((k) => {
