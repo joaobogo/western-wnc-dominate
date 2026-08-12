@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Award, Clock, Mountain, CheckCircle2 } from "lucide-react";
+import CTAProofPoints from "@/components/trust/CTAProofPoints";
 import { trackEvent } from "@/lib/analytics";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import { ScrollReveal } from "@/components/motion";
