@@ -294,13 +294,13 @@ const Hero = () => {
               className="mt-4 md:mt-9 flex items-center flex-wrap gap-x-3 gap-y-2 md:gap-7"
             >
               <div className="flex items-center gap-1.5">
-                <span className="text-[hsl(var(--gold-ink))] font-heading font-bold text-base md:text-3xl leading-none">4.9★</span>
-                <span className="text-primary-foreground/90 text-[10.5px] md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Google · 150+ Reviews</span>
+                <span className="text-[hsl(var(--gold-ink))] font-heading font-bold text-base md:text-3xl leading-none">{GOOGLE_REVIEW_AGGREGATE.ratingValue}★</span>
+                <span className="text-primary-foreground/90 text-[10.5px] md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Google · {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Reviews</span>
               </div>
               <div className="w-px h-3.5 md:h-6 bg-primary-foreground/30" />
               <span className="text-primary-foreground/90 text-[10.5px] md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed &amp; Insured</span>
               <div className="w-px h-6 bg-primary-foreground/40 hidden md:block" />
-              <span className="text-primary-foreground text-[15px] md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Rapid Response Guarantee</span>
+              <span className="text-primary-foreground text-[15px] md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Crews Based in Franklin, NC</span>
             </motion.div>
 
             {/* VELUX Certified Installer badge — desktop only; keeps mobile hero clean */}
