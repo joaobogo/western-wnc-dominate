@@ -13,6 +13,8 @@ import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
@@ -172,6 +174,8 @@ const Gutters = () => {
         </section>
 
         {/* ─── REQUEST ASSESSMENT ─── */}
+        <CommonConcerns />
+        <CostContextBlock serviceLabel="gutter" />
         <div className="container-tight pt-16 md:pt-20">
           <AttributedReviews category="roofing" heading="What homeowners say about our gutter work" />
         </div>

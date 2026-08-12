@@ -28,6 +28,8 @@ import replacementMobileHero from "@/assets/heroes/replacement-mobile.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -559,6 +561,8 @@ const RoofReplacement = () => {
       </main>
 
       <RealWorkWidget />
+        <CommonConcerns />
+        <CostContextBlock serviceLabel="roof replacement" />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
           <AttributedReviews category="roofing" heading="What homeowners say about our roof replacement work" />

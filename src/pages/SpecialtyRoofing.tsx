@@ -19,6 +19,8 @@ import cedar002 from "@/assets/gallery/cedar-002.webp";
 import metal009 from "@/assets/gallery/metal-010.webp";
 import metal010 from "@/assets/gallery/metal-010.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -409,6 +411,8 @@ const SpecialtyRoofing = () => {
         </section>
         <ServiceInternalLinks title="Specialty Roofing" slug="specialty-roofing" />
       </main>
+        <CommonConcerns />
+        <CostContextBlock serviceLabel="specialty roofing" />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
           <AttributedReviews category="roofing" heading="What homeowners say about our specialty roofing work" />

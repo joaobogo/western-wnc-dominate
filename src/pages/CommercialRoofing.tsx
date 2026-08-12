@@ -17,6 +17,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import heroImg from "@/assets/gallery/metal-006.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -497,6 +498,7 @@ const CommercialRoofing = () => {
         <ServiceInternalLinks title="Commercial Roofing" slug="commercial-roofing" />
       </main>
       <RealWorkWidget />
+        <CommonConcerns />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
           <AttributedReviews category="commercial" heading="What homeowners say about our commercial roofing work" />
