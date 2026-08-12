@@ -30,6 +30,7 @@ import proj4 from "@/assets/gallery/cedar-002.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
@@ -539,6 +540,8 @@ const HomeAdditions = () => {
           body="Optional guided pathway for homeowners thinking through an addition. Scope, integration with the existing home, planning stage, timing — all in one place, before our first walkthrough."
           ctaLabel="Build Your Addition Plan"
         />
+
+        <WhoShowsUp />
 
         {/* ─── CLOSING CTA ─── */}
         <DesignProgramPromo

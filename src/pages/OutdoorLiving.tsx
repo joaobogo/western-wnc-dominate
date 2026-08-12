@@ -31,6 +31,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
@@ -473,6 +474,8 @@ const OutdoorLiving = () => {
           body="Optional guided pathway for porches, decks, pergolas, outdoor kitchens, and fire features. Walk through scope, integration, and timing — we use it to prepare a sharper site conversation."
           ctaLabel="Build Your Outdoor Plan"
         />
+
+        <WhoShowsUp />
 
         {/* ─── CLOSING CTA ─── */}
         <DesignProgramPromo

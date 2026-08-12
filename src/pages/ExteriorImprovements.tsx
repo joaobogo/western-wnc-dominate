@@ -23,6 +23,7 @@ import proj3 from "@/assets/gallery/cedar-005.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -422,6 +423,8 @@ const ExteriorImprovements = () => {
             </Accordion>
           </div>
         </section>
+
+        <WhoShowsUp />
 
         {/* ─── CLOSING CTA ─── */}
         <ConstructionClosingCTA

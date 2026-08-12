@@ -26,6 +26,7 @@ import proj3 from "@/assets/gallery/cedar-002.webp";
 import proj4 from "@/assets/gallery/metal-010.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -412,6 +413,8 @@ const CustomConstruction = () => {
             </Accordion>
           </div>
         </section>
+
+        <WhoShowsUp />
 
         {/* ─── CLOSING CTA ─── */}
         <ConstructionClosingCTA

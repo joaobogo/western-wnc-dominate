@@ -26,6 +26,7 @@ import cedarDetail from "@/assets/gallery/cedar-001.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import VeluxWidget from "@/components/VeluxWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import WhoShowsUp from "@/components/trust/WhoShowsUp";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -1072,6 +1073,8 @@ const RoofingDivision = () => {
 
         {/* Optional advanced roofing builder */}
         <BuilderPromoBlock variant="band" />
+
+        <WhoShowsUp />
 
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
