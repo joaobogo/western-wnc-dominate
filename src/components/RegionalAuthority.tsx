@@ -85,7 +85,7 @@ const RegionalAuthority = () => {
         </div>
 
         {/* Coverage panel */}
-        <motion.aside
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -134,7 +134,7 @@ const RegionalAuthority = () => {
               <Link to="/construction" className="text-primary hover:underline font-semibold">Construction →</Link>
             </div>
           </div>
-        </motion.aside>
+        </motion.div>
       </div>
     </section>
   );
