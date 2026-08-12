@@ -80,7 +80,7 @@ Here is the comparison without the sales gloss.
 
 **Budget-constrained replacements where the assembly needs work.** Given a fixed budget, spending on a proper tear-off, deck repair, corrected ventilation, and new flashing under a quality asphalt roof beats spending it all on the covering. The assembly under the roof matters more than the roof.
 
-**Matching a neighborhood or an architectural review board.** Some communities have covenants that make the choice for you. Check before you fall in love with a profile.
+**Matching a neighborhood or a community design review board.** Some communities have covenants that make the choice for you. Check before you fall in love with a profile.
 
 ## The factors people over-weight
 

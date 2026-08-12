@@ -37,7 +37,7 @@ export const counties: CountyData[] = [
     ],
     housingContext: "Macon County features a unique blend of high-end mountain estates on the plateau and traditional single-family homes and farms in the valley.",
     climateRealities: "Homes here face extreme variables — from 4,000+ ft icing on the Highlands plateau to high-wind channeling in the Franklin valley.",
-    permitting: "Macon County permits are issued through the county Building Inspections department in Franklin, with the Town of Highlands handling work inside town limits separately. Roof replacements generally require a permit, and plateau projects in club and gated communities usually add an architectural review step. We pull the permit and schedule inspections on every project.",
+    permitting: "Macon County permits are issued through the county Building Inspections department in Franklin, with the Town of Highlands handling work inside town limits separately. Roof replacements generally require a permit, and plateau projects in club and gated communities usually add a community design review step. We pull the permit and schedule inspections on every project.",
     faqs: [
       { q: "Do I need a permit to replace a roof in Macon County?", a: "In most cases yes, and we handle it. Permitting differs between unincorporated Macon County and work inside the Town of Highlands limits, so we confirm jurisdiction before scheduling." },
       { q: "How different are Highlands and Franklin projects?", a: "Substantially. Highlands sits above 4,000 feet with ice loading and high UV, while Franklin sits near 2,100 feet in a valley with storm funneling and heavy canopy. Materials and detailing are specified differently for each." },
@@ -60,7 +60,7 @@ export const counties: CountyData[] = [
     ],
     housingContext: "Jackson County property spans from luxury resort communities in Cashiers to historic residential hubs in Sylva and university housing in Cullowhee.",
     climateRealities: "This county contains some of the wettest high-elevation terrain in the US, requiring advanced moisture management and superior drainage engineering.",
-    permitting: "Jackson County permits are handled through the county Permitting and Code Enforcement office in Sylva, with steep-slope and stormwater considerations common on plateau and lakefront parcels. Cashiers, Sapphire, and Lake Glenville projects frequently involve community architectural review in addition to the county permit.",
+    permitting: "Jackson County permits are handled through the county Permitting and Code Enforcement office in Sylva, with steep-slope and stormwater considerations common on plateau and lakefront parcels. Cashiers, Sapphire, and Lake Glenville projects frequently involve community design review in addition to the county permit.",
     faqs: [
       { q: "Who pulls permits for Jackson County work?", a: "We do. County permitting, inspection scheduling, and final sign-off are part of every project we run in Sylva, Cashiers, Cullowhee, Dillsboro, Lake Glenville, and Sapphire." },
       { q: "Why is moisture management such a focus here?", a: "Parts of the Jackson County plateau receive 80-plus inches of rain a year with persistent fog. Drainage capacity, underlayment coverage, and flashing detail matter more here than almost anywhere else in the state." },

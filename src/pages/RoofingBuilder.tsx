@@ -15,7 +15,6 @@ import IntakeConfirmation from "@/components/intake/IntakeConfirmation";
 import { supabase } from "@/integrations/supabase/client";
 import { scoreLead } from "@/lib/lead-scoring";
 import { deriveRoofingRouting } from "@/lib/lead-routing";
-import { syncConsultationRequestToJobTread } from "@/lib/leads";
 import { trackEvent } from "@/lib/analytics";
 import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
 
@@ -215,7 +214,38 @@ const RoofingBuilder = () => {
         } as any),
       });
       if (insertErr) throw insertErr;
-      syncConsultationRequestToJobTread(consultId);
+      // Canonical pipeline: durable `leads` row + single CRM sync happens here.
+      // The consultation_requests row above stays as the builder-specific detail record.
+      const { submitLead } = await import("@/lib/leads");
+      await submitLead({
+        source: "roofing_builder",
+        lead_type: "roofing",
+        full_name: data.name,
+        email: data.email,
+        phone: data.phone,
+        property_town: data.town,
+        property_state: "NC",
+        property_type: data.propertyType,
+        service_category: "roofing",
+        project_type: data.projectType,
+        timeline: data.timeline,
+        budget_range: data.investment,
+        project_description: data.description || null,
+        lead_score: score,
+        attachments: uploadedPaths,
+        metadata: {
+          consultation_request_id: consultId,
+          builder: {
+            material: data.material,
+            features: data.features,
+            priorities: data.priorities,
+            investment_tier: data.investment,
+          },
+          routing,
+          jobtread,
+          upload_folder: folder,
+        },
+      });
       trackEvent("form_submit", {
         label: "Roofing Builder",
         elementId: "roofing-builder",

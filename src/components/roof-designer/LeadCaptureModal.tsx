@@ -11,7 +11,6 @@ import { toast } from "sonner";
 import { z } from "zod";
 import { Link } from "react-router-dom";
 import FormConsent from "@/components/FormConsent";
-import { syncDesignerLeadToJobTread } from "@/lib/leads";
 import { actionableError } from "@/lib/microcopy";
 
 interface LeadCaptureModalProps {
@@ -72,7 +71,21 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
         gdpr_consent: form.gdpr_consent,
       });
       if (error) throw error;
-      syncDesignerLeadToJobTread(designerLeadId);
+      // Canonical pipeline: durable `leads` row + single CRM sync.
+      const { submitLead } = await import("@/lib/leads");
+      await submitLead({
+        source: "roof_designer",
+        lead_type: "roofing",
+        full_name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim() || null,
+        property_town: form.town.trim() || null,
+        property_state: "NC",
+        service_category: "roofing",
+        timeline: form.timeline,
+        consent_given: form.gdpr_consent,
+        metadata: { designer_lead_id: designerLeadId, design_id: designId },
+      });
 
       // Track metric
       await supabase.from("designer_metrics").insert({
