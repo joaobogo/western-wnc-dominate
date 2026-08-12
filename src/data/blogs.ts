@@ -931,7 +931,7 @@ Every accurate metal roof quote in Western NC starts with an on-site measure —
 
 Elevation, weather exposure, material transport, and skilled labor demand all push Highlands roofing investment above comparable work in lower-elevation NC towns. Rather than quoting a generic range, we price every project from its real scope.
 
-## Get a Free Estimate
+## Request an Estimate
 
 The best way to know your actual cost is a free inspection. We'll assess your roof's condition, measure accurately, and provide a transparent estimate with no surprises.`,
   },
@@ -5977,10 +5977,14 @@ blogPosts.push(...cullowheeClusterPosts);
 // Local coverage posts for towns that previously had no town-tagged article.
 import { localTownBlogPosts } from "./blogs-local-towns";
 import { decisionGuidePosts } from "./blogs-decision-guides";
+import { primaryClusterBlogPosts } from "./blogs-primary-clusters";
 for (const p of localTownBlogPosts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 for (const p of decisionGuidePosts) {
+  if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
+}
+for (const p of primaryClusterBlogPosts) {
   if (!blogPosts.some((b) => b.slug === p.slug)) blogPosts.push(p);
 }
 
