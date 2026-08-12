@@ -62,13 +62,13 @@ const RequestInspection = () => {
           <div className="container-tight relative z-10 grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-10 items-center">
             <div>
               <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
-                Free · No Obligation · Local Team
+                No Obligation · Local Team · Licensed &amp; Insured
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-5">
-                Request a Free Inspection or <span className="text-[hsl(var(--gold-ink))]">Consultation</span>
+                Get Your Roof or Project Assessed in <span className="text-[hsl(var(--gold-ink))]">Western NC</span>
               </h1>
               <p className="text-white/90 text-lg leading-relaxed font-body max-w-xl mb-8">
-                Whether you have an active leak, a roof due for replacement, storm damage to document for insurance, gutters that need work, or a construction project you're planning — start here. A local Highlander team member will follow up personally.
+                Active leak, storm damage to document for insurance, a roof due for replacement, gutters, or a build you&apos;re planning — tell us in about a minute. A local Highlander team member calls you back, schedules the on-site look, and sends a written scope and price.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href="#inspection-form" className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2">

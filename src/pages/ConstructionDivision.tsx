@@ -137,14 +137,14 @@ const ConstructionDivision = () => {
               </motion.div>
 
               <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold text-primary-foreground leading-[1.0] tracking-tight mb-2">
-                Mountain Construction
+                Additions &amp; Custom Building
               </motion.h1>
               <motion.h2 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="text-4xl md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold tracking-tight leading-[1.0] mb-8">
-                <span className="text-[hsl(var(--gold-ink))]">Masterfully Planned.</span>
+                <span className="text-[hsl(var(--gold-ink))]">Across Western NC.</span>
               </motion.h2>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-[20px] md:text-[24px] text-white/95 max-w-2xl mb-12 leading-relaxed font-body font-bold drop-shadow-md">
-                From home additions to luxury outdoor living, we combine design sensitivity with Western North Carolina's highest construction standards. Licensed, insured, and team-led.
+                Out of room, or ready to build on your mountain lot? Bring us the idea and we walk the site, map the permits and site constraints, and return a written scope, schedule, and budget range before you commit. Additions, renovations, and outdoor living — licensed, insured, and team-led.
               </motion.p>
 
 
