@@ -300,13 +300,24 @@ export async function resolveAttachments(
       files.push({ name: entry.name, url: entry.url });
       continue;
     }
-    try {
-      const res = await signer(entry.path!);
-      if (res?.url) files.push({ name: entry.name, url: res.url });
-      else failures.push({ name: entry.name, reason: String(res?.error ?? "Could not generate download link") });
-    } catch (e) {
-      failures.push({ name: entry.name, reason: (e as Error)?.message ?? "Could not generate download link" });
+    // Retry signing so a transient storage hiccup never drops an attachment
+    // from the CRM note.
+    let reason = "Could not generate download link";
+    let signed = false;
+    for (let attempt = 1; attempt <= 3 && !signed; attempt++) {
+      try {
+        const res = await signer(entry.path!);
+        if (res?.url) {
+          files.push({ name: entry.name, url: res.url });
+          signed = true;
+        } else if (res?.error) {
+          reason = String(res.error);
+        }
+      } catch (e) {
+        reason = (e as Error)?.message ?? reason;
+      }
     }
+    if (!signed) failures.push({ name: entry.name, reason });
   }
   return { files, failures };
 }
