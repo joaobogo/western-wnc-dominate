@@ -4,7 +4,7 @@ import { ArrowRight, ArrowLeft, Loader2, Sparkles, Layout, ClipboardCheck, FileT
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
-import { uploadIntakeFiles, newSessionFolder } from "@/lib/intake-uploads";
+import { uploadIntakeFiles, newSessionFolder, ACCEPTED_UPLOAD_TYPES } from "@/lib/intake-uploads";
 import { Input, Textarea, Label, Helper, ChipGroup, FieldRow, StepDots, FieldError } from "./IntakeFieldKit";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
@@ -299,7 +299,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
                   labelledBy="lbl-design-uploads"
                   files={files}
                   onChange={setFiles}
-                  accept="image/*,application/pdf"
+                  accept={ACCEPTED_UPLOAD_TYPES}
                   helper="Upload sketches, inspiration images, or current property photos. Max 8 files."
                 />
               </div>
