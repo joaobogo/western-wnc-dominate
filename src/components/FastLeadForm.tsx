@@ -11,6 +11,7 @@ import WhatHappensNext from "@/components/forms/WhatHappensNext";
 import FormSavedNote from "@/components/forms/FormSavedNote";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
 import LeadConfirmationPanel from "@/components/forms/LeadConfirmationPanel";
+import CTAProofPoints from "@/components/trust/CTAProofPoints";
 
 interface FastLeadFormProps {
   ctaLabel: string;
@@ -208,10 +209,8 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         </motion.button>
       </form>
 
-      <div className="mt-5 grid gap-3 border-t border-border pt-4 text-xs text-muted-foreground font-body sm:grid-cols-3">
-        <div className="flex items-center gap-2"><Clock className="h-3.5 w-3.5 text-primary" /> Fast follow-up</div>
-        <div className="flex items-center gap-2"><Shield className="h-3.5 w-3.5 text-primary" /> Warranty-backed work</div>
-        <div className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-primary" /> Real local team</div>
+      <div className="mt-5 border-t border-border pt-4">
+        <CTAProofPoints align="start" />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { getCallReason } from "@/lib/urgent-intent";
+import CTAProofPoints from "@/components/trust/CTAProofPoints";
 
 interface CallFirstCTAProps {
   /** Town name for the reason line + analytics segmentation. */
@@ -71,6 +72,12 @@ const CallFirstCTA = ({
       >
         {reason ?? getCallReason(pathname, townName)}
       </p>
+      <CTAProofPoints
+        align="start"
+        tone={dark ? "dark" : "light"}
+        area={townName ? `${townName} and the surrounding area` : undefined}
+        className="mt-4"
+      />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import CTAProofPoints from "@/components/trust/CTAProofPoints";
 
 type Props = {
   /** Short line above the headline, e.g. "Storm Response". */
@@ -63,6 +64,7 @@ const PageCloseCTA = ({
               (828) 524-7773
             </a>
           </div>
+          <CTAProofPoints tone="dark" className="mt-6" />
           {secondaryLabel && secondaryTo && (
             <p className="mt-6 text-[14px] font-body">
               <Link to={secondaryTo} className="text-dark-section-foreground/70 underline hover:text-[hsl(var(--gold-ink))] transition-colors">
