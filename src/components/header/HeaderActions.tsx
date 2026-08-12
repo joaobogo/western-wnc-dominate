@@ -27,7 +27,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
     </Link>
     <a
       href="tel:+18285247773"
-      className="md:hidden flex items-center justify-center w-10 h-10 rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
+      className="md:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
     >
       <Phone className="w-4 h-4" />
     </a>
