@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
 import { towns } from "@/data/towns";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Paperclip, X } from "lucide-react";
+import { ArrowRight, ArrowLeft, ChevronDown, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Paperclip, X, Home, Wrench, Layers, CloudLightning, Hammer, Building2, TreePine, HelpCircle } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import { trackFormStepComplete } from "@/lib/gtm";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -16,6 +17,18 @@ import { ACCEPTED_UPLOAD_TYPES, isAcceptedUpload, newSessionFolder, uploadIntake
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
+
+/** Step 1 tap-select cards — one tap is the early micro-commitment. */
+const PROJECT_CHOICES = [
+  { value: "roof-repair", label: "Roof Repair or Leak", icon: Wrench },
+  { value: "roof-replacement", label: "Roof Replacement", icon: Home },
+  { value: "metal-roofing", label: "Metal Roofing", icon: Layers },
+  { value: "storm-damage", label: "Storm or Insurance", icon: CloudLightning },
+  { value: "addition", label: "Addition or Remodel", icon: Hammer },
+  { value: "outdoor-living", label: "Deck, Porch, Outdoor", icon: TreePine },
+  { value: "commercial", label: "Commercial Property", icon: Building2 },
+  { value: "not-sure", label: "Not Sure Yet", icon: HelpCircle },
+] as const;
 
 /** A CTA can hand us a town slug (?town=highlands-nc) so the estimate form
  *  opens pre-filled with the visitor's town. */
@@ -43,9 +56,12 @@ const InspectionForm = () => {
   };
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  /** Two-step flow: 1 = what you need + town, 2 = how to reach you. */
+  const [step, setStep] = useState<1 | 2>(1);
   /** Optional fields stay collapsed so the visible form is only what we need. */
   const [showDetails, setShowDetails] = useState(false);
   const [townError, setTownError] = useState<string | null>(null);
+  const [projectError, setProjectError] = useState<string | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [fileNotice, setFileNotice] = useState<string | null>(null);
   const sessionFolder = useRef<string>(newSessionFolder());
@@ -90,10 +106,38 @@ const InspectionForm = () => {
 
   const removeFile = (name: string) => setFiles((prev) => prev.filter((f) => f.name !== name));
 
+  const goToStepTwo = () => {
+    const townOk = formData.town.trim().length >= 2;
+    setTownError(townOk ? null : "Let us know the town so we route you to the right crew.");
+    if (!formData.projectType) {
+      setProjectError("Pick what you need help with so we send the right crew.");
+      return;
+    }
+    setProjectError(null);
+    if (!townOk) return;
+    trackFormStepComplete({
+      form_name: "Inspection Request",
+      form_id: "inspection-form-main",
+      step_index: 0,
+      step_name: "need_and_town",
+      total_steps: 2,
+    });
+    setStep(2);
+  };
+
   const handleSubmit = async () => {
     const townOk = formData.town.trim().length >= 2;
     setTownError(townOk ? null : "Let us know the town so we route you to the right crew.");
-    if (!contact.markAttempted() || !townOk) return;
+    if (!townOk) { setStep(1); return; }
+    if (!contact.markAttempted()) return;
+
+    trackFormStepComplete({
+      form_name: "Inspection Request",
+      form_id: "inspection-form-main",
+      step_index: 1,
+      step_name: "contact_details",
+      total_steps: 2,
+    });
 
     setIsSubmitting(true);
 
@@ -315,10 +359,89 @@ const InspectionForm = () => {
               className="lg:col-span-3"
             >
               <div className="bg-dark-section-foreground/[0.03] border border-dark-section-foreground/8 rounded-none p-6 md:p-8 lg:p-10">
-                <p className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] mb-6">
-                  Five quick answers — about a minute
-                </p>
+                {/* Slim progress indicator */}
+                <div className="mb-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))]">
+                      Step {step} of 2 — {step === 1 ? "What you need" : "How we reach you"}
+                    </p>
+                    <span className="text-white/70 text-[13px] font-body font-semibold">About a minute</span>
+                  </div>
+                  <div className="h-1 w-full bg-white/10 overflow-hidden" role="progressbar" aria-valuemin={1} aria-valuemax={2} aria-valuenow={step} aria-label="Form progress">
+                    <motion.div
+                      className="h-full bg-[hsl(var(--highland-gold))]"
+                      initial={false}
+                      animate={{ width: step === 1 ? "50%" : "100%" }}
+                      transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
+                    />
+                  </div>
+                </div>
 
+                {step === 1 && (
+                <div className="space-y-6">
+                  <div>
+                    <span className={labelClasses}>What Do You Need Help With?</span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {PROJECT_CHOICES.map((choice) => {
+                        const active = formData.projectType === choice.value;
+                        return (
+                          <button
+                            key={choice.value}
+                            type="button"
+                            aria-pressed={active}
+                            onClick={() => { setFormData({ ...formData, projectType: choice.value }); setProjectError(null); }}
+                            className={`flex items-center gap-3 px-4 py-4 text-left border transition-all duration-200 ${
+                              active
+                                ? "border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.16)]"
+                                : "border-white/20 bg-white/[0.06] hover:bg-white/[0.1]"
+                            }`}
+                          >
+                            <choice.icon className={`w-5 h-5 flex-shrink-0 ${active ? "text-[hsl(var(--gold-ink))]" : "text-white/70"}`} />
+                            <span className="text-white font-body font-bold text-[16px] md:text-[17px]">{choice.label}</span>
+                            {active && <CheckCircle className="w-4 h-4 ml-auto text-[hsl(var(--gold-ink))]" />}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <InlineFieldError className="text-[hsl(var(--gold-ink))]">{projectError ?? undefined}</InlineFieldError>
+                  </div>
+
+                  <div>
+                    <label htmlFor="town" className={labelClasses}>Property Town</label>
+                    <input
+                      id="town" type="text" required maxLength={120}
+                      list="hl-town-options"
+                      value={formData.town}
+                      onChange={(e) => { setFormData({ ...formData, town: e.target.value }); if (townError) setTownError(null); }}
+                      aria-invalid={Boolean(townError) || undefined}
+                      className={inputClasses}
+                      placeholder="Highlands, Cashiers, Franklin…"
+                    />
+                    <datalist id="hl-town-options">
+                      {towns.map((t) => <option key={t.slug} value={`${t.name}, ${t.state}`} />)}
+                    </datalist>
+                    <InlineFieldError className="text-[hsl(var(--gold-ink))]">{townError ?? undefined}</InlineFieldError>
+                  </div>
+
+                  <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <button
+                      type="button"
+                      onClick={goToStepTwo}
+                      className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-4 md:px-10 rounded-none inline-flex items-center justify-center gap-2.5 btn-primary-interactive tracking-wide"
+                    >
+                      <span className="relative z-10">Continue — Last Step</span>
+                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                    </button>
+                    <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
+                      <Phone className="w-4 h-4" />
+                      Or call (828) 524-7773
+                    </a>
+                  </div>
+                </div>
+                )}
+
+                {step === 2 && (
+                <>
                 <div className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
@@ -351,7 +474,7 @@ const InspectionForm = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 gap-5">
                     <div>
                       <label htmlFor="email" className={labelClasses}>Email</label>
                       <input
@@ -367,52 +490,6 @@ const InspectionForm = () => {
                       <InlineFieldError className="text-[hsl(var(--gold-ink))]">{contact.errorFor("email")}</InlineFieldError>
                       <p className={hintClasses}>A phone number or an email is enough — whichever you prefer.</p>
                     </div>
-                    <div>
-                      <label htmlFor="town" className={labelClasses}>Town</label>
-                      <input
-                        id="town" type="text" required maxLength={120}
-                        list="hl-town-options"
-                        value={formData.town}
-                        onChange={(e) => { setFormData({ ...formData, town: e.target.value }); if (townError) setTownError(null); }}
-                        aria-invalid={Boolean(townError) || undefined}
-                        className={inputClasses}
-                        placeholder="Highlands, Cashiers, Franklin…"
-                      />
-                      <datalist id="hl-town-options">
-                        {towns.map((t) => <option key={t.slug} value={`${t.name}, ${t.state}`} />)}
-                      </datalist>
-                      <InlineFieldError className="text-[hsl(var(--gold-ink))]">{townError ?? undefined}</InlineFieldError>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="projectType" className={labelClasses}>What Do You Need?</label>
-                    <select
-                      id="projectType" value={formData.projectType}
-                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className={inputClasses}
-                    >
-                      <option value="">Select project type</option>
-                      <optgroup label="Roofing">
-                        <option value="roof-assessment">Roof Assessment</option>
-                        <option value="roof-repair">Roof Repair</option>
-                        <option value="roof-replacement">Full Roof Replacement</option>
-                        <option value="metal-roofing">Metal Roofing</option>
-                        <option value="storm-damage">Storm Damage / Insurance</option>
-                      </optgroup>
-                      <optgroup label="Construction">
-                        <option value="renovation">Renovation / Remodel</option>
-                        <option value="addition">Addition or Expansion</option>
-                        <option value="outdoor-living">Deck, Porch, or Outdoor Living</option>
-                        <option value="planning">Design Support</option>
-                        <option value="exterior">Siding & Exterior Work</option>
-                      </optgroup>
-                      <optgroup label="Other">
-                        <option value="commercial">Commercial Project</option>
-                        <option value="maintenance">Maintenance Program</option>
-                        <option value="not-sure">Not Sure Yet — Need Guidance</option>
-                      </optgroup>
-                    </select>
                   </div>
 
                   <div>
@@ -544,10 +621,18 @@ const InspectionForm = () => {
                       </>
                     ) : (
                       <>
-                        <span className="relative z-10">Start a Project Conversation</span>
+                        <span className="relative z-10">Get My Inspection Scheduled</span>
                         <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
                       </>
                     )}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setStep(1)}
+                    className="inline-flex items-center justify-center gap-2 text-white/80 font-body font-bold text-sm hover:text-white transition-colors"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    Back
                   </button>
                   <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" />
@@ -555,6 +640,8 @@ const InspectionForm = () => {
                   </a>
                 </div>
                 <FormConsent className="mt-4 text-dark-section-foreground/90" />
+                </>
+                )}
 
                 {/* Bottom microcopy */}
                 <p className="text-center text-white text-[13px] font-body font-semibold mt-5 tracking-wide">
