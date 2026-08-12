@@ -27,6 +27,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import AttributedReviews from "@/components/trust/AttributedReviews";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 /* ═══════════════════════════════════════════
@@ -962,6 +963,11 @@ const ResidentialRoofing = () => {
       </main>
 
       <RealWorkWidget />
+      <section className="section-padding bg-muted/20">
+        <div className="container-tight">
+          <AttributedReviews category="roofing" heading="What homeowners say about our residential roofing work" />
+        </div>
+      </section>
       <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />

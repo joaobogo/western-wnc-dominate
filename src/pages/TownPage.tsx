@@ -39,6 +39,8 @@ import { blogPosts } from "@/data/blogs";
 import { getTownFAQs } from "@/data/town-faqs-generated";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import AttributedReviews from "@/components/trust/AttributedReviews";
+import LocalProjectProof from "@/components/trust/LocalProjectProof";
 import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getTownLinkWeb } from "@/lib/local-link-graph";
@@ -389,6 +391,10 @@ const TownPage = () => {
           groups={getTownLinkWeb(town)}
         />
 
+        <div className="container-tight pt-16 md:pt-20 space-y-14">
+          <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" />
+          <AttributedReviews town={town.name} category="roofing" />
+        </div>
         <InspectionForm />
         <RelatedLinks
           eyebrow="Explore Services"

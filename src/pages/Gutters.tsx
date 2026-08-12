@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
+import AttributedReviews from "@/components/trust/AttributedReviews";
 import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -171,6 +172,9 @@ const Gutters = () => {
         </section>
 
         {/* ─── REQUEST ASSESSMENT ─── */}
+        <div className="container-tight pt-16 md:pt-20">
+          <AttributedReviews category="roofing" heading="What homeowners say about our gutter work" />
+        </div>
         <InspectionForm />
 
         {/* ─── FAQS ─── */}
