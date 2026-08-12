@@ -15,6 +15,7 @@ import skylightsMobileHero from "@/assets/heroes/skylights-mobile.webp";
 import CTABlock from "@/components/CTABlock";
 import RelatedLinks from "@/components/RelatedLinks";
 import VeluxWidget from "@/components/VeluxWidget";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 const faqs = [
   { q: "Are you a certified VELUX installer?", a: "Yes. Highlander is a VELUX Certified Installer — trained and accredited by VELUX to install their skylights and Sun Tunnels to manufacturer specification. That accreditation is what unlocks VELUX's installation warranty on top of the product warranty." },
@@ -109,6 +110,11 @@ const Skylights = () => {
             </motion.div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is skylight installation and replacement?"
+          answer="Skylight work covers installing new units, replacing aging or leaking units, and rebuilding the curb and flashing that keeps them watertight. Most skylight leaks trace back to flashing and surrounding roof detail rather than the glass itself. Highlander installs and replaces skylights as part of roofing projects across Western North Carolina."
+          points={["New installs, replacements, and flashing rebuilds", "Leak diagnosis at the curb and flashing, not guesswork", "Handled together with the surrounding roof system"]}
+        />
 
         {/* What we install */}
         <section className="section-padding bg-background">

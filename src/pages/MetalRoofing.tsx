@@ -15,6 +15,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { getServiceTownEntriesForService } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
 import RelatedLinks from "@/components/RelatedLinks";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 const faqs = [
   { q: "How long does a metal roof last in Western NC?", a: "A properly specified and installed standing seam system is a 40+ year roof. Failures we see in the field are almost always install-detail issues at flashings and terminations — not panel failures." },
@@ -108,6 +109,11 @@ const MetalRoofing = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is metal roofing, and is it right for a Western North Carolina home?"
+          answer="Metal roofing is a long-life roof system — standing seam or exposed-fastener panels — installed as a complete assembly with underlayment, flashing, and trim. It suits Western North Carolina homes that face high wind, heavy rainfall, snow load, and shade-driven moisture at elevation. Highlander installs metal roofs across Franklin, Highlands, Cashiers, Sylva, and the surrounding mountain communities."
+          points={["Standing seam and exposed-fastener systems", "Designed for wind, snow load, and heavy mountain rainfall", "Installed as a full system, not panels alone", "Free on-site assessment before any recommendation"]}
+        />
 
         <section className="section-padding bg-background">
           <div className="container-tight grid md:grid-cols-3 gap-6">

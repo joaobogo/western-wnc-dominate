@@ -27,6 +27,7 @@ import proj1 from "@/assets/gallery/cedar-001.webp";
 import proj2 from "@/assets/gallery/metal-008.webp";
 import proj3 from "@/assets/gallery/asphalt-006.webp";
 import proj4 from "@/assets/gallery/cedar-002.webp";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -190,6 +191,11 @@ const HomeAdditions = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is a home addition, and when does it make sense?"
+          answer="A home addition expands the conditioned footprint of a house — a new room, suite, level, or enclosed space — tied structurally and architecturally into the existing home. It makes sense when a family needs more space but wants to stay in the home and location they already have. Highlander builds additions on mountain properties across Western North Carolina."
+          points={["Structural tie-in to the existing home", "Permitting handled for the local jurisdiction", "Roofline, siding, and finishes matched to the original"]}
+        />
 
         {/* ─── OPENING — Design editorial with scope sidebar ─── */}
         <section className="section-padding bg-background">

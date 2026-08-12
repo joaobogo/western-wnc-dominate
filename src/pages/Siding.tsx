@@ -9,6 +9,7 @@ import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 const Siding = () => {
   return (
@@ -48,6 +49,11 @@ const Siding = () => {
             </motion.div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is siding replacement, and when does a mountain home need it?"
+          answer="Siding replacement removes failing exterior cladding and rebuilds the wall's weather barrier with new water-resistive layers, flashing, and finish material. It is typically needed when you see rot, persistent moisture staining, failing paint, or damage after a storm. Highlander handles siding as part of full exterior work across Western North Carolina."
+          points={["Wall assembly repaired, not just covered", "Flashing and water-resistive barrier addressed", "Coordinated with roofing, trim, and gutters"]}
+        />
 
         <section className="section-padding bg-background">
           <div className="container-tight">

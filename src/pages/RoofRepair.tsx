@@ -18,6 +18,7 @@ import metalRoof from "@/assets/gallery/metal-005.webp";
 import asphalt003 from "@/assets/gallery/asphalt-003.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -167,6 +168,11 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What does roof repair cover, and when is repair the right call?"
+          answer="Roof repair addresses a specific, contained failure — a leak, wind-lifted shingles, damaged flashing, or a compromised penetration — without replacing the whole roof. Repair is usually the right call when the roof is otherwise sound and has meaningful service life left. Highlander assesses the roof first and tells you plainly whether repair or replacement makes more sense."
+          points={["Leak diagnosis before any work is quoted", "Flashing, penetrations, and storm damage repairs", "Honest repair-versus-replace recommendation"]}
+        />
 
         {/* ─── OPENING STATEMENT — Clinical diagnostic style ─── */}
         <section className="section-padding bg-background">

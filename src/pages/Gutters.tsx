@@ -11,6 +11,7 @@ import InspectionForm from "@/components/InspectionForm";
 import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import RelatedLinks from "@/components/RelatedLinks";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 const faqs = [
   { q: "What size gutters do mountain homes need?", a: "Most WNC homes benefit from 6-inch gutters with oversized 3x4 downspouts. The steep terrain and heavy rainfall here demand higher-capacity systems than standard 5-inch gutters provide." },
@@ -106,6 +107,11 @@ const Gutters = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What do gutters do on a mountain home, and who needs them?"
+          answer="Gutters and downspouts move roof runoff away from the fascia, siding, and foundation. In Western North Carolina, where rainfall is heavy and lots are often sloped, sizing and discharge placement matter as much as the gutter itself. Highlander installs and replaces gutter systems as part of roof and exterior work throughout the region."
+          points={["Sizing matched to roof area and local rainfall", "Downspout routing that protects foundations on sloped lots", "Coordinated with roof edge, drip edge, and fascia detail"]}
+        />
 
         {/* ─── WHY GUTTERS MATTER IN WNC ─── */}
         <section className="section-padding bg-background">

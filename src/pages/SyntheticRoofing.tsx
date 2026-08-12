@@ -13,6 +13,7 @@ import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getServiceTownEntriesForService } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 const faqs = [
   { q: "How does Brava compare to real cedar shake?", a: "Brava holds color and profile dramatically longer than cedar in mountain climates. Real cedar cups, splits, and grows moss in the moisture and UV conditions across Highlands and Cashiers." },
@@ -97,6 +98,11 @@ const SyntheticRoofing = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What is synthetic roofing, and who chooses it?"
+          answer="Synthetic roofing uses engineered composite materials made to look like slate or cedar shake while weighing far less and standing up to weather better than natural equivalents. It is often chosen for mountain homes that want a heritage appearance without the weight or upkeep of natural slate. Highlander installs synthetic roof systems throughout Western North Carolina."
+          points={["Slate and shake appearance at lower weight", "Engineered for wind and moisture exposure", "Installed as a complete system with matched flashing"]}
+        />
 
         <section className="section-padding bg-background">
           <div className="container-tight grid md:grid-cols-3 gap-6">

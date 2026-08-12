@@ -23,6 +23,7 @@ import proj1 from "@/assets/gallery/asphalt-008.webp";
 import proj2 from "@/assets/gallery/metal-010.webp";
 import proj3 from "@/assets/gallery/cedar-005.webp";
 import proj4 from "@/assets/gallery/metal-005.webp";
+import AnswerBlock from "@/components/seo/AnswerBlock";
 
 /* ═══════════════════════════════════════════ DATA ═══════════════════════════════════════════ */
 
@@ -172,6 +173,11 @@ const Renovations = () => {
             </div>
           </div>
         </section>
+        <AnswerBlock
+          question="What does a home renovation include?"
+          answer="A renovation reworks existing space — kitchens, baths, living areas, or whole-home updates — without necessarily expanding the footprint. Scope can range from finishes to structural changes, mechanical updates, and improved insulation or daylighting. Highlander renovates homes and cabins throughout Western North Carolina."
+          points={["Kitchen, bath, and whole-home scopes", "Structural and mechanical changes where needed", "Single team managing the full schedule"]}
+        />
 
         {/* ─── OPENING — Lifestyle-focused with warm visual treatment ─── */}
         <section className="py-20 md:py-32 bg-background relative overflow-hidden">
