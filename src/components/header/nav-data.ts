@@ -47,6 +47,7 @@ export const constructionItems: DropdownItem[] = [
   { label: "Basements & Bonus", href: "/construction/renovations#basements", desc: "Finish your lower level" },
   { label: "Structural & Repair", href: "/construction#structural", desc: "Framing & load-bearing work" },
   { label: "Design & Planning", href: "/construction/design", desc: "In-house design for additions & remodels" },
+  { label: "Layout & Design Planning", href: "/layouts-planning", desc: "Floor plans, layouts & feasibility" },
   { label: "Construction Consultation", href: "/construction/consultation", desc: "Scope, schedule & budget review" },
 ];
 
@@ -70,7 +71,7 @@ export const divisions: DivisionDropdown[] = [
 ];
 
 export const secondaryLinks = [
-  { label: "Recent Projects", href: "/recent-projects" },
+  { label: "Projects", href: "/recent-projects" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
