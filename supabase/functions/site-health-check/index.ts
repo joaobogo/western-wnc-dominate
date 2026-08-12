@@ -192,7 +192,11 @@ async function runCheck(check: Check): Promise<Result> {
 
     if (!res.ok) problems.push(`HTTP ${res.status}`);
 
-    if (check.contentType === "xml" || check.contentType === "text") {
+    if (
+      check.contentType === "xml" ||
+      check.contentType === "text" ||
+      check.contentType === "json"
+    ) {
       // no SPA-shell check for non-HTML assets
     } else if (body.length < 500) {
       problems.push("response body suspiciously small");
@@ -318,6 +322,8 @@ Deno.serve(async (req) => {
   try {
     const body = await req.json().catch(() => ({} as Record<string, unknown>));
     const dryRun = body?.dry_run === true;
+    // Daily digest: always report status to Teams, healthy or not.
+    const digest = body?.digest === true;
 
     const [results, build] = await Promise.all([
       Promise.all(CHECKS.map(runCheck)),
@@ -363,6 +369,23 @@ Deno.serve(async (req) => {
         `<p>${results.length - failures.length}/${results.length} pages healthy · checked ${esc(eastern())} ET</p>` +
         `<p><i>Automated uptime &amp; content monitor.</i></p>`;
       await postToTeams(html);
+      alerted = true;
+    }
+
+    if (ok && digest && !dryRun) {
+      const slowRow = slow.length
+        ? `<p>⏱ Slow but healthy: ${esc(slow.map((s) => `${s.path} (${s.ms} ms)`).join(", "))}</p>`
+        : "";
+      const buildRow = build.available
+        ? `<p>📦 Live build <b>${esc(build.commit.slice(0, 7))}</b> built ${esc(eastern(build.builtAt))} ET.</p>`
+        : `<p>📦 Build fingerprint unavailable${build.note ? ` — ${esc(build.note)}` : ""}.</p>`;
+      await postToTeams(
+        `<h3>✅ Daily site health check — highlandernc.com</h3>` +
+          `<p>${results.length}/${results.length} key pages healthy · ${esc(eastern())} ET</p>` +
+          buildRow +
+          slowRow +
+          `<p><i>Automated uptime &amp; content monitor.</i></p>`,
+      );
       alerted = true;
     }
 
