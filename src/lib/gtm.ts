@@ -515,3 +515,89 @@ export function trackConsentUpdate(state: {
     page_path: pagePath(),
   });
 }
+
+/* ---------- Phase 1 CRO: engagement measurement ---------- */
+
+/**
+ * Scroll-depth + engaged-time measurement, scoped to a single route.
+ *
+ * Call `startPageEngagement(pathname)` on every route change; the returned
+ * cleanup stops listeners and flushes the max depth reached. Milestones fire
+ * at most once per route visit so depth funnels stay clean in GTM.
+ */
+export function startPageEngagement(pagePathValue: string) {
+  if (typeof window === "undefined") return () => {};
+
+  const milestones = [25, 50, 75, 90] as const;
+  const fired = new Set<number>();
+  const startedAt = Date.now();
+  let maxDepth = 0;
+  let ticking = false;
+
+  const measure = () => {
+    ticking = false;
+    const doc = document.documentElement;
+    const scrollable = doc.scrollHeight - window.innerHeight;
+    const depth =
+      scrollable <= 0 ? 100 : Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+    if (depth > maxDepth) maxDepth = depth;
+    for (const m of milestones) {
+      if (depth >= m && !fired.has(m)) {
+        fired.add(m);
+        push({
+          event: "scroll_depth",
+          percent_scrolled: m,
+          page_path: pagePathValue,
+          page_title: pageTitle(),
+          seconds_on_page: Math.round((Date.now() - startedAt) / 1000),
+        });
+      }
+    }
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(measure);
+  };
+
+  measure();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+
+  return () => {
+    window.removeEventListener("scroll", onScroll);
+    window.removeEventListener("resize", onScroll);
+    push({
+      event: "page_engagement",
+      page_path: pagePathValue,
+      page_title: pageTitle(),
+      max_scroll_depth: maxDepth,
+      seconds_on_page: Math.round((Date.now() - startedAt) / 1000),
+    });
+  };
+}
+
+/**
+ * The single, page-level primary action was clicked. Paired with
+ * `getPagePrimaryAction()` so every page has exactly one measurable
+ * "the visitor took the intended action" signal.
+ */
+export function trackPrimaryCtaClick(opts: {
+  page_key: string;
+  intent: "call" | "form";
+  cta_text: string;
+  destination_url: string;
+  click_location: string;
+}) {
+  push({
+    event: "primary_cta_click",
+    page_key: opts.page_key,
+    intent: opts.intent,
+    cta_text: opts.cta_text,
+    destination_url: opts.destination_url,
+    click_location: opts.click_location,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
