@@ -136,7 +136,15 @@ const SEOHead = ({
       ? (Array.isArray(jsonLd) ? [...jsonLd] : [jsonLd])
       : [];
     const serialized = JSON.stringify(nodes);
-    if (!noindex && !serialized.includes(`${BASE_URL}/#business`)) {
+    // A node counts as the business entity only when it *is* one — a mere
+    // `provider: { "@id": ...#business }` reference (as Service schema emits)
+    // must still pull in the full LocalBusiness/RoofingContractor node.
+    const hasBusinessNode = nodes.some((n) => {
+      const t = (n as { "@type"?: string | string[] })["@type"];
+      const types = Array.isArray(t) ? t : t ? [t] : [];
+      return types.some((x) => x === "LocalBusiness" || x === "RoofingContractor");
+    });
+    if (!noindex && !hasBusinessNode) {
       nodes.push(localBusinessSchema());
     }
     if (!noindex && !serialized.includes("BreadcrumbList") && canonicalPath !== "/") {
