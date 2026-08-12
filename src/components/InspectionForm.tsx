@@ -655,6 +655,7 @@ const InspectionForm = () => {
                 </div>
 
                 {/* Submit */}
+                <FormErrorSummary tone="dark" message={submitError} issues={issues} />
                 <div className="mt-8 pt-6 border-t border-dark-section-foreground/6 flex flex-col sm:flex-row sm:items-center gap-4">
                   <button
                     onClick={handleSubmit}
