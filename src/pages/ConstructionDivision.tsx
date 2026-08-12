@@ -47,6 +47,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
+import FinancingTeaser from "@/components/conversion/FinancingTeaser";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
