@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { installGtmGlobalListeners, startPageEngagement } from "@/lib/gtm";
+import {
+  installGtmGlobalListeners,
+  installExitIntentDetection,
+  startPageEngagement,
+} from "@/lib/gtm";
 import { captureAttribution } from "@/lib/attribution";
 
 /**
@@ -22,6 +26,9 @@ const GTMRouteTracker = () => {
   useEffect(() => {
     installGtmGlobalListeners();
   }, []);
+
+  // Abandonment signal (`exit_intent_shown`), once per session.
+  useEffect(() => installExitIntentDetection(), []);
 
   // Re-capture on every route change. First-touch values already in
   // sessionStorage always win, so campaign data survives SPA navigation —

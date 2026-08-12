@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { trackFormStepComplete } from "@/lib/gtm";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, Loader2 } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
@@ -97,7 +98,16 @@ const RoofingIntakeForm = () => {
     return false;
   }, [step, data, contact.valid, contact.errors.town]);
 
-  const next = () => stepValid && setStep((s) => Math.min(3, (s + 1) as Step));
+  const next = () => {
+    if (!stepValid) return;
+    trackFormStepComplete({
+      form_name: "Roofing Intake",
+      form_id: "roofing-intake",
+      step_index: step,
+      total_steps: 4,
+    });
+    setStep((s) => Math.min(3, (s + 1) as Step));
+  };
   const back = () => setStep((s) => Math.max(0, (s - 1) as Step));
 
   const submit = async () => {

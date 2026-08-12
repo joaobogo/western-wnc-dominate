@@ -25,13 +25,19 @@ export const GTM_EVENTS = {
   CTA_CLICK: "cta_click",
   REQUEST_QUOTE_CLICK: "request_quote_click",
   REQUEST_INSPECTION_CLICK: "request_inspection_click",
+  PRIMARY_CTA_CLICK: "primary_cta_click",
   // Forms
   FORM_START: "form_start",
+  FORM_STEP_COMPLETE: "form_step_complete",
   FORM_SUCCESS: "form_success",
   FORM_ERROR: "form_error",
+  GENERATE_LEAD: "generate_lead",
   // Content engagement
   TOWN_FAQ_OPEN: "town_faq_open",
   TOWN_FAQ_CONVERSION_INTENT: "town_faq_conversion_intent",
+  SCROLL_DEPTH: "scroll_depth",
+  SCROLL_75: "scroll_75",
+  EXIT_INTENT_SHOWN: "exit_intent_shown",
   // Partner widgets
   VELUX_QUOTE_CLICK: "velux_quote_click",
   // Chatbot
@@ -46,12 +52,76 @@ export type GtmEventName = (typeof GTM_EVENTS)[keyof typeof GTM_EVENTS];
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyRecord = Record<string, any>;
 
+/* ---------- Page context (attached to EVERY event) ----------
+ * Every dataLayer event carries page_type / town / service so GTM can slice
+ * any conversion by local page without extra tags. Values are derived from
+ * the URL and stay PII-free.
+ */
+
+const TOWN_SERVICE_RE =
+  /^\/([a-z0-9-]+?)-(roofing|roof-repair|roof-replacement|metal-roofing|gutters|siding)-(nc|[a-z0-9-]+)$/;
+
+export interface PageContext {
+  page_type: string;
+  town: string | null;
+  service: string | null;
+}
+
+export function getPageContext(pathnameArg?: string): PageContext {
+  const raw =
+    pathnameArg ??
+    (typeof window === "undefined" ? "/" : window.location.pathname);
+  const path = raw.replace(/\/+$/, "") || "/";
+
+  let town: string | null = null;
+  let service: string | null = null;
+  let page_type = "other";
+
+  if (path === "/") page_type = "home";
+  else if (path.startsWith("/service-areas/")) {
+    page_type = "town";
+    town = path.split("/")[2] || null;
+  } else if (path.startsWith("/counties/")) {
+    page_type = "county";
+  } else if (path.startsWith("/roofing")) {
+    page_type = "service";
+    service = path.split("/")[2] || "roofing";
+  } else if (path.startsWith("/construction")) {
+    page_type = "service";
+    service = path.split("/")[2] || "construction";
+  } else if (path.startsWith("/blog")) page_type = "blog";
+  else if (path.startsWith("/storm-center")) {
+    page_type = "service";
+    service = "storm-damage";
+  } else if (/intake|consultation|request-inspection|contact/.test(path)) {
+    page_type = "conversion";
+  }
+
+  const m = TOWN_SERVICE_RE.exec(path);
+  if (m) {
+    page_type = "town_service";
+    town = m[1];
+    service = m[2];
+  }
+
+  return { page_type, town, service };
+}
+
 function push(event: AnyRecord) {
   if (typeof window === "undefined") return;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const w = window as any;
+  const ctx = getPageContext();
   w.dataLayer = w.dataLayer || [];
-  w.dataLayer.push(event);
+  w.dataLayer.push({
+    page_type: ctx.page_type,
+    town: ctx.town,
+    service: ctx.service,
+    ...event,
+    // A null town/service on the event must not erase page-derived context.
+    ...(event.town == null && ctx.town ? { town: ctx.town } : {}),
+    ...(event.service == null && ctx.service ? { service: ctx.service } : {}),
+  });
 }
 
 function pagePath() {
@@ -250,6 +320,13 @@ export function trackFormSuccess(opts: {
     page_path: pagePath(),
     lead_id: opts.lead_id,
   });
+  trackGenerateLead({
+    lead_id: opts.lead_id,
+    lead_source: opts.form_id || opts.form_name,
+    lead_type: opts.lead_type ?? null,
+    service_category: opts.service_category ?? null,
+    property_town: opts.property_town ?? null,
+  });
 }
 
 export function trackFormError(opts: {
@@ -267,6 +344,80 @@ export function trackFormError(opts: {
 }
 
 /* ---------- CTAs ---------- */
+
+/** Generic CTA click. Fires for every tracked CTA (including the specialised
+ *  quote/inspection/phone events) so GTM has one funnel-wide click event.
+ *  `cta_location` is the block the CTA lives in (hero, sticky_bar, footer…). */
+export function trackCtaClick(opts: {
+  cta_location: string;
+  cta_text?: string | null;
+  cta_type?: string | null;
+  destination_url: string;
+  town?: string | null;
+}) {
+  push({
+    event: GTM_EVENTS.CTA_CLICK,
+    cta_location: opts.cta_location,
+    cta_text: opts.cta_text ?? null,
+    cta_type: opts.cta_type ?? null,
+    destination_url: opts.destination_url,
+    town: opts.town ?? null,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
+/** Multi-step intake progression. Deduped per form + step per session. */
+const formStepFired = new Set<string>();
+export function trackFormStepComplete(opts: {
+  form_name: string;
+  form_id: string;
+  step_index: number;
+  step_name?: string | null;
+  total_steps?: number | null;
+}) {
+  const key = `${opts.form_id}::${opts.step_index}`;
+  if (formStepFired.has(key)) return;
+  formStepFired.add(key);
+  push({
+    event: GTM_EVENTS.FORM_STEP_COMPLETE,
+    form_name: opts.form_name,
+    form_id: opts.form_id,
+    step_index: opts.step_index,
+    step_number: opts.step_index + 1,
+    step_name: opts.step_name ?? null,
+    total_steps: opts.total_steps ?? null,
+    page_path: pagePath(),
+  });
+}
+
+/** Canonical conversion event. Deduped per lead_id for the whole session. */
+const generateLeadFired = new Set<string>();
+export function trackGenerateLead(opts: {
+  lead_id: string;
+  lead_source: string;
+  lead_type?: string | null;
+  service_category?: string | null;
+  property_town?: string | null;
+  value?: number | null;
+}) {
+  if (generateLeadFired.has(opts.lead_id)) return;
+  generateLeadFired.add(opts.lead_id);
+  const source = getCtaSource();
+  push({
+    event: GTM_EVENTS.GENERATE_LEAD,
+    lead_id: opts.lead_id,
+    lead_source: opts.lead_source,
+    lead_type: opts.lead_type ?? null,
+    service_category: opts.service_category ?? null,
+    property_town: opts.property_town ?? null,
+    town: opts.property_town ?? source?.town ?? null,
+    source_context: source?.context ?? null,
+    currency: "USD",
+    value: opts.value ?? 0,
+    page_path: pagePath(),
+  });
+}
 
 export function trackRequestQuoteClick(opts: {
   click_location: string;
@@ -360,6 +511,13 @@ export function trackChatbotLeadSubmit(opts: {
     page_path: pagePath(),
     lead_id: opts.lead_id,
   });
+  trackGenerateLead({
+    lead_id: opts.lead_id,
+    lead_source: "chatbot",
+    lead_type: "chatbot",
+    service_category: opts.service_category ?? null,
+    property_town: opts.property_town ?? null,
+  });
 }
 
 /* ---------- Global delegated listeners ---------- */
@@ -423,6 +581,13 @@ export function installGtmGlobalListeners() {
           pagePath();
         const loc = resolveClickLocation(ctaEl);
         const town = resolveTown(ctaEl);
+        trackCtaClick({
+          cta_location: loc,
+          cta_text: ctaEl.textContent?.trim().slice(0, 80) || null,
+          cta_type: cta,
+          destination_url: dest,
+          town,
+        });
         if (cta === "request_quote") {
           trackRequestQuoteClick({ click_location: loc, destination_url: dest, town });
         } else if (cta === "request_inspection") {
@@ -448,6 +613,15 @@ export function installGtmGlobalListeners() {
         const display = anchor.textContent?.trim() || rawNumber;
         const phoneLoc = resolveClickLocation(anchor);
         const phoneTown = resolveTown(anchor);
+        if (!anchor.closest("[data-gtm-cta]")) {
+          trackCtaClick({
+            cta_location: phoneLoc,
+            cta_text: display,
+            cta_type: "phone",
+            destination_url: href,
+            town: phoneTown,
+          });
+        }
         trackPhoneClick({
           phone_number: display,
           link_url: href,
@@ -551,6 +725,17 @@ export function startPageEngagement(pagePathValue: string) {
           page_title: pageTitle(),
           seconds_on_page: Math.round((Date.now() - startedAt) / 1000),
         });
+        // Dedicated 75% event: the standard "engaged reader" trigger used by
+        // the conversion tags, so GTM doesn't need a value-filtered trigger.
+        if (m === 75) {
+          push({
+            event: GTM_EVENTS.SCROLL_75,
+            percent_scrolled: 75,
+            page_path: pagePathValue,
+            page_title: pageTitle(),
+            seconds_on_page: Math.round((Date.now() - startedAt) / 1000),
+          });
+        }
       }
     }
   };
@@ -600,4 +785,68 @@ export function trackPrimaryCtaClick(opts: {
     page_path: pagePath(),
     page_title: pageTitle(),
   });
+  trackCtaClick({
+    cta_location: opts.click_location,
+    cta_text: opts.cta_text,
+    cta_type: `primary_${opts.intent}`,
+    destination_url: opts.destination_url,
+  });
+}
+
+/* ---------- Exit intent ---------- */
+
+const EXIT_INTENT_KEY = "hl_exit_intent_shown";
+
+/** Fires at most once per browsing session. */
+export function trackExitIntentShown(opts: { trigger: string; variant?: string | null }) {
+  if (typeof window === "undefined") return;
+  try {
+    if (window.sessionStorage.getItem(EXIT_INTENT_KEY)) return;
+    window.sessionStorage.setItem(EXIT_INTENT_KEY, "1");
+  } catch {
+    /* storage unavailable — still emit once per page load */
+  }
+  push({
+    event: GTM_EVENTS.EXIT_INTENT_SHOWN,
+    exit_trigger: opts.trigger,
+    variant: opts.variant ?? null,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
+let exitIntentInstalled = false;
+
+/**
+ * Detects abandonment signals (desktop: pointer leaving through the top of the
+ * viewport; mobile/desktop: tab hidden after real engagement) and emits
+ * `exit_intent_shown` once per session. Safe to call on every mount.
+ */
+export function installExitIntentDetection(onExitIntent?: (trigger: string) => void) {
+  if (exitIntentInstalled || typeof document === "undefined") return () => {};
+  exitIntentInstalled = true;
+  const mountedAt = Date.now();
+
+  const fire = (trigger: string) => {
+    // Ignore instant bounces — those are not decision-stage exits.
+    if (Date.now() - mountedAt < 5000) return;
+    trackExitIntentShown({ trigger });
+    onExitIntent?.(trigger);
+  };
+
+  const onMouseOut = (ev: MouseEvent) => {
+    if (ev.clientY <= 0 && !ev.relatedTarget) fire("pointer_exit_top");
+  };
+  const onVisibility = () => {
+    if (document.visibilityState === "hidden") fire("tab_hidden");
+  };
+
+  document.addEventListener("mouseout", onMouseOut);
+  document.addEventListener("visibilitychange", onVisibility);
+
+  return () => {
+    document.removeEventListener("mouseout", onMouseOut);
+    document.removeEventListener("visibilitychange", onVisibility);
+    exitIntentInstalled = false;
+  };
 }
