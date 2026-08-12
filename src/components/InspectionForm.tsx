@@ -61,6 +61,7 @@ const InspectionForm = () => {
   /** Optional fields stay collapsed so the visible form is only what we need. */
   const [showDetails, setShowDetails] = useState(false);
   const [townError, setTownError] = useState<string | null>(null);
+  const [projectError, setProjectError] = useState<string | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [fileNotice, setFileNotice] = useState<string | null>(null);
   const sessionFolder = useRef<string>(newSessionFolder());
