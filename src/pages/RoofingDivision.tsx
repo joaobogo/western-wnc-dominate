@@ -320,7 +320,7 @@ const RoofingDivision = () => {
                     animate={{ y: 0 }}
                     transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    Premium Roofing.
+                    Roofing Built for
                   </motion.span>
                 </span>
                 <span className="block overflow-hidden">
@@ -330,7 +330,7 @@ const RoofingDivision = () => {
                     animate={{ y: 0 }}
                     transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    Masterfully <span className="text-[hsl(var(--gold-ink))]">Executed.</span>
+                    Western NC <span className="text-[hsl(var(--gold-ink))]">Weather.</span>
                   </motion.span>
                 </span>
               </h1>
@@ -341,7 +341,7 @@ const RoofingDivision = () => {
                 transition={{ duration: 0.7, delay: 1 }}
                 className="text-[19px] md:text-[22px] text-primary-foreground/90 max-w-2xl mb-12 leading-relaxed font-body font-medium"
               >
-                Team-led roofing systems engineered for Western North Carolina's ridgelines. From CertainTeed ShingleMaster-credentialed shingle replacements to premium standing seam metal, we deliver structural security with family-business integrity.
+                Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed ShingleMaster credentialed, licensed, and insured.
               </motion.p>
 
               <motion.div
