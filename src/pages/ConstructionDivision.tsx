@@ -47,6 +47,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
+import FinancingTeaser from "@/components/conversion/FinancingTeaser";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -302,6 +303,9 @@ const ConstructionDivision = () => {
                   >
                     View Design Services
                   </Link>
+                </div>
+                <div className="mt-6">
+                  <FinancingTeaser serviceLabel="construction project" />
                 </div>
                 <div className="mt-8 flex items-start gap-3 p-4 border-l-2 border-[hsl(var(--highland-gold)/0.5)] bg-card/40">
                   <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
