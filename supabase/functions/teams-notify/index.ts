@@ -268,6 +268,16 @@ Deno.serve(async (req) => {
       });
     }
 
+    // --- Site rollback / deployment alert ---
+    if (body?.event === "site_rollback") {
+      const html = buildRollbackMessage(body);
+      await postToTeams(html);
+      return new Response(JSON.stringify({ ok: true }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+
     // --- Lead / form notification ---
     const key = Object.keys(SOURCES).find((k) => body?.[k]);
     if (!key || !UUID_RE.test(String(body[key]))) {
