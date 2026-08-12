@@ -209,6 +209,14 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
     return (
       <IntakeConfirmation
         title="Planning brief received."
+        category="construction"
+        summary={[
+          { label: "Project", value: PROJECT_TYPE_OPTIONS.find((o) => o.value === data.projectType)?.label },
+          { label: "Planning need", value: PLANNING_NEED_OPTIONS.find((o) => o.value === data.planningNeed)?.label },
+          { label: "Timeline", value: TIMELINE_OPTIONS.find((o) => o.value === data.timeline)?.label },
+          { label: "Property", value: data.address },
+          { label: "We'll reach you at", value: data.phone || data.email },
+        ]}
         body="A design advisor will personally review your ideas and reach out within 2 business days to schedule your planning discovery call."
         nextSteps={[
           "We review your project goals and any shared files.",
