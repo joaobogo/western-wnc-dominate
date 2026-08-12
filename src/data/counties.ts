@@ -51,7 +51,7 @@ export const counties: CountyData[] = [
     towns: ["Cashiers", "Sylva", "Cullowhee", "Dillsboro", "Lake Glenville", "Sapphire"],
     metaTitle: "Roofing & Construction in Jackson County, NC | Highlander",
     metaDescription: "Expert roofing and construction for Jackson County, NC. Serving Sylva, Cashiers, Cullowhee, and Dillsboro with specialized mountain-rated systems.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-valley-fog-sunrise.jpg",
     facts: [
       { label: "Regional Base", value: "Sylva Hub" },
       { label: "Specialty", value: "Moisture Systems" },
@@ -74,7 +74,7 @@ export const counties: CountyData[] = [
     towns: ["Bryson City", "Cherokee"],
     metaTitle: "Roofing & Construction in Swain County, NC | Highlander",
     metaDescription: "Reliable roofing and construction in Swain County, NC. Specialized services for Bryson City homes and vacation rentals near the Smokies.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-aerial-neighborhood.jpg",
     facts: [
       { label: "Market Focus", value: "Vacation Rentals" },
       { label: "Top Material", value: "Metal Roofing" },
@@ -97,7 +97,7 @@ export const counties: CountyData[] = [
     towns: ["Waynesville"],
     metaTitle: "Roofing & Construction in Haywood County, NC | Highlander",
     metaDescription: "Professional roofing and construction across Haywood County, NC. Serving Waynesville with expert care for historic and modern properties.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-ridge-elevation-home.jpg",
     facts: [
       { label: "Specialty", value: "Historic Districts" },
       { label: "Focus", value: "Structural Additions" },
@@ -120,7 +120,7 @@ export const counties: CountyData[] = [
     towns: ["Asheville"],
     metaTitle: "Roofing & Construction in Buncombe County, NC | Highlander",
     metaDescription: "Professional roofing and construction across Buncombe County, NC. Serving Asheville with premium local service.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-mountain-home-exterior.jpg",
     facts: [
       { label: "Market Hub", value: "Asheville Region" },
       { label: "Specialty", value: "Historic + Modern" },
@@ -143,7 +143,7 @@ export const counties: CountyData[] = [
     towns: ["Hendersonville", "Fletcher", "Mills River"],
     metaTitle: "Roofing & Construction in Henderson County, NC | Highlander",
     metaDescription: "Expert roofing and construction for Henderson County, NC. Serving Hendersonville, Fletcher, and Mills River with locally based crews.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-forest-cabin-roof.jpg",
     facts: [
       { label: "Regional Center", value: "Hendersonville" },
       { label: "Service", value: "Dual Division" },
@@ -166,7 +166,7 @@ export const counties: CountyData[] = [
     towns: ["Brevard", "Rosman", "Lake Toxaway"],
     metaTitle: "Transylvania County Roofing & Construction | Highlander",
     metaDescription: "Specialized roofing and construction for Transylvania County, NC. Moisture-resistant systems for Brevard and surrounding communities.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-metal-standing-seam.jpg",
     facts: [
       { label: "Climate", value: "High Moisture" },
       { label: "Top Material", value: "Synthetic / Metal" },
@@ -189,7 +189,7 @@ export const counties: CountyData[] = [
     towns: ["Murphy", "Andrews"],
     metaTitle: "Roofing & Construction in Cherokee County, NC | Highlander",
     metaDescription: "Professional roofing and construction across Cherokee County, NC. Serving Murphy and Andrews with local accountability.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-cedar-slate-roof.jpg",
     facts: [
       { label: "Market Hub", value: "Murphy" },
       { label: "Primary Need", value: "Replacement" },
@@ -213,7 +213,7 @@ export const counties: CountyData[] = [
     towns: ["Mars Hill"],
     metaTitle: "Roofing & Construction in Madison County, NC | Highlander",
     metaDescription: "Professional roofing and construction across Madison County, NC. Serving Mars Hill with rugged, reliable mountain service.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-storm-clouds-ridge.jpg",
     facts: [
       { label: "Dispatch", value: "Madison Hub" },
       { label: "Top Material", value: "Metal Roofing" },
@@ -236,7 +236,7 @@ export const counties: CountyData[] = [
     towns: ["Hayesville"],
     metaTitle: "Roofing & Construction in Clay County, NC | Highlander",
     metaDescription: "Expert roofing and construction for Clay County, NC. Serving Hayesville and Lake Chatuge with durable, high-end mountain systems.",
-    heroImage: "/media/wnc-town-overlook.jpg",
+    heroImage: "/media/wnc-dimensional-shingle-roof.jpg",
     facts: [
       { label: "Regional Hub", value: "Hayesville" },
       { label: "Specialty", value: "Lakefront Life" },

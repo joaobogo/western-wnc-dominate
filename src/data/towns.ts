@@ -130,7 +130,7 @@ export const towns: TownData[] = [
     styleTendency: "Elevated rustic featuring bark siding, cedar shingles, and massive window walls for indoor-outdoor integration.",
     notableNeighborhoods: ["High Hampton", "Cedar Creek", "Lonesome Valley", "Chinquapin", "Lake Glenville"],
     marketAuthorityAngle: "In the Southeast's wettest high-elevation town, we treat every project as a complex water-management system rather than just a build.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-valley-fog-sunrise.jpg"
   },
   {
     slug: "franklin-nc",
@@ -150,7 +150,7 @@ export const towns: TownData[] = [
     styleTendency: "Classic Appalachian styles, including craftsman bungalows and modern farmhouses built for local conditions.",
     notableNeighborhoods: ["Cartoogechaye", "Iotla", "Holly Springs", "Burningtown", "Otto"],
     marketAuthorityAngle: "Franklin is our home. Our crews live here, meaning we offer the fastest response times and local accountability for Macon County neighbors.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-aerial-neighborhood.jpg"
   },
   {
     slug: "sylva-nc",
@@ -170,7 +170,7 @@ export const towns: TownData[] = [
     styleTendency: "Historic preservation mixed with functional modern mountain design tailored for Jackson County's valleys.",
     notableNeighborhoods: ["Historic Downtown", "Tuckasegee River Corridor", "Cope Creek", "Fisher Creek", "Webster"],
     marketAuthorityAngle: "From Jackson County commercial centers to Main Street historic estates, we manage complex projects that balance modernization with preservation.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-ridge-elevation-home.jpg"
   },
   {
     slug: "bryson-city-nc",
@@ -190,7 +190,7 @@ export const towns: TownData[] = [
     styleTendency: "Classic Smoky Mountain log and timber styles emphasizing durability and natural finishes.",
     notableNeighborhoods: ["Alarka", "Deep Creek", "Lands Creek", "Fontana Lake area"],
     marketAuthorityAngle: "We understand that in Bryson City, your home is often your business. We complete major projects in the tight windows between guest stays.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-mountain-home-exterior.jpg"
   },
   {
     slug: "waynesville-nc",
@@ -210,7 +210,7 @@ export const towns: TownData[] = [
     styleTendency: "Elegant historic home design (Queen Anne, Colonial) transitioning into contemporary mountain modern styles.",
     notableNeighborhoods: ["Main Street Historic District", "Frog Level", "Pigeon Street", "Hyatt Creek", "Lake Junaluska"],
     marketAuthorityAngle: "Haywood County projects require a balance of technical modernization and visual sensitivity. We protect Waynesville's historic integrity.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-forest-cabin-roof.jpg"
   },
   {
     slug: "cullowhee-nc",
@@ -230,7 +230,7 @@ export const towns: TownData[] = [
     styleTendency: "Functional residential and multi-unit home design prioritizing longevity, value, and tenant safety.",
     notableNeighborhoods: ["WCU Campus Area", "Old Cullowhee Road", "Caney Fork", "Speedwell"],
     marketAuthorityAngle: "We understand Cullowhee's academic rhythm. We coordinate with Jackson County property managers to ensure projects finish before the semester starts.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-metal-standing-seam.jpg"
   },
   {
     slug: "dillsboro-nc",
@@ -250,7 +250,7 @@ export const towns: TownData[] = [
     styleTendency: "Quaint Appalachian village style with a focus on charm, historic accuracy, and river-resistant structural details.",
     notableNeighborhoods: ["Historic Village Center", "Tuckasegee Riverfront", "Monteith Park area"],
     marketAuthorityAngle: "Dillsboro is a destination. We keep our job sites tourism-ready and our craftsmanship village-compliant to protect Dillsboro's unique mountain character.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-cedar-slate-roof.jpg"
   },
   {
     slug: "asheville-nc",
@@ -270,7 +270,7 @@ export const towns: TownData[] = [
     styleTendency: "Eclectic mix of Tudor, Craftsman, and ultra-modern mountain home design featuring glass and steel.",
     notableNeighborhoods: ["Biltmore Forest", "Town Mountain", "Montford", "Grove Park", "Kenilworth"],
     marketAuthorityAngle: "Asheville projects demand a higher level of design sensitivity and structural precision. We build for the city's most discerning homeowners.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-storm-clouds-ridge.jpg"
   },
   {
     slug: "hendersonville-nc",
@@ -290,7 +290,7 @@ export const towns: TownData[] = [
     styleTendency: "Classic Southern Appalachian styles including brick ranch, colonial revival, and modern craftsman.",
     notableNeighborhoods: ["Druid Hills", "Laurel Park", "Champion Hills", "Flat Rock area"],
     marketAuthorityAngle: "Hendersonville homeowners value longevity. we specify systems and build additions that are designed to last for decades, not just years.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-dimensional-shingle-roof.jpg"
   },
   {
     slug: "brevard-nc",
@@ -330,7 +330,7 @@ export const towns: TownData[] = [
     styleTendency: "Functional mountain residential and classic ranch styles built for durability and ease of maintenance.",
     notableNeighborhoods: ["Bear Paw", "Hiwassee Dam area", "Hanging Dog", "Murphy Town Center"],
     marketAuthorityAngle: "Murphy is where we offer Western North Carolina's most dependable local service. We're your neighbors, building for your long-term value.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-valley-fog-sunrise.jpg"
   },
   {
     slug: "hayesville-nc",
@@ -350,7 +350,7 @@ export const towns: TownData[] = [
     styleTendency: "Lakefront Rustic and Traditional Mountain styles emphasizing views and outdoor living.",
     notableNeighborhoods: ["Lake Chatuge", "Tusquittee", "Shooting Creek", "Hayesville Center"],
     marketAuthorityAngle: "Hayesville homes are for living. We build systems that protect your investment so you can focus on the lake.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-aerial-neighborhood.jpg"
   },
   {
     slug: "scaly-mountain-nc",
@@ -370,7 +370,7 @@ export const towns: TownData[] = [
     styleTendency: "Traditional mountain cabin and timber-frame styles with metal or synthetic shake roofs suited to ridge exposure.",
     notableNeighborhoods: ["Scaly Mountain Village", "Blue Valley", "Osage Mountain", "NC-106 corridor"],
     marketAuthorityAngle: "Scaly Mountain sits closer to our Franklin base than most Plateau addresses, so response times are short and our crews already know the elevation-specific installation details.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-ridge-elevation-home.jpg"
   },
   {
     slug: "otto-nc",
@@ -390,7 +390,7 @@ export const towns: TownData[] = [
     styleTendency: "Traditional Appalachian farmhouse and craftsman styles with asphalt or metal roofing suited to valley conditions.",
     notableNeighborhoods: ["Coweeta", "Tessentee", "Otto Community", "US-441 corridor"],
     marketAuthorityAngle: "Otto is essentially our backyard. Our Franklin-based crews respond quickly and treat every Otto project as a local job — because it is.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-mountain-home-exterior.jpg"
   },
   {
     slug: "lake-glenville-nc",
@@ -410,7 +410,7 @@ export const towns: TownData[] = [
     styleTendency: "Elevated rustic and timber-frame lake homes with metal or synthetic shake roofs and heavy stone accents.",
     notableNeighborhoods: ["Trillium", "Norton", "Pines at Lake Glenville", "Highway 107 corridor"],
     marketAuthorityAngle: "At 3,500 feet on the highest major lake east of the Mississippi, roofing and gutter design are moisture-management problems first. We build every Lake Glenville project accordingly.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-forest-cabin-roof.jpg"
   },
   {
     slug: "lake-toxaway-nc",
@@ -430,7 +430,7 @@ export const towns: TownData[] = [
     styleTendency: "Estate lake-lodge style with heavy timber, stone chimneys, and standing-seam or synthetic shake roofs.",
     notableNeighborhoods: ["Lake Toxaway Estates", "Cardinal Drive area", "West Club Boulevard", "Toxaway Falls"],
     marketAuthorityAngle: "Lake Toxaway estates deserve a builder who treats every project as a long-term asset, not a job. Our specifications and jobsite standards are scaled accordingly.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-metal-standing-seam.jpg"
   },
   {
     slug: "sapphire-nc",
@@ -450,7 +450,7 @@ export const towns: TownData[] = [
     styleTendency: "Traditional Plateau rustic mixed with modern-mountain interpretations — timber, stone, and standing-seam metal.",
     notableNeighborhoods: ["Sapphire Valley", "Burlingame", "Wade Hampton area", "Highway 64 corridor"],
     marketAuthorityAngle: "Sapphire sits at Plateau elevation with Plateau rainfall. We build roof and exterior systems specified for the same conditions we handle in Highlands and Cashiers.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-cedar-slate-roof.jpg"
   },
   {
     slug: "cherokee-nc",
@@ -470,7 +470,7 @@ export const towns: TownData[] = [
     styleTendency: "Traditional mountain and river-valley home design with metal or algae-resistant asphalt roofing.",
     notableNeighborhoods: ["Big Cove", "Painttown", "Wolfetown", "Yellowhill", "Oconaluftee River corridor"],
     marketAuthorityAngle: "Cherokee homeowners and property owners deserve a real Western NC contractor — locally accountable, honest about scope, and equipped for river-valley conditions.",
-    heroImage: "/media/wnc-town-overlook.jpg"
+    heroImage: "/media/wnc-storm-clouds-ridge.jpg"
   }
 ];
 
