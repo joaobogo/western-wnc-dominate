@@ -8,6 +8,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useState } from "react";
 import { toast } from "sonner";
 import { submitLead } from "@/lib/leads";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 const benefits = [
   { title: "Competitive Pay", desc: "Industry-leading wages based on skill and local mountain experience.", icon: ShieldCheck },
@@ -149,11 +150,11 @@ const Careers = () => {
                         <div className="grid sm:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
                             <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-full-name">Full Name</label>
-                            <input id="f-full-name" required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="e.g. John Davidson" />
+                            <input id="f-full-name" required {...fieldAttrs.name} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="e.g. John Davidson" />
                           </div>
                           <div className="space-y-1.5">
                             <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-phone-number">Phone Number</label>
-                            <input id="f-phone-number" required type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
+                            <input id="f-phone-number" required {...fieldAttrs.phone} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
                           </div>
                         </div>
 
@@ -169,7 +170,7 @@ const Careers = () => {
 
                         <div className="space-y-1.5">
                           <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-relevant-experience">Relevant Experience</label>
-                          <textarea id="f-relevant-experience" rows={4} value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
+                          <textarea id="f-relevant-experience" rows={4} {...fieldAttrs.notes} value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
                         </div>
 
                         <div className="space-y-1.5">

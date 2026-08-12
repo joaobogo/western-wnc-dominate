@@ -5,6 +5,7 @@ import FormConsent from "@/components/FormConsent";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import InlineFieldError from "@/components/forms/InlineFieldError";
 import { useContactValidation } from "@/hooks/use-contact-validation";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 interface FastLeadFormProps {
   ctaLabel: string;
@@ -95,6 +96,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           </label>
           <input
             id={`${serviceLabel}-name`}
+            {...fieldAttrs.name}
             required
             value={formData.name}
             onChange={(event) => setFormData({ ...formData, name: event.target.value })}
@@ -113,8 +115,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             </label>
             <input
               id={`${serviceLabel}-phone`}
-              type="tel"
-              inputMode="tel"
+              {...fieldAttrs.phone}
               required
               value={formData.phone}
               onChange={(event) => setFormData({ ...formData, phone: contact.formatPhoneInput(event.target.value) })}
@@ -131,6 +132,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             </label>
             <input
               id={`${serviceLabel}-town`}
+              {...fieldAttrs.town}
               required
               value={formData.town}
               onChange={(event) => setFormData({ ...formData, town: event.target.value })}

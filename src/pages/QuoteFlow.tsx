@@ -13,6 +13,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { actionableError, errorTitle } from "@/lib/microcopy";
 import { scoreLead } from "@/lib/lead-scoring";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 import {
   Home, Building2, Hammer, CloudLightning, PlusCircle,
   Paintbrush, TreePine, Wrench, MapPin, Clock, User, FileText
@@ -261,6 +262,7 @@ export default function QuoteFlow() {
             <div>
               <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-full-name">Full Name *</label>
               <input id="f-full-name"
+                {...fieldAttrs.name}
                 value={form.name}
                 onChange={e => update("name", e.target.value)}
                 onBlur={() => contact.blur("name")}
@@ -274,7 +276,7 @@ export default function QuoteFlow() {
             <div>
               <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-email-address">Email Address *</label>
               <input id="f-email-address"
-                type="email"
+                {...fieldAttrs.email}
                 value={form.email}
                 onChange={e => update("email", e.target.value)}
                 onBlur={() => contact.blur("email")}
@@ -289,12 +291,11 @@ export default function QuoteFlow() {
             <div>
               <label className="text-xs font-body font-medium text-foreground mb-1 block" htmlFor="f-phone-number-optional-speeds-up-">Phone Number <span className="text-muted-foreground">(optional — speeds up our response)</span></label>
               <input id="f-phone-number-optional-speeds-up-"
-                type="tel"
+                {...fieldAttrs.phoneLast}
                 value={form.phone}
                 onChange={e => update("phone", contact.formatPhoneInput(e.target.value))}
                 onBlur={() => contact.blur("phone")}
                 aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
-                inputMode="tel"
                 placeholder="(828) 000-0000"
                 className="w-full rounded-sm border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />

@@ -47,8 +47,23 @@ export const FieldError = ({ id, children }: { id?: string; children?: ReactNode
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & { invalid?: boolean };
 
+/** Sensible mobile keyboard defaults derived from the input type. */
+const ergonomicDefaults = (type?: string): React.InputHTMLAttributes<HTMLInputElement> => {
+  switch (type) {
+    case "tel":
+      return { inputMode: "tel", autoComplete: "tel", enterKeyHint: "next", autoCorrect: "off", spellCheck: false };
+    case "email":
+      return { inputMode: "email", autoComplete: "email", enterKeyHint: "next", autoCapitalize: "none", autoCorrect: "off", spellCheck: false };
+    case "search":
+      return { inputMode: "search", enterKeyHint: "search", autoCorrect: "off", spellCheck: false };
+    default:
+      return { enterKeyHint: "next" };
+  }
+};
+
 export const Input = ({ invalid, ...props }: InputProps) => (
   <input
+    {...ergonomicDefaults(props.type)}
     {...props}
     aria-invalid={invalid || undefined}
     className={`w-full bg-background border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-colors ${
@@ -61,6 +76,8 @@ export const Input = ({ invalid, ...props }: InputProps) => (
 
 export const Textarea = (props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
   <textarea
+    autoCapitalize="sentences"
+    enterKeyHint="enter"
     {...props}
     className="w-full bg-background border border-border rounded-none px-5 py-4 text-[16px] md:text-[18px] font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[hsl(var(--highland-gold))] focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.15)] transition-colors resize-none"
   />

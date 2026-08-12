@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { leadTierLabel, type LeadTierLabel } from "@/lib/lead-scoring";
 import { useInternalPageHead } from "@/components/SEOHead";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 type Lead = {
   id: string;
@@ -411,7 +412,7 @@ export default function AdminLeads() {
           <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-search">Search</label>
           <input
             id="f-search"
-            type="search"
+            {...fieldAttrs.search}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Name, phone, email, town…"
