@@ -407,6 +407,8 @@ const InspectionForm = () => {
                   </div>
                 </div>
 
+                <FormSavedNote show={autosave.restored} tone="dark" className="mb-5" />
+
                 {step === 1 && (
                 <div className="space-y-6">
                   <div>
