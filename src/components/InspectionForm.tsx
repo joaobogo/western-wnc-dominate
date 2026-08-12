@@ -87,7 +87,8 @@ const InspectionForm = () => {
     enabled: !submitted,
     onRestore: (saved) => {
       setFormData((d) => ({ ...d, ...saved, town: saved.town || d.town }));
-      if (saved.address || saved.timeline || saved.insuranceStatus) setShowDetails(true);
+      if (saved.address || saved.timeline || saved.insuranceStatus || saved.email || saved.details) setShowDetails(true);
+      if (saved.projectType) setShowProjectChoices(false);
     },
   });
 
