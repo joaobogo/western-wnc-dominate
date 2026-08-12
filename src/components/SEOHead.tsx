@@ -100,7 +100,13 @@ const SEOHead = ({
     setMeta("name", "geo.position", "35.1821;-83.3807");
     setMeta("name", "ICBM", "35.1821, -83.3807");
 
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    // Exactly one canonical element may exist — drop any extras the static
+    // head or a previous route left behind, then self-reference this route.
+    const canonicalLinks = Array.from(
+      document.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'),
+    );
+    canonicalLinks.slice(1).forEach((extra) => extra.remove());
+    let link = canonicalLinks[0] ?? null;
     if (!link) { link = document.createElement("link"); link.setAttribute("rel", "canonical"); document.head.appendChild(link); }
     link.setAttribute("href", canonicalUrl);
 
@@ -133,8 +139,8 @@ const SEOHead = ({
     if (!noindex && !serialized.includes(`${BASE_URL}/#business`)) {
       nodes.push(localBusinessSchema());
     }
-    if (!noindex && !serialized.includes("BreadcrumbList") && path !== "/") {
-      const segments = path.split("/").filter(Boolean);
+    if (!noindex && !serialized.includes("BreadcrumbList") && canonicalPath !== "/") {
+      const segments = canonicalPath.split("/").filter(Boolean);
       const trail = [{ name: "Home", url: "/" }];
       segments.forEach((segment, i) => {
         trail.push({
@@ -156,7 +162,7 @@ const SEOHead = ({
       document.head.appendChild(script);
     }
     return () => { const ld = document.querySelector('script[data-seo-ld]'); if (ld) ld.remove(); };
-  }, [fullTitle, description, canonicalUrl, path, type, ogImage, noindex, jsonLd, keywords, locale]);
+  }, [fullTitle, description, canonicalUrl, canonicalPath, type, ogImage, noindex, jsonLd, keywords, locale]);
 
   return null;
 };
