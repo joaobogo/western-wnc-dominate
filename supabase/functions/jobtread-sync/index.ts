@@ -1202,6 +1202,8 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
               $: {
                 accountId,
                 name: contactName || payload.lead_name,
+                firstName: (payload.contact?.first_name ?? undefined) || undefined,
+                lastName: (payload.contact?.last_name ?? undefined) || undefined,
                 email: contactEmail || undefined,
                 phone: contactPhone || undefined,
                 secondaryPhone: contactPhone2 || undefined,
