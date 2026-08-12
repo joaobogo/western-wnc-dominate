@@ -294,7 +294,7 @@ Deno.serve(async (req) => {
           .maybeSingle();
         if (fresh) notifyRow = fresh;
       }
-      await postToTeams(buildLeadMessage(label, notifyRow));
+      await postToTeams(buildLeadMessage(label, notifyRow, table));
     }
     return new Response(JSON.stringify({ ok: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
