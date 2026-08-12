@@ -6,6 +6,7 @@ import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
 import FormConsent from "@/components/FormConsent";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -225,16 +226,16 @@ const RoofAssessmentQuiz = () => {
                   <form onSubmit={handleContactSubmit} className="space-y-4">
                     <div>
                       <label className={labelClass} htmlFor="f-your-name">Your Name</label>
-                      <input id="f-your-name" type="text" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className={inputClass} placeholder="e.g. John and Mary Davidson" />
+                      <input id="f-your-name" {...fieldAttrs.name} value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required className={inputClass} placeholder="e.g. John and Mary Davidson" />
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className={labelClass} htmlFor="f-email">Email</label>
-                        <input id="f-email" type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
+                        <input id="f-email" {...fieldAttrs.email} value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} required className={inputClass} placeholder="you@email.com" />
                       </div>
                       <div>
                         <label className={labelClass} htmlFor="f-phone-optional">Phone <span className="normal-case tracking-normal font-normal text-muted-foreground">(optional)</span></label>
-                        <input id="f-phone-optional" type="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
+                        <input id="f-phone-optional" {...fieldAttrs.phoneLast} value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="(828) 555-0123" />
                       </div>
                     </div>
                     <FormConsent />

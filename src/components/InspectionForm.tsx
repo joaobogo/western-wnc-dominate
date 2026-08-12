@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, ChevronDown, CheckCircle, Shield, Clock, Phone, Award, MapPin, Loader2, User, Paperclip, X, Home, Wrench, Layers, CloudLightning, Hammer, Building2, TreePine, HelpCircle } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import { trackFormStepComplete } from "@/lib/gtm";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -410,6 +411,7 @@ const InspectionForm = () => {
                     <label htmlFor="town" className={labelClasses}>Property Town</label>
                     <input
                       id="town" type="text" required maxLength={120}
+                      {...fieldAttrs.town}
                       list="hl-town-options"
                       value={formData.town}
                       onChange={(e) => { setFormData({ ...formData, town: e.target.value }); if (townError) setTownError(null); }}
@@ -448,7 +450,7 @@ const InspectionForm = () => {
                       <label htmlFor="name" className={labelClasses}>Your Name</label>
                       <input
                         id="name" type="text" required maxLength={100}
-                        autoComplete="name"
+                        {...fieldAttrs.name}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         onBlur={() => contact.blur("name")}
@@ -462,7 +464,7 @@ const InspectionForm = () => {
                       <label htmlFor="phone" className={labelClasses}>Phone</label>
                       <input
                         id="phone" type="tel" maxLength={20}
-                        inputMode="tel" autoComplete="tel"
+                        {...fieldAttrs.phone}
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: contact.formatPhoneInput(e.target.value) })}
                         onBlur={() => contact.blur("phone")}
@@ -479,7 +481,7 @@ const InspectionForm = () => {
                       <label htmlFor="email" className={labelClasses}>Email</label>
                       <input
                         id="email" type="email" maxLength={255}
-                        inputMode="email" autoComplete="email"
+                        {...fieldAttrs.emailLast}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         onBlur={() => contact.blur("email")}
@@ -496,6 +498,7 @@ const InspectionForm = () => {
                     <label htmlFor="details" className={labelClasses}>Briefly, What's Going On?</label>
                     <textarea
                       id="details" rows={3} maxLength={1000}
+                      {...fieldAttrs.notes}
                       value={formData.details}
                       onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                       className={`${inputClasses} resize-none`}

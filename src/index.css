@@ -2229,3 +2229,47 @@ div[style*="Edit with Lovable"],
     overflow-x: hidden;
   }
 }
+
+/* ============================================================
+   Mobile input ergonomics (PROMPT 8)
+   - 16px minimum font size on all fields so iOS never zooms
+   - 44px minimum tap targets on touch devices (WCAG 2.5.5 / AAA)
+   ============================================================ */
+@layer base {
+  input,
+  select,
+  textarea {
+    font-size: max(16px, 1em);
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):not([type="file"]),
+  select {
+    min-height: 44px;
+  }
+
+  textarea {
+    min-height: 88px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (pointer: coarse) {
+  /* Touch targets: opt out with data-tap-exempt on decorative/inline controls */
+  button:not([data-tap-exempt]),
+  [role="button"]:not([data-tap-exempt]),
+  a[href^="tel:"],
+  label[for] > input[type="checkbox"],
+  summary:not([data-tap-exempt]) {
+    min-height: 44px;
+  }
+
+  button:not([data-tap-exempt]):not(.w-full),
+  [role="button"]:not([data-tap-exempt]):not(.w-full) {
+    min-width: 44px;
+  }
+}

@@ -9,6 +9,7 @@ import { submitLead, logChatbotConversation } from "@/lib/leads";
 import { trackChatbotOpen } from "@/lib/gtm";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { actionableError } from "@/lib/microcopy";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -153,10 +154,10 @@ function LeadCaptureCard({
         <p className="text-[11px] text-muted-foreground font-body mt-0.5">Share your info and we'll call you — no obligation.</p>
       </div>
       <div className="space-y-2">
-        <input aria-label="Your name" value={name} onChange={e => setName(e.target.value)} placeholder="e.g. John and Mary Davidson" className={inputCls} maxLength={100} />
-        <input aria-label="Best phone number" type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="e.g. (828) 555-0123" className={inputCls} maxLength={20} />
-        <input aria-label="Email address (optional)" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="e.g. john@email.com (optional)" className={inputCls} maxLength={255} />
-        <input value={town} onChange={e => setTown(e.target.value)} placeholder="Property town (Franklin, Highlands, Cashiers, Sylva…)" className={inputCls} maxLength={80} aria-label="What town is the property in?" />
+        <input aria-label="Your name" {...fieldAttrs.name} value={name} onChange={e => setName(e.target.value)} placeholder="e.g. John and Mary Davidson" className={inputCls} maxLength={100} />
+        <input aria-label="Best phone number" {...fieldAttrs.phone} value={phone} onChange={e => setPhone(e.target.value)} placeholder="e.g. (828) 555-0123" className={inputCls} maxLength={20} />
+        <input aria-label="Email address (optional)" {...fieldAttrs.email} value={email} onChange={e => setEmail(e.target.value)} placeholder="e.g. john@email.com (optional)" className={inputCls} maxLength={255} />
+        <input {...fieldAttrs.town} value={town} onChange={e => setTown(e.target.value)} placeholder="Property town (Franklin, Highlands, Cashiers, Sylva…)" className={inputCls} maxLength={80} aria-label="What town is the property in?" />
       </div>
       <div className="flex items-center gap-2">
         <button onClick={handleSubmit} disabled={!name || !phone || submitting} className="flex-1 text-xs font-body font-semibold px-3 py-2 rounded-sm bg-primary text-primary-foreground disabled:opacity-40 hover:bg-primary/90 transition-colors">
@@ -521,6 +522,7 @@ export default function ChatbotWidget() {
               <form onSubmit={handleSubmit} className="flex items-center gap-2 px-3 py-2">
                 <input
                   aria-label="Describe your project"
+                  {...fieldAttrs.chat}
                   ref={inputRef}
                   value={input}
                   onChange={e => setInput(e.target.value)}

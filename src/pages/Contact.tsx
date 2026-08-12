@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { MountainContours } from "@/components/motion/BackgroundTexture";
 import { microcopy } from "@/lib/microcopy";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -379,6 +380,7 @@ export default function Contact() {
                           <label htmlFor="cc-name" className={labelClasses}>Your Name *</label>
                           <input
                             id="cc-name"
+                            {...fieldAttrs.name}
                             value={form.name}
                             onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
                             onBlur={() => contact.blur("name")}
@@ -394,7 +396,7 @@ export default function Contact() {
                           <label htmlFor="cc-email" className={labelClasses}>Email *</label>
                           <input
                             id="cc-email"
-                            type="email"
+                            {...fieldAttrs.email}
                             value={form.email}
                             onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
                             onBlur={() => contact.blur("email")}
@@ -415,14 +417,13 @@ export default function Contact() {
                         </label>
                         <input
                           id="cc-phone"
-                          type="tel"
+                          {...fieldAttrs.phone}
                           value={form.phone}
                           onChange={(e) => setForm((p) => ({ ...p, phone: contact.formatPhoneInput(e.target.value) }))}
                           onBlur={() => contact.blur("phone")}
                           aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
                           placeholder="(828) 555-0123"
                           className={inputClasses}
-                          inputMode="tel"
                           maxLength={20}
                         />
                         <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
@@ -435,7 +436,7 @@ export default function Contact() {
                         </label>
                         <input
                           id="cc-town"
-                          type="text"
+                          {...fieldAttrs.address}
                           value={form.town}
                           onChange={(e) => setForm((p) => ({ ...p, town: e.target.value }))}
                           onBlur={() => contact.blur("town")}
@@ -499,6 +500,7 @@ export default function Contact() {
                         </label>
                         <textarea
                           id="cc-msg"
+                          {...fieldAttrs.notes}
                           value={form.message}
                           onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
                           placeholder="Tell us about your property, project goals, budget range, or anything else that would help us prepare for our conversation."

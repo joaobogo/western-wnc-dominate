@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import SEOHead from "@/components/SEOHead";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -38,10 +39,10 @@ export default function AdminLogin() {
           <h1 className="text-lg font-heading font-bold">Internal sign in</h1>
           <p className="text-xs text-muted-foreground">Highlander team only. Leads dashboard access.</p>
         </div>
-        <input aria-label="Email" type="email" required placeholder="Email" value={email}
+        <input aria-label="Email" {...fieldAttrs.email} autoComplete="username" required placeholder="Email" value={email}
           onChange={e => setEmail(e.target.value)}
           className="w-full border border-input rounded px-3 py-2 text-sm bg-background" />
-        <input aria-label="Password" type="password" required placeholder="Password" value={password}
+        <input aria-label="Password" {...fieldAttrs.password} required placeholder="Password" value={password}
           onChange={e => setPassword(e.target.value)}
           className="w-full border border-input rounded px-3 py-2 text-sm bg-background" />
         {err && <p className="text-xs text-destructive">{err}</p>}

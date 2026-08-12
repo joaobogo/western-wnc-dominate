@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, Download, X, FileText, Shield, CloudLightning, Wrench, CheckCircle } from "lucide-react";
 import FormConsent from "@/components/FormConsent";
 import { useLeadSubmit } from "@/hooks/use-lead-submit";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -96,11 +97,11 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
             <label className={labelClass} htmlFor="f-your-name">Your Name</label>
-            <input id="f-your-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} placeholder="e.g. John and Mary Davidson" />
+            <input id="f-your-name" {...fieldAttrs.name} value={name} onChange={(e) => setName(e.target.value)} required className={inputClass} placeholder="e.g. John and Mary Davidson" />
           </div>
           <div>
             <label className={labelClass} htmlFor="f-email">Email</label>
-            <input id="f-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
+            <input id="f-email" {...fieldAttrs.emailLast} value={email} onChange={(e) => setEmail(e.target.value)} required className={inputClass} placeholder="you@email.com" />
           </div>
           <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase disabled:opacity-60">
             {submitting ? (

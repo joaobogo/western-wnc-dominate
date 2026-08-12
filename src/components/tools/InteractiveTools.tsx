@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, AlertTriangle, XCircle, ArrowRight, RotateCcw } from "lucide-react";
 import { ResultReveal } from "@/components/conversion";
 import { ScrollReveal } from "@/components/motion";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 /* ─── Repair vs Replace Guide ─── */
 const REPAIR_QUESTIONS = [
@@ -423,6 +424,7 @@ export function ServiceAreaFinder() {
 
         <input
           aria-label="Search your town"
+          {...fieldAttrs.search}
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Search your town…"

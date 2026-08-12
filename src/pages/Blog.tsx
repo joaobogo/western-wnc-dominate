@@ -15,6 +15,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock } from "@/components/trust";
 import { MountainContours, TextureOverlay } from "@/components/motion/BackgroundTexture";
 import { blogPosts } from "@/data/blogs";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -135,7 +136,7 @@ const Blog = () => {
                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.3)]" />
                     <input
                       aria-label="Search articles"
-                      type="text"
+                      {...fieldAttrs.search}
                       placeholder="Search articles — e.g. metal roof cost"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
@@ -595,7 +596,8 @@ const Blog = () => {
               <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
                   aria-label="Email address for the newsletter"
-                  type="email"
+                  {...fieldAttrs.emailLast}
+                  enterKeyHint="send"
                   placeholder="your@email.com"
                   className="flex-1 px-4 py-3 rounded-sm bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.1)] text-[hsl(var(--dark-section-foreground))] text-sm font-body placeholder:text-[hsl(var(--dark-section-foreground)/0.3)] focus:outline-none focus:border-[hsl(var(--highland-gold)/0.3)] transition-colors"
                 />

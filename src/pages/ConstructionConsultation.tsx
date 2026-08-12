@@ -9,6 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { actionableError, errorTitle } from "@/lib/microcopy";
 import { scoreLead } from "@/lib/lead-scoring";
+import { fieldAttrs } from "@/lib/field-ergonomics";
 import {
   HardHat, Home, Paintbrush, TreePine, Wrench, Compass,
   ArrowRight, ArrowLeft, CheckCircle, Loader2,
@@ -254,6 +255,7 @@ export default function ConstructionConsultation() {
       content: (
         <input 
           aria-label="Property address"
+          {...fieldAttrs.address}
           value={form.town} 
           onChange={e => update("town", e.target.value)} 
           placeholder="e.g. 120 Chestnut St, Highlands, NC" 
@@ -272,6 +274,7 @@ export default function ConstructionConsultation() {
         <div className="space-y-3">
           <textarea
             aria-label="Tell us about your vision for this project"
+            {...fieldAttrs.notes}
             value={form.description}
             onChange={e => update("description", e.target.value)}
             placeholder="Example: We want to add a primary suite above our garage that matches the existing roofline and uses similar materials. We're also considering a covered porch on the south side..."
@@ -294,6 +297,7 @@ export default function ConstructionConsultation() {
           <div>
             <label className="text-xs font-body font-semibold text-foreground mb-1.5 block" htmlFor="f-full-name">Full Name *</label>
             <input id="f-full-name"
+              {...fieldAttrs.name}
               value={form.name}
               onChange={e => update("name", e.target.value)}
               placeholder="e.g. John and Mary Davidson"
@@ -304,7 +308,7 @@ export default function ConstructionConsultation() {
           <div>
             <label className="text-xs font-body font-semibold text-foreground mb-1.5 block" htmlFor="f-email-address">Email Address *</label>
             <input id="f-email-address"
-              type="email"
+              {...fieldAttrs.email}
               value={form.email}
               onChange={e => update("email", e.target.value)}
               placeholder="you@email.com"
@@ -317,7 +321,7 @@ export default function ConstructionConsultation() {
               Phone Number <span className="text-muted-foreground font-normal">(recommended — our advisors prefer to call)</span>
             </label>
             <input id="f-phone-number-recommended-our-adv"
-              type="tel"
+              {...fieldAttrs.phoneLast}
               value={form.phone}
               onChange={e => update("phone", e.target.value)}
               placeholder="(828) 555-0123"
