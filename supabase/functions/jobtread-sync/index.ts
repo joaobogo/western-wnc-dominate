@@ -1113,12 +1113,16 @@ export function scrubDescription<T extends Record<string, any>>(input: T): T {
 
 /**
  * Truncates the Lead Notes to JobTread's field cap while always keeping the
- * FILES block (signed attachment links + failed uploads) intact.
+ * ATTACHMENTS block (signed links + failed uploads) intact. It is the last
+ * section of the note, so everything above it absorbs the truncation.
  */
 export function truncateNotePreservingFiles(note: string, max = 1000): string {
   if (!note || note.length <= max) return note;
   const lines = note.split("\n");
-  const start = lines.findIndex((l) => l.trim().toLowerCase() === "files");
+  const start = lines.findIndex((l) => {
+    const t = l.trim().toLowerCase();
+    return t === "attachments" || t === "files";
+  });
   if (start === -1) return note.slice(0, max - 10) + "\n…[truncated]";
   let end = lines.length;
   for (let i = start + 1; i < lines.length; i++) {
