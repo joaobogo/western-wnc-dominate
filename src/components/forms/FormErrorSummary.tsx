@@ -21,7 +21,8 @@ const FormErrorSummary = ({
   tone?: "light" | "dark";
   className?: string;
 }) => {
-  if (!message && issues.length === 0) return null;
+  const unique = Array.from(new Set(issues.filter(Boolean)));
+  if (!message && unique.length === 0) return null;
 
   const dark = tone === "dark";
   return (
@@ -40,9 +41,9 @@ const FormErrorSummary = ({
           <p className={`font-body font-bold text-[14px] md:text-[15px] ${dark ? "text-white" : "text-foreground"}`}>
             {message || "We couldn't send this yet — nothing you typed was lost."}
           </p>
-          {issues.length > 0 && (
+          {unique.length > 0 && (
             <ul className={`mt-2 space-y-1 text-[13px] md:text-[14px] font-body list-disc pl-4 ${dark ? "text-white/85" : "text-muted-foreground"}`}>
-              {issues.map((issue) => (
+              {unique.map((issue) => (
                 <li key={issue}>{issue}</li>
               ))}
             </ul>
