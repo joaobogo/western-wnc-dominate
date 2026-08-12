@@ -267,6 +267,8 @@ export function normalizeLeadPayload(input: LeadPayload) {
 
     property_address: clean(input.property_address),
     property_town: clean(input.property_town),
+    property_county:
+      clean(input.property_county) ?? countyFromTown(clean(input.property_town)),
     property_state: clean(input.property_state),
     property_zip: clean(input.property_zip),
     property_type: clean(input.property_type),
@@ -283,6 +285,8 @@ export function normalizeLeadPayload(input: LeadPayload) {
 
     lead_score: leadScore,
     page_path: pagePath,
+    source_context: clean(input.source_context),
+    submitted_at: clean(input.submitted_at) ?? new Date().toISOString(),
 
     attachments,
     // Legacy columns kept in sync so existing dashboards/mappers keep working.
