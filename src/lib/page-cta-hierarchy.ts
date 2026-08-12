@@ -57,11 +57,16 @@ export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
   if (path.startsWith("/roofing/storm-damage")) return callFirst("storm_damage");
   if (path.startsWith("/storm-center")) return callFirst("storm_center");
 
-  // Local intent → call first (local searchers expect to reach a person).
-  if (path.startsWith("/service-areas/")) return callFirst("town");
-  if (path.startsWith("/counties/")) return callFirst("county");
+  // Local pages lead with the estimate request; the phone stays reachable as
+  // the secondary action on every one of them.
+  if (path.startsWith("/service-areas/")) {
+    return formFirst("town", "Request Estimate", "/request-inspection");
+  }
+  if (path.startsWith("/counties/")) {
+    return formFirst("county", "Request Estimate", "/request-inspection");
+  }
   if (/^\/[a-z0-9-]+-(roofing|roof-repair|roof-replacement|metal-roofing)-[a-z0-9-]+$/.test(path)) {
-    return callFirst("town_service");
+    return formFirst("town_service", "Request Estimate", "/request-inspection");
   }
 
   // Considered / planning intent → form first.
