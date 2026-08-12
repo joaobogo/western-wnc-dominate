@@ -11,7 +11,7 @@ function sitemapPlugin() {
     name: "highlander-sitemap",
     buildStart() {
       try {
-        execSync("node scripts/generate-sitemap.mjs", { stdio: "inherit" });
+        execSync("bun scripts/generate-sitemap.ts", { stdio: "inherit" });
       } catch (e) {
         console.warn("[sitemap] generation skipped:", (e as Error).message);
       }
