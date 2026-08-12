@@ -29,6 +29,7 @@ import proj3 from "@/assets/gallery/asphalt-005.webp";
 import proj4 from "@/assets/gallery/cedar-005.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
@@ -502,6 +503,7 @@ const OutdoorLiving = () => {
         <ServiceInternalLinks title="Outdoor Living" slug="outdoor-living" />
       </main>
 
+      <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
       <StickyMobileCTA />

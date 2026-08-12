@@ -11,6 +11,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import CommonConcerns from "@/components/conversion/CommonConcerns";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 
@@ -183,6 +184,7 @@ const Siding = () => {
         </section>
         <ServiceInternalLinks title="Siding & Exterior" slug="siding" />
       </main>
+      <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
       <StickyMobileCTA />
