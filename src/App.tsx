@@ -9,6 +9,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
 import { initPixels } from "./lib/analytics";
 import { captureAttribution } from "./lib/attribution";
+import { preloadLikelyRoutes } from "./lib/route-preload";
 import { tier1FlatEntries, tier2FlatEntries } from "./data/service-town-slugs";
 
 // Chat widget is below-the-fold, non-critical UI — keep it out of the first load.
@@ -21,6 +22,8 @@ const Sonner = lazy(() => import("@/components/ui/sonner").then((m) => ({ defaul
 initPixels();
 // Persist UTM / click-id / referrer for lead attribution
 captureAttribution();
+// Warm the most likely next route chunks once the browser is idle
+preloadLikelyRoutes();
 
 // Lazy-load all non-home routes for faster LCP on initial load
 const NotFound = lazy(() => import("./pages/NotFound"));
