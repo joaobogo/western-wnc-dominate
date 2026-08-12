@@ -73,7 +73,8 @@ const PREFIXES = new Set([
 const PARTICLES = new Set([
   "van", "von", "der", "den", "de", "del", "della", "di", "da", "das", "dos",
   "du", "la", "le", "les", "lo", "st", "st.", "ter", "ten", "af", "av",
-  "bin", "ibn", "al", "el", "abu", "mac", "ben",
+  "bin", "ibn", "al", "el", "abu", "mac", "mc", "ben", "los", "dello", "delle",
+  "vander", "vanden", "op", "ter",
 ]);
 
 /** Normalizes whitespace and trims stray separators without touching letters. */

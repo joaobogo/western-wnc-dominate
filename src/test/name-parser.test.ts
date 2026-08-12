@@ -102,3 +102,25 @@ describe("lead payload integration", () => {
     expect(splitFullName("Solo")).toEqual({ first: "Solo", last: null });
   });
 });
+
+describe("parsePersonName hardening", () => {
+  it("keeps additional multi-word surnames intact", () => {
+    expect(parsePersonName("Juan Carlos de los Santos").last_name).toBe("de los Santos");
+    expect(parsePersonName("Mary Anne Van Dyke").last_name).toBe("Van Dyke");
+  });
+  it("handles suffix plus particle together", () => {
+    const r = parsePersonName("Mr. Peter van Horn Jr.");
+    expect(r).toMatchObject({ first_name: "Peter", last_name: "van Horn", suffix: "Jr." });
+  });
+  it("flags partnership-style business names", () => {
+    expect(looksLikeCompany("Smith & Sons")).toBe(true);
+    expect(looksLikeCompany("Sarah Whitfield")).toBe(false);
+  });
+  it("feeds correct first/last into the canonical lead payload", () => {
+    const n = normalizeLeadPayload({ source: "contact_form", full_name: "Robert de la Cruz III" });
+    expect(n.first_name).toBe("Robert");
+    expect(n.last_name).toBe("de la Cruz");
+    expect(n.is_company).toBe(false);
+    expect(splitFullName("Blue Ridge Builders LLC").first).toBeNull();
+  });
+});
