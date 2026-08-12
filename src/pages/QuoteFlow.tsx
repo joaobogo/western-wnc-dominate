@@ -408,18 +408,17 @@ export default function QuoteFlow() {
         <Header />
         <main id="main-content" className="pt-24 md:pt-32 pb-16">
           <div className="container-tight max-w-lg">
-            <ConfirmationState
-              show={true}
-              icon={undefined}
-              headline={isUrgent ? "We'll call you within 2 hours." : "We'll be in touch within 1 business day."}
-              message={`Thank you, ${form.name}. A project advisor who specializes in ${form.serviceCategory === "construction" || form.serviceCategory === "planning" ? "construction and design" : "roofing"} will reach out to discuss your project in detail.`}
-              secondaryMessage="In the meantime, feel free to explore our project gallery or learn more about our process."
-              action={
-                <div className="flex flex-col sm:flex-row gap-3 mt-4">
-                  <Link to="/recent-projects" className="btn-ghost-interactive text-sm px-5 py-2.5">View Our Work</Link>
-                  <Link to="/" className="btn-ghost-interactive text-sm px-5 py-2.5">Back to Home</Link>
-                </div>
-              }
+            <LeadConfirmationPanel
+              heading={isUrgent ? "Your request is in — we'll prioritize it." : "Your request is in."}
+              town={form.town}
+              category={form.serviceCategory === "construction" || form.serviceCategory === "planning" ? "construction" : "roofing"}
+              summary={[
+                { label: "Name", value: form.name },
+                { label: "Project", value: form.serviceCategory },
+                { label: "Timeline", value: form.timeline },
+                { label: "Town", value: form.town },
+                { label: "We'll reach you at", value: form.phone || form.email },
+              ]}
             />
           </div>
         </main>
