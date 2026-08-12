@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { trackEvent } from "@/lib/analytics";
 import {
   TriangleRight, Truck, Layers, PackageSearch, Wind, ArrowRight, Phone, CheckCircle,
 } from "lucide-react";
@@ -105,15 +106,17 @@ const CostContextBlock = ({
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               to="/request-inspection"
-              className="btn-primary inline-flex items-center justify-center gap-2 text-sm"
+              onClick={() => trackEvent("cta_click", { label: "Request a written scope", elementId: "cost-context-scope" })}
+              className="cta-gradient text-accent-foreground font-body font-bold text-sm px-6 py-3.5 inline-flex items-center justify-center gap-2 uppercase tracking-[0.1em] hover:opacity-90 transition-all min-h-[52px]"
             >
               Request a written scope <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:+18285247773"
-              className="btn-outline inline-flex items-center justify-center gap-2 text-sm"
+              onClick={() => trackEvent("phone_click", { label: "Cost context call", elementId: "cost-context-call" })}
+              className="border-2 border-border text-foreground font-body font-bold text-sm px-6 py-3.5 inline-flex items-center justify-center gap-2 hover:bg-muted transition-all min-h-[52px]"
             >
-              <Phone className="w-4 h-4" /> 828-524-7773
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> 828-524-7773
             </a>
           </div>
         </div>
