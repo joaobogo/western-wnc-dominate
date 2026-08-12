@@ -46,7 +46,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Plateau leak response planning",
         summary: "Highlands homes often need phased work scheduling because steep drives, estate layouts, and sudden weather shifts can slow standard crews.",
         proof: "Daily weather sequencing, custom staging, and high-temp waterproofing details",
-        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-chimney-flashing.jpg",
       },
     ].slice(0, 3),
     faqs: [
@@ -75,7 +75,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Steep-slope moisture management",
         summary: "Cashiers projects demand stronger valley waterproofing, better gutter capacity, and clean ventilation strategy because roofs stay wet longer here than in most WNC towns.",
         proof: "Oversized drainage design, premium underlayment, and ridge-to-eave airflow planning",
-        image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-chimney-flashing.jpg",
       },
       {
         title: "Estate home reroof planning",
@@ -114,7 +114,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Rapid-response repair scheduling",
         summary: "Because Franklin is one of our core operating bases, we can move quickly on leak calls, storm damage inspections, and replacement planning.",
         proof: "Local crews, local staging, and shorter lead times for Macon County homeowners",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-storm-tree-damage.jpg",
       },
       {
         title: "Family-home reroof coordination",
@@ -153,7 +153,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Sylva-area commercial maintenance",
         summary: "Sylva gives us a strategic base for Jackson County commercial service, especially for occupied buildings that need organized maintenance rather than reactive repairs.",
         proof: "Tenant-sensitive scheduling and recurring condition reporting",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-storm-tree-damage.jpg",
       },
       {
         title: "Valley weather repair strategy",
@@ -192,13 +192,13 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Rental-turnover roof planning",
         summary: "Bryson City owners often need roofing work scheduled around guest occupancy, turnover windows, and limited maintenance access.",
         proof: "Condensed schedules and communication for remote property owners",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-storm-tree-damage.jpg",
       },
       {
         title: "Tree-impact and branch-damage response",
         summary: "Heavy canopy coverage near the Smokies creates a different damage profile than open ridge homes — more punctures and debris-related leaks.",
         proof: "Swift response with photo documentation and immediate tree-removal coordination",
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-storm-tree-damage.jpg",
       },
       {
         title: "Mountain cabin material matching",
@@ -233,7 +233,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Historic-home detailing",
         summary: "Waynesville homes often require careful flashing transitions, decking repairs, and material choices that respect older design themes while improving performance.",
         proof: "Targeted decking repair, ventilation upgrades, and clean tie-ins",
-        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-hail-damage-detail.jpg",
       },
     ].slice(0, 3),
     faqs: [
@@ -262,13 +262,13 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Student-housing roof coordination",
         summary: "Cullowhee property owners often need roof work timed around tenant transitions, occupied units, and academic calendar pressure.",
         proof: "Fast estimating, tenant-aware scheduling, and property manager communication",
-        image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-mountain-home-exterior.jpg",
       },
       {
         title: "Budget-focused repair plans",
         summary: "Rental properties in Cullowhee often need prioritized recommendations — what affects interior lease risk and what can be planned for next summer.",
         proof: "Repair prioritization with clear near-term vs. long-term Jackson County code guidance",
-        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-roof-tearoff-crew.jpg",
       },
       {
         title: "Multi-building service support",
@@ -302,7 +302,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Preservation-sensitive reroofing",
         summary: "Dillsboro homes often need roofing choices that protect the structure without making the property feel out of place in a historic mountain village.",
         proof: "Dimensional shingle and detail packages selected for visual compatibility",
-        image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-winter-ice-dam.jpg",
       },
       {
         title: "Small-footprint project execution",
@@ -313,7 +313,7 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Storm repair with character retention",
         summary: "When older Dillsboro roofs are damaged, our goal is to restore performance without losing the home's original village aesthetic.",
         proof: "Repair scopes that balance modern protection with historic Jackson County layout character",
-        image: "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-storm-tree-damage.jpg",
       },
     ],
     faqs: [
@@ -342,13 +342,13 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Biltmore Forest historic restoration",
         summary: "Asheville's historic districts require meticulous material matching and ARB coordination. we specialize in modernizing performance without losing historic soul.",
         proof: "Copper flashing details, synthetic slate systems, and historic trim matching",
-        image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-storm-tree-damage.jpg",
       },
       {
         title: "Town Mountain ridgetop roofing",
         summary: "High-wind exposure on Asheville's surrounding ridgetops requires high-velocity rated systems and reinforced perimeter fastening.",
         proof: "Category 4 impact ratings and 130mph wind warranties",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-storm-tree-damage.jpg",
       },
       {
         title: "Modern mountain suite addition",
@@ -378,13 +378,13 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Retirement community roof management",
         summary: "Hendersonville projects often center on longevity, budget predictability, and clean, non-disruptive job site management.",
         proof: "Transparent pricing, extended warranties, and daily site cleanup",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-storm-tree-damage.jpg",
       },
       {
         title: "Historic downtown residential reroof",
         summary: "Traditional Hendersonville home design requires careful attention to attic ventilation and chimney flashing to ensure another 30+ years of performance.",
         proof: "Oversized ridge vents and custom step-flashing detailing",
-        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-construction-framing.jpg",
       },
       {
         title: "Age-in-place exterior modernization",
@@ -414,13 +414,13 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Transylvania County moisture protection",
         summary: "In the Land of Waterfalls, we double-underlay every eave and valley to prevent moisture intrusion during the region's intense tropical deluges.",
         proof: "Double-layered ice-and-water shield and oversized 6-inch gutter systems",
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-rain-drainage.jpg",
       },
       {
         title: "Pisgah Forest area cabin reroof",
         summary: "Installation of a high-durability standing seam metal roof for a residence bordering the national forest, designed to shed debris and handle high humidity.",
         proof: "24-gauge steel, debris-resistant valley shields, and manufacturer warranty",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-rain-drainage.jpg",
       },
       {
         title: "Custom mountain deck expansion",
@@ -446,13 +446,13 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Hiwassee valley residential reroof",
         summary: "Reliable, team-led roof replacement for Murphy families who need a roofer who answers the phone and stands by the warranty.",
         proof: "CertainTeed dimensional systems and local Madison County crew support",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-construction-framing.jpg",
       },
       {
         title: "Far-west rental property maintenance",
         summary: "Responsive repair and inspection program for a portfolio of Murphy-area vacation rentals, ensuring roofs are guest-ready year-round.",
         proof: "Scheduled inspections, photo-backed reporting, and prioritized repairs",
-        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-roof-inspection.jpg",
       },
       {
         title: "Structural porch and deck rebuild",
@@ -478,13 +478,13 @@ const townProofMap: Record<string, TownProofContent> = {
         title: "Lake Chatuge deck and roof modernization",
         summary: "Phased project involving a full roof replacement and a custom composite deck expansion for a premier Hayesville lakefront residence.",
         proof: "Timberline UHDZ shingles and moisture-shield composite decking",
-        image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-roof-inspection.jpg",
       },
       {
         title: "Lakefront outdoor kitchen addition",
         summary: "Design and construction of an outdoor entertaining area for a Lake Chatuge home, including custom stone work and integrated grill station.",
         proof: "Natural stone masonry, weather-proof cabinetry, and timber-frame roofing",
-        image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&q=80&w=600",
+        image: "/media/wnc-roof-inspection.jpg",
       },
       {
         title: "Clay County storm damage mitigation",
