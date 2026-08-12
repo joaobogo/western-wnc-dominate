@@ -13,7 +13,7 @@ const FormConsent = ({ className = "" }: { className?: string }) => (
     scheduling, project follow-up, and review requests. Message and data rates
     may apply. Reply <strong>STOP</strong> to opt out of text messages. Reply{" "}
     <strong>HELP</strong> for help. See our{" "}
-    <Link to="/privacy-policy" className="text-primary underline hover:no-underline">
+    <Link to="/privacy-policy" className="text-primary [.section-dark_&]:text-[hsl(var(--gold-ink))] [.dark-surface_&]:text-[hsl(var(--gold-ink))] underline hover:no-underline">
       Privacy Policy
     </Link>
     .
