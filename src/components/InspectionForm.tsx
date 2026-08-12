@@ -621,10 +621,18 @@ const InspectionForm = () => {
                       </>
                     ) : (
                       <>
-                        <span className="relative z-10">Start a Project Conversation</span>
+                        <span className="relative z-10">Get My Inspection Scheduled</span>
                         <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
                       </>
                     )}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setStep(1)}
+                    className="inline-flex items-center justify-center gap-2 text-white/80 font-body font-bold text-sm hover:text-white transition-colors"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    Back
                   </button>
                   <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" />
@@ -632,6 +640,8 @@ const InspectionForm = () => {
                   </a>
                 </div>
                 <FormConsent className="mt-4 text-dark-section-foreground/90" />
+                </>
+                )}
 
                 {/* Bottom microcopy */}
                 <p className="text-center text-white text-[13px] font-body font-semibold mt-5 tracking-wide">
