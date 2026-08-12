@@ -385,7 +385,27 @@ const InspectionForm = () => {
                 {step === 1 && (
                 <div className="space-y-6">
                   <div>
-                    <span className={labelClasses}>What Do You Need Help With?</span>
+                    <div className="flex items-baseline justify-between gap-4 flex-wrap">
+                      <span className={labelClasses}>What Do You Need Help With?</span>
+                      {!showProjectChoices && (
+                        <button
+                          type="button"
+                          onClick={() => setShowProjectChoices(true)}
+                          className="text-[14px] font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] hover:opacity-85 transition-opacity mb-3"
+                        >
+                          Change
+                        </button>
+                      )}
+                    </div>
+                    {!showProjectChoices && (
+                      <div className="flex items-center gap-3 px-4 py-4 border border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.16)]">
+                        <CheckCircle className="w-5 h-5 flex-shrink-0 text-[hsl(var(--gold-ink))]" />
+                        <span className="text-white font-body font-bold text-[16px] md:text-[17px]">
+                          {PROJECT_CHOICES.find((c) => c.value === formData.projectType)?.label ?? "Roof Repair or Leak"}
+                        </span>
+                      </div>
+                    )}
+                    {showProjectChoices && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {PROJECT_CHOICES.map((choice) => {
                         const active = formData.projectType === choice.value;
@@ -408,6 +428,7 @@ const InspectionForm = () => {
                         );
                       })}
                     </div>
+                    )}
                     <InlineFieldError className="text-[hsl(var(--gold-ink))]">{projectError ?? undefined}</InlineFieldError>
                   </div>
 
