@@ -18,6 +18,7 @@ import VeluxWidget from "@/components/VeluxWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
+import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
@@ -249,6 +250,7 @@ const Skylights = () => {
 
         <CommonConcerns />
         <CostContextBlock serviceLabel="skylight" />
+        <SchedulingReality serviceLabel="skylight" />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
           <AttributedReviews category="roofing" heading="What homeowners say about our skylight work" />
