@@ -23,6 +23,8 @@ import {
 import { blogPosts } from "@/data/blogs";
 import { getServiceParentPath } from "@/data/service-town-generated";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
+import CallFirstCTA from "@/components/CallFirstCTA";
+import { isUrgentIntentPath } from "@/lib/urgent-intent";
 import { getServiceTownLinkWeb } from "@/lib/local-link-graph";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -80,6 +82,7 @@ const ServiceTownPage = ({
   }
 
   const heroImage = SERVICE_HERO_VARIANTS[serviceSlug] ?? town.heroImage;
+  const urgent = isUrgentIntentPath(`/service-areas/${townSlug}/${serviceSlug}`);
 
   // If this town+service is a Tier 1 pair, the flat URL is canonical
   // regardless of which route the user arrived on.
@@ -169,7 +172,19 @@ const ServiceTownPage = ({
               <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {entry.intro}
               </p>
-              <div className="flex flex-col sm:flex-row gap-5 mb-16">
+              {urgent ? (
+                /* Urgent town+service intent → the call is the primary action (CRO Prompt 12) */
+                <div className="mb-16">
+                  <CallFirstCTA
+                    townName={town.name}
+                    townSlug={town.slug}
+                    location="hero"
+                    secondaryLabel={`Request a ${entry.serviceLabel} Assessment`}
+                    secondaryTo="/consultation"
+                  />
+                </div>
+              ) : (
+              <div className="flex flex-col sm:flex-row gap-5 mb-16" data-gtm-location="hero" data-gtm-town={town.slug}>
                 <Link
                   to="/consultation"
                   className="cta-gradient text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[300px]"
@@ -183,6 +198,7 @@ const ServiceTownPage = ({
                   <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
                 </a>
               </div>
+              )}
             </motion.div>
           </div>
 
