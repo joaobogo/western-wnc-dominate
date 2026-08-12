@@ -46,8 +46,9 @@ const byNewest = (a: { date: string }, b: { date: string }) =>
 const formatPostDate = (date: string) =>
   new Date(`${date}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
+/** "New" badge window: published within the last 7 days. */
 const isRecent = (date: string) =>
-  Date.now() - new Date(`${date}T12:00:00`).getTime() < 1000 * 60 * 60 * 24 * 14;
+  Date.now() - new Date(`${date}T12:00:00`).getTime() < 1000 * 60 * 60 * 24 * 7;
 
 
 /* Seasonal awareness */
