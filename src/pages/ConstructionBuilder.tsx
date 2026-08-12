@@ -302,7 +302,7 @@ const ConstructionBuilder = () => {
       <>
         <SEOHead title="Scope brief received | Highlander" description="Your construction scope brief has been received." path="/construction-builder" noindex />
         <Header />
-        <main className="pt-28 pb-20 bg-background">
+        <main id="main-content" className="pt-28 pb-20 bg-background">
           <div className="max-w-2xl mx-auto px-6">
             <IntakeConfirmation
               title="Your project brief is in good hands."
@@ -333,7 +333,7 @@ const ConstructionBuilder = () => {
         ])}
       />
       <Header />
-      <main>
+      <main id="main-content">
         <BuilderShell
           eyebrow="Advanced Builder · Construction"
           title="Build your construction project brief"

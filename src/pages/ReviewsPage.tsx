@@ -100,7 +100,7 @@ const ReviewsPage = () => {
         })}
       />
       <Header />
-      <main>
+      <main id="main-content">
         {/* ── HERO — Pull-quote led (unique to Reviews) ── */}
         <section className="relative section-dark pt-32 md:pt-40 pb-14 md:pb-20 overflow-hidden">
           <div className="absolute inset-0 tartan-dark" />

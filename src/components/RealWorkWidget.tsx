@@ -112,16 +112,21 @@ const RealWorkWidget = ({
       window.setTimeout(() => {
         patchScheduled = false;
         if (cancelled) return;
-        if (outputRef.current) patchInjectedA11y(outputRef.current);
+        // The plugin injects into its own containers anywhere in the document,
+        // so patch every RealWork-owned root — never the rest of our UI.
+        const roots = new Set<HTMLElement>();
+        if (outputRef.current) roots.add(outputRef.current);
+        document
+          .querySelectorAll<HTMLElement>('[id^="rwl"], [id^="rwlContentContainer"], [class*="rwl"]')
+          .forEach((el) => roots.add(el));
+        roots.forEach((root) => patchInjectedA11y(root));
         checkReady();
       }, 120);
     };
 
     const startObserver = () => {
-      const output = outputRef.current;
-      if (!output) return;
       observer = new MutationObserver(schedulePatch);
-      observer.observe(output, { childList: true, subtree: true });
+      observer.observe(document.body, { childList: true, subtree: true });
     };
     startObserver();
     schedulePatch();

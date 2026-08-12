@@ -249,7 +249,7 @@ const FAQ = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "FAQ", url: "/faq" }]} />
-      <main>
+      <main id="main-content">
         {/* HERO */}
         <section className="bg-heritage-charcoal pt-32 md:pt-40 pb-14 md:pb-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />

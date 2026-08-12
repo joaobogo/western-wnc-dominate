@@ -423,7 +423,7 @@ export default function ConstructionConsultation() {
       <>
         <SEOHead title="Consultation Requested | Highlander Construction" description="Your construction project consultation has been received." path="/construction/consultation" noindex />
         <Header />
-        <main className="pt-24 md:pt-32 pb-16">
+        <main id="main-content" className="pt-24 md:pt-32 pb-16">
           <div className="container-tight max-w-lg">
             <ConfirmationState
               show={true}
@@ -459,7 +459,7 @@ export default function ConstructionConsultation() {
         ])}
       />
       <Header />
-      <main className="pt-24 md:pt-32 pb-16 blueprint-bg min-h-screen">
+      <main id="main-content" className="pt-24 md:pt-32 pb-16 blueprint-bg min-h-screen">
         <div className="container-tight max-w-2xl">
           {/* Header */}
           <div className="text-center mb-8">

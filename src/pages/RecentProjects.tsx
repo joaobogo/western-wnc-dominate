@@ -69,7 +69,7 @@ const RecentProjects = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Recent Projects", url: "/recent-projects" }]} />
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
           <div className="absolute inset-0">

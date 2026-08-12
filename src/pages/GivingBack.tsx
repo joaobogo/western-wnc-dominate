@@ -52,7 +52,7 @@ const GivingBack = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Community", url: "/giving-back" }]} />
-      <main>
+      <main id="main-content">
         {/* ── HERO ── */}
         <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-heritage-charcoal">
           <div className="absolute inset-0">

@@ -37,7 +37,7 @@ const Financing = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Financing", url: "/financing" }]} />
-      <main>
+      <main id="main-content">
         <section className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 

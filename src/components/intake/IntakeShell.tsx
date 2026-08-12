@@ -29,7 +29,7 @@ const IntakeShell = ({
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           {/* === Brand / trust column === */}
-          <aside className="lg:col-span-5 lg:sticky lg:top-28">
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
             <div className="flex items-center gap-2 mb-5">
               <div className="h-px w-8 bg-[hsl(var(--highland-gold))]" />
               <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">
@@ -115,7 +115,7 @@ const IntakeShell = ({
               </div>
             </div>
 
-          </aside>
+          </div>
 
           {/* === Form column === */}
           <div className="lg:col-span-7" data-hide-sticky>

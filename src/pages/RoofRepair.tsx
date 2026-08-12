@@ -102,7 +102,7 @@ const RoofRepair = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Roof Repair", url: "/roofing/roof-repair" }]} />
-      <main>
+      <main id="main-content">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">

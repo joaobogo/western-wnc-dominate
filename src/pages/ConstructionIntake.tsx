@@ -18,7 +18,7 @@ const ConstructionIntake = () => (
       jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Construction Intake", url: "/construction-intake" }])}
     />
     <Header />
-    <main>
+    <main id="main-content">
       {/* Planning expectation framing — sets the design-first tone before the form */}
       <section className="bg-background border-b border-border pt-32 md:pt-40">
         <div className="container-tight section-padding-sm pb-12 md:pb-16">

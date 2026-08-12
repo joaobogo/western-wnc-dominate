@@ -50,7 +50,7 @@ const SyntheticRoofing = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Brava Synthetic Roofing", url: "/roofing/brava-synthetic" }]} />
-      <main>
+      <main id="main-content">
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">

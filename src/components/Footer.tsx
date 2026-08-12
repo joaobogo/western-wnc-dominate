@@ -286,7 +286,7 @@ const Footer = () => {
           {/* Roofing */}
           <div className="md:col-span-6 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Roofing</h4>
-            <nav className="flex flex-col gap-2">
+            <nav aria-label="Roofing links" className="flex flex-col gap-2">
               {roofingLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
           </div>
@@ -294,7 +294,7 @@ const Footer = () => {
           {/* Construction */}
           <div className="md:col-span-6 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Construction</h4>
-            <nav className="flex flex-col gap-2">
+            <nav aria-label="Construction links" className="flex flex-col gap-2">
               {constructionLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
           </div>
@@ -302,17 +302,17 @@ const Footer = () => {
           {/* Resources */}
           <div className="md:col-span-6 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Resources</h4>
-            <nav className="flex flex-col gap-2">
+            <nav aria-label="Resources links" className="flex flex-col gap-2">
               {resourceLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
 
             <h4 className="eyebrow text-primary mt-8 mb-4">Design &amp; Tools</h4>
-            <nav className="flex flex-col gap-2">
+            <nav aria-label="Design & Tools links" className="flex flex-col gap-2">
               {designLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
 
             <h4 className="eyebrow text-primary mt-8 mb-4">Company</h4>
-            <nav className="flex flex-col gap-2">
+            <nav aria-label="Company links" className="flex flex-col gap-2">
               {companyLinks.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
           </div>
@@ -320,12 +320,12 @@ const Footer = () => {
           {/* Service Areas — tiered */}
           <div className="md:col-span-6 lg:col-span-2">
             <h4 className="eyebrow text-primary mb-4">Primary Markets</h4>
-            <nav className="flex flex-col gap-2">
+            <nav aria-label="Primary Markets links" className="flex flex-col gap-2">
               {tier1Areas.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
 
             <h4 className="eyebrow text-primary mt-8 mb-4">Also Serving</h4>
-            <nav className="flex flex-col gap-2">
+            <nav aria-label="Also Serving links" className="flex flex-col gap-2">
               {tier2Areas.map((l) => <FooterLink key={l.href} to={l.href}>{l.label}</FooterLink>)}
             </nav>
             <Link

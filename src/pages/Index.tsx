@@ -66,7 +66,7 @@ const Index = () => {
         })}
       />
       <Header />
-      <main>
+      <main id="main-content">
         {/* 1. Hero — The Highland standard */}
         <section id="hero" className="min-h-[100svh]" data-hero-anchored="bottom">
           <Hero />

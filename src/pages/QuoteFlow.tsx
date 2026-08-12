@@ -405,7 +405,7 @@ export default function QuoteFlow() {
       <>
         <SEOHead title="Consultation Requested | Highlander Roofing & Construction" description="Your project consultation request has been received." path="/consultation" noindex />
         <Header />
-        <main className="pt-24 md:pt-32 pb-16">
+        <main id="main-content" className="pt-24 md:pt-32 pb-16">
           <div className="container-tight max-w-lg">
             <ConfirmationState
               show={true}
@@ -440,7 +440,7 @@ export default function QuoteFlow() {
         ])}
       />
       <Header />
-      <main className="pt-24 md:pt-32 pb-16">
+      <main id="main-content" className="pt-24 md:pt-32 pb-16">
         <div className="container-tight max-w-2xl">
           <div className="text-center mb-8">
             <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-[hsl(var(--gold-ink))] mb-2">Project Consultation</p>

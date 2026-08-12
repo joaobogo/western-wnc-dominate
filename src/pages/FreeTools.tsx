@@ -30,7 +30,7 @@ const FreeTools = () => {
         ])}
       />
       <Header />
-      <main className="pt-20 md:pt-28">
+      <main id="main-content" className="pt-20 md:pt-28">
         {/* Hero */}
         <section className="section-padding bg-primary text-primary-foreground">
           <div className="container-tight text-center">

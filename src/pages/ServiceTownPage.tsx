@@ -131,7 +131,7 @@ const ServiceTownPage = ({
           { name: entry.serviceLabel, url: resolvedCanonical },
         ]}
       />
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="dark-surface relative min-h-[60svh] flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0">

@@ -267,7 +267,7 @@ const RoofingBuilder = () => {
       <>
         <SEOHead title="Scope brief received | Highlander" description="Your roofing scope brief has been received." path="/roofing-builder" noindex />
         <Header />
-        <main className="pt-28 pb-20 bg-background">
+        <main id="main-content" className="pt-28 pb-20 bg-background">
           <div className="max-w-2xl mx-auto px-6">
             <IntakeConfirmation
               title="Your scope brief is in good hands."
@@ -298,7 +298,7 @@ const RoofingBuilder = () => {
         ])}
       />
       <Header />
-      <main>
+      <main id="main-content">
         <BuilderShell
           eyebrow="Advanced Builder · Roofing"
           title="Build your roofing project brief"

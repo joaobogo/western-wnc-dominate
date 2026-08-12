@@ -62,7 +62,7 @@ const Careers = () => {
         ])}
       />
       <Header />
-      <main>
+      <main id="main-content">
         {/* Hero Section */}
         <section className="section-padding section-dark pt-32 md:pt-48 relative overflow-hidden">
           <div className="absolute inset-0 tartan-dark opacity-[0.05]" />

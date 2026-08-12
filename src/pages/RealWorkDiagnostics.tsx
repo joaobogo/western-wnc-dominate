@@ -161,7 +161,7 @@ const RealWorkDiagnostics = () => {
 
   return (
     <>
-      <main className="min-h-screen bg-background pt-[96px] md:pt-[136px] pb-16">
+      <main id="main-content" className="min-h-screen bg-background pt-[96px] md:pt-[136px] pb-16">
         <div className="container-tight max-w-4xl">
           <div className="mb-8">
             <p className="text-xs uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] font-bold mb-2">

@@ -26,7 +26,7 @@ const DesignIntake = () => {
         ])}
       />
       <Header />
-      <main>
+      <main id="main-content">
         <IntakeShell
           eyebrow="Design"
           title={mode === "short" ? "Start the conversation." : "Tell us about your vision."}

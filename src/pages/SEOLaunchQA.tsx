@@ -11,7 +11,7 @@ const SEOLaunchQA = () => {
     <>
       <SEOHead title="SEO Launch QA | Highlander" description="Internal SEO quality assurance checklist." path="/seo-launch-qa" noindex />
       <Header />
-      <main className="pt-32 pb-20 bg-background">
+      <main id="main-content" className="pt-32 pb-20 bg-background">
         <div className="container-tight max-w-4xl">
           <div className="flex items-center gap-3 mb-8">
             <Shield className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
