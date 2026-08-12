@@ -31,11 +31,11 @@ describe("phone normalization", () => {
 
 describe("email", () => {
   it("accepts valid and lowercases", () => {
-    expect(emailSchema.parse(" Owner@Example.COM ")).toBe("owner@example.com");
+    expect(emailSchema.parse(" Owner@Highlandernc.COM ")).toBe("owner@highlandernc.com");
   });
   it("rejects malformed and over-long", () => {
     expect(emailSchema.safeParse("nope").success).toBe(false);
-    expect(emailSchema.safeParse(`${"a".repeat(250)}@example.com`).success).toBe(false);
+    expect(emailSchema.safeParse(`${"a".repeat(250)}@gmail.com`).success).toBe(false);
   });
 });
 
@@ -67,7 +67,7 @@ describe("validateContact reachability rule", () => {
   const base = { name: "Jane Public", town: "Highlands" };
 
   it("passes with valid phone and email", () => {
-    const r = validateContact({ ...base, phone: "828-524-7773", email: "jane@example.com" });
+    const r = validateContact({ ...base, phone: "828-524-7773", email: "jane@gmail.com" });
     expect(r.valid).toBe(true);
     expect(r.values.phone).toBe("+18285247773");
     expect(r.values.town).toBe("Highlands");
@@ -81,7 +81,7 @@ describe("validateContact reachability rule", () => {
   });
 
   it("allows a valid email with no phone", () => {
-    const r = validateContact({ ...base, email: "jane@example.com" });
+    const r = validateContact({ ...base, email: "jane@gmail.com" });
     expect(r.valid).toBe(true);
   });
 
