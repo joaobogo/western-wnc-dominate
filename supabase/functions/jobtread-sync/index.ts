@@ -874,9 +874,13 @@ export function buildPayload(row: LeadRow, kind: "lead" | "chatbot", attachments
       material_color: (row as any).material_color ?? meta.material_color ?? meta.color ?? null,
       foundation_type: (row as any).foundation_type ?? meta.foundation_type ?? null,
     },
-    // Kept for backward compatibility with any downstream mapper still reading `location`.
+    // Location mapping — the JobTread Location is placed by the lead's
+    // town/county (address when we have it). County comes from the canonical
+    // lead payload and is used for service-area routing when the town alone
+    // is not one of the mapped markets.
     location: {
       town,
+      county: (row as any).property_county ?? null,
       address: row.property_address ?? null,
       property_type: row.property_type ?? null,
     },
