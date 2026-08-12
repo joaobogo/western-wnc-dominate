@@ -356,7 +356,7 @@ const BlogPostPage = () => {
                   >
                     <div className="flex items-center gap-2 mb-4">
                       <Lightbulb className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-                      <h3 className="font-heading font-semibold text-sm text-foreground">Key Takeaways</h3>
+                      <h2 className="font-heading font-semibold text-sm text-foreground">Key Takeaways</h2>
                     </div>
                     <div className="space-y-2">
                       {takeaways.map((t, i) => (
@@ -390,9 +390,9 @@ const BlogPostPage = () => {
                     <div className="flex items-start gap-3">
                       <Mountain className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-heading font-semibold text-sm text-foreground mb-1">
+                        <h2 className="font-heading font-semibold text-sm text-foreground mb-1">
                           Local to {post.town}, NC
-                        </h4>
+                        </h2>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                           This article was written specifically for homeowners in {post.town} and the surrounding
                           area. Highlander Roofing & Construction serves {post.town} and all of Western North Carolina
@@ -419,12 +419,12 @@ const BlogPostPage = () => {
                   >
                     <div className="flex items-center gap-2 mb-5">
                       <BookOpen className="w-4 h-4 text-primary" />
-                      <h3 className="font-heading font-semibold text-foreground">Frequently Asked Questions</h3>
+                      <h2 className="font-heading font-semibold text-foreground">Frequently Asked Questions</h2>
                     </div>
                     <div className="space-y-4">
                       {post.faqs.map((faq, i) => (
                         <div key={i} className="bg-secondary/50 border border-border rounded-sm p-5">
-                          <h4 className="font-heading font-semibold text-foreground text-sm mb-2">{faq.question}</h4>
+                          <h3 className="font-heading font-semibold text-foreground text-sm mb-2">{faq.question}</h3>
                           <p className="text-muted-foreground text-sm leading-relaxed">{faq.answer}</p>
                         </div>
                       ))}
@@ -440,7 +440,7 @@ const BlogPostPage = () => {
                     viewport={{ once: true }}
                     className="mt-10 bg-primary/5 border border-primary/10 rounded-sm p-5 md:p-6"
                   >
-                    <h4 className="font-heading font-semibold text-sm text-foreground mb-3">Related Services</h4>
+                    <h2 className="font-heading font-semibold text-sm text-foreground mb-3">Related Services</h2>
                     <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)] mb-4" />
                     <div className="flex flex-wrap gap-2">
                       {post.relatedServices.map((svc) => (
@@ -504,7 +504,7 @@ const BlogPostPage = () => {
                 {/* Local Town Bridge */}
                 {post.town && (
                   <div className="mt-10 pt-8 border-t border-border">
-                    <h4 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground mb-4">Market Context</h4>
+                    <h2 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground mb-4">Market Context</h2>
                     <Link to={`/service-areas/${post.town.toLowerCase().trim().replace(/\s+/g, '-')}-nc`} className="group flex items-center justify-between p-6 bg-secondary/40 border border-border rounded-sm hover:border-primary/20 transition-all">
                       <div>
                         <p className="text-sm font-heading font-bold text-foreground mb-1">Roofing & Construction in {post.town}</p>
@@ -523,9 +523,9 @@ const BlogPostPage = () => {
                   viewport={{ once: true }}
                   className="bg-primary rounded-sm p-6 md:p-8 mt-10 text-center"
                 >
-                  <h3 className="text-xl font-heading font-bold text-primary-foreground mb-2">
+                  <h2 className="text-xl font-heading font-bold text-primary-foreground mb-2">
                     Have Questions About Your Project?
-                  </h3>
+                  </h2>
                   <p className="text-primary-foreground/85 text-sm mb-5 max-w-md mx-auto">
                     Our team is happy to answer questions — no commitment required. Just honest, expert advice from people who build in these mountains every day.
                   </p>
@@ -559,7 +559,7 @@ const BlogPostPage = () => {
                     <p className="text-[10px] font-body font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                       Written By
                     </p>
-                    <h4 className="font-heading font-semibold text-foreground text-sm">{author.name}</h4>
+                    <h2 className="font-heading font-semibold text-foreground text-sm">{author.name}</h2>
                     <p className="text-muted-foreground text-xs font-body mb-2">{author.role}</p>
                     <p className="text-muted-foreground text-sm leading-relaxed">{author.bio}</p>
                   </div>
@@ -573,7 +573,7 @@ const BlogPostPage = () => {
                 {/* Quick Navigation */}
                 {takeaways.length > 0 && (
                   <div className="bg-card border border-border rounded-sm p-5 md:p-6">
-                    <h4 className="font-heading font-semibold text-sm text-foreground mb-3">In This Article</h4>
+                    <h2 className="font-heading font-semibold text-sm text-foreground mb-3">In This Article</h2>
                     <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)] mb-3" />
                     <div className="space-y-2">
                       {takeaways.map((t, i) => (
@@ -589,7 +589,7 @@ const BlogPostPage = () => {
                 {/* Sidebar CTA */}
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
                   <Shield className="w-6 h-6 text-[hsl(var(--gold-ink))] mx-auto mb-3" />
-                  <h4 className="font-heading font-semibold text-primary-foreground text-sm mb-2">
+                  <h2 className="font-heading font-semibold text-primary-foreground text-sm mb-2">
                     Need Expert Advice?
                   </h4>
                   <p className="text-primary-foreground/85 text-xs mb-4">
