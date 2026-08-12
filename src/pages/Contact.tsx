@@ -520,6 +520,8 @@ export default function Contact() {
                         />
                       </div>
 
+                      <FormErrorSummary message={submitError} issues={issues} />
+
                       <div className="flex items-center justify-between pt-2">
                         <p className="text-[10px] text-muted-foreground font-body">
                           Personal response within 24 hours.
