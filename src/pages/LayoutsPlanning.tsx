@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { motion } from "framer-motion";
 import designHero from "@/assets/design-planning-hero.webp";
 import { 
@@ -8,7 +9,7 @@ import {
   FileText, Sparkles, MessageSquare, Map, 
   Mountain, Scale, Zap
 } from "lucide-react";
-import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
+import SEOHead, { breadcrumbSchema, faqSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
@@ -61,6 +62,24 @@ const guidancePoints = [
   { title: "Structural Feasibility", desc: "Determining what is viable for your specific property." }
 ];
 
+const layoutFaqs = [
+                {
+                  q: "What is included in design & planning support?",
+                  a: "Our support includes layout visualization, floor plan thinking, and detailed scope development. We help bridge the gap between your vision and a buildable reality, ensuring all technical and functional requirements are documented."
+                },
+                {
+                  q: "Do I need drawings or plans already?",
+                  a: "No. While we can work from existing sketches, our team is here to help you develop the initial plan and layout. We specialize in taking projects from concept through to a refined scope of work."
+                },
+                {
+                  q: "Can Highlander help with layouts and floor plans?",
+                  a: "Yes. Layout and floor plan coordination is a core part of this branch. We focus on how spaces flow and how structural additions integrate with your current home's footprint."
+                },
+                {
+                  q: "How does this connect to construction?",
+                  a: "This is a pre-construction capability. By defining the scope and layout first, we eliminate surprises during the build. Once the plan is set, it moves directly to our construction division for execution."
+                }];
+
 const LayoutsPlanning = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -68,10 +87,13 @@ const LayoutsPlanning = () => {
         title="Design | Layouts & Preconstruction Support WNC"
         description="Professional layout support and project planning for Western North Carolina construction. Additions, porches, and outdoor living planned with intention."
         path="/layouts-planning"
-        jsonLd={breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Design", url: "/layouts-planning" }
-        ])}
+        jsonLd={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Design", url: "/layouts-planning" }
+          ]),
+          faqSchema(layoutFaqs.map((f) => ({ question: f.q, answer: f.a }))),
+        ]}
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Design & Planning", url: "/construction/design-planning" }]} />
@@ -153,6 +175,16 @@ const LayoutsPlanning = () => {
             className="absolute top-1/2 -right-20 w-[400px] h-[400px] border border-white/5 rounded-full pointer-events-none hidden xl:block"
           />
         </section>
+
+        <AnswerBlock
+          question="What is design and planning support at Highlander?"
+          answer="Design and planning support is our pre-construction service: layout visualization, floor plan thinking, and scope development so a Western North Carolina project is fully defined before the build begins."
+          points={[
+            "Layouts, floor plans, and scope definition",
+            "Early site and feasibility review",
+            "Call 828-524-7773 to talk through your plan",
+          ]}
+        />
 
         {/* 2. The Planning Gap — Value Proposition */}
         <section className="py-24 md:py-32 bg-background relative overflow-hidden">
@@ -385,24 +417,7 @@ const LayoutsPlanning = () => {
             </div>
             
             <Accordion type="single" collapsible className="w-full">
-              {[
-                {
-                  q: "What is included in design & planning support?",
-                  a: "Our support includes layout visualization, floor plan thinking, and detailed scope development. We help bridge the gap between your vision and a buildable reality, ensuring all technical and functional requirements are documented."
-                },
-                {
-                  q: "Do I need drawings or plans already?",
-                  a: "No. While we can work from existing sketches, our team is here to help you develop the initial plan and layout. We specialize in taking projects from concept through to a refined scope of work."
-                },
-                {
-                  q: "Can Highlander help with layouts and floor plans?",
-                  a: "Yes. Layout and floor plan coordination is a core part of this branch. We focus on how spaces flow and how structural additions integrate with your current home's footprint."
-                },
-                {
-                  q: "How does this connect to construction?",
-                  a: "This is a pre-construction capability. By defining the scope and layout first, we eliminate surprises during the build. Once the plan is set, it moves directly to our construction division for execution."
-                }
-              ].map((faq, index) => (
+              {layoutFaqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-border/50">
                   <AccordionTrigger className="text-left font-heading font-bold text-lg hover:text-primary transition-colors py-6">
                     {faq.q}

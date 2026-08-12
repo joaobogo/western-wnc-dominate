@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -184,6 +185,16 @@ const ConstructionDivision = () => {
             </div>
           </div>
         </section>
+
+        <AnswerBlock
+          question="What construction work does Highlander take on in Western North Carolina?"
+          answer="Highlander's construction division builds custom homes, additions, renovations, outdoor living spaces, and exterior improvements throughout Western North Carolina, with layout and planning support before the build starts."
+          points={[
+            "Custom builds, additions, and renovations",
+            "Outdoor living and exterior improvements",
+            "Call 828-524-7773 to discuss your project",
+          ]}
+        />
 
         {/* ═══ OPENING STATEMENT — Bright, premium, reader-focused ═══ */}
         <section className="section-padding bg-background relative overflow-hidden">

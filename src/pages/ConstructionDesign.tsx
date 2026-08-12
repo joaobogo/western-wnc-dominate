@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -230,6 +231,16 @@ const ConstructionDesign = () => {
             </div>
           </div>
         </section>
+
+        <AnswerBlock
+          question="What does Highlander's design service include?"
+          answer="Highlander's in-house design service covers layout planning, scope definition, permit sets, and construction documents for additions, remodels, outdoor living, and new builds in Western North Carolina."
+          points={[
+            "Layouts, scope, and construction documents",
+            "Budget guidance before the build starts",
+            "Call 828-524-7773 to start a design conversation",
+          ]}
+        />
 
         {/* ─── SECTION 1: WHY DESIGN COMES FIRST ─── */}
         <section className="section-padding bg-background">

@@ -1,3 +1,4 @@
+import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -42,7 +43,7 @@ const roofingServices = [
     icon: Wrench,
     title: "Roof Repair",
     slug: "/roofing/roof-repair",
-    description: "Targeted, warrantied repairs that stop leaks and prevent escalation. We diagnose accurately, fix permanently, and document everything.",
+    description: "Targeted repairs that stop leaks and prevent escalation. We diagnose accurately, fix it right, and document everything.",
     features: ["Leak detection", "Flashing repair", "Shingle replacement", "Chimney seals"],
   },
   {
@@ -368,6 +369,16 @@ const RoofingDivision = () => {
             </div>
           </div>
         </section>
+
+        <AnswerBlock
+          question="What roofing services does Highlander provide in Western North Carolina?"
+          answer="Highlander Roofing Services, Inc. handles roof repair, full roof replacement, metal roofing, synthetic slate and shake, skylights, gutters, and storm damage response across Western North Carolina from our Franklin, NC shop."
+          points={[
+            "Repair, replacement, metal, and specialty roofing",
+            "Storm damage inspections after mountain weather",
+            "Call 828-524-7773 to reach a roofing lead",
+          ]}
+        />
 
         {/* ─── TRUST STRIP ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
