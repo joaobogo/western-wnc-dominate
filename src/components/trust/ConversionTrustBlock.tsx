@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Shield, Star, Clock, BadgeCheck, ArrowRight } from "lucide-react";
+import { Shield, Star, Clock, BadgeCheck, ArrowRight, Users, MapPin, Hammer } from "lucide-react";
 import { customerReviews, type CustomerReview } from "@/data/reviews";
 import { projectDetails } from "@/data/projects";
+import { towns } from "@/data/towns";
+import { counties } from "@/data/counties";
 
 /**
  * Proof block designed to sit directly beside or beneath a page's primary CTA.
@@ -43,8 +45,12 @@ interface ConversionTrustBlockProps {
   category?: TrustCategory;
   /** Town name, e.g. "Highlands" — pulls a local review/project when available. */
   town?: string;
-  /** Compact drops the project photo — use inside narrow form sidebars. */
-  variant?: "full" | "compact";
+  /**
+   * full    — card with project photo, credentials and a review (form sidebars)
+   * compact — same card without the photo
+   * band    — full-width horizontal proof strip for service and town pages
+   */
+  variant?: "full" | "compact" | "band";
   className?: string;
 }
 
@@ -63,6 +69,39 @@ const ConversionTrustBlock = ({
 }: ConversionTrustBlockProps) => {
   const review = pickReview(category, town);
   const project = pickProject(category, town);
+
+  if (variant === "band") {
+    const items = [
+      { icon: Shield, label: "Licensed NC General Contractor", detail: "Fully insured, CertainTeed ShingleMaster Credentialed" },
+      { icon: Users, label: "In-house Highlander crews", detail: "No subcontracted install teams on your roof" },
+      { icon: Clock, label: "24-hour response", detail: "A person replies within one business day" },
+      { icon: MapPin, label: `${towns.length} WNC towns served`, detail: `Across ${counties.length} mountain counties` },
+      project
+        ? { icon: Hammer, label: `Recent: ${project.type}`, detail: `${project.location} · ${project.scope}` }
+        : { icon: Hammer, label: "Recent mountain projects", detail: "Documented start to finish" },
+    ];
+
+    return (
+      <section
+        aria-label="Credentials and service coverage"
+        className={`border-y border-border bg-secondary/40 ${className}`}
+      >
+        <div className="container-tight px-6 md:px-10 py-8 md:py-10">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
+            {items.map((item) => (
+              <li key={item.label} className="flex items-start gap-3">
+                <item.icon className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
+                <div>
+                  <p className="text-[13px] font-heading font-bold text-foreground leading-snug">{item.label}</p>
+                  <p className="text-[12px] font-body text-muted-foreground leading-relaxed mt-0.5">{item.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <aside
