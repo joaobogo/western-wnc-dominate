@@ -110,7 +110,7 @@ export default function AdminLeads() {
       setLoading(false);
     });
     return () => { mounted = false; };
-  }, [navigate]);
+  }, [navigate, deepLinkId]);
 
   const updateStatus = async (id: string, status: string) => {
     const { error } = await supabase.from("leads").update({ status }).eq("id", id);
