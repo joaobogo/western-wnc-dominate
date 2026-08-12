@@ -567,6 +567,11 @@ const RoofReplacement = () => {
       <RealWorkWidget />
         <CommonConcerns />
         <CostContextBlock serviceLabel="roof replacement" />
+        <section className="section-padding pt-0 bg-muted/20">
+          <div className="container-tight">
+            <FinancingTeaser serviceLabel="roof replacement" />
+          </div>
+        </section>
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
           <AttributedReviews category="roofing" heading="What homeowners say about our roof replacement work" />

@@ -165,6 +165,9 @@ const MetalRoofing = () => {
         {/* ─── REQUEST ASSESSMENT (full-width, like the rest of the site) ─── */}
         <CommonConcerns />
         <CostContextBlock serviceLabel="metal roofing" />
+        <div className="container-tight pt-0 pb-8 md:pb-12">
+          <FinancingTeaser serviceLabel="metal roofing" />
+        </div>
         <div className="container-tight pt-16 md:pt-20">
           <AttributedReviews category="roofing" heading="What homeowners say about our metal roofing work" />
         </div>
