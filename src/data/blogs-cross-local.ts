@@ -58,7 +58,7 @@ const pickImage = (seed: string) =>
 
 const countyShort = (t: TownData) => t.county.replace(/ County$/, "");
 const countySlugOf = (t: TownData) =>
-  t.county.toLowerCase().replace(/ county$/, "").replace(/[^a-z0-9]+/g, "-") + "-county-nc";
+  t.county.toLowerCase().trim().replace(/\s+/g, "-");
 const townLink = (t: TownData) => `[${t.name}, NC roofing and construction](/service-areas/${t.slug})`;
 const svcLink = (t: TownData, svc: string, label: string) =>
   `[${label} in ${t.name}](/service-areas/${t.slug}/${svc})`;
