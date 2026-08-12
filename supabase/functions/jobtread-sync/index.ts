@@ -1239,7 +1239,7 @@ export async function sendToPaveApi(payload: any): Promise<{ ok: boolean; id?: s
             name: accountName,
             type: "customer",
             customFieldValues: {
-              [JT_CF.account.service_area]: mapServiceArea(town),
+              [JT_CF.account.service_area]: mapServiceArea(town, county),
               // Lead Source picklist in JobTread only accepts "Website" for
               // website-originated leads. Chatbot origin is preserved in the
               // Job name prefix and inside Lead Notes → Source section so
