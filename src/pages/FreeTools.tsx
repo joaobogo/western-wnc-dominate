@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import RoofCostEstimator from "@/components/RoofCostEstimator";
@@ -104,6 +105,7 @@ const FreeTools = () => {
           </div>
         </section>
       </main>
+      <PageCloseCTA eyebrow="Next Step" heading="Ready for a real set of eyes on your roof?" body="Tools are a starting point. A Highlander advisor can review your property and give you a clear, written scope." secondaryLabel="See the towns we serve" secondaryTo="/service-areas" context="free-tools" />
       <Footer />
       <StickyMobileCTA />
     </>

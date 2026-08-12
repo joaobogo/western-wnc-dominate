@@ -10,6 +10,7 @@ import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock } from "@/components/trust";
 import { MountainContours, TextureOverlay } from "@/components/motion/BackgroundTexture";
@@ -612,6 +613,7 @@ const Blog = () => {
           ctaText="Talk to the Team That Wrote This"
         />
       </main>
+      <PageCloseCTA eyebrow="Next Step" heading="Have a question these articles didn't answer?" body="Send us the details of your roof or project and a local advisor will walk you through the options for your property." secondaryLabel="Browse our roofing services" secondaryTo="/roofing" context="blog" />
       <Footer />
       <StickyMobileCTA />
     </>

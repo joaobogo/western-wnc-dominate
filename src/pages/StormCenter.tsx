@@ -9,6 +9,7 @@ import {
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
+import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { TrustBadgeStrip, ReassuranceBlock } from "@/components/trust";
 import { blogPosts } from "@/data/blogs";
@@ -419,6 +420,7 @@ const StormCenter = () => {
           ctaText="Request Storm Assessment"
         />
       </main>
+      <PageCloseCTA eyebrow="Storm Response" heading="Storm damage on your property?" body="Send us the details and photos. We'll prioritize the inspection and help you document everything your insurer needs." secondaryLabel="Read the storm damage guide" secondaryTo="/storm-damage" context="storm-center" />
       <Footer />
       <StickyMobileCTA />
     </>
