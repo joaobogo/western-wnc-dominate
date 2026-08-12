@@ -338,6 +338,80 @@ export function trackFormError(opts: {
 
 /* ---------- CTAs ---------- */
 
+/** Generic CTA click. Fires for every tracked CTA (including the specialised
+ *  quote/inspection/phone events) so GTM has one funnel-wide click event.
+ *  `cta_location` is the block the CTA lives in (hero, sticky_bar, footer…). */
+export function trackCtaClick(opts: {
+  cta_location: string;
+  cta_text?: string | null;
+  cta_type?: string | null;
+  destination_url: string;
+  town?: string | null;
+}) {
+  push({
+    event: GTM_EVENTS.CTA_CLICK,
+    cta_location: opts.cta_location,
+    cta_text: opts.cta_text ?? null,
+    cta_type: opts.cta_type ?? null,
+    destination_url: opts.destination_url,
+    town: opts.town ?? null,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
+/** Multi-step intake progression. Deduped per form + step per session. */
+const formStepFired = new Set<string>();
+export function trackFormStepComplete(opts: {
+  form_name: string;
+  form_id: string;
+  step_index: number;
+  step_name?: string | null;
+  total_steps?: number | null;
+}) {
+  const key = `${opts.form_id}::${opts.step_index}`;
+  if (formStepFired.has(key)) return;
+  formStepFired.add(key);
+  push({
+    event: GTM_EVENTS.FORM_STEP_COMPLETE,
+    form_name: opts.form_name,
+    form_id: opts.form_id,
+    step_index: opts.step_index,
+    step_number: opts.step_index + 1,
+    step_name: opts.step_name ?? null,
+    total_steps: opts.total_steps ?? null,
+    page_path: pagePath(),
+  });
+}
+
+/** Canonical conversion event. Deduped per lead_id for the whole session. */
+const generateLeadFired = new Set<string>();
+export function trackGenerateLead(opts: {
+  lead_id: string;
+  lead_source: string;
+  lead_type?: string | null;
+  service_category?: string | null;
+  property_town?: string | null;
+  value?: number | null;
+}) {
+  if (generateLeadFired.has(opts.lead_id)) return;
+  generateLeadFired.add(opts.lead_id);
+  const source = getCtaSource();
+  push({
+    event: GTM_EVENTS.GENERATE_LEAD,
+    lead_id: opts.lead_id,
+    lead_source: opts.lead_source,
+    lead_type: opts.lead_type ?? null,
+    service_category: opts.service_category ?? null,
+    property_town: opts.property_town ?? null,
+    town: opts.property_town ?? source?.town ?? null,
+    source_context: source?.context ?? null,
+    currency: "USD",
+    value: opts.value ?? 0,
+    page_path: pagePath(),
+  });
+}
+
 export function trackRequestQuoteClick(opts: {
   click_location: string;
   destination_url: string;
