@@ -39,6 +39,7 @@ import { blogPosts } from "@/data/blogs";
 import { getTownFAQs } from "@/data/town-faqs-generated";
 import { getRelevantBlogsForTown } from "@/data/content-support";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
+import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
 
 const TownPage = () => {
   const { slug } = useParams<{ slug: string }>();
