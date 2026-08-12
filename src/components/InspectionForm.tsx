@@ -101,11 +101,13 @@ const InspectionForm = () => {
       phone: contact.values.phone,
       email: contact.values.email,
       property_address: contact.values.address,
+      property_town: contact.values.town || null,
       property_state: "NC",
       project_type: formData.projectType,
       timeline: formData.timeline,
       project_description: formData.details,
       service_category: formData.projectType?.startsWith("roof") || formData.projectType === "storm-damage" || formData.projectType === "metal-roofing" ? "roofing" : "construction",
+      source_context: contextFromQuery(),
     }).catch((err) => console.error("InspectionForm submitLead failed:", err));
 
     // Track form submission
