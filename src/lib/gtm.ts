@@ -320,6 +320,13 @@ export function trackFormSuccess(opts: {
     page_path: pagePath(),
     lead_id: opts.lead_id,
   });
+  trackGenerateLead({
+    lead_id: opts.lead_id,
+    lead_source: opts.form_id || opts.form_name,
+    lead_type: opts.lead_type ?? null,
+    service_category: opts.service_category ?? null,
+    property_town: opts.property_town ?? null,
+  });
 }
 
 export function trackFormError(opts: {
@@ -503,6 +510,13 @@ export function trackChatbotLeadSubmit(opts: {
     property_town: opts.property_town ?? null,
     page_path: pagePath(),
     lead_id: opts.lead_id,
+  });
+  trackGenerateLead({
+    lead_id: opts.lead_id,
+    lead_source: "chatbot",
+    lead_type: "chatbot",
+    service_category: opts.service_category ?? null,
+    property_town: opts.property_town ?? null,
   });
 }
 
