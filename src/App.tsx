@@ -368,6 +368,11 @@ const App = () => (
               <ChatbotWidget />
             </Suspense>
           </ErrorBoundary>
+          <ErrorBoundary boundary="consent" fallback={() => null}>
+            <Suspense fallback={null}>
+              <ConsentBanner />
+            </Suspense>
+          </ErrorBoundary>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
