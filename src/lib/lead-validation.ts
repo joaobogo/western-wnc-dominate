@@ -325,7 +325,11 @@ export function validateContact(input: ContactInput): ContactValidation {
 
   // Address
   const address = (input.address ?? "").trim() || null;
-  if (!address && req.address) errors.address = "Property address is required.";
+  // Address is nice to have, never a blocker when we at least know the town —
+  // a lot of mountain properties are described by road + town, not a street number.
+  if (!address && req.address && !town) {
+    errors.address = "Add the property address or the town.";
+  }
 
   // A non-blocking email/phone typo shouldn't stop a reachable submission.
   const blockingKeys = (Object.keys(errors) as (keyof ContactErrors)[]).filter((k) => {
