@@ -67,7 +67,7 @@ const faqs = [
 
 const HomeFAQ = () => {
   return (
-    <section id="faq" className="section-padding bg-secondary/30 relative overflow-hidden">
+    <section id="faq" className="section-padding bg-background relative overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
