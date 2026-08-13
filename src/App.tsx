@@ -6,6 +6,7 @@ import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import UrlNormalizer from "./components/UrlNormalizer";
 import GTMRouteTracker from "./components/GTMRouteTracker";
+import RecoveryPrompt from "./components/recovery/RecoveryPrompt";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
 import { initPixels } from "./lib/analytics";
@@ -113,6 +114,7 @@ const App = () => (
           <UrlNormalizer />
           <ScrollToTop />
           <GTMRouteTracker />
+          <RecoveryPrompt />
           <Suspense fallback={<div className="min-h-screen bg-background" />}>
             <ErrorBoundary boundary="route">
               <Routes>

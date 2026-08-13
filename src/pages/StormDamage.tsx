@@ -16,6 +16,9 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import StormResponseGuide from "@/components/StormResponseGuide";
 
 import heroImg from "@/assets/gallery/asphalt-005.webp";
+import heroImgAvif from "@/assets/gallery/asphalt-005.webp?w=640;1024;1600&format=avif&as=srcset";
+import heroImgWebp from "@/assets/gallery/asphalt-005.webp?w=640;1024;1600&format=webp&as=srcset";
+import HeroImage from "@/components/media/HeroImage";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
@@ -167,7 +170,7 @@ const StormDamage = () => {
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Storm damage roof assessment in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <HeroImage src={heroImg} avifSrcSet={heroImgAvif} webpSrcSet={heroImgWebp} alt="Storm damage roof assessment in Western North Carolina" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>

@@ -19,6 +19,10 @@ import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import roofingMobileHero from "@/assets/heroes/roofing-mobile.webp";
+import roofingMobileHeroSet from "@/assets/heroes/roofing-mobile.webp?w=480;640;828&format=webp&as=srcset";
+import roofingMobileHeroAvif from "@/assets/heroes/roofing-mobile.webp?w=480;640;828&format=avif&as=srcset";
+import metalRoofSet from "@/assets/gallery/metal-005.webp?w=1024;1600&format=webp&as=srcset";
+import metalRoofAvif from "@/assets/gallery/metal-005.webp?w=1024;1600&format=avif&as=srcset";
 import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import asphaltRoof from "@/assets/gallery/asphalt-hero.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
@@ -270,8 +274,11 @@ const RoofingDivision = () => {
         <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <picture>
-              <source media="(max-width: 767px)" srcSet={roofingMobileHero} />
-              <img width={1600} height={1067} decoding="async"
+              <source media="(max-width: 767px)" type="image/avif" srcSet={roofingMobileHeroAvif} sizes="100vw" />
+              <source media="(max-width: 767px)" type="image/webp" srcSet={roofingMobileHeroSet} sizes="100vw" />
+              <source type="image/avif" srcSet={metalRoofAvif} sizes="100vw" />
+              <source type="image/webp" srcSet={metalRoofSet} sizes="100vw" />
+              <img width={1600} height={1067} decoding="async" fetchPriority="high"
                 src={metalRoof}
                 alt="Premium standing seam metal roof on a mountain estate in Cashiers, NC"
                 className="w-full h-full object-cover object-[50%_25%] md:object-center"

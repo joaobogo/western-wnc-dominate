@@ -21,6 +21,9 @@ import asphalt005 from "@/assets/gallery/asphalt-005.webp";
 import asphalt006 from "@/assets/gallery/asphalt-006.webp";
 import asphalt007 from "@/assets/gallery/asphalt-007.webp";
 import asphalt008 from "@/assets/gallery/asphalt-008.webp";
+import asphalt008Avif from "@/assets/gallery/asphalt-008.webp?w=640;1024;1600&format=avif&as=srcset";
+import asphalt008Webp from "@/assets/gallery/asphalt-008.webp?w=640;1024;1600&format=webp&as=srcset";
+import HeroImage from "@/components/media/HeroImage";
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import cedarRoof from "@/assets/gallery/cedar-005.webp";
 import metalCabin from "@/assets/gallery/metal-006.webp";
@@ -180,7 +183,7 @@ const RoofReplacement = () => {
           <div className="absolute inset-0">
             <picture>
               <source media="(max-width: 767px)" srcSet={replacementMobileHero} />
-              <img width={1600} height={1067} decoding="async" src={asphalt008} alt="Roof replacement in progress on a mountain home in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" loading="eager" />
+              <HeroImage src={asphalt008} avifSrcSet={asphalt008Avif} webpSrcSet={asphalt008Webp} alt="Roof replacement in progress on a mountain home in Western North Carolina" className="w-full h-full object-cover object-[50%_35%] md:object-center" />
             </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.6)] via-[hsl(var(--hero-overlay)/0.3)] to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />

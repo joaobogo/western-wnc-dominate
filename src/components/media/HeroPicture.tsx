@@ -11,6 +11,10 @@ interface HeroPictureProps {
   className?: string;
   style?: React.CSSProperties;
   sizes?: string;
+  /** Responsive AVIF srcset (?as=srcset) — preferred over `avif` when present */
+  avifSrcSet?: string;
+  /** Responsive WebP srcset (?as=srcset) */
+  webpSrcSet?: string;
   ariaHidden?: boolean;
 }
 
@@ -29,10 +33,17 @@ const HeroPicture = ({
   className,
   style,
   sizes = "100vw",
+  avifSrcSet,
+  webpSrcSet,
   ariaHidden,
 }: HeroPictureProps) => (
   <picture>
-    {avif ? <source srcSet={avif} type="image/avif" sizes={sizes} /> : null}
+    {avifSrcSet ? (
+      <source srcSet={avifSrcSet} type="image/avif" sizes={sizes} />
+    ) : avif ? (
+      <source srcSet={avif} type="image/avif" sizes={sizes} />
+    ) : null}
+    {webpSrcSet ? <source srcSet={webpSrcSet} type="image/webp" sizes={sizes} /> : null}
     <img
       src={src}
       alt={alt}
