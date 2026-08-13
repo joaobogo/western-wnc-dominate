@@ -109,7 +109,7 @@ const ReviewsPage = () => {
               <motion.div {...fadeUp} className="max-w-2xl">
                 <div className="flex items-center gap-2 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                    <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   ))}
                   <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
                   <span className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
@@ -130,7 +130,7 @@ const ReviewsPage = () => {
                 className="max-w-sm flex-shrink-0"
               >
                 <div className="border-l-2 border-[hsl(var(--highland-gold)/0.3)] pl-5">
-                  <Quote className="w-4 h-4 text-[hsl(var(--highland-gold)/0.2)] mb-2 rotate-180" aria-hidden="true">
+                  <Quote className="w-4 h-4 text-[hsl(var(--highland-gold)/0.2)] mb-2 rotate-180" aria-hidden="true" />
                   <p className="text-[hsl(var(--dark-section-foreground)/0.8)] text-base font-body italic leading-relaxed">
                     "After three bad experiences with other contractors, Highlander changed everything completely."
                   </p>
@@ -181,7 +181,7 @@ const ReviewsPage = () => {
               >
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                    <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   ))}
                 </div>
                 <div className="h-4 w-px bg-border" />
@@ -207,11 +207,11 @@ const ReviewsPage = () => {
                     </span>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, si) => (
-                        <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                        <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       ))}
                     </div>
                   </div>
-                  <Quote className="w-6 h-6 text-[hsl(var(--highland-gold)/0.15)] mb-3 rotate-180" aria-hidden="true">
+                  <Quote className="w-6 h-6 text-[hsl(var(--highland-gold)/0.15)] mb-3 rotate-180" aria-hidden="true" />
                   <p className="text-foreground text-body-sm leading-relaxed mb-5 font-body font-medium">"{r.reviewBody}"</p>
                   <div className="bg-secondary/70 rounded-sm px-4 py-3 mb-5">
                     <p className="text-body-xs font-body font-bold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
@@ -273,7 +273,7 @@ const ReviewsPage = () => {
                     </span>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, si) => (
-                        <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                        <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       ))}
                     </div>
                   </div>
@@ -366,7 +366,7 @@ const ReviewsPage = () => {
                   { icon: AlertCircle, text: "Confirmation of current review counts and average ratings" },
                 ].map(({ icon: Icon, text }) => (
                   <li key={text} className="flex items-start gap-2">
-                    <Icon className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true">
+                    <Icon className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true" />
                     <span>{text}</span>
                   </li>
                 ))}

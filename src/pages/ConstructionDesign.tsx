@@ -176,7 +176,7 @@ const ConstructionDesign = () => {
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 mb-5 text-white/95 text-body-xs font-body">
                 <Link to="/construction" className="hover:text-[hsl(var(--gold-ink))] transition-colors">Construction</Link>
-                <ChevronRight className="w-4 h-4" aria-hidden="true">
+                <ChevronRight className="w-4 h-4" aria-hidden="true" />
                 <span className="text-[hsl(var(--gold-ink))]">Design Services</span>
               </div>
 
@@ -208,13 +208,13 @@ const ConstructionDesign = () => {
                   to="/construction-intake"
                   className="btn btn-primary btn-md"
                 >
-                  Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
                   className="btn btn-secondary btn-md btn-on-dark"
                 >
-                  Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </motion.div>
 
@@ -265,7 +265,7 @@ const ConstructionDesign = () => {
                 <ul className="space-y-3">
                   {whyDesignFirst.map((item) => (
                     <li key={item} className="flex items-start gap-3 bg-card border border-border rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.25)] transition-colors">
-                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true">
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span className="text-foreground/85 text-body-xs font-body leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -318,7 +318,7 @@ const ConstructionDesign = () => {
                     <ul className="space-y-1.5">
                       {p.deliverables.map((d) => (
                         <li key={d} className="flex items-start gap-2 text-body-xs text-foreground/80 font-body">
-                          <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true">
+                          <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true" />
                           <span>{d}</span>
                         </li>
                       ))}
@@ -328,13 +328,13 @@ const ConstructionDesign = () => {
                   <div className="border-t border-border pt-4 space-y-3">
                     <div>
                       <div className="flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.15em] text-muted-foreground mb-1">
-                        <CheckCircle className="w-4 h-4" aria-hidden="true"> Best fit
+                        <CheckCircle className="w-4 h-4" aria-hidden="true" /> Best fit
                       </div>
                       <p className="text-foreground/80 text-body-xs font-body leading-snug">{p.bestFit}</p>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.15em] text-muted-foreground mb-1">
-                        <Clock className="w-4 h-4" aria-hidden="true"> Timeline
+                        <Clock className="w-4 h-4" aria-hidden="true" /> Timeline
                       </div>
                       <div className="font-heading font-bold text-foreground text-sm leading-tight">{p.timeline}</div>
                     </div>
@@ -344,7 +344,7 @@ const ConstructionDesign = () => {
                     to={p.ctaHref}
                     className="btn btn-secondary btn-sm mt-5 group/cta w-full"
                   >
-                    {p.ctaLabel} <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" aria-hidden="true">
+                    {p.ctaLabel} <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                 </motion.div>
               ))}
@@ -388,7 +388,7 @@ const ConstructionDesign = () => {
                     to="/construction-intake"
                     className="btn btn-primary btn-md"
                   >
-                    Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true">
+                    Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -415,7 +415,7 @@ const ConstructionDesign = () => {
                   <ul className="space-y-3">
                     {fixedFeeBullets.map((b) => (
                       <li key={b} className="flex items-start gap-3 text-foreground/85 text-body-xs font-body leading-relaxed">
-                        <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-1 flex-shrink-0" aria-hidden="true">
+                        <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-1 flex-shrink-0" aria-hidden="true" />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -480,7 +480,7 @@ const ConstructionDesign = () => {
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))]" />
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-[hsl(var(--highland-gold)/0.1)] border border-[hsl(var(--highland-gold)/0.25)] flex items-center justify-center">
-                    <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                    <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   </div>
                   <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">Already Have Plans?</span>
                 </div>
@@ -499,7 +499,7 @@ const ConstructionDesign = () => {
                   to="/design-intake?mode=long"
                   className="btn btn-primary btn-md"
                 >
-                  Send Your Plans <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Send Your Plans <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
             </ScrollReveal>
@@ -524,7 +524,7 @@ const ConstructionDesign = () => {
                 <details key={f.question} className="group bg-card border border-border rounded-none p-5 open:border-[hsl(var(--highland-gold)/0.35)] transition-colors">
                   <summary className="font-heading font-bold text-foreground text-base cursor-pointer list-none flex items-center justify-between gap-4">
                     <span>{f.question}</span>
-                    <ChevronRight className="w-4 h-4 text-[hsl(var(--gold-ink))] group-open:rotate-90 transition-transform flex-shrink-0" aria-hidden="true">
+                    <ChevronRight className="w-4 h-4 text-[hsl(var(--gold-ink))] group-open:rotate-90 transition-transform flex-shrink-0" aria-hidden="true" />
                   </summary>
                   <p className="text-muted-foreground text-body-xs font-body leading-relaxed mt-3">{f.answer}</p>
                 </details>
@@ -549,17 +549,17 @@ const ConstructionDesign = () => {
                   to="/construction-intake"
                   className="btn btn-primary btn-md"
                 >
-                  Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
                   className="btn btn-secondary btn-md btn-on-dark"
                 >
-                  Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/95 hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
-                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                 (828) 524-7773
               </a>
             </div>

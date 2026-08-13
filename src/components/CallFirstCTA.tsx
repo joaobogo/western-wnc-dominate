@@ -49,7 +49,7 @@ const CallFirstCTA = ({
           aria-label="Call Highlander at (828) 524-7773"
           className="btn btn-primary btn-md md:text-body md:px-10"
         >
-          <Phone className="w-4 h-4" aria-hidden="true">
+          <Phone className="w-4 h-4" aria-hidden="true" />
           <span>Call (828) 524-7773</span>
         </a>
         {secondaryLabel && secondaryTo && (

@@ -36,7 +36,7 @@ const FormErrorSummary = ({
       } ${className}`}
     >
       <div className="flex items-start gap-3">
-        <AlertTriangle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${dark ? "text-[hsl(var(--gold-ink))]" : "text-destructive"}`} aria-hidden="true">
+        <AlertTriangle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${dark ? "text-[hsl(var(--gold-ink))]" : "text-destructive"}`} aria-hidden="true" />
         <div className="min-w-0">
           <p className={`font-body font-bold text-body-xs md:text-body-sm ${dark ? "text-white" : "text-foreground"}`}>
             {message || "We couldn't send this yet — nothing you typed was lost."}
@@ -54,7 +54,7 @@ const FormErrorSummary = ({
               href="tel:+18285247773"
               className={`inline-flex items-center gap-1.5 font-bold underline underline-offset-2 ${dark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`}
             >
-              <Phone className="w-4 h-4" aria-hidden="true">
+              <Phone className="w-4 h-4" aria-hidden="true" />
               (828) 524-7773
             </a>
           </p>

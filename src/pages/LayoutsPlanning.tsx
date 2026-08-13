@@ -159,10 +159,10 @@ const LayoutsPlanning = () => {
                 className="flex flex-col sm:flex-row gap-5"
               >
                 <Link to="/design-intake?mode=long" className="btn btn-primary btn-lg group">
-                  <FileText className="w-4 h-4" aria-hidden="true"> Start Detailed Planning Brief
+                  <FileText className="w-4 h-4" aria-hidden="true" /> Start Detailed Planning Brief
                 </Link>
                 <Link to="/design-intake?mode=short" className="btn btn-secondary btn-lg btn-on-dark">
-                  <Sparkles className="w-4 h-4" aria-hidden="true"> Quick Planning Inquiry
+                  <Sparkles className="w-4 h-4" aria-hidden="true" /> Quick Planning Inquiry
                 </Link>
               </motion.div>
             </div>
@@ -201,7 +201,7 @@ const LayoutsPlanning = () => {
                     <div className="w-full h-full border border-white/10 relative overflow-hidden">
                       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "100px auto" }} />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <DraftingCompass className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                        <DraftingCompass className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       </div>
                     </div>
                   </div>
@@ -258,7 +258,7 @@ const LayoutsPlanning = () => {
                   
                   <div className="mb-8">
                     <div className="w-14 h-14 bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
-                      <Sparkles className="w-6 h-6 text-primary" aria-hidden="true">
+                      <Sparkles className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
                     <h3 className="text-2xl font-heading font-bold mb-4">Quick Planning Inquiry</h3>
                     <p className="text-muted-foreground font-body text-sm leading-relaxed">
@@ -274,14 +274,14 @@ const LayoutsPlanning = () => {
                       "Direct follow-up call"
                     ].map(item => (
                       <li key={item} className="flex items-center gap-3 text-xs font-medium font-body text-foreground/80">
-                        <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                        <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                         {item}
                       </li>
                     ))}
                   </ul>
 
                   <Link to="/design-intake?mode=short" className="inline-flex items-center justify-center gap-2 w-full py-4 border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300">
-                    Send Quick Inquiry <ArrowRight className="w-4 h-4" aria-hidden="true">
+                    Send Quick Inquiry <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -295,7 +295,7 @@ const LayoutsPlanning = () => {
                   <div className="relative z-10">
                     <div className="mb-8">
                       <div className="w-14 h-14 bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-                        <FileText className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                        <FileText className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       </div>
                       <h3 className="text-2xl font-heading font-bold mb-4">Detailed Planning Brief</h3>
                       <p className="text-white/85 font-body text-sm leading-relaxed">
@@ -312,14 +312,14 @@ const LayoutsPlanning = () => {
                         "Detailed project roadmap"
                       ].map(item => (
                         <li key={item} className="flex items-center gap-3 text-xs font-medium font-body text-white/95">
-                          <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                          <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                           {item}
                         </li>
                       ))}
                     </ul>
 
                     <Link to="/design-intake?mode=long" className="btn btn-primary btn-md w-full">
-                      Send Detailed Brief <ArrowRight className="w-4 h-4" aria-hidden="true">
+                      Send Detailed Brief <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -391,7 +391,7 @@ const LayoutsPlanning = () => {
             <div className="max-w-4xl mx-auto text-center">
               <ScrollReveal variant="fade">
                 <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-white/10 bg-white/5 backdrop-blur-sm">
-                  <Mountain className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                  <Mountain className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   <span className="text-caption font-bold uppercase tracking-widest">Built for the Blue Ridge</span>
                 </div>
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-10 leading-[1.1]">
@@ -401,7 +401,7 @@ const LayoutsPlanning = () => {
                   Western North Carolina isn't flat. We plan for soil types, slope stability, heavy snow loads, and extreme temperature swings. A plan from a flat-land designer won't work here. A Highlander plan will.
                 </p>
                 <Link to="/consultation" className="btn btn-primary btn-lg">
-                  Discuss Your Mountain Project <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Discuss Your Mountain Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </ScrollReveal>
             </div>
@@ -440,15 +440,15 @@ const LayoutsPlanning = () => {
             <h2 className="text-3xl font-heading font-bold mb-8">Ready to define your project?</h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link to="/design-intake?mode=long" className="text-sm font-bold flex items-center gap-2 text-primary hover:text-primary/70 transition-colors">
-                Detailed Brief <ArrowRight className="w-4 h-4" aria-hidden="true">
+                Detailed Brief <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <div className="w-1.5 h-1.5 rounded-full bg-border hidden sm:block" />
               <Link to="/design-intake?mode=short" className="text-sm font-bold flex items-center gap-2 text-primary hover:text-primary/70 transition-colors">
-                Quick Inquiry <ArrowRight className="w-4 h-4" aria-hidden="true">
+                Quick Inquiry <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <div className="w-1.5 h-1.5 rounded-full bg-border hidden sm:block" />
               <a href="tel:+18285247773" className="text-sm font-bold flex items-center gap-2 text-primary hover:text-primary/70 transition-colors">
-                Call the Office <Phone className="w-4 h-4" aria-hidden="true">
+                Call the Office <Phone className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -335,7 +335,7 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
         {/* Toolbar */}
         <div className="flex items-center justify-between px-3 py-2 md:px-4 md:py-3 bg-background border-b border-border gap-1">
           <Button variant="ghost" size="sm" onClick={onReset} className="gap-1 text-muted-foreground shrink-0 px-2">
-            <ChevronLeft className="w-4 h-4" aria-hidden="true">
+            <ChevronLeft className="w-4 h-4" aria-hidden="true" />
             <span className="hidden sm:inline">New</span>
           </Button>
 
@@ -346,7 +346,7 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
               onClick={() => setTool("brush")}
               className="gap-1 px-2 md:px-3"
             >
-              <Paintbrush className="w-4 h-4" aria-hidden="true">
+              <Paintbrush className="w-4 h-4" aria-hidden="true" />
               <span className="hidden md:inline">Paint</span>
             </Button>
             <Button
@@ -355,17 +355,17 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
               onClick={() => setTool("eraser")}
               className="gap-1 px-2 md:px-3"
             >
-              <Eraser className="w-4 h-4" aria-hidden="true">
+              <Eraser className="w-4 h-4" aria-hidden="true" />
               <span className="hidden md:inline">Erase</span>
             </Button>
             {aiPolygon && (
               <Button variant="outline" size="sm" onClick={redetect} className="gap-1 px-2 md:px-3">
-                <Wand2 className="w-4 h-4" aria-hidden="true">
+                <Wand2 className="w-4 h-4" aria-hidden="true" />
                 <span className="hidden md:inline">Re-detect</span>
               </Button>
             )}
             <Button variant="outline" size="sm" onClick={clearMask} className="gap-1 px-2 md:px-3">
-              <RotateCcw className="w-4 h-4" aria-hidden="true">
+              <RotateCcw className="w-4 h-4" aria-hidden="true" />
               <span className="hidden md:inline">Clear</span>
             </Button>
           </div>
@@ -378,7 +378,7 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
                 onClick={() => setShowMaterialPanel(!showMaterialPanel)}
                 className="px-2"
               >
-                <Menu className="w-4 h-4" aria-hidden="true">
+                <Menu className="w-4 h-4" aria-hidden="true" />
               </Button>
             )}
           </div>
@@ -411,8 +411,8 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
             >
               <div className="flex flex-col items-center gap-4 text-center">
                 <div className="relative">
-                  <Loader2 className="w-6 h-6 text-primary animate-spin" aria-hidden="true">
-                  <Wand2 className="w-4 h-4 text-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true">
+                  <Loader2 className="w-6 h-6 text-primary animate-spin" aria-hidden="true" />
+                  <Wand2 className="w-4 h-4 text-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-foreground">Analyzing Your Roof</p>
@@ -488,7 +488,7 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
             size={isMobile ? "sm" : "default"}
             className="gap-1.5 cta-gradient text-accent-foreground border-0 font-semibold shrink-0"
           >
-            {isSaving ? <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true"> : <Save className="w-4 h-4" aria-hidden="true">}
+            {isSaving ? <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" /> : <Save className="w-4 h-4" aria-hidden="true" />}
             <span className="hidden sm:inline">Save & See Pricing</span>
             <span className="sm:hidden">Save</span>
           </Button>

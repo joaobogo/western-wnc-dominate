@@ -38,7 +38,7 @@ const ChecklistSection = ({
   <section className="rounded-sm border border-border bg-card p-6 md:p-7">
     <div className="mb-5 flex items-start gap-4">
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm bg-secondary text-primary">
-        <Icon className="h-4 w-4" aria-hidden="true">
+        <Icon className="h-4 w-4" aria-hidden="true" />
       </div>
       <div>
         <h2 className="text-2xl font-heading font-bold text-foreground">{title}</h2>
@@ -125,7 +125,7 @@ const SEOChecklist = () => {
                       <div className="rounded-sm border border-border bg-card p-6 md:p-8">
                         <div className="flex items-center gap-3">
                           <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-secondary text-primary">
-                            <Target className="h-4 w-4" aria-hidden="true">
+                            <Target className="h-4 w-4" aria-hidden="true" />
                           </div>
                           <div>
                             <h2 className="text-2xl font-heading font-bold text-foreground">Target Keywords</h2>
@@ -136,7 +136,7 @@ const SEOChecklist = () => {
                         <div className="mt-6 grid gap-5 md:grid-cols-2">
                           <div className="rounded-sm border border-border bg-background p-4">
                             <div className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-primary">
-                              <Search className="h-4 w-4" aria-hidden="true"> Primary
+                              <Search className="h-4 w-4" aria-hidden="true" /> Primary
                             </div>
                             <ul className="space-y-2 text-sm text-foreground">
                               {checklist.keywords.primary.map((keyword) => (
@@ -146,7 +146,7 @@ const SEOChecklist = () => {
                           </div>
                           <div className="rounded-sm border border-border bg-background p-4">
                             <div className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-primary">
-                              <Search className="h-4 w-4" aria-hidden="true"> Secondary
+                              <Search className="h-4 w-4" aria-hidden="true" /> Secondary
                             </div>
                             <ul className="space-y-2 text-sm text-foreground">
                               {checklist.keywords.secondary.map((keyword) => (

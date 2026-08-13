@@ -28,7 +28,7 @@ const ContactIdentity = () => (
 
           <ul className="space-y-4 mb-8">
             <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true">
+              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
               <div>
                 <p className="text-sm font-heading font-semibold text-foreground">Franklin Office</p>
                 <address className="not-italic text-sm text-muted-foreground font-body">
@@ -37,19 +37,19 @@ const ContactIdentity = () => (
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true">
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
               <a href="tel:+18285247773" className="text-sm font-heading font-semibold text-foreground hover:text-primary">
                 (828) 524-7773
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <Mail className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true">
+              <Mail className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
               <a href="mailto:info@highlandernc.com" className="text-sm font-body text-muted-foreground hover:text-primary">
                 info@highlandernc.com
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <Building2 className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true">
+              <Building2 className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-1" aria-hidden="true" />
               <p className="text-sm text-muted-foreground font-body">
                 Licensed North Carolina general contractor · Fully insured · CertainTeed ShingleMaster credentialed
               </p>
@@ -63,7 +63,7 @@ const ContactIdentity = () => (
               to="/service-areas"
               className="btn btn-primary btn-md"
             >
-              See Service Areas <ArrowRight className="w-4 h-4" aria-hidden="true">
+              See Service Areas <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <Link
               to="/service-areas/franklin-nc"
@@ -95,7 +95,7 @@ const ContactIdentity = () => (
                 href="tel:+18285247773"
                 className="btn btn-ghost btn-md"
               >
-                <Phone className="w-4 h-4" aria-hidden="true">
+                <Phone className="w-4 h-4" aria-hidden="true" />
                 Call to Confirm
               </a>
             </div>

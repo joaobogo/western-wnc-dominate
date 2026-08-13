@@ -57,7 +57,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
     >
       {div.label}
       <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.25, ease: HIGHLAND_EASE }}>
-        <ChevronDown className="w-4 h-4 opacity-50" aria-hidden="true">
+        <ChevronDown className="w-4 h-4 opacity-50" aria-hidden="true" />
       </motion.div>
       {isActive(div.href) && (
         <motion.div
@@ -142,7 +142,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                           <span className="text-body-sm font-body font-bold block leading-tight">{item.label}</span>
                           <span className="text-body-xs font-body text-muted-foreground leading-snug font-medium block">{item.desc}</span>
                         </span>
-                        <ChevronRight className="w-4 h-4 mt-1 shrink-0 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" aria-hidden="true">
+                        <ChevronRight className="w-4 h-4 mt-1 shrink-0 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" aria-hidden="true" />
                       </Link>
                     </motion.div>
                   ))}
@@ -174,7 +174,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                   div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
                 }`}>
                   Get started
-                  <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true">
+                  <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
                 </span>
               </Link>
             </div>
@@ -189,7 +189,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                 }`}
               >
                 View All {div.label}
-                <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true">
+                <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
               </Link>
             </div>
           </div>

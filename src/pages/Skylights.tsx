@@ -113,10 +113,10 @@ const Skylights = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/consultation" className="btn btn-primary btn-md">
-                    Request a Skylight Assessment <ArrowRight className="w-4 h-4" aria-hidden="true">
+                    Request a Skylight Assessment <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                    <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
+                    <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                   </a>
                 </div>
               </motion.div>
@@ -157,7 +157,7 @@ const Skylights = () => {
             <div className="container-tight space-y-6">
               <div className="space-y-6">
                 <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] text-sm font-semibold uppercase tracking-wider">
-                  <Award className="w-4 h-4" aria-hidden="true"> Manufacturer-Accredited Scope
+                  <Award className="w-4 h-4" aria-hidden="true" /> Manufacturer-Accredited Scope
                 </div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold">What VELUX Certified installation includes</h2>
                 <p className="text-muted-foreground">
@@ -166,7 +166,7 @@ const Skylights = () => {
                 <ul className="space-y-3">
                   {services.map((f) => (
                     <li key={f} className="flex items-start gap-3">
-                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" aria-hidden="true">
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" aria-hidden="true" />
                       <span className="text-foreground/80">{f}</span>
                     </li>
                   ))}

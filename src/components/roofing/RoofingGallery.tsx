@@ -87,7 +87,7 @@ const RoofingGallery = ({
                     </p>
                   )}
                   <span className="inline-flex items-center gap-1.5 text-[hsl(var(--highland-gold-light))] text-caption font-body font-semibold uppercase tracking-wider mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    View Details <ArrowRight className="w-4 h-4" aria-hidden="true">
+                    View Details <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </span>
                 </div>
               </motion.button>
@@ -110,7 +110,7 @@ const RoofingGallery = ({
               onClick={() => setLightboxIdx(null)}
               className="absolute top-6 right-6 text-white/85 hover:text-white transition-colors z-10"
             >
-              <X className="w-6 h-6" aria-hidden="true">
+              <X className="w-6 h-6" aria-hidden="true" />
             </button>
 
             <motion.div

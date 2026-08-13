@@ -37,7 +37,7 @@ export const TrustBadge = ({ icon: Icon, label, variant = "default", className }
   const v = badgeVariants[variant];
   return (
     <div className={cn(v.wrapper, className)}>
-      <Icon className={v.icon} aria-hidden="true">
+      <Icon className={v.icon} aria-hidden="true" />
       <span className={v.text}>{label}</span>
     </div>
   );

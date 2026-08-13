@@ -71,22 +71,22 @@ const GalleryCard = ({
         <div className="space-y-1.5">
           {location && (
             <p className="text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] flex items-center justify-center gap-1.5">
-              <MapPin className="w-4 h-4" aria-hidden="true"> {location}
+              <MapPin className="w-4 h-4" aria-hidden="true" /> {location}
             </p>
           )}
           {scope && (
             <p className="text-white font-heading font-bold text-base md:text-lg leading-snug flex items-center justify-center gap-2">
-              <Ruler className="w-4 h-4 opacity-80" aria-hidden="true"> {scope}
+              <Ruler className="w-4 h-4 opacity-80" aria-hidden="true" /> {scope}
             </p>
           )}
           {duration && (
             <p className="text-white/80 text-caption font-body uppercase tracking-[0.18em] flex items-center justify-center gap-1.5">
-              <Calendar className="w-4 h-4" aria-hidden="true"> {duration}
+              <Calendar className="w-4 h-4" aria-hidden="true" /> {duration}
             </p>
           )}
         </div>
         <div className="px-5 py-2.5 border border-white/30 bg-white/5 flex items-center gap-2">
-          <Eye className="w-4 h-4 text-white" aria-hidden="true">
+          <Eye className="w-4 h-4 text-white" aria-hidden="true" />
           <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-white">View Project</span>
         </div>
       </div>
@@ -98,7 +98,7 @@ const GalleryCard = ({
     {/* Content */}
     <div className="p-6 md:p-8 relative z-10 flex flex-col flex-grow">
       <div className="flex items-center gap-2 mb-3">
-        <MapPin className="w-4 h-4 text-primary" aria-hidden="true">
+        <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
         <span className="text-body-xs font-body font-bold uppercase tracking-[0.15em] text-muted-foreground">{location}</span>
       </div>
       
@@ -113,8 +113,8 @@ const GalleryCard = ({
       <div className="mt-auto">
         <div className="flex items-center justify-between border-t border-border pt-5">
         <div className="flex items-center gap-4 text-caption text-muted-foreground font-body font-bold uppercase tracking-wider">
-           {scope && <span className="flex items-center gap-1.5"><Ruler className="w-4 h-4" aria-hidden="true"> {scope}</span>}
-           {duration && <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" aria-hidden="true"> {duration}</span>}
+           {scope && <span className="flex items-center gap-1.5"><Ruler className="w-4 h-4" aria-hidden="true" /> {scope}</span>}
+           {duration && <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" aria-hidden="true" /> {duration}</span>}
         </div>
         <ArrowUpRight className="w-5 h-5 text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
       </div>

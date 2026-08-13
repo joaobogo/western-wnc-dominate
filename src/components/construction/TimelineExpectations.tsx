@@ -84,7 +84,7 @@ const TimelineExpectations = ({
           className="btn btn-secondary btn-md"
           aria-label="Call Highlander at (828) 524-7773"
         >
-          <Phone className="w-4 h-4 text-primary" aria-hidden="true"> (828) 524-7773
+          <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> (828) 524-7773
         </a>
       </div>
     </div>

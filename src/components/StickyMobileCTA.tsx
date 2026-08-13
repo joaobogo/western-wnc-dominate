@@ -149,7 +149,7 @@ const StickyMobileCTA = () => {
                       }}
                       className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
                     >
-                      <Phone className="w-4 h-4" aria-hidden="true">
+                      <Phone className="w-4 h-4" aria-hidden="true" />
                       <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">
                         {action.primaryLabel}
                       </span>
@@ -159,7 +159,7 @@ const StickyMobileCTA = () => {
                       onClick={() => trackEvent("cta_click", { label: action.secondaryLabel, elementId: "sticky-cta-mobile-estimate" })}
                       className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
                     >
-                      <FileText className="w-4 h-4" aria-hidden="true">
+                      <FileText className="w-4 h-4" aria-hidden="true" />
                       <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.06em]">Estimate</span>
                     </Link>
                   </>
@@ -173,7 +173,7 @@ const StickyMobileCTA = () => {
                       }}
                       className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
                     >
-                      <FileText className="w-4 h-4" aria-hidden="true">
+                      <FileText className="w-4 h-4" aria-hidden="true" />
                       <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">Request Estimate</span>
                     </Link>
                     <a
@@ -181,7 +181,7 @@ const StickyMobileCTA = () => {
                       onClick={() => trackEvent("phone_click", { label: "Call Direct", elementId: "sticky-cta-mobile-call" })}
                       className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
                     >
-                      <Phone className="w-4 h-4" aria-hidden="true">
+                      <Phone className="w-4 h-4" aria-hidden="true" />
                       <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
                     </a>
                   </>
@@ -229,26 +229,26 @@ const StickyMobileCTA = () => {
                         className="btn btn-ghost btn-sm group"
                       >
                         <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center flex-shrink-0 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
-                          <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                          <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-heading font-semibold text-foreground">Start a Project</p>
                           <p className="text-caption text-muted-foreground font-body">No-obligation consultation</p>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" aria-hidden="true">
+                        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" aria-hidden="true" />
                       </Link>
                       <a
                         href="tel:+18285247773"
                         className="btn btn-ghost btn-sm group"
                       >
                         <div className="w-9 h-9 rounded-none bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors">
-                          <Phone className="w-4 h-4 text-primary" aria-hidden="true">
+                          <Phone className="w-4 h-4 text-primary" aria-hidden="true" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-heading font-semibold text-foreground">Call Direct</p>
                           <p className="text-caption text-muted-foreground font-body">(828) 524-7773</p>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" aria-hidden="true">
+                        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon" aria-hidden="true" />
                       </a>
                     </div>
                   </motion.div>
@@ -261,7 +261,7 @@ const StickyMobileCTA = () => {
                 whileTap={{ scale: 0.97 }}
                 className="group flex items-center gap-2.5 bg-primary text-primary-foreground pl-4 pr-5 py-3 rounded-none shadow-raised hover:shadow-floating transition-shadow duration-300"
               >
-                <MessageSquare className="w-4 h-4" aria-hidden="true">
+                <MessageSquare className="w-4 h-4" aria-hidden="true" />
                 <span className="text-sm font-body font-semibold">Start a Conversation</span>
               </motion.button>
             </div>

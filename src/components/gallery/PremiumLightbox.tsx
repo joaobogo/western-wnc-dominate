@@ -163,7 +163,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                     className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                     title="Toggle zoom (Z)"
                   >
-                    {zoomed ? <Minimize2 className="w-4 h-4 text-white/85" aria-hidden="true"> : <ZoomIn className="w-4 h-4 text-white/85" aria-hidden="true">}
+                    {zoomed ? <Minimize2 className="w-4 h-4 text-white/85" aria-hidden="true" /> : <ZoomIn className="w-4 h-4 text-white/85" aria-hidden="true" />}
                   </button>
                 </>
               )}
@@ -172,7 +172,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                 aria-label="Close project gallery"
                 className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
               >
-                <X className="w-4 h-4 text-white/85" aria-hidden="true">
+                <X className="w-4 h-4 text-white/85" aria-hidden="true" />
               </button>
             </div>
           </motion.div>
@@ -184,7 +184,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
               aria-label="Previous project"
               className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all z-20 group"
             >
-              <ChevronLeft className="w-6 h-6 text-white/40 group-hover:text-white/95 transition-colors" aria-hidden="true">
+              <ChevronLeft className="w-6 h-6 text-white/40 group-hover:text-white/95 transition-colors" aria-hidden="true" />
             </button>
           )}
           {!isMobile && currentIndex! < projects.length - 1 && (
@@ -193,7 +193,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
               aria-label="Next project"
               className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-sm bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all z-20 group"
             >
-              <ChevronRight className="w-6 h-6 text-white/40 group-hover:text-white/95 transition-colors" aria-hidden="true">
+              <ChevronRight className="w-6 h-6 text-white/40 group-hover:text-white/95 transition-colors" aria-hidden="true" />
             </button>
           )}
 
@@ -257,10 +257,10 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   )}
                   <div className="space-y-2.5 text-sm text-white/45 font-body">
                     {project.location && (
-                      <p className="flex items-center gap-2"><MapPin className="w-4 h-4" aria-hidden="true"> {project.location}</p>
+                      <p className="flex items-center gap-2"><MapPin className="w-4 h-4" aria-hidden="true" /> {project.location}</p>
                     )}
                     {project.scope && (
-                      <p className="flex items-center gap-2"><Maximize2 className="w-4 h-4" aria-hidden="true"> {project.scope}</p>
+                      <p className="flex items-center gap-2"><Maximize2 className="w-4 h-4" aria-hidden="true" /> {project.scope}</p>
                     )}
                   </div>
                   {project.highlight && (

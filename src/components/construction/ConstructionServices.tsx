@@ -223,7 +223,7 @@ export const ConstructionServiceGrid = ({
               to={cat.slug}
               className="group/link text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body"
             >
-              Explore This Service <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">
+              Explore This Service <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
           </motion.div>
         ))}
@@ -307,7 +307,7 @@ export const ConstructionComparison = ({
 
             <div className="mt-5 pt-4 border-t border-border">
               <Link to={cat.slug} className="group/link text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-                Explore {cat.title} <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">
+                Explore {cat.title} <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </div>
           </motion.div>

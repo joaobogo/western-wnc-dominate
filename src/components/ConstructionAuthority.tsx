@@ -118,7 +118,7 @@ const ConstructionAuthority = () => {
           <ScrollReveal variant="fade">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               </div>
               <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold)/0.6)]">
                 Why Construction
@@ -177,7 +177,7 @@ const ConstructionAuthority = () => {
                 {/* Skill transfer labels */}
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-dark-section-foreground/90 bg-dark-section-foreground/[0.04] px-2 py-0.5">{d.roofingLabel}</span>
-                  <ArrowRight className="w-4 h-4 text-[hsl(var(--highland-gold)/0.75)]" aria-hidden="true">
+                  <ArrowRight className="w-4 h-4 text-[hsl(var(--highland-gold)/0.75)]" aria-hidden="true" />
                   <span className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-[hsl(var(--highland-gold)/0.9)] bg-[hsl(var(--highland-gold)/0.06)] px-2 py-0.5">{d.constructionLabel}</span>
                 </div>
 
@@ -197,7 +197,7 @@ const ConstructionAuthority = () => {
                 "8 WNC Counties",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true">
+                  <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
                   <span className="text-dark-section-foreground/95 text-body-xs font-body font-medium">
                     {item}
                   </span>
@@ -215,13 +215,13 @@ const ConstructionAuthority = () => {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Explore the Construction Division</span>
-                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
               <Link
                 to="/construction/consultation"
                 className="btn btn-secondary btn-md btn-on-dark group"
               >
-                <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true">
+                <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
                 Schedule a Construction Consultation
               </Link>
             </div>

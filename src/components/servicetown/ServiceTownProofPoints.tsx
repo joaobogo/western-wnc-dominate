@@ -34,7 +34,7 @@ const ServiceTownProofPoints = ({ town, serviceLabel, proofNote }: Props) => {
         {points.map(({ icon: Icon, label, body }) => (
           <div key={label} className="flex gap-4">
             <span className="mt-1 shrink-0 w-9 h-9 rounded-sm bg-primary/10 flex items-center justify-center">
-              <Icon className="w-4 h-4 text-primary" aria-hidden="true" >
+              <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
             </span>
             <div>
               <p className="font-heading font-bold text-sm uppercase tracking-wide mb-1">{label}</p>

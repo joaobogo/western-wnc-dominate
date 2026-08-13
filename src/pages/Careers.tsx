@@ -113,7 +113,7 @@ const Careers = () => {
                   <div className="space-y-4">
                     {openRoles.map((role) => (
                       <div key={role} className="flex items-center gap-3 p-4 bg-background border border-border">
-                        <Briefcase className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                        <Briefcase className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                         <span className="text-sm font-heading font-bold text-foreground">{role}</span>
                       </div>
                     ))}
@@ -126,7 +126,7 @@ const Careers = () => {
                     Call our Franklin office directly to discuss current crew openings or subcontracting opportunities.
                   </p>
                   <a href="tel:+18285247773" className="inline-flex items-center gap-3 text-primary font-bold hover:text-[hsl(var(--gold-ink))] transition-colors">
-                    <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
+                    <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                   </a>
                 </div>
               </div>
@@ -178,7 +178,7 @@ const Careers = () => {
                           <div className="relative group cursor-pointer">
                             <input id="f-resume-cv-optional" type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
                             <div className="w-full bg-secondary/30 border border-dashed border-border p-6 text-center group-hover:border-primary/50 transition-colors">
-                              <Upload className="w-6 h-6 text-muted-foreground mx-auto mb-2" aria-hidden="true">
+                              <Upload className="w-6 h-6 text-muted-foreground mx-auto mb-2" aria-hidden="true" />
                               <p className="text-xs text-muted-foreground">Click or drag to upload file</p>
                             </div>
                           </div>
@@ -190,7 +190,7 @@ const Careers = () => {
                         >
                           {isSubmitting ? "Sending..." : (
                             <>
-                              Submit Application <Send className="w-4 h-4" aria-hidden="true">
+                              Submit Application <Send className="w-4 h-4" aria-hidden="true" />
                             </>
                           )}
                         </button>
@@ -204,7 +204,7 @@ const Careers = () => {
                       className="bg-card border border-border p-12 text-center shadow-floating"
                     >
                       <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                        <CheckCircle className="w-6 h-6 text-primary" aria-hidden="true">
+                        <CheckCircle className="w-6 h-6 text-primary" aria-hidden="true" />
                       </div>
                       <h3 className="text-2xl font-heading font-bold mb-4">Application Received</h3>
                       <p className="text-muted-foreground font-body leading-relaxed mb-8">

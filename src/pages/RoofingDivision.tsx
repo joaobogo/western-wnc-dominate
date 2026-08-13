@@ -211,7 +211,7 @@ const RoofingDivision = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-none bg-primary/20 flex items-center justify-center">
-                    <Home className="w-4 h-4 text-primary-foreground" aria-hidden="true">
+                    <Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                   </div>
                   <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">
                     Authority Since 2017
@@ -264,13 +264,13 @@ const RoofingDivision = () => {
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Plan Your Roof With Confidence</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a
                   href="tel:+18285247773"
                   className="btn btn-secondary btn-lg btn-on-dark group"
                 >
-                  <Phone className="w-4 h-4" aria-hidden="true">
+                  <Phone className="w-4 h-4" aria-hidden="true" />
                   (828) 524-7773
                 </a>
               </motion.div>
@@ -367,7 +367,7 @@ const RoofingDivision = () => {
                     <div className="flex-grow" />
 
                     <span className="inline-flex items-center gap-1.5 font-semibold text-sm text-primary group-hover:gap-2.5 transition-all font-body mt-auto">
-                      See {service.title} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                      See {service.title} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </span>
                   </div>
                 </Link>
@@ -399,7 +399,7 @@ const RoofingDivision = () => {
               className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
             >
               Full Gallery
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
           </motion.div>
 
@@ -532,13 +532,13 @@ const RoofingDivision = () => {
                     >
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                       <span className="relative">Let's Protect What Matters Most</span>
-                      <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                      <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                     <a
                       href="tel:+18285247773"
                       className="btn btn-secondary btn-lg btn-on-dark group"
                     >
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true">
+                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
                       (828) 524-7773
                     </a>
                   </div>

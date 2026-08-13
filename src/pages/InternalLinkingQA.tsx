@@ -48,7 +48,7 @@ const AuditCard = ({ item }: { item: QAAuditItem }) => {
           <h3 className="mt-2 text-xl font-heading font-bold text-foreground">{item.name}</h3>
         </div>
         <span className={`inline-flex items-center gap-2 rounded-sm px-3 py-1.5 text-caption font-semibold uppercase tracking-[0.12em] ${style.badge}`}>
-          <Icon className="h-4 w-4" aria-hidden="true"> {style.label}
+          <Icon className="h-4 w-4" aria-hidden="true" /> {style.label}
         </span>
       </div>
 
@@ -117,7 +117,7 @@ const InternalLinkingQA = () => {
                         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{stat.label}</p>
                         <p className="mt-3 text-4xl font-heading font-bold text-foreground">{stat.value}</p>
                       </div>
-                      <Icon className={`h-8 w-8 ${stat.tone}`} aria-hidden="true">
+                      <Icon className={`h-8 w-8 ${stat.tone}`} aria-hidden="true" />
                     </div>
                   </div>
                 );
@@ -127,7 +127,7 @@ const InternalLinkingQA = () => {
             <section className="rounded-sm border border-border bg-card p-6 md:p-8">
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-secondary text-primary">
-                  <Sparkles className="h-4 w-4" aria-hidden="true">
+                  <Sparkles className="h-4 w-4" aria-hidden="true" />
                 </div>
                 <div>
                   <h2 className="text-2xl font-heading font-bold text-foreground">Audit Scope</h2>

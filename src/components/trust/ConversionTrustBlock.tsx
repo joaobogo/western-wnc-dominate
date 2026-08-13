@@ -119,14 +119,14 @@ const ConversionTrustBlock = ({
           />
           <span className="absolute bottom-0 left-0 right-0 bg-foreground/70 text-background text-caption font-body px-3 py-2 flex items-center justify-between gap-2">
             <span>{project.type} — {project.location}</span>
-            <ArrowRight className="w-4 h-4 flex-shrink-0" aria-hidden="true">
+            <ArrowRight className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
           </span>
         </Link>
       )}
 
       <div className="p-5 space-y-4">
         <div className="flex items-start gap-2.5">
-          <Clock className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">
+          <Clock className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
           <p className="text-body-xs font-body font-medium text-foreground leading-relaxed">
             {RESPONSE_PROMISE}
           </p>
@@ -145,7 +145,7 @@ const ConversionTrustBlock = ({
           <figure className="border-t border-border pt-4">
             <div className="flex gap-0.5 mb-2" role="img" aria-label={`${review.ratingValue} out of 5 stars`}>
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               ))}
             </div>
             <blockquote className="text-body-xs font-body leading-relaxed text-foreground/85">

@@ -83,7 +83,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
             animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 400, damping: 15 }}
           >
-            <CheckCircle className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+            <CheckCircle className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
           </motion.div>
           <h4 className="font-heading font-bold text-foreground text-lg mb-2">Check Your Email</h4>
           <p className="text-muted-foreground text-sm mb-5 font-body">Your {g.title} is on its way — along with a few bonus tips for WNC homeowners.</p>
@@ -91,7 +91,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
             type="button"
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-8 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-raised"
           >
-            <Download className="w-4 h-4 relative z-10" aria-hidden="true"> <span className="relative z-10">Check Your Inbox</span>
+            <Download className="w-4 h-4 relative z-10" aria-hidden="true" /> <span className="relative z-10">Check Your Inbox</span>
           </button>
         </motion.div>
       ) : (
@@ -108,11 +108,11 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
           <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-raised tracking-widest uppercase disabled:opacity-60">
             {submitting ? (
               <>
-                <Loader2 className="w-4 h-4 relative z-10 animate-spin" aria-hidden="true"> <span className="relative z-10">Sending…</span>
+                <Loader2 className="w-4 h-4 relative z-10 animate-spin" aria-hidden="true" /> <span className="relative z-10">Sending…</span>
               </>
             ) : (
               <>
-                <Download className="w-4 h-4 relative z-10" aria-hidden="true"> <span className="relative z-10">{g.cta}</span>
+                <Download className="w-4 h-4 relative z-10" aria-hidden="true" /> <span className="relative z-10">{g.cta}</span>
               </>
             )}
           </button>
@@ -129,7 +129,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
               <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-3">
-                <FileText className="w-4 h-4" aria-hidden="true">
+                <FileText className="w-4 h-4" aria-hidden="true" />
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-2">{g.title}</h3>
@@ -156,7 +156,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
           onClick={() => setShowPopup(true)}
           className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-floating"
         >
-          <Download className="w-4 h-4 relative z-10" aria-hidden="true"> <span className="relative z-10">{g.cta}</span>
+          <Download className="w-4 h-4 relative z-10" aria-hidden="true" /> <span className="relative z-10">{g.cta}</span>
         </button>
         <AnimatePresence>
           {showPopup && (
@@ -176,10 +176,10 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
                 onClick={(e) => e.stopPropagation()}
               >
                 <button onClick={() => setShowPopup(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
-                  <X className="w-4 h-4" aria-hidden="true">
+                  <X className="w-4 h-4" aria-hidden="true" />
                 </button>
                 <div className="w-11 h-11 rounded-none bg-primary/8 flex items-center justify-center mb-4">
-                  <Icon className="w-4 h-4 text-primary" aria-hidden="true">
+                  <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-foreground mb-1">{g.title}</h3>
                 <p className="text-caption text-muted-foreground font-body mb-3 uppercase tracking-wide">{g.subtitle}</p>
@@ -204,7 +204,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
   return (
     <div className="bg-secondary border border-border rounded-none p-6 md:p-8">
       <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-3">
-        <Icon className="w-4 h-4" aria-hidden="true">
+        <Icon className="w-4 h-4" aria-hidden="true" />
         <span className="text-caption font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
       </div>
       <h3 className="text-xl font-heading font-bold text-foreground mb-1">{g.title}</h3>

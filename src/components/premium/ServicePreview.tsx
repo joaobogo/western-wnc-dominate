@@ -48,13 +48,13 @@ export const ServicePreview = ({
     return (
       <Link to={href} className={cn("group flex items-center gap-3 py-2.5 px-3 rounded-sm hover:bg-secondary/50 transition-all", className)}>
         <div className={cn("w-8 h-8 rounded-sm flex items-center justify-center flex-shrink-0 transition-colors", styles.iconBg)}>
-          <Icon className={cn("w-4 h-4", styles.iconColor)} aria-hidden="true">
+          <Icon className={cn("w-4 h-4", styles.iconColor)} aria-hidden="true" />
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-heading font-semibold text-foreground truncate">{title}</p>
           <p className="text-caption text-muted-foreground font-body truncate">{description}</p>
         </div>
-        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon flex-shrink-0" aria-hidden="true">
+        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon flex-shrink-0" aria-hidden="true" />
       </Link>
     );
   }
@@ -76,7 +76,7 @@ export const ServicePreview = ({
         <div className="p-6 flex flex-col h-full relative z-10">
           <div className="flex items-center justify-between mb-4">
             <div className={cn("w-10 h-10 rounded-sm flex items-center justify-center transition-colors", styles.iconBg)}>
-              <Icon className={cn("w-5 h-5", styles.iconColor)} aria-hidden="true">
+              <Icon className={cn("w-5 h-5", styles.iconColor)} aria-hidden="true" />
             </div>
             <span className={cn("text-caption font-body font-semibold uppercase tracking-[0.14em] opacity-40 group-hover:opacity-60 transition-opacity", styles.iconColor)}>
               {styles.label}
@@ -85,7 +85,7 @@ export const ServicePreview = ({
           <h4 className="text-base font-heading font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{title}</h4>
           <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-5 flex-grow">{description}</p>
           <span className={cn("inline-flex items-center gap-1.5 font-semibold text-sm font-body group-hover:gap-2.5 transition-all", styles.ctaColor)}>
-            Explore This Service <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true">
+            Explore This Service <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
           </span>
         </div>
       </Link>

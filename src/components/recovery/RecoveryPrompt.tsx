@@ -165,7 +165,7 @@ const RecoveryPrompt = () => {
           aria-label="Close"
           className="absolute right-3 top-3 p-2 text-muted-foreground hover:text-foreground"
         >
-          <X className="w-4 h-4" aria-hidden="true">
+          <X className="w-4 h-4" aria-hidden="true" />
         </button>
 
         {done ? (
@@ -223,7 +223,7 @@ const RecoveryPrompt = () => {
               className="mt-4 inline-flex items-center gap-2 font-body font-semibold text-body-sm text-foreground"
               data-gtm-location="recovery_prompt"
             >
-              <Phone className="w-4 h-4" aria-hidden="true"> Or call {PHONE_DISPLAY}
+              <Phone className="w-4 h-4" aria-hidden="true" /> Or call {PHONE_DISPLAY}
             </a>
           </>
         )}

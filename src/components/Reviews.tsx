@@ -47,7 +47,7 @@ const Reviews = () => {
               <div className="flex items-center gap-3 sm:gap-4">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 sm:w-4 h-4 sm:h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                    <Star key={i} className="w-4 sm:w-4 h-4 sm:h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   ))}
                 </div>
                 <div className="h-5 w-px bg-border hidden sm:block" />
@@ -78,7 +78,7 @@ const Reviews = () => {
                 </span>
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, si) => (
-                    <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                    <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   ))}
                 </div>
               </div>
@@ -121,7 +121,7 @@ const Reviews = () => {
                   </span>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, si) => (
-                      <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                      <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     ))}
                   </div>
                 </div>

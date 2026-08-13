@@ -100,7 +100,7 @@ const BuilderPromoBlock = ({
           <div className="grid md:grid-cols-[1.4fr_1fr] gap-0">
             <div className="p-7 md:p-10">
               <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] text-caption font-semibold uppercase tracking-[0.16em] mb-4">
-                <SlidersHorizontal className="w-4 h-4" aria-hidden="true">
+                <SlidersHorizontal className="w-4 h-4" aria-hidden="true" />
                 {_eyebrow}
               </div>
               <h3 className="font-heading font-bold text-foreground text-heading-sm md:text-heading-sm leading-[1.1] tracking-tight mb-3">
@@ -118,7 +118,7 @@ const BuilderPromoBlock = ({
                     key={label}
                     className="flex items-center gap-2 text-body-xs font-body text-muted-foreground border border-border/60 rounded-sm px-3 py-2 bg-background/60"
                   >
-                    <Icon className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true">
+                    <Icon className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true" />
                     {label}
                   </li>
                   );
@@ -131,7 +131,7 @@ const BuilderPromoBlock = ({
                   className="btn btn-primary btn-md group"
                 >
                   {_cta}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                 </Link>
                 <Link
                   to={_secHref}

@@ -46,7 +46,7 @@ const TwoPillars = () => {
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16 mb-10">
             <div className="flex flex-col items-center gap-2.5">
               <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-1">
-                <Home className="w-6 h-6 text-primary" aria-hidden="true">
+                <Home className="w-6 h-6 text-primary" aria-hidden="true" />
               </div>
               <span className="text-body-xs md:text-base font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
                 Roofing
@@ -57,7 +57,7 @@ const TwoPillars = () => {
             
             <div className="flex flex-col items-center gap-2.5">
               <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.05)] flex items-center justify-center mb-1">
-                <HardHat className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                <HardHat className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               </div>
               <span className="text-body-xs md:text-base font-body font-bold uppercase tracking-[0.2em] text-foreground/95">
                 Construction

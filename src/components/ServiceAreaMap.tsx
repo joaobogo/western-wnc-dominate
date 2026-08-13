@@ -64,7 +64,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             transition={{ duration: 0.4 }}
             className="flex items-center gap-2 mb-4"
           >
-            <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+            <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
             <span className="eyebrow">Local Service Area</span>
           </motion.div>
 
@@ -111,7 +111,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
 
                 <div className="flex items-center gap-2 mb-3">
-                  <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                  <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   <span className="text-caption font-body font-bold uppercase tracking-[0.16em] text-muted-foreground">
                     Primary Hub
                   </span>
@@ -122,7 +122,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                 <p className="text-sm text-muted-foreground font-body mb-5">{area.county}</p>
                 <span className="inline-flex items-center gap-1.5 text-sm font-body font-bold text-primary group-hover:gap-2.5 transition-all">
                   Roofing &amp; Construction
-                  <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </span>
               </Link>
             </motion.div>
@@ -149,9 +149,9 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                     to={area.href!}
                     className="btn btn-secondary btn-sm group"
                   >
-                    <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                    <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     {area.name}, NC
-                    <ArrowRight className="w-4 h-4 opacity-0 -ml-1 group-hover:opacity-70 group-hover:ml-0 transition-all" aria-hidden="true">
+                    <ArrowRight className="w-4 h-4 opacity-0 -ml-1 group-hover:opacity-70 group-hover:ml-0 transition-all" aria-hidden="true" />
                   </Link>
                 </li>
               ))}
@@ -177,14 +177,14 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                       to={area.href}
                       className="btn btn-secondary btn-sm group"
                     >
-                      <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                      <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       {area.name}
                     </Link>
                   </li>
                 ) : (
                   <li key={area.name}>
                     <span className="inline-flex items-center gap-1.5 bg-card/60 border border-border/70 px-3.5 py-2 text-sm font-body font-semibold text-muted-foreground">
-                      <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" aria-hidden="true">
+                      <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" aria-hidden="true" />
                       {area.name}
                     </span>
                   </li>
@@ -212,7 +212,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             className="group inline-flex items-center gap-2 text-sm font-body font-bold text-primary uppercase tracking-wider hover:gap-3 transition-all"
           >
             View Full Service Territory
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
         </div>
       </div>

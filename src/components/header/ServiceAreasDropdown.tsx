@@ -54,7 +54,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
       >
         Service Areas
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.25, ease: HIGHLAND_EASE }} aria-hidden="true">
-          <ChevronDown className="w-4 h-4 opacity-50" aria-hidden="true">
+          <ChevronDown className="w-4 h-4 opacity-50" aria-hidden="true" />
         </motion.div>
       </Link>
 
@@ -117,7 +117,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
                       <span className="text-body-sm font-body font-semibold leading-tight block">{item.label}</span>
                       <span className="text-body-xs font-body text-muted-foreground leading-tight block">{item.county}</span>
                     </span>
-                    <ChevronRight aria-hidden="true" className="w-4 h-4 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" >
+                    <ChevronRight aria-hidden="true" className="w-4 h-4 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
                   </Link>
                 ))}
               </div>
@@ -128,7 +128,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
                   className="flex items-center gap-1.5 px-3 py-3 text-body-xs font-body font-bold rounded-sm transition-colors text-primary hover:bg-primary/5"
                 >
                   All Service Areas
-                  <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true">
+                  <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
                 </Link>
               </div>
             </div>

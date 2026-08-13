@@ -78,7 +78,7 @@ const PaidAdsLanding = ({
                 <span className="sr-only">Highlander Building Services, Inc.</span>
               </span>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/85 hover:text-primary-foreground transition-colors">
-                <Phone className="h-4 w-4" aria-hidden="true">
+                <Phone className="h-4 w-4" aria-hidden="true" />
                 (828) 524-7773
               </a>
             </div>
@@ -100,10 +100,10 @@ const PaidAdsLanding = ({
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.4 }} className="mt-6 hidden flex-wrap gap-3 lg:flex">
                   <a href="#fast-lead-form" className="btn btn-primary btn-md">
                     {ctaLabel}
-                    <ArrowRight className="h-4 w-4" aria-hidden="true">
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                   <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                    <Phone className="h-4 w-4" aria-hidden="true">
+                    <Phone className="h-4 w-4" aria-hidden="true" />
                     Call Direct: 828-524-7773
                   </a>
                 </motion.div>
@@ -142,7 +142,7 @@ const PaidAdsLanding = ({
                   {highlights.map((highlight) => (
                     <div key={highlight} className="border border-border bg-card px-5 py-5 rounded-sm">
                       <div className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary flex-shrink-0" aria-hidden="true">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
                         <p className="text-sm font-body leading-relaxed text-foreground">{highlight}</p>
                       </div>
                     </div>
@@ -153,20 +153,20 @@ const PaidAdsLanding = ({
               <div className="lg:col-span-5">
                 <div className="border border-border bg-secondary/50 px-6 py-6 rounded-sm">
                   <div className="mb-4 flex items-center gap-2 text-primary">
-                    <Star className="h-4 w-4" aria-hidden="true">
+                    <Star className="h-4 w-4" aria-hidden="true" />
                     <span className="text-caption font-body font-semibold uppercase tracking-[0.2em]">Trust Snapshot</span>
                   </div>
                   <blockquote className="font-heading text-xl font-semibold leading-snug text-foreground">
                     “{testimonial.quote}”
                   </blockquote>
                   <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground font-body">
-                    <MapPin className="h-4 w-4 text-primary" aria-hidden="true">
+                    <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
                     {testimonial.name} · {testimonial.location}
                   </div>
                   <div className="mt-6 space-y-3 border-t border-border pt-5">
                     {trustBullets.map((bullet) => (
                       <div key={bullet} className="flex items-start gap-2 text-sm text-muted-foreground font-body">
-                        <Shield className="mt-0.5 h-4 w-4 text-primary flex-shrink-0" aria-hidden="true">
+                        <Shield className="mt-0.5 h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
                         <span>{bullet}</span>
                       </div>
                     ))}
@@ -227,10 +227,10 @@ const PaidAdsLanding = ({
             <div className="flex flex-col gap-3 sm:flex-row">
               <a href="#fast-lead-form" className="btn btn-ghost btn-sm">
                 {ctaLabel}
-                <ArrowRight className="h-4 w-4" aria-hidden="true">
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a href="tel:+18285247773" className="btn btn-secondary btn-sm btn-on-dark">
-                <Phone className="h-4 w-4" aria-hidden="true">
+                <Phone className="h-4 w-4" aria-hidden="true" />
                 Call Direct: 828-524-7773
               </a>
             </div>
@@ -255,7 +255,7 @@ const PaidAdsLanding = ({
               onClick={() => trackPhoneClick({ phone_number: "828-524-7773", link_url: "tel:+18285247773", click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
               className="flex flex-1 items-center justify-center gap-2 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
             >
-              <Phone className="h-4 w-4" aria-hidden="true">
+              <Phone className="h-4 w-4" aria-hidden="true" />
               Call Direct: 828-524-7773
             </a>
             <a

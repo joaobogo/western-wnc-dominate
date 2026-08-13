@@ -35,10 +35,10 @@ export const ConstructionMidCTA = ({
           <Link to={ctaLink} className="btn btn-primary btn-md group relative">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative">{ctaText}</span>
-            <ArrowRight className="w-4 h-4 relative" aria-hidden="true">
+            <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
           </Link>
           <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-            <Phone className="w-4 h-4" aria-hidden="true"> Call Direct
+            <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct
           </a>
         </div>
       </div>
@@ -79,10 +79,10 @@ export const ConstructionClosingCTA = ({
               <Link to={ctaLink} className="btn btn-primary btn-lg group relative">
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">{ctaText}</span>
-                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true"> (828) 524-7773
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" /> (828) 524-7773
               </a>
             </div>
 
@@ -135,7 +135,7 @@ export const ConstructionTrustSidebar = ({ items = defaultItems }: { items?: Tru
     ))}
     <div className="pt-3 border-t border-border">
       <Link to="/consultation" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-        Discuss Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+        Discuss Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
     </div>
   </div>
@@ -188,7 +188,7 @@ export const PlanningCallout = ({
       to={ctaLink}
       className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body"
     >
-      {ctaText} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+      {ctaText} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
     </Link>
   </motion.div>
 );

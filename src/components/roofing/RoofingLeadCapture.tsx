@@ -43,13 +43,13 @@ const CardCapture = ({
         >
           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           <span className="relative">{ctaText}</span>
-          <ArrowRight className="w-4 h-4 relative" aria-hidden="true">
+          <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
         </Link>
         <a
           href="tel:+18285247773"
           className="btn btn-secondary btn-md"
         >
-          <Phone className="w-4 h-4" aria-hidden="true"> Call Direct: 828-524-7773
+          <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct: 828-524-7773
         </a>
       </div>
     </div>
@@ -98,13 +98,13 @@ const EditorialCapture = ({
         >
           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           <span className="relative">{ctaText}</span>
-          <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
+          <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
         </Link>
         <a
           href="tel:+18285247773"
           className="btn btn-secondary btn-lg"
         >
-          <Phone className="w-4 h-4 text-muted-foreground" aria-hidden="true"> (828) 524-7773
+          <Phone className="w-4 h-4 text-muted-foreground" aria-hidden="true" /> (828) 524-7773
         </a>
       </div>
       <div className="w-10 h-px mx-auto mt-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />

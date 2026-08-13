@@ -42,7 +42,7 @@ const RoofDesigner = () => {
         {/* Beta banner */}
         <div className="bg-accent/10 border-b border-accent/20 px-4 py-2 text-center">
           <p className="text-sm text-accent-foreground/80 flex items-center justify-center gap-2">
-            <FlaskConical className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+            <FlaskConical className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
             <span><strong>Beta</strong> — This tool is in early access. Results are approximate.</span>
           </p>
         </div>

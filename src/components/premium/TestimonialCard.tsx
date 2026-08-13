@@ -75,7 +75,7 @@ export const TestimonialCard = ({
         </span>
         <div className="flex gap-0.5">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className={cn("fill-accent text-[hsl(var(--gold-ink))]", isCompact ? "w-2.5 h-2.5" : "w-3.5 h-3.5")} aria-hidden="true">
+            <Star key={i} className={cn("fill-accent text-[hsl(var(--gold-ink))]", isCompact ? "w-2.5 h-2.5" : "w-3.5 h-3.5")} aria-hidden="true" />
           ))}
         </div>
       </div>

@@ -105,7 +105,7 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
             transition={{ duration: 0.4 }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <Sparkles className="w-4 h-4" aria-hidden="true">
+              <Sparkles className="w-4 h-4" aria-hidden="true" />
               Virtual Roof Designer
             </span>
           </motion.div>
@@ -170,7 +170,7 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
               ) : (
                 <>
                   <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Upload className="w-6 h-6 text-primary" aria-hidden="true">
+                    <Upload className="w-6 h-6 text-primary" aria-hidden="true" />
                   </div>
                   <p className="text-xl font-semibold text-foreground mb-2">
                     Upload Your Home Photo
@@ -180,11 +180,11 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <Button size="lg" className="gap-2 cta-gradient text-accent-foreground border-0 font-semibold">
-                      <Image className="w-4 h-4" aria-hidden="true">
+                      <Image className="w-4 h-4" aria-hidden="true" />
                       Choose Photo
                     </Button>
                     <Button size="lg" variant="outline" className="gap-2 sm:flex hidden">
-                      <Camera className="w-4 h-4" aria-hidden="true">
+                      <Camera className="w-4 h-4" aria-hidden="true" />
                       Take Photo
                     </Button>
                   </div>

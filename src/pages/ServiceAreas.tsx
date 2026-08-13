@@ -93,7 +93,7 @@ const ServiceAreas = () => {
                   className="lg:col-span-7"
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
+                    <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <span className="text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Service Areas · Western North Carolina</span>
                   </div>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-display font-heading font-bold text-white mb-6 leading-[1.05] tracking-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.55)]">
@@ -168,7 +168,7 @@ const ServiceAreas = () => {
                     <div className="flex items-start justify-between gap-3 mb-4 flex-wrap">
                       <div className="min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <MapPin className="w-4 h-4 text-primary" aria-hidden="true">
+                          <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
                           <h3 className="font-heading font-bold text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                         </div>
                         <p className="text-muted-foreground text-body-xs font-body font-bold">{town.county}</p>
@@ -185,7 +185,7 @@ const ServiceAreas = () => {
                       ))}
                     </div>
                     <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all font-body">
-                      View {town.name} Services <ArrowRight className="w-4 h-4" aria-hidden="true">
+                      View {town.name} Services <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </span>
                   </Link>
                 </motion.div>
@@ -260,13 +260,13 @@ const ServiceAreas = () => {
                     className="group block bg-card border border-border p-5 hover:border-primary/20 hover:shadow-flat transition-all duration-300"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="w-4 h-4 text-primary/80" aria-hidden="true">
+                      <MapPin className="w-4 h-4 text-primary/80" aria-hidden="true" />
                       <h3 className="font-heading font-semibold text-base text-foreground group-hover:text-primary transition-colors">{town.name}, NC</h3>
                     </div>
                     <p className="text-muted-foreground text-xs font-body mb-3">{town.county}</p>
                     <p className="text-muted-foreground text-body-xs font-body leading-relaxed line-clamp-2 mb-4 font-bold">{town.description.slice(0, 100)}…</p>
                     <span className="inline-flex items-center gap-1 text-primary/70 font-medium text-xs group-hover:gap-2 group-hover:text-primary transition-all font-body">
-                      View Details <ArrowRight className="w-4 h-4" aria-hidden="true">
+                      View Details <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </span>
                   </Link>
                 </motion.div>
@@ -301,13 +301,13 @@ const ServiceAreas = () => {
                   className="btn btn-primary btn-lg group md:text-xl min-w-[320px]"
                 >
                   <span className="relative z-10">Discuss Your Property</span>
-                  <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true">
+                  <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                 </Link>
                 <a
                   href="tel:+18285247773"
                   className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]"
                 >
-                  <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/85 text-sm font-bold uppercase tracking-wider">

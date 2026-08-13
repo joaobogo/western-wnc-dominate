@@ -120,10 +120,10 @@ const ServicePage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="btn btn-primary btn-md">
-                  Request a Consultation <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Request a Consultation <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                  <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
               </div>
             </motion.div>
@@ -148,7 +148,7 @@ const ServicePage = () => {
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">What We Do</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
                 <Link to="/consultation" className="btn btn-primary btn-sm">
-                  Discuss Your Project <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Discuss Your Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
@@ -156,7 +156,7 @@ const ServicePage = () => {
                 <ul className="space-y-3">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle className={`w-5 h-5 mt-0.5 flex-shrink-0 ${theme.checkClass}`} aria-hidden="true">
+                      <CheckCircle className={`w-5 h-5 mt-0.5 flex-shrink-0 ${theme.checkClass}`} aria-hidden="true" />
                       <span className="text-foreground">{feature}</span>
                     </li>
                   ))}
@@ -212,7 +212,7 @@ const ServicePage = () => {
                       </span>
                     </div>
                     <h3 className="font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-                    <span className={`${sTheme.accentClass} text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>Explore This Service <ArrowRight className="w-4 h-4" aria-hidden="true"></span>
+                    <span className={`${sTheme.accentClass} text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>Explore This Service <ArrowRight className="w-4 h-4" aria-hidden="true" /></span>
                   </Link>
                 );
               })}

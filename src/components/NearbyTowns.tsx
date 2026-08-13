@@ -73,10 +73,10 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
             </div>
             <div className="flex flex-col gap-3">
               <Link to={`/service-areas/county/${currentTown.county.toLowerCase().replace(' ', '-')}`} className="text-primary font-heading font-bold text-sm tracking-wide flex items-center gap-2 group border-b border-primary/20 pb-1 hover:text-primary/80 transition-all">
-                {currentTown.county} Overview <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                {currentTown.county} Overview <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
               <Link to="/service-areas" className="text-muted-foreground font-heading font-bold text-caption tracking-[0.1em] flex items-center gap-2 group hover:text-primary transition-all uppercase">
-                All Areas <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                All Areas <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -91,7 +91,7 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
                 className="group p-6 bg-secondary/30 border border-border/50 hover:border-primary/30 transition-all duration-300 flex flex-col h-full"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <MapPin className="w-4 h-4 text-primary/80" aria-hidden="true">
+                  <MapPin className="w-4 h-4 text-primary/80" aria-hidden="true" />
                   <h3 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors">
                     {town.name}
                   </h3>
@@ -100,7 +100,7 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
                   {town.description.split('.')[0]}.
                 </p>
                 <span className="mt-auto text-primary text-body-xs font-heading font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Service Details <ArrowRight className="w-4 h-4" aria-hidden="true">
+                  Service Details <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </span>
               </Link>
             </ScrollReveal>

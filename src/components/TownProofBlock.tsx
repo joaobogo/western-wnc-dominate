@@ -54,7 +54,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
           >
             <div className="border border-border bg-card rounded-sm px-6 py-6 md:px-7 md:py-7 h-full">
               <div className="flex items-center gap-2 mb-5 text-primary">
-                <MapPin className="w-4 h-4" aria-hidden="true">
+                <MapPin className="w-4 h-4" aria-hidden="true" />
                 <span className="font-body text-xs uppercase tracking-[0.18em]">Job Highlights in {town.name}</span>
               </div>
               <div className="space-y-5">
@@ -72,7 +72,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                       )}
                       <div className="flex-1">
                         <div className="flex items-start gap-3">
-                          <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true">
+                          <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
                           <div>
                             <h3 className="font-heading font-semibold text-foreground mb-1">{highlight.title}</h3>
                             <p className="text-sm text-muted-foreground font-body leading-relaxed mb-2">{highlight.summary}</p>
@@ -82,7 +82,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
                                 to={`/projects/${highlight.projectSlug}`}
                                 className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
                               >
-                                View related project <ArrowRight className="w-4 h-4" aria-hidden="true">
+                                View related project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                               </Link>
                             ) : null}
                           </div>
@@ -104,7 +104,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
           >
             <div className="border border-border bg-card rounded-sm px-6 py-6 md:px-7 md:py-7 h-full">
               <div className="flex items-center gap-2 mb-4 text-[hsl(var(--gold-ink))]">
-                <Star className="w-4 h-4" aria-hidden="true">
+                <Star className="w-4 h-4" aria-hidden="true" />
                 <span className="font-body text-xs uppercase tracking-[0.18em]">Town FAQs</span>
               </div>
               <Accordion type="single" collapsible className="space-y-2">
@@ -122,7 +122,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
 
               <div className="mt-6 border border-border rounded-sm px-4 py-4 bg-background/70">
                 <div className="flex items-center gap-2 mb-2 text-primary">
-                  <Shield className="w-4 h-4" aria-hidden="true">
+                  <Shield className="w-4 h-4" aria-hidden="true" />
                   <span className="font-heading font-semibold text-sm">Local planning, not generic scopes.</span>
                 </div>
                 <p className="text-xs text-muted-foreground font-body leading-relaxed">
