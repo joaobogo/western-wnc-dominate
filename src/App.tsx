@@ -8,6 +8,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import UrlNormalizer from "./components/UrlNormalizer";
 import GTMRouteTracker from "./components/GTMRouteTracker";
 import RecoveryPrompt from "./components/recovery/RecoveryPrompt";
+import PaidLandingGate from "./components/system/PaidLandingGate";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LegacyTownRedirect from "./components/LegacyTownRedirect";
 import { initPixels } from "./lib/analytics";
@@ -117,7 +118,9 @@ const App = () => (
           <UrlNormalizer />
           <ScrollToTop />
           <GTMRouteTracker />
-          <RecoveryPrompt />
+          <PaidLandingGate>
+            <RecoveryPrompt />
+          </PaidLandingGate>
           <Suspense fallback={<div className="min-h-dvh bg-background" />}>
             <ErrorBoundary boundary="route">
               <Routes>
@@ -372,13 +375,15 @@ const App = () => (
               </Routes>
             </ErrorBoundary>
           </Suspense>
-          <ErrorBoundary boundary="chatbot" fallback={() => null}>
-            <Suspense fallback={null}>
-              <DeferMount>
-                <ChatbotWidget />
-              </DeferMount>
-            </Suspense>
-          </ErrorBoundary>
+          <PaidLandingGate>
+            <ErrorBoundary boundary="chatbot" fallback={() => null}>
+              <Suspense fallback={null}>
+                <DeferMount>
+                  <ChatbotWidget />
+                </DeferMount>
+              </Suspense>
+            </ErrorBoundary>
+          </PaidLandingGate>
           <ErrorBoundary boundary="consent" fallback={() => null}>
             <Suspense fallback={null}>
               <ConsentBanner />

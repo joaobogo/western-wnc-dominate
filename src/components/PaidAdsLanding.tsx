@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/SEOHead";
 import FastLeadForm from "@/components/FastLeadForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -17,6 +18,12 @@ interface PaidAdsLandingProps {
   headline: string;
   subheadline: string;
   ctaLabel: string;
+  /**
+   * Message match (Prompt 40): the landing headline must repeat the ad promise
+   * word for word. Each ad variant passes `?v=<key>`; unknown keys fall back to
+   * the default headline, so the page can never render arbitrary ad copy.
+   */
+  adVariants?: Record<string, { headline: string; subheadline?: string; ctaLabel?: string }>;
   urgencyOptions: string[];
   trustStats: Array<{ value: string; label: string; detail: string }>;
   highlights: string[];
@@ -34,9 +41,10 @@ const PaidAdsLanding = ({
   heroImage,
   heroAlt,
   eyebrow,
-  headline,
-  subheadline,
-  ctaLabel,
+  headline: defaultHeadline,
+  subheadline: defaultSubheadline,
+  ctaLabel: defaultCtaLabel,
+  adVariants,
   urgencyOptions,
   trustStats,
   highlights,
@@ -45,6 +53,12 @@ const PaidAdsLanding = ({
   testimonial,
   faqs,
 }: PaidAdsLandingProps) => {
+  const [searchParams] = useSearchParams();
+  const variant = adVariants?.[searchParams.get("v") ?? ""];
+  const headline = variant?.headline ?? defaultHeadline;
+  const subheadline = variant?.subheadline ?? defaultSubheadline;
+  const ctaLabel = variant?.ctaLabel ?? defaultCtaLabel;
+
   return (
     <>
       <SEOHead
@@ -92,7 +106,8 @@ const PaidAdsLanding = ({
                   <h1 className="max-w-3xl text-heading-sm font-heading font-bold leading-[1.06] text-primary-foreground md:text-5xl lg:text-6xl">
                     {headline}
                   </h1>
-                  <p className="mt-3 max-w-2xl text-sm font-body leading-relaxed text-primary-foreground md:mt-5 md:text-lg">
+                  {/* Hidden on phones so the form clears the fold; repeated under the form below. */}
+                  <p className="mt-3 hidden max-w-2xl text-sm font-body leading-relaxed text-primary-foreground md:mt-5 md:block md:text-lg">
                     {subheadline}
                   </p>
                 </motion.div>
@@ -125,6 +140,9 @@ const PaidAdsLanding = ({
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.4 }}>
                   <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} />
                 </motion.div>
+                <p className="mt-4 text-sm font-body leading-relaxed text-primary-foreground md:hidden">
+                  {subheadline}
+                </p>
               </div>
             </div>
           </div>
@@ -247,24 +265,16 @@ const PaidAdsLanding = ({
           </div>
         </footer>
 
-        {/* Sticky mobile call bar — one action, always reachable */}
+        {/* Sticky mobile call bar — one action only; the form already sits above the fold. */}
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-4 py-3 backdrop-blur md:hidden">
-          <div className="flex gap-2">
-            <a
+          <a
               href="tel:+18285247773"
               onClick={() => trackPhoneClick({ phone_number: "828-524-7773", link_url: "tel:+18285247773", click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
-              className="flex flex-1 items-center justify-center gap-2 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
+              className="flex w-full items-center justify-center gap-2 bg-primary px-4 py-3 text-base font-semibold text-primary-foreground"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
               Call Direct: 828-524-7773
-            </a>
-            <a
-              href="#fast-lead-form"
-              className="btn btn-secondary btn-sm"
-            >
-              Form
-            </a>
-          </div>
+          </a>
         </div>
       </main>
     </>

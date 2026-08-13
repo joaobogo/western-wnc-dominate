@@ -13,6 +13,18 @@ const RoofRepairAds = () => (
     headline="Roof Repair in Western NC — Local Crews, Fast Leak Answers"
     subheadline="We diagnose the actual source, explain whether repair makes sense, and move quickly when water is getting inside your home."
     ctaLabel="Get My Repair Assessed"
+    adVariants={{
+      leak: {
+        headline: "Roof Leak? Local WNC Crews Can Look Today",
+        subheadline: "Tell us what you are seeing and a Franklin-based advisor calls you back to schedule the leak assessment.",
+        ctaLabel: "Get My Leak Looked At",
+      },
+      emergency: {
+        headline: "Emergency Roof Repair in Western NC",
+        subheadline: "Active water inside? Send the short form or call the office directly and we prioritize the visit.",
+        ctaLabel: "Get Emergency Help",
+      },
+    }}
     urgencyOptions={["Leak happening now", "Within 48 hours", "This week", "Just comparing options"]}
     trustStats={[
       { value: "48hr", label: "Assessment goal", detail: "Same-day for urgent leak calls" },
