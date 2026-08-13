@@ -31,6 +31,8 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import LocalProjectProof from "@/components/trust/LocalProjectProof";
 import RelatedLinks from "@/components/RelatedLinks";
+import ServiceTownProofPoints from "@/components/servicetown/ServiceTownProofPoints";
+import { getServiceTownFAQs } from "@/lib/service-town-faqs";
 import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
 
 // Per-service hero overrides so the same town's services don't all show the
@@ -106,6 +108,7 @@ const ServiceTownPage = ({
     (e) => e.serviceSlug !== serviceSlug,
   );
   const otherTowns = towns.filter((t) => t.slug !== townSlug).slice(0, 4);
+  const faqs = getServiceTownFAQs(town, entry.serviceLabel, entry.faqs);
 
   return (
     <>
@@ -128,7 +131,8 @@ const ServiceTownPage = ({
             { name: entry.serviceLabel, url: resolvedCanonical },
           ]),
           ...(entry.faqs.length
-            ? [faqSchema(entry.faqs.map((f) => ({ question: f.q, answer: f.a })))]
+          ...(faqs.length
+            ? [faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))]
             : []),
         ]}
       />
