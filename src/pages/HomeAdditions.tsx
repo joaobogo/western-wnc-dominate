@@ -15,6 +15,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
@@ -552,14 +553,19 @@ const HomeAdditions = () => {
           className="mt-4"
         />
 
+        {/* CRO Prompt 33 — consultative construction sequence */}
+        <ProjectTypeSelector highlight="addition" />
+        <TimelineExpectations />
+        <BudgetRangeContext scopeLabel="home additions" />
+
         <ConstructionClosingCTA
           headline={"Your Home Has More\nto Give."}
           subheadline="Whether it's a guest suite, a main-level master, or a room you haven't even named yet — let's talk about what your home could become."
           eyebrow="Start Planning"
         />
-        <ServiceInternalLinks title="Home Additions" slug="additions" />
+        <ServiceInternalLinks title="Home Additions" slug="additions" intent="consultation" />
       </main>
-      <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" />
+      <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" primaryTo="/construction/consultation" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

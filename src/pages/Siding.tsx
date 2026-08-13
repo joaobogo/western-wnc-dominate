@@ -186,7 +186,7 @@ const Siding = () => {
             </div>
           </div>
         </section>
-        <ServiceInternalLinks title="Siding & Exterior" slug="siding" />
+        <ServiceInternalLinks title="Siding & Exterior" slug="siding" intent="consultation" />
       </main>
       <TieredOffer context="siding" primaryLabel="Get My Siding Scoped" />
       <CommonConcerns />

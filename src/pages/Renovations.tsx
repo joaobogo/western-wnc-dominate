@@ -15,6 +15,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
+import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import { DesignProgramPromo } from "@/components/construction";
 import VeluxWidget from "@/components/VeluxWidget";
 
@@ -432,14 +433,19 @@ const Renovations = () => {
           className="mt-4"
         />
 
+        {/* CRO Prompt 33 — consultative construction sequence */}
+        <ProjectTypeSelector highlight="renovation" />
+        <TimelineExpectations />
+        <BudgetRangeContext scopeLabel="renovations" />
+
         <ConstructionClosingCTA
           headline={"Your Home Deserves\nBetter Than 'Good Enough.'"}
           subheadline="Whether it's a kitchen that finally works, a bathroom that lasts, or a whole-home renovation done right — let's have a straightforward conversation about what's possible."
           eyebrow="Start Planning"
         />
-        <ServiceInternalLinks title="Renovations" slug="renovations" />
+        <ServiceInternalLinks title="Renovations" slug="renovations" intent="consultation" />
       </main>
-      <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" />
+      <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" primaryTo="/construction/consultation" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

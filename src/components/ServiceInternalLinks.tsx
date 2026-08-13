@@ -8,13 +8,15 @@ import {
 interface ServiceInternalLinksProps {
   title: string;
   slug: string;
+  /** Construction pages lead with a consultation, never a roofing estimate. */
+  intent?: "estimate" | "consultation";
 }
 
 /**
  * Contextual internal-linking block for service pages:
  * related blogs, top town landing pages, and the estimate form.
  */
-const ServiceInternalLinks = ({ title, slug }: ServiceInternalLinksProps) => (
+const ServiceInternalLinks = ({ title, slug, intent = "estimate" }: ServiceInternalLinksProps) => (
   <RelatedLinks
     eyebrow="Keep Exploring"
     heading={`Related reading and local coverage for ${title}`}
@@ -27,7 +29,13 @@ const ServiceInternalLinks = ({ title, slug }: ServiceInternalLinksProps) => (
         href: "/service-areas",
         description: "Every Western North Carolina town we cover.",
       },
-      estimateLink,
+      intent === "consultation"
+        ? {
+            label: "Schedule a Project Consultation",
+            href: "/construction/consultation",
+            description: "A working session on scope, feasibility, and budget range — 828-524-7773.",
+          }
+        : estimateLink,
     ]}
   />
 );

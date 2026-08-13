@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -189,7 +189,12 @@ const stepVariants = {
 
 /* ─── Main Component ─── */
 export default function ConstructionConsultation() {
-  const [form, setForm] = useState<ConstructionFormData>(INITIAL);
+  const [searchParams] = useSearchParams();
+  // CRO Prompt 33 — project-type selector deep-links preselect step one.
+  const presetType = PROJECT_TYPES.some((t) => t.id === searchParams.get("type"))
+    ? (searchParams.get("type") as string)
+    : "";
+  const [form, setForm] = useState<ConstructionFormData>({ ...INITIAL, projectType: presetType });
   const [step, setStep] = useState(0);
   const [direction, setDirection] = useState(1);
   const [submitted, setSubmitted] = useState(false);
