@@ -348,18 +348,18 @@ const CostContextBlock = ({
           <p className="text-body-xs md:text-sm font-body text-muted-foreground mb-5">
             {walkCopy[variant]}
           </p>
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col gap-3">
             <Link
               to={variant === "construction" ? "/construction/consultation" : "/request-inspection"}
               onClick={() => trackEvent("cta_click", { label: "Request a written scope", elementId: "cost-context-scope" })}
-              className="btn btn-primary btn-md"
+              className="btn btn-primary btn-md w-full"
             >
               Get My Written Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
               href="tel:+18285247773"
               onClick={() => trackEvent("phone_click", { label: "Cost context call", elementId: "cost-context-call" })}
-              className="btn btn-secondary btn-md"
+              className="btn btn-secondary btn-md w-full"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> 828-524-7773
             </a>
