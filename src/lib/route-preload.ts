@@ -38,15 +38,38 @@ export function preloadRoute(href: string) {
   routeLoaders[key]().catch(() => warmed.delete(key));
 }
 
-/** Warm the highest-intent next pages once the main thread is free. */
+/**
+ * Warm the highest-intent next pages — but only after the current page has
+ * fully loaded, and one route at a time. Speculative chunks fired during load
+ * compete with the LCP image and the route's own chunk on a throttled mobile
+ * connection, which measurably delays first paint (CRO Prompt 40).
+ */
 export function preloadLikelyRoutes() {
-  const run = () => ["/roofing", "/construction", "/request-inspection"].forEach(preloadRoute);
   if (typeof window === "undefined") return;
+
+  // Respect data saver and slow networks — never speculate on their bandwidth.
+  const conn = (navigator as unknown as {
+    connection?: { saveData?: boolean; effectiveType?: string };
+  }).connection;
+  if (conn?.saveData) return;
+  if (conn?.effectiveType && /2g/.test(conn.effectiveType)) return;
+
+  const queue = ["/roofing", "/construction", "/request-inspection"];
   const idle = (window as unknown as {
     requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => void;
   }).requestIdleCallback;
-  if (idle) idle(run, { timeout: 4000 });
-  else window.setTimeout(run, 2500);
+
+  const next = () => {
+    const href = queue.shift();
+    if (!href) return;
+    preloadRoute(href);
+    // Stagger so the warm-up never saturates the connection in one burst.
+    window.setTimeout(() => (idle ? idle(next, { timeout: 3000 }) : next()), 1200);
+  };
+
+  const start = () => (idle ? idle(next, { timeout: 5000 }) : window.setTimeout(next, 2000));
+  if (document.readyState === "complete") window.setTimeout(start, 1500);
+  else window.addEventListener("load", () => window.setTimeout(start, 1500), { once: true });
 }
 
 /** Spread onto a <Link> to warm its chunk on hover / focus / touch. */
