@@ -1,3 +1,4 @@
+import CTAProofLine from "@/components/trust/CTAProofLine";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useParams, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -126,6 +127,7 @@ const ServicePage = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
               </div>
+              <CTAProofLine tone="dark" align="start" className="mt-4" />
             </motion.div>
           </div>
         </section>
