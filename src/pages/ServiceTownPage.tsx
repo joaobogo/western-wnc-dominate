@@ -177,33 +177,21 @@ const ServiceTownPage = ({
               <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {entry.intro}
               </p>
-              {urgent ? (
-                /* Urgent town+service intent → the call is the primary action (CRO Prompt 12) */
-                <div className="mb-16">
-                  <CallFirstCTA
-                    townName={town.name}
-                    townSlug={town.slug}
-                    location="hero"
-                    secondaryLabel={`Request a ${entry.serviceLabel} Assessment`}
-                    secondaryTo="/consultation"
-                  />
-                </div>
-              ) : (
-              <div className="flex flex-col sm:flex-row gap-5 mb-16" data-gtm-location="hero" data-gtm-town={town.slug}>
-                <Link
-                  to="/consultation"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[300px]"
-                >
-                  Request a {entry.serviceLabel} Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a
-                  href="tel:+18285247773"
-                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/40 transition-all duration-300 shadow-xl min-w-[240px]"
-                >
-                  <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
-                </a>
+              {/* CRO Prompt 32 — call-first CTA in every town+service hero */}
+              <div className="mb-16">
+                <CallFirstCTA
+                  townName={town.name}
+                  townSlug={town.slug}
+                  location="hero"
+                  reason={
+                    urgent
+                      ? undefined
+                      : `Fastest way to get ${entry.serviceLabel.toLowerCase()} in ${town.name} on the schedule.`
+                  }
+                  secondaryLabel={`Request a ${entry.serviceLabel} Assessment`}
+                  secondaryTo="/consultation"
+                />
               </div>
-              )}
             </motion.div>
           </div>
 
