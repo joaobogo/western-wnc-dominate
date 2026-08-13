@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import { trackEvent, setSourceTown } from "@/lib/analytics";
-import { HIGHLAND_EASE, townLinks } from "./nav-data";
+import { HIGHLAND_EASE, primaryTownLinks } from "./nav-data";
 
 interface Props {
   isOpen: boolean;
@@ -83,12 +83,12 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
               <div className="px-5 pt-5 pb-3">
                 <span className="text-base font-heading font-bold text-foreground block">Service Areas</span>
                 <p className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mt-1">
-                  Western North Carolina Mountains
+                  Primary Markets · Western North Carolina
                 </p>
               </div>
               <div className="mx-5 h-px bg-border/60" />
-              <div className="py-2 px-2 grid grid-cols-2 max-h-[60vh] overflow-y-auto">
-                {townLinks.map((item) => (
+              <div className="py-2 px-2 grid grid-cols-2">
+                {primaryTownLinks.map((item) => (
                   <Link
                     key={item.href}
                     to={item.href}
@@ -124,7 +124,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
                   onClick={(e) => onViewAllClick(e, "/service-areas")}
                   className="flex items-center gap-1.5 px-3 py-3 text-body-xs font-body font-bold rounded-sm transition-colors text-primary hover:bg-primary/5"
                 >
-                  View All Service Areas
+                  All Service Areas
                   <ArrowRight className="w-3 h-3 btn-arrow-icon" />
                 </Link>
               </div>
