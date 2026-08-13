@@ -146,7 +146,7 @@ const TownPage = () => {
                 initial={{ opacity: 0, y: 20 }} 
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-lg md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
+                className="text-lg md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md line-clamp-3 md:line-clamp-none"
               >
                 {town.description}
               </motion.p>
@@ -156,7 +156,7 @@ const TownPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                className="mb-10 max-w-2xl border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-body-sm md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
+                className="hidden md:block mb-10 max-w-2xl border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-body-sm md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
               >
                 <span className="font-bold text-[hsl(var(--gold-ink))]">{town.name} reality: </span>
                 {town.climateExposure}
