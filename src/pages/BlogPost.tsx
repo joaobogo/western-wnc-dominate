@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowLeft, ArrowRight, Clock, Calendar, Tag, Mountain, CheckCircle,
-  Quote, Star, Phone, Shield, BookOpen, Lightbulb, MapPin,
+  Quote, Star, BookOpen, Lightbulb, MapPin,
 } from "lucide-react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
