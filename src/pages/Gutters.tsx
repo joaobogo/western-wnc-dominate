@@ -12,6 +12,7 @@ import AttributedReviews from "@/components/trust/AttributedReviews";
 import CTABlock from "@/components/CTABlock";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import RelatedLinks from "@/components/RelatedLinks";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import TieredOffer from "@/components/conversion/TieredOffer";
@@ -55,14 +56,18 @@ const Gutters = () => {
         })}
       />
       <Header />
-      <PageBreadcrumbs
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Roofing", url: "/roofing" },
-          { name: "Gutters", url: "/roofing/gutters" },
-        ]}
-      />
-      <main id="main-content">
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        beforeHero={
+        <PageBreadcrumbs
+          items={[
+            { name: "Home", url: "/" },
+            { name: "Roofing", url: "/roofing" },
+            { name: "Gutters", url: "/roofing/gutters" },
+          ]}
+        />
+        }
+        hero={<>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
@@ -116,12 +121,15 @@ const Gutters = () => {
             </div>
           </div>
         </section>
+        </>}
+        quickAnswer={<>
         <AnswerBlock
           question="What do gutters do on a mountain home, and who needs them?"
           answer="Gutters and downspouts move roof runoff away from the fascia, siding, and foundation. In Western North Carolina, where rainfall is heavy and lots are often sloped, sizing and discharge placement matter as much as the gutter itself. Highlander installs and replaces gutter systems as part of roof and exterior work throughout the region."
           points={["Sizing matched to roof area and local rainfall", "Downspout routing that protects foundations on sloped lots", "Coordinated with roof edge, drip edge, and fascia detail"]}
         />
-
+        </>}
+        whatWeDo={<>
         {/* ─── WHY GUTTERS MATTER IN WNC ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl text-center">
@@ -149,7 +157,8 @@ const Gutters = () => {
             ))}
           </div>
         </section>
-
+        </>}
+        whatsIncluded={<>
         {/* ─── WHAT'S INCLUDED ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
@@ -176,19 +185,24 @@ const Gutters = () => {
             </ul>
           </div>
         </section>
-
-        {/* ─── REQUEST ASSESSMENT ─── */}
+        </>}
+        costContext={<>
         <CostOfWaiting variant="gutters" />
+        <CostContextBlock serviceLabel="gutter" />
+        </>}
+        process={<>
+        <SchedulingReality serviceLabel="gutter" />
+        <InspectionForm />
+        </>}
+        proof={<>
         <TieredOffer context="gutters" primaryLabel="Get My Gutters Assessed" />
         <CommonConcerns />
-        <CostContextBlock serviceLabel="gutter" />
-        <SchedulingReality serviceLabel="gutter" />
         <div className="container-tight pt-16 md:pt-20">
           <AttributedReviews category="roofing" heading="What homeowners say about our gutter work" />
         </div>
-        <InspectionForm />
-
-        {/* ─── FAQS ─── */}
+        <WhoShowsUp />
+        </>}
+        faq={<>
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
@@ -211,10 +225,8 @@ const Gutters = () => {
             </Accordion>
           </div>
         </section>
-
-        <WhoShowsUp />
-
-        <CTABlock />
+        </>}
+        coverage={<>
       <RelatedLinks
           eyebrow="Keep Exploring"
           heading="Related pages you may find useful"
@@ -229,9 +241,13 @@ const Gutters = () => {
           ]}
         />
         <ServiceInternalLinks title="Seamless Gutters" slug="gutters" />
-      </main>
+        </>}
+        cta={<>
+        <CTABlock />
+        <ConversionTrustBlock variant="band" category="roofing" />
+        </>}
+      />
 
-      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>

@@ -14,6 +14,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import StormResponseGuide from "@/components/StormResponseGuide";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 import heroImg from "@/assets/gallery/asphalt-005.webp";
 import heroImgAvif from "@/assets/gallery/asphalt-005.webp?w=640;1024;1600&format=avif&as=srcset";
@@ -167,6 +168,10 @@ const StormDamage = () => {
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Roofing", url: "/roofing" }, { name: "Storm Damage", url: "/roofing/storm-damage" }]} />
       <main id="main-content">
+        <ServicePageTemplate
+          alternateSurfaces={false}
+          hero={
+            <>
         {/* ─── HERO ─── */}
         <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
@@ -238,18 +243,19 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
+            </>
+          }
+          quickAnswer={
+            <>
         <AnswerBlock
           question="What is storm damage roofing work in Western North Carolina?"
           answer="Storm damage work starts with documenting wind, hail, or falling-tree damage, protecting the home from further water intrusion, and then restoring the roof system. In the mountains, damage is often concentrated on exposed slopes and at flashing points rather than spread evenly. Highlander inspects, documents, and repairs storm damage across the region."
           points={["Damage documentation for your insurance claim", "Temporary protection to stop further water intrusion", "Full repair or replacement once scope is set"]}
         />
-
-        {/* ─── EMERGENCY-INTENT: WHAT TO DO RIGHT NOW ─── */}
-        <UrgentActionSteps variant="storm" />
-
-        {/* ─── PHOTO PROOF OF SIMILAR STORM WORK ─── */}
-        <RepairPhotoProof variant="storm" />
-
+            </>
+          }
+          whatWeDo={
+            <>
         {/* ─── OPENING STATEMENT ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
@@ -265,7 +271,6 @@ const StormDamage = () => {
             </motion.div>
           </div>
         </section>
-
         {/* ─── HOW STORM DAMAGE SHOWS UP — Amber-accented urgency cards ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
@@ -293,7 +298,6 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
-
         {/* ─── WHAT TO DO AFTER A STORM ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">
@@ -320,7 +324,6 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
-
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
@@ -341,93 +344,6 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── STORM ASSESSMENT PROCESS ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-              <span className="eyebrow mb-3 block">Our Process</span>
-              <h2 className="section-heading mb-4">How Highlander Assesses<br className="hidden md:block" /> Storm Damage.</h2>
-              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
-                A structured, professional assessment designed to give you — and your insurance company — a complete picture of what happened and what needs to happen next.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {assessmentProcess.map((step, i) => (
-                <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
-                  <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
-                    <step.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.detail}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── INSURANCE SUPPORT ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-5xl">
-            <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
-                <span className="eyebrow mb-3 block">Insurance Support</span>
-                <h2 className="section-heading mb-5">We Document.<br /> You Decide.</h2>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
-                  Filing an insurance claim after storm damage can feel overwhelming. While we are not public adjusters and don't file claims on your behalf, we provide the professional documentation and on-site support that gives your claim the best chance of reflecting the full scope of damage.
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  Our documentation is thorough, accurate, and designed to communicate clearly with insurance adjusters — because we've been through this process hundreds of times with homeowners across the region.
-                </p>
-              </motion.div>
-
-              <div className="lg:col-span-3">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card border border-border rounded-sm p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center">
-                      <FileText className="w-5 h-5 text-primary" />
-                    </div>
-                    <h3 className="font-heading font-bold text-foreground text-lg">What We Provide for Your Claim</h3>
-                  </div>
-                  <ul className="space-y-3.5">
-                    {insurancePoints.map((point) => (
-                      <li key={point} className="flex items-start gap-3">
-                        <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
-                        <span className="text-muted-foreground text-body-xs font-body leading-snug">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-6 pt-5 border-t border-border">
-                    <p className="text-muted-foreground text-xs font-body italic">
-                      Note: Highlander Building Services provides documentation and contractor support for insurance claims. We do not act as public adjusters, and we never recommend filing claims for damage we have not verified.
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── SHORT FORM FOR NON-URGENT CASES ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight max-w-2xl">
-            <div className="mb-6 text-center">
-              <span className="eyebrow mb-3 block">No Active Water Intrusion?</span>
-              <h2 className="section-heading mb-3">Request a Documented Damage Assessment.</h2>
-              <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
-                If nothing is leaking right now, send four quick fields and we'll schedule an
-                inspection with photo documentation for your records or your claim.
-              </p>
-            </div>
-            <FastLeadForm
-              ctaLabel="Get My Damage Assessment"
-              serviceLabel="Storm Damage"
-              urgencyOptions={["Water coming in now", "Within 48 hours", "This week", "Documenting for insurance"]}
-            />
-          </div>
-        </section>
-
         {/* ─── REPAIR VS. REPLACEMENT ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
@@ -493,7 +409,6 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
-
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
@@ -514,7 +429,107 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
+            </>
+          }
+          costContext={
+            <>
+        <CostOfWaiting variant="storm" />
+        <CostContextBlock serviceLabel="storm damage" />
+        <SchedulingReality serviceLabel="storm damage" />
+            </>
+          }
+          process={
+            <>
+        <UrgentActionSteps variant="storm" />
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+              <span className="eyebrow mb-3 block">Our Process</span>
+              <h2 className="section-heading mb-4">How Highlander Assesses<br className="hidden md:block" /> Storm Damage.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
+                A structured, professional assessment designed to give you — and your insurance company — a complete picture of what happened and what needs to happen next.
+              </p>
+            </motion.div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              {assessmentProcess.map((step, i) => (
+                <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
+                  <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
+                    <step.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.detail}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* ─── INSURANCE SUPPORT ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight max-w-5xl">
+            <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
+                <span className="eyebrow mb-3 block">Insurance Support</span>
+                <h2 className="section-heading mb-5">We Document.<br /> You Decide.</h2>
+                <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
+                  Filing an insurance claim after storm damage can feel overwhelming. While we are not public adjusters and don't file claims on your behalf, we provide the professional documentation and on-site support that gives your claim the best chance of reflecting the full scope of damage.
+                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                  Our documentation is thorough, accurate, and designed to communicate clearly with insurance adjusters — because we've been through this process hundreds of times with homeowners across the region.
+                </p>
+              </motion.div>
+
+              <div className="lg:col-span-3">
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card border border-border rounded-sm p-6 md:p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center">
+                      <FileText className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-heading font-bold text-foreground text-lg">What We Provide for Your Claim</h3>
+                  </div>
+                  <ul className="space-y-3.5">
+                    {insurancePoints.map((point) => (
+                      <li key={point} className="flex items-start gap-3">
+                        <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
+                        <span className="text-muted-foreground text-body-xs font-body leading-snug">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 pt-5 border-t border-border">
+                    <p className="text-muted-foreground text-xs font-body italic">
+                      Note: Highlander Building Services provides documentation and contractor support for insurance claims. We do not act as public adjusters, and we never recommend filing claims for damage we have not verified.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* ─── SHORT FORM FOR NON-URGENT CASES ─── */}
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight max-w-2xl">
+            <div className="mb-6 text-center">
+              <span className="eyebrow mb-3 block">No Active Water Intrusion?</span>
+              <h2 className="section-heading mb-3">Request a Documented Damage Assessment.</h2>
+              <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
+                If nothing is leaking right now, send four quick fields and we'll schedule an
+                inspection with photo documentation for your records or your claim.
+              </p>
+            </div>
+            <FastLeadForm
+              ctaLabel="Get My Damage Assessment"
+              serviceLabel="Storm Damage"
+              urgencyOptions={["Water coming in now", "Within 48 hours", "This week", "Documenting for insurance"]}
+            />
+          </div>
+        </section>
+        {/* ─── INTERACTIVE STORM ASSESSMENT ─── */}
+        <StormResponseGuide />
+            </>
+          }
+          proof={
+            <>
+        <RepairPhotoProof variant="storm" />
         {/* ─── TRUST & URGENCY BALANCE ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
@@ -543,10 +558,19 @@ const StormDamage = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* ─── INTERACTIVE STORM ASSESSMENT ─── */}
-        <StormResponseGuide />
-
+        <WhoShowsUp />
+        <TieredOffer context="storm-damage" primaryLabel="Get My Storm Damage Assessed" />
+        <CommonConcerns />
+      <section className="section-padding bg-muted/20">
+        <div className="container-tight">
+          <AttributedReviews category="storm" heading="What homeowners say about our storm damage work" />
+        </div>
+      </section>
+      <ConversionTrustBlock variant="band" category="storm" />
+            </>
+          }
+          faq={
+            <>
         {/* ─── FAQS ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight max-w-4xl">
@@ -571,9 +595,15 @@ const StormDamage = () => {
             </Accordion>
           </div>
         </section>
-
-        <WhoShowsUp />
-
+            </>
+          }
+          coverage={
+            <>
+        <ServiceInternalLinks title="Storm Damage Response" slug="storm-damage" />
+            </>
+          }
+          cta={
+            <>
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} />
@@ -617,20 +647,16 @@ const StormDamage = () => {
             </div>
           </div>
         </section>
-        <ServiceInternalLinks title="Storm Damage Response" slug="storm-damage" />
-      </main>
+            </>
+          }
+          afterCta={
+            <>
       <RealWorkWidget />
-        <CostOfWaiting variant="storm" />
-        <TieredOffer context="storm-damage" primaryLabel="Get My Storm Damage Assessed" />
-        <CommonConcerns />
-        <CostContextBlock serviceLabel="storm damage" />
-        <SchedulingReality serviceLabel="storm damage" />
-      <section className="section-padding bg-muted/20">
-        <div className="container-tight">
-          <AttributedReviews category="storm" heading="What homeowners say about our storm damage work" />
-        </div>
-      </section>
-      <ConversionTrustBlock variant="band" category="storm" />
+            </>
+          }
+        />
+      </main>
+
       <Footer />
       <StickyMobileCTA />
     </>

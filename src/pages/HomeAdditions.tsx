@@ -18,6 +18,7 @@ import { ConstructionClosingCTA } from "@/components/construction/ConstructionSh
 import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import { DesignProgramPromo } from "@/components/construction";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 const heroImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
 const expansionContextImg = "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200";
@@ -127,8 +128,11 @@ const HomeAdditions = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Home Additions", url: "/construction/additions" }]} />
-      <main id="main-content">
-        {/* ─── HERO ─── */}
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        hero={
+          <>
+            {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImg} alt="Home addition project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
@@ -197,13 +201,20 @@ const HomeAdditions = () => {
             </div>
           </div>
         </section>
-        <AnswerBlock
+          </>
+        }
+        quickAnswer={
+          <>
+            <AnswerBlock
           question="What is a home addition, and when does it make sense?"
           answer="A home addition expands the conditioned footprint of a house — a new room, suite, level, or enclosed space — tied structurally and visually into the existing home. It makes sense when a family needs more space but wants to stay in the home and location they already have. Highlander builds additions on mountain properties across Western North Carolina."
           points={["Structural tie-in to the existing home", "Permitting handled for the local jurisdiction", "Roofline, siding, and finishes matched to the original"]}
         />
-
-        {/* ─── OPENING — Design editorial with scope sidebar ─── */}
+          </>
+        }
+        whatWeDo={
+          <>
+            {/* ─── OPENING — Design editorial with scope sidebar ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
@@ -240,8 +251,7 @@ const HomeAdditions = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── WHY HOMEOWNERS BUILD ADDITIONS ─── */}
+            {/* ─── WHY HOMEOWNERS BUILD ADDITIONS ─── */}
         <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
@@ -263,8 +273,11 @@ const HomeAdditions = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── EXPANSION TYPES ─── */}
+          </>
+        }
+        whatsIncluded={
+          <>
+            {/* ─── EXPANSION TYPES ─── */}
         <section className="section-padding bg-background relative overflow-hidden">
           <div className="absolute right-0 top-0 w-1/3 h-full opacity-[0.03] pointer-events-none hidden lg:block">
             <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" alt="Mountain home addition planning" className="w-full h-full object-cover" />
@@ -289,8 +302,7 @@ const HomeAdditions = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── DESIGN CONTINUITY (dark) ─── */}
+            {/* ─── DESIGN CONTINUITY (dark) ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">
@@ -319,55 +331,41 @@ const HomeAdditions = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── MID CTA ─── */}
-        <section className="bg-primary text-primary-foreground tartan-dark">
-          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Thinking about adding on?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">We'll help you evaluate what's possible — structurally, visually, and within your budget.</p>
+          </>
+        }
+        costContext={
+          <>
+            {/* ─── VALUE / ROI CALLOUT ─── */}
+        <section className="bg-background">
+          <div className="container-tight max-w-4xl px-5 md:px-8 py-12 md:py-16">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
+              <div className="md:col-span-2">
+                <span className="eyebrow mb-3 block">Long-Term Value</span>
+                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug">An Addition Is an Investment — Not Just an Expense.</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed font-body">
+                  Well-designed additions typically return 50–70% of cost at resale, with primary suites and functional living spaces at the higher end. But the real return is staying in the home and community you've already invested in — without the disruption, transaction costs, and compromise of moving.
+                </p>
               </div>
-              <div className="flex gap-3 flex-shrink-0">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Schedule a Project Consultation</span>
-                  <ArrowRight className="w-4 h-4 relative" />
-                </Link>
-                <a href="tel:+18285247773" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
-                  <Phone className="w-4 h-4" /> Call Direct
-                </a>
+              <div className="flex flex-col gap-4">
+                <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
+                  <TrendingUp className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" />
+                  <span className="text-2xl font-heading font-bold text-foreground">50–70%</span>
+                  <p className="text-muted-foreground text-xs font-body mt-1">Typical cost recovery at resale</p>
+                </div>
+                <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
+                  <Home className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" />
+                  <span className="text-2xl font-heading font-bold text-foreground">None</span>
+                  <p className="text-muted-foreground text-xs font-body mt-1">No realtor fees, no moving costs, no community disruption</p>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── WHY HIGHLANDER (trust section) ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
-              <span className="eyebrow mb-3 block">Why Highlander</span>
-              <h2 className="section-heading mb-4">What Makes This Different.</h2>
-              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
-                Years of high-elevation roofing experience built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
-              </p>
             </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {whyHighlander.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
-                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
-
-        {/* ─── PLANNING & PERMITTING ─── */}
+          </>
+        }
+        process={
+          <>
+            {/* ─── PLANNING & PERMITTING ─── */}
         <section className="section-padding bg-background/50 relative">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
@@ -397,8 +395,78 @@ const HomeAdditions = () => {
             </div>
           </div>
         </section>
+            {/* ─── PROCESS ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+              <span className="eyebrow mb-3 block">Our Process</span>
+              <h2 className="section-heading mb-4">From Vision to<br className="hidden md:block" /> Move-In Ready.</h2>
+            </motion.div>
 
-        {/* ─── WNC RELEVANCE ─── */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {processSteps.map((step, i) => (
+                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
+                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
+                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
+                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+          </>
+        }
+        proof={
+          <>
+            {/* ─── MID CTA ─── */}
+        <section className="bg-primary text-primary-foreground tartan-dark">
+          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Thinking about adding on?</h3>
+                <p className="text-primary-foreground/85 text-sm font-body">We'll help you evaluate what's possible — structurally, visually, and within your budget.</p>
+              </div>
+              <div className="flex gap-3 flex-shrink-0">
+                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide">
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <span className="relative">Schedule a Project Consultation</span>
+                  <ArrowRight className="w-4 h-4 relative" />
+                </Link>
+                <a href="tel:+18285247773" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
+                  <Phone className="w-4 h-4" /> Call Direct
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+            {/* ─── WHY HIGHLANDER (trust section) ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
+              <span className="eyebrow mb-3 block">Why Highlander</span>
+              <h2 className="section-heading mb-4">What Makes This Different.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
+                Years of high-elevation roofing experience built our construction standards. The same documented process, the same in-house crews, the same warranty — now applied to every addition.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {whyHighlander.map((item, i) => (
+                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
+                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
+                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+            {/* ─── WNC RELEVANCE ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">
@@ -427,31 +495,7 @@ const HomeAdditions = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── PROCESS ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-              <span className="eyebrow mb-3 block">Our Process</span>
-              <h2 className="section-heading mb-4">From Vision to<br className="hidden md:block" /> Move-In Ready.</h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {processSteps.map((step, i) => (
-                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
-                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
-                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── GALLERY ─── */}
+            {/* ─── GALLERY ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
@@ -481,35 +525,22 @@ const HomeAdditions = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* ─── VALUE / ROI CALLOUT ─── */}
-        <section className="bg-background">
-          <div className="container-tight max-w-4xl px-5 md:px-8 py-12 md:py-16">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
-              <div className="md:col-span-2">
-                <span className="eyebrow mb-3 block">Long-Term Value</span>
-                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 leading-snug">An Addition Is an Investment — Not Just an Expense.</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                  Well-designed additions typically return 50–70% of cost at resale, with primary suites and functional living spaces at the higher end. But the real return is staying in the home and community you've already invested in — without the disruption, transaction costs, and compromise of moving.
-                </p>
-              </div>
-              <div className="flex flex-col gap-4">
-                <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
-                  <TrendingUp className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" />
-                  <span className="text-2xl font-heading font-bold text-foreground">50–70%</span>
-                  <p className="text-muted-foreground text-xs font-body mt-1">Typical cost recovery at resale</p>
-                </div>
-                <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
-                  <Home className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" />
-                  <span className="text-2xl font-heading font-bold text-foreground">None</span>
-                  <p className="text-muted-foreground text-xs font-body mt-1">No realtor fees, no moving costs, no community disruption</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ─── FAQs ─── */}
+            <BuilderPromoBlock mode="construction"
+          variant="band"
+          preset="addition"
+          title="Plan Your Addition or Extension"
+          body="Optional guided pathway for homeowners thinking through an addition. Scope, integration with the existing home, planning stage, timing — all in one place, before our first walkthrough."
+          ctaLabel="Build Your Addition Plan"
+        />
+            <WhoShowsUp />
+            <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" primaryTo="/construction/consultation" />
+<CommonConcerns />
+<ConversionTrustBlock variant="band" category="construction" />
+          </>
+        }
+        faq={
+          <>
+            {/* ─── FAQs ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
@@ -533,19 +564,16 @@ const HomeAdditions = () => {
             </Accordion>
           </div>
         </section>
-
-        <BuilderPromoBlock
-          mode="construction"
-          variant="band"
-          preset="addition"
-          title="Plan Your Addition or Extension"
-          body="Optional guided pathway for homeowners thinking through an addition. Scope, integration with the existing home, planning stage, timing — all in one place, before our first walkthrough."
-          ctaLabel="Build Your Addition Plan"
-        />
-
-        <WhoShowsUp />
-
-        {/* ─── CLOSING CTA ─── */}
+          </>
+        }
+        coverage={
+          <>
+            <ServiceInternalLinks title="Home Additions" slug="additions" intent="consultation" />
+          </>
+        }
+        cta={
+          <>
+            {/* ─── CLOSING CTA ─── */}
         <DesignProgramPromo
           heading="Most Additions Start With a Design Phase."
           subheading="Additions involve structural tie-ins, roof transitions, and code-driven layout decisions. Our paid three-phase Design & Consultation Agreement defines the addition before construction pricing is locked in."
@@ -563,11 +591,9 @@ const HomeAdditions = () => {
           subheadline="Whether it's a guest suite, a main-level master, or a room you haven't even named yet — let's talk about what your home could become."
           eyebrow="Start Planning"
         />
-        <ServiceInternalLinks title="Home Additions" slug="additions" intent="consultation" />
-      </main>
-      <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" primaryTo="/construction/consultation" />
-      <CommonConcerns />
-      <ConversionTrustBlock variant="band" category="construction" />
+          </>
+        }
+      />
       <Footer />
       <StickyMobileCTA />
     </>

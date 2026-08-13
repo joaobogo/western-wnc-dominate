@@ -24,6 +24,7 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 const faqs = [
   { q: "Are you a certified VELUX installer?", a: "Yes. Highlander is a VELUX Certified Installer — trained and accredited by VELUX to install their skylights and Sun Tunnels to manufacturer specification. That accreditation is what unlocks VELUX's installation warranty on top of the product warranty." },
@@ -73,192 +74,199 @@ const Skylights = () => {
         })}
       />
       <Header />
-      <PageBreadcrumbs
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Roofing", url: "/roofing" },
-          { name: "Skylights", url: "/roofing/skylights" },
-        ]}
-      />
-      <main id="main-content">
-        {/* Hero */}
-        <section className="relative min-h-[65vh] md:min-h-[80vh] flex items-end overflow-hidden pt-32 md:pt-40 pb-14 md:pb-20">
-          <div className="absolute inset-0">
-            <picture>
-              <source media="(max-width: 767px)" srcSet={skylightsMobileHero} />
-              <img width={1600} height={1067} decoding="async" src={skylightsMobileHero} alt="Interior mountain great room with VELUX skylights and warm sunlight in Western North Carolina" className="w-full h-full object-cover object-center" loading="eager" />
-            </picture>
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.72)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.15)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.55)] via-transparent to-transparent" />
-          </div>
-          <div className="container-tight relative z-10">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-white">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-20 h-20 flex items-center justify-center overflow-hidden bg-white/10 backdrop-blur-sm border border-white/10">
-                  <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        beforeHero={
+          <PageBreadcrumbs
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Roofing", url: "/roofing" },
+              { name: "Skylights", url: "/roofing/skylights" },
+            ]}
+          />
+        }
+        hero={
+          <section className="relative min-h-[65vh] md:min-h-[80vh] flex items-end overflow-hidden pt-32 md:pt-40 pb-14 md:pb-20">
+            <div className="absolute inset-0">
+              <picture>
+                <source media="(max-width: 767px)" srcSet={skylightsMobileHero} />
+                <img width={1600} height={1067} decoding="async" src={skylightsMobileHero} alt="Interior mountain great room with VELUX skylights and warm sunlight in Western North Carolina" className="w-full h-full object-cover object-center" loading="eager" />
+              </picture>
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.72)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.15)]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.55)] via-transparent to-transparent" />
+            </div>
+            <div className="container-tight relative z-10">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-white">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-20 h-20 flex items-center justify-center overflow-hidden bg-white/10 backdrop-blur-sm border border-white/10">
+                    <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
+                  </div>
+                  <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
+                    VELUX Certified Installer
+                  </span>
                 </div>
-                <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
-                  VELUX Certified Installer
-                </span>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-balance">
+                  Skylight Installation & Repair, Done Right.
+                </h1>
+                <p className="text-white/90 max-w-2xl text-base md:text-lg mb-8">
+                  Team-led, VELUX Certified skylight installation across Western NC. Deck-mounted units, Sun Tunnels, and full leak diagnosis — coordinated with the roof system so the warranty actually holds.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                    Request a Skylight Assessment <ArrowRight className="w-5 h-5" />
+                  </Link>
+                  <a href="tel:+18285247773" className="border border-white/40 text-white font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+                    <Phone className="w-5 h-5" /> (828) 524-7773
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        }
+        quickAnswer={
+          <AnswerBlock
+            question="What is skylight installation and replacement?"
+            answer="Skylight work covers installing new units, replacing aging or leaking units, and rebuilding the curb and flashing that keeps them watertight. Most skylight leaks trace back to flashing and surrounding roof detail rather than the glass itself. Highlander installs and replaces skylights as part of roofing projects across Western North Carolina."
+            points={["New installs, replacements, and flashing rebuilds", "Leak diagnosis at the curb and flashing, not guesswork", "Handled together with the surrounding roof system"]}
+          />
+        }
+        whatWeDo={
+          <section className="section-padding bg-muted/20">
+            <div className="container-tight">
+              <div className="max-w-2xl mb-10">
+                <div className="text-[hsl(var(--gold-ink))] text-sm font-semibold uppercase tracking-wider mb-3">Common Skylight Issues</div>
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">What we actually see in the field</h2>
+                <p className="text-muted-foreground">
+                  Most "bad skylight" calls aren't a defective skylight. Here's what's really happening — and how we diagnose it before recommending a replacement.
+                </p>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-balance">
-                Skylight Installation & Repair, Done Right.
-              </h1>
-              <p className="text-white/90 max-w-2xl text-base md:text-lg mb-8">
-                Team-led, VELUX Certified skylight installation across Western NC. Deck-mounted units, Sun Tunnels, and full leak diagnosis — coordinated with the roof system so the warranty actually holds.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-                  Request a Skylight Assessment <ArrowRight className="w-5 h-5" />
-                </Link>
-                <a href="tel:+18285247773" className="border border-white/40 text-white font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
-                  <Phone className="w-5 h-5" /> (828) 524-7773
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-        <AnswerBlock
-          question="What is skylight installation and replacement?"
-          answer="Skylight work covers installing new units, replacing aging or leaking units, and rebuilding the curb and flashing that keeps them watertight. Most skylight leaks trace back to flashing and surrounding roof detail rather than the glass itself. Highlander installs and replaces skylights as part of roofing projects across Western North Carolina."
-          points={["New installs, replacements, and flashing rebuilds", "Leak diagnosis at the curb and flashing, not guesswork", "Handled together with the surrounding roof system"]}
-        />
-
-        {/* What we install */}
-        <section className="section-padding bg-background">
-          <div className="container-tight space-y-6">
-            <div className="space-y-6">
-              <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] text-sm font-semibold uppercase tracking-wider">
-                <Award className="w-4 h-4" /> Manufacturer-Accredited Scope
-              </div>
-              <h2 className="text-2xl md:text-3xl font-heading font-bold">What VELUX Certified installation includes</h2>
-              <p className="text-muted-foreground">
-                A VELUX Certified Installer is trained and accredited by VELUX to install their skylights to spec — flashing kit, underlayment integration, fasteners, and interior shaft all coordinated as one assembly. That's what makes the VELUX installation warranty stick.
-              </p>
-              <ul className="space-y-3">
-                {services.map((f) => (
-                  <li key={f} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
-                    <span className="text-foreground/80">{f}</span>
-                  </li>
+              <div className="grid md:grid-cols-2 gap-6">
+                {issues.map((i) => (
+                  <div key={i.title} className="border border-border rounded-lg p-6 bg-background">
+                    <i.icon className="w-7 h-7 text-[hsl(var(--gold-ink))] mb-3" />
+                    <div className="font-heading font-bold text-lg mb-2">{i.title}</div>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{i.body}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
-          </div>
-        </section>
-
-        {/* Typical issues */}
-        <section className="section-padding bg-muted/20">
-          <div className="container-tight">
-            <div className="max-w-2xl mb-10">
-              <div className="text-[hsl(var(--gold-ink))] text-sm font-semibold uppercase tracking-wider mb-3">Common Skylight Issues</div>
-              <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">What we actually see in the field</h2>
-              <p className="text-muted-foreground">
-                Most "bad skylight" calls aren't a defective skylight. Here's what's really happening — and how we diagnose it before recommending a replacement.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {issues.map((i) => (
-                <div key={i.title} className="border border-border rounded-lg p-6 bg-background">
-                  <i.icon className="w-7 h-7 text-[hsl(var(--gold-ink))] mb-3" />
-                  <div className="font-heading font-bold text-lg mb-2">{i.title}</div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{i.body}</p>
+          </section>
+        }
+        whatsIncluded={
+          <section className="section-padding bg-background">
+            <div className="container-tight space-y-6">
+              <div className="space-y-6">
+                <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] text-sm font-semibold uppercase tracking-wider">
+                  <Award className="w-4 h-4" /> Manufacturer-Accredited Scope
                 </div>
-              ))}
+                <h2 className="text-2xl md:text-3xl font-heading font-bold">What VELUX Certified installation includes</h2>
+                <p className="text-muted-foreground">
+                  A VELUX Certified Installer is trained and accredited by VELUX to install their skylights to spec — flashing kit, underlayment integration, fasteners, and interior shaft all coordinated as one assembly. That's what makes the VELUX installation warranty stick.
+                </p>
+                <ul className="space-y-3">
+                  {services.map((f) => (
+                    <li key={f} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
-
-        {/* VELUX Certification Proof */}
-        <VeluxProof />
-
-        {/* Related services */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Related roofing services</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                { href: "/roofing/roof-replacement", title: "Roof Replacement", desc: "Replace skylights in the same scope as the roof." },
-                { href: "/roofing/roof-repair", title: "Roof Repair", desc: "Targeted flashing and leak repair around penetrations." },
-                { href: "/roofing/metal", title: "Metal Roofing", desc: "Standing seam systems with skylight integration." },
-                { href: "/roofing/storm-damage", title: "Storm Damage", desc: "Hail and impact damage on skylight glazing." },
-                { href: "/roofing/brava-synthetic", title: "Brava / Synthetic", desc: "Premium composite roofs with VELUX integration." },
-                { href: "/roofing", title: "All Roofing Services", desc: "Browse our full roofing division." },
-              ].map((s) => (
-                <Link key={s.href} to={s.href} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
-                  <div className="font-heading font-bold mb-1 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{s.title}</div>
-                  <p className="text-sm text-muted-foreground">{s.desc}</p>
-                </Link>
-              ))}
+          </section>
+        }
+        costContext={<CostContextBlock serviceLabel="skylight" />}
+        process={<SchedulingReality serviceLabel="skylight" />}
+        proof={
+          <>
+            <VeluxProof />
+            <TieredOffer context="skylights" primaryLabel="Get My Skylight Assessed" />
+            <CommonConcerns />
+            <WhoShowsUp />
+            <section className="section-padding bg-muted/20">
+              <div className="container-tight">
+                <AttributedReviews category="roofing" heading="What homeowners say about our skylight work" />
+              </div>
+            </section>
+            <ConversionTrustBlock variant="band" category="roofing" />
+          </>
+        }
+        faq={
+          <section className="section-padding bg-background">
+            <div className="container-tight max-w-3xl">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight FAQs</h2>
+              <Accordion type="single" collapsible>
+                {faqs.map((f, i) => (
+                  <AccordionItem key={i} value={`sk-${i}`}>
+                    <AccordionTrigger className="text-left font-semibold">{f.q}</AccordionTrigger>
+                    <AccordionContent className="text-foreground/80">{f.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
-          </div>
-        </section>
+          </section>
+        }
+        coverage={
+          <>
+            <section className="section-padding bg-background">
+              <div className="container-tight">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Related roofing services</h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {[
+                    { href: "/roofing/roof-replacement", title: "Roof Replacement", desc: "Replace skylights in the same scope as the roof." },
+                    { href: "/roofing/roof-repair", title: "Roof Repair", desc: "Targeted flashing and leak repair around penetrations." },
+                    { href: "/roofing/metal", title: "Metal Roofing", desc: "Standing seam systems with skylight integration." },
+                    { href: "/roofing/storm-damage", title: "Storm Damage", desc: "Hail and impact damage on skylight glazing." },
+                    { href: "/roofing/brava-synthetic", title: "Brava / Synthetic", desc: "Premium composite roofs with VELUX integration." },
+                    { href: "/roofing", title: "All Roofing Services", desc: "Browse our full roofing division." },
+                  ].map((s) => (
+                    <Link key={s.href} to={s.href} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
+                      <div className="font-heading font-bold mb-1 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{s.title}</div>
+                      <p className="text-sm text-muted-foreground">{s.desc}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
 
-        {/* Service areas */}
-        <section className="section-padding bg-muted/20">
-          <div className="container-tight">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight service across the Western NC mountains</h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our 10-county service area in Western North Carolina.</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {towns.map((t) => (
-                <Link
-                  key={t.slug}
-                  to={`/service-areas/${t.slug}`}
-                  className="bg-background border border-border rounded-lg p-4 text-center hover:border-accent/40 hover:shadow transition-all"
-                >
-                  <div className="font-heading font-semibold text-foreground">{t.name}</div>
-                  <p className="text-muted-foreground text-xs mt-1">{t.county}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+            <section className="section-padding bg-muted/20">
+              <div className="container-tight">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight service across the Western NC mountains</h2>
+                <p className="text-muted-foreground mb-8 max-w-2xl">VELUX Certified skylight installation and repair throughout our 10-county service area in Western North Carolina.</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {towns.map((t) => (
+                    <Link
+                      key={t.slug}
+                      to={`/service-areas/${t.slug}`}
+                      className="bg-background border border-border rounded-lg p-4 text-center hover:border-accent/40 hover:shadow transition-all"
+                    >
+                      <div className="font-heading font-semibold text-foreground">{t.name}</div>
+                      <p className="text-muted-foreground text-xs mt-1">{t.county}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
 
-        <VeluxWidget />
-
-        {/* FAQs */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Skylight FAQs</h2>
-            <Accordion type="single" collapsible>
-              {faqs.map((f, i) => (
-                <AccordionItem key={i} value={`sk-${i}`}>
-                  <AccordionTrigger className="text-left font-semibold">{f.q}</AccordionTrigger>
-                  <AccordionContent className="text-foreground/80">{f.a}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
-        <WhoShowsUp />
-
-        <CTABlock />
-      <RelatedLinks
-          eyebrow="Keep Exploring"
-          heading="Related pages you may find useful"
-          columns={2}
-          links={[
-            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
-            { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal panel options" },
-            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Plan a re-roof around your skylights" },
-            { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Roofing and skylight service in Highlands" },
-            { label: "Recent Highlander Projects", href: "/recent-projects", description: "Skylight and roofing project gallery" },
-            { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
-          ]}
-        />
-        <ServiceInternalLinks title="Skylights" slug="skylights" />
-      </main>
-
-        <TieredOffer context="skylights" primaryLabel="Get My Skylight Assessed" />
-        <CommonConcerns />
-        <CostContextBlock serviceLabel="skylight" />
-        <SchedulingReality serviceLabel="skylight" />
-      <section className="section-padding bg-muted/20">
-        <div className="container-tight">
-          <AttributedReviews category="roofing" heading="What homeowners say about our skylight work" />
-        </div>
-      </section>
-      <ConversionTrustBlock variant="band" category="roofing" />
+            <RelatedLinks
+              eyebrow="Keep Exploring"
+              heading="Related pages you may find useful"
+              columns={2}
+              links={[
+                { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+                { label: "Metal Roofing for Mountain Homes", href: "/roofing/metal", description: "Standing seam and metal panel options" },
+                { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Plan a re-roof around your skylights" },
+                { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Roofing and skylight service in Highlands" },
+                { label: "Recent Highlander Projects", href: "/recent-projects", description: "Skylight and roofing project gallery" },
+                { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
+              ]}
+            />
+            <ServiceInternalLinks title="Skylights" slug="skylights" />
+          </>
+        }
+        cta={<CTABlock />}
+        afterCta={<VeluxWidget />}
+      />
       <Footer />
       <StickyMobileCTA />
     </>

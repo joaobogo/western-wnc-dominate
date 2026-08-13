@@ -18,6 +18,7 @@ import { ConstructionClosingCTA } from "@/components/construction/ConstructionSh
 import { ProjectTypeSelector, BudgetRangeContext, TimelineExpectations } from "@/components/construction";
 import { DesignProgramPromo } from "@/components/construction";
 import VeluxWidget from "@/components/VeluxWidget";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 import heroImg from "@/assets/gallery/asphalt-007.webp";
 import proj1 from "@/assets/gallery/asphalt-008.webp";
@@ -109,8 +110,11 @@ const Renovations = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Renovations", url: "/construction/renovations" }]} />
-      <main id="main-content">
-        {/* ─── HERO ─── */}
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        hero={
+          <>
+            {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImg} alt="Home renovation in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
@@ -179,14 +183,22 @@ const Renovations = () => {
             </div>
           </div>
         </section>
-        <AnswerBlock
+          </>
+        }
+        quickAnswer={
+          <>
+            <AnswerBlock
           question="What does a home renovation include?"
           answer="A renovation reworks existing space — kitchens, baths, living areas, or whole-home updates — without necessarily expanding the footprint. Scope can range from finishes to structural changes, mechanical updates, and improved insulation or daylighting. Highlander renovates homes and cabins throughout Western North Carolina."
           points={["Kitchen, bath, and whole-home scopes", "Structural and mechanical changes where needed", "Single team managing the full schedule"]}
         />
 
         {/* ─── OPENING — Lifestyle-focused with warm visual treatment ─── */}
-        <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+          </>
+        }
+        whatWeDo={
+          <>
+            <section className="py-20 md:py-32 bg-background relative overflow-hidden">
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/4 h-2/3 opacity-[0.03] pointer-events-none hidden lg:block">
             <img width={1600} height={1067} loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200" alt="Interior detail" className="w-full h-full object-cover" />
           </div>
@@ -212,8 +224,7 @@ const Renovations = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* ─── RENOVATION GOALS ─── */}
+            {/* ─── RENOVATION GOALS ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
@@ -235,8 +246,11 @@ const Renovations = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── RENOVATION CATEGORIES ─── */}
+          </>
+        }
+        whatsIncluded={
+          <>
+            {/* ─── RENOVATION CATEGORIES ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
@@ -257,8 +271,7 @@ const Renovations = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── FINISH QUALITY (dark) ─── */}
+            {/* ─── FINISH QUALITY (dark) ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">
@@ -289,8 +302,37 @@ const Renovations = () => {
             </div>
           </div>
         </section>
+          </>
+        }
+        process={
+          <>
+            {/* ─── PROCESS ─── */}
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+              <span className="eyebrow mb-3 block">Our Process</span>
+              <h2 className="section-heading mb-4">Renovation,<br className="hidden md:block" /> Systematized.</h2>
+            </motion.div>
 
-        {/* ─── MID CTA ─── */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {processSteps.map((step, i) => (
+                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
+                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
+                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
+                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+          </>
+        }
+        proof={
+          <>
+            {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -311,8 +353,7 @@ const Renovations = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── WHY HIGHLANDER ─── */}
+            {/* ─── WHY HIGHLANDER ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
@@ -336,31 +377,7 @@ const Renovations = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── PROCESS ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-              <span className="eyebrow mb-3 block">Our Process</span>
-              <h2 className="section-heading mb-4">Renovation,<br className="hidden md:block" /> Systematized.</h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {processSteps.map((step, i) => (
-                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
-                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
-                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── GALLERY ─── */}
+            {/* ─── GALLERY ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
@@ -390,15 +407,20 @@ const Renovations = () => {
             </motion.div>
           </div>
         </section>
-
-        <VeluxWidget
-          variant="remodeler"
+            <VeluxWidget variant="remodeler"
           eyebrow="VELUX Certified Installer"
           heading="Add Daylight to Your Remodel"
           description="Browse the VELUX skylight and Sun Tunnel lineup for renovations — then tell us which rooms you want brightened."
         />
-
-        {/* ─── FAQs ─── */}
+            <WhoShowsUp />
+            <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" primaryTo="/construction/consultation" />
+<CommonConcerns />
+<ConversionTrustBlock variant="band" category="construction" />
+          </>
+        }
+        faq={
+          <>
+            {/* ─── FAQs ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
@@ -422,10 +444,16 @@ const Renovations = () => {
             </Accordion>
           </div>
         </section>
-
-        <WhoShowsUp />
-
-        {/* ─── CLOSING CTA ─── */}
+          </>
+        }
+        coverage={
+          <>
+            <ServiceInternalLinks title="Renovations" slug="renovations" intent="consultation" />
+          </>
+        }
+        cta={
+          <>
+            {/* ─── CLOSING CTA ─── */}
         <DesignProgramPromo
           heading="Serious Renovations Start With a Design Phase."
           subheading="Whole-home and multi-room renovations need a coordinated plan, not decisions made on the fly. Our paid Design & Consultation Agreement scopes, draws, and documents the renovation before construction pricing is finalized."
@@ -443,11 +471,9 @@ const Renovations = () => {
           subheadline="Whether it's a kitchen that finally works, a bathroom that lasts, or a whole-home renovation done right — let's have a straightforward conversation about what's possible."
           eyebrow="Start Planning"
         />
-        <ServiceInternalLinks title="Renovations" slug="renovations" intent="consultation" />
-      </main>
-      <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" primaryTo="/construction/consultation" />
-      <CommonConcerns />
-      <ConversionTrustBlock variant="band" category="construction" />
+          </>
+        }
+      />
       <Footer />
       <StickyMobileCTA />
     </>

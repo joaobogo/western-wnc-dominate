@@ -25,6 +25,7 @@ import FinancingTeaser from "@/components/conversion/FinancingTeaser";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 const faqs = [
   { q: "How long does a metal roof last in Western NC?", a: "A properly specified and installed standing seam system is a 40+ year roof. Failures we see in the field are almost always install-detail issues at flashings and terminations — not panel failures." },
@@ -59,195 +60,213 @@ const MetalRoofing = () => {
         })}
       />
       <Header />
-      <PageBreadcrumbs
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Roofing", url: "/roofing" },
-          { name: "Metal Roofing", url: "/roofing/metal" },
-        ]}
-      />
-      <main id="main-content">
-        {/* ─── HERO ─── */}
-        <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
-          <div className="absolute inset-0">
-            <picture>
-              <source media="(max-width: 767px)" srcSet={metalMobileHero} />
-              <img width={1600} height={1067} decoding="async" src={metalImg} alt="Standing seam metal roof on a Western North Carolina mountain home" className="w-full h-full object-cover object-[50%_30%] md:object-center" loading="eager" />
-            </picture>
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.75)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.2)]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.65)] via-transparent to-[hsl(var(--hero-overlay)/0.25)]" />
-          </div>
-
-          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
-          <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2, delay: 0.5 }} />
-
-          <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
-            <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
-                <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-7 h-7 rounded-sm bg-white/10 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-white" /></div>
-                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
-                </Link>
-                <ChevronRight className="w-3 h-3 text-white/90" />
-                <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Metal Roofing</span>
-              </motion.div>
-
-              <div className="overflow-hidden mb-2">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
-                  Metal Roofing Built
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden mb-8">
-                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
-                  for Mountain Weather.
-                </motion.h2>
-              </div>
-
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-white/90 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
-                Standing seam and exposed-fastener metal systems engineered for Western NC elevation, wind, snow load, and rainfall. Specified and installed as a complete system by a team-led, licensed contractor.
-              </motion.p>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
-                  Start Your Metal Roof Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a href="tel:+18285247773" className="bg-white/5 backdrop-blur-sm border border-white/15 text-white font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
-                </a>
-              </motion.div>
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        beforeHero={
+          <PageBreadcrumbs
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Roofing", url: "/roofing" },
+              { name: "Metal Roofing", url: "/roofing/metal" },
+            ]}
+          />
+        }
+        hero={
+          <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-end overflow-hidden">
+            <div className="absolute inset-0">
+              <picture>
+                <source media="(max-width: 767px)" srcSet={metalMobileHero} />
+                <img width={1600} height={1067} decoding="async" src={metalImg} alt="Standing seam metal roof on a Western North Carolina mountain home" className="w-full h-full object-cover object-[50%_30%] md:object-center" loading="eager" />
+              </picture>
+              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.75)] via-[hsl(var(--hero-overlay)/0.45)] to-[hsl(var(--hero-overlay)/0.2)]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.65)] via-transparent to-[hsl(var(--hero-overlay)/0.25)]" />
             </div>
-          </div>
-        </section>
-        <AnswerBlock
-          question="What is metal roofing, and is it right for a Western North Carolina home?"
-          answer="Metal roofing is a long-life roof system — standing seam or exposed-fastener panels — installed as a complete assembly with underlayment, flashing, and trim. It suits Western North Carolina homes that face high wind, heavy rainfall, snow load, and shade-driven moisture at elevation. Highlander installs metal roofs across Franklin, Highlands, Cashiers, Sylva, and the surrounding mountain communities."
-          points={["Standing seam and exposed-fastener systems", "Designed for wind, snow load, and heavy mountain rainfall", "Installed as a full system, not panels alone", "Free on-site assessment before any recommendation"]}
-        />
 
-        <section className="section-padding bg-background">
-          <div className="container-tight grid md:grid-cols-3 gap-6">
-            {[
-              { icon: Shield, title: "Long-life system", body: "Designed as a forever roof — substrate, underlayment, panels, and trims specified together so the warranty actually holds." },
-              { icon: Wind, title: "Wind-rated", body: "Standing seam panels with concealed clips resist uplift across the Highlands Plateau and exposed mountain ridgelines." },
-              { icon: Snowflake, title: "Snow & ice planned", body: "Snow retention designed into the system at walkways, entries, and outdoor living spaces — not bolted on after the fact." },
-            ].map((b) => (
-              <div key={b.title} className="border border-border rounded-lg p-6">
-                <b.icon className="w-8 h-8 text-[hsl(var(--gold-ink))] mb-3" />
-                <div className="font-heading font-bold text-xl mb-2">{b.title}</div>
-                <p className="text-muted-foreground">{b.body}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
+            <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2, delay: 0.5 }} />
 
-        <section className="section-padding bg-muted/20">
-          <div className="container-tight max-w-4xl">
-            <div className="text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">What We Install</span>
-              <h2 className="section-heading mb-4">A Complete Metal Roof<br className="hidden md:block" /> System — Not Just Panels.</h2>
-            </div>
-            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
-              {[
-                "Standing seam metal (concealed fastener) — the premium choice for design-forward mountain homes",
-                "Exposed-fastener metal panels — appropriate for outbuildings and budget-driven projects",
-                "Full ice-and-water shield underlayment, well past code minimum at eaves and valleys",
-                "Snow retention designed for the specific roof, not stocked as a one-size accessory",
-                "Coordinated trim and termination detailing so warranties hold across the full assembly",
-                "ARB submission packages for club community projects",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
-                  <span className="text-foreground/80 font-body leading-relaxed">{f}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+            <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
+              <div className="max-w-3xl">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
+                  <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <div className="w-7 h-7 rounded-sm bg-white/10 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-white" /></div>
+                    <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
+                  </Link>
+                  <ChevronRight className="w-3 h-3 text-white/90" />
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Metal Roofing</span>
+                </motion.div>
 
-        {/* ─── REQUEST ASSESSMENT (full-width, like the rest of the site) ─── */}
-        <TieredOffer context="metal-roofing" primaryLabel="Get My Metal Roof Priced" />
-        <CommonConcerns />
-        <CostContextBlock serviceLabel="metal roofing" />
-        <SchedulingReality serviceLabel="metal roofing" />
-        <div className="container-tight pt-0 pb-8 md:pb-12">
-          <FinancingTeaser serviceLabel="metal roofing" />
-        </div>
-        <div className="container-tight pt-16 md:pt-20">
-          <AttributedReviews category="roofing" heading="What homeowners say about our metal roofing work" />
-        </div>
-        <InspectionForm />
+                <div className="overflow-hidden mb-2">
+                  <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
+                    Metal Roofing Built
+                  </motion.h1>
+                </div>
+                <div className="overflow-hidden mb-8">
+                  <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
+                    for Mountain Weather.
+                  </motion.h2>
+                </div>
 
-        {pairings.length > 0 && (
-          <section className="section-padding bg-background">
-            <div className="container-tight">
-              <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Metal roofing by town</h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {pairings.map((p) => {
-                  const t = getTownBySlug(p.townSlug);
-                  if (!t) return null;
-                  return (
-                    <Link key={p.townSlug} to={`/service-areas/${p.townSlug}/metal-roofing`} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
-                      <div className="text-sm text-[hsl(var(--gold-ink))] mb-1">{t.county}</div>
-                      <div className="font-heading font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors">Metal Roofing in {t.name}, NC</div>
-                    </Link>
-                  );
-                })}
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-base md:text-lg text-white/90 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
+                  Standing seam and exposed-fastener metal systems engineered for Western NC elevation, wind, snow load, and rainfall. Specified and installed as a complete system by a team-led, licensed contractor.
+                </motion.p>
+
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
+                    Start Your Metal Roof Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <a href="tel:+18285247773" className="bg-white/5 backdrop-blur-sm border border-white/15 text-white font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+                    <Phone className="w-4 h-4" /> (828) 524-7773
+                  </a>
+                </motion.div>
               </div>
             </div>
           </section>
-        )}
-
-        {/* ─── FAQS (matches RoofRepair / RoofReplacement) ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight max-w-4xl">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
-              <span className="eyebrow mb-3 block">Metal Roofing FAQs</span>
-              <h2 className="section-heading mb-4">Common Questions About<br className="hidden md:block" /> Metal Roofing.</h2>
-            </motion.div>
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqs.map((f, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
-                  <AccordionItem value={`m-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300">
-                    <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{f.q}</span>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-6 pr-2">
-                      <p className="text-muted-foreground text-sm leading-relaxed font-body">{f.a}</p>
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
+        }
+        quickAnswer={
+          <AnswerBlock
+            question="What is metal roofing, and is it right for a Western North Carolina home?"
+            answer="Metal roofing is a long-life roof system — standing seam or exposed-fastener panels — installed as a complete assembly with underlayment, flashing, and trim. It suits Western North Carolina homes that face high wind, heavy rainfall, snow load, and shade-driven moisture at elevation. Highlander installs metal roofs across Franklin, Highlands, Cashiers, Sylva, and the surrounding mountain communities."
+            points={["Standing seam and exposed-fastener systems", "Designed for wind, snow load, and heavy mountain rainfall", "Installed as a full system, not panels alone", "Free on-site assessment before any recommendation"]}
+          />
+        }
+        whatWeDo={
+          <section className="section-padding bg-background">
+            <div className="container-tight grid md:grid-cols-3 gap-6">
+              {[
+                { icon: Shield, title: "Long-life system", body: "Designed as a forever roof — substrate, underlayment, panels, and trims specified together so the warranty actually holds." },
+                { icon: Wind, title: "Wind-rated", body: "Standing seam panels with concealed clips resist uplift across the Highlands Plateau and exposed mountain ridgelines." },
+                { icon: Snowflake, title: "Snow & ice planned", body: "Snow retention designed into the system at walkways, entries, and outdoor living spaces — not bolted on after the fact." },
+              ].map((b) => (
+                <div key={b.title} className="border border-border rounded-lg p-6">
+                  <b.icon className="w-8 h-8 text-[hsl(var(--gold-ink))] mb-3" />
+                  <div className="font-heading font-bold text-xl mb-2">{b.title}</div>
+                  <p className="text-muted-foreground">{b.body}</p>
+                </div>
               ))}
-            </Accordion>
-          </div>
-        </section>
-
-        <WhoShowsUp />
-
-        <BuilderPromoBlock
-          variant="band"
-          preset="metal_upgrade"
-          title="Configure your standing seam project"
-          body="An optional guided pathway for homeowners upgrading to metal. Specify profile, color direction, snow guards, and mountain-exposure detailing — we use it to prepare a precise on-site assessment."
-          ctaLabel="Build Your Metal Roof Plan"
-        />
-        <CTABlock />
-      <RelatedLinks
-          eyebrow="Keep Exploring"
-          heading="Related pages you may find useful"
-          columns={2}
-          links={[
-            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
-            { label: "Residential Roofing Services", href: "/roofing/residential", description: "Shingle, metal, and cedar options" },
-            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Planning and material selection" },
-            { label: "Metal vs Shingle Roof in Western NC", href: "/blog/metal-vs-shingle-roof-western-nc", description: "How the two materials compare" },
-            { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "Local-climate-first material guide" },
-            { label: "Request an Inspection", href: "/request-inspection", description: "Talk metal specifics with an advisor" }
-          ]}
-        />
-        <ServiceInternalLinks title="Metal Roofing" slug="metal-roofing" />
-      </main>
-
-      <ConversionTrustBlock variant="band" category="roofing" />
+            </div>
+          </section>
+        }
+        whatsIncluded={
+          <section className="section-padding bg-muted/20">
+            <div className="container-tight max-w-4xl">
+              <div className="text-center mb-10 md:mb-14">
+                <span className="eyebrow mb-3 block">What We Install</span>
+                <h2 className="section-heading mb-4">A Complete Metal Roof<br className="hidden md:block" /> System — Not Just Panels.</h2>
+              </div>
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+                {[
+                  "Standing seam metal (concealed fastener) — the premium choice for design-forward mountain homes",
+                  "Exposed-fastener metal panels — appropriate for outbuildings and budget-driven projects",
+                  "Full ice-and-water shield underlayment, well past code minimum at eaves and valleys",
+                  "Snow retention designed for the specific roof, not stocked as a one-size accessory",
+                  "Coordinated trim and termination detailing so warranties hold across the full assembly",
+                  "ARB submission packages for club community projects",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
+                    <span className="text-foreground/80 font-body leading-relaxed">{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        }
+        costContext={
+          <>
+            <CostContextBlock serviceLabel="metal roofing" />
+            <div className="container-tight pt-0 pb-8 md:pb-12">
+              <FinancingTeaser serviceLabel="metal roofing" />
+            </div>
+          </>
+        }
+        process={
+          <>
+            <SchedulingReality serviceLabel="metal roofing" />
+            <InspectionForm />
+          </>
+        }
+        proof={
+          <>
+            <TieredOffer context="metal-roofing" primaryLabel="Get My Metal Roof Priced" />
+            <CommonConcerns />
+            <div className="container-tight pt-16 md:pt-20">
+              <AttributedReviews category="roofing" heading="What homeowners say about our metal roofing work" />
+            </div>
+            <WhoShowsUp />
+            <BuilderPromoBlock
+              variant="band"
+              preset="metal_upgrade"
+              title="Configure your standing seam project"
+              body="An optional guided pathway for homeowners upgrading to metal. Specify profile, color direction, snow guards, and mountain-exposure detailing — we use it to prepare a precise on-site assessment."
+              ctaLabel="Build Your Metal Roof Plan"
+            />
+            <ConversionTrustBlock variant="band" category="roofing" />
+          </>
+        }
+        faq={
+          <section className="section-padding bg-background">
+            <div className="container-tight max-w-4xl">
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
+                <span className="eyebrow mb-3 block">Metal Roofing FAQs</span>
+                <h2 className="section-heading mb-4">Common Questions About<br className="hidden md:block" /> Metal Roofing.</h2>
+              </motion.div>
+              <Accordion type="single" collapsible className="space-y-3">
+                {faqs.map((f, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
+                    <AccordionItem value={`m-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300">
+                      <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
+                        <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{f.q}</span>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-6 pr-2">
+                        <p className="text-muted-foreground text-sm leading-relaxed font-body">{f.a}</p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </motion.div>
+                ))}
+              </Accordion>
+            </div>
+          </section>
+        }
+        coverage={
+          <>
+            {pairings.length > 0 && (
+              <section className="section-padding bg-background">
+                <div className="container-tight">
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">Metal roofing by town</h2>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {pairings.map((p) => {
+                      const t = getTownBySlug(p.townSlug);
+                      if (!t) return null;
+                      return (
+                        <Link key={p.townSlug} to={`/service-areas/${p.townSlug}/metal-roofing`} className="border border-border rounded-lg p-5 hover:border-accent transition-colors group">
+                          <div className="text-sm text-[hsl(var(--gold-ink))] mb-1">{t.county}</div>
+                          <div className="font-heading font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors">Metal Roofing in {t.name}, NC</div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </section>
+            )}
+            <RelatedLinks
+              eyebrow="Keep Exploring"
+              heading="Related pages you may find useful"
+              columns={2}
+              links={[
+                { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+                { label: "Residential Roofing Services", href: "/roofing/residential", description: "Shingle, metal, and cedar options" },
+                { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Planning and material selection" },
+                { label: "Metal vs Shingle Roof in Western NC", href: "/blog/metal-vs-shingle-roof-western-nc", description: "How the two materials compare" },
+                { label: "Best Roofing Materials in Highlands, NC", href: "/blog/best-roofing-materials-highlands-nc", description: "Local-climate-first material guide" },
+                { label: "Request an Inspection", href: "/request-inspection", description: "Talk metal specifics with an advisor" }
+              ]}
+            />
+            <ServiceInternalLinks title="Metal Roofing" slug="metal-roofing" />
+          </>
+        }
+        cta={<CTABlock />}
+      />
       <Footer />
       <StickyMobileCTA />
     </>

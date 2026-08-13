@@ -14,6 +14,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import TieredOffer from "@/components/conversion/TieredOffer";
+import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
 const heroImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
@@ -103,8 +104,11 @@ const CustomConstruction = () => {
       />
       <Header />
       <PageBreadcrumbs items={[{ name: "Home", url: "/" }, { name: "Construction", url: "/construction" }, { name: "Custom Projects", url: "/construction/custom" }]} />
-      <main id="main-content">
-        {/* ─── HERO ─── */}
+      <ServicePageTemplate
+        alternateSurfaces={false}
+        hero={
+          <>
+            {/* ─── HERO ─── */}
         <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
@@ -170,13 +174,20 @@ const CustomConstruction = () => {
             </div>
           </div>
         </section>
-        <AnswerBlock
+          </>
+        }
+        quickAnswer={
+          <>
+            <AnswerBlock
           question="What is custom construction with Highlander?"
           answer="Custom construction covers ground-up builds and major structural projects designed around a specific site, family, and budget. In the mountains, site access, grade, drainage, and exposure shape the build as much as the floor plan does. Highlander manages custom projects across Western North Carolina from planning through completion."
           points={["Ground-up builds and major structural work", "Site, grade, and drainage planned first", "One team accountable from planning to punch list"]}
         />
-
-        {/* ─── OPENING — Premium minimal with gem accent ─── */}
+          </>
+        }
+        whatWeDo={
+          <>
+            {/* ─── OPENING — Premium minimal with gem accent ─── */}
         <section className="py-20 md:py-28 bg-background">
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
@@ -194,8 +205,7 @@ const CustomConstruction = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* ─── PROJECT TYPES (dark) ─── */}
+            {/* ─── PROJECT TYPES (dark) ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">
@@ -224,8 +234,11 @@ const CustomConstruction = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── CUSTOM PLANNING ─── */}
+          </>
+        }
+        whatsIncluded={
+          <>
+            {/* ─── CUSTOM PLANNING ─── */}
         <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
@@ -247,8 +260,7 @@ const CustomConstruction = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── STRUCTURAL & DESIGN (asymmetric) ─── */}
+            {/* ─── STRUCTURAL & DESIGN (asymmetric) ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
@@ -283,8 +295,37 @@ const CustomConstruction = () => {
             </div>
           </div>
         </section>
+          </>
+        }
+        process={
+          <>
+            {/* ─── PROCESS ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+              <span className="eyebrow mb-3 block">Our Process</span>
+              <h2 className="section-heading mb-4">How Custom Projects<br className="hidden md:block" /> Work With Highlander.</h2>
+            </motion.div>
 
-        {/* ─── MID CTA ─── */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {processSteps.map((step, i) => (
+                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
+                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
+                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
+                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+          </>
+        }
+        proof={
+          <>
+            {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -305,8 +346,7 @@ const CustomConstruction = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── COMMUNICATION & OVERSIGHT ─── */}
+            {/* ─── COMMUNICATION & OVERSIGHT ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
           <div className="section-padding">
@@ -335,31 +375,7 @@ const CustomConstruction = () => {
             </div>
           </div>
         </section>
-
-        {/* ─── PROCESS ─── */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
-              <span className="eyebrow mb-3 block">Our Process</span>
-              <h2 className="section-heading mb-4">How Custom Projects<br className="hidden md:block" /> Work With Highlander.</h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-              {processSteps.map((step, i) => (
-                <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
-                  <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-[hsl(var(--highland-gold)/0.1)] transition-colors">{step.number}</span>
-                  <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
-                    <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── GALLERY ─── */}
+            {/* ─── GALLERY ─── */}
         <section className="section-padding bg-background/50 relative">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
@@ -389,8 +405,13 @@ const CustomConstruction = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* ─── FAQs ─── */}
+            <WhoShowsUp />
+            <ConversionTrustBlock variant="band" category="construction" />
+          </>
+        }
+        faq={
+          <>
+            {/* ─── FAQs ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
@@ -414,18 +435,20 @@ const CustomConstruction = () => {
             </Accordion>
           </div>
         </section>
-
-        <WhoShowsUp />
-
-        {/* ─── CLOSING CTA ─── */}
+          </>
+        }
+        cta={
+          <>
+            {/* ─── CLOSING CTA ─── */}
         <ConstructionClosingCTA
           headline={"The Right Builder Makes\nAll the Difference."}
           subheadline="If your project demands precision, coordination, and craft quality that goes beyond standard construction — let's talk about whether Highlander is the right team for the job."
           eyebrow="Start the Conversation"
         />
         <TieredOffer context="custom-construction" primaryLabel="Get My Custom Build Planned" primaryTo="/construction-intake" />
-      </main>
-      <ConversionTrustBlock variant="band" category="construction" />
+          </>
+        }
+      />
       <Footer />
       <StickyMobileCTA />
     </>
