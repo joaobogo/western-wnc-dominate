@@ -36,6 +36,7 @@ import UrgentActionSteps from "@/components/emergency/UrgentActionSteps";
 import InsuranceDocHelp from "@/components/emergency/InsuranceDocHelp";
 import RepairPhotoProof from "@/components/emergency/RepairPhotoProof";
 import FastLeadForm from "@/components/FastLeadForm";
+import HeroTrustLine from "@/components/hero/HeroTrustLine";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -141,20 +142,16 @@ const RoofRepair = () => {
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Repair</span>
               </motion.div>
 
-              <div className="overflow-hidden mb-2">
+              <div className="overflow-hidden mb-3 md:mb-4">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
-                  Roof Leaking?
+                  Roof Repair Across{" "}
+                  <span className="text-[hsl(var(--gold-ink))]">Western NC</span>
                 </motion.h1>
-                <PageContext division="Roofing Division" area="Western North Carolina" tone="dark" className="mt-4" />
-              </div>
-              <div className="overflow-hidden mb-4 md:mb-8">
-                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
-                  We Find the Real Cause.
-                </motion.h2>
+                <PageContext division="Roofing Division" area="Western North Carolina" tone="dark" className="mt-3" />
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-5 md:mb-10 leading-snug md:leading-relaxed font-body font-medium drop-shadow-sm">
-                Water stains, missing shingles, or a drip you can&apos;t trace — call and a local crew inspects the roof, shows you photos of what failed, and gives you a written repair scope and price before anything is touched. Serving Franklin, Highlands, Cashiers, Sylva and Western North Carolina.
+                We find the real cause, show you photos of the failure, and price the repair in writing first.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
@@ -167,8 +164,10 @@ const RoofRepair = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
+              <HeroTrustLine className="mt-4 md:mt-6" />
+
               {/* One-line reason to call instead of writing (CRO Prompt 12) */}
-              <p className="mt-3 text-body-xs md:text-body-xs font-body text-white/80 max-w-xl leading-snug">
+              <p className="hidden md:block mt-3 text-body-xs md:text-body-xs font-body text-white/80 max-w-xl leading-snug">
                 An active leak can&apos;t wait on email — call and we&apos;ll triage the roof on the phone and get an inspection on the schedule.
               </p>
 
@@ -177,7 +176,7 @@ const RoofRepair = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 1.5 }}
-                className="mt-10 flex items-center gap-4"
+                className="mt-10 hidden md:flex items-center gap-4"
               >
                 <div className="w-12 h-12 rounded-full border-2 border-[hsl(var(--heritage-green)/0.4)] flex items-center justify-center">
                   <Clock className="w-5 h-5 text-[hsl(var(--heritage-green))]" />

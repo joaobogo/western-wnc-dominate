@@ -34,6 +34,7 @@ import VeluxWidget from "@/components/VeluxWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import RoofingPathFinder from "@/components/roofing/RoofingPathFinder";
+import HeroTrustLine from "@/components/hero/HeroTrustLine";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -358,7 +359,7 @@ const RoofingDivision = () => {
                 transition={{ duration: 0.7, delay: 1 }}
                 className="order-2 md:order-none text-body-sm md:text-body-lg text-primary-foreground/90 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
               >
-                <span className="md:hidden">Wind, ice, and ridgeline exposure end mountain roofs early. We inspect, spec the right system, and put scope and price in writing first.</span>
+                <span className="md:hidden">We inspect, spec the right system for your elevation, and put scope and price in writing first.</span>
                 <span className="hidden md:inline">Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed ShingleMaster credentialed, licensed, and insured.</span>
               </motion.p>
 
@@ -384,6 +385,8 @@ const RoofingDivision = () => {
                   (828) 524-7773
                 </a>
               </motion.div>
+
+              <HeroTrustLine className="order-3 md:order-none mt-4 md:mt-6" />
             </div>
           </div>
         </section>
