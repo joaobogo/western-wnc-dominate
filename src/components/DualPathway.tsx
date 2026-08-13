@@ -222,30 +222,43 @@ const DivisionCard = ({ data, accent, index }: {
         <h3 className="text-xl md:text-heading-sm font-heading font-bold text-foreground mb-3 leading-tight tracking-tight">
           {data.title}
         </h3>
-        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-7 font-bold">
-          {data.description}
+
+        {/* One-sentence promise — the only prose in the card */}
+        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-7 font-bold text-pretty">
+          {data.promise}
         </p>
 
-        {/* Service grid — 2 columns */}
-        <div className="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-8 flex-1">
-          {data.services.map((service, si) => (
-            <motion.div
-              key={service.name}
+        {/* Three sub-links, scoped to this division only */}
+        <ul className="mb-8 flex-1 divide-y divide-border/70 border-y border-border/70">
+          {data.links.map((link, si) => (
+            <motion.li
+              key={link.href}
               initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.35 + index * 0.1 + si * 0.04, duration: 0.3, ease: HIGHLAND_EASE }}
-              className="flex items-center gap-2 group/item"
+              transition={{ delay: 0.35 + index * 0.1 + si * 0.06, duration: 0.3, ease: HIGHLAND_EASE }}
             >
-              <service.icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors duration-200 ${
-                isGold ? "text-[hsl(var(--highland-gold)/0.9)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/80 group-hover/item:text-primary/70"
-              }`} />
-              <span className="text-body-xs md:text-body-sm text-foreground/80 font-body font-bold leading-tight">
-                {service.name}
-              </span>
-            </motion.div>
+              <Link
+                to={link.href}
+                className="group/item flex items-center justify-between gap-4 py-3 min-h-[48px] transition-colors"
+              >
+                <span className="flex flex-col">
+                  <span className={`font-body font-bold text-body-sm md:text-base leading-tight text-foreground transition-colors ${
+                    isGold ? "group-hover/item:text-[hsl(var(--highland-gold))]" : "group-hover/item:text-primary"
+                  }`}>
+                    {link.name}
+                  </span>
+                  <span className="text-body-xs font-body text-muted-foreground leading-tight mt-0.5">
+                    {link.note}
+                  </span>
+                </span>
+                <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-transform group-hover/item:translate-x-1 ${
+                  isGold ? "text-[hsl(var(--highland-gold))]" : "text-primary"
+                }`} />
+              </Link>
+            </motion.li>
           ))}
-        </div>
+        </ul>
 
         {/* CTA */}
         <Link
