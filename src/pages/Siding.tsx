@@ -75,10 +75,10 @@ const Siding = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="btn btn-primary btn-md group">
-                  Request a Siding Quote <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  Request a Siding Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                  <Phone className="w-5 h-5 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 524-7773
+                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true"> (828) 524-7773
                 </a>
               </div>
             </motion.div>
@@ -107,7 +107,7 @@ const Siding = () => {
                     "Soffit, fascia, and decorative millwork",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" aria-hidden="true">
                       <span className="text-foreground/80 font-medium">{item}</span>
                     </li>
                   ))}
@@ -121,11 +121,11 @@ const Siding = () => {
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
-                      <Droplets className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-2" />
+                      <Droplets className="w-4 h-4 text-[hsl(var(--gold-ink))] mb-2" aria-hidden="true">
                       <div className="text-caption font-bold uppercase tracking-wider">Moisture Proof</div>
                     </div>
                     <div className="p-4 bg-background border border-border group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors">
-                      <Wind className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-2" />
+                      <Wind className="w-4 h-4 text-[hsl(var(--gold-ink))] mb-2" aria-hidden="true">
                       <div className="text-caption font-bold uppercase tracking-wider">Wind Rated</div>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ const Siding = () => {
                 <details key={qa.q} className="group py-5">
                   <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
                     <span className="font-heading font-bold text-foreground text-base md:text-lg leading-snug group-hover:text-primary transition-colors">{qa.q}</span>
-                    <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-1 rotate-90 group-open:-rotate-90 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1 rotate-90 group-open:-rotate-90 transition-transform" aria-hidden="true">
                   </summary>
                   <p className="text-muted-foreground font-body leading-relaxed mt-3 pr-10">{qa.a}</p>
                 </details>
@@ -172,10 +172,10 @@ const Siding = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/consultation" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-5 h-5" />
+                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true">
               </Link>
               <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-5 h-5" /> Call (828) 524-7773
+                <Phone className="w-4 h-4" aria-hidden="true"> Call (828) 524-7773
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-10 text-sm">

@@ -138,7 +138,7 @@ export const BlogInsights = () => {
             className="group inline-flex items-center gap-2.5 font-heading font-bold text-body-sm tracking-wide text-dark-section-foreground/95 hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
           >
             Browse All Articles
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
           </Link>
           <p className="text-body-xs text-dark-section-foreground/95 font-body font-bold mt-2">
             Roofing education · Construction insights · WNC weather & building updates
@@ -214,11 +214,11 @@ const FeaturedCard = ({ post }: { post: PostWithCategory }) => {
           {/* Bottom row */}
           <div className="flex items-center justify-between mt-auto pt-5 border-t border-dark-section-foreground/[0.06]">
             <div className="flex items-center gap-1.5 text-dark-section-foreground/90 text-xs font-body">
-              <Clock className="w-3 h-3" />
+              <Clock className="w-4 h-4" aria-hidden="true">
               {post.readTime} read
             </div>
             <span className="inline-flex items-center gap-2 text-[hsl(var(--highland-gold)/0.7)] font-heading font-bold text-body-xs tracking-wide group-hover:text-[hsl(var(--gold-ink))] group-hover:gap-3 transition-all duration-300">
-              Read Article <ArrowRight className="w-3.5 h-3.5" />
+              Read Article <ArrowRight className="w-4 h-4" aria-hidden="true">
             </span>
           </div>
         </div>
@@ -264,7 +264,7 @@ const SecondaryCard = ({ post, index }: { post: PostWithCategory; index: number 
 
           <div className="flex items-center justify-between mt-auto pt-3 border-t border-dark-section-foreground/[0.05]">
             <span className="text-dark-section-foreground/20 text-caption font-body">{post.readTime}</span>
-            <ArrowRight className="w-3 h-3 text-dark-section-foreground/15 group-hover:text-[hsl(var(--highland-gold)/0.6)] group-hover:translate-x-0.5 transition-all duration-300" />
+            <ArrowRight className="w-4 h-4 text-dark-section-foreground/15 group-hover:text-[hsl(var(--highland-gold)/0.6)] group-hover:translate-x-0.5 transition-all duration-300" aria-hidden="true">
           </div>
         </div>
       </Link>

@@ -99,7 +99,7 @@ const ProjectPathfinder = () => {
                       <h3 className="font-heading font-bold text-foreground text-xl mb-2 group-hover:text-primary transition-colors">{opt.title}</h3>
                       <p className="text-muted-foreground text-sm font-body">{opt.desc}</p>
                       <div className="mt-5 flex items-center gap-1.5 text-primary text-sm font-semibold">
-                        Select <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        Select <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                       </div>
                     </button>
                   ))}
@@ -117,7 +117,7 @@ const ProjectPathfinder = () => {
               <motion.div key={step} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.35, ease: EASE }}>
                 <div className="flex items-center justify-between mb-6">
                   <button onClick={reset} className="flex items-center gap-1.5 text-sm font-body text-muted-foreground hover:text-foreground transition-colors">
-                    <ArrowLeft className="w-3.5 h-3.5" /> Back
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true"> Back
                   </button>
                   <span className="text-xs font-body font-semibold uppercase tracking-[0.15em] text-primary/80">
                     {step === "roofing" ? "Roofing Services" : "Construction Services"}
@@ -155,7 +155,7 @@ const ProjectPathfinder = () => {
                 <div className="bg-card border border-border rounded-sm overflow-hidden">
                   <div className="p-6 md:p-8 border-b border-border">
                     <div className="flex items-center gap-2 mb-4">
-                      <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                      <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                       <span className="text-caption font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))]">Recommended For You</span>
                     </div>
                     <h3 className="font-heading font-bold text-foreground text-2xl mb-3">{result.title}</h3>
@@ -165,7 +165,7 @@ const ProjectPathfinder = () => {
                     <div className="flex flex-wrap gap-3 mb-6">
                       {result.highlights.map((h) => (
                         <span key={h} className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-muted-foreground bg-background border border-border rounded-sm px-3 py-1.5">
-                          <CheckCircle className="w-3 h-3 text-primary/80" /> {h}
+                          <CheckCircle className="w-4 h-4 text-primary/80" aria-hidden="true"> {h}
                         </span>
                       ))}
                     </div>
@@ -173,7 +173,7 @@ const ProjectPathfinder = () => {
                       <Link to={result.href} className="btn btn-primary btn-md group relative">
                         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                         <span className="relative">{result.cta}</span>
-                        <ArrowRight className="w-4 h-4 relative" />
+                        <ArrowRight className="w-4 h-4 relative" aria-hidden="true">
                       </Link>
                       <Link to="/consultation" className="btn btn-secondary btn-md">
                         Request a Consultation
@@ -182,7 +182,7 @@ const ProjectPathfinder = () => {
                   </div>
                 </div>
                 <button onClick={reset} className="mx-auto mt-6 flex items-center gap-1.5 text-sm font-body text-muted-foreground hover:text-foreground transition-colors">
-                  <ArrowLeft className="w-3.5 h-3.5" /> Start Over
+                  <ArrowLeft className="w-4 h-4" aria-hidden="true"> Start Over
                 </button>
               </motion.div>
             )}

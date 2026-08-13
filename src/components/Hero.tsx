@@ -163,7 +163,7 @@ const Hero = () => {
           <div className="flex flex-col items-center gap-2">
             <div className="w-px h-20 bg-gradient-to-b from-transparent to-primary-foreground/15" />
             <div className="w-7 h-7 rounded-none border border-primary-foreground/10 flex items-center justify-center">
-              <Home className="w-3 h-3 text-primary-foreground/90" />
+              <Home className="w-4 h-4 text-primary-foreground/90" aria-hidden="true">
             </div>
             <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
               Roofing
@@ -175,7 +175,7 @@ const Hero = () => {
               Construction
             </span>
             <div className="w-7 h-7 rounded-none border border-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center">
-              <HardHat className="w-3 h-3 text-[hsl(var(--highland-gold)/0.75)]" />
+              <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.75)]" aria-hidden="true">
             </div>
             <div className="w-px h-20 bg-gradient-to-b from-primary-foreground/15 to-transparent" />
           </div>
@@ -194,7 +194,7 @@ const Hero = () => {
               <div
                 className="flex items-center gap-1.5 md:gap-2 px-2 md:px-3 py-1 md:py-1.5 bg-black/50 backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] rounded-sm"
               >
-                <Mountain className="w-2.5 h-2.5 md:w-3 md:h-3 text-[hsl(var(--highland-gold)/0.85)]" />
+                <Mountain className="w-4 h-4 md:w-3 md:h-3 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true">
                 <span className="text-caption md:text-body-sm font-body font-bold uppercase tracking-[0.16em] md:tracking-[0.3em] text-[hsl(var(--gold-ink))]">
                    Western North Carolina · Since 2017
                  </span>
@@ -254,14 +254,14 @@ const Hero = () => {
                 <span className="relative">
                   {heroCta.pick("Request an Estimate", "See What My Roof Needs")}
                 </span>
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative group-hover:translate-x-1.5 transition-transform" aria-hidden="true">
               </Link>
               <a
                 href="tel:+18285247773"
                 aria-label="Call Highlander Building Services at 828-524-7773"
                 className="btn btn-secondary btn-lg btn-on-dark group md:border-2 md:text-base md:px-12 md:py-5 md:min-h-[60px] whitespace-nowrap"
               >
-                <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--gold-ink))]" />
+                <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                 <span className="md:hidden">Call · (828) 524-7773</span>
                 <span className="hidden md:inline">Call Highlander · (828) 524-7773</span>
               </a>
@@ -351,17 +351,17 @@ const Hero = () => {
                 className="hidden md:flex items-center gap-3"
               >
                 <div className="flex items-center gap-1.5">
-                  <Home className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
+                  <Home className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                   <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Roofing</span>
                 </div>
                 <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.7)]" />
                 <div className="flex items-center gap-1.5">
-                  <HardHat className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
+                  <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                   <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Construction</span>
                 </div>
                 <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.7)]" />
                 <div className="flex items-center gap-1.5">
-                  <Ruler className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
+                  <Ruler className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                   <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Design</span>
                 </div>
               </motion.div>

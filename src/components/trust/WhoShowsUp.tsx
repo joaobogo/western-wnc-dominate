@@ -132,7 +132,7 @@ const WhoShowsUp = ({
 
             <div className={`grid sm:grid-cols-3 gap-4 p-5 rounded-sm border ${cardBg} ${border}`}>
               <div className="flex items-start gap-3">
-                <UserCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
+                <UserCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true">
                 <div>
                   <p className={`text-body-xs font-heading font-bold ${textMain}`}>
                     One named contact
@@ -143,7 +143,7 @@ const WhoShowsUp = ({
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
+                <MapPin className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true">
                 <div>
                   <p className={`text-body-xs font-heading font-bold ${textMain}`}>
                     Western NC crews
@@ -154,7 +154,7 @@ const WhoShowsUp = ({
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Users className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
+                <Users className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true">
                 <div>
                   <p className={`text-body-xs font-heading font-bold ${textMain}`}>
                     Owner-led
@@ -173,7 +173,7 @@ const WhoShowsUp = ({
                   className="group inline-flex items-center gap-2 text-sm font-heading font-bold text-primary hover:text-primary/80 transition-colors"
                 >
                   Meet the Highlander team
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </Link>
                 <span className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground/40" />
                 <a
@@ -181,7 +181,7 @@ const WhoShowsUp = ({
                   className="inline-flex items-center gap-2 text-sm font-heading font-bold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors"
                   aria-label="Call Highlander Building Services at 828-524-7773"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4" aria-hidden="true">
                   (828) 524-7773
                 </a>
               </div>

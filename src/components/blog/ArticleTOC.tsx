@@ -39,7 +39,7 @@ const ArticleTOC = ({ items }: { items: TocItem[] }) => {
       className="hidden lg:block bg-card border border-border rounded-sm p-5"
     >
       <div className="flex items-center gap-2 mb-3">
-        <List className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
+        <List className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" >
         <h2 className="font-heading font-semibold text-sm text-foreground">In This Article</h2>
       </div>
       <div className="space-y-0.5">

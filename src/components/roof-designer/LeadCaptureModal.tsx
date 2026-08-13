@@ -120,7 +120,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
         <DialogContent className="sm:max-w-md">
           <div className="text-center py-6">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="w-8 h-8 text-primary" />
+              <CheckCircle className="w-6 h-6 text-primary" aria-hidden="true">
             </div>
             <DialogHeader>
               <DialogTitle className="text-2xl mb-2">Your Design Is Saved!</DialogTitle>
@@ -131,12 +131,12 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
 
             <div className="space-y-3 mt-6">
               <Button onClick={handleDownload} variant="outline" className="w-full gap-2">
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4" aria-hidden="true">
                 Download Preview Image
               </Button>
               <Link to="/consultation" className="block">
                 <Button className="w-full gap-2 cta-gradient text-accent-foreground border-0 font-semibold">
-                  <CalendarCheck className="w-4 h-4" />
+                  <CalendarCheck className="w-4 h-4" aria-hidden="true">
                   Request a Project Consultation
                 </Button>
               </Link>
@@ -157,7 +157,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-xl">
-            <Mail className="w-5 h-5 text-primary" />
+            <Mail className="w-4 h-4 text-primary" aria-hidden="true">
             Download Your Roof Design
           </DialogTitle>
           <DialogDescription>
@@ -244,7 +244,7 @@ const LeadCaptureModal = ({ open, onOpenChange, designId, resultCanvas }: LeadCa
             disabled={isSubmitting}
             className="w-full gap-2 cta-gradient text-accent-foreground border-0 font-semibold"
           >
-            {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
+            {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true"> : <Download className="w-4 h-4" aria-hidden="true">}
             Download My Roof Design
           </Button>
           <FormConsent className="mt-1" />

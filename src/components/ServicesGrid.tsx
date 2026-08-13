@@ -299,10 +299,10 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
             <span className={`inline-flex items-center gap-1.5 font-heading font-bold text-body-xs tracking-wide group-hover:gap-2.5 transition-all duration-300 ${
               isGold ? "text-[hsl(var(--gold-ink))]" : "text-primary"
             }`}>
-              Explore <ArrowRight className="w-3 h-3" />
+              Explore <ArrowRight className="w-4 h-4" aria-hidden="true">
             </span>
             <div className="w-7 h-7 rounded-none border border-border/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-              <ArrowRight className="w-3 h-3 text-muted-foreground" />
+              <ArrowRight className="w-4 h-4 text-muted-foreground" aria-hidden="true">
             </div>
           </div>
         </div>
@@ -345,7 +345,7 @@ const ServicesGrid = () => {
           <ScrollReveal variant="slide-left">
             <div className="flex items-center gap-3 mb-7">
               <div className="w-8 h-8 rounded-none bg-primary/8 flex items-center justify-center">
-                <HomeIcon className="w-4 h-4 text-primary" />
+                <HomeIcon className="w-4 h-4 text-primary" aria-hidden="true">
               </div>
               <span className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.22em] text-primary/95">
                 Roofing Division
@@ -363,7 +363,7 @@ const ServicesGrid = () => {
           <ScrollReveal variant="slide-left">
             <div className="flex items-center gap-3 mb-7">
               <div className="w-8 h-8 rounded-none bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
               </div>
               <span className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--highland-gold)/0.9)]">
                 Construction Division

@@ -139,10 +139,10 @@ const RoofRepair = () => {
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-4 md:mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
+                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true"></div>
                   <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
+                <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true">
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Repair</span>
               </motion.div>
 
@@ -161,11 +161,11 @@ const RoofRepair = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
                 {/* Primary action on repair pages is the phone call (see page-cta-hierarchy.ts) */}
                 <a href="tel:+18285247773" className="btn btn-primary btn-lg group">
-                  <Phone className="w-5 h-5" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark group">
                   Schedule a Repair Assessment
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </Link>
               </motion.div>
               <HeroTrustLine className="mt-4 md:mt-6" />
@@ -183,7 +183,7 @@ const RoofRepair = () => {
                 className="mt-10 hidden md:flex items-center gap-4"
               >
                 <div className="w-12 h-12 rounded-full border-2 border-[hsl(var(--heritage-green)/0.4)] flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-[hsl(var(--heritage-green))]" />
+                  <Clock className="w-4 h-4 text-[hsl(var(--heritage-green))]" aria-hidden="true">
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">Fast Repair Assessments</div>
@@ -229,7 +229,7 @@ const RoofRepair = () => {
               <div className="flex items-center justify-center gap-3 mb-8">
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
                 <div className="w-16 h-px bg-border" />
-                <Search className="w-4 h-4 text-muted-foreground" />
+                <Search className="w-4 h-4 text-muted-foreground" aria-hidden="true">
                 <div className="w-16 h-px bg-border" />
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
               </div>
@@ -288,7 +288,7 @@ const RoofRepair = () => {
                 {escalationReasons.map((reason, i) => (
                   <motion.div key={reason.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group p-5 md:p-6 rounded-sm bg-card border border-border hover:border-destructive/15 card-lift">
                     <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-4 h-4 text-destructive/50 mt-1 flex-shrink-0" />
+                      <AlertTriangle className="w-4 h-4 text-destructive/50 mt-1 flex-shrink-0" aria-hidden="true">
                       <div>
                         <h3 className="text-sm font-heading font-bold text-foreground mb-1.5">{reason.title}</h3>
                         <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{reason.detail}</p>
@@ -309,11 +309,11 @@ const RoofRepair = () => {
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <a href="tel:+18285247773" className="btn btn-primary btn-md">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
                   Schedule Assessment
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
               </div>
             </div>
@@ -351,11 +351,11 @@ const RoofRepair = () => {
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <a href="tel:+18285247773" className="btn btn-primary btn-md">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
                   Schedule a Repair Assessment
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
               </div>
             </div>
@@ -382,14 +382,14 @@ const RoofRepair = () => {
                   <div className="p-6 md:p-7">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="w-10 h-10 rounded-sm bg-primary/8 flex items-center justify-center">
-                        <Wrench className="w-5 h-5 text-primary" />
+                        <Wrench className="w-4 h-4 text-primary" aria-hidden="true">
                       </div>
                       <h3 className="font-heading font-bold text-dark-section-foreground text-lg">Repair Is Likely Sufficient</h3>
                     </div>
                     <ul className="space-y-3">
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" aria-hidden="true">
                           <span className="text-dark-section-foreground/85 text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
@@ -403,20 +403,20 @@ const RoofRepair = () => {
                   <div className="p-6 md:p-7">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
-                        <Replace className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                        <Replace className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                       </div>
                       <h3 className="font-heading font-bold text-dark-section-foreground text-lg">Consider Replacement</h3>
                     </div>
                     <ul className="space-y-3">
                       {repairVsReplace.replace.map((item) => (
                         <li key={item} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" aria-hidden="true">
                           <span className="text-dark-section-foreground/85 text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
                     <Link to="/roofing/roof-replacement" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] mt-5 hover:opacity-80 transition-opacity font-body">
-                      Learn About Roof Replacement <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      Learn About Roof Replacement <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                     </Link>
                   </div>
                 </motion.div>
@@ -447,7 +447,7 @@ const RoofRepair = () => {
                 "Priority scheduling on future repair calls",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" aria-hidden="true">
                   <span className="text-foreground/80 font-body leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -570,11 +570,11 @@ const RoofRepair = () => {
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                     <a href="tel:+18285247773" className="btn btn-primary btn-lg group">
-                      <Phone className="w-5 h-5" /> (828) 524-7773
+                      <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                     </a>
                     <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
                       Schedule a Repair Assessment
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                     </Link>
                   </div>
 

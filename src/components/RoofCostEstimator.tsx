@@ -167,7 +167,7 @@ const RoofCostEstimator = () => {
                       >
                         <div className="flex items-center gap-4">
                           <div className="w-9 h-9 rounded-none bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover/opt:bg-primary/10 transition-colors">
-                            <Home className="w-4 h-4 text-primary" />
+                            <Home className="w-4 h-4 text-primary" aria-hidden="true">
                           </div>
                           <div>
                             <span className="font-heading font-semibold text-foreground text-sm">{opt.label}</span>
@@ -198,7 +198,7 @@ const RoofCostEstimator = () => {
                     ))}
                   </div>
                   <button onClick={() => goTo("size")} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">
-                    <ArrowLeft className="w-3.5 h-3.5" /> Back
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true"> Back
                   </button>
                 </div>
               )}
@@ -221,7 +221,7 @@ const RoofCostEstimator = () => {
                     ))}
                   </div>
                   <button onClick={() => goTo("material")} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">
-                    <ArrowLeft className="w-3.5 h-3.5" /> Back
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true"> Back
                   </button>
                 </div>
               )}
@@ -257,14 +257,14 @@ const RoofCostEstimator = () => {
                     <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-heading font-bold py-3.5 rounded-none flex items-center justify-center gap-2 btn-primary-interactive disabled:opacity-60">
                       <span className="relative z-10">{submitting ? "Sending…" : "See My Estimate"}</span>
                       {submitting ? (
-                        <Loader2 className="w-4 h-4 relative z-10 animate-spin" />
+                        <Loader2 className="w-4 h-4 relative z-10 animate-spin" aria-hidden="true">
                       ) : (
-                        <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                        <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true">
                       )}
                     </button>
                   </form>
                   <button onClick={() => goTo("condition")} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">
-                    <ArrowLeft className="w-3.5 h-3.5" /> Back
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true"> Back
                   </button>
                 </div>
               )}
@@ -277,7 +277,7 @@ const RoofCostEstimator = () => {
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
-                    <DollarSign className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
+                    <DollarSign className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                   </motion.div>
                   <h3 className="text-xl font-heading font-bold text-foreground mb-2">Your Estimated Range</h3>
                   <motion.div
@@ -294,7 +294,7 @@ const RoofCostEstimator = () => {
 
                   <div className="bg-secondary rounded-none p-5 mb-6 text-left border border-border">
                     <div className="flex items-start gap-3 mb-3">
-                      <Shield className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
+                      <Shield className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true">
                       <div>
                         <h4 className="font-heading font-semibold text-foreground text-sm mb-1">Want an Exact, Written Quote?</h4>
                         <p className="text-muted-foreground text-body-xs font-body leading-relaxed">
@@ -307,7 +307,7 @@ const RoofCostEstimator = () => {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a href="/consultation" className="btn btn-primary btn-md">
                       <span className="relative z-10">Request a Consultation</span>
-                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true">
                     </a>
                     <a href="tel:+18285247773" className="btn btn-secondary btn-md">
                       Call (828) 524-7773

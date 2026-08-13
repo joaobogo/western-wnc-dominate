@@ -90,7 +90,7 @@ const CostContextBlock = ({
           <ul className="space-y-2.5">
             {estimateIncludes.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-body-xs md:text-sm font-body text-muted-foreground">
-                <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true">
                 <span>{item}</span>
               </li>
             ))}
@@ -109,14 +109,14 @@ const CostContextBlock = ({
               onClick={() => trackEvent("cta_click", { label: "Request a written scope", elementId: "cost-context-scope" })}
               className="cta-gradient text-accent-foreground font-body font-bold text-sm px-6 py-3.5 inline-flex items-center justify-center gap-2 uppercase tracking-[0.1em] hover:opacity-90 transition-all min-h-[52px]"
             >
-              Get My Written Scope <ArrowRight className="w-4 h-4" />
+              Get My Written Scope <ArrowRight className="w-4 h-4" aria-hidden="true">
             </Link>
             <a
               href="tel:+18285247773"
               onClick={() => trackEvent("phone_click", { label: "Cost context call", elementId: "cost-context-call" })}
               className="border-2 border-border text-foreground font-body font-bold text-sm px-6 py-3.5 inline-flex items-center justify-center gap-2 hover:bg-muted transition-all min-h-[52px]"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> 828-524-7773
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true"> 828-524-7773
             </a>
           </div>
         </div>

@@ -127,7 +127,7 @@ const SpecialtyRoofing = () => {
                               <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Specialty Division</span>
                             </div>
                           </Link>
-                          <ChevronRight className="w-3 h-3 text-white/30" />
+                          <ChevronRight className="w-4 h-4 text-white/30" aria-hidden="true">
                           <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Specialty Roofing</span>
                         </motion.div>
 
@@ -150,10 +150,10 @@ const SpecialtyRoofing = () => {
                           <Link to="/consultation" className="btn btn-primary btn-lg group relative">
                             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                             <span className="relative">Discuss Your Project</span>
-                            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
                           </Link>
                           <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                            <Phone className="w-4 h-4" /> (828) 524-7773
+                            <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                           </a>
                         </motion.div>
 
@@ -195,7 +195,7 @@ const SpecialtyRoofing = () => {
                     <section className="py-20 md:py-28 bg-background">
                       <div className="container-tight max-w-3xl">
                         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-                          <Gem className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)] mx-auto mb-8" />
+                          <Gem className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)] mx-auto mb-8" aria-hidden="true">
                           <h2 className="text-2xl md:text-3xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance tracking-tight">
                             Some roofs are meant to be noticed. They deserve a team that treats every line, every material, and every detail as a reflection of the home itself.
                           </h2>
@@ -272,7 +272,7 @@ const SpecialtyRoofing = () => {
                           <div className="lg:col-span-3 space-y-3">
                             {whyHigherStandard.map((reason, i) => (
                               <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="flex items-start gap-3 p-4 bg-card border border-border rounded-sm">
-                                <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] mt-0.5 flex-shrink-0" />
+                                <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] mt-0.5 flex-shrink-0" aria-hidden="true">
                                 <span className="text-muted-foreground text-body-xs leading-snug font-body">{reason}</span>
                               </motion.div>
                             ))}
@@ -294,7 +294,7 @@ const SpecialtyRoofing = () => {
                         {premiumMaterials.map((mat, i) => (
                           <motion.div key={mat.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                             <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center mb-4">
-                              <Gem className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                              <Gem className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                             </div>
                             <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{mat.title}</h3>
                             <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{mat.detail}</p>
@@ -414,10 +414,10 @@ const SpecialtyRoofing = () => {
                               <Link to="/consultation" className="btn btn-primary btn-lg group relative">
                                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                                 <span className="relative">Discuss Your Project</span>
-                                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
                               </Link>
                               <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
+                                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true"> (828) 524-7773
                               </a>
                             </div>
 

@@ -111,7 +111,7 @@ const About = () => {
             </motion.div>
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }} className="flex items-center gap-3 mb-6">
-                <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
+                <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true">
                 <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Franklin & Sylva, North Carolina</span>
               </motion.div>
 
@@ -147,10 +147,10 @@ const About = () => {
                   className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-body-sm md:text-body px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-raised"
                 >
                   <span>Meet Our People</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </button>
                 <Link to="/giving-back" className="btn btn-secondary btn-lg group">
-                  Community Impact <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Community Impact <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </Link>
               </motion.div>
 
@@ -336,7 +336,7 @@ const About = () => {
         <section className="section-padding bg-background">
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-              <Calendar className="w-5 h-5 text-[hsl(var(--highland-gold)/0.75)] mx-auto mb-4" />
+              <Calendar className="w-4 h-4 text-[hsl(var(--highland-gold)/0.75)] mx-auto mb-4" aria-hidden="true">
               <h2 className="section-heading mb-4">The Road So Far</h2>
               <p className="text-muted-foreground text-sm max-w-lg mx-auto">Not a linear climb. A series of commitments that built something worth standing behind.</p>
             </motion.div>
@@ -419,7 +419,7 @@ const About = () => {
                 {craftsmanshipPrinciples.map((p, i) => (
                   <motion.div key={p.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.4 }} className="border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 md:p-6 bg-[hsl(var(--dark-section-foreground)/0.03)]">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true">
                       <div>
                         <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-1">{p.title}</h3>
                         <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm leading-relaxed">{p.detail}</p>
@@ -448,10 +448,10 @@ const About = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link to="/careers" className="btn btn-primary btn-lg">
-                    View Open Positions <ArrowRight className="w-4 h-4" />
+                    View Open Positions <ArrowRight className="w-4 h-4" aria-hidden="true">
                   </Link>
                   <a href="tel:+18285247773" className="text-white/90 hover:text-white font-bold text-body-xs flex items-center gap-2 transition-colors">
-                    <Phone className="w-4 h-4" /> (828) 524-7773
+                    <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                   </a>
                 </div>
               </motion.div>
@@ -528,7 +528,7 @@ const About = () => {
                     <ul className="space-y-2">
                       {division.items.map((item) => (
                         <li key={item} className="text-muted-foreground text-sm flex items-center gap-2">
-                          <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true">
                           {item}
                         </li>
                       ))}
@@ -583,10 +583,10 @@ const About = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/recent-projects" className="btn btn-primary btn-md">
-                  See What We've Built <ArrowRight className="w-5 h-5" />
+                  See What We've Built <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
-                  Talk With Our Team <ArrowRight className="w-5 h-5" />
+                  Talk With Our Team <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/85 text-xs font-medium uppercase tracking-wider">

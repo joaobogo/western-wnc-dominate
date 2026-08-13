@@ -215,7 +215,7 @@ const renderContent = (content: string) => {
     if (line.startsWith("- "))
       { pushItem("ul", i,
         <li key={i} className="flex items-start gap-2.5">
-          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-[0.45em]" aria-hidden="true" />
+          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-[0.45em]" aria-hidden="true" >
           <span dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace("- ", "")) }} />
         </li>
       ); return; }
@@ -266,7 +266,7 @@ const BlogPostPage = () => {
               to="/blog"
               className="btn btn-primary btn-sm"
             >
-              Browse All Articles <ArrowRight className="w-4 h-4" />
+              Browse All Articles <ArrowRight className="w-4 h-4" aria-hidden="true">
             </Link>
           </div>
         </main>
@@ -353,7 +353,7 @@ const BlogPostPage = () => {
                 <Link to="/" className="hover:text-white transition-colors">Home</Link>
                 <span aria-hidden="true">/</span>
                 <Link to="/blog" className="hover:text-white transition-colors flex items-center gap-1">
-                  <ArrowLeft className="w-3 h-3" /> Blog
+                  <ArrowLeft className="w-4 h-4" aria-hidden="true"> Blog
                 </Link>
                 <span aria-hidden="true">/</span>
                 <span aria-current="page" className="text-white/90 truncate max-w-[60vw]">
@@ -367,14 +367,14 @@ const BlogPostPage = () => {
                   {post.category}
                 </span>
                 <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
-                  <Calendar className="w-3 h-3" /> {formattedDate}
+                  <Calendar className="w-4 h-4" aria-hidden="true"> {formattedDate}
                 </span>
                 <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
-                  <Clock className="w-3 h-3" /> {readMinutes} min read
+                  <Clock className="w-4 h-4" aria-hidden="true"> {readMinutes} min read
                 </span>
                 {post.town && (
                   <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
-                    <MapPin className="w-3 h-3" /> {post.town}, NC
+                    <MapPin className="w-4 h-4" aria-hidden="true"> {post.town}, NC
                   </span>
                 )}
               </div>
@@ -407,13 +407,13 @@ const BlogPostPage = () => {
                     className="bg-secondary/60 border border-border rounded-sm p-5 md:p-6 mb-10"
                   >
                     <div className="flex items-center gap-2 mb-4">
-                      <Lightbulb className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                      <Lightbulb className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                       <h2 className="font-heading font-semibold text-sm text-foreground">Key Takeaways</h2>
                     </div>
                     <div className="space-y-2">
                       {takeaways.map((t, i) => (
                         <div key={i} className="flex items-start gap-2.5">
-                          <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true">
                           <span className="text-foreground/80 text-sm font-body leading-relaxed">{t}</span>
                         </div>
                       ))}
@@ -447,7 +447,7 @@ const BlogPostPage = () => {
                     className="bg-primary/5 border border-primary/10 rounded-sm p-5 md:p-6 mt-10"
                   >
                     <div className="flex items-start gap-3">
-                      <Mountain className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <Mountain className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true">
                       <div>
                         <h2 className="font-heading font-semibold text-sm text-foreground mb-1">
                           Local to {post.town}, NC
@@ -461,7 +461,7 @@ const BlogPostPage = () => {
                           to="/consultation"
                           className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm mt-3 hover:gap-2.5 transition-all"
                         >
-                          Talk With Our Local Team <ArrowRight className="w-3.5 h-3.5" />
+                          Talk With Our Local Team <ArrowRight className="w-4 h-4" aria-hidden="true">
                         </Link>
                       </div>
                     </div>
@@ -477,7 +477,7 @@ const BlogPostPage = () => {
                     className="mt-10"
                   >
                     <div className="flex items-center gap-2 mb-5">
-                      <BookOpen className="w-4 h-4 text-primary" />
+                      <BookOpen className="w-4 h-4 text-primary" aria-hidden="true">
                       <h2 className="font-heading font-semibold text-foreground">Frequently Asked Questions</h2>
                     </div>
                     <div className="space-y-4">
@@ -508,7 +508,7 @@ const BlogPostPage = () => {
                           to={svc.path}
                           className="btn btn-primary btn-sm"
                         >
-                          {svc.label} <ArrowRight className="w-3 h-3" />
+                          {svc.label} <ArrowRight className="w-4 h-4" aria-hidden="true">
                         </Link>
                       ))}
                     </div>
@@ -538,7 +538,7 @@ const BlogPostPage = () => {
                       </h2>
                     </div>
                     <Link to="/recent-projects" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
-                      View All Projects <ArrowRight className="w-4 h-4" />
+                      View All Projects <ArrowRight className="w-4 h-4" aria-hidden="true">
                     </Link>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -560,7 +560,7 @@ const BlogPostPage = () => {
                           </div>
                           <div className="p-5">
                             <div className="flex items-center gap-2 mb-2">
-                              <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
+                              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                               <span className="text-caption font-bold uppercase tracking-wider text-muted-foreground">{project.location}</span>
                             </div>
                             <h3 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
@@ -579,7 +579,7 @@ const BlogPostPage = () => {
                         <p className="text-sm font-heading font-bold text-foreground mb-1">Roofing & Construction in {post.town}</p>
                         <p className="text-xs text-muted-foreground font-body">Explore localized standards and proven projects in your area.</p>
                       </div>
-                      <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" aria-hidden="true">
                     </Link>
                   </div>
                 )}
@@ -593,7 +593,7 @@ const BlogPostPage = () => {
                   className="flex items-start gap-4 mt-10 pt-8 border-t border-border"
                 >
                   <div className="w-12 h-12 rounded-sm bg-primary/8 flex items-center justify-center flex-shrink-0">
-                    <BookOpen className="w-5 h-5 text-primary" />
+                    <BookOpen className="w-4 h-4 text-primary" aria-hidden="true">
                   </div>
                   <div>
                     <p className="text-caption font-body font-semibold uppercase tracking-wider text-muted-foreground mb-1">
@@ -651,7 +651,7 @@ const BlogPostPage = () => {
                           {p.category}
                         </span>
                         <span className="text-muted-foreground text-xs flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {p.readTime}
+                          <Clock className="w-4 h-4" aria-hidden="true"> {p.readTime}
                         </span>
                       </div>
                       <h3 className="font-heading font-semibold text-foreground text-base mb-2 group-hover:text-primary transition-colors leading-snug line-clamp-2">
@@ -661,7 +661,7 @@ const BlogPostPage = () => {
                         {p.excerpt}
                       </p>
                       <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
-                        Read Guide <ArrowRight className="w-3.5 h-3.5" />
+                        Read Guide <ArrowRight className="w-4 h-4" aria-hidden="true">
                       </span>
                     </div>
                   </Link>
@@ -675,7 +675,7 @@ const BlogPostPage = () => {
                 to="/blog"
                 className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
               >
-                <ArrowLeft className="w-4 h-4" /> View All Articles
+                <ArrowLeft className="w-4 h-4" aria-hidden="true"> View All Articles
               </Link>
             </div>
           </div>

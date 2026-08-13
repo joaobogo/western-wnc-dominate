@@ -14,7 +14,7 @@ const RoofDesignerCTA = () => {
           transition={{ duration: 0.4 }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-sm bg-primary/8 text-primary text-xs font-body font-semibold uppercase tracking-[0.15em] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-4 h-4" aria-hidden="true">
             Interactive Tool — No Sign-Up Required
           </div>
 
@@ -32,7 +32,7 @@ const RoofDesignerCTA = () => {
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative">Try the Virtual Roof Designer</span>
-            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
           </Link>
         </motion.div>
       </div>

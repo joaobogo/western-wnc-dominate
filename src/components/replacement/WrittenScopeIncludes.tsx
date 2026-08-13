@@ -37,7 +37,7 @@ const WrittenScopeIncludes = () => (
           <ul className="space-y-2.5">
             {included.map((item) => (
               <li key={item} className="flex gap-2.5 text-body-xs font-body text-muted-foreground leading-relaxed">
-                <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" >
                 <span>{item}</span>
               </li>
             ))}

@@ -167,7 +167,7 @@ const ServiceTownPage = ({
           <div className="container-tight relative z-10 pt-32 md:pt-40 pb-20">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-6">
-                <MapPin className="w-4 h-4" />
+                <MapPin className="w-4 h-4" aria-hidden="true">
                 <span className="font-bold text-sm uppercase tracking-[0.2em]">
                   {town.county}, {town.state}
                 </span>
@@ -332,10 +332,10 @@ const ServiceTownPage = ({
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link to="/consultation" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
-                Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" />
+                Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" aria-hidden="true">
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]">
-                <Phone className="w-6 h-6 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
+                <Phone className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true"> (828) 524-7773
               </a>
             </div>
           </div>
@@ -351,7 +351,7 @@ const ServiceTownPage = ({
                 <p className="text-muted-foreground mt-2 font-body">Expert guidance on {entry.serviceLabel.toLowerCase()} in {town.name}.</p>
               </div>
               <Link to="/blog" className="text-sm font-bold text-primary inline-flex items-center gap-2 hover:gap-3 transition-all border-b border-primary/20 pb-1 group">
-                Full Knowledge Base <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Full Knowledge Base <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
               </Link>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
@@ -366,14 +366,14 @@ const ServiceTownPage = ({
                   >
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-6 h-6 rounded-none bg-primary/5 flex items-center justify-center">
-                        <ArrowRight className="w-3 h-3 text-primary rotate-[-45deg]" />
+                        <ArrowRight className="w-4 h-4 text-primary rotate-[-45deg]" aria-hidden="true">
                       </div>
                       <span className="text-caption uppercase tracking-widest font-bold text-muted-foreground">{post.category}</span>
                     </div>
                     <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
                     <p className="text-sm text-muted-foreground mb-6 line-clamp-3 font-body flex-grow">{post.excerpt}</p>
                     <span className="text-caption uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
-                      Read Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
+                      Read Article <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" aria-hidden="true">
                     </span>
                   </Link>
                 ))}
@@ -396,7 +396,7 @@ const ServiceTownPage = ({
                     className="border border-border rounded-lg p-5 hover:border-accent transition-colors group"
                   >
                     <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-1 text-sm">
-                      <CheckCircle className="w-4 h-4" />
+                      <CheckCircle className="w-4 h-4" aria-hidden="true">
                       <span>{town.name}, NC</span>
                     </div>
                     <div className="font-heading font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors">
@@ -410,7 +410,7 @@ const ServiceTownPage = ({
                   to={`/service-areas/${town.slug}`}
                   className="text-[hsl(var(--gold-ink))] font-semibold inline-flex items-center gap-2 hover:underline"
                 >
-                  See full {town.name} overview <ArrowRight className="w-4 h-4" />
+                  See full {town.name} overview <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
               </div>
             </div>

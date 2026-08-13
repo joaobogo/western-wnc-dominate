@@ -47,7 +47,7 @@ const LeadConfirmationPanel = ({
     <div className={`mx-auto w-full max-w-xl text-left ${className}`}>
       <div className="mb-6 flex items-center gap-3">
         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--highland-gold)/0.12)]">
-          <CheckCircle className={`h-6 w-6 ${gold}`} aria-hidden="true" />
+          <CheckCircle className={`h-6 w-6 ${gold}`} aria-hidden="true" >
         </span>
         <h2 className={`font-heading text-2xl font-bold md:text-3xl ${text}`}>{heading}</h2>
       </div>
@@ -79,11 +79,11 @@ const LeadConfirmationPanel = ({
         </p>
         <div className={`mt-4 flex flex-col gap-2 font-body text-body-xs ${muted}`}>
           <span className="flex items-center gap-2">
-            <Clock className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" />
+            <Clock className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" >
             Typically within one business day
           </span>
           <span className="flex items-center gap-2">
-            <Shield className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" />
+            <Shield className={`h-4 w-4 shrink-0 ${gold}`} aria-hidden="true" >
             No obligation, no sales pressure
           </span>
         </div>
@@ -98,7 +98,7 @@ const LeadConfirmationPanel = ({
           }
           className="mt-5 inline-flex items-center gap-2 border border-[hsl(var(--highland-gold)/0.5)] px-5 py-3 font-body text-body-sm font-bold text-[hsl(var(--gold-ink))] transition-colors hover:bg-[hsl(var(--highland-gold)/0.1)]"
         >
-          <Phone className="h-4 w-4" aria-hidden="true" />
+          <Phone className="h-4 w-4" aria-hidden="true" >
           Rather talk now? (828) 524-7773
         </a>
       </div>
@@ -116,7 +116,7 @@ const LeadConfirmationPanel = ({
           </span>
           <span className={`mt-1 block font-body text-body-xs ${muted}`}>{project.description}</span>
           <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
-            View project <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+            View project <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
           </span>
         </Link>
 
@@ -132,7 +132,7 @@ const LeadConfirmationPanel = ({
           </span>
           <span className={`mt-1 block font-body text-body-xs ${muted}`}>{guide.description}</span>
           <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
-            Read the guide <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+            Read the guide <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
           </span>
         </Link>
       </div>

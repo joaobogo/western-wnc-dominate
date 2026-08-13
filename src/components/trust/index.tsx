@@ -241,7 +241,7 @@ export const ReviewHighlight = ({ quote, name, location, project, outcome }: Rev
     <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
     <div className="flex gap-0.5 mb-4">
       {[...Array(5)].map((_, i) => (
-        <Star key={i} className="w-3.5 h-3.5 fill-accent text-[hsl(var(--gold-ink))]" />
+        <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
       ))}
     </div>
     <p className="text-foreground text-sm md:text-body-sm leading-relaxed mb-5 font-body">"{quote}"</p>
@@ -289,7 +289,7 @@ export const StandardsCallout = ({
       <div className={`w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 ${
         isDark ? "bg-[hsl(var(--highland-gold)/0.08)]" : "bg-primary/8"
       }`}>
-        <Icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} />
+        <Icon className={`w-5 h-5 ${isDark ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`} aria-hidden="true">
       </div>
       <div>
         <h3 className={`font-heading font-semibold text-sm mb-1 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
@@ -376,7 +376,7 @@ export const ReassuranceBlock = ({
               to={ctaLink}
               className="btn btn-primary btn-md"
             >
-              {ctaText} <ArrowRight className="w-5 h-5" />
+              {ctaText} <ArrowRight className="w-4 h-4" aria-hidden="true">
             </Link>
             <a
               href="tel:+18285247773"
@@ -386,7 +386,7 @@ export const ReassuranceBlock = ({
                   : "border-[hsl(var(--dark-section-foreground)/0.2)] text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.05)]"
               }`}
             >
-              <Phone className="w-5 h-5" /> (828) 524-7773
+              <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
             </a>
           </div>
           <TrustBadgeStrip className={`mt-8 ${
@@ -416,7 +416,7 @@ export const TrustSidebar = () => (
       "Written Scope on Every Project",
     ].map((item) => (
       <div key={item} className="flex items-center gap-2">
-        <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true">
         <span className="text-muted-foreground text-xs font-body">{item}</span>
       </div>
     ))}

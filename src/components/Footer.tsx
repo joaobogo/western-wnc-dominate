@@ -80,7 +80,7 @@ const FooterLink = React.forwardRef<
     className="group text-body-sm text-foreground/90 hover:text-primary transition-colors inline-flex items-center gap-1.5 font-body leading-relaxed py-1.5 font-medium"
   >
     {children}
-    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" aria-hidden="true">
   </Link>
 ));
 FooterLink.displayName = "FooterLink";
@@ -136,13 +136,13 @@ const Footer = () => {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Request a Quote</span>
-                <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
               </Link>
               <a
                 href="tel:+18285247773"
                 className="btn btn-secondary btn-md whitespace-nowrap"
               >
-                <Phone className="w-4 h-4 text-primary" />
+                <Phone className="w-4 h-4 text-primary" aria-hidden="true">
                 (828) 524-7773
               </a>
             </div>
@@ -170,7 +170,7 @@ const Footer = () => {
 
             <address className="not-italic space-y-4">
               <div className="flex gap-3">
-                <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-1" />
+                <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-1" aria-hidden="true">
                 <div className="text-body-sm text-foreground/85 font-body leading-relaxed">
                   <span className="block font-bold text-foreground">Highlander Building Services, Inc.</span>
                   76 Creative Dr<br />
@@ -181,16 +181,16 @@ const Footer = () => {
                 href="tel:+18285247773"
                 className="flex items-center gap-3 min-h-[44px] font-heading font-bold text-body-lg text-foreground hover:text-primary transition-colors"
               >
-                <Phone className="w-4 h-4 text-primary" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-primary" aria-hidden="true"> (828) 524-7773
               </a>
               <a
                 href="mailto:info@highlandernc.com"
                 className="flex items-center gap-3 min-h-[44px] text-body-sm font-body text-muted-foreground hover:text-primary transition-colors break-all"
               >
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" /> info@highlandernc.com
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true"> info@highlandernc.com
               </a>
               <div className="flex gap-3 pt-4 border-t border-border">
-                <Clock className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" aria-hidden="true">
                 <div className="text-body-sm text-muted-foreground font-body leading-relaxed">
                   <span className="block font-bold text-foreground/85">Office Hours</span>
                   Mon–Fri 8:00 AM – 5:00 PM<br />
@@ -254,7 +254,7 @@ const Footer = () => {
               to="/service-areas"
               className="mt-5 min-h-[44px] text-body-xs font-body font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1.5"
             >
-              View All Service Areas <ArrowRight className="w-3 h-3" />
+              View All Service Areas <ArrowRight className="w-4 h-4" aria-hidden="true">
             </Link>
           </div>
         </div>
@@ -282,7 +282,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center">
               <div className="w-9 h-9 flex items-center justify-center bg-primary/10 rounded-full">
-                <Award className="w-4 h-4 text-primary" />
+                <Award className="w-4 h-4 text-primary" aria-hidden="true">
               </div>
               <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Licensed &amp; Insured</span>
             </div>
@@ -292,7 +292,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center">
               <div className="w-9 h-9 flex items-center justify-center bg-primary/10 rounded-full">
-                <BadgeCheck className="w-4 h-4 text-primary" />
+                <BadgeCheck className="w-4 h-4 text-primary" aria-hidden="true">
               </div>
               <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">Military Friendly</span>
             </div>

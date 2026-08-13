@@ -87,7 +87,7 @@ const ExploreHighlander = () => {
               >
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="flex items-center gap-2.5 mb-4">
-                  <Icon className="w-4 h-4 text-primary" />
+                  <Icon className="w-4 h-4 text-primary" aria-hidden="true">
                   <h3 className="font-heading font-bold text-foreground text-base tracking-wide">
                     {col.title}
                   </h3>
@@ -99,7 +99,7 @@ const ExploreHighlander = () => {
                         to={link.to}
                         className="group/link flex items-start gap-1.5 text-sm font-body text-muted-foreground hover:text-primary transition-colors leading-snug"
                       >
-                        <ArrowUpRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/80 group-hover/link:text-primary transition-colors" />
+                        <ArrowUpRight className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary/80 group-hover/link:text-primary transition-colors" aria-hidden="true">
                         <span>{link.label}</span>
                       </Link>
                     </li>

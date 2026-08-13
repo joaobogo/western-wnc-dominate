@@ -76,10 +76,10 @@ const SyntheticRoofing = () => {
               <div className="max-w-3xl">
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                   <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <div className="w-7 h-7 rounded-sm bg-white/10 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-white" /></div>
+                    <div className="w-7 h-7 rounded-sm bg-white/10 flex items-center justify-center"><Home className="w-4 h-4 text-white" aria-hidden="true"></div>
                     <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-white/85">Roofing</span>
                   </Link>
-                  <ChevronRight className="w-3 h-3 text-white/90" />
+                  <ChevronRight className="w-4 h-4 text-white/90" aria-hidden="true">
                   <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Brava Synthetic</span>
                 </motion.div>
 
@@ -100,10 +100,10 @@ const SyntheticRoofing = () => {
 
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link to="/consultation" className="btn btn-primary btn-md group">
-                    Start Your Brava Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    Start Your Brava Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                   </Link>
                   <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark">
-                    <Phone className="w-4 h-4" /> (828) 524-7773
+                    <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                   </a>
                 </motion.div>
               </div>
@@ -151,7 +151,7 @@ const SyntheticRoofing = () => {
                   "ARB submission packages and warranty registration handled for you",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] shrink-0 mt-0.5" aria-hidden="true">
                     <span className="text-foreground/80 font-body leading-relaxed">{f}</span>
                   </li>
                 ))}

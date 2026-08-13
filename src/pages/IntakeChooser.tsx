@@ -78,7 +78,7 @@ const IntakeChooser = () => (
                 <h2 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-2 tracking-tight">{c.title}</h2>
                 <p className="text-muted-foreground text-body-xs font-body leading-relaxed mb-6">{c.body}</p>
                 <span className="inline-flex items-center gap-2 text-body-xs font-heading font-bold text-foreground group-hover:text-[hsl(var(--gold-ink))] transition-colors">
-                  {c.cta} <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  {c.cta} <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
                 </span>
               </Link>
             </motion.div>
@@ -97,23 +97,23 @@ const IntakeChooser = () => (
               to="/roofing-builder"
               className="btn btn-secondary btn-md group"
             >
-              <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true">
               <div className="flex-1 min-w-0">
                 <p className="text-body-xs font-heading font-bold text-foreground leading-tight">Build a roofing scope brief</p>
                 <p className="text-caption font-body text-muted-foreground leading-snug">Material, priorities, investment tier — guided</p>
               </div>
-              <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" aria-hidden="true">
             </Link>
             <Link
               to="/construction-builder"
               className="btn btn-secondary btn-md group"
             >
-              <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true">
               <div className="flex-1 min-w-0">
                 <p className="text-body-xs font-heading font-bold text-foreground leading-tight">Build a construction scope brief</p>
                 <p className="text-caption font-body text-muted-foreground leading-snug">Scope, style, priorities — guided</p>
               </div>
-              <ArrowRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" />
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] group-hover:translate-x-0.5 transition-all" aria-hidden="true">
             </Link>
           </div>
           <p className="text-caption font-body text-muted-foreground mt-3 text-center">
@@ -127,7 +127,7 @@ const IntakeChooser = () => (
             href="tel:+18285247773"
             className="inline-flex items-center gap-2 text-foreground hover:text-[hsl(var(--gold-ink))] font-heading font-semibold text-body-xs transition-colors"
           >
-            <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+            <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
             (828) 524-7773
           </a>
         </div>

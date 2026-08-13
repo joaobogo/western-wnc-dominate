@@ -72,13 +72,13 @@ const CTABlock = () => {
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <span className="relative">Start Your Project</span>
-                    <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1.5 transition-transform" />
+                    <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1.5 transition-transform" aria-hidden="true">
                   </Link>
                   <a
                     href="tel:+18285247773"
                     className="btn btn-secondary btn-lg btn-on-dark group md:text-lg md:px-12 md:py-5"
                   >
-                    <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                    <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                     Speak With a Project Advisor
                   </a>
                 </div>
@@ -106,7 +106,7 @@ const CTABlock = () => {
                       transition={{ delay: 0.3 + i * 0.06, duration: 0.35, ease: HIGHLAND_EASE }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.45)] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.45)] flex-shrink-0 mt-0.5" aria-hidden="true">
                       <span className="text-dark-section-foreground/95 text-body-xs font-body leading-relaxed">
                         {promise}
                       </span>
@@ -167,7 +167,7 @@ const CTABlock = () => {
                 className="group inline-flex items-center gap-2 text-primary-foreground/85 font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:text-primary-foreground/90 transition-colors"
               >
                 Roofing
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
               </Link>
               <div className="w-px h-3 bg-primary-foreground/10" />
               <Link
@@ -175,7 +175,7 @@ const CTABlock = () => {
                 className="group inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
               >
                 Construction
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
               </Link>
             </div>
           </div>

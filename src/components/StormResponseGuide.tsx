@@ -92,7 +92,7 @@ const StormResponseGuide = () => {
               {/* Exterior */}
               <div className="mb-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <Camera className="w-4 h-4 text-primary" />
+                  <Camera className="w-4 h-4 text-primary" aria-hidden="true">
                   <h3 className="font-heading font-bold text-foreground text-sm uppercase tracking-wider">Exterior Signs</h3>
                   <span className="text-caption text-muted-foreground font-body">(check from ground level)</span>
                 </div>
@@ -109,7 +109,7 @@ const StormResponseGuide = () => {
                         <div className={`mt-0.5 w-5 h-5 rounded-sm border flex items-center justify-center flex-shrink-0 transition-all ${
                           checked.has(item.id) ? "bg-primary border-primary" : "border-border"
                         }`}>
-                          {checked.has(item.id) && <CheckCircle className="w-3.5 h-3.5 text-primary-foreground" />}
+                          {checked.has(item.id) && <CheckCircle className="w-4 h-4 text-primary-foreground" aria-hidden="true">}
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
@@ -127,7 +127,7 @@ const StormResponseGuide = () => {
               {/* Interior */}
               <div className="mb-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <FileText className="w-4 h-4 text-primary" />
+                  <FileText className="w-4 h-4 text-primary" aria-hidden="true">
                   <h3 className="font-heading font-bold text-foreground text-sm uppercase tracking-wider">Interior Signs</h3>
                 </div>
                 <div className="space-y-2.5">
@@ -143,7 +143,7 @@ const StormResponseGuide = () => {
                         <div className={`mt-0.5 w-5 h-5 rounded-sm border flex items-center justify-center flex-shrink-0 transition-all ${
                           checked.has(item.id) ? "bg-primary border-primary" : "border-border"
                         }`}>
-                          {checked.has(item.id) && <CheckCircle className="w-3.5 h-3.5 text-primary-foreground" />}
+                          {checked.has(item.id) && <CheckCircle className="w-4 h-4 text-primary-foreground" aria-hidden="true">}
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
@@ -169,7 +169,7 @@ const StormResponseGuide = () => {
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">See My Assessment</span>
-                  <ArrowRight className="w-4 h-4 relative" />
+                  <ArrowRight className="w-4 h-4 relative" aria-hidden="true">
                 </button>
               </div>
             </motion.div>
@@ -179,7 +179,7 @@ const StormResponseGuide = () => {
                 {/* Urgency Header */}
                 <div className={`px-6 md:px-8 py-5 ${config.bg} border-b border-border`}>
                   <div className="flex items-center gap-3">
-                    <AlertTriangle className={`w-5 h-5 ${config.color}`} />
+                    <AlertTriangle className={`w-5 h-5 ${config.color}`} aria-hidden="true">
                     <div>
                       <span className={`font-heading font-bold text-sm ${config.color}`}>{config.label}</span>
                       <span className="block text-muted-foreground text-xs font-body">{config.responseTime}</span>
@@ -219,10 +219,10 @@ const StormResponseGuide = () => {
                     <Link to="/roofing/storm-damage" className="btn btn-primary btn-md group relative">
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                       <span className="relative">Request Storm Assessment</span>
-                      <ArrowRight className="w-4 h-4 relative" />
+                      <ArrowRight className="w-4 h-4 relative" aria-hidden="true">
                     </Link>
                     <a href="tel:+18285247773" className="btn btn-secondary btn-md">
-                      <Phone className="w-4 h-4" /> Call (828) 524-7773
+                      <Phone className="w-4 h-4" aria-hidden="true"> Call (828) 524-7773
                     </a>
                   </div>
                 </div>

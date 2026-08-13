@@ -183,7 +183,7 @@ const RealWorkWidget = ({
           {status === "error" && (
             <div className="border border-border rounded-sm bg-card p-6 md:p-8">
               <div className="flex items-start gap-3 mb-4">
-                <AlertCircle className="w-5 h-5 mt-0.5 text-[hsl(var(--heritage-green))] shrink-0" aria-hidden="true" />
+                <AlertCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--heritage-green))] shrink-0" aria-hidden="true" >
                 <div>
                   <h3 className="text-base md:text-lg font-heading font-bold text-foreground mb-2">
                     Recent project updates are temporarily unavailable
@@ -199,13 +199,13 @@ const RealWorkWidget = ({
                   to="/contact"
                   className="btn btn-primary btn-sm"
                 >
-                  Request an Estimate <ArrowRight className="w-4 h-4" />
+                  Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
                 <a
                   href="tel:+18285247773"
                   className="btn btn-secondary btn-sm"
                 >
-                  <Phone className="w-4 h-4" /> 828-524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true"> 828-524-7773
                 </a>
               </div>
             </div>

@@ -47,7 +47,7 @@ export const BlogInternalLinksBlock = ({ links, town }: Props) => {
               className="group flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-sm hover:border-primary/30 hover:bg-secondary transition-colors h-full"
             >
               <span className="flex-shrink-0 w-9 h-9 rounded-sm bg-primary/8 flex items-center justify-center">
-                <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
+                <Icon className="w-4 h-4 text-primary" aria-hidden="true" >
               </span>
               <span className="flex-1 min-w-0">
                 <span className="block text-caption font-body font-semibold uppercase tracking-widest text-muted-foreground mb-1">
@@ -60,7 +60,7 @@ export const BlogInternalLinksBlock = ({ links, town }: Props) => {
                   {link.description}
                 </span>
               </span>
-              <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 mt-1 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+              <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 mt-1 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" >
             </Link>
           </li>
         ))}

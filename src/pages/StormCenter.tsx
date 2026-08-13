@@ -107,7 +107,7 @@ const StormCenter = () => {
           <div className="container-tight text-center">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <div className="w-14 h-14 rounded-sm bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                <CloudLightning className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
+                <CloudLightning className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">
               </div>
               <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">
                 Storm Center
@@ -130,7 +130,7 @@ const StormCenter = () => {
                   href="tel:+18285247773"
                   className="btn btn-primary btn-lg"
                 >
-                  <Phone className="w-5 h-5" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                 </a>
               </div>
               <p className="text-[hsl(var(--dark-section-foreground)/0.3)] text-xs mt-3 font-body">
@@ -162,7 +162,7 @@ const StormCenter = () => {
                   <h3 className="font-heading font-semibold text-foreground mb-1">{phase.label}</h3>
                   <p className="text-muted-foreground text-sm font-body">{phase.description}</p>
                   <span className="text-primary text-xs font-semibold mt-3 inline-flex items-center gap-1">
-                    {activePhase === phase.id ? "Hide articles" : "View articles"} <ArrowRight className="w-3 h-3" />
+                    {activePhase === phase.id ? "Hide articles" : "View articles"} <ArrowRight className="w-4 h-4" aria-hidden="true">
                   </span>
                 </motion.button>
               ))}
@@ -189,7 +189,7 @@ const StormCenter = () => {
                     </h4>
                     <p className="text-muted-foreground text-xs line-clamp-2 flex-grow">{post.excerpt}</p>
                     <span className="text-primary text-xs font-semibold mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Read <ArrowRight className="w-3 h-3" />
+                      Read <ArrowRight className="w-4 h-4" aria-hidden="true">
                     </span>
                   </Link>
                 ))}
@@ -272,7 +272,7 @@ const StormCenter = () => {
                   to="/blog/insurance-claim-roof-damage-nc"
                   className="inline-flex items-center gap-2 text-primary font-semibold text-sm mt-6 hover:gap-3 transition-all"
                 >
-                  Read Full Insurance Claims Guide <ArrowRight className="w-4 h-4" />
+                  Read Full Insurance Claims Guide <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
               </motion.div>
 
@@ -280,7 +280,7 @@ const StormCenter = () => {
                 <div className="bg-card border border-border rounded-sm p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                      <ShieldAlert className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                      <ShieldAlert className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                     </div>
                     <div>
                       <h3 className="font-heading font-semibold text-foreground">How We Help</h3>
@@ -296,7 +296,7 @@ const StormCenter = () => {
                       "Complete repairs with warranty after claim approval",
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-2.5">
-                        <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true">
                         <span className="text-muted-foreground text-sm leading-relaxed">{item}</span>
                       </div>
                     ))}
@@ -367,7 +367,7 @@ const StormCenter = () => {
                           {post.category}
                         </span>
                         <span className="text-muted-foreground text-xs flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {post.readTime}
+                          <Clock className="w-4 h-4" aria-hidden="true"> {post.readTime}
                         </span>
                       </div>
                       <h3 className="font-heading font-semibold text-foreground text-base mb-2 group-hover:text-primary transition-colors leading-snug line-clamp-2">
@@ -375,7 +375,7 @@ const StormCenter = () => {
                       </h3>
                       <p className="text-muted-foreground text-sm line-clamp-2 mb-4 flex-grow">{post.excerpt}</p>
                       <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
-                        Read Article <ArrowRight className="w-3.5 h-3.5" />
+                        Read Article <ArrowRight className="w-4 h-4" aria-hidden="true">
                       </span>
                     </div>
                   </Link>
@@ -397,7 +397,7 @@ const StormCenter = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
                 >
-                  NWS Greenville-Spartanburg <ExternalLink className="w-3 h-3" />
+                  NWS Greenville-Spartanburg <ExternalLink className="w-4 h-4" aria-hidden="true">
                 </a>
                 <a
                   href="https://www.readync.gov/"
@@ -405,7 +405,7 @@ const StormCenter = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
                 >
-                  ReadyNC Emergency Info <ExternalLink className="w-3 h-3" />
+                  ReadyNC Emergency Info <ExternalLink className="w-4 h-4" aria-hidden="true">
                 </a>
               </div>
             </motion.div>

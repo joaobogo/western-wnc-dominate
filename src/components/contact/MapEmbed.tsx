@@ -31,7 +31,7 @@ const MapEmbed = ({ className = "" }: { className?: string }) => {
         rel="noopener noreferrer"
         className="btn btn-secondary btn-sm group"
       >
-        <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+        <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
         <span className="text-body-sm font-body font-semibold text-foreground">
           Open {address} in Google Maps
         </span>

@@ -76,7 +76,7 @@ export const MultiStepForm = ({
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
-                    <CheckCircle className="w-4 h-4 text-white" />
+                    <CheckCircle className="w-4 h-4 text-white" aria-hidden="true">
                   </motion.div>
                 ) : (
                   <span className={i <= currentStep ? "text-white" : "text-muted-foreground"}>
@@ -134,7 +134,7 @@ export const MultiStepForm = ({
             currentStep === 0 ? "opacity-30 cursor-not-allowed" : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          <ArrowLeft className="w-4 h-4" /> Back
+          <ArrowLeft className="w-4 h-4" aria-hidden="true"> Back
         </button>
         <button
           onClick={isLast ? onSubmit : handleNext}
@@ -143,13 +143,13 @@ export const MultiStepForm = ({
         >
           {isSubmitting ? (
             <>
-              <Loader2 className="w-5 h-5 animate-spin relative z-10" />
+              <Loader2 className="w-4 h-4 animate-spin relative z-10" aria-hidden="true">
               <span className="relative z-10">Submitting...</span>
             </>
           ) : (
             <>
               <span className="relative z-10">{isLast ? submitLabel : "Continue"}</span>
-              <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
+              <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true">
             </>
           )}
         </button>
@@ -279,7 +279,7 @@ export const ConfirmationState = ({
           transition={{ delay: 0.15, type: "spring", stiffness: 400, damping: 15 }}
           className="w-16 h-16 rounded-full bg-primary/12 flex items-center justify-center mx-auto mb-5"
         >
-          {icon || <CheckCircle className="w-8 h-8 text-primary" />}
+          {icon || <CheckCircle className="w-6 h-6 text-primary" aria-hidden="true">}
         </motion.div>
 
         {/* Text staggers */}
@@ -392,7 +392,7 @@ export const ScheduleSlot = ({ time, available, selected, onClick }: ScheduleSlo
         animate={{ scale: 1 }}
         className="inline-block ml-2"
       >
-        <CheckCircle className="w-3.5 h-3.5 inline" />
+        <CheckCircle className="w-4 h-4 inline" aria-hidden="true">
       </motion.div>
     )}
   </motion.button>

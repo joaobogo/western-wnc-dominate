@@ -88,7 +88,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
             href="tel:+18285247773"
             className="flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold font-body text-body-xs uppercase tracking-[0.08em] min-h-[52px] px-4 active:scale-[0.99] transition-transform"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4" aria-hidden="true">
             Call (828) 524-7773
           </a>
 
@@ -125,7 +125,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                     </div>
                   </div>
                   <motion.div animate={{ rotate: expanded === div.label ? 180 : 0 }} transition={{ duration: 0.25, ease: HIGHLAND_EASE }}>
-                    <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" />
+                    <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" aria-hidden="true">
                   </motion.div>
                 </button>
 
@@ -168,7 +168,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                             div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
                           }`}
                         >
-                          View All {div.label} <ArrowRight className="w-3 h-3" />
+                          View All {div.label} <ArrowRight className="w-4 h-4" aria-hidden="true">
                         </Link>
                       </div>
                     </motion.div>
@@ -240,7 +240,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               className="btn btn-primary btn-md"
             >
               <span className="relative z-10">Request an Estimate</span>
-              <ArrowRight className="w-4 h-4 relative z-10" />
+              <ArrowRight className="w-4 h-4 relative z-10" aria-hidden="true">
             </Link>
           </div>
         </motion.div>

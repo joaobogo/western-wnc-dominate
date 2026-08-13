@@ -82,7 +82,7 @@ const ContactChannels = () => (
                     : "border border-border text-foreground group-hover:border-primary/40"
                 }`}
               >
-                {c.action} <ArrowRight className="w-4 h-4" />
+                {c.action} <ArrowRight className="w-4 h-4" aria-hidden="true">
               </span>
             </>
           );

@@ -97,16 +97,16 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
             {project.description}
           </p>
           <div className="flex flex-wrap items-center gap-5 text-white/85 text-body-xs md:text-body-xs font-body font-medium">
-            <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3" /> {project.location}</span>
-            <span className="flex items-center gap-1.5"><Ruler className="w-3 h-3" /> {project.scope}</span>
-            <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {project.duration}</span>
+            <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" aria-hidden="true"> {project.location}</span>
+            <span className="flex items-center gap-1.5"><Ruler className="w-4 h-4" aria-hidden="true"> {project.scope}</span>
+            <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" aria-hidden="true"> {project.duration}</span>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-8 md:bottom-12 right-8 md:right-12 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div className="w-12 h-12 border border-[hsl(var(--highland-gold)/0.3)] bg-[hsl(var(--highland-gold)/0.08)] backdrop-blur-sm flex items-center justify-center">
-          <Eye className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+          <Eye className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
         </div>
       </div>
 
@@ -166,7 +166,7 @@ const Gallery = () => {
                 className="text-center max-w-3xl mx-auto"
               >
                 <div className="inline-flex items-center gap-3 mb-6">
-                  <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
+                  <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true">
                   <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Project Portfolio</span>
                 </div>
                 <motion.h1
@@ -328,7 +328,7 @@ const Gallery = () => {
                 to="/consultation"
                 className="btn btn-primary btn-sm"
               >
-                Start a Similar Project <ArrowRight className="w-4 h-4 btn-arrow-icon" />
+                Start a Similar Project <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true">
               </Link>
             </div>
           </div>

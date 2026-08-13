@@ -148,7 +148,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 z-10">
             {/* Location */}
             <div className="flex items-center gap-1.5 mb-2.5">
-              <MapPin className="w-2.5 h-2.5 text-[hsl(var(--gold-ink))]" />
+              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
               <span className="text-caption font-body font-semibold uppercase tracking-[0.15em] text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                 {project.location}
               </span>
@@ -173,7 +173,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           {/* Arrow icon — bottom right */}
           <div className="absolute bottom-5 md:bottom-7 right-5 md:right-7 z-10">
             <div className="w-10 h-10 rounded-none border border-white/0 group-hover:border-[hsl(var(--highland-gold)/0.3)] bg-transparent group-hover:bg-[hsl(var(--highland-gold)/0.08)] backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-              <ArrowUpRight className="w-4 h-4 text-white/95 group-hover:text-[hsl(var(--gold-ink))] transition-colors" />
+              <ArrowUpRight className="w-4 h-4 text-white/95 group-hover:text-[hsl(var(--gold-ink))] transition-colors" aria-hidden="true">
             </div>
           </div>
         </div>
@@ -273,7 +273,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
             className="group inline-flex items-center gap-2.5 font-heading font-bold text-body-xs tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
           >
             View the Full Portfolio
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
           </Link>
           <p className="text-body-xs text-foreground font-body font-semibold mt-3">
             Mountain-proven across 8 WNC counties

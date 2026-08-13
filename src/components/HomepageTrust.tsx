@@ -149,7 +149,7 @@ const HomepageTrust = () => {
             <div className="inline-flex items-center gap-4 px-6 py-3 bg-card border border-border rounded-none">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" />
+                  <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
                 ))}
               </div>
               <div className="h-5 w-px bg-border" />
@@ -182,12 +182,12 @@ const HomepageTrust = () => {
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.2)] to-transparent" />
 
                   {/* Quote mark watermark */}
-                  <Quote className="absolute top-4 right-4 w-8 h-8 text-foreground/[0.03] rotate-180" />
+                  <Quote className="absolute top-4 right-4 w-6 h-6 text-foreground/[0.03] rotate-180" aria-hidden="true">
 
                   {/* Stars */}
                   <div className="flex gap-0.5 mb-4">
                     {[...Array(5)].map((_, si) => (
-                      <Star key={si} className="w-3 h-3 fill-accent text-[hsl(var(--gold-ink))]" />
+                      <Star key={si} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true">
                     ))}
                   </div>
 
@@ -211,7 +211,7 @@ const HomepageTrust = () => {
                     <div>
                       <p className="font-heading font-bold text-foreground text-sm">{review.name}</p>
                       <p className="text-muted-foreground text-caption font-body flex items-center gap-1">
-                        <MapPin className="w-2.5 h-2.5" />
+                        <MapPin className="w-4 h-4" aria-hidden="true">
                         {review.location}
                       </p>
                     </div>
@@ -274,7 +274,7 @@ const HomepageTrust = () => {
                   transition={{ delay: 0.15 + i * 0.06, duration: 0.4, ease: HIGHLAND_EASE }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] flex-shrink-0 mt-0.5" aria-hidden="true">
                   <span className="text-dark-section-foreground/85 text-body-xs font-body leading-relaxed">
                     {point}
                   </span>

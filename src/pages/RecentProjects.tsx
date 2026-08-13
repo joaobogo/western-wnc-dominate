@@ -109,7 +109,7 @@ const RecentProjects = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-2">
               <Link to="/contact" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-4 h-4" />
+                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true">
               </Link>
               <Link to="/roofing" className="btn btn-secondary btn-md">
                 Explore Our Services
@@ -155,7 +155,7 @@ const RecentProjects = () => {
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">{card.desc}</p>
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--heritage-green))] group-hover:gap-2.5 transition-all">
-                      See This Project <ArrowRight className="w-3.5 h-3.5" />
+                      See This Project <ArrowRight className="w-4 h-4" aria-hidden="true">
                     </span>
                   </div>
                 </Link>
@@ -232,13 +232,13 @@ const RecentProjects = () => {
                       {/* Hover reveal — scope and location over the image */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-5 text-center bg-[hsl(var(--heritage-charcoal)/0.62)] opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500">
                         <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] flex items-center gap-1.5">
-                          <MapPin className="w-3.5 h-3.5" /> {p.location}
+                          <MapPin className="w-4 h-4" aria-hidden="true"> {p.location}
                         </span>
                         <span className="text-white font-heading font-bold text-base md:text-lg leading-snug flex items-center gap-2">
-                          <Ruler className="w-4 h-4 opacity-80" /> {p.scope}
+                          <Ruler className="w-4 h-4 opacity-80" aria-hidden="true"> {p.scope}
                         </span>
                         <span className="text-white/80 text-caption font-body uppercase tracking-[0.18em] flex items-center gap-1.5">
-                          <Calendar className="w-3.5 h-3.5" /> {p.duration}
+                          <Calendar className="w-4 h-4" aria-hidden="true"> {p.duration}
                         </span>
                       </div>
                     </div>
@@ -250,9 +250,9 @@ const RecentProjects = () => {
                         {p.description}
                       </p>
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground font-body">
-                        <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {p.location}</span>
-                        <span className="flex items-center gap-1"><Ruler className="w-3 h-3" /> {p.scope}</span>
-                        <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {p.duration}</span>
+                        <span className="flex items-center gap-1"><MapPin className="w-4 h-4" aria-hidden="true"> {p.location}</span>
+                        <span className="flex items-center gap-1"><Ruler className="w-4 h-4" aria-hidden="true"> {p.scope}</span>
+                        <span className="flex items-center gap-1"><Calendar className="w-4 h-4" aria-hidden="true"> {p.duration}</span>
                       </div>
                     </div>
                   </>
@@ -306,7 +306,7 @@ const RecentProjects = () => {
                 <Link key={p.q} to={p.href} className="group bg-card border border-border hover:border-[hsl(var(--heritage-green))]/40 rounded-sm p-6 transition-all card-lift flex flex-col justify-between">
                   <h3 className="text-base font-heading font-bold text-foreground mb-4 leading-snug">{p.q}</h3>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--heritage-green))] group-hover:gap-2.5 transition-all">
-                    {p.cta} <ArrowRight className="w-3.5 h-3.5" />
+                    {p.cta} <ArrowRight className="w-4 h-4" aria-hidden="true">
                   </span>
                 </Link>
               ))}
@@ -319,7 +319,7 @@ const RecentProjects = () => {
           <div className="container-tight">
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">
-                <MapPin className="w-3.5 h-3.5" /> Service Areas
+                <MapPin className="w-4 h-4" aria-hidden="true"> Service Areas
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 leading-tight">
                 Serving Franklin, Highlands, Cashiers, Sylva, and Western North Carolina
@@ -329,7 +329,7 @@ const RecentProjects = () => {
                 gutter, and exterior services built for mountain communities.
               </p>
               <Link to="/service-areas" className="inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--heritage-green))] hover:gap-3 transition-all">
-                View All Service Areas <ArrowRight className="w-3.5 h-3.5" />
+                View All Service Areas <ArrowRight className="w-4 h-4" aria-hidden="true">
               </Link>
             </div>
           </div>
@@ -345,10 +345,10 @@ const RecentProjects = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/contact" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-4 h-4" />
+                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true">
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-4 h-4" /> 828-524-7773
+                <Phone className="w-4 h-4" aria-hidden="true"> 828-524-7773
               </a>
             </div>
           </div>

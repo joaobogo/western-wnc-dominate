@@ -164,7 +164,7 @@ export const BeforeAfterShowcase = ({
             {category}
           </span>
           <span className="text-muted-foreground text-xs font-body flex items-center gap-1">
-            <MapPin className="w-3 h-3" /> {location}
+            <MapPin className="w-4 h-4" aria-hidden="true"> {location}
           </span>
         </div>
         <h3 className="font-heading font-bold text-xl text-foreground mb-4">{title}</h3>
@@ -190,7 +190,7 @@ export const BeforeAfterShowcase = ({
             className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors link-draw"
           >
             View Full Project Story
-            <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
+            <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true">
           </Link>
         )}
       </div>

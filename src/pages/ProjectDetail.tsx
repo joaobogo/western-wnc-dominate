@@ -37,7 +37,7 @@ const ProjectDetailPage = () => {
             <h1 className="text-3xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">Project Not Found</h1>
             <p className="text-[hsl(var(--dark-section-foreground)/0.6)] mb-6">The project you're looking for doesn't exist or has been moved.</p>
             <Link to="/recent-projects" className="btn btn-primary btn-sm">
-              View All Projects <ArrowRight className="w-4 h-4" />
+              View All Projects <ArrowRight className="w-4 h-4" aria-hidden="true">
             </Link>
           </div>
         </main>
@@ -95,7 +95,7 @@ const ProjectDetailPage = () => {
                 </motion.div>
                 <nav className="flex items-center gap-2 text-white/85 text-sm font-body mb-4">
                   <Link to="/recent-projects" className="hover:text-white transition-colors flex items-center gap-1">
-                    <ArrowLeft className="w-3 h-3" /> Projects
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true"> Projects
                   </Link>
                   <span>/</span>
                   <span className="text-white/90">{project.type}</span>
@@ -105,17 +105,17 @@ const ProjectDetailPage = () => {
                     {project.type}
                   </span>
                   <span className="text-white/95 text-sm font-body flex items-center gap-1.5 font-medium">
-                    <MapPin className="w-3 h-3" /> {project.location}
+                    <MapPin className="w-4 h-4" aria-hidden="true"> {project.location}
                   </span>
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-3 leading-tight">
                   {project.title}
                 </h1>
                 <div className="flex flex-wrap items-center gap-4 text-white/85 text-sm font-body">
-                  <span className="flex items-center gap-1.5"><Ruler className="w-3.5 h-3.5" /> {project.scope}</span>
-                  <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {project.duration}</span>
+                  <span className="flex items-center gap-1.5"><Ruler className="w-4 h-4" aria-hidden="true"> {project.scope}</span>
+                  <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" aria-hidden="true"> {project.duration}</span>
                   {project.elevation && (
-                    <span className="flex items-center gap-1.5"><Mountain className="w-3.5 h-3.5" /> {project.elevation} elevation</span>
+                    <span className="flex items-center gap-1.5"><Mountain className="w-4 h-4" aria-hidden="true"> {project.elevation} elevation</span>
                   )}
                 </div>
               </div>
@@ -136,7 +136,7 @@ const ProjectDetailPage = () => {
                 </p>
                 {project.testimonial && (
                   <div className="bg-background p-8 md:p-12 border border-border shadow-flat relative text-left">
-                    <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/10" />
+                    <Quote className="absolute top-6 left-6 w-6 h-6 text-primary/10" aria-hidden="true">
                     <p className="text-lg md:text-xl font-body italic text-foreground mb-6 leading-relaxed relative z-10">
                       "{project.testimonial.quote}"
                     </p>
@@ -184,7 +184,7 @@ const ProjectDetailPage = () => {
                         <ul className="space-y-2">
                           {project.scopeOfWork.map((item, i) => (
                             <li key={i} className="flex items-start gap-2 text-foreground/90">
-                              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" aria-hidden="true">
                               <span>{item}</span>
                             </li>
                           ))}
@@ -274,7 +274,7 @@ const ProjectDetailPage = () => {
                 <motion.div {...fadeUp} className="bg-secondary/50 border border-border rounded-sm p-5">
                    <h4 className="text-caption md:text-body-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Service Expertise</h4>
                    <Link to={project.category === 'roofing' ? '/roofing/roof-replacement' : '/construction/additions'} className="group flex items-center justify-between text-sm font-heading font-bold text-foreground hover:text-primary transition-colors">
-                      View {project.type} Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      View {project.type} Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                    </Link>
                 </motion.div>
 
@@ -282,7 +282,7 @@ const ProjectDetailPage = () => {
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
                   <p className="text-primary-foreground/85 text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
                   <Link to="/consultation" className="btn btn-primary btn-sm w-full">
-                    Discuss Your Project <ArrowRight className="w-4 h-4" />
+                    Discuss Your Project <ArrowRight className="w-4 h-4" aria-hidden="true">
                   </Link>
                 </div>
               </div>
@@ -342,7 +342,7 @@ const ProjectDetailPage = () => {
                 to="/consultation"
                 className="btn btn-primary btn-sm flex-shrink-0"
               >
-                <Phone className="w-4 h-4" /> Discuss Your Project
+                <Phone className="w-4 h-4" aria-hidden="true"> Discuss Your Project
               </Link>
             </div>
           </div>
@@ -357,7 +357,7 @@ const ProjectDetailPage = () => {
                   <h3 className="text-2xl font-heading font-bold text-foreground">Related Knowledge Hub</h3>
                 </div>
                 <Link to="/blog" className="text-sm font-heading font-bold text-primary hover:underline flex items-center gap-1">
-                  Knowledge Hub <ArrowRight className="w-4 h-4" />
+                  Knowledge Hub <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -375,7 +375,7 @@ const ProjectDetailPage = () => {
                       <span className="text-caption font-bold uppercase tracking-widest text-primary mb-3 block">{post.category}</span>
                       <h4 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-3">{post.title}</h4>
                       <span className="text-xs text-muted-foreground flex items-center gap-1">
-                        Read Guidance <ArrowRight className="w-3 h-3" />
+                        Read Guidance <ArrowRight className="w-4 h-4" aria-hidden="true">
                       </span>
                     </Link>
                   ))}
@@ -463,7 +463,7 @@ const ProjectDetailPage = () => {
                       <span className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1 block">{rel.type}</span>
                       <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors mb-1">{rel.title}</h3>
                       <p className="text-muted-foreground text-sm font-body flex items-center gap-1">
-                        <MapPin className="w-3 h-3" /> {rel.location}
+                        <MapPin className="w-4 h-4" aria-hidden="true"> {rel.location}
                       </p>
                     </Link>
                   </motion.div>
@@ -474,7 +474,7 @@ const ProjectDetailPage = () => {
                   to="/recent-projects"
                   className="group inline-flex items-center gap-2 font-heading font-bold text-body-xs tracking-wide text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors duration-300"
                 >
-                  View Full Portfolio <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  View Full Portfolio <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </Link>
               </div>
             </div>

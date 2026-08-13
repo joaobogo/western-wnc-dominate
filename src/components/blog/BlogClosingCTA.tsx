@@ -32,7 +32,7 @@ const BlogClosingCTA = ({ cta, town }: Props) => (
         href="tel:+18285247773"
         className="btn btn-primary btn-md"
       >
-        <Phone className="w-4 h-4" /> Call (828) 524-7773
+        <Phone className="w-4 h-4" aria-hidden="true"> Call (828) 524-7773
       </a>
       <Link
         to={cta.servicePath}
@@ -47,7 +47,7 @@ const BlogClosingCTA = ({ cta, town }: Props) => (
         }
         className="btn btn-secondary btn-md"
       >
-        {cta.ctaLabel} <ArrowRight className="w-4 h-4" />
+        {cta.ctaLabel} <ArrowRight className="w-4 h-4" aria-hidden="true">
       </Link>
     </div>
     <p className="text-muted-foreground text-xs mt-5">

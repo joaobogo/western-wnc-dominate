@@ -46,9 +46,9 @@ export function RepairVsReplaceGuide() {
   const pct = (totalScore / maxScore) * 100;
 
   const getResult = () => {
-    if (pct < 30) return { verdict: "Repair is likely sufficient", icon: <CheckCircle className="w-8 h-8 text-primary" />, color: "bg-primary/10 border-primary", desc: "Based on your answers, a targeted repair should address the issue and extend your roof's lifespan. We'd recommend a professional inspection to confirm." };
-    if (pct < 65) return { verdict: "It depends — a closer look is needed", icon: <AlertTriangle className="w-8 h-8 text-[hsl(var(--gold-ink))]" />, color: "bg-highland-gold/10 border-highland-gold", desc: "Your roof is showing signs that could go either way. A professional assessment will determine whether repair makes sense or if you're better served by a full replacement." };
-    return { verdict: "Replacement is the stronger investment", icon: <XCircle className="w-8 h-8 text-alert" />, color: "bg-alert/10 border-alert", desc: "Multiple factors suggest your roof is nearing end of life. A new roof system will be more cost-effective long-term than continued repairs." };
+    if (pct < 30) return { verdict: "Repair is likely sufficient", icon: <CheckCircle className="w-6 h-6 text-primary" aria-hidden="true">, color: "bg-primary/10 border-primary", desc: "Based on your answers, a targeted repair should address the issue and extend your roof's lifespan. We'd recommend a professional inspection to confirm." };
+    if (pct < 65) return { verdict: "It depends — a closer look is needed", icon: <AlertTriangle className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">, color: "bg-highland-gold/10 border-highland-gold", desc: "Your roof is showing signs that could go either way. A professional assessment will determine whether repair makes sense or if you're better served by a full replacement." };
+    return { verdict: "Replacement is the stronger investment", icon: <XCircle className="w-6 h-6 text-alert" aria-hidden="true">, color: "bg-alert/10 border-alert", desc: "Multiple factors suggest your roof is nearing end of life. A new roof system will be more cost-effective long-term than continued repairs." };
   };
 
   const handleAnswer = (score: number) => {
@@ -102,10 +102,10 @@ export function RepairVsReplaceGuide() {
             </div>
             <div className="flex items-center justify-between">
               <button onClick={reset} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body inline-flex items-center gap-1">
-                <RotateCcw className="w-3.5 h-3.5" /> Start Over
+                <RotateCcw className="w-4 h-4" aria-hidden="true"> Start Over
               </button>
               <a href="/consultation" className="btn btn-primary btn-sm">
-                Discuss With an Advisor <ArrowRight className="w-4 h-4" />
+                Discuss With an Advisor <ArrowRight className="w-4 h-4" aria-hidden="true">
               </a>
             </div>
           </ResultReveal>
@@ -175,7 +175,7 @@ export function StormChecklist() {
               <p className="text-sm text-muted-foreground font-body mt-1">{getUrgency()?.desc}</p>
             </div>
             <a href="/consultation" className="btn btn-primary btn-sm w-full">
-              Request a Storm Assessment <ArrowRight className="w-4 h-4" />
+              Request a Storm Assessment <ArrowRight className="w-4 h-4" aria-hidden="true">
             </a>
           </ResultReveal>
         )}
@@ -298,7 +298,7 @@ export function MaterialsComparison() {
         <div className="mt-6 text-center">
           <p className="text-xs text-muted-foreground font-body mb-3">Every roof is unique. We'll help you choose the right material for your home's specific conditions.</p>
           <a href="/consultation" className="btn btn-primary btn-sm">
-            Discuss Materials With an Advisor <ArrowRight className="w-4 h-4" />
+            Discuss Materials With an Advisor <ArrowRight className="w-4 h-4" aria-hidden="true">
           </a>
         </div>
       </div>
@@ -382,10 +382,10 @@ export function ConstructionFitGuide() {
             </div>
             <div className="flex items-center justify-between">
               <button onClick={reset} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body inline-flex items-center gap-1">
-                <RotateCcw className="w-3.5 h-3.5" /> Start Over
+                <RotateCcw className="w-4 h-4" aria-hidden="true"> Start Over
               </button>
               <a href="/consultation" className="btn btn-primary btn-sm">
-                Schedule a Consultation <ArrowRight className="w-4 h-4" />
+                Schedule a Consultation <ArrowRight className="w-4 h-4" aria-hidden="true">
               </a>
             </div>
           </ResultReveal>

@@ -60,10 +60,10 @@ const Financing = () => {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link to="/contact" className="btn btn-primary btn-md">
-                  Ask About Financing <ArrowRight className="w-4 h-4" />
+                  Ask About Financing <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
                 </a>
               </div>
             </motion.div>
@@ -75,7 +75,7 @@ const Financing = () => {
             {/* Pre-launch placeholder — needs client/lender details */}
             <div className="mb-12 max-w-3xl mx-auto p-5 border-l-4 border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.06)] rounded-sm">
               <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true">
                 <div>
                   <p className="text-xs font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-1.5">
                     Pending Client Confirmation
@@ -124,7 +124,7 @@ const Financing = () => {
                 <ul className="grid sm:grid-cols-2 gap-2">
                   {qualifyingProjects.map((p) => (
                     <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground font-body">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true">
                       <span>{p}</span>
                     </li>
                   ))}

@@ -69,7 +69,7 @@ const IssueList = ({ items }: { items: MonitoringIssue[] }) => {
               <span className="rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground">{issue.path}</span>
               {issue.href && issue.href.startsWith("/") && (
                 <Link to={issue.href} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                  Drill down <ArrowRight className="h-4 w-4" />
+                  Drill down <ArrowRight className="h-4 w-4" aria-hidden="true">
                 </Link>
               )}
             </div>
@@ -85,7 +85,7 @@ const AlertCenter = ({ items }: { items: MonitoringIssue[] }) => {
     return (
       <section className="rounded-sm border border-border bg-card p-6">
         <div className="flex items-start gap-3">
-          <Siren className="mt-1 h-5 w-5 text-primary" />
+          <Siren className="mt-1 h-4 w-4 text-primary" aria-hidden="true">
           <div>
             <h2 className="text-2xl font-heading font-bold text-foreground">Alert center</h2>
             <p className="mt-2 text-sm leading-7 text-muted-foreground">No active threshold-based alerts are firing right now.</p>
@@ -98,7 +98,7 @@ const AlertCenter = ({ items }: { items: MonitoringIssue[] }) => {
   return (
     <section className="rounded-sm border border-border bg-card p-6">
       <div className="flex items-start gap-3">
-        <Siren className="mt-1 h-5 w-5 text-destructive" />
+        <Siren className="mt-1 h-4 w-4 text-destructive" aria-hidden="true">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
@@ -122,7 +122,7 @@ const AlertCenter = ({ items }: { items: MonitoringIssue[] }) => {
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">{issue.detail}</p>
                 {issue.href && issue.href.startsWith("/") && (
                   <Link to={issue.href} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                    Open drill-down <ArrowRight className="h-4 w-4" />
+                    Open drill-down <ArrowRight className="h-4 w-4" aria-hidden="true">
                   </Link>
                 )}
               </article>
@@ -173,7 +173,7 @@ const PriorityMonitoringPanel = ({ summary }: { summary: WeeklyPriorityMonitorin
                 <p className="mt-1 text-sm text-muted-foreground">{page.path}</p>
               </div>
               <Link to={page.path} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                Open page <ArrowRight className="h-4 w-4" />
+                Open page <ArrowRight className="h-4 w-4" aria-hidden="true">
               </Link>
             </div>
 
@@ -389,7 +389,7 @@ const SEOMonitoring = () => {
                         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{stat.label}</p>
                         <p className="mt-3 text-4xl font-heading font-bold text-foreground">{stat.value}</p>
                       </div>
-                      <Icon className="h-8 w-8 text-primary" />
+                      <Icon className="h-6 w-6 text-primary" aria-hidden="true">
                     </div>
                   </div>
                 );
@@ -414,7 +414,7 @@ const SEOMonitoring = () => {
                           <h3 className="mt-2 text-lg font-heading font-bold text-foreground">{item.label}</h3>
                         </div>
                         <Link to={item.path} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                          Open page <ArrowRight className="h-4 w-4" />
+                          Open page <ArrowRight className="h-4 w-4" aria-hidden="true">
                         </Link>
                       </div>
                       <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.summary}</p>
@@ -433,7 +433,7 @@ const SEOMonitoring = () => {
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-sm border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground">
-                  {isRunning ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <Bot className="h-4 w-4 text-primary" />}
+                  {isRunning ? <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true"> : <Bot className="h-4 w-4 text-primary" aria-hidden="true">}
                   {isRunning ? "Scanning" : "Scan finished"}
                 </div>
               </div>
@@ -462,7 +462,7 @@ const SEOMonitoring = () => {
                       <article key={i} className="rounded-sm border border-border bg-card p-5">
                         <div className="flex flex-wrap items-start justify-between gap-3">
                           <div className="flex items-start gap-3">
-                            <MousePointer2 className="mt-1 h-5 w-5 text-primary" />
+                            <MousePointer2 className="mt-1 h-4 w-4 text-primary" aria-hidden="true">
                             <div>
                               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{event.event_type}</p>
                               <h3 className="mt-1 text-lg font-heading font-bold text-foreground">{event.label || "Unnamed Action"}</h3>
@@ -492,7 +492,7 @@ const SEOMonitoring = () => {
 
             <section className="rounded-sm border border-border bg-card p-6">
               <div className="flex items-start gap-3">
-                <AlertTriangle className="mt-1 h-5 w-5 text-[hsl(var(--gold-ink))]" />
+                <AlertTriangle className="mt-1 h-4 w-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                 <p className="text-sm leading-7 text-muted-foreground">
                   This dashboard combines logged 404 hits with a live rendered-page crawl, sitemap diff, and weekly priority-page monitoring for all service and town URLs. Weekly reporting can now summarize keyword shifts alongside internal-link count and severity changes.
                 </p>

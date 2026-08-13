@@ -75,14 +75,13 @@ const AttributedReviews = ({
             <div className="flex items-center gap-2 mb-3">
               <div className="flex" aria-label={`${r.ratingValue} out of 5 stars`}>
                 {Array.from({ length: r.ratingValue }).map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-[hsl(var(--gold-ink))] text-[hsl(var(--gold-ink))]" />
+                  <Star key={i} className="w-4 h-4 fill-[hsl(var(--gold-ink))] text-[hsl(var(--gold-ink))]" aria-hidden="true">
                 ))}
               </div>
               <Quote
                 className={`w-3.5 h-3.5 ml-auto ${
                   isDark ? "text-dark-section-foreground/40" : "text-muted-foreground/50"
-                }`}
-              />
+                }`} aria-hidden="true">
             </div>
             <blockquote
               className={`text-body-xs md:text-sm leading-relaxed font-body ${

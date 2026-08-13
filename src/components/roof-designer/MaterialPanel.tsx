@@ -31,7 +31,7 @@ const MaterialPanel = ({ materials, selectedMaterial, onSelectMaterial }: Materi
     <aside className="w-full lg:w-80 bg-background border-t lg:border-t-0 lg:border-l border-border overflow-y-auto max-h-[50vh] lg:max-h-none">
       <div className="p-4 border-b border-border">
         <h3 className="font-heading text-lg font-semibold text-foreground flex items-center gap-2">
-          <Palette className="w-5 h-5 text-primary" />
+          <Palette className="w-4 h-4 text-primary" aria-hidden="true">
           Roof Material & Color
         </h3>
         {selectedMaterial && (
@@ -56,8 +56,7 @@ const MaterialPanel = ({ materials, selectedMaterial, onSelectMaterial }: Materi
                 <ChevronDown
                   className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${
                     expandedCategory === cat.key ? "rotate-180" : ""
-                  }`}
-                />
+                  }`} aria-hidden="true">
               </button>
 
               <AnimatePresence>

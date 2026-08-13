@@ -120,7 +120,7 @@ const LocalProjectProof = ({
               )}
               <div className="p-5">
                 <span className="inline-flex items-center gap-1.5 text-caption font-body uppercase tracking-wider text-muted-foreground mb-2">
-                  <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
+                  <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                   {proximity}
                 </span>
                 <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -130,7 +130,7 @@ const LocalProjectProof = ({
                   {project.highlight}
                 </p>
                 <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                  See the project <ArrowRight className="w-4 h-4" />
+                  See the project <ArrowRight className="w-4 h-4" aria-hidden="true">
                 </span>
               </div>
             </Link>

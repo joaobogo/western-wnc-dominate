@@ -56,7 +56,7 @@ const IntakeConfirmation = ({
         className="h-16 md:h-20 w-auto mx-auto mb-4"
       />
       <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-5">
-        <CheckCircle className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
+        <CheckCircle className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">
       </div>
       <h2 className="text-2xl md:text-heading-sm font-heading font-bold text-foreground mb-3 tracking-tight">
         {title}
@@ -83,7 +83,7 @@ const IntakeConfirmation = ({
 
       <div className="text-left bg-background border border-border rounded-md p-5 mb-8">
         <div className="flex items-center gap-2 mb-4">
-          <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+          <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
           <h3 className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">
             {nextStepsTitle}
           </h3>
@@ -134,14 +134,14 @@ const IntakeConfirmation = ({
           href="tel:+18285247773"
           className="btn btn-secondary btn-sm"
         >
-          <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+          <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
           (828) 524-7773
         </a>
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground font-body text-body-xs transition-colors"
         >
-          Return home <ArrowRight className="w-3.5 h-3.5" />
+          Return home <ArrowRight className="w-4 h-4" aria-hidden="true">
         </Link>
       </div>
     </motion.div>

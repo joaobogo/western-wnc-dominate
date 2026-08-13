@@ -442,7 +442,7 @@ const ConstructionIntakeForm = () => {
             onClick={back}
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-body-xs font-body transition-colors"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back
+            <ArrowLeft className="w-4 h-4" aria-hidden="true"> Back
           </button>
         ) : <span />}
 
@@ -453,7 +453,7 @@ const ConstructionIntakeForm = () => {
             onClick={next}
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-raised"
           >
-            Continue <ArrowRight className="w-5 h-5" />
+            Continue <ArrowRight className="w-4 h-4" aria-hidden="true">
           </button>
         ) : (
           <button
@@ -462,7 +462,7 @@ const ConstructionIntakeForm = () => {
             onClick={submit}
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-raised"
           >
-            {submitting ? <><Loader2 className="w-5 h-5 animate-spin" /> Sending…</> : <>Get My Build Planned <ArrowRight className="w-5 h-5" /></>}
+            {submitting ? <><Loader2 className="w-4 h-4 animate-spin" aria-hidden="true"> Sending…</> : <>Get My Build Planned <ArrowRight className="w-4 h-4" aria-hidden="true"></>}
           </button>
         )}
       </div>

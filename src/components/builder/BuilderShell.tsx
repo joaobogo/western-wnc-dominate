@@ -68,7 +68,7 @@ const BuilderShell = ({
             to={switchHref}
             className="hidden md:inline-flex items-center gap-1.5 text-body-xs font-body text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors"
           >
-            <ArrowLeft className="w-3 h-3" /> {switchLabel}
+            <ArrowLeft className="w-4 h-4" aria-hidden="true"> {switchLabel}
           </Link>
         </div>
 
@@ -142,8 +142,7 @@ const BuilderShell = ({
                 Your scope brief
               </span>
               <ChevronDown
-                className={`w-3.5 h-3.5 text-[hsl(var(--heritage-green))] transition-transform ${mobileSummaryOpen ? "rotate-180" : ""}`}
-              />
+                className={`w-3.5 h-3.5 text-[hsl(var(--heritage-green))] transition-transform ${mobileSummaryOpen ? "rotate-180" : ""}`} aria-hidden="true">
             </button>
           )}
           {mobileSummaryOpen && (
@@ -179,7 +178,7 @@ const BuilderShell = ({
               to={switchHref}
               className="md:hidden mt-3 inline-flex items-center gap-1.5 text-caption font-body text-foreground/80 hover:text-[hsl(var(--gold-ink))] transition-colors"
             >
-              <ArrowLeft className="w-3 h-3" /> {switchLabel}
+              <ArrowLeft className="w-4 h-4" aria-hidden="true"> {switchLabel}
             </Link>
           </div>
 
@@ -198,7 +197,7 @@ const BuilderShell = ({
               href="tel:+18285247773"
               className="mt-4 inline-flex items-center gap-2 text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-body text-body-xs"
             >
-              <Phone className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
               Prefer to talk? (828) 524-7773
             </a>
           </aside>

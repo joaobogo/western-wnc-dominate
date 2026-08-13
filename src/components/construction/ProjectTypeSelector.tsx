@@ -61,12 +61,12 @@ const ProjectTypeSelector = ({
             }`}
           >
             <span className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center">
-              <Icon className="w-5 h-5 text-primary" aria-hidden="true" />
+              <Icon className="w-4 h-4 text-primary" aria-hidden="true" >
             </span>
             <span className="font-heading font-bold text-lg leading-tight">{label}</span>
             <span className="text-sm text-muted-foreground font-body flex-grow">{desc}</span>
             <span className="text-caption uppercase tracking-widest font-bold text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-              Start the conversation <ArrowRight className="w-3.5 h-3.5" />
+              Start the conversation <ArrowRight className="w-4 h-4" aria-hidden="true">
             </span>
           </Link>
         ))}

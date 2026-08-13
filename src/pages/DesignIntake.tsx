@@ -52,13 +52,13 @@ const DesignIntake = () => {
               onClick={() => setMode("long")}
               className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-body-xs font-heading font-bold transition-all ${mode === "long" ? "bg-background shadow-flat text-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
-              <FileText className="w-4 h-4" /> Detailed Planning Brief
+              <FileText className="w-4 h-4" aria-hidden="true"> Detailed Planning Brief
             </button>
             <button 
               onClick={() => setMode("short")}
               className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-body-xs font-heading font-bold transition-all ${mode === "short" ? "bg-background shadow-flat text-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
-              <Sparkles className="w-4 h-4" /> Quick Inquiry
+              <Sparkles className="w-4 h-4" aria-hidden="true"> Quick Inquiry
             </button>
           </div>
 

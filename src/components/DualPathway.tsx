@@ -254,7 +254,7 @@ const DivisionCard = ({ data, accent, index }: {
                 </span>
                 <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-transform group-hover/item:translate-x-1 ${
                   isGold ? "text-[hsl(var(--highland-gold))]" : "text-primary"
-                }`} />
+                }`} aria-hidden="true">
               </Link>
             </motion.li>
           ))}
@@ -270,7 +270,7 @@ const DivisionCard = ({ data, accent, index }: {
           }`}
         >
           {data.cta}
-          <ArrowRight className="w-5 h-5 group-hover/cta:translate-x-1.5 transition-transform" />
+          <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1.5 transition-transform" aria-hidden="true">
         </Link>
       </div>
     </motion.div>

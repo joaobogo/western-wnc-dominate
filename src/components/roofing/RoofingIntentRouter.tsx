@@ -39,7 +39,7 @@ const RoofingIntentRouter = () => (
             </h3>
             <p className="text-muted-foreground text-body-xs font-body leading-relaxed mb-4">{intent.detail}</p>
             <span className="mt-auto inline-flex items-center gap-1.5 text-caption font-body font-semibold uppercase tracking-[0.12em] text-primary group-hover:gap-2.5 transition-all">
-              Go <ArrowRight className="w-3.5 h-3.5" />
+              Go <ArrowRight className="w-4 h-4" aria-hidden="true">
             </span>
           </Link>
         </motion.div>

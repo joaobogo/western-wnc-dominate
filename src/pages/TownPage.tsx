@@ -154,10 +154,10 @@ const TownPage = () => {
                 className="flex flex-col sm:flex-row gap-4 md:gap-6"
               >
                 <Link to="/request-inspection" className="btn btn-primary btn-lg md:text-body-sm min-w-[300px]">
-                  Request an Inspection in {town.name} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  Request an Inspection in {town.name} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
-                  <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
+                  <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true"> (828) 524-7773
                 </a>
               </motion.div>
             </div>
@@ -214,7 +214,7 @@ const TownPage = () => {
           </ScrollReveal>
           <div className="bg-background p-8 border relative z-10 shadow-flat">
             <h3 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
-              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
               {town.name} Site Realities
             </h3>
             <ul className="space-y-8">

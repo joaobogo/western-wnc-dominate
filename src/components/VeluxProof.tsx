@@ -114,7 +114,7 @@ const VeluxProof = () => {
           >
             <div className="border border-[hsl(var(--highland-gold)/0.3)] bg-dark-section-foreground/[0.03] p-6 md:p-8 h-full flex flex-col">
               <div className="flex items-center gap-2 mb-1">
-                <ShieldCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                <ShieldCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))]">
                   Skylight Warranty
                 </span>
@@ -161,13 +161,13 @@ const VeluxProof = () => {
               to="/consultation"
               className="btn btn-primary btn-lg"
             >
-              Request Skylight Inspection <ArrowRight className="w-4 h-4" />
+              Request Skylight Inspection <ArrowRight className="w-4 h-4" aria-hidden="true">
             </Link>
             <a
               href="tel:+18285247773"
               className="btn btn-secondary btn-md btn-on-dark"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" /> (828) 524-7773
+              <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" aria-hidden="true"> (828) 524-7773
             </a>
           </div>
         </motion.div>

@@ -217,13 +217,13 @@ const ResidentialRoofing = () => {
                           <div className="flex items-center gap-3">
                             <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                               <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
-                                <Home className="w-3.5 h-3.5 text-primary-foreground" />
+                                <Home className="w-4 h-4 text-primary-foreground" aria-hidden="true">
                               </div>
                               <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">
                                 Roofing
                               </span>
                             </Link>
-                            <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
+                            <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true">
                             <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
                               Residential
                             </span>
@@ -274,13 +274,13 @@ const ResidentialRoofing = () => {
                           >
                             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                             <span className="relative">Discuss Your Roof</span>
-                            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
                           </Link>
                           <a
                             href="tel:+18285247773"
                             className="btn btn-secondary btn-lg btn-on-dark group"
                           >
-                            <Phone className="w-4 h-4" />
+                            <Phone className="w-4 h-4" aria-hidden="true">
                             (828) 524-7773
                           </a>
                         </motion.div>
@@ -416,7 +416,7 @@ const ResidentialRoofing = () => {
                             className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors font-body"
                           >
                             Not sure? Let us assess your roof — no obligation
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                           </Link>
                         </motion.div>
                       </div>
@@ -461,7 +461,7 @@ const ResidentialRoofing = () => {
                                 <ul className="space-y-3">
                                   {option.items.map((item) => (
                                     <li key={item} className="flex items-start gap-3">
-                                      <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/80' : 'text-[hsl(var(--highland-gold)/0.9)]'}`} />
+                                      <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/80' : 'text-[hsl(var(--highland-gold)/0.9)]'}`} aria-hidden="true">
                                       <span className="text-muted-foreground text-body-xs font-body leading-snug">{item}</span>
                                     </li>
                                   ))}
@@ -543,7 +543,7 @@ const ResidentialRoofing = () => {
                                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                       {mat.pros.map((pro) => (
                                         <li key={pro} className="flex items-start gap-2">
-                                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
+                                          <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true">
                                           <span className="text-dark-section-foreground/95 text-body-xs font-body font-medium">{pro}</span>
                                         </li>
                                       ))}
@@ -568,10 +568,10 @@ const ResidentialRoofing = () => {
                             <Link to="/consultation" className="btn btn-primary btn-md group relative">
                               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                               <span className="relative">Discuss Your Roof</span>
-                              <ArrowRight className="w-4 h-4 relative" />
+                              <ArrowRight className="w-4 h-4 relative" aria-hidden="true">
                             </Link>
                             <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                              <Phone className="w-4 h-4" /> Call Direct
+                              <Phone className="w-4 h-4" aria-hidden="true"> Call Direct
                             </a>
                           </div>
                         </div>
@@ -607,7 +607,7 @@ const ResidentialRoofing = () => {
                               className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
                             >
                               <div className="flex items-center gap-3 mb-3">
-                                <Landmark className="w-5 h-5 text-primary/80 group-hover:text-primary transition-colors" />
+                                <Landmark className="w-4 h-4 text-primary/80 group-hover:text-primary transition-colors" aria-hidden="true">
                                 <h3 className="font-heading font-bold text-foreground text-base group-hover:text-primary transition-colors">{style.title}</h3>
                               </div>
                               <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
@@ -709,7 +709,7 @@ const ResidentialRoofing = () => {
                             className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body"
                           >
                             Full Gallery
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                           </Link>
                         </motion.div>
 
@@ -772,7 +772,7 @@ const ResidentialRoofing = () => {
                                 className="group flex gap-4 p-5 rounded-sm bg-card border border-border hover:border-primary/15 card-lift"
                               >
                                 <div className="w-8 h-8 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors mt-0.5">
-                                  <ShieldCheck className="w-4 h-4 text-primary" />
+                                  <ShieldCheck className="w-4 h-4 text-primary" aria-hidden="true">
                                 </div>
                                 <div>
                                   <h3 className="text-sm font-heading font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
@@ -874,7 +874,7 @@ const ResidentialRoofing = () => {
                                ))}
                             </div>
                             <Link to="/service-areas" className="text-xs font-bold text-primary flex items-center gap-1.5 uppercase tracking-widest">
-                               All Areas <ArrowRight className="w-3 h-3" />
+                               All Areas <ArrowRight className="w-4 h-4" aria-hidden="true">
                             </Link>
                          </div>
                       </div>
@@ -889,12 +889,12 @@ const ResidentialRoofing = () => {
                                   Highlander’s project discipline extends into custom additions and renovations. If your roofing project is part of a larger home expansion, our construction team coordinates the entire structural envelope.
                                </p>
                                <Link to="/construction" className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-bold uppercase tracking-widest text-caption hover:gap-3 transition-all">
-                                  Explore Construction Division <ArrowRight className="w-4 h-4" />
+                                  Explore Construction Division <ArrowRight className="w-4 h-4" aria-hidden="true">
                                </Link>
                             </div>
                             <div className="bg-card border border-border p-8 rounded-sm">
                                <h4 className="font-heading font-bold text-foreground mb-4 flex items-center gap-2">
-                                  <Compass className="w-5 h-5 text-primary" />
+                                  <Compass className="w-4 h-4 text-primary" aria-hidden="true">
                                   Plan Before You Build
                                </h4>
                                <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
@@ -963,13 +963,13 @@ const ResidentialRoofing = () => {
                               >
                                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                                 <span className="relative">Schedule a Roofing Consultation</span>
-                                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
                               </Link>
                               <a
                                 href="tel:+18285247773"
                                 className="btn btn-secondary btn-lg btn-on-dark group"
                               >
-                                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
+                                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true">
                                 (828) 524-7773
                               </a>
                             </div>

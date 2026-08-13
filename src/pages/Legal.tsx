@@ -358,7 +358,7 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
         <div className="container-tight max-w-3xl">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center">
-              <Icon className="w-5 h-5 text-primary" />
+              <Icon className="w-4 h-4 text-primary" aria-hidden="true">
             </div>
             <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-primary">{meta.eyebrow}</span>
           </div>
@@ -372,12 +372,12 @@ export default function LegalPage({ kind }: { kind: LegalKind }) {
           </article>
 
           <div className="mt-14 pt-8 border-t border-border flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-body">
-            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Shield className="w-3.5 h-3.5" /> Privacy Policy</Link>
-            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><FileText className="w-3.5 h-3.5" /> Terms of Service</Link>
-            <Link to="/accessibility" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><AccessibilityIcon className="w-3.5 h-3.5" /> Accessibility</Link>
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Shield className="w-4 h-4" aria-hidden="true"> Privacy Policy</Link>
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><FileText className="w-4 h-4" aria-hidden="true"> Terms of Service</Link>
+            <Link to="/accessibility" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><AccessibilityIcon className="w-4 h-4" aria-hidden="true"> Accessibility</Link>
             <span className="text-border">·</span>
-            <a href="tel:+18285247773" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> (828) 524-7773</a>
-            <a href="mailto:info@highlandernc.com" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> info@highlandernc.com</a>
+            <a href="tel:+18285247773" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773</a>
+            <a href="mailto:info@highlandernc.com" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"><Mail className="w-4 h-4" aria-hidden="true"> info@highlandernc.com</a>
           </div>
         </div>
       </main>

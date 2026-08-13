@@ -30,7 +30,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4 text-center md:text-left">
           <div className="w-12 h-12 shrink-0 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.4)] flex items-center justify-center">
-            <CloudLightning className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
+            <CloudLightning className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true">
           </div>
           <div>
             <p className="text-caption uppercase tracking-[0.25em] font-bold text-[hsl(var(--gold-ink))] mb-1">
@@ -46,13 +46,13 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
             href="tel:+18285247773"
             className="btn btn-primary btn-md"
           >
-            <Phone className="w-4 h-4" /> Call (828) 524-7773
+            <Phone className="w-4 h-4" aria-hidden="true"> Call (828) 524-7773
           </a>
           <Link
             to="/request-inspection"
             className="btn btn-secondary btn-md btn-on-dark"
           >
-            Request Assessment <ArrowRight className="w-4 h-4" />
+            Request Assessment <ArrowRight className="w-4 h-4" aria-hidden="true">
           </Link>
         </div>
       </div>
@@ -129,7 +129,7 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
               <h3 className="font-heading font-bold text-xl text-foreground mb-3 leading-tight">{s.label}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed font-body mb-8">{s.desc(town.name)}</p>
               <span className="mt-auto text-primary font-heading font-bold text-body-xs uppercase tracking-widest inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                Explore <ArrowRight className="w-4 h-4" />
+                Explore <ArrowRight className="w-4 h-4" aria-hidden="true">
               </span>
             </Link>
           </ScrollReveal>
@@ -142,13 +142,13 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
             to="/request-inspection"
             className="btn btn-primary btn-lg"
           >
-            Start Your {town.name} Project <ArrowRight className="w-5 h-5" />
+            Start Your {town.name} Project <ArrowRight className="w-4 h-4" aria-hidden="true">
           </Link>
           <a
             href="tel:+18285247773"
             className="btn btn-secondary btn-lg"
           >
-            <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
+            <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true"> (828) 524-7773
           </a>
         </div>
       </ScrollReveal>
@@ -186,13 +186,13 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
               to="/request-inspection"
               className="btn btn-primary btn-lg"
             >
-              Request a {town.name} Consultation <ArrowRight className="w-5 h-5" />
+              Request a {town.name} Consultation <ArrowRight className="w-4 h-4" aria-hidden="true">
             </Link>
             <a
               href="tel:+18285247773"
               className="btn btn-secondary btn-lg btn-on-dark"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> Call Direct
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true"> Call Direct
             </a>
           </div>
         </ScrollReveal>
@@ -234,7 +234,7 @@ export const TownWhyChoose = ({ town }: { town: TownData }) => (
               to="/about"
               className="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all"
             >
-              About Highlander <ArrowRight className="w-4 h-4" />
+              About Highlander <ArrowRight className="w-4 h-4" aria-hidden="true">
             </Link>
           </ScrollReveal>
         </div>
@@ -352,7 +352,7 @@ export const TownFAQ = ({
         <div className="mb-12 text-center">
           <ScrollReveal variant="fade">
             <span className="eyebrow mb-4 block flex items-center justify-center gap-2">
-              <HelpCircle className="w-3.5 h-3.5" /> {town.name} FAQs
+              <HelpCircle className="w-4 h-4" aria-hidden="true"> {town.name} FAQs
             </span>
           </ScrollReveal>
           <HeadingReveal>
@@ -391,13 +391,13 @@ export const TownFAQ = ({
             data-gtm-cta="request_inspection"
             className="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all min-h-[44px]"
           >
-            Still have questions? Talk with our team <ArrowRight className="w-4 h-4" />
+            Still have questions? Talk with our team <ArrowRight className="w-4 h-4" aria-hidden="true">
           </Link>
           <a
             href="tel:+18285247773"
             className="inline-flex items-center gap-2 text-foreground font-heading font-bold text-sm uppercase tracking-widest hover:text-primary transition-colors min-h-[44px]"
           >
-            <Phone className="w-4 h-4" /> (828) 524-7773
+            <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
           </a>
         </div>
       </div>
@@ -425,7 +425,7 @@ export const TownEstimateCTA = ({ town }: { town: TownData }) => {
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.5)] to-transparent" />
 
             <span className="eyebrow mb-4 flex items-center justify-center gap-2">
-              <MapPin className="w-3.5 h-3.5" /> {town.name}, {town.state}
+              <MapPin className="w-4 h-4" aria-hidden="true"> {town.name}, {town.state}
             </span>
 
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight">
@@ -445,13 +445,13 @@ export const TownEstimateCTA = ({ town }: { town: TownData }) => {
                 data-gtm-cta="request_quote"
                 className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-8"
               >
-                Request an estimate in {town.name} <ArrowRight className="w-4 h-4" />
+                Request an estimate in {town.name} <ArrowRight className="w-4 h-4" aria-hidden="true">
               </Link>
               <a
                 href="tel:+18285247773"
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-6 border border-border font-heading font-bold text-body-xs uppercase tracking-[0.15em] text-foreground hover:border-primary hover:text-primary transition-colors"
               >
-                <Phone className="w-4 h-4" /> (828) 524-7773
+                <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
               </a>
             </div>
 
@@ -489,14 +489,14 @@ export const TownCTAStrip = ({ town }: { town: TownData }) => (
           href="tel:+18285247773"
           className="inline-flex items-center gap-2 font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:opacity-90"
         >
-          <Phone className="w-3.5 h-3.5" /> (828) 524-7773
+          <Phone className="w-4 h-4" aria-hidden="true"> (828) 524-7773
         </a>
         <div className="w-px h-3 bg-primary-foreground/20" />
         <Link
           to="/request-inspection"
           className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:opacity-90"
         >
-          Request Inspection <ArrowRight className="w-3.5 h-3.5" />
+          Request Inspection <ArrowRight className="w-4 h-4" aria-hidden="true">
         </Link>
       </div>
     </div>

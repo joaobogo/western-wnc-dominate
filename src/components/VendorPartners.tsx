@@ -86,7 +86,7 @@ const VendorPartners = ({ heading = "Trusted Manufacturer & Supplier Partners", 
               </div>
               <h3 className="font-heading font-bold text-lg text-foreground mb-2 inline-flex items-center gap-1.5">
                 {v.name}
-                <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true">
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{v.description}</p>
             </motion.a>

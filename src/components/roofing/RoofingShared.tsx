@@ -33,10 +33,10 @@ export const RoofingMidCTA = ({
           <Link to={ctaLink} className="btn btn-primary btn-md group relative">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative">{ctaText}</span>
-            <ArrowRight className="w-4 h-4 relative" />
+            <ArrowRight className="w-4 h-4 relative" aria-hidden="true">
           </Link>
           <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-            <Phone className="w-4 h-4" /> Call Direct
+            <Phone className="w-4 h-4" aria-hidden="true"> Call Direct
           </a>
         </div>
       </div>
@@ -77,10 +77,10 @@ export const RoofingClosingCTA = ({
               <Link to={ctaLink} className="btn btn-primary btn-lg group relative">
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">{ctaText}</span>
-                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true"> (828) 524-7773
               </a>
             </div>
 
@@ -133,7 +133,7 @@ export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSid
     ))}
     <div className="pt-3 border-t border-border">
       <Link to="/consultation" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-        Request a Consultation <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+        Request a Consultation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
       </Link>
     </div>
   </div>

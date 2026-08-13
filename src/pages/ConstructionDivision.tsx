@@ -139,7 +139,7 @@ const ConstructionDivision = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.4)] shadow-flat">
-                    <HardHat className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                    <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true">
                   </div>
                   <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] drop-shadow-sm">Mountain Quality Since 2017</span>
                 </div>
@@ -160,10 +160,10 @@ const ConstructionDivision = () => {
                 <Link to="/consultation" className="btn btn-primary btn-lg group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" /> (828) 524-7773
+                  <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true"> (828) 524-7773
                 </a>
               </motion.div>
 
@@ -187,7 +187,7 @@ const ConstructionDivision = () => {
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
                   {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Scoping Clarity"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
-                      <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.85)]" />
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true">
                       <span className="text-primary-foreground/90 text-caption font-body font-medium tracking-wide">{item}</span>
                     </div>
                   ))}
@@ -299,7 +299,7 @@ const ConstructionDivision = () => {
                   className="btn btn-primary btn-md group"
                 >
                   Start with a Design Agreement
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
                 </Link>
                 <Link
                   to="/construction/design"
@@ -312,7 +312,7 @@ const ConstructionDivision = () => {
                 <FinancingTeaser serviceLabel="construction project" />
               </div>
               <div className="mt-8 flex items-start gap-3 p-4 border-l-2 border-[hsl(var(--highland-gold)/0.5)] bg-card/40">
-                <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
+                <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true">
                 <p className="text-muted-foreground text-sm font-body leading-relaxed">
                   Already have complete plans? Highlander can review them and determine whether your project is ready to move toward estimating.
                 </p>
@@ -334,7 +334,7 @@ const ConstructionDivision = () => {
                     "A portion of design fees may credit back when you build with Highlander",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" aria-hidden="true">
                       <span className="text-foreground/85 text-sm md:text-body-sm font-body leading-snug">{item}</span>
                     </li>
                   ))}
