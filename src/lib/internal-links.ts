@@ -1,4 +1,6 @@
-import { blogPosts } from "@/data/blogs";
+// Metadata-only index (Prompt 41): avoids pulling ~590 KB of article bodies
+// into every service and town page just to build related-link lists.
+import { blogIndex as blogPosts } from "@/data/blog-index.generated";
 import { counties } from "@/data/counties";
 import { towns } from "@/data/towns";
 import type { RelatedLinkItem } from "@/components/RelatedLinks";

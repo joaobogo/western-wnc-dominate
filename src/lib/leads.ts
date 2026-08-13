@@ -1,4 +1,14 @@
-import { supabase } from "@/integrations/supabase/client";
+// Supabase is loaded on demand (Prompt 41). Statically importing the client
+// pulled ~220 KB of vendor JS onto every page that merely renders a form,
+// delaying first paint on throttled mobile. Submissions await it instead.
+const sb = async () => (await import("@/integrations/supabase/client")).supabase;
+
+/** Fire-and-forget edge function invoke that never blocks the visitor. */
+const invokeFn = (name: string, body: Record<string, unknown>) => {
+  void sb()
+    .then((s) => s.functions.invoke(name, { body }))
+    .catch((err) => console.warn(`${name} invoke failed:`, err));
+};
 import { towns } from "@/data/towns";
 import {
   trackFormSuccess,
@@ -387,7 +397,7 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult
     msclkid: payload.msclkid ?? attribution.msclkid ?? null,
     li_fat_id: payload.li_fat_id ?? attribution.li_fat_id ?? null,
   };
-  const { error } = await supabase
+  const { error } = await (await sb())
     .from("leads")
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .insert([row as any]);
@@ -425,11 +435,7 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult
   });
   // Fire-and-forget JobTread sync. Never block the visitor on this. A failure
   // here leaves the row at `pending`, which the retry worker picks up.
-  void supabase.functions
-    .invoke("jobtread-sync", {
-      body: { lead_id: leadId, idempotency_key: idem.key },
-    })
-    .catch((err) => console.warn("jobtread-sync invoke failed (queued for retry):", err));
+  invokeFn("jobtread-sync", { lead_id: leadId, idempotency_key: idem.key });
   notifyTeams({ lead_id: leadId });
   return { id: leadId, error: null };
 }
@@ -439,9 +445,7 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult
  * never surfaces errors to the UI — Teams is a notification channel only.
  */
 export function notifyTeams(body: Record<string, unknown>) {
-  void supabase.functions
-    .invoke("teams-notify", { body })
-    .catch((err) => console.warn("teams-notify invoke failed:", err));
+  invokeFn("teams-notify", body);
 }
 
 export async function logChatbotConversation(input: {
@@ -482,7 +486,7 @@ export async function logChatbotConversation(input: {
     utm_content: attribution.utm_content ?? null,
     utm_term: attribution.utm_term ?? null,
   };
-  const { error } = await supabase
+  const { error } = await (await sb())
     .from("chatbot_conversations")
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .insert([row as any]);
@@ -497,9 +501,7 @@ export async function logChatbotConversation(input: {
       property_town: input.property_town ?? null,
       lead_id: convId,
     });
-    void supabase.functions
-      .invoke("jobtread-sync", { body: { chatbot_conversation_id: convId } })
-      .catch((err) => console.warn("jobtread-sync invoke failed:", err));
+    invokeFn("jobtread-sync", { chatbot_conversation_id: convId });
     notifyTeams({ chatbot_conversation_id: convId });
   }
 }
@@ -511,9 +513,7 @@ export async function logChatbotConversation(input: {
  */
 export function syncConsultationRequestToJobTread(id: string | null | undefined) {
   if (!id) return;
-  void supabase.functions
-    .invoke("jobtread-sync", { body: { consultation_request_id: id } })
-    .catch((err) => console.warn("jobtread-sync (consultation) invoke failed:", err));
+  invokeFn("jobtread-sync", { consultation_request_id: id });
   notifyTeams({ consultation_request_id: id });
 }
 
@@ -522,8 +522,6 @@ export function syncConsultationRequestToJobTread(id: string | null | undefined)
  */
 export function syncDesignerLeadToJobTread(id: string | null | undefined) {
   if (!id) return;
-  void supabase.functions
-    .invoke("jobtread-sync", { body: { designer_lead_id: id } })
-    .catch((err) => console.warn("jobtread-sync (designer) invoke failed:", err));
+  invokeFn("jobtread-sync", { designer_lead_id: id });
   notifyTeams({ designer_lead_id: id });
 }

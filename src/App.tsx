@@ -21,6 +21,7 @@ const ChatbotWidget = lazy(() => import("./components/chatbot/ChatbotWidget"));
 const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
 const Sonner = lazy(() => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })));
 // Consent notice is non-critical chrome — mounted lazily, renders only until decided.
+import DeferMount from "./components/system/DeferMount";
 const ConsentBanner = lazy(() => import("./components/ConsentBanner"));
 
 // Initialize tracking pixels
@@ -373,7 +374,9 @@ const App = () => (
           </Suspense>
           <ErrorBoundary boundary="chatbot" fallback={() => null}>
             <Suspense fallback={null}>
-              <ChatbotWidget />
+              <DeferMount>
+                <ChatbotWidget />
+              </DeferMount>
             </Suspense>
           </ErrorBoundary>
           <ErrorBoundary boundary="consent" fallback={() => null}>

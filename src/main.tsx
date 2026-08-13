@@ -2,10 +2,14 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { installGlobalErrorHandlers } from "./lib/error-reporting";
+import { preloadRouteHero } from "./lib/hero-preload";
 
 // Global uncaught error + unhandled rejection listeners (report to analytics,
 // dedup fingerprints, ignore benign browser noise).
 installGlobalErrorHandlers();
+
+// Start the LCP hero download before React renders the route (Prompt 41).
+preloadRouteHero();
 
 // Recover from stale lazy-loaded chunks after a new deploy.
 // If a dynamic import fails (old hashed chunk no longer exists), reload once.
