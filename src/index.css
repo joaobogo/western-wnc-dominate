@@ -144,33 +144,52 @@ img {
 
 @layer base {
   :root {
-    /* Highlander Heritage Palette — Refined */
-    --background: 0 0% 100%; /* Pure white for maximum clarity */
-    --foreground: 210 20% 12%;
+    /* ──────────────────────────────────────────────────────────────
+       CONSOLIDATED TOKEN SCALE (single source of truth)
+       surface        — page background
+       surface-raised — cards / panels lifted off the page
+       ink            — primary text
+       ink-muted      — secondary text (AA on both surfaces)
+       heritage-green — brand primary (also `primary`)
+       highland-gold  — brand accent (also `accent`; use `gold-ink` for text)
+       alert          — the ONE alert tone (also `destructive`)
+       Everything below aliases into this scale. Do not add new raw
+       colors or Tailwind palette utilities (red-500, amber-600, …).
+       ────────────────────────────────────────────────────────────── */
+    --surface: 0 0% 100%;
+    --surface-raised: 42 20% 97%;
+    --ink: 210 20% 12%;
+    --ink-muted: 210 12% 38%;
+    --alert: 0 72% 51%;
+    --alert-foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 20% 12%;
+    /* Highlander Heritage Palette — Refined */
+    --background: var(--surface); /* Pure white for maximum clarity */
+    --foreground: var(--ink);
+
+    --card: var(--surface);
+    --card-foreground: var(--ink);
 
     --popover: 42 14% 100%;
-    --popover-foreground: 210 20% 12%;
+    --popover-foreground: var(--ink);
 
     /* Deep forest / heritage green — richer but lighter */
     --primary: 158 38% 18%; 
     --primary-foreground: 42 18% 98%;
 
     /* Warm stone — much cleaner and brighter */
-    --secondary: 42 20% 97%; 
-    --secondary-foreground: 210 20% 12%;
+    --secondary: var(--surface-raised);
+    --secondary-foreground: var(--ink);
 
     --muted: 42 15% 94%; 
-    --muted-foreground: 210 12% 38%; /* AA contrast on light surfaces */
+    --muted-foreground: var(--ink-muted); /* AA contrast on light surfaces */
 
     /* Highland gold — adjusted for better accessibility/contrast */
     --accent: 38 98% 46%; 
     --accent-foreground: 210 20% 10%;
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: var(--alert);
+    --destructive-foreground: var(--alert-foreground);
 
     --border: 38 12% 88%;
     --input: 38 12% 88%;
@@ -213,22 +232,29 @@ img {
   }
 
   .dark {
-    --background: 210 20% 7%;
-    --foreground: 45 12% 92%;
-    --card: 210 18% 10%;
-    --card-foreground: 45 12% 92%;
+    --surface: 210 20% 7%;
+    --surface-raised: 210 18% 10%;
+    --ink: 45 12% 92%;
+    --ink-muted: 45 8% 55%;
+    --alert: 0 62.8% 30.6%;
+    --alert-foreground: 0 0% 98%;
+
+    --background: var(--surface);
+    --foreground: var(--ink);
+    --card: var(--surface-raised);
+    --card-foreground: var(--ink);
     --popover: 210 18% 10%;
-    --popover-foreground: 45 12% 92%;
+    --popover-foreground: var(--ink);
     --primary: 160 30% 38%;
     --primary-foreground: 210 20% 7%;
     --secondary: 210 12% 14%;
-    --secondary-foreground: 45 12% 92%;
+    --secondary-foreground: var(--ink);
     --muted: 210 12% 14%;
-    --muted-foreground: 45 8% 55%;
+    --muted-foreground: var(--ink-muted);
     --accent: 40 55% 52%;
     --accent-foreground: 210 20% 7%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: var(--alert);
+    --destructive-foreground: var(--alert-foreground);
     --border: 210 12% 18%;
     --input: 210 12% 18%;
     --ring: 160 30% 38%;

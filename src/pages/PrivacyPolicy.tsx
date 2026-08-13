@@ -228,7 +228,7 @@ const PrivacyPolicy = () => {
             <p>You may also reply HELP to any text message for assistance.</p>
             <div
               role="note"
-              className="not-prose my-4 p-4 border border-amber-400/60 bg-amber-50 text-amber-950 rounded-sm text-sm leading-relaxed"
+              className="not-prose my-4 p-4 border border-highland-gold/60 bg-highland-gold/10 text-[hsl(var(--gold-ink))] rounded-sm text-sm leading-relaxed"
             >
               <strong className="font-semibold">Needs Client Input — phone number:</strong>{" "}
               The RealWork Privacy Policy template lists {REALWORK_TEMPLATE_PHONE} as the

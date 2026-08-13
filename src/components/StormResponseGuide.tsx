@@ -54,8 +54,8 @@ const StormResponseGuide = () => {
   const urgency = criticalCount >= 2 ? "emergency" : criticalCount >= 1 ? "urgent" : warningCount >= 2 ? "soon" : "monitor";
 
   const urgencyConfig = {
-    emergency: { color: "text-red-500", bg: "bg-red-500/10", label: "Emergency — Call Direct", message: "You have multiple critical damage indicators. Contact us immediately for emergency response.", responseTime: "Same-day response" },
-    urgent: { color: "text-amber-500", bg: "bg-amber-500/10", label: "Urgent — Schedule Within Rapids", message: "You have at least one critical indicator. Schedule a professional inspection rapidly.", responseTime: "Rapid response" },
+    emergency: { color: "text-alert", bg: "bg-alert/10", label: "Emergency — Call Direct", message: "You have multiple critical damage indicators. Contact us immediately for emergency response.", responseTime: "Same-day response" },
+    urgent: { color: "text-[hsl(var(--gold-ink))]", bg: "bg-highland-gold/10", label: "Urgent — Schedule Within Rapids", message: "You have at least one critical indicator. Schedule a professional inspection rapidly.", responseTime: "Rapid response" },
     soon: { color: "text-[hsl(var(--gold-ink))]", bg: "bg-[hsl(var(--highland-gold)/0.1)]", label: "Schedule This Week", message: "You have warning signs that should be professionally assessed soon to prevent further damage.", responseTime: "48-hour response" },
     monitor: { color: "text-primary", bg: "bg-primary/10", label: "Monitor & Document", message: "No critical signs detected, but continue monitoring. Document anything that changes and consider a preventive inspection.", responseTime: "Scheduled at your convenience" },
   };
@@ -63,13 +63,13 @@ const StormResponseGuide = () => {
   const config = urgencyConfig[urgency];
 
   const severityStyles = {
-    critical: "border-red-500/20 bg-red-500/3",
-    warning: "border-amber-500/15 bg-amber-500/2",
+    critical: "border-alert/20 bg-alert/3",
+    warning: "border-highland-gold/15 bg-highland-gold/2",
     check: "border-border bg-card",
   };
   const severityDot = {
-    critical: "bg-red-500",
-    warning: "bg-amber-500",
+    critical: "bg-alert",
+    warning: "bg-highland-gold",
     check: "bg-muted-foreground/30",
   };
 

@@ -5,9 +5,9 @@ import { useState, useEffect, useCallback } from "react";
 const EASE = [0.22, 1, 0.36, 1] as any;
 
 // Brand palette (Smith Green identity)
-const SMITH_GREEN = "#184613";
-const SMITH_LIGHT = "#2D9123";
-const CREAM = "#F7F3EA";
+const SMITH_GREEN = "hsl(var(--heritage-green))";
+const SMITH_LIGHT = "hsl(var(--tartan-line))";
+const CREAM = "hsl(var(--dark-section-foreground))";
 const GOLD = "hsl(var(--highland-gold))";
 
 const prefersReducedMotion = () =>
@@ -71,7 +71,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
           aria-label="Loading Highlander Building Services"
           style={{
             background:
-              `radial-gradient(ellipse at 50% 55%, ${SMITH_LIGHT} 0%, ${SMITH_GREEN} 50%, #0a1f08 100%)`,
+              `radial-gradient(ellipse at 50% 55%, ${SMITH_LIGHT} 0%, ${SMITH_GREEN} 50%, hsl(var(--hero-overlay)) 100%)`,
           }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.55, ease: EASE }}
@@ -121,7 +121,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                 transition={{ duration: 1.1, delay: 2.0, ease: "easeInOut" }}
                 style={{
                   background:
-                    `linear-gradient(105deg, transparent 40%, ${CREAM}22 50%, transparent 60%)`,
+                    `linear-gradient(105deg, transparent 40%, hsl(var(--dark-section-foreground) / 0.13) 50%, transparent 60%)`,
                 }}
               />
 

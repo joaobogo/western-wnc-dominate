@@ -24,9 +24,9 @@ const KEY = "SxCxaBpYsO_fVnK0";
 
 const badge = (s: Status) => {
   const map: Record<Status, string> = {
-    pending: "bg-amber-100 text-amber-900 border-amber-300",
-    ok: "bg-emerald-100 text-emerald-900 border-emerald-300",
-    fail: "bg-red-100 text-red-900 border-red-300",
+    pending: "bg-highland-gold/10 text-[hsl(var(--gold-ink))] border-highland-gold",
+    ok: "bg-primary/10 text-primary border-primary",
+    fail: "bg-alert/10 text-alert border-alert",
   };
   return `inline-block px-2 py-0.5 text-xs font-mono uppercase border rounded ${map[s]}`;
 };
@@ -201,7 +201,7 @@ const RealWorkDiagnostics = () => {
             ) : (
               <ul className="space-y-2">
                 {logs.map((l, i) => (
-                  <li key={i} className="text-xs font-mono bg-red-50 border border-red-200 text-red-900 rounded-sm p-3 break-words">
+                  <li key={i} className="text-xs font-mono bg-alert/10 border border-alert text-alert rounded-sm p-3 break-words">
                     {l}
                   </li>
                 ))}
