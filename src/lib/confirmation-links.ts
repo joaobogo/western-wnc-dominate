@@ -1,4 +1,4 @@
-import { blogPosts } from "@/data/blogs";
+import { blogIndex as blogPosts } from "@/data/blog-index.generated";
 import { projectDetails } from "@/data/projects";
 
 export type LeadCategory = "roofing" | "construction";
