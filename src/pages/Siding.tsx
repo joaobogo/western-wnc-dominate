@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -187,6 +188,7 @@ const Siding = () => {
         </section>
         <ServiceInternalLinks title="Siding & Exterior" slug="siding" />
       </main>
+      <TieredOffer context="siding" primaryLabel="Get My Siding Scoped" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

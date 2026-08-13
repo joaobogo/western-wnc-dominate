@@ -14,6 +14,7 @@ import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import { ScrollReveal } from "@/components/motion";
 import HeadingReveal from "@/components/motion/HeadingReveal";
 import GoldLine from "@/components/motion/GoldLine";
@@ -508,6 +509,7 @@ const ConstructionDivision = () => {
           ]}
         />
         <ServiceInternalLinks title="Construction Services" slug="construction" />
+        <TieredOffer context="construction-division" primaryLabel="Get My Build Planned" primaryTo="/construction-intake" primaryDescription="A working session on scope, feasibility, and budget range — then a written project scope." />
       </main>
 
       <RealWorkWidget />

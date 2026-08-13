@@ -18,6 +18,7 @@ import { getTownBySlug } from "@/data/towns";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import FinancingTeaser from "@/components/conversion/FinancingTeaser";
@@ -164,6 +165,7 @@ const MetalRoofing = () => {
         </section>
 
         {/* ─── REQUEST ASSESSMENT (full-width, like the rest of the site) ─── */}
+        <TieredOffer context="metal-roofing" primaryLabel="Get My Metal Roof Priced" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="metal roofing" />
         <SchedulingReality serviceLabel="metal roofing" />

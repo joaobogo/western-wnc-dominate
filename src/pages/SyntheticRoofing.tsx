@@ -16,6 +16,7 @@ import { getServiceTownEntriesForService } from "@/data/service-town-content";
 import { getTownBySlug } from "@/data/towns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -151,6 +152,7 @@ const SyntheticRoofing = () => {
         </section>
 
         {/* ─── REQUEST ASSESSMENT (full-width) ─── */}
+        <TieredOffer context="synthetic-roofing" primaryLabel="Get My Synthetic Roof Scoped" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="synthetic roofing" />
         <SchedulingReality serviceLabel="synthetic roofing" />

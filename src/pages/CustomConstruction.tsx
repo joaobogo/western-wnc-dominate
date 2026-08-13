@@ -13,6 +13,7 @@ import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
 const heroImg = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
@@ -422,6 +423,7 @@ const CustomConstruction = () => {
           subheadline="If your project demands precision, coordination, and craft quality that goes beyond standard construction — let's talk about whether Highlander is the right team for the job."
           eyebrow="Start the Conversation"
         />
+        <TieredOffer context="custom-construction" primaryLabel="Get My Custom Build Planned" primaryTo="/construction-intake" />
       </main>
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

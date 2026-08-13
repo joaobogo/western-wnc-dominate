@@ -30,6 +30,7 @@ import proj4 from "@/assets/gallery/cedar-005.webp";
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
@@ -506,6 +507,7 @@ const OutdoorLiving = () => {
         <ServiceInternalLinks title="Outdoor Living" slug="outdoor-living" />
       </main>
 
+      <TieredOffer context="outdoor-living" primaryLabel="Get My Outdoor Space Planned" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

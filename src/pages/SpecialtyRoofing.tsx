@@ -20,6 +20,7 @@ import metal009 from "@/assets/gallery/metal-010.webp";
 import metal010 from "@/assets/gallery/metal-010.webp";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -415,6 +416,7 @@ const SpecialtyRoofing = () => {
         </section>
         <ServiceInternalLinks title="Specialty Roofing" slug="specialty-roofing" />
       </main>
+        <TieredOffer context="specialty-roofing" primaryLabel="Get My Roof Assessed" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="specialty roofing" />
         <SchedulingReality serviceLabel="specialty roofing" />
