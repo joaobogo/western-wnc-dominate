@@ -113,7 +113,10 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
                     {isActive(item.href) && (
                       <span aria-hidden="true" className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-[3px] rounded-r bg-[hsl(var(--highland-gold))]" />
                     )}
-                    <span className="text-body-sm font-body font-semibold leading-tight">{item.label}</span>
+                    <span className="block">
+                      <span className="text-body-sm font-body font-semibold leading-tight block">{item.label}</span>
+                      <span className="text-body-xs font-body text-muted-foreground leading-tight block">{item.county} County</span>
+                    </span>
                     <ChevronRight aria-hidden="true" className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
                   </Link>
                 ))}
