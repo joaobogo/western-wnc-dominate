@@ -135,7 +135,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
               <Link
                 to="/service-areas"
                 onClick={onNavigate}
-                className="mt-1 py-3 px-3 text-body-xs font-bold uppercase tracking-[0.08em] rounded-sm text-primary flex items-center gap-1.5 font-body min-h-[48px] border-t border-black/5"
+                className="btn btn-secondary btn-md mt-1"
               >
                 View All Service Areas <ArrowRight className="w-3 h-3" />
               </Link>

@@ -277,7 +277,7 @@ const Hero = () => {
                 to="/consultation"
                 data-gtm-experiment="home_hero_cta"
                 data-gtm-variant={heroCta.variant}
-                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-body-xs md:text-base px-6 md:px-14 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-floating min-h-[48px] md:min-h-[60px] whitespace-nowrap"
+                className="btn btn-primary btn-lg group md:text-base md:px-14 md:py-5 relative md:tracking-[0.1em] md:min-h-[60px] whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">
@@ -288,7 +288,7 @@ const Hero = () => {
               <a
                 href="tel:+18285247773"
                 aria-label="Call Highlander Building Services at 828-524-7773"
-                className="group bg-white/[0.08] backdrop-blur-md border md:border-2 border-white/[0.22] text-primary-foreground font-body font-bold text-body-xs md:text-base px-6 md:px-12 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[48px] md:min-h-[60px] tracking-wide uppercase whitespace-nowrap"
+                className="btn btn-secondary btn-lg btn-on-dark group md:border-2 md:text-base md:px-12 md:py-5 md:min-h-[60px] whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--gold-ink))]" />
                 <span className="md:hidden">Call · (828) 524-7773</span>

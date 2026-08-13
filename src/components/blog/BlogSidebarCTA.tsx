@@ -20,7 +20,7 @@ const BlogSidebarCTA = ({ cta, town }: Props) => (
     </p>
     <a
       href="tel:+18285247773"
-      className="cta-gradient text-accent-foreground font-bold px-4 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center mb-2.5"
+      className="btn btn-primary btn-sm w-full mb-2.5"
     >
       <Phone className="w-4 h-4" /> (828) 524-7773
     </a>

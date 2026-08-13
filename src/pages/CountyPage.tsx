@@ -122,10 +122,10 @@ const CountyPage = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-5">
-                  <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm md:text-body-sm px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-floating min-w-[320px] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                  <Link to="/consultation" className="btn btn-primary btn-lg md:text-body-sm min-w-[320px]">
                     Start a {county.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-floating min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
+                  <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
                     <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
                   </a>
                 </div>
@@ -392,10 +392,10 @@ const CountyPage = () => {
               From historic roof replacement to engineered home additions, we provide the highest standard of craftsmanship in {county.name}.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/consultation" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-lg md:text-xl px-12 py-6 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-floating min-w-[320px] justify-center uppercase tracking-wider">
+              <Link to="/consultation" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
                 Start a {county.name} Assessment <ArrowRight className="w-6 h-6" />
               </Link>
-              <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px] justify-center shadow-floating">
+              <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark min-w-[240px]">
                 <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
               </a>
             </div>

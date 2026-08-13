@@ -51,7 +51,7 @@ const RequestInspection = () => {
             </p>
             <a
               href="tel:+18285247773"
-              className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2"
+              className="btn btn-primary btn-sm"
             >
               <Phone className="w-4 h-4" /> Call Direct: 828-524-7773
             </a>
@@ -94,7 +94,7 @@ const RequestInspection = () => {
             <p className="text-primary-foreground/95 mb-8 max-w-xl mx-auto">
               When you call Highlander, a member of our Western NC team picks up.
             </p>
-            <a href="tel:+18285247773" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
+            <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
               <Phone className="w-5 h-5" /> Call (828) 524-7773
             </a>
             <p className="text-primary-foreground/70 text-sm mt-6">

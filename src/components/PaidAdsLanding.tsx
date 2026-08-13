@@ -98,11 +98,11 @@ const PaidAdsLanding = ({
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.5 }} className="mt-6 hidden flex-wrap gap-3 lg:flex">
-                  <a href="#fast-lead-form" className="inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">
+                  <a href="#fast-lead-form" className="btn btn-primary btn-md">
                     {ctaLabel}
                     <ArrowRight className="h-4 w-4" />
                   </a>
-                  <a href="tel:+18285247773" className="inline-flex items-center gap-2 border border-primary-foreground/20 bg-primary-foreground/5 px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
+                  <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                     <Phone className="h-4 w-4" />
                     Call Direct: 828-524-7773
                   </a>
@@ -225,11 +225,11 @@ const PaidAdsLanding = ({
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <a href="#fast-lead-form" className="inline-flex items-center justify-center gap-2 bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-90">
+              <a href="#fast-lead-form" className="btn btn-ghost btn-sm">
                 {ctaLabel}
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
+              <a href="tel:+18285247773" className="btn btn-secondary btn-sm btn-on-dark">
                 <Phone className="h-4 w-4" />
                 Call Direct: 828-524-7773
               </a>
@@ -260,7 +260,7 @@ const PaidAdsLanding = ({
             </a>
             <a
               href="#fast-lead-form"
-              className="flex items-center justify-center border border-primary/40 px-4 py-3 text-sm font-semibold text-primary"
+              className="btn btn-secondary btn-sm"
             >
               Form
             </a>

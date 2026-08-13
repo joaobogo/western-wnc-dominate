@@ -128,7 +128,7 @@ const BuilderPromoBlock = ({
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   to={href}
-                  className="group cta-gradient text-accent-foreground font-semibold text-body-xs px-7 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  className="btn btn-primary btn-md group"
                 >
                   {_cta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

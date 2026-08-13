@@ -237,7 +237,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
             <Link
               to="/consultation"
               onClick={onClose}
-              className="cta-gradient text-accent-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs uppercase tracking-[0.1em] shadow-raised min-h-[52px]"
+              className="btn btn-primary btn-md"
             >
               <span className="relative z-10">Request an Estimate</span>
               <ArrowRight className="w-4 h-4 relative z-10" />

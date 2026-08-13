@@ -47,7 +47,7 @@ const CallFirstCTA = ({
         <a
           href="tel:+18285247773"
           aria-label="Call Highlander at (828) 524-7773"
-          className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm md:text-body px-8 md:px-10 py-4 rounded-sm inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all min-h-[56px]"
+          className="btn btn-primary btn-md md:text-body md:px-10"
         >
           <Phone className="w-5 h-5" />
           <span>Call (828) 524-7773</span>

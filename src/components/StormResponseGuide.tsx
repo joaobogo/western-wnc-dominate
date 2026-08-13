@@ -216,12 +216,12 @@ const StormResponseGuide = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Link to="/roofing/storm-damage" className="group cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden">
+                    <Link to="/roofing/storm-damage" className="btn btn-primary btn-md group relative">
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                       <span className="relative">Request Storm Assessment</span>
                       <ArrowRight className="w-4 h-4 relative" />
                     </Link>
-                    <a href="tel:+18285247773" className="border border-border text-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-secondary transition-all">
+                    <a href="tel:+18285247773" className="btn btn-secondary btn-md">
                       <Phone className="w-4 h-4" /> Call (828) 524-7773
                     </a>
                   </div>

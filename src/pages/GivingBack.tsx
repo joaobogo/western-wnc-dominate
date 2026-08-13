@@ -173,7 +173,7 @@ const GivingBack = () => {
                   <p className="font-heading font-bold text-foreground mb-4">
                     Have a community opportunity to discuss?
                   </p>
-                  <Link to="/contact" className="group bg-primary text-primary-foreground font-heading font-bold text-base px-7 py-3.5 inline-flex items-center gap-2.5 hover:bg-primary/90 transition-all">
+                  <Link to="/contact" className="btn btn-primary btn-lg group">
                     Contact Highlander
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -198,11 +198,11 @@ const GivingBack = () => {
                 If you represent a local organization, event, or cause in Western North Carolina, Highlander welcomes the opportunity to learn more. Reach out to share details and connect with the team.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/contact" className="group bg-[hsl(var(--highland-gold))] text-heritage-charcoal font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:bg-[hsl(var(--highland-gold-light))] transition-all">
+                <Link to="/contact" className="btn btn-primary btn-lg group">
                   Contact Highlander
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/consultation" className="group border border-white/30 text-white font-heading font-bold text-base px-8 py-4 inline-flex items-center justify-center gap-2.5 hover:border-white hover:bg-white/5 transition-all">
+                <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
                   Request an Estimate
                 </Link>
               </div>

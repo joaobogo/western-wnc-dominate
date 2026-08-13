@@ -27,7 +27,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
     </a>
     <Link
       to="/consultation"
-      className="inline-flex cta-gradient text-accent-foreground font-bold text-body-xs px-4 sm:px-7 py-3 sm:py-4 rounded-none items-center gap-2 sm:gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-raised border border-[hsl(var(--highland-gold)/0.4)] whitespace-nowrap"
+      className="btn btn-primary btn-sm sm:px-7 sm:py-4 sm:gap-2.5 whitespace-nowrap"
     >
       <span className="relative z-10"><span className="hidden sm:inline">Get </span>Estimate</span>
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />

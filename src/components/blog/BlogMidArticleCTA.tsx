@@ -39,7 +39,7 @@ const BlogMidArticleCTA = ({ cta, town }: Props) => (
       </Link>
       <a
         href="tel:+18285247773"
-        className="border border-primary/25 text-primary font-semibold px-5 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:bg-primary/5 transition-colors"
+        className="btn btn-secondary btn-sm"
       >
         <Phone className="w-4 h-4" /> (828) 524-7773
       </a>

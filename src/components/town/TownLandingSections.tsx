@@ -44,13 +44,13 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
         <div className="flex flex-col sm:flex-row gap-3 shrink-0">
           <a
             href="tel:+18285247773"
-            className="inline-flex items-center justify-center gap-2 bg-[hsl(var(--highland-gold))] text-accent-foreground font-heading font-bold text-sm px-6 py-4 uppercase tracking-widest hover:brightness-110 transition"
+            className="btn btn-primary btn-md"
           >
             <Phone className="w-4 h-4" /> Call (828) 524-7773
           </a>
           <Link
             to="/request-inspection"
-            className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 text-primary-foreground font-heading font-bold text-sm px-6 py-4 uppercase tracking-widest hover:bg-primary-foreground/10 transition"
+            className="btn btn-secondary btn-md btn-on-dark"
           >
             Request Assessment <ArrowRight className="w-4 h-4" />
           </Link>
@@ -140,13 +140,13 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
         <div className="mt-14 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/request-inspection"
-            className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm px-10 py-5 uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:scale-[1.02] transition"
+            className="btn btn-primary btn-lg"
           >
             Start Your {town.name} Project <ArrowRight className="w-5 h-5" />
           </Link>
           <a
             href="tel:+18285247773"
-            className="border-2 border-foreground/15 text-foreground font-heading font-bold text-body-sm px-10 py-5 uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:border-primary/40 transition"
+            className="btn btn-secondary btn-lg"
           >
             <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
           </a>
@@ -184,13 +184,13 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/request-inspection"
-              className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm px-12 py-5 uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:scale-[1.02] transition shadow-floating"
+              className="btn btn-primary btn-lg"
             >
               Request a {town.name} Consultation <ArrowRight className="w-5 h-5" />
             </Link>
             <a
               href="tel:+18285247773"
-              className="border-2 border-dark-section-foreground/20 text-dark-section-foreground font-heading font-bold text-body-sm px-10 py-5 uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:border-[hsl(var(--highland-gold)/0.4)] hover:bg-dark-section-foreground/[0.05] transition"
+              className="btn btn-secondary btn-lg btn-on-dark"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> Call Direct
             </a>

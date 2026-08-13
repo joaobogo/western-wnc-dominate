@@ -149,7 +149,7 @@ const About = () => {
                   <span>Meet Our People</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <Link to="/giving-back" className="group border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground)/0.7)] font-bold text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.3)] hover:text-[hsl(var(--dark-section-foreground))] transition-all">
+                <Link to="/giving-back" className="btn btn-secondary btn-lg group">
                   Community Impact <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -447,7 +447,7 @@ const About = () => {
                   We're always looking for skilled craftsmen and dedicated professionals who share our values. If you're local, honest, and take pride in your work, we want to hear from you.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link to="/careers" className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 transition-all shadow-raised">
+                  <Link to="/careers" className="btn btn-primary btn-lg">
                     View Open Positions <ArrowRight className="w-4 h-4" />
                   </Link>
                   <a href="tel:+18285247773" className="text-white/90 hover:text-white font-bold text-body-xs flex items-center gap-2 transition-colors">
@@ -582,10 +582,10 @@ const About = () => {
                 We'll earn your trust the same way we've earned everyone else's.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/recent-projects" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <Link to="/recent-projects" className="btn btn-primary btn-md">
                   See What We've Built <ArrowRight className="w-5 h-5" />
                 </Link>
-                <Link to="/consultation" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
+                <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
                   Talk With Our Team <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>

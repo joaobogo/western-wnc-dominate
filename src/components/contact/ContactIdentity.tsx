@@ -61,13 +61,13 @@ const ContactIdentity = () => (
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               to="/service-areas"
-              className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+              className="btn btn-primary btn-md"
             >
               See Service Areas <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/service-areas/franklin-nc"
-              className="border border-border text-foreground font-heading font-semibold text-sm px-6 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:border-primary/40 transition-all"
+              className="btn btn-secondary btn-md"
             >
               Franklin, NC
             </Link>
@@ -87,13 +87,13 @@ const ContactIdentity = () => (
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/service-areas"
-                className="border border-border text-foreground font-heading font-semibold text-sm px-6 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:border-primary/40 transition-all"
+                className="btn btn-secondary btn-md"
               >
                 Browse All Towns
               </Link>
               <a
                 href="tel:+18285247773"
-                className="text-foreground font-heading font-semibold text-sm px-6 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:text-primary transition-all"
+                className="btn btn-ghost btn-md"
               >
                 <Phone className="w-4 h-4" />
                 Call to Confirm

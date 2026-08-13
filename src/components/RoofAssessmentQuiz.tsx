@@ -288,11 +288,11 @@ const RoofAssessmentQuiz = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="/consultation" className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-floating">
+                    <a href="/consultation" className="btn btn-primary btn-lg">
                       <span className="relative z-10">{result.cta}</span>
                       <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                     </a>
-                    <a href="tel:+18285247773" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">
+                    <a href="tel:+18285247773" className="btn btn-secondary btn-md">
                       Call (828) 524-7773
                     </a>
                   </div>

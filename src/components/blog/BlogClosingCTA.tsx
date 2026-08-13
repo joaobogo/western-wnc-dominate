@@ -24,7 +24,7 @@ const BlogClosingCTA = ({ cta, town }: Props) => (
     <div className="flex flex-col sm:flex-row gap-3">
       <a
         href="tel:+18285247773"
-        className="cta-gradient text-accent-foreground font-bold px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
+        className="btn btn-primary btn-md"
       >
         <Phone className="w-4 h-4" /> Call (828) 524-7773
       </a>

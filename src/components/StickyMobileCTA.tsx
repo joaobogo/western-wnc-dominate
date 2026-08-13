@@ -226,7 +226,7 @@ const StickyMobileCTA = () => {
                     <div className="p-2 space-y-0.5">
                       <Link
                         to="/consultation"
-                        className="flex items-center gap-3 px-3 py-3 rounded-none hover:bg-secondary/60 transition-all group dropdown-item-premium"
+                        className="btn btn-ghost btn-sm group"
                       >
                         <div className="w-9 h-9 rounded-none bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center flex-shrink-0 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
                           <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
@@ -239,7 +239,7 @@ const StickyMobileCTA = () => {
                       </Link>
                       <a
                         href="tel:+18285247773"
-                        className="flex items-center gap-3 px-3 py-3 rounded-none hover:bg-secondary/60 transition-all group dropdown-item-premium"
+                        className="btn btn-ghost btn-sm group"
                       >
                         <div className="w-9 h-9 rounded-none bg-primary/6 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/12 transition-colors">
                           <Phone className="w-4 h-4 text-primary" />

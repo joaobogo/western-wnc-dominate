@@ -76,7 +76,7 @@ const CTABlock = () => {
                   </Link>
                   <a
                     href="tel:+18285247773"
-                    className="group border-2 border-dark-section-foreground/20 text-dark-section-foreground font-body font-bold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.4)] transition-all duration-300 min-h-[60px] tracking-wide"
+                    className="btn btn-secondary btn-lg btn-on-dark group md:text-lg md:px-12 md:py-5"
                   >
                     <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     Speak With a Project Advisor

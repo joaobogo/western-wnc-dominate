@@ -54,7 +54,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
         </Link>
         <a
           href="tel:+18285247773"
-          className="border border-primary-foreground/30 text-primary-foreground font-semibold px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:bg-primary-foreground/10 transition-colors"
+          className="btn btn-secondary btn-md btn-on-dark"
         >
           <Phone className="w-4 h-4" /> (828) 524-7773
         </a>
@@ -86,7 +86,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
           {townPath && (
             <Link
               to={townPath}
-              className="inline-flex items-center gap-1.5 text-xs font-body font-semibold text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors px-3 py-2 rounded-sm"
+              className="btn btn-ghost btn-sm btn-on-dark"
             >
               Roofing in {town}, NC <ArrowRight className="w-3 h-3" />
             </Link>

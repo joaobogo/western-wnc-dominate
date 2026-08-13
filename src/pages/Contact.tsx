@@ -81,7 +81,7 @@ export default function Contact() {
                 >
                   <a
                     href="tel:+18285247773"
-                    className="group flex items-center gap-3 px-6 py-4 bg-[hsl(var(--highland-gold)/0.12)] border border-[hsl(var(--highland-gold)/0.25)] hover:bg-[hsl(var(--highland-gold)/0.18)] transition-all"
+                    className="btn btn-secondary btn-md group"
                   >
                     <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     <div>
@@ -91,7 +91,7 @@ export default function Contact() {
                   </a>
                   <a
                     href="mailto:info@highlandernc.com"
-                    className="flex items-center gap-3 px-6 py-4 bg-[hsl(var(--dark-section-foreground)/0.04)] border border-[hsl(var(--dark-section-foreground)/0.08)] hover:border-[hsl(var(--highland-gold)/0.15)] transition-all"
+                    className="btn btn-secondary btn-md"
                   >
                     <Mail className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                     <span className="text-sm font-body text-[hsl(var(--dark-section-foreground)/0.7)]">info@highlandernc.com</span>

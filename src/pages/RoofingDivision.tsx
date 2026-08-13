@@ -260,7 +260,7 @@ const RoofingDivision = () => {
               >
                 <Link
                   to="/consultation"
-                  className="group cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden"
+                  className="btn btn-primary btn-md group relative"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Plan Your Roof With Confidence</span>
@@ -268,7 +268,7 @@ const RoofingDivision = () => {
                 </Link>
                 <a
                   href="tel:+18285247773"
-                  className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all"
+                  className="btn btn-secondary btn-lg btn-on-dark group"
                 >
                   <Phone className="w-4 h-4" />
                   (828) 524-7773
@@ -528,7 +528,7 @@ const RoofingDivision = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                     <Link
                       to="/consultation"
-                      className="group cta-gradient text-accent-foreground font-heading font-bold text-sm px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden tracking-wide"
+                      className="btn btn-primary btn-lg group relative"
                     >
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                       <span className="relative">Let's Protect What Matters Most</span>
@@ -536,7 +536,7 @@ const RoofingDivision = () => {
                     </Link>
                     <a
                       href="tel:+18285247773"
-                      className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all"
+                      className="btn btn-secondary btn-lg btn-on-dark group"
                     >
                       <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                       (828) 524-7773

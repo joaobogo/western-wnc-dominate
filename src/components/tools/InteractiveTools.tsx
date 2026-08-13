@@ -104,7 +104,7 @@ export function RepairVsReplaceGuide() {
               <button onClick={reset} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body inline-flex items-center gap-1">
                 <RotateCcw className="w-3.5 h-3.5" /> Start Over
               </button>
-              <a href="/consultation" className="btn-primary-interactive text-sm px-5 py-2.5 inline-flex items-center gap-2">
+              <a href="/consultation" className="btn btn-primary btn-sm">
                 Discuss With an Advisor <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -174,7 +174,7 @@ export function StormChecklist() {
               <p className={`font-heading font-bold ${getUrgency()?.color}`}>{getUrgency()?.level}</p>
               <p className="text-sm text-muted-foreground font-body mt-1">{getUrgency()?.desc}</p>
             </div>
-            <a href="/consultation" className="btn-primary-interactive text-sm px-5 py-2.5 inline-flex items-center gap-2 w-full justify-center">
+            <a href="/consultation" className="btn btn-primary btn-sm w-full">
               Request a Storm Assessment <ArrowRight className="w-4 h-4" />
             </a>
           </ResultReveal>
@@ -297,7 +297,7 @@ export function MaterialsComparison() {
 
         <div className="mt-6 text-center">
           <p className="text-xs text-muted-foreground font-body mb-3">Every roof is unique. We'll help you choose the right material for your home's specific conditions.</p>
-          <a href="/consultation" className="btn-primary-interactive text-sm px-5 py-2.5 inline-flex items-center gap-2">
+          <a href="/consultation" className="btn btn-primary btn-sm">
             Discuss Materials With an Advisor <ArrowRight className="w-4 h-4" />
           </a>
         </div>
@@ -384,7 +384,7 @@ export function ConstructionFitGuide() {
               <button onClick={reset} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body inline-flex items-center gap-1">
                 <RotateCcw className="w-3.5 h-3.5" /> Start Over
               </button>
-              <a href="/consultation" className="btn-primary-interactive text-sm px-5 py-2.5 inline-flex items-center gap-2">
+              <a href="/consultation" className="btn btn-primary btn-sm">
                 Schedule a Consultation <ArrowRight className="w-4 h-4" />
               </a>
             </div>

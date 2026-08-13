@@ -195,7 +195,7 @@ const RecoveryPrompt = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your name"
-                  className="w-full border border-border rounded-sm px-4 py-3 text-body-sm font-body bg-background"
+                  className="field-input"
                 />
               </div>
               <div>
@@ -206,14 +206,14 @@ const RecoveryPrompt = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="Phone number"
-                  className="w-full border border-border rounded-sm px-4 py-3 text-body-sm font-body bg-background"
+                  className="field-input"
                 />
               </div>
               {error && <p className="font-body text-body-xs text-destructive">{error}</p>}
               <button
                 type="submit"
                 disabled={sending}
-                className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm w-full px-6 py-4 rounded-sm min-h-[52px] disabled:opacity-60"
+                className="btn btn-primary btn-md btn-block"
               >
                 {sending ? "Sending…" : "Request a callback"}
               </button>

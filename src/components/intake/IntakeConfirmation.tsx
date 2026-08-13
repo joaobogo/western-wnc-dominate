@@ -132,7 +132,7 @@ const IntakeConfirmation = ({
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <a
           href="tel:+18285247773"
-          className="inline-flex items-center gap-2 bg-background border border-border text-foreground font-heading font-semibold text-body-xs px-6 py-3 rounded-md hover:border-[hsl(var(--highland-gold))] transition-colors"
+          className="btn btn-secondary btn-sm"
         >
           <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
           (828) 524-7773

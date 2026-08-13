@@ -158,10 +158,10 @@ const LayoutsPlanning = () => {
                 transition={{ duration: 0.9, delay: 0.3, ease: HIGHLAND_EASE }}
                 className="flex flex-col sm:flex-row gap-5"
               >
-                <Link to="/design-intake?mode=long" className="cta-gradient text-accent-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 group transition-all duration-300">
+                <Link to="/design-intake?mode=long" className="btn btn-primary btn-lg group">
                   <FileText className="w-5 h-5" /> Start Detailed Planning Brief
                 </Link>
-                <Link to="/design-intake?mode=short" className="bg-white/5 border border-white/10 text-white font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/10 transition-colors">
+                <Link to="/design-intake?mode=short" className="btn btn-secondary btn-lg btn-on-dark">
                   <Sparkles className="w-5 h-5" /> Quick Planning Inquiry
                 </Link>
               </motion.div>
@@ -318,7 +318,7 @@ const LayoutsPlanning = () => {
                       ))}
                     </ul>
 
-                    <Link to="/design-intake?mode=long" className="inline-flex items-center justify-center gap-2 w-full py-4 cta-gradient text-accent-foreground font-bold hover:opacity-90 transition-all duration-300">
+                    <Link to="/design-intake?mode=long" className="btn btn-primary btn-md w-full">
                       Send Detailed Brief <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -400,7 +400,7 @@ const LayoutsPlanning = () => {
                 <p className="text-xl text-white/85 mb-12 font-body max-w-3xl mx-auto leading-relaxed">
                   Western North Carolina isn't flat. We plan for soil types, slope stability, heavy snow loads, and extreme temperature swings. A plan from a flat-land designer won't work here. A Highlander plan will.
                 </p>
-                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-10 py-5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-105 transition-transform duration-300">
+                <Link to="/consultation" className="btn btn-primary btn-lg">
                   Discuss Your Mountain Project <ArrowRight className="w-5 h-5" />
                 </Link>
               </ScrollReveal>

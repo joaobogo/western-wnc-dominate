@@ -70,7 +70,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
     }
   };
 
-  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground text-sm font-body field-premium";
+  const inputClass = "field-input";
   const labelClass = "block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
 
   const formContent = (

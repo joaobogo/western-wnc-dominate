@@ -196,13 +196,13 @@ const RealWorkWidget = ({
               <div className="flex flex-col sm:flex-row gap-3 mt-4">
                 <Link
                   to="/contact"
-                  className="cta-gradient text-accent-foreground font-semibold text-sm px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+                  className="btn btn-primary btn-sm"
                 >
                   Request an Estimate <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href="tel:+18285247773"
-                  className="border border-[hsl(var(--heritage-green))]/30 text-[hsl(var(--heritage-green))] font-semibold text-sm px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-[hsl(var(--heritage-green))]/10 transition-all"
+                  className="btn btn-secondary btn-sm"
                 >
                   <Phone className="w-4 h-4" /> 828-524-7773
                 </a>

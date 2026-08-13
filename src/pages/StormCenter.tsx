@@ -128,7 +128,7 @@ const StormCenter = () => {
                 </span>
                 <a
                   href="tel:+18285247773"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  className="btn btn-primary btn-lg"
                 >
                   <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>

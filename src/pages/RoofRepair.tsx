@@ -160,10 +160,10 @@ const RoofRepair = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
                 {/* Primary action on repair pages is the phone call (see page-cta-hierarchy.ts) */}
-                <a href="tel:+18285247773" className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
+                <a href="tel:+18285247773" className="btn btn-primary btn-lg group">
                   <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
-                <Link to="/consultation" className="group bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+                <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark group">
                   Schedule a Repair Assessment
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -308,10 +308,10 @@ const RoofRepair = () => {
                 <p className="text-primary-foreground/85 text-sm font-body">The sooner it's assessed, the less it costs to fix. Call us or schedule online.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
-                <a href="tel:+18285247773" className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <a href="tel:+18285247773" className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" /> (828) 524-7773
                 </a>
-                <Link to="/consultation" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
+                <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
                   Schedule Assessment
                   <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -350,10 +350,10 @@ const RoofRepair = () => {
                 <p className="text-primary-foreground/85 text-sm font-body">We diagnose accurately and recommend honestly — repair or replace, you'll know why.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
-                <a href="tel:+18285247773" className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <a href="tel:+18285247773" className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" /> (828) 524-7773
                 </a>
-                <Link to="/consultation" className="border border-primary-foreground/15 text-primary-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center gap-2 hover:bg-primary-foreground/5 transition-all">
+                <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
                   Schedule a Repair Assessment
                   <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -569,10 +569,10 @@ const RoofRepair = () => {
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                    <a href="tel:+18285247773" className="group cta-gradient text-accent-foreground font-heading font-bold text-base px-10 py-4.5 rounded-sm inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wide">
+                    <a href="tel:+18285247773" className="btn btn-primary btn-lg group">
                       <Phone className="w-5 h-5" /> (828) 524-7773
                     </a>
-                    <Link to="/consultation" className="group border border-dark-section-foreground/12 text-dark-section-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-all">
+                    <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
                       Schedule a Repair Assessment
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>

@@ -211,7 +211,7 @@ const ConstructionAuthority = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 to="/construction"
-                className="group cta-gradient text-accent-foreground font-body font-bold text-base md:text-lg px-10 py-4.5 rounded-none inline-flex items-center gap-3 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 relative overflow-hidden tracking-[0.1em] uppercase shadow-floating"
+                className="btn btn-primary btn-lg group md:text-lg relative"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Explore the Construction Division</span>
@@ -219,7 +219,7 @@ const ConstructionAuthority = () => {
               </Link>
               <Link
                 to="/construction/consultation"
-                className="group border border-dark-section-foreground/10 text-dark-section-foreground font-heading font-medium text-body-xs px-7 py-4 rounded-none inline-flex items-center gap-2.5 hover:bg-dark-section-foreground/[0.04] hover:border-[hsl(var(--highland-gold)/0.25)] transition-all duration-300"
+                className="btn btn-secondary btn-md btn-on-dark group"
               >
                 <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                 Schedule a Construction Consultation

@@ -153,10 +153,10 @@ const TownPage = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 md:gap-6"
               >
-                <Link to="/request-inspection" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-floating min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <Link to="/request-inspection" className="btn btn-primary btn-lg md:text-body-sm min-w-[300px]">
                   Request an Inspection in {town.name} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-floating min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
+                <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
                   <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
                 </a>
               </motion.div>

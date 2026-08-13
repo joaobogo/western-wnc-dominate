@@ -74,14 +74,14 @@ const TimelineExpectations = ({
       <div className="mt-10 flex flex-col sm:flex-row gap-4">
         <Link
           to="/construction/consultation"
-          className="cta-gradient text-accent-foreground font-heading font-bold px-8 py-4 inline-flex items-center justify-center min-h-[56px]"
+          className="btn btn-primary btn-md"
           data-gtm-location="timeline_expectations"
         >
           Schedule a Project Consultation
         </Link>
         <a
           href="tel:+18285247773"
-          className="border border-border font-semibold px-8 py-4 inline-flex items-center justify-center gap-2 min-h-[56px] hover:bg-muted/40 transition-colors"
+          className="btn btn-secondary btn-md"
           aria-label="Call Highlander at (828) 524-7773"
         >
           <Phone className="w-4 h-4 text-primary" /> (828) 524-7773

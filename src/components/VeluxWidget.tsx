@@ -174,7 +174,7 @@ const VeluxWidget = ({
               to="/contact"
               data-gtm-cta="request_quote"
               data-gtm-location={`velux_widget_${variant}_fallback`}
-              className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+              className="btn btn-primary btn-sm"
             >
               {ctaText}
             </Link>

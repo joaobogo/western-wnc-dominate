@@ -254,8 +254,8 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
     );
   }
 
-  const inputClasses = "w-full px-6 py-6 md:py-7 rounded-none text-white text-body md:text-body-lg font-body placeholder:text-white/40 field-premium-dark transition-all duration-300 focus:border-[hsl(var(--highland-gold)/0.6)] focus:ring-0 bg-white/[0.08] border border-white/20";
-  const labelClasses = "block text-body-sm md:text-body-sm font-bold text-white mb-3 font-body uppercase tracking-[0.18em]";
+  const inputClasses = "field-input field-on-dark px-6 py-5 md:py-6";
+  const labelClasses = "field-label text-white mb-3 tracking-[0.18em]";
   const hintClasses = "text-dark-section-foreground/95 text-body-sm md:text-body-sm font-body mt-3 leading-relaxed font-bold";
 
 
@@ -529,7 +529,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                               {...fieldAttrs.notes}
                               value={formData.details}
                               onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                              className={`${inputClasses} resize-none`}
+                              className={inputClasses}
                               placeholder="A leak over the kitchen, an aging roof, a porch we'd like to build…"
                             />
                           </div>

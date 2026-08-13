@@ -89,14 +89,14 @@ const RoofingPathFinder = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to={selected.to}
-                className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-7 py-3.5 inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+                className="btn btn-primary btn-md"
               >
                 {selected.cta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/request-inspection"
-                className="border border-border text-foreground font-medium text-sm px-7 py-3.5 inline-flex items-center justify-center gap-2 hover:bg-secondary transition-all"
+                className="btn btn-secondary btn-md"
               >
                 Get My Roof Assessed
               </Link>

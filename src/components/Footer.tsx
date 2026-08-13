@@ -132,7 +132,7 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/consultation"
-                className="group cta-gradient text-accent-foreground font-bold text-body-xs px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden whitespace-nowrap uppercase tracking-[0.1em] shadow-raised min-h-[56px]"
+                className="btn btn-primary btn-md group relative whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Request a Quote</span>
@@ -140,7 +140,7 @@ const Footer = () => {
               </Link>
               <a
                 href="tel:+18285247773"
-                className="bg-secondary border-2 border-border text-foreground font-bold text-body-xs px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-secondary/80 hover:border-primary/30 transition-all duration-300 whitespace-nowrap min-h-[56px] tracking-wide"
+                className="btn btn-secondary btn-md whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 text-primary" />
                 (828) 524-7773
