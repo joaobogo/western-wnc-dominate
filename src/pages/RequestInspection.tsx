@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, ClipboardCheck, CalendarClock, FileCheck2, Shield, Clock, MapPin, Star } from "lucide-react";
+import { Phone, ClipboardCheck, CalendarClock, FileCheck2 } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,24 +24,6 @@ const steps = [
   },
 ];
 
-const services = [
-  { label: "Roof Inspection & Repair", to: "/roofing/roof-repair" },
-  { label: "Roof Replacement", to: "/roofing/roof-replacement" },
-  { label: "Standing Seam Metal Roofing", to: "/roofing/metal" },
-  { label: "Gutters & Downspouts", to: "/roofing/gutters" },
-  { label: "Skylights & Sun Tunnels", to: "/roofing/residential" },
-  { label: "Construction & Additions", to: "/construction" },
-  { label: "Design & Planning", to: "/construction/design" },
-  { label: "Outdoor Living, Decks & Patios", to: "/construction/outdoor-living" },
-];
-
-const trust = [
-  { icon: Shield, label: "Licensed & fully insured NC general contractor" },
-  { icon: Star, label: "CertainTeed ShingleMaster certified roofing contractor" },
-  { icon: Clock, label: "Same or next business day response on storm and leak calls" },
-  { icon: MapPin, label: "Local Western NC team — no call centers, no storm chasers" },
-];
-
 const RequestInspection = () => {
   return (
     <>
@@ -56,37 +38,23 @@ const RequestInspection = () => {
       />
       <Header />
       <main id="main-content">
-        {/* HERO */}
-        <section className="bg-heritage-charcoal pt-32 md:pt-40 pb-14 md:pb-20 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
-          <div className="container-tight relative z-10 grid md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-10 items-center">
-            <div>
-              <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
-                No Obligation · Local Team · Licensed &amp; Insured
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-5">
-                Get Your Roof or Project Assessed in <span className="text-[hsl(var(--gold-ink))]">Western NC</span>
-              </h1>
-              <p className="text-white/90 text-lg leading-relaxed font-body max-w-xl mb-8">
-                Active leak, storm damage to document for insurance, a roof due for replacement, gutters, or a build you&apos;re planning — tell us in about a minute. A local Highlander team member calls you back, schedules the on-site look, and sends a written scope and price.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a href="#inspection-form" className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2">
-                  Start the Form
-                </a>
-                <a href="tel:+18285247773" className="border border-white/25 text-white font-semibold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
-                </a>
-              </div>
-            </div>
-            <ul className="space-y-3">
-              {trust.map((t) => (
-                <li key={t.label} className="flex items-start gap-3 text-white/90 text-[15px] font-body">
-                  <t.icon className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
-                  <span>{t.label}</span>
-                </li>
-              ))}
-            </ul>
+        {/* FORM — first thing on the page, no competing nav-heavy sections above */}
+        <div id="inspection-form">
+          <InspectionForm variant="page" />
+        </div>
+
+        {/* PHONE ALTERNATIVE — visible immediately under the form */}
+        <section className="bg-secondary border-b border-border py-6">
+          <div className="container-tight flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
+            <p className="font-body font-semibold text-foreground text-[15px]">
+              Would rather talk it through? A Franklin-based team member answers.
+            </p>
+            <a
+              href="tel:+18285247773"
+              className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2"
+            >
+              <Phone className="w-4 h-4" /> Call Direct: 828-524-7773
+            </a>
           </div>
         </section>
 
@@ -116,35 +84,6 @@ const RequestInspection = () => {
             </div>
           </div>
         </section>
-
-        {/* SERVICE OPTIONS */}
-        <section className="section-padding bg-secondary">
-          <div className="container-tight">
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="eyebrow block mb-3">What Can We Help With?</span>
-              <h2 className="section-heading">Roofing, gutters, skylights, construction, and design</h2>
-              <p className="text-muted-foreground mt-3 font-body">
-                Choose whatever fits — you can also just describe what you need in the form below.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              {services.map((s) => (
-                <Link
-                  key={s.to}
-                  to={s.to}
-                  className="card-premium p-4 text-center font-heading font-bold text-foreground text-[15px] hover:border-primary/40 transition-colors"
-                >
-                  {s.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FORM */}
-        <div id="inspection-form">
-          <InspectionForm />
-        </div>
 
         {/* FOOT CTA */}
         <section className="section-padding bg-primary">
