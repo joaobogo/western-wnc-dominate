@@ -127,7 +127,7 @@ const RooflineSVG = ({ className = "" }: { className?: string }) => (
       fill="currentColor"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 0.4, delay: 0.3 }}
     />
     <motion.path
       d="M0,40 L180,10 L360,40 L480,8 L600,40 L720,5 L840,35 L960,12 L1080,38 L1200,6 L1320,32 L1440,15"
@@ -137,7 +137,7 @@ const RooflineSVG = ({ className = "" }: { className?: string }) => (
       strokeOpacity="0.3"
       initial={{ pathLength: 0 }}
       animate={{ pathLength: 1 }}
-      transition={{ duration: 3, delay: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
     />
   </svg>
 );
@@ -191,7 +191,7 @@ const RoofingDivision = () => {
             style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }}
             initial={{ height: "0%" }}
             animate={{ height: "100%" }}
-            transition={{ duration: 2, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
           />
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-10 md:pb-20 pt-24 md:pt-40">
@@ -199,7 +199,7 @@ const RoofingDivision = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 className="order-4 md:order-none flex flex-col gap-4 md:gap-6 mt-8 md:mt-0 mb-0 md:mb-8"
               >
                 <div className="inline-flex items-center gap-4">
@@ -225,7 +225,7 @@ const RoofingDivision = () => {
                     className="block"
                     initial={{ y: "110%" }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   >
                     Roofing Built for
                   </motion.span>
@@ -235,7 +235,7 @@ const RoofingDivision = () => {
                     className="block"
                     initial={{ y: "110%" }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   >
                     Western NC <span className="text-[hsl(var(--gold-ink))]">Weather.</span>
                   </motion.span>
@@ -243,9 +243,9 @@ const RoofingDivision = () => {
               </h1>
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 1 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 className="order-2 md:order-none text-body-sm md:text-body-lg text-primary-foreground/90 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
               >
                 <span className="md:hidden">We inspect, spec the right system for your elevation, and put scope and price in writing first.</span>
@@ -253,9 +253,9 @@ const RoofingDivision = () => {
               </motion.p>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4"
               >
                 <Link
@@ -337,10 +337,10 @@ const RoofingDivision = () => {
             {roofingServices.map((service, i) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.5 }}
+                transition={{ delay: i * 0.07, duration: 0.4 }}
               >
                 <Link
                   to={service.slug}
@@ -407,7 +407,7 @@ const RoofingDivision = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {/* Featured large image */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="group relative aspect-[4/3] lg:aspect-auto lg:row-span-2 rounded-none overflow-hidden"
@@ -426,10 +426,10 @@ const RoofingDivision = () => {
               {galleryItems.slice(1, 5).map((item, i) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 + i * 0.06, duration: 0.5 }}
+                  transition={{ delay: 0.1 + i * 0.06, duration: 0.4 }}
                   className="group relative aspect-[4/3] rounded-none overflow-hidden"
                 >
                   <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover img-zoom-dramatic transition-transform duration-700" loading="lazy" />
@@ -503,14 +503,14 @@ const RoofingDivision = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           />
 
           <div className="section-padding">
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center">
                 <motion.div
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >

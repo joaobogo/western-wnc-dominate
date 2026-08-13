@@ -8,10 +8,10 @@ const RoofDesignerCTA = () => {
       <div className="container-tight relative z-10">
         <motion.div
           className="max-w-3xl mx-auto text-center"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-sm bg-primary/8 text-primary text-xs font-body font-semibold uppercase tracking-[0.15em] mb-6">
             <Sparkles className="w-3.5 h-3.5" />

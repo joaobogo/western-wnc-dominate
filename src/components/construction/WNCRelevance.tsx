@@ -88,7 +88,7 @@ const WNCRelevance = ({
       <section className={`section-padding bg-background ${className}`}>
         <div className="container-tight max-w-5xl">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
               <span className="eyebrow mb-3 block">{eyebrow}</span>
               <h2 className="section-heading mb-5 whitespace-pre-line">{heading}</h2>
               {subheading && <p className="text-muted-foreground text-sm leading-relaxed font-body">{subheading}</p>}
@@ -129,7 +129,7 @@ const WNCRelevance = ({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {insights.map((insight, i) => (
-            <motion.div key={insight.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift">
+            <motion.div key={insight.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift">
               <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
                 <insight.icon className="w-5 h-5 text-primary" />
               </div>
@@ -166,7 +166,7 @@ export const WNCRelevanceDark = ({
       initial={{ scaleX: 0 }}
       whileInView={{ scaleX: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 1.2 }}
+      transition={{ duration: 0.4 }}
     />
     <div className="section-padding">
       <div className="container-tight">
@@ -178,7 +178,7 @@ export const WNCRelevanceDark = ({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {insights.map((insight, i) => (
-            <motion.div key={insight.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
+            <motion.div key={insight.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
               <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4">
                 <insight.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
               </div>

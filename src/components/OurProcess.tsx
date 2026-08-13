@@ -99,17 +99,17 @@ const OurProcess = () => {
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             viewport={{ once: true }}
-            transition={{ duration: 3, ease: HIGHLAND_EASE }}
+            transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
           />
 
           <div className="space-y-2 md:space-y-3">
             {steps.map((step, i) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
-                transition={{ delay: i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
+                transition={{ delay: i * 0.08, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="relative flex gap-5 md:gap-8 group"
               >
                 {/* Number node */}
@@ -164,7 +164,7 @@ const OurProcess = () => {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6, ease: HIGHLAND_EASE }}
+          transition={{ delay: 0.4, duration: 0.4, ease: HIGHLAND_EASE }}
           className="text-center mt-12 md:mt-16"
         >
           <div className="inline-flex items-center gap-3 mb-8">

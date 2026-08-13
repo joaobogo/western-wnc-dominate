@@ -89,7 +89,7 @@ const CountyPage = () => {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.4 }}
               className="mb-8 flex items-center gap-4"
             >
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
@@ -103,7 +103,7 @@ const CountyPage = () => {
               <motion.div 
                 initial={{ opacity: 0, x: -20 }} 
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.4 }}
               >
                 <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 md:mb-10 text-white tracking-tightest leading-[0.9] drop-shadow-lg">
                   Built for the <br />

@@ -71,7 +71,7 @@ const CommonConcerns = ({
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.05, duration: 0.45 }}
+            transition={{ delay: i * 0.05, duration: 0.4 }}
             className="card-premium p-5 md:p-6 rounded-sm"
           >
             <div className="flex items-start gap-3">

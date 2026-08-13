@@ -339,7 +339,7 @@ const BlogPostPage = () => {
           </div>
 
           <div className="container-tight max-w-4xl relative z-10 py-24 md:py-32">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <div className="mb-10 inline-flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
                 <span className="text-caption font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Insight</span>

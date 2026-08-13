@@ -61,7 +61,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="flex items-center gap-2 mb-4"
           >
             <Compass className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
@@ -73,7 +73,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="text-display font-heading font-bold leading-[0.98] tracking-tight mb-5"
           >
             Serving Franklin, Highlands, Cashiers, Sylva{" "}
@@ -98,10 +98,10 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
           {primaryAreas.map((area, i) => (
             <motion.div
               key={area.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
+              transition={{ duration: 0.4, delay: i * 0.06 }}
             >
               <Link
                 to={area.href!}
@@ -136,7 +136,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="bg-secondary/40 border border-border p-6"
           >
             <h3 className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-4">
@@ -163,7 +163,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="bg-secondary/40 border border-border p-6"
           >
             <h3 className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-4">

@@ -175,10 +175,10 @@ const FeaturedCard = ({ post }: { post: PostWithCategory }) => {
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: HIGHLAND_EASE }}
+      transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
     >
       <Link
         to={`/blog/${post.slug}`}
@@ -235,7 +235,7 @@ const SecondaryCard = ({ post, index }: { post: PostWithCategory; index: number 
       initial={{ opacity: 0, x: 16 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
+      transition={{ delay: index * 0.08, duration: 0.4, ease: HIGHLAND_EASE }}
       className="flex-1"
     >
       <Link
@@ -280,7 +280,7 @@ const CompactCard = ({ post, index }: { post: PostWithCategory; index: number })
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: 0.2 + index * 0.06, duration: 0.45, ease: HIGHLAND_EASE }}
+      transition={{ delay: 0.2 + index * 0.06, duration: 0.4, ease: HIGHLAND_EASE }}
     >
       <Link
         to={`/blog/${post.slug}`}

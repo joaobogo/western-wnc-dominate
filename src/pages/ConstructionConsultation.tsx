@@ -514,7 +514,7 @@ export default function ConstructionConsultation() {
                         <motion.div
                           className="absolute inset-y-0 left-0 bg-[hsl(var(--highland-gold))]"
                           animate={{ width: i < step ? "100%" : "0%" }}
-                          transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+                          transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                         />
                       </div>
                     )}
@@ -589,7 +589,7 @@ export default function ConstructionConsultation() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.3 }}
             className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6"
           >
             {[

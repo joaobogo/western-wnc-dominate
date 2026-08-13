@@ -124,12 +124,12 @@ const ConstructionDivision = () => {
 
           {/* Gold accent lines */}
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.6)] to-[hsl(var(--highland-gold)/0)] z-10" />
-          <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2.2, delay: 0.5, ease: HIGHLAND_EASE }} />
-          <motion.div className="absolute right-0 bottom-0 w-[2px] z-20" style={{ background: "linear-gradient(to top, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "40%" }} transition={{ duration: 1.5, delay: 1.2, ease: HIGHLAND_EASE }} />
+          <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }} />
+          <motion.div className="absolute right-0 bottom-0 w-[2px] z-20" style={{ background: "linear-gradient(to top, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "40%" }} transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }} />
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-10 md:pb-24 pt-24 md:pt-40">
             <div className="max-w-3xl flex flex-col">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col gap-4 md:gap-8 mt-8 md:mt-0 mb-0 md:mb-10 order-4 md:order-none">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col gap-4 md:gap-8 mt-8 md:mt-0 mb-0 md:mb-10 order-4 md:order-none">
                 <div className="inline-flex items-center gap-4">
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
@@ -145,18 +145,18 @@ const ConstructionDivision = () => {
                 </div>
               </motion.div>
 
-              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-heading md:text-5xl lg:text-display xl:text-display font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight mb-3 md:mb-8">
+              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-heading md:text-5xl lg:text-display xl:text-display font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight mb-3 md:mb-8">
                 Additions &amp; Custom Building{" "}
                 <span className="text-[hsl(var(--gold-ink))]">Across Western NC.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="order-2 md:order-none text-body-sm md:text-body-lg text-white/95 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-bold drop-shadow-md">
+              <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="order-2 md:order-none text-body-sm md:text-body-lg text-white/95 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-bold drop-shadow-md">
                 <span className="md:hidden">We walk your site and return a written scope, schedule, and budget range before you commit.</span>
                 <span className="hidden md:inline">Out of room, or ready to build on your mountain lot? Bring us the idea and we walk the site, map the permits and site constraints, and return a written scope, schedule, and budget range before you commit. Additions, renovations, and outdoor living — licensed, insured, and team-led.</span>
               </motion.p>
 
 
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/consultation" className="btn btn-primary btn-lg group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
@@ -170,7 +170,7 @@ const ConstructionDivision = () => {
               <HeroTrustLine className="order-3 md:order-none mt-4 md:mt-6" />
 
               {/* Division scope — desktop only; keeps the mobile fold clean */}
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }} className="hidden md:block order-5 md:order-none mt-8 md:mt-10 pt-6 md:pt-8 border-t border-white/6">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.4 }} className="hidden md:block order-5 md:order-none mt-8 md:mt-10 pt-6 md:pt-8 border-t border-white/6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-6">
                   {[
                     { value: "6", label: "Service Categories" },
@@ -230,11 +230,11 @@ const ConstructionDivision = () => {
 
         {/* ═══ STANDARDS TRANSFER — Roofing credentials prove construction quality ═══ */}
         <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
+          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }} />
           <div className="section-padding">
             <div className="container-tight">
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Proven Standards</span>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
                     Team-Led Quality Built Our<br className="hidden md:block" /> Construction Standards.
@@ -376,7 +376,7 @@ const ConstructionDivision = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {philosophy.map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
+              <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
                 <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
                   <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                 </div>
@@ -415,7 +415,7 @@ const ConstructionDivision = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {galleryImages.map((img, i) => (
-              <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-none overflow-hidden">
+              <motion.div key={img.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-none overflow-hidden">
                 <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
@@ -441,7 +441,7 @@ const ConstructionDivision = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {whyHighlander.map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
+              <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
                 <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
                   <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                 </div>

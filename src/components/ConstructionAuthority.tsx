@@ -108,7 +108,7 @@ const ConstructionAuthority = () => {
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 2.5, ease: HIGHLAND_EASE }}
+              transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
             />
           </svg>
         </div>
@@ -156,10 +156,10 @@ const ConstructionAuthority = () => {
             {disciplines.map((d, i) => (
               <motion.div
                 key={d.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 + i * 0.06, duration: 0.5, ease: HIGHLAND_EASE }}
+                transition={{ delay: 0.2 + i * 0.06, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none p-5 hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
               >
                 {/* Gold left accent on hover */}

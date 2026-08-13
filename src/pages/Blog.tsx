@@ -105,9 +105,9 @@ const Blog = () => {
             <div className="container-tight">
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
                 <motion.div
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
+                  transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                   className="lg:col-span-6"
                 >
                   <div className="flex items-center gap-5 mb-8">
@@ -147,9 +147,9 @@ const Blog = () => {
 
                 {/* Seasonal intelligence panel */}
                 <motion.div
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.15, ease: HIGHLAND_EASE }}
+                  transition={{ duration: 0.4, delay: 0.15, ease: HIGHLAND_EASE }}
                   className="lg:col-span-6"
                 >
                   <div className="border border-[hsl(var(--highland-gold)/0.12)] bg-[hsl(var(--dark-section-foreground)/0.03)] p-6">
@@ -209,7 +209,7 @@ const Blog = () => {
               <div className="grid lg:grid-cols-12 gap-6">
                 {/* Main featured */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   className="lg:col-span-7"

@@ -100,7 +100,7 @@ const TownPage = () => {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.4 }}
               className="mb-8 flex items-center gap-4"
             >
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
@@ -112,9 +112,9 @@ const TownPage = () => {
 
             <div className="max-w-4xl">
               <motion.h1 
-                initial={{ opacity: 0, y: 20 }} 
+                initial={{ opacity: 0, y: 16 }} 
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.9] drop-shadow-lg"
               >
                 Roofing &amp; Construction in{" "}
@@ -128,9 +128,9 @@ const TownPage = () => {
               />
 
               <motion.p 
-                initial={{ opacity: 0, y: 20 }} 
+                initial={{ opacity: 0, y: 16 }} 
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
                 className="hidden md:block text-lg md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
               >
                 {town.description}
@@ -138,9 +138,9 @@ const TownPage = () => {
 
               {/* One genuinely local roofing reality, above the fold */}
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.15 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
                 className="mb-10 max-w-2xl border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-body-sm md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
               >
                 <span className="font-bold text-[hsl(var(--gold-ink))]">{town.name} reality: </span>
@@ -148,9 +148,9 @@ const TownPage = () => {
               </motion.p>
               
               <motion.div 
-                initial={{ opacity: 0, y: 20 }} 
+                initial={{ opacity: 0, y: 16 }} 
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 md:gap-6"
               >
                 <Link to="/request-inspection" className="btn btn-primary btn-lg md:text-body-sm min-w-[300px]">

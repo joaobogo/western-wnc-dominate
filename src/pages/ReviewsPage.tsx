@@ -18,7 +18,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true } as const,
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const },
 };
 
 /* ── Review Data ── */
@@ -126,7 +126,7 @@ const ReviewsPage = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 className="max-w-sm flex-shrink-0"
               >
                 <div className="border-l-2 border-[hsl(var(--highland-gold)/0.3)] pl-5">
@@ -152,7 +152,7 @@ const ReviewsPage = () => {
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
                   className="flex flex-col items-center text-center md:px-6 lg:px-8"
                 >
                   <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1.5">{stat.value}</span>
@@ -194,10 +194,10 @@ const ReviewsPage = () => {
               {featured.map((r, i) => (
                 <motion.div
                   key={r.authorName}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  transition={{ delay: i * 0.1, duration: 0.4 }}
                   className="relative bg-card border border-border rounded-sm p-7 md:p-8 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-flat transition-all duration-300"
                 >
                   <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
@@ -261,10 +261,10 @@ const ReviewsPage = () => {
               {filtered.map((r, i) => (
                 <motion.div
                   key={r.authorName + r.project}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.06, duration: 0.45 }}
+                  transition={{ delay: i * 0.06, duration: 0.4 }}
                   className="group bg-card border border-border rounded-sm p-5 md:p-6 hover:border-primary/15 hover:shadow-flat transition-all duration-300"
                 >
                   <div className="flex items-center justify-between mb-3">
@@ -312,10 +312,10 @@ const ReviewsPage = () => {
               {themes.map((theme, i) => (
                 <motion.div
                   key={theme.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  transition={{ delay: i * 0.1, duration: 0.4 }}
                   className="border border-[hsl(var(--highland-gold)/0.1)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)]"
                 >
                   <div className="w-11 h-11 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-4">

@@ -278,7 +278,7 @@ const RoofAssessmentQuiz = () => {
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${Math.min((totalScore / 19) * 100, 100)}%` }}
-                        transition={{ delay: 0.3, duration: 0.8, ease: HIGHLAND_EASE }}
+                        transition={{ delay: 0.3, duration: 0.4, ease: HIGHLAND_EASE }}
                         className={`h-full rounded-full ${result.level === "good" ? "bg-primary" : result.level === "caution" ? "bg-accent" : "bg-destructive"}`}
                       />
                     </div>

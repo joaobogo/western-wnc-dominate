@@ -234,7 +234,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+            transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
           >
             <LeadConfirmationPanel
               heading="Your project conversation has begun."
@@ -333,10 +333,10 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
 
             {/* Right — short form, optional details tucked away */}
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.12, duration: 0.6, ease: HIGHLAND_EASE }}
+              transition={{ delay: 0.12, duration: 0.4, ease: HIGHLAND_EASE }}
               className={`lg:col-span-3 ${isPage ? "order-1 lg:order-2" : ""}`}
             >
               <div className="bg-dark-section-foreground/[0.03] border border-dark-section-foreground/8 rounded-none p-6 md:p-8 lg:p-10">

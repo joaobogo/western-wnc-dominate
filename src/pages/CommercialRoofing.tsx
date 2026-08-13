@@ -153,11 +153,11 @@ const CommercialRoofing = () => {
                     </div>
 
                     <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
-                    <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2, delay: 0.5 }} />
+                    <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 0.4, delay: 0.3 }} />
 
                     <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
                       <div className="max-w-3xl">
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col gap-6 mb-8">
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col gap-6 mb-8">
                           <div className="inline-flex items-center gap-4">
                             <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
                             <div className="flex flex-col">
@@ -176,22 +176,22 @@ const CommercialRoofing = () => {
                         </motion.div>
 
                         <div className="overflow-hidden mb-2">
-                          <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
+                          <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
                             Protect the Asset.
                           </motion.h1>
                           <PageContext division="Roofing Division · Commercial" area="Western North Carolina" tone="dark" className="mt-4" />
                         </div>
                         <div className="overflow-hidden mb-8">
-                          <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
+                          <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
                             Preserve the Operation.
                           </motion.h2>
                         </div>
 
-                        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
+                        <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
                           Commercial roofing for Western North Carolina property owners and managers. New installations, replacements, maintenance programs, and emergency response — executed with operational awareness and professional coordination.
                         </motion.p>
 
-                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                           <Link to="/consultation" className="btn btn-primary btn-md group relative">
                             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                             <span className="relative">Discuss Your Project</span>
@@ -206,7 +206,7 @@ const CommercialRoofing = () => {
                         <motion.div
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.8, delay: 1.5 }}
+                          transition={{ duration: 0.4, delay: 0.3 }}
                           className="mt-10 flex flex-wrap gap-2.5"
                         >
                           {["Licensed GC", "Fully Insured", "Multi-Property Programs", "Rapid Emergency", "Maintenance Contracts"].map((badge) => (
@@ -232,10 +232,10 @@ const CommercialRoofing = () => {
                       <div className="container-tight max-w-5xl">
                         <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
                           <motion.div
-                            initial={{ opacity: 0, y: 24 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.4 }}
                             className="lg:col-span-8"
                           >
                             <div className="w-12 h-[2px] mb-8 bg-primary/30" />
@@ -247,10 +247,10 @@ const CommercialRoofing = () => {
                             </p>
                           </motion.div>
                           <motion.div
-                            initial={{ opacity: 0, y: 24 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.15 }}
+                            transition={{ duration: 0.4, delay: 0.15 }}
                             className="lg:col-span-4 bg-secondary border border-border rounded-sm p-6 space-y-5"
                           >
                             {[
@@ -277,7 +277,7 @@ const CommercialRoofing = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                           {capabilities.map((cap, i) => (
-                            <motion.div key={cap.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift">
+                            <motion.div key={cap.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift">
                               <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
                                 <cap.icon className="w-5 h-5 text-primary" />
                               </div>
@@ -303,7 +303,7 @@ const CommercialRoofing = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                         {roofingSystems.map((sys, i) => (
-                          <motion.div key={sys.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
+                          <motion.div key={sys.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                             <h3 className="font-heading font-bold text-foreground text-base mb-3 group-hover:text-primary transition-colors">{sys.title}</h3>
                             <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-4">{sys.description}</p>
                             <p className="text-xs font-body font-semibold text-primary/80 uppercase tracking-wider mb-3">Best for: {sys.bestFor}</p>
@@ -324,7 +324,7 @@ const CommercialRoofing = () => {
         process={
           <>
                     <section className="section-dark tartan-dark relative overflow-hidden">
-                      <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
+                      <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }} />
                       <div className="section-padding">
                         <div className="container-tight max-w-5xl">
                           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
@@ -339,7 +339,7 @@ const CommercialRoofing = () => {
 
                           <div className="grid md:grid-cols-2 gap-4 md:gap-5">
                             {disruptionPoints.map((point, i) => (
-                              <motion.div key={point.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
+                              <motion.div key={point.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
                                 <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{point.title}</h3>
                                 <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{point.detail}</p>
                               </motion.div>
@@ -361,7 +361,7 @@ const CommercialRoofing = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                           {propertyManagerPoints.map((item, i) => (
-                            <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
+                            <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                               <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                                 <item.icon className="w-5 h-5 text-primary" />
                               </div>
@@ -403,7 +403,7 @@ const CommercialRoofing = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                           {processSteps.map((step, i) => (
-                            <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
+                            <motion.div key={step.number} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                               <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
                               <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
                               <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
@@ -480,11 +480,11 @@ const CommercialRoofing = () => {
         }
         cta={
                   <section className="section-dark tartan-dark relative overflow-hidden">
-                    <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
+                    <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }} />
                     <div className="section-padding">
                       <div className="container-tight">
                         <div className="max-w-3xl mx-auto text-center">
-                          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                             <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Partner With Highlander</span>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                               Your Roof Protects Your Investment.<br className="hidden md:block" /> We Protect Your Roof.

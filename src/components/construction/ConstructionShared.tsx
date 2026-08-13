@@ -61,12 +61,12 @@ export const ConstructionClosingCTA = ({
       initial={{ scaleX: 0 }}
       whileInView={{ scaleX: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 1.2 }}
+      transition={{ duration: 0.4 }}
     />
     <div className="section-padding">
       <div className="container-tight">
         <div className="max-w-3xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">{eyebrow}</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground whitespace-pre-line">
               {headline}

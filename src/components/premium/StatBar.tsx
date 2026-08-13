@@ -90,7 +90,7 @@ export const StatBar = ({
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5, ease: HIGHLAND_EASE }}
+              transition={{ delay: i * 0.1, duration: 0.4, ease: HIGHLAND_EASE }}
               className="md:px-8 lg:px-10"
             >
               <StatItem {...stat} animate={animate} />

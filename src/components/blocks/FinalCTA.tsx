@@ -26,7 +26,7 @@ export const FinalCTA = ({
 }: Props) => (
   <section className={`section-padding bg-primary text-primary-foreground ${className}`}>
     <div className="container-tight max-w-3xl text-center">
-      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+      <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
         <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-4 block">
           {eyebrow}
         </span>

@@ -68,10 +68,10 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ delay: index * 0.07, duration: 0.55, ease: HIGHLAND_EASE }}
+      transition={{ delay: index * 0.07, duration: 0.4, ease: HIGHLAND_EASE }}
       className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none overflow-hidden spotlight-hover border-shimmer hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
     >
       {/* Left gold accent on hover */}
@@ -150,7 +150,7 @@ const ValueProposition = () => {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6, ease: HIGHLAND_EASE }}
+          transition={{ delay: 0.3, duration: 0.4, ease: HIGHLAND_EASE }}
           className="text-center mt-14 md:mt-16"
         >
           <Link

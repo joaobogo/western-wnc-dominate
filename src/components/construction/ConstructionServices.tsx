@@ -181,7 +181,7 @@ export const ConstructionServiceGrid = ({
         {categories.map((cat, i) => (
           <motion.div
             key={cat.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.07 }}

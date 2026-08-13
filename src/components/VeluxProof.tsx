@@ -51,10 +51,10 @@ const VeluxProof = () => {
       <div className="container-tight relative">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: EASE }}
+          transition={{ duration: 0.4, ease: EASE }}
           className="max-w-3xl mb-12"
         >
           <div className="flex items-center gap-3 mb-5">
@@ -76,10 +76,10 @@ const VeluxProof = () => {
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           {/* What it means for you */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
+            transition={{ duration: 0.4, delay: 0.1, ease: EASE }}
             className="lg:col-span-3"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -106,10 +106,10 @@ const VeluxProof = () => {
 
           {/* Warranty card */}
           <motion.aside
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
+            transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
             className="lg:col-span-2"
           >
             <div className="border border-[hsl(var(--highland-gold)/0.3)] bg-dark-section-foreground/[0.03] p-6 md:p-8 h-full flex flex-col">
@@ -144,10 +144,10 @@ const VeluxProof = () => {
 
         {/* CTA band */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, delay: 0.3, ease: EASE }}
+          transition={{ duration: 0.4, delay: 0.3, ease: EASE }}
           className="mt-12 md:mt-16 border-t border-dark-section-foreground/10 pt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
         >
           <div className="max-w-xl">

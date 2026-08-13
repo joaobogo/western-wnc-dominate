@@ -39,10 +39,10 @@ export const ImageFrame = ({
 }: ImageFrameProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
+      transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
       className={cn(
         "group relative rounded-none overflow-hidden",
         variant === "featured" && "shadow-raised",
@@ -61,7 +61,7 @@ export const ImageFrame = ({
           initial={variant === "editorial" ? { scale: 1.08 } : { scale: 1.05 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.4, ease: HIGHLAND_EASE }}
+          transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
         />
 
         {/* Cinematic gradient overlay */}
@@ -83,7 +83,7 @@ export const ImageFrame = ({
             initial={{ width: 0 }}
             whileInView={{ width: "40%" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3, ease: HIGHLAND_EASE }}
+            transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }}
           />
         )}
         {accentPosition === "left" && (
@@ -92,7 +92,7 @@ export const ImageFrame = ({
             initial={{ height: 0 }}
             whileInView={{ height: "40%" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3, ease: HIGHLAND_EASE }}
+            transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }}
           />
         )}
 

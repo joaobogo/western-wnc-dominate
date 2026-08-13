@@ -71,7 +71,7 @@ export const TrustBlock = ({
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: 0.3, duration: 0.5, ease: HIGHLAND_EASE }}
+      transition={{ delay: 0.3, duration: 0.4, ease: HIGHLAND_EASE }}
       className={cn(
         "flex flex-wrap items-center gap-4 sm:gap-8",
         isInline ? "justify-start" : "justify-center",

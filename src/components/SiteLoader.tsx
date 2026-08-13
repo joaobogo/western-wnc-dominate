@@ -74,7 +74,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
               `radial-gradient(ellipse at 50% 55%, ${SMITH_LIGHT} 0%, ${SMITH_GREEN} 50%, hsl(var(--hero-overlay)) 100%)`,
           }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.55, ease: EASE }}
+          transition={{ duration: 0.4, ease: EASE }}
         >
           {reduced && (
             <motion.div
@@ -107,7 +107,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                 className="absolute inset-x-0 bottom-0 h-[55%] pointer-events-none"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 0.35, 0.22] }}
-                transition={{ duration: 1.4, ease: "easeInOut" }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
                 style={{
                   background: `radial-gradient(ellipse 60% 100% at 50% 100%, ${GOLD}, transparent 70%)`,
                 }}
@@ -118,7 +118,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                 className="absolute inset-0 pointer-events-none"
                 initial={{ opacity: 0, x: "-40%" }}
                 animate={{ opacity: [0, 0.35, 0], x: "40%" }}
-                transition={{ duration: 1.1, delay: 2.0, ease: "easeInOut" }}
+                transition={{ duration: 0.4, delay: 0.3, ease: "easeInOut" }}
                 style={{
                   background:
                     `linear-gradient(105deg, transparent 40%, hsl(var(--dark-section-foreground) / 0.13) 50%, transparent 60%)`,
@@ -129,12 +129,12 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
               <motion.div
                 className="absolute top-0 inset-x-0 h-px origin-center"
                 style={{ background: `linear-gradient(90deg, transparent, ${CREAM}, transparent)`, opacity: 0.5 }}
-                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.9, ease: EASE }}
+                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.4, ease: EASE }}
               />
               <motion.div
                 className="absolute bottom-0 inset-x-0 h-px origin-center"
                 style={{ background: `linear-gradient(90deg, transparent, ${CREAM}, transparent)`, opacity: 0.35 }}
-                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
+                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.4, delay: 0.1, ease: EASE }}
               />
 
               {/* --- SCENE: mountain ridge + line-art home --- */}
@@ -164,7 +164,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                   <motion.g
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.08 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
+                    transition={{ duration: 0.4, delay: 0.1 }}
                     stroke={CREAM}
                     strokeWidth={0.3}
                   >
@@ -185,7 +185,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                     strokeWidth={1}
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.6, delay: 0.35, ease: EASE }}
+                    transition={{ duration: 0.4, delay: 0.35, ease: EASE }}
                     transform="translate(-20, 15) scale(1.03, 0.9)"
                   />
 
@@ -200,7 +200,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                     filter="url(#soft-glow)"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.55, delay: 0.4, ease: EASE }}
+                    transition={{ duration: 0.4, delay: 0.4, ease: EASE }}
                   />
 
                   {/* --- HOUSE FRAME --- */}
@@ -209,27 +209,27 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                     d={FOUNDATION}
                     fill="none" stroke={CREAM} strokeWidth={1.6} strokeLinecap="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.4, delay: 0.95, ease: EASE }}
+                    transition={{ duration: 0.4, delay: 0.3, ease: EASE }}
                   />
                   {/* Walls */}
                   <motion.path
                     d={LEFT_WALL}
                     fill="none" stroke={CREAM} strokeWidth={1.6} strokeLinecap="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.35, delay: 1.25, ease: EASE }}
+                    transition={{ duration: 0.35, delay: 0.3, ease: EASE }}
                   />
                   <motion.path
                     d={RIGHT_WALL}
                     fill="none" stroke={CREAM} strokeWidth={1.6} strokeLinecap="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.35, delay: 1.3, ease: EASE }}
+                    transition={{ duration: 0.35, delay: 0.3, ease: EASE }}
                   />
                   {/* Eave */}
                   <motion.path
                     d={ROOF_EAVE}
                     fill="none" stroke={CREAM} strokeOpacity={0.7} strokeWidth={1.2} strokeLinecap="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.35, delay: 1.55, ease: EASE }}
+                    transition={{ duration: 0.35, delay: 0.3, ease: EASE }}
                   />
                   {/* Roof left/right — the hero moment */}
                   <motion.path
@@ -237,53 +237,53 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                     fill="none" stroke={GOLD} strokeWidth={2.2} strokeLinecap="round"
                     filter="url(#soft-glow)"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.45, delay: 1.7, ease: EASE }}
+                    transition={{ duration: 0.4, delay: 0.3, ease: EASE }}
                   />
                   <motion.path
                     d={ROOF_RIGHT}
                     fill="none" stroke={GOLD} strokeWidth={2.2} strokeLinecap="round"
                     filter="url(#soft-glow)"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.45, delay: 1.75, ease: EASE }}
+                    transition={{ duration: 0.4, delay: 0.3, ease: EASE }}
                   />
                   {/* Peak dot */}
                   <motion.circle
                     cx={400} cy={100} r={3.5} fill={GOLD}
                     initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.25, delay: 2.15, ease: EASE }}
+                    transition={{ duration: 0.25, delay: 0.3, ease: EASE }}
                   />
                   {/* Chimney */}
                   <motion.path
                     d={CHIMNEY}
                     fill="none" stroke={CREAM} strokeOpacity={0.75} strokeWidth={1.2} strokeLinecap="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.3, delay: 2.0, ease: EASE }}
+                    transition={{ duration: 0.3, delay: 0.3, ease: EASE }}
                   />
                   {/* Door */}
                   <motion.path
                     d={DOOR}
                     fill="none" stroke={CREAM} strokeOpacity={0.8} strokeWidth={1.1} strokeLinejoin="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.35, delay: 1.85, ease: EASE }}
+                    transition={{ duration: 0.35, delay: 0.3, ease: EASE }}
                   />
                   {/* Windows */}
                   <motion.path
                     d={WIN_L}
                     fill="none" stroke={CREAM} strokeOpacity={0.8} strokeWidth={1.1} strokeLinejoin="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.35, delay: 1.9, ease: EASE }}
+                    transition={{ duration: 0.35, delay: 0.3, ease: EASE }}
                   />
                   <motion.path
                     d={WIN_R}
                     fill="none" stroke={CREAM} strokeOpacity={0.8} strokeWidth={1.1} strokeLinejoin="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.35, delay: 1.95, ease: EASE }}
+                    transition={{ duration: 0.35, delay: 0.3, ease: EASE }}
                   />
                   {/* Window mullions */}
                   <motion.g
                     stroke={CREAM} strokeOpacity={0.55} strokeWidth={0.8}
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 2.1 }}
+                    transition={{ duration: 0.3, delay: 0.3 }}
                   >
                     <line x1={305} y1={195} x2={305} y2={220} />
                     <line x1={285} y1={207.5} x2={325} y2={207.5} />
@@ -295,13 +295,13 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                     d={PORCH}
                     fill="none" stroke={CREAM} strokeOpacity={0.6} strokeWidth={1.1} strokeLinejoin="round"
                     initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.35, delay: 2.0, ease: EASE }}
+                    transition={{ duration: 0.35, delay: 0.3, ease: EASE }}
                   />
                   {/* Roof panel lines */}
                   <motion.g
                     stroke={GOLD} strokeOpacity={0.5} strokeWidth={0.7}
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                    transition={{ duration: 0.4, delay: 2.2 }}
+                    transition={{ duration: 0.4, delay: 0.3 }}
                   >
                     <line x1={288} y1={156} x2={555} y2={156} />
                     <line x1={325} y1={137} x2={520} y2={137} />
@@ -312,7 +312,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                   <motion.g
                     stroke={CREAM} strokeOpacity={0.5} strokeWidth={0.8}
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                    transition={{ duration: 0.35, delay: 2.25 }}
+                    transition={{ duration: 0.35, delay: 0.3 }}
                   >
                     <line x1={240} y1={258} x2={240} y2={266} />
                     <line x1={400} y1={258} x2={400} y2={266} />
@@ -326,7 +326,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 2.15, ease: EASE }}
+                transition={{ duration: 0.4, delay: 0.3, ease: EASE }}
                 className="relative z-10 mt-4 sm:mt-6 flex flex-col items-center gap-2"
               >
                 <div className="flex items-center gap-3 sm:gap-4" style={{ color: CREAM }}>
@@ -344,7 +344,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
                 </div>
                 <motion.p
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 2.4, ease: EASE }}
+                  transition={{ duration: 0.4, delay: 0.3, ease: EASE }}
                   className="text-caption sm:text-caption font-body font-bold uppercase tracking-[0.4em]"
                   style={{ color: GOLD }}
                 >

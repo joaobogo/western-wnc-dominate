@@ -54,7 +54,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 2, ease: HIGHLAND_EASE }}
+              transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
             />
           </svg>
         </div>
@@ -87,10 +87,10 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
             {pathways.map((path, i) => (
               <motion.div
                 key={path.title}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6, ease: HIGHLAND_EASE }}
+                transition={{ delay: i * 0.1, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] p-7 md:p-8 hover:border-[hsl(var(--highland-gold)/0.2)] hover:bg-dark-section-foreground/[0.06] transition-all duration-500"
               >
                 {/* Gold top accent on hover */}
@@ -133,7 +133,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
             className="flex items-center justify-center gap-6 mt-12 md:mt-16"
           >
             {[

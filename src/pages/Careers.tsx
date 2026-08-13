@@ -68,7 +68,7 @@ const Careers = () => {
         <section className="section-padding section-dark pt-32 md:pt-48 relative overflow-hidden">
           <div className="absolute inset-0 tartan-dark opacity-[0.05]" />
           <div className="container-tight relative z-10">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
               <p className="text-[hsl(var(--gold-ink))] font-bold text-xs uppercase tracking-[0.25em] mb-4">Work With Us</p>
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.95]">
                 Build a Career <br />

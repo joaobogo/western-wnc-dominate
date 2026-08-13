@@ -53,7 +53,7 @@ const RoofingGallery = ({
             {projects.map((project, i) => (
               <motion.button
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}

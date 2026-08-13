@@ -183,7 +183,7 @@ const ServiceLinkCard = ({ block, index }: { block: LinkBlock; index: number }) 
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.06 }}
+      transition={{ duration: 0.4, delay: index * 0.06 }}
     >
       <Link
         to={block.href}

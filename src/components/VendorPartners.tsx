@@ -63,10 +63,10 @@ const VendorPartners = ({ heading = "Trusted Manufacturer & Supplier Partners", 
               href={v.href}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
+              transition={{ delay: i * 0.08, duration: 0.4 }}
               className="group card-premium p-6 md:p-7 flex flex-col items-center text-center hover:shadow-raised transition-all"
               aria-label={`Visit ${v.name} (opens in a new tab)`}
             >

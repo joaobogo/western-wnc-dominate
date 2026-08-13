@@ -21,7 +21,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true } as const,
-  transition: { duration: 0.6, ease: HIGHLAND_EASE },
+  transition: { duration: 0.4, ease: HIGHLAND_EASE },
 };
 
 const ProjectDetailPage = () => {
@@ -79,7 +79,7 @@ const ProjectDetailPage = () => {
               className="w-full h-full object-cover"
               initial={{ scale: 1.08 }}
               animate={{ scale: 1 }}
-              transition={{ duration: 1.6, ease: HIGHLAND_EASE }}
+              transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.15)] to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 lg:p-16">
@@ -87,7 +87,7 @@ const ProjectDetailPage = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.2 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
                   className="mb-6 flex items-center gap-3"
                 >
                   <div className="h-px w-8 bg-[hsl(var(--highland-gold)/0.4)]" />
@@ -443,7 +443,7 @@ const ProjectDetailPage = () => {
                 {related.map((rel, i) => (
                   <motion.div
                     key={rel.slug}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}

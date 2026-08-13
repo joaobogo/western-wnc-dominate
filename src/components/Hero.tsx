@@ -310,7 +310,7 @@ const Hero = () => {
 
       {/* === BOTTOM AUTHORITY BAR === */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.4, ease: HIGHLAND_EASE }}
         className="absolute bottom-0 left-0 right-0 z-20 hidden sm:block"

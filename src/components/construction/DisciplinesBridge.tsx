@@ -97,10 +97,10 @@ const DisciplinesBridge = ({
           {disciplineItems.map((d, i) => (
             <motion.div
               key={d.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.5, ease: HIGHLAND_EASE }}
+              transition={{ delay: i * 0.06, duration: 0.4, ease: HIGHLAND_EASE }}
               className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.25)] card-lift transition-all"
             >
               <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">

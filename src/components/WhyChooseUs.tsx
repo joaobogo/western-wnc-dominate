@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-12 md:mb-16"
         >
           <span className="eyebrow mb-3 block">Why Highlander</span>
@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
               initial={{ y: "100%" }}
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="section-heading mb-4"
             >
               Precision. Integrity.<br /> Mountain Knowledge.
@@ -58,10 +58,10 @@ const WhyChooseUs = () => {
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: i * 0.08, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="group flex gap-5 p-5 md:p-6 bg-card border border-border rounded-none hover:border-[hsl(var(--highland-gold)/0.15)] hover:shadow-flat transition-all duration-500 spotlight-hover"
               style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
             >

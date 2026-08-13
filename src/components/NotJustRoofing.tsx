@@ -88,10 +88,10 @@ const NotJustRoofing = () => {
           {divisions.map((div, i) => (
             <motion.div
               key={div.label}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.6, ease: HIGHLAND_EASE }}
+              transition={{ delay: i * 0.12, duration: 0.4, ease: HIGHLAND_EASE }}
             >
               <Link
                 to={div.href}

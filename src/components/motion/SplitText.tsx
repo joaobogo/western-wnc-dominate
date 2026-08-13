@@ -43,7 +43,7 @@ const SplitText = ({
               visible: {
                 y: 0,
                 opacity: 1,
-                transition: { duration: 0.6, ease: HIGHLAND_EASE },
+                transition: { duration: 0.4, ease: HIGHLAND_EASE },
               },
             }}
           >

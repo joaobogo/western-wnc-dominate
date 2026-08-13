@@ -135,7 +135,7 @@ const ConstructionTrust = ({
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 0.4 }}
         />
         <div className="section-padding">
           <div className="container-tight">
@@ -147,7 +147,7 @@ const ConstructionTrust = ({
 
             <div className={`grid grid-cols-1 ${colClass} gap-4 md:gap-5`}>
               {pillars.map((pillar, i) => (
-                <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                <motion.div key={pillar.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                   {showObjections && pillar.overcomes && (
                     <p className="text-[hsl(var(--highland-gold)/0.85)] text-caption italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
                   )}
@@ -176,7 +176,7 @@ const ConstructionTrust = ({
 
         <div className={`grid grid-cols-1 ${colClass} gap-4 md:gap-5`}>
           {pillars.map((pillar, i) => (
-            <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
+            <motion.div key={pillar.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
               {showObjections && pillar.overcomes && (
                 <p className="text-[hsl(var(--highland-gold)/0.85)] text-caption italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
               )}

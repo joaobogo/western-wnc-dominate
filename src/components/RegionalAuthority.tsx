@@ -14,7 +14,7 @@ const RegionalAuthority = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="eyebrow mb-3 block"
           >
             Roofing & Construction · Western North Carolina
@@ -25,7 +25,7 @@ const RegionalAuthority = () => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="text-display font-heading font-bold mb-5 leading-[0.98] tracking-tight"
           >
             A Roofing Company Built{" "}
@@ -86,10 +86,10 @@ const RegionalAuthority = () => {
 
         {/* Coverage panel */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
           className="lg:col-span-5 lg:sticky lg:top-28"
         >
           <div className="bg-card border border-border rounded-none p-6 md:p-8 shadow-flat">

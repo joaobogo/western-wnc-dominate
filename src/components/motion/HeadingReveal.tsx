@@ -18,7 +18,7 @@ const HeadingReveal = ({ children, className = "", delay = 0 }: HeadingRevealPro
         initial={{ y: "110%" }}
         whileInView={{ y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, delay, ease: HIGHLAND_EASE }}
+        transition={{ duration: 0.4, delay, ease: HIGHLAND_EASE }}
         className={className}
       >
         {children}

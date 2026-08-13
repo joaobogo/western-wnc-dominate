@@ -63,10 +63,10 @@ const Reviews = () => {
           {featured.map((t, i) => (
             <motion.div
               key={t.authorName}
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.6, ease: HIGHLAND_EASE }}
+              transition={{ delay: i * 0.12, duration: 0.4, ease: HIGHLAND_EASE }}
               className="relative bg-card border border-border rounded-none p-6 md:p-10 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-flat transition-all duration-500 quote-glyph"
               style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
             >

@@ -40,7 +40,7 @@ export const BrandMotif = ({ variant = "roofline-sweep", className = "", delay =
             initial={{ pathLength: 0 }}
             whileInView={{ pathLength: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: delay + 0.1, duration: 1, ease: HIGHLAND_EASE }}
+            transition={{ delay: delay + 0.1, duration: 0.4, ease: HIGHLAND_EASE }}
           />
         </motion.svg>
       </div>
@@ -64,7 +64,7 @@ export const BrandMotif = ({ variant = "roofline-sweep", className = "", delay =
             initial={{ pathLength: 0 }}
             whileInView={{ pathLength: 1 }}
             viewport={{ once: true }}
-            transition={{ delay, duration: 1.5, ease: HIGHLAND_EASE }}
+            transition={{ delay, duration: 0.4, ease: HIGHLAND_EASE }}
           />
         </motion.svg>
       </div>
@@ -81,7 +81,7 @@ export const BrandMotif = ({ variant = "roofline-sweep", className = "", delay =
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
-        transition={{ delay, duration: 1.2, ease: HIGHLAND_EASE }}
+        transition={{ delay, duration: 0.4, ease: HIGHLAND_EASE }}
       />
     );
   }
@@ -93,14 +93,14 @@ export const BrandMotif = ({ variant = "roofline-sweep", className = "", delay =
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ delay, duration: 0.6 }}
+        transition={{ delay, duration: 0.4 }}
       >
         <motion.div
           className="h-px bg-[hsl(var(--highland-gold)/0.3)]"
           initial={{ width: 0 }}
           whileInView={{ width: 32 }}
           viewport={{ once: true }}
-          transition={{ delay: delay + 0.1, duration: 0.6, ease: HIGHLAND_EASE }}
+          transition={{ delay: delay + 0.1, duration: 0.4, ease: HIGHLAND_EASE }}
         />
         <div className="w-1 h-1 rotate-45 bg-[hsl(var(--highland-gold)/0.4)]" />
       </motion.div>
