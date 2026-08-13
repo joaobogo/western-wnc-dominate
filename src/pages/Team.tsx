@@ -73,8 +73,8 @@ const Team = () => {
                   className={`grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 md:gap-12 items-start ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}
                 >
                   <div>
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-muted shadow-flat">
-                      <img width={1600} height={1067} decoding="async"
+                    <div className="relative aspect-portrait overflow-hidden rounded-sm border border-border bg-muted shadow-flat">
+                      <img width={1000} height={1250} decoding="async"
                         src={member.image}
                         alt={member.alt}
                         loading="lazy"

@@ -71,16 +71,16 @@ const InstagramGrid = () => {
             <motion.div
               key={item.label}
               variants={itemVariants}
-              className="group relative aspect-square rounded-none overflow-hidden cursor-pointer"
+              className="group relative aspect-crew rounded-none overflow-hidden cursor-pointer"
             >
-              <img width={1600} height={1067} decoding="async"
+              <img width={1000} height={1000} decoding="async"
                 src={item.image}
                 alt={item.label}
                 className="w-full h-full object-cover img-zoom-dramatic"
                 loading="lazy"
               />
               {/* Cinematic hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0)] via-transparent to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.5)] transition-all duration-500 flex items-end justify-center pb-4">
+              <div className="absolute inset-0 bg-scrim-bottom opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-4">
                 <span className="text-white text-caption font-body font-semibold tracking-[0.12em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-400 translate-y-3 group-hover:translate-y-0">
                   {item.label}
                 </span>
