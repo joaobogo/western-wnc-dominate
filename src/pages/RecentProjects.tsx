@@ -1,6 +1,7 @@
 import { Fragment, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, Phone } from "lucide-react";
+import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, Phone, ImageOff } from "lucide-react";
+import EmptyState from "@/components/states/EmptyState";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
@@ -197,6 +198,16 @@ const RecentProjects = () => {
                 </button>
               ))}
             </div>
+
+            {visibleProjects.length === 0 && (
+              <EmptyState
+                icon={ImageOff}
+                title="No projects in this category yet"
+                description="We photograph work as crews wrap up, so this filter will fill in. In the meantime, see all completed work or tell us about your own project."
+                primaryAction={{ label: "See all work", onClick: () => setMaterial("All Work") }}
+                secondaryAction={{ label: "Request an estimate", to: "/contact" }}
+              />
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
               {visibleProjects.map((p, i) => {

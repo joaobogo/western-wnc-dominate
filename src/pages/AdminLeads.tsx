@@ -1,3 +1,7 @@
+import EmptyState from "@/components/states/EmptyState";
+import ErrorState from "@/components/states/ErrorState";
+import { LoadingAnnouncement, TableSkeleton } from "@/components/states/Skeletons";
+import { Inbox } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -449,13 +453,29 @@ export default function AdminLeads() {
       <div className="grid lg:grid-cols-[1fr_2fr] gap-0 min-h-[calc(100vh-65px)]">
         <div className="border-r border-border overflow-auto max-h-[calc(100vh-65px)]">
           {loadError && (
-            <p className="p-6 text-sm text-destructive">Could not load leads: {loadError}</p>
+            <ErrorState
+              className="m-4"
+              title="Leads didn't load"
+              description="The query failed or timed out. Retry to pull this list again — no lead data was lost."
+              detail={loadError}
+              onRetry={() => void fetchLeads()}
+              showContact={false}
+            />
           )}
-          {loading && <p className="p-6 text-sm text-muted-foreground">Loading leads…</p>}
+          {loading && (
+            <div className="p-4">
+              <LoadingAnnouncement label="Loading leads" />
+              <TableSkeleton rows={8} cols={3} />
+            </div>
+          )}
           {!loading && !loadError && leads.length === 0 && (
-            <p className="p-6 text-sm text-muted-foreground">
-              No leads match these filters. Clear a filter or widen the date range.
-            </p>
+            <EmptyState
+              className="m-4"
+              icon={Inbox}
+              title="No leads match these filters"
+              description="Clear a filter or widen the date range to see more. New leads appear here the moment a form is submitted."
+              primaryAction={{ label: "Reset filters", onClick: resetFilters }}
+            />
           )}
           {!loading && leads.map(l => (
             <button
