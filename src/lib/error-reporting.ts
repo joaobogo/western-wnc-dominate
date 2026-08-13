@@ -1,5 +1,5 @@
 /**
- * Centralized error reporting for Highlander Roofing & Construction.
+ * Centralized error reporting for Highlander Building Services.
  *
  * Every uncaught error, promise rejection, React render throw, and manually
  * caught exception should flow through `logError()`. It:

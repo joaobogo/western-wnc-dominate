@@ -68,7 +68,7 @@ const SiteLoader = ({ onComplete }: { onComplete: () => void }) => {
         <motion.div
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden"
           role="status"
-          aria-label="Loading Highlander Roofing &amp; Construction"
+          aria-label="Loading Highlander Building Services"
           style={{
             background:
               `radial-gradient(ellipse at 50% 55%, ${SMITH_LIGHT} 0%, ${SMITH_GREEN} 50%, #0a1f08 100%)`,

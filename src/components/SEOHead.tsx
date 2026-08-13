@@ -12,7 +12,7 @@ interface SEOHeadProps {
   locale?: string;
 }
 
-const SITE_NAME = "Highlander Roofing & Construction";
+const SITE_NAME = "Highlander Building Services";
 const BRAND_SUFFIX = "Highlander"; // short suffix to keep titles ≤60 chars
 const BASE_URL = "https://highlandernc.com";
 const FAVICON_VERSION = "2";
@@ -21,7 +21,7 @@ const DEFAULT_IMAGE_WIDTH = "1200";
 const DEFAULT_IMAGE_HEIGHT = "630";
 const TWITTER_HANDLE = "@highlanderroof";
 const DEFAULT_KEYWORDS =
-  "Highlander Roofing, Highlander Roofing Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roofing contractor near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing Sylva NC, storm damage roof WNC, mountain home construction, home additions WNC";
+  "Highlander Building Services, Highlander Building Services, roofing company Western NC, roofing contractor Western NC, roofing services Western North Carolina, roofing company Franklin NC, roofing contractor near Franklin NC, roofing contractor near Highlands NC, roofing contractor near Cashiers NC, roof repair Western NC, roof replacement Western NC, metal roofing Western NC, roofing and construction Western NC, construction and roofing company Western NC, roofing Sylva NC, storm damage roof WNC, mountain home construction, home additions WNC";
 
 const setMeta = (attr: string, key: string, content: string) => {
   let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
@@ -203,8 +203,8 @@ export const localBusinessSchema = (overrides?: Record<string, unknown>) => ({
   "@type": ["RoofingContractor", "GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
   "@id": `${BASE_URL}/#business`,
   name: SITE_NAME,
-  legalName: "Highlander Roofing Services, Inc.",
-  alternateName: "Highlander Roofing",
+  legalName: "Highlander Building Services, Inc.",
+  alternateName: "Highlander Building Services",
   url: BASE_URL,
   logo: DEFAULT_IMAGE,
   image: DEFAULT_IMAGE,
@@ -276,7 +276,7 @@ export const organizationSchema = () => ({
   name: SITE_NAME,
   url: BASE_URL,
   logo: { "@type": "ImageObject", url: DEFAULT_IMAGE, width: 512, height: 512 },
-  legalName: "Highlander Roofing Services, Inc.",
+  legalName: "Highlander Building Services, Inc.",
   telephone: "+1-828-524-7773",
   address: {
     "@type": "PostalAddress",
@@ -401,7 +401,7 @@ export interface TownSchemaInput {
 export const townSchema = (town: TownSchemaInput) =>
   localBusinessSchema({
     "@id": `${BASE_URL}/service-areas/${town.slug}#business`,
-    name: `Highlander Roofing & Construction — ${town.name}, ${town.state}`,
+    name: `Highlander Building Services — ${town.name}, ${town.state}`,
     url: `${BASE_URL}/service-areas/${town.slug}`,
     description: town.description,
     address: {

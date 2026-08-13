@@ -289,7 +289,7 @@ const Hero = () => {
               </Link>
               <a
                 href="tel:+18285247773"
-                aria-label="Call Highlander Roofing & Construction at 828-524-7773"
+                aria-label="Call Highlander Building Services at 828-524-7773"
                 className="group bg-white/[0.08] backdrop-blur-md border md:border-2 border-white/[0.22] text-primary-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-12 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[48px] md:min-h-[60px] tracking-wide uppercase whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--gold-ink))]" />

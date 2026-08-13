@@ -68,7 +68,7 @@ export default function OAuthConsent() {
         ) : (
           <>
             <h1 className="text-lg font-heading font-bold">
-              Connect {clientName} to Highlander Roofing &amp; Construction
+              Connect {clientName} to Highlander Building Services
             </h1>
             {account && (
               <p className="text-xs text-muted-foreground">Signed in as {account}</p>

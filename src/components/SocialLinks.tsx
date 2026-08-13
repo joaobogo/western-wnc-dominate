@@ -2,19 +2,19 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export const SOCIAL_LINKS = [
   {
-    label: "Visit Highlander Roofing Services on LinkedIn",
+    label: "Visit Highlander Building Services on LinkedIn",
     short: "LinkedIn",
     href: "https://www.linkedin.com/company/highlander-roofing-services-inc/",
     icon: Linkedin,
   },
   {
-    label: "Visit Highlander Roofing Services on Facebook",
+    label: "Visit Highlander Building Services on Facebook",
     short: "Facebook",
     href: "https://www.facebook.com/highlanderroof/reels/",
     icon: Facebook,
   },
   {
-    label: "Visit Highlander Roofing Services on Instagram",
+    label: "Visit Highlander Building Services on Instagram",
     short: "Instagram",
     href: "https://www.instagram.com/highlanderroofingservices/",
     icon: Instagram,

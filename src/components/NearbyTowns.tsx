@@ -68,7 +68,7 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
                 Serving the <span className="text-primary italic">{currentTown.county}</span> Corridor.
               </h2>
               <p className="text-muted-foreground mt-4 font-body leading-relaxed">
-                Highlander Roofing & Construction maintains local crews throughout Western North Carolina. If you're near {currentTown.name}, we're likely in your neighborhood this week.
+                Highlander Building Services maintains local crews throughout Western North Carolina. If you're near {currentTown.name}, we're likely in your neighborhood this week.
               </p>
             </div>
             <div className="flex flex-col gap-3">

@@ -389,7 +389,7 @@ const RoofingDivision = () => {
 
         <AnswerBlock
           question="What roofing services does Highlander provide in Western North Carolina?"
-          answer="Highlander Roofing Services, Inc. handles roof repair, full roof replacement, metal roofing, synthetic slate and shake, skylights, gutters, and storm damage response across Western North Carolina from our Franklin, NC shop."
+          answer="Highlander Building Services, Inc. handles roof repair, full roof replacement, metal roofing, synthetic slate and shake, skylights, gutters, and storm damage response across Western North Carolina from our Franklin, NC shop."
           points={[
             "Repair, replacement, metal, and specialty roofing",
             "Storm damage inspections after mountain weather",
@@ -434,7 +434,7 @@ const RoofingDivision = () => {
                 Your roof is the single most important investment protecting your home, your family, and your mountain way of life.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                Highlander Roofing & Construction has earned the trust of homeowners across
+                Highlander Building Services has earned the trust of homeowners across
                 Highlands, Cashiers, Franklin, Sylva, and the surrounding mountain communities —
                 not through advertising, but through the quality of the roofs we've installed and
                 the relationships we've built along the way.

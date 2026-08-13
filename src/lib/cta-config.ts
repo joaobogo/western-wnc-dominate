@@ -1,5 +1,5 @@
 /**
- * Global CTA Architecture — Highlander Roofing & Construction
+ * Global CTA Architecture — Highlander Building Services
  * 
  * Premium CTA language system. No cheap/gimmicky language.
  * No "free inspections", "get started", "claim your", "book now".

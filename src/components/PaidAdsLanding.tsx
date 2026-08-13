@@ -74,8 +74,8 @@ const PaidAdsLanding = ({
           <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-4 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
             <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-3">
               <span className="flex items-center gap-2">
-                <img src={logo} alt="Highlander Roofing Services, Inc." width={160} height={48} className="h-10 w-auto md:h-12" loading="eager" decoding="sync" />
-                <span className="sr-only">Highlander Roofing Services, Inc.</span>
+                <img src={logo} alt="Highlander Building Services, Inc." width={160} height={48} className="h-10 w-auto md:h-12" loading="eager" decoding="sync" />
+                <span className="sr-only">Highlander Building Services, Inc.</span>
               </span>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/85 hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" />
@@ -239,7 +239,7 @@ const PaidAdsLanding = ({
 
         <footer className="bg-background pb-28 pt-8 md:pb-10">
           <div className="container-tight flex flex-col gap-2 text-xs font-body text-muted-foreground md:flex-row md:items-center md:justify-between">
-            <span>© {new Date().getFullYear()} Highlander Roofing Services, Inc. · Franklin, NC · 828-524-7773</span>
+            <span>© {new Date().getFullYear()} Highlander Building Services, Inc. · Franklin, NC · 828-524-7773</span>
             <span className="flex gap-4">
               <a href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</a>
               <a href="/accessibility" className="hover:text-foreground transition-colors">Accessibility</a>

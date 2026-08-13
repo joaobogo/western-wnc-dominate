@@ -189,7 +189,7 @@ export default function Contact() {
     <>
       <SEOHead
         title="Contact Highlander | Free Roofing & Construction Quote"
-        description="Talk to Highlander Roofing & Construction in Western NC. Rapid response, free assessments, no pressure. Franklin & Sylva offices. Call (828) 524-7773."
+        description="Talk to Highlander Building Services in Western NC. Rapid response, free assessments, no pressure. Franklin & Sylva offices. Call (828) 524-7773."
         path="/contact"
         jsonLd={buildPageSchema({
           type: "contact",

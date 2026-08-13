@@ -1,6 +1,6 @@
 # Backup and Rollback Plan for highlandernc.com
 
-This document defines how the Highlander Roofing Services website is protected from bad deployments and how to roll back quickly when needed.
+This document defines how the Highlander Building Services website is protected from bad deployments and how to roll back quickly when needed.
 
 ## 1. Scope
 

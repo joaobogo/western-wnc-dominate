@@ -174,7 +174,7 @@ const Siding = () => {
               <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                 Request an Estimate <ArrowRight className="w-5 h-5" />
               </Link>
-              <a href="tel:+18285247773" aria-label="Call Highlander Roofing & Construction at 828-524-7773" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
+              <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="border border-primary-foreground/30 text-primary-foreground font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors">
                 <Phone className="w-5 h-5" /> Call (828) 524-7773
               </a>
             </div>

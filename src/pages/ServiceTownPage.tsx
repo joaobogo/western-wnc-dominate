@@ -150,7 +150,7 @@ const ServiceTownPage = ({
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={heroImage}
-              alt={`${entry.serviceLabel} on a mountain home in Western North Carolina — Highlander Roofing & Construction service area: ${town.name}, ${town.state}`}
+              alt={`${entry.serviceLabel} on a mountain home in Western North Carolina — Highlander Building Services service area: ${town.name}, ${town.state}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.4)] via-[hsl(var(--hero-overlay)/0.2)] to-transparent" />

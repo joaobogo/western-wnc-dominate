@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function ConsentText({ className = "" }: { className?: string }) {
   return (
     <p className={`text-[11px] leading-relaxed text-muted-foreground font-body ${className}`}>
-      By submitting your information, you agree that Highlander Roofing Services, Inc. may
+      By submitting your information, you agree that Highlander Building Services, Inc. may
       contact you by phone, text, or email about your inquiry, services, scheduling,
       project follow-up, and review requests. Message and data rates may apply. Reply STOP
       to opt out of text messages. Reply HELP for help. See our{" "}

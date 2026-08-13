@@ -9,7 +9,7 @@ import PageCloseCTA from "@/components/PageCloseCTA";
 const IntakeChooser = () => (
   <>
     <SEOHead
-      title="Start a Project | Highlander Roofing & Construction"
+      title="Start a Project | Highlander Building Services"
       description="Two intake paths — roofing or construction. Pick the right one and a Highlander project advisor responds within as soon as possible."
       path="/consultation"
       noindex

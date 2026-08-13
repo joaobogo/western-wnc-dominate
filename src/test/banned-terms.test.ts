@@ -59,14 +59,21 @@ describe("banned terms", () => {
 
 /**
  * NAP guardrail: the canonical address is
- * Highlander Roofing Services, Inc. · 76 Creative Dr, Franklin, NC 28734 · 828-524-7773.
+ * Highlander Building Services, Inc. · 76 Creative Dr, Franklin, NC 28734 · 828-524-7773.
  * Any stale Franklin street address is a local-SEO citation mismatch.
  */
 describe("NAP consistency", () => {
   const files = walk("src").filter(
     (f) => /\.(ts|tsx)$/.test(f) && !ALLOW_FILES.some((a) => f.endsWith(a)),
   );
-  const STALE = [/1511 Highlands (Road|Rd)/i, /828-397-9211/, /\(828\)\s*397-9211/];
+  const STALE = [
+    /1511 Highlands (Road|Rd)/i,
+    /828-397-9211/,
+    /\(828\)\s*397-9211/,
+    // Legacy company names — the brand is "Highlander Building Services".
+    /Highlander Roofing(?! (?:project|specification|crew))/,
+    /Highlander Construction/,
+  ];
 
   for (const pattern of STALE) {
     it(`has no stale NAP value matching ${pattern}`, () => {

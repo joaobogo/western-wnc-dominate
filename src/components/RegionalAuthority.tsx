@@ -36,7 +36,7 @@ const RegionalAuthority = () => {
 
           <div className="space-y-5 text-foreground/90 text-[16px] md:text-[18px] leading-relaxed font-body">
             <p>
-              Highlander Roofing &amp; Construction is a family-owned{" "}
+              Highlander Building Services is a family-owned{" "}
               <strong>roofing company serving Western North Carolina</strong> from
               our Franklin office — the same crews handling{" "}
               <Link to="/roofing/roof-repair" className="text-primary font-semibold hover:underline">roof repair in Western NC</Link>,{" "}

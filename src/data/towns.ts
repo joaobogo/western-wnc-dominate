@@ -30,11 +30,11 @@ export interface TownData {
  */
 export const townLocalRelevance: Record<string, string> = {
   "highlands-nc":
-    "Highlands homes sit above 4,000 feet, where steep rooflines, heavy rainfall, ice loading, and high UV punish standard roofing systems. Highlander Roofing & Construction supports Plateau homeowners with premium synthetic and standing-seam metal systems, high-velocity flashing details, and exterior work built for Western North Carolina's harshest mountain conditions.",
+    "Highlands homes sit above 4,000 feet, where steep rooflines, heavy rainfall, ice loading, and high UV punish standard roofing systems. Highlander Building Services supports Plateau homeowners with premium synthetic and standing-seam metal systems, high-velocity flashing details, and exterior work built for Western North Carolina's harshest mountain conditions.",
   "cashiers-nc":
     "Cashiers properties sit in a temperate rainforest zone — wooded lots, premium finishes, 80+ inches of rain, and persistent fog. Highlander helps Cashiers homeowners with roof replacement, moisture management, gutter optimization, and exterior construction designed to protect mountain home design and high-end home investments across the Plateau.",
   "franklin-nc":
-    "Based in Franklin, Highlander Roofing & Construction serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen on a same-day or next-day basis and the same team-led team is on site from first call to final walkthrough.",
+    "Based in Franklin, Highlander Building Services serves homeowners across Macon County with roofing, repairs, gutters, and exterior construction built for mountain weather. Our crews live here, so most Franklin inspections happen on a same-day or next-day basis and the same team-led team is on site from first call to final walkthrough.",
   "sylva-nc":
     "Sylva blends historic downtown homes, university rentals, and hillside residences across Jackson County — and valley moisture, fog, and humidity make roof and exterior choices matter. Highlander supports Sylva homeowners and property owners with roof repair and replacement, gutter work, historic-sensitive exterior renovations, and reliable commercial maintenance.",
   "bryson-city-nc":
@@ -56,7 +56,7 @@ export const townLocalRelevance: Record<string, string> = {
   "hayesville-nc":
     "Hayesville and the Lake Chatuge area run on lakefront living — homes built for views, decks, and water-adjacent durability. Highlander serves Clay County homeowners with standing-seam metal roofing, luxury decking, exterior modernization, and residential replacement work designed to protect lakefront investments season after season.",
   "scaly-mountain-nc":
-    "Scaly Mountain sits between Franklin and Highlands along NC-106, at roughly 3,700 feet — high enough for real wind, ice, and freeze-thaw exposure without the full Plateau resort pricing. Highlander Roofing & Construction serves Scaly Mountain cabin owners and full-time residents with metal roofing, roof repair, storm-response tarping, and exterior work built for high-elevation Macon County conditions.",
+    "Scaly Mountain sits between Franklin and Highlands along NC-106, at roughly 3,700 feet — high enough for real wind, ice, and freeze-thaw exposure without the full Plateau resort pricing. Highlander Building Services serves Scaly Mountain cabin owners and full-time residents with metal roofing, roof repair, storm-response tarping, and exterior work built for high-elevation Macon County conditions.",
   "otto-nc":
     "Otto is a valley community south of Franklin along US-441, where family homes, hillside builds, and small farms need roofing and construction work that holds up to Little Tennessee valley moisture and wind funneling. Highlander helps Otto homeowners with roof repair, roof replacement, dimensional shingle systems, gutters, and construction and design services from our nearby Franklin base.",
   "lake-glenville-nc":

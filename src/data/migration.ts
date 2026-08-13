@@ -21,32 +21,32 @@ export interface RedirectEntry {
 
 export const urlRedirectMap: RedirectEntry[] = [
   // === HOME ===
-  { oldUrl: "/", newUrl: "/", redirectType: 301, pageType: "home", oldTitle: "Expert Local Roofer | Franklin, NC", newTitle: "Highlander Roofing Services — Franklin & Sylva, NC", notes: "Homepage. Preserved core messaging, expanded CTAs." },
+  { oldUrl: "/", newUrl: "/", redirectType: 301, pageType: "home", oldTitle: "Expert Local Roofer | Franklin, NC", newTitle: "Highlander Building Services — Franklin & Sylva, NC", notes: "Homepage. Preserved core messaging, expanded CTAs." },
 
   // === SERVICE PAGES ===
-  { oldUrl: "/residential-roofing-services", newUrl: "/services", redirectType: 301, pageType: "service", oldTitle: "Residential Roofing Companies | Highlands, NC", newTitle: "Roofing Services | Highlander Roofing WNC", notes: "Hub page consolidates residential services overview." },
-  { oldUrl: "/commercial-roofing-services", newUrl: "/commercial-roofing", redirectType: 301, pageType: "commercial", oldTitle: "Commercial Roofing Solutions | Franklin & Sylva, NC", newTitle: "Commercial Roofing for WNC Properties | Highlander Roofing", notes: "Preserved as dedicated commercial page." },
+  { oldUrl: "/residential-roofing-services", newUrl: "/services", redirectType: 301, pageType: "service", oldTitle: "Residential Roofing Companies | Highlands, NC", newTitle: "Roofing Services | Highlander Building Services", notes: "Hub page consolidates residential services overview." },
+  { oldUrl: "/commercial-roofing-services", newUrl: "/commercial-roofing", redirectType: 301, pageType: "commercial", oldTitle: "Commercial Roofing Solutions | Franklin & Sylva, NC", newTitle: "Commercial Roofing for WNC Properties | Highlander Building Services", notes: "Preserved as dedicated commercial page." },
   { oldUrl: "/commercial-roofing", newUrl: "/commercial-roofing", redirectType: 301, pageType: "commercial", oldTitle: "Commercial Roofing Solutions", newTitle: "Commercial Roofing for WNC Properties", notes: "Direct match, no redirect needed if URL identical." },
-  { oldUrl: "/specialized-roofing-services", newUrl: "/services", redirectType: 301, pageType: "service", oldTitle: "Specialized Roofing Contractors | Highlands, NC", newTitle: "Roofing Services | Highlander Roofing WNC", notes: "Consolidated into services hub. Content preserved in individual service pages." },
-  { oldUrl: "/specialty-roof-repairs", newUrl: "/services/roof-repair", redirectType: 301, pageType: "service", oldTitle: "Specialty Roof Repairs", newTitle: "Roof Repair in Western NC | Highlander Roofing", notes: "Merged into roof repair service page with expanded content." },
-  { oldUrl: "/types-of-roofs-we-install", newUrl: "/services", redirectType: 301, pageType: "service", oldTitle: "Types of Roofs We Install", newTitle: "Roofing Services | Highlander Roofing WNC", notes: "Content distributed across individual service pages (metal, shingle, etc.)." },
-  { oldUrl: "/types-of-roofs-we-repair", newUrl: "/services/roof-repair", redirectType: 301, pageType: "service", oldTitle: "Types of Roofs We Repair", newTitle: "Roof Repair in Western NC | Highlander Roofing", notes: "Consolidated into roof repair page." },
-  { oldUrl: "/construction-services", newUrl: "/services/construction", redirectType: 301, pageType: "service", oldTitle: "Construction Services", newTitle: "Construction Services | Highlander Roofing WNC", notes: "New dedicated page." },
-  { oldUrl: "/outdoor-living-services", newUrl: "/services/outdoor-living", redirectType: 301, pageType: "service", oldTitle: "Outdoor Living Services", newTitle: "Outdoor Living Services | Highlander Roofing WNC", notes: "New dedicated page." },
-  { oldUrl: "/gutter-installation", newUrl: "/services/gutters", redirectType: 301, pageType: "service", oldTitle: "Gutter Installation", newTitle: "Gutter Installation & Protection | Highlander Roofing WNC", notes: "Gutters + gutter protection merged into one service page." },
-  { oldUrl: "/gutter-protection-installation", newUrl: "/services/gutters", redirectType: 301, pageType: "service", oldTitle: "Gutter Protection Installation", newTitle: "Gutter Installation & Protection | Highlander Roofing WNC", notes: "Merged with gutter installation page." },
+  { oldUrl: "/specialized-roofing-services", newUrl: "/services", redirectType: 301, pageType: "service", oldTitle: "Specialized Roofing Contractors | Highlands, NC", newTitle: "Roofing Services | Highlander Building Services", notes: "Consolidated into services hub. Content preserved in individual service pages." },
+  { oldUrl: "/specialty-roof-repairs", newUrl: "/services/roof-repair", redirectType: 301, pageType: "service", oldTitle: "Specialty Roof Repairs", newTitle: "Roof Repair in Western NC | Highlander Building Services", notes: "Merged into roof repair service page with expanded content." },
+  { oldUrl: "/types-of-roofs-we-install", newUrl: "/services", redirectType: 301, pageType: "service", oldTitle: "Types of Roofs We Install", newTitle: "Roofing Services | Highlander Building Services", notes: "Content distributed across individual service pages (metal, shingle, etc.)." },
+  { oldUrl: "/types-of-roofs-we-repair", newUrl: "/services/roof-repair", redirectType: 301, pageType: "service", oldTitle: "Types of Roofs We Repair", newTitle: "Roof Repair in Western NC | Highlander Building Services", notes: "Consolidated into roof repair page." },
+  { oldUrl: "/construction-services", newUrl: "/services/construction", redirectType: 301, pageType: "service", oldTitle: "Construction Services", newTitle: "Construction Services | Highlander Building Services", notes: "New dedicated page." },
+  { oldUrl: "/outdoor-living-services", newUrl: "/services/outdoor-living", redirectType: 301, pageType: "service", oldTitle: "Outdoor Living Services", newTitle: "Outdoor Living Services | Highlander Building Services", notes: "New dedicated page." },
+  { oldUrl: "/gutter-installation", newUrl: "/services/gutters", redirectType: 301, pageType: "service", oldTitle: "Gutter Installation", newTitle: "Gutter Installation & Protection | Highlander Building Services", notes: "Gutters + gutter protection merged into one service page." },
+  { oldUrl: "/gutter-protection-installation", newUrl: "/services/gutters", redirectType: 301, pageType: "service", oldTitle: "Gutter Protection Installation", newTitle: "Gutter Installation & Protection | Highlander Building Services", notes: "Merged with gutter installation page." },
 
   // === TOWN / SERVICE AREA PAGES ===
   // Old site uses /contact/[service]-service-area/[town] pattern (hundreds of pages)
   // New site uses /service-areas/[town] (clean, consolidated)
-  { oldUrl: "/contact/roofing-service-area/highlands-nc", newUrl: "/service-areas/highlands-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Highlands, NC", newTitle: "Roofing Services in Highlands, NC | Highlander Roofing", notes: "Consolidated all service-specific town pages into one authoritative town page." },
-  { oldUrl: "/contact/roofing-service-area/cashiers-nc", newUrl: "/service-areas/cashiers-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Cashiers, NC", newTitle: "Roofing Services in Cashiers, NC | Highlander Roofing", notes: "" },
-  { oldUrl: "/contact/roofing-service-area/franklin-nc", newUrl: "/service-areas/franklin-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Franklin, NC", newTitle: "Roofing Services in Franklin, NC | Highlander Roofing", notes: "" },
-  { oldUrl: "/contact/roofing-service-area/sylva-nc", newUrl: "/service-areas/sylva-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Sylva, NC", newTitle: "Roofing Services in Sylva, NC | Highlander Roofing", notes: "" },
-  { oldUrl: "/contact/roofing-service-area/bryson-city-nc", newUrl: "/service-areas/bryson-city-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Bryson City, NC", newTitle: "Roofing Services in Bryson City, NC | Highlander Roofing", notes: "" },
-  { oldUrl: "/contact/roofing-service-area/waynesville-nc", newUrl: "/service-areas/waynesville-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Waynesville, NC", newTitle: "Roofing Services in Waynesville, NC | Highlander Roofing", notes: "" },
-  { oldUrl: "/contact/roofing-service-area/cullowhee-nc", newUrl: "/service-areas/cullowhee-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Cullowhee, NC", newTitle: "Roofing Services in Cullowhee, NC | Highlander Roofing", notes: "" },
-  { oldUrl: "/contact/roofing-service-area/dillsboro-nc", newUrl: "/service-areas/dillsboro-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Dillsboro, NC", newTitle: "Roofing Services in Dillsboro, NC | Highlander Roofing", notes: "" },
+  { oldUrl: "/contact/roofing-service-area/highlands-nc", newUrl: "/service-areas/highlands-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Highlands, NC", newTitle: "Roofing Services in Highlands, NC | Highlander Building Services", notes: "Consolidated all service-specific town pages into one authoritative town page." },
+  { oldUrl: "/contact/roofing-service-area/cashiers-nc", newUrl: "/service-areas/cashiers-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Cashiers, NC", newTitle: "Roofing Services in Cashiers, NC | Highlander Building Services", notes: "" },
+  { oldUrl: "/contact/roofing-service-area/franklin-nc", newUrl: "/service-areas/franklin-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Franklin, NC", newTitle: "Roofing Services in Franklin, NC | Highlander Building Services", notes: "" },
+  { oldUrl: "/contact/roofing-service-area/sylva-nc", newUrl: "/service-areas/sylva-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Sylva, NC", newTitle: "Roofing Services in Sylva, NC | Highlander Building Services", notes: "" },
+  { oldUrl: "/contact/roofing-service-area/bryson-city-nc", newUrl: "/service-areas/bryson-city-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Bryson City, NC", newTitle: "Roofing Services in Bryson City, NC | Highlander Building Services", notes: "" },
+  { oldUrl: "/contact/roofing-service-area/waynesville-nc", newUrl: "/service-areas/waynesville-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Waynesville, NC", newTitle: "Roofing Services in Waynesville, NC | Highlander Building Services", notes: "" },
+  { oldUrl: "/contact/roofing-service-area/cullowhee-nc", newUrl: "/service-areas/cullowhee-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Cullowhee, NC", newTitle: "Roofing Services in Cullowhee, NC | Highlander Building Services", notes: "" },
+  { oldUrl: "/contact/roofing-service-area/dillsboro-nc", newUrl: "/service-areas/dillsboro-nc", redirectType: 301, pageType: "town", oldTitle: "Roofing in Dillsboro, NC", newTitle: "Roofing Services in Dillsboro, NC | Highlander Building Services", notes: "" },
   // Gutter service area pages → consolidated town pages
   { oldUrl: "/contact/gutter-installation-service-area/highlands-nc", newUrl: "/service-areas/highlands-nc", redirectType: 301, pageType: "town", oldTitle: "Gutter Installation Highlands, NC", newTitle: "Roofing Services in Highlands, NC", notes: "Gutter-specific town page merged into main town page." },
   { oldUrl: "/contact/gutter-installation-service-area/cashiers-nc", newUrl: "/service-areas/cashiers-nc", redirectType: 301, pageType: "town", oldTitle: "Gutter Installation Cashiers, NC", newTitle: "Roofing Services in Cashiers, NC", notes: "" },
@@ -60,15 +60,15 @@ export const urlRedirectMap: RedirectEntry[] = [
   { oldUrl: "/the-benefits-of-metal-roof-installation-for-your-home", newUrl: "/blog/benefits-of-metal-roof-installation", redirectType: 301, pageType: "blog", oldTitle: "The Benefits of Metal Roof Installation for Your Home", newTitle: "Benefits of Metal Roof Installation for WNC Homes", notes: "" },
 
   // === OTHER PAGES ===
-  { oldUrl: "/about-us", newUrl: "/about", redirectType: 301, pageType: "other", oldTitle: "About Highlander Roofing", newTitle: "About Highlander Roofing | Protecting Mountain Homes Since 2017", notes: "Shortened URL." },
-  { oldUrl: "/contact", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Contact Us", newTitle: "Request Free Inspection | Highlander Roofing", notes: "Reframed as conversion-focused inspection request." },
+  { oldUrl: "/about-us", newUrl: "/about", redirectType: 301, pageType: "other", oldTitle: "About Highlander Building Services", newTitle: "About Highlander Building Services | Protecting Mountain Homes Since 2017", notes: "Shortened URL." },
+  { oldUrl: "/contact", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Contact Us", newTitle: "Request Free Inspection | Highlander Building Services", notes: "Reframed as conversion-focused inspection request." },
   { oldUrl: "/contact-franklin-nc", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Contact Franklin, NC", newTitle: "Request Free Inspection", notes: "Merged contact pages." },
   { oldUrl: "/request-quote-form-page", newUrl: "/request-inspection", redirectType: 301, pageType: "other", oldTitle: "Request Quote", newTitle: "Request Free Inspection", notes: "Quote → inspection reframe." },
-  { oldUrl: "/gallery", newUrl: "/gallery", redirectType: 301, pageType: "other", oldTitle: "Gallery", newTitle: "Project Gallery | Highlander Roofing WNC", notes: "Direct match." },
-  { oldUrl: "/reviews", newUrl: "/about", redirectType: 301, pageType: "other", oldTitle: "Reviews", newTitle: "About Highlander Roofing", notes: "Reviews integrated into About page." },
+  { oldUrl: "/gallery", newUrl: "/gallery", redirectType: 301, pageType: "other", oldTitle: "Gallery", newTitle: "Project Gallery | Highlander Building Services", notes: "Direct match." },
+  { oldUrl: "/reviews", newUrl: "/about", redirectType: 301, pageType: "other", oldTitle: "Reviews", newTitle: "About Highlander Building Services", notes: "Reviews integrated into About page." },
   { oldUrl: "/faqs", newUrl: "/services", redirectType: 301, pageType: "other", oldTitle: "FAQs", newTitle: "Roofing Services", notes: "FAQs distributed to individual service pages." },
-  { oldUrl: "/hibu-video-splash", newUrl: "/about", redirectType: 301, pageType: "other", oldTitle: "Video", newTitle: "About Highlander Roofing", notes: "Video content moved to About page." },
-  { oldUrl: "/area-projects-map", newUrl: "/service-areas", redirectType: 301, pageType: "other", oldTitle: "Area Projects Map", newTitle: "Service Areas | Highlander Roofing WNC", notes: "Project map replaced with service area hub." },
+  { oldUrl: "/hibu-video-splash", newUrl: "/about", redirectType: 301, pageType: "other", oldTitle: "Video", newTitle: "About Highlander Building Services", notes: "Video content moved to About page." },
+  { oldUrl: "/area-projects-map", newUrl: "/service-areas", redirectType: 301, pageType: "other", oldTitle: "Area Projects Map", newTitle: "Service Areas | Highlander Building Services", notes: "Project map replaced with service area hub." },
 ];
 
 /**
@@ -91,8 +91,8 @@ export const contentInventory: ContentInventoryEntry[] = [
   {
     pageType: "Home",
     currentUrl: "/",
-    titleTag: "Expert Local Roofer | Franklin, NC | Highlander Roofing Services",
-    metaDescription: "Highlander Roofing Services is your trusted partner for all your roofing needs in Franklin, Highlands, Cashiers, Sylva, and surrounding areas.",
+    titleTag: "Expert Local Roofer | Franklin, NC | Highlander Building Services",
+    metaDescription: "Highlander Building Services is your trusted partner for all your roofing needs in Franklin, Highlands, Cashiers, Sylva, and surrounding areas.",
     h1: "Expert Local Roofer",
     primaryCta: "Request a Quote",
     schemaType: "LocalBusiness",
@@ -103,7 +103,7 @@ export const contentInventory: ContentInventoryEntry[] = [
   {
     pageType: "Service",
     currentUrl: "/residential-roofing-services",
-    titleTag: "Residential Roofing Companies | Highlands, NC | Highlander Roofing Services",
+    titleTag: "Residential Roofing Companies | Highlands, NC | Highlander Building Services",
     metaDescription: "Your home deserves the best protection. From asphalt shingles to metal roofing, we offer a wide range of options.",
     h1: "Residential Roofing Companies",
     primaryCta: "Request a Quote",
@@ -168,7 +168,7 @@ export const seoChecklist = [
  * KEY BRAND ASSETS EXTRACTED FROM OLD SITE
  */
 export const brandAssets = {
-  companyName: "Highlander Roofing Services, Inc.",
+  companyName: "Highlander Building Services, Inc.",
   tagline: "Expert Local Roofer",
   phone: "(828) 524-7773",
   locations: [

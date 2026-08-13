@@ -61,8 +61,8 @@ const RecentProjects = () => {
   return (
     <>
       <SEOHead
-        title="Recent Projects | Highlander Roofing Services"
-        description="See recent Highlander Roofing Services projects and service updates across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
+        title="Recent Projects | Highlander Building Services"
+        description="See recent Highlander Building Services projects and service updates across Franklin, Highlands, Cashiers, Sylva, and Western North Carolina."
         path="/recent-projects"
         jsonLd={breadcrumbSchema([
           { name: "Home", url: "/" },
@@ -92,7 +92,7 @@ const RecentProjects = () => {
               Recent Projects
             </h1>
             <p className="text-body-lg md:text-body-xl text-foreground/85 max-w-3xl leading-relaxed font-medium mb-6">
-              See how Highlander Roofing Services helps homeowners and property owners across
+              See how Highlander Building Services helps homeowners and property owners across
               Franklin, Highlands, Cashiers, Sylva, and Western North Carolina protect, improve,
               and plan their properties through roofing, construction, gutters, outdoor living,
               and design-led construction support.
@@ -128,7 +128,7 @@ const RecentProjects = () => {
                   <div className="aspect-[4/3] overflow-hidden bg-secondary">
                     <img
                       src={card.img}
-                      alt={`${card.title} — Highlander Roofing Services`}
+                      alt={`${card.title} — Highlander Building Services`}
                       loading="lazy"
                       decoding="async"
                       width={800}

@@ -76,7 +76,7 @@ const CountyPage = () => {
           <div className="absolute inset-0">
             <img width={1600} height={1067} loading="eager" fetchPriority="high" decoding="async" 
               src={county.heroImage} 
-              alt={`Mountain landscape in Western North Carolina — Highlander Roofing & Construction service area: ${county.name}`}
+              alt={`Mountain landscape in Western North Carolina — Highlander Building Services service area: ${county.name}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/45 md:bg-transparent md:bg-gradient-to-r md:from-black/80 md:via-black/40 md:to-transparent" />
@@ -93,7 +93,7 @@ const CountyPage = () => {
             >
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
-                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
+                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Building Services</span>
                 <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{county.name} Division</span>
               </div>
             </motion.div>
@@ -147,7 +147,7 @@ const CountyPage = () => {
 
         <AnswerBlock
           question={`Does Highlander serve ${county.name} County, North Carolina?`}
-          answer={`Yes. Highlander Roofing Services, Inc. works across ${county.name} County from our Franklin, NC base, covering roof repair, roof replacement, metal roofing, gutters, and construction projects for mountain homes and commercial buildings.`}
+          answer={`Yes. Highlander Building Services, Inc. works across ${county.name} County from our Franklin, NC base, covering roof repair, roof replacement, metal roofing, gutters, and construction projects for mountain homes and commercial buildings.`}
           points={[
             `Crews across ${county.name} County`,
             "Call 828-524-7773 to talk with the team",
