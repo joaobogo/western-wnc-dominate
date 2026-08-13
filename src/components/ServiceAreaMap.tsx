@@ -105,7 +105,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             >
               <Link
                 to={area.href!}
-                className="group block bg-card border border-border hover:border-primary/40 hover:shadow-lg transition-all p-6 h-full relative overflow-hidden"
+                className="group block bg-card border border-border hover:border-primary/40 hover:shadow-raised transition-all p-6 h-full relative overflow-hidden"
               >
                 {/* gold top rule on hover */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />

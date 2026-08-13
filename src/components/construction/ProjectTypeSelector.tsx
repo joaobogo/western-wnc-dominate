@@ -54,7 +54,7 @@ const ProjectTypeSelector = ({
             key={id}
             to={`/construction/consultation?type=${id}`}
             data-gtm-location="project_type_selector"
-            className={`group border p-6 flex flex-col gap-3 transition-all hover:shadow-lg ${
+            className={`group border p-6 flex flex-col gap-3 transition-all hover:shadow-raised ${
               highlight === id
                 ? "border-accent bg-accent/5"
                 : "border-border bg-card hover:border-accent/50"

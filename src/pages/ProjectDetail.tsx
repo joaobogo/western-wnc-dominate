@@ -304,7 +304,7 @@ const ProjectDetailPage = () => {
                   "{project.result}"
                 </p>
                 {project.testimonial && (
-                   <div className="bg-background p-8 md:p-12 border border-border shadow-sm relative text-left">
+                   <div className="bg-background p-8 md:p-12 border border-border shadow-flat relative text-left">
                       <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/10" />
                       <p className="text-lg md:text-xl font-body italic text-foreground mb-6 leading-relaxed relative z-10">
                         "{project.testimonial.quote}"

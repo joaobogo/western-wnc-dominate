@@ -69,7 +69,7 @@ const IntakeChooser = () => (
             >
               <Link
                 to={c.to}
-                className={`group block text-left bg-card border rounded-lg p-7 md:p-9 hover:shadow-lg transition-all ${
+                className={`group block text-left bg-card border rounded-lg p-7 md:p-9 hover:shadow-raised transition-all ${
                   c.accent ? "border-[hsl(var(--highland-gold)/0.5)] hover:border-[hsl(var(--highland-gold))]" : "border-border hover:border-foreground/30"
                 }`}
               >

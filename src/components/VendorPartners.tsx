@@ -67,7 +67,7 @@ const VendorPartners = ({ heading = "Trusted Manufacturer & Supplier Partners", 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
-              className="group card-premium p-6 md:p-7 flex flex-col items-center text-center hover:shadow-lg transition-all"
+              className="group card-premium p-6 md:p-7 flex flex-col items-center text-center hover:shadow-raised transition-all"
               aria-label={`Visit ${v.name} (opens in a new tab)`}
             >
               <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5">

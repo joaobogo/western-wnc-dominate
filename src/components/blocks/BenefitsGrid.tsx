@@ -36,7 +36,7 @@ export const BenefitsGrid = ({ items, eyebrow, heading, intro, columns = 3, clas
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.5 }}
-              className="bg-card border border-border rounded-sm p-6 hover:shadow-lg transition-shadow"
+              className="bg-card border border-border rounded-sm p-6 hover:shadow-raised transition-shadow"
             >
               <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center mb-4">
                 <item.icon className="w-5 h-5 text-primary" />

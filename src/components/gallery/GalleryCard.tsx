@@ -35,7 +35,7 @@ const GalleryCard = ({
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 0.97 }}
     transition={{ delay: index * 0.04, duration: 0.4, ease: HIGHLAND_EASE }}
-    className="group relative bg-card border border-border rounded-none overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full"
+    className="group relative bg-card border border-border rounded-none overflow-hidden cursor-pointer shadow-flat hover:shadow-floating transition-all duration-500 flex flex-col h-full"
     onClick={onClick}
   >
     {/* Image container */}

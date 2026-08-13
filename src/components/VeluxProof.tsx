@@ -58,7 +58,7 @@ const VeluxProof = () => {
           className="max-w-3xl mb-12"
         >
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white shadow-sm border border-white/10">
+            <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white shadow-flat border border-white/10">
               <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
             </div>
             <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
@@ -159,7 +159,7 @@ const VeluxProof = () => {
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <Link
               to="/consultation"
-              className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-[0.1em] uppercase shadow-xl"
+              className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-[0.1em] uppercase shadow-floating"
             >
               Request Skylight Inspection <ArrowRight className="w-4 h-4" />
             </Link>

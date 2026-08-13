@@ -25,7 +25,7 @@ const ConsentBanner = () => {
     <div
       role="dialog"
       aria-label="Cookie preferences"
-      className="fixed inset-x-3 bottom-3 z-[70] md:inset-x-auto md:right-5 md:bottom-5 md:max-w-md rounded-lg border border-border bg-card text-card-foreground shadow-xl p-4 md:p-5"
+      className="fixed inset-x-3 bottom-3 z-[70] md:inset-x-auto md:right-5 md:bottom-5 md:max-w-md rounded-lg border border-border bg-card text-card-foreground shadow-floating p-4 md:p-5"
     >
       <p className="font-heading text-base font-semibold mb-1.5">
         We use a few cookies

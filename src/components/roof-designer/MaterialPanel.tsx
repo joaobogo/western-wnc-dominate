@@ -82,7 +82,7 @@ const MaterialPanel = ({ materials, selectedMaterial, onSelectMaterial }: Materi
                         >
                           <div
                             className={`w-10 h-10 rounded-lg border-2 transition-transform group-hover:scale-110 ${
-                              selectedMaterial?.id === mat.id ? "border-primary shadow-md" : "border-border"
+                              selectedMaterial?.id === mat.id ? "border-primary shadow-raised" : "border-border"
                             } ${mat.finish === "gloss" ? "ring-1 ring-white/30" : ""}`}
                             style={{ backgroundColor: mat.color_hex }}
                           />

@@ -428,7 +428,7 @@ const RoofDesignerWorkspace = ({ imageUrl, onSave, onReset }: RoofDesignerWorksp
           >
             <canvas
               ref={canvasRef}
-              className="absolute inset-0 rounded-lg shadow-lg"
+              className="absolute inset-0 rounded-lg shadow-raised"
               style={{ width: canvasSize.width, height: canvasSize.height }}
             />
             <canvas

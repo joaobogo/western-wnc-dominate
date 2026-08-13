@@ -152,14 +152,14 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               <Link
                 to="/consultation"
                 onClick={onClose}
-                className="cta-gradient text-accent-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs uppercase tracking-[0.1em] shadow-lg min-h-[52px]"
+                className="cta-gradient text-accent-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs uppercase tracking-[0.1em] shadow-raised min-h-[52px]"
               >
                 <span className="relative z-10">Request an Estimate</span>
                 <ArrowRight className="w-4 h-4 relative z-10" />
               </Link>
               <a
                 href="tel:+18285247773"
-                className="bg-primary text-primary-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs font-body shadow-md active:scale-95 transition-all min-h-[52px] uppercase tracking-[0.08em]"
+                className="bg-primary text-primary-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs font-body shadow-raised active:scale-95 transition-all min-h-[52px] uppercase tracking-[0.08em]"
               >
                 <Phone className="w-4 h-4" />
                 (828) 524-7773

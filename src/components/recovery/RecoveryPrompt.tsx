@@ -156,7 +156,7 @@ const RecoveryPrompt = () => {
         role="dialog"
         aria-modal="true"
         aria-labelledby="recovery-prompt-title"
-        className="relative w-full max-w-md rounded-sm bg-background border border-border shadow-xl p-6 sm:p-8"
+        className="relative w-full max-w-md rounded-sm bg-background border border-border shadow-floating p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button

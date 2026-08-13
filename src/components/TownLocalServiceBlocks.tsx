@@ -187,7 +187,7 @@ const ServiceLinkCard = ({ block, index }: { block: LinkBlock; index: number }) 
     >
       <Link
         to={block.href}
-        className="group h-full flex flex-col bg-card border border-border rounded-none p-7 hover:border-primary/40 hover:shadow-lg transition-all relative overflow-hidden"
+        className="group h-full flex flex-col bg-card border border-border rounded-none p-7 hover:border-primary/40 hover:shadow-raised transition-all relative overflow-hidden"
       >
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
         <div className="w-10 h-10 bg-primary/5 border border-primary/10 flex items-center justify-center mb-5">

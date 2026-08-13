@@ -140,7 +140,7 @@ const Careers = () => {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
-                      className="bg-card border border-border p-8 md:p-12 shadow-xl relative overflow-hidden"
+                      className="bg-card border border-border p-8 md:p-12 shadow-floating relative overflow-hidden"
                     >
                       <div className="absolute top-0 right-0 w-32 h-32 bg-[hsl(var(--highland-gold)/0.03)] translate-x-16 -translate-y-16 rotate-45" />
                       
@@ -201,7 +201,7 @@ const Careers = () => {
                       key="success"
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="bg-card border border-border p-12 text-center shadow-xl"
+                      className="bg-card border border-border p-12 text-center shadow-floating"
                     >
                       <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
                         <CheckCircle className="w-10 h-10 text-primary" />

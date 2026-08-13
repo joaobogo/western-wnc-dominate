@@ -15,7 +15,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Roofing Pillar */}
           <ScrollReveal variant="rise-subtle">
-            <div className="flex flex-col h-full bg-secondary/30 border border-border p-10 group relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+            <div className="flex flex-col h-full bg-secondary/30 border border-border p-10 group relative overflow-hidden shadow-flat hover:shadow-floating transition-all duration-500">
               <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mb-8 border border-primary/10">
                 <Home className="w-8 h-8 text-primary" />
               </div>
@@ -37,7 +37,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
 
           {/* Construction Pillar */}
           <ScrollReveal variant="rise-subtle" delay={0.1}>
-            <div className="flex flex-col h-full bg-background border border-border p-10 group relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+            <div className="flex flex-col h-full bg-background border border-border p-10 group relative overflow-hidden shadow-flat hover:shadow-floating transition-all duration-500">
               <div className="w-16 h-16 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-8 border border-[hsl(var(--highland-gold)/0.1)]">
                 <HardHat className="w-8 h-8 text-[hsl(var(--gold-ink))]" />
               </div>
@@ -59,7 +59,7 @@ const TownServiceSections = ({ town }: TownServiceSectionsProps) => {
 
           {/* Design Pillar */}
           <ScrollReveal variant="rise-subtle" delay={0.2}>
-            <div className="flex flex-col h-full bg-secondary/30 border border-border p-10 group relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+            <div className="flex flex-col h-full bg-secondary/30 border border-border p-10 group relative overflow-hidden shadow-flat hover:shadow-floating transition-all duration-500">
               <div className="w-16 h-16 bg-primary/5 flex items-center justify-center mb-8 border border-primary/5">
                 <Compass className="w-8 h-8 text-primary/80" />
               </div>

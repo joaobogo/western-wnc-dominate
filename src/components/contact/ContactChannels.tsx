@@ -88,7 +88,7 @@ const ContactChannels = () => (
           );
 
           const cardClass =
-            "group flex flex-col h-full text-left p-6 md:p-7 border border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_30px_-8px_hsl(var(--heritage-green)/0.12)] transition-all duration-300";
+            "group flex flex-col h-full text-left p-6 md:p-7 border border-border bg-card hover:border-primary/30 hover:shadow-flat transition-all duration-300";
 
           return (
             <motion.div

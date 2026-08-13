@@ -279,7 +279,7 @@ const Hero = () => {
                 to="/consultation"
                 data-gtm-experiment="home_hero_cta"
                 data-gtm-variant={heroCta.variant}
-                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-body-xs md:text-base px-6 md:px-14 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-xl min-h-[48px] md:min-h-[60px] whitespace-nowrap"
+                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-body-xs md:text-base px-6 md:px-14 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-floating min-h-[48px] md:min-h-[60px] whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">
@@ -323,7 +323,7 @@ const Hero = () => {
               transition={{ delay: 2.2, duration: 0.8 }}
               className="mt-4 md:mt-6 hidden md:inline-flex items-center gap-2.5 md:gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
             >
-              <div className="w-11 h-11 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 overflow-hidden bg-white shadow-sm border border-white/10">
+              <div className="w-11 h-11 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 overflow-hidden bg-white shadow-flat border border-white/10">
                 <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-1.5 md:p-2" />
               </div>
               <div className="flex flex-col leading-tight text-left">

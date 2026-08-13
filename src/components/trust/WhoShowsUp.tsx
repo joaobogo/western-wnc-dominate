@@ -51,7 +51,7 @@ const WhoShowsUp = ({
             <div className="flex items-center justify-center sm:justify-start gap-4">
               {luke && (
                 <div className="text-center">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 overflow-hidden rounded-sm border-2 border-[hsl(var(--highland-gold)/0.3)] shadow-md">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 overflow-hidden rounded-sm border-2 border-[hsl(var(--highland-gold)/0.3)] shadow-raised">
                     <img
                       src={luke.image}
                       alt={luke.alt}
@@ -75,7 +75,7 @@ const WhoShowsUp = ({
               )}
               {kristy && (
                 <div className="text-center">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 overflow-hidden rounded-sm border-2 border-[hsl(var(--highland-gold)/0.3)] shadow-md">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 overflow-hidden rounded-sm border-2 border-[hsl(var(--highland-gold)/0.3)] shadow-raised">
                     <img
                       src={kristy.image}
                       alt={kristy.alt}

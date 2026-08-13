@@ -139,7 +139,7 @@ export const MultiStepForm = ({
         <button
           onClick={isLast ? onSubmit : handleNext}
           disabled={isSubmitting}
-          className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-lg"
+          className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-raised"
         >
           {isSubmitting ? (
             <>
@@ -378,7 +378,7 @@ export const ScheduleSlot = ({ time, available, selected, onClick }: ScheduleSlo
     onClick={available ? onClick : undefined}
     className={`px-4 py-3 rounded-sm text-sm font-body font-medium transition-all duration-200 ${
       selected
-        ? "bg-[hsl(var(--highland-gold))] text-white shadow-[0_4px_12px_-3px_hsl(var(--highland-gold)/0.3)]"
+        ? "bg-[hsl(var(--highland-gold))] text-white shadow-flat"
         : available
           ? "bg-card border border-border text-foreground hover:border-[hsl(var(--highland-gold)/0.3)] hover:bg-secondary/40"
           : "bg-muted/30 text-muted-foreground cursor-not-allowed"

@@ -325,7 +325,7 @@ const ServiceTownPage = ({
               Our {town.name} division specializes in {entry.serviceLabel} and residential construction. Let's discuss your scope and timing today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg md:text-xl px-12 py-7 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[320px] justify-center uppercase tracking-wider">
+              <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg md:text-xl px-12 py-7 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-floating min-w-[320px] justify-center uppercase tracking-wider">
                 Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" />
               </Link>
               <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg md:text-xl px-12 py-7 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px]">
@@ -356,7 +356,7 @@ const ServiceTownPage = ({
                   <Link 
                     key={post.slug} 
                     to={`/blog/${post.slug}`}
-                    className="group bg-card border border-border p-6 hover:border-primary/30 transition-all flex flex-col h-full shadow-sm hover:shadow-lg"
+                    className="group bg-card border border-border p-6 hover:border-primary/30 transition-all flex flex-col h-full shadow-flat hover:shadow-raised"
                   >
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-6 h-6 rounded-none bg-primary/5 flex items-center justify-center">

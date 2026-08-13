@@ -87,7 +87,7 @@ const LocalProjectProof = ({
             <Link
               key={project.slug}
               to={`/projects/${project.slug}`}
-              className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all"
+              className="group bg-card border border-border rounded-sm overflow-hidden hover:border-primary/40 hover:shadow-raised transition-all"
             >
               {ba ? (
                 <div className="grid grid-cols-2">

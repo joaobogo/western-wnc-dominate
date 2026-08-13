@@ -504,7 +504,7 @@ const RoofingDivision = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="absolute -bottom-6 -left-4 md:left-auto md:-right-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[220px]"
+                className="absolute -bottom-6 -left-4 md:left-auto md:-right-6 bg-card border border-border rounded-none p-5 shadow-raised max-w-[220px]"
               >
                 <span className="text-3xl font-heading font-bold text-[hsl(var(--gold-ink))]">4.9★</span>
                 <p className="text-muted-foreground text-xs font-body mt-1 leading-snug">
@@ -1092,7 +1092,7 @@ const RoofingDivision = () => {
               >
                 <AccordionItem
                   value={`faq-${i}`}
-                  className="bg-card border border-border rounded-none px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300"
+                  className="bg-card border border-border rounded-none px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300"
                 >
                   <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
                     <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">

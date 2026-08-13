@@ -90,7 +90,7 @@ const Header = () => {
     <motion.header
       animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
       transition={{ duration: 0.35, ease: HIGHLAND_EASE }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-[0_4px_30px_-10px_rgba(0,0,0,0.15)] border-b border-black/[0.08] md:border-b-0 pt-[env(safe-area-inset-top)]"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-raised border-b border-black/[0.08] md:border-b-0 pt-[env(safe-area-inset-top)]"
     >
       <SkipToContent />
       <div

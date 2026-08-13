@@ -161,10 +161,10 @@ const TownPage = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 md:gap-6"
               >
-                <Link to="/request-inspection" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <Link to="/request-inspection" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-floating min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
                   Request an Inspection in {town.name} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
+                <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-floating min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
                   <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
                 </a>
               </motion.div>
@@ -248,7 +248,7 @@ const TownPage = () => {
                 </div>
               </div>
             </ScrollReveal>
-            <div className="bg-secondary p-8 border relative z-10 shadow-sm">
+            <div className="bg-secondary p-8 border relative z-10 shadow-flat">
               <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                 {town.name} Site Realities
@@ -329,7 +329,7 @@ const TownPage = () => {
             <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
               {relevantBlogs.map((post, i) => (
                 <ScrollReveal key={post.slug} variant="rise-subtle" delay={i * 0.1}>
-                  <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-background border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
+                  <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-background border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-flat hover:shadow-floating relative overflow-hidden">
                     {/* Subtle category badge */}
                     <div className="flex items-center gap-3 mb-6">
                       <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-primary/80 bg-primary/5 px-2.5 py-1">

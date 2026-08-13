@@ -98,7 +98,7 @@ const HomeFAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-card border border-border rounded-sm p-2 md:p-4 shadow-sm"
+          className="bg-card border border-border rounded-sm p-2 md:p-4 shadow-flat"
         >
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (

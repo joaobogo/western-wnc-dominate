@@ -229,6 +229,23 @@ img {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* ──────────────────────────────────────
+       ELEVATION LANGUAGE — three levels only.
+       flat: resting surfaces (cards, form fields)
+       raised: interactive / hovered surfaces, form containers
+       floating: overlays (modals, sheets, popovers, toasts)
+       ────────────────────────────────────── */
+    --elevation-flat: 0 1px 2px -1px hsl(var(--heritage-charcoal) / 0.06),
+      0 1px 3px 0 hsl(var(--heritage-charcoal) / 0.04);
+    --elevation-raised: 0 8px 24px -12px hsl(var(--heritage-charcoal) / 0.18),
+      0 2px 6px -2px hsl(var(--heritage-charcoal) / 0.06);
+    --elevation-floating: 0 24px 56px -20px hsl(var(--heritage-charcoal) / 0.28),
+      0 8px 20px -8px hsl(var(--heritage-charcoal) / 0.12);
+
+    /* Border treatments — hairline (default) and accent (emphasis) */
+    --border-hairline: hsl(var(--border));
+    --border-accent: hsl(var(--highland-gold) / 0.45);
   }
 
   .dark {
@@ -258,6 +275,14 @@ img {
     --border: 210 12% 18%;
     --input: 210 12% 18%;
     --ring: 160 30% 38%;
+
+    /* Shadows read as light bloom + deeper black on dark surfaces */
+    --elevation-flat: 0 1px 2px -1px hsl(0 0% 0% / 0.5), 0 0 0 1px hsl(0 0% 100% / 0.04);
+    --elevation-raised: 0 8px 24px -12px hsl(0 0% 0% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.06);
+    --elevation-floating: 0 24px 56px -20px hsl(0 0% 0% / 0.75), 0 0 0 1px hsl(0 0% 100% / 0.08);
+
+    --border-hairline: hsl(var(--border));
+    --border-accent: hsl(var(--highland-gold) / 0.55);
   }
 }
 
@@ -572,6 +597,24 @@ img {
   .bg-primary,
   .bg-foreground {
     --gold-ink: var(--highland-gold);
+    /* Dark painted surfaces use the dark elevation ramp so cards on top
+       of them keep visible separation and AA contrast. */
+    --elevation-flat: 0 1px 2px -1px hsl(0 0% 0% / 0.5), 0 0 0 1px hsl(0 0% 100% / 0.04);
+    --elevation-raised: 0 8px 24px -12px hsl(0 0% 0% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.06);
+    --elevation-floating: 0 24px 56px -20px hsl(0 0% 0% / 0.75), 0 0 0 1px hsl(0 0% 100% / 0.08);
+    --border-hairline: hsl(0 0% 100% / 0.14);
+    --border-accent: hsl(var(--highland-gold) / 0.55);
+  }
+
+  /* ──────────────────────────────────────
+     BORDER LANGUAGE — two treatments only
+     ────────────────────────────────────── */
+  .border-hairline {
+    border: 1px solid var(--border-hairline);
+  }
+
+  .border-accent-line {
+    border: 1px solid var(--border-accent);
   }
 
   .section-dark {
@@ -704,15 +747,16 @@ img {
      PREMIUM CARD SYSTEM
      ────────────────────────────────────── */
   .card-premium {
-    @apply bg-card border border-border rounded-none relative overflow-hidden shadow-sm;
+    @apply bg-card rounded-none relative overflow-hidden;
+    border: 1px solid var(--border-hairline);
+    box-shadow: var(--elevation-flat);
     transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                 box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-premium:hover {
     border-color: hsl(var(--highland-gold) / 0.25);
-    box-shadow: 0 12px 30px -10px hsl(var(--heritage-charcoal) / 0.1),
-                0 0 0 1px hsl(var(--highland-gold) / 0.1);
+    box-shadow: var(--elevation-raised);
     transform: translateY(-4px);
   }
   .card-premium::after {
@@ -816,7 +860,7 @@ img {
   }
   .card-lift:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 40px -10px hsl(var(--heritage-charcoal) / 0.07),
+    box-shadow: var(--elevation-raised),
                 0 0 0 1px hsl(var(--highland-gold) / 0.06);
   }
 
@@ -1029,7 +1073,7 @@ img {
   }
   .accordion-premium[data-state="open"] {
     border-color: hsl(var(--highland-gold) / 0.15);
-    box-shadow: 0 4px 16px -4px hsl(var(--heritage-charcoal) / 0.04);
+    box-shadow: var(--elevation-flat);
   }
   /* Smooth icon rotation */
   .accordion-chevron {
@@ -1101,7 +1145,7 @@ img {
   }
   .badge-trust:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px -3px hsl(var(--heritage-charcoal) / 0.06);
+    box-shadow: var(--elevation-flat);
   }
 
   /* === PROOF ELEMENT HOVER SYSTEM === */
@@ -1559,7 +1603,7 @@ img {
   }
   .card-craft:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 48px -12px hsl(var(--heritage-charcoal) / 0.08);
+    box-shadow: var(--elevation-floating);
   }
   .card-craft:hover::before {
     transform: scaleX(1);
@@ -1632,7 +1676,7 @@ img {
   }
   .card-construction:hover {
     border-color: hsl(var(--highland-gold) / 0.25);
-    box-shadow: 0 12px 40px -10px hsl(var(--heritage-charcoal) / 0.08),
+    box-shadow: var(--elevation-raised),
                 0 0 0 1px hsl(var(--highland-gold) / 0.08);
     transform: translateY(-2px);
   }
@@ -1742,7 +1786,7 @@ img {
   /* Construction quote flow container */
   .interaction-construction {
     @apply bg-card border border-border rounded-sm;
-    box-shadow: 0 1px 3px hsl(var(--heritage-charcoal) / 0.04);
+    box-shadow: var(--elevation-flat);
   }
   .interaction-construction:focus-within {
     border-color: hsl(var(--highland-gold) / 0.25);
@@ -2082,7 +2126,7 @@ div[style*="Edit with Lovable"],
     transform: none !important;
   }
   /* Reduce heavy shadow layering that trips scroll perf on cheap Androids */
-  .shadow-2xl { box-shadow: 0 10px 25px -5px hsl(var(--heritage-charcoal) / 0.15) !important; }
+  .shadow-floating { box-shadow: var(--elevation-raised) !important; }
 
   /* FAQ accordion cards — trim internal padding */
   [data-radix-accordion-item] { padding: 0 !important; }

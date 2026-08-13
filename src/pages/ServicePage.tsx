@@ -202,7 +202,7 @@ const ServicePage = () => {
               {otherServices.map((s) => {
                 const sTheme = getDivisionTheme(s.division);
                 return (
-                  <Link key={s.slug} to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(s.slug) ? `/${s.slug}` : `/services/${s.slug}`} className={`group bg-card border border-border rounded-lg p-6 ${sTheme.borderHoverClass} hover:shadow-lg transition-all`}>
+                  <Link key={s.slug} to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(s.slug) ? `/${s.slug}` : `/services/${s.slug}`} className={`group bg-card border border-border rounded-lg p-6 ${sTheme.borderHoverClass} hover:shadow-raised transition-all`}>
                     <div className="flex items-center gap-2 mb-3">
                       <s.icon className={`w-8 h-8 ${sTheme.accentClass}`} />
                       <span className={`text-caption font-body font-semibold uppercase tracking-[0.12em] ${sTheme.badgeTextClass} opacity-60`}>

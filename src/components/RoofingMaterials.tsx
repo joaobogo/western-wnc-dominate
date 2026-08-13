@@ -136,7 +136,7 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
               onClick={() => setActiveId(mat.id)}
               className={`group relative px-4 py-2.5 rounded-sm text-xs font-body font-semibold transition-all duration-200 ${
                 activeId === mat.id
-                  ? "bg-primary text-primary-foreground shadow-md"
+                  ? "bg-primary text-primary-foreground shadow-raised"
                   : "bg-card border border-border text-muted-foreground hover:border-primary/20 hover:text-foreground"
               }`}
             >

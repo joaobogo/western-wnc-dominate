@@ -61,7 +61,7 @@ const Services = () => {
                 >
                   <Link
                     to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(service.slug) ? `/${service.slug}` : `/services/${service.slug}`}
-                    className="group block bg-card border border-border rounded-lg p-8 hover:border-primary/30 hover:shadow-lg transition-all h-full"
+                    className="group block bg-card border border-border rounded-lg p-8 hover:border-primary/30 hover:shadow-raised transition-all h-full"
                   >
                     <service.icon className="w-10 h-10 text-primary mb-4" />
                     <h2 className="text-lg font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{service.title}</h2>

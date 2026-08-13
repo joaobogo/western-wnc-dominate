@@ -156,7 +156,7 @@ const BuilderShell = ({
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-start">
           {/* === Step content === */}
           <div className="lg:col-span-8">
-            <div className="bg-card border border-border rounded-lg shadow-sm p-5 md:p-9">
+            <div className="bg-card border border-border rounded-lg shadow-flat p-5 md:p-9">
               {children}
             </div>
 

@@ -106,7 +106,7 @@ const RoofCostEstimator = () => {
   const optionClass = (selected: boolean) =>
     `w-full text-left px-5 py-4 rounded-none border transition-all duration-300 group/opt ${
       selected
-        ? "border-[hsl(var(--highland-gold)/0.5)] bg-[hsl(var(--highland-gold)/0.04)] shadow-sm"
+        ? "border-[hsl(var(--highland-gold)/0.5)] bg-[hsl(var(--highland-gold)/0.04)] shadow-flat"
         : "border-border hover:border-[hsl(var(--highland-gold)/0.2)] hover:bg-secondary/30"
     }`;
 

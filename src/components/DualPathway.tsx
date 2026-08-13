@@ -232,7 +232,7 @@ const DivisionCard = ({ data, accent, index }: {
         {/* CTA */}
         <Link
           to={data.href}
-          className={`inline-flex items-center justify-center gap-3 font-body font-bold text-base tracking-[0.08em] uppercase group/cta transition-all duration-300 mt-auto min-h-[56px] shadow-lg ${
+          className={`inline-flex items-center justify-center gap-3 font-body font-bold text-base tracking-[0.08em] uppercase group/cta transition-all duration-300 mt-auto min-h-[56px] shadow-raised ${
             isGold
               ? "text-accent-foreground cta-gradient px-10 py-4 hover:opacity-95 hover:scale-[1.02]"
               : "text-primary-foreground bg-primary px-10 py-4 hover:bg-primary/95 hover:scale-[1.02]"
