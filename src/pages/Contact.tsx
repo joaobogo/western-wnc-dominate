@@ -74,7 +74,7 @@ const TRUST_POINTS = [
 
 const OFFICES = [
   // NOTE: Franklin street address pending client confirmation — synced with Footer.
-  { name: "Franklin Office", address: "1511 Highlands Road, Franklin, NC 28734", phone: "(828) 524-7773" },
+  { name: "Franklin Office", address: "76 Creative Dr, Franklin, NC 28734", phone: "(828) 524-7773" },
   { name: "Sylva / Waynesville", address: "Service area office — by appointment, Sylva, NC 28779", phone: "(828) 524-7773" },
 ];
 

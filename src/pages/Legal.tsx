@@ -216,7 +216,7 @@ function PrivacyBody() {
       <h2>Contact Us</h2>
       <p>
         Highlander Roofing Services, Inc.<br />
-        1511 Highlands Rd, Franklin, NC 28734<br />
+        76 Creative Dr, Franklin, NC 28734<br />
         Phone: <a href="tel:+18285247773">(828) 524-7773</a><br />
         Email: <a href="mailto:luke@highlandernc.com">luke@highlandernc.com</a>
       </p>
@@ -292,7 +292,7 @@ function TermsBody() {
       <ul>
         <li>Phone: <a href="tel:+18285247773">(828) 524-7773</a></li>
         <li>Email: <a href="mailto:luke@highlandernc.com">luke@highlandernc.com</a></li>
-        <li>Mailing Address: 1511 Highlands Rd, Franklin, NC 28734</li>
+        <li>Mailing Address: 76 Creative Dr, Franklin, NC 28734</li>
       </ul>
       <p>You may also reply HELP to any text message for assistance.</p>
 
