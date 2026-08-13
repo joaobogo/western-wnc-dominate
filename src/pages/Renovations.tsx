@@ -414,7 +414,6 @@ const Renovations = () => {
         />
             <WhoShowsUp />
             <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" primaryTo="/construction/consultation" />
-<CommonConcerns />
 <ConversionTrustBlock variant="band" category="construction" />
           </>
         }
@@ -466,6 +465,7 @@ const Renovations = () => {
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="renovations" />
 
+        <CommonConcerns />
         <ConstructionClosingCTA
           headline={"Your Home Deserves\nBetter Than 'Good Enough.'"}
           subheadline="Whether it's a kitchen that finally works, a bathroom that lasts, or a whole-home renovation done right — let's have a straightforward conversation about what's possible."

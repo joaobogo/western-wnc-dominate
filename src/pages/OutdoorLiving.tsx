@@ -428,7 +428,6 @@ const OutdoorLiving = () => {
         />
             <WhoShowsUp />
             <TieredOffer context="outdoor-living" primaryLabel="Get My Outdoor Space Planned" primaryTo="/construction/consultation" />
-<CommonConcerns />
 <ConversionTrustBlock variant="band" category="construction" />
           </>
         }
@@ -530,6 +529,7 @@ const OutdoorLiving = () => {
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="outdoor living projects" />
 
+        <CommonConcerns />
         <ConstructionClosingCTA
           headline={"The Best Room in Your\nHouse Doesn't Need Walls."}
           subheadline="Whether it's a covered porch for morning coffee, a screened room for summer evenings, or an outdoor kitchen for gathering — let's design the space you've been imagining."
