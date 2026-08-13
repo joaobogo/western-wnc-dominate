@@ -582,11 +582,11 @@ const About = () => {
                 We'll earn your trust the same way we've earned everyone else's.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/recent-projects" className="btn btn-primary btn-md">
-                  See What We've Built <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-                <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
+                <Link to="/consultation" className="btn btn-primary btn-md">
                   Talk With Our Team <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link to="/recent-projects" className="btn btn-secondary btn-md btn-on-dark">
+                  See What We've Built <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
               <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground text-xs font-medium uppercase tracking-wider">

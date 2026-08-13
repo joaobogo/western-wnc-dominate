@@ -44,7 +44,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
         <div className="flex flex-col sm:flex-row gap-3 shrink-0">
           <a
             href="tel:+18285247773"
-            className="btn btn-primary btn-md"
+            className="btn btn-secondary btn-on-dark btn-md"
           >
             <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
           </a>

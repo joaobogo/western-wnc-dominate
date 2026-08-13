@@ -61,7 +61,7 @@ const ContactIdentity = () => (
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               to="/service-areas"
-              className="btn btn-primary btn-md"
+              className="btn btn-secondary btn-md"
             >
               See Service Areas <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>

@@ -51,7 +51,7 @@ const RequestInspection = () => {
             </p>
             <a
               href="tel:+18285247773"
-              className="btn btn-primary btn-sm"
+              className="btn btn-secondary btn-sm"
             >
               <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct: 828-524-7773
             </a>
