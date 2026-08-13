@@ -747,15 +747,16 @@ img {
      PREMIUM CARD SYSTEM
      ────────────────────────────────────── */
   .card-premium {
-    @apply bg-card border border-border rounded-none relative overflow-hidden shadow-sm;
+    @apply bg-card rounded-none relative overflow-hidden;
+    border: 1px solid var(--border-hairline);
+    box-shadow: var(--elevation-flat);
     transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                 box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card-premium:hover {
     border-color: hsl(var(--highland-gold) / 0.25);
-    box-shadow: 0 12px 30px -10px hsl(var(--heritage-charcoal) / 0.1),
-                0 0 0 1px hsl(var(--highland-gold) / 0.1);
+    box-shadow: var(--elevation-raised);
     transform: translateY(-4px);
   }
   .card-premium::after {
@@ -859,7 +860,7 @@ img {
   }
   .card-lift:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 40px -10px hsl(var(--heritage-charcoal) / 0.07),
+    box-shadow: var(--elevation-raised),
                 0 0 0 1px hsl(var(--highland-gold) / 0.06);
   }
 
@@ -1072,7 +1073,7 @@ img {
   }
   .accordion-premium[data-state="open"] {
     border-color: hsl(var(--highland-gold) / 0.15);
-    box-shadow: 0 4px 16px -4px hsl(var(--heritage-charcoal) / 0.04);
+    box-shadow: var(--elevation-flat);
   }
   /* Smooth icon rotation */
   .accordion-chevron {
@@ -1144,7 +1145,7 @@ img {
   }
   .badge-trust:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px -3px hsl(var(--heritage-charcoal) / 0.06);
+    box-shadow: var(--elevation-flat);
   }
 
   /* === PROOF ELEMENT HOVER SYSTEM === */
@@ -1602,7 +1603,7 @@ img {
   }
   .card-craft:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 48px -12px hsl(var(--heritage-charcoal) / 0.08);
+    box-shadow: var(--elevation-floating);
   }
   .card-craft:hover::before {
     transform: scaleX(1);
@@ -1675,7 +1676,7 @@ img {
   }
   .card-construction:hover {
     border-color: hsl(var(--highland-gold) / 0.25);
-    box-shadow: 0 12px 40px -10px hsl(var(--heritage-charcoal) / 0.08),
+    box-shadow: var(--elevation-raised),
                 0 0 0 1px hsl(var(--highland-gold) / 0.08);
     transform: translateY(-2px);
   }
@@ -1785,7 +1786,7 @@ img {
   /* Construction quote flow container */
   .interaction-construction {
     @apply bg-card border border-border rounded-sm;
-    box-shadow: 0 1px 3px hsl(var(--heritage-charcoal) / 0.04);
+    box-shadow: var(--elevation-flat);
   }
   .interaction-construction:focus-within {
     border-color: hsl(var(--highland-gold) / 0.25);
@@ -2125,7 +2126,7 @@ div[style*="Edit with Lovable"],
     transform: none !important;
   }
   /* Reduce heavy shadow layering that trips scroll perf on cheap Androids */
-  .shadow-2xl { box-shadow: 0 10px 25px -5px hsl(var(--heritage-charcoal) / 0.15) !important; }
+  .shadow-floating { box-shadow: var(--elevation-raised) !important; }
 
   /* FAQ accordion cards — trim internal padding */
   [data-radix-accordion-item] { padding: 0 !important; }
