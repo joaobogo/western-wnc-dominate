@@ -133,8 +133,5 @@ const LeadConfirmationPanel = ({
     </div>
   );
 };
-    </div>
-  );
-};
 
 export default LeadConfirmationPanel;
