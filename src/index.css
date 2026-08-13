@@ -739,7 +739,7 @@ img {
     @apply text-body-xs font-body font-bold uppercase tracking-[0.12em];
   }
   .cta-text-lg {
-    @apply text-body-xs font-body font-bold uppercase tracking-[0.1em];
+    @apply text-body-sm font-body font-bold uppercase tracking-[0.1em];
   }
 
   /* ──────────────────────────────────────
