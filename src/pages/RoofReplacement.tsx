@@ -40,7 +40,6 @@ import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import ConsultationCTA from "@/components/replacement/ConsultationCTA";
 import MaterialComparison from "@/components/replacement/MaterialComparison";
 import WrittenScopeIncludes from "@/components/replacement/WrittenScopeIncludes";
-import LocalProjectProof from "@/components/trust/LocalProjectProof";
 
 /* ═══════════════════════════════════════════
    DATA
