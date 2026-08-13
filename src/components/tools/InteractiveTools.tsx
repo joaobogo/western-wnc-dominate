@@ -46,9 +46,9 @@ export function RepairVsReplaceGuide() {
   const pct = (totalScore / maxScore) * 100;
 
   const getResult = () => {
-    if (pct < 30) return { verdict: "Repair is likely sufficient", icon: <CheckCircle className="w-8 h-8 text-green-600" />, color: "bg-green-50 border-green-200", desc: "Based on your answers, a targeted repair should address the issue and extend your roof's lifespan. We'd recommend a professional inspection to confirm." };
-    if (pct < 65) return { verdict: "It depends — a closer look is needed", icon: <AlertTriangle className="w-8 h-8 text-amber-600" />, color: "bg-amber-50 border-amber-200", desc: "Your roof is showing signs that could go either way. A professional assessment will determine whether repair makes sense or if you're better served by a full replacement." };
-    return { verdict: "Replacement is the stronger investment", icon: <XCircle className="w-8 h-8 text-red-600" />, color: "bg-red-50 border-red-200", desc: "Multiple factors suggest your roof is nearing end of life. A new roof system will be more cost-effective long-term than continued repairs." };
+    if (pct < 30) return { verdict: "Repair is likely sufficient", icon: <CheckCircle className="w-8 h-8 text-primary" />, color: "bg-primary/10 border-primary", desc: "Based on your answers, a targeted repair should address the issue and extend your roof's lifespan. We'd recommend a professional inspection to confirm." };
+    if (pct < 65) return { verdict: "It depends — a closer look is needed", icon: <AlertTriangle className="w-8 h-8 text-[hsl(var(--gold-ink))]" />, color: "bg-highland-gold/10 border-highland-gold", desc: "Your roof is showing signs that could go either way. A professional assessment will determine whether repair makes sense or if you're better served by a full replacement." };
+    return { verdict: "Replacement is the stronger investment", icon: <XCircle className="w-8 h-8 text-alert" />, color: "bg-alert/10 border-alert", desc: "Multiple factors suggest your roof is nearing end of life. A new roof system will be more cost-effective long-term than continued repairs." };
   };
 
   const handleAnswer = (score: number) => {
@@ -144,9 +144,9 @@ export function StormChecklist() {
   const totalChecked = checked.size;
 
   const getUrgency = () => {
-    if (criticalCount >= 2) return { level: "High — contact us today", color: "text-red-600", desc: "Multiple critical signs of storm damage. We recommend an inspection on a same-day or next-day basis to prevent further damage and support your insurance claim." };
-    if (totalChecked >= 3) return { level: "Moderate — schedule an inspection this week", color: "text-amber-600", desc: "Several signs of storm impact. A professional inspection will determine the extent of damage and whether an insurance claim is warranted." };
-    if (totalChecked > 0) return { level: "Low — monitor and document", color: "text-green-600", desc: "Minor signs. Take photos, keep records, and consider a routine inspection at your convenience." };
+    if (criticalCount >= 2) return { level: "High — contact us today", color: "text-alert", desc: "Multiple critical signs of storm damage. We recommend an inspection on a same-day or next-day basis to prevent further damage and support your insurance claim." };
+    if (totalChecked >= 3) return { level: "Moderate — schedule an inspection this week", color: "text-[hsl(var(--gold-ink))]", desc: "Several signs of storm impact. A professional inspection will determine the extent of damage and whether an insurance claim is warranted." };
+    if (totalChecked > 0) return { level: "Low — monitor and document", color: "text-primary", desc: "Minor signs. Take photos, keep records, and consider a routine inspection at your convenience." };
     return null;
   };
 
@@ -162,7 +162,7 @@ export function StormChecklist() {
               <input type="checkbox" aria-label={item.label} checked={checked.has(item.id)} onChange={() => toggle(item.id)} className="mt-0.5 accent-[hsl(var(--accent))]" />
               <span className="text-sm font-body text-foreground">
                 {item.label}
-                {item.critical && <span className="text-xs text-red-500 ml-1 font-medium">⚠ Critical</span>}
+                {item.critical && <span className="text-xs text-alert ml-1 font-medium">⚠ Critical</span>}
               </span>
             </label>
           ))}
@@ -283,11 +283,11 @@ export function MaterialsComparison() {
                 <div className="mt-3 pt-3 border-t border-border grid grid-cols-2 gap-2">
                   <div>
                     <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1 font-semibold">Pros</p>
-                    {m.pros.map(p => <p key={p} className="text-xs text-green-700 font-body">+ {p}</p>)}
+                    {m.pros.map(p => <p key={p} className="text-xs text-primary font-body">+ {p}</p>)}
                   </div>
                   <div>
                     <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1 font-semibold">Cons</p>
-                    {m.cons.map(c => <p key={c} className="text-xs text-red-600 font-body">− {c}</p>)}
+                    {m.cons.map(c => <p key={c} className="text-xs text-alert font-body">− {c}</p>)}
                   </div>
                 </div>
               </motion.div>

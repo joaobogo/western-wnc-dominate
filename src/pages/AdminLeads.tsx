@@ -639,7 +639,7 @@ function TierPill({ score }: { score: number | null }) {
   const tier = leadTierLabel(score);
   const styles: Record<LeadTierLabel, string> = {
     Hot: "bg-destructive/15 text-destructive",
-    Warm: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
+    Warm: "bg-highland-gold/15 text-[hsl(var(--gold-ink))] dark:text-highland-gold",
     Engaged: "bg-primary/10 text-primary",
     Cool: "bg-muted text-muted-foreground",
   };
@@ -653,9 +653,9 @@ function TierPill({ score }: { score: number | null }) {
 function SyncPillInner({ status }: { status: string | null }) {
   const s = status ?? "pending";
   const styles: Record<string, string> = {
-    success: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400",
-    pending: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
-    retry_needed: "bg-amber-500/15 text-amber-700 dark:text-amber-400",
+    success: "bg-primary/15 text-primary dark:text-primary",
+    pending: "bg-highland-gold/15 text-[hsl(var(--gold-ink))] dark:text-highland-gold",
+    retry_needed: "bg-highland-gold/15 text-[hsl(var(--gold-ink))] dark:text-highland-gold",
     failed: "bg-destructive/15 text-destructive",
   };
   return (

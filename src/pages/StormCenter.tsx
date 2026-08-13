@@ -229,7 +229,7 @@ const StormCenter = () => {
                   <div>
                     <p className="text-foreground text-sm font-body leading-snug mb-1">{item.sign}</p>
                     <span className={`text-[10px] font-body font-semibold uppercase tracking-wider ${
-                      item.severity === "Critical" ? "text-red-500" : item.severity === "High" ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"
+                      item.severity === "Critical" ? "text-alert" : item.severity === "High" ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"
                     }`}>
                       {item.severity} Priority
                     </span>

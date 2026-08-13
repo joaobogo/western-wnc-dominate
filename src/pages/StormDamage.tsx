@@ -224,11 +224,11 @@ const StormDamage = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 1.5 }}
-                className="mt-10 flex items-center gap-4 p-4 bg-red-900/20 border border-red-500/20 rounded-sm max-w-md"
+                className="mt-10 flex items-center gap-4 p-4 bg-alert/20 border border-alert/20 rounded-sm max-w-md"
               >
                 <div className="relative flex-shrink-0">
-                  <div className="w-3 h-3 bg-red-500 rounded-full" />
-                  <div className="absolute inset-0 w-3 h-3 bg-red-500 rounded-full animate-ping opacity-75" />
+                  <div className="w-3 h-3 bg-alert rounded-full" />
+                  <div className="absolute inset-0 w-3 h-3 bg-alert rounded-full animate-ping opacity-75" />
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">Rapid Emergency Response Active</div>
@@ -270,7 +270,7 @@ const StormDamage = () => {
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
-              <span className="eyebrow mb-3 block text-amber-600 dark:text-amber-400">Types of Storm Damage</span>
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))] dark:text-highland-gold">Types of Storm Damage</span>
               <h2 className="section-heading mb-4">How Storm Damage<br className="hidden md:block" /> Shows Up on Your Roof.</h2>
               <p className="text-muted-foreground text-base font-body max-w-lg mx-auto">
                 Not all storm damage is obvious. Some of the most consequential damage is invisible from ground level — which is why professional assessment matters.
@@ -279,13 +279,13 @@ const StormDamage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {damageTypes.map((type, i) => (
-                <motion.div key={type.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm overflow-hidden hover:border-amber-500/20 card-lift">
-                  <div className="h-[2px] w-full bg-gradient-to-r from-amber-500/0 via-amber-500/30 to-amber-500/0" />
+                <motion.div key={type.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm overflow-hidden hover:border-highland-gold/20 card-lift">
+                  <div className="h-[2px] w-full bg-gradient-to-r from-highland-gold/0 via-highland-gold/30 to-highland-gold/0" />
                   <div className="p-6 md:p-7">
-                    <div className="w-10 h-10 rounded-sm bg-amber-500/6 flex items-center justify-center mb-5 group-hover:bg-amber-500/12 transition-colors">
-                      <type.icon className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                    <div className="w-10 h-10 rounded-sm bg-highland-gold/6 flex items-center justify-center mb-5 group-hover:bg-highland-gold/12 transition-colors">
+                      <type.icon className="w-5 h-5 text-[hsl(var(--gold-ink))] dark:text-highland-gold" />
                     </div>
-                    <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">{type.title}</h3>
+                    <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] dark:group-hover:text-highland-gold transition-colors">{type.title}</h3>
                     <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{type.detail}</p>
                   </div>
                 </motion.div>
