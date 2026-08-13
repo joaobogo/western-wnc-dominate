@@ -42,12 +42,24 @@ const StickyMobileCTA = () => {
   const [scrolled, setScrolled] = useState(false);
   const [desktopHovered, setDesktopHovered] = useState(false);
   const [suppressed, setSuppressed] = useState(false);
+  /** True while the visitor is typing in any field — the bar steps aside. */
+  const [fieldFocused, setFieldFocused] = useState(false);
+  /** True when the footer's closing CTA is on screen — never cover it. */
+  const [finalCtaInView, setFinalCtaInView] = useState(false);
 
   useEffect(() => {
-    // Reveal only after the user scrolls past the hero (approx one full viewport)
-    // so the sticky bar never competes with the hero CTAs above the fold.
-    const threshold = () => Math.max(window.innerHeight * 0.9, 640);
-    const onScroll = () => setScrolled(window.scrollY > threshold());
+    // Reveal only once the hero has left the viewport so the sticky bar never
+    // competes with the hero CTAs. Falls back to a viewport-height threshold
+    // on pages without a marked hero.
+    const onScroll = () => {
+      const hero = document.querySelector<HTMLElement>("[data-hero]");
+      if (hero) {
+        const { bottom } = hero.getBoundingClientRect();
+        setScrolled(bottom <= 0);
+        return;
+      }
+      setScrolled(window.scrollY > Math.max(window.innerHeight * 0.9, 640));
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
@@ -57,13 +69,50 @@ const StickyMobileCTA = () => {
     };
   }, []);
 
+  // Hide while a form field has focus (mobile keyboards steal the viewport).
+  useEffect(() => {
+    const isField = (el: EventTarget | null) =>
+      el instanceof HTMLElement && /^(input|textarea|select)$/i.test(el.tagName);
+    const onFocus = (e: FocusEvent) => { if (isField(e.target)) setFieldFocused(true); };
+    const onBlur = () => setFieldFocused(false);
+    document.addEventListener("focusin", onFocus);
+    document.addEventListener("focusout", onBlur);
+    return () => {
+      document.removeEventListener("focusin", onFocus);
+      document.removeEventListener("focusout", onBlur);
+    };
+  }, []);
+
+  // Never cover the footer's final CTA region.
+  useEffect(() => {
+    const targets = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-final-cta], footer"),
+    );
+    if (!targets.length) return;
+    const visible = new Set<Element>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) visible.add(e.target);
+          else visible.delete(e.target);
+        }
+        setFinalCtaInView(visible.size > 0);
+      },
+      { threshold: 0.01 },
+    );
+    targets.forEach((t) => io.observe(t));
+    return () => io.disconnect();
+  }, [pathname]);
+
   // Reflect visibility on <body> so global CSS can add page bottom padding
   // and any other overlay can coordinate. Cleared on unmount.
+  const barVisible = scrolled && !suppressed && !fieldFocused && !finalCtaInView && !onIntakePage;
+
   useEffect(() => {
-    const visible = scrolled && !suppressed && !onIntakePage;
+    const visible = barVisible;
     document.body.dataset.stickyBar = visible ? "visible" : "hidden";
     return () => { delete document.body.dataset.stickyBar; };
-  }, [scrolled, suppressed, onIntakePage]);
+  }, [barVisible]);
 
   // Hide sticky mobile bar when chatbot or mobile menu is open, so the
   // floating overlays never stack and compete for the same tap area.
@@ -124,7 +173,7 @@ const StickyMobileCTA = () => {
     <>
       {/* ─── MOBILE: Premium bottom action bar ─── */}
       <AnimatePresence>
-        {scrolled && !suppressed && (
+        {barVisible && (
           <motion.div
             initial={{ y: 16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
