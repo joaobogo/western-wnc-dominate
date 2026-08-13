@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        heading: ['"Playfair Display"', '"Playfair Fallback"', 'Georgia', 'serif'],
+        body: ['"DM Sans"', '"DM Sans Fallback"', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         /* Display scale — hero & statement moments */
