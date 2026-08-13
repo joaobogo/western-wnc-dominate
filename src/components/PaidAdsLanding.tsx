@@ -4,7 +4,7 @@ import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/component
 import FastLeadForm from "@/components/FastLeadForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { trackPhoneClick } from "@/lib/gtm";
-import logoLight from "@/assets/logo-light.webp";
+import logo from "@/assets/logo.svg";
 
 interface PaidAdsLandingProps {
   title: string;
@@ -73,7 +73,7 @@ const PaidAdsLanding = ({
           <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-4 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
             <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-3">
               <span className="flex items-center gap-2">
-                <img src={logoLight} alt="Highlander Roofing Services, Inc." width={140} height={40} className="h-8 w-auto md:h-10" loading="eager" decoding="sync" />
+                <img src={logo} alt="Highlander Roofing Services, Inc." width={160} height={48} className="h-10 w-auto md:h-12" loading="eager" decoding="sync" />
                 <span className="sr-only">Highlander Roofing Services, Inc.</span>
               </span>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/85 hover:text-primary-foreground transition-colors">
