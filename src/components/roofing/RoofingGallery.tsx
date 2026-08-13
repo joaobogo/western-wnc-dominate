@@ -124,6 +124,8 @@ const RoofingGallery = ({
               <img decoding="async" loading="lazy"
                 src={projects[lightboxIdx].src}
                 alt={projects[lightboxIdx].alt}
+                width={1600}
+                height={1200}
                 className="w-full h-auto max-h-[75vh] object-contain rounded-sm"
               />
               <div className="mt-4 text-center">

@@ -60,6 +60,8 @@ const IntakeConfirmation = ({
       <img loading="lazy" decoding="async"
         src={logo}
         alt="Highlander Building Services logo"
+        width={220}
+        height={80}
         className="h-16 md:h-20 w-auto mx-auto mb-4"
       />
       <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-5">

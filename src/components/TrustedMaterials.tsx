@@ -108,6 +108,8 @@ const TrustedMaterials = () => {
                 <img decoding="async"
                   src={v.logo}
                   alt={`${v.name} logo`}
+                  width={180}
+                  height={80}
                   loading="lazy"
                   className={`${v.logoMaxH} w-auto max-w-[180px] object-contain`}
                 />

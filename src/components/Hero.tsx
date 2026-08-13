@@ -293,7 +293,7 @@ const Hero = () => {
               className="mt-4 md:mt-6 hidden md:inline-flex items-center gap-2.5 md:gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
             >
               <div className="w-11 h-11 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 overflow-hidden bg-white shadow-flat border border-white/10">
-                <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-1.5 md:p-2" />
+                <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" width={64} height={64} className="w-full h-full object-contain p-1.5 md:p-2" />
               </div>
               <div className="flex flex-col leading-tight text-left">
                 <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.16em] md:tracking-[0.18em] text-[hsl(var(--gold-ink))]">

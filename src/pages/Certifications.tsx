@@ -217,6 +217,8 @@ const Certifications = () => {
                         decoding="async"
                         src={b.image}
                         alt={`${b.name} certification badge`}
+                        width={140}
+                        height={80}
                         className="max-h-full max-w-[140px] object-contain"
                       />
                     ) : (

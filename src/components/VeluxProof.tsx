@@ -59,7 +59,7 @@ const VeluxProof = () => {
         >
           <div className="flex items-center gap-3 mb-5">
             <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white shadow-flat border border-white/10">
-              <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />
+              <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" width={96} height={96} className="w-full h-full object-contain p-2" />
             </div>
             <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
               VELUX Certified Installer

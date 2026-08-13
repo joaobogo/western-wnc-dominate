@@ -159,6 +159,8 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Highlander Building Services logo"
+                width={220}
+                height={64}
                 className="h-[56px] md:h-[64px] w-auto"
                 loading="lazy"
                 decoding="async"
