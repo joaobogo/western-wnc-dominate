@@ -31,7 +31,11 @@ const trustItems = [
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  // Sequential test 1: outcome-first vs. current hero CTA copy.
+  // Sequential test 1 (running): image-led vs. text-led homepage hero.
+  // Success metric: generate_lead. Minimum run: 14 days / 60 leads per variant.
+  const heroLayout = useExperiment("home_hero_layout");
+  const textLed = heroLayout.variant === "b";
+  // Queued test — control copy until it is promoted to running.
   const heroCta = useExperiment("home_hero_cta");
   const [layer, setLayer] = useState(0);
   // Only the LCP image is in the DOM on first paint. The two cross-fade
@@ -61,9 +65,30 @@ const Hero = () => {
   ];
 
   return (
-    <section ref={ref} className="dark-surface relative min-h-[100svh] flex flex-col overflow-hidden">
+    <section
+      ref={ref}
+      data-hero-variant={heroLayout.variant}
+      data-gtm-experiment="home_hero_layout"
+      data-gtm-variant={heroLayout.variant}
+      className={`dark-surface relative flex flex-col overflow-hidden ${
+        textLed ? "min-h-[88svh] md:min-h-[92svh]" : "min-h-[100svh]"
+      }`}
+    >
+      {/* Text-led variant: solid brand panel carries the copy; photography is
+          demoted to a supporting right-hand column on desktop and a short band
+          on mobile, so the offer and CTA read before any image loads. */}
+      {textLed && (
+        <div aria-hidden="true" className="absolute inset-0 bg-[hsl(var(--hero-overlay))]" />
+      )}
+
       {/* === BACKGROUND — static, no parallax for smooth scroll === */}
-      <div className="absolute inset-0">
+      <div
+        className={
+          textLed
+            ? "absolute inset-x-0 top-0 h-[38svh] md:h-auto md:inset-y-0 md:left-[52%] md:right-0 overflow-hidden"
+            : "absolute inset-0"
+        }
+      >
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
             No video. All real WNC roof photography. */}
         {layers.map((src, i) => (i > 0 && !extraLayersReady ? null : (
@@ -86,6 +111,14 @@ const Hero = () => {
           />
         )))}
 
+        {/* Seam blend — feathers the photo column into the copy panel */}
+        {textLed && (
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-[2] bg-gradient-to-b md:bg-gradient-to-r from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.35)] to-transparent"
+          />
+        )}
+
         {/* Scrim tokens — side scrim behind left-anchored copy, hero scrim for headline legibility */}
         <div aria-hidden="true" className="absolute inset-0 bg-scrim-side opacity-50 md:opacity-35" />
         <div aria-hidden="true" className="absolute inset-0 md:hidden bg-scrim-hero" />
@@ -104,7 +137,11 @@ const Hero = () => {
       </div>
 
       {/* === LAYER INDICATOR — tiny premium ticks bottom-right of hero === */}
-      <div className="absolute right-6 md:right-10 lg:right-20 bottom-32 md:bottom-36 z-20 hidden sm:flex items-center gap-1.5">
+      <div className={`absolute z-20 hidden sm:flex items-center gap-1.5 ${
+        textLed
+          ? "right-6 md:right-10 top-6 md:top-auto md:bottom-10"
+          : "right-6 md:right-10 lg:right-20 bottom-32 md:bottom-36"
+      }`}>
         {layers.map((_, i) => (
           <button
             key={i}
@@ -153,7 +190,7 @@ const Hero = () => {
       </div>
 
       {/* === RIGHT EDGE — Elevation indicator === */}
-      <div className="absolute right-0 top-0 bottom-0 hidden xl:flex flex-col items-center justify-center z-10 pr-10">
+      <div className={`absolute right-0 top-0 bottom-0 ${textLed ? "hidden" : "hidden xl:flex"} flex-col items-center justify-center z-10 pr-10`}>
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -183,12 +220,16 @@ const Hero = () => {
       </div>
 
       {/* === MAIN CONTENT === */}
-      <div className="relative z-10 flex-1 flex items-center md:items-end w-full">
-        <div className="w-full px-5 md:px-10 lg:px-20 pb-10 md:pb-44 hero-clears-header">
+      <div className={`relative z-10 flex-1 flex w-full ${
+        textLed ? "items-start pt-[38svh] md:pt-0" : "items-center md:items-end"
+      }`}>
+        <div className={`w-full px-5 md:px-10 lg:px-20 hero-clears-header ${
+          textLed ? "pt-6 md:pt-24 pb-12 md:pb-20 md:max-w-[52%]" : "pb-10 md:pb-44"
+        }`}>
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <div
-              className="hidden md:flex items-center gap-2 md:gap-4 mb-3 md:mb-10"
+              className={`hidden md:flex items-center gap-2 md:gap-4 mb-3 ${textLed ? "md:mb-6" : "md:mb-10"}`}
             >
               <div className="h-px w-10" style={{ background: 'hsl(var(--highland-gold))' }} />
               <div
@@ -202,28 +243,28 @@ const Hero = () => {
             </div>
 
             {/* Headline — single H1 revealed as three cinematic lines */}
-            <h1 className="mb-3 md:mb-12">
+            <h1 className={`mb-3 ${textLed ? "md:mb-6" : "md:mb-12"}`}>
               <span className="sr-only">
                 Roofing &amp; Construction Built for Western NC Mountain Homes
               </span>
               <span aria-hidden="true" className="block">
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
                   <span
-                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                    className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
                     Roofing &amp; Construction
                   </span>
                 </span>
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
                   <span
-                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                    className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
                     Built for Western NC
                   </span>
                 </span>
                 <span className="block overflow-hidden pb-[0.15em] md:pb-[0.4em]">
                   <span
-                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold tracking-[-0.03em] text-[hsl(var(--gold-ink))]"
+                    className={`block leading-[1.08] font-heading font-bold tracking-[-0.03em] text-[hsl(var(--gold-ink))] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
                     Mountain Homes.
                   </span>
@@ -234,16 +275,19 @@ const Hero = () => {
 
             {/* Subtext — refined positioning statement */}
             <p
-              className="text-body-xs md:text-body-lg text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
+              className={`text-body-xs md:text-body-lg text-white/95 max-w-2xl mb-4 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg ${textLed ? "md:mb-8" : "md:mb-16"}`}
             >
-              <span className="md:hidden">Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva.</span>
-              <span className="hidden md:inline">Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
-              <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
+              <span className={textLed ? "hidden" : "md:hidden"}>Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva.</span>
+              {textLed && (
+                <span className="block">Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva — with a written scope and price before any work starts.</span>
+              )}
+              <span className={textLed ? "hidden" : "hidden md:inline"}>Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
+              <span className={`hidden md:block mt-2 ${textLed ? "md:mt-4" : "md:mt-6"} text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md`}>Licensed · Insured · CertainTeed ShingleMaster</span>
             </p>
 
 
             {/* CTA Group — premium dual-action */}
-            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-6">
+            <div className={`flex flex-col gap-2.5 ${textLed ? "md:max-w-md md:gap-3" : "sm:flex-row sm:gap-6"}`}>
               <Link
                 to="/consultation"
                 data-gtm-experiment="home_hero_cta"
