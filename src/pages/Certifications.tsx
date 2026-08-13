@@ -217,6 +217,8 @@ const Certifications = () => {
                         decoding="async"
                         src={b.image}
                         alt={`${b.name} certification badge`}
+                        width={140}
+                        height={80}
                         className="max-h-full max-w-[140px] object-contain"
                       />
                     ) : (
@@ -260,7 +262,7 @@ const Certifications = () => {
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-16 h-12 flex items-center justify-center">
                           {cert.image ? (
-                            <img loading="lazy" decoding="async" src={cert.image} alt={cert.title} className="w-full h-full object-contain mix-blend-multiply" />
+                            <img loading="lazy" decoding="async" src={cert.image} alt={cert.title} width={128} height={96} className="w-full h-full object-contain mix-blend-multiply" />
                           ) : (
                             <div className="w-11 h-11 rounded-sm bg-primary/8 flex items-center justify-center">
                               <cert.icon className="w-5 h-5 text-primary" />

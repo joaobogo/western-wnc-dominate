@@ -163,7 +163,8 @@ const VeluxWidget = ({
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">{heading}</h2>
           <p className="text-muted-foreground leading-relaxed">{description}</p>
         </div>
-        <div ref={hostRef} hidden={blocked} />
+        {/* Reserve space so the late-loading VELUX widget cannot shift content (CLS). */}
+        <div ref={hostRef} hidden={blocked} className="min-h-[420px] md:min-h-[520px]" />
         {blocked && (
           <div className="rounded-lg border border-border/60 bg-muted/40 p-6">
             <p className="text-foreground/80 mb-4 leading-relaxed">

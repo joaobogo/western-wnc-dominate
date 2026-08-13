@@ -101,6 +101,8 @@ const LocalProjectProof = ({
                         alt={`${img.label} — ${project.title}, ${project.location}`}
                         loading="lazy"
                         decoding="async"
+                        width={800}
+                        height={600}
                         className="w-full h-36 md:h-40 object-cover"
                       />
                       <figcaption className="absolute bottom-0 left-0 bg-foreground/75 text-background text-caption font-body uppercase tracking-wider px-2 py-0.5">
@@ -113,6 +115,8 @@ const LocalProjectProof = ({
                 <img
                   src={project.heroImage}
                   alt={`${project.title} — ${project.location}`}
+                  width={1200}
+                  height={800}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-40 object-cover"

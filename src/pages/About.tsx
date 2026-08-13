@@ -626,6 +626,8 @@ const About = () => {
                   <img decoding="async"
                     src={heritageImg}
                     alt="Western North Carolina mountain home representing Highlander's family heritage"
+                    width={1000}
+                    height={1250}
                     loading="lazy"
                     className="w-full h-full object-cover"
                     onError={(e) => {

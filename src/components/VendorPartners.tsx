@@ -75,6 +75,8 @@ const VendorPartners = ({ heading = "Trusted Manufacturer & Supplier Partners", 
                   <img decoding="async"
                     src={v.image}
                     alt={`${v.name} logo`}
+                    width={180}
+                    height={72}
                     loading="lazy"
                     className="max-h-full max-w-[180px] object-contain"
                   />

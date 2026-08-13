@@ -159,6 +159,8 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Highlander Building Services logo"
+                width={220}
+                height={64}
                 className="h-[56px] md:h-[64px] w-auto"
                 loading="lazy"
                 decoding="async"
@@ -264,7 +266,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center">
               <div className="w-10 h-10 flex items-center justify-center overflow-hidden flex-shrink-0 bg-white rounded-sm border border-border">
-                <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-1" />
+                <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" width={40} height={40} className="w-full h-full object-contain p-1" />
               </div>
               <span className="text-body-xs font-bold uppercase tracking-wider text-foreground ml-2">VELUX Certified</span>
             </div>
@@ -273,7 +275,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-2">
             <div className="flex items-center">
-              <img loading="lazy" decoding="async" src={badgeCertainteedMaster} alt="CertainTeed ShingleMaster Credentialed Contractor" className="h-9 w-auto" />
+              <img loading="lazy" decoding="async" src={badgeCertainteedMaster} alt="CertainTeed ShingleMaster Credentialed Contractor" width={120} height={36} className="h-9 w-auto" />
               <span className="text-body-xs font-bold uppercase tracking-wider text-foreground/90 ml-2">ShingleMaster</span>
             </div>
             <span className="text-caption text-muted-foreground font-body leading-tight">CertainTeed Credentialed Contractor</span>

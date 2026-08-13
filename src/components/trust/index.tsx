@@ -124,6 +124,8 @@ export const CredentialCards = ({ variant = "light" }: { variant?: "light" | "da
             <img loading="lazy" decoding="async" 
               src={cert.image} 
               alt={cert.label} 
+              width={96}
+              height={96}
               className={`w-full h-full object-contain mix-blend-multiply ${variant === "dark" ? "brightness-200 contrast-125" : ""}`} 
             />
           ) : (
