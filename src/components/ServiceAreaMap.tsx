@@ -42,7 +42,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
     <section
       id={id}
       aria-labelledby="service-area-heading"
-      className="section-padding bg-background relative overflow-hidden"
+      className="section-padding bg-secondary relative overflow-hidden"
     >
       {/* subtle topographic wash */}
       <div
