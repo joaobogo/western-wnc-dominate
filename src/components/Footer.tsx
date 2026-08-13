@@ -104,7 +104,7 @@ const Footer = () => {
       </div>
 
       {/* CTA Strip */}
-      <div className="border-b border-border relative">
+      <div className="border-b border-border relative" data-final-cta>
         {/* Ambient glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="container-tight py-12 md:py-16 relative z-10">
