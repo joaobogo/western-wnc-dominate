@@ -217,6 +217,12 @@ const ServiceTownPage = ({
           </div>
         </section>
 
+        <ServiceTownProofPoints
+          town={town}
+          serviceLabel={entry.serviceLabel}
+          proofNote={entry.proofNote}
+        />
+
         <AnswerBlock
           question={`Who handles ${entry.serviceLabel.toLowerCase()} in ${town.name}, ${town.state}?`}
           answer={entry.intro}
@@ -297,7 +303,7 @@ const ServiceTownPage = ({
               {entry.serviceLabel} in {town.name} — Frequently Asked
             </h2>
             <Accordion type="single" collapsible className="w-full">
-              {entry.faqs.map((f, i) => (
+              {faqs.map((f, i) => (
                 <AccordionItem key={i} value={`faq-${i}`}>
                   <AccordionTrigger className="text-left font-semibold">{f.q}</AccordionTrigger>
                   <AccordionContent className="text-foreground/80">{f.a}</AccordionContent>
