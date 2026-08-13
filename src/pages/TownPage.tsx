@@ -132,7 +132,7 @@ const TownPage = () => {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className="text-display-lg md:text-display-xl font-heading font-bold mb-6 text-white tracking-tightest leading-[0.9] drop-shadow-lg"
               >
-                Roofing &amp; Construction in <br />
+                Roofing &amp; Construction in 
                 <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span>
               </motion.h1>
 
