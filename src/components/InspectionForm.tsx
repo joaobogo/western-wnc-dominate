@@ -51,7 +51,13 @@ function townFromQuery(): string {
   }
 }
 
-const InspectionForm = () => {
+interface InspectionFormProps {
+  /** "page" = dedicated conversion page: tight top spacing, form first on mobile. */
+  variant?: "section" | "page";
+}
+
+const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
+  const isPage = variant === "page";
   // Where the visitor came from, e.g. ?context=town_faq_cta
   const contextFromQuery = (): string | null => {
     if (typeof window === "undefined") return null;
@@ -259,22 +265,29 @@ const InspectionForm = () => {
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto", backgroundRepeat: "repeat" }} />
       <GoldLine width="100%" centered delay={0} duration={1.2} className="absolute top-0 left-0 right-0 z-10" />
 
-      <div className="section-padding">
+      <div className={isPage ? "pt-24 md:pt-28 pb-16 md:pb-20" : "section-padding"}>
         <div className="container-tight">
+          {isPage && (
+            <h1 className="text-2xl md:text-4xl font-heading font-bold text-dark-section-foreground leading-tight mb-6 md:mb-10">
+              Request your free roof inspection in Western North Carolina.
+            </h1>
+          )}
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
 
             {/* Left — editorial trust content */}
-            <div className="lg:col-span-2">
+            <div className={`lg:col-span-2 ${isPage ? "order-2 lg:order-1" : ""}`}>
               <ScrollReveal variant="fade">
                 <span className="text-[12px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-4 block">
                   Begin Your Project
                 </span>
               </ScrollReveal>
-              <HeadingReveal delay={0.1}>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark-section-foreground mb-5 leading-[1.15]">
-                  Every Great Project<br /> Starts with a<br className="hidden lg:block" /> Conversation.
-                </h2>
-              </HeadingReveal>
+              {!isPage && (
+                <HeadingReveal delay={0.1}>
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark-section-foreground mb-5 leading-[1.15]">
+                    Every Great Project<br /> Starts with a<br className="hidden lg:block" /> Conversation.
+                  </h2>
+                </HeadingReveal>
+              )}
               <ScrollReveal variant="rise-subtle" delay={0.25}>
                 <p className="text-white font-body text-lg md:text-xl leading-relaxed mb-10 font-bold drop-shadow-md">
                   Share a few details about your property and what you're looking to accomplish. 
@@ -288,7 +301,7 @@ const InspectionForm = () => {
                   { icon: Clock, text: "Personal response rapidly — not an auto-reply" },
                   { icon: MapPin, text: "We serve every community in Western North Carolina" },
                   { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor certified" },
-                  { icon: Shield, text: "Licensed GC · Fully insured · Warranty-backed" },
+                  { icon: Shield, text: "Licensed GC · Fully insured · Written scope on every estimate" },
                 ].map((item, i) => (
                   <motion.div
                     key={item.text}
@@ -324,7 +337,7 @@ const InspectionForm = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.12, duration: 0.6, ease: HIGHLAND_EASE }}
-              className="lg:col-span-3"
+              className={`lg:col-span-3 ${isPage ? "order-1 lg:order-2" : ""}`}
             >
               <div className="bg-dark-section-foreground/[0.03] border border-dark-section-foreground/8 rounded-none p-6 md:p-8 lg:p-10">
                 {/* Slim progress indicator */}
