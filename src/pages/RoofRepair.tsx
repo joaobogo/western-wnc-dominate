@@ -18,8 +18,8 @@ import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
 import asphalt003 from "@/assets/gallery/asphalt-003.webp";
-import asphalt003Avif from "@/assets/gallery/asphalt-003.webp?w=640;1024;1600&format=avif&as=srcset";
-import asphalt003Webp from "@/assets/gallery/asphalt-003.webp?w=640;1024;1600&format=webp&as=srcset";
+import asphalt003Avif from "@/assets/gallery/asphalt-003.webp?w=640;960;1280;1600&format=avif&as=srcset";
+import asphalt003Webp from "@/assets/gallery/asphalt-003.webp?w=640;960;1280;1600&format=webp&as=srcset";
 import HeroImage from "@/components/media/HeroImage";
 import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
