@@ -35,6 +35,9 @@ import {
 } from "@/components/construction";
 
 import heroImg from "@/assets/division-construction-v2.webp";
+import heroImgAvif from "@/assets/division-construction-v2.webp?w=640;1024;1600&format=avif&as=srcset";
+import heroImgWebp from "@/assets/division-construction-v2.webp?w=640;1024;1600&format=webp&as=srcset";
+import HeroImage from "@/components/media/HeroImage";
 import divisionContextImg from "@/assets/gallery/asphalt-007.webp";
 import constructionDetailImg from "@/assets/gallery/cedar-005.webp";
 import planningFocusImg from "@/assets/division-design.webp";
@@ -112,7 +115,7 @@ const ConstructionDivision = () => {
         {/* ═══ HERO — Cinematic construction hero with gold accents ═══ */}
         <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} decoding="async" src={heroImg} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" loading="eager" />
+            <HeroImage src={heroImg} avifSrcSet={heroImgAvif} webpSrcSet={heroImgWebp} alt="Custom construction project in Western North Carolina" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.65)] via-[hsl(var(--hero-overlay)/0.35)] to-[hsl(var(--hero-overlay)/0.15)]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>

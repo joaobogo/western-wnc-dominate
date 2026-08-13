@@ -40,6 +40,8 @@ export const GTM_EVENTS = {
   SCROLL_DEPTH: "scroll_depth",
   SCROLL_75: "scroll_75",
   EXIT_INTENT_SHOWN: "exit_intent_shown",
+  EXIT_INTENT_DISMISSED: "exit_intent_dismissed",
+  EXIT_INTENT_CONVERSION: "exit_intent_conversion",
   // Partner widgets
   VELUX_QUOTE_CLICK: "velux_quote_click",
   // Chatbot
@@ -828,6 +830,32 @@ export function trackExitIntentShown(opts: { trigger: string; variant?: string |
 }
 
 let exitIntentInstalled = false;
+
+/** Visitor dismissed the recovery prompt without converting. */
+export function trackExitIntentDismissed(opts: { trigger: string }) {
+  push({
+    event: GTM_EVENTS.EXIT_INTENT_DISMISSED,
+    exit_trigger: opts.trigger,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
+/** Recovery prompt produced a callback request. */
+export function trackExitIntentConversion(opts: {
+  trigger: string;
+  lead_id?: string | null;
+  property_town?: string | null;
+}) {
+  push({
+    event: GTM_EVENTS.EXIT_INTENT_CONVERSION,
+    exit_trigger: opts.trigger,
+    lead_id: opts.lead_id ?? null,
+    property_town: opts.property_town ?? null,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
 
 /**
  * Detects abandonment signals (desktop: pointer leaving through the top of the
