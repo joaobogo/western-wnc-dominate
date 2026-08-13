@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, Phone, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
-import { pickGuideLink, pickProjectLink, type LeadCategory } from "@/lib/confirmation-links";
+import { pickGuideLink, pickProjectLinks, type LeadCategory } from "@/lib/confirmation-links";
 import type { SubmittedSummaryItem } from "@/components/forms/LeadConfirmationPanel";
 
 type Props = {
@@ -30,7 +30,7 @@ const IntakeConfirmation = ({
     "We confirm scope and schedule an on-site assessment at your property.",
     "You receive a written, itemized proposal with materials, scope, and pricing.",
   ];
-  const project = pickProjectLink({ town, category });
+  const projects = pickProjectLinks({ town, category, count: 2 });
   const guide = pickGuideLink({ town });
   const recap = summary.filter((s) => s.value && String(s.value).trim().length > 0);
 
@@ -98,36 +98,34 @@ const IntakeConfirmation = ({
         </ol>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 text-left mb-8">
-        <Link
-          to={project.path}
-          className="group border border-border rounded-md p-4 hover:border-[hsl(var(--highland-gold))] transition-colors"
-        >
-          <span className="block text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-1.5">
-            See the work
-          </span>
-          <span className="block font-heading font-bold text-body-sm text-foreground leading-snug">
-            {project.label}
-          </span>
-          <span className="block text-body-xs font-body text-muted-foreground mt-1">
-            {project.description}
-          </span>
-        </Link>
-        <Link
-          to={guide.path}
-          className="group border border-border rounded-md p-4 hover:border-[hsl(var(--highland-gold))] transition-colors"
-        >
-          <span className="block text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-1.5">
-            While you wait
-          </span>
-          <span className="block font-heading font-bold text-body-sm text-foreground leading-snug">
-            {guide.label}
-          </span>
-          <span className="block text-body-xs font-body text-muted-foreground mt-1">
-            {guide.description}
-          </span>
-        </Link>
+      <p className="text-left text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-2">
+        Work we've done nearby
+      </p>
+      <div className="grid gap-3 sm:grid-cols-2 text-left mb-4">
+        {projects.map((project) => (
+          <Link
+            key={project.path}
+            to={project.path}
+            className="group border border-border rounded-md p-4 hover:border-[hsl(var(--highland-gold))] transition-colors"
+          >
+            <span className="block font-heading font-bold text-body-sm text-foreground leading-snug">
+              {project.label}
+            </span>
+            <span className="block text-body-xs font-body text-muted-foreground mt-1">
+              {project.description}
+            </span>
+            <span className="mt-2 inline-flex items-center gap-1 text-body-xs font-body font-bold text-[hsl(var(--gold-ink))]">
+              View project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </span>
+          </Link>
+        ))}
       </div>
+      <Link
+        to={guide.path}
+        className="mb-8 inline-flex items-center gap-1 text-body-xs font-body font-bold text-[hsl(var(--gold-ink))] hover:opacity-85"
+      >
+        While you wait: {guide.label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
+      </Link>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <a
