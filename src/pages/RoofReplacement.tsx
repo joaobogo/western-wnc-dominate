@@ -330,22 +330,11 @@ const RoofReplacement = () => {
           </div>
         </section>
 
-        {/* ─── MID-PAGE CTA ─── */}
-        <section className="bg-primary text-primary-foreground tartan-dark">
-          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Concerned about your roof's condition?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">Schedule a consultation — we'll assess honestly and explain your options clearly.</p>
-              </div>
-              <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden flex-shrink-0">
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Schedule a Consultation</span>
-                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ConsultationCTA
+          heading="Not sure whether you're at repair or replacement?"
+          subline="A consultation gets you an honest read on your roof's remaining life and a written scope if replacement is the right call."
+          label="Book My Roof Assessment"
+        />
 
         {/* ─── REPLACING THE ROOF THE RIGHT WAY ─── */}
         <section className="section-padding bg-background">
