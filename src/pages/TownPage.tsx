@@ -272,6 +272,7 @@ const TownPage = () => {
 
         {/* 8. CLOSING CTA */}
         <TownEstimateCTA town={town} />
+      </main>
 
       <ConversionTrustBlock variant="band" town={town.name} />
       <Footer />
