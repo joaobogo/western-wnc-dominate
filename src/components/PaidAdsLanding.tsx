@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/SEOHead";
 import FastLeadForm from "@/components/FastLeadForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -17,6 +18,12 @@ interface PaidAdsLandingProps {
   headline: string;
   subheadline: string;
   ctaLabel: string;
+  /**
+   * Message match (Prompt 40): the landing headline must repeat the ad promise
+   * word for word. Each ad variant passes `?v=<key>`; unknown keys fall back to
+   * the default headline, so the page can never render arbitrary ad copy.
+   */
+  adVariants?: Record<string, { headline: string; subheadline?: string; ctaLabel?: string }>;
   urgencyOptions: string[];
   trustStats: Array<{ value: string; label: string; detail: string }>;
   highlights: string[];
@@ -34,9 +41,10 @@ const PaidAdsLanding = ({
   heroImage,
   heroAlt,
   eyebrow,
-  headline,
-  subheadline,
-  ctaLabel,
+  headline: defaultHeadline,
+  subheadline: defaultSubheadline,
+  ctaLabel: defaultCtaLabel,
+  adVariants,
   urgencyOptions,
   trustStats,
   highlights,
@@ -45,6 +53,12 @@ const PaidAdsLanding = ({
   testimonial,
   faqs,
 }: PaidAdsLandingProps) => {
+  const [searchParams] = useSearchParams();
+  const variant = adVariants?.[searchParams.get("v") ?? ""];
+  const headline = variant?.headline ?? defaultHeadline;
+  const subheadline = variant?.subheadline ?? defaultSubheadline;
+  const ctaLabel = variant?.ctaLabel ?? defaultCtaLabel;
+
   return (
     <>
       <SEOHead
