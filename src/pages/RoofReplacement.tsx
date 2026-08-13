@@ -499,6 +499,19 @@ const RoofReplacement = () => {
           </div>
         </section>
 
+        {/* ─── REVIEWS ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <AttributedReviews category="roofing" heading="What homeowners say about our roof replacement work" />
+          </div>
+        </section>
+
+        <ConsultationCTA
+          heading="See the work, then get your own scope."
+          subline="We'll walk your roof, document conditions with photos, and hand you a written replacement plan."
+          label="Book My Replacement Consultation"
+        />
+
         {/* ─── FAQS ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
