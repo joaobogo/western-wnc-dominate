@@ -20,6 +20,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostOfWaiting from "@/components/conversion/CostOfWaiting";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -541,6 +542,7 @@ const RoofRepair = () => {
       </main>
 
       <RealWorkWidget />
+        <CostOfWaiting variant="repair" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="roof repair" />
         <SchedulingReality serviceLabel="roof repair" />

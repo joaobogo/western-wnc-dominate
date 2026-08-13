@@ -14,6 +14,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import RelatedLinks from "@/components/RelatedLinks";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostOfWaiting from "@/components/conversion/CostOfWaiting";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -176,6 +177,7 @@ const Gutters = () => {
         </section>
 
         {/* ─── REQUEST ASSESSMENT ─── */}
+        <CostOfWaiting variant="gutters" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="gutter" />
         <SchedulingReality serviceLabel="gutter" />
