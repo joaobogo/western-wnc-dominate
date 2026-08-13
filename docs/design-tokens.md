@@ -138,3 +138,26 @@ Use `<Field>` from `src/components/forms/Field.tsx` to get label, help, error an
 aria wiring in one place, and spread a `fieldAttrs.*` preset on every control for
 the correct `inputmode`, `autocomplete` and `enterkeyhint`. Validate on blur, and
 render a single `<FormErrorSummary>` at the top of the form on submit.
+
+## Motion language
+
+One system, defined in `src/lib/motion.ts`.
+
+| Token | Value | Use |
+| --- | --- | --- |
+| `DURATION.fast` | 200ms | Hovers, small state changes |
+| `DURATION.base` | 300ms | Menus, dropdowns, toggles |
+| `DURATION.slow` | 400ms | Section entrances, overlays |
+| `EASE_OUT` | `[0.16, 1, 0.3, 1]` | Every interface transition |
+
+Rules:
+
+1. Nothing exceeds 400ms, and no entrance delay exceeds 300ms.
+2. Section entrances use `fadeRise` (opacity 0 → 1, y 16 → 0), `once: true`.
+   Grids use `fadeRiseStagger(index)`; stagger is capped at 4 steps.
+3. The LCP element never animates. The homepage hero H1, subheading and CTAs
+   render at first paint — only decorative chrome around them animates.
+4. `prefers-reduced-motion` is honoured twice: a global CSS kill-switch in
+   `src/index.css` and `<MotionConfig reducedMotion="user">` in `App.tsx`.
+5. Looping animations (typing dots, spinners) are exempt from the 400ms cap
+   but must stay subtle and pause under reduced motion.
