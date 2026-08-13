@@ -119,7 +119,7 @@ const ServiceAreas = () => {
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 + i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
-                        className="rounded-sm border border-white/25 bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-xl p-4 md:p-5 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.65)]"
+                        className="rounded-sm border border-white/25 bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-xl p-4 md:p-5 shadow-floating"
                       >
                         <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none block mb-2">{stat.value}</span>
                         <span className="text-body-xs font-heading font-bold text-white block uppercase tracking-[0.12em] mb-1.5">{stat.label}</span>
@@ -162,7 +162,7 @@ const ServiceAreas = () => {
                 >
                   <Link
                     to={`/service-areas/${town.slug}`}
-                    className="group block bg-card border border-border p-6 md:p-8 hover:border-primary/25 hover:shadow-[0_8px_30px_-8px_hsl(var(--heritage-green)/0.08)] transition-all duration-300 relative overflow-hidden"
+                    className="group block bg-card border border-border p-6 md:p-8 hover:border-primary/25 hover:shadow-raised transition-all duration-300 relative overflow-hidden"
                   >
                     <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-primary/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="flex items-start justify-between gap-3 mb-4 flex-wrap">

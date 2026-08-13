@@ -326,7 +326,7 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <button
                       onClick={() => handleDivision("roofing")}
-                      className="group text-left p-6 md:p-8 border border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_30px_-8px_hsl(var(--heritage-green)/0.1)] transition-all duration-300"
+                      className="group text-left p-6 md:p-8 border border-border bg-card hover:border-primary/30 hover:shadow-raised transition-all duration-300"
                     >
                       <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
                         <Home className="w-6 h-6 text-primary" />
@@ -341,7 +341,7 @@ export default function Contact() {
                     </button>
                     <button
                       onClick={() => handleDivision("construction")}
-                      className="group text-left p-6 md:p-8 border border-border bg-card hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_8px_30px_-8px_hsl(var(--highland-gold)/0.1)] transition-all duration-300"
+                      className="group text-left p-6 md:p-8 border border-border bg-card hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-raised transition-all duration-300"
                     >
                       <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
                         <HardHat className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
