@@ -26,6 +26,12 @@ const roofingData = {
   badge: "Est. 2017",
   title: "Mountain-Grade Roofing",
   subtitle: "Our Foundation",
+  promise: "We keep water out of mountain homes with systems specified for your elevation, wind zone, and moisture exposure.",
+  links: [
+    { name: "Roof Repair", href: "/roofing/roof-repair", note: "Leaks and storm damage" },
+    { name: "Roof Replacement", href: "/roofing/roof-replacement", note: "Full tear-off and rebuild" },
+    { name: "Metal Roofing", href: "/roofing/metal", note: "Standing seam systems" },
+  ],
   description: "Every material specified for your elevation, wind zone, and moisture exposure. Installed by crews who've spent their careers on WNC ridgelines.",
   stats: [
     { value: "4.9★", label: "Google Rating" },
@@ -51,6 +57,12 @@ const constructionData = {
   badge: "Licensed GC",
   title: "Premium Home Construction",
   subtitle: "Our Craftsmanship",
+  promise: "We add and rebuild living space on mountain lots with one licensed contractor holding the schedule and the scope.",
+  links: [
+    { name: "Home Additions", href: "/construction/additions", note: "More space, built on" },
+    { name: "Outdoor Living", href: "/construction/outdoor-living", note: "Decks and porches" },
+    { name: "Renovations", href: "/construction/renovations", note: "Kitchens, baths, whole-home" },
+  ],
   description: "Additions, outdoor living, and whole-home renovations. We treat every construction project with the same structural precision as our roofing division, ensuring your investment is built to last in the WNC environment.",
   stats: [
     { value: "GC", label: " Licensed Contractor" },
@@ -76,6 +88,12 @@ const designData = {
   badge: "Pre-Con Support",
   title: "Design",
   subtitle: "Our Intelligence",
+  promise: "We map the project before the first board is cut so the scope, plan, and budget are settled up front.",
+  links: [
+    { name: "Layouts & Planning", href: "/layouts-planning", note: "Floor plans and feasibility" },
+    { name: "Design Services", href: "/construction/design", note: "Pre-construction detail" },
+    { name: "Talk It Through", href: "/construction/consultation", note: "Scope your build" },
+  ],
   description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and protect design integrity end-to-end.",
   stats: [
     { value: "100%", label: " Pre-Con Clarity" },
