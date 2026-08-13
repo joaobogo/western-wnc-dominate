@@ -224,7 +224,7 @@ const Hero = () => {
         textLed ? "items-start pt-[38svh] md:pt-0" : "items-center md:items-end"
       }`}>
         <div className={`w-full px-5 md:px-10 lg:px-20 hero-clears-header ${
-          textLed ? "pt-6 md:pt-10 pb-12 md:pb-20 md:max-w-[52%]" : "pb-10 md:pb-44"
+          textLed ? "pt-6 md:pt-16 pb-12 md:pb-20 md:max-w-[52%]" : "pb-10 md:pb-44"
         }`}>
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
