@@ -42,3 +42,26 @@ Single source of truth: `src/index.css` (`:root` / `.dark`), surfaced to Tailwin
 4. Radius is a single token (`--radius`, currently `0rem`); shadows come from the `shadow-*` utilities in `index.css`.
 5. `text-white` / `bg-white` remain allowed **only** over photography/dark hero overlays where the color is
    fixed by the image, not by the theme.
+
+## Spacing rhythm (8pt)
+
+All vertical rhythm is a multiple of 8px, expressed through three section densities:
+
+| Density | Mobile | Tablet | Desktop | Utility |
+| --- | --- | --- | --- | --- |
+| compact | 32 | 48 | 64 | `.section-compact` |
+| default | 48 | 80 | 96 | `.section-default` (`.section-padding` alias) |
+| feature | 64 | 112 | 128 | `.section-feature` |
+
+Horizontal gutters: 16 / 24 / 32 via `.container-rhythm`.
+Stack gaps: `.stack-sm` 16, `.stack-md` 24, `.stack-lg` 32, `.stack-xl` 48.
+Card interiors: `.card-pad` = 24 mobile / 32 desktop.
+
+Use `<Section>` (`src/components/layout/Section.tsx`) instead of hand-rolled
+`<section class="py-…"><div class="container-…">` markup:
+
+```tsx
+<Section density="feature" width="tight" className="bg-background">…</Section>
+```
+
+Widths: `narrow` max-w-3xl · `tight` max-w-4xl · `wide` max-w-6xl · `full`.

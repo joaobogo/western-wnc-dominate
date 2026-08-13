@@ -10,6 +10,7 @@ import { useFormAutosave } from "@/hooks/use-form-autosave";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
+import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
@@ -284,418 +285,416 @@ export default function Contact() {
         <ContactChannels />
 
         {/* ── GUIDED CONCIERGE FLOW ── */}
-        <section id="contact-form" className="section-padding bg-background scroll-mt-24">
-          <div className="container-tight">
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-14">
-              {/* Left: form area */}
-              <div className="lg:col-span-7">
-                {/* Progress indicator */}
-                <div className="flex items-center flex-wrap gap-x-2 gap-y-2 mb-8">
-                  {["Division", "Service", "Your Details"].map((label, i) => {
-                    const stepIdx = i;
-                    const currentIdx = step === "division" ? 0 : step === "service" ? 1 : step === "details" ? 2 : 3;
-                    return (
-                      <div key={label} className="flex items-center gap-2">
-                        <div className={`w-7 h-7 rounded-full flex items-center justify-center text-caption font-heading font-bold transition-colors ${
-                          stepIdx <= currentIdx ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"
-                        }`}>
-                          {stepIdx < currentIdx ? <CheckCircle className="w-3.5 h-3.5" /> : stepIdx + 1}
-                        </div>
-                        <span className={`text-caption font-body font-semibold uppercase tracking-wider ${
-                          stepIdx <= currentIdx ? "text-foreground" : "text-muted-foreground"
-                        }`}>{label}</span>
-                        {i < 2 && <div className="hidden sm:block w-8 h-px bg-border mx-1" />}
+        <Section id="contact-form" density="default" width="wide" className="bg-background scroll-mt-24">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-14">
+            {/* Left: form area */}
+            <div className="lg:col-span-7">
+              {/* Progress indicator */}
+              <div className="flex items-center flex-wrap gap-x-2 gap-y-2 mb-8">
+                {["Division", "Service", "Your Details"].map((label, i) => {
+                  const stepIdx = i;
+                  const currentIdx = step === "division" ? 0 : step === "service" ? 1 : step === "details" ? 2 : 3;
+                  return (
+                    <div key={label} className="flex items-center gap-2">
+                      <div className={`w-7 h-7 rounded-full flex items-center justify-center text-caption font-heading font-bold transition-colors ${
+                        stepIdx <= currentIdx ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"
+                      }`}>
+                        {stepIdx < currentIdx ? <CheckCircle className="w-3.5 h-3.5" /> : stepIdx + 1}
                       </div>
-                    );
-                  })}
-                </div>
-
-                {/* Step 1: Division selection */}
-                {step === "division" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
-                  >
-                    <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
-                      What type of project are you considering?
-                    </h2>
-                    <p className="text-muted-foreground text-sm font-body mb-8">
-                      Select the division that best matches your project so we can connect you with the right advisor.
-                    </p>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <button
-                        onClick={() => handleDivision("roofing")}
-                        className="group text-left p-6 md:p-8 border border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_30px_-8px_hsl(var(--heritage-green)/0.1)] transition-all duration-300"
-                      >
-                        <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                          <Home className="w-6 h-6 text-primary" />
-                        </div>
-                        <h3 className="font-heading font-bold text-lg text-foreground mb-2">Roofing</h3>
-                        <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">
-                          Roof replacement, repair, storm damage, metal roofing, commercial systems, and specialty installations.
-                        </p>
-                        <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
-                          Select Roofing <ArrowRight className="w-3.5 h-3.5" />
-                        </span>
-                      </button>
-                      <button
-                        onClick={() => handleDivision("construction")}
-                        className="group text-left p-6 md:p-8 border border-border bg-card hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_8px_30px_-8px_hsl(var(--highland-gold)/0.1)] transition-all duration-300"
-                      >
-                        <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
-                          <HardHat className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
-                        </div>
-                        <h3 className="font-heading font-bold text-lg text-foreground mb-2">Construction</h3>
-                        <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">
-                          Home additions, renovations, outdoor living, exterior improvements, and custom construction projects.
-                        </p>
-                        <span className="inline-flex items-center gap-1.5 text-[hsl(var(--gold-ink))] font-semibold text-sm group-hover:gap-2.5 transition-all">
-                          Select Construction <ArrowRight className="w-3.5 h-3.5" />
-                        </span>
-                      </button>
+                      <span className={`text-caption font-body font-semibold uppercase tracking-wider ${
+                        stepIdx <= currentIdx ? "text-foreground" : "text-muted-foreground"
+                      }`}>{label}</span>
+                      {i < 2 && <div className="hidden sm:block w-8 h-px bg-border mx-1" />}
                     </div>
-                    <p className="text-muted-foreground text-xs font-body mt-4 text-center">
-                      Not sure? Select either option — we'll route you to the right team.
-                    </p>
-                  </motion.div>
-                )}
-
-                {/* Step 2: Service selection */}
-                {step === "service" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
-                  >
-                    <button onClick={() => setStep("division")} className="flex items-center gap-1.5 text-sm text-muted-foreground font-body mb-6 hover:text-foreground transition-colors">
-                      <ArrowLeft className="w-3.5 h-3.5" /> Back to divisions
-                    </button>
-                    <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
-                      What best describes your {division === "roofing" ? "roofing" : "construction"} project?
-                    </h2>
-                    <p className="text-muted-foreground text-sm font-body mb-8">
-                      This helps us prepare for a more productive conversation.
-                    </p>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      {(division === "roofing" ? roofingServices : constructionServices).map((s) => (
-                        <button
-                          key={s.value}
-                          onClick={() => handleService(s.value)}
-                          className={`group text-left p-4 border rounded-sm transition-all duration-200 ${
-                            service === s.value
-                              ? "border-primary bg-primary/5"
-                              : "border-border bg-card hover:border-primary/20"
-                          }`}
-                        >
-                          <s.icon className={`w-5 h-5 mb-2 ${
-                            service === s.value ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
-                          } transition-colors`} />
-                          <p className="font-heading font-semibold text-sm text-foreground">{s.label}</p>
-                        </button>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Step 3: Details form */}
-                {step === "details" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
-                  >
-                    <button onClick={() => setStep("service")} className="flex items-center gap-1.5 text-sm text-muted-foreground font-body mb-6 hover:text-foreground transition-colors">
-                      <ArrowLeft className="w-3.5 h-3.5" /> Back to services
-                    </button>
-                    <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
-                      Tell us a bit about yourself & your project.
-                    </h2>
-                    <p className="text-muted-foreground text-sm font-body mb-8">
-                      The more detail you share, the more prepared we'll be when we reach out.
-                    </p>
-
-                    <form onSubmit={handleSubmit} className="space-y-6" data-hide-sticky>
-                      {/* Name & Email */}
-                      <div className="grid sm:grid-cols-2 gap-5">
-                        <div>
-                          <label htmlFor="cc-name" className={labelClasses}>Your Name *</label>
-                          <input
-                            id="cc-name"
-                            {...fieldAttrs.name}
-                            value={form.name}
-                            onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
-                            onBlur={() => contact.blur("name")}
-                            aria-invalid={Boolean(contact.errorFor("name")) || undefined}
-                            placeholder="e.g. John and Mary Davidson"
-                            className={inputClasses}
-                            required
-                            maxLength={100}
-                          />
-                          <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
-                        </div>
-                        <div>
-                          <label htmlFor="cc-email" className={labelClasses}>Email *</label>
-                          <input
-                            id="cc-email"
-                            {...fieldAttrs.email}
-                            value={form.email}
-                            onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
-                            onBlur={() => contact.blur("email")}
-                            aria-invalid={Boolean(contact.errorFor("email")) || undefined}
-                            placeholder="you@email.com"
-                            className={inputClasses}
-                            required
-                            maxLength={255}
-                          />
-                          <InlineFieldError>{contact.errorFor("email")}</InlineFieldError>
-                        </div>
-                      </div>
-
-                      {/* Phone */}
-                      <div>
-                        <label htmlFor="cc-phone" className={labelClasses}>
-                          Phone <span className="normal-case tracking-normal font-normal text-muted-foreground">— recommended</span>
-                        </label>
-                        <input
-                          id="cc-phone"
-                          {...fieldAttrs.phone}
-                          value={form.phone}
-                          onChange={(e) => setForm((p) => ({ ...p, phone: contact.formatPhoneInput(e.target.value) }))}
-                          onBlur={() => contact.blur("phone")}
-                          aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
-                          placeholder="(828) 555-0123"
-                          className={inputClasses}
-                          maxLength={20}
-                        />
-                        <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
-                      </div>
-
-                      {/* Project address or town */}
-                      <div>
-                        <label htmlFor="cc-town" className={labelClasses}>
-                          Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground">— recommended</span>
-                        </label>
-                        <input
-                          id="cc-town"
-                          {...fieldAttrs.address}
-                          value={form.town}
-                          onChange={(e) => setForm((p) => ({ ...p, town: e.target.value }))}
-                          onBlur={() => contact.blur("town")}
-                          aria-invalid={Boolean(contact.errorFor("town")) || undefined}
-                          placeholder="e.g. Highlands, Cashiers, Franklin, or full street address"
-                          className={inputClasses}
-                          maxLength={150}
-                        />
-                        <InlineFieldError>{contact.errorFor("town")}</InlineFieldError>
-                        <p className="mt-1.5 text-caption text-muted-foreground font-body">
-                          Helps us route your inquiry to the closest Highlander office and crew.
-                        </p>
-                      </div>
-
-                      {/* Timeline */}
-                      <div>
-                        <label className={labelClasses}>Project Timeline</label>
-                        <div className="flex flex-wrap gap-2">
-                          {timelines.map((t) => (
-                            <button
-                              key={t}
-                              type="button"
-                              onClick={() => setTimeline(t)}
-                              className={`px-3.5 py-2 rounded-sm text-xs font-body font-semibold transition-all ${
-                                timeline === t
-                                  ? "bg-primary text-primary-foreground"
-                                  : "border border-border text-muted-foreground hover:border-primary/20 hover:text-foreground"
-                              }`}
-                            >
-                              {t}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Preferred contact */}
-                      <div>
-                        <label className={labelClasses}>Preferred Contact Method</label>
-                        <div className="flex gap-3">
-                          {contactMethods.map((m) => (
-                            <button
-                              key={m.value}
-                              type="button"
-                              onClick={() => setPreferredContact(m.value)}
-                              className={`px-4 py-2.5 rounded-sm text-xs font-body font-semibold transition-all ${
-                                preferredContact === m.value
-                                  ? "bg-primary text-primary-foreground"
-                                  : "border border-border text-muted-foreground hover:border-primary/20"
-                              }`}
-                            >
-                              {m.label}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      <FormSavedNote show={autosave.restored} />
-
-                      {/* Message */}
-                      <div>
-                        <label htmlFor="cc-msg" className={labelClasses}>
-                          Project Details <span className="normal-case tracking-normal font-normal text-muted-foreground">— optional</span>
-                        </label>
-                        <textarea
-                          id="cc-msg"
-                          {...fieldAttrs.notes}
-                          value={form.message}
-                          onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
-                          placeholder="Tell us about your property, project goals, budget range, or anything else that would help us prepare for our conversation."
-                          rows={4}
-                          className={`${inputClasses} resize-none`}
-                          maxLength={2000}
-                        />
-                      </div>
-
-                      <FormErrorSummary message={submitError} issues={issues} />
-                      <WhatHappensNext className="mt-1" />
-
-                      <div className="flex items-center justify-between pt-2">
-                        <p className="text-caption text-muted-foreground font-body">
-                          Personal response within 24 hours.
-                        </p>
-                        <button
-                          type="submit"
-                          disabled={isSubmitting}
-                          className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-                        >
-                          {isSubmitting ? microcopy.loading.submitting : "Start the Conversation"}
-                          {!isSubmitting && <ArrowRight className="w-4 h-4" />}
-                        </button>
-                      </div>
-                      <FormConsent />
-                    </form>
-                  </motion.div>
-                )}
-
-                {/* Success */}
-                {step === "success" && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
-                    className="py-10"
-                  >
-                    <LeadConfirmationPanel
-                      heading={`Thank you, ${form.name.split(" ")[0] || "friend"} — your request is in.`}
-                      town={form.town}
-                      category={division === "roofing" ? "roofing" : "construction"}
-                      summary={[
-                        { label: "Division", value: division === "roofing" ? "Roofing" : "Construction" },
-                        { label: "Service", value: service.replace(/-/g, " ") },
-                        { label: "Timeline", value: timeline },
-                        { label: "Town", value: form.town },
-                        { label: "Preferred contact", value: preferredContact },
-                      ]}
-                    />
-                  </motion.div>
-                )}
+                  );
+                })}
               </div>
 
-              {/* Right: trust sidebar */}
-              <div className="lg:col-span-5">
+              {/* Step 1: Division selection */}
+              {step === "division" && (
                 <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1, duration: 0.6, ease: HIGHLAND_EASE }}
-                  className="lg:sticky lg:top-28"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                 >
-                  {/* Proof beside the CTA: real project, credentials, local review, response time */}
-                  <ConversionTrustBlock
-                    category={division === "roofing" ? "roofing" : "construction"}
-                    town={form.town.split(",")[0].trim() || undefined}
-                    className="mb-6"
-                  />
-
-                  {/* Trust signals */}
-                  <div className="border border-border bg-card p-6 md:p-7 mb-6">
-                    <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-5">Why Homeowners Trust Highlander</h3>
-                    <div className="space-y-4">
-                      {TRUST_POINTS.map((t, i) => (
-                        <motion.div
-                          key={t.text}
-                          initial={{ opacity: 0, x: -8 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.15 + i * 0.06, duration: 0.4 }}
-                          className="flex items-center gap-3"
-                        >
-                          <div className="w-8 h-8 bg-accent/8 flex items-center justify-center flex-shrink-0">
-                            <t.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]/60" />
-                          </div>
-                          <span className="text-sm text-muted-foreground font-body">{t.text}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Offices */}
-                  <div className="border border-border bg-card p-6 md:p-7 mb-6">
-                    <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-5">Our Offices</h3>
-                    <div className="space-y-5">
-                      {OFFICES.map((office) => (
-                        <div key={office.name} className="flex items-start gap-3">
-                          <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="text-sm font-heading font-semibold text-foreground">{office.name}</p>
-                            <p className="text-xs text-muted-foreground font-body">{office.address}</p>
-                            <a href={`tel:${office.phone.replace(/[^0-9]/g, "")}`} className="inline-flex items-center min-h-[44px] text-xs text-primary font-body hover:underline">{office.phone}</a>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-5 pt-5 border-t border-border">
-                      <div className="flex items-start gap-3">
-                        <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-sm font-heading font-semibold text-foreground">Reaching Us</p>
-                          <p className="text-xs text-muted-foreground font-body">Our own team handles calls during working hours. Leave a message if we&apos;re on a roof.</p>
-                          <p className="text-xs text-[hsl(var(--gold-ink))] font-body font-semibold">Every inquiry answered within 24 hours</p>
-                        </div>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
+                    What type of project are you considering?
+                  </h2>
+                  <p className="text-muted-foreground text-sm font-body mb-8">
+                    Select the division that best matches your project so we can connect you with the right advisor.
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <button
+                      onClick={() => handleDivision("roofing")}
+                      className="group text-left p-6 md:p-8 border border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_30px_-8px_hsl(var(--heritage-green)/0.1)] transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
+                        <Home className="w-6 h-6 text-primary" />
                       </div>
-                    </div>
+                      <h3 className="font-heading font-bold text-lg text-foreground mb-2">Roofing</h3>
+                      <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">
+                        Roof replacement, repair, storm damage, metal roofing, commercial systems, and specialty installations.
+                      </p>
+                      <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
+                        Select Roofing <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </button>
+                    <button
+                      onClick={() => handleDivision("construction")}
+                      className="group text-left p-6 md:p-8 border border-border bg-card hover:border-[hsl(var(--highland-gold)/0.3)] hover:shadow-[0_8px_30px_-8px_hsl(var(--highland-gold)/0.1)] transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                        <HardHat className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
+                      </div>
+                      <h3 className="font-heading font-bold text-lg text-foreground mb-2">Construction</h3>
+                      <p className="text-muted-foreground text-sm font-body leading-relaxed mb-4">
+                        Home additions, renovations, outdoor living, exterior improvements, and custom construction projects.
+                      </p>
+                      <span className="inline-flex items-center gap-1.5 text-[hsl(var(--gold-ink))] font-semibold text-sm group-hover:gap-2.5 transition-all">
+                        Select Construction <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </button>
                   </div>
+                  <p className="text-muted-foreground text-xs font-body mt-4 text-center">
+                    Not sure? Select either option — we'll route you to the right team.
+                  </p>
+                </motion.div>
+              )}
 
-                  {/* Direct options */}
-                  <div className="border border-border bg-secondary/30 p-6 md:p-7">
-                    <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Prefer to Connect Directly?</h3>
-                    <div className="space-y-3">
-                  <a href="tel:+18285247773" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
-                        <Phone className="w-4 h-4 text-primary" />
-                        <div>
-                          <p className="text-sm font-heading font-semibold text-foreground">(828) 524-7773</p>
-                          <p className="text-caption text-muted-foreground font-body">Call — a real person answers</p>
-                        </div>
-                      </a>
-                      <a href="mailto:info@highlandernc.com" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
-                        <Mail className="w-4 h-4 text-primary" />
-                        <div>
-                          <p className="text-sm font-heading font-semibold text-foreground">info@highlandernc.com</p>
-                          <p className="text-caption text-muted-foreground font-body">Email — reply rapidly</p>
-                        </div>
-                      </a>
-                      <Link to="/consultation" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-accent/20 transition-all">
-                        <CalendarCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-                        <div>
-                          <p className="text-sm font-heading font-semibold text-foreground">Guided Consultation</p>
-                          <p className="text-caption text-muted-foreground font-body">More detailed project discovery flow</p>
-                        </div>
-                      </Link>
-                    </div>
+              {/* Step 2: Service selection */}
+              {step === "service" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
+                >
+                  <button onClick={() => setStep("division")} className="flex items-center gap-1.5 text-sm text-muted-foreground font-body mb-6 hover:text-foreground transition-colors">
+                    <ArrowLeft className="w-3.5 h-3.5" /> Back to divisions
+                  </button>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
+                    What best describes your {division === "roofing" ? "roofing" : "construction"} project?
+                  </h2>
+                  <p className="text-muted-foreground text-sm font-body mb-8">
+                    This helps us prepare for a more productive conversation.
+                  </p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {(division === "roofing" ? roofingServices : constructionServices).map((s) => (
+                      <button
+                        key={s.value}
+                        onClick={() => handleService(s.value)}
+                        className={`group text-left p-4 border rounded-sm transition-all duration-200 ${
+                          service === s.value
+                            ? "border-primary bg-primary/5"
+                            : "border-border bg-card hover:border-primary/20"
+                        }`}
+                      >
+                        <s.icon className={`w-5 h-5 mb-2 ${
+                          service === s.value ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
+                        } transition-colors`} />
+                        <p className="font-heading font-semibold text-sm text-foreground">{s.label}</p>
+                      </button>
+                    ))}
                   </div>
                 </motion.div>
-              </div>
+              )}
+
+              {/* Step 3: Details form */}
+              {step === "details" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
+                >
+                  <button onClick={() => setStep("service")} className="flex items-center gap-1.5 text-sm text-muted-foreground font-body mb-6 hover:text-foreground transition-colors">
+                    <ArrowLeft className="w-3.5 h-3.5" /> Back to services
+                  </button>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
+                    Tell us a bit about yourself & your project.
+                  </h2>
+                  <p className="text-muted-foreground text-sm font-body mb-8">
+                    The more detail you share, the more prepared we'll be when we reach out.
+                  </p>
+
+                  <form onSubmit={handleSubmit} className="space-y-6" data-hide-sticky>
+                    {/* Name & Email */}
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="cc-name" className={labelClasses}>Your Name *</label>
+                        <input
+                          id="cc-name"
+                          {...fieldAttrs.name}
+                          value={form.name}
+                          onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
+                          onBlur={() => contact.blur("name")}
+                          aria-invalid={Boolean(contact.errorFor("name")) || undefined}
+                          placeholder="e.g. John and Mary Davidson"
+                          className={inputClasses}
+                          required
+                          maxLength={100}
+                        />
+                        <InlineFieldError>{contact.errorFor("name")}</InlineFieldError>
+                      </div>
+                      <div>
+                        <label htmlFor="cc-email" className={labelClasses}>Email *</label>
+                        <input
+                          id="cc-email"
+                          {...fieldAttrs.email}
+                          value={form.email}
+                          onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                          onBlur={() => contact.blur("email")}
+                          aria-invalid={Boolean(contact.errorFor("email")) || undefined}
+                          placeholder="you@email.com"
+                          className={inputClasses}
+                          required
+                          maxLength={255}
+                        />
+                        <InlineFieldError>{contact.errorFor("email")}</InlineFieldError>
+                      </div>
+                    </div>
+
+                    {/* Phone */}
+                    <div>
+                      <label htmlFor="cc-phone" className={labelClasses}>
+                        Phone <span className="normal-case tracking-normal font-normal text-muted-foreground">— recommended</span>
+                      </label>
+                      <input
+                        id="cc-phone"
+                        {...fieldAttrs.phone}
+                        value={form.phone}
+                        onChange={(e) => setForm((p) => ({ ...p, phone: contact.formatPhoneInput(e.target.value) }))}
+                        onBlur={() => contact.blur("phone")}
+                        aria-invalid={Boolean(contact.errorFor("phone")) || undefined}
+                        placeholder="(828) 555-0123"
+                        className={inputClasses}
+                        maxLength={20}
+                      />
+                      <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
+                    </div>
+
+                    {/* Project address or town */}
+                    <div>
+                      <label htmlFor="cc-town" className={labelClasses}>
+                        Project Address or Town <span className="normal-case tracking-normal font-normal text-muted-foreground">— recommended</span>
+                      </label>
+                      <input
+                        id="cc-town"
+                        {...fieldAttrs.address}
+                        value={form.town}
+                        onChange={(e) => setForm((p) => ({ ...p, town: e.target.value }))}
+                        onBlur={() => contact.blur("town")}
+                        aria-invalid={Boolean(contact.errorFor("town")) || undefined}
+                        placeholder="e.g. Highlands, Cashiers, Franklin, or full street address"
+                        className={inputClasses}
+                        maxLength={150}
+                      />
+                      <InlineFieldError>{contact.errorFor("town")}</InlineFieldError>
+                      <p className="mt-1.5 text-caption text-muted-foreground font-body">
+                        Helps us route your inquiry to the closest Highlander office and crew.
+                      </p>
+                    </div>
+
+                    {/* Timeline */}
+                    <div>
+                      <label className={labelClasses}>Project Timeline</label>
+                      <div className="flex flex-wrap gap-2">
+                        {timelines.map((t) => (
+                          <button
+                            key={t}
+                            type="button"
+                            onClick={() => setTimeline(t)}
+                            className={`px-3.5 py-2 rounded-sm text-xs font-body font-semibold transition-all ${
+                              timeline === t
+                                ? "bg-primary text-primary-foreground"
+                                : "border border-border text-muted-foreground hover:border-primary/20 hover:text-foreground"
+                            }`}
+                          >
+                            {t}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Preferred contact */}
+                    <div>
+                      <label className={labelClasses}>Preferred Contact Method</label>
+                      <div className="flex gap-3">
+                        {contactMethods.map((m) => (
+                          <button
+                            key={m.value}
+                            type="button"
+                            onClick={() => setPreferredContact(m.value)}
+                            className={`px-4 py-2.5 rounded-sm text-xs font-body font-semibold transition-all ${
+                              preferredContact === m.value
+                                ? "bg-primary text-primary-foreground"
+                                : "border border-border text-muted-foreground hover:border-primary/20"
+                            }`}
+                          >
+                            {m.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <FormSavedNote show={autosave.restored} />
+
+                    {/* Message */}
+                    <div>
+                      <label htmlFor="cc-msg" className={labelClasses}>
+                        Project Details <span className="normal-case tracking-normal font-normal text-muted-foreground">— optional</span>
+                      </label>
+                      <textarea
+                        id="cc-msg"
+                        {...fieldAttrs.notes}
+                        value={form.message}
+                        onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
+                        placeholder="Tell us about your property, project goals, budget range, or anything else that would help us prepare for our conversation."
+                        rows={4}
+                        className={`${inputClasses} resize-none`}
+                        maxLength={2000}
+                      />
+                    </div>
+
+                    <FormErrorSummary message={submitError} issues={issues} />
+                    <WhatHappensNext className="mt-1" />
+
+                    <div className="flex items-center justify-between pt-2">
+                      <p className="text-caption text-muted-foreground font-body">
+                        Personal response within 24 hours.
+                      </p>
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-3.5 inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                      >
+                        {isSubmitting ? microcopy.loading.submitting : "Start the Conversation"}
+                        {!isSubmitting && <ArrowRight className="w-4 h-4" />}
+                      </button>
+                    </div>
+                    <FormConsent />
+                  </form>
+                </motion.div>
+              )}
+
+              {/* Success */}
+              {step === "success" && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+                  className="py-10"
+                >
+                  <LeadConfirmationPanel
+                    heading={`Thank you, ${form.name.split(" ")[0] || "friend"} — your request is in.`}
+                    town={form.town}
+                    category={division === "roofing" ? "roofing" : "construction"}
+                    summary={[
+                      { label: "Division", value: division === "roofing" ? "Roofing" : "Construction" },
+                      { label: "Service", value: service.replace(/-/g, " ") },
+                      { label: "Timeline", value: timeline },
+                      { label: "Town", value: form.town },
+                      { label: "Preferred contact", value: preferredContact },
+                    ]}
+                  />
+                </motion.div>
+              )}
+            </div>
+
+            {/* Right: trust sidebar */}
+            <div className="lg:col-span-5">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.6, ease: HIGHLAND_EASE }}
+                className="lg:sticky lg:top-28"
+              >
+                {/* Proof beside the CTA: real project, credentials, local review, response time */}
+                <ConversionTrustBlock
+                  category={division === "roofing" ? "roofing" : "construction"}
+                  town={form.town.split(",")[0].trim() || undefined}
+                  className="mb-6"
+                />
+
+                {/* Trust signals */}
+                <div className="border border-border bg-card p-6 md:p-7 mb-6">
+                  <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-5">Why Homeowners Trust Highlander</h3>
+                  <div className="space-y-4">
+                    {TRUST_POINTS.map((t, i) => (
+                      <motion.div
+                        key={t.text}
+                        initial={{ opacity: 0, x: -8 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.15 + i * 0.06, duration: 0.4 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className="w-8 h-8 bg-accent/8 flex items-center justify-center flex-shrink-0">
+                          <t.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]/60" />
+                        </div>
+                        <span className="text-sm text-muted-foreground font-body">{t.text}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Offices */}
+                <div className="border border-border bg-card p-6 md:p-7 mb-6">
+                  <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-5">Our Offices</h3>
+                  <div className="space-y-5">
+                    {OFFICES.map((office) => (
+                      <div key={office.name} className="flex items-start gap-3">
+                        <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-heading font-semibold text-foreground">{office.name}</p>
+                          <p className="text-xs text-muted-foreground font-body">{office.address}</p>
+                          <a href={`tel:${office.phone.replace(/[^0-9]/g, "")}`} className="inline-flex items-center min-h-[44px] text-xs text-primary font-body hover:underline">{office.phone}</a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-5 pt-5 border-t border-border">
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="text-sm font-heading font-semibold text-foreground">Reaching Us</p>
+                        <p className="text-xs text-muted-foreground font-body">Our own team handles calls during working hours. Leave a message if we&apos;re on a roof.</p>
+                        <p className="text-xs text-[hsl(var(--gold-ink))] font-body font-semibold">Every inquiry answered within 24 hours</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Direct options */}
+                <div className="border border-border bg-secondary/30 p-6 md:p-7">
+                  <h3 className="text-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Prefer to Connect Directly?</h3>
+                  <div className="space-y-3">
+                <a href="tel:+18285247773" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
+                      <Phone className="w-4 h-4 text-primary" />
+                      <div>
+                        <p className="text-sm font-heading font-semibold text-foreground">(828) 524-7773</p>
+                        <p className="text-caption text-muted-foreground font-body">Call — a real person answers</p>
+                      </div>
+                    </a>
+                    <a href="mailto:info@highlandernc.com" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all">
+                      <Mail className="w-4 h-4 text-primary" />
+                      <div>
+                        <p className="text-sm font-heading font-semibold text-foreground">info@highlandernc.com</p>
+                        <p className="text-caption text-muted-foreground font-body">Email — reply rapidly</p>
+                      </div>
+                    </a>
+                    <Link to="/consultation" className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-accent/20 transition-all">
+                      <CalendarCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                      <div>
+                        <p className="text-sm font-heading font-semibold text-foreground">Guided Consultation</p>
+                        <p className="text-caption text-muted-foreground font-body">More detailed project discovery flow</p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
-        </section>
+        </Section>
 
         <ContactIdentity />
         <ServiceAreaMap />

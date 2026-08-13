@@ -506,8 +506,42 @@ img {
 }
 
 @layer components {
+  /* ──────────────────────────────────────
+     8PT VERTICAL RHYTHM
+     Three densities, every value a multiple of 8px.
+     compact 32/48/64 · default 48/80/96 · feature 64/112/128
+     ────────────────────────────────────── */
+  .section-compact {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+
+  .section-default {
+    @apply py-12 md:py-20 lg:py-24;
+  }
+
+  .section-feature {
+    @apply py-16 md:py-28 lg:py-32;
+  }
+
+  /* Horizontal gutters on the same scale: 16 / 24 / 32 */
+  .container-rhythm {
+    @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Stack gaps — 8pt steps */
+  .stack-sm > * + * { margin-top: 1rem; }
+  .stack-md > * + * { margin-top: 1.5rem; }
+  .stack-lg > * + * { margin-top: 2rem; }
+  .stack-xl > * + * { margin-top: 3rem; }
+
+  /* Card interior padding — 24 / 32 */
+  .card-pad {
+    @apply p-6 md:p-8;
+  }
+
+  /* Legacy alias — now resolves to the default density */
   .section-padding {
-    @apply px-6 py-12 md:px-10 md:py-24 lg:px-20 lg:py-28;
+    @apply px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24;
   }
 
   /* Safe bottom padding for sticky mobile CTA */
@@ -543,11 +577,11 @@ img {
   .section-dark {
     background: hsl(var(--dark-section));
     color: hsl(var(--dark-section-foreground));
-    @apply py-20 md:py-32;
+    @apply py-16 md:py-28 lg:py-32;
   }
 
   .container-tight {
-    @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8;
   }
 
   .cta-gradient {
@@ -1823,9 +1857,20 @@ div[style*="Edit with Lovable"],
   .card-premium { padding: 1.5rem !important; }
 
   /* Section vertical rhythm — a touch tighter on small phones */
-  .section-padding {
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
+  .section-padding,
+  .section-default {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .section-compact {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .section-feature {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
   }
 
   /* Cap arbitrary large image heights so cards aren't half-screen tall */

@@ -9,6 +9,7 @@ import {
   Wrench, MessageSquare, CalendarCheck, Sparkles, FileText
 } from "lucide-react";
 import SEOHead, { serviceSchema, faqSchema, breadcrumbSchema } from "@/components/SEOHead";
+import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
@@ -206,27 +207,25 @@ const ConstructionDivision = () => {
         />
 
         {/* ═══ OPENING STATEMENT — Bright, premium, reader-focused ═══ */}
-        <section className="section-padding bg-background relative overflow-hidden">
-          <div className="container-tight max-w-4xl">
-            <ScrollReveal variant="fade">
-              <div className="text-center">
-                <GoldLine width="3rem" className="mx-auto mb-8" />
-                <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
-                  Highlander builds more than structures. We build the mountain homes and outdoor spaces that define your WNC lifestyle—backed by a master-class standard of roofing authority and disciplined in-house design planning.
-                </h2>
-                <div className="max-w-2xl mx-auto space-y-6">
-                  <p className="text-foreground text-lg md:text-xl leading-relaxed font-body font-medium">
-                    Our Construction division serves homeowners who value meticulous planning and a design-first approach to mountain building.
-                  </p>
-                  <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body">
-                    We bridge the gap between design vision and buildable reality through our paid, three-phase <Link to="/construction/design" className="text-primary font-bold hover:underline">Design &amp; Consultation Agreement</Link>.
-                  </p>
-                </div>
-                <GoldLine width="3rem" className="mx-auto mt-10" delay={0.3} />
+        <Section density="default" width="tight" className="bg-background relative overflow-hidden">
+          <ScrollReveal variant="fade">
+            <div className="text-center">
+              <GoldLine width="3rem" className="mx-auto mb-8" />
+              <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
+                Highlander builds more than structures. We build the mountain homes and outdoor spaces that define your WNC lifestyle—backed by a master-class standard of roofing authority and disciplined in-house design planning.
+              </h2>
+              <div className="max-w-2xl mx-auto space-y-6">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed font-body font-medium">
+                  Our Construction division serves homeowners who value meticulous planning and a design-first approach to mountain building.
+                </p>
+                <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body">
+                  We bridge the gap between design vision and buildable reality through our paid, three-phase <Link to="/construction/design" className="text-primary font-bold hover:underline">Design &amp; Consultation Agreement</Link>.
+                </p>
               </div>
-            </ScrollReveal>
-          </div>
-        </section>
+              <GoldLine width="3rem" className="mx-auto mt-10" delay={0.3} />
+            </div>
+          </ScrollReveal>
+        </Section>
 
         {/* ═══ STANDARDS TRANSFER — Roofing credentials prove construction quality ═══ */}
         <section className="section-dark tartan-dark relative overflow-hidden">
@@ -283,68 +282,66 @@ const ConstructionDivision = () => {
         <DisciplinesBridge />
 
         {/* ═══ SERIOUS PROJECTS START WITH DESIGN — strategic intro to paid design program ═══ */}
-        <section className="section-padding bg-background relative overflow-hidden">
-          <div className="container-tight">
-            <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-              <ScrollReveal variant="fade" className="lg:col-span-7">
-                <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Design &amp; Consultation Program</span>
-                <h2 className="text-3xl md:text-4xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.1] mb-6 text-balance">
-                  Serious Projects Start<br className="hidden md:block" /> With Design.
-                </h2>
-                <p className="text-foreground/85 text-base md:text-lg leading-relaxed font-body mb-5">
-                  For additions, garages, porches, outdoor living spaces, remodels, and new construction, a reliable estimate starts with a clear scope. Highlander's in-house design services help homeowners move from early ideas to measured existing conditions, concept plans, realistic budget guidance, permit-ready drawings, and construction documents.
+        <Section density="default" width="wide" className="bg-background relative overflow-hidden">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            <ScrollReveal variant="fade" className="lg:col-span-7">
+              <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Design &amp; Consultation Program</span>
+              <h2 className="text-3xl md:text-4xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.1] mb-6 text-balance">
+                Serious Projects Start<br className="hidden md:block" /> With Design.
+              </h2>
+              <p className="text-foreground/85 text-base md:text-lg leading-relaxed font-body mb-5">
+                For additions, garages, porches, outdoor living spaces, remodels, and new construction, a reliable estimate starts with a clear scope. Highlander's in-house design services help homeowners move from early ideas to measured existing conditions, concept plans, realistic budget guidance, permit-ready drawings, and construction documents.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8">
+                <Link
+                  to="/construction/design"
+                  className="group cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 tracking-wide"
+                >
+                  Start with a Design Agreement
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/construction/design"
+                  className="group bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.6)] hover:text-[hsl(var(--gold-ink))] transition-all tracking-wide"
+                >
+                  View Design Services
+                </Link>
+              </div>
+              <div className="mt-6">
+                <FinancingTeaser serviceLabel="construction project" />
+              </div>
+              <div className="mt-8 flex items-start gap-3 p-4 border-l-2 border-[hsl(var(--highland-gold)/0.5)] bg-card/40">
+                <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
+                <p className="text-muted-foreground text-sm font-body leading-relaxed">
+                  Already have complete plans? Highlander can review them and determine whether your project is ready to move toward estimating.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8">
-                  <Link
-                    to="/construction/design"
-                    className="group cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 tracking-wide"
-                  >
-                    Start with a Design Agreement
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link
-                    to="/construction/design"
-                    className="group bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.6)] hover:text-[hsl(var(--gold-ink))] transition-all tracking-wide"
-                  >
-                    View Design Services
-                  </Link>
-                </div>
-                <div className="mt-6">
-                  <FinancingTeaser serviceLabel="construction project" />
-                </div>
-                <div className="mt-8 flex items-start gap-3 p-4 border-l-2 border-[hsl(var(--highland-gold)/0.5)] bg-card/40">
-                  <FileText className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
-                  <p className="text-muted-foreground text-sm font-body leading-relaxed">
-                    Already have complete plans? Highlander can review them and determine whether your project is ready to move toward estimating.
-                  </p>
-                </div>
-              </ScrollReveal>
+              </div>
+            </ScrollReveal>
 
-              <ScrollReveal variant="fade" className="lg:col-span-5">
-                <div className="bg-card border border-border rounded-none p-6 md:p-8">
-                  <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] block mb-5">
-                    What the Program Delivers
-                  </span>
-                  <ul className="space-y-3.5">
-                    {[
-                      "Three paid design phases based on project readiness",
-                      "Fixed fees and defined deliverables",
-                      "Preliminary budget guidance in Phase 1",
-                      "Permit-ready drawings available in Phase 2",
-                      "Full construction documents available in Phase 3",
-                      "A portion of design fees may credit back when you build with Highlander",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
-                        <span className="text-foreground/85 text-sm md:text-body-sm font-body leading-snug">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-            </div>
+            <ScrollReveal variant="fade" className="lg:col-span-5">
+              <div className="bg-card border border-border rounded-none p-6 md:p-8">
+                <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] block mb-5">
+                  What the Program Delivers
+                </span>
+                <ul className="space-y-3.5">
+                  {[
+                    "Three paid design phases based on project readiness",
+                    "Fixed fees and defined deliverables",
+                    "Preliminary budget guidance in Phase 1",
+                    "Permit-ready drawings available in Phase 2",
+                    "Full construction documents available in Phase 3",
+                    "A portion of design fees may credit back when you build with Highlander",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground/85 text-sm md:text-body-sm font-body leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
           </div>
-        </section>
+        </Section>
 
         {/* ═══ SERVICE GRID — Using shared component with detailed variant ═══ */}
         <ConstructionServiceGrid
@@ -365,31 +362,29 @@ const ConstructionDivision = () => {
         </section>
 
         {/* ═══ PHILOSOPHY — How we approach construction ═══ */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <ScrollReveal variant="fade">
-              <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
-                <span className="eyebrow mb-3 block">Our Approach</span>
-                <h2 className="section-heading mb-4">How Highlander<br className="hidden md:block" /> Approaches Construction.</h2>
-                <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
-                  Every project begins with four commitments that define how we work — and why the outcome is different.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {philosophy.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
-                  <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/80 text-base leading-relaxed font-body">{item.detail}</p>
-                </motion.div>
-              ))}
+        <Section density="default" width="wide" className="bg-background">
+          <ScrollReveal variant="fade">
+            <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
+              <span className="eyebrow mb-3 block">Our Approach</span>
+              <h2 className="section-heading mb-4">How Highlander<br className="hidden md:block" /> Approaches Construction.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
+                Every project begins with four commitments that define how we work — and why the outcome is different.
+              </p>
             </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            {philosophy.map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
+                <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
+                  <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                </div>
+                <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                <p className="text-foreground/80 text-base leading-relaxed font-body">{item.detail}</p>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </Section>
 
         {/* ═══ WNC RELEVANCE — Dark variant ═══ */}
         <WNCRelevanceDark
@@ -409,56 +404,52 @@ const ConstructionDivision = () => {
         <DesignProgramPromo />
 
         {/* ═══ FEATURED PROJECTS ═══ */}
-        <section className="section-padding bg-background/50 relative">
-          <div className="container-tight">
-            <ScrollReveal variant="fade">
-              <div className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
-                <span className="eyebrow mb-3 block">Featured Work</span>
-                <h2 className="section-heading">Projects That Speak<br className="hidden md:block" /> for Themselves.</h2>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {galleryImages.map((img, i) => (
-                <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-none overflow-hidden">
-                  <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                    <div className="w-6 h-px bg-[hsl(var(--highland-gold)/0.5)] mb-2" />
-                    <p className="text-white text-sm md:text-base font-body font-medium tracking-wide">{img.label}</p>
-                  </div>
-                </motion.div>
-              ))}
+        <Section density="default" width="wide" className="bg-background/50 relative">
+          <ScrollReveal variant="fade">
+            <div className="max-w-2xl mx-auto text-center mb-10 md:mb-14">
+              <span className="eyebrow mb-3 block">Featured Work</span>
+              <h2 className="section-heading">Projects That Speak<br className="hidden md:block" /> for Themselves.</h2>
             </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            {galleryImages.map((img, i) => (
+              <motion.div key={img.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group relative aspect-[4/3] rounded-none overflow-hidden">
+                <img width={1600} height={1067} decoding="async" src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                  <div className="w-6 h-px bg-[hsl(var(--highland-gold)/0.5)] mb-2" />
+                  <p className="text-white text-sm md:text-base font-body font-medium tracking-wide">{img.label}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </Section>
 
         {/* ═══ WHY HIGHLANDER — Trust cards ═══ */}
-        <section className="section-padding bg-background">
-          <div className="container-tight">
-            <ScrollReveal variant="fade">
-              <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
-                <span className="eyebrow mb-3 block">Why Highlander</span>
-                <h2 className="section-heading mb-4">What Makes This<br className="hidden md:block" /> Different.</h2>
-                <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
-                  Not just another name on a truck. A company built on documented systems, staffed with in-house craftsmen, and rooted in Western North Carolina's mountains.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-              {whyHighlander.map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
-                  <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
-                    <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-foreground/80 text-base leading-relaxed font-body">{item.detail}</p>
-                </motion.div>
-              ))}
+        <Section density="default" width="wide" className="bg-background">
+          <ScrollReveal variant="fade">
+            <div className="max-w-2xl mx-auto text-center mb-12 md:mb-14">
+              <span className="eyebrow mb-3 block">Why Highlander</span>
+              <h2 className="section-heading mb-4">What Makes This<br className="hidden md:block" /> Different.</h2>
+              <p className="text-muted-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
+                Not just another name on a truck. A company built on documented systems, staffed with in-house craftsmen, and rooted in Western North Carolina's mountains.
+              </p>
             </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            {whyHighlander.map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-none p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
+                <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors border border-[hsl(var(--highland-gold)/0.1)]">
+                  <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                </div>
+                <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
+                <p className="text-foreground/80 text-base leading-relaxed font-body">{item.detail}</p>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </Section>
 
         {/* ═══ OBJECTION BUSTER — Concern → Response pairs ═══ */}
         <ConstructionObjectionBuster
