@@ -110,6 +110,13 @@ const CountyPage = () => {
                   <span className="text-[hsl(var(--gold-ink))] italic">{county.name} Corridor.</span>
                 </h1>
 
+                <PageContext
+                  division="Roofing & Construction"
+                  area={`${county.name}, North Carolina`}
+                  tone="dark"
+                  className="-mt-4"
+                />
+
                 <p className="text-lg md:text-2xl text-white/95 mb-12 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md">
                   {county.description}
                 </p>
