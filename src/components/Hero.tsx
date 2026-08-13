@@ -31,7 +31,11 @@ const trustItems = [
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-  // Sequential test 1: outcome-first vs. current hero CTA copy.
+  // Sequential test 1 (running): image-led vs. text-led homepage hero.
+  // Success metric: generate_lead. Minimum run: 14 days / 60 leads per variant.
+  const heroLayout = useExperiment("home_hero_layout");
+  const textLed = heroLayout.variant === "b";
+  // Queued test — control copy until it is promoted to running.
   const heroCta = useExperiment("home_hero_cta");
   const [layer, setLayer] = useState(0);
   // Only the LCP image is in the DOM on first paint. The two cross-fade
@@ -61,9 +65,30 @@ const Hero = () => {
   ];
 
   return (
-    <section ref={ref} className="dark-surface relative min-h-[100svh] flex flex-col overflow-hidden">
+    <section
+      ref={ref}
+      data-hero-variant={heroLayout.variant}
+      data-gtm-experiment="home_hero_layout"
+      data-gtm-variant={heroLayout.variant}
+      className={`dark-surface relative flex flex-col overflow-hidden ${
+        textLed ? "min-h-[88svh] md:min-h-[92svh]" : "min-h-[100svh]"
+      }`}
+    >
+      {/* Text-led variant: solid brand panel carries the copy; photography is
+          demoted to a supporting right-hand column on desktop and a short band
+          on mobile, so the offer and CTA read before any image loads. */}
+      {textLed && (
+        <div aria-hidden="true" className="absolute inset-0 bg-[hsl(var(--hero-overlay))]" />
+      )}
+
       {/* === BACKGROUND — static, no parallax for smooth scroll === */}
-      <div className="absolute inset-0">
+      <div
+        className={
+          textLed
+            ? "absolute inset-x-0 top-0 h-[38svh] md:h-auto md:inset-y-0 md:left-[52%] md:right-0 overflow-hidden"
+            : "absolute inset-0"
+        }
+      >
         {/* Layered still imagery — premium cross-fade with continuous Ken-Burns drift.
             No video. All real WNC roof photography. */}
         {layers.map((src, i) => (i > 0 && !extraLayersReady ? null : (
@@ -85,6 +110,14 @@ const Hero = () => {
             }}
           />
         )))}
+
+        {/* Seam blend — feathers the photo column into the copy panel */}
+        {textLed && (
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-[2] bg-gradient-to-b md:bg-gradient-to-r from-[hsl(var(--hero-overlay))] via-[hsl(var(--hero-overlay)/0.35)] to-transparent"
+          />
+        )}
 
         {/* Scrim tokens — side scrim behind left-anchored copy, hero scrim for headline legibility */}
         <div aria-hidden="true" className="absolute inset-0 bg-scrim-side opacity-50 md:opacity-35" />
