@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Phone } from "lucide-react";
@@ -15,7 +16,50 @@ interface Props {
   serviceAreasBtnRef: React.RefObject<HTMLButtonElement>;
 }
 
-export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onViewAllClick, serviceAreasBtnRef }: Props) => (
+export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onViewAllClick, serviceAreasBtnRef }: Props) => {
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  // Focus trap + Escape close while the drawer is open.
+  useEffect(() => {
+    if (!open) return;
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const focusables = () =>
+      Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((el) => el.offsetParent !== null);
+
+    focusables()[0]?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const items = focusables();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && (active === first || !panel.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open, onClose]);
+
+  return (
   <AnimatePresence>
     {open && (
       <>
@@ -29,13 +73,29 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
         />
 
         <motion.div
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site menu"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: HIGHLAND_EASE }}
-          className="lg:hidden bg-white border-t border-black/5 overflow-hidden max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain"
+          className="lg:hidden bg-white border-t border-black/5 overflow-hidden"
         >
-          <nav aria-label="Mobile" className="flex flex-col px-4 py-3 gap-0.5">
+          {/* Persistent call button pinned to the top of the panel */}
+          <a
+            href="tel:+18285247773"
+            className="flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold font-body text-body-xs uppercase tracking-[0.08em] min-h-[52px] px-4 active:scale-[0.99] transition-transform"
+          >
+            <Phone className="w-4 h-4" />
+            Call (828) 524-7773
+          </a>
+
+          <nav
+            aria-label="Mobile"
+            className="flex flex-col px-4 py-3 gap-0.5 max-h-[calc(100dvh-3.5rem-52px-76px)] overflow-y-auto overscroll-contain"
+          >
             {divisions.map((div, di) => (
               <motion.div
                 key={div.label}
@@ -170,26 +230,22 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               ))}
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.3, ease: HIGHLAND_EASE }} className="pt-3 mt-2 border-t border-black/10 space-y-2 pb-[max(env(safe-area-inset-bottom),0.5rem)]">
-              <Link
-                to="/consultation"
-                onClick={onClose}
-                className="cta-gradient text-accent-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs uppercase tracking-[0.1em] shadow-raised min-h-[52px]"
-              >
-                <span className="relative z-10">Request an Estimate</span>
-                <ArrowRight className="w-4 h-4 relative z-10" />
-              </Link>
-              <a
-                href="tel:+18285247773"
-                className="bg-primary text-primary-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs font-body shadow-raised active:scale-95 transition-all min-h-[52px] uppercase tracking-[0.08em]"
-              >
-                <Phone className="w-4 h-4" />
-                (828) 524-7773
-              </a>
-            </motion.div>
           </nav>
+
+          {/* Primary CTA pinned to the bottom of the panel */}
+          <div className="border-t border-black/10 bg-white px-4 py-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]">
+            <Link
+              to="/consultation"
+              onClick={onClose}
+              className="cta-gradient text-accent-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs uppercase tracking-[0.1em] shadow-raised min-h-[52px]"
+            >
+              <span className="relative z-10">Request an Estimate</span>
+              <ArrowRight className="w-4 h-4 relative z-10" />
+            </Link>
+          </div>
         </motion.div>
       </>
     )}
   </AnimatePresence>
-);
+  );
+};

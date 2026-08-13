@@ -13,6 +13,7 @@ import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import PageContext from "@/components/PageContext";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import InspectionForm from "@/components/InspectionForm";
 import RelatedLinks from "@/components/RelatedLinks";
@@ -134,6 +135,12 @@ const TownPage = () => {
                 Roofing &amp; Construction in <br />
                 <span className="text-[hsl(var(--gold-ink))]">{town.name}, NC</span>
               </motion.h1>
+
+              <PageContext
+                division="Roofing & Construction"
+                area={`${town.name}, ${town.state} · ${town.county}`}
+                tone="dark"
+              />
 
               <motion.p 
                 initial={{ opacity: 0, y: 20 }} 
