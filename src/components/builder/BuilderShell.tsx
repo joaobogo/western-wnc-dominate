@@ -74,7 +74,7 @@ const BuilderShell = ({
 
         {/* Segmented stepper (desktop) */}
         {stepNames && stepNames.length > 0 && (
-          <div className="hidden md:flex items-center gap-2 mb-8" aria-label="Builder progress">
+          <div className="hidden md:flex items-center gap-2 mb-8" role="group" aria-label="Builder progress">
             {stepNames.map((name, i) => {
               const done = i < step;
               const current = i === step;
