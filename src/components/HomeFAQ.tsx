@@ -109,7 +109,7 @@ const HomeFAQ = () => {
               >
                 <AccordionTrigger className="text-left font-heading font-bold text-foreground text-base md:text-lg hover:text-primary py-5 px-3 md:px-4 hover:no-underline">
                   <span className="flex items-start gap-3">
-                    <HelpCircle className="w-4 h-4 text-primary/80 flex-shrink-0 mt-1.5" />
+                    <HelpCircle className="w-4 h-4 text-primary/80 flex-shrink-0 mt-1.5" aria-hidden="true" />
                     <span>{faq.q}</span>
                   </span>
                 </AccordionTrigger>
@@ -133,19 +133,19 @@ const HomeFAQ = () => {
             className="btn btn-primary btn-md group"
           >
             Request an Estimate
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
           <a
             href="tel:+18285247773"
             className="btn btn-secondary btn-md group"
           >
-            <Phone className="w-4 h-4 text-primary" /> (828) 524-7773
+            <Phone className="w-4 h-4 text-primary" aria-hidden="true" /> (828) 524-7773
           </a>
           <Link
             to="/faq"
             className="text-sm font-heading font-bold text-primary hover:text-primary/80 inline-flex items-center gap-1.5 transition-colors min-h-11 px-3"
           >
-            See all FAQs <ArrowRight className="w-3.5 h-3.5" />
+            See all FAQs <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </motion.div>
       </div>

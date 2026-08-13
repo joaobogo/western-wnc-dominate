@@ -19,7 +19,7 @@ const BlogMidArticleCTA = ({ cta, town }: Props) => (
     </span>
     {town && (
       <span className="inline-flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.14em] text-muted-foreground mb-2">
-        <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" /> {town}, NC
+        <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> {town}, NC
       </span>
     )}
     <h2 className="font-heading font-bold text-foreground text-xl md:text-2xl leading-snug mb-2">{cta.midHeadline}</h2>
@@ -38,13 +38,13 @@ const BlogMidArticleCTA = ({ cta, town }: Props) => (
         }
         className="btn btn-primary btn-sm"
       >
-        {cta.callFirst ? cta.ctaLabel : "Request an Inspection"} <ArrowRight className="w-4 h-4" />
+        {cta.callFirst ? cta.ctaLabel : "Request an Inspection"} <ArrowRight className="w-4 h-4" aria-hidden="true" />
       </Link>
       <a
         href="tel:+18285247773"
         className="btn btn-secondary btn-sm"
       >
-        <Phone className="w-4 h-4" /> (828) 524-7773
+        <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
       </a>
     </div>
   </aside>

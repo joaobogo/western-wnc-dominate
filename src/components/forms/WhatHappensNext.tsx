@@ -25,8 +25,7 @@ const WhatHappensNext = ({
     >
       <Phone
         className={`mt-0.5 h-4 w-4 shrink-0 ${tone === "dark" ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`}
-        aria-hidden="true"
-      />
+        aria-hidden="true" />
       <span>
         <strong className="font-semibold">What happens next:</strong>{" "}
         {variant === "email"

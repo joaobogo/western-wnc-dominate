@@ -279,7 +279,7 @@ const Certifications = () => {
                       <div className="grid sm:grid-cols-2 gap-3">
                         {cert.whatItMeans.map((point) => (
                           <div key={point} className="flex items-start gap-2.5 bg-secondary/60 rounded-sm p-3">
-                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
                             <span className="text-foreground/80 text-body-xs font-body leading-relaxed">{point}</span>
                           </div>
                         ))}
@@ -303,7 +303,7 @@ const Certifications = () => {
                 to="/consultation"
                 className="btn btn-primary btn-sm"
               >
-                Talk With Our Team <ArrowRight className="w-4 h-4" />
+                Talk With Our Team <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </div>

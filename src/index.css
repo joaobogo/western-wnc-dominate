@@ -162,6 +162,8 @@ img {
     --ink-muted: 210 12% 38%;
     --alert: 0 72% 51%;
     --alert-foreground: 0 0% 98%;
+    /* Text-safe alert red: clears 4.5:1 on cream, white and alert/10 tints. */
+    --alert-ink: 0 74% 36%;
 
     /* Highlander Heritage Palette — Refined */
     --background: var(--surface); /* Pure white for maximum clarity */
@@ -1731,6 +1733,22 @@ img {
       outline: 2px solid Highlight;
       box-shadow: none;
     }
+  }
+
+  /* ── Iconography standard ────────────────────────────────────────────
+     One icon set (lucide-react) at one stroke weight and two sizes.
+     Stroke weight is owned here so no component sets strokeWidth ad hoc;
+     1.75 reads correctly at both 16px and 24px against our type weights.
+     Sizes: h-4 w-4 (16px, inline with text) and h-6 w-6 (24px, standalone).
+     Icons are decorative by default (aria-hidden); anything that carries
+     meaning on its own gets an aria-label on the icon or its control. */
+  svg.lucide {
+    stroke-width: 1.75;
+  }
+  /* Escape hatch for check marks inside tiny filled badges, where the
+     standard weight disappears at 12px. */
+  svg.lucide.icon-stroke-strong {
+    stroke-width: 2.5;
   }
 
   /* Image soft edge highlight — subtle inner glow */

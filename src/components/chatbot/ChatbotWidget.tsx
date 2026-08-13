@@ -137,7 +137,7 @@ function LeadCaptureCard({
     return (
       <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-primary/5 border border-primary/20 rounded-sm p-4 max-w-[90%]">
         <div className="flex items-center gap-2 mb-1">
-          <CheckCircle className="w-4 h-4 text-primary" />
+          <CheckCircle className="w-4 h-4 text-primary" aria-hidden="true" />
           <p className="text-sm font-heading font-semibold text-foreground">We'll be in touch shortly.</p>
         </div>
         <p className="text-xs text-muted-foreground font-body">A project advisor will call you rapidly.</p>
@@ -168,7 +168,7 @@ function LeadCaptureCard({
         </button>
       </div>
       <p className="text-caption text-muted-foreground font-body flex items-start gap-1 leading-relaxed">
-        <Shield className="w-3 h-3 mt-0.5 flex-shrink-0" />
+        <Shield className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" />
         <span>
           By submitting, you agree Highlander may contact you by phone, text, or email about your inquiry. Reply STOP to opt out. See our <a href="/privacy-policy" className="underline">Privacy Policy</a>.
         </span>
@@ -194,14 +194,14 @@ function StormChecklistCard() {
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-card border border-border rounded-sm p-4 max-w-[90%]">
       <div className="flex items-center gap-2 mb-3">
-        <AlertTriangle className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+        <AlertTriangle className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
         <p className="text-sm font-heading font-semibold text-foreground">Storm Damage Checklist</p>
       </div>
       <div className="space-y-2">
         {items.map((item, i) => (
           <button key={i} onClick={() => toggle(i)} className="flex items-start gap-2 w-full text-left group">
             <div className={`w-4 h-4 rounded-sm border flex-shrink-0 mt-0.5 flex items-center justify-center transition-all ${checked[i] ? "bg-primary border-primary" : "border-input group-hover:border-primary/40"}`}>
-              {checked[i] && <CheckCircle className="w-3 h-3 text-primary-foreground" />}
+              {checked[i] && <CheckCircle className="w-4 h-4 text-primary-foreground" aria-hidden="true" />}
             </div>
             <span className={`text-xs font-body leading-relaxed transition-all ${checked[i] ? "text-muted-foreground line-through" : "text-foreground"}`}>{item}</span>
           </button>
@@ -416,7 +416,7 @@ export default function ChatbotWidget() {
             className="fixed right-4 md:right-6 bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] md:bottom-6 z-40 md:z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-floating hover:shadow-floating flex items-center justify-center group"
             aria-label="Open project assistant"
           >
-            <MessageCircle className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
+            <MessageCircle className="w-4 h-4 md:w-6 md:h-6 group-hover:scale-110 transition-transform" aria-hidden="true" />
             <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-accent rounded-full border-2 border-background" />
           </motion.button>
         )}
@@ -439,7 +439,7 @@ export default function ChatbotWidget() {
                 <p className="text-caption opacity-60 font-body">Roofing & Construction — your guide in WNC</p>
               </div>
               <button onClick={() => setIsOpen(false)} className="p-1.5 rounded-sm hover:bg-white/10 transition-colors" aria-label="Close chat">
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
 
@@ -463,7 +463,7 @@ export default function ChatbotWidget() {
                             onClick={() => sendMessage(s.message)}
                             className="text-xs font-body font-medium px-3 py-1.5 rounded-sm border border-border bg-card hover:bg-secondary hover:border-accent/30 transition-all text-foreground inline-flex items-center gap-1.5"
                           >
-                            <Icon className="w-3 h-3 text-muted-foreground" />
+                            <Icon className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
                             {s.label}
                           </button>
                         );
@@ -537,13 +537,13 @@ export default function ChatbotWidget() {
                   className="p-2 rounded-sm bg-primary text-primary-foreground disabled:opacity-40 hover:bg-primary/90 transition-colors"
                   aria-label="Send message"
                 >
-                  {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+                  {isLoading ? <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" /> : <Send className="w-4 h-4" aria-hidden="true" />}
                 </button>
               </form>
               <div className="px-3 pb-2 flex items-center justify-between text-xs text-muted-foreground">
                 <span className="font-body">Prefer to talk?</span>
                 <a href="tel:+18285247773" className="inline-flex items-center gap-1 font-body font-medium text-primary hover:text-[hsl(var(--gold-ink))] transition-colors">
-                  <Phone className="w-3 h-3" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
               </div>
             </div>

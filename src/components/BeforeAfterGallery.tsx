@@ -139,13 +139,13 @@ const BeforeAfterGallery = () => {
                   onClick={() => handleManualNav(prev)}
                   className="w-10 h-10 md:w-11 md:h-11 rounded-sm bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all"
                 >
-                  <ChevronLeft className="w-5 h-5 text-white" />
+                  <ChevronLeft className="w-4 h-4 text-white" aria-hidden="true" />
                 </button>
                 <button
                   onClick={() => handleManualNav(next)}
                   className="w-10 h-10 md:w-11 md:h-11 rounded-sm bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center hover:bg-white/20 active:scale-95 transition-all"
                 >
-                  <ChevronRight className="w-5 h-5 text-white" />
+                  <ChevronRight className="w-4 h-4 text-white" aria-hidden="true" />
                 </button>
               </div>
 
@@ -163,7 +163,7 @@ const BeforeAfterGallery = () => {
                       {projects[current].title}
                     </h3>
                     <div className="flex items-center gap-1.5 text-white/95 text-body-sm mb-3 font-body font-medium">
-                      <MapPin className="w-3.5 h-3.5" />
+                      <MapPin className="w-4 h-4" aria-hidden="true" />
                       {projects[current].location}
                     </div>
                     <p className="text-white/90 text-body-sm md:text-base max-w-xl leading-relaxed font-body font-medium">
@@ -197,7 +197,7 @@ const BeforeAfterGallery = () => {
                 className="text-sm font-medium text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors inline-flex items-center gap-1.5 group font-body"
               >
                 View Full Gallery
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
               </Link>
             </div>
           </div>

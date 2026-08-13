@@ -41,7 +41,7 @@ const UrgentActionSteps = ({ variant }: Props) => {
       <div className="container-tight max-w-3xl">
         <div className="mb-6 md:mb-8">
           <span className="eyebrow mb-3 flex items-center gap-2">
-            <AlertTriangle className="w-3.5 h-3.5 text-primary" />
+            <AlertTriangle className="w-4 h-4 text-primary" aria-hidden="true" />
             {c.eyebrow}
           </span>
           <h2 className="section-heading">{c.heading}</h2>
@@ -65,7 +65,7 @@ const UrgentActionSteps = ({ variant }: Props) => {
 
         <div className="mt-5 bg-card border border-primary/30 px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
           <div className="flex items-start gap-3 flex-1">
-            <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+            <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
             <p className="text-body-xs md:text-sm font-body text-muted-foreground leading-snug">
               {c.expectation}
             </p>
@@ -74,7 +74,7 @@ const UrgentActionSteps = ({ variant }: Props) => {
             href="tel:+18285247773"
             className="btn btn-primary btn-md shrink-0"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4" aria-hidden="true" />
             (828) 524-7773
           </a>
         </div>

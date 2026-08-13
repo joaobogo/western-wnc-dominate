@@ -53,14 +53,14 @@ const PageCloseCTA = ({
               className="cta-gradient text-accent-foreground font-body font-bold text-sm md:text-base px-8 md:px-12 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:opacity-90 transition-all uppercase tracking-[0.1em] min-h-[56px]"
             >
               {primaryLabel}
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
               href="tel:+18285247773"
               onClick={() => trackEvent("phone_click", { label: "Phone CTA", elementId: `page-close-call-${context}` })}
               className="border-2 border-dark-section-foreground/20 text-dark-section-foreground font-body font-bold text-sm md:text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] transition-all min-h-[56px]"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               (828) 524-7773
             </a>
           </div>

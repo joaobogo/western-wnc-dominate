@@ -53,7 +53,7 @@ const ServicePageTemplate = ({
   let toneIndex = 0;
 
   return (
-    <main id="main-content" className={cn("min-h-screen", className)}>
+    <main id="main-content" className={cn("min-h-dvh", className)}>
       {beforeHero}
       {SERVICE_SECTION_ORDER.map((key) => {
         const node = slots[key];

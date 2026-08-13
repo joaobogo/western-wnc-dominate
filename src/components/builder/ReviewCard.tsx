@@ -20,7 +20,7 @@ const ReviewCard = ({ rows, children }: Props) => {
       <div className="rounded-lg border border-[hsl(var(--heritage-green)/0.22)] bg-[hsl(var(--heritage-green)/0.04)] overflow-hidden">
         <div className="flex items-center gap-2 px-5 py-3 border-b border-[hsl(var(--heritage-green)/0.18)] bg-[hsl(var(--heritage-green)/0.06)]">
           <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[hsl(var(--heritage-green))]">
-            <Check className="w-3 h-3 text-white" strokeWidth={3} />
+            <Check className="w-4 h-4 text-white" aria-hidden="true" />
           </span>
           <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--heritage-green))]">
             Your project brief

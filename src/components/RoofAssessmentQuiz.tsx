@@ -179,7 +179,7 @@ const RoofAssessmentQuiz = () => {
               {currentStep === "intro" && (
                 <div className="text-center py-4">
                   <div className="w-14 h-14 rounded-none bg-accent/12 flex items-center justify-center mx-auto mb-5">
-                    <ClipboardCheck className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
+                    <ClipboardCheck className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-foreground mb-2">Quick Roof Health Assessment</h3>
                   <p className="text-muted-foreground mb-6 text-sm font-body max-w-md mx-auto">
@@ -190,7 +190,7 @@ const RoofAssessmentQuiz = () => {
                     className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-floating"
                   >
                     <span className="relative z-10">Start Assessment</span>
-                    <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
+                    <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                   </button>
                 </div>
               )}
@@ -214,7 +214,7 @@ const RoofAssessmentQuiz = () => {
                   </div>
                   {currentIndex > 1 && (
                     <button onClick={() => goTo(stepOrder[currentIndex - 1])} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">
-                      <ArrowLeft className="w-3.5 h-3.5" /> Back
+                      <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Back
                     </button>
                   )}
                 </div>
@@ -244,14 +244,14 @@ const RoofAssessmentQuiz = () => {
                     <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-raised tracking-widest uppercase disabled:opacity-60">
                       <span className="relative z-10">{submitting ? "Sending…" : "See My Results"}</span>
                       {submitting ? (
-                        <Loader2 className="w-5 h-5 relative z-10 animate-spin" />
+                        <Loader2 className="w-4 h-4 relative z-10 animate-spin" aria-hidden="true" />
                       ) : (
-                        <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
+                        <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                       )}
                     </button>
                   </form>
                   <button onClick={() => goTo("q5")} className="mt-5 text-sm text-muted-foreground font-medium inline-flex items-center gap-1.5 hover:text-foreground transition-colors font-body">
-                    <ArrowLeft className="w-3.5 h-3.5" /> Back
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Back
                   </button>
                 </div>
               )}
@@ -290,7 +290,7 @@ const RoofAssessmentQuiz = () => {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a href="/consultation" className="btn btn-primary btn-lg">
                       <span className="relative z-10">{result.cta}</span>
-                      <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
+                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                     </a>
                     <a href="tel:+18285247773" className="btn btn-secondary btn-md">
                       Call (828) 524-7773

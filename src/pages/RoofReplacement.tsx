@@ -202,10 +202,10 @@ const RoofReplacement = () => {
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-4 md:mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
+                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
                   <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
+                <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Replacement</span>
               </motion.div>
 
@@ -225,10 +225,10 @@ const RoofReplacement = () => {
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                    <span className="relative">Request a Roof Consultation</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
               </motion.div>
 
@@ -242,7 +242,7 @@ const RoofReplacement = () => {
                 className="hidden md:block mt-10 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm max-w-md"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <DollarSign className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                  <DollarSign className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   <span className="text-xs uppercase tracking-wider text-primary-foreground/85 font-body font-semibold">How We Price Replacement</span>
                 </div>
                 <div className="text-2xl font-heading font-bold text-primary-foreground">Scope-based, grouped-cost</div>
@@ -485,7 +485,7 @@ const RoofReplacement = () => {
                 <h2 className="section-heading">Recent Roof<br className="hidden md:block" /> Replacements.</h2>
               </div>
               <Link to="/recent-projects" className="group inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--gold-ink))] hover:text-[hsl(var(--gold-ink))]/80 transition-colors font-body">
-                Full Gallery <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                Full Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </motion.div>
 
@@ -584,10 +584,10 @@ const RoofReplacement = () => {
                     <Link to="/consultation" className="btn btn-primary btn-lg group relative">
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                       <span className="relative">Request a Quote Call</span>
-                      <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                     <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" /> (828) 524-7773
+                      <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" /> (828) 524-7773
                     </a>
                   </div>
 

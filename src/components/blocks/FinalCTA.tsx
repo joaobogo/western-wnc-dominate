@@ -42,13 +42,13 @@ export const FinalCTA = ({
             className="btn btn-primary btn-md"
           >
             {primaryLabel}
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
           <a
             href={telHref}
             className="btn btn-secondary btn-lg btn-on-dark"
           >
-            <Phone className="w-4 h-4" /> {phone}
+            <Phone className="w-4 h-4" aria-hidden="true" /> {phone}
           </a>
         </div>
         <CTAProofPoints tone="dark" className="mt-6" />

@@ -134,7 +134,7 @@ const Renovations = () => {
                     <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Construction Division</span>
                   </div>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-white/30" />
+                <ChevronRight className="w-4 h-4 text-white/30" aria-hidden="true" />
                 <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Renovations</span>
               </motion.div>
 
@@ -157,10 +157,10 @@ const Renovations = () => {
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
               </motion.div>
 
@@ -172,11 +172,11 @@ const Renovations = () => {
                 className="mt-10 flex items-center gap-4"
               >
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
-                  <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                  <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" />
                   <span className="text-xs font-body text-primary-foreground/95">Avg. ROI: 60–80% at resale</span>
                 </div>
                 <div className="hidden sm:flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
-                  <Eye className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                  <Eye className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" />
                   <span className="text-xs font-body text-primary-foreground/95">Hidden damage protocol included</span>
                 </div>
               </motion.div>
@@ -207,7 +207,7 @@ const Renovations = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <div className="flex items-center justify-center gap-2 mb-8">
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
-                <Gauge className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)]" />
+                <Gauge className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true" />
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">
@@ -344,10 +344,10 @@ const Renovations = () => {
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
-                  <ArrowRight className="w-4 h-4 relative" />
+                  <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                  <Phone className="w-4 h-4" /> Call Direct
+                  <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct
                 </a>
               </div>
             </div>
@@ -402,7 +402,7 @@ const Renovations = () => {
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
               <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </motion.div>
           </div>

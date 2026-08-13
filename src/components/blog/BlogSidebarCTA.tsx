@@ -22,7 +22,7 @@ const BlogSidebarCTA = ({ cta, town }: Props) => (
       href="tel:+18285247773"
       className="btn btn-primary btn-sm w-full mb-2.5"
     >
-      <Phone className="w-4 h-4" /> (828) 524-7773
+      <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
     </a>
     <Link
       to={cta.callFirst ? cta.servicePath : "/request-inspection"}
@@ -37,7 +37,7 @@ const BlogSidebarCTA = ({ cta, town }: Props) => (
       }
       className="border border-primary-foreground/30 text-primary-foreground font-semibold px-4 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:bg-primary-foreground/10 transition-colors w-full justify-center"
     >
-      {cta.callFirst ? cta.ctaLabel : "Request an Inspection"} <ArrowRight className="w-4 h-4" />
+      {cta.callFirst ? cta.ctaLabel : "Request an Inspection"} <ArrowRight className="w-4 h-4" aria-hidden="true" />
     </Link>
   </div>
 );

@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
         <div className="container-tight max-w-3xl">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center">
-              <Shield className="w-5 h-5 text-primary" />
+              <Shield className="w-4 h-4 text-primary" aria-hidden="true" />
             </div>
             <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-primary">
               Legal
@@ -675,17 +675,17 @@ const PrivacyPolicy = () => {
 
           <div className="mt-14 pt-8 border-t border-border flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-body">
             <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5">
-              <Shield className="w-3.5 h-3.5" /> Privacy Policy &amp; Terms
+              <Shield className="w-4 h-4" aria-hidden="true" /> Privacy Policy &amp; Terms
             </Link>
             <Link to="/accessibility" className="text-muted-foreground hover:text-primary transition-colors">
               Accessibility
             </Link>
             <span className="text-border">·</span>
             <a href={`tel:${PHONE_TEL}`} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5">
-              <Phone className="w-3.5 h-3.5" /> {PHONE}
+              <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
             </a>
             <span className="text-muted-foreground flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5" /> {EMAIL}
+              <Mail className="w-4 h-4" aria-hidden="true" /> {EMAIL}
             </span>
           </div>
         </div>

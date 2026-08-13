@@ -113,7 +113,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
                     className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] text-body-xs font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
                   >
                     {path.action}
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
                 ) : (
                   <Link
@@ -121,7 +121,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
                     className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] text-body-xs font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
                   >
                     {path.action}
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                 )}
               </motion.div>
@@ -142,7 +142,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
               "Response within 24 hours",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
-                <Shield className="w-3 h-3 text-[hsl(var(--highland-gold)/0.75)]" />
+                <Shield className="w-4 h-4 text-[hsl(var(--highland-gold)/0.75)]" aria-hidden="true" />
                 <span className="text-body-xs font-body font-semibold text-white/95 uppercase tracking-[0.15em]">
                   {item}
                 </span>

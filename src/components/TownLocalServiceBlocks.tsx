@@ -154,7 +154,7 @@ const TownLocalServiceBlocks = ({ town }: Props) => {
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))] opacity-70" />
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4">
-              <Mountain className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+              <Mountain className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               <span className="eyebrow">Local Conditions</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight mb-5">
@@ -191,14 +191,14 @@ const ServiceLinkCard = ({ block, index }: { block: LinkBlock; index: number }) 
       >
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-[hsl(var(--highland-gold))] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
         <div className="w-10 h-10 bg-primary/5 border border-primary/10 flex items-center justify-center mb-5">
-          <Icon className="w-5 h-5 text-primary" />
+          <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
         </div>
         <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors leading-snug mb-3">
           {block.title}
         </h4>
         <p className="text-sm text-muted-foreground font-body leading-relaxed mb-6">{block.body}</p>
         <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-body font-bold uppercase tracking-[0.14em] text-primary group-hover:gap-2.5 transition-all">
-          Explore <ArrowUpRight className="w-3.5 h-3.5" />
+          Explore <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
         </span>
       </Link>
     </motion.div>

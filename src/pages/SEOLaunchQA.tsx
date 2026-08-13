@@ -14,7 +14,7 @@ const SEOLaunchQA = () => {
       <main id="main-content" className="pt-32 pb-20 bg-background">
         <div className="container-tight max-w-4xl">
           <div className="flex items-center gap-3 mb-8">
-            <Shield className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+            <Shield className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
             <span className="text-eyebrow-size font-bold uppercase tracking-widest text-[hsl(var(--gold-ink))]">Quality Assurance</span>
           </div>
           <h1 className="text-display font-heading font-bold text-foreground mb-8">SEO & Content Launch Checklist</h1>
@@ -86,7 +86,7 @@ const SEOLaunchQA = () => {
             <p className="text-body text-muted-foreground mb-8">Once all items are verified, proceed with final launch protocols.</p>
             <div className="flex justify-center">
               <Link to="/contact" className="btn btn-primary btn-md">
-                Launch Final Review <ArrowRight className="w-4 h-4" />
+                Launch Final Review <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </div>

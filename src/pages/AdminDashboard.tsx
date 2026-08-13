@@ -192,7 +192,7 @@ export default function AdminDashboard() {
 
   if (checkingAuth) {
     return (
-      <div className="min-h-screen bg-background p-6 space-y-8">
+      <div role="main" id="main-content" className="min-h-dvh bg-background p-6 space-y-8">
         <LoadingAnnouncement label="Checking access" />
         <StatGridSkeleton />
         <TableSkeleton />
@@ -201,7 +201,7 @@ export default function AdminDashboard() {
   }
   if (!isAdmin) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6">
+      <div role="main" id="main-content" className="min-h-dvh flex items-center justify-center p-6">
         <div className="max-w-md text-center space-y-3">
           <h1 className="text-xl font-heading font-bold">Not authorized</h1>
           <p className="text-sm text-muted-foreground">
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div role="main" id="main-content" className="min-h-dvh bg-background">
       <header className="border-b border-border px-6 py-4 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-lg font-heading font-bold">Conversion dashboard — Internal</h1>

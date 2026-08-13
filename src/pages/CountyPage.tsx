@@ -123,10 +123,10 @@ const CountyPage = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-5">
                   <Link to="/consultation" className="btn btn-primary btn-lg md:text-body-sm min-w-[320px]">
-                    Start a {county.name} Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    Start a {county.name} Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                   <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark md:text-body-sm min-w-[240px]">
-                    <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
+                    <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> (828) 524-7773
                   </a>
                 </div>
               </motion.div>
@@ -143,7 +143,7 @@ const CountyPage = () => {
                       {fact.label}
                     </span>
                     <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
-                      <Shield className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
+                      <Shield className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       {fact.value}
                     </span>
                   </div>
@@ -182,7 +182,7 @@ const CountyPage = () => {
                   <div className="space-y-8">
                     <div className="flex gap-6 items-start group">
                       <div className="w-12 h-12 bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10">
-                        <Home className="w-6 h-6" />
+                        <Home className="w-6 h-6" aria-hidden="true" />
                       </div>
                       <div>
                         <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Housing Profile</h4>
@@ -192,7 +192,7 @@ const CountyPage = () => {
                     
                     <div className="flex gap-6 items-start group">
                       <div className="w-12 h-12 bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center shrink-0 border border-[hsl(var(--highland-gold)/0.2)]">
-                        <Wind className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
+                        <Wind className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       </div>
                       <div>
                         <h4 className="font-heading font-bold text-foreground mb-2 text-lg uppercase tracking-wider">Climate Realities</h4>
@@ -206,7 +206,7 @@ const CountyPage = () => {
               <div className="relative">
                 <div className="bg-secondary p-8 border border-border relative z-10 shadow-flat">
                   <h4 className="text-sm font-heading font-bold text-foreground mb-8 uppercase tracking-[0.3em] border-b border-border pb-6 flex items-center gap-3">
-                    <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                    <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     {county.name} Communities
                   </h4>
                   <div className="grid gap-4">
@@ -218,7 +218,7 @@ const CountyPage = () => {
                       >
                         <div className="flex justify-between items-center mb-1">
                           <span className="font-heading font-bold text-foreground group-hover:text-primary transition-colors uppercase tracking-tight">{town.name}</span>
-                          <ArrowRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                          <ArrowRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" aria-hidden="true" />
                         </div>
                         <p className="text-xs text-muted-foreground font-body line-clamp-1">{town.description}</p>
                       </Link>
@@ -246,39 +246,39 @@ const CountyPage = () => {
               <ScrollReveal variant="rise-subtle">
                 <div className="bg-primary p-10 text-white h-full flex flex-col group relative overflow-hidden">
                   <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
-                  <Home className="w-10 h-10 text-[hsl(var(--gold-ink))] mb-6" />
+                  <Home className="w-6 h-6 text-[hsl(var(--gold-ink))] mb-6" aria-hidden="true" />
                   <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter">Roofing</h3>
                   <p className="text-white/90 text-sm mb-8 font-body leading-relaxed">
                     Specialized mountain systems designed for {county.name} weather. Shingle, metal, and premium Brava synthetic installations.
                   </p>
                   <Link to="/roofing" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--gold-ink))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
-                    Roofing Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                    Roofing Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
               </ScrollReveal>
 
               <ScrollReveal variant="rise-subtle" delay={0.1}>
                 <div className="bg-background border border-border p-10 h-full flex flex-col group shadow-flat relative overflow-hidden">
-                  <Hammer className="w-10 h-10 text-primary mb-6" />
+                  <Hammer className="w-6 h-6 text-primary mb-6" aria-hidden="true" />
                   <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter text-foreground">Construction</h3>
                   <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
                     Expanding {county.name} homes with engineered additions, premium outdoor living, and structural modernization.
                   </p>
                   <Link to="/construction" className="mt-auto inline-flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all text-sm uppercase tracking-widest">
-                    Construction Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                    Construction Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
               </ScrollReveal>
 
               <ScrollReveal variant="rise-subtle" delay={0.2}>
                 <div className="bg-secondary p-10 h-full flex flex-col group border border-border shadow-flat relative overflow-hidden">
-                  <Compass className="w-10 h-10 text-[hsl(var(--gold-ink))] mb-6" />
+                  <Compass className="w-6 h-6 text-[hsl(var(--gold-ink))] mb-6" aria-hidden="true" />
                   <h3 className="text-2xl font-heading font-bold mb-4 uppercase tracking-tighter text-foreground">Design Support</h3>
                   <p className="text-muted-foreground text-sm mb-8 font-body leading-relaxed">
                     Pre-construction planning, layouts, and site-specific guidance to ensure your {county.name} project is built right from the start.
                   </p>
                   <Link to="/layouts-planning" className="mt-auto inline-flex items-center gap-2 font-bold text-[hsl(var(--gold-ink))] hover:gap-4 transition-all text-sm uppercase tracking-widest">
-                    Planning Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                    Planning Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -308,7 +308,7 @@ const CountyPage = () => {
               </div>
               <ScrollReveal variant="fade" delay={0.3}>
                 <Link to="/blog" className="group inline-flex items-center gap-2 text-primary font-heading font-bold text-sm tracking-wide hover:text-primary/80 transition-all border-b border-primary/20 pb-1">
-                  Browse All Resources <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Browse All Resources <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
               </ScrollReveal>
             </div>
@@ -333,12 +333,12 @@ const CountyPage = () => {
                     
                     <div className="mt-auto pt-6 border-t border-border/40 flex items-center justify-between">
                       <span className="text-primary text-body-xs font-heading font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                        Read Guide <ArrowRight className="w-4 h-4" />
+                        Read Guide <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </span>
                     </div>
 
                     <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
-                      <BookOpen className="w-16 h-16 -rotate-12" />
+                      <BookOpen className="w-6 h-6 -rotate-12" aria-hidden="true" />
                     </div>
                   </Link>
                 </ScrollReveal>
@@ -393,10 +393,10 @@ const CountyPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link to="/consultation" className="btn btn-primary btn-lg md:text-xl min-w-[320px]">
-                Start a {county.name} Assessment <ArrowRight className="w-6 h-6" />
+                Start a {county.name} Assessment <ArrowRight className="w-6 h-6" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark min-w-[240px]">
-                <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
+                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> (828) 524-7773
               </a>
             </div>
           </div>

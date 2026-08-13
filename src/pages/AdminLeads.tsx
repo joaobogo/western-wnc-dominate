@@ -362,7 +362,7 @@ export default function AdminLeads() {
   if (!authed) return null;
   if (!isAdmin) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6">
+      <div role="main" id="main-content" className="min-h-dvh flex items-center justify-center p-6">
         <div className="max-w-md text-center space-y-3">
           <h1 className="text-xl font-heading font-bold">Not authorized</h1>
           <p className="text-sm text-muted-foreground">Your account is signed in but does not have the <code>admin</code> role. Ask an existing admin to grant it.</p>
@@ -373,7 +373,7 @@ export default function AdminLeads() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div role="main" id="main-content" className="min-h-dvh bg-background">
       <header className="border-b border-border px-6 py-4 flex items-center justify-between">
         <div>
           <h1 className="text-lg font-heading font-bold">Leads — Internal</h1>
@@ -578,7 +578,7 @@ export default function AdminLeads() {
                 {selected.jobtread_error_message && (
                   <div>
                     <p className="text-caption uppercase tracking-wide text-muted-foreground mb-1">Error</p>
-                    <p className="text-xs whitespace-pre-wrap bg-destructive/10 text-destructive p-2 rounded">{selected.jobtread_error_message}</p>
+                    <p className="text-xs whitespace-pre-wrap bg-destructive/10 text-alert-ink p-2 rounded">{selected.jobtread_error_message}</p>
                   </div>
                 )}
                 <button

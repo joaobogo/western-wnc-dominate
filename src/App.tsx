@@ -117,7 +117,7 @@ const App = () => (
           <ScrollToTop />
           <GTMRouteTracker />
           <RecoveryPrompt />
-          <Suspense fallback={<div className="min-h-screen bg-background" />}>
+          <Suspense fallback={<div className="min-h-dvh bg-background" />}>
             <ErrorBoundary boundary="route">
               <Routes>
           <Route path="/" element={<Index />} />

@@ -17,7 +17,7 @@ const categoryMeta: Record<KeywordMapCategory, { icon: typeof Wrench; label: str
 const KeywordList = ({ title, icon: Icon, items }: { title: string; icon: typeof Search; items: string[] }) => (
   <div className="rounded-sm border border-border bg-background p-4">
     <div className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-primary">
-      <Icon className="h-4 w-4" /> {title}
+      <Icon className="h-4 w-4" aria-hidden="true" /> {title}
     </div>
     <ul className="space-y-2 text-sm text-foreground">
       {items.map((keyword) => (
@@ -38,7 +38,7 @@ const KeywordCard = ({ entry }: { entry: KeywordMapEntry }) => {
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <div className="inline-flex items-center gap-2 rounded-sm bg-secondary px-3 py-1 text-caption font-semibold uppercase tracking-[0.12em] text-primary">
-            <Icon className="h-3.5 w-3.5" /> {meta.label}
+            <Icon className="h-4 w-4" aria-hidden="true" /> {meta.label}
           </div>
           <h2 className="mt-3 text-2xl font-heading font-bold text-foreground">{entry.label}</h2>
           <p className="mt-2 text-sm leading-7 text-muted-foreground">{entry.path}</p>
@@ -97,7 +97,7 @@ const KeywordMap = () => {
                         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{meta.label}</p>
                         <p className="mt-3 text-4xl font-heading font-bold text-foreground">{count}</p>
                       </div>
-                      <Icon className="h-8 w-8 text-primary" />
+                      <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
                     </div>
                   </div>
                 );

@@ -274,12 +274,12 @@ const ContactMinimalForm = () => {
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-1">
         <div className="flex items-center gap-2 text-body-xs text-muted-foreground font-body">
-          <Phone className="w-4 h-4 text-primary" />
+          <Phone className="w-4 h-4 text-primary" aria-hidden="true" />
           <span>Personal response within 24 hours.</span>
         </div>
         <Button type="submit" size="lg" loading={isSubmitting} loadingText={microcopy.loading.submitting}>
           Send My Message
-          <ArrowRight />
+          <ArrowRight aria-hidden="true" />
         </Button>
       </div>
 

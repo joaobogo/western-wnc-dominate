@@ -78,7 +78,7 @@ const IntakeShell = ({
                 href="tel:+18285247773"
                 className="inline-flex items-center gap-2.5 text-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-semibold text-body-xs"
               >
-                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                 (828) 524-7773
               </a>
             </div>
@@ -98,19 +98,19 @@ const IntakeShell = ({
                   to="/roofing-intake"
                   className="text-body-xs font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
                 >
-                  Roofing Intake <ArrowRight className="w-3 h-3" />
+                  Roofing Intake <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   to="/construction-intake"
                   className="text-body-xs font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
                 >
-                  Construction Intake <ArrowRight className="w-3 h-3" />
+                  Construction Intake <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
                   className="text-body-xs font-body font-medium text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors inline-flex items-center gap-2"
                 >
-                  Design Intake <ArrowRight className="w-3 h-3" />
+                  Design Intake <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
             </div>

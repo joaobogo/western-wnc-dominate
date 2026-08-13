@@ -147,10 +147,10 @@ const HomeAdditions = () => {
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" /></div>
+                  <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
                   <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/95">Construction</span>
                 </Link>
-                <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
+                <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
                 <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Home Additions</span>
               </motion.div>
 
@@ -173,10 +173,10 @@ const HomeAdditions = () => {
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
-                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
-                  <Phone className="w-4 h-4" /> (828) 524-7773
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
               </motion.div>
 
@@ -220,7 +220,7 @@ const HomeAdditions = () => {
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-8">
                 <div className="flex items-center gap-3 mb-8">
-                  <Compass className="w-5 h-5 text-[hsl(var(--highland-gold)/0.85)]" />
+                  <Compass className="w-4 h-4 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true" />
                   <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.2)]" />
                 </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.15] mb-6">
@@ -348,12 +348,12 @@ const HomeAdditions = () => {
               </div>
               <div className="flex flex-col gap-4">
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
-                  <TrendingUp className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" />
+                  <TrendingUp className="w-4 h-4 text-[hsl(var(--gold-ink))] mx-auto mb-2" aria-hidden="true" />
                   <span className="text-2xl font-heading font-bold text-foreground">50–70%</span>
                   <p className="text-muted-foreground text-xs font-body mt-1">Typical cost recovery at resale</p>
                 </div>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 text-center">
-                  <Home className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" />
+                  <Home className="w-4 h-4 text-[hsl(var(--gold-ink))] mx-auto mb-2" aria-hidden="true" />
                   <span className="text-2xl font-heading font-bold text-foreground">None</span>
                   <p className="text-muted-foreground text-xs font-body mt-1">No realtor fees, no moving costs, no community disruption</p>
                 </div>
@@ -379,7 +379,7 @@ const HomeAdditions = () => {
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2">Not sure where to start?</h3>
                   <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-                    Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    Talk With Our Construction Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
               </motion.div>
@@ -433,10 +433,10 @@ const HomeAdditions = () => {
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
-                  <ArrowRight className="w-4 h-4 relative" />
+                  <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
-                  <Phone className="w-4 h-4" /> Call Direct
+                  <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct
                 </a>
               </div>
             </div>
@@ -485,7 +485,7 @@ const HomeAdditions = () => {
                 {wncChallenges.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.12)] transition-colors">
                     <div className="flex items-center gap-3 mb-3">
-                      <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
+                      <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" />
                       <h3 className="font-heading font-bold text-dark-section-foreground text-sm">{item.title}</h3>
                     </div>
                     <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
@@ -520,7 +520,7 @@ const HomeAdditions = () => {
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
               <Link to="/recent-projects" className="group text-sm font-heading font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                View Full Project Gallery <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </motion.div>
           </div>

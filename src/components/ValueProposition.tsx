@@ -159,7 +159,7 @@ const ValueProposition = () => {
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative">Discuss Your Project With Us</span>
-            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
           <p className="text-caption text-dark-section-foreground/90 font-body mt-4 tracking-wide">
             No pressure. No sales pitch. Just a conversation about what your property needs.

@@ -52,7 +52,12 @@ const AccordionContent = React.forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     forceMount
-    className="overflow-hidden text-sm transition-all data-[state=closed]:h-0 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    /* Radix defaults this to role="region", which registers every FAQ answer
+       as a page landmark and produces duplicate-landmark warnings when the
+       same question appears in more than one accordion. "group" keeps the
+       trigger association without polluting the landmark map. */
+    role="group"
+    className="overflow-hidden text-sm transition-all data-[state=closed]:h-0 data-[state=closed]:invisible data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>

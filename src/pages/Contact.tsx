@@ -59,7 +59,7 @@ export default function Contact() {
                   className="max-w-2xl"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Handshake className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                    <Handshake className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
                       Contact Highlander
                     </span>
@@ -83,7 +83,7 @@ export default function Contact() {
                     href="tel:+18285247773"
                     className="btn btn-secondary btn-md group"
                   >
-                    <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                    <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <div>
                       <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">(828) 524-7773</span>
                       <span className="text-caption text-[hsl(var(--dark-section-foreground)/0.5)] font-body uppercase tracking-wider">Call Direct</span>
@@ -93,7 +93,7 @@ export default function Contact() {
                     href="mailto:info@highlandernc.com"
                     className="btn btn-secondary btn-md"
                   >
-                    <Mail className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                    <Mail className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <span className="text-sm font-body text-[hsl(var(--dark-section-foreground)/0.7)]">info@highlandernc.com</span>
                   </a>
                 </motion.div>
@@ -163,7 +163,7 @@ export default function Contact() {
                       href="tel:+18285247773"
                       className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all"
                     >
-                      <Phone className="w-4 h-4 text-primary" />
+                      <Phone className="w-4 h-4 text-primary" aria-hidden="true" />
                       <div>
                         <p className="text-sm font-heading font-semibold text-foreground">(828) 524-7773</p>
                         <p className="text-caption text-muted-foreground font-body">Call — a real person answers</p>
@@ -173,7 +173,7 @@ export default function Contact() {
                       href="mailto:info@highlandernc.com"
                       className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all"
                     >
-                      <Mail className="w-4 h-4 text-primary" />
+                      <Mail className="w-4 h-4 text-primary" aria-hidden="true" />
                       <div>
                         <p className="text-sm font-heading font-semibold text-foreground">info@highlandernc.com</p>
                         <p className="text-caption text-muted-foreground font-body">Email — reply within 24 hours</p>
@@ -183,7 +183,7 @@ export default function Contact() {
                       to="/consultation"
                       className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all"
                     >
-                      <CalendarCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                      <CalendarCheck className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       <div>
                         <p className="text-sm font-heading font-semibold text-foreground">Guided Consultation</p>
                         <p className="text-caption text-muted-foreground font-body">More detailed project discovery</p>
@@ -193,7 +193,7 @@ export default function Contact() {
                       to="/faq"
                       className="group flex items-center gap-3 p-3 bg-card border border-border rounded-sm hover:border-primary/20 transition-all"
                     >
-                      <MessageSquare className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                      <MessageSquare className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       <div>
                         <p className="text-sm font-heading font-semibold text-foreground">Common Questions</p>
                         <p className="text-caption text-muted-foreground font-body">Browse the FAQ first</p>

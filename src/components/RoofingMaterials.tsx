@@ -201,7 +201,7 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5 mb-1.5">
-                    <ThermometerSun className="w-3 h-3 text-primary/80" />
+                    <ThermometerSun className="w-4 h-4 text-primary/80" aria-hidden="true" />
                     <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary/80">WNC Climate Performance</h4>
                   </div>
                   <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{active.wncPerformance}</p>
@@ -214,7 +214,7 @@ const RoofingMaterials = ({ showHeading = true, className = "" }: RoofingMateria
               <div className="flex flex-wrap gap-2.5">
                 {active.highlights.map((h) => (
                   <span key={h} className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-muted-foreground bg-background border border-border rounded-sm px-3 py-1.5">
-                    <CheckCircle className="w-3 h-3 text-primary/80" />
+                    <CheckCircle className="w-4 h-4 text-primary/80" aria-hidden="true" />
                     {h}
                   </span>
                 ))}

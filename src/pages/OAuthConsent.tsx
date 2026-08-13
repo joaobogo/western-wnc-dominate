@@ -56,7 +56,7 @@ export default function OAuthConsent() {
   const clientName = details?.client?.name ?? "this application";
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6 bg-background">
+    <div role="main" id="main-content" className="min-h-dvh flex items-center justify-center p-6 bg-background">
       <div className="w-full max-w-md space-y-5 border border-border rounded-md p-6">
         {error ? (
           <>

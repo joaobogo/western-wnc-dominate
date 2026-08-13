@@ -43,13 +43,13 @@ const GalleryInlineCTA = ({ position, towns = [], className = "" }: Props) => {
           }
           className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
         >
-          Request a Scope <ArrowRight className="w-4 h-4" />
+          Request a Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
         <a
           href="tel:+18285247773"
           className="btn btn-secondary btn-sm"
         >
-          <Phone className="w-4 h-4" /> (828) 524-7773
+          <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
         </a>
       </div>
     </div>

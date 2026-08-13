@@ -11,7 +11,7 @@ type TestimonialCategory = "Roofing" | "Construction" | "Storm" | "Commercial";
 const categoryColors: Record<TestimonialCategory, string> = {
   Roofing: "bg-primary/10 text-primary",
   Construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--gold-ink))]",
-  Storm: "bg-destructive/10 text-destructive",
+  Storm: "bg-destructive/10 text-alert-ink",
   Commercial: "bg-secondary text-muted-foreground",
 };
 
@@ -75,7 +75,7 @@ export const TestimonialCard = ({
         </span>
         <div className="flex gap-0.5">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className={cn("fill-accent text-[hsl(var(--gold-ink))]", isCompact ? "w-2.5 h-2.5" : "w-3.5 h-3.5")} />
+            <Star key={i} className={cn("fill-accent text-[hsl(var(--gold-ink))]", isCompact ? "w-2.5 h-2.5" : "w-3.5 h-3.5")} aria-hidden="true" />
           ))}
         </div>
       </div>

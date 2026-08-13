@@ -285,7 +285,7 @@ const FAQ = () => {
             {categories.map((cat) => (
               <div key={cat.id} id={cat.id} className="scroll-mt-32">
                 <div className="flex items-center gap-3 mb-6">
-                  <HelpCircle className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                  <HelpCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">{cat.label}</h2>
                 </div>
                 <div className="border-t border-border">
@@ -303,7 +303,7 @@ const FAQ = () => {
                           <span className="font-heading font-bold text-foreground text-base md:text-lg leading-snug group-hover:text-primary transition-colors">
                             {qa.q}
                           </span>
-                          <ChevronDown className={`w-5 h-5 text-muted-foreground flex-shrink-0 mt-1 transition-transform ${isOpen ? "rotate-180 text-primary" : ""}`} />
+                          <ChevronDown className={`w-5 h-5 text-muted-foreground flex-shrink-0 mt-1 transition-transform ${isOpen ? "rotate-180 text-primary" : ""}`} aria-hidden="true" />
                         </button>
                         <AnimatePresence initial={false}>
                           {isOpen && (
@@ -340,10 +340,10 @@ const FAQ = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/consultation" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-5 h-5" />
+                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-5 h-5" /> Call (828) 524-7773
+                <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
               </a>
             </div>
           </div>

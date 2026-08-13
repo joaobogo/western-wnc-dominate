@@ -56,7 +56,7 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
                 )}
                 {active && (
                   <span className="absolute top-2 right-2 w-6 h-6 rounded-full bg-[hsl(var(--highland-gold))] flex items-center justify-center">
-                    <Check className="w-3.5 h-3.5 text-[hsl(var(--heritage-charcoal))]" strokeWidth={3} />
+                    <Check className="w-4 h-4 text-[hsl(var(--heritage-charcoal))]" aria-hidden="true" />
                   </span>
                 )}
               </div>
@@ -67,7 +67,7 @@ const VisualChoiceGrid = ({ options, value, onChange, multi, columns = 2 }: Prop
                   {o.label}
                 </span>
                 {!o.image && active && (
-                  <Check className="w-4 h-4 text-[hsl(var(--gold-ink))]" strokeWidth={3} />
+                  <Check className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                 )}
               </div>
               {o.sub && (

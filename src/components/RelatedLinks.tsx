@@ -66,7 +66,7 @@ const RelatedLinks = ({
                     </p>
                   )}
                 </div>
-                <ArrowRight className="w-4 h-4 mt-1 text-primary opacity-70 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                <ArrowRight className="w-4 h-4 mt-1 text-primary opacity-70 group-hover:translate-x-1 transition-transform flex-shrink-0" aria-hidden="true" />
               </Link>
             </li>
           ))}

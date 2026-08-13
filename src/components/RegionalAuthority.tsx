@@ -72,14 +72,14 @@ const RegionalAuthority = () => {
               className="btn btn-primary btn-md group"
             >
               Request an Estimate
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
             <Link
               to="/roofing"
               className="btn btn-secondary btn-md group"
             >
               All Roofing Services
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -94,7 +94,7 @@ const RegionalAuthority = () => {
         >
           <div className="bg-card border border-border rounded-none p-6 md:p-8 shadow-flat">
             <div className="flex items-center gap-2 mb-5">
-              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+              <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground">
                 Coverage Snapshot
               </span>
@@ -106,19 +106,19 @@ const RegionalAuthority = () => {
 
             <ul className="space-y-3 mb-6 text-body-sm font-body">
               <li className="flex items-start gap-3">
-                <ShieldCheck className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
                 <span><strong>Licensed &amp; Insured</strong> — NC General Contractor + CertainTeed ShingleMaster credentialed.</span>
               </li>
               <li className="flex items-start gap-3">
-                <Wrench className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <Wrench className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
                 <span><strong>Roof repair &amp; replacement</strong> — asphalt, metal, cedar, synthetic, and specialty low-slope systems.</span>
               </li>
               <li className="flex items-start gap-3">
-                <Hammer className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <Hammer className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
                 <span><strong>Full construction</strong> — additions, renovations, outdoor living, and design-build.</span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
                 <span><strong>Serving Western NC</strong> — Franklin, Highlands, Cashiers, Sylva, Waynesville, Brevard, Bryson City &amp; more.</span>
               </li>
             </ul>

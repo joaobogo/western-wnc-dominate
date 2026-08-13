@@ -73,7 +73,7 @@ const GivingBack = () => {
               className="max-w-3xl"
             >
               <div className="flex items-center gap-3 mb-6">
-                <HandHeart className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                <HandHeart className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                 <span className="text-body-xs font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Community Involvement</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6 tracking-tight">
@@ -139,7 +139,7 @@ const GivingBack = () => {
                     className="card-premium p-7"
                   >
                     <div className="w-12 h-12 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
-                      <Icon className="w-6 h-6 text-primary" />
+                      <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
                     <h3 className="font-heading font-bold text-xl text-foreground mb-3">{item.title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed font-body">{item.copy}</p>
@@ -175,7 +175,7 @@ const GivingBack = () => {
                   </p>
                   <Link to="/contact" className="btn btn-primary btn-lg group">
                     Contact Highlander
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -190,7 +190,7 @@ const GivingBack = () => {
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
           <div className="container-tight relative z-10 max-w-3xl text-center">
             <ScrollReveal>
-              <Users className="w-12 h-12 text-[hsl(var(--gold-ink))] mx-auto mb-6" />
+              <Users className="w-6 h-6 text-[hsl(var(--gold-ink))] mx-auto mb-6" aria-hidden="true" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5 leading-tight">
                 Have a Local Cause or Community Opportunity?
               </h2>
@@ -200,7 +200,7 @@ const GivingBack = () => {
               <div className="flex flex-wrap justify-center gap-4">
                 <Link to="/contact" className="btn btn-primary btn-lg group">
                   Contact Highlander
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
                   Request an Estimate

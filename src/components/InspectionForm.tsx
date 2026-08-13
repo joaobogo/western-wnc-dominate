@@ -323,7 +323,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                 <div className="mt-8 pt-8 border-t border-dark-section-foreground/6">
                   <p className="text-white text-base font-body font-bold mb-2">Prefer to talk directly?</p>
                   <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--gold-ink))] transition-colors">
-                    <Phone className="w-4 h-4" />
+                    <Phone className="w-4 h-4" aria-hidden="true" />
                     (828) 524-7773
                   </a>
                   <p className="text-white text-sm font-body font-semibold mt-1.5">We answer our own phone — always a real person.</p>
@@ -377,7 +377,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     </div>
                     {!showProjectChoices && (
                       <div className="flex items-center gap-3 px-4 py-4 border border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.16)]">
-                        <CheckCircle className="w-5 h-5 flex-shrink-0 text-[hsl(var(--gold-ink))]" />
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                         <span className="text-white font-body font-bold text-body-sm md:text-body-sm">
                           {PROJECT_CHOICES.find((c) => c.value === formData.projectType)?.label ?? "Roof Repair or Leak"}
                         </span>
@@ -401,7 +401,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                           >
                             <choice.icon className={`w-5 h-5 flex-shrink-0 ${active ? "text-[hsl(var(--gold-ink))]" : "text-white/70"}`} />
                             <span className="text-white font-body font-bold text-body-sm md:text-body-sm">{choice.label}</span>
-                            {active && <CheckCircle className="w-4 h-4 ml-auto text-[hsl(var(--gold-ink))]" />}
+                            {active && <CheckCircle className="w-4 h-4 ml-auto text-[hsl(var(--gold-ink))]" aria-hidden="true" />}
                           </button>
                         );
                       })}
@@ -435,10 +435,10 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                       className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-4 md:px-10 rounded-none inline-flex items-center justify-center gap-2.5 btn-primary-interactive tracking-wide"
                     >
                       <span className="relative z-10">Continue — Last Step</span>
-                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                      <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                     </button>
                     <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
-                      <Phone className="w-4 h-4" />
+                      <Phone className="w-4 h-4" aria-hidden="true" />
                       Or call (828) 524-7773
                     </a>
                   </div>
@@ -490,7 +490,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     aria-controls="inspection-optional-details"
                     className="inline-flex items-center gap-2 text-body-xs font-body font-bold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] hover:opacity-85 transition-opacity"
                   >
-                    <ChevronDown className={`w-4 h-4 transition-transform ${showDetails ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`w-4 h-4 transition-transform ${showDetails ? "rotate-180" : ""}`} aria-hidden="true" />
                     {showDetails ? "Hide extra details" : "Add details (optional)"}
                   </button>
                   <p className="text-white/70 text-body-xs font-body mt-2">
@@ -591,11 +591,11 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                                 {files.map((f) => (
                                   <li key={f.name} className="flex items-center justify-between gap-3 text-body-xs text-white font-body bg-white/[0.06] px-3 py-2">
                                     <span className="inline-flex items-center gap-2 truncate">
-                                      <Paperclip className="w-3.5 h-3.5 flex-shrink-0" />
+                                      <Paperclip className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                                       <span className="truncate">{f.name}</span>
                                     </span>
                                     <button type="button" onClick={() => removeFile(f.name)} aria-label={`Remove ${f.name}`} className="text-white/70 hover:text-white">
-                                      <X className="w-4 h-4" />
+                                      <X className="w-4 h-4" aria-hidden="true" />
                                     </button>
                                   </li>
                                 ))}
@@ -621,13 +621,13 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin relative z-10" />
+                        <Loader2 className="w-4 h-4 animate-spin relative z-10" aria-hidden="true" />
                         <span className="relative z-10">Sending...</span>
                       </>
                     ) : (
                       <>
                         <span className="relative z-10">Get My Inspection Scheduled</span>
-                        <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
+                        <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                       </>
                     )}
                   </button>
@@ -636,11 +636,11 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     onClick={() => setStep(1)}
                     className="inline-flex items-center justify-center gap-2 text-white/80 font-body font-bold text-sm hover:text-white transition-colors"
                   >
-                    <ArrowLeft className="w-4 h-4" />
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                     Back
                   </button>
                   <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 text-dark-section-foreground font-heading font-bold text-sm hover:text-[hsl(var(--gold-ink))] transition-colors">
-                    <Phone className="w-4 h-4" />
+                    <Phone className="w-4 h-4" aria-hidden="true" />
                     Or call (828) 524-7773
                   </a>
                 </div>

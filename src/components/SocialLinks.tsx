@@ -48,7 +48,7 @@ const SocialLinks = ({ variant = "light", size = "md", className = "" }: SocialL
             title={short}
             className={`${dimensions} inline-flex items-center justify-center rounded-sm border transition-all duration-200 ${base}`}
           >
-            <Icon className={iconSize} strokeWidth={1.75} aria-hidden="true" />
+            <Icon className={iconSize} aria-hidden="true" />
           </a>
         </li>
       ))}

@@ -29,7 +29,7 @@ export default function ErrorState({
       className={cn("border border-border rounded-sm bg-card p-6 md:p-8", className)}
     >
       <div className="flex items-start gap-3">
-        <AlertTriangle className="w-5 h-5 mt-0.5 text-[hsl(var(--heritage-green))] shrink-0" aria-hidden="true" />
+        <AlertTriangle className="w-4 h-4 mt-0.5 text-[hsl(var(--heritage-green))] shrink-0" aria-hidden="true" />
         <div className="min-w-0">
           <h3 className="font-heading font-bold text-base md:text-lg text-foreground mb-2">{title}</h3>
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{description}</p>

@@ -135,7 +135,7 @@ const NotJustRoofing = () => {
 
                   {/* CTA */}
                   <span className={`inline-flex items-center gap-2 font-semibold text-sm font-body ${div.ctaColor} group-hover:gap-3 transition-all`}>
-                    {div.cta} <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
+                    {div.cta} <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
                   </span>
                 </div>
               </Link>
@@ -146,11 +146,11 @@ const NotJustRoofing = () => {
         {/* Shared foundation message */}
         <ScrollReveal variant="fade" delay={0.4} className="text-center mt-10">
           <div className="flex items-center justify-center gap-3 text-muted-foreground">
-            <Shield className="w-3.5 h-3.5" />
+            <Shield className="w-4 h-4" aria-hidden="true" />
             <span className="text-caption font-body font-medium uppercase tracking-[0.14em]">
               Same Crews · Same Process · Same Warranty Protection
             </span>
-            <Shield className="w-3.5 h-3.5" />
+            <Shield className="w-4 h-4" aria-hidden="true" />
           </div>
         </ScrollReveal>
       </div>

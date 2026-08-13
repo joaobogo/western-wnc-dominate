@@ -114,7 +114,7 @@ const TrustedMaterials = () => {
               </div>
               <h3 className="font-heading font-bold text-lg text-foreground mb-2 inline-flex items-center gap-1.5">
                 {v.name}
-                <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] transition-colors" />
+                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] transition-colors" aria-hidden="true" />
               </h3>
               <span className="inline-block text-caption font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--heritage-green))] mb-3">
                 {v.badge}
@@ -144,13 +144,13 @@ const TrustedMaterials = () => {
               to="/consultation"
               className="btn btn-primary btn-lg"
             >
-              Request a Quote <ArrowRight className="w-4 h-4" />
+              Request a Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
               href="tel:+18285247773"
               className="btn btn-secondary btn-md btn-on-dark"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" /> (828) 524-7773
+              <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" aria-hidden="true" /> (828) 524-7773
             </a>
           </div>
         </motion.div>

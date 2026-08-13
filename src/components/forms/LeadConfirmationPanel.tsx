@@ -116,7 +116,7 @@ const LeadConfirmationPanel = ({
           </span>
           <span className={`mt-1 block font-body text-body-xs ${muted}`}>{project.description}</span>
           <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
-            View project <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+            View project <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </span>
         </Link>
 
@@ -132,7 +132,7 @@ const LeadConfirmationPanel = ({
           </span>
           <span className={`mt-1 block font-body text-body-xs ${muted}`}>{guide.description}</span>
           <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
-            Read the guide <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+            Read the guide <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </span>
         </Link>
       </div>

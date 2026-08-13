@@ -73,14 +73,14 @@ const TieredOffer = ({
               onClick={() => trackEvent("cta_click", { label: primaryLabel, elementId: `tiered-primary-${context}` })}
               className="cta-gradient text-accent-foreground font-body font-bold text-sm px-7 py-4 inline-flex items-center justify-center gap-2 uppercase tracking-[0.1em] hover:opacity-90 transition-all min-h-[56px]"
             >
-              {primaryLabel} <ArrowRight className="w-4 h-4" />
+              {primaryLabel} <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
               href="tel:+18285247773"
               onClick={() => trackEvent("phone_click", { label: "Tiered offer call", elementId: `tiered-call-${context}` })}
               className="border-2 border-border text-foreground font-body font-bold text-sm px-7 py-4 inline-flex items-center justify-center gap-2 hover:bg-muted transition-all min-h-[56px]"
             >
-              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" /> Call Direct: 828-524-7773
+              <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> Call Direct: 828-524-7773
             </a>
           </div>
           <CTAProofPoints align="start" className="mt-6" />
@@ -98,7 +98,7 @@ const TieredOffer = ({
               className="group bg-card border border-border rounded-sm p-5 hover:border-primary/40 transition-colors block"
             >
               <div className="flex items-center gap-2 mb-2">
-                <Icon className="w-4 h-4 text-primary" />
+                <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   {tier}
                 </span>
@@ -108,7 +108,7 @@ const TieredOffer = ({
               </h3>
               <p className="text-body-xs leading-relaxed font-body text-muted-foreground mb-3">{offer.description}</p>
               <span className="text-primary text-body-xs font-body font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Continue <ArrowRight className="w-3.5 h-3.5" />
+                Continue <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </span>
             </Link>
           ))}

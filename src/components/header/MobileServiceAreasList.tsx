@@ -38,7 +38,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
       >
         <span className="text-body-sm font-bold font-body">Service Areas</span>
         <motion.div animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.25, ease: HIGHLAND_EASE }} aria-hidden="true">
-          <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" />
+          <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" aria-hidden="true" />
         </motion.div>
       </button>
       <AnimatePresence>
@@ -61,7 +61,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
           >
             <div className="ml-3.5 pl-3 pb-2 border-l-2 border-[hsl(var(--highland-gold)/0.15)]">
               <div className="relative mt-1.5 mb-2 mr-1">
-                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-heritage-charcoal/40 pointer-events-none" />
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-heritage-charcoal/40 pointer-events-none" aria-hidden="true" />
                 <input
                   aria-label="Search town or county"
             type="search"
@@ -79,7 +79,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                     aria-label="Clear search"
                     className="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-heritage-charcoal/40 hover:text-heritage-charcoal active:scale-90 transition"
                   >
-                    <X className="w-4 h-4" />
+                    <X className="w-4 h-4" aria-hidden="true" />
                   </button>
                 )}
               </div>
@@ -92,7 +92,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                 filtered.map((group) => (
                   <div key={group.county} className="mb-2 last:mb-0">
                     <div className="flex items-center gap-1.5 px-2 pt-2 pb-1">
-                      <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
+                      <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                       <span className="text-caption font-body font-bold uppercase tracking-[0.14em] text-heritage-charcoal/55">{group.county}</span>
                       <span className="text-caption font-body text-heritage-charcoal/35 ml-auto">{group.towns.length}</span>
                     </div>
@@ -123,7 +123,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                               <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[3px] rounded-r bg-[hsl(var(--highland-gold))]" />
                             )}
                             <span className="text-body-sm font-body leading-tight">{item.name}</span>
-                            <ChevronRight className="w-4 h-4 text-heritage-charcoal/30 shrink-0" />
+                            <ChevronRight className="w-4 h-4 text-heritage-charcoal/30 shrink-0" aria-hidden="true" />
                           </Link>
                         </li>
                       ))}
@@ -137,7 +137,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                 onClick={onNavigate}
                 className="btn btn-secondary btn-md mt-1"
               >
-                View All Service Areas <ArrowRight className="w-3 h-3" />
+                View All Service Areas <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </motion.div>

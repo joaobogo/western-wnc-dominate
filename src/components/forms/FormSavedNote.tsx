@@ -13,7 +13,7 @@ const FormSavedNote = ({ show, className = "", tone = "light" }: { show: boolean
         tone === "dark" ? "text-white/70" : "text-muted-foreground"
       } ${className}`}
     >
-      <Check className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+      <Check className="h-4 w-4 text-primary" aria-hidden="true" />
       We saved your answers from earlier — pick up where you left off.
     </p>
   );

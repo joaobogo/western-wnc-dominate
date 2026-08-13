@@ -23,7 +23,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
   return (
     <section className={`bg-primary rounded-sm p-6 md:p-8 ${className}`} aria-labelledby="project-location-cta">
       <span className="inline-flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))] mb-3">
-        <MapPin className="w-3 h-3" /> {location}
+        <MapPin className="w-4 h-4" aria-hidden="true" /> {location}
       </span>
       <h2
         id="project-location-cta"
@@ -50,13 +50,13 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
           }
           className="cta-gradient text-accent-foreground font-bold px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
         >
-          Request a Scope <ArrowRight className="w-4 h-4" />
+          Request a Scope <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
         <a
           href="tel:+18285247773"
           className="btn btn-secondary btn-md btn-on-dark"
         >
-          <Phone className="w-4 h-4" /> (828) 524-7773
+          <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
         </a>
       </div>
 
@@ -80,7 +80,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
               }
               className="inline-flex items-center gap-1.5 text-xs font-body font-semibold text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors px-3 py-2 rounded-sm"
             >
-              {tag.label} <ArrowRight className="w-3 h-3" />
+              {tag.label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           ))}
           {townPath && (
@@ -88,7 +88,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
               to={townPath}
               className="btn btn-ghost btn-sm btn-on-dark"
             >
-              Roofing in {town}, NC <ArrowRight className="w-3 h-3" />
+              Roofing in {town}, NC <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           )}
         </div>

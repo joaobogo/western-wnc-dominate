@@ -92,7 +92,7 @@ const RoofingPathFinder = () => {
                 className="btn btn-primary btn-md"
               >
                 {selected.cta}
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <Link
                 to="/request-inspection"
@@ -105,13 +105,13 @@ const RoofingPathFinder = () => {
         )}
 
         <div className="max-w-3xl mx-auto mt-6 flex items-center justify-center gap-2 text-sm font-body text-muted-foreground">
-          <HelpCircle className="w-4 h-4 text-primary" />
+          <HelpCircle className="w-4 h-4 text-primary" aria-hidden="true" />
           <span>Still unsure?</span>
           <a
             href="tel:+18285247773"
             className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
           >
-            <Phone className="w-3.5 h-3.5" />
+            <Phone className="w-4 h-4" aria-hidden="true" />
             Call (828) 524-7773
           </a>
         </div>

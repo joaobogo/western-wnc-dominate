@@ -299,7 +299,7 @@ export const ConstructionTrustSidebarDetailed = ({
     ))}
     <div className="pt-3 border-t border-border">
       <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-        Discuss Your Project <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+        Discuss Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
     </div>
   </div>

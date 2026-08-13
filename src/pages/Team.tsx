@@ -143,7 +143,7 @@ const Team = () => {
                   className="card-premium p-5 flex items-center justify-between group hover:border-primary/40 transition-colors"
                 >
                   <span className="font-heading font-bold text-foreground">{link.label}</span>
-                  <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
               ))}
             </div>
@@ -161,10 +161,10 @@ const Team = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/consultation" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-5 h-5" />
+                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
-                <Phone className="w-5 h-5" /> Call (828) 524-7773
+                <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
               </a>
             </div>
           </div>

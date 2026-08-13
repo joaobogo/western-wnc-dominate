@@ -49,14 +49,14 @@ const TownGrid = ({ id }: { id?: string }) => {
                     className="group block bg-dark-section-foreground/[0.06] border border-dark-section-foreground/[0.15] rounded-none p-6 md:p-8 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.3)] card-lift transition-all duration-500 shadow-flat h-full"
                     style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                   >
-                    <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))] mb-3 group-hover:scale-110 transition-transform duration-300" />
+                    <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))] mb-3 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
                     <h3 className="font-heading font-bold text-lg text-dark-section-foreground mb-1.5">
                       {town.name}
                     </h3>
                     <p className="text-dark-section-foreground/85 text-body-sm mt-1 font-body font-bold">{town.county}</p>
                     <div className="mt-3 pt-3 border-t border-dark-section-foreground/6">
                       <span className="text-[hsl(var(--highland-gold)/0.85)] text-body-xs font-body font-bold uppercase tracking-[0.12em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5">
-                        View Area <ArrowRight className="w-3 h-3" />
+                        View Area <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </span>
                     </div>
                   </Link>
@@ -74,7 +74,7 @@ const TownGrid = ({ id }: { id?: string }) => {
             to="/service-areas"
             className="group inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-medium text-sm transition-all font-body link-draw"
           >
-            View All Service Areas <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
+            View All Service Areas <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
           </Link>
         </ScrollReveal>
       </div>

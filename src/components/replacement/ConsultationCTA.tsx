@@ -23,13 +23,13 @@ const ConsultationCTA = ({ heading, subline, label = "Book My Replacement Consul
             className="btn btn-primary btn-md group"
           >
             <span>{label}</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
           <a
             href="tel:+18285247773"
             className="btn btn-secondary btn-md btn-on-dark"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4" aria-hidden="true" />
             828-524-7773
           </a>
         </div>

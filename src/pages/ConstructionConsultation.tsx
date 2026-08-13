@@ -116,7 +116,7 @@ const CardSelect = ({ options, value, onChange }: {
           }`}
         >
           <div className="flex items-start gap-3">
-            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"}`} />}
+            {Icon && <Icon className={`w-5 h-5 mt-0.5 shrink-0 ${selected ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"}`} aria-hidden="true" />}
             <div>
               <p className={`font-heading text-sm font-semibold ${selected ? "text-foreground" : "text-foreground/80"}`}>{opt.label}</p>
               {opt.desc && <p className="text-xs text-muted-foreground mt-0.5 font-body">{opt.desc}</p>}
@@ -149,7 +149,7 @@ const MultiSelect = ({ options, values, onChange }: {
               : "border-border bg-card text-muted-foreground hover:border-[hsl(var(--highland-gold)/0.2)]"
           }`}
         >
-          {selected && <CheckCircle className="w-3 h-3 inline mr-1.5 text-[hsl(var(--gold-ink))]" />}
+          {selected && <CheckCircle className="w-4 h-4 inline mr-1.5 text-[hsl(var(--gold-ink))]" aria-hidden="true" />}
           {opt.label}
         </button>
       );
@@ -468,13 +468,13 @@ export default function ConstructionConsultation() {
         ])}
       />
       <Header />
-      <main id="main-content" className="pt-24 md:pt-32 pb-16 blueprint-bg min-h-screen">
+      <main id="main-content" className="pt-24 md:pt-32 pb-16 blueprint-bg min-h-dvh">
         <div className="container-tight max-w-2xl">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2.5 mb-3">
               <div className="w-8 h-8 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center">
-                <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
+                <HardHat className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               </div>
               <p className="text-caption font-body font-bold tracking-[0.25em] uppercase text-[hsl(var(--gold-ink))]">Construction Consultation</p>
             </div>
@@ -503,7 +503,7 @@ export default function ConstructionConsultation() {
                     >
                       {i < step ? (
                         <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 400, damping: 15 }}>
-                          <CheckCircle className="w-4 h-4 text-white" />
+                          <CheckCircle className="w-4 h-4 text-white" aria-hidden="true" />
                         </motion.div>
                       ) : (
                         <span className={i <= step ? "text-white" : "text-muted-foreground"}>{i + 1}</span>
@@ -561,7 +561,7 @@ export default function ConstructionConsultation() {
                   step === 0 ? "opacity-30 cursor-not-allowed" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                <ArrowLeft className="w-3.5 h-3.5" /> Back
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Back
               </button>
               <button
                 onClick={isLast ? handleSubmit : handleNext}
@@ -572,13 +572,13 @@ export default function ConstructionConsultation() {
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                     <span>Submitting...</span>
                   </>
                 ) : (
                   <>
                     <span>{isLast ? "Schedule Your Consultation" : "Continue"}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </>
                 )}
               </button>
@@ -599,7 +599,7 @@ export default function ConstructionConsultation() {
               "Design-Build Capable",
             ].map(item => (
               <div key={item} className="flex items-center gap-1.5">
-                <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.85)]" />
+                <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true" />
                 <span className="text-muted-foreground text-caption font-body font-medium">{item}</span>
               </div>
             ))}

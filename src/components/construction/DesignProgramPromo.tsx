@@ -65,7 +65,7 @@ const DesignProgramPromo = ({
           to="/construction/design"
           className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:gap-3 transition-all"
         >
-          Start with a Design Agreement <ArrowRight className="w-4 h-4" />
+          Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
       </div>
     );
@@ -89,7 +89,7 @@ const DesignProgramPromo = ({
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6">
                 {["Three design phases", "Permit set + construction documents", "Design fees can credit toward your build"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
+                    <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <span className="text-body-xs font-body text-muted-foreground">{item}</span>
                   </div>
                 ))}
@@ -98,7 +98,7 @@ const DesignProgramPromo = ({
                 to="/construction/design"
                 className="btn btn-primary btn-md"
               >
-                Start with a Design Agreement <ArrowRight className="w-4 h-4" />
+                Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
             <ul className="space-y-3">
@@ -162,13 +162,13 @@ const DesignProgramPromo = ({
               to="/construction/design"
               className="btn btn-primary btn-md"
             >
-              Start with a Design Agreement <ArrowRight className="w-4 h-4" />
+              Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <Link
               to="/construction-intake"
               className="btn btn-secondary btn-md"
             >
-              Plan Your Construction Project <ArrowRight className="w-4 h-4" />
+              Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
         </div>

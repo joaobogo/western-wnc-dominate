@@ -119,7 +119,7 @@ const Blog = () => {
                     <div className="h-px w-12 bg-white/20" />
                   </div>
                   <div className="flex items-center gap-3 mb-5">
-                    <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
+                    <BookOpen className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
                     <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Insights & Resources</span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[0.95] tracking-tightest">
@@ -134,7 +134,7 @@ const Blog = () => {
                   </p>
                   {/* Search */}
                   <div className="relative max-w-md">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.3)]" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.3)]" aria-hidden="true" />
                     <input
                       aria-label="Search articles"
                       {...fieldAttrs.search}
@@ -172,7 +172,7 @@ const Blog = () => {
                           className="group flex items-center justify-between py-2 border-b border-[hsl(var(--dark-section-foreground)/0.06)] last:border-0"
                         >
                           <span className="text-body-sm text-[hsl(var(--dark-section-foreground)/0.7)] font-body font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors line-clamp-1 pr-2">{post.title}</span>
-                          <ChevronRight className="w-3 h-3 text-[hsl(var(--dark-section-foreground)/0.2)] flex-shrink-0" />
+                          <ChevronRight className="w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.2)] flex-shrink-0" aria-hidden="true" />
                         </Link>
                       ))}
                     </div>
@@ -201,7 +201,7 @@ const Blog = () => {
                 className="mb-10"
               >
                 <div className="flex items-center gap-3">
-                  <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
+                  <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
                   <span className="eyebrow">Latest Articles</span>
                 </div>
                 <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)] mt-3" />
@@ -234,12 +234,12 @@ const Blog = () => {
                           {heroFeatured.excerpt}
                         </p>
                         <div className="flex items-center gap-5 text-sm text-white/90 font-bold mb-6">
-                          <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {heroFeatured.readTime}</span>
-                          <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {heroFeatured.date}</span>
-                          {heroFeatured.town && <span className="flex items-center gap-1"><Mountain className="w-3 h-3" /> {heroFeatured.town}</span>}
+                          <span className="flex items-center gap-1"><Clock className="w-4 h-4" aria-hidden="true" /> {heroFeatured.readTime}</span>
+                          <span className="flex items-center gap-1"><Calendar className="w-4 h-4" aria-hidden="true" /> {heroFeatured.date}</span>
+                          {heroFeatured.town && <span className="flex items-center gap-1"><Mountain className="w-4 h-4" aria-hidden="true" /> {heroFeatured.town}</span>}
                         </div>
                         <span className="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm group-hover:gap-3 transition-all">
-                          Read Full Article <ArrowRight className="w-4 h-4" />
+                          Read Full Article <ArrowRight className="w-4 h-4" aria-hidden="true" />
                         </span>
                       </div>
                     </div>
@@ -275,15 +275,15 @@ const Blog = () => {
                                   New
                                 </span>
                               )}
-                              <span className="flex items-center gap-1 font-bold"><Calendar className="w-3 h-3" /> {formatPostDate(post.date)}</span>
-                              <span className="flex items-center gap-1 font-bold"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                              <span className="flex items-center gap-1 font-bold"><Calendar className="w-4 h-4" aria-hidden="true" /> {formatPostDate(post.date)}</span>
+                              <span className="flex items-center gap-1 font-bold"><Clock className="w-4 h-4" aria-hidden="true" /> {post.readTime}</span>
                             </div>
                             <h3 className="font-heading font-bold text-foreground text-lg mb-2 group-hover:text-primary transition-colors leading-snug">
                               {post.title}
                             </h3>
                             <p className="text-muted-foreground text-sm line-clamp-2 mb-4 leading-relaxed">{post.excerpt}</p>
                             <span className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm group-hover:gap-2.5 transition-all">
-                              Read Article <ArrowRight className="w-3.5 h-3.5" />
+                              Read Article <ArrowRight className="w-4 h-4" aria-hidden="true" />
                             </span>
                           </div>
                         </div>
@@ -344,7 +344,7 @@ const Blog = () => {
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center">
-                      <CloudLightning className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
+                      <CloudLightning className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-foreground">Storm & Emergency Guides</h3>
@@ -358,17 +358,17 @@ const Blog = () => {
                         to={`/blog/${post.slug}`}
                         className="group flex items-start gap-3 p-3 rounded-sm hover:bg-secondary/60 transition-colors"
                       >
-                        <Zap className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
+                        <Zap className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <div className="flex-1">
                           <h4 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
                           <p className="text-muted-foreground text-xs mt-0.5 line-clamp-1">{post.excerpt}</p>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" aria-hidden="true" />
                       </Link>
                     ))}
                   </div>
                   <Link to="/roofing/storm-damage" className="inline-flex items-center gap-1.5 mt-4 text-[hsl(var(--gold-ink))] font-heading font-semibold text-sm hover:gap-2.5 transition-all">
-                    Visit Storm Center <ArrowRight className="w-3.5 h-3.5" />
+                    Visit Storm Center <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </motion.div>
 
@@ -376,7 +376,7 @@ const Blog = () => {
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-sm bg-primary/8 flex items-center justify-center">
-                      <Mountain className="w-5 h-5 text-primary" />
+                      <Mountain className="w-4 h-4 text-primary" aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-foreground">Western NC Guides</h3>
@@ -390,17 +390,17 @@ const Blog = () => {
                         to={`/blog/${post.slug}`}
                         className="group flex items-start gap-3 p-3 rounded-sm hover:bg-secondary/60 transition-colors"
                       >
-                        <Mountain className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <Mountain className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <div className="flex-1">
                           <h4 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">{post.title}</h4>
                           <p className="text-muted-foreground text-xs mt-0.5">{post.town} · {post.readTime} read</p>
                         </div>
-                        <ChevronRight className="w-3.5 h-3.5 text-muted-foreground mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" aria-hidden="true" />
                       </Link>
                     ))}
                   </div>
                   <Link to="/service-areas" className="inline-flex items-center gap-1.5 mt-4 text-primary font-heading font-semibold text-sm hover:gap-2.5 transition-all">
-                    View All Service Areas <ArrowRight className="w-3.5 h-3.5" />
+                    View All Service Areas <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </motion.div>
               </div>
@@ -504,9 +504,9 @@ const Blog = () => {
                             {filtered[0].excerpt}
                           </p>
                           <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {filtered[0].readTime}</span>
-                            <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {formatPostDate(filtered[0].date)}</span>
-                            {filtered[0].town && <span className="flex items-center gap-1.5"><Mountain className="w-3.5 h-3.5" /> {filtered[0].town}</span>}
+                            <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" aria-hidden="true" /> {filtered[0].readTime}</span>
+                            <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" aria-hidden="true" /> {formatPostDate(filtered[0].date)}</span>
+                            {filtered[0].town && <span className="flex items-center gap-1.5"><Mountain className="w-4 h-4" aria-hidden="true" /> {filtered[0].town}</span>}
                           </div>
                         </div>
                       </div>
@@ -551,10 +551,10 @@ const Blog = () => {
                           </p>
                           <div className="mt-auto pt-4 border-t border-border flex items-center justify-between text-caption text-muted-foreground font-body">
                             <span className="flex items-center gap-2">
-                              <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {formatPostDate(post.date)}</span>
-                              <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                              <span className="flex items-center gap-1"><Calendar className="w-4 h-4" aria-hidden="true" /> {formatPostDate(post.date)}</span>
+                              <span className="flex items-center gap-1"><Clock className="w-4 h-4" aria-hidden="true" /> {post.readTime}</span>
                             </span>
-                            <span className="font-semibold text-primary group-hover:gap-1.5 transition-all flex items-center gap-1 uppercase tracking-wider text-caption">Read More <ArrowRight className="w-3 h-3" /></span>
+                            <span className="font-semibold text-primary group-hover:gap-1.5 transition-all flex items-center gap-1 uppercase tracking-wider text-caption">Read More <ArrowRight className="w-4 h-4" aria-hidden="true" /></span>
                           </div>
                         </div>
                       </Link>
@@ -591,7 +591,7 @@ const Blog = () => {
               className="max-w-xl mx-auto text-center"
             >
               <div className="w-12 h-12 rounded-sm bg-[hsl(var(--highland-gold)/0.1)] flex items-center justify-center mx-auto mb-4">
-                <Newspaper className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
+                <Newspaper className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               </div>
               <h3 className="text-xl md:text-2xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-2">
                 Stay Informed

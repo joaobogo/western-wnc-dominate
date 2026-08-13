@@ -35,7 +35,7 @@ const FileDrop = ({ files, onChange, accept = "image/*", helper, maxFiles = 8, l
           over ? "border-[hsl(var(--highland-gold))] bg-[hsl(var(--highland-gold)/0.04)]" : "border-border hover:border-foreground/30 bg-background"
         }`}
       >
-        <Upload className="w-5 h-5 text-[hsl(var(--gold-ink))] mx-auto mb-2" aria-hidden="true" />
+        <Upload className="w-4 h-4 text-[hsl(var(--gold-ink))] mx-auto mb-2" aria-hidden="true" />
         <p className="text-body-xs font-body font-semibold text-foreground/80">
           Drop files or click to upload
         </p>
@@ -67,7 +67,7 @@ const FileDrop = ({ files, onChange, accept = "image/*", helper, maxFiles = 8, l
                 onClick={(e) => { e.stopPropagation(); remove(i); }}
                 className="min-h-11 min-w-11 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
               >
-                <X className="w-3.5 h-3.5" aria-hidden="true" />
+                <X className="w-4 h-4" aria-hidden="true" />
               </button>
             </li>
           ))}
