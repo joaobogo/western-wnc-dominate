@@ -271,33 +271,36 @@ const TownPage = () => {
           </div>
         </section>
 
-        {/* 3. Dual Pathway */}
-        <TownServiceSections town={town} />
-
-        {/* 3.1 Town-personalized Services Grid */}
-        <TownServicesGrid town={town} />
-
-        {/* 3.2 Mid-page thin CTA strip */}
-        <TownCTAStrip town={town} />
-
-        {/* 3.5 Local Service Blocks — six-section local SEO template */}
-        <TownLocalServiceBlocks town={town} />
-
-        {/* 4. Local Proof */}
+        {/* 3. LOCAL PROOF — real work and real voices from this town first */}
         {townProof && <TownProofBlock town={town} content={townProof} />}
 
-        {/* 4.1 Why Choose Highlander in {town} */}
+        <FeaturedProjects location={town.name} />
+
+        <div className="container-tight pt-4 md:pt-8 space-y-14">
+          <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" />
+          <AttributedReviews town={town.name} category="roofing" />
+        </div>
+
+        <WhoShowsUp town={town.name} />
+
         <TownWhyChoose town={town} />
+
+        {/* 3.5 Mid-page thin CTA strip */}
+        <TownCTAStrip town={town} />
 
         <SectionDivider variant="diamond" />
 
-        {/* 5. Featured Projects - Filtered for Town Relevance */}
-        <FeaturedProjects location={town.name} />
+        {/* 4. SERVICES FOR THIS TOWN */}
+        <TownServiceSections town={town} />
 
-        {/* 5.5 Cinematic mid-page CTA band */}
+        <TownServicesGrid town={town} />
+
+        <TownLocalServiceBlocks town={town} />
+
+        {/* 4.5 Cinematic mid-page CTA band */}
         <TownCTABand town={town} />
 
-        {/* 6. Built for WNC Factors */}
+        {/* 5. Built for WNC Factors */}
         <BuiltForWNC />
 
         {/* 7. Localized Blog & Knowledge Base */}
