@@ -1,3 +1,4 @@
+import CommonConcerns from "@/components/conversion/CommonConcerns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -565,6 +566,7 @@ const ConstructionDesign = () => {
             </div>
           </div>
         </section>
+        <CommonConcerns />
       <RelatedLinks
           eyebrow="Keep Exploring"
           heading="Related pages you may find useful"

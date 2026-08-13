@@ -498,7 +498,6 @@ const RoofRepair = () => {
             <>
         <WhoShowsUp />
         <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
-        <CommonConcerns />
         <section className="section-padding bg-muted/20">
           <div className="container-tight">
             <AttributedReviews category="roofing" heading="What homeowners say about our roof repair work" />
@@ -554,6 +553,7 @@ const RoofRepair = () => {
           }
           cta={
             <>
+        <CommonConcerns />
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} />
           <div className="section-padding">

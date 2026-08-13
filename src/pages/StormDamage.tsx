@@ -560,7 +560,6 @@ const StormDamage = () => {
         </section>
         <WhoShowsUp />
         <TieredOffer context="storm-damage" primaryLabel="Get My Storm Damage Assessed" />
-        <CommonConcerns />
       <section className="section-padding bg-muted/20">
         <div className="container-tight">
           <AttributedReviews category="storm" heading="What homeowners say about our storm damage work" />
@@ -604,6 +603,7 @@ const StormDamage = () => {
           }
           cta={
             <>
+        <CommonConcerns />
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} />
