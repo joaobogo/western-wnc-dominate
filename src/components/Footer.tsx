@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Shield, Award, Clock, BadgeCheck, Star } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight, ArrowRight, Award, Clock, BadgeCheck } from "lucide-react";
 import veluxLogo from "@/assets/logo-velux.png";
 import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
 import { motion } from "framer-motion";
