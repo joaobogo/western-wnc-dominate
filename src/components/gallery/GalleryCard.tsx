@@ -14,6 +14,8 @@ interface GalleryCardProps {
   duration?: string;
   highlight?: string;
   index: number;
+  /** "wide" cards span two columns and use a 16:9 crop for masonry rhythm. */
+  variant?: "standard" | "wide";
   onClick: () => void;
 }
 
@@ -27,6 +29,7 @@ const GalleryCard = ({
   duration,
   highlight,
   index,
+  variant = "standard",
   onClick,
 }: GalleryCardProps) => (
   <motion.div
@@ -35,11 +38,13 @@ const GalleryCard = ({
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 0.97 }}
     transition={{ delay: index * 0.04, duration: 0.4, ease: HIGHLAND_EASE }}
-    className="group relative bg-card border border-border rounded-none overflow-hidden cursor-pointer shadow-flat hover:shadow-floating transition-all duration-500 flex flex-col h-full"
+    className={`group relative bg-card border border-border rounded-none overflow-hidden cursor-pointer shadow-flat hover:shadow-floating transition-all duration-500 flex flex-col h-full ${
+      variant === "wide" ? "md:col-span-2" : ""
+    }`}
     onClick={onClick}
   >
     {/* Image container */}
-    <div className="relative aspect-[4/3] overflow-hidden">
+    <div className={`relative overflow-hidden ${variant === "wide" ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
       <motion.img
         src={image}
         alt={title}
@@ -61,11 +66,28 @@ const GalleryCard = ({
         </span>
       </div>
 
-      {/* Hover visual cue */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-primary/10">
-        <div className="px-6 py-3 border border-white/30 bg-black/20 backdrop-blur-md flex items-center gap-2">
-           <Eye className="w-4 h-4 text-white" />
-           <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-white">View Project</span>
+      {/* Hover reveal — scope and location surface over the image */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-500 bg-[hsl(var(--heritage-charcoal)/0.62)] backdrop-blur-[2px]">
+        <div className="space-y-1.5">
+          {location && (
+            <p className="text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] flex items-center justify-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5" /> {location}
+            </p>
+          )}
+          {scope && (
+            <p className="text-white font-heading font-bold text-base md:text-lg leading-snug flex items-center justify-center gap-2">
+              <Ruler className="w-4 h-4 opacity-80" /> {scope}
+            </p>
+          )}
+          {duration && (
+            <p className="text-white/80 text-caption font-body uppercase tracking-[0.18em] flex items-center justify-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5" /> {duration}
+            </p>
+          )}
+        </div>
+        <div className="px-5 py-2.5 border border-white/30 bg-white/5 flex items-center gap-2">
+          <Eye className="w-4 h-4 text-white" />
+          <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-white">View Project</span>
         </div>
       </div>
 
