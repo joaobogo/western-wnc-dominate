@@ -75,9 +75,9 @@ const RecentProjects = () => {
         {/* Hero */}
         <section className="relative bg-secondary text-foreground overflow-hidden border-b border-border">
           <div className="absolute inset-0">
-            <img width={1600} height={1067} loading="eager" decoding="async"
+            <img width={1600} height={900} loading="eager" decoding="async"
               src={heroImg}
-              alt="Highlander roofing project in Western North Carolina"
+              alt="Standing seam metal roof on a mountain home built by Highlander Building Services in Western North Carolina"
               fetchPriority="high"
               className="w-full h-full object-cover"
             />
@@ -125,7 +125,7 @@ const RecentProjects = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {categoryCards.map((card) => (
                 <Link key={card.title} to={card.href} className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift">
-                  <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                  <div className="aspect-project overflow-hidden bg-secondary">
                     <img
                       src={card.img}
                       alt={`${card.title} — Highlander Building Services`}
@@ -175,7 +175,7 @@ const RecentProjects = () => {
                 const closesTriplet = (i + 1) % 3 === 0 && i !== completedProjects.length - 1;
                 const CardInner = (
                   <>
-                    <div className="aspect-[4/3] overflow-hidden bg-secondary relative">
+                    <div className="aspect-project overflow-hidden bg-secondary relative">
                       <img
                         src={p.image}
                         alt={`${p.title} — ${p.location}`}

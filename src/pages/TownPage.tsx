@@ -105,8 +105,8 @@ const TownPage = () => {
               alt={`Mountain home in Western North Carolina — Highlander Building Services service area: ${town.name}, ${town.state}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/45 md:bg-transparent md:bg-gradient-to-r md:from-black/75 md:via-black/35 md:to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[color:var(--scrim-flat)] md:bg-none md:bg-scrim-side" />
+            <div aria-hidden="true" className="absolute inset-0 bg-scrim-hero" />
             <TartanBackground opacity={0.03} />
           </div>
 
