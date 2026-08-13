@@ -13,14 +13,20 @@ interface Props {
  * The local link web stays below this block.
  */
 const BlogClosingCTA = ({ cta, town }: Props) => (
-  <section className="mt-12 bg-primary rounded-sm p-6 md:p-8" aria-labelledby="blog-closing-cta">
+  <section
+    className="mt-14 border-t-2 border-[hsl(var(--highland-gold))] bg-secondary/40 p-6 md:p-9"
+    aria-labelledby="blog-closing-cta"
+  >
+    <span className="block text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))] mb-3">
+      Next step
+    </span>
     <h2
       id="blog-closing-cta"
-      className="text-xl md:text-2xl font-heading font-bold text-primary-foreground mb-2"
+      className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight mb-3"
     >
       {cta.closeHeadline}
     </h2>
-    <p className="text-primary-foreground/85 text-sm leading-relaxed mb-5 max-w-xl">{cta.closeBody}</p>
+    <p className="text-muted-foreground text-base leading-relaxed mb-6 max-w-[60ch]">{cta.closeBody}</p>
     <div className="flex flex-col sm:flex-row gap-3">
       <a
         href="tel:+18285247773"
@@ -39,12 +45,12 @@ const BlogClosingCTA = ({ cta, town }: Props) => (
             town: town ?? null,
           })
         }
-        className="border border-primary-foreground/30 text-primary-foreground font-semibold px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:bg-primary-foreground/10 transition-colors"
+        className="btn btn-secondary btn-md"
       >
         {cta.ctaLabel} <ArrowRight className="w-4 h-4" />
       </Link>
     </div>
-    <p className="text-primary-foreground/70 text-xs mt-4">
+    <p className="text-muted-foreground text-xs mt-5">
       Calls are answered by the local team during working hours. Messages get a reply within one business day.
     </p>
   </section>

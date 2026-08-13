@@ -13,14 +13,17 @@ interface Props {
  * so it reads as the next step in the article, not an ad break.
  */
 const BlogMidArticleCTA = ({ cta, town }: Props) => (
-  <aside className="my-10 border-l-2 border-[hsl(var(--highland-gold))] bg-secondary/50 rounded-sm p-5 md:p-6">
+  <aside className="my-12 max-w-[68ch] border-y border-border py-7">
+    <span className="block text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))] mb-3">
+      From the field
+    </span>
     {town && (
       <span className="inline-flex items-center gap-1.5 text-caption font-body font-bold uppercase tracking-[0.14em] text-muted-foreground mb-2">
         <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" /> {town}, NC
       </span>
     )}
-    <h2 className="font-heading font-bold text-foreground text-base md:text-lg mb-2">{cta.midHeadline}</h2>
-    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{cta.midBody}</p>
+    <h2 className="font-heading font-bold text-foreground text-xl md:text-2xl leading-snug mb-2">{cta.midHeadline}</h2>
+    <p className="text-muted-foreground text-base leading-relaxed mb-5">{cta.midBody}</p>
     <div className="flex flex-col sm:flex-row gap-3">
       <Link
         to={cta.callFirst ? cta.servicePath : "/request-inspection"}
@@ -33,7 +36,7 @@ const BlogMidArticleCTA = ({ cta, town }: Props) => (
             town: town ?? null,
           })
         }
-        className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
+        className="btn btn-primary btn-sm"
       >
         {cta.callFirst ? cta.ctaLabel : "Request an Inspection"} <ArrowRight className="w-4 h-4" />
       </Link>
