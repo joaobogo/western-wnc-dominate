@@ -933,7 +933,7 @@ Elevation, weather exposure, material transport, and skilled labor demand all pu
 
 ## Next Step: A Written Estimate
 
-The best way to know your actual cost is a free inspection. We'll assess your roof's condition, measure accurately, and provide a transparent estimate with no surprises.`,
+The best way to know your actual cost is an on-site inspection. We'll assess your roof's condition, measure accurately, and provide a transparent estimate with no surprises.`,
   },
   {
     slug: "metal-vs-shingle-roof-western-nc",
