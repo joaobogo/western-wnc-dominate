@@ -344,6 +344,7 @@ const ExteriorImprovements = () => {
         }
         proof={
           <>
+            <TieredOffer context="exterior-improvements" primaryLabel="Get My Exterior Scoped" />
             {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
