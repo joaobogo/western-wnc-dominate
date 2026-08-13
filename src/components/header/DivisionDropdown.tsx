@@ -88,7 +88,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
             }
           }}
         >
-          <div className="bg-card border border-border rounded-sm shadow-raised min-w-[340px] relative overflow-hidden">
+          <div className="bg-card border border-border rounded-sm shadow-raised w-[min(92vw,860px)] relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
               <div
                 className="absolute inset-0 opacity-40 bg-[hsl(var(--highland-gold)/0.1)]"
@@ -114,27 +114,69 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
 
             <div className="mx-5 h-px bg-border/60" />
 
-            <div className="py-2 px-2">
-              {div.items.map((item, i) => (
-                <motion.div key={item.href} custom={i} variants={dropdownItemVariants} initial="hidden" animate="visible">
-                  <Link
-                    to={item.href}
-                    role="menuitem"
-                    onClick={onClose}
-                    className={`group/item flex items-center justify-between px-3 py-2.5 rounded-sm transition-all duration-200 ${
-                      isActive(item.href)
-                        ? "bg-secondary/60 text-foreground"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/40"
-                    }`}
-                  >
-                    <div>
-                      <span className="text-body-sm font-body font-bold block leading-tight">{item.label}</span>
-                      <span className="text-body-xs font-body text-muted-foreground leading-tight font-medium">{item.desc}</span>
-                    </div>
-                    <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
-                  </Link>
-                </motion.div>
+            <div className="grid grid-cols-[repeat(3,minmax(0,1fr))_260px] gap-x-4 py-3 px-4">
+              {div.columns.map((col, ci) => (
+                <div key={col.title}>
+                  <p className="px-3 pb-1.5 text-caption font-body font-bold uppercase tracking-[0.12em] text-muted-foreground/80">
+                    {col.title}
+                  </p>
+                  {col.items.map((item, i) => (
+                    <motion.div
+                      key={item.href}
+                      custom={ci * 3 + i}
+                      variants={dropdownItemVariants}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      <Link
+                        to={item.href}
+                        role="menuitem"
+                        onClick={onClose}
+                        className={`group/item flex items-start justify-between gap-2 px-3 py-2 rounded-sm transition-all duration-200 ${
+                          isActive(item.href)
+                            ? "bg-secondary/60 text-foreground"
+                            : "text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+                        }`}
+                      >
+                        <span className="block">
+                          <span className="text-body-sm font-body font-bold block leading-tight">{item.label}</span>
+                          <span className="text-body-xs font-body text-muted-foreground leading-snug font-medium block">{item.desc}</span>
+                        </span>
+                        <ChevronRight className="w-3 h-3 mt-1 shrink-0 opacity-0 group-hover/item:opacity-40 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-200" />
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               ))}
+
+              <Link
+                to={div.featured.href}
+                role="menuitem"
+                onClick={onClose}
+                className={`group/feat flex flex-col justify-between rounded-sm border p-4 transition-colors ${
+                  div.accent === "green"
+                    ? "border-primary/20 bg-primary/5 hover:bg-primary/10"
+                    : "border-[hsl(var(--highland-gold)/0.3)] bg-[hsl(var(--highland-gold)/0.08)] hover:bg-[hsl(var(--highland-gold)/0.14)]"
+                }`}
+              >
+                <span>
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.12em] text-muted-foreground block">
+                    {div.featured.eyebrow}
+                  </span>
+                  <span className="text-base font-heading font-bold text-foreground block mt-1.5 leading-tight">
+                    {div.featured.label}
+                  </span>
+                  <span className="text-body-xs font-body text-muted-foreground block mt-1.5 leading-snug">
+                    {div.featured.desc}
+                  </span>
+                </span>
+                <span className={`inline-flex items-center gap-1.5 text-body-xs font-body font-bold mt-4 ${
+                  div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
+                }`}>
+                  Get started
+                  <ArrowRight className="w-3 h-3 btn-arrow-icon" />
+                </span>
+              </Link>
             </div>
 
             <div className="border-t border-border/60 mx-2 mt-1">
