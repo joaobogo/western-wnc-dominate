@@ -602,18 +602,7 @@ const RoofReplacement = () => {
       <RealWorkWidget />
         <TieredOffer context="roof-replacement" primaryLabel="Get My Replacement Scope" />
         <CommonConcerns />
-        <CostContextBlock serviceLabel="roof replacement" />
         <SchedulingReality serviceLabel="roof replacement" />
-        <section className="section-padding pt-0 bg-muted/20">
-          <div className="container-tight">
-            <FinancingTeaser serviceLabel="roof replacement" />
-          </div>
-        </section>
-      <section className="section-padding bg-muted/20">
-        <div className="container-tight">
-          <AttributedReviews category="roofing" heading="What homeowners say about our roof replacement work" />
-        </div>
-      </section>
       <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
