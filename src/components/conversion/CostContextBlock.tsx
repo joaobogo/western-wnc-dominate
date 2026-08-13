@@ -276,6 +276,17 @@ const variants = {
 
 export type CostContextVariant = keyof typeof variants;
 
+const walkCopy: Record<CostContextVariant, string> = {
+  roofing: "Tell us the address and what you are seeing. We measure the roof, walk the variables above with you, and send a written scope you can compare line by line against any other bid.",
+  repair: "Tell us the address and what you are seeing. We inspect it in person, show you photos of what is actually failing, and send a written scope you can compare line by line against any other bid.",
+  storm: "Tell us the address and the date of the storm. We document the damage on site, give you the photo report and line-item scope, and walk your claim with you from there.",
+  construction: "Tell us what you are planning and where. We walk the property with you, talk through the variables above, and put a written phase-by-phase scope in your hands before anyone commits.",
+  exterior: "Tell us the address and what you want changed. We measure the elevations, check what is behind the current surface where we can, and send a written scope with named materials.",
+  gutters: "Tell us the address. We measure the runs, look at fascia condition and where water needs to go, and send a written scope with sizes and materials named.",
+  skylights: "Tell us what you are picturing and where. We check the roof system, attic depth, and framing, then price the unit and the labor separately so nothing is hidden.",
+  commercial: "Tell us the building and the roof system. We assess it on site, document conditions and penetrations, and send a line-item scope with phasing options for an occupied building.",
+};
+
 interface CostContextBlockProps {
   serviceLabel?: string;
   variant?: CostContextVariant;
@@ -297,8 +308,8 @@ const CostContextBlock = ({
         <h2 className="section-heading mb-3">What actually drives {serviceLabel} cost here</h2>
         <p className="text-muted-foreground font-body">
           We do not publish a headline price, because a number pulled off a chart is not an estimate — and
-          in Western North Carolina, two houses on the same street can price very differently. What we can
-          do is show you every variable that moves the number, then put a written scope in your hands.
+          in Western North Carolina, two properties on the same street can price very differently. What we
+          can do is show you every variable that moves the number, then put a written scope in your hands.
         </p>
       </div>
 
@@ -335,12 +346,11 @@ const CostContextBlock = ({
         <div className="bg-secondary/40 border border-border rounded-sm p-6">
           <h3 className="font-heading font-bold text-foreground mb-2">Want a real number?</h3>
           <p className="text-body-xs md:text-sm font-body text-muted-foreground mb-5">
-            Tell us the address and what you are seeing. We measure the roof, walk the variables above with
-            you, and send a written scope you can compare line by line against any other bid.
+            {walkCopy[variant]}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              to="/request-inspection"
+              to={variant === "construction" ? "/construction/consultation" : "/request-inspection"}
               onClick={() => trackEvent("cta_click", { label: "Request a written scope", elementId: "cost-context-scope" })}
               className="btn btn-primary btn-md"
             >
