@@ -135,7 +135,7 @@ const StickyMobileCTA = () => {
             {/* Gold top accent */}
             <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))' }} />
             
-            <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-[0_-8px_32px_-12px_hsl(var(--heritage-charcoal)/0.12)]">
+            <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-flat">
               {/* Two-column layout: Primary (Request a Quote) + Call */}
               {/* One primary action per page — see src/lib/page-cta-hierarchy.ts */}
               <div className="flex items-stretch" data-gtm-location="sticky_bar">
@@ -216,7 +216,7 @@ const StickyMobileCTA = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 12, scale: 0.95 }}
                     transition={{ duration: 0.25, ease: HIGHLAND_EASE }}
-                    className="absolute bottom-full right-0 mb-3 w-72 bg-card border border-border rounded-none shadow-[0_16px_48px_-12px_hsl(var(--heritage-charcoal)/0.14)] overflow-hidden"
+                    className="absolute bottom-full right-0 mb-3 w-72 bg-card border border-border rounded-none shadow-flat overflow-hidden"
                   >
                     <div className="h-px w-full bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />
                     <div className="p-4 border-b border-border">
@@ -259,7 +259,7 @@ const StickyMobileCTA = () => {
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="group flex items-center gap-2.5 bg-primary text-primary-foreground pl-4 pr-5 py-3 rounded-none shadow-[0_8px_24px_-6px_hsl(var(--heritage-charcoal)/0.2)] hover:shadow-[0_12px_32px_-6px_hsl(var(--heritage-charcoal)/0.25)] transition-shadow duration-300"
+                className="group flex items-center gap-2.5 bg-primary text-primary-foreground pl-4 pr-5 py-3 rounded-none shadow-flat hover:shadow-flat transition-shadow duration-300"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span className="text-sm font-body font-semibold">Start a Conversation</span>

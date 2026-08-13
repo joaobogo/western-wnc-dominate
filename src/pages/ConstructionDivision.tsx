@@ -137,7 +137,7 @@ const ConstructionDivision = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.4)] shadow-[0_0_15px_-3px_hsl(var(--highland-gold)/0.3)]">
+                  <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.4)] shadow-flat">
                     <HardHat className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] drop-shadow-sm">Mountain Quality Since 2017</span>

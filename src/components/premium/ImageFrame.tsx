@@ -45,7 +45,7 @@ export const ImageFrame = ({
       transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
       className={cn(
         "group relative rounded-none overflow-hidden",
-        variant === "featured" && "shadow-[0_20px_60px_-15px_hsl(var(--heritage-charcoal)/0.12)]",
+        variant === "featured" && "shadow-raised",
         className,
       )}
     >

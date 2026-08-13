@@ -67,7 +67,7 @@ const Reviews = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.6, ease: HIGHLAND_EASE }}
-              className="relative bg-card border border-border rounded-none p-6 md:p-10 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-[0_12px_40px_-10px_hsl(var(--heritage-charcoal)/0.08)] transition-all duration-500 quote-glyph"
+              className="relative bg-card border border-border rounded-none p-6 md:p-10 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-flat transition-all duration-500 quote-glyph"
               style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
               <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />
@@ -114,7 +114,7 @@ const Reviews = () => {
         <StaggerContainer stagger={0.07} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
            {standard.map((t) => (
              <StaggerItem key={t.authorName} variant="rise">
-              <div className="group bg-card border border-border rounded-none p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.12)] hover:shadow-[0_8px_28px_-8px_hsl(var(--heritage-charcoal)/0.06)] transition-all duration-500 h-full" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
+              <div className="group bg-card border border-border rounded-none p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.12)] hover:shadow-flat transition-all duration-500 h-full" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
                 <div className="flex items-center justify-between mb-3">
                    <span className={`text-caption font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-none ${categoryColors[categoryLabelMap[t.category]]}`}>
                      {categoryLabelMap[t.category]}

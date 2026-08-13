@@ -72,7 +72,7 @@ export const ServiceAreasDropdown = forwardRef<HTMLAnchorElement, Props>(
               id="service-areas-menu"
               role="menu"
               aria-label="Service areas by town"
-              className="bg-card border border-border rounded-sm shadow-[0_20px_60px_-15px_hsl(var(--heritage-charcoal)/0.15)] w-[440px] relative overflow-hidden focus:outline-none"
+              className="bg-card border border-border rounded-sm shadow-raised w-[440px] relative overflow-hidden focus:outline-none"
             >
               <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
                 <div
