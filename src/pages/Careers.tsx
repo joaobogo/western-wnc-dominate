@@ -84,6 +84,7 @@ const Careers = () => {
         {/* Benefits Grid */}
         <section className="section-padding bg-background">
           <div className="container-tight">
+            <h2 className="sr-only">Why work at Highlander Building Services</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((b) => (
                 <div key={b.title} className="p-8 bg-secondary/30 border border-border group hover:border-[hsl(var(--highland-gold)/0.3)] transition-all duration-300">
