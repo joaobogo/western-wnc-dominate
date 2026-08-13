@@ -557,35 +557,6 @@ const BlogPostPage = () => {
                 )}
 
 
-                {/* In-Article CTA */}
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-primary rounded-sm p-6 md:p-8 mt-10 text-center"
-                >
-                  <h2 className="text-xl font-heading font-bold text-primary-foreground mb-2">
-                    Have Questions About Your Project?
-                  </h2>
-                  <p className="text-primary-foreground/85 text-sm mb-5 max-w-md mx-auto">
-                    Our team is happy to answer questions — no commitment required. Just honest, expert advice from people who build in these mountains every day.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Link
-                      to="/consultation"
-                      className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
-                    >
-                      Request a Consultation <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <a
-                      href="tel:+18285247773"
-                      className="border border-primary-foreground/30 text-primary-foreground font-semibold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:bg-primary-foreground/10 transition-colors"
-                    >
-                      <Phone className="w-4 h-4" /> (828) 524-7773
-                    </a>
-                  </div>
-                </motion.div>
-
                 {/* Author Bio */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
