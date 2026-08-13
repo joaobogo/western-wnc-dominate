@@ -287,7 +287,7 @@ const Hero = () => {
 
 
             {/* CTA Group — premium dual-action */}
-            <div className={`flex flex-col gap-2.5 ${textLed ? "xl:flex-row xl:gap-4" : "sm:flex-row sm:gap-6"}`}>
+            <div className={`flex flex-col gap-2.5 ${textLed ? "md:max-w-md md:gap-3" : "sm:flex-row sm:gap-6"}`}>
               <Link
                 to="/consultation"
                 data-gtm-experiment="home_hero_cta"
