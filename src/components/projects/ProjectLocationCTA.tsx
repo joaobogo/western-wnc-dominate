@@ -1,7 +1,7 @@
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
-import { trackGalleryCtaClick } from "@/lib/gtm";
+import { trackCtaClick, trackGalleryCtaClick } from "@/lib/gtm";
 import { getProjectServiceTags, getTownPath } from "@/lib/project-service-tags";
 
 interface Props {
@@ -80,6 +80,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
                   cta_type: "tag",
                   destination_url: tag.path,
                   town,
+                  cta_position: "project_detail_service_tags",
                 })
               }
               className="inline-flex items-center gap-1.5 text-xs font-body font-semibold text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors px-3 py-2 rounded-sm"
