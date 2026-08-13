@@ -41,6 +41,49 @@ export function pickProjectLink(opts: {
   };
 }
 
+/**
+ * Two relevant local project stories — town matches first, then same-category
+ * work elsewhere in the mountains. Never returns duplicates.
+ */
+export function pickProjectLinks(opts: {
+  town?: string | null;
+  category?: LeadCategory;
+  count?: number;
+}): ConfirmationLink[] {
+  const town = normalize(opts.town);
+  const category = opts.category ?? "roofing";
+  const count = opts.count ?? 2;
+
+  const score = (p: (typeof projectDetails)[number]) => {
+    const sameTown = town ? normalize(p.location).includes(town) : false;
+    const sameCategory = p.category === category;
+    if (sameTown && sameCategory) return 0;
+    if (sameTown) return 1;
+    if (sameCategory) return 2;
+    return 3;
+  };
+
+  const ranked = [...projectDetails]
+    .sort((a, b) => score(a) - score(b))
+    .slice(0, count);
+
+  if (!ranked.length) {
+    return [
+      {
+        label: "See recent Highlander projects",
+        path: "/recent-projects",
+        description: "Completed work across Western North Carolina.",
+      },
+    ];
+  }
+
+  return ranked.map((project) => ({
+    label: project.title,
+    path: `/projects/${project.slug}`,
+    description: `${project.type} · ${project.location}`,
+  }));
+}
+
 /** One relevant local guide — town-specific when we have one. */
 export function pickGuideLink(opts: { town?: string | null }): ConfirmationLink {
   const town = normalize(opts.town);
