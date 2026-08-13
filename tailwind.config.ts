@@ -138,6 +138,19 @@ export default {
         hairline: "var(--border-hairline)",
         "accent-line": "var(--border-accent)",
       },
+      aspectRatio: {
+        /* Image treatment system — one ratio per context */
+        hero: "16 / 9",
+        project: "4 / 3",
+        crew: "1 / 1",
+        portrait: "4 / 5",
+        panorama: "21 / 9",
+      },
+      backgroundImage: {
+        "scrim-bottom": "var(--scrim-bottom)",
+        "scrim-hero": "var(--scrim-hero)",
+        "scrim-side": "var(--scrim-side)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0", opacity: "0" },
