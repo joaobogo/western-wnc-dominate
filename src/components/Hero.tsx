@@ -137,7 +137,11 @@ const Hero = () => {
       </div>
 
       {/* === LAYER INDICATOR — tiny premium ticks bottom-right of hero === */}
-      <div className="absolute right-6 md:right-10 lg:right-20 bottom-32 md:bottom-36 z-20 hidden sm:flex items-center gap-1.5">
+      <div className={`absolute z-20 hidden sm:flex items-center gap-1.5 ${
+        textLed
+          ? "right-6 md:right-10 top-6 md:top-auto md:bottom-10"
+          : "right-6 md:right-10 lg:right-20 bottom-32 md:bottom-36"
+      }`}>
         {layers.map((_, i) => (
           <button
             key={i}
@@ -186,7 +190,7 @@ const Hero = () => {
       </div>
 
       {/* === RIGHT EDGE — Elevation indicator === */}
-      <div className="absolute right-0 top-0 bottom-0 hidden xl:flex flex-col items-center justify-center z-10 pr-10">
+      <div className={`absolute right-0 top-0 bottom-0 ${textLed ? "hidden" : "hidden xl:flex"} flex-col items-center justify-center z-10 pr-10`}>
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -216,8 +220,12 @@ const Hero = () => {
       </div>
 
       {/* === MAIN CONTENT === */}
-      <div className="relative z-10 flex-1 flex items-center md:items-end w-full">
-        <div className="w-full px-5 md:px-10 lg:px-20 pb-10 md:pb-44 hero-clears-header">
+      <div className={`relative z-10 flex-1 flex w-full ${
+        textLed ? "items-start md:items-center pt-[38svh] md:pt-0" : "items-center md:items-end"
+      }`}>
+        <div className={`w-full px-5 md:px-10 lg:px-20 hero-clears-header ${
+          textLed ? "pt-6 md:pt-0 pb-12 md:pb-24 md:max-w-[52%]" : "pb-10 md:pb-44"
+        }`}>
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <div
