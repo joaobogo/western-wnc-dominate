@@ -119,7 +119,7 @@ const TownPage = () => {
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
                 <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{town.name} Division</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{town.name} · {town.county}, {town.state}</span>
               </div>
             </motion.div>
 
@@ -138,9 +138,20 @@ const TownPage = () => {
                 initial={{ opacity: 0, y: 20 }} 
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-lg md:text-2xl text-white/95 mb-10 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
+                className="text-lg md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
               >
                 {town.description}
+              </motion.p>
+
+              {/* One genuinely local roofing reality, above the fold */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+                className="mb-10 max-w-2xl border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-[15px] md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
+              >
+                <span className="font-bold text-[hsl(var(--gold-ink))]">{town.name} reality: </span>
+                {town.climateExposure}
               </motion.p>
               
               <motion.div 
