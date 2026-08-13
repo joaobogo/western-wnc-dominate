@@ -1,6 +1,7 @@
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { useState, lazy, Suspense } from "react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
+import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CredibilityStrip from "@/components/home/CredibilityStrip";
@@ -88,11 +89,9 @@ const Index = () => {
 
         <Suspense fallback={<SectionFallback h={1800} />}>
           {/* 4. Local proof — real, attributable reviews */}
-          <section className="section-padding bg-background">
-            <div className="container-tight max-w-5xl">
-              <AttributedReviews heading="What Western NC homeowners say" />
-            </div>
-          </section>
+          <Section density="default" width="tight" className="bg-background">
+            <AttributedReviews heading="What Western NC homeowners say" />
+          </Section>
 
           <SectionDivider variant="tartan-trim" />
 
