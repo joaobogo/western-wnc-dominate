@@ -34,7 +34,7 @@ const RegionalAuthority = () => {
 
           <div className="w-12 h-px bg-[hsl(var(--highland-gold))] mb-6" />
 
-          <div className="space-y-5 text-foreground/90 text-[16px] md:text-[18px] leading-relaxed font-body">
+          <div className="space-y-5 text-foreground/90 text-body-sm md:text-body leading-relaxed font-body">
             <p>
               Highlander Building Services is a family-owned{" "}
               <strong>roofing company serving Western North Carolina</strong> from
@@ -95,7 +95,7 @@ const RegionalAuthority = () => {
           <div className="bg-card border border-border rounded-none p-6 md:p-8 shadow-sm">
             <div className="flex items-center gap-2 mb-5">
               <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-              <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground">
+              <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground">
                 Coverage Snapshot
               </span>
             </div>
@@ -104,7 +104,7 @@ const RegionalAuthority = () => {
               One team. Roofing &amp; construction across the Western NC mountains.
             </h3>
 
-            <ul className="space-y-3 mb-6 text-[15px] font-body">
+            <ul className="space-y-3 mb-6 text-body-sm font-body">
               <li className="flex items-start gap-3">
                 <ShieldCheck className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                 <span><strong>Licensed &amp; Insured</strong> — NC General Contractor + CertainTeed ShingleMaster credentialed.</span>

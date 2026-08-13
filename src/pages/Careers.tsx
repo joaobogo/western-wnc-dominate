@@ -149,17 +149,17 @@ const Careers = () => {
                       <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid sm:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-full-name">Full Name</label>
+                            <label className="text-caption font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-full-name">Full Name</label>
                             <input id="f-full-name" required {...fieldAttrs.name} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="e.g. John Davidson" />
                           </div>
                           <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-phone-number">Phone Number</label>
+                            <label className="text-caption font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-phone-number">Phone Number</label>
                             <input id="f-phone-number" required {...fieldAttrs.phone} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="(828) 000-0000" />
                           </div>
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-position-of-interest">Position of Interest</label>
+                          <label className="text-caption font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-position-of-interest">Position of Interest</label>
                           <select id="f-position-of-interest" value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors appearance-none">
                             {openRoles.map(role => (
                               <option key={role}>{role}</option>
@@ -169,12 +169,12 @@ const Careers = () => {
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-relevant-experience">Relevant Experience</label>
+                          <label className="text-caption font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-relevant-experience">Relevant Experience</label>
                           <textarea id="f-relevant-experience" rows={4} {...fieldAttrs.notes} value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="w-full bg-secondary/50 border border-border p-4 text-sm focus:border-primary outline-none transition-colors" placeholder="Tell us about your background in roofing or construction..." />
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-resume-cv-optional">Resume / CV (Optional)</label>
+                          <label className="text-caption font-bold uppercase tracking-wider text-muted-foreground" htmlFor="f-resume-cv-optional">Resume / CV (Optional)</label>
                           <div className="relative group cursor-pointer">
                             <input id="f-resume-cv-optional" type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
                             <div className="w-full bg-secondary/30 border border-dashed border-border p-6 text-center group-hover:border-primary/50 transition-colors">

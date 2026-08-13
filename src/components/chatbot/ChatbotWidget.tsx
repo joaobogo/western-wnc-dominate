@@ -151,7 +151,7 @@ function LeadCaptureCard({
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-card border border-border rounded-sm p-4 max-w-[90%] space-y-3">
       <div>
         <p className="text-sm font-heading font-semibold text-foreground">Ready to talk with an advisor?</p>
-        <p className="text-[11px] text-muted-foreground font-body mt-0.5">Share your info and we'll call you — no obligation.</p>
+        <p className="text-caption text-muted-foreground font-body mt-0.5">Share your info and we'll call you — no obligation.</p>
       </div>
       <div className="space-y-2">
         <input aria-label="Your name" {...fieldAttrs.name} value={name} onChange={e => setName(e.target.value)} placeholder="e.g. John and Mary Davidson" className={inputCls} maxLength={100} />
@@ -167,7 +167,7 @@ function LeadCaptureCard({
           Not yet
         </button>
       </div>
-      <p className="text-[10px] text-muted-foreground font-body flex items-start gap-1 leading-relaxed">
+      <p className="text-caption text-muted-foreground font-body flex items-start gap-1 leading-relaxed">
         <Shield className="w-3 h-3 mt-0.5 flex-shrink-0" />
         <span>
           By submitting, you agree Highlander may contact you by phone, text, or email about your inquiry. Reply STOP to opt out. See our <a href="/privacy-policy" className="underline">Privacy Policy</a>.
@@ -208,7 +208,7 @@ function StormChecklistCard() {
         ))}
       </div>
       <div className="mt-3 pt-2 border-t border-border">
-        <p className="text-[10px] text-muted-foreground font-body">{completed} of {items.length} complete</p>
+        <p className="text-caption text-muted-foreground font-body">{completed} of {items.length} complete</p>
       </div>
     </motion.div>
   );
@@ -436,7 +436,7 @@ export default function ChatbotWidget() {
             <div className="bg-primary text-primary-foreground px-4 py-3 flex items-center justify-between shrink-0">
               <div>
                 <p className="font-heading text-sm font-semibold tracking-wide">Highlander Project Assistant</p>
-                <p className="text-[11px] opacity-60 font-body">Roofing & Construction — your guide in WNC</p>
+                <p className="text-caption opacity-60 font-body">Roofing & Construction — your guide in WNC</p>
               </div>
               <button onClick={() => setIsOpen(false)} className="p-1.5 rounded-sm hover:bg-white/10 transition-colors" aria-label="Close chat">
                 <X className="w-4 h-4" />

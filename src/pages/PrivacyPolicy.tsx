@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
             <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary" />
             </div>
-            <span className="text-[11px] font-body font-bold uppercase tracking-[0.22em] text-primary">
+            <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-primary">
               Legal
             </span>
           </div>
@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
             aria-label="Table of contents"
             className="mb-12 p-5 md:p-6 border border-border rounded-sm bg-muted/30"
           >
-            <p className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary mb-3">
+            <p className="text-caption font-body font-bold uppercase tracking-[0.18em] text-primary mb-3">
               Contents
             </p>
             <ol className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 text-sm font-body list-none p-0">

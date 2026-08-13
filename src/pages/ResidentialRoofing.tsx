@@ -208,8 +208,8 @@ const ResidentialRoofing = () => {
                 <div className="inline-flex items-center gap-4">
                   <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
                   <div className="flex flex-col">
-                    <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                    <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
+                    <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                    <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.2em] -mt-1">Residential Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -217,12 +217,12 @@ const ResidentialRoofing = () => {
                     <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
                       <Home className="w-3.5 h-3.5 text-primary-foreground" />
                     </div>
-                    <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">
+                    <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">
                       Roofing
                     </span>
                   </Link>
                   <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                  <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
+                  <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
                     Residential
                   </span>
                 </div>
@@ -297,7 +297,7 @@ const ResidentialRoofing = () => {
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2">
                     <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
-                    <span className="text-[10px] font-body text-primary-foreground/95 uppercase tracking-widest">{item.label}</span>
+                    <span className="text-caption font-body text-primary-foreground/95 uppercase tracking-widest">{item.label}</span>
                   </div>
                 ))}
               </motion.div>
@@ -316,7 +316,7 @@ const ResidentialRoofing = () => {
              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-3">
                    <div className="w-10 h-[1px] bg-primary/20" />
-                   <span className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">Serving Local Markets</span>
+                   <span className="text-caption font-bold uppercase tracking-widest text-muted-foreground">Serving Local Markets</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
                    {[
@@ -346,7 +346,7 @@ const ResidentialRoofing = () => {
                    <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
                       Highlander’s project discipline extends into custom additions and renovations. If your roofing project is part of a larger home expansion, our construction team coordinates the entire structural envelope.
                    </p>
-                   <Link to="/construction" className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-bold uppercase tracking-widest text-[11px] hover:gap-3 transition-all">
+                   <Link to="/construction" className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-bold uppercase tracking-widest text-caption hover:gap-3 transition-all">
                       Explore Construction Division <ArrowRight className="w-4 h-4" />
                    </Link>
                 </div>
@@ -425,7 +425,7 @@ const ResidentialRoofing = () => {
                     </div>
                     <div>
                       <p className="text-sm font-heading font-bold text-foreground">{item.label}</p>
-                      <p className="text-[11px] text-muted-foreground font-body">{item.sub}</p>
+                      <p className="text-caption text-muted-foreground font-body">{item.sub}</p>
                     </div>
                   </div>
                 ))}
@@ -469,7 +469,7 @@ const ResidentialRoofing = () => {
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">
                     {sign.title}
                   </h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
                     {sign.detail}
                   </p>
                 </motion.div>
@@ -534,7 +534,7 @@ const ResidentialRoofing = () => {
                       {option.items.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${i === 0 ? 'text-primary/80' : 'text-[hsl(var(--highland-gold)/0.9)]'}`} />
-                          <span className="text-muted-foreground text-[13px] font-body leading-snug">{item}</span>
+                          <span className="text-muted-foreground text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -599,22 +599,22 @@ const ResidentialRoofing = () => {
                           <h3 className="font-heading font-bold text-dark-section-foreground text-lg group-hover:text-[hsl(var(--gold-ink))] transition-colors">
                             {mat.name}
                           </h3>
-                          <span className="text-[10px] font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">
+                          <span className="text-caption font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">
                             {mat.lifespan}
                           </span>
                         </div>
 
-                        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-[13px] font-body text-dark-section-foreground/95">
-                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-[11px] mr-1">Brand:</strong> {mat.brand}</span>
-                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-[11px] mr-1">Warranty:</strong> {mat.warranty}</span>
-                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-[11px] mr-1">Best For:</strong> {mat.best}</span>
+                        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-body-xs font-body text-dark-section-foreground/95">
+                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Brand:</strong> {mat.brand}</span>
+                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Warranty:</strong> {mat.warranty}</span>
+                          <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Best For:</strong> {mat.best}</span>
                         </div>
 
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {mat.pros.map((pro) => (
                             <li key={pro} className="flex items-start gap-2">
                               <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
-                              <span className="text-dark-section-foreground/95 text-[13px] font-body font-medium">{pro}</span>
+                              <span className="text-dark-section-foreground/95 text-body-xs font-body font-medium">{pro}</span>
                             </li>
                           ))}
                         </ul>
@@ -682,7 +682,7 @@ const ResidentialRoofing = () => {
                     <Landmark className="w-5 h-5 text-primary/80 group-hover:text-primary transition-colors" />
                     <h3 className="font-heading font-bold text-foreground text-base group-hover:text-primary transition-colors">{style.title}</h3>
                   </div>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
                     {style.description}
                   </p>
                 </motion.div>
@@ -727,7 +727,7 @@ const ResidentialRoofing = () => {
                 >
                   <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-3 left-3 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">
+                  <div className="absolute top-3 left-3 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">
                     {item.category}
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -777,7 +777,7 @@ const ResidentialRoofing = () => {
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
                     {step.description}
                   </p>
                 </motion.div>
@@ -828,7 +828,7 @@ const ResidentialRoofing = () => {
                       <h3 className="text-sm font-heading font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
                         {check.title}
                       </h3>
-                      <p className="text-muted-foreground text-[13px] leading-relaxed font-body">
+                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body">
                         {check.detail}
                       </p>
                     </div>
@@ -868,7 +868,7 @@ const ResidentialRoofing = () => {
                     className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300"
                   >
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">
                         {faq.q}
                       </span>
                     </AccordionTrigger>

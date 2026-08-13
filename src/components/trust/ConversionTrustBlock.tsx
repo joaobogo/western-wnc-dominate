@@ -92,8 +92,8 @@ const ConversionTrustBlock = ({
               <li key={item.label} className="flex items-start gap-3">
                 <item.icon className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
                 <div>
-                  <p className="text-[13px] font-heading font-bold text-foreground leading-snug">{item.label}</p>
-                  <p className="text-[12px] font-body text-muted-foreground leading-relaxed mt-0.5">{item.detail}</p>
+                  <p className="text-body-xs font-heading font-bold text-foreground leading-snug">{item.label}</p>
+                  <p className="text-body-xs font-body text-muted-foreground leading-relaxed mt-0.5">{item.detail}</p>
                 </div>
               </li>
             ))}
@@ -117,7 +117,7 @@ const ConversionTrustBlock = ({
             decoding="async"
             className="w-full h-40 md:h-44 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
-          <span className="absolute bottom-0 left-0 right-0 bg-foreground/70 text-background text-[11px] font-body px-3 py-2 flex items-center justify-between gap-2">
+          <span className="absolute bottom-0 left-0 right-0 bg-foreground/70 text-background text-caption font-body px-3 py-2 flex items-center justify-between gap-2">
             <span>{project.type} — {project.location}</span>
             <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
           </span>
@@ -127,14 +127,14 @@ const ConversionTrustBlock = ({
       <div className="p-5 space-y-4">
         <div className="flex items-start gap-2.5">
           <Clock className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-          <p className="text-[13px] font-body font-medium text-foreground leading-relaxed">
+          <p className="text-body-xs font-body font-medium text-foreground leading-relaxed">
             {RESPONSE_PROMISE}
           </p>
         </div>
 
         <ul className="grid gap-1.5">
           {CREDENTIALS.map((c) => (
-            <li key={c.label} className="flex items-center gap-2 text-[12px] font-body text-muted-foreground">
+            <li key={c.label} className="flex items-center gap-2 text-body-xs font-body text-muted-foreground">
               <c.icon className="w-3.5 h-3.5 text-primary flex-shrink-0" />
               {c.label}
             </li>
@@ -148,10 +148,10 @@ const ConversionTrustBlock = ({
                 <Star key={i} className="w-3 h-3 fill-accent text-[hsl(var(--gold-ink))]" />
               ))}
             </div>
-            <blockquote className="text-[13px] font-body leading-relaxed text-foreground/85">
+            <blockquote className="text-body-xs font-body leading-relaxed text-foreground/85">
               "{review.reviewBody.length > 190 ? `${review.reviewBody.slice(0, 190).trim()}…` : review.reviewBody}"
             </blockquote>
-            <figcaption className="mt-2 text-[11px] font-body text-muted-foreground">
+            <figcaption className="mt-2 text-caption font-body text-muted-foreground">
               {review.authorName} · {review.location} · {review.project}
             </figcaption>
           </figure>

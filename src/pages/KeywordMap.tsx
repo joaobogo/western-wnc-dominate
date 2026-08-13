@@ -37,7 +37,7 @@ const KeywordCard = ({ entry }: { entry: KeywordMapEntry }) => {
     <article className="rounded-sm border border-border bg-card p-6">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-sm bg-secondary px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
+          <div className="inline-flex items-center gap-2 rounded-sm bg-secondary px-3 py-1 text-caption font-semibold uppercase tracking-[0.12em] text-primary">
             <Icon className="h-3.5 w-3.5" /> {meta.label}
           </div>
           <h2 className="mt-3 text-2xl font-heading font-bold text-foreground">{entry.label}</h2>

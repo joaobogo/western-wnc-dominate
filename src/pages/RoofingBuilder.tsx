@@ -321,28 +321,28 @@ const RoofingBuilder = () => {
             >
               {step === 0 && (
                 <>
-                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight mb-2">
                     What kind of project are you planning?
                   </h2>
-                  <p className="text-muted-foreground text-[13px] font-body mb-6">Pick the closest match — material comes next.</p>
+                  <p className="text-muted-foreground text-body-xs font-body mb-6">Pick the closest match — material comes next.</p>
                   <VisualChoiceGrid options={PROJECT_TYPES} value={data.projectType} onChange={(v) => set("projectType", v)} />
                 </>
               )}
               {step === 1 && (
                 <>
-                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight mb-2">
                     Which material system fits?
                   </h2>
-                  <p className="text-muted-foreground text-[13px] font-body mb-6">Not a commitment. We confirm fit on-site.</p>
+                  <p className="text-muted-foreground text-body-xs font-body mb-6">Not a commitment. We confirm fit on-site.</p>
                   <VisualChoiceGrid options={MATERIALS} value={data.material} onChange={(v) => set("material", v)} columns={3} />
                 </>
               )}
               {step === 2 && (
                 <>
-                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight mb-2">
                     What matters most for this roof?
                   </h2>
-                  <p className="text-muted-foreground text-[13px] font-body mb-6">Pick anything that applies.</p>
+                  <p className="text-muted-foreground text-body-xs font-body mb-6">Pick anything that applies.</p>
                   <VisualChoiceGrid options={PRIORITIES} value={data.priorities} onChange={(v) => toggleMulti("priorities", v)} multi columns={3} />
 
                   <div className="mt-8 pt-6 border-t border-border/60">
@@ -353,11 +353,11 @@ const RoofingBuilder = () => {
               )}
               {step === 3 && (
                 <>
-                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight mb-2">
                     Project context
                   </h2>
-                  <p className="text-muted-foreground text-[13px] font-body mb-6">A few details so we route the right Highlander specialist.</p>
-                  <Label required>Investment tier <span className="font-normal text-foreground/80 text-[11px] normal-case tracking-normal">— qualitative, not a price</span></Label>
+                  <p className="text-muted-foreground text-body-xs font-body mb-6">A few details so we route the right Highlander specialist.</p>
+                  <Label required>Investment tier <span className="font-normal text-foreground/80 text-caption normal-case tracking-normal">— qualitative, not a price</span></Label>
                   <VisualChoiceGrid options={INVESTMENT} value={data.investment} onChange={(v) => set("investment", v)} columns={2} />
                   <div className="mt-7">
                     <Label required>Timeline</Label>
@@ -375,10 +375,10 @@ const RoofingBuilder = () => {
               )}
               {step === 4 && (
                 <>
-                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight mb-2">
                     Photos & notes
                   </h2>
-                  <p className="text-muted-foreground text-[13px] font-body mb-6">Optional — sharpens the assessment.</p>
+                  <p className="text-muted-foreground text-body-xs font-body mb-6">Optional — sharpens the assessment.</p>
                   <FileDrop files={files} onChange={setFiles} />
                   <div className="mt-6">
                     <Label htmlFor="f-anything-the-advisor-should-know">Anything the advisor should know</Label>
@@ -393,13 +393,13 @@ const RoofingBuilder = () => {
               )}
               {step === 5 && (
                 <>
-                  <h2 className="text-[19px] md:text-[22px] font-heading font-bold text-foreground tracking-tight mb-2">
+                  <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight mb-2">
                     Review & send
                   </h2>
-                  <p className="text-muted-foreground text-[13px] font-body mb-6">A named advisor reviews your brief and responds within as soon as possible.</p>
+                  <p className="text-muted-foreground text-body-xs font-body mb-6">A named advisor reviews your brief and responds within as soon as possible.</p>
                   <ReviewCard rows={summaryRows}>
                     <div className="pt-1">
-                      <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-muted-foreground mb-3">Your contact</p>
+                      <p className="text-caption font-body font-bold uppercase tracking-[0.22em] text-muted-foreground mb-3">Your contact</p>
                       <FieldRow>
                         <div>
                           <Label required htmlFor="f-full-name">Full name</Label>
@@ -416,7 +416,7 @@ const RoofingBuilder = () => {
                       </div>
                     </div>
                     {error && (
-                      <p className="text-[12.5px] text-destructive font-body">{error}</p>
+                      <p className="text-body-xs text-destructive font-body">{error}</p>
                     )}
                   </ReviewCard>
                 </>

@@ -36,7 +36,7 @@ const WrittenScopeIncludes = () => (
           <h3 className="font-heading font-bold text-foreground text-base mb-4">Included on every replacement</h3>
           <ul className="space-y-2.5">
             {included.map((item) => (
-              <li key={item} className="flex gap-2.5 text-[13px] font-body text-muted-foreground leading-relaxed">
+              <li key={item} className="flex gap-2.5 text-body-xs font-body text-muted-foreground leading-relaxed">
                 <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span>{item}</span>
               </li>
@@ -47,12 +47,12 @@ const WrittenScopeIncludes = () => (
           <h3 className="font-heading font-bold text-foreground text-base mb-4">Quoted separately, never buried</h3>
           <ul className="space-y-2.5">
             {excluded.map((item) => (
-              <li key={item} className="text-[13px] font-body text-muted-foreground leading-relaxed border-l-2 border-border pl-3">
+              <li key={item} className="text-body-xs font-body text-muted-foreground leading-relaxed border-l-2 border-border pl-3">
                 {item}
               </li>
             ))}
           </ul>
-          <p className="text-[13px] font-body text-foreground/80 leading-relaxed mt-5">
+          <p className="text-body-xs font-body text-foreground/80 leading-relaxed mt-5">
             If a condition shows up after tear-off, you see photos and a written change amount before we proceed.
           </p>
         </div>

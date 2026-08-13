@@ -47,7 +47,7 @@ const CallFirstCTA = ({
         <a
           href="tel:+18285247773"
           aria-label="Call Highlander at (828) 524-7773"
-          className="cta-gradient text-accent-foreground font-heading font-bold text-[17px] md:text-[19px] px-8 md:px-10 py-4 rounded-sm inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all min-h-[56px]"
+          className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm md:text-body px-8 md:px-10 py-4 rounded-sm inline-flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all min-h-[56px]"
         >
           <Phone className="w-5 h-5" />
           <span>Call (828) 524-7773</span>
@@ -55,7 +55,7 @@ const CallFirstCTA = ({
         {secondaryLabel && secondaryTo && (
           <Link
             to={secondaryTo}
-            className={`font-body font-semibold text-[14px] md:text-[15px] px-6 py-3 rounded-sm inline-flex items-center justify-center min-h-[48px] transition-all ${
+            className={`font-body font-semibold text-body-xs md:text-body-sm px-6 py-3 rounded-sm inline-flex items-center justify-center min-h-[48px] transition-all ${
               dark
                 ? "border border-white/20 text-white/90 hover:bg-white/10"
                 : "border border-border text-foreground hover:bg-muted"
@@ -66,7 +66,7 @@ const CallFirstCTA = ({
         )}
       </div>
       <p
-        className={`mt-3 text-[13px] md:text-[14px] font-body leading-snug max-w-xl ${
+        className={`mt-3 text-body-xs md:text-body-xs font-body leading-snug max-w-xl ${
           dark ? "text-white/80" : "text-muted-foreground"
         }`}
       >

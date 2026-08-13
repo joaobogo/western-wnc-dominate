@@ -52,7 +52,7 @@ export const ServicePreview = ({
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-heading font-semibold text-foreground truncate">{title}</p>
-          <p className="text-[11px] text-muted-foreground font-body truncate">{description}</p>
+          <p className="text-caption text-muted-foreground font-body truncate">{description}</p>
         </div>
         <ArrowRight className="w-3 h-3 text-muted-foreground group-hover:text-muted-foreground btn-arrow-icon flex-shrink-0" />
       </Link>
@@ -78,12 +78,12 @@ export const ServicePreview = ({
             <div className={cn("w-10 h-10 rounded-sm flex items-center justify-center transition-colors", styles.iconBg)}>
               <Icon className={cn("w-5 h-5", styles.iconColor)} />
             </div>
-            <span className={cn("text-[9px] font-body font-semibold uppercase tracking-[0.14em] opacity-40 group-hover:opacity-60 transition-opacity", styles.iconColor)}>
+            <span className={cn("text-caption font-body font-semibold uppercase tracking-[0.14em] opacity-40 group-hover:opacity-60 transition-opacity", styles.iconColor)}>
               {styles.label}
             </span>
           </div>
           <h4 className="text-base font-heading font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{title}</h4>
-          <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-5 flex-grow">{description}</p>
+          <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-5 flex-grow">{description}</p>
           <span className={cn("inline-flex items-center gap-1.5 font-semibold text-sm font-body group-hover:gap-2.5 transition-all", styles.ctaColor)}>
             Explore This Service <ArrowRight className="w-3.5 h-3.5 btn-arrow-icon" />
           </span>

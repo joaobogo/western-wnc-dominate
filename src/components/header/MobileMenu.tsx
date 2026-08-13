@@ -60,8 +60,8 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                       }`} />
                     </div>
                     <div className="text-left">
-                      <span className="text-[16px] md:text-[18px] font-heading font-bold block leading-tight text-heritage-charcoal">{div.label}</span>
-                      <span className="text-[10.5px] md:text-[12px] font-body text-heritage-charcoal/55 uppercase tracking-[0.1em] leading-tight">{div.tagline}</span>
+                      <span className="text-body-sm md:text-body font-heading font-bold block leading-tight text-heritage-charcoal">{div.label}</span>
+                      <span className="text-caption md:text-body-xs font-body text-heritage-charcoal/55 uppercase tracking-[0.1em] leading-tight">{div.tagline}</span>
                     </div>
                   </div>
                   <motion.div animate={{ rotate: expanded === div.label ? 180 : 0 }} transition={{ duration: 0.25, ease: HIGHLAND_EASE }}>
@@ -94,17 +94,17 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                                 isActive(item.href) ? "bg-black/5" : "hover:bg-black/5"
                               }`}
                             >
-                              <span className={`text-[15px] font-body block leading-tight ${
+                              <span className={`text-body-sm font-body block leading-tight ${
                                 isActive(item.href) ? "font-medium text-heritage-charcoal" : "text-heritage-charcoal/70"
                               }`}>{item.label}</span>
-                              <span className="text-[11.5px] font-body text-heritage-charcoal/45 leading-tight mt-0.5">{item.desc}</span>
+                              <span className="text-caption font-body text-heritage-charcoal/45 leading-tight mt-0.5">{item.desc}</span>
                             </Link>
                           </motion.div>
                         ))}
                         <Link
                           to={div.href}
                           onClick={(e) => onViewAllClick(e, div.href)}
-                          className={`py-2 px-2.5 text-[13px] font-bold uppercase tracking-[0.08em] rounded-sm transition-colors flex items-center gap-1.5 font-body ${
+                          className={`py-2 px-2.5 text-body-xs font-bold uppercase tracking-[0.08em] rounded-sm transition-colors flex items-center gap-1.5 font-body ${
                             div.accent === "green" ? "text-primary" : "text-[hsl(var(--gold-ink))]"
                           }`}
                         >
@@ -128,7 +128,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.3 }} className="flex items-center gap-3 py-1.5 px-2.5 mt-1">
               <div className="flex-1 h-px bg-black/10" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">Company</span>
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">Company</span>
               <div className="flex-1 h-px bg-black/10" />
             </motion.div>
 
@@ -138,7 +138,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                   to={link.href}
                   {...preloadHandlers(link.href)}
                   onClick={onClose}
-                  className={`py-2.5 px-2.5 text-[15px] font-bold rounded-sm transition-all flex items-center gap-2 font-body min-h-[44px] ${
+                  className={`py-2.5 px-2.5 text-body-sm font-bold rounded-sm transition-all flex items-center gap-2 font-body min-h-[44px] ${
                     isActive(link.href) ? "text-heritage-charcoal bg-black/5" : "text-heritage-charcoal/80 hover:text-heritage-charcoal hover:bg-black/5"
                   }`}
                 >
@@ -152,14 +152,14 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               <Link
                 to="/consultation"
                 onClick={onClose}
-                className="cta-gradient text-accent-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-[14px] uppercase tracking-[0.1em] shadow-lg min-h-[52px]"
+                className="cta-gradient text-accent-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs uppercase tracking-[0.1em] shadow-lg min-h-[52px]"
               >
                 <span className="relative z-10">Request an Estimate</span>
                 <ArrowRight className="w-4 h-4 relative z-10" />
               </Link>
               <a
                 href="tel:+18285247773"
-                className="bg-primary text-primary-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-[14px] font-body shadow-md active:scale-95 transition-all min-h-[52px] uppercase tracking-[0.08em]"
+                className="bg-primary text-primary-foreground font-bold text-center py-3.5 px-4 rounded-none flex items-center justify-center gap-2 text-body-xs font-body shadow-md active:scale-95 transition-all min-h-[52px] uppercase tracking-[0.08em]"
               >
                 <Phone className="w-4 h-4" />
                 (828) 524-7773

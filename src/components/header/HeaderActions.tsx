@@ -20,7 +20,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
     <Link
       to="/community"
       aria-label="Giving Back to our community"
-      className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-body font-bold uppercase tracking-[0.1em] text-heritage-charcoal/75 hover:text-[hsl(var(--gold-ink))] transition-colors duration-300 px-2 py-1.5 group"
+      className="hidden lg:inline-flex items-center gap-1.5 text-body-xs font-body font-bold uppercase tracking-[0.1em] text-heritage-charcoal/75 hover:text-[hsl(var(--gold-ink))] transition-colors duration-300 px-2 py-1.5 group"
     >
       <Heart className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))] group-hover:fill-[hsl(var(--highland-gold))] transition-all duration-300" />
       <span>Giving Back</span>
@@ -33,7 +33,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
     </a>
     <Link
       to="/consultation"
-      className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-[14px] px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
+      className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-body-xs px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
     >
       <span className="relative z-10">Get Estimate</span>
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />

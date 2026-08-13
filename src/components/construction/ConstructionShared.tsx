@@ -95,7 +95,7 @@ export const ConstructionClosingCTA = ({
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
                   <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                  <span className="text-dark-section-foreground/85 text-[13px] font-body font-bold">{item.text}</span>
+                  <span className="text-dark-section-foreground/85 text-body-xs font-body font-bold">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -124,7 +124,7 @@ const defaultItems: TrustSidebarItem[] = [
 
 export const ConstructionTrustSidebar = ({ items = defaultItems }: { items?: TrustSidebarItem[] }) => (
   <div className="bg-card border border-border rounded-sm p-5 md:p-6 space-y-4">
-    <h4 className="text-[12px] font-body font-bold uppercase tracking-[0.15em] text-primary/70 mb-3">Why Highlander</h4>
+    <h4 className="text-body-xs font-body font-bold uppercase tracking-[0.15em] text-primary/70 mb-3">Why Highlander</h4>
     {items.map((item) => (
       <div key={item.label} className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-sm bg-primary/6 flex items-center justify-center flex-shrink-0">

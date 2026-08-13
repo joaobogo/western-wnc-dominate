@@ -89,18 +89,18 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
         </div>
 
         {/* Title */}
-        <h3 className="text-base md:text-[1.1rem] font-heading font-bold text-dark-section-foreground/90 mb-3 leading-snug tracking-tight">
+        <h3 className="text-base md:text-body-sm font-heading font-bold text-dark-section-foreground/90 mb-3 leading-snug tracking-tight">
           {pillar.title}
         </h3>
 
         {/* Copy */}
-        <p className="text-dark-section-foreground/95 text-[13px] leading-[1.75] font-body mb-5">
+        <p className="text-dark-section-foreground/95 text-body-xs leading-[1.75] font-body mb-5">
           {pillar.copy}
         </p>
 
         {/* Detail strip */}
         <div className="pt-4 border-t border-dark-section-foreground/[0.06]">
-          <span className="text-[10px] font-body text-dark-section-foreground/90 tracking-wide leading-relaxed">
+          <span className="text-caption font-body text-dark-section-foreground/90 tracking-wide leading-relaxed">
             {pillar.detail}
           </span>
         </div>
@@ -119,18 +119,18 @@ const ValueProposition = () => {
         {/* Header */}
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
+            <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
               How We Protect Your Investment
             </span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
-            <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
               Six Things We Do That<br className="hidden md:block" />
               <span className="text-[hsl(var(--gold-ink))]"> Most Contractors Won't.</span>
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-dark-section-foreground/95 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
+            <p className="text-dark-section-foreground/95 text-body-sm font-body max-w-xl mx-auto leading-relaxed">
               We built our reputation on being the contractor you don't have to call back.
               Here's exactly how we earn that.
             </p>
@@ -161,7 +161,7 @@ const ValueProposition = () => {
             <span className="relative">Discuss Your Project With Us</span>
             <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
           </Link>
-          <p className="text-[11px] text-dark-section-foreground/90 font-body mt-4 tracking-wide">
+          <p className="text-caption text-dark-section-foreground/90 font-body mt-4 tracking-wide">
             No pressure. No sales pitch. Just a conversation about what your property needs.
           </p>
         </motion.div>

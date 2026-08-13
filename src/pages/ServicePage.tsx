@@ -101,11 +101,11 @@ const ServicePage = () => {
                 <div className={`w-8 h-8 rounded-sm flex items-center justify-center ${theme.badgeBgClass}`}>
                   <DivisionIcon className={`w-4 h-4 ${theme.badgeTextClass}`} />
                 </div>
-                <span className={`text-[10px] font-body font-semibold uppercase tracking-[0.15em] ${theme.badgeTextClass}`}>
+                <span className={`text-caption font-body font-semibold uppercase tracking-[0.15em] ${theme.badgeTextClass}`}>
                   {theme.label}
                 </span>
-                <span className="text-dark-section-foreground/90 text-[10px] font-body">—</span>
-                <span className="text-dark-section-foreground/95 text-[10px] font-body italic tracking-wide">
+                <span className="text-dark-section-foreground/90 text-caption font-body">—</span>
+                <span className="text-dark-section-foreground/95 text-caption font-body italic tracking-wide">
                   {theme.tagline}
                 </span>
               </div>
@@ -205,7 +205,7 @@ const ServicePage = () => {
                   <Link key={s.slug} to={["commercial-roofing", "commercial-maintenance", "gutters", "outdoor-living", "construction-services"].includes(s.slug) ? `/${s.slug}` : `/services/${s.slug}`} className={`group bg-card border border-border rounded-lg p-6 ${sTheme.borderHoverClass} hover:shadow-lg transition-all`}>
                     <div className="flex items-center gap-2 mb-3">
                       <s.icon className={`w-8 h-8 ${sTheme.accentClass}`} />
-                      <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.12em] ${sTheme.badgeTextClass} opacity-60`}>
+                      <span className={`text-caption font-body font-semibold uppercase tracking-[0.12em] ${sTheme.badgeTextClass} opacity-60`}>
                         {sTheme.label}
                       </span>
                     </div>

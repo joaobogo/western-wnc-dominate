@@ -149,13 +149,13 @@ const ConstructionTrust = ({
               {pillars.map((pillar, i) => (
                 <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                   {showObjections && pillar.overcomes && (
-                    <p className="text-[hsl(var(--highland-gold)/0.85)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                    <p className="text-[hsl(var(--highland-gold)/0.85)] text-caption italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
                   )}
                   <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4">
                     <pillar.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{pillar.title}</h3>
-                  <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+                  <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{pillar.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -178,13 +178,13 @@ const ConstructionTrust = ({
           {pillars.map((pillar, i) => (
             <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-card border border-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.2)] card-lift">
               {showObjections && pillar.overcomes && (
-                <p className="text-[hsl(var(--highland-gold)/0.85)] text-[11px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                <p className="text-[hsl(var(--highland-gold)/0.85)] text-caption italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
               )}
               <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors">
                 <pillar.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
               </div>
               <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{pillar.title}</h3>
-              <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+              <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{pillar.detail}</p>
             </motion.div>
           ))}
         </div>
@@ -233,7 +233,7 @@ export const ConstructionObjectionBuster = ({
           >
             <div className="grid md:grid-cols-5 gap-5 md:gap-8 items-start">
               <div className="md:col-span-2">
-                <p className="text-[hsl(var(--highland-gold)/0.9)] text-[12px] italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
+                <p className="text-[hsl(var(--highland-gold)/0.9)] text-body-xs italic font-body mb-3 leading-snug">{pillar.overcomes}</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center group-hover:bg-[hsl(var(--highland-gold)/0.12)] transition-colors flex-shrink-0">
                     <pillar.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
@@ -242,7 +242,7 @@ export const ConstructionObjectionBuster = ({
                 </div>
               </div>
               <div className="md:col-span-3">
-                <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+                <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{pillar.detail}</p>
               </div>
             </div>
           </motion.div>
@@ -283,7 +283,7 @@ export const ConstructionTrustSidebarDetailed = ({
   pillars?: TrustPillar[];
 }) => (
   <div className="bg-card border border-border rounded-sm p-5 md:p-6 space-y-5">
-    <h4 className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold)/0.6)] mb-1">Why Homeowners Trust Highlander</h4>
+    <h4 className="text-caption font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--highland-gold)/0.6)] mb-1">Why Homeowners Trust Highlander</h4>
     {pillars.map((p) => (
       <div key={p.title} className="space-y-1.5">
         <div className="flex items-center gap-2.5">
@@ -293,7 +293,7 @@ export const ConstructionTrustSidebarDetailed = ({
           <span className="text-foreground text-xs font-heading font-bold">{p.title}</span>
         </div>
         {p.overcomes && (
-          <p className="text-muted-foreground text-[11px] italic font-body pl-[calc(1.75rem+0.625rem)] leading-snug">{p.overcomes}</p>
+          <p className="text-muted-foreground text-caption italic font-body pl-[calc(1.75rem+0.625rem)] leading-snug">{p.overcomes}</p>
         )}
       </div>
     ))}

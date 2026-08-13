@@ -79,7 +79,7 @@ const CostContextBlock = ({
           >
             <d.icon className="w-5 h-5 text-primary mb-3" />
             <h3 className="font-heading font-semibold text-foreground text-sm mb-2">{d.title}</h3>
-            <p className="text-[13px] leading-relaxed font-body text-muted-foreground">{d.detail}</p>
+            <p className="text-body-xs leading-relaxed font-body text-muted-foreground">{d.detail}</p>
           </motion.div>
         ))}
       </div>
@@ -89,7 +89,7 @@ const CostContextBlock = ({
           <h3 className="font-heading font-bold text-foreground mb-4">What your written estimate includes</h3>
           <ul className="space-y-2.5">
             {estimateIncludes.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 text-[13px] md:text-sm font-body text-muted-foreground">
+              <li key={item} className="flex items-start gap-2.5 text-body-xs md:text-sm font-body text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                 <span>{item}</span>
               </li>
@@ -99,7 +99,7 @@ const CostContextBlock = ({
 
         <div className="bg-secondary/40 border border-border rounded-sm p-6">
           <h3 className="font-heading font-bold text-foreground mb-2">Want a real number?</h3>
-          <p className="text-[13px] md:text-sm font-body text-muted-foreground mb-5">
+          <p className="text-body-xs md:text-sm font-body text-muted-foreground mb-5">
             Tell us the address and what you are seeing. We measure the roof, walk the variables above with
             you, and send a written scope you can compare line by line against any other bid.
           </p>

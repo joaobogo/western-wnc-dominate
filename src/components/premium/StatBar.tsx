@@ -35,7 +35,7 @@ export const StatItem = ({
     )}
     <span className="text-sm font-heading font-bold text-inherit mb-1 tracking-tight opacity-80">{label}</span>
     {detail && (
-      <span className="text-[10px] font-body tracking-[0.15em] uppercase opacity-30">{detail}</span>
+      <span className="text-caption font-body tracking-[0.15em] uppercase opacity-30">{detail}</span>
     )}
   </div>
 );

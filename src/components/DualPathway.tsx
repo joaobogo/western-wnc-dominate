@@ -149,15 +149,15 @@ const DivisionCard = ({ data, accent, index }: {
               <data.icon className="w-4 h-4 text-white" />
             </div>
             <div>
-              <span className="block text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+              <span className="block text-caption font-body font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                 {data.label}
               </span>
-              <span className="block text-[9px] font-body text-white/95 tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
+              <span className="block text-caption font-body text-white/95 tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]">
                 {data.subtitle}
               </span>
             </div>
           </div>
-          <span className={`text-[9px] font-body font-bold uppercase tracking-[0.15em] px-2.5 py-1 backdrop-blur-md border ${
+          <span className={`text-caption font-body font-bold uppercase tracking-[0.15em] px-2.5 py-1 backdrop-blur-md border ${
             isGold
               ? "text-[hsl(var(--gold-ink))] bg-[hsl(var(--heritage-charcoal)/0.55)] border-[hsl(var(--highland-gold)/0.4)]"
               : "text-white bg-[hsl(var(--heritage-charcoal)/0.55)] border-white/25"
@@ -178,7 +178,7 @@ const DivisionCard = ({ data, accent, index }: {
                   }`}
                   duration={1600}
                 />
-                <span className="text-[12px] md:text-[13px] font-body font-bold text-white uppercase tracking-[0.1em] leading-none">
+                <span className="text-body-xs md:text-body-xs font-body font-bold text-white uppercase tracking-[0.1em] leading-none">
                   {stat.label.trim()}
                 </span>
               </div>
@@ -201,7 +201,7 @@ const DivisionCard = ({ data, accent, index }: {
 
       {/* === CONTENT === */}
       <div className="p-7 md:p-9 flex flex-col flex-1">
-        <h3 className="text-xl md:text-[1.65rem] font-heading font-bold text-foreground mb-3 leading-tight tracking-tight">
+        <h3 className="text-xl md:text-heading-sm font-heading font-bold text-foreground mb-3 leading-tight tracking-tight">
           {data.title}
         </h3>
         <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-7 font-bold">
@@ -222,7 +222,7 @@ const DivisionCard = ({ data, accent, index }: {
               <service.icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors duration-200 ${
                 isGold ? "text-[hsl(var(--highland-gold)/0.9)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/80 group-hover/item:text-primary/70"
               }`} />
-              <span className="text-[14px] md:text-[15px] text-foreground/80 font-body font-bold leading-tight">
+              <span className="text-body-xs md:text-body-sm text-foreground/80 font-body font-bold leading-tight">
                 {service.name}
               </span>
             </motion.div>
@@ -293,17 +293,17 @@ const ThreeDivisionPathway = ({ paths = "three" }: { paths?: "two" | "three" }) 
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-border" />
-            <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-foreground">
+            <span className="text-body-xs font-body font-bold uppercase tracking-[0.25em] text-foreground">
               {twoPath ? "Roofing · Construction" : "Roofing · Construction · Design"}
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
-          <p className="text-[16px] text-foreground font-body font-semibold leading-relaxed max-w-md mx-auto">
+          <p className="text-body-sm text-foreground font-body font-semibold leading-relaxed max-w-md mx-auto">
             Your project shouldn't be split across multiple companies and conflicting schedules.
             With Highlander, you get one standard across every division.
           </p>
           {twoPath && (
-            <p className="mt-4 text-[14px] font-body text-muted-foreground">
+            <p className="mt-4 text-body-xs font-body text-muted-foreground">
               Planning a build?{" "}
               <Link to="/layouts-planning" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">
                 Start with design and planning

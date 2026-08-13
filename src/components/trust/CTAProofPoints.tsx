@@ -39,7 +39,7 @@ const CTAProofPoints = ({
       className={`flex flex-wrap items-center gap-x-5 gap-y-2 ${align === "center" ? "justify-center" : "justify-start"} ${className}`}
     >
       {items.map((item) => (
-        <li key={item.label} className={`flex items-center gap-1.5 text-[12px] md:text-[13px] font-body ${text}`}>
+        <li key={item.label} className={`flex items-center gap-1.5 text-body-xs md:text-body-xs font-body ${text}`}>
           <item.icon className="w-3.5 h-3.5 flex-shrink-0 text-[hsl(var(--gold-ink))]" />
           <span className={item.icon === Star ? `font-semibold ${strong}` : ""}>{item.label}</span>
         </li>

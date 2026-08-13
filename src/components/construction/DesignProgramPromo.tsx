@@ -52,18 +52,18 @@ const DesignProgramPromo = ({
     return (
       <div className={`bg-card border border-[hsl(var(--highland-gold)/0.25)] rounded-none p-6 md:p-7 relative overflow-hidden ${className}`}>
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.6)] to-transparent" />
-        <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] mb-3 block">
+        <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] mb-3 block">
           Design & Consultation Agreement
         </span>
         <h3 className="font-heading font-bold text-foreground text-lg md:text-xl mb-3 leading-tight">
           A paid planning program for serious builds.
         </h3>
-        <p className="text-muted-foreground text-sm md:text-[15px] font-body leading-relaxed mb-5">
+        <p className="text-muted-foreground text-sm md:text-body-sm font-body leading-relaxed mb-5">
           Three phases — scope, plans &amp; 3D views, then a permit set. A portion of design fees can credit toward construction when you build with Highlander.
         </p>
         <Link
           to="/construction/design"
-          className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-[13px] uppercase tracking-[0.15em] hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:gap-3 transition-all"
         >
           Start with a Design Agreement <ArrowRight className="w-4 h-4" />
         </Link>
@@ -77,7 +77,7 @@ const DesignProgramPromo = ({
         <div className="container-tight">
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
             <div>
-              <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] mb-3 block">
+              <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] mb-3 block">
                 Design & Consultation Agreement
               </span>
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight mb-4">
@@ -90,13 +90,13 @@ const DesignProgramPromo = ({
                 {["Three design phases", "Permit set + construction documents", "Design fees can credit toward your build"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
-                    <span className="text-[12.5px] font-body text-muted-foreground">{item}</span>
+                    <span className="text-body-xs font-body text-muted-foreground">{item}</span>
                   </div>
                 ))}
               </div>
               <Link
                 to="/construction/design"
-                className="inline-flex items-center gap-2 cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-7 py-3.5 rounded-none uppercase tracking-[0.1em] hover:opacity-95 transition-all"
+                className="inline-flex items-center gap-2 cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-7 py-3.5 rounded-none uppercase tracking-[0.1em] hover:opacity-95 transition-all"
               >
                 Start with a Design Agreement <ArrowRight className="w-4 h-4" />
               </Link>
@@ -108,9 +108,9 @@ const DesignProgramPromo = ({
                     <p.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-0.5">{p.label}</div>
+                    <div className="text-caption font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))] mb-0.5">{p.label}</div>
                     <div className="font-heading font-bold text-foreground text-sm mb-0.5">{p.title}</div>
-                    <p className="text-muted-foreground text-[12.5px] font-body leading-relaxed">{p.detail}</p>
+                    <p className="text-muted-foreground text-body-xs font-body leading-relaxed">{p.detail}</p>
                   </div>
                 </li>
               ))}
@@ -146,7 +146,7 @@ const DesignProgramPromo = ({
               <div className="w-10 h-10 bg-[hsl(var(--highland-gold)/0.08)] border border-[hsl(var(--highland-gold)/0.2)] flex items-center justify-center mb-4">
                 <p.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
               </div>
-              <div className="text-[10px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))] mb-1.5">{p.label}</div>
+              <div className="text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-ink))] mb-1.5">{p.label}</div>
               <h3 className="font-heading font-bold text-foreground text-lg mb-2 leading-tight">{p.title}</h3>
               <p className="text-muted-foreground text-sm font-body leading-relaxed">{p.detail}</p>
             </motion.div>
@@ -154,19 +154,19 @@ const DesignProgramPromo = ({
         </div>
 
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-muted-foreground text-[14px] font-body italic mb-5">
+          <p className="text-muted-foreground text-body-xs font-body italic mb-5">
             A portion of design fees can credit toward your construction agreement when you build with Highlander — a true design-build advantage.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/construction/design"
-              className="inline-flex items-center justify-center gap-2 cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none uppercase tracking-[0.1em] hover:opacity-95 transition-all"
+              className="inline-flex items-center justify-center gap-2 cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none uppercase tracking-[0.1em] hover:opacity-95 transition-all"
             >
               Start with a Design Agreement <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/construction-intake"
-              className="inline-flex items-center justify-center gap-2 border border-border bg-background text-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none uppercase tracking-[0.1em] hover:border-[hsl(var(--highland-gold)/0.4)] transition-all"
+              className="inline-flex items-center justify-center gap-2 border border-border bg-background text-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none uppercase tracking-[0.1em] hover:border-[hsl(var(--highland-gold)/0.4)] transition-all"
             >
               Plan Your Construction Project <ArrowRight className="w-4 h-4" />
             </Link>

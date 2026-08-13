@@ -65,7 +65,7 @@ const ProjectTypeSelector = ({
             </span>
             <span className="font-heading font-bold text-lg leading-tight">{label}</span>
             <span className="text-sm text-muted-foreground font-body flex-grow">{desc}</span>
-            <span className="text-[11px] uppercase tracking-widest font-bold text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+            <span className="text-caption uppercase tracking-widest font-bold text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all">
               Start the conversation <ArrowRight className="w-3.5 h-3.5" />
             </span>
           </Link>

@@ -36,7 +36,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
           isActive("/service-areas") ? "text-heritage-charcoal bg-black/5" : "text-heritage-charcoal/90 hover:bg-black/5"
         }`}
       >
-        <span className="text-[15px] font-bold font-body">Service Areas</span>
+        <span className="text-body-sm font-bold font-body">Service Areas</span>
         <motion.div animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.25, ease: HIGHLAND_EASE }} aria-hidden="true">
           <ChevronDown className="w-4 h-4 text-heritage-charcoal/40" />
         </motion.div>
@@ -70,7 +70,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                   placeholder="Search town or county…"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full min-h-[44px] rounded-sm border border-black/10 bg-white pl-8 pr-8 py-2 text-[15px] font-body text-heritage-charcoal placeholder:text-heritage-charcoal/40 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.4)] focus:border-[hsl(var(--highland-gold)/0.5)]"
+                  className="w-full min-h-[44px] rounded-sm border border-black/10 bg-white pl-8 pr-8 py-2 text-body-sm font-body text-heritage-charcoal placeholder:text-heritage-charcoal/40 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--highland-gold)/0.4)] focus:border-[hsl(var(--highland-gold)/0.5)]"
                 />
                 {search && (
                   <button
@@ -85,7 +85,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
               </div>
 
               {filtered.length === 0 ? (
-                <p className="px-2.5 py-4 text-[13px] font-body text-heritage-charcoal/50 italic">
+                <p className="px-2.5 py-4 text-body-xs font-body text-heritage-charcoal/50 italic">
                   No matching towns. Try a different search.
                 </p>
               ) : (
@@ -93,8 +93,8 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                   <div key={group.county} className="mb-2 last:mb-0">
                     <div className="flex items-center gap-1.5 px-2 pt-2 pb-1">
                       <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
-                      <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.14em] text-heritage-charcoal/55">{group.county}</span>
-                      <span className="text-[10.5px] font-body text-heritage-charcoal/35 ml-auto">{group.towns.length}</span>
+                      <span className="text-caption font-body font-bold uppercase tracking-[0.14em] text-heritage-charcoal/55">{group.county}</span>
+                      <span className="text-caption font-body text-heritage-charcoal/35 ml-auto">{group.towns.length}</span>
                     </div>
                     <ul className="flex flex-col">
                       {group.towns.map((item) => (
@@ -122,7 +122,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
                             {isActive(item.href) && (
                               <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[3px] rounded-r bg-[hsl(var(--highland-gold))]" />
                             )}
-                            <span className="text-[15px] font-body leading-tight">{item.name}</span>
+                            <span className="text-body-sm font-body leading-tight">{item.name}</span>
                             <ChevronRight className="w-4 h-4 text-heritage-charcoal/30 shrink-0" />
                           </Link>
                         </li>
@@ -135,7 +135,7 @@ export const MobileServiceAreasList = ({ expanded, onToggle, onClose, isActive, 
               <Link
                 to="/service-areas"
                 onClick={onNavigate}
-                className="mt-1 py-3 px-3 text-[13px] font-bold uppercase tracking-[0.08em] rounded-sm text-primary flex items-center gap-1.5 font-body min-h-[48px] border-t border-black/5"
+                className="mt-1 py-3 px-3 text-body-xs font-bold uppercase tracking-[0.08em] rounded-sm text-primary flex items-center gap-1.5 font-body min-h-[48px] border-t border-black/5"
               >
                 View All Service Areas <ArrowRight className="w-3 h-3" />
               </Link>

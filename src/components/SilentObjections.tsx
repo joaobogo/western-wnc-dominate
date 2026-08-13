@@ -57,7 +57,7 @@ const SilentObjections = () => {
                     <div className="obj-icon w-9 h-9 rounded-none bg-secondary flex items-center justify-center flex-shrink-0 transition-colors duration-300">
                       <item.icon className="w-4 h-4 text-muted-foreground transition-colors duration-300" />
                     </div>
-                    <span className="font-heading font-semibold text-foreground text-[15px] leading-snug">
+                    <span className="font-heading font-semibold text-foreground text-body-sm leading-snug">
                       {item.question}
                     </span>
                   </div>

@@ -99,7 +99,7 @@ export const BeforeAfterSlider = ({
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.4 }}
       >
-        <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-white bg-[hsl(var(--heritage-charcoal)/0.7)] backdrop-blur-sm px-3 py-1.5 rounded-sm">
+        <span className="text-caption font-body font-semibold uppercase tracking-wider text-white bg-[hsl(var(--heritage-charcoal)/0.7)] backdrop-blur-sm px-3 py-1.5 rounded-sm">
           {beforeLabel}
         </span>
       </motion.div>
@@ -110,7 +110,7 @@ export const BeforeAfterSlider = ({
         viewport={{ once: true }}
         transition={{ delay: 0.4, duration: 0.4 }}
       >
-        <span className="text-[10px] font-body font-semibold uppercase tracking-wider text-white bg-primary/80 backdrop-blur-sm px-3 py-1.5 rounded-sm">
+        <span className="text-caption font-body font-semibold uppercase tracking-wider text-white bg-primary/80 backdrop-blur-sm px-3 py-1.5 rounded-sm">
           {afterLabel}
         </span>
       </motion.div>
@@ -160,7 +160,7 @@ export const BeforeAfterShowcase = ({
       />
       <div className="p-6 md:p-8">
         <div className="flex items-center gap-3 mb-3">
-          <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/10 text-primary">
+          <span className="text-caption font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm bg-primary/10 text-primary">
             {category}
           </span>
           <span className="text-muted-foreground text-xs font-body flex items-center gap-1">
@@ -171,15 +171,15 @@ export const BeforeAfterShowcase = ({
 
         <div className="space-y-4 mb-6">
           <div>
-            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">What Changed</h4>
+            <h4 className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">What Changed</h4>
             <p className="text-muted-foreground text-sm leading-relaxed">{whatChanged}</p>
           </div>
           <div>
-            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">Why It Mattered</h4>
+            <h4 className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">Why It Mattered</h4>
             <p className="text-muted-foreground text-sm leading-relaxed">{whyItMattered}</p>
           </div>
           <div>
-            <h4 className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">The Highlander Difference</h4>
+            <h4 className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] mb-1">The Highlander Difference</h4>
             <p className="text-muted-foreground text-sm leading-relaxed">{highlanderDifference}</p>
           </div>
         </div>

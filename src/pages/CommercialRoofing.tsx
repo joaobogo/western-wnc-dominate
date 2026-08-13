@@ -158,17 +158,17 @@ const CommercialRoofing = () => {
                 <div className="inline-flex items-center gap-4">
                   <div className="h-10 w-px bg-[hsl(var(--highland-gold)/0.5)]" />
                   <div className="flex flex-col">
-                    <span className="text-[14px] font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
-                    <span className="text-[9px] font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Commercial Division</span>
+                    <span className="text-body-xs font-heading font-bold text-white tracking-[0.1em]">Highlander</span>
+                    <span className="text-caption font-body font-bold text-[hsl(var(--highland-gold)/0.8)] uppercase tracking-[0.2em] -mt-1">Commercial Division</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
+                    <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                   </Link>
                   <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Commercial</span>
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Commercial</span>
                 </div>
               </motion.div>
 
@@ -206,7 +206,7 @@ const CommercialRoofing = () => {
                 className="mt-10 flex flex-wrap gap-2.5"
               >
                 {["Licensed GC", "Fully Insured", "Multi-Property Programs", "Rapid Emergency", "Maintenance Contracts"].map((badge) => (
-                  <span key={badge} className="px-3 py-1.5 text-[10px] uppercase tracking-wider font-body font-semibold text-primary-foreground/85 border border-white/12 rounded-sm bg-white/5">
+                  <span key={badge} className="px-3 py-1.5 text-caption uppercase tracking-wider font-body font-semibold text-primary-foreground/85 border border-white/12 rounded-sm bg-white/5">
                     {badge}
                   </span>
                 ))}
@@ -253,7 +253,7 @@ const CommercialRoofing = () => {
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
                     <div className="text-2xl font-heading font-bold text-primary">{stat.value}</div>
-                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-body mt-0.5">{stat.label}</div>
+                    <div className="text-caption uppercase tracking-wider text-muted-foreground font-body mt-0.5">{stat.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -276,7 +276,7 @@ const CommercialRoofing = () => {
                     <cap.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{cap.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{cap.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{cap.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -298,7 +298,7 @@ const CommercialRoofing = () => {
               {roofingSystems.map((sys, i) => (
                 <motion.div key={sys.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <h3 className="font-heading font-bold text-foreground text-base mb-3 group-hover:text-primary transition-colors">{sys.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-4">{sys.description}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-4">{sys.description}</p>
                   <p className="text-xs font-body font-semibold text-primary/80 uppercase tracking-wider mb-3">Best for: {sys.bestFor}</p>
                   <ul className="space-y-1.5">
                     {sys.highlights.map((h) => (
@@ -333,7 +333,7 @@ const CommercialRoofing = () => {
                 {disruptionPoints.map((point, i) => (
                   <motion.div key={point.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
                     <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{point.title}</h3>
-                    <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{point.detail}</p>
+                    <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{point.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -359,7 +359,7 @@ const CommercialRoofing = () => {
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -401,7 +401,7 @@ const CommercialRoofing = () => {
                 <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -421,7 +421,7 @@ const CommercialRoofing = () => {
                 <motion.div key={proof.value} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="text-center p-4 bg-card border border-border rounded-sm">
                   <proof.icon className="w-5 h-5 text-primary mx-auto mb-2" />
                   <p className="font-heading font-bold text-foreground text-xs mb-0.5">{proof.value}</p>
-                  <p className="text-muted-foreground text-[10px] font-body">{proof.label}</p>
+                  <p className="text-muted-foreground text-caption font-body">{proof.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -441,7 +441,7 @@ const CommercialRoofing = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                   <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 pr-2">
                       <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>

@@ -75,7 +75,7 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
               <Link to={`/service-areas/county/${currentTown.county.toLowerCase().replace(' ', '-')}`} className="text-primary font-heading font-bold text-sm tracking-wide flex items-center gap-2 group border-b border-primary/20 pb-1 hover:text-primary/80 transition-all">
                 {currentTown.county} Overview <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/service-areas" className="text-muted-foreground font-heading font-bold text-[11px] tracking-[0.1em] flex items-center gap-2 group hover:text-primary transition-all uppercase">
+              <Link to="/service-areas" className="text-muted-foreground font-heading font-bold text-caption tracking-[0.1em] flex items-center gap-2 group hover:text-primary transition-all uppercase">
                 All Areas <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -96,10 +96,10 @@ const NearbyTowns = ({ currentTown }: NearbyTownsProps) => {
                     {town.name}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-[13px] font-body leading-relaxed mb-6 line-clamp-2">
+                <p className="text-muted-foreground text-body-xs font-body leading-relaxed mb-6 line-clamp-2">
                   {town.description.split('.')[0]}.
                 </p>
-                <span className="mt-auto text-primary text-[12px] font-heading font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+                <span className="mt-auto text-primary text-body-xs font-heading font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
                   Service Details <ArrowRight className="w-3 h-3" />
                 </span>
               </Link>

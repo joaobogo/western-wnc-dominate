@@ -156,7 +156,7 @@ const ProjectPathfinder = () => {
                   <div className="p-6 md:p-8 border-b border-border">
                     <div className="flex items-center gap-2 mb-4">
                       <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))]">Recommended For You</span>
+                      <span className="text-caption font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))]">Recommended For You</span>
                     </div>
                     <h3 className="font-heading font-bold text-foreground text-2xl mb-3">{result.title}</h3>
                     <p className="text-muted-foreground text-sm font-body leading-relaxed max-w-xl">{result.description}</p>

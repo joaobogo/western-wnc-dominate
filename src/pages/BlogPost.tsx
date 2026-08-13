@@ -314,7 +314,7 @@ const BlogPostPage = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="mb-10 inline-flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--highland-gold))]" />
-                <span className="text-[11px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Insight</span>
+                <span className="text-caption font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Insight</span>
                 <div className="h-px w-12 bg-white/10" />
               </div>
               {/* Breadcrumb — matches BreadcrumbList schema */}
@@ -335,17 +335,17 @@ const BlogPostPage = () => {
 
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className={`text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-sm ${getCategoryColor(post.category)}`}>
+                <span className={`text-caption md:text-caption font-body font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-sm ${getCategoryColor(post.category)}`}>
                   {post.category}
                 </span>
-                <span className="text-white/80 text-[13px] font-body font-bold flex items-center gap-1.5">
+                <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
                   <Calendar className="w-3 h-3" /> {formattedDate}
                 </span>
-                <span className="text-white/80 text-[13px] font-body font-bold flex items-center gap-1.5">
+                <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
                   <Clock className="w-3 h-3" /> {post.readTime} read
                 </span>
                 {post.town && (
-                  <span className="text-white/80 text-[13px] font-body font-bold flex items-center gap-1.5">
+                  <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
                     <MapPin className="w-3 h-3" /> {post.town}, NC
                   </span>
                 )}
@@ -533,7 +533,7 @@ const BlogPostPage = () => {
                           <div className="p-5">
                             <div className="flex items-center gap-2 mb-2">
                               <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
-                              <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{project.location}</span>
+                              <span className="text-caption font-bold uppercase tracking-wider text-muted-foreground">{project.location}</span>
                             </div>
                             <h3 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
                           </div>
@@ -545,7 +545,7 @@ const BlogPostPage = () => {
                 {/* Local Town Bridge */}
                 {post.town && (
                   <div className="mt-10 pt-8 border-t border-border">
-                    <h2 className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-muted-foreground mb-4">Market Context</h2>
+                    <h2 className="text-caption md:text-body-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Market Context</h2>
                     <Link to={`/service-areas/${post.town.toLowerCase().trim().replace(/\s+/g, '-')}-nc`} className="group flex items-center justify-between p-6 bg-secondary/40 border border-border rounded-sm hover:border-primary/20 transition-all">
                       <div>
                         <p className="text-sm font-heading font-bold text-foreground mb-1">Roofing & Construction in {post.town}</p>
@@ -568,7 +568,7 @@ const BlogPostPage = () => {
                     <BookOpen className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-body font-semibold uppercase tracking-wider text-muted-foreground mb-1">
+                    <p className="text-caption font-body font-semibold uppercase tracking-wider text-muted-foreground mb-1">
                       Written By
                     </p>
                     <h2 className="font-heading font-semibold text-foreground text-sm">{author.name}</h2>
@@ -590,7 +590,7 @@ const BlogPostPage = () => {
                     <div className="space-y-2">
                       {takeaways.map((t, i) => (
                         <p key={i} className="text-muted-foreground text-xs font-body leading-relaxed flex items-start gap-2">
-                          <span className="text-[10px] font-heading font-bold text-primary/80 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
+                          <span className="text-caption font-heading font-bold text-primary/80 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
                           {t}
                         </p>
                       ))}
@@ -633,7 +633,7 @@ const BlogPostPage = () => {
                   >
                     <div className="p-5 md:p-6 flex flex-col h-full">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm ${getCategoryColor(p.category)}`}>
+                        <span className={`text-caption font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm ${getCategoryColor(p.category)}`}>
                           {p.category}
                         </span>
                         <span className="text-muted-foreground text-xs flex items-center gap-1">

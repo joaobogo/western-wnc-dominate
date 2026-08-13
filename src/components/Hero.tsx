@@ -167,13 +167,13 @@ const Hero = () => {
             <div className="w-7 h-7 rounded-none border border-primary-foreground/10 flex items-center justify-center">
               <Home className="w-3 h-3 text-primary-foreground/90" />
             </div>
-            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
               Roofing
             </span>
           </div>
           <div className="w-5 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[10px] md:text-[11px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
               Construction
             </span>
             <div className="w-7 h-7 rounded-none border border-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center">
@@ -209,7 +209,7 @@ const Hero = () => {
                 className="flex items-center gap-1.5 md:gap-2 px-2 md:px-3 py-1 md:py-1.5 bg-black/50 backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] rounded-sm"
               >
                 <Mountain className="w-2.5 h-2.5 md:w-3 md:h-3 text-[hsl(var(--highland-gold)/0.85)]" />
-                <span className="text-[10px] md:text-[16px] font-body font-bold uppercase tracking-[0.16em] md:tracking-[0.3em] text-[hsl(var(--gold-ink))]">
+                <span className="text-caption md:text-body-sm font-body font-bold uppercase tracking-[0.16em] md:tracking-[0.3em] text-[hsl(var(--gold-ink))]">
                    Western North Carolina · Since 2017
                  </span>
               </motion.div>
@@ -226,7 +226,7 @@ const Hero = () => {
                     initial={{ y: "120%" }}
                     animate={{ y: 0 }}
                     transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
-                    className="block text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold text-primary-foreground tracking-[-0.03em]"
                   >
                     Roofing &amp; Construction
                   </motion.span>
@@ -236,7 +236,7 @@ const Hero = () => {
                     initial={{ y: "120%" }}
                     animate={{ y: 0 }}
                     transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
-                    className="block text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold text-primary-foreground tracking-[-0.03em]"
                   >
                     Built for Western NC
                   </motion.span>
@@ -246,7 +246,7 @@ const Hero = () => {
                     initial={{ y: "120%" }}
                     animate={{ y: 0 }}
                     transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
-                    className="block text-[1.85rem] leading-[1.08] md:text-[3.8rem] lg:text-[4.8rem] xl:text-[5.8rem] font-heading font-bold tracking-[-0.03em] text-[hsl(var(--gold-ink))]"
+                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold tracking-[-0.03em] text-[hsl(var(--gold-ink))]"
                   >
                     Mountain Homes.
                   </motion.span>
@@ -260,11 +260,11 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-[13.5px] md:text-[24px] text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
+              className="text-body-xs md:text-body-lg text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
             >
               <span className="md:hidden">Leak, storm damage, aging roof, or an addition you&apos;re planning? Tell us what&apos;s going on in Franklin, Highlands, Cashiers or Sylva and a local Highlander advisor gets back to you with next steps.</span>
               <span className="hidden md:inline">Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
-              <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--gold-ink))] font-bold text-[11.5px] md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
+              <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
             </motion.p>
 
 
@@ -279,7 +279,7 @@ const Hero = () => {
                 to="/consultation"
                 data-gtm-experiment="home_hero_cta"
                 data-gtm-variant={heroCta.variant}
-                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-14 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-xl min-h-[48px] md:min-h-[60px] whitespace-nowrap"
+                className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-body-xs md:text-base px-6 md:px-14 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-xl min-h-[48px] md:min-h-[60px] whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">
@@ -290,7 +290,7 @@ const Hero = () => {
               <a
                 href="tel:+18285247773"
                 aria-label="Call Highlander Building Services at 828-524-7773"
-                className="group bg-white/[0.08] backdrop-blur-md border md:border-2 border-white/[0.22] text-primary-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-12 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[48px] md:min-h-[60px] tracking-wide uppercase whitespace-nowrap"
+                className="group bg-white/[0.08] backdrop-blur-md border md:border-2 border-white/[0.22] text-primary-foreground font-body font-bold text-body-xs md:text-base px-6 md:px-12 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/[0.12] hover:border-white/[0.25] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 min-h-[48px] md:min-h-[60px] tracking-wide uppercase whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5 text-[hsl(var(--gold-ink))]" />
                 <span className="md:hidden">Call · (828) 524-7773</span>
@@ -307,12 +307,12 @@ const Hero = () => {
             >
               <div className="flex items-center gap-1.5">
                 <span className="text-[hsl(var(--gold-ink))] font-heading font-bold text-base md:text-3xl leading-none">{GOOGLE_REVIEW_AGGREGATE.ratingValue}★</span>
-                <span className="text-primary-foreground/90 text-[10.5px] md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Google · {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Reviews</span>
+                <span className="text-primary-foreground/90 text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Google · {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Reviews</span>
               </div>
               <div className="w-px h-3.5 md:h-6 bg-primary-foreground/30" />
-              <span className="text-primary-foreground/90 text-[10.5px] md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed &amp; Insured</span>
+              <span className="text-primary-foreground/90 text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed &amp; Insured</span>
               <div className="w-px h-6 bg-primary-foreground/40 hidden md:block" />
-              <span className="text-primary-foreground text-[15px] md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Crews Based in Franklin, NC</span>
+              <span className="text-primary-foreground text-body-sm md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Crews Based in Franklin, NC</span>
             </motion.div>
 
             {/* VELUX Certified Installer badge — desktop only; keeps mobile hero clean */}
@@ -327,10 +327,10 @@ const Hero = () => {
                 <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-1.5 md:p-2" />
               </div>
               <div className="flex flex-col leading-tight text-left">
-                <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.16em] md:tracking-[0.18em] text-[hsl(var(--gold-ink))]">
+                <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.16em] md:tracking-[0.18em] text-[hsl(var(--gold-ink))]">
                   VELUX Certified
                 </span>
-                <span className="text-[11.5px] md:text-[13px] font-body font-medium text-primary-foreground/95">
+                <span className="text-caption md:text-body-xs font-body font-medium text-primary-foreground/95">
                   Skylight Installer · Pro Accredited
                 </span>
               </div>
@@ -366,7 +366,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 2.2 + i * 0.1 }}
-                    className="flex items-center gap-2 text-primary-foreground/95 text-[13px] md:text-base"
+                    className="flex items-center gap-2 text-primary-foreground/95 text-body-xs md:text-base"
                   >
                     <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
                     <span className="font-body font-medium leading-tight">{item.label}</span>
@@ -383,17 +383,17 @@ const Hero = () => {
               >
                 <div className="flex items-center gap-1.5">
                   <Home className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Roofing</span>
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Roofing</span>
                 </div>
                 <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.7)]" />
                 <div className="flex items-center gap-1.5">
                   <HardHat className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Construction</span>
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Construction</span>
                 </div>
                 <div className="w-3 h-px bg-[hsl(var(--highland-gold)/0.7)]" />
                 <div className="flex items-center gap-1.5">
                   <Ruler className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Design</span>
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-primary-foreground">Design</span>
                 </div>
               </motion.div>
             </div>

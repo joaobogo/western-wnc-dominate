@@ -57,7 +57,7 @@ const RelatedLinks = ({
                 className="group flex items-start gap-3 rounded-sm border border-border bg-card px-5 py-4 md:px-6 md:py-5 hover:border-primary/40 hover:bg-card/80 transition-colors min-h-[64px]"
               >
                 <div className="flex-1">
-                  <div className="font-heading font-semibold text-foreground text-[15px] md:text-base leading-snug group-hover:text-primary transition-colors">
+                  <div className="font-heading font-semibold text-foreground text-body-sm md:text-base leading-snug group-hover:text-primary transition-colors">
                     {item.label}
                   </div>
                   {item.description && (

@@ -38,7 +38,7 @@ const waitForReady = async (iframe: HTMLIFrameElement, path: string) => {
 };
 
 const SeverityBadge = ({ severity }: { severity: MonitoringIssue["severity"] }) => (
-  <span className={`inline-flex items-center rounded-sm px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${issueStyles[severity]}`}>
+  <span className={`inline-flex items-center rounded-sm px-2.5 py-1 text-caption font-semibold uppercase tracking-[0.12em] ${issueStyles[severity]}`}>
     {severity}
   </span>
 );
@@ -179,7 +179,7 @@ const PriorityMonitoringPanel = ({ summary }: { summary: WeeklyPriorityMonitorin
 
             <div className="mt-4 grid gap-3 md:grid-cols-3">
               <div className="rounded-sm border border-border bg-card p-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Tracked keywords</p>
+                <p className="text-caption font-semibold uppercase tracking-[0.12em] text-muted-foreground">Tracked keywords</p>
                 <p className="mt-2 text-xl font-heading font-bold text-foreground">{page.keywordCount}</p>
                 <p className="mt-2 text-xs leading-6 text-muted-foreground">
                   {page.movedKeywords.length > 0
@@ -188,7 +188,7 @@ const PriorityMonitoringPanel = ({ summary }: { summary: WeeklyPriorityMonitorin
                 </p>
               </div>
               <div className="rounded-sm border border-border bg-card p-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Internal-link count</p>
+                <p className="text-caption font-semibold uppercase tracking-[0.12em] text-muted-foreground">Internal-link count</p>
                 <p className="mt-2 text-xl font-heading font-bold text-foreground">{page.internalLinkCount}</p>
                 <p className="mt-2 text-xs leading-6 text-muted-foreground">
                   {page.internalLinkDelta === null
@@ -199,7 +199,7 @@ const PriorityMonitoringPanel = ({ summary }: { summary: WeeklyPriorityMonitorin
                 </p>
               </div>
               <div className="rounded-sm border border-border bg-card p-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Internal-link severity</p>
+                <p className="text-caption font-semibold uppercase tracking-[0.12em] text-muted-foreground">Internal-link severity</p>
                 <p className="mt-2 text-xl font-heading font-bold capitalize text-foreground">{page.internalLinkSeverity}</p>
                 <p className="mt-2 text-xs leading-6 text-muted-foreground">
                   {page.previousInternalLinkSeverity ? `${page.previousInternalLinkSeverity} → ${page.internalLinkSeverity}` : "No prior weekly baseline yet."}
@@ -469,7 +469,7 @@ const SEOMonitoring = () => {
                               <p className="text-sm text-muted-foreground mt-1">{new Date(event.created_at).toLocaleString()}</p>
                             </div>
                           </div>
-                          <span className="rounded-sm border border-border bg-background px-3 py-1 text-[11px] font-semibold text-foreground uppercase tracking-wider">{event.path}</span>
+                          <span className="rounded-sm border border-border bg-background px-3 py-1 text-caption font-semibold text-foreground uppercase tracking-wider">{event.path}</span>
                         </div>
                       </article>
                     ))}

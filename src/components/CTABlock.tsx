@@ -42,14 +42,14 @@ const CTABlock = () => {
             <div className="max-w-3xl mx-auto text-center">
               {/* Eyebrow */}
               <ScrollReveal variant="fade">
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-6 block">
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-6 block">
                   The Next Step
                 </span>
               </ScrollReveal>
 
               {/* Headline — emotional weight */}
               <HeadingReveal delay={0.1}>
-                <h2 className="text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-heading font-bold mb-6 md:mb-8 leading-[1.06] tracking-[-0.02em] text-dark-section-foreground">
+                <h2 className="text-heading-sm md:text-heading-lg lg:text-heading-lg font-heading font-bold mb-6 md:mb-8 leading-[1.06] tracking-[-0.02em] text-dark-section-foreground">
                   One conversation.<br />
                   <span className="text-[hsl(var(--gold-ink))]">One local team.</span>
                 </h2>
@@ -57,7 +57,7 @@ const CTABlock = () => {
 
               {/* Subtext — calm authority */}
               <ScrollReveal variant="rise-subtle" delay={0.3}>
-                <p className="text-dark-section-foreground/38 text-[15px] md:text-[17px] max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
+                <p className="text-dark-section-foreground/38 text-body-sm md:text-body-sm max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
                   Tell us about your property. A project advisor — not a call center — responds within as soon as possible with a clear next step.
                 </p>
               </ScrollReveal>
@@ -93,7 +93,7 @@ const CTABlock = () => {
                 transition={{ delay: 0.5, duration: 0.6, ease: HIGHLAND_EASE }}
                 className="max-w-md mx-auto mb-12 md:mb-14"
               >
-                <p className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-dark-section-foreground/20 mb-5 text-center">
+                <p className="text-caption font-body font-bold uppercase tracking-[0.25em] text-dark-section-foreground/20 mb-5 text-center">
                   Our Promise to You
                 </p>
                 <div className="space-y-3">
@@ -107,7 +107,7 @@ const CTABlock = () => {
                       className="flex items-start gap-3"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.45)] flex-shrink-0 mt-0.5" />
-                      <span className="text-dark-section-foreground/95 text-[13px] font-body leading-relaxed">
+                      <span className="text-dark-section-foreground/95 text-body-xs font-body leading-relaxed">
                         {promise}
                       </span>
                     </motion.div>
@@ -140,7 +140,7 @@ const CTABlock = () => {
                       className="flex items-center gap-2"
                     >
                       <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                      <span className="text-dark-section-foreground/22 text-[11px] font-body font-medium">
+                      <span className="text-dark-section-foreground/22 text-caption font-body font-medium">
                         {item.text}
                       </span>
                     </motion.div>
@@ -156,7 +156,7 @@ const CTABlock = () => {
       <div className="bg-primary relative">
         <div className="container-tight px-6 md:px-10 py-5 md:py-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-primary-foreground/85 text-[13px] font-body text-center md:text-left">
+            <p className="text-primary-foreground/85 text-body-xs font-body text-center md:text-left">
               <span className="text-primary-foreground/95 font-heading font-bold">4.9★ Rated.</span>{" "}
               <span className="text-primary-foreground/95 font-heading font-bold">4.9★ rated.</span>{" "}
               Roofing & Construction across Western NC since 2017.
@@ -164,7 +164,7 @@ const CTABlock = () => {
             <div className="flex items-center gap-4">
               <Link
                 to="/consultation"
-                className="group inline-flex items-center gap-2 text-primary-foreground/85 font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-primary-foreground/90 transition-colors"
+                className="group inline-flex items-center gap-2 text-primary-foreground/85 font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:text-primary-foreground/90 transition-colors"
               >
                 Roofing
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -172,7 +172,7 @@ const CTABlock = () => {
               <div className="w-px h-3 bg-primary-foreground/10" />
               <Link
                 to="/construction/consultation"
-                className="group inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-[12px] uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
+                className="group inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:text-[hsl(var(--highland-gold-light))] transition-colors"
               >
                 Construction
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

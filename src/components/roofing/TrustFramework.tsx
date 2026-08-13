@@ -110,7 +110,7 @@ const TrustFramework = ({
                     <pillar.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{pillar.title}</h3>
-                  <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+                  <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{pillar.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -136,7 +136,7 @@ const TrustFramework = ({
                 <pillar.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{pillar.title}</h3>
-              <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+              <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{pillar.detail}</p>
             </motion.div>
           ))}
         </div>

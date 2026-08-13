@@ -78,14 +78,14 @@ const TrustedMaterials = () => {
         >
           <div className="flex items-center gap-3 mb-5">
             <div className="w-8 h-px bg-[hsl(var(--highland-gold))]" />
-            <span className="text-[10px] md:text-[11px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
+            <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
               Product Partners &amp; Material Suppliers
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-5 text-balance">
             The Right Materials Matter
           </h2>
-          <p className="text-dark-section-foreground/90 text-[17px] md:text-[20px] leading-relaxed">
+          <p className="text-dark-section-foreground/90 text-body-sm md:text-body leading-relaxed">
             Highlander does not treat materials as an afterthought. Our team works with trusted product manufacturers and material distributors so each project can be planned with stronger options, clearer guidance, and products suited for mountain homes and changing Western North Carolina conditions.
           </p>
         </motion.div>
@@ -116,10 +116,10 @@ const TrustedMaterials = () => {
                 {v.name}
                 <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-[hsl(var(--gold-ink))] transition-colors" />
               </h3>
-              <span className="inline-block text-[10px] font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--heritage-green))] mb-3">
+              <span className="inline-block text-caption font-body font-semibold uppercase tracking-[0.18em] text-[hsl(var(--heritage-green))] mb-3">
                 {v.badge}
               </span>
-              <p className="text-muted-foreground text-[14px] leading-relaxed">{v.body}</p>
+              <p className="text-muted-foreground text-body-xs leading-relaxed">{v.body}</p>
             </motion.a>
           ))}
         </div>
@@ -135,7 +135,7 @@ const TrustedMaterials = () => {
             <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">
               Want to talk through the best materials for your home?
             </h3>
-            <p className="text-dark-section-foreground/90 text-[16px] md:text-[18px]">
+            <p className="text-dark-section-foreground/90 text-body-sm md:text-body">
               Warranty details vary by product and project and can be reviewed during the estimate or consultation process.
             </p>
           </div>
@@ -148,7 +148,7 @@ const TrustedMaterials = () => {
             </Link>
             <a
               href="tel:+18285247773"
-              className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold text-[14px] px-7 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-colors"
+              className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold text-body-xs px-7 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-colors"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" /> (828) 524-7773
             </a>

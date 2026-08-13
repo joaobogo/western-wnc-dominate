@@ -83,10 +83,10 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
       <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16 z-10">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.15)] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.3)] px-3 py-1.5">
+            <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.15)] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.3)] px-3 py-1.5">
               Featured Project
             </span>
-            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.15em] text-white/85 bg-white/10 backdrop-blur-sm px-2.5 py-1.5">
+            <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.15em] text-white/85 bg-white/10 backdrop-blur-sm px-2.5 py-1.5">
               {project.type}
             </span>
           </div>
@@ -96,7 +96,7 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
           <p className="text-white/90 text-base md:text-lg font-body max-w-xl leading-relaxed mb-5 hidden md:block font-medium">
             {project.description}
           </p>
-          <div className="flex flex-wrap items-center gap-5 text-white/85 text-[13px] md:text-[14px] font-body font-medium">
+          <div className="flex flex-wrap items-center gap-5 text-white/85 text-body-xs md:text-body-xs font-body font-medium">
             <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3" /> {project.location}</span>
             <span className="flex items-center gap-1.5"><Ruler className="w-3 h-3" /> {project.scope}</span>
             <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {project.duration}</span>
@@ -156,7 +156,7 @@ const Gallery = () => {
                 className="mb-10 flex flex-col items-center"
               >
                 <div className="h-12 w-px bg-gradient-to-b from-[hsl(var(--highland-gold)/0)] to-[hsl(var(--highland-gold)/0.5)] mb-4" />
-                <span className="text-[13px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Heritage</span>
+                <span className="text-body-xs font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Heritage</span>
               </motion.div>
 
               <motion.div
@@ -167,7 +167,7 @@ const Gallery = () => {
               >
                 <div className="inline-flex items-center gap-3 mb-6">
                   <Camera className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Project Portfolio</span>
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Project Portfolio</span>
                 </div>
                 <motion.h1
                   initial={{ opacity: 0, scale: 0.96 }}
@@ -204,7 +204,7 @@ const Gallery = () => {
                   ].map((stat) => (
                     <div key={stat.label} className="flex flex-col items-center text-center md:px-6">
                       <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1">{stat.value}</span>
-                      <span className="text-[10px] uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.35)] font-body">{stat.label}</span>
+                      <span className="text-caption uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.35)] font-body">{stat.label}</span>
                     </div>
                   ))}
                 </div>
@@ -230,7 +230,7 @@ const Gallery = () => {
                   <button
                     key={cat.value}
                     onClick={() => setFilter(cat.value)}
-                    className={`text-[11px] font-body font-bold uppercase tracking-[0.2em] px-8 py-3.5 border transition-all duration-500 relative overflow-hidden group/btn ${
+                    className={`text-caption font-body font-bold uppercase tracking-[0.2em] px-8 py-3.5 border transition-all duration-500 relative overflow-hidden group/btn ${
                       filter === cat.value
                         ? "bg-primary border-primary text-primary-foreground"
                         : "bg-background border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
@@ -249,7 +249,7 @@ const Gallery = () => {
                   <button
                     key={mat}
                     onClick={() => setMaterialFilter(mat)}
-                    className={`text-[10px] font-body font-bold uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${
+                    className={`text-caption font-body font-bold uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${
                       materialFilter === mat
                         ? "text-primary font-black"
                         : "text-muted-foreground hover:text-primary/70"

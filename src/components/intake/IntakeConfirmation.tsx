@@ -58,21 +58,21 @@ const IntakeConfirmation = ({
       <div className="w-12 h-12 rounded-full bg-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center mx-auto mb-5">
         <CheckCircle className="w-6 h-6 text-[hsl(var(--gold-ink))]" />
       </div>
-      <h2 className="text-2xl md:text-[28px] font-heading font-bold text-foreground mb-3 tracking-tight">
+      <h2 className="text-2xl md:text-heading-sm font-heading font-bold text-foreground mb-3 tracking-tight">
         {title}
       </h2>
-      <p className="text-muted-foreground text-[14.5px] font-body leading-relaxed max-w-md mx-auto mb-8">
+      <p className="text-muted-foreground text-body-xs font-body leading-relaxed max-w-md mx-auto mb-8">
         {body}
       </p>
 
       {recap.length > 0 && (
         <div className="text-left bg-background border border-border rounded-md p-5 mb-6">
-          <h3 className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-3">
+          <h3 className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground mb-3">
             What you sent us
           </h3>
           <dl className="space-y-2">
             {recap.map((item) => (
-              <div key={item.label} className="flex flex-wrap gap-x-2 text-[13.5px] font-body">
+              <div key={item.label} className="flex flex-wrap gap-x-2 text-body-xs font-body">
                 <dt className="text-muted-foreground">{item.label}:</dt>
                 <dd className="font-semibold text-foreground">{item.value}</dd>
               </div>
@@ -84,13 +84,13 @@ const IntakeConfirmation = ({
       <div className="text-left bg-background border border-border rounded-md p-5 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
-          <h3 className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">
+          <h3 className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">
             {nextStepsTitle}
           </h3>
         </div>
         <ol className="space-y-3">
           {steps.map((s, i) => (
-            <li key={i} className="flex gap-3 text-[13.5px] font-body text-muted-foreground leading-relaxed">
+            <li key={i} className="flex gap-3 text-body-xs font-body text-muted-foreground leading-relaxed">
               <span className="text-[hsl(var(--gold-ink))] font-heading font-bold flex-shrink-0">{i + 1}.</span>
               <span>{s}</span>
             </li>
@@ -103,13 +103,13 @@ const IntakeConfirmation = ({
           to={project.path}
           className="group border border-border rounded-md p-4 hover:border-[hsl(var(--highland-gold))] transition-colors"
         >
-          <span className="block text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-1.5">
+          <span className="block text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-1.5">
             See the work
           </span>
-          <span className="block font-heading font-bold text-[15px] text-foreground leading-snug">
+          <span className="block font-heading font-bold text-body-sm text-foreground leading-snug">
             {project.label}
           </span>
-          <span className="block text-[12.5px] font-body text-muted-foreground mt-1">
+          <span className="block text-body-xs font-body text-muted-foreground mt-1">
             {project.description}
           </span>
         </Link>
@@ -117,13 +117,13 @@ const IntakeConfirmation = ({
           to={guide.path}
           className="group border border-border rounded-md p-4 hover:border-[hsl(var(--highland-gold))] transition-colors"
         >
-          <span className="block text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-1.5">
+          <span className="block text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] mb-1.5">
             While you wait
           </span>
-          <span className="block font-heading font-bold text-[15px] text-foreground leading-snug">
+          <span className="block font-heading font-bold text-body-sm text-foreground leading-snug">
             {guide.label}
           </span>
-          <span className="block text-[12.5px] font-body text-muted-foreground mt-1">
+          <span className="block text-body-xs font-body text-muted-foreground mt-1">
             {guide.description}
           </span>
         </Link>
@@ -132,14 +132,14 @@ const IntakeConfirmation = ({
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <a
           href="tel:+18285247773"
-          className="inline-flex items-center gap-2 bg-background border border-border text-foreground font-heading font-semibold text-[13.5px] px-6 py-3 rounded-md hover:border-[hsl(var(--highland-gold))] transition-colors"
+          className="inline-flex items-center gap-2 bg-background border border-border text-foreground font-heading font-semibold text-body-xs px-6 py-3 rounded-md hover:border-[hsl(var(--highland-gold))] transition-colors"
         >
           <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
           (828) 524-7773
         </a>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground font-body text-[13.5px] transition-colors"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground font-body text-body-xs transition-colors"
         >
           Return home <ArrowRight className="w-3.5 h-3.5" />
         </Link>

@@ -42,7 +42,7 @@ const RepairPhotoProof = ({ variant }: Props) => {
         <div className="max-w-2xl mb-8 md:mb-10">
           <span className="eyebrow mb-3 block">Photo Proof</span>
           <h2 className="section-heading mb-3">{s.heading}</h2>
-          <p className="text-muted-foreground text-[15px] md:text-base font-body leading-relaxed">
+          <p className="text-muted-foreground text-body-sm md:text-base font-body leading-relaxed">
             {s.intro}
           </p>
         </div>
@@ -60,10 +60,10 @@ const RepairPhotoProof = ({ variant }: Props) => {
                 className="w-full h-32 md:h-44 object-cover"
               />
               <figcaption className="p-3 md:p-4">
-                <p className="font-heading font-semibold text-foreground text-[13px] md:text-sm leading-snug mb-1">
+                <p className="font-heading font-semibold text-foreground text-body-xs md:text-sm leading-snug mb-1">
                   {it.title}
                 </p>
-                <p className="text-[11px] md:text-xs text-muted-foreground font-body">{it.location}</p>
+                <p className="text-caption md:text-xs text-muted-foreground font-body">{it.location}</p>
               </figcaption>
             </figure>
           ))}

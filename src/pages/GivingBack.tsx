@@ -74,7 +74,7 @@ const GivingBack = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <HandHeart className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-                <span className="text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Community Involvement</span>
+                <span className="text-body-xs font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))]">Community Involvement</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6 tracking-tight">
                 Built for the Community<br />

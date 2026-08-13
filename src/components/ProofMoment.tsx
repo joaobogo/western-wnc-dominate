@@ -83,7 +83,7 @@ const ProofMoment = ({ variant, className = "", id }: ProofMomentProps) => {
               className="flex items-center gap-2"
             >
               <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
-              <span className="text-[14px] md:text-[16px] font-body font-semibold text-foreground whitespace-nowrap">
+              <span className="text-body-xs md:text-body-sm font-body font-semibold text-foreground whitespace-nowrap">
                 {item.text}
               </span>
             </motion.div>

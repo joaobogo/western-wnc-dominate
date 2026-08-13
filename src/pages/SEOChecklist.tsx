@@ -52,7 +52,7 @@ const ChecklistSection = ({
           <div className="flex flex-wrap items-center gap-3">
             <h3 className="text-lg font-heading font-semibold text-foreground">{item.title}</h3>
             {item.priority && (
-              <span className="inline-flex items-center rounded-sm bg-primary px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary-foreground">
+              <span className="inline-flex items-center rounded-sm bg-primary px-2.5 py-1 text-caption font-semibold uppercase tracking-[0.12em] text-primary-foreground">
                 {item.priority}
               </span>
             )}

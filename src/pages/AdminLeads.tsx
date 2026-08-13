@@ -410,7 +410,7 @@ export default function AdminLeads() {
       )}
       <div className="border-b border-border px-6 py-3 flex flex-wrap items-end gap-3 text-xs">
         <div>
-          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-search">Search</label>
+          <label className="block text-caption uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-search">Search</label>
           <input
             id="f-search"
             {...fieldAttrs.search}
@@ -426,17 +426,17 @@ export default function AdminLeads() {
         <FilterSelect label="Source" value={sourceFilter} onChange={setSourceFilter} options={sources} />
         <FilterSelect label="Town" value={townFilter} onChange={setTownFilter} options={towns} />
         <div>
-          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-from">From</label>
+          <label className="block text-caption uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-from">From</label>
           <input id="f-from" type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)}
             className="border border-input rounded px-2 py-1 bg-background" />
         </div>
         <div>
-          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-to">To</label>
+          <label className="block text-caption uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-to">To</label>
           <input id="f-to" type="date" value={toDate} onChange={(e) => setToDate(e.target.value)}
             className="border border-input rounded px-2 py-1 bg-background" />
         </div>
         <div>
-          <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-sort">Sort</label>
+          <label className="block text-caption uppercase tracking-wide text-muted-foreground mb-1" htmlFor="f-sort">Sort</label>
           <select id="f-sort" value={sort} onChange={(e) => setSort(e.target.value as SortKey)}
             className="border border-input rounded px-2 py-1 bg-background">
             {(Object.keys(SORTS) as SortKey[]).map((k) => (
@@ -468,22 +468,22 @@ export default function AdminLeads() {
                 <div className="flex items-center gap-1">
                   <TierPill score={l.lead_score} />
                   {isDeadLetter(l) ? (
-                    <span className="text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded bg-destructive text-destructive-foreground">
+                    <span className="text-caption uppercase tracking-wide px-1.5 py-0.5 rounded bg-destructive text-destructive-foreground">
                       Needs resend
                     </span>
                   ) : (
                     <SyncPill status={l.jobtread_sync_status} />
                   )}
-                  <span className="text-[10px] uppercase tracking-wide bg-primary/10 text-primary px-1.5 py-0.5 rounded">{l.status}</span>
+                  <span className="text-caption uppercase tracking-wide bg-primary/10 text-primary px-1.5 py-0.5 rounded">{l.status}</span>
                 </div>
               </div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">
+              <div className="text-caption text-muted-foreground mt-0.5">
                 {l.source} · {l.lead_type ?? "—"} · {l.property_town ?? ""}
               </div>
               {l.jobtread_sync_status && l.jobtread_sync_status !== "success" && l.jobtread_error_message && (
-                <div className="text-[10px] text-destructive mt-0.5 line-clamp-2">{l.jobtread_error_message}</div>
+                <div className="text-caption text-destructive mt-0.5 line-clamp-2">{l.jobtread_error_message}</div>
               )}
-              <div className="text-[10px] text-muted-foreground mt-0.5">{new Date(l.created_at).toLocaleString()}</div>
+              <div className="text-caption text-muted-foreground mt-0.5">{new Date(l.created_at).toLocaleString()}</div>
             </button>
           ))}
           {totalCount > PAGE_SIZE && (
@@ -532,7 +532,7 @@ export default function AdminLeads() {
                     {label}
                   </button>
                 ))}
-                {savingStatus && <span className="text-[11px] text-muted-foreground">Saving…</span>}
+                {savingStatus && <span className="text-caption text-muted-foreground">Saving…</span>}
               </div>
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <Field label="Phone" value={selected.phone} link={selected.phone ? `tel:${selected.phone}` : undefined} />
@@ -546,7 +546,7 @@ export default function AdminLeads() {
               </div>
               <div className="border border-border rounded p-3 space-y-2">
                 <div className="flex items-center justify-between">
-                  <p className="text-[11px] uppercase tracking-wide text-muted-foreground">JobTread Sync</p>
+                  <p className="text-caption uppercase tracking-wide text-muted-foreground">JobTread Sync</p>
                   <SyncPill status={selected.jobtread_sync_status} />
                 </div>
                 <div className="grid grid-cols-2 gap-3 text-sm">
@@ -557,7 +557,7 @@ export default function AdminLeads() {
                 </div>
                 {selected.jobtread_error_message && (
                   <div>
-                    <p className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1">Error</p>
+                    <p className="text-caption uppercase tracking-wide text-muted-foreground mb-1">Error</p>
                     <p className="text-xs whitespace-pre-wrap bg-destructive/10 text-destructive p-2 rounded">{selected.jobtread_error_message}</p>
                   </div>
                 )}
@@ -571,18 +571,18 @@ export default function AdminLeads() {
               </div>
               {selected.project_description && (
                 <div>
-                  <p className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1">Description</p>
+                  <p className="text-caption uppercase tracking-wide text-muted-foreground mb-1">Description</p>
                   <p className="text-sm whitespace-pre-wrap bg-muted/40 p-3 rounded">{selected.project_description}</p>
                 </div>
               )}
               {selected.chat_summary && (
                 <div>
-                  <p className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1">Chat summary</p>
+                  <p className="text-caption uppercase tracking-wide text-muted-foreground mb-1">Chat summary</p>
                   <pre className="text-xs whitespace-pre-wrap bg-muted/40 p-3 rounded">{selected.chat_summary}</pre>
                 </div>
               )}
               <div>
-                <label className="text-[11px] uppercase tracking-wide text-muted-foreground block mb-1" htmlFor="f-status">All statuses</label>
+                <label className="text-caption uppercase tracking-wide text-muted-foreground block mb-1" htmlFor="f-status">All statuses</label>
                 <select id="f-status"
                   value={selected.status}
                   onChange={(e) => updateStatus(selected.id, e.target.value)}
@@ -602,7 +602,7 @@ export default function AdminLeads() {
 function Field({ label, value, link }: { label: string; value: string | null; link?: string }) {
   return (
     <div>
-      <p className="text-[11px] uppercase tracking-wide text-muted-foreground">{label}</p>
+      <p className="text-caption uppercase tracking-wide text-muted-foreground">{label}</p>
       {link ? (
         <a href={link} className="text-sm underline break-all">{value || "—"}</a>
       ) : (
@@ -621,7 +621,7 @@ function FilterSelect({
 }: { label: string; value: string; onChange: (v: string) => void; options: readonly string[] }) {
   return (
     <div>
-      <label className="block text-[10px] uppercase tracking-wide text-muted-foreground mb-1" id={`flt-${label}`}>{label}</label>
+      <label className="block text-caption uppercase tracking-wide text-muted-foreground mb-1" id={`flt-${label}`}>{label}</label>
       <select
         aria-labelledby={`flt-${label}`}
         value={value}
@@ -644,7 +644,7 @@ function TierPill({ score }: { score: number | null }) {
     Cool: "bg-muted text-muted-foreground",
   };
   return (
-    <span className={`text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded ${styles[tier]}`}>
+    <span className={`text-caption uppercase tracking-wide px-1.5 py-0.5 rounded ${styles[tier]}`}>
       {tier} {score ?? 0}
     </span>
   );
@@ -659,7 +659,7 @@ function SyncPillInner({ status }: { status: string | null }) {
     failed: "bg-destructive/15 text-destructive",
   };
   return (
-    <span className={`text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded ${styles[s] ?? "bg-muted text-muted-foreground"}`}>
+    <span className={`text-caption uppercase tracking-wide px-1.5 py-0.5 rounded ${styles[s] ?? "bg-muted text-muted-foreground"}`}>
       JT: {s.replace("_", " ")}
     </span>
   );

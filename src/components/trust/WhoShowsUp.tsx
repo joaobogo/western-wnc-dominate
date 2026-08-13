@@ -65,7 +65,7 @@ const WhoShowsUp = ({
                   <p className="mt-2.5 text-sm font-heading font-bold text-[hsl(var(--gold-ink))]">
                     {luke.name}
                   </p>
-                  <p className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">
+                  <p className="text-caption font-body text-muted-foreground uppercase tracking-wider">
                     {luke.role}
                   </p>
                 </div>
@@ -89,7 +89,7 @@ const WhoShowsUp = ({
                   <p className="mt-2.5 text-sm font-heading font-bold text-[hsl(var(--gold-ink))]">
                     {kristy.name}
                   </p>
-                  <p className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">
+                  <p className="text-caption font-body text-muted-foreground uppercase tracking-wider">
                     {kristy.role}
                   </p>
                 </div>
@@ -134,10 +134,10 @@ const WhoShowsUp = ({
               <div className="flex items-start gap-3">
                 <UserCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
                 <div>
-                  <p className={`text-[13px] font-heading font-bold ${textMain}`}>
+                  <p className={`text-body-xs font-heading font-bold ${textMain}`}>
                     One named contact
                   </p>
-                  <p className={`text-[12px] font-body leading-relaxed ${textMuted}`}>
+                  <p className={`text-body-xs font-body leading-relaxed ${textMuted}`}>
                     Same person from quote to final walkthrough.
                   </p>
                 </div>
@@ -145,10 +145,10 @@ const WhoShowsUp = ({
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
                 <div>
-                  <p className={`text-[13px] font-heading font-bold ${textMain}`}>
+                  <p className={`text-body-xs font-heading font-bold ${textMain}`}>
                     Western NC crews
                   </p>
-                  <p className={`text-[12px] font-body leading-relaxed ${textMuted}`}>
+                  <p className={`text-body-xs font-body leading-relaxed ${textMuted}`}>
                     Based in Franklin, not a traveling subcontractor network.
                   </p>
                 </div>
@@ -156,10 +156,10 @@ const WhoShowsUp = ({
               <div className="flex items-start gap-3">
                 <Users className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" />
                 <div>
-                  <p className={`text-[13px] font-heading font-bold ${textMain}`}>
+                  <p className={`text-body-xs font-heading font-bold ${textMain}`}>
                     Owner-led
                   </p>
-                  <p className={`text-[12px] font-body leading-relaxed ${textMuted}`}>
+                  <p className={`text-body-xs font-body leading-relaxed ${textMuted}`}>
                     Luke and Kristy set the standards the team follows.
                   </p>
                 </div>

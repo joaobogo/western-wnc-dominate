@@ -121,12 +121,12 @@ const SpecialtyRoofing = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="flex flex-col">
-                    <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                    <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Specialty Division</span>
+                    <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                    <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Specialty Division</span>
                   </div>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-white/30" />
-                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Specialty Roofing</span>
+                <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Specialty Roofing</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -174,7 +174,7 @@ const SpecialtyRoofing = () => {
                   </motion.div>
                 ))}
                 <Link to="/recent-projects" className="w-16 h-16 md:w-20 md:h-20 rounded-sm border border-white/15 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
-                  <span className="text-[10px] text-primary-foreground/95 font-body text-center leading-tight">View<br/>Portfolio</span>
+                  <span className="text-caption text-primary-foreground/95 font-body text-center leading-tight">View<br/>Portfolio</span>
                 </Link>
               </motion.div>
             </div>
@@ -191,7 +191,7 @@ const SpecialtyRoofing = () => {
           <div className="container-tight max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
               <Gem className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)] mx-auto mb-8" />
-              <h2 className="text-2xl md:text-3xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance tracking-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance tracking-tight">
                 Some roofs are meant to be noticed. They deserve a team that treats every line, every material, and every detail as a reflection of the home itself.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
@@ -221,7 +221,7 @@ const SpecialtyRoofing = () => {
               {complexRooflines.map((item, i) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -243,7 +243,7 @@ const SpecialtyRoofing = () => {
                     <Gem className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{mat.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{mat.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{mat.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -269,7 +269,7 @@ const SpecialtyRoofing = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -293,7 +293,7 @@ const SpecialtyRoofing = () => {
                 {whyHigherStandard.map((reason, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="flex items-start gap-3 p-4 bg-card border border-border rounded-sm">
                     <Sparkles className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground text-[13px] leading-snug font-body">{reason}</span>
+                    <span className="text-muted-foreground text-body-xs leading-snug font-body">{reason}</span>
                   </motion.div>
                 ))}
               </div>
@@ -336,7 +336,7 @@ const SpecialtyRoofing = () => {
                 <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -356,7 +356,7 @@ const SpecialtyRoofing = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                   <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 pr-2">
                       <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>

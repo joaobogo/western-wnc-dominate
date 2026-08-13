@@ -71,7 +71,7 @@ export const ImageFrame = ({
 
         {/* Category badge */}
         {badge && (
-          <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-[10px] font-body font-semibold uppercase tracking-[0.15em] px-3 py-1.5 z-10">
+          <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-caption font-body font-semibold uppercase tracking-[0.15em] px-3 py-1.5 z-10">
             {badge}
           </div>
         )}

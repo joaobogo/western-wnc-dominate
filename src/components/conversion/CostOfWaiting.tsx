@@ -71,7 +71,7 @@ const CostOfWaiting = ({ variant = "repair", className = "" }: CostOfWaitingProp
             >
               <p.icon className="w-5 h-5 text-primary mb-3" />
               <h3 className="font-heading font-semibold text-foreground text-sm mb-2">{p.title}</h3>
-              <p className="text-[13px] leading-relaxed font-body text-muted-foreground">{p.text}</p>
+              <p className="text-body-xs leading-relaxed font-body text-muted-foreground">{p.text}</p>
             </motion.div>
           ))}
         </div>

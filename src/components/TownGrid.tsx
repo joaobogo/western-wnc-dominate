@@ -21,7 +21,7 @@ const TownGrid = ({ id }: { id?: string }) => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-[20px] md:text-[24px] text-white max-w-2xl mx-auto font-bold leading-relaxed drop-shadow-md">
+            <p className="text-body md:text-body-lg text-white max-w-2xl mx-auto font-bold leading-relaxed drop-shadow-md">
               Locally owned with crews positioned across all the mountains. We focus on Western North Carolina, 
               covering 8 primary counties with a deep understanding of the unique microclimates and elevations that define mountain living.
             </p>
@@ -53,9 +53,9 @@ const TownGrid = ({ id }: { id?: string }) => {
                     <h3 className="font-heading font-bold text-lg text-dark-section-foreground mb-1.5">
                       {town.name}
                     </h3>
-                    <p className="text-dark-section-foreground/85 text-[16px] mt-1 font-body font-bold">{town.county}</p>
+                    <p className="text-dark-section-foreground/85 text-body-sm mt-1 font-body font-bold">{town.county}</p>
                     <div className="mt-3 pt-3 border-t border-dark-section-foreground/6">
-                      <span className="text-[hsl(var(--highland-gold)/0.85)] text-[12px] font-body font-bold uppercase tracking-[0.12em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5">
+                      <span className="text-[hsl(var(--highland-gold)/0.85)] text-body-xs font-body font-bold uppercase tracking-[0.12em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5">
                         View Area <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>

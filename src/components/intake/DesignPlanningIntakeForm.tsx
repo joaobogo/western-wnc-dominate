@@ -231,10 +231,10 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
     <div>
       <div className="flex items-center justify-between mb-7">
         <div>
-          <p className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-foreground/80 mb-1">
+          <p className="text-caption font-body font-bold uppercase tracking-[0.22em] text-foreground/80 mb-1">
             Step {step + 1} of {totalSteps}
           </p>
-          <h2 className="text-[20px] md:text-[22px] font-heading font-bold text-foreground tracking-tight">
+          <h2 className="text-body md:text-body-lg font-heading font-bold text-foreground tracking-tight">
             {step === 0 && "Project & Planning Needs"}
             {mode === "short" ? (
               step === 1 && "Contact & Location"
@@ -413,7 +413,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
           <button
             type="button"
             onClick={back}
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-[13px] font-body transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-body-xs font-body transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back
           </button>

@@ -71,12 +71,12 @@ const OurProcess = () => {
         {/* Header */}
         <div className="text-center mb-14 md:mb-20">
           <ScrollReveal variant="fade">
-            <span className="text-[13px] md:text-[14px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] mb-4 block drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+            <span className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] mb-4 block drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Our Process — 7 Phases
             </span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
-            <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
               Every Project Follows<br className="hidden md:block" />
               <span className="text-[hsl(var(--gold-ink))]"> the Same Documented Path.</span>
             </h2>
@@ -120,7 +120,7 @@ const OurProcess = () => {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 + 0.15, duration: 0.4, ease: HIGHLAND_EASE }}
                   >
-                    <span className="text-[11px] md:text-sm font-heading font-bold text-[hsl(var(--highland-gold)/0.9)] group-hover:text-[hsl(var(--highland-gold)/0.9)] transition-colors duration-300">
+                    <span className="text-caption md:text-sm font-heading font-bold text-[hsl(var(--highland-gold)/0.9)] group-hover:text-[hsl(var(--highland-gold)/0.9)] transition-colors duration-300">
                       {step.number}
                     </span>
                   </motion.div>
@@ -142,13 +142,13 @@ const OurProcess = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-dark-section-foreground/90 text-[17px] md:text-[19px] leading-[1.7] font-body mb-4 font-bold">
+                    <p className="text-dark-section-foreground/90 text-body-sm md:text-body leading-[1.7] font-body mb-4 font-bold">
                       {step.description}
                     </p>
 
                     {/* Detail strip */}
                     <div className="pt-3 border-t border-dark-section-foreground/[0.04]">
-                      <span className="text-[11px] font-body font-medium text-white/95 tracking-wide">
+                      <span className="text-caption font-body font-medium text-white/95 tracking-wide">
                         {step.detail}
                       </span>
                     </div>
@@ -169,7 +169,7 @@ const OurProcess = () => {
         >
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-[hsl(var(--highland-gold)/0.3)]" />
-            <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-white/95">
+            <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-white/95">
               Roofing · Construction · Design
             </span>
             <div className="w-8 h-px bg-gradient-to-l from-transparent to-[hsl(var(--highland-gold)/0.3)]" />
@@ -184,7 +184,7 @@ const OurProcess = () => {
               <span className="relative">Start Your Project</span>
               <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
             </Link>
-            <p className="text-[13px] text-white/95 font-body font-medium mt-4">
+            <p className="text-body-xs text-white/95 font-body font-medium mt-4">
               It starts with a 15-minute call. No commitment required.
             </p>
           </div>

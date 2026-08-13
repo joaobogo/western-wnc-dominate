@@ -247,7 +247,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   }`}
                 >
                   {project.type && (
-                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--gold-ink))] mb-2 block">
+                    <span className="text-caption font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--gold-ink))] mb-2 block">
                       {project.type}
                     </span>
                   )}
@@ -265,7 +265,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
                   </div>
                   {project.highlight && (
                     <div className="mt-5 pt-5 border-t border-white/8">
-                      <p className="text-[11px] font-body font-semibold uppercase tracking-wider text-[hsl(var(--highland-gold)/0.9)] mb-1">Project Highlight</p>
+                      <p className="text-caption font-body font-semibold uppercase tracking-wider text-[hsl(var(--highland-gold)/0.9)] mb-1">Project Highlight</p>
                       <p className="text-white/85 text-sm font-body">{project.highlight}</p>
                     </div>
                   )}
@@ -280,7 +280,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="absolute bottom-4 left-0 right-0 text-center text-white/20 text-[10px] font-body tracking-wider uppercase"
+              className="absolute bottom-4 left-0 right-0 text-center text-white/20 text-caption font-body tracking-wider uppercase"
             >
               Swipe to navigate · Pull down to close
             </motion.p>

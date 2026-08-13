@@ -53,20 +53,20 @@ const BuilderShell = ({
           <div>
             <div className="flex items-center gap-2 mb-2.5">
               <div className="h-px w-8 bg-[hsl(var(--highland-gold))]" />
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.28em] text-[hsl(var(--gold-ink))]">
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.28em] text-[hsl(var(--gold-ink))]">
                 {eyebrow}
               </span>
             </div>
-            <h1 className="text-[26px] md:text-5xl font-heading font-bold text-foreground tracking-[-0.02em] leading-[1.1] mb-2 max-w-2xl">
+            <h1 className="text-heading-sm md:text-5xl font-heading font-bold text-foreground tracking-[-0.02em] leading-[1.1] mb-2 max-w-2xl">
               {title}
             </h1>
-            <p className="text-muted-foreground text-[13.5px] md:text-[15px] font-body max-w-xl leading-relaxed">
+            <p className="text-muted-foreground text-body-xs md:text-body-sm font-body max-w-xl leading-relaxed">
               {subhead}
             </p>
           </div>
           <Link
             to={switchHref}
-            className="hidden md:inline-flex items-center gap-1.5 text-[12px] font-body text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors"
+            className="hidden md:inline-flex items-center gap-1.5 text-body-xs font-body text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors"
           >
             <ArrowLeft className="w-3 h-3" /> {switchLabel}
           </Link>
@@ -82,7 +82,7 @@ const BuilderShell = ({
                 <div key={name} className="flex items-center gap-2 flex-1">
                   <div className="flex items-center gap-2 min-w-0">
                     <span
-                      className={`flex items-center justify-center w-6 h-6 rounded-full text-[10.5px] font-body font-bold transition-colors ${
+                      className={`flex items-center justify-center w-6 h-6 rounded-full text-caption font-body font-bold transition-colors ${
                         current
                           ? "bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))]"
                           : done
@@ -93,7 +93,7 @@ const BuilderShell = ({
                       {done ? "✓" : i + 1}
                     </span>
                     <span
-                      className={`text-[11.5px] font-body tracking-tight truncate ${
+                      className={`text-caption font-body tracking-tight truncate ${
                         current ? "text-foreground font-semibold" : "text-foreground/80"
                       }`}
                     >
@@ -112,11 +112,11 @@ const BuilderShell = ({
         {/* Mobile stepper + scope brief drawer */}
         <div className="md:hidden mb-5 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-muted-foreground">
+            <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-muted-foreground">
               Step {step + 1} of {totalSteps}
               {currentName ? <span className="text-foreground/80 font-medium normal-case tracking-normal"> · {currentName}</span> : null}
             </span>
-            <span className="text-[10.5px] font-body text-foreground/80">{pct}%</span>
+            <span className="text-caption font-body text-foreground/80">{pct}%</span>
           </div>
           <div className="flex gap-1.5">
             {Array.from({ length: totalSteps }).map((_, i) => (
@@ -138,7 +138,7 @@ const BuilderShell = ({
               onClick={() => setMobileSummaryOpen((o) => !o)}
               className="w-full flex items-center justify-between bg-[hsl(var(--heritage-green)/0.04)] border border-[hsl(var(--heritage-green)/0.18)] rounded-md px-4 py-2.5"
             >
-              <span className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--heritage-green))]">
+              <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--heritage-green))]">
                 Your scope brief
               </span>
               <ChevronDown
@@ -162,13 +162,13 @@ const BuilderShell = ({
 
             {/* Reassurance footer */}
             <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 max-w-xl">
-              <p className="text-[11.5px] font-body text-foreground/80 leading-relaxed">
+              <p className="text-caption font-body text-foreground/80 leading-relaxed">
                 Builds a project brief — <span className="text-muted-foreground">not an instant quote</span>. Final scope comes from an on-site walkthrough.
               </p>
               {shortFormHref && (
                 <Link
                   to={shortFormHref}
-                  className="text-[11.5px] font-body text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors whitespace-nowrap underline-offset-4 hover:underline"
+                  className="text-caption font-body text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors whitespace-nowrap underline-offset-4 hover:underline"
                 >
                   Prefer the short form →
                 </Link>
@@ -177,7 +177,7 @@ const BuilderShell = ({
             {/* Mobile switch link */}
             <Link
               to={switchHref}
-              className="md:hidden mt-3 inline-flex items-center gap-1.5 text-[11.5px] font-body text-foreground/80 hover:text-[hsl(var(--gold-ink))] transition-colors"
+              className="md:hidden mt-3 inline-flex items-center gap-1.5 text-caption font-body text-foreground/80 hover:text-[hsl(var(--gold-ink))] transition-colors"
             >
               <ArrowLeft className="w-3 h-3" /> {switchLabel}
             </Link>
@@ -187,16 +187,16 @@ const BuilderShell = ({
           <aside className="hidden lg:block lg:col-span-4 lg:sticky lg:top-24">
             <div className="bg-[hsl(var(--heritage-green)/0.04)] border border-[hsl(var(--heritage-green)/0.18)] rounded-lg p-5 md:p-6">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10.5px] font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--heritage-green))]">
+                <span className="text-caption font-body font-bold uppercase tracking-[0.22em] text-[hsl(var(--heritage-green))]">
                   Your scope brief
                 </span>
-                <span className="text-[10.5px] font-body text-foreground/80">{pct}%</span>
+                <span className="text-caption font-body text-foreground/80">{pct}%</span>
               </div>
               {summary}
             </div>
             <a
               href="tel:+18285247773"
-              className="mt-4 inline-flex items-center gap-2 text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-body text-[13px]"
+              className="mt-4 inline-flex items-center gap-2 text-muted-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-body text-body-xs"
             >
               <Phone className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
               Prefer to talk? (828) 524-7773

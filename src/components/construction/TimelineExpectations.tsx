@@ -62,7 +62,7 @@ const TimelineExpectations = ({
         {phases.map((p) => (
           <li key={p.label} className="relative">
             <span className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-accent" aria-hidden="true" />
-            <p className="text-[11px] uppercase tracking-widest font-bold text-muted-foreground mb-1">
+            <p className="text-caption uppercase tracking-widest font-bold text-muted-foreground mb-1">
               {p.window}
             </p>
             <p className="font-heading font-bold text-lg mb-1">{p.label}</p>

@@ -126,12 +126,12 @@ const Renovations = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="flex flex-col">
-                    <span className="text-[18px] md:text-[20px] font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
-                    <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Construction Division</span>
+                    <span className="text-body md:text-body font-heading font-bold text-white tracking-[0.1em] uppercase">Highlander</span>
+                    <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1">Construction Division</span>
                   </div>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-white/30" />
-                <span className="text-[12px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Renovations</span>
+                <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Renovations</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -150,7 +150,7 @@ const Renovations = () => {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-9 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
+                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-9 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
@@ -198,7 +198,7 @@ const Renovations = () => {
                 <Gauge className="w-6 h-6 text-[hsl(var(--highland-gold)/0.85)]" />
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-6 text-balance tracking-tight">
                 Renovation isn't about tearing things apart. It's the discipline of improving what exists while preserving what works — structure, character, and the investment you've already made.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-[1.8] font-body max-w-2xl mx-auto">
@@ -229,7 +229,7 @@ const Renovations = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -251,7 +251,7 @@ const Renovations = () => {
                     <type.icon className="w-4.5 h-4.5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{type.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{type.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{type.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -280,7 +280,7 @@ const Renovations = () => {
                       <div className="w-1 h-8 bg-[hsl(var(--highland-gold)/0.3)] rounded-full mt-0.5 flex-shrink-0" />
                       <div>
                         <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2">{item.title}</h3>
-                        <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{item.detail}</p>
+                        <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{item.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -330,7 +330,7 @@ const Renovations = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -353,7 +353,7 @@ const Renovations = () => {
                     <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -411,7 +411,7 @@ const Renovations = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                   <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-[hsl(var(--highland-gold)/0.2)] data-[state=open]:shadow-sm transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 pr-2">
                       <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>

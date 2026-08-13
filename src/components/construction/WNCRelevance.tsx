@@ -103,9 +103,9 @@ const WNCRelevance = ({
                     </div>
                     <div>
                       <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{insight.title}</h3>
-                      <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-2">{insight.detail}</p>
+                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-2">{insight.detail}</p>
                       {showImplications && (
-                        <p className="text-primary/80 text-[12px] leading-relaxed font-body italic">{insight.implication}</p>
+                        <p className="text-primary/80 text-body-xs leading-relaxed font-body italic">{insight.implication}</p>
                       )}
                     </div>
                   </div>
@@ -134,9 +134,9 @@ const WNCRelevance = ({
                 <insight.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{insight.title}</h3>
-              <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-2">{insight.detail}</p>
+              <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-2">{insight.detail}</p>
               {showImplications && (
-                <p className="text-primary/80 text-[12px] leading-relaxed font-body italic border-t border-border pt-2 mt-3">{insight.implication}</p>
+                <p className="text-primary/80 text-body-xs leading-relaxed font-body italic border-t border-border pt-2 mt-3">{insight.implication}</p>
               )}
             </motion.div>
           ))}
@@ -183,7 +183,7 @@ export const WNCRelevanceDark = ({
                 <insight.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
               </div>
               <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{insight.title}</h3>
-              <p className="text-dark-section-foreground/95 text-[13px] leading-relaxed font-body">{insight.detail}</p>
+              <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{insight.detail}</p>
             </motion.div>
           ))}
         </div>

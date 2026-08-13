@@ -43,7 +43,7 @@ export const QuoteModule = ({
       {!isInline && (
         <span
           className={cn(
-            "block font-heading text-[4rem] md:text-[5rem] leading-[0.8] select-none mb-2",
+            "block font-heading text-display md:text-display leading-[0.8] select-none mb-2",
             isDark ? "text-[hsl(var(--highland-gold)/0.1)]" : "text-[hsl(var(--highland-gold)/0.08)]",
           )}
           aria-hidden
@@ -57,7 +57,7 @@ export const QuoteModule = ({
           "font-heading italic leading-[1.5]",
           isInline
             ? "text-lg text-foreground/80"
-            : "text-xl md:text-2xl lg:text-[1.75rem]",
+            : "text-xl md:text-2xl lg:text-heading-sm",
           isDark && !isInline && "text-[hsl(var(--dark-section-foreground)/0.85)]",
           !isDark && !isInline && "text-foreground",
         )}
@@ -91,7 +91,7 @@ export const QuoteModule = ({
           {subtitle && (
             <span
               className={cn(
-                "font-body text-[11px] uppercase tracking-[0.12em]",
+                "font-body text-caption uppercase tracking-[0.12em]",
                 isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground",
               )}
             >

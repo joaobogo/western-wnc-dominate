@@ -32,7 +32,7 @@ const Team = () => {
         <section className="bg-heritage-charcoal pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "300px auto" }} />
           <div className="container-tight relative z-10">
-            <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
+            <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] block mb-4">
               The People Behind Highlander
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6 max-w-3xl">
@@ -88,10 +88,10 @@ const Team = () => {
                     <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2 leading-tight">
                       {member.name}
                     </h2>
-                    <p className="text-primary font-heading font-bold text-[14px] uppercase tracking-[0.18em] mb-5">
+                    <p className="text-primary font-heading font-bold text-body-xs uppercase tracking-[0.18em] mb-5">
                       {member.role}
                     </p>
-                    <div className="space-y-4 text-foreground/85 font-body text-[16px] md:text-[17px] leading-relaxed mb-6">
+                    <div className="space-y-4 text-foreground/85 font-body text-body-sm md:text-body-sm leading-relaxed mb-6">
                       {member.bio.map((p, i) => (
                         <p key={i}>{p}</p>
                       ))}
@@ -99,10 +99,10 @@ const Team = () => {
                     <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pt-5 border-t border-border">
                       {member.details.map((d) => (
                         <div key={d.label} className="flex flex-col">
-                          <dt className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))]">
+                          <dt className="text-caption font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))]">
                             {d.label}
                           </dt>
-                          <dd className="text-sm md:text-[15px] text-foreground/85 font-body mt-1">
+                          <dd className="text-sm md:text-body-sm text-foreground/85 font-body mt-1">
                             {d.value}
                           </dd>
                         </div>

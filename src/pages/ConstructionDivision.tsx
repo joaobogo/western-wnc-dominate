@@ -131,33 +131,33 @@ const ConstructionDivision = () => {
                 <div className="inline-flex items-center gap-4">
                   <div className="h-12 w-px bg-[hsl(var(--highland-gold)/0.6)]" />
                   <div className="flex flex-col">
-                    <span className="text-[20px] md:text-[22px] font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
-                    <span className="text-[12px] md:text-[13px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction, Design</span>
+                    <span className="text-body md:text-body-lg font-heading font-bold text-white tracking-[0.1em] drop-shadow-md">Highlander</span>
+                    <span className="text-body-xs md:text-body-xs font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em] -mt-1 drop-shadow-sm">Construction, Design</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-none bg-[hsl(var(--highland-gold)/0.15)] flex items-center justify-center border border-[hsl(var(--highland-gold)/0.4)] shadow-[0_0_15px_-3px_hsl(var(--highland-gold)/0.3)]">
                     <HardHat className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
-                  <span className="text-[11px] md:text-[12px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] drop-shadow-sm">Mountain Quality Since 2017</span>
+                  <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] drop-shadow-sm">Mountain Quality Since 2017</span>
                 </div>
               </motion.div>
 
-              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-[34px] md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight mb-1 md:mb-2">
+              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-heading md:text-5xl lg:text-display xl:text-display font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight mb-1 md:mb-2">
                 Additions &amp; Custom Building
               </motion.h1>
-              <motion.h2 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-[34px] md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-bold tracking-tight leading-[0.98] mb-3 md:mb-8">
+              <motion.h2 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-heading md:text-5xl lg:text-display xl:text-display font-heading font-bold tracking-tight leading-[0.98] mb-3 md:mb-8">
                 <span className="text-[hsl(var(--gold-ink))]">Across Western NC.</span>
               </motion.h2>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="order-2 md:order-none text-[17px] md:text-[24px] text-white/95 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-bold drop-shadow-md">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="order-2 md:order-none text-body-sm md:text-body-lg text-white/95 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-bold drop-shadow-md">
                 <span className="md:hidden">Out of room, or ready to build on your mountain lot? We walk the site and return a written scope, schedule, and budget range before you commit.</span>
                 <span className="hidden md:inline">Out of room, or ready to build on your mountain lot? Bring us the idea and we walk the site, map the permits and site constraints, and return a written scope, schedule, and budget range before you commit. Additions, renovations, and outdoor living — licensed, insured, and team-led.</span>
               </motion.p>
 
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[15px] px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
+                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
@@ -178,7 +178,7 @@ const ConstructionDivision = () => {
                   ].map((stat) => (
                     <div key={stat.label}>
                       <div className="text-lg font-heading font-bold text-[hsl(var(--gold-ink))]">{stat.value}</div>
-                      <div className="text-[10px] uppercase tracking-wider text-primary-foreground/90 font-body mt-0.5">{stat.label}</div>
+                      <div className="text-caption uppercase tracking-wider text-primary-foreground/90 font-body mt-0.5">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -186,7 +186,7 @@ const ConstructionDivision = () => {
                   {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Scoping Clarity"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <CheckCircle className="w-3 h-3 text-[hsl(var(--highland-gold)/0.85)]" />
-                      <span className="text-primary-foreground/90 text-[11px] font-body font-medium tracking-wide">{item}</span>
+                      <span className="text-primary-foreground/90 text-caption font-body font-medium tracking-wide">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -211,7 +211,7 @@ const ConstructionDivision = () => {
             <ScrollReveal variant="fade">
               <div className="text-center">
                 <GoldLine width="3rem" className="mx-auto mb-8" />
-                <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
+                <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-foreground leading-[1.15] mb-8 text-balance">
                   Highlander builds more than structures. We build the mountain homes and outdoor spaces that define your WNC lifestyle—backed by a master-class standard of roofing authority and disciplined in-house design planning.
                 </h2>
                 <div className="max-w-2xl mx-auto space-y-6">
@@ -254,7 +254,7 @@ const ConstructionDivision = () => {
                     ].map((stat, i) => (
                       <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/15 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
                         <span className="text-xl font-heading font-bold text-[hsl(var(--gold-ink))] block">{stat.value}</span>
-                        <span className="text-[12px] md:text-[13px] font-body text-dark-section-foreground/95 uppercase tracking-[0.15em]">{stat.label}</span>
+                        <span className="text-body-xs md:text-body-xs font-body text-dark-section-foreground/95 uppercase tracking-[0.15em]">{stat.label}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -288,7 +288,7 @@ const ConstructionDivision = () => {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
               <ScrollReveal variant="fade" className="lg:col-span-7">
                 <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Design &amp; Consultation Program</span>
-                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-[1.1] mb-6 text-balance">
+                <h2 className="text-3xl md:text-4xl lg:text-heading-lg font-heading font-bold text-foreground leading-[1.1] mb-6 text-balance">
                   Serious Projects Start<br className="hidden md:block" /> With Design.
                 </h2>
                 <p className="text-foreground/85 text-base md:text-lg leading-relaxed font-body mb-5">
@@ -297,14 +297,14 @@ const ConstructionDivision = () => {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8">
                   <Link
                     to="/construction/design"
-                    className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 tracking-wide"
+                    className="group cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 tracking-wide"
                   >
                     Start with a Design Agreement
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
                     to="/construction/design"
-                    className="group bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-[14px] px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.6)] hover:text-[hsl(var(--gold-ink))] transition-all tracking-wide"
+                    className="group bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:border-[hsl(var(--highland-gold)/0.6)] hover:text-[hsl(var(--gold-ink))] transition-all tracking-wide"
                   >
                     View Design Services
                   </Link>
@@ -322,7 +322,7 @@ const ConstructionDivision = () => {
 
               <ScrollReveal variant="fade" className="lg:col-span-5">
                 <div className="bg-card border border-border rounded-none p-6 md:p-8">
-                  <span className="text-[11px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] block mb-5">
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] block mb-5">
                     What the Program Delivers
                   </span>
                   <ul className="space-y-3.5">
@@ -336,7 +336,7 @@ const ConstructionDivision = () => {
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] mt-0.5 flex-shrink-0" />
-                        <span className="text-foreground/85 text-sm md:text-[15px] font-body leading-snug">{item}</span>
+                        <span className="text-foreground/85 text-sm md:text-body-sm font-body leading-snug">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -360,7 +360,7 @@ const ConstructionDivision = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
           <div className="absolute bottom-10 left-10 flex items-center gap-4">
              <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)]" />
-             <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Craftsmanship in Detail</span>
+             <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">Craftsmanship in Detail</span>
           </div>
         </section>
 

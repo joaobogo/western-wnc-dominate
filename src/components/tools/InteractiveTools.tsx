@@ -282,11 +282,11 @@ export function MaterialsComparison() {
                 </div>
                 <div className="mt-3 pt-3 border-t border-border grid grid-cols-2 gap-2">
                   <div>
-                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1 font-semibold">Pros</p>
+                    <p className="text-caption uppercase tracking-wider text-muted-foreground mb-1 font-semibold">Pros</p>
                     {m.pros.map(p => <p key={p} className="text-xs text-primary font-body">+ {p}</p>)}
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1 font-semibold">Cons</p>
+                    <p className="text-caption uppercase tracking-wider text-muted-foreground mb-1 font-semibold">Cons</p>
                     {m.cons.map(c => <p key={c} className="text-xs text-alert font-body">− {c}</p>)}
                   </div>
                 </div>
@@ -441,7 +441,7 @@ export function ServiceAreaFinder() {
               }`}
             >
               {t.name}
-              {t.primary && <span className="text-[10px] text-[hsl(var(--gold-ink))] ml-1">★</span>}
+              {t.primary && <span className="text-caption text-[hsl(var(--gold-ink))] ml-1">★</span>}
             </a>
           ))}
         </div>

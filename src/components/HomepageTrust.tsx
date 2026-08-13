@@ -65,18 +65,18 @@ const HomepageTrust = () => {
         <div className="container-tight relative z-10">
           <div className="text-center mb-14 md:mb-18">
             <ScrollReveal variant="fade">
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.6)] mb-4 block">
                 Credentials & Record
               </span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
-              <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
                 Every Claim Backed by<br className="hidden md:block" />
                 <span className="text-[hsl(var(--gold-ink))]"> Documentation You Can Hold.</span>
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.25}>
-              <p className="text-dark-section-foreground/95 text-[15px] font-body max-w-xl mx-auto leading-relaxed">
+              <p className="text-dark-section-foreground/95 text-body-sm font-body max-w-xl mx-auto leading-relaxed">
                 Certifications are verifiable. Reviews are public. Project photos are real.
                 We don't ask for trust — we earn it with evidence.
               </p>
@@ -97,7 +97,7 @@ const HomepageTrust = () => {
               >
                 <AnimatedCounter
                   value={stat.value}
-                  className="text-2xl md:text-[2.5rem] font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1.5 tracking-tight stat-glow"
+                  className="text-2xl md:text-heading font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1.5 tracking-tight stat-glow"
                   duration={1800}
                 />
                 <span className="text-xs font-heading font-bold text-dark-section-foreground/85 tracking-tight">
@@ -125,7 +125,7 @@ const HomepageTrust = () => {
                 <h3 className="text-sm font-heading font-bold text-dark-section-foreground/85 mb-2 tracking-tight">
                   {cred.title}
                 </h3>
-                <p className="text-dark-section-foreground/95 text-[12.5px] leading-[1.7] font-body">
+                <p className="text-dark-section-foreground/95 text-body-xs leading-[1.7] font-body">
                   {cred.detail}
                 </p>
               </motion.div>
@@ -192,13 +192,13 @@ const HomepageTrust = () => {
                   </div>
 
                   {/* Quote text */}
-                  <p className="text-foreground/80 text-[14px] leading-[1.8] font-body mb-6 relative z-10">
+                  <p className="text-foreground/80 text-body-xs leading-[1.8] font-body mb-6 relative z-10">
                     "{review.quote}"
                   </p>
 
                   {/* Project tag */}
                   <div className="bg-secondary/60 rounded-none px-3 py-2 mb-5">
-                    <span className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                    <span className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                       {review.project}
                     </span>
                   </div>
@@ -210,7 +210,7 @@ const HomepageTrust = () => {
                     </div>
                     <div>
                       <p className="font-heading font-bold text-foreground text-sm">{review.name}</p>
-                      <p className="text-muted-foreground text-[11px] font-body flex items-center gap-1">
+                      <p className="text-muted-foreground text-caption font-body flex items-center gap-1">
                         <MapPin className="w-2.5 h-2.5" />
                         {review.location}
                       </p>
@@ -248,7 +248,7 @@ const HomepageTrust = () => {
             {/* Left — headline */}
             <div>
               <ScrollReveal variant="fade">
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold)/0.9)] mb-3 block">
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--highland-gold)/0.9)] mb-3 block">
                   Local Knowledge
                 </span>
               </ScrollReveal>
@@ -257,7 +257,7 @@ const HomepageTrust = () => {
                   Built for Western<br className="hidden md:block" /> North Carolina.
                 </h3>
               </HeadingReveal>
-              <p className="text-dark-section-foreground/95 text-[13.5px] font-body leading-relaxed max-w-md">
+              <p className="text-dark-section-foreground/95 text-body-xs font-body leading-relaxed max-w-md">
                 Coastal specs don't work at 3,800 feet. Our crews live in these conditions —
                 every material recommendation comes from direct experience, not a manufacturer's data sheet.
               </p>
@@ -275,7 +275,7 @@ const HomepageTrust = () => {
                   className="flex items-start gap-3"
                 >
                   <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] flex-shrink-0 mt-0.5" />
-                  <span className="text-dark-section-foreground/85 text-[13px] font-body leading-relaxed">
+                  <span className="text-dark-section-foreground/85 text-body-xs font-body leading-relaxed">
                     {point}
                   </span>
                 </motion.div>

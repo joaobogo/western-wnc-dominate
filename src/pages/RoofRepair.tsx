@@ -134,19 +134,19 @@ const RoofRepair = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-4 md:mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Repair</span>
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Repair</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-[34px] md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
+                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
                   Roof Leaking?
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-4 md:mb-8">
-                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-[34px] md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
+                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
                   We Find the Real Cause.
                 </motion.h2>
               </div>
@@ -166,7 +166,7 @@ const RoofRepair = () => {
                 </Link>
               </motion.div>
               {/* One-line reason to call instead of writing (CRO Prompt 12) */}
-              <p className="mt-3 text-[13px] md:text-[14px] font-body text-white/80 max-w-xl leading-snug">
+              <p className="mt-3 text-body-xs md:text-body-xs font-body text-white/80 max-w-xl leading-snug">
                 An active leak can&apos;t wait on email — call and we&apos;ll triage the roof on the phone and get an inspection on the schedule.
               </p>
 
@@ -209,7 +209,7 @@ const RoofRepair = () => {
             <div className="mb-6 text-center">
               <span className="eyebrow mb-3 block">Not an Emergency?</span>
               <h2 className="section-heading mb-3">Send It Over and We'll Call You Back.</h2>
-              <p className="text-muted-foreground text-[15px] font-body leading-relaxed">
+              <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
                 If the leak isn't active right now, four quick fields are all we need to get a
                 repair assessment on the schedule.
               </p>
@@ -266,7 +266,7 @@ const RoofRepair = () => {
                     <problem.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{problem.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{problem.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{problem.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -295,7 +295,7 @@ const RoofRepair = () => {
                       <AlertTriangle className="w-4 h-4 text-destructive/50 mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="text-sm font-heading font-bold text-foreground mb-1.5">{reason.title}</h3>
-                        <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{reason.detail}</p>
+                        <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{reason.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -344,7 +344,7 @@ const RoofRepair = () => {
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -391,7 +391,7 @@ const RoofRepair = () => {
                     <step.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -428,7 +428,7 @@ const RoofRepair = () => {
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" />
-                          <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
+                          <span className="text-dark-section-foreground/85 text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -449,7 +449,7 @@ const RoofRepair = () => {
                       {repairVsReplace.replace.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
-                          <span className="text-dark-section-foreground/85 text-[13px] font-body leading-snug">{item}</span>
+                          <span className="text-dark-section-foreground/85 text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -504,7 +504,7 @@ const RoofRepair = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                   <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 pr-2">
                       <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>

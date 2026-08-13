@@ -71,7 +71,7 @@ const RoofingGallery = ({
 
                 {/* Category badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="text-[9px] font-body font-bold uppercase tracking-[0.15em] bg-white/15 backdrop-blur-sm text-white/90 px-2.5 py-1 rounded-sm">
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.15em] bg-white/15 backdrop-blur-sm text-white/90 px-2.5 py-1 rounded-sm">
                     {project.category}
                   </span>
                 </div>
@@ -86,7 +86,7 @@ const RoofingGallery = ({
                       {project.summary}
                     </p>
                   )}
-                  <span className="inline-flex items-center gap-1.5 text-[hsl(var(--highland-gold-light))] text-[10px] font-body font-semibold uppercase tracking-wider mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="inline-flex items-center gap-1.5 text-[hsl(var(--highland-gold-light))] text-caption font-body font-semibold uppercase tracking-wider mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     View Details <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -127,7 +127,7 @@ const RoofingGallery = ({
                 className="w-full h-auto max-h-[75vh] object-contain rounded-sm"
               />
               <div className="mt-4 text-center">
-                <span className="text-[9px] font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))]">
+                <span className="text-caption font-body font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-ink))]">
                   {projects[lightboxIdx].category}
                 </span>
                 <h3 className="text-white font-heading font-bold text-lg mt-1">

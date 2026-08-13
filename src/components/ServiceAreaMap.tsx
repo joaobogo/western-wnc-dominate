@@ -84,7 +84,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
 
           <div className="w-12 h-px bg-[hsl(var(--highland-gold))] mb-5" />
 
-          <p className="text-foreground/85 text-[16px] md:text-[18px] leading-relaxed font-body">
+          <p className="text-foreground/85 text-body-sm md:text-body leading-relaxed font-body">
             Highlander is a Western NC roofing and construction company built
             around a specific footprint — the mountain communities we can reach
             fast, know intimately, and stand behind long after the last nail is
@@ -112,7 +112,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
 
                 <div className="flex items-center gap-2 mb-3">
                   <MapPin className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
-                  <span className="text-[10px] font-body font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                  <span className="text-caption font-body font-bold uppercase tracking-[0.16em] text-muted-foreground">
                     Primary Hub
                   </span>
                 </div>
@@ -139,7 +139,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             transition={{ duration: 0.5 }}
             className="bg-secondary/40 border border-border p-6"
           >
-            <h3 className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-4">
+            <h3 className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-4">
               Also Serving
             </h3>
             <ul className="flex flex-wrap gap-2">
@@ -166,7 +166,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-secondary/40 border border-border p-6"
           >
-            <h3 className="text-[11px] font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-4">
+            <h3 className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground mb-4">
               Nearby Mountain Communities
             </h3>
             <ul className="flex flex-wrap gap-2">

@@ -111,7 +111,7 @@ const RoofCostEstimator = () => {
     }`;
 
   const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground text-sm font-body field-premium";
-  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
+  const labelClass = "block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
 
   return (
     <section className="section-padding bg-background tartan-bg" id="cost-estimator">
@@ -155,7 +155,7 @@ const RoofCostEstimator = () => {
             >
               {step === "size" && (
                 <div>
-                  <p className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">Step 1 of 3</p>
+                  <p className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">Step 1 of 3</p>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-1">Home Size</h3>
                   <p className="text-sm text-muted-foreground mb-6 font-body">Approximate square footage of your home.</p>
                   <div className="space-y-2.5">
@@ -182,7 +182,7 @@ const RoofCostEstimator = () => {
 
               {step === "material" && (
                 <div>
-                  <p className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">Step 2 of 3</p>
+                  <p className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">Step 2 of 3</p>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-1">Roofing Material</h3>
                   <p className="text-sm text-muted-foreground mb-6 font-body">What material are you considering?</p>
                   <div className="space-y-2.5">
@@ -205,7 +205,7 @@ const RoofCostEstimator = () => {
 
               {step === "condition" && (
                 <div>
-                  <p className="text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">Step 3 of 3</p>
+                  <p className="text-caption font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--highland-gold)/0.6)] mb-1">Step 3 of 3</p>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-1">Current Condition</h3>
                   <p className="text-sm text-muted-foreground mb-6 font-body">What best describes your roof right now?</p>
                   <div className="space-y-2.5">
@@ -297,7 +297,7 @@ const RoofCostEstimator = () => {
                       <Shield className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-heading font-semibold text-foreground text-sm mb-1">Want an Exact, Written Quote?</h4>
-                        <p className="text-muted-foreground text-[13px] font-body leading-relaxed">
+                        <p className="text-muted-foreground text-body-xs font-body leading-relaxed">
                           Schedule an on-site assessment. We'll walk your property, document conditions, and deliver a detailed proposal with transparent cost groupings rapidly.
                         </p>
                       </div>

@@ -50,7 +50,7 @@ const CHANNELS: Channel[] = [
 const ContactChannels = () => (
   <section className="section-padding bg-secondary/25" aria-labelledby="contact-channels-heading">
     <div className="container-tight">
-      <span className="text-[11px] font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] block mb-3">
+      <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] block mb-3">
         Pick Your Channel
       </span>
       <h2 id="contact-channels-heading" className="text-2xl md:text-4xl font-heading font-bold text-foreground mb-3 leading-tight">
@@ -68,7 +68,7 @@ const ContactChannels = () => (
                 <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
                   <c.icon className="w-5 h-5 text-primary" />
                 </div>
-                <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">{c.eyebrow}</span>
+                <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-muted-foreground">{c.eyebrow}</span>
               </div>
               <h3 className="text-lg font-heading font-bold text-foreground mb-2">{c.title}</h3>
               <p className="text-sm text-muted-foreground font-body leading-relaxed mb-4">{c.body}</p>

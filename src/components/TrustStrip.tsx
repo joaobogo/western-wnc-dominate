@@ -41,7 +41,7 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/85 mb-4"
+                className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/85 mb-4"
               >
                 By the Numbers
               </motion.p>
@@ -65,7 +65,7 @@ const TrustStrip = () => {
                       <span className="block text-base font-heading font-bold text-primary-foreground/85 tracking-tight">
                         {stat.label}
                       </span>
-                      <span className="block text-[13px] md:text-[14px] text-primary-foreground/85 font-body tracking-wide font-medium">
+                      <span className="block text-body-xs md:text-body-xs text-primary-foreground/85 font-body tracking-wide font-medium">
                         {stat.detail}
                       </span>
                     </div>
@@ -80,7 +80,7 @@ const TrustStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[12px] md:text-[13px] font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/85 mb-4"
+                className="text-body-xs md:text-body-xs font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/85 mb-4"
               >
                 Credentials
               </motion.p>
@@ -100,7 +100,7 @@ const TrustStrip = () => {
                         ? "text-[hsl(var(--highland-gold)/0.7)]"
                         : "text-[hsl(var(--highland-gold)/0.35)]"
                     }`} />
-                    <span className={`text-[16px] md:text-[18px] font-body leading-snug font-bold ${
+                    <span className={`text-body-sm md:text-body font-body leading-snug font-bold ${
                       cred.emphasis
                         ? "text-white"
                         : "text-primary-foreground/90"
@@ -119,7 +119,7 @@ const TrustStrip = () => {
                 transition={{ delay: 0.4, duration: 0.6, ease: HIGHLAND_EASE }}
                 className="mt-6 pt-4 border-t border-primary-foreground/[0.05]"
               >
-                <p className="text-primary-foreground/85 text-[15px] md:text-[16px] font-body italic leading-relaxed max-w-md font-medium">
+                <p className="text-primary-foreground/85 text-body-sm md:text-body-sm font-body italic leading-relaxed max-w-md font-medium">
                   "The only company in Western NC that holds both a CertainTeed ShingleMaster Credentialed Contractor
                   certification and a General Contractor license under the same roof."
                 </p>

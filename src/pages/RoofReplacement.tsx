@@ -197,19 +197,19 @@ const RoofReplacement = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-4 md:mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
-                  <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Replacement</span>
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Replacement</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-[34px] md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
+                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
                   Roof at the End of Its Life?
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-4 md:mb-8">
-                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-[34px] md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
+                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
                   Replace It Once, Replace It Right.
                 </motion.h2>
               </div>
@@ -286,7 +286,7 @@ const RoofReplacement = () => {
                     <sign.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{sign.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{sign.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{sign.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -324,7 +324,7 @@ const RoofReplacement = () => {
                     </div>
                     <div>
                       <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-foreground transition-colors">{risk.title}</h3>
-                      <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{risk.detail}</p>
+                      <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{risk.detail}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -357,7 +357,7 @@ const RoofReplacement = () => {
                     <pillar.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{pillar.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{pillar.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{pillar.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -389,9 +389,9 @@ const RoofReplacement = () => {
                       <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
                         <div className="flex items-center justify-between mb-2">
                           <h3 className="font-heading font-bold text-dark-section-foreground text-lg group-hover:text-[hsl(var(--gold-ink))] transition-colors">{mat.name}</h3>
-                          <span className="text-[10px] font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">{mat.lifespan}</span>
+                          <span className="text-caption font-body font-semibold text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.06)] px-2.5 py-1 rounded-sm">{mat.lifespan}</span>
                         </div>
-                        <span className="text-[11px] font-body text-dark-section-foreground/95 mb-3">{mat.type}</span>
+                        <span className="text-caption font-body text-dark-section-foreground/95 mb-3">{mat.type}</span>
                         <p className="text-dark-section-foreground/95 text-sm font-body leading-relaxed">{mat.detail}</p>
                       </div>
                     </div>
@@ -445,9 +445,9 @@ const RoofReplacement = () => {
               {timelineSteps.map((step, i) => (
                 <motion.div key={step.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">{step.number}</span>
-                  <span className="inline-block text-[9px] font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.08)] px-2 py-0.5 rounded-sm mb-4">{step.duration}</span>
+                  <span className="inline-block text-caption font-body font-semibold uppercase tracking-[0.12em] text-[hsl(var(--gold-ink))] bg-[hsl(var(--highland-gold)/0.08)] px-2 py-0.5 rounded-sm mb-4">{step.duration}</span>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-primary transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -467,7 +467,7 @@ const RoofReplacement = () => {
                 <motion.div key={item.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center p-5 md:p-6 bg-card border border-border rounded-sm">
                   <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] block mb-2">{item.value}</span>
                   <span className="font-heading font-semibold text-foreground text-sm block mb-1">{item.label}</span>
-                  <span className="text-muted-foreground text-[11px] font-body leading-snug">{item.detail}</span>
+                  <span className="text-muted-foreground text-caption font-body leading-snug">{item.detail}</span>
                 </motion.div>
               ))}
             </div>
@@ -492,7 +492,7 @@ const RoofReplacement = () => {
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group relative aspect-[4/3] rounded-sm overflow-hidden">
                   <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.8)] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-3 left-3 text-[9px] font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">{item.category}</div>
+                  <div className="absolute top-3 left-3 text-caption font-body font-semibold uppercase tracking-[0.14em] bg-primary/90 text-primary-foreground px-2.5 py-1 rounded-sm">{item.category}</div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h3 className="font-heading font-semibold text-white text-sm">{item.title}</h3>
                   </div>
@@ -528,7 +528,7 @@ const RoofReplacement = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                   <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 pr-2">
                       <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>

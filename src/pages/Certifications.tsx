@@ -217,7 +217,7 @@ const Certifications = () => {
                             </div>
                           )}
                         </div>
-                        <span className="text-[10px] font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-accent/10 px-2.5 py-1 rounded-sm">
+                        <span className="text-caption font-semibold uppercase tracking-wider text-[hsl(var(--gold-ink))] bg-accent/10 px-2.5 py-1 rounded-sm">
                           {cert.badge}
                         </span>
                       </div>
@@ -230,7 +230,7 @@ const Certifications = () => {
                         {cert.whatItMeans.map((point) => (
                           <div key={point} className="flex items-start gap-2.5 bg-secondary/60 rounded-sm p-3">
                             <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span className="text-foreground/80 text-[13px] font-body leading-relaxed">{point}</span>
+                            <span className="text-foreground/80 text-body-xs font-body leading-relaxed">{point}</span>
                           </div>
                         ))}
                       </div>
@@ -319,7 +319,7 @@ const Certifications = () => {
                 >
                   <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-xl mb-2">{w.tier}</p>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-sm leading-relaxed mb-4">{w.coverage}</p>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.4)]">
+                  <span className="text-caption font-semibold uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.4)]">
                     {w.availability}
                   </span>
                 </motion.div>

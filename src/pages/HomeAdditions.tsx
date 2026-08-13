@@ -144,10 +144,10 @@ const HomeAdditions = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" /></div>
-                  <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/95">Construction</span>
+                  <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/95">Construction</span>
                 </Link>
                 <ChevronRight className="w-3 h-3 text-primary-foreground/90" />
-                <span className="text-[12px] font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Home Additions</span>
+                <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Home Additions</span>
               </motion.div>
 
               <div className="overflow-hidden mb-2">
@@ -166,7 +166,7 @@ const HomeAdditions = () => {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-[14px] px-9 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
+                <Link to="/consultation" className="group cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-9 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-wide">
                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
@@ -189,8 +189,8 @@ const HomeAdditions = () => {
                   { value: "3–6", unit: "mo", label: "Typical Timeline" },
                 ].map((item) => (
                   <div key={item.label} className="p-3 bg-white/5 border border-white/8 rounded-sm text-center">
-                    <div className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}<span className="text-[10px] text-primary-foreground/90 ml-0.5">{item.unit}</span></div>
-                    <div className="text-[9px] text-primary-foreground/90 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
+                    <div className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}<span className="text-caption text-primary-foreground/90 ml-0.5">{item.unit}</span></div>
+                    <div className="text-caption text-primary-foreground/90 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -257,7 +257,7 @@ const HomeAdditions = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-base mb-2.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -283,7 +283,7 @@ const HomeAdditions = () => {
                     <type.icon className="w-4.5 h-4.5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{type.title}</h3>
-                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{type.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{type.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -312,7 +312,7 @@ const HomeAdditions = () => {
                       <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -360,7 +360,7 @@ const HomeAdditions = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -379,7 +379,7 @@ const HomeAdditions = () => {
                 </p>
                 <div className="bg-card border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5">
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2">Not sure where to start?</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body mb-3">Describe what you're thinking, and we'll help you evaluate feasibility, approach, and budget range — before you commit to anything.</p>
                   <Link to="/consultation" className="group text-sm font-semibold text-[hsl(var(--gold-ink))] inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
                     Talk With Our Construction Team <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -390,7 +390,7 @@ const HomeAdditions = () => {
                 {planningPermitting.map((item, i) => (
                   <motion.div key={item.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group p-5 md:p-6 rounded-sm bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.2)] card-lift transition-all">
                     <h3 className="text-sm font-heading font-bold text-foreground mb-1.5 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{item.title}</h3>
-                    <p className="text-muted-foreground text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -420,7 +420,7 @@ const HomeAdditions = () => {
                       <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
                       <h3 className="font-heading font-bold text-dark-section-foreground text-sm">{item.title}</h3>
                     </div>
-                    <p className="text-dark-section-foreground/90 text-[13.5px] leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -444,7 +444,7 @@ const HomeAdditions = () => {
                     <step.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-foreground text-sm mb-2 group-hover:text-[hsl(var(--gold-ink))] transition-colors">{step.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-body">{step.description}</p>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed font-body">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -522,7 +522,7 @@ const HomeAdditions = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
                   <AccordionItem value={`faq-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-[hsl(var(--highland-gold)/0.2)] data-[state=open]:shadow-sm transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
-                      <span className="font-heading font-semibold text-foreground text-[15px] leading-snug text-left">{faq.q}</span>
+                      <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{faq.q}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 pr-2">
                       <p className="text-muted-foreground text-sm leading-relaxed font-body">{faq.a}</p>

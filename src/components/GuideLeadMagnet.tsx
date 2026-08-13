@@ -71,7 +71,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
   };
 
   const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground text-sm font-body field-premium";
-  const labelClass = "block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
+  const labelClass = "block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
 
   const formContent = (
     <div>
@@ -130,7 +130,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
             <div className="flex-1">
               <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-3">
                 <FileText className="w-4 h-4" />
-                <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
+                <span className="text-caption font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-2">{g.title}</h3>
               <p className="text-primary-foreground/85 text-sm font-body mb-4">{g.description}</p>
@@ -182,7 +182,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-foreground mb-1">{g.title}</h3>
-                <p className="text-[11px] text-muted-foreground font-body mb-3 uppercase tracking-wide">{g.subtitle}</p>
+                <p className="text-caption text-muted-foreground font-body mb-3 uppercase tracking-wide">{g.subtitle}</p>
                 <p className="text-sm text-muted-foreground mb-4 font-body leading-relaxed">{g.description}</p>
                 <ul className="space-y-1.5 mb-6">
                   {g.bulletPoints.map((point) => (
@@ -205,7 +205,7 @@ const GuideLeadMagnet = ({ variant = "inline", guide = "storm" }: GuideLeadMagne
     <div className="bg-secondary border border-border rounded-none p-6 md:p-8">
       <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-3">
         <Icon className="w-5 h-5" />
-        <span className="text-[10px] font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
+        <span className="text-caption font-body font-semibold uppercase tracking-[0.15em]">Free Download</span>
       </div>
       <h3 className="text-xl font-heading font-bold text-foreground mb-1">{g.title}</h3>
       <p className="text-sm text-muted-foreground mb-4 font-body leading-relaxed">{g.description}</p>

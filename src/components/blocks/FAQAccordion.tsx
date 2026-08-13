@@ -30,10 +30,10 @@ export const FAQAccordion = ({ items, eyebrow = "Frequently Asked", heading = "Q
       <Accordion type="single" collapsible className="space-y-2">
         {items.map((item, i) => (
           <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-sm bg-card px-4">
-            <AccordionTrigger className="text-left text-[15px] md:text-base font-heading font-bold text-foreground hover:no-underline py-4">
+            <AccordionTrigger className="text-left text-body-sm md:text-base font-heading font-bold text-foreground hover:no-underline py-4">
               {item.q}
             </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground font-body text-[15px] leading-relaxed pb-4">
+            <AccordionContent className="text-muted-foreground font-body text-body-sm leading-relaxed pb-4">
               {item.a}
             </AccordionContent>
           </AccordionItem>

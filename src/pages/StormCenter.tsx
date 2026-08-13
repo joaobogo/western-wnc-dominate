@@ -181,7 +181,7 @@ const StormCenter = () => {
                     to={`/blog/${post.slug}`}
                     className="group card-premium p-5 flex flex-col"
                   >
-                    <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--gold-ink))] mb-2">
+                    <span className="text-caption font-body font-semibold uppercase tracking-[0.14em] text-[hsl(var(--gold-ink))] mb-2">
                       {post.category}
                     </span>
                     <h4 className="font-heading font-semibold text-foreground text-sm mb-2 group-hover:text-primary transition-colors leading-snug">
@@ -228,7 +228,7 @@ const StormCenter = () => {
                   </div>
                   <div>
                     <p className="text-foreground text-sm font-body leading-snug mb-1">{item.sign}</p>
-                    <span className={`text-[10px] font-body font-semibold uppercase tracking-wider ${
+                    <span className={`text-caption font-body font-semibold uppercase tracking-wider ${
                       item.severity === "Critical" ? "text-alert" : item.severity === "High" ? "text-[hsl(var(--gold-ink))]" : "text-muted-foreground"
                     }`}>
                       {item.severity} Priority
@@ -262,7 +262,7 @@ const StormCenter = () => {
                   ].map((step, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-sm bg-primary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-[10px] font-heading font-bold text-primary">{i + 1}</span>
+                        <span className="text-caption font-heading font-bold text-primary">{i + 1}</span>
                       </div>
                       <span className="text-foreground/80 text-sm font-body leading-relaxed">{step}</span>
                     </div>
@@ -363,7 +363,7 @@ const StormCenter = () => {
                   >
                     <div className="p-5 md:p-6 flex flex-col h-full">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm bg-accent/10 text-[hsl(var(--gold-ink))]">
+                        <span className="text-caption font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-sm bg-accent/10 text-[hsl(var(--gold-ink))]">
                           {post.category}
                         </span>
                         <span className="text-muted-foreground text-xs flex items-center gap-1">

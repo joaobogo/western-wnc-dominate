@@ -206,7 +206,7 @@ const ServiceTownPage = ({
                   { label: "Status", value: "Active Division" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[10px] md:text-[11px] uppercase tracking-widest text-white/85 font-bold mb-0.5 md:mb-1">{stat.label}</span>
+                    <span className="text-caption md:text-caption uppercase tracking-widest text-white/85 font-bold mb-0.5 md:mb-1">{stat.label}</span>
                     <span className="text-xs md:text-sm font-heading font-bold text-white uppercase tracking-tight">
                       {stat.value}
                     </span>
@@ -362,11 +362,11 @@ const ServiceTownPage = ({
                       <div className="w-6 h-6 rounded-none bg-primary/5 flex items-center justify-center">
                         <ArrowRight className="w-3 h-3 text-primary rotate-[-45deg]" />
                       </div>
-                      <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">{post.category}</span>
+                      <span className="text-caption uppercase tracking-widest font-bold text-muted-foreground">{post.category}</span>
                     </div>
                     <h4 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">{post.title}</h4>
                     <p className="text-sm text-muted-foreground mb-6 line-clamp-3 font-body flex-grow">{post.excerpt}</p>
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
+                    <span className="text-caption uppercase tracking-widest font-bold text-primary flex items-center gap-2 group-hover:gap-4 transition-all">
                       Read Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
                     </span>
                   </Link>

@@ -73,7 +73,7 @@ const Reviews = () => {
               <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.3)] to-transparent" />
 
               <div className="flex items-center justify-between mb-5 relative z-10">
-                <span className={`text-[9px] font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-none ${categoryColors[categoryLabelMap[t.category]]}`}>
+                <span className={`text-caption font-body font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-none ${categoryColors[categoryLabelMap[t.category]]}`}>
                   {categoryLabelMap[t.category]}
                 </span>
                 <div className="flex gap-0.5">
@@ -88,7 +88,7 @@ const Reviews = () => {
               </p>
 
               <div className="bg-secondary/50 rounded-none px-5 py-3.5 mb-7 relative z-10">
-                <p className="text-[11px] font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
+                <p className="text-caption font-body font-semibold uppercase tracking-[0.1em] text-muted-foreground mb-1">Project Outcome</p>
                 <p className="text-sm font-body font-medium text-foreground/80">{t.outcome}</p>
               </div>
 
@@ -102,7 +102,7 @@ const Reviews = () => {
                     <p className="text-muted-foreground text-xs font-body">{t.location}</p>
                   </div>
                 </div>
-                <span className="text-[10px] font-body font-medium text-muted-foreground max-w-[140px] text-right leading-tight">
+                <span className="text-caption font-body font-medium text-muted-foreground max-w-[140px] text-right leading-tight">
                   {t.project}
                 </span>
               </div>
@@ -116,7 +116,7 @@ const Reviews = () => {
              <StaggerItem key={t.authorName} variant="rise">
               <div className="group bg-card border border-border rounded-none p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.12)] hover:shadow-[0_8px_28px_-8px_hsl(var(--heritage-charcoal)/0.06)] transition-all duration-500 h-full" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}>
                 <div className="flex items-center justify-between mb-3">
-                   <span className={`text-[8px] font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-none ${categoryColors[categoryLabelMap[t.category]]}`}>
+                   <span className={`text-caption font-body font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-none ${categoryColors[categoryLabelMap[t.category]]}`}>
                      {categoryLabelMap[t.category]}
                   </span>
                   <div className="flex gap-0.5">
@@ -126,21 +126,21 @@ const Reviews = () => {
                   </div>
                 </div>
 
-                <p className="text-foreground text-[16px] md:text-[18px] leading-[1.7] mb-4 font-body line-clamp-4 font-bold drop-shadow-sm">
+                <p className="text-foreground text-body-sm md:text-body leading-[1.7] mb-4 font-body line-clamp-4 font-bold drop-shadow-sm">
                    "{t.reviewBody}"
                 </p>
 
-                <p className="text-[11px] text-primary/80 font-body font-medium mb-4 leading-snug">
+                <p className="text-caption text-primary/80 font-body font-medium mb-4 leading-snug">
                   {t.outcome}
                 </p>
 
                 <div className="flex items-center gap-2.5 pt-3 border-t border-border">
-                  <div className="w-8 h-8 rounded-none bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-[10px]">
+                  <div className="w-8 h-8 rounded-none bg-primary/6 flex items-center justify-center text-primary font-heading font-bold text-caption">
                      {t.authorName.charAt(0)}
                   </div>
                   <div>
                      <p className="font-heading font-bold text-foreground text-xs">{t.authorName}</p>
-                    <p className="text-muted-foreground text-[10px] font-body">{t.location}</p>
+                    <p className="text-muted-foreground text-caption font-body">{t.location}</p>
                   </div>
                 </div>
               </div>

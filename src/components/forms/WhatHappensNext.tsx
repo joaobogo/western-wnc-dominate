@@ -21,7 +21,7 @@ const WhatHappensNext = ({
 
   return (
     <p
-      className={`flex items-start gap-2.5 border ${base} px-4 py-3 text-[13px] font-body leading-relaxed ${className}`}
+      className={`flex items-start gap-2.5 border ${base} px-4 py-3 text-body-xs font-body leading-relaxed ${className}`}
     >
       <Phone
         className={`mt-0.5 h-4 w-4 shrink-0 ${tone === "dark" ? "text-[hsl(var(--gold-ink))]" : "text-primary"}`}

@@ -86,7 +86,7 @@ const MaterialPanel = ({ materials, selectedMaterial, onSelectMaterial }: Materi
                             } ${mat.finish === "gloss" ? "ring-1 ring-white/30" : ""}`}
                             style={{ backgroundColor: mat.color_hex }}
                           />
-                          <span className="text-[10px] leading-tight text-center text-muted-foreground font-medium line-clamp-2">
+                          <span className="text-caption leading-tight text-center text-muted-foreground font-medium line-clamp-2">
                             {mat.color_name}
                           </span>
                           {mat.finish === "gloss" && (

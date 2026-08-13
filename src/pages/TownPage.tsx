@@ -118,8 +118,8 @@ const TownPage = () => {
             >
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
-                <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Building Services</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{town.name} · {town.county}, {town.state}</span>
+                <span className="text-body-sm md:text-body font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Building Services</span>
+                <span className="text-caption md:text-caption font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{town.name} · {town.county}, {town.state}</span>
               </div>
             </motion.div>
 
@@ -148,7 +148,7 @@ const TownPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                className="mb-10 max-w-2xl border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-[15px] md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
+                className="mb-10 max-w-2xl border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-body-sm md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
               >
                 <span className="font-bold text-[hsl(var(--gold-ink))]">{town.name} reality: </span>
                 {town.climateExposure}
@@ -160,10 +160,10 @@ const TownPage = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4 md:gap-6"
               >
-                <Link to="/request-inspection" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <Link to="/request-inspection" className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-2xl min-w-[300px] hover:scale-[1.02] active:scale-[0.98] transition-all">
                   Request an Inspection in {town.name} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[15px] md:text-[17px] px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
+                <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-body-sm md:text-body-sm px-10 py-6 rounded-none inline-flex items-center justify-center gap-3 shadow-xl min-w-[240px] hover:bg-white/20 hover:border-white/40 transition-all">
                   <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
                 </a>
               </motion.div>
@@ -180,7 +180,7 @@ const TownPage = () => {
                   { icon: Star, label: "Local Trust", value: "4.9★ Rated" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="text-[11px] md:text-[12px] uppercase tracking-widest text-white/85 font-bold mb-1">{stat.label}</span>
+                    <span className="text-caption md:text-body-xs uppercase tracking-widest text-white/85 font-bold mb-1">{stat.label}</span>
                     <span className="text-base md:text-lg font-heading font-bold text-white flex items-center gap-2">
                       <stat.icon className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))]" />
                       {stat.value}
@@ -262,7 +262,7 @@ const TownPage = () => {
                   { label: "Notable Areas", value: town.notableNeighborhoods.join(', ') }
                 ].map((item, i) => (
                   <li key={i}>
-                    <p className="text-[11px] font-bold text-[hsl(var(--gold-ink))] uppercase tracking-widest mb-1.5">{item.label}</p>
+                    <p className="text-caption font-bold text-[hsl(var(--gold-ink))] uppercase tracking-widest mb-1.5">{item.label}</p>
                     <p className="text-lg text-foreground font-heading font-bold leading-tight">{item.value}</p>
                   </li>
                 ))}
@@ -336,7 +336,7 @@ const TownPage = () => {
                   <Link to={`/blog/${post.slug}`} className="group h-full flex flex-col bg-background border border-border p-8 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
                     {/* Subtle category badge */}
                     <div className="flex items-center gap-3 mb-6">
-                      <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-primary/80 bg-primary/5 px-2.5 py-1">
+                      <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-primary/80 bg-primary/5 px-2.5 py-1">
                         {post.category}
                       </span>
                       <div className="h-px flex-1 bg-border/40" />
@@ -350,11 +350,11 @@ const TownPage = () => {
                     </p>
                     
                     <div className="mt-auto pt-6 border-t border-border/40 flex items-center justify-between">
-                      <span className="text-primary text-[13px] font-heading font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+                      <span className="text-primary text-body-xs font-heading font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
                         Read Guide <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                       </span>
                       {post.town === town.name && (
-                        <span className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground uppercase tracking-widest">
+                        <span className="flex items-center gap-1.5 text-caption font-bold text-muted-foreground uppercase tracking-widest">
                           <MapPin className="w-3 h-3" /> Local Info
                         </span>
                       )}

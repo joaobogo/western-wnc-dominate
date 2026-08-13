@@ -293,15 +293,15 @@ export default function AdminDashboard() {
 }
 
 function Th({ children }: { children: React.ReactNode }) {
-  return <th className="p-2 font-semibold uppercase tracking-wide text-[10px]">{children}</th>;
+  return <th className="p-2 font-semibold uppercase tracking-wide text-caption">{children}</th>;
 }
 
 function Stat({ label, value, hint }: { label: string; value: number | string; hint?: string }) {
   return (
     <div className="border border-border rounded p-4">
-      <p className="text-[10px] uppercase tracking-wide text-muted-foreground">{label}</p>
+      <p className="text-caption uppercase tracking-wide text-muted-foreground">{label}</p>
       <p className="text-2xl font-heading font-bold">{value}</p>
-      {hint && <p className="text-[10px] text-muted-foreground">{hint}</p>}
+      {hint && <p className="text-caption text-muted-foreground">{hint}</p>}
     </div>
   );
 }

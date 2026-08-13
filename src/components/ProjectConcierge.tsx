@@ -63,18 +63,18 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
           {/* Header */}
           <div className="max-w-2xl mx-auto text-center mb-14 md:mb-20">
             <ScrollReveal variant="fade">
-              <span className="text-[10px] font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.9)] mb-4 block">
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--highland-gold)/0.9)] mb-4 block">
                 Project Concierge
               </span>
             </ScrollReveal>
             <HeadingReveal delay={0.1}>
-              <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-heading font-heading font-bold text-dark-section-foreground leading-snug mb-5 tracking-tight">
                 Your Project Deserves a<br className="hidden md:block" />
                 <span className="text-[hsl(var(--gold-ink))]"> Real Conversation.</span>
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
-              <p className="text-dark-section-foreground/95 text-[18px] md:text-[22px] leading-relaxed max-w-lg mx-auto font-bold">
+              <p className="text-dark-section-foreground/95 text-body md:text-body-lg leading-relaxed max-w-lg mx-auto font-bold">
                 We don't do online quotes. Every project starts with a genuine
                 conversation about your property, your goals, and what "done right" means to you.
               </p>
@@ -103,14 +103,14 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
                 <h3 className="text-base font-heading font-bold text-dark-section-foreground/85 mb-3 tracking-tight">
                   {path.title}
                 </h3>
-                <p className="text-dark-section-foreground/95 text-[16px] md:text-[18px] leading-[1.7] font-body mb-6 font-medium">
+                <p className="text-dark-section-foreground/95 text-body-sm md:text-body leading-[1.7] font-body mb-6 font-medium">
                   {path.desc}
                 </p>
 
                 {path.external ? (
                   <a
                     href={path.href}
-                    className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] text-[13px] font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
+                    className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] text-body-xs font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
                   >
                     {path.action}
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -118,7 +118,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
                 ) : (
                   <Link
                     to={path.href}
-                    className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] text-[13px] font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
+                    className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] text-body-xs font-heading font-bold tracking-wide group-hover:text-[hsl(var(--highland-gold-light))] transition-colors duration-300"
                   >
                     {path.action}
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -143,7 +143,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
                 <Shield className="w-3 h-3 text-[hsl(var(--highland-gold)/0.75)]" />
-                <span className="text-[12px] font-body font-semibold text-white/95 uppercase tracking-[0.15em]">
+                <span className="text-body-xs font-body font-semibold text-white/95 uppercase tracking-[0.15em]">
                   {item}
                 </span>
               </div>
