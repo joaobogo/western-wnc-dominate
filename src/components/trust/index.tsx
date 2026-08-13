@@ -134,7 +134,7 @@ export const CredentialCards = ({ variant = "light" }: { variant?: "light" | "da
           variant === "dark" ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"
         }`}>{cert.label}</h3>
         <p className={`text-caption font-body tracking-wide ${
-          variant === "dark" ? "text-[hsl(var(--dark-section-foreground)/0.5)]" : "text-muted-foreground"
+          variant === "dark" ? "text-dark-section-muted" : "text-muted-foreground"
         }`}>{cert.detail}</p>
       </motion.div>
     ))}
@@ -179,7 +179,7 @@ export const TrustPillarGrid = ({
         <h2 className={`section-heading mb-4 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : ""}`}>{heading}</h2>
         <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
         {subheading && (
-          <p className={`max-w-2xl mx-auto ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
+          <p className={`max-w-2xl mx-auto ${isDark ? "text-dark-section-muted" : "text-muted-foreground"}`}>
             {subheading}
           </p>
         )}
@@ -206,12 +206,12 @@ export const TrustPillarGrid = ({
             <h3 className={`font-heading font-semibold text-sm mb-2 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
               {p.title}
             </h3>
-            <p className={`text-body-xs leading-relaxed font-body mb-3 ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
+            <p className={`text-body-xs leading-relaxed font-body mb-3 ${isDark ? "text-dark-section-muted" : "text-muted-foreground"}`}>
               {p.short}
             </p>
             {showObjections && (
               <div className={`text-caption font-body italic pt-3 border-t ${
-                isDark ? "border-[hsl(var(--highland-gold)/0.08)] text-[hsl(var(--dark-section-foreground)/0.4)]" : "border-border text-muted-foreground"
+                isDark ? "border-[hsl(var(--highland-gold)/0.08)] text-dark-section-muted" : "border-border text-muted-foreground"
               }`}>
                 Overcomes: "{p.overcomes}"
               </div>
@@ -295,7 +295,7 @@ export const StandardsCallout = ({
         <h3 className={`font-heading font-semibold text-sm mb-1 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"}`}>
           {title}
         </h3>
-        <p className={`text-body-xs font-body leading-relaxed ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
+        <p className={`text-body-xs font-body leading-relaxed ${isDark ? "text-dark-section-muted" : "text-muted-foreground"}`}>
           {description}
         </p>
       </div>
@@ -329,7 +329,7 @@ export const CraftsmanshipStatement = ({
         isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"
       }`}>{heading}</h3>
       <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
-      <p className={`leading-relaxed ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-muted-foreground"}`}>
+      <p className={`leading-relaxed ${isDark ? "text-dark-section-muted" : "text-muted-foreground"}`}>
         {body || "Every Highlander project follows the same discipline: careful material selection, manufacturer-exact installation, detailed inspection, and personal accountability from start to finish. The result isn't a promise — it's a pattern you can see in every project we've ever completed."}
       </p>
     </motion.div>
@@ -369,7 +369,7 @@ export const ReassuranceBlock = ({
             isPrimary ? "text-primary-foreground" : "text-[hsl(var(--dark-section-foreground))]"
           }`}>{headline}</h2>
           <p className={`mb-8 max-w-xl mx-auto ${
-            isPrimary ? "text-primary-foreground/90" : "text-[hsl(var(--dark-section-foreground)/0.6)]"
+            isPrimary ? "text-primary-foreground" : "text-dark-section-muted"
           }`}>{subheadline}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -382,15 +382,15 @@ export const ReassuranceBlock = ({
               href="tel:+18285247773"
               className={`border font-semibold px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 transition-colors ${
                 isPrimary
-                  ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                  : "border-[hsl(var(--dark-section-foreground)/0.2)] text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.05)]"
+                  ? "border-dark-section-border text-primary-foreground hover:bg-primary-foreground/10"
+                  : "border-dark-section-border text-[hsl(var(--dark-section-foreground))] hover:bg-[hsl(var(--dark-section-foreground)/0.05)]"
               }`}
             >
               <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
             </a>
           </div>
           <TrustBadgeStrip className={`mt-8 ${
-            isPrimary ? "text-primary-foreground/85" : "text-[hsl(var(--dark-section-foreground)/0.4)]"
+            isPrimary ? "text-primary-foreground" : "text-dark-section-muted"
           }`} />
         </motion.div>
       </div>
@@ -448,7 +448,7 @@ export const EditorialProofSection = ({ eyebrow, heading, body, stats, variant =
         <span className={`eyebrow mb-3 block ${isDark ? "text-[hsl(var(--gold-ink))]" : ""}`}>{eyebrow}</span>
         <h2 className={`section-heading mb-5 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : ""}`}>{heading}</h2>
         <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-5" />
-        <p className={`leading-relaxed ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-muted-foreground"}`}>{body}</p>
+        <p className={`leading-relaxed ${isDark ? "text-dark-section-muted" : "text-muted-foreground"}`}>{body}</p>
       </motion.div>
       <div className="grid grid-cols-2 gap-4">
         {stats.map((s, i) => (
@@ -465,7 +465,7 @@ export const EditorialProofSection = ({ eyebrow, heading, body, stats, variant =
             <p className={`text-2xl md:text-3xl font-heading font-bold mb-1 ${
               isDark ? "text-[hsl(var(--gold-ink))]" : "text-[hsl(var(--gold-ink))]"
             }`}>{s.value}</p>
-            <p className={`text-xs font-body ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.5)]" : "text-muted-foreground"}`}>
+            <p className={`text-xs font-body ${isDark ? "text-dark-section-muted" : "text-muted-foreground"}`}>
               {s.label}
             </p>
           </motion.div>

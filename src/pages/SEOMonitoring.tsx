@@ -370,7 +370,7 @@ const SEOMonitoring = () => {
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Active SEO Monitoring</p>
               <h1 className="text-display font-heading font-bold text-white">SEO Monitoring Dashboard</h1>
-              <p className="mt-6 text-body-lg md:text-body-xl text-primary-foreground/85 leading-relaxed max-w-2xl font-medium">
+              <p className="mt-6 text-body-lg md:text-body-xl text-primary-foreground leading-relaxed max-w-2xl font-medium">
                 Surface new 404s, crawl blockers, sitemap drift, and suspected index-loss pages with direct links for investigation.
               </p>
             </div>

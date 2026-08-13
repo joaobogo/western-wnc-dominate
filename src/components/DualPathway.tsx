@@ -162,7 +162,7 @@ const DivisionCard = ({ data, accent, index }: {
             <div className={`w-9 h-9 rounded-none flex items-center justify-center backdrop-blur-md border ${
               isGold
                 ? "bg-[hsl(var(--highland-gold)/0.15)] border-[hsl(var(--highland-gold)/0.25)]"
-                : "bg-primary/15 border-primary-foreground/10"
+                : "bg-primary/15 border-dark-section-border"
             }`}>
               <data.icon className="w-4 h-4 text-white" />
             </div>

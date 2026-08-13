@@ -21,7 +21,7 @@ const CTAProofPoints = ({
   className = "",
 }: CTAProofPointsProps) => {
   const { ratingValue, reviewCount } = GOOGLE_REVIEW_AGGREGATE;
-  const text = tone === "dark" ? "text-dark-section-foreground/75" : "text-muted-foreground";
+  const text = tone === "dark" ? "text-dark-section-foreground" : "text-muted-foreground";
   const strong = tone === "dark" ? "text-dark-section-foreground" : "text-foreground";
 
   const items = [

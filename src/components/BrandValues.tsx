@@ -122,7 +122,7 @@ export const ValuesPillarGrid = ({
         <h2 className={`section-heading mb-4 ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : ""}`}>{heading}</h2>
         <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
         {subheading && (
-          <p className={`max-w-2xl mx-auto text-base ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.6)]" : "text-muted-foreground"}`}>
+          <p className={`max-w-2xl mx-auto text-base ${isDark ? "text-dark-section-muted" : "text-muted-foreground"}`}>
             {subheading}
           </p>
         )}
@@ -152,12 +152,12 @@ export const ValuesPillarGrid = ({
             <p className={`text-body-xs md:text-body-xs font-body font-bold uppercase tracking-wider mb-3 ${
               isDark ? "text-[hsl(var(--highland-gold)/0.7)]" : "text-[hsl(var(--gold-ink))]"
             }`}>{v.tagline}</p>
-            <p className={`text-body-xs md:text-body-sm leading-relaxed font-body font-bold ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.8)]" : "text-muted-foreground"}`}>
+            <p className={`text-body-xs md:text-body-sm leading-relaxed font-body font-bold ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-muted-foreground"}`}>
               {v.statement}
             </p>
             {showObjections && (
               <div className={`text-body-xs font-body font-bold italic pt-3 mt-3 border-t ${
-                isDark ? "border-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--dark-section-foreground)/0.6)]" : "border-border text-muted-foreground"
+                isDark ? "border-[hsl(var(--highland-gold)/0.12)] text-dark-section-muted" : "border-border text-muted-foreground"
               }`}>
                 Overcomes: "{v.overcomes}"
               </div>
@@ -207,11 +207,11 @@ export const ValuesEditorial = ({ values: customValues, variant = "light" }: Val
               isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground"
             }`}>{v.name}</h3>
             <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-4" />
-            <p className={`text-body-sm md:text-lg leading-relaxed mb-4 font-body font-medium ${isDark ? "text-[hsl(var(--dark-section-foreground)/0.85)]" : "text-muted-foreground"}`}>
+            <p className={`text-body-sm md:text-lg leading-relaxed mb-4 font-body font-medium ${isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-muted-foreground"}`}>
               {v.statement}
             </p>
             <blockquote className={`text-body-sm md:text-base italic border-l-2 border-[hsl(var(--highland-gold)/0.4)] pl-4 ${
-              isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-muted-foreground"
+              isDark ? "text-dark-section-muted" : "text-muted-foreground"
             }`}>
               "{v.teamQuote}"
             </blockquote>

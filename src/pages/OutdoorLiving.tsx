@@ -145,9 +145,9 @@ const OutdoorLiving = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
-                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/90">Construction</span>
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">Construction</span>
                 </Link>
-                <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
+                <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Outdoor Living</span>
               </motion.div>
 
@@ -192,7 +192,7 @@ const OutdoorLiving = () => {
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/8 rounded-sm">
                     <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.9)]" />
-                    <span className="text-caption font-body text-primary-foreground/95 uppercase tracking-wider">{item.label}</span>
+                    <span className="text-caption font-body text-primary-foreground uppercase tracking-wider">{item.label}</span>
                   </div>
                 ))}
               </motion.div>
@@ -243,19 +243,19 @@ const OutdoorLiving = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Beauty. Function.<br className="hidden md:block" /> Durability.
                 </h2>
-                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
                   Great outdoor spaces deliver all three — and compromising on any one undermines the other two.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                 {beautyFunctionDurability.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
                       <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -345,9 +345,9 @@ const OutdoorLiving = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Imagining your perfect outdoor space?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">Let's discuss what's possible for your property, your views, and your lifestyle.</p>
+                <p className="text-primary-foreground text-sm font-body">Let's discuss what's possible for your property, your views, and your lifestyle.</p>
               </div>
-              <div className="flex gap-3 flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 md:w-auto md:justify-end md:flex-shrink-0">
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
@@ -370,19 +370,19 @@ const OutdoorLiving = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   A Roofing Company That<br className="hidden md:block" /> Builds Outdoor Structures.
                 </h2>
-                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto leading-relaxed">
+                <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
                   Every covered porch, pavilion, and screened room needs a roof. We don't subcontract that part — we built the company on it.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {whyHighlander.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
                       <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>

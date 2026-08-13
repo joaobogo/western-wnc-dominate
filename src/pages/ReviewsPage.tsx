@@ -112,7 +112,7 @@ const ReviewsPage = () => {
                     <Star key={i} className="w-4 h-4 fill-accent text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                   ))}
                   <span className="ml-2 text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))]">4.9</span>
-                  <span className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
+                  <span className="text-sm text-dark-section-muted font-body font-medium ml-1.5">from {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ verified reviews</span>
                 </div>
                 <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest">
                   Trust Is Earned.
@@ -131,7 +131,7 @@ const ReviewsPage = () => {
               >
                 <div className="border-l-2 border-[hsl(var(--highland-gold)/0.3)] pl-5">
                   <Quote className="w-4 h-4 text-[hsl(var(--highland-gold)/0.2)] mb-2 rotate-180" aria-hidden="true" />
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.8)] text-base font-body italic leading-relaxed">
+                  <p className="text-[hsl(var(--dark-section-foreground))] text-base font-body italic leading-relaxed">
                     "After three bad experiences with other contractors, Highlander changed everything completely."
                   </p>
                   <p className="text-sm text-[hsl(var(--highland-gold)/0.7)] font-body font-bold mt-2">— Karen W., Waynesville, NC</p>
@@ -145,7 +145,7 @@ const ReviewsPage = () => {
         <section className="relative overflow-hidden bg-primary text-primary-foreground tartan-dark">
           <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }} />
           <div className="container-tight px-5 md:px-8 py-8 md:py-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-primary-foreground/8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-dark-section-border">
               {trustMetrics.map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -156,8 +156,8 @@ const ReviewsPage = () => {
                   className="flex flex-col items-center text-center md:px-6 lg:px-8"
                 >
                   <span className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1.5">{stat.value}</span>
-                  <span className="text-sm font-heading font-semibold text-primary-foreground/85 mb-1">{stat.label}</span>
-                  <span className="text-body-xs text-primary-foreground/85 font-body tracking-wide font-bold">{stat.detail}</span>
+                  <span className="text-sm font-heading font-semibold text-primary-foreground mb-1">{stat.label}</span>
+                  <span className="text-body-xs text-primary-foreground font-body tracking-wide font-bold">{stat.detail}</span>
                 </motion.div>
               ))}
             </div>
@@ -303,7 +303,7 @@ const ReviewsPage = () => {
                 What Clients Mention Most
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.6)] max-w-2xl mx-auto">
+              <p className="text-dark-section-muted max-w-2xl mx-auto">
                 Across hundreds of reviews, four themes emerge consistently. These aren't cherry-picked 
                 highlights — they're patterns that define how clients experience working with Highlander.
               </p>
@@ -322,9 +322,9 @@ const ReviewsPage = () => {
                     <theme.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-2">{theme.title}</h3>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm leading-relaxed mb-4">{theme.description}</p>
+                  <p className="text-dark-section-muted text-sm leading-relaxed mb-4">{theme.description}</p>
                   <div className="border-t border-[hsl(var(--highland-gold)/0.08)] pt-3">
-                    <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-body-xs italic font-body font-medium">
+                    <p className="text-dark-section-muted text-body-xs italic font-body font-medium">
                       "{theme.quote}"
                     </p>
                   </div>

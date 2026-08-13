@@ -86,7 +86,7 @@ const SEOChecklist = () => {
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Publishing Workflow</p>
               <h1 className="text-display font-heading font-bold text-white">SEO Checklist</h1>
-              <p className="mt-6 text-body-lg md:text-body-xl text-primary-foreground/85 leading-relaxed max-w-2xl font-medium">
+              <p className="mt-6 text-body-lg md:text-body-xl text-primary-foreground leading-relaxed max-w-2xl font-medium">
                 Switch page types to review what each page needs before it goes live: structure, schema, internal links, and keyword targets.
               </p>
             </div>

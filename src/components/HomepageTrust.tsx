@@ -76,7 +76,7 @@ const HomepageTrust = () => {
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.25}>
-              <p className="text-dark-section-foreground/95 text-body-sm font-body max-w-xl mx-auto leading-relaxed">
+              <p className="text-dark-section-foreground text-body-sm font-body max-w-xl mx-auto leading-relaxed">
                 Certifications are verifiable. Reviews are public. Project photos are real.
                 We don't ask for trust — we earn it with evidence.
               </p>
@@ -100,7 +100,7 @@ const HomepageTrust = () => {
                   className="text-2xl md:text-heading font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1.5 tracking-tight stat-glow"
                   duration={1800}
                 />
-                <span className="text-xs font-heading font-bold text-dark-section-foreground/85 tracking-tight">
+                <span className="text-xs font-heading font-bold text-dark-section-foreground tracking-tight">
                   {stat.label}
                 </span>
               </motion.div>
@@ -122,10 +122,10 @@ const HomepageTrust = () => {
                 <div className="w-10 h-10 rounded-none border border-dark-section-foreground/[0.08] flex items-center justify-center mb-4 group-hover:border-[hsl(var(--highland-gold)/0.2)] transition-colors duration-300">
                   <cred.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
                 </div>
-                <h3 className="text-sm font-heading font-bold text-dark-section-foreground/85 mb-2 tracking-tight">
+                <h3 className="text-sm font-heading font-bold text-dark-section-foreground mb-2 tracking-tight">
                   {cred.title}
                 </h3>
-                <p className="text-dark-section-foreground/95 text-body-xs leading-[1.7] font-body">
+                <p className="text-dark-section-foreground text-body-xs leading-[1.7] font-body">
                   {cred.detail}
                 </p>
               </motion.div>
@@ -257,7 +257,7 @@ const HomepageTrust = () => {
                   Built for Western<br className="hidden md:block" /> North Carolina.
                 </h3>
               </HeadingReveal>
-              <p className="text-dark-section-foreground/95 text-body-xs font-body leading-relaxed max-w-md">
+              <p className="text-dark-section-foreground text-body-xs font-body leading-relaxed max-w-md">
                 Coastal specs don't work at 3,800 feet. Our crews live in these conditions —
                 every material recommendation comes from direct experience, not a manufacturer's data sheet.
               </p>
@@ -275,7 +275,7 @@ const HomepageTrust = () => {
                   className="flex items-start gap-3"
                 >
                   <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)] flex-shrink-0 mt-0.5" aria-hidden="true" />
-                  <span className="text-dark-section-foreground/85 text-body-xs font-body leading-relaxed">
+                  <span className="text-dark-section-foreground text-body-xs font-body leading-relaxed">
                     {point}
                   </span>
                 </motion.div>

@@ -167,7 +167,7 @@ const Siding = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
               Ready to Protect Your WNC Home?
             </h2>
-            <p className="text-primary-foreground/95 mb-8 max-w-xl mx-auto">
+            <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
               Request a free siding estimate from Highlander — serving Franklin, Highlands, Cashiers, Sylva, and the surrounding Western North Carolina mountains.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -179,10 +179,10 @@ const Siding = () => {
               </a>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-10 text-sm">
-              <Link to="/construction/renovations" className="text-primary-foreground/95 hover:text-primary-foreground underline-offset-4 hover:underline">Renovations</Link>
-              <Link to="/construction/additions" className="text-primary-foreground/95 hover:text-primary-foreground underline-offset-4 hover:underline">Home Additions</Link>
-              <Link to="/construction/outdoor-living" className="text-primary-foreground/95 hover:text-primary-foreground underline-offset-4 hover:underline">Outdoor Living</Link>
-              <Link to="/roofing" className="text-primary-foreground/95 hover:text-primary-foreground underline-offset-4 hover:underline">Roofing</Link>
+              <Link to="/construction/renovations" className="text-primary-foreground hover:text-primary-foreground underline-offset-4 hover:underline">Renovations</Link>
+              <Link to="/construction/additions" className="text-primary-foreground hover:text-primary-foreground underline-offset-4 hover:underline">Home Additions</Link>
+              <Link to="/construction/outdoor-living" className="text-primary-foreground hover:text-primary-foreground underline-offset-4 hover:underline">Outdoor Living</Link>
+              <Link to="/roofing" className="text-primary-foreground hover:text-primary-foreground underline-offset-4 hover:underline">Roofing</Link>
             </div>
           </div>
         </section>

@@ -72,12 +72,12 @@ const PaidAdsLanding = ({
           </div>
 
           <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-4 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
-            <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-3">
+            <div className="flex items-center justify-between border-b border-dark-section-border pb-3">
               <span className="flex items-center gap-2">
                 <img src={logo} alt="Highlander Building Services, Inc." width={160} height={48} className="h-10 w-auto md:h-12" loading="eager" decoding="sync" />
                 <span className="sr-only">Highlander Building Services, Inc.</span>
               </span>
-              <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/85 hover:text-primary-foreground transition-colors">
+              <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 (828) 524-7773
               </a>
@@ -92,7 +92,7 @@ const PaidAdsLanding = ({
                   <h1 className="max-w-3xl text-heading-sm font-heading font-bold leading-[1.06] text-primary-foreground md:text-5xl lg:text-6xl">
                     {headline}
                   </h1>
-                  <p className="mt-3 max-w-2xl text-sm font-body leading-relaxed text-primary-foreground/90 md:mt-5 md:text-lg">
+                  <p className="mt-3 max-w-2xl text-sm font-body leading-relaxed text-primary-foreground md:mt-5 md:text-lg">
                     {subheadline}
                   </p>
                 </motion.div>
@@ -112,10 +112,10 @@ const PaidAdsLanding = ({
               <div className="order-3 lg:col-span-7 lg:col-start-1 lg:row-start-2">
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.4 }} className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                   {trustStats.map((item) => (
-                    <div key={item.label} className="border border-primary-foreground/12 bg-primary-foreground/5 px-4 py-4">
+                    <div key={item.label} className="border border-dark-section-border bg-primary-foreground/5 px-4 py-4">
                       <div className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}</div>
                       <div className="mt-1 text-sm font-semibold text-primary-foreground">{item.label}</div>
-                      <div className="mt-1 text-xs font-body text-primary-foreground/85">{item.detail}</div>
+                      <div className="mt-1 text-xs font-body text-primary-foreground">{item.detail}</div>
                     </div>
                   ))}
                 </motion.div>
@@ -220,7 +220,7 @@ const PaidAdsLanding = ({
           <div className="container-tight flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="font-heading text-2xl font-bold">Ready for the next step?</div>
-              <p className="mt-2 max-w-xl text-sm font-body text-primary-foreground/95">
+              <p className="mt-2 max-w-xl text-sm font-body text-primary-foreground">
                 Use the short form above or call our Franklin office during business hours. One page, one action — no hunting around.
               </p>
             </div>

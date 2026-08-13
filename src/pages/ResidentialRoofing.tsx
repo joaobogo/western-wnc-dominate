@@ -219,11 +219,11 @@ const ResidentialRoofing = () => {
                               <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center">
                                 <Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                               </div>
-                              <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">
+                              <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">
                                 Roofing
                               </span>
                             </Link>
-                            <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
+                            <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                             <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">
                               Residential
                             </span>
@@ -299,7 +299,7 @@ const ResidentialRoofing = () => {
                           ].map((item) => (
                             <div key={item.label} className="flex items-center gap-2">
                               <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.6)]" />
-                              <span className="text-caption font-body text-primary-foreground/95 uppercase tracking-widest">{item.label}</span>
+                              <span className="text-caption font-body text-primary-foreground uppercase tracking-widest">{item.label}</span>
                             </div>
                           ))}
                         </motion.div>
@@ -511,7 +511,7 @@ const ResidentialRoofing = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.08 }}
-                                className="group border border-dark-section-foreground/10 rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] bg-dark-section-foreground/[0.04] hover:bg-dark-section-foreground/[0.06] transition-all duration-300"
+                                className="group border border-dark-section-border rounded-sm overflow-hidden hover:border-[hsl(var(--highland-gold)/0.2)] bg-dark-section-foreground/[0.04] hover:bg-dark-section-foreground/[0.06] transition-all duration-300"
                               >
                                 <div className="grid md:grid-cols-5 gap-0">
                                   {/* Image */}
@@ -534,7 +534,7 @@ const ResidentialRoofing = () => {
                                       </span>
                                     </div>
 
-                                    <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-body-xs font-body text-dark-section-foreground/95">
+                                    <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 text-body-xs font-body text-dark-section-foreground">
                                       <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Brand:</strong> {mat.brand}</span>
                                       <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Warranty:</strong> {mat.warranty}</span>
                                       <span><strong className="text-[hsl(var(--gold-ink))] font-semibold uppercase tracking-wide text-caption mr-1">Best For:</strong> {mat.best}</span>
@@ -544,7 +544,7 @@ const ResidentialRoofing = () => {
                                       {mat.pros.map((pro) => (
                                         <li key={pro} className="flex items-start gap-2">
                                           <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--gold-ink))] flex-shrink-0" aria-hidden="true" />
-                                          <span className="text-dark-section-foreground/95 text-body-xs font-body font-medium">{pro}</span>
+                                          <span className="text-dark-section-foreground text-body-xs font-body font-medium">{pro}</span>
                                         </li>
                                       ))}
                                     </ul>
@@ -564,7 +564,7 @@ const ResidentialRoofing = () => {
                             <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5 text-primary-foreground">Need guidance on materials or timing?</h3>
                             <p className="text-primary-foreground text-base font-body font-medium">We'll assess your roof honestly and recommend based on what it actually needs.</p>
                           </div>
-                          <div className="flex gap-3 flex-shrink-0">
+                          <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 md:w-auto md:justify-end md:flex-shrink-0">
                             <Link to="/consultation" className="btn btn-primary btn-md group relative">
                               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                               <span className="relative">Discuss Your Roof</span>
@@ -683,7 +683,7 @@ const ResidentialRoofing = () => {
                           ].map((item) => (
                             <div key={item.text} className="flex items-center gap-2">
                               <item.icon className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" />
-                              <span className="text-xs font-body font-medium text-primary-foreground/90">{item.text}</span>
+                              <span className="text-xs font-body font-medium text-primary-foreground">{item.text}</span>
                             </div>
                           ))}
                         </div>
@@ -950,7 +950,7 @@ const ResidentialRoofing = () => {
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                               Your Mountain Home<br className="hidden md:block" /> Deserves Mountain-Grade<br className="hidden md:block" /> Protection.
                             </h2>
-                            <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                            <p className="text-dark-section-foreground text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                               Whether you're planning ahead or responding to damage — the conversation
                               starts with a local roofing expert who knows your neighborhood, your
                               elevation, and your weather.
@@ -974,7 +974,7 @@ const ResidentialRoofing = () => {
                               </a>
                             </div>
 
-                            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/15">
+                            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                               {[
                                 { icon: Shield, text: "Licensed & Insured" },
                                 { icon: Award, text: "CertainTeed Certified" },

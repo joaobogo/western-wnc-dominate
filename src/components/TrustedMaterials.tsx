@@ -85,7 +85,7 @@ const TrustedMaterials = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-5 text-balance">
             The Right Materials Matter
           </h2>
-          <p className="text-dark-section-foreground/90 text-body-sm md:text-body leading-relaxed">
+          <p className="text-dark-section-foreground text-body-sm md:text-body leading-relaxed">
             Highlander does not treat materials as an afterthought. Our team works with trusted product manufacturers and material distributors so each project can be planned with stronger options, clearer guidance, and products suited for mountain homes and changing Western North Carolina conditions.
           </p>
         </motion.div>
@@ -129,17 +129,17 @@ const TrustedMaterials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
-          className="mt-12 md:mt-16 border-t border-dark-section-foreground/10 pt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+          className="mt-12 md:mt-16 border-t border-dark-section-border pt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
         >
           <div className="max-w-xl">
             <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">
               Want to talk through the best materials for your home?
             </h3>
-            <p className="text-dark-section-foreground/90 text-body-sm md:text-body">
+            <p className="text-dark-section-foreground text-body-sm md:text-body">
               Warranty details vary by product and project and can be reviewed during the estimate or consultation process.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:flex-shrink-0">
             <Link
               to="/consultation"
               className="btn btn-primary btn-lg"

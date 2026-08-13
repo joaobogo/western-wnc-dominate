@@ -105,8 +105,8 @@ const ServicePage = () => {
                 <span className={`text-caption font-body font-semibold uppercase tracking-[0.15em] ${theme.badgeTextClass}`}>
                   {theme.label}
                 </span>
-                <span className="text-dark-section-foreground/90 text-caption font-body">—</span>
-                <span className="text-dark-section-foreground/95 text-caption font-body italic tracking-wide">
+                <span className="text-dark-section-foreground text-caption font-body">—</span>
+                <span className="text-dark-section-foreground text-caption font-body italic tracking-wide">
                   {theme.tagline}
                 </span>
               </div>
@@ -187,9 +187,9 @@ const ServicePage = () => {
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8 text-center">{service.title} Across Western NC</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {towns.map((town) => (
-                <Link key={town.slug} to={`/service-areas/${town.slug}`} className="bg-dark-section-foreground/5 border border-dark-section-foreground/10 rounded-lg p-4 hover:bg-dark-section-foreground/10 hover:border-accent/30 transition-all text-center">
+                <Link key={town.slug} to={`/service-areas/${town.slug}`} className="bg-dark-section-foreground/5 border border-dark-section-border rounded-lg p-4 hover:bg-dark-section-foreground/10 hover:border-accent/30 transition-all text-center">
                   <span className="font-heading font-semibold text-dark-section-foreground">{town.name}</span>
-                  <p className="text-dark-section-foreground/85 text-xs mt-1">{town.county}</p>
+                  <p className="text-dark-section-foreground text-xs mt-1">{town.county}</p>
                 </Link>
               ))}
             </div>

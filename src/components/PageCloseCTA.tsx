@@ -34,7 +34,7 @@ const PageCloseCTA = ({
   context,
 }: Props) => {
   return (
-    <section aria-label="Next step" className="section-dark dark-surface border-t border-dark-section-foreground/10">
+    <section aria-label="Next step" className="section-dark dark-surface border-t border-dark-section-border">
       <div className="section-padding">
         <div className="container-tight max-w-3xl text-center">
           <span className="text-caption font-body font-semibold uppercase tracking-[0.3em] text-[hsl(var(--gold-ink))] mb-4 block">
@@ -43,7 +43,7 @@ const PageCloseCTA = ({
           <h2 className="text-2xl md:text-4xl font-heading font-bold text-dark-section-foreground mb-4 leading-[1.15]">
             {heading}
           </h2>
-          <p className="text-dark-section-foreground/80 font-body text-body-sm md:text-body-sm leading-relaxed mb-8">
+          <p className="text-dark-section-foreground font-body text-body-sm md:text-body-sm leading-relaxed mb-8">
             {body}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
@@ -58,7 +58,7 @@ const PageCloseCTA = ({
             <a
               href="tel:+18285247773"
               onClick={() => trackEvent("phone_click", { label: "Phone CTA", elementId: `page-close-call-${context}` })}
-              className="border-2 border-dark-section-foreground/20 text-dark-section-foreground font-body font-bold text-sm md:text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] transition-all min-h-[56px]"
+              className="border-2 border-dark-section-border text-dark-section-foreground font-body font-bold text-sm md:text-base px-8 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:bg-dark-section-foreground/[0.08] transition-all min-h-[56px]"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
               (828) 524-7773
@@ -67,7 +67,7 @@ const PageCloseCTA = ({
           <CTAProofPoints tone="dark" className="mt-6" />
           {secondaryLabel && secondaryTo && (
             <p className="mt-6 text-body-xs font-body">
-              <Link to={secondaryTo} className="text-dark-section-foreground/70 underline hover:text-[hsl(var(--gold-ink))] transition-colors">
+              <Link to={secondaryTo} className="text-dark-section-muted underline hover:text-[hsl(var(--gold-ink))] transition-colors">
                 {secondaryLabel}
               </Link>
             </p>

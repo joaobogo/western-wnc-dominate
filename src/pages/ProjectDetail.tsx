@@ -35,7 +35,7 @@ const ProjectDetailPage = () => {
         <main id="main-content" className="section-padding section-dark pt-32 md:pt-40 min-h-[60vh] flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-3xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">Project Not Found</h1>
-            <p className="text-[hsl(var(--dark-section-foreground)/0.6)] mb-6">The project you're looking for doesn't exist or has been moved.</p>
+            <p className="text-dark-section-muted mb-6">The project you're looking for doesn't exist or has been moved.</p>
             <Link to="/recent-projects" className="btn btn-primary btn-sm">
               View All Projects <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
@@ -280,7 +280,7 @@ const ProjectDetailPage = () => {
 
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
-                  <p className="text-primary-foreground/85 text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
+                  <p className="text-primary-foreground text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
                   <Link to="/consultation" className="btn btn-primary btn-sm w-full">
                     Discuss Your Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
@@ -334,7 +334,7 @@ const ProjectDetailPage = () => {
                 <p className="text-primary-foreground font-heading font-semibold text-lg mb-1">
                   Inspired by this project?
                 </p>
-                <p className="text-primary-foreground/85 text-sm font-body">
+                <p className="text-primary-foreground text-sm font-body">
                   Let's discuss how we can deliver the same level of quality for your property.
                 </p>
               </div>

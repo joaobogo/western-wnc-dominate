@@ -124,9 +124,9 @@ const CustomConstruction = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
-                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Construction</span>
+                  <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">Construction</span>
                 </Link>
-                <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
+                <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Custom & Specialty</span>
               </motion.div>
 
@@ -165,9 +165,9 @@ const CustomConstruction = () => {
               >
                 <div className="flex items-center gap-3 mb-2">
                   <Gem className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                  <span className="text-xs uppercase tracking-wider text-primary-foreground/85 font-body font-semibold">By Selection Only</span>
+                  <span className="text-xs uppercase tracking-wider text-primary-foreground font-body font-semibold">By Selection Only</span>
                 </div>
-                <p className="text-sm text-primary-foreground/85 font-body leading-relaxed">
+                <p className="text-sm text-primary-foreground font-body leading-relaxed">
                   We accept approximately 30% of custom project inquiries. Not every project is the right fit — and that selectivity protects your investment.
                 </p>
               </motion.div>
@@ -215,19 +215,19 @@ const CustomConstruction = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Projects That Require<br className="hidden md:block" /> a Higher Standard.
                 </h2>
-                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
                   Not every contractor can manage these. We build systems specifically for complex, high-stakes work.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {complexProjects.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
                       <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -331,9 +331,9 @@ const CustomConstruction = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Have a project that needs this level of attention?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">Let's talk about scope, feasibility, and whether Highlander is the right fit.</p>
+                <p className="text-primary-foreground text-sm font-body">Let's talk about scope, feasibility, and whether Highlander is the right fit.</p>
               </div>
-              <div className="flex gap-3 flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 md:w-auto md:justify-end md:flex-shrink-0">
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
@@ -356,19 +356,19 @@ const CustomConstruction = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Built on<br className="hidden md:block" /> Transparency.
                 </h2>
-                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto leading-relaxed">
+                <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto leading-relaxed">
                   Custom projects fail more often from communication breakdowns than construction defects. Our communication systems are as disciplined as our build quality.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {communicationOversight.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
                       <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>

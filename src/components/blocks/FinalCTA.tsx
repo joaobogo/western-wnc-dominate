@@ -34,7 +34,7 @@ export const FinalCTA = ({
           {heading}
         </h2>
         {subheading && (
-          <p className="text-base md:text-lg text-primary-foreground/85 font-body max-w-xl mx-auto mb-8">{subheading}</p>
+          <p className="text-base md:text-lg text-primary-foreground font-body max-w-xl mx-auto mb-8">{subheading}</p>
         )}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <Link

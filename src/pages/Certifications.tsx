@@ -351,7 +351,7 @@ const Certifications = () => {
                 Your Project Is Protected.<br />Before, During, and After.
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.6)] max-w-2xl mx-auto">
+              <p className="text-dark-section-muted max-w-2xl mx-auto">
                 Every Highlander project includes warranty coverage. Our CertainTeed certification 
                 unlocks enhanced warranty tiers that most contractors can't offer.
               </p>
@@ -368,8 +368,8 @@ const Certifications = () => {
                   className="border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)] text-center"
                 >
                   <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-xl mb-2">{w.tier}</p>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.7)] text-sm leading-relaxed mb-4">{w.coverage}</p>
-                  <span className="text-caption font-semibold uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.4)]">
+                  <p className="text-dark-section-muted text-sm leading-relaxed mb-4">{w.coverage}</p>
+                  <span className="text-caption font-semibold uppercase tracking-wider text-dark-section-muted">
                     {w.availability}
                   </span>
                 </motion.div>

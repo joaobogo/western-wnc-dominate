@@ -164,7 +164,7 @@ const RealWorkWidget = ({
           <p className="text-muted-foreground text-lg leading-relaxed">{description}</p>
         </div>
 
-        <div className="relative">
+        <div className="relative w-full max-w-full overflow-x-hidden">
           <div
             id="rwl-output"
             ref={outputRef}

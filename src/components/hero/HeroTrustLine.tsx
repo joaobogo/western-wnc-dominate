@@ -14,7 +14,7 @@ const HeroTrustLine = ({ className = "" }: { className?: string }) => {
 
   return (
     <p
-      className={`flex flex-wrap items-center gap-x-2.5 gap-y-1 font-body text-caption md:text-body-xs font-semibold uppercase tracking-[0.1em] text-primary-foreground/90 ${className}`}
+      className={`flex flex-wrap items-center gap-x-2.5 gap-y-1 font-body text-caption md:text-body-xs font-semibold uppercase tracking-[0.1em] text-primary-foreground ${className}`}
     >
       {items.map((item, i) => (
         <span key={item} className="flex items-center gap-2.5">

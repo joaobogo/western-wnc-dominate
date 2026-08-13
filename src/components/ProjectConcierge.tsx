@@ -74,7 +74,7 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
               </h2>
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
-              <p className="text-dark-section-foreground/95 text-body md:text-body-lg leading-relaxed max-w-lg mx-auto font-bold">
+              <p className="text-dark-section-foreground text-body md:text-body-lg leading-relaxed max-w-lg mx-auto font-bold">
                 We don't do online quotes. Every project starts with a genuine
                 conversation about your property, your goals, and what "done right" means to you.
               </p>
@@ -100,10 +100,10 @@ const ProjectConcierge = ({ id }: { id?: string }) => {
                   <path.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.45)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
                 </div>
 
-                <h3 className="text-base font-heading font-bold text-dark-section-foreground/85 mb-3 tracking-tight">
+                <h3 className="text-base font-heading font-bold text-dark-section-foreground mb-3 tracking-tight">
                   {path.title}
                 </h3>
-                <p className="text-dark-section-foreground/95 text-body-sm md:text-body leading-[1.7] font-body mb-6 font-medium">
+                <p className="text-dark-section-foreground text-body-sm md:text-body leading-[1.7] font-body mb-6 font-medium">
                   {path.desc}
                 </p>
 

@@ -15,7 +15,7 @@ const BlogSidebarCTA = ({ cta, town }: Props) => (
     <h2 className="font-heading font-bold text-primary-foreground text-sm mb-2">
       {town ? `Roofing help in ${town}, NC` : "Talk to a local roofer"}
     </h2>
-    <p className="text-primary-foreground/85 text-xs leading-relaxed mb-4">
+    <p className="text-primary-foreground text-xs leading-relaxed mb-4">
       Photos, findings, and a written scope — no pressure to buy anything.
     </p>
     <a
@@ -35,7 +35,7 @@ const BlogSidebarCTA = ({ cta, town }: Props) => (
           town: town ?? null,
         })
       }
-      className="border border-primary-foreground/30 text-primary-foreground font-semibold px-4 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:bg-primary-foreground/10 transition-colors w-full justify-center"
+      className="border border-dark-section-border text-primary-foreground font-semibold px-4 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:bg-primary-foreground/10 transition-colors w-full justify-center"
     >
       {cta.callFirst ? cta.ctaLabel : "Request an Inspection"} <ArrowRight className="w-4 h-4" aria-hidden="true" />
     </Link>

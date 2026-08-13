@@ -176,7 +176,7 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
           </h2>
         </HeadingReveal>
         <ScrollReveal variant="rise-subtle" delay={0.2}>
-          <p className="text-dark-section-foreground/70 text-lg font-body leading-relaxed mb-10 max-w-xl mx-auto">
+          <p className="text-dark-section-muted text-lg font-body leading-relaxed mb-10 max-w-xl mx-auto">
             A named project advisor — not a call center — will respond with a clear next step, a written scope, and no high-pressure sales tactics.
           </p>
         </ScrollReveal>

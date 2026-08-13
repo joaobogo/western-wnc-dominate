@@ -156,7 +156,7 @@ const Team = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
               Talk to a Real Person — Not a Call Center.
             </h2>
-            <p className="text-primary-foreground/95 mb-8 max-w-xl mx-auto">
+            <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
               When you call Highlander, a member of our Western NC team picks up. No phone tree, no offshore sales floor.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

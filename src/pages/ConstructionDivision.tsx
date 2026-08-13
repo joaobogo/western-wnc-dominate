@@ -180,7 +180,7 @@ const ConstructionDivision = () => {
                   ].map((stat) => (
                     <div key={stat.label}>
                       <div className="text-lg font-heading font-bold text-[hsl(var(--gold-ink))]">{stat.value}</div>
-                      <div className="text-caption uppercase tracking-wider text-primary-foreground/90 font-body mt-0.5">{stat.label}</div>
+                      <div className="text-caption uppercase tracking-wider text-primary-foreground font-body mt-0.5">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -188,7 +188,7 @@ const ConstructionDivision = () => {
                   {["Licensed General Contractor", "In-House Crews", "WNC Specialists", "Planning & Scoping Clarity"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-[hsl(var(--highland-gold)/0.85)]" aria-hidden="true" />
-                      <span className="text-primary-foreground/90 text-caption font-body font-medium tracking-wide">{item}</span>
+                      <span className="text-primary-foreground text-caption font-body font-medium tracking-wide">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -242,7 +242,7 @@ const ConstructionDivision = () => {
                   <p className="text-dark-section-foreground text-base md:text-lg leading-relaxed font-body mb-6">
                     Highlander didn't start construction from scratch. We applied the same project discipline, crew standards, and communication systems that earned CertainTeed ShingleMaster Credentialed Contractor status to every construction project we take on.
                   </p>
-                  <p className="text-dark-section-foreground/85 text-sm md:text-base leading-relaxed font-body mb-8">
+                  <p className="text-dark-section-foreground text-sm md:text-base leading-relaxed font-body mb-8">
                     When you hire Highlander for construction, you get a company that already knows how to plan meticulously, execute precisely, document everything, and communicate proactively — because we've been doing it on roofs for years.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
@@ -252,16 +252,16 @@ const ConstructionDivision = () => {
                       { value: "150+", label: "Verified Reviews" },
                       { value: "Rapid", label: "Response Time" },
                     ].map((stat, i) => (
-                      <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-foreground/15 rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
+                      <motion.div key={stat.label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-dark-section-border rounded-none p-4 hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors">
                         <span className="text-xl font-heading font-bold text-[hsl(var(--gold-ink))] block">{stat.value}</span>
-                        <span className="text-body-xs md:text-body-xs font-body text-dark-section-foreground/95 uppercase tracking-[0.15em]">{stat.label}</span>
+                        <span className="text-body-xs md:text-body-xs font-body text-dark-section-foreground uppercase tracking-[0.15em]">{stat.label}</span>
                       </motion.div>
                     ))}
                   </div>
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="relative">
-                  <div className="aspect-[4/3] rounded-none overflow-hidden border border-dark-section-foreground/6">
+                  <div className="aspect-[4/3] rounded-none overflow-hidden border border-dark-section-border">
                     <img width={1600} height={1067} decoding="async" src={proj3} alt="Room addition with standing seam metal roof integration" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-raised max-w-[240px]">

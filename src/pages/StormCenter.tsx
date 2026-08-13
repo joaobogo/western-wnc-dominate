@@ -116,14 +116,14 @@ const StormCenter = () => {
                 Storm Preparedness & Recovery<br className="hidden md:block" /> for WNC Homeowners
               </h1>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-5" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-base md:text-lg max-w-2xl mx-auto mb-8">
+              <p className="text-dark-section-muted text-base md:text-lg max-w-2xl mx-auto mb-8">
                 Expert guidance before, during, and after severe weather — from the team
                 that responds across Western North Carolina.
               </p>
 
               {/* Primary action on storm pages is the phone call (see page-cta-hierarchy.ts) */}
               <div className="flex flex-col items-center gap-3" data-gtm-location="hero">
-                <span className="text-[hsl(var(--dark-section-foreground)/0.5)] text-xs font-body uppercase tracking-[0.16em]">
+                <span className="text-dark-section-muted text-xs font-body uppercase tracking-[0.16em]">
                   Storm Assessment Line
                 </span>
                 <a
@@ -316,7 +316,7 @@ const StormCenter = () => {
                 Year-Round Storm Preparedness
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.6)] max-w-xl mx-auto text-sm">
+              <p className="text-dark-section-muted max-w-xl mx-auto text-sm">
                 WNC weather demands year-round attention. Here's when to focus on what.
               </p>
             </motion.div>
@@ -332,7 +332,7 @@ const StormCenter = () => {
                     <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                   </div>
                   <h3 className="font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-1">{item.season}</h3>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.5)] text-sm font-body mb-3">{item.focus}</p>
+                  <p className="text-dark-section-muted text-sm font-body mb-3">{item.focus}</p>
                   <p className="text-[hsl(var(--highland-gold)/0.7)] text-xs font-body font-medium">{item.action}</p>
                 </motion.div>
               ))}

@@ -48,7 +48,7 @@ export const TestimonialCard = ({
       className={cn(
         "relative overflow-hidden h-full",
         isDark
-          ? "bg-[hsl(var(--dark-section))] border border-[hsl(var(--dark-section-foreground)/0.06)]"
+          ? "bg-[hsl(var(--dark-section))] border border-dark-section-border"
           : "bg-card border border-border",
         "rounded-none hover:border-[hsl(var(--highland-gold)/0.2)] transition-all duration-500",
         isCompact ? "p-5 md:p-6" : "p-6 md:p-10",
@@ -85,7 +85,7 @@ export const TestimonialCard = ({
         className={cn(
           "leading-[1.8] font-body relative z-10",
           isCompact ? "text-body-xs line-clamp-4 mb-4" : "text-body-sm md:text-base mb-7",
-          isDark ? "text-[hsl(var(--dark-section-foreground)/0.8)]" : "text-foreground",
+          isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground",
         )}
       >
         "{text}"
@@ -102,7 +102,7 @@ export const TestimonialCard = ({
           <p className={cn("text-caption font-body font-semibold uppercase tracking-[0.1em] mb-1", isDark ? "text-[hsl(var(--dark-section-foreground)/0.3)]" : "text-muted-foreground")}>
             Project Outcome
           </p>
-          <p className={cn("text-sm font-body font-medium", isDark ? "text-[hsl(var(--dark-section-foreground)/0.7)]" : "text-foreground/80")}>
+          <p className={cn("text-sm font-body font-medium", isDark ? "text-dark-section-muted" : "text-foreground/80")}>
             {outcome}
           </p>
         </div>
@@ -131,7 +131,7 @@ export const TestimonialCard = ({
             <p className={cn("font-heading font-bold", isCompact ? "text-xs" : "text-sm", isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground")}>
               {name}
             </p>
-            <p className={cn("font-body", isCompact ? "text-caption" : "text-xs", isDark ? "text-[hsl(var(--dark-section-foreground)/0.4)]" : "text-muted-foreground")}>
+            <p className={cn("font-body", isCompact ? "text-caption" : "text-xs", isDark ? "text-dark-section-muted" : "text-muted-foreground")}>
               {location}
             </p>
           </div>

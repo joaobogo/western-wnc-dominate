@@ -37,7 +37,7 @@ const LeadConfirmationPanel = ({
 
   const dark = tone === "dark";
   const text = dark ? "text-dark-section-foreground" : "text-foreground";
-  const muted = dark ? "text-dark-section-foreground/80" : "text-muted-foreground";
+  const muted = dark ? "text-dark-section-foreground" : "text-muted-foreground";
   const card = dark
     ? "border-white/12 bg-white/[0.04]"
     : "border-border bg-muted/30";

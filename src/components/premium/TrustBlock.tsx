@@ -76,7 +76,7 @@ export const TrustBlock = ({
         "flex flex-wrap items-center gap-4 sm:gap-8",
         isInline ? "justify-start" : "justify-center",
         !isInline && "pt-8 border-t",
-        isDark ? "border-[hsl(var(--dark-section-foreground)/0.06)]" : "border-border/60",
+        isDark ? "border-dark-section-border" : "border-border/60",
         className,
       )}
     >

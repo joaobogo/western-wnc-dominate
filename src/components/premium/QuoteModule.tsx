@@ -58,7 +58,7 @@ export const QuoteModule = ({
           isInline
             ? "text-lg text-foreground/80"
             : "text-xl md:text-2xl lg:text-heading-sm",
-          isDark && !isInline && "text-[hsl(var(--dark-section-foreground)/0.85)]",
+          isDark && !isInline && "text-[hsl(var(--dark-section-foreground))]",
           !isDark && !isInline && "text-foreground",
         )}
       >
@@ -82,7 +82,7 @@ export const QuoteModule = ({
               className={cn(
                 "not-italic font-heading font-bold block",
                 isInline ? "text-sm" : "text-base",
-                isDark ? "text-[hsl(var(--dark-section-foreground)/0.8)]" : "text-foreground",
+                isDark ? "text-[hsl(var(--dark-section-foreground))]" : "text-foreground",
               )}
             >
               {author}

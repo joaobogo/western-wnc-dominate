@@ -141,7 +141,7 @@ const Blog = () => {
                       placeholder="Search articles — e.g. metal roof cost"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-11 pr-4 py-4 bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground))] placeholder:text-[hsl(var(--dark-section-foreground)/0.45)] text-base font-body focus:outline-none focus:border-[hsl(var(--highland-gold)/0.4)] transition-colors rounded-sm shadow-flat"
+                      className="w-full pl-11 pr-4 py-4 bg-[hsl(var(--dark-section-foreground)/0.06)] border border-dark-section-border text-[hsl(var(--dark-section-foreground))] placeholder:text-dark-section-muted text-base font-body focus:outline-none focus:border-[hsl(var(--highland-gold)/0.4)] transition-colors rounded-sm shadow-flat"
                     />
                   </div>
                 </motion.div>
@@ -160,24 +160,24 @@ const Blog = () => {
                       </div>
                       <div>
                         <p className="text-caption md:text-body-xs font-body font-bold uppercase tracking-wider text-[hsl(var(--gold-ink))]">{seasonal.season} Advisory</p>
-                        <p className="text-sm text-[hsl(var(--dark-section-foreground)/0.6)] font-body font-medium">Timely for WNC homeowners</p>
+                        <p className="text-sm text-dark-section-muted font-body font-medium">Timely for WNC homeowners</p>
                       </div>
                     </div>
-                    <p className="text-[hsl(var(--dark-section-foreground)/0.8)] text-base font-body leading-relaxed mb-4 font-medium">{seasonal.tip}</p>
+                    <p className="text-[hsl(var(--dark-section-foreground))] text-base font-body leading-relaxed mb-4 font-medium">{seasonal.tip}</p>
                     <div className="space-y-2">
                       {seasonalPosts.map((post) => (
                         <Link
                           key={post.slug}
                           to={`/blog/${post.slug}`}
-                          className="group flex items-center justify-between py-2 border-b border-[hsl(var(--dark-section-foreground)/0.06)] last:border-0"
+                          className="group flex items-center justify-between py-2 border-b border-dark-section-border last:border-0"
                         >
-                          <span className="text-body-sm text-[hsl(var(--dark-section-foreground)/0.7)] font-body font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors line-clamp-1 pr-2">{post.title}</span>
+                          <span className="text-body-sm text-dark-section-muted font-body font-bold group-hover:text-[hsl(var(--gold-ink))] transition-colors line-clamp-1 pr-2">{post.title}</span>
                           <ChevronRight className="w-4 h-4 text-[hsl(var(--dark-section-foreground)/0.2)] flex-shrink-0" aria-hidden="true" />
                         </Link>
                       ))}
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 mt-4 text-[hsl(var(--dark-section-foreground)/0.5)] text-body-xs font-body font-bold">
+                  <div className="flex items-center gap-4 mt-4 text-dark-section-muted text-body-xs font-body font-bold">
                     <span>{blogPosts.length} articles</span>
                     <span>·</span>
                     <span>{categories.length - 1} categories</span>
@@ -596,7 +596,7 @@ const Blog = () => {
               <h3 className="text-xl md:text-2xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-2">
                 Stay Informed
               </h3>
-              <p className="text-[hsl(var(--dark-section-foreground)/0.5)] text-sm mb-6 max-w-md mx-auto">
+              <p className="text-dark-section-muted text-sm mb-6 max-w-md mx-auto">
                 Seasonal maintenance reminders, storm updates, and mountain building insights —
                 delivered a few times per year. No spam, no sales pitches.
               </p>
@@ -606,7 +606,7 @@ const Blog = () => {
                   {...fieldAttrs.emailLast}
                   enterKeyHint="send"
                   placeholder="your@email.com"
-                  className="flex-1 px-4 py-3 rounded-sm bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.1)] text-[hsl(var(--dark-section-foreground))] text-sm font-body placeholder:text-[hsl(var(--dark-section-foreground)/0.3)] focus:outline-none focus:border-[hsl(var(--highland-gold)/0.3)] transition-colors"
+                  className="flex-1 px-4 py-3 rounded-sm bg-[hsl(var(--dark-section-foreground)/0.06)] border border-dark-section-border text-[hsl(var(--dark-section-foreground))] text-sm font-body placeholder:text-dark-section-muted focus:outline-none focus:border-[hsl(var(--highland-gold)/0.3)] transition-colors"
                 />
                 <button type="submit" className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
                   Subscribe

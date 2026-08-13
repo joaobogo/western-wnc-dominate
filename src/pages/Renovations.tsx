@@ -173,11 +173,11 @@ const Renovations = () => {
               >
                 <div className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
                   <TrendingUp className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" />
-                  <span className="text-xs font-body text-primary-foreground/95">Avg. ROI: 60–80% at resale</span>
+                  <span className="text-xs font-body text-primary-foreground">Avg. ROI: 60–80% at resale</span>
                 </div>
                 <div className="hidden sm:flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 rounded-sm">
                   <Eye className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" />
-                  <span className="text-xs font-body text-primary-foreground/95">Hidden damage protocol included</span>
+                  <span className="text-xs font-body text-primary-foreground">Hidden damage protocol included</span>
                 </div>
               </motion.div>
             </div>
@@ -281,19 +281,19 @@ const Renovations = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   The Details You Live With<br className="hidden md:block" /> Every Day.
                 </h2>
-                <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
                   Renovation quality isn't about the big reveal — it's about what you notice six months later. Grout lines. Trim joints. How a drawer closes. We build for the long view.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {finishQuality.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="flex items-start gap-4">
                       <div className="w-1 h-8 bg-[hsl(var(--highland-gold)/0.3)] rounded-full mt-0.5 flex-shrink-0" />
                       <div>
                         <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2">{item.title}</h3>
-                        <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{item.detail}</p>
+                        <p className="text-dark-section-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -338,9 +338,9 @@ const Renovations = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to discuss your renovation?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
+                <p className="text-primary-foreground text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
               </div>
-              <div className="flex gap-3 flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 md:w-auto md:justify-end md:flex-shrink-0">
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
