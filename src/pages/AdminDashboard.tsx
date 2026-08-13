@@ -1,3 +1,12 @@
+import { BarChart3 } from "lucide-react";
+import EmptyState from "@/components/states/EmptyState";
+import ErrorState from "@/components/states/ErrorState";
+import {
+  BreakdownGridSkeleton,
+  LoadingAnnouncement,
+  StatGridSkeleton,
+  TableSkeleton,
+} from "@/components/states/Skeletons";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -181,7 +190,15 @@ export default function AdminDashboard() {
   const totalSubmits = funnel.reduce((n, r) => n + r.submits, 0);
   const totalPhone = funnel.reduce((n, r) => n + r.phone, 0);
 
-  if (checkingAuth) return <div className="p-10 text-sm">Checking access…</div>;
+  if (checkingAuth) {
+    return (
+      <div className="min-h-screen bg-background p-6 space-y-8">
+        <LoadingAnnouncement label="Checking access" />
+        <StatGridSkeleton />
+        <TableSkeleton />
+      </div>
+    );
+  }
   if (!isAdmin) {
     return (
       <div className="min-h-screen flex items-center justify-center p-6">
@@ -213,12 +230,38 @@ export default function AdminDashboard() {
       </header>
 
       {error && (
-        <div className="mx-6 mt-4 rounded border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive">
-          {error}
+        <ErrorState
+          className="mx-6 mt-4"
+          title="Dashboard data didn't load"
+          description="The reporting query failed or timed out. Nothing is lost — retry to pull the last 30 days again."
+          detail={error}
+          onRetry={() => void load()}
+          showContact={false}
+        />
+      )}
+
+      {loading && (
+        <div className="p-6 space-y-8">
+          <LoadingAnnouncement label="Loading conversion data" />
+          <StatGridSkeleton />
+          <TableSkeleton />
+          <BreakdownGridSkeleton />
         </div>
       )}
 
-      <div className="p-6 space-y-8">
+      {!loading && !error && leads.length === 0 && events.length === 0 && (
+        <div className="p-6">
+          <EmptyState
+            icon={BarChart3}
+            title="No activity in the last 30 days"
+            description="Once visitors start forms, submit leads or tap the phone number, the funnel and breakdowns will populate here automatically."
+            primaryAction={{ label: "Refresh", onClick: () => void load() }}
+            secondaryAction={{ label: "View leads", to: "/admin/leads" }}
+          />
+        </div>
+      )}
+
+      <div className={loading ? "hidden" : "p-6 space-y-8"}>
         <section className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <Stat label="Leads" value={leads.length} />
           <Stat label="Form starts" value={totalStarts} />
@@ -286,7 +329,6 @@ export default function AdminDashboard() {
           </div>
         </section>
 
-        {loading && <p className="text-xs text-muted-foreground">Loading…</p>}
       </div>
     </div>
   );

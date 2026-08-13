@@ -6,6 +6,7 @@ import {
   Shield, Wrench, Home, CloudLightning, DollarSign, Newspaper,
   Calendar, TrendingUp, ChevronRight, Leaf, Snowflake, Sun, Wind,
 } from "lucide-react";
+import EmptyState from "@/components/states/EmptyState";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
@@ -562,13 +563,19 @@ const Blog = () => {
                 </div>
               </div>
             ) : (
-              <div className="text-center py-16">
-                <Search className="w-8 h-8 text-muted-foreground mx-auto mb-3" />
-                <p className="text-muted-foreground font-body">No articles found matching your search.</p>
-                <button onClick={() => { setSearchQuery(""); setActiveCategory("All"); }} className="text-primary text-sm font-semibold mt-2 hover:underline">
-                  Clear filters
-                </button>
-              </div>
+              <EmptyState
+                icon={Search}
+                title="No articles match that search"
+                description="Try a broader term, or clear the filters to see every roofing, storm and maintenance article we've published for Western North Carolina."
+                primaryAction={{
+                  label: "Clear filters",
+                  onClick: () => {
+                    setSearchQuery("");
+                    setActiveCategory("All");
+                  },
+                }}
+                secondaryAction={{ label: "Talk to Highlander", to: "/contact" }}
+              />
             )}
           </div>
         </section>

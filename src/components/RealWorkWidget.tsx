@@ -1,6 +1,7 @@
+import { GalleryGridSkeleton, LoadingAnnouncement } from "@/components/states/Skeletons";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { AlertCircle, ArrowRight, Loader2, Phone } from "lucide-react";
+import { AlertCircle, ArrowRight, Phone } from "lucide-react";
 
 const REALWORK_HOST = "https://app.realworklabs.com";
 const REALWORK_KEY = "SxCxaBpYsO_fVnK0";
@@ -173,10 +174,10 @@ const RealWorkWidget = ({
           />
 
           {status === "loading" && (
-            <div className="flex items-center justify-center gap-3 py-14 text-muted-foreground text-sm font-body">
-              <Loader2 className="w-4 h-4 animate-spin text-[hsl(var(--heritage-green))]" aria-hidden="true" />
-              <span>Loading recent project updates…</span>
-            </div>
+            <>
+              <LoadingAnnouncement label="Loading recent project updates" />
+              <GalleryGridSkeleton count={3} />
+            </>
           )}
 
           {status === "error" && (
