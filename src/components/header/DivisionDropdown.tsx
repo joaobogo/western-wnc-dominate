@@ -88,7 +88,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
             }
           }}
         >
-          <div className="bg-card border border-border rounded-sm shadow-raised w-[min(92vw,860px)] relative overflow-hidden">
+          <div className="bg-card border border-border rounded-sm shadow-raised w-[min(94vw,1000px)] relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
               <div
                 className="absolute inset-0 opacity-40 bg-[hsl(var(--highland-gold)/0.1)]"
