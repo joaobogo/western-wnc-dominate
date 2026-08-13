@@ -352,7 +352,7 @@ interface ReassuranceBlockProps {
 export const ReassuranceBlock = ({
   headline = "Ready to Work With a Team\nThat Builds Like It Matters?",
   subheadline = "Start a conversation with our team. No pressure, no upselling — just honest advice from people who build in these mountains every day.",
-  ctaText = "Talk With Our Team",
+  ctaText = "Get My Questions Answered",
   ctaLink = "/consultation",
   variant = "primary",
 }: ReassuranceBlockProps) => {

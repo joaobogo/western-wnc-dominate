@@ -303,7 +303,7 @@ const Certifications = () => {
                 to="/consultation"
                 className="btn btn-primary btn-sm"
               >
-                Talk With Our Team <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get My Questions Answered <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -399,7 +399,7 @@ const Certifications = () => {
         <ReassuranceBlock
           headline={"Credentials That Translate\nInto Better Outcomes."}
           subheadline="See how our certifications, training, and quality standards translate into real results on your property."
-          ctaText="Talk With Our Team"
+          ctaText="Get My Questions Answered"
         />
       </main>
       <PageCloseCTA eyebrow="Next Step" heading="Put these credentials to work on your roof" body="Tell us about your property and we'll follow up with a clear, written next step." secondaryLabel="Explore our roofing services" secondaryTo="/roofing" context="certifications" />

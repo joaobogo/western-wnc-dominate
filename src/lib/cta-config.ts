@@ -19,48 +19,48 @@ export const CTA = {
 
   /** Roofing division pages — confidence & planning language */
   roofingConsult: "Get My Roof Assessed",
-  roofingHero: "Plan Your Roof With Confidence",
-  roofingMid: "Talk to a Local Roofing Advisor",
-  roofingClosing: "Let's Protect What Matters Most",
+  roofingHero: "See What My Roof Needs",
+  roofingMid: "Get My Roof Questions Answered",
+  roofingClosing: "Get My Roof Protected",
 
   /** Construction division pages — build & project language */
   constructionConsult: "Get My Build Planned",
-  constructionHero: "Let's Plan Your Build",
-  constructionMid: "Get My Project Scope Written",
+  constructionHero: "Get My Build Planned",
+  constructionMid: "Get My Project Scoped",
   constructionClosing: "Your Home Deserves a Real Builder",
 
   /** Construction primary CTA — used across construction pages */
-  constructionPlan: "Plan Your Construction Project",
+  constructionPlan: "Get My Project Scoped",
 
   /** Design & Consultation Agreement — paid design program */
-  designAgreement: "Start with a Design Agreement",
+  designAgreement: "Get My Plans Drawn",
 
   /** About page — trust & exploration language */
-  aboutHero: "Talk to a Local Advisor",
+  aboutHero: "Get My Questions Answered",
   aboutClosing: "See What We've Built — Then Decide",
   aboutExplore: "Explore Our Work",
 
   /** Gallery / Projects page — "your project" language */
   galleryMid: "Imagine This for Your Home",
   galleryClosing: "Your Project Could Be Next",
-  galleryInline: "Start a Similar Project",
+  galleryInline: "Get My Project Scoped",
 
   /** Blog page — education → service bridge language */
   blogClosing: "Have a Question About Your Roof or Project?",
   blogInline: "Need Expert Advice on This?",
-  blogService: "Talk to the Team That Wrote This",
+  blogService: "Get My Questions Answered",
 
   /** Contact page — direct & premium */
-  contactSubmit: "Talk to a Local Advisor",
+  contactSubmit: "Get My Questions Answered",
 
   /** Generic consultation — Reviews, Certifications */
-  consultation: "Talk to a Local Advisor",
+  consultation: "Get My Questions Answered",
 
   /** Commercial / B2B contexts */
-  commercial: "Discuss Your Building",
+  commercial: "Get My Building Assessed",
 
   /** Footer CTA strip */
-  footer: "Discuss Your Project",
+  footer: "Get My Project Scoped",
 
   /** Storm / emergency context */
   storm: "Get My Roof Assessed",
@@ -69,7 +69,7 @@ export const CTA = {
   designer: "Get My Project Scoped",
 
   /** Mobile sticky bar */
-  mobileSticky: "Get My Estimate",
+  mobileSticky: "Get My Written Estimate",
 } as const;
 
 /* ─── SECONDARY CTA LABELS ─── */

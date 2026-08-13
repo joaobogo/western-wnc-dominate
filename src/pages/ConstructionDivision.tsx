@@ -159,7 +159,7 @@ const ConstructionDivision = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="order-3 md:order-none flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/consultation" className="btn btn-primary btn-lg group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Schedule a Project Consultation</span>
+                  <span className="relative">Get My Project Scoped</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
@@ -298,7 +298,7 @@ const ConstructionDivision = () => {
                   to="/construction/design"
                   className="btn btn-secondary btn-md group"
                 >
-                  Start with a Design Agreement
+                  Get My Plans Drawn
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <Link
@@ -398,7 +398,7 @@ const ConstructionDivision = () => {
         <ConstructionMidCTA
           headline="Have a project in mind?"
           subheadline="Let's discuss scope, timeline, and whether Highlander is the right fit."
-          ctaText="Schedule a Project Consultation"
+          ctaText="Get My Project Scoped"
         />
 
         {/* ═══ DESIGN PROGRAM PROMO ═══ */}
@@ -494,7 +494,7 @@ const ConstructionDivision = () => {
         <ConstructionClosingCTA
           headline={"Your Home Deserves a Builder\nWho Treats It Like Their Own."}
           subheadline="Whether you're planning an addition, considering a renovation, or have a custom project in mind — let's have a straightforward conversation about what's possible."
-          ctaText="Schedule a Project Consultation"
+          ctaText="Get My Project Scoped"
           eyebrow="Start the Conversation"
         />
       <RelatedLinks
@@ -506,7 +506,7 @@ const ConstructionDivision = () => {
             { label: "Outdoor Living Projects", href: "/construction/outdoor-living", description: "Porches, decks, and outdoor rooms" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
             { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start the conversation" },
-            { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
+            { label: "Get My Questions Answered", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
         <ServiceInternalLinks title="Construction Services" slug="construction" intent="consultation" />

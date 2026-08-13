@@ -47,7 +47,7 @@ export default function ErrorState({
         {showContact && (
           <>
             <Link to="/contact" className="btn btn-secondary btn-sm">
-              Contact Highlander
+              Get My Questions Answered
             </Link>
             <a href="tel:+18285247773" className="btn btn-secondary btn-sm">
               <Phone className="w-4 h-4" aria-hidden="true" /> 828-524-7773

@@ -174,7 +174,7 @@ const GivingBack = () => {
                     Have a community opportunity to discuss?
                   </p>
                   <Link to="/contact" className="btn btn-primary btn-lg group">
-                    Contact Highlander
+                    Get My Questions Answered
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
@@ -199,11 +199,11 @@ const GivingBack = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link to="/contact" className="btn btn-primary btn-lg group">
-                  Contact Highlander
+                  Get My Questions Answered
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
-                  Request an Estimate
+                  Get My Written Estimate
                 </Link>
               </div>
               <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-white/85 font-body">

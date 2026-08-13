@@ -26,7 +26,7 @@ const categories: Category[] = [
     id: "repairs",
     label: "Roof Repairs",
     items: [
-      { q: "Can a leak be repaired, or do I need a full roof replacement?", a: "It depends on the age of the roof, the extent of the damage, and the underlying decking condition. Many leaks can be repaired affordably. Contact Highlander for a project-specific assessment before assuming a replacement is needed." },
+      { q: "Can a leak be repaired, or do I need a full roof replacement?", a: "It depends on the age of the roof, the extent of the damage, and the underlying decking condition. Many leaks can be repaired affordably. Get My Questions Answered for a project-specific assessment before assuming a replacement is needed." },
       { q: "Do you repair other contractors' roofs?", a: "Yes. We frequently repair roofs we didn't install, including correcting workmanship issues from storm chasers or out-of-state crews." },
       { q: "How quickly can you respond to a roof repair?", a: "Most non-emergency repair calls are scheduled within a few business days. Active leaks and storm-related damage are prioritized for same-day or next-day response when possible." },
     ],
@@ -69,7 +69,7 @@ const categories: Category[] = [
     label: "Metal Roofing",
     items: [
       { q: "Is metal roofing a good choice for the WNC mountains?", a: "Metal is an excellent choice for many Western NC homes — it sheds snow and ice well, performs in high winds, and can last 40+ years with proper installation. We'll help you decide if it's the right fit for your home and budget." },
-      { q: "How much more does a metal roof cost compared to shingles?", a: "Metal typically costs more upfront than asphalt shingles, but lasts longer. The exact difference depends on the system you choose. Request an estimate for a side-by-side comparison." },
+      { q: "How much more does a metal roof cost compared to shingles?", a: "Metal typically costs more upfront than asphalt shingles, but lasts longer. The exact difference depends on the system you choose. Get my written estimate for a side-by-side comparison." },
     ],
   },
   {
@@ -340,7 +340,7 @@ const FAQ = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/consultation" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
                 <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
@@ -358,7 +358,7 @@ const FAQ = () => {
             { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Materials, planning, and process" },
             { label: "Construction Division", href: "/construction", description: "Additions, renovations, and outdoor living" },
             { label: "Design & Planning Services", href: "/construction/design", description: "Design agreements and planning" },
-            { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" },
+            { label: "Get My Questions Answered", href: "/contact", description: "Reach a project advisor" },
             { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
           ]}
         />

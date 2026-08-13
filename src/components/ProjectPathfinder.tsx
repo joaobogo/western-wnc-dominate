@@ -176,7 +176,7 @@ const ProjectPathfinder = () => {
                         <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
                       </Link>
                       <Link to="/consultation" className="btn btn-secondary btn-md">
-                        Request a Consultation
+                        See What My Project Needs
                       </Link>
                     </div>
                   </div>

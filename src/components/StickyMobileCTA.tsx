@@ -136,7 +136,7 @@ const StickyMobileCTA = () => {
             <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))' }} />
             
             <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-raised">
-              {/* Two-column layout: Primary (Request a Quote) + Call */}
+              {/* Two-column layout: Primary (Get My Written Estimate) + Call */}
               {/* One primary action per page — see src/lib/page-cta-hierarchy.ts */}
               <div className="flex items-stretch" data-gtm-location="sticky_bar">
                 {callIsPrimary ? (
@@ -174,7 +174,7 @@ const StickyMobileCTA = () => {
                       className="flex-[1.6] flex items-center justify-center gap-2 px-4 cta-gradient text-accent-foreground active:opacity-95 active:scale-[0.97] transition-all min-h-[56px]"
                     >
                       <FileText className="w-4 h-4" aria-hidden="true" />
-                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">Request Estimate</span>
+                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">Get My Written Estimate</span>
                     </Link>
                     <a
                       href={action.secondaryHref}

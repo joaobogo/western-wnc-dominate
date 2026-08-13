@@ -9,7 +9,7 @@ interface ConsultationCTAProps {
 }
 
 /** Repeatable consultation CTA band for the roof replacement journey. */
-const ConsultationCTA = ({ heading, subline, label = "Book My Replacement Consultation", id }: ConsultationCTAProps) => (
+const ConsultationCTA = ({ heading, subline, label = "Get My Replacement Scoped", id }: ConsultationCTAProps) => (
   <section id={id} className="bg-primary text-primary-foreground tartan-dark">
     <div className="container-tight px-5 md:px-8 py-9 md:py-12">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">

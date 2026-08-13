@@ -100,7 +100,7 @@ const SyntheticRoofing = () => {
 
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link to="/consultation" className="btn btn-primary btn-md group">
-                    Start Your Brava Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                    Get My Brava Roof Scoped <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                   <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark">
                     <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773

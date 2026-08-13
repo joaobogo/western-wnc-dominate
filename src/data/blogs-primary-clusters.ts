@@ -48,7 +48,7 @@ const links = (t: TownData) => [
   { label: `Storm Damage in ${t.name}`, path: `/service-areas/${t.slug}/storm-damage` },
   { label: `${t.county} Service Hub`, path: `/service-areas/county/${countySlug(t)}` },
   { label: `${t.name} Service Area`, path: `/service-areas/${t.slug}` },
-  { label: "Request an Estimate", path: "/request-inspection" },
+  { label: "Get My Written Estimate", path: "/request-inspection" },
 ];
 
 function repairOrReplacePost(t: TownData): BlogPost {

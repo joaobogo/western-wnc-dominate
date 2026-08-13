@@ -113,7 +113,7 @@ const Skylights = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/consultation" className="btn btn-primary btn-md">
-                    Request a Skylight Assessment <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    See What My Skylights Need <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                     <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773

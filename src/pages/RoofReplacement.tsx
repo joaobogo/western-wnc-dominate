@@ -224,7 +224,7 @@ const RoofReplacement = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                   <span className="relative">Request a Roof Consultation</span>
+                   <span className="relative">See What My Roof Needs</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
@@ -333,7 +333,7 @@ const RoofReplacement = () => {
           preset="replacement"
           title="Plan your full replacement in detail"
           body="Optional guided builder for homeowners ready to specify materials, system features, and priorities. We use it to prepare a sharper proposal before we walk the roof."
-          ctaLabel="Build Your Replacement Scope"
+          ctaLabel="Get My Replacement Scoped"
         />
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }} />
@@ -415,7 +415,7 @@ const RoofReplacement = () => {
         <ConsultationCTA
           heading="Not sure whether you're at repair or replacement?"
           subline="A consultation gets you an honest read on your roof's remaining life and a written scope if replacement is the right call."
-          label="Book My Roof Assessment"
+          label="See What My Roof Needs"
         />
         <CostContextBlock serviceLabel="roof replacement" />
         <section className="section-padding bg-background">
@@ -511,7 +511,7 @@ const RoofReplacement = () => {
         <ConsultationCTA
           heading="See the work, then get your own scope."
           subline="We'll walk your roof, document conditions with photos, and hand you a written replacement plan."
-          label="Book My Replacement Consultation"
+          label="Get My Replacement Scoped"
         />
         <WhoShowsUp />
         <TieredOffer context="roof-replacement" primaryLabel="Get My Replacement Scope" />
@@ -583,7 +583,7 @@ const RoofReplacement = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                     <Link to="/consultation" className="btn btn-primary btn-lg group relative">
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                      <span className="relative">Request a Quote Call</span>
+                      <span className="relative">Get My Written Estimate</span>
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                     <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">

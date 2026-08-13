@@ -416,7 +416,7 @@ const StormCenter = () => {
         <ReassuranceBlock
           headline={"Need a Storm Assessment?\nWe're Here to Help."}
           subheadline="Schedule a professional inspection — no pressure, no obligation. We'll document everything and give you a straight answer."
-          ctaText="Request Storm Assessment"
+          ctaText="Get My Storm Damage Documented"
         />
       </main>
       <PageCloseCTA eyebrow="Storm Response" heading="Storm damage on your property?" body="Send us the details and photos. We'll prioritize the inspection and help you document everything your insurer needs." secondaryLabel="Read the storm damage guide" secondaryTo="/storm-damage" context="storm-center" />

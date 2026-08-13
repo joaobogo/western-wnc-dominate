@@ -29,7 +29,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
       to="/consultation"
       className="btn btn-primary btn-sm sm:px-7 sm:py-4 sm:gap-2.5 whitespace-nowrap"
     >
-      <span className="relative z-10"><span className="hidden sm:inline">Get </span>Estimate</span>
+      <span className="relative z-10">Get My <span className="hidden sm:inline">Written </span>Estimate</span>
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
     </Link>
     <button

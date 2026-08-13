@@ -161,7 +161,7 @@ const Team = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/consultation" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
                 <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
@@ -177,7 +177,7 @@ const Team = () => {
             { label: "Roofing Services Hub", href: "/roofing", description: "See the roofing division" },
             { label: "Construction Division", href: "/construction", description: "See the construction division" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See our work across WNC" },
-            { label: "Contact Highlander", href: "/contact", description: "Reach the team directly" },
+            { label: "Get My Questions Answered", href: "/contact", description: "Reach the team directly" },
             { label: "Request an Inspection", href: "/request-inspection", description: "Get a written scope and estimate" }
           ]}
         />

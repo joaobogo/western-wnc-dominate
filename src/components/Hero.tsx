@@ -252,7 +252,7 @@ const Hero = () => {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">
-                  {heroCta.pick("Request an Estimate", "See What My Roof Needs")}
+                  {heroCta.pick("Get My Written Estimate", "See What My Roof Needs")}
                 </span>
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
               </Link>

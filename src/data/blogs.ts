@@ -797,7 +797,7 @@ If you're in Highlands, Cashiers, Franklin, or anywhere across Macon County and 
 
 - **Call us:** 828-524-7773
 - **Request an inspection online:** [Request a roof inspection](/request-inspection)
-- **General questions:** [Contact Highlander](/contact)
+- **General questions:** [Get My Questions Answered](/contact)
 
 No pressure, no scare tactics — just a clear, professional read on your roof and what, if anything, it needs.
 `,
@@ -931,9 +931,9 @@ Every accurate metal roof quote in Western NC starts with an on-site measure —
 
 Elevation, weather exposure, material transport, and skilled labor demand all push Highlands roofing investment above comparable work in lower-elevation NC towns. Rather than quoting a generic range, we price every project from its real scope.
 
-## Request an Estimate
+## Next Step: A Written Estimate
 
-The best way to know your actual cost is a free inspection. We'll assess your roof's condition, measure accurately, and provide a transparent estimate with no surprises.`,
+The best way to know your actual cost is an on-site inspection. We'll assess your roof's condition, measure accurately, and provide a transparent estimate with no surprises.`,
   },
   {
     slug: "metal-vs-shingle-roof-western-nc",
@@ -2857,7 +2857,7 @@ Learn more about [roof repair](/roofing/roof-repair), see when [roof replacement
     relatedServices: [
       { label: "Roof Repair", path: "/roofing/roof-repair" },
       { label: "Roof Replacement", path: "/roofing/roof-replacement" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
       { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
     ],
   },
@@ -2936,7 +2936,7 @@ Don't climb on a wet roof. Don't ignore a small drip hoping it stops — most ac
     relatedServices: [
       { label: "Roof Repair", path: "/roofing/roof-repair" },
       { label: "Roofing Division", path: "/roofing" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
       { label: "Service Areas", path: "/service-areas/franklin-nc" },
     ],
   },
@@ -3060,7 +3060,7 @@ Read more about [roof repair](/roofing/roof-repair) and [our roofing services](/
     relatedServices: [
       { label: "Roof Repair", path: "/roofing/roof-repair" },
       { label: "Roofing Division", path: "/roofing" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
       { label: "Roofing in Cashiers, NC", path: "/service-areas/cashiers-nc" },
     ],
   },
@@ -3983,7 +3983,7 @@ If you don't have plans yet, that's normal. Our in-house design services produce
 Home additions, porches, decks, outdoor living spaces, and full remodels — coordinated by a single project team so the design intent survives into construction.
 
 ## Ready to Talk Through a Project?
-[Contact Highlander](/contact) to start the conversation, or explore our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living) pages. Related: [roofing services in Franklin, NC](/service-areas/franklin-nc).`,
+[Get My Questions Answered](/contact) to start the conversation, or explore our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living) pages. Related: [roofing services in Franklin, NC](/service-areas/franklin-nc).`,
     faqs: [
       { question: "Do I need plans before contacting Highlander?", answer: "No. Most Franklin projects start with a conversation and a site visit. If drawings are needed, our design team produces them under a Design & Consultation Agreement." },
       { question: "Does Highlander handle small additions?", answer: "Yes — porches, single-room additions, and outdoor living projects are a regular part of our work in Franklin and Macon County." },
@@ -3992,7 +3992,7 @@ Home additions, porches, decks, outdoor living spaces, and full remodels — coo
       { label: "Construction Division", path: "/construction" },
       { label: "Design Services", path: "/construction/design" },
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4021,7 +4021,7 @@ If you don't have plans yet, our in-house design services produce drawings under
 Roofing, framing, exterior details, and interior work stay under one project team so nothing gets lost between trades.
 
 ## Start the Conversation
-[Contact Highlander](/contact), or read more about our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living). Related: [roofing in Highlands, NC](/service-areas/highlands-nc).`,
+[Get My Questions Answered](/contact), or read more about our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living). Related: [roofing in Highlands, NC](/service-areas/highlands-nc).`,
     faqs: [
       { question: "Do you build on very steep Highlands lots?", answer: "Yes, with the right structural design. That's a conversation we have on a site walk with our design team." },
     ],
@@ -4029,7 +4029,7 @@ Roofing, framing, exterior details, and interior work stay under one project tea
       { label: "Construction Division", path: "/construction" },
       { label: "Design Services", path: "/construction/design" },
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4058,12 +4058,12 @@ If plans don't exist yet, we work under a Design & Consultation Agreement so sco
 Because Highlander runs roofing and construction under one roof, transitions between a new roof line, existing structure, and exterior details are handled without finger-pointing between trades.
 
 ## Start Planning
-[Contact Highlander](/contact), or explore our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living). Related: [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
+[Get My Questions Answered](/contact), or explore our [construction division](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living). Related: [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
     relatedServices: [
       { label: "Construction Division", path: "/construction" },
       { label: "Design Services", path: "/construction/design" },
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4091,7 +4091,7 @@ The design team produces the plans and drawings needed to price, permit, and bui
 Once drawings exist, our construction division prices the work against a real scope — not a guess.
 
 ## Start the Conversation
-[Contact Highlander](/contact) to talk with our design team. Explore [design services](/construction/design), [construction](/construction), and [outdoor living](/construction/outdoor-living).`,
+[Get My Questions Answered](/contact) to talk with our design team. Explore [design services](/construction/design), [construction](/construction), and [outdoor living](/construction/outdoor-living).`,
     faqs: [
       { question: "Can Highlander price an addition without plans?", answer: "Not accurately. We can talk range on a site walk, but real pricing needs drawings — which is exactly what the design phase produces." },
       { question: "Do I have to build with Highlander if you draw the plans?", answer: "No. The Design & Consultation Agreement covers the design work regardless of who builds it, though most clients continue with our construction division." },
@@ -4099,7 +4099,7 @@ Once drawings exist, our construction division prices the work against a real sc
     relatedServices: [
       { label: "Design Services", path: "/construction/design" },
       { label: "Construction Division", path: "/construction" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4127,11 +4127,11 @@ Our in-house design services take you from concept to build-ready. That's the ga
 Bring them. Our construction team reviews the drawings, flags anything that will need clarification, and prices against the documented scope.
 
 ## Start the Conversation
-[Contact Highlander](/contact), or explore [design services](/construction/design) and [construction](/construction).`,
+[Get My Questions Answered](/contact), or explore [design services](/construction/design) and [construction](/construction).`,
     relatedServices: [
       { label: "Design Services", path: "/construction/design" },
       { label: "Construction Division", path: "/construction" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4162,14 +4162,14 @@ Construction pricing. That comes after drawings exist, priced against a real sco
 Our in-house design team — led by our Design Lead — produces the drawings. You work with one designer from first sketch through build-ready plans.
 
 ## Start the Conversation
-[Contact Highlander](/contact), or explore [design services](/construction/design) and [construction](/construction).`,
+[Get My Questions Answered](/contact), or explore [design services](/construction/design) and [construction](/construction).`,
     faqs: [
       { question: "Is a Design & Consultation Agreement required?", answer: "For any project that needs new drawings, yes. It's how we scope the design phase in writing before work begins." },
     ],
     relatedServices: [
       { label: "Design Services", path: "/construction/design" },
       { label: "Construction Division", path: "/construction" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4198,12 +4198,12 @@ Adding a porch usually means new roof lines tying into existing. Because Highlan
 Decking, railing, ceiling material, and finishes all get evaluated against mountain weather — not lowland assumptions.
 
 ## Start Planning
-[Contact Highlander](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design). Related: [roofing in Highlands, NC](/service-areas/highlands-nc).`,
+[Get My Questions Answered](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design). Related: [roofing in Highlands, NC](/service-areas/highlands-nc).`,
     relatedServices: [
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
       { label: "Construction Division", path: "/construction" },
       { label: "Design Services", path: "/construction/design" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4229,12 +4229,12 @@ Fully open patios are limited by pollen, rain, and bugs. Screened and covered po
 How the new space connects to the kitchen, living, or primary suite matters more than the space itself. We plan those connections up front.
 
 ## Start Planning
-[Contact Highlander](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design). Related: [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
+[Get My Questions Answered](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design). Related: [roofing in Cashiers, NC](/service-areas/cashiers-nc).`,
     relatedServices: [
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
       { label: "Construction Division", path: "/construction" },
       { label: "Design Services", path: "/construction/design" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4262,12 +4262,12 @@ T&G ceilings, fans, and layered lighting turn a covered porch into a real room. 
 Most covered porches join the existing roof. Getting that transition watertight is where roofing and construction have to work together.
 
 ## Start the Conversation
-[Contact Highlander](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design).`,
+[Get My Questions Answered](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design).`,
     relatedServices: [
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
       { label: "Construction Division", path: "/construction" },
       { label: "Design Services", path: "/construction/design" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -4295,12 +4295,12 @@ Snow, ice, and wind loads at elevation change beam and post design. This is engi
 Every material has a maintenance profile. We tell you what yours will need before you commit to it.
 
 ## Start the Conversation
-[Contact Highlander](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design).`,
+[Get My Questions Answered](/contact), or explore [outdoor living](/construction/outdoor-living), [construction](/construction), and [design services](/construction/design).`,
     relatedServices: [
       { label: "Outdoor Living", path: "/construction/outdoor-living" },
       { label: "Construction Division", path: "/construction" },
       { label: "Design Services", path: "/construction/design" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
 
@@ -4463,11 +4463,11 @@ Franklin, Highlands, Cashiers, Sylva, and surrounding communities across Macon a
 When a new porch needs to tie into an existing roof, or a remodel touches the exterior envelope, having roofing and construction under one company removes the finger-pointing that stalls projects.
 
 ## Start the Conversation
-[Contact Highlander](/contact) or [request an inspection](/request-inspection). Explore [roofing](/roofing), [construction](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living).`,
+[Get My Questions Answered](/contact) or [request an inspection](/request-inspection). Explore [roofing](/roofing), [construction](/construction), [design services](/construction/design), and [outdoor living](/construction/outdoor-living).`,
     relatedServices: [
       { label: "Roofing Division", path: "/roofing" },
       { label: "Construction Division", path: "/construction" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
       { label: "Request an Inspection", path: "/request-inspection" },
     ],
   },
@@ -4909,7 +4909,7 @@ You can also see recent work in our [project gallery](/gallery) or read more abo
 
 Schedule a professional roof inspection with Highlander Building Services. We will evaluate the condition of your roof, explain what we find, and help you understand the most practical next step for your Highlands property.
 
-[Request a Roof Inspection](/request-inspection) or [Contact Highlander](/contact) to talk with our team.`,
+[Request a Roof Inspection](/request-inspection) or [Get My Questions Answered](/contact) to talk with our team.`,
   faqs: [
     {
       question: "Can a leaking roof be repaired without replacing it?",
@@ -5162,7 +5162,7 @@ const highlandsClusterPosts: BlogPost[] = [
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
       { label: "Exterior Construction", path: "/construction/exterior" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -5419,7 +5419,7 @@ const franklinClusterPosts: BlogPost[] = [
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
       { label: "Exterior Construction", path: "/construction/exterior" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -5626,7 +5626,7 @@ const cashiersClusterPosts: BlogPost[] = [
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
       { label: "Exterior Construction", path: "/construction/exterior" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {
@@ -5702,7 +5702,7 @@ const cashiersClusterPosts: BlogPost[] = [
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
       { label: "Exterior Construction", path: "/construction/exterior" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
 ];
@@ -5941,7 +5941,7 @@ const cullowheeClusterPosts: BlogPost[] = [
     relatedServices: [
       { label: "Construction Services", path: "/construction" },
       { label: "Exterior Construction", path: "/construction/exterior" },
-      { label: "Contact Highlander", path: "/contact" },
+      { label: "Get My Questions Answered", path: "/contact" },
     ],
   },
   {

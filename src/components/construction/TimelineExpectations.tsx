@@ -77,7 +77,7 @@ const TimelineExpectations = ({
           className="btn btn-primary btn-md"
           data-gtm-location="timeline_expectations"
         >
-          Schedule a Project Consultation
+          Get My Project Scoped
         </Link>
         <a
           href="tel:+18285247773"

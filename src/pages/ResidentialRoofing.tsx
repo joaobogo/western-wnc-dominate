@@ -945,7 +945,7 @@ const ResidentialRoofing = () => {
                             viewport={{ once: true }}
                           >
                             <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">
-                              Talk With Our Team
+                              Get My Questions Answered
                             </span>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                               Your Mountain Home<br className="hidden md:block" /> Deserves Mountain-Grade<br className="hidden md:block" /> Protection.

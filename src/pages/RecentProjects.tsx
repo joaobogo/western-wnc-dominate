@@ -109,7 +109,7 @@ const RecentProjects = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-2">
               <Link to="/contact" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <Link to="/roofing" className="btn btn-secondary btn-md">
                 Explore Our Services
@@ -205,7 +205,7 @@ const RecentProjects = () => {
                 title="No projects in this category yet"
                 description="We photograph work as crews wrap up, so this filter will fill in. In the meantime, see all completed work or tell us about your own project."
                 primaryAction={{ label: "See all work", onClick: () => setMaterial("All Work") }}
-                secondaryAction={{ label: "Request an estimate", to: "/contact" }}
+                secondaryAction={{ label: "Get my written estimate", to: "/contact" }}
               />
             )}
 
@@ -345,7 +345,7 @@ const RecentProjects = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/contact" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                 <Phone className="w-4 h-4" aria-hidden="true" /> 828-524-7773

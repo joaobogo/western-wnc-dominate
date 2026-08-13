@@ -328,7 +328,7 @@ const Gallery = () => {
                 to="/consultation"
                 className="btn btn-primary btn-sm"
               >
-                Start a Similar Project <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
+                Get My Project Scoped <ArrowRight className="w-4 h-4 btn-arrow-icon" aria-hidden="true" />
               </Link>
             </div>
           </div>

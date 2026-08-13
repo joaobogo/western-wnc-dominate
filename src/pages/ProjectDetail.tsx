@@ -282,7 +282,7 @@ const ProjectDetailPage = () => {
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
                   <p className="text-primary-foreground text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
                   <Link to="/consultation" className="btn btn-primary btn-sm w-full">
-                    Discuss Your Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -342,7 +342,7 @@ const ProjectDetailPage = () => {
                 to="/consultation"
                 className="btn btn-primary btn-sm flex-shrink-0"
               >
-                <Phone className="w-4 h-4" aria-hidden="true" /> Discuss Your Project
+                <Phone className="w-4 h-4" aria-hidden="true" /> Get My Project Scoped
               </Link>
             </div>
           </div>
@@ -484,7 +484,7 @@ const ProjectDetailPage = () => {
         <ReassuranceBlock
           headline={"Your Project Could Be\nOur Next Showcase."}
           subheadline="Schedule a consultation and let's discuss what's possible for your property."
-          ctaText="Discuss Your Project"
+          ctaText="Get My Project Scoped"
         />
       </main>
       <Footer />

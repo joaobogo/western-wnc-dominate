@@ -64,7 +64,7 @@ const DESIGN_PHASES = [
       "Permit submittal support",
     ],
     timeline: "3–4 weeks plus jurisdiction review",
-    ctaLabel: "Plan Your Construction Project",
+    ctaLabel: "Get My Project Scoped",
     ctaHref: "/construction-intake",
   },
   {
@@ -80,7 +80,7 @@ const DESIGN_PHASES = [
       "Trade-by-trade scopes of work",
     ],
     timeline: "4–6 weeks",
-    ctaLabel: "Talk to a Local Advisor",
+    ctaLabel: "Get My Questions Answered",
     ctaHref: "/construction-intake",
   },
 ];
@@ -208,13 +208,13 @@ const ConstructionDesign = () => {
                   to="/construction-intake"
                   className="btn btn-primary btn-md"
                 >
-                  Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
                   className="btn btn-secondary btn-md btn-on-dark"
                 >
-                  Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </motion.div>
 
@@ -388,7 +388,7 @@ const ConstructionDesign = () => {
                     to="/construction-intake"
                     className="btn btn-primary btn-md"
                   >
-                    Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>
               </ScrollReveal>
@@ -499,7 +499,7 @@ const ConstructionDesign = () => {
                   to="/design-intake?mode=long"
                   className="btn btn-primary btn-md"
                 >
-                  Send Your Plans <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Plans Reviewed <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
             </ScrollReveal>
@@ -509,7 +509,7 @@ const ConstructionDesign = () => {
         <ConstructionMidCTA
           headline="Ready to define your project the right way?"
           subheadline="Start with a Design & Consultation Agreement and we'll scope, draw, and document the build before construction pricing is set."
-          ctaText="Start with a Design Agreement"
+          ctaText="Get My Plans Drawn"
         />
 
         {/* ─── SECTION 8: FAQs ─── */}
@@ -549,13 +549,13 @@ const ConstructionDesign = () => {
                   to="/construction-intake"
                   className="btn btn-primary btn-md"
                 >
-                  Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
                   className="btn btn-secondary btn-md btn-on-dark"
                 >
-                  Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
@@ -575,7 +575,7 @@ const ConstructionDesign = () => {
             { label: "Construction & Renovation FAQ", href: "/faq", description: "Answers to common planning questions" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent construction work" },
             { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start with a design conversation" },
-            { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
+            { label: "Get My Questions Answered", href: "/contact", description: "Reach a project advisor" }
           ]}
         />
         <ServiceInternalLinks title="Design & Planning" slug="design" intent="consultation" />

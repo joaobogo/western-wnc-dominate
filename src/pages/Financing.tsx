@@ -60,7 +60,7 @@ const Financing = () => {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link to="/contact" className="btn btn-primary btn-md">
-                  Ask About Financing <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  See My Financing Options <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark">
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
@@ -103,7 +103,7 @@ const Financing = () => {
             </div>
 
             <div className="bg-secondary rounded-lg p-8 md:p-12 max-w-3xl mx-auto">
-              <h2 className="text-2xl font-heading font-bold text-foreground mb-4">How to Ask About Financing</h2>
+              <h2 className="text-2xl font-heading font-bold text-foreground mb-4">How to See My Financing Options</h2>
               <ol className="space-y-4">
                 <li className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>

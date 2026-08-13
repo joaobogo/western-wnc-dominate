@@ -222,7 +222,7 @@ const ConstructionAuthority = () => {
                 className="btn btn-secondary btn-md btn-on-dark group"
               >
                 <HardHat className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" aria-hidden="true" />
-                Schedule a Construction Consultation
+                Get My Project Scoped
               </Link>
             </div>
           </ScrollReveal>

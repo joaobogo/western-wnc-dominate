@@ -263,7 +263,7 @@ const RoofingDivision = () => {
                   className="btn btn-primary btn-md group relative"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Plan Your Roof With Confidence</span>
+                  <span className="relative">See What My Roof Needs</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a
@@ -531,7 +531,7 @@ const RoofingDivision = () => {
                       className="btn btn-primary btn-lg group relative"
                     >
                       <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                      <span className="relative">Let's Protect What Matters Most</span>
+                      <span className="relative">Get My Roof Protected</span>
                       <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                     <a

@@ -319,7 +319,7 @@ const LayoutsPlanning = () => {
                     </ul>
 
                     <Link to="/design-intake?mode=long" className="btn btn-primary btn-md w-full">
-                      Send Detailed Brief <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                      Get My Plans Reviewed <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -401,7 +401,7 @@ const LayoutsPlanning = () => {
                   Western North Carolina isn't flat. We plan for soil types, slope stability, heavy snow loads, and extreme temperature swings. A plan from a flat-land designer won't work here. A Highlander plan will.
                 </p>
                 <Link to="/consultation" className="btn btn-primary btn-lg">
-                  Discuss Your Mountain Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Mountain Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </ScrollReveal>
             </div>
