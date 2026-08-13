@@ -109,7 +109,7 @@ const CostContextBlock = ({
               onClick={() => trackEvent("cta_click", { label: "Request a written scope", elementId: "cost-context-scope" })}
               className="cta-gradient text-accent-foreground font-body font-bold text-sm px-6 py-3.5 inline-flex items-center justify-center gap-2 uppercase tracking-[0.1em] hover:opacity-90 transition-all min-h-[52px]"
             >
-              Request a written scope <ArrowRight className="w-4 h-4" />
+              Get My Written Scope <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:+18285247773"

@@ -80,7 +80,7 @@ const DESIGN_PHASES = [
       "Trade-by-trade scopes of work",
     ],
     timeline: "4–6 weeks",
-    ctaLabel: "Talk to Highlander About Your Project",
+    ctaLabel: "Talk to a Local Advisor",
     ctaHref: "/construction-intake",
   },
 ];

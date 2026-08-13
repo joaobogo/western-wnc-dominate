@@ -219,8 +219,10 @@ const ServicePage = () => {
 
         <CommonConcerns />
         {service.division !== "construction" && (
-          <CostContextBlock serviceLabel={service.title.toLowerCase()} />
-          <SchedulingReality serviceLabel={service.title.toLowerCase()} />
+          <>
+            <CostContextBlock serviceLabel={service.title.toLowerCase()} />
+            <SchedulingReality serviceLabel={service.title.toLowerCase()} />
+          </>
         )}
         <div className="container-tight pt-16 md:pt-20">
           <AttributedReviews
