@@ -265,24 +265,16 @@ const PaidAdsLanding = ({
           </div>
         </footer>
 
-        {/* Sticky mobile call bar — one action, always reachable */}
+        {/* Sticky mobile call bar — one action only; the form already sits above the fold. */}
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-4 py-3 backdrop-blur md:hidden">
-          <div className="flex gap-2">
-            <a
+          <a
               href="tel:+18285247773"
               onClick={() => trackPhoneClick({ phone_number: "828-524-7773", link_url: "tel:+18285247773", click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
-              className="flex flex-1 items-center justify-center gap-2 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
+              className="flex w-full items-center justify-center gap-2 bg-primary px-4 py-3 text-base font-semibold text-primary-foreground"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
               Call Direct: 828-524-7773
-            </a>
-            <a
-              href="#fast-lead-form"
-              className="btn btn-secondary btn-sm"
-            >
-              Form
-            </a>
-          </div>
+          </a>
         </div>
       </main>
     </>
