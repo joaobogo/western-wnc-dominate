@@ -201,7 +201,7 @@ const TypingIndicator = () => (
         key={i}
         className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40"
         animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
-        transition={{ duration: 0.4, repeat: Infinity, delay: i * 0.15 }}
+        transition={{ duration: 1, repeat: Infinity, delay: i * 0.15 }}
       />
     ))}
   </div>

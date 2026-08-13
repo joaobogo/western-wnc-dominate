@@ -171,7 +171,7 @@ const LayoutsPlanning = () => {
           {/* Floating Element: Drafting Compass Icon */}
           <motion.div 
             animate={{ rotate: 360 }}
-            transition={{ duration: 0.4, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
             className="absolute top-1/2 -right-20 w-[400px] h-[400px] border border-white/5 rounded-full pointer-events-none hidden xl:block"
           />
         </section>
