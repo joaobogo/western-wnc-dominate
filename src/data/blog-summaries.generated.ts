@@ -19,7 +19,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "A detailed Western North Carolina comparison of standing seam metal, exposed-fastener panels, and dimensional asphalt shingles \\u2014 cost per square foot, realistic lifespan, and how each performs in mountain rain, wind, snow, and shade.",
     "category": "Materials",
     "date": "2026-08-12",
-    "readTime": "14 min"
+    "readTime": "14 min",
+    "town": "Highlands"
   },
   {
     "id": "attic-ventilation-waynesville-nc-winter",
@@ -28,7 +29,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "Ice at the eaves, damp insulation, and premature shingle wear in Haywood County usually trace back to one thing — an unbalanced attic. Here is how to diagnose and correct it.",
     "category": "Maintenance",
     "date": "2026-08-03",
-    "readTime": "6 min"
+    "readTime": "6 min",
+    "town": "Waynesville"
   },
   {
     "id": "roof-replacement-waynesville-nc-historic-homes",
@@ -37,7 +39,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "Haywood County's older homes have complex roof lines, original detailing, and modern performance needs. Here is how we approach a replacement that respects the house.",
     "category": "Replacement",
     "date": "2026-08-02",
-    "readTime": "8 min"
+    "readTime": "8 min",
+    "town": "Waynesville"
   },
   {
     "id": "storm-damage-checklist-bryson-city-nc",
@@ -46,7 +49,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "Swain County storms move fast and leave subtle damage. Here is what a Bryson City homeowner can safely check from the ground, what to photograph, and when to bring in a professional.",
     "category": "Storm",
     "date": "2026-08-02",
-    "readTime": "6 min"
+    "readTime": "6 min",
+    "town": "Bryson City"
   },
   {
     "id": "metal-roofing-bryson-city-nc-vacation-rentals",
@@ -55,7 +59,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "Bryson City rental cabins take heavy rain, heavy guest turnover, and very little downtime. Here is how standing seam metal changes the maintenance math for short-term rental owners in Swain County.",
     "category": "Materials",
     "date": "2026-08-01",
-    "readTime": "7 min"
+    "readTime": "7 min",
+    "town": "Bryson City"
   },
   {
     "id": "highlands-nc-storm-damage-july-28-2026",
@@ -64,7 +69,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "A Severe Thunderstorm Warning covered Highlands and southeastern Macon County on July 28, 2026. Here is a calm, practical guide to what to check from the ground, what to leave to a professional, and how to document it.",
     "category": "Storm",
     "date": "2026-07-29",
-    "readTime": "9 min"
+    "readTime": "9 min",
+    "town": "Highlands"
   },
   {
     "id": "storm-moisture-damage-cullowhee-nc",
@@ -73,7 +79,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "The storm and moisture damage patterns Cullowhee, NC homeowners should watch for and when to schedule a professional inspection.",
     "category": "Storm Damage",
     "date": "2026-07-26",
-    "readTime": "7 min"
+    "readTime": "7 min",
+    "town": "Cullowhee"
   },
   {
     "id": "home-renovation-exterior-project-cullowhee-nc",
@@ -82,7 +89,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "What Cullowhee, NC homeowners should know before starting a renovation or exterior project — planning, budget, and choosing the right team.",
     "category": "Construction",
     "date": "2026-07-26",
-    "readTime": "8 min"
+    "readTime": "8 min",
+    "town": "Cullowhee"
   },
   {
     "id": "roof-inspection-frequency-cullowhee-nc",
@@ -91,7 +99,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "How often Cullowhee, NC homeowners should schedule a roof inspection and what a good inspection actually covers.",
     "category": "Inspection",
     "date": "2026-07-26",
-    "readTime": "7 min"
+    "readTime": "7 min",
+    "town": "Cullowhee"
   },
   {
     "id": "common-roofing-problems-cullowhee-nc",
@@ -100,7 +109,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "The roofing problems we most often find on Cullowhee, NC homes and what to do about them before they get worse.",
     "category": "Repair",
     "date": "2026-07-26",
-    "readTime": "7 min"
+    "readTime": "7 min",
+    "town": "Cullowhee"
   },
   {
     "id": "roof-repair-vs-replacement-cullowhee-nc",
@@ -109,7 +119,8 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "How Cullowhee, NC homeowners can decide between a targeted roof repair and full replacement in Jackson County's mountain climate.",
     "category": "Replacement",
     "date": "2026-07-26",
-    "readTime": "7 min"
+    "readTime": "7 min",
+    "town": "Cullowhee"
   },
   {
     "id": "storm-damage-check-sylva-nc",
@@ -118,6 +129,7 @@ export const blogSummaries: BlogSummary[] = [
     "excerpt": "A safe, practical post storm checklist for Sylva, NC homeowners, plus when to call a local roofer for a professional evaluation.",
     "category": "Storm Damage",
     "date": "2026-07-25",
-    "readTime": "7 min"
+    "readTime": "7 min",
+    "town": "Sylva"
   }
 ];
