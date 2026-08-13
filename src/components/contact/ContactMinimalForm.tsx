@@ -159,6 +159,7 @@ const ContactMinimalForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" data-hide-sticky>
+      <FormErrorSummary message={submitError} issues={issues} className="mt-0 mb-2" />
       <FormSavedNote show={autosave.restored} className="mb-2" />
 
       <div>
@@ -270,8 +271,6 @@ const ContactMinimalForm = () => {
           maxLength={2000}
         />
       </div>
-
-      <FormErrorSummary message={submitError} issues={issues} />
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-1">
         <div className="flex items-center gap-2 text-body-xs text-muted-foreground font-body">

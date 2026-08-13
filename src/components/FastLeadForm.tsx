@@ -109,6 +109,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           autosave.clear();
         }}
       >
+        <FormErrorSummary message={submitError} issues={issues} className="mt-0" />
         <div>
           <label htmlFor={`${serviceLabel}-name`} className="field-label">
             Name
@@ -186,7 +187,6 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           </div>
         </div>
 
-        <FormErrorSummary message={submitError} issues={issues} />
         <FormSavedNote show={autosave.restored} />
         <WhatHappensNext />
         <FormConsent />
