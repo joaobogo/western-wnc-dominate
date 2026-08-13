@@ -145,15 +145,13 @@ const ConstructionDivision = () => {
                 </div>
               </motion.div>
 
-              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-heading md:text-5xl lg:text-display xl:text-display font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight mb-1 md:mb-2">
-                Additions &amp; Custom Building
-              </motion.h1>
-              <motion.h2 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.7, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-heading md:text-5xl lg:text-display xl:text-display font-heading font-bold tracking-tight leading-[0.98] mb-3 md:mb-8">
+              <motion.h1 initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: HIGHLAND_EASE }} className="order-1 md:order-none text-heading md:text-5xl lg:text-display xl:text-display font-heading font-bold text-primary-foreground leading-[0.98] tracking-tight mb-3 md:mb-8">
+                Additions &amp; Custom Building{" "}
                 <span className="text-[hsl(var(--gold-ink))]">Across Western NC.</span>
-              </motion.h2>
+              </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="order-2 md:order-none text-body-sm md:text-body-lg text-white/95 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-bold drop-shadow-md">
-                <span className="md:hidden">Out of room, or ready to build on your mountain lot? We walk the site and return a written scope, schedule, and budget range before you commit.</span>
+                <span className="md:hidden">We walk your site and return a written scope, schedule, and budget range before you commit.</span>
                 <span className="hidden md:inline">Out of room, or ready to build on your mountain lot? Bring us the idea and we walk the site, map the permits and site constraints, and return a written scope, schedule, and budget range before you commit. Additions, renovations, and outdoor living — licensed, insured, and team-led.</span>
               </motion.p>
 
@@ -169,8 +167,10 @@ const ConstructionDivision = () => {
                 </a>
               </motion.div>
 
-              {/* Division scope — unique to landing */}
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }} className="order-5 md:order-none mt-8 md:mt-10 pt-6 md:pt-8 border-t border-white/6">
+              <HeroTrustLine className="order-3 md:order-none mt-4 md:mt-6" />
+
+              {/* Division scope — desktop only; keeps the mobile fold clean */}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }} className="hidden md:block order-5 md:order-none mt-8 md:mt-10 pt-6 md:pt-8 border-t border-white/6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-6">
                   {[
                     { value: "6", label: "Service Categories" },
