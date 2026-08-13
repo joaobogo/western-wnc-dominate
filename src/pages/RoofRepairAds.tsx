@@ -34,7 +34,7 @@ const RoofRepairAds = () => (
     trustBullets={[
       "Permanent-minded repairs, not temporary patchwork sold as a solution",
       "Licensed and insured local team",
-      "Written scopes and warranty-backed workmanship",
+      "Written scopes so you know exactly what is included",
     ]}
     testimonial={{
       quote: "They found the real leak source in one visit after two other contractors guessed wrong. The repair was clean, quick, and fully explained.",
