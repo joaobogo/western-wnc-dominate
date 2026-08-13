@@ -1,7 +1,7 @@
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
-import { trackCtaClick } from "@/lib/gtm";
+import { trackCtaClick, trackGalleryCtaClick } from "@/lib/gtm";
 import { getProjectServiceTags, getTownPath } from "@/lib/project-service-tags";
 
 interface Props {
@@ -41,12 +41,13 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
         <Link
           to={scopePath}
           onClick={() =>
-            trackCtaClick({
-              cta_location: "project_detail_location_cta",
+            trackGalleryCtaClick({
+              gallery: "project_detail",
               cta_text: "Request a Scope",
-              cta_type: "primary",
               destination_url: scopePath,
+              project_title: type,
               town,
+              cta_position: "project_detail_location_cta",
             })
           }
           className="cta-gradient text-accent-foreground font-bold px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
@@ -79,6 +80,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
                   cta_type: "tag",
                   destination_url: tag.path,
                   town,
+                  cta_position: "project_detail_service_tags",
                 })
               }
               className="inline-flex items-center gap-1.5 text-xs font-body font-semibold text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors px-3 py-2 rounded-sm"

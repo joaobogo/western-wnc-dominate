@@ -10,6 +10,7 @@ import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
+import { trackGalleryProjectOpen } from "@/lib/gtm";
 import heroImg from "@/assets/gallery/asphalt-hero.webp";
 import roofingImg from "@/assets/gallery/asphalt-008.webp";
 import repairImg from "@/assets/gallery/asphalt-003.webp";
@@ -263,6 +264,15 @@ const RecentProjects = () => {
                     {p.slug ? (
                       <Link
                         to={`/projects/${p.slug}`}
+                        onClick={() =>
+                          trackGalleryProjectOpen({
+                            gallery: "recent_projects",
+                            project_title: p.title,
+                            project_location: p.location,
+                            project_category: p.type,
+                            position: i,
+                          })
+                        }
                         className={`group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift block ${wide ? "md:col-span-2" : ""}`}
                       >
                         {CardInner}

@@ -12,6 +12,7 @@ import { PremiumLightbox, GalleryCard } from "@/components/gallery";
 import type { LightboxProject } from "@/components/gallery";
 import { MountainContours, TextureOverlay } from "@/components/motion/BackgroundTexture";
 import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
+import { trackGalleryProjectOpen } from "@/lib/gtm";
 
 import metal005 from "@/assets/gallery/metal-005.webp";
 import metal006 from "@/assets/gallery/metal-006.webp";
@@ -217,7 +218,16 @@ const Gallery = () => {
           <section className="bg-[hsl(var(--heritage-charcoal))]">
             <SpotlightCard
               project={featuredProject}
-              onClick={() => setLightbox(projects.indexOf(featuredProject))}
+              onClick={() => {
+                setLightbox(projects.indexOf(featuredProject));
+                trackGalleryProjectOpen({
+                  gallery: "project_gallery_spotlight",
+                  project_title: featuredProject.title,
+                  project_location: featuredProject.location,
+                  project_category: featuredProject.category,
+                  position: 0,
+                });
+              }}
             />
           </section>
         )}
@@ -297,7 +307,16 @@ const Gallery = () => {
                             {...project}
                             index={i}
                             variant={i % 5 === 0 ? "wide" : "standard"}
-                            onClick={() => setLightbox(originalIndex)}
+                            onClick={() => {
+                              setLightbox(originalIndex);
+                              trackGalleryProjectOpen({
+                                gallery: "project_gallery",
+                                project_title: project.title,
+                                project_location: project.location,
+                                project_category: project.category,
+                                position: i,
+                              });
+                            }}
                           />
                         </motion.div>
                         {closesTriplet && (

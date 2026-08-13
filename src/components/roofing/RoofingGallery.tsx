@@ -1,3 +1,4 @@
+import { trackGalleryProjectOpen } from "@/lib/gtm";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
@@ -57,7 +58,15 @@ const RoofingGallery = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                onClick={() => setLightboxIdx(i)}
+                onClick={() => {
+                  setLightboxIdx(i);
+                  trackGalleryProjectOpen({
+                    gallery: "roofing_gallery",
+                    project_title: project.title,
+                    project_category: project.category,
+                    position: i,
+                  });
+                }}
                 className="group relative aspect-[4/3] rounded-sm overflow-hidden text-left cursor-pointer"
               >
                 <img width={1600} height={1067} decoding="async"

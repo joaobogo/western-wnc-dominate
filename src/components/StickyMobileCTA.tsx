@@ -35,6 +35,7 @@ const StickyMobileCTA = () => {
       cta_text: action.primaryLabel,
       destination_url: action.primaryHref,
       click_location: "sticky_bar",
+      cta_position: "sticky_bar",
     });
   const onIntakePage = INTAKE_ROUTES.some(
     (r) => pathname === r || pathname.startsWith(`${r}/`),
@@ -193,7 +194,7 @@ const StickyMobileCTA = () => {
             <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-raised">
               {/* Two-column layout: Primary (Get My Written Estimate) + Call */}
               {/* One primary action per page — see src/lib/page-cta-hierarchy.ts */}
-              <div className="flex items-stretch" data-gtm-location="sticky_bar">
+              <div className="flex items-stretch" data-gtm-location="sticky_bar" data-gtm-position="sticky_bar" data-sticky-cta>
                 {callIsPrimary ? (
                   <>
                     <a
@@ -211,6 +212,7 @@ const StickyMobileCTA = () => {
                     </a>
                     <Link
                       to={action.secondaryHref}
+                      data-gtm-cta="request_inspection"
                       onClick={() => trackEvent("cta_click", { label: action.secondaryLabel, elementId: "sticky-cta-mobile-estimate" })}
                       className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
                     >

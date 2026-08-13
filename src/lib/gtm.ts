@@ -37,6 +37,9 @@ export const GTM_EVENTS = {
   // Content engagement
   TOWN_FAQ_OPEN: "town_faq_open",
   TOWN_FAQ_CONVERSION_INTENT: "town_faq_conversion_intent",
+  // Gallery / project proof
+  GALLERY_PROJECT_OPEN: "gallery_project_open",
+  GALLERY_CTA_CLICK: "gallery_cta_click",
   SCROLL_DEPTH: "scroll_depth",
   SCROLL_75: "scroll_75",
   EXIT_INTENT_SHOWN: "exit_intent_shown",
@@ -168,6 +171,44 @@ function resolveTown(el: Element | null): string | null {
     node = node.parentElement;
   }
   return null;
+}
+
+/* ---------- CTA position ----------
+ * Every cta_click carries WHERE on the page the click happened so CRO tests
+ * can compare hero vs mid-page vs closing CTA performance:
+ *   - `cta_position`: explicit `data-gtm-position` if present, otherwise a
+ *     fold bucket derived from the element's offset (above_fold / mid_page /
+ *     page_bottom / sticky_bar).
+ *   - `cta_viewport_pct`: how far down the document the CTA sits (0-100).
+ */
+export function resolveCtaPosition(el: Element | null): {
+  cta_position: string;
+  cta_viewport_pct: number | null;
+} {
+  if (!el || typeof window === "undefined") return { cta_position: "unknown", cta_viewport_pct: null };
+
+  let node: Element | null = el;
+  while (node) {
+    const explicit = node.getAttribute?.("data-gtm-position");
+    if (explicit) return { cta_position: explicit, cta_viewport_pct: null };
+    node = node.parentElement;
+  }
+
+  const rect = el.getBoundingClientRect();
+  const style = window.getComputedStyle(el);
+  if (style.position === "fixed" || el.closest("[data-sticky-cta]")) {
+    return { cta_position: "sticky_bar", cta_viewport_pct: null };
+  }
+
+  const docHeight = Math.max(document.documentElement.scrollHeight, 1);
+  const absoluteTop = rect.top + window.scrollY;
+  const pct = Math.min(100, Math.max(0, Math.round((absoluteTop / docHeight) * 100)));
+
+  let bucket = "mid_page";
+  if (absoluteTop < window.innerHeight) bucket = "above_fold";
+  else if (pct >= 80) bucket = "page_bottom";
+
+  return { cta_position: bucket, cta_viewport_pct: pct };
 }
 
 /* ---------- Town-scoped source attribution ----------
@@ -367,16 +408,73 @@ export function trackCtaClick(opts: {
   cta_type?: string | null;
   destination_url: string;
   town?: string | null;
+  /** Where on the page the CTA sits: above_fold | mid_page | page_bottom | sticky_bar | custom. */
+  cta_position?: string | null;
+  cta_viewport_pct?: number | null;
 }) {
   push({
     event: GTM_EVENTS.CTA_CLICK,
     cta_location: opts.cta_location,
     cta_text: opts.cta_text ?? null,
     cta_type: opts.cta_type ?? null,
+    cta_position: opts.cta_position ?? null,
+    cta_viewport_pct: opts.cta_viewport_pct ?? null,
     destination_url: opts.destination_url,
     town: opts.town ?? null,
     page_path: pagePath(),
     page_title: pageTitle(),
+  });
+}
+
+/* ---------- Gallery / project proof ---------- */
+
+/** A visitor opened a project card or lightbox in any gallery. */
+export function trackGalleryProjectOpen(opts: {
+  gallery: string;
+  project_title: string;
+  project_location?: string | null;
+  project_category?: string | null;
+  position: number;
+}) {
+  push({
+    event: GTM_EVENTS.GALLERY_PROJECT_OPEN,
+    gallery: opts.gallery,
+    project_title: opts.project_title,
+    project_location: opts.project_location ?? null,
+    project_category: opts.project_category ?? null,
+    cta_position: `gallery_item_${opts.position + 1}`,
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+}
+
+/** A CTA inside a gallery / project block was clicked. Also emits cta_click. */
+export function trackGalleryCtaClick(opts: {
+  gallery: string;
+  cta_text: string;
+  destination_url: string;
+  project_title?: string | null;
+  town?: string | null;
+  cta_position?: string | null;
+}) {
+  push({
+    event: GTM_EVENTS.GALLERY_CTA_CLICK,
+    gallery: opts.gallery,
+    cta_text: opts.cta_text,
+    destination_url: opts.destination_url,
+    project_title: opts.project_title ?? null,
+    town: opts.town ?? null,
+    cta_position: opts.cta_position ?? "gallery",
+    page_path: pagePath(),
+    page_title: pageTitle(),
+  });
+  trackCtaClick({
+    cta_location: opts.gallery,
+    cta_text: opts.cta_text,
+    cta_type: "gallery",
+    destination_url: opts.destination_url,
+    town: opts.town ?? null,
+    cta_position: opts.cta_position ?? "gallery",
   });
 }
 
@@ -594,12 +692,15 @@ export function installGtmGlobalListeners() {
           pagePath();
         const loc = resolveClickLocation(ctaEl);
         const town = resolveTown(ctaEl);
+        const pos = resolveCtaPosition(ctaEl);
         trackCtaClick({
           cta_location: loc,
           cta_text: ctaEl.textContent?.trim().slice(0, 80) || null,
           cta_type: cta,
           destination_url: dest,
           town,
+          cta_position: pos.cta_position,
+          cta_viewport_pct: pos.cta_viewport_pct,
         });
         if (cta === "request_quote") {
           trackRequestQuoteClick({ click_location: loc, destination_url: dest, town });
@@ -627,12 +728,15 @@ export function installGtmGlobalListeners() {
         const phoneLoc = resolveClickLocation(anchor);
         const phoneTown = resolveTown(anchor);
         if (!anchor.closest("[data-gtm-cta]")) {
+          const phonePos = resolveCtaPosition(anchor);
           trackCtaClick({
             cta_location: phoneLoc,
             cta_text: display,
             cta_type: "phone",
             destination_url: href,
             town: phoneTown,
+            cta_position: phonePos.cta_position,
+            cta_viewport_pct: phonePos.cta_viewport_pct,
           });
         }
         trackPhoneClick({
@@ -788,6 +892,7 @@ export function trackPrimaryCtaClick(opts: {
   cta_text: string;
   destination_url: string;
   click_location: string;
+  cta_position?: string | null;
 }) {
   push({
     event: "primary_cta_click",
@@ -796,6 +901,7 @@ export function trackPrimaryCtaClick(opts: {
     cta_text: opts.cta_text,
     destination_url: opts.destination_url,
     click_location: opts.click_location,
+    cta_position: opts.cta_position ?? null,
     page_path: pagePath(),
     page_title: pageTitle(),
   });
@@ -804,6 +910,7 @@ export function trackPrimaryCtaClick(opts: {
     cta_text: opts.cta_text,
     cta_type: `primary_${opts.intent}`,
     destination_url: opts.destination_url,
+    cta_position: opts.cta_position ?? null,
   });
 }
 

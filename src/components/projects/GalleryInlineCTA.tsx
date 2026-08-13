@@ -1,7 +1,7 @@
 import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
-import { trackCtaClick } from "@/lib/gtm";
+import { trackGalleryCtaClick } from "@/lib/gtm";
 
 interface Props {
   /** Which break this is (1-based) — used for analytics only. */
@@ -35,11 +35,11 @@ const GalleryInlineCTA = ({ position, towns = [], className = "" }: Props) => {
         <Link
           to="/request-inspection"
           onClick={() =>
-            trackCtaClick({
-              cta_location: `gallery_inline_${position}`,
+            trackGalleryCtaClick({
+              gallery: "project_gallery",
               cta_text: "Request a Scope",
-              cta_type: "primary",
               destination_url: "/request-inspection",
+              cta_position: `gallery_inline_${position}`,
             })
           }
           className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
