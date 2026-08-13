@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Phone, ClipboardList, MessageSquare, ArrowRight } from "lucide-react";
 
 // CRO Prompt 34 — Contact page opens with a choice of channel.
@@ -14,7 +13,6 @@ type Channel = {
   next: string;
   action: string;
   href: string;
-  external?: boolean;
   primary?: boolean;
 };
 
@@ -27,7 +25,6 @@ const CHANNELS: Channel[] = [
     next: "A Highlander team member picks up or calls you back — no call center, no phone tree.",
     action: "(828) 524-7773",
     href: "tel:+18285247773",
-    external: true,
     primary: true,
   },
   {
@@ -47,7 +44,6 @@ const CHANNELS: Channel[] = [
     next: "A written answer back within 24 hours — no appointment, no sales follow-up.",
     action: "info@highlandernc.com",
     href: "mailto:info@highlandernc.com",
-    external: true,
   },
 ];
 
@@ -103,11 +99,7 @@ const ContactChannels = () => (
               transition={{ delay: i * 0.08, duration: 0.5 }}
               className="h-full"
             >
-              {c.external ? (
-                <a href={c.href} className={cardClass}>{inner}</a>
-              ) : (
-                <Link to={c.href} className={cardClass}>{inner}</Link>
-              )}
+              <a href={c.href} className={cardClass}>{inner}</a>
             </motion.div>
           );
         })}
