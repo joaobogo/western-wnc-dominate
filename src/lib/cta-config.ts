@@ -15,18 +15,18 @@
 
 export const CTA = {
   /** Homepage hero, sticky CTA, main nav */
-  primary: "Start Your Project",
+  primary: "Get My Project Scoped",
 
   /** Roofing division pages — confidence & planning language */
-  roofingConsult: "Request a Roof Consultation",
+  roofingConsult: "Get My Roof Assessed",
   roofingHero: "Plan Your Roof With Confidence",
-  roofingMid: "Talk With a Roofing Advisor",
+  roofingMid: "Talk to a Local Roofing Advisor",
   roofingClosing: "Let's Protect What Matters Most",
 
   /** Construction division pages — build & project language */
-  constructionConsult: "Schedule a Project Consultation",
+  constructionConsult: "Get My Build Planned",
   constructionHero: "Let's Plan Your Build",
-  constructionMid: "Discuss Your Project Scope",
+  constructionMid: "Get My Project Scope Written",
   constructionClosing: "Your Home Deserves a Real Builder",
 
   /** Construction primary CTA — used across construction pages */
@@ -36,7 +36,7 @@ export const CTA = {
   designAgreement: "Start with a Design Agreement",
 
   /** About page — trust & exploration language */
-  aboutHero: "Talk With Our Team",
+  aboutHero: "Talk to a Local Advisor",
   aboutClosing: "See What We've Built — Then Decide",
   aboutExplore: "Explore Our Work",
 
@@ -51,10 +51,10 @@ export const CTA = {
   blogService: "Talk to the Team That Wrote This",
 
   /** Contact page — direct & premium */
-  contactSubmit: "Start the Conversation",
+  contactSubmit: "Talk to a Local Advisor",
 
   /** Generic consultation — Reviews, Certifications */
-  consultation: "Talk With Our Team",
+  consultation: "Talk to a Local Advisor",
 
   /** Commercial / B2B contexts */
   commercial: "Discuss Your Building",
@@ -63,19 +63,19 @@ export const CTA = {
   footer: "Discuss Your Project",
 
   /** Storm / emergency context */
-  storm: "Request an Assessment",
+  storm: "Get My Roof Assessed",
 
   /** Roof designer lead capture */
-  designer: "Request a Project Consultation",
+  designer: "Get My Project Scoped",
 
   /** Mobile sticky bar */
-  mobileSticky: "Start Project",
+  mobileSticky: "Get My Estimate",
 } as const;
 
 /* ─── SECONDARY CTA LABELS ─── */
 export const CTA_SECONDARY = {
   call: "(828) 524-7773",
-  callLabel: "Call Direct",
+  callLabel: "Call Direct: 828-524-7773",
 } as const;
 
 /* ─── SUPPORTING COPY — Page-specific ─── */
