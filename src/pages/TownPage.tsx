@@ -390,14 +390,13 @@ const TownPage = () => {
         </section>
 
         <ProjectConcierge />
-        
-        {/* 7.5 Town-specific FAQ (uses proof FAQs if available) */}
+
+        {/* 6. LOCAL FAQ */}
         <TownFAQ town={town} faqs={townFaqs} />
 
-        {/* 7.6 Town-mapped estimate CTA */}
-        <TownEstimateCTA town={town} />
+        <InspectionForm />
 
-        {/* 8. Internal Linking Engine - Nearby Areas */}
+        {/* 7. NEARBY COVERAGE */}
         <NearbyTowns currentTown={town} />
 
         <LocalLinkWeb
@@ -406,12 +405,6 @@ const TownPage = () => {
           groups={getTownLinkWeb(town)}
         />
 
-        <div className="container-tight pt-16 md:pt-20 space-y-14">
-          <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" />
-          <AttributedReviews town={town.name} category="roofing" />
-        </div>
-        <WhoShowsUp town={town.name} />
-        <InspectionForm />
         <RelatedLinks
           eyebrow="Explore Services"
           heading={`Roofing & construction for ${town.name} homeowners`}
