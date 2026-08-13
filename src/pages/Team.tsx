@@ -97,11 +97,9 @@ const Team = () => {
                     <p className="text-primary font-heading font-bold text-body-xs uppercase tracking-[0.18em] mb-4">
                       {member.role}
                     </p>
-                    <div className="space-y-3 text-foreground/80 font-body text-body-sm leading-relaxed mb-5">
-                      {member.bio.slice(0, 2).map((p, i) => (
-                        <p key={i}>{p}</p>
-                      ))}
-                    </div>
+                    <p className="text-foreground/80 font-body text-body-sm leading-relaxed mb-5 line-clamp-6">
+                      {member.bio[0]}
+                    </p>
                     <dl className="mt-auto grid gap-y-3 pt-5 border-t border-border">
                       {member.details.slice(0, 3).map((d) => (
                         <div key={d.label} className="flex flex-col">
