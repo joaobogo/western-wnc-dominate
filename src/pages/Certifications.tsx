@@ -97,6 +97,30 @@ const certifications = [
   },
 ];
 
+/** Aligned badge row (Design Prompt 20): one plain-language line per credential. */
+const badgeRow = [
+  {
+    image: badgeCertainteedMaster,
+    name: "CertainTeed ShingleMaster",
+    plain: "Factory-certified installers, which is what unlocks the longest CertainTeed warranty coverage on your roof.",
+  },
+  {
+    image: badgeVelux,
+    name: "VELUX Certified Installer",
+    plain: "Trained by VELUX to cut, flash, and seal skylights so the opening stays watertight.",
+  },
+  {
+    image: badgeJamesHardie,
+    name: "James Hardie Preferred Remodeler",
+    plain: "Certified to install fiber cement siding to the manufacturer's written best-practice manual.",
+  },
+  {
+    image: badgeHaag,
+    name: "HAAG Certified Inspector",
+    plain: "Trained to document storm damage the same way insurance adjusters evaluate it.",
+  },
+];
+
 const qualityStandards = [
   {
     icon: Eye,
@@ -179,6 +203,31 @@ const Certifications = () => {
                 and ongoing compliance — and each one directly benefits the quality and protection of your project.
               </p>
             </motion.div>
+            {/* Aligned badge row — equal height, plain-language explanation */}
+            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-14">
+              {badgeRow.map((b, i) => (
+                <motion.li
+                  key={b.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06, duration: 0.45 }}
+                  className="flex flex-col items-center text-center border border-border bg-card rounded-sm p-5 md:p-6 h-full"
+                >
+                  <div className="h-16 md:h-20 w-full flex items-center justify-center mb-4">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src={b.image}
+                      alt={`${b.name} certification badge`}
+                      className="max-h-full max-w-[140px] object-contain"
+                    />
+                  </div>
+                  <h3 className="font-heading font-bold text-body-sm text-foreground leading-snug mb-2">{b.name}</h3>
+                  <p className="text-muted-foreground text-body-xs leading-relaxed">{b.plain}</p>
+                </motion.li>
+              ))}
+            </ul>
             <CredentialCards variant="light" />
           </div>
         </section>
