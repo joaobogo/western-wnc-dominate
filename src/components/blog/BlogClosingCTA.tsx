@@ -1,3 +1,4 @@
+import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { trackCtaClick } from "@/lib/gtm";
@@ -50,6 +51,7 @@ const BlogClosingCTA = ({ cta, town }: Props) => (
         {cta.ctaLabel} <ArrowRight className="w-4 h-4" aria-hidden="true" />
       </Link>
     </div>
+    <CTAProofLine align="start" className="mt-4" />
     <p className="text-muted-foreground text-xs mt-5">
       Calls are answered by the local team during working hours. Messages get a reply within one business day.
     </p>
