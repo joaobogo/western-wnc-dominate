@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle, Phone, ArrowRight, Clock, Shield } from "lucide-react";
 import { pickGuideLink, pickProjectLinks, type LeadCategory } from "@/lib/confirmation-links";
@@ -34,6 +35,13 @@ const LeadConfirmationPanel = ({
   const projects = pickProjectLinks({ town, category, count: 2 });
   const guide = pickGuideLink({ town });
   const items = summary.filter((s) => s.value && String(s.value).trim().length > 0);
+
+  // Signal the confirmation state so recovery prompts stay away.
+  useEffect(() => {
+    document.body.dataset.leadConfirmed = "true";
+    try { sessionStorage.setItem("hl_lead_submitted", "1"); } catch { /* ignore */ }
+    return () => { delete document.body.dataset.leadConfirmed; };
+  }, []);
 
   const dark = tone === "dark";
   const text = dark ? "text-dark-section-foreground" : "text-foreground";
