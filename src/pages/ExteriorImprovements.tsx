@@ -459,7 +459,6 @@ const ExteriorImprovements = () => {
           subheadline="Whether it's siding that's seen better days, windows that don't perform anymore, or an exterior that needs protection — let's talk about what's possible."
           eyebrow="Transform Your Exterior"
         />
-        <TieredOffer context="exterior-improvements" primaryLabel="Get My Exterior Scoped" />
           </>
         }
       />
