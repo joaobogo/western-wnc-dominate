@@ -214,6 +214,14 @@ const StickyMobileCTA = () => {
                   </>
                 ) : (
                   <>
+                    <a
+                      href={action.secondaryHref}
+                      onClick={() => trackEvent("phone_click", { label: "Call Direct", elementId: "sticky-cta-mobile-call" })}
+                      className="flex-1 flex items-center justify-center gap-2 px-3 border-r border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
+                    >
+                      <Phone className="w-4 h-4" aria-hidden="true" />
+                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
+                    </a>
                     <Link
                       to={action.primaryHref}
                       onClick={() => {
@@ -225,14 +233,6 @@ const StickyMobileCTA = () => {
                       <FileText className="w-4 h-4" aria-hidden="true" />
                       <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.08em]">Get My Written Estimate</span>
                     </Link>
-                    <a
-                      href={action.secondaryHref}
-                      onClick={() => trackEvent("phone_click", { label: "Call Direct", elementId: "sticky-cta-mobile-call" })}
-                      className="flex-1 flex items-center justify-center gap-2 px-3 border-l border-border text-primary active:bg-primary/10 active:scale-95 transition-all min-h-[56px]"
-                    >
-                      <Phone className="w-4 h-4" aria-hidden="true" />
-                      <span className="text-body-xs font-body font-extrabold uppercase tracking-[0.06em]">Call</span>
-                    </a>
                   </>
                 )}
               </div>
