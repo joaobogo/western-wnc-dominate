@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Phone, ArrowRight, Clock, Shield } from "lucide-react";
-import { pickGuideLink, pickProjectLink, type LeadCategory } from "@/lib/confirmation-links";
+import { pickGuideLink, pickProjectLinks, type LeadCategory } from "@/lib/confirmation-links";
 import { trackPhoneClick } from "@/lib/gtm";
 
 export interface SubmittedSummaryItem {
@@ -31,7 +31,7 @@ const LeadConfirmationPanel = ({
   tone?: "light" | "dark";
   className?: string;
 }) => {
-  const project = pickProjectLink({ town, category });
+  const projects = pickProjectLinks({ town, category, count: 2 });
   const guide = pickGuideLink({ town });
   const items = summary.filter((s) => s.value && String(s.value).trim().length > 0);
 
@@ -103,39 +103,36 @@ const LeadConfirmationPanel = ({
         </a>
       </div>
 
+      <p className={`mb-3 font-body text-body-xs font-bold uppercase tracking-[0.18em] ${gold}`}>
+        Work we've done nearby
+      </p>
       <div className="grid gap-3 sm:grid-cols-2">
-        <Link
-          to={project.path}
-          className={`group border ${card} p-5 transition-colors hover:border-[hsl(var(--highland-gold)/0.5)]`}
-        >
-          <span className={`mb-2 block font-body text-caption font-bold uppercase tracking-[0.18em] ${gold}`}>
-            See the work
-          </span>
-          <span className={`block font-heading text-body-sm font-bold leading-snug ${text}`}>
-            {project.label}
-          </span>
-          <span className={`mt-1 block font-body text-body-xs ${muted}`}>{project.description}</span>
-          <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
-            View project <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          </span>
-        </Link>
-
-        <Link
-          to={guide.path}
-          className={`group border ${card} p-5 transition-colors hover:border-[hsl(var(--highland-gold)/0.5)]`}
-        >
-          <span className={`mb-2 block font-body text-caption font-bold uppercase tracking-[0.18em] ${gold}`}>
-            While you wait
-          </span>
-          <span className={`block font-heading text-body-sm font-bold leading-snug ${text}`}>
-            {guide.label}
-          </span>
-          <span className={`mt-1 block font-body text-body-xs ${muted}`}>{guide.description}</span>
-          <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
-            Read the guide <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          </span>
-        </Link>
+        {projects.map((project) => (
+          <Link
+            key={project.path}
+            to={project.path}
+            className={`group border ${card} p-5 transition-colors hover:border-[hsl(var(--highland-gold)/0.5)]`}
+          >
+            <span className={`block font-heading text-body-sm font-bold leading-snug ${text}`}>
+              {project.label}
+            </span>
+            <span className={`mt-1 block font-body text-body-xs ${muted}`}>{project.description}</span>
+            <span className={`mt-3 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold}`}>
+              View project <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </span>
+          </Link>
+        ))}
       </div>
+
+      <Link
+        to={guide.path}
+        className={`mt-4 inline-flex items-center gap-1 font-body text-body-xs font-bold ${gold} hover:opacity-85`}
+      >
+        While you wait: {guide.label} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </Link>
+    </div>
+  );
+};
     </div>
   );
 };
