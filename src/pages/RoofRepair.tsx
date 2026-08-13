@@ -28,6 +28,10 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import UrgentActionSteps from "@/components/emergency/UrgentActionSteps";
+import InsuranceDocHelp from "@/components/emergency/InsuranceDocHelp";
+import RepairPhotoProof from "@/components/emergency/RepairPhotoProof";
+import FastLeadForm from "@/components/FastLeadForm";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -186,6 +190,34 @@ const RoofRepair = () => {
           answer="Roof repair addresses a specific, contained failure — a leak, wind-lifted shingles, damaged flashing, or a compromised penetration — without replacing the whole roof. Repair is usually the right call when the roof is otherwise sound and has meaningful service life left. Highlander assesses the roof first and tells you plainly whether repair or replacement makes more sense."
           points={["Leak diagnosis before any work is quoted", "Flashing, penetrations, and storm damage repairs", "Honest repair-versus-replace recommendation"]}
         />
+
+        {/* ─── EMERGENCY-INTENT: WHAT TO DO RIGHT NOW ─── */}
+        <UrgentActionSteps variant="repair" />
+
+        {/* ─── PHOTO PROOF OF SIMILAR REPAIRS ─── */}
+        <RepairPhotoProof variant="repair" />
+
+        {/* ─── INSURANCE DOCUMENTATION HELP ─── */}
+        <InsuranceDocHelp />
+
+        {/* ─── SHORT FORM FOR NON-URGENT CASES ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight max-w-2xl">
+            <div className="mb-6 text-center">
+              <span className="eyebrow mb-3 block">Not an Emergency?</span>
+              <h2 className="section-heading mb-3">Send It Over and We'll Call You Back.</h2>
+              <p className="text-muted-foreground text-[15px] font-body leading-relaxed">
+                If the leak isn't active right now, four quick fields are all we need to get a
+                repair assessment on the schedule.
+              </p>
+            </div>
+            <FastLeadForm
+              ctaLabel="Get My Repair Assessment"
+              serviceLabel="Roof Repair"
+              urgencyOptions={["Active leak today", "Within a week", "Within a month", "Just planning ahead"]}
+            />
+          </div>
+        </section>
 
         {/* ─── OPENING STATEMENT — Clinical diagnostic style ─── */}
         <section className="section-padding bg-background">

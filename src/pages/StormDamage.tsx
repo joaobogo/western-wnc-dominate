@@ -27,6 +27,9 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import UrgentActionSteps from "@/components/emergency/UrgentActionSteps";
+import RepairPhotoProof from "@/components/emergency/RepairPhotoProof";
+import FastLeadForm from "@/components/FastLeadForm";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -238,6 +241,12 @@ const StormDamage = () => {
           points={["Damage documentation for your insurance claim", "Temporary protection to stop further water intrusion", "Full repair or replacement once scope is set"]}
         />
 
+        {/* ─── EMERGENCY-INTENT: WHAT TO DO RIGHT NOW ─── */}
+        <UrgentActionSteps variant="storm" />
+
+        {/* ─── PHOTO PROOF OF SIMILAR STORM WORK ─── */}
+        <RepairPhotoProof variant="storm" />
+
         {/* ─── OPENING STATEMENT ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
@@ -394,6 +403,25 @@ const StormDamage = () => {
                 </motion.div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ─── SHORT FORM FOR NON-URGENT CASES ─── */}
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight max-w-2xl">
+            <div className="mb-6 text-center">
+              <span className="eyebrow mb-3 block">No Active Water Intrusion?</span>
+              <h2 className="section-heading mb-3">Request a Documented Damage Assessment.</h2>
+              <p className="text-muted-foreground text-[15px] font-body leading-relaxed">
+                If nothing is leaking right now, send four quick fields and we'll schedule an
+                inspection with photo documentation for your records or your claim.
+              </p>
+            </div>
+            <FastLeadForm
+              ctaLabel="Get My Damage Assessment"
+              serviceLabel="Storm Damage"
+              urgencyOptions={["Water coming in now", "Within 48 hours", "This week", "Documenting for insurance"]}
+            />
           </div>
         </section>
 
