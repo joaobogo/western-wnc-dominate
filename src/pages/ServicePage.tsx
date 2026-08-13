@@ -113,6 +113,7 @@ const ServicePage = () => {
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-4 text-balance text-white leading-[0.95] tracking-tightest">
                 {service.headline}
               </h1>
+              <PageContext division={`${theme.label} Division`} area="Western North Carolina" tone="dark" />
               <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {service.subheadline}
               </p>
