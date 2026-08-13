@@ -172,7 +172,7 @@ export const brandAssets = {
   tagline: "Expert Local Roofer",
   phone: "(828) 524-7773",
   locations: [
-    { name: "Franklin, NC", address: "1511 Highlands Road, Franklin, NC 28734" },
+    { name: "Franklin, NC", address: "76 Creative Dr, Franklin, NC 28734" },
     { name: "Sylva, NC", address: "28 Cross Stitch Mountain Road, Sylva, NC 28779" },
   ],
   certifications: [

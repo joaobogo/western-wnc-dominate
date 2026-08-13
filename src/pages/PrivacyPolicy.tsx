@@ -7,7 +7,7 @@ import SEOHead from "@/components/SEOHead";
 const LAST_UPDATED = "June 24, 2026";
 const WEBSITE_URL = "https://highlandernc.com/";
 const EMAIL = "luke@highlandernc.com";
-const ADDRESS = "1511 Highlands Rd, Franklin, NC 28734";
+const ADDRESS = "76 Creative Dr, Franklin, NC 28734";
 const COMPANY = "Highlander Roofing Services, Inc.";
 // Sitewide customer phone. The RealWork template listed (828) 526-6421 —
 // see the "Needs Client Input" callout under Section 6 for the flagged mismatch.

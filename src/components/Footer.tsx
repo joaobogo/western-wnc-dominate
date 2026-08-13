@@ -202,7 +202,7 @@ const Footer = () => {
                   <MapPin className="w-4 h-4 text-primary/80 flex-shrink-0 mt-0.5" />
                   <div className="text-[16px] text-foreground/80 font-body leading-relaxed">
                     <span className="block font-bold text-foreground mb-0.5 text-[17px]">Franklin Office</span>
-                    1511 Highlands Road<br />
+                    76 Creative Dr<br />
                     Franklin, NC 28734
                   </div>
                 </div>

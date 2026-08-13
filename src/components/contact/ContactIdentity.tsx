@@ -24,7 +24,7 @@ const ContactIdentity = () => (
             <div>
               <p className="text-sm font-heading font-semibold text-foreground">Franklin Office</p>
               <address className="not-italic text-sm text-muted-foreground font-body">
-                1511 Highlands Road<br />Franklin, NC 28734
+                76 Creative Dr<br />Franklin, NC 28734
               </address>
             </div>
           </li>
