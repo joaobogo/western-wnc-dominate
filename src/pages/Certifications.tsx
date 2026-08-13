@@ -97,9 +97,8 @@ const certifications = [
 ];
 
 /** Aligned badge row (Design Prompt 20): one plain-language line per credential. */
-const badgeRow = [
+const badgeRow: { image?: string; name: string; plain: string }[] = [
   {
-    image: badgeCertainteedMaster,
     name: "CertainTeed ShingleMaster",
     plain: "Factory-certified installers, which is what unlocks the longest CertainTeed warranty coverage on your roof.",
   },
@@ -109,12 +108,10 @@ const badgeRow = [
     plain: "Trained by VELUX to cut, flash, and seal skylights so the opening stays watertight.",
   },
   {
-    image: badgeJamesHardie,
     name: "James Hardie Preferred Remodeler",
     plain: "Certified to install fiber cement siding to the manufacturer's written best-practice manual.",
   },
   {
-    image: badgeHaag,
     name: "HAAG Certified Inspector",
     plain: "Trained to document storm damage the same way insurance adjusters evaluate it.",
   },
@@ -214,13 +211,19 @@ const Certifications = () => {
                   className="flex flex-col items-center text-center border border-border bg-card rounded-sm p-5 md:p-6 h-full"
                 >
                   <div className="h-16 md:h-20 w-full flex items-center justify-center mb-4">
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      src={b.image}
-                      alt={`${b.name} certification badge`}
-                      className="max-h-full max-w-[140px] object-contain"
-                    />
+                    {b.image ? (
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src={b.image}
+                        alt={`${b.name} certification badge`}
+                        className="max-h-full max-w-[140px] object-contain"
+                      />
+                    ) : (
+                      <span className="w-14 h-14 rounded-full border border-[hsl(var(--highland-gold)/0.45)] bg-[hsl(var(--highland-gold)/0.08)] flex items-center justify-center">
+                        <ShieldCheck className="w-6 h-6 text-[hsl(var(--highland-gold))]" aria-hidden="true" />
+                      </span>
+                    )}
                   </div>
                   <h3 className="font-heading font-bold text-body-sm text-foreground leading-snug mb-2">{b.name}</h3>
                   <p className="text-muted-foreground text-body-xs leading-relaxed">{b.plain}</p>
