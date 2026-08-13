@@ -598,22 +598,8 @@ const BlogPostPage = () => {
                   </div>
                 )}
 
-                {/* Sidebar CTA */}
-                <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
-                  <Shield className="w-6 h-6 text-[hsl(var(--gold-ink))] mx-auto mb-3" />
-                  <h2 className="font-heading font-semibold text-primary-foreground text-sm mb-2">
-                    Need Expert Advice?
-                  </h2>
-                  <p className="text-primary-foreground/85 text-xs mb-4">
-                    No pressure, no upselling — just honest expert advice.
-                  </p>
-                  <Link
-                    to="/consultation"
-                    className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center"
-                  >
-                    Request a Consultation <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
+                {/* Sticky desktop sidebar CTA */}
+                <BlogSidebarCTA cta={blogCta} town={post.town} />
               </div>
             </div>
           </div>
