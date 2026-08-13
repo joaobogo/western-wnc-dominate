@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
 import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/SEOHead";
 import FastLeadForm from "@/components/FastLeadForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { trackPhoneClick } from "@/lib/gtm";
+import logo from "@/assets/logo.svg";
 
 interface PaidAdsLandingProps {
   title: string;
@@ -65,47 +66,51 @@ const PaidAdsLanding = ({
         <section className="relative overflow-hidden section-dark">
           <div className="absolute inset-0">
             <img width={1600} height={1067} decoding="async" src={heroImage} alt={heroAlt} className="h-full w-full object-cover" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/88 to-background/55" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/97 via-background/92 to-background/70" />
+            <div className="absolute inset-0 bg-background/45 md:bg-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-6 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
-            <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-4">
-              <Link to="/" className="font-heading text-lg font-bold text-primary-foreground hover:opacity-80 transition-opacity">
-                Highlander Roofing & Construction
-              </Link>
+          <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-4 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
+            <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-3">
+              <span className="flex items-center gap-2">
+                <img src={logo} alt="Highlander Roofing Services, Inc." width={160} height={48} className="h-10 w-auto md:h-12" loading="eager" decoding="sync" />
+                <span className="sr-only">Highlander Roofing Services, Inc.</span>
+              </span>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/85 hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" />
                 (828) 524-7773
               </a>
             </div>
 
-            <div className="grid gap-10 pt-12 lg:grid-cols-12 lg:items-start">
-              <div className="lg:col-span-7">
+            <div className="grid gap-6 pt-6 md:pt-10 lg:grid-cols-12 lg:items-start lg:gap-x-10 lg:gap-y-8 lg:pt-12">
+              <div className="order-1 lg:col-span-7 lg:col-start-1 lg:row-start-1">
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                  <div className="mb-4 text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
+                  <div className="mb-3 text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
                     {eyebrow}
                   </div>
-                  <h1 className="max-w-3xl text-4xl font-heading font-bold leading-[1.04] text-primary-foreground md:text-5xl lg:text-6xl">
+                  <h1 className="max-w-3xl text-[30px] font-heading font-bold leading-[1.06] text-primary-foreground md:text-5xl lg:text-6xl">
                     {headline}
                   </h1>
-                  <p className="mt-5 max-w-2xl text-base font-body leading-relaxed text-primary-foreground/90 md:text-lg">
+                  <p className="mt-3 max-w-2xl text-sm font-body leading-relaxed text-primary-foreground/90 md:mt-5 md:text-lg">
                     {subheadline}
                   </p>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.5 }} className="mt-8 flex flex-wrap gap-3">
+                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.5 }} className="mt-6 hidden flex-wrap gap-3 lg:flex">
                   <a href="#fast-lead-form" className="inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">
                     {ctaLabel}
                     <ArrowRight className="h-4 w-4" />
                   </a>
                   <a href="tel:+18285247773" className="inline-flex items-center gap-2 border border-primary-foreground/20 bg-primary-foreground/5 px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
                     <Phone className="h-4 w-4" />
-                    Call Direct
+                    Call Direct: 828-524-7773
                   </a>
                 </motion.div>
+              </div>
 
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.5 }} className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="order-3 lg:col-span-7 lg:col-start-1 lg:row-start-2">
+                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.5 }} className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                   {trustStats.map((item) => (
                     <div key={item.label} className="border border-primary-foreground/12 bg-primary-foreground/5 px-4 py-4">
                       <div className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}</div>
@@ -116,7 +121,7 @@ const PaidAdsLanding = ({
                 </motion.div>
               </div>
 
-              <div className="lg:col-span-5" id="fast-lead-form">
+              <div className="order-2 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1" id="fast-lead-form">
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.5 }}>
                   <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} />
                 </motion.div>
@@ -214,23 +219,53 @@ const PaidAdsLanding = ({
         <section className="bg-primary py-10 text-primary-foreground">
           <div className="container-tight flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
-              <div className="font-heading text-2xl font-bold">Need the fastest path?</div>
+              <div className="font-heading text-2xl font-bold">Ready for the next step?</div>
               <p className="mt-2 max-w-xl text-sm font-body text-primary-foreground/95">
-                Call now or use the short form above. We keep these landing pages focused so you can move quickly.
+                Use the short form above or call our Franklin office during business hours. One page, one action — no hunting around.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a href="#fast-lead-form" className="inline-flex items-center justify-center gap-2 bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-90">
-                Start Request
+                {ctaLabel}
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
                 <Phone className="h-4 w-4" />
-                (828) 524-7773
+                Call Direct: 828-524-7773
               </a>
             </div>
           </div>
         </section>
+
+        <footer className="bg-background pb-28 pt-8 md:pb-10">
+          <div className="container-tight flex flex-col gap-2 text-xs font-body text-muted-foreground md:flex-row md:items-center md:justify-between">
+            <span>© {new Date().getFullYear()} Highlander Roofing Services, Inc. · Franklin, NC · 828-524-7773</span>
+            <span className="flex gap-4">
+              <a href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</a>
+              <a href="/accessibility" className="hover:text-foreground transition-colors">Accessibility</a>
+            </span>
+          </div>
+        </footer>
+
+        {/* Sticky mobile call bar — one action, always reachable */}
+        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-4 py-3 backdrop-blur md:hidden">
+          <div className="flex gap-2">
+            <a
+              href="tel:+18285247773"
+              onClick={() => trackPhoneClick({ phone_number: "828-524-7773", link_url: "tel:+18285247773", click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
+              className="flex flex-1 items-center justify-center gap-2 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
+            >
+              <Phone className="h-4 w-4" />
+              Call Direct: 828-524-7773
+            </a>
+            <a
+              href="#fast-lead-form"
+              className="flex items-center justify-center border border-primary/40 px-4 py-3 text-sm font-semibold text-primary"
+            >
+              Form
+            </a>
+          </div>
+        </div>
       </main>
     </>
   );

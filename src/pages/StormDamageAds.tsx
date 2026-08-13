@@ -33,7 +33,7 @@ const StormDamageAds = () => (
     ]}
     trustBullets={[
       "No door-knocker pressure tactics",
-      "Licensed, insured, warranty-backed local company",
+      "Licensed and insured local company",
       "Honest scopes built around actual storm conditions",
     ]}
     testimonial={{

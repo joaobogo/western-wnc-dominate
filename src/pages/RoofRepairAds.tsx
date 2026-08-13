@@ -9,8 +9,8 @@ const RoofRepairAds = () => (
     serviceName="Roof Repair"
     heroImage={heroImg}
     heroAlt="Roof repair work on a residential home in Western North Carolina"
-    eyebrow="Roof repair landing page"
-    headline="Roof leak or damage? Get the repair answer fast."
+    eyebrow="Roof repair · Western North Carolina"
+    headline="Roof Repair in Western NC — Local Crews, Fast Leak Answers"
     subheadline="We diagnose the actual source, explain whether repair makes sense, and move quickly when water is getting inside your home."
     ctaLabel="Get My Repair Assessed"
     urgencyOptions={["Leak happening now", "Within 48 hours", "This week", "Just comparing options"]}
@@ -34,7 +34,7 @@ const RoofRepairAds = () => (
     trustBullets={[
       "Permanent-minded repairs, not temporary patchwork sold as a solution",
       "Licensed and insured local team",
-      "Written scopes and warranty-backed workmanship",
+      "Written scopes so you know exactly what is included",
     ]}
     testimonial={{
       quote: "They found the real leak source in one visit after two other contractors guessed wrong. The repair was clean, quick, and fully explained.",
