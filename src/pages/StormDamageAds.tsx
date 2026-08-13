@@ -13,6 +13,18 @@ const StormDamageAds = () => (
     headline="Storm hit your roof? Get a local response before the next rain."
     subheadline="Fast assessments, clear documentation, and straight answers for Western North Carolina homeowners dealing with wind, hail, leaks, or fallen debris."
     ctaLabel="Get My Storm Damage Assessed"
+    adVariants={{
+      hail: {
+        headline: "Hail Damage Roof Inspection in Western NC",
+        subheadline: "We document the damage with photos you can hand straight to your insurance adjuster.",
+        ctaLabel: "Get My Hail Damage Documented",
+      },
+      insurance: {
+        headline: "Storm Damage Claim Help in Western NC",
+        subheadline: "Local crews document the damage and walk your claim through with you, step by step.",
+        ctaLabel: "Get My Damage Documented",
+      },
+    }}
     urgencyOptions={["Emergency today", "Rapid response", "This week", "Just need answers"]}
     trustStats={[
       { value: "Rapid", label: "Storm response", detail: "Same-day help for urgent leak situations" },

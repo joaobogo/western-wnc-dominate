@@ -13,6 +13,18 @@ const RoofReplacementAds = () => (
     headline="Roof Replacement in Western NC — Get a Written Scope, Not a Sales Pitch"
     subheadline="We help Western North Carolina homeowners understand timing, material fit, and budget range so replacement decisions feel informed instead of rushed."
     ctaLabel="Get My Replacement Scope"
+    adVariants={{
+      quote: {
+        headline: "Roof Replacement Quotes in Western NC",
+        subheadline: "A written scope with materials, timeline, and price — no pressure and no vague ballparks.",
+        ctaLabel: "Get My Written Quote",
+      },
+      metal: {
+        headline: "Metal Roof Replacement for Mountain Homes",
+        subheadline: "Standing seam and metal systems specified for elevation, wind, and ice loads in Western North Carolina.",
+        ctaLabel: "Get My Metal Roof Quote",
+      },
+    }}
     urgencyOptions={["Need pricing soon", "Replacing this month", "Planning ahead", "Insurance-related"]}
     trustStats={[
       { value: "4.9★", label: "Google Rating", detail: "5-star roofing service" },
