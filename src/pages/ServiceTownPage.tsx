@@ -31,6 +31,8 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import LocalProjectProof from "@/components/trust/LocalProjectProof";
 import RelatedLinks from "@/components/RelatedLinks";
+import ServiceTownProofPoints from "@/components/servicetown/ServiceTownProofPoints";
+import { getServiceTownFAQs } from "@/lib/service-town-faqs";
 import { getCountyHubLink, getTownBlogLinks, estimateLink } from "@/lib/internal-links";
 
 // Per-service hero overrides so the same town's services don't all show the
@@ -106,6 +108,7 @@ const ServiceTownPage = ({
     (e) => e.serviceSlug !== serviceSlug,
   );
   const otherTowns = towns.filter((t) => t.slug !== townSlug).slice(0, 4);
+  const faqs = getServiceTownFAQs(town, entry.serviceLabel, entry.faqs);
 
   return (
     <>
@@ -127,8 +130,8 @@ const ServiceTownPage = ({
             { name: `${town.name}, ${town.state}`, url: `/service-areas/${town.slug}` },
             { name: entry.serviceLabel, url: resolvedCanonical },
           ]),
-          ...(entry.faqs.length
-            ? [faqSchema(entry.faqs.map((f) => ({ question: f.q, answer: f.a })))]
+          ...(faqs.length
+            ? [faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))]
             : []),
         ]}
       />
@@ -174,33 +177,21 @@ const ServiceTownPage = ({
               <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {entry.intro}
               </p>
-              {urgent ? (
-                /* Urgent town+service intent → the call is the primary action (CRO Prompt 12) */
-                <div className="mb-16">
-                  <CallFirstCTA
-                    townName={town.name}
-                    townSlug={town.slug}
-                    location="hero"
-                    secondaryLabel={`Request a ${entry.serviceLabel} Assessment`}
-                    secondaryTo="/consultation"
-                  />
-                </div>
-              ) : (
-              <div className="flex flex-col sm:flex-row gap-5 mb-16" data-gtm-location="hero" data-gtm-town={town.slug}>
-                <Link
-                  to="/consultation"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xl border border-[hsl(var(--highland-gold)/0.4)] min-w-[300px]"
-                >
-                  Request a {entry.serviceLabel} Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a
-                  href="tel:+18285247773"
-                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-12 py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 hover:border-white/40 transition-all duration-300 shadow-xl min-w-[240px]"
-                >
-                  <Phone className="w-5 h-5 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
-                </a>
+              {/* CRO Prompt 32 — call-first CTA in every town+service hero */}
+              <div className="mb-16">
+                <CallFirstCTA
+                  townName={town.name}
+                  townSlug={town.slug}
+                  location="hero"
+                  reason={
+                    urgent
+                      ? undefined
+                      : `Fastest way to get ${entry.serviceLabel.toLowerCase()} in ${town.name} on the schedule.`
+                  }
+                  secondaryLabel={`Request a ${entry.serviceLabel} Assessment`}
+                  secondaryTo="/consultation"
+                />
               </div>
-              )}
             </motion.div>
           </div>
 
@@ -225,6 +216,12 @@ const ServiceTownPage = ({
             </div>
           </div>
         </section>
+
+        <ServiceTownProofPoints
+          town={town}
+          serviceLabel={entry.serviceLabel}
+          proofNote={entry.proofNote}
+        />
 
         <AnswerBlock
           question={`Who handles ${entry.serviceLabel.toLowerCase()} in ${town.name}, ${town.state}?`}
@@ -306,13 +303,35 @@ const ServiceTownPage = ({
               {entry.serviceLabel} in {town.name} — Frequently Asked
             </h2>
             <Accordion type="single" collapsible className="w-full">
-              {entry.faqs.map((f, i) => (
+              {faqs.map((f, i) => (
                 <AccordionItem key={i} value={`faq-${i}`}>
                   <AccordionTrigger className="text-left font-semibold">{f.q}</AccordionTrigger>
                   <AccordionContent className="text-foreground/80">{f.a}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+        </section>
+
+        {/* Final Conversion Pathway */}
+        <section className="py-24 bg-primary text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
+          <div className="container-tight relative z-10 text-center">
+            <span className="eyebrow mb-6 block text-[hsl(var(--gold-ink))]">Start Your Project</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 leading-tight">
+              Ready to Upgrade Your <br className="hidden md:block" /> {town.name} Property?
+            </h2>
+            <p className="text-xl md:text-2xl text-white/85 max-w-2xl mx-auto mb-12 font-body leading-relaxed font-bold drop-shadow-sm">
+              Our {town.name} division specializes in {entry.serviceLabel} and residential construction. Let's discuss your scope and timing today.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg md:text-xl px-12 py-7 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[320px] justify-center uppercase tracking-wider">
+                Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" />
+              </Link>
+              <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg md:text-xl px-12 py-7 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px]">
+                <Phone className="w-6 h-6 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
+              </a>
+            </div>
           </div>
         </section>
 
@@ -394,28 +413,6 @@ const ServiceTownPage = ({
 
         {/* 8. Internal Linking Engine - Nearby Areas */}
         <NearbyTowns currentTown={town} />
-
-        {/* Final Conversion Pathway */}
-        <section className="py-24 bg-primary text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "400px auto" }} />
-          <div className="container-tight relative z-10 text-center">
-            <span className="eyebrow mb-6 block text-[hsl(var(--gold-ink))]">Start Your Project</span>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 leading-tight">
-              Ready to Upgrade Your <br className="hidden md:block" /> {town.name} Property?
-            </h2>
-            <p className="text-xl md:text-2xl text-white/85 max-w-2xl mx-auto mb-12 font-body leading-relaxed font-bold drop-shadow-sm">
-              Our {town.name} division specializes in {entry.serviceLabel} and residential construction. Let's discuss your scope and timing today.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold text-lg md:text-xl px-12 py-7 rounded-none inline-flex items-center gap-3 hover:scale-105 transition-all shadow-2xl min-w-[320px] justify-center uppercase tracking-wider">
-                Request a {entry.serviceLabel} Assessment <ArrowRight className="w-6 h-6" />
-              </Link>
-              <a href="tel:+18285247773" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg md:text-xl px-12 py-7 rounded-none inline-flex items-center justify-center gap-3 hover:bg-white/20 transition-all min-w-[240px]">
-                <Phone className="w-6 h-6 text-[hsl(var(--gold-ink))]" /> (828) 524-7773
-              </a>
-            </div>
-          </div>
-        </section>
         <LocalLinkWeb
           heading={`${entry.serviceLabel} and more across ${town.county}`}
           intro={`Related ${town.name} services, the same work in neighboring towns, and local guides for ${town.name} homeowners.`}
