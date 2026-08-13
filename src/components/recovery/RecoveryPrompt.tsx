@@ -13,6 +13,8 @@ import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/microcopy";
 import { fieldAttrs } from "@/lib/field-ergonomics";
 
 const SESSION_KEY = "hl_recovery_prompt_seen";
+/** Set once a lead is submitted — recovery never interrupts after that. */
+export const LEAD_DONE_KEY = "hl_lead_submitted";
 
 /** Pages where a recovery prompt is worth the interruption. */
 function isHighIntentPath(pathname: string): boolean {
@@ -30,6 +32,16 @@ function isMidForm(): boolean {
 }
 
 const isMobile = () => typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
+
+/** Confirmation screens mark the body — never interrupt the thank-you moment. */
+function onConfirmationScreen(): boolean {
+  if (document.body.dataset.leadConfirmed === "true") return true;
+  try {
+    return sessionStorage.getItem(LEAD_DONE_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
 
 /**
  * Single, dismissible recovery prompt (CRO Prompt 39).
@@ -56,6 +68,7 @@ const RecoveryPrompt = () => {
     (why: string) => {
       if (shownRef.current) return;
       if (Date.now() - mountedAt.current < 5000) return;
+      if (onConfirmationScreen()) return;
       try {
         if (sessionStorage.getItem(SESSION_KEY)) return;
       } catch { /* storage blocked — still cap per page load */ }
@@ -224,6 +237,13 @@ const RecoveryPrompt = () => {
               data-gtm-location="recovery_prompt"
             >
               <Phone className="w-4 h-4" aria-hidden="true" /> Or call {PHONE_DISPLAY}
+            </a>
+            <a
+              href="/blog/storm-damage-checklist-western-nc"
+              onClick={() => trackExitIntentDismissed({ trigger: `${trigger}_checklist` })}
+              className="mt-3 block font-body text-body-xs text-muted-foreground underline"
+            >
+              Not ready? Take our storm damage checklist with you.
             </a>
           </>
         )}
