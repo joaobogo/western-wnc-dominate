@@ -40,6 +40,7 @@ const resourceLinks = [
   { label: "FAQ", href: "/faq" },
   { label: "Financing", href: "/financing" },
   { label: "Certifications", href: "/certifications" },
+  { label: "Design & Layout Planning", href: "/layouts-planning" },
 ];
 
 const companyLinks = [
@@ -47,9 +48,7 @@ const companyLinks = [
   { label: "Our Team", href: "/team" },
   { label: "Community", href: "/giving-back" },
   { label: "Work With Us", href: "/careers" },
-  { label: "Service Areas", href: "/service-areas" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Request Inspection", href: "/request-inspection" },
 ];
 
 
@@ -70,20 +69,6 @@ const tier2Areas = towns
   .map((t) => ({ label: t.name, href: `/service-areas/${t.slug}` }))
   .filter((t) => !tier1Slugs.has(t.href))
   .sort((a, b) => a.label.localeCompare(b.label));
-
-// Design, tools, and quote paths — reachable in one click from any page.
-const designLinks = [
-  { label: "Design & Layout Planning", href: "/layouts-planning" },
-  { label: "Request a Quote", href: "/consultation" },
-  { label: "Free Roof Inspection", href: "/request-inspection" },
-];
-
-const certifications = [
-  { icon: Award, label: "CertainTeed ShingleMaster Credentialed Contractor" },
-  { icon: Shield, label: "VELUX Certified Installer" },
-  { icon: Shield, label: "Licensed & Fully Insured" },
-  { icon: Clock, label: "Rapid Emergency Response" },
-];
 
 const FooterLink = React.forwardRef<
   HTMLAnchorElement,
