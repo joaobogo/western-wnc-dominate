@@ -96,7 +96,7 @@ const DesignProgramPromo = ({
               </div>
               <Link
                 to="/construction/design"
-                className="btn btn-primary btn-md"
+                className="btn btn-secondary btn-md"
               >
                 Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
@@ -160,7 +160,7 @@ const DesignProgramPromo = ({
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/construction/design"
-              className="btn btn-primary btn-md"
+              className="btn btn-secondary btn-md"
             >
               Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>

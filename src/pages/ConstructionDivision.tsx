@@ -296,7 +296,7 @@ const ConstructionDivision = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8">
                 <Link
                   to="/construction/design"
-                  className="btn btn-primary btn-md group"
+                  className="btn btn-secondary btn-md group"
                 >
                   Start with a Design Agreement
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
