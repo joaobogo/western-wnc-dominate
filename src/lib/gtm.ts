@@ -1,4 +1,5 @@
 import { getAnalyticsPageType, getTownSlugFromPath, isUrgentIntentPath } from "@/lib/urgent-intent";
+import { getActiveExperiments } from "@/lib/ab-testing";
 /**
  * Google Tag Manager dataLayer helpers.
  *
@@ -118,6 +119,8 @@ function push(event: AnyRecord) {
     page_type: ctx.page_type,
     town: ctx.town,
     service: ctx.service,
+    // Any active A/B assignment rides along so conversions are attributable.
+    ...getActiveExperiments(),
     ...event,
     // A null town/service on the event must not erase page-derived context.
     ...(event.town == null && ctx.town ? { town: ctx.town } : {}),

@@ -12,6 +12,7 @@ import veluxLogo from "@/assets/logo-velux.png";
 import HeroPicture from "@/components/media/HeroPicture";
 import { useEffect, useRef, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useExperiment } from "@/hooks/use-experiment";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -28,6 +29,8 @@ const trustItems = [
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
+  // Sequential test 1: outcome-first vs. current hero CTA copy.
+  const heroCta = useExperiment("home_hero_cta");
   const [layer, setLayer] = useState(0);
   // Only the LCP image is in the DOM on first paint. The two cross-fade
   // layers mount after load so they never compete for bandwidth with the LCP.
@@ -270,10 +273,14 @@ const Hero = () => {
             >
               <Link
                 to="/consultation"
+                data-gtm-experiment="home_hero_cta"
+                data-gtm-variant={heroCta.variant}
                 className="group cta-gradient cta-glow text-accent-foreground font-body font-bold text-[13px] md:text-base px-6 md:px-14 py-3 md:py-5 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 relative overflow-hidden tracking-[0.08em] md:tracking-[0.1em] uppercase shadow-xl min-h-[48px] md:min-h-[60px] whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Request an Estimate</span>
+                <span className="relative">
+                  {heroCta.pick("Request an Estimate", "See What My Roof Needs")}
+                </span>
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative group-hover:translate-x-1.5 transition-transform" />
               </Link>
               <a
