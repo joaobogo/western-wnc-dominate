@@ -104,3 +104,37 @@ Scrim layers are always `aria-hidden` and `pointer-events-none`.
 - `alt` is a required prop. Describe the roof system, place, or person
   ("Standing seam metal roof on a Highlands, NC mountain home"), not the
   file. Purely decorative images use `alt=""` plus `aria-hidden="true"`.
+
+## Buttons (Phase 4)
+
+Exactly four variants exist. Anything else is a bug.
+
+| Variant | Class | Use |
+| --- | --- | --- |
+| Primary | `btn btn-primary` | Gold fill. The money action — one per view. |
+| Secondary | `btn btn-secondary` | Outlined. Supporting action next to a primary. |
+| Ghost | `btn btn-ghost` | No chrome. Tertiary / in-place actions. |
+| Destructive | `btn btn-destructive` | Irreversible actions only. |
+
+Sizes: `btn-sm` (44px), `btn-md` (48–56px, default), `btn-lg` (56–64px), `btn-icon`.
+Modifiers: `btn-block` (full width), `btn-on-dark` (outlined/ghost on forest sections).
+States: focus ring is global, `disabled` dims to 50%, `data-loading="true"` blocks clicks.
+
+In React use `<Button variant="primary" size="lg" loading={...} loadingText="Sending…">`.
+For a link, use the same classes on the `<a>`/`<Link>` — never invent CTA styling inline.
+
+## Form fields (Phase 4)
+
+| Piece | Class |
+| --- | --- |
+| Label | `field-label` (+ `field-label-note` for “— optional”) |
+| Input / select / textarea | `field-input` (16px min font, 48px min height) |
+| Helper text | `field-help` |
+| Error | `<InlineFieldError>` + `aria-invalid` on the control |
+| Tap-select card | `tap-card` with `aria-pressed` |
+| Dark panels | add `field-on-dark` |
+
+Use `<Field>` from `src/components/forms/Field.tsx` to get label, help, error and
+aria wiring in one place, and spread a `fieldAttrs.*` preset on every control for
+the correct `inputmode`, `autocomplete` and `enterkeyhint`. Validate on blur, and
+render a single `<FormErrorSummary>` at the top of the form on submit.
