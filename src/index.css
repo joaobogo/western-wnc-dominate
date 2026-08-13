@@ -229,6 +229,23 @@ img {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* ──────────────────────────────────────
+       ELEVATION LANGUAGE — three levels only.
+       flat: resting surfaces (cards, form fields)
+       raised: interactive / hovered surfaces, form containers
+       floating: overlays (modals, sheets, popovers, toasts)
+       ────────────────────────────────────── */
+    --elevation-flat: 0 1px 2px -1px hsl(var(--heritage-charcoal) / 0.06),
+      0 1px 3px 0 hsl(var(--heritage-charcoal) / 0.04);
+    --elevation-raised: 0 8px 24px -12px hsl(var(--heritage-charcoal) / 0.18),
+      0 2px 6px -2px hsl(var(--heritage-charcoal) / 0.06);
+    --elevation-floating: 0 24px 56px -20px hsl(var(--heritage-charcoal) / 0.28),
+      0 8px 20px -8px hsl(var(--heritage-charcoal) / 0.12);
+
+    /* Border treatments — hairline (default) and accent (emphasis) */
+    --border-hairline: hsl(var(--border));
+    --border-accent: hsl(var(--highland-gold) / 0.45);
   }
 
   .dark {
@@ -258,6 +275,14 @@ img {
     --border: 210 12% 18%;
     --input: 210 12% 18%;
     --ring: 160 30% 38%;
+
+    /* Shadows read as light bloom + deeper black on dark surfaces */
+    --elevation-flat: 0 1px 2px -1px hsl(0 0% 0% / 0.5), 0 0 0 1px hsl(0 0% 100% / 0.04);
+    --elevation-raised: 0 8px 24px -12px hsl(0 0% 0% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.06);
+    --elevation-floating: 0 24px 56px -20px hsl(0 0% 0% / 0.75), 0 0 0 1px hsl(0 0% 100% / 0.08);
+
+    --border-hairline: hsl(var(--border));
+    --border-accent: hsl(var(--highland-gold) / 0.55);
   }
 }
 
