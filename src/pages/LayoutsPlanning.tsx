@@ -117,7 +117,7 @@ const LayoutsPlanning = () => {
 
           {/* Blueprint-style grid lines overlay */}
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ 
-            backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(hsl(var(--dark-section-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--dark-section-foreground)) 1px, transparent 1px)`,
             backgroundSize: '40px 40px'
           }} />
 
