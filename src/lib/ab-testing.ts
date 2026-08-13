@@ -163,6 +163,9 @@ export function isReadyToRead(
 
 const STORAGE_PREFIX = "hl_ab_";
 
+/** Ids whose variant came from a ?ab_ QA override — excluded from the readout. */
+const qaForced = new Set<string>();
+
 /** In-memory mirror so repeated reads never touch storage or re-push GTM. */
 const assigned = new Map<string, VariantKey>();
 const announced = new Set<string>();
@@ -229,9 +232,6 @@ export function getVariant(id: ExperimentId): VariantKey {
   assigned.set(id, variant);
   return variant;
 }
-
-/** Ids whose variant came from a ?ab_ QA override — excluded from the readout. */
-const qaForced = new Set<string>();
 
 /** All resolved assignments, flattened for the dataLayer. */
 export function getActiveExperiments(): Record<string, string> {
