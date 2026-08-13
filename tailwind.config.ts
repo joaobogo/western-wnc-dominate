@@ -127,6 +127,17 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        /* Elevation language — the only three shadows in the system */
+        flat: "var(--elevation-flat)",
+        raised: "var(--elevation-raised)",
+        floating: "var(--elevation-floating)",
+        none: "none",
+      },
+      borderColor: {
+        hairline: "var(--border-hairline)",
+        "accent-line": "var(--border-accent)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0", opacity: "0" },
