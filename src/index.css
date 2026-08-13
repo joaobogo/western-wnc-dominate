@@ -424,7 +424,7 @@ img {
   }
 
   /* ──────────────────────────────────────
-     HEADING HIERARCHY — Cormorant Garamond
+     HEADING HIERARCHY — Playfair Display
      Tight tracking, design-led line-height
      ────────────────────────────────────── */
   h1 {
@@ -1192,7 +1192,7 @@ img {
     position: absolute;
     top: -0.2em;
     left: -0.05em;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 6em;
     line-height: 1;
     color: hsl(var(--highland-gold) / 0.06);
