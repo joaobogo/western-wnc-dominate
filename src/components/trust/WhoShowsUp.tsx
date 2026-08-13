@@ -42,10 +42,10 @@ const WhoShowsUp = ({
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Founder photos — compact, side-by-side on desktop, stacked on mobile */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="lg:col-span-5"
           >
             <div className="flex items-center justify-center sm:justify-start gap-4">
@@ -99,10 +99,10 @@ const WhoShowsUp = ({
 
           {/* Copy and proof points */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="lg:col-span-7"
           >
             <span className="eyebrow mb-3 block">

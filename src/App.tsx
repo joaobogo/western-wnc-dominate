@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import UrlNormalizer from "./components/UrlNormalizer";
@@ -106,6 +107,7 @@ const App = () => (
   <ErrorBoundary boundary="app-root">
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <MotionConfig reducedMotion="user">
         <Suspense fallback={null}>
           <Toaster />
           <Sonner />
@@ -380,6 +382,7 @@ const App = () => (
             </Suspense>
           </ErrorBoundary>
         </BrowserRouter>
+        </MotionConfig>
       </TooltipProvider>
     </QueryClientProvider>
   </ErrorBoundary>

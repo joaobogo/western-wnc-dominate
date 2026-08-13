@@ -29,7 +29,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
 
         <div className="grid gap-6 lg:grid-cols-12">
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-4"
@@ -46,7 +46,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
@@ -96,7 +96,7 @@ const TownProofBlock = ({ town, content }: TownProofBlockProps) => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}

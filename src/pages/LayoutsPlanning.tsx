@@ -126,7 +126,7 @@ const LayoutsPlanning = () => {
               <motion.div 
                 initial={{ opacity: 0, x: -16 }} 
                 animate={{ opacity: 1, x: 0 }} 
-                transition={{ duration: 0.8, ease: HIGHLAND_EASE }}
+                transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                 className="flex items-center gap-4 mb-8"
               >
                 <div className="w-10 h-[1px] bg-[hsl(var(--highland-gold))]" />
@@ -134,9 +134,9 @@ const LayoutsPlanning = () => {
               </motion.div>
 
               <motion.h1 
-                initial={{ opacity: 0, y: 24 }} 
+                initial={{ opacity: 0, y: 16 }} 
                 animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.9, delay: 0.1, ease: HIGHLAND_EASE }}
+                transition={{ duration: 0.4, delay: 0.1, ease: HIGHLAND_EASE }}
                 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-8 leading-[0.95] tracking-tightest"
               >
                 Measure Twice. <br />
@@ -144,18 +144,18 @@ const LayoutsPlanning = () => {
               </motion.h1>
 
               <motion.p 
-                initial={{ opacity: 0, y: 24 }} 
+                initial={{ opacity: 0, y: 16 }} 
                 animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.9, delay: 0.2, ease: HIGHLAND_EASE }}
+                transition={{ duration: 0.4, delay: 0.2, ease: HIGHLAND_EASE }}
                 className="text-xl md:text-2xl text-white/85 mb-12 max-w-2xl leading-relaxed font-body font-light"
               >
                 The foundational step for every successful build. Our Design branch provides the technical bridge between a vision and a buildable reality—mapping every detail before construction begins.
               </motion.p>
 
               <motion.div 
-                initial={{ opacity: 0, y: 24 }} 
+                initial={{ opacity: 0, y: 16 }} 
                 animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 0.9, delay: 0.3, ease: HIGHLAND_EASE }}
+                transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }}
                 className="flex flex-col sm:flex-row gap-5"
               >
                 <Link to="/design-intake?mode=long" className="btn btn-primary btn-lg group">
@@ -171,7 +171,7 @@ const LayoutsPlanning = () => {
           {/* Floating Element: Drafting Compass Icon */}
           <motion.div 
             animate={{ rotate: 360 }}
-            transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
             className="absolute top-1/2 -right-20 w-[400px] h-[400px] border border-white/5 rounded-full pointer-events-none hidden xl:block"
           />
         </section>

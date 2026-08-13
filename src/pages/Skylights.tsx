@@ -96,7 +96,7 @@ const Skylights = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.55)] via-transparent to-transparent" />
             </div>
             <div className="container-tight relative z-10">
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-white">
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-white">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-20 h-20 flex items-center justify-center overflow-hidden bg-white/10 backdrop-blur-sm border border-white/10">
                     <img loading="lazy" decoding="async" src={veluxLogo} alt="VELUX Certified Installer" className="w-full h-full object-contain p-2" />

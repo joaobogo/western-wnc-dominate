@@ -63,7 +63,7 @@ const BeforeAfterGallery = () => {
   useEffect(() => {
     if (paused) return;
     progress.set(0);
-    const controls = animate(progress, 100, { duration: 5, ease: "linear" });
+    const controls = animate(progress, 100, { duration: 0.4, ease: "linear" });
     timerRef.current = setInterval(() => { progress.set(0); next(); }, 5000);
     return () => { clearInterval(timerRef.current); controls.stop(); };
   }, [paused, next, current, progress]);
@@ -119,7 +119,7 @@ const BeforeAfterGallery = () => {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                   src={projects[current].image}
                   alt={projects[current].title}
                   className="absolute inset-0 w-full h-full object-cover"

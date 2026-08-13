@@ -28,10 +28,10 @@ export const ProcessSteps = ({ steps, eyebrow = "Our Process", heading = "How We
         {steps.map((s, i) => (
           <motion.div
             key={s.number}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.05, duration: 0.5 }}
+            transition={{ delay: i * 0.05, duration: 0.4 }}
             className="relative bg-card border border-border rounded-sm p-6"
           >
             <div className="flex items-center gap-3 mb-3">

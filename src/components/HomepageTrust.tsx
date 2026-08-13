@@ -92,7 +92,7 @@ const HomepageTrust = () => {
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5, ease: HIGHLAND_EASE }}
+                transition={{ delay: i * 0.1, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="flex flex-col items-center text-center md:px-8"
               >
                 <AnimatedCounter
@@ -112,10 +112,10 @@ const HomepageTrust = () => {
             {credentials.map((cred, i) => (
               <motion.div
                 key={cred.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
-                transition={{ delay: i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
+                transition={{ delay: i * 0.08, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="group relative bg-dark-section-foreground/[0.03] border border-dark-section-foreground/[0.06] rounded-none p-5 md:p-6 hover:border-[hsl(var(--highland-gold)/0.15)] transition-all duration-500"
               >
                 <div className="absolute left-0 top-0 w-[2px] h-0 bg-[hsl(var(--highland-gold))] group-hover:h-full transition-all duration-600 z-10" />
@@ -143,7 +143,7 @@ const HomepageTrust = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="text-center mb-12 md:mb-14"
           >
             <div className="inline-flex items-center gap-4 px-6 py-3 bg-card border border-border rounded-none">
@@ -172,10 +172,10 @@ const HomepageTrust = () => {
                 <motion.div
                   key={review.name}
                   onMouseMove={handleMouseMove}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.55, ease: HIGHLAND_EASE }}
+                  transition={{ delay: i * 0.1, duration: 0.4, ease: HIGHLAND_EASE }}
                   className="group relative bg-card border border-border rounded-none p-6 md:p-8 hover:border-[hsl(var(--highland-gold)/0.18)] transition-all duration-500 spotlight-hover overflow-hidden"
                 >
                   {/* Gold top accent */}

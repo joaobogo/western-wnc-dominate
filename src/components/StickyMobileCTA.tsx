@@ -126,7 +126,7 @@ const StickyMobileCTA = () => {
       <AnimatePresence>
         {scrolled && !suppressed && (
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
@@ -199,7 +199,7 @@ const StickyMobileCTA = () => {
       <AnimatePresence>
         {scrolled && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            initial={{ opacity: 0, y: 16, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.35, ease: HIGHLAND_EASE }}

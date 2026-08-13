@@ -181,11 +181,11 @@ const StormDamage = () => {
           </div>
 
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.6)] to-[hsl(var(--heritage-green)/0)] z-10" />
-          <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 2, delay: 0.5 }} />
+          <motion.div className="absolute left-0 top-0 w-[2px] z-20" style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }} initial={{ height: "0%" }} animate={{ height: "100%" }} transition={{ duration: 0.4, delay: 0.3 }} />
 
           <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
             <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-6">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-3.5 h-3.5 text-primary-foreground" /></div>
                   <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">Roofing</span>
@@ -195,21 +195,21 @@ const StormDamage = () => {
               </motion.div>
 
               <div className="overflow-hidden mb-2">
-                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
+                <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
                   After the Storm.
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-8">
-                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
+                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight">
                   Before the Next One.
                 </motion.h2>
               </div>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
+              <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm">
                 Rapid storm response across Western North Carolina. Professional damage assessment, complete documentation, and honest guidance — from a local team that's been here through every storm season.
               </motion.p>
 
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4" data-gtm-location="hero">
                 {/* Primary action on storm pages is the phone call (see page-cta-hierarchy.ts) */}
                 <a href="tel:+18285247773" className="btn btn-primary btn-lg group">
                   <Phone className="w-5 h-5" /> (828) 524-7773
@@ -228,7 +228,7 @@ const StormDamage = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.5 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 className="mt-10 flex items-center gap-4 p-4 bg-alert/20 border border-alert/20 rounded-sm max-w-md"
               >
                 <div className="relative flex-shrink-0">
@@ -259,7 +259,7 @@ const StormDamage = () => {
         {/* ─── OPENING STATEMENT ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-center">
               <div className="w-12 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))] to-transparent" />
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-[1.2] mb-6 text-balance">
                 Western North Carolina weather doesn't warn you. It tests your roof — and sometimes it wins.
@@ -284,7 +284,7 @@ const StormDamage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {damageTypes.map((type, i) => (
-                <motion.div key={type.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm overflow-hidden hover:border-highland-gold/20 card-lift">
+                <motion.div key={type.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm overflow-hidden hover:border-highland-gold/20 card-lift">
                   <div className="h-[2px] w-full bg-gradient-to-r from-highland-gold/0 via-highland-gold/30 to-highland-gold/0" />
                   <div className="p-6 md:p-7">
                     <div className="w-10 h-10 rounded-sm bg-highland-gold/6 flex items-center justify-center mb-5 group-hover:bg-highland-gold/12 transition-colors">
@@ -346,7 +346,7 @@ const StormDamage = () => {
         </section>
         {/* ─── REPAIR VS. REPLACEMENT ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
+          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }} />
           <div className="section-padding">
             <div className="container-tight max-w-5xl">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12">
@@ -360,7 +360,7 @@ const StormDamage = () => {
               </motion.div>
 
               <div className="grid md:grid-cols-2 gap-5">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="border border-dark-section-foreground/6 rounded-sm overflow-hidden">
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="border border-dark-section-foreground/6 rounded-sm overflow-hidden">
                   <div className="h-[2px] w-full bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.4)] to-[hsl(var(--heritage-green)/0)]" />
                   <div className="p-6 md:p-7">
                     <div className="flex items-center gap-3 mb-5">
@@ -383,7 +383,7 @@ const StormDamage = () => {
                   </div>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="border border-dark-section-foreground/6 rounded-sm overflow-hidden">
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="border border-dark-section-foreground/6 rounded-sm overflow-hidden">
                   <div className="h-[2px] w-full bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.4)] to-[hsl(var(--highland-gold)/0)]" />
                   <div className="p-6 md:p-7">
                     <div className="flex items-center gap-3 mb-5">
@@ -453,7 +453,7 @@ const StormDamage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {assessmentProcess.map((step, i) => (
-                <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
+                <motion.div key={step.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="group bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift">
                   <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                     <step.icon className="w-5 h-5 text-primary" />
                   </div>
@@ -468,7 +468,7 @@ const StormDamage = () => {
         <section className="section-padding bg-background">
           <div className="container-tight max-w-5xl">
             <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
                 <span className="eyebrow mb-3 block">Insurance Support</span>
                 <h2 className="section-heading mb-5">We Document.<br /> You Decide.</h2>
                 <p className="text-muted-foreground text-sm leading-relaxed font-body mb-4">
@@ -480,7 +480,7 @@ const StormDamage = () => {
               </motion.div>
 
               <div className="lg:col-span-3">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card border border-border rounded-sm p-6 md:p-8">
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card border border-border rounded-sm p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center">
                       <FileText className="w-5 h-5 text-primary" />
@@ -533,7 +533,7 @@ const StormDamage = () => {
         {/* ─── TRUST & URGENCY BALANCE ─── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-4xl">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               <div className="text-center mb-10 md:mb-12">
                 <span className="eyebrow mb-3 block">Local. Trusted. Here to Stay.</span>
                 <h2 className="section-heading mb-4">Why Highlander —<br className="hidden md:block" /> Especially After a Storm.</h2>
@@ -606,11 +606,11 @@ const StormDamage = () => {
             <>
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
-          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} />
+          <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} />
           <div className="section-padding">
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center">
-                <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                   <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Don't Wait for the Next Storm</span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Already Took the Hit.<br className="hidden md:block" /> Let's Make Sure It's Still Protecting You.

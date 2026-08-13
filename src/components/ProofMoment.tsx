@@ -65,7 +65,7 @@ const ProofMoment = ({ variant, className = "", id }: ProofMomentProps) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+      transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
       className={`w-full py-5 md:py-6 bg-secondary/50 border-y border-border/50 relative ${className}`}
       id={id}
     >

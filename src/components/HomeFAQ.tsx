@@ -80,7 +80,7 @@ const HomeFAQ = () => {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-12"
         >
           <span className="eyebrow mb-3 block">Common Questions</span>
@@ -94,10 +94,10 @@ const HomeFAQ = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="bg-card border border-border rounded-sm p-2 md:p-4 shadow-flat"
         >
           <Accordion type="single" collapsible className="w-full">
@@ -125,7 +125,7 @@ const HomeFAQ = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link

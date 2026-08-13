@@ -53,9 +53,9 @@ export default function Contact() {
             <div className="container-tight">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, ease: HIGHLAND_EASE }}
+                  transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                   className="max-w-2xl"
                 >
                   <div className="flex items-center gap-3 mb-4">
@@ -74,9 +74,9 @@ export default function Contact() {
 
                 {/* Right: direct contact cluster */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1, ease: HIGHLAND_EASE }}
+                  transition={{ duration: 0.4, delay: 0.1, ease: HIGHLAND_EASE }}
                   className="flex flex-col gap-3 lg:items-end flex-shrink-0"
                 >
                   <a
@@ -125,10 +125,10 @@ export default function Contact() {
             {/* Right: trust sidebar */}
             <div className="lg:col-span-5">
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1, duration: 0.6, ease: HIGHLAND_EASE }}
+                transition={{ delay: 0.1, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="lg:sticky lg:top-28 space-y-6"
               >
                 <div className="border border-border bg-card p-6 md:p-7">

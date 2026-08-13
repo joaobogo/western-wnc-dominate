@@ -67,9 +67,9 @@ const GivingBack = () => {
 
           <div className="relative z-10 container-tight pt-36 md:pt-44 pb-20">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.4 }}
               className="max-w-3xl"
             >
               <div className="flex items-center gap-3 mb-6">
@@ -132,10 +132,10 @@ const GivingBack = () => {
                 return (
                   <motion.div
                     key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.06, duration: 0.5 }}
+                    transition={{ delay: i * 0.06, duration: 0.4 }}
                     className="card-premium p-7"
                   >
                     <div className="w-12 h-12 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">

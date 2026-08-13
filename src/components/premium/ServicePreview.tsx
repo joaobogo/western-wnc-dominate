@@ -61,10 +61,10 @@ export const ServicePreview = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+      transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
     >
       <Link to={href} className={cn("group block card-premium tartan-hover p-0 h-full", className)}>
         <div className={cn(

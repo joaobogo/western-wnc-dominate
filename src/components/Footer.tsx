@@ -119,7 +119,7 @@ const Footer = () => {
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="w-10 h-[2px] bg-primary/40 mb-5 origin-left"
               />
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 tracking-tight text-foreground">

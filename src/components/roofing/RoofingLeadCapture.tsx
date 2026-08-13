@@ -24,7 +24,7 @@ const CardCapture = ({
   ctaLink = "/consultation",
 }: InlineLeadCaptureProps) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 16 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     className="bg-card border border-border rounded-sm p-6 md:p-8 relative overflow-hidden"
@@ -82,7 +82,7 @@ const EditorialCapture = ({
     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       className="container-tight max-w-3xl text-center"

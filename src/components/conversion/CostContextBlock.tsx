@@ -74,7 +74,7 @@ const CostContextBlock = ({
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.05, duration: 0.45 }}
+            transition={{ delay: i * 0.05, duration: 0.4 }}
             className="bg-card border border-border rounded-sm p-5"
           >
             <d.icon className="w-5 h-5 text-primary mb-3" />

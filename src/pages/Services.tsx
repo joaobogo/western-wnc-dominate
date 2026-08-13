@@ -36,7 +36,7 @@ const Services = () => {
       <main id="main-content">
         <section className="section-padding section-dark pt-32 md:pt-40">
           <div className="container-tight text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <p className="text-[hsl(var(--gold-ink))] font-semibold text-sm uppercase tracking-wider mb-3">Our Services</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
                 Roofing Services Built for Mountain Living
@@ -54,7 +54,7 @@ const Services = () => {
               {services.map((service, i) => (
                 <motion.div
                   key={service.slug}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.4 }}

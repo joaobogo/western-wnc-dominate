@@ -59,10 +59,10 @@ const materialTypes = ["All Materials", "Metal", "Asphalt", "Cedar", "Mixed"];
 
 const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => void }) => (
   <motion.div
-    initial={{ opacity: 0, y: 30 }}
+    initial={{ opacity: 0, y: 16 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.8, ease: HIGHLAND_EASE }}
+    transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
     className="group relative cursor-pointer overflow-hidden"
     onClick={onClick}
   >
@@ -75,7 +75,7 @@ const SpotlightCard = ({ project, onClick }: { project: Project; onClick: () => 
         initial={{ scale: 1.1 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 2.5, ease: HIGHLAND_EASE }}
+        transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.7)] via-[hsl(var(--heritage-charcoal)/0.15)] to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.5)] to-transparent" />
@@ -145,14 +145,14 @@ const Gallery = () => {
             style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }}
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 1.8, delay: 0.3, ease: HIGHLAND_EASE }}
+            transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }}
           />
           <div className="relative z-10 pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 lg:px-16">
             <div className="container-tight">
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.4 }}
                 className="mb-10 flex flex-col items-center"
               >
                 <div className="h-12 w-px bg-gradient-to-b from-[hsl(var(--highland-gold)/0)] to-[hsl(var(--highland-gold)/0.5)] mb-4" />
@@ -162,7 +162,7 @@ const Gallery = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
+                transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                 className="text-center max-w-3xl mx-auto"
               >
                 <div className="inline-flex items-center gap-3 mb-6">
@@ -172,7 +172,7 @@ const Gallery = () => {
                 <motion.h1
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.2, ease: HIGHLAND_EASE }}
+                  transition={{ duration: 0.4, delay: 0.2, ease: HIGHLAND_EASE }}
                   className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-[0.95] tracking-tightest"
                 >
                   Every Project Is a Commitment{" "}
@@ -181,7 +181,7 @@ const Gallery = () => {
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
                   className="text-body-lg md:text-body-xl text-white/85 leading-relaxed max-w-xl mx-auto font-medium drop-shadow-sm"
                 >
                   These aren't stock photos. Every image here represents a real WNC home we've protected,
@@ -192,7 +192,7 @@ const Gallery = () => {
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7, ease: HIGHLAND_EASE }}
+                transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }}
                 className="mt-10 pt-8 border-t border-[hsl(var(--dark-section-foreground)/0.06)]"
               >
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-[hsl(var(--dark-section-foreground)/0.08)]">
@@ -288,10 +288,10 @@ const Gallery = () => {
                       <Fragment key={project.title}>
                         <motion.div
                           layout
-                          initial={{ opacity: 0, y: 20 }}
+                          initial={{ opacity: 0, y: 16 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, scale: 0.95 }}
-                          transition={{ duration: 0.5, delay: i * 0.05 }}
+                          transition={{ duration: 0.4, delay: i * 0.05 }}
                         >
                           <GalleryCard
                             {...project}
@@ -339,7 +339,7 @@ const Gallery = () => {
           <MountainContours variant="dark" opacity={0.03} />
           <div className="container-tight relative z-10">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-14"
@@ -363,10 +363,10 @@ const Gallery = () => {
               ].map((step, i) => (
                 <motion.div
                   key={step.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  transition={{ delay: i * 0.1, duration: 0.4 }}
                   className="border border-[hsl(var(--highland-gold)/0.1)] rounded-sm p-6 bg-[hsl(var(--dark-section-foreground)/0.03)] text-center"
                 >
                   <span className="text-3xl font-heading font-bold text-[hsl(var(--highland-gold)/0.2)] mb-3 block">{String(i + 1).padStart(2, "0")}</span>

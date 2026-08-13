@@ -103,10 +103,10 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ delay: Math.min(index * 0.04, 0.2), duration: 0.45, ease: HIGHLAND_EASE }}
+      transition={{ delay: Math.min(index * 0.04, 0.2), duration: 0.4, ease: HIGHLAND_EASE }}
       className={`group relative rounded-none overflow-hidden cursor-pointer ${
         isHero ? "md:col-span-2 md:row-span-2" : isWide ? "md:col-span-2" : ""
       }`}
@@ -264,7 +264,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
           className="text-center mt-12 md:mt-16"
         >
           <GoldLine width="3rem" centered delay={0.2} className="mb-6" />

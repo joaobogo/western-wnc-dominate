@@ -1,5 +1,5 @@
 import AnswerBlock from "@/components/seo/AnswerBlock";
-import { useState, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Section from "@/components/layout/Section";
 import Header from "@/components/Header";
@@ -11,7 +11,6 @@ import ThreeDivisionPathway from "@/components/DualPathway";
 
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SectionDivider from "@/components/SectionDivider";
-import SiteLoader from "@/components/SiteLoader";
 import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 
 /* Below-the-fold homepage sections — code-split so the first load only ships
@@ -28,19 +27,8 @@ const SectionFallback = ({ h = 480 }: { h?: number }) => (
 );
 
 const Index = () => {
-  const [showLoader, setShowLoader] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return !sessionStorage.getItem("hl_loader_seen");
-  });
-
-  const handleLoaderComplete = () => {
-    sessionStorage.setItem("hl_loader_seen", "1");
-    setShowLoader(false);
-  };
-
   return (
     <>
-      {showLoader && <SiteLoader onComplete={handleLoaderComplete} />}
       <SEOHead
         title="Roofing & Construction in Western NC | Highlander"
         description="Highlander Building Services: roofing, repairs, metal roofs, gutters, and custom builds across Franklin, Highlands, Cashiers & Western NC."

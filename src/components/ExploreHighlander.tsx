@@ -60,7 +60,7 @@ const ExploreHighlander = () => {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-12"
         >
           <span className="eyebrow mb-3 block">Explore Highlander</span>
@@ -82,7 +82,7 @@ const ExploreHighlander = () => {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: ci * 0.06 }}
+                transition={{ duration: 0.4, delay: ci * 0.06 }}
                 className="group relative bg-card border border-border/70 rounded-sm p-6 hover:border-primary/40 transition-colors"
               >
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold))]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

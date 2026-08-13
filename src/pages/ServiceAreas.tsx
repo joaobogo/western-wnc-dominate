@@ -87,9 +87,9 @@ const ServiceAreas = () => {
             <div className="container-tight">
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
                 <motion.div
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: HIGHLAND_EASE }}
+                  transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                   className="lg:col-span-7"
                 >
                   <div className="flex items-center gap-3 mb-6">
@@ -107,9 +107,9 @@ const ServiceAreas = () => {
 
                 {/* Right: quick stats */}
                 <motion.div
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.15, ease: HIGHLAND_EASE }}
+                  transition={{ duration: 0.4, delay: 0.15, ease: HIGHLAND_EASE }}
                   className="lg:col-span-5"
                 >
                   <div className="grid grid-cols-2 gap-3">
@@ -118,7 +118,7 @@ const ServiceAreas = () => {
                         key={stat.label}
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 + i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
+                        transition={{ delay: 0.3 + i * 0.08, duration: 0.4, ease: HIGHLAND_EASE }}
                         className="rounded-sm border border-white/25 bg-[hsl(var(--heritage-charcoal)/0.55)] backdrop-blur-xl p-4 md:p-5 shadow-floating"
                       >
                         <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none block mb-2">{stat.value}</span>
@@ -140,7 +140,7 @@ const ServiceAreas = () => {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.4 }}
               className="text-center mb-12"
             >
               <span className="eyebrow mb-3 block">Primary Service Areas</span>
@@ -155,10 +155,10 @@ const ServiceAreas = () => {
               {primaryTowns.map((town, i) => (
                 <motion.div
                   key={town.slug}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
                 >
                   <Link
                     to={`/service-areas/${town.slug}`}
@@ -214,10 +214,10 @@ const ServiceAreas = () => {
               {whyLocal.map((item, i) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
                   className="bg-[hsl(var(--dark-section-foreground)/0.04)] border border-[hsl(var(--dark-section-foreground)/0.06)] p-6"
                 >
                   <item.icon className="w-6 h-6 text-[hsl(var(--highland-gold)/0.6)] mb-4" />
@@ -280,10 +280,10 @@ const ServiceAreas = () => {
           <div className="absolute inset-0 tartan-dark opacity-30" />
           <div className="container-tight relative z-10 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               className="max-w-2xl mx-auto"
             >
               <span className="eyebrow mb-5 block text-[hsl(var(--gold-ink))]">Your Town, Our Team</span>

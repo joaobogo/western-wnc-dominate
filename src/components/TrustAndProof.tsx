@@ -66,7 +66,7 @@ const TrustAndProof = () => {
 
         {/* Process promise — single card */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-2xl mx-auto bg-card border border-border rounded-none p-6 md:p-8"

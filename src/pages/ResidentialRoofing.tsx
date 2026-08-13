@@ -196,7 +196,7 @@ const ResidentialRoofing = () => {
                       style={{ background: "linear-gradient(to bottom, hsl(var(--highland-gold)), hsl(var(--highland-gold) / 0))" }}
                       initial={{ height: "0%" }}
                       animate={{ height: "100%" }}
-                      transition={{ duration: 2, delay: 0.5 }}
+                      transition={{ duration: 0.4, delay: 0.3 }}
                     />
 
                     <div className="relative z-10 w-full px-5 md:px-8 lg:px-16 pb-14 md:pb-20 pt-32 md:pt-40">
@@ -204,7 +204,7 @@ const ResidentialRoofing = () => {
                         <motion.div
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.8, delay: 0.3 }}
+                          transition={{ duration: 0.4, delay: 0.3 }}
                           className="flex flex-col gap-6 mb-8"
                         >
                           <div className="inline-flex items-center gap-4">
@@ -234,7 +234,7 @@ const ResidentialRoofing = () => {
                           <motion.h1
                             initial={{ y: "110%" }}
                             animate={{ y: 0 }}
-                            transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                            transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                             className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
                           >
                             Your Home Deserves a Roof
@@ -244,7 +244,7 @@ const ResidentialRoofing = () => {
                           <motion.h2
                             initial={{ y: "110%" }}
                             animate={{ y: 0 }}
-                            transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                            transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                             className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.05] tracking-tight"
                           >
                             Built for These Mountains.
@@ -252,9 +252,9 @@ const ResidentialRoofing = () => {
                         </div>
 
                         <motion.p
-                          initial={{ opacity: 0, y: 20 }}
+                          initial={{ opacity: 0, y: 16 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.7, delay: 1 }}
+                          transition={{ duration: 0.4, delay: 0.3 }}
                           className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-10 leading-relaxed font-body font-medium drop-shadow-sm"
                         >
                           Complete residential roof replacement and repair for mountain homes across
@@ -263,9 +263,9 @@ const ResidentialRoofing = () => {
                         </motion.p>
 
                         <motion.div
-                          initial={{ opacity: 0, y: 20 }}
+                          initial={{ opacity: 0, y: 16 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.6, delay: 1.2 }}
+                          transition={{ duration: 0.4, delay: 0.3 }}
                           className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                         >
                           <Link
@@ -289,7 +289,7 @@ const ResidentialRoofing = () => {
                         <motion.div
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.8, delay: 1.6 }}
+                          transition={{ duration: 0.4, delay: 0.3 }}
                           className="mt-10 flex items-center gap-6"
                         >
                           {[
@@ -320,10 +320,10 @@ const ResidentialRoofing = () => {
                       <div className="container-tight max-w-5xl">
                         <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
                           <motion.div
-                            initial={{ opacity: 0, y: 24 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.4 }}
                             className="lg:col-span-8"
                           >
                             <div className="w-10 h-[3px] mb-8 bg-[hsl(var(--heritage-green)/0.5)]" />
@@ -338,10 +338,10 @@ const ResidentialRoofing = () => {
                             </p>
                           </motion.div>
                           <motion.div
-                            initial={{ opacity: 0, y: 24 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
+                            transition={{ duration: 0.4, delay: 0.2 }}
                             className="lg:col-span-4 flex flex-col gap-5"
                           >
                             {[
@@ -386,10 +386,10 @@ const ResidentialRoofing = () => {
                           {warningSignsData.map((sign, i) => (
                             <motion.div
                               key={sign.title}
-                              initial={{ opacity: 0, y: 20 }}
+                              initial={{ opacity: 0, y: 16 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
-                              transition={{ delay: i * 0.06, duration: 0.45 }}
+                              transition={{ delay: i * 0.06, duration: 0.4 }}
                               className="group bg-card border border-border rounded-sm p-6 hover:border-primary/15 card-lift"
                             >
                               <div className="w-10 h-10 rounded-sm bg-primary/6 flex items-center justify-center mb-4 group-hover:bg-primary/12 transition-colors">
@@ -444,7 +444,7 @@ const ResidentialRoofing = () => {
                           {repairVsReplace.map((option, i) => (
                             <motion.div
                               key={option.type}
-                              initial={{ opacity: 0, y: 20 }}
+                              initial={{ opacity: 0, y: 16 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
                               transition={{ delay: i * 0.1 }}
@@ -483,7 +483,7 @@ const ResidentialRoofing = () => {
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.2 }}
+                        transition={{ duration: 0.4 }}
                       />
                       <div className="px-6 md:px-10 lg:px-20 pt-12 md:pt-24 lg:pt-28 pb-4 md:pb-5 lg:pb-6">
                         <div className="container-tight">
@@ -507,7 +507,7 @@ const ResidentialRoofing = () => {
                             {materialsComparison.map((mat, i) => (
                               <motion.div
                                 key={mat.name}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 16 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.08 }}
@@ -600,7 +600,7 @@ const ResidentialRoofing = () => {
                           {roofStyles.map((style, i) => (
                             <motion.div
                               key={style.title}
-                              initial={{ opacity: 0, y: 20 }}
+                              initial={{ opacity: 0, y: 16 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
                               transition={{ delay: i * 0.07 }}
@@ -646,10 +646,10 @@ const ResidentialRoofing = () => {
                         {processSteps.map((step, i) => (
                           <motion.div
                             key={step.number}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.07, duration: 0.45 }}
+                            transition={{ delay: i * 0.07, duration: 0.4 }}
                             className="group relative bg-card border border-border rounded-sm p-6 md:p-7 hover:border-primary/15 card-lift"
                           >
                             <span className="absolute top-4 right-5 text-4xl font-heading font-bold text-border/60 select-none group-hover:text-primary/10 transition-colors">
@@ -717,10 +717,10 @@ const ResidentialRoofing = () => {
                           {galleryItems.map((item, i) => (
                             <motion.div
                               key={item.title}
-                              initial={{ opacity: 0, y: 20 }}
+                              initial={{ opacity: 0, y: 16 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
-                              transition={{ delay: i * 0.06, duration: 0.5 }}
+                              transition={{ delay: i * 0.06, duration: 0.4 }}
                               className="group relative aspect-[4/3] rounded-sm overflow-hidden"
                             >
                               <img width={1600} height={1067} decoding="async" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
@@ -741,7 +741,7 @@ const ResidentialRoofing = () => {
                       <div className="container-tight">
                         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
                           <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             className="lg:col-span-2"
@@ -934,13 +934,13 @@ const ResidentialRoofing = () => {
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     />
                     <div className="section-padding">
                       <div className="container-tight">
                         <div className="max-w-3xl mx-auto text-center">
                           <motion.div
-                            initial={{ opacity: 0, y: 24 }}
+                            initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                           >

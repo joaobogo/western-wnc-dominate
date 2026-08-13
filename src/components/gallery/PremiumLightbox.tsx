@@ -279,7 +279,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.4 }}
               className="absolute bottom-4 left-0 right-0 text-center text-white/20 text-caption font-body tracking-wider uppercase"
             >
               Swipe to navigate · Pull down to close
@@ -289,7 +289,7 @@ const PremiumLightbox = ({ projects, currentIndex, onClose, onNavigate }: Premiu
           {/* Thumbnail strip — desktop only */}
           {!isMobile && projects.length > 1 && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.3 }}
               className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20"

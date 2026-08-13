@@ -183,7 +183,7 @@ const ConstructionDesign = () => {
               <motion.h1
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: HIGHLAND_EASE }}
+                transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                 className="text-3xl md:text-5xl lg:text-display font-heading font-bold text-white leading-[1.05] tracking-tight mb-7"
               >
                 Design Services for Construction Projects in <span className="text-[hsl(var(--gold-ink))]">Western North Carolina.</span>
@@ -192,7 +192,7 @@ const ConstructionDesign = () => {
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.25 }}
+                transition={{ duration: 0.4, delay: 0.25 }}
                 className="text-body-sm md:text-body text-white/90 max-w-2xl mb-8 leading-relaxed font-body"
               >
                 Serious construction projects start with a clear plan. Highlander's in-house design services help homeowners define scope, understand realistic budget ranges, prepare permit-ready drawings, and move confidently toward construction.
@@ -201,7 +201,7 @@ const ConstructionDesign = () => {
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-3 mb-8"
               >
                 <Link
@@ -221,7 +221,7 @@ const ConstructionDesign = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.6 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
                 className="flex items-center gap-3 pt-6 border-t border-white/15"
               >
                 <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.6)]" />
@@ -291,7 +291,7 @@ const ConstructionDesign = () => {
               {DESIGN_PHASES.map((p, i) => (
                 <motion.div
                   key={p.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}

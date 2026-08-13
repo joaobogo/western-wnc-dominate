@@ -89,10 +89,10 @@ const BuilderPromoBlock = ({
     <Wrapper className={wrapperClass}>
       <div className={variant === "band" ? "container-tight" : ""}>
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="relative overflow-hidden rounded-sm border border-border/60 bg-card shadow-flat"
         >
           {/* Decorative tartan stripe */}

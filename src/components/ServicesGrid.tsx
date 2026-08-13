@@ -208,10 +208,10 @@ const ServiceCard = ({ service, index }: { service: FeaturedService; index: numb
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
-      transition={{ delay: index * 0.06, duration: 0.55, ease: HIGHLAND_EASE }}
+      transition={{ delay: index * 0.06, duration: 0.4, ease: HIGHLAND_EASE }}
       className="h-full"
     >
       <Link to={service.href} className="group relative block h-full bg-card border border-border rounded-none overflow-hidden spotlight-hover hover:border-[hsl(var(--highland-gold)/0.25)] transition-all duration-500 shadow-flat hover:shadow-raised">

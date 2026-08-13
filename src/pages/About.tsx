@@ -100,7 +100,7 @@ const About = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
               className="mb-8 inline-flex items-center gap-4 md:gap-6"
             >
               <div className="h-10 md:h-12 w-px bg-white/30" />
@@ -110,7 +110,7 @@ const About = () => {
               </div>
             </motion.div>
             <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.2 }} className="flex items-center gap-3 mb-6">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }} className="flex items-center gap-3 mb-6">
                 <MapPin className="w-4 h-4 text-[hsl(var(--highland-gold)/0.9)]" />
                 <span className="text-caption md:text-body-xs font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Franklin & Sylva, North Carolina</span>
               </motion.div>
@@ -119,19 +119,19 @@ const About = () => {
               <motion.h1
                 initial={{ opacity: 0, letterSpacing: "0.08em" }}
                 animate={{ opacity: 1, letterSpacing: "-0.02em" }}
-                transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.4, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.0] mb-8"
               >
                 <span className="block text-[hsl(var(--dark-section-foreground))] mb-2">Elevating WNC Standards.</span>
                 <span className="block text-[hsl(var(--gold-ink))]">Built by a Local Team.</span>
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.2 }} className="text-body md:text-body-lg text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="text-body md:text-body-lg text-white max-w-xl mb-10 leading-relaxed font-body font-bold drop-shadow-lg">
                 Highlander is family-owned and locally run by a team of people who call Western North Carolina home. The owners set the standard, and every team member, from leadership and consultants to inspectors, project managers, repair specialists, and crews, plays a role in delivering the craft, care, and local accountability your home deserves.
               </motion.p>
 
               {/* Understated CTA — warm solid button, no gradient (About-only) */}
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.5 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button 
                   onClick={() => {
                     const el = document.getElementById('team-section');
@@ -174,10 +174,10 @@ const About = () => {
               {leadership.map((person, i) => (
                 <motion.div 
                   key={person.name}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.15, duration: 0.6, ease: HIGHLAND_EASE }}
+                  transition={{ delay: i * 0.15, duration: 0.4, ease: HIGHLAND_EASE }}
                   className="flex flex-col md:flex-row gap-8 items-start"
                 >
                   <div className="w-full md:w-48 lg:w-56 aspect-square overflow-hidden bg-muted flex items-center justify-center border border-border relative">
@@ -221,10 +221,10 @@ const About = () => {
               {teamMembers.map((person, i) => (
                 <motion.div 
                   key={person.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  transition={{ delay: i * 0.1, duration: 0.4 }}
                   className="group bg-card border border-border overflow-hidden hover:border-primary/20 hover:shadow-raised transition-all duration-300"
                 >
                   <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center relative">
@@ -272,7 +272,7 @@ const About = () => {
           }} />
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: HIGHLAND_EASE }}>
                 <span className="eyebrow mb-3 block">Our Story</span>
                 <h2 className="section-heading mb-6">The Name Means<br /> Something Here.</h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
@@ -293,7 +293,7 @@ const About = () => {
                   it's a way of life.
                 </p>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE, delay: 0.15 }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: HIGHLAND_EASE, delay: 0.15 }}>
                 <span className="eyebrow mb-3 block">Who We Are</span>
                 <h2 className="section-heading mb-6">Family Roots.<br /> Mountain Standards.</h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
@@ -319,7 +319,7 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
+              transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
               className="mt-16 relative aspect-[21/9] md:aspect-[3/1] overflow-hidden border border-border"
             >
               <img width={1600} height={1067} loading="lazy" decoding="async" src={storyImg} alt="The Blue Ridge mountains that define our service area" className="w-full h-full object-cover opacity-100 transition-opacity duration-700" />
@@ -335,7 +335,7 @@ const About = () => {
         {/* ── TIMELINE — Heritage milestones, unique to About ── */}
         <section className="section-padding bg-background">
           <div className="container-tight max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
               <Calendar className="w-5 h-5 text-[hsl(var(--highland-gold)/0.75)] mx-auto mb-4" />
               <h2 className="section-heading mb-4">The Road So Far</h2>
               <p className="text-muted-foreground text-sm max-w-lg mx-auto">Not a linear climb. A series of commitments that built something worth standing behind.</p>
@@ -345,10 +345,10 @@ const About = () => {
               {milestones.map((m, i) => (
                 <motion.div
                   key={m.year}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
                   className={`relative flex items-start gap-6 mb-10 last:mb-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:gap-12`}
                 >
                   <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'} pl-12 md:pl-0`}>
@@ -375,7 +375,7 @@ const About = () => {
             }} 
           />
           <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
               <span className="eyebrow mb-3 block">What We Stand For</span>
               <h2 className="section-heading mb-4">Values That Shape Every Decision</h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
@@ -386,7 +386,7 @@ const About = () => {
             </motion.div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {values.map((v, i) => (
-                <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.5 }} className="card-premium p-6 md:p-8">
+                <motion.div key={v.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.4 }} className="card-premium p-6 md:p-8">
                   <div className="w-11 h-11 rounded-sm bg-primary/10 flex items-center justify-center mb-4">
                     <v.icon className="w-5 h-5 text-primary" />
                   </div>
@@ -402,7 +402,7 @@ const About = () => {
         <section className="section-padding section-dark tartan-dark">
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
-              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: HIGHLAND_EASE }}>
                 <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Our Philosophy</span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-6 leading-tight">
                   Craftsmanship Isn't a<br /> Marketing Word Here.
@@ -417,7 +417,7 @@ const About = () => {
               </motion.div>
               <div className="space-y-4">
                 {craftsmanshipPrinciples.map((p, i) => (
-                  <motion.div key={p.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 md:p-6 bg-[hsl(var(--dark-section-foreground)/0.03)]">
+                  <motion.div key={p.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.4 }} className="border border-[hsl(var(--highland-gold)/0.12)] rounded-sm p-5 md:p-6 bg-[hsl(var(--dark-section-foreground)/0.03)]">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" />
                       <div>
@@ -438,7 +438,7 @@ const About = () => {
           <div className="container-tight">
             <div className="bg-primary p-8 md:p-16 relative overflow-hidden text-center max-w-5xl mx-auto">
               <div className="absolute inset-0 tartan-dark opacity-[0.08]" />
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative z-10">
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative z-10">
                 <span className="text-[hsl(var(--gold-ink))] font-heading font-bold text-caption uppercase tracking-[0.25em] mb-6 block">Join the Team</span>
                 <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
                   Build a Career <br className="md:hidden" /> <span className="text-[hsl(var(--gold-ink))] italic">on Higher Ground.</span>
@@ -462,7 +462,7 @@ const About = () => {
         {/* ── WNC ROOTS ── */}
         <section className="section-padding bg-background">
           <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
               <span className="eyebrow mb-3 block">Western North Carolina</span>
               <h2 className="section-heading mb-4">This Is Our Home. Not Our Territory.</h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
@@ -478,7 +478,7 @@ const About = () => {
                 { icon: Mountain, title: "Elevation-Aware Building", detail: "From 2,000 to 5,000+ feet, we spec materials and methods for your property's specific exposure." },
                 { icon: Home, title: "Mountain Design", detail: "We understand WNC home styles, proportions, and materials. Our work enhances. It never clashes." },
               ].map((item, i) => (
-                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="text-center p-8">
+                <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.4 }} className="text-center p-8">
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-6 h-6 text-primary" />
                   </div>
@@ -494,7 +494,7 @@ const About = () => {
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: HIGHLAND_EASE }}>
                 <span className="eyebrow mb-3 block">Our Growth</span>
                 <h2 className="section-heading mb-6">From Roofing Specialists to<br /> Full-Service Builders.</h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
@@ -515,7 +515,7 @@ const About = () => {
                   project oversight, and finish standards that built our roofing reputation.
                 </p>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE, delay: 0.15 }} className="space-y-4">
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: HIGHLAND_EASE, delay: 0.15 }} className="space-y-4">
                 {[
                   { label: "Roofing Division", items: ["Residential & Commercial Roofing", "Roof Replacement & Repair", "Storm Damage & Insurance", "Specialty Roofing Systems"] },
                   { label: "Construction Division", items: ["Home Additions & Expansions", "Renovations & Exterior Improvements", "Outdoor Living & Exterior Builds", "Custom Construction Projects"] },
@@ -543,7 +543,7 @@ const About = () => {
         {/* ── TRUST SECTION ── */}
         <section className="section-padding section-dark tartan-dark">
           <div className="container-tight">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
               <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Why Homeowners Trust Us</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4 leading-tight">
                 Trust Is Built. Not Claimed.
@@ -561,7 +561,7 @@ const About = () => {
                 { stat: "Rapid", label: "Response time on every inquiry" },
                 { stat: "In-House", label: "Highlander employee crews" },
               ].map((item, i) => (
-                <motion.div key={item.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="text-center p-6 border border-[hsl(var(--highland-gold)/0.1)] rounded-sm">
+                <motion.div key={item.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.4 }} className="text-center p-6 border border-[hsl(var(--highland-gold)/0.1)] rounded-sm">
                   <p className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] mb-2">{item.stat}</p>
                   <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm">{item.label}</p>
                 </motion.div>
@@ -573,7 +573,7 @@ const About = () => {
         {/* ── CLOSING CTA ── */}
         <section className="section-padding bg-primary">
           <div className="container-tight text-center">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: HIGHLAND_EASE }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: HIGHLAND_EASE }}>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
                 Now That You Know Us.<br /> Let's Talk About Your Project.
               </h2>

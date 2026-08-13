@@ -96,7 +96,7 @@ const ServicePage = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.5)] via-transparent to-transparent" />
           </div>
           <div className="container-tight relative z-10 pb-16 md:pb-24">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               {/* Division badge */}
               <div className="flex items-center gap-2.5 mb-5">
                 <div className={`w-8 h-8 rounded-sm flex items-center justify-center ${theme.badgeBgClass}`}>
@@ -144,14 +144,14 @@ const ServicePage = () => {
         <section className="section-padding bg-background">
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">What We Do</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
                 <Link to="/consultation" className="btn btn-primary btn-sm">
                   Discuss Your Project <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
                 <h3 className="text-lg font-heading font-semibold text-foreground mb-4">What's Included</h3>
                 <ul className="space-y-3">
                   {service.features.map((feature) => (

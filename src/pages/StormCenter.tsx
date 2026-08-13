@@ -76,7 +76,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true } as const,
-  transition: { duration: 0.5 },
+  transition: { duration: 0.4 },
 };
 
 const StormCenter = () => {
@@ -105,7 +105,7 @@ const StormCenter = () => {
         {/* ═══ HERO ═══ */}
         <section className="section-padding section-dark tartan-dark pt-32 md:pt-40 pb-16 md:pb-20">
           <div className="container-tight text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <div className="w-14 h-14 rounded-sm bg-accent/10 flex items-center justify-center mx-auto mb-5">
                 <CloudLightning className="w-7 h-7 text-[hsl(var(--gold-ink))]" />
               </div>

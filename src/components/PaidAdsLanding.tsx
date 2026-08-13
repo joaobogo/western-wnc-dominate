@@ -85,7 +85,7 @@ const PaidAdsLanding = ({
 
             <div className="grid gap-6 pt-6 md:pt-10 lg:grid-cols-12 lg:items-start lg:gap-x-10 lg:gap-y-8 lg:pt-12">
               <div className="order-1 lg:col-span-7 lg:col-start-1 lg:row-start-1">
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
                   <div className="mb-3 text-caption font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
                     {eyebrow}
                   </div>
@@ -97,7 +97,7 @@ const PaidAdsLanding = ({
                   </p>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.5 }} className="mt-6 hidden flex-wrap gap-3 lg:flex">
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.4 }} className="mt-6 hidden flex-wrap gap-3 lg:flex">
                   <a href="#fast-lead-form" className="btn btn-primary btn-md">
                     {ctaLabel}
                     <ArrowRight className="h-4 w-4" />
@@ -110,7 +110,7 @@ const PaidAdsLanding = ({
               </div>
 
               <div className="order-3 lg:col-span-7 lg:col-start-1 lg:row-start-2">
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.5 }} className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.4 }} className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                   {trustStats.map((item) => (
                     <div key={item.label} className="border border-primary-foreground/12 bg-primary-foreground/5 px-4 py-4">
                       <div className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}</div>
@@ -122,7 +122,7 @@ const PaidAdsLanding = ({
               </div>
 
               <div className="order-2 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1" id="fast-lead-form">
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.5 }}>
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.4 }}>
                   <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} />
                 </motion.div>
               </div>

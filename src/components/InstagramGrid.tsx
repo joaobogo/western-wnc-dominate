@@ -35,7 +35,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, scale: 0.9, y: 12 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, ease: HIGHLAND_EASE } },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: HIGHLAND_EASE } },
 };
 
 const InstagramGrid = () => {

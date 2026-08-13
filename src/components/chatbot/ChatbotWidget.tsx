@@ -426,7 +426,7 @@ export default function ChatbotWidget() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            initial={{ opacity: 0, y: 16, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -508,7 +508,7 @@ export default function ChatbotWidget() {
                           key={i}
                           className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50"
                           animate={{ scale: [1, 1.3, 1], opacity: [0.4, 1, 0.4] }}
-                          transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2 }}
+                          transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
                         />
                       ))}
                     </div>

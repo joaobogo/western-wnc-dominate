@@ -188,10 +188,10 @@ export const TrustPillarGrid = ({
         {pillars.map((p, i) => (
           <motion.div
             key={p.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.06, duration: 0.5 }}
+            transition={{ delay: i * 0.06, duration: 0.4 }}
             className={`p-5 md:p-6 rounded-sm ${
               isDark
                 ? "border border-[hsl(var(--highland-gold)/0.1)] bg-[hsl(var(--dark-section-foreground)/0.03)]"
@@ -320,7 +320,7 @@ export const CraftsmanshipStatement = ({
   const isDark = variant === "dark";
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       className="max-w-2xl"
@@ -361,7 +361,7 @@ export const ReassuranceBlock = ({
     <section className={`section-padding ${isPrimary ? "bg-primary" : "section-dark tartan-dark"}`}>
       <div className="container-tight text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
@@ -441,7 +441,7 @@ export const EditorialProofSection = ({ eyebrow, heading, body, stats, variant =
   return (
     <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >

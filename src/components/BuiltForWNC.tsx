@@ -90,7 +90,7 @@ const BuiltForWNC = () => {
                   initial={{ opacity: 0, x: 24, y: 8 }}
                   whileInView={{ opacity: 1, x: 0, y: 0 }}
                   viewport={{ once: true, margin: "-30px" }}
-                  transition={{ delay: i * 0.08, duration: 0.5, ease: HIGHLAND_EASE }}
+                  transition={{ delay: i * 0.08, duration: 0.4, ease: HIGHLAND_EASE }}
                   className="group flex gap-4 p-5 md:p-6 rounded-none bg-card border border-border hover:border-[hsl(var(--highland-gold)/0.15)] hover:shadow-flat transition-all duration-500 spotlight-hover"
                   style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                 >

@@ -31,7 +31,7 @@ const CTABlock = () => {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: CRAFT_EASE }}
+          transition={{ duration: 0.4, ease: CRAFT_EASE }}
         />
 
         {/* Ambient glow */}
@@ -90,7 +90,7 @@ const CTABlock = () => {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.6, ease: HIGHLAND_EASE }}
+                transition={{ delay: 0.3, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="max-w-md mx-auto mb-12 md:mb-14"
               >
                 <p className="text-caption font-body font-bold uppercase tracking-[0.25em] text-dark-section-foreground/20 mb-5 text-center">
@@ -103,7 +103,7 @@ const CTABlock = () => {
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: 0.6 + i * 0.06, duration: 0.35, ease: HIGHLAND_EASE }}
+                      transition={{ delay: 0.3 + i * 0.06, duration: 0.35, ease: HIGHLAND_EASE }}
                       className="flex items-start gap-3"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.45)] flex-shrink-0 mt-0.5" />
@@ -120,7 +120,7 @@ const CTABlock = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.8, duration: 0.5 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
                 className="pt-8 border-t border-dark-section-foreground/[0.05]"
               >
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
@@ -136,7 +136,7 @@ const CTABlock = () => {
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: 0.9 + i * 0.08 }}
+                      transition={{ delay: 0.3 + i * 0.08 }}
                       className="flex items-center gap-2"
                     >
                       <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />

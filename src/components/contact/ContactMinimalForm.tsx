@@ -133,7 +133,7 @@ const ContactMinimalForm = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+        transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
       >
         <LeadConfirmationPanel
           heading={`Thank you, ${form.name.split(" ")[0] || "friend"} — your message is in.`}

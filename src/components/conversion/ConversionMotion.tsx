@@ -89,7 +89,7 @@ export const MultiStepForm = ({
                   <motion.div
                     className="absolute inset-y-0 left-0 bg-[hsl(var(--highland-gold))]"
                     animate={{ width: i < currentStep ? "100%" : "0%" }}
-                    transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+                    transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
                   />
                 </div>
               )}
@@ -225,11 +225,11 @@ export const ResultReveal = ({ children, show, className = "" }: ResultRevealPro
         initial={{ opacity: 0, height: 0, scale: 0.97 }}
         animate={{ opacity: 1, height: "auto", scale: 1 }}
         exit={{ opacity: 0, height: 0, scale: 0.97 }}
-        transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+        transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
         className={`overflow-hidden ${className}`}
       >
         <motion.div
-          initial={{ y: 20 }}
+          initial={{ y: 16 }}
           animate={{ y: 0 }}
           transition={{ delay: 0.15, duration: 0.4, ease: HIGHLAND_EASE }}
         >
@@ -269,7 +269,7 @@ export const ConfirmationState = ({
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: HIGHLAND_EASE }}
+        transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
         className={`text-center py-10 px-6 ${className}`}
       >
         {/* Icon with spring pop */}
@@ -303,7 +303,7 @@ export const ConfirmationState = ({
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
             className="text-muted-foreground font-body text-xs mt-3"
           >
             {secondaryMessage}
@@ -313,7 +313,7 @@ export const ConfirmationState = ({
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.3 }}
+            transition={{ delay: 0.3, duration: 0.3 }}
             className="mt-6"
           >
             {action}
@@ -324,7 +324,7 @@ export const ConfirmationState = ({
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ delay: 0.6, duration: 0.6, ease: HIGHLAND_EASE }}
+          transition={{ delay: 0.3, duration: 0.4, ease: HIGHLAND_EASE }}
           className="w-12 h-px bg-[hsl(var(--highland-gold)/0.3)] mx-auto mt-6"
         />
       </motion.div>

@@ -21,7 +21,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         />
       </div>
     );
@@ -42,7 +42,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           />
           <motion.path
             d="M0,30 Q120,12 240,24 Q360,36 480,18 Q600,0 720,14 Q840,28 960,10 Q1080,0 1200,22 Q1320,36 1440,26"
@@ -53,7 +53,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
             initial={{ pathLength: 0 }}
             whileInView={{ pathLength: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 2.5, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           />
         </svg>
       </div>
@@ -74,7 +74,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           />
         </svg>
       </div>
@@ -114,7 +114,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           />
         </svg>
       </div>
@@ -130,7 +130,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
+          transition={{ duration: 0.4, type: "spring", stiffness: 200 }}
         >
           {/* Outer ring */}
           <div className="w-4 h-4 rotate-45 border border-[hsl(var(--highland-gold)/0.25)]" />
@@ -150,7 +150,7 @@ const SectionDivider = ({ variant = "gold-fade", flip = false, className = "", d
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="w-10 h-px bg-[hsl(var(--highland-gold)/0.2)]" />
           <div className="w-1 h-1 rotate-45 bg-[hsl(var(--highland-gold)/0.35)]" />

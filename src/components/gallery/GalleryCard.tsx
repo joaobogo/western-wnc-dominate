@@ -53,7 +53,7 @@ const GalleryCard = ({
         initial={{ scale: 1.06 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.2, ease: HIGHLAND_EASE }}
+        transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
       />
 
       {/* Gradient overlay — intensifies on hover */}

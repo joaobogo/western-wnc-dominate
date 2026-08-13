@@ -70,10 +70,10 @@ const TrustedMaterials = () => {
       />
       <div className="container-tight relative">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: EASE }}
+          transition={{ duration: 0.4, ease: EASE }}
           className="max-w-3xl mb-12 md:mb-14"
         >
           <div className="flex items-center gap-3 mb-5">
@@ -98,10 +98,10 @@ const TrustedMaterials = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={v.ariaLabel}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: i * 0.08, ease: EASE }}
+              transition={{ duration: 0.4, delay: i * 0.08, ease: EASE }}
               className="group bg-white p-6 md:p-7 flex flex-col border border-white/10 hover:border-[hsl(var(--highland-gold)/0.6)] hover:-translate-y-1 transition-all duration-300 shadow-raised"
             >
               <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5 border-b border-foreground/10 pb-5">
@@ -125,10 +125,10 @@ const TrustedMaterials = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
+          transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
           className="mt-12 md:mt-16 border-t border-dark-section-foreground/10 pt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
         >
           <div className="max-w-xl">

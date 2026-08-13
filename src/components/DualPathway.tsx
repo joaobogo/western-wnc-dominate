@@ -132,10 +132,10 @@ const DivisionCard = ({ data, accent, index }: {
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.18, duration: 0.7, ease: HIGHLAND_EASE }}
+      transition={{ delay: index * 0.18, duration: 0.4, ease: HIGHLAND_EASE }}
       className="group relative bg-card border border-border rounded-none overflow-hidden spotlight-hover flex flex-col hover:border-[hsl(var(--highland-gold)/0.3)] transition-all duration-500"
     >
       {/* === IMAGE HEADER with curtain reveal === */}
@@ -319,7 +319,7 @@ const ThreeDivisionPathway = ({ paths = "three" }: { paths?: "two" | "three" }) 
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.7, duration: 0.6, ease: HIGHLAND_EASE }}
+          transition={{ delay: 0.3, duration: 0.4, ease: HIGHLAND_EASE }}
           className="max-w-2xl mx-auto text-center mt-12 md:mt-16"
         >
           <div className="flex items-center justify-center gap-4 mb-4">

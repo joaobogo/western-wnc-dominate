@@ -131,10 +131,10 @@ export const ValuesPillarGrid = ({
         {values.map((v, i) => (
           <motion.div
             key={v.name}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.06, duration: 0.5 }}
+            transition={{ delay: i * 0.06, duration: 0.4 }}
             className={`p-5 md:p-6 rounded-sm ${
               isDark
                 ? "border border-[hsl(var(--highland-gold)/0.1)] bg-[hsl(var(--dark-section-foreground)/0.03)]"
@@ -188,10 +188,10 @@ export const ValuesEditorial = ({ values: customValues, variant = "light" }: Val
       {items.map((v, i) => (
         <motion.div
           key={v.name}
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${i % 2 === 1 ? "md:direction-rtl" : ""}`}
         >
           <div className={i % 2 === 1 ? "md:order-2" : ""}>

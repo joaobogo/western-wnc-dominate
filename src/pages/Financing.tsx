@@ -50,7 +50,7 @@ const Financing = () => {
           </div>
           
           <div className="container-tight relative z-10 hero-clears-header pb-16 md:pb-24">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <p className="text-[hsl(var(--gold-ink))] font-bold text-sm uppercase tracking-[0.25em] mb-4">Investment Support</p>
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-white mb-6 leading-[0.95] tracking-tightest">
                 Ask About <span className="text-[hsl(var(--gold-ink))]">Financing</span> for Your Project

@@ -67,7 +67,7 @@ const Siding = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.4)] via-transparent to-transparent" />
           </div>
           <div className="container-tight relative z-10 pt-32 md:pt-40">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <span className="eyebrow mb-3 block text-[hsl(var(--gold-ink))]">Construction Division</span>
               <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-white tracking-tight">Siding & Exterior.</h1>
               <p className="text-white/85 text-lg md:text-xl max-w-2xl mb-8 font-body leading-relaxed">

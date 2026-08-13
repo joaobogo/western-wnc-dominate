@@ -100,9 +100,9 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
       <div className="container-tight relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
@@ -112,9 +112,9 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
 
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 text-balance"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
             See Your New Roof{" "}
             <span className="text-primary">Before</span> You Install It
@@ -122,9 +122,9 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
 
           <motion.p
             className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
           >
             Upload a photo of your home, choose your roof style, and see a realistic preview instantly.
           </motion.p>
@@ -133,9 +133,9 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
         {/* Upload zone */}
         <motion.div
           className="max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
           <div
             onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
@@ -199,7 +199,7 @@ const RoofDesignerHero = ({ onImageUploaded }: RoofDesignerHeroProps) => {
           className="flex flex-wrap items-center justify-center gap-6 mt-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
           {features.map((f) => (
             <div key={f.label} className="flex items-center gap-2 text-sm text-muted-foreground">

@@ -75,10 +75,10 @@ const Team = () => {
                 <motion.article
                   key={member.slug}
                   id={member.slug}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.5, delay: (idx % 3) * 0.08 }}
+                  transition={{ duration: 0.4, delay: (idx % 3) * 0.08 }}
                   className="flex flex-col h-full border border-border bg-card rounded-sm overflow-hidden shadow-flat scroll-mt-32"
                 >
                   <div className="relative aspect-[4/5] overflow-hidden bg-muted">

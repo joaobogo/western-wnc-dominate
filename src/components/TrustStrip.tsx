@@ -53,7 +53,7 @@ const TrustStrip = () => {
                     initial={{ opacity: 0, x: -16 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.5, ease: HIGHLAND_EASE }}
+                    transition={{ delay: i * 0.1, duration: 0.4, ease: HIGHLAND_EASE }}
                     className="flex items-baseline gap-4"
                   >
                     <AnimatedCounter
@@ -116,7 +116,7 @@ const TrustStrip = () => {
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.6, ease: HIGHLAND_EASE }}
+                transition={{ delay: 0.4, duration: 0.4, ease: HIGHLAND_EASE }}
                 className="mt-6 pt-4 border-t border-primary-foreground/[0.05]"
               >
                 <p className="text-primary-foreground/85 text-body-sm md:text-body-sm font-body italic leading-relaxed max-w-md font-medium">

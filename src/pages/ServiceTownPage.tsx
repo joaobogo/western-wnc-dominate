@@ -165,7 +165,7 @@ const ServiceTownPage = ({
           </div>
 
           <div className="container-tight relative z-10 pt-32 md:pt-40 pb-20">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
               <div className="flex items-center gap-2 text-[hsl(var(--gold-ink))] mb-6">
                 <MapPin className="w-4 h-4" />
                 <span className="font-bold text-sm uppercase tracking-[0.2em]">

@@ -41,10 +41,10 @@ export const TestimonialCard = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: HIGHLAND_EASE }}
+      transition={{ duration: 0.4, ease: HIGHLAND_EASE }}
       className={cn(
         "relative overflow-hidden h-full",
         isDark
