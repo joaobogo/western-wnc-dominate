@@ -27,6 +27,9 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import UrgentActionSteps from "@/components/emergency/UrgentActionSteps";
+import RepairPhotoProof from "@/components/emergency/RepairPhotoProof";
+import FastLeadForm from "@/components/FastLeadForm";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -237,6 +240,12 @@ const StormDamage = () => {
           answer="Storm damage work starts with documenting wind, hail, or falling-tree damage, protecting the home from further water intrusion, and then restoring the roof system. In the mountains, damage is often concentrated on exposed slopes and at flashing points rather than spread evenly. Highlander inspects, documents, and repairs storm damage across the region."
           points={["Damage documentation for your insurance claim", "Temporary protection to stop further water intrusion", "Full repair or replacement once scope is set"]}
         />
+
+        {/* ─── EMERGENCY-INTENT: WHAT TO DO RIGHT NOW ─── */}
+        <UrgentActionSteps variant="storm" />
+
+        {/* ─── PHOTO PROOF OF SIMILAR STORM WORK ─── */}
+        <RepairPhotoProof variant="storm" />
 
         {/* ─── OPENING STATEMENT ─── */}
         <section className="section-padding bg-background">
