@@ -83,7 +83,7 @@ export const BeforeAfterSlider = ({
       >
         <div className="w-0.5 h-full bg-white/90 shadow-[0_0_8px_rgba(0,0,0,0.3)]" />
         {/* Handle — with attention pulse on first view */}
-        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center transition-shadow ${!hasInteracted ? "animate-ba-pulse" : ""}`}>
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-raised flex items-center justify-center transition-shadow ${!hasInteracted ? "animate-ba-pulse" : ""}`}>
           <div className="flex items-center gap-0.5">
             <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-r-[5px] border-transparent border-r-[hsl(var(--heritage-charcoal))]" />
             <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-l-[5px] border-transparent border-l-[hsl(var(--heritage-charcoal))]" />

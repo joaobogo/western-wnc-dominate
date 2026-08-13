@@ -263,7 +263,7 @@ const ConstructionDivision = () => {
                   <div className="aspect-[4/3] rounded-none overflow-hidden border border-dark-section-foreground/6">
                     <img width={1600} height={1067} decoding="async" src={proj3} alt="Room addition with standing seam metal roof integration" className="w-full h-full object-cover" loading="lazy" />
                   </div>
-                  <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-lg max-w-[240px]">
+                  <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-5 -left-4 md:-left-6 bg-card border border-border rounded-none p-5 shadow-raised max-w-[240px]">
                     <span className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.1em] mb-1 block">One Company Advantage</span>
                     <p className="text-muted-foreground text-sm font-body leading-snug">
                       Design-first coordination, layout verification, and unified accountability — under one team.

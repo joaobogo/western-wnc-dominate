@@ -140,7 +140,7 @@ const Blog = () => {
                       placeholder="Search articles — e.g. metal roof cost"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-11 pr-4 py-4 bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground))] placeholder:text-[hsl(var(--dark-section-foreground)/0.45)] text-base font-body focus:outline-none focus:border-[hsl(var(--highland-gold)/0.4)] transition-colors rounded-sm shadow-inner"
+                      className="w-full pl-11 pr-4 py-4 bg-[hsl(var(--dark-section-foreground)/0.06)] border border-[hsl(var(--dark-section-foreground)/0.15)] text-[hsl(var(--dark-section-foreground))] placeholder:text-[hsl(var(--dark-section-foreground)/0.45)] text-base font-body focus:outline-none focus:border-[hsl(var(--highland-gold)/0.4)] transition-colors rounded-sm shadow-flat"
                     />
                   </div>
                 </motion.div>

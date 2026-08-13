@@ -257,7 +257,7 @@ const ServiceAreas = () => {
                 >
                   <Link
                     to={`/service-areas/${town.slug}`}
-                    className="group block bg-card border border-border p-5 hover:border-primary/20 hover:shadow-sm transition-all duration-300"
+                    className="group block bg-card border border-border p-5 hover:border-primary/20 hover:shadow-flat transition-all duration-300"
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin className="w-3.5 h-3.5 text-primary/80" />
@@ -298,7 +298,7 @@ const ServiceAreas = () => {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   to="/consultation"
-                  className="group cta-gradient text-accent-foreground font-bold text-lg md:text-xl px-12 py-6 rounded-sm inline-flex items-center justify-center gap-3 btn-primary-interactive shadow-2xl min-w-[320px] uppercase tracking-wider"
+                  className="group cta-gradient text-accent-foreground font-bold text-lg md:text-xl px-12 py-6 rounded-sm inline-flex items-center justify-center gap-3 btn-primary-interactive shadow-floating min-w-[320px] uppercase tracking-wider"
                 >
                   <span className="relative z-10">Discuss Your Property</span>
                   <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />

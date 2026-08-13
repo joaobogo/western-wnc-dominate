@@ -187,7 +187,7 @@ const RoofAssessmentQuiz = () => {
                   </p>
                   <button
                     onClick={() => goTo("q1")}
-                    className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-xl"
+                    className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-floating"
                   >
                     <span className="relative z-10">Start Assessment</span>
                     <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
@@ -241,7 +241,7 @@ const RoofAssessmentQuiz = () => {
                     </div>
                     <WhatHappensNext className="mb-1" />
                     <FormConsent />
-                    <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-lg tracking-widest uppercase disabled:opacity-60">
+                    <button type="submit" disabled={submitting} className="w-full cta-gradient text-accent-foreground font-body font-bold text-base py-4 rounded-none flex items-center justify-center gap-3 btn-primary-interactive shadow-raised tracking-widest uppercase disabled:opacity-60">
                       <span className="relative z-10">{submitting ? "Sending…" : "See My Results"}</span>
                       {submitting ? (
                         <Loader2 className="w-5 h-5 relative z-10 animate-spin" />
@@ -288,7 +288,7 @@ const RoofAssessmentQuiz = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="/consultation" className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-xl">
+                    <a href="/consultation" className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-floating">
                       <span className="relative z-10">{result.cta}</span>
                       <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                     </a>

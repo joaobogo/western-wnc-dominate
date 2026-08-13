@@ -865,7 +865,7 @@ const ResidentialRoofing = () => {
                 >
                   <AccordionItem
                     value={`faq-${i}`}
-                    className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300"
+                    className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300"
                   >
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
                       <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">

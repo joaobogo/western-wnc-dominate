@@ -152,7 +152,7 @@ const StormCenter = () => {
                   onClick={() => setActivePhase(activePhase === phase.id ? null : phase.id)}
                   className={`text-left p-5 md:p-6 rounded-sm border transition-all ${
                     activePhase === phase.id
-                      ? "border-[hsl(var(--highland-gold)/0.3)] bg-secondary shadow-sm"
+                      ? "border-[hsl(var(--highland-gold)/0.3)] bg-secondary shadow-flat"
                       : "border-border bg-card hover:border-[hsl(var(--highland-gold)/0.15)] card-lift"
                   }`}
                 >

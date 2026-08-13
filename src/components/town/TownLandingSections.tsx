@@ -121,7 +121,7 @@ export const TownServicesGrid = ({ town }: { town: TownData }) => (
           <ScrollReveal key={s.label} variant="rise-subtle" delay={i * 0.05}>
             <Link
               to={s.href}
-              className="group h-full flex flex-col bg-secondary/40 border border-border p-8 hover:border-primary/40 hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+              className="group h-full flex flex-col bg-secondary/40 border border-border p-8 hover:border-primary/40 hover:shadow-floating transition-all duration-500 relative overflow-hidden"
             >
               <div className="w-12 h-12 bg-primary/10 border border-primary/10 flex items-center justify-center mb-6">
                 <s.icon className="w-6 h-6 text-primary" />
@@ -184,7 +184,7 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/request-inspection"
-              className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm px-12 py-5 uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:scale-[1.02] transition shadow-2xl"
+              className="cta-gradient cta-glow text-accent-foreground font-heading font-bold text-body-sm px-12 py-5 uppercase tracking-widest inline-flex items-center justify-center gap-3 hover:scale-[1.02] transition shadow-floating"
             >
               Request a {town.name} Consultation <ArrowRight className="w-5 h-5" />
             </Link>
@@ -241,7 +241,7 @@ export const TownWhyChoose = ({ town }: { town: TownData }) => (
         <div className="lg:col-span-8 grid sm:grid-cols-2 gap-5">
           {reasons.map((r, i) => (
             <ScrollReveal key={r.title} variant="rise-subtle" delay={i * 0.05}>
-              <div className="flex gap-5 p-7 bg-background border border-border hover:border-primary/30 hover:shadow-md transition h-full">
+              <div className="flex gap-5 p-7 bg-background border border-border hover:border-primary/30 hover:shadow-raised transition h-full">
                 <div className="w-11 h-11 shrink-0 bg-primary/10 border border-primary/10 flex items-center justify-center">
                   <r.icon className="w-5 h-5 text-primary" />
                 </div>

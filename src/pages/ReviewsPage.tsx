@@ -198,7 +198,7 @@ const ReviewsPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="relative bg-card border border-border rounded-sm p-7 md:p-8 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-sm transition-all duration-300"
+                  className="relative bg-card border border-border rounded-sm p-7 md:p-8 hover:border-[hsl(var(--highland-gold)/0.2)] hover:shadow-flat transition-all duration-300"
                 >
                   <div className="h-px w-full absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-[hsl(var(--highland-gold)/0.25)] to-transparent" />
                   <div className="flex items-center justify-between mb-4">
@@ -265,7 +265,7 @@ const ReviewsPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06, duration: 0.45 }}
-                  className="group bg-card border border-border rounded-sm p-5 md:p-6 hover:border-primary/15 hover:shadow-sm transition-all duration-300"
+                  className="group bg-card border border-border rounded-sm p-5 md:p-6 hover:border-primary/15 hover:shadow-flat transition-all duration-300"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <span className={`text-caption font-body font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-sm ${categoryColors[r.category]}`}>

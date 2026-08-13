@@ -288,7 +288,7 @@ const LayoutsPlanning = () => {
 
               {/* Long Path */}
               <ScrollReveal variant="rise" delay={0.1}>
-                <div className="bg-primary border border-primary p-10 h-full flex flex-col shadow-xl group relative overflow-hidden text-white">
+                <div className="bg-primary border border-primary p-10 h-full flex flex-col shadow-floating group relative overflow-hidden text-white">
                   {/* Tartan subtle overlay in dark card */}
                   <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('/tartan.png')", backgroundSize: "200px auto" }} />
                   

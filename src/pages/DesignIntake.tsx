@@ -50,13 +50,13 @@ const DesignIntake = () => {
           <div className="mb-10 p-1.5 bg-secondary/50 border border-border rounded-lg inline-flex w-full">
             <button 
               onClick={() => setMode("long")}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-body-xs font-heading font-bold transition-all ${mode === "long" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-body-xs font-heading font-bold transition-all ${mode === "long" ? "bg-background shadow-flat text-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
               <FileText className="w-4 h-4" /> Detailed Planning Brief
             </button>
             <button 
               onClick={() => setMode("short")}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-body-xs font-heading font-bold transition-all ${mode === "short" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md text-body-xs font-heading font-bold transition-all ${mode === "short" ? "bg-background shadow-flat text-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
               <Sparkles className="w-4 h-4" /> Quick Inquiry
             </button>

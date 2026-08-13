@@ -139,7 +139,7 @@ export const MultiStepForm = ({
         <button
           onClick={isLast ? onSubmit : handleNext}
           disabled={isSubmitting}
-          className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-lg"
+          className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 btn-primary-interactive uppercase tracking-widest shadow-raised"
         >
           {isSubmitting ? (
             <>

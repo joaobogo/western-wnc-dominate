@@ -33,7 +33,7 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
     </a>
     <Link
       to="/consultation"
-      className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-body-xs px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-lg border border-[hsl(var(--highland-gold)/0.4)]"
+      className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-body-xs px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-raised border border-[hsl(var(--highland-gold)/0.4)]"
     >
       <span className="relative z-10">Get Estimate</span>
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />

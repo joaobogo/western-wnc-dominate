@@ -144,7 +144,7 @@ const About = () => {
                       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                     }
                   }}
-                  className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-body-sm md:text-body px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-lg"
+                  className="group bg-[hsl(var(--highland-gold))] text-[hsl(var(--heritage-charcoal))] font-heading font-bold text-body-sm md:text-body px-10 md:px-12 py-5 md:py-6 rounded-none inline-flex items-center justify-center gap-3 hover:bg-[hsl(var(--highland-gold-light))] active:scale-[0.98] transition-all duration-200 tracking-wide shadow-raised"
                 >
                   <span>Meet Our People</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -225,7 +225,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="group bg-card border border-border overflow-hidden hover:border-primary/20 hover:shadow-lg transition-all duration-300"
+                  className="group bg-card border border-border overflow-hidden hover:border-primary/20 hover:shadow-raised transition-all duration-300"
                 >
                   <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center relative">
                     {person.image ? (
@@ -447,7 +447,7 @@ const About = () => {
                   We're always looking for skilled craftsmen and dedicated professionals who share our values. If you're local, honest, and take pride in your work, we want to hear from you.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link to="/careers" className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 transition-all shadow-lg">
+                  <Link to="/careers" className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4.5 rounded-none inline-flex items-center gap-2 hover:opacity-90 transition-all shadow-raised">
                     View Open Positions <ArrowRight className="w-4 h-4" />
                   </Link>
                   <a href="tel:+18285247773" className="text-white/90 hover:text-white font-bold text-body-xs flex items-center gap-2 transition-colors">
@@ -635,7 +635,7 @@ const About = () => {
                   />
                 </div>
                 {/* Visual badge */}
-                <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary flex items-center justify-center p-6 text-center border border-white/10 shadow-xl">
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary flex items-center justify-center p-6 text-center border border-white/10 shadow-floating">
                   <p className="text-[hsl(var(--gold-ink))] font-heading font-bold text-xs uppercase tracking-widest leading-tight">Macon & Jackson County Specialists</p>
                 </div>
               </div>

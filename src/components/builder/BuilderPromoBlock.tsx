@@ -93,7 +93,7 @@ const BuilderPromoBlock = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden rounded-sm border border-border/60 bg-card shadow-sm"
+          className="relative overflow-hidden rounded-sm border border-border/60 bg-card shadow-flat"
         >
           {/* Decorative tartan stripe */}
           <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-accent via-secondary to-accent" />

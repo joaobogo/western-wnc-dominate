@@ -722,7 +722,7 @@ export default function Contact() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
                     href="tel:+18285247773"
-                    className="cta-gradient text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-4 inline-flex items-center gap-3 hover:opacity-95 hover:scale-[1.02] transition-all shadow-xl"
+                    className="cta-gradient text-accent-foreground font-heading font-bold text-base md:text-lg px-10 py-4 inline-flex items-center gap-3 hover:opacity-95 hover:scale-[1.02] transition-all shadow-floating"
                   >
                     <Phone className="w-5 h-5" /> Call Direct — (828) 524-7773
                   </a>

@@ -51,7 +51,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
 
   if (submitted) {
     return (
-      <div className="border border-border bg-card px-6 py-7 shadow-sm rounded-sm">
+      <div className="border border-border bg-card px-6 py-7 shadow-flat rounded-sm">
         <LeadConfirmationPanel
           heading="Request received."
           town={formData.town}
@@ -67,7 +67,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
   }
 
   return (
-    <div className="border border-border bg-card px-6 py-7 shadow-sm rounded-sm">
+    <div className="border border-border bg-card px-6 py-7 shadow-flat rounded-sm">
       <div className="mb-5">
         <div className="text-caption font-body font-semibold uppercase tracking-[0.18em] text-primary mb-2">
           Request an Estimate

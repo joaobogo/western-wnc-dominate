@@ -92,7 +92,7 @@ const RegionalAuthority = () => {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="lg:col-span-5 lg:sticky lg:top-28"
         >
-          <div className="bg-card border border-border rounded-none p-6 md:p-8 shadow-sm">
+          <div className="bg-card border border-border rounded-none p-6 md:p-8 shadow-flat">
             <div className="flex items-center gap-2 mb-5">
               <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
               <span className="text-caption font-body font-bold uppercase tracking-[0.18em] text-muted-foreground">

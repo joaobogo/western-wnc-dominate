@@ -413,7 +413,7 @@ export default function ChatbotWidget() {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={() => { setIsOpen(true); trackChatbotOpen(); }}
-            className="fixed right-4 md:right-6 bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] md:bottom-6 z-40 md:z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-xl hover:shadow-2xl flex items-center justify-center group"
+            className="fixed right-4 md:right-6 bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] md:bottom-6 z-40 md:z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-floating hover:shadow-floating flex items-center justify-center group"
             aria-label="Open project assistant"
           >
             <MessageCircle className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
@@ -430,7 +430,7 @@ export default function ChatbotWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-0 right-0 md:bottom-6 md:right-6 z-50 w-full md:w-[400px] h-[100dvh] md:h-[580px] md:rounded-lg overflow-hidden border border-border shadow-2xl flex flex-col bg-background"
+            className="fixed bottom-0 right-0 md:bottom-6 md:right-6 z-50 w-full md:w-[400px] h-[100dvh] md:h-[580px] md:rounded-lg overflow-hidden border border-border shadow-floating flex flex-col bg-background"
           >
             {/* Header */}
             <div className="bg-primary text-primary-foreground px-4 py-3 flex items-center justify-between shrink-0">

@@ -191,7 +191,7 @@ const SyntheticRoofing = () => {
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((f, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}>
-                  <AccordionItem value={`b-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-sm transition-all duration-300">
+                  <AccordionItem value={`b-${i}`} className="bg-card border border-border rounded-sm px-5 md:px-7 data-[state=open]:border-primary/15 data-[state=open]:shadow-flat transition-all duration-300">
                     <AccordionTrigger className="py-5 md:py-6 hover:no-underline gap-4">
                       <span className="font-heading font-semibold text-foreground text-body-sm leading-snug text-left">{f.q}</span>
                     </AccordionTrigger>

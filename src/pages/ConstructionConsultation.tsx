@@ -111,7 +111,7 @@ const CardSelect = ({ options, value, onChange }: {
           onClick={() => onChange(opt.id)}
           className={`text-left p-4 rounded-sm border transition-all arch-corners ${
             selected
-              ? "border-[hsl(var(--highland-gold)/0.5)] bg-[hsl(var(--highland-gold)/0.06)] shadow-sm"
+              ? "border-[hsl(var(--highland-gold)/0.5)] bg-[hsl(var(--highland-gold)/0.06)] shadow-flat"
               : "border-border bg-card hover:border-[hsl(var(--highland-gold)/0.2)] hover:bg-secondary/50"
           }`}
         >

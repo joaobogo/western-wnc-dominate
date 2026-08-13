@@ -102,7 +102,7 @@ const TrustedMaterials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: EASE }}
-              className="group bg-white p-6 md:p-7 flex flex-col border border-white/10 hover:border-[hsl(var(--highland-gold)/0.6)] hover:-translate-y-1 transition-all duration-300 shadow-lg"
+              className="group bg-white p-6 md:p-7 flex flex-col border border-white/10 hover:border-[hsl(var(--highland-gold)/0.6)] hover:-translate-y-1 transition-all duration-300 shadow-raised"
             >
               <div className="h-16 md:h-20 w-full flex items-center justify-center mb-5 border-b border-foreground/10 pb-5">
                 <img decoding="async"
@@ -142,7 +142,7 @@ const TrustedMaterials = () => {
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <Link
               to="/consultation"
-              className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-[0.1em] uppercase shadow-xl"
+              className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-[0.1em] uppercase shadow-floating"
             >
               Request a Quote <ArrowRight className="w-4 h-4" />
             </Link>

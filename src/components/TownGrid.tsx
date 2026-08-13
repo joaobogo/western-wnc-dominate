@@ -46,7 +46,7 @@ const TownGrid = ({ id }: { id?: string }) => {
                 <StaggerItem variant="rise">
                   <Link
                     to={`/service-areas/${town.slug}`}
-                    className="group block bg-dark-section-foreground/[0.06] border border-dark-section-foreground/[0.15] rounded-none p-6 md:p-8 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.3)] card-lift transition-all duration-500 shadow-sm h-full"
+                    className="group block bg-dark-section-foreground/[0.06] border border-dark-section-foreground/[0.15] rounded-none p-6 md:p-8 hover:bg-dark-section-foreground/[0.08] hover:border-[hsl(var(--highland-gold)/0.3)] card-lift transition-all duration-500 shadow-flat h-full"
                     style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }}
                   >
                     <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))] mb-3 group-hover:scale-110 transition-transform duration-300" />

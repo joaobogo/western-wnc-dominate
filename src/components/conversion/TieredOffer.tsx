@@ -58,7 +58,7 @@ const TieredOffer = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
-          className="bg-card border-2 border-[hsl(var(--gold-ink))]/40 rounded-sm p-6 md:p-8 shadow-lg"
+          className="bg-card border-2 border-[hsl(var(--gold-ink))]/40 rounded-sm p-6 md:p-8 shadow-raised"
         >
           <span className="text-caption font-body font-semibold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
             Ready now

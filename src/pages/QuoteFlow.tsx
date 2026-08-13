@@ -103,7 +103,7 @@ const CardSelect = ({ options, value, onChange, columns = 2 }: {
           onClick={() => onChange(opt.id)}
           className={`text-left p-4 rounded-sm border transition-all ${
             selected
-              ? "border-accent bg-accent/8 shadow-sm"
+              ? "border-accent bg-accent/8 shadow-flat"
               : "border-border bg-card hover:border-accent/30 hover:bg-secondary/50"
           }`}
         >
