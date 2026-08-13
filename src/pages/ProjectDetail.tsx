@@ -36,7 +36,7 @@ const ProjectDetailPage = () => {
           <div className="text-center">
             <h1 className="text-3xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">Project Not Found</h1>
             <p className="text-[hsl(var(--dark-section-foreground)/0.6)] mb-6">The project you're looking for doesn't exist or has been moved.</p>
-            <Link to="/recent-projects" className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2">
+            <Link to="/recent-projects" className="btn btn-primary btn-sm">
               View All Projects <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -281,7 +281,7 @@ const ProjectDetailPage = () => {
                 <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
                   <h4 className="font-heading font-semibold text-primary-foreground mb-2">Want Results Like This?</h4>
                   <p className="text-primary-foreground/85 text-sm mb-4">Schedule a consultation in {project.location} and let's discuss your project.</p>
-                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center">
+                  <Link to="/consultation" className="btn btn-primary btn-sm w-full">
                     Discuss Your Project <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -340,7 +340,7 @@ const ProjectDetailPage = () => {
               </div>
               <Link
                 to="/consultation"
-                className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 btn-primary-interactive flex-shrink-0"
+                className="btn btn-primary btn-sm flex-shrink-0"
               >
                 <Phone className="w-4 h-4" /> Discuss Your Project
               </Link>
@@ -393,7 +393,7 @@ const ProjectDetailPage = () => {
                 </div>
                 <Link 
                   to={`/service-areas/${project.location.split(',')[0].toLowerCase().trim().replace(/\s+/g, '-')}-nc`}
-                  className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm whitespace-nowrap"
+                  className="btn btn-primary btn-sm whitespace-nowrap"
                 >
                   View Local Service Page
                 </Link>

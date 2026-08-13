@@ -72,7 +72,7 @@ const UrgentActionSteps = ({ variant }: Props) => {
           </div>
           <a
             href="tel:+18285247773"
-            className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-6 py-3.5 inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all shrink-0"
+            className="btn btn-primary btn-md shrink-0"
           >
             <Phone className="w-4 h-4" />
             (828) 524-7773

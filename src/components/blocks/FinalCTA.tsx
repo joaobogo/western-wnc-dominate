@@ -39,14 +39,14 @@ export const FinalCTA = ({
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <Link
             to={primaryHref}
-            className="cta-gradient text-accent-foreground font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 uppercase tracking-[0.1em]"
+            className="btn btn-primary btn-md"
           >
             {primaryLabel}
             <ArrowRight className="w-4 h-4" />
           </Link>
           <a
             href={telHref}
-            className="bg-white/5 backdrop-blur-sm border border-white/15 text-primary-foreground font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all"
+            className="btn btn-secondary btn-lg btn-on-dark"
           >
             <Phone className="w-4 h-4" /> {phone}
           </a>

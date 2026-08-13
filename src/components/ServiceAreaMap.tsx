@@ -147,7 +147,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                 <li key={area.name}>
                   <Link
                     to={area.href!}
-                    className="group inline-flex items-center gap-1.5 bg-card border border-border hover:border-primary/40 hover:bg-card px-3.5 py-2 text-sm font-body font-semibold text-foreground hover:text-primary transition-all"
+                    className="btn btn-secondary btn-sm group"
                   >
                     <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                     {area.name}, NC
@@ -175,7 +175,7 @@ const ServiceAreaMap = ({ id }: { id?: string }) => {
                   <li key={area.name}>
                     <Link
                       to={area.href}
-                      className="group inline-flex items-center gap-1.5 bg-card border border-border hover:border-primary/40 px-3.5 py-2 text-sm font-body font-semibold text-foreground hover:text-primary transition-all"
+                      className="btn btn-secondary btn-sm group"
                     >
                       <MapPin className="w-3 h-3 text-[hsl(var(--gold-ink))]" />
                       {area.name}

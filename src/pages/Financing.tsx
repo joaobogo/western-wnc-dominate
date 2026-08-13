@@ -59,10 +59,10 @@ const Financing = () => {
                 A new roof or major construction project is a long-term investment. Financing can make it easier to move forward on the right timeline — talk with our team about options that may fit your project.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Link to="/contact" className="cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+                <Link to="/contact" className="btn btn-primary btn-md">
                   Ask About Financing <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="tel:+18285247773" className="bg-white/5 backdrop-blur-sm border border-white/15 text-white font-medium text-base px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+                <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark">
                   <Phone className="w-4 h-4" /> (828) 524-7773
                 </a>
               </div>

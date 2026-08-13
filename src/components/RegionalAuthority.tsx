@@ -69,14 +69,14 @@ const RegionalAuthority = () => {
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Link
               to="/consultation"
-              className="group cta-gradient text-accent-foreground font-body font-bold text-sm px-7 py-4 rounded-none inline-flex items-center justify-center gap-2 uppercase tracking-wider hover:opacity-90 transition-all"
+              className="btn btn-primary btn-md group"
             >
               Request an Estimate
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/roofing"
-              className="group bg-card border border-border text-foreground font-body font-bold text-sm px-7 py-4 rounded-none inline-flex items-center justify-center gap-2 uppercase tracking-wider hover:border-primary/40 transition-all"
+              className="btn btn-secondary btn-md group"
             >
               All Roofing Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

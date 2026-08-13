@@ -112,10 +112,10 @@ const Skylights = () => {
                   Team-led, VELUX Certified skylight installation across Western NC. Deck-mounted units, Sun Tunnels, and full leak diagnosis — coordinated with the roof system so the warranty actually holds.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                  <Link to="/consultation" className="btn btn-primary btn-md">
                     Request a Skylight Assessment <ArrowRight className="w-5 h-5" />
                   </Link>
-                  <a href="tel:+18285247773" className="border border-white/40 text-white font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+                  <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                     <Phone className="w-5 h-5" /> (828) 524-7773
                   </a>
                 </div>

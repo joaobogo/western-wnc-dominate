@@ -29,7 +29,7 @@ const MapEmbed = ({ className = "" }: { className?: string }) => {
         href={`https://www.google.com/maps/search/?api=1&query=${encoded}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2 px-4 py-3 border-t border-border bg-card hover:bg-secondary transition-colors"
+        className="btn btn-secondary btn-sm group"
       >
         <MapPin className="w-4 h-4 text-[hsl(var(--gold-ink))]" />
         <span className="text-body-sm font-body font-semibold text-foreground">

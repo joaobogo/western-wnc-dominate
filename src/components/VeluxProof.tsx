@@ -159,13 +159,13 @@ const VeluxProof = () => {
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <Link
               to="/consultation"
-              className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4.5 rounded-none inline-flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 tracking-[0.1em] uppercase shadow-floating"
+              className="btn btn-primary btn-lg"
             >
               Request Skylight Inspection <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:+18285247773"
-              className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold text-body-xs px-7 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-dark-section-foreground/5 transition-colors"
+              className="btn btn-secondary btn-md btn-on-dark"
             >
               <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.7)]" /> (828) 524-7773
             </a>

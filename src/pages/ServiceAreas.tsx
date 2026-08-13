@@ -298,14 +298,14 @@ const ServiceAreas = () => {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   to="/consultation"
-                  className="group cta-gradient text-accent-foreground font-bold text-lg md:text-xl px-12 py-6 rounded-sm inline-flex items-center justify-center gap-3 btn-primary-interactive shadow-floating min-w-[320px] uppercase tracking-wider"
+                  className="btn btn-primary btn-lg group md:text-xl min-w-[320px]"
                 >
                   <span className="relative z-10">Discuss Your Property</span>
                   <ArrowRight className="w-5 h-5 relative z-10 btn-arrow-icon" />
                 </Link>
                 <a
                   href="tel:+18285247773"
-                  className="bg-primary-foreground/8 border-2 border-primary-foreground/20 text-primary-foreground font-bold text-lg md:text-xl px-12 py-6 rounded-sm inline-flex items-center justify-center gap-3 hover:bg-primary-foreground/12 transition-all min-w-[240px]"
+                  className="btn btn-secondary btn-lg btn-on-dark md:text-xl min-w-[240px]"
                 >
                   <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>

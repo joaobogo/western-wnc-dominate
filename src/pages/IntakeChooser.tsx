@@ -95,7 +95,7 @@ const IntakeChooser = () => (
           <div className="grid sm:grid-cols-2 gap-3">
             <Link
               to="/roofing-builder"
-              className="group flex items-center gap-3 text-left bg-[hsl(var(--heritage-green)/0.04)] border border-[hsl(var(--heritage-green)/0.2)] rounded-lg px-5 py-4 hover:border-[hsl(var(--heritage-green))] transition-all"
+              className="btn btn-secondary btn-md group"
             >
               <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" />
               <div className="flex-1 min-w-0">
@@ -106,7 +106,7 @@ const IntakeChooser = () => (
             </Link>
             <Link
               to="/construction-builder"
-              className="group flex items-center gap-3 text-left bg-[hsl(var(--highland-gold)/0.05)] border border-[hsl(var(--highland-gold)/0.25)] rounded-lg px-5 py-4 hover:border-[hsl(var(--highland-gold))] transition-all"
+              className="btn btn-secondary btn-md group"
             >
               <Sparkles className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0" />
               <div className="flex-1 min-w-0">

@@ -238,7 +238,7 @@ const BlogPostPage = () => {
             </p>
             <Link
               to="/blog"
-              className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2"
+              className="btn btn-primary btn-sm"
             >
               Browse All Articles <ArrowRight className="w-4 h-4" />
             </Link>
@@ -478,7 +478,7 @@ const BlogPostPage = () => {
                         <Link
                           key={svc.path}
                           to={svc.path}
-                          className="inline-flex items-center gap-1.5 text-sm font-body font-medium text-primary hover:text-primary/80 transition-colors bg-primary/8 px-3 py-1.5 rounded-sm"
+                          className="btn btn-primary btn-sm"
                         >
                           {svc.label} <ArrowRight className="w-3 h-3" />
                         </Link>

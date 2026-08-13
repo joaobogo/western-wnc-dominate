@@ -251,7 +251,7 @@ const Certifications = () => {
               </p>
               <Link
                 to="/consultation"
-                className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
+                className="btn btn-primary btn-sm"
               >
                 Talk With Our Team <ArrowRight className="w-4 h-4" />
               </Link>

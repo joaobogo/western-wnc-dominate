@@ -85,7 +85,7 @@ const SEOLaunchQA = () => {
             <h3 className="text-heading font-heading font-bold mb-4 text-foreground">Ready for production?</h3>
             <p className="text-body text-muted-foreground mb-8">Once all items are verified, proceed with final launch protocols.</p>
             <div className="flex justify-center">
-              <Link to="/contact" className="cta-gradient text-accent-foreground font-bold px-10 py-4 rounded-none inline-flex items-center gap-2">
+              <Link to="/contact" className="btn btn-primary btn-md">
                 Launch Final Review <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

@@ -326,7 +326,7 @@ const Gallery = () => {
               </p>
               <Link
                 to="/consultation"
-                className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center gap-2 btn-primary-interactive"
+                className="btn btn-primary btn-sm"
               >
                 Start a Similar Project <ArrowRight className="w-4 h-4 btn-arrow-icon" />
               </Link>

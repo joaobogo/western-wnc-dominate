@@ -110,7 +110,7 @@ const RoofCostEstimator = () => {
         : "border-border hover:border-[hsl(var(--highland-gold)/0.2)] hover:bg-secondary/30"
     }`;
 
-  const inputClass = "w-full px-4 py-3.5 rounded-none bg-background border border-border text-foreground placeholder:text-muted-foreground text-sm font-body field-premium";
+  const inputClass = "field-input";
   const labelClass = "block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
 
   return (
@@ -305,11 +305,11 @@ const RoofCostEstimator = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="/consultation" className="cta-gradient text-accent-foreground font-heading font-bold px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 btn-primary-interactive">
+                    <a href="/consultation" className="btn btn-primary btn-md">
                       <span className="relative z-10">Request a Consultation</span>
                       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
                     </a>
-                    <a href="tel:+18285247773" className="border border-border text-foreground font-medium px-8 py-3.5 rounded-none inline-flex items-center justify-center gap-2 hover:bg-secondary transition-colors font-body">
+                    <a href="tel:+18285247773" className="btn btn-secondary btn-md">
                       Call (828) 524-7773
                     </a>
                   </div>

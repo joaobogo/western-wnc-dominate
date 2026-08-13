@@ -206,13 +206,13 @@ const ConstructionDesign = () => {
               >
                 <Link
                   to="/construction-intake"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                  className="btn btn-primary btn-md"
                 >
                   Plan Your Construction Project <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
-                  className="bg-white/10 backdrop-blur-sm border border-white/25 text-white font-heading font-bold text-body-sm px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all uppercase tracking-[0.1em]"
+                  className="btn btn-secondary btn-md btn-on-dark"
                 >
                   Start with a Design Agreement <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -342,7 +342,7 @@ const ConstructionDesign = () => {
 
                   <Link
                     to={p.ctaHref}
-                    className="mt-5 group/cta inline-flex items-center justify-center gap-2 w-full border border-[hsl(var(--highland-gold)/0.45)] bg-transparent text-foreground font-heading font-bold text-body-xs px-5 py-3 rounded-none uppercase tracking-[0.12em] hover:bg-[hsl(var(--highland-gold)/0.08)] hover:border-[hsl(var(--highland-gold))] transition-all"
+                    className="btn btn-secondary btn-sm mt-5 group/cta w-full"
                   >
                     {p.ctaLabel} <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
                   </Link>
@@ -386,7 +386,7 @@ const ConstructionDesign = () => {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     to="/construction-intake"
-                    className="cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                    className="btn btn-primary btn-md"
                   >
                     Plan Your Construction Project <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -497,7 +497,7 @@ const ConstructionDesign = () => {
                 </div>
                 <Link
                   to="/design-intake?mode=long"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                  className="btn btn-primary btn-md"
                 >
                   Send Your Plans <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -547,13 +547,13 @@ const ConstructionDesign = () => {
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
                 <Link
                   to="/construction-intake"
-                  className="cta-gradient text-accent-foreground font-heading font-bold text-body-sm px-10 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:opacity-95 transition-all uppercase tracking-[0.1em]"
+                  className="btn btn-primary btn-md"
                 >
                   Plan Your Construction Project <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   to="/design-intake?mode=long"
-                  className="bg-white/10 backdrop-blur-sm border border-white/25 text-dark-section-foreground font-heading font-bold text-body-sm px-8 py-4 rounded-none inline-flex items-center justify-center gap-2.5 hover:bg-white/15 transition-all uppercase tracking-[0.1em]"
+                  className="btn btn-secondary btn-md btn-on-dark"
                 >
                   Start with a Design Agreement <ArrowRight className="w-4 h-4" />
                 </Link>

@@ -96,7 +96,7 @@ const DesignProgramPromo = ({
               </div>
               <Link
                 to="/construction/design"
-                className="inline-flex items-center gap-2 cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-7 py-3.5 rounded-none uppercase tracking-[0.1em] hover:opacity-95 transition-all"
+                className="btn btn-primary btn-md"
               >
                 Start with a Design Agreement <ArrowRight className="w-4 h-4" />
               </Link>
@@ -160,13 +160,13 @@ const DesignProgramPromo = ({
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to="/construction/design"
-              className="inline-flex items-center justify-center gap-2 cta-gradient text-accent-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none uppercase tracking-[0.1em] hover:opacity-95 transition-all"
+              className="btn btn-primary btn-md"
             >
               Start with a Design Agreement <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/construction-intake"
-              className="inline-flex items-center justify-center gap-2 border border-border bg-background text-foreground font-heading font-bold text-body-xs px-8 py-4 rounded-none uppercase tracking-[0.1em] hover:border-[hsl(var(--highland-gold)/0.4)] transition-all"
+              className="btn btn-secondary btn-md"
             >
               Plan Your Construction Project <ArrowRight className="w-4 h-4" />
             </Link>

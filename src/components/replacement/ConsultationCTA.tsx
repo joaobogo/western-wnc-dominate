@@ -20,14 +20,14 @@ const ConsultationCTA = ({ heading, subline, label = "Book My Replacement Consul
         <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
           <Link
             to="/consultation"
-            className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+            className="btn btn-primary btn-md group"
           >
             <span>{label}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <a
             href="tel:+18285247773"
-            className="border border-primary-foreground/30 text-primary-foreground font-semibold text-sm px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors"
+            className="btn btn-secondary btn-md btn-on-dark"
           >
             <Phone className="w-4 h-4" />
             828-524-7773

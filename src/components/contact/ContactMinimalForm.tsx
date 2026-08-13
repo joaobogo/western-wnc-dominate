@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Loader2, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useContactValidation } from "@/hooks/use-contact-validation";
 import { useFormAutosave } from "@/hooks/use-form-autosave";
 import { submitLead } from "@/lib/leads";
@@ -153,11 +154,12 @@ const ContactMinimalForm = () => {
     );
   }
 
-  const inputClasses = "w-full px-4 py-4 rounded-none border border-input bg-background text-body-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all";
-  const labelClasses = "block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground mb-2";
+  const inputClasses = "field-input";
+  const labelClasses = "field-label";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" data-hide-sticky>
+      <FormErrorSummary message={submitError} issues={issues} className="mt-0 mb-2" />
       <FormSavedNote show={autosave.restored} className="mb-2" />
 
       <div>
@@ -241,7 +243,7 @@ const ContactMinimalForm = () => {
           id="cm-need"
           value={form.need}
           onChange={(e) => setForm((p) => ({ ...p, need: e.target.value }))}
-          className={`${inputClasses} appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwb2x5bGluZSBwb2ludHM9IjYgOSAxMiAxNSAxOCA5Ij48L3BvbHlsaW5lPjwvc3ZnPg==')] bg-[length:1rem_1rem] bg-[right_1rem_center] bg-no-repeat pr-10`}
+          className={inputClasses}
         >
           {NEED_OPTIONS.map((o) => (
             <option key={o.value} value={o.value}>
@@ -265,35 +267,20 @@ const ContactMinimalForm = () => {
           onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
           placeholder="Briefly describe the problem, timeline, or anything else that would help us prepare."
           rows={4}
-          className={`${inputClasses} resize-none`}
+          className={inputClasses}
           maxLength={2000}
         />
       </div>
-
-      <FormErrorSummary message={submitError} issues={issues} />
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-1">
         <div className="flex items-center gap-2 text-body-xs text-muted-foreground font-body">
           <Phone className="w-4 h-4 text-primary" />
           <span>Personal response within 24 hours.</span>
         </div>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="cta-gradient text-accent-foreground font-heading font-bold text-sm px-8 py-4 inline-flex items-center gap-2.5 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 min-h-[56px]"
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-4 h-4 animate-spin" />
-              {microcopy.loading.submitting}
-            </>
-          ) : (
-            <>
-              Send My Message
-              <ArrowRight className="w-4 h-4" />
-            </>
-          )}
-        </button>
+        <Button type="submit" size="lg" loading={isSubmitting} loadingText={microcopy.loading.submitting}>
+          Send My Message
+          <ArrowRight />
+        </Button>
       </div>
 
       <FormConsent />

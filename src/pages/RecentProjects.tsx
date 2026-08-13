@@ -107,10 +107,10 @@ const RecentProjects = () => {
               and design-led construction support.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-2">
-              <Link to="/contact" className="cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+              <Link to="/contact" className="btn btn-primary btn-md">
                 Request an Estimate <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/roofing" className="border border-[hsl(var(--heritage-green))]/30 text-[hsl(var(--heritage-green))] font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-[hsl(var(--heritage-green))]/10 transition-all">
+              <Link to="/roofing" className="btn btn-secondary btn-md">
                 Explore Our Services
               </Link>
             </div>
@@ -333,10 +333,10 @@ const RecentProjects = () => {
               you need. Our team will help you determine the right next step.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/contact" className="cta-gradient text-accent-foreground font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+              <Link to="/contact" className="btn btn-primary btn-md">
                 Request an Estimate <ArrowRight className="w-4 h-4" />
               </Link>
-              <a href="tel:+18285247773" className="border border-white/30 text-white font-semibold text-sm px-8 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+              <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                 <Phone className="w-4 h-4" /> 828-524-7773
               </a>
             </div>

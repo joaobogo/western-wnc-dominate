@@ -119,10 +119,10 @@ const ServicePage = () => {
                 {service.subheadline}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/consultation" className="cta-gradient text-accent-foreground font-bold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <Link to="/consultation" className="btn btn-primary btn-md">
                   Request a Consultation <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:+18285247773" className="border border-dark-section-foreground/30 text-dark-section-foreground font-semibold px-8 py-4 rounded-md inline-flex items-center justify-center gap-2 hover:bg-dark-section-foreground/10 transition-colors">
+                <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                   <Phone className="w-5 h-5" /> (828) 524-7773
                 </a>
               </div>
@@ -147,7 +147,7 @@ const ServicePage = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">What We Do</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-                <Link to="/consultation" className="cta-gradient text-accent-foreground font-semibold px-6 py-3 rounded-md inline-flex items-center gap-2 hover:opacity-90 transition-opacity">
+                <Link to="/consultation" className="btn btn-primary btn-sm">
                   Discuss Your Project <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>

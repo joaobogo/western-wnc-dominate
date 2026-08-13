@@ -109,8 +109,9 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           autosave.clear();
         }}
       >
+        <FormErrorSummary message={submitError} issues={issues} className="mt-0" />
         <div>
-          <label htmlFor={`${serviceLabel}-name`} className="mb-2 block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          <label htmlFor={`${serviceLabel}-name`} className="field-label">
             Name
           </label>
           <input
@@ -129,7 +130,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label htmlFor={`${serviceLabel}-phone`} className="mb-2 block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <label htmlFor={`${serviceLabel}-phone`} className="field-label">
               Phone
             </label>
             <input
@@ -146,7 +147,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
             <InlineFieldError>{contact.errorFor("phone")}</InlineFieldError>
           </div>
           <div>
-            <label htmlFor={`${serviceLabel}-town`} className="mb-2 block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <label htmlFor={`${serviceLabel}-town`} className="field-label">
               Town
             </label>
             <input
@@ -165,7 +166,7 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
         </div>
 
         <div>
-          <span className="mb-2 block text-caption font-body font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          <span className="field-label">
             Timing
           </span>
           <div className="grid gap-2 sm:grid-cols-2">
@@ -176,7 +177,8 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
                   key={option}
                   type="button"
                   onClick={() => setFormData({ ...formData, urgency: option })}
-                  className={`border px-4 py-3 text-left text-sm font-body transition-colors ${selected ? "border-primary bg-primary/10 text-foreground" : "border-border bg-background text-muted-foreground hover:border-primary/40"}`}
+                  aria-pressed={selected}
+                  className="tap-card"
                 >
                   {option}
                 </button>
@@ -185,7 +187,6 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           </div>
         </div>
 
-        <FormErrorSummary message={submitError} issues={issues} />
         <FormSavedNote show={autosave.restored} />
         <WhatHappensNext />
         <FormConsent />
@@ -193,12 +194,14 @@ const FastLeadForm = ({ ctaLabel, serviceLabel, urgencyOptions }: FastLeadFormPr
           whileTap={{ scale: 0.98 }}
           type="submit"
           disabled={submitting}
-          className="inline-flex w-full items-center justify-center gap-2 bg-primary px-5 py-3.5 font-body text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+          data-loading={submitting ? "true" : undefined}
+          aria-busy={submitting || undefined}
+          className="btn btn-primary btn-md btn-block"
         >
           {submitting ? (
             <>
-              Sending…
               <Loader2 className="h-4 w-4 animate-spin" />
+              Sending…
             </>
           ) : (
             <>

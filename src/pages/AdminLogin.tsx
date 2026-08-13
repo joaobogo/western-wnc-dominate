@@ -41,12 +41,12 @@ export default function AdminLogin() {
         </div>
         <input aria-label="Email" {...fieldAttrs.email} autoComplete="username" required placeholder="Email" value={email}
           onChange={e => setEmail(e.target.value)}
-          className="w-full border border-input rounded px-3 py-2 text-sm bg-background" />
+          className="field-input" />
         <input aria-label="Password" {...fieldAttrs.password} required placeholder="Password" value={password}
           onChange={e => setPassword(e.target.value)}
-          className="w-full border border-input rounded px-3 py-2 text-sm bg-background" />
+          className="field-input" />
         {err && <p className="text-xs text-destructive">{err}</p>}
-        <button disabled={loading} className="w-full bg-primary text-primary-foreground rounded py-2 text-sm font-semibold disabled:opacity-40">
+        <button disabled={loading} className="btn btn-primary btn-md btn-block">
           {loading ? "Signing in…" : "Sign in"}
         </button>
       </form>

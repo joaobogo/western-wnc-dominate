@@ -130,14 +130,14 @@ const HomeFAQ = () => {
         >
           <Link
             to="/contact"
-            className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:opacity-90 transition-all min-h-11"
+            className="btn btn-primary btn-md group"
           >
             Request an Estimate
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <a
             href="tel:+18285247773"
-            className="group bg-card border border-border text-foreground font-semibold text-sm px-7 py-4 rounded-sm inline-flex items-center justify-center gap-2 hover:border-primary/40 transition-all min-h-11"
+            className="btn btn-secondary btn-md group"
           >
             <Phone className="w-4 h-4 text-primary" /> (828) 524-7773
           </a>
