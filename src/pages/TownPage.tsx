@@ -1,4 +1,5 @@
 import AnswerBlock from "@/components/seo/AnswerBlock";
+import Section from "@/components/layout/Section";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -205,8 +206,7 @@ const TownPage = () => {
 
         {/* 1.5 Local Relevance — tight, conversion-focused per-town intro */}
         {localRelevance && (
-          <section className="py-16 md:py-20 bg-secondary/40 border-y border-border/60">
-            <div className="container-tight">
+          <Section density="default" className="bg-secondary/40 border-y border-border/60">
               <ScrollReveal variant="fade">
                 <div className="max-w-3xl">
                   <span className="eyebrow mb-4 block">Why {town.name}, {town.state}</span>
@@ -218,17 +218,15 @@ const TownPage = () => {
                   </p>
                 </div>
               </ScrollReveal>
-            </div>
-          </section>
+          </Section>
         )}
 
         {/* 1.6 Storm / Emergency band — high-urgency CTA under the fold */}
         <TownEmergencyBand town={town} />
 
         {/* 2. Authority Section */}
-        <section className="py-24 bg-background relative overflow-hidden">
+        <Section density="feature" className="bg-background relative overflow-hidden" containerClassName="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <TartanBackground opacity={0.02} />
-          <div className="container-tight grid lg:grid-cols-2 gap-20 items-center">
             <ScrollReveal variant="fade">
               <span className="eyebrow mb-4 block">Regional Intelligence</span>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-8 leading-tight">
@@ -268,15 +266,14 @@ const TownPage = () => {
                 ))}
               </ul>
             </div>
-          </div>
-        </section>
+        </Section>
 
         {/* 3. LOCAL PROOF — real work and real voices from this town first */}
         {townProof && <TownProofBlock town={town} content={townProof} />}
 
         <FeaturedProjects location={town.name} />
 
-        <div className="container-tight pt-4 md:pt-8 space-y-14">
+        <div className="container-rhythm max-w-7xl pt-8 md:pt-12 space-y-12">
           <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" />
           <AttributedReviews town={town.name} category="roofing" />
         </div>
@@ -304,9 +301,8 @@ const TownPage = () => {
         <BuiltForWNC />
 
         {/* 7. Localized Blog & Knowledge Base */}
-        <section className="py-24 bg-secondary/30 relative overflow-hidden">
+        <Section density="feature" className="bg-secondary/30 relative overflow-hidden" containerClassName="relative z-10">
           <TartanBackground opacity={0.015} />
-          <div className="container-tight relative z-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <div className="max-w-2xl">
                 <ScrollReveal variant="fade">
@@ -386,8 +382,7 @@ const TownPage = () => {
                 </Link>
               </div>
             </ScrollReveal>
-          </div>
-        </section>
+        </Section>
 
         <ProjectConcierge />
 
