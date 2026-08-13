@@ -162,6 +162,8 @@ img {
     --ink-muted: 210 12% 38%;
     --alert: 0 72% 51%;
     --alert-foreground: 0 0% 98%;
+    /* Text-safe alert red: clears 4.5:1 on cream, white and alert/10 tints. */
+    --alert-ink: 0 74% 36%;
 
     /* Highlander Heritage Palette — Refined */
     --background: var(--surface); /* Pure white for maximum clarity */

@@ -578,7 +578,7 @@ export default function AdminLeads() {
                 {selected.jobtread_error_message && (
                   <div>
                     <p className="text-caption uppercase tracking-wide text-muted-foreground mb-1">Error</p>
-                    <p className="text-xs whitespace-pre-wrap bg-destructive/10 text-destructive p-2 rounded">{selected.jobtread_error_message}</p>
+                    <p className="text-xs whitespace-pre-wrap bg-destructive/10 text-alert-ink p-2 rounded">{selected.jobtread_error_message}</p>
                   </div>
                 )}
                 <button

@@ -11,7 +11,7 @@ type TestimonialCategory = "Roofing" | "Construction" | "Storm" | "Commercial";
 const categoryColors: Record<TestimonialCategory, string> = {
   Roofing: "bg-primary/10 text-primary",
   Construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--gold-ink))]",
-  Storm: "bg-destructive/10 text-destructive",
+  Storm: "bg-destructive/10 text-alert-ink",
   Commercial: "bg-secondary text-muted-foreground",
 };
 

@@ -36,7 +36,7 @@ const categoryLabels: Record<string, string> = {
 const categoryColors: Record<string, string> = {
   roofing: "bg-primary/10 text-primary",
   construction: "bg-[hsl(var(--highland-gold)/0.12)] text-[hsl(var(--gold-ink))]",
-  storm: "bg-destructive/10 text-destructive",
+  storm: "bg-destructive/10 text-alert-ink",
   commercial: "bg-secondary text-muted-foreground",
 };
 
