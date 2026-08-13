@@ -305,7 +305,7 @@ const SpecialtyRoofing = () => {
                   </section>
         }
         costContext={
-                  <CostContextBlock serviceLabel="specialty roofing" />
+                  <CostContextBlock serviceLabel="specialty roofing" variant="roofing" />
         }
         process={
                   <section className="section-padding bg-background">

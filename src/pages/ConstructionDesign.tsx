@@ -1,3 +1,4 @@
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import { Link } from "react-router-dom";
@@ -566,6 +567,7 @@ const ConstructionDesign = () => {
             </div>
           </div>
         </section>
+        <CostContextBlock serviceLabel="design and planning" variant="construction" />
         <CommonConcerns />
       <RelatedLinks
           eyebrow="Keep Exploring"

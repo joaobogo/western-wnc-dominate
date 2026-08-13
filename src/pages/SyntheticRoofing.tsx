@@ -159,7 +159,7 @@ const SyntheticRoofing = () => {
             </div>
           </section>
         }
-        costContext={<CostContextBlock serviceLabel="synthetic roofing" />}
+        costContext={<CostContextBlock serviceLabel="synthetic roofing" variant="roofing" />}
         process={
           <>
             <SchedulingReality serviceLabel="synthetic roofing" />

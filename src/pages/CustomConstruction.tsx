@@ -1,3 +1,4 @@
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -441,6 +442,7 @@ const CustomConstruction = () => {
         cta={
           <>
             {/* ─── CLOSING CTA ─── */}
+        <CostContextBlock serviceLabel="custom build" variant="construction" />
         <CommonConcerns />
         <ConstructionClosingCTA
           headline={"The Right Builder Makes\nAll the Difference."}

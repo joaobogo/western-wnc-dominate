@@ -1,3 +1,4 @@
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -439,6 +440,7 @@ const CommercialRoofing = () => {
 
                     <TieredOffer context="commercial-roofing" primaryLabel="Get My Building Assessed" />
 
+                    <CostContextBlock serviceLabel="commercial roofing" variant="commercial" />
                     <CommonConcerns />
 
                   <section className="section-padding bg-muted/20">

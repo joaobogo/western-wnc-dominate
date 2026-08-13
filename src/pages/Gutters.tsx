@@ -188,7 +188,7 @@ const Gutters = () => {
         </>}
         costContext={<>
         <CostOfWaiting variant="gutters" />
-        <CostContextBlock serviceLabel="gutter" />
+        <CostContextBlock serviceLabel="gutter" variant="gutters" />
         </>}
         process={<>
         <SchedulingReality serviceLabel="gutter" />

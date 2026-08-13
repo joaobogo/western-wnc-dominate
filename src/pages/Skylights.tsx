@@ -175,7 +175,7 @@ const Skylights = () => {
             </div>
           </section>
         }
-        costContext={<CostContextBlock serviceLabel="skylight" />}
+        costContext={<CostContextBlock serviceLabel="skylight" variant="skylights" />}
         process={<SchedulingReality serviceLabel="skylight" />}
         proof={
           <>

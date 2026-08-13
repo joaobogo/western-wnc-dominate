@@ -226,7 +226,7 @@ const ServicePage = () => {
         <CommonConcerns />
         {service.division !== "construction" && (
           <>
-            <CostContextBlock serviceLabel={service.title.toLowerCase()} />
+            <CostContextBlock serviceLabel={service.title.toLowerCase()} variant={service.division === "construction" ? "construction" : "roofing"} />
             <SchedulingReality serviceLabel={service.title.toLowerCase()} />
           </>
         )}

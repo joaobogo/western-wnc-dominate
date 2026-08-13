@@ -1,3 +1,4 @@
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -456,6 +457,7 @@ const ExteriorImprovements = () => {
         cta={
           <>
             {/* ─── CLOSING CTA ─── */}
+        <CostContextBlock serviceLabel="exterior improvement" variant="exterior" />
         <CommonConcerns />
         <ConstructionClosingCTA
           headline={"Your Home's Best Days\nDon't Have to Be Behind It."}

@@ -1,3 +1,4 @@
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -465,6 +466,7 @@ const Renovations = () => {
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="renovations" />
 
+        <CostContextBlock serviceLabel="renovation" variant="construction" />
         <CommonConcerns />
         <ConstructionClosingCTA
           headline={"Your Home Deserves\nBetter Than 'Good Enough.'"}

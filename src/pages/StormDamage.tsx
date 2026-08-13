@@ -434,7 +434,7 @@ const StormDamage = () => {
           costContext={
             <>
         <CostOfWaiting variant="storm" />
-        <CostContextBlock serviceLabel="storm damage" />
+        <CostContextBlock serviceLabel="storm damage" variant="storm" />
         <SchedulingReality serviceLabel="storm damage" />
             </>
           }
