@@ -26,6 +26,12 @@ const roofingData = {
   badge: "Est. 2017",
   title: "Mountain-Grade Roofing",
   subtitle: "Our Foundation",
+  promise: "We keep water out of mountain homes with systems specified for your elevation, wind zone, and moisture exposure.",
+  links: [
+    { name: "Roof Repair", href: "/roofing/roof-repair", note: "Leaks and storm damage" },
+    { name: "Roof Replacement", href: "/roofing/roof-replacement", note: "Full tear-off and rebuild" },
+    { name: "Metal Roofing", href: "/roofing/metal", note: "Standing seam systems" },
+  ],
   description: "Every material specified for your elevation, wind zone, and moisture exposure. Installed by crews who've spent their careers on WNC ridgelines.",
   stats: [
     { value: "4.9★", label: "Google Rating" },
@@ -51,6 +57,12 @@ const constructionData = {
   badge: "Licensed GC",
   title: "Premium Home Construction",
   subtitle: "Our Craftsmanship",
+  promise: "We add and rebuild living space on mountain lots with one licensed contractor holding the schedule and the scope.",
+  links: [
+    { name: "Home Additions", href: "/construction/additions", note: "More space, built on" },
+    { name: "Outdoor Living", href: "/construction/outdoor-living", note: "Decks and porches" },
+    { name: "Renovations", href: "/construction/renovations", note: "Kitchens, baths, whole-home" },
+  ],
   description: "Additions, outdoor living, and whole-home renovations. We treat every construction project with the same structural precision as our roofing division, ensuring your investment is built to last in the WNC environment.",
   stats: [
     { value: "GC", label: " Licensed Contractor" },
@@ -76,6 +88,12 @@ const designData = {
   badge: "Pre-Con Support",
   title: "Design",
   subtitle: "Our Intelligence",
+  promise: "We map the project before the first board is cut so the scope, plan, and budget are settled up front.",
+  links: [
+    { name: "Layouts & Planning", href: "/layouts-planning", note: "Floor plans and feasibility" },
+    { name: "Design Services", href: "/construction/design", note: "Pre-construction detail" },
+    { name: "Talk It Through", href: "/construction/consultation", note: "Scope your build" },
+  ],
   description: "Before the first board is cut, we ensure your project is intelligently mapped. From layouts and floor plans to detailed scoping, we eliminate surprises and protect design integrity end-to-end.",
   stats: [
     { value: "100%", label: " Pre-Con Clarity" },
@@ -204,30 +222,43 @@ const DivisionCard = ({ data, accent, index }: {
         <h3 className="text-xl md:text-heading-sm font-heading font-bold text-foreground mb-3 leading-tight tracking-tight">
           {data.title}
         </h3>
-        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-7 font-bold">
-          {data.description}
+
+        {/* One-sentence promise — the only prose in the card */}
+        <p className="text-foreground/90 text-base md:text-lg leading-relaxed font-body mb-7 font-bold text-pretty">
+          {data.promise}
         </p>
 
-        {/* Service grid — 2 columns */}
-        <div className="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-8 flex-1">
-          {data.services.map((service, si) => (
-            <motion.div
-              key={service.name}
+        {/* Three sub-links, scoped to this division only */}
+        <ul className="mb-8 flex-1 divide-y divide-border/70 border-y border-border/70">
+          {data.links.map((link, si) => (
+            <motion.li
+              key={link.href}
               initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.35 + index * 0.1 + si * 0.04, duration: 0.3, ease: HIGHLAND_EASE }}
-              className="flex items-center gap-2 group/item"
+              transition={{ delay: 0.35 + index * 0.1 + si * 0.06, duration: 0.3, ease: HIGHLAND_EASE }}
             >
-              <service.icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors duration-200 ${
-                isGold ? "text-[hsl(var(--highland-gold)/0.9)] group-hover/item:text-[hsl(var(--highland-gold)/0.8)]" : "text-primary/80 group-hover/item:text-primary/70"
-              }`} />
-              <span className="text-body-xs md:text-body-sm text-foreground/80 font-body font-bold leading-tight">
-                {service.name}
-              </span>
-            </motion.div>
+              <Link
+                to={link.href}
+                className="group/item flex items-center justify-between gap-4 py-3 min-h-[48px] transition-colors"
+              >
+                <span className="flex flex-col">
+                  <span className={`font-body font-bold text-body-sm md:text-base leading-tight text-foreground transition-colors ${
+                    isGold ? "group-hover/item:text-[hsl(var(--highland-gold))]" : "group-hover/item:text-primary"
+                  }`}>
+                    {link.name}
+                  </span>
+                  <span className="text-body-xs font-body text-muted-foreground leading-tight mt-0.5">
+                    {link.note}
+                  </span>
+                </span>
+                <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-transform group-hover/item:translate-x-1 ${
+                  isGold ? "text-[hsl(var(--highland-gold))]" : "text-primary"
+                }`} />
+              </Link>
+            </motion.li>
           ))}
-        </div>
+        </ul>
 
         {/* CTA */}
         <Link
