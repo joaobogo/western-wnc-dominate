@@ -1,24 +1,30 @@
-import { Star, ShieldCheck, MapPin, Award, Hammer } from "lucide-react";
+import { Star, ShieldCheck, MapPin } from "lucide-react";
 import { GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 
 /**
- * Two-line credibility strip directly under the hero.
- * Line 1: rating + licensing + locality. Line 2: verifiable credentials only.
+ * Tight three-item proof band directly under the hero.
+ * Rating, licensing, locality — verifiable facts only.
  * No guarantees, warranty promises, or response-time claims.
  */
 const CredibilityStrip = () => {
   const { ratingValue, reviewCount } = GOOGLE_REVIEW_AGGREGATE;
 
-  const primary = [
-    { icon: Star, label: `${ratingValue}★ Google · ${reviewCount}+ reviews` },
-    { icon: ShieldCheck, label: "Licensed general contractor · Fully insured" },
-    { icon: MapPin, label: "Crews based in Franklin, serving Western North Carolina" },
-  ];
-
-  const secondary = [
-    { icon: Award, label: "CertainTeed ShingleMaster credentialed" },
-    { icon: Award, label: "Brava preferred installer" },
-    { icon: Hammer, label: "Roofing and construction under one contractor" },
+  const proof = [
+    {
+      icon: Star,
+      label: `${ratingValue}★ Google`,
+      detail: `${reviewCount}+ verified homeowner reviews`,
+    },
+    {
+      icon: ShieldCheck,
+      label: "Licensed & insured",
+      detail: "NC general contractor · CertainTeed ShingleMaster",
+    },
+    {
+      icon: MapPin,
+      label: "Based in Franklin",
+      detail: "Crews working across Western North Carolina",
+    },
   ];
 
   return (
@@ -26,20 +32,25 @@ const CredibilityStrip = () => {
       aria-label="Highlander credibility"
       className="bg-primary text-primary-foreground border-y border-[hsl(var(--highland-gold)/0.25)]"
     >
-      <div className="container-tight py-5 md:py-6 space-y-2.5">
-        <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {primary.map((item) => (
-            <li key={item.label} className="flex items-center gap-2">
-              <item.icon className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-              <span className="font-body text-body-xs md:text-sm font-semibold">{item.label}</span>
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5">
-          {secondary.map((item) => (
-            <li key={item.label} className="flex items-center gap-2">
-              <item.icon className="w-3.5 h-3.5 text-primary-foreground/60" aria-hidden="true" />
-              <span className="font-body text-body-xs text-primary-foreground/80">{item.label}</span>
+      <div className="container-tight py-5 md:py-6">
+        <ul className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[hsl(var(--highland-gold)/0.18)]">
+          {proof.map((item) => (
+            <li
+              key={item.label}
+              className="flex items-center gap-3 justify-center py-3 sm:py-0 sm:px-6 text-center sm:text-left"
+            >
+              <item.icon
+                className="w-5 h-5 flex-shrink-0 text-[hsl(var(--gold-ink))]"
+                aria-hidden="true"
+              />
+              <span className="min-w-0">
+                <span className="block font-body text-sm font-semibold leading-tight">
+                  {item.label}
+                </span>
+                <span className="block font-body text-body-xs text-primary-foreground/75 leading-snug">
+                  {item.detail}
+                </span>
+              </span>
             </li>
           ))}
         </ul>
