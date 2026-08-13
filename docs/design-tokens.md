@@ -65,3 +65,42 @@ Use `<Section>` (`src/components/layout/Section.tsx`) instead of hand-rolled
 ```
 
 Widths: `narrow` max-w-3xl · `tight` max-w-4xl · `wide` max-w-6xl · `full`.
+
+## Image treatment system
+
+One primitive: `src/components/media/AppImage.tsx`. Hero LCP images use
+`HeroPicture`/`HeroImage` (AVIF/WebP srcsets, eager + high priority).
+
+### Fixed aspect ratios (Tailwind tokens)
+
+| Token             | Ratio | Context                         |
+| ----------------- | ----- | ------------------------------- |
+| `aspect-hero`     | 16:9  | Hero / full-bleed banners       |
+| `aspect-project`  | 4:3   | Project and gallery cards       |
+| `aspect-crew`     | 1:1   | Crew headshots, social tiles    |
+| `aspect-portrait` | 4:5   | Vertical team portraits         |
+| `aspect-panorama` | 21:9  | Wide feature strips             |
+
+Never use `aspect-[a/b]` arbitrary values — pick the context token.
+
+### Scrim tokens (text over image)
+
+Defined in `src/index.css` (light + dark), exposed as Tailwind
+background images:
+
+- `bg-scrim-bottom` — caption/overlay wash on cards
+- `bg-scrim-hero` — bottom-heavy hero wash for headline legibility
+- `bg-scrim-side` — left-anchored hero copy on wide viewports
+- `bg-[color:var(--scrim-flat)]` — even wash for logos/thumbnails
+
+Scrim layers are always `aria-hidden` and `pointer-events-none`.
+
+### Loading + alt rules
+
+- Every image lazy-loads with `decoding="async"` except the single LCP
+  image per page (`priority` / `HeroPicture priority`).
+- Intrinsic `width`/`height` must match the ratio token so no layout
+  shift occurs.
+- `alt` is a required prop. Describe the roof system, place, or person
+  ("Standing seam metal roof on a Highlands, NC mountain home"), not the
+  file. Purely decorative images use `alt=""` plus `aria-hidden="true"`.
