@@ -400,8 +400,15 @@ const BlogPostPage = () => {
                   transition={{ delay: 0.2 }}
                   className="prose-custom"
                 >
-                  {renderContent(post.content)}
+                  {renderContent(contentTop)}
                 </motion.div>
+
+                {contentBottom && (
+                  <>
+                    <BlogMidArticleCTA cta={blogCta} town={post.town} />
+                    <div className="prose-custom">{renderContent(contentBottom)}</div>
+                  </>
+                )}
 
                 {/* Local Relevance Callout */}
                 {post.town && (
