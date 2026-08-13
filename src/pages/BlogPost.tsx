@@ -17,6 +17,26 @@ import { getBlogInternalLinks } from "@/lib/blog-internal-links";
 import BlogInternalLinksBlock from "@/components/blog/BlogInternalLinksBlock";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getBlogLocalLinkWeb } from "@/lib/local-link-graph";
+import { getBlogCta } from "@/lib/blog-cta";
+import BlogMidArticleCTA from "@/components/blog/BlogMidArticleCTA";
+import BlogClosingCTA from "@/components/blog/BlogClosingCTA";
+import BlogSidebarCTA from "@/components/blog/BlogSidebarCTA";
+
+/** Split article markdown at the H2 closest to the midpoint so the mid-article
+ *  CTA lands between sections instead of interrupting a paragraph. */
+const splitContentAtMidpoint = (content: string): [string, string] => {
+  const lines = content.split("\n");
+  if (lines.length < 20) return [content, ""];
+  const target = Math.floor(lines.length / 2);
+  let best = -1;
+  lines.forEach((line, i) => {
+    if (!line.startsWith("## ")) return;
+    if (i < 4 || i > lines.length - 5) return;
+    if (best === -1 || Math.abs(i - target) < Math.abs(best - target)) best = i;
+  });
+  if (best === -1) return [content, ""];
+  return [lines.slice(0, best).join("\n"), lines.slice(best).join("\n")];
+};
 
 /* ─── Author data ─── */
 const authors: Record<string, { name: string; role: string; bio: string }> = {
