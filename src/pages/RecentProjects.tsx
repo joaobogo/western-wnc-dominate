@@ -169,7 +169,8 @@ const RecentProjects = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {completedProjects.map((p) => {
+              {completedProjects.map((p, i) => {
+                const closesTriplet = (i + 1) % 3 === 0 && i !== completedProjects.length - 1;
                 const CardInner = (
                   <>
                     <div className="aspect-[4/3] overflow-hidden bg-secondary relative">
@@ -202,21 +203,29 @@ const RecentProjects = () => {
                   </>
                 );
 
-                return p.slug ? (
-                  <Link
-                    key={p.title}
-                    to={`/projects/${p.slug}`}
-                    className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift block"
-                  >
-                    {CardInner}
-                  </Link>
-                ) : (
-                  <div
-                    key={p.title}
-                    className="group bg-card border border-border rounded-sm overflow-hidden"
-                  >
-                    {CardInner}
-                  </div>
+                return (
+                  <Fragment key={p.title}>
+                    {p.slug ? (
+                      <Link
+                        to={`/projects/${p.slug}`}
+                        className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift block"
+                      >
+                        {CardInner}
+                      </Link>
+                    ) : (
+                      <div className="group bg-card border border-border rounded-sm overflow-hidden">
+                        {CardInner}
+                      </div>
+                    )}
+                    {closesTriplet && (
+                      <GalleryInlineCTA
+                        position={Math.ceil((i + 1) / 3)}
+                        towns={Array.from(
+                          new Set(completedProjects.slice(i - 2, i + 1).map((x) => x.location)),
+                        )}
+                      />
+                    )}
+                  </Fragment>
                 );
               })}
             </div>
