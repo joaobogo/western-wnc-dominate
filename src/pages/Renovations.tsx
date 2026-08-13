@@ -335,12 +335,12 @@ const Renovations = () => {
             {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Ready to discuss your renovation?</h3>
                 <p className="text-primary-foreground text-sm font-body">We respond rapidly with a direct call — not a form email.</p>
               </div>
-              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 md:w-auto md:justify-end md:flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>

@@ -698,7 +698,7 @@ img {
      disabled treatment, one loading treatment.
      ────────────────────────────────────── */
   .btn {
-    @apply inline-flex max-w-full items-center justify-center gap-2.5 rounded-sm text-balance;
+    @apply relative overflow-hidden inline-flex max-w-full items-center justify-center gap-2.5 rounded-sm text-balance;
     @apply font-body font-bold uppercase tracking-[0.12em] text-center;
     @apply border-2 border-transparent select-none;
     @apply transition-all duration-200;

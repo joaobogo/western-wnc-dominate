@@ -559,12 +559,12 @@ const ResidentialRoofing = () => {
 
                     <section className="bg-primary text-primary-foreground tartan-dark">
                       <div className="container-tight px-5 md:px-8 py-5 md:py-6">
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                           <div>
                             <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5 text-primary-foreground">Need guidance on materials or timing?</h3>
                             <p className="text-primary-foreground text-base font-body font-medium">We'll assess your roof honestly and recommend based on what it actually needs.</p>
                           </div>
-                          <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 md:w-auto md:justify-end md:flex-shrink-0">
+                          <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                             <Link to="/consultation" className="btn btn-primary btn-md group relative">
                               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                               <span className="relative">Discuss Your Roof</span>
@@ -855,7 +855,7 @@ const ResidentialRoofing = () => {
           <>
                     <section className="py-12 bg-background border-b border-border">
                       <div className="container-tight">
-                         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                             <div className="flex items-center gap-3">
                                <div className="w-10 h-[1px] bg-primary/20" />
                                <span className="text-caption font-bold uppercase tracking-widest text-muted-foreground">Serving Local Markets</span>

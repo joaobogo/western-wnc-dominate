@@ -383,7 +383,7 @@ const ProjectDetailPage = () => {
             </div>
 
             <div className="mt-16 p-8 bg-secondary/50 border border-border text-left">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                 <div>
                   <h4 className="font-heading font-bold text-foreground text-lg mb-2">Serving {project.location} and {project.county}</h4>
                   <p className="text-muted-foreground text-sm max-w-xl">

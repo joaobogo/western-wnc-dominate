@@ -327,12 +327,12 @@ const StormDamage = () => {
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm hit your area recently?</h3>
                 <p className="text-primary-foreground text-sm font-body">We respond rapidly. Same-day for emergencies with active water intrusion.</p>
               </div>
-              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 md:w-auto md:justify-end md:flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <a href="tel:+18285247773" className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
@@ -412,12 +412,12 @@ const StormDamage = () => {
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm damage? We respond rapidly.</h3>
                 <p className="text-primary-foreground text-sm font-body">Professional assessment, complete documentation, honest guidance — from a local team.</p>
               </div>
-              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 md:w-auto md:justify-end md:flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <a href="tel:+18285247773" className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
