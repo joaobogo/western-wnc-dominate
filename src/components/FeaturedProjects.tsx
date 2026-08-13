@@ -113,21 +113,19 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
     >
       <Link to="/recent-projects" className="block relative h-full">
         {/* Image */}
-        <div className={`relative overflow-hidden ${
-          isHero ? "aspect-[4/3] md:aspect-[16/10]" : isWide ? "aspect-[21/9]" : "aspect-[4/3]"
+        <div className={`relative overflow-hidden bg-muted ${
+          isHero ? "aspect-project md:aspect-hero" : isWide ? "aspect-panorama" : "aspect-project"
         }`}>
-          <img width={1600} height={1067}
+          <img width={1200} height={900}
             src={project.image}
-            alt={project.title}
+            alt={`${project.title} — ${project.category} project by Highlander Building Services in ${project.location ?? "Western North Carolina"}`}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] will-change-transform"
             loading="lazy"
             decoding="async"
           />
 
-          {/* Cinematic overlays — refined for clarity */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--heritage-charcoal)/0.5)] via-[hsl(var(--heritage-charcoal)/0.1)] to-transparent group-hover:from-[hsl(var(--heritage-charcoal)/0.6)] group-hover:via-[hsl(var(--heritage-charcoal)/0.3)] transition-all duration-700" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--heritage-charcoal)/0.05)] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--heritage-charcoal)/0.15)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          {/* Scrim token — text-over-image legibility */}
+          <div aria-hidden="true" className="absolute inset-0 bg-scrim-bottom opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
 
           {/* Gold bottom edge — draw on hover */}
           <div className="absolute bottom-0 left-0 w-0 group-hover:w-2/3 h-[2px] bg-gradient-to-r from-[hsl(var(--highland-gold))] to-[hsl(var(--highland-gold)/0)] transition-all duration-700 z-20" style={{ transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)' }} />
