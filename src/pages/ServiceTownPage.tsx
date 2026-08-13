@@ -130,7 +130,6 @@ const ServiceTownPage = ({
             { name: `${town.name}, ${town.state}`, url: `/service-areas/${town.slug}` },
             { name: entry.serviceLabel, url: resolvedCanonical },
           ]),
-          ...(entry.faqs.length
           ...(faqs.length
             ? [faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))]
             : []),
