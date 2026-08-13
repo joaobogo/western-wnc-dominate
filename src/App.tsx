@@ -373,7 +373,9 @@ const App = () => (
           </Suspense>
           <ErrorBoundary boundary="chatbot" fallback={() => null}>
             <Suspense fallback={null}>
-              <ChatbotWidget />
+              <DeferMount>
+                <ChatbotWidget />
+              </DeferMount>
             </Suspense>
           </ErrorBoundary>
           <ErrorBoundary boundary="consent" fallback={() => null}>
