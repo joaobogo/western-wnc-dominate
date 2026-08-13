@@ -143,7 +143,7 @@ const RecentProjects = () => {
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">{card.desc}</p>
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--heritage-green))] group-hover:gap-2.5 transition-all">
-                      Learn more <ArrowRight className="w-3.5 h-3.5" />
+                      See This Project <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
                 </Link>

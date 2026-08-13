@@ -20,7 +20,7 @@ interface InlineLeadCaptureProps {
 const CardCapture = ({
   headline = "Ready to discuss your roof?",
   subheadline = "Schedule a conversation with our team. No pressure, no obligation — just honest guidance from experienced local roofers.",
-  ctaText = "Schedule a Roofing Consultation",
+  ctaText = "Get My Roof Assessed",
   ctaLink = "/consultation",
 }: InlineLeadCaptureProps) => (
   <motion.div
@@ -49,7 +49,7 @@ const CardCapture = ({
           href="tel:+18285247773"
           className="border border-border text-foreground font-medium text-sm px-6 py-3.5 rounded-sm inline-flex items-center justify-center gap-2 hover:bg-secondary transition-all"
         >
-          <Phone className="w-4 h-4" /> Call Direct
+          <Phone className="w-4 h-4" /> Call Direct: 828-524-7773
         </a>
       </div>
     </div>
@@ -74,7 +74,7 @@ const CardCapture = ({
 const EditorialCapture = ({
   headline = "Let's Talk About Your Roof.",
   subheadline = "Whether you're planning ahead or responding to an issue — a straightforward conversation is always the right first step.",
-  ctaText = "Discuss Your Roof",
+  ctaText = "Talk to a Local Roofing Advisor",
   ctaLink = "/consultation",
 }: InlineLeadCaptureProps) => (
   <section className="py-12 md:py-16 bg-background relative overflow-hidden">

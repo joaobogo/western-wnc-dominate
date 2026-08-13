@@ -435,7 +435,7 @@ const DesignPlanningIntakeForm = ({ mode = "long" }: { mode: "short" | "long" })
             onClick={submit}
             className="cta-gradient text-accent-foreground font-body font-bold text-base px-10 py-4 rounded-none inline-flex items-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-95 transition-all uppercase tracking-widest shadow-lg"
           >
-            {submitting ? <><Loader2 className="w-5 h-5 animate-spin" /> Sending…</> : <>Submit Planning Brief <ArrowRight className="w-5 h-5" /></>}
+            {submitting ? <><Loader2 className="w-5 h-5 animate-spin" /> Sending…</> : <>Send My Planning Brief <ArrowRight className="w-5 h-5" /></>}
           </button>
         )}
       </div>

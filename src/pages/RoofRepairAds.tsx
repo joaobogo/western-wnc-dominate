@@ -12,7 +12,7 @@ const RoofRepairAds = () => (
     eyebrow="Roof repair landing page"
     headline="Roof leak or damage? Get the repair answer fast."
     subheadline="We diagnose the actual source, explain whether repair makes sense, and move quickly when water is getting inside your home."
-    ctaLabel="Schedule Repair Assessment"
+    ctaLabel="Get My Repair Assessed"
     urgencyOptions={["Leak happening now", "Within 48 hours", "This week", "Just comparing options"]}
     trustStats={[
       { value: "48hr", label: "Assessment goal", detail: "Same-day for urgent leak calls" },

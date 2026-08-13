@@ -12,7 +12,7 @@ const StormDamageAds = () => (
     eyebrow="Storm damage landing page"
     headline="Storm hit your roof? Get a local response before the next rain."
     subheadline="Fast assessments, clear documentation, and straight answers for Western North Carolina homeowners dealing with wind, hail, leaks, or fallen debris."
-    ctaLabel="Request Storm Assessment"
+    ctaLabel="Get My Storm Damage Assessed"
     urgencyOptions={["Emergency today", "Rapid response", "This week", "Just need answers"]}
     trustStats={[
       { value: "Rapid", label: "Storm response", detail: "Same-day help for urgent leak situations" },

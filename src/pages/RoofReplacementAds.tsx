@@ -12,7 +12,7 @@ const RoofReplacementAds = () => (
     eyebrow="Roof replacement landing page"
     headline="Need a new roof? Get a clear scope without the runaround."
     subheadline="We help Western North Carolina homeowners understand timing, material fit, and budget range so replacement decisions feel informed instead of rushed."
-    ctaLabel="Request Roof Consultation"
+    ctaLabel="Get My Replacement Scope"
     urgencyOptions={["Need pricing soon", "Replacing this month", "Planning ahead", "Insurance-related"]}
     trustStats={[
       { value: "4.9★", label: "Google Rating", detail: "5-star roofing service" },
