@@ -229,7 +229,7 @@ const Hero = () => {
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
             <div
-              className="hidden md:flex items-center gap-2 md:gap-4 mb-3 md:mb-10"
+              className={`hidden md:flex items-center gap-2 md:gap-4 mb-3 ${textLed ? "md:mb-6" : "md:mb-10"}`}
             >
               <div className="h-px w-10" style={{ background: 'hsl(var(--highland-gold))' }} />
               <div
@@ -243,28 +243,28 @@ const Hero = () => {
             </div>
 
             {/* Headline — single H1 revealed as three cinematic lines */}
-            <h1 className="mb-3 md:mb-12">
+            <h1 className={`mb-3 ${textLed ? "md:mb-6" : "md:mb-12"}`}>
               <span className="sr-only">
                 Roofing &amp; Construction Built for Western NC Mountain Homes
               </span>
               <span aria-hidden="true" className="block">
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
                   <span
-                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                    className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
                     Roofing &amp; Construction
                   </span>
                 </span>
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
                   <span
-                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold text-primary-foreground tracking-[-0.03em]"
+                    className={`block leading-[1.08] font-heading font-bold text-primary-foreground tracking-[-0.03em] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
                     Built for Western NC
                   </span>
                 </span>
                 <span className="block overflow-hidden pb-[0.15em] md:pb-[0.4em]">
                   <span
-                    className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold tracking-[-0.03em] text-[hsl(var(--gold-ink))]"
+                    className={`block leading-[1.08] font-heading font-bold tracking-[-0.03em] text-[hsl(var(--gold-ink))] ${textLed ? "text-heading-sm md:text-heading-lg" : "text-heading-sm md:text-display"}`}
                   >
                     Mountain Homes.
                   </span>
@@ -275,11 +275,11 @@ const Hero = () => {
 
             {/* Subtext — refined positioning statement */}
             <p
-              className="text-body-xs md:text-body-lg text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
+              className={`text-body-xs md:text-body-lg text-white/95 max-w-2xl mb-4 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg ${textLed ? "md:mb-8" : "md:mb-16"}`}
             >
-              <span className="md:hidden">Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva.</span>
-              <span className="hidden md:inline">Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
-              <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
+              <span className={textLed ? "" : "md:hidden"}>Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva. Written scope and price before any work starts.</span>
+              <span className={textLed ? "hidden" : "hidden md:inline"}>Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
+              <span className={`hidden md:block mt-2 ${textLed ? "md:mt-4" : "md:mt-6"} text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
             </p>
 
 
