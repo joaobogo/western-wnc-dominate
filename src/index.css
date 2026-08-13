@@ -473,7 +473,7 @@ img {
      ────────────────────────────────────── */
   p {
     @apply font-body text-foreground/95;
-    max-width: 65ch; /* Slightly shorter line length for focus */
+    max-width: 68ch; /* Capped body measure — readable line length */
     font-size: 1.125rem;
     line-height: 1.7;
   }
@@ -490,7 +490,12 @@ img {
   /* Lead paragraph — opening statements, hero subtitles */
   .lead {
     @apply font-body text-xl md:text-2xl text-muted-foreground leading-relaxed;
-    max-width: 60ch;
+    max-width: 68ch;
+  }
+
+  /* Explicit measure utility for non-<p> body copy blocks */
+  .measure {
+    max-width: 68ch;
   }
 
   /* Selection color */
