@@ -114,7 +114,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
 
             <div className="mx-5 h-px bg-border/60" />
 
-            <div className="grid grid-cols-[repeat(3,minmax(0,1fr))_260px] gap-x-4 py-3 px-4">
+            <div className="grid grid-cols-[repeat(3,minmax(0,1fr))_240px] gap-x-5 py-3 px-4 whitespace-normal">
               {div.columns.map((col, ci) => (
                 <div key={col.title}>
                   <p className="px-3 pb-1.5 text-caption font-body font-bold uppercase tracking-[0.12em] text-muted-foreground/80">
@@ -138,7 +138,7 @@ export const DivisionDropdown = ({ division: div, isOpen, onEnter, onLeave, isAc
                             : "text-muted-foreground hover:text-foreground hover:bg-secondary/40"
                         }`}
                       >
-                        <span className="block">
+                        <span className="block min-w-0">
                           <span className="text-body-sm font-body font-bold block leading-tight">{item.label}</span>
                           <span className="text-body-xs font-body text-muted-foreground leading-snug font-medium block">{item.desc}</span>
                         </span>
