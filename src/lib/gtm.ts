@@ -892,6 +892,7 @@ export function trackPrimaryCtaClick(opts: {
   cta_text: string;
   destination_url: string;
   click_location: string;
+  cta_position?: string | null;
 }) {
   push({
     event: "primary_cta_click",
@@ -900,6 +901,7 @@ export function trackPrimaryCtaClick(opts: {
     cta_text: opts.cta_text,
     destination_url: opts.destination_url,
     click_location: opts.click_location,
+    cta_position: opts.cta_position ?? null,
     page_path: pagePath(),
     page_title: pageTitle(),
   });
@@ -908,6 +910,7 @@ export function trackPrimaryCtaClick(opts: {
     cta_text: opts.cta_text,
     cta_type: `primary_${opts.intent}`,
     destination_url: opts.destination_url,
+    cta_position: opts.cta_position ?? null,
   });
 }
 
