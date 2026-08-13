@@ -70,7 +70,7 @@ const RepairPhotoProof = ({ variant }: Props) => {
         </div>
 
         <Link
-          to="/projects"
+          to="/recent-projects"
           className="mt-6 inline-flex items-center gap-2 font-body font-semibold text-sm text-primary hover:gap-3 transition-all"
         >
           See more completed projects <ArrowRight className="w-4 h-4" />
