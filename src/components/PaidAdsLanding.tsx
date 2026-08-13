@@ -81,8 +81,8 @@ const PaidAdsLanding = ({
               </a>
             </div>
 
-            <div className="grid gap-8 pt-6 md:pt-10 lg:grid-cols-12 lg:items-start lg:gap-10 lg:pt-12">
-              <div className="lg:col-span-7">
+            <div className="grid gap-6 pt-6 md:pt-10 lg:grid-cols-12 lg:items-start lg:gap-x-10 lg:gap-y-8 lg:pt-12">
+              <div className="order-1 lg:col-span-7 lg:col-start-1 lg:row-start-1">
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                   <div className="mb-3 text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
                     {eyebrow}
@@ -105,8 +105,10 @@ const PaidAdsLanding = ({
                     Call Direct: 828-524-7773
                   </a>
                 </motion.div>
+              </div>
 
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.5 }} className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="order-3 lg:col-span-7 lg:col-start-1 lg:row-start-2">
+                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.5 }} className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                   {trustStats.map((item) => (
                     <div key={item.label} className="border border-primary-foreground/12 bg-primary-foreground/5 px-4 py-4">
                       <div className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}</div>
@@ -117,7 +119,7 @@ const PaidAdsLanding = ({
                 </motion.div>
               </div>
 
-              <div className="order-first lg:order-none lg:col-span-5" id="fast-lead-form">
+              <div className="order-2 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1" id="fast-lead-form">
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.5 }}>
                   <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} />
                 </motion.div>
