@@ -10,7 +10,7 @@ interface Props {
 
 /** Sticky desktop sidebar CTA — stays in view for the length of the article. */
 const BlogSidebarCTA = ({ cta, town }: Props) => (
-  <div className="lg:sticky lg:top-28 bg-primary rounded-sm p-5 md:p-6">
+  <div className="bg-primary rounded-sm p-5 md:p-6">
     <Shield className="w-6 h-6 text-[hsl(var(--gold-ink))] mb-3" aria-hidden="true" />
     <h2 className="font-heading font-bold text-primary-foreground text-sm mb-2">
       {town ? `Roofing help in ${town}, NC` : "Talk to a local roofer"}

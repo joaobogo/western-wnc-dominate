@@ -36,7 +36,7 @@ const ArticleTOC = ({ items }: { items: TocItem[] }) => {
   return (
     <nav
       aria-label="Table of contents"
-      className="hidden lg:block sticky top-28 bg-card border border-border rounded-sm p-5"
+      className="hidden lg:block bg-card border border-border rounded-sm p-5"
     >
       <div className="flex items-center gap-2 mb-3">
         <List className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
