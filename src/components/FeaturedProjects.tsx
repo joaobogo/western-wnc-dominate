@@ -218,7 +218,7 @@ export const FeaturedProjects = ({ location }: { location?: string }) => {
             </HeadingReveal>
             <ScrollReveal variant="rise-subtle" delay={0.2}>
               <p className="text-muted-foreground text-body-sm font-body max-w-md leading-relaxed">
-                Real roofs at real elevations. Every project photographed on completion, documented, and warrantied.
+                Real roofs at real elevations. Every project photographed on completion and documented.
               </p>
             </ScrollReveal>
           </div>

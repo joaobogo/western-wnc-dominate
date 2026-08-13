@@ -74,7 +74,7 @@ const services: FeaturedService[] = [
     icon: Hammer,
     title: "Roof Repair",
     tagline: "Fix the cause, not the symptom",
-    description: "Leak tracing, flashing replacement, and structural repair, diagnosed accurately, documented fully, and warrantied in writing. One visit, one resolution.",
+    description: "Leak tracing, flashing replacement, and structural repair, diagnosed accurately, documented fully, and priced in writing. One visit, one resolution.",
     stat: "1st",
     statLabel: "visit resolution",
     href: "/roofing/roof-repair",

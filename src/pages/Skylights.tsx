@@ -29,7 +29,7 @@ import ServicePageTemplate from "@/components/service/ServicePageTemplate";
 const faqs = [
   { q: "Are you a certified VELUX installer?", a: "Yes. Highlander is a VELUX Certified Installer — trained and accredited by VELUX to install their skylights and Sun Tunnels to manufacturer specification. That accreditation is what unlocks VELUX's installation warranty on top of the product warranty." },
   { q: "Do skylights leak?", a: "Properly installed VELUX skylights with their engineered flashing kit don't leak. Almost every leak we're called out to inspect traces back to a non-kit flashing job, an aging seal on a 20+ year unit, or surrounding roof failure — not the skylight itself." },
-  { q: "Can a skylight be added to an existing roof?", a: "In most cases, yes. We coordinate the cut, framing, flashing, and interior light shaft as a single scope so the skylight and the roof system are warrantied together — not handed off between trades." },
+  { q: "Can a skylight be added to an existing roof?", a: "In most cases, yes. We coordinate the cut, framing, flashing, and interior light shaft as a single scope so the skylight and the roof system are detailed together — not handed off between trades." },
   { q: "How long does a VELUX skylight last?", a: "VELUX deck-mounted skylights typically run 20–25 years before the seals and flashings warrant replacement. We document install date and unit IDs at handoff so future service work is straightforward." },
   { q: "Do you replace skylights during a roof replacement?", a: "We strongly recommend it. Reflashing an aging skylight under a brand-new roof is the most common source of preventable leaks we see in the field. Replacement is far cheaper now than a callback later." },
 ];
