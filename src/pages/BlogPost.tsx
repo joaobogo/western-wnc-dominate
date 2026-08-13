@@ -488,6 +488,9 @@ const BlogPostPage = () => {
                 )}
 
                 {/* SEO Internal Linking Block — city, service, related blog, project, estimate */}
+                {/* Closing CTA — relevant service page + phone. Local link web stays below. */}
+                <BlogClosingCTA cta={blogCta} town={post.town} />
+
                 <BlogInternalLinksBlock links={internalLinks} town={post.town} />
 
                 <LocalLinkWeb
