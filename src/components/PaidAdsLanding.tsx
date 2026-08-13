@@ -106,7 +106,8 @@ const PaidAdsLanding = ({
                   <h1 className="max-w-3xl text-heading-sm font-heading font-bold leading-[1.06] text-primary-foreground md:text-5xl lg:text-6xl">
                     {headline}
                   </h1>
-                  <p className="mt-3 max-w-2xl text-sm font-body leading-relaxed text-primary-foreground md:mt-5 md:text-lg">
+                  {/* Hidden on phones so the form clears the fold; repeated under the form below. */}
+                  <p className="mt-3 hidden max-w-2xl text-sm font-body leading-relaxed text-primary-foreground md:mt-5 md:block md:text-lg">
                     {subheadline}
                   </p>
                 </motion.div>
@@ -139,6 +140,9 @@ const PaidAdsLanding = ({
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.4 }}>
                   <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} />
                 </motion.div>
+                <p className="mt-4 text-sm font-body leading-relaxed text-primary-foreground md:hidden">
+                  {subheadline}
+                </p>
               </div>
             </div>
           </div>
