@@ -19,6 +19,7 @@ import heroImg from "@/assets/gallery/asphalt-005.webp";
 import RealWorkWidget from "@/components/RealWorkWidget";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import CommonConcerns from "@/components/conversion/CommonConcerns";
+import CostOfWaiting from "@/components/conversion/CostOfWaiting";
 import CostContextBlock from "@/components/conversion/CostContextBlock";
 import SchedulingReality from "@/components/conversion/SchedulingReality";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
@@ -587,6 +588,7 @@ const StormDamage = () => {
         <ServiceInternalLinks title="Storm Damage Response" slug="storm-damage" />
       </main>
       <RealWorkWidget />
+        <CostOfWaiting variant="storm" />
         <CommonConcerns />
         <CostContextBlock serviceLabel="storm damage" />
         <SchedulingReality serviceLabel="storm damage" />
