@@ -115,6 +115,8 @@ const LocalProjectProof = ({
                 <img
                   src={project.heroImage}
                   alt={`${project.title} — ${project.location}`}
+                  width={1200}
+                  height={800}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-40 object-cover"
