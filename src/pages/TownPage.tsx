@@ -119,7 +119,7 @@ const TownPage = () => {
               <div className="h-10 md:h-12 w-1 bg-[hsl(var(--highland-gold))]" />
               <div className="flex flex-col">
                 <span className="text-[16px] md:text-[18px] font-heading font-bold text-white tracking-[0.15em] uppercase">Highlander Roofing & Construction</span>
-                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{town.name} Division</span>
+                <span className="text-[10px] md:text-[11px] font-body font-bold text-[hsl(var(--gold-ink))] uppercase tracking-[0.3em]">{town.name} · {town.county}, {town.state}</span>
               </div>
             </motion.div>
 
@@ -138,9 +138,20 @@ const TownPage = () => {
                 initial={{ opacity: 0, y: 20 }} 
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-lg md:text-2xl text-white/95 mb-10 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
+                className="text-lg md:text-2xl text-white/95 mb-6 max-w-2xl leading-relaxed font-body font-bold drop-shadow-md"
               >
                 {town.description}
+              </motion.p>
+
+              {/* One genuinely local roofing reality, above the fold */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+                className="mb-10 max-w-2xl border-l-2 border-[hsl(var(--highland-gold))] pl-4 text-[15px] md:text-base text-white/90 font-body leading-relaxed drop-shadow-md"
+              >
+                <span className="font-bold text-[hsl(var(--gold-ink))]">{town.name} reality: </span>
+                {town.climateExposure}
               </motion.p>
               
               <motion.div 
@@ -260,33 +271,36 @@ const TownPage = () => {
           </div>
         </section>
 
-        {/* 3. Dual Pathway */}
-        <TownServiceSections town={town} />
-
-        {/* 3.1 Town-personalized Services Grid */}
-        <TownServicesGrid town={town} />
-
-        {/* 3.2 Mid-page thin CTA strip */}
-        <TownCTAStrip town={town} />
-
-        {/* 3.5 Local Service Blocks — six-section local SEO template */}
-        <TownLocalServiceBlocks town={town} />
-
-        {/* 4. Local Proof */}
+        {/* 3. LOCAL PROOF — real work and real voices from this town first */}
         {townProof && <TownProofBlock town={town} content={townProof} />}
 
-        {/* 4.1 Why Choose Highlander in {town} */}
+        <FeaturedProjects location={town.name} />
+
+        <div className="container-tight pt-4 md:pt-8 space-y-14">
+          <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" />
+          <AttributedReviews town={town.name} category="roofing" />
+        </div>
+
+        <WhoShowsUp town={town.name} />
+
         <TownWhyChoose town={town} />
+
+        {/* 3.5 Mid-page thin CTA strip */}
+        <TownCTAStrip town={town} />
 
         <SectionDivider variant="diamond" />
 
-        {/* 5. Featured Projects - Filtered for Town Relevance */}
-        <FeaturedProjects location={town.name} />
+        {/* 4. SERVICES FOR THIS TOWN */}
+        <TownServiceSections town={town} />
 
-        {/* 5.5 Cinematic mid-page CTA band */}
+        <TownServicesGrid town={town} />
+
+        <TownLocalServiceBlocks town={town} />
+
+        {/* 4.5 Cinematic mid-page CTA band */}
         <TownCTABand town={town} />
 
-        {/* 6. Built for WNC Factors */}
+        {/* 5. Built for WNC Factors */}
         <BuiltForWNC />
 
         {/* 7. Localized Blog & Knowledge Base */}
@@ -376,14 +390,13 @@ const TownPage = () => {
         </section>
 
         <ProjectConcierge />
-        
-        {/* 7.5 Town-specific FAQ (uses proof FAQs if available) */}
+
+        {/* 6. LOCAL FAQ */}
         <TownFAQ town={town} faqs={townFaqs} />
 
-        {/* 7.6 Town-mapped estimate CTA */}
-        <TownEstimateCTA town={town} />
+        <InspectionForm />
 
-        {/* 8. Internal Linking Engine - Nearby Areas */}
+        {/* 7. NEARBY COVERAGE */}
         <NearbyTowns currentTown={town} />
 
         <LocalLinkWeb
@@ -392,12 +405,6 @@ const TownPage = () => {
           groups={getTownLinkWeb(town)}
         />
 
-        <div className="container-tight pt-16 md:pt-20 space-y-14">
-          <LocalProjectProof town={{ name: town.name, slug: town.slug, county: town.county }} category="roofing" />
-          <AttributedReviews town={town.name} category="roofing" />
-        </div>
-        <WhoShowsUp town={town.name} />
-        <InspectionForm />
         <RelatedLinks
           eyebrow="Explore Services"
           heading={`Roofing & construction for ${town.name} homeowners`}
@@ -416,6 +423,9 @@ const TownPage = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a Western NC project advisor" },
           ]}
         />
+
+        {/* 8. CLOSING CTA BAND — town-mapped estimate + phone number */}
+        <TownEstimateCTA town={town} />
       </main>
       <ConversionTrustBlock variant="band" town={town.name} />
       <Footer />
