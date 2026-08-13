@@ -21,6 +21,7 @@ import { getBlogCta } from "@/lib/blog-cta";
 import BlogMidArticleCTA from "@/components/blog/BlogMidArticleCTA";
 import BlogClosingCTA from "@/components/blog/BlogClosingCTA";
 import BlogSidebarCTA from "@/components/blog/BlogSidebarCTA";
+import ArticleTOC, { type TocItem } from "@/components/blog/ArticleTOC";
 
 /** Split article markdown at the H2 closest to the midpoint so the mid-article
  *  CTA lands between sections instead of interrupting a paragraph. */
@@ -66,6 +67,28 @@ const getCategoryColor = (category: string) => {
   };
   return map[category] || "bg-primary/10 text-primary";
 };
+
+/* ─── Heading anchors, read time, table of contents ─── */
+export const headingId = (text: string) =>
+  `section-${text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .slice(0, 60)}`;
+
+/** Estimated read time at 225 wpm, rounded up to the nearest minute. */
+const estimateReadTime = (content: string) => {
+  const words = content.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(words / 225));
+};
+
+const buildToc = (content: string): TocItem[] =>
+  content
+    .split("\n")
+    .filter((l) => l.startsWith("## "))
+    .map((l) => l.replace("## ", "").trim())
+    .map((label) => ({ id: headingId(label), label }));
 
 /* ─── Extract key takeaways from content ─── */
 const extractTakeaways = (content: string): string[] => {
@@ -145,11 +168,11 @@ const renderContent = (content: string) => {
     listBuffer = null;
     nodes.push(
       type === "ul" ? (
-        <ul key={`ul-${start}`} className="mb-4 space-y-0">
+        <ul key={`ul-${start}`} className="article-list">
           {items}
         </ul>
       ) : (
-        <ol key={`ol-${start}`} className="mb-4 space-y-0 list-decimal ml-5">
+        <ol key={`ol-${start}`} className="article-ol">
           {items}
         </ol>
       ),
@@ -179,20 +202,20 @@ const renderContent = (content: string) => {
     flushTable();
     if (line.startsWith("## "))
       { flushList(); nodes.push(
-        <h2 key={i} className="text-xl md:text-2xl font-heading font-bold text-foreground mt-10 mb-4">
+        <h2 key={i} id={headingId(line.replace("## ", "").trim())} className="article-h2">
           {line.replace("## ", "")}
         </h2>
       ); return; }
     if (line.startsWith("### "))
       { flushList(); nodes.push(
-        <h3 key={i} className="text-lg font-heading font-semibold text-foreground mt-7 mb-3">
+        <h3 key={i} id={headingId(line.replace("### ", "").trim())} className="article-h3">
           {line.replace("### ", "")}
         </h3>
       ); return; }
     if (line.startsWith("- "))
       { pushItem("ul", i,
-        <li key={i} className="text-muted-foreground mb-2 flex items-start gap-2">
-          <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+        <li key={i} className="flex items-start gap-2.5">
+          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-[0.45em]" aria-hidden="true" />
           <span dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace("- ", "")) }} />
         </li>
       ); return; }
@@ -200,20 +223,23 @@ const renderContent = (content: string) => {
       { pushItem("ol", i,
         <li
           key={i}
-          className="text-muted-foreground mb-2.5 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace(/^\d+\. /, "")) }}
         />
       ); return; }
     flushList();
-    if (line.trim() === "") { nodes.push(<div key={i} className="h-2" />); return; }
+    if (line.startsWith("> ")) {
+      nodes.push(
+        <blockquote
+          key={i}
+          className="article-quote"
+          dangerouslySetInnerHTML={{ __html: inlineMarkdown(line.replace("> ", "")) }}
+        />,
+      );
+      return;
+    }
+    if (line.trim() === "") return;
     const boldProcessed = inlineMarkdown(line);
-    nodes.push(
-      <p
-        key={i}
-        className="text-muted-foreground leading-relaxed mb-4"
-        dangerouslySetInnerHTML={{ __html: boldProcessed }}
-      />,
-    );
+    nodes.push(<p key={i} dangerouslySetInnerHTML={{ __html: boldProcessed }} />);
   });
   flushList();
   flushTable();
@@ -254,6 +280,8 @@ const BlogPostPage = () => {
   const internalLinks = getBlogInternalLinks(post);
   const blogCta = getBlogCta(post);
   const [contentTop, contentBottom] = splitContentAtMidpoint(post.content);
+  const readMinutes = estimateReadTime(post.content);
+  const toc = buildToc(post.content);
   const relatedPosts = blogPosts
     .filter((p) => p.slug !== slug && (p.category === post.category || p.town === post.town))
     .slice(0, 3);
@@ -342,7 +370,7 @@ const BlogPostPage = () => {
                   <Calendar className="w-3 h-3" /> {formattedDate}
                 </span>
                 <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
-                  <Clock className="w-3 h-3" /> {post.readTime} read
+                  <Clock className="w-3 h-3" /> {readMinutes} min read
                 </span>
                 {post.town && (
                   <span className="text-white/80 text-body-xs font-body font-bold flex items-center gap-1.5">
@@ -398,7 +426,7 @@ const BlogPostPage = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="prose-custom"
+                  className="article-prose"
                 >
                   {renderContent(contentTop)}
                 </motion.div>
@@ -406,7 +434,7 @@ const BlogPostPage = () => {
                 {contentBottom && (
                   <>
                     <BlogMidArticleCTA cta={blogCta} town={post.town} />
-                    <div className="prose-custom">{renderContent(contentBottom)}</div>
+                    <div className="article-prose">{renderContent(contentBottom)}</div>
                   </>
                 )}
 
@@ -579,24 +607,10 @@ const BlogPostPage = () => {
               </div>
 
               {/* Sidebar */}
-              <div className="space-y-6">
+              <div className="lg:sticky lg:top-28 lg:self-start space-y-6">
                 <TrustSidebar />
 
-                {/* Quick Navigation */}
-                {takeaways.length > 0 && (
-                  <div className="bg-card border border-border rounded-sm p-5 md:p-6">
-                    <h2 className="font-heading font-semibold text-sm text-foreground mb-3">In This Article</h2>
-                    <div className="w-8 h-px bg-[hsl(var(--highland-gold)/0.3)] mb-3" />
-                    <div className="space-y-2">
-                      {takeaways.map((t, i) => (
-                        <p key={i} className="text-muted-foreground text-xs font-body leading-relaxed flex items-start gap-2">
-                          <span className="text-caption font-heading font-bold text-primary/80 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
-                          {t}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <ArticleTOC items={toc} />
 
                 {/* Sticky desktop sidebar CTA */}
                 <BlogSidebarCTA cta={blogCta} town={post.town} />

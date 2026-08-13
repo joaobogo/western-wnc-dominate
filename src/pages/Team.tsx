@@ -59,9 +59,18 @@ const Team = () => {
 
         {/* TEAM GRID */}
         <section className="section-padding bg-background">
-          <div className="container-tight space-y-16 md:space-y-20">
+          <div className="container-tight">
+            <div className="text-center mb-12 md:mb-16">
+              <span className="eyebrow mb-3 block">The Roster</span>
+              <h2 className="section-heading">Who You'll Actually Work With</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mt-4 font-body leading-relaxed">
+                Real names, real roles. These are the people who answer the phone, walk the roof,
+                write the scope, and run the job from first visit to final walkthrough.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {teamMembers.map((member, idx) => {
-              const reverse = idx % 2 === 1;
               return (
                 <motion.article
                   key={member.slug}
@@ -69,11 +78,10 @@ const Team = () => {
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.55 }}
-                  className={`grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 md:gap-12 items-start ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}
+                  transition={{ duration: 0.5, delay: (idx % 3) * 0.08 }}
+                  className="flex flex-col h-full border border-border bg-card rounded-sm overflow-hidden shadow-flat scroll-mt-32"
                 >
-                  <div>
-                    <div className="relative aspect-portrait overflow-hidden rounded-sm border border-border bg-muted shadow-flat">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-muted">
                       <img width={1000} height={1250} decoding="async"
                         src={member.image}
                         alt={member.alt}
@@ -81,28 +89,24 @@ const Team = () => {
                         className="w-full h-full object-cover object-top"
                       />
                       <div className="absolute inset-x-0 bottom-0 h-1 bg-[hsl(var(--highland-gold))]" />
-                    </div>
                   </div>
-                  <div>
-                    <span className="eyebrow block mb-2">Highlander Team</span>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2 leading-tight">
+                  <div className="flex flex-col flex-1 p-6">
+                    <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-1.5 leading-tight">
                       {member.name}
-                    </h2>
-                    <p className="text-primary font-heading font-bold text-body-xs uppercase tracking-[0.18em] mb-5">
+                    </h3>
+                    <p className="text-primary font-heading font-bold text-body-xs uppercase tracking-[0.18em] mb-4">
                       {member.role}
                     </p>
-                    <div className="space-y-4 text-foreground/85 font-body text-body-sm md:text-body-sm leading-relaxed mb-6">
-                      {member.bio.map((p, i) => (
-                        <p key={i}>{p}</p>
-                      ))}
-                    </div>
-                    <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pt-5 border-t border-border">
-                      {member.details.map((d) => (
+                    <p className="text-foreground/80 font-body text-body-sm leading-relaxed mb-5 line-clamp-6">
+                      {member.bio[0]}
+                    </p>
+                    <dl className="mt-auto grid gap-y-3 pt-5 border-t border-border">
+                      {member.details.slice(0, 3).map((d) => (
                         <div key={d.label} className="flex flex-col">
                           <dt className="text-caption font-body font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-ink))]">
                             {d.label}
                           </dt>
-                          <dd className="text-sm md:text-body-sm text-foreground/85 font-body mt-1">
+                          <dd className="text-body-sm text-foreground/85 font-body mt-1">
                             {d.value}
                           </dd>
                         </div>
@@ -112,6 +116,7 @@ const Team = () => {
                 </motion.article>
               );
             })}
+            </div>
           </div>
         </section>
 
