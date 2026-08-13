@@ -191,7 +191,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex items-center gap-2 md:gap-4 mb-3 md:mb-10"
+              className="hidden md:flex items-center gap-2 md:gap-4 mb-3 md:mb-10"
             >
               <motion.div
                 className="h-px"
@@ -260,7 +260,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-body-xs md:text-body-lg text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
             >
-              <span className="md:hidden">Leak, storm damage, aging roof, or an addition you&apos;re planning? Tell us what&apos;s going on in Franklin, Highlands, Cashiers or Sylva and a local Highlander advisor gets back to you with next steps.</span>
+              <span className="md:hidden">Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva.</span>
               <span className="hidden md:inline">Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
               <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
             </motion.p>
