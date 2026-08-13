@@ -1,3 +1,4 @@
+import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Clock, Award, Star, type LucideIcon } from "lucide-react";
@@ -38,6 +39,7 @@ export const RoofingMidCTA = ({
           <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
             <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct
           </a>
+          <CTAProofLine tone="dark" align="center" className="basis-full lg:justify-end" />
         </div>
       </div>
     </div>
@@ -84,19 +86,7 @@ export const RoofingClosingCTA = ({
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
-              {[
-                { icon: Shield, text: "Licensed & Insured" },
-                { icon: Clock, text: "Rapid Emergency Response" },
-                { icon: Award, text: "CertainTeed Certified" },
-                { icon: Star, text: "Warrantied Work" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-2">
-                  <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                  <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
-                </div>
-              ))}
-            </div>
+            <CTAProofLine tone="dark" className="pt-8 border-t border-dark-section-border" />
           </motion.div>
         </div>
       </div>
@@ -117,7 +107,7 @@ const defaultSidebarItems: TrustSidebarItem[] = [
   { icon: Shield, label: "Licensed & Fully Insured" },
   { icon: Award, label: "CertainTeed Certified" },
   { icon: Clock, label: "Rapid Emergency Response" },
-  { icon: Star, label: "Warrantied Workmanship" },
+  { icon: Star, label: "4.9★ Google · 150+ reviews" },
 ];
 
 export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSidebarItem[] }) => (
@@ -149,7 +139,7 @@ export const CredentialStrip = ({ className = "" }: { className?: string }) => (
       { icon: Shield, text: "Licensed & Insured" },
       { icon: Clock, text: "Rapid Response" },
       { icon: Award, text: "CertainTeed Certified" },
-      { icon: Star, text: "Warrantied Work" },
+      { icon: Star, text: "4.9★ Google · 150+ reviews" },
     ].map((item) => (
       <div key={item.text} className="flex items-center gap-2">
         <item.icon className="w-3.5 h-3.5 text-primary/80" />

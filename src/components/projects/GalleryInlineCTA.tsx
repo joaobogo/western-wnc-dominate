@@ -1,3 +1,4 @@
+import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { trackCtaClick } from "@/lib/gtm";
@@ -22,7 +23,7 @@ const GalleryInlineCTA = ({ position, towns = [], className = "" }: Props) => {
 
   return (
     <div
-      className={`md:col-span-2 lg:col-span-3 bg-secondary/60 border border-border rounded-sm p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4 ${className}`}
+      className={`md:col-span-2 lg:col-span-3 bg-secondary/60 border border-border rounded-sm p-6 md:p-7 flex flex-col md:flex-row md:flex-wrap md:items-center md:justify-between gap-4 ${className}`}
     >
       <div>
         <p className="font-heading font-bold text-foreground text-base md:text-lg">
@@ -52,6 +53,7 @@ const GalleryInlineCTA = ({ position, towns = [], className = "" }: Props) => {
           <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
         </a>
       </div>
+      <CTAProofLine align="start" className="md:basis-full" />
     </div>
   );
 };

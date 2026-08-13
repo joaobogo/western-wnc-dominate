@@ -1,3 +1,4 @@
+import CTAProofLine from "@/components/trust/CTAProofLine";
 import AnswerBlock from "@/components/seo/AnswerBlock";
 import Section from "@/components/layout/Section";
 import { useParams, Link } from "react-router-dom";
@@ -160,6 +161,8 @@ const TownPage = () => {
                   <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" /> (828) 524-7773
                 </a>
               </motion.div>
+
+              <CTAProofLine tone="dark" align="start" area={`${town.name} and ${town.county}`} className="mt-4" />
             </div>
           </div>
 

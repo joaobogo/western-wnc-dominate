@@ -34,7 +34,7 @@ const capabilities = [
   { icon: Building2, title: "New Construction Roofing", detail: "Complete roofing systems for new commercial builds — from pre-construction coordination through final inspection. We integrate with general contractors and project managers to deliver on schedule." },
   { icon: Wrench, title: "Roof Replacement & Re-Roofing", detail: "Full tear-off and replacement or recovers for aging commercial roofs. We evaluate existing conditions, recommend the optimal system, and execute with minimal operational disruption." },
   { icon: Settings, title: "Preventive Maintenance Programs", detail: "Scheduled inspection and maintenance programs that extend roof life, preserve warranty coverage, and catch small issues before they become emergency repairs." },
-  { icon: HardHat, title: "Emergency Repair & Response", detail: "Rapid emergency response for active leaks, storm damage, and critical failures. Temporary weatherproofing followed by permanent, warrantied repair." },
+  { icon: HardHat, title: "Emergency Repair & Response", detail: "Rapid emergency response for active leaks, storm damage, and critical failures. Temporary weatherproofing followed by permanent repair." },
   { icon: Layers, title: "Roof Coatings & Restoration", detail: "Elastomeric and silicone coating systems that extend the life of existing commercial roofs by 10–15 years at a fraction of replacement cost." },
   { icon: Eye, title: "Roof Condition Assessments", detail: "Comprehensive roof evaluations with written reports, photo documentation, and capital planning recommendations for property managers and ownership groups." },
 ];
@@ -95,7 +95,7 @@ const trustProofs = [
   { icon: Clock, value: "Rapid Response", label: "Emergency repair availability" },
   { icon: Award, value: "15+ Years", label: "Commercial roofing experience in WNC" },
   { icon: Building2, value: "Multi-Property", label: "Programs for management groups" },
-  { icon: Star, value: "Warrantied Systems", label: "Manufacturer-backed warranties" },
+  { icon: Star, value: "Manufacturer Systems", label: "CertainTeed-credentialed installation" },
 ];
 
 const faqs = [

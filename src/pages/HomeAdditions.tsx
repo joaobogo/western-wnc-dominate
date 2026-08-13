@@ -534,7 +534,6 @@ const HomeAdditions = () => {
         />
             <WhoShowsUp />
             <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" primaryTo="/construction/consultation" />
-<CommonConcerns />
 <ConversionTrustBlock variant="band" category="construction" />
           </>
         }
@@ -586,6 +585,7 @@ const HomeAdditions = () => {
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="home additions" />
 
+        <CommonConcerns />
         <ConstructionClosingCTA
           headline={"Your Home Has More\nto Give."}
           subheadline="Whether it's a guest suite, a main-level master, or a room you haven't even named yet — let's talk about what your home could become."

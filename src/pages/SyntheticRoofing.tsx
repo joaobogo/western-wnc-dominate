@@ -169,7 +169,6 @@ const SyntheticRoofing = () => {
         proof={
           <>
             <TieredOffer context="synthetic-roofing" primaryLabel="Get My Synthetic Roof Scoped" />
-            <CommonConcerns />
             <div className="container-tight pt-16 md:pt-20">
               <AttributedReviews category="roofing" heading="What homeowners say about our synthetic roofing work" />
             </div>
@@ -231,7 +230,10 @@ const SyntheticRoofing = () => {
             <ServiceInternalLinks title="Synthetic Roofing" slug="brava-synthetic" />
           </>
         }
-        cta={<CTABlock />}
+        cta={<>
+        <CommonConcerns />
+        <CTABlock />
+        </>}
       />
       <Footer />
       <StickyMobileCTA />

@@ -1,3 +1,4 @@
+import CommonConcerns from "@/components/conversion/CommonConcerns";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -455,6 +456,7 @@ const ExteriorImprovements = () => {
         cta={
           <>
             {/* ─── CLOSING CTA ─── */}
+        <CommonConcerns />
         <ConstructionClosingCTA
           headline={"Your Home's Best Days\nDon't Have to Be Behind It."}
           subheadline="Whether it's siding that's seen better days, windows that don't perform anymore, or an exterior that needs protection — let's talk about what's possible."

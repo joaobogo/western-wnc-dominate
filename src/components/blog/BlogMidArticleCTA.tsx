@@ -1,3 +1,4 @@
+import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, MapPin } from "lucide-react";
 import { trackCtaClick } from "@/lib/gtm";
@@ -47,6 +48,7 @@ const BlogMidArticleCTA = ({ cta, town }: Props) => (
         <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
       </a>
     </div>
+    <CTAProofLine align="start" className="mt-4" />
   </aside>
 );
 

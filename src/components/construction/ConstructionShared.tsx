@@ -1,3 +1,4 @@
+import CTAProofLine from "@/components/trust/CTAProofLine";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -40,6 +41,7 @@ export const ConstructionMidCTA = ({
           <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
             <Phone className="w-4 h-4" aria-hidden="true" /> Call Direct
           </a>
+          <CTAProofLine tone="dark" align="center" className="basis-full lg:justify-end" />
         </div>
       </div>
     </div>
@@ -86,19 +88,7 @@ export const ConstructionClosingCTA = ({
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
-              {[
-                { icon: Shield, text: "Licensed & Insured" },
-                { icon: Users, text: "In-House Crews" },
-                { icon: Mountain, text: "WNC Specialists" },
-                { icon: Star, text: "Design-Build Capable" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-2">
-                  <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                  <span className="text-dark-section-foreground text-body-xs font-body font-bold">{item.text}</span>
-                </div>
-              ))}
-            </div>
+            <CTAProofLine tone="dark" className="pt-8 border-t border-dark-section-border" />
           </motion.div>
         </div>
       </div>

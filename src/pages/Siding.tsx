@@ -188,8 +188,8 @@ const Siding = () => {
         </section>
         <ServiceInternalLinks title="Siding & Exterior" slug="siding" intent="consultation" />
       </main>
-      <TieredOffer context="siding" primaryLabel="Get My Siding Scoped" />
       <CommonConcerns />
+      <TieredOffer context="siding" primaryLabel="Get My Siding Scoped" />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
       <StickyMobileCTA />

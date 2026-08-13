@@ -70,7 +70,7 @@ const processSteps = [
   { number: "01", title: "You Call — We Answer", icon: Phone, description: "Describe what you're seeing. We'll ask targeted questions to understand the urgency and schedule an assessment — typically on a same-day or next-day basis, or same-day for emergencies." },
   { number: "02", title: "On-Site Diagnosis", icon: Eye, description: "We inspect the affected area and surrounding components to identify the true source of the problem. We photograph everything and explain our findings on-site." },
   { number: "03", title: "Clear Recommendation", icon: ClipboardCheck, description: "You receive a straightforward recommendation — repair, monitor, or replace — with a written scope, cost, and timeline. No ambiguity, no upselling." },
-  { number: "04", title: "Precision Repair", icon: Hammer, description: "If repair is the right path, our crew executes with the same materials and standards we use on full replacements. Warrantied work, documented results." },
+  { number: "04", title: "Precision Repair", icon: Hammer, description: "If repair is the right path, our crew executes with the same materials and standards we use on full replacements. Documented work, verified results." },
   { number: "05", title: "Verification & Documentation", icon: BadgeCheck, description: "We verify the repair has resolved the issue, photograph the completed work, and provide you with documentation of what was done and what warranty applies." },
 ];
 
@@ -237,7 +237,7 @@ const RoofRepair = () => {
                 A roof leak isn't just an inconvenience — it's your home telling you something needs attention before it becomes something worse.
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-body max-w-2xl mx-auto mb-4">
-                At Highlander, we don't treat repairs as small jobs. We treat them as diagnostic opportunities — a chance to find the real cause, fix it properly, and give you an honest picture of your roof's overall condition. Every repair is documented, warrantied, and built to the same standard as our full replacements.
+                At Highlander, we don't treat repairs as small jobs. We treat them as diagnostic opportunities — a chance to find the real cause, fix it properly, and give you an honest picture of your roof's overall condition. Every repair is documented and built to the same standard as our full replacements.
               </p>
               <div className="flex items-center justify-center gap-3 mt-8">
                 <div className="w-2 h-2 rounded-full bg-[hsl(var(--heritage-green)/0.5)]" />
@@ -498,7 +498,6 @@ const RoofRepair = () => {
             <>
         <WhoShowsUp />
         <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
-        <CommonConcerns />
         <section className="section-padding bg-muted/20">
           <div className="container-tight">
             <AttributedReviews category="roofing" heading="What homeowners say about our roof repair work" />
@@ -554,6 +553,7 @@ const RoofRepair = () => {
           }
           cta={
             <>
+        <CommonConcerns />
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} />
           <div className="section-padding">
@@ -583,7 +583,7 @@ const RoofRepair = () => {
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Clock, text: "Rapid Emergency Response" },
                       { icon: Award, text: "CertainTeed Certified" },
-                      { icon: Star, text: "Warrantied Repairs" },
+                      { icon: Star, text: "4.9★ Google · 150+ reviews" },
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />

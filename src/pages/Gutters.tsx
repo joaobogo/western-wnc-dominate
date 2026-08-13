@@ -196,7 +196,6 @@ const Gutters = () => {
         </>}
         proof={<>
         <TieredOffer context="gutters" primaryLabel="Get My Gutters Assessed" />
-        <CommonConcerns />
         <div className="container-tight pt-16 md:pt-20">
           <AttributedReviews category="roofing" heading="What homeowners say about our gutter work" />
         </div>
@@ -243,6 +242,7 @@ const Gutters = () => {
         <ServiceInternalLinks title="Seamless Gutters" slug="gutters" />
         </>}
         cta={<>
+        <CommonConcerns />
         <CTABlock />
         <ConversionTrustBlock variant="band" category="roofing" />
         </>}
