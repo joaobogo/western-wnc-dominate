@@ -440,6 +440,7 @@ const SpecialtyRoofing = () => {
                       </div>
                     </div>
                   </section>
+          </>
         }
       />
       <Footer />

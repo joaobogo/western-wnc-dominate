@@ -993,6 +993,7 @@ const ResidentialRoofing = () => {
                       </div>
                     </div>
                   </section>
+          </>
         }
         afterCta={
                 <RealWorkWidget />
