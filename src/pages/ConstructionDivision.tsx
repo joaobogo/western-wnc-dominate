@@ -55,6 +55,7 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import FinancingTeaser from "@/components/conversion/FinancingTeaser";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import HeroTrustLine from "@/components/hero/HeroTrustLine";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;

@@ -44,6 +44,7 @@ import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import ConsultationCTA from "@/components/replacement/ConsultationCTA";
 import MaterialComparison from "@/components/replacement/MaterialComparison";
 import WrittenScopeIncludes from "@/components/replacement/WrittenScopeIncludes";
+import HeroTrustLine from "@/components/hero/HeroTrustLine";
 
 /* ═══════════════════════════════════════════
    DATA

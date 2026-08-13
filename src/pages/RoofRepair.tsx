@@ -36,6 +36,7 @@ import UrgentActionSteps from "@/components/emergency/UrgentActionSteps";
 import InsuranceDocHelp from "@/components/emergency/InsuranceDocHelp";
 import RepairPhotoProof from "@/components/emergency/RepairPhotoProof";
 import FastLeadForm from "@/components/FastLeadForm";
+import HeroTrustLine from "@/components/hero/HeroTrustLine";
 
 /* ═══════════════════════════════════════════
    DATA

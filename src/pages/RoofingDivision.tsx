@@ -34,6 +34,7 @@ import VeluxWidget from "@/components/VeluxWidget";
 import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import RoofingPathFinder from "@/components/roofing/RoofingPathFinder";
+import HeroTrustLine from "@/components/hero/HeroTrustLine";
 
 /* ═══════════════════════════════════════════
    DATA
