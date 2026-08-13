@@ -205,20 +205,16 @@ const RoofReplacement = () => {
                 <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Roof Replacement</span>
               </motion.div>
 
-              <div className="overflow-hidden mb-2">
+              <div className="overflow-hidden mb-3 md:mb-4">
                 <motion.h1 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
-                  Roof at the End of Its Life?
+                  Roof Replacement Across{" "}
+                  <span className="text-[hsl(var(--gold-ink))]">Western NC</span>
                 </motion.h1>
-                <PageContext division="Roofing Division" area="Western North Carolina" tone="dark" className="mt-4" />
-              </div>
-              <div className="overflow-hidden mb-4 md:mb-8">
-                <motion.h2 initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }} className="text-heading md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-[1.0] md:leading-[1.05] tracking-tight">
-                  Replace It Once, Replace It Right.
-                </motion.h2>
+                <PageContext division="Roofing Division" area="Western North Carolina" tone="dark" className="mt-3" />
               </div>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }} className="text-body-lg md:text-body-xl text-white/85 max-w-xl mb-5 md:mb-10 leading-snug md:leading-relaxed font-body font-medium drop-shadow-sm">
-                Curling shingles, repeat repairs, or a roof past twenty years — a local crew measures your home, spec&apos;s a system for your elevation and wind exposure, and hands you a written scope, material options, and a firm price before demo day.
+                We measure your home, spec a system for your elevation, and hand you a firm written price.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -232,12 +228,14 @@ const RoofReplacement = () => {
                 </a>
               </motion.div>
 
-              {/* Investment callout — unique to Replacement */}
+              <HeroTrustLine className="mt-4 md:mt-6" />
+
+              {/* Investment callout — desktop only; keeps the mobile fold clean */}
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.5 }}
-                className="mt-10 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm max-w-md"
+                className="hidden md:block mt-10 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm max-w-md"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <DollarSign className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
