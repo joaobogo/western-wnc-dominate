@@ -518,6 +518,33 @@ const RoofRepair = () => {
 
         <WhoShowsUp />
 
+        <RealWorkWidget />
+        <CostOfWaiting variant="repair" />
+        <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
+        <CommonConcerns />
+        <CostContextBlock serviceLabel="roof repair" />
+        <SchedulingReality serviceLabel="roof repair" />
+        <section className="section-padding bg-muted/20">
+          <div className="container-tight">
+            <AttributedReviews category="roofing" heading="What homeowners say about our roof repair work" />
+          </div>
+        </section>
+        <ConversionTrustBlock variant="band" category="roofing" />
+        <RelatedLinks
+          eyebrow="Keep Exploring"
+          heading="Related pages you may find useful"
+          columns={2}
+          links={[
+            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
+            { label: "Residential Roofing Services", href: "/roofing/residential", description: "When repair becomes replacement" },
+            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Compare repair vs full replacement" },
+            { label: "Roofing FAQ", href: "/faq", description: "Common questions about repair timelines" },
+            { label: "Request an Inspection", href: "/request-inspection", description: "Get a repair scope in writing" },
+            { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
+          ]}
+        />
+        <ServiceInternalLinks title="Roof Repair" slug="roof-repair" />
+
         {/* ─── CLOSING CTA ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.5), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} />
@@ -561,34 +588,8 @@ const RoofRepair = () => {
             </div>
           </div>
         </section>
-      <RelatedLinks
-          eyebrow="Keep Exploring"
-          heading="Related pages you may find useful"
-          columns={2}
-          links={[
-            { label: "Roofing Services Hub", href: "/roofing", description: "Full roofing division overview" },
-            { label: "Residential Roofing Services", href: "/roofing/residential", description: "When repair becomes replacement" },
-            { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Compare repair vs full replacement" },
-            { label: "Roofing FAQ", href: "/faq", description: "Common questions about repair timelines" },
-            { label: "Request an Inspection", href: "/request-inspection", description: "Get a repair scope in writing" },
-            { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
-          ]}
-        />
-        <ServiceInternalLinks title="Roof Repair" slug="roof-repair" />
       </main>
 
-      <RealWorkWidget />
-        <CostOfWaiting variant="repair" />
-        <TieredOffer context="roof-repair" primaryLabel="Get My Repair Assessed" />
-        <CommonConcerns />
-        <CostContextBlock serviceLabel="roof repair" />
-        <SchedulingReality serviceLabel="roof repair" />
-      <section className="section-padding bg-muted/20">
-        <div className="container-tight">
-          <AttributedReviews category="roofing" heading="What homeowners say about our roof repair work" />
-        </div>
-      </section>
-      <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
     </>
