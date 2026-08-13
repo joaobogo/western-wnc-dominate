@@ -232,7 +232,6 @@ const StickyMobileCTA = () => {
                     </a>
                     <Link
                       to={action.primaryHref}
-                      data-gtm-cta="request_inspection"
                       onClick={() => {
                         firePrimary();
                         trackEvent("cta_click", { label: action.primaryLabel, elementId: "sticky-cta-mobile-estimate" });
