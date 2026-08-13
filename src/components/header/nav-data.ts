@@ -155,9 +155,15 @@ export const divisions: DivisionDropdown[] = [
 
 export const secondaryLinks = [
   { label: "Projects", href: "/recent-projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+];
+
+/** Secondary destinations — footer + a single mobile "Resources" group, never top-level. */
+export const resourceLinks = [
+  { label: "About Highlander", href: "/about" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Blog", href: "/blog" },
+  { label: "Giving Back", href: "/giving-back" },
 ];
 
 export const townLinks = towns.map((t) => ({

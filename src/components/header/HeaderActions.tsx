@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Heart, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, Menu, Phone, X } from "lucide-react";
 import { HIGHLAND_EASE } from "./nav-data";
 
 interface Props {
@@ -12,30 +12,24 @@ export const HeaderActions = ({ mobileOpen, setMobileOpen }: Props) => (
   <div className="flex items-center gap-3">
     <a
       href="tel:+18285247773"
-      className="hidden md:flex items-center gap-2 transition-all duration-300 text-sm font-body mr-1 text-heritage-charcoal/60 hover:text-heritage-charcoal"
+      aria-label="Call Highlander Building Services at (828) 524-7773"
+      className="hidden sm:flex items-center gap-2 transition-all duration-300 text-body-sm font-body font-bold mr-1 text-heritage-charcoal/75 hover:text-heritage-charcoal whitespace-nowrap"
     >
       <Phone className="w-3.5 h-3.5" />
-      <span className="hidden xl:inline">(828) 524-7773</span>
+      <span>(828) 524-7773</span>
     </a>
-    <Link
-      to="/community"
-      aria-label="Giving Back to our community"
-      className="hidden lg:inline-flex items-center gap-1.5 text-body-xs font-body font-bold uppercase tracking-[0.1em] text-heritage-charcoal/75 hover:text-[hsl(var(--gold-ink))] transition-colors duration-300 px-2 py-1.5 group"
-    >
-      <Heart className="w-3.5 h-3.5 text-[hsl(var(--gold-ink))] group-hover:fill-[hsl(var(--highland-gold))] transition-all duration-300" />
-      <span>Giving Back</span>
-    </Link>
     <a
       href="tel:+18285247773"
-      className="md:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
+      aria-label="Call (828) 524-7773"
+      className="sm:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-sm bg-primary text-primary-foreground active:scale-95 transition-transform"
     >
       <Phone className="w-4 h-4" />
     </a>
     <Link
       to="/consultation"
-      className="hidden sm:inline-flex cta-gradient text-accent-foreground font-bold text-body-xs px-7 py-4 rounded-none items-center gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-raised border border-[hsl(var(--highland-gold)/0.4)]"
+      className="inline-flex cta-gradient text-accent-foreground font-bold text-body-xs px-4 sm:px-7 py-3 sm:py-4 rounded-none items-center gap-2 sm:gap-2.5 btn-primary-interactive uppercase tracking-[0.1em] shadow-raised border border-[hsl(var(--highland-gold)/0.4)] whitespace-nowrap"
     >
-      <span className="relative z-10">Get Estimate</span>
+      <span className="relative z-10"><span className="hidden sm:inline">Get </span>Estimate</span>
       <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" />
     </Link>
     <button

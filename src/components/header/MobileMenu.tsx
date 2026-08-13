@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Phone } from "lucide-react";
-import { HIGHLAND_EASE, divisions, secondaryLinks } from "./nav-data";
+import { HIGHLAND_EASE, divisions, resourceLinks, secondaryLinks } from "./nav-data";
 import { MobileServiceAreasList } from "./MobileServiceAreasList";
 import { preloadHandlers } from "@/lib/route-preload";
 
@@ -128,7 +128,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.3 }} className="flex items-center gap-3 py-1.5 px-2.5 mt-1">
               <div className="flex-1 h-px bg-black/10" />
-              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">Company</span>
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">More</span>
               <div className="flex-1 h-px bg-black/10" />
             </motion.div>
 
@@ -147,6 +147,28 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
                 </Link>
               </motion.div>
             ))}
+
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.24, duration: 0.3 }} className="flex items-center gap-3 py-1.5 px-2.5 mt-1">
+              <div className="flex-1 h-px bg-black/10" />
+              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-heritage-charcoal/40">Resources</span>
+              <div className="flex-1 h-px bg-black/10" />
+            </motion.div>
+
+            <div className="grid grid-cols-2 gap-0.5">
+              {resourceLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  {...preloadHandlers(link.href)}
+                  onClick={onClose}
+                  className={`py-2.5 px-2.5 text-body-sm font-body rounded-sm transition-all flex items-center min-h-[44px] ${
+                    isActive(link.href) ? "text-heritage-charcoal bg-black/5 font-bold" : "text-heritage-charcoal/70 hover:bg-black/5"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
 
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.3, ease: HIGHLAND_EASE }} className="pt-3 mt-2 border-t border-black/10 space-y-2 pb-[max(env(safe-area-inset-bottom),0.5rem)]">
               <Link
