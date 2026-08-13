@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight, Phone, Shield, Award, FileCheck, BadgeCheck, CheckCircle,
-  Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain,
+  Hammer, Eye, Users, Wrench, Star, Clock, Home, Mountain, ShieldCheck,
 } from "lucide-react";
 import badgeCertainteedMaster from "@/assets/badge-certainteed-master.png";
 import badgeJamesHardie from "@/assets/badge-james-hardie.png";
