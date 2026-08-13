@@ -181,7 +181,6 @@ const Skylights = () => {
           <>
             <VeluxProof />
             <TieredOffer context="skylights" primaryLabel="Get My Skylight Assessed" />
-            <CommonConcerns />
             <WhoShowsUp />
             <section className="section-padding bg-muted/20">
               <div className="container-tight">
@@ -264,7 +263,10 @@ const Skylights = () => {
             <ServiceInternalLinks title="Skylights" slug="skylights" />
           </>
         }
-        cta={<CTABlock />}
+        cta={<>
+        <CommonConcerns />
+        <CTABlock />
+        </>}
         afterCta={<VeluxWidget />}
       />
       <Footer />
