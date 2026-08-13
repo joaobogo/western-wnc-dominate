@@ -73,7 +73,7 @@ const AttributedReviews = ({
             }`}
           >
             <div className="flex items-center gap-2 mb-3">
-              <div className="flex" aria-label={`${r.ratingValue} out of 5 stars`}>
+              <div className="flex" role="img" aria-label={`${r.ratingValue} out of 5 stars`}>
                 {Array.from({ length: r.ratingValue }).map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-[hsl(var(--gold-ink))] text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                 ))}
