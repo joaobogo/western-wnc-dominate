@@ -239,7 +239,7 @@ export const MobileMenu = ({ open, onClose, expanded, setExpanded, isActive, onV
               onClick={onClose}
               className="btn btn-primary btn-md"
             >
-              <span className="relative z-10">Request an Estimate</span>
+              <span className="relative z-10">Get My Written Estimate</span>
               <ArrowRight className="w-4 h-4 relative z-10" aria-hidden="true" />
             </Link>
           </div>

@@ -300,7 +300,7 @@ const ServiceAreas = () => {
                   to="/consultation"
                   className="btn btn-primary btn-lg group md:text-xl min-w-[320px]"
                 >
-                  <span className="relative z-10">Discuss Your Property</span>
+                  <span className="relative z-10">See What My Property Needs</span>
                   <ArrowRight className="w-4 h-4 relative z-10 btn-arrow-icon" aria-hidden="true" />
                 </Link>
                 <a

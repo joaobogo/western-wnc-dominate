@@ -135,7 +135,7 @@ const Footer = () => {
                 className="btn btn-primary btn-md group relative whitespace-nowrap"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Request a Quote</span>
+                <span className="relative">Get My Written Estimate</span>
                 <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
               <a

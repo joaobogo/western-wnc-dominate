@@ -620,7 +620,7 @@ const Blog = () => {
         <ReassuranceBlock
           headline={"Have a Question About\nSomething You Read?"}
           subheadline="This content is written by the team that builds in these mountains. If you have questions, we have answers — and there's no obligation."
-          ctaText="Talk to the Team That Wrote This"
+          ctaText="Get My Questions Answered"
         />
       </main>
       <PageCloseCTA eyebrow="Next Step" heading="Have a question these articles didn't answer?" body="Send us the details of your roof or project and a local advisor will walk you through the options for your property." secondaryLabel="Browse our roofing services" secondaryTo="/roofing" context="blog" />

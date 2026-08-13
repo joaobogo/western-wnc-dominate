@@ -170,7 +170,7 @@ const OutdoorLiving = () => {
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Schedule a Project Consultation</span>
+                  <span className="relative">Get My Project Scoped</span>
                   <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-lg btn-on-dark group">
@@ -350,7 +350,7 @@ const OutdoorLiving = () => {
               <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  <span className="relative">Schedule a Project Consultation</span>
+                  <span className="relative">Get My Project Scoped</span>
                   <ArrowRight className="w-4 h-4 relative" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
@@ -424,7 +424,7 @@ const OutdoorLiving = () => {
           preset="outdoor_living"
           title="Plan Your Outdoor Living Project"
           body="Optional guided pathway for porches, decks, pergolas, outdoor kitchens, and fire features. Walk through scope, integration, and timing — we use it to prepare a sharper site conversation."
-          ctaLabel="Build Your Outdoor Plan"
+          ctaLabel="Get My Outdoor Plan"
         />
             <WhoShowsUp />
             <TieredOffer context="outdoor-living" primaryLabel="Get My Outdoor Space Planned" primaryTo="/construction/consultation" />

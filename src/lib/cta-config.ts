@@ -21,7 +21,7 @@ export const CTA = {
   roofingConsult: "Get My Roof Assessed",
   roofingHero: "See What My Roof Needs",
   roofingMid: "Get My Roof Questions Answered",
-  roofingClosing: "Let's Protect What Matters Most",
+  roofingClosing: "Get My Roof Protected",
 
   /** Construction division pages — build & project language */
   constructionConsult: "Get My Build Planned",
@@ -48,7 +48,7 @@ export const CTA = {
   /** Blog page — education → service bridge language */
   blogClosing: "Have a Question About Your Roof or Project?",
   blogInline: "Need Expert Advice on This?",
-  blogService: "Talk to the Team That Wrote This",
+  blogService: "Get My Questions Answered",
 
   /** Contact page — direct & premium */
   contactSubmit: "Get My Questions Answered",
