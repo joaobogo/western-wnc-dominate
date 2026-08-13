@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowLeft, ArrowRight, Clock, Calendar, Tag, Mountain, CheckCircle,
-  Quote, Star, Phone, Shield, BookOpen, Lightbulb, MapPin,
+  Quote, Star, BookOpen, Lightbulb, MapPin,
 } from "lucide-react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
@@ -17,6 +17,26 @@ import { getBlogInternalLinks } from "@/lib/blog-internal-links";
 import BlogInternalLinksBlock from "@/components/blog/BlogInternalLinksBlock";
 import LocalLinkWeb from "@/components/LocalLinkWeb";
 import { getBlogLocalLinkWeb } from "@/lib/local-link-graph";
+import { getBlogCta } from "@/lib/blog-cta";
+import BlogMidArticleCTA from "@/components/blog/BlogMidArticleCTA";
+import BlogClosingCTA from "@/components/blog/BlogClosingCTA";
+import BlogSidebarCTA from "@/components/blog/BlogSidebarCTA";
+
+/** Split article markdown at the H2 closest to the midpoint so the mid-article
+ *  CTA lands between sections instead of interrupting a paragraph. */
+const splitContentAtMidpoint = (content: string): [string, string] => {
+  const lines = content.split("\n");
+  if (lines.length < 20) return [content, ""];
+  const target = Math.floor(lines.length / 2);
+  let best = -1;
+  lines.forEach((line, i) => {
+    if (!line.startsWith("## ")) return;
+    if (i < 4 || i > lines.length - 5) return;
+    if (best === -1 || Math.abs(i - target) < Math.abs(best - target)) best = i;
+  });
+  if (best === -1) return [content, ""];
+  return [lines.slice(0, best).join("\n"), lines.slice(best).join("\n")];
+};
 
 /* ─── Author data ─── */
 const authors: Record<string, { name: string; role: string; bio: string }> = {
@@ -232,6 +252,8 @@ const BlogPostPage = () => {
   const author = authors.default;
   const takeaways = extractTakeaways(post.content);
   const internalLinks = getBlogInternalLinks(post);
+  const blogCta = getBlogCta(post);
+  const [contentTop, contentBottom] = splitContentAtMidpoint(post.content);
   const relatedPosts = blogPosts
     .filter((p) => p.slug !== slug && (p.category === post.category || p.town === post.town))
     .slice(0, 3);
@@ -378,8 +400,15 @@ const BlogPostPage = () => {
                   transition={{ delay: 0.2 }}
                   className="prose-custom"
                 >
-                  {renderContent(post.content)}
+                  {renderContent(contentTop)}
                 </motion.div>
+
+                {contentBottom && (
+                  <>
+                    <BlogMidArticleCTA cta={blogCta} town={post.town} />
+                    <div className="prose-custom">{renderContent(contentBottom)}</div>
+                  </>
+                )}
 
                 {/* Local Relevance Callout */}
                 {post.town && (
@@ -459,6 +488,9 @@ const BlogPostPage = () => {
                 )}
 
                 {/* SEO Internal Linking Block — city, service, related blog, project, estimate */}
+                {/* Closing CTA — relevant service page + phone. Local link web stays below. */}
+                <BlogClosingCTA cta={blogCta} town={post.town} />
+
                 <BlogInternalLinksBlock links={internalLinks} town={post.town} />
 
                 <LocalLinkWeb
@@ -525,35 +557,6 @@ const BlogPostPage = () => {
                 )}
 
 
-                {/* In-Article CTA */}
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-primary rounded-sm p-6 md:p-8 mt-10 text-center"
-                >
-                  <h2 className="text-xl font-heading font-bold text-primary-foreground mb-2">
-                    Have Questions About Your Project?
-                  </h2>
-                  <p className="text-primary-foreground/85 text-sm mb-5 max-w-md mx-auto">
-                    Our team is happy to answer questions — no commitment required. Just honest, expert advice from people who build in these mountains every day.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Link
-                      to="/consultation"
-                      className="cta-gradient text-accent-foreground font-bold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:opacity-90 transition-opacity"
-                    >
-                      Request a Consultation <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <a
-                      href="tel:+18285247773"
-                      className="border border-primary-foreground/30 text-primary-foreground font-semibold px-6 py-3 rounded-sm inline-flex items-center justify-center gap-2 text-sm hover:bg-primary-foreground/10 transition-colors"
-                    >
-                      <Phone className="w-4 h-4" /> (828) 524-7773
-                    </a>
-                  </div>
-                </motion.div>
-
                 {/* Author Bio */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
@@ -595,22 +598,8 @@ const BlogPostPage = () => {
                   </div>
                 )}
 
-                {/* Sidebar CTA */}
-                <div className="bg-primary rounded-sm p-5 md:p-6 text-center">
-                  <Shield className="w-6 h-6 text-[hsl(var(--gold-ink))] mx-auto mb-3" />
-                  <h2 className="font-heading font-semibold text-primary-foreground text-sm mb-2">
-                    Need Expert Advice?
-                  </h2>
-                  <p className="text-primary-foreground/85 text-xs mb-4">
-                    No pressure, no upselling — just honest expert advice.
-                  </p>
-                  <Link
-                    to="/consultation"
-                    className="cta-gradient text-accent-foreground font-bold px-5 py-3 rounded-sm inline-flex items-center gap-2 text-sm hover:opacity-90 transition-opacity w-full justify-center"
-                  >
-                    Request a Consultation <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
+                {/* Sticky desktop sidebar CTA */}
+                <BlogSidebarCTA cta={blogCta} town={post.town} />
               </div>
             </div>
           </div>
