@@ -15,7 +15,6 @@ import PageCloseCTA from "@/components/PageCloseCTA";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import VendorPartners from "@/components/VendorPartners";
 import {
-  CredentialCards,
   TrustPillarGrid,
   TrustBadgeStrip,
   ReassuranceBlock,
