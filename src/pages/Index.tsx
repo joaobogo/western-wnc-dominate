@@ -65,6 +65,9 @@ const Index = () => {
           <Hero />
         </section>
 
+        {/* 2. Tight three-item proof band */}
+        <CredibilityStrip />
+
         <AnswerBlock
           question="Who is Highlander Building Services?"
           answer="Highlander Building Services, Inc. is a roofing and construction company based at 76 Creative Dr, Franklin, NC 28734, serving Franklin, Highlands, Cashiers, Sylva, and the wider Western North Carolina mountains with roof repair, roof replacement, metal roofing, gutters, and custom construction."
@@ -76,35 +79,34 @@ const Index = () => {
           ]}
         />
 
-        {/* 2. Two-line credibility strip */}
-        <CredibilityStrip />
-
         <div className="relative overflow-hidden bg-background">
           <TartanBackground opacity={0.02} />
           <SectionDivider variant="diamond" />
         </div>
 
-        {/* 3. Choose your path — Roofing vs Construction */}
+        {/* 3. Two-division split (surface-raised) */}
         <ThreeDivisionPathway paths="two" />
 
         <Suspense fallback={<SectionFallback h={1800} />}>
-          {/* 4. Local proof — real, attributable reviews */}
-          <Section density="default" width="tight" className="bg-background">
-            <AttributedReviews heading="What Western NC homeowners say" />
-          </Section>
-
-          <SectionDivider variant="tartan-trim" />
-
-          {/* 5. Recent local projects */}
+          {/* 4. Project showcase (light) */}
           <FeaturedProjects />
 
-          {/* 6. Service-area entry */}
+          {/* 5. Local proof band — dark tone, two attributable quotes */}
+          <Section
+            density="compact"
+            width="tight"
+            className="bg-[hsl(var(--dark-section))] text-dark-section-foreground"
+          >
+            <AttributedReviews heading="What Western NC homeowners say" tone="dark" />
+          </Section>
+
+          {/* 6. Local coverage (surface-raised) */}
           <ServiceAreaMap id="service-area" />
 
-          {/* 7. Short FAQ */}
+          {/* 7. FAQ (light) */}
           <HomeFAQ />
 
-          {/* 8. Final CTA band */}
+          {/* 8. One closing CTA */}
           <PageCloseCTA
             context="homepage"
             eyebrow="Next Step"
