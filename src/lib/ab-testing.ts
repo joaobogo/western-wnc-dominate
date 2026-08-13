@@ -244,8 +244,11 @@ export function getActiveExperiments(): Record<string, string> {
 /** Push the impression once per page view so GTM can attribute conversions. */
 export function announceVariant(id: ExperimentId, variant: VariantKey) {
   if (typeof window === "undefined" || announced.has(id)) return;
-  announced.add(id);
   const def = EXPERIMENTS[id] as ExperimentDef | undefined;
+  // Queued and concluded tests serve the control only — no impression, so the
+  // readout never mixes real exposure with placeholder control traffic.
+  if (!def || def.status !== "running") return;
+  announced.add(id);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const w = window as any;
   w.dataLayer = w.dataLayer || [];
