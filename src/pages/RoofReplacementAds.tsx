@@ -9,8 +9,8 @@ const RoofReplacementAds = () => (
     serviceName="Roof Replacement"
     heroImage={heroImg}
     heroAlt="Roof replacement in progress on a mountain home in Western North Carolina"
-    eyebrow="Roof replacement landing page"
-    headline="Need a new roof? Get a clear scope without the runaround."
+    eyebrow="Roof replacement · Western North Carolina"
+    headline="Roof Replacement in Western NC — Get a Written Scope, Not a Sales Pitch"
     subheadline="We help Western North Carolina homeowners understand timing, material fit, and budget range so replacement decisions feel informed instead of rushed."
     ctaLabel="Get My Replacement Scope"
     urgencyOptions={["Need pricing soon", "Replacing this month", "Planning ahead", "Insurance-related"]}
