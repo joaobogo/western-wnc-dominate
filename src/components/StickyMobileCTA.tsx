@@ -87,8 +87,6 @@ const StickyMobileCTA = () => {
 
   // Never cover the footer's final CTA region.
   useEffect(() => {
-    const targets = Array.from(document.querySelectorAll<HTMLElement>("[data-final-cta]"));
-    if (!targets.length) { setFinalCtaInView(false); return; }
     const visible = new Set<Element>();
     const io = new IntersectionObserver(
       (entries) => {
@@ -100,8 +98,16 @@ const StickyMobileCTA = () => {
       },
       { threshold: 0.01 },
     );
-    targets.forEach((t) => io.observe(t));
-    return () => io.disconnect();
+    const observed = new WeakSet<Element>();
+    const scan = () => {
+      document.querySelectorAll<HTMLElement>("[data-final-cta]").forEach((el) => {
+        if (!observed.has(el)) { io.observe(el); observed.add(el); }
+      });
+    };
+    scan();
+    const mo = new MutationObserver(scan);
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => { io.disconnect(); mo.disconnect(); };
   }, [pathname]);
 
   // Reflect visibility on <body> so global CSS can add page bottom padding
