@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lucide-react";
 import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/SEOHead";
 import FastLeadForm from "@/components/FastLeadForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import logoLight from "@/assets/logo-light.webp";
 
 interface PaidAdsLandingProps {
   title: string;
@@ -69,43 +69,44 @@ const PaidAdsLanding = ({
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-6 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
-            <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-4">
-              <Link to="/" className="font-heading text-lg font-bold text-primary-foreground hover:opacity-80 transition-opacity">
-                Highlander Roofing & Construction
-              </Link>
+          <div className="relative z-10 mx-auto max-w-[1280px] px-5 pb-16 pt-4 md:px-8 md:pb-20 md:pt-8 lg:px-16 lg:pb-24">
+            <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-3">
+              <span className="flex items-center gap-2">
+                <img src={logoLight} alt="Highlander Roofing Services, Inc." width={140} height={40} className="h-8 w-auto md:h-10" loading="eager" decoding="sync" />
+                <span className="sr-only">Highlander Roofing Services, Inc.</span>
+              </span>
               <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/85 hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" />
                 (828) 524-7773
               </a>
             </div>
 
-            <div className="grid gap-10 pt-12 lg:grid-cols-12 lg:items-start">
+            <div className="grid gap-8 pt-6 md:pt-10 lg:grid-cols-12 lg:items-start lg:gap-10 lg:pt-12">
               <div className="lg:col-span-7">
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                  <div className="mb-4 text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
+                  <div className="mb-3 text-[10px] font-body font-semibold uppercase tracking-[0.24em] text-[hsl(var(--gold-ink))]">
                     {eyebrow}
                   </div>
-                  <h1 className="max-w-3xl text-4xl font-heading font-bold leading-[1.04] text-primary-foreground md:text-5xl lg:text-6xl">
+                  <h1 className="max-w-3xl text-[30px] font-heading font-bold leading-[1.06] text-primary-foreground md:text-5xl lg:text-6xl">
                     {headline}
                   </h1>
-                  <p className="mt-5 max-w-2xl text-base font-body leading-relaxed text-primary-foreground/90 md:text-lg">
+                  <p className="mt-3 max-w-2xl text-sm font-body leading-relaxed text-primary-foreground/90 md:mt-5 md:text-lg">
                     {subheadline}
                   </p>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.5 }} className="mt-8 flex flex-wrap gap-3">
+                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.5 }} className="mt-6 hidden flex-wrap gap-3 lg:flex">
                   <a href="#fast-lead-form" className="inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">
                     {ctaLabel}
                     <ArrowRight className="h-4 w-4" />
                   </a>
                   <a href="tel:+18285247773" className="inline-flex items-center gap-2 border border-primary-foreground/20 bg-primary-foreground/5 px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
                     <Phone className="h-4 w-4" />
-                    Call Direct
+                    Call Direct: 828-524-7773
                   </a>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.5 }} className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.5 }} className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                   {trustStats.map((item) => (
                     <div key={item.label} className="border border-primary-foreground/12 bg-primary-foreground/5 px-4 py-4">
                       <div className="text-2xl font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}</div>
@@ -116,7 +117,7 @@ const PaidAdsLanding = ({
                 </motion.div>
               </div>
 
-              <div className="lg:col-span-5" id="fast-lead-form">
+              <div className="order-first lg:order-none lg:col-span-5" id="fast-lead-form">
                 <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.5 }}>
                   <FastLeadForm ctaLabel={ctaLabel} serviceLabel={serviceName} urgencyOptions={urgencyOptions} />
                 </motion.div>
