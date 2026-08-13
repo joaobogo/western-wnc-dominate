@@ -736,10 +736,10 @@ img {
      Strong, compact, confident
      ────────────────────────────────────── */
   .cta-text {
-    @apply text-[12px] font-body font-bold uppercase tracking-[0.12em];
+    @apply text-body-xs font-body font-bold uppercase tracking-[0.12em];
   }
   .cta-text-lg {
-    @apply text-[14px] font-body font-bold uppercase tracking-[0.1em];
+    @apply text-body-xs font-body font-bold uppercase tracking-[0.1em];
   }
 
   /* ──────────────────────────────────────
