@@ -32,6 +32,7 @@ import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
 import UrgentActionSteps from "@/components/emergency/UrgentActionSteps";
+import InsuranceDocHelp from "@/components/emergency/InsuranceDocHelp";
 import RepairPhotoProof from "@/components/emergency/RepairPhotoProof";
 import FastLeadForm from "@/components/FastLeadForm";
 
@@ -247,6 +248,25 @@ const StormDamage = () => {
           }
           quickAnswer={
             <>
+        <UrgentActionSteps variant="storm" />
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight max-w-2xl">
+            <div className="mb-6 text-center">
+              <span className="eyebrow mb-3 block">No Active Water Intrusion?</span>
+              <h2 className="section-heading mb-3">Request a Documented Damage Assessment.</h2>
+              <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
+                If nothing is leaking right now, send four quick fields and we&apos;ll schedule an
+                inspection with photo documentation for your records or your claim.
+              </p>
+            </div>
+            <FastLeadForm
+              ctaLabel="Get My Storm Damage Documented"
+              serviceLabel="Storm Damage"
+              urgencyOptions={["Water coming in now", "Within 48 hours", "This week", "Documenting for insurance"]}
+            />
+          </div>
+        </section>
+        <InsuranceDocHelp />
         <AnswerBlock
           question="What is storm damage roofing work in Western North Carolina?"
           answer="Storm damage work starts with documenting wind, hail, or falling-tree damage, protecting the home from further water intrusion, and then restoring the roof system. In the mountains, damage is often concentrated on exposed slopes and at flashing points rather than spread evenly. Highlander inspects, documents, and repairs storm damage across the region."
@@ -440,7 +460,6 @@ const StormDamage = () => {
           }
           process={
             <>
-        <UrgentActionSteps variant="storm" />
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
@@ -503,24 +522,6 @@ const StormDamage = () => {
                 </motion.div>
               </div>
             </div>
-          </div>
-        </section>
-        {/* ─── SHORT FORM FOR NON-URGENT CASES ─── */}
-        <section className="section-padding bg-secondary tartan-bg">
-          <div className="container-tight max-w-2xl">
-            <div className="mb-6 text-center">
-              <span className="eyebrow mb-3 block">No Active Water Intrusion?</span>
-              <h2 className="section-heading mb-3">Request a Documented Damage Assessment.</h2>
-              <p className="text-muted-foreground text-body-sm font-body leading-relaxed">
-                If nothing is leaking right now, send four quick fields and we'll schedule an
-                inspection with photo documentation for your records or your claim.
-              </p>
-            </div>
-            <FastLeadForm
-              ctaLabel="Get My Storm Damage Documented"
-              serviceLabel="Storm Damage"
-              urgencyOptions={["Water coming in now", "Within 48 hours", "This week", "Documenting for insurance"]}
-            />
           </div>
         </section>
         {/* ─── INTERACTIVE STORM ASSESSMENT ─── */}

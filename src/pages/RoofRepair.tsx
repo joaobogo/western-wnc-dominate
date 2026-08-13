@@ -197,6 +197,8 @@ const RoofRepair = () => {
           }
           quickAnswer={
             <>
+        <UrgentActionSteps variant="repair" />
+        <InsuranceDocHelp />
         <AnswerBlock
           question="What does roof repair cover, and when is repair the right call?"
           answer="Roof repair addresses a specific, contained failure — a leak, wind-lifted shingles, damaged flashing, or a compromised penetration — without replacing the whole roof. Repair is usually the right call when the roof is otherwise sound and has meaningful service life left. Highlander assesses the roof first and tells you plainly whether repair or replacement makes more sense."
@@ -465,9 +467,7 @@ const RoofRepair = () => {
           }
           process={
             <>
-        <UrgentActionSteps variant="repair" />
         <RepairPhotoProof variant="repair" />
-        <InsuranceDocHelp />
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
