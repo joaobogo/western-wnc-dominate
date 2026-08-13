@@ -578,7 +578,7 @@ const ConstructionDesign = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
           ]}
         />
-        <ServiceInternalLinks title="Design & Planning" slug="design" />
+        <ServiceInternalLinks title="Design & Planning" slug="design" intent="consultation" />
       </main>
 
       <Footer />

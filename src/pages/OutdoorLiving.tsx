@@ -510,7 +510,7 @@ const OutdoorLiving = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
-        <ServiceInternalLinks title="Outdoor Living" slug="outdoor-living" />
+        <ServiceInternalLinks title="Outdoor Living" slug="outdoor-living" intent="consultation" />
       </main>
 
       <TieredOffer context="outdoor-living" primaryLabel="Get My Outdoor Space Planned" primaryTo="/construction/consultation" />

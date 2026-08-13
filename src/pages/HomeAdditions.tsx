@@ -563,7 +563,7 @@ const HomeAdditions = () => {
           subheadline="Whether it's a guest suite, a main-level master, or a room you haven't even named yet — let's talk about what your home could become."
           eyebrow="Start Planning"
         />
-        <ServiceInternalLinks title="Home Additions" slug="additions" />
+        <ServiceInternalLinks title="Home Additions" slug="additions" intent="consultation" />
       </main>
       <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" primaryTo="/construction/consultation" />
       <CommonConcerns />

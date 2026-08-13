@@ -514,7 +514,7 @@ const ConstructionDivision = () => {
             { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
-        <ServiceInternalLinks title="Construction Services" slug="construction" />
+        <ServiceInternalLinks title="Construction Services" slug="construction" intent="consultation" />
         <TieredOffer context="construction-division" primaryLabel="Get My Build Planned" primaryTo="/construction-intake" primaryDescription="A working session on scope, feasibility, and budget range — then a written project scope." />
       </main>
 

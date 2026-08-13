@@ -443,7 +443,7 @@ const Renovations = () => {
           subheadline="Whether it's a kitchen that finally works, a bathroom that lasts, or a whole-home renovation done right — let's have a straightforward conversation about what's possible."
           eyebrow="Start Planning"
         />
-        <ServiceInternalLinks title="Renovations" slug="renovations" />
+        <ServiceInternalLinks title="Renovations" slug="renovations" intent="consultation" />
       </main>
       <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" primaryTo="/construction/consultation" />
       <CommonConcerns />
