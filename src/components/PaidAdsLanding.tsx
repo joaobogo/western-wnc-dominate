@@ -217,23 +217,53 @@ const PaidAdsLanding = ({
         <section className="bg-primary py-10 text-primary-foreground">
           <div className="container-tight flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
-              <div className="font-heading text-2xl font-bold">Need the fastest path?</div>
+              <div className="font-heading text-2xl font-bold">Ready for the next step?</div>
               <p className="mt-2 max-w-xl text-sm font-body text-primary-foreground/95">
-                Call now or use the short form above. We keep these landing pages focused so you can move quickly.
+                Use the short form above or call our Franklin office during business hours. One page, one action — no hunting around.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a href="#fast-lead-form" className="inline-flex items-center justify-center gap-2 bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-90">
-                Start Request
+                {ctaLabel}
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href="tel:+18285247773" className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10">
                 <Phone className="h-4 w-4" />
-                (828) 524-7773
+                Call Direct: 828-524-7773
               </a>
             </div>
           </div>
         </section>
+
+        <footer className="bg-background pb-28 pt-8 md:pb-10">
+          <div className="container-tight flex flex-col gap-2 text-xs font-body text-muted-foreground md:flex-row md:items-center md:justify-between">
+            <span>© {new Date().getFullYear()} Highlander Roofing Services, Inc. · Franklin, NC · 828-524-7773</span>
+            <span className="flex gap-4">
+              <a href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</a>
+              <a href="/accessibility" className="hover:text-foreground transition-colors">Accessibility</a>
+            </span>
+          </div>
+        </footer>
+
+        {/* Sticky mobile call bar — one action, always reachable */}
+        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-4 py-3 backdrop-blur md:hidden">
+          <div className="flex gap-2">
+            <a
+              href="tel:+18285247773"
+              onClick={() => window.dataLayer?.push({ event: "cta_call_click", cta_location: "lp_sticky_mobile", page_path: path })}
+              className="flex flex-1 items-center justify-center gap-2 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
+            >
+              <Phone className="h-4 w-4" />
+              Call Direct: 828-524-7773
+            </a>
+            <a
+              href="#fast-lead-form"
+              className="flex items-center justify-center border border-primary/40 px-4 py-3 text-sm font-semibold text-primary"
+            >
+              Form
+            </a>
+          </div>
+        </div>
       </main>
     </>
   );
