@@ -37,6 +37,10 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import ConsultationCTA from "@/components/replacement/ConsultationCTA";
+import MaterialComparison from "@/components/replacement/MaterialComparison";
+import WrittenScopeIncludes from "@/components/replacement/WrittenScopeIncludes";
+import LocalProjectProof from "@/components/trust/LocalProjectProof";
 
 /* ═══════════════════════════════════════════
    DATA
