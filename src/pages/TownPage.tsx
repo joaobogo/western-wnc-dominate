@@ -137,7 +137,7 @@ const TownPage = () => {
               </motion.h1>
 
               <PageContext
-                division="Roofing &amp; Construction"
+                division="Roofing & Construction"
                 area={`${town.name}, ${town.state} · ${town.county}`}
                 tone="dark"
               />
