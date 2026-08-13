@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Clock, MapPin, Phone, Shield, Star } from "lu
 import SEOHead, { breadcrumbSchema, faqSchema, serviceSchema } from "@/components/SEOHead";
 import FastLeadForm from "@/components/FastLeadForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { trackPhoneClick } from "@/lib/gtm";
 import logoLight from "@/assets/logo-light.webp";
 
 interface PaidAdsLandingProps {
@@ -250,7 +251,7 @@ const PaidAdsLanding = ({
           <div className="flex gap-2">
             <a
               href="tel:+18285247773"
-              onClick={() => window.dataLayer?.push({ event: "cta_call_click", cta_location: "lp_sticky_mobile", page_path: path })}
+              onClick={() => trackPhoneClick({ phone_number: "828-524-7773", link_url: "tel:+18285247773", click_location: "lp_sticky_mobile", page_type: "paid_landing" })}
               className="flex flex-1 items-center justify-center gap-2 bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
             >
               <Phone className="h-4 w-4" />
