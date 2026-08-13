@@ -621,7 +621,7 @@ const ResidentialRoofing = () => {
           </>
         }
         costContext={
-                  <CostContextBlock serviceLabel="residential roofing" />
+                  <CostContextBlock serviceLabel="residential roofing" variant="roofing" />
         }
         process={
                   <section className="section-padding bg-background">

@@ -1,3 +1,4 @@
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
@@ -188,6 +189,7 @@ const Siding = () => {
         </section>
         <ServiceInternalLinks title="Siding & Exterior" slug="siding" intent="consultation" />
       </main>
+      <CostContextBlock serviceLabel="siding" variant="exterior" />
       <CommonConcerns />
       <TieredOffer context="siding" primaryLabel="Get My Siding Scoped" />
       <ConversionTrustBlock variant="band" category="construction" />

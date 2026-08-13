@@ -459,7 +459,7 @@ const RoofRepair = () => {
           costContext={
             <>
         <CostOfWaiting variant="repair" />
-        <CostContextBlock serviceLabel="roof repair" />
+        <CostContextBlock serviceLabel="roof repair" variant="repair" />
         <SchedulingReality serviceLabel="roof repair" />
             </>
           }

@@ -223,12 +223,13 @@ const ServicePage = () => {
         </section>
 
         <TieredOffer context="service" />
+        <CostContextBlock
+          serviceLabel={service.title.toLowerCase()}
+          variant={service.division === "construction" ? "construction" : "roofing"}
+        />
         <CommonConcerns />
         {service.division !== "construction" && (
-          <>
-            <CostContextBlock serviceLabel={service.title.toLowerCase()} />
-            <SchedulingReality serviceLabel={service.title.toLowerCase()} />
-          </>
+          <SchedulingReality serviceLabel={service.title.toLowerCase()} />
         )}
         <div className="container-tight pt-16 md:pt-20">
           <AttributedReviews

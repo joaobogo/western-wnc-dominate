@@ -417,7 +417,7 @@ const RoofReplacement = () => {
           subline="A consultation gets you an honest read on your roof's remaining life and a written scope if replacement is the right call."
           label="See What My Roof Needs"
         />
-        <CostContextBlock serviceLabel="roof replacement" />
+        <CostContextBlock serviceLabel="roof replacement" variant="roofing" />
         <section className="section-padding bg-background">
           <div className="container-tight">
             <FinancingTeaser serviceLabel="roof replacement" />

@@ -174,7 +174,7 @@ const MetalRoofing = () => {
         }
         costContext={
           <>
-            <CostContextBlock serviceLabel="metal roofing" />
+            <CostContextBlock serviceLabel="metal roofing" variant="roofing" />
             <div className="container-tight pt-0 pb-8 md:pb-12">
               <FinancingTeaser serviceLabel="metal roofing" />
             </div>

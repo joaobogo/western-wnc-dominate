@@ -1,3 +1,4 @@
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -529,6 +530,7 @@ const OutdoorLiving = () => {
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="outdoor living projects" />
 
+        <CostContextBlock serviceLabel="outdoor living" variant="construction" />
         <CommonConcerns />
         <ConstructionClosingCTA
           headline={"The Best Room in Your\nHouse Doesn't Need Walls."}

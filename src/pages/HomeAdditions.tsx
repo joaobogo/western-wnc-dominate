@@ -1,3 +1,4 @@
+import CostContextBlock from "@/components/conversion/CostContextBlock";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -585,6 +586,7 @@ const HomeAdditions = () => {
         <TimelineExpectations />
         <BudgetRangeContext scopeLabel="home additions" />
 
+        <CostContextBlock serviceLabel="home addition" variant="construction" />
         <CommonConcerns />
         <ConstructionClosingCTA
           headline={"Your Home Has More\nto Give."}
