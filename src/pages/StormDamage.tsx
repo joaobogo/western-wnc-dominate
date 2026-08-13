@@ -406,6 +406,25 @@ const StormDamage = () => {
           </div>
         </section>
 
+        {/* ─── SHORT FORM FOR NON-URGENT CASES ─── */}
+        <section className="section-padding bg-secondary tartan-bg">
+          <div className="container-tight max-w-2xl">
+            <div className="mb-6 text-center">
+              <span className="eyebrow mb-3 block">No Active Water Intrusion?</span>
+              <h2 className="section-heading mb-3">Request a Documented Damage Assessment.</h2>
+              <p className="text-muted-foreground text-[15px] font-body leading-relaxed">
+                If nothing is leaking right now, send four quick fields and we'll schedule an
+                inspection with photo documentation for your records or your claim.
+              </p>
+            </div>
+            <FastLeadForm
+              ctaLabel="Get My Damage Assessment"
+              serviceLabel="Storm Damage"
+              urgencyOptions={["Water coming in now", "Within 48 hours", "This week", "Documenting for insurance"]}
+            />
+          </div>
+        </section>
+
         {/* ─── REPAIR VS. REPLACEMENT ─── */}
         <section className="section-dark tartan-dark relative overflow-hidden">
           <motion.div className="absolute top-0 left-0 w-full h-px" style={{ background: "linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))" }} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} />
