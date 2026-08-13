@@ -92,7 +92,11 @@ const Index = () => {
           <FeaturedProjects />
 
           {/* 5. Local proof band — dark tone, two attributable quotes */}
-          <Section density="compact" width="tight" className="section-dark">
+          <Section
+            density="compact"
+            width="tight"
+            className="bg-[hsl(var(--dark-section))] text-dark-section-foreground"
+          >
             <AttributedReviews heading="What Western NC homeowners say" tone="dark" />
           </Section>
 
