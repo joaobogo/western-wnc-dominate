@@ -278,7 +278,7 @@ const Gallery = () => {
                 <p className="text-muted-foreground font-body italic text-lg">No projects match your current filters. Try selecting "All".</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 auto-rows-auto items-start">
                 <AnimatePresence mode="popLayout">
                   {filtered.map((project, i) => {
                     const originalIndex = projects.indexOf(project);
@@ -296,6 +296,7 @@ const Gallery = () => {
                           <GalleryCard
                             {...project}
                             index={i}
+                            variant={i % 5 === 0 ? "wide" : "standard"}
                             onClick={() => setLightbox(originalIndex)}
                           />
                         </motion.div>
