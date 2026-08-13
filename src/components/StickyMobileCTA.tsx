@@ -52,7 +52,9 @@ const StickyMobileCTA = () => {
     // competes with the hero CTAs. Falls back to a viewport-height threshold
     // on pages without a marked hero.
     const onScroll = () => {
-      const hero = document.querySelector<HTMLElement>("[data-hero]");
+      const hero = document.querySelector<HTMLElement>(
+        "[data-hero], [data-hero-anchored], #hero",
+      );
       if (hero) {
         const { bottom } = hero.getBoundingClientRect();
         setScrolled(bottom <= 0);
@@ -85,10 +87,8 @@ const StickyMobileCTA = () => {
 
   // Never cover the footer's final CTA region.
   useEffect(() => {
-    const targets = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-final-cta], footer"),
-    );
-    if (!targets.length) return;
+    const targets = Array.from(document.querySelectorAll<HTMLElement>("[data-final-cta]"));
+    if (!targets.length) { setFinalCtaInView(false); return; }
     const visible = new Set<Element>();
     const io = new IntersectionObserver(
       (entries) => {
