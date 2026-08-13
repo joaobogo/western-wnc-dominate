@@ -24,8 +24,8 @@ const densityClass: Record<SectionDensity, string> = {
 
 const widthClass: Record<SectionWidth, string> = {
   narrow: "container-rhythm max-w-3xl",
-  tight: "container-rhythm max-w-5xl",
-  wide: "container-rhythm max-w-7xl",
+  tight: "container-rhythm max-w-4xl",
+  wide: "container-rhythm max-w-6xl",
   full: "w-full",
 };
 
