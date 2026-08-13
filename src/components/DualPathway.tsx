@@ -37,7 +37,7 @@ const roofingData = {
     { icon: CloudLightning, name: "Storm Damage & Insurance" },
     { icon: Search, name: "Professional Inspections" },
     { icon: PaintBucket, name: "Material Selection" },
-    { icon: ShieldCheck, name: "Extended Warranty Coverage" },
+    { icon: ShieldCheck, name: "Manufacturer Material Coverage" },
   ],
   cta: "Explore Roofing",
   href: "/roofing",
@@ -246,7 +246,8 @@ const DivisionCard = ({ data, accent, index }: {
   );
 };
 
-const ThreeDivisionPathway = () => {
+const ThreeDivisionPathway = ({ paths = "three" }: { paths?: "two" | "three" }) => {
+  const twoPath = paths === "two";
   return (
     <section className="section-padding bg-secondary relative overflow-hidden">
       {/* Subtle tartan */}
@@ -256,11 +257,11 @@ const ThreeDivisionPathway = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-14 md:mb-18">
           <ScrollReveal variant="fade" delay={0.05}>
-            <span className="eyebrow mb-4 block">Roofing · Construction · Design</span>
+            <span className="eyebrow mb-4 block">{twoPath ? "Roofing · Construction" : "Roofing · Construction · Design"}</span>
           </ScrollReveal>
           <HeadingReveal delay={0.1}>
             <h2 className="section-heading mb-5">
-              Choose Your Division.<br className="hidden md:block" />
+              {twoPath ? "Choose Your Path." : "Choose Your Division."}<br className="hidden md:block" />
               <span className="text-[hsl(var(--gold-ink))]"> The Standard Stays the Same.</span>
             </h2>
           </HeadingReveal>
@@ -268,17 +269,18 @@ const ThreeDivisionPathway = () => {
             <p className="text-foreground text-lg md:text-xl font-body max-w-xl mx-auto leading-relaxed font-bold">
 
               Standing seam at 4,000 feet or a ground-up addition in Franklin. The process
-              is identical. Certified materials, documented scope, named contact, warranty delivered at walkthrough.
+              is identical: certified materials, a documented written scope, and one named contact
+              from first visit to final walkthrough.
             </p>
           </ScrollReveal>
           <GoldLine width="4rem" centered delay={0.4} className="mt-7" />
         </div>
 
         {/* Division Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 max-w-7xl mx-auto">
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7 mx-auto ${twoPath ? "max-w-5xl" : "lg:grid-cols-3 max-w-7xl"}`}>
           <DivisionCard data={roofingData} accent="green" index={0} />
           <DivisionCard data={constructionData} accent="gold" index={1} />
-          <DivisionCard data={designData} accent="gold" index={2} />
+          {!twoPath && <DivisionCard data={designData} accent="gold" index={2} />}
         </div>
 
         {/* Bottom unifying message */}
@@ -292,14 +294,23 @@ const ThreeDivisionPathway = () => {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-border" />
             <span className="text-[12px] font-body font-bold uppercase tracking-[0.25em] text-foreground">
-              Roofing · Construction · Design
+              {twoPath ? "Roofing · Construction" : "Roofing · Construction · Design"}
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
           <p className="text-[16px] text-foreground font-body font-semibold leading-relaxed max-w-md mx-auto">
             Your project shouldn't be split across multiple companies and conflicting schedules.
-            With Highlander, you get one standard across all three divisions.
+            With Highlander, you get one standard across every division.
           </p>
+          {twoPath && (
+            <p className="mt-4 text-[14px] font-body text-muted-foreground">
+              Planning a build?{" "}
+              <Link to="/layouts-planning" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">
+                Start with design and planning
+              </Link>
+              .
+            </p>
+          )}
         </motion.div>
       </div>
     </section>
