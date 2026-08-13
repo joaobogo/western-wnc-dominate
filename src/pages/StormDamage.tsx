@@ -81,7 +81,7 @@ const afterStormSteps = [
   {
     number: "04",
     title: "Call a Trusted Local Roofer",
-    description: "Contact Highlander for a professional storm assessment. We respond rapidly for storm calls — and same-day for emergencies involving active water intrusion or structural compromise.",
+    description: "Get My Questions Answered for a professional storm assessment. We respond rapidly for storm calls — and same-day for emergencies involving active water intrusion or structural compromise.",
   },
   {
     number: "05",
@@ -215,7 +215,7 @@ const StormDamage = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark group">
-                  Request Storm Assessment
+                  Get My Storm Damage Documented
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
               </motion.div>
@@ -337,7 +337,7 @@ const StormDamage = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
-                  Request Assessment
+                  See What My Roof Needs
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -422,7 +422,7 @@ const StormDamage = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
-                  Request Storm Assessment
+                  Get My Storm Damage Documented
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -517,7 +517,7 @@ const StormDamage = () => {
               </p>
             </div>
             <FastLeadForm
-              ctaLabel="Get My Damage Assessment"
+              ctaLabel="Get My Storm Damage Documented"
               serviceLabel="Storm Damage"
               urgencyOptions={["Water coming in now", "Within 48 hours", "This week", "Documenting for insurance"]}
             />
@@ -624,7 +624,7 @@ const StormDamage = () => {
                       <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                     </a>
                     <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
-                      Request Storm Assessment
+                      Get My Storm Damage Documented
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </div>

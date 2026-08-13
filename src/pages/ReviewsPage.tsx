@@ -338,7 +338,7 @@ const ReviewsPage = () => {
         <ReassuranceBlock
           headline={"See Why Hundreds of WNC\nHomeowners Trust Highlander."}
           subheadline="Experience the communication, craftsmanship, and accountability our clients talk about — start a conversation today."
-          ctaText="Talk With Our Team"
+          ctaText="Get My Questions Answered"
         />
 
         {/* ── INTERNAL: REVIEW CONTENT TO CONFIRM ── */}

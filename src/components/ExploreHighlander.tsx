@@ -42,7 +42,7 @@ const columns: { title: string; icon: typeof Home; links: LinkItem[] }[] = [
     icon: Ruler,
     links: [
       { label: "Request an inspection", to: "/request-inspection" },
-      { label: "Contact Highlander", to: "/contact" },
+      { label: "Get My Questions Answered", to: "/contact" },
       { label: "Read frequently asked questions", to: "/faq" },
     ],
   },

@@ -164,7 +164,7 @@ const RoofRepair = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark group">
-                  Schedule a Repair Assessment
+                  See What My Roof Needs
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
               </motion.div>
@@ -217,7 +217,7 @@ const RoofRepair = () => {
               </p>
             </div>
             <FastLeadForm
-              ctaLabel="Get My Repair Assessment"
+              ctaLabel="See What My Roof Needs"
               serviceLabel="Roof Repair"
               urgencyOptions={["Active leak today", "Within a week", "Within a month", "Just planning ahead"]}
             />
@@ -312,7 +312,7 @@ const RoofRepair = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
-                  Schedule Assessment
+                  See What My Roof Needs
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -354,7 +354,7 @@ const RoofRepair = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
                 <Link to="/consultation" className="btn btn-secondary btn-md btn-on-dark">
-                  Schedule a Repair Assessment
+                  See What My Roof Needs
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -546,7 +546,7 @@ const RoofRepair = () => {
             { label: "Roof Replacement Options", href: "/roofing/roof-replacement", description: "Compare repair vs full replacement" },
             { label: "Roofing FAQ", href: "/faq", description: "Common questions about repair timelines" },
             { label: "Request an Inspection", href: "/request-inspection", description: "Get a repair scope in writing" },
-            { label: "Contact Highlander", href: "/contact", description: "Reach a project advisor" }
+            { label: "Get My Questions Answered", href: "/contact", description: "Reach a project advisor" }
           ]}
         />
         <ServiceInternalLinks title="Roof Repair" slug="roof-repair" />
@@ -573,7 +573,7 @@ const RoofRepair = () => {
                       <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                     </a>
                     <Link to="/consultation" className="btn btn-secondary btn-lg btn-on-dark group">
-                      Schedule a Repair Assessment
+                      See What My Roof Needs
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </div>

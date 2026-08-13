@@ -30,7 +30,7 @@ const CHANNELS: Channel[] = [
   {
     icon: ClipboardList,
     eyebrow: "Most Common",
-    title: "Request an estimate",
+    title: "Get my written estimate",
     body: "Best for a roof replacement, repair, or construction project you're ready to price.",
     next: "We confirm your details, schedule an on-site look, and send a written scope.",
     action: "Start My Estimate",

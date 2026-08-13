@@ -583,7 +583,7 @@ const About = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/consultation" className="btn btn-primary btn-md">
-                  Talk With Our Team <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Questions Answered <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link to="/recent-projects" className="btn btn-secondary btn-md btn-on-dark">
                   See What We've Built <ArrowRight className="w-4 h-4" aria-hidden="true" />

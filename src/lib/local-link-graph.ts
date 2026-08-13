@@ -171,7 +171,7 @@ export const getServiceTownLinkWeb = (
         links: [
           { label: `${town.name} Service Area Overview`, href: `/service-areas/${town.slug}`, description: `Everything we do in ${town.name}.` },
           countyLink(town.county),
-          { label: "Request an Estimate", href: "/request-inspection", description: "Written scope from a Western NC team — 828-524-7773." },
+          { label: "Get My Written Estimate", href: "/request-inspection", description: "Written scope from a Western NC team — 828-524-7773." },
         ].filter(Boolean) as RelatedLinkItem[],
       },
     ],
@@ -202,7 +202,7 @@ export const getCountyLinkWeb = (countyName: string, townNames: string[]): LinkG
           { label: "Roofing Division", href: "/roofing", description: "Repair, replacement, metal, and specialty roofing." },
           { label: "Construction Division", href: "/construction", description: "Additions, renovations, outdoor living." },
           { label: "All Service Areas", href: "/service-areas", description: "Every Western NC town we cover." },
-          { label: "Request an Estimate", href: "/request-inspection", description: "Talk to a local project advisor." },
+          { label: "Get My Written Estimate", href: "/request-inspection", description: "Talk to a local project advisor." },
         ],
       },
     ],
@@ -230,7 +230,7 @@ export const getBlogLocalLinkWeb = (post: BlogPost): LinkGroup[] => {
         links: [
           { label: "Roofing Division", href: "/roofing" },
           { label: "Construction Division", href: "/construction" },
-          { label: "Request an Estimate", href: "/request-inspection" },
+          { label: "Get My Written Estimate", href: "/request-inspection" },
         ],
       },
     ], `/blog/${post.slug}`);
@@ -246,7 +246,7 @@ export const getBlogLocalLinkWeb = (post: BlogPost): LinkGroup[] => {
         links: [
           { label: `${town.name} Service Area`, href: `/service-areas/${town.slug}` },
           countyLink(town.county),
-          { label: "Request an Estimate", href: "/request-inspection" },
+          { label: "Get My Written Estimate", href: "/request-inspection" },
         ].filter(Boolean) as RelatedLinkItem[],
       },
     ],

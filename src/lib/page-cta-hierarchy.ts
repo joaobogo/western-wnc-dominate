@@ -30,13 +30,13 @@ const callFirst = (pageKey: string, label = "Call Direct"): PagePrimaryAction =>
   intent: "call",
   primaryLabel: label,
   primaryHref: PHONE_HREF,
-  secondaryLabel: "Request Estimate",
+  secondaryLabel: "Get My Written Estimate",
   secondaryHref: "/consultation",
 });
 
 const formFirst = (
   pageKey: string,
-  label = "Request Estimate",
+  label = "Get My Written Estimate",
   href = "/consultation",
 ): PagePrimaryAction => ({
   pageKey,
@@ -72,27 +72,27 @@ export function getPagePrimaryAction(pathname: string): PagePrimaryAction {
   // Local pages lead with the estimate request; the phone stays reachable as
   // the secondary action on every one of them.
   if (path.startsWith("/service-areas/")) {
-    return formFirst("town", "Request Estimate", "/request-inspection");
+    return formFirst("town", "Get My Written Estimate", "/request-inspection");
   }
   if (path.startsWith("/counties/")) {
-    return formFirst("county", "Request Estimate", "/request-inspection");
+    return formFirst("county", "Get My Written Estimate", "/request-inspection");
   }
   if (/^\/[a-z0-9-]+-(roofing|roof-repair|roof-replacement|metal-roofing)-[a-z0-9-]+$/.test(path)) {
-    return formFirst("town_service", "Request Estimate", "/request-inspection");
+    return formFirst("town_service", "Get My Written Estimate", "/request-inspection");
   }
 
   // Considered / planning intent → form first.
   if (path.startsWith("/construction")) {
-    return formFirst("construction", "Schedule a Project Consultation", "/construction-intake");
+    return formFirst("construction", "Get My Project Scoped", "/construction-intake");
   }
   if (path.startsWith("/roofing")) {
-    return formFirst("roofing", "Request a Roof Consultation", "/roofing-intake");
+    return formFirst("roofing", "See What My Roof Needs", "/roofing-intake");
   }
-  if (path.startsWith("/blog")) return formFirst("blog", "Talk With Our Team");
+  if (path.startsWith("/blog")) return formFirst("blog", "Get My Questions Answered");
   if (path.startsWith("/projects") || path.startsWith("/recent-projects") || path.startsWith("/gallery")) {
-    return formFirst("gallery", "Start a Similar Project");
+    return formFirst("gallery", "Get My Project Scoped");
   }
-  if (path === "/") return formFirst("home", "Request Estimate");
+  if (path === "/") return formFirst("home", "Get My Written Estimate");
 
   return formFirst("general");
 }

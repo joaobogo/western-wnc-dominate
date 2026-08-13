@@ -136,7 +136,7 @@ const StickyMobileCTA = () => {
             <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.4), hsl(var(--highland-gold) / 0))' }} />
             
             <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-raised">
-              {/* Two-column layout: Primary (Request a Quote) + Call */}
+              {/* Two-column layout: Primary (Get My Written Estimate) + Call */}
               {/* One primary action per page — see src/lib/page-cta-hierarchy.ts */}
               <div className="flex items-stretch" data-gtm-location="sticky_bar">
                 {callIsPrimary ? (

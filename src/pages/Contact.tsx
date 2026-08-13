@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <>
       <SEOHead
-        title="Contact Highlander | Roofing & Construction Quote in WNC"
+        title="Get My Questions Answered | Roofing & Construction Quote in WNC"
         description="Talk to Highlander Building Services in Western NC. Call, email, or request an estimate. Franklin office. Mon–Fri 8 AM – 5 PM. (828) 524-7773."
         path="/contact"
         jsonLd={buildPageSchema({
@@ -61,7 +61,7 @@ export default function Contact() {
                   <div className="flex items-center gap-3 mb-4">
                     <Handshake className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">
-                      Contact Highlander
+                      Get My Questions Answered
                     </span>
                   </div>
                   <h1 className="text-display-lg md:text-display-xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-5 leading-[0.95] tracking-tightest">
@@ -111,7 +111,7 @@ export default function Contact() {
             {/* Left: form */}
             <div className="lg:col-span-7">
               <span className="text-caption font-body font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))] block mb-3">
-                Request an Estimate
+                Get My Written Estimate
               </span>
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3 leading-tight">
                 Tell us the basics. We&apos;ll handle the rest on the call.

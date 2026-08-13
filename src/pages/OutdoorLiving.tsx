@@ -509,7 +509,7 @@ const OutdoorLiving = () => {
             { label: "Highlands, NC Service Area", href: "/service-areas/highlands-nc", description: "Outdoor living work in Highlands" },
             { label: "Recent Highlander Projects", href: "/recent-projects", description: "See recent porches and outdoor rooms" },
             { label: "Request a Project Consultation", href: "/construction/consultation", description: "Start the conversation" },
-            { label: "Contact Highlander", href: "/contact", description: "Reach a construction advisor" }
+            { label: "Get My Questions Answered", href: "/contact", description: "Reach a construction advisor" }
           ]}
         />
         <ServiceInternalLinks title="Outdoor Living" slug="outdoor-living" intent="consultation" />

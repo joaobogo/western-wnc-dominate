@@ -120,7 +120,7 @@ const ServicePage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="btn btn-primary btn-md">
-                  Request a Consultation <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  See What My Project Needs <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
@@ -148,7 +148,7 @@ const ServicePage = () => {
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">What We Do</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
                 <Link to="/consultation" className="btn btn-primary btn-sm">
-                  Discuss Your Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>

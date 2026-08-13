@@ -34,7 +34,7 @@ export const EXPERIMENTS = {
     hypothesis:
       "Outcome-first CTA copy on the homepage hero converts better than the current process-first label.",
     variants: {
-      a: "Request an Estimate",
+      a: "Get My Written Estimate",
       b: "See What My Roof Needs",
     },
     active: true,

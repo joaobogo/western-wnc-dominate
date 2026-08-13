@@ -52,7 +52,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
             to="/request-inspection"
             className="btn btn-secondary btn-md btn-on-dark"
           >
-            Request Assessment <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            See What My Roof Needs <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
       </div>
@@ -429,7 +429,7 @@ export const TownEstimateCTA = ({ town }: { town: TownData }) => {
             </span>
 
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground leading-tight">
-              Request an estimate in{" "}
+              Get my written estimate in{" "}
               <span className="italic text-primary">{town.name}</span>
             </h2>
 
@@ -445,7 +445,7 @@ export const TownEstimateCTA = ({ town }: { town: TownData }) => {
                 data-gtm-cta="request_quote"
                 className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-8"
               >
-                Request an estimate in {town.name} <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get my written estimate in {town.name} <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a
                 href="tel:+18285247773"

@@ -65,7 +65,7 @@ const DesignProgramPromo = ({
           to="/construction/design"
           className="inline-flex items-center gap-2 text-[hsl(var(--gold-ink))] font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:gap-3 transition-all"
         >
-          Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
       </div>
     );
@@ -98,7 +98,7 @@ const DesignProgramPromo = ({
                 to="/construction/design"
                 className="btn btn-secondary btn-md"
               >
-                Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
             <ul className="space-y-3">
@@ -162,13 +162,13 @@ const DesignProgramPromo = ({
               to="/construction/design"
               className="btn btn-secondary btn-md"
             >
-              Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              Get My Plans Drawn <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <Link
               to="/construction-intake"
               className="btn btn-secondary btn-md"
             >
-              Plan Your Construction Project <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              Get My Project Scoped <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
         </div>

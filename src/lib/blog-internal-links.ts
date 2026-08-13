@@ -133,7 +133,7 @@ export const getBlogInternalLinks = (post: BlogPost): BlogInternalLinks => {
     relatedBlog: pickRelatedBlog(post),
     relatedProject: pickRelatedProject(post),
     estimatePage: {
-      label: `Request an Estimate${post.town ? ` in ${post.town}` : ""}`,
+      label: `Get My Written Estimate${post.town ? ` in ${post.town}` : ""}`,
       path: "/consultation",
       description: "Free consultation with our Western NC team — no pressure.",
     },

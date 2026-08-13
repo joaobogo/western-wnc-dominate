@@ -75,7 +75,7 @@ const Siding = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/consultation" className="btn btn-primary btn-md group">
-                  Request a Siding Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  Get My Siding Scope & Price <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
                 <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
                   <Phone className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" /> (828) 524-7773
@@ -172,7 +172,7 @@ const Siding = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/consultation" className="btn btn-primary btn-md">
-                Request an Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get My Written Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <a href="tel:+18285247773" aria-label="Call Highlander Building Services at 828-524-7773" className="btn btn-secondary btn-md btn-on-dark">
                 <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773

@@ -31,7 +31,7 @@ const ServiceInternalLinks = ({ title, slug, intent = "estimate" }: ServiceInter
       },
       intent === "consultation"
         ? {
-            label: "Schedule a Project Consultation",
+            label: "Get My Project Scoped",
             href: "/construction/consultation",
             description: "A working session on scope, feasibility, and budget range — 828-524-7773.",
           }

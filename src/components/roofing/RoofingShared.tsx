@@ -49,7 +49,7 @@ export const RoofingClosingCTA = ({
   headline = "Let's Talk About\nYour Roof.",
   subheadline = "Whether you need a repair assessment, a replacement consultation, or just an honest opinion — we're here to help.",
   eyebrow = "Your Roof, Our Expertise",
-  ctaText = "Request a Roof Consultation",
+  ctaText = "See What My Roof Needs",
   ctaLink = "/consultation",
 }: Omit<RoofingCTAProps, "variant">) => (
   <section className="section-dark tartan-dark relative overflow-hidden">
@@ -133,7 +133,7 @@ export const TrustSidebar = ({ items = defaultSidebarItems }: { items?: TrustSid
     ))}
     <div className="pt-3 border-t border-border">
       <Link to="/consultation" className="group text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity font-body">
-        Request a Consultation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+        See What My Project Needs <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
     </div>
   </div>

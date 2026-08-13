@@ -105,7 +105,7 @@ export function RepairVsReplaceGuide() {
                 <RotateCcw className="w-4 h-4" aria-hidden="true" /> Start Over
               </button>
               <a href="/consultation" className="btn btn-primary btn-sm">
-                Discuss With an Advisor <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                Get My Questions Answered <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </ResultReveal>
@@ -175,7 +175,7 @@ export function StormChecklist() {
               <p className="text-sm text-muted-foreground font-body mt-1">{getUrgency()?.desc}</p>
             </div>
             <a href="/consultation" className="btn btn-primary btn-sm w-full">
-              Request a Storm Assessment <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              Get My Storm Damage Documented <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </ResultReveal>
         )}
@@ -298,7 +298,7 @@ export function MaterialsComparison() {
         <div className="mt-6 text-center">
           <p className="text-xs text-muted-foreground font-body mb-3">Every roof is unique. We'll help you choose the right material for your home's specific conditions.</p>
           <a href="/consultation" className="btn btn-primary btn-sm">
-            Discuss Materials With an Advisor <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            Get My Material Recommendation <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </div>
       </div>
@@ -385,7 +385,7 @@ export function ConstructionFitGuide() {
                 <RotateCcw className="w-4 h-4" aria-hidden="true" /> Start Over
               </button>
               <a href="/consultation" className="btn btn-primary btn-sm">
-                Schedule a Consultation <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                See What My Project Needs <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </ResultReveal>
