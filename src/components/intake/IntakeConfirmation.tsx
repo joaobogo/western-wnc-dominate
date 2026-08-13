@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Phone, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -33,6 +34,12 @@ const IntakeConfirmation = ({
   const projects = pickProjectLinks({ town, category, count: 2 });
   const guide = pickGuideLink({ town });
   const recap = summary.filter((s) => s.value && String(s.value).trim().length > 0);
+
+  useEffect(() => {
+    document.body.dataset.leadConfirmed = "true";
+    try { sessionStorage.setItem("hl_lead_submitted", "1"); } catch { /* ignore */ }
+    return () => { delete document.body.dataset.leadConfirmed; };
+  }, []);
 
   return (
     <motion.div
