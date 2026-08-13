@@ -125,7 +125,7 @@ const Hero = () => {
         style={{ background: 'linear-gradient(to bottom, hsl(var(--highland-gold) / 0.6), hsl(var(--highland-gold) / 0))' }}
         initial={{ height: "0%" }}
         animate={{ height: "65%" }}
-        transition={{ duration: 4, delay: 0.5, ease: DRAMATIC_EASE }}
+        transition={{ duration: 0.4, delay: 0.2, ease: DRAMATIC_EASE }}
       />
 
       {/* === DESIGN PRECISION LINES — desktop only === */}
@@ -138,7 +138,7 @@ const Hero = () => {
             style={{ left: `${pct}%` }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2.5 + i * 0.3, duration: 2 }}
+            transition={{ delay: 0.3 + i * 0.05, duration: 0.4, ease: HIGHLAND_EASE }}
           />
         ))}
 
@@ -148,7 +148,7 @@ const Hero = () => {
           style={{ top: "61.8%" }}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ delay: 3, duration: 2.5, ease: DRAMATIC_EASE }}
+          transition={{ delay: 0.35, duration: 0.4, ease: DRAMATIC_EASE }}
         />
       </div>
 
@@ -157,7 +157,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 2.4, duration: 0.8, ease: HIGHLAND_EASE }}
+          transition={{ delay: 0.25, duration: 0.4, ease: HIGHLAND_EASE }}
           className="flex flex-col items-center gap-5"
         >
           <div className="flex flex-col items-center gap-2">
@@ -187,31 +187,19 @@ const Hero = () => {
         <div className="w-full px-5 md:px-10 lg:px-20 pb-24 md:pb-44 hero-clears-header">
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+            <div
               className="hidden md:flex items-center gap-2 md:gap-4 mb-3 md:mb-10"
             >
-              <motion.div
-                className="h-px"
-                style={{ background: 'hsl(var(--highland-gold))' }}
-                initial={{ width: 0 }}
-                animate={{ width: 40 }}
-                transition={{ duration: 1.2, delay: 0.5 }}
-              />
-              <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
+              <div className="h-px w-10" style={{ background: 'hsl(var(--highland-gold))' }} />
+              <div
                 className="flex items-center gap-1.5 md:gap-2 px-2 md:px-3 py-1 md:py-1.5 bg-black/50 backdrop-blur-md border border-[hsl(var(--highland-gold)/0.3)] rounded-sm"
               >
                 <Mountain className="w-2.5 h-2.5 md:w-3 md:h-3 text-[hsl(var(--highland-gold)/0.85)]" />
                 <span className="text-caption md:text-body-sm font-body font-bold uppercase tracking-[0.16em] md:tracking-[0.3em] text-[hsl(var(--gold-ink))]">
                    Western North Carolina · Since 2017
                  </span>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             {/* Headline — single H1 revealed as three cinematic lines */}
             <h1 className="mb-3 md:mb-12">
@@ -220,59 +208,42 @@ const Hero = () => {
               </span>
               <span aria-hidden="true" className="block">
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
-                  <motion.span
-                    initial={{ y: "120%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 1.1, delay: 0.5, ease: DRAMATIC_EASE }}
+                  <span
                     className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold text-primary-foreground tracking-[-0.03em]"
                   >
                     Roofing &amp; Construction
-                  </motion.span>
+                  </span>
                 </span>
                 <span className="block overflow-hidden mb-0.5 md:mb-2 pb-[0.2em] md:pb-[0.35em]">
-                  <motion.span
-                    initial={{ y: "120%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 1.1, delay: 0.65, ease: DRAMATIC_EASE }}
+                  <span
                     className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold text-primary-foreground tracking-[-0.03em]"
                   >
                     Built for Western NC
-                  </motion.span>
+                  </span>
                 </span>
                 <span className="block overflow-hidden pb-[0.15em] md:pb-[0.4em]">
-                  <motion.span
-                    initial={{ y: "120%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 1.1, delay: 0.8, ease: DRAMATIC_EASE }}
+                  <span
                     className="block text-heading-sm leading-[1.08] md:text-display lg:text-display xl:text-display font-heading font-bold tracking-[-0.03em] text-[hsl(var(--gold-ink))]"
                   >
                     Mountain Homes.
-                  </motion.span>
+                  </span>
                 </span>
               </span>
             </h1>
 
 
             {/* Subtext — refined positioning statement */}
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
+            <p
               className="text-body-xs md:text-body-lg text-white/95 max-w-2xl mb-4 md:mb-16 leading-[1.5] md:leading-[1.6] font-body font-medium md:font-bold drop-shadow-lg"
             >
               <span className="md:hidden">Roof repair, replacement, and custom builds for mountain homes in Franklin, Highlands, Cashiers and Sylva.</span>
               <span className="hidden md:inline">Leaking roof, storm damage, a roof near the end of its life, or an addition you&apos;re planning — tell us what&apos;s going on at your home in Franklin, Highlands, Cashiers, Sylva or anywhere in Western North Carolina. A local Highlander advisor reviews it, schedules an on-site look, and gives you a written scope and price before any work starts.</span>
               <span className="hidden md:block mt-2 md:mt-6 text-[hsl(var(--gold-ink))] font-bold text-caption md:text-2xl uppercase tracking-[0.08em] md:tracking-normal md:normal-case drop-shadow-md">Licensed · Insured · CertainTeed ShingleMaster</span>
-            </motion.p>
+            </p>
 
 
             {/* CTA Group — premium dual-action */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.35 }}
-              className="flex flex-col sm:flex-row gap-2.5 sm:gap-6"
-            >
+            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-6">
               <Link
                 to="/consultation"
                 data-gtm-experiment="home_hero_cta"
@@ -294,13 +265,13 @@ const Hero = () => {
                 <span className="md:hidden">Call · (828) 524-7773</span>
                 <span className="hidden md:inline">Call Highlander · (828) 524-7773</span>
               </a>
-            </motion.div>
+            </div>
 
             {/* Micro proof — appears subtly after CTAs */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 2, duration: 1 }}
+              transition={{ delay: 0.15, duration: 0.3, ease: HIGHLAND_EASE }}
               className="mt-4 md:mt-9 flex items-center flex-wrap gap-x-3 gap-y-2 md:gap-7"
             >
               <div className="flex items-center gap-1.5">
@@ -318,7 +289,7 @@ const Hero = () => {
               href="/certifications"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.2, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.3, ease: HIGHLAND_EASE }}
               className="mt-4 md:mt-6 hidden md:inline-flex items-center gap-2.5 md:gap-3 bg-white/[0.04] backdrop-blur-sm border border-[hsl(var(--highland-gold)/0.25)] pl-1.5 md:pl-2 pr-3 md:pr-4 py-1.5 md:py-2 rounded-none hover:bg-white/[0.08] hover:border-[hsl(var(--highland-gold)/0.5)] transition-all duration-300 group"
             >
               <div className="w-11 h-11 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0 overflow-hidden bg-white shadow-flat border border-white/10">
@@ -341,7 +312,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 0.8, ease: HIGHLAND_EASE }}
+        transition={{ delay: 0.2, duration: 0.4, ease: HIGHLAND_EASE }}
         className="absolute bottom-0 left-0 right-0 z-20 hidden sm:block"
       >
         {/* Top gold line */}
@@ -350,7 +321,7 @@ const Hero = () => {
           style={{ background: 'linear-gradient(90deg, hsl(var(--highland-gold) / 0), hsl(var(--highland-gold) / 0.35), hsl(var(--highland-gold) / 0))' }}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ delay: 2.2, duration: 1.5, ease: DRAMATIC_EASE }}
+          transition={{ delay: 0.25, duration: 0.4, ease: DRAMATIC_EASE }}
         />
 
         <div className="bg-[hsl(var(--hero-overlay)/0.9)] backdrop-blur-xl border-t border-primary-foreground/[0.03]">
@@ -363,7 +334,7 @@ const Hero = () => {
                     key={item.label}
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 2.2 + i * 0.1 }}
+                    transition={{ duration: 0.3, delay: 0.25 + i * 0.05, ease: HIGHLAND_EASE }}
                     className="flex items-center gap-2 text-primary-foreground/95 text-body-xs md:text-base"
                   >
                     <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
@@ -376,7 +347,7 @@ const Hero = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 2.6, duration: 0.6 }}
+                transition={{ delay: 0.3, duration: 0.3, ease: HIGHLAND_EASE }}
                 className="hidden md:flex items-center gap-3"
               >
                 <div className="flex items-center gap-1.5">
