@@ -86,12 +86,10 @@ const Hero = () => {
           />
         )))}
 
-        {/* Multi-layer cinematic grading — stronger on mobile for text legibility, lighter on desktop */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay)/0.35)] md:from-[hsl(var(--hero-overlay)/0.2)] via-[hsl(var(--hero-overlay)/0.08)] md:via-[hsl(var(--hero-overlay)/0.05)] to-transparent" />
-        {/* Bottom-heavy gradient behind headline/CTAs on mobile — improves contrast without darkening the top sky */}
-        <div className="absolute inset-0 md:hidden bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.88)] via-[hsl(var(--hero-overlay)/0.5)] to-transparent" />
-        <div className="absolute inset-0 hidden md:block bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.12)] via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[hsl(var(--hero-overlay)/0.15)] to-transparent" />
+        {/* Scrim tokens — side scrim behind left-anchored copy, hero scrim for headline legibility */}
+        <div aria-hidden="true" className="absolute inset-0 bg-scrim-side opacity-50 md:opacity-35" />
+        <div aria-hidden="true" className="absolute inset-0 md:hidden bg-scrim-hero" />
+        <div aria-hidden="true" className="absolute inset-0 hidden md:block bg-scrim-hero opacity-40" />
 
         {/* Warm highlight wash — top-right, like golden hour light */}
         <div
