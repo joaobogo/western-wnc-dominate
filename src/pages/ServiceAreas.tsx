@@ -218,11 +218,11 @@ const ServiceAreas = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.4 }}
-                  className="bg-[hsl(var(--dark-section-foreground)/0.04)] border border-[hsl(var(--dark-section-foreground)/0.06)] p-6"
+                  className="bg-[hsl(var(--dark-section-foreground)/0.04)] border border-dark-section-border p-6"
                 >
                   <item.icon className="w-6 h-6 text-[hsl(var(--highland-gold)/0.6)] mb-4" />
                   <h3 className="font-heading font-bold text-lg text-[hsl(var(--dark-section-foreground))] mb-2">{item.title}</h3>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.45)] text-sm font-body leading-relaxed">{item.detail}</p>
+                  <p className="text-dark-section-muted text-sm font-body leading-relaxed">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
@@ -291,7 +291,7 @@ const ServiceAreas = () => {
                 Wherever You Are in WNC,<br />
                 We're Already Nearby.
               </h2>
-              <p className="text-primary-foreground/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-body leading-relaxed font-bold drop-shadow-sm">
+              <p className="text-primary-foreground text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-body leading-relaxed font-bold drop-shadow-sm">
                 Tell us about your property and we'll connect you with the right team for your area.
                 Same standards, same warranty, same crew accountability — regardless of which town you're in.
               </p>
@@ -310,7 +310,7 @@ const ServiceAreas = () => {
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
               </div>
-              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/85 text-sm font-bold uppercase tracking-wider">
+              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground text-sm font-bold uppercase tracking-wider">
                 <span>Franklin & Sylva Offices</span>
                 <span className="text-primary-foreground/15">•</span>
                 <span>Same-Day Contact</span>

@@ -68,7 +68,7 @@ const VeluxProof = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-5 text-balance">
             Manufacturer-accredited. Locally accountable.
           </h2>
-          <p className="text-dark-section-foreground/90 text-body md:text-body-lg leading-relaxed font-bold">
+          <p className="text-dark-section-foreground text-body md:text-body-lg leading-relaxed font-bold">
             A VELUX Certified Installer is a contractor trained and accredited by VELUX to install their skylights to specification. That accreditation is what unlocks VELUX's installation warranty, not just the product warranty.
           </p>
         </motion.div>
@@ -92,13 +92,13 @@ const VeluxProof = () => {
               {benefits.map((b) => (
                 <div
                   key={b.title}
-                  className="bg-dark-section-foreground/[0.04] border border-dark-section-foreground/10 p-5 rounded-none hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors"
+                  className="bg-dark-section-foreground/[0.04] border border-dark-section-border p-5 rounded-none hover:border-[hsl(var(--highland-gold)/0.4)] transition-colors"
                 >
                   <b.icon className="w-5 h-5 text-[hsl(var(--gold-ink))] mb-3" />
                   <h3 className="text-base font-heading font-bold text-dark-section-foreground mb-1.5 leading-tight">
                     {b.title}
                   </h3>
-                  <p className="text-body-sm text-dark-section-foreground/95 leading-relaxed font-medium">{b.body}</p>
+                  <p className="text-body-sm text-dark-section-foreground leading-relaxed font-medium">{b.body}</p>
                 </div>
               ))}
             </div>
@@ -126,16 +126,16 @@ const VeluxProof = () => {
                 {warranties.map((w) => (
                   <li
                     key={w.label}
-                    className="flex items-baseline justify-between gap-4 pb-3 border-b border-dark-section-foreground/10 last:border-0 last:pb-0"
+                    className="flex items-baseline justify-between gap-4 pb-3 border-b border-dark-section-border last:border-0 last:pb-0"
                   >
-                    <span className="text-body-sm text-dark-section-foreground/85 font-body font-medium">{w.label}</span>
+                    <span className="text-body-sm text-dark-section-foreground font-body font-medium">{w.label}</span>
                     <span className="text-body-sm font-heading font-bold text-[hsl(var(--gold-ink))] whitespace-nowrap">
                       {w.value}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="text-caption text-dark-section-foreground/95 font-body leading-relaxed">
+              <p className="text-caption text-dark-section-foreground font-body leading-relaxed">
                 Coverage reflects standard VELUX warranty terms on deck-mounted skylights. Highlander will review applicable product and workmanship details with you before construction begins; full terms documented at handoff.
               </p>
             </div>
@@ -148,15 +148,15 @@ const VeluxProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.4, delay: 0.3, ease: EASE }}
-          className="mt-12 md:mt-16 border-t border-dark-section-foreground/10 pt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+          className="mt-12 md:mt-16 border-t border-dark-section-border pt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
         >
           <div className="max-w-xl">
             <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">Schedule a skylight inspection.</h3>
-            <p className="text-dark-section-foreground/95 text-body-sm md:text-body font-bold">
+            <p className="text-dark-section-foreground text-body-sm md:text-body font-bold">
               Free, no-pressure assessment of your existing skylights: leak diagnosis, flashing review, and replacement recommendations in writing.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:flex-shrink-0">
             <Link
               to="/consultation"
               className="btn btn-primary btn-lg"

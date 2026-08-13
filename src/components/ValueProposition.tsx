@@ -89,18 +89,18 @@ const PillarCard = ({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
         </div>
 
         {/* Title */}
-        <h3 className="text-base md:text-body-sm font-heading font-bold text-dark-section-foreground/90 mb-3 leading-snug tracking-tight">
+        <h3 className="text-base md:text-body-sm font-heading font-bold text-dark-section-foreground mb-3 leading-snug tracking-tight">
           {pillar.title}
         </h3>
 
         {/* Copy */}
-        <p className="text-dark-section-foreground/95 text-body-xs leading-[1.75] font-body mb-5">
+        <p className="text-dark-section-foreground text-body-xs leading-[1.75] font-body mb-5">
           {pillar.copy}
         </p>
 
         {/* Detail strip */}
         <div className="pt-4 border-t border-dark-section-foreground/[0.06]">
-          <span className="text-caption font-body text-dark-section-foreground/90 tracking-wide leading-relaxed">
+          <span className="text-caption font-body text-dark-section-foreground tracking-wide leading-relaxed">
             {pillar.detail}
           </span>
         </div>
@@ -130,7 +130,7 @@ const ValueProposition = () => {
             </h2>
           </HeadingReveal>
           <ScrollReveal variant="rise-subtle" delay={0.25}>
-            <p className="text-dark-section-foreground/95 text-body-sm font-body max-w-xl mx-auto leading-relaxed">
+            <p className="text-dark-section-foreground text-body-sm font-body max-w-xl mx-auto leading-relaxed">
               We built our reputation on being the contractor you don't have to call back.
               Here's exactly how we earn that.
             </p>
@@ -161,7 +161,7 @@ const ValueProposition = () => {
             <span className="relative">Discuss Your Project With Us</span>
             <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
-          <p className="text-caption text-dark-section-foreground/90 font-body mt-4 tracking-wide">
+          <p className="text-caption text-dark-section-foreground font-body mt-4 tracking-wide">
             No pressure. No sales pitch. Just a conversation about what your property needs.
           </p>
         </motion.div>

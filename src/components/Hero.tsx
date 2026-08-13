@@ -162,16 +162,16 @@ const Hero = () => {
         >
           <div className="flex flex-col items-center gap-2">
             <div className="w-px h-20 bg-gradient-to-b from-transparent to-primary-foreground/15" />
-            <div className="w-7 h-7 rounded-none border border-primary-foreground/10 flex items-center justify-center">
-              <Home className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
+            <div className="w-7 h-7 rounded-none border border-dark-section-border flex items-center justify-center">
+              <Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
             </div>
-            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground [writing-mode:vertical-lr] rotate-180">
               Roofing
             </span>
           </div>
           <div className="w-5 h-px bg-[hsl(var(--highland-gold)/0.3)]" />
           <div className="flex flex-col items-center gap-2">
-            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground/90 [writing-mode:vertical-lr] rotate-180">
+            <span className="text-caption md:text-caption font-body font-bold uppercase tracking-[0.3em] text-primary-foreground [writing-mode:vertical-lr] rotate-180">
               Construction
             </span>
             <div className="w-7 h-7 rounded-none border border-[hsl(var(--highland-gold)/0.12)] flex items-center justify-center">
@@ -276,10 +276,10 @@ const Hero = () => {
             >
               <div className="flex items-center gap-1.5">
                 <span className="text-[hsl(var(--gold-ink))] font-heading font-bold text-base md:text-3xl leading-none">{GOOGLE_REVIEW_AGGREGATE.ratingValue}★</span>
-                <span className="text-primary-foreground/90 text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Google · {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Reviews</span>
+                <span className="text-primary-foreground text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Google · {GOOGLE_REVIEW_AGGREGATE.reviewCount}+ Reviews</span>
               </div>
               <div className="w-px h-3.5 md:h-6 bg-primary-foreground/30" />
-              <span className="text-primary-foreground/90 text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed &amp; Insured</span>
+              <span className="text-primary-foreground text-caption md:text-base font-body font-semibold md:font-bold uppercase tracking-[0.12em] md:tracking-wider">Licensed &amp; Insured</span>
               <div className="w-px h-6 bg-primary-foreground/40 hidden md:block" />
               <span className="text-primary-foreground text-body-sm md:text-base font-body font-bold uppercase tracking-wider hidden md:inline">Crews Based in Franklin, NC</span>
             </motion.div>
@@ -299,7 +299,7 @@ const Hero = () => {
                 <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.16em] md:tracking-[0.18em] text-[hsl(var(--gold-ink))]">
                   VELUX Certified
                 </span>
-                <span className="text-caption md:text-body-xs font-body font-medium text-primary-foreground/95">
+                <span className="text-caption md:text-body-xs font-body font-medium text-primary-foreground">
                   Skylight Installer · Pro Accredited
                 </span>
               </div>
@@ -335,7 +335,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.25 + i * 0.05, ease: HIGHLAND_EASE }}
-                    className="flex items-center gap-2 text-primary-foreground/95 text-body-xs md:text-base"
+                    className="flex items-center gap-2 text-primary-foreground text-body-xs md:text-base"
                   >
                     <item.icon className="w-3 md:w-3.5 h-3 md:h-3.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" />
                     <span className="font-body font-medium leading-tight">{item.label}</span>

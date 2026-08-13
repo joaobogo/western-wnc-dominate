@@ -193,7 +193,7 @@ const Gallery = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3, ease: HIGHLAND_EASE }}
-                className="mt-10 pt-8 border-t border-[hsl(var(--dark-section-foreground)/0.06)]"
+                className="mt-10 pt-8 border-t border-dark-section-border"
               >
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-[hsl(var(--dark-section-foreground)/0.08)]">
                   {[
@@ -204,7 +204,7 @@ const Gallery = () => {
                   ].map((stat) => (
                     <div key={stat.label} className="flex flex-col items-center text-center md:px-6">
                       <span className="text-2xl md:text-3xl font-heading font-bold text-[hsl(var(--gold-ink))] leading-none mb-1">{stat.value}</span>
-                      <span className="text-caption uppercase tracking-wider text-[hsl(var(--dark-section-foreground)/0.35)] font-body">{stat.label}</span>
+                      <span className="text-caption uppercase tracking-wider text-dark-section-muted font-body">{stat.label}</span>
                     </div>
                   ))}
                 </div>
@@ -349,7 +349,7 @@ const Gallery = () => {
                 Every Project Tells a Story
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.6)] max-w-2xl mx-auto">
+              <p className="text-dark-section-muted max-w-2xl mx-auto">
                 Behind every completed project is a process — careful planning, precise execution,
                 and personal accountability from the first conversation to the final walkthrough.
               </p>
@@ -371,7 +371,7 @@ const Gallery = () => {
                 >
                   <span className="text-3xl font-heading font-bold text-[hsl(var(--highland-gold)/0.2)] mb-3 block">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-2">{step.title}</h3>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm leading-relaxed">{step.detail}</p>
+                  <p className="text-dark-section-muted text-sm leading-relaxed">{step.detail}</p>
                 </motion.div>
               ))}
             </div>

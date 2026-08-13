@@ -80,12 +80,12 @@ const AttributedReviews = ({
               </div>
               <Quote
                 className={`w-3.5 h-3.5 ml-auto ${
-                  isDark ? "text-dark-section-foreground/40" : "text-muted-foreground/50"
+                  isDark ? "text-dark-section-muted" : "text-muted-foreground/50"
                 }`} aria-hidden="true" />
             </div>
             <blockquote
               className={`text-body-xs md:text-sm leading-relaxed font-body ${
-                isDark ? "text-dark-section-foreground/80" : "text-muted-foreground"
+                isDark ? "text-dark-section-foreground" : "text-muted-foreground"
               }`}
             >
               "{r.reviewBody}"
@@ -93,7 +93,7 @@ const AttributedReviews = ({
             <figcaption
               className={`mt-4 pt-3 border-t text-body-xs font-body ${
                 isDark
-                  ? "border-[hsl(var(--highland-gold)/0.12)] text-dark-section-foreground/70"
+                  ? "border-[hsl(var(--highland-gold)/0.12)] text-dark-section-muted"
                   : "border-border text-muted-foreground"
               }`}
             >

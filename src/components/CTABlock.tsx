@@ -57,7 +57,7 @@ const CTABlock = () => {
 
               {/* Subtext — calm authority */}
               <ScrollReveal variant="rise-subtle" delay={0.3}>
-                <p className="text-dark-section-foreground/38 text-body-sm md:text-body-sm max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
+                <p className="text-dark-section-muted text-body-sm md:text-body-sm max-w-xl mx-auto mb-10 md:mb-14 font-body leading-[1.75]">
                   Tell us about your property. A project advisor — not a call center — responds within as soon as possible with a clear next step.
                 </p>
               </ScrollReveal>
@@ -107,7 +107,7 @@ const CTABlock = () => {
                       className="flex items-start gap-3"
                     >
                       <CheckCircle2 className="w-4 h-4 text-[hsl(var(--highland-gold)/0.45)] flex-shrink-0 mt-0.5" aria-hidden="true" />
-                      <span className="text-dark-section-foreground/95 text-body-xs font-body leading-relaxed">
+                      <span className="text-dark-section-foreground text-body-xs font-body leading-relaxed">
                         {promise}
                       </span>
                     </motion.div>
@@ -156,15 +156,15 @@ const CTABlock = () => {
       <div className="bg-primary relative">
         <div className="container-tight px-6 md:px-10 py-5 md:py-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-primary-foreground/85 text-body-xs font-body text-center md:text-left">
-              <span className="text-primary-foreground/95 font-heading font-bold">4.9★ Rated.</span>{" "}
-              <span className="text-primary-foreground/95 font-heading font-bold">4.9★ rated.</span>{" "}
+            <p className="text-primary-foreground text-body-xs font-body text-center md:text-left">
+              <span className="text-primary-foreground font-heading font-bold">4.9★ Rated.</span>{" "}
+              <span className="text-primary-foreground font-heading font-bold">4.9★ rated.</span>{" "}
               Roofing & Construction across Western NC since 2017.
             </p>
             <div className="flex items-center gap-4">
               <Link
                 to="/consultation"
-                className="group inline-flex items-center gap-2 text-primary-foreground/85 font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:text-primary-foreground/90 transition-colors"
+                className="group inline-flex items-center gap-2 text-primary-foreground font-heading font-bold text-body-xs uppercase tracking-[0.15em] hover:text-primary-foreground transition-colors"
               >
                 Roofing
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />

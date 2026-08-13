@@ -335,7 +335,7 @@ const FAQ = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
               Still Have Questions?
             </h2>
-            <p className="text-primary-foreground/95 mb-8 max-w-xl mx-auto">
+            <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
               Every home is different. For specific guidance on your roof, repair, or construction project, contact Highlander directly — a real WNC team member will answer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

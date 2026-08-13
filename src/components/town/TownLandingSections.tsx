@@ -27,7 +27,7 @@ export const TownEmergencyBand = ({ town }: { town: TownData }) => (
       <TartanBackground opacity={0.08} />
     </div>
     <div className="container-tight relative z-10 px-6 py-8 md:py-10">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4 text-center md:text-left">
           <div className="w-12 h-12 shrink-0 bg-[hsl(var(--highland-gold)/0.15)] border border-[hsl(var(--highland-gold)/0.4)] flex items-center justify-center">
             <CloudLightning className="w-6 h-6 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
@@ -176,7 +176,7 @@ export const TownCTABand = ({ town }: { town: TownData }) => (
           </h2>
         </HeadingReveal>
         <ScrollReveal variant="rise-subtle" delay={0.2}>
-          <p className="text-dark-section-foreground/70 text-lg font-body leading-relaxed mb-10 max-w-xl mx-auto">
+          <p className="text-dark-section-muted text-lg font-body leading-relaxed mb-10 max-w-xl mx-auto">
             A named project advisor — not a call center — will respond with a clear next step, a written scope, and no high-pressure sales tactics.
           </p>
         </ScrollReveal>

@@ -93,7 +93,7 @@ const InternalLinkingQA = () => {
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[hsl(var(--gold-ink))]">Pre-Launch QA</p>
               <h1 className="text-display font-heading font-bold text-white">Internal Linking QA</h1>
-              <p className="mt-6 text-body-lg md:text-body-xl text-primary-foreground/85 leading-relaxed max-w-2xl font-medium">
+              <p className="mt-6 text-body-lg md:text-body-xl text-primary-foreground leading-relaxed max-w-2xl font-medium">
                 Review missing and weak link relationships between service pages, town pages, blog posts, and shared templates before publish.
               </p>
             </div>

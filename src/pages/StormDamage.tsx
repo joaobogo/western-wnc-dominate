@@ -188,9 +188,9 @@ const StormDamage = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
-                  <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/95">Roofing</span>
+                  <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">Roofing</span>
                 </Link>
-                <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
+                <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                 <span className="text-body-xs font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Storm Damage</span>
               </motion.div>
 
@@ -237,7 +237,7 @@ const StormDamage = () => {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-primary-foreground">Rapid Emergency Response Active</div>
-                  <div className="text-caption text-primary-foreground/85 font-body uppercase tracking-wider">Call (828) 524-7773 for immediate storm assistance</div>
+                  <div className="text-caption text-primary-foreground font-body uppercase tracking-wider">Call (828) 524-7773 for immediate storm assistance</div>
                 </div>
               </motion.div>
             </div>
@@ -327,12 +327,12 @@ const StormDamage = () => {
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm hit your area recently?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">We respond rapidly. Same-day for emergencies with active water intrusion.</p>
+                <p className="text-primary-foreground text-sm font-body">We respond rapidly. Same-day for emergencies with active water intrusion.</p>
               </div>
-              <div className="flex gap-3 flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <a href="tel:+18285247773" className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
@@ -354,13 +354,13 @@ const StormDamage = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Repair the Damage.<br className="hidden md:block" /> Or Replace the Roof.
                 </h2>
-                <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
                   The right answer depends on the extent of damage, your roof's age, and your long-term plans. Here's how we help you decide.
                 </p>
               </motion.div>
 
               <div className="grid md:grid-cols-2 gap-5">
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="border border-dark-section-foreground/6 rounded-sm overflow-hidden">
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="border border-dark-section-border rounded-sm overflow-hidden">
                   <div className="h-[2px] w-full bg-gradient-to-r from-[hsl(var(--heritage-green)/0)] via-[hsl(var(--heritage-green)/0.4)] to-[hsl(var(--heritage-green)/0)]" />
                   <div className="p-6 md:p-7">
                     <div className="flex items-center gap-3 mb-5">
@@ -373,7 +373,7 @@ const StormDamage = () => {
                       {repairVsReplace.repair.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-0.5 text-primary/80 flex-shrink-0" aria-hidden="true" />
-                          <span className="text-dark-section-foreground/85 text-body-xs font-body leading-snug">{item}</span>
+                          <span className="text-dark-section-foreground text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -383,7 +383,7 @@ const StormDamage = () => {
                   </div>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="border border-dark-section-foreground/6 rounded-sm overflow-hidden">
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="border border-dark-section-border rounded-sm overflow-hidden">
                   <div className="h-[2px] w-full bg-gradient-to-r from-[hsl(var(--highland-gold)/0)] via-[hsl(var(--highland-gold)/0.4)] to-[hsl(var(--highland-gold)/0)]" />
                   <div className="p-6 md:p-7">
                     <div className="flex items-center gap-3 mb-5">
@@ -396,7 +396,7 @@ const StormDamage = () => {
                       {repairVsReplace.replace.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle className="w-4 h-4 mt-0.5 text-[hsl(var(--highland-gold)/0.85)] flex-shrink-0" aria-hidden="true" />
-                          <span className="text-dark-section-foreground/85 text-body-xs font-body leading-snug">{item}</span>
+                          <span className="text-dark-section-foreground text-body-xs font-body leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -412,12 +412,12 @@ const StormDamage = () => {
         {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Storm damage? We respond rapidly.</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">Professional assessment, complete documentation, honest guidance — from a local team.</p>
+                <p className="text-primary-foreground text-sm font-body">Professional assessment, complete documentation, honest guidance — from a local team.</p>
               </div>
-              <div className="flex gap-3 flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <a href="tel:+18285247773" className="btn btn-primary btn-md">
                   <Phone className="w-4 h-4" aria-hidden="true" /> (828) 524-7773
                 </a>
@@ -615,7 +615,7 @@ const StormDamage = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Already Took the Hit.<br className="hidden md:block" /> Let's Make Sure It's Still Protecting You.
                   </h2>
-                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     A professional storm assessment takes less than an hour and gives you the clarity to make confident decisions — whether that means a simple repair, a full replacement, or the reassurance that your roof came through just fine.
                   </p>
 
@@ -629,7 +629,7 @@ const StormDamage = () => {
                     </Link>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
+                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Clock, text: "Rapid Emergency Response" },
@@ -638,7 +638,7 @@ const StormDamage = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

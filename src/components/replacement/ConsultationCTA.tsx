@@ -15,9 +15,9 @@ const ConsultationCTA = ({ heading, subline, label = "Book My Replacement Consul
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
         <div>
           <h2 className="font-heading font-bold text-xl md:text-2xl mb-1.5">{heading}</h2>
-          <p className="text-primary-foreground/85 text-sm font-body max-w-xl">{subline}</p>
+          <p className="text-primary-foreground text-sm font-body max-w-xl">{subline}</p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:flex-shrink-0">
           <Link
             to="/consultation"
             className="btn btn-primary btn-md group"

@@ -26,12 +26,12 @@ export const ConstructionMidCTA = ({
 }: ConstructionCTAProps) => (
   <section className="bg-primary text-primary-foreground tartan-dark">
     <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
         <div>
           <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">{headline}</h3>
-          <p className="text-primary-foreground/90 text-base md:text-lg font-body">{subheadline}</p>
+          <p className="text-primary-foreground text-base md:text-lg font-body">{subheadline}</p>
         </div>
-        <div className="flex gap-3 flex-shrink-0">
+        <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
           <Link to={ctaLink} className="btn btn-primary btn-md group relative">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative">{ctaText}</span>
@@ -71,7 +71,7 @@ export const ConstructionClosingCTA = ({
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground whitespace-pre-line">
               {headline}
             </h2>
-            <p className="text-dark-section-foreground/90 text-base md:text-xl max-w-xl mx-auto mb-10 font-body leading-relaxed">
+            <p className="text-dark-section-foreground text-base md:text-xl max-w-xl mx-auto mb-10 font-body leading-relaxed">
               {subheadline}
             </p>
 
@@ -86,7 +86,7 @@ export const ConstructionClosingCTA = ({
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
+            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
               {[
                 { icon: Shield, text: "Licensed & Insured" },
                 { icon: Users, text: "In-House Crews" },
@@ -95,7 +95,7 @@ export const ConstructionClosingCTA = ({
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2">
                   <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                  <span className="text-dark-section-foreground/85 text-body-xs font-body font-bold">{item.text}</span>
+                  <span className="text-dark-section-foreground text-body-xs font-body font-bold">{item.text}</span>
                 </div>
               ))}
             </div>

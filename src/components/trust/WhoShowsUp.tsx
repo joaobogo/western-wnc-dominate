@@ -29,9 +29,9 @@ const WhoShowsUp = ({
 }: WhoShowsUpProps) => {
   const isDark = tone === "dark";
   const textMain = isDark ? "text-dark-section-foreground" : "text-foreground";
-  const textMuted = isDark ? "text-dark-section-foreground/80" : "text-muted-foreground";
+  const textMuted = isDark ? "text-dark-section-foreground" : "text-muted-foreground";
   const cardBg = isDark ? "bg-dark-section-foreground/[0.04]" : "bg-card";
-  const border = isDark ? "border-dark-section-foreground/10" : "border-border";
+  const border = isDark ? "border-dark-section-border" : "border-border";
 
   return (
     <section

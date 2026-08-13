@@ -259,7 +259,7 @@ const BlogPostPage = () => {
             <h1 className="text-3xl font-heading font-bold text-[hsl(var(--dark-section-foreground))] mb-4">
               Article Not Found
             </h1>
-            <p className="text-[hsl(var(--dark-section-foreground)/0.6)] mb-6">
+            <p className="text-dark-section-muted mb-6">
               The article you're looking for doesn't exist or has been moved.
             </p>
             <Link

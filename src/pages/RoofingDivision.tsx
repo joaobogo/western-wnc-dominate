@@ -213,7 +213,7 @@ const RoofingDivision = () => {
                   <div className="w-8 h-8 rounded-none bg-primary/20 flex items-center justify-center">
                     <Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                   </div>
-                  <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">
+                  <span className="text-caption md:text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">
                     Authority Since 2017
                   </span>
                 </div>
@@ -246,7 +246,7 @@ const RoofingDivision = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="order-2 md:order-none text-body-sm md:text-body-lg text-primary-foreground/90 max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
+                className="order-2 md:order-none text-body-sm md:text-body-lg text-primary-foreground max-w-2xl mb-5 md:mb-12 leading-snug md:leading-relaxed font-body font-medium"
               >
                 <span className="md:hidden">We inspect, spec the right system for your elevation, and put scope and price in writing first.</span>
                 <span className="hidden md:inline">Wind-driven rain, ice, and ridgeline exposure end mountain roofs early. We inspect what you have, spec a shingle or standing seam metal system for your elevation, and put the scope and price in writing before work begins — CertainTeed ShingleMaster credentialed, licensed, and insured.</span>
@@ -296,7 +296,7 @@ const RoofingDivision = () => {
         {/* ─── TRUST STRIP ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-6 md:py-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-primary-foreground/8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-dark-section-border">
               {trustSignals.map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -307,8 +307,8 @@ const RoofingDivision = () => {
                   className="flex flex-col items-center text-center md:px-6"
                 >
                   <item.icon className="w-5 h-5 text-[hsl(var(--highland-gold)/0.7)] mb-2" />
-                  <span className="text-xs font-heading font-semibold text-primary-foreground/85 mb-0.5">{item.label}</span>
-                  <span className="text-caption text-primary-foreground/95 font-body">{item.detail}</span>
+                  <span className="text-xs font-heading font-semibold text-primary-foreground mb-0.5">{item.label}</span>
+                  <span className="text-caption text-primary-foreground font-body">{item.detail}</span>
                 </motion.div>
               ))}
             </div>
@@ -520,7 +520,7 @@ const RoofingDivision = () => {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                     Your Roof Protects Everything<br className="hidden md:block" /> That Matters. Plan It With<br className="hidden md:block" /> a Team That Knows.
                   </h2>
-                  <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                  <p className="text-dark-section-foreground text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                     Whether it's time for a replacement, a repair, or an honest second opinion —
                     let's build a plan that gives you confidence for the next 30 years.
                   </p>
@@ -543,7 +543,7 @@ const RoofingDivision = () => {
                     </a>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
+                  <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                     {[
                       { icon: Shield, text: "Licensed & Insured" },
                       { icon: Award, text: "CertainTeed Certified" },
@@ -552,7 +552,7 @@ const RoofingDivision = () => {
                     ].map((item) => (
                       <div key={item.text} className="flex items-center gap-2">
                         <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                        <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
+                        <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
                       </div>
                     ))}
                   </div>

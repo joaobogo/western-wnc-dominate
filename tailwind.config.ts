@@ -96,6 +96,8 @@ export default {
         "dark-section": {
           DEFAULT: "hsl(var(--dark-section))",
           foreground: "hsl(var(--dark-section-foreground))",
+          muted: "hsl(var(--dark-section-muted))",
+          border: "hsl(var(--dark-section-border))",
         },
         "trust-badge": "hsl(var(--trust-badge))",
         heritage: {

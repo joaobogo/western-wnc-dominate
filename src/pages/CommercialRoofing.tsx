@@ -168,9 +168,9 @@ const CommercialRoofing = () => {
                           <div className="flex items-center gap-3">
                             <Link to="/roofing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                               <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
-                              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground/85">Roofing</span>
+                              <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-primary-foreground">Roofing</span>
                             </Link>
-                            <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
+                            <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                             <span className="text-caption font-body font-semibold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Commercial</span>
                           </div>
                         </motion.div>
@@ -210,7 +210,7 @@ const CommercialRoofing = () => {
                           className="mt-10 flex flex-wrap gap-2.5"
                         >
                           {["Licensed GC", "Fully Insured", "Multi-Property Programs", "Rapid Emergency", "Maintenance Contracts"].map((badge) => (
-                            <span key={badge} className="px-3 py-1.5 text-caption uppercase tracking-wider font-body font-semibold text-primary-foreground/85 border border-white/12 rounded-sm bg-white/5">
+                            <span key={badge} className="px-3 py-1.5 text-caption uppercase tracking-wider font-body font-semibold text-primary-foreground border border-white/12 rounded-sm bg-white/5">
                               {badge}
                             </span>
                           ))}
@@ -332,16 +332,16 @@ const CommercialRoofing = () => {
                             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                               Your Business Keeps Running.<br className="hidden md:block" /> We Plan Around It.
                             </h2>
-                            <p className="text-dark-section-foreground/95 text-base font-body max-w-lg mx-auto">
+                            <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
                               Commercial roofing happens on occupied buildings with active operations. We plan every project to minimize disruption to your tenants, customers, and daily business.
                             </p>
                           </motion.div>
 
                           <div className="grid md:grid-cols-2 gap-4 md:gap-5">
                             {disruptionPoints.map((point, i) => (
-                              <motion.div key={point.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-dark-section-foreground/12 transition-colors">
+                              <motion.div key={point.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-border rounded-sm p-6 hover:border-dark-section-border transition-colors">
                                 <h3 className="font-heading font-bold text-dark-section-foreground text-sm mb-2">{point.title}</h3>
-                                <p className="text-dark-section-foreground/95 text-body-xs leading-relaxed font-body">{point.detail}</p>
+                                <p className="text-dark-section-foreground text-body-xs leading-relaxed font-body">{point.detail}</p>
                               </motion.div>
                             ))}
                           </div>
@@ -375,12 +375,12 @@ const CommercialRoofing = () => {
 
                     <section className="bg-primary text-primary-foreground tartan-dark">
                       <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                           <div>
                             <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Managing a commercial roof asset?</h3>
-                            <p className="text-primary-foreground/85 text-sm font-body">Let's discuss your building, your timeline, and your long-term plan.</p>
+                            <p className="text-primary-foreground text-sm font-body">Let's discuss your building, your timeline, and your long-term plan.</p>
                           </div>
-                          <div className="flex gap-3 flex-shrink-0">
+                          <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                             <Link to="/consultation" className="btn btn-primary btn-md group relative">
                               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                               <span className="relative">Discuss Your Building</span>
@@ -489,7 +489,7 @@ const CommercialRoofing = () => {
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-[1.1] text-dark-section-foreground">
                               Your Roof Protects Your Investment.<br className="hidden md:block" /> We Protect Your Roof.
                             </h2>
-                            <p className="text-dark-section-foreground/95 text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
+                            <p className="text-dark-section-foreground text-base md:text-lg max-w-xl mx-auto mb-10 font-body leading-relaxed">
                               Whether you're planning a replacement, evaluating a new building, or looking for a long-term maintenance partner — let's have a straightforward conversation about your commercial roofing needs.
                             </p>
 
@@ -504,7 +504,7 @@ const CommercialRoofing = () => {
                               </a>
                             </div>
 
-                            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-foreground/6">
+                            <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-dark-section-border">
                               {[
                                 { icon: Shield, text: "Licensed & Insured" },
                                 { icon: Clock, text: "Rapid Emergency Response" },
@@ -513,7 +513,7 @@ const CommercialRoofing = () => {
                               ].map((item) => (
                                 <div key={item.text} className="flex items-center gap-2">
                                   <item.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.35)]" />
-                                  <span className="text-dark-section-foreground/90 text-xs font-body font-medium">{item.text}</span>
+                                  <span className="text-dark-section-foreground text-xs font-body font-medium">{item.text}</span>
                                 </div>
                               ))}
                             </div>

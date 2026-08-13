@@ -91,13 +91,13 @@ const RequestInspection = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
               Prefer to talk? Call a real person.
             </h2>
-            <p className="text-primary-foreground/95 mb-8 max-w-xl mx-auto">
+            <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
               When you call Highlander, a member of our Western NC team picks up.
             </p>
             <a href="tel:+18285247773" className="btn btn-secondary btn-md btn-on-dark">
               <Phone className="w-4 h-4" aria-hidden="true" /> Call (828) 524-7773
             </a>
-            <p className="text-primary-foreground/70 text-sm mt-6">
+            <p className="text-dark-section-muted text-sm mt-6">
               By submitting the form on this page you agree to our{" "}
               <Link to="/privacy-policy" className="underline hover:text-primary-foreground">Privacy Policy</Link>.
             </p>

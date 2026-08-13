@@ -41,7 +41,7 @@ const Services = () => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
                 Roofing Services Built for Mountain Living
               </h1>
-              <p className="text-dark-section-foreground/90 max-w-2xl mx-auto text-base md:text-lg">
+              <p className="text-dark-section-foreground max-w-2xl mx-auto text-base md:text-lg">
                 From emergency storm repairs to full replacements, we handle every roofing need across Western North Carolina.
               </p>
             </motion.div>

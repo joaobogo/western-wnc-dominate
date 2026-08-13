@@ -31,7 +31,7 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
       >
         We do this work in {town} — request a scope
       </h2>
-      <p className="text-primary-foreground/85 text-sm leading-relaxed mb-5 max-w-xl">
+      <p className="text-primary-foreground text-sm leading-relaxed mb-5 max-w-xl">
         Same crews, same standard. We'll look at your {type.toLowerCase()} project in person and put the scope,
         materials, and timing in writing before anything starts.
       </p>
@@ -60,8 +60,8 @@ const ProjectLocationCTA = ({ location, type, category, className = "" }: Props)
         </a>
       </div>
 
-      <div className="border-t border-primary-foreground/15 pt-5">
-        <p className="text-caption font-body font-bold uppercase tracking-[0.15em] text-primary-foreground/60 mb-3">
+      <div className="border-t border-dark-section-border pt-5">
+        <p className="text-caption font-body font-bold uppercase tracking-[0.15em] text-dark-section-muted mb-3">
           Services on this project
         </p>
         <div className="flex flex-wrap gap-2">

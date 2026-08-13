@@ -256,7 +256,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
 
   const inputClasses = "field-input field-on-dark px-6 py-5 md:py-6";
   const labelClasses = "field-label text-white mb-3 tracking-[0.18em]";
-  const hintClasses = "text-dark-section-foreground/95 text-body-sm md:text-body-sm font-body mt-3 leading-relaxed font-bold";
+  const hintClasses = "text-dark-section-foreground text-body-sm md:text-body-sm font-body mt-3 leading-relaxed font-bold";
 
 
   return (
@@ -320,7 +320,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
               </div>
 
               <ScrollReveal variant="fade" delay={0.5}>
-                <div className="mt-8 pt-8 border-t border-dark-section-foreground/6">
+                <div className="mt-8 pt-8 border-t border-dark-section-border">
                   <p className="text-white text-base font-body font-bold mb-2">Prefer to talk directly?</p>
                   <a href="tel:+18285247773" className="inline-flex items-center gap-2 text-dark-section-foreground font-heading font-bold text-lg hover:text-[hsl(var(--gold-ink))] transition-colors">
                     <Phone className="w-4 h-4" aria-hidden="true" />
@@ -339,7 +339,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
               transition={{ delay: 0.12, duration: 0.4, ease: HIGHLAND_EASE }}
               className={`lg:col-span-3 ${isPage ? "order-1 lg:order-2" : ""}`}
             >
-              <div className="bg-dark-section-foreground/[0.03] border border-dark-section-foreground/8 rounded-none p-6 md:p-8 lg:p-10">
+              <div className="bg-dark-section-foreground/[0.03] border border-dark-section-border rounded-none p-6 md:p-8 lg:p-10">
                 {/* Slim progress indicator */}
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
@@ -482,7 +482,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                 </div>
 
                 {/* ── Progressive disclosure: everything optional lives here ── */}
-                <div className="mt-6 border-t border-dark-section-foreground/8 pt-5">
+                <div className="mt-6 border-t border-dark-section-border pt-5">
                   <button
                     type="button"
                     onClick={() => setShowDetails((v) => !v)}
@@ -613,7 +613,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                 <FormErrorSummary tone="dark" message={submitError} issues={issues} />
                 <WhatHappensNext tone="dark" className="mt-6" />
                 <CTAProofPoints tone="dark" align="start" className="mt-4" />
-                <div className="mt-8 pt-6 border-t border-dark-section-foreground/6 flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="mt-8 pt-6 border-t border-dark-section-border flex flex-col sm:flex-row sm:items-center gap-4">
                   <button
                     onClick={handleSubmit}
                     disabled={isSubmitting}
@@ -644,7 +644,7 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                     Or call (828) 524-7773
                   </a>
                 </div>
-                <FormConsent className="mt-4 text-dark-section-foreground/90" />
+                <FormConsent className="mt-4 text-dark-section-foreground" />
                 </>
                 )}
 

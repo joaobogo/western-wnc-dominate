@@ -408,10 +408,10 @@ const About = () => {
                   Craftsmanship Isn't a<br /> Marketing Word Here.
                 </h2>
                 <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mb-6" />
-                <p className="text-[hsl(var(--dark-section-foreground)/0.7)] leading-relaxed mb-4">
+                <p className="text-dark-section-muted leading-relaxed mb-4">
                   In an industry where "quality craftsmanship" is printed on every business card, we've learned to let our work do the talking. Every Highlander project follows the same discipline: careful material selection, manufacturer-exact installation, detailed inspection, and personal accountability from start to finish.
                 </p>
-                <p className="text-[hsl(var(--dark-section-foreground)/0.7)] leading-relaxed">
+                <p className="text-dark-section-muted leading-relaxed">
                   The result isn't a promise. It's a pattern you can see in every project we've ever completed across the ridgelines of Western North Carolina.
                 </p>
               </motion.div>
@@ -422,7 +422,7 @@ const About = () => {
                       <CheckCircle className="w-4 h-4 text-[hsl(var(--gold-ink))] flex-shrink-0 mt-0.5" aria-hidden="true" />
                       <div>
                         <h3 className="font-heading font-semibold text-[hsl(var(--dark-section-foreground))] mb-1">{p.title}</h3>
-                        <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm leading-relaxed">{p.detail}</p>
+                        <p className="text-dark-section-muted text-sm leading-relaxed">{p.detail}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -549,7 +549,7 @@ const About = () => {
                 Trust Is Built. Not Claimed.
               </h2>
               <div className="w-12 h-px bg-[hsl(var(--highland-gold)/0.4)] mx-auto mb-4" />
-              <p className="text-[hsl(var(--dark-section-foreground)/0.6)] max-w-2xl mx-auto">
+              <p className="text-dark-section-muted max-w-2xl mx-auto">
                 We don't ask you to trust us because we say we're trustworthy. We ask you to look
                 at our work, talk to our clients, and see how we operate.
               </p>
@@ -563,7 +563,7 @@ const About = () => {
               ].map((item, i) => (
                 <motion.div key={item.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.4 }} className="text-center p-6 border border-[hsl(var(--highland-gold)/0.1)] rounded-sm">
                   <p className="text-3xl md:text-4xl font-heading font-bold text-[hsl(var(--gold-ink))] mb-2">{item.stat}</p>
-                  <p className="text-[hsl(var(--dark-section-foreground)/0.6)] text-sm">{item.label}</p>
+                  <p className="text-dark-section-muted text-sm">{item.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -577,7 +577,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
                 Now That You Know Us.<br /> Let's Talk About Your Project.
               </h2>
-              <p className="text-primary-foreground/90 mb-8 max-w-xl mx-auto">
+              <p className="text-primary-foreground mb-8 max-w-xl mx-auto">
                 Browse our projects, read what homeowners say, or start a conversation.
                 We'll earn your trust the same way we've earned everyone else's.
               </p>
@@ -589,7 +589,7 @@ const About = () => {
                   Talk With Our Team <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
-              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/85 text-xs font-medium uppercase tracking-wider">
+              <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground text-xs font-medium uppercase tracking-wider">
                 <span>Family-Owned. Locally Run. Since 2017.</span>
                 <span className="text-primary-foreground/20">•</span>
                 <span>20+ Local Professionals</span>

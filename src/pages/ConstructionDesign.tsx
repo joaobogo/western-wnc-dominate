@@ -374,11 +374,11 @@ const ConstructionDesign = () => {
                   <h2 className="text-2xl md:text-4xl lg:text-heading-lg font-heading font-bold text-dark-section-foreground leading-[1.15] mb-6">
                     Design Fees Can Credit Back When You Build With Highlander.
                   </h2>
-                  <div className="max-w-2xl mx-auto space-y-5 text-dark-section-foreground/85 text-base md:text-lg font-body leading-relaxed">
+                  <div className="max-w-2xl mx-auto space-y-5 text-dark-section-foreground text-base md:text-lg font-body leading-relaxed">
                     <p>
                       Clients who complete design with Highlander and move forward with Highlander for construction may receive a portion of their design fees as a credit on the final construction invoice at project completion.
                     </p>
-                    <p className="text-dark-section-foreground/90 text-body-xs italic">
+                    <p className="text-dark-section-foreground text-body-xs italic">
                       Final credit details are confirmed in your Design &amp; Consultation Agreement.
                     </p>
                   </div>
@@ -541,7 +541,7 @@ const ConstructionDesign = () => {
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-dark-section-foreground leading-[1.1] mb-6">
                 Ready to Plan Your<br className="hidden md:block" /> Construction Project?
               </h2>
-              <p className="text-dark-section-foreground/95 text-base md:text-lg font-body leading-relaxed max-w-2xl mx-auto mb-9">
+              <p className="text-dark-section-foreground text-base md:text-lg font-body leading-relaxed max-w-2xl mx-auto mb-9">
                 Tell us what you're considering, whether you already have plans, and how soon you hope to build. Our team will help determine whether your project is ready for estimating — or should begin with a Design &amp; Consultation Agreement.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
@@ -558,7 +558,7 @@ const ConstructionDesign = () => {
                   Start with a Design Agreement <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
-              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground/95 hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
+              <a href="tel:+18285247773" className="inline-flex items-center gap-2.5 text-dark-section-foreground hover:text-[hsl(var(--gold-ink))] transition-colors font-heading font-bold text-body-xs">
                 <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                 (828) 524-7773
               </a>

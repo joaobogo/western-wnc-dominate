@@ -148,9 +148,9 @@ const HomeAdditions = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="flex items-center gap-3 mb-6">
                 <Link to="/construction" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <div className="w-7 h-7 rounded-sm bg-primary/20 flex items-center justify-center"><Home className="w-4 h-4 text-primary-foreground" aria-hidden="true" /></div>
-                  <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-primary-foreground/95">Construction</span>
+                  <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-primary-foreground">Construction</span>
                 </Link>
-                <ChevronRight className="w-4 h-4 text-primary-foreground/90" aria-hidden="true" />
+                <ChevronRight className="w-4 h-4 text-primary-foreground" aria-hidden="true" />
                 <span className="text-body-xs font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))]">Home Additions</span>
               </motion.div>
 
@@ -193,8 +193,8 @@ const HomeAdditions = () => {
                   { value: "3–6", unit: "mo", label: "Typical Timeline" },
                 ].map((item) => (
                   <div key={item.label} className="p-3 bg-white/5 border border-white/8 rounded-sm text-center">
-                    <div className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}<span className="text-caption text-primary-foreground/90 ml-0.5">{item.unit}</span></div>
-                    <div className="text-caption text-primary-foreground/90 font-body uppercase tracking-wider mt-0.5">{item.label}</div>
+                    <div className="text-sm font-heading font-bold text-[hsl(var(--gold-ink))]">{item.value}<span className="text-caption text-primary-foreground ml-0.5">{item.unit}</span></div>
+                    <div className="text-caption text-primary-foreground font-body uppercase tracking-wider mt-0.5">{item.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -312,19 +312,19 @@ const HomeAdditions = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Making It Look Like<br className="hidden md:block" /> It Was Always There.
                 </h2>
-                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
                   The hardest part of any addition isn't building the new space — it's making it belong.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {designContinuity.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
+                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-border rounded-sm p-6 md:p-7 hover:border-[hsl(var(--highland-gold)/0.15)] transition-colors">
                     <div className="w-10 h-10 rounded-sm bg-[hsl(var(--highland-gold)/0.06)] flex items-center justify-center mb-5">
                       <item.icon className="w-5 h-5 text-[hsl(var(--gold-ink))]" />
                     </div>
                     <h3 className="font-heading font-bold text-dark-section-foreground text-base mb-2.5">{item.title}</h3>
-                    <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -424,12 +424,12 @@ const HomeAdditions = () => {
             {/* ─── MID CTA ─── */}
         <section className="bg-primary text-primary-foreground tartan-dark">
           <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Thinking about adding on?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">We'll help you evaluate what's possible — structurally, visually, and within your budget.</p>
+                <p className="text-primary-foreground text-sm font-body">We'll help you evaluate what's possible — structurally, visually, and within your budget.</p>
               </div>
-              <div className="flex gap-3 flex-shrink-0">
+              <div className="flex w-full min-w-0 flex-wrap justify-center gap-3 lg:w-auto lg:justify-end lg:flex-shrink-0">
                 <Link to="/consultation" className="btn btn-primary btn-md group relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <span className="relative">Schedule a Project Consultation</span>
@@ -476,19 +476,19 @@ const HomeAdditions = () => {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 leading-[1.15] text-dark-section-foreground">
                   Building Additions in WNC<br className="hidden md:block" /> Is Different.
                 </h2>
-                <p className="text-dark-section-foreground/90 text-base font-body max-w-lg mx-auto">
+                <p className="text-dark-section-foreground text-base font-body max-w-lg mx-auto">
                   The Western North Carolina landscape demands more from every build. Not every contractor understands why.
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {wncChallenges.map((item, i) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-foreground/6 rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.12)] transition-colors">
+                  <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="border border-dark-section-border rounded-sm p-6 hover:border-[hsl(var(--highland-gold)/0.12)] transition-colors">
                     <div className="flex items-center gap-3 mb-3">
                       <Mountain className="w-4 h-4 text-[hsl(var(--highland-gold)/0.6)]" aria-hidden="true" />
                       <h3 className="font-heading font-bold text-dark-section-foreground text-sm">{item.title}</h3>
                     </div>
-                    <p className="text-dark-section-foreground/90 text-body-xs leading-relaxed font-body">{item.detail}</p>
+                    <p className="text-dark-section-foreground text-body-xs leading-relaxed font-body">{item.detail}</p>
                   </motion.div>
                 ))}
               </div>

@@ -136,13 +136,13 @@ const OurProcess = () => {
                       <div className="w-8 h-8 rounded-none bg-dark-section-foreground/[0.06] flex items-center justify-center group-hover:bg-[hsl(var(--highland-gold)/0.08)] transition-colors duration-300">
                         <step.icon className="w-3.5 h-3.5 text-[hsl(var(--highland-gold)/0.45)] group-hover:text-[hsl(var(--highland-gold)/0.8)] transition-colors duration-300" />
                       </div>
-                      <h3 className="text-sm md:text-base font-heading font-bold text-dark-section-foreground/85 tracking-tight">
+                      <h3 className="text-sm md:text-base font-heading font-bold text-dark-section-foreground tracking-tight">
                         {step.title}
                       </h3>
                     </div>
 
                     {/* Description */}
-                    <p className="text-dark-section-foreground/90 text-body-sm md:text-body leading-[1.7] font-body mb-4 font-bold">
+                    <p className="text-dark-section-foreground text-body-sm md:text-body leading-[1.7] font-body mb-4 font-bold">
                       {step.description}
                     </p>
 

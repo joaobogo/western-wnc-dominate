@@ -36,7 +36,7 @@ const CardCapture = ({
         <h3 className="font-heading font-bold text-foreground text-lg md:text-xl mb-2">{headline}</h3>
         <p className="text-muted-foreground text-sm font-body leading-relaxed max-w-lg">{subheadline}</p>
       </div>
-      <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+      <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:flex-shrink-0">
         <Link
           to={ctaLink}
           className="btn btn-primary btn-md group relative"

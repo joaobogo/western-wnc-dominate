@@ -77,7 +77,7 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.1, ease: HIGHLAND_EASE }}
-                  className="flex flex-col gap-3 lg:items-end flex-shrink-0"
+                  className="flex w-full max-w-full flex-col gap-3 lg:w-auto lg:items-end lg:flex-shrink-0"
                 >
                   <a
                     href="tel:+18285247773"
@@ -86,7 +86,7 @@ export default function Contact() {
                     <Phone className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
                     <div>
                       <span className="text-base font-heading font-bold text-[hsl(var(--dark-section-foreground))] block">(828) 524-7773</span>
-                      <span className="text-caption text-[hsl(var(--dark-section-foreground)/0.5)] font-body uppercase tracking-wider">Call Direct</span>
+                      <span className="text-caption text-dark-section-muted font-body uppercase tracking-wider">Call Direct</span>
                     </div>
                   </a>
                   <a
@@ -94,7 +94,7 @@ export default function Contact() {
                     className="btn btn-secondary btn-md"
                   >
                     <Mail className="w-4 h-4 text-[hsl(var(--gold-ink))]" aria-hidden="true" />
-                    <span className="text-sm font-body text-[hsl(var(--dark-section-foreground)/0.7)]">info@highlandernc.com</span>
+                    <span className="text-sm font-body text-dark-section-muted">info@highlandernc.com</span>
                   </a>
                 </motion.div>
               </div>

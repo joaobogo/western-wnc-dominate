@@ -47,7 +47,7 @@ const CredibilityStrip = () => {
                 <span className="block font-body text-sm font-semibold leading-tight">
                   {item.label}
                 </span>
-                <span className="block font-body text-body-xs text-primary-foreground/75 leading-snug">
+                <span className="block font-body text-body-xs text-primary-foreground leading-snug">
                   {item.detail}
                 </span>
               </span>
