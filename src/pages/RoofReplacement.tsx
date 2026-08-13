@@ -399,6 +399,34 @@ const RoofReplacement = () => {
           </div>
         </section>
 
+        {/* ─── MATERIAL TRADEOFF COMPARISON ─── */}
+        <MaterialComparison />
+
+        <ConsultationCTA
+          heading="Want the material call made for your specific roof?"
+          subline="We spec by elevation, pitch, wind exposure, and how long you plan to hold the home — then put it in writing."
+          label="Get My Material Recommendation"
+        />
+
+        {/* ─── WRITTEN SCOPE ─── */}
+        <WrittenScopeIncludes />
+
+        {/* ─── COST DRIVERS ─── */}
+        <CostContextBlock serviceLabel="roof replacement" />
+
+        {/* ─── FINANCING ENTRY POINT ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <FinancingTeaser serviceLabel="roof replacement" />
+          </div>
+        </section>
+
+        <ConsultationCTA
+          heading="Get the number for your roof, not a range."
+          subline="Written, grouped-cost proposal after an on-site assessment — with payment options reviewed at the same visit."
+          label="Get My Written Estimate"
+        />
+
         {/* ─── TIMELINE & PROCESS ─── */}
         <section className="section-padding bg-secondary tartan-bg">
           <div className="container-tight">
