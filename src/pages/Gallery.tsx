@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { Fragment, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, MapPin, Calendar, Ruler, Eye, Camera, Filter } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ import { ReassuranceBlock } from "@/components/trust";
 import { PremiumLightbox, GalleryCard } from "@/components/gallery";
 import type { LightboxProject } from "@/components/gallery";
 import { MountainContours, TextureOverlay } from "@/components/motion/BackgroundTexture";
+import GalleryInlineCTA from "@/components/projects/GalleryInlineCTA";
 
 import metal005 from "@/assets/gallery/metal-005.webp";
 import metal006 from "@/assets/gallery/metal-006.webp";
@@ -281,21 +282,32 @@ const Gallery = () => {
                 <AnimatePresence mode="popLayout">
                   {filtered.map((project, i) => {
                     const originalIndex = projects.indexOf(project);
+                    // CTA after every three projects — proof should sell, not just display.
+                    const closesTriplet = (i + 1) % 3 === 0 && i !== filtered.length - 1;
                     return (
-                      <motion.div
-                        key={project.title}
-                        layout
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.5, delay: i * 0.05 }}
-                      >
-                        <GalleryCard
-                          {...project}
-                          index={i}
-                          onClick={() => setLightbox(originalIndex)}
-                        />
-                      </motion.div>
+                      <Fragment key={project.title}>
+                        <motion.div
+                          layout
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, scale: 0.95 }}
+                          transition={{ duration: 0.5, delay: i * 0.05 }}
+                        >
+                          <GalleryCard
+                            {...project}
+                            index={i}
+                            onClick={() => setLightbox(originalIndex)}
+                          />
+                        </motion.div>
+                        {closesTriplet && (
+                          <GalleryInlineCTA
+                            position={Math.ceil((i + 1) / 3)}
+                            towns={Array.from(
+                              new Set(filtered.slice(i - 2, i + 1).map((p) => p.location)),
+                            )}
+                          />
+                        )}
+                      </Fragment>
                     );
                   })}
                 </AnimatePresence>

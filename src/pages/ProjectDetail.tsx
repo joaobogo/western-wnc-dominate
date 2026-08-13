@@ -12,6 +12,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { ReassuranceBlock, TrustSidebar } from "@/components/trust";
 import { BeforeAfterSlider } from "@/components/BeforeAfterShowcase";
 import { getProjectBySlug, projectDetails } from "@/data/projects";
+import ProjectLocationCTA from "@/components/projects/ProjectLocationCTA";
 import { blogPosts } from "@/data/blogs";
 
 const HIGHLAND_EASE = [0.22, 1, 0.36, 1] as any;
@@ -189,6 +190,14 @@ const ProjectDetailPage = () => {
                     ))}
                   </div>
                 </motion.div>
+
+                {/* Location-aware CTA + service tags */}
+                <ProjectLocationCTA
+                  location={project.location}
+                  type={project.type}
+                  category={project.category}
+                  className="mt-16"
+                />
               </div>
 
               <div className="space-y-6">
