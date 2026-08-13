@@ -175,6 +175,11 @@ const ServiceTownPage = ({
               <h1 className="text-display-lg md:text-display-xl font-heading font-bold mb-4 text-balance leading-[0.95] tracking-tightest text-white">
                 {entry.h1}
               </h1>
+              <PageContext
+                division={`${entry.serviceLabel} · Roofing Division`}
+                area={`${town.name}, ${town.state} · ${town.county}`}
+                tone="dark"
+              />
               <p className="text-body-lg md:text-body-xl text-white/85 max-w-2xl mb-10 leading-relaxed font-medium drop-shadow-sm">
                 {entry.intro}
               </p>
