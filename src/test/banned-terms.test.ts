@@ -66,7 +66,14 @@ describe("NAP consistency", () => {
   const files = walk("src").filter(
     (f) => /\.(ts|tsx)$/.test(f) && !ALLOW_FILES.some((a) => f.endsWith(a)),
   );
-  const STALE = [/1511 Highlands (Road|Rd)/i, /828-397-9211/, /\(828\)\s*397-9211/];
+  const STALE = [
+    /1511 Highlands (Road|Rd)/i,
+    /828-397-9211/,
+    /\(828\)\s*397-9211/,
+    // Legacy company names — the brand is "Highlander Building Services".
+    /Highlander Roofing/i,
+    /Highlander Construction/i,
+  ];
 
   for (const pattern of STALE) {
     it(`has no stale NAP value matching ${pattern}`, () => {
