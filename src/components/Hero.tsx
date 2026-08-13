@@ -221,10 +221,10 @@ const Hero = () => {
 
       {/* === MAIN CONTENT === */}
       <div className={`relative z-10 flex-1 flex w-full ${
-        textLed ? "items-start md:items-center pt-[38svh] md:pt-0" : "items-center md:items-end"
+        textLed ? "items-start pt-[38svh] md:pt-0" : "items-center md:items-end"
       }`}>
         <div className={`w-full px-5 md:px-10 lg:px-20 hero-clears-header ${
-          textLed ? "pt-6 md:pt-0 pb-12 md:pb-24 md:max-w-[52%]" : "pb-10 md:pb-44"
+          textLed ? "pt-6 md:pt-10 pb-12 md:pb-20 md:max-w-[52%]" : "pb-10 md:pb-44"
         }`}>
           <div className="max-w-3xl">
             {/* Eyebrow — authority credential line */}
@@ -287,7 +287,7 @@ const Hero = () => {
 
 
             {/* CTA Group — premium dual-action */}
-            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-6">
+            <div className={`flex flex-col gap-2.5 ${textLed ? "xl:flex-row xl:gap-4" : "sm:flex-row sm:gap-6"}`}>
               <Link
                 to="/consultation"
                 data-gtm-experiment="home_hero_cta"
