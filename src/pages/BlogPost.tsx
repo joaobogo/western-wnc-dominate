@@ -252,6 +252,8 @@ const BlogPostPage = () => {
   const author = authors.default;
   const takeaways = extractTakeaways(post.content);
   const internalLinks = getBlogInternalLinks(post);
+  const blogCta = getBlogCta(post);
+  const [contentTop, contentBottom] = splitContentAtMidpoint(post.content);
   const relatedPosts = blogPosts
     .filter((p) => p.slug !== slug && (p.category === post.category || p.town === post.town))
     .slice(0, 3);
