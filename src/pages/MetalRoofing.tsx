@@ -189,7 +189,6 @@ const MetalRoofing = () => {
         proof={
           <>
             <TieredOffer context="metal-roofing" primaryLabel="Get My Metal Roof Priced" />
-            <CommonConcerns />
             <div className="container-tight pt-16 md:pt-20">
               <AttributedReviews category="roofing" heading="What homeowners say about our metal roofing work" />
             </div>
@@ -265,7 +264,9 @@ const MetalRoofing = () => {
             <ServiceInternalLinks title="Metal Roofing" slug="metal-roofing" />
           </>
         }
-        cta={<CTABlock />}
+        cta={<>
+        <CommonConcerns />
+        <CTABlock /></>}
       />
       <Footer />
       <StickyMobileCTA />

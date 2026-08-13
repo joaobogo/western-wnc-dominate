@@ -793,7 +793,6 @@ const ResidentialRoofing = () => {
 
                     <TieredOffer context="residential-roofing" primaryLabel="Get My Roof Assessed" />
 
-                    <CommonConcerns />
 
                     <SchedulingReality serviceLabel="residential roofing" />
 
@@ -927,6 +926,8 @@ const ResidentialRoofing = () => {
           </>
         }
         cta={
+          <>
+          <CommonConcerns />
                   <section className="section-dark tartan-dark relative overflow-hidden">
                     <motion.div
                       className="absolute top-0 left-0 w-full h-px"
