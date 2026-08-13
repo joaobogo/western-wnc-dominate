@@ -37,6 +37,9 @@ import ConversionTrustBlock from "@/components/trust/ConversionTrustBlock";
 import AttributedReviews from "@/components/trust/AttributedReviews";
 import WhoShowsUp from "@/components/trust/WhoShowsUp";
 import ServiceInternalLinks from "@/components/ServiceInternalLinks";
+import ConsultationCTA from "@/components/replacement/ConsultationCTA";
+import MaterialComparison from "@/components/replacement/MaterialComparison";
+import WrittenScopeIncludes from "@/components/replacement/WrittenScopeIncludes";
 
 /* ═══════════════════════════════════════════
    DATA
@@ -327,22 +330,11 @@ const RoofReplacement = () => {
           </div>
         </section>
 
-        {/* ─── MID-PAGE CTA ─── */}
-        <section className="bg-primary text-primary-foreground tartan-dark">
-          <div className="container-tight px-5 md:px-8 py-10 md:py-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h3 className="font-heading font-bold text-xl md:text-2xl mb-1.5">Concerned about your roof's condition?</h3>
-                <p className="text-primary-foreground/85 text-sm font-body">Schedule a consultation — we'll assess honestly and explain your options clearly.</p>
-              </div>
-              <Link to="/consultation" className="group cta-gradient text-accent-foreground font-semibold text-sm px-7 py-3.5 rounded-sm inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all relative overflow-hidden flex-shrink-0">
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative">Schedule a Consultation</span>
-                <ArrowRight className="w-4 h-4 relative group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ConsultationCTA
+          heading="Not sure whether you're at repair or replacement?"
+          subline="A consultation gets you an honest read on your roof's remaining life and a written scope if replacement is the right call."
+          label="Book My Roof Assessment"
+        />
 
         {/* ─── REPLACING THE ROOF THE RIGHT WAY ─── */}
         <section className="section-padding bg-background">
@@ -406,6 +398,34 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
+
+        {/* ─── MATERIAL TRADEOFF COMPARISON ─── */}
+        <MaterialComparison />
+
+        <ConsultationCTA
+          heading="Want the material call made for your specific roof?"
+          subline="We spec by elevation, pitch, wind exposure, and how long you plan to hold the home — then put it in writing."
+          label="Get My Material Recommendation"
+        />
+
+        {/* ─── WRITTEN SCOPE ─── */}
+        <WrittenScopeIncludes />
+
+        {/* ─── COST DRIVERS ─── */}
+        <CostContextBlock serviceLabel="roof replacement" />
+
+        {/* ─── FINANCING ENTRY POINT ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <FinancingTeaser serviceLabel="roof replacement" />
+          </div>
+        </section>
+
+        <ConsultationCTA
+          heading="Get the number for your roof, not a range."
+          subline="Written, grouped-cost proposal after an on-site assessment — with payment options reviewed at the same visit."
+          label="Get My Written Estimate"
+        />
 
         {/* ─── TIMELINE & PROCESS ─── */}
         <section className="section-padding bg-secondary tartan-bg">
@@ -478,6 +498,19 @@ const RoofReplacement = () => {
             </div>
           </div>
         </section>
+
+        {/* ─── REVIEWS ─── */}
+        <section className="section-padding bg-background">
+          <div className="container-tight">
+            <AttributedReviews category="roofing" heading="What homeowners say about our roof replacement work" />
+          </div>
+        </section>
+
+        <ConsultationCTA
+          heading="See the work, then get your own scope."
+          subline="We'll walk your roof, document conditions with photos, and hand you a written replacement plan."
+          label="Book My Replacement Consultation"
+        />
 
         {/* ─── FAQS ─── */}
         <section className="section-padding bg-background">
@@ -569,18 +602,7 @@ const RoofReplacement = () => {
       <RealWorkWidget />
         <TieredOffer context="roof-replacement" primaryLabel="Get My Replacement Scope" />
         <CommonConcerns />
-        <CostContextBlock serviceLabel="roof replacement" />
         <SchedulingReality serviceLabel="roof replacement" />
-        <section className="section-padding pt-0 bg-muted/20">
-          <div className="container-tight">
-            <FinancingTeaser serviceLabel="roof replacement" />
-          </div>
-        </section>
-      <section className="section-padding bg-muted/20">
-        <div className="container-tight">
-          <AttributedReviews category="roofing" heading="What homeowners say about our roof replacement work" />
-        </div>
-      </section>
       <ConversionTrustBlock variant="band" category="roofing" />
       <Footer />
       <StickyMobileCTA />
