@@ -513,7 +513,7 @@ const OutdoorLiving = () => {
         <ServiceInternalLinks title="Outdoor Living" slug="outdoor-living" />
       </main>
 
-      <TieredOffer context="outdoor-living" primaryLabel="Get My Outdoor Space Planned" />
+      <TieredOffer context="outdoor-living" primaryLabel="Get My Outdoor Space Planned" primaryTo="/construction/consultation" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

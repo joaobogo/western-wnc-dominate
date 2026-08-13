@@ -445,7 +445,7 @@ const Renovations = () => {
         />
         <ServiceInternalLinks title="Renovations" slug="renovations" />
       </main>
-      <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" />
+      <TieredOffer context="renovations" primaryLabel="Get My Renovation Scoped" primaryTo="/construction/consultation" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

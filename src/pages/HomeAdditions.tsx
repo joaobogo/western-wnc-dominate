@@ -565,7 +565,7 @@ const HomeAdditions = () => {
         />
         <ServiceInternalLinks title="Home Additions" slug="additions" />
       </main>
-      <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" />
+      <TieredOffer context="home-additions" primaryLabel="Get My Addition Planned" primaryTo="/construction/consultation" />
       <CommonConcerns />
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />
