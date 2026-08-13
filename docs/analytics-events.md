@@ -1,54 +1,71 @@
-# Analytics Event Reference
+# Analytics event reference
 
-All events are pushed to `window.dataLayer` by `src/lib/gtm.ts` (GTM container `GTM-W26D39LJ`).
-No PII is ever pushed. Never push raw string literals — use `GTM_EVENTS.*`.
+All events are pushed to `window.dataLayer` through `src/lib/gtm.ts`. Every event
+automatically carries page context: `page_path`, `page_title`, `page_type`,
+`town`, `service`.
 
-## Global page context (attached to EVERY event)
+Use the canonical helpers — do not push raw objects from components.
 
-`push()` merges page context into every event:
+## Contact intent
 
-| Key | Meaning | Example |
+| Event | Helper | Key parameters |
 | --- | --- | --- |
-| `page_type` | `home`, `town`, `county`, `town_service`, `service`, `blog`, `conversion`, `other` | `town_service` |
-| `town` | Town slug derived from the URL, or the nearest `data-gtm-town` ancestor | `franklin` |
-| `service` | Service slug derived from the URL | `roof-repair` |
+| `cta_click` | `trackCtaClick` | `cta_location`, `cta_text`, `cta_type`, `destination_url`, `cta_position`, `cta_viewport_pct`, `town` |
+| `primary_cta_click` | `trackPrimaryCtaClick` | `page_key`, `intent`, `cta_text`, `destination_url`, `click_location`, `cta_position` (also emits `cta_click`) |
+| `phone_click` | delegated listener on `tel:` links | `phone_number`, `click_location`, `town` (also emits `cta_click` with position) |
+| `email_click` | delegated listener on `mailto:` links | `click_location` |
 
-Event-level `town` / `service` win when present; page-derived values fill the gaps.
+### `cta_position` values
 
-## Events
+Resolved by `resolveCtaPosition()` — an explicit `data-gtm-position` attribute on
+the element or any ancestor wins; otherwise it is derived from geometry:
 
-| Event | When it fires | Dedupe | Payload (beyond page context) |
-| --- | --- | --- | --- |
-| `virtual_page_view` | SPA route change (not initial load) | per URL | `page_path`, `page_location`, `page_title` |
-| `phone_click` | Any `tel:` link click (delegated listener) | none (Teams alert throttled 10 min) | `phone_number`, `link_url`, `click_location`, `page_path`, `page_title` |
-| `email_click` | Any `mailto:` link click | none | `link_url`, `click_location`, `page_path`, `page_title` |
-| `cta_click` | Every tracked CTA: `[data-gtm-cta]` elements, `tel:` links, and the page primary CTA | none | `cta_location`, `cta_text`, `cta_type` (`request_quote`, `request_inspection`, `phone`, `primary_call`, `primary_form`), `destination_url` |
-| `request_quote_click` | CTA with `data-gtm-cta="request_quote"` | none | `click_location`, `destination_url` |
-| `request_inspection_click` | CTA with `data-gtm-cta="request_inspection"` | none | `click_location`, `destination_url` |
-| `primary_cta_click` | The single page-level primary action (see `page-cta-hierarchy.ts`) | none | `page_key`, `intent` (`call`/`form`), `cta_text`, `destination_url`, `click_location` |
-| `form_start` | First focus/input inside any `<form>` | once per `form_id::form_name` per session | `form_name`, `form_id`, `service_category`, `page_path` |
-| `form_step_complete` | Visitor advances a multi-step intake form | once per `form_id::step_index` per session | `form_name`, `form_id`, `step_index` (0-based), `step_number`, `step_name`, `total_steps` |
-| `form_submit_success` | Lead written successfully | once per `lead_id` | `form_name`, `form_id`, `lead_type`, `service_category`, `property_town`, `lead_id`, `source_context`, `source_town`, `source_page_path` |
-| `generate_lead` | Canonical conversion — auto-emitted by `form_submit_success` and `chatbot_lead_submit` | once per `lead_id` | `lead_id`, `lead_source`, `lead_type`, `service_category`, `property_town`, `source_context`, `currency` (`USD`), `value` |
-| `form_submit_error` | Submission failed | none | `form_name`, `form_id`, `error_type` |
-| `scroll_depth` | 25 / 50 / 75 / 90 % depth reached | once per milestone per route visit | `percent_scrolled`, `seconds_on_page`, `page_path`, `page_title` |
-| `scroll_75` | 75 % depth reached (dedicated engaged-reader trigger) | once per route visit | `percent_scrolled: 75`, `seconds_on_page` |
-| `page_engagement` | Route unmount / navigation away | once per route visit | `max_scroll_depth`, `seconds_on_page` |
-| `exit_intent_shown` | Pointer leaves through the top of the viewport, or tab hidden after 5 s of engagement | once per browsing session (`sessionStorage: hl_exit_intent_shown`) | `exit_trigger` (`pointer_exit_top`, `tab_hidden`), `variant` |
-| `town_faq_open` | Town FAQ accordion expanded | once per `town::question` | `town`, `faq_question`, `faq_position` |
-| `town_faq_conversion_intent` | Call/form CTA clicked inside a town FAQ | none | `town`, `intent`, `destination_url`, `cta_text` |
-| `velux_widget_cta_click` | VELUX partner widget CTA | 800 ms throttle | `widget_variant`, `cta_text`, `destination_url`, `click_location` |
-| `chatbot_open` | Chat widget opened | once per session | `page_path`, `page_title` |
-| `chatbot_lead_submit` | Chatbot captured a lead | once per `lead_id` | `service_category`, `property_town`, `lead_id` |
-| `consent_update` | Consent banner decision | none | `consent_functional`, `consent_analytics`, `consent_marketing` |
+- `above_fold` — CTA sits within the first viewport height
+- `mid_page` — between the fold and 80% of document height
+- `page_bottom` — in the last 20% of the document (closing CTA)
+- `sticky_bar` — fixed-position element or inside `[data-sticky-cta]`
+- custom strings such as `gallery_inline_2`, `project_detail_location_cta`
 
-## Attribution helpers
+`cta_viewport_pct` (0–100) records how far down the document the CTA sits, so
+CRO tests can compare hero vs. closing placements.
 
-- `recordCtaSource()` stores the originating CTA block, town and path in `sessionStorage` for 30 minutes; `form_submit_success` and `generate_lead` credit the conversion back to it.
-- `data-gtm-location="hero|sticky_bar|footer|town_faq|..."` on any ancestor sets `click_location` / `cta_location`.
-- `data-gtm-town="<slug>"` on any ancestor attributes clicks to a town.
+## Forms
 
-## Conversion tags in GTM
+| Event | Helper | Key parameters |
+| --- | --- | --- |
+| `form_start` | `trackFormStart` | `form_name`, `form_location` |
+| `form_step_complete` | `trackFormStepComplete` | `form_name`, `step_number`, `step_name` |
+| `form_success` | `trackFormSuccess` | `form_name`, `lead_id`, `service`, `town` |
+| `form_error` | `trackFormError` | `form_name`, `error_message` |
+| `generate_lead` | fired with `form_success` | conversion event for ads |
 
-Recommended conversion trigger: `generate_lead` (one per lead, deduped by `lead_id`).
-Secondary/micro conversions: `phone_click`, `form_start`, `form_step_complete`, `scroll_75`.
+## Gallery and project proof
+
+| Event | Helper | Key parameters |
+| --- | --- | --- |
+| `gallery_project_open` | `trackGalleryProjectOpen` | `gallery`, `project_title`, `project_location`, `project_category`, `cta_position` (`gallery_item_N`) |
+| `gallery_cta_click` | `trackGalleryCtaClick` | `gallery`, `cta_text`, `destination_url`, `project_title`, `town`, `cta_position` (also emits `cta_click`) |
+
+`gallery` values: `project_gallery`, `project_gallery_spotlight`,
+`recent_projects`, `roofing_gallery`, `project_detail`.
+
+## Recovery and engagement
+
+| Event | Helper | Key parameters |
+| --- | --- | --- |
+| `exit_intent_shown` | `trackExitIntentShown` | `trigger` (`exit` \| `scroll` \| `idle`) |
+| `exit_intent_dismissed` | `trackExitIntentDismissed` | `trigger` |
+| `exit_intent_conversion` | `trackExitIntentConversion` | `trigger`, `destination_url` |
+| `scroll_depth` / `scroll_75` | auto scroll listener | `percent` |
+| `town_faq_open` | `trackTownFaqOpen` | `question`, `town` |
+| `velux_quote_click` | VeluxWidget | `widget` |
+| `chatbot_open`, `chatbot_lead_submit` | chatbot | — |
+
+## Adding tracking to a new component
+
+1. Prefer markup attributes so the delegated listener handles it:
+   `data-gtm-cta="request_inspection"`, `data-gtm-location="hero"`,
+   `data-gtm-position="above_fold"`, `data-gtm-town="franklin"`.
+2. Only call a helper directly when the click is not a link/button navigation.
+3. Never fire both a `data-gtm-cta` attribute and a manual `trackCtaClick` on the
+   same element — that double-counts the conversion.
