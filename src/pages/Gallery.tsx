@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { Fragment, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, MapPin, Calendar, Ruler, Eye, Camera, Filter } from "lucide-react";
 import { Link } from "react-router-dom";
