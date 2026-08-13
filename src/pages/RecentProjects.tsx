@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Home, HardHat, Wrench, Trees, Ruler, Droplets, MapPin, Calendar, Phone } from "lucide-react";
 import SEOHead, { breadcrumbSchema } from "@/components/SEOHead";
@@ -58,6 +58,15 @@ const completedProjects = [
 ];
 
 const RecentProjects = () => {
+  const materialFilters = useMemo(
+    () => ["All Work", ...Array.from(new Set(completedProjects.map((p) => p.type)))],
+    [],
+  );
+  const [material, setMaterial] = useState("All Work");
+  const visibleProjects = completedProjects.filter(
+    (p) => material === "All Work" || p.type === material,
+  );
+
   return (
     <>
       <SEOHead
@@ -170,12 +179,33 @@ const RecentProjects = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {completedProjects.map((p, i) => {
-                const closesTriplet = (i + 1) % 3 === 0 && i !== completedProjects.length - 1;
+            {/* Filter bar */}
+            <div className="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter projects by work type">
+              {materialFilters.map((m) => (
+                <button
+                  key={m}
+                  type="button"
+                  onClick={() => setMaterial(m)}
+                  aria-pressed={material === m}
+                  className={`text-caption font-body font-bold uppercase tracking-[0.18em] px-4 py-2.5 border rounded-sm transition-colors duration-300 min-h-[44px] ${
+                    material === m
+                      ? "bg-primary border-primary text-primary-foreground"
+                      : "bg-background border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                  }`}
+                >
+                  {m}
+                </button>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+              {visibleProjects.map((p, i) => {
+                const closesTriplet = (i + 1) % 3 === 0 && i !== visibleProjects.length - 1;
+                // Masonry rhythm: every 5th tile runs wide with a 16:9 crop.
+                const wide = i % 5 === 0;
                 const CardInner = (
                   <>
-                    <div className="aspect-project overflow-hidden bg-secondary relative">
+                    <div className={`overflow-hidden bg-secondary relative ${wide ? "aspect-[16/9]" : "aspect-project"}`}>
                       <img
                         src={p.image}
                         alt={`${p.title} — ${p.location}`}
@@ -188,6 +218,18 @@ const RecentProjects = () => {
                       <span className="absolute top-3 left-3 text-caption font-body font-bold uppercase tracking-[0.15em] bg-white/90 text-[hsl(var(--heritage-green))] px-2.5 py-1 rounded-sm">
                         {p.type}
                       </span>
+                      {/* Hover reveal — scope and location over the image */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-5 text-center bg-[hsl(var(--heritage-charcoal)/0.62)] opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500">
+                        <span className="text-caption font-body font-bold uppercase tracking-[0.2em] text-[hsl(var(--gold-ink))] flex items-center gap-1.5">
+                          <MapPin className="w-3.5 h-3.5" /> {p.location}
+                        </span>
+                        <span className="text-white font-heading font-bold text-base md:text-lg leading-snug flex items-center gap-2">
+                          <Ruler className="w-4 h-4 opacity-80" /> {p.scope}
+                        </span>
+                        <span className="text-white/80 text-caption font-body uppercase tracking-[0.18em] flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5" /> {p.duration}
+                        </span>
+                      </div>
                     </div>
                     <div className="p-6">
                       <h3 className="text-base font-heading font-bold text-foreground mb-2 leading-snug group-hover:text-[hsl(var(--heritage-green))] transition-colors">
@@ -210,12 +252,12 @@ const RecentProjects = () => {
                     {p.slug ? (
                       <Link
                         to={`/projects/${p.slug}`}
-                        className="group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift block"
+                        className={`group bg-card border border-border hover:border-[hsl(var(--highland-gold))]/40 rounded-sm overflow-hidden transition-all card-lift block ${wide ? "md:col-span-2" : ""}`}
                       >
                         {CardInner}
                       </Link>
                     ) : (
-                      <div className="group bg-card border border-border rounded-sm overflow-hidden">
+                      <div className={`group bg-card border border-border rounded-sm overflow-hidden ${wide ? "md:col-span-2" : ""}`}>
                         {CardInner}
                       </div>
                     )}
@@ -223,7 +265,7 @@ const RecentProjects = () => {
                       <GalleryInlineCTA
                         position={Math.ceil((i + 1) / 3)}
                         towns={Array.from(
-                          new Set(completedProjects.slice(i - 2, i + 1).map((x) => x.location)),
+                          new Set(visibleProjects.slice(i - 2, i + 1).map((x) => x.location)),
                         )}
                       />
                     )}

@@ -123,37 +123,99 @@ const ProjectDetailPage = () => {
           </div>
         </section>
 
+        {/* 1 — Outcome first: what the homeowner actually got. */}
+        <section className="section-padding bg-secondary/20">
+          <div className="container-tight">
+            <div className="max-w-4xl mx-auto text-center">
+              <motion.div {...fadeUp}>
+                <span className="eyebrow mb-4 block">The Outcome</span>
+                <h2 className="section-heading mb-8">{project.highlight}</h2>
+                <div className="w-16 h-1 bg-primary mx-auto mb-8" />
+                <p className="text-foreground text-xl md:text-2xl font-heading leading-relaxed mb-10 italic">
+                  "{project.result}"
+                </p>
+                {project.testimonial && (
+                  <div className="bg-background p-8 md:p-12 border border-border shadow-flat relative text-left">
+                    <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/10" />
+                    <p className="text-lg md:text-xl font-body italic text-foreground mb-6 leading-relaxed relative z-10">
+                      "{project.testimonial.quote}"
+                    </p>
+                    <div className="flex flex-col items-center">
+                      <span className="font-heading font-bold text-lg text-foreground">{project.testimonial.name}</span>
+                      <span className="text-sm text-muted-foreground uppercase tracking-widest">{project.testimonial.location}</span>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* 2 — Scope table, then 3 — location-aware CTA. */}
+        <section className="section-padding bg-background border-b border-border">
+          <div className="container-tight max-w-4xl">
+            <motion.div {...fadeUp}>
+              <span className="eyebrow mb-4 block">Project Scope</span>
+              <h2 className="section-heading mb-8">The Work at a Glance</h2>
+              <div className="overflow-hidden border border-border">
+                <table className="w-full text-left text-sm md:text-base">
+                  <caption className="sr-only">Scope details for {project.title}</caption>
+                  <tbody>
+                    {[
+                      { label: "Location", value: project.location },
+                      { label: "County", value: project.county },
+                      ...(project.elevation ? [{ label: "Elevation", value: project.elevation }] : []),
+                      { label: "Service", value: project.type },
+                      { label: "Scope", value: project.scope },
+                      { label: "Duration", value: project.duration },
+                    ].map((row) => (
+                      <tr key={row.label} className="border-b border-border last:border-0 odd:bg-secondary/30">
+                        <th scope="row" className="py-3 px-4 md:px-6 font-body font-bold uppercase tracking-[0.14em] text-caption text-muted-foreground align-top w-40">
+                          {row.label}
+                        </th>
+                        <td className="py-3 px-4 md:px-6 font-heading font-bold text-foreground">{row.value}</td>
+                      </tr>
+                    ))}
+                    <tr className="odd:bg-secondary/30">
+                      <th scope="row" className="py-3 px-4 md:px-6 font-body font-bold uppercase tracking-[0.14em] text-caption text-muted-foreground align-top w-40">
+                        Work Performed
+                      </th>
+                      <td className="py-3 px-4 md:px-6">
+                        <ul className="space-y-2">
+                          {project.scopeOfWork.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-foreground/90">
+                              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+
+            <ProjectLocationCTA
+              location={project.location}
+              type={project.type}
+              category={project.category}
+              className="mt-10"
+            />
+          </div>
+        </section>
+
         <section className="section-padding bg-background">
           <div className="container-tight">
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-20">
               <div className="lg:col-span-2">
                 <motion.div {...fadeUp}>
                   <span className="eyebrow mb-4 block">Project Summary</span>
-                  <h2 className="section-heading mb-6">{project.highlight}</h2>
+                  <h2 className="section-heading mb-6">Inside the Project</h2>
                   <div className="w-16 h-1 bg-[hsl(var(--highland-gold)/0.6)] mb-8" />
                   <p className="text-foreground leading-relaxed text-lg md:text-xl font-medium max-w-[65ch] mb-8">
                     {project.summary}
                   </p>
-                </motion.div>
-
-                <motion.div {...fadeUp} className="mt-16 bg-secondary/30 p-8 md:p-12 border border-border">
-                  <span className="eyebrow mb-4 block">Detailed Scope</span>
-                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">What We Delivered</h3>
-                  <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
-                    {project.scopeOfWork.map((item, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, x: -12 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.05 }}
-                        className="flex items-start gap-3"
-                      >
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1.5" />
-                        <span className="text-foreground/90 text-base leading-snug font-bold italic">{item}</span>
-                      </motion.div>
-                    ))}
-                  </div>
                 </motion.div>
 
                 <motion.div {...fadeUp} className="mt-16">
@@ -191,13 +253,6 @@ const ProjectDetailPage = () => {
                   </div>
                 </motion.div>
 
-                {/* Location-aware CTA + service tags */}
-                <ProjectLocationCTA
-                  location={project.location}
-                  type={project.type}
-                  category={project.category}
-                  className="mt-16"
-                />
               </div>
 
               <div className="space-y-6">
@@ -289,33 +344,6 @@ const ProjectDetailPage = () => {
               >
                 <Phone className="w-4 h-4" /> Discuss Your Project
               </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding bg-secondary/20">
-          <div className="container-tight">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.div {...fadeUp}>
-                <span className="eyebrow mb-4 block">The Result</span>
-                <h2 className="section-heading mb-8">Long-Term Protection Secured</h2>
-                <div className="w-16 h-1 bg-primary mx-auto mb-8" />
-                <p className="text-foreground text-xl md:text-2xl font-heading leading-relaxed mb-10 italic">
-                  "{project.result}"
-                </p>
-                {project.testimonial && (
-                   <div className="bg-background p-8 md:p-12 border border-border shadow-flat relative text-left">
-                      <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/10" />
-                      <p className="text-lg md:text-xl font-body italic text-foreground mb-6 leading-relaxed relative z-10">
-                        "{project.testimonial.quote}"
-                      </p>
-                      <div className="flex flex-col items-center">
-                        <span className="font-heading font-bold text-lg text-foreground">{project.testimonial.name}</span>
-                        <span className="text-sm text-muted-foreground uppercase tracking-widest">{project.testimonial.location}</span>
-                      </div>
-                   </div>
-                )}
-              </motion.div>
             </div>
           </div>
         </section>
