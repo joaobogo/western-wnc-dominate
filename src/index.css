@@ -246,6 +246,32 @@ img {
     /* Border treatments — hairline (default) and accent (emphasis) */
     --border-hairline: hsl(var(--border));
     --border-accent: hsl(var(--highland-gold) / 0.45);
+
+    /* ── Image scrim tokens (text-over-photography) ──────────────
+       scrim-bottom: default caption/overlay treatment on cards
+       scrim-hero:   full-bleed hero, keeps headline legible
+       scrim-side:   left-anchored hero copy on wide viewports
+       scrim-flat:   even wash for logos/thumbnails over photography
+       ────────────────────────────────────────────────────────── */
+    --scrim-bottom: linear-gradient(
+      to top,
+      hsl(var(--heritage-charcoal) / 0.72) 0%,
+      hsl(var(--heritage-charcoal) / 0.32) 38%,
+      hsl(var(--heritage-charcoal) / 0) 72%
+    );
+    --scrim-hero: linear-gradient(
+      to top,
+      hsl(var(--hero-overlay) / 0.85) 0%,
+      hsl(var(--hero-overlay) / 0.45) 42%,
+      hsl(var(--hero-overlay) / 0.12) 100%
+    );
+    --scrim-side: linear-gradient(
+      to right,
+      hsl(var(--hero-overlay) / 0.78) 0%,
+      hsl(var(--hero-overlay) / 0.38) 45%,
+      hsl(var(--hero-overlay) / 0) 80%
+    );
+    --scrim-flat: hsl(var(--heritage-charcoal) / 0.34);
   }
 
   .dark {
@@ -283,6 +309,26 @@ img {
 
     --border-hairline: hsl(var(--border));
     --border-accent: hsl(var(--highland-gold) / 0.55);
+
+    --scrim-bottom: linear-gradient(
+      to top,
+      hsl(0 0% 0% / 0.78) 0%,
+      hsl(0 0% 0% / 0.36) 38%,
+      hsl(0 0% 0% / 0) 72%
+    );
+    --scrim-hero: linear-gradient(
+      to top,
+      hsl(0 0% 0% / 0.88) 0%,
+      hsl(0 0% 0% / 0.5) 42%,
+      hsl(0 0% 0% / 0.16) 100%
+    );
+    --scrim-side: linear-gradient(
+      to right,
+      hsl(0 0% 0% / 0.82) 0%,
+      hsl(0 0% 0% / 0.42) 45%,
+      hsl(0 0% 0% / 0) 80%
+    );
+    --scrim-flat: hsl(0 0% 0% / 0.45);
   }
 }
 
