@@ -14,6 +14,7 @@ import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import { ConstructionClosingCTA } from "@/components/construction/ConstructionShared";
 
 const heroImg = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000";
@@ -432,6 +433,7 @@ const ExteriorImprovements = () => {
           subheadline="Whether it's siding that's seen better days, windows that don't perform anymore, or an exterior that needs protection — let's talk about what's possible."
           eyebrow="Transform Your Exterior"
         />
+        <TieredOffer context="exterior-improvements" primaryLabel="Get My Exterior Scoped" />
       </main>
       <ConversionTrustBlock variant="band" category="construction" />
       <Footer />

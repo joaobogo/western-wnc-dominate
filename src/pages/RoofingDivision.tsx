@@ -14,6 +14,7 @@ import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import TieredOffer from "@/components/conversion/TieredOffer";
 import BuilderPromoBlock from "@/components/builder/BuilderPromoBlock";
 
 import metalRoof from "@/assets/gallery/metal-005.webp";
@@ -1148,6 +1149,7 @@ const RoofingDivision = () => {
           description="Daylight and fresh air for mountain homes. Browse the VELUX lineup below, then talk to our team about adding or replacing skylights during your roofing project."
           className="section-padding bg-background border-t border-border/60"
         />
+        <TieredOffer context="roofing-division" primaryLabel="Get My Roof Assessed" />
       </main>
       <RealWorkWidget />
       <ConversionTrustBlock variant="band" category="roofing" />
