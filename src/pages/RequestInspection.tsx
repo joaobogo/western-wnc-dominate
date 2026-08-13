@@ -85,30 +85,6 @@ const RequestInspection = () => {
           </div>
         </section>
 
-        {/* SERVICE OPTIONS */}
-        <section className="section-padding bg-secondary">
-          <div className="container-tight">
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="eyebrow block mb-3">What Can We Help With?</span>
-              <h2 className="section-heading">Roofing, gutters, skylights, construction, and design</h2>
-              <p className="text-muted-foreground mt-3 font-body">
-                Choose whatever fits — you can also just describe what you need in the form below.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              {services.map((s) => (
-                <Link
-                  key={s.to}
-                  to={s.to}
-                  className="card-premium p-4 text-center font-heading font-bold text-foreground text-[15px] hover:border-primary/40 transition-colors"
-                >
-                  {s.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FOOT CTA */}
         <section className="section-padding bg-primary">
           <div className="container-tight text-center">
