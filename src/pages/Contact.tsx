@@ -15,6 +15,9 @@ import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import FormConsent from "@/components/FormConsent";
+import ContactChannels from "@/components/contact/ContactChannels";
+import ContactIdentity from "@/components/contact/ContactIdentity";
+import ServiceAreaMap from "@/components/ServiceAreaMap";
 import {
   Phone, Mail, MapPin, Clock, Shield, Award, ArrowRight, ArrowLeft,
   MessageSquare, CalendarCheck, CheckCircle, Home, HardHat,
@@ -62,7 +65,7 @@ const contactMethods = [
 
 const TRUST_POINTS = [
   { icon: Clock, text: "Personalized response within 24 hours" },
-  { icon: Shield, text: "Licensed GC · Fully insured · Warranty-backed" },
+  { icon: Shield, text: "Licensed GC · Fully insured · Written scope on every job" },
   { icon: Award, text: "CertainTeed ShingleMaster Credentialed Contractor" },
   { icon: Users, text: "In-house Highlander crews on every project" },
   { icon: Star, text: "4.9★ average across Google & Facebook" },
@@ -278,8 +281,10 @@ export default function Contact() {
           </div>
         </section>
 
+        <ContactChannels />
+
         {/* ── GUIDED CONCIERGE FLOW ── */}
-        <section className="section-padding bg-background">
+        <section id="contact-form" className="section-padding bg-background scroll-mt-24">
           <div className="container-tight">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-14">
               {/* Left: form area */}
@@ -651,9 +656,9 @@ export default function Contact() {
                       <div className="flex items-start gap-3">
                         <Clock className="w-4 h-4 text-[hsl(var(--gold-ink))]/50 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="text-sm font-heading font-semibold text-foreground">Office Hours</p>
-                          <p className="text-xs text-muted-foreground font-body">Mon–Fri 8:00 AM – 5:00 PM</p>
-                          <p className="text-xs text-[hsl(var(--gold-ink))] font-body font-semibold">Same-day emergency contact</p>
+                          <p className="text-sm font-heading font-semibold text-foreground">Reaching Us</p>
+                          <p className="text-xs text-muted-foreground font-body">Our own team handles calls during working hours. Leave a message if we&apos;re on a roof.</p>
+                          <p className="text-xs text-[hsl(var(--gold-ink))] font-body font-semibold">Every inquiry answered within 24 hours</p>
                         </div>
                       </div>
                     </div>
@@ -691,6 +696,9 @@ export default function Contact() {
             </div>
           </div>
         </section>
+
+        <ContactIdentity />
+        <ServiceAreaMap />
 
         {/* ── CLOSING CTA ── */}
         <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--heritage-green))] via-[hsl(var(--heritage-green)/0.92)] to-[hsl(var(--heritage-charcoal))]">
