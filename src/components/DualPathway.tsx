@@ -37,7 +37,7 @@ const roofingData = {
     { icon: CloudLightning, name: "Storm Damage & Insurance" },
     { icon: Search, name: "Professional Inspections" },
     { icon: PaintBucket, name: "Material Selection" },
-    { icon: ShieldCheck, name: "Extended Warranty Coverage" },
+    { icon: ShieldCheck, name: "Manufacturer Material Coverage" },
   ],
   cta: "Explore Roofing",
   href: "/roofing",

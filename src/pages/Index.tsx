@@ -3,7 +3,7 @@ import { useState, useEffect, lazy, Suspense } from "react";
 import SEOHead, { buildPageSchema } from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import TrustStrip from "@/components/TrustStrip";
+import CredibilityStrip from "@/components/home/CredibilityStrip";
 import TartanBackground from "@/components/TartanBackground";
 
 import ThreeDivisionPathway from "@/components/DualPathway";
@@ -18,17 +18,10 @@ import { customerReviews, GOOGLE_REVIEW_AGGREGATE } from "@/data/reviews";
 /* Below-the-fold homepage sections — code-split so the first load only ships
    the hero, trust strip and shell. Each fallback reserves height to keep CLS at 0. */
 const FeaturedProjects = lazy(() => import("@/components/FeaturedProjects"));
-const ServicesGrid = lazy(() => import("@/components/ServicesGrid"));
-const OurProcess = lazy(() => import("@/components/OurProcess"));
-const TownGrid = lazy(() => import("@/components/TownGrid"));
-const InspectionForm = lazy(() => import("@/components/InspectionForm"));
-const ProofMoment = lazy(() => import("@/components/ProofMoment"));
-const ProjectConcierge = lazy(() => import("@/components/ProjectConcierge"));
-const TrustedMaterials = lazy(() => import("@/components/TrustedMaterials"));
-const HomeFAQ = lazy(() => import("@/components/HomeFAQ"));
-const RegionalAuthority = lazy(() => import("@/components/RegionalAuthority"));
+const AttributedReviews = lazy(() => import("@/components/trust/AttributedReviews"));
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap"));
-const ExploreHighlander = lazy(() => import("@/components/ExploreHighlander"));
+const HomeFAQ = lazy(() => import("@/components/HomeFAQ"));
+const PageCloseCTA = lazy(() => import("@/components/PageCloseCTA"));
 const Footer = lazy(() => import("@/components/Footer"));
 
 const SectionFallback = ({ h = 480 }: { h?: number }) => (
@@ -84,65 +77,46 @@ const Index = () => {
           ]}
         />
 
-        {/* 2. TrustStrip — Immediate proof anchors */}
-        <section id="trust">
-          <TrustStrip />
-        </section>
+        {/* 2. Two-line credibility strip */}
+        <CredibilityStrip />
 
         <div className="relative overflow-hidden bg-background">
           <TartanBackground opacity={0.02} />
           <SectionDivider variant="diamond" />
         </div>
 
-        {/* Three Division Pathway — Roofing | Construction | Design */}
-        <ThreeDivisionPathway />
+        {/* 3. Choose your path — Roofing vs Construction */}
+        <ThreeDivisionPathway paths="two" />
 
-        <Suspense fallback={<SectionFallback h={2400} />}>
-          {/* 4. Inspection Form — Fast lead capture */}
-          <InspectionForm />
-
-          {/* 5. Services Grid — Detailed pathways */}
-          <ServicesGrid />
+        <Suspense fallback={<SectionFallback h={1800} />}>
+          {/* 4. Local proof — real, attributable reviews */}
+          <section className="section-padding bg-background">
+            <div className="container-tight max-w-5xl">
+              <AttributedReviews heading="What Western NC homeowners say" />
+            </div>
+          </section>
 
           <SectionDivider variant="tartan-trim" />
 
-          {/* 6. Trusted Materials — Product partners & material suppliers */}
-          <TrustedMaterials />
-
-          {/* 7. Featured Projects — Visual proof */}
+          {/* 5. Recent local projects */}
           <FeaturedProjects />
 
-          <SectionDivider variant="heritage-bar" />
-
-          {/* 8. Built for WNC — Local relevance */}
-          <div className="relative overflow-hidden">
-            <TartanBackground opacity={0.015} patternSize="600px auto" />
-            <BuiltForWNC />
-          </div>
-
-          {/* 9. Our Process — How we work */}
-          <OurProcess />
-
-          {/* 9.5 Regional Authority — SEO-rich Western NC positioning */}
-          <RegionalAuthority />
-
-          {/* 9.6 Service Area Map — Local SEO chip/card block */}
+          {/* 6. Service-area entry */}
           <ServiceAreaMap id="service-area" />
 
-          {/* 10. Proof Moment — Highest impact review */}
-          <ProofMoment variant="social" id="proof" />
-
-          {/* 11. Project Concierge — Guidance for new clients */}
-          <ProjectConcierge id="concierge" />
-
-          {/* 12. Town Grid — Service area footprint */}
-          <TownGrid id="areas" />
-
-          {/* 13. Homepage FAQ — Conversion-focused answers */}
+          {/* 7. Short FAQ */}
           <HomeFAQ />
 
-          {/* 14. Explore Highlander — Structured internal linking hub */}
-          <ExploreHighlander />
+          {/* 8. Final CTA band */}
+          <PageCloseCTA
+            context="homepage"
+            eyebrow="Next Step"
+            heading="Roof or build — start with one conversation"
+            body="Tell us what's going on and a Franklin-based advisor will follow up with a clear next step and a written scope. No obligation."
+            primaryLabel="Get My Written Estimate"
+            secondaryLabel="See Our Service Areas"
+            secondaryTo="/service-areas"
+          />
         </Suspense>
 
         <SectionDivider variant="gold-fade" />
