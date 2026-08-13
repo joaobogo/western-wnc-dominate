@@ -447,6 +447,10 @@ const InspectionForm = ({ variant = "section" }: InspectionFormProps) => {
                       Or call (828) 524-7773
                     </a>
                   </div>
+                  <p className="text-white/80 font-body text-body-xs">
+                    Next step is just your name and phone. After you send it, a Highlander advisor
+                    calls you personally — typically within one business day.
+                  </p>
                 </div>
                 )}
 
